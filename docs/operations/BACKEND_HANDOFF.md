@@ -1,3 +1,14 @@
+## 2026-10-16 exact-root per-call history ordering
+
+Rebuild Native for the scoped cost improvement. Existing root_window_pruning=True
+plain ordering retains capture groups and canonical PV reconstruction, adding an
+exact full-action/actor history ranking within groups. The48KiB local table is
+initialized/updated only for that mode; defaultFalse, learned/policy ordering,
+q/evaluation/API/UI selection stay unchanged. No persistent model or score/
+terminal cache. Finite-budget choices can change; observed local regressions and
+UNKNOWN remain. Actual final2687tests pass; scope/data/consumer receipts:
+../research/CUTOFF_HISTORY_ORDERING_20261016.md. No universal speed/strength claim.
+
 ## 2026-10-15 automatic PENDING and checked PV repair
 
 Rebuild Native for semantic_pending_continuation. Automatic PENDING now precedes

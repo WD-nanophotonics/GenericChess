@@ -1,0 +1,3111 @@
+{
+  "source_state": "Named base commit plus guarded NativeC working change; exact member hashes are authoritative, final delivery SHA verified separately.",
+  "product_module_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3",
+  "source_base": "ef9d4a39b69f96da0d25ae70ad44a5edeb966d5d",
+  "members": [
+    {
+      "path": "inherited/reserve-allocation/allocation.py",
+      "bytes": 7957,
+      "sha256": "1e9f6f7e4a80f5864f257389880320b580cf89fa1c3d0e448a6845ca91d9eccb"
+    },
+    {
+      "path": "inherited/reserve-allocation/plan.json",
+      "bytes": 41755,
+      "sha256": "73fdbca6d0b9dd48499470ac6f2cd91712a9b3e2013efa49825118022e3ae7e6"
+    },
+    {
+      "path": "research/adverse-source-attribution.json",
+      "bytes": 13637,
+      "sha256": "0bd3d0daf5a3785a3c114ca88243e9298ce5aba6e1b5c4b56faad6c7ec7efdf7"
+    },
+    {
+      "path": "research/analysis-syntax-failure.json",
+      "bytes": 178,
+      "sha256": "357a83e557d0281d1faf32e5063dcd678f9cf14ab8500099aa8b5024b682cd3a"
+    },
+    {
+      "path": "research/build-summary.json",
+      "bytes": 1327,
+      "sha256": "ab414b1acd3ba832a98e4c267df7093ecb5d389d1a1a4002d6aaa657c6f29272"
+    },
+    {
+      "path": "research/build.py",
+      "bytes": 3215,
+      "sha256": "9e60d68766af91279172e3157a0de54c4701182071da36b9855cea0611aa7b81"
+    },
+    {
+      "path": "research/build_guarded.py",
+      "bytes": 3018,
+      "sha256": "c9c4dc383cb24ea88df00d53ac5e091120a3a4920125c3130a6c165db7d5f8b2"
+    },
+    {
+      "path": "research/build_history.py",
+      "bytes": 4183,
+      "sha256": "c24bbd92dfc0c705ba9f5329b12960179f7719d06fe033d4f8de838fb0805d61"
+    },
+    {
+      "path": "research/check_fresh_closed.py",
+      "bytes": 1054,
+      "sha256": "acaeea1e9c03185f0d342eb32de0a40f2760048fcb0e5ad43025fa1869a8f9b4"
+    },
+    {
+      "path": "research/check_fresh_closed_initial.py.txt",
+      "bytes": 1053,
+      "sha256": "2c79e8a189ffd3c6e64fc5ef3e32426f65f072869af756c70af8bffa98fc96f2"
+    },
+    {
+      "path": "research/consumer.py",
+      "bytes": 6452,
+      "sha256": "86f8ebabc8114e3e03f2931a35e812e90ce8236730738df9ac459aae95d17ec8"
+    },
+    {
+      "path": "research/core-reference-launch-failure.json",
+      "bytes": 387,
+      "sha256": "8d1429cf4ae302a1be805af88db3008aab6e230885d4b005d4c0bb74aaff59e9"
+    },
+    {
+      "path": "research/core-reference-plan.json",
+      "bytes": 1503,
+      "sha256": "30f82c54e587f992fd1ebd953fcecd244a65d699e8543c1e2e3feb1a399f40ae"
+    },
+    {
+      "path": "research/core-reference-results.json",
+      "bytes": 32062,
+      "sha256": "d9484dd4428d24ec2e0cb00c81199b2b9592ba43ebac71c040fdcfb328922133"
+    },
+    {
+      "path": "research/core-reference-summary.json",
+      "bytes": 430,
+      "sha256": "fe20bb8475ab5174a4552124495557b359880446f96a9abbb8bbd8a83fb353df"
+    },
+    {
+      "path": "research/core_reference.py",
+      "bytes": 3693,
+      "sha256": "4bc0811cef8f77d31a607dc561508d4f08d5bb92fa8d0d194dda1b24cd1f55ab"
+    },
+    {
+      "path": "research/core_reference_initial.py.txt",
+      "bytes": 3699,
+      "sha256": "a9922c7069145b6b1680e08ad59d2a2ba6b5a9be82975b7d1b390b0b348bc061"
+    },
+    {
+      "path": "research/decision-0-baseline_baseline.json",
+      "bytes": 840649,
+      "sha256": "0308fbe31db36c6dfe7778bd2efd43a3796e7708626a25d8740a0a8e856c7fa0"
+    },
+    {
+      "path": "research/decision-0-history_role0.json",
+      "bytes": 842335,
+      "sha256": "3be83ab8b6d4cad54e9624ae0c347bfa9e1456ddee8b356a229f28d3b1d83ff4"
+    },
+    {
+      "path": "research/decision-0-history_role1.json",
+      "bytes": 840655,
+      "sha256": "f36a0369aadcba8e6e86317ccc5712a780d1f7c0a739313a51f10f91474a2862"
+    },
+    {
+      "path": "research/decision-1-baseline_baseline.json",
+      "bytes": 10613904,
+      "sha256": "a359f4707cb7199be8b72be955c5acb3dc7eaac48f8dd11954eadbfe021f02db"
+    },
+    {
+      "path": "research/decision-1-history_role0.json",
+      "bytes": 10629047,
+      "sha256": "a1cff4c6239dddac5091acad921e43ed5eaf4de1956bc7922e5b1f1e6d7884c8"
+    },
+    {
+      "path": "research/decision-1-history_role1.json",
+      "bytes": 10613874,
+      "sha256": "07a40f87bf14f1d026058acbfd509ec17b8687661acb4324e728fe58e7ef6a3f"
+    },
+    {
+      "path": "research/decision-2-baseline_baseline.json",
+      "bytes": 2165857,
+      "sha256": "2ca01be566e91a2165da2ea819951b63d39f2cd50e64267d2794766ea6301be8"
+    },
+    {
+      "path": "research/decision-2-history_role0.json",
+      "bytes": 2165840,
+      "sha256": "14755d3b8520b77cb9c937843c8a012e0d47840b7d83928a2554ccae0e36596a"
+    },
+    {
+      "path": "research/decision-2-history_role1.json",
+      "bytes": 2165843,
+      "sha256": "2d806d8a5b6bd495295eea49a4646d71f9cbfdcdf0bcbd9c071faf25ef5b266c"
+    },
+    {
+      "path": "research/decision-3-baseline_baseline.json",
+      "bytes": 679458,
+      "sha256": "4790827aa20d0fd4aa10f7fdba7af700876ac8715b891e4c7fea98d035782e7a"
+    },
+    {
+      "path": "research/decision-3-history_role0.json",
+      "bytes": 679453,
+      "sha256": "37c4bd687664a781f021ef80e6a1b0ac4dd635f22ea2f6e662c51596eca220df"
+    },
+    {
+      "path": "research/decision-3-history_role1.json",
+      "bytes": 679452,
+      "sha256": "04d4f5b1871ec64991371a27941909beb9f1eb621b8f503faa2d3cc23d24c090"
+    },
+    {
+      "path": "research/decision-completion.json",
+      "bytes": 4889,
+      "sha256": "040fd9de0fc4397f95abbe502085cdbb40f530639b3b00406dfa52fe22ab3555"
+    },
+    {
+      "path": "research/decision-interim-source-review.json",
+      "bytes": 1322,
+      "sha256": "d5e4972b58bf614764ef0b73ce39072c7b132c1dc2b0ee9494723b2b0e35d870"
+    },
+    {
+      "path": "research/decision-plan.json",
+      "bytes": 1959,
+      "sha256": "4cfefc5e3623b5eba912dee4669e55d40444b23706787d7c3068716b61216fd5"
+    },
+    {
+      "path": "research/decision-replay.json",
+      "bytes": 4732,
+      "sha256": "cb15d931f72fb914b23351cea1b1017a5edf0552d16d76deff8af7815f11ce06"
+    },
+    {
+      "path": "research/decision-summary.json",
+      "bytes": 8555,
+      "sha256": "325c2b6f6e63f0a058d95741b236e4a055ce58f806e29379f15bde69e310b69c"
+    },
+    {
+      "path": "research/decision_replay.py",
+      "bytes": 4352,
+      "sha256": "e239b98b8140bb53ae3012dcdae46530580d8b513fb690ced3b44316b81f4117"
+    },
+    {
+      "path": "research/decisions.py",
+      "bytes": 5811,
+      "sha256": "2cc927068c5230e02341b5ee74b570c9f5388c7f87be2083b8e48685da8a945c"
+    },
+    {
+      "path": "research/enrich_summary.py",
+      "bytes": 1736,
+      "sha256": "6c49d9e2fa62d6b44d407378a80eb1e5c51ca8eb9863d5ba7d97dafe97d9abae"
+    },
+    {
+      "path": "research/final-product-tests.json",
+      "bytes": 675,
+      "sha256": "a5f5079df88ab9abadd30dff74bba458363d49720b83425e1ce706b28e3e7363"
+    },
+    {
+      "path": "research/fresh-6301.json",
+      "bytes": 3999567,
+      "sha256": "60575dc604f00bf005467d7a95bd974a06ccd4af6c895eab7aba5a1abeb13cd4"
+    },
+    {
+      "path": "research/fresh-6302.json",
+      "bytes": 4002129,
+      "sha256": "98ca43c0ce95ba164e50bdd6123a27f930def7adff097d4f140a9c59f4a9aa65"
+    },
+    {
+      "path": "research/fresh-6303.json",
+      "bytes": 4046318,
+      "sha256": "22799519fe3dbf99899052fb1b0371f167eec25ff99c9e50982ffb71115c65e2"
+    },
+    {
+      "path": "research/fresh-6304.json",
+      "bytes": 2023916,
+      "sha256": "c28a5625a900ea89200d686b04914d5ac73c266941b875e977f179b7e1f96087"
+    },
+    {
+      "path": "research/fresh-6305.json",
+      "bytes": 1987752,
+      "sha256": "c59e2b3c1ca59da7a7c21d1ca8240172ce3a560a5732013c8a867e6ad2a8773c"
+    },
+    {
+      "path": "research/fresh-6306.json",
+      "bytes": 4045390,
+      "sha256": "b882be378069415423ebeaa3486c644724109d2930151cfda2a25eb1fe471672"
+    },
+    {
+      "path": "research/fresh-6311.json",
+      "bytes": 4006462,
+      "sha256": "729a29895a71a93d3b41a1f9633fb8a2a217a6590b9fada60d9b7a6f9b18d38f"
+    },
+    {
+      "path": "research/fresh-6312.json",
+      "bytes": 4001555,
+      "sha256": "e732cedcff483073cc0ad9431d33e8f83b9ffb983bbad8dc161a2d276d465ded"
+    },
+    {
+      "path": "research/fresh-6313.json",
+      "bytes": 3996959,
+      "sha256": "0d544ed7a1d4e817dc1b67b6045386f8b9a0494d5ba2aa173a6ca31fc42069f7"
+    },
+    {
+      "path": "research/fresh-6314.json",
+      "bytes": 3991372,
+      "sha256": "ff764991cbd055bced3c595d6d6aa1f34662230379f0d6272d706ba2cff018a1"
+    },
+    {
+      "path": "research/fresh-6315.json",
+      "bytes": 3975973,
+      "sha256": "628f494086557055a8de0b6200ed1f8d7da3fa3b64a6c7bb4fbed5ac7e7f9111"
+    },
+    {
+      "path": "research/fresh-6316.json",
+      "bytes": 3968199,
+      "sha256": "bf6ff16428b2cb7ce74b36bdfb56111f1a56b85462f4750253338fbdadceeb4d"
+    },
+    {
+      "path": "research/fresh-6321.json",
+      "bytes": 3969653,
+      "sha256": "dc7d7f3661943899d8d389afd0a71af0e539c70b6e31bfb66b92130e70316712"
+    },
+    {
+      "path": "research/fresh-6322.json",
+      "bytes": 3983422,
+      "sha256": "93b03a666e8b32cd9aa6b5758e1edccb481968a9f44e0edec66cf0a9622f81f6"
+    },
+    {
+      "path": "research/fresh-6323.json",
+      "bytes": 4005460,
+      "sha256": "89fa106e90cf5455e95a225375a5b20ad8d1aaab3c8a611cdb2dfc1d7fa7a667"
+    },
+    {
+      "path": "research/fresh-6324.json",
+      "bytes": 4008021,
+      "sha256": "b8bcaf9c792c41102a86efe32c51d299312863e7154aa16b108ed3b7ca10f1c0"
+    },
+    {
+      "path": "research/fresh-6325.json",
+      "bytes": 4016441,
+      "sha256": "87cb3a6929069dabea5856e611b814638f861527ae24ad97e7eca2b3616938a4"
+    },
+    {
+      "path": "research/fresh-6326.json",
+      "bytes": 3987506,
+      "sha256": "b22a6d0c788deb0ccbc581da51331dfa81f4f02a3483b13989839c6b03dcd0b4"
+    },
+    {
+      "path": "research/fresh-6331.json",
+      "bytes": 3978485,
+      "sha256": "f790d210d6140f3b69239ffd1faa26b041a16d299492f3beed618f7f7738588e"
+    },
+    {
+      "path": "research/fresh-6332.json",
+      "bytes": 3988333,
+      "sha256": "6b41814196a8ff028e492ef010fdec7c6f38980154735f1550a3b3e83b6464f4"
+    },
+    {
+      "path": "research/fresh-6333.json",
+      "bytes": 3989858,
+      "sha256": "5daab355709b9dd655074ca7802a5563768b3573d4aebb7640044852b5eb1fd6"
+    },
+    {
+      "path": "research/fresh-6334.json",
+      "bytes": 3975434,
+      "sha256": "f139b97ae60c58e2bbabfbee8c857589a8dcdaa97aa8a37945790656ed91290f"
+    },
+    {
+      "path": "research/fresh-6335.json",
+      "bytes": 3978640,
+      "sha256": "78fe006309226e220b73c171f8350d1b7218d1d7e9fcf2b9c1c4c3b6fa1ece3f"
+    },
+    {
+      "path": "research/fresh-6336.json",
+      "bytes": 3974844,
+      "sha256": "7816e4c3061e8f7536b87b392cebbd54e3a2c761e999199868e0cb233a2a1453"
+    },
+    {
+      "path": "research/fresh-completion.json",
+      "bytes": 17844,
+      "sha256": "65e33519a0b963a7d84b0d7d657ef92efca59b7208edae99e5854108052a2593"
+    },
+    {
+      "path": "research/fresh-go.json",
+      "bytes": 175052,
+      "sha256": "c7dd4d8e0790ac2b48dfb92fa5ff9119029ed2132041de629959194ba9f84d48"
+    },
+    {
+      "path": "research/fresh-input-manifest.json",
+      "bytes": 5805,
+      "sha256": "070ef02c57f681651afc48bf517f698017fbde29538c6a1cfcaf0d923f5d4f74"
+    },
+    {
+      "path": "research/fresh-inputs/6301.json",
+      "bytes": 29781,
+      "sha256": "59e2c00ed3407f255861cd5843c5192e46da9e7f6ad7ebd370ad5efdc4c08128"
+    },
+    {
+      "path": "research/fresh-inputs/6302.json",
+      "bytes": 27672,
+      "sha256": "fdb0904ac4324b940a3b4160c70d6a4624b5a46ccd576759c94b35ce2bb937c2"
+    },
+    {
+      "path": "research/fresh-inputs/6303.json",
+      "bytes": 29344,
+      "sha256": "9429b446d6fe59e74cf4eeb6af120981b1e746ea011fd81f05788eb07b45f626"
+    },
+    {
+      "path": "research/fresh-inputs/6304.json",
+      "bytes": 23985,
+      "sha256": "26d929df075dd35443f798576a3681d9f0140e36e8fe3fb7d444a2dcb61c6afc"
+    },
+    {
+      "path": "research/fresh-inputs/6305.json",
+      "bytes": 26341,
+      "sha256": "6eb924cd39b6c3967d6f5c0d0dc6efa4dc1fec91b8955ab666b0738fb9d34af8"
+    },
+    {
+      "path": "research/fresh-inputs/6306.json",
+      "bytes": 25000,
+      "sha256": "94560101f7c23f7931b358b8241fa8c61f7581193d6a17817e5b82cca11b56e9"
+    },
+    {
+      "path": "research/fresh-inputs/6311.json",
+      "bytes": 54075,
+      "sha256": "6db61af7ee6336b03c7ba59242f1a0a71e4aad14130adfa0c48629ae74f80197"
+    },
+    {
+      "path": "research/fresh-inputs/6312.json",
+      "bytes": 55483,
+      "sha256": "c3029096e6cf952c6ab8d0b1d778c62e95242714e954a854f3d402427707b1f1"
+    },
+    {
+      "path": "research/fresh-inputs/6313.json",
+      "bytes": 57782,
+      "sha256": "c17e6011c9aa3bd40c074b8169db625359b172ae5b5c2a56ecc0c7abc309026e"
+    },
+    {
+      "path": "research/fresh-inputs/6314.json",
+      "bytes": 62891,
+      "sha256": "671314bc0226a7c56745370c183b34d0db96ec9a9d15ee5e06e8c774a1fa02f9"
+    },
+    {
+      "path": "research/fresh-inputs/6315.json",
+      "bytes": 60427,
+      "sha256": "8e42a9329bdecbb0a0ebc9fb63f88251724620cb436f16c425773fa20cef497d"
+    },
+    {
+      "path": "research/fresh-inputs/6316.json",
+      "bytes": 61067,
+      "sha256": "de0c82cf9d2b3580a700753e0b8fb58ee86b5b1f4fee91641838288aa8a41214"
+    },
+    {
+      "path": "research/fresh-inputs/6321.json",
+      "bytes": 102664,
+      "sha256": "0c882ff5045bf6ce6053de7e0e9f535ff7cd34c53a20d9fc43880bd14e428d35"
+    },
+    {
+      "path": "research/fresh-inputs/6322.json",
+      "bytes": 153474,
+      "sha256": "2d5b5b23c203dad931e25e1158b9a8274cce18f820a582e00c0065727d8b26b2"
+    },
+    {
+      "path": "research/fresh-inputs/6323.json",
+      "bytes": 102178,
+      "sha256": "f171796b3c7fc72f3dc191ff664cc2bb15b3630a5a1b2d40c910a41a9cb30efd"
+    },
+    {
+      "path": "research/fresh-inputs/6324.json",
+      "bytes": 92167,
+      "sha256": "0273352cc1fcb80e8941f514964c6d71aa6e781491c4b528a615643b6c0de49b"
+    },
+    {
+      "path": "research/fresh-inputs/6325.json",
+      "bytes": 128799,
+      "sha256": "c4ee9f3b956efdeeed42da688d0b2cd4fe99baf19af9b599395adfefd5c3d12e"
+    },
+    {
+      "path": "research/fresh-inputs/6326.json",
+      "bytes": 115042,
+      "sha256": "9cc22858514884d793e2e9dcf37bb6470b53d3a987b8a4e9b2fdde691ede0d4d"
+    },
+    {
+      "path": "research/fresh-inputs/6331.json",
+      "bytes": 337201,
+      "sha256": "eac9435f96e3deb41dfc807a8d943b3963c826495ac166d0c63584402cb3ad3b"
+    },
+    {
+      "path": "research/fresh-inputs/6332.json",
+      "bytes": 285862,
+      "sha256": "e792b847f1fe4d450f8b24e2c1635d5b2acac59ac16c40a28091778d649092ac"
+    },
+    {
+      "path": "research/fresh-inputs/6333.json",
+      "bytes": 170140,
+      "sha256": "83babd6114f6425313da778b06c28a9b7c1eea66b881661750febd5be95ebd47"
+    },
+    {
+      "path": "research/fresh-inputs/6334.json",
+      "bytes": 307593,
+      "sha256": "39de0ee8df4463ecb43127898c74e3230aec98a3dfa159c5b6e7688fc9b00eae"
+    },
+    {
+      "path": "research/fresh-inputs/6335.json",
+      "bytes": 154036,
+      "sha256": "ca601b6315266391ee78919749bf367813f737e793bc7f73b15d4b14a9c1ee29"
+    },
+    {
+      "path": "research/fresh-inputs/6336.json",
+      "bytes": 221060,
+      "sha256": "22000f3157bd3e5786f2ebe082504d5f11554470c5a101a1515a58e73cd920e2"
+    },
+    {
+      "path": "research/fresh-launch-failure.json",
+      "bytes": 775,
+      "sha256": "509337d4516a2844dc3cd573df3b0e195629f757abe7ce518387812ae1b89841"
+    },
+    {
+      "path": "research/fresh-plan.json",
+      "bytes": 3497,
+      "sha256": "aa426c4bcfd849887f2e7f3da6f6be328585ecce3a476b07f466c901db3ce2ad"
+    },
+    {
+      "path": "research/fresh-summary.json",
+      "bytes": 187245,
+      "sha256": "80591845e7593722e00a9192ba1902db8b7a6f3477465458b7b0f733d85419ab"
+    },
+    {
+      "path": "research/fresh.py",
+      "bytes": 4577,
+      "sha256": "a5a6c7eaba8fd4170fb596a64b5003c32c44260d79ab1c07ebe201aa87ef078d"
+    },
+    {
+      "path": "research/history-plan.json",
+      "bytes": 1460,
+      "sha256": "3081b1109b48b9c079224c2ff86d2d2638e0fad8d83e9a70178a1b047b3830e6"
+    },
+    {
+      "path": "research/history-results.json",
+      "bytes": 10552883,
+      "sha256": "86a365c3fdde9be8b9bd1fc275257c5f69a3886295ea5d9acc83a2519fbe5b18"
+    },
+    {
+      "path": "research/history-source.diff",
+      "bytes": 3973,
+      "sha256": "8db17c1404f28e8bb763cbe292092232ef36849695b688da112bedee68f83717"
+    },
+    {
+      "path": "research/original_cutoff_plan_20261015.json",
+      "bytes": 1788,
+      "sha256": "cb0e3925098dceca1b5431508f1d03f77dec166c8c490f5ec5e65ab2b7959a56"
+    },
+    {
+      "path": "research/paid-input-manifest.json",
+      "bytes": 4222,
+      "sha256": "5b0c5867fe7fec2ba2eca8118a1b1a32230d900ab4bb67fcd0097fad0df8f5ee"
+    },
+    {
+      "path": "research/paid-inputs/4302.json",
+      "bytes": 30161,
+      "sha256": "78e737c1c7cb40cab80138f19f3c46d15b62e2b5e0611edb14147050915d3755"
+    },
+    {
+      "path": "research/paid-inputs/4303.json",
+      "bytes": 22488,
+      "sha256": "8bd0dc421b746dd6c190ffaf944b717e679baf6127691fa9ff6f863981a5bef9"
+    },
+    {
+      "path": "research/paid-inputs/4304.json",
+      "bytes": 21223,
+      "sha256": "b008c936057acd00fc8402c90a288c6bf756d7afe05fc975d7603ed50d9c30b4"
+    },
+    {
+      "path": "research/paid-inputs/4305.json",
+      "bytes": 22341,
+      "sha256": "802648c525a4556c599f23a1383335e7cc4fa8a54b943bb99a26414bea896b09"
+    },
+    {
+      "path": "research/paid-inputs/4306.json",
+      "bytes": 29907,
+      "sha256": "faf81f81eae93c85ed1e18cff012bc505db493dce2868e4bf332f16d16020d40"
+    },
+    {
+      "path": "research/paid-inputs/4312.json",
+      "bytes": 51521,
+      "sha256": "5a23804d64d2e1978563a5be73693dc96e57a121e30c816fd9a3bd6e1ec0837c"
+    },
+    {
+      "path": "research/paid-inputs/4313.json",
+      "bytes": 55981,
+      "sha256": "ac061c1b9fe9bd5c6a38659e14e5de7ca77a5867d6839bb06006f1bd516c8465"
+    },
+    {
+      "path": "research/paid-inputs/4314.json",
+      "bytes": 61010,
+      "sha256": "a09b61ad0ee3e3d6cbdb3ffd991e6029acf9c47d267105987a93b93faa415f39"
+    },
+    {
+      "path": "research/paid-inputs/4315.json",
+      "bytes": 67488,
+      "sha256": "3bd213eb247a412b9c1b6c8d5bed1cbcc127a1bc10167bb6a26b0fe1362a4db1"
+    },
+    {
+      "path": "research/paid-inputs/4316.json",
+      "bytes": 49822,
+      "sha256": "d4fb7e4f987f70f7d99cc4a590971b1032ca84c51fc5c9aa0533cb85449b5f05"
+    },
+    {
+      "path": "research/paid-inputs/4322.json",
+      "bytes": 102632,
+      "sha256": "ad90ea04368f35f7c98005fabb6c18a154383a2a14dfad5b8e2899d36ae0a4cd"
+    },
+    {
+      "path": "research/paid-inputs/4323.json",
+      "bytes": 126286,
+      "sha256": "9c2b6c9b1217d592f3af4111b45af0098b3c19addaace56b9c05c2da25e16082"
+    },
+    {
+      "path": "research/paid-inputs/4324.json",
+      "bytes": 182972,
+      "sha256": "fe99f69a0000399192da443faeb1b2fbb1752cdbf3a3cfe31cf775bb82a25417"
+    },
+    {
+      "path": "research/paid-inputs/4325.json",
+      "bytes": 127745,
+      "sha256": "5d5e8d0f5aa089b4bc7ad2ab485478b81cffb2dd9a6c5164d1172a66839ccd86"
+    },
+    {
+      "path": "research/paid-inputs/4326.json",
+      "bytes": 202404,
+      "sha256": "fe8a0df0396f4f59e5613a7c89095d26616256295b9b67bff18e8829209efb6f"
+    },
+    {
+      "path": "research/paid-inputs/4332.json",
+      "bytes": 138650,
+      "sha256": "769b3425737860bf7609cbda36a3cfe3b09d525da385550256338568e344ee5d"
+    },
+    {
+      "path": "research/paid-inputs/4333.json",
+      "bytes": 200639,
+      "sha256": "187fb6d301ce4e8e31ef568d1c92d8a77eaf238838327030509332b0d372781d"
+    },
+    {
+      "path": "research/paid-inputs/4334.json",
+      "bytes": 154107,
+      "sha256": "fd2796ac44b9ffe82bd0b72ce3d650d30224f6c716eed3be64ce86c675586b1a"
+    },
+    {
+      "path": "research/paid-inputs/4335.json",
+      "bytes": 434804,
+      "sha256": "c9b73844b12ea28a29ef98c7050a83dc5f84c6a423a598bc333e7f44b799bb77"
+    },
+    {
+      "path": "research/paid-inputs/4336.json",
+      "bytes": 152973,
+      "sha256": "c18125c8e0917e342a7d11bb6765460b406501f41dc5d77a24a46a4c10155b77"
+    },
+    {
+      "path": "research/prepare_fresh.py",
+      "bytes": 2311,
+      "sha256": "2b5e8a14b89c1cec52e5c345da62b39fd33a05276bc113b10c9a3fcb3102800b"
+    },
+    {
+      "path": "research/public-copy-import-failure.json",
+      "bytes": 658,
+      "sha256": "5e658263cdc5378dee2f6503fc73ba12a772e6bc34d2e57ed878bfbbe1918167"
+    },
+    {
+      "path": "research/public_copy_replay.py",
+      "bytes": 2855,
+      "sha256": "32e5f3a780371e62e8d1f60207889806c05219813594ffa412327d56c516c1d6"
+    },
+    {
+      "path": "research/qualification.json",
+      "bytes": 782,
+      "sha256": "be0318bd28e4a30da14c458175859df7f7649e61baf02de6ac44eea36ad837f7"
+    },
+    {
+      "path": "research/qualify.py",
+      "bytes": 1228,
+      "sha256": "5d0cad2479667a0a9ce366fdc075ff1a6d59f75cd1aedf58ce02eb543c0b479c"
+    },
+    {
+      "path": "research/quick_summary.py",
+      "bytes": 1243,
+      "sha256": "339f4342e4385770faf80d95c07d6d9c7e1d01978df4cf83b95966fc20826ae5"
+    },
+    {
+      "path": "research/readiness-plan.json",
+      "bytes": 1851,
+      "sha256": "9138ad1ac2b581cfe72758feb7b7b60632e46303f67d199c61faaedfaa656ef4"
+    },
+    {
+      "path": "research/readiness-results.json",
+      "bytes": 41184859,
+      "sha256": "dfdd5ae04c1dd54483f2d45c98857307c63958c9e9f17b8aedb6449abe71125f"
+    },
+    {
+      "path": "research/readiness-summary.json",
+      "bytes": 28527,
+      "sha256": "330b30f14f8acea6e7becc74ad837d9a793b57a4ac083e102e6fbdfe4568dc88"
+    },
+    {
+      "path": "research/readiness.py",
+      "bytes": 3744,
+      "sha256": "233dcbe71b9bdc4897d89d69c6983b1f03a14e2828291ff882fa2d466e08635d"
+    },
+    {
+      "path": "research/results.json",
+      "bytes": 10543795,
+      "sha256": "1924b5b0411d652105fe7a62f3726f5125cc34468a652ea50edd8aadd5af1617"
+    },
+    {
+      "path": "research/run.py",
+      "bytes": 2607,
+      "sha256": "6dc320c0d9362f0892a1735de55e11f212961aa235e807653387151313a71c2e"
+    },
+    {
+      "path": "research/run_history.py",
+      "bytes": 2766,
+      "sha256": "5b3f8bf8fff9a63b5df629ff0f8e4115f6a09ac6965aaf09534a47840407e51c"
+    },
+    {
+      "path": "research/runtime-size-review.json",
+      "bytes": 1111,
+      "sha256": "0bb381cb20a6b61ab1d4bcf133dabcfabb6abf8ee12abfef915ef2c51615fa4d"
+    },
+    {
+      "path": "research/screen-plan.json",
+      "bytes": 1234,
+      "sha256": "31e1957798245eb512254f29e07296dad7e27c20a5e400fc1d9bc750d16f377a"
+    },
+    {
+      "path": "research/screen-results.json",
+      "bytes": 25429,
+      "sha256": "3f0d9910950aa2d1803d1f7fc21dce087ef9edcf028557ec0183d4d8a0da0b6d"
+    },
+    {
+      "path": "research/screen.py",
+      "bytes": 4142,
+      "sha256": "c451979b78fd9674320dfba64f7c835ecd46faf0c933390d4dc52d2ab4846531"
+    },
+    {
+      "path": "research/source-review.json",
+      "bytes": 4785,
+      "sha256": "bda32915cdbc056fc5cb61df4fa93ef463f4111f106a3aab41b85e658b6b494f"
+    },
+    {
+      "path": "research/statistics-method.json",
+      "bytes": 888,
+      "sha256": "0ecce94d71ed0ccba723a814b1671be85d0bd156560ee2b671c08b82d3a9a811"
+    },
+    {
+      "path": "research/summarize.py",
+      "bytes": 3722,
+      "sha256": "98952cd57af4bf2cc822b37e51ecadab7f8d2811819f21c09a20a3188bf388b0"
+    },
+    {
+      "path": "research/test_final_product.py",
+      "bytes": 1044,
+      "sha256": "77fb0462453a9de1091cef6cd5250c6e2940173c95b8555a53cb7fe611381a22"
+    },
+    {
+      "path": "research/transfer-4302.json",
+      "bytes": 2009097,
+      "sha256": "0a71021e92faa27b49e3049f2201f85c3b662e457b6131546b8ce24fdb84b676"
+    },
+    {
+      "path": "research/transfer-4303.json",
+      "bytes": 2001060,
+      "sha256": "763cd42b8933e36dbbf4315b540b6e7e516eb4c3e191d2c2bfb51d8450de8e41"
+    },
+    {
+      "path": "research/transfer-4304.json",
+      "bytes": 1993116,
+      "sha256": "275fa44ec4c997e9066781af6e7484bdab8aac708846c2fffdfcf7dbd3c81691"
+    },
+    {
+      "path": "research/transfer-4305.json",
+      "bytes": 2038969,
+      "sha256": "2d7e9eb8493a00d6eb5e79fe6ceef6002df0ca859be7cecbac27fcd7a9561ccd"
+    },
+    {
+      "path": "research/transfer-4306.json",
+      "bytes": 3993449,
+      "sha256": "5f16e42c8edd373587f22e48587ac23c548ea1b5124c6efd98dd2a8c49f2926b"
+    },
+    {
+      "path": "research/transfer-4312.json",
+      "bytes": 3996755,
+      "sha256": "4ecec0725bb9d441502303f93e8f9d731e24ed6b8d5858397d77d5e0d381a226"
+    },
+    {
+      "path": "research/transfer-4313.json",
+      "bytes": 4007255,
+      "sha256": "6fd4963e345ec434f46d38c73a6b5da29131e3a2ad5baa314fc8740e804fae31"
+    },
+    {
+      "path": "research/transfer-4314.json",
+      "bytes": 3986142,
+      "sha256": "b74ac5920c9e31bdcba31bae2507a8ab29838c2de26adfc301386746391795de"
+    },
+    {
+      "path": "research/transfer-4315.json",
+      "bytes": 3993999,
+      "sha256": "0636f0e3e49b7a0f23c1d3efe33c961c1320fb8a8aad919a8450452acf9a4e6f"
+    },
+    {
+      "path": "research/transfer-4316.json",
+      "bytes": 3974737,
+      "sha256": "ebc51d065d65fa7b383d75424e6fb324c23caed5b8db78c4441a57997549bcda"
+    },
+    {
+      "path": "research/transfer-4322.json",
+      "bytes": 3990726,
+      "sha256": "d2bc5044a92fdfdee7433c7c1485f764d5150893f7db4ace0ad482674d7bc95d"
+    },
+    {
+      "path": "research/transfer-4323.json",
+      "bytes": 3971927,
+      "sha256": "1f8ffa2516d4b9c57c424006c9f9bba31e7e96562f891a8f40f77687235fed59"
+    },
+    {
+      "path": "research/transfer-4324.json",
+      "bytes": 3987892,
+      "sha256": "2dc0b02c97b2f9cc506beefd92e49e9c16fe529ec93f1105d73fa1c7b6a1d18a"
+    },
+    {
+      "path": "research/transfer-4325.json",
+      "bytes": 3990636,
+      "sha256": "f1fe02a0ea73b70e2d02aa5eab85b0990da43fd6dd91759a040b75c0f4d6d631"
+    },
+    {
+      "path": "research/transfer-4326.json",
+      "bytes": 3979227,
+      "sha256": "233f4eda569b2e67d2a559390ec3499b8ba0173bb1c447271ee163e8f5b285f6"
+    },
+    {
+      "path": "research/transfer-4332.json",
+      "bytes": 3994612,
+      "sha256": "e5d57d16209c1f89c8673ec1c0de478b6a82524e268782550c98872bc40d6c86"
+    },
+    {
+      "path": "research/transfer-4333.json",
+      "bytes": 3986273,
+      "sha256": "220251c1c9ad721d0aa8cc8f4cf2ccd9452beffe03efd2864367eecc6ca51437"
+    },
+    {
+      "path": "research/transfer-4334.json",
+      "bytes": 3977934,
+      "sha256": "c0641466d0e412ff61841fc223b3d29e6e95d7a7e15ee66ead068b3ff36d01e5"
+    },
+    {
+      "path": "research/transfer-4335.json",
+      "bytes": 3966129,
+      "sha256": "7b621a12902738e489506d52a6f2296a32a7e7b6307f16b2c52fba2431fa7242"
+    },
+    {
+      "path": "research/transfer-4336.json",
+      "bytes": 3982034,
+      "sha256": "2ec03fd0fc3bc303a71c10c416d612826af8a57502e8f06feb568c6bff794569"
+    },
+    {
+      "path": "research/transfer-completion.json",
+      "bytes": 31244,
+      "sha256": "558cd2bd592af6c47a03c314a7c13103d9a8e9de6ef986a80c41529946b2beda"
+    },
+    {
+      "path": "research/transfer-launch-failure.json",
+      "bytes": 206,
+      "sha256": "316630041ff853a8aeb5a1e711f70189de5574872e07bc791681fc67ad1ae617"
+    },
+    {
+      "path": "research/transfer-plan-initial-input-error.json",
+      "bytes": 1823,
+      "sha256": "a544f2c019d5b9020bbfee101c1efa5a6aa7fdaa63066e9d3147966b3dbef400"
+    },
+    {
+      "path": "research/transfer-plan.json",
+      "bytes": 2386,
+      "sha256": "76ffe444017f5af36497bb34b33d64fb8665895c30fe4bb309d5dc3f7386c548"
+    },
+    {
+      "path": "research/transfer-summary.json",
+      "bytes": 167232,
+      "sha256": "f2160f2d018b4297e653af9ead929a4c3f638ebe7ed4ba32c6869218e099bda4"
+    },
+    {
+      "path": "research/transfer.py",
+      "bytes": 2651,
+      "sha256": "7963527d608f0671932d6e82ff8622946b7b80047a431165adebd425e62ce704"
+    },
+    {
+      "path": "research/tt-plan.json",
+      "bytes": 1205,
+      "sha256": "f2ead135782220650c157b3b4bb987317113b12662aba8b866ae968b81db0e40"
+    },
+    {
+      "path": "research/tt-results.json",
+      "bytes": 8001797,
+      "sha256": "6ccd503783bb4d2eec643d8e576c8bfa350de0d7402196f7d760ad551dccb866"
+    },
+    {
+      "path": "research/tt-summary.json",
+      "bytes": 8715,
+      "sha256": "939ff3f08ec93811e937461ee5d7309866c63cdf8095563f95ad56eec24442e2"
+    },
+    {
+      "path": "research/tt.py",
+      "bytes": 1925,
+      "sha256": "4078efded7e8104fd56ed620b4601933e083689271727f534ec03deb37455b6c"
+    },
+    {
+      "path": "research/wall-changed-literal-children.json",
+      "bytes": 10041,
+      "sha256": "003f417e49654123a12489716ca3ca6aae8589a4edc32cb67a856621ee249945"
+    },
+    {
+      "path": "source/generic_chess/__init__.py",
+      "bytes": 3106,
+      "sha256": "6df435c3f0bbf52d13295f57c726fb4e426e73bfe118515893c06596145bf70b"
+    },
+    {
+      "path": "source/generic_chess/_native/native_attack.c",
+      "bytes": 2782,
+      "sha256": "1c66e7db196fdc282f3efe2cac4f890c46cc1d835f98b816b2b7fbd0e2add3ae"
+    },
+    {
+      "path": "source/generic_chess/_native/native_attack.h",
+      "bytes": 596,
+      "sha256": "19bbd55ecc38751138f81569714d8e935ef6f8779d0ac7810fa9cb9f039ad178"
+    },
+    {
+      "path": "source/generic_chess/_native/native_cancel.c",
+      "bytes": 643,
+      "sha256": "2c14d9c252dd0df981df9530f37f3f8be55f46ec91e2d2ab848159f36019b004"
+    },
+    {
+      "path": "source/generic_chess/_native/native_cancel.h",
+      "bytes": 426,
+      "sha256": "70ad31fea259a5a3223b215de266f35eb8ec5c30ffb9b1bb20751c27cdb6dc42"
+    },
+    {
+      "path": "source/generic_chess/_native/native_clock.c",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "path": "source/generic_chess/_native/native_clock.h",
+      "bytes": 389,
+      "sha256": "4d3cdbc602fba18384151e547ae0acc963d00ecd8758c466656e9cc05b4f1257"
+    },
+    {
+      "path": "source/generic_chess/_native/native_eval.c",
+      "bytes": 2085,
+      "sha256": "9ee81cb56b73d9e7c3d92f118dd2f34a4497f8b40d3d584c916518a1f2eb4450"
+    },
+    {
+      "path": "source/generic_chess/_native/native_eval.h",
+      "bytes": 1591,
+      "sha256": "dcaaf9147b2e80d5369195bffaf811b2ccba7c45217f88dcec6ab950449fc3cb"
+    },
+    {
+      "path": "source/generic_chess/_native/native_hash.c",
+      "bytes": 6325,
+      "sha256": "7d04afb8d290d5c6494826668f3ff6a104b24123271bc88996c48260d6c3f84b"
+    },
+    {
+      "path": "source/generic_chess/_native/native_hash.h",
+      "bytes": 1923,
+      "sha256": "2166465408a4dedfb819553c2448d1b42cae52c9a4d905ac8df6f2cfdee1648c"
+    },
+    {
+      "path": "source/generic_chess/_native/native_module.c",
+      "bytes": 358941,
+      "sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3"
+    },
+    {
+      "path": "source/generic_chess/_native/native_movegen.c",
+      "bytes": 9084,
+      "sha256": "53f0073f2be806fb3c7da8250d4b1a5f826e9cbfa1c7b7cab2f2cf374e615369"
+    },
+    {
+      "path": "source/generic_chess/_native/native_movegen.h",
+      "bytes": 1363,
+      "sha256": "ee77bca3f2cd53977bebeeb9ff8cf5b6ebbcd12ab8cd38ccfc20e6eb8f31ffd4"
+    },
+    {
+      "path": "source/generic_chess/_native/native_payload.c",
+      "bytes": 6594,
+      "sha256": "1b38bb6cb1e3be54a631b801099720a5a57209b2278bc16c3e6ac6dbcc58895b"
+    },
+    {
+      "path": "source/generic_chess/_native/native_payload.h",
+      "bytes": 225,
+      "sha256": "7fd8211ba55ce236093b879db993f8b8c4f915ea0b879ee286020827415ce053"
+    },
+    {
+      "path": "source/generic_chess/_native/native_perft.c",
+      "bytes": 5333,
+      "sha256": "2322c3263978dc9f2ffe1c93648b824ab7fb296d57d2e6ef713e0cc7b3acb4c7"
+    },
+    {
+      "path": "source/generic_chess/_native/native_perft.h",
+      "bytes": 1975,
+      "sha256": "908426cb46e2975ac9cb8e906fdfbb70a774674ff09c3320ed56c46932305839"
+    },
+    {
+      "path": "source/generic_chess/_native/native_rules.c",
+      "bytes": 4525,
+      "sha256": "4be0913527e33538157d33d7bd46cba5469fcc2470776fc2c681d2446ef11ab2"
+    },
+    {
+      "path": "source/generic_chess/_native/native_rules.h",
+      "bytes": 1335,
+      "sha256": "29150749766df82ef5e92612c48136fa37564a5bff3da0cf2db1bd5ca9dd0983"
+    },
+    {
+      "path": "source/generic_chess/_native/native_search.c",
+      "bytes": 20154,
+      "sha256": "b81cad8c71713de89a4ccb09c63c553c257090dc97dbbecf593a4edde99e8810"
+    },
+    {
+      "path": "source/generic_chess/_native/native_search.h",
+      "bytes": 3799,
+      "sha256": "7125826b530c8157d0a436c4c714424147fe2a5a50c6b5148eaf6b3b2f4a6fcd"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_key.c",
+      "bytes": 6092,
+      "sha256": "87546b45274c858d46e90d2d70957fd2b6e54c13ad35c3bb4d55f4166f9e5ac9"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_key.h",
+      "bytes": 499,
+      "sha256": "91479e8f0d19cc3ce2df1151160340f91bbff6bcc376eacdd4b417200a8f3bd7"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_rules.c",
+      "bytes": 118031,
+      "sha256": "43a5026aead03a082e251f5e32e88a4a9e29d817eaa4e007533c585329af4bb4"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_rules.h",
+      "bytes": 7946,
+      "sha256": "a441281f9fc99381162754775f797a68a1e63f127e20089abf226b38ef5f640a"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_runtime.c",
+      "bytes": 48394,
+      "sha256": "2b3fc2eaa4cf93d465d4b6535925dd9a40c7d9d3a7bd4f58bc0fb602ebfd06bc"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_runtime.h",
+      "bytes": 4528,
+      "sha256": "ca801d1d022bc8aaa3d47f98aefe7da3afd0f76a4e8883ca9f2abf1e791b2127"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_state.c",
+      "bytes": 4180,
+      "sha256": "2c5a6d42cf7ae98cbd19a939c16ab1c3ade98ace265ed669218045fedf1f61c4"
+    },
+    {
+      "path": "source/generic_chess/_native/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "source/generic_chess/_native/native_sha256.c",
+      "bytes": 3467,
+      "sha256": "bff37893342585cd66ac31eead96a82b924265f7e27db5ec0b283720012053b9"
+    },
+    {
+      "path": "source/generic_chess/_native/native_sha256.h",
+      "bytes": 472,
+      "sha256": "072a44c795a9d5eef39d35463ce3b76e64a903558828f5c0a0d5c41c2366e269"
+    },
+    {
+      "path": "source/generic_chess/_native/native_state.c",
+      "bytes": 9400,
+      "sha256": "39da09a189b8ba8e6d6c86409ab9b89b076bce7de9b06bcab06c21e46d29b357"
+    },
+    {
+      "path": "source/generic_chess/_native/native_state.h",
+      "bytes": 1705,
+      "sha256": "d8534e75e67976506d8d26eabe56dfd8435735cb9af30a5f1f4892b31d46767c"
+    },
+    {
+      "path": "source/generic_chess/_native/native_tt.c",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "path": "source/generic_chess/_native/native_tt.h",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "path": "source/generic_chess/_native/native_types.h",
+      "bytes": 9082,
+      "sha256": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0"
+    },
+    {
+      "path": "source/generic_chess/ai/__init__.py",
+      "bytes": 587,
+      "sha256": "4639cc72b2c9818b8c4314784524233e3d759d01e099a531acd035b60e57a098"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/__init__.py",
+      "bytes": 514,
+      "sha256": "4e5ed98dc51ed37be58f720e381e0621611a42631036c5d0719bc93d21c46b98"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/backend.py",
+      "bytes": 1206,
+      "sha256": "50190e20f6443accf42b67d9f32c5624e0c2c95fea05f61f6be15241d1c30e1a"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/native_legality.py",
+      "bytes": 15480,
+      "sha256": "e356483c0c795c1813d4e60435dd3f04b35bd1c58dd6d0847ce0fcb047ca4b2d"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/ordering.py",
+      "bytes": 7834,
+      "sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/player.py",
+      "bytes": 11547,
+      "sha256": "996cdfeb09688b7f5720d6b25f6843477a81fa1fa31a4fab65cdd7e1ba8b3944"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/quiescence.py",
+      "bytes": 5039,
+      "sha256": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/search.py",
+      "bytes": 53708,
+      "sha256": "9b9f5dbb542259f24912826bc4c360d5b083dbd7438c9b1a1eafef7f55be73d7"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/snapshot.py",
+      "bytes": 678,
+      "sha256": "ce38bc498bae79216b6fc53bf6a14ea1d2450d22d659ca924cc3f35cfcc76f82"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/statistics.py",
+      "bytes": 5662,
+      "sha256": "afd20e2f34f602b8c1d53bbb8c7debe1abdd5763bd2ce46d6f15d80443abb0db"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/transposition.py",
+      "bytes": 3406,
+      "sha256": "c7762df8cc99012ca67aceb14d50c516e8f4e40c3ee2107e64616830920f4a34"
+    },
+    {
+      "path": "source/generic_chess/ai/alphabeta/tuning.py",
+      "bytes": 2372,
+      "sha256": "d283621e5bc62232c7c0a5b45a4859911f500bc244aca0e177afe3148676349b"
+    },
+    {
+      "path": "source/generic_chess/ai/audit_instrumentation.py",
+      "bytes": 2045,
+      "sha256": "5ca98c7a556e8ab7f81dc4022df1984d9f32cfefad003b367a842a45cb56261a"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/__init__.py",
+      "bytes": 1064,
+      "sha256": "6ff122d016f011140f9c860a5fb7fba0711edcd8d9ea3d1e532b5b5dfe6d908b"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/__main__.py",
+      "bytes": 2202,
+      "sha256": "e3654157f08345d2e49ce04ce187fa59d61c4323f31c417dfd72fa7da41fb37e"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/audit_report.py",
+      "bytes": 10668,
+      "sha256": "09c5fefa1bbc5e85db0a480456ae0282f88c2852009a945d791db4d020ab169a"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/audit_schema.py",
+      "bytes": 5924,
+      "sha256": "4cd30cc591a2fdee5a64161a866bc56703969313b3a9f1b9204b721aa83ab658"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/audit_suite.py",
+      "bytes": 15116,
+      "sha256": "1bea556c9fa624f8349f91f2fb618a2405996325b4fcdbd23ee6dd029b39df93"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/core_profiling.py",
+      "bytes": 4040,
+      "sha256": "eb5be05589375275984535bf91a05c9d264f03d3407cfc45e53f3cc54b889475"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/correctness_corpus.py",
+      "bytes": 3418,
+      "sha256": "4cecc355fbad2c3de546ba51c5230d59d2ee2b5c2bad1d1cee9bd29534453027"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/native_readiness.py",
+      "bytes": 27836,
+      "sha256": "f055c90842e36fcf292864484f7dee0a918c8549ef4a3b034e83f8bf76ab57f2"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/position_mining.py",
+      "bytes": 10145,
+      "sha256": "892ca838f559babb1672fb729548182475105edff35950f453f3c622d563bc69"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/profiles.py",
+      "bytes": 1552,
+      "sha256": "6d779474265656fde5d02ceed017d7747fa1091aa071cbfa9a7e24fd20b8b239"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/runner.py",
+      "bytes": 11430,
+      "sha256": "00d09449253d19099947c54c865a3a481ba645366b567535b57f7d4b1b91d4b7"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/suite.py",
+      "bytes": 2731,
+      "sha256": "76a476b6a6d6780e36574239b3093f2e9765d28355ef9076156218389634f3d2"
+    },
+    {
+      "path": "source/generic_chess/ai/benchmark/targeted_fixtures.py",
+      "bytes": 8857,
+      "sha256": "79ec3265edb69d2e0c348a5dfff4e238ff92f9a54e9f7fe9d38b1c53aaeae463"
+    },
+    {
+      "path": "source/generic_chess/ai/budget.py",
+      "bytes": 3699,
+      "sha256": "28028a9831f8ed7c64939b5926d610377c2da598dc54764d04da6f965197d772"
+    },
+    {
+      "path": "source/generic_chess/ai/cancellation.py",
+      "bytes": 1833,
+      "sha256": "80e0917fb39f83eb599dbad9dc570862e4ea7bc628b51b796f0a587944644f55"
+    },
+    {
+      "path": "source/generic_chess/ai/cli/__init__.py",
+      "bytes": 54,
+      "sha256": "cf1bbb67fd136a692bcc82137cf10138496120a56165d58ae2bbd09e2abbb59e"
+    },
+    {
+      "path": "source/generic_chess/ai/cli/analyze_ruleset.py",
+      "bytes": 2426,
+      "sha256": "2992b263ec5e080ca555d092c86723b1ea26bda99e077911a0267c79f9fdd293"
+    },
+    {
+      "path": "source/generic_chess/ai/cli/audit_native_readiness.py",
+      "bytes": 6650,
+      "sha256": "4d4dcd2598da3cc0f5eaeec23c86d81c56375609bbce1dea0a9f922dc8860128"
+    },
+    {
+      "path": "source/generic_chess/ai/cli/benchmark_alphabeta.py",
+      "bytes": 5233,
+      "sha256": "c41255f4ca0536d6deed0cc5e0194290a1b5c02c4b32998537adc5a46076dfb6"
+    },
+    {
+      "path": "source/generic_chess/ai/decision.py",
+      "bytes": 3700,
+      "sha256": "ab390ea8830f682546da3ea0df7033589b9475373dbd2312321fbe480d1e958d"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/__init__.py",
+      "bytes": 493,
+      "sha256": "f18df89e388d106079e10d23fa0773fd5909d2fd6ea4338d513ff05b49837d95"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/analyzer.py",
+      "bytes": 3684,
+      "sha256": "ed8d7b0046a568253601b818ae1b030d1b3c4b8c26229e7dd5037ede29013683"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/cache.py",
+      "bytes": 8797,
+      "sha256": "6f9af3f1163a0028197380691d28824c3887dde53a5a0b7df015cdf8a5863ca9"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/config.py",
+      "bytes": 1303,
+      "sha256": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/diagnostics.py",
+      "bytes": 2082,
+      "sha256": "a807fc93a664aa6a73535baa237d25b4c74766f0b7f4ae3a4c686f9b8d303a44"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/evaluator.py",
+      "bytes": 6558,
+      "sha256": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/mobility.py",
+      "bytes": 6257,
+      "sha256": "828a4f1a9fa93a48955e98042dd976d69f4305a45fe87e86455b22a1b16c8d83"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/movement_graph.py",
+      "bytes": 6120,
+      "sha256": "254fb838e0fd58de2e71d0a2c39154a2773d9b962eaaa5b0aeafe970896f287b"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/native_compat.py",
+      "bytes": 2077,
+      "sha256": "fd0c33f7ca00a70e656a2b61ce56421e83419d94f1bd78a4eb995f56c6cb7e85"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/profile.py",
+      "bytes": 6239,
+      "sha256": "4a87a2e777c9fc6453510433f03203939dce5a8e514e4e71546c716684af31dc"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/semantic.py",
+      "bytes": 16148,
+      "sha256": "abf5237529873fef30e5e4d9d7120efcc98507e2a979d3647c3f1c89518dba7a"
+    },
+    {
+      "path": "source/generic_chess/ai/evaluation/semantic_attacks.py",
+      "bytes": 2359,
+      "sha256": "a9f2b952941e40a44bb22a7a1681b80ecfe1745826f1a824fe2b959172f8e9c6"
+    },
+    {
+      "path": "source/generic_chess/ai/limits.py",
+      "bytes": 1630,
+      "sha256": "f6d79d01b419b23cbb8931401272f40100ac8d5338e68ccf240baf26e725a524"
+    },
+    {
+      "path": "source/generic_chess/ai/player.py",
+      "bytes": 631,
+      "sha256": "1ecffac774344bb854ec4482e3dc7aa566df30c68e94edfdc22fb27a90c3a939"
+    },
+    {
+      "path": "source/generic_chess/benchmark/__init__.py",
+      "bytes": 1178,
+      "sha256": "b6844ffea56726c9770dee1abe9a23294f2dcafd8dd5f07ef4310723a3378bd3"
+    },
+    {
+      "path": "source/generic_chess/benchmark/agent_ladder.py",
+      "bytes": 3286,
+      "sha256": "c5eabc6f8f178f89159dd7636f4640b38d938661be0b7b64f6f30024f786e910"
+    },
+    {
+      "path": "source/generic_chess/benchmark/game_quality.py",
+      "bytes": 19325,
+      "sha256": "e17f218f7f5db1f758037e2e9b874b2709f9cad109e0eb7b1896c014a966c0f8"
+    },
+    {
+      "path": "source/generic_chess/benchmark/mate_capacity.py",
+      "bytes": 1064,
+      "sha256": "8a567bbca165ac6dad54937d4f3cc80a3ff88a59bb22efc7dac463aee6ea3991"
+    },
+    {
+      "path": "source/generic_chess/benchmark/minimal_generator.py",
+      "bytes": 7818,
+      "sha256": "3d103871c49c3d60d07feeac69798e11beedcc1c32c8c18fbad4607167aca366"
+    },
+    {
+      "path": "source/generic_chess/benchmark/policy_tape.py",
+      "bytes": 1131,
+      "sha256": "8c9e9164cc68857009fcadc23e0159a30cb99e7d00ef140c9fe56feeee0aa862"
+    },
+    {
+      "path": "source/generic_chess/benchmark/qualification.py",
+      "bytes": 74265,
+      "sha256": "f0bcaf9c0bbc911291ead77db54437e53a72ff58522de37a690743dba468f92f"
+    },
+    {
+      "path": "source/generic_chess/benchmark/strength_response.py",
+      "bytes": 38105,
+      "sha256": "1a7ca0b0f0116914f208a0c4de1b912c882cfe8c31406e2060e64ee0dbdd09b7"
+    },
+    {
+      "path": "source/generic_chess/benchmark/tactical_probe.py",
+      "bytes": 4128,
+      "sha256": "70eddfde7891f21c4a7e52711b3b2d3ce4f648052ae7ec6c384f068c9d4d6109"
+    },
+    {
+      "path": "source/generic_chess/cli/__init__.py",
+      "bytes": 72,
+      "sha256": "80861001d3fa929fa6e375119278f3f48a0e86a5983c2a9e28d60e2d7875e691"
+    },
+    {
+      "path": "source/generic_chess/cli/play.py",
+      "bytes": 11799,
+      "sha256": "f0096203bd478acee68d2fad59521f754790f6c20d84b378028a68cd9f39c7fc"
+    },
+    {
+      "path": "source/generic_chess/cli/render.py",
+      "bytes": 2800,
+      "sha256": "92b464f4a55a1055d89341e56c9f8d3e608a7e30f9c2a5fd290ae30bee693859"
+    },
+    {
+      "path": "source/generic_chess/cli/replay.py",
+      "bytes": 2264,
+      "sha256": "2097557e5ddd7c4dbbc06020b6de01c509c0c93e911677610f6947c49b6b7c44"
+    },
+    {
+      "path": "source/generic_chess/clock.py",
+      "bytes": 6309,
+      "sha256": "a73f27960359026680634a03edbdd517a82745666fe8c7ba1379bffcc4bb26b0"
+    },
+    {
+      "path": "source/generic_chess/core/__init__.py",
+      "bytes": 38,
+      "sha256": "f67a2ff6edc2f59a2e612dbb7e54bfc6d7fca0e12eaef4ff692ce214c9b1451f"
+    },
+    {
+      "path": "source/generic_chess/core/actions.py",
+      "bytes": 6371,
+      "sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285"
+    },
+    {
+      "path": "source/generic_chess/core/adjudication.py",
+      "bytes": 10224,
+      "sha256": "d8ef273b4e776ffe565d3c0ebde0dfec4eb21bb18441ce88ef0698592fd137fa"
+    },
+    {
+      "path": "source/generic_chess/core/attacks.py",
+      "bytes": 4092,
+      "sha256": "51faa8f9839e47e70715f74e70a4e22d97f7c550a6a9ed07e7ce1169ccac9907"
+    },
+    {
+      "path": "source/generic_chess/core/capture_pressure_trace.py",
+      "bytes": 10924,
+      "sha256": "f87f3d2319c66dab4e1872edb3ae1788fe07f0e7c23061881e28a3b276f819a5"
+    },
+    {
+      "path": "source/generic_chess/core/capture_sources.py",
+      "bytes": 16145,
+      "sha256": "b2cb7d885a02540fd2cd4d53523b54c99b88fb2946c5184ac5f988e0b3eedf65"
+    },
+    {
+      "path": "source/generic_chess/core/coordinates.py",
+      "bytes": 4600,
+      "sha256": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9"
+    },
+    {
+      "path": "source/generic_chess/core/declarations.py",
+      "bytes": 7599,
+      "sha256": "5b7b957ce2e382ed1d8ee6c4b7fcd238857a21deac59fdab4680a97b17b7965f"
+    },
+    {
+      "path": "source/generic_chess/core/errors.py",
+      "bytes": 892,
+      "sha256": "95603aebe229fbe93c973703637f0f52b491679a5660e40cfae566f0b048e5c2"
+    },
+    {
+      "path": "source/generic_chess/core/history_cycle_trace.py",
+      "bytes": 17171,
+      "sha256": "5bcc409ac1e4029e9005271e8d2939d7849b626a92422d71aeeca1749f531299"
+    },
+    {
+      "path": "source/generic_chess/core/history_provenance.py",
+      "bytes": 8819,
+      "sha256": "2f951fcaaf462e601ef26eefeec521b3485a078f8038584f76941f3c516946f1"
+    },
+    {
+      "path": "source/generic_chess/core/history_recapture_trace.py",
+      "bytes": 6289,
+      "sha256": "cb911ac7e426a15105f9f432647d069ce6ce8cf72f1a659bff51fe9969bec5e8"
+    },
+    {
+      "path": "source/generic_chess/core/identity.py",
+      "bytes": 7501,
+      "sha256": "16a2f57e7c15bd616d751b7fe07b81bd374d0bbe2c71c5ebc3ebfce3e8395043"
+    },
+    {
+      "path": "source/generic_chess/core/keys.py",
+      "bytes": 3641,
+      "sha256": "4551d952499dde151abf771e77908b3186a552389c8a5d58e86364ce77d1d86b"
+    },
+    {
+      "path": "source/generic_chess/core/lazy_transitions.py",
+      "bytes": 5080,
+      "sha256": "8f92f5c77084951658ef298331e77996f0855914c60a77c8bd2879ee5652b186"
+    },
+    {
+      "path": "source/generic_chess/core/movegen.py",
+      "bytes": 13068,
+      "sha256": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3"
+    },
+    {
+      "path": "source/generic_chess/core/movement.py",
+      "bytes": 2808,
+      "sha256": "b9c922b13d584adf76eb7f9af056747ea01789e49ab1b6015491727318cf64a8"
+    },
+    {
+      "path": "source/generic_chess/core/pieces.py",
+      "bytes": 1363,
+      "sha256": "d5f71951902d98df50319bdad4cece4d9f9a7455872bf07b59ce06d0c2894d23"
+    },
+    {
+      "path": "source/generic_chess/core/position.py",
+      "bytes": 4748,
+      "sha256": "552a447c2fede326c6b5f309b0f50f0bd19b4d580cedef8aff835b73c34dd2b6"
+    },
+    {
+      "path": "source/generic_chess/core/repetition.py",
+      "bytes": 518,
+      "sha256": "943569c5be096bb4c49f415edfaa3b19d79d3fba634a3eb0f3de91f4d7da6e81"
+    },
+    {
+      "path": "source/generic_chess/core/search_runtime.py",
+      "bytes": 61552,
+      "sha256": "7f6b97ec826b144fe225a7407f4b7fa6f77bf08b2785d0e3563f3321ecae8297"
+    },
+    {
+      "path": "source/generic_chess/core/semantic_executor.py",
+      "bytes": 82110,
+      "sha256": "eb87d5627059b15205fa07b3eada54b3a521a9e3d68a3b72624b4e9f8b7ee9ec"
+    },
+    {
+      "path": "source/generic_chess/core/terminal.py",
+      "bytes": 20763,
+      "sha256": "51e9982aa4a268adcf5ca74f5c2dd840f6bc5c63d82a645f3565e884c5a2b0fa"
+    },
+    {
+      "path": "source/generic_chess/core/transition.py",
+      "bytes": 9538,
+      "sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682"
+    },
+    {
+      "path": "source/generic_chess/demo/__init__.py",
+      "bytes": 29,
+      "sha256": "60491980632dff5b26c485c8d2c493863a5aa31e4a2cb1631d4aa7ce59a7d83f"
+    },
+    {
+      "path": "source/generic_chess/demo/headless_demo.py",
+      "bytes": 6043,
+      "sha256": "35cdc691b31e98accaad5ed7a9d36926eeed55f5f8e038d81a9dff2d81d5e9b3"
+    },
+    {
+      "path": "source/generic_chess/generation/__init__.py",
+      "bytes": 59,
+      "sha256": "31fd8293eee14b80ebcec800f8ce89c8ff73655a7153d0116e09fcd7e5dc172f"
+    },
+    {
+      "path": "source/generic_chess/generation/config.py",
+      "bytes": 2616,
+      "sha256": "bdc34605d83cb8012467e6be053a950ff23088fce0a4279e26515f593fd68f7e"
+    },
+    {
+      "path": "source/generic_chess/generation/drop_derivation.py",
+      "bytes": 486,
+      "sha256": "e95b892b04c35d27b125324bbb62816ac24bf25e583c2c7a87b431f14253b486"
+    },
+    {
+      "path": "source/generic_chess/generation/filters.py",
+      "bytes": 3023,
+      "sha256": "ee6bf739227085fb82ca8ffc258913e22cea26c11b90f8bc0b95953602de9aa2"
+    },
+    {
+      "path": "source/generic_chess/generation/generator.py",
+      "bytes": 7250,
+      "sha256": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70"
+    },
+    {
+      "path": "source/generic_chess/generation/piece_generator.py",
+      "bytes": 6539,
+      "sha256": "dc21765d9162772b7e4572c9bd53850489e8a4606f145d47a2a94e146958d47f"
+    },
+    {
+      "path": "source/generic_chess/generation/presets.py",
+      "bytes": 3068,
+      "sha256": "8d1db231eba10fe950ed0db4fbfdafb45e5c337f55a388d9618a2688807e0bb3"
+    },
+    {
+      "path": "source/generic_chess/generation/promotion_derivation.py",
+      "bytes": 1312,
+      "sha256": "9b78542912c8231e543879ce34bc44d13e69881a5e0ea26377d0f4f4350a0d2e"
+    },
+    {
+      "path": "source/generic_chess/generation/report.py",
+      "bytes": 1061,
+      "sha256": "7dfb276e8f22f4597ade5fc72ece89e62cb179c923dc1cd96ff98364c5097947"
+    },
+    {
+      "path": "source/generic_chess/generation/setup_generator.py",
+      "bytes": 1826,
+      "sha256": "623703079a5563e84169f8bf27af3005e4b92adabdefd62a0bf41480a0322fe2"
+    },
+    {
+      "path": "source/generic_chess/learning/__init__.py",
+      "bytes": 876,
+      "sha256": "7e8db7a8cf390e8e2a9e5aa8e347dbca8284bb238c95c19389deecc1bb8ab452"
+    },
+    {
+      "path": "source/generic_chess/learning/alphasho_bridge.py",
+      "bytes": 7936,
+      "sha256": "849b1be7627f420eea851215f6dddc514eb5ba2391709964a5449327b36c46e5"
+    },
+    {
+      "path": "source/generic_chess/learning/arena.py",
+      "bytes": 74057,
+      "sha256": "5f0de35e2ac040a03f6e5f2f2daa48cef28418b86276421ed194c53e63c2dde8"
+    },
+    {
+      "path": "source/generic_chess/learning/compact_checkpoint.py",
+      "bytes": 3590,
+      "sha256": "615d6950e9805b266dbcddac7e058ccfa373bae810a6249907a42e9dc60b9a74"
+    },
+    {
+      "path": "source/generic_chess/learning/diagnostics.py",
+      "bytes": 41301,
+      "sha256": "8561be3154b21ac479a8386a887ef30c78265e80e51f6f12fedce0904b2bd398"
+    },
+    {
+      "path": "source/generic_chess/learning/experiment.py",
+      "bytes": 20034,
+      "sha256": "db09c2f2d0dfbbb73635c7fd776cd5f28ea6c2b52e706c540950a7ec534d0233"
+    },
+    {
+      "path": "source/generic_chess/learning/features.py",
+      "bytes": 13279,
+      "sha256": "b793b6ed3f507c19fea625ff643d1e74570411d01a9815d56f60e7eba6df0857"
+    },
+    {
+      "path": "source/generic_chess/learning/gumbel_mcts.py",
+      "bytes": 25449,
+      "sha256": "ddb474fbbaf746a0b31e44b7827fe25e41c179a659e491164844cba52334cb78"
+    },
+    {
+      "path": "source/generic_chess/learning/leverage.py",
+      "bytes": 58469,
+      "sha256": "e95d1ee0822b08d05a097f4e5843ebfb3b453b30d7df69f6296d2eac33732bd5"
+    },
+    {
+      "path": "source/generic_chess/learning/material.py",
+      "bytes": 19641,
+      "sha256": "56dbcea269ff12ea7b731bc55b7d7212c7ae448dd3edeec272af69fb93a3aae8"
+    },
+    {
+      "path": "source/generic_chess/learning/nonlinear.py",
+      "bytes": 10015,
+      "sha256": "bf33824fa411d90cb3c8ecfae42045a84eb37abf23b2a9dbb2f60951f85810a1"
+    },
+    {
+      "path": "source/generic_chess/learning/openings.py",
+      "bytes": 6473,
+      "sha256": "8403430c175c05cf6bdab248218a7a2957c4f84fedf248fe4a2ad18765f55d31"
+    },
+    {
+      "path": "source/generic_chess/learning/phase18.py",
+      "bytes": 20278,
+      "sha256": "8c2674d5968f06f50adc173c33bd7226ed853bde39f8fac4a7175fe9e467807b"
+    },
+    {
+      "path": "source/generic_chess/learning/policy.py",
+      "bytes": 18789,
+      "sha256": "30732aac8b209b302c8c310bd18c771b7de434edde3d7e2ca7b2232b531e00be"
+    },
+    {
+      "path": "source/generic_chess/learning/policy_v1.py",
+      "bytes": 14874,
+      "sha256": "b2e52977d2cd16ca7a952a40f6ce3a6f239713f59ffd44e1c2641f6fc1f8430b"
+    },
+    {
+      "path": "source/generic_chess/learning/round5_benchmark.py",
+      "bytes": 61105,
+      "sha256": "d1e0dc788e4edfcccc46a2fe71e0cefab5395be9515236b71ead5cfb178a28c9"
+    },
+    {
+      "path": "source/generic_chess/learning/round5_corrective_r1.py",
+      "bytes": 30970,
+      "sha256": "c01f5d96547ab20e97d9836fa9171bb6217dc34d32713586847c88b9abd1189f"
+    },
+    {
+      "path": "source/generic_chess/learning/round5_corrective_r1_2.py",
+      "bytes": 39441,
+      "sha256": "9b1ced29b9d1e98bba06c3acd60a4d1d683bcc58d8cdf9efe49c9fc05fbd1308"
+    },
+    {
+      "path": "source/generic_chess/learning/round5_corrective_r1_3.py",
+      "bytes": 30526,
+      "sha256": "0dd15b98287681757443dea8727fea89f8d07de07ac9d6d693135ea7dce3d568"
+    },
+    {
+      "path": "source/generic_chess/learning/round5_corrective_r1_4.py",
+      "bytes": 16521,
+      "sha256": "9f7b6629d2e0ea61d78a9e1fcf6aec52582a3ad20fcf5714f08946a2116830a6"
+    },
+    {
+      "path": "source/generic_chess/learning/selfplay.py",
+      "bytes": 9122,
+      "sha256": "f51f0451475e53f2b90690dd68d7d2139b4fca65ba1610550fe2aa87b44663cf"
+    },
+    {
+      "path": "source/generic_chess/learning/serialization.py",
+      "bytes": 456,
+      "sha256": "ff8a92df82ce8652dd13df173d4288e6a5ce0e226879abef88af208f332f112f"
+    },
+    {
+      "path": "source/generic_chess/learning/shogi_certification.py",
+      "bytes": 31453,
+      "sha256": "d0c9b17a3d099ca76f467a82e81f9f23c2476dba71b574fc01c81465b58d54ae"
+    },
+    {
+      "path": "source/generic_chess/learning/shogi_rules.py",
+      "bytes": 21486,
+      "sha256": "f4f770819ca87e74f30659eaed5f2e3195127a616e6cd09427737d27fccabd6f"
+    },
+    {
+      "path": "source/generic_chess/learning/shogi_semantic_rules.py",
+      "bytes": 2889,
+      "sha256": "4ce44ebb324e82f233a60ec3bbff000b4e397cdbb5412c1442753d43435ff53d"
+    },
+    {
+      "path": "source/generic_chess/learning/statistics.py",
+      "bytes": 1080,
+      "sha256": "29efe918d2468c25e9ad3796dbd159b83531772ac59700ebbf67e0b55aa0ce11"
+    },
+    {
+      "path": "source/generic_chess/learning/tdleaf.py",
+      "bytes": 8462,
+      "sha256": "e1fc975cf688a3129328fe31a53ca896a223ca5af2f785631c3666cfce713fdb"
+    },
+    {
+      "path": "source/generic_chess/learning/trajectory.py",
+      "bytes": 6075,
+      "sha256": "c544e1197c25be7a1fb367beb9e2584ce5c5721c36178c4c1a6b686106ba6747"
+    },
+    {
+      "path": "source/generic_chess/native/__init__.py",
+      "bytes": 4832,
+      "sha256": "17ec452a105b18b85efffb6a88fac8229921e8ec903857e9b83636361a5d3b5e"
+    },
+    {
+      "path": "source/generic_chess/native/adapter.py",
+      "bytes": 16448,
+      "sha256": "f649b9e40590720ebe8ffa4bdf6d212299b11d87d36f6f90430d12ae354383a0"
+    },
+    {
+      "path": "source/generic_chess/native/compiler.py",
+      "bytes": 48744,
+      "sha256": "2c64b953a54d5cc18b6474bf320cf823aafec32ff1347688cdb70e46b4f0114d"
+    },
+    {
+      "path": "source/generic_chess/native/differential.py",
+      "bytes": 4266,
+      "sha256": "93bba32b7ea33916fdae5b6d3f5eafb7c98ef02ac953458fcff9ac034ef28d8a"
+    },
+    {
+      "path": "source/generic_chess/native/engine.py",
+      "bytes": 7167,
+      "sha256": "6d94326951b5f0d3a49cf7af48f037c445546c3b83efa339c6f64dcf9b45d641"
+    },
+    {
+      "path": "source/generic_chess/native/mirror.py",
+      "bytes": 13022,
+      "sha256": "1038851395f0de1014c61dfb7b105c4b5ba7f207acff6d8dc5d3cc3d0aa0a0da"
+    },
+    {
+      "path": "source/generic_chess/native/phase2c_differential.py",
+      "bytes": 5250,
+      "sha256": "32a92982c53ab3f4d522deaf4643750b30f119e48315e80e053db687df9bd38f"
+    },
+    {
+      "path": "source/generic_chess/native/reference.py",
+      "bytes": 5748,
+      "sha256": "1f725730529baead19ed6a377b5f705e41368f26636e0133927735d94a81c7ae"
+    },
+    {
+      "path": "source/generic_chess/native/search.py",
+      "bytes": 4834,
+      "sha256": "09ac89bcc3da4359813f4470f13f728e56e8cfa3d4ac3d0609f7108e76bfe94c"
+    },
+    {
+      "path": "source/generic_chess/native/search_differential.py",
+      "bytes": 5406,
+      "sha256": "397d424966f909e830b3b1a4b5d4bc9ce6ea867180836c4ad857e0337678ef77"
+    },
+    {
+      "path": "source/generic_chess/native/semantic.py",
+      "bytes": 30762,
+      "sha256": "6f6a94475a56e2c6def8b2792e8bd89bbf8ceab510804b197d80b8b548babe6f"
+    },
+    {
+      "path": "source/generic_chess/native/semantic_engine.py",
+      "bytes": 35312,
+      "sha256": "851cd8f5e6276918b31c2e5422085ec353d8a11c37df8e7224c3ac1c80ff5f26"
+    },
+    {
+      "path": "source/generic_chess/rules/__init__.py",
+      "bytes": 1210,
+      "sha256": "bfb11e62abd56dd061cd6d860d4e8b04dd004a4e338254cf312378ef5864bb3d"
+    },
+    {
+      "path": "source/generic_chess/rules/catalog.py",
+      "bytes": 1668,
+      "sha256": "dc973dd011c5d10d0804ed8c9b09d2f3270e7c1839ad23632e57b658d0ffa198"
+    },
+    {
+      "path": "source/generic_chess/rules/compiled.py",
+      "bytes": 4052,
+      "sha256": "139180ec703686787a4cfd25532cce262d469474eebe8ca057efdacc09803068"
+    },
+    {
+      "path": "source/generic_chess/rules/compiler.py",
+      "bytes": 105605,
+      "sha256": "3b09ebb5b3f3fc54393187e4a5644151a4fcc133c87aeaf0a51de6ae6934dcc1"
+    },
+    {
+      "path": "source/generic_chess/rules/execution.py",
+      "bytes": 1807,
+      "sha256": "2d2d608357aee2b803c583266f4751188cc00e50d8cb6d9ecd3c6fb007df5507"
+    },
+    {
+      "path": "source/generic_chess/rules/ir.py",
+      "bytes": 51426,
+      "sha256": "9aac52fe848446430c4b4118702331a5d9d10863d8eaf7266df739199c90bbeb"
+    },
+    {
+      "path": "source/generic_chess/rules/schema.py",
+      "bytes": 77524,
+      "sha256": "ef6c25f1c4bebd355711131e815bbc5531251b6d7972e859d0f05a3887fa94e8"
+    },
+    {
+      "path": "source/generic_chess/rules/serialization.py",
+      "bytes": 818,
+      "sha256": "68aab2eb632e58b027a07b9742178d471faed20143416dc644be709af3eaeee3"
+    },
+    {
+      "path": "source/generic_chess/rules/standard_shogi.py",
+      "bytes": 8818,
+      "sha256": "6ae08bafaea0b427e03da045a2d3e8a8820532d233422cbdb33739919e31b43c"
+    },
+    {
+      "path": "source/generic_chess/rules/validation.py",
+      "bytes": 1015,
+      "sha256": "1f0faeca4391f702537d228db30143cfd71217c29863a043553235c0e53cdc6d"
+    },
+    {
+      "path": "source/generic_chess/rules/western_chess.py",
+      "bytes": 11866,
+      "sha256": "5c7bff31132a05f003ae4e6ea2b063882ba362add95cd0616a987f7a981d72bd"
+    },
+    {
+      "path": "source/generic_chess/rules/xiangqi_diagnostic.py",
+      "bytes": 9642,
+      "sha256": "00d0772a0bb1b6aa1c49bcbd5fd38c16c59897584e6ee233cb946111c056c99d"
+    },
+    {
+      "path": "source/generic_chess/session/__init__.py",
+      "bytes": 1109,
+      "sha256": "c7a8f921b34305c9a04648728785861aa6e8f3618ef52e04bd2d73497f3d13ec"
+    },
+    {
+      "path": "source/generic_chess/session/record.py",
+      "bytes": 1286,
+      "sha256": "5118156ebf06203a00e7e4cd09a81914676e833be6aee9009d37cdf31586eed9"
+    },
+    {
+      "path": "source/generic_chess/session/result.py",
+      "bytes": 3543,
+      "sha256": "d6a45c241eba85725829cfec79333842a21afddcf2028d85e762c82ef61e89e9"
+    },
+    {
+      "path": "source/generic_chess/session/serialization.py",
+      "bytes": 13088,
+      "sha256": "65f3b1c850eb6e37df4f3a51c730b0d98aa4950b8c7b07df4d7de628568aa073"
+    },
+    {
+      "path": "source/generic_chess/session/session.py",
+      "bytes": 10232,
+      "sha256": "24730e5085f3afc44686156cd0e331b43dcd972bd96f838f787ea0e42e9a81ad"
+    },
+    {
+      "path": "source/generic_chess/ui/__init__.py",
+      "bytes": 130,
+      "sha256": "d518c6a7a14648c7ef204c0bcb2d497f8210668e756e3b8cf7decb0de02cf486"
+    },
+    {
+      "path": "source/generic_chess/ui/__main__.py",
+      "bytes": 99,
+      "sha256": "64f73d0bd7ae60b5a733d1a846d352a76da7078c1ea0e8ef4f1d88bf0e09e4f8"
+    },
+    {
+      "path": "source/generic_chess/ui/adapters.py",
+      "bytes": 3265,
+      "sha256": "1cc53a46909cb6b1dba360fe57b9becf8e076106f54ffb3f7f0a166e362d32a0"
+    },
+    {
+      "path": "source/generic_chess/ui/app.py",
+      "bytes": 3745,
+      "sha256": "f007383fb627be870e8f2c74e9cafd48e2e8f28bc8f84d3df8e1bbc937653d2e"
+    },
+    {
+      "path": "source/generic_chess/ui/board/__init__.py",
+      "bytes": 43,
+      "sha256": "113875bfe39c58e661d68b7bf48bd1be1846bf3e167b8cef568ba58724afeceb"
+    },
+    {
+      "path": "source/generic_chess/ui/board/scene.py",
+      "bytes": 29407,
+      "sha256": "ef266e70d615d26985238a9d3786bd95eab87e5833b3ba09dc8af96d1c4539e0"
+    },
+    {
+      "path": "source/generic_chess/ui/board/texture_cache.py",
+      "bytes": 2458,
+      "sha256": "f69320df73ffb7a941968c8f752d2de557c37661867eee9c166d793b731e93bb"
+    },
+    {
+      "path": "source/generic_chess/ui/board/view.py",
+      "bytes": 6960,
+      "sha256": "761e4e92242e31592d2a4764093d6716dddbf5595809da701851852ba0d906db"
+    },
+    {
+      "path": "source/generic_chess/ui/controller.py",
+      "bytes": 39859,
+      "sha256": "c501908106a6594ca5ac7b59d518abeefb1937b148194ca80801c29b0731e13f"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/__init__.py",
+      "bytes": 67,
+      "sha256": "4e8332480a196481eab533590d9dac01a8151cae4b379203d26325bdd5f7e3e9"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/diagnostics_dialog.py",
+      "bytes": 4297,
+      "sha256": "94deb14d9248962261ef5ed657195e2107022ecac00f1c086a6011763d4a9492"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/error_dialog.py",
+      "bytes": 1214,
+      "sha256": "eb68f3bd7dfd3d58b2d372a1f8d2df0bedc0efb50a413218548567ba99446aa2"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/new_match_dialog.py",
+      "bytes": 12486,
+      "sha256": "17ae863a81b467b6ffeb471611d792c000700562d7fa7103421f57881db01d9b"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/preferences_dialog.py",
+      "bytes": 5986,
+      "sha256": "5b39df93ac25a599045ad89f3fc50e06c464572bd4d1c5eae5976513285dcc5b"
+    },
+    {
+      "path": "source/generic_chess/ui/dialogs/promotion_dialog.py",
+      "bytes": 2146,
+      "sha256": "dd88aa17c9680bab25a63c645a49833d45554d63b90c9e580837cc5f33e3f90d"
+    },
+    {
+      "path": "source/generic_chess/ui/i18n/__init__.py",
+      "bytes": 180,
+      "sha256": "af12e7440d55c240a447639a216f7fd7e8e14e4bc019b52e6d777156668d43ba"
+    },
+    {
+      "path": "source/generic_chess/ui/i18n/manager.py",
+      "bytes": 2747,
+      "sha256": "46ed742e453e8f5f3ce17a3a18214e5b9222f030fff13922f4b9bfe9219d2fb6"
+    },
+    {
+      "path": "source/generic_chess/ui/icons.py",
+      "bytes": 2849,
+      "sha256": "db0e3f395ef0f56f9e18161fbdf30e494b09d12f75caaafa946fd1dbbb19dd34"
+    },
+    {
+      "path": "source/generic_chess/ui/interaction_state.py",
+      "bytes": 1104,
+      "sha256": "51adce6b9f4ffb07cfae48c446e3ee2920e0dba4de4c6a43b7667d7ff6ba3250"
+    },
+    {
+      "path": "source/generic_chess/ui/main_window.py",
+      "bytes": 39145,
+      "sha256": "065e9f3798d0454a0c7d864e101ace8adda707c92dddaa3fe5ef19a371125574"
+    },
+    {
+      "path": "source/generic_chess/ui/match.py",
+      "bytes": 547,
+      "sha256": "eacfd63db1392773ed8bab04ad65b24209f89b32ccbd8cfd56ff547575a395dc"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/__init__.py",
+      "bytes": 55,
+      "sha256": "d9559a97be2b279906b2dec828f53e4f1e0bd35de23e0da989999830e2a5e1d0"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/game_over_overlay.py",
+      "bytes": 5967,
+      "sha256": "10fbf1db11a80ea6c0a59e54831bc956965abc13b9c69e32c0f08ffd652a96ef"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/game_panel.py",
+      "bytes": 2432,
+      "sha256": "22d6e3c881bbd3515a58360437ac6e9bfc0ee6514655285750579ceb3adf8c60"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/hand_stand.py",
+      "bytes": 3956,
+      "sha256": "69a348ad4581f3998ff10a8fe0ef7b2ce9b7be073b3e5091856567fee61a0d11"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/history_panel.py",
+      "bytes": 1858,
+      "sha256": "30d904e98af53855738622bc4a9e630485fc37d0baebbc0ddb68c4aa055b7bc6"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/movement_diagram.py",
+      "bytes": 16176,
+      "sha256": "edc269934f237640f5ec33fd4d70b7f397c711cc106e0563906b5d825f7873db"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/moves_panel.py",
+      "bytes": 10145,
+      "sha256": "676e8f9f47bcb0bf3a6c755cd8e0dde182fb5d508d9edd08dd3cb12e228b3483"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/piece_panel.py",
+      "bytes": 4013,
+      "sha256": "fad21c3776acc3387c119c962dfb1f061c060a69361dfb3a15b680059716eb2d"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/player_bar.py",
+      "bytes": 6446,
+      "sha256": "ebb99d7979867b47a37cd7dfe43d397e3c886cc7624b38a96896990398429dd3"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/rule_explorer.py",
+      "bytes": 15152,
+      "sha256": "8a19c19e2679f3ab95d0614c168bc5519799ad5d43fe95f694a88306ce49af61"
+    },
+    {
+      "path": "source/generic_chess/ui/panels/rules_panel.py",
+      "bytes": 2366,
+      "sha256": "4cfd1484ea4bf97e0f70fcff19dd6a95701b0e856335181080b1b15fee4f508a"
+    },
+    {
+      "path": "source/generic_chess/ui/settings.py",
+      "bytes": 1760,
+      "sha256": "bc3ee572f8aae36f586f6972870b2cd7f2b26a99bbe1b8258bd94a7fa240db2b"
+    },
+    {
+      "path": "source/generic_chess/ui/shortcuts.py",
+      "bytes": 894,
+      "sha256": "50ae2ce7465ed38f215c37dc81dcfed8775d307ca6d5d9b1d9f2e1a3aeb0061e"
+    },
+    {
+      "path": "source/generic_chess/ui/stores.py",
+      "bytes": 908,
+      "sha256": "94d9b5bbe7b66384757c465faba154fe92437ae3cab7de726d28f05822ab6d32"
+    },
+    {
+      "path": "source/generic_chess/ui/theme.py",
+      "bytes": 5663,
+      "sha256": "bc9570f857e9eb0ee360e92579d0b05047b5d46aeb85d85e94588e904545383d"
+    },
+    {
+      "path": "source/generic_chess/ui/view_models.py",
+      "bytes": 2158,
+      "sha256": "9d887ecac5b71ef72299319637d347da144a17b8b71d3ce75ecd6b30de671adf"
+    },
+    {
+      "path": "source/generic_chess/visual/__init__.py",
+      "bytes": 636,
+      "sha256": "9e3c70c8f6808e3e8f4bca69df656750816ab19ea135dcbb06811deec695cd50"
+    },
+    {
+      "path": "source/generic_chess/visual/preview.py",
+      "bytes": 4726,
+      "sha256": "3ec353d22b51429f5b81a98433460be04bc4798763a402c3a8bd55c4771772a4"
+    },
+    {
+      "path": "source/generic_chess/visual/texture_geometry.py",
+      "bytes": 2763,
+      "sha256": "071590b895e76515e12f4b5c94313bb6d08731a6dbc2cd80f469519eb3551731"
+    },
+    {
+      "path": "source/generic_chess/visual/texture_style.py",
+      "bytes": 1337,
+      "sha256": "690a570c658496abc46e5733ae116f0dbd096c1d33e42fac80bec41df4b24178"
+    },
+    {
+      "path": "source/generic_chess/visual/texture_svg.py",
+      "bytes": 5755,
+      "sha256": "cfb84ef3edad2fdb0eb531a6015c1a0dec2d7c0092689e919b13739d643dff7e"
+    },
+    {
+      "path": "source/generic_chess/visual/textures.py",
+      "bytes": 2403,
+      "sha256": "14ca1c765641f4b026b7aedfe8a6cb438a63b70725b9191a9a89bd598b689388"
+    },
+    {
+      "path": "source/scripts/analyze_full_q_refresh.py",
+      "bytes": 3862,
+      "sha256": "ab8b208a1f8416b7cb0c5f8a221ee6757768346e579ec9b2b7d69da60366479f"
+    },
+    {
+      "path": "source/scripts/audit_chess_multimode_source_replay.py",
+      "bytes": 8144,
+      "sha256": "1f7e7a1701eaae3147660c6cd4eea409029e5cf45d7a9ab6ea86b4b6a558f837"
+    },
+    {
+      "path": "source/scripts/audit_f23v_minimal_analytic_evaluator.py",
+      "bytes": 33179,
+      "sha256": "c164f5319c72e9536ed2e50c7ab1546c6b32c4a985a1ef597a151d6435845433"
+    },
+    {
+      "path": "source/scripts/audit_f23v_minimal_analytic_evaluator_r1.py",
+      "bytes": 36237,
+      "sha256": "ac62e0469ee79a7da63b9bcc1a503689408debba455e6b38bcfddb0398898420"
+    },
+    {
+      "path": "source/scripts/audit_f24f_western_chess_perft.py",
+      "bytes": 14726,
+      "sha256": "a6edda3bcf043103fa036f1095aebc2fb22174b499eb0b3a7a646fcffae7b8fa"
+    },
+    {
+      "path": "source/scripts/audit_lichess_complete_children.py",
+      "bytes": 12045,
+      "sha256": "e6b25e84802cb18efb47fb19b89f43dd150aa15988ae07e3a1208933398e3465"
+    },
+    {
+      "path": "source/scripts/board_token_cache.py",
+      "bytes": 1514,
+      "sha256": "ddffbceb36b189a398bea43765a145497bed5fdbf3f55a4ef59f55bbaf26a630"
+    },
+    {
+      "path": "source/scripts/bounded_root_scheduler.py",
+      "bytes": 4098,
+      "sha256": "328648f127a73787c0ae40adc979edc0147c64e2b31bfc26ee4e35de252809a5"
+    },
+    {
+      "path": "source/scripts/build_native_zig.py",
+      "bytes": 1935,
+      "sha256": "49971852587404019031c545a30647172b6dda9205253b7222220b697b629f02"
+    },
+    {
+      "path": "source/scripts/capsule_decode_comparison.py",
+      "bytes": 6056,
+      "sha256": "33ab607aa01904d8b0cb11362f1904aca4e766129edb266da7539a5293d033bb"
+    },
+    {
+      "path": "source/scripts/capsule_interface_comparison.py",
+      "bytes": 5763,
+      "sha256": "09940e820a1f72fccf12690561d2f30cafb7d33f1368581967e1d3f13fc62f24"
+    },
+    {
+      "path": "source/scripts/capsule_inventory_comparison.py",
+      "bytes": 7629,
+      "sha256": "d2d0143744d32556ae48b81a00c477410ee5aa0b6807d6ab758615e87a04a1dc"
+    },
+    {
+      "path": "source/scripts/capsule_inventory_delivery.py",
+      "bytes": 8445,
+      "sha256": "7528b1860ba94e269fd9a01fe8ace5f9c4df6af2b3e443afd6269a1202a5a50d"
+    },
+    {
+      "path": "source/scripts/capsule_inventory_effect_controls.py",
+      "bytes": 3489,
+      "sha256": "670b87a9e7bc0dbc9d7ddbc6a5ccc48c22eb4ca8048f308e8e8046a7571d359a"
+    },
+    {
+      "path": "source/scripts/capsule_inventory_profile.py",
+      "bytes": 4597,
+      "sha256": "edb76fc0e105e56e67822da59aafb91835a5e5226309c9f51d3f08b96e4ed98c"
+    },
+    {
+      "path": "source/scripts/capsule_inventory_transfer.py",
+      "bytes": 9131,
+      "sha256": "8ac31e0eb12492629a0b3bf383ed6279b33fe2b409c930f2294abb1852efa481"
+    },
+    {
+      "path": "source/scripts/capsule_terminal_prefix_comparison.py",
+      "bytes": 7802,
+      "sha256": "9d9fb205e9a45d32edc2ef30c81a2fda126dc888c8d7fc026e42f2014201945f"
+    },
+    {
+      "path": "source/scripts/chess_approx_static_inventory.py",
+      "bytes": 2416,
+      "sha256": "8d99c913d4f1e14c26ab0be2e926c3dfda4dba1c78fe840afbeaed0d779faa29"
+    },
+    {
+      "path": "source/scripts/chess_capture_risk.py",
+      "bytes": 2873,
+      "sha256": "a2c8a7061d2ef735366d9b6b49d55034d45f1b96ab5f4f42154a293f961b2258"
+    },
+    {
+      "path": "source/scripts/chess_development.py",
+      "bytes": 46168,
+      "sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8"
+    },
+    {
+      "path": "source/scripts/chess_exact_contact_family.py",
+      "bytes": 2457,
+      "sha256": "016e306da30462624f5ce32026b3cc32b3ab7ae1d851cd246c615eba970e2e1d"
+    },
+    {
+      "path": "source/scripts/chess_shared_dynamic.py",
+      "bytes": 6167,
+      "sha256": "cddfdfd53ab995da3db4e3409c2682eee71978b389f00661e8306851025fb439"
+    },
+    {
+      "path": "source/scripts/core_availability_comparison.py",
+      "bytes": 6744,
+      "sha256": "d8322220f27cc6dbb211862742f65ec624caa6edcf869e93b581f2689b6a8448"
+    },
+    {
+      "path": "source/scripts/core_availability_delivery.py",
+      "bytes": 7332,
+      "sha256": "774b26d38bfc4ffe7463fce94c7750d4beee763152513fa8dab4b1057fa45dd8"
+    },
+    {
+      "path": "source/scripts/core_availability_effect_controls.py",
+      "bytes": 3211,
+      "sha256": "38f21d511394acfe44200cb8c3679c5b8cdeb889a418d57f9e614979d2de74af"
+    },
+    {
+      "path": "source/scripts/core_availability_generated_controls.py",
+      "bytes": 3871,
+      "sha256": "56e09a7591474c5a99dd30dbe9abff1b808dbfc3f66f2422a5440fe0631f5eb3"
+    },
+    {
+      "path": "source/scripts/core_availability_instance_comparison.py",
+      "bytes": 7185,
+      "sha256": "20b79f3c7cc652c444ddf013d5d70385c52ade68ec1010370dd60968897e42c1"
+    },
+    {
+      "path": "source/scripts/core_availability_profile.py",
+      "bytes": 7691,
+      "sha256": "2825e93d90e768c326be82c52d5a2d8dcc8cb8cd239fbf54afbd8178ec52b944"
+    },
+    {
+      "path": "source/scripts/core_availability_transfer.py",
+      "bytes": 7242,
+      "sha256": "8c03fbb14485fb7ec305e77757ce94d041ea140f604c6826d570233f4aa3d9b7"
+    },
+    {
+      "path": "source/scripts/core_board_token_comparison.py",
+      "bytes": 7681,
+      "sha256": "c27a9eb9cd0572a76a0b5da202c98ece62e510e1df6975ec4962c22a43642005"
+    },
+    {
+      "path": "source/scripts/core_board_token_production.py",
+      "bytes": 7730,
+      "sha256": "4cb02a7b7329a595ee32ff644ed847c380ad416d79d459bde47effeb94363f70"
+    },
+    {
+      "path": "source/scripts/core_check_comparison.py",
+      "bytes": 8073,
+      "sha256": "fb4bdaad46f3b331a0304e2d88561dc289e0ffed048448efb527b0c063ab5bf8"
+    },
+    {
+      "path": "source/scripts/core_import_adjacency.py",
+      "bytes": 3890,
+      "sha256": "853e7bb064331f0d21687779a844da6cdb30006540880734abcebc2cf1717c9c"
+    },
+    {
+      "path": "source/scripts/core_probe_comparison.py",
+      "bytes": 8206,
+      "sha256": "3ba92875b8c20dee8f3dcb74ad9e475a1b4cfe9b7ee609c1a982ed91185a9dbd"
+    },
+    {
+      "path": "source/scripts/core_semantic_caller_comparison.py",
+      "bytes": 6050,
+      "sha256": "4da212dbf03b33afee6a1c7d5a0cda3ece07020f96f5fe5fa5b3e3fda0573bdb"
+    },
+    {
+      "path": "source/scripts/core_semantic_caller_profile.py",
+      "bytes": 7175,
+      "sha256": "5ac15b0a5d6eef81b8e19a4d5013ecc621d75b796ad6fb02afc0d6f93147d0b6"
+    },
+    {
+      "path": "source/scripts/exact_generic_horizon_abstraction_v2.py",
+      "bytes": 11211,
+      "sha256": "906bc26629e0e3cd34bfb3b4b8628ed3f06fdcb2fedb873b8aea238b26b49da1"
+    },
+    {
+      "path": "source/scripts/exact_generic_preference_solver_v3.py",
+      "bytes": 12178,
+      "sha256": "21e570e1ca0ae605f36a278302671dc115136cd45a2674071382cfa7826c31fe"
+    },
+    {
+      "path": "source/scripts/full_q_refresh_comparison.py",
+      "bytes": 7639,
+      "sha256": "c3a2f29a068660ec5ef6a59b5dcf3d5524ad5a9a21208d11653cae695ed9672c"
+    },
+    {
+      "path": "source/scripts/material_interval_choice.py",
+      "bytes": 3447,
+      "sha256": "419b7efa5c77d5d1066ae46170ea9e03c088366049cff6151372b1324efe32e2"
+    },
+    {
+      "path": "source/scripts/material_leaf_choice.py",
+      "bytes": 4556,
+      "sha256": "63dd5e206d7673cbe54a37a9fe25e0bbc222d0c940024ac326dc2ea50f3a9795"
+    },
+    {
+      "path": "source/scripts/native_backend_bridge.py",
+      "bytes": 4354,
+      "sha256": "5bd4be82548273388dc44dc9c30ccd0851a6ce743a960e25b12f5c4b1f2e1306"
+    },
+    {
+      "path": "source/scripts/native_capsule_decode.py",
+      "bytes": 1851,
+      "sha256": "04ff4e134388a58a45fde24743c3d32955eb83401b5d9aff34c1850f34517967"
+    },
+    {
+      "path": "source/scripts/native_capsule_evaluator.py",
+      "bytes": 1274,
+      "sha256": "5a5516be6d8cfbb6f80f2feb69e5303ca0ed4f4dc32606e30c3a86d014151bf5"
+    },
+    {
+      "path": "source/scripts/native_capsule_inventory.py",
+      "bytes": 1314,
+      "sha256": "806b97365e09aa86a8056a16d0e01e9e4a48f9617106485e8da070aef178ba8e"
+    },
+    {
+      "path": "source/scripts/native_capsule_runtime.py",
+      "bytes": 4472,
+      "sha256": "2d47abc70ef8cc621641731c27c4f6d491cabd3eb57accc3674760f28011b857"
+    },
+    {
+      "path": "source/scripts/native_chess_contact_intervals.py",
+      "bytes": 5595,
+      "sha256": "741035271b773ae18f9f90865815632c36f5a7f79f8190ff3116191e84b2dbd7"
+    },
+    {
+      "path": "source/scripts/native_core_availability.py",
+      "bytes": 2885,
+      "sha256": "150682a6e00107f38630e0e8deb1bd43f57e41e7ec10fe924fbcfe382691889a"
+    },
+    {
+      "path": "source/scripts/native_core_check.py",
+      "bytes": 1359,
+      "sha256": "7b35d43f0c1fbdf0354986c134a8e73f592b125ed20d3f7a12e9b668ba7e7822"
+    },
+    {
+      "path": "source/scripts/native_core_probe.py",
+      "bytes": 2312,
+      "sha256": "4e17487e9edc2739776f13d7185b0c7348d3e5ce88a2ace37f09b3449f82fe76"
+    },
+    {
+      "path": "source/scripts/position_features.py",
+      "bytes": 4812,
+      "sha256": "2ca7b603ca8befbc862a8d70b2e23985827cbcc11db1281c8005545e55d525e0"
+    },
+    {
+      "path": "source/scripts/public_goal_intervals.py",
+      "bytes": 6383,
+      "sha256": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5"
+    },
+    {
+      "path": "source/scripts/quiet_action_probe.py",
+      "bytes": 3859,
+      "sha256": "687597944469ea55c2279a3624cf81835b060a4644c7f6db22eacccedb68bbea"
+    },
+    {
+      "path": "source/scripts/quiet_drop_probe.py",
+      "bytes": 3704,
+      "sha256": "6068c62016383020d3d0046fe4fcb355efb06062469d8c39684ebc8f8fa1dcfa"
+    },
+    {
+      "path": "source/scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    {
+      "path": "source/scripts/research_state_replay.py",
+      "bytes": 963,
+      "sha256": "8cdab874dc2bf2a5f1fd884a9c5049e00d6f3abd55cf0b78a09167e15177e400"
+    },
+    {
+      "path": "source/scripts/reserve_refresh_diagnostic.py",
+      "bytes": 13494,
+      "sha256": "b1cb326948ab4cd3244ee60f5788fdea98e895cad93f713657e3545f8225268d"
+    },
+    {
+      "path": "source/scripts/root_bound_diagnostic.py",
+      "bytes": 7202,
+      "sha256": "2dd0c355e48205229c9c385cda0b3c418d9c6da25da60ee32809a20c4fa158a9"
+    },
+    {
+      "path": "source/scripts/search_attribution_utility.py",
+      "bytes": 4959,
+      "sha256": "b40679456bf508b60463fbd06d94ba1adea39bb122e744603d050c856e8d2a13"
+    },
+    {
+      "path": "source/scripts/search_backend_comparison.py",
+      "bytes": 23931,
+      "sha256": "6bcff770357d8d4f5f48330d14283a5feb5206bd4141526a04e28a7d0c3abaf7"
+    },
+    {
+      "path": "source/scripts/ui_failure_replay.py",
+      "bytes": 8561,
+      "sha256": "00c1fc220be64168a533926c9d69183920e9a9f3196b92fc15375e4e2531c4ec"
+    },
+    {
+      "path": "source/scripts/ui_product_diagnostic.py",
+      "bytes": 9322,
+      "sha256": "405d7cbd63261b8cbba91bf5869fedc80346605de00a3260fa460be0424b7c60"
+    },
+    {
+      "path": "source/scripts/ui_reserve_boundary.py",
+      "bytes": 5383,
+      "sha256": "33f62aabc7b8fb5f413cb4cedb5519a7fe6d539851c6e9e01a281d8c611186d8"
+    },
+    {
+      "path": "source/scripts/unfamiliar_search.py",
+      "bytes": 14625,
+      "sha256": "cfe759a3567eac5a6a2026d762840da038dd47dcf5c8ac3255ec1db831c45614"
+    },
+    {
+      "path": "tests-source/test_native_cancellation.py",
+      "bytes": 4147,
+      "sha256": "dce6ef6623b8200aeb463cb26a8c31478fd22446b6d3e54dcbc7419418a590e1"
+    },
+    {
+      "path": "tests-source/test_native_immediate_win_goal.py",
+      "bytes": 9191,
+      "sha256": "3796e068282aa0653b4e444a96c3baee0abf2e580b4b0662417cb9c825cc8a74"
+    },
+    {
+      "path": "tests-source/test_native_main_order_pv_witness.py",
+      "bytes": 5139,
+      "sha256": "4731e000eecc1e25049aec3da78f49ddb27da13ea7a503720d323634beb0d3cd"
+    },
+    {
+      "path": "tests-source/test_native_pending_continuation.py",
+      "bytes": 6963,
+      "sha256": "07265b039e0df0a0017f51fdc23c223c1a7526cf7d9e2f31caac62bbb6a2f14b"
+    },
+    {
+      "path": "tests-source/test_native_pv_replay_boundaries.py",
+      "bytes": 4367,
+      "sha256": "97d1c585115282e353549626ba5bfe1d8034b9e9c33397a29d18cf6d63708ea5"
+    },
+    {
+      "path": "tests-source/test_native_q0_canonical_replay.py",
+      "bytes": 7434,
+      "sha256": "bfde7e906f49aaa82ba7802e18a163a715ae062c5288786d93c83c544a1c5c34"
+    },
+    {
+      "path": "tests-source/test_native_search_budgets.py",
+      "bytes": 4092,
+      "sha256": "b2711e26b46e56ffede1da8d3e005ba122ca16e5cf176becbc44d634b7525a8c"
+    },
+    {
+      "path": "tests-source/test_native_semantic_qsearch.py",
+      "bytes": 8385,
+      "sha256": "01f9c98288dc42d965c8ab6439e98503a395c98560282963a95b7107e0ae1478"
+    },
+    {
+      "path": "variants/baseline/native_attack.c",
+      "bytes": 2782,
+      "sha256": "1c66e7db196fdc282f3efe2cac4f890c46cc1d835f98b816b2b7fbd0e2add3ae"
+    },
+    {
+      "path": "variants/baseline/native_attack.h",
+      "bytes": 596,
+      "sha256": "19bbd55ecc38751138f81569714d8e935ef6f8779d0ac7810fa9cb9f039ad178"
+    },
+    {
+      "path": "variants/baseline/native_cancel.c",
+      "bytes": 643,
+      "sha256": "2c14d9c252dd0df981df9530f37f3f8be55f46ec91e2d2ab848159f36019b004"
+    },
+    {
+      "path": "variants/baseline/native_cancel.h",
+      "bytes": 426,
+      "sha256": "70ad31fea259a5a3223b215de266f35eb8ec5c30ffb9b1bb20751c27cdb6dc42"
+    },
+    {
+      "path": "variants/baseline/native_clock.c",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "path": "variants/baseline/native_clock.h",
+      "bytes": 389,
+      "sha256": "4d3cdbc602fba18384151e547ae0acc963d00ecd8758c466656e9cc05b4f1257"
+    },
+    {
+      "path": "variants/baseline/native_eval.c",
+      "bytes": 2085,
+      "sha256": "9ee81cb56b73d9e7c3d92f118dd2f34a4497f8b40d3d584c916518a1f2eb4450"
+    },
+    {
+      "path": "variants/baseline/native_eval.h",
+      "bytes": 1591,
+      "sha256": "dcaaf9147b2e80d5369195bffaf811b2ccba7c45217f88dcec6ab950449fc3cb"
+    },
+    {
+      "path": "variants/baseline/native_hash.c",
+      "bytes": 6325,
+      "sha256": "7d04afb8d290d5c6494826668f3ff6a104b24123271bc88996c48260d6c3f84b"
+    },
+    {
+      "path": "variants/baseline/native_hash.h",
+      "bytes": 1923,
+      "sha256": "2166465408a4dedfb819553c2448d1b42cae52c9a4d905ac8df6f2cfdee1648c"
+    },
+    {
+      "path": "variants/baseline/native_module.c",
+      "bytes": 356247,
+      "sha256": "e3edab1b92b4d1b85a5b45393f5a88c46698120e971c17552d1ccef84e03eca4"
+    },
+    {
+      "path": "variants/baseline/native_movegen.c",
+      "bytes": 9084,
+      "sha256": "53f0073f2be806fb3c7da8250d4b1a5f826e9cbfa1c7b7cab2f2cf374e615369"
+    },
+    {
+      "path": "variants/baseline/native_movegen.h",
+      "bytes": 1363,
+      "sha256": "ee77bca3f2cd53977bebeeb9ff8cf5b6ebbcd12ab8cd38ccfc20e6eb8f31ffd4"
+    },
+    {
+      "path": "variants/baseline/native_payload.c",
+      "bytes": 6594,
+      "sha256": "1b38bb6cb1e3be54a631b801099720a5a57209b2278bc16c3e6ac6dbcc58895b"
+    },
+    {
+      "path": "variants/baseline/native_payload.h",
+      "bytes": 225,
+      "sha256": "7fd8211ba55ce236093b879db993f8b8c4f915ea0b879ee286020827415ce053"
+    },
+    {
+      "path": "variants/baseline/native_perft.c",
+      "bytes": 5333,
+      "sha256": "2322c3263978dc9f2ffe1c93648b824ab7fb296d57d2e6ef713e0cc7b3acb4c7"
+    },
+    {
+      "path": "variants/baseline/native_perft.h",
+      "bytes": 1975,
+      "sha256": "908426cb46e2975ac9cb8e906fdfbb70a774674ff09c3320ed56c46932305839"
+    },
+    {
+      "path": "variants/baseline/native_rules.c",
+      "bytes": 4525,
+      "sha256": "4be0913527e33538157d33d7bd46cba5469fcc2470776fc2c681d2446ef11ab2"
+    },
+    {
+      "path": "variants/baseline/native_rules.h",
+      "bytes": 1335,
+      "sha256": "29150749766df82ef5e92612c48136fa37564a5bff3da0cf2db1bd5ca9dd0983"
+    },
+    {
+      "path": "variants/baseline/native_search.c",
+      "bytes": 20154,
+      "sha256": "b81cad8c71713de89a4ccb09c63c553c257090dc97dbbecf593a4edde99e8810"
+    },
+    {
+      "path": "variants/baseline/native_search.h",
+      "bytes": 3799,
+      "sha256": "7125826b530c8157d0a436c4c714424147fe2a5a50c6b5148eaf6b3b2f4a6fcd"
+    },
+    {
+      "path": "variants/baseline/native_semantic_key.c",
+      "bytes": 6092,
+      "sha256": "87546b45274c858d46e90d2d70957fd2b6e54c13ad35c3bb4d55f4166f9e5ac9"
+    },
+    {
+      "path": "variants/baseline/native_semantic_key.h",
+      "bytes": 499,
+      "sha256": "91479e8f0d19cc3ce2df1151160340f91bbff6bcc376eacdd4b417200a8f3bd7"
+    },
+    {
+      "path": "variants/baseline/native_semantic_rules.c",
+      "bytes": 118031,
+      "sha256": "43a5026aead03a082e251f5e32e88a4a9e29d817eaa4e007533c585329af4bb4"
+    },
+    {
+      "path": "variants/baseline/native_semantic_rules.h",
+      "bytes": 7946,
+      "sha256": "a441281f9fc99381162754775f797a68a1e63f127e20089abf226b38ef5f640a"
+    },
+    {
+      "path": "variants/baseline/native_semantic_runtime.c",
+      "bytes": 48394,
+      "sha256": "2b3fc2eaa4cf93d465d4b6535925dd9a40c7d9d3a7bd4f58bc0fb602ebfd06bc"
+    },
+    {
+      "path": "variants/baseline/native_semantic_runtime.h",
+      "bytes": 4528,
+      "sha256": "ca801d1d022bc8aaa3d47f98aefe7da3afd0f76a4e8883ca9f2abf1e791b2127"
+    },
+    {
+      "path": "variants/baseline/native_semantic_state.c",
+      "bytes": 4180,
+      "sha256": "2c5a6d42cf7ae98cbd19a939c16ab1c3ade98ace265ed669218045fedf1f61c4"
+    },
+    {
+      "path": "variants/baseline/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "variants/baseline/native_sha256.c",
+      "bytes": 3467,
+      "sha256": "bff37893342585cd66ac31eead96a82b924265f7e27db5ec0b283720012053b9"
+    },
+    {
+      "path": "variants/baseline/native_sha256.h",
+      "bytes": 472,
+      "sha256": "072a44c795a9d5eef39d35463ce3b76e64a903558828f5c0a0d5c41c2366e269"
+    },
+    {
+      "path": "variants/baseline/native_state.c",
+      "bytes": 9400,
+      "sha256": "39da09a189b8ba8e6d6c86409ab9b89b076bce7de9b06bcab06c21e46d29b357"
+    },
+    {
+      "path": "variants/baseline/native_state.h",
+      "bytes": 1705,
+      "sha256": "d8534e75e67976506d8d26eabe56dfd8435735cb9af30a5f1f4892b31d46767c"
+    },
+    {
+      "path": "variants/baseline/native_tt.c",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "path": "variants/baseline/native_tt.h",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "path": "variants/baseline/native_types.h",
+      "bytes": 9082,
+      "sha256": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0"
+    },
+    {
+      "path": "variants/counter/native_attack.c",
+      "bytes": 2782,
+      "sha256": "1c66e7db196fdc282f3efe2cac4f890c46cc1d835f98b816b2b7fbd0e2add3ae"
+    },
+    {
+      "path": "variants/counter/native_attack.h",
+      "bytes": 596,
+      "sha256": "19bbd55ecc38751138f81569714d8e935ef6f8779d0ac7810fa9cb9f039ad178"
+    },
+    {
+      "path": "variants/counter/native_cancel.c",
+      "bytes": 643,
+      "sha256": "2c14d9c252dd0df981df9530f37f3f8be55f46ec91e2d2ab848159f36019b004"
+    },
+    {
+      "path": "variants/counter/native_cancel.h",
+      "bytes": 426,
+      "sha256": "70ad31fea259a5a3223b215de266f35eb8ec5c30ffb9b1bb20751c27cdb6dc42"
+    },
+    {
+      "path": "variants/counter/native_clock.c",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "path": "variants/counter/native_clock.h",
+      "bytes": 389,
+      "sha256": "4d3cdbc602fba18384151e547ae0acc963d00ecd8758c466656e9cc05b4f1257"
+    },
+    {
+      "path": "variants/counter/native_eval.c",
+      "bytes": 2085,
+      "sha256": "9ee81cb56b73d9e7c3d92f118dd2f34a4497f8b40d3d584c916518a1f2eb4450"
+    },
+    {
+      "path": "variants/counter/native_eval.h",
+      "bytes": 1591,
+      "sha256": "dcaaf9147b2e80d5369195bffaf811b2ccba7c45217f88dcec6ab950449fc3cb"
+    },
+    {
+      "path": "variants/counter/native_hash.c",
+      "bytes": 6325,
+      "sha256": "7d04afb8d290d5c6494826668f3ff6a104b24123271bc88996c48260d6c3f84b"
+    },
+    {
+      "path": "variants/counter/native_hash.h",
+      "bytes": 1923,
+      "sha256": "2166465408a4dedfb819553c2448d1b42cae52c9a4d905ac8df6f2cfdee1648c"
+    },
+    {
+      "path": "variants/counter/native_module.c",
+      "bytes": 357766,
+      "sha256": "6e6197a8852dbc05c3c8b230c3363788fd0da5b5b97e98476e67e6109a8bd369"
+    },
+    {
+      "path": "variants/counter/native_movegen.c",
+      "bytes": 9084,
+      "sha256": "53f0073f2be806fb3c7da8250d4b1a5f826e9cbfa1c7b7cab2f2cf374e615369"
+    },
+    {
+      "path": "variants/counter/native_movegen.h",
+      "bytes": 1363,
+      "sha256": "ee77bca3f2cd53977bebeeb9ff8cf5b6ebbcd12ab8cd38ccfc20e6eb8f31ffd4"
+    },
+    {
+      "path": "variants/counter/native_payload.c",
+      "bytes": 6594,
+      "sha256": "1b38bb6cb1e3be54a631b801099720a5a57209b2278bc16c3e6ac6dbcc58895b"
+    },
+    {
+      "path": "variants/counter/native_payload.h",
+      "bytes": 225,
+      "sha256": "7fd8211ba55ce236093b879db993f8b8c4f915ea0b879ee286020827415ce053"
+    },
+    {
+      "path": "variants/counter/native_perft.c",
+      "bytes": 5333,
+      "sha256": "2322c3263978dc9f2ffe1c93648b824ab7fb296d57d2e6ef713e0cc7b3acb4c7"
+    },
+    {
+      "path": "variants/counter/native_perft.h",
+      "bytes": 1975,
+      "sha256": "908426cb46e2975ac9cb8e906fdfbb70a774674ff09c3320ed56c46932305839"
+    },
+    {
+      "path": "variants/counter/native_rules.c",
+      "bytes": 4525,
+      "sha256": "4be0913527e33538157d33d7bd46cba5469fcc2470776fc2c681d2446ef11ab2"
+    },
+    {
+      "path": "variants/counter/native_rules.h",
+      "bytes": 1335,
+      "sha256": "29150749766df82ef5e92612c48136fa37564a5bff3da0cf2db1bd5ca9dd0983"
+    },
+    {
+      "path": "variants/counter/native_search.c",
+      "bytes": 20154,
+      "sha256": "b81cad8c71713de89a4ccb09c63c553c257090dc97dbbecf593a4edde99e8810"
+    },
+    {
+      "path": "variants/counter/native_search.h",
+      "bytes": 3799,
+      "sha256": "7125826b530c8157d0a436c4c714424147fe2a5a50c6b5148eaf6b3b2f4a6fcd"
+    },
+    {
+      "path": "variants/counter/native_semantic_key.c",
+      "bytes": 6092,
+      "sha256": "87546b45274c858d46e90d2d70957fd2b6e54c13ad35c3bb4d55f4166f9e5ac9"
+    },
+    {
+      "path": "variants/counter/native_semantic_key.h",
+      "bytes": 499,
+      "sha256": "91479e8f0d19cc3ce2df1151160340f91bbff6bcc376eacdd4b417200a8f3bd7"
+    },
+    {
+      "path": "variants/counter/native_semantic_rules.c",
+      "bytes": 118031,
+      "sha256": "43a5026aead03a082e251f5e32e88a4a9e29d817eaa4e007533c585329af4bb4"
+    },
+    {
+      "path": "variants/counter/native_semantic_rules.h",
+      "bytes": 7946,
+      "sha256": "a441281f9fc99381162754775f797a68a1e63f127e20089abf226b38ef5f640a"
+    },
+    {
+      "path": "variants/counter/native_semantic_runtime.c",
+      "bytes": 48394,
+      "sha256": "2b3fc2eaa4cf93d465d4b6535925dd9a40c7d9d3a7bd4f58bc0fb602ebfd06bc"
+    },
+    {
+      "path": "variants/counter/native_semantic_runtime.h",
+      "bytes": 4528,
+      "sha256": "ca801d1d022bc8aaa3d47f98aefe7da3afd0f76a4e8883ca9f2abf1e791b2127"
+    },
+    {
+      "path": "variants/counter/native_semantic_state.c",
+      "bytes": 4180,
+      "sha256": "2c5a6d42cf7ae98cbd19a939c16ab1c3ade98ace265ed669218045fedf1f61c4"
+    },
+    {
+      "path": "variants/counter/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "variants/counter/native_sha256.c",
+      "bytes": 3467,
+      "sha256": "bff37893342585cd66ac31eead96a82b924265f7e27db5ec0b283720012053b9"
+    },
+    {
+      "path": "variants/counter/native_sha256.h",
+      "bytes": 472,
+      "sha256": "072a44c795a9d5eef39d35463ce3b76e64a903558828f5c0a0d5c41c2366e269"
+    },
+    {
+      "path": "variants/counter/native_state.c",
+      "bytes": 9400,
+      "sha256": "39da09a189b8ba8e6d6c86409ab9b89b076bce7de9b06bcab06c21e46d29b357"
+    },
+    {
+      "path": "variants/counter/native_state.h",
+      "bytes": 1705,
+      "sha256": "d8534e75e67976506d8d26eabe56dfd8435735cb9af30a5f1f4892b31d46767c"
+    },
+    {
+      "path": "variants/counter/native_tt.c",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "path": "variants/counter/native_tt.h",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "path": "variants/counter/native_types.h",
+      "bytes": 9082,
+      "sha256": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0"
+    },
+    {
+      "path": "variants/guarded/native_attack.c",
+      "bytes": 2782,
+      "sha256": "1c66e7db196fdc282f3efe2cac4f890c46cc1d835f98b816b2b7fbd0e2add3ae"
+    },
+    {
+      "path": "variants/guarded/native_attack.h",
+      "bytes": 596,
+      "sha256": "19bbd55ecc38751138f81569714d8e935ef6f8779d0ac7810fa9cb9f039ad178"
+    },
+    {
+      "path": "variants/guarded/native_cancel.c",
+      "bytes": 643,
+      "sha256": "2c14d9c252dd0df981df9530f37f3f8be55f46ec91e2d2ab848159f36019b004"
+    },
+    {
+      "path": "variants/guarded/native_cancel.h",
+      "bytes": 426,
+      "sha256": "70ad31fea259a5a3223b215de266f35eb8ec5c30ffb9b1bb20751c27cdb6dc42"
+    },
+    {
+      "path": "variants/guarded/native_clock.c",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "path": "variants/guarded/native_clock.h",
+      "bytes": 389,
+      "sha256": "4d3cdbc602fba18384151e547ae0acc963d00ecd8758c466656e9cc05b4f1257"
+    },
+    {
+      "path": "variants/guarded/native_eval.c",
+      "bytes": 2085,
+      "sha256": "9ee81cb56b73d9e7c3d92f118dd2f34a4497f8b40d3d584c916518a1f2eb4450"
+    },
+    {
+      "path": "variants/guarded/native_eval.h",
+      "bytes": 1591,
+      "sha256": "dcaaf9147b2e80d5369195bffaf811b2ccba7c45217f88dcec6ab950449fc3cb"
+    },
+    {
+      "path": "variants/guarded/native_hash.c",
+      "bytes": 6325,
+      "sha256": "7d04afb8d290d5c6494826668f3ff6a104b24123271bc88996c48260d6c3f84b"
+    },
+    {
+      "path": "variants/guarded/native_hash.h",
+      "bytes": 1923,
+      "sha256": "2166465408a4dedfb819553c2448d1b42cae52c9a4d905ac8df6f2cfdee1648c"
+    },
+    {
+      "path": "variants/guarded/native_module.c",
+      "bytes": 358941,
+      "sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3"
+    },
+    {
+      "path": "variants/guarded/native_movegen.c",
+      "bytes": 9084,
+      "sha256": "53f0073f2be806fb3c7da8250d4b1a5f826e9cbfa1c7b7cab2f2cf374e615369"
+    },
+    {
+      "path": "variants/guarded/native_movegen.h",
+      "bytes": 1363,
+      "sha256": "ee77bca3f2cd53977bebeeb9ff8cf5b6ebbcd12ab8cd38ccfc20e6eb8f31ffd4"
+    },
+    {
+      "path": "variants/guarded/native_payload.c",
+      "bytes": 6594,
+      "sha256": "1b38bb6cb1e3be54a631b801099720a5a57209b2278bc16c3e6ac6dbcc58895b"
+    },
+    {
+      "path": "variants/guarded/native_payload.h",
+      "bytes": 225,
+      "sha256": "7fd8211ba55ce236093b879db993f8b8c4f915ea0b879ee286020827415ce053"
+    },
+    {
+      "path": "variants/guarded/native_perft.c",
+      "bytes": 5333,
+      "sha256": "2322c3263978dc9f2ffe1c93648b824ab7fb296d57d2e6ef713e0cc7b3acb4c7"
+    },
+    {
+      "path": "variants/guarded/native_perft.h",
+      "bytes": 1975,
+      "sha256": "908426cb46e2975ac9cb8e906fdfbb70a774674ff09c3320ed56c46932305839"
+    },
+    {
+      "path": "variants/guarded/native_rules.c",
+      "bytes": 4525,
+      "sha256": "4be0913527e33538157d33d7bd46cba5469fcc2470776fc2c681d2446ef11ab2"
+    },
+    {
+      "path": "variants/guarded/native_rules.h",
+      "bytes": 1335,
+      "sha256": "29150749766df82ef5e92612c48136fa37564a5bff3da0cf2db1bd5ca9dd0983"
+    },
+    {
+      "path": "variants/guarded/native_search.c",
+      "bytes": 20154,
+      "sha256": "b81cad8c71713de89a4ccb09c63c553c257090dc97dbbecf593a4edde99e8810"
+    },
+    {
+      "path": "variants/guarded/native_search.h",
+      "bytes": 3799,
+      "sha256": "7125826b530c8157d0a436c4c714424147fe2a5a50c6b5148eaf6b3b2f4a6fcd"
+    },
+    {
+      "path": "variants/guarded/native_semantic_key.c",
+      "bytes": 6092,
+      "sha256": "87546b45274c858d46e90d2d70957fd2b6e54c13ad35c3bb4d55f4166f9e5ac9"
+    },
+    {
+      "path": "variants/guarded/native_semantic_key.h",
+      "bytes": 499,
+      "sha256": "91479e8f0d19cc3ce2df1151160340f91bbff6bcc376eacdd4b417200a8f3bd7"
+    },
+    {
+      "path": "variants/guarded/native_semantic_rules.c",
+      "bytes": 118031,
+      "sha256": "43a5026aead03a082e251f5e32e88a4a9e29d817eaa4e007533c585329af4bb4"
+    },
+    {
+      "path": "variants/guarded/native_semantic_rules.h",
+      "bytes": 7946,
+      "sha256": "a441281f9fc99381162754775f797a68a1e63f127e20089abf226b38ef5f640a"
+    },
+    {
+      "path": "variants/guarded/native_semantic_runtime.c",
+      "bytes": 48394,
+      "sha256": "2b3fc2eaa4cf93d465d4b6535925dd9a40c7d9d3a7bd4f58bc0fb602ebfd06bc"
+    },
+    {
+      "path": "variants/guarded/native_semantic_runtime.h",
+      "bytes": 4528,
+      "sha256": "ca801d1d022bc8aaa3d47f98aefe7da3afd0f76a4e8883ca9f2abf1e791b2127"
+    },
+    {
+      "path": "variants/guarded/native_semantic_state.c",
+      "bytes": 4180,
+      "sha256": "2c5a6d42cf7ae98cbd19a939c16ab1c3ade98ace265ed669218045fedf1f61c4"
+    },
+    {
+      "path": "variants/guarded/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "variants/guarded/native_sha256.c",
+      "bytes": 3467,
+      "sha256": "bff37893342585cd66ac31eead96a82b924265f7e27db5ec0b283720012053b9"
+    },
+    {
+      "path": "variants/guarded/native_sha256.h",
+      "bytes": 472,
+      "sha256": "072a44c795a9d5eef39d35463ce3b76e64a903558828f5c0a0d5c41c2366e269"
+    },
+    {
+      "path": "variants/guarded/native_state.c",
+      "bytes": 9400,
+      "sha256": "39da09a189b8ba8e6d6c86409ab9b89b076bce7de9b06bcab06c21e46d29b357"
+    },
+    {
+      "path": "variants/guarded/native_state.h",
+      "bytes": 1705,
+      "sha256": "d8534e75e67976506d8d26eabe56dfd8435735cb9af30a5f1f4892b31d46767c"
+    },
+    {
+      "path": "variants/guarded/native_tt.c",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "path": "variants/guarded/native_tt.h",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "path": "variants/guarded/native_types.h",
+      "bytes": 9082,
+      "sha256": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0"
+    },
+    {
+      "path": "variants/history/native_attack.c",
+      "bytes": 2782,
+      "sha256": "1c66e7db196fdc282f3efe2cac4f890c46cc1d835f98b816b2b7fbd0e2add3ae"
+    },
+    {
+      "path": "variants/history/native_attack.h",
+      "bytes": 596,
+      "sha256": "19bbd55ecc38751138f81569714d8e935ef6f8779d0ac7810fa9cb9f039ad178"
+    },
+    {
+      "path": "variants/history/native_cancel.c",
+      "bytes": 643,
+      "sha256": "2c14d9c252dd0df981df9530f37f3f8be55f46ec91e2d2ab848159f36019b004"
+    },
+    {
+      "path": "variants/history/native_cancel.h",
+      "bytes": 426,
+      "sha256": "70ad31fea259a5a3223b215de266f35eb8ec5c30ffb9b1bb20751c27cdb6dc42"
+    },
+    {
+      "path": "variants/history/native_clock.c",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "path": "variants/history/native_clock.h",
+      "bytes": 389,
+      "sha256": "4d3cdbc602fba18384151e547ae0acc963d00ecd8758c466656e9cc05b4f1257"
+    },
+    {
+      "path": "variants/history/native_eval.c",
+      "bytes": 2085,
+      "sha256": "9ee81cb56b73d9e7c3d92f118dd2f34a4497f8b40d3d584c916518a1f2eb4450"
+    },
+    {
+      "path": "variants/history/native_eval.h",
+      "bytes": 1591,
+      "sha256": "dcaaf9147b2e80d5369195bffaf811b2ccba7c45217f88dcec6ab950449fc3cb"
+    },
+    {
+      "path": "variants/history/native_hash.c",
+      "bytes": 6325,
+      "sha256": "7d04afb8d290d5c6494826668f3ff6a104b24123271bc88996c48260d6c3f84b"
+    },
+    {
+      "path": "variants/history/native_hash.h",
+      "bytes": 1923,
+      "sha256": "2166465408a4dedfb819553c2448d1b42cae52c9a4d905ac8df6f2cfdee1648c"
+    },
+    {
+      "path": "variants/history/native_module.c",
+      "bytes": 358437,
+      "sha256": "333f5fde477f6fe1523979eb15cb3da312e7723c916ddd70a7884834b6a5c573"
+    },
+    {
+      "path": "variants/history/native_movegen.c",
+      "bytes": 9084,
+      "sha256": "53f0073f2be806fb3c7da8250d4b1a5f826e9cbfa1c7b7cab2f2cf374e615369"
+    },
+    {
+      "path": "variants/history/native_movegen.h",
+      "bytes": 1363,
+      "sha256": "ee77bca3f2cd53977bebeeb9ff8cf5b6ebbcd12ab8cd38ccfc20e6eb8f31ffd4"
+    },
+    {
+      "path": "variants/history/native_payload.c",
+      "bytes": 6594,
+      "sha256": "1b38bb6cb1e3be54a631b801099720a5a57209b2278bc16c3e6ac6dbcc58895b"
+    },
+    {
+      "path": "variants/history/native_payload.h",
+      "bytes": 225,
+      "sha256": "7fd8211ba55ce236093b879db993f8b8c4f915ea0b879ee286020827415ce053"
+    },
+    {
+      "path": "variants/history/native_perft.c",
+      "bytes": 5333,
+      "sha256": "2322c3263978dc9f2ffe1c93648b824ab7fb296d57d2e6ef713e0cc7b3acb4c7"
+    },
+    {
+      "path": "variants/history/native_perft.h",
+      "bytes": 1975,
+      "sha256": "908426cb46e2975ac9cb8e906fdfbb70a774674ff09c3320ed56c46932305839"
+    },
+    {
+      "path": "variants/history/native_rules.c",
+      "bytes": 4525,
+      "sha256": "4be0913527e33538157d33d7bd46cba5469fcc2470776fc2c681d2446ef11ab2"
+    },
+    {
+      "path": "variants/history/native_rules.h",
+      "bytes": 1335,
+      "sha256": "29150749766df82ef5e92612c48136fa37564a5bff3da0cf2db1bd5ca9dd0983"
+    },
+    {
+      "path": "variants/history/native_search.c",
+      "bytes": 20154,
+      "sha256": "b81cad8c71713de89a4ccb09c63c553c257090dc97dbbecf593a4edde99e8810"
+    },
+    {
+      "path": "variants/history/native_search.h",
+      "bytes": 3799,
+      "sha256": "7125826b530c8157d0a436c4c714424147fe2a5a50c6b5148eaf6b3b2f4a6fcd"
+    },
+    {
+      "path": "variants/history/native_semantic_key.c",
+      "bytes": 6092,
+      "sha256": "87546b45274c858d46e90d2d70957fd2b6e54c13ad35c3bb4d55f4166f9e5ac9"
+    },
+    {
+      "path": "variants/history/native_semantic_key.h",
+      "bytes": 499,
+      "sha256": "91479e8f0d19cc3ce2df1151160340f91bbff6bcc376eacdd4b417200a8f3bd7"
+    },
+    {
+      "path": "variants/history/native_semantic_rules.c",
+      "bytes": 118031,
+      "sha256": "43a5026aead03a082e251f5e32e88a4a9e29d817eaa4e007533c585329af4bb4"
+    },
+    {
+      "path": "variants/history/native_semantic_rules.h",
+      "bytes": 7946,
+      "sha256": "a441281f9fc99381162754775f797a68a1e63f127e20089abf226b38ef5f640a"
+    },
+    {
+      "path": "variants/history/native_semantic_runtime.c",
+      "bytes": 48394,
+      "sha256": "2b3fc2eaa4cf93d465d4b6535925dd9a40c7d9d3a7bd4f58bc0fb602ebfd06bc"
+    },
+    {
+      "path": "variants/history/native_semantic_runtime.h",
+      "bytes": 4528,
+      "sha256": "ca801d1d022bc8aaa3d47f98aefe7da3afd0f76a4e8883ca9f2abf1e791b2127"
+    },
+    {
+      "path": "variants/history/native_semantic_state.c",
+      "bytes": 4180,
+      "sha256": "2c5a6d42cf7ae98cbd19a939c16ab1c3ade98ace265ed669218045fedf1f61c4"
+    },
+    {
+      "path": "variants/history/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "variants/history/native_sha256.c",
+      "bytes": 3467,
+      "sha256": "bff37893342585cd66ac31eead96a82b924265f7e27db5ec0b283720012053b9"
+    },
+    {
+      "path": "variants/history/native_sha256.h",
+      "bytes": 472,
+      "sha256": "072a44c795a9d5eef39d35463ce3b76e64a903558828f5c0a0d5c41c2366e269"
+    },
+    {
+      "path": "variants/history/native_state.c",
+      "bytes": 9400,
+      "sha256": "39da09a189b8ba8e6d6c86409ab9b89b076bce7de9b06bcab06c21e46d29b357"
+    },
+    {
+      "path": "variants/history/native_state.h",
+      "bytes": 1705,
+      "sha256": "d8534e75e67976506d8d26eabe56dfd8435735cb9af30a5f1f4892b31d46767c"
+    },
+    {
+      "path": "variants/history/native_tt.c",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "path": "variants/history/native_tt.h",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "path": "variants/history/native_types.h",
+      "bytes": 9082,
+      "sha256": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0"
+    }
+  ],
+  "scope": "Sanitized technical publication copies, raw Slack/account/host originals stay ignored. Scoped guarded NativeC change. Full source/variants, original slots/plans/failures and all outcomes; no Native binaries or automatic experiment rerun.",
+  "archive_sha256": "068bc8d91e1521f5b73d600ebb0bb3567b57b8bdcbf7ed7b02f892955df072a9",
+  "archive_bytes": 4447569,
+  "member_count": 620
+}

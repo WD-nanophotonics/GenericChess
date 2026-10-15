@@ -4351,6 +4351,14 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     return out;
 }
 
+/* Per-call ordering evidence, never a score, legality or terminal cache.
+ * Full packed actions distinguish semantic patterns, drops and promotions. */
+typedef struct {
+    uint64_t actions[4096];
+    unsigned char actors[4096], occupied[4096];
+    uint16_t scores[4096];
+} GCSemanticHistoryTable;
+
 typedef struct {
     const GCSemanticRules *rules;
     GCSemanticProbeProfile profile;
@@ -4374,6 +4382,7 @@ typedef struct {
     uint64_t legal_generation_count;
     uint64_t transition_count;
     uint64_t beta_cutoffs;
+    GCSemanticHistoryTable *history;
     uint64_t tt_probes;
     uint64_t tt_hits;
     uint64_t tt_exact_hits;
@@ -5445,6 +5454,35 @@ static int gc_semantic_order_q_candidates(GCSemanticIterativeContext *ctx,
  for(size_t i=0;i<actions->count;i++)actions->data[i]=ordered[i].action;
  free(ordered);return 1;
 }
+static unsigned gc_semantic_history_slot(uint64_t action, unsigned actor) {
+ uint64_t key=action ^ ((uint64_t)actor << 63);
+ key^=key>>33;key*=UINT64_C(0xff51afd7ed558ccd);key^=key>>33;
+ return (unsigned)key & 4095;
+}
+static unsigned gc_semantic_history_score(GCSemanticIterativeContext *ctx,uint64_t action,unsigned actor) {
+ if (ctx->history == NULL) return 0;
+ unsigned slot=gc_semantic_history_slot(action,actor);
+ return ctx->history->occupied[slot] && ctx->history->actions[slot]==action &&
+   ctx->history->actors[slot]==actor ? ctx->history->scores[slot] : 0;
+}
+static int gc_semantic_history_order(GCSemanticIterativeContext *ctx,
+ GCSemanticPosition *pos,GCSemanticActionBuffer *actions) {
+ if(actions->count<2)return 1;
+ GCSemanticOrderedAction *ordered=calloc(actions->count,sizeof(*ordered));
+ if(!ordered){ctx->control=4;return 0;}
+ unsigned cells=ctx->rules->board_size*ctx->rules->board_size;
+ for(size_t i=0;i<actions->count;i++) {
+  if(!gc_semantic_iterative_check_budget(ctx,1)){free(ordered);return 0;}
+  uint64_t action=actions->data[i];unsigned target=GC_ACTION_TO(action);
+  int capture=GC_ACTION_KIND(action)==GC_ACTION_KIND_SEMANTIC_BOARD && target<cells &&
+    pos->board[target].occupied && pos->board[target].owner!=pos->side_to_move;
+  ordered[i].action=action;
+  ordered[i].mover_score=(capture?65536.0:0.0)+gc_semantic_history_score(ctx,action,pos->side_to_move);
+ }
+ qsort(ordered,actions->count,sizeof(*ordered),gc_semantic_q_candidate_compare);
+ for(size_t i=0;i<actions->count;i++)actions->data[i]=ordered[i].action;
+ free(ordered);return 1;
+}
 /* A discarded quiet view may omit only the identity/history append. Any
  * searched child is reconstructed through the complete checked transition. */
 static int gc_semantic_q_history_deferrable(const GCSemanticRules *rules,
@@ -5812,7 +5850,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     if (ctx->root_window_pruning && !pv_replay &&
         !ctx->learned_move_ordering && !ctx->policy_move_ordering) {
         ctx->main_binary_order_calls++;
-        if (!gc_semantic_order_q_candidates(ctx, position, &actions)) {
+        if (!gc_semantic_history_order(ctx, position, &actions)) {
             gc_semantic_action_buffer_free(&actions);
             return 0;
         }
@@ -5965,6 +6003,14 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         if (score > alpha) alpha = score;
         if (alpha >= beta) {
             ctx->beta_cutoffs++;
+            if (ctx->history != NULL && !pv_replay) {
+                unsigned actor=position->side_to_move,slot=gc_semantic_history_slot(action,actor);
+                unsigned old=gc_semantic_history_score(ctx,action,actor);
+                unsigned bonus=(unsigned)depth*(unsigned)depth;
+                unsigned score=old+bonus;
+                ctx->history->actions[slot]=action;ctx->history->actors[slot]=(unsigned char)actor;
+                ctx->history->occupied[slot]=1;ctx->history->scores[slot]=(uint16_t)(score>65535?65535:score);
+            }
             break;
         }
     }
@@ -6601,8 +6647,14 @@ static PyObject *gc_semantic_iterative_search(
             return NULL;
         }
     }
+    GCSemanticHistoryTable history;
     GCSemanticIterativeContext ctx;
     memset(&ctx, 0, sizeof(ctx));
+    if (root_window_pruning_obj == Py_True &&
+        !learned_move_ordering && !policy_move_ordering) {
+        memset(&history, 0, sizeof(history));
+        ctx.history = &history;
+    }
     ctx.rules = rules;
     ctx.profile = profile;
     ctx.policy_profile = profile;

@@ -1,0 +1,1472 @@
+{
+  "science": "OPEN",
+  "baseline_commit": "ef9d4a39b69f96da0d25ae70ad44a5edeb966d5d",
+  "final_native_module_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3",
+  "implementation_scope": "Per-call48KiB exactaction/actor history only existing exactroot/plain mode; q/evaluator/API/defaultflags/UI unchanged. Rebuild Native.",
+  "counter": {
+    "queries": 32,
+    "distinct_roots": 8,
+    "cutoffs": 1549,
+    "repeats": 1372,
+    "replacements": 2,
+    "non_time_pairs_identical": 16,
+    "pv_edges": 80,
+    "limitation": "Repetition lowerbound, not predictivegain; scalar descents under canonicalreconstruction can contribute; firststage priorbaselineimage clock not adoptionevidence."
+  },
+  "pilot": {
+    "queries": 32,
+    "jointly_complete_pairs": 14,
+    "equal": 14,
+    "baseline_node_censors": 2,
+    "pv_edges": 94
+  },
+  "paid": {
+    "queries": 432,
+    "errors": [],
+    "conditions": {
+      "fixed_q0": {
+        "all": {
+          "pairs": 72,
+          "both_complete": 72,
+          "finite_equal": 72,
+          "same_action": 72,
+          "deeper": 0,
+          "same_depth": 72,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.9300891340190516,
+          "work_geomean": 0.9453223609108006,
+          "caller_worse": 19,
+          "max_caller_ratio": 2.468531936680375,
+          "max_work_ratio": 2.846296296296296
+        },
+        "completed": {
+          "pairs": 72,
+          "both_complete": 72,
+          "finite_equal": 72,
+          "same_action": 72,
+          "deeper": 0,
+          "same_depth": 72,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.9300891340190516,
+          "work_geomean": 0.9453223609108006,
+          "caller_worse": 19,
+          "max_caller_ratio": 2.468531936680375,
+          "max_work_ratio": 2.846296296296296
+        },
+        "strata": {
+          "4": {
+            "pairs": 12,
+            "both_complete": 12,
+            "finite_equal": 12,
+            "same_action": 12,
+            "deeper": 0,
+            "same_depth": 12,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.8958251071605169,
+            "work_geomean": 0.9971942202717653,
+            "caller_worse": 4,
+            "max_caller_ratio": 1.1140103141324877,
+            "max_work_ratio": 1.0
+          },
+          "8": {
+            "pairs": 20,
+            "both_complete": 20,
+            "finite_equal": 20,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.9021741351142566,
+            "work_geomean": 0.9116134692615431,
+            "caller_worse": 0,
+            "max_caller_ratio": 0.9992771077952635,
+            "max_work_ratio": 1.0
+          },
+          "12": {
+            "pairs": 20,
+            "both_complete": 20,
+            "finite_equal": 20,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.9580331067867264,
+            "work_geomean": 0.957223407884657,
+            "caller_worse": 9,
+            "max_caller_ratio": 2.468531936680375,
+            "max_work_ratio": 2.846296296296296
+          },
+          "16": {
+            "pairs": 20,
+            "both_complete": 20,
+            "finite_equal": 20,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.952102327999939,
+            "work_geomean": 0.937553061132398,
+            "caller_worse": 6,
+            "max_caller_ratio": 1.022174229142263,
+            "max_work_ratio": 1.0
+          }
+        },
+        "completed_family_intervals": {
+          "caller_ratio": {
+            "families": 20,
+            "pairs": 72,
+            "family_weighted_geomean": 0.9216716877341854,
+            "paired_family_bootstrap_95": [
+              0.8601489000109996,
+              0.9713870837665045
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive exposed-family interval conditional on jointly completed finite cells; not guarantee or untouched holdout."
+          },
+          "work_ratio": {
+            "families": 20,
+            "pairs": 72,
+            "family_weighted_geomean": 0.9504707126324641,
+            "paired_family_bootstrap_95": [
+              0.9073891198214559,
+              0.9906448939708978
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive exposed-family interval conditional on jointly completed finite cells; not guarantee or untouched holdout."
+          }
+        }
+      },
+      "fixed_q4": {
+        "all": {
+          "pairs": 72,
+          "both_complete": 63,
+          "finite_equal": 63,
+          "same_action": 72,
+          "deeper": 1,
+          "same_depth": 71,
+          "shallower": 0,
+          "requested_gain": 1,
+          "requested_loss": 0,
+          "caller_geomean": 0.8180515440421752,
+          "work_geomean": 0.8271667398487585,
+          "caller_worse": 23,
+          "max_caller_ratio": 1.1358656441825767,
+          "max_work_ratio": 1.0472972972972974
+        },
+        "completed": {
+          "pairs": 63,
+          "both_complete": 63,
+          "finite_equal": 63,
+          "same_action": 63,
+          "deeper": 0,
+          "same_depth": 63,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.8018776937733878,
+          "work_geomean": 0.810937995338904,
+          "caller_worse": 21,
+          "max_caller_ratio": 1.1358656441825767,
+          "max_work_ratio": 1.0472972972972974
+        },
+        "strata": {
+          "4": {
+            "pairs": 12,
+            "both_complete": 12,
+            "finite_equal": 12,
+            "same_action": 12,
+            "deeper": 0,
+            "same_depth": 12,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.8889080340675516,
+            "work_geomean": 0.8943667848168427,
+            "caller_worse": 4,
+            "max_caller_ratio": 1.1358656441825767,
+            "max_work_ratio": 1.0
+          },
+          "8": {
+            "pairs": 20,
+            "both_complete": 20,
+            "finite_equal": 20,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.7678643424825357,
+            "work_geomean": 0.7717152921187804,
+            "caller_worse": 4,
+            "max_caller_ratio": 1.1043786388260624,
+            "max_work_ratio": 1.0472972972972974
+          },
+          "12": {
+            "pairs": 20,
+            "both_complete": 15,
+            "finite_equal": 15,
+            "same_action": 20,
+            "deeper": 1,
+            "same_depth": 19,
+            "shallower": 0,
+            "requested_gain": 1,
+            "requested_loss": 0,
+            "caller_geomean": 0.7945993262876029,
+            "work_geomean": 0.8029149046703615,
+            "caller_worse": 9,
+            "max_caller_ratio": 1.0409073431784284,
+            "max_work_ratio": 1.0316606929510155
+          },
+          "16": {
+            "pairs": 20,
+            "both_complete": 16,
+            "finite_equal": 16,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.853618100190651,
+            "work_geomean": 0.8715634401315716,
+            "caller_worse": 6,
+            "max_caller_ratio": 1.0582571497910942,
+            "max_work_ratio": 1.0339230171073095
+          }
+        },
+        "completed_family_intervals": {
+          "caller_ratio": {
+            "families": 18,
+            "pairs": 63,
+            "family_weighted_geomean": 0.8115225425810852,
+            "paired_family_bootstrap_95": [
+              0.7356161299247796,
+              0.8874387194275396
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive exposed-family interval conditional on jointly completed finite cells; not guarantee or untouched holdout."
+          },
+          "work_ratio": {
+            "families": 18,
+            "pairs": 63,
+            "family_weighted_geomean": 0.8195005193458935,
+            "paired_family_bootstrap_95": [
+              0.7470761031759168,
+              0.891671363001775
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive exposed-family interval conditional on jointly completed finite cells; not guarantee or untouched holdout."
+          }
+        }
+      },
+      "wall_q4": {
+        "all": {
+          "pairs": 72,
+          "both_complete": 0,
+          "finite_equal": 0,
+          "same_action": 64,
+          "deeper": 16,
+          "same_depth": 54,
+          "shallower": 2,
+          "requested_gain": 2,
+          "requested_loss": 0,
+          "caller_geomean": 0.953198682679266,
+          "work_geomean": 1.0130751133099825,
+          "caller_worse": 29,
+          "max_caller_ratio": 7.03281888196912,
+          "max_work_ratio": 7.234791802212102
+        },
+        "completed": {
+          "pairs": 0
+        },
+        "strata": {
+          "4": {
+            "pairs": 12,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 10,
+            "deeper": 6,
+            "same_depth": 4,
+            "shallower": 2,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.750227191753397,
+            "work_geomean": 0.7390546268815202,
+            "caller_worse": 6,
+            "max_caller_ratio": 7.03281888196912,
+            "max_work_ratio": 7.234791802212102
+          },
+          "8": {
+            "pairs": 20,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 18,
+            "deeper": 6,
+            "same_depth": 14,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.999922794999455,
+            "work_geomean": 1.033481657260042,
+            "caller_worse": 9,
+            "max_caller_ratio": 1.002483665217352,
+            "max_work_ratio": 1.3354504696840308
+          },
+          "12": {
+            "pairs": 20,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 16,
+            "deeper": 4,
+            "same_depth": 16,
+            "shallower": 0,
+            "requested_gain": 2,
+            "requested_loss": 0,
+            "caller_geomean": 0.9999449867471507,
+            "work_geomean": 1.030132044261166,
+            "caller_worse": 6,
+            "max_caller_ratio": 1.0002466556255776,
+            "max_work_ratio": 1.5166006600660067
+          },
+          "16": {
+            "pairs": 20,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 1.0000048436259181,
+            "work_geomean": 1.1800715345079205,
+            "caller_worse": 8,
+            "max_caller_ratio": 1.0003533110713674,
+            "max_work_ratio": 2.672719087635054
+          }
+        }
+      }
+    },
+    "mismatches": [],
+    "pv_edges": 1067,
+    "termination_histograms": {
+      "fixed_q0": {
+        "baseline": {
+          "completed": 72
+        },
+        "history": {
+          "completed": 72
+        }
+      },
+      "fixed_q4": {
+        "baseline": {
+          "completed": 63,
+          "node_budget": 4,
+          "time_budget": 5
+        },
+        "history": {
+          "completed": 64,
+          "node_budget": 4,
+          "time_budget": 4
+        }
+      },
+      "wall_q4": {
+        "baseline": {
+          "qsearch_check_hard_limit": 12,
+          "time_budget": 60
+        },
+        "history": {
+          "qsearch_check_hard_limit": 12,
+          "time_budget": 60
+        }
+      }
+    },
+    "scope_correction": "ALL72q0fixedD3pairs are complete exact objectives. For q4D2,9pairs censored; use63completedpairs cost separately. Wall varying q-hard abort results are coverage/cost, not fixedwork speedup or strength. Sum public main nodes and qnodes for actual totalwork."
+  },
+  "prospective": {
+    "queries": 552,
+    "errors": [],
+    "conditions": {
+      "fixed_q0": {
+        "all": {
+          "pairs": 92,
+          "both_complete": 74,
+          "finite_equal": 74,
+          "same_action": 92,
+          "deeper": 8,
+          "same_depth": 84,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.7796627446914733,
+          "work_geomean": 0.7746726237457708,
+          "caller_worse": 22,
+          "max_caller_ratio": 1.4422227452776581,
+          "max_work_ratio": 1.5836878617147676
+        },
+        "completed": {
+          "pairs": 74,
+          "both_complete": 74,
+          "finite_equal": 74,
+          "same_action": 74,
+          "deeper": 0,
+          "same_depth": 74,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.789293251000029,
+          "work_geomean": 0.7867106030565922,
+          "caller_worse": 17,
+          "max_caller_ratio": 1.4422227452776581,
+          "max_work_ratio": 1.5836878617147676
+        },
+        "strata": {
+          "4": {
+            "pairs": 20,
+            "both_complete": 20,
+            "finite_equal": 20,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.877043335752428,
+            "work_geomean": 0.8426686004866706,
+            "caller_worse": 3,
+            "max_caller_ratio": 1.4422227452776581,
+            "max_work_ratio": 1.1436170212765957
+          },
+          "8": {
+            "pairs": 24,
+            "both_complete": 24,
+            "finite_equal": 24,
+            "same_action": 24,
+            "deeper": 0,
+            "same_depth": 24,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.7588933123052528,
+            "work_geomean": 0.7154376687673579,
+            "caller_worse": 6,
+            "max_caller_ratio": 1.0980884495896357,
+            "max_work_ratio": 1.1103990008545324
+          },
+          "12": {
+            "pairs": 24,
+            "both_complete": 22,
+            "finite_equal": 22,
+            "same_action": 24,
+            "deeper": 2,
+            "same_depth": 22,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.6965174935135985,
+            "work_geomean": 0.7662046637675631,
+            "caller_worse": 6,
+            "max_caller_ratio": 1.3200408394157102,
+            "max_work_ratio": 1.5836878617147676
+          },
+          "16": {
+            "pairs": 24,
+            "both_complete": 8,
+            "finite_equal": 8,
+            "same_action": 24,
+            "deeper": 6,
+            "same_depth": 18,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.8128536641925196,
+            "work_geomean": 0.7906589592622524,
+            "caller_worse": 7,
+            "max_caller_ratio": 1.0281794345946877,
+            "max_work_ratio": 1.150632878559942
+          }
+        },
+        "completed_family_intervals": {
+          "caller_ratio": {
+            "families": 21,
+            "pairs": 74,
+            "family_weighted_geomean": 0.7758127428254012,
+            "paired_family_bootstrap_95": [
+              0.6709348402398345,
+              0.8714820116684014
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive family interval conditional on jointly completed finite cells, not guarantee or all-domain validation."
+          },
+          "work_ratio": {
+            "families": 21,
+            "pairs": 74,
+            "family_weighted_geomean": 0.7722194569302607,
+            "paired_family_bootstrap_95": [
+              0.6614073645841005,
+              0.8691823055692366
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive family interval conditional on jointly completed finite cells, not guarantee or all-domain validation."
+          }
+        }
+      },
+      "fixed_q4": {
+        "all": {
+          "pairs": 92,
+          "both_complete": 40,
+          "finite_equal": 40,
+          "same_action": 90,
+          "deeper": 11,
+          "same_depth": 81,
+          "shallower": 0,
+          "requested_gain": 3,
+          "requested_loss": 0,
+          "caller_geomean": 0.8834388154020929,
+          "work_geomean": 0.9010118555891451,
+          "caller_worse": 33,
+          "max_caller_ratio": 4.0803011840704055,
+          "max_work_ratio": 3.8364262013026913
+        },
+        "completed": {
+          "pairs": 40,
+          "both_complete": 40,
+          "finite_equal": 40,
+          "same_action": 40,
+          "deeper": 0,
+          "same_depth": 40,
+          "shallower": 0,
+          "requested_gain": 0,
+          "requested_loss": 0,
+          "caller_geomean": 0.7343339547778656,
+          "work_geomean": 0.7407119275987804,
+          "caller_worse": 5,
+          "max_caller_ratio": 1.1847826081527242,
+          "max_work_ratio": 1.082956809333455
+        },
+        "strata": {
+          "4": {
+            "pairs": 20,
+            "both_complete": 16,
+            "finite_equal": 16,
+            "same_action": 20,
+            "deeper": 0,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.885269221027052,
+            "work_geomean": 0.8495819725193515,
+            "caller_worse": 4,
+            "max_caller_ratio": 1.1847826081527242,
+            "max_work_ratio": 1.0
+          },
+          "8": {
+            "pairs": 24,
+            "both_complete": 16,
+            "finite_equal": 16,
+            "same_action": 22,
+            "deeper": 2,
+            "same_depth": 22,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.667974492211749,
+            "work_geomean": 0.690901178226178,
+            "caller_worse": 5,
+            "max_caller_ratio": 1.1060599294504112,
+            "max_work_ratio": 1.0897057765628373
+          },
+          "12": {
+            "pairs": 24,
+            "both_complete": 8,
+            "finite_equal": 8,
+            "same_action": 24,
+            "deeper": 6,
+            "same_depth": 18,
+            "shallower": 0,
+            "requested_gain": 2,
+            "requested_loss": 0,
+            "caller_geomean": 1.0677160118153197,
+            "work_geomean": 1.1302072676485593,
+            "caller_worse": 11,
+            "max_caller_ratio": 4.0803011840704055,
+            "max_work_ratio": 3.8364262013026913
+          },
+          "16": {
+            "pairs": 24,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 24,
+            "deeper": 3,
+            "same_depth": 21,
+            "shallower": 0,
+            "requested_gain": 1,
+            "requested_loss": 0,
+            "caller_geomean": 0.9650831274304486,
+            "work_geomean": 0.9837585089110155,
+            "caller_worse": 13,
+            "max_caller_ratio": 1.0006585732098188,
+            "max_work_ratio": 1.0150827634690356
+          }
+        },
+        "completed_family_intervals": {
+          "caller_ratio": {
+            "families": 13,
+            "pairs": 40,
+            "family_weighted_geomean": 0.7445574423457271,
+            "paired_family_bootstrap_95": [
+              0.599065167128094,
+              0.8859579284024178
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive family interval conditional on jointly completed finite cells, not guarantee or all-domain validation."
+          },
+          "work_ratio": {
+            "families": 13,
+            "pairs": 40,
+            "family_weighted_geomean": 0.7510493651007311,
+            "paired_family_bootstrap_95": [
+              0.6083554565789865,
+              0.8876921919475452
+            ],
+            "seed": 20261016,
+            "draws": 5000,
+            "scope": "Descriptive family interval conditional on jointly completed finite cells, not guarantee or all-domain validation."
+          }
+        }
+      },
+      "wall_q4": {
+        "all": {
+          "pairs": 92,
+          "both_complete": 0,
+          "finite_equal": 0,
+          "same_action": 90,
+          "deeper": 24,
+          "same_depth": 68,
+          "shallower": 0,
+          "requested_gain": 4,
+          "requested_loss": 0,
+          "caller_geomean": 0.9822545239727686,
+          "work_geomean": 1.0401529021976124,
+          "caller_worse": 50,
+          "max_caller_ratio": 4.057486312330252,
+          "max_work_ratio": 3.8364262013026913
+        },
+        "completed": {
+          "pairs": 0
+        },
+        "strata": {
+          "4": {
+            "pairs": 20,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 20,
+            "deeper": 4,
+            "same_depth": 16,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.85011876259311,
+            "work_geomean": 0.892439667926144,
+            "caller_worse": 9,
+            "max_caller_ratio": 2.8096369438818227,
+            "max_work_ratio": 2.9700751074318825
+          },
+          "8": {
+            "pairs": 24,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 22,
+            "deeper": 10,
+            "same_depth": 14,
+            "shallower": 0,
+            "requested_gain": 0,
+            "requested_loss": 0,
+            "caller_geomean": 0.9400979896200288,
+            "work_geomean": 1.0157747865458693,
+            "caller_worse": 17,
+            "max_caller_ratio": 1.079747288466612,
+            "max_work_ratio": 1.2607869397434743
+          },
+          "12": {
+            "pairs": 24,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 24,
+            "deeper": 6,
+            "same_depth": 18,
+            "shallower": 0,
+            "requested_gain": 2,
+            "requested_loss": 0,
+            "caller_geomean": 1.1369720515027728,
+            "work_geomean": 1.2238883239666511,
+            "caller_worse": 11,
+            "max_caller_ratio": 4.057486312330252,
+            "max_work_ratio": 3.8364262013026913
+          },
+          "16": {
+            "pairs": 24,
+            "both_complete": 0,
+            "finite_equal": 0,
+            "same_action": 24,
+            "deeper": 4,
+            "same_depth": 20,
+            "shallower": 0,
+            "requested_gain": 2,
+            "requested_loss": 0,
+            "caller_geomean": 1.0000834267527647,
+            "work_geomean": 1.0284525704913565,
+            "caller_worse": 13,
+            "max_caller_ratio": 1.000784050584837,
+            "max_work_ratio": 1.6051904317428942
+          }
+        }
+      }
+    },
+    "mismatches": [],
+    "pv_edges": 1383,
+    "termination_histograms": {
+      "fixed_q0": {
+        "baseline": {
+          "completed": 74,
+          "time_budget": 18
+        },
+        "history": {
+          "completed": 82,
+          "time_budget": 10
+        }
+      },
+      "fixed_q4": {
+        "baseline": {
+          "qsearch_check_hard_limit": 18,
+          "completed": 40,
+          "time_budget": 34
+        },
+        "history": {
+          "qsearch_check_hard_limit": 16,
+          "completed": 48,
+          "time_budget": 28
+        }
+      },
+      "wall_q4": {
+        "baseline": {
+          "qsearch_check_hard_limit": 26,
+          "time_budget": 66
+        },
+        "history": {
+          "qsearch_check_hard_limit": 24,
+          "time_budget": 68
+        }
+      }
+    }
+  },
+  "tt": {
+    "queries": 48,
+    "both_complete": 22,
+    "mismatches": [],
+    "pv_edges": 128,
+    "seconds": 41.273510500002885,
+    "caller_geomean_complete": 0.7285588364819225,
+    "scope": "Same persistent1MiBTT and checked legalroot hint through q0 cold/warm/q4/q0 objective switches; source/defaultTT64/rootwindowFalse and all-domain safety not established."
+  },
+  "readiness": {
+    "complete": true,
+    "queries": 248,
+    "active_queries": 216,
+    "inactive_queries": 32,
+    "non_time_pairs": 92,
+    "mismatches": [],
+    "errors": [],
+    "pv_edges": 572,
+    "seconds": 284.6710477000015,
+    "scope": "Storage activation refinement only. All non-time result fields/work compared; timecensors remain. Prototype-vs-baseline cost findings separate from guarded-vs-prototype parity.",
+    "guarded_source_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3"
+  },
+  "core_reference": {
+    "complete": true,
+    "planned_slots": 20,
+    "actual_roots": 18,
+    "missing": 2,
+    "complete_roots": 13,
+    "censored_roots": 5,
+    "native_comparisons": 26,
+    "mismatches": [],
+    "seconds": 19.736627000005683,
+    "scope": "PureCore existing minimalAB, full runtime restored and Nativelegal providerFalse; completedD4score only with declared terminal normalization. Censors remainUNKNOWN; no independent all-domain/PV/WDL proof."
+  },
+  "decisions": {
+    "complete": true,
+    "physical_games": 12,
+    "physical_edges": 258,
+    "known_actor_comparisons": 6,
+    "unknown_actor_comparisons": 2,
+    "known_gains": 0,
+    "known_losses": 0,
+    "cases": [
+      {
+        "case": {
+          "seed": 6301,
+          "ply": 8,
+          "n": 4
+        },
+        "comparisons": [
+          {
+            "role": 0,
+            "baseline_payoff": 1,
+            "history_payoff": 1,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          },
+          {
+            "role": 1,
+            "baseline_payoff": 0,
+            "history_payoff": 0,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          }
+        ],
+        "outcomes": {
+          "baseline_baseline": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 5,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 3.6145286000100896
+          },
+          "history_role0": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 5,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 2.8260882000031415
+          },
+          "history_role1": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 5,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 3.364635099991574
+          }
+        }
+      },
+      {
+        "case": {
+          "seed": 6311,
+          "ply": 8,
+          "n": 8
+        },
+        "comparisons": [
+          {
+            "role": 0,
+            "baseline_payoff": null,
+            "history_payoff": null,
+            "known_difference": null,
+            "first_divergence": 4,
+            "first_divergence_actor": 0,
+            "actual_physical_games_reused_control": true
+          },
+          {
+            "role": 1,
+            "baseline_payoff": null,
+            "history_payoff": null,
+            "known_difference": null,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          }
+        ],
+        "outcomes": {
+          "baseline_baseline": {
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "edges": 64,
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 75.94050340000831
+          },
+          "history_role0": {
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "edges": 64,
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 76.78451709999354
+          },
+          "history_role1": {
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "edges": 64,
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 75.93047969999316
+          }
+        }
+      },
+      {
+        "case": {
+          "seed": 6321,
+          "ply": 8,
+          "n": 12
+        },
+        "comparisons": [
+          {
+            "role": 0,
+            "baseline_payoff": 1,
+            "history_payoff": 1,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          },
+          {
+            "role": 1,
+            "baseline_payoff": 0,
+            "history_payoff": 0,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          }
+        ],
+        "outcomes": {
+          "baseline_baseline": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 13,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 6.223440599991591
+          },
+          "history_role0": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 13,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 6.253183799999533
+          },
+          "history_role1": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 13,
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 6.2449207000026945
+          }
+        }
+      },
+      {
+        "case": {
+          "seed": 6331,
+          "ply": 8,
+          "n": 16
+        },
+        "comparisons": [
+          {
+            "role": 0,
+            "baseline_payoff": 0,
+            "history_payoff": 0,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          },
+          {
+            "role": 1,
+            "baseline_payoff": 1,
+            "history_payoff": 1,
+            "known_difference": 0,
+            "first_divergence": null,
+            "first_divergence_actor": null,
+            "actual_physical_games_reused_control": true
+          }
+        ],
+        "outcomes": {
+          "baseline_baseline": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 4,
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 3.1106905000051484
+          },
+          "history_role0": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 4,
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 3.113458799998625
+          },
+          "history_role1": {
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "edges": 4,
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            },
+            "seconds": 3.119194500002777
+          }
+        }
+      }
+    ],
+    "termination_histograms": {
+      "time_budget": 213,
+      "qsearch_check_hard_limit": 36,
+      "root_immediate_win": 9
+    },
+    "requested_q_receipts": 34,
+    "physical_win_receipts": 9,
+    "seconds": 269.3811233000015,
+    "scope": "Fixed baseline opponent, both history actor roles. Baseline-baseline trajectory physically executed once per root then reused as each role control. UNKNOWN not draw/loss.4input roots/12games not independent24outcomes or global strength. Equal finite cost gains and tested point utility are separate."
+  },
+  "screen": {
+    "roots": 2,
+    "children": 4,
+    "reply_counts": [
+      6,
+      4,
+      127,
+      7
+    ],
+    "immediate_opponent_wins": 0,
+    "native_seconds_range": [
+      0.00013580000086221844,
+      0.003595000001951121
+    ],
+    "limitation": "Exposed oneply only, notWDL or generalbudget"
+  },
+  "final_product_tests": {
+    "exit_code": 0,
+    "seconds": 271.08703850000165,
+    "command": "python -m pytest -q -p no:cacheprovider -o addopts= --basetemp <PROJECT>/.local_agent/cutoff-repetition-20261016/pytest-final-product",
+    "summary": [
+      "........................................................................ [ 99%]",
+      ".......................                                                  [100%]",
+      "2687 passed in 270.50s (0:04:30)"
+    ],
+    "native_module_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3",
+    "scope": "Actual full default four active test layers with supported rebuilt finalproduct Native, no source or default routing substitution."
+  },
+  "consumer": {
+    "complete": true,
+    "by_cohort": {
+      "counter": {
+        "roots": 8,
+        "queries": 32,
+        "edges": 80
+      },
+      "pilot": {
+        "roots": 8,
+        "queries": 32,
+        "edges": 94
+      },
+      "tt": {
+        "roots": 3,
+        "queries": 48,
+        "edges": 128
+      },
+      "transfer": {
+        "roots": 36,
+        "queries": 432,
+        "edges": 1067
+      },
+      "fresh": {
+        "roots": 46,
+        "queries": 552,
+        "edges": 1383
+      },
+      "readiness": {
+        "roots": 36,
+        "queries": 248,
+        "edges": 572
+      }
+    },
+    "roots": 137,
+    "queries": 1344,
+    "edges": 3324,
+    "terminal_tail_receipts": 14,
+    "seconds": 29.080914400008623,
+    "search_disabled": true,
+    "scope": "Separate actual consumer with normal product Native and shared Core/compiler. Complete board/hands/aux/actor/digest/event histories, literal terminals and API main+q budget totals. Not timing rerun, independent rules implementation, optimal-PV oracle or all-domain proof."
+  },
+  "physical_consumer": {
+    "complete": true,
+    "games": 12,
+    "physical_edges": 258,
+    "seconds": 2.284289200004423,
+    "search_disabled": true,
+    "scope": "Separate normal-Core/Native consumer reconstructs every physical action, fullidentity/eventhistory, finalstate/result and main+q caps; no timing/game/solver rerun or independent rules implementation."
+  },
+  "public_copy": {
+    "complete": true,
+    "archive_sha256": "068bc8d91e1521f5b73d600ebb0bb3567b57b8bdcbf7ed7b02f892955df072a9",
+    "members": 620,
+    "source_module_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3",
+    "native_rebuilt": true,
+    "python_without_site": true,
+    "module_origins_asserted": true,
+    "receipts": [
+      {
+        "name": "consumer",
+        "exit_code": 0,
+        "receipt": {
+          "complete": true,
+          "by_cohort": {
+            "counter": {
+              "roots": 8,
+              "queries": 32,
+              "edges": 80
+            },
+            "pilot": {
+              "roots": 8,
+              "queries": 32,
+              "edges": 94
+            },
+            "tt": {
+              "roots": 3,
+              "queries": 48,
+              "edges": 128
+            },
+            "transfer": {
+              "roots": 36,
+              "queries": 432,
+              "edges": 1067
+            },
+            "fresh": {
+              "roots": 46,
+              "queries": 552,
+              "edges": 1383
+            },
+            "readiness": {
+              "roots": 36,
+              "queries": 248,
+              "edges": 572
+            }
+          },
+          "roots": 137,
+          "queries": 1344,
+          "edges": 3324,
+          "terminal_tail_receipts": 14,
+          "seconds": 30.051789799996186,
+          "search_disabled": true,
+          "scope": "Separate actual consumer with normal product Native and shared Core/compiler. Complete board/hands/aux/actor/digest/event histories, literal terminals and API main+q budget totals. Not timing rerun, independent rules implementation, optimal-PV oracle or all-domain proof."
+        }
+      },
+      {
+        "name": "decision_replay",
+        "exit_code": 0,
+        "receipt": {
+          "complete": true,
+          "games": 12,
+          "physical_edges": 258,
+          "seconds": 2.4419477000046754,
+          "rows": [
+            {
+              "case_index": 0,
+              "mode": "baseline_baseline",
+              "edges": 5,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 0,
+              "mode": "history_role0",
+              "edges": 5,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 0,
+              "mode": "history_role1",
+              "edges": 5,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 1,
+              "mode": "baseline_baseline",
+              "edges": 64,
+              "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+              "result": {
+                "status": "ongoing",
+                "winner": null,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 1,
+              "mode": "history_role0",
+              "edges": 64,
+              "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+              "result": {
+                "status": "ongoing",
+                "winner": null,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 1,
+              "mode": "history_role1",
+              "edges": 64,
+              "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+              "result": {
+                "status": "ongoing",
+                "winner": null,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 2,
+              "mode": "baseline_baseline",
+              "edges": 13,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 2,
+              "mode": "history_role0",
+              "edges": 13,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 2,
+              "mode": "history_role1",
+              "edges": 13,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 0,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 3,
+              "mode": "baseline_baseline",
+              "edges": 4,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 1,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 3,
+              "mode": "history_role0",
+              "edges": 4,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 1,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            },
+            {
+              "case_index": 3,
+              "mode": "history_role1",
+              "edges": 4,
+              "kind": "ACTUAL_RULE_TERMINAL",
+              "result": {
+                "status": "checkmate",
+                "winner": 1,
+                "resigned_by": null,
+                "declaration_id": null,
+                "declared_by": null,
+                "declaration_outcome": null,
+                "declaration_score": null
+              }
+            }
+          ],
+          "search_disabled": true,
+          "scope": "Separate normal-Core/Native consumer reconstructs every physical action, fullidentity/eventhistory, finalstate/result and main+q caps; no timing/game/solver rerun or independent rules implementation."
+        }
+      }
+    ],
+    "seconds": 36.871199400004116,
+    "scope": "Actual extracted checked publication-copy source/records replay, no copied Native image or old private input reads. Existing Windows/Python3.12/Zig libraries, not a new machine or timing/game/proof/search rerun."
+  },
+  "failures": [
+    "Zeroquery offbyone input enumeration; exact original20seed manifest restored before execution.",
+    "Zeroquery summarize-module collision; exactfile import and oldsummary byte-identical to priorsealedZIP.",
+    "Analysis-only else16 syntax typo corrected, no search rerun.",
+    "Zeroquery Core runtime mappingproxy serialization replaced with existing full snapshot helper.",
+    "First source-only replay unused broaddiagnostic import required chess; directCore import fixes Python-S replay, failedcapsule retained privately.",
+    "Oversize memo draft rejected before write and shortened."
+  ],
+  "collaboration": {
+    "primary_lane": "Native/backend exactroot ordering",
+    "aux_final_sha": "1c5bc8be5ce16ca3f3baf66468850574d1164308",
+    "aux_scope": "Message-only PRIMARY read of owner313tests/496games claims, no source/test/game rerun or adoption; Dot reports397source review only.",
+    "root_boundary": "1792081736.890159",
+    "primary_replies": 10,
+    "prior_aux_replies": 20,
+    "new_aux62_replies": 2,
+    "all_pages_complete": true
+  },
+  "cost_and_strength": "Conditional completed-finite-objective cost reduction, local2.846xworkregression kept, no16boardprospectiveq4D3completion, no observed gamepayoff improvement;2UNKNOWN actor comparisons retained."
+}

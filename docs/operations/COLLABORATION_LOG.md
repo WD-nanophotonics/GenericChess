@@ -2721,3 +2721,42 @@ zeroqnodes and every combined total stays<=1000000. No cap/action/outcome/timing
 changes or hidden rerun. Source/review of the next counter probe exposed this;
 the probe was not executed and no heuristic built. The original sealed archive
 stays intact; corrected report/data and fixed-version supplement are delivered.
+
+
+## 2026-10-16 JST: Native history cost, fixed-opponent limits and AUX62
+
+PRIMARY completes32counter/32pilot/48TT/432paid/552prospective Native queries,
+then248changed-storage activation/default controls. All jointly completed finite
+scores/actions/PVs match; fullstate histories are retained. The final bounded
+per-call table is initialized only for existing exact-root/plain ordering. Normal
+rebuilt product passes2687tests. Conditional finite-cost gains have clear local
+regressions, including2.846x work; no default/q/price/API/UI change.12actual games
+against the SAME baseline opponent in both candidate roles give6known comparisons
+unchanged and2UNKNOWN,258physical edges; only one unknown trajectory changes.
+Existing pureCore control completes13of18actualD4roots/26matching Native scores;
+5original censors and2terminal-tail slots remain. This supports scoped cost
+adoption, not a strategy/price/all-domain claim. Full report:
+../research/CUTOFF_HISTORY_ORDERING_20261016.md.
+
+Complete original primary10reply and AUX61/20reply threads are saved before
+reconcile. No new PRIMARY technical reply; Dot's retained-policy/fullclock advice
+remains adopted without an acknowledgement gate. Closing root scan discovers
+GC-SLACK-20261016-012740-5c49028e; the full2reply AUX62thread is read with complete
+pagination. Final owner version
+[1c5bc8be5ce16ca3f3baf66468850574d1164308](https://github.com/WD-nanophotonics/GenericChess/blob/1c5bc8be5ce16ca3f3baf66468850574d1164308/results/dev_aux/SEGMENT_20261015_62.md)
+reports313tests and496games/10435moves, a fingerprint-scoped inventory-absence
+filter and zero empirical regret on the tested2vs4edge. PRIMARY reads messages
+only, not its final source/tests/games/census; none is independently rerun or
+merged. Dot reviewed397c789areport/filter source, not that execution. Its
+common-prefix conditioning caveat and empirical-objective tie distinguish weak
+identification from optimizer failure; these inform later interpretation, not
+our Native engine's results or a competing PRIMARY learner.
+
+AUX reports reading our prior reserve/correction delivery without execution;
+no quantified cooperation speedup is inferred. New Native fixedrevision links
+are delivered after actual publication/full remoteSHA, not assumed Dot reading.
+No cross-checkout writes, duplicate Agent/solver/model, boundary conflict or
+quiet-window request. Ordinary concurrent load is a timing limit. Zero-query
+local seed/import/snapshot wrapper faults are preserved and corrected, rather
+than hidden or attributed to SAC; the accidentally re-evaluated old summary is
+byte-identical to its sealed archive. No user action or approval queue was needed.

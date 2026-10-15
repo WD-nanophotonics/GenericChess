@@ -1,0 +1,253 @@
+{
+  "complete": true,
+  "archive_sha256": "068bc8d91e1521f5b73d600ebb0bb3567b57b8bdcbf7ed7b02f892955df072a9",
+  "members": 620,
+  "source_module_sha256": "1c855ae56e946ec6cb8e57f60a36a18cb75cfec2ee8061047469f3e0bee3fac3",
+  "native_rebuilt": true,
+  "python_without_site": true,
+  "module_origins_asserted": true,
+  "receipts": [
+    {
+      "name": "consumer",
+      "exit_code": 0,
+      "receipt": {
+        "complete": true,
+        "by_cohort": {
+          "counter": {
+            "roots": 8,
+            "queries": 32,
+            "edges": 80
+          },
+          "pilot": {
+            "roots": 8,
+            "queries": 32,
+            "edges": 94
+          },
+          "tt": {
+            "roots": 3,
+            "queries": 48,
+            "edges": 128
+          },
+          "transfer": {
+            "roots": 36,
+            "queries": 432,
+            "edges": 1067
+          },
+          "fresh": {
+            "roots": 46,
+            "queries": 552,
+            "edges": 1383
+          },
+          "readiness": {
+            "roots": 36,
+            "queries": 248,
+            "edges": 572
+          }
+        },
+        "roots": 137,
+        "queries": 1344,
+        "edges": 3324,
+        "terminal_tail_receipts": 14,
+        "seconds": 30.051789799996186,
+        "search_disabled": true,
+        "scope": "Separate actual consumer with normal product Native and shared Core/compiler. Complete board/hands/aux/actor/digest/event histories, literal terminals and API main+q budget totals. Not timing rerun, independent rules implementation, optimal-PV oracle or all-domain proof."
+      }
+    },
+    {
+      "name": "decision_replay",
+      "exit_code": 0,
+      "receipt": {
+        "complete": true,
+        "games": 12,
+        "physical_edges": 258,
+        "seconds": 2.4419477000046754,
+        "rows": [
+          {
+            "case_index": 0,
+            "mode": "baseline_baseline",
+            "edges": 5,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 0,
+            "mode": "history_role0",
+            "edges": 5,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 0,
+            "mode": "history_role1",
+            "edges": 5,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 1,
+            "mode": "baseline_baseline",
+            "edges": 64,
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 1,
+            "mode": "history_role0",
+            "edges": 64,
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 1,
+            "mode": "history_role1",
+            "edges": 64,
+            "kind": "ORIGINAL_PLY_CAP_UNKNOWN",
+            "result": {
+              "status": "ongoing",
+              "winner": null,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 2,
+            "mode": "baseline_baseline",
+            "edges": 13,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 2,
+            "mode": "history_role0",
+            "edges": 13,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 2,
+            "mode": "history_role1",
+            "edges": 13,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 0,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 3,
+            "mode": "baseline_baseline",
+            "edges": 4,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 3,
+            "mode": "history_role0",
+            "edges": 4,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          },
+          {
+            "case_index": 3,
+            "mode": "history_role1",
+            "edges": 4,
+            "kind": "ACTUAL_RULE_TERMINAL",
+            "result": {
+              "status": "checkmate",
+              "winner": 1,
+              "resigned_by": null,
+              "declaration_id": null,
+              "declared_by": null,
+              "declaration_outcome": null,
+              "declaration_score": null
+            }
+          }
+        ],
+        "search_disabled": true,
+        "scope": "Separate normal-Core/Native consumer reconstructs every physical action, fullidentity/eventhistory, finalstate/result and main+q caps; no timing/game/solver rerun or independent rules implementation."
+      }
+    }
+  ],
+  "seconds": 36.871199400004116,
+  "scope": "Actual extracted checked publication-copy source/records replay, no copied Native image or old private input reads. Existing Windows/Python3.12/Zig libraries, not a new machine or timing/game/proof/search rerun."
+}

@@ -115,17 +115,33 @@ no global/default change. All caps/UNKNOWN/actual caller expiry remain. Full
 report: COMPLETION_AWARE_RESERVE_ALLOCATION.md; search-disabled public-copy replay
 checks1320phases3796edges plus176trajectory edges on unchanged product source.
 
-Next selection: before another q/allocation curve, measure whether repeated
-actual sufficient cutoff actions justify a tiny per-search Native AB ordering
-probe. Primary-paper/current-cutoff/trace source examination has begun: the
-existing training trace omits cutoff action/full history, so it cannot supply
-this statistic. Freeze<=8paid roots/fixedD3 counter-only cost/repetition check
-before any ordering implementation; reject low repetition or high overhead.
-The frozen8root plan remains NOT_EXECUTED: checking the actual node exporter
-first exposed a report error. API nodes excludesqnodes; all1044caller queries/
-366two-phase receipts are now re-accounted, firstphaseqnodes0, alltotal<=1M.
-Caps/actions/outcomes stay unchanged and originaldata remains sealed. The
-explicit correction is reserve_node_accounting_correction_20261015.json.
+Current history result: the prior frozen counter is now actually executed and
+followed by a counter-free exact-action history study.32counter/32pilot/48TT/
+432paid/552prospective queries preserve all jointly completed finite objectives.
+Final per-call48KiB table is used only by existing exact-root/plain ordering;
+no API/q/evaluator/model/default-flag/UI change. Candidate storage activation
+gets248active/inactive controls with0non-time mismatch, then the supported
+rebuilt product passes2687full tests. Source/evidence: CUTOFF_HISTORY_ORDERING_20261016.md.
+Completion-conditioned family caller ratios are.922/.812 paid(q0D3/q4D2) and
+.776/.745 prospective(q0D4/q4D3), with the full censors and2.846x adverse work
+case retained. No16-board prospective q4D3pair completes.12fixed-opponent games
+show6known actor comparisons unchanged and2UNKNOWN, not strength gain.13pureCore
+D4roots independently agree on26Native scores;5censors stayUNKNOWN.
+The old reserve node-export correction remains: API main nodes excludesqnodes;
+all1044old caller queries/366two-phase receipts were re-accounted, firstphase
+qnodes0 and combinedtotal<=1M, with original sealed data/caps/actions unchanged.
+
+Next discriminating choice: measure a q4-first disabled-q fallback ONLY on actual
+unrequested-policy q-hard stops with residual caller budget. The closed8-board
+decision trajectory has4such D1turns with.031-.468s spare versus55D1time stops;
+D1alone is not evidence of spare time. Freeze a tiny contrast on saved fullstates
+and retain a time-exhausted/literal-loss countercontrol before any implementation.
+Subtract actual firstphase main+q nodes and fullcallerwall, preserve cancellation,
+physical wins and requested-policy priority; never compare cross-objective scores.
+This is a changed ordering of phases, not a retry of the rejected unconditional
+upfrontD16reserve or automatic q/default switch. A second bounded alternative is
+attributing flagged canonical reconstruction cost on2actual hard-stop states,
+without dropping complete-PV/history authority or changing APIs merely to pass.
 This is backend search ordering, not AUX Session solver/runtime/model/training,
 no source adoption, changed canonical PV or semantic authority. CappedD2 remains
 a scoped alternative, not a new permanent policy. Do not infer utility from depth
