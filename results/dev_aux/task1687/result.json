@@ -1,0 +1,68 @@
+{
+  "status": "PASS_PROMOTION_OFF_ALLPOLICY_AND_TRUEWDL_PAIRED_RULE_INTERACTION",
+  "counts": {
+    "newgo": 1866,
+    "PVmoves": 19123,
+    "ACKs": 1866,
+    "games": 256,
+    "plies": 2483,
+    "promotion_moves": 0,
+    "capture_moves": 393,
+    "duplicate_kind_plies": 0,
+    "PHYSICAL_MATE": 79,
+    "PROVED_POLICY_CYCLE_DRAW": 149,
+    "BARE_KINGS_DRAW": 24,
+    "PHYSICAL_STALE": 4
+  },
+  "fixedcandidate": [
+    1440,
+    720,
+    720,
+    360
+  ],
+  "cells": {
+    "ON": {
+      "(720, 720, 720, 720)": {
+        "payoff": 0.1328125,
+        "lower": 0.1328125,
+        "upper": 0.1328125
+      },
+      "(1440, 720, 720, 360)": {
+        "payoff": 0.21875,
+        "lower": 0.21875,
+        "upper": 0.21875
+      }
+    },
+    "OFF": {
+      "(720, 720, 720, 720)": {
+        "payoff": 0.078125,
+        "lower": 0.078125,
+        "upper": 0.078125
+      },
+      "(1440, 720, 720, 360)": {
+        "payoff": 0.1015625,
+        "lower": 0.1015625,
+        "upper": 0.1015625
+      }
+    }
+  },
+  "interaction_ON_gain_minus_OFF_gain": 0.0625,
+  "interaction_family95": [
+    -0.015625,
+    0.1484375
+  ],
+  "interaction_infinite_bounds": [
+    0.0625,
+    0.0625
+  ],
+  "interaction_infinite_family95_conservative": [
+    -0.015625,
+    0.1484375
+  ],
+  "first_divergence_count": 45,
+  "first_divergence_families": 33,
+  "ON_reused_games": 256,
+  "OFF_new_games": 256,
+  "cache_isolation": "OFFonlyfreshfullstate-pricecache, ONchoicesneverloaded",
+  "scope": "Sameexposed64DEVfamilies2colors each, fixedONTRAINselection noOFFtraining/DEVwinner; changesbothplayersrule/searchdomain. Thisidentifiesfixedcandidate gaininteraction, notuniversalprice/rootdistributionorisolatedcandidatepromotioncause."
+}

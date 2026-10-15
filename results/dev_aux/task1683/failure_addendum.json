@@ -1,0 +1,11 @@
+{
+  "status": "CORRECTED_DIAGNOSTIC_COUNT",
+  "cases": [
+    {
+      "family": 73,
+      "ON_move_count": 3,
+      "OFF_move_count": 1
+    }
+  ],
+  "correction": "failure.json ON_move_count=0 was an erroneous placeholder, NOT observed Native/model count; correct model ON count listedhere. Originalrootcheckclone wrongunderOFF, auditfixedandgamesremainvalid. Originalbadmetadataretainedexplicitlycorrected."
+}

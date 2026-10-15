@@ -1,0 +1,7 @@
+{
+  "status": "POSTQUERY_ANALYSIS_FAILURE_PRESERVED",
+  "actual_completed_go": 64,
+  "cause": "Atleastoneoriginalqueryelapsed0 underobservedmonotonic clock; ratio divisionbyzero AFTERallqueries/e.close/recordssaved. Noqueryrerun orrawrewrite.",
+  "correction": "task1717 validatesallsavedpairs, makesnoclockspeedclaim",
+  "engine_exit_code": "Notpersistedbeforepostprocesserror; e.close completed inproducerfinally, noexit0claim."
+}

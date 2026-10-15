@@ -1,0 +1,3 @@
+from pathlib import Path
+import ast,json
+R=Path.cwd();O=R/'results/dev_aux/task1688';s=(O/'qualify_literal.py').read_text(encoding='utf-8-sig').replace('s[:16]','s[:64]').replace('s[16]','s[64]');(O/'qualify_literal_fixed.py').write_text(s,encoding='utf8');ast.parse(s);(O/'failure.json').write_text(json.dumps({'status':'PREQUERY_REFERENCE_WIDTH_FAILURE_PRESERVED','cause':'Prepared8board independentactorreference retained16square slice/side16; missingKing inreference causedStopIteration beforeanyNativequery. Correctreference64/side64; originalfailedsource retained.','correction':'qualify_literal_fixed.py','actual_go':0},indent=2))

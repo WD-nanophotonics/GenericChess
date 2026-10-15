@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "actual_go": 902,
+  "cache_hits": 187,
+  "seconds": 11.421999999998661,
+  "exit_code": 0,
+  "selected": {
+    "FIXED_ON_TRAIN": [
+      1440,
+      720,
+      720,
+      360
+    ]
+  },
+  "TRAIN": [],
+  "DEV": [
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "games": 32,
+      "finite_net": 0.21875,
+      "lower": 0.21875,
+      "upper": 0.21875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 22,
+        "BARE_KINGS_DRAW": 3,
+        "PHYSICAL_MATE": 7
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        360
+      ],
+      "phase": "DEV",
+      "games": 32,
+      "finite_net": 0.28125,
+      "lower": 0.28125,
+      "upper": 0.28125,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 23,
+        "PHYSICAL_MATE": 9
+      }
+    }
+  ],
+  "scope": "Actualmate/stale,barekingsDraw,fixedbothcold64cachedpoliciesfullstatecycleDraw,H96UNKNOWN [-1,+1] notquantityororacle."
+}

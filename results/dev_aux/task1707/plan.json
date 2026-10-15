@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_ALIGNED_TABLES_FEASIBILITY_BEFORE_QUERIES",
+  "profiles": [
+    [
+      720,
+      720,
+      720,
+      720
+    ],
+    [
+      1440,
+      720,
+      720,
+      360
+    ],
+    [
+      1440,
+      720,
+      720,
+      1440
+    ]
+  ],
+  "names": {
+    "(720, 720, 720, 720)": "aux_align_720_720",
+    "(1440, 720, 720, 360)": "aux_align_1440_360",
+    "(1440, 720, 720, 1440)": "aux_align_1440_1440"
+  },
+  "candidate_sources": [
+    "task1678/selection.json",
+    "task1703/selection.json"
+  ],
+  "source_refs": [
+    "alignment-order/source/psqt.cpp:206-208,310-316",
+    "leaf-rnbp-46/source/uci.cpp:407-438"
+  ],
+  "question": "Canexistingvariantconfig alignleaf/native/SEE-capture tables whilekeepingqualifiedrules? Existingstudies variedONLYEvalPieceValue; futureglobalpriceclaimneedsactualtransportvalidation.",
+  "seconds_cap": 180,
+  "expected_seconds": 10,
+  "max_go": 32,
+  "max_perft": 96,
+  "humanfit": false,
+  "no_build": true
+}

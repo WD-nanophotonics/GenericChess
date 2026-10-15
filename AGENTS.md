@@ -242,17 +242,18 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment51
+# DEV_AUX current scope —2026-10-15 segment52
 
-ScienceOPEN; sidemissiononly; manualresearchended64.303min; heartbeatPAUSED.
-Same50compositeobjective repetitiongainuncertain, notstablehumanprices.
-DirectactualphysicalH48/no-matestockproof TRAINlearned1728/720/720; freshDEVgain.041015625positive.
-BalancedOWN1/2 newroots learn1728/720/1440 bothTRAIN; finiteDEV.037109375positive, infinityUNKNOWN.
-Nativeunit720cold64 opponent/cachedcycles closesall4096policyWDL samples; pooled1440/720/720 DEV.015625 CItouch0.
-Fixed64pricegains survive50%priceblind tactics,4096gains uncertain; pairedinteractions cross0.
-R1512/1728/2088 preserve729leaforders andall512oldactualtrajectories; numericR notunique.
-Strictgridclimb maystoponplatforms; globalargmax isnotmulti-initconvergence.
-129477newgo48640newepisodes2560reuse; source/policy/PV/loop/rule/label auditsPASS.
-NooracleWIN/quantityfitness/humanfit, nofullChess/Shogi/generateddomain/default/UI claim.
-Nextfreshnative-opponentcohortreplication; fieldplatformdiagnostic; scopedPawn/promotionstate feasibility.
-Evidence:SEGMENT_20261015_51.md,1654/1657/1662/1665/1668/1669/1670,COST/QA/SESSION/archives51.
+ScienceOPEN; sidemissiononly; manualresearch session52, heartbeatPAUSED.
+ActualWDLlearning cheap, stablehumanprice/transfer NOT established.
+FreshRNBnative-opponent replicate .03125 CI touch0; new4RNPpromotion .0859375 positive.
+Twoactualrandominitialpaths TRAINimprove but bothDEVbelowunit .015625; endpoint128trajectoriesidentical.
+CompleteD3bothTRAIN learnR1440/P360, matchedDEV .1328125positive, workdifferent; all8638/51095values independentlychecked.
+8cold64transfer negativeuncertain; NEW8candidate4096learnR=P1440, DEV .0234375uncertain,strongop0.
+AlignedEval/native/captureprices work, fixed8pricegain.015625uncertain; pairedinteractionscross0.
+Currentbare/singleN/B4/8 ruleDrawproof complete; futurecostforecast notwallgain.
+32coldquerypairs rawidentical, duplicateSclear64to32; clockzero timingclaimrejected.
+84701newNativego14656newepisodes1832perft; source/phase/clockfailurespreserved+fixed.
+Nextnewdriver explicitrule/node/table keys+oneclear+stockproof; freshalignedlearning/opmix, noDEVfit.
+No product/default/UI/primary writes orfullChess/Shogi/generateddomain claim.
+Evidence:SEGMENT_20261015_52.md,COST/QA/FAILURES/SESSION/archives52,1674/1679/1687/1694/1700/1711/1714/1717/1718.

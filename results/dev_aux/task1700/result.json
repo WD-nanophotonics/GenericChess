@@ -1,0 +1,49 @@
+{
+  "status": "PASS_ALL_COMPLETE_D3_VALUES_INDEPENDENT_ACTOR_EXPLICIT_MINIMAX_AND_ALLPHYSICAL_POLICIES",
+  "counts": {
+    "all_independently_exact_D3_rootvalues": 8638,
+    "all_root_action_values": 51095,
+    "Native_newgo": 978,
+    "Native_PVmoves": 9331,
+    "plies": 17808,
+    "games": 1792,
+    "PHYSICAL_MATE": 733,
+    "PROVED_POLICY_CYCLE_DRAW": 894,
+    "PHYSICAL_STALE": 56,
+    "BARE_KINGS_DRAW": 109
+  },
+  "selected": {
+    "TRAIN1": [
+      1440,
+      720,
+      720,
+      360
+    ],
+    "TRAIN2": [
+      1440,
+      720,
+      720,
+      360
+    ],
+    "POOLED": [
+      1440,
+      720,
+      720,
+      360
+    ]
+  },
+  "fixed_candidate_gain": 0.1328125,
+  "fixed_candidate_family95": [
+    0.046875,
+    0.2265625
+  ],
+  "gain_change_COMPLETE_D3_minus_Native64": 0.046875,
+  "gain_change_family95": [
+    -0.0546875,
+    0.1484375
+  ],
+  "independent_reference_expanded": 1430581,
+  "reference_cache_hits": 61146,
+  "seconds": 17.95300000000134,
+  "scope": "CompleteD3candidate vsSAMEactualNativeunitcold64op. Sameexposedroot/cohorts andpricegrid; changedcandidate algorithm+workbudget. Noequalresource/matureoptimality/fullGeneric/humanratio uniqueness claim. IndependentALLrootactionfinite3values, noNNUE/quantityfitness/oracleWIN."
+}

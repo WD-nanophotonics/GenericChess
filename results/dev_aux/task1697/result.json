@@ -1,0 +1,29 @@
+{
+  "status": "PASS_8BOARD_PRICE_TRANSFER_ALLRULE_POLICY_ACK_PV_ACTUALWDL",
+  "counts": {
+    "newgo": 6302,
+    "PVmoves": 36425,
+    "games": 512,
+    "plies": 7686,
+    "promotion_moves": 256,
+    "PROVED_POLICY_CYCLE_DRAW": 472,
+    "BARE_KINGS_DRAW": 20,
+    "PHYSICAL_MATE": 20
+  },
+  "fixed4TRAINcandidate": [
+    1440,
+    720,
+    720,
+    360
+  ],
+  "gain": -0.0078125,
+  "family95": [
+    -0.0234375,
+    0.0078125
+  ],
+  "infinite_gain_bounds": [
+    -0.0078125,
+    -0.0078125
+  ],
+  "scope": "Fresh8board pressure128family/2color actualcold64 bothpolicies; rule4to8 androotdistribution changed; no8training/DEVwinner, notpuregeometrycausalcomparison/humanpricegeneralization. Exactcachedpolicycycles legitimateDraw, terminalrare notUNKNOWN here."
+}

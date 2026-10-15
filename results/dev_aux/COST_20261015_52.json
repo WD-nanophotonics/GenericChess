@@ -1,0 +1,106 @@
+{
+  "status": "ACTUAL_COST_INCREMENTAL_WITH_CACHED_PRIOR_WORK_EXPLICIT",
+  "studies": [
+    {
+      "task": 1673,
+      "new_go": 15816,
+      "episode_records": 3840,
+      "seconds": 166.57800000000134,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1678,
+      "new_go": 10947,
+      "episode_records": 1920,
+      "seconds": 108.23500000000058,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1682,
+      "new_go": 1866,
+      "episode_records": 256,
+      "seconds": 18.85899999999674,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1686,
+      "new_go": 18322,
+      "episode_records": 3840,
+      "seconds": 187.375,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1693,
+      "new_go": 6302,
+      "episode_records": 512,
+      "seconds": 59.4690000000046,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1696,
+      "new_go": 978,
+      "episode_records": 1792,
+      "seconds": 50.03100000000268,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1699,
+      "new_go": 902,
+      "episode_records": 64,
+      "seconds": 11.421999999998661,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1703,
+      "new_go": 23807,
+      "episode_records": 2048,
+      "seconds": 302.89100000000326,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1707,
+      "new_go": 32,
+      "episode_records": 0,
+      "seconds": 0.9219999999986612,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1709,
+      "new_go": 5665,
+      "episode_records": 384,
+      "seconds": 79.875,
+      "engine_exit_code": 0
+    },
+    {
+      "task": 1716,
+      "new_go": 64,
+      "episode_records": 0,
+      "seconds": null,
+      "engine_exit_code": null,
+      "reason": "64allqueriespassed/e.closecompleted; postprocessZeroDivisionError preventedexitcode/elapsedpersist. Neverclaimexit0; correctedzero-tick-safe audit1717."
+    }
+  ],
+  "new_native_go": 84701,
+  "new_episode_records": 14656,
+  "new_perft": 1832,
+  "reused_episode_records_in_paired_analysis": {
+    "ONforOFFinteraction": 256,
+    "old8first16forbudgetcontrol": 64
+  },
+  "full3": {
+    "new_complete_root_choices": 8638,
+    "new_subproblems": 2752504,
+    "new_legal_children": 5980732,
+    "exact_subcache_hits": 79793
+  },
+  "independent_full3_recompute": {
+    "all_root_values": 8638,
+    "all_action_values": 51095,
+    "reference_expanded": 1430581
+  },
+  "rule_no_mate_proof_seconds": 128.421,
+  "new_rule_singleton_states_white_enumerated": 862040,
+  "old_choices": "Qualifiedsame-rule/price/node fullstate caches reused under source-declaredclosure; costs incremental, no fromscratch speedup. 64protocolgo arequeryreplays NOT training/newgames.",
+  "timing": "Nativecontrollers<=1200s, proof600s, audits900s; no>hourrun/extraAgents. Ordinarymachineconcurrencyallowed; elapsedusesGetTickCount64 resolution15.625ms, fine-grainedratiosnotreliable. IndependentprocesswallnotCPU/corehours/Appuptime.",
+  "scope": "ALL experiments andliteral/native audits withinownresults. Product/default/UI/primary state unchanged. HeartbeatPAUSED."
+}
