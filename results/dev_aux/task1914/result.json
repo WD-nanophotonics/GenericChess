@@ -1,0 +1,551 @@
+{
+  "status": "PASS_ALL22_ACTUAL_CONTINUATIONS",
+  "games": 22,
+  "moves": 816,
+  "native_bindings": 746,
+  "proof_games": 8,
+  "proof_steps": 8,
+  "tail_games": 0,
+  "tail_moves": 0,
+  "outcomes": {
+    "UNKNOWN": 13,
+    "LOSS": 4,
+    "WIN": 4,
+    "DRAW": 1
+  },
+  "cells": {
+    "2.0": {
+      "outcomes": {
+        "UNKNOWN": 6,
+        "LOSS": 2,
+        "WIN": 2,
+        "DRAW": 1
+      },
+      "net": 0
+    },
+    "4.0": {
+      "outcomes": {
+        "UNKNOWN": 7,
+        "LOSS": 2,
+        "WIN": 2
+      },
+      "net": 0
+    }
+  },
+  "pairs": [
+    {
+      "pair": 0,
+      "family": 0,
+      "role": 1,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        48,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 1,
+      "family": 1,
+      "role": 1,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ],
+      "scores": [
+        -1,
+        -1
+      ],
+      "delta": 0,
+      "moves": [
+        21,
+        35
+      ],
+      "old_wholepolicy_outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "pair": 2,
+      "family": 2,
+      "role": 1,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "WIN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        1,
+        0
+      ],
+      "delta": -1,
+      "moves": [
+        40,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "pair": 3,
+      "family": 4,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        48,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "pair": 4,
+      "family": 6,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          3,
+          1
+        ],
+        "to": [
+          3,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        48,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "UNKNOWN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 5,
+      "family": 10,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        48,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "UNKNOWN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 6,
+      "family": 10,
+      "role": 1,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          0,
+          2
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          3,
+          1
+        ],
+        "to": [
+          3,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "DRAW",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        28,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "pair": 7,
+      "family": 11,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          3,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          3,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "scores": [
+        0,
+        0
+      ],
+      "delta": 0,
+      "moves": [
+        48,
+        48
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 8,
+      "family": 12,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "UNKNOWN",
+        "WIN"
+      ],
+      "scores": [
+        0,
+        1
+      ],
+      "delta": 1,
+      "moves": [
+        48,
+        12
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 9,
+      "family": 13,
+      "role": 0,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ],
+      "scores": [
+        1,
+        1
+      ],
+      "delta": 0,
+      "moves": [
+        18,
+        14
+      ],
+      "old_wholepolicy_outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "pair": 10,
+      "family": 13,
+      "role": 1,
+      "origin2_action": {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "origin4_action": {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ],
+      "scores": [
+        -1,
+        -1
+      ],
+      "delta": 0,
+      "moves": [
+        17,
+        7
+      ],
+      "old_wholepolicy_outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    }
+  ],
+  "exit_causes": {
+    "reported_node_overrun": 623,
+    "external_search_return": 109,
+    "certificate": 70,
+    "time_budget": 14
+  },
+  "seconds": 0.5525498999923002,
+  "scope": "EXPOSED11pairedfirstactions; samefixedUNIT7204096normal16kproofBOTHafterforcedmove, H48additional/actualmaxply96. Not learning4vs2, not oldpolicystrength/freshvalidation, no independently randomized price trial. Changedoldopponent64->4096/nobank for BOTH newalternatives. UNKNOWNseparate; only actualterminals reward."
+}

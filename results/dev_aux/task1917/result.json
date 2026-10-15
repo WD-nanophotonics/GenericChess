@@ -1,0 +1,920 @@
+{
+  "status": "PASS_EXACT_FINITE_ORDER_ARGUMENT",
+  "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+  "initial_inputs_checked": 32,
+  "root_inventory": [
+    {
+      "family": 0,
+      "counts": {
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1
+      }
+    },
+    {
+      "family": 1,
+      "counts": {
+        "(0, 'K')": 1,
+        "(0, 'N')": 1,
+        "(1, 'R')": 1,
+        "(1, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1
+      }
+    },
+    {
+      "family": 2,
+      "counts": {
+        "(1, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 3,
+      "counts": {
+        "(0, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 4,
+      "counts": {
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(1, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(0, 'K')": 1
+      }
+    },
+    {
+      "family": 5,
+      "counts": {
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 6,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 7,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(0, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 8,
+      "counts": {
+        "(1, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 9,
+      "counts": {
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'R')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(0, 'R')": 1
+      }
+    },
+    {
+      "family": 10,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 11,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1
+      }
+    },
+    {
+      "family": 12,
+      "counts": {
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(0, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 13,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'K')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 14,
+      "counts": {
+        "(0, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 15,
+      "counts": {
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(1, 'R')": 1,
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1
+      }
+    },
+    {
+      "family": 16,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 17,
+      "counts": {
+        "(0, 'K')": 1,
+        "(1, 'R')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1
+      }
+    },
+    {
+      "family": 18,
+      "counts": {
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 19,
+      "counts": {
+        "(0, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1
+      }
+    },
+    {
+      "family": 20,
+      "counts": {
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 21,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(1, 'K')": 1,
+        "(0, 'K')": 1
+      }
+    },
+    {
+      "family": 22,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 23,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'K')": 1
+      }
+    },
+    {
+      "family": 24,
+      "counts": {
+        "(0, 'K')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1,
+        "(1, 'R')": 1
+      }
+    },
+    {
+      "family": 25,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'K')": 1,
+        "(1, 'N')": 1
+      }
+    },
+    {
+      "family": 26,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'N')": 1,
+        "(1, 'K')": 1,
+        "(0, 'R')": 1
+      }
+    },
+    {
+      "family": 27,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(0, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'K')": 1,
+        "(1, 'N')": 1
+      }
+    },
+    {
+      "family": 28,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'K')": 1,
+        "(1, 'K')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 29,
+      "counts": {
+        "(1, 'K')": 1,
+        "(0, 'K')": 1,
+        "(1, 'R')": 1,
+        "(0, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'N')": 1
+      }
+    },
+    {
+      "family": 30,
+      "counts": {
+        "(0, 'N')": 1,
+        "(1, 'K')": 1,
+        "(1, 'R')": 1,
+        "(1, 'N')": 1,
+        "(0, 'R')": 1,
+        "(0, 'K')": 1
+      }
+    },
+    {
+      "family": 31,
+      "counts": {
+        "(1, 'R')": 1,
+        "(0, 'K')": 1,
+        "(0, 'R')": 1,
+        "(0, 'N')": 1,
+        "(1, 'K')": 1,
+        "(1, 'N')": 1
+      }
+    }
+  ],
+  "inventory_invariant": "EachsideinitiallyoneRoneN; no creation/promotion/drop/semanticmechanics, onlyremove. Allreachableleaves have netR,netNin{-1,0,1}; anchors excluded.",
+  "leaf_vectors": [
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "feasibility": "Ninevectors are a SAFE OVERAPPROXIMATION, not a proof allareactuallyreachable. Actualreachableleaforders canonlyhavefewercrossings.",
+  "positive_ratio_crossings": [
+    {
+      "left": [
+        -1,
+        0
+      ],
+      "right": [
+        0,
+        -1
+      ],
+      "ratio": "1"
+    },
+    {
+      "left": [
+        -1,
+        0
+      ],
+      "right": [
+        1,
+        -1
+      ],
+      "ratio": "1/2"
+    },
+    {
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        0,
+        -1
+      ],
+      "ratio": "2"
+    },
+    {
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        0,
+        0
+      ],
+      "ratio": "1"
+    },
+    {
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        1,
+        -1
+      ],
+      "ratio": "1"
+    },
+    {
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        1,
+        0
+      ],
+      "ratio": "1/2"
+    },
+    {
+      "left": [
+        0,
+        0
+      ],
+      "right": [
+        1,
+        -1
+      ],
+      "ratio": "1"
+    },
+    {
+      "left": [
+        0,
+        1
+      ],
+      "right": [
+        1,
+        -1
+      ],
+      "ratio": "2"
+    },
+    {
+      "left": [
+        0,
+        1
+      ],
+      "right": [
+        1,
+        0
+      ],
+      "ratio": "1"
+    }
+  ],
+  "thresholds": [
+    "1/2",
+    "1",
+    "2"
+  ],
+  "chambers": [
+    {
+      "interval": "(0,1/2)",
+      "representative": "1/4",
+      "order": [
+        [
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "interval": "(1/2,1)",
+      "representative": "3/4",
+      "order": [
+        [
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "interval": "(1,2)",
+      "representative": "3/2",
+      "order": [
+        [
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "interval": "(2,infinity)",
+      "representative": "3",
+      "order": [
+        [
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    }
+  ],
+  "boundary_orders": {
+    "1/2": [
+      [
+        [
+          -1,
+          -1
+        ]
+      ],
+      [
+        [
+          0,
+          -1
+        ]
+      ],
+      [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "1": [
+      [
+        [
+          -1,
+          -1
+        ]
+      ],
+      [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      [
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "2": [
+      [
+        [
+          -1,
+          -1
+        ]
+      ],
+      [
+        [
+          -1,
+          0
+        ]
+      ],
+      [
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ]
+      ]
+    ]
+  },
+  "rho4_to_rho2_nondecreasing_map": {
+    "-1000000000": -1000000000,
+    "-5": -3,
+    "-4": -2,
+    "-3": -1,
+    "-1": -1,
+    "0": 0,
+    "1": 1,
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "1000000000": 1000000000
+  },
+  "finite_lattice_pairs_checked": 121,
+  "seconds": 0.021130599998286925,
+  "theorem": "For a FIXED complete finite game tree/horizon, utilities at nonterminal leaves dR*rho+dN, actualWIN/LOSSlexicographically above/belowfiniteleaves, actualDRAW0. Anytwo positiveprices in sameopenchamber induce identicalleafweakorders. A strictlyincreasingmap commutes min/max, so identicalrootoptimalactionsets. Fixedprice-independenttiebreak givesidenticalpolicy. Chance-nodeexpectations wouldnotfollowthislemma.",
+  "boundary": "rho2 isaboundary. rho4 strictlyrefines itsleaforders, andrho2 ismonotonenondecreasingcollapseofrho4. On SAMEcompletefinite tree, bestactionsat4 aresubsetofbestactionsat2. Thus2vs4mayresolve ties butcannotestimateauniquefiniteratioabove2.",
+  "limits": "NOTtheorem thatactualselectiveNative2/4policies coincide or thatentireexperimentshaveequalfitness. Nativefixedmargins/SEE/pruning/variabledepth/time canbreakmonotoneinvariance; proofbudget/time-sensitive trees alsochange. Notpopulation/game-theoretic chessprice, notuniversalnonidentifiability. Morepiecescounts/promotion/drop/mechanicschangeleafvectorlattice. No newgames, enginequeries, humanreferencevalues or fitting.",
+  "research_implication": "SparseoneeachpieceisgoodforcoarseR>N capability, intrinsicallypoorforuniqueexchange-rate identification in purecomplete material search. A futureinputlaw shouldincludevaryingmultiplicities/actualexchangeconflicts, frozenbeforeoutcomes; maturesearchheuristics separatelycontrolled. Do not repairoldDEV orpickpricesfromtheorem."
+}
