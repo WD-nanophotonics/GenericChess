@@ -1,0 +1,185 @@
+{
+  "status": "PASS_ALL_PHYSICAL_SLOTS",
+  "folder": "results\\dev_aux\\task1890",
+  "games": 128,
+  "moves": 2311,
+  "actual_native": 1785,
+  "proof_games": 82,
+  "proof_steps": 82,
+  "all_adopted_proof_games_physically_won": true,
+  "tail_games": 13,
+  "tail_moves": 289,
+  "terminal": {
+    "checkmate": 82,
+    "ongoing": 39,
+    "repetition": 7
+  },
+  "exit_causes": {
+    "reported_node_overrun": 933,
+    "external_search_return": 809,
+    "certificate": 526,
+    "time_budget": 43
+  },
+  "node_overruns": 935,
+  "phase_seconds": {
+    "admission_seconds": 3.444509899811237,
+    "proof_seconds": 182.94477000007464,
+    "verification_seconds": 7.8632647001504665,
+    "normal_seconds": 44.50372849981068
+  },
+  "proof_work": {
+    "frontiers": 611809,
+    "transitions": 2613285,
+    "iterations": 611809,
+    "peak_depth": 9171,
+    "eager_board_successors": 2672729,
+    "claims_assessed": 0
+  },
+  "full_native_history_bindings": 1785,
+  "selection_scope": "NONE; TRAIN-lockedratio2vsunit1, all16freshfamilies CONFIRM acrossopponent64/512",
+  "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks",
+  "cells": [
+    {
+      "opponent_nodes": 64,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 14,
+        "UNKNOWN": 12,
+        "LOSS": 3,
+        "DRAW": 3
+      },
+      "net": 11,
+      "seconds": 57.0853850000276
+    },
+    {
+      "opponent_nodes": 64,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 15,
+        "UNKNOWN": 9,
+        "LOSS": 4,
+        "DRAW": 4
+      },
+      "net": 11,
+      "seconds": 62.64937899999495
+    },
+    {
+      "opponent_nodes": 512,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "LOSS": 9,
+        "UNKNOWN": 10
+      },
+      "net": 4,
+      "seconds": 52.770261600002414
+    },
+    {
+      "opponent_nodes": 512,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 15,
+        "LOSS": 9,
+        "UNKNOWN": 8
+      },
+      "net": 6,
+      "seconds": 78.22996049994254
+    }
+  ],
+  "comparisons": [
+    {
+      "opponent_nodes": 64,
+      "learned_ratio": 2.0,
+      "baseline_ratio": 1.0,
+      "mean": 0.0,
+      "family95": [
+        -0.09375,
+        0.09375
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0625,
+        "1": -0.0625
+      },
+      "transitions": {
+        "WIN->WIN": 14,
+        "UNKNOWN->UNKNOWN": 9,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->DRAW": 1,
+        "DRAW->DRAW": 3,
+        "UNKNOWN->WIN": 1,
+        "UNKNOWN->LOSS": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.65625,
+        0.65625
+      ]
+    },
+    {
+      "opponent_nodes": 512,
+      "learned_ratio": 2.0,
+      "baseline_ratio": 1.0,
+      "mean": 0.0625,
+      "family95": [
+        -0.0625,
+        0.1875
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "role_means": {
+        "0": 0.125,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 13,
+        "LOSS->LOSS": 8,
+        "LOSS->UNKNOWN": 1,
+        "UNKNOWN->WIN": 2,
+        "UNKNOWN->UNKNOWN": 7,
+        "UNKNOWN->LOSS": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.5,
+        0.625
+      ]
+    }
+  ],
+  "scope": "All128fresh16contactfamilies, fixedlearned2from1881TRAIN versusunit1; no selector/retraining/root/H/opponentweightchoice. Fixed720unit/H24/candidate4096proof16k, fixedopponent64or512proof16, bothroles. Independentfreshinputconfirmation andconditionalopponenttransfer, not universalhumanprice/infiniteWDL.16familycluster intervals; twoopponentarms sharefamilies and areNOT32independentsamples. UNKNOWNdistinct."
+}

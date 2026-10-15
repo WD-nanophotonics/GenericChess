@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE_PAID_SMALL_SAMPLE_SENSITIVITY",
+  "rows": [
+    {
+      "name": "1881DEV2minus0.5",
+      "families": 16,
+      "informative_nonzero": 5,
+      "positive": 4,
+      "negative": 1,
+      "mean": 0.125,
+      "leave_one_family_out": [
+        0.06666666666666667,
+        0.16666666666666666
+      ],
+      "two_sided_signflip_tail_under_symmetry": 0.3125,
+      "enumerated_signs": 32
+    },
+    {
+      "name": "1881DEV2minus1.0",
+      "families": 16,
+      "informative_nonzero": 3,
+      "positive": 3,
+      "negative": 0,
+      "mean": 0.09375,
+      "leave_one_family_out": [
+        0.06666666666666667,
+        0.1
+      ],
+      "two_sided_signflip_tail_under_symmetry": 0.25,
+      "enumerated_signs": 8
+    },
+    {
+      "name": "1890CONFIRMopp64",
+      "families": 16,
+      "informative_nonzero": 2,
+      "positive": 1,
+      "negative": 1,
+      "mean": 0.0,
+      "leave_one_family_out": [
+        -0.03333333333333333,
+        0.03333333333333333
+      ],
+      "two_sided_signflip_tail_under_symmetry": 1.0,
+      "enumerated_signs": 4
+    },
+    {
+      "name": "1890CONFIRMopp512",
+      "families": 16,
+      "informative_nonzero": 4,
+      "positive": 3,
+      "negative": 1,
+      "mean": 0.0625,
+      "leave_one_family_out": [
+        0.03333333333333333,
+        0.1
+      ],
+      "two_sided_signflip_tail_under_symmetry": 0.625,
+      "enumerated_signs": 16
+    },
+    {
+      "name": "1899EXPOSEDH48",
+      "families": 16,
+      "informative_nonzero": 4,
+      "positive": 4,
+      "negative": 0,
+      "mean": 0.125,
+      "leave_one_family_out": [
+        0.1,
+        0.13333333333333333
+      ],
+      "two_sided_signflip_tail_under_symmetry": 0.125,
+      "enumerated_signs": 16
+    },
+    {
+      "name": "1904EXPOSEDTRAIN4minus2",
+      "families": 16,
+      "informative_nonzero": 2,
+      "positive": 1,
+      "negative": 1,
+      "mean": 0.0,
+      "leave_one_family_out": [
+        -0.03333333333333333,
+        0.03333333333333333
+      ],
+      "two_sided_signflip_tail_under_symmetry": 1.0,
+      "enumerated_signs": 4
+    }
+  ],
+  "scope": "Signflip assumes independent symmetric pairedfamilyeffects undernull; NOT an exactrandomizedtrial pvalue or a test for allmean-zero distributions. Price/horizon/range stages have different exposure/selection histories, no multiplicitycorrection or thresholdselection. Mainpoint: H48 bootstrapCIexcludes0 but only4informativefamilies, signflip tail.125 and no newindependentconfirmation. Preserve all originalCIs/results; no winner/reward/parameterchange.",
+  "new_games": 0,
+  "new_proof_or_native_calls": 0,
+  "artifact_scope": "Late directGit diagnostic; immutable SOURCE62/EVIDENCE62 sealedbeforethis helper still contain all its rawinputdatasets. No added testmodule or sourcepolicy change."
+}

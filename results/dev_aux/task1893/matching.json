@@ -1,0 +1,155 @@
+{
+  "status": "COMPLETE_OWN_TURN_FULL_RECORD_MATCHING",
+  "rows": [
+    {
+      "root_ply": 7,
+      "future_ply": 9,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 11,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 9,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 11,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 9,
+      "rank": 5,
+      "actual_record_match": false,
+      "verification_nodes": 6
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 11,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 11,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 7,
+      "future_ply": 11,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 11,
+      "future_ply": 15,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 11,
+      "future_ply": 15,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 11,
+      "future_ply": 15,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 11,
+      "future_ply": 15,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 11,
+      "future_ply": 15,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 1,
+      "actual_record_match": false,
+      "verification_nodes": 2
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 17,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 3,
+      "actual_record_match": false,
+      "verification_nodes": 4
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 19,
+      "rank": 7,
+      "actual_record_match": false,
+      "verification_nodes": 8
+    },
+    {
+      "root_ply": 15,
+      "future_ply": 17,
+      "rank": 9,
+      "actual_record_match": false,
+      "verification_nodes": 10
+    }
+  ],
+  "verified": 21,
+  "actual_matches": 0,
+  "decision": "Do not implement boundedretention merelybecause arbitraryfuturecertsexist. This exactfirst8-ownturn policy mustmatch playedstates to demonstrate saving. A0matchresult rejects the immediateengineeringpremise, not all retention methods. No capacity/depth tuning on this outcome, no newgame/reward."
+}

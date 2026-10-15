@@ -1,0 +1,27 @@
+{
+  "status": "PASS_COMPLETE_INPUT_COVERAGE_AND_ORIGINAL_CORE_EDGE_CENSUS",
+  "correct_syntactic": 27360,
+  "syntactic_by_inventory": {
+    "KK": 480,
+    "KKN": 13440,
+    "KKR": 13440
+  },
+  "admissible_by_inventory": {
+    "KK": 312,
+    "KKN": 7936,
+    "KKR": 6992
+  },
+  "winning_terminals": {
+    "KK": 0,
+    "KKN": 0,
+    "KKR": 80
+  },
+  "actual_legal_edges": 69360,
+  "records_sha": "c614eebc39b00b9378df9904ebe35df63c1e630623a8955faf58d1273e3e3d0c",
+  "no_win_inventories": [
+    "KK",
+    "KKN"
+  ],
+  "correction": "Original1895plan arithmeticsyntactic_positions=13920 omitted the secondextra type, while source/predeclaredinventorylist actually enumeratedBOTH N/R overALLowners/turns (27360). Failclosed originalcompletionfalse preserved; independentno-searchinputset equality confirms no omitted/replacedcases. NumericCore/edge/outcome records unchanged, no censusrerun.",
+  "scope": "ExactadmittedclosedKRN4x4 mechanics only; Corefresh-state terminalabsence plus captureclosure, sourceverifiedhistorypolicies only adddraws. No gameUNKNOWN->DRAW labels, generalhistoryproof or specializedwinningstrategy."
+}

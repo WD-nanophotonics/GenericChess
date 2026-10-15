@@ -261,21 +261,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment61
+# DEV_AUX current scope —2026-10-15 segment62 ACTIVE
 
-ScienceOPEN; own sidemission/patrolACTIVE, PRIMARYreadonly. User-approved
-material-plus-fixed-proof W-L experiment remains auxiliary task, no product/UI.
-Optional cachedphase actual48game control preserves24/24paths/outcomes while
-cost65.865->35.446s with CURRENTverification paid; allarmsNEW2.75s, originalphase
-unchanged. Historicalreceipt never grants currentqualification. Reproduced
-cancelledlogicalconversion counterloss fixed, physical/logicalstats separate.
-298working+independentrestoredtests includeactualdrop/promo/history/semanticIDs.
-Four-unit768game control still no stablepriceimprovement; allTRAINselectors1,
-only2-3/16nonflatfamilies, DEVdirectionmixed. Unit-sensitiveNative isnot ratio-
-only; do not choose units fromDEV or call this humanvalue recovery. Newinput-only
-contactlaw modestTRAINsignal, H8costlower butcensors realH24latewin/changestie.
-Keep actualUNKNOWN and caps; don't pickhorizon bycontrast/min alone. Dotreadbdd
-source/notexecute, narrowcostqualification only. Mainline/memo carry nextactions.
+ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. User-approved material
+plusfixedproof actualW-L remainsauxiliary, no default/UI/mainmerge. Current
+contactTRAINselects2, but freshconfirmation mixed/uncertain; exposedH48control
+positive withallshortprefixesmatching, not independentvalidation/infiniteWDL.
+2isgridboundary, TRAIN-only2vs4check bothnet11/flat; no finite2identification,
+DEV/humanfit ornewselectedprice.
+Naivepiececounttrigger rejected; optionalexactfpclosedinventoryno-WINfilter
+passes15actualhistory/fullmechanismfallbacktests and313workingtotal. FullCore
+census/independentcoverage pinsKK/KKNabsence; new48costpairs24/24paths/outcomes
+equal120.975->77.864s, CURRENTverification andnormalcapunchanged. UNKNOWNnotdraw,
+no specializedwinningtablepolicy. Otherfingerprints fallbackcompleteprover.
+Oldresults/caps/errors retained. Futurecertretention0actualmatches, no framework.
+Dot61review not62execution; PRIMARYmessagecontextonly. Mainline/memo ownnextsteps.
 
 ## Current user publication grant2026-10-15
 

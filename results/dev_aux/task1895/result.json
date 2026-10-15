@@ -1,0 +1,227 @@
+{
+  "status": "COMPLETE",
+  "complete_inventory_and_all_edges": false,
+  "counts": {
+    "KK": {
+      "syntactic": 480,
+      "nonmoving_anchor_unsafe": 168,
+      "admissible": 312,
+      "ongoing": 312
+    },
+    "KKN": {
+      "syntactic": 13440,
+      "nonmoving_anchor_unsafe": 5504,
+      "admissible": 7936,
+      "ongoing": 7856,
+      "stalemate": 80
+    },
+    "KKR": {
+      "syntactic": 13440,
+      "nonmoving_anchor_unsafe": 6448,
+      "admissible": 6992,
+      "ongoing": 6840,
+      "stalemate": 72,
+      "checkmate": 80,
+      "winning_terminals": 80
+    }
+  },
+  "winning_witnesses": {
+    "KKR": [
+      {
+        "board": [
+          "K",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      },
+      {
+        "board": [
+          "K",
+          ".",
+          ".",
+          "r",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          "k",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          ".",
+          0
+        ],
+        "winner": 1,
+        "status": "checkmate"
+      }
+    ]
+  },
+  "processed": 15240,
+  "actual_legal_edges": 69360,
+  "records_sha": "c614eebc39b00b9378df9904ebe35df63c1e630623a8955faf58d1273e3e3d0c",
+  "seconds": 4.739130400004797,
+  "rules_sha": "50bb7fe897f3e6af685a181121a2d6bd432f425e6c54d427d8a713122644866d",
+  "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+  "no_winning_terminal_inventories": [],
+  "scope": "FixedanchorsK/k + zerooroneN/R; no drops/promotion/aux/claims/automaticwins/perpetual-loss. Every captureclosure removesnonanchor only. Enumerate ALL squarepermutations/owners/turns, exclude only actualCore nonmovingkingunsafe (unreachable after legalmove), exactCorelegal_successorfrontier andindependentliteralActor mustagree. FreshcanonicalCorestates are staticcensus inputs, NOT forgedGameSession snapshots/certificates. History policies in this frozen rule only add draws, so no newwin arises from oldhistory.",
+  "adoption": "Only a COMPLETE census with zero actualwinningterminals andclosedinventory plusmechanicsscope checks can justify optionalSKIP_NEW_PROOF, neverlabelDRAW orchange reward. R positivecontrol mustfindwins. If anycounterexample/timeout, preserve anddecline filter. Doesnot solve generalhistory rules, no specializedKRKstrategy/tablebase or learnedprice.",
+  "new_native_go": 0,
+  "new_reward_games": 0
+}

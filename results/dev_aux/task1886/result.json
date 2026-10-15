@@ -1,0 +1,3239 @@
+{
+  "status": "COMPLETE_REAL_PROOF_NODE_OBSERVATION",
+  "rows": [
+    {
+      "ply": 8,
+      "root_status": "UNKNOWN",
+      "root_reason": "node_budget",
+      "nodes": 16384,
+      "proof_seconds": 1.0453061000007438,
+      "solved_qualifying_nodes": 18,
+      "captured": 8,
+      "exports": [
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "155b8903918379ff42b454fb127a62078852d7474bc05b7fadb430b1e1778aca",
+          "rank": 1,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 2,
+            "seconds": 0.002611800009617582,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 1
+          }
+        },
+        {
+          "relative_ply": 1,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "b383052a533ba63b6a4fed788cdd7ad99500263d5d065d3387ffef20c18b7312",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.004722500001662411,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "72cc0a03096d516f0f86a6d846e21c13781c54759d10836971153fdb765cfaf5",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.00534269999479875,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 1,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "0e86f0f30daab43d20b0b22d44e329a560486e1b6fa996b20a35b38aa346cae6",
+          "rank": 5,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 6,
+            "seconds": 0.00739400000020396,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 5
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "95666556236c0e745d1e7fdb51519f68ba3080f373594f666259008a91fa7ef7",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.005396199994720519,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "643b0dc3a0fe0788e343cf95347f2a51e025b5a41b4e7ab6a9f4501bf4093811",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.005441800007247366,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "78be30acc836ac4e9ba44b9e4c25d76c69eda8fd07c041706c01f6bf21c73cde",
+          "rank": 1,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 2,
+            "seconds": 0.0026477999927010387,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 1
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "0a9c4bbcc6b86a38b2d79603e765df87211bfbd38a4101f7751156311c1527b4",
+          "rank": 1,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 2,
+            "seconds": 0.0027746999985538423,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 1
+          }
+        }
+      ],
+      "export_and_verification_seconds": 0.05177579999144655
+    },
+    {
+      "ply": 12,
+      "root_status": "UNKNOWN",
+      "root_reason": "node_budget",
+      "nodes": 16384,
+      "proof_seconds": 1.0602367999963462,
+      "solved_qualifying_nodes": 5,
+      "captured": 5,
+      "exports": [
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "b81e0f8e36705cff3b942cabd189993d1dab8a961f5ffc5127a3cfc5ba95aa41",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.007112000006600283,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "02dd8cdf12aa10d84066e193573043654f991a00fa246f5587f3d8f3b6eb21d2",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.007177199993748218,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "50e39efe212e17a3940903e0cb14f63358efe1b3df3c84b080eceef47b9d247b",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.007194199992227368,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "9383168e0f1f9ec12a056fa481a4112deacc41ce5002b34e1de2bba17019f3d6",
+          "rank": 7,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 16,
+            "seconds": 0.03180009999778122,
+            "terminal_leaves": {
+              "checkmate:None": 4
+            },
+            "session_transitions": 15
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "478473eb3cc9a87806a422da8ea0e741bc6b45060c29ec0abad3e7e03d3eb8bf",
+          "rank": 7,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 16,
+            "seconds": 0.03278209999552928,
+            "terminal_leaves": {
+              "checkmate:None": 4
+            },
+            "session_transitions": 15
+          }
+        }
+      ],
+      "export_and_verification_seconds": 0.0988123999995878
+    },
+    {
+      "ply": 16,
+      "root_status": "UNKNOWN",
+      "root_reason": "node_budget",
+      "nodes": 16384,
+      "proof_seconds": 1.0468666999950074,
+      "solved_qualifying_nodes": 4,
+      "captured": 4,
+      "exports": [
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "cf6df00a3ecf376a4fdb7a5e7edf79212b152e36c7b99eae4306211051ee6528",
+          "rank": 1,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 2,
+            "seconds": 0.004401400001370348,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 1
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "d6448e55cee2b6207aaca8c51b33eeb1ec3b12f20445b202c18482e490d24735",
+          "rank": 3,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 4,
+            "seconds": 0.008882900001481175,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 3
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "2ff996459f8731dcdbfe1d94ab1ace00e0e047482056c2dbb30531710e4e5d27",
+          "rank": 7,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 8,
+            "seconds": 0.019376900003408082,
+            "terminal_leaves": {
+              "checkmate:None": 1
+            },
+            "session_transitions": 7
+          }
+        },
+        {
+          "relative_ply": 3,
+          "root_record": {
+            "actions": [
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  0,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  3
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  3
+                ]
+              },
+              {
+                "from": [
+                  2,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  2
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  1,
+                  1
+                ]
+              },
+              {
+                "from": [
+                  3,
+                  0
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "from": [
+                  1,
+                  1
+                ],
+                "kind": "board",
+                "promotion_target_id": null,
+                "to": [
+                  2,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "d2853ef0f168b835020c90938c7e3fcc0aafd823b6b991830a3c822ed3da16ab",
+            "schema_version": 1
+          },
+          "state_sha": "58dd122d3585d448c61c2dc59ef46e29663ec6b381cc0f42adaf4ef3b5dbb6d8",
+          "rank": 13,
+          "verification": {
+            "verified": true,
+            "reason": "verified",
+            "nodes": 38,
+            "seconds": 0.10227219999069348,
+            "terminal_leaves": {
+              "checkmate:None": 4
+            },
+            "session_transitions": 37
+          }
+        }
+      ],
+      "export_and_verification_seconds": 0.14684919999854174
+    }
+  ],
+  "seconds": 3.4912616000074195,
+  "scope": "Instrumentation-only new exposed diagnosis, not a game policy or resumption of old searchcaps. Same actual proof algorithm/rules, tracking real stable solved Node references in a fresh process. Longerperquerywall admits the fixednode count under observer overhead; no equivalence to old1.5s reward and no retrospectiveUNKNOWN relabel. Export only existing finiteall-defense subtrees, rebind exactfuturepublicrecord/fullstate/target and independently actualSessionverify. Earliest8solved ownturn depth2or4 nodes before results, including unplayed branches. No state-onlyTT, heuristic price, default change or Native call.",
+  "new_native_go": 0,
+  "new_learning_games": 0
+}

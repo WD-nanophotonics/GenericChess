@@ -1,0 +1,26 @@
+{
+  "status": "FROZEN_BEFORE_OWN_TURN_OBSERVATION",
+  "question": "Do actualownturn PNqueries discard verifiedfutureownturncerts matching subsequent played records, under fixednodes?",
+  "source": "results/dev_aux/task1880/result.json",
+  "source_sha": "ab03a8b109227163c07760b0c35fe4e4987045c7081ad5609f31b8b9c09ff485",
+  "plies": [
+    7,
+    11,
+    15
+  ],
+  "target": 1,
+  "proof_nodes": 16384,
+  "proof_seconds": 10,
+  "max_depth": 64,
+  "retention_depths": [
+    2,
+    4
+  ],
+  "max_retained": 8,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.5,
+  "seconds_cap": 60,
+  "expected_seconds": 8,
+  "scope": "ONEexposed played trajectory, ownturn7/11/15; first8stableclosedownturnsubtrees atrelative2or4. Exactfullrecord/state/target rebound and actualSessionverified. Instrumentednew16k/10snode-limitedquery (not old1.5s policy equivalence), 60swholefuse. No reward/game/default/adoption claim; oldUNKNOWNs remain.",
+  "preexecution_correction": "OWNturn1queries now require futureOWNturn relative2/4. Earlier1886offturn1/3observation is valid but not gamephase savings."
+}

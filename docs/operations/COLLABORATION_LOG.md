@@ -1477,3 +1477,31 @@ censoring, completegenerated-domain deployment. Keepfixedopponent/actualW-L and
 UNKNOWN, noDEV/humanfit/oldcapextension. PUBLIC unchanged; source/evidence actual
 contentchecked, sensitiveoriginals ignored. Finalfixedrevision deliveredafter
 safecompletion; delivery isnot Dotread/execution or PRIMARYadoption.
+
+## DEV_AUX2026-10-15 segment62 — ACTIVE checkpoint
+
+Own sidemission only, PRIMARY readonly; PUBLIC unchanged/checkedprojectcontent
+authorized, sensitiveoriginals ignored. 192contactlearninggames choose2 onTRAIN
+beforeDEV; DEV+3/32vs1 but fresh128confirmation gives0 atopp64/+2/32at512,
+intervalsinclude0. Newwhole64H48control onall16exposedfamilies gives+4/32,
+all64first24prefixmatch; no freshvalidation/infiniteWDL oroldcapextension.
+No humanfit or revisedprice; TRAIN-only2vs4gridboundarycheck completed64games213.129s: bothnets11,
+11price-dependentactionpaths but2WIN->UNKNOWN/2UNKNOWN->WIN cancel; no finite2
+identification ornewselectedprice.496physicalgames/48distinctfamilies total.
+
+Naive<=2prooftrigger rejected(misses20/31TRAINsuccesses). Complete27360-input
+Coreinventorycensus15240admissible/69360edges establishesKK/KKNnoWIN, KKR80mates
+underexactclosedhistory-only-drawrules. Opt-in exactfpnoWINfilter15actualhistory/
+fullmechanismfallbacktests,313workingtotal. New48pairedactualgames all24paths/
+outcomes identical; cost120.975->77.864s, currentverifier1190normal766446nodes
+equal. UNKNOWNneverdraw/quantityreward, no default/UI/productchange.
+Arbitraryfutureproofretention rejectedfornow:0/17offturn and0/21ownturnrecord
+matches. PerpollstopI/O diagnosis correctedinnewshortquery; originals retained.
+Censusnumericplantotalmistake failclosed/preserved, independently exactsetchecked.
+
+Slackrecoveryfullroots/3threads hadnonewposts; Dot61bddsource-reviewpreviously
+reconciled, not claimed torerun62data. PRIMARYa3c495/b2e messagecontext remains
+readonly/no sourceexecution/adoption/merge. Different engines/costdenominators
+notpooled. No quietwindow, worker, fees, visibility orschedulechanges.
+Unresolved: sparsepricefeedback, coarseboundaryvsfiniteoptimum, horizon/censoring,
+generalruledeployment; optionalguardqualification isnot universaldeadness.

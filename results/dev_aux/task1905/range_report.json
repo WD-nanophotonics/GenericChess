@@ -1,0 +1,215 @@
+{
+  "status": "PASS_ALL_PHYSICAL_SLOTS",
+  "folder": "results\\dev_aux\\task1904",
+  "games": 64,
+  "moves": 1389,
+  "actual_native": 1190,
+  "proof_games": 26,
+  "proof_steps": 26,
+  "all_adopted_proof_games_physically_won": true,
+  "tail_games": 9,
+  "tail_moves": 99,
+  "terminal": {
+    "checkmate": 26,
+    "repetition": 8,
+    "ongoing": 30
+  },
+  "exit_causes": {
+    "reported_node_overrun": 729,
+    "external_search_return": 457,
+    "certificate": 199,
+    "time_budget": 4
+  },
+  "node_overruns": 729,
+  "phase_seconds": {
+    "admission_seconds": 1.8571275999274803,
+    "proof_seconds": 173.1321927002573,
+    "verification_seconds": 3.998826099996222,
+    "normal_seconds": 24.086374600214185
+  },
+  "proof_work": {
+    "frontiers": 505631,
+    "transitions": 2400753,
+    "iterations": 505631,
+    "peak_depth": 5781,
+    "eager_board_successors": 2440873,
+    "claims_assessed": 0
+  },
+  "full_native_history_bindings": 1190,
+  "selection_scope": "NONE all16EXPOSEDTRAIN range2vs4 only, no revisedselector",
+  "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks",
+  "cells": [
+    {
+      "ratio": 2.0,
+      "outcomes": {
+        "WIN": 12,
+        "DRAW": 4,
+        "UNKNOWN": 15,
+        "LOSS": 1
+      },
+      "net": 11,
+      "seconds": 102.34972460000427
+    },
+    {
+      "ratio": 4.0,
+      "outcomes": {
+        "WIN": 12,
+        "DRAW": 4,
+        "UNKNOWN": 15,
+        "LOSS": 1
+      },
+      "net": 11,
+      "seconds": 110.58937049996166
+    }
+  ],
+  "ratio4_minus2": {
+    "mean": 0.0,
+    "descriptive_train_family95": [
+      -0.09375,
+      0.09375
+    ],
+    "family_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.5,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "transitions": {
+      "WIN->WIN": 10,
+      "DRAW->DRAW": 4,
+      "UNKNOWN->UNKNOWN": 13,
+      "WIN->UNKNOWN": 2,
+      "UNKNOWN->WIN": 2,
+      "LOSS->LOSS": 1
+    }
+  },
+  "first_difference_counts": {
+    "samepaths": 21,
+    "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 11
+  },
+  "first_difference_details": [
+    {
+      "family": 0,
+      "role": 1,
+      "first_ply": 11,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 1,
+      "role": 1,
+      "first_ply": 13,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 2,
+      "role": 1,
+      "first_ply": 5,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "family": 4,
+      "role": 0,
+      "first_ply": 0,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "family": 6,
+      "role": 0,
+      "first_ply": 0,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "UNKNOWN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 10,
+      "role": 0,
+      "first_ply": 6,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "UNKNOWN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 10,
+      "role": 1,
+      "first_ply": 3,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "family": 11,
+      "role": 0,
+      "first_ply": 0,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 12,
+      "role": 0,
+      "first_ply": 8,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 13,
+      "role": 0,
+      "first_ply": 2,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 13,
+      "role": 1,
+      "first_ply": 13,
+      "category": "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH",
+      "outcomes": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ]
+    }
+  ],
+  "scope": "ExploratoryTRAIN-only upperboundary2vs4, all16sameTRAIN families/roles, fixedunit720/opp64proof16/filteredcandidate4096proof16k/H24/2.75s. Newprofile4 qualified32perfts, fullACKs. No newselectedprice/oldDEVunexposedclaim orhumanfit. Tie/better4 refutes identifiablefiniteoptimumat2; worse4 only brackets a coarseTRAINlocalpeak, never universaloptimum. CI is descriptiveEXPOSEDTRAIN, not freshvalidation."
+}

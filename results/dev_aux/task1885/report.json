@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE_PAID_COUNTERFACTUAL_AUDIT",
+  "summaries": {
+    "RATIO_WITHIN_UNIT": {
+      "counts": {
+        "pairs": 192,
+        "same_actual_outcomes": 158,
+        "same_event_score": 166,
+        "first_divergences": 70,
+        "candidate_normal_first_divergences": 70,
+        "same_action_paths": 122
+      },
+      "first_divergence_categories": {
+        "CANDIDATE:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 70
+      },
+      "non_normal_reason_pairs": {}
+    }
+  },
+  "non_normal_or_prefix_details": [],
+  "seconds": 0.05235660000471398,
+  "new_games": 0,
+  "new_go": 0,
+  "new_proofs": 0,
+  "scope": "Each axis fixesfamily/role/opponent/otherpricecoordinate; pair counts share roots and areNOT independent samples. First normalcandidate divergence is consistent with changedmaterialpolicy, not proof of betterWDL. Non-normal/fixedopponent/prefix-only divergence needs explicit resource/cursor inspection, not automatically called price effect. Original outcomes, budgets and timefailures preserved."
+}
