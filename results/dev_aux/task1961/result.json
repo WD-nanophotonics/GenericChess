@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "CONTROLLED_CLOCK_NOT_EMPIRICAL_WDL_OR_TIMING",
+  "real_solver_calls": [
+    {
+      "status": "PROVEN_WIN",
+      "nodes": 2,
+      "charged_seconds": 1.4
+    },
+    {
+      "status": "PROVEN_WIN",
+      "nodes": 2,
+      "charged_seconds": 1.6
+    }
+  ],
+  "root_unchanged_until_commit": true,
+  "actual_current_verification": true,
+  "actual_committed_winner": 0,
+  "explanation": "Valid identical key warmed under shorter latency; slower cold actual solver crosses proof deadline while warm hit executes independently verified winning choice. New cold game/player prevents prior-game inheritance; OS latency simulated, not measured.",
+  "decisions": [
+    {
+      "name": "fill",
+      "source": "PROOF",
+      "choice_kind": "DECLARATION",
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "bank_hit": false,
+      "bank_stored": true,
+      "proof_nodes": 2,
+      "fill_verification_nodes": 2,
+      "verification_nodes": 2,
+      "seconds": 1.4
+    },
+    {
+      "name": "warm",
+      "source": "PROOF",
+      "choice_kind": "DECLARATION",
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "bank_hit": true,
+      "bank_stored": false,
+      "proof_nodes": 0,
+      "fill_verification_nodes": 0,
+      "verification_nodes": 2,
+      "seconds": 0.0
+    },
+    {
+      "name": "cold",
+      "source": "EXTERNAL_SEARCH",
+      "choice_kind": "ACTION",
+      "logical_status": "UNKNOWN",
+      "logical_reason": "time_budget",
+      "bank_hit": false,
+      "bank_stored": false,
+      "proof_nodes": 2,
+      "fill_verification_nodes": 0,
+      "verification_nodes": 0,
+      "seconds": 1.6
+    }
+  ]
+}

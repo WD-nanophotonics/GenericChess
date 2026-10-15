@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN_BEFORE_INPUT",
+  "question": "Does PRIOR64TRAINlockedR/N2 retain trueW-L benefit against equalfixednu{.5,1,2,4} rather thanonlyUNITopponent, withsamecoldproofstrategy?",
+  "candidate_prices": [
+    1,
+    2
+  ],
+  "candidate_source": "Segment64/task1939 TRAINselection frozenbeforethisstudy/current65cohortselectorsignored",
+  "opponent_prices": [
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "opponent_weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "candidate_proof_modes": [
+    false,
+    true
+  ],
+  "opponent_normal_nodes": 4096,
+  "opponent_proof_nodes": 16,
+  "candidate_normal_nodes": 4096,
+  "candidate_proof_nodes": 4096,
+  "H": 24,
+  "actual_rulemaxply": 96,
+  "families": 16,
+  "roles": [
+    0,
+    1
+  ],
+  "games": 512,
+  "expected_seconds": 1000,
+  "hard_seconds": 1500,
+  "scope": "NEWvalidation nottraining; old575-578 fullShogi population studies existed butquantity/nonfixedproof semantics differ. No duplication ofthoseoldclaimsattempt, no humanreference or selectedopponents.",
+  "no_execution_overlap": "RunonlyAFTER1965producer closes; newdistinctdecisionquestion, notsplit aroundonehour."
+}

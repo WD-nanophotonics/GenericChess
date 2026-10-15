@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task1974",
+    "games": 416,
+    "moves": 6164,
+    "actual_native": 4875,
+    "proof_games": 320,
+    "proof_steps": 320,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 416,
+    "missing_game_slots": [],
+    "tail_games": 46,
+    "tail_moves": 767,
+    "terminal": {
+      "checkmate": 320,
+      "ongoing": 93,
+      "stalemate": 1,
+      "repetition": 2
+    },
+    "exit_causes": {
+      "certificate": 1289,
+      "external_search_return": 2102,
+      "time_budget": 226,
+      "reported_node_overrun": 2547
+    },
+    "node_overruns": 2556,
+    "phase_seconds": {
+      "admission_seconds": 9.726287999714259,
+      "proof_seconds": 114.07148309890181,
+      "verification_seconds": 11.099499299773015,
+      "normal_seconds": 138.83934029989177
+    },
+    "proof_work": {
+      "frontiers": 313169,
+      "transitions": 1608580,
+      "iterations": 313169,
+      "eager_board_successors": 1680352,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 4875,
+    "selection_scope": "NewFULL empiricalTRAINselector atPN1K, same16EXPOSEDTRAINfamilies/ALL13arms/bothroles/UNIT512fixedopponent. Comparetosame4KTRAINsurface, no newDEVorindependentvalidation. Futurematched-cost data-vs-proof design only.",
+    "actual_max_proof_depth": 49,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "selected_R": 1440,
+  "selected_ratio": 2.0,
+  "allTRAIN_net": {
+    "180": 5,
+    "360": 5,
+    "540": 6,
+    "720": 5,
+    "900": 6,
+    "1080": 8,
+    "1260": 8,
+    "1440": 9,
+    "1800": 7,
+    "2160": 7,
+    "2520": 7,
+    "2880": 7,
+    "3600": 8
+  },
+  "original4K_TRAIN_net": {
+    "180": 5,
+    "360": 5,
+    "540": 6,
+    "720": 5,
+    "900": 6,
+    "1080": 8,
+    "1260": 8,
+    "1440": 9,
+    "1800": 7,
+    "2160": 7,
+    "2520": 7,
+    "2880": 7,
+    "3600": 8
+  },
+  "old4K_selected_R": 1440,
+  "same_complete_paths": 390,
+  "outcome_transitions": {
+    "WIN->WIN": 204,
+    "LOSS->LOSS": 116,
+    "UNKNOWN->UNKNOWN": 93,
+    "DRAW->DRAW": 3
+  },
+  "cost_seconds": 302.97612399974605,
+  "old4K_cost_seconds": 519.412143799942,
+  "cost_ratio": 0.583305815268811,
+  "bootstrap10000_sameTRAIN_selected_counts": {
+    "1080": 2968,
+    "900": 186,
+    "1440": 6413,
+    "540": 198,
+    "180": 88,
+    "720": 69,
+    "360": 78
+  },
+  "no_DEV_read": true,
+  "Native_qualification_reused": {
+    "receipt": "results/dev_aux/task1965/cohort0/qualification.json",
+    "receipt_sha": "36f95b667a1062b54329d0557c4918640bfc7add05177c0a5a9b5a6b162ad589",
+    "original_plan": "results/dev_aux/task1965/cohort0/run-plan.json",
+    "original_plan_sha": "4e6f4a6f9a2c6c8725758be449dbc58cf366120ab42f1ec67e21c404157986ef",
+    "same_fingerprint": "ee2f773375d559de1e9f46e2acd9d2b5f37ce17010e7ce48d5f8dfe5196c1502",
+    "same_rules_sha": "5a86842e576dc5aa1e7e5fc25f362c94aea8062036fd7d68454ca85b15cebfff",
+    "same_Native_files": {
+      "scripts/generic_session_native_material.py": "5b511a963e51c163d34417ee4c18e7ed84be71fcd19fd1fe6c7a6ba0a0f02054",
+      "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37",
+      ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+      "results/dev_aux/task1939/variant.ini": "4549353b849a18694388f65373fb57678310d2d4f8d1591fa78825cbd30aaa77",
+      "results\\dev_aux\\task1963\\cohort0\\rules.json": "5a86842e576dc5aa1e7e5fc25f362c94aea8062036fd7d68454ca85b15cebfff"
+    },
+    "new_proofbudget_doesnotchange_Native_legality": true,
+    "physical_perfts_reused": 416,
+    "new_perfts": 0
+  },
+  "new_Native_perfts": 0,
+  "actual_new_policy_games": 416,
+  "source_unchanged": true,
+  "scope": "ALL16EXPOSEDcohort0TRAINfamilies/all13arms/bothroles/newcoldPN1K actualretraining. Same4KTRAINsurface/resourcecurve, notfreshvalidation orindependentthirdTRAINseed. Changedcandidateproofbudgetdefinesdifferentcompletepolicy; no claiming1Kretains4Koptimum/payoffs or universalprice. Chronologicalsamehostcost, no exclusive/noisefreespeedup or directPRIMARYunitcomparison."
+}

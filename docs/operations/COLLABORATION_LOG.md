@@ -1563,3 +1563,27 @@ retains1044queries/366phasecaps/actions/outcomes. Differentenginecounterunits
 notpooled. Own62safe_checkpoint accepted66.928min/4stages/manualqualityPASS;
 patrolACTIVE, allproducersclosed, memo3executabletasks. Source415/evidence109
 archives immutable, late1907-1909diagnostics/finalmetadata directGit.
+
+## DEV_AUX segment65 —2026-10-16; science OPEN
+
+DEV_AUX completed cold-policy qualification and two fresh prospective datasets.
+RACE208 matches FULL416 at ratios2/2.5; observed TRAIN cost719 versus1495s.
+Strong UNIT DEV gain10/64 has interval[.078125,.234375]; weaker4/64 includes0.
+TRAIN resampling/LOFO shows uncertain prices. Four-opponent512-case validation
+of prior2 gives6/128 with proof and1/128 without, both intervals crossing0.
+Broader transfer remains unconfirmed. Cold1K retraining keeps416 exposed TRAIN
+outcomes/price2 at303 versus519s, with26 different paths; no new DEV claim.
+All2080 cases/36967 moves/31556 Native bindings and34 tests pass independent
+source-only replay on the same OS/compiler, without study search reexecution.
+Source530/evidence105 members are sealed, checked and public. Prequalification,
+fixture/temp-directory and late restore setup failures remain; no clock reset.
+Next compare data/proof costs with frozen opponents and cross-budget DEV.
+The old census filter still needs rule/history equivalence before transport.
+
+Dot's64 source review/cold-cache counterexample was adopted; no new65 execution
+is attributed to Dot. PRIMARY8ece16713f332adbe629f5541ddca88c74514e7f reports
+q-horizon/forced-evasion comparisons and retained censors. AUX read only this
+OWNER MESSAGE: no source build, execution, adoption, merge or counter pooling.
+PRIMARY read AUX64 as a message;65 delivery does not prove source read/execution.
+No extra agents/workers/fees, quiet windows, visibility or product/UI changes.
+Fixed65 report/capsule links accompany delivery; sensitive raw Slack stays private.

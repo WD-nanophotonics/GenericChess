@@ -261,21 +261,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment64
+# DEV_AUX current scope:2026-10-16 segment65
 
-Science OPEN. Current decisions/reasons: docs/research/LOCAL_MAINLINE.md and
-results/dev_aux/SEGMENT_20261016_64.md. Completed mechanical price-chamber work
-justified a fresh protected-R true-WL study, not an arbitrary grid expansion.
-TRAINlocks2; strongeropponent signal ispositive, weaker mixed.4kproof retains
-all8 observed marginalWINs atlowercost; H48pricegain persists but proofmarginal
-wins shrink8->3 and213UNKNOWNremain. No humanvalue recovery/default/UI/mainmerge.
-Next qualification starts EMPTYbank/newcursor peractualgame/player. Dot's
-source-reviewed cold/warmcounterexample defeats isolatedfinite-timearm claims;
-existing64 remains frozenchronological shared-bank evidence. Task1960 hasZERO
-calls; firstcoldclock/costforecast. Keep directonehournecessityrule, notadvice2h.
-Cancelled duplicate1951/52 (298/696, no64kcompletion), existing60negative, metadata
-andpackagingfailures remain. Search existingimplementation before newvariants.
-Alloldcaps/privateoriginals/separatecheckouts/PUBLIC boundaries stay inforce.
+Science is OPEN; see docs/research/LOCAL_MAINLINE.md and the segment65 report.
+Cold prospective RACE208 matches FULL416 on two datasets at lower observed
+TRAIN cost, but prices2/2.5 and LOFO variants remain uncertain. Strong UNIT
+DEV is positive; broader four-opponent transfer is unconfirmed. UNKNOWN never
+becomes a draw or quantity reward. Next compare more data against proof cost,
+with fixed complete players and independent cross-budget validation.
+Cold1K exposed TRAIN keeps416 payoffs/price2 at303 versus519 seconds; this is
+not fresh validation. It replaces64's completed cold qualification; preserve
+all old warm data, caps and failures. All producers are CLOSED. All2080 cases,
+36967 moves/31556 Native bindings and34 tests were rechecked. A late restore
+parent-directory repair is outside immutable capsules; its first failure remains.
+No blind census-filter rebinding, default/UI/main merge or human/DEV price fitting.
+PUBLIC, checked publication, separate writers and the direct one-hour rule stay.
 
 ## Current user publication grant2026-10-15
 
