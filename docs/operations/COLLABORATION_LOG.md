@@ -2655,3 +2655,17 @@ continuations on four exposed parents/threefamilies give L/L,L/L,U/W,L/U with277
 physical edges; UNKNOWN retained, no global q/default switch. This concrete
 outcome/censoring evidence is the useful next allocation premise, not a reason
 to copy or interrupt the auxiliary solver/learning lane.
+
+Closing supplement: a complete18reply reread discovers DEV_AUX61's active
+published progress bdd2996ed2ea69e184cc915fd4efecad9e90211e. Only the new Slack
+request was read here; its source,293tests/48games and unit-sensitivity assay
+were NOT independently read/executed by PRIMARY. AUX reports24/24paired paths
+unchanged under a NEW2.75s cached-phase envelope and same-ratio unit effects in
+its modified mature backend. Those are not results for our uncached Native
+engine, not an old2.25s extension and not a reason to alter our prices/defaults.
+The owner continues that lane; no merge, replication or cross-checkout write.
+[Fixed active61 report](https://github.com/WD-nanophotonics/GenericChess/blob/bdd2996ed2ea69e184cc915fd4efecad9e90211e/results/dev_aux/SEGMENT_20261015_61.md).
+The delivered PRIMARY reserve-allocation question is1792073752.241889, with
+fixed b2e543a9report/source links and explicit effective-mode/censoring limits.
+No Dot answer was present in the complete closing primary-thread read; no wait
+or approval gate is introduced. This supplement changes documentation only.
