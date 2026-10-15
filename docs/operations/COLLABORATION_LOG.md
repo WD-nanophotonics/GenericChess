@@ -1,3 +1,30 @@
+## DEV_AUX2026-10-16 segment64
+
+Own sidemission only; PRIMARY/default/UI/PUBLIC unchanged. Mechanical price
+chambers justify new protected-R law:832games/TRAINlocks2, true ruleW-L only.
+32fresh confirmation families atUNIT4096 give6/64 OFF,9/64 ON,7/64 leaf-only;
+weaker UNIT512 mixed. OFF-trainedprice transfer, not ON-retraining/humanvalues.
+All256 resourcecases:4kproof retainsall8 marginalWINs/256outcomes of16k at459s
+versus1262s;1k retains7 at240s. H48all512cases/originalcap complete, all24prefixes
+match; strongergain8/64bothmodes but proofmarginalwins8->3,213UNKNOWNremain.
+Actualcostunderordinaryconcurrency, notexclusive/unlimited-WDL evidence.
+
+Avoidable duplicate1951/52 stopped298/696;18certs/eightbindings retained,398
+unexecuted, existing60check-first negativekept/noadoption. Source/partialcosts,
+metadata and packaging AST/UTF8corrections preserved. Independent current-source
+restore330tests/all2624cases/52681moves/49494Nativebindings/18proofs/9541leaves
+PASS. SixbulkyNativejournals arePUBLICarchive-only, no uniqueevidence deletion.
+
+Dot1792092914.771129 actuallySOURCE_READ a579 bank/cached/phase, no64execution.
+Adopt per-game/player EMPTYbank/cursor: logicalcache correctness doesnotimply
+finite-time arm invariance.64claims staychronological-bank conditional. Exactraw
+reply preserved/reconciled, noapproval/ackloop. Directonehourgate retained rather
+thanadvisor2h relay. Coldcostmodel2813s needsactualforecast; task1960 nextfresh
+TWO-seed racing/FULL/DEV remains0calls. Offlinehalf-cost93.69percent isTRAINtable
+reuse, notactualsavings/independentlearning. PRIMARYd319 residualq4/fallback read
+asOWNER MESSAGE only; no source/test/gameexecution/adoption/merge/unitpooling.
+Finalreport/session/remote receipts followsealedarchives; deliverynotread/adoption.
+
 ## DEV_AUX2026-10-16 segment63
 
 Own sidemission complete material-plus-fixed-generic-proof controls:630newphysicalpolicygames/12433moves/10685Nativebindings,300proof-adoptingownerwins. NewoneRtwoN TRAIN3 sharedfinitegridoptimum; DEVgain1/32onefamily, fresh16familyCONFIRM pricegain-3/32atfixedopp64/-1/32at512. BothfamilyCIsinclude0; no stablevalue/humanclaim, noDEVpricechoice. Correctcandidate-onlyproofON/OFF keepsopponentfixed:127/128sameoutcomes,93samepaths,623s/74s, onlyoneextra baselinewin. Local3+-5percent17/17/16exposedTRAINnets. Actualcostsunderordinaryconcurrency, notmachineexclusive/equalwhole-workspeedups.

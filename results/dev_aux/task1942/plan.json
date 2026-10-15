@@ -1,0 +1,54 @@
+{
+  "status": "FROZEN_BEFORE_DEPTH6",
+  "inputs": "results/dev_aux/task1934/inputs.json",
+  "rules": "results/dev_aux/task1933/rules.json",
+  "depths": [
+    6
+  ],
+  "prices": [
+    "1/4",
+    "1/2",
+    "3/4",
+    "1",
+    "5/4",
+    "3/2",
+    "7/4",
+    "2",
+    "5/2",
+    "3",
+    "7/2",
+    "4",
+    "5"
+  ],
+  "crossings": [
+    "1/2",
+    "1",
+    "3/2",
+    "2",
+    "3",
+    "4"
+  ],
+  "open_representatives": [
+    "1/4",
+    "3/4",
+    "5/4",
+    "7/4",
+    "5/2",
+    "7/2",
+    "5"
+  ],
+  "query_nodes": 100000,
+  "query_seconds": 20,
+  "seconds_cap": 900,
+  "expected_seconds": 420,
+  "expected_queries": 208,
+  "source_sha": {
+    "results/dev_aux/task1934/inputs.json": "f68762548da32bc110eb01d0dc94bd3331340fa9fc1d34386d45f73211d1936b",
+    "results/dev_aux/task1933/rules.json": "7c9d989aef0b44c59871ee5a8e5d940d49ec9eef5d79e1a94f93a80d9d1884e2",
+    "generic_chess/core/search_runtime.py": "142a79bea4f663d42baa2ceb0d3d50b0fdd933aae17434c6bf8c4000622c56eb",
+    "generic_chess/core/transition.py": "80a01f61bac9db9907326017425da9ac4beec03efa6359a1066492d0f60dd7a8",
+    "results/dev_aux/task1942/envelopes.py": "7505f6bac8e447121d9fc6a5c04c33bfe034d55d3e0983b7d59fbbcfcad98ba2"
+  },
+  "question": "Do all16 DESIGN root price envelopes persist at deeper COMPLETE D6 under same fixed100k/20s per query?",
+  "scope": "A NEW fixed-depth reference, all13 prior mechanical prices/all16 retained; originalD4closed unchanged. No WDL/price/root selection, no oldcapextension. OrdinaryownconcurrentNative1939allowed; no exclusive timing/speedup claim."
+}

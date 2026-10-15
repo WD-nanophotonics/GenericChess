@@ -1,0 +1,72 @@
+{
+  "status": "TRAIN_ONLY_OFFLINE_COST_FEASIBILITY",
+  "source_sha": "e37456c1a1aa571e7b8fd23ff612a8450028e589db2e90f6f4b2cc5b18f784e7",
+  "source_training_cases": 416,
+  "full_TRAIN_scores": {
+    "0.25": 1,
+    "0.5": 3,
+    "0.75": 7,
+    "1.0": 7,
+    "1.25": 8,
+    "1.5": 9,
+    "1.75": 9,
+    "2.0": 11,
+    "2.5": 10,
+    "3.0": 10,
+    "3.5": 8,
+    "4.0": 9,
+    "5.0": 10
+  },
+  "full_TRAIN_optimal_set": [
+    2.0
+  ],
+  "permutations": 10000,
+  "paired_racing": {
+    "offline_selections": {
+      "2.0": 9369,
+      "1.5": 434,
+      "1.75": 36,
+      "1.25": 125,
+      "0.75": 36
+    },
+    "full_TRAIN_optimum_hit_fraction": 0.9369,
+    "mean_full_TRAIN_net_regret": 0.1459,
+    "median_full_TRAIN_net_regret": 0,
+    "regret_p95": 2,
+    "paid_case_seconds_median": 99.47718899992469,
+    "paid_case_seconds_p5_p95": [
+      83.71006009988196,
+      113.7985778000002
+    ],
+    "physical_new_games": 0,
+    "game_equivalents": 208
+  },
+  "equal_game_uniform_subset": {
+    "offline_selections": {
+      "2.0": 5697,
+      "1.75": 2012,
+      "1.0": 590,
+      "1.5": 715,
+      "0.75": 952,
+      "0.5": 34
+    },
+    "full_TRAIN_optimum_hit_fraction": 0.5697,
+    "mean_full_TRAIN_net_regret": 1.1894,
+    "median_full_TRAIN_net_regret": 0,
+    "regret_p95": 4,
+    "paid_case_seconds_median": 99.20063699995808,
+    "paid_case_seconds_p5_p95": [
+      76.10308080000686,
+      122.3264085999981
+    ],
+    "physical_new_games": 0,
+    "game_equivalents": 208
+  },
+  "full_TRAIN_paid_seconds": 198.33201239998743,
+  "source_papers": [
+    "https://proceedings.mlr.press/v28/karnin13.html",
+    "https://www.remi-coulom.fr/CLOP/"
+  ],
+  "seconds": 0.5183418999949936,
+  "scope": "UsesonlyALL16TRAINfamilies/13pricecells from1939; noDEV/CONFIRM/humanlabels, no newchosenprice or performanceclaim. 10000permutations reuseonepaidtable, NOTindependenttrainingreplicates. Fourpairedcumulative4/8/12/16family roundsretain7/4/2/1arms, numericprice ties. This is a heuristicinspiredbySequentialHalving, NOTits exactallocation/theorem: sharedpairedroles/families, withoutreplacement/finitetable/possibleties violate independentarm-sample/uniqueoptimum assumptions. Compareequal208gameequivalents uniform8families/all13arms. Paidcase-time sums omitfreshengine/qualification/transportoverhead andloadchanges, NOTactualsavings. Full416gamesalreadyspent; anyadoptionrequiresfreshprospectiveprotocolandvalidation."
+}

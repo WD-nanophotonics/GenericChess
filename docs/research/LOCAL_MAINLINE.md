@@ -1,44 +1,28 @@
-# DEV_AUX current mainline —2026-10-16 segment63
+# DEV_AUX current mainline: segment64 (2026-10-16)
 
-ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. PUBLIC enablesanonymous
-Dot/Chat; failedPRIVATEsuperseded. Checkedprojectpublicationauthorized/private
-originalsignored. AGENTS carries userpurpose/supersededdecisions/boundaries.
+Science OPEN; own sidemission/PRIMARYreadonly/patrolACTIVE. PUBLIC enables
+anonymous Dot/Chat evidence access; PRIVATE experiment superseded. Checked
+project publication authorized; sensitive exact originals remain ignored.
 
-Currentdecision: stop scaling this arbitraryshort-game pricegrid/blanketproof
-budget; investigate rule-only exchange/root-choice mechanisms atsmallcost,
-keepingactualruleW-L as eventualreward. This supersedes62'sfirst2vs4tradeaudit,
-whichiscomplete, and doesnotreviveoldNormal-opportunityscreening oroldcaps.
-GenericSessionproof/strategy retained; no production/default/UI/mainmerge.
+Current decision: qualify independent cold-game proof policies and prospective
+paired-arm racing on fresh TRAIN seeds. This supersedes63's now-completed initial
+exchange audit; no arbitrary12parameter grid/default/UI/main merge or old cap.
+New832-game protected-R law locks R/N2 onTRAIN. Stronger UNIT4096 confirmation
+has6/64 pricegain OFF,9/64 ON,7/64 leaf-only; weaker UNIT512 mixed. These are
+chronological shared-bank pipeline results, NOT isolated cold-policy values,
+proofONretraining, universal human prices or independent training replications.
+4k retains all8 observed marginalWINs/256outcomes of16k at459s versus1262s;
+1k retains7 at240s. Exposed development cost curve, not a validated default.
+H48all512 complete2422.410s/original3000cap: all24prefixesmatch, strongerpricegain
+8/64 BOTHmodes; solver marginalwins8->3,213UNKNOWN remain. UNKNOWNnotdraw/WDL.
 
-63newoneRtwoN32rootlaw/256games735.408s: TRAINnets10/14/17/15, fourdeterministic
-startsSHAREonefitnesssurface/allend3. DEV3vs1only+1/32/onefamily. Fresh16CONFIRM
-families/fixedopp64,512: pricegain-3/32,-1/32, bothCIsinclude0. No stableheldout
-value/humanagreement; notpopulationinferiorityproof, noDEVwinnerselection.
-CandidateproofON/OFFfixedopponents127/128sameoutcomes/93samefullrecords;
-622.869s/73.544s, onlyonebaselineU->actualWIN, learned3proofgain0. LocalTRAIN
-3+-5percentnets17/17/16, no perturbationchosen. Costsnotexclusivebenchmark.
-
-One-eachcapture-onlyleafnetR/netNin{-1,0,1}: ordercrossings.5/1/2. Samecomplete
-finite-tree materialminimax hasidenticaloptimalsetsinsideopenchambers; not
-Nativeheuristic/variable-treeinvariance. Finiteinventoriesrefineintervals;
-isolatedboundaryoptima areNOTuniversallyexcluded.1924abstractcaveatnotrealgame.
-
-NewN2all16TRAINdepth6haveactuallegalrho3crossingleaves but0optimalrootset
-changesat2.5/3.5/depth2,4,6. ProtectedR/Ncontact16DESIGNroots96completequeries
-64.615s also0bestsetchanges; noW-Ltrainingforthatdesign. Keepallnegativecohorts.
-Proof16k/64k/262kall22children/bothtargets gives5/6/7provedchildren,578.197s;
-nooppositelyprovedwinnerpair, no capextension. UNKNOWNnotdraw/theoreticalreward.
-
-All630newpolicygames/12433moves/10685Nativebindings rechecked,300proof-adopting
-ownersactuallywin;18savedall-defensecertificatesindependentlyreverified and
-physicallyexecuted.442filesSOURCE/131filesEVIDENCE63sealed, independent-Srestore
-313tests andallgame/proof/2822publicleafreplaysPASS. Original1910privatepath
-metadata preservedignored/publiccopyonlyrelativekeys; aliasexplicitnotbyteexact.
-
-Dotread04993source/report/notexecute; actualreply1792084394.142879reconciled,
-adoptedcheapold/newcomplete-treecontrol, qualifyuniquenesscaution. PRIMARYe583
-newcutoff-historyresult owner-messageONLY; no sourceadoption/Primarywrites or
-Nativecounterpooling. Separatelanes/ordinaryconcurrency unchanged. No overhour
-singlebatch/fees/workers. Source/test/publication checkpointsdonotcompletescience.
-Evidence: results/dev_aux/SEGMENT_20261016_63.md;1931/result.json;1930/restore.json.
-Old62and1808/532caps remainhistorical CLOSED; neverreset/resumeelapsedruns.
+Dot reply1792092914.771129 SOURCE_READ a579bank/cached/phase only, no64execution.
+Adopt EMPTY bank/newcursor per game/player before fresh learning; logicalcache
+correctness doesnotprovefinite-timearm invariance. Coldcostmodel2813s notactual;
+first narrowclock/costcheck. Directuser1hour necessity gate retained, notadvice2h.
+Task1960 TWO-new-seed racing/FULL/DEV protocol+clarifications is0calls.
+Cancelled duplicate1951/52 retains298/696/18certificates/eightbindings; existing
+60check-first negative remainsrejected. Search existing evidence before variants.
+Independentrestore330tests/2624cases/52681moves/49494Nativebindings PASS.
+PRIMARYd319 OWNER MESSAGE only/no sourceexecution/adoption/unitpooling.
+Evidence: results/dev_aux/SEGMENT_20261016_64.md; task1953/1956/1958/1959/1960.

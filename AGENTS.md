@@ -261,27 +261,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-16 segment63
+# DEV_AUX current scope:2026-10-16 segment64
 
-SCIENCE_OPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. The approved fixed
-proof-plus-material actualW-L route is implemented, not a positive price result.
-Reason for next direction: one-each leaves have only.5/1/2 order boundaries;
-addingN gives more legal exchange leaves but no optimal-root changes atd2/4/6.
-NewoneRtwoN TRAIN selects3, DEV+1/32/onefamily; freshCONFIRM-3/32atopp64,
--1/32at512. CandidateproofON/OFF127/128sameoutcomes,623s/74s, oneextraactual
-baselineWIN. LocalTRAIN3+-5percentnets17/17/16, no newprice selection.
-Thus next prioritize cheap explicit exchange/root-choice mechanisms, retaining
-actualW-L and no humanfit, ratherthan more arbitrary gridgames/largerPNcaps.
-This supersedes62'sfirst2vs4tradeaudit/Normal-opportunityscreening backlog;
-alloldresults/capsremainhistorical, especially1808partial18/48CLOSED.
-No product/default/UI orPRIMARY change; genericverifiedexecutableproofretained.
-630newphysicalgames/12433moves/10685Nativebindings rechecked;300proofgame
-ownersactuallywin. Independentrestored313tests/18transportedproofs/2822leaf
-witnessesPASS. Public1910copy removesoneprivatepathmetadatakey only; raw
-originalignored, historicalsourcepinnotrewritten. See63report/archives.
-DotSOURCE_READ04993/notexecute; adoptfinite-treelemma/control withboundary
-caveat (no universal unique-continuous-price impossibilityclaim). PRIMARYe583
-owner-messagecontext only/no sourceadoption, testsrerun orcounter-unitpooling.
+Science OPEN. Current decisions/reasons: docs/research/LOCAL_MAINLINE.md and
+results/dev_aux/SEGMENT_20261016_64.md. Completed mechanical price-chamber work
+justified a fresh protected-R true-WL study, not an arbitrary grid expansion.
+TRAINlocks2; strongeropponent signal ispositive, weaker mixed.4kproof retains
+all8 observed marginalWINs atlowercost; H48pricegain persists but proofmarginal
+wins shrink8->3 and213UNKNOWNremain. No humanvalue recovery/default/UI/mainmerge.
+Next qualification starts EMPTYbank/newcursor peractualgame/player. Dot's
+source-reviewed cold/warmcounterexample defeats isolatedfinite-timearm claims;
+existing64 remains frozenchronological shared-bank evidence. Task1960 hasZERO
+calls; firstcoldclock/costforecast. Keep directonehournecessityrule, notadvice2h.
+Cancelled duplicate1951/52 (298/696, no64kcompletion), existing60negative, metadata
+andpackagingfailures remain. Search existingimplementation before newvariants.
+Alloldcaps/privateoriginals/separatecheckouts/PUBLIC boundaries stay inforce.
 
 ## Current user publication grant2026-10-15
 

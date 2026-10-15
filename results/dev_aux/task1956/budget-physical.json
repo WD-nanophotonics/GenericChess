@@ -1,0 +1,60 @@
+{
+  "status": "PASS_CLOSED_CHEAP_BUDGET_PHYSICAL_AUDIT",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task1954",
+    "games": 512,
+    "moves": 9975,
+    "actual_native": 8664,
+    "proof_games": 263,
+    "proof_steps": 263,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 512,
+    "missing_game_slots": [],
+    "tail_games": 57,
+    "tail_moves": 612,
+    "terminal": {
+      "stalemate": 6,
+      "checkmate": 263,
+      "ongoing": 233,
+      "repetition": 10
+    },
+    "exit_causes": {
+      "reported_node_overrun": 5965,
+      "external_search_return": 2293,
+      "certificate": 1311,
+      "time_budget": 406
+    },
+    "node_overruns": 6085,
+    "phase_seconds": {
+      "admission_seconds": 15.315724401807529,
+      "proof_seconds": 376.3376342996344,
+      "verification_seconds": 11.774312900059158,
+      "normal_seconds": 254.89824869891163
+    },
+    "proof_work": {
+      "frontiers": 1069697,
+      "transitions": 5220748,
+      "iterations": 1069697,
+      "eager_board_successors": 5374479,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 8664,
+    "selection_scope": "NO NEW PRICE SELECTOR. All512cells use1939TRAINlocked2vs1, BOTHcheapcaps fixed powers1024=normal4096/4 and4096=normal, bothopponents/roles/all32EXPOSEDfamilies. Engineeringcostcurve, notfreshvalidation orproofONretraining.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "profiles": {
+    "status": "PASS_ALL_PROFILES_CLEAR_AND_NATIVE_BINDINGS",
+    "queries": 8664,
+    "options_checked": [
+      "Threads1",
+      "Hash16",
+      "NNUEfalse"
+    ]
+  },
+  "seconds": 6.340358500005095
+}
