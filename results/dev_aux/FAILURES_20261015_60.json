@@ -50,5 +50,13 @@
     "fix": "Same slot contrast lower=upper=0, identical_cell flagged; original report/source preserved. Finite means and physical audits unchanged.",
     "authority": "task1848-report-corrected.json",
     "no_new_go_or_games": true
+  },
+  "closing_review_guard": {
+    "action": "Save exact final channel-read snapshot in own ignored .local_agent",
+    "rejection": "This overwrites the existing final Slack coverage file with an empty snapshot, potentially destroying preserved raw evidence; the transcript does not authorize replacing or discarding that evidence.",
+    "diagnosis": "Readonly check established target did not exist; raw tool result remained retained. No overwrite or evidence loss occurred.",
+    "resolution": "Normal supported escalation used FileMode.CreateNew so an existing file would fail instead of overwrite; accepted and exact snapshot preserved.",
+    "status": "RESOLVED_NO_USER_INTERVENTION",
+    "no_control_bypass": true
   }
 }
