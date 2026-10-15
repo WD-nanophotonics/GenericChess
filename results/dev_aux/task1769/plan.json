@@ -1,0 +1,12 @@
+{
+  "roots": 922,
+  "scope": "ALL valid fresh3x3 K+A custody/drop roots, asymmetric forward ray+diagonal leaps, maxply6; complete finite DP. No material input, no KRK/table hints.",
+  "max_nodes": 4096,
+  "seconds": 1.0,
+  "max_depth": 6,
+  "total_seconds": 300,
+  "rule_fingerprint": "4cdec0b03dae89955a64dd89415f4dbb7999afd61eb72371b05d45e5a8c6cc17",
+  "reference_key_justification": "Board,hands,turn,ply suffice ONLY because repetition100>maxply6 and no other history rule/aux/pass/declaration exists.",
+  "solver_sha256": "1c79db4805df9dbba62a49b8d91337f0d46f9fc1cfaa1d8247298c507c4526c3",
+  "pn_sha256": "dd551b01814f0fe0681547853904a4ca84eea9378262915033e98c9b5523957b"
+}

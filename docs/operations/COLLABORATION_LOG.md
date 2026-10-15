@@ -1139,3 +1139,26 @@ Actual129477newsearchgo48640newepisodes2560exactreuse; timesincrementalqualified
 Independent sidemission true-policy WDL learning added RNP/promotion, real random-initial local updates, completeD3 and8board/stronger-opponent/whole-price-table controls. Actual84701Nativequeries14656shortepisodes, full literal/PV/cycle/selector/value audits.4boardgainpositive, numeric/initial/board/opponent transfer remainsunproved; nohumanfit/quantityfitness. Proof-based stock termination and singlecoldclear have scoped cost evidence, no finewallgainclaim. Preserve all negative/failed records. Dot advice adopted one fixedON/OFF control withpairedinteraction/UNKNOWN isolation; Dot reviewed51, didnotexecute52. PRIMARY retains its sandbox search/backend lane; only stopflags read, no primary writes or integration/dependency. Ordinary concurrency accepted, noquietwindow/workers. Own heartbeatPAUSED. Exactsource base8ac8a9fc44354cc84ff5fbfe5e3361cb844be050; fixed52deliverylink follows publication. Report: results/dev_aux/SEGMENT_20261015_52.md.
 
 Segment52 normalfinish64.277minutes/fivecheckpoints, ownsessionreceipt preserved; sciencecommit aabcdaed81c06e1e78f3385ffd5a12ffc70a3da5 exactorigin/sidemission verified. EvidenceURL: https://github.com/WD-nanophotonics/GenericChess/blob/aabcdaed81c06e1e78f3385ffd5a12ffc70a3da5/results/dev_aux/SEGMENT_20261015_52.md . No automaticpatrolresume.
+
+## DEV_AUX54 —2026-10-15 generic proof/execution prototype
+
+User-directed auxiliary work delivers bounded AND/OR and optional PN rule-win
+proofs, independent all-defense certificates, continuing rank-decreasing strategy
+and an opt-in mature-material fallback adapter.56 focused tests pass. Complete
+3496-valid-root KRK and922-root unfamiliar custody/drop controls find no false
+wins; PN improves scoped coverage. Actual short-game price learning remains
+inconclusive: RNB small DEV crosses zero, replication stops at its declared go
+cap, and simpler KRN stops at its declared wall cap with a local initialization
+peak and no confirmed paired gain. All partial/missing evidence is retained.
+A separate4-case diagnostic physically completes censored proved tails with
+one extra move each/0newNativego; original scores stay unchanged. A small-stock
+trigger saves cost but loses proof coverage, so it is not adopted as a default.
+
+Dot's finite-tree/source review supplied the concrete empty-AND draw safeguard;
+DEV_AUX implemented and independently tested it. Dot did not execute this code.
+PRIMARY's own41e69e1dd8ab2c459239175d0c4091f90dffb389 context describes independent
+priced-completion research, not duplicate solver work; DEV_AUX read it only and
+performed no primary execution/edit/publication. All own work stays sidemission,
+UI/defaults unchanged, heartbeatPAUSED. Fixed report and exact archives are
+SEGMENT_20261015_54.md and ARCHIVE_MANIFEST_20261015_54.json. Next decisions concern
+physical tail censoring and proof opportunity cost, not more long routine games.

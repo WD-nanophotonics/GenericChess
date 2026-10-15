@@ -1,0 +1,209 @@
+{
+  "status": "PASS_PHYSICAL_TAIL_CONVERSION",
+  "cases": 4,
+  "actual_new_native_go": 0,
+  "seconds": 0.35519130001193844,
+  "results": [
+    {
+      "source_task": 1763,
+      "row": 240,
+      "old_label": "UNKNOWN_H16",
+      "recovered_remaining_rank": 1,
+      "extra_moves": [
+        {
+          "state": [
+            ".",
+            ".",
+            "k",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "R",
+            ".",
+            "K",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            0
+          ],
+          "move": "a3a1",
+          "source": "EXISTING_PROOF_TAIL",
+          "rank": 1
+        }
+      ],
+      "actual_new_native_go": 0,
+      "terminal": "checkmate",
+      "winner": 0,
+      "reconstruction_only": {
+        "nodes": 58,
+        "seconds": 0.00493520000600256,
+        "verification": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 4,
+          "seconds": 0.000712799999746494,
+          "terminal_leaves": {
+            "checkmate": 1
+          },
+          "pushes": 3,
+          "pops": 3
+        }
+      }
+    },
+    {
+      "source_task": 1763,
+      "row": 242,
+      "old_label": "UNKNOWN_H16",
+      "recovered_remaining_rank": 1,
+      "extra_moves": [
+        {
+          "state": [
+            ".",
+            ".",
+            "K",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "r",
+            ".",
+            "k",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            1
+          ],
+          "move": "a3a1",
+          "source": "EXISTING_PROOF_TAIL",
+          "rank": 1
+        }
+      ],
+      "actual_new_native_go": 0,
+      "terminal": "checkmate",
+      "winner": 1,
+      "reconstruction_only": {
+        "nodes": 58,
+        "seconds": 0.004688100001658313,
+        "verification": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 4,
+          "seconds": 0.0007286000036401674,
+          "terminal_leaves": {
+            "checkmate": 1
+          },
+          "pushes": 3,
+          "pops": 3
+        }
+      }
+    },
+    {
+      "source_task": 1765,
+      "row": 504,
+      "old_label": "UNKNOWN_H16",
+      "recovered_remaining_rank": 1,
+      "extra_moves": [
+        {
+          "state": [
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "K",
+            "B",
+            "N",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "k",
+            0
+          ],
+          "move": "d2c3",
+          "source": "EXISTING_PROOF_TAIL",
+          "rank": 1
+        }
+      ],
+      "actual_new_native_go": 0,
+      "terminal": "checkmate",
+      "winner": 0,
+      "reconstruction_only": {
+        "nodes": 47,
+        "seconds": 0.003876500006299466,
+        "verification": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 4,
+          "seconds": 0.0006735000060871243,
+          "terminal_leaves": {
+            "checkmate": 1
+          },
+          "pushes": 3,
+          "pops": 3
+        }
+      }
+    },
+    {
+      "source_task": 1765,
+      "row": 506,
+      "old_label": "UNKNOWN_H16",
+      "recovered_remaining_rank": 1,
+      "extra_moves": [
+        {
+          "state": [
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "k",
+            "b",
+            "n",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "K",
+            1
+          ],
+          "move": "d2c3",
+          "source": "EXISTING_PROOF_TAIL",
+          "rank": 1
+        }
+      ],
+      "actual_new_native_go": 0,
+      "terminal": "checkmate",
+      "winner": 1,
+      "reconstruction_only": {
+        "nodes": 47,
+        "seconds": 0.004208800004562363,
+        "verification": {
+          "verified": true,
+          "reason": "verified",
+          "nodes": 4,
+          "seconds": 0.0007007999956840649,
+          "terminal_leaves": {
+            "checkmate": 1
+          },
+          "pushes": 3,
+          "pops": 3
+        }
+      }
+    }
+  ],
+  "scope": "Separate continuation diagnostic. OriginalH16 outcomes and all training/DEV scores unchanged."
+}

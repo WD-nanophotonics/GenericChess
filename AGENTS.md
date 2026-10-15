@@ -272,3 +272,14 @@ and sanitize publication copies as needed. Fixed authorized routing IDs remain
 permitted. Continuing authorization survives restart/compaction; no per-upload
 approval queue. Supported tools/escalation only; report actual persistent denial.
 Separate checkouts/branches, stops and machine safety remain mandatory.
+
+## DEV_AUX current direction — user implementation2026-10-15
+
+The user approved generic rule-win proof/execution before further price learning.
+Auxiliary sidemission now develops an opt-in bounded AND/OR proof tree, independent
+all-defense verification and rank-decreasing strategy cursor; optional PN is a
+measured algorithm alternative. Actual rule wins retain their terminal kind;
+UNKNOWN never becomes draw or quantity reward. Prototype declaration/no-progress
+exclusions remain explicit. No primary product, UI or default integration.
+See docs/research/GENERIC_WIN_PROOF.md and segment54 evidence. Prior frozen
+caps/partial results remain intact; manual work does not resume the paused heartbeat.

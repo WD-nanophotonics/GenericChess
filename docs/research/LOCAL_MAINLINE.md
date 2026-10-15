@@ -251,3 +251,14 @@ single writer, stops, duration, consultation identity/new-root instructions,
 publication and machine/data boundaries remain unchanged. Publish reviewed/tested
 Agent-only code/results/evidence each completed segment and verify full remote
 origin/sandbox SHA; exclude private/user inputs and raw Slack/account credentials.
+
+## DEV_AUX54 implementation checkpoint
+
+User-approved next auxiliary route is a fixed, price-independent generic
+rule-win prover plus executable all-defense strategy, with material prices
+trained from actual short-game win/loss events. AND/OR and optional PN are
+research prototypes, not production changes. Complete small-library and
+unfamiliar-rule checks precede any broader claim; history/aux/promotion/drop
+semantics stay authoritative. See GENERIC_WIN_PROOF.md and SEGMENT_20261015_54.md.
+The primary search-completion work remains independently owned; no automatic
+merge, sandbox publication, UI change or heartbeat reactivation follows.

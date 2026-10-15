@@ -1,0 +1,267 @@
+{
+  "source": "1763 exposed paid states,32each <=4/>4entities, no price/WDL selection",
+  "seed": 20261015546,
+  "cases": [
+    {
+      "row": 91,
+      "ply": 12
+    },
+    {
+      "row": 51,
+      "ply": 12
+    },
+    {
+      "row": 44,
+      "ply": 5
+    },
+    {
+      "row": 58,
+      "ply": 13
+    },
+    {
+      "row": 90,
+      "ply": 1
+    },
+    {
+      "row": 51,
+      "ply": 10
+    },
+    {
+      "row": 208,
+      "ply": 0
+    },
+    {
+      "row": 26,
+      "ply": 7
+    },
+    {
+      "row": 47,
+      "ply": 12
+    },
+    {
+      "row": 40,
+      "ply": 15
+    },
+    {
+      "row": 207,
+      "ply": 13
+    },
+    {
+      "row": 25,
+      "ply": 4
+    },
+    {
+      "row": 54,
+      "ply": 14
+    },
+    {
+      "row": 16,
+      "ply": 3
+    },
+    {
+      "row": 47,
+      "ply": 9
+    },
+    {
+      "row": 58,
+      "ply": 12
+    },
+    {
+      "row": 195,
+      "ply": 2
+    },
+    {
+      "row": 41,
+      "ply": 7
+    },
+    {
+      "row": 24,
+      "ply": 10
+    },
+    {
+      "row": 89,
+      "ply": 7
+    },
+    {
+      "row": 42,
+      "ply": 7
+    },
+    {
+      "row": 168,
+      "ply": 14
+    },
+    {
+      "row": 176,
+      "ply": 6
+    },
+    {
+      "row": 146,
+      "ply": 6
+    },
+    {
+      "row": 192,
+      "ply": 7
+    },
+    {
+      "row": 226,
+      "ply": 5
+    },
+    {
+      "row": 224,
+      "ply": 11
+    },
+    {
+      "row": 34,
+      "ply": 0
+    },
+    {
+      "row": 172,
+      "ply": 15
+    },
+    {
+      "row": 210,
+      "ply": 0
+    },
+    {
+      "row": 16,
+      "ply": 4
+    },
+    {
+      "row": 171,
+      "ply": 8
+    },
+    {
+      "row": 80,
+      "ply": 15
+    },
+    {
+      "row": 8,
+      "ply": 12
+    },
+    {
+      "row": 242,
+      "ply": 9
+    },
+    {
+      "row": 241,
+      "ply": 12
+    },
+    {
+      "row": 66,
+      "ply": 14
+    },
+    {
+      "row": 90,
+      "ply": 9
+    },
+    {
+      "row": 32,
+      "ply": 12
+    },
+    {
+      "row": 94,
+      "ply": 15
+    },
+    {
+      "row": 81,
+      "ply": 14
+    },
+    {
+      "row": 48,
+      "ply": 13
+    },
+    {
+      "row": 96,
+      "ply": 6
+    },
+    {
+      "row": 96,
+      "ply": 12
+    },
+    {
+      "row": 195,
+      "ply": 13
+    },
+    {
+      "row": 242,
+      "ply": 15
+    },
+    {
+      "row": 88,
+      "ply": 10
+    },
+    {
+      "row": 96,
+      "ply": 10
+    },
+    {
+      "row": 248,
+      "ply": 5
+    },
+    {
+      "row": 130,
+      "ply": 14
+    },
+    {
+      "row": 88,
+      "ply": 11
+    },
+    {
+      "row": 242,
+      "ply": 13
+    },
+    {
+      "row": 121,
+      "ply": 13
+    },
+    {
+      "row": 67,
+      "ply": 12
+    },
+    {
+      "row": 106,
+      "ply": 13
+    },
+    {
+      "row": 81,
+      "ply": 12
+    },
+    {
+      "row": 96,
+      "ply": 7
+    },
+    {
+      "row": 106,
+      "ply": 14
+    },
+    {
+      "row": 88,
+      "ply": 15
+    },
+    {
+      "row": 14,
+      "ply": 14
+    },
+    {
+      "row": 27,
+      "ply": 9
+    },
+    {
+      "row": 128,
+      "ply": 10
+    },
+    {
+      "row": 248,
+      "ply": 10
+    },
+    {
+      "row": 245,
+      "ply": 10
+    }
+  ],
+  "nodes": 4096,
+  "seconds": 1.0,
+  "total_seconds": 180.0,
+  "trigger": "count_entities(board+hands)<=4; existing verified strategy always continues",
+  "purpose": "Cost/coverage diagnostic, not new WDL/learning validation"
+}

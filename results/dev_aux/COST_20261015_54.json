@@ -1,0 +1,32 @@
+{
+  "segment": 54,
+  "session_id": "c73e1870-639b-4cee-ad72-1ee6406d9fcc",
+  "actual_native_go": 34520,
+  "actual_native_reported_nodes": 41296636,
+  "controller_episode_records": 2728,
+  "early_incomplete_episode_rows": 1,
+  "actual_native_perft": 1952,
+  "proof_benchmark_visits": {
+    "1761": 3074022,
+    "1762": 1663317,
+    "1764": 9601696,
+    "1767": 877589,
+    "1769": 227812
+  },
+  "job_seconds": {
+    "1761": 211.2522198999941,
+    "1762": 122.54113290000532,
+    "1763": 48.6360457999981,
+    "1764": 659.9129549000063,
+    "1765": 105.07488980000198,
+    "1766": 130.7574844000046,
+    "1767": 89.87674059999699,
+    "1768": 1199.991137399993,
+    "1769": 25.659116799986805,
+    "1770": 0.35519130001193844,
+    "1771": 17.811010599994916
+  },
+  "interpretation": "Job wall sum differs from Agent elapsed/exclusive CPU. Concurrent bounded runs and ordinary machine load occurred. Generic visits and Native nodes differ; actual Native overshoots retained.",
+  "model_tokens": "Not independently measured; no fabricated per-thread token count. Engineering/testing/evidence/consultation overhead included in session time.",
+  "limits": "Single runs<=1200s; no extra model workers/fees/security changes. Caps and incomplete evidence retained."
+}

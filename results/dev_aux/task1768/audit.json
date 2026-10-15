@@ -1,0 +1,168 @@
+{
+  "status": "PASS_PUBLIC_REPLAY_AND_RECEIPTS",
+  "games": 1178,
+  "actual_steps": 15182,
+  "matched_native_receipts": 13758,
+  "native_receipts_total": 13758,
+  "unassigned_native_receipts": 0,
+  "proof_calls": 369,
+  "proof_continuations": 1055,
+  "native_node_overruns": 9168,
+  "step_time_overruns": 0,
+  "max_step_seconds": 0.3397132999962196,
+  "early_unknown_before_H": 1,
+  "cells_DEV_only": {
+    "A": {
+      "n": 244,
+      "known_net": 0.45901639344262296,
+      "lower": 0.13934426229508196,
+      "upper": 0.7786885245901639,
+      "outcomes": {
+        "1": 112,
+        "None": 78,
+        "0": 54
+      },
+      "planned_n": 256,
+      "missing_games": 12,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.390625,
+        0.484375
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.0859375,
+        0.7890625
+      ]
+    },
+    "B": {
+      "n": 246,
+      "known_net": 0.34959349593495936,
+      "lower": -0.06504065040650407,
+      "upper": 0.7642276422764228,
+      "outcomes": {
+        "1": 86,
+        "None": 102,
+        "0": 58
+      },
+      "planned_n": 256,
+      "missing_games": 10,
+      "early_incomplete": 1,
+      "planned_finite_event_bounds": [
+        0.29296875,
+        0.37890625
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.1015625,
+        0.7734375
+      ]
+    },
+    "C": {
+      "n": 248,
+      "known_net": 0.4274193548387097,
+      "lower": 0.10483870967741936,
+      "upper": 0.75,
+      "outcomes": {
+        "1": 106,
+        "None": 80,
+        "0": 62
+      },
+      "planned_n": 256,
+      "missing_games": 8,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.3828125,
+        0.4453125
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.0703125,
+        0.7578125
+      ]
+    },
+    "D": {
+      "n": 248,
+      "known_net": 0.33064516129032256,
+      "lower": -0.06451612903225806,
+      "upper": 0.7258064516129032,
+      "outcomes": {
+        "1": 82,
+        "None": 98,
+        "0": 68
+      },
+      "planned_n": 256,
+      "missing_games": 8,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.2890625,
+        0.3515625
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.09375,
+        0.734375
+      ]
+    }
+  },
+  "contrasts": {
+    "solver_unit": {
+      "observed_complete_families": 61,
+      "missing_families": [
+        77,
+        78,
+        79
+      ],
+      "finite_event_difference": -0.10655737704918032,
+      "family_bootstrap95": [
+        -0.1885245901639344,
+        -0.03278688524590164
+      ],
+      "interpretation": "Fixed-horizon W-L event difference. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_plain": {
+      "observed_complete_families": 61,
+      "missing_families": [
+        77,
+        78,
+        79
+      ],
+      "finite_event_difference": -0.02459016393442623,
+      "family_bootstrap95": [
+        -0.10655737704918032,
+        0.04918032786885246
+      ],
+      "interpretation": "Fixed-horizon W-L event difference. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_with_solver": {
+      "observed_complete_families": 61,
+      "missing_families": [
+        77,
+        78,
+        79
+      ],
+      "finite_event_difference": -0.01639344262295082,
+      "family_bootstrap95": [
+        -0.08196721311475409,
+        0.04918032786885246
+      ],
+      "interpretation": "Fixed-horizon W-L event difference. Not infinite WDL; incomplete capped prefixes descriptive only."
+    }
+  },
+  "full_planned_B_to_D": {
+    "finite_event_bounds": [
+      -0.08984375,
+      0.05859375
+    ],
+    "infinite_outcome_bounds": [
+      -0.8671875,
+      0.8359375
+    ],
+    "meaning": "All frozen planned DEV cases; missing/early games remain uncertain. These are missing-data bounds, not sampling confidence intervals."
+  },
+  "seconds": 2.76665530000173,
+  "proof_conversion": {
+    "candidate_proved_games": 367,
+    "candidate_physically_redeemed": 239,
+    "candidate_censored": 128,
+    "opponent_proved_games": 2,
+    "opponent_censored": 2
+  },
+  "raw_games_sha256": "31310e08943e4a98bebc9ac402d083a626a643cc6b6dc6707fb31d042bf3d354"
+}
