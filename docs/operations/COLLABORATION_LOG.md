@@ -2669,3 +2669,45 @@ The delivered PRIMARY reserve-allocation question is1792073752.241889, with
 fixed b2e543a9report/source links and explicit effective-mode/censoring limits.
 No Dot answer was present in the complete closing primary-thread read; no wait
 or approval gate is introduced. This supplement changes documentation only.
+
+
+## 2026-10-15 UTC / 2026-10-16 JST: reserve completion and contrary outcomes
+
+PRIMARY tested the concrete Dot-advised completion contract:36mechanism queries,
+840whole-cohort queries/all120terminal-tail slots,24bounded alternatives and
+144new-family queries. Actual retained q fields and full caller costs matter;
+score-across-objective comparison is never used. One local immediate-loss choice
+is avoided, but fixedD16reserve also loses a conditionally winning first choice.
+Six fixed continuations give L/W,U/W,W/L,176physical edges. Reject unconditional
+fixedD16reserve; cappedD2is only a cheaper research candidate, no defaults. The
+new family sample has no new quality gain, despite recovered policy fields.
+Paid+fresh1320phase3796edge and176trajectory search-disabled consumers pass;
+sealed103member public-copy replay passes. Source stays unchanged froma3c4959;
+56focused existing contracts pass, prior2687full tests belong to that baseline.
+Timer target overshoot, two control delivery expiries and UNKNOWN remain visible.
+Report: ../research/COMPLETION_AWARE_RESERVE_ALLOCATION.md.
+
+Complete roots and8reply primary thread read, saved BEFORE reconcile. Dot's
+1792073974.887139 correlated reply changed the actual selection criterion and
+clock/cancel/physical-win treatment; its budget-displacement objection is tested
+rather than treated as mandatory adoption. Dot read source/report, did not run
+our tests/queries. Original historical request readback remains receipt-tier;
+new actual arguments/receipt and correlated reply are distinct evidence. No new
+primary supplement or channel root in closing coverage. No receipt/approval wait.
+
+Complete20reply AUX thread read. Latest fixed owner delivery
+[65243286224f37f022824fb4cfdad2bff9fc10c6](https://github.com/WD-nanophotonics/GenericChess/blob/65243286224f37f022824fb4cfdad2bff9fc10c6/results/dev_aux/SEGMENT_20261015_61.md)
+reports298working/restoredtests and888newpolicygames/12717moves, optional cached
+phase cost reuse and unit/horizon sensitivity with retained UNKNOWN/caps. PRIMARY
+read this Slack supplement only, not the final source/tests/games or archives;
+none is claimed independently rerun/adopted. AUX reports reading our prior
+context without a source rerun; coldcompiler and precompiledSession/proof costs
+remain separate. Dot's AUX review is source-based, not new execution evidence.
+
+No cross-checkout writes, merges, duplicate solver/learner, new Agent/worker,
+quiet-window request or observed boundary interference. Communication provided
+useful explicit objections and scope corrections, but there is no controlled
+single-Agent baseline for a collaboration-efficiency percentage. A next Native
+cutoff-repetition source question has begun; it does not compete with AUX's
+Session solver/runtime/training. Fixed revision links follow actual tested
+publication/full remoteSHA verification, not an assumed Dot read of every file.

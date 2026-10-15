@@ -104,10 +104,27 @@ choices have complete safe-one-ply reply frontiers, still not optimalWDL. Four
 exposed fixed-policy continuations give L/L,L/L,U/W,L/U;277actualedges separately
 replayed with search disabled. Keep UNKNOWN and the conditional cases.
 
-Next selection: a small completion-aware q schedule contrast on these fixed
-counterexamples before any larger q curve/default change. Check actual retained
-policy, concrete reply/continuation outcomes and total cost. Do not infer utility
-from depth alone or copy AUX's Sessionprover/bank/learner. The old inner-stop-file
+Current completion-aware result:840/960slots70/80roots (120actualterminal-tail
+slots) reject unconditional fixed.25sD16reserve. It avoids one exposed literal
+loss, but6requested-policy receipts are displaced; conditional fixed-node games
+include L/W,U/W,W/L, so there is a concrete adverse outcome too. A cappedD2reserve
+is cheaper and preserves the exposed protection.144new-family queries12roots
+lose0requested completions versusq4 (oldreserve4), but old/cap2actions match48/48
+triples and no new immediate-loss gain appears. Keep it a research candidate,
+no global/default change. All caps/UNKNOWN/actual caller expiry remain. Full
+report: COMPLETION_AWARE_RESERVE_ALLOCATION.md; search-disabled public-copy replay
+checks1320phases3796edges plus176trajectory edges on unchanged product source.
+
+Next selection: before another q/allocation curve, measure whether repeated
+actual sufficient cutoff actions justify a tiny per-search Native AB ordering
+probe. Primary-paper/current-cutoff/trace source examination has begun: the
+existing training trace omits cutoff action/full history, so it cannot supply
+this statistic. Freeze<=8paid roots/fixedD3 counter-only cost/repetition check
+before any ordering implementation; reject low repetition or high overhead.
+This is backend search ordering, not AUX Session solver/runtime/model/training,
+no source adoption, changed canonical PV or semantic authority. CappedD2 remains
+a scoped alternative, not a new permanent policy. Do not infer utility from depth
+alone or copy AUX's Sessionprover/bank/learner. The old inner-stop-file
 polling materially censored diagnostics (onecase1s versus.012s); use bounded
 deadline callbacks and cooperative outer stop checks in NEW diagnostics, without
 relabeling oldUNKNOWN/caps or building a new stop framework.
