@@ -373,3 +373,18 @@ Stateless low-level codec/history/size helpers retain their default and accept
 optional native_rules. Product V1/capability/board limits/defaults are unchanged;
 no Native rebuild is required for this Python fix. See
 ../research/SEMANTIC_BACKEND_OWNERSHIP.md. Private V2 is not a product option.
+
+
+## Exact-root main hint and deep graph repair, 2026-10-15
+
+Rebuild Native for SEMANTIC_MAIN_ORDERING_VERSION1. Only existing
+root_window_pruning=True/plain-main mode receives the complete binary target
+enemy/canonical hint; defaultFalse, learned/policy ordering and TT/root-hint
+priority retain their behavior. Canonical PV replay is required for this scope;
+no general non-replay PV repair is claimed. main_binary_order_calls is a nullable
+attempt counter in semantic results; older kernels/not-started returnNone.
+ProductV1/<=16 guard/Corefallback and UI defaults stay. Actual scoped2595tests
+and installed28guards pass. Python rule pricing separately uses explicit SCC
+frames, fixing32-board RecursionError without changing the formula or exact
+threshold; no option/Native rebuild is needed for that Python part. Report:
+../research/OWNED_BACKENDS_AND_MAIN_FRONTIER.md. Private V2 remains research.

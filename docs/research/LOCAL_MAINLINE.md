@@ -8,19 +8,22 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
-VERSIONED_WIDE_NATIVE_AND_PROMOTION_CLOSURE.md is latest. Private V2/payload5
-semantic1024 preserves17roots/1301edges and18new fullroots/2963actions;216fresh
-queries give72resourcepairs23deeper49same0shallower,73matching-policy scores equal.
-Three32 preparation families stay censored; no strength/full-domain claim.
-Actual semantic promotion capacity defect fixed at ca143172 (4old failures,
-62focused/2563full pass). New exact initial-attack generator rejection preserves
-7accepted hashes/8attempt+RNG records;79.8s->41.7s scoped cost, final2575tests pass.
-Product board/V1/defaults unchanged. Next: per-rules capability/backend binding
-and explicit V1/V2 coexistence/fallback; do not activate global module swapping.
-AUX52 fixed e4634d72 report read: small-board WDL positive, transfer/identifiability
-unresolved; no price-default adoption or duplicate auxiliary work. Old q0 hard
-metadata mismatch was unused configuration, not default checked extensions;
-31same-policy prior pairs agree. Prior q-ordering negatives all retained.
+OWNED_BACKENDS_AND_MAIN_FRONTIER.md is latest. Owned backend repair08d7fb shipped;
+actualV1/V2 no-global-switch37root replay56contexts5860actions/292edges passes.
+ProductV1<=16/Corefallback remain; V2 staysprivate. Exact-root-only plain main
+binary hint retains canonical replay/TT/hints; defaultFalse/learned/policy unchanged.
+296fixedqueries142same-policy equal;44closedD2q4 kernel.697,11slower.296resource
+queries49deeper99same0shallower/148pairs,99same-policy equal; actualq4 90->104.
+Real rule prices weaker:12closedpairs kernel.962,6slower; no strength/universalgain.
+Dot abstract false-interiorPV reproduced, so non-replay mode excluded. Finalscope
+74controls samework, kernel1.008over timedsource. Actualscoped2595full+28installed
+checks pass. Deep SCC recursion repaired by explicit frames:6oldfails/800oldratios
+same,32pricegeneration recovers; threshold/formula unchanged.3of4new32prep families
+censored; onefamily8s initialrootD2q4,playedroot stillfailsq4. Costscan1.57% and
+empty-run.992 rejected. Next: prospective actual-rule-price resource comparison,
+fullrules/state/history andallcensors, notanotherunit/Elo run. AUX53protocol/thread
+read, no primaryexecution/priceadoption; fixed52stillremote. Detailed predecessor:
+VERSIONED_WIDE_NATIVE_AND_PROMOTION_CLOSURE.md and its frozen archive.
 
 Prior q frontier decision and frozen evidence remain:
 
@@ -166,7 +169,8 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
-|Current complete q ordering/price boundary/wide feasibility|Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md; data/q_frontier_ordering_20261015.json|
+|Current owned backend/main frontier/32price repair|OWNED_BACKENDS_AND_MAIN_FRONTIER.md; data/owned_main_frontier_20261015.json|
+|Prior complete q ordering/price boundary/wide feasibility|Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md; data/q_frontier_ordering_20261015.json|
 |Current q fact reuse/cost/caller policy|Q_FACT_REUSE_AND_CALLER_POLICY.md; data/q_fact_reuse_20261015.json|
 |Current completeNative q/caller/transfer|NATIVE_COMPLETE_QSEARCH.md; data/native_complete_q_20261014.json|
 |Prior completeNative/terminalpriority/samealgorithm/staticorder/transfer|FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md; data/full_native_q0_20261014.json|

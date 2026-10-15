@@ -20,37 +20,45 @@ def ep():
  return nr,pos,values
 
 @pytest.mark.parametrize('tt',[0,1,64])
-def test_ep_inexact_equal_bound_cannot_replace_exact_incumbent(tt):
+@pytest.mark.parametrize('profile',['material','zero'])
+def test_ep_inexact_equal_bound_cannot_replace_exact_incumbent(tt,profile):
  nr,pos,values=ep();before=ns.snapshot(nr,pos)
+ if profile=='zero':values={tid:0 for tid in nr.type_ids}
  full=ns.semantic_iterative_search(nr,pos,3,board_values=values,hand_values=values,tt_megabytes=tt)
  exact=ns.semantic_iterative_search(nr,pos,3,board_values=values,hand_values=values,tt_megabytes=tt,root_window_pruning=True)
  assert exact['completed_depth']==full['completed_depth']==3
  assert (exact['score'],exact['best_action'],exact['principal_variation'])==(full['score'],full['best_action'],full['principal_variation'])
- assert exact['score']==100
+ assert exact['score']==(0 if profile=='zero' else 100)
  child=ns.make_checked(nr,pos,exact['best_action'])
  verify=ns.semantic_iterative_search(nr,child,2,board_values=values,hand_values=values,tt_megabytes=0,_root_ply_offset=1)
  assert -verify['score']==exact['score']
- assert exact['root_tie_refinements']>0 and exact['root_tie_aborts']==0
+ # Ordering may avoid the material fixture's old bound-as-tie path.
+ # The zero profile remains an actual refinement witness on both orders.
+ if profile=='zero':assert exact['root_tie_refinements']>0
+ assert exact['root_tie_aborts']==0
  assert ns.snapshot(nr,pos)==before
 
 @pytest.mark.parametrize('profile',['material','zero'])
 def test_completed_lower_iteration_survives_refinement_budget_abort(profile):
  nr,pos,values=ep()
  if profile=='zero':values={tid:0 for tid in nr.type_ids}
- before=ns.snapshot(nr,pos);seen=False
+ before=ns.snapshot(nr,pos);seen=False;references={}
  # Fixed finite budgets cover the short first-iteration tie refinements; no
  # result-driven expansion. Any published result must be a complete iteration.
  for nodes in range(1,257):
   limited=ns.semantic_iterative_search(nr,pos,3,board_values=values,hand_values=values,max_nodes=nodes,root_window_pruning=True)
-  if not limited['root_tie_aborts']:continue
-  seen=True;depth=limited['completed_depth'];assert limited['termination_reason']=='node_budget'
+  depth=limited['completed_depth']
+  if limited['root_tie_aborts']:
+   seen=True;assert limited['termination_reason']=='node_budget'
   if depth:
-   reference=ns.semantic_iterative_search(nr,pos,depth,board_values=values,hand_values=values,root_window_pruning=False)
+   if depth not in references:references[depth]=ns.semantic_iterative_search(nr,pos,depth,board_values=values,hand_values=values,root_window_pruning=False)
+   reference=references[depth]
    assert (limited['score'],limited['best_action'],limited['principal_variation'])==(reference['score'],reference['best_action'],reference['principal_variation'])
   else:assert limited['used_fallback']
   assert ns.snapshot(nr,pos)==before
-  break
- assert seen
+ # Validate every predeclared1..256 prefix, including prefixes where changed
+ # ordering no longer needs a tie refinement. Keep a real abort witness.
+ if profile=='zero':assert seen
 
 @pytest.mark.parametrize('fixture',['promotion','temporary','compound'])
 @pytest.mark.parametrize('tt',[0,1])

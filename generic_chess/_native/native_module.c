@@ -4409,6 +4409,7 @@ typedef struct {
     uint64_t ordering_cache_hits;
     uint64_t ordering_cache_misses;
     uint64_t ordering_material_view_trials;
+    uint64_t main_binary_order_calls;
     uint64_t ordering_cache_collisions;
     uint64_t ordering_evaluations_by_ply[GC_SEM_MAX_PLY + 1];
     uint64_t ordering_nodes_by_ply[GC_SEM_MAX_PLY + 1];
@@ -5683,6 +5684,17 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                                  alpha_original, beta_original, 0);
         return best;
     }
+    /* Exact-root mode replays the selected continuation canonically. Keep
+     * the legacy non-replay path's ordering unchanged: scalar equality alone
+     * does not certify every interior PV prefix after a bound-as-tie. */
+    if (ctx->root_window_pruning && !pv_replay &&
+        !ctx->learned_move_ordering && !ctx->policy_move_ordering) {
+        ctx->main_binary_order_calls++;
+        if (!gc_semantic_order_q_candidates(ctx, position, &actions)) {
+            gc_semantic_action_buffer_free(&actions);
+            return 0;
+        }
+    }
     if (!pv_node && tt_has_action) {
         for (size_t j = 0; j < actions.count; j++) {
             if (actions.data[j] == tt_action) {
@@ -6718,6 +6730,7 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "ordering_material_view_trials", ctx.ordering_material_view_trials) != 0 ||
+        gc_semantic_set_u64(out, "main_binary_order_calls", ctx.main_binary_order_calls) != 0 ||
         gc_semantic_set_u64(out, "root_tie_refinements", ctx.root_tie_refinements) != 0 ||
         gc_semantic_set_u64(out, "root_tie_aborts", ctx.root_tie_aborts) != 0 ||
         gc_semantic_set_u64(out, "policy_preorder_checked_transitions", ctx.policy_preorder_checked_transitions) != 0 ||
@@ -7480,6 +7493,11 @@ PyMODINIT_FUNC PyInit__native_core(void) {
     Py_INCREF(gc_native_error);
     PyModule_AddObject(module, "NativeActionError", gc_native_error);
     if (PyModule_AddIntConstant(module, "SEMANTIC_QSEARCH_VERSION", 1) < 0) {
+        Py_DECREF(module);
+        return NULL;
+    }
+
+    if (PyModule_AddIntConstant(module, "SEMANTIC_MAIN_ORDERING_VERSION", 1) < 0) {
         Py_DECREF(module);
         return NULL;
     }

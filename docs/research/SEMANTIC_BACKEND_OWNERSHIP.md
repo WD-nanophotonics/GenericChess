@@ -34,7 +34,7 @@ A counter-only148-call control has74 identical non-time results: q inventory/
 enemy scans take1.57% and checked transitions61.9% of measured kernel time.
 Do not optimize the small scan merely because its loops look redundant.
 
-The continuing segment tests a private byte-preserving canonical empty-run JSON
-emitter in the dominant complete-transition path. It is not part of this product
-ownership commit; complete evidence and final mainline/collaboration selection
-will follow at the segment checkpoint. No active research clock is reset here.
+The completed follow-on is OWNED_BACKENDS_AND_MAIN_FRONTIER.md. It rejects the
+serializer on measured kernel cost, repairs a real32-board rule-price recursion
+failure, and selects a cheap main hint only for exact-root canonical-replay mode.
+Complete evidence and cooperation limits accompany that report.

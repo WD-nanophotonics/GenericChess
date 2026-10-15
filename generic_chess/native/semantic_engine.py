@@ -123,6 +123,9 @@ class SemanticIterativeSearchResult:
     # no complete iteration (or an older kernel without provenance).
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+    # Main-frontier ordering attempts, including interrupted allocation/budget.
+    # None denotes an older kernel or a search that did not start.
+    main_binary_order_calls: int | None = None
 
 
 def _profile_tuple(native_rules, values):
@@ -636,6 +639,8 @@ class SemanticSearchEngine:
                                     else int(raw["result_ordinary_qdepth"])),
             result_check_hard_qdepth=(None if raw.get("result_check_hard_qdepth") is None
                                       else int(raw["result_check_hard_qdepth"])),
+            main_binary_order_calls=(None if raw.get("main_binary_order_calls") is None
+                                     else int(raw["main_binary_order_calls"])),
             training_trace=tuple(dict(row) for row in raw.get("training_trace", ())),
             training_trace_enabled=bool(raw.get("training_trace_enabled", False)),
             training_trace_count=int(raw.get("training_trace_count", 0)),
