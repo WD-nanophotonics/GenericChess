@@ -30,6 +30,12 @@
       "failure": "8x8modeldoc says16squares",
       "impact": "Actual65tuple/W8sourcehash andsemantics unchanged",
       "fix": "Currentdeclarations/report explicitlycorrect; oldexecutedsource notrewritten"
+    },
+    {
+      "kind": "publication_ref_alias",
+      "failure": "Localpre-pushhook rejectsHEAD:refs/heads/sidemission",
+      "impact": "Firstpushnotdelivered; commitremainedlocaluntilcorrection",
+      "fix": "Exactrefs/heads/sidemission:refs/heads/sidemission accepted; nohookbypass; fullremoteSHAverified"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # DEV_AUX current scope —2026-10-15 segment53
 
-ScienceOPEN; sidemissiononly; heartbeatPAUSED; manualresearch exactduration inSESSION53.
+ScienceOPEN; sidemissiononly; heartbeatPAUSED; manualresearchended62.695min safe_checkpoint; SESSION53.
 TrueWDL RNPcooperative learning converges2testedinitials R1440/P1440,N/B720; sameinitialP limits.
 Fresh48DEVgain.083333 positive; NEWfixed256familyreplicate.07128995[.040039,.102539],1UNKNOWN.
 RNB3Latininitialpaths split; TRAINselectedR720/B360 DEVgain0, nothumanprice recovery.
@@ -9,7 +9,7 @@ Complete4/8KRK WDL/DTM +ALLindependentactorfrontiers+160Nativeperft showmanyforc
 PhysicalDTMhandoff converts118RNP/114RNB oldcycles tomates, butfixedgaininteractionsuncertain.
 RNBhybridgridwinnerR1440/B720 exposedDEV+.041667CIcross0; notfreshvalidation orinitialconvergence.
 183814NEWNativego13376controllercases328perft;64894previouspaidchoicesseededhybrids explicitly.
-EightZIPexactraw/sourcearchives restoredverified; rawSlack/privateoriginals ignored; outgoingPII/credentials excluded.
+NineZIPexactraw/sourcearchives restoredverified; rawSlack/privateoriginals ignored; outgoingPII/credentials excluded.
 No primary/product/default/UI writes orfullChess/Shogi/Genericdomain claim; failures/caps preserved.
 Next: actualNativeconversion-versus-exactDTM budgetcurve beforemate-visible mixed-stock learning roots.
 Evidence:SEGMENT_20261015_53.md,COST/QA/FAILURES/ARCHIVE_MANIFEST53,1724/1735/1743/1754/1755/1756/1757/1758.
