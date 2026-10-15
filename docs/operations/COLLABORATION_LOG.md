@@ -1,3 +1,31 @@
+## Frozen research continuation after repair —2026-10-15
+
+PRIMARY resumes the original session clock and analyzes all96preserved q32slots:
+q1/q2 complete at16s in2of8families, q4none; every variant selects the same
+physical action per family. All96records are covered by full history replay of
+10unique lines/12edges. Three immediately winning roots are not36independent
+wins;60nonterminal records remain WDLUNKNOWN. Generation64calls and all failures/
+censors remain; opening1024 changes distribution. New32call normalized-cache
+check fixes the observed list-coordinate rejection but regresses on its small
+input; no product cache/filter/default change. History32endpoint calls are a
+feasibility bound, not a search implementation or general speed gain.
+
+DEV_AUX's last read fixed contribution remains11dddd801c68ef9289ff8293dba1dbb00701ede9:
+cursor interruption/report/role repairs and its independently owned learning/
+solver lane. No new AUX execution is claimed, no new batch requested or owner
+checkout touched. Recovery reads new roots and both relevant full threads, no
+remaining pages/new technical supplement. Existing source/arithmetic review does
+not become independent AUX test or trajectory execution. No routine replies or
+new workers. No observed boundary violation; no measured single-Agent efficiency
+control. Shared-account labels identify roles, not cryptographic processes.
+
+Source-only publication replay rebuilds the frozenV1/V2 from sanitized archive
+copies,52API checks plus35roots/4497actions/two32goals and96query history checks
+pass. LatestPENDING repair2648full tests is separately pinned065eff0d; neither
+qualification is substituted for the other's source. See
+../research/CHECKED_PV_REPLAY_AND_WIDE_PREPARATION.md. Informational fixed-SHA
+links follow actual remote verification, not a Dot approval/acknowledgement gate.
+
 ## Slack repair closure —2026-10-15
 
 User approved repair before mainline. PRIMARY reproduced Core ongoing vs Native

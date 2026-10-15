@@ -48,13 +48,26 @@ rule cost, representation, scheduling, algorithm and completion/usefulness.
 Mature unmatched evaluators are overall references, not material-only controls.
 Prefer small predeclared decisions over large games/Elo or positional patches.
 
-Immediate usable evidence is in .local_agent/pv-contract-20261015: frozen q32
-batch on4109–4116 completed all96planned queries; generation factorial completed
-64calls; history-cost probe completed32calls. Analyze/publish these actual results
-before adding queries. They are development evidence, not restored holdouts.
-The private geometry cache has an actual unhashable-list input limitation and
-remains unadopted; opening1024 changes distribution relative to256, not a
-same-task speed gain. Product filter/compiler remain unchanged.
+Analyzed preserved evidence: CHECKED_PV_REPLAY_AND_WIDE_PREPARATION.md and
+its source-replay archive. All96q32queries select the same action per family;
+only2of8families completeq1/q2 at16s, q4none, no demonstrated decision gain.
+Three roots physically win immediately;60nonterminal query records remain WDL
+UNKNOWN despite no one-ply winning reply. No q default change. Full96record
+history replay checks10unique lines/12edges, not all-domain equivalence.
+
+64generation calls retain all censors/failures. Opening1024 changes distribution,
+not same-task speed. Matched same-cap cache ratios around.88 do not repair32
+filter yield. Value-key normalization resolves the private cache's observed list
+input failure on two existing inputs, but small-input ratio1.41684 versus wide
+.65271 argues against unconditional adoption. Product compiler/filter unchanged.
+
+Next selection: attribute actual q quiet-discarded-child digest/history work on
+frozen roots before implementing a shortcut. Endpoint32call ratio.166875 is not
+whole-search gain; availability/material-only views already omit unused keys.
+Preserve complete histories for searched branches and all automatic/repetition/
+declaration/promotion/drop/auxiliary semantics. If avoidable share is small,
+reject this optimization and compare actual consumer/algorithm costs instead.
+Do not repeat unchanged q curves or duplicate AUX solver/learning work.
 
 Prior caller study:2640tests,52source-built API checks/35full roots/4497actions/
 two32goals and280final-source controls passed BEFORE the current C repair.
