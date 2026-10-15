@@ -1,0 +1,171 @@
+{
+  "status": "COMPLETE",
+  "games": 384,
+  "moves": 4748,
+  "role_triplets": 128,
+  "pair_contrasts": 384,
+  "summaries": [
+    {
+      "phase": "TRAIN",
+      "proof": false,
+      "role_triplets": 32,
+      "identical_trajectory_triplets": 14,
+      "identical_outcome_triplets": 26,
+      "identical_event_triplets": 26,
+      "families": 16,
+      "event_flat_after_equal_role_average": 10,
+      "pairs": [
+        {
+          "low": 360,
+          "high": 720,
+          "n": 32,
+          "trajectory_changed": 15,
+          "outcome_changed": 4,
+          "event_changed": 4,
+          "net_delta": 2
+        },
+        {
+          "low": 360,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 17,
+          "outcome_changed": 6,
+          "event_changed": 6,
+          "net_delta": 4
+        },
+        {
+          "low": 720,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 14,
+          "outcome_changed": 2,
+          "event_changed": 2,
+          "net_delta": 2
+        }
+      ]
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "role_triplets": 32,
+      "identical_trajectory_triplets": 14,
+      "identical_outcome_triplets": 23,
+      "identical_event_triplets": 23,
+      "families": 16,
+      "event_flat_after_equal_role_average": 9,
+      "pairs": [
+        {
+          "low": 360,
+          "high": 720,
+          "n": 32,
+          "trajectory_changed": 14,
+          "outcome_changed": 5,
+          "event_changed": 5,
+          "net_delta": 5
+        },
+        {
+          "low": 360,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 17,
+          "outcome_changed": 8,
+          "event_changed": 8,
+          "net_delta": 6
+        },
+        {
+          "low": 720,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 13,
+          "outcome_changed": 5,
+          "event_changed": 5,
+          "net_delta": 1
+        }
+      ]
+    },
+    {
+      "phase": "DEV",
+      "proof": false,
+      "role_triplets": 32,
+      "identical_trajectory_triplets": 21,
+      "identical_outcome_triplets": 27,
+      "identical_event_triplets": 30,
+      "families": 16,
+      "event_flat_after_equal_role_average": 14,
+      "pairs": [
+        {
+          "low": 360,
+          "high": 720,
+          "n": 32,
+          "trajectory_changed": 9,
+          "outcome_changed": 1,
+          "event_changed": 0,
+          "net_delta": 0
+        },
+        {
+          "low": 360,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 11,
+          "outcome_changed": 5,
+          "event_changed": 2,
+          "net_delta": 0
+        },
+        {
+          "low": 720,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 7,
+          "outcome_changed": 4,
+          "event_changed": 2,
+          "net_delta": 0
+        }
+      ]
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "role_triplets": 32,
+      "identical_trajectory_triplets": 21,
+      "identical_outcome_triplets": 27,
+      "identical_event_triplets": 30,
+      "families": 16,
+      "event_flat_after_equal_role_average": 14,
+      "pairs": [
+        {
+          "low": 360,
+          "high": 720,
+          "n": 32,
+          "trajectory_changed": 9,
+          "outcome_changed": 1,
+          "event_changed": 0,
+          "net_delta": 0
+        },
+        {
+          "low": 360,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 11,
+          "outcome_changed": 5,
+          "event_changed": 2,
+          "net_delta": 0
+        },
+        {
+          "low": 720,
+          "high": 1440,
+          "n": 32,
+          "trajectory_changed": 7,
+          "outcome_changed": 4,
+          "event_changed": 2,
+          "net_delta": 0
+        }
+      ]
+    }
+  ],
+  "first_divergences": {
+    "True:EXTERNAL_SEARCH:EXTERNAL_SEARCH": 144,
+    "IDENTICAL": 240
+  },
+  "seconds": 0.04322120000142604,
+  "new_go_or_proof_or_games": 0
+}

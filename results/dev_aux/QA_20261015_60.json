@@ -1,0 +1,38 @@
+{
+  "status": "PASS_CURRENT_AND_INDEPENDENT_RESTORE",
+  "tests": 279,
+  "failures": 0,
+  "errors": 0,
+  "modules": 25,
+  "restored_tests": 279,
+  "restored_failures": 0,
+  "restored_errors": 0,
+  "module_origins_under_restored_root": true,
+  "existing_interpreter_OS": true,
+  "source_archive": {
+    "archive": "results/dev_aux/SOURCE_REPRO_20261015_60.zip",
+    "files": 338,
+    "bytes": 1039579,
+    "sha": "6c89ad53ef9ae558507cb8491bf1ba4f5b28d5e027935f18f2ba572311a35420",
+    "member_sha_crc": true,
+    "publication_copies": [
+      {
+        "file": "results/dev_aux/task1827/plan.json",
+        "original_sha": "80630c7c32942b24c1e526c66a97cf5acd822c169bf60a9c269f80388c2b23d7",
+        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
+      },
+      {
+        "file": "results/dev_aux/task1829/plan.json",
+        "original_sha": "3a1f2502ccab0c0ce4a3db9435ac0e5dd07f02dd4b770921ff5c96337070fb04",
+        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
+      },
+      {
+        "file": "results/dev_aux/task1830/plan.json",
+        "original_sha": "cc92aba67dd7794f53b4adc44ffca7eae31902302c88e26e9aa591ea7841be8f",
+        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
+      }
+    ]
+  },
+  "prospective1848": "ACTIVE_FROZEN_NOT_RESULT_YET",
+  "no_default_or_primary_change": true
+}

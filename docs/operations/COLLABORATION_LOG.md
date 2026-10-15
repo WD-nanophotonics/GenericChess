@@ -1400,3 +1400,19 @@ Segment59 actual62.786minutes/4research checkpoints; safe_checkpoint
 accepted, independent manualqualityPASS; fiveexact archives anonymously checked.
 Latest direct onehour assessment gate retained while advisor-origin twohour
 transmittal is recorded; current short work unaffected, no new authority assumed.
+
+## DEV_AUX segment60 active checkpoint2026-10-15
+
+Own sidemission independent actual-rule proof/material study, PRIMARYreadonly.
+Threshold has identical finite visited work; terminal/check ordering negative
+controls retained, including deeper proof regression. No default adoption.
+Offline exact path/role audit shows sparse price outcomes; query audit finds
+repeated complete histories but time-cutoff reuse would change budgets. A
+separate phase player keeps Native/proof visits and wall caps distinct;279
+working/restored tests pass. Fresh32family384slot W-L control1848 frozen and
+running under1800s, no cache enabled. Not a completed segment/result yet.
+PRIMARY new sibling-local quiet reply hint read via Slack only, not executed
+or locally adopted. Dot prior source/cost advice retained; no claim Dot has
+read/executed these new prototypes or cohort. Full raw coverage private.
+Attributed2hpolicy clarification preserved; latest direct heartbeat here still
+1hassessment gate, current short runs unaffected. No otherAgentconfig writes.

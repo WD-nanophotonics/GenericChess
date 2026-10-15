@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "calls": 64,
+  "expected": 64,
+  "seconds": 0.6631798000016715,
+  "groups": [
+    {
+      "method": "BATCH",
+      "calls": 32,
+      "nodes": 3880,
+      "seconds": 0.28440640002372675,
+      "proven": 6
+    },
+    {
+      "method": "TERMINAL_FIRST",
+      "calls": 32,
+      "nodes": 3766,
+      "seconds": 0.29262089999974705,
+      "proven": 6
+    }
+  ],
+  "new_native_or_games": 0
+}

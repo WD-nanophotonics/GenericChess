@@ -1,0 +1,69 @@
+{
+  "status": "COMPLETE",
+  "calls": 48,
+  "seconds": 44.335323300008895,
+  "groups": [
+    {
+      "method": "CHECK_FIRST",
+      "budget": {
+        "nodes": 1024,
+        "seconds": 0.0625
+      },
+      "calls": 8,
+      "proven": 0,
+      "seconds": 0.4156488999869907
+    },
+    {
+      "method": "CHECK_FIRST",
+      "budget": {
+        "nodes": 65536,
+        "seconds": 1.0
+      },
+      "calls": 8,
+      "proven": 0,
+      "seconds": 5.458028499997454
+    },
+    {
+      "method": "CHECK_FIRST",
+      "budget": {
+        "nodes": 65536,
+        "seconds": 5.0
+      },
+      "calls": 8,
+      "proven": 1,
+      "seconds": 16.591122999991057
+    },
+    {
+      "method": "BATCH",
+      "budget": {
+        "nodes": 1024,
+        "seconds": 0.0625
+      },
+      "calls": 8,
+      "proven": 0,
+      "seconds": 0.4194180000195047
+    },
+    {
+      "method": "BATCH",
+      "budget": {
+        "nodes": 65536,
+        "seconds": 1.0
+      },
+      "calls": 8,
+      "proven": 1,
+      "seconds": 5.178494999971008
+    },
+    {
+      "method": "BATCH",
+      "budget": {
+        "nodes": 65536,
+        "seconds": 5.0
+      },
+      "calls": 8,
+      "proven": 1,
+      "seconds": 14.99744260001171
+    }
+  ],
+  "no_new_native_or_games": true,
+  "current_policy_unchanged": true
+}

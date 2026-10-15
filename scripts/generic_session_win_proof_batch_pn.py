@@ -77,7 +77,7 @@ class _Node:
 
 
 def prove_session_win_batch_pn(session,*,target=None,max_nodes=4096,seconds=1.,max_depth=8,
-                         cancel=None,_clock=perf_counter):
+                         cancel=None,_clock=perf_counter,_children_factory=None):
     target=session.state.position.side_to_move if target is None else target
     if type(target) is not int or target not in (0,1):raise ValueError('invalid target')
     if type(max_depth) is not int or not 0<=max_depth<=128:raise ValueError('invalid depth')
@@ -124,7 +124,7 @@ def prove_session_win_batch_pn(session,*,target=None,max_nodes=4096,seconds=1.,m
                 _,choice,child=min(eligible,key=lambda row:((row[2].pn if own else row[2].dn),row[0]))
                 ancestors.append(node);node=child;b.poll()
             edges=[];frontiers+=1;own=node.session.state.position.side_to_move==target
-            for choice,child in _children(node.session,b,cost):
+            for choice,child in (_children if _children_factory is None else _children_factory)(node.session,b,cost):
                 transitions+=1;b.poll()
                 inspected=visit(child,node.depth+1);edges.append((choice,inspected))
                 # Partial OR frontiers are sufficient only with a proved win;
