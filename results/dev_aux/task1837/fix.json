@@ -1,0 +1,8 @@
+{
+  "observed_by": "Dot source review cce0cca7, IN_REPLY_TO SESSION-BATCH-FORWARD-20261015-59",
+  "failed_before": 2,
+  "error": "AttributeError SessionDecision has no proof_stats",
+  "old_source_sha": "4bfc50bc3906ccececc71a75b2a050ff82c0a43bf1e326001a533b7ff2f6ba30",
+  "change": "Preserve immutable tuple of available integer proof frontier/transition/iteration/peak/eager/claim work fields through the actual chooser. Wall/visit/verification authority unchanged. Future assay writers must explicitly serialize dict(decision.proof_stats).",
+  "new_games_or_native_go": 0
+}

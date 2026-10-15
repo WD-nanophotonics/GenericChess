@@ -1387,3 +1387,11 @@ here; no duplicate primary optimization or cross-checkout writes. Ordinary
 concurrent projects normal; no quiet window, extra Agent/fees or visibility change.
 Fixed own revision/result link supplied at delivery; Dot read/execution scope
 will be stated accurately, not inferred from delivery. Science OPEN/patrolACTIVE.
+
+Late59: Dot also source-readcce0cca7 batch/model/verifier and reported no concrete
+accepted falseWIN; no execution. Adopted its actual dropped-work-metadata concern:
+2failed-before controls, compact immutable proof_stats fix,223working/current
+restoredtests.4421sent full root+history records/2801ACKs/1620clears independently
+bound;14actual saved defense leaves physicallywin, zero newproof.15choice phase
+probes favor reducing proof visits over root replay. New223CURRENTarchive is a
+late supplement; earlier four anonymous archive checks remain pinned tocce.

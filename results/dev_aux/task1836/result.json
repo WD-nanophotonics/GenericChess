@@ -1,0 +1,284 @@
+{
+  "status": "COMPLETE",
+  "calls": 15,
+  "new_native_go": 15,
+  "new_physical_games": 0,
+  "seconds": 1.0585592999996152,
+  "summary": {
+    "PLAIN": {
+      "admission": 0.008113399977446534,
+      "proof": 0.0,
+      "verification": 0.0,
+      "normal": 0.08734529998037033
+    },
+    "SESSION": {
+      "admission": 0.008023799993679859,
+      "proof": 0.3128529000096023,
+      "verification": 0.0,
+      "normal": 0.08765680000942666
+    },
+    "BATCH": {
+      "admission": 0.008250099999713711,
+      "proof": 0.310859100005473,
+      "verification": 0.0,
+      "normal": 0.08578209999541286
+    }
+  },
+  "rows": [
+    {
+      "slot": "fresh0",
+      "method": "PLAIN",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.01736939999682363,
+      "phase_seconds": {
+        "admission": 9.849999332800508e-05,
+        "proof": 0.0,
+        "verification": 0.0,
+        "normal": 0.017200399990542792
+      },
+      "nodes": 4096,
+      "proof_nodes": 0,
+      "verification_nodes": 0,
+      "search_nodes": 4096,
+      "exit_cause": "external_search_return"
+    },
+    {
+      "slot": "fresh0",
+      "method": "SESSION",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.07594610001251567,
+      "phase_seconds": {
+        "admission": 7.110000296961516e-05,
+        "proof": 0.06262350000906736,
+        "verification": 0.0,
+        "normal": 0.01302340000984259
+      },
+      "nodes": 4096,
+      "proof_nodes": 392,
+      "verification_nodes": 0,
+      "search_nodes": 3704,
+      "exit_cause": "external_search_return"
+    },
+    {
+      "slot": "fresh0",
+      "method": "BATCH",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.07759899999655318,
+      "phase_seconds": {
+        "admission": 6.669999856967479e-05,
+        "proof": 0.06311570000252686,
+        "verification": 0.0,
+        "normal": 0.01400939999439288
+      },
+      "nodes": 4100,
+      "proof_nodes": 970,
+      "verification_nodes": 0,
+      "search_nodes": 3130,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 271,
+      "method": "BATCH",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.0817698000028031,
+      "phase_seconds": {
+        "admission": 0.00208609999390319,
+        "proof": 0.06265170000551734,
+        "verification": 0.0,
+        "normal": 0.01623329998983536
+      },
+      "nodes": 4103,
+      "proof_nodes": 970,
+      "verification_nodes": 0,
+      "search_nodes": 3133,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 271,
+      "method": "SESSION",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08260239999799524,
+      "phase_seconds": {
+        "admission": 0.0020946000004187226,
+        "proof": 0.06252399999357294,
+        "verification": 0.0,
+        "normal": 0.01759489999676589
+      },
+      "nodes": 4099,
+      "proof_nodes": 382,
+      "verification_nodes": 0,
+      "search_nodes": 3717,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 271,
+      "method": "PLAIN",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.01871920000121463,
+      "phase_seconds": {
+        "admission": 0.0021573999983957037,
+        "proof": 0.0,
+        "verification": 0.0,
+        "normal": 0.016458099998999387
+      },
+      "nodes": 4097,
+      "proof_nodes": 0,
+      "verification_nodes": 0,
+      "search_nodes": 4097,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 317,
+      "method": "PLAIN",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.018363299997872673,
+      "phase_seconds": {
+        "admission": 0.0019130999862682074,
+        "proof": 0.0,
+        "verification": 0.0,
+        "normal": 0.01635089999763295
+      },
+      "nodes": 4096,
+      "proof_nodes": 0,
+      "verification_nodes": 0,
+      "search_nodes": 4096,
+      "exit_cause": "external_search_return"
+    },
+    {
+      "slot": 317,
+      "method": "SESSION",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08092520000354853,
+      "phase_seconds": {
+        "admission": 0.0018823999998858199,
+        "proof": 0.06254220000118949,
+        "verification": 0.0,
+        "normal": 0.016019299990148284
+      },
+      "nodes": 4101,
+      "proof_nodes": 455,
+      "verification_nodes": 0,
+      "search_nodes": 3646,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 317,
+      "method": "BATCH",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08073990000411868,
+      "phase_seconds": {
+        "admission": 0.0018376999942120165,
+        "proof": 0.06256239999493118,
+        "verification": 0.0,
+        "normal": 0.015536299993982539
+      },
+      "nodes": 4104,
+      "proof_nodes": 974,
+      "verification_nodes": 0,
+      "search_nodes": 3130,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 358,
+      "method": "BATCH",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08157870000286493,
+      "phase_seconds": {
+        "admission": 0.0019574000034481287,
+        "proof": 0.05988889999571256,
+        "verification": 0.0,
+        "normal": 0.0186565000039991
+      },
+      "nodes": 4098,
+      "proof_nodes": 1024,
+      "verification_nodes": 0,
+      "search_nodes": 3074,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 358,
+      "method": "SESSION",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08426759998837952,
+      "phase_seconds": {
+        "admission": 0.0019260999979451299,
+        "proof": 0.06254899999476038,
+        "verification": 0.0,
+        "normal": 0.019203500007279217
+      },
+      "nodes": 4098,
+      "proof_nodes": 489,
+      "verification_nodes": 0,
+      "search_nodes": 3609,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 358,
+      "method": "PLAIN",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.019937100005336106,
+      "phase_seconds": {
+        "admission": 0.0019105999963358045,
+        "proof": 0.0,
+        "verification": 0.0,
+        "normal": 0.017932399990968406
+      },
+      "nodes": 4096,
+      "proof_nodes": 0,
+      "verification_nodes": 0,
+      "search_nodes": 4096,
+      "exit_cause": "external_search_return"
+    },
+    {
+      "slot": 366,
+      "method": "PLAIN",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.021538400003919378,
+      "phase_seconds": {
+        "admission": 0.002033800003118813,
+        "proof": 0.0,
+        "verification": 0.0,
+        "normal": 0.019403500002226792
+      },
+      "nodes": 4099,
+      "proof_nodes": 0,
+      "verification_nodes": 0,
+      "search_nodes": 4099,
+      "exit_cause": "reported_node_overrun"
+    },
+    {
+      "slot": 366,
+      "method": "SESSION",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08695070000248961,
+      "phase_seconds": {
+        "admission": 0.0020495999924605712,
+        "proof": 0.06261420001101214,
+        "verification": 0.0,
+        "normal": 0.02181570000539068
+      },
+      "nodes": 4096,
+      "proof_nodes": 405,
+      "verification_nodes": 0,
+      "search_nodes": 3691,
+      "exit_cause": "external_search_return"
+    },
+    {
+      "slot": 366,
+      "method": "BATCH",
+      "source": "EXTERNAL_SEARCH",
+      "total_seconds": 0.08709619998990092,
+      "phase_seconds": {
+        "admission": 0.0023022000095807016,
+        "proof": 0.06264040000678506,
+        "verification": 0.0,
+        "normal": 0.021346600013202988
+      },
+      "nodes": 4096,
+      "proof_nodes": 887,
+      "verification_nodes": 0,
+      "search_nodes": 3209,
+      "exit_cause": "external_search_return"
+    }
+  ]
+}

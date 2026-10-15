@@ -38,6 +38,7 @@ class SessionDecision:
     proof_seconds: float = 0.
     verification_seconds: float = 0.
     normal_seconds: float = 0.
+    proof_stats: tuple = ()
 
     @property
     def nodes(self):return self.proof_nodes+self.verification_nodes+self.search_nodes
@@ -64,11 +65,11 @@ class SessionProofMaterialPlayer:
         root_record=session.to_record();root_state=session.state;root_result=session.result
         choice=None;source='NO_CHOICE';reason='disabled';cause='depth_budget'
         proof_nodes=verification_nodes=search_nodes=0;normal_receipt=None;rank=None
-        admission_seconds=proof_seconds=verification_seconds=normal_seconds=0.
+        admission_seconds=proof_seconds=verification_seconds=normal_seconds=0.;proof_stats=()
         def left():return max(0.,seconds-b.elapsed())
         def out():return SessionDecision(choice,source,reason,proof_nodes,verification_nodes,
             search_nodes,b.elapsed(),cause,rank,root_record,root_state,root_result,normal_receipt,
-            admission_seconds,proof_seconds,verification_seconds,normal_seconds)
+            admission_seconds,proof_seconds,verification_seconds,normal_seconds,proof_stats)
         try:
             b.poll()
             if session.compiled.ruleset_fingerprint!=self.compiled.ruleset_fingerprint:
@@ -89,7 +90,9 @@ class SessionProofMaterialPlayer:
                 result=self.proof_search(session,max_nodes=quarter,
                     seconds=min(1.,seconds/4,left()),max_depth=self.proof_depth,
                     cancel=cancel,_clock=_clock)
-                proof_nodes=result.nodes;proof_seconds=result.seconds;reason=result.reason;b.poll()
+                proof_nodes=result.nodes;proof_seconds=result.seconds;reason=result.reason
+                proof_stats=tuple((name,getattr(result,name)) for name in ('frontiers','transitions','iterations','peak_depth','eager_board_successors','claims_assessed') if hasattr(result,name))
+                b.poll()
                 if result.status=='PROVEN_WIN':
                     try:
                         cursor=SessionStrategyCursor(session,result.certificate,max_nodes=quarter,
