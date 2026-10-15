@@ -244,7 +244,7 @@ as mistakes rather than rewriting them into compliant runs.
 
 # DEV_AUX current scope —2026-10-15 segment52
 
-ScienceOPEN; sidemissiononly; manualresearch session52, heartbeatPAUSED.
+ScienceOPEN; sidemissiononly; manualresearchended64.277min safe_checkpoint; heartbeatPAUSED.
 ActualWDLlearning cheap, stablehumanprice/transfer NOT established.
 FreshRNBnative-opponent replicate .03125 CI touch0; new4RNPpromotion .0859375 positive.
 Twoactualrandominitialpaths TRAINimprove but bothDEVbelowunit .015625; endpoint128trajectoriesidentical.

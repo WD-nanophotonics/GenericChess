@@ -1,0 +1,55 @@
+{
+  "checkpoints": [
+    {
+      "at": "2026-10-14T23:33:49.738629+00:00",
+      "evidence": "results/dev_aux/task1674/result.json",
+      "kind": "research",
+      "next_action": "Run frozen1677 Pawn/promotion actualWDL learning and independent policy audit.",
+      "observation": "3840 closedpolicyWDL, pooled720/720/360 gain.03125 CI[0,.0703125]; selectors differ, positive direction but weak repeatability. Promotion literal/native qualification passed.",
+      "question": "Does native-opponent trueWDL learning repeat on fresh roots?"
+    },
+    {
+      "at": "2026-10-14T23:37:58.071943+00:00",
+      "evidence": "results/dev_aux/task1679/result.json",
+      "kind": "research",
+      "next_action": "Execute fixedPOOL/baseline promotionOFF control on same64DEV roots perDot advice; no retraining/DEVselection.",
+      "observation": "2048literalroots/allchildren and723Nativeperft passed;1920 actualepisodes108.235s,10947newgo; pooledR1440P360 gain.0859375 family95[.015625,.1640625], allWDLclosed. Rootactions/outcomes vary withprice.",
+      "question": "Does Pawn/promotion actualWDL learning create decision signal?"
+    },
+    {
+      "at": "2026-10-14T23:44:10.613855+00:00",
+      "evidence": "results/dev_aux/task1687/result.json",
+      "kind": "research",
+      "next_action": "Complete2randominitial boundedlocallearning onfreshrootfamilies and auditactualpaths; examine largerboard fixedcandidate transfer withouttraining.",
+      "observation": "Only256OFFepisodes18.859s1866go; ONgain.0859375 OFFgain.0234375, pairedinteraction.0625 familyCI[-.015625,.1484375], allpolicyWDLclosed.45actualfirstdivergences on33families. Interactionnotresolved; ruleOFF changesbothplayers.",
+      "question": "Does learnedR/P gain depend on promotion?"
+    },
+    {
+      "at": "2026-10-14T23:58:03.214393+00:00",
+      "evidence": "results/dev_aux/task1700/result.json",
+      "kind": "research",
+      "next_action": "Audit16family8candidate4096control thenfreeze NEW8roots trueWDL training at4096 with64fixedop andpredeclared4096opDEVcheck.",
+      "observation": "Randominitialpaths actual25TRAINprices/3840episodes187.375s: PATH0 +.125 vsbadinitial, bothends -.015625 vsunit,128endtrajectoriesidentical.8boardcold64 fixed4price transfer512games59.469s gain-.0078125 withCIcross0,472cycles. CompleteD3bothTRAINlearnsame1440/P360,1792episodes50.031s gain.1328125CIpositive;ALL8638root/51095actionvalues independentminimaxPASS, workdifferent.",
+      "question": "Does tinyboard WDL learning transfer or depend on candidate search?"
+    },
+    {
+      "at": "2026-10-15T00:23:17.387900+00:00",
+      "evidence": "results/dev_aux/task1717/result.json",
+      "kind": "research",
+      "next_action": "Finalize scientific comparison, verify raw archives/source failures/privacy, publish onlysidemission andmaintain3executable nexttasks.",
+      "observation": "Complete4/8 singlecurrentN/B+barestock no-mate closure128.421s,8N429440/B417228validwhiteplacements; querytailforecast4..15percent notmeasuredwallgain.64protocolqueries rawidentical whileSclear64to32; zero-tickratioposterrorpreserved/corrected.8newlearninggain.0234 uncertain,strongop0; alignedtablescontrols notclearfix.",
+      "question": "Canexperimentcost fall without surrogatewinlabels?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "elapsed_minutes": 64.277,
+  "ended_at": "2026-10-15T00:32:10.171809+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261015_52.md",
+  "id": "01f6148f-897b-457f-b8c1-68eba4ed679d",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 5,
+  "started_at": "2026-10-14T23:27:53.568302+00:00",
+  "state": "ended",
+  "thread_id": "01a128cf-ae2d-7352-a456-06bd38367221"
+}
