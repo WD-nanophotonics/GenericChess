@@ -22,3 +22,10 @@ actual result. The same no-declaration board control still proves LOSS.
 Tests are standalone public-rule/session fixtures, requiring no auxiliary
 session proof prototype or new Native game/training. Old scientific labels,
 caps and frozen inputs are preserved; no retrospective relabeling is asserted.
+
+
+Impact check: two direct historical F23V/R1 call sites were inspected; their six
+actually compiled4x4 SHOGI_LIKE/WESTERN_CHESS_LIKE/MIXED_MECHANIC families have
+no declarations, so this guard is inactive there. This was rule compilation
+only: no corpus outcomes/human holdouts read, no legacy multiprocess run, no
+old labels regenerated. It does not prove every downstream caller is in scope.

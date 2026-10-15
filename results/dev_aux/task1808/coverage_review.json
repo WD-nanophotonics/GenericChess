@@ -1,0 +1,18 @@
+{
+  "complete_calls": 18,
+  "planned_calls": 48,
+  "complete_reference_root_profiles": 9,
+  "known_winning_target_calls": 5,
+  "proved_and_executed": 1,
+  "false_positive_observed": 0,
+  "missing_calls": 30,
+  "cap": "RuntimeError:frozen_session_reference_wallcap",
+  "reference_nodes": 2020864,
+  "seconds": 1500.0002878999949,
+  "partial_active": {
+    "root": 3,
+    "profile": "NONE",
+    "phase": "REFERENCE"
+  },
+  "decision": "Do not extend the exposed reference cap or repeat its full public replay oracle. Current optional session proof remains research-only:4of5 completed winning-target references were not proved under1s; one verified physical3-choice mate. Next useful work is targeted declaration/session protocol and frontier/replay cost attribution using existing completed records, not more games or brute-force labels."
+}

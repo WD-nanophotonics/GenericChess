@@ -212,3 +212,59 @@ WDL. A 96-call paired/counterbalanced supported-rule control matches work and
 trees but takes about1.62–1.67 times mutable-runtime cost on the tested small
 roots. The public path therefore remains an optional unsupported-history route;
 no general performance advantage is claimed.
+
+
+## Session declaration boundary (segment57, opt-in research)
+
+Declarations are not board Actions. `generic_session_win_proof.py` therefore
+uses a separate typed SessionChoice and SessionWinCertificate over an actual
+GameSession that can be replayed from its GameRecord. ACTION calls submit;
+DECLARATION calls declare; SessionResult owns WIN/LOSS/RESTART, while declaring
+leaves Core GameState/history untouched. The ordinary mutable/public GameState
+provers keep their declaration-unsupported guards. No automatic adapter/default
+or mature-engine training entry uses this new prototype.
+
+The finite tree has one target choice and every defender board/owned-declaration
+choice, including losing claims. A defender RESTART or winning claim refutes a
+forced target win, even if the old board-only tree would mate. Resignation is
+omitted as dominated for this win query; strategic continuation after a restart
+is outside scope because actual session RESTART ends this session without winner.
+Every edge decreases rank. The independent verifier reconstructs each edge via
+public GameSession.replay/submit/declare, checks exact terminal SessionResult and
+full root state+record+fingerprint (including typed values). Cursor execution
+uses that same record binding; no board-only TT or fabricated Core terminal.
+
+Focused checks physically execute a WIN claim with unchanged Core state, every
+board/LOSS defensive branch, RESTART and defender WIN refutations, forced
+promotion, no-progress draw, alternate initial-setup schema3, cancellation,
+forged/typed-alias rejection and explicit unreplayable-import refusal. Admission
+of arbitrary externally imported GameState as a GameSession is NOT implemented.
+Exact finite-session reference1808 has its own frozen budget/results and must
+be read before making a wider correctness/performance claim. It is not training
+or Native game evidence, and a capped reference is not a complete domain proof.
+
+## Cancellation and realized costs
+
+ProofMaterialPlayer now polls after atomic terminal adjudication, after an
+existing cursor chooses, and after a newly verified cursor chooses but BEFORE
+installing its action/cursor. Actual cancellation/deadline reasons survive;
+a cancelled decision does not commit a certificate action. Tests inject real
+cancellation after actual terminal work and real cursor verification, plus a
+clock crossing. Public operations remain atomic: this is cooperative stopping,
+not a hard real-time guarantee. Earlier played-source versions remain archived.
+
+## Fixed-opponent factorial and horizon interpretation
+
+Both A-to-B and C-to-D must be reported: solver contribution can depend on the
+price. The interaction is (D-C)-(B-A); it is identifiable only with opponent
+policy held fixed. Already-paid1797/1798 correction is task1806, with full-family
+pairing, actual W/L/draw/UNKNOWN transfers and all realized time/go/node costs.
+A positive B-to-D alone does not prove that the solver enabled price learning.
+
+The explicit H16/H24 assay1804 uses the untouched1803 roots/price/caps in an
+executable successor, separate actual games, fixed proof-equipped opponent and
+prior TRAIN-only prices. Per-H identity is logged in every game/event. Separate
+audit-only views retain exact original rows and corresponding Native receipts;
+no prefix is relabeled as an H24 policy. For this realized run all256 paired
+first16 paths agree; general timing variation is still an interpretation limit.
+Horizon-specific reports, not the legacy aggregate result cells, own H contrasts.

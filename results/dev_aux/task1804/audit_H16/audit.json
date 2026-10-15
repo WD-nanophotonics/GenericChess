@@ -1,0 +1,130 @@
+{
+  "status": "PASS_PUBLIC_REPLAY_AND_RECEIPTS",
+  "games": 256,
+  "actual_steps": 3464,
+  "matched_native_receipts": 3031,
+  "native_receipts_total": 3031,
+  "unassigned_native_receipts": 0,
+  "proof_calls": 122,
+  "proof_continuations": 311,
+  "native_node_overruns": 2053,
+  "step_time_overruns": 0,
+  "max_step_seconds": 0.15052729999297298,
+  "early_unknown_before_H": 0,
+  "cells_DEV_only": {
+    "A": {
+      "n": 0,
+      "known_net": null,
+      "lower": null,
+      "upper": null,
+      "outcomes": {},
+      "planned_n": 128,
+      "missing_games": 128,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -1.0,
+        1.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "B": {
+      "n": 128,
+      "known_net": 0.1875,
+      "lower": -0.09375,
+      "upper": 0.46875,
+      "outcomes": {
+        "0": 32,
+        "1": 42,
+        "None": 36,
+        "-1": 18
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.1875,
+        0.1875
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.09375,
+        0.46875
+      ]
+    },
+    "C": {
+      "n": 0,
+      "known_net": null,
+      "lower": null,
+      "upper": null,
+      "outcomes": {},
+      "planned_n": 128,
+      "missing_games": 128,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -1.0,
+        1.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "D": {
+      "n": 128,
+      "known_net": 0.203125,
+      "lower": -0.0625,
+      "upper": 0.46875,
+      "outcomes": {
+        "1": 44,
+        "0": 32,
+        "None": 34,
+        "-1": 18
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.203125,
+        0.203125
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.0625,
+        0.46875
+      ]
+    }
+  },
+  "contrasts": {
+    "price_with_solver": {
+      "observed_complete_families": 16,
+      "missing_families": [],
+      "finite_event_difference": 0.015625,
+      "family_bootstrap95": [
+        0.0,
+        0.046875
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    }
+  },
+  "selected_equals_baseline": false,
+  "full_planned_B_to_D": {
+    "finite_event_bounds": [
+      0.015625,
+      0.015625
+    ],
+    "infinite_outcome_bounds": [
+      -0.53125,
+      0.5625
+    ],
+    "meaning": "All frozen planned DEV cases; missing/early games remain uncertain. These are missing-data bounds, not sampling confidence intervals."
+  },
+  "seconds": 0.6626600000017788,
+  "proof_conversion": {
+    "candidate_proved_games": 86,
+    "candidate_physically_redeemed": 86,
+    "opponent_proved_games": 36,
+    "opponent_physically_redeemed": 36
+  },
+  "raw_games_sha256": "2dd6efba036f3c98b4eee227f06b7b3bf07ed220b5b36252206afe2636e813f1"
+}

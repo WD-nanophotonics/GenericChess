@@ -15,7 +15,7 @@ def audit(folder):
     rows=[json.loads(x) for x in (p/'run/games.jsonl').read_text().splitlines()]
     families={f['family']:f for f in plan['families']};stats=collections.Counter();cells={};train={};start=time.perf_counter()
     for row in rows:
-        s=from_actor(c,families[row['family']]['roots'][row['color']]);target=row_target(row,s.position.side_to_move);path=row['trajectory'];tail=row.get('tail_admission');H=plan['H']
+        s=from_actor(c,families[row['family']]['roots'][row['color']]);target=row_target(row,s.position.side_to_move);path=row['trajectory'];tail=row.get('tail_admission');H=row.get('H',plan['H']);assert H==plan['H'], 'mixed horizon audit requires separate views'
         assert len(path)<=H+plan.get('tail_max_rank',64)
         prefix_pay=None;owner=None;last_rank=None
         for ply,step in enumerate(path):

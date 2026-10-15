@@ -12,7 +12,7 @@ def quantile(x,q):return sorted(x)[int((len(x)-1)*q)]
 
 
 def incomplete(row,plan):
-    return row['payoff'] is None and (len(row['trajectory'])<plan['H'] or row.get('tail_admission') is not None)
+    return row['payoff'] is None and (len(row['trajectory'])<row.get('H',plan['H']) or row.get('tail_admission') is not None)
 
 
 def planned_bounds(rows,planned_n,plan):
@@ -34,6 +34,7 @@ def audit(folder):
         key=orbit(tuple(f['roots'][0]));assert not key&root_orbits;root_orbits.update(key)
     choice_index=0;conversion=collections.Counter()
     for row in rows:
+        assert row.get('H',plan['H'])==plan['H'], 'audit each horizon separately; no mixed-horizon collapse'
         key=(row['family'],row['proof'],row['price_index'],row['color'],row['opponent'],row_role(row));assert row_role(row) in roles(plan);assert key not in seen;seen.add(key)
         f=families[row['family']];state=from_actor(c,f['roots'][row['color']]);target=row_target(row,state.position.side_to_move)
         assert row['phase']==f['phase'] and row['price']==plan['prices'][row['price_index']]

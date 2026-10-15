@@ -1260,3 +1260,46 @@ message asking repair-first/no new verification games. Preserve its original
 1500s/45000go cap and all actual outputs; no rerun, extension or further batch.
 The fix and already-paid analysis are delivered first at this checkpoint; this
 is not a session finish or claim that PRIMARY/Dot executed our changes.
+
+
+## Segment57 final scientific checkpoint —2026-10-15
+
+AUX closed both real cursor cancellation paths and independent fixed-opponent
+C-to-D/interaction controls, delivered first11dddd80 then5c7eb12a with full
+remoteSHA. Mapped live TRAIN/DEV entry and corrected its own sidemission identity/
+publication decisions; no broad consumer API rewrite. Dot supplement adopted;
+CHAT_Comments advice assessed, production PV/PENDING/import-capacity work remains
+PRIMARY's lane. No primary checkout/process/config writes or automatic merge.
+
+Original already-running1804 completed512actual H16/H24games/6312go, no newbatch
+after repair-priority coordination. No horizon reversal observed, intervals
+include0. Optional full-session claim strategies have13focused semantic checks;
+25minute finite oracle capped18/48calls, oneverified actual3choicewin; no default
+integration or repeat/extension. Full reference/source failures are retained.
+
+Further concrete auxiliary reference defects: real legalRESTART despite strong
+board-onlyLOSS (dfc9085d), and equalcustomTTkey despite path-rule successor
+ongoing/draw divergence (660d9672). Core's own key was alreadycorrect. Fixed only
+historicalreference domain/key, no oldlabels/humanholdouts read/recomputed. Known
+six compiled historicalcaller families unaffected; currentPRIMARYnotexecuted.
+Decision-changing evidence delivered in soleprojectSlack; no routine ackloops.
+
+Final120relatedtests pass in ownsource and independent source/data+historyfix
+restore. Earlier archive missed one actual staticJSON dependency; corrected and
+preserved.Exact86evidence members and five
+archive receipts are in ARCHIVE_MANIFEST57. All outgoing content checked for
+actual personalinformation/credentials; exact sensitiveSlack originals ignored.
+ScienceOPEN, own90minute patrolACTIVE. Current tasks/reasons in NEXT_WORK/mainline.
+
+
+Final related-thread read covered all8PRIMARY replies through1792053691.334299.
+PRIMARY reports sandbox9a4bc4e0671379161bd35541507549ab79861175 with its own
+historicalreference source matching AUX pre-fixcdbac7b7,4real failing claim
+controls, adopted declaration-domain guard and5claim/38related checks. AUX read
+this execution/adoption report, did not run primary code or modify its checkout.
+The later auxiliary history-key fix660d9672 is separate and will be included in
+final evidence for PRIMARY's own adoption decision; no automatic integration.
+
+Own segment57 finish accepted61.236minutes/safe_checkpoint,6research stages;
+manual actualqualityreviewPASS, allownedproducersclosed, patrolACTIVE. The
+1500s reference cap was experimentcost, not a tool/runtime earlyfinish exception.

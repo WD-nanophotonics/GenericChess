@@ -1,0 +1,26 @@
+{
+  "status": "PASS_FOCUSED_SESSION_DECLARATION_COUNTEREXAMPLES",
+  "focused_tests": 8,
+  "prover": "scripts/generic_session_win_proof.py",
+  "new_product_changes": 0,
+  "native_go": 0,
+  "learning_games": 0,
+  "actual_results": [
+    "WIN claim ends actual SessionStatus.DECLARATION with winner0, Core GameState unchanged",
+    "Defender RESTART refutes former board-only win and missing declaration edge fails independent verification",
+    "Defender LOSS remains a covered legal declaration; full board+claim defensive branches physically end in winning SessionResult",
+    "Exact state+GameRecord bindings reject bool/int aliases and stale cursor",
+    "Cancel during actual claim cannot issue certificate"
+  ],
+  "failures": [
+    {
+      "issue": "Test fixture used nonexistent RuleSet.initial_side_to_move",
+      "resolution": "Use real legal rook-move prefix and public GameSession replay; no private state injection"
+    },
+    {
+      "issue": "Fresh-state board fixture had shorter known proof than full historical session; depth5 insufficient",
+      "resolution": "Retain unknown; planned maxdepth8 proves rank6 under actual historical state"
+    }
+  ],
+  "scope": "Optional separate typed SessionWinCertificate prototype. Existing mutable/public GameState solver declaration guards remain unsupported. No production/hybrid integration, no unique universal price claim. Complete finite maxply8 model check1808 separately frozen and running; results not yet asserted."
+}

@@ -104,6 +104,9 @@ def run(folder, *, driver_class=None):
     assert not p.get('study_sha256') or sha(__file__)==p['study_sha256']
     assert sha('scripts/generic_win_proof.py')==p['solver_sha256'] and sha('scripts/generic_proof_player.py')==p['player_sha256']
     roles(p)  # Fail before starting an engine on invalid role plans.
+    from scripts.generic_proof_horizons import horizon_settings, dev_cases
+    horizon_settings(p)  # Reject invalid/mixed learning horizon plans before engine startup.
+    assert not p.get('horizon_scheduler_sha256') or sha('scripts/generic_proof_horizons.py')==p['horizon_scheduler_sha256']
     assert not p.get('roles_sha256') or sha('scripts/generic_proof_roles.py')==p['roles_sha256']
     D=mod('DRIVER54','results/dev_aux/task1720/driver.py')
     class TimedDriver(D.Driver):
@@ -147,12 +150,13 @@ def run(folder, *, driver_class=None):
                 for a in ll.values():check_frontier(apply_action(s,a,c))
         (folder/'qualification.json').write_text(json.dumps(dict(status='PASS_ALL_ROOTS_AND_CHILDREN_CORE_ACTOR_EQUIVALENCE',roots=sum(len(f['roots']) for f in p['families']))))
         d.start_engine()
-        def play(f,enabled,price_index,color,opponent,role):
+        def play(f,enabled,price_index,color,opponent,role,H=None):
+            H=p['H'] if H is None else H
             nonlocal active
             price=p['prices'][price_index];d.guard();s=from_actor(c,f['roots'][color]);target=candidate_side(s.position.side_to_move,role)
             path=[];players={};pay=None;tail=None;horizon_snapshot=None;game_started=time.perf_counter()
             from scripts.generic_proof_tail import CertifiedTail
-            active=dict(family=f['family'],phase=f['phase'],color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,trajectory=path)
+            active=dict(family=f['family'],phase=f['phase'],H=H,color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,trajectory=path)
             d.log('game_events',dict(event='START',**active))
             for side in (0,1):
                 pp=price if side==target else p['prices'][p.get('baseline_index',0)]
@@ -161,16 +165,16 @@ def run(folder, *, driver_class=None):
                     return check_frontier(state)[move],used
                 trigger=(lambda state:count_entities(state.position)<=4) if p.get('proof_trigger')=='SMALL' else None
                 players[side]=ProofMaterialPlayer(c,None,proof_enabled=(enabled if side==target else p.get('opponent_proof',enabled)),normal_search=external,proof_search=proof_function,proof_trigger=trigger)
-            for ply in range(p['H']+p.get('tail_max_rank',64)+1):
+            for ply in range(H+p.get('tail_max_rank',64)+1):
                 if s.terminal_status.is_terminal:
                     pay=0 if s.terminal_status.winner is None else (1 if s.terminal_status.winner==target else -1);break
-                if ply==p['H']:
+                if ply==H:
                     horizon_snapshot=dict(terminal=s.terminal_status.status.value,end=actor_state(s),payoff=None)
                     if p.get('certified_tail'):tail=CertifiedTail.admit(s,players,max_rank=p['tail_max_rank'])
                     if tail is None:break
                     active['tail_admission']=dict(owner=tail.owner,rank=tail.initial_rank)
-                    d.log('game_events',dict(event='TAIL_ADMITTED',family=f['family'],phase=f['phase'],color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,**active['tail_admission']))
-                if ply>p['H'] and tail is None:break
+                    d.log('game_events',dict(event='TAIL_ADMITTED',family=f['family'],phase=f['phase'],H=H,color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,**active['tail_admission']))
+                if ply>H and tail is None:break
                 d.guard()
                 cap=p['candidate_nodes'] if s.position.side_to_move==target else opponent['nodes']
                 player=players[s.position.side_to_move]
@@ -183,15 +187,15 @@ def run(folder, *, driver_class=None):
                     assert z.source=='PROOF_CONTINUATION' and z.action==tail.choose(s)
                 if z.action is None:raise RuntimeError('incomplete_step_before_finite_objective:'+z.exit_cause)
                 a=z.action;step=dict(actor=actor_state(s),decision={**asdict(z),'action':uci(a)});path.append(step)
-                d.log('game_events',dict(event='MOVE',family=f['family'],phase=f['phase'],color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,ply=ply,**step))
+                d.log('game_events',dict(event='MOVE',family=f['family'],phase=f['phase'],H=H,color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,ply=ply,**step))
                 for player in players.values():player.observe(s,a)
                 s=apply_action(s,a,c)
                 if tail is not None:tail.observed(s)
-            row=dict(family=f['family'],phase=f['phase'],color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,
+            row=dict(family=f['family'],phase=f['phase'],H=H,color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,
                      payoff=pay,lower=-1 if pay is None else pay,upper=1 if pay is None else pay,
                      terminal=s.terminal_status.status.value,end=actor_state(s),trajectory=path,
                      seconds=time.perf_counter()-game_started,horizon_snapshot=horizon_snapshot,tail_admission=(dict(owner=tail.owner,rank=tail.initial_rank,remaining_rank=tail.remaining_rank) if tail else None))
-            rows.append(row);d.log('games',row);d.log('game_events',dict(event='END',family=f['family'],phase=f['phase'],color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,payoff=pay,terminal=row['terminal']));active={}
+            rows.append(row);d.log('games',row);d.log('game_events',dict(event='END',family=f['family'],phase=f['phase'],H=H,color=color,candidate_role=role,candidate_side=target,opponent_proof=p.get('opponent_proof',enabled),opponent=opponent['id'],proof=enabled,price_index=price_index,payoff=pay,terminal=row['terminal']));active={}
         selected=1
         baseline=p.get('baseline_index',0)
         if p.get('study_kind')=='LEARN':
@@ -223,16 +227,10 @@ def run(folder, *, driver_class=None):
                     if not changed:break
                 paths.append(dict(initial=initial,path=[p['prices'][i] for i in path],endpoint=p['prices'][current]))
             (folder/'selection.json').write_text(json.dumps(dict(selected_index=selected,selected=p['prices'][selected],integer_scores=score,paths=paths,source='TRAIN only, before DEV',candidate_roles=roles(p),games_per_price=expected_train),indent=2),encoding='utf-8')
-        for f in p['families']:
-            if f['phase']!='DEV':continue
-            cells=[(False,baseline),(True,baseline)]
-            if selected!=baseline:cells += [(False,selected),(True,selected)]
-            if f['family']%2:cells.reverse()
-            for enabled,index in cells:
-                for color in (0,1):
-                    for op in p['opponents']:
-                        for role in role_order(p,f['family'],color):play(f,enabled,index,color,op,role)
-            print('DEV_FAMILY',f['family'],len(rows),flush=True)
+        for f,enabled,index,color,op,role,H in dev_cases(p,selected):
+            play(f,enabled,index,color,op,role,H)
+            if color==1 and role==roles(p)[-1]:
+                print('DEV_PROGRESS',f['family'],H,len(rows),flush=True)
     except BaseException as e:
         error=type(e).__name__+':'+str(e)
         if active:(folder/'partial_game.json').write_text(json.dumps(dict(**active,error=error,payoff=None,lower=-1,upper=1),indent=2),encoding='utf-8')

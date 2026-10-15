@@ -1,0 +1,482 @@
+{
+  "archives": [
+    {
+      "path": "results/dev_aux/EVIDENCE_20261015_57.zip",
+      "sha256": "95a99f15c8f4ba90fb164637f7719ff4dd6b38283fbcafcd327e06e4a768a047",
+      "zip_bytes": 3138851,
+      "members": 87,
+      "uncompressed_bytes": 45785587,
+      "role": "Complete actualcohort/sourceversions/partialreference evidence"
+    },
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_20261015_57.zip",
+      "sha256": "f21299749263f1a548096e1a277c4adc1b14941155a9112b5851081261881b7d",
+      "zip_bytes": 336379,
+      "members": 134,
+      "uncompressed_bytes": 1170775,
+      "role": "FINAL120testsource=SOURCE_REPRO_FINAL plus HISTORYFIX overlay; firstSOURCE_REPRO+DATA retain originalclosurefailure/correction"
+    },
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_20261015_57_DATA.zip",
+      "sha256": "dfd285916ce1f3146c21e4921b249f41e7ef99a34c0771d9bae17210e45f62d3",
+      "zip_bytes": 1389,
+      "members": 2,
+      "uncompressed_bytes": 3016,
+      "role": "FINAL120testsource=SOURCE_REPRO_FINAL plus HISTORYFIX overlay; firstSOURCE_REPRO+DATA retain originalclosurefailure/correction"
+    },
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_FINAL_20261015_57.zip",
+      "sha256": "2a387912c12e2e13ef03c9f489bd3652d448c2b76af9dfe72fc69e02833deaf4",
+      "zip_bytes": 341291,
+      "members": 136,
+      "uncompressed_bytes": 1187355,
+      "role": "FINAL120testsource=SOURCE_REPRO_FINAL plus HISTORYFIX overlay; firstSOURCE_REPRO+DATA retain originalclosurefailure/correction"
+    },
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_HISTORYFIX_20261015_57.zip",
+      "sha256": "d84bbeec131db5d872c719b2450e84239630294e180e2c2e9a5ab5313d551888",
+      "zip_bytes": 5168,
+      "members": 3,
+      "uncompressed_bytes": 15673,
+      "role": "FINAL120testsource=SOURCE_REPRO_FINAL plus HISTORYFIX overlay; firstSOURCE_REPRO+DATA retain originalclosurefailure/correction"
+    }
+  ],
+  "evidence_members": [
+    {
+      "path": "results/dev_aux/task1804/audit_H16/audit.json",
+      "bytes": 3267,
+      "sha256": "b2e71e7b7c78dcb00ad863eb6f74129173ed0eac8ac8a928d21f3297d394b10f"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/plan.json",
+      "bytes": 19657,
+      "sha256": "1763d94bf74ffc1574ab24b485dcf4c9bcba517f1fd7f118a85ba295c94919c3"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/role_report.json",
+      "bytes": 15207,
+      "sha256": "3f23a477e5cf9d1ca0c3c1a4e9d3166858472bf8cbebe6b96a4c3631eb81c9e6"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/run/acks.jsonl",
+      "bytes": 1073656,
+      "sha256": "2b25e3447f476ccfe2a13b5bc2f01dfe0f718f7330837002279dadfa2e3de963"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/run/choices.jsonl",
+      "bytes": 6455440,
+      "sha256": "49c89879c083ff41417a1698fb2bdc427a31519bbdf299da2dbb9b08a2344f3c"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/run/games.jsonl",
+      "bytes": 1461756,
+      "sha256": "2dd6efba036f3c98b4eee227f06b7b3bf07ed220b5b36252206afe2636e813f1"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/tail_audit.json",
+      "bytes": 940,
+      "sha256": "e86ebf1eac89bb222d0805b7a3111c8bee89b356095984b7b548f16b6b34021b"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H16/VIEW_ONLY.json",
+      "bytes": 179,
+      "sha256": "dbf4b6f26bf43d44cd85883ab41770752aa34a6fdb506efe53bf012b4c8b9c6f"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/audit.json",
+      "bytes": 3256,
+      "sha256": "3d403d606e94484570aedb58a3a9a1f275003d349d8414e37c73389a76086a38"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/plan.json",
+      "bytes": 19657,
+      "sha256": "00d0433fe8f16fe053b723d546fde53be23756e0fa07d217b23c0b319315e8af"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/role_report.json",
+      "bytes": 14991,
+      "sha256": "dd92f353af443e465a0e5e617d102a2a26cbc6f67b9bd82b91168ff2b720ecbc"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/run/acks.jsonl",
+      "bytes": 1166488,
+      "sha256": "9365c3600fd88a0c9e313e100deceab61e10659ad86271b6cb502803bb2d94ff"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/run/choices.jsonl",
+      "bytes": 7012285,
+      "sha256": "3abc84ec901d99a5630054e765b0a665af57eb1de5abf7cbf12aafe5f5530a3a"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/run/games.jsonl",
+      "bytes": 1562738,
+      "sha256": "fa68159e73e3730facaab523fbd054f60c2c950b5b6012fb779177685dbd40f1"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/tail_audit.json",
+      "bytes": 933,
+      "sha256": "95d491369d0f381a450b39c22333ead622f8c40ccba732a7f4aea2b2124fbf0c"
+    },
+    {
+      "path": "results/dev_aux/task1804/audit_H24/VIEW_ONLY.json",
+      "bytes": 179,
+      "sha256": "b122f9e841b5a55472e5869e8a53beebe9e6dddd6c357060f4fcb8691b1a6644"
+    },
+    {
+      "path": "results/dev_aux/task1804/cost_by_horizon.json",
+      "bytes": 1212,
+      "sha256": "e5132e7c4286d5505c92239a07bd553c5f0cb51bb745d4766dad879051821612"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_horizons.py",
+      "bytes": 2231,
+      "sha256": "36204f60725ea8d3a6c297fec1ba5aa2e6176823daa5dbc676ca5d7bd1c41a22"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_native_driver.py",
+      "bytes": 3968,
+      "sha256": "441b996bcf56b0ddb54e8a690da8d3a623d9c11f9d5da34cb697b28727c8c1e4"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_native_study.py",
+      "bytes": 21300,
+      "sha256": "287c700ef7ab212af13f55caa7ddaab49edffe74b05eade24213f74bd28b1aa5"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_player.py",
+      "bytes": 9903,
+      "sha256": "4cdd015f5a9af58858798e656cc95d0aaa270f3e3c8ed11a73accf9db95e8f5b"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_rnb_bridge.py",
+      "bytes": 2505,
+      "sha256": "d8a134b6b2331f5350714b47f7b319ab220e6593bf0fe3b9330c8abebdfa184c"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_roles.py",
+      "bytes": 1124,
+      "sha256": "fbc33fbfecaa4976a5108c34d92638d7c77416d88946ac75680c99e17e518624"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_scaled_study.py",
+      "bytes": 6075,
+      "sha256": "6b0d775764e2f0b2609fc26b45dfc84e84ef16545c7836ee046ca52ba94b07ca"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_proof_tail.py",
+      "bytes": 2281,
+      "sha256": "44c296092693c581afa2907f02f6e29f0fbd3213ca242accdf44ed1f8b123ccf"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_royal_actor.py",
+      "bytes": 2788,
+      "sha256": "99565b2cabcff8c9a60789f21546c1f2ececcb9210c7ce43a717f588684342f7"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_win_proof.py",
+      "bytes": 13092,
+      "sha256": "1c79db4805df9dbba62a49b8d91337f0d46f9fc1cfaa1d8247298c507c4526c3"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/generic_win_proof_pn.py",
+      "bytes": 5573,
+      "sha256": "dd551b01814f0fe0681547853904a4ca84eea9378262915033e98c9b5523957b"
+    },
+    {
+      "path": "results/dev_aux/task1804/execution_sources/manifest.json",
+      "bytes": 1572,
+      "sha256": "9011c38331299a61bc8b18fdfa560cd96ee38b3d3468ed8d754ae2c7b25f1ed3"
+    },
+    {
+      "path": "results/dev_aux/task1804/horizon_audit.json",
+      "bytes": 9444,
+      "sha256": "962e1dbdadd6bef076552a9eddc869ed9a84a75b0ad16b742bd5b50628506433"
+    },
+    {
+      "path": "results/dev_aux/task1804/native_perft_records.json",
+      "bytes": 25652,
+      "sha256": "2d6f853dd24a3fd3fa10d724a6785b19cfd4d1a2f6feb1f2aa59017dd5496f78"
+    },
+    {
+      "path": "results/dev_aux/task1804/native_qualification.json",
+      "bytes": 173,
+      "sha256": "119d64a3443bfc8c5806e076b9d758dc68a1578ab6afa2b87d2e2c3eb7cf9306"
+    },
+    {
+      "path": "results/dev_aux/task1804/plan.json",
+      "bytes": 19666,
+      "sha256": "0272d4cac6f87d8ffb6c592eda25de218e7ee5d0efcff8e94c953a6d6608346c"
+    },
+    {
+      "path": "results/dev_aux/task1804/previous_player.py",
+      "bytes": 9503,
+      "sha256": "06a5814c9bc24cb97a1cba6fe8316cc39838bbc71fbc4021047241ba0e66eddc"
+    },
+    {
+      "path": "results/dev_aux/task1804/qualification.json",
+      "bytes": 77,
+      "sha256": "ccbd893f5bfb3ad552560db97e6bf4da5b2c845837d3e9af10dbe8480e3c2bae"
+    },
+    {
+      "path": "results/dev_aux/task1804/result.json",
+      "bytes": 788,
+      "sha256": "880fac21dc999fd0208f83b1c3a0e6dcc77c02fa0e826a7889ad44e8f1fc4c3c"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/acks.jsonl",
+      "bytes": 2240144,
+      "sha256": "587e0c5e95b7f3224bb63e836627dd4b4d827eb5b50c14654e8df9821c69d7ae"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/choices.jsonl",
+      "bytes": 13467725,
+      "sha256": "05adcbd59efd424ec29fb66115f228713b123702612939d94943fb91fbdb1402"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/game_events.jsonl",
+      "bytes": 4521359,
+      "sha256": "47344240bea6f9d35242334bb4f60ee0ac4e24472d35ec4427834c94740b0c97"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/games.jsonl",
+      "bytes": 3024494,
+      "sha256": "1364498c0b1a40e599208bb902d76edc6f36c3ad5160d2cc688ba5e09c065412"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/go_journal.jsonl",
+      "bytes": 2344052,
+      "sha256": "5afc149622553cc65f045389615dc961b99dccd7b6e0d627be5dd4ef823875d2"
+    },
+    {
+      "path": "results/dev_aux/task1804/run/start.json",
+      "bytes": 21712,
+      "sha256": "90bab3d2c1bea2a3d07b851a4606b450157d0df194f1d900af74521ba914e2ff"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/audit.json",
+      "bytes": 2975,
+      "sha256": "d5dfee1b1ded4cce1c623d2771d81e17224bf562a2ce2e3644b195ea2aff1f28"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/plan.json",
+      "bytes": 9446,
+      "sha256": "2f82783157080ae8a14a3cce90b906a8fd0d20b4ad75986bb51a23885b97c848"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/role_report.json",
+      "bytes": 9951,
+      "sha256": "9382b54ee121884e30b00f04939990efbed555906f9fb8e49f54ac303a6fa7ec"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/run/acks.jsonl",
+      "bytes": 33324,
+      "sha256": "a1ac55c414f4922b13f171f6c9b123f2d7aed4368258a6f764bee473f626cf0d"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/run/choices.jsonl",
+      "bytes": 124436,
+      "sha256": "c02c30d5cfcb656d30cc80e1fdfc58385eba796f2939fd83da30172df19be3ef"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/run/games.jsonl",
+      "bytes": 43585,
+      "sha256": "9b69b95f7d4b7eb6af0c2890a37e611f0dcc68116bb0520652c4d0d6a7e25cd9"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/tail_audit.json",
+      "bytes": 891,
+      "sha256": "7cd5df0fe185519d11b82f65de4b56b1d4d12a1f5a857c41a53844e02f6251e1"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H16/VIEW_ONLY.json",
+      "bytes": 179,
+      "sha256": "637fee229da387a43912fa82aca2f994458b81c52919044db0326112efdfd517"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/audit.json",
+      "bytes": 2974,
+      "sha256": "4acd7f3a47163196c272d8fbe6813effd9647a12d07fcfac01fb3aff5b5b967c"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/plan.json",
+      "bytes": 9446,
+      "sha256": "c688ff40d1d50ed3c453ba3985951e86879ca136103a01d7d6b04bcb782b0e88"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/role_report.json",
+      "bytes": 9951,
+      "sha256": "f7f07ad15f267b676135457bfa7f6acd547431339b27186932485473d30c0720"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/run/acks.jsonl",
+      "bytes": 32964,
+      "sha256": "6e325a6e8422ce2e465a09ecad4678a19c23c2a3ab508fbb0d8c74662922bc13"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/run/choices.jsonl",
+      "bytes": 123236,
+      "sha256": "2e9b719fb8a57fcfdd2b81987f0b6ef776446b1463b3bceb90168884ffaad326"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/run/games.jsonl",
+      "bytes": 43293,
+      "sha256": "0889bcfbe02d57bca9a5e1a791999a45779d8391a37cee06f5033fbc90b70e10"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/tail_audit.json",
+      "bytes": 757,
+      "sha256": "e737b35ef656bb59cfc4bb9e82659a81a0026c1f4ad25688b0638c2c58f9d3ce"
+    },
+    {
+      "path": "results/dev_aux/task1805/audit_H24/VIEW_ONLY.json",
+      "bytes": 179,
+      "sha256": "4b0a356d1345626714c11f829f216eb534739664ebd18832e5465e33be775f84"
+    },
+    {
+      "path": "results/dev_aux/task1805/horizon_audit.json",
+      "bytes": 8359,
+      "sha256": "0ea34b1d8c1dd2e7568de741fd360825ce24dddd63c97a14c17b1b57bf65984f"
+    },
+    {
+      "path": "results/dev_aux/task1805/plan.json",
+      "bytes": 9455,
+      "sha256": "ee95f9c071ebcd2474dbb481596a39bcf32a8daa301fbe3b0f3dfc3fdf62c9e2"
+    },
+    {
+      "path": "results/dev_aux/task1805/qualification.json",
+      "bytes": 76,
+      "sha256": "a49ec6e0fe9dc6ea3e5c60ed728c9a02a0103ccc8b7a4c30d834298b350321b1"
+    },
+    {
+      "path": "results/dev_aux/task1805/result.json",
+      "bytes": 774,
+      "sha256": "e8ad16cb35813db13d3a8deb6b5b6fa62e0d592dae1fee509e96e57df780b41f"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/acks.jsonl",
+      "bytes": 66288,
+      "sha256": "dc11faba074da651185ada30122eb72d96ac4aef1342ad731059395e4269fd48"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/choices.jsonl",
+      "bytes": 247672,
+      "sha256": "39e38462418ef01a431ae119e9a0bdf07b6371090a05eabe666b57c6701c4017"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/game_events.jsonl",
+      "bytes": 130027,
+      "sha256": "ee9ef2918ce7e52c9cb75de030fd348b1f91c57a3146a65f8486d703bbedc2dc"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/games.jsonl",
+      "bytes": 86878,
+      "sha256": "71586fbbd09b604d03e22c7e18c747384317d7c0cfe84c7271e77fbcbdda479d"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/go_journal.jsonl",
+      "bytes": 69600,
+      "sha256": "1cedc95fddfaaec71449a94c5529a575f61fd9124120bc3a567dffda8e2f5456"
+    },
+    {
+      "path": "results/dev_aux/task1805/run/start.json",
+      "bytes": 10173,
+      "sha256": "35716ff13e42574be62767788da5cf653e97c8ac57eb32fa9f6c88eefd94bb25"
+    },
+    {
+      "path": "results/dev_aux/task1806/factorial_report.json",
+      "bytes": 65495,
+      "sha256": "0c14b8fbc42f273bf1cfe1d83d7068787ff9b1f2b25bca20dcc49c8253718c33"
+    },
+    {
+      "path": "results/dev_aux/task1806/repair_status.json",
+      "bytes": 601,
+      "sha256": "f77c3f2b0f4939d238ac2593917f95dcdf773c590474398c43f68e38c3e20174"
+    },
+    {
+      "path": "results/dev_aux/task1807/focused_result.json",
+      "bytes": 1508,
+      "sha256": "730e376760f3a89d33dc21652ba646abcf3771fdd55098117a95801006856a98"
+    },
+    {
+      "path": "results/dev_aux/task1807/initial_failed_test.py",
+      "bytes": 5518,
+      "sha256": "35423095f7f3a3294e37c3d5d69271228f7ee6e48774b134b01ddcfc88a35794"
+    },
+    {
+      "path": "results/dev_aux/task1807/scope.json",
+      "bytes": 869,
+      "sha256": "fcf33bdcd4e28c9a5e008c5695226a82be98485afcc2485c603b1cb4cea8a7e6"
+    },
+    {
+      "path": "results/dev_aux/task1807/second_failed_test.py",
+      "bytes": 5754,
+      "sha256": "abd52acfca10f63099345632e6994e3694502dab489e10d69f9e97e22ea7449c"
+    },
+    {
+      "path": "results/dev_aux/task1808/calls.jsonl",
+      "bytes": 6264,
+      "sha256": "b1802a704f31c5551c9ba23967a470a2efe617eb35570e0aa0f8737a1e3c6e51"
+    },
+    {
+      "path": "results/dev_aux/task1808/coverage_review.json",
+      "bytes": 856,
+      "sha256": "751a757db32812385f3f57f2a66e40da78547c5a033cb6e02173f1926c005384"
+    },
+    {
+      "path": "results/dev_aux/task1808/plan.json",
+      "bytes": 1589,
+      "sha256": "dbb9366b6b1ec3f0234a2c93bea6a0b3ae647ae5d2638712629b4ec9d1082069"
+    },
+    {
+      "path": "results/dev_aux/task1808/result.json",
+      "bytes": 959,
+      "sha256": "c7b907a4e0d539db36a02cb1e7679f4efec0abf9c3362eeef44cc593b193a08f"
+    },
+    {
+      "path": "results/dev_aux/task1810/caller_impact.json",
+      "bytes": 2172,
+      "sha256": "de8db5aa489c58e39ad1bdfc4a02f7a4fc7da3d597c077ac12e4b16b68bbaafd"
+    },
+    {
+      "path": "results/dev_aux/task1810/previous_reference.py",
+      "bytes": 11522,
+      "sha256": "cdbac7b7053144cfe36938ba46a669b902b0f381452976594c1f040694ff03e7"
+    },
+    {
+      "path": "results/dev_aux/task1810/README.md",
+      "bytes": 1963,
+      "sha256": "9d151c1253b126767c4da848c6d40992814eed7973d6e8a54318e06446fd7c86"
+    },
+    {
+      "path": "results/dev_aux/task1810/reference_declaration_scope.json",
+      "bytes": 3516,
+      "sha256": "3b87962f0fd0b407634741b476a7b017a2aa8c4bfdea8076d1c30a9805db6f4c"
+    },
+    {
+      "path": "results/dev_aux/task1812/caller_impact.json",
+      "bytes": 2305,
+      "sha256": "a35a558933a56333564ef821c048dca8abe77debd331a57bbc382dfc642d4ad1"
+    },
+    {
+      "path": "results/dev_aux/task1812/history_key_counterexample.json",
+      "bytes": 334,
+      "sha256": "d711970501265a22280b242c73cee4b17d1180da142dcdf051404ef4b24072ad"
+    },
+    {
+      "path": "results/dev_aux/task1812/previous_reference.py",
+      "bytes": 12090,
+      "sha256": "cff8db6db471be158b64c4e3428592644a5076df9ba26e65c92a9bb5e0dec628"
+    },
+    {
+      "path": "results/dev_aux/task1812/README.md",
+      "bytes": 1414,
+      "sha256": "37f8ff33d2ad9c9b5c71195b831d3f4cb246ba252458ff91f598ec44a87de15d"
+    }
+  ],
+  "all_crc_pass": true,
+  "evidence_independently_restored_sha": true,
+  "final_source_independently_restored_tests": 120,
+  "native_binary_included": false,
+  "actual_loaded_cohort_sources": "task1804/execution_sources; apply these only to reproduce1804 oldsource, not currentfix tests",
+  "sensitive_originals": "Git-ignored private local layer, not in outgoingarchives"
+}
