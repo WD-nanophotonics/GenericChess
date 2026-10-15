@@ -2594,3 +2594,64 @@ Compiler attribution and a small private partition prototype were actually begun
 after Native integration. The prototype has mixed regressions, so Core IR remains
 unchanged; no shared solver/runtime/learning code or auxiliary checkout was edited.
 No quantified collaboration speedup or universal backend speed claim is inferred.
+
+
+## 2026-10-15: exact admission, graph cost and policy diagnosis
+
+PRIMARY_SANDBOX traced four real60556row constructions before changing code:
+temporary Native capability, final ruleset, executable adapter, frozen research
+adapter. Three Python backend/evaluation files remove the first duplicate and
+reuse the exact executable product, then use bounded exact graph distance layers.
+No global cache, price fit, validation bypass, Core IR/Native C/default/UI change.
+The frozen research adapter remains charged. Compiler320query transfer and
+160full-profile timings retain identical fields; sparse graph and small-profile
+regressions remain public. Normal2687tests/source-only81tests plus35roots4497
+legal actions/full histories pass. Deadline320calls retain all actual admission
+expirations/atomic overshoots: more remaining search time often returns the same
+policy/action. The new q0/q4 control and bounded decision witnesses are recorded
+in ../research/EXACT_ADMISSION_REUSE_AND_GRAPH_COST.md; final results follow actual
+completion, not assumed from depth or caller savings.
+
+DEV_AUX remains the separate sidemission owner. PRIMARY read its complete17reply
+thread through1792071083.374149 and fixed report
+[24d60602 segment60](https://github.com/WD-nanophotonics/GenericChess/blob/24d60602dfd6001e23e4f7a02a5c7a5646a7a4d9/results/dev_aux/SEGMENT_20261015_60.md).
+Its reported283tests,384games/5013moves and cold/bank42.708/22.691s are OWNER
+execution, not PRIMARY reruns. PRIMARY additionally checked the actual pinned
+phase-cost definitions and replay_bound source: AUX admission is replay of an
+already compiled Session, whereas PRIMARY measures cold compilation. Those
+seconds must not be pooled or used to claim our compiler gain speeds its proof
+phase. No automatic merge, competing proof bank/solver/training, owner checkout
+or session/stop/memo writes, extra Agent or quiet-window request.
+
+AUX reports correcting Dot's verification-budget key objection; it is not
+a defect in PRIMARY's uncached compiler/price work. The larger AUX proof budget
+did not establish learning gain; the smaller bank cost probe is a conditional
+workload result, not future policy identity. These findings support maintaining
+separate measured costs and actual outcome/UNKNOWN rather than another broad
+refactor or assuming upstream microseconds solve downstream proof allocation.
+
+A full relevant-day root sweep corrected a newer-only root boundary that had
+missed the older Dot2hpolicy relay. Full relay/clarification and relevant threads
+are now saved before assessment. Current direct AGENTS/heartbeat still carry1h;
+all present runs are shorter, so no experiment, schedule or authorization gate
+was changed and no work was blocked. The other-conversation relay is preserved
+with its source, not silently made a new local policy. Existing CHAT_Comments
+remain evaluated reference advice; closed repair tasks were not reopened.
+
+No new technical Dot reply to PRIMARY's q-history question was present after a
+complete reread. Source reading, transport delivery, adoption and execution stay
+distinct. Communication was useful for denominator/ownership and receipt limits;
+it was not flawless discovery, and there is no measured single-Agent comparison
+from which to claim a collaboration-efficiency percentage. New fixed-SHA report/
+data/source and this collaboration log are sent to Dot only after remote verify.
+
+Final q control closes70/80roots560/640queries;80terminal-tail slots retained.
+Actual q0 disables q check extensions too: original plans preserved and interpretation
+corrected, not represented as a fixed-hard8comparison. One actual q4D1reserve
+loss is separately replayed in Core/Native/actualSession; two alternative reply
+frontiers are complete, still no optimalWDL claim. Inner stop-file polling was
+measured to censor the original diagnostic and is disclosed. Eight fixed-policy
+continuations on four exposed parents/threefamilies give L/L,L/L,U/W,L/U with277
+physical edges; UNKNOWN retained, no global q/default switch. This concrete
+outcome/censoring evidence is the useful next allocation premise, not a reason
+to copy or interrupt the auxiliary solver/learning lane.

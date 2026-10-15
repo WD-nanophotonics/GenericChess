@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-15T14:12:00.837193+00:00",
+  "question": "Can a completed deeper disabled-q reserve followed by requested-q adoption only on an actually completed requested policy avoid reserve demotion under the same total caller budget?",
+  "source": {
+    "python_q_dispatch": "SemanticSearchEngine.search passes q_args only when ordinary depth>0; q0therefore has retained(0,0).",
+    "native_iteration": "native_module.c loop sets ordinary_qdepth=0only atdepth1, requestedordinary thereafter; control abort breaks before any completed fields update, retaining previousfulliteration."
+  },
+  "evidence": {
+    "root": "4323ply12 q4/1s attempts2rootiterations, retainsD1/(0,8), actualmate1reply; q0D3andq4D2longerbudget choose checking alternatives with one nonwinningreply each.",
+    "limits": "No per-iteration time counters, qnodes include reserve/unfinished work; cannot call all qnodes wasted. Four continuation cases show notall shallowerqchoices worse."
+  },
+  "next_bounded_action": "Freeze an exposed-case private caller-only two-phase contrast using existing APIs and full state/history, including physical-win/cancel handling and total wall cost; compare with original q0/q4. Do not change defaults or silently compare numeric scores from distinct finite q objectives.",
+  "possible_outcomes": "Reject if no concrete decision advantage or caller cost dominates; any local gain remains development evidence before unseen allocation comparison.",
+  "scope": "Source analysis begun, NOT an implemented/tested schedule, approval gate, new solver or promise that deeper isbetter."
+}

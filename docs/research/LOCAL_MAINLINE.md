@@ -81,19 +81,36 @@ claim. This supersedes the unadopted pilot, not old frozen inputs/caps/results.
 No q/default/price/API policy change. Same-rule checked-generator provenance and
 first-match fallback are essential, never arbitrary hints or terminal certificates.
 
-Next selection: measure actual unfamiliar-rule admission/compilation versus
-amortized search before another micro-optimization or q curve. An already-begun
-16fresh-process/64query pilot finds admission81/87percent of first-call pipeline
-at12/16 for one exposed rule each; Python compilation/price dominate native parsing.
-No general latency claim from this small pilot, no admission charge to every move
-of persistent selfplay/arena engines. Actual control/profile4331probe is.475/.855s (1.80overhead); lowering/reverse
-indices dominate, not initial-playability validation. A48call private source
-partition rewrite preserves order/ranks/borrowed rows but has mixed cost ratios
-1.046/.647/1.357/.797: reject immediate universal adoption, no Core IR change.
-Next inspect multiple construction stages and exact IR dependencies before a
-per-compilation reuse prototype; keep65536path fallback, complete geometry and
-initial validation. Otherwise reconsider search-policy allocation with an explicit
-changed premise.
+Current admission result: exact executable-product reuse and payload-only Native
+capability probing remove two redundant index builds; the frozen research adapter
+remains charged. Bounded bitset graph analysis preserves all exact price fields
+and the original>1024sampling/fallback.2687normal tests,81source-only tests and
+35fullroots4497actions/history pass. Compiler320query transfer first-call ratios
+.943/.893/.814/.753;160profile timings ratios.957/.856/.734/.630. Sparse32graph
+1.57x regression and small-profile adverse pairs retained. No price/q/API/default
+or CoreIR/NativeC policy change. The earlier mixed source-grouping rewrite stays
+rejected, not pending. Full source/results: EXACT_ADMISSION_REUSE_AND_GRAPH_COST.md.
+
+The320call four-cell API-ready deadline study executes more16board queries but
+69both-searched A/D pairs retain SAMEdepth/action; atomic overrun.1415s remains.
+Actual computation scopes/provider-load exclusions are explicit, not a hard timer
+promise. This changes the next question from admission micro-optimization to
+completion-aware reserve/enabled-q allocation. New20family qcontrol:70/80roots,
+560/640queries, all80missing slots actual terminal tails. Corrected interpretation:
+ordinaryq0disables ALLq at the existing entry; it is not a fixed-hard8comparison.
+q4retains shallower depth274/280pairs, but no global quality inference follows.
+One actual q4D1/(0,8) reserve choice allows literal one-reply mate; two alternative
+choices have complete safe-one-ply reply frontiers, still not optimalWDL. Four
+exposed fixed-policy continuations give L/L,L/L,U/W,L/U;277actualedges separately
+replayed with search disabled. Keep UNKNOWN and the conditional cases.
+
+Next selection: a small completion-aware q schedule contrast on these fixed
+counterexamples before any larger q curve/default change. Check actual retained
+policy, concrete reply/continuation outcomes and total cost. Do not infer utility
+from depth alone or copy AUX's Sessionprover/bank/learner. The old inner-stop-file
+polling materially censored diagnostics (onecase1s versus.012s); use bounded
+deadline callbacks and cooperative outer stop checks in NEW diagnostics, without
+relabeling oldUNKNOWN/caps or building a new stop framework.
 Retain termination histograms: requested q differs from retained q; qnodes counts
 reserve/depth0 visits and is not measured wasted effort. No policy/default change
 from that histogram alone.36profile label-bijection controls pass, not price truth

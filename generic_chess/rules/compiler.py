@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 from math import gcd
-from types import MappingProxyType
+from types import MappingProxyType, SimpleNamespace
 from typing import Any, Mapping
 
 from ..core.attacks import is_in_check
@@ -913,11 +913,7 @@ def compile_ruleset_for_execution(
         from .execution import ExecutableSemanticRuleset
 
         compiled = compile_semantic_ruleset(ruleset)
-        return ExecutableSemanticRuleset(
-            ir=compiled.ir,
-            _legacy_compiled=compiled._legacy_compiled,
-            support=compiled.support,
-        )
+        return ExecutableSemanticRuleset.from_compiled(compiled)
     return compile_ruleset(ruleset)
 
 
@@ -2152,9 +2148,7 @@ def compile_legacy_ruleset_for_semantic_execution(ruleset: RuleSet | Mapping[str
     _validate_semantic_initial_position(compiled)
     from .execution import ExecutableSemanticRuleset
 
-    return ExecutableSemanticRuleset(
-        ir=compiled.ir, _legacy_compiled=baseline, support=compiled.support
-    )
+    return ExecutableSemanticRuleset.from_compiled(compiled)
 
 
 def _validate_semantic_initial_position(compiled) -> None:
@@ -2526,13 +2520,17 @@ def _compile_semantic_ruleset_from_baseline(
     # Native execution is a per-ruleset capability, derived from the exact
     # lowered payload rather than a global promise.  Any lowering/shape
     # failure remains fail-closed while Python IR compilation stays usable.
+    # Payload lowering consumes only IR/support and these two rule properties;
+    # building Core attack indices for this temporary probe would discard them.
     if not compile_only:
         try:
             from ..native.compiler import build_semantic_compile_payload
 
             _, native_report = build_semantic_compile_payload(
-                CompiledSemanticRuleset(
-                    ir=ir, _legacy_compiled=baseline, support=support
+                SimpleNamespace(
+                    ir=ir, support=support,
+                    no_progress_draw=support.no_progress_draw,
+                    pass_enabled=support.pass_enabled,
                 )
             )
             # The current Native semantic payload has neither declaration nor
