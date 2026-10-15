@@ -1587,3 +1587,10 @@ OWNER MESSAGE: no source build, execution, adoption, merge or counter pooling.
 PRIMARY read AUX64 as a message;65 delivery does not prove source read/execution.
 No extra agents/workers/fees, quiet windows, visibility or product/UI changes.
 Fixed65 report/capsule links accompany delivery; sensitive raw Slack stays private.
+
+Segment65 safe checkpoint accepted at78.175 minutes,6 research stages. Manual
+quality review and independent replay passed; science OPEN, all producers closed,
+patrol ACTIVE. Science revision6fdc1cf73bc31178421f6a5e1ba925b0bda862db has full
+remote SHA and anonymous report/source/data/log verification. Final session receipt
+is late direct Git metadata outside the unchanged capsules. Delivery alone does
+not establish Dot/PRIMARY source read or execution.
