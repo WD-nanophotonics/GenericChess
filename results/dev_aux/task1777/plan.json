@@ -1,0 +1,273 @@
+{
+  "status": "FROZEN_BEFORE_RETENTION_TIMINGS",
+  "source": "results/dev_aux/task1773",
+  "games_sha256": "051b7579ab0fa4e28a02f0cc3cd9c4037edae91189f656349de99f2a31ee7d03",
+  "cases": [
+    {
+      "row": 158,
+      "ply": 4
+    },
+    {
+      "row": 222,
+      "ply": 0
+    },
+    {
+      "row": 110,
+      "ply": 3
+    },
+    {
+      "row": 111,
+      "ply": 3
+    },
+    {
+      "row": 125,
+      "ply": 6
+    },
+    {
+      "row": 125,
+      "ply": 5
+    },
+    {
+      "row": 206,
+      "ply": 10
+    },
+    {
+      "row": 160,
+      "ply": 1
+    },
+    {
+      "row": 222,
+      "ply": 2
+    },
+    {
+      "row": 128,
+      "ply": 4
+    },
+    {
+      "row": 179,
+      "ply": 3
+    },
+    {
+      "row": 110,
+      "ply": 7
+    },
+    {
+      "row": 142,
+      "ply": 8
+    },
+    {
+      "row": 222,
+      "ply": 7
+    },
+    {
+      "row": 177,
+      "ply": 13
+    },
+    {
+      "row": 108,
+      "ply": 1
+    },
+    {
+      "row": 144,
+      "ply": 12
+    },
+    {
+      "row": 194,
+      "ply": 14
+    },
+    {
+      "row": 140,
+      "ply": 10
+    },
+    {
+      "row": 114,
+      "ply": 11
+    },
+    {
+      "row": 130,
+      "ply": 2
+    },
+    {
+      "row": 98,
+      "ply": 6
+    },
+    {
+      "row": 98,
+      "ply": 5
+    },
+    {
+      "row": 109,
+      "ply": 10
+    },
+    {
+      "row": 146,
+      "ply": 13
+    },
+    {
+      "row": 140,
+      "ply": 4
+    },
+    {
+      "row": 158,
+      "ply": 3
+    },
+    {
+      "row": 176,
+      "ply": 8
+    },
+    {
+      "row": 110,
+      "ply": 12
+    },
+    {
+      "row": 172,
+      "ply": 3
+    },
+    {
+      "row": 96,
+      "ply": 4
+    },
+    {
+      "row": 192,
+      "ply": 0
+    },
+    {
+      "row": 208,
+      "ply": 5
+    },
+    {
+      "row": 211,
+      "ply": 9
+    },
+    {
+      "row": 178,
+      "ply": 2
+    },
+    {
+      "row": 209,
+      "ply": 7
+    },
+    {
+      "row": 125,
+      "ply": 4
+    },
+    {
+      "row": 210,
+      "ply": 2
+    },
+    {
+      "row": 108,
+      "ply": 9
+    },
+    {
+      "row": 221,
+      "ply": 10
+    },
+    {
+      "row": 126,
+      "ply": 9
+    },
+    {
+      "row": 207,
+      "ply": 13
+    },
+    {
+      "row": 160,
+      "ply": 3
+    },
+    {
+      "row": 172,
+      "ply": 6
+    },
+    {
+      "row": 140,
+      "ply": 11
+    },
+    {
+      "row": 157,
+      "ply": 4
+    },
+    {
+      "row": 110,
+      "ply": 4
+    },
+    {
+      "row": 204,
+      "ply": 3
+    },
+    {
+      "row": 147,
+      "ply": 6
+    },
+    {
+      "row": 158,
+      "ply": 5
+    },
+    {
+      "row": 108,
+      "ply": 12
+    },
+    {
+      "row": 146,
+      "ply": 7
+    },
+    {
+      "row": 204,
+      "ply": 12
+    },
+    {
+      "row": 144,
+      "ply": 10
+    },
+    {
+      "row": 127,
+      "ply": 5
+    },
+    {
+      "row": 207,
+      "ply": 6
+    },
+    {
+      "row": 192,
+      "ply": 14
+    },
+    {
+      "row": 146,
+      "ply": 6
+    },
+    {
+      "row": 204,
+      "ply": 10
+    },
+    {
+      "row": 177,
+      "ply": 11
+    },
+    {
+      "row": 190,
+      "ply": 11
+    },
+    {
+      "row": 142,
+      "ply": 4
+    },
+    {
+      "row": 206,
+      "ply": 2
+    },
+    {
+      "row": 208,
+      "ply": 3
+    }
+  ],
+  "seed": 20261015554,
+  "nodes": 1024,
+  "seconds": 0.25,
+  "max_depth": 32,
+  "total_seconds": 180,
+  "max_entries": 16,
+  "purpose": "Price/WDL-blind unique paid plain-player states and their ACTUAL next two moves. Never choose a future state because cache contains it. No new Nativego or closed-loop WDL claim.",
+  "accounting": "Counterbalance cold/retained parent search, measure all collection preparation. Reuse requires root UNKNOWN, exact full-history child hit and independent verification in next call budget. Also cold-probe ALL actual child states for comparison.",
+  "retained_sha256": "b53c5253fc4939581eea278fb74f08bfbf51ec67f4bf8e69ce91e52046001f1e",
+  "pn_sha256": "dd551b01814f0fe0681547853904a4ca84eea9378262915033e98c9b5523957b"
+}

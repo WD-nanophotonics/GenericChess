@@ -1,0 +1,62 @@
+{
+  "checkpoints": [
+    {
+      "at": "2026-10-15T05:12:28.793051+00:00",
+      "evidence": "scripts/generic_proof_tail.py",
+      "kind": "research",
+      "next_action": "Audit new game prefixes and actual tail conversions, then choose a new predeclared cost/usefulness control based on the pilot.",
+      "observation": "Added full-history-bound rank-limited tail admission and actual execution;60 real-rule tests pass. New seed1773 frozen8TRAIN16DEV,30000go/900s; old cohorts unchanged. Immutable fresh Dot question sent once, no new reply assumed.",
+      "question": "Can an existing verified strategy finish after the short horizon without score adjudication?"
+    },
+    {
+      "at": "2026-10-15T05:29:05.103000+00:00",
+      "evidence": "results/dev_aux/task1775/tail_audit.json",
+      "kind": "research",
+      "next_action": "Finish and audit the second independent cohort, then execute the already frozen mechanically sized5x5 controls after real entry smoke; keep oldcaps intact and report domain/cost limits.",
+      "observation": "Pilot224 complete:10existing certificates physicallywin46extra moves18Nativego; TRAIN choice changes from H16 R1440 to tail tie R720. First independent TRAIN32/DEV32 complete896games552.19s11256go: TRAIN selectsR1440 from all3declared starts; DEV B-to-D+.0625 bootstrap crosses0, solver+tail+.09375. All actual histories/receipts pass,88tails physically win including2opponent tails. Second predeclared cohort stillrunning. Dot denominator safeguard adopted with2real accounting regressions; no incomplete TRAIN fitting.",
+      "question": "Does physical proof-tail execution change learned price evidence rather than simply add reward?"
+    },
+    {
+      "at": "2026-10-15T05:47:53.587649+00:00",
+      "evidence": "results/dev_aux/task1782/four_board_meta.json",
+      "kind": "research",
+      "next_action": "Close second5x5, then run the predeclared fresh paired ALL-versus-SMALL actual-game cost control1783/1784 using fixed priorTRAIN prices; audit all outcomes, no cap extension.",
+      "observation": "Both4x4 cohorts complete1792games, globalR2 and all3strictpaths agree; combined64DEVfamilies B-to-D+.046875 CI[-.0078125,.109375], not conclusive pricegain.5x5first complete896games: globalR2 butlow-startlocalpeak, no universal convergence claim. Retained partial proofs64paid paths24entries0actualhits, defer. Reproduced unsupported-runtime adapter failing before normal callback, repaired via public legality;77focusedtests pass.5x5second already-loaded frozen version continues unchanged.",
+      "question": "Are the local price relation and cost mechanism stable enough to claim learning success?"
+    },
+    {
+      "at": "2026-10-15T06:12:09.050455+00:00",
+      "evidence": "results/dev_aux/SEGMENT_20261015_55.md",
+      "kind": "research",
+      "next_action": "Finish own session at reviewed safe checkpoint, publish only sidemission with fullremoteSHA/archiveblob checks and give fixed evidence to Dot/PRIMARY. Keep patrolPAUSED and executable next tasks.",
+      "observation": "All seven executed main cohorts and entry smoke are complete:4860records60671Nativego3664perft.1402adopted proof games and318tails physicallywin; zero unassigned receipts/early incomplete DEV. Price CIs cross0 across4x4/5x5; local peak and initiative limits remain. SMALL saves30-34percent hybridgame time but highR loses4wins, so no default adoption.77tests pass. ThreeZIP219members246970208rawbytes independently restored; actual staged blobs/privacy/report UTF8 verified. New guarded1787role inputs prepared with0go, not executed.",
+      "question": "What does completed physical learning and the actual cost control support?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "elapsed_minutes": 64.111,
+  "ended_at": "2026-10-15T06:12:25.213380+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261015_55.md",
+  "id": "b0829e66-3bee-41cf-9712-26468e6251fd",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 4,
+  "started_at": "2026-10-15T05:08:18.535881+00:00",
+  "state": "ended",
+  "manual_quality_review": {
+    "status": "MANUAL_REVIEW_AND_ACTUAL_STAGED_BLOB_CHECKS_PASS",
+    "staged_files": 202,
+    "all_zip_blobs_exact": true,
+    "all219members_restored_sha_verified": true,
+    "report_utf8_nonempty_and_index_equal": true,
+    "actual_outgoing_content_personal_data_credential_scan": "PASS plus manual technical-content review",
+    "tests": 77,
+    "science": "OPEN",
+    "all_producers_closed": true,
+    "scope": "Only own sidemission. No primary/product/UI writes.",
+    "delivery_note": "Three duplicate exact historical driver snapshots were excluded from loose index after whitespace check; their original bytes remain in verified archive and local files, no source trimming or evidence loss."
+  },
+  "scientific_complete": false,
+  "heartbeat": "PAUSED",
+  "time_interpretation": "Actual local segment elapsed, including bounded jobs, implementation, audits and preparation; not summed CPU, app uptime or a task token count."
+}

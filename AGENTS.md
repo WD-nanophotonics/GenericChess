@@ -242,22 +242,18 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment53
+# DEV_AUX current scope —2026-10-15 segment55
 
-ScienceOPEN; sidemissiononly; heartbeatPAUSED; manualresearchended62.695min safe_checkpoint; SESSION53.
-TrueWDL RNPcooperative learning converges2testedinitials R1440/P1440,N/B720; sameinitialP limits.
-Fresh48DEVgain.083333 positive; NEWfixed256familyreplicate.07128995[.040039,.102539],1UNKNOWN.
-RNB3Latininitialpaths split; TRAINselectedR720/B360 DEVgain0, nothumanprice recovery.
-Identicalrelativeprices change9/11of96Native rootchoices undercommonhalfscale; D3ordinalsets unchanged.
-Complete4/8KRK WDL/DTM +ALLindependentactorfrontiers+160Nativeperft showmanyforcedwinscycle.
-PhysicalDTMhandoff converts118RNP/114RNB oldcycles tomates, butfixedgaininteractionsuncertain.
-RNBhybridgridwinnerR1440/B720 exposedDEV+.041667CIcross0; notfreshvalidation orinitialconvergence.
-183814NEWNativego13376controllercases328perft;64894previouspaidchoicesseededhybrids explicitly.
-NineZIPexactraw/sourcearchives restoredverified; rawSlack/privateoriginals ignored; outgoingPII/credentials excluded.
-No primary/product/default/UI writes orfullChess/Shogi/Genericdomain claim; failures/caps preserved.
-Next: actualNativeconversion-versus-exactDTM budgetcurve beforemate-visible mixed-stock learning roots.
-Evidence:SEGMENT_20261015_53.md,COST/QA/FAILURES/ARCHIVE_MANIFEST53,1724/1735/1743/1754/1755/1756/1757/1758.
-
+ScienceOPEN; sidemission only; heartbeatPAUSED; manual research at reviewed safe checkpoint.
+H16 plus ALREADY verified rank-bounded physical tails; actual Core terminals only, UNKNOWN distinct.
+Four independent TRAIN32/DEV32 KRN4/5 cohorts globally choose R/N2; all price-gain CIs cross0.
+1780 low-start local peak persists; no universal/continuous/human-price or arbitrary-start recovery claim.
+1402adopted proof games physically redeemed;318tails1804moves745go; all executed cohorts complete.
+60671newNativego/4860episode records/3664perft;77focusedtests pass; real unsupported-normal-fallback defect repaired.
+SMALL gate saves30–34percent per hybridgame but highR loses4finitewins; no default adoption.
+Depth2paid-subtree retention64cases0actualhits deferred; all old caps/stops/partial records preserved.
+Guarded1787balanced-role inputsonly prepared, NOT implemented/executed. No primary/default/UI writes.
+Evidence:SEGMENT_20261015_55.md,COST/QA/FAILURES/ARCHIVE_MANIFEST55; exact source snapshots and restored archives.
 
 ## Current user publication grant2026-10-15
 

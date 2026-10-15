@@ -3,6 +3,7 @@ import argparse,collections,hashlib,importlib.util,json,random,time
 from dataclasses import asdict,replace
 from pathlib import Path
 from generic_chess.core.movegen import legal_actions
+from generic_chess.core.position import count_entities
 from generic_chess.core.transition import apply_action
 from scripts.generic_proof_rnb_bridge import compile_rnb,from_actor,actor_state,uci,orbit
 from scripts.generic_proof_player import ProofMaterialPlayer
@@ -15,9 +16,9 @@ def mod(name,path):
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
-def freeze(folder, *, learning=False, replication=False, krn=False):
+def freeze(folder, *, learning=False, replication=False, krn=False, seed=None, train_count=None, dev_count=None, certified_tail=False):
     out=Path(folder);out.mkdir(exist_ok=False)
-    T=mod('RNB54','results/dev_aux/task1675/rules.py');rng=random.Random(20261015544 if krn else 20261015543 if replication else 20261015542 if learning else 20261015541)
+    T=mod('RNB54','results/dev_aux/task1675/rules.py');seed=seed if seed is not None else (20261015544 if krn else 20261015543 if replication else 20261015542 if learning else 20261015541);rng=random.Random(seed)
     excluded=set();sources=[]
     for path in sorted(Path('results/dev_aux').glob('task*/plan.json')):
         if path.stat().st_size>5_000_000:continue
@@ -32,6 +33,10 @@ def freeze(folder, *, learning=False, replication=False, krn=False):
                     excluded.update(orbit(tuple(raw)));matched+=1
         if matched:sources.append(dict(path=str(path),sha256=sha(path),roots=matched))
     fs=[];attempts=0;family_count=80 if krn else 128 if replication else 24 if learning else 16
+    if train_count is not None or dev_count is not None:
+        assert learning and train_count is not None and dev_count is not None
+        assert 0 < train_count <= 128 and 0 < dev_count <= 128
+        family_count=train_count+dev_count
     while len(fs)<family_count and attempts<100000:
         attempts+=1;places=rng.sample(range(16),6 if krn else 8);board=['.']*16
         for sq,piece in zip(places,'KkRNrn' if krn else 'KkRNBrnb'):board[sq]=piece
@@ -44,7 +49,7 @@ def freeze(folder, *, learning=False, replication=False, krn=False):
         if not(capture and quiet) or orbit(s)&excluded:continue
         if any(not T.moves(t) for _,t in ll):continue
         flipped=tuple(x.swapcase() for x in s[:-1])+(1,)
-        fs.append(dict(family=len(fs),phase=('TRAIN' if learning and len(fs)<(16 if krn else 8) else 'DEV'),roots=[s,flipped]));excluded.update(orbit(s))
+        fs.append(dict(family=len(fs),phase=('TRAIN' if learning and len(fs)<(train_count if train_count is not None else (16 if krn else 8)) else 'DEV'),roots=[s,flipped]));excluded.update(orbit(s))
     assert len(fs)==family_count
     prices=([[r,720,b,720] for r in (360,720,1440) for b in (360,720,1440)] if learning else [[720,720,720,720],[720,720,360,720]])
     if krn:prices=[[r,720,720,720] for r in (360,720,1440)]
@@ -55,8 +60,8 @@ def freeze(folder, *, learning=False, replication=False, krn=False):
     ini='[aux54base:chess]\nmaxFile = 4\nmaxRank = 4\ncastling = false\ndoubleStep = false\npromotionRank = 4\npromotionPieceTypes = rnb\nnMoveRule = 0\nnFoldRule = 0\nstartFen = k3/4/4/3K w - - 0 1\n'
     for p in prices:
         ini+='\n['+names[str(tuple(p))]+':aux54base]\n'+''.join(f'pieceValue{x} = p:{p[3]} n:{p[1]} b:{p[2]} r:{p[0]} q:1664\n' for x in ['Mg','Eg'])
-    (out/'variant.ini').write_text(ini)
-    plan=dict(families=fs,seed=(20261015544 if krn else 20261015543 if replication else 20261015542 if learning else 20261015541),attempts=attempts,study_kind=('LEARN' if learning else 'FOUR_CELL'),baseline_index=prices.index([720,720,720,720]),prices=prices,variant_names=names,
+    (out/'variant.ini').write_text(ini,encoding='utf-8')
+    plan=dict(families=fs,seed=seed,attempts=attempts,study_kind=('LEARN' if learning else 'FOUR_CELL'),baseline_index=prices.index([720,720,720,720]),prices=prices,variant_names=names,
               model='results/dev_aux/task1675/rules.py',model_sha256=sha('results/dev_aux/task1675/rules.py'),
               binary='.local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe',binary_sha256=sha('.local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe'),
               variant_ini=str(out/'variant.ini'),variant_sha256=sha(out/'variant.ini'),
@@ -83,11 +88,18 @@ def freeze(folder, *, learning=False, replication=False, krn=False):
         plan['fixed_selection_source']='results/dev_aux/task1765/selection.json'
         plan['fixed_selection_sha256']=sha(plan['fixed_selection_source'])
         plan['status']='FROZEN_NEW128_FIXED_TRAIN_CANDIDATE_REPLICATION_NOT_EXTENSION_OF_OLD_DEV16'
-    (out/'plan.json').write_text(json.dumps(plan,indent=2));print('FROZEN',len(fs),'families',len(sources),'oldcohorts')
+    plan['certified_tail']=bool(certified_tail)
+    plan['tail_max_rank']=64
+    plan['tail_sha256']=sha('scripts/generic_proof_tail.py')
+    if certified_tail:
+        plan['outcome']='Actual Core terminal only. H16 admits only an ALREADY verified, full-history-bound certificate, at most remaining rank64 further actual moves. No proof search after H16, no theoretical adjudication; both colors/prices use same rule. Otherwise UNKNOWN.'
+        plan['incremental_cost_decision']='New seeded cohort and changed horizon policy, never continuation of capped1766/1768. At most H16+64=80 moves per game. Small pilot distinguishes censoring from price response before any independent larger run.'
+    (out/'plan.json').write_text(json.dumps(plan,indent=2),encoding='utf-8');print('FROZEN',len(fs),'families',len(sources),'oldcohorts')
 
 
-def run(folder):
+def run(folder, *, driver_class=None):
     folder=Path(folder);p=json.loads((folder/'plan.json').read_text())
+    assert not p.get('tail_sha256') or sha('scripts/generic_proof_tail.py')==p['tail_sha256']
     assert not p.get('study_sha256') or sha(__file__)==p['study_sha256']
     assert sha('scripts/generic_win_proof.py')==p['solver_sha256'] and sha('scripts/generic_proof_player.py')==p['player_sha256']
     D=mod('DRIVER54','results/dev_aux/task1720/driver.py')
@@ -114,7 +126,7 @@ def run(folder):
             self.newnodes+=used
             self.log('choices',dict(state=s,price=price,requested_nodes=nodes,reported_nodes=used,command=cmd,raw=raw,seconds=time.perf_counter()-beg))
             return move,used
-    d=TimedDriver(p,folder/'run');d.files['game_events']=(d.O/'game_events.jsonl').open('w');c=compile_rnb();rows=[];error=None;start=time.perf_counter();active={}
+    d=(TimedDriver if driver_class is None else driver_class)(p,folder/'run');d.files['game_events']=(d.O/'game_events.jsonl').open('w');c=compile_rnb(p.get('width',4));rows=[];error=None;start=time.perf_counter();active={}
     from scripts.generic_win_proof_pn import prove_win_pn
     from scripts.generic_win_proof import prove_win
     proof_function=prove_win_pn if p.get('proof_algorithm')=='PN' else prove_win
@@ -130,12 +142,13 @@ def run(folder):
             for raw in f['roots']:
                 s=from_actor(c,raw);ll=check_frontier(s)
                 for a in ll.values():check_frontier(apply_action(s,a,c))
-        (folder/'qualification.json').write_text(json.dumps(dict(status='PASS_ALL_ROOTS_AND_CHILDREN_CORE_ACTOR_EQUIVALENCE',roots=32)))
+        (folder/'qualification.json').write_text(json.dumps(dict(status='PASS_ALL_ROOTS_AND_CHILDREN_CORE_ACTOR_EQUIVALENCE',roots=sum(len(f['roots']) for f in p['families']))))
         d.start_engine()
         def play(f,enabled,price_index,color,opponent):
             nonlocal active
             price=p['prices'][price_index];d.guard();s=from_actor(c,f['roots'][color]);target=s.position.side_to_move
-            path=[];players={};pay=None
+            path=[];players={};pay=None;tail=None;horizon_snapshot=None;game_started=time.perf_counter()
+            from scripts.generic_proof_tail import CertifiedTail
             active=dict(family=f['family'],phase=f['phase'],color=color,opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,trajectory=path)
             d.log('game_events',dict(event='START',**active))
             for side in (0,1):
@@ -143,22 +156,38 @@ def run(folder):
                 def external(state,nodes,seconds,cancel,pp=pp):
                     raw=actor_state(state);move,used=d.choose_timed(raw,pp,nodes,seconds)
                     return check_frontier(state)[move],used
-                players[side]=ProofMaterialPlayer(c,None,proof_enabled=enabled,normal_search=external,proof_search=proof_function)
-            for ply in range(p['H']+1):
+                trigger=(lambda state:count_entities(state.position)<=4) if p.get('proof_trigger')=='SMALL' else None
+                players[side]=ProofMaterialPlayer(c,None,proof_enabled=enabled,normal_search=external,proof_search=proof_function,proof_trigger=trigger)
+            for ply in range(p['H']+p.get('tail_max_rank',64)+1):
                 if s.terminal_status.is_terminal:
                     pay=0 if s.terminal_status.winner is None else (1 if s.terminal_status.winner==target else -1);break
-                if ply==p['H']:break
+                if ply==p['H']:
+                    horizon_snapshot=dict(terminal=s.terminal_status.status.value,end=actor_state(s),payoff=None)
+                    if p.get('certified_tail'):tail=CertifiedTail.admit(s,players,max_rank=p['tail_max_rank'])
+                    if tail is None:break
+                    active['tail_admission']=dict(owner=tail.owner,rank=tail.initial_rank)
+                    d.log('game_events',dict(event='TAIL_ADMITTED',family=f['family'],phase=f['phase'],color=color,opponent=opponent['id'],proof=enabled,price_index=price_index,**active['tail_admission']))
+                if ply>p['H'] and tail is None:break
                 d.guard()
                 cap=p['candidate_nodes'] if s.position.side_to_move==target else opponent['nodes']
-                z=players[s.position.side_to_move].choose(s,max_nodes=cap,seconds=p['step_seconds'],cancel=lambda:time.monotonic()>=d.deadline)
-                if z.action is None:break
+                player=players[s.position.side_to_move]
+                if tail is not None and s.position.side_to_move!=tail.owner:
+                    # Horizon is closed to NEW proofs for either side; existing
+                    # defender policy is ordinary search on the unchanged budget.
+                    player.proof_trigger=lambda state:False
+                z=player.choose(s,max_nodes=cap,seconds=p['step_seconds'],cancel=lambda:time.monotonic()>=d.deadline)
+                if tail is not None and s.position.side_to_move==tail.owner:
+                    assert z.source=='PROOF_CONTINUATION' and z.action==tail.choose(s)
+                if z.action is None:raise RuntimeError('incomplete_step_before_finite_objective:'+z.exit_cause)
                 a=z.action;step=dict(actor=actor_state(s),decision={**asdict(z),'action':uci(a)});path.append(step)
                 d.log('game_events',dict(event='MOVE',family=f['family'],phase=f['phase'],color=color,opponent=opponent['id'],proof=enabled,price_index=price_index,ply=ply,**step))
                 for player in players.values():player.observe(s,a)
                 s=apply_action(s,a,c)
+                if tail is not None:tail.observed(s)
             row=dict(family=f['family'],phase=f['phase'],color=color,opponent=opponent['id'],proof=enabled,price_index=price_index,price=price,
                      payoff=pay,lower=-1 if pay is None else pay,upper=1 if pay is None else pay,
-                     terminal=s.terminal_status.status.value,end=actor_state(s),trajectory=path)
+                     terminal=s.terminal_status.status.value,end=actor_state(s),trajectory=path,
+                     seconds=time.perf_counter()-game_started,horizon_snapshot=horizon_snapshot,tail_admission=(dict(owner=tail.owner,rank=tail.initial_rank,remaining_rank=tail.remaining_rank) if tail else None))
             rows.append(row);d.log('games',row);d.log('game_events',dict(event='END',family=f['family'],phase=f['phase'],color=color,opponent=opponent['id'],proof=enabled,price_index=price_index,payoff=pay,terminal=row['terminal']));active={}
         selected=1
         baseline=p.get('baseline_index',0)
@@ -169,6 +198,7 @@ def run(folder):
                     for color in (0,1):
                         for op in p['opponents']:play(f,True,index,color,op)
                 print('TRAIN_FAMILY',f['family'],len(rows),flush=True)
+            assert all(r['payoff'] is not None or len(r['trajectory'])>=p['H'] and r.get('tail_admission') is None for r in rows), 'incomplete TRAIN objective'
             score={i:sum(r['payoff'] or 0 for r in rows if r['price_index']==i) for i in range(len(p['prices']))}
             selected=min(score,key=lambda i:(-score[i],p['prices'][i]))
             paths=[]
@@ -186,7 +216,7 @@ def run(folder):
                             current=min(eligible,key=lambda i:(-score[i],p['prices'][i]));path.append(current);changed=True
                     if not changed:break
                 paths.append(dict(initial=initial,path=[p['prices'][i] for i in path],endpoint=p['prices'][current]))
-            (folder/'selection.json').write_text(json.dumps(dict(selected_index=selected,selected=p['prices'][selected],integer_scores=score,paths=paths,source='TRAIN only, before DEV'),indent=2))
+            (folder/'selection.json').write_text(json.dumps(dict(selected_index=selected,selected=p['prices'][selected],integer_scores=score,paths=paths,source='TRAIN only, before DEV'),indent=2),encoding='utf-8')
         for f in p['families']:
             if f['phase']!='DEV':continue
             cells=[(False,baseline),(True,baseline)]
@@ -198,7 +228,7 @@ def run(folder):
             print('DEV_FAMILY',f['family'],len(rows),flush=True)
     except BaseException as e:
         error=type(e).__name__+':'+str(e)
-        if active:(folder/'partial_game.json').write_text(json.dumps(dict(**active,error=error,payoff=None,lower=-1,upper=1),indent=2))
+        if active:(folder/'partial_game.json').write_text(json.dumps(dict(**active,error=error,payoff=None,lower=-1,upper=1),indent=2),encoding='utf-8')
     finally:d.close()
     out=dict(status='COMPLETE' if error is None else 'PARTIAL_PRESERVED',error=error,games=len(rows),
              actual_native_go=d.queries,actual_native_reported_nodes=d.newnodes,seconds=time.perf_counter()-start,
@@ -207,7 +237,7 @@ def run(folder):
                          known_net=sum(r['payoff'] or 0 for r in rows if r['phase']==phase and r['proof']==q and r['price_index']==j),
                          unknown=sum(r['payoff'] is None for r in rows if r['phase']==phase and r['proof']==q and r['price_index']==j))
                     for phase in sorted({r['phase'] for r in rows}) for q in [False,True] for j in sorted({r['price_index'] for r in rows})])
-    (folder/'result.json').write_text(json.dumps(out,indent=2));print(out)
+    (folder/'result.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(out)
 
 
 if __name__=='__main__':

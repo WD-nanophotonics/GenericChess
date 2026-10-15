@@ -1,0 +1,156 @@
+{
+  "status": "PASS_PUBLIC_REPLAY_AND_RECEIPTS",
+  "games": 896,
+  "actual_steps": 12330,
+  "matched_native_receipts": 11256,
+  "native_receipts_total": 11256,
+  "unassigned_native_receipts": 0,
+  "proof_calls": 266,
+  "proof_continuations": 808,
+  "native_node_overruns": 7580,
+  "step_time_overruns": 0,
+  "max_step_seconds": 0.14058910000312608,
+  "early_unknown_before_H": 0,
+  "cells_DEV_only": {
+    "A": {
+      "n": 128,
+      "known_net": 0.40625,
+      "lower": 0.171875,
+      "upper": 0.640625,
+      "outcomes": {
+        "1": 52,
+        "None": 30,
+        "0": 46
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.40625,
+        0.40625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.171875,
+        0.640625
+      ]
+    },
+    "B": {
+      "n": 128,
+      "known_net": 0.5,
+      "lower": 0.375,
+      "upper": 0.625,
+      "outcomes": {
+        "1": 64,
+        "0": 48,
+        "None": 16
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5,
+        0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.375,
+        0.625
+      ]
+    },
+    "C": {
+      "n": 128,
+      "known_net": 0.484375,
+      "lower": 0.234375,
+      "upper": 0.734375,
+      "outcomes": {
+        "1": 62,
+        "None": 32,
+        "0": 34
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.484375,
+        0.484375
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.234375,
+        0.734375
+      ]
+    },
+    "D": {
+      "n": 128,
+      "known_net": 0.5625,
+      "lower": 0.390625,
+      "upper": 0.734375,
+      "outcomes": {
+        "1": 72,
+        "0": 34,
+        "None": 22
+      },
+      "planned_n": 128,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5625,
+        0.5625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.390625,
+        0.734375
+      ]
+    }
+  },
+  "contrasts": {
+    "solver_unit": {
+      "observed_complete_families": 32,
+      "missing_families": [],
+      "finite_event_difference": 0.09375,
+      "family_bootstrap95": [
+        0.03125,
+        0.1875
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_plain": {
+      "observed_complete_families": 32,
+      "missing_families": [],
+      "finite_event_difference": 0.078125,
+      "family_bootstrap95": [
+        -0.015625,
+        0.1875
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_with_solver": {
+      "observed_complete_families": 32,
+      "missing_families": [],
+      "finite_event_difference": 0.0625,
+      "family_bootstrap95": [
+        -0.03125,
+        0.171875
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    }
+  },
+  "selected_equals_baseline": false,
+  "full_planned_B_to_D": {
+    "finite_event_bounds": [
+      0.0625,
+      0.0625
+    ],
+    "infinite_outcome_bounds": [
+      -0.234375,
+      0.359375
+    ],
+    "meaning": "All frozen planned DEV cases; missing/early games remain uncertain. These are missing-data bounds, not sampling confidence intervals."
+  },
+  "seconds": 2.2566578999976628,
+  "proof_conversion": {
+    "candidate_proved_games": 264,
+    "candidate_physically_redeemed": 264,
+    "opponent_proved_games": 2,
+    "opponent_physically_redeemed": 2
+  },
+  "raw_games_sha256": "3510656c2a0520f4c314ee9ce39ba49f4b5eee43f5150b8bbec74bf5ec1f387a"
+}

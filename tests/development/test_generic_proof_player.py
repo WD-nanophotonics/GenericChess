@@ -99,3 +99,33 @@ def test_price_independent_trigger_skips_new_proof_but_keeps_existing_strategy()
     a=p.cursor.node.edges[0][0];p.observe(s,a);child=apply_action(s,a,c)
     d=p.choose(child,max_nodes=128,seconds=1.)
     assert d.source=='PROOF_CONTINUATION' and d.proof_nodes==0 and d.proof_rank>0
+
+
+
+def no_progress_fixture():
+    from generic_chess.rules.schema import RuleNoProgressDraw
+    from generic_chess.rules.compiler import compile_ruleset
+    from scripts.generic_proof_fixtures import krk_ruleset
+    c=compile_ruleset(replace(krk_ruleset(4),no_progress_draw=RuleNoProgressDraw(10,True)))
+    return c,krk_state(c,0,15,10,0)
+
+
+def test_unsupported_proof_runtime_still_calls_provided_normal_player():
+    c,s=no_progress_fixture();called=[]
+    def normal(state,nodes,seconds,cancel):
+        assert state==s and 0<nodes<=64 and seconds>0
+        called.append(True);return legal_actions(state,c)[0],1
+    d=ProofMaterialPlayer(c,None,normal_search=normal).choose(s,max_nodes=64,seconds=1.)
+    assert called and d.source=='EXTERNAL_SEARCH'
+    assert d.proof_reason=='unsupported_no_progress_history'
+    assert d.action in legal_actions(s,c) and d.nodes==d.search_nodes==1
+    assert not apply_action(s,d.action,c).terminal_status.is_terminal
+
+
+def test_unsupported_internal_runtime_has_explicit_public_legal_fallback():
+    c,s=no_progress_fixture()
+    def forbidden(*args):raise AssertionError('unsupported internal AB must not pretend to search')
+    d=ProofMaterialPlayer(c,forbidden).choose(s,max_nodes=64,seconds=1.)
+    assert d.action in legal_actions(s,c) and d.source=='LEGAL_FALLBACK'
+    assert d.exit_cause=='public_legal_fallback_unsupported_runtime'
+    assert d.nodes==0 and d.proof_reason=='unsupported_no_progress_history'

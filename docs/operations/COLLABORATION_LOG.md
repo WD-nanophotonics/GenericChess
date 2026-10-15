@@ -1162,3 +1162,30 @@ performed no primary execution/edit/publication. All own work stays sidemission,
 UI/defaults unchanged, heartbeatPAUSED. Fixed report and exact archives are
 SEGMENT_20261015_54.md and ARCHIVE_MANIFEST_20261015_54.json. Next decisions concern
 physical tail censoring and proof opportunity cost, not more long routine games.
+
+
+## DEV_AUX55 — physical proof completion and conditional learning
+
+DEV_AUX implements symmetric H16 plus existing-certificate physical completion,
+public-normal fallback for unsupported mutable runtime, and independent role,
+policy/cost and actual-event audits. Four new KRN4/5 TRAIN32/DEV32 cohorts select
+highR globally; all price-gain intervals cross0 and one low-start local peak
+persists.1402adopted proofs physically finish;318tails cost1804moves/745Nativego.
+SMALL triggering saves30–34percent per hybrid game but loses4highR finite wins;
+partial-proof retention has0actual-path hits/64cases. Neither is a default change.
+60671newNativego,4860episode records,3664perft and77focusedtests; actual overshoots,
+flat pilots, role limitations and fixed absolute scale remain.1787future balanced
+roles are guarded INPUTS ONLY, not completed experiments. Science stays OPEN.
+
+PRIMARY's fixed41e69 backend and its2026-10-15 13:22 coordination evidence keep
+its full-rule completion work separate from DEV_AUX proof/cursor development.
+DEV_AUX read that context, did not execute primary experiments or change primary
+state/product/UI. Dot's55 reply supports the stated finite-policy comparison and
+requires all planned missing slots/incomplete TRAIN handling; adopted and tested.
+It reviewed54 and the described55 protocol, not this unpublished55 execution.
+No routine cross-Agent receipt loops, new workers or quiet windows. Existing
+branch/stop boundaries and prior capped/partial results remain.
+
+Full evidence: results/dev_aux/SEGMENT_20261015_55.md and the exact restored
+segment55 archives. Deliver the fixed sidemission revision to Dot/PRIMARY through
+the established project Slack; PRIMARY integrates deliberately, no automatic merge.

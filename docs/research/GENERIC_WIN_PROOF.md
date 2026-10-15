@@ -81,8 +81,10 @@ horizon may still be censored by that assay.
 
 ## Verification and reproducibility
 
-Run the five focused development test modules named `test_generic_win_proof*`,
-`test_generic_proof_player.py` and `test_generic_proof_interrupts.py`. They include public-transition promotion,
+Run the nine focused development modules: `test_generic_win_proof*`,
+`test_generic_proof_player.py`, `test_generic_proof_interrupts.py`,
+`test_generic_proof_tail.py`, `test_generic_proof_study_accounting.py` and
+`test_generic_royal_actor.py`. They include public-transition promotion,
 drop, pass-to-draw, played perpetual-check history, semantic pattern/auxiliary
 identity, terminal priority, forged certificates, cancellation, shared budgets
 and failed verification fallback.
@@ -100,3 +102,55 @@ Proof-number search background: [Allis, van der Meulen and van den Herik,
 1994](https://www.sciencedirect.com/science/article/pii/0004370294900043).
 This implementation's correctness evidence is its finite-tree contract and
 independent checks, not a claim that the paper validates this code.
+
+
+## Physical completion after a short horizon
+
+The opt-in `CertifiedTail` policy closes ordinary play at H16. If either player
+already holds a verified, exact-history-bound strategy with remaining rank at
+most64, play continues for at most that rank. The certified owner executes the
+original cursor; defenders retain ordinary search. No new proof is attempted
+after the horizon. Every committed public transition must reduce the stored
+rank; only the actual rule terminal supplies a reward. Without an admitted
+certificate the result stays UNKNOWN. Both colors and all prices use the same
+admission rule. The original H16 snapshot, physical extra moves and costs stay
+separate, and old H16 cohorts are never relabeled.
+
+Thus B-to-D measures prices inside this fixed complete-player policy. A-to-B
+includes both proof search and tail completion. It is not a comparison at equal
+actual total cost or a claim about infinite-horizon WDL. Missing planned slots,
+including unstarted games, remain in denominator bounds. An unfinished admitted
+tail is an incomplete finite observation, not a zero completed event. Incomplete
+TRAIN observations must not select a price.
+
+`generic_proof_scaled_study.py` mechanically sizes the same closed KRN control.
+The independent actor, public rule compiler and Native perft qualify actual
+transitions. A different board also changes the state distribution and game;
+it does not establish transfer to full Chess/Shogi or a universal price ratio.
+The arbitrary fixed absolute price scale and mature engine's other search
+constants remain part of the tested player. A best endpoint on a three-value
+grid does not identify a continuous optimum. Shared coordinate paths reuse the
+same actual grid games, not independent online learning trajectories.
+
+## Optional paid-subtree research
+
+`generic_win_proof_retained.py` is a separate experimental PN fork. It retains
+at most16 already-proved depth-two future-own-turn subtrees by default, bound
+to exact public state, history, target and rule fingerprint. Stored entries
+remain candidate certificates until independently verified under the next
+call's budget. No board-only merge, price input or automatic playback is added.
+Collection, immutable-tree extraction and lookup are real costs; a cache-hit
+microtime alone is not a net saving. The paid-path benchmark uses actual recorded
+next moves, never chooses a future state because an entry exists, and excludes
+already-proved parent strategies from incremental reuse claims. It is not the
+default solver or a closed-loop player result.
+
+
+For a public-valid rule that the mutable search runtime cannot import, such as
+no-progress history, the adapter now obtains public legality and can still call
+the supplied normal player under the remaining budget. Without such a player it
+returns only an explicitly tagged public legal fallback; it does not claim an
+internal material search or a proof. The prover's unsupported-history exclusion
+remains. Atomic public generation is timed with cancellation/deadline checks
+around it. This repairs the reproduced pre-normal-callback exception without
+changing the supported runtime path used in the frozen KRN cohorts.

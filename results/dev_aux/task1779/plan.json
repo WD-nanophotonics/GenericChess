@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_JOINT_5x5_CONTROL_BEFORE_GAMES",
+  "studies": [
+    1780,
+    1781
+  ],
+  "seeds": [
+    20261015555,
+    20261015556
+  ],
+  "width": 5,
+  "train_families_each": 32,
+  "dev_families_each": 32,
+  "expected_total_seconds": 1800,
+  "maximum_study_wall_seconds": 2400,
+  "expected_max_games": 1792,
+  "question": "Does the R/N preference and actual-event learning effect survive a mechanically larger board under the SAME generic solver/material player? Independent TRAIN choices, no pooled DEV selection.",
+  "decision": "Compare both independent predeclared cohorts regardless of first sign. No human-reference fit, no oldcap continuation, no new workers. Board domains differ explicitly; this is a transfer/sensitivity control, not equal-position causal comparison.",
+  "qualified_entry": "task1778:48actualNativeperft+12alignedprofilego; generated4/5/8 public-actor tests pass.",
+  "scope": "Closed KRN only. Generic proof unchanged; no default/UI or primary edits."
+}

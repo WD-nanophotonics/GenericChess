@@ -1,0 +1,54 @@
+{
+  "status": "BOTH_PREDECLARED_4x4_COHORTS_COMPLETE",
+  "studies": [
+    {
+      "task": 1775,
+      "selected": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "DEV_families": 32,
+      "plan_sha256": "e7652299444ac265e8b6b0710e6ba4c1ecbc0f4417657d11ff0593e8aa0df381",
+      "games_sha256": "3510656c2a0520f4c314ee9ce39ba49f4b5eee43f5150b8bbec74bf5ec1f387a"
+    },
+    {
+      "task": 1776,
+      "selected": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "DEV_families": 32,
+      "plan_sha256": "da8b21e925752a890451739780b26e6f81a6ae8c721b1c9cb803928c55d9c323",
+      "games_sha256": "3a422ee0edfb83f8545ce619af5820c0b37a57cba7a3665488aa9a83c67cbe45"
+    }
+  ],
+  "summary": {
+    "solver_policy": {
+      "finite_event_difference": 0.078125,
+      "stratified_DEV_family_bootstrap95": [
+        0.0234375,
+        0.140625
+      ]
+    },
+    "price_plain": {
+      "finite_event_difference": 0.0546875,
+      "stratified_DEV_family_bootstrap95": [
+        -0.0078125,
+        0.1171875
+      ]
+    },
+    "price_solver": {
+      "finite_event_difference": 0.046875,
+      "stratified_DEV_family_bootstrap95": [
+        -0.0078125,
+        0.109375
+      ]
+    }
+  },
+  "actual_new_go_for_analysis": 0,
+  "interpretation": "Combined64independent DEV families, stratified within each cohort; both candidates frozen by own independent TRAIN. Conditional finite-player-policy inference, not uncertainty over all possible training samples, universal prices, continuous optimum or infinite WDL. Both separate studies remain primary evidence."
+}

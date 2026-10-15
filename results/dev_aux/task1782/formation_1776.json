@@ -1,0 +1,64 @@
+{
+  "task": 1776,
+  "cells": [
+    {
+      "price_index": 1,
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "counts": {
+        "games": 128,
+        "actual_win": 70,
+        "actual_loss": 0,
+        "actual_draw": 26,
+        "UNKNOWN": 32,
+        "games_with_candidate_proof": 70,
+        "games_with_opponent_proof": 0
+      },
+      "proof_entry_own_R_N_inventory": {
+        "('candidate', (1, 1))": 50,
+        "('candidate', (1, 0))": 20
+      },
+      "admitted_tail_remaining_rank": {
+        "1": 10,
+        "9": 4,
+        "3": 2,
+        "17": 2,
+        "7": 2,
+        "15": 2
+      }
+    },
+    {
+      "price_index": 2,
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "counts": {
+        "games": 128,
+        "actual_win": 74,
+        "actual_loss": 0,
+        "actual_draw": 26,
+        "UNKNOWN": 28,
+        "games_with_candidate_proof": 74,
+        "games_with_opponent_proof": 0
+      },
+      "proof_entry_own_R_N_inventory": {
+        "('candidate', (1, 0))": 26,
+        "('candidate', (1, 1))": 48
+      },
+      "admitted_tail_remaining_rank": {
+        "1": 18,
+        "3": 2,
+        "7": 4
+      }
+    }
+  ],
+  "scope": "All observed DEV games in each arm, never conditioned contrast on proof subset. Inventories are descriptive mechanism traces, not training rewards or causal price formulas. Missing slots, if any, remain in separate full-plan audit bounds.",
+  "actual_new_native_go": 0
+}

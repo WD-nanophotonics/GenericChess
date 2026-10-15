@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-15T05:31:27.817671+00:00",
+  "session_id": "b0829e66-3bee-41cf-9712-26468e6251fd",
+  "driver_sha256": "441b996bcf56b0ddb54e8a690da8d3a623d9c11f9d5da34cb697b28727c8c1e4",
+  "plan": {
+    "status": "FROZEN_SMALL_ACTUAL_SIZED_ENTRY_SMOKE",
+    "width": 5,
+    "seed": 20261015558,
+    "attempts": 10,
+    "families": [
+      {
+        "family": 0,
+        "phase": "TRAIN",
+        "roots": [
+          [
+            ".",
+            "r",
+            ".",
+            ".",
+            "R",
+            ".",
+            ".",
+            "N",
+            ".",
+            ".",
+            ".",
+            ".",
+            "k",
+            ".",
+            "K",
+            ".",
+            ".",
+            ".",
+            ".",
+            "n",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            0
+          ],
+          [
+            ".",
+            "R",
+            ".",
+            ".",
+            "r",
+            ".",
+            ".",
+            "n",
+            ".",
+            ".",
+            ".",
+            ".",
+            "K",
+            ".",
+            "k",
+            ".",
+            ".",
+            ".",
+            ".",
+            "N",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            1
+          ]
+        ]
+      },
+      {
+        "family": 1,
+        "phase": "DEV",
+        "roots": [
+          [
+            ".",
+            ".",
+            "K",
+            ".",
+            ".",
+            "k",
+            ".",
+            ".",
+            "N",
+            ".",
+            "r",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "n",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "R",
+            0
+          ],
+          [
+            ".",
+            ".",
+            "k",
+            ".",
+            ".",
+            "K",
+            ".",
+            ".",
+            "n",
+            ".",
+            "R",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "N",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "r",
+            1
+          ]
+        ]
+      }
+    ],
+    "exclusion_sources": [
+      {
+        "path": "results/dev_aux/task1778/plan.json",
+        "sha256": "ab870cb7189df4d3fd087f0b443f0b755b1b38c09b84bd19df545e8ab002543f",
+        "roots": 8
+      },
+      {
+        "path": "results/dev_aux/task1780/plan.json",
+        "sha256": "980e17b26a7156f4adca60b1b4f54de07d9b0c9a202ef77d55e43c3686ff3d9b",
+        "roots": 128
+      },
+      {
+        "path": "results/dev_aux/task1781/plan.json",
+        "sha256": "0532f6b1e24df644651087ff201cfcbb9469df2f2ddf239fda0a0086e79cd30b",
+        "roots": 128
+      }
+    ],
+    "study_kind": "LEARN",
+    "baseline_index": 1,
+    "prices": [
+      [
+        360,
+        720,
+        720,
+        720
+      ],
+      [
+        720,
+        720,
+        720,
+        720
+      ],
+      [
+        1440,
+        720,
+        720,
+        720
+      ]
+    ],
+    "variant_names": {
+      "(360, 720, 720, 720)": "aux55_5_360_720_720_720",
+      "(720, 720, 720, 720)": "aux55_5_720_720_720_720",
+      "(1440, 720, 720, 720)": "aux55_5_1440_720_720_720"
+    },
+    "model": "results/dev_aux/task1778/game_smoke/rules.py",
+    "model_sha256": "338d4af2dbbf9df2cc0b868739c273b444ed48c3be79bf055508269ebd233b0c",
+    "actor_source": "scripts/generic_royal_actor.py",
+    "actor_sha256": "99565b2cabcff8c9a60789f21546c1f2ececcb9210c7ce43a717f588684342f7",
+    "driver_sha256": "441b996bcf56b0ddb54e8a690da8d3a623d9c11f9d5da34cb697b28727c8c1e4",
+    "scaled_study_sha256": "6b0d775764e2f0b2609fc26b45dfc84e84ef16545c7836ee046ca52ba94b07ca",
+    "binary": ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe",
+    "binary_sha256": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+    "variant_ini": "results/dev_aux/task1778/game_smoke/variant.ini",
+    "variant_sha256": "cf0c4717db5943baf2c05806b431a5b80abbc20ad40dae7512cb9cae97d68261",
+    "candidate_nodes": 4096,
+    "opponents": [
+      {
+        "id": "UNIT64",
+        "nodes": 64
+      },
+      {
+        "id": "UNIT4096",
+        "nodes": 4096
+      }
+    ],
+    "H": 16,
+    "certified_tail": true,
+    "tail_max_rank": 64,
+    "seconds_cap": 90,
+    "max_go": 3000,
+    "step_seconds": 0.25,
+    "solver_sha256": "1c79db4805df9dbba62a49b8d91337f0d46f9fc1cfaa1d8247298c507c4526c3",
+    "pn_sha256": "dd551b01814f0fe0681547853904a4ca84eea9378262915033e98c9b5523957b",
+    "player_sha256": "2ffd16c08b8af7ef625da1a5b377073f8402f441811b7216100be61d44dc97ed",
+    "study_sha256": "d05ca9075f00f71271ba953a2b938aa95260851419675a99dec2568348f124be",
+    "tail_sha256": "44c296092693c581afa2907f02f6e29f0fbd3213ca242accdf44ed1f8b123ccf",
+    "proof_algorithm": "PN",
+    "active_coordinates": [
+      0
+    ],
+    "initial_prices": [
+      [
+        360,
+        720,
+        720,
+        720
+      ],
+      [
+        720,
+        720,
+        720,
+        720
+      ],
+      [
+        1440,
+        720,
+        720,
+        720
+      ]
+    ],
+    "primary_selector": "All3price TRAIN actual W-L, lex tie; strict adjacent paths share same real grid. No DEV or human price fitting.",
+    "outcome": "Actual Core terminal only, UNKNOWN explicit. H16 plus only ALREADY verified rank<=64 physical strategy tail; no new proof after H16. Same policy both colors/prices.",
+    "rootlaw": "Mechanically sized closed KkRNrn; uncheck,>=4choices,capture+quiet,no immediately terminal successor; no price/WDL selection. FullD4+color exclusion.",
+    "incremental_cost_decision": "Board4x4 may limit a relative R/N inference; change ONLY declared board/root domain with same player budgets and real terminal objective. Two independent cohorts test selection stability; no claim the domain should match human8x8 values.",
+    "expected_max_games": 28,
+    "expected_max_moves": 2240,
+    "advance_rule": "Keep all caps and failures, no continuation or sample enlargement on exposed outcomes. Cost and scope reported separately from WDL; no automatic main/default change."
+  }
+}

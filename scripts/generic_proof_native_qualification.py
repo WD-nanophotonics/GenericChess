@@ -5,7 +5,7 @@ from scripts.generic_proof_rnb_bridge import compile_rnb,from_actor,uci
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 import sys
-p=Path(sys.argv[1]);plan=json.loads((p/'plan.json').read_text());c=compile_rnb()
+p=Path(sys.argv[1]);plan=json.loads((p/'plan.json').read_text());c=compile_rnb(plan.get("width",4))
 sp=importlib.util.spec_from_file_location('P54','results/dev_aux/task166/run.py');P=importlib.util.module_from_spec(sp);sp.loader.exec_module(P)
 Tspec=importlib.util.spec_from_file_location('T54',plan['model']);T=importlib.util.module_from_spec(Tspec);Tspec.loader.exec_module(T)
 start=time.perf_counter();e=P.M.start(Path(plan['binary']).resolve(),3,time.monotonic()+180,P.stop);records=[]
@@ -23,5 +23,5 @@ try:
      assert native==expected,(f['family'],color,depth,native,expected)
      records.append(dict(family=f['family'],color=color,price=price,depth=depth,raw=out))
 finally:e.close()
-(p/'native_perft_records.json').write_text(json.dumps(records));out=dict(status='PASS_ALL_ROOTS_ALL_PROFILES_D1_D2',actual_perft=len(records),seconds=time.perf_counter()-start,qualification_timing='After study, preserved as post-run qualification; no games repeated or relabeled.',exit_code=e.p.poll())
-(p/'native_qualification.json').write_text(json.dumps(out,indent=2));print(out)
+(p/'native_perft_records.json').write_text(json.dumps(records),encoding='utf-8');out=dict(status='PASS_ALL_ROOTS_ALL_PROFILES_D1_D2',actual_perft=len(records),seconds=time.perf_counter()-start,qualification_timing='After study, preserved as post-run qualification; no games repeated or relabeled.',exit_code=e.p.poll())
+(p/'native_qualification.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(out)

@@ -1,0 +1,66 @@
+{
+  "task": 1775,
+  "cells": [
+    {
+      "price_index": 1,
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "counts": {
+        "games": 128,
+        "actual_win": 64,
+        "actual_loss": 0,
+        "actual_draw": 48,
+        "UNKNOWN": 16,
+        "games_with_candidate_proof": 64,
+        "games_with_opponent_proof": 0
+      },
+      "proof_entry_own_R_N_inventory": {
+        "('candidate', (1, 0))": 20,
+        "('candidate', (1, 1))": 44
+      },
+      "admitted_tail_remaining_rank": {
+        "3": 8,
+        "1": 4,
+        "11": 4,
+        "15": 4
+      }
+    },
+    {
+      "price_index": 2,
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "counts": {
+        "games": 128,
+        "actual_win": 72,
+        "actual_loss": 0,
+        "actual_draw": 34,
+        "UNKNOWN": 22,
+        "games_with_candidate_proof": 72,
+        "games_with_opponent_proof": 0
+      },
+      "proof_entry_own_R_N_inventory": {
+        "('candidate', (1, 0))": 29,
+        "('candidate', (1, 1))": 43
+      },
+      "admitted_tail_remaining_rank": {
+        "3": 8,
+        "5": 4,
+        "11": 4,
+        "21": 2,
+        "1": 2,
+        "15": 3,
+        "7": 4
+      }
+    }
+  ],
+  "scope": "All observed DEV games in each arm, never conditioned contrast on proof subset. Inventories are descriptive mechanism traces, not training rewards or causal price formulas. Missing slots, if any, remain in separate full-plan audit bounds.",
+  "actual_new_native_go": 0
+}

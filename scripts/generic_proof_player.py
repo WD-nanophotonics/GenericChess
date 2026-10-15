@@ -8,6 +8,7 @@ import math
 from time import perf_counter
 
 from generic_chess.core.search_runtime import SearchPathRuntime
+from generic_chess.core.movegen import legal_actions as public_legal_actions
 from generic_chess.core.terminal import TerminalStatus, terminal_result
 from scripts.generic_win_proof import (
     prove_win, StrategyCursor, CertificateVerificationError, PROVEN_WIN, _Budget, _Interrupted, _ordered,
@@ -112,8 +113,16 @@ class ProofMaterialPlayer:
                         verification_nodes = error.receipt['nodes']
                         reason = 'verification_' + error.receipt['reason']
             total.poll()
-            rt = SearchPathRuntime.from_state(state, self.compiled)
-            legal = _ordered(rt.legal_actions(checkpoint=total.poll))
+            try:
+                rt = SearchPathRuntime.from_state(state, self.compiled)
+            except NotImplementedError:
+                # Proof/runtime scope must not disable a caller-supplied normal
+                # player. Public legality still binds the complete GameState.
+                # This atomic generation is charged to the caller's time.
+                rt = None
+                legal = _ordered(public_legal_actions(state, self.compiled))
+            else:
+                legal = _ordered(rt.legal_actions(checkpoint=total.poll))
             total.poll()
             if not legal:
                 source, cause = 'NO_ACTION', 'no_legal_action'
@@ -131,6 +140,9 @@ class ProofMaterialPlayer:
                 # counts rather than silently clipping them into a fair cap.
                 cause = ('reported_node_overrun' if used_nodes > remaining_nodes
                          else 'external_search_return')
+                return out()
+            if rt is None:
+                cause = 'public_legal_fallback_unsupported_runtime'
                 return out()
             search = _Budget(remaining_nodes, remaining_seconds(), cancel, _clock)
             target = state.position.side_to_move

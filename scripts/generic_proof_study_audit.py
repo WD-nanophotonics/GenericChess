@@ -10,8 +10,21 @@ from generic_chess.core.terminal import terminal_result
 def quantile(x,q):return sorted(x)[int((len(x)-1)*q)]
 
 
+def incomplete(row,plan):
+    return row['payoff'] is None and (len(row['trajectory'])<plan['H'] or row.get('tail_admission') is not None)
+
+
+def planned_bounds(rows,planned_n,plan):
+    if planned_n<=0 or len(rows)>planned_n:raise ValueError('invalid planned denominator')
+    missing=planned_n-len(rows);early=sum(incomplete(r,plan) for r in rows)
+    net=sum(r['payoff'] or 0 for r in rows);unknown=sum(r['payoff'] is None for r in rows)
+    return dict(planned_n=planned_n,missing_games=missing,early_incomplete=early,
+                planned_finite_event_bounds=[(net-missing-early)/planned_n,(net+missing+early)/planned_n],
+                planned_infinite_outcome_bounds=[(net-missing-unknown)/planned_n,(net+missing+unknown)/planned_n])
+
+
 def audit(folder):
-    p=Path(folder);plan=json.loads((p/'plan.json').read_text());start=time.perf_counter();c=compile_rnb()
+    p=Path(folder);plan=json.loads((p/'plan.json').read_text());start=time.perf_counter();c=compile_rnb(plan.get("width",4))
     rows=[json.loads(x) for x in (p/'run/games.jsonl').read_text().splitlines()]
     choices=[json.loads(x) for x in (p/'run/choices.jsonl').read_text().splitlines()]
     acks=[json.loads(x) for x in (p/'run/acks.jsonl').read_text().splitlines()]
@@ -58,11 +71,14 @@ def audit(folder):
                 conversion[who+'_physically_redeemed']+=1
             else:conversion[who+'_censored']+=1
         actual=None if not state.terminal_status.is_terminal else 0 if state.terminal_status.winner is None else 1 if state.terminal_status.winner==target else -1
-        early_unknown+=actual is None and len(row['trajectory'])<plan['H']
+        early_unknown+=incomplete(row,plan)
         assert actual==row['payoff'] and row['lower']==(-1 if actual is None else actual) and row['upper']==(1 if actual is None else actual)
     selection=json.loads((p/'selection.json').read_text()) if (p/'selection.json').exists() else None
     baseline=plan.get('baseline_index',0);selected=selection['selected_index'] if selection else 1
     if selection:
+        assert not any(incomplete(r,plan) for r in rows if r['phase']=='TRAIN'), 'incomplete finite TRAIN objective cannot select prices'
+        expected_train=2*len(plan['opponents'])*sum(f['phase']=='TRAIN' for f in plan['families'])
+        assert all(sum(r['phase']=='TRAIN' and r['price_index']==i for r in rows)==expected_train for i in range(len(plan['prices']))), 'missing TRAIN slots'
         scores={i:sum(r['payoff'] or 0 for r in rows if r['phase']=='TRAIN' and r['price_index']==i) for i in range(len(plan['prices']))}
         assert str(selection['integer_scores'])==str({str(k):v for k,v in scores.items()})
         assert selected==min(scores,key=lambda i:(-scores[i],plan['prices'][i]))
@@ -82,14 +98,10 @@ def audit(folder):
                            lower=sum(r['lower'] for r in data)/len(data) if data else None,
                            upper=sum(r['upper'] for r in data)/len(data) if data else None,
                            outcomes=dict(collections.Counter(str(r['payoff']) for r in data)))
-    planned_n=4*sum(f['phase']=='DEV' for f in plan['families'])
+    planned_n=2*len(plan['opponents'])*sum(f['phase']=='DEV' for f in plan['families'])
     for label,(q,j) in dict(A=(False,baseline),B=(True,baseline),C=(False,selected),D=(True,selected)).items():
         data=[r for r in dev if r['proof']==q and r['price_index']==j]
-        missing=planned_n-len(data);early=sum(r['payoff'] is None and len(r['trajectory'])<plan['H'] for r in data)
-        net=sum(r['payoff'] or 0 for r in data);unknown=sum(r['payoff'] is None for r in data)
-        groups[label].update(planned_n=planned_n,missing_games=missing,early_incomplete=early,
-                             planned_finite_event_bounds=[(net-missing-early)/planned_n,(net+missing+early)/planned_n],
-                             planned_infinite_outcome_bounds=[(net-missing-unknown)/planned_n,(net+missing+unknown)/planned_n])
+        groups[label].update(planned_bounds(data,planned_n,plan))
     full_contrast=dict(finite_event_bounds=[groups['D']['planned_finite_event_bounds'][0]-groups['B']['planned_finite_event_bounds'][1],groups['D']['planned_finite_event_bounds'][1]-groups['B']['planned_finite_event_bounds'][0]],
                        infinite_outcome_bounds=[groups['D']['planned_infinite_outcome_bounds'][0]-groups['B']['planned_infinite_outcome_bounds'][1],groups['D']['planned_infinite_outcome_bounds'][1]-groups['B']['planned_infinite_outcome_bounds'][0]],
                        meaning='All frozen planned DEV cases; missing/early games remain uncertain. These are missing-data bounds, not sampling confidence intervals.')
@@ -105,19 +117,19 @@ def audit(folder):
                 for op in plan['opponents']:
                     a=by.get((f['family'],*spec[lhs],color,op['id']));b=by.get((f['family'],*spec[rhs],color,op['id']))
                     if a is not None and b is not None:pairs.append((b['payoff'] or 0)-(a['payoff'] or 0))
-            if len(pairs)==4:values.append(sum(pairs)/4)
+            if len(pairs)==2*len(plan['opponents']):values.append(sum(pairs)/len(pairs))
             else:missing.append(f['family'])
         if values:
             samples=[sum(rng.choice(values) for _ in values)/len(values) for _ in range(4000)]
             paired[label]=dict(observed_complete_families=len(values),missing_families=missing,
                                finite_event_difference=sum(values)/len(values),family_bootstrap95=[quantile(samples,.025),quantile(samples,.975)],
-                               interpretation='Fixed-horizon W-L event difference. Not infinite WDL; incomplete capped prefixes descriptive only.')
+                               interpretation=('Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy.' if plan.get('certified_tail') else 'Fixed-horizon W-L event difference.')+' Not infinite WDL; incomplete capped prefixes descriptive only.')
     out=dict(status='PASS_PUBLIC_REPLAY_AND_RECEIPTS',games=len(rows),actual_steps=steps,matched_native_receipts=choice_index,
              native_receipts_total=len(choices),unassigned_native_receipts=len(choices)-choice_index,
              proof_calls=proofcalls,proof_continuations=continuations,native_node_overruns=overruns,step_time_overruns=over_time,max_step_seconds=max_time,early_unknown_before_H=early_unknown,
-             cells_DEV_only=groups,contrasts=paired,full_planned_B_to_D=full_contrast,seconds=time.perf_counter()-start,
+             cells_DEV_only=groups,contrasts=paired,selected_equals_baseline=selected==baseline,full_planned_B_to_D=full_contrast,seconds=time.perf_counter()-start,
              proof_conversion=dict(conversion),raw_games_sha256=hashlib.sha256((p/'run/games.jsonl').read_bytes()).hexdigest())
-    (p/'audit.json').write_text(json.dumps(out,indent=2));print(json.dumps(out))
+    (p/'audit.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps(out))
 
 if __name__=='__main__':
     import sys;audit(sys.argv[1])

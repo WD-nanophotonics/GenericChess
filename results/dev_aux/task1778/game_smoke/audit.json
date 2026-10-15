@@ -1,0 +1,143 @@
+{
+  "status": "PASS_PUBLIC_REPLAY_AND_RECEIPTS",
+  "games": 28,
+  "actual_steps": 424,
+  "matched_native_receipts": 424,
+  "native_receipts_total": 424,
+  "unassigned_native_receipts": 0,
+  "proof_calls": 0,
+  "proof_continuations": 0,
+  "native_node_overruns": 315,
+  "step_time_overruns": 0,
+  "max_step_seconds": 0.08734879999246914,
+  "early_unknown_before_H": 0,
+  "cells_DEV_only": {
+    "A": {
+      "n": 4,
+      "known_net": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "outcomes": {
+        "None": 4
+      },
+      "planned_n": 4,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "B": {
+      "n": 4,
+      "known_net": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "outcomes": {
+        "None": 4
+      },
+      "planned_n": 4,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "C": {
+      "n": 4,
+      "known_net": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "outcomes": {
+        "None": 4
+      },
+      "planned_n": 4,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "D": {
+      "n": 4,
+      "known_net": 0.0,
+      "lower": -1.0,
+      "upper": 1.0,
+      "outcomes": {
+        "None": 4
+      },
+      "planned_n": 4,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        1.0
+      ]
+    }
+  },
+  "contrasts": {
+    "solver_unit": {
+      "observed_complete_families": 1,
+      "missing_families": [],
+      "finite_event_difference": 0.0,
+      "family_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_plain": {
+      "observed_complete_families": 1,
+      "missing_families": [],
+      "finite_event_difference": 0.0,
+      "family_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    },
+    "price_with_solver": {
+      "observed_complete_families": 1,
+      "missing_families": [],
+      "finite_event_difference": 0.0,
+      "family_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "Horizon plus admitted existing-certificate physical completion W-L events; same policy both prices. Solver contrast includes tail policy. Not infinite WDL; incomplete capped prefixes descriptive only."
+    }
+  },
+  "selected_equals_baseline": false,
+  "full_planned_B_to_D": {
+    "finite_event_bounds": [
+      0.0,
+      0.0
+    ],
+    "infinite_outcome_bounds": [
+      -2.0,
+      2.0
+    ],
+    "meaning": "All frozen planned DEV cases; missing/early games remain uncertain. These are missing-data bounds, not sampling confidence intervals."
+  },
+  "seconds": 0.14211069999146275,
+  "proof_conversion": {},
+  "raw_games_sha256": "900f4bb58a9f283fe293f5feaa8691f851a1eb4df001304cc79df25b4b6bb760"
+}
