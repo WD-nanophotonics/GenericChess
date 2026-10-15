@@ -1,4 +1,4 @@
-# DEV_AUX current mainline —2026-10-15 segment62 ACTIVE
+# DEV_AUX current mainline —2026-10-15 segment62
 
 ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. PUBLIC anonymousDot/Chat;
 failedPRIVATE superseded. Checkedprojectcontent allowed, sensitiveoriginals
@@ -32,3 +32,16 @@ messagecontextonly, no sourceadoption/rerun/crosswrite. DifferentNative engines
 andcoldcompiler/precompiledadmissiondenominators notpooled. Nextauditclosed
 rangecheck, seal/restoreexactsource/evidence, publishfixedrevision forDotreview.
 Old1808partial18/48CLOSED, noresumingoldcaps.
+
+Closing62: Dot read397source/report(notexecution); adoptzero-costexactempirical
+gridcheck.1909 confirmsoptimalset{2,4}/strictlearnerregret0, notoptimization
+failure/structuralnonidentifiability.1908 zero-theta recordedcost~2%; don'tbuild
+largeopportunityfilter. Onlycommonpre-priceprefix conditioning ispricefree.
+Nextfirst auditALL11firstdifferentactionpairs andrawR/Ntradeoffs fromfullpublic
+prestates beforechoosing a boundedfixedcontinuation contrast. No newprice/DEVfit.
+
+Segment62 ended66.928min/safe_checkpoint accepted/4stages/manualqualityPASS.
+313working+313independentrestoredtests; all496games/10435moves/8763bindings
+replayed fromexactarchives, no Native/proofcalls inrestore. Dotreplyread397
+source/notexecute, adopted1909regret0check. PRIMARYef9d4a39accountingmessage
+only; no sourceadoption orcounterdenominatorpooling. PatrolACTIVE/nextmemo ready.

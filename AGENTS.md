@@ -261,7 +261,7 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment62 ACTIVE
+# DEV_AUX current scope —2026-10-15 segment62
 
 ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. User-approved material
 plusfixedproof actualW-L remainsauxiliary, no default/UI/mainmerge. Current
@@ -275,7 +275,8 @@ census/independentcoverage pinsKK/KKNabsence; new48costpairs24/24paths/outcomes
 equal120.975->77.864s, CURRENTverification andnormalcapunchanged. UNKNOWNnotdraw,
 no specializedwinningtablepolicy. Otherfingerprints fallbackcompleteprover.
 Oldresults/caps/errors retained. Futurecertretention0actualmatches, no framework.
-Dot61review not62execution; PRIMARYmessagecontextonly. Mainline/memo ownnextsteps.
+Dotread397report/filter/not62execution; empiricalgridcheckadopted.
+PRIMARYmessagecontextonly. Mainline/memo ownnextsteps.
 
 ## Current user publication grant2026-10-15
 

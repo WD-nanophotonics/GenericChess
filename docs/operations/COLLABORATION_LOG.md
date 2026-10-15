@@ -1478,7 +1478,7 @@ UNKNOWN, noDEV/humanfit/oldcapextension. PUBLIC unchanged; source/evidence actua
 contentchecked, sensitiveoriginals ignored. Finalfixedrevision deliveredafter
 safecompletion; delivery isnot Dotread/execution or PRIMARYadoption.
 
-## DEV_AUX2026-10-15 segment62 — ACTIVE checkpoint
+## DEV_AUX2026-10-15 segment62 — completed66.928minutes
 
 Own sidemission only, PRIMARY readonly; PUBLIC unchanged/checkedprojectcontent
 authorized, sensitiveoriginals ignored. 192contactlearninggames choose2 onTRAIN
@@ -1505,3 +1505,19 @@ readonly/no sourceexecution/adoption/merge. Different engines/costdenominators
 notpooled. No quietwindow, worker, fees, visibility orschedulechanges.
 Unresolved: sparsepricefeedback, coarseboundaryvsfiniteoptimum, horizon/censoring,
 generalruledeployment; optionalguardqualification isnot universaldeadness.
+
+62 closing scientific correction: Dot actually read397c789a report/filter, not
+executed313tests/496games/census. Exactreply1792081894.957649 adopted/reconciled;
+1909 fullpaidgrid audit proveszero empiricalregret/optimalset{2,4}, so no
+optimizerfailure onthat edge.1908 zero-theta recordedcostonly~2%, insufficient
+forlargeNormalscreenpipeline. Commonprefix condition only; price-controlled
+futureevent filtering isnot automaticallyprice-independent. Late diagnostics
+are directGit supplements, immutablearchives keepallrawinputs. No routine
+replyloop ornewworkers; finalfixedrevision delivery remains separatefromDotread.
+
+ClosingPRIMARY23d1aba0/ef9d4a39messages read, NO local sourceexecution/adoption:
+reserve remainsresearch-only; NativeAPI nodes excludesq, main+q totalcorrection
+retains1044queries/366phasecaps/actions/outcomes. Differentenginecounterunits
+notpooled. Own62safe_checkpoint accepted66.928min/4stages/manualqualityPASS;
+patrolACTIVE, allproducersclosed, memo3executabletasks. Source415/evidence109
+archives immutable, late1907-1909diagnostics/finalmetadata directGit.
