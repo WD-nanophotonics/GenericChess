@@ -8,6 +8,22 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
+VERSIONED_WIDE_NATIVE_AND_PROMOTION_CLOSURE.md is latest. Private V2/payload5
+semantic1024 preserves17roots/1301edges and18new fullroots/2963actions;216fresh
+queries give72resourcepairs23deeper49same0shallower,73matching-policy scores equal.
+Three32 preparation families stay censored; no strength/full-domain claim.
+Actual semantic promotion capacity defect fixed at ca143172 (4old failures,
+62focused/2563full pass). New exact initial-attack generator rejection preserves
+7accepted hashes/8attempt+RNG records;79.8s->41.7s scoped cost, final2575tests pass.
+Product board/V1/defaults unchanged. Next: per-rules capability/backend binding
+and explicit V1/V2 coexistence/fallback; do not activate global module swapping.
+AUX52 fixed e4634d72 report read: small-board WDL positive, transfer/identifiability
+unresolved; no price-default adoption or duplicate auxiliary work. Old q0 hard
+metadata mismatch was unused configuration, not default checked extensions;
+31same-policy prior pairs agree. Prior q-ordering negatives all retained.
+
+Prior q frontier decision and frozen evidence remain:
+
 Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md is latest. Select price-independent
 binary target-enemy q frontier ordering; ALL candidates/fullchecked rules/history
 remain.20newclosedD2/q4 pairs agree;kernel/caller0.7991/0.9236,2slowpairs retained.

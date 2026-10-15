@@ -141,7 +141,7 @@ checks pass. Coreq4 remains supported through Core; independent Native search is
 q0. Search/evaluation/ordering/TT/UI policies are unchanged. PRIMARY publishes
 sandbox backend only; user-maintained UI Test integration remains separate.
 
-## Consecutive-action history cache repair â€”2026-10-13
+## Consecutive-action history cache repair —2026-10-13
 
 Backend commit f88c0930eed09f55e12d2f909704d868a0b665d8 fixes wrong TT reuse
 between complete legal histories with identical boards but different future
@@ -156,7 +156,7 @@ engine defaults. Scope, negative completion results and restored temporary-test
 validation: ../research/CORE_CHECK_TRANSPORT.md; correctness witness/tests:
 ../research/HISTORY_ACTION_CACHE.md.
 
-## Mixed q ordering opt-in â€”2026-10-13
+## Mixed q ordering opt-in —2026-10-13
 
 `SearchTuning(use_ordered_qsearch=True, use_ordered_qsearch_in_check=False)`
 orders ordinary q nodes with the existing orderer and keeps checked evasions
@@ -192,7 +192,7 @@ Both use existing Native functions; no new Native ABI/build feature is required.
 Unsupported providers retain Core; required errors propagate. Core still owns
 complete actual history, terminal precedence, declarations and checked commits.
 Do not expose this implementation option as a new UI task or silently enable it.
-Check-alone transport lost cost; combined actual consumers saved locally1.5â€“5.1%,
+Check-alone transport lost cost; combined actual consumers saved locally1.5–5.1%,
 while fresh fixed costs were mixed and equal-time completed horizons unchanged.
 Default/UI/PVS/price policy stays.2,341 active checks/45 focused pass, candidate
 entry-cancel failure and same-object retry fixed before publication. See
@@ -204,7 +204,7 @@ binding map, with original tuple handling for pass/legacy/unhashable inputs.
 No consumer activation, new option, Native rebuild or UI integration is required.
 Current full2349 and focused154 qualification includes value-equal reconstructed
 EP/promotion/drop actions and full history/cache restoration. Local fixed-work
-savings1.90â€“5.10percent are conditional; resource curves show no deeper retained
+savings1.90–5.10percent are conditional; resource curves show no deeper retained
 decision. Evidence: research/CORE_BINDING_MEMBERSHIP.md.
 
 2026-10-13: square_to_index avoids temporary BoardShape only for exact positive builtin int. All other extent/error behavior stays;2356 tests pass. No option/Native rebuild/UI work required; consumer process restart loads the Python change. Private prefix-free incoming schedule is research evidence only, unavailable as a product flag. Native20-board remainsunsupported, complete Core fallback retained. See research/COLD_RULE_COORDINATE.md and PREFIX_FREE_INCOMING.md.
@@ -241,7 +241,7 @@ existing meaning. None means not reported, including other player backends.
 Existing positional constructors keep their order. Consumers may ignore or
 show these diagnostics; no UI/Native/default policy change is required.
 
-## Generic root terminal wins â€”2026-10-14
+## Generic root terminal wins —2026-10-14
 
 AlphaBeta root scans now recognize any Core-authoritative terminal whose winner
 is the root side, including stalemate-loss and history-dependent continuous-check
@@ -351,3 +351,15 @@ NativeSemanticCompilationReport.estimated_bytes also fixes quadratic geometry
 accounting and explicitly remains rough diagnostic numeric storage, not actual
 C allocation or a safety upper bound. Runtime rule payloads stay unchanged.
 Evidence/limits: ../research/Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md.
+
+
+## Initial generation attack rejection, 2026-10-15
+
+The existing atom-only generator rejects an initially attacked anchor before
+building deterministic promotion/drop masks. Accepted candidates still run the
+full compiler/validator and existing opening filters. Eight paired seed records
+preserve attempt counts/RNG states and seven accepted rule hashes, with one
+shared16-attempt exhaustion; full2575 tests pass. No option, Native rebuild or UI
+integration is needed for this Python generator change. Consumers load it after
+process restart. Semantic64-target support described above still requires the
+Native rebuild. Private wide V2 remains a research artifact, not a backend flag.
