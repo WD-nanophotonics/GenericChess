@@ -1,27 +1,24 @@
 {
-  "status": "SOURCE_READY_EVIDENCE_LATER",
-  "source": {
-    "archive": "results/dev_aux/SOURCE_REPRO_20261015_60.zip",
-    "files": 338,
-    "bytes": 1039579,
-    "sha": "6c89ad53ef9ae558507cb8491bf1ba4f5b28d5e027935f18f2ba572311a35420",
-    "member_sha_crc": true,
-    "publication_copies": [
-      {
-        "file": "results/dev_aux/task1827/plan.json",
-        "original_sha": "80630c7c32942b24c1e526c66a97cf5acd822c169bf60a9c269f80388c2b23d7",
-        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
-      },
-      {
-        "file": "results/dev_aux/task1829/plan.json",
-        "original_sha": "3a1f2502ccab0c0ce4a3db9435ac0e5dd07f02dd4b770921ff5c96337070fb04",
-        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
-      },
-      {
-        "file": "results/dev_aux/task1830/plan.json",
-        "original_sha": "cc92aba67dd7794f53b4adc44ffca7eae31902302c88e26e9aa591ea7841be8f",
-        "change": "Absolute project-root manifest paths made relative; original preserved privately and in prior exact archive, hashes/budgets/results unchanged."
-      }
-    ]
-  }
+  "status": "ALL_CRC_MEMBER_SHA_VERIFIED",
+  "archives": [
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_20261015_60.zip",
+      "sha256": "6c89ad53ef9ae558507cb8491bf1ba4f5b28d5e027935f18f2ba572311a35420",
+      "bytes": 1039579,
+      "members": 339
+    },
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_CURRENT_20261015_60.zip",
+      "sha256": "981efc0172f24404ce3525b36d2c69aebc35aa2ca31ba42aef54ce280135c3fe",
+      "bytes": 1067327,
+      "members": 350
+    },
+    {
+      "path": "results/dev_aux/EVIDENCE_20261015_60.zip",
+      "sha256": "799e0a5e3154a52123e4228e167f90ed9518a0fe7a08b6f34bd74c6a2bbcac8c",
+      "bytes": 2056474,
+      "members": 94
+    }
+  ],
+  "scope": "SourceCURRENT283restored, initial279retained. Evidence prefinishseal/directGitfinishlater. No Native/compiler binary or account originals."
 }

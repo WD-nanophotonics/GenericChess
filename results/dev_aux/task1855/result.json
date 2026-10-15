@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE_OFFLINE_OPPORTUNITY_ONLY",
+  "calls": 3322,
+  "unique_complete_keys": 1212,
+  "eligible_keys": 1211,
+  "logical_signature_mismatches": 0,
+  "proof_seconds": 652.5936404003587,
+  "possible_post_first_completion_calls": 2110,
+  "possible_avoided_paid_proof_seconds": 318.7824378001387,
+  "possible_avoided_already_complete_proof_seconds": 318.7824378001387,
+  "possible_avoided_proof_nodes": 4523092,
+  "possible_share": 0.48848535760258,
+  "proof_reason_counts": {
+    "node_budget": 2614,
+    "no_forced_win_in_exhausted_tree": 597,
+    "finite_session_all_defense_certificate": 110,
+    "verification_time_budget": 1
+  },
+  "source_sha": {
+    "results/dev_aux/task1848/moves.jsonl": "e4e6bedcb077eea53071d287f570be41d3568a27fe0dc06373a37c5bcb8352cf",
+    "results/dev_aux/task1848/games.jsonl": "aba592bd1d5b666442f681ebb2faa5ee3d2da3aab5f45e760b512ac86434d783",
+    "results/dev_aux/task1848/plan.json": "64ba0a73eb67f2637f2b92bc81812cae6a23fc7fd88b319766de55e9c0babdf1"
+  },
+  "seconds": 0.07687089999672025,
+  "new_go_or_proof_or_games": 0,
+  "limits": "Not measured cache savings or a current-policy replay. Every hit still pays admission/key/consumerverification. Time-cutoff eligibility and shortened total deadlines can change policy opportunity. Fixed newphase workload differs materially from old768query microprobe, so its8percent cannot be generalized here. No bank integrated and no threshold tuned on DEV."
+}

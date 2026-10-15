@@ -1,0 +1,415 @@
+{
+  "status": "COMPLETE_RETROSPECTIVE_DIAGNOSTIC",
+  "scope": "All3previouslydeclared initial grid prices shown, no cherry-picked initial or fresh validation claim. TRAIN bootstrap describes exposed TRAIN sample only, not calibrated generalization; changing root law AND allocation prevents causal attribution of1825vs1848pricechanges.",
+  "results": [
+    {
+      "task": 1825,
+      "proof": false,
+      "selected": 1440,
+      "nonflat_train_families": 6,
+      "train_leave_one_family_out_selections": {
+        "1440": 16
+      },
+      "train_bootstrap20000_selection_counts": {
+        "1440": 16906,
+        "360": 1154,
+        "720": 1940
+      },
+      "train_bootstrap_all_three_strict_paths_converge": 13812,
+      "train_bootstrap_flat": 256,
+      "all_initial_DEV": [
+        {
+          "initial": 360,
+          "learned": 1440,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.09375,
+            0.09375
+          ],
+          "role_means": {
+            "0": -0.0625,
+            "1": 0.0625
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 10,
+            "WIN->WIN": 14,
+            "LOSS->LOSS": 3,
+            "UNKNOWN->DRAW": 1,
+            "WIN->UNKNOWN": 1,
+            "DRAW->UNKNOWN": 2,
+            "UNKNOWN->WIN": 1
+          }
+        },
+        {
+          "initial": 720,
+          "learned": 1440,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.09375,
+            0.09375
+          ],
+          "role_means": {
+            "0": -0.0625,
+            "1": 0.0625
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 11,
+            "WIN->WIN": 14,
+            "LOSS->LOSS": 3,
+            "UNKNOWN->DRAW": 1,
+            "WIN->UNKNOWN": 1,
+            "UNKNOWN->WIN": 1,
+            "DRAW->UNKNOWN": 1
+          }
+        },
+        {
+          "initial": 1440,
+          "learned": 1440,
+          "identical_cell": true,
+          "mean": 0.0,
+          "family95": [
+            0.0,
+            0.0
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 13,
+            "WIN->WIN": 15,
+            "LOSS->LOSS": 3,
+            "DRAW->DRAW": 1
+          }
+        }
+      ]
+    },
+    {
+      "task": 1825,
+      "proof": true,
+      "selected": 1440,
+      "nonflat_train_families": 7,
+      "train_leave_one_family_out_selections": {
+        "1440": 13,
+        "720": 3
+      },
+      "train_bootstrap20000_selection_counts": {
+        "1440": 11631,
+        "720": 8365,
+        "360": 4
+      },
+      "train_bootstrap_all_three_strict_paths_converge": 16542,
+      "train_bootstrap_flat": 4,
+      "all_initial_DEV": [
+        {
+          "initial": 360,
+          "learned": 1440,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.09375,
+            0.09375
+          ],
+          "role_means": {
+            "0": -0.0625,
+            "1": 0.0625
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 10,
+            "WIN->WIN": 14,
+            "LOSS->LOSS": 3,
+            "UNKNOWN->DRAW": 1,
+            "WIN->UNKNOWN": 1,
+            "DRAW->UNKNOWN": 2,
+            "UNKNOWN->WIN": 1
+          }
+        },
+        {
+          "initial": 720,
+          "learned": 1440,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.09375,
+            0.09375
+          ],
+          "role_means": {
+            "0": -0.0625,
+            "1": 0.0625
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 11,
+            "WIN->WIN": 14,
+            "LOSS->LOSS": 3,
+            "UNKNOWN->DRAW": 1,
+            "WIN->UNKNOWN": 1,
+            "UNKNOWN->WIN": 1,
+            "DRAW->UNKNOWN": 1
+          }
+        },
+        {
+          "initial": 1440,
+          "learned": 1440,
+          "identical_cell": true,
+          "mean": 0.0,
+          "family95": [
+            0.0,
+            0.0
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "transitions": {
+            "UNKNOWN->UNKNOWN": 13,
+            "WIN->WIN": 15,
+            "LOSS->LOSS": 3,
+            "DRAW->DRAW": 1
+          }
+        }
+      ]
+    },
+    {
+      "task": 1848,
+      "proof": false,
+      "selected": 720,
+      "nonflat_train_families": 4,
+      "train_leave_one_family_out_selections": {
+        "720": 16
+      },
+      "train_bootstrap20000_selection_counts": {
+        "720": 15667,
+        "360": 4333
+      },
+      "train_bootstrap_all_three_strict_paths_converge": 11731,
+      "train_bootstrap_flat": 1353,
+      "all_initial_DEV": [
+        {
+          "initial": 360,
+          "learned": 720,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.125,
+            0.125
+          ],
+          "role_means": {
+            "0": 0.0625,
+            "1": -0.0625
+          },
+          "transitions": {
+            "WIN->WIN": 9,
+            "UNKNOWN->UNKNOWN": 14,
+            "DRAW->LOSS": 1,
+            "UNKNOWN->WIN": 2,
+            "DRAW->UNKNOWN": 1,
+            "WIN->UNKNOWN": 1,
+            "LOSS->LOSS": 2,
+            "DRAW->DRAW": 1,
+            "UNKNOWN->DRAW": 1
+          }
+        },
+        {
+          "initial": 720,
+          "learned": 720,
+          "identical_cell": true,
+          "mean": 0.0,
+          "family95": [
+            0.0,
+            0.0
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "transitions": {
+            "WIN->WIN": 11,
+            "UNKNOWN->UNKNOWN": 16,
+            "LOSS->LOSS": 3,
+            "DRAW->DRAW": 2
+          }
+        },
+        {
+          "initial": 1440,
+          "learned": 720,
+          "identical_cell": false,
+          "mean": 0.0,
+          "family95": [
+            -0.09375,
+            0.09375
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "transitions": {
+            "WIN->WIN": 10,
+            "UNKNOWN->UNKNOWN": 15,
+            "LOSS->LOSS": 3,
+            "WIN->UNKNOWN": 1,
+            "UNKNOWN->WIN": 1,
+            "DRAW->DRAW": 1,
+            "UNKNOWN->DRAW": 1
+          }
+        }
+      ]
+    },
+    {
+      "task": 1848,
+      "proof": true,
+      "selected": 720,
+      "nonflat_train_families": 2,
+      "train_leave_one_family_out_selections": {
+        "720": 16
+      },
+      "train_bootstrap20000_selection_counts": {
+        "720": 17666,
+        "360": 2334
+      },
+      "train_bootstrap_all_three_strict_paths_converge": 17666,
+      "train_bootstrap_flat": 2334,
+      "all_initial_DEV": [
+        {
+          "initial": 360,
+          "learned": 720,
+          "identical_cell": false,
+          "mean": -0.03125,
+          "family95": [
+            -0.125,
+            0.0625
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": -0.0625
+          },
+          "transitions": {
+            "WIN->WIN": 10,
+            "UNKNOWN->UNKNOWN": 14,
+            "DRAW->LOSS": 1,
+            "UNKNOWN->WIN": 1,
+            "DRAW->UNKNOWN": 1,
+            "WIN->UNKNOWN": 1,
+            "LOSS->LOSS": 2,
+            "DRAW->DRAW": 1,
+            "UNKNOWN->DRAW": 1
+          }
+        },
+        {
+          "initial": 720,
+          "learned": 720,
+          "identical_cell": true,
+          "mean": 0.0,
+          "family95": [
+            0.0,
+            0.0
+          ],
+          "role_means": {
+            "0": 0.0,
+            "1": 0.0
+          },
+          "transitions": {
+            "WIN->WIN": 11,
+            "UNKNOWN->UNKNOWN": 16,
+            "LOSS->LOSS": 3,
+            "DRAW->DRAW": 2
+          }
+        },
+        {
+          "initial": 1440,
+          "learned": 720,
+          "identical_cell": false,
+          "mean": -0.09375,
+          "family95": [
+            -0.25,
+            0.0
+          ],
+          "role_means": {
+            "0": -0.0625,
+            "1": -0.125
+          },
+          "transitions": {
+            "WIN->WIN": 11,
+            "UNKNOWN->UNKNOWN": 13,
+            "LOSS->LOSS": 3,
+            "WIN->UNKNOWN": 3,
+            "DRAW->DRAW": 1,
+            "UNKNOWN->DRAW": 1
+          }
+        }
+      ]
+    }
+  ],
+  "prior_opponent_review": [
+    {
+      "task": 1791,
+      "contrast": "BtoD only: fixed opponent within proofenabledpricepair; legacy AtoB jointly changes opponents and is excluded",
+      "strata": [
+        {
+          "role": "BALANCED",
+          "opponent": "UNIT64",
+          "contrast": "price_with_solver",
+          "event_delta": 0.03125,
+          "family95": [
+            -0.046875,
+            0.109375
+          ],
+          "complete_families": 32,
+          "missing_families": []
+        },
+        {
+          "role": "BALANCED",
+          "opponent": "UNIT4096",
+          "contrast": "price_with_solver",
+          "event_delta": 0.078125,
+          "family95": [
+            0.015625,
+            0.140625
+          ],
+          "complete_families": 32,
+          "missing_families": []
+        }
+      ]
+    },
+    {
+      "task": 1792,
+      "contrast": "BtoD only: fixed opponent within proofenabledpricepair; legacy AtoB jointly changes opponents and is excluded",
+      "strata": [
+        {
+          "role": "BALANCED",
+          "opponent": "UNIT64",
+          "contrast": "price_with_solver",
+          "event_delta": 0.0703125,
+          "family95": [
+            0.015625,
+            0.1328125
+          ],
+          "complete_families": 32,
+          "missing_families": []
+        },
+        {
+          "role": "BALANCED",
+          "opponent": "UNIT4096",
+          "contrast": "price_with_solver",
+          "event_delta": 0.03125,
+          "family95": [
+            -0.03125,
+            0.09375
+          ],
+          "complete_families": 32,
+          "missing_families": []
+        }
+      ]
+    }
+  ],
+  "decision": "Do not start an opponent-strength cohort merely assuming stronger opposition always improves price signal:1791and1792 stratum differences reverse direction. Current384quarter-to-phase comparison changes roots too. Need a smaller mechanism/identifiability check before more unchanged games.",
+  "source_sha": {
+    "results/dev_aux/task1825/games.jsonl": "b8ea1e0845132665d7286516eefca810b2ec09e6967d3d3b8464cb567063828a",
+    "results/dev_aux/task1848/games.jsonl": "aba592bd1d5b666442f681ebb2faa5ee3d2da3aab5f45e760b512ac86434d783",
+    "results/dev_aux/task1791/role_report.json": "ac665ee5dd8503791533b4c1474882a9522c1f35fe4b3b94d8cb4c73e533c0f8",
+    "results/dev_aux/task1792/role_report.json": "22638c35700650ac17cf280917f5e6eb5aa25acab2f1ad413260d47f1b5a64bc",
+    "results\\dev_aux\\task1853\\analysis.py": "5eb7858113a78765ecbe562b7dd1db6fe76629b54bc80ee76ff0fd150fc32635"
+  },
+  "new_go_or_games": 0
+}

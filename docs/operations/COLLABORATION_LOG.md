@@ -1416,3 +1416,23 @@ or locally adopted. Dot prior source/cost advice retained; no claim Dot has
 read/executed these new prototypes or cohort. Full raw coverage private.
 Attributed2hpolicy clarification preserved; latest direct heartbeat here still
 1hassessment gate, current short runs unaffected. No otherAgentconfig writes.
+
+## DEV_AUX segment60 closing research evidence2026-10-15
+
+Completed384new actual-session phase-budget games/5013moves/4512go; source/
+fullhistory/priceACKs/ranks/results independentlyaudited. TRAINbaselineR/N1
+selected beforeDEV; hybridDEV negativeagainst other2initials. Proofcost652.6s
+dominates770.2s, so no largerbudget/defaultadoption or humanprice claim.
+Completed-result bank requires full target+verificationcaps. Self-foundtarget
+bug and Dot source806verificationbudgetcounterexample reproduced3realfailed
+controls, fixed; Dot didnot execute tests/games or inspect laterfix.283working/
+restoredtestsPASS. New192query actualconsumer probe cold42.708/bank22.691s,
+4qualifiedwins each, no cache-enabledlearning.4exposedrequests/2roots physically
+execute16winningmoves. Existingoldquery8percent is not generalized to newwork.
+PRIMARY75493026source-index/reply result Slackcontextonly; no execution/adoption
+or crosswrites. Ownfullrawcoverage/reconcile6matchedreply versions privately
+retained. Public checked source/evidence only; actualworkspacepaths made
+relative in outgoingplan copies, originals preserved. 1859adaptercontractbegun
+with real276verifier-timeout negativecontrol and explicit doubledverification
+cost. ScienceOPEN, next research must address priceidentifiability/generalization
+as well as cost; no unconditional newopponent-strength batch or oldcap restart.

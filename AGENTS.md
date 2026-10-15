@@ -261,22 +261,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment59
+# DEV_AUX current scope —2026-10-15 segment60
 
-Science OPEN; own sidemission, own restored patrol ACTIVE, PRIMARY readonly.
-Later explicit user implementation of material-plus-fixed-proof establishes
-this auxiliary task alongside PRIMARY search comparison; no product takeover.
-Actual Session single-writer chooser and mature-material callback are opt-in.
-NEW public named KRN root law is initialside0/two roles, not old paired-turn
-history import. TRAIN grid selectsR/N2 but matureDEV gain0; UNKNOWN high-R case
-admits opponent forcedwin. Preserve actual W-L/censoring and all negative data.
-Optional batch public-Core model lowers one proof wall cost but currentquarter
-coverage remains unchanged; do not switch learner/opponent/defaults. Actual
-Session verifier/cursor is mandatory before any candidate witness is adopted.
-Old1808partial18/48cap remainsclosed, older GameState cohorts/results retained.
-Current executable tasks live in own NEXT_WORK and LOCAL_MAINLINE; segment56's
-old next1803 plan is completed historical evidence, not a competing live task.
-Checked sources/evidence and costs on sidemission; private originals ignored.
+ScienceOPEN; own sidemission/restoredpatrolACTIVE, PRIMARYreadonly. Explicit
+user material-plus-fixed-proof implementation remains auxiliary task. Actual
+separate-phase384game experiment completes but does NOT establish effective
+humanprices: TRAINselectsbaselineR/N1, hybridDEV negativeversus otherinitials,
+proof652.6s dominates770.2s. Do not adopt biggerbudget or chase DEVprices.
+Optionalbank nextqualification has realconsumer cost42.708->22.691s on192query
+prefix; keys nowbind requestedtarget AND verificationlimits, historicalreceipt
+not currentverification. No bank-enabledlearning/defaultchange. Preserve
+currentcohort source and old1808partialcap, UNKNOWN and allnegative results.
+Nextadapter must separately account logical/physicalwork and BOTHfill/consumer
+verification under a NEWfrozen total envelope, not extendold2.25s silently.
+Slot276actual verifier-timeout saved as negativeconsumer control.283current
+working/restoredtests; causal evidence and nextactions in mainline/memo.
 
 ## Current user publication grant2026-10-15
 

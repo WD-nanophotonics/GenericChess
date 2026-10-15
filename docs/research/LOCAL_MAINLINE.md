@@ -1,54 +1,33 @@
-# DEV_AUX current mainline —2026-10-15 segment59
+# DEV_AUX current mainline —2026-10-15 segment60
 
-Science OPEN, own sidemission only. PUBLIC enables anonymous Dot/Chat; failed
-Private experiment superseded. Checked project source/data may publish; sensitive
-originals ignored. Current causal authority/isolation decisions in AGENTS.
-PRIMARY search/product/default/UI remains elsewhere; no new Agent/Goal/oldcap.
+Own sidemission/scienceOPEN/PRIMARYreadonly. PUBLIC for anonymousDot/Chat;
+failedPrivate superseded. Checked projectcontent maypublish; sensitive originals
+ignored. Current authority/isolation reasons in AGENTS. No product/default/UI.
 
-## Current decision and reason
+ActualSession separate-phase384game control1848 completes770.196s/5013moves,
+4512Nativequeries,110adoptedproof games physicallywin,23tails280moves. New32
+input-only root families exclude oldorbits; fixedUNIT64proof opponent/roles/
+3prices/H16, trainingselection beforeDEV. TRAINselectsR/N1 bothmodes, only2/16
+hybridtrainfamilies nonflat; learnedhybridDEV versus initial.5/2 is-.03125/-.09375.
+Baseline comparison self-identity0 is not learning success. AtR720 addingproof
+changes no pairedDEV outcomes but cost9.548->115.633s. Proof652.594s dominates.
+Keep largerbudget optional; oldmu changed too, no causalold-to-newprice claim.
 
-Opt-in actual Session proof/material entry and qualified mature callback now
-execute real games with one physical writer and full record/history/results.
-Keep optional: Native TRAIN selectsR/N2 but DEV B-to-D0, role effects cancel.
-A censored high-R endpoint admits a verified opponent win; UNKNOWN cannot be
-called draw or proof that material improvement converted into actual victory.
-Do not change the existing learner/opponent or tune DEV roots/prices/weights.
+Threshold doesnotreducevisits; terminalorder cheapcoverage unchanged; checkorder
+harmsdeep proof. Old1808partial18/48closed, no oldcap/horizon reward extension.
+Bank full keys include target and bothverificationlimits after3actual failed
+controls. Historicalverified receipt never replaces currentcursor verification.
+Old768queryonlyprobe saves8percent, not transferable. New192query actualconsumer
+probe42.708->22.691s,4adoptablewins both,0deadlines; firstprefix/workloadscopeonly.
+Fourexposedrequests/2records actual16moveswin, no cache-enabledprice trial.
 
-## Evidence
+283working+independentCURRENTrestoretests,349sourcefiles. Full5013move/literal
+Session replay,4512completecommands and2740ACK/1772clears independentlybound.
+Dot source-reviewed806, not executed; verification-key advice adopted, later
+fix/source not claimedread. PRIMARY75493026contextonly, no crosswrites.
 
-1822NEW public named KRN32root law: initialside0/two candidate roles, exact six-piece
-inventory; not oldpaired-turn import/history reset.1823/1825 jointly768complete
-short-policy games/9753moves, all independently public+literal replay audited;
-196adoptedproof games physicallywin,30tails166moves. PythonDEV price+.03125 CI
-includes0; matureDEV0 CI[-.09375,.09375]. All3TRAINstarts endgridR/N2, not uniqueness.
-Mature material-only Fairy is jointly leaf/native/capture aligned;4421go actual
-overshoot retained. Actor/perft qualification and one owned engine, no stockNNUE.
-
-1827four exposed censored endpoints:24calls, one opponent forcedwin rank19;
-original H16 scores/caps unchanged.1829optional batch Core forward model halves
-that same9634node proof1.463->.673s, but currentquarter both0/8. Keep oldsolver.
-Actual Session verifier remains authority, no private state injection/Core edit.
-1830NEW finite maxply4reference16games/32labels46306nodes,0falsewins;1832all46290
-edges fullstate/record/result match. Old1808partial18/48cap remainsclosed.
-
-221focusedtests, independent finalrestore/audits/witness receipt in1833. Mature
-74file GPL source closure builds29freshobjects,96querypairs/32perfts match,
-not bit-identical/fresh-machine acceptance; oldbinarypin preserved. Exact source/
-evidence ZIP manifests retain failed edits/initialmissingactor archive and limits.
-Dot source-reviewed227b8c7f, not tests/games; atomiccommit regression adopted.
-
-## Next useful decisions
-
-Before a new price cohort, assess whether proof visit caps should be separated
-from Native caps under a predeclared full wall budget; current heterogeneous-node
-quarter bottleneck and censoring must be explicit. No result-driven old extension.
-Qualify an actual complete-policy entry/control before any changed allocation
-learning; preserve fixed opponent/roles/unknowns. Generic semantic scope and source
-closure take priority over more unchanged games. Exact executable tasks in memo.
-
-Closing59:223current working/restoredtests; Dot readcce source, not executed.
-Concrete lost eager/frontier/transition receipt fixed after2failed-before checks;
-future assay must log dict(decision.proof_stats).4421fullNativehistorycommands
-independently bound,14saved defense leaves physicallywin. Phase probes showproof
-.313s vsnormal.088/admission.008; next task reduces proof visits.1838derived
-threshold-progress obstacle is the begun feasibility step; no new price cohort.
+Next actualstep1859: opt-in cache-phase adapter with physical/logical receipts
+and frozen totalwall includingfillANDconsumer verification. Include1860slot276
+real verifier-timeout negativecontrol alongside successfulcases. No newlearner
+cohort merelybecausecache isfaster; price generalization remainsunproven.
+Exact executableMain/Backup1/Backup2 in own NEXT_WORK.

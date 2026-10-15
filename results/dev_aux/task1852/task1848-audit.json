@@ -1,0 +1,42 @@
+{
+  "status": "PASS_ALL_PHYSICAL_SLOTS",
+  "folder": "results\\dev_aux\\task1848",
+  "games": 384,
+  "moves": 5013,
+  "actual_native": 4512,
+  "proof_games": 110,
+  "proof_steps": 110,
+  "all_adopted_proof_games_physically_won": true,
+  "tail_games": 23,
+  "tail_moves": 280,
+  "terminal": {
+    "checkmate": 174,
+    "ongoing": 194,
+    "repetition": 8,
+    "stalemate": 8
+  },
+  "exit_causes": {
+    "reported_node_overrun": 2693,
+    "time_budget": 135,
+    "external_search_return": 1684,
+    "certificate": 501
+  },
+  "node_overruns": 2704,
+  "phase_seconds": {
+    "admission_seconds": 4.7748489005316515,
+    "proof_seconds": 652.5936404003587,
+    "verification_seconds": 4.934928199931164,
+    "normal_seconds": 92.36236610008928
+  },
+  "proof_work": {
+    "frontiers": 2021210,
+    "transitions": 9325875,
+    "iterations": 2021210,
+    "peak_depth": 22776,
+    "eager_board_successors": 9499544,
+    "claims_assessed": 0
+  },
+  "full_native_history_bindings": 4512,
+  "selection_scope": "fullTRAIN-only deterministic selector; current rows not altered",
+  "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+}

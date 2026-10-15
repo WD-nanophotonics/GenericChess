@@ -61,7 +61,7 @@ def test_incomplete_or_unsupported_response_never_cached(reason):
 
 def test_bad_certificate_cannot_enter_bank():
     s=session(claim(0,'WIN'));good=prove_session_win_pn(s,seconds=3.)
-    bad=replace(good,certificate=replace(good.certificate,target=1))
+    bad=replace(good,certificate=replace(good.certificate,tree=replace(good.certificate.tree,rank=0)))
     bank=SessionLogicalProofBank(lambda *a,**k:bad)
     for _ in range(2):
         q=bank.query(s,seconds=3.)
@@ -102,3 +102,37 @@ def test_cancellation_during_independent_verification_preserves_cost_no_entry(mo
     q=bank.query(s,seconds=3.,cancel=lambda:flag[0])
     assert q.logical_result.status=='UNKNOWN' and q.logical_result.reason=='cancelled'
     assert not q.stored and q.actual_proof_nodes==2 and q.actual_verification_nodes>0
+
+
+def test_valid_other_target_certificate_is_not_a_requested_target_win():
+    from scripts.generic_session_win_proof import verify_session_certificate
+    s=session(claim(0,'WIN'));actual=prove_session_win_pn(s,target=0,seconds=3.)
+    assert verify_session_certificate(s,actual.certificate,seconds=3.)['verified']
+    bank=SessionLogicalProofBank(lambda *a,**k:actual)
+    q=bank.query(s,target=1,seconds=3.)
+    assert q.logical_result.status=='UNKNOWN' and q.logical_result.reason=='certificate_target_mismatch'
+    assert not q.stored and not q.hit and q.actual_proof_nodes==actual.nodes
+
+
+@pytest.mark.parametrize('verification_limit',[dict(verification_max_nodes=0),dict(verification_seconds=0.)])
+def test_current_verification_eligibility_cannot_borrow_larger_cached_budget(verification_limit):
+    s=session(claim(0,'WIN'));bank=SessionLogicalProofBank()
+    warm=bank.query(s,seconds=3.);assert warm.stored and warm.verification['verified']
+    hot=bank.query(s,seconds=3.,**verification_limit)
+    cold=SessionLogicalProofBank().query(s,seconds=3.,**verification_limit)
+    assert not hot.hit and not hot.stored and not hot.verification['verified']
+    assert not cold.hit and not cold.stored and not cold.verification['verified']
+
+
+def test_hit_history_is_not_current_consumer_verification_or_free_commit():
+    from scripts.generic_session_win_proof import SessionStrategyCursor
+    from scripts.generic_win_proof import CertificateVerificationError
+    s=session(claim(0,'WIN'));bank=SessionLogicalProofBank()
+    assert bank.query(s,seconds=3.).verification_scope=='THIS_QUERY'
+    q=bank.query(s,seconds=3.)
+    assert q.hit and q.verification_scope=='HISTORICAL_SAME_LIMITS' and q.actual_verification_nodes==0
+    with pytest.raises(CertificateVerificationError):
+        SessionStrategyCursor(s,q.logical_result.certificate,max_nodes=0,seconds=3.)
+    cursor=SessionStrategyCursor(s,q.logical_result.certificate,max_nodes=65536,seconds=3.)
+    assert cursor.receipt['verified'] and cursor.receipt['nodes']>0
+    assert cursor.commit(s,cursor.choose(s)).winner==0

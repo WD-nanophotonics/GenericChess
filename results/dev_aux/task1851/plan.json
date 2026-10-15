@@ -1,0 +1,20 @@
+{
+  "question": "Can conservative completed-result reuse reduce physical proof cost for the first768chronological oldqueries, without confusing logical counts, timeouts or actual verified wins?",
+  "source_sha": {
+    "results\\dev_aux\\task1851\\benchmark.py": "28ee13d9403cd2b3f7e4825fea200ab820f2f61c7486d1323eac742ae8e4bd3e",
+    "scripts/generic_session_proof_bank.py": "a063401baed999abeef88089c4a618b8e7ad5faf28548737e9aae580ad546951",
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "scripts/generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "results/dev_aux/task1825/games.jsonl": "b8ea1e0845132665d7286516eefca810b2ec09e6967d3d3b8464cb567063828a",
+    "results/dev_aux/task1825/moves.jsonl": "1a8d3108adc28cabfb0a099392cc7fa699d669558a0e79d5cecd61a68107dd32",
+    "results/dev_aux/task1822/rules.json": "75976d1ec63d0b324485ab28af6469c0eb0c4ecbb66f179d2383db1fb6d1e410"
+  },
+  "queries": 768,
+  "proof_seconds": 0.0625,
+  "proof_depth": 64,
+  "verification_seconds": 0.5,
+  "verification_nodes": 65536,
+  "capacity": 256,
+  "whole_seconds": 180,
+  "scope": "Exposed input replay, no new gameplay/price/labels. Both tracks charge actual replay admission and independent verifier on misses; bank hits retain logical source counts but physical proof0. First query order fixed, per-query method order counterbalanced. Timing/noise may change timeout outcomes: no unchanged-policy or general speedup claim, cache not integrated into chooser."
+}

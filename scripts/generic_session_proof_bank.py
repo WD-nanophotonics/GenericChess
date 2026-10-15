@@ -6,6 +6,8 @@ budget in a comparison. A future player needs explicit separate phase caps.
 Only node-completed/exhausted UNKNOWN and independently verified WIN are stored;
 time/cancel/depth/unsupported/failed-verification outcomes never become entries.
 No position-only key, disk cache, normal move/price cache or cross-agent state.
+A hit returns HISTORICAL verification under the identical declared limits; an
+adopting SessionStrategyCursor must still verify under its current allowance.
 """
 from collections import OrderedDict
 from dataclasses import dataclass
@@ -29,6 +31,7 @@ class BankQuery:
     origin_reference_seconds: float
     verification: object | None
     key: tuple
+    verification_scope: str = 'NONE'
 
 
 class SessionLogicalProofBank:
@@ -50,7 +53,8 @@ class SessionLogicalProofBank:
         _Budget(verification_max_nodes, verification_seconds, cancel, _clock)
         root, record, terminal = session.state, session.to_record(), session.result
         key = (session.compiled.ruleset_fingerprint, repr(record), repr(root),
-            repr(terminal), target, max_nodes, seconds, max_depth)
+            repr(terminal), target, max_nodes, seconds, max_depth,
+            verification_max_nodes, verification_seconds)
         result = None
         proof_nodes = verifier_nodes = 0
         proof_time = verifier_time = 0.
@@ -75,6 +79,9 @@ class SessionLogicalProofBank:
                 b.poll()
                 eligible = result.status == 'UNKNOWN' and result.reason in (
                     'node_budget', 'no_forced_win_in_exhausted_tree')
+                if result.status == 'PROVEN_WIN' and getattr(result.certificate, 'target', None) != target:
+                    result = SessionProofResult('UNKNOWN', None,
+                        'certificate_target_mismatch', proof_nodes, proof_time, 0)
                 if result.status == 'PROVEN_WIN':
                     # Verification has its own declared allowance. The proof
                     # query wall deadline cannot silently prohibit its check.
@@ -103,4 +110,5 @@ class SessionLogicalProofBank:
         finally:
             assert _same_state(session.state, root) and _same_state(session.to_record(), record) and session.result == terminal
         return BankQuery(result, hit, stored, proof_nodes, verifier_nodes,
-            b.elapsed(), proof_time, verifier_time, origin_time, None if verification is None else dict(verification), key)
+            b.elapsed(), proof_time, verifier_time, origin_time, None if verification is None else dict(verification), key,
+            'NONE' if verification is None else 'HISTORICAL_SAME_LIMITS' if hit else 'THIS_QUERY')

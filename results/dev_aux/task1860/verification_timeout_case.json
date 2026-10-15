@@ -1,0 +1,133 @@
+{
+  "slot": 276,
+  "family": 23,
+  "R": 1440,
+  "phase": "DEV",
+  "candidate_side": 0,
+  "before_record": {
+    "actions": [
+      {
+        "from": [
+          3,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          3
+        ]
+      },
+      {
+        "from": [
+          1,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          0
+        ]
+      },
+      {
+        "from": [
+          1,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": [
+          0,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      }
+    ],
+    "initial_setup_key": "family-23",
+    "resigned_by": null,
+    "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+    "schema_version": 3
+  },
+  "before_state_sha": "35d608eb29a7ca53ae3583f718a36dfbc504181aba22e7424d93c54038b8f1f3",
+  "receipt": {
+    "slot": 276,
+    "ply": 4,
+    "side": 0,
+    "budget": 4096,
+    "choice": {
+      "kind": "board",
+      "from": [
+        3,
+        3
+      ],
+      "to": [
+        2,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    "source": "EXTERNAL_SEARCH",
+    "proof_reason": "verification_time_budget",
+    "exit_cause": "reported_node_overrun",
+    "proof_nodes": 15760,
+    "verification_nodes": 283,
+    "search_nodes": 4099,
+    "seconds": 1.6258861999958754,
+    "commit_seconds": 0.00022319999698083848,
+    "tail": false,
+    "phase_limits": {
+      "normal_nodes": 4096,
+      "proof_nodes": 16384,
+      "verification_nodes": 16384,
+      "total_seconds": 2.25,
+      "proof_seconds": 1.5,
+      "verification_seconds": 0.5,
+      "normal_seconds": 0.1
+    },
+    "proof_stats": {
+      "frontiers": 3327,
+      "transitions": 15759,
+      "iterations": 3327,
+      "peak_depth": 28,
+      "eager_board_successors": 16272,
+      "claims_assessed": 0
+    },
+    "admission_seconds": 0.0005371000006562099,
+    "proof_seconds": 1.089373599999817,
+    "verification_seconds": 0.5010948999988614,
+    "normal_seconds": 0.023289000004297122,
+    "before_state_sha": "35d608eb29a7ca53ae3583f718a36dfbc504181aba22e7424d93c54038b8f1f3",
+    "after_state_sha": "fa8849250a4cc314ef8f9991028596ca177bab7b7a1d3b4bfdf6e623f88be0ab",
+    "before_ranks": [
+      null,
+      null
+    ],
+    "after_ranks": [
+      null,
+      null
+    ],
+    "result": {
+      "status": "ongoing",
+      "winner": null,
+      "resigned_by": null,
+      "declaration_id": null,
+      "declared_by": null,
+      "declaration_outcome": null,
+      "declaration_score": null
+    }
+  },
+  "actual_later_outcome": "WIN",
+  "scope": "EXPOSED failed-verification consumer input, not newly labelled theoretical WDL. Original legal normal fallback and reward retained. Include in future adapter qualification, not only4successful requests."
+}
