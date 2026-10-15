@@ -2561,3 +2561,36 @@ technical reply observed, no ack gate. Four subsequent bounded private-hint
 mid-search timer cancellations restore complete roots/retained histories; not
 instruction-exact hint injection or product adoption. Supplemental evidence follows
 in this version. Private originals remain; no new collaborators or boundary writes.
+
+
+## 2026-10-15: checked replies, exact lookup and cold admission
+
+PRIMARY_SANDBOX completed prospective24family/768query reply reuse,64wide calls,
+384counter-free four-cell calls and source/semantic controls. Selected local checked
+reply plus exact first-source lookup. The4board combination is1.17% slower than
+hint alone and its baseline interval crosses1; retained explicitly, no board patch
+or strength claim. All four wall cells retain the same action/depth. Actual plans,
+rows, interactions, errors and costs: ../research/CHECKED_REPLY_REUSE_AND_SOURCE_LOOKUP.md.
+A fresh-process admission/reuse pilot and36rule-price label controls begin the next
+consumer question without new training or duplicated solver work.
+
+DEV_AUX remains owner of its independent sidemission solver/verifier/cursor/learning.
+No new auxiliary result was present in recovered channel roots; this is not a claim
+it was idle. Earlier57/58fixed-source/owner-result limits remain. No new Agent,
+merge, cross-checkout writes, routine acknowledgment or exclusive CPU request.
+Source-based coordination is useful for actual shared defects; no new dependency
+needed waking AUX for a receipt, and no measured single-Agent time-saving percentage.
+
+The original PRIMARY/Dot thread was fully reread, raw saved and receipt-associated;
+rendered code is not byte-certified. One unique technical follow-up supplies the
+COMPLETE prepared reply helper and asks for a concrete accepted-rule counterexample,
+not permission. Actual receipt1792065438.363249; no technical Dot response yet at
+this checkpoint, no automatic resend or approval gate. Source reasoning, Core
+replay, source-built tests, owner reports and delivery remain distinct. A failed
+initial terminal fixture was corrected using actual legal continuations; no hidden
+SAC/OS blockage. Final fixed-SHA result links follow tested publication.
+
+Compiler attribution and a small private partition prototype were actually begun
+after Native integration. The prototype has mixed regressions, so Core IR remains
+unchanged; no shared solver/runtime/learning code or auxiliary checkout was edited.
+No quantified collaboration speedup or universal backend speed claim is inferred.

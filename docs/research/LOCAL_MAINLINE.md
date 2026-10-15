@@ -5,7 +5,7 @@ revisable research selection/evidence, not permanent authorization or a diary.
 Previous complete selection/evidence remains at fixed Git
 4f6858b128e38c3b93360d78b7f5de6ad61af695 and its purpose reports/archives.
 
-## Latest user-selected repair â€”2026-10-15 CLOSED
+## Latest user-selected repair —2026-10-15 CLOSED
 
 Decision: close the concrete Slack defects, qualify the changes and publish the
 owner evidence BEFORE resuming mainline experiments. Reason: source review found
@@ -70,14 +70,34 @@ resource families had mutable-baseline contamination; retain/exclude16slots,
 no replacement. Full versions, failure/long-history controls and limits:
 QUIET_CHILD_HISTORY_AND_TRANSFER.md. q/default/evaluation/price policy unchanged.
 
-Next selection: measured post-deferral quiet terminal availability/check cost.
-A fully rechecked sibling-local reply witness private probe32calls has identical
-fields but4board cost1.0305 and16board.8871. Existing23semantic/physical controls pass, but no mid-hint cancellation
-injection/prospective transfer. Not adopted: decide via targeted qualification
-and prospective transfer, or reject if
-engineering/negative small-board cost outweighs the limited benefit. Do not
-repeat unchanged q curves or duplicate AUX solver/learning. Keep full histories,
-promotion/drop/aux/declarations and unsupported fallbacks; science remains OPEN.
+Current additional choice: checked sibling reply reuse plus guarded direct
+first-source lookup, after768prospective hint queries/384counter-free four-cell
+queries, semantic/source qualification and2668normal product tests. Report:
+CHECKED_REPLY_REUSE_AND_SOURCE_LOOKUP.md. Four-cell combined cost ratios
+.9747/.9279/.8917/.8790 by4/8/12/16;4board interval crosses1 and combined is1.17%
+slower than hint alone there. Retain that negative interaction; choose one small
+global implementation on balanced development evidence, no board patch or strength
+claim. This supersedes the unadopted pilot, not old frozen inputs/caps/results.
+No q/default/price/API policy change. Same-rule checked-generator provenance and
+first-match fallback are essential, never arbitrary hints or terminal certificates.
+
+Next selection: measure actual unfamiliar-rule admission/compilation versus
+amortized search before another micro-optimization or q curve. An already-begun
+16fresh-process/64query pilot finds admission81/87percent of first-call pipeline
+at12/16 for one exposed rule each; Python compilation/price dominate native parsing.
+No general latency claim from this small pilot, no admission charge to every move
+of persistent selfplay/arena engines. Actual control/profile4331probe is.475/.855s (1.80overhead); lowering/reverse
+indices dominate, not initial-playability validation. A48call private source
+partition rewrite preserves order/ranks/borrowed rows but has mixed cost ratios
+1.046/.647/1.357/.797: reject immediate universal adoption, no Core IR change.
+Next inspect multiple construction stages and exact IR dependencies before a
+per-compilation reuse prototype; keep65536path fallback, complete geometry and
+initial validation. Otherwise reconsider search-policy allocation with an explicit
+changed premise.
+Retain termination histograms: requested q differs from retained q; qnodes counts
+reserve/depth0 visits and is not measured wasted effort. No policy/default change
+from that histogram alone.36profile label-bijection controls pass, not price truth
+or graph-equivalence proof. No unchanged q rerun or duplicate AUX learning/prover.
 
 AUX historical path-key supplement independently reproduced on PRIMARY's existing
 reference and minimally adopted from its pinned correction. Core unchanged; no

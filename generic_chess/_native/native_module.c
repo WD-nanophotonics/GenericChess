@@ -5468,13 +5468,59 @@ static int gc_semantic_q_history_deferrable(const GCSemanticRules *rules,
     }
     return 1;
 }
+/* A sibling reply is a local hint, always checked against the new child.
+ * It carries no score, terminal certificate, history or transposition authority. */
+typedef struct {
+    GCSemanticAvailabilityProbe base;
+    uint64_t action;
+    int found;
+} GCQuietReplyProbe;
+
+static int gc_quiet_reply_visit(void *context, uint64_t action) {
+    GCQuietReplyProbe *probe = (GCQuietReplyProbe *)context;
+    int status = gc_semantic_runtime_probe_action_status(
+        probe->base.rules, &probe->base.probe, action);
+    if (status < 0) probe->base.failed = 1;
+    if (status > 0) { probe->action = action; probe->found = 1; }
+    return status != 0;
+}
+
+static int gc_quiet_reply_available(const GCSemanticRules *rules,
+    const GCSemanticPosition *position, int *ok, uint64_t *action, int *have) {
+    GCQuietReplyProbe probe;
+    probe.base.rules = rules;
+    probe.base.failed = 0;
+    probe.found = 0;
+    /* Match the existing physical-availability normalization exactly. */
+    memcpy(&probe.base.probe, position, offsetof(GCSemanticPosition, history_lo));
+    probe.base.probe.ply = 0;
+    probe.base.probe.history_len = 0;
+    probe.base.probe.history_exact = 1;
+    probe.base.probe.history_events_exact = position->history_events_exact;
+    if (*have) {
+        int valid = gc_semantic_runtime_probe_action_status(
+            rules, &probe.base.probe, *action);
+        if (valid < 0) { *ok = 0; return 0; }
+        if (valid > 0) return 1;
+    }
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    candidates.visit = gc_quiet_reply_visit;
+    candidates.context = &probe;
+    int generated = gc_semantic_generate_candidate_buffer(rules, position, &candidates);
+    if (!generated || probe.base.failed) { *ok = 0; return 0; }
+    *have = probe.found;
+    if (probe.found) *action = probe.action;
+    return candidates.stopped;
+}
+
 /* Only for a no-automatic-rule child whose next-edge repetition is impossible.
  * General terminal/repetition authority must never consume transient history. */
 static int gc_semantic_q_quiet_terminal(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
-                                       int *winner) {
+                                       int *winner, uint64_t *reply, int *have_reply) {
     int ok = 1;
-    int has_action = gc_semantic_has_guarded_action(rules, position, &ok);
+    int has_action = gc_quiet_reply_available(rules, position, &ok, reply, have_reply);
     if (!ok) return -1;
     if (!has_action) {
         if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
@@ -5531,6 +5577,8 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
     ctx->legal_generation_count++;
     if(!gc_semantic_order_q_candidates(ctx,pos,&actions)){gc_semantic_action_buffer_free(&actions);return 0;}
     int can_defer = !check && gc_semantic_q_history_deferrable(ctx->rules, pos);
+    uint64_t reply_witness = 0;
+    int have_reply_witness = 0;
     int parent_enemies=0,legal=0;
     unsigned cells=ctx->rules->board_size*ctx->rules->board_size;
     for(unsigned i=0;i<cells;i++)if(pos->board[i].occupied && pos->board[i].owner!=pos->side_to_move)parent_enemies++;
@@ -5558,7 +5606,7 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
             }
             if(!noisy){
                 child_terminal = can_defer
-                    ? gc_semantic_q_quiet_terminal(ctx->rules, child, &child_winner)
+                    ? gc_semantic_q_quiet_terminal(ctx->rules, child, &child_winner, &reply_witness, &have_reply_witness)
                     : gc_semantic_terminal_status_known(ctx->rules, child, &child_winner,
                                                        child->history_digest[child->history_len-1]);
                 if(child_terminal<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
@@ -7442,6 +7490,7 @@ static PyObject *gc_semantic_action_layout(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef gc_methods[] = {
+
     {"semantic_core_payload", gc_semantic_core_payload, METH_VARARGS,
      "semantic_core_payload(position, type_map, type_count, ply, attribute_names) -> complete state-only payload"},
     {"native_available", gc_native_available, METH_NOARGS,

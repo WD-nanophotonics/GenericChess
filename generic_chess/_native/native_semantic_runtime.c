@@ -104,6 +104,12 @@ static void reset_aux_value(const GCSemAuxSlot *slot, GCSemAuxValue *value, uint
 static int path_entry(const GCSemGeometry *g, uint8_t owner, uint16_t source, const GCSemPathEntry **out) {
     const GCSemPathOwner *paths = &g->paths[owner];
     if (paths->sources_sorted) {
+        /* Only the first occurrence has original lower-bound semantics. */
+        if (source < paths->count && paths->entries[source].source == source &&
+            (source == 0 || paths->entries[source-1].source < source)) {
+            *out = &paths->entries[source];
+            return 1;
+        }
         uint32_t lo = 0, hi = paths->count;
         while (lo < hi) {
             uint32_t mid = lo + (hi - lo) / 2;
