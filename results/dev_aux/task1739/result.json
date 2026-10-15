@@ -1,0 +1,547 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "actual_go": 37650,
+  "cache_hits": 7978,
+  "actual_reported_nodes": 124552260,
+  "seconds": 397.7475196000014,
+  "exit_code": 0,
+  "TRAIN": [
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.109375,
+      "lower": 0.109375,
+      "upper": 0.109375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 98,
+        "PHYSICAL_MATE": 14,
+        "PROVED_SINGLE_STOCK_DRAW": 16
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.109375,
+      "lower": 0.109375,
+      "upper": 0.109375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PROVED_SINGLE_STOCK_DRAW": 14,
+        "PHYSICAL_MATE": 14
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.046875,
+      "lower": 0.046875,
+      "upper": 0.046875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 88,
+        "PROVED_SINGLE_STOCK_DRAW": 30,
+        "PHYSICAL_MATE": 10
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.109375,
+      "lower": 0.109375,
+      "upper": 0.109375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 102,
+        "PROVED_SINGLE_STOCK_DRAW": 12,
+        "PHYSICAL_MATE": 14
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.09375,
+      "lower": 0.09375,
+      "upper": 0.09375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 112,
+        "PROVED_SINGLE_STOCK_DRAW": 4,
+        "PHYSICAL_MATE": 12
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.0625,
+      "lower": 0.0625,
+      "upper": 0.0625,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 98,
+        "PROVED_SINGLE_STOCK_DRAW": 22,
+        "PHYSICAL_MATE": 8
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.078125,
+      "lower": 0.078125,
+      "upper": 0.078125,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PROVED_SINGLE_STOCK_DRAW": 18,
+        "PHYSICAL_MATE": 10
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.140625,
+      "lower": 0.140625,
+      "upper": 0.140625,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PHYSICAL_MATE": 18,
+        "PROVED_SINGLE_STOCK_DRAW": 10
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.09375,
+      "lower": 0.09375,
+      "upper": 0.09375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 112,
+        "PHYSICAL_MATE": 12,
+        "PROVED_SINGLE_STOCK_DRAW": 4
+      }
+    }
+  ],
+  "DEV": [
+    {
+      "price": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.125,
+      "lower": 0.11458333333333333,
+      "upper": 0.13541666666666666,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 158,
+        "PHYSICAL_MATE": 24,
+        "PROVED_SINGLE_STOCK_DRAW": 8,
+        "UNRESOLVED": 2
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.125,
+      "lower": 0.125,
+      "upper": 0.125,
+      "categories": {
+        "PROVED_SINGLE_STOCK_DRAW": 26,
+        "PROVED_POLICY_CYCLE_DRAW": 142,
+        "PHYSICAL_MATE": 24
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        1440,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.13541666666666666,
+      "lower": 0.13541666666666666,
+      "upper": 0.13541666666666666,
+      "categories": {
+        "PHYSICAL_MATE": 26,
+        "PROVED_POLICY_CYCLE_DRAW": 154,
+        "PROVED_SINGLE_STOCK_DRAW": 12
+      }
+    }
+  ],
+  "selected": {
+    "PATH0": [
+      1440,
+      720,
+      1440,
+      720
+    ],
+    "PATH1": [
+      720,
+      720,
+      360,
+      720
+    ],
+    "PATH2": [
+      720,
+      720,
+      360,
+      720
+    ],
+    "POOLED": [
+      720,
+      720,
+      360,
+      720
+    ]
+  },
+  "paths": [
+    {
+      "initial": [
+        1440,
+        720,
+        1440,
+        720
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "current": [
+            1440,
+            720,
+            1440,
+            720
+          ],
+          "current_score": 14,
+          "proposals": [
+            {
+              "price": [
+                720,
+                720,
+                1440,
+                720
+              ],
+              "score": 6
+            },
+            {
+              "price": [
+                1440,
+                720,
+                720,
+                720
+              ],
+              "score": 14
+            },
+            {
+              "price": [
+                1728,
+                720,
+                1440,
+                720
+              ],
+              "score": 12
+            }
+          ],
+          "best": [
+            1440,
+            720,
+            720,
+            720
+          ],
+          "best_score": 14,
+          "accepted": false
+        }
+      ],
+      "endpoint": [
+        1440,
+        720,
+        1440,
+        720
+      ],
+      "endpoint_score": 14
+    },
+    {
+      "initial": [
+        360,
+        720,
+        360,
+        720
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "current": [
+            360,
+            720,
+            360,
+            720
+          ],
+          "current_score": 8,
+          "proposals": [
+            {
+              "price": [
+                360,
+                720,
+                720,
+                720
+              ],
+              "score": 10
+            },
+            {
+              "price": [
+                720,
+                720,
+                360,
+                720
+              ],
+              "score": 18
+            }
+          ],
+          "best": [
+            720,
+            720,
+            360,
+            720
+          ],
+          "best_score": 18,
+          "accepted": true
+        },
+        {
+          "round": 1,
+          "current": [
+            720,
+            720,
+            360,
+            720
+          ],
+          "current_score": 18,
+          "proposals": [
+            {
+              "price": [
+                360,
+                720,
+                360,
+                720
+              ],
+              "score": 8
+            },
+            {
+              "price": [
+                720,
+                720,
+                720,
+                720
+              ],
+              "score": 14
+            },
+            {
+              "price": [
+                1440,
+                720,
+                360,
+                720
+              ],
+              "score": 12
+            }
+          ],
+          "best": [
+            720,
+            720,
+            720,
+            720
+          ],
+          "best_score": 14,
+          "accepted": false
+        }
+      ],
+      "endpoint": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "endpoint_score": 18
+    },
+    {
+      "initial": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "current": [
+            720,
+            720,
+            720,
+            720
+          ],
+          "current_score": 14,
+          "proposals": [
+            {
+              "price": [
+                360,
+                720,
+                720,
+                720
+              ],
+              "score": 10
+            },
+            {
+              "price": [
+                720,
+                720,
+                360,
+                720
+              ],
+              "score": 18
+            },
+            {
+              "price": [
+                720,
+                720,
+                1440,
+                720
+              ],
+              "score": 6
+            },
+            {
+              "price": [
+                1440,
+                720,
+                720,
+                720
+              ],
+              "score": 14
+            }
+          ],
+          "best": [
+            720,
+            720,
+            360,
+            720
+          ],
+          "best_score": 18,
+          "accepted": true
+        },
+        {
+          "round": 1,
+          "current": [
+            720,
+            720,
+            360,
+            720
+          ],
+          "current_score": 18,
+          "proposals": [
+            {
+              "price": [
+                360,
+                720,
+                360,
+                720
+              ],
+              "score": 8
+            },
+            {
+              "price": [
+                720,
+                720,
+                720,
+                720
+              ],
+              "score": 14
+            },
+            {
+              "price": [
+                1440,
+                720,
+                360,
+                720
+              ],
+              "score": 12
+            }
+          ],
+          "best": [
+            720,
+            720,
+            720,
+            720
+          ],
+          "best_score": 14,
+          "accepted": false
+        }
+      ],
+      "endpoint": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "endpoint_score": 18
+    }
+  ],
+  "actual_games": 1728,
+  "unique_train_prices": 9,
+  "source_sha256": "506eaaec54b7413266abf3ce74a1d0a0367f6751cfc03de84697468805760c72"
+}

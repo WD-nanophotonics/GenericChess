@@ -1,0 +1,304 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "actual_go": 11296,
+  "old_paid_choice_cache_entries": 37650,
+  "cache_hits": 44716,
+  "table_moves": 1378,
+  "actual_reported_nodes": 40207912,
+  "seconds": 156.6726905000105,
+  "exit_code": 0,
+  "TRAIN": [
+    {
+      "price": [
+        360,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.046875,
+      "lower": 0.046875,
+      "upper": 0.046875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 96,
+        "PHYSICAL_MATE": 10,
+        "PROVED_SINGLE_STOCK_DRAW": 22
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.078125,
+      "lower": 0.078125,
+      "upper": 0.078125,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PROVED_SINGLE_STOCK_DRAW": 18,
+        "PHYSICAL_MATE": 10
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.0625,
+      "lower": 0.03125,
+      "upper": 0.09375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 94,
+        "UNRESOLVED": 4,
+        "PROVED_SINGLE_STOCK_DRAW": 22,
+        "PHYSICAL_MATE": 8
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.203125,
+      "lower": 0.203125,
+      "upper": 0.203125,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 92,
+        "PHYSICAL_MATE": 26,
+        "PROVED_SINGLE_STOCK_DRAW": 10
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.1875,
+      "lower": 0.1875,
+      "upper": 0.1875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 88,
+        "PHYSICAL_MATE": 24,
+        "PROVED_SINGLE_STOCK_DRAW": 16
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.078125,
+      "lower": 0.078125,
+      "upper": 0.078125,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 84,
+        "PROVED_SINGLE_STOCK_DRAW": 30,
+        "PHYSICAL_MATE": 14
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.1875,
+      "lower": 0.1875,
+      "upper": 0.1875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PHYSICAL_MATE": 24,
+        "PROVED_SINGLE_STOCK_DRAW": 4
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.25,
+      "lower": 0.25,
+      "upper": 0.25,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 84,
+        "PROVED_SINGLE_STOCK_DRAW": 12,
+        "PHYSICAL_MATE": 32
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.234375,
+      "lower": 0.234375,
+      "upper": 0.234375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 84,
+        "PROVED_SINGLE_STOCK_DRAW": 14,
+        "PHYSICAL_MATE": 30
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        360,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.1875,
+      "lower": 0.1875,
+      "upper": 0.1875,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 100,
+        "PHYSICAL_MATE": 24,
+        "PROVED_SINGLE_STOCK_DRAW": 4
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.234375,
+      "lower": 0.234375,
+      "upper": 0.234375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 86,
+        "PROVED_SINGLE_STOCK_DRAW": 12,
+        "PHYSICAL_MATE": 30
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        1440,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.234375,
+      "lower": 0.234375,
+      "upper": 0.234375,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 94,
+        "PROVED_SINGLE_STOCK_DRAW": 4,
+        "PHYSICAL_MATE": 30
+      }
+    }
+  ],
+  "DEV": [
+    {
+      "price": [
+        720,
+        720,
+        360,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.16666666666666666,
+      "lower": 0.15625,
+      "upper": 0.17708333333333334,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 150,
+        "PHYSICAL_MATE": 32,
+        "PROVED_SINGLE_STOCK_DRAW": 8,
+        "UNRESOLVED": 2
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.21875,
+      "lower": 0.21875,
+      "upper": 0.21875,
+      "categories": {
+        "PROVED_SINGLE_STOCK_DRAW": 26,
+        "PROVED_POLICY_CYCLE_DRAW": 124,
+        "PHYSICAL_MATE": 42
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.2604166666666667,
+      "lower": 0.2604166666666667,
+      "upper": 0.2604166666666667,
+      "categories": {
+        "PHYSICAL_MATE": 50,
+        "PROVED_POLICY_CYCLE_DRAW": 138,
+        "PROVED_SINGLE_STOCK_DRAW": 4
+      }
+    }
+  ],
+  "selected": {
+    "POOLED": [
+      1440,
+      720,
+      720,
+      720
+    ],
+    "FIXED_NATIVE": [
+      720,
+      720,
+      360,
+      720
+    ]
+  },
+  "actual_games": 2112,
+  "source_sha256": "b579208cb8ac77dfaf9c3f97eda12e71b4a2cfb9db9654a167270cb9513d7d08",
+  "scope": "Physicaltablemoves afterKRK, notwinninglabels. Sameexposedrootsnewpolicy; oldNativechoicespaidpreviously andprefixreplayed, notfreshNativegamecostorindependentholdout."
+}

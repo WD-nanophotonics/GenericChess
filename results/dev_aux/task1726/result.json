@@ -1,0 +1,486 @@
+{
+  "status": "COMPLETE_ALL_R_ONLY_P_ONLY_ADJACENT_EDGES_NO_NEW_GO",
+  "edge_count": 17,
+  "edges": [
+    [
+      "R",
+      [
+        360,
+        720,
+        720,
+        360
+      ],
+      [
+        720,
+        720,
+        720,
+        360
+      ]
+    ],
+    [
+      "R",
+      [
+        360,
+        720,
+        720,
+        720
+      ],
+      [
+        720,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "R",
+      [
+        360,
+        720,
+        720,
+        1440
+      ],
+      [
+        720,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "R",
+      [
+        720,
+        720,
+        720,
+        360
+      ],
+      [
+        1440,
+        720,
+        720,
+        360
+      ]
+    ],
+    [
+      "R",
+      [
+        720,
+        720,
+        720,
+        720
+      ],
+      [
+        1440,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "R",
+      [
+        720,
+        720,
+        720,
+        1440
+      ],
+      [
+        1440,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "R",
+      [
+        1440,
+        720,
+        720,
+        360
+      ],
+      [
+        1728,
+        720,
+        720,
+        360
+      ]
+    ],
+    [
+      "R",
+      [
+        1440,
+        720,
+        720,
+        720
+      ],
+      [
+        1728,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "R",
+      [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      [
+        1728,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "P",
+      [
+        360,
+        720,
+        720,
+        360
+      ],
+      [
+        360,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "P",
+      [
+        360,
+        720,
+        720,
+        720
+      ],
+      [
+        360,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "P",
+      [
+        720,
+        720,
+        720,
+        360
+      ],
+      [
+        720,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "P",
+      [
+        720,
+        720,
+        720,
+        720
+      ],
+      [
+        720,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "P",
+      [
+        1440,
+        720,
+        720,
+        360
+      ],
+      [
+        1440,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "P",
+      [
+        1440,
+        720,
+        720,
+        720
+      ],
+      [
+        1440,
+        720,
+        720,
+        1440
+      ]
+    ],
+    [
+      "P",
+      [
+        1728,
+        720,
+        720,
+        360
+      ],
+      [
+        1728,
+        720,
+        720,
+        720
+      ]
+    ],
+    [
+      "P",
+      [
+        1728,
+        720,
+        720,
+        720
+      ],
+      [
+        1728,
+        720,
+        720,
+        1440
+      ]
+    ]
+  ],
+  "pair_count": 3264,
+  "summary": [
+    {
+      "axis": "R",
+      "phase": "TRAIN1",
+      "opponent": "UNIT64",
+      "pairs": 432,
+      "same_complete_trajectory": 243,
+      "different_trajectory": 189,
+      "different_capture_promotion_sequence": 141,
+      "improved": 25,
+      "worsened": 14,
+      "same_known_WDL": 393,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 146,
+      "delta_sum": 11,
+      "lower_sum": 11,
+      "upper_sum": 11,
+      "mean_gain": 0.02546296296296296,
+      "gain_bounds": [
+        0.02546296296296296,
+        0.02546296296296296
+      ]
+    },
+    {
+      "axis": "R",
+      "phase": "ALL",
+      "opponent": "MIXTURE",
+      "pairs": 1728,
+      "same_complete_trajectory": 941,
+      "different_trajectory": 787,
+      "different_capture_promotion_sequence": 611,
+      "improved": 101,
+      "worsened": 49,
+      "same_known_WDL": 1577,
+      "involves_UNKNOWN": 1,
+      "different_trajectory_both_proved_Draw": 596,
+      "delta_sum": 52,
+      "lower_sum": 51,
+      "upper_sum": 53,
+      "mean_gain": 0.03009259259259259,
+      "gain_bounds": [
+        0.029513888888888888,
+        0.030671296296296297
+      ]
+    },
+    {
+      "axis": "R",
+      "phase": "TRAIN1",
+      "opponent": "UNIT4096",
+      "pairs": 432,
+      "same_complete_trajectory": 270,
+      "different_trajectory": 162,
+      "different_capture_promotion_sequence": 126,
+      "improved": 16,
+      "worsened": 11,
+      "same_known_WDL": 404,
+      "involves_UNKNOWN": 1,
+      "different_trajectory_both_proved_Draw": 123,
+      "delta_sum": 5,
+      "lower_sum": 4,
+      "upper_sum": 6,
+      "mean_gain": 0.011574074074074073,
+      "gain_bounds": [
+        0.009259259259259259,
+        0.013888888888888888
+      ]
+    },
+    {
+      "axis": "R",
+      "phase": "TRAIN2",
+      "opponent": "UNIT64",
+      "pairs": 432,
+      "same_complete_trajectory": 213,
+      "different_trajectory": 219,
+      "different_capture_promotion_sequence": 167,
+      "improved": 22,
+      "worsened": 7,
+      "same_known_WDL": 403,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 179,
+      "delta_sum": 15,
+      "lower_sum": 15,
+      "upper_sum": 15,
+      "mean_gain": 0.034722222222222224,
+      "gain_bounds": [
+        0.034722222222222224,
+        0.034722222222222224
+      ]
+    },
+    {
+      "axis": "R",
+      "phase": "TRAIN2",
+      "opponent": "UNIT4096",
+      "pairs": 432,
+      "same_complete_trajectory": 215,
+      "different_trajectory": 217,
+      "different_capture_promotion_sequence": 177,
+      "improved": 38,
+      "worsened": 17,
+      "same_known_WDL": 377,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 148,
+      "delta_sum": 21,
+      "lower_sum": 21,
+      "upper_sum": 21,
+      "mean_gain": 0.04861111111111111,
+      "gain_bounds": [
+        0.04861111111111111,
+        0.04861111111111111
+      ]
+    },
+    {
+      "axis": "P",
+      "phase": "TRAIN1",
+      "opponent": "UNIT64",
+      "pairs": 384,
+      "same_complete_trajectory": 225,
+      "different_trajectory": 159,
+      "different_capture_promotion_sequence": 134,
+      "improved": 14,
+      "worsened": 14,
+      "same_known_WDL": 356,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 128,
+      "delta_sum": 0,
+      "lower_sum": 0,
+      "upper_sum": 0,
+      "mean_gain": 0.0,
+      "gain_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "P",
+      "phase": "ALL",
+      "opponent": "MIXTURE",
+      "pairs": 1536,
+      "same_complete_trajectory": 897,
+      "different_trajectory": 639,
+      "different_capture_promotion_sequence": 555,
+      "improved": 58,
+      "worsened": 55,
+      "same_known_WDL": 1421,
+      "involves_UNKNOWN": 2,
+      "different_trajectory_both_proved_Draw": 491,
+      "delta_sum": 3,
+      "lower_sum": 0,
+      "upper_sum": 4,
+      "mean_gain": 0.001953125,
+      "gain_bounds": [
+        0.0,
+        0.0026041666666666665
+      ]
+    },
+    {
+      "axis": "P",
+      "phase": "TRAIN1",
+      "opponent": "UNIT4096",
+      "pairs": 384,
+      "same_complete_trajectory": 239,
+      "different_trajectory": 145,
+      "different_capture_promotion_sequence": 125,
+      "improved": 15,
+      "worsened": 16,
+      "same_known_WDL": 351,
+      "involves_UNKNOWN": 2,
+      "different_trajectory_both_proved_Draw": 107,
+      "delta_sum": -1,
+      "lower_sum": -4,
+      "upper_sum": 0,
+      "mean_gain": -0.0026041666666666665,
+      "gain_bounds": [
+        -0.010416666666666666,
+        0.0
+      ]
+    },
+    {
+      "axis": "P",
+      "phase": "TRAIN2",
+      "opponent": "UNIT64",
+      "pairs": 384,
+      "same_complete_trajectory": 221,
+      "different_trajectory": 163,
+      "different_capture_promotion_sequence": 140,
+      "improved": 11,
+      "worsened": 10,
+      "same_known_WDL": 363,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 129,
+      "delta_sum": 1,
+      "lower_sum": 1,
+      "upper_sum": 1,
+      "mean_gain": 0.0026041666666666665,
+      "gain_bounds": [
+        0.0026041666666666665,
+        0.0026041666666666665
+      ]
+    },
+    {
+      "axis": "P",
+      "phase": "TRAIN2",
+      "opponent": "UNIT4096",
+      "pairs": 384,
+      "same_complete_trajectory": 212,
+      "different_trajectory": 172,
+      "different_capture_promotion_sequence": 156,
+      "improved": 18,
+      "worsened": 15,
+      "same_known_WDL": 351,
+      "involves_UNKNOWN": 0,
+      "different_trajectory_both_proved_Draw": 127,
+      "delta_sum": 3,
+      "lower_sum": 3,
+      "upper_sum": 3,
+      "mean_gain": 0.0078125,
+      "gain_bounds": [
+        0.0078125,
+        0.0078125
+      ]
+    }
+  ],
+  "actual_native_go": 0,
+  "interpretation": "Posthoc TRAIN mechanism diagnostic requested by Dot. Low-to-high sign is coordinate effect, not improvement expectation. Every frozen root retained. Across edges/roles/opponents observations dependent; aggregate mean not independent N, no parameter freezing or DEV fit based solely on absence."
+}

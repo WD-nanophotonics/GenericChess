@@ -1,0 +1,287 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "actual_go": 10675,
+  "old_paid_choice_cache_entries": 27244,
+  "cache_hits": 37874,
+  "table_moves": 1486,
+  "actual_reported_nodes": 38278435,
+  "seconds": 154.74246409999614,
+  "exit_code": 0,
+  "TRAIN": [
+    {
+      "price": [
+        360,
+        720,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.109375,
+      "lower": 0.109375,
+      "upper": 0.109375,
+      "categories": {
+        "PHYSICAL_MATE": 20,
+        "PROVED_POLICY_CYCLE_DRAW": 83,
+        "PROVED_SINGLE_STOCK_DRAW": 25
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.0703125,
+      "lower": 0.0703125,
+      "upper": 0.0703125,
+      "categories": {
+        "PHYSICAL_MATE": 15,
+        "PROVED_POLICY_CYCLE_DRAW": 93,
+        "PROVED_SINGLE_STOCK_DRAW": 20
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": -0.03125,
+      "lower": -0.03125,
+      "upper": -0.03125,
+      "categories": {
+        "PHYSICAL_MATE": 24,
+        "PROVED_POLICY_CYCLE_DRAW": 93,
+        "PROVED_SINGLE_STOCK_DRAW": 11
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.2734375,
+      "lower": 0.2734375,
+      "upper": 0.2734375,
+      "categories": {
+        "PHYSICAL_MATE": 37,
+        "PROVED_POLICY_CYCLE_DRAW": 74,
+        "PROVED_SINGLE_STOCK_DRAW": 17
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.296875,
+      "lower": 0.296875,
+      "upper": 0.296875,
+      "categories": {
+        "PHYSICAL_MATE": 42,
+        "PROVED_POLICY_CYCLE_DRAW": 67,
+        "PROVED_SINGLE_STOCK_DRAW": 18,
+        "PHYSICAL_STALE": 1
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.1640625,
+      "lower": 0.1640625,
+      "upper": 0.1640625,
+      "categories": {
+        "PHYSICAL_MATE": 25,
+        "PROVED_POLICY_CYCLE_DRAW": 88,
+        "PROVED_SINGLE_STOCK_DRAW": 15
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.390625,
+      "lower": 0.3828125,
+      "upper": 0.3984375,
+      "categories": {
+        "PHYSICAL_MATE": 50,
+        "PROVED_POLICY_CYCLE_DRAW": 77,
+        "UNRESOLVED": 1
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.375,
+      "lower": 0.359375,
+      "upper": 0.390625,
+      "categories": {
+        "PHYSICAL_MATE": 48,
+        "PROVED_SINGLE_STOCK_DRAW": 1,
+        "PROVED_POLICY_CYCLE_DRAW": 76,
+        "UNRESOLVED": 2,
+        "PHYSICAL_STALE": 1
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.40625,
+      "lower": 0.3984375,
+      "upper": 0.4140625,
+      "categories": {
+        "PHYSICAL_MATE": 52,
+        "PROVED_POLICY_CYCLE_DRAW": 71,
+        "UNRESOLVED": 1,
+        "PROVED_SINGLE_STOCK_DRAW": 4
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.375,
+      "lower": 0.375,
+      "upper": 0.375,
+      "categories": {
+        "PHYSICAL_MATE": 48,
+        "PROVED_POLICY_CYCLE_DRAW": 79,
+        "PROVED_SINGLE_STOCK_DRAW": 1
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.34375,
+      "lower": 0.34375,
+      "upper": 0.34375,
+      "categories": {
+        "PHYSICAL_MATE": 44,
+        "PROVED_POLICY_CYCLE_DRAW": 84
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "games": 128,
+      "finite_net": 0.3984375,
+      "lower": 0.3984375,
+      "upper": 0.3984375,
+      "categories": {
+        "PHYSICAL_MATE": 51,
+        "PROVED_POLICY_CYCLE_DRAW": 76,
+        "PROVED_SINGLE_STOCK_DRAW": 1
+      }
+    }
+  ],
+  "DEV": [
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.22916666666666666,
+      "lower": 0.22916666666666666,
+      "upper": 0.22916666666666666,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 119,
+        "PROVED_SINGLE_STOCK_DRAW": 13,
+        "PHYSICAL_MATE": 60
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "phase": "DEV",
+      "games": 192,
+      "finite_net": 0.3177083333333333,
+      "lower": 0.3177083333333333,
+      "upper": 0.3177083333333333,
+      "categories": {
+        "PROVED_POLICY_CYCLE_DRAW": 114,
+        "PHYSICAL_MATE": 71,
+        "PROVED_SINGLE_STOCK_DRAW": 7
+      }
+    }
+  ],
+  "selected": {
+    "POOLED": [
+      1440,
+      720,
+      720,
+      1440
+    ],
+    "FIXED_NATIVE": [
+      1440,
+      720,
+      720,
+      1440
+    ]
+  },
+  "actual_games": 1920,
+  "source_sha256": "b579208cb8ac77dfaf9c3f97eda12e71b4a2cfb9db9654a167270cb9513d7d08",
+  "scope": "Physicaltablemoves afterKRK, notwinninglabels. Sameexposedrootsnewpolicy; oldNativechoicespaidpreviously andprefixreplayed, notfreshNativegamecostorindependentholdout."
+}

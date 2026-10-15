@@ -242,18 +242,33 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment52
+# DEV_AUX current scope —2026-10-15 segment53
 
-ScienceOPEN; sidemissiononly; manualresearchended64.277min safe_checkpoint; heartbeatPAUSED.
-ActualWDLlearning cheap, stablehumanprice/transfer NOT established.
-FreshRNBnative-opponent replicate .03125 CI touch0; new4RNPpromotion .0859375 positive.
-Twoactualrandominitialpaths TRAINimprove but bothDEVbelowunit .015625; endpoint128trajectoriesidentical.
-CompleteD3bothTRAIN learnR1440/P360, matchedDEV .1328125positive, workdifferent; all8638/51095values independentlychecked.
-8cold64transfer negativeuncertain; NEW8candidate4096learnR=P1440, DEV .0234375uncertain,strongop0.
-AlignedEval/native/captureprices work, fixed8pricegain.015625uncertain; pairedinteractionscross0.
-Currentbare/singleN/B4/8 ruleDrawproof complete; futurecostforecast notwallgain.
-32coldquerypairs rawidentical, duplicateSclear64to32; clockzero timingclaimrejected.
-84701newNativego14656newepisodes1832perft; source/phase/clockfailurespreserved+fixed.
-Nextnewdriver explicitrule/node/table keys+oneclear+stockproof; freshalignedlearning/opmix, noDEVfit.
-No product/default/UI/primary writes orfullChess/Shogi/generateddomain claim.
-Evidence:SEGMENT_20261015_52.md,COST/QA/FAILURES/SESSION/archives52,1674/1679/1687/1694/1700/1711/1714/1717/1718.
+ScienceOPEN; sidemissiononly; heartbeatPAUSED; manualresearch exactduration inSESSION53.
+TrueWDL RNPcooperative learning converges2testedinitials R1440/P1440,N/B720; sameinitialP limits.
+Fresh48DEVgain.083333 positive; NEWfixed256familyreplicate.07128995[.040039,.102539],1UNKNOWN.
+RNB3Latininitialpaths split; TRAINselectedR720/B360 DEVgain0, nothumanprice recovery.
+Identicalrelativeprices change9/11of96Native rootchoices undercommonhalfscale; D3ordinalsets unchanged.
+Complete4/8KRK WDL/DTM +ALLindependentactorfrontiers+160Nativeperft showmanyforcedwinscycle.
+PhysicalDTMhandoff converts118RNP/114RNB oldcycles tomates, butfixedgaininteractionsuncertain.
+RNBhybridgridwinnerR1440/B720 exposedDEV+.041667CIcross0; notfreshvalidation orinitialconvergence.
+183814NEWNativego13376controllercases328perft;64894previouspaidchoicesseededhybrids explicitly.
+EightZIPexactraw/sourcearchives restoredverified; rawSlack/privateoriginals ignored; outgoingPII/credentials excluded.
+No primary/product/default/UI writes orfullChess/Shogi/Genericdomain claim; failures/caps preserved.
+Next: actualNativeconversion-versus-exactDTM budgetcurve beforemate-visible mixed-stock learning roots.
+Evidence:SEGMENT_20261015_53.md,COST/QA/FAILURES/ARCHIVE_MANIFEST53,1724/1735/1743/1754/1755/1756/1757/1758.
+
+
+## Current user publication grant2026-10-15
+
+This supersedes older origin-based publication exclusions in this checkout's
+manuals. The user authorizes ANY GenericChess-related project content on the
+established delivery branch origin/sidemission and dedicated project Slack,
+provided the ACTUAL outgoing contents contain no personal information, passwords
+or credentials. Source/data/configuration, failed/partial results, diagnostics,
+checked project-only records and sanitized evidence are covered regardless of
+origin. Preserve exact sensitive originals in Git-ignored .local_agent; inspect
+and sanitize publication copies as needed. Fixed authorized routing IDs remain
+permitted. Continuing authorization survives restart/compaction; no per-upload
+approval queue. Supported tools/escalation only; report actual persistent denial.
+Separate checkouts/branches, stops and machine safety remain mandatory.

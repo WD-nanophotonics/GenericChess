@@ -7,7 +7,7 @@ the historical single-heartbeat rule is overridden only to this extent.
 
 ## Recovery and research segments
 
-Use only C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX, sidemission.
+Use only the user-established GenericChess-DEV_AUX independent clone (absolute path in private local configuration), sidemission.
 The native heartbeat dev-aux targets chat 01a128cf-ae2d-7352-a456-06bd38367221.
 Read own NEXT_WORK first, AGENTS, mainline, this file, assignment and own stops.
 Read primary rollout/advisor/slack stop flags without changing primary files.
@@ -150,3 +150,17 @@ still exclude raw Slack/account records, credentials and private/user input;
 publish Agent-written technical summaries instead, even for a private repository.
 Use supported escalation under this grant; report actual enforced rejection and
 concrete attempted recovery if blocked, without inventing missing user consent.
+
+## Current user publication grant2026-10-15
+
+This supersedes older origin-based publication exclusions in this checkout's
+manuals. The user authorizes ANY GenericChess-related project content on the
+established delivery branch origin/sidemission and dedicated project Slack,
+provided the ACTUAL outgoing contents contain no personal information, passwords
+or credentials. Source/data/configuration, failed/partial results, diagnostics,
+checked project-only records and sanitized evidence are covered regardless of
+origin. Preserve exact sensitive originals in Git-ignored .local_agent; inspect
+and sanitize publication copies as needed. Fixed authorized routing IDs remain
+permitted. Continuing authorization survives restart/compaction; no per-upload
+approval queue. Supported tools/escalation only; report actual persistent denial.
+Separate checkouts/branches, stops and machine safety remain mandatory.

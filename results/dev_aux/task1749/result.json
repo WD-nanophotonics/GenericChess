@@ -1,0 +1,29 @@
+{
+  "status": "PASS_EXHAUSTIVE_INDEPENDENT_KRK_RULE_EQUIVALENCE",
+  "error": null,
+  "results": [
+    {
+      "width": 4,
+      "status": "PASS_EVERY_SLOT_VALIDITY_AND_ALL_ACTOR_FRONTIERS",
+      "counts": {
+        "all_slots_validity_checked": 8192,
+        "all_valid_frontiers_checked": 3496,
+        "all_legal_children_checked": 16424
+      },
+      "frontier_sha256": "5c5429a174f331a18ef3ae11cd1a6a860192a93323c2c1b6b7e9f2fa0ca49821"
+    },
+    {
+      "width": 8,
+      "status": "PASS_EVERY_SLOT_VALIDITY_AND_ALL_ACTOR_FRONTIERS",
+      "counts": {
+        "all_slots_validity_checked": 524288,
+        "all_valid_frontiers_checked": 399112,
+        "all_legal_children_checked": 4469208
+      },
+      "frontier_sha256": "e37ac8ad538ab02c217952100cede887e8edc4e2c0efcbc761a57a6a20172e10"
+    }
+  ],
+  "seconds": 31.537682199996198,
+  "actual_native_go": 0,
+  "scope": "Every4/8idvalidity vsfullmodel; allvalidKRKfrontiers vsindependentactor model, completewhiteRbothturns. BlackRcolorbijection+actualNative160perft separate1746. No WDLlabels substituted forplayedoutcomes."
+}

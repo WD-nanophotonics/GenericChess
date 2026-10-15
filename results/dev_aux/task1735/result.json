@@ -1,0 +1,117 @@
+{
+  "status": "PASS_INDEPENDENT_ACTOR_PV_ALL_EXCHANGE_TRAJECTORIES_ACK_DOMAIN_CYCLE_AND_SELECTION",
+  "run": 1730,
+  "counts": {
+    "price_changes": 15618,
+    "PVmoves": 1121847,
+    "new_reported_nodes": 90684380,
+    "overshoot_queries": 23020,
+    "newgo_nodes4096": 22038,
+    "same_price_cold_reset": 11626,
+    "newgo_nodes64": 5206,
+    "plies": 33533,
+    "promotions": 752,
+    "PHYSICAL_MATE": 270,
+    "games": 1280,
+    "PROVED_POLICY_CYCLE_DRAW": 915,
+    "PROVED_SINGLE_STOCK_DRAW": 90,
+    "PHYSICAL_STALE": 2,
+    "UNRESOLVED": 3
+  },
+  "selected": {
+    "PATH0": [
+      1440,
+      720,
+      720,
+      1440
+    ],
+    "PATH1": [
+      1440,
+      720,
+      720,
+      1440
+    ],
+    "POOLED": [
+      1440,
+      720,
+      720,
+      1440
+    ]
+  },
+  "contrasts": [
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "MIXTURE",
+      "gain": 0.08333333333333333,
+      "family95": [
+        0.026041666666666668,
+        0.140625
+      ],
+      "infinite_gain_bounds": [
+        0.08333333333333333,
+        0.08333333333333333
+      ],
+      "infinite_family95": [
+        0.026041666666666668,
+        0.140625
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "UNIT64",
+      "gain": 0.041666666666666664,
+      "family95": [
+        -0.03125,
+        0.11458333333333333
+      ],
+      "infinite_gain_bounds": [
+        0.041666666666666664,
+        0.041666666666666664
+      ],
+      "infinite_family95": [
+        -0.03125,
+        0.11458333333333333
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "UNIT4096",
+      "gain": 0.125,
+      "family95": [
+        0.052083333333333336,
+        0.19791666666666666
+      ],
+      "infinite_gain_bounds": [
+        0.125,
+        0.125
+      ],
+      "infinite_family95": [
+        0.052083333333333336,
+        0.19791666666666666
+      ]
+    }
+  ],
+  "seconds": 20.17056859999866,
+  "reference_cache": {
+    "hits": 996189,
+    "misses": 189488,
+    "maxsize": 100000,
+    "currsize": 100000
+  },
+  "scope": "AllPV viaindependentactors,everygame/root/terminal/cycle, globalprice/budgetprotocol. Actualadaptiveproposal path reconstructed wherepresent; fixedpilotprice notfitted. Familycluster bootstrap, arbitrarypredeclaredparitygroups notrole/independentcolor samples."
+}

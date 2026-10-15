@@ -1,0 +1,112 @@
+{
+  "status": "PASS_HYBRID_PHYSICAL_PLAY_ALL_PV_RANK_ACTIONS_TERMINALS_AND_SELECTION",
+  "run": 1748,
+  "counts": {
+    "price_changes": 5656,
+    "PVmoves": 479170,
+    "new_reported_nodes": 38278435,
+    "overshoot_queries": 9091,
+    "newgo_nodes4096": 9315,
+    "same_price_cold_reset": 5019,
+    "newgo_nodes64": 1360,
+    "plies": 51009,
+    "promotions": 1179,
+    "PHYSICAL_MATE": 587,
+    "games": 1920,
+    "PROVED_POLICY_CYCLE_DRAW": 1194,
+    "PROVED_SINGLE_STOCK_DRAW": 133,
+    "tablemoves": 1486,
+    "PHYSICAL_STALE": 2,
+    "UNRESOLVED": 4
+  },
+  "selected": {
+    "POOLED": [
+      1440,
+      720,
+      720,
+      1440
+    ],
+    "FIXED_NATIVE": [
+      1440,
+      720,
+      720,
+      1440
+    ]
+  },
+  "contrasts": [
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "MIXTURE",
+      "gain": 0.08854166666666667,
+      "family95": [
+        0.010416666666666666,
+        0.16666666666666666
+      ],
+      "infinite_gain_bounds": [
+        0.08854166666666667,
+        0.08854166666666667
+      ],
+      "infinite_family95": [
+        0.010416666666666666,
+        0.16666666666666666
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "UNIT64",
+      "gain": 0.052083333333333336,
+      "family95": [
+        -0.041666666666666664,
+        0.14583333333333334
+      ],
+      "infinite_gain_bounds": [
+        0.052083333333333336,
+        0.052083333333333336
+      ],
+      "infinite_family95": [
+        -0.041666666666666664,
+        0.14583333333333334
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        1440
+      ],
+      "opponent": "UNIT4096",
+      "gain": 0.125,
+      "family95": [
+        0.020833333333333332,
+        0.22916666666666666
+      ],
+      "infinite_gain_bounds": [
+        0.125,
+        0.125
+      ],
+      "infinite_family95": [
+        0.020833333333333332,
+        0.22916666666666666
+      ]
+    }
+  ],
+  "seconds": 16.40682150000066,
+  "reference_cache": {
+    "hits": 455672,
+    "misses": 88875,
+    "maxsize": 100000,
+    "currsize": 88875
+  },
+  "scope": "AllPV viaindependentactors,everygame/root/terminal/cycle, globalprice/budgetprotocol. Rule rankchoosers verifiedeverymove; noKRK WDLadjudication; priorpaidNativecache boundchecked, actualnewNativework only. Exposedmechanismnotfreshholdout. Familycluster bootstrap, arbitrarypredeclaredparitygroups notrole/independentcolor samples."
+}

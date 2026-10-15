@@ -1,0 +1,24 @@
+{
+  "width": 4,
+  "model": "results/dev_aux/task1675/rules.py",
+  "model_sha256": "cdfaf85e8fdbf77446888e617a3525355393c8c443492982093e3c492a5cdcd2",
+  "status": "PASS_COMPLETE_KRK_WDL_DTM_ALL_BELLMAN_AND_LITERAL",
+  "array_slots": 8192,
+  "counts": {
+    "valid": 3496,
+    "edges": 16424,
+    "bare_capture_edges": 576,
+    "stalemate_seeds": 36,
+    "mate_seeds": 40,
+    "propagated": 2884,
+    "LOSS": 1572,
+    "DRAW": 612,
+    "WIN": 1312
+  },
+  "max_DTM": 14,
+  "wdl_sha256": "77c5251ba9883fa8d1bddc3a75a5d9292fb5badff1f47b9913c3a52e1254e906",
+  "rank_sha256": "c20c7edcfcaf0b6db9121f8f657d8c5b5aa5fffc907d4d046d4717a4340267ec",
+  "literal_cases": 1024,
+  "color_normalization": "Swapallcolors andturn forblackR, geometryunchanged. Closednonpawnrule movementcolorblind.",
+  "meaning": "WDLside-to-move(1win,2loss,0draw,255invalid);mateDTMminwinner/maxloser, infiniteplayDraw, nofinitehorizonlabels. Nativequalificationseparate."
+}

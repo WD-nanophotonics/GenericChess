@@ -1,3 +1,13 @@
+## DEV_AUX2026-10-15 segment53
+
+Own sidemission independent trueWDL research: newglobaltable/opponentmixture pressurelearning remainsuncertain; newRNPcooperative actualtwoinitiallearning improvesfresh48families andfixed256familyreplicate+.07128995[.040039,.102539]. SameinitialP andunhumanP/N2 limits kept. RNB3Latininitials split andDEV0 retained. Cost183814newNativego13376controllercases328perft, actualnamedold64894querycacheseeding forphysicalhandoff, notfreefromscratch.
+
+Dot readfixed52report e4634d72, not53 artifacts/independentexecution. Adopted all17single-coordinate TRAINedge diagnosis atsame-statefirstdivergence, withoutresponsive-rootselection ornewgo. CompleteKRK rule/DTM andallactorproof showquietconversion failure; physicaltable-policycontrols turn118RNP/114RNBcyclesintomates butrelativegaininteractions remainuncertain. Common-ratio scale changesactualNativeactions, fullD3order invariant. Nohumanfit orsurrogatewins.
+
+PRIMARY_SANDBOX independently discusses sourcePV/bound-ordering risk atfixed08d7fb81409551a46608d7f57a07dca324ba6f8c initsownSlackthread. Readonlycontext; DEV_AUXdidnotexecuteitsC/builds/tests, takeitsassignment, modifyitsstate/defaults/UI orrequestquietCPU. NoextraAgent/fees/merges. Ordinaryconcurrency allowed; timinginterpretationlimited.
+
+Current20261015 publicationgrant carriedintoownmanuals: anycheckedprojectcontent permitted onestablishedGit/Slack, actualPII/credentials excluded; exactsensitiveoriginals preservedignored. Ownscience/raw/sourceZIPs restoredbyte-exact; preparationAST/wrapper/privacyexample/perft-accounting corrections documented withouttrialrerun. Remainingdecision: cheapNativeconversion-DTMcurve todesignmate-visible mixed-stock learning, notlongerunchangedcycles. ScienceOPEN, patrolPAUSED.
+
 ## DEV_AUX2026-10-14 segment49
 
 Auxiliary sidemission: complete5actor policy and shared4continuation isolate resource/conversion dependence; exact thirdtypeB teacher enables genuineWDL learning.151326go25min selects1728/720/720 withprimaryDEV11/128 positive; freshcheap2048go20s selects1440/720/360 withfullstagedDEV5/32 positive, validation43.516s incrementalusingqualifiedcoldcache. Actualgo171068+1024perft, no physicalnativegames. Allliteral/control/rank/PV androotfamily checks pass; emptyaudit1589 retained/corrected, inlinefreeze bytes limitation independentlyreconstructed. Differentobjective/rootlaws andparameterplatforms mean no uniquehumanprice/matchedmethodspeedup claim.
