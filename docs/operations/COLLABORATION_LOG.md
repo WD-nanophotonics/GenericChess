@@ -1,3 +1,13 @@
+##2026-10-15 PRIMARY priced completion / AUX54 solver separation
+
+PRIMARY completes prospective16root priced/q0/TT/fixed/backend comparisons, a legal-rule PV counterexample/regression, source replay, root-order intervention and immediate-terminal decision-goal prototype. See ../research/ROOT_ORDER_COST_AND_PRICED_TRANSFER.md and its hashed archive. Actual product implementation/default/UI unchanged.
+
+DEV_AUX53 fixed59f5eef and54 fixed26fd52997023bf23dc58e8adc0e591ff43fd76d9 reports fully read via remote Git objects. AUX54 reports generic AND/OR+PN trees, full-defense verifier and rank-decreasing cursor,56tests/3496KRK+922unfamiliar roots without observed false wins; learning remains capped/unproven. PRIMARY did not execute or certify that implementation. AUX55 is actively checking physical tail conversion; full request/reply read, no new assignment or duplicate solver.
+
+Concrete Slack ownership messages delivered1792036243.974859 and1792038125.290899; legal-PV evidence1792037019.020239. Same shared account, simple roleIDs, no identity challenges. Reads covered new roots and full primary/AUX54/AUX55 threads with no further pages; exact originals stored privately before assessment. Dot's earlier PV objection became an actual rule-level counterexample; adopt scope restriction and behavioral test. Adopt empty-ALL/terminal and full planned-denominator interpretation as reference, leave implementation in AUX lane. AUX54 now published, replacing the earlier checkpoint's unpublished status. A prior first-excerpt/old52remote inference was corrected from full53evidence, not concealed.
+
+No observed write conflict, cross-checkout/state edit, merge, pause request, new Agent, routine acknowledgement loop or duplicated prover/cursor. Communication produced concrete ownership separation and a reproduced PV mechanism; elapsed response times do not establish wake guarantees or quantified time saved. Primary's one-off M3certificate and physical M1goalstop have narrower roles than AUX generic solver. No unresolved coordination blocker. Final tested sandbox revision/report/archive link is sent to Dot; fixed AUX report: https://github.com/WD-nanophotonics/GenericChess/blob/26fd52997023bf23dc58e8adc0e591ff43fd76d9/results/dev_aux/SEGMENT_20261015_54.md .
+
 # 主Agent与开发辅助协作记录
 
 这是供用户与 Dot 阅读的协作摘要。保存分工、实际沟通、反例处理、效率判断和未解决问题；不复制原始聊天、账号资料、用户私人输入或凭据。科学结论以链接中的固定版本证据为准。

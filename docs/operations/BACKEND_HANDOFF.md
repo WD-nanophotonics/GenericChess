@@ -1,3 +1,7 @@
+##2026-10-15 priced transfer follow-on
+
+See ../research/ROOT_ORDER_COST_AND_PRICED_TRANSFER.md. No product implementation/default/UI change in this segment; actual-rule optimal-PV regression added. Private interior-only ordering is mixed and not adopted. Private physically verified immediate-goal stop improves decision latency but changes finite-analysis objective, so it requires an explicit caller mode before activation. ProductV1<=16/Corefallback and creating-module ownership remain. AUX generic prover/cursor stays on sidemission.
+
 # Backend handoff from sandbox
 
 PRIMARY maintains the backend on sandbox. The user maintains UI Test and its

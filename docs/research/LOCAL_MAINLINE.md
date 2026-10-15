@@ -8,6 +8,8 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
+ROOT_ORDER_COST_AND_PRICED_TRANSFER.md is current. Product implementation stays41e69e1; new actual-rule PV-prefix regression2pass/affected24pass. Prospective priced q4:64pairs12deeper44same8shallower; TT64mixed/q4calls24->22. Same8closed-pair unit/priced transition .7343/.5289 rejects cross-cohort price-cause inference. Canonical-root transfer6deeper54same4shallower/q4unchanged: no default adoption. PublicCore bridge has16already-wonM1pairs among28greater-depth pairs; depth is not utility. Private physical-terminal goal-stop comparison now closes64calls with actual terminals verified. Next explicit decision-goal API with finite-analysis compatibility; preserve declaration/NC/TT/cancel semantics. V2 remains private; no UI change. AUX54 fixed26fd529 report read, generic prover/verifier/cursor+tail conversion left to AUX; no cross-checkout writes or primary rerun claim.
+
 OWNED_BACKENDS_AND_MAIN_FRONTIER.md is latest. Owned backend repair08d7fb shipped;
 actualV1/V2 no-global-switch37root replay56contexts5860actions/292edges passes.
 ProductV1<=16/Corefallback remain; V2 staysprivate. Exact-root-only plain main

@@ -1,0 +1,16 @@
+{
+  "science": "OPEN",
+  "source_review": "Product implementation unchanged; 2 behavioral regression cases. Private interior guard and physical terminal-goal changes separately inspected. All closed studies retain adverse/censored cases.",
+  "archive_members": 344,
+  "crc_and_all_member_hashes_verified": true,
+  "own_search_producers_closed": true,
+  "auxiliary_overlap": "No sidemission/shared solver/runtime writes; independent published report only.",
+  "limitations": [
+    "Finite16roots; both32families censored",
+    "Dependent played roots/order repeats",
+    "Different algorithms and ordinary-q goals",
+    "Shared machine timing",
+    "Goal prototype changes finite-analysis stopping objective",
+    "AUX report read, not reexecuted"
+  ]
+}

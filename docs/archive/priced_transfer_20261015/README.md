@@ -1,0 +1,5 @@
+# Source and evidence closure
+
+Source-only technical archive. Pin the project to41e69e1dd8ab2c459239175d0c4091f90dffb389 and add the published PV test, or use this publication commit. Use a NEW checkout/export, existing Python3.12/Zig dependencies and the ignored .local_agent layout. Restore members using manifest restore_to; never overwrite existing unique evidence. No installed binary is supplied. Build replay via build_replay_workspace.py; four-source isolated replay was actually run, not merely proposed. Interior/goal source builds and full saved comparisons are separate evidence. Do not rerun long curves merely to inspect data. Absolute machine paths in publication copies use placeholders; adjust dependency paths if needed. Source/raw and publication hashes distinguish normalization. Exact private originals are retained locally.
+
+Study plans precede their own queries. Adaptive interior/goal work is exposed development. Goal changes the requested stopping objective. Censors, false-prefix failure, raw zero timers and corrections remain. No product V2 activation or generic prover implementation.
