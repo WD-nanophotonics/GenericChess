@@ -261,24 +261,27 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment72
+# DEV_AUX current scope:2026-10-16 segment73
 
-Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. Fixedcompletepolicy,
-actualruleW-Lonly; UNKNOWNnotDRAW. Newreason/currentconsequence: botharmed3x3
-capacity andactualterminalpilotjustifyfreshsmalllearning, but2134CLOSEDpartial
-367logical341physical/1UNKNOWN/noSelector/noDEV/81TRAINslotsunrun. Neverresume
-orfill it. Old2100/2063/71caps remainclosed, allfailuresretained.
-2131byte-freshstopreader isqualifiedforfutureowncontrollers: EVERYpollreadsall
-6files/order; onlyunchangedbytesJSONdecodingmemoized. No freshness/mtimecache,
-pollingdelay, heldhandle, extra worker orflagwrite. Oldtimings/sourceunchanged.
-2136opt-inprecomputedlegalfallbackrepairsobservednormalnochoicebudgetfailure;
-admissionpaidintotalallowance, cancel/foreign/terminal/unsupportedguardretained.
-Nextfreshprotocolmustdeclarechangedpolicy andjournalfaileddecisionreceipts.
-No product/default/UI/primaryintegration. GenuinegenericproofdomainremainsOPEN.
-Pricelearningtargetsdecisioncells underexplicitrules/distribution/policy, not
-uniqueuniversalratios. CorrectedpartitionsMUSTincludeactualDRAW0line; retain
-old2117/2119/2124claimsashistorysupersededby2126/27. No oldexposedgridrefit,
-humanpricefit/Xiangqiholdout/DEVselection. Currentevidence/next:LOCAL_MAINLINE.
+Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. Actual W-L only; UNKNOWN
+never DRAW.2139/2149/2158 are now COMPLETE under their own frozen clocks. Preserve
+old2134 partial/noSelector/noDEV and all earlier cap failures; never fill them.
+Current consequence: strict-neighbor optimization was trapped by plateaus, but
+new complete enumeration against two fixed foes still has six tied price cells
+and retains baseline1. No benefit/unique-ratio/convergence claim. Do not retune DEV.
+The qualified2155 price-active input predicate uses no WDL/price success filter;
+familiar population labels remain exposed. New2158 protocol was frozen before
+fitness and is now COMPLETE: TRAIN signal becomes nonflat, DEV gain remains0.
+Do not tune its exposed DEV or repeat unchanged volume. Next examine complete
+TRAIN normal-search capacity/interfacecost;2156 proves inputmechanics only.
+2131 fresh-six-file reader and2136 paid legal fallback remain the fixed players.
+2153 adds opt-in failed-stop-observation evidence, with no retry or flag bypass;
+its real fixture establishes a swallowed-error mechanism, not the old failure's
+unrecorded cause.2154 attribution preserves that distinction.
+2151 puregeneric coverage and2157 replay evidence constrain proof claims.
+2153/2145/2148 engineering remains opt-in: no product/default/UI or PRIMARY write.
+New verifier shares only its own reconstructed prefixes; full history/claims and
+all-defender checks stay. Publication and causal reasons below remain current.
 
 ## Current user publication grant2026-10-15
 

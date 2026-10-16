@@ -1,0 +1,101 @@
+{
+  "status": "COMPLETE_RANK_PRESERVING_SIZE_POLICY_PROBES",
+  "queries": [
+    {
+      "family": 12,
+      "action": "d2b4",
+      "target": 1,
+      "min_rank_decreasing_tree_nodes": 1758,
+      "status": "UNKNOWN",
+      "reason": "node_budget",
+      "nodes": 1024,
+      "seconds": 1.0191002000065055
+    },
+    {
+      "family": 12,
+      "action": "d2c3",
+      "target": 1,
+      "min_rank_decreasing_tree_nodes": null,
+      "status": "UNKNOWN",
+      "reason": "not_positive_table_value",
+      "nodes": 0,
+      "seconds": 0.0007167000148911029
+    },
+    {
+      "family": 30,
+      "action": "a2a1",
+      "target": 1,
+      "min_rank_decreasing_tree_nodes": 936,
+      "status": "PROVEN_WIN",
+      "reason": "budgeted_rank_full_session_certificate",
+      "nodes": 936,
+      "seconds": 0.823944500007201,
+      "verified": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 936,
+        "seconds": 2.7370546000020113,
+        "terminal_leaves": {
+          "checkmate:None": 78
+        },
+        "session_transitions": 935
+      },
+      "actual_terminal": {
+        "status": "checkmate",
+        "winner": 1,
+        "moves": 27
+      }
+    },
+    {
+      "family": 30,
+      "action": "a2a3",
+      "target": 1,
+      "min_rank_decreasing_tree_nodes": null,
+      "status": "UNKNOWN",
+      "reason": "not_positive_table_value",
+      "nodes": 0,
+      "seconds": 0.000700599979609251
+    },
+    {
+      "family": 30,
+      "action": "c4d3",
+      "target": 1,
+      "min_rank_decreasing_tree_nodes": null,
+      "status": "UNKNOWN",
+      "reason": "not_positive_table_value",
+      "nodes": 0,
+      "seconds": 0.0006534999993164092
+    },
+    {
+      "family": 11,
+      "action": "ROOT_OWN_WIN",
+      "target": 0,
+      "min_rank_decreasing_tree_nodes": 162,
+      "status": "PROVEN_WIN",
+      "reason": "budgeted_rank_full_session_certificate",
+      "nodes": 162,
+      "seconds": 0.14049510000040755,
+      "verified": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 162,
+        "seconds": 0.381070000003092,
+        "terminal_leaves": {
+          "checkmate:None": 15
+        },
+        "session_transitions": 161
+      },
+      "actual_terminal": {
+        "status": "checkmate",
+        "winner": 0,
+        "moves": 17
+      }
+    }
+  ],
+  "teacher_load_seconds": 10.596150299999863,
+  "DP_seconds": 0.331559299986111,
+  "DP_states": 1746,
+  "seconds": 19.187095399975078,
+  "verified_actual_mates": 2,
+  "scope": "New price-independent researchpolicy diagnostic, NOT unchanged2139player orfreecost. Min overstrictlyrank-decreasingchoices only; notminimumallstrategies. Actualverifier andfullhistory remainrequired."
+}

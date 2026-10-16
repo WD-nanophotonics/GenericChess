@@ -1,0 +1,87 @@
+{
+  "status": "COMPLETE_STORED_STRATEGY_COUNTS_ONLY",
+  "rows": [
+    {
+      "family": 12,
+      "action": "d2b4",
+      "target": 1,
+      "positional_target_value": 1,
+      "rank": 31,
+      "prefix_plies": 1,
+      "remaining_plies": 95,
+      "unrolled_nodes": 3954,
+      "unrolled_leaves": 318,
+      "depth": 31,
+      "distinct_positional_nodes": 524,
+      "dag_edges": 647,
+      "exceeds1024": true,
+      "prior_root_reachable": false,
+      "rank_fits_horizon": true
+    },
+    {
+      "family": 12,
+      "action": "d2c3",
+      "target": 1,
+      "positional_target_value": 0,
+      "rank": null,
+      "prefix_plies": 1,
+      "remaining_plies": 95
+    },
+    {
+      "family": 30,
+      "action": "a2a1",
+      "target": 1,
+      "positional_target_value": 1,
+      "rank": 27,
+      "prefix_plies": 1,
+      "remaining_plies": 95,
+      "unrolled_nodes": 1050,
+      "unrolled_leaves": 84,
+      "depth": 27,
+      "distinct_positional_nodes": 227,
+      "dag_edges": 259,
+      "exceeds1024": true,
+      "prior_root_reachable": false,
+      "rank_fits_horizon": true
+    },
+    {
+      "family": 30,
+      "action": "a2a3",
+      "target": 1,
+      "positional_target_value": 0,
+      "rank": null,
+      "prefix_plies": 1,
+      "remaining_plies": 95
+    },
+    {
+      "family": 30,
+      "action": "c4d3",
+      "target": 1,
+      "positional_target_value": 0,
+      "rank": null,
+      "prefix_plies": 1,
+      "remaining_plies": 95
+    },
+    {
+      "family": 11,
+      "action": "ROOT_OWN_WIN",
+      "target": 0,
+      "positional_target_value": 1,
+      "rank": 17,
+      "prefix_plies": 0,
+      "remaining_plies": 96,
+      "unrolled_nodes": 168,
+      "unrolled_leaves": 15,
+      "depth": 17,
+      "distinct_positional_nodes": 79,
+      "dag_edges": 85,
+      "exceeds1024": false,
+      "prior_root_reachable": false,
+      "rank_fits_horizon": true
+    }
+  ],
+  "DP_states": 788,
+  "teacher_load_seconds": 9.91843200000585,
+  "seconds": 10.22685099998489,
+  "scope": "Position graph lowerrepresentationcost diagnostic only; actualhistory maydraw/reject somepaths. NOT fullhistorycertificate orminimumproofsize. No freeDAGverifier ordeploymentclaim."
+}

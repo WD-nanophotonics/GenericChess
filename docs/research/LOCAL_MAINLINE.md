@@ -1,30 +1,35 @@
-# DEV_AUX current mainline - segment72,2026-10-16
+# DEV_AUX current mainline — segment73,2026-10-16
 
-ScienceOPEN; ownsidemission/PUBLIC, PRIMARYreadonly. Grants/reasons:AGENTS.md.
-Decision/reason: implementfixedproof+actualW-L, butfirstrepairmeasuredcontroller
-cost andobservednochoiceincompleteness. No quantity/UNKNOWNasDRAW.
-2130actualstopcallback91%normal/96%PNwall;2131memoizesJSONdecodingONLYwhile
-EVERYpollfreshreads6files/order.8realfiletests inclsame-mtimebytechangePASS.
-2132samebudgetnormaldepth3completions0->5/8;PNnodes638->1585. Notmachineexclusive
-speed/strength.2133root12losing->drawingchoice via completeddepth3;otherdefects
-remain, opponentproofbudgetdidnotrejectfirstbadties. No safetypatchadopted.
-2120newfixedORIGINALPNfoe/candidate-onlyfactor closes32logical28physical1406moves
-1561s/allDRAW;4familygains0. Teacher593.56sprepaid retained. No oldcapextension.
-2128newbotharmed3x3fixedtrigger closes64logical48physical451moves18.035s;
-17portablecertsverified, physical31D9W8L. Price.25gainmean-.0625vs1, notlearner.
-2134NEWtrueW-LcelltrainingclosesPARTIAL367logical341physical4608moves101s;
-301physicalD21W18L1UNKNOWN,81TRAINlogicalunrun/noSelector/noDEV. Failednormal
-nochoice-timeoutprefix17 preserved; exactfaileddecisionreceiptunavailable.
-2136legalfallbackpaidintotaldeadline fixesclasswithoutstop/terminal/foreign
-bypass;4regressionsPASS.2137SEPARATEdiagnosticnewfallback+existingcert mates2plies,
-NOToldexperimentcompletion/reward; original2134UNKNOWNremains.
-Finitepricecells:oneN/twoBcrossings1/2/.25-.5equivalent,576node-onlyqueriesPASS.
-168actualtrees14180nodeschecked. DRAW0crossingomissionfoundindependently;
-2126correctsSAMEdata, oldclaimsretain/superseded.9800rootpopulationfirstsensitive
-3228(notold3223),173unfixablefirsts;2127literalall+64publicPASS. No labelholdout.
-Dot1792132366.499399 read98f2086source+inline72/no72execution; fixedties/unknown/
-paidcostadopted. PRIMARY1bc6408 independentderivedfeaturecost/failuresreadonly;
-AUXstopcostdiagnosedOWNtransportonly, notclaimPRIMARYaffected.
-NEXT:freshsmallprotocolwith2131+2136/fixedfoe/budget/cells, new structuralinputs,
-journalfaileddecision; neverfill2134 orretuneexposedDEV. Genericdrop/promotion/
-auxhistoryfallbackqualificationusefulbackup; no mainline/default/UI takeover.
+ScienceOPEN; ownsidemission/PUBLIC, PRIMARYreadonly. Current grants/reasons:AGENTS.
+Three actual-W-L studies are COMPLETE under their original independentcaps:
+2139 544logical496physical6045plies145.496s: starts.25->.5 and3->2;
+DEVfamilygains-.03125/0vs1. Strictneighborplateaus stopbeforeTRAINglobalbest1.
+2149 928logical848physical8965plies311.221s: newglobalenumeration/twofixedfoes,
+sixprices tie0,3=-2; retentionselects1, DEVidentitynotbenefit/equivalence.
+2158 960logical880physical15179plies502.399s: label-freeprice-activeconditionalmu,
+TRAINsums6/6/6/2/-2/-6/-8 select.25among3ties BEFORE64DEV. DEVgain0
+(+.5family39/-.5family42). No positivegeneralization/uniqueprice/convergence.
+Allactualrecords/418savedcertificates audited.2160all15179receipts verifiesone
+realnormaltimeoutrecoveredbydeclaredpaidlegalfallback. BothchangedDEVpairsfirst
+divergeatcandidatecompleteddepth2, notproof/fallbackfirst. Old2134UNKNOWNand
+allmissingoldslotsremainclosed; no caprestart/backfill or proxyreward.
+2155inputpredicate uses noWDL/rank/proof/price-successfilter; all1992publicnodes/
+336normalnode-onlyqueriesPASS. Familiarpopulationlabels exposed, notholdout.
+2141stored4x4proof3954/1050nodes>1024;2143minstrict-ranktree1758/936;936proof
+verified/actual27plymate butverification2.7s>.2.2145ownedprefixverifier preserves
+fullhistory/claims/alldefenses;148certs592forgeries/34fixturesPASS. At1.5s936
+complete/referencepartial, at.2bothfail. No fixedlearning/defaultpolicychange.
+2147puregeneric no-table576PN/thresholdqueries561.507s; bothprove12/12trueWIN
+contexts at6s,9/12at.2;65actualcerts/mateschecked.169/170non-timepairs identical;
+oneunsupportedUNKNOWNunreproduced, originalcauseunconfirmed.2153localfixture
+proves truncatedstopJSON canbeswallowedbyValueError; opt-inreader savesexact
+privatebytes andraisesdistincterror, no retry/stopbypass orPRIMARYfaultclaim.
+2148fullSessionnormal modelsdeclarations;7mechanismchecks, standaloneonly.
+Dot1792138005.873239 read7aereference/session/position+inline73, no73execution;
+sibling/replay/witnesscontroladopted. PRIMARY4f8a03b API-readyinputcostwork remains
+separate/read-only. No competingbackendwork/UI/default/primarywrites.
+NEXT: freezeALL32TRAIN capacitypanel atcompletednormaldepth2/3/4 acrosspricecells,
+no DEVroot/pricechoice; compare fullSessionnormalinterfacecost. Do not repeat
+unchanged learning volume or tuneexposedDEV. Fullgenerateddomain remainsOPEN.
+Exactsource/rawdata in immutable73+latecapsules; fresh11restore1806checks1632
+paths67tests+allclosedconsumersPASS. Initial10snapshotretained/notrewritten.

@@ -1,0 +1,436 @@
+{
+  "status": "PASS_ALL15179_PRECOMMIT_RECEIPTS_ACTUAL_FALLBACK_AND_DEV_FIRSTDIFFERENCES",
+  "counts": {
+    "MATERIAL_SEARCH": 14901,
+    "all_decisions": 15179,
+    "PROOF": 113,
+    "PROOF_CONTINUATION": 164,
+    "PRECOMPUTED_LEGAL_FALLBACK": 1
+  },
+  "actual_fallbacks": [
+    {
+      "physical_id": 270,
+      "family": 10,
+      "phase": "TRAIN",
+      "ratio": 0.25,
+      "foe": 0.5,
+      "candidate": 1,
+      "ply": 20,
+      "decision": {
+        "physical_id": 270,
+        "logical_slot": 290,
+        "ply": 20,
+        "side": 0,
+        "is_candidate": false,
+        "ruleset_fingerprint": "5a3b421654ea9d79bfbc92915dbdd90bfdf941638485dec6b17181991b5f7dd7",
+        "root_record": {
+          "actions": [
+            {
+              "from": [
+                2,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "from": [
+                0,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            },
+            {
+              "from": [
+                2,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "from": [
+                2,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "from": [
+                0,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "from": [
+                2,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "from": [
+                0,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                0
+              ]
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                0
+              ]
+            },
+            {
+              "from": [
+                2,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "5a3b421654ea9d79bfbc92915dbdd90bfdf941638485dec6b17181991b5f7dd7",
+          "schema_version": 1
+        },
+        "root_state_sha": "27b982fcbf020435fe1d5099204bda106336691973c46082590f86929a4f2c24",
+        "root_result": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "requested_limits": {
+          "normal_nodes": 64,
+          "normal_depth": 2,
+          "normal_seconds": 0.05,
+          "proof_nodes": 1024,
+          "proof_seconds": 0.2,
+          "proof_depth": 64,
+          "verification_nodes": 16384,
+          "verification_seconds": 0.2,
+          "step_seconds": 0.75,
+          "H": 96
+        },
+        "actual_phase_limits": {
+          "normal_nodes": 64,
+          "proof_nodes": 1024,
+          "verification_nodes": 16384,
+          "total_seconds": 0.75,
+          "proof_seconds": 0.2,
+          "verification_seconds": 0.2,
+          "normal_seconds": 0.05,
+          "bank_fill_verification_nodes": 16384,
+          "bank_fill_verification_seconds": 0.2,
+          "fallback_admission_seconds": 0.0025553999876137823
+        },
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "normal_receipt": {
+          "action": null,
+          "source": "LEGAL_FALLBACK",
+          "proof_reason": "disabled",
+          "nodes": 0,
+          "proof_nodes": 0,
+          "verification_nodes": 0,
+          "search_nodes": 0,
+          "seconds": 0.07629960001213476,
+          "completed_depth": 0,
+          "exit_cause": "time_budget",
+          "proof_rank": null
+        },
+        "source": "PRECOMPUTED_LEGAL_FALLBACK",
+        "proof_reason": "certified_complete_graph_no_win",
+        "logical_status": "UNKNOWN",
+        "exit_cause": "time_budget",
+        "seconds": 0.08724219998111948,
+        "admission_seconds": 0.0017902999825309962,
+        "proof_nodes": 0,
+        "verification_nodes": 0,
+        "fill_verification_nodes": 0,
+        "search_nodes": 0,
+        "proof_seconds": 0.002362700004596263,
+        "verification_seconds": 0.0,
+        "fill_verification_seconds": 0.0,
+        "normal_seconds": 0.07629960001213476,
+        "proof_rank": null
+      },
+      "original_game_outcome": "DRAW"
+    }
+  ],
+  "DEV_outcome_changed_pairs": {
+    "39_0": {
+      "family": 39,
+      "candidate": 0,
+      "first_different_ply": 0,
+      "baseline_choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "selected_choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "baseline_score": -1,
+      "selected_score": 0,
+      "first_difference": "CANDIDATE_PRICE_NORMAL_COMPLETED2"
+    },
+    "42_1": {
+      "family": 42,
+      "candidate": 1,
+      "first_different_ply": 1,
+      "baseline_choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "selected_choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "baseline_score": 0,
+      "selected_score": -1,
+      "first_difference": "CANDIDATE_PRICE_NORMAL_COMPLETED2"
+    }
+  },
+  "DEV_mean_family_gain": 0.0,
+  "observed_stop_failures": 0,
+  "seconds": 3.1071527000167407,
+  "scope": "Fallbackbelongsdeclarednewpolicyandactuallegalaction, notbackfill2134. Actualnormalphasecanfailbeforedepth1 withoutabortingwholelearnedassay. BothchangedDEVpairsfirstdivergeatcandidatecompleteddepth2; no proof/fallback-firstconfound inthesecomparisons. Gain0notstability/benefit/equivalence."
+}

@@ -1862,3 +1862,46 @@ within declared caps, so no speculative selector is integrated. Delivery links
 will be supplied after actual full remote-SHA verification.
 
 Delivery72: source352ce9933200aeaf83c24cb579d041f4fd461a44/fullremoteSHA and12anonymous exactGitfiles/PUBLIC verified. One informational result1792135992.634089 delivered to Dot/PRIMARY in the related thread; delivery does not imply new source read or adoption. Own session ended safe_checkpoint after75.512minutes. Late2139 only freezes48 next-protocol structural inputs (283 draws/excludes5448prioractualpositions), outside the immutable72delta/replay counts; zero new fit/game/PN. Next work uses a fresh clock/policy and never fills2134.
+
+
+## DEV_AUX73 —2026-10-16, science OPEN
+
+The auxiliary completed2139 and2149 actual-W-L studies with fixed proof policy,
+complete records and305 independently verified learning certificates. Strict
+neighbor optimization stalls on plateaus; complete enumeration with two fixed
+opponents still retains baseline1 among six ties. No benefit/convergence claim.
+Price-action sensitivity is observed, mostly without outcome change. Next2155
+inputs select a predeclared structural price-disagreement predicate without
+labels;1992publicnodes/336normal checks qualify mechanics, no future fitness.
+
+Proof diagnosis separates stored strategy size, verifier prefix replay and pure
+no-table search coverage. An opt-in prefix-sharing verifier preserves full
+Session semantics and all defenses;592forgeries/34fixture checks pass. It helps
+one936node witness at1.5s but not.2s. The576-query no-table panel proves all12
+canonical WIN root/targets at6s and9at.2;65certificates/mates checked. One original
+unsupported result remains unexplained after a nonreproducing diagnostic. A real
+local fixture establishes swallowed stop-JSON errors and an evidence-preserving
+fail-closed reader; this is not a finding of PRIMARY wrongdoing. No clock/reset,
+quiet-window demand, worker, default/UI or cross-checkout write was introduced.
+
+PRIMARY fixed4f8a03b3ff5064dd60cc00a889f755377de2a786 independently reports API-ready
+input cost/failure attribution:1364queries,16walks/128plies,5960states/4580PV,
+zero evaluation games/research fits. This is read-only memo/revision evidence,
+not an auxiliary reproduction or integration. Its next path examines repeated
+full-context evaluator inputs; AUX does not take that backend assignment.
+
+Dot1792138005.873239 actually read7ae reference/session/position and73 inline,
+not the unpublished implementation or its tests. Adopted concrete sibling branch
+isolation/full replay/history-witness controls; no extra games/teacher required
+for verifier qualification. Delivery will give fixed-revision evidence, without
+inferring that Dot/PRIMARY subsequently read or executed it. Exact raw Slack and
+any failed stop observations remain in ignored private storage. All checked
+project-only source/data/failures are authorized for PUBLIC sidemission.
+
+73late: qualified2155conditionalinputs are tested by separately frozen2158,
+complete960logical880physical15179plies502.399s. GlobalTRAIN chooses.25 among
+three ties withsum6 vsbaseline2; DEVfamilygain0 (+.5/-.5), no benefit/uniqueprice.
+113certs/records andall15179decisionreceipts verified; one genuine normaltimeout
+is recovered bythepredeclaredpaidlegalfallback. Oldpartialstudiesremainclosed.
+A separate latecapsule/explicitconsumeroverlay retainsinitiale145capsule and
+first10archive67-testreceipt, ratherthanrewriting earlier executed evidence.
