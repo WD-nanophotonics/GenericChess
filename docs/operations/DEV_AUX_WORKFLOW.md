@@ -181,3 +181,11 @@ Bounded visibility check2026-10-15: authenticated GitHub metadata PUBLIC;
 anonymous repository API and segment56 raw report both HTTP200. No visibility
 mutation was necessary. Available DEV_AUX local command records contained no
 visibility-change command; this does not identify a historical settings actor.
+
+## Native shell check handling — observed2026-10-16
+
+PowerShell may continue after a native command exits nonzero. Keep review, Git
+commit and push in separate checked tool calls, or explicitly abort on the
+actual exit code. A later successful command does not prove earlier checks
+passed. Segment75 preserves the failed EOF check and its publication correction;
+raw executed sources and sealed evidence are unchanged.

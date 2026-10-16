@@ -133,4 +133,3 @@ def prove_incremental_graph(session,*,target=None,max_nodes=8192,max_edges=65536
  except(ValueError,NotImplementedError)as error:reason=str(error);cert=None
  finally:assert _same_state(session.state,state)and _same_state(session.to_record(),before)and session.result==result
  return IncrementalGraphResult(status,cert,reason,len(positions),b.nodes,transitions,b.elapsed(),rank[0]if rank else None,**selection_stats)
-
