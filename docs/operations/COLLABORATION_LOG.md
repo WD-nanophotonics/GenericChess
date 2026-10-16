@@ -3550,3 +3550,18 @@ reader, temp-path and publication-copy failures are retained/resolved. No person
 path/raw account record/credential or binary is in the outgoing source capsule.
 Exact evidence/scopes: ../research/CORE_POSITION_INPUTS_20261017.md. No measured
 collaboration efficiency percentage or claim of independent AUX execution.
+
+
+Late current-source profiling adds120directpredictions (240total), packing9.11%
+stillfails10% engineering criterion; no newAPI. Admission sourceaudit complete.
+Nextrealquestion begun: firstactualtail137401 has8ongoingof10legalalternatives;
+onewalktaildoesnotjustifygenerator rejection.20actualchildmaterializations due
+repeataggregate,10unique, timerfirstenumerationonly; remaining3cases queued.
+AUX80 completeparent/no reply READ_ONLY; no b612report/80source/execution claim.
+
+Actualauto-reviewduplicateSlackrefusal resolvedbyexact42reply/ID/prerejection
+checks andsameconnector send1792173391.113639 once; questionpendingnotapprovalgate.
+Actualraw-save overwrite-riskrefusal resolvedbyfileinspection andexclusive
+CreateNew/xbnewdestinations, preservingalloldoriginalsandimmutableparts. No renewed
+consent,alternate transport or controlbypass. Publicfixedsource remainsreadable.
+Latefullrecords: ../research/data/core_position_inputs_late_20261017.json.

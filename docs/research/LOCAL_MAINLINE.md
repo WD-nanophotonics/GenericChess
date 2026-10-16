@@ -245,3 +245,11 @@ vs10% criterion and is DEFERRED; no new diagnostic API or competing AUX learner.
 CORE_POSITION_INPUTS_20261017.md owns exact sources, counterexamples and limits.
 Next: inspect real compiler/provider admission limits before any further bridge
 expansion or consumer migration. Do not repeat the closed manual-model panels.
+
+Late new-source component recheck:240total directpredictions, packing9.11% still
+below10% criterion, so no packing/API follow-on. Admission sourceaudit is done.
+Next real selection is the exposed four-tail generator diagnostic: inspect actual
+penultimate fullhistories andALLoneplyalternatives beforeconsideringanysimple
+playabilityfilter. First137401 actuallychecked:8ongoingof10alternatives; a chosen
+shortline isnot evidence thewhole ruleis unplayable. Threecases remain; nofilter,
+newsolver, pricefit, gamecampaign or changeofgenericdomain follows automatically.

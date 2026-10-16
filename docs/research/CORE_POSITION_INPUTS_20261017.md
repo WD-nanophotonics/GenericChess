@@ -155,3 +155,40 @@ Continue search-first selection; before another bridge expansion inspect actual
 compiler/provider admission boundaries and preserve explicit Core support. Do not
 repeat these closed toy-model/cost panels or extend their frozen caps merely to
 collect more depth changes.
+
+
+## Late changed-premise check and next work begun
+
+After the actual getter source change, a separately frozen repeat of the same
+six-root component protocol makes120 additional direct predictions. Aggregate
+packing is9.11percent, still below the existing10percent criterion. Individual
+small controls exceed10percent and stay in the record; no packing implementation
+or diagnostic API follows. Segment total is240 component predictions;65 Core
+player attempts remain. This new-source panel does not replace the old2.85% panel.
+
+The admission source audit confirms compile/report capability, actual rule limits
+and history-free Position imports have different roles. Existing availability
+already owns the short-horizon S4 exception. No new unsupported-rule fallback or
+AUX backend is adopted. AUX80's complete root/no-reply is read as an owner request
+only; its b612 report/source/execution is not claimed read or rerun.
+
+Next research has ACTUALLY begun: inspect every legal one-ply alternative at the
+real penultimate histories of the four retained terminal tails, before proposing
+any generator playability filter. The first137401 tail has10 alternatives, eight
+ongoing. One chosen short checkmate line therefore does not justify rejecting
+that rule. This is an exposed diagnostic, not optimal WDL or evidence of long-term
+playability; the other three cases remain executable next work. The first harness
+applies those10children twice for its aggregate:20 actual materializations,10
+unique alternatives; its saved timer covers only the first enumeration. No player
+or solver query is added. [Late complete records](data/core_position_inputs_late_20261017.json)
+retain the protocol and this accounting limit.
+
+Two real automatic-review refusals occurred after the first Git publication:
+a suspected duplicate Slack follow-up and suspected raw-record overwrite. For the
+first, exact original-root coverage and the pre-execution refusal/no receipt show
+no prior matching FOLLOWUP_ID; the same supported connector then delivers once.
+For the second, file inspection and exclusive CreateNew/xb destinations preserve
+all existing exact originals and resolve the save. No alternative transport,
+security bypass, lost evidence or renewed user consent is involved. Raw outputs
+stay private. The fixed-source technical question is sent, still pending at the
+closing read, and is not a publication or research continuation gate.
