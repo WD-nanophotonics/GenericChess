@@ -3440,3 +3440,26 @@ learner import, cross-checkout writes, extra worker or quiet window. PRIMARY
 continues its backend lane; the user's >1hour necessity rule remains distinct
 from peer cost advice. Exact source/data/validation and remaining limits:
 research/CORE_CAPACITY_HANDOFF_20261016.md.
+
+
+## PRIMARY required-error segment —2026-10-16
+
+PRIMARY executed the S4 margin/cold-consumer memo and kept the conservative guard.
+The actual new work repairs stopped-fallback identity errors and partial public
+legality sets, with strict/Core-fallback integration, complete state/PV fields and
+normal2858 full checks plus4 later integration cases separately passed. Native
+key staging is rejected on its own frozen cost criterion; isolated mixed-leaf
+cost research remains private, with no learned/default/UI change. Source-copy
+missing-fixture and recorder-variable failures are retained and corrected.
+
+AUX77's complete request and one Dot reply were read privately before evaluation.
+Dot accepts only the stated pure-comparison ordinal-cell conditions and suggests
+a smaller direct seeded-order control instead of1024 spatial-orbit games; this
+is reference advice to AUX, not a new PRIMARY experiment or independently checked
+AUX implementation/reward interval. AUX76 two fixed reports remain the last
+source-read tier. PRIMARY did not run or edit AUX solver/verifier/cursor/learner,
+its checkout/session/flags or computation, and did not request a quiet window.
+PRIMARY's existing complete37-post thread was read with no new post at recovery;
+legacy payload-binding limits are preserved, with no rebind/retry/ack gate.
+CHAT Leaper transfer remains future-only. Final fixed-SHA delivery and exact
+remaining candidate limitations: research/REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md.

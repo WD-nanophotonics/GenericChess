@@ -114,7 +114,8 @@ def test_ongoing_checking_continuation_at_max_ply_uses_core_fallback(strict):
     with runtime.pushed(action):
         assert runtime.terminal_status.status is TerminalStatus.ONGOING
         assert runtime.terminal_status == session.state.terminal_status
-        assert provider(runtime.position, runtime.ply_count, None) == ()
+        with pytest.raises(RuntimeError, match="required checked transition"):
+            provider(runtime.position, runtime.ply_count, None)
         assert not provider.supports_position(runtime.position, runtime.ply_count)
         assert set(runtime.legal_actions()) == set(session.legal_actions())
         assert len(runtime.legal_actions()) == 2

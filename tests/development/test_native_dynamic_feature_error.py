@@ -42,6 +42,10 @@ static PyObject *gc_test_feature_set(PyObject *self,PyObject *args) {
  (void)self;if(!PyArg_ParseTuple(args,"p",&gc_test_feature_fault))return NULL;
  gc_test_feature_failures=0;Py_RETURN_NONE;
 }
+static PyObject *gc_test_public_scope(PyObject *self,PyObject *args) {
+ (void)self;if(!PyArg_ParseTuple(args,"p",&gc_test_feature_scope))return NULL;
+ Py_RETURN_NONE;
+}
 static PyObject *gc_test_feature_get(PyObject *self,PyObject *args) {
  (void)self;(void)args;return PyLong_FromLong(gc_test_feature_failures);
 }
@@ -64,6 +68,7 @@ static PyObject *gc_test_feature_get(PyObject *self,PyObject *args) {
     needle = '    {"semantic_dynamic_features", gc_semantic_dynamic_features, METH_VARARGS,'
     module = module.replace(needle,
         '    {"test_feature_set",gc_test_feature_set,METH_VARARGS,"Private fault"},\n'
+        '    {"test_public_scope",gc_test_public_scope,METH_VARARGS,"Private public scope"},\n'
         '    {"test_feature_failures",gc_test_feature_get,METH_NOARGS,"Private count"},\n' + needle)
     runtime = (source / "native_semantic_runtime.c").read_text(encoding="utf-8")
     needle = "static int semantic_has_s3_reply(const GCSemanticRules *r, const GCSemanticPosition *position) {"
@@ -184,3 +189,106 @@ def test_feature_failure_cannot_be_a_completed_search(feature_fault_kernel, q, p
     assert (retried.action, retried.score, retried.principal_variation) == (
         cold.action, cold.score, cold.principal_variation)
     assert session.state is before and session._search_witnesses is witnesses
+
+
+@pytest.mark.parametrize("builder,position_for", (
+    (s4.multiple_replies_ruleset, s4.multiple_replies_position),
+    (s4.full_child_state_ruleset, s4.full_child_state_position),
+))
+@pytest.mark.parametrize("path", (
+    "guarded", "guarded_audit", "transient", "transient_audit", "subset", "checked",
+))
+def test_public_legality_never_returns_partial_set_after_nested_failure(
+    feature_fault_kernel, builder, position_for, path,
+):
+    kernel = feature_fault_kernel
+    compiled = compile_semantic_ruleset(builder())
+    rules = compile_native_semantic_rules(compiled, backend_module=kernel)
+    position = position_for(compiled.support)
+    payload = dict(expected_snapshot(position, rules, compiled), ply=0)
+    payload["board"] = [None if p is None else list(p) for p in payload["board"]]
+    payload["hands"] = [list(h) for h in payload["hands"]]
+    packed = sem.pack_position(rules, payload)
+    before = sem.snapshot(rules, packed)
+    candidates = sem.candidate_actions(rules, packed)
+    legal = sem.guarded_actions(rules, packed)
+    def checked_children():
+        return tuple(sem.snapshot(rules, sem.make_checked(rules, packed, a))
+                     for a in legal)
+    operations = {
+        "guarded": lambda: sem.guarded_actions(rules, packed),
+        "guarded_audit": lambda: sem.guarded_actions_audit(rules, packed),
+        "transient": lambda: sem.transient_legal_actions(rules, packed),
+        "transient_audit": lambda: sem.transient_legal_actions_audit(rules, packed),
+        "subset": lambda: sem.transient_legal_subset(rules, packed, candidates),
+        "checked": checked_children,
+    }
+    baseline = operations[path]()
+    kernel.test_feature_set(True)
+    kernel.test_public_scope(True)
+    try:
+        with pytest.raises(RuntimeError, match="required checked transition"):
+            operations[path]()
+        assert kernel.test_feature_failures() == 1
+        assert operations[path]() == baseline
+    finally:
+        kernel.test_public_scope(False)
+        kernel.test_feature_set(False)
+    assert sem.snapshot(rules, packed) == before
+    assert sem.guarded_actions(rules, packed) == legal
+
+
+@pytest.mark.parametrize("builder,position_for", (
+    (s4.multiple_replies_ruleset, s4.multiple_replies_position),
+    (s4.full_child_state_ruleset, s4.full_child_state_position),
+))
+@pytest.mark.parametrize("strict", (False, True))
+def test_actual_provider_negative_status_selects_explicit_contract(
+    feature_fault_kernel, builder, position_for, strict,
+):
+    from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
+    from generic_chess.core.identity import repetition_identity_key
+    from generic_chess.core.position import GameState, HistoryRecord
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.core.semantic_executor import semantic_engine_for
+    from generic_chess.core.terminal import TerminalResult, TerminalStatus
+    from generic_chess.core.transition import legal_actions, apply_action
+    kernel = feature_fault_kernel
+    compiled = compile_semantic_ruleset(builder())
+    position = position_for(compiled.support)
+    key = repetition_identity_key(position, compiled)
+    # Imported S4 specification root, not a claimed played trajectory.
+    state = GameState(position, 0, ((key, 1),), TerminalResult(TerminalStatus.ONGOING),
+                      (HistoryRecord(key, -1, "", False),))
+    expected = set(legal_actions(state, compiled))
+    assert expected
+    rules = compile_native_semantic_rules(compiled, backend_module=kernel)
+    provider = NativeSemanticLegalityProvider(compiled, semantic_engine_for(compiled),
+                                              rules, strict=strict)
+    runtime = SearchPathRuntime.from_state(state, compiled,
+        history_witnesses=(position,), legal_binding_provider=provider)
+    kernel.test_feature_set(True)
+    kernel.test_public_scope(True)
+    try:
+        if strict:
+            with pytest.raises(RuntimeError, match="required checked transition"):
+                runtime.legal_actions()
+            assert runtime.legal_provider_operational_failures == 0
+            assert runtime.legal_provider_fallbacks == 0
+        else:
+            assert set(runtime.legal_actions()) == expected
+            assert runtime.legal_provider_operational_failures == 1
+            assert runtime.legal_provider_fallbacks == 1
+            assert not runtime._legal_provider_active
+        assert kernel.test_feature_failures() == 1
+        assert set(runtime.legal_actions()) == expected
+    finally:
+        kernel.test_public_scope(False)
+        kernel.test_feature_set(False)
+    selected = runtime.legal_actions()[0]
+    child = apply_action(state, selected, compiled)
+    with runtime.pushed(selected):
+        assert runtime.position == child.position
+        assert runtime.terminal_status == child.terminal_status
+    runtime.assert_balanced()
+    assert runtime.position is state.position and runtime.depth == 0

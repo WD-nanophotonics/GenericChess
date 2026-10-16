@@ -2869,9 +2869,13 @@ static PyObject *gc_semantic_make_checked(PyObject *self, PyObject *args) {
     }
     GCSemanticPosition *child = (GCSemanticPosition *)malloc(sizeof(*child));
     if (!child) { PyErr_NoMemory(); return NULL; }
-    if (!gc_semantic_runtime_make_checked(child, rules, parent, (uint64_t)action)) {
+    int status = gc_semantic_runtime_make_checked_status(
+        child, rules, parent, (uint64_t)action);
+    if (status <= 0) {
         free(child);
-        PyErr_SetString(PyExc_ValueError, "semantic action is not valid for the current position");
+        if (!PyErr_Occurred()) PyErr_SetString(
+            status < 0 ? PyExc_RuntimeError : PyExc_ValueError,
+            status < 0 ? "semantic required checked transition failed; history or execution is unavailable" : "semantic action is not valid for the current position");
         return NULL;
     }
     return PyCapsule_New(child, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
@@ -3039,7 +3043,14 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
         unsigned long long raw = PyLong_AsUnsignedLongLong(PyTuple_GetItem(candidates, i));
         if (PyErr_Occurred()) { Py_DECREF(candidates); Py_DECREF(guarded); return NULL; }
         GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, rules, position, (uint64_t)raw)) continue;
+        int status = gc_semantic_runtime_make_checked_status(
+            &child, rules, position, (uint64_t)raw);
+        if (status < 0) {
+            Py_DECREF(candidates); Py_DECREF(guarded);
+            if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic required checked transition failed; history or execution is unavailable");
+            return NULL;
+        }
+        if (!status) continue;
         PyObject *value = PyLong_FromUnsignedLongLong(raw);
         if (!value || PyList_Append(guarded, value) != 0) { Py_XDECREF(value); Py_DECREF(candidates); Py_DECREF(guarded); return NULL; }
         Py_DECREF(value);
@@ -3124,7 +3135,14 @@ static PyObject *gc_semantic_transient_legal_actions_impl(
     if (out) {
         for (size_t i = 0; i < candidates.count; i++) {
             GCSemanticPosition child;
-            if (!gc_semantic_runtime_make_checked(&child, rules, position, candidates.data[i])) continue;
+            int status = gc_semantic_runtime_make_checked_status(
+                &child, rules, position, candidates.data[i]);
+            if (status < 0) {
+                Py_CLEAR(out);
+                if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic required checked transition failed; history or execution is unavailable");
+                break;
+            }
+            if (!status) continue;
             PyObject *value = PyLong_FromUnsignedLongLong(candidates.data[i]);
             if (!value) { Py_DECREF(out); out = NULL; break; }
             if (PyList_Append(out, value) != 0) { Py_DECREF(value); Py_DECREF(out); out = NULL; break; }
@@ -3170,7 +3188,14 @@ static PyObject *gc_semantic_transient_legal_subset(PyObject *self, PyObject *ar
     gc_semantic_runtime_history_mode_start();
     for (size_t i = 0; i < candidates.count; i++) {
         GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, rules, position, candidates.data[i])) continue;
+        int status = gc_semantic_runtime_make_checked_status(
+            &child, rules, position, candidates.data[i]);
+        if (status < 0) {
+            Py_CLEAR(out);
+            if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic required checked transition failed; history or execution is unavailable");
+            break;
+        }
+        if (!status) continue;
         PyObject *value = PyLong_FromUnsignedLongLong(candidates.data[i]);
         if (!value || PyList_Append(out, value) != 0) {
             Py_XDECREF(value); Py_CLEAR(out); break;
@@ -5434,8 +5459,16 @@ static PyObject *gc_semantic_policy_logits(PyObject *self, PyObject *args) {
     }
     for (size_t i = 0; i < candidates.count; i++) {
         GCSemanticPosition child;
-        if (!gc_semantic_runtime_make_checked(&child, rules, position,
-                                             candidates.data[i])) continue;
+        int status = gc_semantic_runtime_make_checked_status(
+            &child, rules, position, candidates.data[i]);
+        if (status < 0) {
+            Py_DECREF(actions); Py_DECREF(logits);
+            gc_semantic_action_buffer_free(&candidates);
+            gc_semantic_profile_free(&profile);
+            if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic required checked transition failed; history or execution is unavailable");
+            return NULL;
+        }
+        if (!status) continue;
         double features[24];
         if (!gc_semantic_policy_action_features(rules, position,
                                                 candidates.data[i], features)) {
@@ -6168,7 +6201,10 @@ static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
     uint64_t neutral_action = 0;
     int neutral_declaration = gc_semantic_declaration_neutral(
         ctx->rules, &ctx->stack[0], &neutral_action);
-    if (neutral_declaration < 0) return 0;
+    if (neutral_declaration < 0) {
+        ctx->control = 4;
+        return 0;
+    }
     if (neutral_declaration > 0) {
         if (action_out != NULL) *action_out = neutral_action;
         return 1;
@@ -6177,14 +6213,23 @@ static int gc_semantic_iterative_fallback(GCSemanticIterativeContext *ctx,
     gc_semantic_action_buffer_init(&actions);
     if (!gc_semantic_generate_candidate_buffer(ctx->rules, &ctx->stack[0], &actions)) {
         gc_semantic_action_buffer_free(&actions);
+        ctx->control = 4;
         return 0;
     }
     uint64_t best = 0;
     int found = 0;
     size_t i;
     for (i = 0; i < actions.count; i++) {
-        if (gc_semantic_runtime_make_checked(&ctx->stack[1], ctx->rules,
-                                             &ctx->stack[0], actions.data[i])) {
+        int status = gc_semantic_runtime_make_checked_status(
+            &ctx->stack[1], ctx->rules, &ctx->stack[0], actions.data[i]);
+        if (status < 0) {
+            /* An unverified candidate is not an illegal move. Even after a
+             * budget/cancel stop, no fallback is certified when this fails. */
+            ctx->control = 4;
+            gc_semantic_action_buffer_free(&actions);
+            return 0;
+        }
+        if (status > 0) {
             if (!found || actions.data[i] < best) {
                 best = actions.data[i];
                 found = 1;

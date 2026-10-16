@@ -165,6 +165,63 @@ static PyObject *gc_test_set_probe_fault(PyObject *self,PyObject *args) {
     module=module[:probe_start]+helper+probe+module[probe_end:]
     module=module.replace(needle,
         '    {"test_set_probe_fault",gc_test_set_probe_fault,METH_VARARGS,"Private probe fault"},\n'+needle)
+    # Fallback still needs exact identity construction after an early stop.
+    # Inject only in this real consumer, preserving Boolean/status behavior of
+    # the source under test so the old error loss is actually reproduced.
+    start = module.index("static int gc_semantic_iterative_fallback(")
+    end = module.index("\nstatic ", start + 1)
+    fallback = module[start:end]
+    fallback_make = ("gc_semantic_runtime_make_checked_status" if
+                     "gc_semantic_runtime_make_checked_status(" in fallback else
+                     "gc_semantic_runtime_make_checked")
+    fallback = fallback.replace(fallback_make + "(", "gc_test_fallback_make(")
+    fallback = fallback.replace("gc_semantic_generate_candidate_buffer(",
+                                "gc_test_fallback_candidates(")
+    fallback = fallback.replace("gc_semantic_declaration_neutral(",
+                                "gc_test_fallback_neutral(")
+    helper = """
+static int gc_test_fallback_after=0, gc_test_fallback_visits=0;
+static int gc_test_fallback_candidates(const GCSemanticRules *rules,
+    const GCSemanticPosition *position,GCSemanticActionBuffer *buffer) {
+    int result=gc_semantic_generate_candidate_buffer(rules,position,buffer);
+    /* Return-contract injection after a real buffer allocation, not an OOM. */
+    return gc_test_fallback_after==-1 ? 0 : result;
+}
+static int gc_test_fallback_neutral(const GCSemanticRules *rules,
+    const GCSemanticPosition *position,uint64_t *action) {
+    int result=gc_semantic_declaration_neutral(rules,position,action);
+    return gc_test_fallback_after==-2 ? -1 : result;
+}
+static int gc_test_fallback_make(GCSemanticPosition *child,
+    const GCSemanticRules *rules,const GCSemanticPosition *parent,uint64_t action) {
+    extern int gc_test_key_failure;
+    gc_test_fallback_visits++;
+    gc_test_key_failure=gc_test_fallback_after>0 &&
+        gc_test_fallback_visits==gc_test_fallback_after;
+    int result=FALLBACK_MAKE(child,rules,parent,action);
+    gc_test_key_failure=0;return result;
+}
+static PyObject *gc_test_set_fallback_fault(PyObject *self,PyObject *args) {
+    (void)self;
+    if(!PyArg_ParseTuple(args,"i",&gc_test_fallback_after))return NULL;
+    extern int gc_test_key_failures;
+    gc_test_fallback_visits=0;gc_test_key_failures=0;Py_RETURN_NONE;
+}
+static PyObject *gc_test_public_key_fault(PyObject *self,PyObject *args) {
+ (void)self;extern int gc_test_key_failure,gc_test_key_failures;
+ if(!PyArg_ParseTuple(args,"p",&gc_test_key_failure))return NULL;
+ gc_test_key_failures=0;Py_RETURN_NONE;
+}
+static PyObject *gc_test_fallback_count(PyObject *self,PyObject *args) {
+    (void)self;(void)args;extern int gc_test_key_failures;
+    return Py_BuildValue("(ii)",gc_test_fallback_visits,gc_test_key_failures);
+}
+""".replace("FALLBACK_MAKE", fallback_make)
+    module = module[:start] + helper + fallback + module[end:]
+    module = module.replace(needle,
+        '    {"test_set_fallback_fault",gc_test_set_fallback_fault,METH_VARARGS,"Private fallback fault"},\n'
+        '    {"test_public_key_fault",gc_test_public_key_fault,METH_VARARGS,"Private public identity fault"},\n'
+        '    {"test_fallback_count",gc_test_fallback_count,METH_NOARGS,"Private fallback counters"},\n'+needle)
     key = (source / "native_semantic_key.c").read_text(encoding="utf-8")
     needle = ("int gc_semantic_position_key_digest(const GCSemanticRules *r, "
               "const GCSemanticPosition *p, char out_hex[65]) {")
@@ -358,3 +415,137 @@ def test_fixed_depth_required_child_failure_is_not_empty_result(fault_kernel, mo
         fault_kernel.test_set_probe_fault(False)
     assert snapshot(rules,position)==before
     assert fixed_depth_search(rules,position,2)==baseline
+
+
+@pytest.mark.parametrize("stop", ("cancel", "nodes", "time", "depth_zero"))
+@pytest.mark.parametrize("fail_after", (1, 2))
+@pytest.mark.parametrize("root_windows", (False, True))
+def test_fallback_required_identity_failure_is_explicit_and_recovers(
+    fault_kernel, monkeypatch, stop, fail_after, root_windows,
+):
+    from generic_chess.ai.cancellation import CancellationToken
+    monkeypatch.setattr(native, "_MODULE", fault_kernel)
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    session = GameSession(compiled)
+    for _ in range(2):
+        session.submit(session.legal_actions()[0])
+    before, witnesses = session.state, session._search_witnesses
+    rules = compile_native_semantic_rules(compiled)
+    tested = SemanticSearchEngine(compiled, rules, tt_megabytes=1)
+    token = CancellationToken()
+    if stop == "cancel":
+        token.cancel()
+    limits = SearchLimits(
+        max_depth=0 if stop == "depth_zero" else 2,
+        max_nodes=0 if stop == "nodes" else 10000,
+        max_time_seconds=0 if stop == "time" else None,
+        quiescence_max_depth=0, quiescence_hard_max_depth=0,
+    )
+    def run(engine):
+        return engine.search(session, limits, token,
+                             root_window_pruning=root_windows)
+    fault_kernel.test_set_fallback_fault(0)
+    baseline = run(SemanticSearchEngine(compiled, rules, tt_megabytes=1))
+    assert baseline.action in session.legal_actions()
+    fault_kernel.test_set_fallback_fault(fail_after)
+    try:
+        failed = run(tested)
+        visits, failures = fault_kernel.test_fallback_count()
+    finally:
+        fault_kernel.test_set_fallback_fault(0)
+    assert failures == 1 and visits >= fail_after
+    assert failed.termination_reason == "internal_error"
+    assert failed.completed_depth == 0
+    assert failed.action is None and failed.principal_variation == ()
+    assert not failed.used_fallback
+    retry = run(tested)
+    assert (retry.action, retry.score, retry.principal_variation,
+            retry.termination_reason, retry.used_fallback) == (
+        baseline.action, baseline.score, baseline.principal_variation,
+        baseline.termination_reason, baseline.used_fallback)
+    assert session.state is before and session._search_witnesses is witnesses
+
+
+@pytest.mark.parametrize("return_fault", (-1, -2))
+@pytest.mark.parametrize("stop", ("cancel", "time"))
+def test_fallback_other_required_return_failures_are_explicit(
+    fault_kernel, monkeypatch, return_fault, stop,
+):
+    from generic_chess.ai.cancellation import CancellationToken
+    monkeypatch.setattr(native, "_MODULE", fault_kernel)
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    session = GameSession(compiled)
+    before, witnesses = session.state, session._search_witnesses
+    rules = compile_native_semantic_rules(compiled)
+    engine = SemanticSearchEngine(compiled, rules, tt_megabytes=0)
+    token = CancellationToken()
+    if stop == "cancel":
+        token.cancel()
+    limits = SearchLimits(max_depth=2,
+        max_time_seconds=0 if stop == "time" else None,
+        quiescence_max_depth=0, quiescence_hard_max_depth=0)
+    fault_kernel.test_set_fallback_fault(return_fault)
+    try:
+        failed = engine.search(session, limits, token)
+    finally:
+        fault_kernel.test_set_fallback_fault(0)
+    assert failed.termination_reason == "internal_error"
+    assert failed.action is None and not failed.used_fallback
+    recovered = engine.search(session, limits, token)
+    assert recovered.action in session.legal_actions()
+    assert recovered.termination_reason == (
+        "cancelled" if stop == "cancel" else "time_budget")
+    assert session.state is before and session._search_witnesses is witnesses
+
+
+def zero_policy_payload(compiled, rules):
+    """Existing Policy-v1 ABI constant fixture; no fitting or training."""
+    count = len(rules.type_ids)
+    aux = sum((1 if slot.value_kind == "bool" else 3) *
+              (1 if slot.scope == "global" else 2) for slot in compiled.ir.aux_slots)
+    dimension = 2 * count * compiled.board_size ** 2 + 2 * count + 5 + aux
+    matrix = lambda rows, cols: [[0.0] * cols for _ in range(rows)]
+    d = dict(artifact_type="SemanticPolicyV1", version=1,
+        ruleset_fingerprint=compiled.ruleset_fingerprint,
+        state_width=dimension, action_width=21, hidden_width=16, type_count=count,
+        state_weights=matrix(16, dimension), state_bias=[0.0] * 16,
+        base_weights=matrix(16, 21), action_bias=[0.0] * 16,
+        actor_geometry_embedding=[matrix(3, 16) for _ in range(count)],
+        beta_base=[0.0] * 21, beta_actor_geometry=matrix(count, 3))
+    for name in ("actor_embedding", "actor_capture_embedding",
+                 "actor_promotion_embedding", "actor_drop_embedding"):
+        d[name] = matrix(count, 16)
+    for name in ("promotion_embedding", "drop_embedding"):
+        d[name] = matrix(count + 1, 16)
+    for name in ("beta_actor", "beta_actor_capture", "beta_actor_promotion", "beta_actor_drop"):
+        d[name] = [0.0] * count
+    for name in ("beta_promotion", "beta_drop"):
+        d[name] = [0.0] * (count + 1)
+    return d
+
+
+@pytest.mark.parametrize("path", ("guarded", "checked", "policy_logits"))
+def test_public_required_identity_failure_is_not_partial_output(fault_kernel, path):
+    from generic_chess.native.adapter import pack_semantic_search_position
+    from generic_chess.native import semantic as sem
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    session = GameSession(compiled)
+    rules = compile_native_semantic_rules(compiled, backend_module=fault_kernel)
+    packed = pack_semantic_search_position(compiled, rules, session)
+    before = sem.snapshot(rules, packed)
+    legal = sem.guarded_actions(rules, packed)
+    operations = {
+        "guarded": lambda: sem.guarded_actions(rules, packed),
+        "checked": lambda: sem.snapshot(rules, sem.make_checked(rules, packed, legal[0])),
+        "policy_logits": lambda: sem.policy_logits(rules, packed, zero_policy_payload(compiled, rules)),
+    }
+    baseline = operations[path]()
+    fault_kernel.test_public_key_fault(True)
+    try:
+        with pytest.raises(RuntimeError, match="required checked transition"):
+            operations[path]()
+        assert fault_kernel.test_fallback_count()[1] > 0
+    finally:
+        fault_kernel.test_public_key_fault(False)
+    assert operations[path]() == baseline
+    assert sem.snapshot(rules, packed) == before

@@ -150,3 +150,32 @@ def test_old_kernel_declines_pending_authority_but_core_path_remains_available()
     decision = player.choose_action(session, SearchLimits(max_depth=1, max_nodes=128,
         quiescence_max_depth=0, quiescence_hard_max_depth=0))
     assert decision.action in session.legal_actions()
+
+
+@pytest.mark.parametrize("path", (
+    "guarded", "guarded_audit", "transient", "transient_audit", "subset", "checked",
+))
+def test_missing_pending_history_is_failure_not_empty_legality(path):
+    session = session_after(("e2e4", "d7d5", "f1b5"))
+    rules = compile_native_semantic_rules(session.compiled)
+    full = pack_semantic_search_position(session.compiled, rules, session)
+    # Explicit state-only import: no claim that this contains the played history.
+    short = sem.pack_current_position(rules, session.state.position,
+                                      ply_count=session.state.ply_count)
+    before = sem.snapshot(rules, short)
+    candidates = sem.candidate_actions(rules, short)
+    selected = pack_semantic_action(rules, session.state.position,
+                                    session.legal_actions()[0])
+    operations = {
+        "guarded": lambda: sem.guarded_actions(rules, short),
+        "guarded_audit": lambda: sem.guarded_actions_audit(rules, short),
+        "transient": lambda: sem.transient_legal_actions(rules, short),
+        "transient_audit": lambda: sem.transient_legal_actions_audit(rules, short),
+        "subset": lambda: sem.transient_legal_subset(rules, short, candidates),
+        "checked": lambda: sem.make_checked(rules, short, selected),
+    }
+    with pytest.raises(RuntimeError, match="required checked transition"):
+        operations[path]()
+    assert sem.snapshot(rules, short) == before
+    # The valid complete import remains usable after every error/mode cleanup.
+    assert {sem.public_action(rules, a) for a in sem.guarded_actions(rules, full)} == set(session.legal_actions())

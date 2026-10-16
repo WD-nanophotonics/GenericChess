@@ -61,6 +61,29 @@ question under the current priority. Do not expand Native storage, invent a new
 diagnostics/fallback framework, or rerun old q campaigns merely because this
 boundary is repaired. NEXT_WORK.md carries the next executable question.
 
+## Required error follow-on —2026-10-16
+
+The capacity follow-up kept the conservative S4 storage margin:76 typed actions
+and152 imported-Position child controls do not justify widening its boundary.
+It instead exposed a real stopped-fallback required-identity failure and public
+partial-legality/error-classification failures. Signed status now propagates to
+existing internal_error/RuntimeError channels; full-history Core fallback and
+strict provider behavior are tested. No result schema or evaluator policy changed.
+REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md owns the source, negative records,
+full2858 plus4 later integration qualification and independent restoration tiers.
+
+Required key cost is material in static controls, small in wide mixed leaves.
+One bounded512-byte SHA staging pilot missed its declared static criterion;
+REJECT it and do not expand that campaign. A different PRIVATE whole-fused-leaf
+isolation preserves the baseline body rather than modifying its shared frame;
+its four-profile pilot and separately frozen new-family transfer retain all cold
+adversity/censors. It is not the earlier9-only outline and is not adopted.
+The private default-module2862 run and actual isolated-source38 fault checks
+are separate completed tiers, not blanket all-domain qualification. Next examine
+supplied-zero/precomputed feature consumers and duplication/collateral cost for
+an adoption decision; no automatic learner/solver/default change.
+NEXT_WORK owns one concrete next action, not a backlog of old prototypes.
+
 ## Retained selections and negative findings
 
 Adopted exact implementations: checked PV caller replay, quiet unused-child
@@ -126,7 +149,7 @@ No architecture mandate, extra learner or immediate new training follows.
 NATIVE_TEACHER_AND_TRANSFER_20261016.md retains the completed feasibility study.
 
 Latest peer scope: AUX76 fixedda6b0043 two reports READ_ONLY; AUX77 complete
-inline request only, not77 source/execution. Prior75 reports remain historical. Dot's proposed
+request and one Dot reply only, not77 source/execution. Prior75 reports remain historical. Dot's proposed
 structural four-game diagnostic belongs to AUX's lane. PRIMARY's new capacity
 consult received a concrete fixed2d3e source objection about GameState versus
 Position actions; adopted the asymmetric control, not an approval gate. Actual

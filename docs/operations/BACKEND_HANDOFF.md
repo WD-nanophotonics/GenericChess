@@ -478,3 +478,22 @@ Core's optional Native legality provider declines at the storage boundary while
 Core retains complete history/adjudication. Actual boundary/PENDING/hybrid and
 fresh generated controls,2817 full checks and restored-source evidence are in
 ../research/CORE_CAPACITY_HANDOFF_20261016.md. No AUX/UI activation is performed.
+
+
+### 2026-10-16 required checked failures
+
+Rebuild and reload Native normally for the fallback/public legality fixes.
+Signed checked status distinguishes illegal0 from required execution failure-1.
+An early-stop fallback must report internal_error with no uncertified action
+when its required child, neutral declaration or candidate construction fails.
+Completed retained iterations and normal cancellation/node/time fallbacks stay.
+Guarded/audited and transient/subset legality, checked children and frozen
+Policy-v1 logits now raise RuntimeError instead of silently returning partial
+sets or misclassifying an unsupported legal child. In particular, a state-only
+PENDING import cannot stand in for its full authoritative history. Existing
+Core provider capability/fallback and strict error behavior remain; no public
+fields, imports, weights, q/default, capacity, UI or AUX activation changes.
+Normal2858 full checks plus4 later actual-provider integration cases are distinct
+validation invocations (final collection2862). Source/receipt tiers and finite
+limits: ../research/REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md. SHA staging
+is rejected; isolated mixed-leaf work remains private research, not activation.
