@@ -232,3 +232,11 @@ handle removal. The default nonzero dynamic/geometry path remains explicitly
 unsupported there. The next question must test a decision-changing projection/
 ranking premise under a declared measure; do not build an already-existing adapter
 or start another learner merely because the constructor now has an explicit route.
+
+The full12-profile census has three tables, not one: R/TP1828/172 on families
+0/1/2/3/10,1840/160 on4/5/7/11, and1825/175 on6/8/9. Extrapolating the first four
+equal tables to all12 was actually falsified and corrected before adoption.
+These price shifts alone do not establish usefulness. A prospective same-table
+mechanism contrast must hold progress/pass/history conditions and state its
+sampling measure before new queries; neither blanket invariance nor a new neural
+model follows from the census.

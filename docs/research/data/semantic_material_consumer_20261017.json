@@ -80,6 +80,261 @@
     },
     "whole_seconds": 120
   },
+  "profile_census": {
+    "distinct_board_tables": 3,
+    "examined_profiles": 12,
+    "first_prediction_falsified": "First4 tables agree but extrapolating all12 was wrong; assertion failed before result write. Full census retained instead of forcing equality.",
+    "included_excluded": [
+      {
+        "family": 0,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 1,
+            "included": 5
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 1,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 5
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 2,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 5
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 3,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 5
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 4,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 8
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 5,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 8
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 6,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 4
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 7,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 3,
+            "included": 8
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 8,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 3,
+            "included": 4
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 9,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 3,
+            "included": 4
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 10,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 2,
+            "included": 5
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      },
+      {
+        "family": 11,
+        "types": {
+          "K": {
+            "excluded": 0,
+            "included": 16
+          },
+          "R": {
+            "excluded": 3,
+            "included": 8
+          },
+          "TP": {
+            "excluded": 1,
+            "included": 2
+          }
+        }
+      }
+    ],
+    "next": "Pick one same-table pair with a controlled ignored-rule contrast, declare sampling measure and finite decision target before further comparison; no new model/fit/solver.",
+    "question": "Do these12mechanism variants give distinct projected prices before expensive work?",
+    "scope": "Projection excludes differing compound/state effects; a changed table or constructor availability alone is not useful metric prices.",
+    "tables": [
+      {
+        "board_table": {
+          "K": 0,
+          "R": 1828,
+          "TP": 172
+        },
+        "families": [
+          0,
+          1,
+          2,
+          3,
+          10
+        ]
+      },
+      {
+        "board_table": {
+          "K": 0,
+          "R": 1840,
+          "TP": 160
+        },
+        "families": [
+          4,
+          5,
+          7,
+          11
+        ]
+      },
+      {
+        "board_table": {
+          "K": 0,
+          "R": 1825,
+          "TP": 175
+        },
+        "families": [
+          6,
+          8,
+          9
+        ]
+      }
+    ]
+  },
   "results": {
     "complete": true,
     "conclusion": "Existing explicit zero-dynamic semantic profile/evaluator works without metadata implementation changes. Projection still excludes mechanisms and retains unvalidated hand/promotion constants; no new metric price, default promotion, training or AUX helper.",
