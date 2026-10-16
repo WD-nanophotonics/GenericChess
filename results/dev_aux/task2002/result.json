@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ALL_CENSUS_STATES_EDGES_NEW_RULES",
+  "targets": [
+    {
+      "rules": "results/dev_aux/task1986/rules.json",
+      "rules_sha": "4009d89aebedc7f350f62c043beaa56e8bd967bc1454f4935eae574f1a585bb6",
+      "fingerprint": "5ad75f5f5478d1d662226211c1f38e8ca3b57267aff69c02f52b3d5d528addcd",
+      "all_execution_fields_equal": true,
+      "compiled_differences": [
+        "ruleset_fingerprint",
+        "initial_position",
+        "initial_entity_count",
+        "initial_setup_positions"
+      ],
+      "states": 15240,
+      "edges": 69360,
+      "winning_terminals": {
+        "KK": 0,
+        "KKN": 0,
+        "KKR": 80
+      }
+    }
+  ],
+  "total_states": 15240,
+  "total_edges": 69360,
+  "seconds": 3.8120962000102736,
+  "source_unchanged": true,
+  "scope": "Full old admissibleinputset/edges/terminalcomparison, one frozen common-policy rule family. Source-derived monotone inventory closure and draw-only history justify noforcedWIN; not exactdraw/WDL/game labels. Initialentitycount is descriptive; initialsetup keys affect provenance only, which the filter replays in CURRENTrules. No running1997policy/default/integrationchange; originalexact-fingerprintfilter unchanged."
+}

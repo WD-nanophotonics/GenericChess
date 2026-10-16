@@ -1,0 +1,247 @@
+{
+  "status": "PASS_TRAIN_ONLY_POSTHOC_DIAGNOSIS",
+  "random_seed": 20261016672008,
+  "random_tie_permutation": [
+    2160,
+    3600,
+    360,
+    2520,
+    1440,
+    540,
+    720,
+    1080,
+    900,
+    2880,
+    1260,
+    1800,
+    180
+  ],
+  "FULL_R": 2520,
+  "results": [
+    {
+      "name": "ACTUAL_NUMERIC",
+      "selected_R": 1080,
+      "ratio": 1.5,
+      "FULLtrain_score": 8,
+      "raw_regret": 1,
+      "mean_regret": 0.015625,
+      "lookup_game_cells": 288,
+      "lookup_recorded_seconds": 496.7889762998966,
+      "rounds": [
+        {
+          "families": 4,
+          "scores": {
+            "180": -1,
+            "360": -2,
+            "540": -1,
+            "720": 0,
+            "900": 0,
+            "1080": 0,
+            "1260": 0,
+            "1440": 0,
+            "1800": 0,
+            "2160": 0,
+            "2520": 0,
+            "2880": 0,
+            "3600": 0
+          },
+          "retained": [
+            720,
+            900,
+            1080,
+            1260,
+            1440,
+            1800,
+            2160
+          ],
+          "cutoff_score": 0,
+          "tied_at_cutoff": [
+            720,
+            900,
+            1080,
+            1260,
+            1440,
+            1800,
+            2160,
+            2520,
+            2880,
+            3600
+          ]
+        },
+        {
+          "families": 8,
+          "scores": {
+            "720": 0,
+            "900": 1,
+            "1080": 1,
+            "1260": -1,
+            "1440": 0,
+            "1800": 1,
+            "2160": 1
+          },
+          "retained": [
+            900,
+            1080,
+            1800,
+            2160
+          ],
+          "cutoff_score": 1,
+          "tied_at_cutoff": [
+            900,
+            1080,
+            1800,
+            2160
+          ]
+        },
+        {
+          "families": 16,
+          "scores": {
+            "900": 1,
+            "1080": 4,
+            "1800": 4,
+            "2160": 4
+          },
+          "retained": [
+            1080,
+            1800
+          ],
+          "cutoff_score": 4,
+          "tied_at_cutoff": [
+            1080,
+            1800,
+            2160
+          ]
+        },
+        {
+          "families": 32,
+          "scores": {
+            "1080": 8,
+            "1800": 8
+          },
+          "retained": [
+            1080
+          ],
+          "cutoff_score": 8,
+          "tied_at_cutoff": [
+            1080,
+            1800
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ONE_FIXED_RANDOM_TIE",
+      "selected_R": 2160,
+      "ratio": 3.0,
+      "FULLtrain_score": 8,
+      "raw_regret": 1,
+      "mean_regret": 0.015625,
+      "lookup_game_cells": 288,
+      "lookup_recorded_seconds": 495.9756624000729,
+      "rounds": [
+        {
+          "families": 4,
+          "scores": {
+            "180": -1,
+            "360": -2,
+            "540": -1,
+            "720": 0,
+            "900": 0,
+            "1080": 0,
+            "1260": 0,
+            "1440": 0,
+            "1800": 0,
+            "2160": 0,
+            "2520": 0,
+            "2880": 0,
+            "3600": 0
+          },
+          "retained": [
+            2160,
+            3600,
+            2520,
+            1440,
+            720,
+            1080,
+            900
+          ],
+          "cutoff_score": 0,
+          "tied_at_cutoff": [
+            720,
+            900,
+            1080,
+            1260,
+            1440,
+            1800,
+            2160,
+            2520,
+            2880,
+            3600
+          ]
+        },
+        {
+          "families": 8,
+          "scores": {
+            "2160": 1,
+            "3600": 1,
+            "2520": 1,
+            "1440": 0,
+            "720": 0,
+            "1080": 1,
+            "900": 1
+          },
+          "retained": [
+            2160,
+            3600,
+            2520,
+            1080
+          ],
+          "cutoff_score": 1,
+          "tied_at_cutoff": [
+            2160,
+            3600,
+            2520,
+            1080,
+            900
+          ]
+        },
+        {
+          "families": 16,
+          "scores": {
+            "2160": 4,
+            "3600": 4,
+            "2520": 4,
+            "1080": 4
+          },
+          "retained": [
+            2160,
+            3600
+          ],
+          "cutoff_score": 4,
+          "tied_at_cutoff": [
+            2160,
+            3600,
+            2520,
+            1080
+          ]
+        },
+        {
+          "families": 32,
+          "scores": {
+            "2160": 8,
+            "3600": 8
+          },
+          "retained": [
+            2160
+          ],
+          "cutoff_score": 8,
+          "tied_at_cutoff": [
+            2160,
+            3600
+          ]
+        }
+      ]
+    }
+  ],
+  "source": "Onlyfirst832TRAINrows read, zeroDEV/newsearch. ONEfixedrandompermutation, noseedselection/actualreplacement. Recordedcellsums notnewchronologicalruntime or prospectiveguarantee."
+}

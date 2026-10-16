@@ -1,0 +1,75 @@
+{
+  "status": "PASS_BOTH_ACTOR_COMMON1K_FILTER_COST",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2003",
+    "games": 64,
+    "moves": 1310,
+    "actual_native": 1060,
+    "proof_games": 33,
+    "proof_steps": 33,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 64,
+    "missing_game_slots": [],
+    "tail_games": 15,
+    "tail_moves": 173,
+    "terminal": {
+      "checkmate": 33,
+      "ongoing": 27,
+      "repetition": 2,
+      "stalemate": 2
+    },
+    "exit_causes": {
+      "reported_node_overrun": 800,
+      "certificate": 250,
+      "external_search_return": 181,
+      "time_budget": 79
+    },
+    "node_overruns": 833,
+    "phase_seconds": {
+      "admission_seconds": 2.2869905002589803,
+      "proof_seconds": 41.10614980090759,
+      "verification_seconds": 1.6747317000699695,
+      "normal_seconds": 35.496960400254466
+    },
+    "proof_work": {
+      "frontiers": 109291,
+      "transitions": 596503,
+      "iterations": 109291,
+      "eager_board_successors": 616007,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 1060,
+    "selection_scope": "EXPOSED cost study: ALLfirst8ordinal1986families xfourfoes xbothroles at PRIORTRAINlockedR1260/N720. No current1997price/DEV selection.",
+    "actual_max_proof_depth": 59,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "actual_game_seconds": 86.99906419994659,
+  "historical_samecases_seconds": 99.84134999976959,
+  "cost_ratio": 0.8713730753855728,
+  "identical_full_records": 64,
+  "outcome_transitions": {
+    "WIN->WIN": 18,
+    "UNKNOWN->UNKNOWN": 27,
+    "LOSS->LOSS": 15,
+    "DRAW->DRAW": 4
+  },
+  "filter_skips_by_role": {
+    "OPPONENT": 133,
+    "CANDIDATE": 135
+  },
+  "bank_hits": 0,
+  "proof_visit_counts": {
+    "historical": 804127,
+    "filtered": 596688
+  },
+  "native_reported_nodes": {
+    "historical": 4283694,
+    "filtered": 4283694
+  },
+  "source_unchanged": true,
+  "scope": "ALL64exposedfirst8ordinalfamilies/fourfoes/bothroles/oldfixedR1260. BOTHactorsPN1K/coldbank/normal4096, strictabsencefilterUNKNOWNonly. Chronologicalhistoricaltiming/concurrentload notnoisefreecausalspeedup. No current1997learningchange/default/genericdeadness/DRAW or freshlearningclaim."
+}

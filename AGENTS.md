@@ -261,25 +261,30 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment66
+# DEV_AUX current scope:2026-10-16 segment67
 
-Science is OPEN; see segment66 report and LOCAL_MAINLINE. Balanced16-family
-TRAIN gives ratios1/3 and unconfirmed original transfer. Pooled32TRAIN selects
-1.75 tied2; NEW32-family actualH24 W-L gain27/256, and shared-family equal-proof
-opponent gain31/256. These are scoped effective prices, not unique human values,
-unlimitedWDL or complete Chess/Shogi recovery. Price1.75 versus3 remains unclear.
-Next freeze fresh learning against the common proof-policy opponent, using
-actual cost forecasts and new validation. Do not choose prices/roots/weights
-from currentDEV or extend old caps. Rootproof filtering would change mu and
-requires a new before-input protocol; preserve all existing flat/failure cases.
-Strict setup-only noWIN census transport is opt-in, not a default or general
-deadness rule. All execution/history fields must match; UNKNOWN never becomesDRAW.
-All producers CLOSED;2688games/54036moves/47738Nativebindings and50tests replay.
-Two isolated-restore dependency omissions are corrected by explicit support
-archives/latehelper, preserving sealed archives and both first failures. Live
-stop checks remain real. PRIMARYcd30 is OWNER MESSAGE/report-read only, no
-source execution/adoption or unitpooling. PUBLIC/checkedpublication/separate
-writers/directonehournecessity rule remain unchanged; no product/UI integration.
+Science OPEN. Fresh commonPN1K bothactor learning choosesR/N3.5; H24 primary
+14/128gain intervalcrosses0. Same16family conditional actualmax96 completion
+has26/128gain CI[.1015625,.3125], UNIT37W45L46D vs learned51W33L44D;0UNKNOWN.
+Localcomplete-player support, not unique/human/fullChess prices ornewcohort.
+All1408fromrootgames/33098newmoves/28983Nativebindings and3focusedtests restore;
+conditional256H48/256fullrule cases reuse realprefixes, not512newgames.
+StrictnoWINskip on BOTHactors preserves64exposedpaths/outcomes/NativeNodes,
+proof804127->596688. UNKNOWNonly; notDRAW/default/maintrainingadoption.
+Observedfullrule lateproof83.6percent in eligibleclosure motivates lowercost.
+Currentnext: task2015 new32inputs/16TRAIN16DEV,4mechanicalprices/fullactualW-L,
+strictnoWINproofskip whileplaying torealterminals. Forecast3019.7s/max512games,
+0assumedfilter speedup/whole3500sstop;0newNativefitness. Re-estimate beforestart;
+expected>1h requiresDotnecessityassessment, no artificialsplit. This supersedes
+another13pricefiniteeventrace; preserve alloldcaps/results/uncertainty.
+Zero-returnproposal NOTADOPTED: realresigncounterexample invalidates arbitrary
+SessionDRAW. Bindfixedpolicy/census/fullrules, separateutilitystatus fromactual
+DRAW/budgetUNKNOWN; do notchange currentrewardorSessionStatus.
+KRNB4 isolatedfeasibility96perfts+96go64 passes,0fitness;oldKRNbridgeunchanged.
+One5.943snormalphase late retained;Native.03669s/engine3ms/solelegalmove,
+peripheral gapunattributed; no strictperstepwall guarantee or automaticrerun.
+PRIMARY33af OWNER_MESSAGE_READ_ONLY, reportsAUX66reportread/noexecution/adoption.
+PUBLIC/checkedpublication/separatewriters remain; no product/UI/defaultchanges.
 
 ## Current user publication grant2026-10-15
 

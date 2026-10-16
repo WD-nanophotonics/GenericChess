@@ -1,0 +1,40 @@
+{
+  "status": "PASS_RESEARCH_REVIEW_PENDING_DELIVERY",
+  "science": "OPEN",
+  "checks": {
+    "actual_main_games": 1344,
+    "exposed_cost_games": 64,
+    "conditional_H48_parent_cases": 256,
+    "conditional_fullrule_parent_cases": 256,
+    "new_moves": 33098,
+    "new_native_bindings": 28983,
+    "KRNB_qualification_go": 96,
+    "new_native_perfts": 720,
+    "source_only_replay_new_search": 0,
+    "focused_tests": 3,
+    "source_payloads": 626,
+    "evidence_payloads": 101,
+    "all_payload_crc_sha": true,
+    "all_producers_closed": true,
+    "anonymous_repository_public": true
+  },
+  "primary_short_horizon": "NEW3.5 gain14/128 CIincludes0; alloldanchorsreported/nocurrentDEVchoice",
+  "conditional_complete_rule": "UNIT37W45L46D vs3.5 51W33L44D, gain26/128 CI[.1015625,.3125],0UNKNOWN; same16familycohort/notnewindependentreplication",
+  "cost_control": "64identicalrecords/outcomes/NativeNodes;proof804127->596688, historical99.8->87.0s/concurrentloadlimits",
+  "limits": [
+    "Exactpriceinstability; modifiedjointmaterialNativeKRN4/N720 only, nothuman/fullChess/Shogi",
+    "Conditionalprefixreuse and actualmax96/repetitionrule draws, notfromrootcounterfactual/infiniteWDL",
+    "One5.943sphase late;outsideNative.03669s/3ms,solelegalmove; no strictperstepdeadline",
+    "SharedCore/host/interpreter in replay; no Native rebuild",
+    "Zero-returnproposalNOTADOPTED,actualresigncounterexample; Bqualification0fitness"
+  ],
+  "retained_repairs": [
+    "ScriptconstructionquoteSyntaxError beforeaffectedexecution",
+    "Completedhandlepoll mistake/noexperimentchange",
+    "Lateprosecp1252decodefailure fixedexplicitUTF8/no scientificdata/archivechange",
+    "Old66checkpointtiecount7correctedto6separately/no oldresultrewrite"
+  ],
+  "next_work": "2015new32inputs/16TRAIN16DEV/coarseFULLactualWL/max512games/forecast3019.7s/whole3500stop/0fitness; requalifysource/compiledrules/Native beforeONErun",
+  "delivery": "PendingreviewedGitpush/exactremoteSHA/anonymousfixedrevision; do notclaimalreadydelivered",
+  "time": "2026-10-16T00:12:09.119805+00:00"
+}

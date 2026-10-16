@@ -1632,3 +1632,32 @@ not establish Dot/PRIMARY source read or execution.
   rootproof filtering would change mu and needs new protocol, not deleting old
   cases. Fixed-revision delivery and actual receipts are separate; delivery
   does not mean Dot/PRIMARY read or executed this new source.
+
+
+## DEV_AUX segment67 — 2026-10-16, science OPEN
+
+AUX independently completed common-proof materiallearning on sidemission.
+New32TRAIN16DEV chooses3.5; H24 gain14/128CI0, same16family conditionalfullrule
+26/128CI[.1015625,.3125], UNIT37W45L46D vs learned51W33L44D/0UNKNOWN. Notnewextra
+cohort/human-price recovery. Allprices/oldcaps retained/noDEVchoice. RACE288
+496.8s vsFULL8321385.8s,1/64TRAINregret/exactratio unstable; oneposthoctie
+permutation stayssame regret, notnewprospectiveperformance.
+
+BOTHactornoWINskip64exposedcases keepallpaths/outcomes/NativeNodes,proof25.8percent
+lower,99.8->87.0s historicalconcurrenttiming. Mainunfiltered. Blegalityonly96perfts
+96shortqueries/0fitness. One5.943sphase late outsideNative.03669s/engine3ms,
+solelegalmove/retained/nohardwallclaim. Fullrule lateproof83.6percent visits
+eligible. Nexttask2015 coarsefull-WL:32newinputsactuallygenerated,0Nativefitness,
+expected3019.7s/whole3500stop. Zero-returnproposalNOTADOPTED; genuineSessionresign
+counterexample requiresfixedpolicy/fullrules, neverrelabelbudgetUNKNOWN oractualDRAW.
+
+PRIMARY reports sandbox33af504fd03863af0fbbecc54767905b2776c21a checkedavailability
+shipped/TTcontextprivate andreadingAUX66reportonly/noexecution. AUX read complete
+OWNER MESSAGE1792107029.990019; noPRIMARYcode/test/gameexecution/adoption orunit
+pooling. Advice/reference only; no crosscheckoutwrite/quietwindow/extraAgent/fee/ack.
+
+All1408fromrootgames/33098newmoves/28983Nativebindings/256H48+256fullruleparents
+withauthenticprefixreuse/3focusedtests/727payloadCRC-SHA restore,0newstudysearch
+inreplay/samehostsharedCore. RawSlack/account records ignored; checkedproject
+contentPublic. Fixedrevisiondelivery in DELIVERY_20261016_67.json; delivery isnot
+reading/execution. Finaldocencodingfault fixedexplicitUTF8, no science/archivechange.

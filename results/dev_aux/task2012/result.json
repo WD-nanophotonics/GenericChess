@@ -1,0 +1,121 @@
+{
+  "status": "PASS_PREDECLARED_ACTUAL_RULE_COMPLETION",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2011",
+    "games": 256,
+    "moves": 3788,
+    "actual_native": 3778,
+    "proof_games": 1,
+    "proof_steps": 1,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 256,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "checkmate": 166,
+      "max_ply": 73,
+      "stalemate": 9,
+      "repetition": 8
+    },
+    "exit_causes": {
+      "reported_node_overrun": 3135,
+      "external_search_return": 640,
+      "certificate": 10,
+      "time_budget": 3
+    },
+    "node_overruns": 3137,
+    "phase_seconds": {
+      "admission_seconds": 27.718404399842257,
+      "proof_seconds": 230.3345816998044,
+      "verification_seconds": 0.4689133000210859,
+      "normal_seconds": 124.22582070110366
+    },
+    "proof_work": {
+      "frontiers": 676519,
+      "transitions": 2621052,
+      "iterations": 676519,
+      "eager_board_successors": 2737499,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 3778,
+    "selection_scope": "ALLfixed16DEVfamilies/fourfoes/bothroles/UNIT+TRAINonlyFULL; inheritactualterminalparents, continueALLUNKNOWN undernewH96policy; no prioranchor or outcome-selected subset.",
+    "actual_max_proof_depth": 46,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "selected_R": 2520,
+  "ratio": 3.5,
+  "parent_cases": 256,
+  "continued_H48_unknown_parents": 83,
+  "inherited_terminal_cases": 173,
+  "new_continuation_moves": 3788,
+  "new_Native_queries": 3778,
+  "outcome_transitions": {
+    "WIN->WIN": 87,
+    "UNKNOWN->DRAW": 82,
+    "DRAW->DRAW": 8,
+    "LOSS->LOSS": 78,
+    "UNKNOWN->WIN": 1
+  },
+  "H48_price_delta": {
+    "mean": 0.1953125,
+    "bootstrap16family_interval": [
+      0.09375,
+      0.3125
+    ]
+  },
+  "FULL_RULE_price_delta": {
+    "mean": 0.203125,
+    "bootstrap16family_interval": [
+      0.1015625,
+      0.3125
+    ],
+    "family_deltas": [
+      0.375,
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.0,
+      0.25,
+      0.125,
+      0.5,
+      0.0,
+      0.125,
+      0.0,
+      0.25,
+      0.0,
+      0.0,
+      0.625
+    ],
+    "UNKNOWN_WDL_bounds": [
+      0.203125,
+      0.203125
+    ]
+  },
+  "horizon_interaction": {
+    "mean": 0.0078125,
+    "bootstrap16family_interval": [
+      0.0,
+      0.0234375
+    ]
+  },
+  "outcomes": {
+    "720": {
+      "WIN": 37,
+      "DRAW": 46,
+      "LOSS": 45
+    },
+    "2520": {
+      "WIN": 51,
+      "DRAW": 44,
+      "LOSS": 33
+    }
+  },
+  "recorded_case_seconds": 449.94076059994404,
+  "scope": "Predeclared beforeH48execution/results. Same16families/UNIT+TRAINonlyFULL,ALLcases retained; actualterminals inherited,ALLH48UNKNOWN continuedunderdefinedfullrulepolicy throughmaxply96. RealruleDRAWlegitimate,neverassignUNKNOWNtoDRAW. Authenticprefixworkreused/notcountednew, noactiveproof/oldbankkeymatch. Conditionalpolicy notnewindependentDEV/fromrootH96counterfactual/optimalWDL/unlimitedChess. Original3300/1200caps unchanged; new2100cap kept."
+}

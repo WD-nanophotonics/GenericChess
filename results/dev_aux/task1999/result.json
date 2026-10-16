@@ -1,0 +1,324 @@
+{
+  "status": "PASS_TRAIN_ONLY",
+  "training": {
+    "training_families": 32,
+    "selected_R": 2520,
+    "ratio": 3.5,
+    "nonflat_families": 18,
+    "bootstrap10000_stratified_opponent_selection": {
+      "2160": 1071,
+      "1080": 3893,
+      "1800": 961,
+      "2520": 3133,
+      "1440": 867,
+      "900": 74,
+      "720": 1
+    },
+    "lofo_equalnu": [
+      {
+        "omitted": 0,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 1,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 2,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 3,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 4,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 5,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 6,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 7,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 8,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 9,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 10,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 11,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 12,
+        "selected_R": 1080,
+        "ratio": 1.5
+      },
+      {
+        "omitted": 13,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 14,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 15,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 16,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 17,
+        "selected_R": 1080,
+        "ratio": 1.5
+      },
+      {
+        "omitted": 18,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 19,
+        "selected_R": 1080,
+        "ratio": 1.5
+      },
+      {
+        "omitted": 20,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 21,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 22,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 23,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 24,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 25,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 26,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 27,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 28,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 29,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 30,
+        "selected_R": 2520,
+        "ratio": 3.5
+      },
+      {
+        "omitted": 31,
+        "selected_R": 2520,
+        "ratio": 3.5
+      }
+    ],
+    "peropponent_TRAIN_description": {
+      "360": {
+        "best_R": 1080,
+        "scores": {
+          "180": 0.0,
+          "360": 0.0,
+          "540": 0.125,
+          "720": 0.1875,
+          "900": 0.3125,
+          "1080": 0.4375,
+          "1260": 0.3125,
+          "1440": 0.375,
+          "1800": 0.375,
+          "2160": 0.375,
+          "2520": 0.375,
+          "2880": 0.3125,
+          "3600": 0.3125
+        }
+      },
+      "720": {
+        "best_R": 1440,
+        "scores": {
+          "180": -0.1875,
+          "360": -0.125,
+          "540": -0.0625,
+          "720": 0.0,
+          "900": 0.0,
+          "1080": 0.0625,
+          "1260": 0.0,
+          "1440": 0.125,
+          "1800": 0.125,
+          "2160": 0.0625,
+          "2520": 0.125,
+          "2880": 0.0625,
+          "3600": 0.125
+        }
+      },
+      "1440": {
+        "best_R": 900,
+        "scores": {
+          "180": -0.25,
+          "360": -0.125,
+          "540": -0.125,
+          "720": -0.0625,
+          "900": 0.0,
+          "1080": 0.0,
+          "1260": 0.0,
+          "1440": 0.0,
+          "1800": 0.0,
+          "2160": 0.0,
+          "2520": 0.0,
+          "2880": 0.0,
+          "3600": 0.0
+        }
+      },
+      "2880": {
+        "best_R": 2160,
+        "scores": {
+          "180": -0.25,
+          "360": -0.25,
+          "540": -0.1875,
+          "720": -0.125,
+          "900": 0.0,
+          "1080": 0.0,
+          "1260": -0.0625,
+          "1440": -0.0625,
+          "1800": 0.0,
+          "2160": 0.0625,
+          "2520": 0.0625,
+          "2880": 0.0,
+          "3600": 0.0625
+        }
+      }
+    },
+    "outcomes_by_price": {
+      "180": {
+        "WIN": 12,
+        "LOSS": 23,
+        "UNKNOWN": 29
+      },
+      "360": {
+        "WIN": 14,
+        "LOSS": 22,
+        "UNKNOWN": 28
+      },
+      "540": {
+        "WIN": 15,
+        "LOSS": 19,
+        "UNKNOWN": 30
+      },
+      "720": {
+        "WIN": 17,
+        "LOSS": 17,
+        "UNKNOWN": 30
+      },
+      "900": {
+        "WIN": 19,
+        "LOSS": 14,
+        "UNKNOWN": 30,
+        "DRAW": 1
+      },
+      "1080": {
+        "WIN": 22,
+        "LOSS": 14,
+        "UNKNOWN": 28
+      },
+      "1260": {
+        "WIN": 19,
+        "LOSS": 15,
+        "UNKNOWN": 30
+      },
+      "1440": {
+        "WIN": 20,
+        "LOSS": 13,
+        "UNKNOWN": 31
+      },
+      "1800": {
+        "WIN": 21,
+        "LOSS": 13,
+        "UNKNOWN": 30
+      },
+      "2160": {
+        "WIN": 21,
+        "LOSS": 13,
+        "UNKNOWN": 30
+      },
+      "2520": {
+        "WIN": 22,
+        "LOSS": 13,
+        "UNKNOWN": 29
+      },
+      "2880": {
+        "WIN": 21,
+        "LOSS": 15,
+        "UNKNOWN": 28
+      },
+      "3600": {
+        "WIN": 21,
+        "LOSS": 13,
+        "UNKNOWN": 30
+      }
+    },
+    "source": "Exactly first832immutableTRAINrows and FULLlock; no DEV row or labels read. Opponent-stratified resampling and LOFO preserve .25 opponent weight. Resampling existing table is not new learning runs or prospective replication."
+  },
+  "no_DEV_read": true
+}

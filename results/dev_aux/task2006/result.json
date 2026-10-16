@@ -1,0 +1,125 @@
+{
+  "status": "PASS_PREDECLARED_CONDITIONAL_H48",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2005",
+    "games": 256,
+    "moves": 2291,
+    "actual_native": 2187,
+    "proof_games": 13,
+    "proof_steps": 13,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 256,
+    "missing_game_slots": [],
+    "tail_games": 4,
+    "tail_moves": 41,
+    "terminal": {
+      "checkmate": 165,
+      "ongoing": 83,
+      "stalemate": 7,
+      "repetition": 1
+    },
+    "exit_causes": {
+      "reported_node_overrun": 1793,
+      "external_search_return": 362,
+      "certificate": 104,
+      "time_budget": 32
+    },
+    "node_overruns": 1805,
+    "phase_seconds": {
+      "admission_seconds": 9.074147400504444,
+      "proof_seconds": 136.91150540014496,
+      "verification_seconds": 1.4718343999120407,
+      "normal_seconds": 65.54278830048861
+    },
+    "proof_work": {
+      "frontiers": 411367,
+      "transitions": 1693944,
+      "iterations": 411367,
+      "eager_board_successors": 1728992,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 2187,
+    "selection_scope": "ALLfixed16DEVfamilies/fourfoes/bothroles/UNIT+TRAINonlyFULL; inheritactualterminalparents, continueALLUNKNOWN undernewH48policy; no prioranchor or outcome-selected subset.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "selected_R": 2520,
+  "ratio": 3.5,
+  "parent_cases": 256,
+  "continued_unknown_parents": 99,
+  "inherited_terminal_cases": 157,
+  "new_continuation_moves": 2291,
+  "new_Native_queries": 2187,
+  "outcome_transitions": {
+    "WIN->WIN": 81,
+    "UNKNOWN->UNKNOWN": 83,
+    "UNKNOWN->WIN": 6,
+    "DRAW->DRAW": 5,
+    "UNKNOWN->LOSS": 7,
+    "LOSS->LOSS": 71,
+    "UNKNOWN->DRAW": 3
+  },
+  "H24_price_delta": {
+    "mean": 0.109375,
+    "bootstrap16family_interval": [
+      -0.0078125,
+      0.234375
+    ]
+  },
+  "H48conditional_price_delta": {
+    "mean": 0.1953125,
+    "bootstrap16family_interval": [
+      0.09375,
+      0.3125
+    ],
+    "family_deltas": [
+      0.375,
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.0,
+      0.125,
+      0.125,
+      0.5,
+      0.0,
+      0.125,
+      0.0,
+      0.25,
+      0.0,
+      0.0,
+      0.625
+    ],
+    "UNKNOWN_WDL_bounds": [
+      -0.453125,
+      0.84375
+    ]
+  },
+  "horizon_interaction": {
+    "mean": 0.0859375,
+    "bootstrap16family_interval": [
+      0.0234375,
+      0.1640625
+    ]
+  },
+  "outcomes": {
+    "720": {
+      "WIN": 37,
+      "UNKNOWN": 45,
+      "DRAW": 1,
+      "LOSS": 45
+    },
+    "2520": {
+      "WIN": 50,
+      "UNKNOWN": 38,
+      "LOSS": 33,
+      "DRAW": 7
+    }
+  },
+  "recorded_case_seconds": 236.57953280006768,
+  "scope": "Predeclared beforeparentDEV. Same16families/UNIT+TRAINonlyFULL, ALLcases accounted; terminalparents inheritedauthentically, UNKNOWNprefixes continuedunderdefinednewH48policy. ActualprefixNative/PNwork reusednotcountednew; freshcoldbanks/actualNativeclears, strictlylongerrecordkeys/noactiveproof. NOT independentlysampledvalidation or identicalfromrootH48counterfactual; finiteeventW-LnotunlimitedWDL/quantity labels. Parent3300cap/resultsunchanged; continuation1200cap unchanged."
+}
