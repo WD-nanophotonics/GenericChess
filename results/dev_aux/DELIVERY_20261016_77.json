@@ -1,5 +1,5 @@
 {
-  "status": "REVIEWED_LOCAL_PENDING_PUBLISH",
+  "status": "SOURCE_PUBLISHED_FULL_REMOTE_SHA_AND_ANONYMOUS_PUBLIC_VERIFIED",
   "source_remote_sha": null,
   "public_required": true,
   "visibility_mutation": false,
@@ -8,8 +8,66 @@
   "science": "OPEN",
   "actual_games": 3408,
   "actual_moves": 77898,
-  "dot_final_result": "PENDING; reading/execution UNCONFIRMED",
+  "dot_final_result": "PENDING; reading/adoption/execution UNCONFIRMED",
   "session_minutes": 89.988,
   "session_ended_at": "2026-10-16T14:58:48.260623+00:00",
-  "session_reason": "safe_checkpoint"
+  "session_reason": "safe_checkpoint",
+  "source_full_remote_sha": "635d0277af08e2fb59f2a12d02a16cc6bcbb05b7",
+  "source_report_url": "https://github.com/WD-nanophotonics/GenericChess/blob/635d0277af08e2fb59f2a12d02a16cc6bcbb05b7/results/dev_aux/SEGMENT_20261016_77.md",
+  "anonymous_public_checks": [
+    {
+      "path": "results/dev_aux/SEGMENT_20261016_77.md",
+      "status": 200,
+      "sha256": "517986cb246c0239440a09a935c5596d0f9e4f31404ee81b6c4fcb1671ada258",
+      "bytes": 9935
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261016_77.md",
+      "status": 200,
+      "sha256": "29d959ba151ec8c687345810661211dba6750ebc5be1bb5bc80b769699806d3a",
+      "bytes": 1276
+    },
+    {
+      "path": "results/dev_aux/task2251/study.py",
+      "status": 200,
+      "sha256": "4c1bd963a95365d673d67055753b08a8a5c4f46e575c22e7b601ff02b216fd61",
+      "bytes": 17431
+    },
+    {
+      "path": "results/dev_aux/task2255/restore-receipt.json",
+      "status": 200,
+      "sha256": "070ee8e48083e0c17cebc1c2b023f42305bcfcac593fd5924346438655f21d02",
+      "bytes": 1120
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261016_77.json",
+      "status": 200,
+      "sha256": "70e8d1807e594679253aeeb19ee91415c315eb8b17e41d34361f56c99e2107bf",
+      "bytes": 3035
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "status": 200,
+      "sha256": "798a6cbce5428bd3ff0e723b4b5fba8387b549495c45fe82bcd8c878e46c95e8",
+      "bytes": 206130
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_77.zip",
+      "status": 200,
+      "sha256": "eb8a8b8d76c7ec10f5bc69cb7e21a3f6d70e43201f9c88a88bf14735b7835722",
+      "bytes": 43554480
+    },
+    {
+      "path": "results/dev_aux/SOURCE_PIN_SUPPLEMENT_20261016_77.zip",
+      "status": 200,
+      "sha256": "670107f046658ca41661ac69e47b07df321f907af8c0d4588c69ca1a8bf3f192",
+      "bytes": 7956
+    }
+  ],
+  "verified_at": "2026-10-16T15:00:41.340224+00:00",
+  "public": true,
+  "research_stage_count": 6,
+  "private_originals_ignored": true,
+  "first17_replay_failed": true,
+  "final18_replay_passed": true
 }
