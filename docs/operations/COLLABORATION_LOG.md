@@ -1831,3 +1831,9 @@ hashesandweakerbyteidentityscopeexplicit, modulemustnotload. Noexternalproject
 read/execution. 71localtests+2projectionchecks;70purePythonisolatedchecksplus
 fullgraph/record/certificateconsumers. Finalfixedrevisiondelivery/readscopereceipts
 follow; noassumptionthatDot/PRIMARYreadorappliednewwork. ScienceOPEN.
+
+71closing:81.977minute safecheckpointaccepted; allownedresearchproducersCLOSED.
+PUBLICscience2c82be1baffbceed6ade021fcfc99186cb61d556 fullremoteSHA/19anonymous
+files incl6reviewedarchiveblobsexactGitbytesPASS. Fixed evidence sentonce
+1792130968.786369 torelatedthread. No newDot71source-read/executionconfirmed.
+Finalmetadatadelivery followswithoutreopeningresearchorresettinganycap.

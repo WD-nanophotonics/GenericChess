@@ -1,5 +1,5 @@
 {
-  "status": "PASS_SCOPED_RESEARCH_AND_EVIDENCE_REVIEW",
+  "status": "PASS_PUBLISHED_PUBLIC_REPRODUCIBLE_SCIENCE_OPEN",
   "science": "OPEN/noDEVpricebenefit/stablepriceunproven",
   "session_id": "1af6723d-170a-4b38-9bff-387014ec07c9",
   "started_utc": "2026-10-16T04:48:28.027450Z",
@@ -67,9 +67,22 @@
     "anonymous_API_PUBLIC": true,
     "reviewed_archives": 6,
     "private_raw_records_ignored": true,
-    "delivery_pending": true
+    "delivery_pending": false
   },
   "public_entry_archive_payload_checks": 1357,
   "public_entry_unique_paths": 1187,
-  "public_entry_seconds": 130.21953119998216
+  "public_entry_seconds": 130.21953119998216,
+  "science_revision": "2c82be1baffbceed6ade021fcfc99186cb61d556",
+  "verified_remote_full_sha": "2c82be1baffbceed6ade021fcfc99186cb61d556",
+  "anonymous_files_checked": 19,
+  "anonymous_archive_blobs_checked": 6,
+  "research_finish": {
+    "id": "1af6723d-170a-4b38-9bff-387014ec07c9",
+    "started_at": "2026-10-16T04:48:28.027450+00:00",
+    "ended_at": "2026-10-16T06:10:26.647087+00:00",
+    "elapsed_minutes": 81.977,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 5,
+    "duration_gate_passed": true
+  }
 }

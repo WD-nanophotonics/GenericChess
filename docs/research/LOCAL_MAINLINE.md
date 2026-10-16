@@ -34,7 +34,8 @@ Firstentryaudit keepsall368physicalroots:362entered/6never,6228postentry
 normal/fallbacks.12colddepth2pricecontrols foundnodivergence (9ratioinactive),
 notproofstageisolation. No changingfrozenpolicy peradvice.
 
-NEXT: completeoriginalclock/physicalcensoringreview, source-onlyportable
-restore/publiccontentreview andfixedrevisiondelivery. Futurecheapteacher
-view/priceidentifiabilitychosenbyusefuldecisionspercost, notautomaticNN/grid.
+NEXT: source-onlyrestore/publicdeliverycomplete. Freeze8closed2100TRAINprefix
+negative5piecefilterscheduling controls atunchangedPN/normalbudgets before
+anymoretraining. Priceidentifiabilitydiagnostics mustkeepBANDNpresent and
+useexistingTRAINonly; noautomaticNN/grid, newfulltrainingoroldcaprestart.
 PRIMARYintegration/defaults/UI untouched; scope/negative/partialrecordsretained.
