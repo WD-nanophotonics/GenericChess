@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_BEFORE_CAPACITY_ANALYSIS",
+  "question": "Can ANY positive scalarN/B ratio rank genuine WDL-preserving choices in the two-sided3x3game, evenatoneply?",
+  "teacher": "results/dev_aux/task2094/labels.jsonl",
+  "teacher_sha": "7c0758e2999a31a5b9708e33abcfcf441884d493a2cbe0ed7891ecf6d3716607",
+  "scope": "Representationcapacitydiagnostic, NOTtraining/humanpricefit orclaimagainstdeepersearch. Allpositiveprice ratios represented byexactaction-linebreakpoints andeachopeninterval; terminalWIN/LOSS infinities, trueDRAW0; ongoingmaterialonly. No chosenwinnerreported aslearner.",
+  "distribution": "ALLongoingcompletegraphstates with>=2legalactions, nonflattrueWDLactions. Reportalso bothkingssafe+fullBNbn andbotharmed subsets. Nonflatfilter is descriptiveexposedteachermechanismstudy, nevernewunbiasedpolicyholdout.",
+  "outputs": "Optimistic/pessimistic/tieaverageregret foreachratio region; fractionnoANYratioallowsallbestactionstobeoptimal; greedyboundedcounterexample intersectionempty withactualboards/edges. Allgraphlabelsindependentlyaudited.",
+  "seconds_cap": 120,
+  "expected_seconds": 10
+}

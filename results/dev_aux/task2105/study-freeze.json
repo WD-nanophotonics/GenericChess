@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_BEFORE2105FITNESS",
+  "seed": 20261016712100,
+  "question": "Can fixed<=4piececonversion trigger preserve exchangechoices andfinishactualW-Llearningcheaply?",
+  "TRAIN_families": 32,
+  "DEV_families": 16,
+  "ratios": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "initial_ratio": [
+    0.25,
+    4.0
+  ],
+  "selection": "TRAINallfivepriceprofiles, bothroles, againstfixedopponentN=B=720 andoriginalPN. Fromeachinitialratio, greedilyacceptstrictlyhigheradjacentgridTRAINmean, leftneighborbefore right, untilnobetterneighbor. Tiesholdinitial/localprice. UNKNOWNpreventsselectorlock. NotchooseglobalDEVbest.",
+  "DEV": "TRAINselectorslockfirst. Comparebaseline1/uniquelearnedpricesagainstSAMEfixedprice1TRIGGERopponent. BothactorssameTRIGGER. NoPN-vsCOMPOSITEfactor; no poolingwith2100/candidate-onlyA-Bclaim.",
+  "inputs": "ALLsame48frozen2100rootsunchanged; TRAINpartiallyexposed, no2100DEVlabels/outcomesread. Resourcechangefromdocumented109sPNvs7.9snormal, NOTpricefitness. No root/price selectionfromDEV.",
+  "scope": "NEWfixedpolicy/opponent/resourcecontext, no universalprice/strengthclaim orretiredcapextension. Full5pieceteacher593s prepaidauditedcost, notfree. Teacher5piecelabels notonlinereward/rootsampling.",
+  "one_cap_seconds": 1800,
+  "expected_seconds": 900,
+  "cost": "One1800capincludingteacherload/sourcequalification/ALLgames; forecast900s. 320TRAIN+<=96DEVlogical/<=368physical afteridentitydedup. Noextension/restart, retainallpartial/UNKNOWN. Old2100continuesunchanged2400cap.",
+  "normal_nodes": 512,
+  "normal_depth": 2,
+  "normal_seconds": 0.02,
+  "proof_nodes": 1024,
+  "proof_seconds": 0.2,
+  "proof_depth": 64,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.2,
+  "step_seconds": 0.75,
+  "H": 96,
+  "policy": "Onlytotalboardpiececount<=4 enablesqualifiedcomposite. OutsideorfailedpositivesfallbackoriginalPN min32nodes/.02s. Price/WDLindependenttrigger. Allproof/currenthistoryverificationunchanged, actualW-Lonly, UNKNOWNnotDRAW."
+}

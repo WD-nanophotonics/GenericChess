@@ -1,0 +1,90 @@
+{
+  "status": "PASS_COMPLETE_ACTUAL_WL_PRICE_CONTROL",
+  "task": 2105,
+  "campaign_status": "COMPLETE",
+  "physical_games": 368,
+  "logical_games": 416,
+  "explicit_identity_reuses": 48,
+  "physical_moves": 7294,
+  "physical_outcomes": {
+    "DRAW": 317,
+    "LOSS": 24,
+    "WIN": 27
+  },
+  "source_counts": {
+    "MATERIAL_SEARCH": 6688,
+    "LEGAL_FALLBACK": 331,
+    "PROOF": 51,
+    "PROOF_CONTINUATION": 224
+  },
+  "paid_phases": {
+    "proof_seconds": 47.077147801726824,
+    "normal_seconds": 139.54745869903127,
+    "seconds": 261.65248399885604,
+    "proof_nodes": 11210,
+    "search_nodes": 56762
+  },
+  "finished_proof_adoptions_won": 51,
+  "outer_late_steps": 0,
+  "selector_locked": true,
+  "DEV_price_gains": {
+    "0.25": {
+      "initial": 0.25,
+      "selected": 0.25,
+      "complete_family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "descriptive_family_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    "2.0": {
+      "initial": 4.0,
+      "selected": 2.0,
+      "complete_family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "descriptive_family_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "TRAIN_logical": 320,
+  "DEV_logical": 96,
+  "seconds": 2.9205130000191275,
+  "scope": "ActualruleW-Lonly/recordedfullhistories/unchangedsource/explicitphysicaldedup. Familyunit16DEVbootstrapdescriptive, no universalprice/stability/strengthclaim. Distinctinitialpricesmayremain distinct. NoDEV initial4control unlessfrozenprofileincluded; selectedvsbaseline1only. Original2100andnew2105notpooled/differentfixedopponentandresourcecontexts. Per-policyfullcertificatetreesnotarchived; actualexecutedverifiercounters/strategy-rank/physicalwinningoutcomes areaudited, separate2088certificatecapsulehasindependentall-defenseverification."
+}

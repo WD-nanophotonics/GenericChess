@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE_EXACT_ALL_POSITIVE_RATIO_REGIONS",
+  "breakpoints": [
+    "1"
+  ],
+  "representatives": [
+    "1/2",
+    "1",
+    "2"
+  ],
+  "groups": {
+    "all": {
+      "nonflat_roots": 18592,
+      "no_positive_ratio_all_top_optimal": 5024,
+      "no_positive_ratio_any_top_optimal": 1008
+    },
+    "botharmed": {
+      "nonflat_roots": 17760,
+      "no_positive_ratio_all_top_optimal": 4592,
+      "no_positive_ratio_any_top_optimal": 1008
+    },
+    "safe_fullBNbn": {
+      "nonflat_roots": 7344,
+      "no_positive_ratio_all_top_optimal": 1584,
+      "no_positive_ratio_any_top_optimal": 432
+    }
+  },
+  "allroots_jointly_alloptimal_ratio_regions": 0,
+  "per_region": {
+    "1/2": {
+      "n": 18592,
+      "optimistic": 0.0774526678141136,
+      "pessimistic": 0.2908777969018933,
+      "tie_average": 0.18419391853126657,
+      "alloptimal": 0.7091222030981067
+    },
+    "1": {
+      "n": 18592,
+      "optimistic": 0.05421686746987952,
+      "pessimistic": 0.3278829604130809,
+      "tie_average": 0.1922834193918517,
+      "alloptimal": 0.6721170395869192
+    },
+    "2": {
+      "n": 18592,
+      "optimistic": 0.09466437177280551,
+      "pessimistic": 0.3072289156626506,
+      "tie_average": 0.20097532989099118,
+      "alloptimal": 0.6927710843373494
+    }
+  },
+  "seconds": 1.0163673000060953,
+  "scope": "Representationcapacitydiagnostic, NOTtraining/humanpricefit orclaimagainstdeepersearch. Allpositiveprice ratios represented byexactaction-linebreakpoints andeachopeninterval; terminalWIN/LOSS infinities, trueDRAW0; ongoingmaterialonly. No chosenwinnerreported aslearner.",
+  "counterexample": "Greedynecessaryconstraintsubset, notminimumcardinality. Individualmask0alreadyshowsoneplymaterialcannotuniquelyrankgoodmoves; tiesexplicit."
+}

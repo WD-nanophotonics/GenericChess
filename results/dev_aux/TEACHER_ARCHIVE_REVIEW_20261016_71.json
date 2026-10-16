@@ -1,0 +1,56 @@
+{
+  "status": "PASS_ALL_ACTUAL_ARCHIVE_MEMBERS",
+  "archives": [
+    {
+      "archive": "results/dev_aux/TEACHER_CORE_20261016_71.zip",
+      "bytes": 41693666,
+      "sha256": "a7cba6bf9bc0c93ea721b790b4749845e779ec0d77e7a36ae148a1870ba98b1b",
+      "members": 3,
+      "all_actual_members_read_SHA_CRC_checked": true,
+      "files": [
+        {
+          "path": "results/dev_aux/task2093/states.jsonl",
+          "bytes": 20180000,
+          "sha256": "4041ac0571ef33891a5a0329b3ddb39ccbea74a3085f26d9d9b6052ff4fd6e39",
+          "rows": 83992,
+          "strict_schema_all_records": true,
+          "personal_or_credential_records": 0
+        },
+        {
+          "path": "results/dev_aux/task2097/states.jsonl",
+          "bytes": 676243288,
+          "sha256": "8fe3bfc1d686380a6ff26dc7e835ebdefeead97747448c2f1ed4359f328e7a30",
+          "rows": 1221776,
+          "strict_schema_all_records": true,
+          "personal_or_credential_records": 0
+        }
+      ]
+    },
+    {
+      "archive": "results/dev_aux/TEACHER_WDL_20261016_71.zip",
+      "bytes": 42202444,
+      "sha256": "3f54d893d16b67132dbd4b4261cd501c85d2c6cbc7a942d64bc09f2987901890",
+      "members": 3,
+      "all_actual_members_read_SHA_CRC_checked": true,
+      "files": [
+        {
+          "path": "results/dev_aux/task2094/labels.jsonl",
+          "bytes": 27195032,
+          "sha256": "7c0758e2999a31a5b9708e33abcfcf441884d493a2cbe0ed7891ecf6d3716607",
+          "rows": 83992,
+          "strict_schema_all_records": true,
+          "personal_or_credential_records": 0
+        },
+        {
+          "path": "results/dev_aux/task2098/labels.jsonl",
+          "bytes": 602388634,
+          "sha256": "e105cb0a6c94697f8c8d14cb2e503ce66bd9d27b9afa1193b973018497a971b7",
+          "rows": 1221776,
+          "strict_schema_all_records": true,
+          "personal_or_credential_records": 0
+        }
+      ]
+    }
+  ],
+  "seconds": 63.120759299985366
+}

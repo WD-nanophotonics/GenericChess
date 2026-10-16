@@ -1796,3 +1796,38 @@ concurrentcomputation limits walltime interpretation; no exclusiveCPUclaim.
 ScienceOPEN; nextprospectiveroot/prefixqualification beforepolicyexpansion.
 
 70closing:74.176minute safecheckpoint accepted. Public c36adaa2ee8dc53cc36f98743cff0263cf84cac0 verifiedfullremote/23anonymousfiles/859payloads; fixed evidence sentonce1792125659.081049. Closingroot/threadreadshowsnonewDotresponse/readexecution. ZIPcontentreviewissuecorrectedusingnormalapproval, originalspreserved; unchangedbranchhook satisfiedwithfullsidemissionrefs. NootherAgentstatechange.
+
+
+## DEV_AUX segment71 —2026-10-16
+
+DEV_AUX independently qualified192newroot/prefix proofqueries (19vs2proofs,
+all21actualmates), completed144sameproofmodelgames(nofeaturegain), built
+independentlyauditedbotharmed3x3and4x4teachers, andcompleted368physicalactual
+W-Lpricegames underaNEWfixedlowresource/endgametriggerpolicy. Twoinitials
+selectdifferentpricesandDEVgainsareboth0. OriginalPNstudyclosed2400cap with
+31physical/34logicalTRAIN/30D+1UNKNOWN,286TRAINlogicalunrun/noDEVselector.
+Noextension/restart/pooling, noquantityreward/UNKNOWNasDRAW, nohumanpricefit.
+
+PRIMARY: no newprimarysource/execution/adoptionclaimedthissegment; prior5fe6
+contextfrom70retainedashistoryonly. Mainsearch/backendpriorityandseparate
+checkout/default/UIboundariesunchanged; noquietwindow/requesttopauseotherwork.
+
+Dot1792127562.477589 read40acold2086andnewinlinefacts, notnew71code/runs.
+Adoptcausalcorrection: prooftriggerdoesnotfreeze posttriggernormalevaluation,
+so reportwholepolicypriceeffect, notformation-onlybenefit. All368entrydenominator
+retained(362entered/6never);12coldcontrols3ratioactive/9inactivefoundnodivergence,
+notisolationproof. Noactivepolicy/capchangesperadvisor; onefreshquestion/noresend.
+
+Efficiency: oldPNpaid2202.67sproofvs163.09snormalwithnofinishedtraining, while
+newdeclaredpolicyfinished294.63s; resource/opponentconditionsdiffer, NOTsame
+searchspeeduporstrengthclaim. Full5pieceteacher593.56sprepaidexplicit. Closed
+<=4view244080statesreducesunneededloadeddata, allvisiblefieldsverifiedequal;
+viewderivationdoesnoterasefullteacherbuildcost. NoautomaticNN/gridexpansion.
+
+Evidence/privacy: actualZIPmembercontent/SHA/CRCchecked, uniqueoriginalsretained.
+Isolatedsource-onlyreplaycorrectedmissingbroad-pinfiles; ONEunusedGenericChess
+bridgepersonaldefaultpathredactedonlyinpublicationcopy, original/published
+hashesandweakerbyteidentityscopeexplicit, modulemustnotload. Noexternalproject
+read/execution. 71localtests+2projectionchecks;70purePythonisolatedchecksplus
+fullgraph/record/certificateconsumers. Finalfixedrevisiondelivery/readscopereceipts
+follow; noassumptionthatDot/PRIMARYreadorappliednewwork. ScienceOPEN.

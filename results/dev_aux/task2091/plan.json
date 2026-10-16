@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_BEFORE_HISTORY_QUERY",
+  "question": "Does constructing/verifying every full-history defense safely recover some positives rejected by count<=1?",
+  "source": "results/dev_aux/task2086/rank_certificate.py",
+  "source_sha": "de60e498ce00d859af9b21622c9a95aebac8d8cb8f24ba0bb84c962079e9ed5d",
+  "roots": "ALL24task2087 roots withoutWDLfilter, firstlegal4plycycle whereoneexists; both target0/1 and both old/newprovider. Structuralcyclegeneration beforeanyhistoryquery, no replacementifnone.",
+  "cap_seconds": 120,
+  "query_nodes": 1024,
+  "query_seconds": 1.5,
+  "max_depth": 64,
+  "verifier_nodes": 16384,
+  "verifier_seconds": 0.5,
+  "no_change": "No2092policychange, noold2086artifactchange, resultsretainedwhethercertificateorUNKNOWN. Notnewholdoutstatistics; changedpremiseexposedmechanismtest."
+}

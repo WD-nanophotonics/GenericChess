@@ -1,0 +1,100 @@
+{
+  "status": "COMPLETE",
+  "complete_inventory_and_all_edges": true,
+  "counts": {
+    "": {
+      "syntactic": 480,
+      "nonmoving_anchor_unsafe": 168,
+      "admissible": 312,
+      "ongoing": 312
+    },
+    "B": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2852,
+      "admissible": 3868,
+      "ongoing": 3812,
+      "stalemate": 56
+    },
+    "N": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "b": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2852,
+      "admissible": 3868,
+      "stalemate": 56,
+      "ongoing": 3812
+    },
+    "n": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "BN": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 40728,
+      "admissible": 46632,
+      "ongoing": 45248,
+      "stalemate": 1224,
+      "checkmate": 160
+    },
+    "Bb": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 43136,
+      "admissible": 44224,
+      "ongoing": 44128,
+      "checkmate": 96
+    },
+    "Bn": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 42056,
+      "admissible": 45304,
+      "ongoing": 45288,
+      "checkmate": 16
+    },
+    "Nb": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 42056,
+      "admissible": 45304,
+      "ongoing": 45288,
+      "checkmate": 16
+    },
+    "bn": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 40728,
+      "admissible": 46632,
+      "stalemate": 1224,
+      "ongoing": 45248,
+      "checkmate": 160
+    },
+    "BNb": {
+      "syntactic": 1048320,
+      "nonmoving_anchor_unsafe": 559472,
+      "admissible": 488848,
+      "ongoing": 486992,
+      "checkmate": 1856
+    },
+    "Bbn": {
+      "syntactic": 1048320,
+      "nonmoving_anchor_unsafe": 559472,
+      "admissible": 488848,
+      "ongoing": 486992,
+      "checkmate": 1856
+    }
+  },
+  "processed": 1221776,
+  "actual_legal_edges": 6484912,
+  "records_sha": "96c12823f92d270ec668517016b33ee105a5757e0bd411f02d54d61debf97436",
+  "seconds": 494.6443319999962,
+  "rules_sha": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad",
+  "ruleset_fingerprint": "09d8c91fce789bdf5d2d30c763053e939d14e803ff0130f98f13c418cf9e0f96",
+  "scope": "4x4Kk+friendlyBN+opponentB andcolor-swap, completeALLsubinventories/bothturns/placements. DeliberatelyasymmetricfirstopponenttypeB; no universalB/Nratio/standardgame/fullgenericclaim. No price/WDLrootfilter, nohumanprices ornew2092change.",
+  "new_native_go": 0,
+  "new_reward_games": 0
+}

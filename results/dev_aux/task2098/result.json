@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETE_GRAPH_RETROGRADE_PENDING_INDEPENDENT_AUDIT",
+  "states": 1221776,
+  "edges": 6484912,
+  "by_inventory": {
+    "KK": {
+      "DRAW": 312
+    },
+    "KKB": {
+      "DRAW": 3868
+    },
+    "KKBN": {
+      "WIN": 17120,
+      "DRAW": 13952,
+      "LOSS": 15560
+    },
+    "KKBNb": {
+      "DRAW": 375408,
+      "WIN": 94088,
+      "LOSS": 19352
+    },
+    "KKBb": {
+      "DRAW": 44000,
+      "LOSS": 96,
+      "WIN": 128
+    },
+    "KKBbn": {
+      "DRAW": 375408,
+      "WIN": 94088,
+      "LOSS": 19352
+    },
+    "KKBn": {
+      "DRAW": 45248,
+      "LOSS": 16,
+      "WIN": 40
+    },
+    "KKN": {
+      "DRAW": 3968
+    },
+    "KKNb": {
+      "DRAW": 45248,
+      "WIN": 40,
+      "LOSS": 16
+    },
+    "KKb": {
+      "DRAW": 3868
+    },
+    "KKbn": {
+      "DRAW": 13952,
+      "WIN": 17120,
+      "LOSS": 15560
+    },
+    "KKn": {
+      "DRAW": 3968
+    }
+  },
+  "ongoing_WDL": {
+    "DRAW": 926560,
+    "WIN": 222624,
+    "LOSS": 65792
+  },
+  "maximum_decisive_rank": 45,
+  "ranks_over96": 0,
+  "labels_sha": "5d296f799c9633e20632e085af77bb6398bc896097fe47d6359d072fea856a1d",
+  "seconds": 32.40639530000044,
+  "scope": "Complete4x4BN-vsB/bothcolors captureclosure; freshcanonicalWDLonlyifallranks<=96 and independentaudit. Otherwise positional labels/notboundedWDL; no actualgamefit from labels.",
+  "no_new_Native_or_prover_or_reward_games": true
+}

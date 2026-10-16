@@ -1,47 +1,40 @@
-# DEV_AUX current mainline — segment70,2026-10-16
+# DEV_AUX current mainline — segment71,2026-10-16
 
-Science OPEN; own sidemission/PRIMARYreadonly/PUBLIC. Currentgrants/reasons:
-AGENTS.md. Checkedprojectpublication authorized; exactsensitiveoriginalsignored.
+Science OPEN; own sidemission/PUBLIC, PRIMARYreadonly. Currentgrant/reasons:
+AGENTS.md. Checkedprojectcontentauthorized; rawaccount/credentialoriginalsignored.
 
-Decision/reason:2055twoRanchorBpilot complete288games, DEVgains0/-.04167.
-DifferentselectedB meansselected-policycontrast, notpureinteraction. No more
-exposedBgrid. Old69pending2054inputprelude is now closed; preservealloldcaps.
+Decision/reason: implementcompletepolicytrueW-L, notquantityproxy. 2088new24root
+qualification192queries yields2originalPNvs19compositeproofs; all21existing
+certificatesverified/cursoractuallymates311moves. Scopefinite4x4teacher, not
+fullGenericMateSolver. 2091fullhistorytree recovers10coarseguardfailures;
+2101genuineoldhistorymakescanonicaltableWINactionrepetitionDRAW/UNKNOWN.
+Never inferarbitraryhistoryWINfrompositiontable orUNKNOWNasDRAW.
 
-Credibleteachers nowexist oncontrolled4x4cooperation: baseKK/N/B/BN/NN/BB
-201344states/952224Coreedges; changedNmovement separately99712/485440.
-Independentcoverage/Bellman/rank+fullhistoryexecutions pass. Exactcanonical
-freshWDL, not arbitraryhistorylabels or fullgenerateddomain. Matchedsafe
-compositionNN.00418/BB.38346/BN.74018 shows cooperation understateddistribution,
-notB/Nprice. Samepoolmaterial+mechanicalpairsMSE.21665->.14654; kingpiece+pairs
-.12236. Developmentfit only; scalarsretained/nohumanfit/noNNmandatory.
+2092COMPLETE144games/8190moves, sameproof/fixedopponent/three2082evaluators:
+all10W10L28D, pairedgains0. All144matchcanonicalrootWDL;7858normalcalls only
+12nonflatpositionfrontiers/noWDLerrors. LowerlabelMSEisnotpolicybenefit;
+thissampleleaveslittleobservedheadroom. No moreexposedfeature/pricegrid.
 
-2063sameCoreAB+PN/fixedfoe control reachesoriginal1800cap:48finished,1UNKNOWN,
-47unrun. Eightcompletefamiliesgain0(KK)/+.0625(KP), insufficientstrengthclaim.
-Proofcost1395.50sdominatesnormal326.52s. Do not extend/restart oldcontrol.
+Newcrediblebotharmedteachers: 3x3BN/bn allcaptureclosure83992states/210800
+edges;4x4BN-vsB/color-swap1221776/6484912, maxrank45. Bothindependently
+coverage/Bellman/historyaudited. Full4x4prepaidbuild/solve/audit593.56s,
+notfree. 2108/9closed<=4view244080/1212976 deriveswithoutCorecensusrerun;
+independentfrontier/coverage/rank/58actualpathsauditPASS, maxrank28.
 
-2086rankprovider usesstrictfullrecord/repetition/rank/horizon/compiledguards,
-exportsEXISTINGtypedSessionWinCertificates within1024/1.5s; existingverifier
-andcursorcheckmate8exposedfailedPNexamples. Newpositiveprototype, notgeneric
-solvercompletion orrevisedgameoutcome. NegativegraphfilterUNKNOWNonly; both
-targets/cancel/foreignrules tests pass. Teacherbuild/loadcost charged.
+2105NEWfixed<=4trigger/PN32/.02s/normal512depth2/.02s completes368physical
+(416logicalexplicitidentityreuses)/7294moves in294.63s. ActualW-LTRAINonly
+selects.25from.25 and2from4; DEV16familygainsboth0. Notstableuniversalprices,
+notimprovement overunmeasuredDEVinitial4, notpooledwithotherresourcecontexts.
+2100oldPN1024/depth3closedoriginal2400cap:31physical/34logicalTRAIN,
+30actualDRAW+1UNKNOWN/286TRAINlogicalunrun, noDEV/selector. Noextend/restart. Old2063closed48finished+1U/47unrun.
 
-Nearbyrulezero-shotKP.12995 alreadymeets.15; smallSGDfinetuneworsensMSE,
-fullnewTRAINridge.12934cheap. No migrationdominance/amateurstrengthclaim.
+Dot1792127562.477589 read40acold2086+newinlineonly/no71execution. Adopt:
+triggerchangesproofservice, NOTposttriggernormaltheta; wholepolicygainonly.
+Firstentryaudit keepsall368physicalroots:362entered/6never,6228postentry
+normal/fallbacks.12colddepth2pricecontrols foundnodivergence (9ratioinactive),
+notproofstageisolation. No changingfrozenpolicy peradvice.
 
-NEXT: prospectivelyfreeze newlabel-blindroots/prefixes excludingallpolicy
-studyrootorbits, qualifypositiveprovider/repetitionguards andfallback under
-samebudgets before anynewcompleteplayercomparison. Cost/completionfirst;
-cheapcountinteraction before optionalNN. Do notretuneoldDEV orhandoffmainwork.
-
-Evidence:SEGMENT_20261016_70.md, tasks2055-2086, immutableSOURCE/EVIDENCE70,
-restore/quality/consultationreceipts. AllNativeandpartialteacheroriginals retained.
-Dot1792123155.482159 readold71b8filter+inlineassumptionsonly/no70execution;
-adoptattractor-complementreasoning/targettests. PRIMARY5fe6ownercontextreadonly.
-
-## Revisable CHAT reference
-
-[Teacher/valueidentification](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689)
-and[architecture/nearbyruletransfer](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309)
-remain advisoryquestions, nothardrules/backlogauthority. Thissegment tested
-crediblelabelcoverage, cheaprepresentations andonecontrolledrulechange; itdid
-not completeNNUEtransfer/fullgenericMateSolver orpromise5-10minute strength.
+NEXT: completeoriginalclock/physicalcensoringreview, source-onlyportable
+restore/publiccontentreview andfixedrevisiondelivery. Futurecheapteacher
+view/priceidentifiabilitychosenbyusefuldecisionspercost, notautomaticNN/grid.
+PRIMARYintegration/defaults/UI untouched; scope/negative/partialrecordsretained.

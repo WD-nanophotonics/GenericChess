@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE",
+  "roots": 24,
+  "cycles": 24,
+  "queries": 96,
+  "expected_queries": 96,
+  "providers": {
+    "old": {
+      "status": {
+        "UNKNOWN": 48
+      },
+      "reasons": {
+        "history_repeats_outside_positive_guard": 10,
+        "not_positive_table_value": 38
+      },
+      "nodes": 0
+    },
+    "history_checked": {
+      "status": {
+        "PROVEN_WIN": 10,
+        "UNKNOWN": 38
+      },
+      "reasons": {
+        "budgeted_rank_full_session_certificate": 10,
+        "not_positive_table_value": 38
+      },
+      "nodes": 516
+    }
+  },
+  "verified": 10,
+  "seconds": 2.392214299994521,
+  "scope": "Oldcoarseguardvsactualfullhistorytree, noactualpolicyadoption orarbitraryhistoryWDLclaim. Allactualdrawdefenses abortUNKNOWN."
+}

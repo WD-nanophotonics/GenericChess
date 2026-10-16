@@ -1,0 +1,30 @@
+{
+  "status": "FROZEN_BEFORE_CORE_CENSUS",
+  "question": "Does a small complete game with BOTH armed sides provide genuine exchange/mating choice conflicts absent from single-owner extras?",
+  "rules": "results\\dev_aux\\task2093\\rules.json",
+  "rules_sha": "44f16a5c4df2e4c0bd2a29e528ec5d15e6e2f5ea39c957df5b5566c6a21da8c0",
+  "inventories": [
+    "",
+    "B",
+    "N",
+    "b",
+    "n",
+    "BN",
+    "Bb",
+    "Bn",
+    "Nb",
+    "Nn",
+    "bn",
+    "BNb",
+    "BNn",
+    "Bbn",
+    "Nbn",
+    "BNbn"
+  ],
+  "syntactic_positions": 282384,
+  "seconds_cap": 600,
+  "expected_seconds": 120,
+  "scope": "3x3K+atmostoneB/N eachowner; ALL16subinventories/placements/turns captureclosed. Sameking-safety/checkmate/stalemateDRAW/repetition3DRAW/maxply96, no promotion/drop/aux. Deliberateboardchange, NOT standardChess/Shogiprice/generalization. No WDLfilter or humanprices. Complete Coreedges checked against mechanicallysized independent RoyalActor3.",
+  "decision": "Firstmeasureterminalcoverage/nonflattrueWDLactions/exchangeconflicts; no automaticlearner/grid. If allflat/no meaningfulchoices retainnegative anddo notfillwithcountreward.",
+  "rationale": "Existing4x4teacher is same-owner extras against loneking. Cooperation evidence alone doesnot establish scalaridentifiability under bothsideexchanges.3x3wholecaptureclosure282384syntactic forecast120s ischeapfalsifiablefeasibility before4x4millions, not a smallerboardstrengthclaim."
+}

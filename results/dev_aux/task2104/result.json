@@ -1,0 +1,41 @@
+{
+  "status": "COMPLETE_POSTHOC_DISTRIBUTION_HEADROOM",
+  "old2092_rootlabels": {
+    "WIN": 36,
+    "LOSS": 24,
+    "DRAW": 84
+  },
+  "old2092_actual_match_canonical_optimal_root": 144,
+  "total_games": 144,
+  "old2092_positional_decisions": {
+    "PROOF": {
+      "decisions": 60,
+      "positional_WDL_suboptimal": 0,
+      "regret_sum": 0,
+      "nonflat_frontiers": 43,
+      "prior_repeated_history": 0
+    },
+    "MATERIAL_SEARCH": {
+      "decisions": 7858,
+      "positional_WDL_suboptimal": 0,
+      "regret_sum": 0,
+      "nonflat_frontiers": 12,
+      "prior_repeated_history": 6775
+    },
+    "PROOF_CONTINUATION": {
+      "decisions": 272,
+      "positional_WDL_suboptimal": 0,
+      "regret_sum": 0,
+      "nonflat_frontiers": 231,
+      "prior_repeated_history": 0
+    }
+  },
+  "new2100_TRAIN_only_roots": {
+    "WIN": 5,
+    "DRAW": 27
+  },
+  "new2100_TRAIN_only_nonflat": 18,
+  "new2100_DEV_labels_read": 0,
+  "seconds": 6.525501900003292,
+  "scope": "FreshrootWDLexact; per-move positionalWDL is NOT arbitraryhistorylabel. No reward/selector/policy/root/budget change. NewrootdiagnosticTRAINonly; DEVunread. A perfectroot-result match hereexplains noobservedmodelheadroom, notuniversalstrength."
+}

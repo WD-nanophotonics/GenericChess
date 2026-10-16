@@ -261,22 +261,19 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment70
+# DEV_AUX current scope:2026-10-16 segment71
 
-Science OPEN; own sidemission, PRIMARYreadonly/PUBLIC. Closed2055B/N pilot
-288actualgames givesDEVgains0/-.04167, nofurtherexposedpricegrid. Teacherroute
-chosen because reliablelabels distinguish expression/search/conversion rather
-than repeat weakfeedback. ActualCoreteachers: base201344states/952224edges,
-nearbyNmovement99712/485440; exactfreshcanonicalWDL only, historyguarded.
-Cheapmechanicalpairinteractions improve exposeddevelopmentfit; noNNtrained,
-no uniquehumanprice/strength claim. 2063original1800cap CLOSED48finished+
-1UNKNOWN+47unrun; neverextend/restart. All failures/caps preserved.
-Ranktablepositiveadapter exports existingtypedSessioncertificates under strict
-realhistory/rank/budget guard;8exposedexamplesverified/executed, notgeneral
-MateSolvercompletion orproductdefault. NegativefilterreturnsUNKNOWNonly.
-Nextprospectivequalification beforeanotherfullpolicycomparison; costofteacher,
-inference, proof and allcensoring remain explicit. See segment70report for
-source/evidence/restore/consultation;69retainedashistory, notpending2055work.
+Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. TrueW-Lcompletepolicy,
+noquantityreward/UNKNOWNasDRAW, samefixedopponent/resourcesperdeclaredstudy.
+Teacher/proofcost explicit. 2088new192queries19vs2proofs/all21actualmates;
+2092new144gamesfinds0featuregains/allcanonicalrootoutcomesmatched. Credible
+botharmed3x3/4x4teachers plusclosed<=4view nowexist; notfullgenerateddomain.
+2105newfixedtrigger/lowresource actualW-Llearning completes368physicalgames,
+twoinitialsselectdifferentprices/DEVgains0. Noexposedgrid/NNautomaticfollowup.
+2100closedoriginal2400cap:31physical/34logicalTRAIN/30D+1UNKNOWN,
+286TRAINlogicalunrun/noDEVselector; retainallpartial/unknown. Noold2063caprestore. Triggerdoesnotisolateposttriggernormalprice;
+reportwholepolicyeffect, nofalseadvantageformation-onlyattribution. Dotadvisory,
+notnewauthority. Details/results/nextaction:docs/research/LOCAL_MAINLINE.md.
 
 ## Current user publication grant2026-10-15
 
