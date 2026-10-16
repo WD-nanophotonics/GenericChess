@@ -440,6 +440,9 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "semantic_immediate_win_goal", value);
     PyDict_SetItemString(dict, "semantic_pending_continuation", value);
     Py_DECREF(value);
+    value = PyLong_FromLong(65535);
+    PyDict_SetItemString(dict, "semantic_max_rule_ply", value);
+    Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_material_evaluator", value);
     Py_DECREF(value);
@@ -3479,11 +3482,12 @@ static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
 
 
 /* A search must never turn fixed history storage into a game adjudication.
- * Automatic PENDING can legally run past rules->max_ply. Reject a request
- * whose declared path could exceed storage before entering recursive C work. */
+ * Automatic PENDING can outlive rules->max_ply, and a long rule horizon can
+ * outlive storage itself. Refuse a path exceeding storage before recursive C
+ * work; neither case changes the rule's actual terminal condition. */
 static int gc_semantic_require_search_capacity(const GCSemanticRules *rules,
     const GCSemanticPosition *position, unsigned int extra_plies) {
-    if (rules->automatic_adjudication_count &&
+    if ((rules->automatic_adjudication_count || rules->max_ply > GC_SEM_MAX_PLY) &&
         (unsigned long)position->ply + extra_plies > GC_SEM_MAX_PLY) {
         PyErr_SetString(PyExc_NotImplementedError,
                         "semantic history capacity exceeded by requested search; use Core search");

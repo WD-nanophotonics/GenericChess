@@ -443,7 +443,8 @@ APIs/resultfields/defaults/fullhistory/aux/promotion/drop remain. Old images
 retainoldcost; no solver/model/price orUI update. Constructor charges firstsource
 entries includingduplicates, caps addedwork2M/allocation2MiB, andretainsordinary
 scanner onrefusal. Currentcontract actualmax table1MiB. Only3C/H files change;
-getter-only andactualleaf prototypes remain uninstalled; their source/results are published as research.
+getter-only remains research; the actual inline leaf was subsequently qualified
+and adopted in the update below. Historical prototypes are not activation tasks.
 
 2734installednormal tests pass. Source/export/receipt-reader tiers andcold/
 widecensor limits are in GEOMETRIC_MEMBERSHIP_AND_SPATIAL_INPUT_20261016.md and
@@ -458,3 +459,22 @@ refusals remain. Normal2757/fresh-source160 checks pass. No public schema,
 evaluator weights, q/default flags or UI changes. Getter-only, shared3+9, zero-skip
 and outline prototypes are not activated. Report:
 ../research/LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md.
+
+### 2026-10-16 rule horizon and final-slot result features
+
+Rebuild Native normally for semantic_max_rule_ply=65535, then reload the backend
+in the consuming process. This capability describes the uint16 RULE horizon;
+history/stack capacity remains1024, position/undo remain53920 bytes each. Older
+kernels without the capability retain conservative1024 rule admission. The
+unbound payload builder also keeps its old default. Unsupported actual history
+or requested paths fail explicitly and require the existing Core route; no
+automatic full-search/model substitution or larger arrays are installed.
+
+The Python caller preserves a completed terminal PV's three required features at
+the last slot through rare complete Core replay and Position-level semantic
+counts AND its rule-ply trial gate/check pressure. It does not reset the real
+terminal or use GameState's blanket empty terminal action set. The existing result fields/imports/default q and model policy stay.
+Core's optional Native legality provider declines at the storage boundary while
+Core retains complete history/adjudication. Actual boundary/PENDING/hybrid and
+fresh generated controls,2817 full checks and restored-source evidence are in
+../research/CORE_CAPACITY_HANDOFF_20261016.md. No AUX/UI activation is performed.

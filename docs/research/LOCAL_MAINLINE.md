@@ -1,566 +1,151 @@
 # Current local research mainline
 
 AGENTS.md and latest user directions govern. Science is OPEN. This file owns
-revisable research selection/evidence, not permanent authorization or a diary.
-Previous complete selection/evidence remains at fixed Git
-4f6858b128e38c3b93360d78b7f5de6ad61af695 and its purpose reports/archives.
-
-## Latest user-selected repair —2026-10-15 CLOSED
-
-Decision: close the concrete Slack defects, qualify the changes and publish the
-owner evidence BEFORE resuming mainline experiments. Reason: source review found
-an actual rule-authority discrepancy plus auxiliary control/reporting gaps.
-This supersedes immediate execution of the memo's earlier q32/history tasks;
-it does not abandon their frozen inputs/results or silently change the long-term
-priorities. No new price training/games or generic-prover duplication for repair.
-
-PRIMARY: align Native automatic PENDING with Core at/beyond rule max_ply,
-including terminal priority, checked next moves, full-state import and explicit
-fixed-storage limits/Core route. The e2e4,d7d5,f1b5+ / c7c6 counterexample is
-locally reproduced. Pending PV caller consolidation stays undelivered until
-qualification of this underlying authority repair. Keep APIs/defaults/UI.
-
-DEV_AUX: its existing sidemission owner closes cursor cancel/deadline fast-path,
-adds C-to-D and four-cell interaction from already-paid fixed-opponent records,
-and corrects its copied sandbox role description. PRIMARY reads fixed revisions,
-not its checkout or mutable computation. Closure requires actual tests/report/
-full remoteSHA, not a routine Dot acknowledgement. User approved this work split.
-
-Closure: final rebuilt2648full/51focused tests and35source-only rebuilt tests
-pass. AUX fixed11dddd801c68ef9289ff8293dba1dbb00701ede9 source/tests/report were read,
-cell/vector arithmetic checked; its32test execution remains owner-reported.
-Four recovery scenarios pass; actual source/limits are recorded in the report.
-Specific defects are closed. Resume preserved research only after tested
-publication/full remoteSHA verification, without a Dot acknowledgement gate.
-
-All architecture advice receives adopt/already-addressed/defer reasoning in
-SLACK_REVIEW_FIXES_20261015.md. Consumer inventory comes before any interface
-redesign. No new diagnostics API, schema framework or deletion of frozen scripts.
-Recovery scenarios cover PUBLIC rollback, authorized small WDL/solver controls,
-unchanged failed optimization and AUX branch selection. No hidden approval gate.
-
-## Preserved next research choice after repair closure
-
-Current selection remains search capability comparison and bottleneck attribution
-before later price/statistical/small-learning routes. Compare generic backend,
-minimal AB on generic/specialized rules and mature references; separate primitive
-rule cost, representation, scheduling, algorithm and completion/usefulness.
-Mature unmatched evaluators are overall references, not material-only controls.
-Prefer small predeclared decisions over large games/Elo or positional patches.
-
-Analyzed preserved evidence: CHECKED_PV_REPLAY_AND_WIDE_PREPARATION.md and
-its source-replay archive. All96q32queries select the same action per family;
-only2of8families completeq1/q2 at16s, q4none, no demonstrated decision gain.
-Three roots physically win immediately;60nonterminal query records remain WDL
-UNKNOWN despite no one-ply winning reply. No q default change. Full96record
-history replay checks10unique lines/12edges, not all-domain equivalence.
-
-64generation calls retain all censors/failures. Opening1024 changes distribution,
-not same-task speed. Matched same-cap cache ratios around.88 do not repair32
-filter yield. Value-key normalization resolves the private cache's observed list
-input failure on two existing inputs, but small-input ratio1.41684 versus wide
-.65271 argues against unconditional adoption. Product compiler/filter unchanged.
-
-Current outcome: actual q quiet-discarded history attribution justified the
-qualified final deferral;2664full/34focused tests and source-only full-state replay
-pass. New development cohort46/48roots,552/576queries retains all missing slots;
-92fixed pairs zero non-time mismatch, caller ratios.885/.690/.674/.688 by4/8/12/16.
-184wall pairs14deeper/170same/0shallower do not establish strength. Two exposed
-resource families had mutable-baseline contamination; retain/exclude16slots,
-no replacement. Full versions, failure/long-history controls and limits:
-QUIET_CHILD_HISTORY_AND_TRANSFER.md. q/default/evaluation/price policy unchanged.
-
-Current additional choice: checked sibling reply reuse plus guarded direct
-first-source lookup, after768prospective hint queries/384counter-free four-cell
-queries, semantic/source qualification and2668normal product tests. Report:
-CHECKED_REPLY_REUSE_AND_SOURCE_LOOKUP.md. Four-cell combined cost ratios
-.9747/.9279/.8917/.8790 by4/8/12/16;4board interval crosses1 and combined is1.17%
-slower than hint alone there. Retain that negative interaction; choose one small
-global implementation on balanced development evidence, no board patch or strength
-claim. This supersedes the unadopted pilot, not old frozen inputs/caps/results.
-No q/default/price/API policy change. Same-rule checked-generator provenance and
-first-match fallback are essential, never arbitrary hints or terminal certificates.
-
-Current admission result: exact executable-product reuse and payload-only Native
-capability probing remove two redundant index builds; the frozen research adapter
-remains charged. Bounded bitset graph analysis preserves all exact price fields
-and the original>1024sampling/fallback.2687normal tests,81source-only tests and
-35fullroots4497actions/history pass. Compiler320query transfer first-call ratios
-.943/.893/.814/.753;160profile timings ratios.957/.856/.734/.630. Sparse32graph
-1.57x regression and small-profile adverse pairs retained. No price/q/API/default
-or CoreIR/NativeC policy change. The earlier mixed source-grouping rewrite stays
-rejected, not pending. Full source/results: EXACT_ADMISSION_REUSE_AND_GRAPH_COST.md.
-
-The320call four-cell API-ready deadline study executes more16board queries but
-69both-searched A/D pairs retain SAMEdepth/action; atomic overrun.1415s remains.
-Actual computation scopes/provider-load exclusions are explicit, not a hard timer
-promise. This changes the next question from admission micro-optimization to
-completion-aware reserve/enabled-q allocation. New20family qcontrol:70/80roots,
-560/640queries, all80missing slots actual terminal tails. Corrected interpretation:
-ordinaryq0disables ALLq at the existing entry; it is not a fixed-hard8comparison.
-q4retains shallower depth274/280pairs, but no global quality inference follows.
-One actual q4D1/(0,8) reserve choice allows literal one-reply mate; two alternative
-choices have complete safe-one-ply reply frontiers, still not optimalWDL. Four
-exposed fixed-policy continuations give L/L,L/L,U/W,L/U;277actualedges separately
-replayed with search disabled. Keep UNKNOWN and the conditional cases.
-
-Current completion-aware result:840/960slots70/80roots (120actualterminal-tail
-slots) reject unconditional fixed.25sD16reserve. It avoids one exposed literal
-loss, but6requested-policy receipts are displaced; conditional fixed-node games
-include L/W,U/W,W/L, so there is a concrete adverse outcome too. A cappedD2reserve
-is cheaper and preserves the exposed protection.144new-family queries12roots
-lose0requested completions versusq4 (oldreserve4), but old/cap2actions match48/48
-triples and no new immediate-loss gain appears. Keep it a research candidate,
-no global/default change. All caps/UNKNOWN/actual caller expiry remain. Full
-report: COMPLETION_AWARE_RESERVE_ALLOCATION.md; search-disabled public-copy replay
-checks1320phases3796edges plus176trajectory edges on unchanged product source.
-
-Current history result: the prior frozen counter is now actually executed and
-followed by a counter-free exact-action history study.32counter/32pilot/48TT/
-432paid/552prospective queries preserve all jointly completed finite objectives.
-Final per-call48KiB table is used only by existing exact-root/plain ordering;
-no API/q/evaluator/model/default-flag/UI change. Candidate storage activation
-gets248active/inactive controls with0non-time mismatch, then the supported
-rebuilt product passes2687full tests. Source/evidence: CUTOFF_HISTORY_ORDERING_20261016.md.
-Completion-conditioned family caller ratios are.922/.812 paid(q0D3/q4D2) and
-.776/.745 prospective(q0D4/q4D3), with the full censors and2.846x adverse work
-case retained. No16-board prospective q4D3pair completes.12fixed-opponent games
-show6known actor comparisons unchanged and2UNKNOWN, not strength gain.13pureCore
-D4roots independently agree on26Native scores;5censors stayUNKNOWN.
-The old reserve node-export correction remains: API main nodes excludesqnodes;
-all1044old caller queries/366two-phase receipts were re-accounted, firstphase
-qnodes0 and combinedtotal<=1M, with original sealed data/caps/actions unchanged.
-
-Current residual result: all40prospective fixed-opponent games/8board8families
-close with lazy9W4L0D3UNKNOWN versus shared5W5L0D6UNKNOWN; upfrontD2 gives10W1L0D5UNKNOWN.
-Finite W-L deltas+5/+9 and family intervals are development evidence, not
-population strength; upfront includesW-to-UNKNOWN. Seven exposed forced-action
-games/220edges have actual conditional consequences, not all-defense WDL.
-All13first-divergence parents get78fixed-node callers/118phases:26first-q4 pairs
-agree in all non-time fields,0timecensors,14lazy action changes/26. New64callers
-on12/16boards yield2rescues on one12board root and0on16; a1.000733s outer
-overrun explicitly refuses execution. Residual rescue does not fix broad timeout.
-
-The separately frozen EXPOSED16-game pure-main component gives9W1L1D5UNKNOWN,
-finite delta+8, includingW-to-UNKNOWN andUNKNOWN-to-LOSS. Gamecost646.391s is
-above reactive602.089s and below upfront879.365s; no dominance. A paidq4 prefix
-is not established as necessary merely from the portfolio gain. This supersedes
-attributing improvement to phase mixing alone; it does not rewrite the original
-prospective40games/caps or turn component diagnosis into new validation.
-Both players kept the same static rule-derived prices; no price learning claim.
-
-Current component/continuation result: ALL16 exposed D2-only games are6W8L1D1UNKNOWN,
-finite delta-2 versus prior upfront+9; gamecost293.832s versus879.365s. ALL80
-shared-prefix first-D2 results match in every non-time field;12first divergences
-follow requested-q4 choices.24literal reply checks find no one-ply win, not
-deeper safety/WDL. Cheap shallow search alone does not explain the portfolio.
-
-ALL52 normal/counter calls on13parents match non-time results. Nonchecking
-noncapture inventory accounts886/907616 requested descendants (.098%); reject
-that classifier pilot. Capture/check/evasion dominate. A private quiet-check
-subset completes more localD2 (104queries;26reserve controls equal) but18finite
-games give5W3L10UNKNOWN/net+2 at659.744s. Local depth is not utility; no adoption.
-
-New frozen9family/45game balanced8/12/16 comparison: q1=14W2L2UNKNOWN versus
-shared4W4L10UNKNOWN (delta+12), q0=11W1L6UNKNOWN (+10); actualgamecost411/568s.
-Pairedq1-minus-q0 is only+2/18, family interval[-.1111,.3889], with WIN-to-LOSS
-and WIN-to-UNKNOWN retained. A fresh6family/18game transfer against FIXEDq0 is
-adverse: q1=2W6L1D3UNKNOWN versus4W4L4UNKNOWN, delta-4/12. No caller refusals
-there under common50msreserve. Families/reserve also change, so this does not
-isolate opponent causality. Do not infer a universalq1 shortcut from q4 wins.
-
-A preexisting.25sD2 reserve beforeq1 completes ALL16first-divergence probes and
-retains the storedq0 action at both critical time-first calls. Sevenlogic/two
-actualcancel controls pass. ALL12 exposed finite games rescue one literal
-matched-policy LOSS-to-WIN (future policy also changes), but give4W5L1D2UNKNOWN, delta-1 versusq0, +3versuspureq1,518.554s.
-Keep adverse categories/cost and no default/mixed-policy superiority claim.
-These are method diagnostics, not Elo/price fitting or independent optimalWDL.
-
-Ten original20msreserve refusals stayUNKNOWN, including opponent failures.
-Twelve profiles and source-shared search-disabled replay show required dynamic
-features14.6-15.7ms plus serialization~4ms; packing<1.6ms, checkedPV edges
-13-85microseconds. Retain every result field/PV/history.50msreserve is a new
-common protocol on fresh transfer, not a hard timer or repair of old outcomes.
-
-Current check-only/TT result: actual78triad calls distinguish disabledq0
-from true forced-only(0,8). Both completeD3 in26/26, ordinaryq1 in18/26; local
-depth is not utility. Fresh9family27game check-only gives4W6L8UNKNOWN versus
-5W5L8UNKNOWN, net-2 with oneW-to-L. Fresh6family42game fixed-opponent four cells
-A=q0TT0/B=checkTT0/C=q0TT16/D=checkTT16 each treatment net+1versusA. D-C0 and
-interaction-1; C preserves2DRAWs that D leavesUNKNOWN, and D trades WIN/UNKNOWN
-both ways. D costs364.482s versusC308.557s. Six-family empirical D-C interval0
-is cancellation in this sample, not equivalence. Keep q0/TT as cheap baseline;
-no new q/default/API/price or broader strength claim. Do not pool cohorts.
-
-All69physical games/2498edges and3063retained Core/Native query/phase receipts
-pass the normal search-disabled full-state/history consumer.35Core pairs have
-matching finite scores; pure persistentaux works without legacy metadata.
-Three earlier auxiliary execution receipts were overwritten during strengthening
-and are explicitly missing, not silently counted as retained/replayed.60actual
-focused tests pass. Source-only extracted normal rebuild/replay is separately
-qualified in the publication receipt; private Native images are provenance.
-
-The recording contrast solves an observed overhead: exact64row append/fsync
-takes~.22s/5.34MB versus full-prefix rewrite~25.8s/803MB, complete dictionaries
-unchanged. New42game panel uses it uniformly; old27game data/caps stay frozen.
-No diagnostics API or general recording framework is introduced.
-
-New actual adjacent-TT study104normal/104private calls restores lookup-key
-context identity and extra hits but saves no nodes on13roots. A changed
-D4parent-to-D2child control156calls also saves0nodes in52paired groups, all
-complete scores/actions/PVs matching. No key-tag rewrite adoption. More hits,
-a symbolic identity correction and same-source finite agreement are not useful
-speed or all-domain qualification. Legacy-mode censors remain separate.
-
-Current demotion/availability outcome: the prior counter is actually closed.
-78counter calls observe1,237same-key demotions after lookup-tag repair; the
-normal path has0. A single refusal of shallower stores gives.697465warm/fresh
-nodes at matchedD4parent/D2child, but.970031at the practical sameD4target
-(156calls each;18lower/8higher groups). All complete finite outputs/PVs match.
-The fresh36game persistent-TT panel adds noWIN:11W10L3UNKNOWN versus11W11L2UNKNOWN,
-sole LOSS-to-UNKNOWN. Keep lookup-tag/retention private; do not promote the
-matched-horizon speed to a general policy gain.
-
-Actual48call q0 attribution finds wide fullhash24-39percent and terminal25-35percent;
-PVbelow1percent, with nested/overlapping counters and measured overhead explicit.
-Reuse the existing fully checked reply helper per search/ply only in exact-root
-disabledq0. Supplied availability never replaces full-history terminal authority.
-144active/inactive controls match all non-time fields. Fresh31/32families retain
-248/256slots (9317actualterminaltail8slots),124fixed calls equal, cost ratios
-.9846/.9662/.9570/.9091 by4/8/12/16; one adverse small family is retained.
-62quartersecond pairs retain SAMEdepth/actions. Separate24game panel has
-7W7L2UNKNOWN BOTH, not equivalence/strength. 192EXPOSEDwide resource-curve calls
-give4greater/0smaller retaineddepth and2actionchanges at1s; both complete allD4
-at16s. No defaultq/price/API/TT/UI change or depth-as-quality inference.
-
-Final rebuilt product passes2691full tests. The original source-built fault
-fixture missed the new availability consumer: first actual fullrun2685pass/2fail.
-Both consumers now receive the same nested serializer injection, all original
-error/retained-depth/root/retry assertions remain, and plain-order cases extend
-coverage;13focused pass. Private preflight2687 is a separate earlier-source tier.
-62actual installed-product binding calls equal the frozen private prototype.
-3126retainedqueries/11292PVedges/60games1898edges/438literalreplies/16diagnostic
-choices/85fullroots pass normal search-disabled replay. Extracted-source
-qualification and immutable manifest are in the new report/archive receipt.
-
-Late all52planned-root diagnosis retains51complete one-ply frontiers/4824full
-Core/Native childstates and1actualtargettail. Literal immediatewin roots are
-3/51observed; twofinite families consume6/60game slots but only.111seconds.
-This diagnoses samplequota, not dominantcompute. Fullvalidation-census cost is
-not optimizedfilter cost. No existing root is discarded and no generatorfilter
-adopted; any futureconditional-root filter needs a new before-input protocol.
-
-Current finite-context result:22actual paired histories/64capture controls
-qualify testing the former shadow opportunity. Guarded q0/static/noautomatic
-reuse preserves completed objectives in96three-arm calls,384fresh slots,
-79joint Core objectives and30actual write/probe namespace controls. Local
-completed-D4 cost improves, but72frozen game slots (66actual/2517edges,2tail
-families) give14W16L1D17UNKNOWN versus14W14L20UNKNOWN: net-2/48, family interval
-crosses0. NO production TT/key/q/default/price/API/UI change. Prepared C/tests
-are historical unadopted provenance, not missing consent or recovery tasks.
-No unchanged retry solely for more hits/depth.
-
-Root ordering has adverse16board completion/cost;32raw-counter calls show up
-to~11.6x legal generation at equal131072visits. Canonical tie/PV authority stays.
-192leaf-only calls give essentially no useful savings, also not adopted.
-Full findings: FINITE_HISTORY_CONTEXT_AND_ROOT_ORDER_20261016.md. Old demotion
-task is closed; frozen evidence and search-first selection remain. Latest AUX67
-58755e50cc5322ed11dded993d5ce03696c95799 is REPORT_READ_ONLY, no final solver/
-learning execution/adoption. Zero-return proposal remains unadopted: legal
-executor progress/payoff assumptions and actual DRAW versus UNKNOWN stay distinct.
-
-Current sampling result: actual cold raw/conditional pipelines retain30/32slots
-versus32from37candidates. Conditional pernonwin processcost is1.032/1.143/
-1.131/1.114 ofraw by4/8/12/16. Tail-only control explains4boardextra roots;
-8/12samples are identical;16replaces one cheapimmediatewin. No defaultfilter.
-These smallcohort pointresults do not establish universal filtering harm.
-
-All264new budgetcurve calls retainfullhistory/fields and0readinessrefusals;
-q0/q1 are different objectives.16exposed commonfuture games/4parents include
-a longer-budget WIN-to-LOSS, not a population short-search advantage. PaidCore
-D7/D8 objectives agreewithNativeTT0/16; independentD10 remainscensored.
-48NEWpreset/symmetryfamilies retain90roots/6tails,78jointD2agree/12censors;
-allpromotion/drop/history kept, no generatedaux coverage orall-domainclaim.
-
-New fixedopponent q-by-Unit/static valuation panel is56actualgames/8families/
-64roleobservations,31actualterminals/25finite64plyUNKNOWN. A3W3L10U,
-B5W5L6U,C4W4L8U,D7W4L5U. D-C+3/16 andinteraction+3/16 bothfamilyintervals
-cross0; oneWIN-to-LOSS retained. C-A0CI0 ispairedcancellation, notprice
-equivalence. No power/equivalencemargin, no training/price/qdefaultadoption.
-No claim past engineering has generally no benefit or material is the cause.
-Fullscope/failures: PLAYABILITY_SAMPLING_AND_VALUE_INTERACTION_20261016.md.
-
-Current next attribution is alreadybegun:48fullcommonprefixpairs yield39actor
-firstdifferences/9sameprefix/0opponentfirstdifferences,34distinctfullstates.
-204freshD2controlqueries show valuationactionchanges17/34(q0),21/33(q1);
-65of68Coreq0 objectives agree/3censors. This isdecisionleverage, notquality.
-Continue exactcommonstate finite-horizon/budget attribution before a larger
-game/heuristic/model campaign. CorrectedC392sourceaudit: directpriceinputs
-areleaf/standpat, not price-basedordering/SEE; resultingwork/deptharemediators.
-CHAT_Comments isreference, AUX68e5251f3 FULL_REPORT_READ_ONLY anduntransferred.
-Sourcecopy firstfailedmissing39commoninputs; baseZIPkept, exactsupportand
-correctedreceipt published separately. Science remains OPEN.
-
-16normal/reconstruction-counter calls all non-time fields match: measured
-canonical sections are~1-2microseconds at the two testedq4hardstops, not their
-bottleneck.24different-static-horizon queries do not restore1sD2; neither result
-licenses dropping completePV/history or silently claiming originalq4 completion.
-Whole-game/batch cost includes scientific recording; innercaller_seconds omits
-its final duplicate selected-record copy while execution eligibility follows it.
-All original fields/caps stay sealed; new node/wide/component outer clocks expose
-that distinction. Full source/evidence: RESIDUAL_Q4_FALLBACK_20261016.md.
-No product/API/evaluator/model/default/UI change. Science remains OPEN.
-
-This is backend search ordering, not AUX Session solver/runtime/model/training,
-no source adoption, changed canonical PV or semantic authority. CappedD2 remains
-a scoped alternative, not a new permanent policy. Do not infer utility from depth
-alone or copy AUX's Sessionprover/bank/learner. The old inner-stop-file
-polling materially censored diagnostics (onecase1s versus.012s); use bounded
-deadline callbacks and cooperative outer stop checks in NEW diagnostics, without
-relabeling oldUNKNOWN/caps or building a new stop framework.
-Retain termination histograms: requested q differs from retained q; qnodes counts
-reserve/depth0 visits and is not measured wasted effort. No policy/default change
-from that histogram alone.36profile label-bijection controls pass, not price truth
-or graph-equivalence proof. No unchanged q rerun or duplicate AUX learning/prover.
-
-AUX historical path-key supplement independently reproduced on PRIMARY's existing
-reference and minimally adopted from its pinned correction. Core unchanged; no
-new solver/old-label rewrite. Actual direct callers' six rule compilations retain
-the no-path-rule route. AUX57/58 optional SessionPN evidence is owner-reported;
-source/read versus execution and shared-enumeration limitations remain explicit.
-
-Late AUX declaration supplement exposed PRIMARY's same historical reference:
-four falseLOSS cases reproduced, scoped guard adopted; five declaration/control
-and38related checks pass. It explicitly refuses declaration domains; no new
-session-aware solver or old-label rewrite. Frozen q/caller studies do not call it.
-
-Prior caller study:2640tests,52source-built API checks/35full roots/4497actions/
-two32goals and280final-source controls passed BEFORE the current C repair.
-Fresh248calls yielded1deeper/123same, q4completion unchanged, no general gain;
-exposed32goal caller savings are local. New C qualification is separate evidence.
-IMMEDIATE_GOALS_AND_EXPLICIT_BACKENDS.md preserves shipped2630test baseline:
-explicit physical-root-win D0/source and optional owned backend image; default
-finite analysis/V1 unchanged. Previous MAIN ordering non-replay PV problem is
-already scoped and has a real legal-rule regression; do not reopen unchanged.
-
-Reconsider the next route only when new evidence changes a concrete decision:
-q policy completion with actual decision consequences, measured repeated history
-cost with preserved semantics, or demonstrated solver/price interactions. Search-
-first is a current scheduling choice, not a permanent ban on authorized WDL,
-solver or small learning work. Auxiliary reports distinguish reported results
-from PRIMARY reproduction; do not duplicate its solver/training lane.
-
-## Retained objectives and evidence limits
-
-Two long-term lines: rule-only generic prices/cross-game ordering/ratio/bias, and
-efficient stable search on unfamiliar mixtures/recombined/generated rules.
-Preserve complete promotion/drop/aux/history semantics; local prototypes state
-scope. Static tables are candidates/cheap controls; context dependence does not
-refute an average under an explicit play distribution. Later compare frozen
-constants and small state-interaction evaluators by decision value per cost.
-Games diagnose methods and conversion failures; do not replace science with Elo
-or hand-coded position patches. Research can use approximate finite behavior;
-exact WDL/all-defense/unexposed validation is required only for claims needing it.
-No human-price fitting, exposed-label fitting or Xiangqi human-holdout reads.
-
-Keep frozen failures/caps/all planned slots/UNKNOWN, actual backend/evaluator,
-policy and cost. Deeper search, changed moves or terminal rate alone are not
-strength, learning signal or universal price recovery. Actual decision outcomes,
-paired improvements/regressions and independent validation have distinct scope.
-Immutable details remain in purpose reports/data/archives at fixed Git above;
-no historical report or advisor suggestion automatically becomes a new task.
-
-## Current matched-D2 result —2026-10-16
-
-All88commonfuture games on8exposedparents/22unique firstactions retain policy
-dependence: staticq1-first minusstaticq0-first finiteW-L is+4/8 withD3q0future,
--3/8withD3q1future,+1/8withrequestedD6q0,-1/8withrequestedD6q1. ActualD6is
-oftennotcompleted.96totalgames include4single-side and4localactioninterventions,
-notnewindependentfamilies. No q/price/model/defaultadoption.
-
-FirstIDcase34101 separates conversion andresponse: C/Dfirst actions yield
-L/Wunderfuture00,W/Wunder10,L/Lunder01,W/Wunder11, originalactorfixed.
-At itsactualfirstownturn P/Xdrop divergence, fouruniformlycoldgames show
-P L/W versusX W/W underownq0/q1, opponentq0. Thisisolatesoneusefulchoiceunder
-declaredfuture, notoptimalQ oruniqueerror. PureCore/Nativeq0/q1D3objectives
-independentlymatch100/-183; actualterminalfactsremainexacttrajectoryevidence,
-inference tooptimalstatepriceunproved.19crosspolicysharedfullstateshaveopposite
-terminalreturns fromonly2families; do nottreattheseashundredsofindependentlabels.
-
-C392price-path audit CORRECTS oldleaf/order/captureclaim: currentprofiledirectly
-controlsstaticleaf/standpat/fallbackevaluation; plaincapture/history/canonical
-orderdoesnotreadprices.2480priorreceipts have nolearned/policyordering.
-Endogenousbounds/TT/work/depthremainpartofthetreatment, notseparateSEEknobs.
-64uniform4xcontrolqueries30jointD3pairs preserveactions/scaledfinite scores,
-2censors; nouniversalunitinvariance. AvoidunnecessaryneworderingAPI.
-
-64materialtimercontrols putq1materialfractionat~.47-.79percent; rejectincremental
-materialworkhere.48q1normal/counter/fullcheckedcalls showfullcheckedslower
-1.15/1.30/1.31/1.65; keepquiet-historydeferral. Bothprivateprototypesunadopted.
-No extra broad game/model campaign follows. Next choose one conditional response/
-conversion or explicitteacher-labelcost question usingexistingowner tools;
-preserve policy/budget/labelprovenance ratherthanrequiringuniversalWDL first.
-Fullmethods/caps/actualvalidation: MATCHED_D2_AND_CONTINUATION_POLICY_20261016.md.
-
-## Revisable future questions — CHAT memoranda 2026-10-16
-
-Read both complete CHAT_Comments roots as reference, not new authority or an
-immediate work order. Preserve these choices for later evidence/user scheduling:
-
-- Small-board trustworthy teacher and state-dependent evaluation:
-  https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689
-  Compare existing scalar materials, king/anchor-relative tables and small nets
-  only under an explicit complete-rule subdomain, common labels/budgets and
-  independent evaluation. First estimate exact/proved/approximate/UNKNOWN label
-  coverage and cost using existing tools in the responsible lane; do not build
-  another solver or demand full WDL before current finite diagnostics. A state
-  value decomposition does not identify unique local piece prices; define legal
-  counterfactual/ranking/projection targets before testing smoothness.
-- Generic evaluator architecture and transfer/curriculum:
-  https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309
-  Compare rule-derived materials/search, small interaction tables, existing
-  solver combinations and rule-conditioned sparse networks by end-to-end cost.
-  Separate mechanical feature generation from learned weight transfer. A later
-  small test can change one rule axis at a time and compare zero-shot, fine-tune
-  and scratch learning curves plus forgetting/actual finite play. Preserve
-  promotion/drop/current/base/aux/history and distinct anchor/terminal semantics;
-  local tactical reuse and which rule changes transfer cheaply remain hypotheses.
-  The proposed 5-10 minute usable-player target is a vision, not demonstrated
-  capability. No architecture mandate, new policy framework or present training.
-
-Reason/execution consequence: these comments supply future testable alternatives,
-not evidence that scalar averages are impossible or that a network/teacher is
-already strong. Current matched-D2 continuation and frozen caps remain selected;
-reconsider teacher/representation when its measured cost can change a concrete
-next decision. Do not import AUX weights or rewrite its separate work.
-
-Current next concrete boundary alreadybegun:848legalactions on9generated/
-causalsubsetroots haveuniqueV1inputs, butoneexistingphase_graph one-fieldgeometry
-counterfactual has2legalV1aliases withdifferentauxphasechildren; actualCore/
-Nativechildfields agree. Keepboth fullactions, currentmodels/API; no trained
-failure/WDL/coverageclaim. Next canassess onefiniteconsequence/teacherinputscope
-withoutinventingpolicyframework, rewritingAUX or broadnewgames.
-
-LatestpeerAUX69fixed1e46bb3 FULL_REPORT_READ_ONLY, not68current. Complete
-newroot/1Dotreply read: ratio4unitbenefit narrow; R-free192DEVallDRAW and
-0verifiedWINcoverage do notprovevalueequivalence/optimalDRAW. Ownplanned
-KRNB/Ranchor-by-Bpilot remainsAUXINPUT_ONLY; independentlyselecteddifferentB
-DEVgains are postselectionpolicycontrasts, notpureR-by-Binteraction. NoPRIMARY
-solver/learning/certificate/runtime adoption, pricepool orboundarychange.
-
-ThepreparedauxaliasfiniteQquestion isnowactuallyclosedinthesameactivesegment:
-4existingCore/Nativequeries complete2childplies, rootQ -6versus-5, equalscoped
-V1inputsbutdifferentfiniteranks. Separatenormal/sourcefullstate/PVreaderspass.
-No trainedfailure/optimalWDL/newmodelAPIclaim. Nextquestioncanmeasurewhether
-thisaliascosts boundedsearchwork orismerelyan exact-rankinglimitation; useexisting
-hints/orders,nolearning orcompetingAUXsolver. Totalnewqueries4169;96gamesunchanged.
-
-
-## Current derived-input outcome —2026-10-16
-
-The prior CHAT feasibility route is closed as a feasibility study, not abandoned:
-NATIVE_TEACHER_AND_TRANSFER_20261016.md retains finite-label horizon dependence,
-mechanical mapping, model capacity and AUX70cost/quality limits. Those findings
-motivated actual input-cost attribution before new NN/NNUE engineering.
-
-Decision/reason/consequence: adopt exact discarded dynamic-child identity work
-and same-evaluation3scalar reuse, after fresh complete-rule/Core controls and
-fixed-node equality; preserve search/PV/full parent history, q/price/model/API
-schema/defaults. DERIVED_FEATURE_COST_AND_FAILURES_20261016.md owns392actual
-query/control receipts, censors/2tails and distinct source/test tiers. Active
-mixed-evaluator gains are not universal: late static caller medians.983/.967/
-.957/.926 retain1.318adverse repetition; no strength claim or learning launch.
-
-Two concrete error boundaries are fixed, not silently inherited: full Native
-capacity returns explicit Core-directed derived-feature refusal; actual injected
-negative S4status previously fabricated partial vectors and now yields extraction
-failure/RuntimeError or existing internal_error with recovery. Dot's fixed-source
-reasoning was useful; PRIMARY executed before/after faults and2731final tests.
-No required child/PV/terminal identity is discarded. Complete generated target,
-promotion/drop/base/aux/history and frozen fair conditions remain unchanged.
-
-The proposed full API-ready study is now actually closed; see
-API_READY_AND_FINITE_INPUT_COST_20261016.md.716original queries/52cold expiries
-retain only32ready outputs; a separate common50ms warm control gives384/384ready.
-Neither D12panel completes any D12: earlier empty-comparison wording is explicitly
-corrected. New fixedD4curve256queries gives88joint complete pairs with exact
-non-time fields and16final-only completions, preserving24both-censored pairs.
-Static32s ratios.995/.976/1.006/.996 are small/adverse; dynamic4/8 ratios.352/.176
-are conditional, with no joint wide ratio. No strength/q/model/API/default change.
-
-Reason/consequence: lower input cost is real in a scoped complete objective but
-readiness, work completion and utility remain distinct. Do not rerun old q games,
-expand4096capacity silently or build a diagnostics/NN framework. Exact FULL-context evaluator reuse was tested in
-EVALUATOR_CONTEXT_AND_LIVE_VIEWS_20261016.md: the serial full-key cache remains
-private after saturation/history/lifecycle limits. Adopt only the minimal existing
-live-parent copier for dynamic owner views, with complete aux/history and all
-semantic guards. Frozen32family512slots yield480queries/32actualtail slots,
-84jointD4quartets equal all non-time fields,36all-censored; no quality/default
-claim. Dynamic4cost ratio.860,8~1.000,one12family1.018,16no completed comparison;
-static8adverse1.030 stays.2731rebuiltproduct/64publishedsource tests and complete
-receipt replay qualify the scoped delivery. Keep cheap static controls and reject low-yield
-engineering. Recording one-pass prototype stays private, no helper adoption.
-
-AUX72root1792132246.976859/completeDot1792132366.499399 read as OWNER_MESSAGE plus
-Dot fixed98f28f2086reasoning, not unpublished72source/execution. Its teacher/price/strategy
-work stays sidemission. A piece-count proof trigger alone does not isolate
-formation versus conversion when fallback still uses candidate prices; retain
-that interpretation without retuning its active caps. Latest PRIMARY scoped fixed-file
-read is AUX71at98f28f: six2100/2107files plus34logical/31physical/1706step
-arithmetic, no whole-report/consumer/solver execution; timing/source claims owner-only. No crosscheckout writes,
-model/price import, independent AUX rerun or routine acknowledgement gate.
-
-
-Current outcome: GEOMETRIC_MEMBERSHIP_AND_SPATIAL_INPUT_20261016.md closes the
-membership question. Adopt ONLY compiled immutable negative capture geometry with
-allruntimeguards/fullhistory and boundedfirstseen construction. Older source-loop
-construction had uncharged unsortedlookup work; historical, not a route to revive.
-Allocation/work refusal uses the existing scanner; no position/history cache.
-
-Frozen32family224/256indexqueries preserve32actualtail slots,70jointD4equal,
-2candidate-onlycompletions/40neither. Static conditionalratios.912/.834/.822/.813,
-dynamic.787/.483/onefamily.401/16N/A; coldnode1adversity4.699 remains unconfirmed.
-2734normal/2733source+1console-exe skip;21pureCoreD3agree/7censors UNKNOWN.
-
-The getter-only spatial route is CLOSED UNADOPTED. Component~.09-.11 didnotreach
-actualinlineleaf:64matchedwork/120prospectivequeries,26jointD4equal/all60depths
-same.256firstcomponenttimings MISSING,4value-onlyrecaptures explicit. Counts show
-401/463activeleaf/getter0; directgetter1 confirms detector. Preliminaryconsumer
-assumption waswrong. No NativeModuleproductchange, NN/pricefutility conclusion
-or unchangedgetterrerun.
-
-The actualinline continuation is now qualified and minimally adopted:
-LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md. FullCore/S4/history/error/
-capacity checks,2757normal/160source tests;240/256freshqueries66jointD4equal,
-10candidateonly/44neither,4/8control ratios.275/.118;12/16nojointcomparison.
-Onlydiscardunusedtrialidentity, fullparent/search/PVhistory retained. Zero-skip,
-copy, coalescenceV1/V2 andoutline stayunadopted withadversity/cost evidence.
-Privatefusion's positive mixedcost doesnoteraseitscheap-profile regressions.
-288slotcaller curve retains21coldexpiries; readiness/completion isnotquality.
-
-The tiny actualhistory control gives equal3+spatial9 inputs butD4 -80/0;
-BOTHuniquelegalcontinuations endrepetitionDRAW. Finite-targetaliasalone doesnot
-proveoptimalWDLencodingfailure orrequireNN. No training/price/q/default change.
-Currentnextquestion is actual caller evaluator/fullhistory preservation onNative
-capacityrefusal: inventorytheexistingpublichandoff andoneCorecontrol before
-proposingmoreoptimization/API work. Keepfulltarget/cheapstatics; noAUXduplication.
-
-Latestpeer: AUX74 fullthread2replies/twofixed20da2c28reports REPORT_READ_ONLY.
-Its512games/proof/normalintegration/graph corrections remain owner execution.
-No code/consumer/solver/learner import or sidemission write. Dot scopeinline74/
-older7ae, no independent74run. Representation cost differs from discovery and
-utility; PUBLIC/continuinggrants and boundaries persist.
-
-
-Closing-read addendum after the archive seal: AUX75 root1792147391.468569 and
-completeDot reply1792147500.660269 were read inline only. Dot now reports reading
-fixed20da2c28 Core terminal/semantic legal-transition-terminal sections; this
-supersedes the earlier shorthand7ae source scope, without upgrading75 code review
-or execution. Conditional finite nonrepeating WIN-certificate lifting is not an
-unconditional Session quotient. The proposed past-count counterexample needs a
-future NONterminal node because mate/stalemate have priority. PRIMARY adopts no
-history quotient/prover code and changes no delivered index or frozen result.
-Exact closing scope: data/closing_peer_scope_20261016.json. The sealed239-member
-archive and prior8810dcf2 technical evidence remain unchanged.
-
-Latestpeer75 twofixeddeea4c7reports REPORT_READ_ONLY;76fullinline+oneDot, not76source/execution. Dot4versus64 advice belongsAUXlane; incidental2hwordingneveroverridesuser>1h single-run consultation. Exact32primaryposts read20+12pages andlegacybindingfalse retained. No crosswrites/sourceclaimupgrade.
+revisable choices and reasons, not permanent authority or a cumulative diary.
+The complete preceding selection/evidence is preserved at PUBLIC Git
+2d3e54105bae3e7e38a1543b4f98cdc7442e479e, this same path and its purpose reports.
+Older reports are evidence, never automatic instructions to repeat their runs.
+
+## Current decision and immediate work —2026-10-16
+
+Keep search capability/completion and bottleneck attribution first, then revisit
+rule-only price/statistical/small-learning routes when measured evidence changes
+a concrete choice. This preserves the user's selected research priority; it is
+not a permanent prohibition on WDL, solver or appropriate small training.
+DEV_AUX's separate solver/verifier/cursor/runtime/learning lane stays its own.
+
+The user-selected Slack defect repair is CLOSED. Native/Core automatic PENDING,
+checked continuation, full-state imports and rule max-ply priority were qualified
+in SLACK_REVIEW_FIXES_20261015.md. AUX's fixed11dddd80 repair/report was read,
+not independently executed. Public access, authorization and roles are governed
+by AGENTS.md, not abandoned PRIVATE or held-publication plans.
+
+The recovery memo's explicit Core capacity control is now actually executed.
+The former Native compiler refused max_ply2048 even at prefix0; Core with the
+same declared material+3+9 callback completes actual prefix1024 without losing
+history. Actual continuously checking records also stay ONGOING beyond rule
+max3 and through1025; Native capacity refuses explicitly, Core still continues.
+Do not turn storage exhaustion into MAX_PLY, empty legality or a truncated record.
+
+An additional real caller defect was found: a valid terminal PV reached1024,
+then required result-feature extraction failed after Native search completed.
+The scoped fix replays that rare PV through complete Core state and computes
+the same Native rule-ply trial gate plus semantic check pressure. GameState
+terminal actions alone and unconstrained Position actions are BOTH insufficient
+definitions. Actual asymmetric Position counts2/1 contrast with Native features0
+at MAX512; the corrected MAX1024 fallback matches that rule-gated result. Actual
+MAX3 checking terminal retains feature(0,0,10), not a zero placeholder.
+This field is consumed by existing selfplay code, not disposable diagnostics.
+No learned/selfplay execution or AUX program is part of this PRIMARY repair.
+
+The new Native admission separates a UINT16 rule horizon from unchanged1024
+history/stack storage. A capability advertises max rule ply65535; old kernels
+without it conservatively retain1024. Every search whose rule can outlive storage
+checks its requested path first; Core legality providers decline at the storage
+boundary. No automatic full-search fallback or larger arrays are introduced.
+Explicit Core remains necessary beyond storage and for unsupported rules.
+
+Evidence and exact source/receipts: CORE_CAPACITY_HANDOFF_20261016.md and its
+archive. The fresh24family portability study retains138/144 queries and one
+actual terminal tail; wide Core usually retainsD1/D2 while Native completesD3.
+Core1024/2048 joint12D3 pairs have identical scores/actions/PVs. Native/Core
+raw mate scales differ: retain six raw differences, with actual one/three-ply
+checkmate PVs, rather than claiming12 raw equalities or independent optimal WDL.
+The private long-horizon pilot and the separately frozen new16family transfer
+have distinct exposure/source tiers. Full regression and restored-source replay
+qualify the delivery; no depth/score change alone is a strength claim.
+
+Next useful choice: assess the practical consumer boundary/cost only when a
+caller actually needs it, or choose a new decision-changing search/evaluation
+question under the current priority. Do not expand Native storage, invent a new
+diagnostics/fallback framework, or rerun old q campaigns merely because this
+boundary is repaired. NEXT_WORK.md carries the next executable question.
+
+## Retained selections and negative findings
+
+Adopted exact implementations: checked PV caller replay, quiet unused-child
+history deferral, checked sibling reply reuse/first-source lookup, exact compiler
+admission reuse, bounded immutable capture-geometry negative filtering, complete
+live-parent feature views and actual inline control9 unused-identity deferral.
+Preserve first-source/all-target occurrences, runtime guards/S3/S4, full aux and
+history, required searched/PV identities and explicit failure propagation.
+LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md is the preceding current
+qualification:2757 normal/160 source checks,66 equal jointD4 pairs from240/256
+fresh queries; control9 conditional4/8 cost ratios.275/.118, wide ratios N/A.
+These are scoped cost results, not price learning or general strength.
+
+Still unadopted: getter-only spatial optimization (not the actual leaf consumer),
+zero-vector skipping (different failure contract), shared3+9 V1/V2, live-copy and
+stack outline, full-key evaluation cache, TT history quotients/lookup demotion,
+root ordering, quiet-check classifiers, unconditional reserve/q shortcuts and
+conditional opening filters. Their evidence includes adverse cases and censored
+wide objectives. Revisit only with a changed premise and a specific test that
+could change a decision; source, stack size, more hits or depth are insufficient.
+The existing q-history guard ALREADY uses history_len<R-1 to avoid its quadratic
+scan. A recovery proposal to add that same bound was rejected by source review
+before build/search; it is not pending optimization work.
+
+Prior finite policy comparisons remain conditional: q1's fresh fixed-q0 transfer
+was adverse despite earlier q4 comparisons; check-only/TT four cells included
+cancellation and higher cost; reserve policies traded wins/losses/UNKNOWN. Do not
+pool those cohorts, change their caps or turn development diagnostics into Elo.
+Full frozen methods/results live in the preceding fixed mainline and purpose
+reports, including MATCHED_D2_AND_CONTINUATION_POLICY_20261016.md,
+FINITE_HISTORY_CONTEXT_AND_ROOT_ORDER_20261016.md and
+API_READY_AND_FINITE_INPUT_COST_20261016.md. Consult the relevant report when a
+new premise needs it; historical tasks are not the next memo by default.
+
+Two actual forced-cycle histories have identical Position/3+spatial9 inputs and
+different D4 targets(-80/0), yet both complete unique continuations draw. Thus a
+finite bootstrap alias alone does not establish optimal-return input failure,
+impossibility of scalar averages or necessity of a neural network. A separate
+auxiliary action-input alias has different finite child ranks; retain its stated
+scope without claiming trained failure or all-domain coverage.
+
+## Long-term questions and CHAT reference suggestions
+
+Targets remain rule-only generic prices/cross-game ordering/ratios/bias, and
+efficient stable search on unfamiliar movement mixtures/mechanism recombinations.
+Generic includes promotion, drops, current/base identity, auxiliary state and
+relevant history. Local prototypes may scope claims, never redefine the target.
+Static values remain cheap candidates; context dependence does not by itself
+refute an average under a declared play distribution. Separate ordering/leaf
+prices and actual rule semantics; no human-price/exposed-label fitting or Xiangqi
+human-holdout reads. Core/Native/compiler sharing is not independent proof.
+
+Both complete2026-10-16 CHAT_Comments memoranda were read as suggestions:
+https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689
+https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309
+Worth retaining: distinguish mechanical input cost, representation/model size,
+label trust/coverage and actual decision value; define lawful counterfactual or
+ranking targets before claiming unique piece prices; compare frozen constants,
+small interaction tables and rule-conditioned sparse models by total cost.
+Transfer/curriculum tests should change one rule axis and separate zero-shot,
+fine-tune/scratch/forgetting. A5–10minute usable-player target is a vision.
+No architecture mandate, extra learner or immediate new training follows.
+NATIVE_TEACHER_AND_TRANSFER_20261016.md retains the completed feasibility study.
+
+Latest peer scope: AUX76 fixedda6b0043 two reports READ_ONLY; AUX77 complete
+inline request only, not77 source/execution. Prior75 reports remain historical. Dot's proposed
+structural four-game diagnostic belongs to AUX's lane. PRIMARY's new capacity
+consult received a concrete fixed2d3e source objection about GameState versus
+Position actions; adopted the asymmetric control, not an approval gate. Actual
+source reading and another owner's execution remain distinct. The user's >1hour
+single-run necessity consultation still governs; incidental2hour advice does not.
+
+Third CHAT reference, retained without immediate work:
+https://nanomelon.slack.com/archives/C0C6L21UU20/p1792156154268769
+Pure Leaper movement-set to semantic embedding/shared parameters is a future
+scientific direction, not a current task or generic-domain replacement. Do not
+create experiments, teachers, networks or infrastructure for it now. Reconsider
+only when trustworthy existing reward/teacher and cross-rule evaluation mature
+and the active question actually requires parameter transfer.
+
+AUX76 report evidence now connects R/N2 versus unity to scoped actual W-L under
+a SAME fixed low-inventory ACTION guide, not a generic WIN certificate or reward.
+PRIMARY checked table arithmetic:2extra wins and8fewer losses give10/64 netgain;
+range2 gain6/64 and stronger-search intervals include0. Matched exposed layouts
+are not unseen-rule/layout proof.2/4 and.25/.5 policy plateaus do not identify a
+unique value. AUX77's ordinal-cell/tie-artifact question stays its own lane; no
+PRIMARY training, additional price grid or solver adoption follows. Exact fixed
+report hashes/scope: data/capacity_peer_update_20261016.json.

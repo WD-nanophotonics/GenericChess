@@ -1276,7 +1276,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (max_ply < 1 || max_ply > GC_SEM_MAX_PLY) {
+    /* Rule adjudication is distinct from the fixed per-position history store.
+     * sem_u16 already checks the upper bound; search admission checks storage. */
+    if (max_ply < 1) {
         PyErr_SetString(PyExc_ValueError, "semantic max_ply out of range");
         gc_semantic_rules_free(rules);
         return NULL;

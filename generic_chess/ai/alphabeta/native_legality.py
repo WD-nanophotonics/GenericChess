@@ -58,6 +58,12 @@ class NativeSemanticLegalityProvider:
             condition.kind == "no_legal_reply"
             for pattern in engine._patterns for condition in pattern.postconditions
         )
+        # Both bounds belong to immutable compiled rules. Resolve once rather
+        # than importing and taking a minimum at every search frontier.
+        from ...native.compiler import GC_SEM_MAX_PLY
+        self._max_supported_ply = min(
+            compiled.support.max_ply, GC_SEM_MAX_PLY
+        ) - int(self._requires_reply_probe)
         self._metrics_local = threading.local()
         # Older installed kernels remain fully usable through the Python builder.
         self._payload_builder = getattr(native_rules.backend_module, "semantic_core_payload", None)
@@ -151,7 +157,7 @@ class NativeSemanticLegalityProvider:
         # that reply parent at max_ply, one ply before the outer cutoff.
         # Pure semantic IR products expose this on the typed support payload;
         # a legacy compatibility attribute is not required for execution.
-        return ply_count < self.compiled.support.max_ply - int(self._requires_reply_probe)
+        return ply_count < self._max_supported_ply
 
     @classmethod
     def try_create(cls, compiled, *, strict: bool = False):

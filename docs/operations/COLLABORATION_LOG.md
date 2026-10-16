@@ -3397,3 +3397,46 @@ authority: the user's >one-hour single-run necessity consultation remains.
 No runtime/solver/cursor/learner import, cross-checkout write or automatic merge.
 Full source/test/clock/censor limits and checked archive:
 research/LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md.
+
+## 2026-10-16 actual capacity handoff and rule admission
+
+PRIMARY executed the memo's explicit same-evaluator Core control, then found six
+real Native wrapper failures after successful terminal PV search at slot1024.
+The minimal caller fix preserves required three-feature output via complete Core
+PV replay, Native's rule-ply trial gate and semantic check pressure; no history/terminal reset or zero
+placeholder. Existing selfplay source really consumes this field, so API advice
+does not justify deleting it. PRIMARY did not run selfplay or a learning campaign.
+
+Dot's new complete reply1792155826.211089 identified the GameState-terminal gate
+versus Position-feature distinction from fixed2d3e source. The implementation
+already used Position views; an asymmetric2/1 control then exposed another
+Native rule-ply gate in the trial helper. PRIMARY corrected its unpublished
+Position-only draft: MAX1024 matches actual MAX512 Native0, while actual MAX3
+checking terminal retains(0,0,10). No terminal/history reset or zero placeholder. Dot read fixed
+sources, not the unpublished patch, and did not execute these controls. Complete
+35 replies were privately saved as20+15 exact pages before reconcile; original
+legacy payload binding remains false. No acknowledgement or approval gate.
+
+The24family138/144 query Core/Native portability study preserved one actual tail,
+wide censors and six raw mate-scale differences. A separate private long-rule
+pilot motivated capability-gated uint16 rule admission while keeping1024 history
+storage. The NEW16family60/64 transfer retains one tail,18 equal jointD3 pairs and
+12 both-censored pairs. Actual Core/native-legality boundary controls retain all
+ten paired score/action/PVs with zero operational failures. Final normal2817
+checks and the actual restored publication source qualify the scoped changes;
+they do not establish strength, optimal WDL or all-domain equivalence.
+
+Failures remain visible: a default-builder keyword compatibility regression was
+fixed and full regression repeated; source copies missed transitive test imports
+before the corrected closure passed. Sandbox Python-link-library AccessDenied
+was resolved with supported escalation, no SAC diagnosis/security change. A
+proposed q-history bound was already in fixed source and was closed before any
+build/query. Current mainline was shortened from its growing diary with the
+complete predecessor preserved at PUBLIC2d3e; reasons and superseded choices stay.
+
+AUX76 fixedda6b0043 two complete reports are now READ_ONLY; AUX77 complete
+request is inline-only, not implementation/execution. Prior75 is historical. No solver/verifier/cursor/
+learner import, cross-checkout writes, extra worker or quiet window. PRIMARY
+continues its backend lane; the user's >1hour necessity rule remains distinct
+from peer cost advice. Exact source/data/validation and remaining limits:
+research/CORE_CAPACITY_HANDOFF_20261016.md.

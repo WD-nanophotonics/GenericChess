@@ -8,7 +8,7 @@ every move.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from copy import deepcopy
 from collections.abc import Mapping
 
@@ -27,6 +27,57 @@ SPATIAL_CELL_COUNT = 9
 
 
 DECLARATION_ACTION_TAG = 1 << 63
+
+
+def _core_pv_leaf_dynamic_features(session, pv):
+    """Preserve the existing three result fields at Native's history boundary.
+
+    The search/checked PV can end at the last representable ply even though
+    Native's feature extractor needs an additional trial child. Replaying only
+    this rare boundary through Core retains the supplied complete history; it
+    does not change search authority, truncate history or suppress Native errors.
+    Preserve Native's rule-ply trial gate as well as Position-level S0-S4
+    actions. GameState's blanket terminal action gate is a different contract.
+    """
+    from ..core.semantic_executor import SemanticEngine
+    from ..core.transition import apply_action
+
+    compiled = session.compiled
+    state = session.state
+    for action in pv:
+        state = apply_action(state, action, compiled)
+    # Native trials at/past a plain rule limit have no actions, even though
+    # Position-level Core actions can exist. Automatic/S4 continuation at the
+    # last storage slot is not qualified by this narrow terminal-result repair.
+    if state.ply_count == GC_SEM_MAX_PLY and (
+        compiled.support.automatic_adjudications
+        or state.ply_count < compiled.support.max_ply
+    ):
+        raise NotImplementedError(
+            "semantic history capacity exceeded for result features; use Core evaluation"
+        )
+    allow_trials = state.ply_count < compiled.support.max_ply
+    if not allow_trials and compiled.support.automatic_adjudications:
+        from ..core.adjudication import automatic_adjudication_status
+        allow_trials = automatic_adjudication_status(
+            compiled.support.automatic_adjudications, state.ply_count, state.history
+        ) == "PENDING"
+    engine = SemanticEngine(compiled)
+    counts = []
+    for owner in (0, 1):
+        view = replace(state.position, side_to_move=owner)
+        actions = engine.legal_actions(view) if allow_trials else ()
+        promotions = sum(action.promotion_target_id is not None for action in actions)
+        anchor_moves = sum(
+            action.source is not None
+            and compiled.support.type_metadata[
+                view.board[action.source].current_type_id
+            ].is_anchor
+            for action in actions
+        )
+        counts.append((len(actions), promotions,
+                       anchor_moves - 10 * int(engine.in_check(view, owner))))
+    return tuple(a - b for a, b in zip(*counts))
 
 
 @dataclass(frozen=True, slots=True)
@@ -575,8 +626,11 @@ class SemanticSearchEngine:
         pv = tuple(item for item in decision_line if not isinstance(item, str))
         leaf_dynamic: tuple[int, int, int] = ()
         if pv:
-            from .semantic import dynamic_features as native_dynamic_features
-            leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
+            if session.state.ply_count + len(pv) == GC_SEM_MAX_PLY:
+                leaf_dynamic = _core_pv_leaf_dynamic_features(session, pv)
+            else:
+                from .semantic import dynamic_features as native_dynamic_features
+                leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
 
         root_first_actions = []
         for packed in raw.get("root_iteration_first_actions", ()):

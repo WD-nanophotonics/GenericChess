@@ -20,6 +20,7 @@ NATIVE_SCHEMA_VERSION = "native-0.5.0"
 
 GC_MAX_PLY = 512
 GC_SEM_MAX_PLY = 1024
+GC_SEM_MAX_RULE_PLY = 65535
 GC_MAX_HAND = 256
 
 SEMANTIC_PAYLOAD_VERSION = 4
@@ -881,7 +882,8 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
 
 def build_semantic_compile_payload(semantic, *,
                                    _payload_version=SEMANTIC_PAYLOAD_VERSION,
-                                   _max_squares=256):
+                                   _max_squares=256,
+                                   _max_rule_ply=GC_SEM_MAX_PLY):
     """Lower ``CompiledSemanticRuleset.ir + .support`` into a deterministic
     numeric native payload (ADR-017).
 
@@ -899,6 +901,8 @@ def build_semantic_compile_payload(semantic, *,
     fingerprint = support.ruleset_fingerprint
     if (_payload_version, _max_squares) not in ((4, 256), (5, 1024)):
         raise NativeUnsupportedRuleError("unknown semantic payload/capacity contract")
+    if _max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):
+        raise NativeUnsupportedRuleError("unknown semantic rule-ply contract")
     n = support.board_size
 
     _validate(
@@ -920,8 +924,8 @@ def build_semantic_compile_payload(semantic, *,
     )
     _validate(ir.ir_version == 2, "unsupported semantic IR version", fingerprint)
     _validate(
-        support.max_ply <= GC_SEM_MAX_PLY,
-        f"max_ply {support.max_ply} exceeds native semantic limit {GC_SEM_MAX_PLY}",
+        1 <= support.max_ply <= _max_rule_ply,
+        f"max_ply {support.max_ply} exceeds native semantic limit {_max_rule_ply}",
         fingerprint,
     )
     _validate(
@@ -1290,11 +1294,20 @@ def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSem
         )
     backend = _module() if backend_module is None else backend_module
     version, max_squares = _semantic_backend_contract(backend, explicit=backend_module is not None)
-    if (version, max_squares) == (SEMANTIC_PAYLOAD_VERSION, 256):
+    capability_query = getattr(backend, "native_capabilities", None)
+    capabilities = capability_query() if callable(capability_query) else {}
+    max_rule_ply = capabilities.get("semantic_max_rule_ply", GC_SEM_MAX_PLY)
+    if type(max_rule_ply) is not int or max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):
+        raise NativeUnsupportedRuleError("unsupported semantic rule-ply capability")
+    if ((version, max_squares) == (SEMANTIC_PAYLOAD_VERSION, 256)
+            and semantic.support.max_ply <= GC_SEM_MAX_PLY):
+        # Preserve the existing default builder path for ordinary rules and
+        # facades; only a long rule needs the newly advertised admission bound.
         payload, report = build_semantic_compile_payload(semantic)
     else:
         payload, report = build_semantic_compile_payload(semantic,
-            _payload_version=version, _max_squares=max_squares)
+            _payload_version=version, _max_squares=max_squares,
+            _max_rule_ply=max_rule_ply)
     capsule = backend.compile_semantic_rules(payload)
     bound_stalemate_result = backend.semantic_rules_info(capsule).get("stalemate_result")
     type_ids = tuple(sorted(semantic.support.type_metadata))
