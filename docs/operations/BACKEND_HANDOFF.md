@@ -534,3 +534,18 @@ Normal2858 full checks plus4 later actual-provider integration cases are distinc
 validation invocations (final collection2862). Source/receipt tiers and finite
 limits: ../research/REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md. SHA staging
 is rejected; isolated mixed-leaf work remains private research, not activation.
+
+## Repeated-cycle auxiliary-default boundary —2026-10-17
+
+The Core repeated-cycle history projection now uses existing exact logical
+runtime identity when a physical Position materializes declared auxiliary defaults.
+Actual board/hands/foreign-aux changes still fail; public history/count checks
+remain. This is Python-only; the normal Native kernel/C source are unchanged.
+Restart an existing backend process to load updated Python code if needed; do
+not reset game records or rebuild Native merely for this predicate change.
+
+No-progress search is still explicitly unsupported in the normal product; Native
+also declines pass/no-progress rules. A private complete-history prototype and a
+cheaper unfitted counter diagnostic are evidence, not activated backend paths.
+See SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md for current source tiers,
+actual deferred ambiguity, full-history costs and regression/restoration evidence.

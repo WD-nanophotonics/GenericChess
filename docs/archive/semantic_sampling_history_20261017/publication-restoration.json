@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "normal_product_kernel_unchanged": true,
+  "original_failures_preserved": [
+    "missing test helper7fail/129pass",
+    "missing isolated stop snapshots before feature calculations"
+  ],
+  "phases": [
+    {
+      "log_sha256": "1701a54e40c32f06156605ca26626f093324232c0894584184656f5d31644a21",
+      "phase": "build",
+      "returncode": 0,
+      "seconds": 9.565924300026381
+    },
+    {
+      "log_sha256": "3c840282c7930342458cc5e6ba352b1382f8f77cf8a036f557b2f1d450ef896e",
+      "phase": "tests",
+      "returncode": 0,
+      "seconds": 4.512141499988502
+    },
+    {
+      "log_sha256": "72f62d05aec98b324197426e2fc94ae57afb4e426869dce1019cc87b4b3861aa",
+      "phase": "reader",
+      "returncode": 0,
+      "seconds": 172.80080980001367
+    },
+    {
+      "log_sha256": "5ab3a66cb9a6d33a7599e5dff91548a41543ce450366653d7d9e83288ac18760",
+      "phase": "features",
+      "returncode": 0,
+      "seconds": 15.53034649998881
+    },
+    {
+      "log_sha256": "b8415e0345a7f88ee3cc16d5417f3c76a09ffee7297eb46f74f4cc16abeca7b4",
+      "phase": "private-controls",
+      "returncode": 0,
+      "seconds": 2.0077100999769755
+    }
+  ],
+  "reader_counts": {
+    "PV_edges": 588,
+    "arm_roots": 72,
+    "exact_own_child_receipts": 12191,
+    "full_Native_Core_states": 12851,
+    "query_receipts_not_reruns": 288
+  },
+  "scope": "Actual source-only Native rebuild,136selectedchecks, search-disabled state/feature readers; private variant has separate4caller+realcancel qualification, not original288search/clock/minimax rerun.",
+  "source_files": 304
+}

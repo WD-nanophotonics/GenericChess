@@ -339,7 +339,7 @@ def _repeated_cycle_target_history_projection(runtime):
     from .adjudication import IncompleteAdjudicationHistoryError
     from .identity import position_identity_key
     from .position import HistoryRecord
-    from .search_runtime import RuntimePositionIdentity
+    from .search_runtime import RuntimePositionIdentity, _runtime_position_identity
 
     if (
         not getattr(runtime, "_history_complete", False)
@@ -374,7 +374,11 @@ def _repeated_cycle_target_history_projection(runtime):
         or projected[0].action_signature != ""
         or projected[-1].position_key
         != position_identity_key(runtime.position, compiled)
-        or runtime.history[-1].identity.position != runtime.position
+        # Private identity omits declared auxiliary defaults; the live state
+        # retains the complete physical representation. Compare through the
+        # same exact logical identity authority, including foreign aux values.
+        or runtime.history[-1].identity
+        != _runtime_position_identity(runtime.position, compiled)
     ):
         raise IncompleteAdjudicationHistoryError(
             "repeated-cycle target rule requires an exact search-history boundary"

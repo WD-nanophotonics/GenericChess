@@ -1,0 +1,238 @@
+{
+  "science": "OPEN",
+  "product_fix": "Repeated-cycle boundary compares existing exact logical runtime identity for declared auxiliary defaults; real changes still rejected. No Native/no-progress/default admission change.",
+  "source_base": "9492e2da66c5b59d03f35421fc87f23477303d8f",
+  "normal_full_tests": 2950,
+  "affected_checks": 103,
+  "later_atomic_and_existing_session_checks": 33,
+  "source_and_planned_publisher_targets": 136,
+  "capsule_members": 377,
+  "source_files": 304,
+  "zip_sha256": "1be3d2539a7d954d627e1f5a41d1fdc08fa4a488fc1d9040ea5f9b615d1fffc9",
+  "sampling": {
+    "complete": true,
+    "actual_calls": 288,
+    "missing": 0,
+    "errors": 0,
+    "seconds": 211.45549379999284,
+    "arms": {
+      "lexicographically_first_active_pattern_1_extra_copy": {
+        "pairs": 72,
+        "lower_depth": 0,
+        "higher_depth": 0,
+        "same_depth": 72,
+        "same_depth_raw_score_diff": 0,
+        "selected_observation_diff": 0,
+        "median_wall_ratio_descriptive": 1.0078837655824295
+      },
+      "same_pattern_3_extra_copies": {
+        "pairs": 72,
+        "lower_depth": 2,
+        "higher_depth": 0,
+        "same_depth": 70,
+        "same_depth_raw_score_diff": 0,
+        "selected_observation_diff": 0,
+        "median_wall_ratio_descriptive": 1.020090196241109
+      },
+      "all_patterns_1_extra_copy": {
+        "pairs": 72,
+        "lower_depth": 18,
+        "higher_depth": 0,
+        "same_depth": 54,
+        "same_depth_raw_score_diff": 0,
+        "selected_observation_diff": 6,
+        "median_wall_ratio_descriptive": 1.1648184372855293
+      }
+    },
+    "CoreNative_depth_score_mismatches": 0,
+    "termination_reasons": {
+      "completed_depth": 48,
+      "node_limit": 176,
+      "root_immediate_win": 64
+    },
+    "features72_CoreNative_exact": true,
+    "feature_changes": {
+      "lexicographically_first_active_pattern_1_extra_copy_3_change": 15,
+      "lexicographically_first_active_pattern_1_extra_copy_9_change": 18,
+      "lexicographically_first_active_pattern_1_extra_copy_default_change": 0,
+      "same_pattern_3_extra_copies_3_change": 15,
+      "same_pattern_3_extra_copies_9_change": 18,
+      "same_pattern_3_extra_copies_default_change": 0,
+      "all_patterns_1_extra_copy_3_change": 17,
+      "all_patterns_1_extra_copy_9_change": 18,
+      "all_patterns_1_extra_copy_default_change": 0
+    },
+    "no_product_adoption": true,
+    "limits": "Exposed correlated18parents, syntheticcloneIR mutation, no deeper homomorphism/proof, default profile metadata heldfixed; clock ratios descriptive under normal concurrent load. Source restoration is not original clock/minimax/WDL rerun."
+  },
+  "mixed_original": {
+    "rules": 12,
+    "prefixes": 24,
+    "planned_calls": 96,
+    "returned": 48,
+    "explicit_search_no_progress_refusals": 48,
+    "Native_compile_refusals": 12,
+    "Native_executions": 0,
+    "frontier_children": 756,
+    "promotion_actions": 303,
+    "drop_actions": 0,
+    "coordinate_keys_multiple_observations": 2
+  },
+  "private_no_progress": {
+    "v1_attempts": 24,
+    "v1_errors": 6,
+    "v2_attempts": 24,
+    "v2_errors": 0,
+    "activated": false,
+    "full_history_cost_decision": {
+      "primitive_short_max_seconds": 0.008048399991821498,
+      "long": [
+        {
+          "prefix": 128,
+          "full_history_length": 129,
+          "caller_total_seconds": 0.6559560000023339,
+          "max_indivisible_replay_seconds": 0.03261169997858815,
+          "cancel_to_return_seconds": 0.03172989998711273,
+          "completed_depth": 1,
+          "reason": "completed_depth"
+        },
+        {
+          "prefix": 512,
+          "full_history_length": 513,
+          "caller_total_seconds": 2.0223792000033427,
+          "max_indivisible_replay_seconds": 0.1275315000093542,
+          "cancel_to_return_seconds": 0.12013140000635758,
+          "completed_depth": 0,
+          "reason": "time_limit"
+        },
+        {
+          "prefix": 1024,
+          "full_history_length": 1025,
+          "caller_total_seconds": 2.0370591999962926,
+          "max_indivisible_replay_seconds": 0.2575916000059806,
+          "cancel_to_return_seconds": 0.27327110001351684,
+          "completed_depth": 0,
+          "reason": "time_limit"
+        }
+      ],
+      "actual_transitions": 1024,
+      "decision": "DEFER full-replay no-progress product activation: already D0 on512/1024histories at2s while128D1. Cancel is cooperative only outside primitive (1024~.27s measured). Core guard and Native refusal remain current; no partial history/cheap counter invented. Existing generic target still includes these rules. Future counter/context design requires scoped semantics/control/cost case and current owner coordination."
+    }
+  },
+  "counter_component": {
+    "complete": true,
+    "long_prefixes": [
+      {
+        "ply": 128,
+        "counter": 1,
+        "seconds": 4.5076512999949045
+      },
+      {
+        "ply": 256,
+        "counter": 1,
+        "seconds": 17.04575270001078
+      },
+      {
+        "ply": 384,
+        "counter": 1,
+        "seconds": 37.50718620000407
+      },
+      {
+        "ply": 512,
+        "counter": 1,
+        "seconds": 65.80158420000225
+      },
+      {
+        "ply": 640,
+        "counter": 1,
+        "seconds": 102.1428026999929
+      },
+      {
+        "ply": 768,
+        "counter": 1,
+        "seconds": 146.73861999998917
+      },
+      {
+        "ply": 896,
+        "counter": 1,
+        "seconds": 200.55305429999135
+      },
+      {
+        "ply": 1024,
+        "counter": 1,
+        "seconds": 263.20053140001255
+      }
+    ],
+    "long_final_counter": 1,
+    "long_counter_component_total_seconds": 0.014052500744583085,
+    "long_actual_Core_and_reference_seconds": 263.20309980001184,
+    "stats": {
+      "actual_checked_transitions": 1512,
+      "actual_drop_witnesses": 12,
+      "capture_witnesses": 12
+    },
+    "counter_component_seconds_total": 0.02011210040654987,
+    "counter_component_max_seconds": 3.470000228844583e-05,
+    "seconds": 264.92581909999717,
+    "scope": "No runtime integration/search/fit. Full records retained. Ordinary capture/drop/promotion and configured mover resets checked; ambiguity error timing/forged-history validation and generic arbitrary compounds are NOT qualified. Component speed is not measured caller gain or permission to drop history."
+  },
+  "atomic_operational_review": {
+    "AUX_scope": "Fixed public task2352 result/read only plus complete parent3reply thread. No AUX code/test/training execution/checkout writes; no occupancy lock inferred.",
+    "correction": "All further owned mutable JSON updates use existing tools.local_agent.common.write_json; manual documents requirement. Two new deterministic concurrent-reader/failed-replace regression controls pass with31existing session controls.",
+    "current_flags": "Valid full JSON, user_paused false; preserved, not reset.",
+    "observed_AUX_read": "2026-10-16T20:11:02.130726UTC zero bytes sha256e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "own_operation": "Previous segment final ad-hoc Path.write_text on PRIMARY .local_agent/rollout.json atmatching20:11UTC, unlike existing CLI write_json atomic replace. This is direct evidence of own unsafe operation; stream observation does not independently identify every OS writer.",
+    "source_sha256": "6b70649029d311d57d37638412dadab2d4c5ce50aa59d21feb37fd9c35126e51",
+    "source_url": "https://raw.githubusercontent.com/WD-nanophotonics/GenericChess/46cb0a84460addeabb832069c4a2cf79d7e7a35e/results/dev_aux/task2352/result.json"
+  },
+  "restoration": {
+    "complete": true,
+    "normal_product_kernel_unchanged": true,
+    "original_failures_preserved": [
+      "missing test helper7fail/129pass",
+      "missing isolated stop snapshots before feature calculations"
+    ],
+    "phases": [
+      {
+        "log_sha256": "1701a54e40c32f06156605ca26626f093324232c0894584184656f5d31644a21",
+        "phase": "build",
+        "returncode": 0,
+        "seconds": 9.565924300026381
+      },
+      {
+        "log_sha256": "3c840282c7930342458cc5e6ba352b1382f8f77cf8a036f557b2f1d450ef896e",
+        "phase": "tests",
+        "returncode": 0,
+        "seconds": 4.512141499988502
+      },
+      {
+        "log_sha256": "72f62d05aec98b324197426e2fc94ae57afb4e426869dce1019cc87b4b3861aa",
+        "phase": "reader",
+        "returncode": 0,
+        "seconds": 172.80080980001367
+      },
+      {
+        "log_sha256": "5ab3a66cb9a6d33a7599e5dff91548a41543ce450366653d7d9e83288ac18760",
+        "phase": "features",
+        "returncode": 0,
+        "seconds": 15.53034649998881
+      },
+      {
+        "log_sha256": "b8415e0345a7f88ee3cc16d5417f3c76a09ffee7297eb46f74f4cc16abeca7b4",
+        "phase": "private-controls",
+        "returncode": 0,
+        "seconds": 2.0077100999769755
+      }
+    ],
+    "reader_counts": {
+      "PV_edges": 588,
+      "arm_roots": 72,
+      "exact_own_child_receipts": 12191,
+      "full_Native_Core_states": 12851,
+      "query_receipts_not_reruns": 288
+    },
+    "scope": "Actual source-only Native rebuild,136selectedchecks, search-disabled state/feature readers; private variant has separate4caller+realcancel qualification, not original288search/clock/minimax rerun.",
+    "source_files": 304
+  },
+  "scope": "All source/outcome/error/missing tiers retained; no original clock/minimax/WDL rerun, human-label fit, new physical games or AUX execution."
+}

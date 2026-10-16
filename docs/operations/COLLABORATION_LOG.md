@@ -3619,3 +3619,37 @@ nonzero-weight slots: three fullparents change an exact frozenmaterial average.
 No action/history quotient, actor-conservation law, learnedprice or betterreturn
 is claimed. Retain defaultFalse optionalfilter and declare future samplingmeasure.
 Fixed-version source/data links will be sent as results, not approval requests.
+
+
+## PRIMARY semantic sampling/history closure —2026-10-17
+
+PRIMARY executed18fullparent/72clonearm/14590child,288caller and72Core/Native3+9
+controls; no same-depth raw score drift, no newnormalization/TTquotient/fit.
+Source-disabled fullreader checks12851states/588PV/288receipts. Legacy metadata
+heldfixed is an interpretation limit, not broad semantic price validation.
+Twelve actual mechanism mixtures retain original96slots:48returned,48explicit
+no-progress refusals; every Native compile declines its history/pass policy.
+No requested-backend-as-executed claim. Current-product auxiliary-default cycle
+failure was independently reproduced and repaired with existing exact identity;
+2950full tests pass; no no-progress guard/default/Native C change.
+
+Dot reply1792182676.315759 was read in complete50post pagination and adopted for
+public-record projection/quiet-reset/undo/priority and cost checks. Dot read
+fixed9492 source only, no private execution. Private full-replay v1 failures6/24
+remain, v2all24return; real1024historyD0@2s prevents activation. Actual counter
+component1512checks/12dropwitnesses does not establish caller gain; spawn's delayed
+ambiguity failure requires more than a scalar. No solver/learning duplication.
+
+AUX81 OWNER_MESSAGE reports128terminal games/6172moves and6/64price gain across
+3families, not PRIMARY-rerun results. Its parent/3replies and fixed46cb0a84 task2352
+diagnosis were READ_ONLY, no source/program/tests/games/fit executed or adopted.
+AUX's0byte PRIMARY rollout read at20:11:02UTC matches PRIMARY's prior ad-hoc
+non-atomic write. PRIMARY acknowledges unsafe own operation, preserves failure
+and validstop flags, and now uses existing common.write_json atomic replacement.
+Two new concurrent/failed-replace tests plus31session controls pass. Source CLI
+was already atomic; no extra writer/lock/framework or security change introduced.
+Dot's lack of published overlap is not proof about AUX's unseen checkout. No
+cross-checkout writes, automatic merge, additional Agent or publication approval.
+Full detailed evidence: SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md and
+its companion archive/index. Every original cap/error/absent slot/source tier is
+retained; delivery is distinct from Dot reading or independent execution.

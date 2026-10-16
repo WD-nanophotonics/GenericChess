@@ -6,13 +6,24 @@ The complete preceding selection/evidence is preserved at PUBLIC Git
 2d3e54105bae3e7e38a1543b4f98cdc7442e479e, this same path and its purpose reports.
 Older reports are evidence, never automatic instructions to repeat their runs.
 
-## Current decision and immediate work —2026-10-16
+## Current decision and immediate work —2026-10-17
 
 Keep search capability/completion and bottleneck attribution first, then revisit
 rule-only price/statistical/small-learning routes when measured evidence changes
 a concrete choice. This preserves the user's selected research priority; it is
 not a permanent prohibition on WDL, solver or appropriate small training.
 DEV_AUX's separate solver/verifier/cursor/runtime/learning lane stays its own.
+
+Current concrete closure: repair the repeated-cycle search boundary's false
+auxiliary-default rejection using existing exact logical identity, and correct
+PRIMARY's ad-hoc non-atomic rollout write method. No-progress search remains an
+explicit missing capability: its private full-replay prototype is too costly on
+real512/1024 histories to activate. An unfitted counter component is now checked,
+but entity-creation error timing shows that an integer alone is not a qualified
+integration. Next consider a bounded complete counter/context/control feasibility
+with deferred ambiguity and actual caller payoff, coordinate genuine AUX overlap,
+and retain current refusals until qualified. No default/TT quotient/NN follows.
+
 
 The user-selected Slack defect repair is CLOSED. Native/Core automatic PENDING,
 checked continuation, full-state imports and rule max-ply priority were qualified
@@ -311,3 +322,31 @@ nonzero differences using the same frozen values. Future rule-only averages must
 freeze theirmeasure before comparison; no unique price/return/humanfit claim.
 ACTOR_BINDING_AND_CONDITIONAL_CONTINUATION_20261017.md owns exact ratios, budgets,
 original failures and frozen/current source tiers. AUX80 remains read-only context.
+
+## Semantic sampling and complete-history boundaries —2026-10-17
+
+SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md owns exact source/data tiers.
+18retained fullparents/72clonearms/14590children prove conditional sampling means
+can change with representation; fixed legacy metadata/static values remain, not
+arbitrary semantic-price qualification.288actual callers retain allslots, no
+same-depth score differences; no alias normalization or repeated cost campaign.
+72Core/Native3+9 match;12851search-disabled fullstate checks qualify receipts.
+
+Twelve systematic pure-semantic pair/triple mixtures preserve promotion, aux,
+history and optional drop rules. Original96slots keep48returned/48explicit
+no-progress search refusals; all12Native compiles decline pass/no-progress, so
+backend-request flags alone do not prove Native execution. Originalfrontier has
+303promotion actions but0drops; later component separately executes12dropwitnesses.
+Private full-history v1 has6failures, v2all24return. Real1024history retains1025
+entries andD0@2s; full replay unactivated.1512transition counter checks are component
+feasibility, not caller gain. Actual spawn is accepted beforethreshold thenCore
+failsclosed atthreshold on ambiguouscapture: retain deferrederror/priority.
+
+The current-product aux-default defect is independently reproduced on a legal
+four-ply repeated cycle and fixed without changing no-progress/Native admission.
+2950normalfull tests and later2atomic+31session controls pass, distinct tiers.
+PRIMARY's own non-atomic rollout write matched AUX81's0byte read; existingatomic
+helper now governs allmutableJSON updates. Currentstop flags preserved. Dot's
+new source advice explicitly evaluated; AUX81fixeddiagnosis/thread READ_ONLY,
+no AUX execution/checkoutwrites or unproved ownership lock. Scientific objective
+remainsOPEN; no newapproval queue or PRIVATE retry is introduced.

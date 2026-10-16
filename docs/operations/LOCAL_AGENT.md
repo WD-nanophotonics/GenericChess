@@ -27,6 +27,24 @@ Keep distinct executable tasks and the critical current decision/reason
 AGENTS.md. Replace stale tasks/evidence; shorten detail rather than losing the
 causal relationship. Missing memo is rebuilt from evidence before research.
 
+## Shared configuration writes
+
+Use the existing tools.local_agent.common.write_json for every mutable JSON
+update, including ad-hoc rollout/session/handoff updates. Serialize to a sibling
+temporary file and replace the target atomically; never truncate shared flags
+with Path.write_text/write_bytes or json.dump to the live file. Read and preserve
+current stop/ownership fields before updating owned segment metadata. A failed
+replace leaves the previous target authoritative; report the error, not success.
+This protects readers from a zero-byte/partial target, not multiple-writer races.
+PRIMARY remains the sole writer here; never edit another checkout's flags.
+
+On2026-10-16 at20:11UTC AUX observed a zero-byte PRIMARY rollout. PRIMARY's
+ad-hoc non-atomic end-of-segment write occurred at the matching time; the tool
+receipt does not prove every OS writer, but this identified unsafe own operation
+is corrected. Existing CLI writes already used the atomic helper. Preserve the
+failure evidence and current valid flags; a later valid read does not erase it.
+Regression controls cover a concurrent pre-commit reader and failed replacement.
+
 ## Research checkpoints and cost
 
 session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION
