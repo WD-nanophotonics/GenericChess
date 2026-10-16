@@ -1,3 +1,14 @@
+## 2026-10-16 live parent views for derived inputs
+
+Rebuild Native from the complete sandbox revision to receive the scoped input
+cost improvement. The existing full live-state/history copier is reused for two
+owner views; unused history capacity is omitted while every actual entry and
+auxiliary field remains. Old kernels keep their prior functionality/cost. No
+Python API, result field, evaluation/q policy, capacity or UI selection changes.
+The serial research cache and attack-index idea are archive-only experiments.
+Actual tests, complete-field comparisons, adverse/censored costs and source
+reproduction: ../research/EVALUATOR_CONTEXT_AND_LIVE_VIEWS_20261016.md.
+
 ## 2026-10-16 exact-root per-call history ordering
 
 Rebuild Native for the scoped cost improvement. Existing root_window_pruning=True

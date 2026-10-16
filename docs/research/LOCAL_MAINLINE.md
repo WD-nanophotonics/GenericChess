@@ -490,10 +490,15 @@ are conditional, with no joint wide ratio. No strength/q/model/API/default chang
 
 Reason/consequence: lower input cost is real in a scoped complete objective but
 readiness, work completion and utility remain distinct. Do not rerun old q games,
-expand4096capacity silently or build a diagnostics/NN framework. Next inspect
-whether exact FULL-context repeated evaluator visits offer enough reuse to matter;
-a bounded count-only test must preserve aux/history/capacity and charge key cost
-before any cache implementation. Keep cheap static controls and reject low-yield
+expand4096capacity silently or build a diagnostics/NN framework. Exact FULL-context evaluator reuse was tested in
+EVALUATOR_CONTEXT_AND_LIVE_VIEWS_20261016.md: the serial full-key cache remains
+private after saturation/history/lifecycle limits. Adopt only the minimal existing
+live-parent copier for dynamic owner views, with complete aux/history and all
+semantic guards. Frozen32family512slots yield480queries/32actualtail slots,
+84jointD4quartets equal all non-time fields,36all-censored; no quality/default
+claim. Dynamic4cost ratio.860,8~1.000,one12family1.018,16no completed comparison;
+static8adverse1.030 stays.2731rebuiltproduct/64publishedsource tests and complete
+receipt replay qualify the scoped delivery. Keep cheap static controls and reject low-yield
 engineering. Recording one-pass prototype stays private, no helper adoption.
 
 AUX72root1792132246.976859/completeDot1792132366.499399 read as OWNER_MESSAGE plus
@@ -504,3 +509,22 @@ that interpretation without retuning its active caps. Latest PRIMARY scoped fixe
 read is AUX71at98f28f: six2100/2107files plus34logical/31physical/1706step
 arithmetic, no whole-report/consumer/solver execution; timing/source claims owner-only. No crosscheckout writes,
 model/price import, independent AUX rerun or routine acknowledgement gate.
+
+
+Current next choice: measured binding validation is only~2.5-11percent of
+instrumented feature cost, while semantic attack tests are~39-77percent with
+timer overhead explicit. Four actual parent/child states begin a geometric-scan
+census; the16board example scans32k/34k target cells with zero target matches,
+at a conservative163840-byte membership estimate, not allocated or a speed result.
+Next test exact rule-constant membership construction/lookup cost before any
+index; preserve first-source entry and ALL matching-target occurrences plus full
+path/state/aux guards. This is a new measured premise, not revival of old failed
+source grouping or an incremental attack/history cache. No old q/game campaign,
+new learner/framework, silent4096capacity change or AUX duplication.
+
+Latest peer read: AUX73 fullroot/two replies including final1792141658.322149,
+and two fixed b1ea4e9f reports. Threeclosedlearning/proof/verifier executions
+remain owner-reported; PRIMARY read reports only. Dot read fixed7ae949f source.
+PRIMARY has not executed/adopted this new code/results or changed sidemission. CHAT pattern-paper reading supports measuring
+extraction/initialization cost separately from model size/utility, not a new
+architecture mandate. Existing public access and continuing grant persist.

@@ -3296,3 +3296,36 @@ benchmark or copied timing constant. Full result arrays/fields stay. A private
 search gain; defer helper/API work. Next inspect bounded exact-context reuse
 opportunity before any cache, preserve full aux/history/capacity and static
 controls; no routine acknowledgement or publication approval gate.
+
+
+## 2026-10-16 PRIMARY: evaluator contexts and live parent copies
+
+PRIMARY ran 16 count queries, 256 exposed cache queries, 16 view pilot queries,
+8 retained cyclic-history queries, 24 PENDING q/TT queries and 480 fresh queries.
+These total 800 retained receipts; first failed harness's eight queries lack
+full receipts and remain excluded from replay. Thirty-two acquisition walks
+retain249plies/19drops/5promotions and two tails; no evaluation games or fits.
+Only existing live-copy reuse enters production. Full-context cache remains
+private despite local benefits: long-history key cost, saturation, omitted
+per-query reset timing and serial global lifecycle do not support deployment.
+Final2731 rebuilt tests/64published-source tests pass; source reader checks
+3736 complete
+states/history and 2624 PV/fallback edges.
+Fresh84completeD4quartets match all non-time outputs;36all-censored quartets and
+static8/dynamic12 adverse results stay. Dynamic4 ratio.860 is a scoped cost gain,
+not strength or a generic network claim. Report: ../research/EVALUATOR_CONTEXT_AND_LIVE_VIEWS_20261016.md.
+
+Full AUX73 root/two replies and twofixedb1ea4e9f reports were read. Its three
+closedlearningstudies and verifier/proof executions remain owner-reported; Dot's
+code read remains fixed7ae949f. PRIMARY neither ran nor modified its solver,
+verifier, learning, consumers or checkout. Original PRIMARY thread
+has unchanged four Dot posts; old payload binding remains false, no retry or
+acknowledgement gate. Actual failures were two tuple/list control harness errors
+and a source consumer's Python-S pytest import; fixes/progress/missing receipts
+are explicit. No SAC, OS-security or approval failure was inferred.
+
+New cost evidence rejects guard-skipping engineering for now and actually starts
+an attack scan census: four exposed states only, no index implemented. Future
+membership work must charge admission/memory and retain source/target occurrence
+semantics. Public source/results and a fixed-SHA result support peer review;
+delivery does not claim Dot independently executed or adopted this work.

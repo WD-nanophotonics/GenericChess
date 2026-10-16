@@ -4034,7 +4034,8 @@ static int gc_semantic_dynamic_feature_vector(
     int promotions[2] = {0, 0};
     int anchor_moves[2] = {0, 0};
     for (uint8_t owner = 0; owner < 2; owner++) {
-        GCSemanticPosition view = *position;
+        GCSemanticPosition view;
+        gc_semantic_runtime_copy_live_position(&view,position);
         view.side_to_move = owner;
         GCSemanticActionBuffer actions;
         gc_semantic_action_buffer_init(&actions);

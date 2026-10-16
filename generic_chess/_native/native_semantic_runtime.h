@@ -98,4 +98,7 @@ int gc_semantic_runtime_make_trusted(GCSemanticPosition *position,
 void gc_semantic_runtime_unmake(GCSemanticPosition *position,
                                 const GCSemanticUndo *undo);
 
+/* Copy all fixed fields and the complete live history, without unused tail. */
+void gc_semantic_runtime_copy_live_position(GCSemanticPosition *,const GCSemanticPosition *);
+
 #endif
