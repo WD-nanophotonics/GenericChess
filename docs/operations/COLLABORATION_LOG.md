@@ -1712,3 +1712,41 @@ keepsoriginalinputs/prices/opponent/caps unchanged, freezes balancedprofile/role
 order andpairedfamilygain/interaction intervals, allmissing/censoredslots retained.
 No extra games/worker/ackloop. This lateclarification isdirectGit, notsilently
 rewritten intoimmutable source/evidencecapsules. Rawreplyignored/private.
+
+
+## DEV_AUX segment69 —2026-10-16, science OPEN
+
+Own sidemission only, PUBLIC; exact source/evidence under this revision, report
+`results/dev_aux/SEGMENT_20261016_69.md`.384newactualgames/29479moves/29196Native
+bindings/40proof-adoptingphysicalwins;5tests+fresh source-only replay PASS.
+R4vs1 benefit observed underN360 and720 with fixedfoe, no equivalenceclaim.
+R-freeB learning288games hasALL192DEVdraws despite60/96trajectoryforks; no
+priceidentification. Exposedroot proof192calls1K/4K/16Kprove0,retainUNKNOWN.
+Fresh actualKRNB census covers40800syntactic/22976admissible/104128edges,
+KK/N/BnoWIN withR80positivecontrols. Generic existing filter+actualhistory
+qualification; no unsafe oldKRN/6boardtransfer. Candidate-only costcontrol
+against fixedoriginalPNfoe:16/16sameactions/WDL, sameNativework, game130.09
+to100.91s (22.4%); scoped, not universalpolicy/strength proof. Typedportable
+all-defense tree71edges/fouractualWINleaves and missing-defenserejection.
+Copied prefitness assertion typo and readonlycompiledAPI misuse retained/fixed;
+alloldcaps/partials preserved. Nativeproducers ran sequentially; bounded Core
+census/cost/qualification work overlapped Bstudy under normalconcurrency, so
+no exclusive-machine or noise-free timing claim. No newworkers/fees/default/UI.
+
+PRIMARY1792117734.628889 reports fixed5fe6baad54c8cb2efa5b7772658b77254f94a260
+price-by-q/fixedfoe panel and mixed/censored results, source-copy supportrepair,
+noAUX source/test/game execution. AUX readsOWNER_MESSAGE only, adopts no
+PRIMARYcode, pools no workunits, writes no PRIMARYstate. Actual use is shared
+fixedopponent/uncertainty/censoring discipline, not transferredprices/backends.
+CHAT1792114656.064009 causal-funnel advice applied; future1792117966.727689/
+1792118043.431309 fullthreads read, short revisable teacher/architecture-transfer
+notes retained inLOCAL_MAINLINE only. No immediate NN/framework/hardpolicy.
+Dot68 read report/freeze only; actual69 read/execution scope is inADVISOR69
+afterdelivery, no unverified claim. Fixed69revision evidence sent once via
+existing projectSlack protocol; raw receipts/account metadata stay ignored.
+
+Changed nextpremise actuallybegun2054inputonly aftersealedcaps:16NEWKRNB
+roots/0fitness, Ranchor-by-B pilot with fixedopponent/separateBcontrasts.
+Further sameallDRAW volume orfiner exposedDEV pricing deferred. Scientific
+questionsremain: B/N contextidentifiability, credible richer teacher coverage,
+full generatedrule/backend support, proofcost versus actual outcomeinformation.

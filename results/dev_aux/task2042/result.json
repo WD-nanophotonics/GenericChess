@@ -1,0 +1,6746 @@
+{
+  "status": "PASS_DESCRIPTIVE_INFORMATION_AUDIT",
+  "studies": {
+    "task2030": {
+      "summary": {
+        "UNIT_DIAGNOSTIC": {
+          "comparable_cells": 32,
+          "family_clusters": 8,
+          "trajectory_sensitive": 18,
+          "first_action_sensitive": 14,
+          "WDL_sensitive": 9,
+          "WDL_informative_families": [
+            0,
+            1,
+            4,
+            5,
+            6,
+            7
+          ],
+          "all_draw": 13,
+          "all_decisive": 10,
+          "action_sensitive_but_all_draw": 7,
+          "all_candidate_first_proof": 4,
+          "no_candidate_move": 0
+        }
+      },
+      "cells": [
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 0,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 0,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 0,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 0,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 1,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 1,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 1,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 1,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 2,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 2,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 2,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 2,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 3,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 3,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 3,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 3,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 4,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 4,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 4,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 4,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 5,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 5,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 5,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            360,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 5,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 6,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 6,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 6,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 6,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            2880,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 7,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 7,
+          "side": 1,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 7,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            2880
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "UNIT_DIAGNOSTIC",
+          "family": 7,
+          "side": 0,
+          "opponent": [
+            720,
+            null
+          ],
+          "unit": 360,
+          "profiles": [
+            1440,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        }
+      ]
+    },
+    "task2020": {
+      "summary": {
+        "DEV": {
+          "comparable_cells": 48,
+          "family_clusters": 8,
+          "trajectory_sensitive": 33,
+          "first_action_sensitive": 5,
+          "WDL_sensitive": 4,
+          "WDL_informative_families": [
+            11,
+            13
+          ],
+          "all_draw": 21,
+          "all_decisive": 23,
+          "action_sensitive_but_all_draw": 18,
+          "all_candidate_first_proof": 3,
+          "no_candidate_move": 0
+        },
+        "TRAIN": {
+          "comparable_cells": 16,
+          "family_clusters": 8,
+          "trajectory_sensitive": 8,
+          "first_action_sensitive": 5,
+          "WDL_sensitive": 5,
+          "WDL_informative_families": [
+            0,
+            1,
+            5,
+            7
+          ],
+          "all_draw": 2,
+          "all_decisive": 9,
+          "action_sensitive_but_all_draw": 1,
+          "all_candidate_first_proof": 2,
+          "no_candidate_move": 1
+        }
+      },
+      "cells": [
+        {
+          "phase": "TRAIN",
+          "family": 0,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 0,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 1,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 1,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 2,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 2,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 3,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 3,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 4,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 4,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 5,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 5,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 6,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 6,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            null,
+            null,
+            null
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": true
+        },
+        {
+          "phase": "TRAIN",
+          "family": 7,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 7,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 8,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 9,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 10,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 11,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "WIN"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 12,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 13,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 14,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "PROOF",
+            "PROOF"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": true,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 15,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        }
+      ]
+    },
+    "task2037": {
+      "summary": {
+        "DEV": {
+          "comparable_cells": 96,
+          "family_clusters": 16,
+          "trajectory_sensitive": 60,
+          "first_action_sensitive": 22,
+          "WDL_sensitive": 0,
+          "WDL_informative_families": [],
+          "all_draw": 96,
+          "all_decisive": 0,
+          "action_sensitive_but_all_draw": 60,
+          "all_candidate_first_proof": 0,
+          "no_candidate_move": 0
+        },
+        "TRAIN": {
+          "comparable_cells": 32,
+          "family_clusters": 16,
+          "trajectory_sensitive": 27,
+          "first_action_sensitive": 15,
+          "WDL_sensitive": 1,
+          "WDL_informative_families": [
+            0
+          ],
+          "all_draw": 29,
+          "all_decisive": 2,
+          "action_sensitive_but_all_draw": 25,
+          "all_candidate_first_proof": 0,
+          "no_candidate_move": 0
+        }
+      },
+      "cells": [
+        {
+          "phase": "TRAIN",
+          "family": 0,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": true,
+          "all_draw": false,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 0,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 1,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 1,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 2,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 2,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 3,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 3,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 4,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "WIN",
+            "WIN",
+            "WIN"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 4,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "LOSS",
+            "LOSS",
+            "LOSS"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": false,
+          "all_decisive": true,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 5,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 5,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 6,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 6,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 7,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 7,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 8,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 8,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 9,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 9,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 10,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 10,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 11,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 11,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 12,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 12,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 13,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 13,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 14,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 14,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720,
+            1440
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 15,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "TRAIN",
+          "family": 15,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            1440,
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 16,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 17,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 18,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 19,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 20,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 21,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 22,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 23,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 24,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 25,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 26,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 27,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 28,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 29,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 30,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            360,
+            720
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 0,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 1,
+          "opponent": [
+            1260,
+            360
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 0,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 1,
+          "opponent": [
+            1260,
+            720
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 0,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": false,
+          "first_candidate_action_sensitive": false,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        },
+        {
+          "phase": "DEV",
+          "family": 31,
+          "side": 1,
+          "opponent": [
+            1260,
+            1440
+          ],
+          "unit": 720,
+          "profiles": [
+            720,
+            360
+          ],
+          "outcomes": [
+            "DRAW",
+            "DRAW"
+          ],
+          "trajectory_sensitive": true,
+          "first_candidate_action_sensitive": true,
+          "first_sources": [
+            "EXTERNAL_SEARCH",
+            "EXTERNAL_SEARCH"
+          ],
+          "WDL_sensitive": false,
+          "all_draw": true,
+          "all_decisive": false,
+          "all_candidate_first_proof": false,
+          "no_candidate_move": false
+        }
+      ]
+    }
+  },
+  "scope": "Exposed existing frozen records; no optimizer or price/root selection, no new Native/proof calls. Complete trajectory sensitivity is not strength; finite actual maxply draw is distinguished from UNKNOWN. Counts describe conditional cohorts, not an independent sample or causal board/inventory effect."
+}

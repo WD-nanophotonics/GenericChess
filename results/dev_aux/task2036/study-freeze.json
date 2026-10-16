@@ -1,0 +1,28 @@
+{
+  "status": "FROZEN_BEFORE_DRAW_AND_FITNESS",
+  "created_utc": "2026-10-16T02:09:04.757263+00:00",
+  "question": "Can removing all rooks reveal a useful B/N true-terminal learning signal?",
+  "seed": 20261016692036,
+  "inputs": "32NEW KkNBnb structural roots, first16TRAIN/last16DEV, both safe kings, >=4 legal actions and legal N/B captures for both roles; all accepted in seed order, no WDL/price/proof filter.",
+  "mechanism": "No R in any initial setup; remove-from-game captures and no promotion/drop ensure R-free closure. Compiled unused R type retained solely for already qualified KRNB provider. Changes conditional game distribution, NOT isolated causal comparison against prior KRNB cohort.",
+  "prices_B": [
+    360,
+    720,
+    1440
+  ],
+  "N": 720,
+  "R": 1260,
+  "TRAIN": "96games, fixed opponentB720, 16families/bothroles/all3prices; numeric ascending ties/allmaximizers. Lock beforeDEV.",
+  "DEV": "16NEWfamilies x3Bopponents xbothroles xunique{720,TRAINselected}; max192/total288. No DEV price selection.",
+  "policy": "BOTH cold PN1024/normal4096/full rule max96; no inventory filter. Actual rule W-L/D only; UNKNOWN unscored and blocks selector.",
+  "cost": {
+    "reference": "Closed2020whole667.8714sec/144; R-free novelty factor2 plus120sec; fewer pieces may make mate rarer, so cost uncertainty explicit.",
+    "mean": 4.637995898611111,
+    "maximum_games": 288,
+    "novelty_factor": 2,
+    "overhead": 120,
+    "expected_seconds": 2791.4856376,
+    "cap_seconds": 3300
+  },
+  "decision": "One bounded whole study, not split; do not restart or extend cap. Cost forecast<onehour, no additionalworkers. If insufficient structural roots stop beforeNative, preservefailure. Outcomes may choose simplify/abandonB route, never fit humanprices."
+}

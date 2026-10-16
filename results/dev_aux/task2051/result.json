@@ -1,0 +1,304 @@
+{
+  "status": "PASS_COMPLETE_FIXED_OPPONENT_COST_CONTROL",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2050",
+    "games": 32,
+    "moves": 2760,
+    "actual_native": 2756,
+    "proof_games": 4,
+    "proof_steps": 4,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 32,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "max_ply": 24,
+      "checkmate": 4,
+      "repetition": 4
+    },
+    "exit_causes": {
+      "reported_node_overrun": 2296,
+      "external_search_return": 448,
+      "time_budget": 12,
+      "certificate": 4
+    },
+    "node_overruns": 2300,
+    "phase_seconds": {
+      "admission_seconds": 11.37537489956594,
+      "proof_seconds": 116.45594380036346,
+      "verification_seconds": 0.026007400010712445,
+      "normal_seconds": 74.9393895007961
+    },
+    "proof_work": {
+      "frontiers": 410985,
+      "transitions": 1641884,
+      "iterations": 410985,
+      "eager_board_successors": 1702654,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 2756,
+    "selection_scope": "Fixed32candidate-only proof-cost slots; original run-plan authoritative for unrun.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "filter_hits": 602,
+  "original_planned": 32,
+  "observed": 32,
+  "unrun": [],
+  "scope": "Candidate-only intervention, originalopponent fixed. Descriptive cost/work and observed behavior only; no equivalence margin/universalWDLpreservation/strength claim. Actual max96 rule draw, UNKNOWN unscored. No newNative/PN duringaudit; no current2037policychange.",
+  "arms": {
+    "False": {
+      "games": 16,
+      "outcomes": {
+        "DRAW": 14,
+        "LOSS": 1,
+        "WIN": 1
+      },
+      "game_seconds": 130.08658180001657,
+      "moves": 1380,
+      "candidate_PN_seconds": 36.203171000408474,
+      "candidate_PN_nodes": 521372,
+      "total_PN_seconds": 72.42195600023842,
+      "normal_nodes": 5640934
+    },
+    "True": {
+      "games": 16,
+      "outcomes": {
+        "DRAW": 14,
+        "LOSS": 1,
+        "WIN": 1
+      },
+      "game_seconds": 100.91413199997623,
+      "moves": 1380,
+      "candidate_PN_seconds": 7.8081378003407735,
+      "candidate_PN_nodes": 78485,
+      "total_PN_seconds": 44.03398780012503,
+      "normal_nodes": 5640934
+    }
+  },
+  "paired_trajectories": [
+    {
+      "family": 0,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 0,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 1,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ],
+      "common_prefix": 31,
+      "first_fork_actor": null
+    },
+    {
+      "family": 1,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ],
+      "common_prefix": 31,
+      "first_fork_actor": null
+    },
+    {
+      "family": 2,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 83,
+      "first_fork_actor": null
+    },
+    {
+      "family": 2,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 83,
+      "first_fork_actor": null
+    },
+    {
+      "family": 3,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 3,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 4,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 4,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 5,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 5,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 6,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 6,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 7,
+      "side": 0,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    },
+    {
+      "family": 7,
+      "side": 1,
+      "identical_actions": true,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ],
+      "common_prefix": 96,
+      "first_fork_actor": null
+    }
+  ],
+  "family_runtime_deltas": [
+    {
+      "family": 0,
+      "seconds_delta": -2.242181149980752
+    },
+    {
+      "family": 1,
+      "seconds_delta": -0.1683490000141319
+    },
+    {
+      "family": 2,
+      "seconds_delta": -1.995086650014855
+    },
+    {
+      "family": 3,
+      "seconds_delta": -2.2701067000016337
+    },
+    {
+      "family": 4,
+      "seconds_delta": -1.5525855000159936
+    },
+    {
+      "family": 5,
+      "seconds_delta": -2.053438750022906
+    },
+    {
+      "family": 6,
+      "seconds_delta": -2.239120999976876
+    },
+    {
+      "family": 7,
+      "seconds_delta": -2.065356149993022
+    }
+  ],
+  "mean_seconds_delta": -1.8232781125025213,
+  "exploratory8family_interval": [
+    -2.172127387491855,
+    -1.3028190562545205
+  ],
+  "same_trajectory_pairs": 16,
+  "same_outcome_pairs": 16,
+  "campaign_non_game_overhead_seconds": 0.5306156000006013
+}

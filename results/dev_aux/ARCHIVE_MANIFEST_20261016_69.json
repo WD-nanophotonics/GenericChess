@@ -1,0 +1,47 @@
+{
+  "status": "SEALED_CRC_ALL_PAYLOAD_SHA",
+  "archives": [
+    {
+      "archive": "results/dev_aux/SOURCE_REPRO_20261016_69.zip",
+      "files": 700,
+      "raw_bytes": 17194329,
+      "bytes": 4264942,
+      "sha256": "878f1bd58c4dfcbff92c4dfd144d0252659af237ffe2d27f4fa3ac07ffa0886f",
+      "manifest": "MANIFEST69SOURCE.json"
+    },
+    {
+      "archive": "results/dev_aux/EVIDENCE_20261016_69.zip",
+      "files": 178,
+      "raw_bytes": 614861034,
+      "bytes": 33077722,
+      "sha256": "54d27e122f99c927d1c25537790dcde9d42e36a5de0563ad8e781bbc3d0a1021",
+      "manifest": "MANIFEST69EVIDENCE.json"
+    }
+  ],
+  "late_direct_git_next_prelude": {
+    "task": 2054,
+    "scope": "Generated AFTER immutable closed-study capsules were sealed; source/inputs/protocol directGit,0Native/proof/games, not part of384game restore. ALL69 in inner source scope is its seal-time cutoff, not a claim to include this later prelude.",
+    "files": {
+      "results/dev_aux/task2054/feasibility.json": {
+        "bytes": 7860,
+        "sha256": "5d026779ce20b0bc1fb5c2c217c6e004e0102a29d0cdb9142dd334d597ea0e48"
+      },
+      "results/dev_aux/task2054/inputs.py": {
+        "bytes": 6264,
+        "sha256": "0c3a69375f2ba97dbeacdee982cc25d5c7acf44051de7d7846a4493ac109343d"
+      },
+      "results/dev_aux/task2054/plan.json": {
+        "bytes": 721,
+        "sha256": "b396b28d5c286a65a8fcdfb308a08dfc286da05416c13c77652fe2c51c170b06"
+      },
+      "results/dev_aux/task2054/rules.json": {
+        "bytes": 12570,
+        "sha256": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad"
+      },
+      "results/dev_aux/task2054/study-freeze.json": {
+        "bytes": 2293,
+        "sha256": "f0129949df00f530d1886a147a0c16ff746d6527c266c3f36658639a39876652"
+      }
+    }
+  }
+}

@@ -1,0 +1,1919 @@
+{
+  "ruleset_fingerprint": "be9c874098a2280108224a98a446439f65585193774fd21835aca18757c74362",
+  "target": 0,
+  "root_record": {
+    "actions": [
+      {
+        "from": [
+          1,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          0
+        ]
+      },
+      {
+        "from": [
+          1,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          3
+        ]
+      },
+      {
+        "from": [
+          0,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          3
+        ]
+      },
+      {
+        "from": [
+          3,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          3
+        ]
+      },
+      {
+        "from": [
+          1,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          0
+        ]
+      },
+      {
+        "from": [
+          2,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          1
+        ]
+      },
+      {
+        "from": [
+          2,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": [
+          2,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          2
+        ]
+      },
+      {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          3
+        ]
+      },
+      {
+        "from": [
+          3,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          3,
+          1
+        ]
+      },
+      {
+        "from": [
+          1,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          1
+        ]
+      },
+      {
+        "from": [
+          3,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          1
+        ]
+      },
+      {
+        "from": [
+          0,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          1
+        ]
+      },
+      {
+        "from": [
+          2,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          2
+        ]
+      }
+    ],
+    "resigned_by": null,
+    "ruleset_fingerprint": "be9c874098a2280108224a98a446439f65585193774fd21835aca18757c74362",
+    "schema_version": 1
+  },
+  "tree": {
+    "rank": 25,
+    "terminal": null,
+    "edges": [
+      {
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              3
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "child": {
+          "rank": 24,
+          "terminal": null,
+          "edges": [
+            {
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    2
+                  ],
+                  "to": [
+                    2,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              },
+              "child": {
+                "rank": 23,
+                "terminal": null,
+                "edges": [
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "kind": "board",
+                        "from": [
+                          0,
+                          1
+                        ],
+                        "to": [
+                          2,
+                          1
+                        ],
+                        "promotion_target_id": null
+                      },
+                      "declaration_id": null
+                    },
+                    "child": {
+                      "rank": 22,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "kind": "board",
+                              "from": [
+                                2,
+                                3
+                              ],
+                              "to": [
+                                3,
+                                2
+                              ],
+                              "promotion_target_id": null
+                            },
+                            "declaration_id": null
+                          },
+                          "child": {
+                            "rank": 19,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "kind": "board",
+                                    "from": [
+                                      0,
+                                      2
+                                    ],
+                                    "to": [
+                                      1,
+                                      1
+                                    ],
+                                    "promotion_target_id": null
+                                  },
+                                  "declaration_id": null
+                                },
+                                "child": {
+                                  "rank": 18,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "kind": "board",
+                                          "from": [
+                                            3,
+                                            2
+                                          ],
+                                          "to": [
+                                            3,
+                                            3
+                                          ],
+                                          "promotion_target_id": null
+                                        },
+                                        "declaration_id": null
+                                      },
+                                      "child": {
+                                        "rank": 17,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "kind": "board",
+                                                "from": [
+                                                  1,
+                                                  1
+                                                ],
+                                                "to": [
+                                                  0,
+                                                  0
+                                                ],
+                                                "promotion_target_id": null
+                                              },
+                                              "declaration_id": null
+                                            },
+                                            "child": {
+                                              "rank": 16,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "kind": "board",
+                                                      "from": [
+                                                        3,
+                                                        3
+                                                      ],
+                                                      "to": [
+                                                        3,
+                                                        2
+                                                      ],
+                                                      "promotion_target_id": null
+                                                    },
+                                                    "declaration_id": null
+                                                  },
+                                                  "child": {
+                                                    "rank": 15,
+                                                    "terminal": null,
+                                                    "edges": [
+                                                      {
+                                                        "choice": {
+                                                          "kind": "ACTION",
+                                                          "action": {
+                                                            "kind": "board",
+                                                            "from": [
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "to": [
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "promotion_target_id": null
+                                                          },
+                                                          "declaration_id": null
+                                                        },
+                                                        "child": {
+                                                          "rank": 14,
+                                                          "terminal": null,
+                                                          "edges": [
+                                                            {
+                                                              "choice": {
+                                                                "kind": "ACTION",
+                                                                "action": {
+                                                                  "kind": "board",
+                                                                  "from": [
+                                                                    3,
+                                                                    2
+                                                                  ],
+                                                                  "to": [
+                                                                    3,
+                                                                    3
+                                                                  ],
+                                                                  "promotion_target_id": null
+                                                                },
+                                                                "declaration_id": null
+                                                              },
+                                                              "child": {
+                                                                "rank": 13,
+                                                                "terminal": null,
+                                                                "edges": [
+                                                                  {
+                                                                    "choice": {
+                                                                      "kind": "ACTION",
+                                                                      "action": {
+                                                                        "kind": "board",
+                                                                        "from": [
+                                                                          1,
+                                                                          0
+                                                                        ],
+                                                                        "to": [
+                                                                          0,
+                                                                          0
+                                                                        ],
+                                                                        "promotion_target_id": null
+                                                                      },
+                                                                      "declaration_id": null
+                                                                    },
+                                                                    "child": {
+                                                                      "rank": 12,
+                                                                      "terminal": null,
+                                                                      "edges": [
+                                                                        {
+                                                                          "choice": {
+                                                                            "kind": "ACTION",
+                                                                            "action": {
+                                                                              "kind": "board",
+                                                                              "from": [
+                                                                                3,
+                                                                                3
+                                                                              ],
+                                                                              "to": [
+                                                                                3,
+                                                                                2
+                                                                              ],
+                                                                              "promotion_target_id": null
+                                                                            },
+                                                                            "declaration_id": null
+                                                                          },
+                                                                          "child": {
+                                                                            "rank": 11,
+                                                                            "terminal": null,
+                                                                            "edges": [
+                                                                              {
+                                                                                "choice": {
+                                                                                  "kind": "ACTION",
+                                                                                  "action": {
+                                                                                    "kind": "board",
+                                                                                    "from": [
+                                                                                      0,
+                                                                                      0
+                                                                                    ],
+                                                                                    "to": [
+                                                                                      1,
+                                                                                      0
+                                                                                    ],
+                                                                                    "promotion_target_id": null
+                                                                                  },
+                                                                                  "declaration_id": null
+                                                                                },
+                                                                                "child": {
+                                                                                  "rank": 10,
+                                                                                  "terminal": null,
+                                                                                  "edges": [
+                                                                                    {
+                                                                                      "choice": {
+                                                                                        "kind": "ACTION",
+                                                                                        "action": {
+                                                                                          "kind": "board",
+                                                                                          "from": [
+                                                                                            3,
+                                                                                            2
+                                                                                          ],
+                                                                                          "to": [
+                                                                                            3,
+                                                                                            3
+                                                                                          ],
+                                                                                          "promotion_target_id": null
+                                                                                        },
+                                                                                        "declaration_id": null
+                                                                                      },
+                                                                                      "child": {
+                                                                                        "rank": 9,
+                                                                                        "terminal": null,
+                                                                                        "edges": [
+                                                                                          {
+                                                                                            "choice": {
+                                                                                              "kind": "ACTION",
+                                                                                              "action": {
+                                                                                                "kind": "board",
+                                                                                                "from": [
+                                                                                                  1,
+                                                                                                  0
+                                                                                                ],
+                                                                                                "to": [
+                                                                                                  0,
+                                                                                                  1
+                                                                                                ],
+                                                                                                "promotion_target_id": null
+                                                                                              },
+                                                                                              "declaration_id": null
+                                                                                            },
+                                                                                            "child": {
+                                                                                              "rank": 8,
+                                                                                              "terminal": null,
+                                                                                              "edges": [
+                                                                                                {
+                                                                                                  "choice": {
+                                                                                                    "kind": "ACTION",
+                                                                                                    "action": {
+                                                                                                      "kind": "board",
+                                                                                                      "from": [
+                                                                                                        3,
+                                                                                                        3
+                                                                                                      ],
+                                                                                                      "to": [
+                                                                                                        3,
+                                                                                                        2
+                                                                                                      ],
+                                                                                                      "promotion_target_id": null
+                                                                                                    },
+                                                                                                    "declaration_id": null
+                                                                                                  },
+                                                                                                  "child": {
+                                                                                                    "rank": 7,
+                                                                                                    "terminal": null,
+                                                                                                    "edges": [
+                                                                                                      {
+                                                                                                        "choice": {
+                                                                                                          "kind": "ACTION",
+                                                                                                          "action": {
+                                                                                                            "kind": "board",
+                                                                                                            "from": [
+                                                                                                              0,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "to": [
+                                                                                                              1,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "promotion_target_id": null
+                                                                                                          },
+                                                                                                          "declaration_id": null
+                                                                                                        },
+                                                                                                        "child": {
+                                                                                                          "rank": 6,
+                                                                                                          "terminal": null,
+                                                                                                          "edges": [
+                                                                                                            {
+                                                                                                              "choice": {
+                                                                                                                "kind": "ACTION",
+                                                                                                                "action": {
+                                                                                                                  "kind": "board",
+                                                                                                                  "from": [
+                                                                                                                    3,
+                                                                                                                    2
+                                                                                                                  ],
+                                                                                                                  "to": [
+                                                                                                                    3,
+                                                                                                                    3
+                                                                                                                  ],
+                                                                                                                  "promotion_target_id": null
+                                                                                                                },
+                                                                                                                "declaration_id": null
+                                                                                                              },
+                                                                                                              "child": {
+                                                                                                                "rank": 5,
+                                                                                                                "terminal": null,
+                                                                                                                "edges": [
+                                                                                                                  {
+                                                                                                                    "choice": {
+                                                                                                                      "kind": "ACTION",
+                                                                                                                      "action": {
+                                                                                                                        "kind": "board",
+                                                                                                                        "from": [
+                                                                                                                          1,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "to": [
+                                                                                                                          0,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "promotion_target_id": null
+                                                                                                                      },
+                                                                                                                      "declaration_id": null
+                                                                                                                    },
+                                                                                                                    "child": {
+                                                                                                                      "rank": 4,
+                                                                                                                      "terminal": null,
+                                                                                                                      "edges": [
+                                                                                                                        {
+                                                                                                                          "choice": {
+                                                                                                                            "kind": "ACTION",
+                                                                                                                            "action": {
+                                                                                                                              "kind": "board",
+                                                                                                                              "from": [
+                                                                                                                                3,
+                                                                                                                                3
+                                                                                                                              ],
+                                                                                                                              "to": [
+                                                                                                                                3,
+                                                                                                                                2
+                                                                                                                              ],
+                                                                                                                              "promotion_target_id": null
+                                                                                                                            },
+                                                                                                                            "declaration_id": null
+                                                                                                                          },
+                                                                                                                          "child": {
+                                                                                                                            "rank": 3,
+                                                                                                                            "terminal": null,
+                                                                                                                            "edges": [
+                                                                                                                              {
+                                                                                                                                "choice": {
+                                                                                                                                  "kind": "ACTION",
+                                                                                                                                  "action": {
+                                                                                                                                    "kind": "board",
+                                                                                                                                    "from": [
+                                                                                                                                      0,
+                                                                                                                                      1
+                                                                                                                                    ],
+                                                                                                                                    "to": [
+                                                                                                                                      1,
+                                                                                                                                      2
+                                                                                                                                    ],
+                                                                                                                                    "promotion_target_id": null
+                                                                                                                                  },
+                                                                                                                                  "declaration_id": null
+                                                                                                                                },
+                                                                                                                                "child": {
+                                                                                                                                  "rank": 2,
+                                                                                                                                  "terminal": null,
+                                                                                                                                  "edges": [
+                                                                                                                                    {
+                                                                                                                                      "choice": {
+                                                                                                                                        "kind": "ACTION",
+                                                                                                                                        "action": {
+                                                                                                                                          "kind": "board",
+                                                                                                                                          "from": [
+                                                                                                                                            3,
+                                                                                                                                            2
+                                                                                                                                          ],
+                                                                                                                                          "to": [
+                                                                                                                                            3,
+                                                                                                                                            3
+                                                                                                                                          ],
+                                                                                                                                          "promotion_target_id": null
+                                                                                                                                        },
+                                                                                                                                        "declaration_id": null
+                                                                                                                                      },
+                                                                                                                                      "child": {
+                                                                                                                                        "rank": 1,
+                                                                                                                                        "terminal": null,
+                                                                                                                                        "edges": [
+                                                                                                                                          {
+                                                                                                                                            "choice": {
+                                                                                                                                              "kind": "ACTION",
+                                                                                                                                              "action": {
+                                                                                                                                                "kind": "board",
+                                                                                                                                                "from": [
+                                                                                                                                                  2,
+                                                                                                                                                  1
+                                                                                                                                                ],
+                                                                                                                                                "to": [
+                                                                                                                                                  3,
+                                                                                                                                                  1
+                                                                                                                                                ],
+                                                                                                                                                "promotion_target_id": null
+                                                                                                                                              },
+                                                                                                                                              "declaration_id": null
+                                                                                                                                            },
+                                                                                                                                            "child": {
+                                                                                                                                              "rank": 0,
+                                                                                                                                              "terminal": {
+                                                                                                                                                "status": "checkmate",
+                                                                                                                                                "winner": 0,
+                                                                                                                                                "resigned_by": null,
+                                                                                                                                                "declaration_id": null,
+                                                                                                                                                "declared_by": null,
+                                                                                                                                                "declaration_outcome": null,
+                                                                                                                                                "declaration_score": null
+                                                                                                                                              },
+                                                                                                                                              "edges": []
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        ]
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  ]
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      ]
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        }
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "kind": "board",
+                              "from": [
+                                2,
+                                3
+                              ],
+                              "to": [
+                                3,
+                                3
+                              ],
+                              "promotion_target_id": null
+                            },
+                            "declaration_id": null
+                          },
+                          "child": {
+                            "rank": 21,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "kind": "board",
+                                    "from": [
+                                      0,
+                                      2
+                                    ],
+                                    "to": [
+                                      0,
+                                      1
+                                    ],
+                                    "promotion_target_id": null
+                                  },
+                                  "declaration_id": null
+                                },
+                                "child": {
+                                  "rank": 20,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "kind": "board",
+                                          "from": [
+                                            3,
+                                            3
+                                          ],
+                                          "to": [
+                                            3,
+                                            2
+                                          ],
+                                          "promotion_target_id": null
+                                        },
+                                        "declaration_id": null
+                                      },
+                                      "child": {
+                                        "rank": 19,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "kind": "board",
+                                                "from": [
+                                                  0,
+                                                  1
+                                                ],
+                                                "to": [
+                                                  1,
+                                                  0
+                                                ],
+                                                "promotion_target_id": null
+                                              },
+                                              "declaration_id": null
+                                            },
+                                            "child": {
+                                              "rank": 18,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "kind": "board",
+                                                      "from": [
+                                                        3,
+                                                        2
+                                                      ],
+                                                      "to": [
+                                                        3,
+                                                        3
+                                                      ],
+                                                      "promotion_target_id": null
+                                                    },
+                                                    "declaration_id": null
+                                                  },
+                                                  "child": {
+                                                    "rank": 17,
+                                                    "terminal": null,
+                                                    "edges": [
+                                                      {
+                                                        "choice": {
+                                                          "kind": "ACTION",
+                                                          "action": {
+                                                            "kind": "board",
+                                                            "from": [
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "to": [
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "promotion_target_id": null
+                                                          },
+                                                          "declaration_id": null
+                                                        },
+                                                        "child": {
+                                                          "rank": 16,
+                                                          "terminal": null,
+                                                          "edges": [
+                                                            {
+                                                              "choice": {
+                                                                "kind": "ACTION",
+                                                                "action": {
+                                                                  "kind": "board",
+                                                                  "from": [
+                                                                    3,
+                                                                    3
+                                                                  ],
+                                                                  "to": [
+                                                                    3,
+                                                                    2
+                                                                  ],
+                                                                  "promotion_target_id": null
+                                                                },
+                                                                "declaration_id": null
+                                                              },
+                                                              "child": {
+                                                                "rank": 15,
+                                                                "terminal": null,
+                                                                "edges": [
+                                                                  {
+                                                                    "choice": {
+                                                                      "kind": "ACTION",
+                                                                      "action": {
+                                                                        "kind": "board",
+                                                                        "from": [
+                                                                          0,
+                                                                          0
+                                                                        ],
+                                                                        "to": [
+                                                                          1,
+                                                                          0
+                                                                        ],
+                                                                        "promotion_target_id": null
+                                                                      },
+                                                                      "declaration_id": null
+                                                                    },
+                                                                    "child": {
+                                                                      "rank": 14,
+                                                                      "terminal": null,
+                                                                      "edges": [
+                                                                        {
+                                                                          "choice": {
+                                                                            "kind": "ACTION",
+                                                                            "action": {
+                                                                              "kind": "board",
+                                                                              "from": [
+                                                                                3,
+                                                                                2
+                                                                              ],
+                                                                              "to": [
+                                                                                3,
+                                                                                3
+                                                                              ],
+                                                                              "promotion_target_id": null
+                                                                            },
+                                                                            "declaration_id": null
+                                                                          },
+                                                                          "child": {
+                                                                            "rank": 13,
+                                                                            "terminal": null,
+                                                                            "edges": [
+                                                                              {
+                                                                                "choice": {
+                                                                                  "kind": "ACTION",
+                                                                                  "action": {
+                                                                                    "kind": "board",
+                                                                                    "from": [
+                                                                                      1,
+                                                                                      0
+                                                                                    ],
+                                                                                    "to": [
+                                                                                      0,
+                                                                                      0
+                                                                                    ],
+                                                                                    "promotion_target_id": null
+                                                                                  },
+                                                                                  "declaration_id": null
+                                                                                },
+                                                                                "child": {
+                                                                                  "rank": 12,
+                                                                                  "terminal": null,
+                                                                                  "edges": [
+                                                                                    {
+                                                                                      "choice": {
+                                                                                        "kind": "ACTION",
+                                                                                        "action": {
+                                                                                          "kind": "board",
+                                                                                          "from": [
+                                                                                            3,
+                                                                                            3
+                                                                                          ],
+                                                                                          "to": [
+                                                                                            3,
+                                                                                            2
+                                                                                          ],
+                                                                                          "promotion_target_id": null
+                                                                                        },
+                                                                                        "declaration_id": null
+                                                                                      },
+                                                                                      "child": {
+                                                                                        "rank": 11,
+                                                                                        "terminal": null,
+                                                                                        "edges": [
+                                                                                          {
+                                                                                            "choice": {
+                                                                                              "kind": "ACTION",
+                                                                                              "action": {
+                                                                                                "kind": "board",
+                                                                                                "from": [
+                                                                                                  0,
+                                                                                                  0
+                                                                                                ],
+                                                                                                "to": [
+                                                                                                  1,
+                                                                                                  1
+                                                                                                ],
+                                                                                                "promotion_target_id": null
+                                                                                              },
+                                                                                              "declaration_id": null
+                                                                                            },
+                                                                                            "child": {
+                                                                                              "rank": 10,
+                                                                                              "terminal": null,
+                                                                                              "edges": [
+                                                                                                {
+                                                                                                  "choice": {
+                                                                                                    "kind": "ACTION",
+                                                                                                    "action": {
+                                                                                                      "kind": "board",
+                                                                                                      "from": [
+                                                                                                        3,
+                                                                                                        2
+                                                                                                      ],
+                                                                                                      "to": [
+                                                                                                        3,
+                                                                                                        3
+                                                                                                      ],
+                                                                                                      "promotion_target_id": null
+                                                                                                    },
+                                                                                                    "declaration_id": null
+                                                                                                  },
+                                                                                                  "child": {
+                                                                                                    "rank": 9,
+                                                                                                    "terminal": null,
+                                                                                                    "edges": [
+                                                                                                      {
+                                                                                                        "choice": {
+                                                                                                          "kind": "ACTION",
+                                                                                                          "action": {
+                                                                                                            "kind": "board",
+                                                                                                            "from": [
+                                                                                                              1,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "to": [
+                                                                                                              0,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "promotion_target_id": null
+                                                                                                          },
+                                                                                                          "declaration_id": null
+                                                                                                        },
+                                                                                                        "child": {
+                                                                                                          "rank": 8,
+                                                                                                          "terminal": null,
+                                                                                                          "edges": [
+                                                                                                            {
+                                                                                                              "choice": {
+                                                                                                                "kind": "ACTION",
+                                                                                                                "action": {
+                                                                                                                  "kind": "board",
+                                                                                                                  "from": [
+                                                                                                                    3,
+                                                                                                                    3
+                                                                                                                  ],
+                                                                                                                  "to": [
+                                                                                                                    3,
+                                                                                                                    2
+                                                                                                                  ],
+                                                                                                                  "promotion_target_id": null
+                                                                                                                },
+                                                                                                                "declaration_id": null
+                                                                                                              },
+                                                                                                              "child": {
+                                                                                                                "rank": 7,
+                                                                                                                "terminal": null,
+                                                                                                                "edges": [
+                                                                                                                  {
+                                                                                                                    "choice": {
+                                                                                                                      "kind": "ACTION",
+                                                                                                                      "action": {
+                                                                                                                        "kind": "board",
+                                                                                                                        "from": [
+                                                                                                                          0,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "to": [
+                                                                                                                          1,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "promotion_target_id": null
+                                                                                                                      },
+                                                                                                                      "declaration_id": null
+                                                                                                                    },
+                                                                                                                    "child": {
+                                                                                                                      "rank": 6,
+                                                                                                                      "terminal": null,
+                                                                                                                      "edges": [
+                                                                                                                        {
+                                                                                                                          "choice": {
+                                                                                                                            "kind": "ACTION",
+                                                                                                                            "action": {
+                                                                                                                              "kind": "board",
+                                                                                                                              "from": [
+                                                                                                                                3,
+                                                                                                                                2
+                                                                                                                              ],
+                                                                                                                              "to": [
+                                                                                                                                3,
+                                                                                                                                3
+                                                                                                                              ],
+                                                                                                                              "promotion_target_id": null
+                                                                                                                            },
+                                                                                                                            "declaration_id": null
+                                                                                                                          },
+                                                                                                                          "child": {
+                                                                                                                            "rank": 5,
+                                                                                                                            "terminal": null,
+                                                                                                                            "edges": [
+                                                                                                                              {
+                                                                                                                                "choice": {
+                                                                                                                                  "kind": "ACTION",
+                                                                                                                                  "action": {
+                                                                                                                                    "kind": "board",
+                                                                                                                                    "from": [
+                                                                                                                                      1,
+                                                                                                                                      1
+                                                                                                                                    ],
+                                                                                                                                    "to": [
+                                                                                                                                      0,
+                                                                                                                                      2
+                                                                                                                                    ],
+                                                                                                                                    "promotion_target_id": null
+                                                                                                                                  },
+                                                                                                                                  "declaration_id": null
+                                                                                                                                },
+                                                                                                                                "child": {
+                                                                                                                                  "rank": 4,
+                                                                                                                                  "terminal": null,
+                                                                                                                                  "edges": [
+                                                                                                                                    {
+                                                                                                                                      "choice": {
+                                                                                                                                        "kind": "ACTION",
+                                                                                                                                        "action": {
+                                                                                                                                          "kind": "board",
+                                                                                                                                          "from": [
+                                                                                                                                            3,
+                                                                                                                                            3
+                                                                                                                                          ],
+                                                                                                                                          "to": [
+                                                                                                                                            3,
+                                                                                                                                            2
+                                                                                                                                          ],
+                                                                                                                                          "promotion_target_id": null
+                                                                                                                                        },
+                                                                                                                                        "declaration_id": null
+                                                                                                                                      },
+                                                                                                                                      "child": {
+                                                                                                                                        "rank": 3,
+                                                                                                                                        "terminal": null,
+                                                                                                                                        "edges": [
+                                                                                                                                          {
+                                                                                                                                            "choice": {
+                                                                                                                                              "kind": "ACTION",
+                                                                                                                                              "action": {
+                                                                                                                                                "kind": "board",
+                                                                                                                                                "from": [
+                                                                                                                                                  0,
+                                                                                                                                                  2
+                                                                                                                                                ],
+                                                                                                                                                "to": [
+                                                                                                                                                  1,
+                                                                                                                                                  2
+                                                                                                                                                ],
+                                                                                                                                                "promotion_target_id": null
+                                                                                                                                              },
+                                                                                                                                              "declaration_id": null
+                                                                                                                                            },
+                                                                                                                                            "child": {
+                                                                                                                                              "rank": 2,
+                                                                                                                                              "terminal": null,
+                                                                                                                                              "edges": [
+                                                                                                                                                {
+                                                                                                                                                  "choice": {
+                                                                                                                                                    "kind": "ACTION",
+                                                                                                                                                    "action": {
+                                                                                                                                                      "kind": "board",
+                                                                                                                                                      "from": [
+                                                                                                                                                        3,
+                                                                                                                                                        2
+                                                                                                                                                      ],
+                                                                                                                                                      "to": [
+                                                                                                                                                        3,
+                                                                                                                                                        3
+                                                                                                                                                      ],
+                                                                                                                                                      "promotion_target_id": null
+                                                                                                                                                    },
+                                                                                                                                                    "declaration_id": null
+                                                                                                                                                  },
+                                                                                                                                                  "child": {
+                                                                                                                                                    "rank": 1,
+                                                                                                                                                    "terminal": null,
+                                                                                                                                                    "edges": [
+                                                                                                                                                      {
+                                                                                                                                                        "choice": {
+                                                                                                                                                          "kind": "ACTION",
+                                                                                                                                                          "action": {
+                                                                                                                                                            "kind": "board",
+                                                                                                                                                            "from": [
+                                                                                                                                                              2,
+                                                                                                                                                              1
+                                                                                                                                                            ],
+                                                                                                                                                            "to": [
+                                                                                                                                                              3,
+                                                                                                                                                              1
+                                                                                                                                                            ],
+                                                                                                                                                            "promotion_target_id": null
+                                                                                                                                                          },
+                                                                                                                                                          "declaration_id": null
+                                                                                                                                                        },
+                                                                                                                                                        "child": {
+                                                                                                                                                          "rank": 0,
+                                                                                                                                                          "terminal": {
+                                                                                                                                                            "status": "checkmate",
+                                                                                                                                                            "winner": 0,
+                                                                                                                                                            "resigned_by": null,
+                                                                                                                                                            "declaration_id": null,
+                                                                                                                                                            "declared_by": null,
+                                                                                                                                                            "declaration_outcome": null,
+                                                                                                                                                            "declaration_score": null
+                                                                                                                                                          },
+                                                                                                                                                          "edges": []
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    ]
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              ]
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        ]
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  ]
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      ]
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        }
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    2
+                  ],
+                  "to": [
+                    3,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              },
+              "child": {
+                "rank": 3,
+                "terminal": null,
+                "edges": [
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "kind": "board",
+                        "from": [
+                          0,
+                          2
+                        ],
+                        "to": [
+                          1,
+                          2
+                        ],
+                        "promotion_target_id": null
+                      },
+                      "declaration_id": null
+                    },
+                    "child": {
+                      "rank": 2,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "kind": "board",
+                              "from": [
+                                3,
+                                2
+                              ],
+                              "to": [
+                                3,
+                                3
+                              ],
+                              "promotion_target_id": null
+                            },
+                            "declaration_id": null
+                          },
+                          "child": {
+                            "rank": 1,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "kind": "board",
+                                    "from": [
+                                      0,
+                                      1
+                                    ],
+                                    "to": [
+                                      3,
+                                      1
+                                    ],
+                                    "promotion_target_id": null
+                                  },
+                                  "declaration_id": null
+                                },
+                                "child": {
+                                  "rank": 0,
+                                  "terminal": {
+                                    "status": "checkmate",
+                                    "winner": 0,
+                                    "resigned_by": null,
+                                    "declaration_id": null,
+                                    "declared_by": null,
+                                    "declaration_outcome": null,
+                                    "declaration_score": null
+                                  },
+                                  "edges": []
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    2
+                  ],
+                  "to": [
+                    3,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              },
+              "child": {
+                "rank": 21,
+                "terminal": null,
+                "edges": [
+                  {
+                    "choice": {
+                      "kind": "ACTION",
+                      "action": {
+                        "kind": "board",
+                        "from": [
+                          0,
+                          1
+                        ],
+                        "to": [
+                          2,
+                          1
+                        ],
+                        "promotion_target_id": null
+                      },
+                      "declaration_id": null
+                    },
+                    "child": {
+                      "rank": 20,
+                      "terminal": null,
+                      "edges": [
+                        {
+                          "choice": {
+                            "kind": "ACTION",
+                            "action": {
+                              "kind": "board",
+                              "from": [
+                                3,
+                                3
+                              ],
+                              "to": [
+                                3,
+                                2
+                              ],
+                              "promotion_target_id": null
+                            },
+                            "declaration_id": null
+                          },
+                          "child": {
+                            "rank": 19,
+                            "terminal": null,
+                            "edges": [
+                              {
+                                "choice": {
+                                  "kind": "ACTION",
+                                  "action": {
+                                    "kind": "board",
+                                    "from": [
+                                      0,
+                                      2
+                                    ],
+                                    "to": [
+                                      1,
+                                      1
+                                    ],
+                                    "promotion_target_id": null
+                                  },
+                                  "declaration_id": null
+                                },
+                                "child": {
+                                  "rank": 18,
+                                  "terminal": null,
+                                  "edges": [
+                                    {
+                                      "choice": {
+                                        "kind": "ACTION",
+                                        "action": {
+                                          "kind": "board",
+                                          "from": [
+                                            3,
+                                            2
+                                          ],
+                                          "to": [
+                                            3,
+                                            3
+                                          ],
+                                          "promotion_target_id": null
+                                        },
+                                        "declaration_id": null
+                                      },
+                                      "child": {
+                                        "rank": 17,
+                                        "terminal": null,
+                                        "edges": [
+                                          {
+                                            "choice": {
+                                              "kind": "ACTION",
+                                              "action": {
+                                                "kind": "board",
+                                                "from": [
+                                                  1,
+                                                  1
+                                                ],
+                                                "to": [
+                                                  0,
+                                                  0
+                                                ],
+                                                "promotion_target_id": null
+                                              },
+                                              "declaration_id": null
+                                            },
+                                            "child": {
+                                              "rank": 16,
+                                              "terminal": null,
+                                              "edges": [
+                                                {
+                                                  "choice": {
+                                                    "kind": "ACTION",
+                                                    "action": {
+                                                      "kind": "board",
+                                                      "from": [
+                                                        3,
+                                                        3
+                                                      ],
+                                                      "to": [
+                                                        3,
+                                                        2
+                                                      ],
+                                                      "promotion_target_id": null
+                                                    },
+                                                    "declaration_id": null
+                                                  },
+                                                  "child": {
+                                                    "rank": 15,
+                                                    "terminal": null,
+                                                    "edges": [
+                                                      {
+                                                        "choice": {
+                                                          "kind": "ACTION",
+                                                          "action": {
+                                                            "kind": "board",
+                                                            "from": [
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "to": [
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "promotion_target_id": null
+                                                          },
+                                                          "declaration_id": null
+                                                        },
+                                                        "child": {
+                                                          "rank": 14,
+                                                          "terminal": null,
+                                                          "edges": [
+                                                            {
+                                                              "choice": {
+                                                                "kind": "ACTION",
+                                                                "action": {
+                                                                  "kind": "board",
+                                                                  "from": [
+                                                                    3,
+                                                                    2
+                                                                  ],
+                                                                  "to": [
+                                                                    3,
+                                                                    3
+                                                                  ],
+                                                                  "promotion_target_id": null
+                                                                },
+                                                                "declaration_id": null
+                                                              },
+                                                              "child": {
+                                                                "rank": 13,
+                                                                "terminal": null,
+                                                                "edges": [
+                                                                  {
+                                                                    "choice": {
+                                                                      "kind": "ACTION",
+                                                                      "action": {
+                                                                        "kind": "board",
+                                                                        "from": [
+                                                                          1,
+                                                                          0
+                                                                        ],
+                                                                        "to": [
+                                                                          0,
+                                                                          0
+                                                                        ],
+                                                                        "promotion_target_id": null
+                                                                      },
+                                                                      "declaration_id": null
+                                                                    },
+                                                                    "child": {
+                                                                      "rank": 12,
+                                                                      "terminal": null,
+                                                                      "edges": [
+                                                                        {
+                                                                          "choice": {
+                                                                            "kind": "ACTION",
+                                                                            "action": {
+                                                                              "kind": "board",
+                                                                              "from": [
+                                                                                3,
+                                                                                3
+                                                                              ],
+                                                                              "to": [
+                                                                                3,
+                                                                                2
+                                                                              ],
+                                                                              "promotion_target_id": null
+                                                                            },
+                                                                            "declaration_id": null
+                                                                          },
+                                                                          "child": {
+                                                                            "rank": 11,
+                                                                            "terminal": null,
+                                                                            "edges": [
+                                                                              {
+                                                                                "choice": {
+                                                                                  "kind": "ACTION",
+                                                                                  "action": {
+                                                                                    "kind": "board",
+                                                                                    "from": [
+                                                                                      0,
+                                                                                      0
+                                                                                    ],
+                                                                                    "to": [
+                                                                                      1,
+                                                                                      0
+                                                                                    ],
+                                                                                    "promotion_target_id": null
+                                                                                  },
+                                                                                  "declaration_id": null
+                                                                                },
+                                                                                "child": {
+                                                                                  "rank": 10,
+                                                                                  "terminal": null,
+                                                                                  "edges": [
+                                                                                    {
+                                                                                      "choice": {
+                                                                                        "kind": "ACTION",
+                                                                                        "action": {
+                                                                                          "kind": "board",
+                                                                                          "from": [
+                                                                                            3,
+                                                                                            2
+                                                                                          ],
+                                                                                          "to": [
+                                                                                            3,
+                                                                                            3
+                                                                                          ],
+                                                                                          "promotion_target_id": null
+                                                                                        },
+                                                                                        "declaration_id": null
+                                                                                      },
+                                                                                      "child": {
+                                                                                        "rank": 9,
+                                                                                        "terminal": null,
+                                                                                        "edges": [
+                                                                                          {
+                                                                                            "choice": {
+                                                                                              "kind": "ACTION",
+                                                                                              "action": {
+                                                                                                "kind": "board",
+                                                                                                "from": [
+                                                                                                  1,
+                                                                                                  0
+                                                                                                ],
+                                                                                                "to": [
+                                                                                                  0,
+                                                                                                  1
+                                                                                                ],
+                                                                                                "promotion_target_id": null
+                                                                                              },
+                                                                                              "declaration_id": null
+                                                                                            },
+                                                                                            "child": {
+                                                                                              "rank": 8,
+                                                                                              "terminal": null,
+                                                                                              "edges": [
+                                                                                                {
+                                                                                                  "choice": {
+                                                                                                    "kind": "ACTION",
+                                                                                                    "action": {
+                                                                                                      "kind": "board",
+                                                                                                      "from": [
+                                                                                                        3,
+                                                                                                        3
+                                                                                                      ],
+                                                                                                      "to": [
+                                                                                                        3,
+                                                                                                        2
+                                                                                                      ],
+                                                                                                      "promotion_target_id": null
+                                                                                                    },
+                                                                                                    "declaration_id": null
+                                                                                                  },
+                                                                                                  "child": {
+                                                                                                    "rank": 7,
+                                                                                                    "terminal": null,
+                                                                                                    "edges": [
+                                                                                                      {
+                                                                                                        "choice": {
+                                                                                                          "kind": "ACTION",
+                                                                                                          "action": {
+                                                                                                            "kind": "board",
+                                                                                                            "from": [
+                                                                                                              0,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "to": [
+                                                                                                              1,
+                                                                                                              1
+                                                                                                            ],
+                                                                                                            "promotion_target_id": null
+                                                                                                          },
+                                                                                                          "declaration_id": null
+                                                                                                        },
+                                                                                                        "child": {
+                                                                                                          "rank": 6,
+                                                                                                          "terminal": null,
+                                                                                                          "edges": [
+                                                                                                            {
+                                                                                                              "choice": {
+                                                                                                                "kind": "ACTION",
+                                                                                                                "action": {
+                                                                                                                  "kind": "board",
+                                                                                                                  "from": [
+                                                                                                                    3,
+                                                                                                                    2
+                                                                                                                  ],
+                                                                                                                  "to": [
+                                                                                                                    3,
+                                                                                                                    3
+                                                                                                                  ],
+                                                                                                                  "promotion_target_id": null
+                                                                                                                },
+                                                                                                                "declaration_id": null
+                                                                                                              },
+                                                                                                              "child": {
+                                                                                                                "rank": 5,
+                                                                                                                "terminal": null,
+                                                                                                                "edges": [
+                                                                                                                  {
+                                                                                                                    "choice": {
+                                                                                                                      "kind": "ACTION",
+                                                                                                                      "action": {
+                                                                                                                        "kind": "board",
+                                                                                                                        "from": [
+                                                                                                                          1,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "to": [
+                                                                                                                          0,
+                                                                                                                          1
+                                                                                                                        ],
+                                                                                                                        "promotion_target_id": null
+                                                                                                                      },
+                                                                                                                      "declaration_id": null
+                                                                                                                    },
+                                                                                                                    "child": {
+                                                                                                                      "rank": 4,
+                                                                                                                      "terminal": null,
+                                                                                                                      "edges": [
+                                                                                                                        {
+                                                                                                                          "choice": {
+                                                                                                                            "kind": "ACTION",
+                                                                                                                            "action": {
+                                                                                                                              "kind": "board",
+                                                                                                                              "from": [
+                                                                                                                                3,
+                                                                                                                                3
+                                                                                                                              ],
+                                                                                                                              "to": [
+                                                                                                                                3,
+                                                                                                                                2
+                                                                                                                              ],
+                                                                                                                              "promotion_target_id": null
+                                                                                                                            },
+                                                                                                                            "declaration_id": null
+                                                                                                                          },
+                                                                                                                          "child": {
+                                                                                                                            "rank": 3,
+                                                                                                                            "terminal": null,
+                                                                                                                            "edges": [
+                                                                                                                              {
+                                                                                                                                "choice": {
+                                                                                                                                  "kind": "ACTION",
+                                                                                                                                  "action": {
+                                                                                                                                    "kind": "board",
+                                                                                                                                    "from": [
+                                                                                                                                      0,
+                                                                                                                                      1
+                                                                                                                                    ],
+                                                                                                                                    "to": [
+                                                                                                                                      1,
+                                                                                                                                      2
+                                                                                                                                    ],
+                                                                                                                                    "promotion_target_id": null
+                                                                                                                                  },
+                                                                                                                                  "declaration_id": null
+                                                                                                                                },
+                                                                                                                                "child": {
+                                                                                                                                  "rank": 2,
+                                                                                                                                  "terminal": null,
+                                                                                                                                  "edges": [
+                                                                                                                                    {
+                                                                                                                                      "choice": {
+                                                                                                                                        "kind": "ACTION",
+                                                                                                                                        "action": {
+                                                                                                                                          "kind": "board",
+                                                                                                                                          "from": [
+                                                                                                                                            3,
+                                                                                                                                            2
+                                                                                                                                          ],
+                                                                                                                                          "to": [
+                                                                                                                                            3,
+                                                                                                                                            3
+                                                                                                                                          ],
+                                                                                                                                          "promotion_target_id": null
+                                                                                                                                        },
+                                                                                                                                        "declaration_id": null
+                                                                                                                                      },
+                                                                                                                                      "child": {
+                                                                                                                                        "rank": 1,
+                                                                                                                                        "terminal": null,
+                                                                                                                                        "edges": [
+                                                                                                                                          {
+                                                                                                                                            "choice": {
+                                                                                                                                              "kind": "ACTION",
+                                                                                                                                              "action": {
+                                                                                                                                                "kind": "board",
+                                                                                                                                                "from": [
+                                                                                                                                                  2,
+                                                                                                                                                  1
+                                                                                                                                                ],
+                                                                                                                                                "to": [
+                                                                                                                                                  3,
+                                                                                                                                                  1
+                                                                                                                                                ],
+                                                                                                                                                "promotion_target_id": null
+                                                                                                                                              },
+                                                                                                                                              "declaration_id": null
+                                                                                                                                            },
+                                                                                                                                            "child": {
+                                                                                                                                              "rank": 0,
+                                                                                                                                              "terminal": {
+                                                                                                                                                "status": "checkmate",
+                                                                                                                                                "winner": 0,
+                                                                                                                                                "resigned_by": null,
+                                                                                                                                                "declaration_id": null,
+                                                                                                                                                "declared_by": null,
+                                                                                                                                                "declaration_outcome": null,
+                                                                                                                                                "declaration_score": null
+                                                                                                                                              },
+                                                                                                                                              "edges": []
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        ]
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  ]
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      ]
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        }
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "original_certificate_sha": "a16a5c4d45aa4d94ba68648752de655bdd747dd87cff0cb208524abba12e67b4",
+  "scope": "Reconstructed once from fixed existing2046 positive control, same1024budget/exact certificate SHA; not a newly selected game or reward. Typed public proof tree, no private state pickle."
+}

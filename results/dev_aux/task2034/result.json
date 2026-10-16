@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2030",
+    "games": 64,
+    "moves": 3651,
+    "actual_native": 3494,
+    "proof_games": 29,
+    "proof_steps": 29,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 64,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "max_ply": 28,
+      "checkmate": 29,
+      "repetition": 6,
+      "stalemate": 1
+    },
+    "exit_causes": {
+      "reported_node_overrun": 2935,
+      "external_search_return": 508,
+      "certificate": 157,
+      "time_budget": 51
+    },
+    "node_overruns": 2938,
+    "phase_seconds": {
+      "admission_seconds": 16.851159300509607,
+      "proof_seconds": 97.89084160025232,
+      "verification_seconds": 1.460246400005417,
+      "normal_seconds": 101.11719059990719
+    },
+    "proof_work": {
+      "frontiers": 224236,
+      "transitions": 1210852,
+      "iterations": 224236,
+      "eager_board_successors": 1244252,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 3494,
+    "selection_scope": "NONE: fixedfourprofiles/8families/bothroles/fixedfoe720,720. Descriptive pairedgain/interaction, no equivalencemargin/stabilityclaim.",
+    "actual_max_proof_depth": 45,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "outcomes": {
+    "0": {
+      "DRAW": 9,
+      "LOSS": 4,
+      "WIN": 3
+    },
+    "1": {
+      "DRAW": 8,
+      "WIN": 6,
+      "LOSS": 2
+    },
+    "2": {
+      "DRAW": 10,
+      "WIN": 3,
+      "LOSS": 3
+    },
+    "3": {
+      "DRAW": 8,
+      "WIN": 6,
+      "LOSS": 2
+    }
+  },
+  "transitions": {
+    "(0, 1)": {
+      "DRAW->DRAW": 6,
+      "DRAW->WIN": 3,
+      "LOSS->DRAW": 2,
+      "WIN->WIN": 3,
+      "LOSS->LOSS": 2
+    },
+    "(2, 3)": {
+      "DRAW->DRAW": 7,
+      "DRAW->WIN": 3,
+      "WIN->WIN": 3,
+      "LOSS->LOSS": 2,
+      "LOSS->DRAW": 1
+    }
+  },
+  "families": [
+    {
+      "family": 0,
+      "delta360": 0.5,
+      "delta720": 0.5,
+      "interaction": 0.0
+    },
+    {
+      "family": 1,
+      "delta360": 0.5,
+      "delta720": 0,
+      "interaction": 0.5
+    },
+    {
+      "family": 2,
+      "delta360": 0,
+      "delta720": 0,
+      "interaction": 0
+    },
+    {
+      "family": 3,
+      "delta360": 0,
+      "delta720": 0,
+      "interaction": 0
+    },
+    {
+      "family": 4,
+      "delta360": 0.5,
+      "delta720": 0.5,
+      "interaction": 0.0
+    },
+    {
+      "family": 5,
+      "delta360": 0,
+      "delta720": 0.5,
+      "interaction": -0.5
+    },
+    {
+      "family": 6,
+      "delta360": 0.5,
+      "delta720": 0.5,
+      "interaction": 0.0
+    },
+    {
+      "family": 7,
+      "delta360": 0.5,
+      "delta720": 0,
+      "interaction": 0.5
+    }
+  ],
+  "summary": {
+    "delta360": {
+      "mean": 0.3125,
+      "percentile95": [
+        0.125,
+        0.4375
+      ],
+      "nonzero_families": 5
+    },
+    "delta720": {
+      "mean": 0.25,
+      "percentile95": [
+        0.0625,
+        0.4375
+      ],
+      "nonzero_families": 4
+    },
+    "interaction": {
+      "mean": 0.0625,
+      "percentile95": [
+        -0.125,
+        0.25
+      ],
+      "nonzero_families": 3
+    }
+  },
+  "planned": 64,
+  "observed": 64,
+  "unrun": [],
+  "qualification": 32,
+  "interpretation": "Descriptive ONLY. No equivalence margin: interval containing zero does not establish unit invariance. Eight families, fixed opponent, finite rule max96, modified material search. No selector or new Native/proof execution in audit."
+}

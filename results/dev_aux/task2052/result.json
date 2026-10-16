@@ -1,0 +1,44 @@
+{
+  "status": "COMPLETE",
+  "queries": 192,
+  "planned": 192,
+  "unrun": [],
+  "summary": {
+    "1024": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 65536,
+      "seconds": 3.873307500005467,
+      "reasons": {
+        "node_budget": 64
+      }
+    },
+    "4096": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 247819,
+      "seconds": 14.837493300059577,
+      "reasons": {
+        "node_budget": 58,
+        "no_forced_win_in_exhausted_tree": 6
+      }
+    },
+    "16384": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 931796,
+      "seconds": 59.82519329988281,
+      "reasons": {
+        "node_budget": 53,
+        "no_forced_win_in_exhausted_tree": 11
+      }
+    }
+  },
+  "verified_winning_families": [],
+  "seconds": 79.48607899999479,
+  "original_cap": 600,
+  "new_Native_calls": 0,
+  "new_reward_games": 0,
+  "scope": "Existing EXPOSED TRAIN/DEV roots, diagnostic only; no price/rootselection, actualrootrecord unchanged, target argument not forged side-to-move. PROVED_WIN only after full independent verification; all budget/depth/failed verification remain UNKNOWN. No inference DRAW from inability to prove, no new rewardgames or humanfit.",
+  "inference": "Verified rootWIN despite all-draw play would demonstrate a conversion/search gap for that exposed root. Low coverage only diagnoses this bounded solver/teacher feasibility; it cannot prove initial draws or impossibility of piece-value learning. Not a newpriceevaluation."
+}

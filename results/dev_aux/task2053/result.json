@@ -1,0 +1,44 @@
+{
+  "status": "PASS_FROZEN_PROOF_COVERAGE_RECEIPTS",
+  "queries": 192,
+  "planned": 192,
+  "complete": true,
+  "unrun": [],
+  "label_counts": {
+    "UNKNOWN": 192
+  },
+  "per_budget": {
+    "1024": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 65536,
+      "seconds": 3.873307500005467,
+      "reasons": {
+        "node_budget": 64
+      }
+    },
+    "4096": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 247819,
+      "seconds": 14.837493300059577,
+      "reasons": {
+        "node_budget": 58,
+        "no_forced_win_in_exhausted_tree": 6
+      }
+    },
+    "16384": {
+      "calls": 64,
+      "proved": 0,
+      "nodes": 931796,
+      "seconds": 59.82519329988281,
+      "reasons": {
+        "node_budget": 53,
+        "no_forced_win_in_exhausted_tree": 11
+      }
+    }
+  },
+  "verified_samples": [],
+  "new_PN_or_Native_calls": 0,
+  "scope": "Exposed-root diagnostic, not fresh valuevalidation. UNKNOWN remains unknown. Any supplied samples reverified through exact full-history GameSession; none exist if no proof succeeds; all receipt/call metadata bound to frozen source, no new proofs or stronger labels duringaudit."
+}

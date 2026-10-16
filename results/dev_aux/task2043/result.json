@@ -1,0 +1,1874 @@
+{
+  "status": "PASS_DESCRIPTIVE_COST_AND_IRREVERSIBLE_NOWIN_ENTRY",
+  "cohorts": {
+    "task2020": {
+      "steps": 6894,
+      "KK_or_singleN_steps": 2379,
+      "PN_nodes": 5005342,
+      "scoped_PN_nodes": 1806449,
+      "PN_seconds": 357.20039360102965,
+      "scoped_PN_seconds": 131.31951419994584,
+      "PN_seconds_fraction": 0.3676354129290839,
+      "inventory_steps": {
+        "BKNRbknr": 314,
+        "BKNRknr": 34,
+        "KNRknr": 11,
+        "KNRkr": 44,
+        "KNRk": 42,
+        "KRk": 557,
+        "KNRkn": 1,
+        "KNkn": 1,
+        "KNk": 1184,
+        "BKRknr": 23,
+        "BKRkn": 13,
+        "KRkn": 385,
+        "KNkr": 3,
+        "BKNRbkr": 188,
+        "BKRbkr": 30,
+        "KRbkr": 5,
+        "KRbk": 143,
+        "Kbk": 73,
+        "Kk": 1195,
+        "KNRbkr": 10,
+        "KNRbk": 168,
+        "KNbk": 467,
+        "BKRk": 84,
+        "BKNRkn": 2,
+        "BKNRk": 30,
+        "BKNRkr": 24,
+        "BKNRbkn": 10,
+        "BKNbkn": 3,
+        "BKNkn": 8,
+        "BKNk": 55,
+        "BKRkr": 213,
+        "KRkr": 3,
+        "BKRbkn": 6,
+        "BKRbk": 9,
+        "KNRbknr": 1,
+        "KNbkr": 1,
+        "BKRbknr": 5,
+        "BKkr": 31,
+        "BKk": 969,
+        "KNRbkn": 1,
+        "BKNRbk": 65,
+        "BKNbkr": 50,
+        "BKNkr": 129,
+        "Kkr": 22,
+        "BKNbk": 130,
+        "BKbk": 152
+      },
+      "compiled_execution_differences": [
+        "piece_types",
+        "types_by_id",
+        "leap_targets",
+        "ray_paths",
+        "empty_mobility",
+        "empty_forward_mobility",
+        "drop_allowed"
+      ],
+      "filter_adopted": false,
+      "fresh_KK_N_B_noWIN_steps": 3421,
+      "fresh_KK_N_B_PN_seconds": 182.84142239997163,
+      "fresh_noWIN_entry_games": [
+        {
+          "slot": 1,
+          "phase": "TRAIN",
+          "entry_ply": 19,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 77
+        },
+        {
+          "slot": 7,
+          "phase": "TRAIN",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 18,
+          "phase": "TRAIN",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 19,
+          "phase": "TRAIN",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 85
+        },
+        {
+          "slot": 20,
+          "phase": "TRAIN",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 21,
+          "phase": "TRAIN",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 22,
+          "phase": "TRAIN",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 23,
+          "phase": "TRAIN",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 34,
+          "phase": "TRAIN",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 42,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 44,
+          "phase": "TRAIN",
+          "entry_ply": 36,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 60
+        },
+        {
+          "slot": 45,
+          "phase": "TRAIN",
+          "entry_ply": 36,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 60
+        },
+        {
+          "slot": 47,
+          "phase": "TRAIN",
+          "entry_ply": 36,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 60
+        },
+        {
+          "slot": 57,
+          "phase": "DEV",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 88
+        },
+        {
+          "slot": 59,
+          "phase": "DEV",
+          "entry_ply": 21,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 75
+        },
+        {
+          "slot": 84,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 85,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 88,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 89,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 90,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 91,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 92,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 93,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 94,
+          "phase": "DEV",
+          "entry_ply": 81,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 15
+        },
+        {
+          "slot": 98,
+          "phase": "DEV",
+          "entry_ply": 16,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 80
+        },
+        {
+          "slot": 101,
+          "phase": "DEV",
+          "entry_ply": 16,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 80
+        },
+        {
+          "slot": 104,
+          "phase": "DEV",
+          "entry_ply": 30,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 66
+        },
+        {
+          "slot": 109,
+          "phase": "DEV",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 110,
+          "phase": "DEV",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 111,
+          "phase": "DEV",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 112,
+          "phase": "DEV",
+          "entry_ply": 21,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 75
+        },
+        {
+          "slot": 113,
+          "phase": "DEV",
+          "entry_ply": 21,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 75
+        },
+        {
+          "slot": 114,
+          "phase": "DEV",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 117,
+          "phase": "DEV",
+          "entry_ply": 19,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 77
+        },
+        {
+          "slot": 118,
+          "phase": "DEV",
+          "entry_ply": 16,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 80
+        },
+        {
+          "slot": 119,
+          "phase": "DEV",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 120,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 48
+        },
+        {
+          "slot": 121,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 48
+        },
+        {
+          "slot": 122,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 42
+        },
+        {
+          "slot": 125,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 42
+        },
+        {
+          "slot": 126,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 127,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 129,
+          "phase": "DEV",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 130,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 131,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        }
+      ]
+    },
+    "task2037": {
+      "steps": 23068,
+      "KK_or_singleN_steps": 10929,
+      "PN_nodes": 17865141,
+      "scoped_PN_nodes": 8364200,
+      "PN_seconds": 1303.9841103989747,
+      "scoped_PN_seconds": 611.9376150995668,
+      "PN_seconds_fraction": 0.469283030536572,
+      "inventory_steps": {
+        "BKNbkn": 294,
+        "BKNbk": 510,
+        "BKNk": 369,
+        "BKbk": 688,
+        "BKk": 6267,
+        "KNbk": 1370,
+        "KNk": 5347,
+        "BKNkn": 468,
+        "BKkn": 1790,
+        "Kbk": 25,
+        "Kk": 5482,
+        "KNkn": 352,
+        "Kkn": 100,
+        "BKbkn": 6
+      },
+      "compiled_execution_differences": [
+        "piece_types",
+        "types_by_id",
+        "leap_targets",
+        "ray_paths",
+        "empty_mobility",
+        "empty_forward_mobility",
+        "drop_allowed"
+      ],
+      "filter_adopted": false,
+      "fresh_KK_N_B_noWIN_steps": 17221,
+      "fresh_KK_N_B_PN_seconds": 925.2829096993955,
+      "fresh_noWIN_entry_games": [
+        {
+          "slot": 1,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 2,
+          "phase": "TRAIN",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 85
+        },
+        {
+          "slot": 3,
+          "phase": "TRAIN",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 85
+        },
+        {
+          "slot": 5,
+          "phase": "TRAIN",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 85
+        },
+        {
+          "slot": 6,
+          "phase": "TRAIN",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 7,
+          "phase": "TRAIN",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 8,
+          "phase": "TRAIN",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 9,
+          "phase": "TRAIN",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 10,
+          "phase": "TRAIN",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 11,
+          "phase": "TRAIN",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 13,
+          "phase": "TRAIN",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 14,
+          "phase": "TRAIN",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 15,
+          "phase": "TRAIN",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 16,
+          "phase": "TRAIN",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 17,
+          "phase": "TRAIN",
+          "entry_ply": 82,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 14
+        },
+        {
+          "slot": 19,
+          "phase": "TRAIN",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 20,
+          "phase": "TRAIN",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 21,
+          "phase": "TRAIN",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 30,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 31,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 32,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 33,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 35,
+          "phase": "TRAIN",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 71
+        },
+        {
+          "slot": 36,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 58
+        },
+        {
+          "slot": 37,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 58
+        },
+        {
+          "slot": 38,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 58
+        },
+        {
+          "slot": 39,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 58
+        },
+        {
+          "slot": 41,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 58
+        },
+        {
+          "slot": 42,
+          "phase": "TRAIN",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 43,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 44,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 45,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 46,
+          "phase": "TRAIN",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 47,
+          "phase": "TRAIN",
+          "entry_ply": 17,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 79
+        },
+        {
+          "slot": 48,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 49,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 50,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 51,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 52,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 53,
+          "phase": "TRAIN",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 54,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 55,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 56,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 57,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 58,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 59,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 61,
+          "phase": "TRAIN",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 88
+        },
+        {
+          "slot": 62,
+          "phase": "TRAIN",
+          "entry_ply": 21,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 33
+        },
+        {
+          "slot": 63,
+          "phase": "TRAIN",
+          "entry_ply": 21,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 33
+        },
+        {
+          "slot": 64,
+          "phase": "TRAIN",
+          "entry_ply": 17,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 79
+        },
+        {
+          "slot": 66,
+          "phase": "TRAIN",
+          "entry_ply": 7,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 89
+        },
+        {
+          "slot": 67,
+          "phase": "TRAIN",
+          "entry_ply": 87,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 9
+        },
+        {
+          "slot": 68,
+          "phase": "TRAIN",
+          "entry_ply": 24,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 72
+        },
+        {
+          "slot": 69,
+          "phase": "TRAIN",
+          "entry_ply": 24,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 72
+        },
+        {
+          "slot": 71,
+          "phase": "TRAIN",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 72,
+          "phase": "TRAIN",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 74,
+          "phase": "TRAIN",
+          "entry_ply": 23,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 73
+        },
+        {
+          "slot": 75,
+          "phase": "TRAIN",
+          "entry_ply": 23,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 73
+        },
+        {
+          "slot": 77,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 71
+        },
+        {
+          "slot": 78,
+          "phase": "TRAIN",
+          "entry_ply": 88,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 8
+        },
+        {
+          "slot": 84,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 85,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 86,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 87,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 88,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 89,
+          "phase": "TRAIN",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 90,
+          "phase": "TRAIN",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 92,
+          "phase": "TRAIN",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 93,
+          "phase": "TRAIN",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 95,
+          "phase": "TRAIN",
+          "entry_ply": 17,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 66
+        },
+        {
+          "slot": 109,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 110,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 111,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 114,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 118,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 120,
+          "phase": "DEV",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 88
+        },
+        {
+          "slot": 121,
+          "phase": "DEV",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 88
+        },
+        {
+          "slot": 122,
+          "phase": "DEV",
+          "entry_ply": 37,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 59
+        },
+        {
+          "slot": 123,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 124,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 125,
+          "phase": "DEV",
+          "entry_ply": 37,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 59
+        },
+        {
+          "slot": 126,
+          "phase": "DEV",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 76
+        },
+        {
+          "slot": 127,
+          "phase": "DEV",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 76
+        },
+        {
+          "slot": 128,
+          "phase": "DEV",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 88
+        },
+        {
+          "slot": 129,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 130,
+          "phase": "DEV",
+          "entry_ply": 19,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 77
+        },
+        {
+          "slot": 131,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 132,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 133,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 134,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 135,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 136,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 137,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 138,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 139,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 140,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 141,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 142,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 143,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 144,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 145,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 146,
+          "phase": "DEV",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 76
+        },
+        {
+          "slot": 147,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 148,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 149,
+          "phase": "DEV",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 76
+        },
+        {
+          "slot": 150,
+          "phase": "DEV",
+          "entry_ply": 14,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 82
+        },
+        {
+          "slot": 151,
+          "phase": "DEV",
+          "entry_ply": 14,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 82
+        },
+        {
+          "slot": 152,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 153,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 154,
+          "phase": "DEV",
+          "entry_ply": 24,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 72
+        },
+        {
+          "slot": 155,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 168,
+          "phase": "DEV",
+          "entry_ply": 24,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 72
+        },
+        {
+          "slot": 169,
+          "phase": "DEV",
+          "entry_ply": 24,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 72
+        },
+        {
+          "slot": 170,
+          "phase": "DEV",
+          "entry_ply": 39,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 57
+        },
+        {
+          "slot": 173,
+          "phase": "DEV",
+          "entry_ply": 39,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 57
+        },
+        {
+          "slot": 176,
+          "phase": "DEV",
+          "entry_ply": 81,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 15
+        },
+        {
+          "slot": 184,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 185,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 188,
+          "phase": "DEV",
+          "entry_ply": 8,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 71
+        },
+        {
+          "slot": 189,
+          "phase": "DEV",
+          "entry_ply": 20,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 76
+        },
+        {
+          "slot": 190,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 192,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 193,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 194,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 195,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 196,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 197,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 198,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 199,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 200,
+          "phase": "DEV",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 202,
+          "phase": "DEV",
+          "entry_ply": 9,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 87
+        },
+        {
+          "slot": 203,
+          "phase": "DEV",
+          "entry_ply": 12,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 84
+        },
+        {
+          "slot": 204,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 205,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 206,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 207,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 208,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 209,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 210,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 211,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 212,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 213,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 214,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 215,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 216,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 217,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 219,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 220,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 222,
+          "phase": "DEV",
+          "entry_ply": 34,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 62
+        },
+        {
+          "slot": 223,
+          "phase": "DEV",
+          "entry_ply": 34,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 62
+        },
+        {
+          "slot": 228,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 229,
+          "phase": "DEV",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 230,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 231,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 232,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 233,
+          "phase": "DEV",
+          "entry_ply": 43,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 53
+        },
+        {
+          "slot": 234,
+          "phase": "DEV",
+          "entry_ply": 10,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 86
+        },
+        {
+          "slot": 235,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 236,
+          "phase": "DEV",
+          "entry_ply": 89,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 7
+        },
+        {
+          "slot": 237,
+          "phase": "DEV",
+          "entry_ply": 13,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 83
+        },
+        {
+          "slot": 238,
+          "phase": "DEV",
+          "entry_ply": 17,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 79
+        },
+        {
+          "slot": 239,
+          "phase": "DEV",
+          "entry_ply": 5,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 91
+        },
+        {
+          "slot": 240,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 241,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 243,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 244,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 246,
+          "phase": "DEV",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 68
+        },
+        {
+          "slot": 247,
+          "phase": "DEV",
+          "entry_ply": 11,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 68
+        },
+        {
+          "slot": 248,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 250,
+          "phase": "DEV",
+          "entry_ply": 15,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 68
+        },
+        {
+          "slot": 252,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 253,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 254,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 255,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 256,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 257,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 258,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 259,
+          "phase": "DEV",
+          "entry_ply": 4,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 92
+        },
+        {
+          "slot": 260,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 261,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 262,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 263,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 264,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 265,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 266,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 267,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 268,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 269,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 270,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 271,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 272,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 273,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 274,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 275,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 276,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 277,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 278,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 279,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 280,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 281,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 282,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 283,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        },
+        {
+          "slot": 284,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 285,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 286,
+          "phase": "DEV",
+          "entry_ply": 6,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 90
+        },
+        {
+          "slot": 287,
+          "phase": "DEV",
+          "entry_ply": 3,
+          "outcome": "DRAW",
+          "remaining_physical_plies": 93
+        }
+      ]
+    }
+  },
+  "hypothesis": "Original KKN projection hypothesis preserved below; extended with freshly proven2044 KK/N/B eligibility and irreversible noWIN entry. Under complete remove-only rules with no mechanism to create absent types, an independently verified restricted-inventory semantic projection might reuse KK/KKN noWIN proof. Current exact whole-compiler gate correctly rejects extraB. No general unused-type projection implemented; fresh actualKRNB census removes the relevant ambiguity for these exact classes only.",
+  "scope": "Actual spent PN work is only an optimistic cost ceiling. Old KRN compiler differences block old-census adoption. Fresh2044qualification used for entry audit only; initialization/replay costs still count. No6boardtransfer, WDL reward change or new Native/proof/census execution. Future work justified only if saving meaningful and projection sound."
+}

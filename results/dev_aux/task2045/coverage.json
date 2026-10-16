@@ -1,0 +1,30 @@
+{
+  "status": "PASS_COMPLETE_INPUT_COVERAGE_AND_ORIGINAL_CORE_EDGE_CENSUS",
+  "correct_syntactic": 40800,
+  "syntactic_by_inventory": {
+    "KK": 480,
+    "KKN": 13440,
+    "KKB": 13440,
+    "KKR": 13440
+  },
+  "admissible_by_inventory": {
+    "KK": 312,
+    "KKN": 7936,
+    "KKB": 7736,
+    "KKR": 6992
+  },
+  "actual_legal_edges": 104128,
+  "winning_terminals": {
+    "KK": 0,
+    "KKN": 0,
+    "KKB": 0,
+    "KKR": 80
+  },
+  "records_sha": "1153f311ab401b0642fecd7f9f7b7f232713117f282e3c22de90fb74246df9a4",
+  "no_win_inventories": [
+    "KK",
+    "KKN",
+    "KKB"
+  ],
+  "scope": "Fresh actual KRNB4 Core census, complete literal-input coverage and every edge inventory closure independently checked. No old4KRN transfer, no6board evidence, no reward/game/policy change."
+}

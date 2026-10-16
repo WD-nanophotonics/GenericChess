@@ -1,46 +1,48 @@
-# DEV_AUX current mainline — segment68,2026-10-16
+# DEV_AUX current mainline — segment69,2026-10-16
 
-Science OPEN; own sidemission/PRIMARY read-only/PUBLIC. Current decisions and
-reasons in AGENTS.md; checkedprojectpublication authorized, sensitive originals
-ignored. No product/default/UI/otherproject changes or additional Agent/Goal.
+Science OPEN; own sidemission/PRIMARY read-only/PUBLIC. Current grants and
+causal boundaries: AGENTS.md. Exact sensitive originals ignored; checked
+project publication authorized. No extra Agent/Goal/default/UI/visibility changes.
 
-Decision/reason: coarse actual-terminal learning gives independent local R>N
-support: TRAIN128games397.96s choosesR/N4; new16familycrossedDEV gain31/128
-CI[.109375,.3828125], UNIT34W42L52D vs50W27L51D. Prior3.5 sameaggregate; exact
-price unidentifiable, nothuman/fullChess values. Complete512games1968.68s,
-allrealmax96/repetition/stalemate/checkmate;0UNKNOWN/0outerlate. FixedcommonPN1K
-bothactors/coldbanks/normal4096, UNKNOWN-onlynoWINskip neverrewardreplacement.
-Retain67old13point/censoredhorizons/allcaps; newcomplete-WL route replacesmore
-precision on that grid, not rewritingoldresults orclaimingmoreindependentfamilies.
+Decision/reason: keep local R>N support but not exact/universal ratios. Fresh
+64game fixedopponent unitcheck gains R4vs1 .3125 atN360/.25 atN720; no equivalence
+margin, interaction CI0 is not invariance. All16R4unit-paired outcomes match
+despite9trajectoryforks. Actualfullrulemax96/coldPN1K/normal4096 remains scope.
 
-B8TRAIN8DEV/144games667.87s is negative/imprecise: TRAIN.5 score1vs0/0, DEV
--2/48CI[-.1875,.0625]. Sixboardqualification48perft+48go64 and32fixeddiagnostic
-356.25s work, but26DRAW/only6decisive; B2vs1-4/16 on8exposedfamilies is exploratory,
-notlearning orfreshvalidation. No4censustransfer/nativegenerateddomainclaim.
+R-free simplification failed informativeness: 96TRAIN only1nonflatfamily,
+selectedB.5 by1point; ALL192DEV games DRAW, though60/96paired trajectories differ.
+Do not expand this same weak-label distribution or call zeroCI priceequivalence.
+192exposedroot PN1K/4K/16Kcalls prove0verifiedwins, allUNKNOWN; notrootdraw
+classification or evidence that larger proofbudget cheaply solves the issue.
+Preserve earlier68completeR>N/Bnegative and all oldpartialcaps/failures.
 
-NextMainACTUALLYBEGUN2029:8freshpricefreeKRN4inputs/228draws,0Nativefitness;
-64fixedgames ratio1vs4 atN360/720 withsamefixedR720/N720opponent.32perfts/source
-freeze beforefitness, expected379.91s/one600cap. Testunitrobust true-WL benefit,
-notchooseunits fromDEV orfinefit/humanprices. Older1866showedunit-action changes,
-notthisoutcomeeffect. Input/cohortcondition/futurecap frozen beforedraw.
+Fresh actualKRNB finitecensus:40800syntactic/22976admissible/104128edges;
+closedKK/N/BnoWIN,R80positivewinningterminals. Exactcompiled/fullrecord scope.
+Candidate-only fixedopponent32game control:16/16sameactions/outcomes, sameNative
+nodes; candidatePN521372->78485, game130.09->100.91s. Adopt optional proofcost
+optimization only in qualified future protocols; UNKNOWN neverDRAW/reward.
+No6board/generalunused-type transfer or universalpolicy-equivalence claim.
+Portable typed proof tree71edges/fouractualWINleaves, missingdefenserejected.
 
-All688games/35304moves/32516Nativebindings/401proof-adoptingactualwins/6tests
-source-onlyrestore PASS; source658/evidence79/support1payloads CRC/SHA. First
-basenamecollection thenoneoldplan dependency failures retained; importlibmode/
-thirdnewdirectory/onefileexactpublicsupport repair, noassertion/source/result
-changes ornewfitness. RawSlack/account originals remainignored. Zero-return
-NOTADOPTED; realNone/cancel staysUNKNOWN/unscored/selectorblocked, legalfirst
-control14moves actualDRAW doesnotprovearbitraryexecutorliveness.
-PRIMARY1ee2b4798c5f0c4b97a4ae608d0b68a10c05a452 message-read-only: ownprototype
-notadopted/mixedgames; reportsAUX67reportread/noexecution. No code adoption or
-unitpooling/crosswrites. Evidence SEGMENT_20261016_68.md, tasks2016-2032.
+NEXT ACTUALLYBEGUN2054:16NEWmating-capableKRNB roots,8TRAIN8DEV,0Native/proof/games.
+TwofixedRanchors1260/priorTRAIN2880 xB360/720/1440; fixedfoeR1260/N720 and
+specifiedB, separateBselector/contrast withinR, notselectRfromDEV. Next2055
+buildsource/6profileACK/96perfts; proposed96TRAIN/max192DEV, forecast2524.34s/
+one3300cap includingqualification. Changed cooperation premise; nohumanfit.
+Late2054directGit afterimmutableclosed-studycapsules, notpartof384game replay.
 
+384newactualgames/29479moves/29196Nativebindings/40proof-adoptingwins plus
+5tests/newdirectorysource-onlyrestore PASS; no newNative/proof inrestore.
+APIreadonly/testassertion failures retained/fixed. Proof192UNKNOWN is distinct
+from0incompleteactualgames. Source/evidence700+178payloadsCRC/SHAchecked.
+PRIMARY owner1792117734.628889 fixed5fe6baad54c8cb2efa5b7772658b77254f94a260
+message-read-only, no code/test/game/learner execution/adoption/unitpool. CHAT
+roots1792117966.727689/1792118043.431309 referenceonly, raw fullthreads privately
+saved beforeassessment; futureteacher/transfer retained below, notnewauthority.
+Evidence SEGMENT_20261016_69.md/tasks2030-2054.
 
-Closing68 Dot1792114603.597839 SOURCE_READ e525report/freeze only, no future
-implementation/perft/gameexecution. Adopt inference correction: no equivalence
-margin, so nextunitcheck descriptiveonly; CIcontains0 isnotstability andtwozero
-gains isnotbenefitreplication. AddedPRE-FITNESS execution-interpretation.json
-keepsoriginalinputs/prices/opponent/caps unchanged, freezes balancedprofile/role
-order andpairedfamilygain/interaction intervals, allmissing/censoredslots retained.
-No extra games/worker/ackloop. This lateclarification isdirectGit, notsilently
-rewritten intoimmutable source/evidencecapsules. Rawreplyignored/private.
+## Future reference — revisable, not current work orders
+
+[Small-rule teacher and value identification](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689): compare fixed material, simple king-relative tables and small NN only under a credible shared teacher, full supported state/history and total cost. Keep exact/proved-bound/approximate/unknown labels separate from actual fixed-policy game outcomes. A proved noWIN fragment alone supplies no diverse piece-price signal. No immediate NN training or declaration that scalar values failed.
+
+[Generic architecture and nearby-rule transfer](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309): future choices may combine rule-derived evaluation, search and executable solver. Measure zero-shot, fine-tuning/from-scratch and forgetting costs across one controlled rule change at a time; do not assume a universal difficulty order or preserved local tactics. Promotion/drop/aux/history remain explicit. Retained as CHAT reference, not hard AGENTS rules, new framework or current frozen-study changes.

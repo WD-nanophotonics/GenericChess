@@ -261,32 +261,36 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment68
+# DEV_AUX current scope:2026-10-16 segment69
 
-Science OPEN. Fresh complete-rule coarse4price learning supports R>N locally:
-128TRAIN397.96s selects4.0; independent16family/fourfoe/bothroleDEV gives
-UNIT34W42L52D vsNEW4.0 50W27L51D, W-L+31/128 CI[.109375,.3828125]. PriorTRAIN3.5
-sameaggregate/new-v-prior0, so exactratio remains unidentified. ALL512actualgames
-complete1968.68s/0UNKNOWN/0outerlate; BOTHfixedPN1K/normal4096/coldbanks. Strict
-UNKNOWN-onlynoWINskip keepsphysicalplay toactualruleterminals, notutilityreward.
-This replaces another13price censoredeventrace, preserving67/alloldcaps/evidence.
-B/N first8TRAIN8DEV pilot144games667.87s: TRAIN.5 wins1vs0/0, DEV-2/48 CI0;
-noBvaluepositiveclaim. Sixboard48perft/48go64+32fixedB1vs2games356.25s passes,
-26of32draw/only6decisive; higherB2net-4/16 exploratory, notlargerboardlearning.
-No4censustransfer. GenericfullSessionproof401adoptinggames physicallywon.
-688newgames/35304moves/32516Nativebindings/6tests restore fromexactcapsules plus
-onefilehistoricalplan support. Firstpytestbasenamecollision andthenmissingoldplan
-retained; officialimportlibmode/newdirectories fixreplay withoutchangingassertions.
-Zero-return remainsNOTADOPTED: realNone/cancel preserveUNKNOWN/unscored and block
-actualselector; separatelegalfirstcontrol reachesactualDRAW14moves. Never infer
-runtimeprogress orchangeSessionStatus. Currentuserpublication/stop/boundariesapply.
-NextMain ACTUALLYBEGUN2029:8newKRN4inputs/0Nativefitness, fixedratio1vs4 underN360
-and720 againstfixedR720/N720opponent;64futuregames/32perfts, expected379.91s/
-whole600cap. Testtrue-WLunitrobustness beforefinerprices/humanfit. This targets
-older1866action-unitdependence withnewoutcomeevidence, no unchangedrerun/DEVtuning.
-PRIMARY1ee2b4798c5f0c4b97a4ae608d0b68a10c05a452 OWNER_MESSAGE_READ_ONLY reports
-noadoption offinitecontext/rootorder andAUX67reportread/noexecution. AUX adoptsno
-PRIMARYcode, poolsno workunits, makesno crosswrites/default/UI/visibilitychange.
+Science OPEN. User-approved material+fixed genericproof W-L work remains own
+sidemission; PRIMARY search/backend scope stays read-only. PUBLIC/checked
+project publication grants persist; no product/default/UI/visibility change.
+64fresh fixedopponent unitgames COMPLETE257.53s: R/N4vs1 gains.3125 atN360
+and.25 atN720; interaction.0625 CI[-.125,.25]. Both observed gains positive,
+not unit-equivalence. All16R4crossunit outcomes agree despite9trajectoryforks.
+R-freeKBN 96TRAIN+192DEV COMPLETE2323.38s: TRAIN.5 wins1point/only1nonflatfamily,
+DEV ALL192DRAW acrossbothprices. No priceidentification/equivalence; changing
+types alone failed to make informative outcomes. Older68R>N andBfailures retained.
+Root PN1K/4K/16K,192exposedcalls COMPLETE79.49s,0verifiedWIN; retain UNKNOWN,
+not theoreticaldraw or strongerteacher claim. No automaticbudget/volumeincrease.
+Fresh actualKRNB census40800syntactic/22976admissible/104128edges proves noWIN
+closedKK/N/B;R80positivewinningterminals. Exactcompiledfields/fullrecord guard,
+UNKNOWNonly; no6boardtransfer, reward or livelearningpolicychange. New32game
+fixedopponent candidate-onlycontrol231.54s has all16pairedactions/outcomes equal,
+normalnodesidentical, candidatePN521372->78485nodes; game130.09->100.91s.
+Scoped22.4%costsaving, not universalbehavior-equivalence/strength. Portable
+all-defense sample71edges/fouractualWINleaves, omitteddefenserejected.
+384newgames/29479moves/29196Nativebindings/40proof-adoptingactualwins source-only
+restore+5tests PASS; allclosedcaps preserved, API/testfailures retained/corrected.
+Next2054 ACTUALLYBEGUN inputonly:16NEWKRNB8TRAIN8DEV/0fitness, twoRanchors
+1260/priorTRAIN2880 x3mechanicalBprices, fixedopponent and separateBcontrasts
+withinR. Changed matingcooperation premise, not sameallDRAW expansion/DEVfit.
+Build2055source/6variantACK/96perfts beforefuture96TRAIN/max192DEV; expected
+2524.34s/one3300cap. Late2054directGit, outside earlier closed-studycapsules.
+CHATfutureteacher/architecture-transfer notes stay revisable mainline references,
+not hardrules/immediateNNwork. PRIMARY5fe6baad54c8cb2efa5b7772658b77254f94a260
+owner-message-read-only/no codeexecution/adoption/unitpool/crosswrites.
 
 ## Current user publication grant2026-10-15
 
