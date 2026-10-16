@@ -1,3 +1,29 @@
+## DEV_AUX2026-10-16 segment78
+
+Own sidemission only. Conditional reference-WDL-gradient legalprefixmu yields
+true-WL768games/TRAIN2/newDEV6/64 CI[.015625,.1875]; NEW32/newfoes fixedprice
+256game transfer5/128CI[0,.0859375] is weak, winsunchanged. No uniquepriceclaim.
+No-table fixedfoe64game2x2 allcells2W2L12D; no observedW-Lgain, not equivalence.
+Generic discovery is bottleneck: ALL24knownactualWIN0at.2/1/4caller; NEW60caller
+4TRAINcontexts BFS0/4, DFS1/4, existingincremental/fullPositionadapter3/4,
+4instances/3contexts actuallyconverted. No default/bank/PRIMARYadoption.
+LateNEWNNprioritycontrol ALL32TRAIN/512games:1977gain5/128CI0,8173gain0;
+128D3valuechecks/283968guidegrades pass, no price-refit/rootreplacement.
+Price2stillpolicy-conditional, notstable/universal.
+All189paidqueries/1600games/30054moves closed, independentlyreplayed; protocols
+notpooledindependenttrials. FirstqualitygainsLOSS->DRAW, notactualrewardequivalence.
+55oldnonpositiveentries correctedto15opponentWIN+40referenceDRAWunproved;
+all39newhistoryproofs/cursors426moves qualify. Failures/oldcaps remain.
+Dot1792163597readinline78request/77Slackonly; canonical-vs-actual correction and
+160TRAINprobe adopted, no78codeexecutionclaim. Fixedrevisionresultsentonlyafter
+review/publication; delivery isnot reading. CHATLeaper remainsfutureonly.
+PRIMARYc644b271abe4cace134741e0739c7369b8faeb8dHEAD/mainlineonlyreadonly:
+owner Core/Native horizon/capacity/PVfeature repair, notAUXrerun/adoption.
+Ordinaryconcurrency accepted; walltimesdescriptive. No workers/Goals/quietwindow,
+visibilitychange orcrosswrites. Immutable19+late20archive rawbytepins/contentreview/replay
+andpublicationnormalization separate; see78report/replay/deliveryreceipt.
+Next qualifiedlate-entry genericcostquestion, notmoreunchangedquantitygames.
+
 ## DEV_AUX2026-10-16 segment64
 
 Own sidemission only; PRIMARY/default/UI/PUBLIC unchanged. Mechanical price

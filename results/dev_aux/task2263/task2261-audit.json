@@ -1,0 +1,128 @@
+{
+  "status": "PASS_CLOSED_ACTUAL_LEARNING_WITH_PLANNED_MISSING_BOUNDS",
+  "task": 2261,
+  "producer_status": "COMPLETE",
+  "games": 768,
+  "actual_moves": 12671,
+  "TRAIN_games": 640,
+  "missing_TRAIN": 0,
+  "DEV_games": 128,
+  "planned_DEV": 128,
+  "missing_DEV": 0,
+  "selector_checks": {
+    "independently_recomputed": true,
+    "selections": [
+      {
+        "initial": 0.5,
+        "adjacent_selected": 2.0,
+        "adjacent_trace": [
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "global_selected": 2.0
+      },
+      {
+        "initial": 1.0,
+        "adjacent_selected": 2.0,
+        "adjacent_trace": [
+          1.0,
+          1.5,
+          2.0
+        ],
+        "global_selected": 2.0
+      }
+    ]
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 3133,
+    "FIXED_LOW_INVENTORY_RANK_GUIDANCE": 9538
+  },
+  "normal_depths": [
+    {
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 3133
+    },
+    {
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 9538
+    }
+  ],
+  "profiles": {
+    "0.5": {
+      "TRAIN": {
+        "L": 32,
+        "W": 29,
+        "D": 67
+      },
+      "DEV": {}
+    },
+    "1.0": {
+      "TRAIN": {
+        "L": 32,
+        "W": 31,
+        "D": 65
+      },
+      "DEV": {
+        "D": 31,
+        "L": 18,
+        "W": 15
+      }
+    },
+    "1.5": {
+      "TRAIN": {
+        "L": 28,
+        "W": 30,
+        "D": 70
+      },
+      "DEV": {}
+    },
+    "2.0": {
+      "TRAIN": {
+        "L": 28,
+        "W": 31,
+        "D": 69
+      },
+      "DEV": {
+        "D": 33,
+        "L": 14,
+        "W": 17
+      }
+    },
+    "4.0": {
+      "TRAIN": {
+        "L": 28,
+        "W": 30,
+        "D": 70
+      },
+      "DEV": {}
+    }
+  },
+  "DEV_paired_vs_unity": {
+    "1.0": {
+      "original_family_blocks": 16,
+      "unknown_or_missing_pairs": 0,
+      "mean_lower": 0.0,
+      "mean_upper": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    "2.0": {
+      "original_family_blocks": 16,
+      "unknown_or_missing_pairs": 0,
+      "mean_lower": 0.09375,
+      "mean_upper": 0.09375,
+      "descriptive_bootstrap95": [
+        0.015625,
+        0.1875
+      ]
+    }
+  },
+  "seconds": 3.5784325000131503,
+  "scope": "IndependentactualSessionreplay/sequence/full-or-partialslotcoverage/selectorreimplementation. Partial/missing/UNKNOWNstayfullbounds; no selectivecompleted-familyfilter orfakeDRAW. DEVafter640TR/TRjournalhash; actualoneplystartingprefixvalidatedandexcludedfromnewmove-count;conditionalreference-muexposureexplicit, notuniversalprice. No producers/refit/newrewardgames."
+}

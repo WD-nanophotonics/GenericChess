@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE",
+  "entries": 19,
+  "queries": 57,
+  "expected_queries": 57,
+  "missing": 0,
+  "seconds": 67.57821750000585,
+  "by_cap": {
+    "0.2": {
+      "queries": 19,
+      "verified": 0,
+      "mover_knownWIN": 3,
+      "sources": {
+        "FULL_SESSION_MATERIAL_SEARCH": 8,
+        "PRECOMPUTED_TYPED_LEGAL_FALLBACK": 11
+      }
+    },
+    "1.0": {
+      "queries": 19,
+      "verified": 1,
+      "mover_knownWIN": 3,
+      "sources": {
+        "FULL_SESSION_MATERIAL_SEARCH": 18,
+        "VERIFIED_GRAPH_STRATEGY": 1
+      }
+    },
+    "4.0": {
+      "queries": 19,
+      "verified": 1,
+      "mover_knownWIN": 3,
+      "sources": {
+        "FULL_SESSION_MATERIAL_SEARCH": 18,
+        "VERIFIED_GRAPH_STRATEGY": 1
+      }
+    }
+  },
+  "postquery_conversions": 2,
+  "scope": "Positive-onlyexposed19entryconditionalcapability/cost, notrepresentativecoverage/learningorW-Lbenefit. FULLcallerclock includesadmission/proof/independentverification/currentcursor/normal; separateunits. Proveronlytargetsactualmover: savedentrymaybeknownWINfornonmover, keptandstratified, no fakeNEGATIVE/DRAW. .70proof/.25sharedtwoverification/.05normal; unknownfallbacknotdraw. Postqueryactualcursorconversionseparatelycostedandnotdiscoverybudget. No teacherinquery/default/PRIMARY/sourcecapschanges."
+}

@@ -1,0 +1,86 @@
+{
+  "status": "PASS_CLOSED_NN_DIRECT_PRIORITY_FULL_OR_PARTIAL_CONTROL",
+  "producer_status": "COMPLETE",
+  "games": 512,
+  "expected": 512,
+  "missing": 0,
+  "actual_moves": 10253,
+  "summary": {
+    "1977": {
+      "family_blocks": 32,
+      "unknown_or_missing_pairs": 0,
+      "net_lower": 0.0390625,
+      "net_upper": 0.0390625,
+      "descriptive95": [
+        0.0,
+        0.0859375
+      ],
+      "positive_families": 3,
+      "negative_families": 0,
+      "profiles": {
+        "1.0": {
+          "L": 34,
+          "W": 32,
+          "D": 62
+        },
+        "2.0": {
+          "L": 30,
+          "W": 33,
+          "D": 65
+        }
+      }
+    },
+    "8173": {
+      "family_blocks": 32,
+      "unknown_or_missing_pairs": 0,
+      "net_lower": 0.0,
+      "net_upper": 0.0,
+      "descriptive95": [
+        -0.03125,
+        0.03125
+      ],
+      "positive_families": 2,
+      "negative_families": 2,
+      "profiles": {
+        "1.0": {
+          "L": 29,
+          "W": 31,
+          "D": 68
+        },
+        "2.0": {
+          "L": 28,
+          "W": 30,
+          "D": 70
+        }
+      }
+    }
+  },
+  "normal_depths": [
+    {
+      "seed": 1977,
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 874
+    },
+    {
+      "seed": 1977,
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 4013
+    },
+    {
+      "seed": 8173,
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 1112
+    },
+    {
+      "seed": 8173,
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 4254
+    }
+  ],
+  "seconds": 2.501135600003181,
+  "scope": "ALL32TRAIN/newNNboundary2/2prefrozenseeds, exactsequence/fullactualprefixrecords/roles/limits/rewards/UNKNOWN. Separate32familyclustersperseed, NOT64independentfamilies. No fit/rootreplacement/DEVquery. Stableorderchangespruning/work; actualdepthretained. Descriptiveintervals withmissingfullbounds; notall-orderstability/universalmagnitude orcausallyisolatedtiebreakscore."
+}

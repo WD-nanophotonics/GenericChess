@@ -1,0 +1,63 @@
+"""Price-independent legal-prefix WDL-choice-gradient distribution feasibility."""
+from pathlib import Path
+from collections import Counter
+from dataclasses import replace
+from copy import copy
+import json,hashlib,time
+from generic_chess.core.pieces import Piece
+from generic_chess.rules.serialization import deserialize_ruleset,serialize_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import serialize_game_record
+from generic_chess.session.result import SessionStatus
+from scripts.generic_proof_rnb_bridge import actor_state,uci,orbit
+from scripts.generic_royal_actor import RoyalActor
+from results.dev_aux.task2153.stop_evidence import EvidenceStopReader
+OUT=Path('results/dev_aux/task2257')
+def key(x):return ''.join(x[:-1])+str(x[-1])
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def write(n,v):
+ with(OUT/n).open('x',encoding='utf-8')as f:json.dump(v,f,indent=2)
+def run():
+ p=json.loads((OUT/'plan.json').read_text());assert not(OUT/'started.json').exists();start=time.perf_counter();stop=EvidenceStopReader(Path.cwd());write('started.json',dict(plan_sha=sha(OUT/'plan.json'),utc=__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()))
+ def poll():
+  stop()
+  if time.perf_counter()-start>=p['cap_seconds']:raise TimeoutError('original_distribution_cap')
+ labels=[]
+ for i,line in enumerate(Path('results/dev_aux/task2249/labels.jsonl').open(encoding='utf-8')):
+  if i%1024==0:poll()
+  labels.append(json.loads(line))
+ prior={r['group']for r in json.loads(Path('results/dev_aux/task2251/inputs.json').read_text())['roots']};actor=RoyalActor(4);groups={};counts=Counter();value={'WIN':1,'DRAW':0,'LOSS':-1}
+ for i,parent in enumerate(labels):
+  if i%1024==0:poll()
+  raw=tuple(parent['board'])
+  if parent['inventory']!='KKRnn' or raw[-1]!=0 or parent['status']!='ongoing' or actor.attacked(raw,actor.king(raw,0),1):continue
+  counts['safe_initial_parents']+=1
+  for edge in parent['actions']:
+   child=labels[edge['child']];b=tuple(child['board'])
+   if child['inventory']!='KKRnn' or child['status']!='ongoing' or len(child['actions'])<2:continue
+   utilities=[-value[labels[e['child']]['label']]for e in child['actions']]
+   if len(set(utilities))<2 or child['label']not in('WIN','DRAW'):continue
+   if child['label']=='WIN'and child['rank']<5:continue
+   if any(labels[e['child']]['status']!='ongoing'for e in child['actions']):continue
+   # Canonical reference chooses the distribution, never candidate-price success.
+   group=min(key(x)for x in orbit(b))
+   if group in prior:continue
+   tag=child['label'];counts['eligible_prefix_'+tag]+=1
+   digest=hashlib.sha256(('RN78-prefix-choice:'+group).encode()).hexdigest()
+   row=dict(group=group,order_sha=digest,parent_index=i,target_index=child['index'],prefix=edge['action'],target_label=tag,canonical_rank=child['rank'],target_action_utilities=utilities,parent_board=list(raw),board=list(b))
+   if group not in groups or (key(raw),edge['action'])<(key(groups[group]['parent_board']),groups[group]['prefix']):groups[group]=row
+ rs=deserialize_ruleset(Path('results/dev_aux/task2248/rules.json').read_text());parts={'TRAIN':[],'DEV':[]};strata=Counter()
+ for r in sorted(groups.values(),key=lambda x:x['order_sha']):
+  poll();split='DEV'if int(r['order_sha'][:8],16)%3==0 else'TRAIN';limit=8 if split=='DEV'else16
+  if strata[(split,r['target_label'])]>=limit:continue
+  raw=r['parent_board'];board=tuple(None if x=='.'else Piece(int(x.islower()),x.upper(),x.upper())for x in raw[:-1]);definition=replace(rs,initial_position=tuple(tuple(board[i:i+4])for i in range(0,16,4)),initial_setup_options=());c=compile_ruleset_for_execution(definition);s=GameSession(c);assert actor_state(s.state)==tuple(raw)
+  legal={uci(a):a for a in s.legal_actions()};s.submit(legal[r['prefix']]);assert actor_state(s.state)==tuple(r['board'])and s.result.status is SessionStatus.ONGOING
+  actual={uci(a):a for a in s.legal_actions()};assert set(actual)=={e['action']for e in labels[r['target_index']]['actions']}
+  for a in actual.values():
+   t=copy(s);t.submit(a);assert t.result.status is SessionStatus.ONGOING
+  family=sum(map(len,parts.values()));name=f'root-{family}.json';(OUT/name).write_text(serialize_ruleset(definition),encoding='utf-8');r.update(family=family,split=split,rules=str(OUT/name),rules_sha=sha(OUT/name),record=json.loads(serialize_game_record(s.to_record())),state_sha=hashlib.sha256(repr(s.state).encode()).hexdigest(),legal_actions=len(actual));parts[split].append(r);strata[(split,r['target_label'])]+=1
+  if len(parts['TRAIN'])==32 and len(parts['DEV'])==16:break
+ rows=parts['TRAIN']+parts['DEV'];write('inputs.json',dict(roots=rows,selection=p['selection'],all_groups=len(groups),counts=dict(counts),strata={str(k):v for k,v in strata.items()},price_queries=0,old_DEV_labels_read=0))
+ write('result.json',dict(status='FROZEN_PRICE_UNQUERIED_PREFIX_MU'if len(rows)==48 else'INSUFFICIENT_STRATA_NO_PRICE_QUERIES',TRAIN=len(parts['TRAIN']),DEV=len(parts['DEV']),strata={str(k):v for k,v in strata.items()},group_labels=dict(Counter(r['target_label']for r in groups.values())),counts=dict(counts),seconds=time.perf_counter()-start,scope=p['scope']));print(json.dumps(json.loads((OUT/'result.json').read_text())))
+if __name__=='__main__':run()

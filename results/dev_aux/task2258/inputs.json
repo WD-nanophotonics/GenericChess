@@ -1,0 +1,3877 @@
+{
+  "roots": [
+    {
+      "group": "...KN...N..kr...1",
+      "order_sha": "0000f070e4ee7f223e16494933eabfb0e465f5bfa78d1ea414a6e76d768b0efc",
+      "parent_index": 420943,
+      "target_index": 420899,
+      "prefix": "c3a2",
+      "target_label": "WIN",
+      "canonical_rank": 11,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "N",
+        "k",
+        "r",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        "N",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "k",
+        "r",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 0,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-0.json",
+      "rules_sha": "8471951caa5c27d1cc2c4d4d9604e1d38a8cdbfce5dc8864d983a57d744d27f0",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4a5e7e10205bec98261763f2547f5d7d2be96cdd9d6c71ac135ba3c80c9650c4",
+        "schema_version": 1
+      },
+      "state_sha": "afd33e95339aa8595a99042be4d8b0b6ebbdf7ea402195b926668489df19a02e",
+      "legal_actions": 5
+    },
+    {
+      "group": "...RKn...n....k.1",
+      "order_sha": "0009e74016929a2186a77602583749094018c05d08fdd0f9fb96f69ac7d048dc",
+      "parent_index": 329953,
+      "target_index": 328917,
+      "prefix": "a4a1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "n",
+        "n",
+        ".",
+        "R",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "n",
+        "n",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        1
+      ],
+      "family": 1,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-1.json",
+      "rules_sha": "701d82809b13af3f15dcd3aa6d643e0ad0b690bbd253c8d7df12de8b8455fcfc",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "89be3d9bdc4c26ce0186808d0501a4550c4146d6292a290c4d5e7eda5d95c4df",
+        "schema_version": 1
+      },
+      "state_sha": "50bbeeba975652382321899d919478bd76d06d5b5750750c1573445e20aa05df",
+      "legal_actions": 9
+    },
+    {
+      "group": "......Kn..R.k..n0",
+      "order_sha": "000f947c751ac8caeaf3066b8f28efef8dc9eea657e11e5651c99d195206c8a3",
+      "parent_index": 533889,
+      "target_index": 533896,
+      "prefix": "b3d4",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "N",
+        ".",
+        "N",
+        "r",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "N",
+        ".",
+        ".",
+        "r",
+        ".",
+        "K",
+        ".",
+        ".",
+        "N",
+        1
+      ],
+      "family": 2,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-2.json",
+      "rules_sha": "592ad51aa7e091b078d8306959e9e202416b3ada1a5e86eb11c933314ebac9e4",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9b63508d47a3610f228f4993bbbbce7f1db955717e007793fe6eec3f080e9f60",
+        "schema_version": 1
+      },
+      "state_sha": "9072cfefa7dc1f962cd87153145f141e6ae1b61d197e290e14198e5a3f324e1b",
+      "legal_actions": 5
+    },
+    {
+      "group": ".....KN...N.r.k.0",
+      "order_sha": "001934da0b9525eef4406e1870c8c60363a80ecbca90552a55760b7a7902ccd7",
+      "parent_index": 295066,
+      "target_index": 341045,
+      "prefix": "d3c4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        "n",
+        "K",
+        "R",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        ".",
+        "K",
+        ".",
+        1
+      ],
+      "family": 3,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-3.json",
+      "rules_sha": "7b4ac5f78dd06f2681dd7419d5f521a800bb7ccdadba4f31e89a5111227dcefd",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "79b0db63c5e94e27df2427481ce7874efa0f1dd4627319cb8e45356314af27c5",
+        "schema_version": 1
+      },
+      "state_sha": "d10d5e64fad5fbbb296e8202b9fdb438c381b0f27db37916803efa5d3cadad87",
+      "legal_actions": 10
+    },
+    {
+      "group": "...K....kN...r.N0",
+      "order_sha": "0020de6ce326a02cbb12e38d20ff0af565aa9744443664452d431709a1d6dabb",
+      "parent_index": 226779,
+      "target_index": 185281,
+      "prefix": "b2c1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 4,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-4.json",
+      "rules_sha": "cb5cdf856e09c2a961a3e82ca37969b6fa79a33bc2da6a18bdeb75f722a53b23",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9c69ea1ea57fff2c2085cf9c5cee1978e2e0bb0a2a34ebf733eea92c0952c84b",
+        "schema_version": 1
+      },
+      "state_sha": "da18db1a344147a3f05acc729684235ddd82b9e650b2d7dfbad735d891ed6cd1",
+      "legal_actions": 7
+    },
+    {
+      "group": "......K..N...kNr0",
+      "order_sha": "00237902925e444d7d1208526e3fcbccd14ab9e4591667f425e60224ed763ce7",
+      "parent_index": 311525,
+      "target_index": 328808,
+      "prefix": "a4b4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "K",
+        ".",
+        "n",
+        "R",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "R",
+        1
+      ],
+      "family": 5,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-5.json",
+      "rules_sha": "29d9708f69f530e0adac5f6ab4defde91300486fc27290124871260f63fcf516",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a78451ca1be977d1dc230f5153e2d53a6d6bc1f27dfe4107574a28395f0409c2",
+        "schema_version": 1
+      },
+      "state_sha": "520d3c1b1ebeb78714be713f89ec2ba56e0ea3dd6f8b368728106824ba126695",
+      "legal_actions": 10
+    },
+    {
+      "group": "......K.k.r..N.N0",
+      "order_sha": "00382d659902d6ec015c54cf9f43ecc24b20df89af592c1528530e0970667324",
+      "parent_index": 261135,
+      "target_index": 261004,
+      "prefix": "d3c3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        ".",
+        "R",
+        ".",
+        "n",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        "R",
+        ".",
+        ".",
+        "n",
+        ".",
+        "n",
+        1
+      ],
+      "family": 7,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-7.json",
+      "rules_sha": "fd6b0f21a12a514c6666c8fcd644af320fd87d0197845cfea453741222674643",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "33efb451f93a2693c8e93c8fcf33fae2266e528c6ee0aff51829143d6bd4050e",
+        "schema_version": 1
+      },
+      "state_sha": "dd97cc953a6a3ab05d1cce4ad2a11f98ffbf79b01bd9c130f6aae5941ee1945f",
+      "legal_actions": 4
+    },
+    {
+      "group": "......R...Knk..n1",
+      "order_sha": "00418d50a24414897b534e04dad060c5d002b1fc36d03501d00a82f03ad21b3e",
+      "parent_index": 286590,
+      "target_index": 286468,
+      "prefix": "d2c2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        -1,
+        -1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 8,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-8.json",
+      "rules_sha": "aed5aec0108fbc3a3f3acd198a7ce48265af9777be9cd030202030552e981617",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "e2b1c2fe79f3a2ce83e9576973fff0be5bb06675254b4e9e329bedf547ad6390",
+        "schema_version": 1
+      },
+      "state_sha": "63cbac59cb9ce8de0f8d3705ff73442d8b37f92abb5e2bcc8c39209b4c417a06",
+      "legal_actions": 6
+    },
+    {
+      "group": "....KrkN....N...0",
+      "order_sha": "0046ef5bc0884e1664e71a561894aa46865a3cc5a9bbccdebc6f2e7a85cae6cc",
+      "parent_index": 233726,
+      "target_index": 233078,
+      "prefix": "b4b2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "R",
+        "K",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 9,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-9.json",
+      "rules_sha": "1718a9420634d1704ea543d3ff7b5c57726871881726cff059a2b07e43250465",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "e9bc1d3958a43803b0ba61f2429fc159a6465249fdac9be5f4a5bbf6407c04be",
+        "schema_version": 1
+      },
+      "state_sha": "3552dc5d3490eb6c908e4169483dac67e03d59e4a73f39313127ad08124d705a",
+      "legal_actions": 3
+    },
+    {
+      "group": "...Kk....N.r..N.0",
+      "order_sha": "00496e7dd2c187bd202e671e95d3ee9c51ac84b999a257879ed693b1aff1e2ff",
+      "parent_index": 210367,
+      "target_index": 210439,
+      "prefix": "c3d3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "k",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "k",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        ".",
+        ".",
+        "n",
+        ".",
+        1
+      ],
+      "family": 10,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-10.json",
+      "rules_sha": "5db16ab72faffdaf257a3e4852e36a0a20253015ff6a344ad1febc0db72a37da",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "99e4e48aae1d06534e1e0cbb5e07e6ced4e29348a4071da5c914b90065426933",
+        "schema_version": 1
+      },
+      "state_sha": "6256e44058759853859cd428762035455cad693b104c6183e53df038c21e707f",
+      "legal_actions": 4
+    },
+    {
+      "group": "....K..k..NNr...0",
+      "order_sha": "00702bd25f62ea7428152057432132686b8d113122c00300a736b9f96acc5122",
+      "parent_index": 213563,
+      "target_index": 213635,
+      "prefix": "c4d4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        1
+      ],
+      "family": 11,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-11.json",
+      "rules_sha": "95b4b108a6c42e6bc8bb13e04dd0f35e87d2b8b498687e0ca4bd9e5d891d4aac",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "cd6107fbbff2caa226e0a0452e7d943c5426a455b5887e13b276b9d47657f3cf",
+        "schema_version": 1
+      },
+      "state_sha": "f1c69b4317b2c658ab858827a54a41b0fec6250ebf2b83e9b597d779ce583a90",
+      "legal_actions": 4
+    },
+    {
+      "group": ".......NK.N..r.k1",
+      "order_sha": "0073c8b202fa2340c6fdf53dd42d016fa2fde71ed3b5610c46a8aa679ca01172",
+      "parent_index": 522866,
+      "target_index": 522825,
+      "prefix": "b4a2",
+      "target_label": "WIN",
+      "canonical_rank": 11,
+      "target_action_utilities": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        "k",
+        "N",
+        "r",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        "k",
+        ".",
+        "r",
+        ".",
+        1
+      ],
+      "family": 12,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-12.json",
+      "rules_sha": "4d5ffefa08f4651e4c3b16eaaa89f19ff20f8249c24038b43502ee1ee89eaa68",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "26f10a90bd07dc6b2ca607d6d69e2c50e442884142e3eeb12cd99c5600ed599a",
+        "schema_version": 1
+      },
+      "state_sha": "90043cebb5458512d3b590b58697257462e706349f0cff2306559d8d725911f5",
+      "legal_actions": 7
+    },
+    {
+      "group": ".......KNk...Nr.0",
+      "order_sha": "0074c5e2e171be68d08f84c1e83f073d58345f663c7331c3a1e2c0c55c50d21b",
+      "parent_index": 312912,
+      "target_index": 275020,
+      "prefix": "a4b3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "R",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        "K",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        1
+      ],
+      "family": 14,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-14.json",
+      "rules_sha": "540d7586ccf571661caba9173255eaa5f09286c2047cb295c73b8b94480e0539",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "1882feb435f1400c8e3651ff1fb740370d0988abe6a34a388994c34e8b599322",
+        "schema_version": 1
+      },
+      "state_sha": "fb6ffd7919939ff54e9242d35982c8888b70222fe53888eff87e8fdf2d0b128d",
+      "legal_actions": 8
+    },
+    {
+      "group": "...NN..Kr....k..1",
+      "order_sha": "0094d7ada82d810475e15fd3de8be68c1e5cb23ac98e61574c4cdbad28054024",
+      "parent_index": 472080,
+      "target_index": 472074,
+      "prefix": "c3a2",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "K",
+        "r",
+        ".",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        "N",
+        ".",
+        ".",
+        "K",
+        "r",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        1
+      ],
+      "family": 15,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-15.json",
+      "rules_sha": "20c644339e38187827cc7fe28c5c6e1107debb9770ba6af3eb7aef2175bebe6f",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "7b679f1e8b11e55ed445bff47d3c89c7e5888ef866c941965659f3b51fe93e28",
+        "schema_version": 1
+      },
+      "state_sha": "99a5b2d9e0e1209ee112f8aca1c83e3c81a8c6e271ac41a4b5c49f595907d4f3",
+      "legal_actions": 4
+    },
+    {
+      "group": "...K...n....n.kR1",
+      "order_sha": "00a86e2f8f63fe8f1f271ccc0250804e19805430857ca968898769adeab4b8a8",
+      "parent_index": 206325,
+      "target_index": 206521,
+      "prefix": "d3d4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        "R",
+        "n",
+        ".",
+        "k",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "k",
+        "R",
+        1
+      ],
+      "family": 16,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-16.json",
+      "rules_sha": "3f6398b0e0ca735afe8fac2f4395ea9a1dd1780a0286a47348ce0c69d8b4df59",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "cbe45555c1270e471d9b48215a84a0b1fcea07c4735224e17b2041fbc4ac274a",
+        "schema_version": 1
+      },
+      "state_sha": "875037dc7d086aca775a4ebe62e61def36e0962244651544c8130b12a16be4be",
+      "legal_actions": 3
+    },
+    {
+      "group": "......Kn.R.n.k..1",
+      "order_sha": "00b75291794e243f7499febd5ab1b98aae94d31f7709641ca3a6bf52ad07d29f",
+      "parent_index": 274620,
+      "target_index": 274377,
+      "prefix": "c3c2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        "R",
+        ".",
+        ".",
+        "n",
+        "n",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        "k",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        "n",
+        "n",
+        ".",
+        1
+      ],
+      "family": 18,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-18.json",
+      "rules_sha": "e371df59b31d43e254b9d7f09b4be3dddd3f6dce358945a278e68c9a47356743",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "80ca96efcb3077ae60324a0347cd896541b99c49ce4bf99fd8387a8258e4244f",
+        "schema_version": 1
+      },
+      "state_sha": "adb48bff12f3b355bb67e8c78bb522d69fa21bd987a1e20917b2e63574e9132f",
+      "legal_actions": 3
+    },
+    {
+      "group": "...K..n..R.nk...0",
+      "order_sha": "00c194ef4536471efe6fd1036ca56baea8dd06bfdbd4f47a699cb466c6194e10",
+      "parent_index": 421953,
+      "target_index": 421936,
+      "prefix": "d4b3",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "r",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "r",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        ".",
+        1
+      ],
+      "family": 19,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-19.json",
+      "rules_sha": "9eb0003741a24f03e080ab640b2673aeb50b1b265a31f0a20e3c17ec87b4b49f",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ae9270fdaf3453a73d66c94e210046b38b47946a840b728e1e395a71ae1d62d9",
+        "schema_version": 1
+      },
+      "state_sha": "5df331adc88d60f691eaea0cb73d6e9a6cdc9288de8eb4f9f08c96abaf51dc9f",
+      "legal_actions": 8
+    },
+    {
+      "group": "...NK......rkN..1",
+      "order_sha": "00c7e75b75971410f8f75848639c0714543fd60b787c0dae27561aa7f99370ee",
+      "parent_index": 446718,
+      "target_index": 436454,
+      "prefix": "b2a2",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "k",
+        "N",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "k",
+        "N",
+        ".",
+        ".",
+        1
+      ],
+      "family": 20,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-20.json",
+      "rules_sha": "1f6a74151aa3d23582810560ee4ae9da7ccde5122d0846fd30292066c51d3dd8",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "133c978491bc6da8de70bf5f3e2d9618bb50c07f76607bf3a87dd0340699d886",
+        "schema_version": 1
+      },
+      "state_sha": "6f0d5bde1feb2dec19a60f861a3606e4272b92c40044c9fcdc471a760beae430",
+      "legal_actions": 7
+    },
+    {
+      "group": "....K.kn.R.....n1",
+      "order_sha": "00ea1294f8d4bfc43dd46edc22a6d453a1101fc4644fb06668afa0f5f1af3918",
+      "parent_index": 260923,
+      "target_index": 211619,
+      "prefix": "a3a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        "K",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        "n",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 23,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-23.json",
+      "rules_sha": "51fd60bb6a63ecb8c3a44a45e5998c3a04fc96fbc381536a5f7c0715ab1ceff8",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9c8ffa22393522aed7345938fde109fc2145151769c9bd581f8eab3d1094c0d1",
+        "schema_version": 1
+      },
+      "state_sha": "65c4791d964d788cec1a91286314aa9fd129da29aabb824c8519d3306e3abd09",
+      "legal_actions": 6
+    },
+    {
+      "group": "...N..k.r..N.K..1",
+      "order_sha": "00eadda2f878628ae6b4d450f6b7a4fc2244a3ebf0cc25601c4888e72d4df95f",
+      "parent_index": 550573,
+      "target_index": 550519,
+      "prefix": "c3d1",
+      "target_label": "WIN",
+      "canonical_rank": 9,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        "N",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        1
+      ],
+      "family": 24,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-24.json",
+      "rules_sha": "2c2b8896ac2d6443cd36ceed1501e07ceaa9ef6c4ed5e34237cd66208382ede6",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "8d652952caec3ba01ed1c18c972bba091c7d8c795072ef1c44146fac63642129",
+        "schema_version": 1
+      },
+      "state_sha": "5bc3384c03c6e45c4ec7afbb6b5ca7118cb32f6d04f0c6ee8fbed262f8c9c98e",
+      "legal_actions": 10
+    },
+    {
+      "group": "...NK....N.k...r0",
+      "order_sha": "00ecda1fd43325d195466f857369383623fdba74e6d77581baa49b8f1e3679bd",
+      "parent_index": 284730,
+      "target_index": 246550,
+      "prefix": "c3d2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        "n",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        "n",
+        ".",
+        "K",
+        "k",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 25,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-25.json",
+      "rules_sha": "04f73f84071851baf4081d5d96231a41404d6bc19ea8a08300cf21701beeb1bc",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "06c6818292db5271adbea93afcd61e48848011168849a8b9f7555aabbc2926ab",
+        "schema_version": 1
+      },
+      "state_sha": "a0fd064ddf73805f3cf696d55a65181c153d636f909815f8fafd7de79c8ed913",
+      "legal_actions": 10
+    },
+    {
+      "group": "...Kr...k.N....N0",
+      "order_sha": "00f12838790fdaca12cead2fa88ef8f0e63d8c1bb7306aa4b5489715e0e4c425",
+      "parent_index": 259362,
+      "target_index": 259107,
+      "prefix": "c2a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "R",
+        ".",
+        "K",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "k",
+        "R",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 27,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-27.json",
+      "rules_sha": "22620ce31b50a8768b659acdc7c18f67c349f3c094de6e61efc67d0df00f7fab",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "82c5e9cb3a6ee6976d485498dd5b8d3d2e871a39bbdb656e90747c97d7bd195d",
+        "schema_version": 1
+      },
+      "state_sha": "13b33e9907bec9962d8c0e600c8808c0e20408a831706d8fdd73e5a42e6150f1",
+      "legal_actions": 6
+    },
+    {
+      "group": "...NK.k....rN...0",
+      "order_sha": "0101cdf4a5ea213dea039ab073dad25e74d5137ddbc466603bc52a9aa6a598b4",
+      "parent_index": 275950,
+      "target_index": 275564,
+      "prefix": "a3a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        "K",
+        ".",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 28,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-28.json",
+      "rules_sha": "6e3055c49cb6bdff662ab046d5dc01dbbbf3aebb395d8944e3df7c23c7c68fb0",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "fec8bfad77044729b1e7f8fef7aaeff6448679cacf0fad1a5e186d6a2085d40d",
+        "schema_version": 1
+      },
+      "state_sha": "8daf59f4ff44d7356370e79e19a7d58be4012234be1fc859f1baae9fc37c4067",
+      "legal_actions": 5
+    },
+    {
+      "group": "......NkK.N...r.1",
+      "order_sha": "011a7acc58871e03eda69f2693fd52c82dcc292cb5806d9738f0c3c7f970da02",
+      "parent_index": 484047,
+      "target_index": 484027,
+      "prefix": "d4c2",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "K",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "r",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "k",
+        "K",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        1
+      ],
+      "family": 31,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-31.json",
+      "rules_sha": "af8e4615431b9864627bcf4126087533c011fa7f3eccfb3c22c8d3c35c8ffd2e",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "58e7580bb488289b35cbbd6ba648c4c05ce834d62f05fed46ae6f786cbaf2277",
+        "schema_version": 1
+      },
+      "state_sha": "b814f83c818f4842974790105ad52d7f90e716fb3b9cb78a7641c1f360565d68",
+      "legal_actions": 8
+    },
+    {
+      "group": "...KN.r......kN.1",
+      "order_sha": "011afd5d8e195bb1b6529f91d15fc8e5587635f952a6546aa07da5ae6871e652",
+      "parent_index": 535102,
+      "target_index": 535014,
+      "prefix": "c3b1",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        "N",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 32,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-32.json",
+      "rules_sha": "b145728ab844dd34328b84c41aa288353467e00f74ccf3c1913acdbbb71a6847",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ef4870e0c68f208dde810d79b57777bb0e8957984bc063904a0c2570d6e748df",
+        "schema_version": 1
+      },
+      "state_sha": "1fdbad5ed5dcc4459e818be873b39f1f9ab1ea440b00f931e201beb9f0f4686e",
+      "legal_actions": 4
+    },
+    {
+      "group": ".......K.k.Nr..N1",
+      "order_sha": "016461834c6b50a4fd2091f77b547c08b757a56a8db2cec6f733de6db025b1ad",
+      "parent_index": 469605,
+      "target_index": 469632,
+      "prefix": "c2d4",
+      "target_label": "WIN",
+      "canonical_rank": 7,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "K",
+        ".",
+        "k",
+        ".",
+        "N",
+        "r",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        ".",
+        "N",
+        "r",
+        ".",
+        ".",
+        "N",
+        1
+      ],
+      "family": 36,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-36.json",
+      "rules_sha": "171505bf99152f508893451d5af758c59dd5ac690fba4c96b43c6c17bfdf0b88",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "1c70307b5a89fd3ca765d649bb46b77bdf6baa5e3050e404cd8b0efffd6a784a",
+        "schema_version": 1
+      },
+      "state_sha": "67f1b5b6e1904c945adbad007491e5cba2f5f79b2a446e0c00b01f539940064e",
+      "legal_actions": 4
+    },
+    {
+      "group": "..K.....N..Nr..k1",
+      "order_sha": "016f15156019c8a300c0c6a8fe52a78608801273ae8013d8917171d583112962",
+      "parent_index": 475448,
+      "target_index": 409972,
+      "prefix": "d2c1",
+      "target_label": "WIN",
+      "canonical_rank": 21,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "N",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        ".",
+        "k",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        ".",
+        "k",
+        1
+      ],
+      "family": 37,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-37.json",
+      "rules_sha": "244fca84a9daf4939124b7a04fa1beaf2b8cd5692b9b06b992ad942a91e394f3",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "586704d00bf774828f7f8a70ffefef58415babc3309003231f3588c939acdac1",
+        "schema_version": 1
+      },
+      "state_sha": "98c05f2b49c6b2736e1d0db86cb50cad909bdfe4f6d7a4580fbdc9a78a87c442",
+      "legal_actions": 5
+    },
+    {
+      "group": "....KNkr.......N1",
+      "order_sha": "018d72d8a711b2bc520a0ae093915a248391682620f2067dc8f426f118a25344",
+      "parent_index": 521013,
+      "target_index": 520936,
+      "prefix": "c2a1",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        1,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "r",
+        "k",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "k",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 38,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-38.json",
+      "rules_sha": "2a33a4bc53de910e284bf94a9975912bdb58adc9d0d12d645d23c9669ca0f04d",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6e52ea2cc9a891417c5891c4f335532ce181b0fd3bc5f7190002293ba8854249",
+        "schema_version": 1
+      },
+      "state_sha": "6339ca3f1ef82260754ee88c1044459f99a47413277237193edf6b55d20285d1",
+      "legal_actions": 3
+    },
+    {
+      "group": "...K.Rn....kn...0",
+      "order_sha": "01a1a393ca07bbe66ffde63e0da77ed666d488d85d51fc62b5bb8be02d3b5996",
+      "parent_index": 446562,
+      "target_index": 436310,
+      "prefix": "b2a2",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        "k",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        "k",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 40,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-40.json",
+      "rules_sha": "301dc872795bef693978b62fe16e2d3228d77d5706589bf00322bff66cb98721",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "5ffdc4d79c47d22bbbe5289cc470cae5d6ff1d8d974e1e905cbcf1f37dbea614",
+        "schema_version": 1
+      },
+      "state_sha": "17af9d830e67aab8cad4cd05a97cc8321b8fdec74dc276dde6aaaebe7102a787",
+      "legal_actions": 6
+    },
+    {
+      "group": "...Nk......r.K.N1",
+      "order_sha": "01f07b18c4cc3a21adaa60c8174f19c613c5b539015ae9b9f0e70ac521efb51e",
+      "parent_index": 565920,
+      "target_index": 565835,
+      "prefix": "c2a1",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "k",
+        "r",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        0
+      ],
+      "board": [
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "r",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        1
+      ],
+      "family": 42,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-42.json",
+      "rules_sha": "dd762e8e23ac19ec3e76406e8ba5dde6077466c5a9fb617c15dfe65f42831f31",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "8c7da321eb99428a44bb7a418f09069a663f54503fcf6fdc39305940043f09aa",
+        "schema_version": 1
+      },
+      "state_sha": "661f23e1e21c4b2877ca07ba94ff01ec1c24ad60584158c5aa315ae105c4ad0a",
+      "legal_actions": 8
+    },
+    {
+      "group": ".......Kk.N.r..N1",
+      "order_sha": "0236d472b51bb3a9c811d220ea17acc280390b4d19e02d3dd16d80f839eb68db",
+      "parent_index": 486888,
+      "target_index": 435373,
+      "prefix": "a3a2",
+      "target_label": "WIN",
+      "canonical_rank": 25,
+      "target_action_utilities": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "N",
+        ".",
+        "k",
+        "N",
+        ".",
+        ".",
+        "r",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "k",
+        "N",
+        ".",
+        ".",
+        "r",
+        1
+      ],
+      "family": 43,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-43.json",
+      "rules_sha": "a54fe7b8610dcde05b748b4f7205e47803814bdafc0656cb34a651d57c8c85ab",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "2417dcce0fbafbb9c93050c75122fd5df12720215126c8c152c8b4a8eb2a671c",
+        "schema_version": 1
+      },
+      "state_sha": "6e81d9401717f70425085a691d19c1ec4424a23e23d81a0a99662a98a9dca6cb",
+      "legal_actions": 5
+    },
+    {
+      "group": "...N....kN.K.r..1",
+      "order_sha": "026a1ca66842706b0283b48cae797591359e5e1b164da5d3785c957c720cb5f4",
+      "parent_index": 486763,
+      "target_index": 486671,
+      "prefix": "b3a1",
+      "target_label": "WIN",
+      "canonical_rank": 19,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "N",
+        "N",
+        "k",
+        ".",
+        ".",
+        "r",
+        ".",
+        0
+      ],
+      "board": [
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "N",
+        "k",
+        ".",
+        ".",
+        "r",
+        ".",
+        1
+      ],
+      "family": 44,
+      "split": "TRAIN",
+      "rules": "results\\dev_aux\\task2258\\root-44.json",
+      "rules_sha": "944be6e1e646c3f594584b894de39b5c97298542181c28830b211fed46666c97",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "c774dc102ea30c3e12342b4b9215790c0eafc750c381f75924cc898b9d624df1",
+        "schema_version": 1
+      },
+      "state_sha": "c62a1afa47a5c1c091294de3b2d6a652ef428b21cc69d2d42a65a325008e2feb",
+      "legal_actions": 7
+    },
+    {
+      "group": ".....Kn.....knR.0",
+      "order_sha": "0031e54fa0eaf76db225b7f4ee5799e36b5928cb15cfc3bbd627dc9f7bfcda7c",
+      "parent_index": 582846,
+      "target_index": 582820,
+      "prefix": "c4b2",
+      "target_label": "WIN",
+      "canonical_rank": 11,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        "k",
+        ".",
+        "N",
+        ".",
+        ".",
+        "N",
+        "K",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "r",
+        ".",
+        "k",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "K",
+        1
+      ],
+      "family": 6,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-6.json",
+      "rules_sha": "f0bf60e4c9bf475f5e043c152f4dfb69171ab531d2a50d08b09a11b9ffdf50c6",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "55f0c4026fcb66eaf07324045585b6e938910cd4c53246c453c9a12fbb401b74",
+        "schema_version": 1
+      },
+      "state_sha": "bb417c014bee435e96cd16fa6861a8058fcacbfa16b29d2be686633b2146fb57",
+      "legal_actions": 7
+    },
+    {
+      "group": "...NK....Nr...k.1",
+      "order_sha": "0073f7b58d6c60b16a63f4ef08a1780f554d405144788cdc469f6dbb1086ae78",
+      "parent_index": 445050,
+      "target_index": 389980,
+      "prefix": "b2b1",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "N",
+        ".",
+        ".",
+        ".",
+        "r",
+        "k",
+        "N",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "r",
+        "k",
+        "N",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 13,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-13.json",
+      "rules_sha": "485826fda1989c5d6f49b946c6abbbe3be2df38f00d2e1827e7a23a121978d80",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d7b0276b178ce0d3b3dde70dd7765a1caa24471fe15de7d5ced8f1530a8007fe",
+        "schema_version": 1
+      },
+      "state_sha": "e6da83cad04f427ed6916eead0eaf859d646b5016e8e179a79dcd898ef23b2f1",
+      "legal_actions": 6
+    },
+    {
+      "group": "...N..Krk....N..0",
+      "order_sha": "00b32ad3df15b73cf75ad8b07b8105c72e149d8cc482c6c6b2a2d0fe2516be30",
+      "parent_index": 261548,
+      "target_index": 260787,
+      "prefix": "d4d2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "k",
+        "R",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        1
+      ],
+      "family": 17,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-17.json",
+      "rules_sha": "9b21cbf12ee40279623db152b2d1ba8e553d21a04494c4a1e14f9edfb12df778",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6ecaf25da3ab71efe007dc0d2722bf52c7bfb414a7d5f1564935d70a800e59fb",
+        "schema_version": 1
+      },
+      "state_sha": "c7e3bb1c56fd072fc5b547b18de4fbe8fe57235d4baae17de20e9739effd9d55",
+      "legal_actions": 4
+    },
+    {
+      "group": ".......Rn..Knk..1",
+      "order_sha": "00cb1129168c182f4978967c5c7d61f566c353a9c4f4741084cc8e0a3966f281",
+      "parent_index": 266663,
+      "target_index": 266320,
+      "prefix": "d2a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        "K",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "k",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "k",
+        "n",
+        1
+      ],
+      "family": 21,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-21.json",
+      "rules_sha": "f78f4a08b5ec47e0a536ae21e3e44d750c6c75be53206526a7559be8b05c5fba",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b789f010e86650697ca3a48c4d5dd76818de598b7db5d3a27ec6811ddd8a0591",
+        "schema_version": 1
+      },
+      "state_sha": "e64edb1cd5d64679b9686b6dcc9ece510e9cfc8497723598758b119de584758c",
+      "legal_actions": 6
+    },
+    {
+      "group": "..K.....rk.N.N..0",
+      "order_sha": "00e72511dab3ccf24d5b8d986655de0102dd87fd52ff4a5968b26cd93251f83a",
+      "parent_index": 234401,
+      "target_index": 234279,
+      "prefix": "d1c1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        1
+      ],
+      "family": 22,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-22.json",
+      "rules_sha": "21151d212399d9ce212d77560224bf4e2ac54c6c6a1f44f91532285335390920",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "390192b4cbb87819484a8ce44bac98259095247492be0852d5d6eaa45a1f02b2",
+        "schema_version": 1
+      },
+      "state_sha": "76787300ef51399e2b100d4f494f02a5f28f34ea05d304c6dad7ebc47b721aea",
+      "legal_actions": 6
+    },
+    {
+      "group": "...K.....N.kr.N.0",
+      "order_sha": "00ee8e25042c79c64f5788659b58bd79fce426dbe8360c9b9418a9628409ffc0",
+      "parent_index": 346435,
+      "target_index": 345984,
+      "prefix": "d2d1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        -1,
+        0,
+        -1,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        "n",
+        "k",
+        ".",
+        "K",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "k",
+        ".",
+        "K",
+        ".",
+        1
+      ],
+      "family": 26,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-26.json",
+      "rules_sha": "6d41f3619690b29efcdc743c617c134c8f0f0e95e2f3e2789b67f1fccf852659",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "00309b249caa885fd9ec012c9ddb26aff03c51b1b92200e910ebf2d1dd487502",
+        "schema_version": 1
+      },
+      "state_sha": "32dd0a6f6168c127f4256ffdaea0db2f93d2e4d5d72df859831ebb165c632f39",
+      "legal_actions": 8
+    },
+    {
+      "group": "......R.nK..n..k1",
+      "order_sha": "01035ea3343dde1857369c5d20f5b6f8ad1b4ad8a4140b6e5f5ed8bd7753f7f9",
+      "parent_index": 286758,
+      "target_index": 286345,
+      "prefix": "b3b2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        -1,
+        0,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        "k",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 29,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-29.json",
+      "rules_sha": "1ea0f8db5c90a71cdfec656cdd443c7ca41420c442b63065c61ee56eaf4c599a",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "296773cba96231966b0e1383f334ffd7e67469261f1c7ca009f6328d8605e19b",
+        "schema_version": 1
+      },
+      "state_sha": "29b7aa7fb8fc4bb49b468b7bb93b17afcc0ae98ebda136cf6f50c49df93dd7c6",
+      "legal_actions": 6
+    },
+    {
+      "group": "...NK..k.....r.N1",
+      "order_sha": "01063f6581d4da86668bcdb9f108f8728e295571c7f2ced4871eb978e81a201f",
+      "parent_index": 432457,
+      "target_index": 432410,
+      "prefix": "c3d1",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "r",
+        ".",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "N",
+        "K",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        "N",
+        1
+      ],
+      "family": 30,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-30.json",
+      "rules_sha": "96fe134341866e07c1d5116c0c3921de95afb7b09a2c9c72651b766f81d682be",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "1580359df2de3384837652694bf8101e376ca2ed8a5745b3aae25875ce79d6e2",
+        "schema_version": 1
+      },
+      "state_sha": "9bf6eca5aca0ea7c57e6477f9486b618ff2804a5ebdd8b38ccf78173968857d9",
+      "legal_actions": 9
+    },
+    {
+      "group": ".....K.knn..R...1",
+      "order_sha": "013d307676b1abf21c27212f54bfe9fe0f8839a3baea459e291f74d62c704df0",
+      "parent_index": 224652,
+      "target_index": 224416,
+      "prefix": "c4a4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        -1,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 33,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-33.json",
+      "rules_sha": "fb8bcb4bdd9347ffbe3e96d879211d7d9cdb0fceeae61942c34959265b11a3d3",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "25f392eeceaddec8b76099114e82544cf4bb2bce4484e96f86a4e9ffc2a97efb",
+        "schema_version": 1
+      },
+      "state_sha": "043c30f9128047beefac564825a8631f11aea4a55597bcc0aa0849e6720d7d2c",
+      "legal_actions": 8
+    },
+    {
+      "group": "..NK....r...k..N0",
+      "order_sha": "0151d62e0abb07d35893cedb1a90643a5e046e7e13f3e72f4601cc293b400ea9",
+      "parent_index": 203252,
+      "target_index": 202439,
+      "prefix": "c3c1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "R",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "n",
+        1
+      ],
+      "family": 34,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-34.json",
+      "rules_sha": "a932c85c3249cca348f989e69023b8ee1b66376fa1d52171dbd5ada936d85d80",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "2ac3221930a1853729064130c551a60d4cdbdec4a53531f3a90ded9abb2c3a2b",
+        "schema_version": 1
+      },
+      "state_sha": "ee06fe243c33fb64a2fe2b8ac7d866731367336a399f39d13f20def34bfd5688",
+      "legal_actions": 7
+    },
+    {
+      "group": "....Kn.R......kn1",
+      "order_sha": "01619fee852ac653eca7ffcfa02e2779ad295195b475616e6ea5fc6005e795cf",
+      "parent_index": 251130,
+      "target_index": 250818,
+      "prefix": "a3a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        -1,
+        0,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "K",
+        "R",
+        ".",
+        ".",
+        ".",
+        "n",
+        "k",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "R",
+        ".",
+        "n",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "k",
+        ".",
+        ".",
+        1
+      ],
+      "family": 35,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-35.json",
+      "rules_sha": "a03a7dbb00316a7e17fe2c46f8d6246e77a672e7d5ee0c7ea9fe563260b2a652",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4d03cd035c9bd66df8311220cc2b49ca2f71c984382e23daaf526bd9def5b445",
+        "schema_version": 1
+      },
+      "state_sha": "ef8af62374723ec3c67166ebbde01e86f6ce0ff43332d85ef41b175d68a32acf",
+      "legal_actions": 7
+    },
+    {
+      "group": "..K.....k..rN..N1",
+      "order_sha": "0190fdcd8427c06c753271cce40414b902fc5b12494fa3d0c124a4177a61adb2",
+      "parent_index": 455323,
+      "target_index": 399983,
+      "prefix": "c2c1",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        ".",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "N",
+        1
+      ],
+      "family": 39,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-39.json",
+      "rules_sha": "5babeddda09725b618158188272377407128ac1b738bcbc9c631eada9bdfaf91",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "c6455297f1744f1619af91a44baf5192a395df42fc6095c91ee5e21b7d5a5510",
+        "schema_version": 1
+      },
+      "state_sha": "7a1fd5b43c721cbff48582aeb46fab1b3c141339294b50440f904da9d42d57c4",
+      "legal_actions": 8
+    },
+    {
+      "group": ".......K.Rn.k..n0",
+      "order_sha": "01bc57c031f8b41c435a1c28bbae3e1f68b8e45f6f0a904cf5344e2ad8d2ec68",
+      "parent_index": 535084,
+      "target_index": 535108,
+      "prefix": "c2d4",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "k",
+        ".",
+        "r",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        "N",
+        1
+      ],
+      "family": 41,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-41.json",
+      "rules_sha": "ae17d9e56bfb513bb558a86aba9cc3b8b8c79f13c14b057fa615a87b8c760ca3",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4491224c744ea64e73e949b42abc2646e6f37a4e3405fcd4d0d66c91341aef0c",
+        "schema_version": 1
+      },
+      "state_sha": "8f0c4e07a58a5c9c1a10ef0fe31e9767f9de3effc8903e0368db13c5485d3880",
+      "legal_actions": 8
+    },
+    {
+      "group": "...Kr...N...N..k1",
+      "order_sha": "02aa5e4ceebbe81fea3a32a299be94cc4d58e5c4e53702afebba257d92415df0",
+      "parent_index": 425868,
+      "target_index": 425842,
+      "prefix": "c4a3",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        "r",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        "N",
+        "k",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        "r",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "k",
+        1
+      ],
+      "family": 45,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-45.json",
+      "rules_sha": "f926ac443fb85ff27083dae960c5d96154bb3aa8e71c52ee16a8d5b0ac9e0744",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "60d0a6a9990ee9d84a214dfac4f0fd1a9a6cec12ab6dd7b31f9601f9b68556b8",
+        "schema_version": 1
+      },
+      "state_sha": "a8d08f60f87cbc67ec479b47e2e7c2c65bee3ac1ca09d9fb3998a9cf284d9a49",
+      "legal_actions": 6
+    },
+    {
+      "group": "...K....k...Nr.N1",
+      "order_sha": "0307cab88c3e62d04b23db4f40806ebeb6da0fece5a7c9631a3358296975c79e",
+      "parent_index": 468426,
+      "target_index": 417079,
+      "prefix": "d2d1",
+      "target_label": "WIN",
+      "canonical_rank": 13,
+      "target_action_utilities": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "k",
+        ".",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        ".",
+        ".",
+        "N",
+        "r",
+        ".",
+        "N",
+        1
+      ],
+      "family": 46,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-46.json",
+      "rules_sha": "d6c9e0917a66b23998ef7e1f3f510adea25d95acea0be4ceb9fe71ccb7c6e0a0",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6d8494dfc994a76a4cf9b797e14e238801a581cf10a47c2bff217f043d226cc4",
+        "schema_version": 1
+      },
+      "state_sha": "a7d4c4ada5234faf8fa107981d87edc9d7bc1638156edcffce1f33861afc9169",
+      "legal_actions": 8
+    },
+    {
+      "group": "...K....Nrk..N..1",
+      "order_sha": "03d9e7bf4dfc981633a16d7b682f5be605e7fb02a1be8d88554df235a0db1c07",
+      "parent_index": 536276,
+      "target_index": 536228,
+      "prefix": "d3c1",
+      "target_label": "WIN",
+      "canonical_rank": 9,
+      "target_action_utilities": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "k",
+        "N",
+        "K",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 47,
+      "split": "DEV",
+      "rules": "results\\dev_aux\\task2258\\root-47.json",
+      "rules_sha": "086fdcfb6b993c04983a5d724a764f5f31a021c8f37736e3ec50488584ccfa0d",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "36a4c6974e58e502db95f47e68b0a6496fd3f38e643ecbb0af65f4774ebb2c92",
+        "schema_version": 1
+      },
+      "state_sha": "52a860c60f5a456afa020abca610bcb439bb98cee0bbbed8c8cbdd12362b13a3",
+      "legal_actions": 7
+    }
+  ],
+  "selection": "Reference-only all legal noncapture one-ply prefixes from compiler-valid both-anchor-safe BOTH color-owned K+R vsK+2N andK+2N vsK+R side0 parent. Target ongoing >=2legal choices, >=2 distinct canonical action utilities, WIN rank>=5 or DRAW, no immediate terminal children. Exclude all48old2251 targetD4/colororbits. Hash group RN78-both-roles-prefix-choice; deterministic smallest parent/action; TRAIN/DEV hashmod3; each split halfWIN halfDRAW;32TRAIN16DEV before ANYpricequery. No fallback relaxation ifinsufficient.",
+  "all_groups": 10401,
+  "counts": {
+    "safe_initial_parents": 141584,
+    "eligible_prefix_DRAW": 237636,
+    "eligible_prefix_WIN": 118940
+  },
+  "strata": {
+    "('TRAIN', 'WIN')": 16,
+    "('TRAIN', 'DRAW')": 16,
+    "('DEV', 'WIN')": 8,
+    "('DEV', 'DRAW')": 8
+  },
+  "price_queries": 0,
+  "old_DEV_performance_evaluated": false,
+  "reference_label_exposure": "Complete exposed graph scanned, including semantic equivalents of old/new DEV; NOT zero DEV label reading or unseenWDLholdout"
+}

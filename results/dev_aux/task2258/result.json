@@ -1,0 +1,22 @@
+{
+  "status": "FROZEN_PRICE_UNQUERIED_PREFIX_MU",
+  "TRAIN": 32,
+  "DEV": 16,
+  "strata": {
+    "('TRAIN', 'WIN')": 16,
+    "('TRAIN', 'DRAW')": 16,
+    "('DEV', 'WIN')": 8,
+    "('DEV', 'DRAW')": 8
+  },
+  "group_labels": {
+    "DRAW": 7396,
+    "WIN": 3005
+  },
+  "counts": {
+    "safe_initial_parents": 141584,
+    "eligible_prefix_DRAW": 237636,
+    "eligible_prefix_WIN": 118940
+  },
+  "seconds": 19.504125100007514,
+  "scope": "Reference labels deliberately define NEWconditionalmu, notunexposed semantic/ruleholdout. Existing oldDEV performance notread/evaluated; bulkcomplete exposedreference isused fornewcandidate generation. NewDEV isprice-unqueried only. ActualoneplyGameRecord/root/compilerlegal; canonicalfreshWDL isdistributiondescriptor notactualhistoryreward. No humanpricefit/default/PRIMARY/oldcapchanges. Complete exposed graph bulkread means old/newsemanticDEVlabel exposure, notzeroDEVlabelreading. Original2257 inputs field old_DEV_labels_read=0 was inaccurate as a raw-read statement; superseded explicitly, no oldDEVperformance evaluation."
+}

@@ -1,3 +1,45 @@
+# DEV_AUX current mainline -78,2026-10-16
+
+ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. Latestuser governs.
+Changedmu: price-independent legal-prefix action-WDLconflicts, BOTHmaterialownerships;
+32TRAIN16DEV halfWIN/DRAW, completeexposedreference/price-unqueriedonly.
+2261trueW-L768games/12671moves634.924s/original1800: .5/1->2, newDEVnet6/64
+CI[.015625,.1875]. 2271NEW32families/newfoes1.5/4 fixed2vs1,256games/4654moves,
+net5/128CI[0,.0859375], winsunchanged,3positivefamilies. Scopedpositive+weak
+replication withSAMEprepaid<=4ACTIONguideBOTHplayers; notgenericonlineproof.
+No unique/universalmetric2; TRAINresampling2global5901/10000descriptiveonly.
+LATEchangedNNboundary2prioritycontrol2282 ALL32TRAIN/2seeds/512games10253moves
+closed434.350s/original1200:1977gain5/128CI[0,.0859375],8173gain0CI[-.03125,.03125].
+128fullD3equalvalues/283968guidegradechecks, no fit/rootreplacement. Baseline
+positive+weaktransfer retained, but ordering-robustpricebenefit NOTestablished.
+
+Correctfixedfoe NOtable2x2:64games/2476moves, ALL4cells2W2L12D; price/solver/
+interaction0 on8exposedfamilies, NOTequivalence/stability.12genericcertificates.
+GenericALL24newmoverWINs0atcaller.2/1/4. NewDFS/BFS48calls0positive;4actualmate
+fixtures+16boundarycontrolsPASS. New60scaller feasibility4TRAINWINs: BFS0/4,
+DFS1/4, existingincremental+fullPositionadapter3/4, 4instances/3contexts/36moves;
+INCRsuccess4.140/9.164/18.881s, no default/player/bank adoption. All189paidqueries
+independentlyconsumed.60doubleverificationexactrootadmissions cheapbutNEW32zero
+exactrootmatches; notbroadtransport/speedup/pricebenefit.
+
+ALL192closedfirstdifferences:18TR21DEV, candidateonly. Firstcanonicalquality
+changes2TR4DEV, ALLLOSS->DRAW;5/6DEVrewardgainsfirstqualityunchanged. Actualfinite
+W-Lnotcanonicalgradient; posthocassociationnotmediation. Correctold55nonpositive:
+15actualopponentWIN+40referenceDRAWunproved, not55opponentfavorable. ALL24newWIN
+and15opponentWINgraphs/cursors426moves consumed. Oldraw/failures/capskept.
+
+Currentselection: beforemorelearnergames, freezeone boundedprice-independent
+incrementaldiscovery/paidpolicycost question atALLpredeterminedlateactualentries;
+keepfoe/resources/rolefixed andUNKNOWN. No unchangedquietdrawquantity/within-cell
+pricehunt/root-cache-as-generic/humanfit. Fullgenerateddomain/learningtargetOPEN.
+Ownmemo has executable steps. Report:results/dev_aux/SEGMENT_20261016_78.md.
+Dot1792163597inline78request/77Slackonly, no78source/execution; advisorynotapproval.
+PRIMARYc644b271HEAD/mainlineonlyread, noexecution/adoption. CHATLeaperfuture-only.
+20archive exactsource review/restore inREPLAY_20261016_78.md; directtextLF/EOF
+publicationprojectionseparate. No visibility/PRIMARY/default/UI/Agent/Goalchanges.
+
+## Prior complete selection - retained evidence, not a live task list
+
 # DEV_AUX current mainline -77,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. Latest user governs.

@@ -1,0 +1,38 @@
+{
+  "status": "PASS_CLOSED_PAID_QUERY_CERTIFICATE_CURSOR",
+  "task": 2265,
+  "queries": 72,
+  "planned": 72,
+  "missing": 0,
+  "verified_instances": 0,
+  "actual_conversion_moves": 0,
+  "maximum_measured_atomic_overrun": 0.0,
+  "by_method_cap": [
+    {
+      "method": "BFS",
+      "caller_seconds": 0.2,
+      "queries": 24,
+      "mover_knownWIN": 24,
+      "verified": 0,
+      "measured_seconds": 3.672374099958688
+    },
+    {
+      "method": "BFS",
+      "caller_seconds": 1.0,
+      "queries": 24,
+      "mover_knownWIN": 24,
+      "verified": 0,
+      "measured_seconds": 17.17757980004535
+    },
+    {
+      "method": "BFS",
+      "caller_seconds": 4.0,
+      "queries": 24,
+      "mover_knownWIN": 24,
+      "verified": 0,
+      "measured_seconds": 67.63738889998058
+    }
+  ],
+  "seconds": 0.13912649999838322,
+  "scope": "Closed actualroot/returnedlegality/separateunits/phasecost/paidindependent+currentcursor receipts andsavedactualconversion replay. No proofproducer/fit/newrewardgames. UNKNOWNnotDRAW; moverstrata andactualatomicovershoot explicit; no exactlatency/nodeequivalenceclaim."
+}

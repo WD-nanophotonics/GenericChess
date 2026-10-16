@@ -1,0 +1,57 @@
+{
+  "status": "COMPLETE_EXACT_ROOT_REUSE_COST_QUALIFICATION_NO_ADOPTION",
+  "method_contexts": 4,
+  "verified_contexts": 3,
+  "actual_double_verification_admissions": 60,
+  "all_four_discovery_seconds": 74.20738609999535,
+  "rows": [
+    {
+      "family": 0,
+      "query": 2,
+      "generic_discovery_verified": true,
+      "observed_discovery_seconds": 9.163834200007841,
+      "exact_saved_TRAIN_games": 20,
+      "actual_reuse_admissions": 20,
+      "actual_reuse_admission_seconds": 4.061377300036838,
+      "new32_exact_root_matches": 0,
+      "illustrative_repeated_discovery_projection": 183.27668400015682,
+      "observed_one_discovery_plus_20_admissions": 13.22521150004468
+    },
+    {
+      "family": 2,
+      "query": 4,
+      "generic_discovery_verified": false,
+      "observed_discovery_seconds": 42.02258129999973,
+      "exact_saved_TRAIN_games": 20,
+      "actual_reuse_admissions": 0,
+      "actual_reuse_admission_seconds": 0.0,
+      "new32_exact_root_matches": 0
+    },
+    {
+      "family": 12,
+      "query": 6,
+      "generic_discovery_verified": true,
+      "observed_discovery_seconds": 4.140386399987619,
+      "exact_saved_TRAIN_games": 20,
+      "actual_reuse_admissions": 20,
+      "actual_reuse_admission_seconds": 2.6819362000969704,
+      "new32_exact_root_matches": 0,
+      "illustrative_repeated_discovery_projection": 82.80772799975239,
+      "observed_one_discovery_plus_20_admissions": 6.82232260008459
+    },
+    {
+      "family": 15,
+      "query": 11,
+      "generic_discovery_verified": true,
+      "observed_discovery_seconds": 18.880584200000158,
+      "exact_saved_TRAIN_games": 20,
+      "actual_reuse_admissions": 20,
+      "actual_reuse_admission_seconds": 5.306565799925011,
+      "new32_exact_root_matches": 0,
+      "illustrative_repeated_discovery_projection": 377.61168400000315,
+      "observed_one_discovery_plus_20_admissions": 24.18714999992517
+    }
+  ],
+  "seconds": 12.08329449998564,
+  "scope": "ExactsameFP/GameRecord/root only: 20realTRgamesperroot, BOTHindependentandcurrentcursor checks+compile/replay+choosepaidfreshforeach. GenericINCREMENTALmethodfixed, ALL4successfulandfailedcontextsretained, no cheapest-successalgorithmselection. Projected20*singleobserveddiscovery isILLUSTRATIVE, NOTremeasuredspeedup/gameoutcome. New32validationexactrootmatches0; no broadPosition/ruletransport/cachehitclaim orbank/defaultadoption. RootWINproofwouldoverridepriceandcanremovelearningcontrast inthesolvedsubset; no pricerewardclaim/no newgames/fit. Conditionalengineeringfeasibilityonly."
+}
