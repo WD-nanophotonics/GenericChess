@@ -1,3 +1,15 @@
+## 2026-10-17 public spatial getter trial-child identity
+
+Rebuild Native for a scoped optimization to the existing spatial_features getter.
+Its discarded trial children no longer build unused canonical identities/events;
+full parent history/S4 checks, occupancy/control, failures and capacity remain.
+No new API, evaluator/default/UI policy or larger storage is supplied. The new
+Core Position input bridges/manual models are archived research prototypes,
+not automatic fallback. In particular the bridge must decline the short-horizon
+S4 mismatch; Core retains full rule/history support. Normal2904 tests, selected157,
+restored source157 and exact caller-cost/tail records:
+../research/CORE_POSITION_INPUTS_20261017.md.
+
 ## 2026-10-17 isolated mixed-leaf implementation
 
 Rebuild Native from the complete sandbox revision. Nonzero linear3 plus supplied

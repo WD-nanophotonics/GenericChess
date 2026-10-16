@@ -121,3 +121,45 @@ def test_inline_localized_leaf_keeps_real_child_aux_and_nested_reply_semantics(
             localized_control_values=weights, dynamic_values=dynamic,
         ) == expected
     assert native.snapshot(rules, packed) == before
+
+
+@pytest.mark.parametrize("builder,position_for", S4_CASES)
+@pytest.mark.parametrize("owner", (0, 1))
+@pytest.mark.parametrize("horizon", (2, 512))
+def test_public_spatial_getter_preserves_s4_and_occupancy(
+    builder, position_for, owner, horizon,
+):
+    from generic_chess.learning.features import (
+        localized_control_features, spatial_occupancy_features,
+    )
+    compiled = compile_semantic_ruleset(replace(builder(), max_ply=horizon))
+    position = replace(position_for(compiled.support), side_to_move=owner)
+    rules = compile_native_semantic_rules(compiled)
+    packed = native.pack_current_position(rules, position, ply_count=0)
+    before = native.snapshot(rules, packed)
+    expected = spatial_occupancy_features(position, rules.type_ids)
+    actual = native.spatial_features(rules, packed)
+    assert actual["occupancy"] == tuple(
+        value for side in (0, 1) for type_id in rules.type_ids
+        for value in expected[f"{side}:{type_id}"]
+    )
+    assert actual["localized_control"] == localized_control_features(position, compiled)
+    assert native.snapshot(rules, packed) == before
+
+
+@pytest.mark.parametrize("prefix", (1023, 1024))
+def test_public_spatial_getter_preserves_history_capacity(prefix):
+    from test_native_q_history_deferral import cycle
+    from generic_chess.learning.features import localized_control_features
+    session = cycle(max_ply=2048, repetition=10000, prefix=prefix)
+    rules = compile_native_semantic_rules(session.compiled)
+    packed = pack_semantic_search_position(session.compiled, rules, session)
+    before = native.snapshot(rules, packed)
+    if prefix == 1024:
+        with pytest.raises(NotImplementedError, match="history capacity"):
+            native.spatial_features(rules, packed)
+    else:
+        assert native.spatial_features(rules, packed)["localized_control"] == (
+            localized_control_features(session.state.position, session.compiled)
+        )
+    assert native.snapshot(rules, packed) == before

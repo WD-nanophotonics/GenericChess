@@ -217,3 +217,31 @@ has320legalactions>256. Protocolmissedthatprecheck; alloldcaps/results stay.
 No completedD1/default/API/model claim. Nextprospectivefreshconsumer work must
 freeze rootdegree/nodeforecast BEFOREqueries, notextendthisfailedtarget. Native
 cap remains explicit; no task/featuretruncation orAUXlearner follows.
+
+
+## Completed Core Position input follow-on —2026-10-17
+
+The old320degree/256node D0 failure stays. Prospective fresh root forecasts now
+allow8/8 completed D1 and4/4 D2 Core calls with full5145 inputs; ephemeral Core3/9
+sharing halves the measured whole-caller cost. A separate Native Position-only
+input prototype keeps Core's full history/terminal authority, including PENDING
+and1025 history. Two of four common6/12second conditions on two fresh families
+complete D2 only with accelerated inputs. These are finite capability/cost results,
+not learned benefit, WDL, Elo or an automatic Native/Core fallback.
+
+A max1 S4 counterexample rejects an UNQUALIFIED Position bridge:8/36 controls
+mismatch; the guarded research source conservatively declines all horizon1 rules.
+This is the same boundary already handled by the existing availability provider,
+not a new game-rule defect. Core's complete input path remains. No task/domain,
+model-input axis or history is truncated to make the prototype work.
+
+ADOPT ONLY the public spatial getter's unused trial-child identity deferral, after
+real Core consumer evidence changed the previous getter-only premise. All outputs,
+S4/parent histories, signed errors/capacity/API/defaults remain. Four exposed pairs
+and five fresh complete pairs preserve fullnon-timefields/work/PV/traces; fresh
+geomean cost.349, with3tails/10of16slots retained. Normal2904/selected157 and restored
+source157/reader qualifications are distinct. Packing engineering failed its2.85%
+vs10% criterion and is DEFERRED; no new diagnostic API or competing AUX learner.
+CORE_POSITION_INPUTS_20261017.md owns exact sources, counterexamples and limits.
+Next: inspect real compiler/provider admission limits before any further bridge
+expansion or consumer migration. Do not repeat the closed manual-model panels.

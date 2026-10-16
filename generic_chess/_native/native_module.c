@@ -4423,7 +4423,11 @@ static int gc_semantic_spatial_feature_vector(
             uint64_t raw = actions.data[i];
             if (raw == 0 || (raw >> 63) != 0) continue;
             GCSemanticPosition child;
-            int status = gc_semantic_runtime_make_checked_status(&child, rules, &view, raw);
+            /* This getter consumes only legality and the action target. Preserve
+             * parent history, full S4 checks and signed failure propagation;
+             * the discarded child's digest/event is never an output. */
+            int status = gc_semantic_runtime_make_material_view_status(
+                &child, rules, &view, raw);
             if (status < 0) {
                 gc_semantic_action_buffer_free(&actions);
                 return 0;

@@ -1,0 +1,30 @@
+{
+  "build": {
+    "returncode": 0,
+    "seconds": 9.539589899999555
+  },
+  "reader": {
+    "returncode": 0,
+    "seconds": 15.82538939997903,
+    "counts": {
+      "root_records": 21,
+      "full_Native_Core_states": 447,
+      "retained_terminal_tails": 4,
+      "explicit_long_history_import_refusals": 11,
+      "independent_D1_children": 343,
+      "Core_PV_edges": 94,
+      "actual_query_receipts": 53,
+      "retained_time_censors": 4,
+      "guarded_short_horizon_refusals": 12,
+      "guarded_S4_vectors": 24,
+      "retained_original_counterexamples": 8,
+      "original_fault_receipts_not_rerun": 12
+    },
+    "scope": "Search/training disabled. Fullstate/PV/Positiondefinitions andmanualD1formula checked from restoredsource; old clocks/minimaxD2/interruptions not rerun, no all-domain proof."
+  },
+  "tests": {
+    "returncode": 0,
+    "seconds": 14.188924300018698
+  },
+  "whole_seconds": 42.90203970001312
+}

@@ -3526,3 +3526,27 @@ Historical receipts/reports and frozen caps remain evidence, not current policy.
 This bounded documentation repair does not start/reset a research segment or
 change the next scientific question. DEV_AUX must update its own instructions;
 PRIMARY does not edit its checkout or claim its repair has been performed.
+
+
+## Core input capacity and public spatial getter —2026-10-17
+
+PRIMARY completes65 Core player attempts/120 direct component predictions with
+zero research fits/evaluation games. ForecastedD1/D2, full5145 input, PENDING and
+1025-history controls preserve full Core authority. Only the existing public9
+getter's discarded-child identity deferral is activated, after a real consumer
+changed the old getter-only premise. Freshfive paired completeD2 costs have.349
+geomean,3tails/10of16slots retained; fields/work/traces/PV equal, no strength claim.
+A proposed unconditional Position bridge failed8shortS4controls; guarded research
+source explicitly declines allmax1. Existingavailabilityprovider already knewthis
+constraint, so thisis reapplied admission knowledge, not a new product rule bug.
+Packing2.85% fails the prospective10% criterion; no API/learner/framework expansion.
+
+AUX79 root+3replies are read as owner summaries/advice only, no79 code/results
+independently executed. Keep UNKNOWN bounds, actual Session versus canonical
+utility and paid intervention distinctions. No AUX checkout/state/worker changes,
+quiet window or competing solver. PRIMARY's earlier two-hour-window correction
+remains current. Full2904/selected157 and restored157/reader pass; all harness,
+reader, temp-path and publication-copy failures are retained/resolved. No personal
+path/raw account record/credential or binary is in the outgoing source capsule.
+Exact evidence/scopes: ../research/CORE_POSITION_INPUTS_20261017.md. No measured
+collaboration efficiency percentage or claim of independent AUX execution.
