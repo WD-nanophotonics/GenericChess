@@ -137,10 +137,17 @@ context dependence alone does not refute averaging under an explicit distributio
 Use information per total cost (including engineering/recording overhead), not
 universal development caps. Choose a falsifiable decision-changing question;
 record changed premise, potential outcomes, incremental cost and scope. Small
-local training is authorized. BEFORE any single project run expected>1hour,
-obtain Dot's necessity assessment with question/cost/cheaper alternatives. Pending
-that assessment, do shorter independent work; do not split to evade consultation.
-This is distinct from Agent segment duration, and grants no uncontrolled jobs.
+local training is authorized. A single project experiment/run expected to take
+LESS THAN TWO HOURS needs no prior Dot assessment. If expected duration is
+TWO HOURS OR MORE (>=120 minutes, including exactly120), submit it to Dot for
+necessity assessment BEFORE starting, with question/cost/cheaper alternatives.
+Pending that assessment, do shorter independent work; do not split to evade it.
+The user changed this threshold on2026-10-15 at20:31 JST through Dot, then
+directly confirmed that change in this chat. This supersedes the old >1hour
+threshold and the mistaken decision to retain it as a stricter local instruction.
+A relayed user decision is distinct from ordinary CHAT_Comments advice; current
+direct confirmation resolves this case. This is separate from Agent segment
+duration and grants no uncontrolled jobs; safety and frozen caps still apply.
 
 Preserve frozen conditions, failures, missing planned slots and UNKNOWN; never
 extend a frozen cap because of results, relabel exposure as holdout, or replace

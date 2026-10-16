@@ -170,8 +170,14 @@ request and one Dot reply only, not77 source/execution. Prior75 reports remain h
 structural four-game diagnostic belongs to AUX's lane. PRIMARY's new capacity
 consult received a concrete fixed2d3e source objection about GameState versus
 Position actions; adopted the asymmetric control, not an approval gate. Actual
-source reading and another owner's execution remain distinct. The user's >1hour
-single-run necessity consultation still governs; incidental2hour advice does not.
+source reading and another owner's execution remain distinct. The user changed
+the single-experiment/run window on2026-10-15 at20:31 JST through Dot and has now
+confirmed it directly: expected <120 minutes needs no prior Dot assessment;
+expected >=120 minutes first requires Dot's necessity assessment. The previous
+interpretation of this change as incidental advice, retaining >1hour as a stricter
+local rule, was incorrect and is superseded. This changes prospective scheduling,
+not frozen experimental caps, historical evidence or the60-90minute Agent segment.
+DEV_AUX owns its corresponding policy repair; PRIMARY must not edit its checkout.
 
 Third CHAT reference, retained without immediate work:
 https://nanomelon.slack.com/archives/C0C6L21UU20/p1792156154268769

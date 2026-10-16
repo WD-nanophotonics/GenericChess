@@ -43,9 +43,13 @@ engineering overhead. Development limits are cost checkpoints, while permissions
 machine safety and frozen fair-comparison caps remain hard boundaries. Do not
 extend a frozen experiment or erase its failure by renaming seeds/phases.
 Use existing recorders/atomic writes; no new framework merely for receipts.
-Small training is authorized. A single project run expected>1hour first obtains
-Dot's necessity assessment; continue shorter independent work while pending.
-Do not split the run to evade this rule or confuse it with segment duration.
+Small training is authorized. Estimate the single experiment/run BEFORE starting:
+expected duration <120 minutes needs no prior Dot assessment; >=120 minutes
+(including exactly two hours) first obtains Dot's necessity assessment with the
+question, cost and cheaper alternatives. Continue shorter independent work while
+pending. Do not split a run to evade this rule or confuse it with segment duration.
+This implements the user's2026-10-15 20:31 JST change relayed through Dot and
+subsequently confirmed directly here; the former >1hour rule is superseded.
 
 Inspect completed result files, not a large report being atomically replaced by
 its producer. A Windows read can block replacement. Monitor producer stdout or

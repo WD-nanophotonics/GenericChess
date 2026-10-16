@@ -3513,3 +3513,16 @@ missedrootdegree320>nodecap256, so completedD1 wasimpossible; keepthatdesignerro
 andalllimits.14Core/S4vectors match, partialthroughput improved only. Escaped
 JSONLseparator recoveredfromfourintactbodies/validaggregate without rerun.
 No productionCore/model/API/default/AUXchange. Futurefreshrootforecast first.
+
+
+## Experiment-window authority correction —2026-10-17
+
+The user directly confirms the2026-10-15 20:31 JST decision relayed through Dot:
+expected single-run duration <120minutes needs no prior assessment; >=120minutes
+first requires Dot necessity assessment. PRIMARY corrects AGENTS, LOCAL_AGENT,
+LOCAL_MAINLINE and its private recovery memo. Retaining >1hour as a stricter
+local instruction was an incorrect authority interpretation, now superseded.
+Historical receipts/reports and frozen caps remain evidence, not current policy.
+This bounded documentation repair does not start/reset a research segment or
+change the next scientific question. DEV_AUX must update its own instructions;
+PRIMARY does not edit its checkout or claim its repair has been performed.
