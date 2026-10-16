@@ -1,0 +1,70 @@
+from pathlib import Path
+from dataclasses import replace
+from copy import copy
+import json,sys,pytest
+sys.path.insert(0,str(Path('tests').resolve()));sys.path.insert(0,str(Path('tests/development').resolve()))
+from test_generic_session_win_proof import session,claim
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.serialization import deserialize_ruleset
+from generic_chess.core.pieces import Piece
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record
+from generic_chess.session.result import SessionStatus
+from scripts.generic_win_proof import _same_state
+from results.dev_aux.task2168.panel import fixtures
+from results.dev_aux.task2179.graph import prove_graph,verify_graph,GraphStrategyCursor,GraphNode,GraphCertificate,position_token
+from results.dev_aux.task2180.rank_proposal import propose
+from results.dev_aux.task2068.teacher import CanonicalTeacher
+
+@pytest.fixture(scope='module')
+def teacher():return CanonicalTeacher('results/dev_aux/task2171','results/dev_aux/task2172','results/dev_aux/task2176')
+
+def small_defender():
+ r=next(r for r in json.loads(Path('results/dev_aux/task2177/inputs.json').read_text(encoding='utf-8'))['roots']if r['rank']==2)
+ c=compile_ruleset_for_execution(deserialize_ruleset(Path(r['rules']).read_text(encoding='utf-8')));board=tuple(None if ch=='.'else Piece(int(ch.islower()),ch.upper(),ch.upper())for ch in r['root'][:-1]);c=replace(c,initial_position=replace(c.initial_position,board=board,side_to_move=0),initial_setup_positions={});return GameSession(c),r['target']
+
+def execute_strategy(s,cert):
+ cur=GraphStrategyCursor(s,cert,seconds=3.);actual=copy(s);moves=0
+ while actual.result.status is SessionStatus.ONGOING:
+  assert moves<96
+  choice=cur.choose(actual)if actual.state.position.side_to_move==cert.target else cur.certificate.nodes[cur.index].edges[-1][0]
+  cur.commit(actual,choice);moves+=1
+  replay=GameSession.replay(actual.compiled,actual.to_record());assert _same_state(replay.state,actual.state)and replay.result==actual.result
+ assert actual.result.winner==cert.target;return moves
+
+def test_no_table_actual_promotion_drop_and_history_qualified_mates():
+ for name,s in fixtures():
+  if name not in('forced_promotion','capture_drop'):continue
+  r=prove_graph(s,max_nodes=512,seconds=3.);assert r.certificate is not None
+  v=verify_graph(s,r.certificate,seconds=3.);assert v['verified'];assert execute_strategy(s,r.certificate)>=1
+
+def test_every_defense_rank_and_real_cursor_are_required(teacher):
+ s,target=small_defender();cert=propose(s,teacher,target);v=verify_graph(s,cert,seconds=3.);assert v['verified']and len(cert.nodes[0].edges)>=2;assert execute_strategy(s,cert)==2
+ bad=replace(cert,nodes=(replace(cert.nodes[0],edges=cert.nodes[0].edges[:-1]),)+cert.nodes[1:]);assert not verify_graph(s,bad)['verified']
+ bad=replace(cert,nodes=(replace(cert.nodes[0],rank=True),)+cert.nodes[1:]);assert not verify_graph(s,bad)['verified']
+ first=cert.nodes[0].edges[0];bad=replace(cert,nodes=(replace(cert.nodes[0],edges=(first,(cert.nodes[0].edges[1][0],first[1]))+cert.nodes[0].edges[2:]),)+cert.nodes[1:]);assert not verify_graph(s,bad)['verified']
+ bad=replace(cert,root_record=replace(cert.root_record,schema_version=True));assert not verify_graph(s,bad)['verified']
+
+def test_partial_or_cancelled_graph_never_becomes_win():
+ s,target=small_defender();r=prove_graph(s,target=target,max_nodes=1,seconds=1.);assert r.status=='UNKNOWN'and r.certificate is None
+ r=prove_graph(s,target=target,max_nodes=512,seconds=1.,cancel=lambda:True);assert r.status=='UNKNOWN'and r.reason=='cancelled'and r.certificate is None
+
+def test_declarations_perpetual_and_semantic_scope_fail_closed():
+ s=session(claim(0,'WIN'));r=prove_graph(s,seconds=1.);assert r.status=='UNKNOWN'and r.reason=='unsupported_declarations'
+ for name,s in fixtures():
+  if name not in('played_perpetual','semantic_aux','pass_draw'):continue
+  r=prove_graph(s,seconds=1.);assert r.status=='UNKNOWN'and r.certificate is None
+
+def test_actual_old_history_counterexample_is_rejected_not_adjudicated_draw(teacher):
+ c=compile_ruleset_for_execution(deserialize_ruleset(Path('results/dev_aux/task2101/rules.json').read_text(encoding='utf-8')));old=json.loads(Path('results/dev_aux/task2101/result.json').read_text(encoding='utf-8'));s=GameSession.replay(c,deserialize_game_record(json.dumps(old['root_record'])));assert s.result.status is SessionStatus.ONGOING;cert=propose(s,teacher,old['target']);v=verify_graph(s,cert,seconds=3.);assert not v['verified']and v['reason']=='prehistory_repetition_guard';assert s.result.status is SessionStatus.ONGOING
+
+def test_typed_fullposition_key_keeps_base_current_and_bool_int_distinct():
+ s=session();pos=s.state.position;index=next(i for i,p in enumerate(pos.board)if p is not None and p.current_type_id=='R');board=list(pos.board);board[index]=replace(board[index],base_type_id='P',promoted=True);assert position_token(pos)!=position_token(replace(pos,board=tuple(board)))
+ assert position_token(replace(pos,aux_state=(((0,-1),True),)))!=position_token(replace(pos,aux_state=(((0,-1),1),)))
+
+def test_remaining_horizon_and_false_terminal_are_rejected(teacher):
+ s,target=small_defender();cert=propose(s,teacher,target);bad=replace(cert,nodes=(replace(cert.nodes[0],rank=s.compiled.max_ply+1),)+cert.nodes[1:]);assert verify_graph(s,bad)['reason']=='remaining_ply_guard'
+ bad=replace(cert,nodes=(GraphNode(0,terminal=replace(s.result,status=SessionStatus.CHECKMATE,winner=target)),));assert not verify_graph(s,bad)['verified']
+
+def test_generic_graph_defender_proof_is_independently_checked():
+ s,target=small_defender();r=prove_graph(s,target=target,max_nodes=1024,seconds=3.);assert r.certificate is not None;assert verify_graph(s,r.certificate,seconds=3.)['verified'];execute_strategy(s,r.certificate)

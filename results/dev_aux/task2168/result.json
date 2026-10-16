@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETE",
+  "queries": 224,
+  "seconds": 9.857806999993045,
+  "groups": {
+    "BOARD_CORE_NORMAL/NODE_ONLY": {
+      "queries": 28,
+      "completed": 23,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 1327,
+      "measured_seconds": 4.017534399958095,
+      "exit_causes": {
+        "depth_budget": 23,
+        "node_budget": 5
+      }
+    },
+    "BOARD_CORE_NORMAL/0.01": {
+      "queries": 28,
+      "completed": 10,
+      "nochoice": 4,
+      "declarations": 0,
+      "nodes": 192,
+      "measured_seconds": 0.24841960010235198,
+      "exit_causes": {
+        "depth_budget": 10,
+        "time_budget": 18
+      }
+    },
+    "BOARD_CORE_NORMAL/0.05": {
+      "queries": 28,
+      "completed": 14,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 802,
+      "measured_seconds": 0.8337570000439882,
+      "exit_causes": {
+        "depth_budget": 14,
+        "node_budget": 4,
+        "time_budget": 10
+      }
+    },
+    "BOARD_CORE_NORMAL/0.2": {
+      "queries": 28,
+      "completed": 20,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 1086,
+      "measured_seconds": 1.4962355000316165,
+      "exit_causes": {
+        "depth_budget": 20,
+        "node_budget": 5,
+        "time_budget": 3
+      }
+    },
+    "FULL_SESSION_NORMAL/NODE_ONLY": {
+      "queries": 28,
+      "completed": 27,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 586,
+      "measured_seconds": 1.0636900000390597,
+      "exit_causes": {
+        "depth_budget": 27,
+        "node_budget": 1
+      }
+    },
+    "FULL_SESSION_NORMAL/0.01": {
+      "queries": 28,
+      "completed": 14,
+      "nochoice": 10,
+      "declarations": 4,
+      "nodes": 139,
+      "measured_seconds": 0.2286313000076916,
+      "exit_causes": {
+        "depth_budget": 14,
+        "time_budget": 14
+      }
+    },
+    "FULL_SESSION_NORMAL/0.05": {
+      "queries": 28,
+      "completed": 18,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 372,
+      "measured_seconds": 0.6488323000376113,
+      "exit_causes": {
+        "depth_budget": 18,
+        "time_budget": 10
+      }
+    },
+    "FULL_SESSION_NORMAL/0.2": {
+      "queries": 28,
+      "completed": 27,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 586,
+      "measured_seconds": 1.015314200107241,
+      "exit_causes": {
+        "depth_budget": 27,
+        "node_budget": 1
+      }
+    }
+  },
+  "scope": "Opt-in reference only. All owned declarations included. RESTART/NO_CONTEST no-winner terminal separately classified; not actualDRAW label. No mateprover/learning/default/UI/primarywrites."
+}

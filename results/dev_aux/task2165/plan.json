@@ -1,0 +1,34 @@
+{
+  "question": "Fresh structurally price-active roots for candidate-normal-depth ablation, no training or DEV.",
+  "cause": "2149sixpriceclasses tietrueW-L;113/768pairedtrajectorieschangebutonly2outcomeschange. Needtestinputsignaldesign before any moretraining.",
+  "seed": 20261016742165,
+  "target_roots": 32,
+  "structural_candidate_cap": 512,
+  "attempt_cap": 100000,
+  "one_input_cap_seconds": 180,
+  "expected_seconds": 20,
+  "base_rules": "results/dev_aux/task2093/rules.json",
+  "exclusion_tasks": [
+    2128,
+    2134,
+    2139,
+    2149,
+    2158
+  ],
+  "sampling": "UniformorderedKkBNbn squares3x3/side0/bothkingssafe/eachside>=2legalchoices; uniqueD4/colororbits acrossallassessedcandidates, excludesallprioractualpositions regardlessoutcome.",
+  "predicate": "At exactcompleteddepth2 materialminimax, ALL7rule-derivedprice-cellrepresentatives produce>=2distinctfixedfirstactions; unprunediterative-depth1+2nodeupperbound<=64. Uses ONLYliterallegalmoves/actualone-stepcheckmate-stalemate/materialcoeffs. No WDL/rank/table/proof/fitness/humanprice input.",
+  "ratios": [
+    "1/4",
+    "1/2",
+    "3/4",
+    "1",
+    "3/2",
+    "2",
+    "3"
+  ],
+  "roles": "Predicate concernsinitialside0only. Futurebothcandidate-role assay doesnotguaranteepriceactivityatlaterrole1context; scopeexplicit.",
+  "TRAIN_DEV": "ALL32 diagnostic TRAIN-like roots; no price selection and no DEV; familiar labels exposed but never queried by sampler.",
+  "all_candidates_saved": true,
+  "decision": "If32qualified freeze512physicalgames atcandidate prices.25/1 anddepth2/3 vsfixedfoes.5/2 bothroles. Samecandidate512node/.05wall cap, opponent64node/depth2/.05wall. No newfit or postoutcomechoice.",
+  "frozen_utc": "2026-10-16T08:29:59.436077+00:00"
+}

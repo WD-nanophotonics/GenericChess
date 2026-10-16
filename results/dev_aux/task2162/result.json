@@ -1,0 +1,41 @@
+{
+  "status": "COMPLETE",
+  "queries": 96,
+  "nodes": 6294,
+  "teacher_load_seconds": 0.4682559000211768,
+  "seconds": 2.481448900012765,
+  "groups": {
+    "2": {
+      "cases": 32,
+      "nodes": 475,
+      "nonflat": 11,
+      "no_price_any_top": 0,
+      "no_price_all_top": 1,
+      "no_price_first": 0,
+      "price_changes_first": 32,
+      "baseline1_first_position_optimal": 30
+    },
+    "3": {
+      "cases": 32,
+      "nodes": 1452,
+      "nonflat": 11,
+      "no_price_any_top": 0,
+      "no_price_all_top": 0,
+      "no_price_first": 0,
+      "price_changes_first": 22,
+      "baseline1_first_position_optimal": 32
+    },
+    "4": {
+      "cases": 32,
+      "nodes": 4367,
+      "nonflat": 11,
+      "no_price_any_top": 0,
+      "no_price_all_top": 0,
+      "no_price_first": 0,
+      "price_changes_first": 13,
+      "baseline1_first_position_optimal": 32
+    }
+  },
+  "new_game_or_fit_or_DEV": 0,
+  "scope": "2093/2094/2095 canonical positions only; posthoc child positional WDL, NOT arbitrary played-history proof or reward"
+}

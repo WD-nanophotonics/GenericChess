@@ -261,27 +261,27 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment73
+# DEV_AUX current scope:2026-10-16 segment74
 
-Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. Actual W-L only; UNKNOWN
-never DRAW.2139/2149/2158 are now COMPLETE under their own frozen clocks. Preserve
-old2134 partial/noSelector/noDEV and all earlier cap failures; never fill them.
-Current consequence: strict-neighbor optimization was trapped by plateaus, but
-new complete enumeration against two fixed foes still has six tied price cells
-and retains baseline1. No benefit/unique-ratio/convergence claim. Do not retune DEV.
-The qualified2155 price-active input predicate uses no WDL/price success filter;
-familiar population labels remain exposed. New2158 protocol was frozen before
-fitness and is now COMPLETE: TRAIN signal becomes nonflat, DEV gain remains0.
-Do not tune its exposed DEV or repeat unchanged volume. Next examine complete
-TRAIN normal-search capacity/interfacecost;2156 proves inputmechanics only.
-2131 fresh-six-file reader and2136 paid legal fallback remain the fixed players.
-2153 adds opt-in failed-stop-observation evidence, with no retry or flag bypass;
-its real fixture establishes a swallowed-error mechanism, not the old failure's
-unrecorded cause.2154 attribution preserves that distinction.
-2151 puregeneric coverage and2157 replay evidence constrain proof claims.
-2153/2145/2148 engineering remains opt-in: no product/default/UI or PRIMARY write.
-New verifier shares only its own reconstructed prefixes; full history/claims and
-all-defender checks stay. Publication and causal reasons below remain current.
+Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. All73/74 producers CLOSED.
+Actual W-L only, UNKNOWN distinct. Old partial/noSelector/noDEV/cap records stay.
+2167 is a fixed-price requested-depth diagnostic, not new training:512 actual
+records show uncertain+.03125 depth gains and no positive.25-vs1 price result.
+Mean interaction0 is cancellation, not equivalence or rejection of price learning.
+2175 typed fullSession normal/proof/bank/fallback player remains opt-in; defaults
+and prior fixed players unchanged.2174 matched counts/pruning remove old confound.
+2176 adds only missingNn to complete4x4<=4closure; tableprepay remains charged.
+2179 graph prototype has strict rule/history/rank/horizon guards and independent
+public verification; unsupported remainsUNKNOWN/fullgeneratedscopeOPEN. RealV0
+falseWINafterresignation is fixed in BOTHentrychecks, exactsource/counterexample
+retained.2181usedV0 only on ongoingfrozencontexts, stricterconsumer rechecksall;
+never use oldsource as current implementation. BFS is notDFPN.18vs17 no-table
+proof contexts are nonnested, not universalgain. Table-proposedDAG verification
+58vs52 at1.5s separates representation from still-open strategy discovery.
+Next use observable fixed root1/27 traces to attribute frontier/constructioncost,
+not unchanged game volume/DEVprice tuning or PRIMARY backend integration.
+Publication and causal reasons below remain current; projectcontent sansPII is
+authorized, exact sensitive raw originals remain ignored/private.
 
 ## Current user publication grant2026-10-15
 

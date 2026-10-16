@@ -1,0 +1,34 @@
+{
+  "question": "What inventory gap blocks complete capture closure of4x4 botharmed KkBNbn at<=4actors?",
+  "all_capture_subsets": [
+    "",
+    "B",
+    "N",
+    "b",
+    "n",
+    "BN",
+    "Bb",
+    "Bn",
+    "Nb",
+    "Nn",
+    "bn"
+  ],
+  "existing": [
+    "",
+    "B",
+    "N",
+    "b",
+    "n",
+    "BN",
+    "Bb",
+    "Bn",
+    "Nb",
+    "bn"
+  ],
+  "missing": [
+    "Nn"
+  ],
+  "missing_syntactic": 87360,
+  "full_syntactic": 551520,
+  "scope": "Old2108 is correctlyclosed for its asymmetric parent; notcompletebotharmed<=4. ExistingguardreturnsUNKNOWN forNn, notfalseDRAW. Fillingonlymissinginventory avoidsfull6piecegraph andpreservesoldprepaid593.562s."
+}

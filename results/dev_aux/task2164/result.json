@@ -1,0 +1,121 @@
+{
+  "status": "COMPLETE",
+  "queries": 2016,
+  "seconds": 66.15846679999959,
+  "groups": {
+    "2/0.01": {
+      "queries": 224,
+      "complete": 58,
+      "nochoice": 0,
+      "depth0": 6,
+      "nodes": 2498,
+      "actual_seconds": 2.1940650998149067,
+      "exit_causes": {
+        "time_budget": 166,
+        "depth_budget": 58
+      },
+      "max_wall_overrun": 0.0010568999953102318
+    },
+    "2/0.05": {
+      "queries": 224,
+      "complete": 224,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 3864,
+      "actual_seconds": 3.1713829000655096,
+      "exit_causes": {
+        "depth_budget": 224
+      },
+      "max_wall_overrun": 0.0
+    },
+    "2/0.2": {
+      "queries": 224,
+      "complete": 224,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 3864,
+      "actual_seconds": 3.059769799700007,
+      "exit_causes": {
+        "depth_budget": 224
+      },
+      "max_wall_overrun": 0.0
+    },
+    "3/0.01": {
+      "queries": 224,
+      "complete": 0,
+      "nochoice": 0,
+      "depth0": 3,
+      "nodes": 2579,
+      "actual_seconds": 2.274031999957515,
+      "exit_causes": {
+        "time_budget": 224
+      },
+      "max_wall_overrun": 0.0017819000151939688
+    },
+    "3/0.05": {
+      "queries": 224,
+      "complete": 172,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 10504,
+      "actual_seconds": 8.384354799811263,
+      "exit_causes": {
+        "depth_budget": 172,
+        "time_budget": 52
+      },
+      "max_wall_overrun": 0.009934299992164594
+    },
+    "3/0.2": {
+      "queries": 224,
+      "complete": 224,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 11447,
+      "actual_seconds": 9.375424399942858,
+      "exit_causes": {
+        "depth_budget": 224
+      },
+      "max_wall_overrun": 0.0
+    },
+    "4/0.01": {
+      "queries": 224,
+      "complete": 0,
+      "nochoice": 1,
+      "depth0": 6,
+      "nodes": 2621,
+      "actual_seconds": 2.2765128999890294,
+      "exit_causes": {
+        "time_budget": 224
+      },
+      "max_wall_overrun": 0.0024568999744951723
+    },
+    "4/0.05": {
+      "queries": 224,
+      "complete": 27,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 13867,
+      "actual_seconds": 11.06864330006647,
+      "exit_causes": {
+        "time_budget": 197,
+        "depth_budget": 27
+      },
+      "max_wall_overrun": 0.0019031000148970606
+    },
+    "4/0.2": {
+      "queries": 224,
+      "complete": 201,
+      "nochoice": 0,
+      "depth0": 0,
+      "nodes": 28969,
+      "actual_seconds": 23.765959100128384,
+      "exit_causes": {
+        "depth_budget": 201,
+        "time_budget": 23
+      },
+      "max_wall_overrun": 0.002825799991842348
+    }
+  },
+  "new_game_or_fit_or_DEV": 0,
+  "scope": "Same2162TRAINroots/evaluator/boardnormal; noPN/game/fit/DEV. Reference expectedchoice ONLY if requesteddepthcompleted; otherwise preserveactual lastcomplete/None. Ordinaryconcurrency, not machineexclusive."
+}

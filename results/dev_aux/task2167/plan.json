@@ -1,0 +1,59 @@
+{
+  "ratios": [
+    0.25,
+    1.0
+  ],
+  "normal_nodes": 512,
+  "normal_depth": 2,
+  "normal_seconds": 0.05,
+  "proof_nodes": 1024,
+  "proof_seconds": 0.2,
+  "proof_depth": 64,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.2,
+  "step_seconds": 0.75,
+  "H": 96,
+  "teacher_prepaid_seconds": 25.7528,
+  "question": "Does greater candidate completed normal depth improve actual W-L and alter the predeclared .25-versus1 price contrast under fixed opponent?",
+  "changed_premise": "2162/2163 all32oldTRAIN baseline1 positionoptimal30/32depth2 then32/32depth3; need actualgame consequence on fresh structuralroots, not unchanged training volume.",
+  "families": 32,
+  "TRAIN_families": 32,
+  "DEV_families": 0,
+  "TRAIN_foes": [
+    0.5,
+    2.0
+  ],
+  "DEV_foes": [
+    1.0
+  ],
+  "foe_derivation": "Reciprocal outerleaf-coefficientcrossings .5 and2 fromactualtwoN/twoB inventory; equalweights BEFOREnewfitness, not chosenbyDEVgains orhumanprices. DEVunity is familiarhistorically butdifferentfromthisTRAINdistribution, notunseenopponentclaim.",
+  "attempt_cap": 100000,
+  "input_seconds_cap": 30,
+  "sampling": "All32new2165roots; 2166publicqualification before any fitness; no teacher-basedrootfilter.",
+  "selection": "NONE. No price fit/DEV. Both prices predeclared from past2158 selected.25 andunitybaseline; no general priceoptimum claim.",
+  "expected_TRAIN_logical": 512,
+  "expected_TRAIN_physical": 512,
+  "expected_DEV_logical_max": 0,
+  "expected_physical_max": 512,
+  "identity_reuse": "NONE: even if actualbehaviorsmatch, changeddepth is distinctdeclaredconfiguration. Every512game actual.",
+  "provider": "unchanged2105TriggerProvider withaudited3x3teacher2093/94/95; fullgraphqueriedonly<=4actors; >4smallPN32/.02",
+  "controller": "Same valid-observationpath as2131 plus2153EvidenceStopReader; eachpollfresh6files/cacheJSONdecodeonly. Invalidobservation now raisesdistinctRuntimeError+exactprivateevidence, no automaticretry/flagwrite. Same2136completeplayer unchanged.",
+  "one_game_cap_seconds": 1200,
+  "expected_seconds": 500,
+  "serial_execution": "Single1200cap including all512fresh games; counterbalance depth/price/foe order. No run expected>onehour, no cap reset.",
+  "readout": "Family-unit mean candidate W-L depth3-minusdepth2 separately byfixedprice, and price.25-minus1 separatelybydepth; difference-in-differences samefixedfoes/roles. UNKNOWN/missing separate, no selection. CIs descriptive/not equivalence.",
+  "no_new_policy": "Original2139fixedproof/fallback/referenceverifier unchanged; newprefixverifier andmintreepolicy are NOT used.",
+  "frozen_utc": "2026-10-16T08:41:54.160549+00:00",
+  "seed_input": 20261016742165,
+  "input_source": "results/dev_aux/task2165/inputs.json",
+  "interpretation": "Candidate512node ceiling fixed for BOTHdeptharms; opponent remains64/depth2. Measures depth under .05wall/512node policy, not exactcompleted-depth intervention whenwallcensored. Same proof/provider/fallback for all conditions; changedtrajectories maychange totalcost.",
+  "candidate_depths": [
+    2,
+    3
+  ],
+  "opponent_normal_nodes": 64,
+  "opponent_normal_depth": 2,
+  "input_sha": "9bbcc44d5b097bc0b71011af26774d8db7c2b19cec37060470c5e455205d60f0",
+  "source_sha": "9e5e6079741b1e89eed86f7cc0536090aa32169b196fbc3096d453b72227c14a",
+  "qualification": "2166PASS89assessed1229publicnodes224normalqueries; copiedoldscope140/336 is staleprose correctedbyinterpretation, not counters"
+}

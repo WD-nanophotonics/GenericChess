@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_BEFORE_NEW4x4CORE_CENSUS",
+  "question": "Does adding ONE opposing bishop to cooperatingBN produce exact exchange-choice conflicts while retaining affordable completecaptureclosure?",
+  "rules": "results\\dev_aux\\task2097\\rules.json",
+  "rules_sha": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad",
+  "inventories": [
+    "Nn"
+  ],
+  "syntactic_positions": 87360,
+  "seconds_cap": 900,
+  "expected_seconds": 45,
+  "scope": "NEWmissingNn-only4x4Corecensus, everylegaledge crosscheckedliteral. Old<=4 captureclosedrows reused separately, nofull6census/nooldcapreset.",
+  "decision": "If complete/audited, comparematerialranking capacity andsample actualWDLlearning conflicts; ifpartial retain anddo notsolveincompletegraph asDRAW. No extension/restart.",
+  "rationale": "3x3complete83992states/210800edges provescheapbotharmedteacher possible but geometrychanges. This restoresoriginal4x4movement whileaddingoneenemyactor; bound2473440syntactic ratherthanfull6piece tensofmillions. Forecast21s3x3 and40s2056 scaledforlargerbranching, expected420s<onehour; one900cap. Memoryforecast<12GB withobserved47GBavailable; noextraagents/workers.",
+  "one_cap_seconds": 180
+}

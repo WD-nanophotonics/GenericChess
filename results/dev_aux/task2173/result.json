@@ -1,0 +1,4810 @@
+{
+  "status": "PASS_ACTUAL_RECORDS_FULL_DECISIONS_FIXED_OPPONENT_AND_CERTIFICATES",
+  "physical": 512,
+  "moves": 7887,
+  "missing": 0,
+  "counts": {
+    "moves": 7887,
+    "DRAW": 444,
+    "proof_certificates": 68,
+    "WIN": 38,
+    "LOSS": 30,
+    "actual_paid_fallback": 1
+  },
+  "certificate_verifier_nodes": 412,
+  "effects": {
+    "depth_gain_point25": {
+      "mean": 0.03125,
+      "bootstrap_percentile95": [
+        -0.0078125,
+        0.0859375
+      ],
+      "positive": 3,
+      "negative": 1,
+      "zero": 28
+    },
+    "depth_gain_1": {
+      "mean": 0.03125,
+      "bootstrap_percentile95": [
+        0.0,
+        0.0703125
+      ],
+      "positive": 3,
+      "negative": 0,
+      "zero": 29
+    },
+    "price_gain_depth2": {
+      "mean": -0.03125,
+      "bootstrap_percentile95": [
+        -0.09375,
+        0.03125
+      ],
+      "positive": 1,
+      "negative": 3,
+      "zero": 28
+    },
+    "price_gain_depth3": {
+      "mean": -0.03125,
+      "bootstrap_percentile95": [
+        -0.078125,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 2,
+      "zero": 30
+    },
+    "interaction": {
+      "mean": 0.0,
+      "bootstrap_percentile95": [
+        -0.0625,
+        0.0625
+      ],
+      "positive": 2,
+      "negative": 2,
+      "zero": 28
+    }
+  },
+  "family_effects": [
+    {
+      "family": 0,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 1,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 2,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": -0.25,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.25
+      },
+      "depth_gain_point25": -0.25,
+      "depth_gain_1": 0.25,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": -0.5,
+      "interaction": -0.5
+    },
+    {
+      "family": 3,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 4,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 5,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 6,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 7,
+      "means": {
+        "(0.25, 2)": 0.25,
+        "(0.25, 3)": 0.5,
+        "(1.0, 2)": 0.25,
+        "(1.0, 3)": 0.5
+      },
+      "depth_gain_point25": 0.25,
+      "depth_gain_1": 0.25,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 8,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 9,
+      "means": {
+        "(0.25, 2)": -0.5,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.5,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": -0.5,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.5
+    },
+    {
+      "family": 10,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 11,
+      "means": {
+        "(0.25, 2)": -0.25,
+        "(0.25, 3)": 0.25,
+        "(1.0, 2)": 0.25,
+        "(1.0, 3)": 0.25
+      },
+      "depth_gain_point25": 0.5,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": -0.5,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.5
+    },
+    {
+      "family": 12,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 13,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 14,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 15,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 16,
+      "means": {
+        "(0.25, 2)": -0.25,
+        "(0.25, 3)": -0.25,
+        "(1.0, 2)": 0.25,
+        "(1.0, 3)": 0.25
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": -0.5,
+      "price_gain_depth3": -0.5,
+      "interaction": 0.0
+    },
+    {
+      "family": 17,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 18,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 19,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 20,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 21,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 22,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 23,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 24,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 25,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 26,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 27,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 28,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 29,
+      "means": {
+        "(0.25, 2)": 0.25,
+        "(0.25, 3)": 0.25,
+        "(1.0, 2)": -0.25,
+        "(1.0, 3)": 0.25
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.5,
+      "price_gain_depth2": 0.5,
+      "price_gain_depth3": 0.0,
+      "interaction": -0.5
+    },
+    {
+      "family": 30,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    },
+    {
+      "family": 31,
+      "means": {
+        "(0.25, 2)": 0.0,
+        "(0.25, 3)": 0.0,
+        "(1.0, 2)": 0.0,
+        "(1.0, 3)": 0.0
+      },
+      "depth_gain_point25": 0.0,
+      "depth_gain_1": 0.0,
+      "price_gain_depth2": 0.0,
+      "price_gain_depth3": 0.0,
+      "interaction": 0.0
+    }
+  ],
+  "costs": {
+    "0.25/depth2/candidate": {
+      "moves": 1019,
+      "normal_completed_requested": 992,
+      "normal_returned": 992,
+      "seconds": 23.733626000175718,
+      "normal_seconds": 10.140839999861782,
+      "proof_seconds": 7.050358500069706,
+      "verification_seconds": 0.11501040004077367,
+      "fill_verification_seconds": 0.11639830010244623,
+      "search_nodes": 11591,
+      "proof_nodes": 4538
+    },
+    "0.25/depth2/foe": {
+      "moves": 1018,
+      "normal_completed_requested": 981,
+      "normal_returned": 981,
+      "seconds": 23.089057899924228,
+      "normal_seconds": 9.56594219992985,
+      "proof_seconds": 6.965445299865678,
+      "verification_seconds": 0.16651190002448857,
+      "fill_verification_seconds": 0.16527440006029792,
+      "search_nodes": 10808,
+      "proof_nodes": 4501
+    },
+    "0.25/depth3/candidate": {
+      "moves": 985,
+      "normal_completed_requested": 919,
+      "normal_returned": 962,
+      "seconds": 35.14976990025025,
+      "normal_seconds": 22.708549600385595,
+      "proof_seconds": 6.325640899216523,
+      "verification_seconds": 0.10265890002483502,
+      "fill_verification_seconds": 0.0963157000078354,
+      "search_nodes": 30032,
+      "proof_nodes": 4058
+    },
+    "0.25/depth3/foe": {
+      "moves": 985,
+      "normal_completed_requested": 961,
+      "normal_returned": 961,
+      "seconds": 21.072811900172383,
+      "normal_seconds": 8.947904199449113,
+      "proof_seconds": 6.1009196999366395,
+      "verification_seconds": 0.09520369998062961,
+      "fill_verification_seconds": 0.09627449998515658,
+      "search_nodes": 10197,
+      "proof_nodes": 3885
+    },
+    "1.0/depth2/candidate": {
+      "moves": 967,
+      "normal_completed_requested": 940,
+      "normal_returned": 940,
+      "seconds": 22.255518000456505,
+      "normal_seconds": 9.291662099771202,
+      "proof_seconds": 6.877525500400225,
+      "verification_seconds": 0.1158282999531366,
+      "fill_verification_seconds": 0.11805580006330274,
+      "search_nodes": 10641,
+      "proof_nodes": 4514
+    },
+    "1.0/depth2/foe": {
+      "moves": 968,
+      "normal_completed_requested": 946,
+      "normal_returned": 946,
+      "seconds": 22.159568000002764,
+      "normal_seconds": 9.316929799941136,
+      "proof_seconds": 6.810191100172233,
+      "verification_seconds": 0.09433480000006966,
+      "fill_verification_seconds": 0.08865069999592379,
+      "search_nodes": 10657,
+      "proof_nodes": 4425
+    },
+    "1.0/depth3/candidate": {
+      "moves": 974,
+      "normal_completed_requested": 913,
+      "normal_returned": 949,
+      "seconds": 35.1450816001161,
+      "normal_seconds": 22.29231679966324,
+      "proof_seconds": 6.878492900170386,
+      "verification_seconds": 0.11232409998774529,
+      "fill_verification_seconds": 0.11364630004391074,
+      "search_nodes": 29179,
+      "proof_nodes": 4502
+    },
+    "1.0/depth3/foe": {
+      "moves": 971,
+      "normal_completed_requested": 949,
+      "normal_returned": 950,
+      "seconds": 20.908453299110988,
+      "normal_seconds": 8.892432800115785,
+      "proof_seconds": 6.193445700220764,
+      "verification_seconds": 0.08906580004259013,
+      "fill_verification_seconds": 0.085168200021144,
+      "search_nodes": 10024,
+      "proof_nodes": 4022
+    }
+  },
+  "pairs": [
+    {
+      "family": 0,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 0,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 1,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 2,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 3,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 4,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 5,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 8,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 8,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 8,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 8,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 6,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "LOSS",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "LOSS",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 7,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 32,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 18,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 8,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 9,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 10,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "LOSS",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "LOSS",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 11,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 7,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 12,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 13,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 7,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 14,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 15,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 16,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 11,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 13,
+        "is_candidate": false,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "PRECOMPUTED_LEGAL_FALLBACK"
+        ],
+        "completed_depths": [
+          2,
+          0
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 17,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 18,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 19,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 20,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 21,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 22,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 9,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 23,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 24,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 1,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 10,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 25,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 5,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 14,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 26,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 3,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 5,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 5,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 27,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 6,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 9,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 9,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 2,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 6,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 28,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "LOSS",
+        "LOSS"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 4,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "WIN",
+        "WIN"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "WIN"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 29,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 30,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 0.5,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 0.5,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 0.5,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 11,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 0.5,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 2.0,
+      "role": 0,
+      "price": 0.25,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 2.0,
+      "role": 0,
+      "price": 1.0,
+      "first_divergence": {
+        "ply": 0,
+        "is_candidate": true,
+        "sources": [
+          "MATERIAL_SEARCH",
+          "MATERIAL_SEARCH"
+        ],
+        "completed_depths": [
+          2,
+          3
+        ]
+      },
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 2.0,
+      "role": 1,
+      "price": 0.25,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    },
+    {
+      "family": 31,
+      "foe": 2.0,
+      "role": 1,
+      "price": 1.0,
+      "first_divergence": null,
+      "outcomes": [
+        "DRAW",
+        "DRAW"
+      ]
+    }
+  ],
+  "seconds": 4.075205700006336,
+  "scope": "Freshroot conditionaldistribution; fixedopponent setup, requestedcandidate normaldepth onlychanges betweenpaireddeptharms. Actualwallcensor/changedpaths/certcost included. Position WDL never reward; CIs descriptive/no equivalence/priceoptimum/generalization claim."
+}

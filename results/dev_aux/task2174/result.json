@@ -1,0 +1,156 @@
+{
+  "matched_declfree_node_pairs": 20,
+  "status": "COMPLETE",
+  "queries": 336,
+  "seconds": 11.869498300016858,
+  "groups": {
+    "BOARD_CORE_NORMAL/NODE_ONLY": {
+      "queries": 28,
+      "completed": 23,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 1327,
+      "measured_seconds": 2.6296211000008043,
+      "exit_causes": {
+        "depth_budget": 23,
+        "node_budget": 5
+      }
+    },
+    "BOARD_CORE_NORMAL/0.01": {
+      "queries": 28,
+      "completed": 10,
+      "nochoice": 4,
+      "declarations": 0,
+      "nodes": 234,
+      "measured_seconds": 0.2365356999798678,
+      "exit_causes": {
+        "depth_budget": 10,
+        "time_budget": 18
+      }
+    },
+    "BOARD_CORE_NORMAL/0.05": {
+      "queries": 28,
+      "completed": 15,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 868,
+      "measured_seconds": 0.7843955000862479,
+      "exit_causes": {
+        "depth_budget": 15,
+        "node_budget": 5,
+        "time_budget": 8
+      }
+    },
+    "BOARD_CORE_NORMAL/0.2": {
+      "queries": 28,
+      "completed": 20,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 1172,
+      "measured_seconds": 1.2720313999743666,
+      "exit_causes": {
+        "depth_budget": 20,
+        "node_budget": 5,
+        "time_budget": 3
+      }
+    },
+    "MATCHED_CORE_NORMAL/NODE_ONLY": {
+      "queries": 28,
+      "completed": 27,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 691,
+      "measured_seconds": 2.075822600076208,
+      "exit_causes": {
+        "depth_budget": 27,
+        "node_budget": 1
+      }
+    },
+    "MATCHED_CORE_NORMAL/0.01": {
+      "queries": 28,
+      "completed": 12,
+      "nochoice": 8,
+      "declarations": 0,
+      "nodes": 164,
+      "measured_seconds": 0.23911210004007444,
+      "exit_causes": {
+        "depth_budget": 12,
+        "time_budget": 16
+      }
+    },
+    "MATCHED_CORE_NORMAL/0.05": {
+      "queries": 28,
+      "completed": 18,
+      "nochoice": 4,
+      "declarations": 0,
+      "nodes": 531,
+      "measured_seconds": 0.7710125000739936,
+      "exit_causes": {
+        "depth_budget": 18,
+        "time_budget": 10
+      }
+    },
+    "MATCHED_CORE_NORMAL/0.2": {
+      "queries": 28,
+      "completed": 25,
+      "nochoice": 0,
+      "declarations": 0,
+      "nodes": 639,
+      "measured_seconds": 1.163095800060546,
+      "exit_causes": {
+        "depth_budget": 25,
+        "node_budget": 1,
+        "time_budget": 2
+      }
+    },
+    "FULL_SESSION_NORMAL/NODE_ONLY": {
+      "queries": 28,
+      "completed": 27,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 586,
+      "measured_seconds": 0.7662710000877269,
+      "exit_causes": {
+        "depth_budget": 27,
+        "node_budget": 1
+      }
+    },
+    "FULL_SESSION_NORMAL/0.01": {
+      "queries": 28,
+      "completed": 14,
+      "nochoice": 9,
+      "declarations": 4,
+      "nodes": 157,
+      "measured_seconds": 0.20916539995232597,
+      "exit_causes": {
+        "depth_budget": 14,
+        "time_budget": 14
+      }
+    },
+    "FULL_SESSION_NORMAL/0.05": {
+      "queries": 28,
+      "completed": 20,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 455,
+      "measured_seconds": 0.6012243999284692,
+      "exit_causes": {
+        "depth_budget": 20,
+        "time_budget": 8
+      }
+    },
+    "FULL_SESSION_NORMAL/0.2": {
+      "queries": 28,
+      "completed": 27,
+      "nochoice": 0,
+      "declarations": 4,
+      "nodes": 586,
+      "measured_seconds": 0.7690695999772288,
+      "exit_causes": {
+        "depth_budget": 27,
+        "node_budget": 1
+      }
+    }
+  },
+  "scope": "No-default opt-in cost/capability panel. Declfree node-only matched arms mustagreechoice/score/visitednodes/depth; claims are explicit semanticgap. CompleteSession usespublicsessionhistory, matchedCore usesfullGameStatehistory; not independentruleengines."
+}

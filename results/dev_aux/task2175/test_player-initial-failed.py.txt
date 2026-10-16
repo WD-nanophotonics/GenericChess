@@ -1,0 +1,78 @@
+from pathlib import Path
+from dataclasses import replace
+from copy import copy
+import sys,json
+sys.path.insert(0,str(Path('tests').resolve()));sys.path.insert(0,str(Path('tests/development').resolve()))
+from test_generic_session_win_proof import session,claim
+from generic_chess.session.result import SessionStatus
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import serialize_game_record
+from scripts.generic_session_phase_player import PhaseLimits
+from scripts.generic_session_proof_bank import SessionLogicalProofBank
+from scripts.generic_session_proof_player import commit_session_decision
+from scripts.generic_session_win_proof import SessionChoice,execute,verify_session_certificate
+from scripts.generic_session_win_proof_batch_pn import prove_session_win_batch_pn
+from scripts.generic_win_proof import _same_state,_ordered
+from results.dev_aux.task2175.fallback import CompleteSessionLegalFallback
+from results.dev_aux.task2175.receipt import decision_receipt
+from results.dev_aux.task2168.panel import fixtures,material
+from results.dev_aux.task2174.matched import MatchedCoreMaterialSearch
+
+def player(s,**kwargs):
+ return CompleteSessionLegalFallback(s.compiled,material,max_depth=3,limits=PhaseLimits(proof_nodes=1024,proof_seconds=.2,verification_nodes=16384,verification_seconds=.2,normal_seconds=.2),**kwargs)
+
+def commit(s,d,p):
+ assert d.choice is not None
+ child=copy(s);commit_session_decision(child,d,[p]);replayed=GameSession.replay(s.compiled,child.to_record());assert _same_state(child.state,replayed.state)and child.result==replayed.result
+ return child
+
+def test_unknown_proof_still_allows_real_normal_declaration_win():
+ s=session(claim(0,'WIN'));p=player(s,proof_enabled=True);p.limits=replace(p.limits,proof_nodes=0);d=p.choose(s,max_nodes=512,seconds=1.)
+ assert d.logical_status=='UNKNOWN'and d.choice==SessionChoice('DECLARATION',declaration_id='claim')and d.source=='FULL_SESSION_MATERIAL_SEARCH'
+ child=commit(s,d,p);assert child.result.status is SessionStatus.DECLARATION and child.result.winner==0 and len(child.to_record().actions)==0
+ assert child.to_record().declaration is not None and s.to_record().declaration is None
+
+def test_actual_restart_and_loss_claims_keep_distinct_rule_results():
+ s=session(claim(0,'RESTART'),k=0,b=15,r=2);p=player(s,proof_enabled=False);d=p.choose(s,max_nodes=512,seconds=1.);child=commit(s,d,p)
+ assert d.choice.kind=='DECLARATION'and child.result.declaration_outcome=='RESTART'and child.result.winner is None and child.result.status is not SessionStatus.REPETITION
+ s=session(claim(0,'LOSS'),k=0,b=15,r=2);p=player(s,proof_enabled=False);d=p.choose(s,max_nodes=512,seconds=1.);assert d.choice.kind=='ACTION';commit(s,d,p)
+
+def test_existing_bank_and_current_cursor_checks_are_both_paid_for_claim_proof():
+ s=session(claim(0,'WIN'));bank=SessionLogicalProofBank(prove_session_win_batch_pn);p=player(s,bank=bank,proof_enabled=True);d=p.choose(s,max_nodes=512,seconds=1.)
+ assert d.source=='PROOF'and d.logical_status=='PROVEN_WIN'and d.fill_verification_nodes>0 and d.verification_nodes>0;assert d.normal_receipt is None
+ assert verify_session_certificate(s,p.cursor.certificate,seconds=2.)['verified'];child=commit(s,d,p);assert child.result.winner==0 and p.cursor.node.rank==0
+ q=player(s,bank=bank,proof_enabled=True);e=q.choose(s,max_nodes=512,seconds=1.);assert e.bank_hit and e.proof_nodes==0 and e.verification_nodes>0 and e.choice.kind=='DECLARATION';commit(s,e,q)
+
+def test_all_actual_mechanisms_normal_choice_and_full_record_replay():
+ for name,s in fixtures():
+  if name in('winning_claim','restart_claim'):continue
+  p=player(s,proof_enabled=False);d=p.choose(s,max_nodes=4096,seconds=1.);assert d.choice is not None;child=commit(s,d,p)
+  assert _same_state(GameSession.replay(s.compiled,s.to_record()).state,s.state)
+  if name in('forced_promotion','capture_drop','played_perpetual'):assert child.result.winner==s.state.position.side_to_move
+  if name=='semantic_aux':assert child.state.position.aux_state!=s.state.position.aux_state
+
+def test_cancelled_admission_pulse_and_after_parent_return_never_dispatch(monkeypatch):
+ s=session();p=player(s,proof_enabled=False);before=s.to_record();calls=[0]
+ def pulse():calls[0]+=1;return calls[0]==2
+ d=p.choose(s,max_nodes=64,seconds=1.,cancel=pulse);assert d.choice is None and d.exit_cause=='cancelled'and s.to_record()==before
+ p=player(s,proof_enabled=False);flag=[False];original=p.normal.choose
+ def stop_after(*args,**kwargs):
+  out=original(*args,**kwargs);flag[0]=True;return out
+ monkeypatch.setattr(p.normal,'choose',stop_after);d=p.choose(s,max_nodes=64,seconds=1.,cancel=lambda:flag[0]);assert d.choice is None and d.exit_cause=='cancelled'
+
+def test_zero_normal_time_returns_only_paid_legal_fallback_and_serializable_receipt():
+ s=session();p=player(s,proof_enabled=False);p.limits=replace(p.limits,normal_seconds=0.);d=p.choose(s,max_nodes=64,seconds=1.)
+ assert d.source=='PRECOMPUTED_LEGAL_FALLBACK'and d.choice.action==_ordered(s.legal_actions())[0]and d.normal_receipt.choice is None
+ assert dict(d.phase_limits)['fallback_admission_seconds']>=0;commit(s,d,p)
+ limits=dict(normal_nodes=64,normal_depth=3,normal_seconds=0.,proof_nodes=1024,proof_seconds=.2,proof_depth=64,verification_nodes=16384,verification_seconds=.2,step_seconds=1.,H=96)
+ raw=decision_receipt(s,d,physical_id=0,logical_slot=0,ply=0,candidate=0,limits=limits);json.dumps(raw);assert raw['normal_receipt']['choice']is None
+
+def test_matched_core_and_full_session_normal_complete_players_match_node_only_without_claims():
+ for name,s in fixtures():
+  if s.compiled.declarations:continue
+  a=player(s,proof_enabled=False);b=player(s,proof_enabled=False,normal_factory=MatchedCoreMaterialSearch)
+  x=a.choose(s,max_nodes=512,seconds=1.,_clock=lambda:0.);y=b.choose(s,max_nodes=512,seconds=1.,_clock=lambda:0.)
+  assert x.choice==y.choice and x.normal_receipt.nodes==y.normal_receipt.nodes and x.normal_receipt.completed_depth==y.normal_receipt.completed_depth and x.normal_receipt.score==y.normal_receipt.score
+
+def test_stale_rule_or_record_binding_does_not_emit_a_choice():
+ s=session();foreign=session(claim(0,'WIN'));p=player(foreign,proof_enabled=False);d=p.choose(s,max_nodes=64,seconds=1.);assert d.choice is None and d.exit_cause=='unsupported_or_unreplayable_session'

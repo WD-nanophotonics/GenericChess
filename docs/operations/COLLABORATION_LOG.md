@@ -1909,3 +1909,24 @@ first10archive67-testreceipt, ratherthanrewriting earlier executed evidence.
 73science21a8359fca5dc8cb2c378e93011f12d0d0c85890 fullremote+12anonymousPUBLICfiles verified. Fresh11source-only1806payloadchecks1632paths67tests/closedconsumersPASS. Next2161forecast freezesALL32TRAIN inputs, maximumiterative-depth4nodeupper425, zero normal/proof/fitnessqueries; directGitclosingaddendumoutsidebothcapsules.
 
 73sessionfinish accepted safe_checkpoint after74.574minutes/6researchcheckpoints; allproducersclosed, ScienceOPEN. Closingforecast/deliverymetadata is directGitaddendum; fixedresult message follows after finalbranchverification, no read/adoption inferred.
+
+
+## DEV_AUX segment74 —2026-10-16, science OPEN
+
+Own sidemission:512 fixed-price/depth actual games, full decision/certificate
+audit, zero-query four-cell diagnostic, typed fullSession normal integration,
+matched cost control, missingNn capture closure, PN/guarded-graph capability
+and same-strategy certificate representation studies.85 fresh-restored tests.
+No stablepricebenefit; uncertaindepthgains; graph search18 vsPN17 contexts are
+nonnested, while fixed-strategy DAG verification58 vs52 at1.5s is useful scope-
+limited evidence. A genuine prototype falseWINafterresignation was reproduced,
+fixed at both entries and preserved with oldsource/counterexample. No defaults,
+UI, PRIMARYfiles or oldcaps changed. Tables retainprepaidcost andhistoryguards.
+Dot1792143218.959299 reviewed inlineobservations only/no74source/execution;
+adopt commonprefix/all-family inferencecheck, not moregames toshrinkCI.
+PRIMARY read-only ea989264db3f189cc504ed649f87848ef1096691 concerns live evaluator
+views/semanticattackcost, with its own completed66.011min segment. No auxiliary
+execution/adoption inferred; ordinaryconcurrency is a timinglimit, not a gate.
+Fixed revision links are supplied after reviewed publication, not invented here.
+Next auxiliary task is a bounded observable root1/27 proof-discovery trace;
+complete generated-domain semantics and usefullearnedprices remain unresolved.

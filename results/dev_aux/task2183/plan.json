@@ -1,0 +1,24 @@
+{
+  "question": "Does guarded DAG representation lower actual verification cost independently of no-table search quality?",
+  "inputs": "results/dev_aux/task2177/inputs.json",
+  "cases": 62,
+  "positive_cases": 58,
+  "nonWIN_controls": 4,
+  "proposal": "Newcomplete4x4teacher2171/2172/2176 proposesstrict-rankpolicygraphs; no-tablegeneric graphsearch isNOTused. Tableprepaid593.562+Nn17.081+merge/solve/audit remainscharged/context.",
+  "construction_nodes": 8192,
+  "construction_seconds": 3.0,
+  "verification_nodes": 16384,
+  "verification_seconds": [
+    0.2,
+    1.5
+  ],
+  "one_cap_seconds": 300,
+  "expected_seconds": 90,
+  "controls": "SAMEroot/strategy/edgeorder inDAGandunrolledSessionProofNode. Ifcomputedunrollednodecount>16384 do not materialize/implyexecutedreference; record mathematicalnode-ceiling noncompletion. Otherwise bothformats publicverified,counterbalanced.",
+  "cursor": "Oneactualmax-rankdefense execution per qualifiedpositivegraph; cursorconstructorverification separatelypaid andtimed, nolearningreward.",
+  "scope": "Certificateformat cost underhistory/ruleguard; notnewgenericsearchgain orfree WDL/tableproof. No defaults/banks/product/PRIMARYchanges.",
+  "pins": {
+    "results/dev_aux/task2179/graph.py": "676e8e9b329bd5cb238780c0deb6f3ec65e39cb4a800856948249fa79c1e1e80",
+    "results/dev_aux/task2180/rank_proposal.py": "34fa79c7d83c4dd0c4a24d74aac115ed222db04868c5b54935fa2c00b0679d31"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "status": "CONFIRMED_V0_FALSE_WIN_AFTER_ACTUAL_RESIGNATION",
+  "family": 0,
+  "actual_result": {
+    "status": "resignation",
+    "winner": 1
+  },
+  "target": 0,
+  "root_record": {
+    "actions": [],
+    "resigned_by": 0,
+    "ruleset_fingerprint": "09d8c91fce789bdf5d2d30c763053e939d14e803ff0130f98f13c418cf9e0f96",
+    "schema_version": 1
+  },
+  "v0_verification": {
+    "verified": true,
+    "reason": "verified",
+    "nodes": 2,
+    "edges": 1,
+    "seconds": 0.0005497999954968691,
+    "unrolled_tree_nodes": 2,
+    "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+  },
+  "v0_prover_status": "CANDIDATE_WIN_GRAPH",
+  "certificate": {
+    "target": 0,
+    "nodes": [
+      {
+        "rank": 1,
+        "terminal": null,
+        "edges": [
+          {
+            "action": {
+              "kind": "board",
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                2,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "child": 1
+          }
+        ]
+      },
+      {
+        "rank": 0,
+        "terminal": {
+          "status": "checkmate",
+          "winner": 0
+        },
+        "edges": []
+      }
+    ]
+  },
+  "scope": "Newprototypeonly; no old/fixedplayer usedit.2181all62inputsactualONGOING, sothisnewboundarydefectdoesnotchangeitsfrozencontexts. Preservev0executedsource andcorrectrootadmission beforepublication/adoption."
+}

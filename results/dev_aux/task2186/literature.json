@@ -1,0 +1,31 @@
+{
+  "status": "PRIMARY_SOURCE_METHOD_REVIEW_DIRECT_GIT_AFTER_CAPSULE",
+  "sources": [
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/7534/7395",
+      "title": "Dealing with Infinite Loops, Underestimation, and Overestimation of Depth-First Proof-Number Search",
+      "year": 2010,
+      "read_scope": "PublisherPDF retrieved; abstract andmethodspages108-111 inspected, no independent implementation/benchmarkreproduction.",
+      "summary": "Proof/disproof threshold methods need special treatment of cycles and shared descendants. The paper distinguishes loop avoidance from undercounting and duplicate overcounting; it proposes threshold control and source-node detection. These mechanisms are not implemented in our BFS prototype.",
+      "next_use": "Before changing frontier priority, trace actual repeated/state-expansion work on root1/27; keep independent finite-rank certificates and existing semantic/history guard. Do not treat ordinary graph reuse or retained thresholds as DFPN."
+    },
+    {
+      "url": "https://webdocs.cs.ualberta.ca/~mmueller/ghi.html",
+      "title": "The Graph History Interaction Problem",
+      "read_scope": "Authorprojectpage andpublicationmetadata read; linked2004PDF returned404, no fullpaperreadclaim.",
+      "summary": "The same position can behave differently after different paths. Our history quotient is a limited sufficient condition for finite winning witnesses, not a general GHI solution."
+    },
+    {
+      "url": "https://repository.dl.itc.u-tokyo.ac.jp/records/48966",
+      "title": "Proof for the Equivalence between Some Best-First Algorithms and Depth-First Algorithms for AND/OR Trees",
+      "year": 2002,
+      "read_scope": "Institutionalmetadata/abstract only; PDF429. No fullproofvalidation.",
+      "summary": "Tree-search equivalence does not itself establish behavior or completeness on our cyclic position graph."
+    }
+  ],
+  "tool_limits": [
+    "Author2004PDF404 retained aslimitation; no unchangedretryloop.",
+    "UTokyo2002PDF429; abstract/metadataonly."
+  ],
+  "new_studyqueries": 0
+}
