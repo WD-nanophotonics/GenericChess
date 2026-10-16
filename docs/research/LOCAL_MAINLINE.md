@@ -529,12 +529,21 @@ same.256firstcomponenttimings MISSING,4value-onlyrecaptures explicit. Counts sho
 assumption waswrong. No NativeModuleproductchange, NN/pricefutility conclusion
 or unchangedgetterrerun.
 
-Nextquestion actuallybegun at verifiedactive inline localized-control loop:
-uninstalled16exposed512node queries allfields equal, ratios.316/.124/.127/.107.
-NOT product or unexposedvalidation. Nextqualify fullCore/aux/history/S4/error/
-capacity there before largerpanel/adoption. Backup inspect actualzero-vector
-consumer cost; no newdiagnostics API/learner. Fulltarget, cheapstatics and
-authorizedsmalllearning alternatives remain, no permanent research prohibition.
+The actualinline continuation is now qualified and minimally adopted:
+LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md. FullCore/S4/history/error/
+capacity checks,2757normal/160source tests;240/256freshqueries66jointD4equal,
+10candidateonly/44neither,4/8control ratios.275/.118;12/16nojointcomparison.
+Onlydiscardunusedtrialidentity, fullparent/search/PVhistory retained. Zero-skip,
+copy, coalescenceV1/V2 andoutline stayunadopted withadversity/cost evidence.
+Privatefusion's positive mixedcost doesnoteraseitscheap-profile regressions.
+288slotcaller curve retains21coldexpiries; readiness/completion isnotquality.
+
+The tiny actualhistory control gives equal3+spatial9 inputs butD4 -80/0;
+BOTHuniquelegalcontinuations endrepetitionDRAW. Finite-targetaliasalone doesnot
+proveoptimalWDLencodingfailure orrequireNN. No training/price/q/default change.
+Currentnextquestion is actual caller evaluator/fullhistory preservation onNative
+capacityrefusal: inventorytheexistingpublichandoff andoneCorecontrol before
+proposingmoreoptimization/API work. Keepfulltarget/cheapstatics; noAUXduplication.
 
 Latestpeer: AUX74 fullthread2replies/twofixed20da2c28reports REPORT_READ_ONLY.
 Its512games/proof/normalintegration/graph corrections remain owner execution.
@@ -553,3 +562,5 @@ future NONterminal node because mate/stalemate have priority. PRIMARY adopts no
 history quotient/prover code and changes no delivered index or frozen result.
 Exact closing scope: data/closing_peer_scope_20261016.json. The sealed239-member
 archive and prior8810dcf2 technical evidence remain unchanged.
+
+Latestpeer75 twofixeddeea4c7reports REPORT_READ_ONLY;76fullinline+oneDot, not76source/execution. Dot4versus64 advice belongsAUXlane; incidental2hwordingneveroverridesuser>1h single-run consultation. Exact32primaryposts read20+12pages andlegacybindingfalse retained. No crosswrites/sourceclaimupgrade.

@@ -3980,7 +3980,10 @@ static int gc_semantic_probe_material(
                 uint64_t raw = actions.data[i];
                 if (raw == 0 || (raw >> 63) != 0) continue;
                 GCSemanticPosition child;
-                int status = gc_semantic_runtime_make_checked_status(&child, rules, &view, raw);
+                /* Only status and the raw target are consumed. Retain the full parent
+                 * history and S4 checks; this trial child is never searched. */
+                int status = gc_semantic_runtime_make_material_view_status(
+                    &child, rules, &view, raw);
                 if (status < 0) {
                     gc_semantic_action_buffer_free(&actions);
                     return GC_SEMANTIC_EVAL_ERROR;

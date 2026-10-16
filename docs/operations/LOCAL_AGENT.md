@@ -88,6 +88,15 @@ private originals and check/sanitize outgoing copies, including archives/history
 No per-file/message/push consent, even after compaction. AGENTS.md does not disable
 platform enforcement; state the actual grant when requesting supported escalation.
 
+Inspect the NEW commit's author AND committer metadata before publication as
+part of the actual personal-information check. An observed inherited personal
+Git email was caught before push. For Agent-generated commits use an explicit
+nonpersonal Agent identity through command-local GIT_AUTHOR_NAME/EMAIL and
+GIT_COMMITTER_NAME/EMAIL; do not change the user's global Git configuration.
+If correcting metadata, amend only an owned, confirmed UNPUBLISHED commit.
+Do not force-push or rewrite already published history. Preserve the original
+local diagnostic privately and verify the new outgoing commit metadata.
+
 Review diffs/history and relevant tests, commit only the intended delivery, then:
 generic-chess-local.cmd publish --tests <relevant pytest targets>
 The tested entry fetches, checks ancestry, tests, pushes and verifies the full

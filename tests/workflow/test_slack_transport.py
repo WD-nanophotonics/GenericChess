@@ -403,3 +403,83 @@ def test_cli_snapshot_and_explicit_decision_are_both_executed(env, monkeypatch):
     assert calls[1][1]==('R1','adopt','reviewed evidence')
     calls.clear()
     assert cli.main(args[:-2])==2 and not calls
+
+def paged_plugin_snapshot(env, r):
+    body = f"TYPE=DOT_REPLY\nREQUEST_ID={r['request_id']}\n"
+    # The connector displays each server page ascending but pages newest first.
+    first_path = plugin_snapshot(env, r, [
+        ("U2", "102.100000", body + "Newer advice"),
+        ("U2", "103.100000", body + "Latest advice"),
+    ])
+    first = json.loads(first_path.read_text())["tool_result"]
+    data = json.loads(first["content"][0]["text"])
+    data["pagination_info"] = (
+        "There are more messages in this thread. To view the next page, "
+        "use cursor: `OLDER`")
+    first["content"][0]["text"] = json.dumps(data)
+    last_path = plugin_snapshot(env, r, [
+        ("U2", "101.100000", body + "Older advice"),
+        ("U2", "102.100000", body + "Newer advice"),
+    ])
+    last = json.loads(last_path.read_text())["tool_result"]
+    return [{"cursor": None, "tool_result": first},
+            {"cursor": "OLDER", "tool_result": last}]
+
+
+def test_exact_cursor_linked_pages_import_all_advice_without_rewriting_bodies(env):
+    c = s.config()
+    c.update(advisor_bot_id=None, advisor_app_id=None)
+    write_json(s.CONFIG, c)
+    r = sent(env)
+    pages = paged_plugin_snapshot(env, r)
+    originals = json.dumps(pages, sort_keys=True)
+    messages = s.parse_plugin_pages(pages)
+    assert [m["ts"] for m in messages] == [
+        "100.100000", "101.100000", "102.100000", "103.100000"]
+    assert json.dumps(pages, sort_keys=True) == originals
+    path = env.parent / "pages.json"
+    write_json(path, dict(source="Slack plugin read_thread",
+                         team_id="T1", channel_id="C1",
+                         thread_ts="100.100000", pages=pages))
+    result = s.import_snapshot(r["request_id"], path)
+    assert result["state"] == "COMPLETED"
+    assert len(result["revisions"]) == 3
+    assert result["request_readback"]["payload_verified"] is True
+
+
+@pytest.mark.parametrize("fault", [
+    "missing_last", "cursor_gap", "wrong_first_cursor", "extra_after_final",
+    "parent_changed", "overlap_changed", "reply_count", "cursor_cycle",
+])
+def test_page_bundle_refuses_gaps_conflicts_and_truncated_rendering(env, fault):
+    r = sent(env)
+    pages = paged_plugin_snapshot(env, r)
+    if fault == "missing_last":
+        pages.pop()
+    elif fault == "cursor_gap":
+        pages[1]["cursor"] = "OTHER"
+    elif fault == "wrong_first_cursor":
+        pages[0]["cursor"] = "OLDER"
+    elif fault == "extra_after_final":
+        pages.append(pages[-1])
+    elif fault == "cursor_cycle":
+        data = json.loads(pages[1]["tool_result"]["content"][0]["text"])
+        data["pagination_info"] = (
+            "There are more messages in this thread. To view the next page, "
+            "use cursor: `OLDER`")
+        pages[1]["tool_result"]["content"][0]["text"] = json.dumps(data)
+        pages.append(dict(cursor="OLDER", tool_result=pages[1]["tool_result"]))
+    else:
+        data = json.loads(pages[1]["tool_result"]["content"][0]["text"])
+        if fault == "parent_changed":
+            data["messages"] = data["messages"].replace(
+                r["message"], r["message"] + "\nChanged parent", 1)
+        elif fault == "overlap_changed":
+            data["messages"] = data["messages"].replace("Newer advice", "Changed advice")
+        else:
+            data["messages"] = data["messages"].replace(
+                "THREAD REPLIES (2 total)", "THREAD REPLIES (3 total)")
+        pages[1]["tool_result"]["content"][0]["text"] = json.dumps(data)
+    with pytest.raises(LocalFlowError):
+        s.parse_plugin_pages(pages)
+    assert s.status(r["request_id"])["state"] == "PENDING"

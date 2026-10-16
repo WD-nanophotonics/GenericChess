@@ -3369,3 +3369,31 @@ future NONterminal node because mate/stalemate have priority. PRIMARY adopts no
 history quotient/prover code and changes no delivered index or frozen result.
 Exact closing scope: data/closing_peer_scope_20261016.json. The sealed239-member
 archive and prior8810dcf2 technical evidence remain unchanged.
+
+
+## 2026-10-16 actual control leaf and page recovery
+
+PRIMARY qualified the real inline control9 consumer and adopts only unused trial
+identity deferral: 2757 full /160 fresh-source checks;240/256 new-family queries,
+66 equal joint D4,10 candidate-only completions. Public getter optimization remains
+unadopted. CoalescenceV1's mixed gain is offset by observed dynamic-only regressions;
+V2 and a stack outline remain private, with all caps/adverse results preserved.
+The caller curve preserves21 cold expiries and distinguishes eligibility/depth/
+utility. Two actual forced-cycle histories have equal rich inputs, different D4
+scores and the same fully forced draw; finite alias is not optimal-value failure.
+
+The Slack renderer's32-declared/30-visible result was refused, recovered through
+exact20+12 cursor pages, and reconciled without resending or relaxing old payload
+binding. Existing importer accepts strict original page bundles;54 workflow tests
+pass. Actual default TEMP WinError5 was resolved with project-private directories;
+no SAC claim or machine security change.
+
+AUX75 fixed deea4c7bd1af4f61fd2593cf34bce749c023c011 SEGMENT/REPLAY reports were read
+only. Owner's graph/semantic/S4/trigger/history proofs and146 tests were not run by
+PRIMARY. AUX76 full consultation and Dot's structural four-game suggestion were
+read inline; no76 code/source review or adoption. Use its opportunity-cost point
+without taking over its lane or turning incidental under-two-hour wording into
+authority: the user's >one-hour single-run necessity consultation remains.
+No runtime/solver/cursor/learner import, cross-checkout write or automatic merge.
+Full source/test/clock/censor limits and checked archive:
+research/LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md.

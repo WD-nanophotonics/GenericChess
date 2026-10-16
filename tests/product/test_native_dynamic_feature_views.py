@@ -86,3 +86,34 @@ def test_dynamic_counts_keep_real_child_aux_and_nested_reply_semantics(
     before = native.snapshot(rules, packed)
     assert native.dynamic_features(rules, packed) == reference_features(compiled, position)
     assert native.snapshot(rules, packed) == before
+
+@pytest.mark.parametrize("builder,position_for", S4_CASES)
+@pytest.mark.parametrize("owner", (0, 1))
+def test_inline_localized_leaf_keeps_real_child_aux_and_nested_reply_semantics(
+    builder, position_for, owner,
+):
+    from generic_chess.learning.features import localized_control_features
+
+    # Exercise the actual leaf consumer, not the separate public vector getter.
+    compiled = compile_semantic_ruleset(builder())
+    position = replace(position_for(compiled.support), side_to_move=owner)
+    rules = compile_native_semantic_rules(compiled)
+    payload = dict(expected_snapshot(position, rules, compiled), ply=0)
+    payload["board"] = [None if p is None else list(p) for p in payload["board"]]
+    payload["hands"] = [list(h) for h in payload["hands"]]
+    packed = native.pack_position(rules, payload)
+    before = native.snapshot(rules, packed)
+    zero_material = (0,) * len(rules.type_ids)
+    control = localized_control_features(position, compiled)
+    for weights in (
+        (1, 0, 0, 0, 0, 0, 0, 0, -1),
+        (1000000, 0, 0, 0, 0, 0, 0, 0, -1000000),
+    ):
+        expected = (1 if owner == 0 else -1) * sum(
+            w * value for w, value in zip(weights, control))
+        expected = max(-90000000, min(90000000, expected))
+        assert native.evaluate(
+            rules, packed, board_values=zero_material, hand_values=zero_material,
+            localized_control_values=weights,
+        ) == expected
+    assert native.snapshot(rules, packed) == before

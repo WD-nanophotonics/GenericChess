@@ -449,3 +449,12 @@ getter-only andactualleaf prototypes remain uninstalled; their source/results ar
 widecensor limits are in GEOMETRIC_MEMBERSHIP_AND_SPATIAL_INPUT_20261016.md and
 itsarchive. Only prescribed origin/sandbox delivery; noAUX/UIintegration.
 AnonymousPUBLIC access doesnotprove Dotread everyfile.
+
+
+Actual control9 update2026-10-16: rebuilt backend omits only unused temporary
+child identity in the actual localized-control leaf. Complete parent aux/history,
+S4 legality and searched/PV children stay authoritative; explicit capacity/Core
+refusals remain. Normal2757/fresh-source160 checks pass. No public schema,
+evaluator weights, q/default flags or UI changes. Getter-only, shared3+9, zero-skip
+and outline prototypes are not activated. Report:
+../research/LOCALIZED_CONTROL_LEAF_AND_PAGED_RECOVERY_20261016.md.

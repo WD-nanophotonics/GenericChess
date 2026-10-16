@@ -142,7 +142,7 @@ def test_nested_failure_refuses_features_and_partial_evaluation(
 
 
 @pytest.mark.parametrize("q", (0, 1))
-@pytest.mark.parametrize("profile", ("linear", "compact", "both"))
+@pytest.mark.parametrize("profile", ("linear", "compact", "both", "localized"))
 def test_feature_failure_cannot_be_a_completed_search(feature_fault_kernel, q, profile):
     definition = s4.multiple_replies_ruleset()
     support = compile_semantic_ruleset(definition).support
@@ -153,6 +153,8 @@ def test_feature_failure_cannot_be_a_completed_search(feature_fault_kernel, q, p
     kernel = feature_fault_kernel
     rules = compile_native_semantic_rules(compiled, backend_module=kernel)
     kwargs = {}
+    if profile == "localized":
+        kwargs["localized_control_values"] = (1, -1, 0, 0, 0, 0, 0, 0, 0)
     if profile in ("linear", "both"):
         kwargs["dynamic_values"] = (2, 3, 5)
     if profile in ("compact", "both"):

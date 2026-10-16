@@ -170,7 +170,7 @@ def _canonical(text):
     return '\n'.join(lines)
 
 
-def parse_plugin_thread(result):
+def parse_plugin_thread(result, *, _allow_more=False):
     """Parse the plugin's complete rendered thread; ambiguous delimiters fail closed.
 
     Server-provided pagination is outside message bodies. Preserve the raw
@@ -181,7 +181,7 @@ def parse_plugin_thread(result):
     blocks = [json.loads(b['text']) for b in result.get('content', [])
               if b.get('type') == 'text' and b.get('text', '').startswith('{')]
     data = next((b for b in blocks if 'messages' in b), None)
-    if not data or 'There are no more messages in this thread.' not in data.get('pagination_info', ''):
+    if not data or (not _allow_more and 'There are no more messages in this thread.' not in data.get('pagination_info', '')):
         raise LocalFlowError('complete paginated Slack thread evidence is required')
     text = data['messages']
     header = r'From: [^\n]*\((U[A-Z0-9]+)\)\nTime: [^\n]*\nMessage TS: (\d+\.\d+)\n'
@@ -206,6 +206,50 @@ def parse_plugin_thread(result):
         end = replies[i + 1].start() if i + 1 < len(replies) else len(body)
         messages.append(dict(user=m[3], ts=m[4], thread_ts=parent[2], text=body[m.end():end].rstrip()))
     return messages
+
+
+
+def parse_plugin_pages(pages):
+    """Read an exact cursor-linked bundle without rewriting raw page bodies."""
+    if not isinstance(pages, list) or not pages:
+        raise LocalFlowError('Slack pages must be a nonempty cursor-linked list')
+    expected_cursor = None
+    seen_cursors = set()
+    parent = None
+    replies = {}
+    for index, page in enumerate(pages):
+        if not isinstance(page, dict) or page.get('cursor') != expected_cursor:
+            raise LocalFlowError('Slack page cursor gap or wrong first page')
+        result = page.get('tool_result', {})
+        messages = parse_plugin_thread(result, _allow_more=True)
+        data = next(json.loads(b['text']) for b in result['content']
+                    if b.get('type') == 'text' and b.get('text', '').startswith('{')
+                    and 'messages' in json.loads(b['text']))
+        pagination = data.get('pagination_info', '')
+        complete = 'There are no more messages in this thread.' in pagination
+        # Server metadata outside message bodies, never inferred from reply text.
+        cursors = re.findall(r'To view the next page, use cursor: `([^`]+)`', pagination)
+        if complete:
+            if cursors or index != len(pages) - 1:
+                raise LocalFlowError('Slack pages continue after a final page')
+        else:
+            if len(cursors) != 1 or index == len(pages) - 1:
+                raise LocalFlowError('Slack page chain is incomplete')
+            if cursors[0] in seen_cursors:
+                raise LocalFlowError('Slack pagination cursor repeats')
+            expected_cursor = cursors[0]
+            seen_cursors.add(expected_cursor)
+        if parent is None:
+            parent = messages[0]
+        elif messages[0] != parent:
+            raise LocalFlowError('Slack page parent changed')
+        for message in messages[1:]:
+            previous = replies.get(message['ts'])
+            if previous is not None and previous != message:
+                raise LocalFlowError('Slack overlapping reply changed')
+            replies[message['ts']] = message
+    from decimal import Decimal
+    return [parent] + sorted(replies.values(), key=lambda message: Decimal(message['ts']))
 
 
 def _rendered_emphasis(text):
@@ -298,7 +342,10 @@ def import_snapshot(rid, path, sent_receipt_path=None, supplement=False):
         raise LocalFlowError('snapshot must preserve the actual Slack plugin tool result')
     if any(snapshot.get(k) != r[k] for k in ('team_id', 'channel_id')):
         raise LocalFlowError('snapshot belongs to another Slack target')
-    messages = parse_plugin_thread(snapshot['tool_result'])
+    if 'pages' in snapshot and 'tool_result' in snapshot:
+        raise LocalFlowError('choose single Slack result or exact page bundle')
+    messages = (parse_plugin_pages(snapshot['pages']) if 'pages' in snapshot
+                else parse_plugin_thread(snapshot['tool_result']))
     root = messages[0]
     if supplement:
         if not r.get('thread_ts') or sent_receipt_path is not None:

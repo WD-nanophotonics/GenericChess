@@ -142,6 +142,21 @@ thread when the user asks for new direction.
    unpaired markers and changed code still fail exact payload verification. If paginated or an ambiguous rendered delimiter is
    encountered, retain the full tool evidence, reconcile, then assess retry
    need under the standing authorization; do not mechanically repeat a send.
+   If a large rendered response has inconsistent declared/visible reply counts,
+   preserve it and let the importer refuse it. An observed 32-reply response
+   displayed only 30 despite claiming no remaining pages. Request smaller pages
+   (20 worked in that observation), follow every returned server cursor and save
+   each exact result. A snapshot may instead contain pages, a list of
+   {"cursor": null, "tool_result": ORIGINAL_FIRST_RESULT} followed by entries
+   whose cursor equals the preceding server next cursor. Omit tool_result at the
+   snapshot top level when using pages. The existing importer checks the complete
+   cursor chain, stable parent, each page's declared count and conflicting overlap,
+   then orders exact parsed replies by timestamp. Never rewrite original bodies,
+   renumber a truncated response, accept just the final page, reset the ledger or
+   resend a known message to repair a read. Original single-result snapshots keep
+   their existing checks. Cursor-linked observations are evidence of the tool's
+   returned coverage, not cryptographic sender or delivery guarantees.
+
 5. Reconcile matches verified identity, thread and exact ID. All matched posts
    are retained, including revisions. Unknown/conflicting messages are held.
    Useful unformatted body remains in raw evidence, not silently discarded.
