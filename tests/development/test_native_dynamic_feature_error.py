@@ -113,7 +113,7 @@ def compact_constant(compiled, rules):
     (s4.multiple_replies_ruleset, s4.multiple_replies_position),
     (s4.full_child_state_ruleset, s4.full_child_state_position),
 ))
-@pytest.mark.parametrize("path", ("dynamic", "spatial", "linear", "localized", "compact"))
+@pytest.mark.parametrize("path", ("dynamic", "spatial", "linear", "localized", "compact", "mixed_control"))
 def test_nested_failure_refuses_features_and_partial_evaluation(
     feature_fault_kernel, builder, position_for, path,
 ):
@@ -131,6 +131,7 @@ def test_nested_failure_refuses_features_and_partial_evaluation(
         "spatial": lambda: sem.spatial_features(rules, packed),
         "linear": lambda: sem.evaluate(rules, packed, dynamic_values=(2, 3, 5)),
         "localized": lambda: sem.evaluate(rules, packed, localized_control_values=(1, -1, 0, 0, 0, 0, 0, 0, 0)),
+        "mixed_control": lambda: sem.evaluate(rules, packed, dynamic_values=(2,3,5), localized_control_values=(1,-1,0,0,0,0,0,0,0)),
         "compact": lambda: sem.evaluate(rules, packed, compact_values=compact_constant(compiled, rules)),
     }
     kernel.test_feature_set(False)
@@ -147,7 +148,7 @@ def test_nested_failure_refuses_features_and_partial_evaluation(
 
 
 @pytest.mark.parametrize("q", (0, 1))
-@pytest.mark.parametrize("profile", ("linear", "compact", "both", "localized"))
+@pytest.mark.parametrize("profile", ("linear", "compact", "both", "localized", "mixed_control"))
 def test_feature_failure_cannot_be_a_completed_search(feature_fault_kernel, q, profile):
     definition = s4.multiple_replies_ruleset()
     support = compile_semantic_ruleset(definition).support
@@ -158,9 +159,9 @@ def test_feature_failure_cannot_be_a_completed_search(feature_fault_kernel, q, p
     kernel = feature_fault_kernel
     rules = compile_native_semantic_rules(compiled, backend_module=kernel)
     kwargs = {}
-    if profile == "localized":
+    if profile in ("localized", "mixed_control"):
         kwargs["localized_control_values"] = (1, -1, 0, 0, 0, 0, 0, 0, 0)
-    if profile in ("linear", "both"):
+    if profile in ("linear", "both", "mixed_control"):
         kwargs["dynamic_values"] = (2, 3, 5)
     if profile in ("compact", "both"):
         kwargs["compact_values"] = compact_constant(compiled, rules)

@@ -74,14 +74,29 @@ full2858 plus4 later integration qualification and independent restoration tiers
 
 Required key cost is material in static controls, small in wide mixed leaves.
 One bounded512-byte SHA staging pilot missed its declared static criterion;
-REJECT it and do not expand that campaign. A different PRIVATE whole-fused-leaf
-isolation preserves the baseline body rather than modifying its shared frame;
-its four-profile pilot and separately frozen new-family transfer retain all cold
-adversity/censors. It is not the earlier9-only outline and is not adopted.
-The private default-module2862 run and actual isolated-source38 fault checks
-are separate completed tiers, not blanket all-domain qualification. Next examine
-supplied-zero/precomputed feature consumers and duplication/collateral cost for
-an adoption decision; no automatic learner/solver/default change.
+REJECT it and do not expand that campaign. Whole mixed-leaf isolation is NOW
+ADOPTED after24 total consumer controls, actual branch/full-order/vector equality
+and explicit duplicate-body maintenance review. It differs from the abandoned
+9-only outline/common-frameV2. Retain the prior fresh.695/.574/.543/NA mixedready
+ratios,1.070 nonmixed adversity and all censors; no strength inference. Normal
+product2866 full plus12 later newS4 cases, private2862/default and38/sourcefault
+are distinct tiers. No learner/default/API/storage change. The first dispatch
+still keeps precomputed3 andzero linear3 onthe baseline path.
+
+A subsequent root-only q0 scout is REJECTED: fresh128/128calls on16families give
+56jointD3/0D3-only and equal same-depth score/PV/vector pairs, but mixedcost
+ratios.992/1.112/1.075/1.037 do not justify generaladoption. Privatev1 ordinary-q0
+reserve guard was wider thanintended;v2requested-q0/source38qualification andv1
+2878/default-module tests staydistinct. No scoutcode isactivated. Publicruntime-
+in-check entry attribution isalso REJECTED forcacheengineering (<3.27percent);
+this excludes internalself-check/attackhelpers, notallattackcost.
+
+Privatecompact-NEEDS3 pluszero/absentlinear3+9 sharing remains DEFERRED:8queries
+on2exposedroots have4equalfixedworkpairs and promisingcounterinstrumentedcost;
+4existing>4096inputrefusals stay. ActualcandidateC46faultcheckspass. No active
+checkpoint needingthiscombination orfreshlearnedmodelbenefit isestablished;
+defaultordering alreadyreuses3. No newlearner/framework/eligibilitywidening.
+MIXED_LEAF_CONSUMERS_20261017.md owns exactsources/data/limits andrestored231checks.
 NEXT_WORK owns one concrete next action, not a backlog of old prototypes.
 
 ## Retained selections and negative findings
@@ -148,7 +163,9 @@ fine-tune/scratch/forgetting. A5–10minute usable-player target is a vision.
 No architecture mandate, extra learner or immediate new training follows.
 NATIVE_TEACHER_AND_TRANSFER_20261016.md retains the completed feasibility study.
 
-Latest peer scope: AUX76 fixedda6b0043 two reports READ_ONLY; AUX77 complete
+Latest peer scope: AUX78 complete request+oneDotreply read ONLY, no78source/execution.
+Canonical actionWDLutility differsfromfiniteSessionvalue/fixedfoereward.
+AUX76 fixedda6b0043 two reports READ_ONLY; AUX77 complete
 request and one Dot reply only, not77 source/execution. Prior75 reports remain historical. Dot's proposed
 structural four-game diagnostic belongs to AUX's lane. PRIMARY's new capacity
 consult received a concrete fixed2d3e source objection about GameState versus
@@ -183,3 +200,14 @@ branch/ordering/vector/error evidence and no new cost panel. Fixed-work savings
 do not need new D4 completion or WDL approval; code duplication and retained
 collateral adversity remain the engineering decision. This is reference advice,
 not a new policy or authority over the user's project directions.
+
+
+Latestexisting-input follow-on: default16boarddensecompactdimension5145 is
+structural (evenn typecountn/2+2), not unluckyseeds; all11sixteenboardrules in44
+existingcohorts exceed4096. ExistingexplicitCoreprediction keeps5145, butactual
+3second/256nodeD1player retainsD0. PrivateCore3/9 ephemeralsharing preserves14
+Core/S4vectorcontrols andimprovespartialthroughput; stillD0 becauseactualroot
+has320legalactions>256. Protocolmissedthatprecheck; alloldcaps/results stay.
+No completedD1/default/API/model claim. Nextprospectivefreshconsumer work must
+freeze rootdegree/nodeforecast BEFOREqueries, notextendthisfailedtarget. Native
+cap remains explicit; no task/featuretruncation orAUXlearner follows.

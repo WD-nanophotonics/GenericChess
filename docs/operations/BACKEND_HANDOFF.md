@@ -1,3 +1,14 @@
+## 2026-10-17 isolated mixed-leaf implementation
+
+Rebuild Native from the complete sandbox revision. Nonzero linear3 plus supplied
+control9 and no precomputed3 now share one lawful feature pass inside an isolated
+leaf; the original cheap body remains for other consumers. Supplied-zero and
+precomputed-zero pointers preserve their original paths/errors. All APIs, fields,
+q/evaluator/default/UI choices, full auxiliary/history semantics and fixed storage
+remain. Do not copy private binaries. Root-scout, check-cache and compact-required3
+follow-ons are unadopted provenance. Exact tests, adversity and maintenance scope:
+../research/MIXED_LEAF_CONSUMERS_20261017.md.
+
 ## 2026-10-16 live parent views for derived inputs
 
 Rebuild Native from the complete sandbox revision to receive the scoped input

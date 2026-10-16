@@ -1,0 +1,61 @@
+{
+  "archive_sha256": "cf145ea72006e98ac59cdedf51bf18aedc2527d4b875ea296171882b1956ead1",
+  "archive_bytes": 4828776,
+  "uncompressed_bytes": 169006117,
+  "members": 434,
+  "source_members": 279,
+  "all_sha256_crc_verified": true,
+  "source_identical_to_231_tested_v4": true,
+  "source_tests": 231,
+  "new_source_build_reader": [
+    {
+      "phase": "build",
+      "exit_code": 0,
+      "seconds": 9.667599699983839
+    },
+    {
+      "phase": "reader",
+      "exit_code": 0,
+      "seconds": 25.074809100013226
+    }
+  ],
+  "reader": {
+    "late_counts": {
+      "s4_action_sets": 3,
+      "position_only_children": 152,
+      "full_result_receipts": 596,
+      "full_core_native_states": 1997,
+      "actual_acquisition_edges": 96,
+      "pv_edges": 1337,
+      "leaf_vectors": 535,
+      "baseline_fault_receipts": 16,
+      "final_fault_receipts": 16,
+      "key-attribution_query_receipts": 16,
+      "stream-key_query_receipts": 32,
+      "isolated-mixed-leaf_query_receipts": 64,
+      "transfer_acquisition_edges": 114,
+      "actual_transfer_tails": 2,
+      "transfer_query_receipts": 224,
+      "transfer_missing_slots": 32,
+      "explicit_public_history_refusals": 6,
+      "new_precomputed_leaf_receipts": 12,
+      "new_order_search_receipts": 12,
+      "new_trace_pairs": 12,
+      "new_sorted_batches": 864,
+      "scout_pilot_receipts": 24,
+      "scout_fresh_acquisition_edges": 128,
+      "scout_fresh_receipts": 128,
+      "check_entry_receipts": 16,
+      "compact_query_receipts": 8,
+      "compact_Core_formula_leaf_checks": 8,
+      "compact_input_refusals": 4,
+      "pure_Core_control_PV_edges": 5,
+      "pure_Core_control_receipts": 2,
+      "late_Core_input_controls": 2,
+      "late_Core_player_receipts": 5
+    },
+    "scope": "Latefullstate/5145input/formula/fallbackreceipts checked, NOsearch orclockrerun. FrozenD1infeasibilityretained, nocompletedD1/DRAWinference."
+  },
+  "actual_product_module_sha256": "89f3c92b56a0b0a17eae33decb1bb070a058b1df5b1c389cbe92ee3dc1a673a1",
+  "limits": "Allsearchdisabled; source279membersidenticalto231testedv4; finalextendedreaderactuallyrun. Originalclocks/minimax/privatecandidateexecutionnotrerun."
+}

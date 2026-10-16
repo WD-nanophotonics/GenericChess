@@ -3475,3 +3475,41 @@ cost rerun. Dot read the report only, not implementation/execution. PUBLIC
 first delivery f6febebb870e881cfdc7d53567ed9aefb1ca9412 was fully verified; the
 following documentation correction records the transport failure and fixes the
 coverage claim without changing product code or scientific receipts.
+
+## PRIMARY mixed consumer and search-window segment —2026-10-17
+
+PRIMARY adopted whole mixed-leaf isolation after the promised24 TOTAL consumer
+calls, correcting the one-action cycle's vacuous-ordering protocol BEFORE execution.
+All12 paired full outputs/traces match; actual fused/base dispatch and864 sorted
+batches are checked. Duplicate body/helper maintenance is accepted explicitly,
+with prior fixed-work savings and1.070 adversity retained. Normal2866full plus12
+later S4 cases are distinct; restored231checks and search-disabled reader retain
+base/current-identity reader failure and missing compact-test closure failure.
+No q/model/default/API/storage/UI change or additional worker.
+
+Independent follow-on root-only scout research is REJECTED after128/128new-family
+calls/56jointD3/0D3-only with mixed cost adversity; no scope/clock/censor washing.
+Privatev1/default2878 andactualv2/source38 are distinct, ordinary-versus-requestedq0
+guard correction preserved. Check-entry16-call attribution rejects a cache for
+THAT entry, not all attack cost. Compact-required3 sharing has positive8-query
+manual-ABI feasibility and46 actual-source error checks but is DEFERRED pending
+an actual checkpoint/consumer, with all4input-limit refusals retained.
+
+Primary Slack coverage is exact20+20/40 replies andsix Dot posts, no newprimary
+advice. The narrow consumer suggestion is used, not an approval gate; old code/
+send binding limits remain. AUX78 complete request and one Dot response are
+reference-only: canonical actionutility, actualfiniteSession andfixedfoereward
+are different targets. No78code/teacher/solver/learner run, no cross-checkout
+writes or quiet windows; last fixed report-read tier remains76. CHAT future
+Leaper suggestion staysfuture. Full evidence and remaining scope:
+research/MIXED_LEAF_CONSUMERS_20261017.md. Delivery will use a fixed publicSHA;
+sourceavailability, receipt, reading and independent execution staydistinct.
+
+
+A late PRIMARY source/input check identifies structural5145-vs4096 support on
+all11existing16boardroots, notseedluck. CompleteCorepredictions do work; one
+pureCoreplayer andfourprivateCoreinput-sharing calls retainD0. The protocol
+missedrootdegree320>nodecap256, so completedD1 wasimpossible; keepthatdesignerror
+andalllimits.14Core/S4vectors match, partialthroughput improved only. Escaped
+JSONLseparator recoveredfromfourintactbodies/validaggregate without rerun.
+No productionCore/model/API/default/AUXchange. Futurefreshrootforecast first.

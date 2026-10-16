@@ -3939,7 +3939,15 @@ static PyObject *gc_semantic_u64_tuple(const uint64_t *values, size_t count) {
 /* Internal failure lies outside clipped scores and is checked before negation. */
 #define GC_SEMANTIC_EVAL_ERROR INT_MIN
 
-static int gc_semantic_probe_material(
+/* Mixed-feature cost specialization: keep the cheap baseline leaf isolated.
+ * The fused sibling shares one lawful action pass for dynamic3 and control9.
+ * Supplied zero weights and ANY precomputed3 pointer retain the baseline path.
+ * Both bodies must retain identical material/hand/spatial/compact/clipping and
+ * required-error contracts. Review both bodies plus the combined helper when
+ * changing those semantics; noinline is part of the measured specialization,
+ * not a claim of identical machine code or universally unchanged cost.
+ */
+Py_NO_INLINE static int gc_semantic_probe_material_base(
     const GCSemanticRules *rules,
     const GCSemanticPosition *position,
     const GCSemanticProbeProfile *profile,
@@ -4056,6 +4064,207 @@ static int gc_semantic_probe_material(
     if (score > GC_SEMANTIC_STATIC_LIMIT) return GC_SEMANTIC_STATIC_LIMIT;
     if (score < -GC_SEMANTIC_STATIC_LIMIT) return -GC_SEMANTIC_STATIC_LIMIT;
     return (int)score;
+}
+
+Py_NO_INLINE static int gc_semantic_dynamic_control_feature_vectors(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    int out[3], int *control) {
+    int mobility[2] = {0, 0};
+    int controls[2][GC_SEMANTIC_SPATIAL_CELLS] = {{0}};
+    int promotions[2] = {0, 0};
+    int anchor_moves[2] = {0, 0};
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        GCSemanticPosition view;
+        gc_semantic_runtime_copy_live_position(&view,position);
+        view.side_to_move = owner;
+        GCSemanticActionBuffer actions;
+        gc_semantic_action_buffer_init(&actions);
+        if (!gc_semantic_generate_candidate_buffer(rules, &view, &actions)) {
+            gc_semantic_action_buffer_free(&actions);
+            return 0;
+        }
+        for (size_t i = 0; i < actions.count; i++) {
+            uint64_t raw = actions.data[i];
+            if (raw == 0 || (raw >> 63) != 0) continue;
+            GCSemanticPosition child;
+            /* Only legality and action fields are consumed. Keep full parent
+             * history and S4 checks; the discarded child's digest/event is unused. */
+            int status = gc_semantic_runtime_make_material_view_status(
+                &child, rules, &view, raw);
+            if (status < 0) {
+                gc_semantic_action_buffer_free(&actions);
+                return 0;
+            }
+            if (!status) continue;
+            mobility[owner]++;
+            if (control) {
+                uint16_t target = (uint16_t)(raw & 0xFFu);
+                unsigned row = (target / rules->board_size) * 3 / rules->board_size;
+                unsigned col = (target % rules->board_size) * 3 / rules->board_size;
+                if (row > 2) row = 2;
+                if (col > 2) col = 2;
+                controls[owner][row * 3 + col]++;
+            }
+            if (((raw >> 16) & 0xFFu) != 0xFFu) promotions[owner]++;
+            if (((raw >> 32) & 0xFu) == 2u) {
+                uint16_t from = (uint16_t)((raw >> 8) & 0xFFu);
+                if (from < rules->board_size * rules->board_size &&
+                    view.board[from].occupied &&
+                    rules->types[view.board[from].current_type].is_anchor) {
+                    anchor_moves[owner]++;
+                }
+            }
+        }
+        gc_semantic_action_buffer_free(&actions);
+    }
+    if (control) for (int cell = 0; cell < GC_SEMANTIC_SPATIAL_CELLS; cell++)
+        control[cell] = 9 * (controls[0][cell] - controls[1][cell]) - (mobility[0] - mobility[1]);
+    out[0] = mobility[0] - mobility[1];
+    out[1] = promotions[0] - promotions[1];
+    out[2] = anchor_moves[0] - anchor_moves[1];
+    if (gc_semantic_runtime_in_check(rules, position, 0)) out[2] -= 10;
+    if (gc_semantic_runtime_in_check(rules, position, 1)) out[2] += 10;
+    return 1;
+}
+
+Py_NO_INLINE static int gc_semantic_probe_material_fused(
+    const GCSemanticRules *rules,
+    const GCSemanticPosition *position,
+    const GCSemanticProbeProfile *profile,
+    const int *dynamic_features) {
+    int64_t score = 0;
+    int cached_dynamic[3];
+    int cached_control[GC_SEMANTIC_SPATIAL_CELLS];
+    int control_ready = 0;
+    const int *compact_dynamic = dynamic_features;
+    for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
+        const GCPiece *piece = &position->board[sq];
+        if (!piece->occupied) continue;
+        int64_t value = profile && profile->supplied ? profile->board[piece->current_type] : (int)piece->current_type + 1;
+        score += piece->owner == position->side_to_move ? value : -value;
+        if (profile && profile->spatial_supplied) {
+            uint16_t rank = sq / rules->board_size;
+            uint16_t file = sq % rules->board_size;
+            uint16_t cell_rank = (uint16_t)((rank * 3) / rules->board_size);
+            uint16_t cell_file = (uint16_t)((file * 3) / rules->board_size);
+            if (cell_rank > 2) cell_rank = 2;
+            if (cell_file > 2) cell_file = 2;
+            int64_t spatial = profile->spatial[piece->owner][piece->current_type][cell_rank * 3 + cell_file];
+            score += (position->side_to_move == 0 ? 1 : -1) *
+                (piece->owner == 0 ? spatial : -spatial);
+        }
+    }
+    for (uint8_t owner = 0; owner < 2; owner++) {
+        for (uint16_t type = 0; type < rules->type_count; type++) {
+            int64_t value = profile && profile->supplied ? profile->hand[type] : (int)type + 1;
+            int64_t hand_score = (int)position->hand_counts[owner][type] * value;
+            score += owner == position->side_to_move ? hand_score : -hand_score;
+        }
+    }
+    /* A supplied zero vector is a neutral term, not a request to enumerate
+     * dynamic features at every leaf. Returned leaf metadata is separate. */
+    if (profile && profile->dynamic_supplied &&
+        (profile->dynamic[0] || profile->dynamic[1] || profile->dynamic[2])) {
+        int features[3] = {0, 0, 0};
+        /* The vector is owner-0 minus owner-1; leaf scores are always from
+         * the side-to-move perspective, matching the material terms above. */
+        if (dynamic_features != NULL) {
+            memcpy(features, dynamic_features, sizeof(features));
+        } else if (profile->localized_control_supplied) {
+            if (!gc_semantic_dynamic_control_feature_vectors(
+                    rules, position, features, cached_control)) return GC_SEMANTIC_EVAL_ERROR;
+            control_ready = 1;
+        } else if (!gc_semantic_dynamic_feature_vector(rules, position, features)) {
+            return GC_SEMANTIC_EVAL_ERROR;
+        }
+        for (int i = 0; i < 3; i++) {
+            score += (position->side_to_move == 0 ? 1 : -1) *
+                (int64_t)profile->dynamic[i] * features[i];
+        }
+        memcpy(cached_dynamic, features, sizeof(cached_dynamic));
+        compact_dynamic = cached_dynamic;
+    }
+    if (profile && profile->localized_control_supplied) {
+        int features[GC_SEMANTIC_SPATIAL_CELLS] = {0};
+        if (control_ready) memcpy(features, cached_control, sizeof(features));
+        else {
+        /* Local control is residualized against each owner's total action
+         * count, so its nine cells do not duplicate global mobility. */
+        int counts[2][GC_SEMANTIC_SPATIAL_CELLS] = {{0}};
+        int totals[2] = {0, 0};
+        for (uint8_t owner = 0; owner < 2; owner++) {
+            GCSemanticPosition view = *position;
+            view.side_to_move = owner;
+            GCSemanticActionBuffer actions;
+            gc_semantic_action_buffer_init(&actions);
+            if (!gc_semantic_generate_candidate_buffer(rules, &view, &actions)) {
+                gc_semantic_action_buffer_free(&actions);
+                return GC_SEMANTIC_EVAL_ERROR;
+            }
+            for (size_t i = 0; i < actions.count; i++) {
+                uint64_t raw = actions.data[i];
+                if (raw == 0 || (raw >> 63) != 0) continue;
+                GCSemanticPosition child;
+                /* Only status and the raw target are consumed. Retain the full parent
+                 * history and S4 checks; this trial child is never searched. */
+                int status = gc_semantic_runtime_make_material_view_status(
+                    &child, rules, &view, raw);
+                if (status < 0) {
+                    gc_semantic_action_buffer_free(&actions);
+                    return GC_SEMANTIC_EVAL_ERROR;
+                }
+                if (!status) continue;
+                uint16_t target = (uint16_t)(raw & 0xFFu);
+                uint16_t rank = target / rules->board_size;
+                uint16_t file = target % rules->board_size;
+                uint16_t cell_rank = (uint16_t)((rank * 3) / rules->board_size);
+                uint16_t cell_file = (uint16_t)((file * 3) / rules->board_size);
+                if (cell_rank > 2) cell_rank = 2;
+                if (cell_file > 2) cell_file = 2;
+                counts[owner][cell_rank * 3 + cell_file]++;
+                totals[owner]++;
+            }
+            gc_semantic_action_buffer_free(&actions);
+        }
+        for (int cell = 0; cell < GC_SEMANTIC_SPATIAL_CELLS; cell++) {
+            features[cell] = 9 * (counts[0][cell] - counts[1][cell]) - (totals[0] - totals[1]);
+        }
+        }
+        for (int cell = 0; cell < GC_SEMANTIC_SPATIAL_CELLS; cell++) {
+            score += (position->side_to_move == 0 ? 1 : -1) *
+                (int64_t)profile->localized_control[cell] * features[cell];
+        }
+    }
+    if (profile && profile->compact) {
+        double residual = 0.0;
+        if (gc_semantic_compact_residual(
+                rules, position, profile, compact_dynamic, &residual)) {
+            /* Compact targets use the checkpoint's human-value units, just
+             * like the Python training residual.  Convert back to Native's
+             * fixed-point score units with the semantic evaluator scale. */
+            int64_t fixed_residual = (int64_t)llround(
+                residual * (double)profile->evaluator_scale);
+            score += profile->compact->perspective == 1
+                ? -fixed_residual
+                : (position->side_to_move == 0 ? fixed_residual : -fixed_residual);
+        } else {
+            return GC_SEMANTIC_EVAL_ERROR;
+        }
+    }
+    if (score > GC_SEMANTIC_STATIC_LIMIT) return GC_SEMANTIC_STATIC_LIMIT;
+    if (score < -GC_SEMANTIC_STATIC_LIMIT) return -GC_SEMANTIC_STATIC_LIMIT;
+    return (int)score;
+}
+
+static int gc_semantic_probe_material(
+    const GCSemanticRules *rules,const GCSemanticPosition *position,
+    const GCSemanticProbeProfile *profile,const int *dynamic_features) {
+    if (profile && profile->dynamic_supplied && profile->localized_control_supplied &&
+        (profile->dynamic[0] || profile->dynamic[1] || profile->dynamic[2]) &&
+        dynamic_features == NULL)
+        return gc_semantic_probe_material_fused(rules,position,profile,dynamic_features);
+    return gc_semantic_probe_material_base(rules,position,profile,dynamic_features);
 }
 
 static int gc_semantic_dynamic_feature_vector(

@@ -89,8 +89,9 @@ def test_dynamic_counts_keep_real_child_aux_and_nested_reply_semantics(
 
 @pytest.mark.parametrize("builder,position_for", S4_CASES)
 @pytest.mark.parametrize("owner", (0, 1))
+@pytest.mark.parametrize("dynamic", (None, (2, 3, 5)))
 def test_inline_localized_leaf_keeps_real_child_aux_and_nested_reply_semantics(
-    builder, position_for, owner,
+    builder, position_for, owner, dynamic,
 ):
     from generic_chess.learning.features import localized_control_features
 
@@ -111,9 +112,12 @@ def test_inline_localized_leaf_keeps_real_child_aux_and_nested_reply_semantics(
     ):
         expected = (1 if owner == 0 else -1) * sum(
             w * value for w, value in zip(weights, control))
+        if dynamic is not None:
+            expected += (1 if owner == 0 else -1) * sum(
+                w * value for w, value in zip(dynamic, reference_features(compiled, position)))
         expected = max(-90000000, min(90000000, expected))
         assert native.evaluate(
             rules, packed, board_values=zero_material, hand_values=zero_material,
-            localized_control_values=weights,
+            localized_control_values=weights, dynamic_values=dynamic,
         ) == expected
     assert native.snapshot(rules, packed) == before
