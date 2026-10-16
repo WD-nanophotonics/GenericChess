@@ -1,0 +1,105 @@
+{
+  "status": "PASS_FIRST_B_COMPLETE_RULE_PILOT",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2020",
+    "games": 144,
+    "moves": 6894,
+    "actual_native": 6388,
+    "proof_games": 85,
+    "proof_steps": 85,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 144,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "checkmate": 85,
+      "max_ply": 43,
+      "repetition": 10,
+      "stalemate": 6
+    },
+    "exit_causes": {
+      "reported_node_overrun": 5166,
+      "external_search_return": 1070,
+      "certificate": 506,
+      "time_budget": 152
+    },
+    "node_overruns": 5215,
+    "phase_seconds": {
+      "admission_seconds": 27.583507298550103,
+      "proof_seconds": 357.20039360102965,
+      "verification_seconds": 6.89346629998181,
+      "normal_seconds": 198.48617389868014
+    },
+    "proof_work": {
+      "frontiers": 1109972,
+      "transitions": 5003324,
+      "iterations": 1109972,
+      "eager_board_successors": 5172938,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 6388,
+    "selection_scope": "FULL48BactualterminalTRAIN locked beforeDEV. Derived realized schedule, not a replacement freeze.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "recorded_game_seconds": 666.5951915001497,
+  "outer_late_steps": 0,
+  "scope": "FirstB/N coarsepilot8TRAIN8DEV, fixedR1260/N720, actualrulemax96 commonPN1K. NoKRNfilter/utilityshortcut, modifiedjointmaterialNative. Tiny8familyconditional effect not human/fullChessB/Ntable or universalprice. Noresultbasedroots/DEVfit. Exploratory individual intervals.",
+  "declared_complete_expected_games": 144,
+  "unrun_frozen_games": 0,
+  "unrun_TRAIN_games": 0,
+  "training": {
+    "scores": {
+      "360": 1,
+      "720": 0,
+      "1440": 0
+    },
+    "selected_B": 360,
+    "ratio": 0.5,
+    "all_maximizers": [
+      360
+    ],
+    "nonflat_families": 4,
+    "seconds": 208.8968469000538
+  },
+  "NEW_vs_UNIT": {
+    "mean": -0.04166666666666667,
+    "family_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.16666666666666666,
+      0.0,
+      -0.5,
+      0.0,
+      0.0
+    ],
+    "bootstrap8family_interval": [
+      -0.1875,
+      0.0625
+    ],
+    "same_price_cell": false,
+    "outcomes": {
+      "360": {
+        "WIN": 13,
+        "LOSS": 12,
+        "DRAW": 23
+      },
+      "720": {
+        "WIN": 14,
+        "LOSS": 11,
+        "DRAW": 23
+      }
+    },
+    "per_opponent": {
+      "360": -0.0625,
+      "720": -0.0625,
+      "1440": 0.0
+    }
+  }
+}

@@ -1670,3 +1670,35 @@ newtests/unitpooling orack. AUXnewzero-return question is a separate freshroot.
 
 Closing67 DOTreply1792109919.855059 source-read58755/noexecution: adopt legalprogress/nooffboardpayoff/fullrecordreplay premises forfuturezero-returnproposal; no newrewardadoption. None/cancelmayleaveUNKNOWN, notactualDRAW. Next2015actualterminalpilotunblocked. See ADVISOR_20261016_67.json.
 DOTreadfixedreport/proposal/results/filters only, noexperimentexecution. FutureoneNone/cancel faultcontrol; actualterminalpilotcontinues. Noackloop. Rawprivate.
+
+
+## DEV_AUX segment68 —2026-10-16, science OPEN
+
+AUX independently freezes true-terminal coarselearning and validates on NEW
+16family/fourfoe/bothrole inputs:128TRAIN397.96s chooses4.0, DEV+31/128W-L
+CI[.109375,.3828125],34W42L52D ->50W27L51D. PriorTRAIN3.5sameaggregate, no exact
+ratio/human-table claim. All512games1968.68s/0UNKNOWN/0outerlate; commonPN1K both
+actors/coldbanks, UNKNOWN-onlynoWINskip neverreward. Preserves67/alloldcaps.
+First B/N pilot144games667.87s negative/imprecise, selected.5 DEV-2/48CI0.
+Sixboard48perft/48go64 interface qualification+32fixedB1vs2games356.25s pass,
+only6decisive/26draw; notlargerboardlearning. No4censustransfer. Next2029eight
+newinputsfixedunitrobustness protocolACTUALLYBEGUN/0futurefitness.
+
+688newgames/35304moves/32516Nativebindings/401proof-adoptingactualwins and6tests
+restore withsameCore/host/Python-S/module origins; no newstudysearch duringreplay.
+First same-basenamepytest collection thenmissingold1997plan failures retained;
+supportedimportlibmode andoneexactpublicfile support innewdirectory fixclosure,
+originalcapsules unchanged/noassertionweakened. None/cancel controls showUNKNOWN
+unscored/rejected; zero-return proposal remainsNOTADOPTED. Fullrawprivateoriginals
+ignored, actualoutgoingcontentchecked. Single-run forecastmisreading byautomatic
+review corrected with3019.7/3500s frozen evidence atSAMEsupportedentry; no bypass.
+
+PRIMARY OWNER_MESSAGE1792112092.054809 reports PUBLIC fixedsandbox
+[1ee2b4798c5f0c4b97a4ae608d0b68a10c05a452](https://github.com/WD-nanophotonics/GenericChess/blob/1ee2b4798c5f0c4b97a4ae608d0b68a10c05a452/docs/research/FINITE_HISTORY_CONTEXT_AND_ROOT_ORDER_20261016.md):
+finitecontext/rootorder prototypes NOTADOPTED despite completeddepth costgains,
+negative/imprecisegames retained; nextconditionalgeneratorcostfeasibility separate.
+It reports AUX67fullreport+Dotpremises READONLY/no source/test/gameexecution or
+adoption. AUX read completeownerpost only, no PRIMARY code/testexecution/adoption,
+sharedworkunits/crosswrites/quietwindow/extraAgent/fee orackloop. Dot67premise
+reference motivates realfaultcontrol, notapproval or newpolicy. Fixedrevision
+AUX delivery andread/execution states are separately recorded in DELIVERY/ADVISOR68.

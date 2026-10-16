@@ -1,0 +1,27 @@
+{
+  "status": "FROZEN_BEFORE_INPUT_DRAW_OR_B_FITNESS",
+  "created_utc": "2026-10-16T00:36:46.148878+00:00",
+  "question": "Does adding diagonal B give a learnable B/N relationship under fixed actual-terminal common-proof policy?",
+  "seed": 20261016682019,
+  "inputs": "16NEW KkRrNBnb structuralroots,first8TRAINlast8DEV;excludeold2007orbits; price/WDL/proof-free",
+  "prices_B": [
+    360,
+    720,
+    1440
+  ],
+  "R": 1260,
+  "N": 720,
+  "TRAIN": "3Bprofiles x8families xbothroles=48; fixedopponentB720/R1260/N720. ALLmaximizersreported,numericascendingties;lockBEFOREDEV",
+  "DEV": "8families x3fixedopponentB360/720/1440 xbothroles xunique{UNIT_B720,TRAINselected_B};max96DEV/144total",
+  "policy": "BOTHcoldPN1024/normal4096/fullrulemax96, complete actual W-L/D only. NO KRN noWINfilter because adding B changes executionfields. No certifiedutility or quantityrewards. Explicit results-only KRNBprovider; no product/default/UI change.",
+  "cost": {
+    "reference": "Previous67completeKRN mean4.26637sec, Bnovel so1.8costfactor+120overhead; predeclare uncertainty, no assumption Bsamecost.",
+    "mean": 4.266372993358459,
+    "game_max": 144,
+    "novelty_factor": 1.8,
+    "overhead": 120,
+    "expected_seconds": 1225.8438798785126,
+    "cap_seconds": 1800
+  },
+  "decision": "Independent FIRSTBtypeinteractionpilot, not another chunk of KRNreplication. Run only after2016producerclosed, oneNativeprocess; retainpartialunderoriginalcap, noextension/newlabelselector/claim ifcensored. Tiny8familyDEV exploratory, notprecision/humanChessB/Ntable. R1260oldprequalifiedanchor retainedwithoutcurrentDEVselection. No current2016DEV labels read."
+}

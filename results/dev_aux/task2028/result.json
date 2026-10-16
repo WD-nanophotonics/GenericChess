@@ -1,0 +1,81 @@
+{
+  "status": "PASS_6X6_FIXED_DIAGNOSTIC",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2027",
+    "games": 32,
+    "moves": 2832,
+    "actual_native": 2794,
+    "proof_games": 6,
+    "proof_steps": 6,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 32,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "max_ply": 25,
+      "checkmate": 6,
+      "repetition": 1
+    },
+    "exit_causes": {
+      "reported_node_overrun": 2398,
+      "external_search_return": 386,
+      "certificate": 38,
+      "time_budget": 10
+    },
+    "node_overruns": 2401,
+    "phase_seconds": {
+      "admission_seconds": 19.550769800087437,
+      "proof_seconds": 201.14097909923294,
+      "verification_seconds": 1.438238800066756,
+      "normal_seconds": 86.6302308003651
+    },
+    "proof_work": {
+      "frontiers": 389133,
+      "transitions": 2694204,
+      "iterations": 389133,
+      "eager_board_successors": 2767380,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 2794,
+    "selection_scope": "NONE:fixeddiagnostic32games/B1vs2,ALL8families,bothroles,fixedB1opponent. No training or selectedprice.",
+    "actual_max_proof_depth": 38,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "outcomes": {
+    "720": {
+      "DRAW": 14,
+      "WIN": 1,
+      "LOSS": 1
+    },
+    "1440": {
+      "DRAW": 12,
+      "LOSS": 4
+    }
+  },
+  "recorded_game_seconds": 356.0652532999811,
+  "scope": "ALL8largerboardqualifiedroots, fixedB1vs2/bothroles/foeB1; no training/selectedprice/holdoutclaim. SamePN1K/normal4096/actualmax96, no4x4census. Exposedinputs excluded fromfuturefresh validation. Original600cap preserved; partialunknownunscored andno missingcell contrast.",
+  "declared_complete_expected_games": 32,
+  "unrun_frozen_games": 0,
+  "fixed_B2_vs_B1": {
+    "mean": -0.25,
+    "family_deltas": [
+      0.0,
+      -0.5,
+      0.0,
+      -1.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.5
+    ],
+    "bootstrap8family_interval": [
+      -0.5,
+      -0.0625
+    ]
+  }
+}

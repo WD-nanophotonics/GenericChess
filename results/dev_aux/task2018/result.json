@@ -1,0 +1,215 @@
+{
+  "status": "PASS_COMPLETE_RULE_COARSE_LEARNING",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task2016",
+    "games": 512,
+    "moves": 25578,
+    "actual_native": 23334,
+    "proof_games": 310,
+    "proof_steps": 310,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 512,
+    "missing_game_slots": [],
+    "tail_games": 0,
+    "tail_moves": 0,
+    "terminal": {
+      "checkmate": 310,
+      "repetition": 29,
+      "max_ply": 170,
+      "stalemate": 3
+    },
+    "exit_causes": {
+      "reported_node_overrun": 18921,
+      "external_search_return": 3829,
+      "certificate": 2244,
+      "time_budget": 584
+    },
+    "node_overruns": 19100,
+    "phase_seconds": {
+      "admission_seconds": 105.6780961000768,
+      "proof_seconds": 828.5808693003491,
+      "verification_seconds": 19.980195899814134,
+      "normal_seconds": 755.5944065004296
+    },
+    "proof_work": {
+      "frontiers": 2070796,
+      "transitions": 9790411,
+      "iterations": 2070796,
+      "eager_board_successors": 10174800,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 23334,
+    "selection_scope": "FULL128actualterminalTRAIN locked beforeDEV. Derived realized schedule, not a replacement freeze.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "recorded_game_seconds": 1965.1261484001006,
+  "outer_late_steps": 0,
+  "scope": "One16TRAIN/16DEV learner, allactualfinite-ruleW-L/D. SamePN1K bothactors, strictUNKNOWN-onlyskip, coldperactorbanks; modifiedjointmaterialKRN4. No humanfit, precise/universal/fullChess price claim. Familyclusters16, not128 independentfamilies. Individual exploratory intervals notmultiplicityadjusted.",
+  "training": {
+    "scores": {
+      "360": -9,
+      "720": -4,
+      "1440": -1,
+      "2880": 2
+    },
+    "selected_R": 2880,
+    "ratio": 4.0,
+    "all_maximizers": [
+      2880
+    ],
+    "nonflat_families": 11,
+    "seconds": 397.95783860012307
+  },
+  "contrasts": [
+    {
+      "label": "UNIT",
+      "R": 720,
+      "ratio": 1.0,
+      "mean": 0.0,
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bootstrap16family_interval": [
+        0.0,
+        0.0
+      ],
+      "outcomes": {
+        "WIN": 34,
+        "DRAW": 52,
+        "LOSS": 42
+      },
+      "per_opponent": {
+        "360": 0.0,
+        "720": 0.0,
+        "1440": 0.0,
+        "2880": 0.0
+      },
+      "same_price_cell": true
+    },
+    {
+      "label": "PRIOR_TRAIN",
+      "R": 2520,
+      "ratio": 3.5,
+      "mean": 0.2421875,
+      "family_deltas": [
+        0.0,
+        0.125,
+        0.375,
+        0.625,
+        0.0,
+        0.375,
+        0.0,
+        0.75,
+        0.0,
+        0.5,
+        0.0,
+        0.75,
+        0.25,
+        0.0,
+        -0.125,
+        0.25
+      ],
+      "bootstrap16family_interval": [
+        0.109375,
+        0.3828125
+      ],
+      "outcomes": {
+        "WIN": 50,
+        "DRAW": 51,
+        "LOSS": 27
+      },
+      "per_opponent": {
+        "360": 0.15625,
+        "720": 0.3125,
+        "1440": 0.25,
+        "2880": 0.25
+      },
+      "same_price_cell": false
+    },
+    {
+      "label": "NEW_FULL",
+      "R": 2880,
+      "ratio": 4.0,
+      "mean": 0.2421875,
+      "family_deltas": [
+        0.0,
+        0.125,
+        0.25,
+        0.625,
+        0.0,
+        0.375,
+        0.0,
+        0.75,
+        0.0,
+        0.5,
+        0.0,
+        0.75,
+        0.25,
+        0.0,
+        -0.125,
+        0.375
+      ],
+      "bootstrap16family_interval": [
+        0.109375,
+        0.3828125
+      ],
+      "outcomes": {
+        "WIN": 50,
+        "DRAW": 51,
+        "LOSS": 27
+      },
+      "per_opponent": {
+        "360": 0.125,
+        "720": 0.25,
+        "1440": 0.34375,
+        "2880": 0.25
+      },
+      "same_price_cell": false
+    }
+  ],
+  "new_vs_prior": {
+    "mean": 0.0,
+    "bootstrap16family_interval": [
+      -0.0234375,
+      0.0234375
+    ],
+    "family_deltas": [
+      0.0,
+      0.0,
+      -0.125,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.125
+    ]
+  }
+}

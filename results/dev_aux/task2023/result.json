@@ -1,0 +1,321 @@
+{
+  "status": "PASS_TRAIN_ONLY_UNCERTAINTY",
+  "KRN": {
+    "status": "TRAIN_ONLY_POSTLOCK_NO_NEW_LEARNING",
+    "folder": "results/dev_aux/task2016",
+    "parameter": "R",
+    "grid": [
+      360,
+      720,
+      1440,
+      2880
+    ],
+    "selected": 2880,
+    "family_values": {
+      "360": [
+        -0.5,
+        -0.5,
+        0.0,
+        -0.5,
+        -0.5,
+        -0.5,
+        -0.5,
+        0.0,
+        0.0,
+        -0.5,
+        -0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "720": [
+        -0.5,
+        0.0,
+        0.5,
+        -0.5,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "1440": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "2880": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "bootstrap10000_selected_frequency": {
+      "2880": 9802,
+      "1440": 198
+    },
+    "bootstrap_tie_count_frequency": {
+      "1": 9802,
+      "2": 198
+    },
+    "bootstrap_strict_unique_selected_frequency": {
+      "2880": 9802
+    },
+    "bootstrap_maximizer_inclusion_frequency": {
+      "2880": 10000,
+      "1440": 198
+    },
+    "leave_one_family_maximizers": [
+      {
+        "omitted": 0,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 1,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 2,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 3,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 4,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 5,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 6,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 7,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 8,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 9,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 10,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 11,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 12,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 13,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 14,
+        "maximizers": [
+          2880
+        ]
+      },
+      {
+        "omitted": 15,
+        "maximizers": [
+          2880
+        ]
+      }
+    ],
+    "unique_complete_trajectory_signatures": 4,
+    "scope": "Uncertainty diagnostic of same TRAIN sample, not independent learners or newDEV. Stratified fixedopponent family bootstrap forKRN; ordinary family bootstrap forBfixedfoe. Scores/price locks never changed; observed action changes not gains. Numeric tie-break frequency alone is not identification: strict-unique and maximizer inclusion frequencies are separately reported."
+  },
+  "KRNB": {
+    "status": "TRAIN_ONLY_POSTLOCK_NO_NEW_LEARNING",
+    "folder": "results/dev_aux/task2020",
+    "parameter": "B",
+    "grid": [
+      360,
+      720,
+      1440
+    ],
+    "selected": 360,
+    "family_values": {
+      "360": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      "720": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "1440": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ]
+    },
+    "bootstrap10000_selected_frequency": {
+      "360": 6917,
+      "1440": 2276,
+      "720": 807
+    },
+    "bootstrap_tie_count_frequency": {
+      "1": 7678,
+      "2": 1736,
+      "3": 586
+    },
+    "bootstrap_strict_unique_selected_frequency": {
+      "360": 5158,
+      "1440": 2276,
+      "720": 244
+    },
+    "bootstrap_maximizer_inclusion_frequency": {
+      "360": 6917,
+      "1440": 4136,
+      "720": 1855
+    },
+    "leave_one_family_maximizers": [
+      {
+        "omitted": 0,
+        "maximizers": [
+          360,
+          720,
+          1440
+        ]
+      },
+      {
+        "omitted": 1,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 2,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 3,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 4,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 5,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 6,
+        "maximizers": [
+          360
+        ]
+      },
+      {
+        "omitted": 7,
+        "maximizers": [
+          1440
+        ]
+      }
+    ],
+    "unique_complete_trajectory_signatures": 3,
+    "scope": "Uncertainty diagnostic of same TRAIN sample, not independent learners or newDEV. Stratified fixedopponent family bootstrap forKRN; ordinary family bootstrap forBfixedfoe. Scores/price locks never changed; observed action changes not gains. Numeric tie-break frequency alone is not identification: strict-unique and maximizer inclusion frequencies are separately reported."
+  }
+}

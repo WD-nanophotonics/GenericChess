@@ -1,0 +1,376 @@
+{
+  "status": "FROZEN_BEFORE_NATIVE",
+  "question": "Can existing materialNative support B with exact fullSession/literal legality on6x6before any futurevaluelearning?",
+  "rules": "results/dev_aux/task2024/rules.json",
+  "roots": "results/dev_aux/task2024/feasibility.json",
+  "states": [
+    {
+      "index": 0,
+      "family": 0,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 1
+      },
+      "state_sha": "5893b3a0964b94bec49b02d2a0bb2e86e9aeced0f6ea7dc4f08c2da94edbf472"
+    },
+    {
+      "index": 1,
+      "family": 0,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 1
+      },
+      "state_sha": "0d3caf7dc73f3dd60f7bd486e772947d5852a71269e12a6e8e849a2f9b268f72"
+    },
+    {
+      "index": 2,
+      "family": 1,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-1",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "fb3c624cf0f2d9421860fc85bfb691d38d241a833983fb62169d33c8a9c8a880"
+    },
+    {
+      "index": 3,
+      "family": 1,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "initial_setup_key": "family-1",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "bf37de3575121fa1f46e9f0ed181ae26e2c34b227e9e7ab776d7d5e05819c345"
+    },
+    {
+      "index": 4,
+      "family": 2,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-2",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "e7f152e9bb82b5029b533223e7e330213dca740a73e82161aec8127302c327a2"
+    },
+    {
+      "index": 5,
+      "family": 2,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "initial_setup_key": "family-2",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "9ae4d1ae6133c6909707ea0a3b03fdbb2122fc27f54d3c85828a13b8885a1537"
+    },
+    {
+      "index": 6,
+      "family": 3,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-3",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "e15c9e55e503c3b062f402a7e8972845c6f32c8e195a6dd0bda393a26f6137f2"
+    },
+    {
+      "index": 7,
+      "family": 3,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              0
+            ]
+          }
+        ],
+        "initial_setup_key": "family-3",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "efaade4f9fe3f38a44e853c6a35c845337bc0427e0abb61557b90ffd001ae4e5"
+    },
+    {
+      "index": 8,
+      "family": 4,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-4",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "44a724f236c543977e40fd9f25b1c263597c524eafee8aa67abb3a249cc090bf"
+    },
+    {
+      "index": 9,
+      "family": 4,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              4,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              3
+            ]
+          }
+        ],
+        "initial_setup_key": "family-4",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "f173fe5ad3f2fbd1f336957c12979b16d9f22982aee2cd678c893e927ba71ea1"
+    },
+    {
+      "index": 10,
+      "family": 5,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-5",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "3a67b4259287c6a34ea33fd555769f0bc9bca73ab7247d4753b4a6f599d57cda"
+    },
+    {
+      "index": 11,
+      "family": 5,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              4,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              5,
+              0
+            ]
+          }
+        ],
+        "initial_setup_key": "family-5",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "df9b4db0baa1b36fed95838aa211b9b6bb4109888972b25f5e7e683d7400ac53"
+    },
+    {
+      "index": 12,
+      "family": 6,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-6",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "4ebbf20f248e61c065edc27800e81cf56735f42af502835f18da4bbc0a93dc6d"
+    },
+    {
+      "index": 13,
+      "family": 6,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              1
+            ]
+          }
+        ],
+        "initial_setup_key": "family-6",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "13c1707032eee6e426d8c3a04ada4d336c66e76299a1d636bf9919572c60b8f1"
+    },
+    {
+      "index": 14,
+      "family": 7,
+      "prefix": false,
+      "record": {
+        "actions": [],
+        "initial_setup_key": "family-7",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "d78e48d67de7e54d339a49dde29d8e8631e01a6ac2c94649d7ca6694c65aa055"
+    },
+    {
+      "index": 15,
+      "family": 7,
+      "prefix": true,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "initial_setup_key": "family-7",
+        "resigned_by": null,
+        "ruleset_fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+        "schema_version": 3
+      },
+      "state_sha": "d5b189ad93dadf957b5d5ff4c012401f5662f3b8cea1bc27d0d665791332f0dc"
+    }
+  ],
+  "profiles": [
+    [
+      1260,
+      720,
+      360,
+      720
+    ],
+    [
+      1260,
+      720,
+      720,
+      720
+    ],
+    [
+      1260,
+      720,
+      1440,
+      720
+    ]
+  ],
+  "native_plan": {
+    "binary": ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe",
+    "variant_ini": "results/dev_aux/task2025/variant.ini",
+    "variant_names": {
+      "(1260, 720, 360, 720)": "aux68B6_360",
+      "(1260, 720, 720, 720)": "aux68B6_720",
+      "(1260, 720, 1440, 720)": "aux68B6_1440"
+    },
+    "fingerprint": "e27e3eee97626e246ff42449e1eddc11032f01f7e86366ab72757cc41f99efa2",
+    "files": {
+      "scripts/generic_session_native_material.py": "5b511a963e51c163d34417ee4c18e7ed84be71fcd19fd1fe6c7a6ba0a0f02054",
+      "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37",
+      ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+      "results/dev_aux/task2024/rules.json": "d0013bcddce11114b457a931119d128d23ebcff9a3b2b9c74d1f0dde8c8e2bd1",
+      "results/dev_aux/task2025/variant.ini": "654864a6da973be0749d48d8feef5dc57d2405f6f7733b0aee13cbb97582dbd2",
+      "results/dev_aux/task2025/provider.py": "605d446f74254f9da29609ba2fa97757ec2245bca36d69913caf99f06cb2bf5c"
+    },
+    "seconds_cap": 120,
+    "max_go": 48,
+    "declaration": "ALL48roots xALL13profiles beforefitness, no searchlabels",
+    "native_scope": "Exact new1822KRNrules fingerprint only; modified material-only Fairy, full public authority; rollout nfold/nmove disabled, not unmodified Stockfish or general declarations."
+  },
+  "seconds_cap": 120,
+  "expected_perfts": 48,
+  "expected_search_go": 48,
+  "search_nodes": 64,
+  "normal_seconds": 0.1,
+  "source_sha": {
+    "results/dev_aux/task2024/rules.json": "d0013bcddce11114b457a931119d128d23ebcff9a3b2b9c74d1f0dde8c8e2bd1",
+    "results/dev_aux/task2024/feasibility.json": "be283ced4694ce5b897934983eaaf0f6b5450621b932c149655ee41da1a14442",
+    "results/dev_aux/task2025/provider.py": "605d446f74254f9da29609ba2fa97757ec2245bca36d69913caf99f06cb2bf5c",
+    "results/dev_aux/task2025/qualify.py": "524f9637ce3f2168cc20e4c50eda53c5e712ea40e808ab81848b26e8807082c4",
+    "scripts/generic_session_native_material.py": "5b511a963e51c163d34417ee4c18e7ed84be71fcd19fd1fe6c7a6ba0a0f02054",
+    "results/dev_aux/task1866/unit_panel.py": "c4ed0aa649c5975ebdac67125947ed558c44999c155c6bdcb2a7db89cb793df0",
+    "scripts/generic_royal_actor.py": "99565b2cabcff8c9a60789f21546c1f2ececcb9210c7ce43a717f588684342f7",
+    "scripts/generic_proof_rnb_bridge.py": "d8a134b6b2331f5350714b47f7b319ab220e6593bf0fe3b9330c8abebdfa184c"
+  },
+  "scope": "ALL8pricefreeKRNB6roots/fresh+firstCorelegalprefix/3mechanicalBprofiles. R1260/N720prioranchorlockedbeforecurrentDEV, notselectedusingBlabels.0games/W-L/fitness/prooffilter/training. ExactpinnedKRNB6adapteronly, originalKRNproductsourceunchanged; nofullgeneratedNativeclaim. NativePV isnotCoreWDL/equal-workoptimality."
+}

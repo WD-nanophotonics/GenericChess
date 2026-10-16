@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_INPUT_DRAW",
+  "created_utc": "2026-10-16T00:55:49.300240+00:00",
+  "question": "Can the same full-rule material/proof interface reach a larger board without another hand-written game?",
+  "width": 6,
+  "pieces": "KkRrNBnb",
+  "wanted": 8,
+  "attempt_cap": 50000,
+  "seconds_cap": 60,
+  "seed": 20261016682024,
+  "criteria": "Same structural N-and-B exchange opportunities per side, both kingssafe,>=4legalactions/side,no enemyRcapture; noprice/WDL/prooffilter",
+  "scope": "Input/semantic feasibility only,0Native/prover/games/learning now. At most8freshroots; partial/empty isretained, nofilterrelaxation/capextension. No4x4census transfer. FutureNativequalification needs explicit width-aware scoped provider; no currentproduct edit."
+}

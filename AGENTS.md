@@ -261,30 +261,32 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment67
+# DEV_AUX current scope:2026-10-16 segment68
 
-Science OPEN. Fresh commonPN1K bothactor learning choosesR/N3.5; H24 primary
-14/128gain intervalcrosses0. Same16family conditional actualmax96 completion
-has26/128gain CI[.1015625,.3125], UNIT37W45L46D vs learned51W33L44D;0UNKNOWN.
-Localcomplete-player support, not unique/human/fullChess prices ornewcohort.
-All1408fromrootgames/33098newmoves/28983Nativebindings and3focusedtests restore;
-conditional256H48/256fullrule cases reuse realprefixes, not512newgames.
-StrictnoWINskip on BOTHactors preserves64exposedpaths/outcomes/NativeNodes,
-proof804127->596688. UNKNOWNonly; notDRAW/default/maintrainingadoption.
-Observedfullrule lateproof83.6percent in eligibleclosure motivates lowercost.
-Currentnext: task2015 new32inputs/16TRAIN16DEV,4mechanicalprices/fullactualW-L,
-strictnoWINproofskip whileplaying torealterminals. Forecast3019.7s/max512games,
-0assumedfilter speedup/whole3500sstop;0newNativefitness. Re-estimate beforestart;
-expected>1h requiresDotnecessityassessment, no artificialsplit. This supersedes
-another13pricefiniteeventrace; preserve alloldcaps/results/uncertainty.
-Zero-returnproposal NOTADOPTED: realresigncounterexample invalidates arbitrary
-SessionDRAW. Bindfixedpolicy/census/fullrules, separateutilitystatus fromactual
-DRAW/budgetUNKNOWN; do notchange currentrewardorSessionStatus.
-KRNB4 isolatedfeasibility96perfts+96go64 passes,0fitness;oldKRNbridgeunchanged.
-One5.943snormalphase late retained;Native.03669s/engine3ms/solelegalmove,
-peripheral gapunattributed; no strictperstepwall guarantee or automaticrerun.
-PRIMARY33af OWNER_MESSAGE_READ_ONLY, reportsAUX66reportread/noexecution/adoption.
-PUBLIC/checkedpublication/separatewriters remain; no product/UI/defaultchanges.
+Science OPEN. Fresh complete-rule coarse4price learning supports R>N locally:
+128TRAIN397.96s selects4.0; independent16family/fourfoe/bothroleDEV gives
+UNIT34W42L52D vsNEW4.0 50W27L51D, W-L+31/128 CI[.109375,.3828125]. PriorTRAIN3.5
+sameaggregate/new-v-prior0, so exactratio remains unidentified. ALL512actualgames
+complete1968.68s/0UNKNOWN/0outerlate; BOTHfixedPN1K/normal4096/coldbanks. Strict
+UNKNOWN-onlynoWINskip keepsphysicalplay toactualruleterminals, notutilityreward.
+This replaces another13price censoredeventrace, preserving67/alloldcaps/evidence.
+B/N first8TRAIN8DEV pilot144games667.87s: TRAIN.5 wins1vs0/0, DEV-2/48 CI0;
+noBvaluepositiveclaim. Sixboard48perft/48go64+32fixedB1vs2games356.25s passes,
+26of32draw/only6decisive; higherB2net-4/16 exploratory, notlargerboardlearning.
+No4censustransfer. GenericfullSessionproof401adoptinggames physicallywon.
+688newgames/35304moves/32516Nativebindings/6tests restore fromexactcapsules plus
+onefilehistoricalplan support. Firstpytestbasenamecollision andthenmissingoldplan
+retained; officialimportlibmode/newdirectories fixreplay withoutchangingassertions.
+Zero-return remainsNOTADOPTED: realNone/cancel preserveUNKNOWN/unscored and block
+actualselector; separatelegalfirstcontrol reachesactualDRAW14moves. Never infer
+runtimeprogress orchangeSessionStatus. Currentuserpublication/stop/boundariesapply.
+NextMain ACTUALLYBEGUN2029:8newKRN4inputs/0Nativefitness, fixedratio1vs4 underN360
+and720 againstfixedR720/N720opponent;64futuregames/32perfts, expected379.91s/
+whole600cap. Testtrue-WLunitrobustness beforefinerprices/humanfit. This targets
+older1866action-unitdependence withnewoutcomeevidence, no unchangedrerun/DEVtuning.
+PRIMARY1ee2b4798c5f0c4b97a4ae608d0b68a10c05a452 OWNER_MESSAGE_READ_ONLY reports
+noadoption offinitecontext/rootorder andAUX67reportread/noexecution. AUX adoptsno
+PRIMARYcode, poolsno workunits, makesno crosswrites/default/UI/visibilitychange.
 
 ## Current user publication grant2026-10-15
 
