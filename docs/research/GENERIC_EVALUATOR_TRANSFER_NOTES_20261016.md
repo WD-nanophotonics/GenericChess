@@ -33,10 +33,12 @@ so it does not establish this project's desired5–10minute adaptation target.
 A representation-preserving parameter copy and a strategy-preserving transfer
 between changed games are distinct claims.
 [2021 preprint sections3/4](https://ludii.games/publications/ARXIV2021.pdf).
-This preprint is superseded by the2023 TMLR paper. Its full OpenReview page/PDF
-returned a browser-verification page in this run; the2023 full text was NOT
-reviewed. The authors' repository confirms the implementation split and points
-to state/move channel mappings, not a ready GenericChess adapter.
+This preprint is superseded by the2023 TMLR paper. During the initial pass,
+OpenReview returned browser verification and the2023 text was not reviewed.
+During the next segment its author-hosted PDF became available through the
+author publication page. The updated scoped review is below; the earlier access
+failure remains historical evidence. The author repository identifies the
+implementation split, not a ready GenericChess adapter.
 [Author repository](https://github.com/DennisSoemers/Transfer-DNNs-Ludii-Polygames).
 Do not silently attribute the2021 experimental details to an inspected2023 text.
 
@@ -140,3 +142,29 @@ These4latequeries and2diagnostictransitions are additional to the sealed
 Separate normalandpublication-source searchdisabledfullstate/history/PV checks
 bothpass; counts agree. Newactualquerytotal4169, physicalgames still96. The
 original635ZIP remains unchanged. No learning/solver/API/default change.
+
+## Final2023 paper: updated source access and useful distinctions
+
+The [author-hosted final PDF](https://www.ericpiette.com/papers/tmlr23.pdf)
+was inspected in sections3-4 and AppendicesB-E. Channel mapping uses encoded
+information, with piece-name/tree-edit heuristics; internal weights are copied.
+It reports positive and negative transfer. Transfer training uses20hours on
+8GPUs/80CPUcores per source; fine-tuning adds20target hours against a20hour
+scratch baseline, treating source pretraining as free. There is one initial seed
+per source and300role-balanced evaluation games per pair. These experiments do
+not establish equal-total-cost superiority or this project's5-10minute target.
+This is a scoped reading, not a claim all39pages/implementation were reproduced.
+
+Our cost decision is therefore explicit: with pretraining cost C0 and target
+costs Ct for adaptation and Cs for scratch at the SAME target quality, savings
+across k targets require C0+k*Ct<k*Cs. If Cs<=Ct, reuse never recovers C0 through
+this saving alone. A pre-existing source model may legitimately have zero
+incremental acquisition cost, but that assumption must be named. If zero-shot
+already meets the target, adaptation-to-target cost is zero; additional samples
+cannot be described as necessary to reach it. Label accuracy and actual search/
+play quality remain separate targets. This accounting is our inference, not an
+additional experiment in the paper.
+
+The completed PRIMARY study is NATIVE_TEACHER_AND_TRANSFER_20261016.md. It
+separates finite-Q horizon, search-order cost, cosmetic channel mapping and actual
+rule transfer; no network, solver, learning worker or policy API was added.

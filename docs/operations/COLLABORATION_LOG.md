@@ -3189,3 +3189,37 @@ These4latequeries and2diagnostictransitions are additional to the sealed
 Separate normalandpublication-source searchdisabledfullstate/history/PV checks
 bothpass; counts agree. Newactualquerytotal4169, physicalgames still96. The
 original635ZIP remains unchanged. No learning/solver/API/default change.
+
+
+## PRIMARY CHAT feasibility segment —2026-10-16
+
+PRIMARY completed542newfinite/controlqueries, no physical games/research fits or
+product/default/model/UI edits. Same-rule complete generated inputs/promotion/
+drop/aux/history remain; no full-domain equivalence. Closedalias budget work,
+111OTHER-action finite teachers, horizon rank reversals,846action cosmetic
+contract mapping,846structural deltas and existing compact cost attribution.
+Fresh source-built search-disabled replay:542receipts/3193state-history checks/
+1431PVedges/8capacityrefusals; separate NumPy846V1+846delta+8map checks.
+Caps/censors/adversehint and renamingtie cases retained. Dynamic input generation
+is92-98percent of measured compact function, not a totalcaller partition; no
+optimization adopted. Small NN alone is not automatically cheap generic search.
+
+Both CHAT roots are hypotheses: adopt trustworthy-target/representation/cost
+separation and one-axis transfer controls, defer framework/architecture promises.
+Final2023TMLR authorPDF scoped text now read after oldOpenReview obstacle;
+pretraining cost/zero-shot threshold must enter transfer claims. No third-party
+paper uploaded or source execution claimed. Better finite rank need not save
+work, same dimensions/Positions need not map actions, fiterror is not strength.
+
+AUX70 root/complete two replies read, originals privately saved first. Newly
+published c36adaa2ee8dc53cc36f98743cff0263cf84cac0 full segmentreport,task2079result,
+task2086adapter read ONLY. Original1800cap leaves48finished/1UNKNOWN/47unrun;
+one-family+.0625 and fixedorder/censors forbid robuststrength claim. Cheap pair
+interactions and nearby-rule zero-shot already below target make competing
+PRIMARY training unnecessary. Dot's target-view objection is addressed by
+owner-reported controls; negative-attractor reasoning is not independent code
+execution. New conservative positive rank-to-existing-certificate route remains
+AUX prototype/verification lane; no merge, weights, solver, crosscheckout writes
+or independent AUX test claims. MAIN next inspects generated-rule evaluator-input
+cost; AUX prospective guard qualification is complementary. Fixed-SHA result
+will be sent after actual prescribed publication, no acknowledgement gate.

@@ -1,0 +1,21 @@
+from pathlib import Path
+import json,zipfile,hashlib,sys,sysconfig,subprocess,time,uuid,os,collections
+R=Path.cwd();P=R/'.local_agent/alias-teacher-20261016';D=R/'docs/archive/native_teacher_transfer_20261016';m=json.loads((D/'manifest.json').read_bytes());start=time.perf_counter()
+assert hashlib.sha256((D/'evidence.zip').read_bytes()).hexdigest()==m['archive_sha256']
+dest=P/('source-copy-'+uuid.uuid4().hex[:8]);dest.mkdir()
+with zipfile.ZipFile(D/'evidence.zip')as z:
+ assert z.testzip()is None
+ for item in m['members']:
+  b=z.read(item['path']);assert hashlib.sha256(b).hexdigest()==item['sha256'];f=dest/item['path'];assert f.resolve().is_relative_to(dest.resolve());f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
+source=dest/'source';src=source/'generic_chess/_native';out=source/'generic_chess'/('_native_core'+sysconfig.get_config_var('EXT_SUFFIX'));cache=P/'source-copy-zig-cache';cache.mkdir(exist_ok=True)
+cmd=[str(R/'.venv/Lib/site-packages/ziglang/zig.exe'),'cc','-target','x86_64-windows-gnu','-shared','-O2','-I'+sysconfig.get_path('include'),'-I'+str(src),'-L'+str(Path(sys.base_prefix)/'libs'),'-lpython312',*[str(f)for f in sorted(src.glob('*.c'))],'-o',str(out)]
+r=subprocess.run(cmd,capture_output=True,timeout=120,env=dict(os.environ,ZIG_GLOBAL_CACHE_DIR=str(cache)));(P/'source-copy-build-private.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0,(r.stdout[-1000:],r.stderr[-2500:])
+actuals={}
+for script,result,site in [('consumer_all.py','source-consumer-result.json',False),('consumer_features.py','feature-consumer-result.json',True)]:
+ r=subprocess.run([sys.executable,*([]if site else['-S']),str(dest/'research'/script),str(dest/'research')],cwd=source,capture_output=True,timeout=180);(P/(script+'-source-private.log')).write_bytes(r.stdout+r.stderr);assert r.returncode==0,(r.stdout[-2000:],r.stderr[-3000:]);actuals[script]=json.loads((dest/'research'/result).read_bytes());assert actuals[script]['complete']
+a=actuals['consumer_all.py']['counts'];assert(a['query_receipts'],a['state_history_comparisons'],a['pv_edges'],a['reproduced_compact_refusals'])==(542,3193,1431,8),a
+assert actuals['consumer_features.py']['counts']==dict(random_feature_map_controls=8,v1_mapped_actions=846,feature_delta_transitions=846)
+x=dict(complete=True,archive_sha256=m['archive_sha256'],archive_members=m['member_count'],normal_module_sha256=hashlib.sha256((src/'native_module.c').read_bytes()).hexdigest(),normal_native_rebuilt=True,module_origins_asserted=True,actual=actuals,seconds=time.perf_counter()-start,scope='Actualfreshwhole542querynormalNative sourcebuild/searchdisabledreceiptpass plusNumPyfeatures. No studysearch/game/fit/privateactivation. Sharedhost/Python/Zig/Core/compiler; notindependentWDL oroldclockauthentication.')
+assert x['normal_module_sha256']==m['normal_module_sha256']=='39230230e1f51e44c158b4bbfebe23e3721211c56e897916a5cfe65d1144fd17'
+for f in[P/'source-copy-replay.json',D/'publication-replay.json']:f.write_bytes((json.dumps(x,indent=2)+'\n').encode())
+print('SOURCE_COPY_PASS',x['seconds'],a,flush=True)

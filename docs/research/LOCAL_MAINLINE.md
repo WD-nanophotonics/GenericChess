@@ -454,3 +454,34 @@ V1inputsbutdifferentfiniteranks. Separatenormal/sourcefullstate/PVreaderspass.
 No trainedfailure/optimalWDL/newmodelAPIclaim. Nextquestioncanmeasurewhether
 thisaliascosts boundedsearchwork orismerelyan exact-rankinglimitation; useexisting
 hints/orders,nolearning orcompetingAUXsolver. Totalnewqueries4169;96gamesunchanged.
+
+
+## Current CHAT feasibility outcome —2026-10-16
+
+The prepared alias-budget question is CLOSED:14newfixture calls separate finite
+ranking from canonical-refinement work (30/34nodes, control19/19). No V1/API or
+PV/history change. New542queries/0games/0researchfits quantify Native finite
+teacher coverage, horizon dependence, cosmetic mapping and inference cost;
+NATIVE_TEACHER_AND_TRANSFER_20261016.md owns the detailed limits/source replay.
+111OTHER-action children all complete NativeD3;85joint Core scores match.
+Finite ranks reverse8/21D2-D4pairs and3/7D4-D6pairs: tag actual target horizon,
+not intrinsic Q. Existing compact zero-residual inference pays mainly dynamic
+feature construction and refuses16board5145input payloads above4096; no silent
+truncation/default change. Mechanical rename maps846actions, not strategic
+transfer; anchor-relative structural refresh may be costly.
+
+Decision/reason/consequence: learn from CHAT's teacher/interaction/transfer
+separation, while deferring a new NN/NNUE framework or training launch from input
+algebra alone. AUX70 now has fixed c36adaa2ee8dc53cc36f98743cff0263cf84cac0 teacher/
+cheap-interaction/nearby-rule evidence and owns prospective certificate checks.
+PRIMARY read report/task2079/task2086 only, no execution/adoption. Its partial
+2063completion and zero-shot-already-target result preclude fit-as-strength and
+sample-saving claims. This replaces the stale instruction to run the already
+closed10query memo and unpublished-AUX assumption, preserving negative evidence.
+Next PRIMARY question: can cheaper evaluator INPUT construction preserve the
+specific useful feature values and reduce end-to-end cost on existing complete
+rule states? First inspect actual dependencies and profile constituents; do not
+build another learner/solver, drop promotion/drop/base/aux/history semantics or
+rerun unchanged games. Cheap scalar/interaction baselines remain candidates.
+Reconsider small-net integration only with necessary inputs, measured total cost
+and fixed independent quality evidence; search-first is scheduling, not a ban.

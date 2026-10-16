@@ -1,0 +1,45 @@
+{
+  "base": {
+    "complete": true,
+    "counts": {
+      "state_history_comparisons": 2999,
+      "pv_edges": 1309,
+      "query_receipts": 478,
+      "fixture_queries": 14,
+      "teacher_child_edges": 354,
+      "finite-teacher-results.json": 112,
+      "core-teacher-results.json": 22,
+      "horizon-results.json": 88,
+      "action-coverage-results.json": 222,
+      "rename_tie_queries": 4,
+      "rename_queries": 16,
+      "census_child_edges": 846
+    },
+    "seconds": 26.42342780000763,
+    "scope": "Allactualreceipt/PV/fallback/CoreNativeboardhandsaux/ply/orderedpositiondigest/actor-checkhistory replay, searchdisabled. RawCoreactionsignatures preservedinactualrecords; noWDL/oldclockauthentication/modeltraining."
+  },
+  "compact": {
+    "complete": true,
+    "counts": {
+      "state_history_comparisons": 194,
+      "pv_edges": 122,
+      "query_receipts": 64,
+      "compact-cost-results.json": 40,
+      "reproduced_compact_refusals": 8,
+      "compact-profile-results.json": 24
+    },
+    "seconds": 3.424836399994092,
+    "scope": "Searchdisabled64compactqueryreceiptPV/fullstates plus8actualcapacityrefusalreproductions, normalNative/Core. Privatecounterclockattribution isnotindependentlyauthenticated."
+  },
+  "features": {
+    "complete": true,
+    "counts": {
+      "random_feature_map_controls": 8,
+      "v1_mapped_actions": 846,
+      "feature_delta_transitions": 846
+    },
+    "seconds": 5.638889199995901,
+    "scope": "SourceboundNumPyfeature/permutation/V1/structuraldeltarecomputation; nosearch/game/fit. Samealgorithms/sharedhost, notindependentlearnedgeneralization orincrementalimplementation."
+  },
+  "scope": "Actualnormal478base+late64querypasses andseparatefeaturecheck; nofictitioussinglefullnormalrun."
+}
