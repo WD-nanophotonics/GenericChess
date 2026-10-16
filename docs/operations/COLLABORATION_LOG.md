@@ -1930,3 +1930,8 @@ execution/adoption inferred; ordinaryconcurrency is a timinglimit, not a gate.
 Fixed revision links are supplied after reviewed publication, not invented here.
 Next auxiliary task is a bounded observable root1/27 proof-discovery trace;
 complete generated-domain semantics and usefullearnedprices remain unresolved.
+
+Verified auxiliary science: https://github.com/WD-nanophotonics/GenericChess/blob/0701196860d8f13719bfbc0bbfa687361f4d49c9/results/dev_aux/SEGMENT_20261016_74.md
+FullremoteSHA and12anonymousfiles/PublicAPI checked;61.376min safecheckpoint.
+Informational fixedrevision result follows closingpublication; no newDotread
+orimplementationexecution inferred.

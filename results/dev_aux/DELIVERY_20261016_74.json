@@ -1,0 +1,96 @@
+{
+  "status": "VERIFIED_SCIENCE_DELIVERY_AND_ACCEPTED_SAFE_CHECKPOINT",
+  "science_revision": "0701196860d8f13719bfbc0bbfa687361f4d49c9",
+  "remote_science_sha": "0701196860d8f13719bfbc0bbfa687361f4d49c9",
+  "visibility": "public",
+  "anonymous_checks": [
+    {
+      "path": "results/dev_aux/SEGMENT_20261016_74.md",
+      "status": 200,
+      "bytes": 8808,
+      "sha256": "c7ad2b0f9def1252071f6c6ce1752bd96e166eb997f5cc39526e6f842426da45"
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261016_74.md",
+      "status": 200,
+      "bytes": 2388,
+      "sha256": "e3a1703499542b23a5a66480fdd329ab8530b2a3875ea3932232fd32a749da0a"
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261016_74.json",
+      "status": 200,
+      "bytes": 1877,
+      "sha256": "f144b8120c4d0e7444de9ba17e9756bb3f3435d2089b370800270ecc28ecdeb3"
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_74.zip",
+      "status": 200,
+      "bytes": 21701030,
+      "sha256": "19cee64fdbf1c5bdd662c2ee2e792ae9612e593abaf0d86ee4a6a9cdf098d71c"
+    },
+    {
+      "path": "results/dev_aux/task2179/graph.py",
+      "status": 200,
+      "bytes": 13014,
+      "sha256": "c0b579856f638aa69f6c5c3df458af6300e63c14c4bd25768feeb8a16a27c75a"
+    },
+    {
+      "path": "results/dev_aux/task2179/graph-pre-terminalguard.py.txt",
+      "status": 200,
+      "bytes": 12810,
+      "sha256": "1261ee9c4890d79b3541866ae1eb9fb9ba10e59e2b52250f6a785322564c97c2"
+    },
+    {
+      "path": "results/dev_aux/task2179/terminal-root-counterexample.json",
+      "status": 200,
+      "bytes": 1554,
+      "sha256": "965304ef0dba0019c82a1cb41f16d8aa490d4cff0f7504d942f3cafbf638dbaa"
+    },
+    {
+      "path": "results/dev_aux/task2175/player.py",
+      "status": 200,
+      "bytes": 6407,
+      "sha256": "899bd5f31245a19fa330d4b976b815ce17c4d5ac16761618fab74640498b444b"
+    },
+    {
+      "path": "results/dev_aux/task2185/restore-receipt.json",
+      "status": 200,
+      "bytes": 1459,
+      "sha256": "6fe017e158dac6959ce6c9bf231b4cc365ca96378e740c496f5e3f65580dac1f"
+    },
+    {
+      "path": "results/dev_aux/task2186/selection-result.json",
+      "status": 200,
+      "bytes": 759,
+      "sha256": "73d331e46670ce1896115d7df7489c3f69e8feae6b7b3c97e84b4e751a227520"
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "status": 200,
+      "bytes": 198596,
+      "sha256": "7b988752cc3f9b2c3a140fdff422ce9ae69e318e78be9c5e73ce3651e13cc16d"
+    },
+    {
+      "path": "AGENTS.md",
+      "status": 200,
+      "bytes": 24953,
+      "sha256": "3d8c95fc88ef62d5143bb12ff92b0416b900cffc43b137cce7f93e5af5457aa3"
+    }
+  ],
+  "science_worktree_clean_at_verification": true,
+  "verified_at": "2026-10-16T10:17:18.310730+00:00",
+  "session": {
+    "id": "191e7869-b83d-43e8-87c7-71e906ad5790",
+    "started_at": "2026-10-16T09:17:01.239341+00:00",
+    "ended_at": "2026-10-16T10:18:23.824033+00:00",
+    "elapsed_minutes": 61.376,
+    "ending_reason": "safe_checkpoint",
+    "duration_gate_passed": true,
+    "research_stage_count": 5
+  },
+  "all_owned_producers_closed": true,
+  "science": "OPEN",
+  "validation": "85freshrestoredtests/1971payloadchecks1797paths/allclosedconsumersPASS;2186postcapsuleselectionauditseparate",
+  "next_inputs": "task2186/next-trace-plan.json:fourfuturequeriesnotstarted",
+  "scope": "Closingmetadata refers verifiedsciencecommit; thisfile cannotself-assertitsownfuturecommitSHA. RawAPI/Slack/stop/accountoriginalsremainGitignored."
+}
