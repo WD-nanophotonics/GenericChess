@@ -3565,3 +3565,31 @@ Actualraw-save overwrite-riskrefusal resolvedbyfileinspection andexclusive
 CreateNew/xbnewdestinations, preservingalloldoriginalsandimmutableparts. No renewed
 consent,alternate transport or controlbypass. Publicfixedsource remainsreadable.
 Latefullrecords: ../research/data/core_position_inputs_late_20261017.json.
+
+
+## 2026-10-17 — PRIMARY input admission / exact opening preference
+
+PRIMARY read the complete45-reply bound thread via20+20+5 pages, preserving
+historical payload-binding=false, and adopted Dot1792173586's specific existing
+provider exclusion. Two max2 action-relative victim-filter witnesses reproduce
+Native3/Core2 legal actions and wrong3/9 inputs. The research-only helper now
+rejects these effects, max1 and mismatched sources. Dot reviewed fixed report and
+selected source, not the archived callback or execution; PRIMARY performed the
+witnesses,128 normal controls across64 unique cases, four actual Core caller
+controls and independent restored-source qualification. No Native getter rollback.
+
+Four tail parents all have ongoing alternatives.1746 initial children on18 exposed
+families show3 opening-win rules, only1 intersecting the tails. PRIMARY adds only
+a disabled-by-default exact opening-win generator preference, preserving all old
+cohorts and default outputs. Eight prospective fixed generator calls preserve32
+attempt caps. Normal2909 / restored129 pytest and2485 restored childstates/history
+qualify distinct tiers; no balancedquality/WDL/trainedstrength inference. Three
+local harness/source-package mistakes were preserved and corrected, not hidden.
+
+DEV_AUX80's complete parent+oneDotreply was read as peer context only: negative
+closed graphs cannot borrow synthetic DRAW leaves or ignore actual mate/stalemate
+priority. No AUX80 source/report execution, certificate implementation, checkout
+write or automatic merge. PRIMARY did not initiate another solver/learner. The
+concrete admission objection changed code qualification; no acknowledgements,
+extra workers or approval gate were needed. Fixed source/evidence and limitations
+are in INPUT_ADMISSION_AND_OPENING_WINS_20261017.md and its sealed capsule.

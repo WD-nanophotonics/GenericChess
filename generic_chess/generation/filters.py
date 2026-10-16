@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 from ..core.movegen import legal_actions_from_position
 from ..core.pieces import PieceType
+from ..core.transition import apply_action, initial_state
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,6 +70,23 @@ def run_soft_filters(cfg, compiled, types_by_id: dict[str, PieceType]) -> tuple[
             f"{len(opening)} legal moves (allowed {cfg.min_opening_legal_moves}..{cfg.max_opening_legal_moves})",
         )
     )
+
+    if cfg.require_no_opening_win_in_one:
+        # A short sampled line is not a rule-level defect. This preference
+        # instead checks an exact winning first action from the actual initial
+        # state, retaining promotion, hands, history and terminal precedence.
+        state = initial_state(compiled)
+        opener = state.position.side_to_move
+        has_win = any(
+            apply_action(state, action, compiled).terminal_status.winner == opener
+            for action in opening
+        )
+        results.append(FilterResult(
+            "opening_has_no_win_in_one",
+            not has_win,
+            "opener has a winning first action" if has_win else
+            "no winning first action; balance and longer playability untested",
+        ))
 
     empty_atoms = [pt.type_id for pt in compiled.piece_types if not pt.is_anchor and not pt.movement_atoms]
     results.append(

@@ -112,8 +112,10 @@ qualification:2757 normal/160 source checks,66 equal jointD4 pairs from240/256
 fresh queries; control9 conditional4/8 cost ratios.275/.118, wide ratios N/A.
 These are scoped cost results, not price learning or general strength.
 
-Still unadopted: getter-only spatial optimization (not the actual leaf consumer),
-zero-vector skipping (different failure contract), shared3+9 V1/V2, live-copy and
+The public spatial getter was later adopted only after an actual Core consumer
+changed its earlier premise; the completed follow-on below owns that evidence.
+Still unadopted: zero-vector skipping (different failure contract), shared3+9
+V1/V2, live-copy and
 stack outline, full-key evaluation cache, TT history quotients/lookup demotion,
 root ordering, quiet-check classifiers, unconditional reserve/q shortcuts and
 conditional opening filters. Their evidence includes adverse cases and censored
@@ -243,8 +245,9 @@ geomean cost.349, with3tails/10of16slots retained. Normal2904/selected157 and re
 source157/reader qualifications are distinct. Packing engineering failed its2.85%
 vs10% criterion and is DEFERRED; no new diagnostic API or competing AUX learner.
 CORE_POSITION_INPUTS_20261017.md owns exact sources, counterexamples and limits.
-Next: inspect real compiler/provider admission limits before any further bridge
-expansion or consumer migration. Do not repeat the closed manual-model panels.
+The subsequent concrete provider-admission objection is now reproduced and
+corrected in the unactivated research helper, as recorded below. Do not repeat
+the closed manual-model panels or silently upgrade old source qualification.
 
 Late new-source component recheck:240total directpredictions, packing9.11% still
 below10% criterion, so no packing/API follow-on. Admission sourceaudit is done.
@@ -253,3 +256,30 @@ penultimate fullhistories andALLoneplyalternatives beforeconsideringanysimple
 playabilityfilter. First137401 actuallychecked:8ongoingof10alternatives; a chosen
 shortline isnot evidence thewhole ruleis unplayable. Threecases remain; nofilter,
 newsolver, pricefit, gamecampaign or changeofgenericdomain follows automatically.
+
+
+## Corrected input admission and optional opening preference —2026-10-17
+
+Dot's new action-relative effect objection was actual, not a new approval gate.
+The prior max-only research bridge accepted two max2 victim-filter rules with
+Native3/Core2 legal actions and different3/9 vectors, although the existing
+production legality provider already declines them. The corrected research-only
+helper retains that exclusion, max1 refusal and explicit Core/Native/Position
+fingerprint binding.64 distinct controls were executed on each of two source
+versions, plus mismatch/error and actual Core caller controls; no product bridge,
+Native rule rewrite, getter rollback or automatic fallback. Old timings keep their
+original source tier. INPUT_ADMISSION_AND_OPENING_WINS_20261017.md owns the repair.
+
+All4 retained tail parents have continuing alternatives, but this is not balance.
+All1746 initial semantic children on18 exposed families identify three immediate
+opening-win rules; only one was a selected walk tail. The optional generator flag
+require_no_opening_win_in_one defaults False, uses complete Core transitions and
+terminal winners, and has129 source/2909 normal regression qualification. Four
+prospective fixed seeds/eight calls preserve max32 attempts and show exact intended
+rejection or identical unchanged accepted rule. It is a narrow preference, never
+a general quality filter or a reason to retrofit frozen scientific cohorts.
+
+Before claims about longer play, declare distribution, continuation policy and
+administrative censors. Continue the stated generic/search priority; no new fit,
+competing AUX solver, repeated toy cost panel or implicit default change follows.
+AUX80 parent+oneDotreply read ONLY, no80 code/report execution or adoption.
