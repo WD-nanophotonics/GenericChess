@@ -1276,6 +1276,19 @@ def _semantic_backend_contract(backend, *, explicit: bool):
         "semantic backend has an unsupported payload/action dictionary contract")
 
 
+def _requires_actor_relative_effect_binding(semantic):
+    # Core binds these references to the original action actor. Older kernels
+    # resolved them against the affected (possibly already transformed) piece.
+    for pattern in semantic.ir.patterns:
+        for effect in pattern.effects:
+            ref = (effect.piece_type_ref
+                   if effect.kind in ("move", "shift", "remove") else
+                   effect.type_ref if effect.kind == "set_current_type" else None)
+            if ref is not None and ref.kind in ("action_base", "action_current"):
+                return True
+    return False
+
+
 def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSemanticCompiledRules:
     """Compile a CompiledSemanticRuleset into the C-owned semantic rules
     capsule (compile-only contract; no semantic execution).
@@ -1296,6 +1309,11 @@ def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSem
     version, max_squares = _semantic_backend_contract(backend, explicit=backend_module is not None)
     capability_query = getattr(backend, "native_capabilities", None)
     capabilities = capability_query() if callable(capability_query) else {}
+    if (_requires_actor_relative_effect_binding(semantic)
+            and not capabilities.get("semantic_actor_relative_effect_binding", False)):
+        raise NativeUnsupportedRuleError(
+            "Native actor-relative type effects require a rebuilt kernel; "
+            "use Core execution")
     max_rule_ply = capabilities.get("semantic_max_rule_ply", GC_SEM_MAX_PLY)
     if type(max_rule_ply) is not int or max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):
         raise NativeUnsupportedRuleError("unsupported semantic rule-ply capability")

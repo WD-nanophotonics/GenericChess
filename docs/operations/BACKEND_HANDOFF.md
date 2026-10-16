@@ -1,3 +1,17 @@
+## 2026-10-17 original actor binding in semantic effects
+
+Rebuild Native for corrected action_base/action_current operands in move/shift,
+remove and set_current_type. References use the original action actor, including
+when another piece is affected or earlier effects changed its type. The kernel
+advertises semantic_actor_relative_effect_binding=True. Python explicitly refuses
+affected Native compilation on older kernels and directs Core execution; ordinary
+unaffected rules remain supported and existing Core provider fallback remains.
+Conservative move/shift/remove provider exclusions are not widened. No payload,
+result field, default evaluator/q/UI or history/storage change. Default v4/256 is
+qualified; DEV_AUX's separate v5 backend was not executed or automatically merged.
+Normal2939 / private2938+one console-entry skip / same-case and source evidence:
+../research/ACTOR_BINDING_AND_CONDITIONAL_CONTINUATION_20261017.md.
+
 ## 2026-10-17 public spatial getter trial-child identity
 
 Rebuild Native for a scoped optimization to the existing spatial_features getter.

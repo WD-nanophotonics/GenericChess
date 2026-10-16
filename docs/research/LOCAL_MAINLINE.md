@@ -283,3 +283,31 @@ Before claims about longer play, declare distribution, continuation policy and
 administrative censors. Continue the stated generic/search priority; no new fit,
 competing AUX solver, repeated toy cost panel or implicit default change follows.
 AUX80 parent+oneDotreply read ONLY, no80 code/report execution or adoption.
+
+
+## Native actor binding and conditional continuation —2026-10-17
+
+The research guard follow-on exposed an accepted production set_current_type
+case: Core4/Native6 andwrong3/9. Fix the three Native effect operand resolution
+sites to original actor base/current, including move/shift/remove, with a kernel
+capability and explicit affected-rule refusal on older kernels. Preserve existing
+conservative provider exclusions; no Core/default/schema/storage change. Normal
+2939 fullchecks, private2938+one missing-console skip, six original cases/allchild
+Positions and two fullsession/history controls qualify this correctness change.
+Frozen continuation source46293226 was not changed until its producer closed.
+
+The prospective32game operational study is complete:16generationcalls/8families,
+1669edges/684Corecalls,10actualterminals/22administrative64plyUNKNOWN,0fit/error.
+Keep optionalmate1preference defaultFalse: two four-board rule pairs changed;
+random-policy lengths and pervasive64ply censors do not establish quality or WDL.
+No stronger filter, new learner or competing AUX solver follows. Actual requested
+2s deadlines are cooperative (maxobserved2.645s); backend/depth/work are retained.
+
+Sampling choice is now a concrete price-route premise, not architecture advice:
+16newroots TV0 but6of30actualprefix8observations have nonzero binding-vs-complete
+successor-observation weights (correlatedslots, full histories NOTquotiented).
+The actually begun exact cheap material-average check on3fullparents yields
+nonzero differences using the same frozen values. Future rule-only averages must
+freeze theirmeasure before comparison; no unique price/return/humanfit claim.
+ACTOR_BINDING_AND_CONDITIONAL_CONTINUATION_20261017.md owns exact ratios, budgets,
+original failures and frozen/current source tiers. AUX80 remains read-only context.

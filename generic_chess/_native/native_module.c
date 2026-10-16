@@ -439,6 +439,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "semantic_exact_root_windows", value);
     PyDict_SetItemString(dict, "semantic_immediate_win_goal", value);
     PyDict_SetItemString(dict, "semantic_pending_continuation", value);
+    PyDict_SetItemString(dict, "semantic_actor_relative_effect_binding", value);
     Py_DECREF(value);
     value = PyLong_FromLong(65535);
     PyDict_SetItemString(dict, "semantic_max_rule_ply", value);

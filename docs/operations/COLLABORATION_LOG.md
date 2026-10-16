@@ -3593,3 +3593,29 @@ write or automatic merge. PRIMARY did not initiate another solver/learner. The
 concrete admission objection changed code qualification; no acknowledgements,
 extra workers or approval gate were needed. Fixed source/evidence and limitations
 are in INPUT_ADMISSION_AND_OPENING_WINS_20261017.md and its sealed capsule.
+
+
+## 2026-10-17 — accepted transformation binding / conditional-policy follow-on
+
+PRIMARY's follow-on to Dot1792173586 found an additional production-admitted
+set_current_type actor-reference defect, Core4/Native6 with wrong3/9. A basicprobe
+had matchingvectors yet differentfrontiers, so qualification now checks fullsets
+andallchildren. Original-actor operands are fixed in three C sites; a capability
+makes older kernels explicitly refuse affected compilation/Corefallback. Existing
+provider exclusions remain conservative. Normal2939/private2938+one console skip,
+six original fixtures and two fullsession/history controls are actual executions.
+No AUX80source/program/checkoutexecution, v5 qualification or automatic merge.
+
+PRIMARY completed separately frozen32trajectories/8families,684Corecalls,1669edges;
+10actualterminals/22UNKNOWN,0fit/error. Uniform versus fixedAlphaBeta are distinct
+jointpolicy strata, not Elo. All rules/conditions remained frozen while private
+Nativequalification ran; normal source/binary adoption occurred onlyafterproducer
+closed. Frozencodereplay2269states/568PV/684receipts is not clock/minimax replay.
+
+New primary reading supports distinguishing static rule properties from agent-
+conditioned playout metrics; no humanrankings or60move preference adopted. A
+sampling diagnostic began and completed on all actualply8slots and then the6
+nonzero-weight slots: three fullparents change an exact frozenmaterial average.
+No action/history quotient, actor-conservation law, learnedprice or betterreturn
+is claimed. Retain defaultFalse optionalfilter and declare future samplingmeasure.
+Fixed-version source/data links will be sent as results, not approval requests.
