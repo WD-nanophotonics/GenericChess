@@ -1,0 +1,41 @@
+{
+  "question": "Can actualW-L learn a useful ORDINALpricecell fromNEWquiet-onlyTRAIN andgeneralizetoNEWprice-unqueriedquietDEV withfixedconversion andACTUALD3bothsides;D2canmissnewratio2conflicts?",
+  "grid": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    4.0
+  ],
+  "initial_prices": [
+    0.5,
+    2.0
+  ],
+  "opponents": [
+    0.5,
+    2.0
+  ],
+  "TRAIN_families": 32,
+  "DEV_families": 16,
+  "H": 96,
+  "normal_depth": 3,
+  "normal_nodes": 8192,
+  "normal_seconds": 1.0,
+  "step_seconds": 1.5,
+  "one_cap_seconds": 1800,
+  "estimated_seconds": 1000,
+  "expected_TRAIN_games": 640,
+  "maximum_DEV_games": 320,
+  "inputs_sha": "2a24ed7582796d8bbb399824d3266ca135ec6a6e25d3bbff9b4d435ba2eaa7fa",
+  "guide": "FrozenauditedRNcanonicalrankACTIONpolicyonlywhenactorcount<=4,BOTHplayersidenticalguide; allcurrentlegalactions/fullrecordreplaypaid. Not finiteall-defenseWINcertification, genericMateSolverorhistoryWDLoracle; neverrewardbytable. Actualrulemaxply96/repetition3definesfinitegame. Higher5actorchoicesmaterialsearchonly.",
+  "reward": "ActualpublicSessionW/L+1/-1,trueactualno-winnerterminal0; unfinished/cap/nochoiceU withrewardNone. Unknownintervals[-U,+U], no quantityfill. NonnormalizedcanonicalWINlabelsneverusedasrewardorrootselection.",
+  "selectors": "PREDECLAREDadjacentstrictbaselineandglobalgridalternative oncaptureclosedRtotal1/Ntotal2ordinalcellrepresentatives.5/1/1.5/2/4;1and2aretieboundaries. No within-cellmagnitudeidentification, twofrozenrandominitials. CandidateupdateonlyifnewTRlowerbound>oldTRupperbound, noDEVselection. Tieskeepinitialwhereoptimal; otherwiselowestgridindex. DEVunitycontrolplusuniqueTRAINselectedprofilesonly; noDEVuntilall640TRAINslotsrecorded. Intervals/contextdependence, notuniversalpointprice.",
+  "scope": "Scopedrule-derivedfixedendgameguidanceassay, notadoptionofgraphprototype/PRIMARY/defaults. Fixedfoes/roles/resources, geometry/rule/humanpriceholdoutunread. Teacherprepayment259.226census+actualretrograde/audit/loadcostretained. Storeallpartialgames/missingplannedslots/failures. No capreset orhumanreferencefit. New48R-vs2Nroots have differentinventoryfromall112previousRNorbits; sameexposedrule. Finiteordinalcelllearning, notmetricratiolearning.",
+  "pins": {
+    "results/dev_aux/task2251/study.py": "5c8d0325a587bd3cf790f3fcbf3fdd8ee52bef408458e2e1b20622573c9b177f",
+    "results/dev_aux/task2210/player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results/dev_aux/task2148/normal.py": "fa829615034f7f174b3530244d0b5f29d018c8b48fb6ece7a41e6056f8d0a00e",
+    "results/dev_aux/task2250/audit.py": "94f76f3df4a76186050b6666a56c7955b16055d64f72568ea4b59e4c3f651eca",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3"
+  }
+}

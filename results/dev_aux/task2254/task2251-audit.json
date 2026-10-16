@@ -1,0 +1,125 @@
+{
+  "status": "PASS_CLOSED_ACTUAL_LEARNING_WITH_PLANNED_MISSING_BOUNDS",
+  "task": 2251,
+  "producer_status": "COMPLETE",
+  "games": 768,
+  "actual_moves": 16827,
+  "TRAIN_games": 640,
+  "missing_TRAIN": 0,
+  "DEV_games": 128,
+  "planned_DEV": 128,
+  "missing_DEV": 0,
+  "selector_checks": {
+    "independently_recomputed": true,
+    "selections": [
+      {
+        "initial": 0.5,
+        "adjacent_selected": 2.0,
+        "adjacent_trace": [
+          0.5,
+          1.0,
+          1.5,
+          2.0
+        ],
+        "global_selected": 2.0
+      },
+      {
+        "initial": 2.0,
+        "adjacent_selected": 2.0,
+        "adjacent_trace": [
+          2.0
+        ],
+        "global_selected": 2.0
+      }
+    ]
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 9318,
+    "FIXED_LOW_INVENTORY_RANK_GUIDANCE": 7509
+  },
+  "normal_depths": [
+    {
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 9318
+    },
+    {
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 7509
+    }
+  ],
+  "profiles": {
+    "0.5": {
+      "TRAIN": {
+        "D": 111,
+        "L": 14,
+        "W": 3
+      },
+      "DEV": {}
+    },
+    "1.0": {
+      "TRAIN": {
+        "D": 111,
+        "L": 9,
+        "W": 8
+      },
+      "DEV": {
+        "W": 7,
+        "D": 53,
+        "L": 4
+      }
+    },
+    "1.5": {
+      "TRAIN": {
+        "D": 109,
+        "W": 12,
+        "L": 7
+      },
+      "DEV": {}
+    },
+    "2.0": {
+      "TRAIN": {
+        "D": 111,
+        "W": 14,
+        "L": 3
+      },
+      "DEV": {
+        "D": 59,
+        "W": 5
+      }
+    },
+    "4.0": {
+      "TRAIN": {
+        "D": 112,
+        "W": 13,
+        "L": 3
+      },
+      "DEV": {}
+    }
+  },
+  "DEV_paired_vs_unity": {
+    "1.0": {
+      "original_family_blocks": 16,
+      "unknown_or_missing_pairs": 0,
+      "mean_lower": 0.0,
+      "mean_upper": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    "2.0": {
+      "original_family_blocks": 16,
+      "unknown_or_missing_pairs": 0,
+      "mean_lower": 0.03125,
+      "mean_upper": 0.03125,
+      "descriptive_bootstrap95": [
+        -0.078125,
+        0.140625
+      ]
+    }
+  },
+  "seconds": 4.244470600009663,
+  "scope": "IndependentactualSessionreplay/sequence/full-or-partialslotcoverage/selectorreimplementation. Partial/missing/UNKNOWNstayfullbounds; no selectivecompleted-familyfilter orfakeDRAW. DEVafter640TR/prefixhash;newinventory/ruleexposureexplicit, notuniversalprice. No producers/refit/newrewardgames."
+}

@@ -1,0 +1,1740 @@
+{
+  "status": "COMPLETE",
+  "queries": 96,
+  "expected": 96,
+  "missing": 0,
+  "fully_completed_1p25_vs4_pairs": 32,
+  "different_choice_witnesses": 1,
+  "pairs": [
+    {
+      "family": 0,
+      "different_choice": false,
+      "low": {
+        "family": 0,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              2
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 260,
+        "exit_cause": "depth_budget",
+        "seconds": 0.4200447999755852
+      },
+      "high": {
+        "family": 0,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              2
+            ],
+            "to": [
+              2,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 260,
+        "exit_cause": "depth_budget",
+        "seconds": 0.40496290000737645
+      }
+    },
+    {
+      "family": 1,
+      "different_choice": false,
+      "low": {
+        "family": 1,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              2
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 139,
+        "exit_cause": "depth_budget",
+        "seconds": 0.22533339998335578
+      },
+      "high": {
+        "family": 1,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              2
+            ],
+            "to": [
+              0,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 139,
+        "exit_cause": "depth_budget",
+        "seconds": 0.22144850000040606
+      }
+    },
+    {
+      "family": 2,
+      "different_choice": false,
+      "low": {
+        "family": 2,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 145,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2342116999789141
+      },
+      "high": {
+        "family": 2,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 140,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2397282999882009
+      }
+    },
+    {
+      "family": 3,
+      "different_choice": false,
+      "low": {
+        "family": 3,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              0
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 112,
+        "exit_cause": "depth_budget",
+        "seconds": 0.16697300001396798
+      },
+      "high": {
+        "family": 3,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              0
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 112,
+        "exit_cause": "depth_budget",
+        "seconds": 0.1822845000133384
+      }
+    },
+    {
+      "family": 4,
+      "different_choice": false,
+      "low": {
+        "family": 4,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 125,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2027933000063058
+      },
+      "high": {
+        "family": 4,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 125,
+        "exit_cause": "depth_budget",
+        "seconds": 0.19409850001102313
+      }
+    },
+    {
+      "family": 5,
+      "different_choice": false,
+      "low": {
+        "family": 5,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-0.75",
+        "completed_depth": 3,
+        "nodes": 47,
+        "exit_cause": "depth_budget",
+        "seconds": 0.0765759999922011
+      },
+      "high": {
+        "family": 5,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "0.0",
+        "completed_depth": 3,
+        "nodes": 43,
+        "exit_cause": "depth_budget",
+        "seconds": 0.06745750000118278
+      }
+    },
+    {
+      "family": 6,
+      "different_choice": false,
+      "low": {
+        "family": 6,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-0.75",
+        "completed_depth": 3,
+        "nodes": 136,
+        "exit_cause": "depth_budget",
+        "seconds": 0.22337369999149814
+      },
+      "high": {
+        "family": 6,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "2.0",
+        "completed_depth": 3,
+        "nodes": 136,
+        "exit_cause": "depth_budget",
+        "seconds": 0.22224930001539178
+      }
+    },
+    {
+      "family": 7,
+      "different_choice": false,
+      "low": {
+        "family": 7,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 178,
+        "exit_cause": "depth_budget",
+        "seconds": 0.29465900000650436
+      },
+      "high": {
+        "family": 7,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 178,
+        "exit_cause": "depth_budget",
+        "seconds": 0.29049379998468794
+      }
+    },
+    {
+      "family": 8,
+      "different_choice": false,
+      "low": {
+        "family": 8,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              1
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 71,
+        "exit_cause": "depth_budget",
+        "seconds": 0.11724110000068322
+      },
+      "high": {
+        "family": 8,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              1
+            ],
+            "to": [
+              3,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 71,
+        "exit_cause": "depth_budget",
+        "seconds": 0.1137406999769155
+      }
+    },
+    {
+      "family": 9,
+      "different_choice": false,
+      "low": {
+        "family": 9,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 97,
+        "exit_cause": "depth_budget",
+        "seconds": 0.15586790000088513
+      },
+      "high": {
+        "family": 9,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 97,
+        "exit_cause": "depth_budget",
+        "seconds": 0.15716390000307
+      }
+    },
+    {
+      "family": 10,
+      "different_choice": false,
+      "low": {
+        "family": 10,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 131,
+        "exit_cause": "depth_budget",
+        "seconds": 0.21149790001800284
+      },
+      "high": {
+        "family": 10,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              3
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 131,
+        "exit_cause": "depth_budget",
+        "seconds": 0.21824889999697916
+      }
+    },
+    {
+      "family": 11,
+      "different_choice": false,
+      "low": {
+        "family": 11,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 84,
+        "exit_cause": "depth_budget",
+        "seconds": 0.13537569998879917
+      },
+      "high": {
+        "family": 11,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 84,
+        "exit_cause": "depth_budget",
+        "seconds": 0.1260288000048604
+      }
+    },
+    {
+      "family": 12,
+      "different_choice": false,
+      "low": {
+        "family": 12,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 198,
+        "exit_cause": "depth_budget",
+        "seconds": 0.30891999998129904
+      },
+      "high": {
+        "family": 12,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 198,
+        "exit_cause": "depth_budget",
+        "seconds": 0.31696300001931377
+      }
+    },
+    {
+      "family": 13,
+      "different_choice": false,
+      "low": {
+        "family": 13,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 366,
+        "exit_cause": "depth_budget",
+        "seconds": 0.5729588999820407
+      },
+      "high": {
+        "family": 13,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 366,
+        "exit_cause": "depth_budget",
+        "seconds": 0.6185924999881536
+      }
+    },
+    {
+      "family": 14,
+      "different_choice": false,
+      "low": {
+        "family": 14,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              0
+            ],
+            "to": [
+              0,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 252,
+        "exit_cause": "depth_budget",
+        "seconds": 0.5157368000072893
+      },
+      "high": {
+        "family": 14,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              0
+            ],
+            "to": [
+              0,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 252,
+        "exit_cause": "depth_budget",
+        "seconds": 0.4163942000013776
+      }
+    },
+    {
+      "family": 15,
+      "different_choice": false,
+      "low": {
+        "family": 15,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 43,
+        "exit_cause": "depth_budget",
+        "seconds": 0.06566619998193346
+      },
+      "high": {
+        "family": 15,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 43,
+        "exit_cause": "depth_budget",
+        "seconds": 0.07619500000146218
+      }
+    },
+    {
+      "family": 16,
+      "different_choice": false,
+      "low": {
+        "family": 16,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 85,
+        "exit_cause": "depth_budget",
+        "seconds": 0.14687759999651462
+      },
+      "high": {
+        "family": 16,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              1,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 85,
+        "exit_cause": "depth_budget",
+        "seconds": 0.14824110001791269
+      }
+    },
+    {
+      "family": 17,
+      "different_choice": false,
+      "low": {
+        "family": 17,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "0.0",
+        "completed_depth": 3,
+        "nodes": 162,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2748993000132032
+      },
+      "high": {
+        "family": 17,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "0.0",
+        "completed_depth": 3,
+        "nodes": 162,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2748810999910347
+      }
+    },
+    {
+      "family": 18,
+      "different_choice": false,
+      "low": {
+        "family": 18,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 207,
+        "exit_cause": "depth_budget",
+        "seconds": 0.3309867999923881
+      },
+      "high": {
+        "family": 18,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 207,
+        "exit_cause": "depth_budget",
+        "seconds": 0.3349694999924395
+      }
+    },
+    {
+      "family": 19,
+      "different_choice": false,
+      "low": {
+        "family": 19,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 136,
+        "exit_cause": "depth_budget",
+        "seconds": 0.21838139998726547
+      },
+      "high": {
+        "family": 19,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 136,
+        "exit_cause": "depth_budget",
+        "seconds": 0.23643570000422187
+      }
+    },
+    {
+      "family": 20,
+      "different_choice": false,
+      "low": {
+        "family": 20,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 137,
+        "exit_cause": "depth_budget",
+        "seconds": 0.22323420000611804
+      },
+      "high": {
+        "family": 20,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              2
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 137,
+        "exit_cause": "depth_budget",
+        "seconds": 0.21225770001183264
+      }
+    },
+    {
+      "family": 21,
+      "different_choice": false,
+      "low": {
+        "family": 21,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              0
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 88,
+        "exit_cause": "depth_budget",
+        "seconds": 0.14394429998355918
+      },
+      "high": {
+        "family": 21,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              0
+            ],
+            "to": [
+              3,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 88,
+        "exit_cause": "depth_budget",
+        "seconds": 0.15097690001130104
+      }
+    },
+    {
+      "family": 22,
+      "different_choice": false,
+      "low": {
+        "family": 22,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 195,
+        "exit_cause": "depth_budget",
+        "seconds": 0.3142195999971591
+      },
+      "high": {
+        "family": 22,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 195,
+        "exit_cause": "depth_budget",
+        "seconds": 0.3189886000182014
+      }
+    },
+    {
+      "family": 23,
+      "different_choice": false,
+      "low": {
+        "family": 23,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 230,
+        "exit_cause": "depth_budget",
+        "seconds": 0.38551490000099875
+      },
+      "high": {
+        "family": 23,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 230,
+        "exit_cause": "depth_budget",
+        "seconds": 0.3867677999951411
+      }
+    },
+    {
+      "family": 24,
+      "different_choice": false,
+      "low": {
+        "family": 24,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              3
+            ],
+            "to": [
+              0,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 107,
+        "exit_cause": "depth_budget",
+        "seconds": 0.1728632000158541
+      },
+      "high": {
+        "family": 24,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              3
+            ],
+            "to": [
+              0,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 107,
+        "exit_cause": "depth_budget",
+        "seconds": 0.17068470001686364
+      }
+    },
+    {
+      "family": 25,
+      "different_choice": false,
+      "low": {
+        "family": 25,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 178,
+        "exit_cause": "depth_budget",
+        "seconds": 0.28224470000714064
+      },
+      "high": {
+        "family": 25,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              3,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 178,
+        "exit_cause": "depth_budget",
+        "seconds": 0.29910990002099425
+      }
+    },
+    {
+      "family": 26,
+      "different_choice": false,
+      "low": {
+        "family": 26,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-0.75",
+        "completed_depth": 3,
+        "nodes": 120,
+        "exit_cause": "depth_budget",
+        "seconds": 0.19271810000645928
+      },
+      "high": {
+        "family": 26,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "2.0",
+        "completed_depth": 3,
+        "nodes": 120,
+        "exit_cause": "depth_budget",
+        "seconds": 0.20576929999515414
+      }
+    },
+    {
+      "family": 27,
+      "different_choice": false,
+      "low": {
+        "family": 27,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-0.75",
+        "completed_depth": 3,
+        "nodes": 35,
+        "exit_cause": "depth_budget",
+        "seconds": 0.06274269998539239
+      },
+      "high": {
+        "family": 27,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              1,
+              3
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "2.0",
+        "completed_depth": 3,
+        "nodes": 35,
+        "exit_cause": "depth_budget",
+        "seconds": 0.06205400000908412
+      }
+    },
+    {
+      "family": 28,
+      "different_choice": false,
+      "low": {
+        "family": 28,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 124,
+        "exit_cause": "depth_budget",
+        "seconds": 0.20164759998442605
+      },
+      "high": {
+        "family": 28,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              3,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 118,
+        "exit_cause": "depth_budget",
+        "seconds": 0.18395959999179468
+      }
+    },
+    {
+      "family": 29,
+      "different_choice": false,
+      "low": {
+        "family": 29,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              0,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 108,
+        "exit_cause": "depth_budget",
+        "seconds": 0.17066910001449287
+      },
+      "high": {
+        "family": 29,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              0
+            ],
+            "to": [
+              0,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 108,
+        "exit_cause": "depth_budget",
+        "seconds": 0.16933309999876656
+      }
+    },
+    {
+      "family": 30,
+      "different_choice": false,
+      "low": {
+        "family": 30,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 174,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2841103999817278
+      },
+      "high": {
+        "family": 30,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              3
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.0",
+        "completed_depth": 3,
+        "nodes": 174,
+        "exit_cause": "depth_budget",
+        "seconds": 0.2735646000073757
+      }
+    },
+    {
+      "family": 31,
+      "different_choice": true,
+      "low": {
+        "family": 31,
+        "ratio": 1.25,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              0,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-1.25",
+        "completed_depth": 3,
+        "nodes": 69,
+        "exit_cause": "depth_budget",
+        "seconds": 0.1128929000115022
+      },
+      "high": {
+        "family": 31,
+        "ratio": 4.0,
+        "choice": {
+          "kind": "ACTION",
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "declaration_id": null
+        },
+        "score": "-2.0",
+        "completed_depth": 3,
+        "nodes": 79,
+        "exit_cause": "depth_budget",
+        "seconds": 0.13156120001804084
+      }
+    }
+  ],
+  "seconds": 22.413974700000836,
+  "scope": "Onlyactualnormalfinite-depthdecisions, notactualW-L/usefulness/priceoptimality. Missing/full-depthfailures retained; neverpickwitnessasvalidation. No source/default/PRIMARYchanges."
+}

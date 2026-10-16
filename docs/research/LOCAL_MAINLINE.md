@@ -1,4 +1,46 @@
-# DEV_AUX current mainline —76,2026-10-16
+# DEV_AUX current mainline -77,2026-10-16
+
+ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. Latest user governs.
+New quiet TRAIN640 selects2, but NEWDEV192 gives2vs1net0CI[-.09375,.09375].
+This negative generalization supersedes any reading of76asstablepricelearning.
+Oldpositiveevidence remains: D4all8orientations1024games16familyblocks gain
+.068359375CI[.03515625,.10546875];twostablepriorityseeds .0625/.046875CI0.
+RNcaptureclosureexactleafordercannotdistinguishanyx>1underpurecomparison,
+fixedorder/exactarithmetic/identicalwork.2isordinalrepresentative,notuniqueprice.
+Numericmargins/clockcuts/newinventoriesexcluded. Full601nodepublictreeconsumerPASS.
+
+MinimalR-vs2Nclosedteacher586328states3167984edges/maxrank31 qualified byall
+coverage/Bellman/corruption+62actualhistories1006moves. NewactualD3learning
+768games1769.950s/original1800cap COMPLETE;640TRAINbefore128DEV; .5->1->1.5->2,
+newDEV2vs1net+.03125CI[-.078125,.140625]. Notstablegeneralization. TRAIN-only
+postfreeze exactreference: RNquiet17LOSS15DRAW; newNN32DRAW. NoDEVlabelsread,
+no reference-labelreward/rootselection. Do NOTexpandunchangedquietdrawquantity.
+Next question: can a PRICE-INDEPENDENT true-rule choice-gradient distribution
+expose meaningful decision conflicts? Define with TRAIN/referenceonly and
+legalGameRecordprefixes; reservefreshfamilies BEFOREthetaqueries. Nohumanfit.
+
+Conversion:19actualhistoryWINentrygraphs/19savedcursorconversions(9vs10) pass;
+tableassistedconstructionexplicit, notonlinegenericdiscovery. GenericNOtable
+16gamepilot4verifiedgraphs+4continuationmoves,pricecontrast0. Fixedfoes/roles/
+resourceswithineachrow; crossprotocolcausalclaimsunsupported. Generalprooffixed
+contractstaysoptin, UNKNOWNfallsbacktonormal; no bank/default/UI/PRIMARYadoption.
+Nextbackup: ALL19knownWINentries matchedgenericdiscovery/paidverificationcost,
+or ALL55opponent-favorableentries toseparatelossavoidancefromWINentryfrequency;
+no newrewardgames/quantityproxy orassumedsuccess. Followmemoexecutablefreeze.
+
+First17archive replayfailedONsourcepin bytes of2217audit, ASTsame; immutable
+17+small18thsupplementpreservefailureandexactsource. Finalfresh18PASS2856payloads2553paths23tests/0failures; no producersrerun.
+Allpreflight/prose/consumererrors preservedandcorrected, alloldcaps untouched.
+Report:results/dev_aux/SEGMENT_20261016_77.md; source replay manifest/receipt77.
+Dot1792158065reviewedinlineaffineargument/76Slackonly,no77sourceexecution;
+purecomparisonqualificationanddirect256prioritycontroladopted. D4alreadyran
+originalcapandretains spatialscope. CHATleaper1792156154futureonly,no newwork.
+PRIMARY08d59b2mainline/statonlyread; capacity/PVfeaturework owner-reported.
+OwnAGENTS unchanged; no crosswrites/Agents/Goals orvisibilitychange.
+
+## Prior complete selection - historical evidence, not a live task list
+
+# DEV_AUX current mainline â€”76,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission, PRIMARYreadonly. Latest user governs.
 Slackdefect-first ownerrepair11dddd CLOSED; complete newroots/fullthreads no
@@ -23,9 +65,9 @@ No unchangedgame-count expansion toidentify policy-equivalentprices.
 Alloldcaps/failed/partial/missing/UNKNOWN retained. Reports:
 results/dev_aux/SEGMENT_20261016_76.md and REPLAY_20261016_76.md.
 
-## Prior complete selection — preserved history
+## Prior complete selection â€” preserved history
 
-# DEV_AUX current mainline — closed75,2026-10-16
+# DEV_AUX current mainline â€” closed75,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. AGENTS/latestuser govern.
 Latest Slack-defect-first selection was checked FIRST: own60cursor/reporting

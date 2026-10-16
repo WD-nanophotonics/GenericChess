@@ -2010,3 +2010,35 @@ identicaluniquetest+smallC correction; A/Bunchanged; final16receipt required.
 ScienceOPEN; finaltiming/remoteSHA in closingreceipt.
 
 76closing: sessionended83.851minutes/6stages/safe_checkpoint. Science32d9afb569b148464da0354aa8b463aae93e241d fullremoteSHA/11anonymous exactfiles(includingall3wholeZIPs)/PUBLIC/cleanverified. FinalmetadataSHA verifiedseparately; Dotdeliverydoesnotimplyreading/adoption. AGENTSremainedunchanged afterbroadcleanupauto-reviewrejection; safeauthorizedresearchreportscompleted.
+
+
+## DEV_AUX77 -2026-10-16
+
+DEV_AUX: exactRNleaf-orderpartition identifiesx>1ordinalcell,notprecise2;
+128actualD1-D4checks/601completepublictreeedges. Newquiettraining640TR/192DEV
+failsgeneralization(net0); D4spacecontrol1024/16families remainspositive;
+twodirectpriorityseeds weaklypositiveCI0. MinimalR-vs2N fullclosure586328states/
+3167984edges/maxrank31, allcoverage/Bellman+62actualhistoriesqualified. NewD3
+640TR/128DEV selects2; gain.03125CI[-.078125,.140625], TRAINmu32theoreticalDRAW.
+Keepnegative/weakresults, actualW-Lonly; no humanfit/unchangedquantityexpansion.
+19savedactualWINentryproofs+cursorconversions qualified; no-tablegeneric16game
+pilot4verifiedgraphs+4continuations, pricecontrast0. Fixedopponentpercontrast;
+no automaticproduct/default/UI orPRIMARYadoption.
+
+PRIMARY08d59b209aa9e943cf3dc03e39be3e3d88c90767: mainline+commitstatreadONLY;
+reportedCore/Nativehorizon/storage/PVfeaturequalification, no AUX independent
+execution/code-reviewclaim. No crosswrites or newAgent/worker; ordinaryshared
+computationisnormalandtimingconditional. No quiet-windowrequest/rerun.
+Dot77root1792157919.388939/reply1792158065.440029: completeinlinequestion+76Slack
+summary/mathargumentread, no77implementation/execution. Adoptpurecomparison
+caveat/tie-refinementmayhelp; directstableprioritycontrol256games replaces
+assumingD4causalforordering. D4wasalreadyrunning, keptoriginalcap/spatialscope.
+MeasuredD41072sversuspriority275s; engineering/archivecostadditional. Adviceis
+reference, notapproval. CHATleaper1792156154retainedfuture-only,no newpriority.
+
+Delivery77: allproducersclosed,3408actualgames/77898moves, oldcaps/failures/
+UNKNOWNpreserved. First17freshreplayfailedsourcepin; exactAST-equivalent
+2217sourceoverlayand18thsmallZIPretainfailure. Finalfreshreplay/publicremote
+verificationrecorded inQUALITY/DELIVERY77; no currentclaimDotread/executedfinal.
+Unresolved: price-independentinformativeMU, onlinegeneralproofdiscoverycost,
+lossavoidanceversusconversionmechanism, fullgenerateddomain/magnitudevalidity.

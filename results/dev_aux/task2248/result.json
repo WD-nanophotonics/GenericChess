@@ -1,0 +1,97 @@
+{
+  "status": "COMPLETE",
+  "complete_inventory_and_all_edges": true,
+  "counts": {
+    "": {
+      "syntactic": 480,
+      "nonmoving_anchor_unsafe": 168,
+      "admissible": 312,
+      "ongoing": 312
+    },
+    "R": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 3224,
+      "admissible": 3496,
+      "ongoing": 3420,
+      "stalemate": 36,
+      "checkmate": 40
+    },
+    "r": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 3224,
+      "admissible": 3496,
+      "ongoing": 3420,
+      "stalemate": 36,
+      "checkmate": 40
+    },
+    "N": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "n": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "NN": {
+      "syntactic": 43680,
+      "nonmoving_anchor_unsafe": 20136,
+      "admissible": 23544,
+      "ongoing": 22888,
+      "stalemate": 600,
+      "checkmate": 56
+    },
+    "nn": {
+      "syntactic": 43680,
+      "nonmoving_anchor_unsafe": 20136,
+      "admissible": 23544,
+      "ongoing": 22888,
+      "stalemate": 600,
+      "checkmate": 56
+    },
+    "Rn": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 46544,
+      "admissible": 40816,
+      "ongoing": 40600,
+      "checkmate": 200,
+      "stalemate": 16
+    },
+    "rN": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 46544,
+      "admissible": 40816,
+      "ongoing": 40600,
+      "checkmate": 200,
+      "stalemate": 16
+    },
+    "Rnn": {
+      "syntactic": 524160,
+      "nonmoving_anchor_unsafe": 302976,
+      "admissible": 221184,
+      "ongoing": 220232,
+      "checkmate": 952
+    },
+    "rNN": {
+      "syntactic": 524160,
+      "nonmoving_anchor_unsafe": 302976,
+      "admissible": 221184,
+      "ongoing": 220232,
+      "checkmate": 952
+    }
+  },
+  "processed": 586328,
+  "actual_legal_edges": 3167984,
+  "records_sha": "d756bf47f380030848668abf96e8a221757003290da0c167dd4885e6ae192ffe",
+  "seconds": 259.22648009998375,
+  "rules_sha": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad",
+  "ruleset_fingerprint": "09d8c91fce789bdf5d2d30c763053e939d14e803ff0130f98f13c418cf9e0f96",
+  "scope": "Complete4x4Kk+Rvs2N pluscolor-swap andALLcaptureclosedsubinventories; identicalNpermutationsdeduplicatedbyorderedpositions, bothmovers/allplacements. Scopefiveactorsonly,no promotion/drops/aux/declarations. CanonicalfreshlabelsNOTactualhistorylabels/rewards. Newinventorynotnewruletype/default.",
+  "new_native_go": 0,
+  "new_reward_games": 0
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS_COMPLETE_COVERAGE_BELLMAN_RANK_CANONICAL_HISTORY",
+  "syntactic": 1337760,
+  "states": 586328,
+  "checked_edges": 3167984,
+  "all_winning_strategies_strict_rank_decrease": true,
+  "max_rank": 31,
+  "full_history_execution_roots": 62,
+  "full_history_execution_moves": 1006,
+  "actual_outcomes": {
+    "checkmate": 60,
+    "repetition": 2
+  },
+  "deliberate_label_corruption_rejected": true,
+  "seconds": 27.08972819999326,
+  "scope": "ExactWDL forfreshcanonicalroots only: WIN/LOSS all-defense rank<=96 prevents repetition beforemate; DRAW hasclosed nonlosing choices forbothsides untilactualrepetition/maxply. ALLCoregraph edges/captureclosure checked. ActualGameSession samples corroborate semantics; not allpossiblehistories certificate/not universalGenericteacher. New4x4R-vs2Ncaptureclosureteacher; independentcoverageenumeratesALLduplicatedNassignmentsanddeduplicatesrawkeys, notproducerordered-squarefilter, no2092policychange/noNN/newNativecalls."
+}

@@ -1,0 +1,1861 @@
+{
+  "status": "PASS_16QUIET_ROOTS_DISJOINT_PUBLIC_TERMINALS_AND64_PAIRED_PREFIXES",
+  "structural_checks": [
+    {
+      "family": 0,
+      "legal_actions": 4,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 1,
+      "legal_actions": 6,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 2,
+      "legal_actions": 5,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 3,
+      "legal_actions": 9,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 4,
+      "legal_actions": 7,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 5,
+      "legal_actions": 10,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 6,
+      "legal_actions": 7,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 7,
+      "legal_actions": 4,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 8,
+      "legal_actions": 5,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 9,
+      "legal_actions": 7,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 10,
+      "legal_actions": 7,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 11,
+      "legal_actions": 4,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 12,
+      "legal_actions": 4,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 13,
+      "legal_actions": 6,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 14,
+      "legal_actions": 5,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    },
+    {
+      "family": 15,
+      "legal_actions": 9,
+      "no_capture": true,
+      "no_oneply_terminal": true,
+      "disjoint_orbit": true
+    }
+  ],
+  "pairs": 64,
+  "divergent_pairs": 10,
+  "reward_changing_pairs": 5,
+  "first_divergences_at_quiet": 6,
+  "first_divergences_on_candidate": 10,
+  "rows": [
+    {
+      "family": 0,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 22,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 0,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 0,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 22,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 0,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 1,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 1,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 1,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 1,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 16,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 6,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 25,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 1,
+      "common_prefix": 1,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [
+        "a3a4"
+      ],
+      "actors_at_divergence": 5,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "stalemate",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 25,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 1,
+      "common_prefix": 1,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [
+        "a3a4"
+      ],
+      "actors_at_divergence": 5,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "stalemate",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 20,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 8,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 20,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 8,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 13,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 10,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 13,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 10,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 5,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 14,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 5,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 10,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 5,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 14,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 5,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 10,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 6,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": false,
+      "first_divergence_ply": 2,
+      "common_prefix": 2,
+      "side_at_divergence": 0,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [
+        "a3c3"
+      ],
+      "actors_at_divergence": 5,
+      "reward_gain": 1,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 6,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 5,
+      "common_prefix": 5,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 6,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": false,
+      "first_divergence_ply": 2,
+      "common_prefix": 2,
+      "side_at_divergence": 0,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [
+        "a3c3"
+      ],
+      "actors_at_divergence": 5,
+      "reward_gain": 1,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 6,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 5,
+      "common_prefix": 5,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 2,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 28,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 6,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 28,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 6,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 9,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 11,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 9,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 6,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 9,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 11,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 9,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 6,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 25,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 11,
+      "common_prefix": 11,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 13,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 13,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 25,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 11,
+      "common_prefix": 11,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 13,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 13,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 11,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 23,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 11,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 12,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 4,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 4,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 11,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 23,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 7,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 11,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 12,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 4,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 4,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 12,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 12,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 12,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 12,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 12,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        }
+      ]
+    },
+    {
+      "family": 12,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 2,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 13,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 15,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 13,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 33,
+      "common_prefix": 33,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 1,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 35,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 13,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 15,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 3,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 13,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": false,
+      "first_divergence_ply": 33,
+      "common_prefix": 33,
+      "side_at_divergence": 1,
+      "is_candidate_divergence": true,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": 5,
+      "reward_gain": 1,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 35,
+          "final_status": "checkmate",
+          "actual_reward": -1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": null,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 14,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 26,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 14,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 8,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 14,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 26,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 14,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 8,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 2,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 15,
+      "opponent_ratio": 0.5,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 13,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 15,
+      "opponent_ratio": 0.5,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 18,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 14,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 14,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    },
+    {
+      "family": 15,
+      "opponent_ratio": 2.0,
+      "candidate_color": 0,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 13,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 5,
+          "final_status": "repetition",
+          "actual_reward": 0
+        }
+      ]
+    },
+    {
+      "family": 15,
+      "opponent_ratio": 2.0,
+      "candidate_color": 1,
+      "same_complete_record": true,
+      "first_divergence_ply": null,
+      "common_prefix": 18,
+      "side_at_divergence": null,
+      "is_candidate_divergence": null,
+      "capture_options_at_divergence": [],
+      "actors_at_divergence": null,
+      "reward_gain": 0,
+      "guide_entries": [
+        {
+          "ratio": 1.0,
+          "first_guide_ply": 14,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        },
+        {
+          "ratio": 2.0,
+          "first_guide_ply": 14,
+          "final_status": "checkmate",
+          "actual_reward": 1
+        }
+      ]
+    }
+  ],
+  "scope": "NEWroots beginwithoutcapture. Laterprice-sensitivechoices maystill be capture tactics. Firstdivergence/rewardassociation notcausalmediationproof orstrategicvalueidentification. Guideentryalone notWINcertificate. No additionalgames/labels/refit."
+}

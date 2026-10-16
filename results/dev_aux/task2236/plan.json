@@ -1,0 +1,41 @@
+{
+  "question": "Can actualW-L learn a useful ORDINALpricecell fromNEWquiet-onlyTRAIN andgeneralizetoNEWprice-unqueriedquietDEV withfixedconversion andD2bothsides?",
+  "grid": [
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    2.0
+  ],
+  "initial_prices": [
+    2.0,
+    0.5
+  ],
+  "opponents": [
+    0.5,
+    2.0
+  ],
+  "TRAIN_families": 32,
+  "DEV_families": 16,
+  "H": 96,
+  "normal_depth": 2,
+  "normal_nodes": 512,
+  "normal_seconds": 0.5,
+  "step_seconds": 0.75,
+  "one_cap_seconds": 1800,
+  "estimated_seconds": 1000,
+  "expected_TRAIN_games": 640,
+  "maximum_DEV_games": 320,
+  "inputs_sha": "49664966fcc7ba4b5147d409278602b56b7d349049a0eaeae32c6bbdf1befa10",
+  "guide": "FrozenauditedRNcanonicalrankACTIONpolicyonlywhenactorcount<=4,BOTHplayersidenticalguide; allcurrentlegalactions/fullrecordreplaypaid. Not finiteall-defenseWINcertification, genericMateSolverorhistoryWDLoracle; neverrewardbytable. Actualrulemaxply96/repetition3definesfinitegame. Higher5actorchoicesmaterialsearchonly.",
+  "reward": "ActualpublicSessionW/L+1/-1,trueactualno-winnerterminal0; unfinished/cap/nochoiceU withrewardNone. Unknownintervals[-U,+U], no quantityfill. NonnormalizedcanonicalWINlabelsneverusedasrewardorrootselection.",
+  "selectors": "PREDECLAREDadjacentstrictbaselineandglobalgridalternative onEXACTordinalcellrepresentatives.25/.5/.75/1/2; .5and1aretieboundaries. No within-cellmagnitudeidentification, twofrozenrandominitials. CandidateupdateonlyifnewTRlowerbound>oldTRupperbound, noDEVselection. Tieskeepinitialwhereoptimal; otherwiselowestgridindex. DEVunitycontrolplusuniqueTRAINselectedprofilesonly; noDEVuntilall640TRAINslotsrecorded. Intervals/contextdependence, notuniversalpointprice.",
+  "scope": "Scopedrule-derivedfixedendgameguidanceassay, notadoptionofgraphprototype/PRIMARY/defaults. Fixedfoes/roles/resources, geometry/rule/humanpriceholdoutunread. Teacherprepayment450.888census+actualretrograde/audit/loadcostretained. Storeallpartialgames/missingplannedslots/failures. No capreset orhumanreferencefit. New48roots disjointfromall64previousorbitfamilies; sameexposedrule. Finiteordinalcelllearning, notmetricratiolearning.",
+  "pins": {
+    "results/dev_aux/task2236/study.py": "5eaeb5b572936dfdccaf588e5a86769bfb547a15f027ce5fa35a56d069cfa1fa",
+    "results/dev_aux/task2210/player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results/dev_aux/task2148/normal.py": "fa829615034f7f174b3530244d0b5f29d018c8b48fb6ece7a41e6056f8d0a00e",
+    "results/dev_aux/task2217/audit.py": "d1018f6b10dd22be65141285536467fe275dfa8cf439e6c9a8c1c33742ec4ffa",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3"
+  }
+}

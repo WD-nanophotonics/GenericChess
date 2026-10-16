@@ -1,0 +1,3666 @@
+{
+  "status": "PASS_EXACT_LEAF_ORDER_PARTITION_AND128_IMPLEMENTATION_CHECKS",
+  "panels": [
+    {
+      "target_N_sign": "-1",
+      "all_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "intervals": [
+        {
+          "lower": "0",
+          "upper": "1/2",
+          "probe": "1/4",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "lower": "1/2",
+          "upper": "1",
+          "probe": "3/4",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "lower": "1",
+          "upper": null,
+          "probe": "2",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "target_N_sign": "1",
+      "all_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "intervals": [
+        {
+          "lower": "0",
+          "upper": "1/2",
+          "probe": "1/4",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "lower": "1/2",
+          "upper": "1",
+          "probe": "3/4",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "lower": "1",
+          "upper": null,
+          "probe": "2",
+          "pair_signs": [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "family": 1,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.013198899978306144
+    },
+    {
+      "family": 1,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.010045599978184327
+    },
+    {
+      "family": 1,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.009812999982386827
+    },
+    {
+      "family": 1,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.010584100004052743
+    },
+    {
+      "family": 1,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 36,
+      "transitions": 34,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.04721569997491315
+    },
+    {
+      "family": 1,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 36,
+      "transitions": 34,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.04775490000611171
+    },
+    {
+      "family": 1,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 36,
+      "transitions": 34,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.050912999984575436
+    },
+    {
+      "family": 1,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 36,
+      "transitions": 34,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.045960299990838394
+    },
+    {
+      "family": 1,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 107,
+      "transitions": 104,
+      "material_leaves": 73,
+      "completed_depth": 3,
+      "seconds": 0.14632990001700819
+    },
+    {
+      "family": 1,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 107,
+      "transitions": 104,
+      "material_leaves": 73,
+      "completed_depth": 3,
+      "seconds": 0.14375509999808855
+    },
+    {
+      "family": 1,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 107,
+      "transitions": 104,
+      "material_leaves": 73,
+      "completed_depth": 3,
+      "seconds": 0.14547880002646707
+    },
+    {
+      "family": 1,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 107,
+      "transitions": 104,
+      "material_leaves": 73,
+      "completed_depth": 3,
+      "seconds": 0.1418044000165537
+    },
+    {
+      "family": 1,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 290,
+      "material_leaves": 186,
+      "completed_depth": 4,
+      "seconds": 0.4141972000070382
+    },
+    {
+      "family": 1,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 290,
+      "material_leaves": 186,
+      "completed_depth": 4,
+      "seconds": 0.39896279998356476
+    },
+    {
+      "family": 1,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 290,
+      "material_leaves": 186,
+      "completed_depth": 4,
+      "seconds": 0.41742209999938495
+    },
+    {
+      "family": 1,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 290,
+      "material_leaves": 186,
+      "completed_depth": 4,
+      "seconds": 0.4072481000039261
+    },
+    {
+      "family": 3,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011386800004402176
+    },
+    {
+      "family": 3,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011083699995651841
+    },
+    {
+      "family": 3,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011075999995227903
+    },
+    {
+      "family": 3,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011667299986584112
+    },
+    {
+      "family": 3,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 52,
+      "transitions": 50,
+      "material_leaves": 42,
+      "completed_depth": 2,
+      "seconds": 0.07154989999253303
+    },
+    {
+      "family": 3,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 52,
+      "transitions": 50,
+      "material_leaves": 42,
+      "completed_depth": 2,
+      "seconds": 0.07437009998830035
+    },
+    {
+      "family": 3,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 52,
+      "transitions": 50,
+      "material_leaves": 42,
+      "completed_depth": 2,
+      "seconds": 0.07007980000344105
+    },
+    {
+      "family": 3,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 52,
+      "transitions": 50,
+      "material_leaves": 42,
+      "completed_depth": 2,
+      "seconds": 0.07162649999372661
+    },
+    {
+      "family": 3,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 209,
+      "transitions": 206,
+      "material_leaves": 154,
+      "completed_depth": 3,
+      "seconds": 0.2824022999848239
+    },
+    {
+      "family": 3,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 209,
+      "transitions": 206,
+      "material_leaves": 154,
+      "completed_depth": 3,
+      "seconds": 0.2767718000104651
+    },
+    {
+      "family": 3,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 209,
+      "transitions": 206,
+      "material_leaves": 154,
+      "completed_depth": 3,
+      "seconds": 0.27640689999680035
+    },
+    {
+      "family": 3,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 209,
+      "transitions": 206,
+      "material_leaves": 154,
+      "completed_depth": 3,
+      "seconds": 0.2690444999898318
+    },
+    {
+      "family": 3,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 568,
+      "transitions": 564,
+      "material_leaves": 389,
+      "completed_depth": 4,
+      "seconds": 0.7655532000062522
+    },
+    {
+      "family": 3,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 568,
+      "transitions": 564,
+      "material_leaves": 389,
+      "completed_depth": 4,
+      "seconds": 0.7695643000188284
+    },
+    {
+      "family": 3,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 568,
+      "transitions": 564,
+      "material_leaves": 389,
+      "completed_depth": 4,
+      "seconds": 0.7690042000031099
+    },
+    {
+      "family": 3,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 568,
+      "transitions": 564,
+      "material_leaves": 389,
+      "completed_depth": 4,
+      "seconds": 0.7672100000199862
+    },
+    {
+      "family": 4,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.008871500001987442
+    },
+    {
+      "family": 4,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.008623900008387864
+    },
+    {
+      "family": 4,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.0090007999970112
+    },
+    {
+      "family": 4,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.009090499981539324
+    },
+    {
+      "family": 4,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 38,
+      "transitions": 36,
+      "material_leaves": 30,
+      "completed_depth": 2,
+      "seconds": 0.048621199995977804
+    },
+    {
+      "family": 4,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 38,
+      "transitions": 36,
+      "material_leaves": 30,
+      "completed_depth": 2,
+      "seconds": 0.04795969999395311
+    },
+    {
+      "family": 4,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 38,
+      "transitions": 36,
+      "material_leaves": 30,
+      "completed_depth": 2,
+      "seconds": 0.049963600002229214
+    },
+    {
+      "family": 4,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 38,
+      "transitions": 36,
+      "material_leaves": 30,
+      "completed_depth": 2,
+      "seconds": 0.05675280001014471
+    },
+    {
+      "family": 4,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 156,
+      "transitions": 153,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.2148262000118848
+    },
+    {
+      "family": 4,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 156,
+      "transitions": 153,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.207178999989992
+    },
+    {
+      "family": 4,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 156,
+      "transitions": 153,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.20504880000953563
+    },
+    {
+      "family": 4,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 156,
+      "transitions": 153,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.21978590000071563
+    },
+    {
+      "family": 4,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 559,
+      "transitions": 555,
+      "material_leaves": 416,
+      "completed_depth": 4,
+      "seconds": 0.7493079999985639
+    },
+    {
+      "family": 4,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 559,
+      "transitions": 555,
+      "material_leaves": 416,
+      "completed_depth": 4,
+      "seconds": 0.7421801000018604
+    },
+    {
+      "family": 4,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 559,
+      "transitions": 555,
+      "material_leaves": 416,
+      "completed_depth": 4,
+      "seconds": 0.7461292000079993
+    },
+    {
+      "family": 4,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 559,
+      "transitions": 555,
+      "material_leaves": 416,
+      "completed_depth": 4,
+      "seconds": 0.7426253000157885
+    },
+    {
+      "family": 5,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.00895769998896867
+    },
+    {
+      "family": 5,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.00865860001067631
+    },
+    {
+      "family": 5,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.008694699994521216
+    },
+    {
+      "family": 5,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 7,
+      "transitions": 6,
+      "material_leaves": 6,
+      "completed_depth": 1,
+      "seconds": 0.00865110001177527
+    },
+    {
+      "family": 5,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.04758160002529621
+    },
+    {
+      "family": 5,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.045612000016262755
+    },
+    {
+      "family": 5,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.044441300007747486
+    },
+    {
+      "family": 5,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 27,
+      "completed_depth": 2,
+      "seconds": 0.04554019999341108
+    },
+    {
+      "family": 5,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 157,
+      "transitions": 154,
+      "material_leaves": 112,
+      "completed_depth": 3,
+      "seconds": 0.2041433000122197
+    },
+    {
+      "family": 5,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 157,
+      "transitions": 154,
+      "material_leaves": 112,
+      "completed_depth": 3,
+      "seconds": 0.20562429999699816
+    },
+    {
+      "family": 5,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 157,
+      "transitions": 154,
+      "material_leaves": 112,
+      "completed_depth": 3,
+      "seconds": 0.21320649998961017
+    },
+    {
+      "family": 5,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 157,
+      "transitions": 154,
+      "material_leaves": 112,
+      "completed_depth": 3,
+      "seconds": 0.21314609999535605
+    },
+    {
+      "family": 5,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 552,
+      "transitions": 548,
+      "material_leaves": 371,
+      "completed_depth": 4,
+      "seconds": 0.749023499985924
+    },
+    {
+      "family": 5,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 552,
+      "transitions": 548,
+      "material_leaves": 371,
+      "completed_depth": 4,
+      "seconds": 0.7427695999795105
+    },
+    {
+      "family": 5,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 552,
+      "transitions": 548,
+      "material_leaves": 371,
+      "completed_depth": 4,
+      "seconds": 0.8185458999942057
+    },
+    {
+      "family": 5,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 552,
+      "transitions": 548,
+      "material_leaves": 371,
+      "completed_depth": 4,
+      "seconds": 0.8047247000213247
+    },
+    {
+      "family": 6,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.010630200005834922
+    },
+    {
+      "family": 6,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.010123499989276752
+    },
+    {
+      "family": 6,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.010757199983345345
+    },
+    {
+      "family": 6,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 8,
+      "transitions": 7,
+      "material_leaves": 7,
+      "completed_depth": 1,
+      "seconds": 0.01069720002124086
+    },
+    {
+      "family": 6,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 25,
+      "completed_depth": 2,
+      "seconds": 0.04451659999904223
+    },
+    {
+      "family": 6,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 25,
+      "completed_depth": 2,
+      "seconds": 0.04400940000778064
+    },
+    {
+      "family": 6,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 25,
+      "completed_depth": 2,
+      "seconds": 0.047714499989524484
+    },
+    {
+      "family": 6,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 35,
+      "transitions": 33,
+      "material_leaves": 25,
+      "completed_depth": 2,
+      "seconds": 0.048210699984338135
+    },
+    {
+      "family": 6,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 154,
+      "transitions": 151,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.20071749997441657
+    },
+    {
+      "family": 6,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 154,
+      "transitions": 151,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.20197449999977835
+    },
+    {
+      "family": 6,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 154,
+      "transitions": 151,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.19961909999256022
+    },
+    {
+      "family": 6,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 154,
+      "transitions": 151,
+      "material_leaves": 117,
+      "completed_depth": 3,
+      "seconds": 0.20517599998856895
+    },
+    {
+      "family": 6,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 635,
+      "transitions": 631,
+      "material_leaves": 457,
+      "completed_depth": 4,
+      "seconds": 0.8751444999943487
+    },
+    {
+      "family": 6,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 635,
+      "transitions": 631,
+      "material_leaves": 457,
+      "completed_depth": 4,
+      "seconds": 0.8692516000010073
+    },
+    {
+      "family": 6,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 635,
+      "transitions": 631,
+      "material_leaves": 457,
+      "completed_depth": 4,
+      "seconds": 0.8463249999913387
+    },
+    {
+      "family": 6,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 635,
+      "transitions": 631,
+      "material_leaves": 457,
+      "completed_depth": 4,
+      "seconds": 0.8756247000128496
+    },
+    {
+      "family": 9,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011477299995021895
+    },
+    {
+      "family": 9,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011320500023430213
+    },
+    {
+      "family": 9,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011404099990613759
+    },
+    {
+      "family": 9,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 9,
+      "transitions": 8,
+      "material_leaves": 8,
+      "completed_depth": 1,
+      "seconds": 0.011314900009892881
+    },
+    {
+      "family": 9,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 56,
+      "transitions": 54,
+      "material_leaves": 46,
+      "completed_depth": 2,
+      "seconds": 0.07373599999118596
+    },
+    {
+      "family": 9,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 56,
+      "transitions": 54,
+      "material_leaves": 46,
+      "completed_depth": 2,
+      "seconds": 0.0714704999991227
+    },
+    {
+      "family": 9,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 56,
+      "transitions": 54,
+      "material_leaves": 46,
+      "completed_depth": 2,
+      "seconds": 0.07122719998005778
+    },
+    {
+      "family": 9,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 56,
+      "transitions": 54,
+      "material_leaves": 46,
+      "completed_depth": 2,
+      "seconds": 0.07075360001181252
+    },
+    {
+      "family": 9,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 291,
+      "material_leaves": 235,
+      "completed_depth": 3,
+      "seconds": 0.3938573999912478
+    },
+    {
+      "family": 9,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 291,
+      "material_leaves": 235,
+      "completed_depth": 3,
+      "seconds": 0.3736462999950163
+    },
+    {
+      "family": 9,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 291,
+      "material_leaves": 235,
+      "completed_depth": 3,
+      "seconds": 0.37893599999370053
+    },
+    {
+      "family": 9,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 294,
+      "transitions": 291,
+      "material_leaves": 235,
+      "completed_depth": 3,
+      "seconds": 0.38590470000053756
+    },
+    {
+      "family": 9,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 1026,
+      "transitions": 1022,
+      "material_leaves": 741,
+      "completed_depth": 4,
+      "seconds": 1.7369188999873586
+    },
+    {
+      "family": 9,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 1026,
+      "transitions": 1022,
+      "material_leaves": 741,
+      "completed_depth": 4,
+      "seconds": 2.1076293000078294
+    },
+    {
+      "family": 9,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 1026,
+      "transitions": 1022,
+      "material_leaves": 741,
+      "completed_depth": 4,
+      "seconds": 2.1324645999993663
+    },
+    {
+      "family": 9,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            3,
+            2
+          ],
+          "to": [
+            3,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 1026,
+      "transitions": 1022,
+      "material_leaves": 741,
+      "completed_depth": 4,
+      "seconds": 2.2989546000026166
+    },
+    {
+      "family": 10,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 4,
+      "transitions": 3,
+      "material_leaves": 3,
+      "completed_depth": 1,
+      "seconds": 0.008800099982181564
+    },
+    {
+      "family": 10,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 4,
+      "transitions": 3,
+      "material_leaves": 3,
+      "completed_depth": 1,
+      "seconds": 0.0065790000080596656
+    },
+    {
+      "family": 10,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 4,
+      "transitions": 3,
+      "material_leaves": 3,
+      "completed_depth": 1,
+      "seconds": 0.007284599996637553
+    },
+    {
+      "family": 10,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 4,
+      "transitions": 3,
+      "material_leaves": 3,
+      "completed_depth": 1,
+      "seconds": 0.00880660000257194
+    },
+    {
+      "family": 10,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 16,
+      "transitions": 14,
+      "material_leaves": 11,
+      "completed_depth": 2,
+      "seconds": 0.03510379997896962
+    },
+    {
+      "family": 10,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 16,
+      "transitions": 14,
+      "material_leaves": 11,
+      "completed_depth": 2,
+      "seconds": 0.039741999993566424
+    },
+    {
+      "family": 10,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 16,
+      "transitions": 14,
+      "material_leaves": 11,
+      "completed_depth": 2,
+      "seconds": 0.03905359999043867
+    },
+    {
+      "family": 10,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 16,
+      "transitions": 14,
+      "material_leaves": 11,
+      "completed_depth": 2,
+      "seconds": 0.031393000012030825
+    },
+    {
+      "family": 10,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 53,
+      "transitions": 50,
+      "material_leaves": 32,
+      "completed_depth": 3,
+      "seconds": 0.11067339999135584
+    },
+    {
+      "family": 10,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 53,
+      "transitions": 50,
+      "material_leaves": 32,
+      "completed_depth": 3,
+      "seconds": 0.12116280000191182
+    },
+    {
+      "family": 10,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 53,
+      "transitions": 50,
+      "material_leaves": 32,
+      "completed_depth": 3,
+      "seconds": 0.10101159999612719
+    },
+    {
+      "family": 10,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 53,
+      "transitions": 50,
+      "material_leaves": 32,
+      "completed_depth": 3,
+      "seconds": 0.10800649999873713
+    },
+    {
+      "family": 10,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 180,
+      "transitions": 176,
+      "material_leaves": 121,
+      "completed_depth": 4,
+      "seconds": 0.43648670002585277
+    },
+    {
+      "family": 10,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 180,
+      "transitions": 176,
+      "material_leaves": 121,
+      "completed_depth": 4,
+      "seconds": 0.42669640001258813
+    },
+    {
+      "family": 10,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 180,
+      "transitions": 176,
+      "material_leaves": 121,
+      "completed_depth": 4,
+      "seconds": 0.33278040000004694
+    },
+    {
+      "family": 10,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 180,
+      "transitions": 176,
+      "material_leaves": 121,
+      "completed_depth": 4,
+      "seconds": 0.30672039999626577
+    },
+    {
+      "family": 12,
+      "depth": 1,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 6,
+      "transitions": 5,
+      "material_leaves": 5,
+      "completed_depth": 1,
+      "seconds": 0.007691599981626496
+    },
+    {
+      "family": 12,
+      "depth": 1,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 6,
+      "transitions": 5,
+      "material_leaves": 5,
+      "completed_depth": 1,
+      "seconds": 0.009453799983020872
+    },
+    {
+      "family": 12,
+      "depth": 1,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 6,
+      "transitions": 5,
+      "material_leaves": 5,
+      "completed_depth": 1,
+      "seconds": 0.008653600001707673
+    },
+    {
+      "family": 12,
+      "depth": 1,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 6,
+      "transitions": 5,
+      "material_leaves": 5,
+      "completed_depth": 1,
+      "seconds": 0.009382799995364621
+    },
+    {
+      "family": 12,
+      "depth": 2,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 28,
+      "transitions": 26,
+      "material_leaves": 21,
+      "completed_depth": 2,
+      "seconds": 0.041304900019895285
+    },
+    {
+      "family": 12,
+      "depth": 2,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 28,
+      "transitions": 26,
+      "material_leaves": 21,
+      "completed_depth": 2,
+      "seconds": 0.04629959998419508
+    },
+    {
+      "family": 12,
+      "depth": 2,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 28,
+      "transitions": 26,
+      "material_leaves": 21,
+      "completed_depth": 2,
+      "seconds": 0.05867290002061054
+    },
+    {
+      "family": 12,
+      "depth": 2,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 28,
+      "transitions": 26,
+      "material_leaves": 21,
+      "completed_depth": 2,
+      "seconds": 0.05523170001106337
+    },
+    {
+      "family": 12,
+      "depth": 3,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 93,
+      "transitions": 90,
+      "material_leaves": 64,
+      "completed_depth": 3,
+      "seconds": 0.13918070000363514
+    },
+    {
+      "family": 12,
+      "depth": 3,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 93,
+      "transitions": 90,
+      "material_leaves": 64,
+      "completed_depth": 3,
+      "seconds": 0.14568339998368174
+    },
+    {
+      "family": 12,
+      "depth": 3,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 93,
+      "transitions": 90,
+      "material_leaves": 64,
+      "completed_depth": 3,
+      "seconds": 0.1518907000136096
+    },
+    {
+      "family": 12,
+      "depth": 3,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 93,
+      "transitions": 90,
+      "material_leaves": 64,
+      "completed_depth": 3,
+      "seconds": 0.18793210000148974
+    },
+    {
+      "family": 12,
+      "depth": 4,
+      "ratio": 1.25,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 293,
+      "transitions": 289,
+      "material_leaves": 189,
+      "completed_depth": 4,
+      "seconds": 0.4806641000031959
+    },
+    {
+      "family": 12,
+      "depth": 4,
+      "ratio": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 293,
+      "transitions": 289,
+      "material_leaves": 189,
+      "completed_depth": 4,
+      "seconds": 0.43062989998725243
+    },
+    {
+      "family": 12,
+      "depth": 4,
+      "ratio": 4.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 293,
+      "transitions": 289,
+      "material_leaves": 189,
+      "completed_depth": 4,
+      "seconds": 0.438460400007898
+    },
+    {
+      "family": 12,
+      "depth": 4,
+      "ratio": 8.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "nodes": 293,
+      "transitions": 289,
+      "material_leaves": 189,
+      "completed_depth": 4,
+      "seconds": 0.44741999998223037
+    }
+  ],
+  "seconds": 34.65526120000868,
+  "proof": "For each fixed target orientation every reachable finite material leaf is a*x+b from the listed capture-closed coefficient set; terminal draw is0alreadyincluded andterminalW/Lare+/-infinity. Inside each open cell pairwise order AND ties of ALL possible leaves remain identical. Induction through finite max/min preserves score order/tie argchoices. Alpha-beta comparisons/pruning also remain identical given theta-independent actionorder and same depth/node work. Fixed low-inventoryguide ignoresratio. Therefore exact-arithmetic policies andwhole deterministic trajectories agree within eachcell,conditional onidentical searchwork; notjust128sampledrecords.",
+  "limitations": "Restricted RNinventory/no promotion/drop/aux; no claimfornewinventories,genericfullrulesorwallclockidenticalcutoffs. Floatingoverflow/cancellation nearboundaries excludedbytheorem;128dyadicactualD1-D4calls corroborateonly8TRAINroots. This proves a sufficient coarse partition, some roots coarser; notallcellsnecessarilydistinguishable inW-L. No proof2isoptimal; allratios>1 areunidentifiableunderthese exactpolicyconditions."
+}

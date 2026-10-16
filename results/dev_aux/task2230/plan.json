@@ -1,0 +1,45 @@
+{
+  "question": "Does the fixed TRAIN-selected2-vs1 price gain survive BOTH players completingD2 on all three frozen context panels?",
+  "trigger": "PreviouscandidateD2 controls andnewquietpanel usefoesmostlyD1; freezeequalstrongD2opponents beforeanynewoutcomes. Newfrozenresource-transfertestbeforeoutcomes, no refit.",
+  "contexts": [
+    2220,
+    2224,
+    2228
+  ],
+  "profiles": [
+    1.0,
+    2.0
+  ],
+  "candidate": {
+    "normal_nodes": 512,
+    "normal_seconds": 0.1,
+    "step_seconds": 0.25,
+    "normal_depth": 2
+  },
+  "opponent": {
+    "normal_nodes": 512,
+    "normal_seconds": 0.1,
+    "step_seconds": 0.25,
+    "normal_depth": 2
+  },
+  "opponent_prices": [
+    0.5,
+    2.0
+  ],
+  "candidate_colors": [
+    0,
+    1
+  ],
+  "expected_games": 384,
+  "H": 96,
+  "one_cap_seconds": 600,
+  "estimated_seconds": 180,
+  "selection": "SAME16families each ofbaseline/range2/newquiet panels; all nowprice-exposed. Resource-transfer control, NOTfreshindependentrootstudy. Ratio2chosenbybaselineTRAINonly, no DEV/successprofileselection. Foepolicy/removalguidefixedwithineachpricecontrast.",
+  "scope": "ActualruleW-L; unfinishedU/None; no tablepayoff. BothplayersSAMEfixedlowinventoryactionguideascontextstudy, BOTHcandidateandopponent512visits/.1sD2; oldweakfoeresultscross-protocolonly; comparingpricearmsunderidenticalcandidatebudgets, nevercallcrosspolicyresourcegainpurepriceeffect. No default/PRIMARYadoption.",
+  "source_sha": "ff808b3cd8b5e096990f58bcb9387165cf844ea5522adb21c0d3a46a6d90b7c3",
+  "input_hashes": {
+    "2220": "370f81377a8247db5237d48d1617791c35dccfe286e6602bf815606f00f480e7",
+    "2224": "c6de63eec595c5db28bc60d9dc7df8546eeade8a926a0e5bbf485941912513fc",
+    "2228": "5ba2c18ac0720b388d523cb5cb02cd88f2dc3eb463b677c07668de2b3ba6e4ec"
+  }
+}

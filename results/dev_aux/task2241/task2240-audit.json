@@ -1,0 +1,271 @@
+{
+  "status": "PASS_CLOSED_PUBLIC_RECORD_REPLAY_ORIGINAL_FAMILY_BLOCKS",
+  "task": 2240,
+  "complete": true,
+  "games": 256,
+  "missing_slots": 0,
+  "missing_slot_keys": [],
+  "actual_moves": 7526,
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 3761,
+    "FIXED_LOW_INVENTORY_RANK_GUIDANCE": 3765
+  },
+  "normal_depth_counts": [
+    {
+      "context": 2238,
+      "is_candidate": true,
+      "depth": 2,
+      "count": 1002
+    },
+    {
+      "context": 2238,
+      "is_candidate": false,
+      "depth": 2,
+      "count": 1001
+    },
+    {
+      "context": 2238,
+      "is_candidate": true,
+      "depth": 1,
+      "count": 12
+    },
+    {
+      "context": 2238,
+      "is_candidate": false,
+      "depth": 1,
+      "count": 11
+    },
+    {
+      "context": 2239,
+      "is_candidate": true,
+      "depth": 2,
+      "count": 856
+    },
+    {
+      "context": 2239,
+      "is_candidate": false,
+      "depth": 2,
+      "count": 849
+    },
+    {
+      "context": 2239,
+      "is_candidate": false,
+      "depth": 1,
+      "count": 17
+    },
+    {
+      "context": 2239,
+      "is_candidate": true,
+      "depth": 1,
+      "count": 13
+    }
+  ],
+  "summary": {
+    "2238": {
+      "original_independent_family_blocks": 16,
+      "available_context_layouts": 16,
+      "planned_layouts": 16,
+      "unknown_or_missing_pairs": 0,
+      "profiles": {
+        "1.0": {
+          "n": 64,
+          "WLDU": {
+            "W": 12,
+            "D": 41,
+            "L": 11
+          }
+        },
+        "2.0": {
+          "n": 64,
+          "WLDU": {
+            "W": 12,
+            "D": 45,
+            "L": 7
+          }
+        }
+      },
+      "paired_mean_gain_lower": 0.0625,
+      "paired_mean_gain_upper": 0.0625,
+      "descriptive_family_bootstrap95": [
+        0.0,
+        0.15625
+      ],
+      "family_effect_bounds": {
+        "0": [
+          0.0,
+          0.0
+        ],
+        "1": [
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.0,
+          0.0
+        ],
+        "4": [
+          0.0,
+          0.0
+        ],
+        "5": [
+          0.0,
+          0.0
+        ],
+        "6": [
+          0.0,
+          0.0
+        ],
+        "7": [
+          0.0,
+          0.0
+        ],
+        "8": [
+          0.5,
+          0.5
+        ],
+        "9": [
+          0.0,
+          0.0
+        ],
+        "10": [
+          0.0,
+          0.0
+        ],
+        "11": [
+          0.0,
+          0.0
+        ],
+        "12": [
+          0.0,
+          0.0
+        ],
+        "13": [
+          0.0,
+          0.0
+        ],
+        "14": [
+          0.0,
+          0.0
+        ],
+        "15": [
+          0.5,
+          0.5
+        ]
+      },
+      "orientation_effect_bounds": {
+        "0": [
+          0.0625,
+          0.0625
+        ]
+      }
+    },
+    "2239": {
+      "original_independent_family_blocks": 16,
+      "available_context_layouts": 16,
+      "planned_layouts": 16,
+      "unknown_or_missing_pairs": 0,
+      "profiles": {
+        "1.0": {
+          "n": 64,
+          "WLDU": {
+            "L": 14,
+            "W": 15,
+            "D": 35
+          }
+        },
+        "2.0": {
+          "n": 64,
+          "WLDU": {
+            "L": 12,
+            "W": 16,
+            "D": 36
+          }
+        }
+      },
+      "paired_mean_gain_lower": 0.046875,
+      "paired_mean_gain_upper": 0.046875,
+      "descriptive_family_bootstrap95": [
+        0.0,
+        0.09375
+      ],
+      "family_effect_bounds": {
+        "0": [
+          0.0,
+          0.0
+        ],
+        "1": [
+          0.0,
+          0.0
+        ],
+        "2": [
+          0.0,
+          0.0
+        ],
+        "3": [
+          0.25,
+          0.25
+        ],
+        "4": [
+          0.0,
+          0.0
+        ],
+        "5": [
+          0.0,
+          0.0
+        ],
+        "6": [
+          0.0,
+          0.0
+        ],
+        "7": [
+          0.0,
+          0.0
+        ],
+        "8": [
+          0.0,
+          0.0
+        ],
+        "9": [
+          0.0,
+          0.0
+        ],
+        "10": [
+          0.0,
+          0.0
+        ],
+        "11": [
+          0.0,
+          0.0
+        ],
+        "12": [
+          0.25,
+          0.25
+        ],
+        "13": [
+          0.0,
+          0.0
+        ],
+        "14": [
+          0.0,
+          0.0
+        ],
+        "15": [
+          0.25,
+          0.25
+        ]
+      },
+      "orientation_effect_bounds": {
+        "0": [
+          0.046875,
+          0.046875
+        ]
+      }
+    }
+  },
+  "seconds": 1.7741044000140391,
+  "scope": "No producer/refit ornewindependentoutcomes. D4orientations andseedcontexts are withinoriginalfamilyreplicates, notextraindependentfamilies. Bootstrapdescriptiveandconditional onfrozenpanel; missing/UNKNOWNretainfullrewardbounds, neverDRAW. Spatialtransformcontrolisnotdirectcausal tieintervention; seededprioritychangesordering/pruning aswellasties, actualdepthsretained."
+}

@@ -1,0 +1,41 @@
+{
+  "status": "SOURCE_SCOPE_QUALIFIED_NOT_ALL_SEARCH_EQUIVALENCE",
+  "checks": {
+    "full_session_legal_choices": true,
+    "strict_first_tie": true,
+    "terminal_infinity": true,
+    "finite_material": true,
+    "no_TT": true,
+    "choice_order_not_price": true,
+    "seeded_priority_before_recursion": true,
+    "same_low_inventory_fixed_guide": true
+  },
+  "exact_math_conditions": [
+    "capture_removal_only_no_new_piece_creation",
+    "oneR_eachside_oneN_total_anduncapturedanchors",
+    "samepositiveRratioforsidesmaterialfromcurrenttarget",
+    "terminal0and+/-infinitypriority",
+    "purecomparisonminmax/alpha-beta,firstorderedtie",
+    "theta_independentlegalchoicesandfixedlowinventorypolicy",
+    "identicalcompleteddepth/nodework; realclockconditional",
+    "exactarithmetic; actualdyadicrepresentatives separatelychecked"
+  ],
+  "explicit_exclusions": [
+    "aspiration_windows_withfixed_numeric_offsets",
+    "futility/nullmove/score-marginpruning",
+    "score_magnitude_drivenbudgeting_orordering",
+    "floatingoverflow_near-boundarycancellation",
+    "newinventories,promotion,drops,auxiliarysemantics",
+    "differentwallclockcutoffs"
+  ],
+  "source_hashes": {
+    "results\\dev_aux\\task2148\\normal.py": "fa829615034f7f174b3530244d0b5f29d018c8b48fb6ece7a41e6056f8d0a00e",
+    "scripts\\generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "scripts\\generic_win_proof.py": "1c79db4805df9dbba62a49b8d91337f0d46f9fc1cfaa1d8247298c507c4526c3",
+    "results\\dev_aux\\task2220\\study.py": "33bcdb760fdd1d994efb592779d4d1fe795ddb3b484771ee71d6952048e7097e",
+    "results\\dev_aux\\task2238\\normal.py": "e9e7f71310b37bfa5f2c0b4557c15828ec2a3eb970fb139cf3d33864242bf758"
+  },
+  "advisor": "Dot1792158065 acceptedinlineaffineargument underpurecomparisonconditions; didnotreadorexecute77source. D4averagingis spatialnotdirecttieintervention; gainreductionorCIcontaining0doesnotproveartifact. Boundaryrefinementcanbeuseful.",
+  "no_new_experimental_outcomes": true,
+  "counterexample": "2244fixed32sixactorroots,96actualD3queriesallcomplete;family31changesaction at1.25vs4. 2245POSTHOCindependentcompleteD3tree220nodes/8floatchecks,actualrootbreak2. This iscapabilitynotW-Lbenefit/holdout."
+}

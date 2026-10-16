@@ -1,0 +1,38 @@
+{
+  "status": "PASS_ACTUAL77_PAYLOAD_SENSITIVE_CONTENT_AST_JSON_SHA_AND_CRC",
+  "archive": "DELTA_REPRO_20261016_77.zip",
+  "archive_sha": "eb8a8b8d76c7ec10f5bc69cb7e21a3f6d70e43201f9c88a88bf14735b7835722",
+  "bytes": 43554480,
+  "payloads": 549,
+  "raw_bytes": 681981201,
+  "sensitive_hits": 0,
+  "AST_checks": 153,
+  "JSON_files": 370,
+  "JSONL_records": 1254209,
+  "AST_equivalent_overlays": [
+    {
+      "path": "results/dev_aux/task2210/player.py",
+      "old_sha": "f2fe5ed18a90b723ff44a51e974359ed05e3f9ab17f6fab83b9b597b0ec5baf1",
+      "new_sha": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+      "AST_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2220/study.py",
+      "old_sha": "2f1e9e2d30cf3f94575ecfaa16462c4b56b65b62059ef99fa6a3fa0adfed69bf",
+      "new_sha": "33bcdb760fdd1d994efb592779d4d1fe795ddb3b484771ee71d6952048e7097e",
+      "AST_equal": true
+    }
+  ],
+  "seconds": 34.47552900001756,
+  "supplement": {
+    "file": "SOURCE_PIN_SUPPLEMENT_20261016_77.zip",
+    "sha256": "670107f046658ca41661ac69e47b07df321f907af8c0d4588c69ca1a8bf3f192",
+    "bytes": 7956,
+    "payloads": 4,
+    "overrides": {
+      "results/dev_aux/task2217/audit.py": "eef99ad2407e6db559ffeb0f081e5ee9854eb7a2bc53e5909f72a804ef50ba45",
+      "results/dev_aux/task2255/restore.py": "a5486da1546a37f78ab73b6de3bf0bb9e6a0166121ae7db0caafa15112e2810f"
+    }
+  },
+  "first17_attempt": "FAILED_SOURCE_PIN; not retroactivePASS"
+}

@@ -1,0 +1,4224 @@
+{
+  "status": "PASS_80_CAPTURE_CLOSED_INVENTORY_ORDER_PARTITIONS",
+  "cases": [
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 0,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 1,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "4/3",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 0,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 1,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "4/3",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [],
+      "largest_breakpoint": null
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 0,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "1"
+      ],
+      "largest_breakpoint": "1"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 1,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 0
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "1",
+        "2"
+      ],
+      "largest_breakpoint": "2"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 1
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4",
+        "1",
+        "3/2",
+        "2",
+        "3"
+      ],
+      "largest_breakpoint": "3"
+    },
+    {
+      "inventory": {
+        "R_target": 2,
+        "R_other": 2,
+        "N_target": 2,
+        "N_other": 2
+      },
+      "leaf_coefficients": [
+        [
+          -2,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "positive_breakpoints": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3",
+        "3/4",
+        "1",
+        "4/3",
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "largest_breakpoint": "4"
+    }
+  ],
+  "counterexample_two_N": [
+    {
+      "x": "3/2",
+      "one_R": "3/2",
+      "two_N": "2",
+      "prefers_R": false
+    },
+    {
+      "x": "5/2",
+      "one_R": "5/2",
+      "two_N": "2",
+      "prefers_R": true
+    }
+  ],
+  "proof": "All possible removal-subset coefficients form contiguous integer rectangles [-R_other,R_target] x [-N_other,N_target]. Pairwise differences cover everyinteger in[-R_total,R_total]x[-N_total,N_total]; positiveaffineequalities occur exactlyx=j/i with1<=i<=R_total,1<=j<=N_total. Terminaldraw0alreadyincluded. Restricting actual legal reachability canCOARSENthis partition, neveraddcrossings. Min/maxcomparison-only invariance followswithinanycell; magnitude-basedsearchheuristicsnotcovered.",
+  "interpretation": "The RN77 tested closure hasR_total2,N_total1 soallx>1shareleaforder. AddingsecondNpermitsanewcrossingat2;withRtotal2/Ntotal2thefullsetis1/2,1,2 (NOT3/2) and caninprinciple distinguish1.25from2/4; notsufficientwithoutactualdecisionconflicts. Rulemovementchangesalonewhileinventoryfixedcannotremoveleaforderinvariance. This supports choosinga changedinventorybefore more within-cellprice training; notnewteacher/fit/testadoption.",
+  "scope": "Symbolic finite-inventoryupperpartition only, notlegalstatecensus/WDL/realplayer policy acrossclocks. No humanprice input orclaimnewinventorysolved."
+}

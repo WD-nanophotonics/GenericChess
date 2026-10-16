@@ -1,0 +1,346 @@
+{
+  "status": "PASS_CLOSED_GENERIC_POLICY_AND_ACTUAL_ENTRY_PROOFS",
+  "pilot_actual_games": 16,
+  "pilot_actual_moves": 638,
+  "pilot_sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 630,
+    "VERIFIED_GRAPH_STRATEGY": 4,
+    "VERIFIED_GRAPH_CONTINUATION": 4
+  },
+  "pilot_normal_completed_depths": {
+    "2": 630
+  },
+  "pilot_certificates": [
+    {
+      "slot": 4,
+      "ply": 7,
+      "kind": "GRAPH",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.007127799995942041,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_converted": true
+    },
+    {
+      "slot": 5,
+      "ply": 7,
+      "kind": "GRAPH",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.008399399986956269,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_converted": true
+    },
+    {
+      "slot": 6,
+      "ply": 7,
+      "kind": "GRAPH",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.007097599998814985,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_converted": true
+    },
+    {
+      "slot": 7,
+      "ply": 7,
+      "kind": "GRAPH",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006906499998876825,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_converted": true
+    }
+  ],
+  "pilot_price_outcomes": {
+    "1.0": {
+      "WLD": {
+        "D": 6,
+        "L": 1,
+        "W": 1
+      },
+      "mean_W_minus_L": 0.0
+    },
+    "2.0": {
+      "WLD": {
+        "D": 6,
+        "L": 1,
+        "W": 1
+      },
+      "mean_W_minus_L": 0.0
+    }
+  },
+  "posthoc_entry_rows": 128,
+  "posthoc_entry_proofs": 19,
+  "posthoc_entry_checks": [
+    {
+      "slot": 266,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 21,
+        "edges": 21,
+        "seconds": 0.03228600000147708,
+        "unrolled_tree_nodes": 31,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 267,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 21,
+        "edges": 21,
+        "seconds": 0.03256770002190024,
+        "unrolled_tree_nodes": 31,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 270,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 21,
+        "edges": 21,
+        "seconds": 0.03431129999808036,
+        "unrolled_tree_nodes": 31,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 271,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 21,
+        "edges": 21,
+        "seconds": 0.030434099986450747,
+        "unrolled_tree_nodes": 31,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 290,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.032788699987577274,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 291,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.031597199995303527,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 294,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.03241580000030808,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 295,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.03383430000394583,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 304,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 66,
+        "edges": 74,
+        "seconds": 0.10874750002403744,
+        "unrolled_tree_nodes": 99,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 305,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 66,
+        "edges": 74,
+        "seconds": 0.10469609999563545,
+        "unrolled_tree_nodes": 99,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 306,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 71,
+        "edges": 81,
+        "seconds": 0.1239785999932792,
+        "unrolled_tree_nodes": 94,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 307,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.009411000006366521,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 322,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 20,
+        "edges": 19,
+        "seconds": 0.03272569997352548,
+        "unrolled_tree_nodes": 20,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 360,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 82,
+        "edges": 88,
+        "seconds": 0.13549919999786653,
+        "unrolled_tree_nodes": 107,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 361,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 82,
+        "edges": 88,
+        "seconds": 0.12480520000099204,
+        "unrolled_tree_nodes": 107,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 378,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.028831600007833913,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 379,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.030696500005433336,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 382,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.030545199988409877,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    },
+    {
+      "slot": 383,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 17,
+        "edges": 16,
+        "seconds": 0.030225399998016655,
+        "unrolled_tree_nodes": 17,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_converted": true
+    }
+  ],
+  "seconds": 3.547904799983371,
+  "scope": "ClosedactualrecordreplayandgenericfullPosition/historyboundverifiers+executablecursor. No playerproducers/fit/newstatisticalgames; posthocentrytableguidedconstructionnotonlinegenericdiscovery.16smallpilotpolicytransfer,notlearnedgeneralratio; guideandgenericprotocolsnotpooled."
+}
