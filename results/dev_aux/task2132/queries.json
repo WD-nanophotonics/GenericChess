@@ -1,0 +1,690 @@
+[
+  {
+    "ply": 0,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 194,
+    "callback_seconds": 0.09109400023589842,
+    "seconds": 0.10036609999951907,
+    "nodes": 78,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 0,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 461,
+    "callback_seconds": 0.08525580013520084,
+    "seconds": 0.10014110000338405,
+    "nodes": 151,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2766,
+    "actual_parses": 6,
+    "bytes_read": 27748051
+  },
+  {
+    "ply": 0,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1036,
+    "callback_seconds": 0.18536989978747442,
+    "seconds": 0.2003231999988202,
+    "nodes": 194,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6216,
+    "actual_parses": 6,
+    "bytes_read": 62357876
+  },
+  {
+    "ply": 0,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 414,
+    "callback_seconds": 0.19369490011013113,
+    "seconds": 0.20104419998824596,
+    "nodes": 77,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 1,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 255,
+    "callback_seconds": 0.04410040026414208,
+    "seconds": 0.051239099993836135,
+    "nodes": 73,
+    "reason": "depth_budget",
+    "completed_depth": 3,
+    "choice": {
+      "kind": "board",
+      "from": [
+        0,
+        3
+      ],
+      "to": [
+        1,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 1530,
+    "actual_parses": 6,
+    "bytes_read": 15348705
+  },
+  {
+    "ply": 1,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 201,
+    "callback_seconds": 0.09254660017904826,
+    "seconds": 0.10038569997414015,
+    "nodes": 59,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        0,
+        3
+      ],
+      "to": [
+        1,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 1,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 430,
+    "callback_seconds": 0.19320019986480474,
+    "seconds": 0.20032220002030954,
+    "nodes": 79,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 1,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1044,
+    "callback_seconds": 0.18656740000005811,
+    "seconds": 0.20017399999778718,
+    "nodes": 193,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6264,
+    "actual_parses": 6,
+    "bytes_read": 62839404
+  },
+  {
+    "ply": 2,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 200,
+    "callback_seconds": 0.09263840012135915,
+    "seconds": 0.10053470000275411,
+    "nodes": 58,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        3,
+        0
+      ],
+      "to": [
+        2,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 2,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 205,
+    "callback_seconds": 0.0372102000110317,
+    "seconds": 0.043985199998132885,
+    "nodes": 59,
+    "reason": "depth_budget",
+    "completed_depth": 3,
+    "choice": {
+      "kind": "board",
+      "from": [
+        3,
+        0
+      ],
+      "to": [
+        2,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 1230,
+    "actual_parses": 6,
+    "bytes_read": 12339155
+  },
+  {
+    "ply": 2,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1085,
+    "callback_seconds": 0.1864610006159637,
+    "seconds": 0.20024759997613728,
+    "nodes": 196,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6510,
+    "actual_parses": 6,
+    "bytes_read": 65307235
+  },
+  {
+    "ply": 2,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 434,
+    "callback_seconds": 0.19330790056847036,
+    "seconds": 0.2002754000131972,
+    "nodes": 83,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 3,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 481,
+    "callback_seconds": 0.0858547002717387,
+    "seconds": 0.10019389999797568,
+    "nodes": 149,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        2,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2886,
+    "actual_parses": 6,
+    "bytes_read": 28951871
+  },
+  {
+    "ply": 3,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 194,
+    "callback_seconds": 0.09123539982829243,
+    "seconds": 0.10025210000458173,
+    "nodes": 72,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        2,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 3,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 425,
+    "callback_seconds": 0.19300539980758913,
+    "seconds": 0.20035930001176894,
+    "nodes": 79,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 3,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1057,
+    "callback_seconds": 0.18565889928140678,
+    "seconds": 0.20047360000899062,
+    "nodes": 202,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6342,
+    "actual_parses": 6,
+    "bytes_read": 63621887
+  },
+  {
+    "ply": 4,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 188,
+    "callback_seconds": 0.09123889997135848,
+    "seconds": 0.1003420999913942,
+    "nodes": 67,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        1,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 4,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 490,
+    "callback_seconds": 0.0851247999817133,
+    "seconds": 0.10012479999568313,
+    "nodes": 148,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        1,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2940,
+    "actual_parses": 6,
+    "bytes_read": 29493590
+  },
+  {
+    "ply": 4,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1094,
+    "callback_seconds": 0.18584870049380697,
+    "seconds": 0.20028069999534637,
+    "nodes": 206,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6564,
+    "actual_parses": 6,
+    "bytes_read": 65848954
+  },
+  {
+    "ply": 4,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 429,
+    "callback_seconds": 0.1928628998575732,
+    "seconds": 0.20026410001446493,
+    "nodes": 80,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 5,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 366,
+    "callback_seconds": 0.06484430024283938,
+    "seconds": 0.0756260999769438,
+    "nodes": 108,
+    "reason": "depth_budget",
+    "completed_depth": 3,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        3
+      ],
+      "to": [
+        0,
+        2
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2196,
+    "actual_parses": 6,
+    "bytes_read": 22029906
+  },
+  {
+    "ply": 5,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 196,
+    "callback_seconds": 0.09134189991164021,
+    "seconds": 0.10030170000391081,
+    "nodes": 64,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        2,
+        3
+      ],
+      "to": [
+        0,
+        2
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 5,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 423,
+    "callback_seconds": 0.19250680078403093,
+    "seconds": 0.20027209998806939,
+    "nodes": 81,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 5,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1064,
+    "callback_seconds": 0.18586290007806383,
+    "seconds": 0.2003563999896869,
+    "nodes": 204,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6384,
+    "actual_parses": 6,
+    "bytes_read": 64043224
+  },
+  {
+    "ply": 6,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 191,
+    "callback_seconds": 0.09132699994370341,
+    "seconds": 0.10039139998843893,
+    "nodes": 65,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        0,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 6,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 352,
+    "callback_seconds": 0.06255139989661984,
+    "seconds": 0.07364779998897575,
+    "nodes": 112,
+    "reason": "depth_budget",
+    "completed_depth": 3,
+    "choice": {
+      "kind": "board",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        1,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2112,
+    "actual_parses": 6,
+    "bytes_read": 21187232
+  },
+  {
+    "ply": 6,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1067,
+    "callback_seconds": 0.18582899993634783,
+    "seconds": 0.20023350001429208,
+    "nodes": 199,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6402,
+    "actual_parses": 6,
+    "bytes_read": 64223797
+  },
+  {
+    "ply": 6,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 422,
+    "callback_seconds": 0.19298190015251748,
+    "seconds": 0.20033010002225637,
+    "nodes": 79,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 7,
+    "kind": "NORMAL",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 453,
+    "callback_seconds": 0.08108600025298074,
+    "seconds": 0.09566430002450943,
+    "nodes": 145,
+    "reason": "depth_budget",
+    "completed_depth": 3,
+    "choice": {
+      "kind": "board",
+      "from": [
+        0,
+        2
+      ],
+      "to": [
+        2,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": 2718,
+    "actual_parses": 6,
+    "bytes_read": 27266523
+  },
+  {
+    "ply": 7,
+    "kind": "NORMAL",
+    "arm": "ORIGINAL",
+    "callback_calls": 192,
+    "callback_seconds": 0.09042120003141463,
+    "seconds": 0.10006299999076873,
+    "nodes": 72,
+    "reason": "time_budget",
+    "completed_depth": 2,
+    "choice": {
+      "kind": "board",
+      "from": [
+        0,
+        2
+      ],
+      "to": [
+        2,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    "status": "MATERIAL_SEARCH",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 7,
+    "kind": "PN",
+    "arm": "ORIGINAL",
+    "callback_calls": 427,
+    "callback_seconds": 0.19288390022120439,
+    "seconds": 0.2003621000039857,
+    "nodes": 80,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": null,
+    "actual_parses": null,
+    "bytes_read": null
+  },
+  {
+    "ply": 7,
+    "kind": "PN",
+    "arm": "PARSED_BYTES_CACHE",
+    "callback_calls": 1029,
+    "callback_seconds": 0.18507360003422946,
+    "seconds": 0.20031129999551922,
+    "nodes": 191,
+    "reason": "time_budget",
+    "completed_depth": null,
+    "choice": null,
+    "status": "UNKNOWN",
+    "actual_reads": 6174,
+    "actual_parses": 6,
+    "bytes_read": 61936539
+  }
+]

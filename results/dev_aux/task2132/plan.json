@@ -1,0 +1,33 @@
+{
+  "question": "Does exactbyte-fresh parsed-stop memoization improve actualsearchwork at unchangednode/wall/stopconditions?",
+  "prefixes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "arms": [
+    "ORIGINAL",
+    "PARSED_BYTES_CACHE"
+  ],
+  "order": "Counterbalanceperprefix/kind; coldnewreaderperquery, no freeprewarm.",
+  "normal_nodes": 4096,
+  "normal_seconds": 0.1,
+  "normal_depth": 3,
+  "PN_nodes": 1024,
+  "PN_seconds": 0.2,
+  "proof_depth": 64,
+  "one_cap_seconds": 120,
+  "expected_queries": 32,
+  "no_training_or_game": true,
+  "scope": "Wallbudgetcontrollercomparison underordinaryload; freshbytechecksidenticalcontract qualified8realfiletests. No clean machine speedup/strength or retrospectivecorrectionoffrozenoldstudies.",
+  "pins": {
+    "results\\dev_aux\\task2131\\stop_reader.py": "634b3fac91a893314e1818e1af542184df22a3ad2ad60e7db052be998960b911",
+    "results\\dev_aux\\task2100\\games.jsonl": "caa5968cd3cb2b0f8eee8bb96783ecc844adc533cb392c3f1ec16ba65ed17f31",
+    "scripts\\generic_proof_player.py": "cc8c22b5db6a5124e7f7e01b96125765b45622d0577eef84d725c081d0b2043d"
+  }
+}

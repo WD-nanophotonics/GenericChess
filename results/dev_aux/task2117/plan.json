@@ -1,0 +1,22 @@
+{
+  "question": "Is positive N/B price capable of distinguishing exact positional WDL choices under completed depth1/2/3 material minimax?",
+  "selection": "All32existingTRAINinitialroots plus first chronological candidate-side normal posttrigger prefix per TRAINfamily with B AND N present globally; deduplicate by fullrecord; no label/nonflat/action/outcome screening",
+  "depths": [
+    1,
+    2,
+    3
+  ],
+  "one_cap_seconds": 1200,
+  "max_cases": 64,
+  "teacher": "2097/2098/2099 audited complete graph",
+  "continuum": "Collect all ongoing leaf affine material (Ndiff*r+Bdiff), enumerate every positive pair intersection and open interval representative. Terminal +/-infinity/0. Exact Fraction arithmetic, all ties retained. No chosen trainedprice or DEV inspection.",
+  "history_scope": "Actual Core SearchPathRuntime fullhistory terminals inside finite tree; child teacher WDL is positional diagnostic only for nonterminal actualchild, not exact arbitrary-history WDL. Initialcanonicalroot diagnostic exact.",
+  "comparison": "Posthoc TRAIN expressibility, not actual cappedplayer, no fullgame/policy gain or universal optimum claim",
+  "source_pins": {
+    "results\\dev_aux\\task2105\\games.jsonl": "65d9b15a5eef1292e6ebc6b7239259c37d397d3e2445c7c9a0c48adcab82ba83",
+    "results\\dev_aux\\task2105\\moves.jsonl": "d3cf09f8003617585d7fb7d0899743f1a90d6ff58949d0c60cd83fc9e8f60b4a",
+    "results\\dev_aux\\task2105\\inputs.json": "cdc0d8375f4a48993fb5bee4d86a522399ecff3762babd8db9923ee9cc7a73f8",
+    "scripts\\generic_proof_player.py": "cc8c22b5db6a5124e7f7e01b96125765b45622d0577eef84d725c081d0b2043d"
+  },
+  "frozen_utc": "2026-10-16T06:24:29.532196+00:00"
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASS_ALL_PUBLIC_SESSION_AND_LITERAL_FRONTIER_AFFINE_REGIONS",
+  "cases": 56,
+  "queries": 168,
+  "nodes": 14180,
+  "edges": 14012,
+  "frontiers": 2516,
+  "terminal_leaves": 48,
+  "ongoing_material_leaves": 11616,
+  "groups": {
+    "INITIAL_depth1": {
+      "states": 32,
+      "nonflat": 18,
+      "no_ratio_first_choice_optimal": 6,
+      "some_ratio_changes_first_action": 4
+    },
+    "INITIAL_depth2": {
+      "states": 32,
+      "nonflat": 18,
+      "no_ratio_first_choice_optimal": 3,
+      "some_ratio_changes_first_action": 5
+    },
+    "INITIAL_depth3": {
+      "states": 32,
+      "nonflat": 18,
+      "no_ratio_first_choice_optimal": 2,
+      "some_ratio_changes_first_action": 4
+    },
+    "POSTTRIGGER_B_AND_N_depth1": {
+      "states": 24,
+      "nonflat": 3,
+      "no_ratio_first_choice_optimal": 0,
+      "some_ratio_changes_first_action": 1
+    },
+    "POSTTRIGGER_B_AND_N_depth2": {
+      "states": 24,
+      "nonflat": 3,
+      "no_ratio_first_choice_optimal": 0,
+      "some_ratio_changes_first_action": 1
+    },
+    "POSTTRIGGER_B_AND_N_depth3": {
+      "states": 24,
+      "nonflat": 3,
+      "no_ratio_first_choice_optimal": 0,
+      "some_ratio_changes_first_action": 1
+    }
+  },
+  "seconds": 5.874281299998984,
+  "scope": "Exactfinite-depthtree; allpositivepricespartitionedbecauseonlyleafaffinecrossingscanchange min/max ordering. TerminalInfinitytokensarePythonJSONnonstandard in originaltrees; semanticallyverified, retainedoriginalbytes; publishedportablecopywilluseexplicitstrings. No training, no hidden DEV, no arbitraryhistoryWDLclaim."
+}

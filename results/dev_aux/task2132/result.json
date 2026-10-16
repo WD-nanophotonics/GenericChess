@@ -1,0 +1,81 @@
+{
+  "status": "COMPLETE_FRESH_BYTES_SAME_BUDGET_STOP_PARSE_COMPARISON",
+  "queries": 32,
+  "summary": {
+    "NORMAL": {
+      "ORIGINAL": {
+        "queries": 8,
+        "nodes": 535,
+        "seconds": 0.8026367999555077,
+        "callback_calls": 1556,
+        "callback_seconds": 0.731843400222715,
+        "completed_depths": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "PARSED_BYTES_CACHE": {
+        "queries": 8,
+        "nodes": 945,
+        "seconds": 0.6406222999794409,
+        "callback_calls": 3063,
+        "callback_seconds": 0.5460276010562666,
+        "completed_depths": [
+          2,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "PN": {
+      "ORIGINAL": {
+        "queries": 8,
+        "nodes": 638,
+        "seconds": 1.603229500062298,
+        "callback_calls": 3404,
+        "callback_seconds": 1.5444439013663214,
+        "completed_depths": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "PARSED_BYTES_CACHE": {
+        "queries": 8,
+        "nodes": 1585,
+        "seconds": 1.6024002999765798,
+        "callback_calls": 8476,
+        "callback_seconds": 1.4866714002273511,
+        "completed_depths": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    }
+  },
+  "seconds": 4.666621699987445,
+  "scope": "Wallbudgetcontrollercomparison underordinaryload; freshbytechecksidenticalcontract qualified8realfiletests. No clean machine speedup/strength or retrospectivecorrectionoffrozenoldstudies.",
+  "no_stop_semantics_or_flag_change": true
+}

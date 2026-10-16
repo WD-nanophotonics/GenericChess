@@ -1,0 +1,144 @@
+{
+  "status": "PASS_ACTUAL_FIXED_CONDITIONS_ROLES_BUDGET_HISTORY_AND_OUTCOMES",
+  "task": 2134,
+  "logical": 367,
+  "physical": 341,
+  "expected_logical": 448,
+  "missing": 81,
+  "counts": {
+    "depth_2": 4500,
+    "source_MATERIAL_SEARCH": 4500,
+    "moves": 4608,
+    "physical_entered_at_most4": 283,
+    "physical_never_entered": 58,
+    "physical_DRAW": 301,
+    "explicit_identity_role_reuses": 26,
+    "depth_None": 108,
+    "source_PROOF": 40,
+    "source_PROOF_CONTINUATION": 68,
+    "physical_WIN": 21,
+    "physical_LOSS": 18,
+    "physical_UNKNOWN": 1
+  },
+  "cost_by_physical_condition_role": {
+    "TRIGGER_0.25_candidate": {
+      "decisions": 357,
+      "proof_nodes": 1869,
+      "search_nodes": 4163,
+      "proof_seconds": 2.6325541001860984,
+      "normal_seconds": 3.322420699929353,
+      "seconds": 7.370875400287332
+    },
+    "TRIGGER_0.25_opponent": {
+      "decisions": 354,
+      "proof_nodes": 1850,
+      "search_nodes": 4129,
+      "proof_seconds": 2.624481800070498,
+      "normal_seconds": 3.2887465996318497,
+      "seconds": 7.2741603999747895
+    },
+    "TRIGGER_0.5_candidate": {
+      "decisions": 348,
+      "proof_nodes": 1771,
+      "search_nodes": 4047,
+      "proof_seconds": 2.5269832998747006,
+      "normal_seconds": 3.2408608001424,
+      "seconds": 7.106505900184857
+    },
+    "TRIGGER_0.5_opponent": {
+      "decisions": 346,
+      "proof_nodes": 1789,
+      "search_nodes": 4056,
+      "proof_seconds": 2.542908300412819,
+      "normal_seconds": 3.2227171002305113,
+      "seconds": 7.096677300025476
+    },
+    "TRIGGER_0.75_candidate": {
+      "decisions": 348,
+      "proof_nodes": 1770,
+      "search_nodes": 4047,
+      "proof_seconds": 2.5221606002305634,
+      "normal_seconds": 3.2553208001481835,
+      "seconds": 7.113031800050521
+    },
+    "TRIGGER_0.75_opponent": {
+      "decisions": 346,
+      "proof_nodes": 1782,
+      "search_nodes": 4056,
+      "proof_seconds": 2.5342224998166785,
+      "normal_seconds": 3.2269329002592713,
+      "seconds": 7.092409499804489
+    },
+    "TRIGGER_1.0_candidate": {
+      "decisions": 164,
+      "proof_nodes": 861,
+      "search_nodes": 2055,
+      "proof_seconds": 1.2103767001244705,
+      "normal_seconds": 1.5915043001295999,
+      "seconds": 3.438806399819441
+    },
+    "TRIGGER_1.0_opponent": {
+      "decisions": 150,
+      "proof_nodes": 700,
+      "search_nodes": 1576,
+      "proof_seconds": 1.0311927999719046,
+      "normal_seconds": 1.2897105000447482,
+      "seconds": 2.865817699726904
+    },
+    "TRIGGER_1.5_candidate": {
+      "decisions": 350,
+      "proof_nodes": 1564,
+      "search_nodes": 3825,
+      "proof_seconds": 2.32636769983219,
+      "normal_seconds": 3.1140062001068145,
+      "seconds": 6.828591299883556
+    },
+    "TRIGGER_1.5_opponent": {
+      "decisions": 353,
+      "proof_nodes": 1544,
+      "search_nodes": 4224,
+      "proof_seconds": 2.30839250003919,
+      "normal_seconds": 3.3745229998312425,
+      "seconds": 7.087691500142682
+    },
+    "TRIGGER_2.0_candidate": {
+      "decisions": 371,
+      "proof_nodes": 1608,
+      "search_nodes": 4014,
+      "proof_seconds": 2.3996158000081778,
+      "normal_seconds": 3.31045720007387,
+      "seconds": 7.183021699805977
+    },
+    "TRIGGER_2.0_opponent": {
+      "decisions": 375,
+      "proof_nodes": 1566,
+      "search_nodes": 4443,
+      "proof_seconds": 2.3666891003085766,
+      "normal_seconds": 3.6096377995272633,
+      "seconds": 7.481884199660271
+    },
+    "TRIGGER_3.0_candidate": {
+      "decisions": 371,
+      "proof_nodes": 1605,
+      "search_nodes": 4008,
+      "proof_seconds": 2.400099100166699,
+      "normal_seconds": 3.302145600435324,
+      "seconds": 7.173631599813234
+    },
+    "TRIGGER_3.0_opponent": {
+      "decisions": 375,
+      "proof_nodes": 1557,
+      "search_nodes": 4443,
+      "proof_seconds": 2.3628310002968647,
+      "normal_seconds": 3.592780200240668,
+      "seconds": 7.4620282003015745
+    }
+  },
+  "paired_family_price_gains": {},
+  "paired_family_filter_gains": [],
+  "portable_actual_certificates_verified": 40,
+  "offline_certificate_verifier_nodes": 218,
+  "seconds": 1.701538499997696,
+  "TRAIN_selectors_independently_checked": false,
+  "scope": "Actualphysicalrecords/literalCorefrontiers anddeclaredconditionprefixindependentlychecked. Familyunit, reusedrole notindependent. Costchangesincludechangedtrajectories/ordinaryload, notnoise-freespeedup. Partialslotsretained, noimplicitDRAW/DEV/selection. Offlineverificationpaidextra notoriginaldecisionbudget. 2120didnotsaveportablecerttrees: onlyexistingliveverifierreceipts/sourcechecked, noexternalall-defensereplayclaim forit."
+}

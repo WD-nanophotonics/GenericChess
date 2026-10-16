@@ -1,0 +1,29 @@
+{
+  "status": "PASS_CAPTURE_CLOSURE_AFFINE_DECISION_CELL_DERIVATION",
+  "root_target_cases": 64,
+  "all_positive_leaf_order_crossings": [
+    "1",
+    "2"
+  ],
+  "open_cells": [
+    "(0,1)",
+    "(1,2)",
+    "(2,infinity)"
+  ],
+  "boundary_cells": [
+    "{1}",
+    "{2}"
+  ],
+  "original_grid_cell_coverage": {
+    ".25": "(0,1)",
+    ".5": "(0,1)",
+    "1": "{1}",
+    "2": "{2}",
+    "4": "(2,infinity)"
+  },
+  "original_grid_missing_open_cell": "(1,2)",
+  "existing_exact_tree_pair_checks": 504,
+  "seconds": 0.14531250001164153,
+  "theorem": "Within each open cell, every pair of possible ongoing materialleafvalues has fixedorder/equality; actualterminal +/-infinity/0 is priceindependent. Induction through min/max preserves best-actionsets and deterministicfixed-orderfirstchoice at ANY fixed completeddepth. Alpha-beta decisions/traversal also preserve under exact comparison and fixednodecutoffs; separate softwarecheck pending. No uniquepricepointidentifiability insidecell. Capture-only staticinventoryprecondition required; drops/promotion/ownershipchanges/extraactors canaddcrossings.",
+  "limits": "Exactrationalmodel. Floatingoverflow/underflow or near-boundaryrounding outsidequalifiedtest. Wallcutoffs/load/completion maydiffer; proofbudget/admission/cursor canhave wallvariability. Not wholepolicyW-L equivalence or a recommendationtofitmissingcell. Oldgrid/resultsremainfrozen."
+}

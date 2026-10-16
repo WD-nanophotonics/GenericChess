@@ -261,19 +261,24 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment71
+# DEV_AUX current scope:2026-10-16 segment72
 
-Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. TrueW-Lcompletepolicy,
-noquantityreward/UNKNOWNasDRAW, samefixedopponent/resourcesperdeclaredstudy.
-Teacher/proofcost explicit. 2088new192queries19vs2proofs/all21actualmates;
-2092new144gamesfinds0featuregains/allcanonicalrootoutcomesmatched. Credible
-botharmed3x3/4x4teachers plusclosed<=4view nowexist; notfullgenerateddomain.
-2105newfixedtrigger/lowresource actualW-Llearning completes368physicalgames,
-twoinitialsselectdifferentprices/DEVgains0. Noexposedgrid/NNautomaticfollowup.
-2100closedoriginal2400cap:31physical/34logicalTRAIN/30D+1UNKNOWN,
-286TRAINlogicalunrun/noDEVselector; retainallpartial/unknown. Noold2063caprestore. Triggerdoesnotisolateposttriggernormalprice;
-reportwholepolicyeffect, nofalseadvantageformation-onlyattribution. Dotadvisory,
-notnewauthority. Details/results/nextaction:docs/research/LOCAL_MAINLINE.md.
+Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. Fixedcompletepolicy,
+actualruleW-Lonly; UNKNOWNnotDRAW. Newreason/currentconsequence: botharmed3x3
+capacity andactualterminalpilotjustifyfreshsmalllearning, but2134CLOSEDpartial
+367logical341physical/1UNKNOWN/noSelector/noDEV/81TRAINslotsunrun. Neverresume
+orfill it. Old2100/2063/71caps remainclosed, allfailuresretained.
+2131byte-freshstopreader isqualifiedforfutureowncontrollers: EVERYpollreadsall
+6files/order; onlyunchangedbytesJSONdecodingmemoized. No freshness/mtimecache,
+pollingdelay, heldhandle, extra worker orflagwrite. Oldtimings/sourceunchanged.
+2136opt-inprecomputedlegalfallbackrepairsobservednormalnochoicebudgetfailure;
+admissionpaidintotalallowance, cancel/foreign/terminal/unsupportedguardretained.
+Nextfreshprotocolmustdeclarechangedpolicy andjournalfaileddecisionreceipts.
+No product/default/UI/primaryintegration. GenuinegenericproofdomainremainsOPEN.
+Pricelearningtargetsdecisioncells underexplicitrules/distribution/policy, not
+uniqueuniversalratios. CorrectedpartitionsMUSTincludeactualDRAW0line; retain
+old2117/2119/2124claimsashistorysupersededby2126/27. No oldexposedgridrefit,
+humanpricefit/Xiangqiholdout/DEVselection. Currentevidence/next:LOCAL_MAINLINE.
 
 ## Current user publication grant2026-10-15
 

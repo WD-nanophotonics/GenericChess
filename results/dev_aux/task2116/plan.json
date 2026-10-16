@@ -1,0 +1,45 @@
+{
+  "question": "Does complete-graph negative scheduling save proof work at unchanged high normal resources?",
+  "selection": "first 8 chronological pre-move prefixes of first physical closed2100 TRAIN game, no label/action/outcome filtering",
+  "prefix_plies": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "providers": [
+    "PN",
+    "NEGATIVE_FILTER"
+  ],
+  "order": "PN,FILTER even ply; FILTER,PN odd ply",
+  "proof_nodes": 1024,
+  "proof_seconds": 1.5,
+  "proof_depth": 64,
+  "normal_nodes": 4096,
+  "normal_seconds": 0.1,
+  "normal_depth": 3,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.5,
+  "total_seconds": 2.75,
+  "one_cap_seconds": 180,
+  "teacher": [
+    "task2097",
+    "task2098",
+    "task2099"
+  ],
+  "teacher_prepaid_seconds": 593.562,
+  "unknown_not_draw": true,
+  "no_game_or_training": true,
+  "no_old_cap_restart": true,
+  "interpretation": "Descriptive paired cold decisions on exposed TRAIN histories; no policy equivalence, WDL gain, clean speedup or independent holdout claim",
+  "frozen_utc": "2026-10-16T06:21:28.366902+00:00",
+  "source_pins": {
+    "results\\dev_aux\\task2100\\games.jsonl": "caa5968cd3cb2b0f8eee8bb96783ecc844adc533cb392c3f1ec16ba65ed17f31",
+    "results\\dev_aux\\task2100\\inputs.json": "cdc0d8375f4a48993fb5bee4d86a522399ecff3762babd8db9923ee9cc7a73f8",
+    "results\\dev_aux\\task2072\\no_win_filter.py": "12d0a5bf5d8ddf2e6d1274d368d51d356219ebd45a7dd3948b620512deddecac"
+  }
+}

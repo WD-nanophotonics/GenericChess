@@ -1,0 +1,149 @@
+{
+  "status": "PASS_ACTUAL_FIXED_CONDITIONS_ROLES_BUDGET_HISTORY_AND_OUTCOMES",
+  "task": 2120,
+  "logical": 32,
+  "physical": 28,
+  "expected_logical": 32,
+  "missing": 0,
+  "counts": {
+    "depth_2": 1168,
+    "source_MATERIAL_SEARCH": 1406,
+    "moves": 1406,
+    "depth_3": 221,
+    "physical_entered_at_most4": 21,
+    "physical_never_entered": 7,
+    "physical_DRAW": 28,
+    "explicit_identity_role_reuses": 4,
+    "depth_1": 17
+  },
+  "cost_by_physical_condition_role": {
+    "PN_1.0_candidate": {
+      "decisions": 108,
+      "proof_nodes": 41435,
+      "search_nodes": 6087,
+      "proof_seconds": 117.45123119989876,
+      "normal_seconds": 10.001983999914955,
+      "seconds": 128.9927081001515
+    },
+    "PN_1.0_opponent": {
+      "decisions": 106,
+      "proof_nodes": 54270,
+      "search_nodes": 6678,
+      "proof_seconds": 155.19922740003676,
+      "normal_seconds": 10.462097300129244,
+      "seconds": 167.16803689993685
+    },
+    "NEGATIVE_FILTER_1.0_candidate": {
+      "decisions": 198,
+      "proof_nodes": 18791,
+      "search_nodes": 11782,
+      "proof_seconds": 50.302105200098595,
+      "normal_seconds": 18.891803000034997,
+      "seconds": 71.82851039999514
+    },
+    "NEGATIVE_FILTER_1.0_opponent": {
+      "decisions": 198,
+      "proof_nodes": 86999,
+      "search_nodes": 11678,
+      "proof_seconds": 248.7678295999649,
+      "normal_seconds": 18.860313900077017,
+      "seconds": 270.29957849983475
+    },
+    "PN_0.25_candidate": {
+      "decisions": 199,
+      "proof_nodes": 93517,
+      "search_nodes": 11956,
+      "proof_seconds": 264.4774800001178,
+      "normal_seconds": 19.033963599911658,
+      "seconds": 286.1622290999512
+    },
+    "PN_0.25_opponent": {
+      "decisions": 199,
+      "proof_nodes": 87933,
+      "search_nodes": 11853,
+      "proof_seconds": 252.939381899836,
+      "normal_seconds": 18.949155500129564,
+      "seconds": 274.55575130012585
+    },
+    "NEGATIVE_FILTER_0.25_candidate": {
+      "decisions": 199,
+      "proof_nodes": 18750,
+      "search_nodes": 11946,
+      "proof_seconds": 50.30144130004919,
+      "normal_seconds": 19.03157900000224,
+      "seconds": 71.9529952002049
+    },
+    "NEGATIVE_FILTER_0.25_opponent": {
+      "decisions": 199,
+      "proof_nodes": 88110,
+      "search_nodes": 11864,
+      "proof_seconds": 250.72078040009364,
+      "normal_seconds": 18.95812309999019,
+      "seconds": 272.3378969000187
+    }
+  },
+  "paired_family_price_gains": {
+    "PN": [
+      {
+        "family": 0,
+        "price_gain": 0.0
+      },
+      {
+        "family": 1,
+        "price_gain": 0.0
+      },
+      {
+        "family": 2,
+        "price_gain": 0.0
+      },
+      {
+        "family": 3,
+        "price_gain": 0.0
+      }
+    ],
+    "NEGATIVE_FILTER": [
+      {
+        "family": 0,
+        "price_gain": 0.0
+      },
+      {
+        "family": 1,
+        "price_gain": 0.0
+      },
+      {
+        "family": 2,
+        "price_gain": 0.0
+      },
+      {
+        "family": 3,
+        "price_gain": 0.0
+      }
+    ]
+  },
+  "paired_family_filter_gains": [
+    {
+      "family": 0,
+      "filter_gain_at_1": 0.0,
+      "filter_gain_at_point25": 0.0
+    },
+    {
+      "family": 1,
+      "filter_gain_at_1": 0.0,
+      "filter_gain_at_point25": 0.0
+    },
+    {
+      "family": 2,
+      "filter_gain_at_1": 0.0,
+      "filter_gain_at_point25": 0.0
+    },
+    {
+      "family": 3,
+      "filter_gain_at_1": 0.0,
+      "filter_gain_at_point25": 0.0
+    }
+  ],
+  "portable_actual_certificates_verified": 0,
+  "offline_certificate_verifier_nodes": 0,
+  "seconds": 0.5469945000077132,
+  "scope": "Actualphysicalrecords/literalCorefrontiers anddeclaredconditionprefixindependentlychecked. Familyunit, reusedrole notindependent. Costchangesincludechangedtrajectories/ordinaryload, notnoise-freespeedup. Partialslotsretained, noimplicitDRAW/DEV/selection. Offlineverificationpaidextra notoriginaldecisionbudget. 2120didnotsaveportablecerttrees: onlyexistingliveverifierreceipts/sourcechecked, noexternalall-defensereplayclaim forit."
+}

@@ -1,0 +1,61 @@
+{
+  "status": "COMPLETE",
+  "cases": 56,
+  "queries": 168,
+  "nodes": 14180,
+  "teacher_load_seconds": 10.214192000014009,
+  "seconds": 20.353960600012215,
+  "groups": {
+    "INITIAL_depth1": {
+      "cases": 32,
+      "nonflat": 18,
+      "price_changes_top_sets": 4,
+      "price_changes_first_action": 4,
+      "no_price_any_optimal": 1,
+      "no_price_all_optimal": 8
+    },
+    "INITIAL_depth2": {
+      "cases": 32,
+      "nonflat": 18,
+      "price_changes_top_sets": 5,
+      "price_changes_first_action": 5,
+      "no_price_any_optimal": 0,
+      "no_price_all_optimal": 4
+    },
+    "INITIAL_depth3": {
+      "cases": 32,
+      "nonflat": 18,
+      "price_changes_top_sets": 9,
+      "price_changes_first_action": 4,
+      "no_price_any_optimal": 0,
+      "no_price_all_optimal": 5
+    },
+    "POSTTRIGGER_B_AND_N_depth1": {
+      "cases": 24,
+      "nonflat": 3,
+      "price_changes_top_sets": 1,
+      "price_changes_first_action": 1,
+      "no_price_any_optimal": 0,
+      "no_price_all_optimal": 0
+    },
+    "POSTTRIGGER_B_AND_N_depth2": {
+      "cases": 24,
+      "nonflat": 3,
+      "price_changes_top_sets": 1,
+      "price_changes_first_action": 1,
+      "no_price_any_optimal": 0,
+      "no_price_all_optimal": 0
+    },
+    "POSTTRIGGER_B_AND_N_depth3": {
+      "cases": 24,
+      "nonflat": 3,
+      "price_changes_top_sets": 1,
+      "price_changes_first_action": 1,
+      "no_price_any_optimal": 0,
+      "no_price_all_optimal": 0
+    }
+  },
+  "scope": "Actual Core SearchPathRuntime fullhistory terminals inside finite tree; child teacher WDL is positional diagnostic only for nonterminal actualchild, not exact arbitrary-history WDL. Initialcanonicalroot diagnostic exact.",
+  "no_training": true,
+  "no_DEV_reads": true
+}

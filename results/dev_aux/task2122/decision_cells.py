@@ -1,0 +1,46 @@
+"""Exact decision-cell derivation from capture-only material inventory."""
+from pathlib import Path
+from fractions import Fraction
+from itertools import product,combinations
+import json,math,time
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.serialization import deserialize_ruleset
+from generic_chess.session.session import GameSession
+OUT=Path('results/dev_aux/task2122')
+def support(position,target):
+ pieces=[p for p in position.board if p is not None and p.current_type_id!='K'];out=set()
+ for keep in product((False,True),repeat=len(pieces)):
+  out.add(tuple(sum((1 if p.owner==target else-1)for p,k in zip(pieces,keep)if k and p.current_type_id==tid)for tid in('N','B')))
+ return out
+
+def boundaries(lines):
+ points=set()
+ for(n,b),(m,c)in combinations(lines,2):
+  if n!=m:
+   r=Fraction(c-b,n-m)
+   if r>0:points.add(r)
+ return sorted(points)
+
+def run():
+ start=time.perf_counter();roots=json.loads(Path('results/dev_aux/task2100/inputs.json').read_text())['roots'][:32];rows=[];unions=set()
+ for root in roots:
+  c=compile_ruleset_for_execution(deserialize_ruleset(Path(root['rules']).read_text(encoding='utf-8')));assert c.capture_disposition=='remove_from_game'and not c.pass_enabled and not c.declarations;assert not any(p.promotion_target_ids for p in c.piece_types);s=GameSession(c);assert {p.current_type_id for p in s.state.position.board if p is not None}=={'K','N','B'}
+  for target in(0,1):
+   lines=support(s.state.position,target);points=boundaries(lines);unions.update(points);rows.append(dict(family=root['family'],target=target,coefficients=sorted(lines),positive_crossings=[str(x)for x in points]))
+ assert sorted(unions)==[Fraction(1),Fraction(2)]
+ # Original exacttrees are retained, including terminalInfinitytokens.
+ trees=[json.loads(x)for x in Path('results/dev_aux/task2117/trees.jsonl').read_text().splitlines()];queries=[json.loads(x)for x in Path('results/dev_aux/task2117/queries.jsonl').read_text().splitlines()];checked=0
+ def val(t,r):
+  if 'terminal'in t:return t['terminal']
+  if 'coeff'in t:return t['coeff'][0]*r+t['coeff'][1]
+  return(max if t['max']else min)(val(t,r)for _,t in t['edges'])
+ pairs=[(Fraction(1,4),Fraction(1,2)),(Fraction(5,4),Fraction(7,4)),(Fraction(3),Fraction(4))]
+ for tr,q in zip(trees,queries):
+  for a,b in pairs:
+   scores=[]
+   for r in(a,b):
+    vv=[val(t,r)for _,t in tr['tree']['edges']];best=max(vv);scores.append([name for(name,_),v in zip(tr['tree']['edges'],vv)if v==best])
+   assert scores[0]==scores[1];checked+=1
+ result=dict(status='PASS_CAPTURE_CLOSURE_AFFINE_DECISION_CELL_DERIVATION',root_target_cases=len(rows),all_positive_leaf_order_crossings=['1','2'],open_cells=['(0,1)','(1,2)','(2,infinity)'],boundary_cells=['{1}','{2}'],original_grid_cell_coverage={'.25':'(0,1)','.5':'(0,1)','1':'{1}','2':'{2}','4':'(2,infinity)'},original_grid_missing_open_cell='(1,2)',existing_exact_tree_pair_checks=checked,seconds=time.perf_counter()-start,theorem='Within each open cell, every pair of possible ongoing materialleafvalues has fixedorder/equality; actualterminal +/-infinity/0 is priceindependent. Induction through min/max preserves best-actionsets and deterministicfixed-orderfirstchoice at ANY fixed completeddepth. Alpha-beta decisions/traversal also preserve under exact comparison and fixednodecutoffs; separate softwarecheck pending. No uniquepricepointidentifiability insidecell. Capture-only staticinventoryprecondition required; drops/promotion/ownershipchanges/extraactors canaddcrossings.',limits='Exactrationalmodel. Floatingoverflow/underflow or near-boundaryrounding outsidequalifiedtest. Wallcutoffs/load/completion maydiffer; proofbudget/admission/cursor canhave wallvariability. Not wholepolicyW-L equivalence or a recommendationtofitmissingcell. Oldgrid/resultsremainfrozen.')
+ (OUT/'inventory-coefficients.json').write_text(json.dumps(rows,indent=2),encoding='utf-8');(OUT/'derivation.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result))
+if __name__=='__main__':run()

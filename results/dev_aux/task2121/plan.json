@@ -1,0 +1,27 @@
+{
+  "question": "Can a fixed actual opponent-WIN certificate distinguish all rootchild choices of diagnosed material-tie failures without unknown-as-draw?",
+  "selection": "AlllegalchildrenofexposedTRAINfreshroots12and30 (materialdepth2firstchoicewrongforALLpositiveprices), plusroot11ownWINpositivecontrol. No candidatesuccessfilter/newrootselection.",
+  "proof_nodes": 1024,
+  "proof_seconds": 1.5,
+  "proof_depth": 64,
+  "verification_nodes": 65536,
+  "verification_seconds": 2.0,
+  "one_cap_seconds": 180,
+  "providers": [
+    "originalPN",
+    "rank_certificate"
+  ],
+  "scope": "Feasibilityonly: allunknownretained, nochildactualgame/normalpolicyfilter/defaultchange, no reward. ExactfreshchildpositionWDLdiagnostic not arbitraryhistoryWDL.",
+  "pins": {
+    "results\\dev_aux\\task2117\\queries.jsonl": "5c4d2922ff9dfe915f35d14996bad3950506bc9cd15eb5dc010f72cb110f0722",
+    "results\\dev_aux\\task2086\\rank_certificate.py": "de60e498ce00d859af9b21622c9a95aebac8d8cb8f24ba0bb84c962079e9ed5d",
+    "scripts\\generic_session_win_proof_batch_pn.py": "1842e1cb266649d7eaeece05c91a0a5698470e3340ea13c54c6ba2648cc44f90"
+  },
+  "planned_total_queries": 16,
+  "total_proof_node_allowance": 16384,
+  "total_proof_wall_allowance": 24,
+  "total_single_verifier_node_allowance": 1048576,
+  "total_single_verifier_wall_allowance": 32,
+  "cursor_reverification": "Paidsecondverificationseparatelyrecorded; actualpathsteps<=64/certificate. Original180capincludesallloading/query/checks/paths.",
+  "late_prequery_dot_adoption": "Restrict hypotheticalselectiontooriginaltopscoreties. For eachprovider rejectonlyindependentlyverifiedopponentWINchildren; firstunrejectedtie selected. Ifallrejected normalfallback andflag, neverreturnnolegalaction. Qualifiednegativegraph no_win mayposthocconfirmalternativeopponentnonwin; notselectormaterial/reward. Root11separateownWINcontrol."
+}

@@ -1,0 +1,144 @@
+{
+  "index": 56871,
+  "board": [
+    ".",
+    "K",
+    "b",
+    "N",
+    "n",
+    "B",
+    "k",
+    ".",
+    ".",
+    0
+  ],
+  "reported": {
+    "index": 56871,
+    "board": [
+      ".",
+      "K",
+      "b",
+      "N",
+      "n",
+      "B",
+      "k",
+      ".",
+      ".",
+      0
+    ],
+    "positional_label": "DRAW",
+    "rank": null,
+    "nonflat": false,
+    "price_sensitive_top_sets": true,
+    "price_sensitive_first": false,
+    "no_positive_price_any_top_optimal": false,
+    "no_positive_price_all_top_optimal": false,
+    "no_positive_price_first_optimal": false,
+    "positive_crossings": [
+      "2"
+    ]
+  },
+  "recomputed": {
+    "price_sensitive_top_sets": true,
+    "price_sensitive_first": true,
+    "no_positive_price_any_top_optimal": false,
+    "no_positive_price_all_top_optimal": false,
+    "no_positive_price_first_optimal": false
+  },
+  "root_actions": [
+    [
+      "a2c1",
+      [
+        {
+          "terminal": 0
+        }
+      ]
+    ],
+    [
+      "a2c3",
+      [
+        {
+          "terminal": 0
+        }
+      ]
+    ],
+    [
+      "b1a1",
+      [
+        {
+          "terminal": 0
+        }
+      ]
+    ],
+    [
+      "b1c1",
+      [
+        {
+          "coeff": [
+            -1,
+            1
+          ]
+        }
+      ]
+    ],
+    [
+      "c2b3",
+      [
+        {
+          "coeff": [
+            0,
+            -1
+          ]
+        }
+      ]
+    ]
+  ],
+  "q": {
+    "a2c1": 0,
+    "a2c3": 0,
+    "b1a1": 0,
+    "b1c1": 0,
+    "c2b3": 0
+  },
+  "first_actions": [
+    "b1c1",
+    "b1c1",
+    "b1c1",
+    "a2c1",
+    "a2c1",
+    "a2c1",
+    "a2c1"
+  ],
+  "sets": [
+    [
+      "b1c1"
+    ],
+    [
+      "b1c1"
+    ],
+    [
+      "b1c1"
+    ],
+    [
+      "a2c1",
+      "a2c3",
+      "b1a1",
+      "b1c1"
+    ],
+    [
+      "a2c1",
+      "a2c3",
+      "b1a1"
+    ],
+    [
+      "a2c1",
+      "a2c3",
+      "b1a1"
+    ],
+    [
+      "a2c1",
+      "a2c3",
+      "b1a1"
+    ]
+  ]
+}

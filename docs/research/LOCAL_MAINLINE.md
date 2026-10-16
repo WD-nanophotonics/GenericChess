@@ -1,41 +1,30 @@
-# DEV_AUX current mainline — segment71,2026-10-16
+# DEV_AUX current mainline - segment72,2026-10-16
 
-Science OPEN; own sidemission/PUBLIC, PRIMARYreadonly. Currentgrant/reasons:
-AGENTS.md. Checkedprojectcontentauthorized; rawaccount/credentialoriginalsignored.
-
-Decision/reason: implementcompletepolicytrueW-L, notquantityproxy. 2088new24root
-qualification192queries yields2originalPNvs19compositeproofs; all21existing
-certificatesverified/cursoractuallymates311moves. Scopefinite4x4teacher, not
-fullGenericMateSolver. 2091fullhistorytree recovers10coarseguardfailures;
-2101genuineoldhistorymakescanonicaltableWINactionrepetitionDRAW/UNKNOWN.
-Never inferarbitraryhistoryWINfrompositiontable orUNKNOWNasDRAW.
-
-2092COMPLETE144games/8190moves, sameproof/fixedopponent/three2082evaluators:
-all10W10L28D, pairedgains0. All144matchcanonicalrootWDL;7858normalcalls only
-12nonflatpositionfrontiers/noWDLerrors. LowerlabelMSEisnotpolicybenefit;
-thissampleleaveslittleobservedheadroom. No moreexposedfeature/pricegrid.
-
-Newcrediblebotharmedteachers: 3x3BN/bn allcaptureclosure83992states/210800
-edges;4x4BN-vsB/color-swap1221776/6484912, maxrank45. Bothindependently
-coverage/Bellman/historyaudited. Full4x4prepaidbuild/solve/audit593.56s,
-notfree. 2108/9closed<=4view244080/1212976 deriveswithoutCorecensusrerun;
-independentfrontier/coverage/rank/58actualpathsauditPASS, maxrank28.
-
-2105NEWfixed<=4trigger/PN32/.02s/normal512depth2/.02s completes368physical
-(416logicalexplicitidentityreuses)/7294moves in294.63s. ActualW-LTRAINonly
-selects.25from.25 and2from4; DEV16familygainsboth0. Notstableuniversalprices,
-notimprovement overunmeasuredDEVinitial4, notpooledwithotherresourcecontexts.
-2100oldPN1024/depth3closedoriginal2400cap:31physical/34logicalTRAIN,
-30actualDRAW+1UNKNOWN/286TRAINlogicalunrun, noDEV/selector. Noextend/restart. Old2063closed48finished+1U/47unrun.
-
-Dot1792127562.477589 read40acold2086+newinlineonly/no71execution. Adopt:
-triggerchangesproofservice, NOTposttriggernormaltheta; wholepolicygainonly.
-Firstentryaudit keepsall368physicalroots:362entered/6never,6228postentry
-normal/fallbacks.12colddepth2pricecontrols foundnodivergence (9ratioinactive),
-notproofstageisolation. No changingfrozenpolicy peradvice.
-
-NEXT: source-onlyrestore/publicdeliverycomplete. Freeze8closed2100TRAINprefix
-negative5piecefilterscheduling controls atunchangedPN/normalbudgets before
-anymoretraining. Priceidentifiabilitydiagnostics mustkeepBANDNpresent and
-useexistingTRAINonly; noautomaticNN/grid, newfulltrainingoroldcaprestart.
-PRIMARYintegration/defaults/UI untouched; scope/negative/partialrecordsretained.
+ScienceOPEN; ownsidemission/PUBLIC, PRIMARYreadonly. Grants/reasons:AGENTS.md.
+Decision/reason: implementfixedproof+actualW-L, butfirstrepairmeasuredcontroller
+cost andobservednochoiceincompleteness. No quantity/UNKNOWNasDRAW.
+2130actualstopcallback91%normal/96%PNwall;2131memoizesJSONdecodingONLYwhile
+EVERYpollfreshreads6files/order.8realfiletests inclsame-mtimebytechangePASS.
+2132samebudgetnormaldepth3completions0->5/8;PNnodes638->1585. Notmachineexclusive
+speed/strength.2133root12losing->drawingchoice via completeddepth3;otherdefects
+remain, opponentproofbudgetdidnotrejectfirstbadties. No safetypatchadopted.
+2120newfixedORIGINALPNfoe/candidate-onlyfactor closes32logical28physical1406moves
+1561s/allDRAW;4familygains0. Teacher593.56sprepaid retained. No oldcapextension.
+2128newbotharmed3x3fixedtrigger closes64logical48physical451moves18.035s;
+17portablecertsverified, physical31D9W8L. Price.25gainmean-.0625vs1, notlearner.
+2134NEWtrueW-LcelltrainingclosesPARTIAL367logical341physical4608moves101s;
+301physicalD21W18L1UNKNOWN,81TRAINlogicalunrun/noSelector/noDEV. Failednormal
+nochoice-timeoutprefix17 preserved; exactfaileddecisionreceiptunavailable.
+2136legalfallbackpaidintotaldeadline fixesclasswithoutstop/terminal/foreign
+bypass;4regressionsPASS.2137SEPARATEdiagnosticnewfallback+existingcert mates2plies,
+NOToldexperimentcompletion/reward; original2134UNKNOWNremains.
+Finitepricecells:oneN/twoBcrossings1/2/.25-.5equivalent,576node-onlyqueriesPASS.
+168actualtrees14180nodeschecked. DRAW0crossingomissionfoundindependently;
+2126correctsSAMEdata, oldclaimsretain/superseded.9800rootpopulationfirstsensitive
+3228(notold3223),173unfixablefirsts;2127literalall+64publicPASS. No labelholdout.
+Dot1792132366.499399 read98f2086source+inline72/no72execution; fixedties/unknown/
+paidcostadopted. PRIMARY1bc6408 independentderivedfeaturecost/failuresreadonly;
+AUXstopcostdiagnosedOWNtransportonly, notclaimPRIMARYaffected.
+NEXT:freshsmallprotocolwith2131+2136/fixedfoe/budget/cells, new structuralinputs,
+journalfaileddecision; neverfill2134 orretuneexposedDEV. Genericdrop/promotion/
+auxhistoryfallbackqualificationusefulbackup; no mainline/default/UI takeover.

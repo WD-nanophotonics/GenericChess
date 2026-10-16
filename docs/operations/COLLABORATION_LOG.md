@@ -1837,3 +1837,26 @@ PUBLICscience2c82be1baffbceed6ade021fcfc99186cb61d556 fullremoteSHA/19anonymous
 files incl6reviewedarchiveblobsexactGitbytesPASS. Fixed evidence sentonce
 1792130968.786369 torelatedthread. No newDot71source-read/executionconfirmed.
 Finalmetadatadelivery followswithoutreopeningresearchorresettinganycap.
+
+
+## DEV_AUX72 —2026-10-16, science OPEN
+
+DEV_AUX independently fixes measured stop JSON decoding cost without stale reads,
+and repairs no-choice timeouts with a paid legal fallback. Complete fixed-opponent
+control2120 is all draws; new3x3 pilot has actual terminals, but the subsequent
+2134 learner remains partial/no selector/noDEV. Its UNKNOWN is preserved despite
+a separate two-ply diagnostic mate. DRAW0 affine-partition omission is caught,
+retained and corrected; no more exposed-grid fitting. See SEGMENT_20261016_72.md.
+
+PRIMARY read-only memo/revision1bc6408c81ae9b6fbc6b74db1d564ad554a3b364 records
+its separate derived-feature input cost/failure work (392 queries,32 acquisition
+walks, no research fit). No auxiliary claim to have reproduced or changed that
+work. AUX controller overhead is diagnosed in its own task109 transport only;
+it is not evidence PRIMARY has the same bottleneck. Ordinary concurrency stays
+normal, no quiet window/extra worker or cross-checkout writes.
+
+Dot reply1792132366.499399 read public98f task2086 source and72 inline evidence,
+not72 implementation/execution. Adopt fixed first-unrejected material ties,
+UNKNOWN-not-safe and explicit total proof cost; new2133 finds no bad-first proof
+within declared caps, so no speculative selector is integrated. Delivery links
+will be supplied after actual full remote-SHA verification.

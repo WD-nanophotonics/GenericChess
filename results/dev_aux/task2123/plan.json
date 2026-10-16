@@ -1,0 +1,27 @@
+{
+  "question": "Does existing <=4trigger retain actualnormalpriceactiondependence in the first exhaustive TRAIN witness?",
+  "selection": "Unique firstposttriggercase40/family11 from2117 with differentpositivepricefirstactions atdepth2; posthocdiagnostic, NOTnewunexposedcase or W-Lgain.",
+  "ratios": [
+    0.25,
+    1.0,
+    2.0,
+    2.0,
+    1.0,
+    0.25
+  ],
+  "normal_nodes": 512,
+  "normal_depth": 2,
+  "normal_seconds": 0.25,
+  "proof_nodes": 1024,
+  "proof_seconds": 0.2,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.2,
+  "total_seconds": 0.75,
+  "one_cap_seconds": 90,
+  "scope": "Sameactualhistory/target/coldfullpolicy, onlypricechanges. ExactpositionchildWDLall0, soexpect actiondependence only, no strengthclaim. No newgame/oldpolicychange.",
+  "pins": {
+    "results\\dev_aux\\task2117\\cases-frozen-before-labels.json": "72df7bae85440ad6b9b51b1e9b46ae54ee1a94677cbee86d9bd1bf55ca1673ed",
+    "results\\dev_aux\\task2117\\queries.jsonl": "5c4d2922ff9dfe915f35d14996bad3950506bc9cd15eb5dc010f72cb110f0722",
+    "results\\dev_aux\\task2105\\provider.py": "98329fcf9129ad55b9e8f218725a1af22bf5cb2de6535925985288af93ffa081"
+  }
+}
