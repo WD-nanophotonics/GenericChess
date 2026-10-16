@@ -27,9 +27,14 @@ actual qualification runner separately monitored live project stops. The origina
 producers are supplied for provenance; do not rerun a frozen study and replace
 its stored outcome or call it original-clock reproduction.
 
-To inspect the PRIVATE prototype separately, create a disposable source copy and
-apply prototype_v2_overlay/ there. Its controls.py chooses that separate package;
-it is not enabled in normal source/. Native still declines no-progress/pass.
+To inspect the PRIVATE prototype separately, copy the normal generic_chess/
+package into source/.local_agent/no-progress-prototype-20261017/source/generic_chess/
+in the disposable extraction, then overlay prototype_v2_overlay/generic_chess/
+onto that copy. Keep studies/no-progress-prototype-20261017/controls.py at
+source/.local_agent/no-progress-prototype-20261017/controls.py and run it from
+source/. It asserts that it imports the separate package. Do not overlay normal
+source/generic_chess/ or your live checkout. Native still declines no-progress/pass.
+Use the Python dependencies declared in pyproject.toml for these replay scripts.
 
 Qualification: source-only Native rebuild;136selected tests;12851complete state
 checks/12191exact arm children/588PV/288caller receipts;72feature controls. Separate
