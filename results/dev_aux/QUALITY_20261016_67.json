@@ -1,5 +1,5 @@
 {
-  "status": "PASS_RESEARCH_REVIEW_PENDING_DELIVERY",
+  "status": "PASS_SAFE_CHECKPOINT_FINISH_ACCEPTED",
   "science": "OPEN",
   "checks": {
     "actual_main_games": 1344,
@@ -35,6 +35,34 @@
     "Old66checkpointtiecount7correctedto6separately/no oldresultrewrite"
   ],
   "next_work": "2015new32inputs/16TRAIN16DEV/coarseFULLactualWL/max512games/forecast3019.7s/whole3500stop/0fitness; requalifysource/compiledrules/Native beforeONErun",
-  "delivery": "PendingreviewedGitpush/exactremoteSHA/anonymousfixedrevision; do notclaimalreadydelivered",
-  "time": "2026-10-16T00:12:09.119805+00:00"
+  "delivery": {
+    "status": "SCIENCE_REMOTE_ANONYMOUS_VERIFIED",
+    "science_revision": "58755e50cc5322ed11dded993d5ce03696c95799",
+    "remote_full_sha": "58755e50cc5322ed11dded993d5ce03696c95799",
+    "anonymous_files": 21,
+    "archive_payloads_crc_sha": 727,
+    "repository": "PUBLIC",
+    "visibility_changed": false,
+    "consultation": {
+      "request_id": "GC-SLACK-20261016-091525-c8b98583",
+      "root_ts": "1792109817.230519",
+      "url": "https://nanomelon.slack.com/archives/C0C6L21UU20/p1792109817230519",
+      "exact_payload_readback": true,
+      "reply_ts": "1792109919.855059",
+      "Dot_tier": "SOURCE_READ_ONLY/noexperimentalexecution",
+      "decision": "Adoptliveness/nooffboard/fullreplaypremises; no rewardadoption"
+    },
+    "final_receipt_commit": "Pendingactualsessionfinish/finalfullremoteverification; allsciencepayloads unchanged"
+  },
+  "time": "2026-10-16T00:12:09.119805+00:00",
+  "late_repairs": "OS206rawsave split/sameexactoriginal; prememo>2048assertfixedbeforefinish; no science/archivechanges",
+  "session": {
+    "id": "72c414f8-9084-41a9-8b42-ffa33031b31d",
+    "started_at": "2026-10-15T23:00:27.939517+00:00",
+    "ended_at": "2026-10-16T00:23:39.097214+00:00",
+    "elapsed_minutes": 83.186,
+    "reason": "safe_checkpoint",
+    "actual_finish_accepted": true
+  },
+  "advisor": "Source-read58755/noexecution; liveness/fullrecordpremisesadopted/notnewreward"
 }

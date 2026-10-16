@@ -335,3 +335,5 @@ still says consult/obtain necessity assessment before a run expected>onehour;
 keep that gate until directly superseded. Current/planned short runs are unaffected.
 Do not pause, create approval queues or run a long batch merely for this report.
 No changed fees/access/visibility/writer boundary or90minute patrol follows it.
+
+Closing67 DOTreply1792109919.855059 source-read58755/noexecution: adopt legalprogress/nooffboardpayoff/fullrecordreplay premises forfuturezero-returnproposal; no newrewardadoption. None/cancelmayleaveUNKNOWN, notactualDRAW. Next2015actualterminalpilotunblocked. See ADVISOR_20261016_67.json.

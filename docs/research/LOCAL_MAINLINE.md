@@ -35,3 +35,5 @@ Nativecallback.03669s/engine3ms/solelegalc4d4; peripheralgapunattributed, retain
 notstrictperstepwall/basisforrerun. PRIMARY33af OWNER_MESSAGE_READ_ONLY reports
 AUX66reportread only/noexecution/adoption. Evidence: SEGMENT_20261016_67.md,
 tasks1998/2001/2004/2006/2010/2012-2015. Alloldcaps/sensitiveoriginals preserved.
+
+Closing67 DOTreply1792109919.855059 source-read58755/noexecution: adopt legalprogress/nooffboardpayoff/fullrecordreplay premises forfuturezero-returnproposal; no newrewardadoption. None/cancelmayleaveUNKNOWN, notactualDRAW. Next2015actualterminalpilotunblocked. See ADVISOR_20261016_67.json.
