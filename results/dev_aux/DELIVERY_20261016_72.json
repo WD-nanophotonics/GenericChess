@@ -1,0 +1,123 @@
+{
+  "status": "VERIFIED_PUBLIC_SCIENCE_DELIVERY_AND_SAFE_SEGMENT_END",
+  "science_revision": "352ce9933200aeaf83c24cb579d041f4fd461a44",
+  "source_remote_revision": "352ce9933200aeaf83c24cb579d041f4fd461a44",
+  "visibility": "PUBLIC",
+  "anonymous_exact_files": 12,
+  "anonymous_file_checks": [
+    {
+      "path": "AGENTS.md",
+      "anonymous_http": 200,
+      "bytes": 24691,
+      "sha256": "2b841f32cfcf1a2d0513c1810ab257fbbf3708bceb807ea00d5d94a7de9d140d"
+    },
+    {
+      "path": "docs/research/LOCAL_MAINLINE.md",
+      "anonymous_http": 200,
+      "bytes": 2222,
+      "sha256": "59bc5a904efd068de8fd688971180dea4bcb748888b23bcacf9940308b846afc"
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "anonymous_http": 200,
+      "bytes": 193271,
+      "sha256": "3d01c0f8e4aa6181ddb08a0eccd6601514efc14e51a07aa5a59337de5771d795"
+    },
+    {
+      "path": "results/dev_aux/SEGMENT_20261016_72.md",
+      "anonymous_http": 200,
+      "bytes": 6782,
+      "sha256": "1627e63bf3580b06bd76fc26e47987cb50541025af0c6bc39f741216d4cc7b22"
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261016_72.md",
+      "anonymous_http": 200,
+      "bytes": 2698,
+      "sha256": "ba092139b146b2a5412a582520912fc28d2b0974b4ec7cdc0379a367e3ab0192"
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261016_72.json",
+      "anonymous_http": 200,
+      "bytes": 34861,
+      "sha256": "24a43815b2e66e30ce86ca8833c5eb5066da9cf2cf9c51a2b995ff818aa0b59e"
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_72.zip",
+      "anonymous_http": 200,
+      "bytes": 984263,
+      "sha256": "ac0809fee0d3f2a4eac0b7b85650533dfb6855b4601fb30ee04ffb7371e591d5"
+    },
+    {
+      "path": "results/dev_aux/task2131/stop_reader.py",
+      "anonymous_http": 200,
+      "bytes": 1507,
+      "sha256": "2058e0ed40bb44f2b4eda330ead708b4fb1519a0b2763c64d7261291b4d1bf1b"
+    },
+    {
+      "path": "results/dev_aux/task2136/legal_fallback.py",
+      "anonymous_http": 200,
+      "bytes": 2952,
+      "sha256": "23e2d1092b86bf113985e07ce8a3123af95bdd73e14c54b8966a8b540f98583a"
+    },
+    {
+      "path": "results/dev_aux/task2134/completion.json",
+      "anonymous_http": 200,
+      "bytes": 801,
+      "sha256": "43db0dd79f94fb06f6b8d5b52011e9bb51fe49e1a7bb986a717f02f374207dcd"
+    },
+    {
+      "path": "results/dev_aux/task2138/restore-receipt.json",
+      "anonymous_http": 200,
+      "bytes": 1492,
+      "sha256": "7add5b9e364f960490d7d3e859bc01232c0ace581c99efb335b072f8dcaac5f7"
+    },
+    {
+      "path": "results/dev_aux/task2126/tree-correction.json",
+      "anonymous_http": 200,
+      "bytes": 8073,
+      "sha256": "194d93fcbdf550d50f3e7df2a8f213bf0e7de334522735548edca36774f9ed2d"
+    }
+  ],
+  "segment": {
+    "number": 72,
+    "id": "6ab31b8e-9044-44ea-9989-862dc187fe7e",
+    "started_at": "2026-10-16T06:20:40.361078+00:00",
+    "ended_at": "2026-10-16T07:36:11.108813+00:00",
+    "elapsed_minutes": 75.512,
+    "reason": "safe_checkpoint",
+    "research_checkpoints": 6,
+    "duration_gate_passed": true,
+    "scientific_completion": false
+  },
+  "source_only_replay": {
+    "archives": 9,
+    "payload_checks": 1550,
+    "unique_paths": 1380,
+    "distinct_tests": 14,
+    "new_PN_training_or_study_games": 0
+  },
+  "science_limits": [
+    "2134CLOSED367logical341physical/1UNKNOWN/noSelector/noDEV/81TRAINunrun",
+    "No stablepricebenefit orfullgenerated-domainmateSolver established",
+    "DRAW0bugandfailedanalysispreserved/corrected; exactfailednormaldecisionreceiptunavailable",
+    "Stopreaderfresh6bytesEVERYpoll; JSONdecodecacheonly, no stop/policyboundarybypass",
+    "Newlegalfallbackchangespolicy;2137diagnosticmateNOTimputedtooldUNKNOWN"
+  ],
+  "slack": {
+    "request_id": "GC-SLACK-20261016-153021-ad03b7dd",
+    "thread": "1792132246.976859",
+    "advisor_reply": "1792132366.499399",
+    "result_delivered": "1792135992.634089",
+    "read_execution_scope": "Dotread98f2086source+72inlineonly/no72sourceexecutioninferred"
+  },
+  "late_next_inputs": {
+    "task": 2139,
+    "status": "INPUT_ONLY_48_ROOTS_ZERO_FIT_GAME_PN",
+    "attempts": 283,
+    "excluded_prior_actual_positions": 5448,
+    "in_immutable72delta": false,
+    "no_new_session_or_cap_started": true
+  },
+  "quality_review": "Actualcode/data/index/archivecontents/partialfailure/correction/source-onlytestsreviewed; sessionvalidatorstructure/timealoneisnotscientificquality.",
+  "raw_private_records": "ExactSlack/accountoriginalsignoredandnotpublished"
+}
