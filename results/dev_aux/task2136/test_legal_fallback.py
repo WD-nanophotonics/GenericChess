@@ -26,3 +26,12 @@ def test_no_total_budget_cannot_invent_unvalidated_fallback():
 
 def test_foreign_rules_no_fallback_even_when_parent_exits_for_zero_normal_time():
  c,s=observed();other=compile_ruleset_for_execution(deserialize_ruleset(Path('results/dev_aux/task2134/rules-0.json').read_text(encoding='utf-8')));assert c.ruleset_fingerprint!=other.ruleset_fingerprint;r=player(LegalFallbackPhasePlayer,other).choose(s,max_nodes=64,seconds=.75);assert r.choice is None
+
+
+def test_admission_cancel_pulse_is_latched_before_parent_or_fallback():
+ c,s=observed();calls=0
+ def pulse():
+  nonlocal calls
+  calls+=1
+  return calls==3
+ r=player(LegalFallbackPhasePlayer,c).choose(s,max_nodes=64,seconds=.75,cancel=pulse);assert r.choice is None and r.exit_cause=='cancelled'

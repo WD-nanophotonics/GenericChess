@@ -12,6 +12,7 @@ class LegalFallbackPhasePlayer(SessionCachedPhasePlayer):
         began = _clock()
         original_record, original_state, original_result = session.to_record(), session.state, session.result
         fallback = None
+        admission_cancelled = False
         admission = _Budget(max_nodes, seconds, cancel, _clock)
         try:
             admission.poll()
@@ -24,16 +25,17 @@ class LegalFallbackPhasePlayer(SessionCachedPhasePlayer):
                     fallback = SessionChoice('ACTION', action=legal[0])
                 admission.poll()
         except _Interrupted:
-            pass  # Parent preserves cancellation vs deadline in its receipt.
+            admission_cancelled = admission.reason == 'cancelled'
         except (ValueError, NotImplementedError):
             fallback = None
         paid_admission = _clock() - began
         try:
             decision = super().choose(session, max_nodes=max_nodes,
-                seconds=max(0., seconds-paid_admission), cancel=cancel,
+                seconds=max(0., seconds-paid_admission),
+                cancel=(lambda: True) if admission_cancelled else cancel,
                 allow_new_proof=allow_new_proof, _clock=_clock)
             # A stop always beats fallback, including a stop after parent return.
-            cancelled = cancel is not None and cancel()
+            cancelled = admission_cancelled or (cancel is not None and cancel())
             limits = tuple((key, seconds if key == 'total_seconds' else value)
                            for key, value in decision.phase_limits)
             limits += (('fallback_admission_seconds', paid_admission),)
