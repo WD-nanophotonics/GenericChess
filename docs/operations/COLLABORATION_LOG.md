@@ -3357,3 +3357,15 @@ PUBLIC checks. Exact private originals kept; no rawSlack/account/privatebinary/
 personalhostpath outgoing. Noquietwindow, unrelatedprocessmonitor orworkers.
 Unresolved actualleaf qualification, coldcause, widecompletion, price/evaluator
 utility. Science OPEN.
+
+
+Closing-read addendum after the archive seal: AUX75 root1792147391.468569 and
+completeDot reply1792147500.660269 were read inline only. Dot now reports reading
+fixed20da2c28 Core terminal/semantic legal-transition-terminal sections; this
+supersedes the earlier shorthand7ae source scope, without upgrading75 code review
+or execution. Conditional finite nonrepeating WIN-certificate lifting is not an
+unconditional Session quotient. The proposed past-count counterexample needs a
+future NONterminal node because mate/stalemate have priority. PRIMARY adopts no
+history quotient/prover code and changes no delivered index or frozen result.
+Exact closing scope: data/closing_peer_scope_20261016.json. The sealed239-member
+archive and prior8810dcf2 technical evidence remain unchanged.
