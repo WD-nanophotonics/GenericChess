@@ -111,9 +111,10 @@ work for science. Development continuation follows the Budget section below.
 ## Budget
 
 User2026-10-09 permits the Agent to initiate appropriate small local training
-without asking for approval each time. For any single project run estimated to
-take more than one hour, first consult dot on whether it is genuinely necessary
-and obtain that assessment before launching. Briefly record the decision question,
+without asking for approval each time. The user decision2026-10-15 20:31 JST,
+directly confirmed2026-10-17, replaces the old one-hour threshold: estimated runs
+under two hours need no prior review; runs expected to reach two hours
+(>=120minutes) first receive Dot's necessity assessment before launching. Briefly record the decision question,
 expected information, runtime estimate and cheaper alternatives. This covers
 training and other project runs; the60-90minute research segment is a different
 unit. Do not artificially split one long run to bypass consultation. If dot has

@@ -68,8 +68,10 @@ separately; do not fabricate strict imports or turn them into a research gate.
 
 Keep frozen source/data/conditions and actual backend/fallback/evaluator visible.
 Cross-machine timing is descriptive, not a controlled speedup claim. Small
-interruptible runs are allowed; a single run expected above one hour first
-gets Dot's necessity assessment. Stop flags, human-data boundaries, machine
+interruptible runs estimated under two hours need no prior review. A single run
+expected to reach two hours (>=120minutes) first gets Dot's necessity assessment,
+per user decision2026-10-15 20:31 JST/direct confirmation2026-10-17. This replaces
+the old one-hour gate, without extending any frozen experiment cap. Stop flags, human-data boundaries, machine
 safety and no uncontrolled jobs remain. A result does not automatically merge
 code or change q/evaluator/UI defaults.
 

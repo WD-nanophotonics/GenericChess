@@ -49,8 +49,11 @@ first later heartbeat handles that day once, no missed-day catchup.
 
 Ordinary concurrent project computation is allowed under the latest user update.
 Keep checkout and computation-state boundaries; document measurement conditions
-without requesting a quiet window. A single run estimated above one hour first gets
-Dot's necessity assessment, with cheaper alternatives and cost recorded.
+without requesting a quiet window. Under the user decision2026-10-15 20:31 JST,
+directly confirmed2026-10-17, runs estimated under two hours need no prior review.
+A single run expected to reach two hours (>=120minutes) first receives Dot's
+necessity assessment, with cheaper alternatives and cost recorded. This replaces
+the one-hour gate; research segments remain60-90minutes and old frozen caps stand.
 Do not split to avoid consultation; no extra workers, fees or security bypass.
 Review/test own results, commit and push only sidemission and verify full remote
 SHA. Do not use inherited sandbox-only publish/promote. Exclude private inputs,

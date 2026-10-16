@@ -102,8 +102,10 @@ Static rule-derived tables remain candidates and cheap baselines, not a required
 predecessor to every evaluation route. Learning/frozen constants and small state
 interaction evaluators may receive literature and low-cost feasibility review.
 User2026-10-09 authorizes appropriate small local training without per-run user
-approval. Before any single project run expected to exceed one hour, consult dot
-and obtain its assessment that the run is genuinely necessary; record the
+approval. User decision2026-10-15 20:31 JST, directly confirmed2026-10-17,
+supersedes the old one-hour gate: estimated runs UNDER TWO HOURS need no prior
+review; a run expected to reach TWO HOURS (>=120minutes) first goes to Dot for
+necessity assessment before launch. Record the
 decision question, estimated cost and cheaper alternatives. This applies to
 training and other project runs, not the60-90minute Agent research segment.
 If confirmation is pending, continue independent shorter work. Do not split a
@@ -311,15 +313,18 @@ anonymous repository API and segment56 raw report both HTTP200. No visibility
 mutation was necessary. Available DEV_AUX local command records contained no
 visibility-change command; this does not identify a historical settings actor.
 
-## Reported advisor window change —2026-10-15 closing59
+## Current autonomous experiment window — directly confirmed2026-10-17
 
-Dot root1792063970.985749 reports a two-hour autonomous experiment window from
-a separate user conversation. This is recorded as advisor-origin transmittal,
-not a new direct user instruction in this window. Latest direct heartbeat here
-still says consult/obtain necessity assessment before a run expected>onehour;
-keep that gate until directly superseded. Current/planned short runs are unaffected.
-Do not pause, create approval queues or run a long batch merely for this report.
-No changed fees/access/visibility/writer boundary or90minute patrol follows it.
+The user confirms their2026-10-15 20:31 JST decision relayed by Dot at
+root1792063970.985749: estimated runs under two hours need no prior review;
+expected runs of two hours or more first receive Dot's necessity assessment.
+This replaces the one-hour threshold in policy, manuals, memo and own heartbeat.
+Closing59 had retained the stricter threshold because the relay was treated as
+advisor-origin rather than user authority. That interpretation is superseded;
+it must not revive an extra approval gate. Earlier records remain in Git/history.
+Experiment runtime is distinct from the60-90minute research segment. Existing
+frozen caps, stops, resource/fee limits, PUBLIC and writer boundaries remain.
+PRIMARY applies its own correction; DEV_AUX does not edit its checkout/schedule.
 
 Closing67 DOTreply1792109919.855059 source-read58755/noexecution: adopt legalprogress/nooffboardpayoff/fullrecordreplay premises forfuturezero-returnproposal; no newrewardadoption. None/cancelmayleaveUNKNOWN, notactualDRAW. Next2015actualterminalpilotunblocked. See ADVISOR_20261016_67.json.
 

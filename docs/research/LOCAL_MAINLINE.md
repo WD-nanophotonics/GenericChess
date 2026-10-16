@@ -1,3 +1,13 @@
+## Current experiment-window correction2026-10-17
+
+User directly confirms the2026-10-15 20:31 JST decision relayed by Dot:
+estimated experiment <2hours needs no prior review; >=2hours first requires
+Dot necessity assessment. Earlier retention of the stricter one-hour instruction
+is superseded, not a pending conflict or extra approval queue. No old frozen cap
+is extended;60-90minute research cadence and all scope/resource boundaries stand.
+Bounded policy repair only; closed78 clock/results remain unchanged. PRIMARY
+policy was checked read-only and still contains >1hour; its owner applies it.
+
 # DEV_AUX current mainline -78,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. Latestuser governs.

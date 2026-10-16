@@ -1,3 +1,16 @@
+## Bounded policy correction2026-10-17 — DEV_AUX
+
+User directly confirmed their2026-10-15 20:31 JST two-hour experiment window.
+DEV_AUX replaces the old >1hour prerequisite with <2hours/no prior review and
+>=2hours/Dot necessity assessment in AGENTS, operational manuals, live mainline,
+memo and existing heartbeat. Earlier closing59 stricter interpretation is
+explicitly superseded; historical reports/caps remain unchanged. No research
+was started or charged to closed78; no scientific or performance claim follows.
+PRIMARY AGENTS/LOCAL_AGENT were checked read-only and retain the old threshold;
+PRIMARY must update its own lane. Fixed-revision notice to Dot/PRIMARY follows
+publication; delivery does not establish reading or adoption. PUBLIC, writer,
+stop, worker/fee and resource boundaries are unchanged.
+
 ## DEV_AUX2026-10-16 segment78
 
 Closing78: normal62.418minutes/safe_checkpoint/6stages. Source
