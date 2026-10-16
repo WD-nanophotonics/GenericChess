@@ -250,24 +250,36 @@ This diagnoses samplequota, not dominantcompute. Fullvalidation-census cost is
 not optimizedfilter cost. No existing root is discarded and no generatorfilter
 adopted; any futureconditional-root filter needs a new before-input protocol.
 
-Current next question is whether the unchanged fullpath TT misses useful finite
-cross-order reuse. A PRIVATE64call4096slot shadow leaves all results/history/TT
-unchanged:1,047,424visits,12,048candidate-safe NONLEAF and122,070leaf observations,
-769,878replacements. Counts are a bounded lower-bound sample, not actual saved
-work or cache correctness. Candidate condition M+ceil(remainingD/2)<repeatlimit,
-q0/exact coherent history/noautomatic is source-supported, NOT proven generic
-state equivalence. All physical/auxiliary/ply-sensitive declaration inputs matter.
+Current finite-context result:22actual paired histories/64capture controls
+qualify testing the former shadow opportunity. Guarded q0/static/noautomatic
+reuse preserves completed objectives in96three-arm calls,384fresh slots,
+79joint Core objectives and30actual write/probe namespace controls. Local
+completed-D4 cost improves, but72frozen game slots (66actual/2517edges,2tail
+families) give14W16L1D17UNKNOWN versus14W14L20UNKNOWN: net-2/48, family interval
+crosses0. NO production TT/key/q/default/price/API/UI change. Prepared C/tests
+are historical unadopted provenance, not missing consent or recovery tasks.
+No unchanged retry solely for more hits/depth.
 
-Before one optional cache prototype, capture a REAL same-position/absolute-length/
-different-history pair from an existing wide input; replay both FULL records
-and test the small finite continuation. Keep all history and fallback routes,
-no score/key substitution by default, no duplicate AUX solver or mandatory WDL
-framework. Stop if concrete pair/guard evidence contradicts the premise.
-Source/results/limits: DEPTH_RETENTION_AND_CHECKED_AVAILABILITY_20261016.md.
-This supersedes the old0run demotion task, preserves all frozen observations and
-the search-first selection. AUX66fixed6c9533a report was read only; its pooled
-price/equal-proof results do not authorize copying its solver/learner or pooling
-work units. Science remains OPEN.
+Root ordering has adverse16board completion/cost;32raw-counter calls show up
+to~11.6x legal generation at equal131072visits. Canonical tie/PV authority stays.
+192leaf-only calls give essentially no useful savings, also not adopted.
+Full findings: FINITE_HISTORY_CONTEXT_AND_ROOT_ORDER_20261016.md. Old demotion
+task is closed; frozen evidence and search-first selection remain. Latest AUX67
+58755e50cc5322ed11dded993d5ce03696c95799 is REPORT_READ_ONLY, no final solver/
+learning execution/adoption. Zero-return proposal remains unadopted: legal
+executor progress/payoff assumptions and actual DRAW versus UNKNOWN stay distinct.
+
+Current next question: can simple root playability improve information per
+TOTAL cost under an explicitly changed sampling distribution? ALL56existing
+planned roots retain54actual/2tails; Native physical-one-step goal finds4wins/
+50without, .242s query caller excluding compile/engine/rootreplay. Corrected
+same1s Core control has48decidable matches/6UNKNOWN; original hot-loop disk
+polling mistake/censors remain. No filter deployed or oldroot relabeled.
+Before NEW conditional-mu sampling freeze raw/conditional protocols, attempts/
+seeds/cost, keep complete promotion/drop/aux/history and failures. Trivial-root
+quota is not automatically a compute bottleneck or a ban on unrestrictedmu.
+Begin a small charged raw-versus-conditional generator feasibility comparison;
+only a changed premise justifies another cache/price route. Science is OPEN.
 
 16normal/reconstruction-counter calls all non-time fields match: measured
 canonical sections are~1-2microseconds at the two testedq4hardstops, not their

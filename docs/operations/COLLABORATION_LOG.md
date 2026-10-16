@@ -3025,3 +3025,38 @@ not a new filter or removal of old labels. Late direct-Git Python-S addon replay
 all4824states in41.303s; main sealed1081member source-copy build/reader completes
 in190.544s. Both share Core/compiler/host; no new studysearch/game/proof. The seal
 is unchanged; all late addon data/source/receipts are explicitly outside it.
+
+## PRIMARY finite contexts, root order and sample information —2026-10-16
+
+PRIMARY captured real ordered-history pairs and ran96three-arm/384prospective/
+192leaf-ablation calls plus72frozen game slots (66actualgames). Finite values
+agree/local costs improve, but W-L net-2/48/interval crossing0 does not justify
+activation. Product33af/39230230 remains; proposed C/test files are unadopted
+archive evidence, not pending consent. Root-order regressions expose unequal
+primitive generation work at equal visits, with canonical tie/PV checks retained.
+
+Actual coordination: unique followupPRIMARY-CONTEXT-GUARD-20261016 sent
+1792108196.701309 in existing thread. Dot1792108316.561119 read public33af,
+not private patch or studies. Its writer/reader eligibility objection was adopted
+and tested by30actual same-helper TT controls, bothdirections/allbounds/terminalD0.
+This is Dot source reasoning plus PRIMARY execution, not independent execution
+or publication approval. No routine acknowledgement/self-reply. Legacy original
+payload binding stays unverified; delivery does not prove reading/execution.
+
+AUX66fixed6c9533a remains report-read-only from the preceding checkpoint; no
+final solver/learning source/tests/games/proofs executed/adopted here. No branch
+writes, duplicate solver/training, extra Agent/worker/fees, imported2hour authority
+or visibility/default/UI change. Ordinary parallel work is normal.
+
+Corrections/limits: initial aggregate guard-counter assertion missed safeD0;
+4full query dicts missing/disclosed,14repairs retained. Initial playability Core
+callback polled disk in hotloop despite manual. Originals/caps remain; new samecap
+deadline-only Core control improves coverage without Native rerun; noninterleaved
+load limits timing causality. Next raw/conditional sampling must charge actual
+attempts/compile/predicate before filter selection. No proof/diagnostics framework.
+
+Detailed results/source/failures: FINITE_HISTORY_CONTEXT_AND_ROOT_ORDER_20261016.md.
+Prescribed publisher/fullSHA/public anonymous/source-copy receipts are separate
+delivery evidence, never collaborator-execution claims.
+
+Closing supplement: actual extracted publication-source normal rebuild and both search-disabled consumers pass all950hash/CRC checks and counts (3787queries/13257PVedges,66games/2517edges). AUX67 fixed58755e50cc5322ed11dded993d5ce03696c95799 full report and new complete root1792109817.230519/Dot1792109919.855059 are REPORT_READ_ONLY. Same16DEV conditional horizons are not independent cohorts; no owner executions pooled. Dot identifies legal-progress/no-extra-payoff premise for the unadopted zero-return certificate; conceptual distinction accepted, no UNKNOWN-to-DRAW or certificate adoption, no solver duplication/crosswrites. Current >1hour boundary unchanged. All frozen PRIMARY failures/censors remain; finite cache utility net-2/48 does not support adoption.
