@@ -440,3 +440,10 @@ counterfactual has2legalV1aliases withdifferentauxphasechildren; actualCore/
 Nativechildfields agree. Keepboth fullactions, currentmodels/API; no trained
 failure/WDL/coverageclaim. Next canassess onefiniteconsequence/teacherinputscope
 withoutinventingpolicyframework, rewritingAUX or broadnewgames.
+
+LatestpeerAUX69fixed1e46bb3 FULL_REPORT_READ_ONLY, not68current. Complete
+newroot/1Dotreply read: ratio4unitbenefit narrow; R-free192DEVallDRAW and
+0verifiedWINcoverage do notprovevalueequivalence/optimalDRAW. Ownplanned
+KRNB/Ranchor-by-Bpilot remainsAUXINPUT_ONLY; independentlyselecteddifferentB
+DEVgains are postselectionpolicycontrasts, notpureR-by-Binteraction. NoPRIMARY
+solver/learning/certificate/runtime adoption, pricepool orboundarychange.

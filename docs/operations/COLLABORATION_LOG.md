@@ -3143,3 +3143,33 @@ and complete Native action identity/checked search retain both alternatives.
 Keep currentmodels/API; a later scoped teacher test can examine consequence
 before changing representations. No search/game/training was run for this case.
 These late original executions are not included in the635-member source replay.
+
+## Closing AUX69 supplement — fixed report read only
+
+After initial PRIMARY delivery2d814438, closing discovery finds AUX69 root
+1792120045.216769 and full1reply1792120184.796349, no remaining pages.
+PRIMARY reads the FULL fixed report1e46bb3e595c2eab9b8c655b3541dc06a88c69bb,
+18146bytes/SHA256873d2a6f674e3e1784eb8f283f732e5eccb383b60b619aa2d9d95829f1af4372.
+TierFULL_REPORT_READ_ONLY: no finalAUXsource/solver/learner/tests/games/census/
+certificate/restore executed or adopted here.
+
+Owner reports384actualgames/29479moves; ratio4localgain at two units withwide
+interaction interval andnoequivalencemargin. R-freeKBN TRAIN is nearlyflat;
+all192DEVgames DRAW underactualmax96, despite60trajectorychanges. No intrinsic
+B/Nvalue/equivalence conclusion.192exposed PNcoveragecalls yield0verifiedWIN,
+notprovenDRAW. ActualKRNBfreshcensus/exactfieldguard UNKNOWN-onlyskip and32game
+candidate-onlycostcontrol report matching16trajectories with22.4percentlesscost;
+portableproof71edges/fourwinningleaves is owner evidence, notPRIMARYrerun.
+
+New2054 remains INPUT_ONLY/protocol: changedKRNBcooperation context, twofixed
+Ranchors/threeBprices, independentBselectionwithinR thennewDEV. Dot's concrete
+counterexample is adopted conceptually: differentselectedBcontrasts can give
+differentDEVgains withoutanypureR-by-Binteraction. MatchingBcontrasts canbe
+analyzed onalreadyplannedTRAIN; exploratoryTRAIN is notindependentDEV.
+No budget expansion or demandforstrongteacherbeforetheexistingpilot. A changing
+legalR-presence and merelychangingcandidateRprice aredifferent interventions.
+This doesnottransferFairyheuristic/unit conclusions toPRIMARY'sC392leafprofile.
+
+Current interpretation/role boundaries remain; rawoutputs savedbeforeassessment.
+LatestAUX69report/completeDotthreadreplaces68ascurrent read-only contribution.
+No routineacknowledgement,newworker, fork, crosscheckoutwrite orratio import.
