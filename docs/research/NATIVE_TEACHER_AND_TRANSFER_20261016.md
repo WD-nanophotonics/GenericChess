@@ -253,3 +253,22 @@ was corrected before its final complete pass, without editing frozen outputs.
 No unresolved product defect or user intervention remains from these harness
 failures. Prescribed publication tests and exact delivery receipts are separate
 from scientific validation; old2691full regression is historical, not rerun here.
+
+
+## Begun next step: actual public input constituents
+
+A separately frozen late component control covers72states (8existing roots plus
+8hash-selected legal children each), two measurements each, no search/game/fit.
+Full GameSession copy/submit retains witness histories. Median Native dynamic
+feature times by4/8/12/16are.0866/.5881/1.8348/3.5440milliseconds; dense Python
+input assembly is.0182/.0221/.0294/.0361milliseconds. Packing fullhistory is
+separate (.1563/.4683/.3890/.4822milliseconds). All72vectors repeat exactly;
+none is the zero vector. These are root/child component timings, not the search
+leaf mixture or independent Core feature verification. They reinforce measuring
+semantically derived inputs before optimizing dense arithmetic; substituting
+zeros would change arbitrary nonzero-weight models, and capacity refusal stays.
+Original execution source/plan/results/analysis are the separate input-component
+supplement, not retroactively counted in542search receipts or sealed-source
+replay. An initial premeasurement GameState/session type error was corrected
+using actual GameSession copies; a default-sandbox private analysis write denial
+was resolved through supported escalation, no OS/security change or user action.
