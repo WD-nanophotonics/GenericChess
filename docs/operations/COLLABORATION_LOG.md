@@ -1976,3 +1976,11 @@ Reports: results/dev_aux/SEGMENT_20261016_75.md, PROOF_SCOPE_20261016_75.md and
 REPLAY_20261016_75.md. Give Dot a fixed revision onlyafter actualpush/anonymous
 verification; delivery is not reading/adoption/execution. Exact finaltiming and
 publication evidence are recorded in the closing receipt.
+
+Segment75 closing: normal75.723minutes/safe_checkpoint,6freshresearchstages;
+allproducersCLOSED. Correctedsciencefb517d48a84670150ba7238fbb7376954e824323
+fullremoteSHA/7anonymousexactfiles/PUBLIC/cleanverified. An initial failed
+whitespacecheck was followed byuncheckedPowerShell Gitcommands; the error
+wasreported andrecorded, EOF-onlyASTidenticalfixpublished, andrawcapsulekept.
+No initialdiff-checkPASS isclaimed. Finalclosingmetadata delivery/readback
+is separate fromDotreading/adoption; no newresearchorSourcecapsulerewrite.

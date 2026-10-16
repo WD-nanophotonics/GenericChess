@@ -1,4 +1,4 @@
-# DEV_AUX current mainline — active75,2026-10-16
+# DEV_AUX current mainline — closed75,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. AGENTS/latestuser govern.
 Latest Slack-defect-first selection was checked FIRST: own60cursor/reporting
@@ -67,3 +67,9 @@ frontiercampaign/quantityreward/humanpricefit/automaticdefaultchange follows.
 Prior74price findings remain:512actualW-Lgames show uncertain depth+.03125 and
 price.25-vs1=-.03125bothdepths; interaction0not equivalence, no stablepricebenefit.
 Do not substitute proofcoverage, changedactions or quantityreward for actualW-L.
+
+Normal75 ended75.723minutes/safe_checkpoint after6researchstages; allproducers
+closed. Correctedsciencefb517d48a84670150ba7238fbb7376954e824323 fullremoteSHA
+and7anonymousfiles/PUBLIC verified. Publication-check failure andEOF-onlyfix
+remainvisible; finalclosingreceipt isDELIVERY_20261016_75.json. No newstudy
+afterfinish. Nexttasks stay in own executable memo; scientificobjectiveOPEN.
