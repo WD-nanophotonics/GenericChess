@@ -125,6 +125,7 @@ static int path_entry(const GCSemGeometry *g, uint8_t owner, uint16_t source, co
     for (uint16_t i = 0; i < paths->count; i++) if (paths->entries[i].source == source) { *out = &paths->entries[i]; return 1; }
     return 0;
 }
+
 static int target_ok(uint8_t target, const GCPiece *cell, uint8_t side) {
     if (target == 0) return !cell->occupied;
     if (target == 1) return cell->occupied && cell->owner != side;
@@ -400,6 +401,13 @@ static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPositi
         const GCPiece *actor=&pos->board[si];
         if (!actor->occupied || actor->owner!=attacker) continue;
         if (actor->current_type >= r->type_count) continue;
+        if(r->attack_membership){
+            size_t cells=(size_t)r->board_size*r->board_size,stride=(cells+7)/8;
+            size_t key=(((size_t)actor->current_type*2+attacker)*cells+si)*stride+target_square/8;
+            if(!(r->attack_membership[key]&(1u<<(target_square%8)))){
+                continue;
+            }
+        }
         for (uint16_t ci=0; ci<r->capture_pattern_count[actor->current_type]; ci++) {
             uint16_t pi=r->capture_pattern_indices[actor->current_type][ci];
             const GCSemPattern *pattern=&r->patterns[pi];

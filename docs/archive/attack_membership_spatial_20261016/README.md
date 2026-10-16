@@ -1,0 +1,9 @@
+# Geometric membership and spatial-input evidence
+
+Verify manifest hashes and ZIP CRC. Producers are as-executed historical recipes with exclusive outputs; never overwrite frozen results or execute every prototype automatically. The original source-loop constructor is historical and has uncharged unsorted-path work. Only final first-seen construction is adopted. Getter-only spatial variants are unadopted; actual leaf pilot is separately uninstalled and unqualified. The ordinary reader never loads historical private kernels or starts search, fitting, games or AUX programs.
+
+For the compact source check, verify the fixed dependency hash, extract its 307 source/ files, then overlay product-overrides/ and source-tests/ from this ZIP. Rebuild normal Native with the declared Python/Zig environment. Extract research/ separately and run consumer.py with that directory argument from the fresh source root. Normal pytest dependencies are required by shared fixtures; do not add -S. It asserts Native origin, disables searches and checks public transitions, complete state/history, vectors, capacity refusals and every retained receipt. Old clocks/objectives are not recomputed. For the full four-layer suite, use the complete fixed PUBLIC Git base plus these overrides; the compact dependency intentionally omits unrelated historical reports/assets.
+
+The report distinguishes original transfer implementation, corrected bounded construction, component timings, missing first-harness timings, installed-product and source-only tiers. CPU/wall variability, finite censors and all-domain limits remain. UI and AUX sidemission remain separately owned.
+
+The 8,007,303-byte compressed evidence expands to 511,831,593 bytes; the largest JSON is 167,567,379 bytes. Exact original fields are preserved. This is technical research evidence, including unadopted prototype source/results; local compiled images and personal account originals are not needed for source reproduction.

@@ -3329,3 +3329,31 @@ an attack scan census: four exposed states only, no index implemented. Future
 membership work must charge admission/memory and retain source/target occurrence
 semantics. Public source/results and a fixed-SHA result support peer review;
 delivery does not claim Dot independently executed or adopted this work.
+
+
+## 2026-10-16 — geometric membership and rejected consumer assumption
+
+PRIMARY adopted3C/H immutable negative geometry changes only: allpath/state/S4/
+aux/history retained,2M countedentry/target construction andNULLscanner fallback.
+Originalprivatebudget missed unsortedlookup work; boundedcounterexample, corrected
+firstseen/57tablePythonoracle retained.224/256indexqueries:70jointD4equal,2extra
+completions, alltails/censors/cold4.699adversity kept.2734normaltests;2733source+
+1console-exe skip. No q/price/model/API/default/UI change.
+
+Getter-only component savings didnotreach activecontrol9:64matchedwork and120/128
+prospectivequeries staynear1. Verified401/463inlineleaf/getter0 exposes PRIMARY's
+preliminaryconsumer assumption error; rejected, noNativeModuledelivery.256missing
+timings/fourvalue recaptures andharness/exportfailures retained. A16query pilot
+at the CORRECT leafcallsite is uninstalled/unqualified. No repeatedoldgetterbatch.
+
+DEV_AUX independently completed74. PRIMARY read fullthread2replies and fixed
+20da2c28 SEGMENT/REPLAY reports, no code/consumer/prover execution orcrosswrite.
+Owner's truepolicy/proof/endedSessionV0 correction stays reported, notPRIMARY
+reproduction. Dot requested-versus-retained/cancellation/commonprefix advice
+assessed, not authority orackgate; Dotreadinline74/old7ae only.
+
+NewfixedPRIMARY links follow prescribedpublication/fullremoteSHA andanonymous
+PUBLIC checks. Exact private originals kept; no rawSlack/account/privatebinary/
+personalhostpath outgoing. Noquietwindow, unrelatedprocessmonitor orworkers.
+Unresolved actualleaf qualification, coldcause, widecompletion, price/evaluator
+utility. Science OPEN.

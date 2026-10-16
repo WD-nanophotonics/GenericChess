@@ -1064,6 +1064,61 @@ static int sem_alloc_uint32_list(PyObject *list, uint32_t **out,
     return 1;
 }
 
+/* Compile a conservative union over the SAME first source entry used below.
+ * A zero bit only proves geometric impossibility. Positive bits still visit
+ * every matching target occurrence and all path/state/slot guards.
+ * Failure or bounded construction exhaustion leaves the ordinary scanner active;
+ * no position, auxiliary state, history or attack result is cached. */
+static void sem_build_attack_membership(GCSemanticRules *r) {
+    size_t cells = (size_t)r->board_size * r->board_size;
+    size_t stride = (cells + 7) / 8;
+    size_t bytes = (size_t)r->type_count * 2 * cells * stride;
+    if (bytes == 0 || bytes > 2097152) return;
+    unsigned char *bits = (unsigned char *)calloc(bytes, 1);
+    if (bits == NULL) return;
+    size_t work = 0;
+    for (uint16_t type = 0; type < r->type_count; type++) {
+        for (uint8_t owner = 0; owner < 2; owner++) {
+            for (uint16_t ci = 0; ci < r->capture_pattern_count[type]; ci++) {
+                const GCSemPattern *pattern =
+                    &r->patterns[r->capture_pattern_indices[type][ci]];
+                for (uint8_t gi = 0; gi < pattern->geometry_count; gi++) {
+                    if (++work > 2000000) goto fallback;
+                    uint16_t gid = pattern->geometry_indices[gi];
+                    if (gid >= r->geometry_count) continue;
+                    const GCSemGeometry *geo = &r->geometries[gid];
+                    if (geo->kind == 2 ||
+                        (geo->has_atom_source && geo->atom_source_type != type))
+                        continue;
+                    /* First array occurrence equals path_entry's direct,
+                     * lower-bound AND unsorted-fallback contracts. Count the
+                     * entry traversal itself, including ignored duplicates. */
+                    unsigned char seen[GC_MAX_SQUARES] = {0};
+                    const GCSemPathOwner *paths = &geo->paths[owner];
+                    for (uint32_t ei = 0; ei < paths->count; ei++) {
+                        if (++work > 2000000) goto fallback;
+                        const GCSemPathEntry *entry = &paths->entries[ei];
+                        uint16_t source = entry->source;
+                        if (source >= cells || seen[source]) continue;
+                        seen[source] = 1;
+                        for (uint16_t ti = 0; ti < entry->count; ti++) {
+                            if (++work > 2000000) goto fallback;
+                            uint16_t target = entry->squares[ti];
+                            if (target >= cells) continue;
+                            size_t key = (((size_t)type * 2 + owner) * cells +
+                                          source) * stride + target / 8;
+                            bits[key] |= (unsigned char)(1u << (target % 8));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    r->attack_membership = bits;
+    return;
+fallback:
+    free(bits);
+}
 GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     if (!PyDict_Check(payload)) {
         PyErr_SetString(PyExc_TypeError,
@@ -2187,12 +2242,15 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             }
         }
     }
+    sem_build_attack_membership(rules);
     return rules;
 }
 
 /* ------------------------------------------------------------------ free */
 
 void gc_semantic_rules_free(GCSemanticRules *rules) {
+    if (rules != NULL) free(rules->attack_membership);
+
     if (rules == NULL) {
         return;
     }

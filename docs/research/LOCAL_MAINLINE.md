@@ -511,20 +511,33 @@ arithmetic, no whole-report/consumer/solver execution; timing/source claims owne
 model/price import, independent AUX rerun or routine acknowledgement gate.
 
 
-Current next choice: measured binding validation is only~2.5-11percent of
-instrumented feature cost, while semantic attack tests are~39-77percent with
-timer overhead explicit. Four actual parent/child states begin a geometric-scan
-census; the16board example scans32k/34k target cells with zero target matches,
-at a conservative163840-byte membership estimate, not allocated or a speed result.
-Next test exact rule-constant membership construction/lookup cost before any
-index; preserve first-source entry and ALL matching-target occurrences plus full
-path/state/aux guards. This is a new measured premise, not revival of old failed
-source grouping or an incremental attack/history cache. No old q/game campaign,
-new learner/framework, silent4096capacity change or AUX duplication.
+Current outcome: GEOMETRIC_MEMBERSHIP_AND_SPATIAL_INPUT_20261016.md closes the
+membership question. Adopt ONLY compiled immutable negative capture geometry with
+allruntimeguards/fullhistory and boundedfirstseen construction. Older source-loop
+construction had uncharged unsortedlookup work; historical, not a route to revive.
+Allocation/work refusal uses the existing scanner; no position/history cache.
 
-Latest peer read: AUX73 fullroot/two replies including final1792141658.322149,
-and two fixed b1ea4e9f reports. Threeclosedlearning/proof/verifier executions
-remain owner-reported; PRIMARY read reports only. Dot read fixed7ae949f source.
-PRIMARY has not executed/adopted this new code/results or changed sidemission. CHAT pattern-paper reading supports measuring
-extraction/initialization cost separately from model size/utility, not a new
-architecture mandate. Existing public access and continuing grant persist.
+Frozen32family224/256indexqueries preserve32actualtail slots,70jointD4equal,
+2candidate-onlycompletions/40neither. Static conditionalratios.912/.834/.822/.813,
+dynamic.787/.483/onefamily.401/16N/A; coldnode1adversity4.699 remains unconfirmed.
+2734normal/2733source+1console-exe skip;21pureCoreD3agree/7censors UNKNOWN.
+
+The getter-only spatial route is CLOSED UNADOPTED. Component~.09-.11 didnotreach
+actualinlineleaf:64matchedwork/120prospectivequeries,26jointD4equal/all60depths
+same.256firstcomponenttimings MISSING,4value-onlyrecaptures explicit. Counts show
+401/463activeleaf/getter0; directgetter1 confirms detector. Preliminaryconsumer
+assumption waswrong. No NativeModuleproductchange, NN/pricefutility conclusion
+or unchangedgetterrerun.
+
+Nextquestion actuallybegun at verifiedactive inline localized-control loop:
+uninstalled16exposed512node queries allfields equal, ratios.316/.124/.127/.107.
+NOT product or unexposedvalidation. Nextqualify fullCore/aux/history/S4/error/
+capacity there before largerpanel/adoption. Backup inspect actualzero-vector
+consumer cost; no newdiagnostics API/learner. Fulltarget, cheapstatics and
+authorizedsmalllearning alternatives remain, no permanent research prohibition.
+
+Latestpeer: AUX74 fullthread2replies/twofixed20da2c28reports REPORT_READ_ONLY.
+Its512games/proof/normalintegration/graph corrections remain owner execution.
+No code/consumer/solver/learner import or sidemission write. Dot scopeinline74/
+older7ae, no independent74run. Representation cost differs from discovery and
+utility; PUBLIC/continuinggrants and boundaries persist.

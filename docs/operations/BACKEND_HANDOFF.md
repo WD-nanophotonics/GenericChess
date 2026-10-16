@@ -434,3 +434,18 @@ and installed28guards pass. Python rule pricing separately uses explicit SCC
 frames, fixing32-board RecursionError without changing the formula or exact
 threshold; no option/Native rebuild is needed for that Python part. Report:
 ../research/OWNED_BACKENDS_AND_MAIN_FRONTIER.md. Private V2 remains research.
+
+
+### 2026-10-16 bounded geometric membership
+
+Rebuild Native normally for immutable negative capture filtering. All existing
+APIs/resultfields/defaults/fullhistory/aux/promotion/drop remain. Old images
+retainoldcost; no solver/model/price orUI update. Constructor charges firstsource
+entries includingduplicates, caps addedwork2M/allocation2MiB, andretainsordinary
+scanner onrefusal. Currentcontract actualmax table1MiB. Only3C/H files change;
+getter-only andactualleaf prototypes remain uninstalled; their source/results are published as research.
+
+2734installednormal tests pass. Source/export/receipt-reader tiers andcold/
+widecensor limits are in GEOMETRIC_MEMBERSHIP_AND_SPATIAL_INPUT_20261016.md and
+itsarchive. Only prescribed origin/sandbox delivery; noAUX/UIintegration.
+AnonymousPUBLIC access doesnotprove Dotread everyfile.

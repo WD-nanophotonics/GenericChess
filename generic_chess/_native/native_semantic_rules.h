@@ -280,6 +280,8 @@ typedef struct {
     uint16_t capture_pattern_indices[GC_MAX_TYPES][GC_SEM_MAX_PATTERNS];
     GCSemDeclaration *declarations;
     uint8_t declaration_count;
+    /* Optional immutable geometric overapproximation. NULL retains the scanner. */
+    unsigned char *attack_membership;
 } GCSemanticRules;
 
 /* Parse a Python payload dict into an owned GCSemanticRules.
