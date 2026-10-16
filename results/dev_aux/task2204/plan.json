@@ -1,0 +1,34 @@
+{
+  "question": "Does bounded incremental ordering retain coverage while cutting observed whole-graph selection cost?",
+  "input": "results/dev_aux/task2177/inputs.json",
+  "expected_queries": 248,
+  "arms": [
+    "WHOLE_GRAPH_FRONTIER",
+    "BOUNDED_INCREMENTAL"
+  ],
+  "envelopes": [
+    {
+      "seconds": 0.2,
+      "nodes": 8192,
+      "edges": 65536
+    },
+    {
+      "seconds": 6.0,
+      "nodes": 8192,
+      "edges": 65536
+    }
+  ],
+  "depth": 96,
+  "one_cap_seconds": 900,
+  "expected_seconds": 650,
+  "verification_seconds": 4.0,
+  "cursor_seconds": 4.0,
+  "scope": "Exposeddevelopment62root fixed panel. Onlyordering heuristics differ; actual rank/independentverification same. Currentperpoll stopchecks retained, no pricefit/defaultadoption. Different workcounter units explicitlyreported. Original2190/2189results remainsealed, nottuned orreset.",
+  "pins": {
+    "results/dev_aux/task2177/inputs.json": "e8885026e4880b17086f1195a417ab18abe69068a50c431e6379de45297d0a0c",
+    "results/dev_aux/task2189/frontier.py": "0addd963e62a07b3da14352f6283c03fcbc3c2ba1833e4c4d7c91fa7863bc976",
+    "results/dev_aux/task2203/incremental.py": "9e38732179d239ff36846367973c480156f3861aa24dad146ce98d182be07720",
+    "results/dev_aux/task2179/graph.py": "676e8e9b329bd5cb238780c0deb6f3ec65e39cb4a800856948249fa79c1e1e80"
+  },
+  "utc": "2026-10-16T11:01:40.556289+00:00"
+}

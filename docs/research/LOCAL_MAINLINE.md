@@ -1,32 +1,69 @@
-# DEV_AUX current mainline — segment74,2026-10-16
+# DEV_AUX current mainline — active75,2026-10-16
 
-ScienceOPEN/PUBLIC/own sidemission, PRIMARYreadonly. Current reasons/grants:AGENTS.
-2162/2163 all32oldTRAIN completedD2/3/4 trees6294nodes+672normalqueriesPASS;
-unity root position-optimal30/32 then32/32, notwhole-game/priceoptimality.
-2164realwall .05sD3 completes172/224, D4 27/224; requesteddepth is censored.
-2167fresh32root fixedfoe/role/price diagnostic COMPLETE512actualgames7887moves,
-68certs; depthgain+.03125bothprices, price.25-vs1=-.03125bothdepths, interaction0
-withpositive/negativefamilies, not equivalence/price-route rejection.2178all128
-fourcellsharedprefixgroups retained,69identicalfirstchoices,232/256D3retained3.
-2174matchedCore/fullSession20nodepairs exact;2175complete-player typednormal
-choices nowcommitthroughpaidproof/bank/fallback; eightmechanismtests. Opt-inonly.
-2176newNn-onlycensus fills4x4botharmed<=4closure:290464states1450224edges,
-maxrank28, allcoverage/Bellman/frontiers+58actualhistoriesPASS. Oldprepaycharged.
-2177no-tablePN248queries:14/58WIN at.2s,17/58at6s, same1024/8192ceilings.
-2179guardedno-tableBFSgraph2181:18actualverifiedWINcontexts,13shared/4PN-only/
-5graph-only; no universalgain/DFPNclaim. Rule/historyguard rejectsunsupported,
-normalfallbackcontinues; fullgenerateddomainOPEN. RealV0 falseWINafteractual
-resignation fixedBOTHentrychecks; executedoldsource/counterexample preserved,
-all62ongoingbenchmarkroots independentlyrechecked. Ten graphregressionsPASS.
-2183same table-proposedstrategy representation: DAG58/58 vsfulltree52/58
-verified1.5s; .2s50vs40.58actualmates/58targetforgeriesPASS. Prepayretained;
-representation helps, discovery stilllimited. No currentfixedplayer/defaultchange.
-Fresh12archive1971payloadchecks1797paths85tests/0failures plusallclosedconsumers
-PASS; rawjournals/executedsource/failures retained, largepayloadsZIP-only.
-Dot1792143218.959299 inlineonly/no74source/execution: commonprefix/inference
-caveats adopted, no newlargegames merelytightenCI. PRIMARYea98926 evaluator/live
-views/attackcostwork remains separate/read-only/noexecutionoradoptioninferred.
-NEXT: fixeddiagnostic traces family1PN-only/family27graph-only toattributeBFS
-frontier versuscanonicalcost; small changed-observabilitycheck, no oldcapreset.
-Then choose one evidence-backed frontier change with realhistory certificates,
-not price/DEVfitting or assumedtreeDFPN generalization to cyclicgraphs.
+ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. AGENTS/latestuser govern.
+Latest Slack-defect-first selection was checked FIRST: own60cursor/reporting
+repair11dddd801c68ef9289ff8293dba1dbb00701ede9 is CLOSED and PRIMARY recorded
+source review. No new defect/root supplement was found. Do not reopen unchanged
+repairs or take over PRIMARY. Prior74 final20da2c28b4c4cdf2caab6e339bdcb8bd3fe79740
+preserves its complete evidence; source/result/reading are distinct.
+
+75 changed-observability diagnosis2187/2188: four fixed exposed root1/27queries,
+1356fullstates/records independently reconstructed. PN family27 revisits108unique
+positions across372frontiers/maxply79; BFS solves in15frontiers. Family1PN solves
+in22frontiers while BFS947partial. Fresh stopfile reads consume79-93percent of
+query time; canonical construction is minor. This is not a clean timing comparison
+to uninstrumented74 or a proof of universal frontier superiority.
+
+2189 most-proving graph heuristic changes ordering ONLY; estimates/cycles never
+prove/refute WDL. True guarded rank propagation/independent verifier unchanged.
+2190COMPLETE372queries/2752.379s underoriginal3300scap,94verifiedactualmates.
+No second long producer. Observed large repeated selector work motivates2203
+bounded incremental estimates/traversal128units each, FIFO fallback, no outcome-fit.
+2204COMPLETE248queries/587.603s under900cap,53verifiedactualmates,0missing.
+No default/player/learning adoption, old caps unchanged, allmissing/UNKNOWN retained.
+
+2191 Core-canonical adapter preserves full Position rather than resetting semantic
+side/hands/aux via board-layout construction. Known executable facade explicitly
+uses IR/support, never legacy inspection metadata.17actual/adversarial regressions;
+2197all62fixed-node query/certificate pairs exactly equal, no speedclaim.
+2194existing9prefix capture/type-change/aux-expiry/drop route all275children and
+fullrecords PASS.2196sameFP/currentR/differentbase actualcaptures produceR/P hands,
+wrongdrop witness rejected; notP-loss/priceclaim. Originalselectedwinningdrop
+certificate/action unsaved: owner assertion is not upgraded to independentreplay.
+2192/2193/2195 setupfailures preserved with diagnoses; laterqualifications distinct.
+
+Separate2199Position-only S4/trigger feasibility passes2200: actualcapturemate
+forbidden/quietmateallowed underoneinventorypreservingruleset,45actualtrigger
+frontierchildren;2201alsoactualtriggeredmate/fullhistory verifier controls18tests.
+2199initialskip_s4harness error retained afteronepositiveproof;2200usesrealno-S4
+control source action and actualstrictsubmit, never a bypass. Bothscoped versions
+reject declarations/automatic/no-progress/consecutive/cycle/perpetual policies.
+See PROOF_SCOPE_20261016_75.md: finite positive-certificate lifting, NOTunconditional
+Sessionquotient/allgenerateddomain equivalence. Existingcompletehistoryfallback
+stays; fullgeneratedtarget OPEN. No PRIMARY/default/UI changes.
+
+2198adopts Dot's exact future-NONTERMINAL repetition boundary: baseline andsemantic
+actual7ply histories, rootONGOING, futurefreshONGOING, pastcount2/limit3, actualedge
+REPETITION, verifier rejectsBEFOREcursor. No counts injection/newteachercensus.
+Dot1792147500.660269 read20daCoreterminal/semantic source sections only; not75code
+review or execution. Exactraw replies preserved privately beforeadoption.
+
+2202short cost diagnostic COMPLETE144queries/33verifiedactualmatepaths. Per24calls
+PNcurrentinnerfresh4verified versusboundedouter8; BFS4versus8; wholegraphheuristic
+3versus6. Exposed9mismatch/3control cases, notpopulation/learningbenefit. Existing
+2190/currentstop policies unchanged. Actualouterprecheck is BEFORErootpreparation;
+gap includes preparation/query/atomicovershoot, not a guaranteed.2s stoplatency.
+Recordedquerywall excludesrootprep; wholeprojectcost includesit. No pollingadoption.
+
+Bothpanelsclosed.2190BFS .2/6/24s=11/18/24knownWIN contexts versuswholeheuristic
+11/15/15;2204matchedwhole11/15 versusincremental10/17 at.2/6. Lower selectioncost
+doesnotestablishbaseline superiority, so doNOTadoptordering intofixedplayer.
+13archivefreshreplay2090payloadchecks1909paths146tests/0failures plus202saved
+certificateinstances/182actualmatepaths PASS. Scope/failures andunsavedoriginal
+fixturewitness limits are explicit in SEGMENT_20261016_75.md and PROOF_SCOPE report.
+Next chooseONEsmall recombined-rule capability/cost question, or a paidpolicy
+contract from2207sourceinventory onlyifdecision-changing. No unchangedlarger
+frontiercampaign/quantityreward/humanpricefit/automaticdefaultchange follows.
+Prior74price findings remain:512actualW-Lgames show uncertain depth+.03125 and
+price.25-vs1=-.03125bothdepths; interaction0not equivalence, no stablepricebenefit.
+Do not substitute proofcoverage, changedactions or quantityreward for actualW-L.

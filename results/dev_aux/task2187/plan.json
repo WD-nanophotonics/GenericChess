@@ -1,0 +1,39 @@
+{
+  "question": "Why do PN and guarded BFS graph solve different exposed roots?",
+  "inputs": "results/dev_aux/task2177/inputs.json",
+  "families": [
+    1,
+    27
+  ],
+  "arms": [
+    "PN",
+    "GRAPH"
+  ],
+  "order": [
+    [
+      1,
+      "PN"
+    ],
+    [
+      1,
+      "GRAPH"
+    ],
+    [
+      27,
+      "GRAPH"
+    ],
+    [
+      27,
+      "PN"
+    ]
+  ],
+  "nodes": 8192,
+  "edges": 65536,
+  "seconds": 6.0,
+  "depth": 96,
+  "one_cap_seconds": 60,
+  "trace_limit": 4096,
+  "labels": "Load ONLY after all four queries; posthoc positional diagnostics, never actual-history payoff",
+  "scope": "Changed-observability diagnostic; trace overhead paid. Not a rerun/extension of 2177/2181 or a clean comparison against their uninstrumented wall results.",
+  "frozen_utc": "2026-10-16T10:27:32.499714+00:00"
+}

@@ -15,9 +15,12 @@ personal information/passwords/credentials, preserve sensitive originals ignored
 PRIMARY owns search/backend integration on sandbox; DEV_AUX independently owns
 the user-approved material-plus-fixed-proof experiment on sidemission. The old
 blanket no-auxiliary premise is superseded; no automatic spawning/cross-writes.
-Search comparison remains project priority; later explicit user implementation
-of material/proof W-L controls establishes this auxiliary task, not authority to
-take over PRIMARY. CHAT_Comments advise; they do not override user directions.
+Mutable selection/evidence belongs in LOCAL_MAINLINE.md. Latest user priority
+is Slack defect closure FIRST; own cursor/reporting repairs were already closed
+at11dddd801c68ef9289ff8293dba1dbb00701ede9 and read by PRIMARY. Recovery75
+verified no new defect/reply before resuming research. Prior search-first choice
+is historical context, not a competing live policy or authority to take over
+PRIMARY. CHAT_Comments advise; they do not override user directions.
 Carry purpose, superseded premise and consequence into recovery, not isolated
 historical permissions. Update current decisions with reasons when they change.
 
@@ -82,20 +85,11 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
-Current priority, updated by the user-requested2026-10-10 handoff review:
-search capability comparison and bottleneck attribution first. Compare supported
-generic search/backend, minimal alpha-beta with Chess/Shogi specialized rules,
-and mature engines; use the same minimal AB on generic rules as a thin attribution
-bridge. Separate rule execution, repeated scheduling, representation costs,
-algorithm optimizations and budget completion. Fixed primitive cost, defined
-work counts and equal-time decision usefulness are distinct evidence. Record
-actual backend/fallback and evaluation differences; unaligned mature engines are
-overall references, not material-only search controls. Small predeclared positions
-precede large games/Elo. Infrastructure gaps that impede these judgments should
-be repaired and their effects measured, not deferred merely as engineering.
-Price/statistical averaging and small learning routes remain later goals;
-context dependence alone does not refute a fixed vector averaged under an
-explicit play distribution. No timing, stop, publication or long-run rule changes.
+Current experiment selection, frozen comparisons, bottleneck attribution and
+reconsideration conditions live in LOCAL_MAINLINE.md and purpose reports. They
+are revisable choices, not permanent bans on authorized solver/W-L/small training.
+Separate rule authority, actual backend/evaluator, work, cost, completion and
+usefulness; changed actions/depth alone do not establish value.
 
 Retained long-term research, clarified by user2026-10-07 and verified2026-10-08,
 has two lines: rule-only generic piece-value generation, cross-game ordering/
@@ -261,27 +255,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment74
+# DEV_AUX current scope:2026-10-16 segment75
 
-Own sidemission/PUBLIC/PRIMARYreadonly; ScienceOPEN. All73/74 producers CLOSED.
-Actual W-L only, UNKNOWN distinct. Old partial/noSelector/noDEV/cap records stay.
-2167 is a fixed-price requested-depth diagnostic, not new training:512 actual
-records show uncertain+.03125 depth gains and no positive.25-vs1 price result.
-Mean interaction0 is cancellation, not equivalence or rejection of price learning.
-2175 typed fullSession normal/proof/bank/fallback player remains opt-in; defaults
-and prior fixed players unchanged.2174 matched counts/pruning remove old confound.
-2176 adds only missingNn to complete4x4<=4closure; tableprepay remains charged.
-2179 graph prototype has strict rule/history/rank/horizon guards and independent
-public verification; unsupported remainsUNKNOWN/fullgeneratedscopeOPEN. RealV0
-falseWINafterresignation is fixed in BOTHentrychecks, exactsource/counterexample
-retained.2181usedV0 only on ongoingfrozencontexts, stricterconsumer rechecksall;
-never use oldsource as current implementation. BFS is notDFPN.18vs17 no-table
-proof contexts are nonnested, not universalgain. Table-proposedDAG verification
-58vs52 at1.5s separates representation from still-open strategy discovery.
-Next use observable fixed root1/27 traces to attribute frontier/constructioncost,
-not unchanged game volume/DEVprice tuning or PRIMARY backend integration.
-Publication and causal reasons below remain current; projectcontent sansPII is
-authorized, exact sensitive raw originals remain ignored/private.
+Own sidemission/PUBLIC; PRIMARYreadonly. Current route/results:LOCAL_MAINLINE.
+Finite positive WIN certificates may be lifted to actual history only after
+fullroot/rule binding, complete defender choices, actual terminal authority,
+strict ranks, remaining-ply and repetition prehistory/injectivity checks.
+This is NOT an unconditional Session quotient or a DRAW/UNKNOWN label rule.
+Original74 and current75 prototypes remain opt-in; no fixed-player/default/UI
+or PRIMARY adoption. Preserve failures, partial caps and exact executed sources.
+Semantic admission consumes complete Position and actual IR/support, never an
+inspection-only legacy compatibility handle. Each prototype keeps its explicit scope:2191 rejects S4/triggers, separate2199
+admits their Position-only execution with actual controls. Unqualified history
+policies remain UNKNOWN; use complete-history fallback. See PROOF_SCOPE report.
+All reviewed project content sansPII/passwords/credentials is authorized;
+exact sensitive originals remain ignored/private. See active decisions above.
 
 ## Current user publication grant2026-10-15
 

@@ -1,0 +1,12 @@
+{
+  "question": "Can same current R movement hide different capture-to-hand bases under one ruleset fingerprint?",
+  "setup": "One compiled ruleset with R and promoted-P-as-R setup options; same current board and side. Identical capture/reply. Compare typed fullpositions, actual hands/drop actions; R-hand proved mate cannot be rebound into P-hand context.",
+  "budget": {
+    "nodes": 512,
+    "seconds": 2.0,
+    "depth": 4,
+    "single_seconds": 30
+  },
+  "interpretation": "Mechanism counterexample, not price ordering, WDL equivalence or P-hand loss. No humanprices. Inputs fixed before proof.",
+  "frozen_utc": "2026-10-16T10:44:23.002914+00:00"
+}

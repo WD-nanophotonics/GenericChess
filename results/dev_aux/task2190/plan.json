@@ -1,0 +1,41 @@
+{
+  "question": "Does most-proving frontier scheduling improve independently verified graph coverage at matched wall/storage budgets?",
+  "input": "results/dev_aux/task2177/inputs.json",
+  "expected_queries": 372,
+  "arms": [
+    "BFS",
+    "FRONTIER"
+  ],
+  "envelopes": [
+    {
+      "seconds": 0.2,
+      "nodes": 8192,
+      "edges": 65536
+    },
+    {
+      "seconds": 6.0,
+      "nodes": 8192,
+      "edges": 65536
+    },
+    {
+      "seconds": 24.0,
+      "nodes": 8192,
+      "edges": 65536
+    }
+  ],
+  "one_cap_seconds": 3300,
+  "estimated_seconds": 2400,
+  "estimate_reason": "Old6s BFS280s/62; positive roots cheap. Three envelopes including24s plus new scheduler expected about40min, hard55min cap; no run expected>1hour. If slow leave planned slots missing; never reset.",
+  "depth": 96,
+  "verification_seconds": 4.0,
+  "cursor_seconds": 4.0,
+  "scope": "All62 exposed label-stratified roots, not holdout/naturalpopulation/learning. No label read by solvers. Exactoldcaps/results preserved; only scheduler changes. Allcontrol file reads retained; actualwork/cost/controlIO not collapsed into equalprimitivecount.",
+  "counterbalance": "Each family rotates3envelopes and reverses arm order by family+envelope index.",
+  "pins": {
+    "results/dev_aux/task2189/frontier.py": "0addd963e62a07b3da14352f6283c03fcbc3c2ba1833e4c4d7c91fa7863bc976",
+    "results/dev_aux/task2179/graph.py": "676e8e9b329bd5cb238780c0deb6f3ec65e39cb4a800856948249fa79c1e1e80",
+    "scripts/generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "results/dev_aux/task2177/inputs.json": "e8885026e4880b17086f1195a417ab18abe69068a50c431e6379de45297d0a0c"
+  },
+  "frozen_utc": "2026-10-16T10:32:52.442959+00:00"
+}

@@ -1935,3 +1935,44 @@ Verified auxiliary science: https://github.com/WD-nanophotonics/GenericChess/blo
 FullremoteSHA and12anonymousfiles/PublicAPI checked;61.376min safecheckpoint.
 Informational fixedrevision result follows closingpublication; no newDotread
 orimplementationexecution inferred.
+
+
+## 2026-10-16 DEV_AUX segment75 — conditional WIN lifting and measured cost
+
+DEV_AUX owns this sidemission contribution; PUBLIC/no cross-checkout writes.
+Latest Slack-defect-first instruction was checked before research: own11dddd
+cursor/reporting repairs alreadyclosed; PRIMARY records fixed-source review.
+No new repair/root supplement was found. PRIMARY remains ea989264db3f189cc504ed649f87848ef1096691;
+its evaluator/live-view/attack cost work is read-only/context, not independently
+rerun/adopted by AUX. No PRIMARY configuration, branch, stop or publication entry
+was used. Ordinary concurrent computation did not create a quiet-window request.
+
+AUX implements full typed Core-canonical semantic positive-proof prototypes,
+with actual aux/hand/base/current/shape preserved. S4 forbidden-mate and trigger
+controls, actual transformed-capture/drop fronts and both actual nonterminal
+repetition boundaries qualify the stated scope. Root/rank/horizon/history guards
+are mandatory; UNKNOWN staysUNKNOWN. Dot1792147500.660269 read20da Core sections,
+not75code/execution; its finite-positive-certificate-lifting correction and one
+precise control were adopted. No unconditional Sessionquotient, worker, approval
+or routine acknowledgment was inferred.
+
+Frozen2190 COMPLETE372queries/2752.379s/94actualmates; BFS verified11/18/24 of58
+knownWIN at.2/6/24s versuswhole-graph heuristic11/15/15. New boundedincremental
+2204 COMPLETE248queries/587.603s/53actualmates; matchedwhole11/15 versus10/17.
+Selectioncost improves but coverage is mixed and no fixed-player adoption follows.
+ControlIO79-93percent in the4tracequeries motivates explicit cost separation.
+The144subsecond controlcalls/33actualmates change observation placement ONLY in
+that diagnostic; rootprep/gap/counter limitations and no productionpollingadoption
+are explicit. No price training/newstablepricegain or normalizedprimitive-work
+claim follows. Both originalcaps and allUNKNOWN/failure data remain.
+
+Actualcontent-reviewed13archive freshreplay:2090payloadchecks1909paths146tests,
+202savedcertificateinstances/182actualmatepaths consumed. Repeatedcontexts are
+not independent learning families; unsaved original tiny-fixture witnesses are
+owner-only and distinct from freshregressionproofs. Interface inventory2207
+precedes anyfuture graph/currentcursor/bank integration; oldfullhistoryPN pipeline
+continuesworking. Complete generated-domain coverage/scientificobjective OPEN.
+Reports: results/dev_aux/SEGMENT_20261016_75.md, PROOF_SCOPE_20261016_75.md and
+REPLAY_20261016_75.md. Give Dot a fixed revision onlyafter actualpush/anonymous
+verification; delivery is not reading/adoption/execution. Exact finaltiming and
+publication evidence are recorded in the closing receipt.

@@ -1,0 +1,6 @@
+{
+  "status": "FAILED_BEFORE_FIRST_PREFIX",
+  "completed_prefixes": 0,
+  "cause": "Core legal_actions returns list while GameSession returns tuple; all31actions equal in same order. Strict typed container audit rejected; no legal/terminal disagreement.",
+  "fix": "CoreCanonical now exposes tuple legal_actions consistently with GameSession interface. New2194 qualification retains thisfailedattempt; no oldcap/completion rewrite."
+}

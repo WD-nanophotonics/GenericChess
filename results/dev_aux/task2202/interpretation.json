@@ -1,0 +1,6 @@
+{
+  "correction": "BOUNDED_OUTER actualprecheck occurs BEFOREroot_session construction; postcheck immediatelyafterquery. Gap includes preparation+budgetedquery+atomicovershoot, NOTguaranteed<=.2s stoplatency.",
+  "querywallclaim": "Internal budgets poll realdeadline; outer querytimer excludes rootconstruction. Wholeprojectclock includes allpreparation/verification/cursor/recording. No currentstop/default adoption.",
+  "old_plan_and_data": "Preserved unchanged; missingrootconstruction-time breakdown cannot be reconstructed as a measurement.",
+  "read_counter_scope": "query_fresh_reads startsAFTERrootpreparation andincludesinsidequery+postcheck ONLY; initialprecheck andverification/cursor reads areexcluded. Derived+6perexecutedquery accountsforoneprecheck, nottotalprojectreads. Do notlabel144asallchecks."
+}
