@@ -479,18 +479,28 @@ reasoning was useful; PRIMARY executed before/after faults and2731final tests.
 No required child/PV/terminal identity is discarded. Complete generated target,
 promotion/drop/base/aux/history and frozen fair conditions remain unchanged.
 
-Next choice: assess actual full API-ready cost/completion under modest common
-budgets using these qualified inputs, keeping static controls and all fields.
-Do not infer quality from greater depth, retry old q campaigns unchanged, expand
-4096model input silently or duplicate AUX's solver/learner. Existing eight-root
-static scope check is actually begun/closed; any fresh deadline panel needs a
-new frozen before-input protocol. New framework/training requires decision value
-per total cost, not just input algebra or fiterror.
+The proposed full API-ready study is now actually closed; see
+API_READY_AND_FINITE_INPUT_COST_20261016.md.716original queries/52cold expiries
+retain only32ready outputs; a separate common50ms warm control gives384/384ready.
+Neither D12panel completes any D12: earlier empty-comparison wording is explicitly
+corrected. New fixedD4curve256queries gives88joint complete pairs with exact
+non-time fields and16final-only completions, preserving24both-censored pairs.
+Static32s ratios.995/.976/1.006/.996 are small/adverse; dynamic4/8 ratios.352/.176
+are conditional, with no joint wide ratio. No strength/q/model/API/default change.
 
-AUX71root1792127450.941029/completeDot1792127562 read as OWNER_MESSAGE plus
-fixed-old-adapter reasoning, not new source/execution. Its teacher/price/strategy
+Reason/consequence: lower input cost is real in a scoped complete objective but
+readiness, work completion and utility remain distinct. Do not rerun old q games,
+expand4096capacity silently or build a diagnostics/NN framework. Next inspect
+whether exact FULL-context repeated evaluator visits offer enough reuse to matter;
+a bounded count-only test must preserve aux/history/capacity and charge key cost
+before any cache implementation. Keep cheap static controls and reject low-yield
+engineering. Recording one-pass prototype stays private, no helper adoption.
+
+AUX72root1792132246.976859/completeDot1792132366.499399 read as OWNER_MESSAGE plus
+Dot fixed98f28f2086reasoning, not unpublished72source/execution. Its teacher/price/strategy
 work stays sidemission. A piece-count proof trigger alone does not isolate
 formation versus conversion when fallback still uses candidate prices; retain
-that interpretation without retuning its active caps. Latest PRIMARY fixed-file
-read remains AUX70c36adaa report/task2079/task2086. No crosscheckout writes,
+that interpretation without retuning its active caps. Latest PRIMARY scoped fixed-file
+read is AUX71at98f28f: six2100/2107files plus34logical/31physical/1706step
+arithmetic, no whole-report/consumer/solver execution; timing/source claims owner-only. No crosscheckout writes,
 model/price import, independent AUX rerun or routine acknowledgement gate.

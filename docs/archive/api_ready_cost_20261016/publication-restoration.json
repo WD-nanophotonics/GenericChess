@@ -1,0 +1,32 @@
+{
+  "complete": true,
+  "source_files": 307,
+  "source_dependency_sha256": "1180b5eea69f9ed8aaffc7461e79eb24f70d8704810132439cc77d6bc4824978",
+  "module_sha256": "f63f0d684ef0ae060515cdd7ea96bc386221d8db6c4c6fa2f8dbb50bd70e4a94",
+  "new_capsule_members": 57,
+  "new_capsule_sha256": "9e03a73f270d83849df10aa155875a356d142a86cd691ab156e09557bc0b14d1",
+  "normal_native_rebuilt": true,
+  "module_origin_asserted": true,
+  "search_disabled": true,
+  "actual_reader": {
+    "complete": true,
+    "counts": {
+      "full_state_history_comparisons": 5960,
+      "pv_or_fallback_edges": 4580,
+      "query_receipts": 1364,
+      "arm_base_af4a": 679,
+      "results.json": 716,
+      "arm_final_1bc6": 677,
+      "ADMISSION_EXPIRED": 52,
+      "reserve-results.json": 384,
+      "fixedD4-results.json": 256,
+      "arm_PURE_CORE": 8,
+      "core-results.json": 8
+    },
+    "seconds": 23.10962929998641,
+    "scope": "Source-bound search-disabled currentNative/Core full PV/terminal/history replay for BOTH baseline/final receipts, plus returned leaf dynamic vector. Shared Core/compiler/host; does not reexecute/authenticate original clocks or independent minimax/WDL."
+  },
+  "actual_source_tests_stdout": ".........                                                                [100%]\r\n9 passed in 0.17s\r\n",
+  "seconds": 36.076931299990974,
+  "scope": "Actualfresh complete-source rebuild/new data source-bound replay+record tests. SharedCore/compiler/host; no query replay/modeltraining or authentication of oldclocks/independent minimax/WDL. Source readonly, no privatebinary imported."
+}

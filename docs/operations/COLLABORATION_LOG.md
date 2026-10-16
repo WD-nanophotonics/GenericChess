@@ -3263,3 +3263,36 @@ originalrootreceipt. Strict exactrenderedroot importstillfails historically;
 supportedreceipt-onlyassociation keeps payload_verified=false anddoesnotupgrade
 oldcodebinding. Newfollowupactualarguments/receipt andcorrelatedDotreply retained.
 Late32sourcechecks yield392receipt/1477state-history/700PVtotal; nooldclockclaim.
+
+## PRIMARY API-ready cost —2026-10-16
+
+PRIMARY kept qualified1bc6408product code unchanged and executed16new full-rule
+prefixes/1364Native-or-Core query receipts, no evaluation games/fits. Complete
+budget/censor/field records, a common50ms warm control and actual fixedD4cost
+separate output readiness from requested task completion.88joint NativeD4pairs
+match non-time fields;16final-only and24neither retain their proper scope.
+Static12board adverse1.006 and wide dynamic censors stay visible. No q/API/model/
+UI/default adoption or AUX code/capsule import. Full source-bound reader checks
+5960states-history/4580PV or fallback edges;9source record tests pass.
+
+Correction: the earlier D12zero-mismatch checkpoint was vacuous (zero complete
+D12in BOTH panels), not finite-equivalence evidence. Originalcheckpoint/receipts
+and correction are retained. All8CoreD4controls complete:6nonmate raw scores
+match,2mate-base differences remain1Bvs100M, actual same one-edge checkmate;
+no false eight-raw-score-match claim or scoring policy change.
+
+AUX72full root1792132246.976859/oneDot1792132366.499399 read as owner message plus
+Dot's fixed98f28f2086source reasoning, not unpublished72execution. PRIMARY separately
+reads six fixed98f28f2100/2107files and checks34logical/31physical/1706move record
+arithmetic, three exact role reuses, UNKNOWN/null and missing286TRAIN/0DEV slots.
+Owner timings/source identities remain owner reports, no independent consumer
+rerun, solver, proof-filter, learning or crosscheckout writes. Dot's distinction
+between added proof safety policy and price-only improvement remains useful;
+UNKNOWN alternative is not safety and per-child total cost must be charged.
+
+Official pinned Stockfish timing source is read-only reference, not an equal-rule
+benchmark or copied timing constant. Full result arrays/fields stay. A private
+64object/512conversion encoder has modest~.87component ratio, not an end-to-end
+search gain; defer helper/API work. Next inspect bounded exact-context reuse
+opportunity before any cache, preserve full aux/history/capacity and static
+controls; no routine acknowledgement or publication approval gate.
