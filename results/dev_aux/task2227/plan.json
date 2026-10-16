@@ -1,0 +1,43 @@
+{
+  "question": "Does TRAIN-selectedR/N2-vs-unity improveactualW-L when candidate normalD2actuallyhas512visits/.1s instead ofprevious64/.02s predominantlyD1?",
+  "trigger": "2220audit833normaldecisionsactualcompleteddepth1,14fallbackdepth0; requestedD2wascensored. Newfrozenresource-transfertestbeforeoutcomes, no refit.",
+  "contexts": [
+    2220,
+    2224
+  ],
+  "profiles": [
+    1.0,
+    2.0
+  ],
+  "candidate": {
+    "normal_nodes": 512,
+    "normal_seconds": 0.1,
+    "step_seconds": 0.25,
+    "normal_depth": 2
+  },
+  "opponent": {
+    "normal_nodes": 64,
+    "normal_seconds": 0.02,
+    "step_seconds": 0.1,
+    "normal_depth": 2
+  },
+  "opponent_prices": [
+    0.5,
+    2.0
+  ],
+  "candidate_colors": [
+    0,
+    1
+  ],
+  "expected_games": 256,
+  "H": 96,
+  "one_cap_seconds": 600,
+  "estimated_seconds": 120,
+  "selection": "SAME16DEVfamiliesinbothcontexts; matchedexposed-layoutresource/ruletransfer, NOTfreshindependentrootstudy. Ratio2chosenbybaselineTRAINonly, no DEV/successprofileselection. Foepolicy/removalguidefixedwithineachpricecontrast.",
+  "scope": "ActualruleW-L; unfinishedU/None; no tablepayoff. BothplayersSAMEfixedlowinventoryactionguideascontextstudy, highcandidateonlynormalresourceincreaseexplicit; comparingpricearmsunderidenticalcandidatebudgets, nevercallcrosspolicyresourcegainpurepriceeffect. No default/PRIMARYadoption.",
+  "source_sha": "4e97a497670095575bb8388fb609a935d80ddf3f5c9d89cd07581599d635e56e",
+  "input_hashes": {
+    "2220": "370f81377a8247db5237d48d1617791c35dccfe286e6602bf815606f00f480e7",
+    "2224": "c6de63eec595c5db28bc60d9dc7df8546eeade8a926a0e5bbf485941912513fc"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "question": "Does opting into paid graph policy improve actual finite-horizon W-L against unchanged full-history opponents, or merely consume budget?",
+  "input": "results/dev_aux/task2208/roots.json",
+  "input_sha": "6c7c1d415957e3d7c37ccaec91645b99d679c38876e595f15e3b4ecc8ed59078",
+  "slots_sha": "f837a3da82ab2933b1c000fe1d63544283c2b77b68df48b2748e7045d14b60e3",
+  "expected_games": 4,
+  "H": 96,
+  "one_cap_seconds": 300,
+  "estimated_seconds": 120,
+  "step_seconds": 0.3,
+  "candidate": {
+    "normal_nodes": 128,
+    "normal_depth": 2,
+    "proof_nodes": 1024,
+    "graph_positions": 8192,
+    "graph_edges": 65536,
+    "proof_seconds": 0.15,
+    "verification_nodes": 32768,
+    "verification_seconds": 0.08,
+    "normal_seconds": 0.05,
+    "proof_depth": 96
+  },
+  "opponents": {
+    "SMALL": {
+      "normal_nodes": 32,
+      "proof_nodes": 256
+    },
+    "LARGER": {
+      "normal_nodes": 128,
+      "proof_nodes": 1024
+    }
+  },
+  "selection": "Earliestchronologicalexistinglifecycleprefix withactualcapture-to-hand anddropblocked (ply2), chosenbyrecordstructure, NOTgraphsuccess/resourcecurve. All4candidatearm/colorcells againstSAMEpre-frozenLARGERfullhistory-onlyopponent. Non-one-plyterminal preflight independentlyrequired. Exposedmechanismfixture, notpopulation/pricebenefit.",
+  "reward": "Actual rulewinner only +/-1, actual terminal no-winner0. H/globalcap/nochoice remain UNKNOWN withoutreward. Report W/L/D/U counts, pairedroot-foe-role contrasts andbounds treatingU asunknown; neverquantityreward orU=draw.",
+  "scope": "Optincontrolledpolicyfalsificationonly. Unityruleleafnonanchorsincludinghands; nolearnedprice/profilefit, hiddenlabels, teacher ordefault/PRIMARYadoption. Allcosts/currentchecks paidwithonecommondeadlineandindependentnormalcap. Atomicovershoot andnormaldepthcensor retained. Oldstudiesunchanged.",
+  "pins": {
+    "results/dev_aux/task2213/pilot.py": "3635b0847e195f4b7c4e2b62b10e2f710ec16c94aac3f6113919d3e78b2dd827",
+    "results/dev_aux/task2210/player.py": "f2fe5ed18a90b723ff44a51e974359ed05e3f9ab17f6fab83b9b597b0ec5baf1",
+    "results/dev_aux/task2148/normal.py": "fa829615034f7f174b3530244d0b5f29d018c8b48fb6ece7a41e6056f8d0a00e",
+    "results/dev_aux/task2199/semantic_graph.py": "060aacce39c40bde6178d98677156aa209f48d65b3127d3da195abdf9c8d8300",
+    "scripts/generic_session_win_proof_batch_pn.py": "1842e1cb266649d7eaeece05c91a0a5698470e3340ea13c54c6ba2648cc44f90",
+    "scripts/generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3"
+  },
+  "changed_premise": "Dot2196costcriticismadopted:64gameproposalunrun/deferred. Distinctnew4game300capmechanismcheck, no oldcapreset. PreflightHands.entries typo repairedtocounts BEFOREthisnewfreeze.",
+  "decision": "Findfirstactualactiondivergence alongcommonprefix betweenpolicyarms withinrole, retainingbothactualchoices/status/cost/normalwork. Withoutnontrivialverifiedgraphintervention oropportunitycost evidence,no broaderpolicycampaign. No price ratio inference."
+}

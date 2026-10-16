@@ -1,0 +1,32 @@
+{
+  "status": "PASS_FOUR_ACTUAL_TERMINALS_AND_COMMON_PREFIX_AUDIT",
+  "games": 4,
+  "decisions": 64,
+  "actual_statuses": {
+    "repetition": 4
+  },
+  "verifiedgraph_interventions": 0,
+  "pairs": [
+    {
+      "color": 0,
+      "common_prefix_decisions": 16,
+      "first_action_divergence": null,
+      "records_identical": true,
+      "normal_visits_full": 216,
+      "normal_visits_graph": 217,
+      "measured_seconds_full": 3.4684106000640895,
+      "measured_seconds_graph": 3.4745539999275934
+    },
+    {
+      "color": 1,
+      "common_prefix_decisions": 16,
+      "first_action_divergence": null,
+      "records_identical": true,
+      "normal_visits_full": 218,
+      "normal_visits_graph": 216,
+      "measured_seconds_full": 3.4746913000999484,
+      "measured_seconds_graph": 3.4800889999896754
+    }
+  ],
+  "scope": "Mechanismfixtureonly; four actualrepetitiondraws, noU-fill/noquantitypayoff. Noactualchoicegraphintervention orpopulation/valuebenefitshown; retainfullhistoryfixedlearner. Normalwork/timecensor retained, not component-speedgain."
+}

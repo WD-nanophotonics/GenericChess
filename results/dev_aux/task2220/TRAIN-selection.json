@@ -1,0 +1,68 @@
+{
+  "TRAIN_actual_WL_intervals": {
+    "0.25": {
+      "lower": -0.171875,
+      "upper": -0.171875,
+      "W": 16,
+      "L": 38,
+      "D": 74,
+      "U": 0,
+      "n": 128
+    },
+    "0.5": {
+      "lower": -0.171875,
+      "upper": -0.171875,
+      "W": 16,
+      "L": 38,
+      "D": 74,
+      "U": 0,
+      "n": 128
+    },
+    "1.0": {
+      "lower": -0.09375,
+      "upper": -0.09375,
+      "W": 16,
+      "L": 28,
+      "D": 84,
+      "U": 0,
+      "n": 128
+    },
+    "2.0": {
+      "lower": 0.171875,
+      "upper": 0.171875,
+      "W": 32,
+      "L": 10,
+      "D": 86,
+      "U": 0,
+      "n": 128
+    },
+    "4.0": {
+      "lower": 0.171875,
+      "upper": 0.171875,
+      "W": 32,
+      "L": 10,
+      "D": 86,
+      "U": 0,
+      "n": 128
+    }
+  },
+  "selections": [
+    {
+      "initial": 2.0,
+      "adjacent_selected": 2.0,
+      "adjacent_trace": [
+        2.0
+      ],
+      "global_selected": 2.0
+    },
+    {
+      "initial": 0.25,
+      "adjacent_selected": 0.25,
+      "adjacent_trace": [
+        0.25
+      ],
+      "global_selected": 2.0
+    }
+  ],
+  "scope": "SelectionusesactualTRterminalrewardsONLY;Ufull[-1,+1]interval,nostrictupdatewithoutdominance;tiesnotuniquevalues."
+}

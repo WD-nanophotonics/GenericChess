@@ -1984,3 +1984,27 @@ whitespacecheck was followed byuncheckedPowerShell Gitcommands; the error
 wasreported andrecorded, EOF-onlyASTidenticalfixpublished, andrawcapsulekept.
 No initialdiff-checkPASS isclaimed. Finalclosingmetadata delivery/readback
 is separate fromDotreading/adoption; no newresearchorSourcecapsulerewrite.
+
+
+## DEV_AUX76 — conditional actual W-L control
+
+Ownlane only. Paidgraph/tree/normal15tests and actualsemantic/S4 finiteWIN
+strategies; upperrank/exactheight conversion diagnosed without strategychange.
+Dot2196costcriticism adopted:64unrun ->4mechanismgames, sameactualdrawrecords.
+ChangedpremiseR/N completeCore/literal/Bellman/history control; materialprices
+learn actualruleW-L with SAMEfixedlowinventory ACTIONguide, not generalproof
+or table reward. BaselineDEVgain.15625; range2.09375; actualD2controls
+.09375/.0625 withintervalsinclude0. Adjacentplateau/2and4equivalence retained.
+No universalprice/default/PRIMARY adoption. Actualprepayment costs/failures kept.
+
+PRIMARY2d3e54105bae3e7e38a1543b4f98cdc7442e479e readonly mainline/stat review:
+ownerreports localized-control leaf/Core/S4/history/error/capacity qualification,
+2757normal/160source tests,240/256queries and complete pagedSlack recovery.
+Native capacity/evaluator continuation staysitslane. AUX didnotexecute those
+checks or import implementation/write PRIMARY. PRIMARY76inline/Dot only;
+Dot76request/75resultinline, lastactualsource20daCore, no76code/execution.
+No reading/adoption inferred from delivery. Normal concurrency, no quietwindow,
+Agents/Goals/workers/fees. Public checkedprojectcontent authorized, rawSlack/
+accounts/control privateignored. Initial15replay collectioncollision retained,
+identicaluniquetest+smallC correction; A/Bunchanged; final16receipt required.
+ScienceOPEN; finaltiming/remoteSHA in closingreceipt.

@@ -1,0 +1,10 @@
+{
+  "status": "INITIAL15_ARCHIVE_REPLAY_COLLECTION_FAILED_CORRECTED_WITH_UNIQUE_TEST_NAME",
+  "cause": "Pytestdefaultmoduleimportname test_player collided betweentask2175 andtask2210. Freshdirfailure, notstale__pycache__orprooffailure.",
+  "initial_payload_restore": "All15archives SHA/payloadchecks restoredbeforecollectionerror; no initialPASS claimed.",
+  "test_old": "results/dev_aux/task2210/test_player.py",
+  "test_new": "results/dev_aux/task2210/test_paid_graph_player.py",
+  "identical_raw_source_sha": "0d6ccf786d0a3ab9dc219d9aab9264201de6b577223f9ed768bf06e95202a20f",
+  "repair": "Renameonlynewtestsource, selectuniquebasename inreplayer; all15newtestsretained. OldA/Bsealedarchives/oldtestpayloadsunchanged. AddsmallCwithdeclaredreplayeroverlay, fresh16archiveattempt; no studysearch/fit/capreset.",
+  "exact_failure": "Privateoriginaltests.log retained in ignored firstUUIDreplaytree; publishedsummary excludespersonalpaths/accounts."
+}

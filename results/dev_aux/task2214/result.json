@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETE",
+  "complete_inventory_and_all_edges": true,
+  "counts": {
+    "": {
+      "syntactic": 480,
+      "nonmoving_anchor_unsafe": 168,
+      "admissible": 312,
+      "ongoing": 312
+    },
+    "R": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 3224,
+      "admissible": 3496,
+      "ongoing": 3420,
+      "stalemate": 36,
+      "checkmate": 40
+    },
+    "N": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "r": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 3224,
+      "admissible": 3496,
+      "ongoing": 3420,
+      "stalemate": 36,
+      "checkmate": 40
+    },
+    "n": {
+      "syntactic": 6720,
+      "nonmoving_anchor_unsafe": 2752,
+      "admissible": 3968,
+      "ongoing": 3928,
+      "stalemate": 40
+    },
+    "RN": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 44320,
+      "admissible": 43040,
+      "ongoing": 40844,
+      "stalemate": 1372,
+      "checkmate": 824
+    },
+    "Rr": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 52112,
+      "admissible": 35248,
+      "ongoing": 35008,
+      "checkmate": 240
+    },
+    "Rn": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 46544,
+      "admissible": 40816,
+      "ongoing": 40600,
+      "checkmate": 200,
+      "stalemate": 16
+    },
+    "Nr": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 46544,
+      "admissible": 40816,
+      "ongoing": 40600,
+      "checkmate": 200,
+      "stalemate": 16
+    },
+    "rn": {
+      "syntactic": 87360,
+      "nonmoving_anchor_unsafe": 44320,
+      "admissible": 43040,
+      "ongoing": 40844,
+      "checkmate": 824,
+      "stalemate": 1372
+    },
+    "RNr": {
+      "syntactic": 1048320,
+      "nonmoving_anchor_unsafe": 649328,
+      "admissible": 398992,
+      "ongoing": 393880,
+      "checkmate": 5112
+    },
+    "Rrn": {
+      "syntactic": 1048320,
+      "nonmoving_anchor_unsafe": 649328,
+      "admissible": 398992,
+      "ongoing": 393880,
+      "checkmate": 5112
+    }
+  },
+  "processed": 1016184,
+  "actual_legal_edges": 5521904,
+  "records_sha": "791bdcfa004ebd719b2187f0ef9e9a2bc1f218eacc36a9baf8cae645d095f375",
+  "seconds": 450.8879091000126,
+  "rules_sha": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad",
+  "ruleset_fingerprint": "09d8c91fce789bdf5d2d30c763053e939d14e803ff0130f98f13c418cf9e0f96",
+  "scope": "Complete4x4Kk+friendlyRN+opponentR pluscolor-swap andALLcaptureclosedsubinventories/bothturns/placements. UnusedBdefinitionpresentbutneverontheboard. No drops/promotion/aux/declarations; scoped baselinevalueassayNOTcompletegenerateddomain. Canonicalfreshgraphlabelsnotarbitraryactualhistory; positiveproofsrequirefullhistoryverification/actualexecution.",
+  "new_native_go": 0,
+  "new_reward_games": 0
+}

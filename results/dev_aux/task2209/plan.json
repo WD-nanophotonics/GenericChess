@@ -1,0 +1,29 @@
+{
+  "question": "Does matched increased resource produce nontrivial semantic proofs, or show breadth/history/verifier limitations on exactly the eight retained roots?",
+  "selection": "ALL8 retained exposed roots times4/24/96seconds, rotatingenvelopes mechanically, balancedarmorder; no training/evaluation labels or price selection.",
+  "roots_sha": "5f776499a4fe96b790d93ce5d5f98f3e34fcef3f85b493136698aa0a8ca1a232",
+  "pins": {
+    "results/dev_aux/task2209/panel.py": "6466af54fe3abde26154492e03c0e5087d859026bf627b5bdd2135c45efa419f",
+    "results/dev_aux/task2199/semantic_graph.py": "060aacce39c40bde6178d98677156aa209f48d65b3127d3da195abdf9c8d8300",
+    "scripts/generic_session_win_proof_batch_pn.py": "1842e1cb266649d7eaeece05c91a0a5698470e3340ea13c54c6ba2648cc44f90",
+    "scripts/generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3"
+  },
+  "arms": [
+    "FULL_HISTORY_PN",
+    "SEMANTIC_GRAPH"
+  ],
+  "proof_seconds": 0.2,
+  "caller_seconds": 1.0,
+  "actual_path_seconds": 4.0,
+  "nodes": 32768,
+  "edges": 262144,
+  "depth": 96,
+  "one_cap_seconds": 2200,
+  "expected_queries": 48,
+  "scope": "Compilation/shared fixture preparation reported separately. Caller clock starts before root replay and includes proof, verification, current cursor construction. Execution path separately capped and paid; not WDL reward, no price fit, teacher or default adoption. UNKNOWN distinct from draw.",
+  "changed_premise": "2208 .2s producedonlyoneone-plymate perarm. This NEW frozen curve changes budgets explicitly, retainsallroots andpreviousUNKNOWN; never extends2208cap orselectsrootsbyresults.",
+  "caller_overhead_seconds": 4.0,
+  "estimated_seconds": 1800,
+  "decision": "If no nontrivial executableproofs, do notintegrategraph intofixedlearner; recordresourcecurves and prefer existingfullhistorypolicy. If proofsappear, only scopedfeasibility, requirepaidtypedcontract and actualW-L before valueclaim."
+}

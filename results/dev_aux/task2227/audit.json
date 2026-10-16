@@ -1,0 +1,136 @@
+{
+  "status": "PASS_STRONGER_NORMAL_ACTUAL_MOVES_AND_OUTCOMES",
+  "games": 256,
+  "actual_moves": 4118,
+  "normal_depth_counts": [
+    {
+      "context": 2220,
+      "is_candidate": true,
+      "completed_depth": 2,
+      "count": 74
+    },
+    {
+      "context": 2220,
+      "is_candidate": false,
+      "completed_depth": 1,
+      "count": 71
+    },
+    {
+      "context": 2220,
+      "is_candidate": false,
+      "completed_depth": 2,
+      "count": 3
+    },
+    {
+      "context": 2224,
+      "is_candidate": true,
+      "completed_depth": 2,
+      "count": 84
+    },
+    {
+      "context": 2224,
+      "is_candidate": false,
+      "completed_depth": 1,
+      "count": 82
+    },
+    {
+      "context": 2224,
+      "is_candidate": false,
+      "completed_depth": 2,
+      "count": 2
+    }
+  ],
+  "summary": {
+    "2220": {
+      "profiles": {
+        "1.0": {
+          "n": 64,
+          "WLD": {
+            "W": 10,
+            "L": 9,
+            "D": 45
+          },
+          "mean_W_minus_L": 0.015625
+        },
+        "2.0": {
+          "n": 64,
+          "WLD": {
+            "W": 10,
+            "L": 3,
+            "D": 51
+          },
+          "mean_W_minus_L": 0.109375
+        }
+      },
+      "paired_family_gain": 0.09375,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.1875
+      ],
+      "family_effects": {
+        "0": 0.5,
+        "2": 0.0,
+        "7": 0.5,
+        "8": 0.0,
+        "11": 0.0,
+        "16": 0.5,
+        "17": 0.0,
+        "20": 0.0,
+        "23": 0.0,
+        "28": 0.0,
+        "30": 0.0,
+        "36": 0.0,
+        "40": 0.0,
+        "42": 0.0,
+        "46": 0.0,
+        "47": 0.0
+      }
+    },
+    "2224": {
+      "profiles": {
+        "1.0": {
+          "n": 64,
+          "WLD": {
+            "W": 6,
+            "L": 5,
+            "D": 53
+          },
+          "mean_W_minus_L": 0.015625
+        },
+        "2.0": {
+          "n": 64,
+          "WLD": {
+            "W": 6,
+            "L": 1,
+            "D": 57
+          },
+          "mean_W_minus_L": 0.078125
+        }
+      },
+      "paired_family_gain": 0.0625,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.15625
+      ],
+      "family_effects": {
+        "0": 0.0,
+        "2": 0.0,
+        "7": 0.5,
+        "8": 0.0,
+        "11": 0.0,
+        "16": 0.5,
+        "17": 0.0,
+        "20": 0.0,
+        "23": 0.0,
+        "28": 0.0,
+        "30": 0.0,
+        "36": 0.0,
+        "40": 0.0,
+        "42": 0.0,
+        "46": 0.0,
+        "47": 0.0
+      }
+    }
+  },
+  "scope": "ActualruleW-L; unfinishedU/None; no tablepayoff. BothplayersSAMEfixedlowinventoryactionguideascontextstudy, highcandidateonlynormalresourceincreaseexplicit; comparingpricearmsunderidenticalcandidatebudgets, nevercallcrosspolicyresourcegainpurepriceeffect. No default/PRIMARYadoption. Matchedexposed-layoutresource/ruletransferonly; actualdepthcountsrequired, no requested-depth substitution. Descriptivefamilybootstrapnotall-domaincertainty."
+}

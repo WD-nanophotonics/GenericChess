@@ -1,0 +1,41 @@
+{
+  "question": "Can actual ruleW-L withfixedconversion distinguishcontextualR/Nprices, anddoadjacentstrictupdatesfailonpiecewiseconstantdecisionplateaus?",
+  "grid": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "initial_prices": [
+    2.0,
+    0.25
+  ],
+  "opponents": [
+    0.5,
+    2.0
+  ],
+  "TRAIN_families": 32,
+  "DEV_families": 16,
+  "H": 96,
+  "normal_depth": 2,
+  "normal_nodes": 64,
+  "normal_seconds": 0.02,
+  "step_seconds": 0.1,
+  "one_cap_seconds": 1500,
+  "estimated_seconds": 600,
+  "expected_TRAIN_games": 640,
+  "maximum_DEV_games": 320,
+  "inputs_sha": "370f81377a8247db5237d48d1617791c35dccfe286e6602bf815606f00f480e7",
+  "guide": "FrozenauditedRNcanonicalrankACTIONpolicyonlywhenactorcount<=4,BOTHplayersidenticalguide; allcurrentlegalactions/fullrecordreplaypaid. Not finiteall-defenseWINcertification, genericMateSolverorhistoryWDLoracle; neverrewardbytable. Actualrulemaxply96/repetition3definesfinitegame. Higher5actorchoicesmaterialsearchonly.",
+  "reward": "ActualpublicSessionW/L+1/-1,trueactualno-winnerterminal0; unfinished/cap/nochoiceU withrewardNone. Unknownintervals[-U,+U], no quantityfill. NonnormalizedcanonicalWINlabelsneverusedasrewardorrootselection.",
+  "selectors": "PREDECLAREDadjacentstrictbaselineandglobalgridalternative, twofrozenrandominitials. CandidateupdateonlyifnewTRlowerbound>oldTRupperbound, noDEVselection. Tieskeepinitialwhereoptimal; otherwiselowestgridindex. DEVunitycontrolplusuniqueTRAINselectedprofilesonly; noDEVuntilall640TRAINslotsrecorded. Intervals/contextdependence, notuniversalpointprice.",
+  "scope": "Scopedrule-derivedfixedendgameguidanceassay, notadoptionofgraphprototype/PRIMARY/defaults. Fixedfoes/roles/resources, geometry/rule/humanpriceholdoutunread. Teacherprepayment450.888census+actualretrograde/audit/loadcostretained. Storeallpartialgames/missingplannedslots/failures. No capreset orhumanreferencefit.",
+  "pins": {
+    "results/dev_aux/task2220/study.py": "2f1e9e2d30cf3f94575ecfaa16462c4b56b65b62059ef99fa6a3fa0adfed69bf",
+    "results/dev_aux/task2210/player.py": "f2fe5ed18a90b723ff44a51e974359ed05e3f9ab17f6fab83b9b597b0ec5baf1",
+    "results/dev_aux/task2148/normal.py": "fa829615034f7f174b3530244d0b5f29d018c8b48fb6ece7a41e6056f8d0a00e",
+    "results/dev_aux/task2217/audit.py": "eef99ad2407e6db559ffeb0f081e5ee9854eb7a2bc53e5909f72a804ef50ba45",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3"
+  }
+}

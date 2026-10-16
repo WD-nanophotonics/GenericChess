@@ -1,0 +1,215 @@
+{
+  "status": "PASS_ACTUAL_RECORDS_ALL_MOVES_SELECTION_AND_SPLIT",
+  "task": 2220,
+  "games": 832,
+  "actual_moves": 11790,
+  "public_replay_seconds": 2.9517677999974694,
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 833,
+    "FIXED_LOW_INVENTORY_RANK_GUIDANCE": 10943,
+    "PRECOMPUTED_TYPED_LEGAL_FALLBACK": 14
+  },
+  "actual_terminals": {
+    "repetition": 517,
+    "checkmate": 290,
+    "stalemate": 25
+  },
+  "normal_completed_depths": {
+    "1": 833,
+    "None": 10943,
+    "0": 14
+  },
+  "plateau_trajectories": [
+    {
+      "prices": [
+        0.25,
+        0.5
+      ],
+      "pairs": 128,
+      "identical_records": 128,
+      "identical_actual_outcomes": 128
+    },
+    {
+      "prices": [
+        2.0,
+        4.0
+      ],
+      "pairs": 128,
+      "identical_records": 128,
+      "identical_actual_outcomes": 128
+    }
+  ],
+  "ratios": {
+    "TRAIN": {
+      "0.25": {
+        "n": 128,
+        "WLDU": {
+          "W": 16,
+          "L": 38,
+          "D": 74,
+          "U": 0
+        },
+        "mean_W_minus_L": -0.171875
+      },
+      "0.5": {
+        "n": 128,
+        "WLDU": {
+          "W": 16,
+          "L": 38,
+          "D": 74,
+          "U": 0
+        },
+        "mean_W_minus_L": -0.171875
+      },
+      "1.0": {
+        "n": 128,
+        "WLDU": {
+          "W": 16,
+          "L": 28,
+          "D": 84,
+          "U": 0
+        },
+        "mean_W_minus_L": -0.09375
+      },
+      "2.0": {
+        "n": 128,
+        "WLDU": {
+          "W": 32,
+          "L": 10,
+          "D": 86,
+          "U": 0
+        },
+        "mean_W_minus_L": 0.171875
+      },
+      "4.0": {
+        "n": 128,
+        "WLDU": {
+          "W": 32,
+          "L": 10,
+          "D": 86,
+          "U": 0
+        },
+        "mean_W_minus_L": 0.171875
+      }
+    },
+    "DEV": {
+      "0.25": {
+        "n": 64,
+        "WLDU": {
+          "W": 7,
+          "L": 15,
+          "D": 42,
+          "U": 0
+        },
+        "mean_W_minus_L": -0.125
+      },
+      "1.0": {
+        "n": 64,
+        "WLDU": {
+          "W": 8,
+          "L": 11,
+          "D": 45,
+          "U": 0
+        },
+        "mean_W_minus_L": -0.046875
+      },
+      "2.0": {
+        "n": 64,
+        "WLDU": {
+          "W": 10,
+          "L": 3,
+          "D": 51,
+          "U": 0
+        },
+        "mean_W_minus_L": 0.109375
+      }
+    }
+  },
+  "DEV_paired_vs_unity": {
+    "0.25": {
+      "family_effects": {
+        "0": 0.0,
+        "2": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "11": 0.0,
+        "16": 0.0,
+        "17": -0.5,
+        "20": 0.0,
+        "23": 0.0,
+        "28": 0.25,
+        "30": -0.25,
+        "36": 0.25,
+        "40": 0.0,
+        "42": -0.5,
+        "46": 0.0,
+        "47": -0.5
+      },
+      "mean": -0.078125,
+      "descriptive_family_bootstrap95": [
+        -0.203125,
+        0.03125
+      ],
+      "positive": 2,
+      "negative": 4,
+      "zero": 10
+    },
+    "1.0": {
+      "family_effects": {
+        "0": 0.0,
+        "2": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "11": 0.0,
+        "16": 0.0,
+        "17": 0.0,
+        "20": 0.0,
+        "23": 0.0,
+        "28": 0.0,
+        "30": 0.0,
+        "36": 0.0,
+        "40": 0.0,
+        "42": 0.0,
+        "46": 0.0,
+        "47": 0.0
+      },
+      "mean": 0.0,
+      "descriptive_family_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "zero": 16
+    },
+    "2.0": {
+      "family_effects": {
+        "0": 0.5,
+        "2": 0.5,
+        "7": 0.5,
+        "8": 0.0,
+        "11": 0.0,
+        "16": 0.5,
+        "17": 0.0,
+        "20": 0.0,
+        "23": 0.0,
+        "28": 0.25,
+        "30": -0.25,
+        "36": 0.0,
+        "40": 0.0,
+        "42": 0.5,
+        "46": 0.0,
+        "47": 0.0
+      },
+      "mean": 0.15625,
+      "descriptive_family_bootstrap95": [
+        0.046875,
+        0.28125
+      ],
+      "positive": 6,
+      "negative": 1,
+      "zero": 9
+    }
+  },
+  "scope": "Independentclosedjournal/publicSessionreplay, notnewstatisticalgames. Actualrulemaxply96/repetition;guideisfixedACTIONpolicyNOTWINcertificate/reward. Price-unqueriedDEVwithinoneexposedrule/structuralmu, notnewruleholdout. Familybootstrapdescriptive, dependencebeyondD4/colorsandcost/timinglimits remain; no universaluniquepriceorcontinuumequivalence."
+}

@@ -1,3 +1,30 @@
+# DEV_AUX current mainline —76,2026-10-16
+
+ScienceOPEN/PUBLIC/own sidemission, PRIMARYreadonly. Latest user governs.
+Slackdefect-first ownerrepair11dddd CLOSED; complete newroots/fullthreads no
+new defect. General graph/proof remainsoptin: nontrivialS4 witnesses valid,
+.7-72s discovery not .3s player. Paid graph/tree/normal/currentchecks retain
+CANDIDATE/UNKNOWN/distinctunits. No bank/default/PRIMARY adoption.
+Rawrank37 -> exactheight33 conversion fixedSAMEedges; originalfullhistory
+534nodes82WINleaves passes. Failedrawunroll retained, no searchresult rewrite.
+Dot4-versus64 cost objection adopted:4true repetitiondraws/same16plyrecords,
+no intervention;64unrun. Changed R/Nstructural-mu experiment uses fixed SAME
+lowinventory ACTION guide forbothplayers, NOT genericWINproof/table reward.
+ActualW-L only. Baseline832games0U,640TRAINbefore192DEV: price2vsunity
+DEVnetgain.15625/descriptivefamilyCI[.046875,.28125]. Matchedrange2gain.09375
+CI[0,.1875], exposed-layoutRULEtransferonly. ActualD2candidate controls
+.09375/.0625, bothCIinclude0. No general/uniqueprice claim.
+Adjacent.25stuck: .25/.5same128TRrecords;2/4also same128records. Globalgrid2
+partlytiebreak. Nohumanprice/holdout/DEVfit orproduct/default/UI changes.
+Next Main: freeze NEWquiet-only5actororbits/noinitialcapture, fixed1/2,
+actualD2/fixedguide/foes; testadvantageformation beyondvictimranking.
+Backup: equallystrongD2foes or exactTRAIN-only finite-depthpriceintervals.
+No unchangedgame-count expansion toidentify policy-equivalentprices.
+Alloldcaps/failed/partial/missing/UNKNOWN retained. Reports:
+results/dev_aux/SEGMENT_20261016_76.md and REPLAY_20261016_76.md.
+
+## Prior complete selection — preserved history
+
 # DEV_AUX current mainline — closed75,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly. AGENTS/latestuser govern.
