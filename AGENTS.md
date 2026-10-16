@@ -353,3 +353,10 @@ keepsoriginalinputs/prices/opponent/caps unchanged, freezes balancedprofile/role
 order andpairedfamilygain/interaction intervals, allmissing/censoredslots retained.
 No extra games/worker/ackloop. This lateclarification isdirectGit, notsilently
 rewritten intoimmutable source/evidencecapsules. Rawreplyignored/private.
+
+Closing69 Dot1792120184.796349 read1e46report/2054freeze only, noexecution.
+Adopt validestimand correction in2054execution-interpretation BEFOREfuturefitness:
+common-B TRAIN contrasts diagnoseR-price-by-B interaction; ifdifferentBselected,
+DEVgain difference is selected-policy gain difference, notpureinteraction.
+WithinKRNB Rprice changes nolegalmate structure. Originalfreeze/inputs/caps
+unchanged,0fitness; no extra matrixgames orhardNNworkorder.

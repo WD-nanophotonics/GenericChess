@@ -46,3 +46,10 @@ Evidence SEGMENT_20261016_69.md/tasks2030-2054.
 [Small-rule teacher and value identification](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689): compare fixed material, simple king-relative tables and small NN only under a credible shared teacher, full supported state/history and total cost. Keep exact/proved-bound/approximate/unknown labels separate from actual fixed-policy game outcomes. A proved noWIN fragment alone supplies no diverse piece-price signal. No immediate NN training or declaration that scalar values failed.
 
 [Generic architecture and nearby-rule transfer](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309): future choices may combine rule-derived evaluation, search and executable solver. Measure zero-shot, fine-tuning/from-scratch and forgetting costs across one controlled rule change at a time; do not assume a universal difficulty order or preserved local tactics. Promotion/drop/aux/history remain explicit. Retained as CHAT reference, not hard AGENTS rules, new framework or current frozen-study changes.
+
+Closing69 Dot1792120184.796349 read1e46report/2054freeze only, noexecution.
+Adopt validestimand correction in2054execution-interpretation BEFOREfuturefitness:
+common-B TRAIN contrasts diagnoseR-price-by-B interaction; ifdifferentBselected,
+DEVgain difference is selected-policy gain difference, notpureinteraction.
+WithinKRNB Rprice changes nolegalmate structure. Originalfreeze/inputs/caps
+unchanged,0fitness; no extra matrixgames orhardNNworkorder.
