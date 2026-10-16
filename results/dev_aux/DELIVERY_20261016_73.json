@@ -1,0 +1,134 @@
+{
+  "status": "VERIFIED_PUBLIC_SCIENCE_DELIVERY_AND_SAFE_SEGMENT_END",
+  "science_revision": "21a8359fca5dc8cb2c378e93011f12d0d0c85890",
+  "remote_revision": "21a8359fca5dc8cb2c378e93011f12d0d0c85890",
+  "visibility": "PUBLIC",
+  "anonymous_exact_files": [
+    {
+      "path": "AGENTS.md",
+      "anonymous_http": 200,
+      "bytes": 24946,
+      "sha256": "ae593036fadc7d4956a1042c268a721381ec29d8475a9911f2a50346ed98e9b8"
+    },
+    {
+      "path": "docs/research/LOCAL_MAINLINE.md",
+      "anonymous_http": 200,
+      "bytes": 2622,
+      "sha256": "943cf26017c9dcddd7fb9c047b706e971cdb8fb56899961371602277a54f185e"
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "anonymous_http": 200,
+      "bytes": 196625,
+      "sha256": "34fdbeeecea82667b1c98b9339fc814a7a5a5d0e7ab01d61ffe988655b45e380"
+    },
+    {
+      "path": "results/dev_aux/SEGMENT_20261016_73.md",
+      "anonymous_http": 200,
+      "bytes": 13045,
+      "sha256": "b23918276d23404389dbb169a8f5723b03ba7c58f57524f232b99a2262683e62"
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261016_73.md",
+      "anonymous_http": 200,
+      "bytes": 2405,
+      "sha256": "e07e497a46c4841074dffb556f50d240ada7db8b8ad5d67eb46d19256b6e7a50"
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261016_73.json",
+      "anonymous_http": 200,
+      "bytes": 2335,
+      "sha256": "69c49815fdbc88ac2b86108f7d46a7a94a6f9524d49f1e3519f8226316ed67d8"
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_73.zip",
+      "anonymous_http": 200,
+      "bytes": 3401689,
+      "sha256": "e1456ed8f51b08bd260fb3e06359a3095b389a02acd53b431128dd8930e0a590"
+    },
+    {
+      "path": "results/dev_aux/LATE_REPRO_20261016_73.zip",
+      "anonymous_http": 200,
+      "bytes": 3403964,
+      "sha256": "63da4ef029a4346a97e19744a149c0a3a40aad259e04b4afe1537f77ee33a9bd"
+    },
+    {
+      "path": "results/dev_aux/task2145/verify.py",
+      "anonymous_http": 200,
+      "bytes": 3956,
+      "sha256": "d4bc1b642442765f589921b0b3b1bc0e33395352a3d1008d7f57d044dd0f986f"
+    },
+    {
+      "path": "results/dev_aux/task2153/stop_evidence.py",
+      "anonymous_http": 200,
+      "bytes": 2203,
+      "sha256": "1c3bf8b813a6963119138a4b641b78b3e93366ab88f3aa9256c4fe31262670e7"
+    },
+    {
+      "path": "results/dev_aux/task2158/completion.json",
+      "anonymous_http": 200,
+      "bytes": 1149,
+      "sha256": "188d13d1099a488a48a9099f301d5fff4eaccc6a8a7eea45f83f8ccbe6d3a155"
+    },
+    {
+      "path": "results/dev_aux/task2157/restore-receipt.json",
+      "anonymous_http": 200,
+      "bytes": 1627,
+      "sha256": "9a211afb96d46326f60ba49940007a8c6eecc5b65b3f6b4a81b73b18112be0ab"
+    }
+  ],
+  "source_only_replay": {
+    "status": "PASS_FRESH_ELEVEN_ARCHIVE_OFFLINE_REPLAY73",
+    "archive_payload_checks": 1806,
+    "unique_paths": 1632,
+    "tests": {
+      "tests": 67,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "consumers": {
+      "2139_actual_records": "544logical496physical146certificates",
+      "2149_actual_records": "928logical848physical159certificates",
+      "all6045_precommit_decisions": "PASS",
+      "puregeneric_saved_queries": "576rows65certificates",
+      "paired_actual_price_attribution": "PASS",
+      "2158_conditional_price_active_actual_records": "PASS_actualrecords_and_savedcertificates_nullDEVskip_checked",
+      "all15179_late_precommit_decisions_and_actual_fallback": "PASS",
+      "price_active_inputs": "140candidates1992nodes336normalnode-onlyqueries",
+      "min_rank_tree_saved_certificates": 2,
+      "min_rank_tree_actual_cursor_moves": 44,
+      "status": "PASS_CLOSED73_SOURCE_AND_EVIDENCE_CONSUMERS",
+      "seconds": 24.58548619999783,
+      "scope": "No studyprover/fit/gameproducer orcapreset; closedrecords/savedcertificates+336normalalgorithmchecks. Separatepytestfixturesinvokeonlytheirboundedtinyprovers. CurrenthostPython/OSunbundled. No liveSlack/accountreads or externalprivatebridgeimport."
+    },
+    "seconds": 33.45734810002614,
+    "scope": "FreshignoredUUIDdir/elevenhash-pinnedreviewedarchives/Python-S/PYTHONPATHempty/modulepathassertions.67regressions incltinyboundedfixtureprovers, closedactualrecords/certificates and336node-onlynormalchecks; no studyprover/fit/gamebatch/capreset. SamehostPython/OSunbundled. Priorunusedbridgepublicationprojectionexplicit/notimported/notfulloriginalbyteidentity."
+  },
+  "studies": {
+    "logical": 2432,
+    "physical": 2224,
+    "actual_plies": 30189,
+    "learning_certificates": 418
+  },
+  "scientific_completion": false,
+  "main_result": "No demonstratedstablepricebenefit; paidfallbackrecovereda realtimeout, genericproofandverificationqualifiedwithdeclaredlimits.",
+  "next_forecast": "2161directGitinput/work-onlyaddendum AFTERimmutablecapsules; notinside11archive/testreceipt.",
+  "slack": {
+    "request_id": "GC-SLACK-20261016-170346-85234665",
+    "thread": "1792137888.463179",
+    "advisor_reply": "1792138005.873239",
+    "actual_read_scope": "7aereference/session/position+inline73, no73newsource/executioninferred"
+  },
+  "session": {
+    "id": "cf33ebaf-2b02-49dd-ac63-51c595758456",
+    "started_at": "2026-10-16T07:50:30.130172+00:00",
+    "ended_at": "2026-10-16T09:05:04.593023+00:00",
+    "elapsed_minutes": 74.574,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 6,
+    "duration_gate_passed": true
+  },
+  "all_research_producers_closed": true,
+  "privacy": "Actualoutgoingcontentchecked/noPIIpasswordcredentials/rawSlack/account/privateflagobservations. Exactprivateoriginalspreservedignored."
+}

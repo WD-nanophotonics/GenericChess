@@ -1905,3 +1905,7 @@ three ties withsum6 vsbaseline2; DEVfamilygain0 (+.5/-.5), no benefit/uniquepric
 is recovered bythepredeclaredpaidlegalfallback. Oldpartialstudiesremainclosed.
 A separate latecapsule/explicitconsumeroverlay retainsinitiale145capsule and
 first10archive67-testreceipt, ratherthanrewriting earlier executed evidence.
+
+73science21a8359fca5dc8cb2c378e93011f12d0d0c85890 fullremote+12anonymousPUBLICfiles verified. Fresh11source-only1806payloadchecks1632paths67tests/closedconsumersPASS. Next2161forecast freezesALL32TRAIN inputs, maximumiterative-depth4nodeupper425, zero normal/proof/fitnessqueries; directGitclosingaddendumoutsidebothcapsules.
+
+73sessionfinish accepted safe_checkpoint after74.574minutes/6researchcheckpoints; allproducersclosed, ScienceOPEN. Closingforecast/deliverymetadata is directGitaddendum; fixedresult message follows after finalbranchverification, no read/adoption inferred.

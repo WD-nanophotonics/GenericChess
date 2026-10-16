@@ -1,0 +1,909 @@
+{
+  "status": "INPUT_AND_WORK_FORECAST_ONLY_NEXT_CAPACITY_PANEL",
+  "question": "Can completing deepermaterialsearch alter TRAIN rootchoicecapacity acrossallpricecells withoutanotherlearningbatch?",
+  "inputs_sha": "bdba3c4bd551f10da924663b50e56526250cca315093f9cfc1a241751e2d2ea1",
+  "families": 32,
+  "rows": [
+    {
+      "family": 0,
+      "root": [
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        "b",
+        "n",
+        "B",
+        "k",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-0.json",
+      "fingerprint": "0761c5d0e5f45bdd7d39a088c889223dfa4b01325952066079ee18ed23b30b62",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 12,
+        "3": 40,
+        "4": 93
+      },
+      "iterative_upper": {
+        "2": 16,
+        "3": 56,
+        "4": 149
+      }
+    },
+    {
+      "family": 1,
+      "root": [
+        "N",
+        "k",
+        "b",
+        ".",
+        "B",
+        ".",
+        "K",
+        ".",
+        "n",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-1.json",
+      "fingerprint": "2f3d42e09c9f6355661906056fc990be2eff81851b095420545b584765860742",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 16,
+        "3": 42,
+        "4": 120
+      },
+      "iterative_upper": {
+        "2": 21,
+        "3": 63,
+        "4": 183
+      }
+    },
+    {
+      "family": 2,
+      "root": [
+        "b",
+        ".",
+        "B",
+        ".",
+        ".",
+        "k",
+        "K",
+        "n",
+        "N",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-2.json",
+      "fingerprint": "5ecf098f5c66c9de353fbd1fb86613d33f5d9acdd52ad4daf2d9af26a8737e8d",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 21,
+        "3": 59,
+        "4": 202
+      },
+      "iterative_upper": {
+        "2": 26,
+        "3": 85,
+        "4": 287
+      }
+    },
+    {
+      "family": 3,
+      "root": [
+        "B",
+        "n",
+        "K",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "b",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-3.json",
+      "fingerprint": "a8fa88383fe5c23dc12ef2f13aaab6d5ad3dc39cb3ade2987c711b53dd93c368",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 20,
+        "3": 71,
+        "4": 224
+      },
+      "iterative_upper": {
+        "2": 26,
+        "3": 97,
+        "4": 321
+      }
+    },
+    {
+      "family": 4,
+      "root": [
+        "n",
+        "k",
+        "B",
+        ".",
+        ".",
+        "N",
+        ".",
+        "b",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-4.json",
+      "fingerprint": "9449e57b4d925a32170b296c08465ba4d078a3c4906d82f3c9e81727c19cc986",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 20,
+        "3": 71,
+        "4": 214
+      },
+      "iterative_upper": {
+        "2": 25,
+        "3": 96,
+        "4": 310
+      }
+    },
+    {
+      "family": 5,
+      "root": [
+        "k",
+        ".",
+        "n",
+        "B",
+        "b",
+        "K",
+        "N",
+        ".",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-5.json",
+      "fingerprint": "05cccfff07e97d1ace9791a3b0e90ef245ff6914bab2c27ab2e5cd5da58d5c59",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 17,
+        "3": 54,
+        "4": 188
+      },
+      "iterative_upper": {
+        "2": 21,
+        "3": 75,
+        "4": 263
+      }
+    },
+    {
+      "family": 6,
+      "root": [
+        "n",
+        "k",
+        "b",
+        ".",
+        "B",
+        "N",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-6.json",
+      "fingerprint": "eabc0a5c211d280a2b2cc4f038aef7f484348844bf71561b6a6994b2e7196415",
+      "fulltree_nodes": {
+        "1": 3,
+        "2": 8,
+        "3": 17,
+        "4": 44
+      },
+      "iterative_upper": {
+        "2": 11,
+        "3": 28,
+        "4": 72
+      }
+    },
+    {
+      "family": 7,
+      "root": [
+        "k",
+        ".",
+        ".",
+        "b",
+        ".",
+        "K",
+        "N",
+        "B",
+        "n",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-7.json",
+      "fingerprint": "13233409b86fc430c8a1294a66067150304ae7a58eaee13b3153aaf6700f3cac",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 16,
+        "3": 51,
+        "4": 138
+      },
+      "iterative_upper": {
+        "2": 21,
+        "3": 72,
+        "4": 210
+      }
+    },
+    {
+      "family": 8,
+      "root": [
+        ".",
+        "N",
+        "b",
+        "n",
+        "B",
+        "k",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-8.json",
+      "fingerprint": "dc0b7e25e2abf8c1fb557af3f6d662163edbf0e4e91f3c2722326b94fa8ec4cb",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 11,
+        "3": 23,
+        "4": 62
+      },
+      "iterative_upper": {
+        "2": 15,
+        "3": 38,
+        "4": 100
+      }
+    },
+    {
+      "family": 9,
+      "root": [
+        "n",
+        "k",
+        "N",
+        "b",
+        ".",
+        ".",
+        ".",
+        "B",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-9.json",
+      "fingerprint": "8228b5b9745ae26c730f89c62d07690baa0f40eee0d76f7b1bd368670bc45bb1",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 9,
+        "3": 19,
+        "4": 53
+      },
+      "iterative_upper": {
+        "2": 13,
+        "3": 32,
+        "4": 85
+      }
+    },
+    {
+      "family": 10,
+      "root": [
+        ".",
+        "k",
+        "B",
+        ".",
+        ".",
+        "N",
+        "n",
+        "b",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-10.json",
+      "fingerprint": "5a3b421654ea9d79bfbc92915dbdd90bfdf941638485dec6b17181991b5f7dd7",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 24,
+        "3": 90,
+        "4": 276
+      },
+      "iterative_upper": {
+        "2": 30,
+        "3": 120,
+        "4": 396
+      }
+    },
+    {
+      "family": 11,
+      "root": [
+        "N",
+        "K",
+        "B",
+        "n",
+        ".",
+        ".",
+        "b",
+        ".",
+        "k",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-11.json",
+      "fingerprint": "621f586d2f7e53e9d7478475663af3868c88cf61ab8f8740bf25019c741f8cfe",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 18,
+        "3": 62,
+        "4": 195
+      },
+      "iterative_upper": {
+        "2": 24,
+        "3": 86,
+        "4": 281
+      }
+    },
+    {
+      "family": 12,
+      "root": [
+        ".",
+        "N",
+        "K",
+        ".",
+        ".",
+        "b",
+        "n",
+        "k",
+        "B",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-12.json",
+      "fingerprint": "20e103a90ce94162a3ed9885d913d5213794a8e1701d64067f36feb40d909608",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 14,
+        "3": 48,
+        "4": 162
+      },
+      "iterative_upper": {
+        "2": 18,
+        "3": 66,
+        "4": 228
+      }
+    },
+    {
+      "family": 13,
+      "root": [
+        "n",
+        ".",
+        "k",
+        "K",
+        ".",
+        "B",
+        "b",
+        ".",
+        "N",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-13.json",
+      "fingerprint": "c48ba73a0f29a5e2f04e1e0d015f22fe9440a12d78b0f36c0da0af492813e1af",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 21,
+        "3": 64,
+        "4": 172
+      },
+      "iterative_upper": {
+        "2": 27,
+        "3": 91,
+        "4": 263
+      }
+    },
+    {
+      "family": 14,
+      "root": [
+        ".",
+        ".",
+        "k",
+        "n",
+        "N",
+        "B",
+        "K",
+        ".",
+        "b",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-14.json",
+      "fingerprint": "c7c1a51551f9e0a1d5f45b90055af5fe69b50f9aae788c13b7a83d8c0e80f9a4",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 12,
+        "3": 25,
+        "4": 70
+      },
+      "iterative_upper": {
+        "2": 17,
+        "3": 42,
+        "4": 112
+      }
+    },
+    {
+      "family": 15,
+      "root": [
+        "n",
+        ".",
+        "k",
+        "b",
+        ".",
+        "B",
+        "N",
+        ".",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-15.json",
+      "fingerprint": "7e3a0006d44dbaab59a23e90fb6eeba61c4dc2746d3fa11b8fb90d348e63bc9e",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 16,
+        "3": 46,
+        "4": 139
+      },
+      "iterative_upper": {
+        "2": 20,
+        "3": 66,
+        "4": 205
+      }
+    },
+    {
+      "family": 16,
+      "root": [
+        ".",
+        ".",
+        "k",
+        "K",
+        "N",
+        "b",
+        "n",
+        "B",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-16.json",
+      "fingerprint": "9468ece3e3203ecee7cc130a55a3267485f9f6108cc2650609c03c8d22eff124",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 13,
+        "3": 30,
+        "4": 76
+      },
+      "iterative_upper": {
+        "2": 17,
+        "3": 47,
+        "4": 123
+      }
+    },
+    {
+      "family": 17,
+      "root": [
+        "b",
+        "n",
+        ".",
+        "k",
+        ".",
+        "K",
+        "N",
+        ".",
+        "B",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-17.json",
+      "fingerprint": "720e655b36479b70c3296afac3c87e1597d7484579d8c57d79eb800516fb8080",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 20,
+        "3": 69,
+        "4": 223
+      },
+      "iterative_upper": {
+        "2": 25,
+        "3": 94,
+        "4": 317
+      }
+    },
+    {
+      "family": 18,
+      "root": [
+        ".",
+        "B",
+        "N",
+        "K",
+        ".",
+        "b",
+        ".",
+        "n",
+        "k",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-18.json",
+      "fingerprint": "a8397d9be22289cc34e8ae8d05f8b277c3a6c4ecdf6a5451ed2c9987e02ae2b6",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 12,
+        "3": 37,
+        "4": 100
+      },
+      "iterative_upper": {
+        "2": 16,
+        "3": 53,
+        "4": 153
+      }
+    },
+    {
+      "family": 19,
+      "root": [
+        "b",
+        ".",
+        "K",
+        "k",
+        "n",
+        ".",
+        "N",
+        ".",
+        "B",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-19.json",
+      "fingerprint": "a6f4ed4e71d6eaa7bcc3b3d9417ee907e30a3f2709c86437b74d1e4846f0328d",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 10,
+        "3": 25,
+        "4": 62
+      },
+      "iterative_upper": {
+        "2": 15,
+        "3": 40,
+        "4": 102
+      }
+    },
+    {
+      "family": 20,
+      "root": [
+        "B",
+        ".",
+        ".",
+        "N",
+        "b",
+        "K",
+        "k",
+        ".",
+        "n",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-20.json",
+      "fingerprint": "57f8fd160771192223d27384fee4b6f96f90256dd9b0982c698d5101f49b1f72",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 12,
+        "3": 46,
+        "4": 131
+      },
+      "iterative_upper": {
+        "2": 16,
+        "3": 62,
+        "4": 193
+      }
+    },
+    {
+      "family": 21,
+      "root": [
+        "k",
+        ".",
+        "n",
+        "N",
+        "b",
+        "K",
+        ".",
+        ".",
+        "B",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-21.json",
+      "fingerprint": "93b3a604b7006ae90c4261250961a1c4e2384f746dc50afa82e3d73fe2ce5f68",
+      "fulltree_nodes": {
+        "1": 3,
+        "2": 5,
+        "3": 15,
+        "4": 33
+      },
+      "iterative_upper": {
+        "2": 8,
+        "3": 23,
+        "4": 56
+      }
+    },
+    {
+      "family": 22,
+      "root": [
+        "N",
+        ".",
+        "b",
+        "k",
+        ".",
+        "n",
+        "B",
+        ".",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-22.json",
+      "fingerprint": "4e73530c7b4c8afaf7d039155109eb64e6fd2b9d054fbe859a6de13c5ad56589",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 27,
+        "3": 93,
+        "4": 299
+      },
+      "iterative_upper": {
+        "2": 33,
+        "3": 126,
+        "4": 425
+      }
+    },
+    {
+      "family": 23,
+      "root": [
+        ".",
+        "B",
+        "K",
+        "N",
+        ".",
+        "n",
+        "k",
+        ".",
+        "b",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-23.json",
+      "fingerprint": "387adff703191ed5906387c564ffc7ecc41f55807574fcbabddfc0ee46e0edef",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 11,
+        "3": 29,
+        "4": 75
+      },
+      "iterative_upper": {
+        "2": 15,
+        "3": 44,
+        "4": 119
+      }
+    },
+    {
+      "family": 24,
+      "root": [
+        "b",
+        "n",
+        "B",
+        "k",
+        ".",
+        "K",
+        ".",
+        "N",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-24.json",
+      "fingerprint": "66cc692ec64de60dfca1b53fcecca48738b5b1025fd89bae7a85fda5760a4deb",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 15,
+        "3": 55,
+        "4": 172
+      },
+      "iterative_upper": {
+        "2": 19,
+        "3": 74,
+        "4": 246
+      }
+    },
+    {
+      "family": 25,
+      "root": [
+        "b",
+        ".",
+        "B",
+        "K",
+        ".",
+        "k",
+        ".",
+        "n",
+        "N",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-25.json",
+      "fingerprint": "a84919c89a5a23fdf8ada6a8aa30bd39bfc09c6a779f2047f2717b80f8b25c2b",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 20,
+        "3": 59,
+        "4": 204
+      },
+      "iterative_upper": {
+        "2": 25,
+        "3": 84,
+        "4": 288
+      }
+    },
+    {
+      "family": 26,
+      "root": [
+        "n",
+        "K",
+        ".",
+        "B",
+        "b",
+        ".",
+        "N",
+        ".",
+        "k",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-26.json",
+      "fingerprint": "3827db932918199bd8743aafe7c1669dc311ed21d8a5b48a1aeabd98238166fe",
+      "fulltree_nodes": {
+        "1": 3,
+        "2": 12,
+        "3": 42,
+        "4": 160
+      },
+      "iterative_upper": {
+        "2": 15,
+        "3": 57,
+        "4": 217
+      }
+    },
+    {
+      "family": 27,
+      "root": [
+        "k",
+        "N",
+        "b",
+        "B",
+        ".",
+        "n",
+        ".",
+        "K",
+        ".",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-27.json",
+      "fingerprint": "3f375173d392713385db313a1fc9f45eea3b3682e4a0a703b6778a75acdbebc4",
+      "fulltree_nodes": {
+        "1": 5,
+        "2": 18,
+        "3": 59,
+        "4": 183
+      },
+      "iterative_upper": {
+        "2": 23,
+        "3": 82,
+        "4": 265
+      }
+    },
+    {
+      "family": 28,
+      "root": [
+        "b",
+        ".",
+        "N",
+        "B",
+        ".",
+        "k",
+        "K",
+        ".",
+        "n",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-28.json",
+      "fingerprint": "18b8850dc6ccead47db6924f242bbd2c6a112e81261512be308f85cf4039202c",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 12,
+        "3": 28,
+        "4": 85
+      },
+      "iterative_upper": {
+        "2": 16,
+        "3": 44,
+        "4": 129
+      }
+    },
+    {
+      "family": 29,
+      "root": [
+        ".",
+        "N",
+        "k",
+        "B",
+        ".",
+        "n",
+        "b",
+        ".",
+        "K",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-29.json",
+      "fingerprint": "2139dbed1c16d30a6a128d70cac58bb9847c27e63feb73872ba99a7da99c869d",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 11,
+        "3": 27,
+        "4": 73
+      },
+      "iterative_upper": {
+        "2": 15,
+        "3": 42,
+        "4": 115
+      }
+    },
+    {
+      "family": 30,
+      "root": [
+        ".",
+        "n",
+        "b",
+        "B",
+        ".",
+        "K",
+        "k",
+        ".",
+        "N",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-30.json",
+      "fingerprint": "7b1fa1855115985c7f22b062c6f260471995915dcd3fd8e1fde7f10df978d4dd",
+      "fulltree_nodes": {
+        "1": 6,
+        "2": 12,
+        "3": 30,
+        "4": 84
+      },
+      "iterative_upper": {
+        "2": 18,
+        "3": 48,
+        "4": 132
+      }
+    },
+    {
+      "family": 31,
+      "root": [
+        ".",
+        "B",
+        "K",
+        ".",
+        "n",
+        ".",
+        "N",
+        "b",
+        "k",
+        0
+      ],
+      "rules": "results\\dev_aux\\task2155\\rules-31.json",
+      "fingerprint": "51eabf0c0d27cdfe606d1c6972c95bd0aeaccec4dcd146f9dc743079fc75ee7d",
+      "fulltree_nodes": {
+        "1": 4,
+        "2": 10,
+        "3": 26,
+        "4": 55
+      },
+      "iterative_upper": {
+        "2": 14,
+        "3": 40,
+        "4": 95
+      }
+    }
+  ],
+  "max_iterative_depth4": 425,
+  "new_normal_or_proof_or_fitness_queries": 0,
+  "seconds": 0.08842680000816472,
+  "first_action": "Nextsession freezeALL32TRAIN roots depths2/3/4, allpositivepricecells andindependentactualruletrees, noDEVrootchoice. ForecastdoesnotestablishWDLquality orsearchtiming.",
+  "publication": "DirectGitnext-inputaddendumAFTERbothimmutable73capsules; notinside11archive67testreceipt."
+}
