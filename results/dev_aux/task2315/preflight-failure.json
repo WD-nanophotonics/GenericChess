@@ -1,0 +1,6 @@
+{
+  "stage": "freeze_beforeplan/noqueries",
+  "error": "RuleInitialSetupOption hasno initial_position",
+  "cause": "Fixturewrapper used RuleSet field name; actual alternate setup has position",
+  "correction": "Use actual schema position; no experimentstart/clock existed"
+}

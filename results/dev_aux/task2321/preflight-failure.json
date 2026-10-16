@@ -1,0 +1,6 @@
+{
+  "stage": "ASTpreflight/beforefreezeorqueries",
+  "error": "Unterminatedstring literal",
+  "cause": "Outer sourcewriter interpreted newlineescape inJSONLwriter",
+  "correction": "Preserve literal\\n inactualmodule; sourceparse beforefreeze"
+}

@@ -1,0 +1,309 @@
+{
+  "status": "COMPLETE_COMPOSITE_FULLRULE_HISTORY_QUALIFICATION",
+  "rows": [
+    {
+      "setup": null,
+      "root_record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "prefixes": [
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "sem_01_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+            "schema_version": 1
+          },
+          "aux": "(((0, -1), 1),)",
+          "piece": "Piece(owner=0, base_type_id='P', current_type_id='R', promoted=True)",
+          "hands": "(Hands(counts=(('R', 1),)), Hands(counts=()))"
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "sem_01_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+            "schema_version": 1
+          },
+          "aux": "(((0, -1), 0),)",
+          "piece": "Piece(owner=0, base_type_id='P', current_type_id='R', promoted=True)",
+          "hands": "(Hands(counts=(('R', 1),)), Hands(counts=()))"
+        }
+      ],
+      "source_result": "CANDIDATE_WIN_GRAPH",
+      "proof_reason": "requires_independent_graph_verification",
+      "verified": true,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.005653400003211573,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "fullhistory_tree": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "seconds": 0.004549800010863692,
+        "terminal_leaves": {
+          "checkmate:None": 1
+        },
+        "session_transitions": 1
+      },
+      "conversion_plies": 1,
+      "actions": [
+        "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=3, rank=2))"
+      ],
+      "actual_record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "geometry_id": "g14",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_zone_capacity_guard",
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "actual_winner": 0
+    },
+    {
+      "setup": "swapped_bases",
+      "root_record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "initial_setup_key": "swapped_bases",
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 3
+      },
+      "prefixes": [
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "sem_01_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              }
+            ],
+            "initial_setup_key": "swapped_bases",
+            "resigned_by": null,
+            "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+            "schema_version": 3
+          },
+          "aux": "(((0, -1), 1),)",
+          "piece": "Piece(owner=0, base_type_id='P', current_type_id='R', promoted=True)",
+          "hands": "(Hands(counts=(('P', 1),)), Hands(counts=()))"
+        },
+        {
+          "record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g15",
+                "kind": "semantic_board",
+                "pattern_id": "sem_01_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "initial_setup_key": "swapped_bases",
+            "resigned_by": null,
+            "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+            "schema_version": 3
+          },
+          "aux": "(((0, -1), 0),)",
+          "piece": "Piece(owner=0, base_type_id='P', current_type_id='R', promoted=True)",
+          "hands": "(Hands(counts=(('P', 1),)), Hands(counts=()))"
+        }
+      ],
+      "source_result": "UNKNOWN",
+      "proof_reason": "time_budget",
+      "verified": false
+    }
+  ],
+  "seconds": 5.0727667000028305,
+  "scope": "Compositefixturequalification only; no fullgenerateddomain/price/WDLpopulationclaim. ALL2same-fingerprint setups frozen; old2196unsavedcertificate remainsunsaved. Newrulesactualsource+newwitness retained."
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "setup": null,
+    "certificate": {
+      "target": 0,
+      "nodes": [
+        {
+          "rank": 1,
+          "terminal": null,
+          "edges": [
+            {
+              "action": {
+                "kind": "semantic_drop",
+                "pattern_id": "sem_00_drop_zone_capacity_guard",
+                "geometry_id": "g14",
+                "base_type_id": "R",
+                "to": [
+                  3,
+                  2
+                ]
+              },
+              "child": 1
+            }
+          ]
+        },
+        {
+          "rank": 0,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "edges": []
+        }
+      ]
+    }
+  }
+]

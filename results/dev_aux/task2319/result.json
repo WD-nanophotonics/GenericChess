@@ -1,0 +1,47 @@
+{
+  "status": "PASS_SAVED_COMPOSITE_SEMANTIC_FULLHISTORY_GRAPH_TREE_CURSOR",
+  "contexts": 2,
+  "positive_certificates": 1,
+  "actual_checkmates": 1,
+  "UNKNOWN": 1,
+  "rows": [
+    {
+      "setup": null,
+      "graph": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0021382999839261174,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "fullhistory_tree": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "seconds": 0.0019145999976899475,
+        "terminal_leaves": {
+          "checkmate:None": 1
+        },
+        "session_transitions": 1
+      },
+      "actual_semantic_drop_mate": true,
+      "wrongbase_rebound_rejected": {
+        "verified": false,
+        "reason": "invalid_OR_choice",
+        "nodes": 1,
+        "edges": 0,
+        "seconds": 0.0010796000133268535,
+        "unrolled_tree_nodes": null,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      }
+    },
+    {
+      "setup": "swapped_bases",
+      "proof": "UNKNOWN,no falseLOSS"
+    }
+  ],
+  "seconds": 0.061515600013080984,
+  "scope": "NEWfullhistorycapture/basecurrentchange/realauxexpiry+guardeddrop execution. Savednewcertificate, notunsaved2196originalrecovery. ActualfullSessiontreechecker crosscheck; no arbitrarygenerateddomain/WDLpopulation/materialpriceclaim. OtherhandP isUNKNOWN, notLOSS; staleRdrop independentlyrejected."
+}

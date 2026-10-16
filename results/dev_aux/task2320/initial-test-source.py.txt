@@ -1,0 +1,57 @@
+"""Actual closed-cycle safety, counterexample and fail-closed controls."""
+from pathlib import Path
+from dataclasses import replace
+from copy import copy
+import sys,pytest
+sys.path.insert(0,str(Path('tests').resolve()))
+from conftest import king_type,make_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.session.session import GameSession
+from generic_chess.session.result import SessionStatus
+from scripts.generic_session_win_proof import SessionChoice,execute
+from results.dev_aux.task2320.refutation import *
+from results.dev_aux.task2320.build import discover,encode,decode
+
+@pytest.fixture
+def sample():
+ rs=replace(make_ruleset(3,[king_type()],lines=['K..','...','..k']),max_ply=24,repetition_limit=3)
+ s=GameSession(compile_ruleset_for_execution(rs));d=discover(s,max_nodes=1000,seconds=5.);assert d['certificate']is not None;return s,d['certificate']
+
+def test_actual_closed_cycle_refutation_and_four_rollouts(sample):
+ s,cert=sample;v,pos=verify_no_forced_win(s,cert,seconds=5.,return_positions=True);assert v['verified']and v['claim']=='NO_FORCED_WIN'and len(pos)>1
+ assert verify_no_forced_win(s,decode(s,encode(cert)),seconds=5.)['verified']
+ for seed in range(4):
+  actual=copy(s);cur=RefutationCursor(actual,cert,seconds=5.);steps=0
+  while actual.result.status is SessionStatus.ONGOING:
+   before=copy(actual)
+   if actual.state.position.side_to_move==cert.target:
+    legal=actual.legal_actions();ch=SessionChoice('ACTION',action=legal[(steps+seed)%len(legal)])
+   else:ch=cur.choose(actual)
+   execute(actual,ch);cur.observe(before,ch,actual);steps+=1
+  assert actual.result.winner!=cert.target and steps<=24 and not cur.active
+
+def test_missing_target_move_is_not_refutation(sample):
+ s,c=sample;nodes=list(c.nodes);assert s.state.position.side_to_move==c.target and len(nodes[0].edges)>1;nodes[0]=replace(nodes[0],edges=nodes[0].edges[1:]);v=verify_no_forced_win(s,replace(c,nodes=tuple(nodes)));assert not v['verified']and v['reason']=='missing_target_action'
+
+def test_inconsistent_self_merge_rejected(sample):
+ s,c=sample;nodes=list(c.nodes);nodes[0]=replace(nodes[0],edges=tuple((ch,0)for ch,j in nodes[0].edges));v=verify_no_forced_win(s,replace(c,nodes=tuple(nodes)));assert not v['verified']and v['reason']=='inconsistent_full_position_merge'
+
+def test_stale_history_binding_rejected(sample):
+ s,c=sample;after=copy(s);after.submit(after.legal_actions()[0]);v=verify_no_forced_win(after,c);assert not v['verified']and v['reason']=='root_binding'
+
+def test_wrong_rule_target_and_empty_graph_rejected(sample):
+ s,c=sample
+ for bad in(replace(c,ruleset_fingerprint='bad'),replace(c,target=True),replace(c,nodes=())):assert not verify_no_forced_win(s,bad)['verified']
+
+def test_incomplete_budget_is_unknown_not_draw(sample):
+ s,c=sample
+ for kw in(dict(max_nodes=0),dict(seconds=0.),dict(cancel=lambda:True)):
+  r=verify_no_forced_win(s,c,**kw);assert not r['verified']and r['claim']=='UNKNOWN'
+ with pytest.raises(ValueError):RefutationCursor(s,c,max_nodes=0)
+
+def test_discovery_does_not_turn_incomplete_graph_into_negative(sample):
+ s,c=sample;d=discover(s,max_nodes=1,seconds=1.);assert d['certificate']is None and not d['closed']
+
+def test_unsupported_perpetual_history_rejected(sample):
+ s,c=sample;wrong=copy(s);wrong.compiled=replace(s.compiled,repetition_policy='perpetual_check_loses');bad=replace(c,ruleset_fingerprint=wrong.compiled.ruleset_fingerprint)
+ assert not verify_no_forced_win(wrong,bad)['verified']

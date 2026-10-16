@@ -1,3 +1,63 @@
+# DEV_AUX current mainline —80,2026-10-17
+
+ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly; no defaults/UI/Agent/Goal.
+Clock80:1d2e3080-44df-4ef5-bcfb-abaabc4eaa03/2026-10-16T17:41:50.008442+00:00.
+All80producers/consumers closed; originalcaps/clock preserved;
+all96newrewardgames3666plies COMPLETE/0U/0missing across3protocols.79slot248Ukept.
+
+Changedpremise79 jointlychangedtrigger/budget.80freezesALL27actualLOWattempts/
+14fullhistorycontexts beforeNEWlabels:postfreeze3referenceWIN/3LOSS/8DRAW,
+notactualhistoryWDL/reward/onlinefilter. Missingcontext13old8proof timesout/DRAW.
+Budget-onlyLOW60all32actualterminals1215plies restoresroot15wins:eachprice
+3W2L11D,1178.19s. Independentfullrecord/cert/currentcursor/limits2317PASS.
+TWO8all32/1236plies each2W2L12D,528.09s. OldLOW8/TWO60reused32each after
+contractcheck:416.15s/2W2L12D versus1879.84s/3W2L11D. ALL64HIGHtoggle
+recordsidentical;4budgetpairs candidate-diverge. Gain1/16perpriceONEfamily,
+8familyenvelope[0,3/16]. No equivalence/stability/pricebenefit claim.
+2316originalfreezephrasebeforeLOW60outcomes iscorrected:partialLOW60slots0-4
+alreadyvisible, beforeownlaunch/closedLOW60only. Originalplan retained; pilotexposed.
+
+LOW12chosenfromexposedLOW60cost thenfrozenALL32:1215plies/466.04s,
+all32records=LOW60, eachprice3W2L11D. Normalfoe/LOWtrigger/prices/Hunchanged;
+engineeringTRAINtuning, notnewholdout/optimalbudget. No priceorplayeradoption.
+Currentnextpricequestion must use a fixed affordable proof policy and genuinely
+newfamily-orbits/foes, excludeallseen groups BEFOREthetaqueries; preserveW-L/U.
+No moreunchangedexposedgrid/budgetquantity claims orhumanfit/DEVselection.
+
+43oldnaturalreusepairs=18actualtargetevents/9paid22.02s, notmajor1880sbottleneck;
+no bankadoption/naturalnonexacthistorycoverage. New2315/2319compositeactual
+capturePtoR/auxexpiry/guardeddrop:1savedgraph/fullhistorytree/cursoractualmate,
+otherhandPUNKNOWN; oldunsaved2196witness notclaimedrecovered.
+
+2320scopedcoinductiveNO_FORCED_WIN checker+cursors allowcycles, completePosition
+ALLtarget/ONEdefender closure; neverborrowhistoryDRAWleaf. Actualmateatmaxply
+andfoedeviation tests,12adversarialcontrolsPASS. Unsupportedautomatic/PENDING,
+perpetual-loss/declarations/historypolicies stillrejected; notallgenerateddomain.
+2321ALL14 genericfirstthenexplicitprepaidreferenceassist60caller/42proof/
+shared15independent+currentadmission. Costs/UNKNOWN/qualificationrollouts separate
+fromrewards, no skip/playerdefault. LOW12becamecheapbeforelaunch; negative60
+isboundedlabel/closurefeasibility, notdemonstratedonlinesaving overLOW12.
+Nextchoosefromactualclosedcoverage/cost, do notassumeexactnegativechecksarecheap.
+
+Dot1792173669readinline80+fixedb612Coreterminalsource only/no80execution;
+borrowedDRAW/matepriority objections adopted. PRIMARYa942e319 mainlineonlyread:
+capacity/PENDINGreports owner-evidence notrerun; ownCorePENDING-beforemaxsource
+review explains negativechecker automatic-exclusion. No PRIMARYwrites.
+Report:results/dev_aux/SEGMENT_20261017_80.md. Finalraw24archive sealed afterALLclosed; freshreplay receipt recorded separately. Currentraw23priorarchivesremainimmutable; allfailureskept.
+
+Closed2321/2322:28queries/13offlineverified candidates;7original admissions,
+79actualqualificationplies. Generic2/14cost530.66s; referenceassist5/14cost293.11s
+plusprepayment. Sixlateofflinepasses remainoriginalUNKNOWN. Actualhistorytiers
+3WIN/5NO_FORCED_WIN/6U, zero contradictions; genericonly5/14certified. No
+negativefilter/NN/rewardadoption; no demonstratedsaving overLOW12. Nextnewfamily/
+foe pricecontrastfirst; compactnegative/compositesafety backups. Finalchannel/
+threadrawsaved: no newroot/supplement sinceprevious80coverage.
+
+Fresh24archive/35tests/9consumers PASSafterONEsamebudgetdiagnosticretry;
+first2322assertionfailure/lostreturnreason preserved, notfirstpassclaim.
+
+## Previous selections — historical evidence, not competing live tasks
+
 # DEV_AUX current mainline —79,2026-10-16
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly; no default/UI adoption.

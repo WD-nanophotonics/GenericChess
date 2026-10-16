@@ -1,0 +1,145 @@
+{
+  "status": "PASS_POSTFREEZE_REFERENCE_STRATA_ONLY",
+  "contexts": 14,
+  "occurrences": 27,
+  "labels": {
+    "LOSS": 3,
+    "WIN": 3,
+    "DRAW": 8
+  },
+  "weighted_labels": {
+    "WIN": 6,
+    "DRAW": 15,
+    "LOSS": 6
+  },
+  "rows": [
+    {
+      "context": 0,
+      "canonical_mover_label": "LOSS",
+      "canonical_rank": 10,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 95
+    },
+    {
+      "context": 1,
+      "canonical_mover_label": "WIN",
+      "canonical_rank": 9,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 94
+    },
+    {
+      "context": 2,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 95
+    },
+    {
+      "context": 3,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 94
+    },
+    {
+      "context": 4,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 95
+    },
+    {
+      "context": 5,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 94
+    },
+    {
+      "context": 6,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 93
+    },
+    {
+      "context": 7,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 1,
+      "remaining_horizon": 94
+    },
+    {
+      "context": 8,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 93
+    },
+    {
+      "context": 9,
+      "canonical_mover_label": "DRAW",
+      "canonical_rank": null,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 92
+    },
+    {
+      "context": 10,
+      "canonical_mover_label": "LOSS",
+      "canonical_rank": 10,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 95
+    },
+    {
+      "context": 11,
+      "canonical_mover_label": "WIN",
+      "canonical_rank": 7,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 94
+    },
+    {
+      "context": 12,
+      "canonical_mover_label": "LOSS",
+      "canonical_rank": 12,
+      "actual_status": "ongoing",
+      "side": 0,
+      "occurrences": 2,
+      "remaining_horizon": 95
+    },
+    {
+      "context": 13,
+      "canonical_mover_label": "WIN",
+      "canonical_rank": 9,
+      "actual_status": "ongoing",
+      "side": 1,
+      "occurrences": 2,
+      "remaining_horizon": 94
+    }
+  ],
+  "seconds": 2.3143366999865975,
+  "scope": "ALL14frozenactualhistorycontexts from27candidateLOWattempts. Canonicalreference notactualhistoryWDLproof; no state/turn substitution, nocandidatesfiltered, nofreepolicylabels/rewards/skipgate. Frozenfullhistories/remainingHauthorityretained."
+}

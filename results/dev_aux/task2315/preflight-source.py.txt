@@ -1,0 +1,52 @@
+"""NEW composite semantic capture/type-change/aux-expiry/drop WIN witness.
+This is a new qualification, not recovery of the unsaved2196certificate bytes.
+"""
+from pathlib import Path
+from dataclasses import replace
+from copy import copy
+import sys,json,time,hashlib
+sys.path.insert(0,str(Path('tests').resolve()))
+from rule_semantics_ir_fixtures import weird_rulesets
+from generic_chess.core.pieces import Piece
+from generic_chess.rules.serialization import deserialize_ruleset,serialize_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.schema import RuleActionEffect,RuleTypeRef,RuleSquareRef
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import serialize_game_record
+from generic_chess.session.result import SessionStatus
+from scripts.generic_session_win_proof import verify_session_certificate,SessionChoice,execute
+from scripts.generic_win_proof import _Budget
+from results.dev_aux.task2199.semantic_graph import prove_graph,verify_graph,GraphStrategyCursor,canonical,scope_reason
+from results.dev_aux.task2200.controls import unroll
+from results.dev_aux.task2181.run import encode
+from results.dev_aux.task2153.stop_evidence import EvidenceStopReader
+OUT=Path('results/dev_aux/task2315')
+def definition():
+ rs=deserialize_ruleset(Path('results/dev_aux/task2196/rules.json').read_text());guard=weird_rulesets()[1].semantic_actions[0];change=weird_rulesets()[2].semantic_actions[0]
+ capture=RuleActionEffect('remove',square_ref=RuleSquareRef('target'),disposition='capture_to_hand',piece_owner='opponent')
+ effects=(capture,change.effects[0],replace(change.effects[1],type_ref=RuleTypeRef('explicit',type_id='R')),change.effects[2])
+ change=replace(change,name='capture_promote_expiring_right',type_ids=('P',),geometry=replace(change.geometry,offset=(0,1)),target_relation='enemy',effects=effects)
+ def board(rows):
+  flat=[x for row in rows for x in row];assert flat[4].owner==0 and flat[4].current_type_id=='R';flat[4]=Piece(0,'P','P');return tuple(tuple(flat[i:i+4])for i in range(0,16,4))
+ return replace(rs,initial_position=board(rs.initial_position),initial_setup_options=tuple(replace(o,initial_position=board(o.initial_position))for o in rs.initial_setup_options),semantic_actions=(guard,change))
+def freeze():
+ rs=definition();(OUT/'rules.json').write_text(serialize_ruleset(rs));plan=dict(question='Can existingfullPositionsemanticproof andactualcursor execute a positive drop after REAL capture/typechange/expiringauxhistory, not just lifecycleedges?',setups=[None,'swapped_bases'],cap_seconds=60,query_nodes=2048,query_seconds=5.,depth=8,scope='Compositefixturequalification only; no fullgenerateddomain/price/WDLpopulationclaim. ALL2same-fingerprint setups frozen; old2196unsavedcertificate remainsunsaved. Newrulesactualsource+newwitness retained.',source_sha=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+ with(OUT/'plan.json').open('x')as f:json.dump(plan,f,indent=2)
+def run():
+ assert not(OUT/'started.json').exists();p=json.loads((OUT/'plan.json').read_text());assert p['source_sha']==hashlib.sha256(Path(__file__).read_bytes()).hexdigest();c=compile_ruleset_for_execution(deserialize_ruleset((OUT/'rules.json').read_text()));assert scope_reason(c)is None;t=time.perf_counter();stop=EvidenceStopReader(Path.cwd());(OUT/'started.json').write_text(json.dumps(dict(cap=p['cap_seconds'])));rows=[];certs=[]
+ def cancel():stop();return time.perf_counter()-t>=p['cap_seconds']
+ for setup in p['setups']:
+  s=GameSession(c,**({}if setup is None else dict(initial_setup_key=setup)));prefixes=[]
+  for src,dst,semantic in(((0,1),(0,2),True),((3,0),(3,1),False)):
+   a,=[a for a in s.legal_actions()if hasattr(a,'from_square')and(a.from_square.file,a.from_square.rank)==src and(a.to_square.file,a.to_square.rank)==dst and a.pattern_id.startswith('sem_')==semantic];s.submit(a);prefixes.append(dict(record=json.loads(serialize_game_record(s.to_record())),aux=repr(s.state.position.aux_state),piece=repr(s.state.position.board[8]),hands=repr(s.state.position.hands)))
+  assert s.state.position.board[8].base_type_id=='P'and s.state.position.board[8].current_type_id=='R'and s.state.position.board[8].promoted
+  assert dict(s.state.position.aux_state)[(0,-1)]==0
+  root=s.to_record();result=prove_graph(s,max_nodes=p['query_nodes'],seconds=p['query_seconds'],max_depth=p['depth'],cancel=cancel);r=dict(setup=setup,root_record=json.loads(serialize_game_record(root)),prefixes=prefixes,source_result=result.status if hasattr(result,'status')else str(type(result)),proof_reason=result.reason,verified=False)
+  if result.certificate is not None:
+   cert=result.certificate;v=verify_graph(s,cert,max_nodes=2048,seconds=5.,cancel=cancel);tree=verify_session_certificate(s,unroll(s,cert),max_nodes=4096,seconds=5.,cancel=cancel);r.update(verification=v,fullhistory_tree=tree);assert v['verified']and tree['verified'];cur=GraphStrategyCursor(s,cert,max_nodes=2048,seconds=5.,cancel=cancel);count=0;actions=[]
+   while s.result.status is SessionStatus.ONGOING:
+    assert not cancel();before=copy(s);choice=cur.choose(s)if s.state.position.side_to_move==cert.target else cert.nodes[cur.index].edges[-1][0];actions.append(repr(choice.action));execute(s,choice);cur.observe(before,choice,s);count+=1
+   assert s.result.winner==cert.target;r.update(verified=True,conversion_plies=count,actions=actions,actual_record=json.loads(serialize_game_record(s.to_record())),actual_winner=s.result.winner);certs.append(dict(setup=setup,certificate=encode(cert)))
+  rows.append(r)
+ (OUT/'certificates.json').write_text(json.dumps(certs,indent=2));out=dict(status='COMPLETE_COMPOSITE_FULLRULE_HISTORY_QUALIFICATION',rows=rows,seconds=time.perf_counter()-t,scope=p['scope']);(OUT/'result.json').write_text(json.dumps(out,indent=2));print(json.dumps(dict(verified=sum(r['verified']for r in rows),seconds=out['seconds'])))
+if __name__=='__main__':{'freeze':freeze,'run':run}[sys.argv[1]]()

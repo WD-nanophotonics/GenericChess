@@ -1,0 +1,947 @@
+[
+  {
+    "context": 0,
+    "rules": "results\\dev_aux\\task2258\\root-0.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "4a5e7e10205bec98261763f2547f5d7d2be96cdd9d6c71ac135ba3c80c9650c4",
+      "schema_version": 1
+    },
+    "root_state_sha": "4cefda0234fc0c2c50ecb648f10ff0c54029a18ec7d66ed40f5e5235ee73cb69",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 0,
+        "slot": 0,
+        "root": 0,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      },
+      {
+        "context": 0,
+        "slot": 1,
+        "root": 0,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      }
+    ]
+  },
+  {
+    "context": 1,
+    "rules": "results\\dev_aux\\task2258\\root-0.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "4a5e7e10205bec98261763f2547f5d7d2be96cdd9d6c71ac135ba3c80c9650c4",
+      "schema_version": 1
+    },
+    "root_state_sha": "da6e07cc6eeac5a788f51c24733472bbf329acc3c93f334aab858638f3785d17",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 1,
+        "slot": 2,
+        "root": 0,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      },
+      {
+        "context": 1,
+        "slot": 3,
+        "root": 0,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  },
+  {
+    "context": 2,
+    "rules": "results\\dev_aux\\task2258\\root-1.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "89be3d9bdc4c26ce0186808d0501a4550c4146d6292a290c4d5e7eda5d95c4df",
+      "schema_version": 1
+    },
+    "root_state_sha": "bc249abc6b4f306892af763895f2ab9cbe4a7ec5bbd21e6764936df9184e5d86",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 2,
+        "slot": 4,
+        "root": 1,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      },
+      {
+        "context": 2,
+        "slot": 5,
+        "root": 1,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      }
+    ]
+  },
+  {
+    "context": 3,
+    "rules": "results\\dev_aux\\task2258\\root-1.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "89be3d9bdc4c26ce0186808d0501a4550c4146d6292a290c4d5e7eda5d95c4df",
+      "schema_version": 1
+    },
+    "root_state_sha": "0658e9da17c8c0aa754048e3e3ccca0eac5ea05e248541b6ae78c66a88e05b2e",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 3,
+        "slot": 6,
+        "root": 1,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      },
+      {
+        "context": 3,
+        "slot": 7,
+        "root": 1,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  },
+  {
+    "context": 4,
+    "rules": "results\\dev_aux\\task2258\\root-3.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "79b0db63c5e94e27df2427481ce7874efa0f1dd4627319cb8e45356314af27c5",
+      "schema_version": 1
+    },
+    "root_state_sha": "b80475e9faad6fa8d9fd7c8c5c293c8359a78c03da06e524087b9e57b4a43684",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 4,
+        "slot": 12,
+        "root": 3,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      },
+      {
+        "context": 4,
+        "slot": 13,
+        "root": 3,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      }
+    ]
+  },
+  {
+    "context": 5,
+    "rules": "results\\dev_aux\\task2258\\root-3.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "79b0db63c5e94e27df2427481ce7874efa0f1dd4627319cb8e45356314af27c5",
+      "schema_version": 1
+    },
+    "root_state_sha": "e3ab168bf0ded81c70c4b9ac0a766ddaba0c44defd16b88b9f065672185c92a4",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 5,
+        "slot": 14,
+        "root": 3,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      },
+      {
+        "context": 5,
+        "slot": 15,
+        "root": 3,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  },
+  {
+    "context": 6,
+    "rules": "results\\dev_aux\\task2258\\root-4.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9c69ea1ea57fff2c2085cf9c5cee1978e2e0bb0a2a34ebf733eea92c0952c84b",
+      "schema_version": 1
+    },
+    "root_state_sha": "3afd292d454c0917a3148555d40d552678f93360c7d95897affa5f91b34e9499",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 6,
+        "slot": 16,
+        "root": 4,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 3,
+        "remaining_horizon": 93
+      },
+      {
+        "context": 6,
+        "slot": 17,
+        "root": 4,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 3,
+        "remaining_horizon": 93
+      }
+    ]
+  },
+  {
+    "context": 7,
+    "rules": "results\\dev_aux\\task2258\\root-4.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9c69ea1ea57fff2c2085cf9c5cee1978e2e0bb0a2a34ebf733eea92c0952c84b",
+      "schema_version": 1
+    },
+    "root_state_sha": "85e8623d5d38c24bfcb578269dc15731cf4233a5ac9f2f945f0acdda1af0dd7f",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 7,
+        "slot": 19,
+        "root": 4,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  },
+  {
+    "context": 8,
+    "rules": "results\\dev_aux\\task2258\\root-5.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "a78451ca1be977d1dc230f5153e2d53a6d6bc1f27dfe4107574a28395f0409c2",
+      "schema_version": 1
+    },
+    "root_state_sha": "517baf10c6f5d21096971acebbf21e01af7e1c53fa7f32b8b5d951a903724097",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 8,
+        "slot": 20,
+        "root": 5,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 3,
+        "remaining_horizon": 93
+      },
+      {
+        "context": 8,
+        "slot": 21,
+        "root": 5,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 3,
+        "remaining_horizon": 93
+      }
+    ]
+  },
+  {
+    "context": 9,
+    "rules": "results\\dev_aux\\task2258\\root-5.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "a78451ca1be977d1dc230f5153e2d53a6d6bc1f27dfe4107574a28395f0409c2",
+      "schema_version": 1
+    },
+    "root_state_sha": "b6792edb733e499b206f5ae34ac0d4148025fc25b8451cbf37a9f39e242353c3",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 9,
+        "slot": 22,
+        "root": 5,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 4,
+        "remaining_horizon": 92
+      },
+      {
+        "context": 9,
+        "slot": 23,
+        "root": 5,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 4,
+        "remaining_horizon": 92
+      }
+    ]
+  },
+  {
+    "context": 10,
+    "rules": "results\\dev_aux\\task2258\\root-12.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "26f10a90bd07dc6b2ca607d6d69e2c50e442884142e3eeb12cd99c5600ed599a",
+      "schema_version": 1
+    },
+    "root_state_sha": "66553d405daa0d4fceeb56e3c86ecb5145d22af611c984068fbcb6a1292fa526",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 10,
+        "slot": 24,
+        "root": 12,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      },
+      {
+        "context": 10,
+        "slot": 25,
+        "root": 12,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      }
+    ]
+  },
+  {
+    "context": 11,
+    "rules": "results\\dev_aux\\task2258\\root-12.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "26f10a90bd07dc6b2ca607d6d69e2c50e442884142e3eeb12cd99c5600ed599a",
+      "schema_version": 1
+    },
+    "root_state_sha": "5d6f447ea3c746d5dceabf5e1fa9f2a5d2ee53adab6b0366110970b4132e5606",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 11,
+        "slot": 26,
+        "root": 12,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      },
+      {
+        "context": 11,
+        "slot": 27,
+        "root": 12,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  },
+  {
+    "context": 12,
+    "rules": "results\\dev_aux\\task2258\\root-15.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7b679f1e8b11e55ed445bff47d3c89c7e5888ef866c941965659f3b51fe93e28",
+      "schema_version": 1
+    },
+    "root_state_sha": "67af7fd26e65027ac7ceefd61f6ca5243707af23876b53aae2469ed18f75095b",
+    "side": 0,
+    "occurrences": [
+      {
+        "context": 12,
+        "slot": 28,
+        "root": 15,
+        "ratio": 2.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      },
+      {
+        "context": 12,
+        "slot": 29,
+        "root": 15,
+        "ratio": 1.0,
+        "candidate_color": 0,
+        "ply": 1,
+        "remaining_horizon": 95
+      }
+    ]
+  },
+  {
+    "context": 13,
+    "rules": "results\\dev_aux\\task2258\\root-15.json",
+    "root_record": {
+      "actions": [
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7b679f1e8b11e55ed445bff47d3c89c7e5888ef866c941965659f3b51fe93e28",
+      "schema_version": 1
+    },
+    "root_state_sha": "f020f36d8c1742a876db18ec6fb1f097824a901133579afcb0402feea2602207",
+    "side": 1,
+    "occurrences": [
+      {
+        "context": 13,
+        "slot": 30,
+        "root": 15,
+        "ratio": 1.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      },
+      {
+        "context": 13,
+        "slot": 31,
+        "root": 15,
+        "ratio": 2.0,
+        "candidate_color": 1,
+        "ply": 2,
+        "remaining_horizon": 94
+      }
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "input": "results/dev_aux/task2316/inputs.json",
+  "input_sha": "ec64c79eec723c916b0ac5eeb2373c09272848191f1651d1f81300c936545c5e",
+  "slots_sha": "dd4512e14ce9d1f9b4108dae4e005b3a9f2b69f2591f9b5aa6113034a1bdb799",
+  "expected_games": 32,
+  "H": 96,
+  "one_cap_seconds": 1200,
+  "estimated_seconds": 600,
+  "step_seconds": 1.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 5.6,
+    "verification_nodes": 32768,
+    "verification_seconds": 2.0,
+    "normal_seconds": 1.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    }
+  ],
+  "pins": {
+    "results\\dev_aux\\task2307\\pilot.py": "416f7a8a362fb3eb2d968f1c6bbb53d9f16d00350d12885a57a7965a1c0a970c",
+    "results\\dev_aux\\task2210\\player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results\\dev_aux\\task2273\\incremental_adapted.py": "7fe792ab47a4cdd56ffaa40f470dcf7768ffa8b7d1e2888b79a5a8d310a5ad4e",
+    "results/dev_aux/task2316/pilot.py": "425e7abd090f7302c41175454cdafdc669e6c6fc401e58d49bc1e6dc4a8eaf67",
+    "results/dev_aux/task2316/freeze.py": "7d1f3bd9117a45224d29749b559f7a58288702ce36bc505b8d22fa8a4b09044e"
+  },
+  "selection": "ALL32candidate-intervention slots from2289/ALL8exposedfamilies,bothroles/prices1,2; no success/root/outcome filtering. Reuse separatelyverified2289MATERIAL_ONLY32baseline (notnewgames) onlyafterfoe/normal/input compatibility checks. OneNEWpolicyLOW_ONLY: freshINCREMENTAL atmostONCE whenactualownturn<=4actors; neverHIGH;8secondcaller/5.6proof/shared2verify/normal1.",
+  "scope": "NEW80predeclared2x2completion:LOW8/LOW60/TWO8/TWO60, onlyNEWtwo32slotarms, oldLOW8/TWO60reused aftercontractaudit. TWO8changesHIGHtrigger versusoldLOW8withSAME8budget; LOW60versusoldTWO60isolatestriggerat60. FreezeBEFORE2313outcomes; nofit/rootselection/DEV/default/newworker. Original1200cap forecast600s, no oldcapextension/2hreviewcircumvention. ActualW-L/U/cost, family8scopedinteractionnotstablepriceclaim.",
+  "candidate_proof_caller_seconds": 8.0
+}

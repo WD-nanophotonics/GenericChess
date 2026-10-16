@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE",
+  "queries": 28,
+  "expected": 28,
+  "missing": 0,
+  "seconds": 826.200382799987,
+  "teacher_reference_load_seconds": 2.3176947999745607,
+  "teacher_construction_cost": "Reused2248/2249/2250fullreferenceprepayment; loadingtimeisnotconstructioncost. Mustnotcallreferenceassistfreeorgeneric.",
+  "modes": {
+    "GENERIC_FULL_REACHABILITY": {
+      "queries": 14,
+      "candidates": 2,
+      "admitted": 2,
+      "paid_query_seconds": 530.661680899997
+    },
+    "REFERENCE_ASSISTED_DEFENDER_STRATEGY": {
+      "queries": 14,
+      "candidates": 11,
+      "admitted": 5,
+      "paid_query_seconds": 293.11218830000143
+    }
+  },
+  "qualified_actual_rollouts": 7,
+  "qualified_actual_rollout_moves": 79,
+  "scope": "ALL14actualcandidateLOWcontexts frozenbeforelabels from27occurrences; BOTHmethodsALL14, nomoverWINfilter. GenericfirstdoesnotloadGuide. Teacherassistsecondexplicitlyusespreexistingpaidreference, notgenericonline/freeoracle. Independentclosedtrap+currentcursorpaidshared15s; actualrolloutsqualificationonly, NO rewardgames/skipgate/default. ClaimNO_FORCED_WINnotactualDRAW/LOSS; allbudgets/UNKNOWN/missingretained. One1800cap/forecast1100<2h, nooldcapextension orsplittingcircumvention."
+}

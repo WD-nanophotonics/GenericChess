@@ -1,0 +1,43 @@
+{
+  "input": "results/dev_aux/task2325/inputs.json",
+  "input_sha": "ec64c79eec723c916b0ac5eeb2373c09272848191f1651d1f81300c936545c5e",
+  "slots_sha": "74216776ceb2a820ff4438e3a944e43f5514124cb6b35ab7e1ded50b265ed176",
+  "expected_games": 32,
+  "H": 96,
+  "one_cap_seconds": 1200,
+  "estimated_seconds": 600,
+  "step_seconds": 1.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 1.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    }
+  ],
+  "pins": {
+    "results\\dev_aux\\task2307\\pilot.py": "416f7a8a362fb3eb2d968f1c6bbb53d9f16d00350d12885a57a7965a1c0a970c",
+    "results\\dev_aux\\task2210\\player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results\\dev_aux\\task2273\\incremental_adapted.py": "7fe792ab47a4cdd56ffaa40f470dcf7768ffa8b7d1e2888b79a5a8d310a5ad4e",
+    "results/dev_aux/task2325/pilot.py": "e54515a41fef33819975a3bc428b05c69ee227fe23468f32ba34c675df284eee",
+    "results/dev_aux/task2325/freeze.py": "290b4088f99ebc97eb0ce42640ecb72f57500a2eba63a3287b6b5b545ec89f9a"
+  },
+  "selection": "ALL32candidate-intervention slots from2289/ALL8exposedfamilies,bothroles/prices1,2; no success/root/outcome filtering. Reuse separatelyverified2289MATERIAL_ONLY32baseline (notnewgames) onlyafterfoe/normal/input compatibility checks. OneNEWpolicyLOW_ONLY: freshINCREMENTAL atmostONCE whenactualownturn<=4actors; neverHIGH;8secondcaller/5.6proof/shared2verify/normal1.",
+  "scope": "NEW80exposedTRAINengineeringbudgetcurveLOW12afterLOW60restoresmissedroot15wins. Caller12/proof8.4/sharedverify3/normal1, sameonceLOWtrigger/ALL32slots/8families/roles/prices/foe/H. BudgetchosenfromexposedLOW60receiptcost, NOTnewholdout orindependentreplication/presetoptimum. Forecast600/original1200cap, nooldcapextension/pricefit/DEV/defaultchange. ComparecompleteactualW-L/U/costandearliestdivergence, notguaranteedwin/speedup or stablepricebenefit.",
+  "candidate_proof_caller_seconds": 12.0
+}

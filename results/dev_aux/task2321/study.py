@@ -1,0 +1,52 @@
+"""ALL14frozenLOWcontexts: negative proof cost/coverage, no policy integration."""
+from pathlib import Path
+from dataclasses import asdict
+from copy import copy
+import sys,json,time,hashlib,datetime
+from collections import Counter
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.serialization import deserialize_ruleset
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record,serialize_game_record
+from generic_chess.session.result import SessionStatus
+from scripts.generic_session_win_proof import SessionChoice,execute
+from scripts.generic_win_proof import _ordered
+from results.dev_aux.task2320.build import discover,encode
+from results.dev_aux.task2320.refutation import verify_no_forced_win,RefutationCursor
+from results.dev_aux.task2153.stop_evidence import EvidenceStopReader
+OUT=Path('results/dev_aux/task2321')
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def freeze():
+ data=json.loads(Path('results/dev_aux/task2311/inputs.json').read_text());inputs=[{k:r[k]for k in('context','rules','root_record','root_state_sha','side','occurrences')}for r in data['contexts']];(OUT/'inputs.json').write_text(json.dumps(inputs,indent=2));p=dict(question='Can a paidgenericnegative closedtrap be found/admitted atsame60caller aspositiveproof, andhowmuchdoesexplicitteacherassistchangeconstruction?',cap_seconds=1800,estimated_seconds=1100,caller_seconds=60.,proof_seconds=42.,verification_seconds_shared=15.,query_nodes=65536,query_edges=524288,conversion_seconds=5.,modes=['GENERIC_FULL_REACHABILITY','REFERENCE_ASSISTED_DEFENDER_STRATEGY'],expected_queries=28,inputs_sha=sha(OUT/'inputs.json'),pins={str(x).replace('\\','/'):sha(x)for x in[Path('results/dev_aux/task2320/refutation.py'),Path('results/dev_aux/task2320/build.py'),Path('results/dev_aux/task2199/semantic_graph.py'),Path('results/dev_aux/task2321/study.py')]},scope='ALL14actualcandidateLOWcontexts frozenbeforelabels from27occurrences; BOTHmethodsALL14, nomoverWINfilter. GenericfirstdoesnotloadGuide. Teacherassistsecondexplicitlyusespreexistingpaidreference, notgenericonline/freeoracle. Independentclosedtrap+currentcursorpaidshared15s; actualrolloutsqualificationonly, NO rewardgames/skipgate/default. ClaimNO_FORCED_WINnotactualDRAW/LOSS; allbudgets/UNKNOWN/missingretained. One1800cap/forecast1100<2h, nooldcapextension orsplittingcircumvention.')
+ with(OUT/'plan.json').open('x')as f:json.dump(p,f,indent=2)
+ print(json.dumps(dict(contexts=len(inputs),expected_queries=28,singlecap=1800,forecast=1100)))
+def run():
+ assert not(OUT/'started.json').exists();p=json.loads((OUT/'plan.json').read_text());assert sha(OUT/'inputs.json')==p['inputs_sha']
+ for n,h in p['pins'].items():assert sha(n)==h
+ rows=json.loads((OUT/'inputs.json').read_text());start=time.perf_counter();stop=EvidenceStopReader(Path.cwd());(OUT/'started.json').write_text(json.dumps(dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),plan_sha=sha(OUT/'plan.json'))));queries=[];conversions=[];guide=None;guide_load=0.;status='COMPLETE'
+ def cancel():stop();return time.perf_counter()-start>=p['cap_seconds']
+ with(OUT/'queries.jsonl').open('x')as qf,(OUT/'candidates.jsonl').open('x')as cf:
+  for mode in p['modes']:
+   if mode.startswith('REFERENCE'):
+    before=time.perf_counter();from results.dev_aux.task2251.study import Guide
+    guide=Guide();guide_load=time.perf_counter()-before
+   for row in rows:
+    if cancel():status='PARTIAL_GLOBAL_CAP';break
+    c=compile_ruleset_for_execution(deserialize_ruleset(Path(row['rules']).read_text()));s=GameSession.replay(c,deserialize_game_record(json.dumps(row['root_record'])));assert sha_state(s)==row['root_state_sha'];tick=time.perf_counter();r=discover(s,max_nodes=p['query_nodes'],max_edges=p['query_edges'],seconds=min(p['proof_seconds'],max(0.,p['cap_seconds']-(tick-start))),cancel=cancel,guide=guide);cert=r.pop('certificate');q=dict(query=len(queries),context=row['context'],mode=mode,discovery=r,independent=None,current_cursor=None,admitted=False,query_seconds=None,claim='UNKNOWN')
+    if cert is not None:
+     cf.write(json.dumps(dict(query=q['query'],context=row['context'],mode=mode,certificate=encode(cert)))+'\n');cf.flush();deadline=min(tick+p['caller_seconds'],time.perf_counter()+p['verification_seconds_shared']);v=verify_no_forced_win(s,cert,max_nodes=p['query_nodes'],seconds=max(0.,deadline-time.perf_counter()),cancel=cancel);q['independent']=v
+     if v['verified']:
+      try:cursor=RefutationCursor(s,cert,max_nodes=p['query_nodes'],seconds=max(0.,deadline-time.perf_counter()),cancel=cancel);q['current_cursor']=cursor.receipt;q['admitted']=True;q['claim']='NO_FORCED_WIN'
+      except ValueError as e:q['cursor_failure']=str(e)
+    q['query_seconds']=time.perf_counter()-tick
+    if q['admitted']:
+     conversion_start=time.perf_counter();n=0
+     while s.result.status is SessionStatus.ONGOING:
+      if cancel()or time.perf_counter()-conversion_start>=p['conversion_seconds']:raise TimeoutError('negativecursor_rollout_cap')
+      before=copy(s);choice=cursor.choose(s)if s.state.position.side_to_move!=cert.target else SessionChoice('ACTION',action=_ordered(s.legal_actions())[0]);execute(s,choice);cursor.observe(before,choice,s);n+=1
+     assert s.result.winner!=cert.target;conversions.append(dict(query=q['query'],moves=n,seconds=time.perf_counter()-conversion_start,actual_result=s.result.status.value,actual_winner=s.result.winner,record=json.loads(serialize_game_record(s.to_record()))))
+    queries.append(q);qf.write(json.dumps(q)+'\n');qf.flush();print(json.dumps(dict(query=q['query'],context=row['context'],mode=mode,claim=q['claim'],positions=r['positions'],seconds=q['query_seconds'])),flush=True)
+   if status!='COMPLETE':break
+ (OUT/'conversions.json').write_text(json.dumps(conversions,indent=2));result=dict(status=status,queries=len(queries),expected=28,missing=28-len(queries),seconds=time.perf_counter()-start,teacher_reference_load_seconds=guide_load,teacher_construction_cost='Reused2248/2249/2250fullreferenceprepayment; loadingtimeisnotconstructioncost. Mustnotcallreferenceassistfreeorgeneric.',modes={m:dict(queries=sum(q['mode']==m for q in queries),candidates=sum(q['mode']==m and q['independent']is not None for q in queries),admitted=sum(q['mode']==m and q['admitted']for q in queries),paid_query_seconds=sum(q['query_seconds']for q in queries if q['mode']==m))for m in p['modes']},qualified_actual_rollouts=len(conversions),qualified_actual_rollout_moves=sum(x['moves']for x in conversions),scope=p['scope']);(OUT/'result.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+def sha_state(s):return hashlib.sha256(repr(s.state).encode()).hexdigest()
+if __name__=='__main__':{'freeze':freeze,'run':run}[sys.argv[1]]()
