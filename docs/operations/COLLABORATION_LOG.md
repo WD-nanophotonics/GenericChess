@@ -3459,7 +3459,19 @@ is reference advice to AUX, not a new PRIMARY experiment or independently checke
 AUX implementation/reward interval. AUX76 two fixed reports remain the last
 source-read tier. PRIMARY did not run or edit AUX solver/verifier/cursor/learner,
 its checkout/session/flags or computation, and did not request a quiet window.
-PRIMARY's existing complete37-post thread was read with no new post at recovery;
-legacy payload-binding limits are preserved, with no rebind/retry/ack gate.
+The previous segment's37-post20+17 coverage is historical. This segment's
+initial limit100 reply was falsely marked complete by the connector but carried
+only30/39 replies; our manual no-new-post inference was wrong. Strict reconcile
+refused it, exact20+19 pages recovered the new Dot reply, and six Dot posts are
+now read/evaluated. Legacy binding limits remain; no rebind/resend/ack gate.
 CHAT Leaper transfer remains future-only. Final fixed-SHA delivery and exact
 remaining candidate limitations: research/REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md.
+
+
+Delivery follow-up1792163135.481599 was actually sent with fixedf6 links. Dot's
+1792163269.348389 advice is explicitly evaluated: <=24 total calls, meaningful
+zero/precomputed presence, actual dispatch/order/vector/error checks, no broad
+cost rerun. Dot read the report only, not implementation/execution. PUBLIC
+first delivery f6febebb870e881cfdc7d53567ed9aefb1ca9412 was fully verified; the
+following documentation correction records the transport failure and fixes the
+coverage claim without changing product code or scientific receipts.

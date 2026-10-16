@@ -98,6 +98,17 @@ when a suggestion materially changes work. This classification does not change
 request routing, delivery verification or the requirement for a fresh request
 thread when the user asks for new direction.
 
+## Observed long-thread page limit —2026-10-17
+
+For long threads request limit20 and follow the exact server cursor chain.
+An observed limit100 response claimed39 replies/no more but emitted only30.
+Before claiming coverage or "no new advice", validate numbered reply counts with
+existing parse_plugin_thread/parse_plugin_pages, not the pagination sentence
+alone. Preserve a refused large result and re-read small pages; do not normalize
+bodies, relax the parser, reset/rebind the ledger or resend. Exact20+19 recovered
+the missing Dot reply and reconciled all39. This is a read-transport limitation,
+not missing user authorization or advisor silence. Raw originals stay ignored.
+
 ## Durable request and reply procedure
 
 1. consult --question-file QUESTION.txt [--daily] [--code-file PROJECT_FILE]

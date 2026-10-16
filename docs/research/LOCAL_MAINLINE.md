@@ -172,3 +172,14 @@ are not unseen-rule/layout proof.2/4 and.25/.5 policy plateaus do not identify a
 unique value. AUX77's ordinal-cell/tie-artifact question stays its own lane; no
 PRIMARY training, additional price grid or solver adoption follows. Exact fixed
 report hashes/scope: data/capacity_peer_update_20261016.json.
+
+
+Latest required-error consultation: exact39 replies on20+19 pages recovered a
+new Dot reply missed by the connector's falsely complete30/39 large response.
+The initial manual coverage inference is corrected in the report/manual; strict
+reconcile preserved the ledger. Dot read the fixed report, not capsule code or
+execution. Adopt a <=24 TOTAL-call consumer check (both arms counted), actual
+branch/ordering/vector/error evidence and no new cost panel. Fixed-work savings
+do not need new D4 completion or WDL approval; code duplication and retained
+collateral adversity remain the engineering decision. This is reference advice,
+not a new policy or authority over the user's project directions.

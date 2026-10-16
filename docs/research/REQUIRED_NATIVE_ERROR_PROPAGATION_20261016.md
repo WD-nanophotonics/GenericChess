@@ -181,3 +181,25 @@ missing-history refusals. It preserves two transfer tails/32 missing slots.
 All archive members pass SHA256 and CRC; exact measured sizes/member counts and
 build/check phases are in `publication-restoration.json`. This verifies source,
 transport and replay, not original wall clocks or an independent minimax proof.
+
+
+## Corrected Slack coverage, after the first delivery
+
+An actual connector large-page response (`limit100`) declared39 replies and
+"no more messages", but contained only30 numbered replies. Our initial manual
+inference of complete coverage/no new post was wrong. The existing strict
+reconcile correctly rejected it; no ledger/root/hash was reset or parser guard
+weakened. Preserve that exact large output. Re-read supported small pages with
+the real server cursor:20+19 replies, all counts complete, strict import succeeds.
+This recovered Dot's new1792163269.348389 reply to the delivered follow-up.
+
+Dot reports reading fixedf6's whole research report, not the capsule C or any
+execution. Adopt the narrow <=24 TOTAL calls including both arms, actual dispatch
+counts where cheap, supplied-zero/precomputed-zero versus absent distinction,
+and nonzero compact/ordering/full-output/error controls. Same-work complete-task
+savings have engineering value without D4-only completion; no strength inference.
+Maintaining both semantic bodies is still a real decision, not a mandatory WDL
+or approval gate. No new large cost panel, worker, recontact loop or user action
+is needed. The raw account-bearing originals remain privately ignored; the data
+carry only sanitized counts/correlation and the correction. Scientific query
+records, product source and the existing source capsule are unchanged.

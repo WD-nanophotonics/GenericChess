@@ -60,7 +60,10 @@ identity and pagination. Sole channel C0C6L21UU20; PRIMARY_SANDBOX and DEV_AUX
 share the verified account. Labels route messages, not process authentication.
 No per-message challenges. Read new roots plus full relevant/completed threads,
 with pagination coverage. Save exact originals in Git-ignored .local_agent BEFORE
-parsing/reconcile; local raw storage is expressly authorized.
+parsing/reconcile; local raw storage is expressly authorized. Long threads use limit20
+with server cursors: a large response falsely claimed complete while omitting
+replies. Validate actual counts with the existing strict parser before coverage
+claims; preserve refused output and reread exact small pages, never reset/rebind.
 
 User-directed inquiries use NEW AGENT_REQUEST/new REQUEST_ID/new thread.
 Evidence-based Agent followups may retain the root with a unique FOLLOWUP_ID.
