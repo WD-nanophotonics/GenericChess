@@ -23,14 +23,16 @@ policy; no automatic Native search fallback or evaluator/price change follows.
 NO_PROGRESS_SEARCH_CONTEXT_20261017.md owns2971 full/206 restored-source checks,
 2386 source state occurrences, actual caller/control/cost curves and all failures.
 
-Next selected question: can an existing explicit evaluator consume pure-semantic
-full-rule states without the inspection-only legacy metadata dependency? Actual
-24 default constructors fail; the new error names the existing scope instead of
-claiming generic default success. The existing semantic opportunity profile was
-actually tried on a triple mixture; it computes a scoped projection but its attack
-evaluator still fails in the base metadata constructor. Preserve this concrete
-negative result. Inspect the smallest compatible consumer/approximation with full
-promotion/drop/aux/history; no silent unity fallback, fresh model or AUX learner.
+The next explicit-evaluator question was actually executed:24 default constructors
+fail on pure-semantic metadata absence, but existing zero-dynamic weights already
+avoid those geometry dependencies. The unmodified semantic opportunity profile/
+attack evaluator completes12 real full-rule NP D1 calls and907 material-state
+checks. No adapter/learner is needed for that explicit candidate. An initial
+unconditional-loop premise was wrong; source already had the guards, no patch.
+The default nonzero dynamic path and unvalidated projection effects remain open.
+Next select one decision-changing projection/ranking test under a declared measure,
+full promotion/drop/aux/history and fair finite resources. Do not infer useful
+prices from constructor success, repeat a solved adapter task or duplicate AUX.
 Static tables and small learned candidates remain allowed under their stated
 scope. Earlier no-progress guard/refusal notes below describe superseded source
 tiers, not current prohibitions or permission gates.

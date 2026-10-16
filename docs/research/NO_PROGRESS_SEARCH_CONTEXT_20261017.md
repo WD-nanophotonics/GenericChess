@@ -210,3 +210,25 @@ project remain untouched. Exact public-source tests pass206 with external audit/
 repository functions explicitly prohibited. Core sources are unchanged. Version
 inventories omit this privacy-only compatibility module and disclose the mapping;
 no already-published history is rewritten.
+
+## Begun next step: an existing explicit material consumer already works
+
+Further actual inspection corrected an initial mistaken premise: Evaluator already
+guards both anchor and promotion setup by their weights. A proposed unused-work
+patch found no target and changed no file. With all three dynamic weights explicitly
+zero, the UNMODIFIED existing semantic opportunity profile plus SemanticAttackEvaluator
+is already a compatible explicit material consumer. All12 retained full-rule NP
+families complete actual D1/q0 calls;604 full saved branch states and303 chosen
+states match the declared board-current/hand-base material scalar. No evaluator
+implementation, table, default, model or AUX helper is added/adopted. Source copies
+are byte-identical; method/configuration/full profiles are saved separately in
+semantic_material_consumer_20261017.json.
+
+This is a configuration feasibility result, not useful prices or a solution to the
+complete-domain default. The profile still excludes compound/state effects and
+uses unvalidated custody/promotion conventions. Original compilation of the examined
+triple rule also lacks the legacy fields; absence is not solely a test's forced
+handle removal. The default nonzero dynamic/geometry path remains explicitly
+unsupported there. The next question must test a decision-changing projection/
+ranking premise under a declared measure; do not build an already-existing adapter
+or start another learner merely because the constructor now has an explicit route.

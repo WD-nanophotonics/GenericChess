@@ -3686,3 +3686,10 @@ and three old refusal assertions; fixes preserve evidence and all existing scope
 contracts, including the rectangular error. No security setting/user action was
 needed. Final reviewed publication uses the prescribed entry and fixed-SHA links;
 delivery does not imply Dot reading or independent experiment execution.
+
+The next evaluator feasibility was executed before segment close: unmodified
+existing zero-dynamic semantic profile/attack consumer works on12 NP rules and
+907 actual material-state checks. PRIMARY corrected its own mistaken claim of
+an unconditional constructor loop; the guard already exists, so no duplicate
+adapter or evaluator patch. Default/nonzero geometry limitation and projection
+exclusions remain. No AUX material-helper code copied/executed or new fit follows.
