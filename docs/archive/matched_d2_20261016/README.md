@@ -40,3 +40,6 @@ was independently rerun. The source and exact frozen roots make it reviewable.
 Late aux_action_alias source/results are original verified two-transition
 fixture evidence, not part of the earlier635-member receipt replay. They use
 the existing public phase_graph regression and do not train/filter actions.
+
+Lateaux_finiteq source/results/reader/replay add4actualfinitequeries and2
+diagnostictransitions, separatelyvalidatednormal/source. NotpartofsealedZIP.

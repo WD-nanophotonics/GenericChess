@@ -447,3 +447,10 @@ newroot/1Dotreply read: ratio4unitbenefit narrow; R-free192DEVallDRAW and
 KRNB/Ranchor-by-Bpilot remainsAUXINPUT_ONLY; independentlyselecteddifferentB
 DEVgains are postselectionpolicycontrasts, notpureR-by-Binteraction. NoPRIMARY
 solver/learning/certificate/runtime adoption, pricepool orboundarychange.
+
+ThepreparedauxaliasfiniteQquestion isnowactuallyclosedinthesameactivesegment:
+4existingCore/Nativequeries complete2childplies, rootQ -6versus-5, equalscoped
+V1inputsbutdifferentfiniteranks. Separatenormal/sourcefullstate/PVreaderspass.
+No trainedfailure/optimalWDL/newmodelAPIclaim. Nextquestioncanmeasurewhether
+thisaliascosts boundedsearchwork orismerelyan exact-rankinglimitation; useexisting
+hints/orders,nolearning orcompetingAUXsolver. Totalnewqueries4169;96gamesunchanged.

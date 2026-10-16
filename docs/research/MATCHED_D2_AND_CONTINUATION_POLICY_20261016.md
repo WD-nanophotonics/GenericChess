@@ -244,3 +244,19 @@ and complete Native action identity/checked search retain both alternatives.
 Keep currentmodels/API; a later scoped teacher test can examine consequence
 before changing representations. No search/game/training was run for this case.
 These late original executions are not included in the635-member source replay.
+
+
+Late finite consequence closes the prepared auxiliary-alias question in the SAME
+active segment, without resetting its clock or changing the4query caps. Existing
+Core/normalNative each completeD2frombothchildren (rootactionD3): aV Q=-6,
+aU Q=-5, independently matching. The declared static fixture values are
+K/W/B/S0=0,S3=3,S5=5,S6=6. This is a source-exposed finiteobjective counterexample:
+equalstate/actionV1inputs cannotexpress that strict preference foranyparameters.
+It is not trainedfailure, optimalWDL orreason toreplaceapproximateordering;
+Native/checkedsearchstillretainsbothfullactions.
+
+These4latequeries and2diagnostictransitions are additional to the sealed
+4165query/96game replay, not newgames or retroactively included in that receipt.
+Separate normalandpublication-source searchdisabledfullstate/history/PV checks
+bothpass; counts agree. Newactualquerytotal4169, physicalgames still96. The
+original635ZIP remains unchanged. No learning/solver/API/default change.
