@@ -456,32 +456,41 @@ thisaliascosts boundedsearchwork orismerelyan exact-rankinglimitation; useexisti
 hints/orders,nolearning orcompetingAUXsolver. Totalnewqueries4169;96gamesunchanged.
 
 
-## Current CHAT feasibility outcome —2026-10-16
+## Current derived-input outcome —2026-10-16
 
-The prepared alias-budget question is CLOSED:14newfixture calls separate finite
-ranking from canonical-refinement work (30/34nodes, control19/19). No V1/API or
-PV/history change. New542queries/0games/0researchfits quantify Native finite
-teacher coverage, horizon dependence, cosmetic mapping and inference cost;
-NATIVE_TEACHER_AND_TRANSFER_20261016.md owns the detailed limits/source replay.
-111OTHER-action children all complete NativeD3;85joint Core scores match.
-Finite ranks reverse8/21D2-D4pairs and3/7D4-D6pairs: tag actual target horizon,
-not intrinsic Q. Existing compact zero-residual inference pays mainly dynamic
-feature construction and refuses16board5145input payloads above4096; no silent
-truncation/default change. Mechanical rename maps846actions, not strategic
-transfer; anchor-relative structural refresh may be costly.
+The prior CHAT feasibility route is closed as a feasibility study, not abandoned:
+NATIVE_TEACHER_AND_TRANSFER_20261016.md retains finite-label horizon dependence,
+mechanical mapping, model capacity and AUX70cost/quality limits. Those findings
+motivated actual input-cost attribution before new NN/NNUE engineering.
 
-Decision/reason/consequence: learn from CHAT's teacher/interaction/transfer
-separation, while deferring a new NN/NNUE framework or training launch from input
-algebra alone. AUX70 now has fixed c36adaa2ee8dc53cc36f98743cff0263cf84cac0 teacher/
-cheap-interaction/nearby-rule evidence and owns prospective certificate checks.
-PRIMARY read report/task2079/task2086 only, no execution/adoption. Its partial
-2063completion and zero-shot-already-target result preclude fit-as-strength and
-sample-saving claims. This replaces the stale instruction to run the already
-closed10query memo and unpublished-AUX assumption, preserving negative evidence.
-Next PRIMARY question: can cheaper evaluator INPUT construction preserve the
-specific useful feature values and reduce end-to-end cost on existing complete
-rule states? First inspect actual dependencies and profile constituents; do not
-build another learner/solver, drop promotion/drop/base/aux/history semantics or
-rerun unchanged games. Cheap scalar/interaction baselines remain candidates.
-Reconsider small-net integration only with necessary inputs, measured total cost
-and fixed independent quality evidence; search-first is scheduling, not a ban.
+Decision/reason/consequence: adopt exact discarded dynamic-child identity work
+and same-evaluation3scalar reuse, after fresh complete-rule/Core controls and
+fixed-node equality; preserve search/PV/full parent history, q/price/model/API
+schema/defaults. DERIVED_FEATURE_COST_AND_FAILURES_20261016.md owns392actual
+query/control receipts, censors/2tails and distinct source/test tiers. Active
+mixed-evaluator gains are not universal: late static caller medians.983/.967/
+.957/.926 retain1.318adverse repetition; no strength claim or learning launch.
+
+Two concrete error boundaries are fixed, not silently inherited: full Native
+capacity returns explicit Core-directed derived-feature refusal; actual injected
+negative S4status previously fabricated partial vectors and now yields extraction
+failure/RuntimeError or existing internal_error with recovery. Dot's fixed-source
+reasoning was useful; PRIMARY executed before/after faults and2731final tests.
+No required child/PV/terminal identity is discarded. Complete generated target,
+promotion/drop/base/aux/history and frozen fair conditions remain unchanged.
+
+Next choice: assess actual full API-ready cost/completion under modest common
+budgets using these qualified inputs, keeping static controls and all fields.
+Do not infer quality from greater depth, retry old q campaigns unchanged, expand
+4096model input silently or duplicate AUX's solver/learner. Existing eight-root
+static scope check is actually begun/closed; any fresh deadline panel needs a
+new frozen before-input protocol. New framework/training requires decision value
+per total cost, not just input algebra or fiterror.
+
+AUX71root1792127450.941029/completeDot1792127562 read as OWNER_MESSAGE plus
+fixed-old-adapter reasoning, not new source/execution. Its teacher/price/strategy
+work stays sidemission. A piece-count proof trigger alone does not isolate
+formation versus conversion when fallback still uses candidate prices; retain
+that interpretation without retuning its active caps. Latest PRIMARY fixed-file
+read remains AUX70c36adaa report/task2079/task2086. No crosscheckout writes,
+model/price import, independent AUX rerun or routine acknowledgement gate.

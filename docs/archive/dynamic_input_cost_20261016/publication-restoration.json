@@ -1,0 +1,47 @@
+{
+  "complete": true,
+  "archive_sha256": "1180b5eea69f9ed8aaffc7461e79eb24f70d8704810132439cc77d6bc4824978",
+  "archive_members": 484,
+  "source_module_sha256": "f63f0d684ef0ae060515cdd7ea96bc386221d8db6c4c6fa2f8dbb50bd70e4a94",
+  "source_native_rebuilt": true,
+  "module_origins_asserted": true,
+  "actual": {
+    "consumer.py": {
+      "complete": true,
+      "counts": {
+        "full_state_history_comparisons": 1365,
+        "pv_or_fallback_edges": 620,
+        "query_receipts": 360,
+        "search-results.json": 24,
+        "fresh-recovered-results.json": 120,
+        "fixed-node-recovered-results.json": 120,
+        "product-binding-results.json": 60,
+        "reuse-results.json": 24,
+        "reuse-product-results.json": 6,
+        "strict-product-results.json": 6,
+        "exposed_component_states": 72,
+        "pure_core_feature_states": 280,
+        "fresh_core_feature_states": 30,
+        "s4_position_features": 12,
+        "pending_max_feature_states": 3,
+        "explicit_capacity_refusals": 4
+      },
+      "seconds": 12.355525599996326,
+      "scope": "ActualsourceboundnormalNative searchdisabledfullstate/history/PV andCorefeature replay; independentalgorithm/sharedCorecompiler/host. Noqueryrerun/game/fit/oldclockauthentication. Capacityoldzero deliberatelysuperseded; privatecountertimings/provenance notindependentlyauthenticated."
+    },
+    "consumer_models.py": {
+      "complete": true,
+      "counts": {
+        "nonzero_compact_forwards": 22,
+        "four_profile_values": 176,
+        "documented_large_input_exclusions": 8
+      },
+      "seconds": 3.252679099998204,
+      "scope": "SourceboundNumPyforward andNativevalues, nofit/search/game. Notindependentoldcounter/clockverification ormodelquality."
+    }
+  },
+  "source_focused_tests": 58,
+  "source_pytest_summary": "58 passed in 10.67s",
+  "seconds": 39.91220009999233,
+  "scope": "Actualfreshpublication-source normalNative rebuild/two searchdisabledreaders/58focusedchecks. Sharedhost/Python/Zig/Core/compiler, notindependentgame/WDL/oldclockauthentication. Faultregressionsrebuildprivatehook fromthissource; no shippedbinary/hook/modelfit."
+}

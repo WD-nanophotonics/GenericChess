@@ -2968,8 +2968,17 @@ static PyObject *gc_semantic_dynamic_features(PyObject *self, PyObject *args) {
         pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (position->history_len >= GC_SEM_MAX_PLY + 1) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core features");
+        return NULL;
+    }
     int features[3];
-    if (!gc_semantic_dynamic_feature_vector(rules, position, features)) return NULL;
+    if (!gc_semantic_dynamic_feature_vector(rules, position, features)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_RuntimeError, "semantic dynamic feature extraction failed");
+        return NULL;
+    }
     return Py_BuildValue("(iii)", features[0], features[1], features[2]);
 }
 
@@ -3898,6 +3907,8 @@ static PyObject *gc_semantic_u64_tuple(const uint64_t *values, size_t count) {
 
 #define GC_SEMANTIC_PROBE_INF 1000000000
 #define GC_SEMANTIC_STATIC_LIMIT 90000000
+/* Internal failure lies outside clipped scores and is checked before negation. */
+#define GC_SEMANTIC_EVAL_ERROR INT_MIN
 
 static int gc_semantic_probe_material(
     const GCSemanticRules *rules,
@@ -3905,6 +3916,8 @@ static int gc_semantic_probe_material(
     const GCSemanticProbeProfile *profile,
     const int *dynamic_features) {
     int64_t score = 0;
+    int cached_dynamic[3];
+    const int *compact_dynamic = dynamic_features;
     for (uint16_t sq = 0; sq < rules->board_size * rules->board_size; sq++) {
         const GCPiece *piece = &position->board[sq];
         if (!piece->occupied) continue;
@@ -3939,12 +3952,14 @@ static int gc_semantic_probe_material(
         if (dynamic_features != NULL) {
             memcpy(features, dynamic_features, sizeof(features));
         } else if (!gc_semantic_dynamic_feature_vector(rules, position, features)) {
-            return score;
+            return GC_SEMANTIC_EVAL_ERROR;
         }
         for (int i = 0; i < 3; i++) {
             score += (position->side_to_move == 0 ? 1 : -1) *
                 (int64_t)profile->dynamic[i] * features[i];
         }
+        memcpy(cached_dynamic, features, sizeof(cached_dynamic));
+        compact_dynamic = cached_dynamic;
     }
     if (profile && profile->localized_control_supplied) {
         int features[GC_SEMANTIC_SPATIAL_CELLS] = {0};
@@ -3959,13 +3974,18 @@ static int gc_semantic_probe_material(
             gc_semantic_action_buffer_init(&actions);
             if (!gc_semantic_generate_candidate_buffer(rules, &view, &actions)) {
                 gc_semantic_action_buffer_free(&actions);
-                return (int)score;
+                return GC_SEMANTIC_EVAL_ERROR;
             }
             for (size_t i = 0; i < actions.count; i++) {
                 uint64_t raw = actions.data[i];
                 if (raw == 0 || (raw >> 63) != 0) continue;
                 GCSemanticPosition child;
-                if (!gc_semantic_runtime_make_checked(&child, rules, &view, raw)) continue;
+                int status = gc_semantic_runtime_make_checked_status(&child, rules, &view, raw);
+                if (status < 0) {
+                    gc_semantic_action_buffer_free(&actions);
+                    return GC_SEMANTIC_EVAL_ERROR;
+                }
+                if (!status) continue;
                 uint16_t target = (uint16_t)(raw & 0xFFu);
                 uint16_t rank = target / rules->board_size;
                 uint16_t file = target % rules->board_size;
@@ -3988,7 +4008,7 @@ static int gc_semantic_probe_material(
     if (profile && profile->compact) {
         double residual = 0.0;
         if (gc_semantic_compact_residual(
-                rules, position, profile, dynamic_features, &residual)) {
+                rules, position, profile, compact_dynamic, &residual)) {
             /* Compact targets use the checkpoint's human-value units, just
              * like the Python training residual.  Convert back to Native's
              * fixed-point score units with the semantic evaluator scale. */
@@ -3997,6 +4017,8 @@ static int gc_semantic_probe_material(
             score += profile->compact->perspective == 1
                 ? -fixed_residual
                 : (position->side_to_move == 0 ? fixed_residual : -fixed_residual);
+        } else {
+            return GC_SEMANTIC_EVAL_ERROR;
         }
     }
     if (score > GC_SEMANTIC_STATIC_LIMIT) return GC_SEMANTIC_STATIC_LIMIT;
@@ -4024,7 +4046,15 @@ static int gc_semantic_dynamic_feature_vector(
             uint64_t raw = actions.data[i];
             if (raw == 0 || (raw >> 63) != 0) continue;
             GCSemanticPosition child;
-            if (!gc_semantic_runtime_make_checked(&child, rules, &view, raw)) continue;
+            /* Only legality and action fields are consumed. Keep full parent
+             * history and S4 checks; the discarded child's digest/event is unused. */
+            int status = gc_semantic_runtime_make_material_view_status(
+                &child, rules, &view, raw);
+            if (status < 0) {
+                gc_semantic_action_buffer_free(&actions);
+                return 0;
+            }
+            if (!status) continue;
             mobility[owner]++;
             if (((raw >> 16) & 0xFFu) != 0xFFu) promotions[owner]++;
             if (((raw >> 32) & 0xFu) == 2u) {
@@ -4151,7 +4181,12 @@ static int gc_semantic_spatial_feature_vector(
             uint64_t raw = actions.data[i];
             if (raw == 0 || (raw >> 63) != 0) continue;
             GCSemanticPosition child;
-            if (!gc_semantic_runtime_make_checked(&child, rules, &view, raw)) continue;
+            int status = gc_semantic_runtime_make_checked_status(&child, rules, &view, raw);
+            if (status < 0) {
+                gc_semantic_action_buffer_free(&actions);
+                return 0;
+            }
+            if (!status) continue;
             uint16_t target = (uint16_t)(raw & 0xFFu);
             uint16_t rank = target / rules->board_size;
             uint16_t file = target % rules->board_size;
@@ -4182,6 +4217,11 @@ static PyObject *gc_semantic_spatial_features(PyObject *self, PyObject *args) {
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
+    if (position->history_len >= GC_SEM_MAX_PLY + 1) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core features");
+        return NULL;
+    }
     int *occupancy = (int *)calloc(
         (size_t)2 * rules->type_count * GC_SEMANTIC_SPATIAL_CELLS, sizeof(int));
     if (!occupancy) { PyErr_NoMemory(); return NULL; }
@@ -4224,6 +4264,7 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
     memset(&result, 0, sizeof(result));
     if (!*ok) return result;
     result.score = gc_semantic_probe_material(rules, position, profile, NULL);
+    if (result.score == GC_SEMANTIC_EVAL_ERROR) { *ok = 0; result.score = 0; return result; }
     result.nodes = 1;
     int winner = -1;
     int terminal = gc_semantic_terminal_status(rules, position, &winner);
@@ -4537,8 +4578,10 @@ static void gc_semantic_trace_record(
         for (uint16_t type = 0; type < ctx->rules->type_count; type++)
             row->hand_counts[owner][type] = position->hand_counts[owner][type];
     }
-    if (!gc_semantic_dynamic_feature_vector(ctx->rules, position, row->dynamic))
-        memset(row->dynamic, 0, sizeof(row->dynamic));
+    if (!gc_semantic_dynamic_feature_vector(ctx->rules, position, row->dynamic)) {
+        ctx->control = 4;
+        return;
+    }
     row->aux_feature_count = 0;
     for (uint8_t slot_index = 0; slot_index < ctx->rules->aux_slot_count; slot_index++) {
         const GCSemAuxSlot *slot = &ctx->rules->aux_slots[slot_index];
@@ -5065,9 +5108,13 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
                     ctx->ordering_profile.compact != NULL) {
                     dynamic_features = dynamic;
                 }
-                mover_score = -gc_semantic_probe_material(
+                int evaluated = gc_semantic_probe_material(
                     ctx->rules, &child, &ctx->ordering_profile,
                     dynamic_features);
+                if (evaluated == GC_SEMANTIC_EVAL_ERROR) {
+                    free(ordered); ctx->control = 4; return 0;
+                }
+                mover_score = -evaluated;
                 gc_semantic_order_cache_store(
                     ctx->ordering_cache, &child, mover_score);
                 ctx->ordering_evaluations++;
@@ -5088,8 +5135,12 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
                 ctx->ordering_profile.compact != NULL) {
                 dynamic_features = dynamic;
             }
-            mover_score = -gc_semantic_probe_material(
+            int evaluated = gc_semantic_probe_material(
                 ctx->rules, &child, &ctx->ordering_profile, dynamic_features);
+            if (evaluated == GC_SEMANTIC_EVAL_ERROR) {
+                free(ordered); ctx->control = 4; return 0;
+            }
+            mover_score = -evaluated;
             ctx->ordering_evaluations++;
             ctx->ordering_evaluations_by_ply[ply]++;
         }
@@ -5608,6 +5659,7 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
     if(check && qdepth>=ctx->qhard_depth){ctx->control=5;return 0;}
     if(!check){
         int stand=gc_semantic_probe_material(ctx->rules,pos,&ctx->profile,NULL);
+        if(stand==GC_SEMANTIC_EVAL_ERROR){ctx->control=4;return 0;}
         if(stand>=beta)return neutral && stand<0 ? 0:stand;
         if(stand>alpha)alpha=stand;
         if(qdepth>=ctx->ordinary_qdepth)return alpha;
@@ -5797,6 +5849,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     if (depth == 0) {
         int score = ctx->qdepth_limit > 0 ? 0 :
             gc_semantic_probe_material(ctx->rules, position, &ctx->profile, NULL);
+        if (score == GC_SEMANTIC_EVAL_ERROR) { ctx->control = 4; return 0; }
         /* A legal neutral claim remains a zero floor at the q0 frontier. */
         uint64_t leaf_neutral_action = 0;
         int leaf_neutral = gc_semantic_declaration_neutral(
@@ -6461,8 +6514,22 @@ static PyObject *gc_semantic_evaluate(PyObject *self, PyObject *args) {
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
                                    spatial_values, localized_control_values, compact_values,
                                    rules, evaluator_scale, &profile)) return NULL;
+    if (position->history_len >= GC_SEM_MAX_PLY + 1 &&
+        (profile.compact || profile.localized_control_supplied ||
+         (profile.dynamic_supplied &&
+          (profile.dynamic[0] || profile.dynamic[1] || profile.dynamic[2])))) {
+        gc_semantic_profile_free(&profile);
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core evaluation");
+        return NULL;
+    }
     int score = gc_semantic_probe_material(rules, position, &profile, NULL);
     gc_semantic_profile_free(&profile);
+    if (score == GC_SEMANTIC_EVAL_ERROR) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_RuntimeError, "semantic evaluator feature extraction failed");
+        return NULL;
+    }
     return PyLong_FromLong(score);
 }
 

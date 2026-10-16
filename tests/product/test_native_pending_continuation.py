@@ -109,6 +109,10 @@ def test_fixed_capacity_is_explicit_not_a_rule_terminal_or_empty_frontier():
     assert sem.terminal_status(nr, full)["status"] == "ongoing"
     for operation in (
         lambda: sem.guarded_actions(nr, full),
+        lambda: sem.dynamic_features(nr, full),
+        lambda: sem.spatial_features(nr, full),
+        lambda: sem.evaluate(nr, full, dynamic_values=(1, 0, 0)),
+        lambda: sem.evaluate(nr, full, localized_control_values=(1, -1, 0, 0, 0, 0, 0, 0, 0)),
         lambda: sem.make_checked(nr, full, pack_semantic_action(nr, session.state.position, action(session, "b5a4"))),
         lambda: sem.fixed_depth_search(nr, full, 1),
         lambda: sem.semantic_iterative_search(nr, full, 1),

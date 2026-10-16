@@ -1,0 +1,18 @@
+from pathlib import Path
+import json,zipfile,hashlib,sys,sysconfig,subprocess,time,uuid,os
+R=Path.cwd();P=R/'.local_agent/dynamic-input-20261016';D=R/'docs/archive/dynamic_input_cost_20261016';m=json.loads((D/'manifest.json').read_bytes());start=time.perf_counter();dest=P/('source-copy-'+uuid.uuid4().hex[:8]);dest.mkdir()
+assert hashlib.sha256((D/'evidence.zip').read_bytes()).hexdigest()==m['archive_sha256']
+with zipfile.ZipFile(D/'evidence.zip')as z:
+ assert z.testzip()is None
+ for i in m['members']:
+  b=z.read(i['path']);assert hashlib.sha256(b).hexdigest()==i['sha256'];f=dest/i['path'];assert f.resolve().is_relative_to(dest.resolve());f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
+source=dest/'source';src=source/'generic_chess/_native';out=source/'generic_chess'/('_native_core'+sysconfig.get_config_var('EXT_SUFFIX'));cmd=[str(R/'.venv/Lib/site-packages/ziglang/zig.exe'),'cc','-target','x86_64-windows-gnu','-shared','-O2','-I'+sysconfig.get_path('include'),'-I'+str(src),'-L'+str(Path(sys.base_prefix)/'libs'),'-lpython312',*[str(f)for f in sorted(src.glob('*.c'))],'-o',str(out)];r=subprocess.run(cmd,capture_output=True,timeout=120,env=dict(os.environ,ZIG_GLOBAL_CACHE_DIR=str(P/'source-zig-cache')));(P/'source-build-private.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0,r.stderr[-2500:]
+actual={}
+for script,result,site in [('consumer.py','consumer-result.json',False),('consumer_models.py','consumer-model-result.json',True)]:
+ r=subprocess.run([sys.executable,*([]if site else['-S']),str(dest/'research'/script),str(dest/'research')],cwd=source,capture_output=True,timeout=180);(P/(script+'-source-private.log')).write_bytes(r.stdout+r.stderr);assert r.returncode==0,(r.stdout[-2500:],r.stderr[-2500:]);a=json.loads((dest/'research'/result).read_bytes());assert a['complete'];actual[script]=a
+assert actual['consumer.py']['counts']['query_receipts']==360;assert actual['consumer_models.py']['counts']==dict(nonzero_compact_forwards=22,four_profile_values=176,documented_large_input_exclusions=8)
+targets=['tests/development/test_native_dynamic_feature_error.py','tests/product/test_native_dynamic_feature_views.py','tests/product/test_native_pending_continuation.py','tests/product/test_f58_compact_nonlinear.py'];r=subprocess.run([sys.executable,'-X','utf8','-m','pytest',*targets,'-p','no:cacheprovider','--basetemp',str(P/('source-pytest-'+uuid.uuid4().hex[:8]))],cwd=source,capture_output=True,timeout=180);(P/'source-tests-private.log').write_bytes(r.stdout+r.stderr);assert r.returncode==0,(r.stdout[-2000:],r.stderr[-2000:]);tests=r.stdout.decode(errors='replace').splitlines()[-1]
+x=dict(complete=True,archive_sha256=m['archive_sha256'],archive_members=m['member_count'],source_module_sha256=hashlib.sha256((src/'native_module.c').read_bytes()).hexdigest(),source_native_rebuilt=True,module_origins_asserted=True,actual=actual,source_focused_tests=58,source_pytest_summary=tests,seconds=time.perf_counter()-start,scope='Actualfreshpublication-source normalNative rebuild/two searchdisabledreaders/58focusedchecks. Sharedhost/Python/Zig/Core/compiler, notindependentgame/WDL/oldclockauthentication. Faultregressionsrebuildprivatehook fromthissource; no shippedbinary/hook/modelfit.')
+assert x['source_module_sha256']==m['final_module_sha256']
+for f in(P/'source-restoration.json',D/'publication-restoration.json'):f.write_bytes((json.dumps(x,indent=2)+'\n').encode())
+print('SOURCE_RESTORE_PASS',x['seconds'],actual['consumer.py']['counts'],tests,flush=True)

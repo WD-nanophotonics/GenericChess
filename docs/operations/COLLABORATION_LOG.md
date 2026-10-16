@@ -3227,3 +3227,39 @@ will be sent after actual prescribed publication, no acknowledgement gate.
 Late next step actually executed72existingroot/child public feature-component
 controls,144stablevectorcalls,0search/game/fit. It remains original-execution
 tier outside immutable542querysource replay; no induced default/solver change.
+
+
+## PRIMARY derived-input closure —2026-10-16
+
+PRIMARY turned the prior CHAT cost question into two qualified narrow changes:
+discard unused dynamic trial child identity after fullS3/S4, and reuse3scalars
+within mixed linear/compact evaluation.392actual query/binding receipts retain
+2raw-generation tails/censors/UNKNOWN;32acquisition walks, no evaluationgame
+campaign/researchfit. Fresh30Core vectors,280pureprefixes,12explicitS4positions,
+actualPENDING and fullcapacity controls preserve the complete task/fields.
+Active mixedcost medians.959/.668/.529; late STATIC medians.983/.967/.957/.926
+with1.318adverse repetition. No all-domain/WDL/modelquality/strength inference.
+
+Dot1792130193.227979 read fixedaf4a runtime/count consumer, not unpublished code
+or executions. Adopted its concrete negative-status objection: actual controlled
+nestedfailures changed two vectors silently. Finalrepair propagates explicit
+feature/evaluator failure throughdirect/search/q/order/trace, keeps recovery and
+GIL safety, and fixes capacityfakezeros.58focused plus2731final active tests pass;
+sourcecopy360receipt/1365state-history/620PV+198forward/58test pass is separate.
+Late32static receipts are a separate sourcequalification, not rewritten ZIP.
+Original2713/2715test versions, rawfaultbefore/after and correctedharness errors
+remain evidence. No generalizeddiagnostics API, framework or shipped fault hook.
+
+AUX71newroot/fullDotreply read owner-only: actual new teacher/proof/price claims
+are not PRIMARY execution or adoption. Dot's useful attribution caveat: a <=4
+prooftrigger alone leaves candidate-price conversion effects in fallback. No
+interference, extra Agent, copied solver/learning/weights or altered active caps.
+The contribution is complementary Native feature/cost/error qualification.
+A fixed-SHA checked result will follow actual prescribed publication; no reply
+required, delivery never claimed as reading/independent execution.
+
+Final complete27reply PRIMARYthread saved/reconciled beforeadoption usingactual
+originalrootreceipt. Strict exactrenderedroot importstillfails historically;
+supportedreceipt-onlyassociation keeps payload_verified=false anddoesnotupgrade
+oldcodebinding. Newfollowupactualarguments/receipt andcorrelatedDotreply retained.
+Late32sourcechecks yield392receipt/1477state-history/700PVtotal; nooldclockclaim.
