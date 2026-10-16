@@ -1,0 +1,154 @@
+{
+  "status": "COMPLETE",
+  "rows": [
+    {
+      "context": 0,
+      "discovery": {
+        "mode": "REFERENCE_ASSISTED_DEFENDER_STRATEGY",
+        "reason": "CANDIDATE_NO_FORCED_WIN_REQUIRES_INDEPENDENT_CHECK",
+        "expanded": 52,
+        "positions": 52,
+        "edges": 58,
+        "closed": true,
+        "seconds": 0.04854670001077466
+      },
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 52,
+        "edges": 58,
+        "seconds": 0.06936369999311864,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "current": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 52,
+        "edges": 58,
+        "seconds": 0.0686711999878753,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "claim": "NO_FORCED_WIN",
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 52,
+        "edges": 58,
+        "seconds": 0.07711459998972714,
+        "unrolled_tree_nodes": 79,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual": {
+        "plies": 6,
+        "winner": 1,
+        "status": "checkmate"
+      },
+      "query_seconds": 0.18669749997206964,
+      "actual_history_claim": "MOVER_FORCED_LOSS_CERTIFIED_BY_OPPONENT_WIN",
+      "qualification_seconds": 0.16881210001884028
+    },
+    {
+      "context": 10,
+      "discovery": {
+        "mode": "REFERENCE_ASSISTED_DEFENDER_STRATEGY",
+        "reason": "CANDIDATE_NO_FORCED_WIN_REQUIRES_INDEPENDENT_CHECK",
+        "expanded": 39,
+        "positions": 39,
+        "edges": 42,
+        "closed": true,
+        "seconds": 0.03566639998462051
+      },
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 39,
+        "edges": 42,
+        "seconds": 0.053815499995835125,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "current": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 39,
+        "edges": 42,
+        "seconds": 0.050981200009118766,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "claim": "NO_FORCED_WIN",
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 39,
+        "edges": 42,
+        "seconds": 0.06097510000108741,
+        "unrolled_tree_nodes": 45,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual": {
+        "plies": 6,
+        "winner": 1,
+        "status": "checkmate"
+      },
+      "query_seconds": 0.14056710002478212,
+      "actual_history_claim": "MOVER_FORCED_LOSS_CERTIFIED_BY_OPPONENT_WIN",
+      "qualification_seconds": 0.1317255000176374
+    },
+    {
+      "context": 12,
+      "discovery": {
+        "mode": "REFERENCE_ASSISTED_DEFENDER_STRATEGY",
+        "reason": "CANDIDATE_NO_FORCED_WIN_REQUIRES_INDEPENDENT_CHECK",
+        "expanded": 79,
+        "positions": 79,
+        "edges": 88,
+        "closed": true,
+        "seconds": 0.0746219000138808
+      },
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 79,
+        "edges": 88,
+        "seconds": 0.10293799999635667,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "current": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 79,
+        "edges": 88,
+        "seconds": 0.09885310000390746,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "claim": "NO_FORCED_WIN",
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 79,
+        "edges": 88,
+        "seconds": 0.1181464999972377,
+        "unrolled_tree_nodes": 113,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual": {
+        "plies": 6,
+        "winner": 1,
+        "status": "checkmate"
+      },
+      "query_seconds": 0.2765434000175446,
+      "actual_history_claim": "MOVER_FORCED_LOSS_CERTIFIED_BY_OPPONENT_WIN",
+      "qualification_seconds": 0.24672709999140352
+    }
+  ],
+  "expected": 3,
+  "missing": 0,
+  "teacher_load_seconds": 2.4477636000083294,
+  "seconds": 3.605811300018104,
+  "scope": "ALL3oldcanonicalLOSScontexts selectedaslabel-tier/costqualification, NOTnewW-Lpopulation orfreegenericdiscovery. Explicitprepaid2248/2249/2250teacher. NewWINrankdefense changesoldsafehashwhichcanchooseDRAW; old60cap/UNKNOWN untouched. Caller12/proof8.4/shared3negativechecks; positiveopponentverification+actualrolloutseparatequalificationpaid. No player/filter/reward/default/PRIMARYadoption."
+}

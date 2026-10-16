@@ -1,0 +1,409 @@
+{
+  "status": "PASS_ALL_CLOSED_FIRST_DIFFERENCES_CANONICAL_ASSOCIATION",
+  "task": 2331,
+  "first_actual_differences": 12,
+  "candidate_first": 12,
+  "foe_first": 0,
+  "canonical_quality_changed": 2,
+  "positive_game_delta_with_same_first_quality": 4,
+  "rows": [
+    {
+      "family": 0,
+      "opponent": 0,
+      "color": 0,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 5,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".k........n.RK..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".k.......Rn.nK..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 0,
+      "opponent": 1,
+      "color": 0,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 5,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".k........n.RK..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".k.......Rn.nK..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent": 0,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 6,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".....KN......rk.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".....KN....kr...0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "opponent": 1,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 6,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".....KN......rk.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".....KN....kr...0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent": 0,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 18,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": ".....k..rN.K...N0",
+          "side": 0,
+          "actual_child_status": "repetition",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".....k...N.K.r.N0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "opponent": 1,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 18,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": ".....k..rN.K...N0",
+          "side": 0,
+          "actual_child_status": "repetition",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".....k...N.K.r.N0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent": 0,
+      "color": 0,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 5,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": "K.R........n.k..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": "K.n...R....n.k..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent": 0,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 32,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": ".kn....K...n..R.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": "..n.k..K...n..R.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent": 1,
+      "color": 0,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 5,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": "K.R........n.k..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": "K.n...R....n.k..1",
+          "side": 1,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 8,
+      "opponent": 1,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 32,
+      "canonical_candidate_delta": 0,
+      "actual_game_delta": 0,
+      "children": [
+        {
+          "token": ".kn....K...n..R.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": "..n.k..K...n..R.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent": 0,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 6,
+      "canonical_candidate_delta": 1,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".K....N......rk.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".K....N..k..r...0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "LOSS",
+          "canonical_candidate_utility": 1
+        }
+      ]
+    },
+    {
+      "family": 10,
+      "opponent": 1,
+      "color": 1,
+      "is_candidate": true,
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "ply": 6,
+      "canonical_candidate_delta": 1,
+      "actual_game_delta": 1,
+      "children": [
+        {
+          "token": ".K....N......rk.0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 1.0,
+          "canonical_next_mover_label": "DRAW",
+          "canonical_candidate_utility": 0
+        },
+        {
+          "token": ".K....N..k..r...0",
+          "side": 0,
+          "actual_child_status": "ongoing",
+          "actual_child_winner": null,
+          "price": 2.0,
+          "canonical_next_mover_label": "LOSS",
+          "canonical_candidate_utility": 1
+        }
+      ]
+    }
+  ],
+  "seconds": 2.1665063000109512,
+  "scope": "ALLfirstcommittedactiondifferences fromclosedpairedactualrecords. CanonicalfreshWDLfromexplicitfullyexposed2249teacher isassociationonly, NOTactualfiniteSessionvalue/fixedfoeW-L/reward/causalmediation orpricefit. Actualchildterminals reportedseparately. No extra games/search/teacherconstruction orbestprice/defaultadoption."
+}

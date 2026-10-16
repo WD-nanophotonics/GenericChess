@@ -1,0 +1,10 @@
+{
+  "stage": "closed2338",
+  "error_type": "FileNotFoundError",
+  "missing": ".closed2338/plan.json",
+  "prior_stages_passed": 8,
+  "tests": 35,
+  "consumers": 7,
+  "cause": "Harness OUT redirection omitted its input plan",
+  "correction": "Copy exact archived plan to fresh diagnostic OUT; remaining7consumers passed; no producer rerun"
+}

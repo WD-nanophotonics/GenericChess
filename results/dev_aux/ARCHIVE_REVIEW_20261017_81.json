@@ -1,0 +1,75 @@
+{
+  "status": "PASS_ACTUAL81_PAYLOAD_SENSITIVE_CONTENT_AST_JSON_SHA_AND_CRC",
+  "archive": "DELTA_REPRO_20261017_81.zip",
+  "archive_sha": "166580c4ee04fd4cb51bb10cbac351d94451f647feb621a6bfc0effe0ffc992d",
+  "bytes": 2486831,
+  "payloads": 258,
+  "raw_bytes": 47590628,
+  "sensitive_hits": 0,
+  "AST_checks": 150,
+  "JSON_files": 95,
+  "JSONL_records": 9448,
+  "semantic_equivalent_overlays": [
+    {
+      "path": "results/dev_aux/task2251/inputs.json",
+      "old_sha": "2a24ed7582796d8bbb399824d3266ca135ec6a6e25d3bbff9b4d435ba2eaa7fa",
+      "new_sha": "325f6368de54c949d602d5bca16cc037327141ce47eab3874ae24b6613d6abd6",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2257/inputs.json",
+      "old_sha": "8c7e754b57dec997380b706eb893587c21ecc3d54ad89f1d37ab89da7aa9e0ed",
+      "new_sha": "691ff584311e95d36467f1d625900778c3157fdd3f34bf17241b85523149223d",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2258/inputs.json",
+      "old_sha": "ffe0fa40573b71d92a1255f81d68ca5284326c7ba77efec0f15ae03455b9f2eb",
+      "new_sha": "251a56f82404781a586dd12f89338df290fe2cdd00cbc243a50f4a034e15b27b",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2270/inputs.json",
+      "old_sha": "e0af53fe9057f8a8ff7ef317c5acde07995eb4fddb4bc37267ecc021402fe3ac",
+      "new_sha": "3b43d70fba9c9b3ca476a49ab886cb1b976d5fb04106beaff59f54aedf29fbea",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2315/certificates.json",
+      "old_sha": "6099e9e443d85ece6c925e842e7d2250ef6007b67220564e6c7f08c7296b664a",
+      "new_sha": "8f99393a81a2b7e98d696e3d73d9716ff2c36da515d16ef3aefc6c2885241c3d",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2315/result.json",
+      "old_sha": "d08f813f2cd929b287cee19a7dd6db1e682dbfd9c9b20cf79d6d3e8b1c13ccfa",
+      "new_sha": "5786d5574a6d939153c959eddc52d9d6b42f717bbd645a9a695289f2e5a8e5bd",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2315/rules.json",
+      "old_sha": "8e1fe22e04ed857d178e3ac7e98349c363bfa2ed02ef8da15c61ca053bd1f726",
+      "new_sha": "a152711fed8460689eee2397dc66d815af2bb2c5b2eb86ae33b3fdde0669c78f",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2320/build.py",
+      "old_sha": "284eb2432bd772f480c6c3140bedabdb81aadd2910e4cc964fcf79bc1cdc015b",
+      "new_sha": "fe65ef6229066546d59358b74564a8c762a6c635c13a24905e72a95024d27592",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2320/refutation.py",
+      "old_sha": "bd0d7cddf723135b27f1b384d016d2bda0c8dced8b051c749ab8e10ffa654376",
+      "new_sha": "19e59dc9eec7f930333aa23e3f7f84c878136f525495597371d40f797cef9fae",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2325/plan.json",
+      "old_sha": "9cb93f2191378293494aca3c87a87ee06598aa0b579b8dc2d7caefd6c72f7c1c",
+      "new_sha": "22b20a10aa5ad6a2245391f8ac662eb744fd844c77f9f0f735bfcb1596e4219d",
+      "semantic_equal": true
+    }
+  ],
+  "seconds": 3.940040900022723
+}

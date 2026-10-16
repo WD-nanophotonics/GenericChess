@@ -1,0 +1,1303 @@
+{
+  "roots": [
+    {
+      "group": ".......KkrN.N...0",
+      "order_sha": "0000a8ad70904eada9bb0f45cc3b9519a4749453f44f07f6fbcd93122d9ac854",
+      "parent_index": 329653,
+      "target_index": 262320,
+      "prefix": "b4a3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        -1,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "R",
+        "n",
+        ".",
+        "n",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "K",
+        "R",
+        "n",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 0,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-0.json",
+      "rules_sha": "c0d196ca26e189ed54fa330ffba9d46d9cc675b5cd947b7d94bd8ec08370384d",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a70e49f1f91b077dc495b37921e175e6daf717596b2ef866e0f25720308035b6",
+        "schema_version": 1
+      },
+      "state_sha": "d348e7a1e1d68e30ac556280f27813d5839672437cb2460fd7d136150fb53962",
+      "legal_actions": 8
+    },
+    {
+      "group": "...Kn......Rnk..1",
+      "order_sha": "000cdadb59db633a21f7b9850b0ad494572191e08094ef77eca125a9f5035864",
+      "parent_index": 229598,
+      "target_index": 160025,
+      "prefix": "b2a1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        0
+      ],
+      "board": [
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        "R",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        1
+      ],
+      "family": 1,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-1.json",
+      "rules_sha": "fac7432e1038a1b19cad57950f0bf61b65702591c134d0980beaa1de12c3beb9",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "c7cbbb87726dbf8f2a9a85598868a8b35b66b73c99070b749f5e21a4c94814f8",
+        "schema_version": 1
+      },
+      "state_sha": "108dbd30847b3c1b6f175fe10a49ccf96dd4763e2912a6b20967835770699c4e",
+      "legal_actions": 5
+    },
+    {
+      "group": ".....R.n....knK.0",
+      "order_sha": "0017feb315713ca7ab557135aef3956dbf5a96854b21e2527ef4f92567dcf4e0",
+      "parent_index": 580240,
+      "target_index": 580152,
+      "prefix": "c3b1",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        "N",
+        "N",
+        ".",
+        ".",
+        ".",
+        "K",
+        0
+      ],
+      "board": [
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "K",
+        1
+      ],
+      "family": 2,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-2.json",
+      "rules_sha": "10445e05b38cb6371e6969c05b5c196936811e2b744151620f31651613e9cd8c",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "10b1b82999bfae750297c6ab5ace4ad34921fcd26fcbdcf7da42392c90efcdc0",
+        "schema_version": 1
+      },
+      "state_sha": "7214199d1aa6002a9714e674c3b70d63bca169a786d4bd9f54d4467187fec195",
+      "legal_actions": 3
+    },
+    {
+      "group": "...K..N.....r.Nk1",
+      "order_sha": "00182a8eaf8f29bf39b2f64bd3ecc412ff8ec99ba505856300b848a8c030b1be",
+      "parent_index": 426812,
+      "target_index": 426777,
+      "prefix": "b4c2",
+      "target_label": "WIN",
+      "canonical_rank": 19,
+      "target_action_utilities": [
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "N",
+        "N",
+        "k",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        "N",
+        "k",
+        1
+      ],
+      "family": 3,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-3.json",
+      "rules_sha": "c3bb60d8cd30126147ce90d9bbe9d2b55a592b831b5050f7426669a9458e6654",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "8ae482b7d8604685bc7124582d162f50320441cb794ee4dd89888c5c541a2cdf",
+        "schema_version": 1
+      },
+      "state_sha": "1ac2df5c88bc2ed0e457b4379482e77d0beb9fdc38f96b851133d7b909b3484a",
+      "legal_actions": 3
+    },
+    {
+      "group": ".....N.kr..N.K..0",
+      "order_sha": "001c81b8c2bad4c0670d8a5d019460b78c391add2faaf15485d76f1b410a5aca",
+      "parent_index": 229875,
+      "target_index": 220494,
+      "prefix": "b2a2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        ".",
+        "n",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        "k",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "n",
+        ".",
+        "n",
+        ".",
+        ".",
+        "R",
+        ".",
+        ".",
+        "k",
+        ".",
+        1
+      ],
+      "family": 4,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-4.json",
+      "rules_sha": "7fcfce96edb3ed72e1a305dfaf6fb853f562b6ca404a6bc8d11679272f427869",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "4d307f7b0f5649e270f2cf2e5bc96cafe4e1a2f2fd0d26e2e42bb40d9dca723f",
+        "schema_version": 1
+      },
+      "state_sha": "489a9f0cc458ad0354ab661a481a292cbc36acae6e1a155065dc4f32fae8fe86",
+      "legal_actions": 6
+    },
+    {
+      "group": ".....K.Nr.N....k0",
+      "order_sha": "001e012f86bbf8a88e509e306451650b9925c5ffb88c52aa39b05c207985e3f4",
+      "parent_index": 355681,
+      "target_index": 355215,
+      "prefix": "a4a3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "n",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        ".",
+        ".",
+        "K",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "n",
+        "R",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        1
+      ],
+      "family": 5,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-5.json",
+      "rules_sha": "5c273f3c01e3e134aaabe6188e09aab2932a4bda9e1d8c9085953bd6094931f4",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "050d6f0ed86a7b66474ac06533de4d7e41088cf03636a87f456c192fa25aa40f",
+        "schema_version": 1
+      },
+      "state_sha": "8eb23704d114a92c3fd301eb7084eb8550f9a8dd3787d453d8807262328eec69",
+      "legal_actions": 11
+    },
+    {
+      "group": ".....NkNK....r..1",
+      "order_sha": "001f77bcd9dbc468d93b662af91d242437f576420d646fe5b2b252d9fa445514",
+      "parent_index": 550573,
+      "target_index": 550500,
+      "prefix": "d3c1",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        "N",
+        "N",
+        ".",
+        "K",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "r",
+        ".",
+        "N",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        1
+      ],
+      "family": 6,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-6.json",
+      "rules_sha": "2c2b8896ac2d6443cd36ceed1501e07ceaa9ef6c4ed5e34237cd66208382ede6",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "8d652952caec3ba01ed1c18c972bba091c7d8c795072ef1c44146fac63642129",
+        "schema_version": 1
+      },
+      "state_sha": "6fc032f6b723046e2b5e9da547778c734b357c9471d03c0b6a106b6daa1d167d",
+      "legal_actions": 8
+    },
+    {
+      "group": "......N.K.k.N.r.1",
+      "order_sha": "002ae7fcc5a7a7973ee381e64400d8cb055402fbe9e1ae0690e0a6ccc2a87e44",
+      "parent_index": 521264,
+      "target_index": 521275,
+      "prefix": "c2d4",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        "r",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "K",
+        ".",
+        "r",
+        ".",
+        "N",
+        1
+      ],
+      "family": 7,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-7.json",
+      "rules_sha": "f3746b33bc4b8f5a32dd28da377426f282cd740629f0b7639fd34f2e08e4aa19",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "720f68abaece29a60a5b067306c4a953d951df579acf67d3f8dcb6b9d165b910",
+        "schema_version": 1
+      },
+      "state_sha": "cc6560cca565c9d9102ea3be63a59bd564f5d2f65a53d92df07a91069d9b0214",
+      "legal_actions": 4
+    },
+    {
+      "group": "...KNr..N......k0",
+      "order_sha": "00373ec767532a53de9f38539555d92c07b86efb82d7d046165f34f15eccd365",
+      "parent_index": 217562,
+      "target_index": 157269,
+      "prefix": "a2a1",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "R",
+        "n",
+        "k",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "board": [
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "R",
+        "n",
+        "k",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 8,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-8.json",
+      "rules_sha": "12d0d3ad9ebe28ca011dd61a0fee91ef963a4ca5da4fdb5261c17d4bbd6d754c",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b51a6e815ea9ca1d3c0200ce24bcc851e2e2361778958b483b73bbcd98a55240",
+        "schema_version": 1
+      },
+      "state_sha": "015ba9962280c9181e4b7cd9d8d25cc76f72c5393a046095e738f0c1ab3c3ed1",
+      "legal_actions": 7
+    },
+    {
+      "group": ".......R..n.k.Kn0",
+      "order_sha": "003d2ea265ec58c218ea008341a7b9afb007e4cb486ec7f15d298708e84dd24c",
+      "parent_index": 539115,
+      "target_index": 539128,
+      "prefix": "b3d4",
+      "target_label": "WIN",
+      "canonical_rank": 7,
+      "target_action_utilities": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        "N",
+        "N",
+        ".",
+        "K",
+        ".",
+        "k",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        ".",
+        ".",
+        "N",
+        ".",
+        "K",
+        ".",
+        "k",
+        "N",
+        1
+      ],
+      "family": 9,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-9.json",
+      "rules_sha": "de8dc7b67de14629810d1e52b061befc9472dedc791295499c01ef67cf9b1458",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "43478efeaf78229d1f7c40dc6ee1acbdec3b9956e582b1fe21e3ad23c66c588d",
+        "schema_version": 1
+      },
+      "state_sha": "acaa954939428684ee81cb04e46c40369f5ed9c0ca7670eb1a5ecb391fc45dd8",
+      "legal_actions": 9
+    },
+    {
+      "group": "...NK......rNk..1",
+      "order_sha": "00409281d06ac195ea77d2b2c5c5a728f6137974464aa6a55ac894f19d50817f",
+      "parent_index": 473531,
+      "target_index": 473431,
+      "prefix": "b3a1",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "r",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "N",
+        0
+      ],
+      "board": [
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "r",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "N",
+        1
+      ],
+      "family": 10,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-10.json",
+      "rules_sha": "362a56b640c7f88c8bfd0fc4a77da4c06cf42f71b39820b0c44763c257d4164c",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "22bb1ac51955b737d4ca2b87baaf25783bbeee2ee582ea86aa0061bdb1932fff",
+        "schema_version": 1
+      },
+      "state_sha": "1ce43bd4dad51afa2c94f646786d4bc080f69759c429ed92cd860f14c1514f32",
+      "legal_actions": 8
+    },
+    {
+      "group": "......K..n..k.nR1",
+      "order_sha": "004abb720ce94b8e0a8514b9e7aa272abfc95b06ce49a1080a1e85ff733d65d9",
+      "parent_index": 277679,
+      "target_index": 231215,
+      "prefix": "b3b2",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "n",
+        ".",
+        "R",
+        "n",
+        ".",
+        "k",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        "R",
+        "n",
+        ".",
+        "k",
+        1
+      ],
+      "family": 11,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-11.json",
+      "rules_sha": "b61ae5a8747fa5c32360a260545cc35753dc887779b9795b18dbb5db29a7b088",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "3f99816d482f5450025a5704fd5bd487865296d50d19628fd92899f72e10827f",
+        "schema_version": 1
+      },
+      "state_sha": "67d8b2cc0560540f3888dcb31ec922c8541db4c7b90b44696f73b28c9f42bd94",
+      "legal_actions": 6
+    },
+    {
+      "group": "......RK..n.k..n0",
+      "order_sha": "00506fd002dcb4d1681b40b0b1fa7e26dcc128f7f2dc7758063d1f4c9f47459f",
+      "parent_index": 472252,
+      "target_index": 423671,
+      "prefix": "d2d1",
+      "target_label": "WIN",
+      "canonical_rank": 15,
+      "target_action_utilities": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        "K",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "r",
+        "N",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        1
+      ],
+      "family": 12,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-12.json",
+      "rules_sha": "ac97f044d8818974243197d3649d038090ff82980c300a8decd8afdb450e00e6",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "9123698354a87eb55f46cdd34c831d60ef3b2f1e0d7a7dc386abefccf6ec9b26",
+        "schema_version": 1
+      },
+      "state_sha": "67985d3b632dea5e9459ebc79442b038294418eb96abeeebbfc969cca027b921",
+      "legal_actions": 7
+    },
+    {
+      "group": ".....K.nR...n..k0",
+      "order_sha": "005aec64b85c7d45c350660830803f96f619d206d679bdaee987588432205ea7",
+      "parent_index": 577316,
+      "target_index": 577319,
+      "prefix": "c3a4",
+      "target_label": "WIN",
+      "canonical_rank": 17,
+      "target_action_utilities": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        "r",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        ".",
+        "N",
+        "r",
+        ".",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        "K",
+        1
+      ],
+      "family": 13,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-13.json",
+      "rules_sha": "949356ee13d0a8092e166eccf1a9ba1be3139cda7d0ea6f1b440ce79487cabb8",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "094859271cff0f50c12a3c66b58e99159c4ad323070ae4b25fbd6fb671f620bc",
+        "schema_version": 1
+      },
+      "state_sha": "89d0a63e381a28655a0243d9e5a60f2a543c34a73223686ed020426b15942173",
+      "legal_actions": 5
+    },
+    {
+      "group": "......N..krKN...0",
+      "order_sha": "005f15053942e5e43b80b4f8c9ba5ef61707c389c6f3482938a3f7d01b9db525",
+      "parent_index": 276366,
+      "target_index": 276041,
+      "prefix": "c4c3",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "K",
+        ".",
+        "k",
+        "n",
+        ".",
+        "R",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        "K",
+        "R",
+        "k",
+        "n",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "family": 14,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-14.json",
+      "rules_sha": "076c66768b7e7f8c700d0341cf24754e84cad71297a546282447d77970b57e57",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "837ca4e79a91c6f02569c9102d3250b6a1d36fa02894f120083faac991425ccb",
+        "schema_version": 1
+      },
+      "state_sha": "1fb576ff49a22e226df38f95d0add85a58fd5caaf724e02fef55118194d91e74",
+      "legal_actions": 3
+    },
+    {
+      "group": ".......KNN...kr.0",
+      "order_sha": "0064449306797cc0cf12cf02027c013fe3d3a58a5f2679ad3f4a591bb4070c82",
+      "parent_index": 312907,
+      "target_index": 330068,
+      "prefix": "a4b4",
+      "target_label": "DRAW",
+      "canonical_rank": null,
+      "target_action_utilities": [
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ],
+      "parent_board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        "K",
+        ".",
+        "R",
+        ".",
+        0
+      ],
+      "board": [
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "n",
+        "n",
+        ".",
+        ".",
+        ".",
+        "K",
+        "R",
+        ".",
+        1
+      ],
+      "family": 15,
+      "split": "VALIDATION",
+      "rules": "results\\dev_aux\\task2330\\root-15.json",
+      "rules_sha": "2b9eed9347c6c072cba798f2328467462e8b1944b7b7e3f3445048dd2bb0ed18",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "70c03dcd0c36a623f85a8160223e316a3dd19e11d187c674cc679ee1366bfe05",
+        "schema_version": 1
+      },
+      "state_sha": "33c68dba224c0e5f426c96a34da3e2dbcdd73e3aea80849cce758495da2140d4",
+      "legal_actions": 8
+    }
+  ],
+  "selection": "Same2270legalnoncaptureoneplyprefix; targetongoing>=2choices/>=2canonicalactionutilities; WINrank>=5orDRAW; nooneplyterminalchild. ExcludeALLgroups2251/2257/2258/2270; these cover all prior RN conditional game families, later2289/2307/2325 reuse2258. StableRN81hash/order, first8WIN+8DRAW, no predicate relaxation or outcome selection. BothRownership inventories allowed,16VALIDATIONgroups frozen BEFORE new pricequeries.",
+  "all_groups": 10297,
+  "counts": {
+    "safe_initial_parents": 141584,
+    "eligible_prefix_DRAW": 235700,
+    "eligible_prefix_WIN": 117500
+  },
+  "strata": {
+    "('VALIDATION', 'DRAW')": 8,
+    "('VALIDATION', 'WIN')": 8
+  },
+  "price_queries": 0,
+  "old_DEV_performance_evaluated": false,
+  "reference_label_exposure": "Complete exposed graph scanned, including semantic equivalents of old/new DEV; NOT zero DEV label reading or unseenWDLholdout"
+}

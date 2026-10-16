@@ -1,0 +1,58 @@
+{
+  "input": "results\\dev_aux\\task2340\\inputs.json",
+  "input_sha": "85478ba7e0f2398a7db7d4013172a22471a59a0c4d12c8ee8a06927d9fdd74d0",
+  "slots_sha": "0c83284580defd461f784741b0ac38184973ce8561e20f207b21c8421c501fe5",
+  "expected_games": 96,
+  "H": 96,
+  "one_cap_seconds": 2100,
+  "estimated_seconds": 1500,
+  "step_seconds": 1.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 1.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 0.5,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    },
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    }
+  ],
+  "pins": {
+    "results/dev_aux/task2340/pilot.py": "0d000fb7d94667b2f53924c7d6a7d68c8e46eac809248294dddcc3279b2d1e4b",
+    "results/dev_aux/task2340/freeze.py": "f41189ca3e0717279e759fa39e28f8897c5c00c9ee2cf7c0ab3b2b725d880897",
+    "results/dev_aux/task2341/inputs.json": "a8dea8cab482e05ee1b70f68608c578aefdec4ae0539fb84693de85eefab64aa",
+    "results/dev_aux/task2341/plan.json": "54e640d5b5d771078850eeedcbefc9538acc190747a42a7f08107f7d49d12ccb",
+    "results/dev_aux/task2334/deferred.json": "9abf40e9d1a4b996ec46f8504a9ded9ad1fc395932aea3e422f1237db813fe00",
+    "results/dev_aux/task2342/select.py": "0516f62a047495fc42b03c09ddc3d91c9f0fafa57dc1db126be593cadb18f7f9",
+    "results/dev_aux/task2342/selection-contract.json": "029c58466dc5c7135a2c73866e75ee314854937308a08f09082818dfdd6afacf",
+    "results/dev_aux/task2210/player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results/dev_aux/task2273/incremental_adapted.py": "7fe792ab47a4cdd56ffaa40f470dcf7768ffa8b7d1e2888b79a5a8d310a5ad4e",
+    "generic_chess/core/semantic_executor.py": "119ac83dcd1578245b784d3d5fddd56f2947b7566e291d84fe88fdfab2acb896",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b"
+  },
+  "selection": "ALL8OLDexposedTRAINfamiliesfrom2325/2307, prices1/1.5/3fromPRIOR79ordercells (baseline1andopenintervalrepresentatives), fixedfoe.5/2,bothroles, Latinrotatedpriceorder. Objective actualmeanWminusL; chooseonlystrictimprovementover1, equalbestpreferslowestprice. No use of81validationoutcomestoselectprice/grid/roots; no humanfit.",
+  "scope": "NEW81small3candidateTRAINoptimizationunderSAMEgenericLOW12completepolicy, notoldprepaidACTIONguide. SourceTRAINoldexposed/fixed8, notnewholdout. NEW2341reserve16orbitscreatedBEFOREfit/no validationpricequeries. Gridfromoldstructuralpartition, notnewDEVperformance; no claimedunique/globalratio. Forecast1500/original2100cap<2h; onlylaunchiforiginalcap+safeclosingworkfitsremainingsegment. U/missingcannotbezero; selectorrequiresALL96actualterminals, otherwisenoacceptedselection. No newworkers/default/UI/PRIMARY/oldcapchange.",
+  "candidate_proof_caller_seconds": 12.0
+}

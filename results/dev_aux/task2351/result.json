@@ -1,0 +1,229 @@
+{
+  "status": "PASS_ACTUAL_TERMINALS_AND_PROVEN_CONVERSION_ACCOUNTING",
+  "prices": {
+    "1.0": {
+      "actual_games": 64,
+      "terminal_statuses": {
+        "repetition": 35,
+        "checkmate": 24,
+        "max_ply": 5
+      },
+      "candidate_new_proof_attempts": 61,
+      "candidate_proof_admissions": 4,
+      "unique_fullhistory_admissions": 2,
+      "admitted_and_actual_won": 4,
+      "actual_wins_without_candidate_proof": 6,
+      "actual_wins": 10,
+      "actual_losses": 14,
+      "draws": 40
+    },
+    "2.0": {
+      "actual_games": 64,
+      "terminal_statuses": {
+        "checkmate": 30,
+        "repetition": 28,
+        "max_ply": 6
+      },
+      "candidate_new_proof_attempts": 63,
+      "candidate_proof_admissions": 6,
+      "unique_fullhistory_admissions": 3,
+      "admitted_and_actual_won": 6,
+      "actual_wins_without_candidate_proof": 10,
+      "actual_wins": 16,
+      "actual_losses": 14,
+      "draws": 34
+    }
+  },
+  "entries": [
+    {
+      "price": 1.0,
+      "slot": 74,
+      "family": 9,
+      "opponent": 0,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 1.0,
+      "slot": 79,
+      "family": 9,
+      "opponent": 1,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 1.0,
+      "slot": 106,
+      "family": 13,
+      "opponent": 0,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 1.0,
+      "slot": 111,
+      "family": 13,
+      "opponent": 1,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 1,
+      "family": 0,
+      "opponent": 0,
+      "color": 0,
+      "proof_ply": 15,
+      "own_material_decisions_before": 7,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 4,
+      "family": 0,
+      "opponent": 1,
+      "color": 0,
+      "proof_ply": 15,
+      "own_material_decisions_before": 7,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 75,
+      "family": 9,
+      "opponent": 0,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 78,
+      "family": 9,
+      "opponent": 1,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 107,
+      "family": 13,
+      "opponent": 0,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    },
+    {
+      "price": 2.0,
+      "slot": 110,
+      "family": 13,
+      "opponent": 1,
+      "color": 1,
+      "proof_ply": 2,
+      "own_material_decisions_before": 1,
+      "actual_outcome": "W"
+    }
+  ],
+  "positive_pairs": [
+    {
+      "family": 0,
+      "opponent": 0,
+      "color": 0,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        true
+      ]
+    },
+    {
+      "family": 0,
+      "opponent": 1,
+      "color": 0,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        true
+      ]
+    },
+    {
+      "family": 3,
+      "opponent": 0,
+      "color": 1,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 3,
+      "opponent": 1,
+      "color": 1,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 10,
+      "opponent": 0,
+      "color": 1,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 10,
+      "opponent": 1,
+      "color": 1,
+      "delta": 1,
+      "outcomes": [
+        "D",
+        "W"
+      ],
+      "candidate_proof": [
+        false,
+        false
+      ]
+    }
+  ],
+  "all_admissions_after_material": true,
+  "positive_pairs_with_extra_candidate_proof": 2,
+  "seconds": 0.4959855000197422,
+  "scope": "ALLclosed128actualfiniteSessiongames andindependentlycheckedpositivecertificates. Callsnotproofs; acceptedANDactualconvertedseparate, uniquefullhistoryentriesnotindependentfamilies. Moreadmittedproofs doesNOTestablishmoreunderlyingWINstates becauseunprovedentriesUNKNOWN. Timeorder/associationnotcausalmediation. MAX_PLYisdeclaredexperimentalruleterminalDRAW, notinfiniteChess/ShogiWDL orongoinghorizonimputation; unfinishedwouldstayU. Samefixedasymmetriccandidate/foeproofconfigurationacrossprices, notequalcomputealgorithmcomparison."
+}

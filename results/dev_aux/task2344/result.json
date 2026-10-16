@@ -1,0 +1,291 @@
+{
+  "status": "PASS_ALL16_ACTUAL_PREFIXES_AND_PRIOR_ORBIT_EXCLUSION",
+  "families": 16,
+  "prior_unique_groups": 168,
+  "prior_by_task": {
+    "2251": 48,
+    "2257": 24,
+    "2258": 48,
+    "2270": 32,
+    "2330": 16
+  },
+  "labels": {
+    "DRAW": 8,
+    "WIN": 8
+  },
+  "actual_prefix_plies": 16,
+  "rows": [
+    {
+      "family": 0,
+      "group": "...K.....NNkr...0",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 8,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 1,
+      "group": ".....K.nR....nk.1",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 6,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 2,
+      "group": "......R....kKnn.1",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 7,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 3,
+      "group": "...NK..k......rN0",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 9,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        -1,
+        -1,
+        0,
+        -1,
+        -1,
+        0,
+        -1,
+        0,
+        -1
+      ]
+    },
+    {
+      "family": 4,
+      "group": "....K.Nr..k...N.0",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 6,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        -1,
+        0,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": 5,
+      "group": "..K.k..N....Nr..0",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 7,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 6,
+      "group": "...Rk......n..nK1",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 9,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 7,
+      "group": "...K.....kN.N.r.0",
+      "label": "DRAW",
+      "rank": null,
+      "legal_actions": 5,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        -1,
+        -1,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 8,
+      "group": "...K..N.r...N.k.1",
+      "label": "WIN",
+      "rank": 19,
+      "legal_actions": 8,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 9,
+      "group": ".....NNkr......K1",
+      "label": "WIN",
+      "rank": 7,
+      "legal_actions": 8,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "family": 10,
+      "group": ".......KRn.n...k0",
+      "label": "WIN",
+      "rank": 9,
+      "legal_actions": 3,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 11,
+      "group": "...K..N.....Nkr.1",
+      "label": "WIN",
+      "rank": 15,
+      "legal_actions": 3,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "family": 12,
+      "group": "......KnnR....k.0",
+      "label": "WIN",
+      "rank": 13,
+      "legal_actions": 5,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "family": 13,
+      "group": "..........RnKn.k0",
+      "label": "WIN",
+      "rank": 13,
+      "legal_actions": 8,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "family": 14,
+      "group": "..K.r......kN..N1",
+      "label": "WIN",
+      "rank": 13,
+      "legal_actions": 8,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "family": 15,
+      "group": "....K.kN.r..N...1",
+      "label": "WIN",
+      "rank": 31,
+      "legal_actions": 10,
+      "actual_prefix_plies": 1,
+      "utilities": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "seconds": 2.1652566000120714,
+  "scope": "ALLnewinputs/sourcepins/publicsemantics/legalchildren/fullGameRecords/D4colororbits/disjointALLpriorconditionalRNfamilies checked. Exposedcanonicalreferenceconditionalmu, NOTnewrule/labelholdout/pricefitting orreward. Existing586328state3.168Medgeprepayment andloadcostexplicit; notgenericonlinediscovery."
+}

@@ -1,3 +1,50 @@
+# DEV_AUX current mainline —81,2026-10-17
+
+OPEN/PUBLIC/sidemission; PRIMARY read-only; no Agent/Goal/default/UI changes.
+Official81 start19:12:13UTC,584abdc0-921b-4ccc-9dae-cc71d3f165a5. All producers exited.
+2331 closed128 actual terminals6172moves; oldprice2 16W14L34D vs1 10W14L40D:
+gain6/64,3of16families,descriptiveCI[0,.1875]. Limited oldACTION-guide price
+transfer under same genericLOW12, not new-policy learning/stable unique ratio.
+2332 certificates38+fullrecord/cursor audit PASS; first12differences ordinaryD3,
+2canonicalqualitychanges,4of6gains firstqualityunchanged; association not mediation.
+Candidate admissions4vs6 allconvertedW; two extraWwithownproof/fourwithout.
+New roots conditional on exposed canonicalWDL, initial-family split only.
+
+2340 actual SAMEgenericLOW12 TRAIN96/grid1,1.5,3/8oldTRAIN/foes.5,2/roles
+INTERRUPTED20:11:02UTC: fresh PRIMARYrollout read0bytes JSONDecodeError. Failclosed.
+49terminal/2940moves+slot49verified50move prefixUNKNOWN/46unstarted; original
+JSONL unchanged.2343closedrecord+13cert audits and2352partialprefix PASS.
+2342 frozen selector NO_SELECTION_INCOMPLETE_TRAIN, selectednull; no estimate
+or validationqueries. Original2100cap/clock not restarted/extended. Private raw
+error preserved; current six flags valid/notstopped. Non-atomic write consistent,
+writer unconfirmed; contact owner, no PRIMARY writes/userinterventiongate.
+8of16planned repeated old80anchors actuallyexecuted, allrecords/rewards identical,
+146.39s avoidable cost; do not count as independent new information.
+2341prefitreserved16families disjoint168priororbits,2344PASS; canonicalteacher
+alreadyexposed/analystreadtransferB. Generatorflag !=analystblindness, correctionkept.
+2334ALL128unexecuted/deferred and2336consumerunrun; preserve notliveworkqueue.
+
+2335teacherWINrank compacts ALL3oldLOSSnegativegraphs52/39/79nodes, generic
+negative/currentcursor+opponentpositivechecks admitted;3actualpaths18movesmate.
+Explicitteacherprepayment/cost, notgenericdiscovery/reward/onlinefilter.2350PASS.
+2338savedcompositepositive-to-negative inverse+actualguardeddropmate/controlsPASS.
+Old80UNKNOWN and79slot248 remain original; no all-domain/uniquepriceclaim.
+
+NEXT: communicate exact zero-byte failure to PRIMARY/Dot, ask owner atomicwrites;
+add own exception-aware producer closure before further trials (no stop bypass).
+Then preregister a scientifically justified TRAIN continuation/reuse design,
+without pretending old96completed or extending oldcap. Frozen reserve remains
+unqueried until valid TRAIN-only selection; no fit on exposed81transfer results.
+A second useful route is compact reference-assistance coverage/cost only if it
+changes a concrete discovery/consumer decision, not replacement for corelearning.
+
+PRIMARY fixed46293226 mainline/source read only, own reported capacity/PENDING/
+horizon/feature repairs not rerun/adopted. Slack newest roots/entire80thread no new
+reply; Dot read inline80+b612Core only, no80/81execution confirmed. CHAT advice
+reference only; long-term leaper/NN direction remains deferred, no workers.
+
+## Previous selections — historical evidence, not competing live tasks
+
 # DEV_AUX current mainline —80,2026-10-17
 
 ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly; no defaults/UI/Agent/Goal.

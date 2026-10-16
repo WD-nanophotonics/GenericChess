@@ -1,0 +1,83 @@
+{
+  "status": "PASS_SELECTED_CONTEXTS_AND_ADMITTED_CERTIFICATES_BOUNDED_UNKNOWN_RETAINED",
+  "contexts": 3,
+  "original_admissions": 3,
+  "independent_candidates": 3,
+  "offline_verified_negatives": 3,
+  "offline_UNKNOWN_negatives": 0,
+  "actual_opponent_win_paths": 3,
+  "actual_qualification_plies": 18,
+  "rows": [
+    {
+      "context": 0,
+      "original_claim": "NO_FORCED_WIN",
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 52,
+        "edges": 58,
+        "seconds": 0.07307199999922886,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 52,
+        "edges": 58,
+        "seconds": 0.07734770001843572,
+        "unrolled_tree_nodes": 79,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_plies": 6
+    },
+    {
+      "context": 10,
+      "original_claim": "NO_FORCED_WIN",
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 39,
+        "edges": 42,
+        "seconds": 0.0482250000059139,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 39,
+        "edges": 42,
+        "seconds": 0.05643709999276325,
+        "unrolled_tree_nodes": 45,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_plies": 6
+    },
+    {
+      "context": 12,
+      "original_claim": "NO_FORCED_WIN",
+      "negative": {
+        "verified": true,
+        "claim": "NO_FORCED_WIN",
+        "reason": "verified",
+        "nodes": 79,
+        "edges": 88,
+        "seconds": 0.10265429998980835,
+        "scope": "FiniteclosedfullPosition safetytrap: ALLtargetactions/ONEdefenderaction, no targetwinnerterminal; cyclesallowed, actualdrawrepetition/finiteplyterminate. NotactualDRAW/LOSS/reward orallgenerateddomain. No teacherlabels usedbychecker."
+      },
+      "positive_opponent": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 79,
+        "edges": 88,
+        "seconds": 0.1206759000197053,
+        "unrolled_tree_nodes": 113,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_plies": 6
+    }
+  ],
+  "seconds": 0.9923370000033174,
+  "scope": "GenericindependentCorecheckers/cursors; NOGuideorlabeltableloadedbyconsumer. Explicitteacher-assistedconstructioncostretained; offline12schecksdoNOTupgradeoriginaltimedUNKNOWN orclaimgenericdiscovery/actualDRAW. OpponentWINclaimonlywhenoriginalpositivecheck+realactualcursorpathqualified; no newrewardgames/pricefit."
+}

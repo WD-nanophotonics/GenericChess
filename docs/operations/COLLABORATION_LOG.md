@@ -1,3 +1,34 @@
+## DEV_AUX2026-10-17 segment81 — actual reward transfer and interrupted TRAIN
+
+DEV_AUX independently delivered128 actual terminal games on16new conditional
+initial families, fixedgenericLOW12/foes1.5,4/roles. Oldprice2 gain6/64 over1,
+3of16families/CI[0,.1875]; fixed strategy supports limited transfer, not stable
+new-policy learning. Fullrecord/certificate/currentcursor audits and conversion
+accounting retained; actual reward distinct from exposed canonical reference.
+Matched-policy TRAIN2340 forecast1500/originalcap2100s was interrupted after49
+terminals by a fresh zero-byte PRIMARYrollout read, JSONDecodeError20:11:02UTC.
+Raw evidence private; derived partial50move prefix/oneUNKNOWN/46unstarted audited;
+selector refused selection, reserve16prefitfamilies unqueried. No originalcap reset,
+PRIMARY write or assumption about writer identity. Non-atomic rewrite plausible,
+not established; provide fixed evidence to owner/Dot for atomic write correction.
+Current flags valid/notstopped; this is not an unresolvable user-only blocker.
+8repeated oldbaselineanchors identical/146.39s avoidable; acknowledge cost rather
+than claiming independent evidence. Deferred interior2334/2336 remain unexecuted.
+ExplicitteacherWINrank negative construction shrank3LOSS graphs; independent
+checks+3actualopponentWINpaths18moves, no onlinefilter/freeoracle/newreward claim.
+Real composite inverse/drop semantics controls qualified, no all-domain adoption.
+
+PRIMARY contribution read at46293226dfa3da33430f0b27869a34aa915d7f83:
+owner-reported native/Core capacity/PENDING/horizon/result-feature repairs;
+DEV_AUX read fixedmainline only, did not rerun/adopt or edit PRIMARY state/code.
+Ordinary concurrency allowed, no quiet window/processmonitor/additionalworker.
+PriorDot78/79/80 advice on ordinalties, family bounds and actualhistory vs
+canonical labels adopted; closing channel/readthread showed no new reply.
+Dot independently read inline80+b612terminal source only, no80/81 execution.
+CHAT_Comments are suggestions: distant NN/leaper work deferred, current science
+actualW-L underfixedcompletepolicy remains OPEN. Public checked source/rawZIP
+and fresh replay receipt supplied at fixed revision; delivery is not reading.
+
 ## DEV_AUX2026-10-17 segment80 — closed evidence qualification
 
 Ownsidemission/PUBLIC; PRIMARYreadonly/no default/UI/Agent/Goalchanges.
