@@ -1,0 +1,258 @@
+{
+  "status": "ONE_BOUNDED_INTRUSIVE_COST_PROFILE",
+  "context": {
+    "family": 4,
+    "matrix_slot": 82,
+    "ply": 13,
+    "root_state_sha": "5a4db09a8fe22f8082797a57acb67db74087d4ec23d92f1196c67f54239c3f76"
+  },
+  "requested_seconds": 2.0,
+  "measured_seconds": 2.002051699993899,
+  "result_fields": {
+    "status": "UNKNOWN",
+    "reason": "time_budget",
+    "positions": 350,
+    "expanded": 103,
+    "transitions": 412,
+    "seconds": 2.000386800005799,
+    "rank": null,
+    "visits": 2941,
+    "fallbacks": 0,
+    "cycles": 55,
+    "updates": 3732
+  },
+  "unverified_candidate_returned": false,
+  "stop_reads": 54150,
+  "stop_bytes": 759273250,
+  "profile_reported_total_exclusive": 1.9618060000000002,
+  "stop_reader_reported_cumulative_seconds": 1.7159527,
+  "top_exclusive_functions": [
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<built-in method _io.open>",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.7379879,
+      "cumulative_seconds": 0.7540494000000001
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.6118073,
+      "cumulative_seconds": 0.6118073
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.21036380000000002,
+      "cumulative_seconds": 0.21036380000000002
+    },
+    {
+      "file": "results/dev_aux/task2153/stop_evidence.py",
+      "line": 30,
+      "function": "__call__",
+      "primitive_calls": 9025,
+      "calls": 9025,
+      "exclusive_seconds": 0.07542470000000001,
+      "cumulative_seconds": 1.7159527
+    },
+    {
+      "file": "external/pathlib.py",
+      "line": 1015,
+      "function": "read_bytes",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.0322702,
+      "cumulative_seconds": 1.6201602000000002
+    },
+    {
+      "file": "generic_chess/session/result.py",
+      "line": 66,
+      "function": "_session_status_from_terminal",
+      "primitive_calls": 9882,
+      "calls": 9882,
+      "exclusive_seconds": 0.0148269,
+      "cumulative_seconds": 0.0338439
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "primitive_calls": 255221,
+      "calls": 255221,
+      "exclusive_seconds": 0.014755800000000001,
+      "cumulative_seconds": 0.014755800000000001
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "primitive_calls": 60826,
+      "calls": 60826,
+      "exclusive_seconds": 0.013105400000000001,
+      "cumulative_seconds": 0.0164662
+    },
+    {
+      "file": "generic_chess/core/attacks.py",
+      "line": 58,
+      "function": "is_square_attacked",
+      "primitive_calls": 4966,
+      "calls": 4966,
+      "exclusive_seconds": 0.0127034,
+      "cumulative_seconds": 0.0193575
+    },
+    {
+      "file": "external/pathlib.py",
+      "line": 447,
+      "function": "__fspath__",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.012701100000000002,
+      "cumulative_seconds": 0.0160615
+    },
+    {
+      "file": "external/enum.py",
+      "line": 1266,
+      "function": "__hash__",
+      "primitive_calls": 108702,
+      "calls": 108702,
+      "exclusive_seconds": 0.0120744,
+      "cumulative_seconds": 0.019017000000000003
+    },
+    {
+      "file": "external/pathlib.py",
+      "line": 1005,
+      "function": "open",
+      "primitive_calls": 54150,
+      "calls": 54150,
+      "exclusive_seconds": 0.011669500000000001,
+      "cumulative_seconds": 0.7657189000000001
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<built-in method builtins.hash>",
+      "primitive_calls": 116650,
+      "calls": 132546,
+      "exclusive_seconds": 0.0107068,
+      "cumulative_seconds": 0.013076200000000001
+    },
+    {
+      "file": "generic_chess/core/coordinates.py",
+      "line": 42,
+      "function": "__post_init__",
+      "primitive_calls": 30238,
+      "calls": 30238,
+      "exclusive_seconds": 0.010428600000000001,
+      "cumulative_seconds": 0.0167722
+    },
+    {
+      "file": "generic_chess/core/movegen.py",
+      "line": 26,
+      "function": "_piece_actions",
+      "primitive_calls": 1306,
+      "calls": 1306,
+      "exclusive_seconds": 0.0092864,
+      "cumulative_seconds": 0.032628700000000004
+    },
+    {
+      "file": "generic_chess/core/coordinates.py",
+      "line": 58,
+      "function": "_shape",
+      "primitive_calls": 30238,
+      "calls": 30238,
+      "exclusive_seconds": 0.0091909,
+      "cumulative_seconds": 0.038404900000000006
+    },
+    {
+      "file": "results/dev_aux/task2179/graph.py",
+      "line": 52,
+      "function": "position_token",
+      "primitive_calls": 413,
+      "calls": 16380,
+      "exclusive_seconds": 0.0082789,
+      "cumulative_seconds": 0.019855900000000003
+    },
+    {
+      "file": "generic_chess/core/movegen.py",
+      "line": 142,
+      "function": "_apply_action_unchecked",
+      "primitive_calls": 4958,
+      "calls": 4958,
+      "exclusive_seconds": 0.0080843,
+      "cumulative_seconds": 0.0276272
+    },
+    {
+      "file": "generic_chess/session/result.py",
+      "line": 82,
+      "function": "session_result_from_terminal",
+      "primitive_calls": 9882,
+      "calls": 9882,
+      "exclusive_seconds": 0.0062575,
+      "cumulative_seconds": 0.0479588
+    },
+    {
+      "file": "external/encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "primitive_calls": 1643,
+      "calls": 1643,
+      "exclusive_seconds": 0.0059863,
+      "cumulative_seconds": 0.0059863
+    },
+    {
+      "file": "python-runtime",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "primitive_calls": 55999,
+      "calls": 55999,
+      "exclusive_seconds": 0.005169,
+      "cumulative_seconds": 0.005169
+    },
+    {
+      "file": "generic_chess/core/movegen.py",
+      "line": 243,
+      "function": "iter_legal_actions_from_position",
+      "primitive_calls": 4722,
+      "calls": 4722,
+      "exclusive_seconds": 0.004927,
+      "cumulative_seconds": 0.1159319
+    },
+    {
+      "file": "results/dev_aux/task2273/incremental_adapted.py",
+      "line": 28,
+      "function": "select_frontier",
+      "primitive_calls": 104,
+      "calls": 104,
+      "exclusive_seconds": 0.004632300000000001,
+      "cumulative_seconds": 1.311225
+    },
+    {
+      "file": "generic_chess/core/coordinates.py",
+      "line": 84,
+      "function": "square_to_index",
+      "primitive_calls": 23344,
+      "calls": 23344,
+      "exclusive_seconds": 0.0046056000000000005,
+      "cumulative_seconds": 0.033764300000000004
+    },
+    {
+      "file": "generic_chess/core/movegen.py",
+      "line": 98,
+      "function": "_expanded_pseudo_actions",
+      "primitive_calls": 5838,
+      "calls": 5838,
+      "exclusive_seconds": 0.0042084,
+      "cumulative_seconds": 0.0444477
+    }
+  ],
+  "raw_private_profile_retained": true,
+  "scope": "Post-TRAINselectedonecostcontext, notgeneralization/qualityreplication. Onlyafter2362closed; ONE2s intrusivelyprofiled directgenericproofquery, original8.4/12caps andoutcomesunchanged. Actualfreshhoststopreader, no caching/bypass/quietwindow. Exactrawprofile ignored/private, publicrelativefilenamesonly. cProfilechangeswallprogress: reportedfunctiontimes/calls arediagnostic, notunprofiledthroughput oralgorithmproof. Candidate(ifany)NOTindependentlyverified/admitted, noWIN/refutation/reward/learningclaim. No policychange/oldcapextension/newworker/default/PRIMARYwrite."
+}

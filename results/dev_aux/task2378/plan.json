@@ -1,0 +1,234 @@
+{
+  "registered_at": "2026-10-16T21:41:03.229493+00:00",
+  "question": "Does thefirstlaterownLOWinventorydecrease onactualbaselineD trajectory admitacheapWINproof skippedbyONCE-LOWgate?",
+  "selection": "Post-TRAINselectedonepositivecase family4/foe.5/color0/baseline1 matrixslot82. Deterministicallyfirstownongoingstate AFTERply13 withactors<4, no label/success screening; ifnone NO_QUERY.",
+  "family": 4,
+  "matrix_slot": 82,
+  "rules": "results\\dev_aux\\task2258\\root-4.json",
+  "context": {
+    "local_ply": 15,
+    "record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            0
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9c69ea1ea57fff2c2085cf9c5cee1978e2e0bb0a2a34ebf733eea92c0952c84b",
+      "schema_version": 1
+    },
+    "root_state_sha": "ed0732918e8b1bbdea09b71baffc6d3eaa670f5319a523e9554c7e971424bcf0",
+    "actors": 3,
+    "inventory": [
+      {
+        "current": "K",
+        "owner": 0,
+        "base": "K"
+      },
+      {
+        "current": "K",
+        "owner": 1,
+        "base": "K"
+      },
+      {
+        "current": "N",
+        "owner": 1,
+        "base": "N"
+      }
+    ]
+  },
+  "proof_seconds": 2.0,
+  "shared_verification_seconds": 3.0,
+  "actual_qualification_seconds": 5.0,
+  "estimated_seconds": 12.0,
+  "scope": "ONLYafter2362closed/no secondproofproducer. Additionalcounterfactualquery/verification/actualstrategyqualification, NOTbudgetmatchedtooriginal8.4proofphase and NOToriginalbaselinegameW-L relabel. OriginalD staysD. PositiveacceptedWINatactualhistorywouldexposepossibleonce-gateartifact; UNKNOWNdoesnotvindicategate/proveDRAW/LOSS. No pricefit/reserveoutcome used forcontextselection ornewpolicy/default/PRIMARYadoption. Onepredeclaredcontext/cap, no escalating/repeating iffails; oldcaps/results preserved."
+}

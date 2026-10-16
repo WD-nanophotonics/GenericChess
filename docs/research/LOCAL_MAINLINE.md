@@ -1,47 +1,86 @@
-# DEV_AUX current mainline —81,2026-10-17
+# DEV_AUX current selection - closed82,2026-10-17
 
-OPEN/PUBLIC/sidemission; PRIMARY read-only; no Agent/Goal/default/UI changes.
-Official81 start19:12:13UTC,584abdc0-921b-4ccc-9dae-cc71d3f165a5. All producers exited.
-2331 closed128 actual terminals6172moves; oldprice2 16W14L34D vs1 10W14L40D:
-gain6/64,3of16families,descriptiveCI[0,.1875]. Limited oldACTION-guide price
-transfer under same genericLOW12, not new-policy learning/stable unique ratio.
-2332 certificates38+fullrecord/cursor audit PASS; first12differences ordinaryD3,
-2canonicalqualitychanges,4of6gains firstqualityunchanged; association not mediation.
-Candidate admissions4vs6 allconvertedW; two extraWwithownproof/fourwithout.
-New roots conditional on exposed canonicalWDL, initial-family split only.
+OPEN/PUBLIC/own sidemission, PRIMARYreadonly. Actual generic-policy TRAIN160
+(95new+65reused) selects1.5 tied2; +1/32 fromONEfamily,LOFOdrop4=>1.
+Frozen reserved16families128terminal5415moves:1=12W13L39D,1.5=12W7L45D;
+net+6/64,4positive/0negativefamilies, descriptiveCI[.015625,.1875].
+All gains LOSS->DRAW; ownverifiedproof/actualwins12each. Scopeconditional,
+finite96ply/repetitionruleD, no U/missing; no stable/universalmetricprice.
+Old2340partial preserved; newC nowexposed/notfreshforfuturefits. NeverrefitC.
+SoleTRAINgain reusedoldslot48; baselinealreadyR-lost/K-onlyatfirstLOW13,
+selectedR-retention/LOW55verifiedWIN. Postfitassociation, notmediation.
+Canceled2378 incorrect4actorpremise explicitlycorrected to3; no laterquery.
+One2s intrusivelyprofiled oldentry:stopreader1.716/2.002s,54,150file reads,
+759MB. Next Main diagnose ONE own stop-observation cost repair whilepreserving
+fresh stop authority/completeCore/UNKNOWN; beforemoreunchanged pricegames.
+2376 futureboard-current/hand-basefeatures qualifiedactualdrop/capture+73210
+nohandsparitychecks; opt-in ONLY, notcurrentpolicy/default/broaddomainpricefit.
+Dropinventory>4 triggercoverage remainsopen; prooftrigger is distinctfromlegalCore.
+2354 atomicexceptionclosure/journal4testsPASS;223newgames8876commits replayed,
+65reuse/prepaid1217.52s/reference302.26s distinct.26archive freshreplay receipt
+in2372; failures/caps/UNKNOWN retained. Dotreadrequest+81only,no82execution.
+Report:results/dev_aux/SEGMENT_20261017_82.md. Finaldeliveryreceipt follows.
 
-2340 actual SAMEgenericLOW12 TRAIN96/grid1,1.5,3/8oldTRAIN/foes.5,2/roles
-INTERRUPTED20:11:02UTC: fresh PRIMARYrollout read0bytes JSONDecodeError. Failclosed.
-49terminal/2940moves+slot49verified50move prefixUNKNOWN/46unstarted; original
-JSONL unchanged.2343closedrecord+13cert audits and2352partialprefix PASS.
-2342 frozen selector NO_SELECTION_INCOMPLETE_TRAIN, selectednull; no estimate
-or validationqueries. Original2100cap/clock not restarted/extended. Private raw
-error preserved; current six flags valid/notstopped. Non-atomic write consistent,
-writer unconfirmed; contact owner, no PRIMARY writes/userinterventiongate.
-8of16planned repeated old80anchors actuallyexecuted, allrecords/rewards identical,
-146.39s avoidable cost; do not count as independent new information.
-2341prefitreserved16families disjoint168priororbits,2344PASS; canonicalteacher
-alreadyexposed/analystreadtransferB. Generatorflag !=analystblindness, correctionkept.
-2334ALL128unexecuted/deferred and2336consumerunrun; preserve notliveworkqueue.
+## Prior82 active selection - historical
 
-2335teacherWINrank compacts ALL3oldLOSSnegativegraphs52/39/79nodes, generic
-negative/currentcursor+opponentpositivechecks admitted;3actualpaths18movesmate.
-Explicitteacherprepayment/cost, notgenericdiscovery/reward/onlinefilter.2350PASS.
-2338savedcompositepositive-to-negative inverse+actualguardeddropmate/controlsPASS.
-Old80UNKNOWN and79slot248 remain original; no all-domain/uniquepriceclaim.
+# DEV_AUX current mainline —82,2026-10-17
 
-NEXT: communicate exact zero-byte failure to PRIMARY/Dot, ask owner atomicwrites;
-add own exception-aware producer closure before further trials (no stop bypass).
-Then preregister a scientifically justified TRAIN continuation/reuse design,
-without pretending old96completed or extending oldcap. Frozen reserve remains
-unqueried until valid TRAIN-only selection; no fit on exposed81transfer results.
-A second useful route is compact reference-assistance coverage/cost only if it
-changes a concrete discovery/consumer decision, not replacement for corelearning.
+OPEN/PUBLIC/sidemission; PRIMARYread-only/noAgents/Goals/default/UI.
+Clock82 d14d075b-9f78-4dab-b6d1-65f588d225b2 starts20:44:27UTC.
+2355CLOSED ALL95newterminal3461moves/1390.14s,65reused=>2358complete160
+matrix7001moves/0U/0missing. New95original2400cap notextended; old2340
+remains49closed/oneUNKNOWN/46unstarted, notresumed orrelabeledcomplete.
+2359fullrecord54cert/cursor and2360all3461committedsnapshots auditsPASS.
+Allordinarycalls finishD3, noactualcaller shortening across65reuse+95new;
+AST/config equivalence doesnot proveallwall-limitedtrajectories equivalent.
 
-PRIMARY fixed46293226 mainline/source read only, own reported capacity/PENDING/
-horizon/feature repairs not rerun/adopted. Slack newest roots/entire80thread no new
-reply; Dot read inline80+b612Core only, no80/81execution confirmed. CHAT advice
-reference only; long-term leaper/NN direction remains deferred, no workers.
+Fiveprior79material-orderconditions .5/1/1.5/2/3 scores0/.0625/.09375/
+.09375/.0625. FrozenTRAINselectorstrictgain/tieprefersbaseline1thenlower
+chooses1.5 (tied2), gain1/32fromONEof8familyblocks. LOFOdropfamily4=>1;
+bootstrap/LOFOinternalTRAINonly, notposterior/stability/freshholdout.
+65configurationkeysunique, nottrajectorydedup; no8duplicateanchorsweight.
+Afterseen65TRAIN/beforenew95fitness adaptive design, notconfirmation.
+Explicitcostreused1217.52game seconds + prepaidreference302.26 separately;
+wholeprojectpriorfailure/unusedconstruction and engineering costs are larger.
+
+ONLY2362ACTIVE: prefrozen1vs1.5,16pre-fit2341reservedinitialorbits,foes1.5/4,
+bothroles128newgames, SAMEcompletegenericLOW12. Started21:13:52.467865UTC,
+original2700cap deadline21:58:52.467865,forecast2300. Do notchangeprice/root/
+cap frompartialvalidation. Unknown/missing intervals, neverdraworWINlabels.
+ConditionalTRAIN2366ALL80UNEXECUTED/conditionfalse, preservedasdeferred.
+Itsoptional2400reserveextension alsoinactive; actualmainvalidation cap2700.
+Originalunactivated3300reservation preserved; actualruncontract2700fixedbefore
+ANYreservefitness.2341canonicalreference fullyexposed; initialorbit separation
+notalltrajectory/rule/labelholdout. Nowbeingqueried, cannotreuseasfreshafterfit.
+
+TRAINmechanism2373all320pricepairs: firstdifferences exclusively candidate
+ordinarycompletedD3, nofoefirst; selected1vs1.5 differs4/32records, allsame
+canonicalfirstchildWDL (2374), notcausalmediation. Proofcalls29vs29,
+admissions6vs7/uniquefullhistory3vs4, allconvertedactualWIN afterearlier
+ordinarymaterial decisions. Solegainfamily4/foe.5/color0: baselinefirstLOW
+ply13time_budget961positions vsselectedply55admitted309positions. Selected
+WINisold2340slot48reused, baselineisnew2355slot26; notnewindependentpositive.
+UnprovedbaselineLOW isUNKNOWN, notLOSS; moreproofentries !=largertrueWINset.
+
+2354actualfailureclosure repair: atomiccompletion/failure, realcommittedjournal,
+privateexacttraceback, exceptions/stops propagated/no retry.4meaningful testsPASS.
+StandardPRIMARYcommon.write_json atomic at46293226and9492e2da; do not blameit
+for81zero-byteread. Actualwriterunknown/ownernotified, no currentuser-onlyblocker.
+2358firstassemblerf-shadowTypeError retainedsource+outputs; repairedPathonly,
+ALL5deriveddatafiles byte-identical. No rerun of games/caps.
+
+Dot1792184465 readrequest+fixed46cb81relatedparagraphs only, no82source/65ledger/
+4tests independentlyexecuted. Adoptconfigdedup/accurateadaptivefreezetime,
+seenfamilyLOFO andgroupedreserveintervals; nonewqueries/selectorchange/approvalgate.
+Rawprivate before reconcileCOMPLETED/newroot1792184246.740029. PriorCHATlong-term
+NN/leaper advice deferred, notworkorder. PRIMARY9492fixedsource/mainline read
+only; ownerreportedCore/Nativecapacity/PENDING/horizon/features, notAuxrerun.
+
+Next after2362closes:2363fullrecord/certs,2364actualpaired16familybounds,
+2365allcommits,2375proofconversion; no priceadaptation. Seal2371new26archive
+then2372fresh39tests andexecutedclosedconsumers; unexecutedbranchesexplicit.
+Reviewactualoutgoingcontent, ownorigin/sidemission only/fullSHA/Publicanonymous;
+finishsafecheckpoint with3executabletasks after60min, scienceOPEN.
 
 ## Previous selections — historical evidence, not competing live tasks
 

@@ -2228,3 +2228,10 @@ Verified80 source revision d133140e2ecbfd70e596af03c2db2ffd8c3f563d: fullorigin/
 PUBLIC API and7anonymous byte-exact source/report/archive reads PASS.
 Closingmetadata commit/finalSHAverification follows. Dot reading/execution of
 this new source is UNCONFIRMED; priorreply covered inlineplan/fixedb612Coreonly.
+
+
+## DEV_AUX82 - actual W-L transfer and operational cost
+
+Own sidemission only:223 new actual-terminal games/8876 moves plus65 reused TRAIN configurations. Frozen1.5 versus1 gives6/64 reserved W-L gain across4of16 families, solely LOSS-to-DRAW; both12 own proven/converted wins. TRAIN winner tied2 and one-family fragile; no stable metric/default adoption. Exception closure journal fixed in own prototype; four regressions and complete record/certificate/journal audits. Future hand-base/current-type material helper qualified, current policy unchanged. One2s profile assigns1.716s to fresh stop-reader cost; next own efficiency question, no PRIMARY flags/polling changes.
+
+Dot reviewed inline request+fixed81 paragraphs, not82source/execution. Adopted exact configuration dedup, adaptive TRAIN disclosure, LOFO and grouped family intervals; no approval wait or extra compute. Final root/thread pagination found no supplements. PRIMARY fixed9492e2da66c5b59d03f35421fc87f23477303d8f mainline/source read only, owner-reported backend work not independently executed. Standardwriter alreadyatomic; historicalemptywriterunknown. No cross-write, worker, quiet-window, visibility mutation or automatic merge.26 exact archives/fresh replay receipt bind source, failures and scope; final fixed-SHA result sent separately, delivery is not reading/execution. Full generated-rule learning remains OPEN.

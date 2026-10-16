@@ -1,0 +1,54 @@
+{
+  "question": "Which actual evidence supports the single TRAIN gain?",
+  "rows": [
+    {
+      "price": 1.0,
+      "matrix_slot": 82,
+      "source_task": 2355,
+      "source_slot": 26,
+      "outcome": "D",
+      "actual_status": "max_ply",
+      "plies": 95,
+      "attempts": [
+        {
+          "ply": 13,
+          "root_state_sha": "5a4db09a8fe22f8082797a57acb67db74087d4ec23d92f1196c67f54239c3f76",
+          "source": "FULL_SESSION_MATERIAL_SEARCH",
+          "proof_reason": "time_budget",
+          "caller_seconds": 12.0,
+          "proof_seconds": 8.401508400012972,
+          "verification_seconds": 0.0,
+          "normal_seconds": 0.04976520000491291,
+          "graph_positions": 961,
+          "graph_expanded": 338,
+          "graph_transitions": 1458
+        }
+      ]
+    },
+    {
+      "price": 1.5,
+      "matrix_slot": 83,
+      "source_task": 2340,
+      "source_slot": 48,
+      "outcome": "W",
+      "actual_status": "checkmate",
+      "plies": 62,
+      "attempts": [
+        {
+          "ply": 55,
+          "root_state_sha": "1ac43a0c9de7036d9917829fd4242b342a27a922e176d0349f131d35c64be619",
+          "source": "VERIFIED_GRAPH_STRATEGY",
+          "proof_reason": "requires_independent_graph_verification",
+          "caller_seconds": 12.0,
+          "proof_seconds": 1.450945499993395,
+          "verification_seconds": 0.07534110001870431,
+          "normal_seconds": 0.0,
+          "graph_positions": 309,
+          "graph_expanded": 92,
+          "graph_transitions": 374
+        }
+      ]
+    }
+  ],
+  "scope": "Post-TRAINselectedonepositivecase, source trace notnewexperiment. ItsselectedWINisOLD2340slot48reused, notnewindependentreplication; baselineisnew2355closedoutcome. TRAINdesignafterseeing65, validationstillrunning/notusedhere. Differentproofreason/admission isassociation, no counterfactualproof orcausalmediation; no unidentifiedLOSSlabel."
+}

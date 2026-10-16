@@ -1,0 +1,1864 @@
+{
+  "status": "PASS_ACTUAL_SELECTED_PAIR_PROOF_CONVERSION_ACCOUNTING",
+  "task": 2362,
+  "prices": {
+    "1.0": {
+      "actual_returned": 64,
+      "outcomes": {
+        "D": 39,
+        "L": 13,
+        "W": 12
+      },
+      "terminal_statuses": {
+        "max_ply": 10,
+        "repetition": 27,
+        "stalemate": 2,
+        "checkmate": 25
+      },
+      "new_proof_attempts": 57,
+      "admissions": 12,
+      "unique_fullhistory_admissions": 6,
+      "admitted_and_actual_won": 12,
+      "actual_wins_without_own_proof": 0,
+      "all_admissions_after_ordinary": true
+    },
+    "1.5": {
+      "actual_returned": 64,
+      "outcomes": {
+        "D": 45,
+        "L": 7,
+        "W": 12
+      },
+      "terminal_statuses": {
+        "max_ply": 9,
+        "repetition": 33,
+        "stalemate": 3,
+        "checkmate": 19
+      },
+      "new_proof_attempts": 58,
+      "admissions": 12,
+      "unique_fullhistory_admissions": 6,
+      "admitted_and_actual_won": 12,
+      "actual_wins_without_own_proof": 0,
+      "all_admissions_after_ordinary": true
+    }
+  },
+  "changed_actual_reward_pairs": [
+    {
+      "family": 7,
+      "opponent": 0,
+      "color": 1,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 13,
+      "opponent": 1,
+      "color": 0,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 14,
+      "opponent": 0,
+      "color": 0,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 14,
+      "opponent": 1,
+      "color": 0,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 15,
+      "opponent": 0,
+      "color": 0,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    },
+    {
+      "family": 15,
+      "opponent": 1,
+      "color": 0,
+      "actual_outcomes": [
+        "L",
+        "D"
+      ],
+      "delta": 1,
+      "own_proof_admitted": [
+        false,
+        false
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "slot": 67,
+      "family": 8,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 4,
+      "ordinary_material_commits_before": 2,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6f4330cb36385d10ed9222fc3b1f740db9a65f31bbd9715b58ab9e0b963aff37",
+        "schema_version": 1
+      },
+      "root_state_sha": "8c5b4326e4396ad7a8f9c8ff8a50bc6fc06934cb6f48b1b0ff9b316024902da5",
+      "context_sha": "b4077dd50176f2439579f83bbebd6e911cade1e5f05f5d6180801535b81f2207",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 70,
+      "family": 8,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 4,
+      "ordinary_material_commits_before": 2,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6f4330cb36385d10ed9222fc3b1f740db9a65f31bbd9715b58ab9e0b963aff37",
+        "schema_version": 1
+      },
+      "root_state_sha": "8c5b4326e4396ad7a8f9c8ff8a50bc6fc06934cb6f48b1b0ff9b316024902da5",
+      "context_sha": "b4077dd50176f2439579f83bbebd6e911cade1e5f05f5d6180801535b81f2207",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 74,
+      "family": 9,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d920e722b6b5a3ed72df4f564631fb9a5e32d965b4746f5a893aad300177bc84",
+        "schema_version": 1
+      },
+      "root_state_sha": "d9b738911732d3f37acdb60489591bec8a48c88fa88ccd84cc2cbbce5969bda5",
+      "context_sha": "c89ada8e0d335ba63540ef381a73c981d2083b0ef670d49f2b8481fc2575f495",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 79,
+      "family": 9,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d920e722b6b5a3ed72df4f564631fb9a5e32d965b4746f5a893aad300177bc84",
+        "schema_version": 1
+      },
+      "root_state_sha": "d9b738911732d3f37acdb60489591bec8a48c88fa88ccd84cc2cbbce5969bda5",
+      "context_sha": "c89ada8e0d335ba63540ef381a73c981d2083b0ef670d49f2b8481fc2575f495",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 83,
+      "family": 10,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b2b3f4b16644254691bb8190b8de3cfe1a258b4494b9444c9e7357befce6d420",
+        "schema_version": 1
+      },
+      "root_state_sha": "836dc29f43f957217e3a30eb65043cce3dc3c71764af0dd48b7b220d961a6a5f",
+      "context_sha": "0985f073e43947bdd0b5387508f9a40ee7cf37a1cf787c9f6ba46f428cf23e87",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 86,
+      "family": 10,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b2b3f4b16644254691bb8190b8de3cfe1a258b4494b9444c9e7357befce6d420",
+        "schema_version": 1
+      },
+      "root_state_sha": "836dc29f43f957217e3a30eb65043cce3dc3c71764af0dd48b7b220d961a6a5f",
+      "context_sha": "0985f073e43947bdd0b5387508f9a40ee7cf37a1cf787c9f6ba46f428cf23e87",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 99,
+      "family": 12,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "0b81dcf8c8de86f3c0f5c5610a7518a41951fa007364aace22a4bca5b5471aae",
+        "schema_version": 1
+      },
+      "root_state_sha": "063d6c8a308314171c87c9d09a7075b247fdc8cc9e2e55f2ea034d030511e706",
+      "context_sha": "562e7ba9430f8de2cbe9ed8e70f85d4d1baaff81ac0cf7d333787c11483a0156",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 102,
+      "family": 12,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "0b81dcf8c8de86f3c0f5c5610a7518a41951fa007364aace22a4bca5b5471aae",
+        "schema_version": 1
+      },
+      "root_state_sha": "063d6c8a308314171c87c9d09a7075b247fdc8cc9e2e55f2ea034d030511e706",
+      "context_sha": "562e7ba9430f8de2cbe9ed8e70f85d4d1baaff81ac0cf7d333787c11483a0156",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 115,
+      "family": 14,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "74e35c6e49ab60457b69c6efe9c43f8bed96a70317a04d6a7b3af1094560df0b",
+        "schema_version": 1
+      },
+      "root_state_sha": "80012e60808bccddcd6758e3753b3dd0e321f595164161d17f2a42708bceb338",
+      "context_sha": "f67c495aa8df95530450e6e3a853b6468d3c97891d1d8e0342399df8221b6d1a",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 118,
+      "family": 14,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "74e35c6e49ab60457b69c6efe9c43f8bed96a70317a04d6a7b3af1094560df0b",
+        "schema_version": 1
+      },
+      "root_state_sha": "80012e60808bccddcd6758e3753b3dd0e321f595164161d17f2a42708bceb338",
+      "context_sha": "f67c495aa8df95530450e6e3a853b6468d3c97891d1d8e0342399df8221b6d1a",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 122,
+      "family": 15,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.0,
+      "ply": 8,
+      "ordinary_material_commits_before": 4,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a0d7f07e663f185ef56f850997b7dd2d60aced83fd49f55e263304cc24bf0800",
+        "schema_version": 1
+      },
+      "root_state_sha": "6451fa1c6a42a9b23b6c6fc8cdf048a7997f1e4627ec20d2175a92b04ccc0698",
+      "context_sha": "f87b6bcb524df6837710a3b15d342c8f396f140a7cc74bb07b1d24ecf11a6995",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 127,
+      "family": 15,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.0,
+      "ply": 8,
+      "ordinary_material_commits_before": 4,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a0d7f07e663f185ef56f850997b7dd2d60aced83fd49f55e263304cc24bf0800",
+        "schema_version": 1
+      },
+      "root_state_sha": "6451fa1c6a42a9b23b6c6fc8cdf048a7997f1e4627ec20d2175a92b04ccc0698",
+      "context_sha": "f87b6bcb524df6837710a3b15d342c8f396f140a7cc74bb07b1d24ecf11a6995",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 66,
+      "family": 8,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 4,
+      "ordinary_material_commits_before": 2,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6f4330cb36385d10ed9222fc3b1f740db9a65f31bbd9715b58ab9e0b963aff37",
+        "schema_version": 1
+      },
+      "root_state_sha": "8c5b4326e4396ad7a8f9c8ff8a50bc6fc06934cb6f48b1b0ff9b316024902da5",
+      "context_sha": "b4077dd50176f2439579f83bbebd6e911cade1e5f05f5d6180801535b81f2207",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 71,
+      "family": 8,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 4,
+      "ordinary_material_commits_before": 2,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "6f4330cb36385d10ed9222fc3b1f740db9a65f31bbd9715b58ab9e0b963aff37",
+        "schema_version": 1
+      },
+      "root_state_sha": "8c5b4326e4396ad7a8f9c8ff8a50bc6fc06934cb6f48b1b0ff9b316024902da5",
+      "context_sha": "b4077dd50176f2439579f83bbebd6e911cade1e5f05f5d6180801535b81f2207",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 75,
+      "family": 9,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d920e722b6b5a3ed72df4f564631fb9a5e32d965b4746f5a893aad300177bc84",
+        "schema_version": 1
+      },
+      "root_state_sha": "d9b738911732d3f37acdb60489591bec8a48c88fa88ccd84cc2cbbce5969bda5",
+      "context_sha": "c89ada8e0d335ba63540ef381a73c981d2083b0ef670d49f2b8481fc2575f495",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 78,
+      "family": 9,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "d920e722b6b5a3ed72df4f564631fb9a5e32d965b4746f5a893aad300177bc84",
+        "schema_version": 1
+      },
+      "root_state_sha": "d9b738911732d3f37acdb60489591bec8a48c88fa88ccd84cc2cbbce5969bda5",
+      "context_sha": "c89ada8e0d335ba63540ef381a73c981d2083b0ef670d49f2b8481fc2575f495",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 82,
+      "family": 10,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b2b3f4b16644254691bb8190b8de3cfe1a258b4494b9444c9e7357befce6d420",
+        "schema_version": 1
+      },
+      "root_state_sha": "836dc29f43f957217e3a30eb65043cce3dc3c71764af0dd48b7b220d961a6a5f",
+      "context_sha": "0985f073e43947bdd0b5387508f9a40ee7cf37a1cf787c9f6ba46f428cf23e87",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 87,
+      "family": 10,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "b2b3f4b16644254691bb8190b8de3cfe1a258b4494b9444c9e7357befce6d420",
+        "schema_version": 1
+      },
+      "root_state_sha": "836dc29f43f957217e3a30eb65043cce3dc3c71764af0dd48b7b220d961a6a5f",
+      "context_sha": "0985f073e43947bdd0b5387508f9a40ee7cf37a1cf787c9f6ba46f428cf23e87",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 98,
+      "family": 12,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "0b81dcf8c8de86f3c0f5c5610a7518a41951fa007364aace22a4bca5b5471aae",
+        "schema_version": 1
+      },
+      "root_state_sha": "063d6c8a308314171c87c9d09a7075b247fdc8cc9e2e55f2ea034d030511e706",
+      "context_sha": "562e7ba9430f8de2cbe9ed8e70f85d4d1baaff81ac0cf7d333787c11483a0156",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 103,
+      "family": 12,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "0b81dcf8c8de86f3c0f5c5610a7518a41951fa007364aace22a4bca5b5471aae",
+        "schema_version": 1
+      },
+      "root_state_sha": "063d6c8a308314171c87c9d09a7075b247fdc8cc9e2e55f2ea034d030511e706",
+      "context_sha": "562e7ba9430f8de2cbe9ed8e70f85d4d1baaff81ac0cf7d333787c11483a0156",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 114,
+      "family": 14,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "74e35c6e49ab60457b69c6efe9c43f8bed96a70317a04d6a7b3af1094560df0b",
+        "schema_version": 1
+      },
+      "root_state_sha": "80012e60808bccddcd6758e3753b3dd0e321f595164161d17f2a42708bceb338",
+      "context_sha": "f67c495aa8df95530450e6e3a853b6468d3c97891d1d8e0342399df8221b6d1a",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 119,
+      "family": 14,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 2,
+      "ordinary_material_commits_before": 1,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "74e35c6e49ab60457b69c6efe9c43f8bed96a70317a04d6a7b3af1094560df0b",
+        "schema_version": 1
+      },
+      "root_state_sha": "80012e60808bccddcd6758e3753b3dd0e321f595164161d17f2a42708bceb338",
+      "context_sha": "f67c495aa8df95530450e6e3a853b6468d3c97891d1d8e0342399df8221b6d1a",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 123,
+      "family": 15,
+      "opponent": 0,
+      "color": 1,
+      "price": 1.5,
+      "ply": 8,
+      "ordinary_material_commits_before": 4,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a0d7f07e663f185ef56f850997b7dd2d60aced83fd49f55e263304cc24bf0800",
+        "schema_version": 1
+      },
+      "root_state_sha": "6451fa1c6a42a9b23b6c6fc8cdf048a7997f1e4627ec20d2175a92b04ccc0698",
+      "context_sha": "f87b6bcb524df6837710a3b15d342c8f396f140a7cc74bb07b1d24ecf11a6995",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    },
+    {
+      "slot": 126,
+      "family": 15,
+      "opponent": 1,
+      "color": 1,
+      "price": 1.5,
+      "ply": 8,
+      "ordinary_material_commits_before": 4,
+      "root_record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a0d7f07e663f185ef56f850997b7dd2d60aced83fd49f55e263304cc24bf0800",
+        "schema_version": 1
+      },
+      "root_state_sha": "6451fa1c6a42a9b23b6c6fc8cdf048a7997f1e4627ec20d2175a92b04ccc0698",
+      "context_sha": "f87b6bcb524df6837710a3b15d342c8f396f140a7cc74bb07b1d24ecf11a6995",
+      "actual_outcome": "W",
+      "converted_actual_win": true
+    }
+  ],
+  "seconds": 0.38702439999906346,
+  "scope": "Closed/returnedgame records only, originaladmissions andactualW-L separate. Unreturnedpartialjournal handledby ownjournalconsumer; unknownnotactualwin/draw. Morecalls/admissions alone notutility orlargerunderlyingWINset; unprovedentriesunknown. Proof aftermaterial choices + convertedwin isassociation, notcausalmediation; no offpolicyproof/extraquery/reward substitution. Samefixedstrategy/resources/foe withinpairs, TRAINandreservedpanelsnotpooled."
+}
