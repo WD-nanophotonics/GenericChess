@@ -1,0 +1,63 @@
+{
+  "segment": 80,
+  "science": "OPEN",
+  "source_sha": "d133140e2ecbfd70e596af03c2db2ffd8c3f563d",
+  "source_remote_verified": true,
+  "repository_visibility": "PUBLIC",
+  "anonymous_source_files": [
+    {
+      "path": "results/dev_aux/SEGMENT_20261017_80.md",
+      "status": 200,
+      "sha256": "6f48f557c7af161576c28368ec9448c936219deabcf585121cf0a1d998b7f529",
+      "bytes": 16926
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261017_80.md",
+      "status": 200,
+      "sha256": "d574aed07df7a90a27c384d8051dec8e48a88370b9fc4159b2cc6f4022b01849",
+      "bytes": 1642
+    },
+    {
+      "path": "results/dev_aux/task2325/pilot.py",
+      "status": 200,
+      "sha256": "c10a6a03fa5766e91f7ff96a43801e015e0bc145e27eefbcdb6d18b7d785d7ec",
+      "bytes": 8397
+    },
+    {
+      "path": "results/dev_aux/task2324/restore-receipt.json",
+      "status": 200,
+      "sha256": "09f0fc79448234afbc5022a2ff0c0c1e531b6a84f759e9859baf4ab4b6821e60",
+      "bytes": 968
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_80.json",
+      "status": 200,
+      "sha256": "2eb25a4c984a62ddb20403b5b1c97aa92764eea4ae7b97389fa3b409ff826366",
+      "bytes": 3260
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "status": 200,
+      "sha256": "9d52f5ced406771d3e5a574d2a6d7521abacd6b0cf631925fbc0c625374b03da",
+      "bytes": 215897
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261017_80.zip",
+      "status": 200,
+      "sha256": "f9ceb855d3bac208760607de43325f3cf49a3ab2523bcce0f742c0f41e4028b6",
+      "bytes": 3381373
+    }
+  ],
+  "elapsed_minutes": 76.224,
+  "ended_at": "2026-10-16T18:58:03.445909+00:00",
+  "ending_reason": "safe_checkpoint",
+  "all_producers_closed": true,
+  "actual_games": 96,
+  "actual_plies": 3666,
+  "tests": 35,
+  "archive_count": 24,
+  "replay": "QualifiedPASS afterONEsame60s diagnosticretry; initialfailure/lostreason retained",
+  "Dot_previous_reading": "inline80plan+fixedb612Coreterminalsource only; no80execution",
+  "Dot_source_result_delivery": "PendingfinalfixedSHAinformationalresult; deliveryneverprovesreading/execution",
+  "scope": "Checkedprojectcontentonly; no personalinformation/passwords/credentials. Origin/sidemissiononly; no sandbox/master/default/UI/PRIMARY/visibilitymutation orworkers. Sourceverificationprecedesthisclosingmetadatacommit; finalremoteSHAcheckfollowsprivately."
+}

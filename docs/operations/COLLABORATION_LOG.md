@@ -2192,3 +2192,8 @@ finalclosingmetadataandsingleDotresultfollow,reading/executionUNCONFIRMED.
 Closing80: 76.224minutes, safe_checkpoint; allproducers closed,
 scienceOPEN. Finalsource/delivery SHA andanonymousPUBLICverification follow;
 no further research afterfinish.
+
+Verified80 source revision d133140e2ecbfd70e596af03c2db2ffd8c3f563d: fullorigin/sidemissionSHA,
+PUBLIC API and7anonymous byte-exact source/report/archive reads PASS.
+Closingmetadata commit/finalSHAverification follows. Dot reading/execution of
+this new source is UNCONFIRMED; priorreply covered inlineplan/fixedb612Coreonly.
