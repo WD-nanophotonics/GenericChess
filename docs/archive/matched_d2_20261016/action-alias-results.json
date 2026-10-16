@@ -1,0 +1,91 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "seed": 34101,
+      "root": "roots/34101.json",
+      "kind": "COMPLETE",
+      "legal_actions": 16,
+      "distinct_features": 16,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34102,
+      "root": "roots/34102.json",
+      "kind": "COMPLETE",
+      "legal_actions": 12,
+      "distinct_features": 12,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34201,
+      "root": "roots/34201.json",
+      "kind": "COMPLETE",
+      "legal_actions": 58,
+      "distinct_features": 58,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34202,
+      "root": "roots/34202.json",
+      "kind": "COMPLETE",
+      "legal_actions": 11,
+      "distinct_features": 11,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34301,
+      "root": "roots/34301.json",
+      "kind": "COMPLETE",
+      "legal_actions": 82,
+      "distinct_features": 82,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34302,
+      "root": "roots/34302.json",
+      "kind": "COMPLETE",
+      "legal_actions": 134,
+      "distinct_features": 134,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34401,
+      "root": "roots/34401.json",
+      "kind": "COMPLETE",
+      "legal_actions": 265,
+      "distinct_features": 265,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": 34402,
+      "root": "roots/34402.json",
+      "kind": "COMPLETE",
+      "legal_actions": 268,
+      "distinct_features": 268,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    },
+    {
+      "seed": "34101-causal-drop",
+      "root": "first-action-cause/roots/34101.json",
+      "kind": "COMPLETE",
+      "legal_actions": 2,
+      "distinct_features": 2,
+      "colliding_groups": [],
+      "consequential_groups": 0
+    }
+  ],
+  "seconds": 0.9793066999991424,
+  "queries": 0,
+  "games": 0,
+  "training": 0,
+  "scope": "Alllegalactionsperroot encoded; onlycollidinggroups requirefullCorechildcomparisons. Zero searches/games/training. Generated8familiesplusoneexistingstate, notaux/fullDSLcoverage. Partialcases/failuresretained. No modeldefault/newAPI."
+}

@@ -98,8 +98,12 @@ Before these new inputs/outcomes, freeze8 further families, both candidate
 roles, the four cells below and a fixed C opponent. Each actual caller has
 .5s/262144 total nodes, q hard8, TT16 with separate per-actor/per-game engines.
 The horizon64, game45s and whole2100s caps never expand. Profiles are predefined
-mechanical controls, not selected from outcomes. Native leaf/order/capture
-tables change jointly, so this is not isolated leaf-price causality.
+mechanical controls, not selected from outcomes. Correction2026-10-16:
+source/2480actualreceipt audit shows this configured Native path changes static
+evaluation directly, not separate price-based ordering/capture tables. Bounds,
+TT/history/work/completion may change endogenously; intrinsic prices remain
+unidentified. See MATCHED_D2_AND_CONTINUATION_POLICY_20261016.md. The old5fe
+wording is retained in immutable Git history and explicitly superseded.
 
 | Cell | Candidate valuation | q | WIN | LOSS | DRAW | UNKNOWN |
 |---|---|---:|---:|---:|---:|---:|

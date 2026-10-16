@@ -1,0 +1,45 @@
+{
+  "frozen_utc": "2026-10-16T03:30:28.191006+00:00",
+  "question": "Do existingV1base+typedcategories alias consequentiallegalactions on theactual9completeparents, or onlyredundantpatterns?",
+  "cases": [
+    {
+      "seed": 34101,
+      "root": "roots/34101.json"
+    },
+    {
+      "seed": 34102,
+      "root": "roots/34102.json"
+    },
+    {
+      "seed": 34201,
+      "root": "roots/34201.json"
+    },
+    {
+      "seed": 34202,
+      "root": "roots/34202.json"
+    },
+    {
+      "seed": 34301,
+      "root": "roots/34301.json"
+    },
+    {
+      "seed": 34302,
+      "root": "roots/34302.json"
+    },
+    {
+      "seed": 34401,
+      "root": "roots/34401.json"
+    },
+    {
+      "seed": 34402,
+      "root": "roots/34402.json"
+    },
+    {
+      "seed": "34101-causal-drop",
+      "root": "first-action-cause/roots/34101.json"
+    }
+  ],
+  "whole_seconds": 120,
+  "expected_seconds": 15,
+  "scope": "Alllegalactionsperroot encoded; onlycollidinggroups requirefullCorechildcomparisons. Zero searches/games/training. Generated8familiesplusoneexistingstate, notaux/fullDSLcoverage. Partialcases/failuresretained. No modeldefault/newAPI."
+}

@@ -1,0 +1,1492 @@
+{
+  "common_future": {
+    "complete": true,
+    "panels": {
+      "d3q0": {
+        "physical_games": 22,
+        "outcomes": {
+          "A": {
+            "LOSS": 3,
+            "WIN": 1,
+            "UNKNOWN": 4
+          },
+          "B": {
+            "LOSS": 2,
+            "UNKNOWN": 5,
+            "WIN": 1
+          },
+          "C": {
+            "LOSS": 3,
+            "UNKNOWN": 4,
+            "WIN": 1
+          },
+          "D": {
+            "WIN": 4,
+            "LOSS": 2,
+            "UNKNOWN": 2
+          }
+        },
+        "families": [
+          {
+            "seed": 34101,
+            "outcomes": {
+              "A": "LOSS",
+              "C": "LOSS",
+              "B": "LOSS",
+              "D": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": 2,
+            "price_q0": 0,
+            "price_q1": 2,
+            "interaction": 2
+          },
+          {
+            "seed": 34102,
+            "outcomes": {
+              "D": "LOSS",
+              "C": "LOSS",
+              "B": "LOSS",
+              "A": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34201,
+            "outcomes": {
+              "A": "LOSS",
+              "B": "UNKNOWN",
+              "C": "UNKNOWN",
+              "D": "UNKNOWN"
+            },
+            "unit_q": 1,
+            "static_q": 0,
+            "price_q0": 1,
+            "price_q1": 0,
+            "interaction": -1
+          },
+          {
+            "seed": 34202,
+            "outcomes": {
+              "D": "WIN",
+              "B": "WIN",
+              "A": "WIN",
+              "C": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34301,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "UNKNOWN",
+              "D": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": 1,
+            "price_q0": 0,
+            "price_q1": 1,
+            "interaction": 1
+          },
+          {
+            "seed": 34302,
+            "outcomes": {
+              "D": "UNKNOWN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34401,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": -1,
+            "interaction": 0
+          },
+          {
+            "seed": 34402,
+            "outcomes": {
+              "D": "WIN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 1,
+            "price_q0": 0,
+            "price_q1": 1,
+            "interaction": 1
+          }
+        ],
+        "summaries": {
+          "unit_q": {
+            "net": 1,
+            "mean": 0.125,
+            "family_ci": [
+              0.0,
+              0.375
+            ],
+            "family_values": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "static_q": {
+            "net": 4,
+            "mean": 0.5,
+            "family_ci": [
+              0.125,
+              1.0
+            ],
+            "family_values": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          "price_q0": {
+            "net": 0,
+            "mean": 0.0,
+            "family_ci": [
+              -0.375,
+              0.375
+            ],
+            "family_values": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ]
+          },
+          "price_q1": {
+            "net": 3,
+            "mean": 0.375,
+            "family_ci": [
+              -0.125,
+              1.0
+            ],
+            "family_values": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              0,
+              -1,
+              1
+            ]
+          },
+          "interaction": {
+            "net": 3,
+            "mean": 0.375,
+            "family_ci": [
+              -0.25,
+              1.0
+            ],
+            "family_values": [
+              2,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        "retained_depths": {
+          "3": 747,
+          "0": 12,
+          "2": 210
+        },
+        "queries": 969,
+        "edges": 991,
+        "causes": {
+          "ACTUAL_TERMINAL": 12,
+          "FINITE_PLY_CAP_UNKNOWN": 10
+        },
+        "cost_seconds": 180.7518125999777
+      },
+      "d3q1": {
+        "physical_games": 22,
+        "outcomes": {
+          "A": {
+            "WIN": 2,
+            "LOSS": 2,
+            "UNKNOWN": 4
+          },
+          "B": {
+            "WIN": 2,
+            "LOSS": 3,
+            "UNKNOWN": 3
+          },
+          "C": {
+            "WIN": 2,
+            "LOSS": 3,
+            "UNKNOWN": 3
+          },
+          "D": {
+            "WIN": 1,
+            "LOSS": 5,
+            "UNKNOWN": 2
+          }
+        },
+        "families": [
+          {
+            "seed": 34101,
+            "outcomes": {
+              "A": "WIN",
+              "C": "WIN",
+              "B": "WIN",
+              "D": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34102,
+            "outcomes": {
+              "D": "LOSS",
+              "C": "LOSS",
+              "B": "LOSS",
+              "A": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34201,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "LOSS",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": -1,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": 0,
+            "interaction": 1
+          },
+          {
+            "seed": 34202,
+            "outcomes": {
+              "D": "LOSS",
+              "B": "LOSS",
+              "A": "LOSS",
+              "C": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": -2,
+            "price_q0": 2,
+            "price_q1": 0,
+            "interaction": -2
+          },
+          {
+            "seed": 34301,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "UNKNOWN",
+              "D": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34302,
+            "outcomes": {
+              "D": "LOSS",
+              "C": "UNKNOWN",
+              "B": "WIN",
+              "A": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": -1,
+            "price_q0": -1,
+            "price_q1": -2,
+            "interaction": -1
+          },
+          {
+            "seed": 34401,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": -1,
+            "interaction": 0
+          },
+          {
+            "seed": 34402,
+            "outcomes": {
+              "D": "UNKNOWN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          }
+        ],
+        "summaries": {
+          "unit_q": {
+            "net": -1,
+            "mean": -0.125,
+            "family_ci": [
+              -0.375,
+              0.0
+            ],
+            "family_values": [
+              0,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "static_q": {
+            "net": -3,
+            "mean": -0.375,
+            "family_ci": [
+              -0.875,
+              0.0
+            ],
+            "family_values": [
+              0,
+              0,
+              0,
+              -2,
+              0,
+              -1,
+              0,
+              0
+            ]
+          },
+          "price_q0": {
+            "net": -1,
+            "mean": -0.125,
+            "family_ci": [
+              -0.625,
+              0.625
+            ],
+            "family_values": [
+              0,
+              0,
+              -1,
+              2,
+              0,
+              -1,
+              -1,
+              0
+            ]
+          },
+          "price_q1": {
+            "net": -3,
+            "mean": -0.375,
+            "family_ci": [
+              -0.875,
+              0.0
+            ],
+            "family_values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              -2,
+              -1,
+              0
+            ]
+          },
+          "interaction": {
+            "net": -2,
+            "mean": -0.25,
+            "family_ci": [
+              -0.875,
+              0.25
+            ],
+            "family_values": [
+              0,
+              0,
+              1,
+              -2,
+              0,
+              -1,
+              0,
+              0
+            ]
+          }
+        },
+        "retained_depths": {
+          "3": 457,
+          "0": 12,
+          "2": 371,
+          "1": 129
+        },
+        "queries": 969,
+        "edges": 991,
+        "causes": {
+          "ACTUAL_TERMINAL": 12,
+          "FINITE_PLY_CAP_UNKNOWN": 10
+        },
+        "cost_seconds": 564.8455222000484
+      },
+      "d6q0": {
+        "physical_games": 22,
+        "outcomes": {
+          "A": {
+            "WIN": 2,
+            "LOSS": 1,
+            "UNKNOWN": 5
+          },
+          "B": {
+            "LOSS": 4,
+            "WIN": 1,
+            "UNKNOWN": 3
+          },
+          "C": {
+            "WIN": 2,
+            "LOSS": 3,
+            "UNKNOWN": 3
+          },
+          "D": {
+            "WIN": 3,
+            "LOSS": 3,
+            "UNKNOWN": 2
+          }
+        },
+        "families": [
+          {
+            "seed": 34101,
+            "outcomes": {
+              "A": "WIN",
+              "C": "WIN",
+              "B": "LOSS",
+              "D": "WIN"
+            },
+            "unit_q": -2,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 2,
+            "interaction": 2
+          },
+          {
+            "seed": 34102,
+            "outcomes": {
+              "D": "LOSS",
+              "C": "LOSS",
+              "B": "LOSS",
+              "A": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34201,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "LOSS",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": -1,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": 0,
+            "interaction": 1
+          },
+          {
+            "seed": 34202,
+            "outcomes": {
+              "D": "WIN",
+              "B": "WIN",
+              "A": "WIN",
+              "C": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34301,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "UNKNOWN",
+              "D": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34302,
+            "outcomes": {
+              "D": "UNKNOWN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34401,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "LOSS",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": -1,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": 0,
+            "interaction": 1
+          },
+          {
+            "seed": 34402,
+            "outcomes": {
+              "D": "WIN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 1,
+            "price_q0": 0,
+            "price_q1": 1,
+            "interaction": 1
+          }
+        ],
+        "summaries": {
+          "unit_q": {
+            "net": -4,
+            "mean": -0.5,
+            "family_ci": [
+              -1.0,
+              -0.125
+            ],
+            "family_values": [
+              -2,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ]
+          },
+          "static_q": {
+            "net": 1,
+            "mean": 0.125,
+            "family_ci": [
+              0.0,
+              0.375
+            ],
+            "family_values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "price_q0": {
+            "net": -2,
+            "mean": -0.25,
+            "family_ci": [
+              -0.625,
+              0.0
+            ],
+            "family_values": [
+              0,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ]
+          },
+          "price_q1": {
+            "net": 3,
+            "mean": 0.375,
+            "family_ci": [
+              0.0,
+              0.875
+            ],
+            "family_values": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "interaction": {
+            "net": 5,
+            "mean": 0.625,
+            "family_ci": [
+              0.125,
+              1.125
+            ],
+            "family_values": [
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        },
+        "retained_depths": {
+          "6": 82,
+          "0": 12,
+          "5": 52,
+          "4": 194,
+          "3": 428,
+          "2": 199
+        },
+        "queries": 967,
+        "edges": 989,
+        "causes": {
+          "ACTUAL_TERMINAL": 12,
+          "FINITE_PLY_CAP_UNKNOWN": 10
+        },
+        "cost_seconds": 368.4908841000288
+      },
+      "d6q1": {
+        "physical_games": 22,
+        "outcomes": {
+          "A": {
+            "LOSS": 4,
+            "UNKNOWN": 3,
+            "WIN": 1
+          },
+          "B": {
+            "LOSS": 3,
+            "UNKNOWN": 4,
+            "WIN": 1
+          },
+          "C": {
+            "LOSS": 3,
+            "UNKNOWN": 4,
+            "WIN": 1
+          },
+          "D": {
+            "WIN": 1,
+            "LOSS": 4,
+            "UNKNOWN": 3
+          }
+        },
+        "families": [
+          {
+            "seed": 34101,
+            "outcomes": {
+              "D": "WIN",
+              "C": "LOSS",
+              "A": "LOSS",
+              "B": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 2,
+            "price_q0": 0,
+            "price_q1": 2,
+            "interaction": 2
+          },
+          {
+            "seed": 34102,
+            "outcomes": {
+              "A": "LOSS",
+              "B": "LOSS",
+              "C": "LOSS",
+              "D": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34201,
+            "outcomes": {
+              "D": "UNKNOWN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "LOSS"
+            },
+            "unit_q": 1,
+            "static_q": 0,
+            "price_q0": 1,
+            "price_q1": 0,
+            "interaction": -1
+          },
+          {
+            "seed": 34202,
+            "outcomes": {
+              "A": "LOSS",
+              "B": "LOSS",
+              "D": "LOSS",
+              "C": "WIN"
+            },
+            "unit_q": 0,
+            "static_q": -2,
+            "price_q0": 2,
+            "price_q1": 0,
+            "interaction": -2
+          },
+          {
+            "seed": 34301,
+            "outcomes": {
+              "D": "UNKNOWN",
+              "C": "UNKNOWN",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          },
+          {
+            "seed": 34302,
+            "outcomes": {
+              "A": "WIN",
+              "B": "WIN",
+              "C": "UNKNOWN",
+              "D": "LOSS"
+            },
+            "unit_q": 0,
+            "static_q": -1,
+            "price_q0": -1,
+            "price_q1": -2,
+            "interaction": -1
+          },
+          {
+            "seed": 34401,
+            "outcomes": {
+              "D": "LOSS",
+              "C": "LOSS",
+              "B": "UNKNOWN",
+              "A": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": -1,
+            "price_q1": -1,
+            "interaction": 0
+          },
+          {
+            "seed": 34402,
+            "outcomes": {
+              "A": "UNKNOWN",
+              "B": "UNKNOWN",
+              "C": "UNKNOWN",
+              "D": "UNKNOWN"
+            },
+            "unit_q": 0,
+            "static_q": 0,
+            "price_q0": 0,
+            "price_q1": 0,
+            "interaction": 0
+          }
+        ],
+        "summaries": {
+          "unit_q": {
+            "net": 1,
+            "mean": 0.125,
+            "family_ci": [
+              0.0,
+              0.375
+            ],
+            "family_values": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "static_q": {
+            "net": -1,
+            "mean": -0.125,
+            "family_ci": [
+              -0.875,
+              0.625
+            ],
+            "family_values": [
+              2,
+              0,
+              0,
+              -2,
+              0,
+              -1,
+              0,
+              0
+            ]
+          },
+          "price_q0": {
+            "net": 1,
+            "mean": 0.125,
+            "family_ci": [
+              -0.5,
+              0.75
+            ],
+            "family_values": [
+              0,
+              0,
+              1,
+              2,
+              0,
+              -1,
+              -1,
+              0
+            ]
+          },
+          "price_q1": {
+            "net": -1,
+            "mean": -0.125,
+            "family_ci": [
+              -0.875,
+              0.625
+            ],
+            "family_values": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              -2,
+              -1,
+              0
+            ]
+          },
+          "interaction": {
+            "net": -2,
+            "mean": -0.25,
+            "family_ci": [
+              -1.0,
+              0.5
+            ],
+            "family_values": [
+              2,
+              0,
+              -1,
+              -2,
+              0,
+              -1,
+              0,
+              0
+            ]
+          }
+        },
+        "retained_depths": {
+          "6": 34,
+          "5": 75,
+          "4": 67,
+          "0": 12,
+          "3": 251,
+          "2": 355,
+          "1": 129
+        },
+        "queries": 923,
+        "edges": 945,
+        "causes": {
+          "ACTUAL_TERMINAL": 12,
+          "FINITE_PLY_CAP_UNKNOWN": 10
+        },
+        "cost_seconds": 667.4951190000575
+      }
+    },
+    "contrasts": {
+      "d3q0tod3q1": {
+        "bycell": {
+          "A": {
+            "LOSS->WIN": 1,
+            "LOSS->LOSS": 1,
+            "LOSS->UNKNOWN": 1,
+            "WIN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 3,
+            "UNKNOWN->WIN": 1
+          },
+          "B": {
+            "LOSS->WIN": 1,
+            "LOSS->LOSS": 1,
+            "UNKNOWN->LOSS": 1,
+            "WIN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 3,
+            "UNKNOWN->WIN": 1
+          },
+          "C": {
+            "LOSS->WIN": 1,
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 1,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 3
+          },
+          "D": {
+            "WIN->WIN": 1,
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 2,
+            "WIN->LOSS": 1,
+            "WIN->UNKNOWN": 2
+          }
+        },
+        "scope": "Dependent actualsharedfirstactions, differentcommonfuture; notsamefullpolicy orindependentvalidation."
+      },
+      "d3q0tod6q0": {
+        "bycell": {
+          "A": {
+            "LOSS->WIN": 1,
+            "LOSS->LOSS": 1,
+            "LOSS->UNKNOWN": 1,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 4
+          },
+          "B": {
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 2,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 3
+          },
+          "C": {
+            "LOSS->WIN": 1,
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 1,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 3
+          },
+          "D": {
+            "WIN->WIN": 3,
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 1,
+            "WIN->UNKNOWN": 1,
+            "UNKNOWN->UNKNOWN": 1
+          }
+        },
+        "scope": "Dependent actualsharedfirstactions, differentcommonfuture; notsamefullpolicy orindependentvalidation."
+      },
+      "d3q1tod6q1": {
+        "bycell": {
+          "A": {
+            "WIN->LOSS": 1,
+            "LOSS->LOSS": 2,
+            "UNKNOWN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 3,
+            "WIN->WIN": 1
+          },
+          "B": {
+            "WIN->LOSS": 1,
+            "LOSS->LOSS": 2,
+            "LOSS->UNKNOWN": 1,
+            "UNKNOWN->UNKNOWN": 3,
+            "WIN->WIN": 1
+          },
+          "C": {
+            "WIN->LOSS": 1,
+            "LOSS->LOSS": 2,
+            "LOSS->UNKNOWN": 1,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 3
+          },
+          "D": {
+            "WIN->WIN": 1,
+            "LOSS->LOSS": 4,
+            "LOSS->UNKNOWN": 1,
+            "UNKNOWN->UNKNOWN": 2
+          }
+        },
+        "scope": "Dependent actualsharedfirstactions, differentcommonfuture; notsamefullpolicy orindependentvalidation."
+      },
+      "d6q0tod6q1": {
+        "bycell": {
+          "A": {
+            "WIN->LOSS": 2,
+            "LOSS->LOSS": 1,
+            "UNKNOWN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 3,
+            "UNKNOWN->WIN": 1
+          },
+          "B": {
+            "LOSS->LOSS": 2,
+            "LOSS->UNKNOWN": 2,
+            "WIN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 2,
+            "UNKNOWN->WIN": 1
+          },
+          "C": {
+            "WIN->LOSS": 1,
+            "LOSS->LOSS": 2,
+            "LOSS->UNKNOWN": 1,
+            "WIN->WIN": 1,
+            "UNKNOWN->UNKNOWN": 3
+          },
+          "D": {
+            "WIN->WIN": 1,
+            "LOSS->LOSS": 2,
+            "LOSS->UNKNOWN": 1,
+            "WIN->LOSS": 1,
+            "UNKNOWN->UNKNOWN": 1,
+            "UNKNOWN->LOSS": 1,
+            "WIN->UNKNOWN": 1
+          }
+        },
+        "scope": "Dependent actualsharedfirstactions, differentcommonfuture; notsamefullpolicy orindependentvalidation."
+      }
+    },
+    "actual_games": 88,
+    "physical_queries": 3828,
+    "physical_edges": 3916,
+    "families": 8,
+    "dependent_cell_labels": 128,
+    "distinct_parents": 8,
+    "unique_first_actions": 22,
+    "analysis": "Exploratoryafterlabels bootstrap10K seed36720. UNKNOWN0 only finiteW-L, notDRAW/proof. RequestedD6 notassumedcompleted. Allactualcaps/failures retained; no poolingfamilies ordefault."
+  },
+  "cross": {
+    "complete": true,
+    "seed": 34101,
+    "original_actor": 0,
+    "table": {
+      "00": {
+        "C": "LOSS",
+        "D": "WIN"
+      },
+      "10": {
+        "C": "WIN",
+        "D": "WIN"
+      },
+      "01": {
+        "C": "LOSS",
+        "D": "LOSS"
+      },
+      "11": {
+        "C": "WIN",
+        "D": "WIN"
+      }
+    },
+    "physical_games_new": 4,
+    "existing_diagonal_games_reused": 4,
+    "first_differences": [
+      {
+        "cell": "C",
+        "lo": "00",
+        "hi": "10",
+        "first_difference": {
+          "step": 1,
+          "side": 0,
+          "role": "ORIGINAL_ACTOR",
+          "before_sha256": "886c573cfe92e47411961c6b19ddd35644ddddf5d1679c58750c0f1b1c5d1f67",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_045",
+            "geometry_id": "g22",
+            "base_type_id": "P",
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            }
+          },
+          "action_hi": {
+            "pattern_id": "legacy_046",
+            "geometry_id": "g22",
+            "base_type_id": "X",
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            }
+          }
+        }
+      },
+      {
+        "cell": "C",
+        "lo": "00",
+        "hi": "01",
+        "first_difference": null
+      },
+      {
+        "cell": "C",
+        "lo": "10",
+        "hi": "11",
+        "first_difference": {
+          "step": 2,
+          "side": 1,
+          "role": "OPPONENT",
+          "before_sha256": "81f3fa1aba64e4e1f80651248ad298e234817a5a7a90bd495b59400643fe8c24",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_002",
+            "geometry_id": "g1",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 2,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "action_hi": {
+            "pattern_id": "legacy_029",
+            "geometry_id": "g21",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          }
+        }
+      },
+      {
+        "cell": "C",
+        "lo": "01",
+        "hi": "11",
+        "first_difference": {
+          "step": 1,
+          "side": 0,
+          "role": "ORIGINAL_ACTOR",
+          "before_sha256": "886c573cfe92e47411961c6b19ddd35644ddddf5d1679c58750c0f1b1c5d1f67",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_045",
+            "geometry_id": "g22",
+            "base_type_id": "P",
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            }
+          },
+          "action_hi": {
+            "pattern_id": "legacy_046",
+            "geometry_id": "g22",
+            "base_type_id": "X",
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            }
+          }
+        }
+      },
+      {
+        "cell": "D",
+        "lo": "00",
+        "hi": "10",
+        "first_difference": {
+          "step": 1,
+          "side": 0,
+          "role": "ORIGINAL_ACTOR",
+          "before_sha256": "6eca006d8f138aa99fddc5e18131988cdb24a280dc46b2b9862b9819df27de15",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_023",
+            "geometry_id": "g19",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          },
+          "action_hi": {
+            "pattern_id": "legacy_027",
+            "geometry_id": "g20",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          }
+        }
+      },
+      {
+        "cell": "D",
+        "lo": "00",
+        "hi": "01",
+        "first_difference": {
+          "step": 2,
+          "side": 1,
+          "role": "OPPONENT",
+          "before_sha256": "d73dce271b2d225c34c29f098f7b2a4897ac10b1427f6f1ac7fe98e83b4c5316",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_046",
+            "geometry_id": "g22",
+            "base_type_id": "X",
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          },
+          "action_hi": {
+            "pattern_id": "legacy_045",
+            "geometry_id": "g22",
+            "base_type_id": "P",
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          }
+        }
+      },
+      {
+        "cell": "D",
+        "lo": "10",
+        "hi": "11",
+        "first_difference": {
+          "step": 2,
+          "side": 1,
+          "role": "OPPONENT",
+          "before_sha256": "23ae993ce303fb572338164bdd689d2e6c1a8b95e7383ba651ae083a498697ab",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_046",
+            "geometry_id": "g22",
+            "base_type_id": "X",
+            "to_square": {
+              "file": 1,
+              "rank": 3
+            }
+          },
+          "action_hi": {
+            "pattern_id": "legacy_002",
+            "geometry_id": "g1",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 2,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          }
+        }
+      },
+      {
+        "cell": "D",
+        "lo": "01",
+        "hi": "11",
+        "first_difference": {
+          "step": 1,
+          "side": 0,
+          "role": "ORIGINAL_ACTOR",
+          "before_sha256": "6eca006d8f138aa99fddc5e18131988cdb24a280dc46b2b9862b9819df27de15",
+          "completed_depths": [
+            3,
+            3
+          ],
+          "action_lo": {
+            "pattern_id": "legacy_023",
+            "geometry_id": "g19",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          },
+          "action_hi": {
+            "pattern_id": "legacy_027",
+            "geometry_id": "g20",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          }
+        }
+      }
+    ],
+    "retained_depths_by_mode": {
+      "00": {
+        "3": 39,
+        "0": 2
+      },
+      "10": {
+        "3": 30,
+        "0": 2
+      },
+      "01": {
+        "3": 55,
+        "0": 2,
+        "2": 1
+      },
+      "11": {
+        "3": 34,
+        "0": 2
+      }
+    },
+    "interpretation": "Case34101C: ownq1 convertsLOSS toWINwithopponentq0/q1; D: opponentq1alone causesWINtoLOSS, ownq1restoresWIN. Bothconversion andresponseinteraction occur, no singlepriceorqblame. FirstID terminalflipcase selected, notclaimedexplanationof34202negativeD-Coraggregatepopulation.",
+    "label_tiers": "Observed ruleterminal WIN/LOSS exacttrajectoryfact. Inference tooptimalQ/crosspolicyvalue unproved/approximate. UNKNOWN remainsunknown; no newWDLgate."
+  },
+  "local_action": {
+    "complete": true,
+    "outcomes": [
+      {
+        "actor_q": 0,
+        "forced_label": [
+          "C"
+        ],
+        "outcome": "LOSS",
+        "ending_cause": "ACTUAL_TERMINAL",
+        "game_id": "34101-a0o0-0"
+      },
+      {
+        "actor_q": 0,
+        "forced_label": [
+          "D"
+        ],
+        "outcome": "WIN",
+        "ending_cause": "ACTUAL_TERMINAL",
+        "game_id": "34101-a0o0-1"
+      },
+      {
+        "actor_q": 1,
+        "forced_label": [
+          "D"
+        ],
+        "outcome": "WIN",
+        "ending_cause": "ACTUAL_TERMINAL",
+        "game_id": "34101-a1o0-0"
+      },
+      {
+        "actor_q": 1,
+        "forced_label": [
+          "C"
+        ],
+        "outcome": "WIN",
+        "ending_cause": "ACTUAL_TERMINAL",
+        "game_id": "34101-a1o0-1"
+      }
+    ]
+  }
+}

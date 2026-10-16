@@ -295,7 +295,8 @@ firstdifferences/9sameprefix/0opponentfirstdifferences,34distinctfullstates.
 204freshD2controlqueries show valuationactionchanges17/34(q0),21/33(q1);
 65of68Coreq0 objectives agree/3censors. This isdecisionleverage, notquality.
 Continue exactcommonstate finite-horizon/budget attribution before a larger
-game/heuristic/model campaign; keepjointleaf/order/scaleeffects distinct.
+game/heuristic/model campaign. CorrectedC392sourceaudit: directpriceinputs
+areleaf/standpat, not price-basedordering/SEE; resultingwork/deptharemediators.
 CHAT_Comments isreference, AUX68e5251f3 FULL_REPORT_READ_ONLY anduntransferred.
 Sourcecopy firstfailedmissing39commoninputs; baseZIPkept, exactsupportand
 correctedreceipt published separately. Science remains OPEN.
@@ -368,3 +369,74 @@ strength, learning signal or universal price recovery. Actual decision outcomes,
 paired improvements/regressions and independent validation have distinct scope.
 Immutable details remain in purpose reports/data/archives at fixed Git above;
 no historical report or advisor suggestion automatically becomes a new task.
+
+## Current matched-D2 result —2026-10-16
+
+All88commonfuture games on8exposedparents/22unique firstactions retain policy
+dependence: staticq1-first minusstaticq0-first finiteW-L is+4/8 withD3q0future,
+-3/8withD3q1future,+1/8withrequestedD6q0,-1/8withrequestedD6q1. ActualD6is
+oftennotcompleted.96totalgames include4single-side and4localactioninterventions,
+notnewindependentfamilies. No q/price/model/defaultadoption.
+
+FirstIDcase34101 separates conversion andresponse: C/Dfirst actions yield
+L/Wunderfuture00,W/Wunder10,L/Lunder01,W/Wunder11, originalactorfixed.
+At itsactualfirstownturn P/Xdrop divergence, fouruniformlycoldgames show
+P L/W versusX W/W underownq0/q1, opponentq0. Thisisolatesoneusefulchoiceunder
+declaredfuture, notoptimalQ oruniqueerror. PureCore/Nativeq0/q1D3objectives
+independentlymatch100/-183; actualterminalfactsremainexacttrajectoryevidence,
+inference tooptimalstatepriceunproved.19crosspolicysharedfullstateshaveopposite
+terminalreturns fromonly2families; do nottreattheseashundredsofindependentlabels.
+
+C392price-path audit CORRECTS oldleaf/order/captureclaim: currentprofiledirectly
+controlsstaticleaf/standpat/fallbackevaluation; plaincapture/history/canonical
+orderdoesnotreadprices.2480priorreceipts have nolearned/policyordering.
+Endogenousbounds/TT/work/depthremainpartofthetreatment, notseparateSEEknobs.
+64uniform4xcontrolqueries30jointD3pairs preserveactions/scaledfinite scores,
+2censors; nouniversalunitinvariance. AvoidunnecessaryneworderingAPI.
+
+64materialtimercontrols putq1materialfractionat~.47-.79percent; rejectincremental
+materialworkhere.48q1normal/counter/fullcheckedcalls showfullcheckedslower
+1.15/1.30/1.31/1.65; keepquiet-historydeferral. Bothprivateprototypesunadopted.
+No extra broad game/model campaign follows. Next choose one conditional response/
+conversion or explicitteacher-labelcost question usingexistingowner tools;
+preserve policy/budget/labelprovenance ratherthanrequiringuniversalWDL first.
+Fullmethods/caps/actualvalidation: MATCHED_D2_AND_CONTINUATION_POLICY_20261016.md.
+
+## Revisable future questions — CHAT memoranda 2026-10-16
+
+Read both complete CHAT_Comments roots as reference, not new authority or an
+immediate work order. Preserve these choices for later evidence/user scheduling:
+
+- Small-board trustworthy teacher and state-dependent evaluation:
+  https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689
+  Compare existing scalar materials, king/anchor-relative tables and small nets
+  only under an explicit complete-rule subdomain, common labels/budgets and
+  independent evaluation. First estimate exact/proved/approximate/UNKNOWN label
+  coverage and cost using existing tools in the responsible lane; do not build
+  another solver or demand full WDL before current finite diagnostics. A state
+  value decomposition does not identify unique local piece prices; define legal
+  counterfactual/ranking/projection targets before testing smoothness.
+- Generic evaluator architecture and transfer/curriculum:
+  https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309
+  Compare rule-derived materials/search, small interaction tables, existing
+  solver combinations and rule-conditioned sparse networks by end-to-end cost.
+  Separate mechanical feature generation from learned weight transfer. A later
+  small test can change one rule axis at a time and compare zero-shot, fine-tune
+  and scratch learning curves plus forgetting/actual finite play. Preserve
+  promotion/drop/current/base/aux/history and distinct anchor/terminal semantics;
+  local tactical reuse and which rule changes transfer cheaply remain hypotheses.
+  The proposed 5-10 minute usable-player target is a vision, not demonstrated
+  capability. No architecture mandate, new policy framework or present training.
+
+Reason/execution consequence: these comments supply future testable alternatives,
+not evidence that scalar averages are impossible or that a network/teacher is
+already strong. Current matched-D2 continuation and frozen caps remain selected;
+reconsider teacher/representation when its measured cost can change a concrete
+next decision. Do not import AUX weights or rewrite its separate work.
+
+Current next concrete boundary alreadybegun:848legalactions on9generated/
+causalsubsetroots haveuniqueV1inputs, butoneexistingphase_graph one-fieldgeometry
+counterfactual has2legalV1aliases withdifferentauxphasechildren; actualCore/
+Nativechildfields agree. Keepboth fullactions, currentmodels/API; no trained
+failure/WDL/coverageclaim. Next canassess onefiniteconsequence/teacherinputscope
+withoutinventingpolicyframework, rewritingAUX or broadnewgames.

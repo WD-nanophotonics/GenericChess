@@ -1,0 +1,138 @@
+{
+  "complete": true,
+  "archive_sha256": "baa61d9dda214ec9383e3433f143597c2a7a644b392bf4371a7b10cbc439efa7",
+  "archive_members": 635,
+  "normal_module_sha256": "39230230e1f51e44c158b4bbfebe23e3721211c56e897916a5cfe65d1144fd17",
+  "normal_native_rebuilt": true,
+  "python_without_site": true,
+  "module_origins_asserted": true,
+  "all_counts_equal": true,
+  "actual": {
+    "complete": true,
+    "counts": {
+      "state_history_comparisons": 15797,
+      "root_records": 274,
+      "physical_edges": 4081,
+      "pv_edges": 11439,
+      "query_receipts": 4165,
+      "physical_games": 96,
+      "scale_queries": 64,
+      "representation_rulevariants": 3,
+      "material_profile_queries": 64,
+      "transition_control_queries": 48,
+      "causal_core_core_queries": 2,
+      "causal_core_native_queries": 2
+    },
+    "stages": [
+      {
+        "folder": ".",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 4373,
+            "root_records": 198,
+            "physical_edges": 991,
+            "pv_edges": 3181,
+            "query_receipts": 1145,
+            "physical_games": 22,
+            "scale_queries": 64,
+            "representation_rulevariants": 3,
+            "material_profile_queries": 64,
+            "transition_control_queries": 48
+          },
+          "seconds": 35.64715460001025,
+          "scope": "Search-disabledfullstate/historynormalNative/Core replay, no newsearch/game/proof. SameCore/compiler/host; notWDL orhistoryclockauthentication."
+        },
+        "consumer_sha256": "ef586012be59c3aaa67a010cb2b712d51feb30c77a7fcc1600f2400897fe7dd2"
+      },
+      {
+        "folder": "future-q1",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 3254,
+            "root_records": 22,
+            "physical_edges": 991,
+            "pv_edges": 2241,
+            "query_receipts": 969,
+            "physical_games": 22
+          },
+          "seconds": 28.091411899978993,
+          "scope": "Search-disabledfullstate/historynormalNative/Core replay, no newsearch/game/proof. SameCore/compiler/host; notWDL orhistoryclockauthentication."
+        },
+        "consumer_sha256": "3aa6595f9b76df5df0159b03b2e81d160569a7068e08520c6ebb13c77d37e59a"
+      },
+      {
+        "folder": "future-depth6",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 7537,
+            "root_records": 44,
+            "physical_edges": 1934,
+            "pv_edges": 5559,
+            "query_receipts": 1890,
+            "physical_games": 44
+          },
+          "seconds": 49.75393269999768,
+          "scope": "Search-disabledfullstate/historynormalNative/Core replay, no newsearch/game/proof. SameCore/compiler/host; notWDL orhistoryclockauthentication."
+        },
+        "consumer_sha256": "3bd819720322b0ef00e3dedda512c264f8fdfd00a40e27cb0ce145f8cdf5e9f9"
+      },
+      {
+        "folder": "cross-future",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 355,
+            "root_records": 4,
+            "physical_edges": 94,
+            "pv_edges": 257,
+            "query_receipts": 90,
+            "physical_games": 4
+          },
+          "seconds": 0.6105564000026789,
+          "scope": "Search-disabledfullstate/historynormalNative/Core replay, no newsearch/game/proof. SameCore/compiler/host; notWDL orhistoryclockauthentication."
+        },
+        "consumer_sha256": "e5f14fd2f0ca56d0cda0f12711be231746fc2b82e9799deb72d11cc5f3e69d07"
+      },
+      {
+        "folder": "first-action-cause",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 264,
+            "root_records": 4,
+            "physical_edges": 71,
+            "pv_edges": 189,
+            "query_receipts": 67,
+            "physical_games": 4
+          },
+          "seconds": 0.4553256000217516,
+          "scope": "Search-disabledfullstate/historynormalNative/Core replay, no newsearch/game/proof. SameCore/compiler/host; notWDL orhistoryclockauthentication."
+        },
+        "consumer_sha256": "003811719edac639f86d022408a0eb91b5f3625c6e96b00956c6a76e687b3c77"
+      },
+      {
+        "folder": "lateextra",
+        "receipt": {
+          "complete": true,
+          "counts": {
+            "state_history_comparisons": 14,
+            "root_records": 2,
+            "pv_edges": 12,
+            "query_receipts": 4,
+            "causal_core_core_queries": 2,
+            "causal_core_native_queries": 2
+          },
+          "seconds": 0.03713969999807887,
+          "scope": "ActualsearchdisabledlatetwoCore/twoNativefinitecontrols; no newsearch/game/proof."
+        }
+      }
+    ],
+    "seconds": 117.33621959999437,
+    "scope": "Oneactualfull sequentialsearchdisablednormalNative/Core state/history receiptpass. No newsearch/game/proof, samehost/compiler, oldclocks notauthenticated. Newexperimentalprivatecounts/timingnotrerun."
+  },
+  "seconds": 134.19816359999822,
+  "scope": "Actualnew-directorypublication-source normalNative rebuild/full6consumersearchdisabledpass; no studysearch/game/proof/training/privateactivation. Normalreferenceactualfull+lateunion, sourcecopyisfreshwholepass. Samehost/Python/Zig/Core/compiler, notindependentWDL/clockauthentication."
+}

@@ -3070,3 +3070,76 @@ CHAT_Comments1792114656.064009 fullyread asreference: adopt cost→completion→
 Actualsource restore firstfailed: basepackager omitted39common-parentinputs. Original750memberZIP/failurelogs retained; exact39original supportZIP plus correctednew-directorybuild/fullPython-S pass required beforepublication. No assertion/cap/source-semantic change ordataregeneration. Normalvalidation union explicitlycomprises threeactualstages (4160queries/72games3232edges), notafabricatedwholepass. Finalsourcecopy/fullremoteSHA/publicbytes andactualSlackreceipt separate; no reading/execution/ack guarantee.
 
 Corrected restore actually PASS: newdirectory normalC392build/Python-S/full4160queries/12796PVedges/72games3232edges/21789state-historychecks, both750base+39support hashes/CRC,205.854s. Originalfailure kept, no scientific rerun/assertion change or user intervention.
+
+## PRIMARY matched-D2 and continuation diagnosis —2026-10-16
+
+PRIMARY owns all new execution in MATCHED_D2_AND_CONTINUATION_POLICY_20261016.md:
+88commonfuture games plus4unilateral and4coldlocalaction interventions,8exposed
+families,96physicalgames/4165newCore-Nativequeryreceipts. No independent-family
+inflation, solver/model/price training, product C/default/UI change or AUXwrite.
+D-Cfinite net is+4/-3underD3q0/q1future,+1/-1underrequestedD6; actualdepthnot
+assumed6.19sharedfullstateoppositeterminalreturns are only2families. Actualrule
+terminalfact is distinct from unprovedoptimalQ; UNKNOWNneverbecomesDRAW.
+Late coupled-UNKNOWN sensitivity is separate from bootstrap/true-WDL proof.
+
+Dot1792119626.331479 in complete21-reply PRIMARY thread proposed separating
+own/opponentq. PRIMARY adopted/actuallyexecuted fournew crossed games. Case34101
+C/D yieldsL/W(00),W/W(10),L/L(01),W/W(11); ownconversion andopponentresponse
+bothmatter. The next4uniformcold P/Xdrop games isolate a usefulaction underq0,
+withoutsplicingoldwarmbanks. Firstdivergence fullhash/roles/D3bound. Dotreasoned
+fromreportedlocalresults/CHATnotes, didnotreadunpublishedsourceorrunourtraces.
+His distinctionterminalfact-versusoptimalvalue adopted; noWDL/ack/approvalgate.
+
+Two complete newCHAT_Comments roots1792117966.727689/1792118043.431309 were
+evaluated as futureteacher/architecture/transfer suggestions, indexed inexisting
+LOCAL_MAINLINE, notAGENTS or immediateworkorders. PrimaryNNUE/2020AlphaZerovariant/
+Polygames/2021Ludii-transfer sources examined;2023TMLR fullOpenReview content
+remainsunread(browserverification), notimplicitlyupgraded. ThreeactualRuleSets
+share301Positionfeatures butmovementchangeslegalactions; fingerprintguardworks.
+No trainedtransfer/strongteacher claim or newframework.
+
+AUX68e5251f38f97407936e7a9f444d68988340ec9b78 remains the latest previously
+FULL_REPORT_READ_ONLY contribution; recovery fullthread unchanged, no newreport
+execution/sourceadoption/ratio/certificate transfer or workunitpooling. Ownership
+staysseparate; noAUXsession/stop/memo/checkout/process modification. Newchannel
+roots coverage atmidstage ends1792118043.431309; threadcoverage separatelysaved.
+
+Scientific correction:5feleaf/order/capturejointclaim waswrong forconfigured
+C392plain exact-root. Onlyleaf/standpat consumepriceprofile;2480oldreceipts
+havelearned/policyorderingfalse/zeroinferences. Endogenousbounds/TT/history/
+work/deptharemediators. Correct currentreport/mainline, preserveoldimmutableSHA.
+64materialtimercalls rejectincremental-evaluationworkhere(q1<.8percentmeasured);
+48q1normal/counter/fullcheckedcalls rejectfullcheckedrollback(1.15–1.65slower).
+No extraorderingAPI or broadgame/learning campaign for these findings.
+
+Failures: initial inline bindingNameError occurred beforefollowingproducer ran;
+separatebind.py verified32paidD2actions, no rerun. SandboxSQLiteopen resolved
+using supported escalation, noSAC/securityclaim. ReportgeneratorSyntaxError fixed
+withinitialsourcepreserved; no scienceexecuted bythatfailure. Labelaudit source
+preparedbeforeD6ended but actualplanfilewrittenafter; exploratoryonly, no invented
+preregistration. AllexactrawSlack/receiptsprivatebeforeevaluation/reconcile.
+Publication-source and delivery results are recorded at the completed checkpoint;
+no claim of publication/read/execution beforeactualevidence.
+
+Closing qualification: normal114.776swholepass+late4query pass is explicitly a
+union; NEWextractedsource normalNativebuild/sixconsumerpass134.198s verifies
+635members/4165queries/11439PVedges/96games4081physicaledges/15797state-history
+comparisons. Late sensitivity/Nativeaction/V1category sourcecheck passes without
+study rerun.848-actionV1 census on9parents is separately actualoriginalexecution,
+zeroaliases there, not independently replayed/allDSL. Reject new action API.
+Immutable capsule SHA256baa61d9dda214ec9383e3433f143597c2a7a644b392bf4371a7b10cbc439efa7.
+Prescribed publication and independentfullremote verification still to follow.
+
+
+A concrete auxiliary-effect boundary was then actually started and checked:
+reuse the existing phase_graph regression, changing only aU's geometry to match
+aV. At its legalphase1root both actions have equalV1base/categories[0,7,7,0],
+but setphase to(2,0)versus(3,0), producing different complete children. Actual
+Core/Native board/hands/aux/side/terminal fields agree for both transitions.
+This explicit one-field fixture is not a generated-frequency estimate, a trained
+policy failure or an optimal-value proof. It qualifies the848-generated-action
+negative census: no universal injectivity claim. Ordering ties remain permitted,
+and complete Native action identity/checked search retain both alternatives.
+Keep currentmodels/API; a later scoped teacher test can examine consequence
+before changing representations. No search/game/training was run for this case.
+These late original executions are not included in the635-member source replay.

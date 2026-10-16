@@ -1,0 +1,936 @@
+{
+  "complete": true,
+  "computed_at": "2026-10-16T03:25:25.082641+00:00",
+  "analysis": "Exploratoryafteralllabels, no plannedpower/equivalence/humanfit.",
+  "panels": {
+    "d3q0": {
+      "B-A": {
+        "finite_observed_net": 1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -4,
+          6
+        ],
+        "mean_outer_interval": [
+          -0.5,
+          0.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-1",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-0",
+          "34302-2"
+        ]
+      },
+      "D-C": {
+        "finite_observed_net": 4,
+        "unknown_radius": 4,
+        "hypothetical_net_outer_interval": [
+          0,
+          8
+        ],
+        "mean_outer_interval": [
+          0.0,
+          1.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34201-1"
+        ]
+      },
+      "C-A": {
+        "finite_observed_net": 0,
+        "unknown_radius": 6,
+        "hypothetical_net_outer_interval": [
+          -6,
+          6
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          0.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-1",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-2",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-0"
+        ]
+      },
+      "D-B": {
+        "finite_observed_net": 3,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -2,
+          8
+        ],
+        "mean_outer_interval": [
+          -0.25,
+          1.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-2",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34201-1"
+        ]
+      },
+      "I": {
+        "finite_observed_net": 3,
+        "unknown_radius": 9,
+        "hypothetical_net_outer_interval": [
+          -6,
+          12
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          1.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-1",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34302-2"
+        ]
+      }
+    },
+    "d3q1": {
+      "B-A": {
+        "finite_observed_net": -1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -6,
+          4
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          0.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-0",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-0"
+        ]
+      },
+      "D-C": {
+        "finite_observed_net": -3,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -8,
+          2
+        ],
+        "mean_outer_interval": [
+          -1.0,
+          0.25
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-0",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      },
+      "C-A": {
+        "finite_observed_net": -1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -6,
+          4
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          0.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-0",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-0"
+        ]
+      },
+      "D-B": {
+        "finite_observed_net": -3,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -8,
+          2
+        ],
+        "mean_outer_interval": [
+          -1.0,
+          0.25
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-0",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      },
+      "I": {
+        "finite_observed_net": -2,
+        "unknown_radius": 10,
+        "hypothetical_net_outer_interval": [
+          -12,
+          8
+        ],
+        "mean_outer_interval": [
+          -1.5,
+          1.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-0",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34301-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-0",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-0",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-1",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-2",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      }
+    },
+    "d6q0": {
+      "B-A": {
+        "finite_observed_net": -4,
+        "unknown_radius": 4,
+        "hypothetical_net_outer_interval": [
+          -8,
+          0
+        ],
+        "mean_outer_interval": [
+          -1.0,
+          0.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q0-0",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q0-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-2",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-q0-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-q0-0",
+          "34302-q0-2"
+        ]
+      },
+      "D-C": {
+        "finite_observed_net": 1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -4,
+          6
+        ],
+        "mean_outer_interval": [
+          -0.5,
+          0.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-q0-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-q0-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-1",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      },
+      "C-A": {
+        "finite_observed_net": -2,
+        "unknown_radius": 6,
+        "hypothetical_net_outer_interval": [
+          -8,
+          4
+        ],
+        "mean_outer_interval": [
+          -1.0,
+          0.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q0-0",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-q0-1",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-2",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q0-0",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-1",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-q0-3",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-q0-0"
+        ]
+      },
+      "D-B": {
+        "finite_observed_net": 3,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -2,
+          8
+        ],
+        "mean_outer_interval": [
+          -0.25,
+          1.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-q0-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-q0-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-2",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-2",
+            "seed": 34402,
+            "weight": -1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      },
+      "I": {
+        "finite_observed_net": 5,
+        "unknown_radius": 9,
+        "hypothetical_net_outer_interval": [
+          -4,
+          14
+        ],
+        "mean_outer_interval": [
+          -0.5,
+          1.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q0-0",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34301-q0-0",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-q0-1",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-0",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q0-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q0-0",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-q0-1",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-2",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q0-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34302-q0-2"
+        ]
+      }
+    },
+    "d6q1": {
+      "B-A": {
+        "finite_observed_net": 1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -4,
+          6
+        ],
+        "mean_outer_interval": [
+          -0.5,
+          0.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q1-0",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-q1-1",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-q1-2",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-0",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-1",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-q1-1"
+        ]
+      },
+      "D-C": {
+        "finite_observed_net": -1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -6,
+          4
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          0.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-q1-0",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34301-q1-1",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-q1-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-2",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34201-q1-0"
+        ]
+      },
+      "C-A": {
+        "finite_observed_net": 1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -4,
+          6
+        ],
+        "mean_outer_interval": [
+          -0.5,
+          0.75
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q1-0",
+            "seed": 34201,
+            "weight": 1
+          },
+          {
+            "game_id": "34302-q1-1",
+            "seed": 34302,
+            "weight": 1
+          },
+          {
+            "game_id": "34401-q1-2",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-0",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-2",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34301-q1-1"
+        ]
+      },
+      "D-B": {
+        "finite_observed_net": -1,
+        "unknown_radius": 5,
+        "hypothetical_net_outer_interval": [
+          -6,
+          4
+        ],
+        "mean_outer_interval": [
+          -0.75,
+          0.5
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34301-q1-0",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34301-q1-1",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q1-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-1",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": [
+          "34201-q1-0"
+        ]
+      },
+      "I": {
+        "finite_observed_net": -2,
+        "unknown_radius": 10,
+        "hypothetical_net_outer_interval": [
+          -12,
+          8
+        ],
+        "mean_outer_interval": [
+          -1.5,
+          1.0
+        ],
+        "noncanceling_unknown_games": [
+          {
+            "game_id": "34201-q1-0",
+            "seed": 34201,
+            "weight": -1
+          },
+          {
+            "game_id": "34301-q1-0",
+            "seed": 34301,
+            "weight": 1
+          },
+          {
+            "game_id": "34301-q1-1",
+            "seed": 34301,
+            "weight": -1
+          },
+          {
+            "game_id": "34302-q1-1",
+            "seed": 34302,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q1-1",
+            "seed": 34401,
+            "weight": -1
+          },
+          {
+            "game_id": "34401-q1-2",
+            "seed": 34401,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-q1-0",
+            "seed": 34402,
+            "weight": 1
+          },
+          {
+            "game_id": "34402-q1-1",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-2",
+            "seed": 34402,
+            "weight": -1
+          },
+          {
+            "game_id": "34402-q1-3",
+            "seed": 34402,
+            "weight": 1
+          }
+        ],
+        "canceling_shared_unknown_games": []
+      }
+    }
+  },
+  "assumption": "Hypotheticalunobservedterminaltargets in[-1,1]; sameactualsharedtrajectorymusthaveONEtargetacrosscellaliases. Thisisdependentouter-sensitivityanalysis, notproofthatallboundsarefeasiblelegalcontinuations orstatisticalconfidence/optimalWDL. No gameextended, UNKNOWNnotrelabeled."
+}
