@@ -1,5 +1,5 @@
 {
-  "status": "RESEARCH_ENDED_REVIEWED_READY_PUBLICATION_PENDING",
+  "status": "PUBLISHED_SCIENCE_FULL_REMOTE_SHA_AND_ANONYMOUS_PUBLIC_VERIFIED",
   "session_id": "9bda934e-e1ff-4744-856a-abfaceb74aee",
   "started_at": "2026-10-16T11:51:52.472418+00:00",
   "ended_at": "2026-10-16T13:15:43.540442+00:00",
@@ -10,8 +10,8 @@
   "all_producers_closed": true,
   "branch": "sidemission",
   "required_visibility": "PUBLIC",
-  "remote_source_sha": null,
-  "anonymous_read_verified": false,
+  "remote_source_sha": "32d9afb569b148464da0354aa8b463aae93e241d",
+  "anonymous_read_verified": true,
   "replay": {
     "archives": 16,
     "payload_checks": 2303,
@@ -21,5 +21,76 @@
     "failures": 0,
     "skipped": 0
   },
-  "scope": "Scientificresults/replayqualified; thisprecommitreceipt makesNOpublicationclaim. Followingdeliveryreceipt willbindpublishedscienceSHAafteractualremote/anonymouschecks. No master/sandbox/default/PRIMARYwrite."
+  "scope": "Thisclosingrecord bindsimmutable publishedscience32d9afb5 andactual83.851minuteendedsession. ItsownGitmetadatarevision isavailablefromGitURL andverifiedseparatelyafterpush, avoiding self-referentialSHA. No master/sandbox/default/PRIMARYwrite. RawAPI/Slack receiptsprivateignored.",
+  "repository_visibility": "PUBLIC",
+  "visibility_changed": false,
+  "source_files_checked": [
+    {
+      "path": "results/dev_aux/SEGMENT_20261016_76.md",
+      "status": 200,
+      "sha256": "7fe1c8686fb52e8904bacc6414a63c411b12339168181d58aadacbe30d2c832d",
+      "bytes": 7975
+    },
+    {
+      "path": "results/dev_aux/REPLAY_20261016_76.md",
+      "status": 200,
+      "sha256": "ebdfc3c3e883cad9b1df86869b97487bb04ec027adb0c0a15d456551d2410616",
+      "bytes": 1254
+    },
+    {
+      "path": "results/dev_aux/task2210/player.py",
+      "status": 200,
+      "sha256": "7ccb2f11ef245af812c8d42655f6483823637fd3f0309444b5eb3c2d3e703ecc",
+      "bytes": 12063
+    },
+    {
+      "path": "results/dev_aux/task2220/study.py",
+      "status": 200,
+      "sha256": "651e69bea806fd3adda9b44f78256a9f788e5cb3801525452bd115db535bfd31",
+      "bytes": 16972
+    },
+    {
+      "path": "results/dev_aux/task2224/study.py",
+      "status": 200,
+      "sha256": "c71250ef94b976f395557497beadc873b6061bcda1e93f64ecce9609aed8138b",
+      "bytes": 12125
+    },
+    {
+      "path": "results/dev_aux/task2226/restore-receipt.json",
+      "status": 200,
+      "sha256": "ae6db2cc14613580baffcea3f2843f311a1c48d3b28b0ce0519d3195e344a6db",
+      "bytes": 902
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261016_76.json",
+      "status": 200,
+      "sha256": "c5382d258da9077ba563e733b8697f92831d08493be972ac9f450ebef2f2477d",
+      "bytes": 2803
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "status": 200,
+      "sha256": "ee1ebc64962b3784a2403074d9c896ff745003b3aea9f2b4f381d8df77dbb8e9",
+      "bytes": 203729
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_76A.zip",
+      "status": 200,
+      "sha256": "eb53233645b397345ec8cc11bc2132864b4399f01f7c0b9118d5f2f573d7441b",
+      "bytes": 71149463
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_76B.zip",
+      "status": 200,
+      "sha256": "82a66a1b57ea35017ca686ca7506a797fb8be6c194e408a6a49942b1c98a0c07",
+      "bytes": 75136759
+    },
+    {
+      "path": "results/dev_aux/DELTA_REPRO_20261016_76C.zip",
+      "status": 200,
+      "sha256": "f8e8d29555a4f147386a8c2b52fc1374b777727c980835fd3decaa1750253121",
+      "bytes": 8935
+    }
+  ],
+  "source_verification_utc": "2026-10-16T13:21:00.303203+00:00"
 }
