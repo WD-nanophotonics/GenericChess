@@ -269,17 +269,36 @@ task is closed; frozen evidence and search-first selection remain. Latest AUX67
 learning execution/adoption. Zero-return proposal remains unadopted: legal
 executor progress/payoff assumptions and actual DRAW versus UNKNOWN stay distinct.
 
-Current next question: can simple root playability improve information per
-TOTAL cost under an explicitly changed sampling distribution? ALL56existing
-planned roots retain54actual/2tails; Native physical-one-step goal finds4wins/
-50without, .242s query caller excluding compile/engine/rootreplay. Corrected
-same1s Core control has48decidable matches/6UNKNOWN; original hot-loop disk
-polling mistake/censors remain. No filter deployed or oldroot relabeled.
-Before NEW conditional-mu sampling freeze raw/conditional protocols, attempts/
-seeds/cost, keep complete promotion/drop/aux/history and failures. Trivial-root
-quota is not automatically a compute bottleneck or a ban on unrestrictedmu.
-Begin a small charged raw-versus-conditional generator feasibility comparison;
-only a changed premise justifies another cache/price route. Science is OPEN.
+Current sampling result: actual cold raw/conditional pipelines retain30/32slots
+versus32from37candidates. Conditional pernonwin processcost is1.032/1.143/
+1.131/1.114 ofraw by4/8/12/16. Tail-only control explains4boardextra roots;
+8/12samples are identical;16replaces one cheapimmediatewin. No defaultfilter.
+These smallcohort pointresults do not establish universal filtering harm.
+
+All264new budgetcurve calls retainfullhistory/fields and0readinessrefusals;
+q0/q1 are different objectives.16exposed commonfuture games/4parents include
+a longer-budget WIN-to-LOSS, not a population short-search advantage. PaidCore
+D7/D8 objectives agreewithNativeTT0/16; independentD10 remainscensored.
+48NEWpreset/symmetryfamilies retain90roots/6tails,78jointD2agree/12censors;
+allpromotion/drop/history kept, no generatedaux coverage orall-domainclaim.
+
+New fixedopponent q-by-Unit/static valuation panel is56actualgames/8families/
+64roleobservations,31actualterminals/25finite64plyUNKNOWN. A3W3L10U,
+B5W5L6U,C4W4L8U,D7W4L5U. D-C+3/16 andinteraction+3/16 bothfamilyintervals
+cross0; oneWIN-to-LOSS retained. C-A0CI0 ispairedcancellation, notprice
+equivalence. No power/equivalencemargin, no training/price/qdefaultadoption.
+No claim past engineering has generally no benefit or material is the cause.
+Fullscope/failures: PLAYABILITY_SAMPLING_AND_VALUE_INTERACTION_20261016.md.
+
+Current next attribution is alreadybegun:48fullcommonprefixpairs yield39actor
+firstdifferences/9sameprefix/0opponentfirstdifferences,34distinctfullstates.
+204freshD2controlqueries show valuationactionchanges17/34(q0),21/33(q1);
+65of68Coreq0 objectives agree/3censors. This isdecisionleverage, notquality.
+Continue exactcommonstate finite-horizon/budget attribution before a larger
+game/heuristic/model campaign; keepjointleaf/order/scaleeffects distinct.
+CHAT_Comments isreference, AUX68e5251f3 FULL_REPORT_READ_ONLY anduntransferred.
+Sourcecopy firstfailedmissing39commoninputs; baseZIPkept, exactsupportand
+correctedreceipt published separately. Science remains OPEN.
 
 16normal/reconstruction-counter calls all non-time fields match: measured
 canonical sections are~1-2microseconds at the two testedq4hardstops, not their

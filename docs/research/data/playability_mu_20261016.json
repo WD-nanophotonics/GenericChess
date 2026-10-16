@@ -1,0 +1,1904 @@
+{
+  "acquisition-summary": {
+    "complete": true,
+    "groups": [
+      {
+        "board": 4,
+        "arms": {
+          "raw": {
+            "accepted": 6,
+            "seconds": 0.14965969999320805,
+            "counts": {
+              "TERMINAL_TAIL": 2,
+              "RAW_ROOT": 6
+            },
+            "selected": [
+              20402,
+              20403,
+              20404,
+              20405,
+              20406,
+              20407
+            ],
+            "generation_attempts": 32,
+            "process_seconds": 0.543989199999487,
+            "observed_one_step_nonwins": 6,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.09066486666658118
+          },
+          "conditional": {
+            "accepted": 8,
+            "seconds": 0.3050900000089314,
+            "counts": {
+              "TERMINAL_TAIL": 4,
+              "NO_ONE_STEP_PHYSICAL_WIN": 8
+            },
+            "selected": [
+              20402,
+              20403,
+              20404,
+              20405,
+              20406,
+              20407,
+              20411,
+              20412
+            ],
+            "generation_attempts": 45,
+            "process_seconds": 0.7483916000055615,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.09354895000069519
+          }
+        },
+        "scope": "Actualpairedcoldprocess streams; rawfirst8slots, conditionaltarget8cap16. Extraaccepts may solelyreflecttailretry; do not callbenefitfromwinningrootfilteralone.",
+        "conditional_over_raw_nonwin_unit_cost": 1.0318103741851867
+      },
+      {
+        "board": 8,
+        "arms": {
+          "raw": {
+            "accepted": 8,
+            "seconds": 0.6177150999719743,
+            "counts": {
+              "RAW_ROOT": 8
+            },
+            "selected": [
+              20801,
+              20802,
+              20803,
+              20804,
+              20805,
+              20806,
+              20807,
+              20808
+            ],
+            "generation_attempts": 13,
+            "process_seconds": 1.0263612000271678,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.12829515000339597
+          },
+          "conditional": {
+            "accepted": 8,
+            "seconds": 0.7081860000034794,
+            "counts": {
+              "NO_ONE_STEP_PHYSICAL_WIN": 8
+            },
+            "selected": [
+              20801,
+              20802,
+              20803,
+              20804,
+              20805,
+              20806,
+              20807,
+              20808
+            ],
+            "generation_attempts": 13,
+            "process_seconds": 1.1733925999724306,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.14667407499655383
+          }
+        },
+        "scope": "Actualpairedcoldprocess streams; rawfirst8slots, conditionaltarget8cap16. Extraaccepts may solelyreflecttailretry; do not callbenefitfromwinningrootfilteralone.",
+        "conditional_over_raw_nonwin_unit_cost": 1.1432550255615381
+      },
+      {
+        "board": 12,
+        "arms": {
+          "raw": {
+            "accepted": 8,
+            "seconds": 2.006503900018288,
+            "counts": {
+              "RAW_ROOT": 8
+            },
+            "selected": [
+              21201,
+              21202,
+              21203,
+              21204,
+              21205,
+              21206,
+              21207,
+              21208
+            ],
+            "generation_attempts": 11,
+            "process_seconds": 2.423300599999493,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.3029125749999366
+          },
+          "conditional": {
+            "accepted": 8,
+            "seconds": 2.266469499998493,
+            "counts": {
+              "NO_ONE_STEP_PHYSICAL_WIN": 8
+            },
+            "selected": [
+              21201,
+              21202,
+              21203,
+              21204,
+              21205,
+              21206,
+              21207,
+              21208
+            ],
+            "generation_attempts": 11,
+            "process_seconds": 2.741459800017765,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.3426824750022206
+          }
+        },
+        "scope": "Actualpairedcoldprocess streams; rawfirst8slots, conditionaltarget8cap16. Extraaccepts may solelyreflecttailretry; do not callbenefitfromwinningrootfilteralone.",
+        "conditional_over_raw_nonwin_unit_cost": 1.1312916771523676
+      },
+      {
+        "board": 16,
+        "arms": {
+          "raw": {
+            "accepted": 8,
+            "seconds": 5.755307099985657,
+            "counts": {
+              "RAW_ROOT": 8
+            },
+            "selected": [
+              21601,
+              21602,
+              21603,
+              21604,
+              21605,
+              21606,
+              21607,
+              21608
+            ],
+            "generation_attempts": 13,
+            "process_seconds": 6.196198799996637,
+            "observed_one_step_nonwins": 7,
+            "observed_one_step_wins": 1,
+            "process_cost_per_observed_nonwin": 0.8851712571423767
+          },
+          "conditional": {
+            "accepted": 8,
+            "seconds": 7.37459459999809,
+            "counts": {
+              "NO_ONE_STEP_PHYSICAL_WIN": 8,
+              "ONE_STEP_PHYSICAL_WIN": 1
+            },
+            "selected": [
+              21601,
+              21602,
+              21603,
+              21605,
+              21606,
+              21607,
+              21608,
+              21609
+            ],
+            "generation_attempts": 14,
+            "process_seconds": 7.8915095000120346,
+            "observed_one_step_nonwins": 8,
+            "observed_one_step_wins": 0,
+            "process_cost_per_observed_nonwin": 0.9864386875015043
+          }
+        },
+        "scope": "Actualpairedcoldprocess streams; rawfirst8slots, conditionaltarget8cap16. Extraaccepts may solelyreflecttailretry; do not callbenefitfromwinningrootfilteralone.",
+        "conditional_over_raw_nonwin_unit_cost": 1.1144043364964789
+      }
+    ],
+    "distinct_selected_roots": 33,
+    "original_failed_profiles_retained": true,
+    "classification": {
+      "native": {
+        "NO_ONE_STEP_PHYSICAL_WIN": 32,
+        "ONE_STEP_PHYSICAL_WIN": 1
+      },
+      "core": {
+        "NO_ONE_STEP_PHYSICAL_WIN": 29,
+        "UNKNOWN": 3,
+        "ONE_STEP_PHYSICAL_WIN": 1
+      },
+      "joint_decidable_matches": 30,
+      "scope": "33unionroots;30jointdecidableagree/3CoreUNKNOWN; nonwin isnotWDL orlearningutility."
+    },
+    "decision": "No default filtering.8/12cohorts identical;4extraaccepted entirelytailretry;16replacesonecheapwin. No demonstrated searchgain, cost per nonwin and allsetup charged; conditionalmu only explicitly different optionaldiagnostic distribution."
+  },
+  "tail-only-summary": {
+    "complete": true,
+    "groups": [
+      {
+        "board": 4,
+        "selected": [
+          20402,
+          20403,
+          20404,
+          20405,
+          20406,
+          20407,
+          20411,
+          20412
+        ],
+        "accepted": 8,
+        "seconds": 0.2198338000162039,
+        "process_seconds": 0.5555822000023909,
+        "same_as_conditional": true,
+        "same_as_raw": false
+      },
+      {
+        "board": 8,
+        "selected": [
+          20801,
+          20802,
+          20803,
+          20804,
+          20805,
+          20806,
+          20807,
+          20808
+        ],
+        "accepted": 8,
+        "seconds": 0.5790535999985877,
+        "process_seconds": 0.933082600007765,
+        "same_as_conditional": true,
+        "same_as_raw": true
+      },
+      {
+        "board": 12,
+        "selected": [
+          21201,
+          21202,
+          21203,
+          21204,
+          21205,
+          21206,
+          21207,
+          21208
+        ],
+        "accepted": 8,
+        "seconds": 1.8791578000236768,
+        "process_seconds": 2.2415617000078782,
+        "same_as_conditional": true,
+        "same_as_raw": true
+      },
+      {
+        "board": 16,
+        "selected": [
+          21601,
+          21602,
+          21603,
+          21604,
+          21605,
+          21606,
+          21607,
+          21608
+        ],
+        "accepted": 8,
+        "seconds": 5.337478300003568,
+        "process_seconds": 5.715981999994256,
+        "same_as_conditional": false,
+        "same_as_raw": true
+      }
+    ],
+    "scope": "ExplicitEXPOSED followup diagnostic, freshprocess sameknownstreams/caps.4/8/12tailonly reproducesconditional selections exactly;16tailonly retains rawone-stepwin. Noninterleavedtimings under ordinarycurve load, no significance/universalcostclaim. No filterdefaultadoption."
+  },
+  "core-summary": {
+    "complete": true,
+    "calls": 132,
+    "pairs": 66,
+    "joint_complete": 41,
+    "joint_by_depth": {
+      "2": 32,
+      "3": 9
+    },
+    "censored_pairs": 25,
+    "seconds": 64.53977830000804,
+    "scope": "All-CoreexistingAlphaBeta noTT/noordering/noNativelegality vsNative samequantizedstaticprofile. Finiteq0 D2/D3/8192visits. Sharedcompiler/host plusordinaryconcurrentload; actionties andcensors notscoreerrors, noWDL/all-domainclaim."
+  },
+  "domain-summary": {
+    "complete": true,
+    "planned_families": 48,
+    "planned_root_slots": 96,
+    "rows": 96,
+    "kind_counts": {
+      "ACTUAL_ROOT": 90,
+      "TERMINAL_TAIL": 6
+    },
+    "actual_roots": 90,
+    "joint_complete": 78,
+    "all_joint_scores_match": true,
+    "actual_search_receipts": 270,
+    "seconds": 47.568436000001384,
+    "strata": [
+      {
+        "preset": "classic_like",
+        "symmetry": "bilateral",
+        "actual_roots": 15,
+        "tails": 1,
+        "joint_finite_complete": 15
+      },
+      {
+        "preset": "classic_like",
+        "symmetry": "none",
+        "actual_roots": 15,
+        "tails": 1,
+        "joint_finite_complete": 14
+      },
+      {
+        "preset": "bilateral_random",
+        "symmetry": "bilateral",
+        "actual_roots": 16,
+        "tails": 0,
+        "joint_finite_complete": 10
+      },
+      {
+        "preset": "bilateral_random",
+        "symmetry": "none",
+        "actual_roots": 15,
+        "tails": 1,
+        "joint_finite_complete": 14
+      },
+      {
+        "preset": "free_random",
+        "symmetry": "bilateral",
+        "actual_roots": 14,
+        "tails": 2,
+        "joint_finite_complete": 11
+      },
+      {
+        "preset": "free_random",
+        "symmetry": "none",
+        "actual_roots": 15,
+        "tails": 1,
+        "joint_finite_complete": 14
+      }
+    ],
+    "scope": "48NEWfamilies/96plannedroot0or8slots; existing3presets/2symmetries/4boards. Fullrule/state semantics preserved, notallDSLdomain/independentWDL. Nativepredicate plusfiniteD2 staticCore/Native controls; sharedcompiler/host/concurrentcurve timings. No defaultfilter/price/qchange.",
+    "mechanism_footprint": {
+      "families": 48,
+      "rules_with_promotion": 48,
+      "rules_with_drop": 48,
+      "root_records": 96,
+      "roots_with_hands": 23,
+      "roots_with_promoted_or_changed_type": 13,
+      "roots_with_aux_values": 0,
+      "physical_walk_edges": 366,
+      "walk_drop_actions": 33,
+      "walk_promotions": 29
+    }
+  },
+  "curve-summary": {
+    "complete": true,
+    "queries": 264,
+    "whole_seconds": 1026.241485299979,
+    "caller_seconds": 1012.8826135999989,
+    "setup_seconds": 7.62037629992119,
+    "execution_refusals": 0,
+    "max_overrun_seconds": 0,
+    "cells": [
+      {
+        "board": 4,
+        "budget": 0.25,
+        "pairs": 8,
+        "q1_depth_lower": 8,
+        "q1_depth_same": 0,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 8,
+        "q1_depth4": 8
+      },
+      {
+        "board": 4,
+        "budget": 1,
+        "pairs": 8,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 1,
+        "q0_depth4": 8,
+        "q1_depth4": 8
+      },
+      {
+        "board": 4,
+        "budget": 4,
+        "pairs": 8,
+        "q1_depth_lower": 5,
+        "q1_depth_same": 3,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 8,
+        "q1_depth4": 8
+      },
+      {
+        "board": 4,
+        "budget": 16,
+        "pairs": 8,
+        "q1_depth_lower": 5,
+        "q1_depth_same": 3,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 8,
+        "q1_depth4": 8
+      },
+      {
+        "board": 8,
+        "budget": 0.25,
+        "pairs": 8,
+        "q1_depth_lower": 7,
+        "q1_depth_same": 1,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 8,
+        "q1_depth4": 1
+      },
+      {
+        "board": 8,
+        "budget": 1,
+        "pairs": 8,
+        "q1_depth_lower": 8,
+        "q1_depth_same": 0,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 8,
+        "q1_depth4": 4
+      },
+      {
+        "board": 8,
+        "budget": 4,
+        "pairs": 8,
+        "q1_depth_lower": 5,
+        "q1_depth_same": 3,
+        "q1_depth_higher": 0,
+        "action_changes": 1,
+        "q0_depth4": 8,
+        "q1_depth4": 7
+      },
+      {
+        "board": 8,
+        "budget": 16,
+        "pairs": 8,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 1,
+        "q0_depth4": 8,
+        "q1_depth4": 8
+      },
+      {
+        "board": 12,
+        "budget": 0.25,
+        "pairs": 8,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 1,
+        "q1_depth4": 0
+      },
+      {
+        "board": 12,
+        "budget": 1,
+        "pairs": 8,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 6,
+        "q1_depth4": 0
+      },
+      {
+        "board": 12,
+        "budget": 4,
+        "pairs": 8,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 8,
+        "q1_depth4": 4
+      },
+      {
+        "board": 12,
+        "budget": 16,
+        "pairs": 8,
+        "q1_depth_lower": 4,
+        "q1_depth_same": 4,
+        "q1_depth_higher": 0,
+        "action_changes": 0,
+        "q0_depth4": 8,
+        "q1_depth4": 7
+      },
+      {
+        "board": 16,
+        "budget": 0.25,
+        "pairs": 9,
+        "q1_depth_lower": 7,
+        "q1_depth_same": 2,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 0,
+        "q1_depth4": 0
+      },
+      {
+        "board": 16,
+        "budget": 1,
+        "pairs": 9,
+        "q1_depth_lower": 4,
+        "q1_depth_same": 5,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 2,
+        "q1_depth4": 0
+      },
+      {
+        "board": 16,
+        "budget": 4,
+        "pairs": 9,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 3,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 6,
+        "q1_depth4": 1
+      },
+      {
+        "board": 16,
+        "budget": 16,
+        "pairs": 9,
+        "q1_depth_lower": 6,
+        "q1_depth_same": 3,
+        "q1_depth_higher": 0,
+        "action_changes": 2,
+        "q0_depth4": 8,
+        "q1_depth4": 5
+      }
+    ],
+    "protocols": [
+      {
+        "board": 4,
+        "arm": "raw",
+        "roots": 6,
+        "selected_seeds": [
+          20402,
+          20403,
+          20404,
+          20405,
+          20406,
+          20407
+        ],
+        "curve_calls": 48,
+        "caller_seconds": 103.20920860001934,
+        "curvecost_per_selected_root": 17.20153476666989,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 4,
+        "arm": "conditional",
+        "roots": 8,
+        "selected_seeds": [
+          20402,
+          20403,
+          20404,
+          20405,
+          20406,
+          20407,
+          20411,
+          20412
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 138.17062840002473,
+        "curvecost_per_selected_root": 17.27132855000309,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 8,
+        "arm": "raw",
+        "roots": 8,
+        "selected_seeds": [
+          20801,
+          20802,
+          20803,
+          20804,
+          20805,
+          20806,
+          20807,
+          20808
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 235.43780640000477,
+        "curvecost_per_selected_root": 29.429725800000597,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 8,
+        "arm": "conditional",
+        "roots": 8,
+        "selected_seeds": [
+          20801,
+          20802,
+          20803,
+          20804,
+          20805,
+          20806,
+          20807,
+          20808
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 235.43780640000477,
+        "curvecost_per_selected_root": 29.429725800000597,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 12,
+        "arm": "raw",
+        "roots": 8,
+        "selected_seeds": [
+          21201,
+          21202,
+          21203,
+          21204,
+          21205,
+          21206,
+          21207,
+          21208
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 304.58817769991583,
+        "curvecost_per_selected_root": 38.07352221248948,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 12,
+        "arm": "conditional",
+        "roots": 8,
+        "selected_seeds": [
+          21201,
+          21202,
+          21203,
+          21204,
+          21205,
+          21206,
+          21207,
+          21208
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 304.58817769991583,
+        "curvecost_per_selected_root": 38.07352221248948,
+        "physical_shortcut_calls": 0
+      },
+      {
+        "board": 16,
+        "arm": "raw",
+        "roots": 8,
+        "selected_seeds": [
+          21601,
+          21602,
+          21603,
+          21604,
+          21605,
+          21606,
+          21607,
+          21608
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 292.3380977000634,
+        "curvecost_per_selected_root": 36.54226221250792,
+        "physical_shortcut_calls": 8
+      },
+      {
+        "board": 16,
+        "arm": "conditional",
+        "roots": 8,
+        "selected_seeds": [
+          21601,
+          21602,
+          21603,
+          21605,
+          21606,
+          21607,
+          21608,
+          21609
+        ],
+        "curve_calls": 64,
+        "caller_seconds": 334.6115562999912,
+        "curvecost_per_selected_root": 41.8264445374989,
+        "physical_shortcut_calls": 0
+      }
+    ],
+    "physical_immediate_win_seed": 21604,
+    "scope": "264calls/33unionroots. ColdTT16 andsame1Mtotalnodeceiling, varyingcallerwallcaps .25/1/4/16, notpurewallonlyunboundedwork. q0disabled/q1differentfiniteobjective; depth/action/score changesnotstrength. Sharedraw/conditionalroots are dependent. TimingincludesordinaryconcurrentCore/domain/reader phases; no exclusivity oruniversalperformanceclaim.",
+    "same_q_short_long_choices": [
+      {
+        "board": 4,
+        "q": 0,
+        "changed_seeds": [
+          20404
+        ],
+        "total": 8
+      },
+      {
+        "board": 4,
+        "q": 1,
+        "changed_seeds": [
+          20404
+        ],
+        "total": 8
+      },
+      {
+        "board": 8,
+        "q": 0,
+        "changed_seeds": [
+          20801,
+          20802,
+          20803,
+          20804
+        ],
+        "total": 8
+      },
+      {
+        "board": 8,
+        "q": 1,
+        "changed_seeds": [
+          20801,
+          20802,
+          20803,
+          20804
+        ],
+        "total": 8
+      },
+      {
+        "board": 12,
+        "q": 0,
+        "changed_seeds": [
+          21205,
+          21208
+        ],
+        "total": 8
+      },
+      {
+        "board": 12,
+        "q": 1,
+        "changed_seeds": [
+          21205,
+          21208
+        ],
+        "total": 8
+      },
+      {
+        "board": 16,
+        "q": 0,
+        "changed_seeds": [
+          21602,
+          21605,
+          21606
+        ],
+        "total": 9
+      },
+      {
+        "board": 16,
+        "q": 1,
+        "changed_seeds": [
+          21602,
+          21605,
+          21606
+        ],
+        "total": 9
+      }
+    ]
+  },
+  "followup-summary": {
+    "complete": true,
+    "actual_games": 16,
+    "unique_forced_parent_action_groups": 9,
+    "outcomes_by_branch": {
+      "short_first": {
+        "WIN": 6,
+        "LOSS": 2
+      },
+      "long_first": {
+        "LOSS": 4,
+        "WIN": 4
+      }
+    },
+    "physical_edges": 752,
+    "query_receipts": 736,
+    "seconds": 177.89163319999352,
+    "duplicate_execution_controls": [
+      {
+        "seed": 20404,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "WIN",
+          "WIN"
+        ]
+      },
+      {
+        "seed": 20404,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "LOSS",
+          "LOSS"
+        ]
+      },
+      {
+        "seed": 20801,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "WIN",
+          "WIN"
+        ]
+      },
+      {
+        "seed": 20801,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "WIN",
+          "WIN"
+        ]
+      },
+      {
+        "seed": 21205,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "WIN",
+          "WIN"
+        ]
+      },
+      {
+        "seed": 21205,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "WIN",
+          "WIN"
+        ]
+      },
+      {
+        "seed": 21602,
+        "replicates": 2,
+        "all_physical_paths_equal": true,
+        "outcomes": [
+          "LOSS",
+          "LOSS"
+        ]
+      }
+    ],
+    "scope": "EXPOSED firstsensitivecase foreachboard/q;8qcases only4distinctparents. Actualduplicateexecutioncounts retained, notindependentfamilies. Commonfuturefixedq0D3/32768/timecap, notall-defense WDL orglobalshortbetter. All16actuallyterminal, no newcapafterlabels.",
+    "pairs": [
+      {
+        "case_index": 0,
+        "seed": 20404,
+        "q": 0,
+        "short": "WIN",
+        "long": "LOSS",
+        "short_seconds": 0.5691955999936908,
+        "long_seconds": 0.8442929000011645
+      },
+      {
+        "case_index": 1,
+        "seed": 20404,
+        "q": 1,
+        "short": "WIN",
+        "long": "LOSS",
+        "short_seconds": 0.577085500000976,
+        "long_seconds": 0.8559758999908809
+      },
+      {
+        "case_index": 2,
+        "seed": 20801,
+        "q": 0,
+        "short": "WIN",
+        "long": "WIN",
+        "short_seconds": 2.8755087000026833,
+        "long_seconds": 1.7057247000047937
+      },
+      {
+        "case_index": 3,
+        "seed": 20801,
+        "q": 1,
+        "short": "WIN",
+        "long": "WIN",
+        "short_seconds": 2.898492200009059,
+        "long_seconds": 1.7185612999892328
+      },
+      {
+        "case_index": 4,
+        "seed": 21205,
+        "q": 0,
+        "short": "WIN",
+        "long": "WIN",
+        "short_seconds": 5.120677400002023,
+        "long_seconds": 19.01976600001217
+      },
+      {
+        "case_index": 5,
+        "seed": 21205,
+        "q": 1,
+        "short": "WIN",
+        "long": "WIN",
+        "short_seconds": 5.197972099995241,
+        "long_seconds": 18.9933377999987
+      },
+      {
+        "case_index": 6,
+        "seed": 21602,
+        "q": 0,
+        "short": "LOSS",
+        "long": "LOSS",
+        "short_seconds": 36.97803510000813,
+        "long_seconds": 6.723119300004328
+      },
+      {
+        "case_index": 7,
+        "seed": 21602,
+        "q": 1,
+        "short": "LOSS",
+        "long": "LOSS",
+        "short_seconds": 31.558270899986383,
+        "long_seconds": 37.43918830002076
+      }
+    ],
+    "literal_reply_diagnostics": {
+      "choices": 69,
+      "kind_counts": {
+        "NONE_FOUND_ONE_PLY": 63,
+        "UNKNOWN": 5,
+        "SELECTED_CHILD_TERMINAL": 1
+      },
+      "actual_replies": 2602,
+      "seconds": 14.86371429997962
+    },
+    "counterexample": {
+      "requested_depths": [
+        7,
+        10
+      ],
+      "core_retained_depths": [
+        7,
+        8
+      ],
+      "d7_both_native_tt_match": true,
+      "d8_already_paid_core_binding_both_match": true,
+      "d10_independent_core_validation": "CENSORED_NOT_ESTABLISHED",
+      "scope": "ObservedW-to-L commonfuture doesnotbyitselfestablishfiniteobjectivebug. CoreD7/D8agreements arelocal; D10remainsnot independentlyvalidated, no capextension/newsolver/WDLgate."
+    }
+  },
+  "interaction-summary": {
+    "complete": true,
+    "planned_families": 8,
+    "planned_actor_slots": 64,
+    "planned_games": 56,
+    "actual_games": 56,
+    "missing_planned_game_slots": 0,
+    "outcomes": {
+      "A": {
+        "WIN": 3,
+        "LOSS": 3,
+        "UNKNOWN": 10
+      },
+      "B": {
+        "WIN": 5,
+        "LOSS": 5,
+        "UNKNOWN": 6
+      },
+      "C": {
+        "WIN": 4,
+        "LOSS": 4,
+        "UNKNOWN": 8
+      },
+      "D": {
+        "WIN": 7,
+        "LOSS": 4,
+        "UNKNOWN": 5
+      }
+    },
+    "contrasts": {
+      "B_minus_A": {
+        "raw_net_sum": 0,
+        "planned_role_denominator": 16,
+        "normalized": 0.0,
+        "family_bootstrap_interval": [
+          -0.25,
+          0.25
+        ],
+        "family_nets": [
+          0,
+          0,
+          -1,
+          0,
+          -1,
+          1,
+          1,
+          0
+        ]
+      },
+      "D_minus_C": {
+        "raw_net_sum": 3,
+        "planned_role_denominator": 16,
+        "normalized": 0.1875,
+        "family_bootstrap_interval": [
+          -0.1875,
+          0.5625
+        ],
+        "family_nets": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          -2,
+          0
+        ]
+      },
+      "C_minus_A": {
+        "raw_net_sum": 0,
+        "planned_role_denominator": 16,
+        "normalized": 0.0,
+        "family_bootstrap_interval": [
+          0.0,
+          0.0
+        ],
+        "family_nets": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "D_minus_B": {
+        "raw_net_sum": 3,
+        "planned_role_denominator": 16,
+        "normalized": 0.1875,
+        "family_bootstrap_interval": [
+          -0.375,
+          0.625
+        ],
+        "family_nets": [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1,
+          -3,
+          0
+        ]
+      },
+      "interaction_DminusC_minus_BminusA": {
+        "raw_net_sum": 3,
+        "planned_role_denominator": 16,
+        "normalized": 0.1875,
+        "family_bootstrap_interval": [
+          -0.375,
+          0.625
+        ],
+        "family_nets": [
+          0,
+          0,
+          2,
+          1,
+          2,
+          1,
+          -3,
+          0
+        ]
+      }
+    },
+    "transitions": {
+      "A_to_B": {
+        "WIN->WIN": 3,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->UNKNOWN": 6,
+        "UNKNOWN->LOSS": 2,
+        "UNKNOWN->WIN": 2
+      },
+      "C_to_D": {
+        "WIN->WIN": 3,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->WIN": 4,
+        "UNKNOWN->UNKNOWN": 4,
+        "LOSS->UNKNOWN": 1,
+        "WIN->LOSS": 1
+      },
+      "A_to_C": {
+        "WIN->WIN": 3,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->UNKNOWN": 8,
+        "UNKNOWN->LOSS": 1,
+        "UNKNOWN->WIN": 1
+      },
+      "B_to_D": {
+        "WIN->WIN": 4,
+        "LOSS->LOSS": 2,
+        "UNKNOWN->WIN": 2,
+        "LOSS->UNKNOWN": 2,
+        "LOSS->WIN": 1,
+        "UNKNOWN->UNKNOWN": 3,
+        "UNKNOWN->LOSS": 1,
+        "WIN->LOSS": 1
+      }
+    },
+    "cost_by_game_arm": {
+      "A": {
+        "actual_games": 16,
+        "actual_game_seconds": 383.99947600005544,
+        "physical_edges": 776,
+        "query_receipts": 776,
+        "mean_seconds_per_actual_game": 23.999967250003465
+      },
+      "B": {
+        "actual_games": 16,
+        "actual_game_seconds": 312.2858838000102,
+        "physical_edges": 645,
+        "query_receipts": 645,
+        "mean_seconds_per_actual_game": 19.517867737500637
+      },
+      "C": {
+        "actual_games": 8,
+        "actual_game_seconds": 186.73045960004674,
+        "physical_edges": 385,
+        "query_receipts": 385,
+        "mean_seconds_per_actual_game": 23.341307450005843
+      },
+      "D": {
+        "actual_games": 16,
+        "actual_game_seconds": 325.1701960999635,
+        "physical_edges": 674,
+        "query_receipts": 674,
+        "mean_seconds_per_actual_game": 20.32313725624772
+      }
+    },
+    "total_seconds": 1226.8363799999934,
+    "ending_causes": {
+      "ACTUAL_TERMINAL": 31,
+      "FINITE_PLY_CAP_UNKNOWN": 25
+    },
+    "family_role_labels": [
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "A",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "A",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "B",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "B",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "C",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "C",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "D",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34101,
+        "board": 4,
+        "cell": "D",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "A",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "A",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "B",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "B",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "C",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "C",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "D",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34102,
+        "board": 4,
+        "cell": "D",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "A",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "A",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "B",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "B",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "C",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "C",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "D",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34201,
+        "board": 8,
+        "cell": "D",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "A",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "A",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "B",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "B",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "C",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "C",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "D",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34202,
+        "board": 8,
+        "cell": "D",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "A",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "A",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "B",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "B",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "C",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "C",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "D",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34301,
+        "board": 12,
+        "cell": "D",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "A",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "A",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "B",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "B",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "C",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "C",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "D",
+        "role": 0,
+        "label": "WIN"
+      },
+      {
+        "seed": 34302,
+        "board": 12,
+        "cell": "D",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "A",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "A",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "B",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "B",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "C",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "C",
+        "role": 1,
+        "label": "WIN"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "D",
+        "role": 0,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34401,
+        "board": 16,
+        "cell": "D",
+        "role": 1,
+        "label": "LOSS"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "A",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "A",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "B",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "B",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "C",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "C",
+        "role": 1,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "D",
+        "role": 0,
+        "label": "UNKNOWN"
+      },
+      {
+        "seed": 34402,
+        "board": 16,
+        "cell": "D",
+        "role": 1,
+        "label": "UNKNOWN"
+      }
+    ],
+    "scope": "Exploratorypairedfamilybootstrap10000(seed36421),8dependentfamilies,not64independentgames/populationclaim. UNKNOWNzeroONLYdeclaredfiniteW-L statistic, neverdraw/WDL. Ccontroloneactualgame yieldsbothroles; allgame/cost counts actual, no duplicatingcontrol. Costs include differentopponentpaths, notpurekernel/leafpricecausality. Valuation changesjointleaf/order/captureprices; nofit/training/qorprice/defaultadoption.",
+    "inference_denominators": {
+      "independent_rule_families": 8,
+      "families_with_any_actual_terminal": 7,
+      "families_with_all_four_cells_both_roles_decidable": 2,
+      "contrast_families": {
+        "q_unit": {
+          "any_label_change": 4,
+          "both_arms_both_roles_decidable": 3
+        },
+        "q_static": {
+          "any_label_change": 5,
+          "both_arms_both_roles_decidable": 3
+        },
+        "price_q0": {
+          "any_label_change": 1,
+          "both_arms_both_roles_decidable": 3
+        },
+        "price_q1": {
+          "any_label_change": 5,
+          "both_arms_both_roles_decidable": 2
+        }
+      },
+      "power_scope": "No preregisteredpower/MDE/equivalencemargin; donot infer futility/stability/equivalence. Rolegranularity1/16 isnotMDE; exploratoryfamilyintervals andsmallN remainexplicit."
+    }
+  },
+  "common-parent-summary": {
+    "complete": true,
+    "pairs": 48,
+    "kinds": {
+      "ACTOR_FIRST_DIFFERENCE": 39,
+      "SAME_SHARED_PREFIX": 9
+    },
+    "by_contrast": {
+      "price_q0": {
+        "ACTOR_FIRST_DIFFERENCE": 15,
+        "SAME_SHARED_PREFIX": 1
+      },
+      "q_under_unit": {
+        "SAME_SHARED_PREFIX": 6,
+        "ACTOR_FIRST_DIFFERENCE": 10
+      },
+      "q_under_static": {
+        "ACTOR_FIRST_DIFFERENCE": 14,
+        "SAME_SHARED_PREFIX": 2
+      }
+    },
+    "distinct_full_before_states": 34,
+    "search_queries": 0,
+    "seconds": 10.842913699976634,
+    "scope": "EXPOSED mechanicalcommonprefix capture after frozenfinitepanel, notfreshoutcomevalidation.48pairs dependon8families/sharedcontrol; rootrecords reconstructedfromexactstoredprefix/beforehash, notinventedhistoricalsnapshots. Actorfirstdifference vsfixedopponenttimedfirstdifference separated. No newsearch/game/model/adoption."
+  },
+  "common-matrix-summary": {
+    "complete": true,
+    "states": 34,
+    "actual_queries": 204,
+    "core_pairs": 68,
+    "joint_core_pairs": 65,
+    "all_joint_scores_equal": true,
+    "contrasts": {
+      "price_q0": {
+        "total_states": 34,
+        "joint_completed_D2": 34,
+        "action_changes_at_joint_D2": 17,
+        "not_both_D2": 0
+      },
+      "price_q1": {
+        "total_states": 34,
+        "joint_completed_D2": 33,
+        "action_changes_at_joint_D2": 21,
+        "not_both_D2": 1
+      },
+      "q_unit": {
+        "total_states": 34,
+        "joint_completed_D2": 33,
+        "action_changes_at_joint_D2": 11,
+        "not_both_D2": 1
+      },
+      "q_static": {
+        "total_states": 34,
+        "joint_completed_D2": 33,
+        "action_changes_at_joint_D2": 15,
+        "not_both_D2": 1
+      }
+    },
+    "seconds": 42.84802689999924,
+    "scope": "All34exposedexactcommonstates, freshTT16/8192nodes/1s/D2,204actualqueries. Onlysamepriceq0Core/Native scorescompared. Pricevector/unit/orderchangesjoint; qobjectivesdiffer; actionleverage isnotquality/learning/WDL. Samecompiler/host andindependentCoretimingcensors retained."
+  },
+  "failures": {
+    "scientific_failures": [
+      {
+        "kind": "SYNTAX_ERROR_BEFORE_EXECUTION",
+        "count": 2,
+        "files": [
+          "pipeline-initial-syntax-failure.py",
+          "assessment-initial-syntax-failure.py"
+        ],
+        "fix": "Whitespace in conditional expression; zero generation/search bythosefailedlaunches"
+      },
+      {
+        "kind": "NATIVE_ENGINE_CONSTRUCTOR_PROFILE_REJECTED",
+        "count": 58,
+        "reason": "hand_values omitted anchor; exactNative type-ID coverage required",
+        "fix": "Fullunit handmapping includinganchor0, separatelyfrozen correctedcoldprocess runs",
+        "caps_or_old_results_overwritten": false
+      }
+    ],
+    "operational_corrections": [
+      {
+        "kind": "WINDOWS_COMMAND_LENGTH_206",
+        "action": "Initial oversized command forprivateSlacksave never executed",
+        "fix": "Exactraw outputs savedinchunks andthenparsed",
+        "scientific_queries_affected": 0
+      },
+      {
+        "kind": "CONSOLE_CP1252_RENDER_ERROR",
+        "action": "Printingalready-savedUnicodeSlacktext",
+        "fix": "Useexistingvenv Python -Xutf8; rawfileunmodified",
+        "scientific_queries_affected": 0
+      }
+    ],
+    "platform_approval_rejections_this_segment": 0,
+    "smart_app_control_cause_claimed": false,
+    "security_settings_changed": false,
+    "scope": "Actualobservedfixedharness/renderingerrors; no hiddenresearchblock, inventedmissingconsent, capextension orrewrittenfailure."
+  },
+  "normal_replay": {
+    "complete": true,
+    "phase": "ACTUAL_POST_PLUS_INTERACTION_PLUS_MATRIX",
+    "counts": {
+      "state_history_comparisons": 21789,
+      "root_records": 886,
+      "pv_edges": 12796,
+      "query_receipts": 4160,
+      "acquisition_predicate_receipts": 33,
+      "assessment_queries": 33,
+      "literal_reply_edges": 4806,
+      "literal_frontiers": 33,
+      "core_control_queries": 132,
+      "domain_queries": 270,
+      "counterexample_queries": 8,
+      "curve_queries": 264,
+      "diagnostic_choices": 69,
+      "physical_edges": 3232,
+      "game_queries": 736,
+      "physical_games": 72,
+      "interaction_queries": 2480,
+      "interaction_physical_edges": 2480,
+      "interaction_games": 56,
+      "common_parent_records": 39,
+      "common_matrix_queries": 204
+    },
+    "stages": {
+      "post": {
+        "file": "consumer-post.json",
+        "sha256": "833d22e8e3afc6e7435e3af6c110f93c08c5f14b83de99fdf7c730dcd0a3f575",
+        "counts": {
+          "state_history_comparisons": 10304,
+          "root_records": 749,
+          "pv_edges": 3928,
+          "query_receipts": 1476,
+          "acquisition_predicate_receipts": 33,
+          "assessment_queries": 33,
+          "literal_reply_edges": 4806,
+          "literal_frontiers": 33,
+          "core_control_queries": 132,
+          "domain_queries": 270,
+          "counterexample_queries": 8,
+          "curve_queries": 264,
+          "diagnostic_choices": 69,
+          "physical_edges": 752,
+          "game_queries": 736,
+          "physical_games": 16
+        },
+        "actual_seconds": 195.53619949999847
+      },
+      "interaction": {
+        "file": "consumer-interaction.json",
+        "sha256": "baf9344221ffaed4e3e8a6f572d9401fd8c35e01187b2d9eae24f614010339d3",
+        "counts": {
+          "state_history_comparisons": 11048,
+          "root_records": 103,
+          "pv_edges": 8465,
+          "query_receipts": 2480,
+          "interaction_queries": 2480,
+          "physical_edges": 2480,
+          "interaction_physical_edges": 2480,
+          "physical_games": 56,
+          "interaction_games": 56,
+          "common_parent_records": 39
+        },
+        "actual_seconds": 64.84374840001692
+      },
+      "matrix": {
+        "file": "consumer-matrix.json",
+        "sha256": "c133cd9834739e265c72b6b65e019dc71adf9caa50f6db979b7c7c497113d0ab",
+        "counts": {
+          "state_history_comparisons": 437,
+          "root_records": 34,
+          "pv_edges": 403,
+          "query_receipts": 204,
+          "common_matrix_queries": 204
+        },
+        "actual_seconds": 3.2455161999969278
+      }
+    },
+    "seconds": 263.6254641000123,
+    "scope": "Unionofthreeactualcompletedsearch-disabledvalidationstages, notfabricatedsinglewholepass. Fullpublication-sourcecopywillperformonefreshallpassandcompareallcounts. No newsearch/game/proof/training."
+  },
+  "archive_failure": {
+    "status": "INITIAL_SOURCE_REPLAY_FAILED_MISSING_RESEARCH_INPUT_DIRECTORY",
+    "error": "FileNotFoundError: research/common-parents/34101-role0-price_q0.json",
+    "cause": "Packagerexplicitfolderlist omittedcommon-parents;39originalfiles presentandnormalstagehadverifiedthem.",
+    "impact": "Initialfullsource-onlypass notcomplete; nofalsepass/prefixreceiptinvented. Publicationheldpendingcorrection.",
+    "repair": "Add exactoriginal39files inimmutablecommon-parent-support.zip; retainbaseZIP750members andfirstlogs, thennewdirectory/sourcebuild/fullPython-Sreplay withsameconsumer/assertions.",
+    "user_action_required": false,
+    "raw_originals": ".local_agent/playability-mu-20261016/initial-restore-failure-*",
+    "base_archive_sha256": "a16198b667499793347717b2011415a1608bd4c5fb83ad3b13322acbb25ceb7b",
+    "support_archive_sha256": "cd406e00873f0a8e9a49f3d8fb264daa3a83820bae7e9764ca729a3dff9ae175"
+  },
+  "status": "Science OPEN; no product/filter/q/price/default change",
+  "late_analysis_scope": "Inference denominators and peer assessments added after seal; base scientific records unchanged. Corrected source-only receipt is separate.",
+  "corrected_source_only_replay": {
+    "complete": true,
+    "archive_sha256": "a16198b667499793347717b2011415a1608bd4c5fb83ad3b13322acbb25ceb7b",
+    "members": 750,
+    "support_members": 39,
+    "support_archive_sha256": "cd406e00873f0a8e9a49f3d8fb264daa3a83820bae7e9764ca729a3dff9ae175",
+    "initial_restore_failure_preserved": true,
+    "normal_source_sha256": "39230230e1f51e44c158b4bbfebe23e3721211c56e897916a5cfe65d1144fd17",
+    "actual_native_rebuilt": true,
+    "python_without_site": true,
+    "module_origins_asserted": true,
+    "normal_counts_match": true,
+    "normal_reference": "Actualcompletedpost+interaction+matrixstageunion; nofabricatednormalwholepass",
+    "receipt": {
+      "complete": true,
+      "phase": "all",
+      "counts": {
+        "state_history_comparisons": 21789,
+        "root_records": 886,
+        "pv_edges": 12796,
+        "query_receipts": 4160,
+        "acquisition_predicate_receipts": 33,
+        "assessment_queries": 33,
+        "literal_reply_edges": 4806,
+        "literal_frontiers": 33,
+        "core_control_queries": 132,
+        "domain_queries": 270,
+        "counterexample_queries": 8,
+        "curve_queries": 264,
+        "diagnostic_choices": 69,
+        "physical_edges": 3232,
+        "game_queries": 736,
+        "physical_games": 72,
+        "interaction_queries": 2480,
+        "interaction_physical_edges": 2480,
+        "interaction_games": 56,
+        "common_parent_records": 39,
+        "common_matrix_queries": 204
+      },
+      "seconds": 199.05661290002172,
+      "scope": "Search-disabled exact Core/normalNative fullstate/absolute-ply/history replay of all actual receipts, literal edges and physicalgames. SameCore/compiler/host, not independentWDL/newsearch or historicalclock authentication. Failures/censors remain; no privateimage or unadoptedproposal activation."
+    },
+    "seconds": 205.85437699998147,
+    "scope": "Actualcorrectednew-directory publication-source normalNative rebuild andoneFULLsearch-disabledreceiptpass. No newstudysearch/game/proof/training/activation. SameWindows/Python/Zig/Core/compiler/host, notindependentWDL/newmachine orhistoricalclockauthentication."
+  }
+}
