@@ -1,0 +1,157 @@
+{
+  "status": "PASS_CLOSED_PROTOCOL_AND_EXACT_PRICE2_ANCHOR_REPRODUCTION",
+  "same_input_bytes": true,
+  "matched_configuration_keys": [
+    "seeds",
+    "candidate",
+    "opponent",
+    "opponent_prices",
+    "candidate_colors",
+    "H"
+  ],
+  "same_GuidedPlayer_source": "results/dev_aux/task2282/study.py",
+  "price2_anchors": 256,
+  "all_anchor_actual_records_rewards_identical": true,
+  "new_anchor_measured_game_seconds": 230.8598106999416,
+  "normal_depths": {
+    "old78": {
+      "normal_calls": 1986,
+      "actual_depths": {
+        "3": 1986
+      }
+    },
+    "new79": {
+      "normal_calls": 2692,
+      "actual_depths": {
+        "3": 2692
+      }
+    }
+  },
+  "summary": {
+    "1977": {
+      "1.5-vs-old1": {
+        "net_lower": 0.0234375,
+        "net_upper": 0.0546875,
+        "unknown_or_missing_pairs": 1,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          0.0,
+          0.1328125
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": 0.03125,
+            "net_upper": 0.03125
+          },
+          "2.0": {
+            "net_lower": 0.015625,
+            "net_upper": 0.078125
+          }
+        }
+      },
+      "2.0-vs-old1": {
+        "net_lower": 0.0390625,
+        "net_upper": 0.0390625,
+        "unknown_or_missing_pairs": 0,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          0.0,
+          0.0859375
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": 0.03125,
+            "net_upper": 0.03125
+          },
+          "2.0": {
+            "net_lower": 0.046875,
+            "net_upper": 0.046875
+          }
+        }
+      },
+      "3.0-vs-old1": {
+        "net_lower": 0.046875,
+        "net_upper": 0.046875,
+        "unknown_or_missing_pairs": 0,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          0.0078125,
+          0.09375
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": 0.046875,
+            "net_upper": 0.046875
+          },
+          "2.0": {
+            "net_lower": 0.046875,
+            "net_upper": 0.046875
+          }
+        }
+      }
+    },
+    "8173": {
+      "1.5-vs-old1": {
+        "net_lower": -0.0078125,
+        "net_upper": -0.0078125,
+        "unknown_or_missing_pairs": 0,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          -0.03125,
+          0.015625
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": -0.03125,
+            "net_upper": -0.03125
+          },
+          "2.0": {
+            "net_lower": 0.015625,
+            "net_upper": 0.015625
+          }
+        }
+      },
+      "2.0-vs-old1": {
+        "net_lower": 0.0,
+        "net_upper": 0.0,
+        "unknown_or_missing_pairs": 0,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          -0.03125,
+          0.03125
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": -0.015625,
+            "net_upper": -0.015625
+          },
+          "2.0": {
+            "net_lower": 0.015625,
+            "net_upper": 0.015625
+          }
+        }
+      },
+      "3.0-vs-old1": {
+        "net_lower": 0.0,
+        "net_upper": 0.0,
+        "unknown_or_missing_pairs": 0,
+        "family_blocks": 32,
+        "descriptive95_envelope": [
+          -0.03125,
+          0.03125
+        ],
+        "by_foe": {
+          "0.5": {
+            "net_lower": -0.015625,
+            "net_upper": -0.015625
+          },
+          "2.0": {
+            "net_lower": 0.015625,
+            "net_upper": 0.015625
+          }
+        }
+      }
+    }
+  },
+  "scope": "Descriptiveold1referenceonly after SAMEinput/startrecords/guide/priority/foe/role/resource contract and ALLcompleteD3/price2anchoridentitychecked. Crossbatchwallmeasurementnotcontrolledspeedclaim; notpoolanchorsasnewindependentfamilies. 32familiesperseed, missingfullbounds; no selection/DEV/fit/wholesignalartifactclaim."
+}

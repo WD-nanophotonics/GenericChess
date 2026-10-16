@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_CLOSED_FIRST_MATERIAL_DIFFERENCE_QUALIFICATION",
+  "paired_slots": 768,
+  "pair_statuses": {
+    "IDENTICAL_RECORDS": 748,
+    "FIRST_MATERIAL_ACTION_DIFFERENCE": 18,
+    "UNKNOWN_MISSING_OR_UNFINISHED": 2
+  },
+  "unique_actual_material_contexts": 8,
+  "new_ordinary_queries": 40,
+  "complete_D3": 40,
+  "local_counterfactual_pairs": 18,
+  "by_prices": {
+    "[1.5, 2.0]": {
+      "pairs": 6,
+      "ties_at_low": 0,
+      "ties_at_high": 6
+    },
+    "[2.0, 3.0]": {
+      "pairs": 4,
+      "ties_at_low": 4,
+      "ties_at_high": 0
+    },
+    "[1.5, 3.0]": {
+      "pairs": 8,
+      "ties_at_low": 1,
+      "ties_at_high": 4
+    }
+  },
+  "seconds": 17.555882699991344,
+  "scope": "ALL32TRAIN/twoseeds/foes/roles/3contrasts; 768plannedpairslots, missingUNKNOWN retained. FreezeALLfirstfullhistorymaterialdifferences beforequeries; sourceguidecannotexplainfirstwithinseedpriceactiondifference. Exactordinarysource/fullD3/finitecomparisononly assumptions, no canonicalWDL lookup, no newrewardgame/fit/DEV. Crossseedguidepriorityalsochanges; no entireW-Ltiecausality oruniversalpriceclaim."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "SECOND22_REPLAY_FAILED",
+  "stage": "closed2295",
+  "related_tests_passed": 23,
+  "closed2290_2293_2294_passed": true,
+  "error": "AssertionError: source2266games bytehash mismatch",
+  "cause": "Earlierraw78 archive preserves originalJSONL bytes;79firstentrysource actually uses publishedLF projection. JSONLrecords identical, actualbytepin explicit.",
+  "correction": [
+    {
+      "path": "results/dev_aux/task2266/games.jsonl",
+      "previous_sha": "cb60d1ad3d80eab937495e59c18f254fab4c2f76b1de3bb74cf92c4487569a43",
+      "current_sha": "fdd1d1cd6fde1bb7f59d8bd334c38cc77a4dc148236f69f18981c8669c182519",
+      "change": "JSON-equivalent exactactualinput publicationprojection"
+    },
+    {
+      "path": "results/dev_aux/task2300/restore.py",
+      "previous_sha": "21d08180ac05d726bfb9432ed026084be8acd27f915bd3e7136d19fe66ea247e",
+      "current_sha": "9ef2ce6abd45f16d81b6d138c47dcba2d2348fee75fd1cd6125088fd334636d2",
+      "change": "Explicitreplayharness23archive manifest/count correction; no producerchange"
+    }
+  ],
+  "earlier_archives_immutable": true,
+  "producers_rerun": false
+}

@@ -1,3 +1,43 @@
+Closing79: normal70.072minutes/safe_checkpoint/6stages; all producersclosed.
+Source/finalFULLSHA verification follows; no postfinish research.
+
+## DEV_AUX2026-10-16 segment79
+
+Ownsidemission/PUBLIC; PRIMARYreadonly/noAgents/Goals/default/UIchanges.
+863actualterminalgames/18495plies plus ONEinterruptedUNKNOWN slotID248;
+three protocols separate, allcaps preserved. Fixedfoe64game2x2: sameprice
+solver+1/16each fromONEfamily, cost291.72->1879.84s; pricecontrast0, all6
+candidateproofs preemptownmaterial. NEW32LOW_ONLY8 reuses32baseline after
+exactcontractcheck: noaddedwin/each2W2L12D,416.15vs291.72s,4candidateproofs
+allafterownmaterial. TriggerANDbudget jointchange, no causalisolation/adoption.
+Ordinal320D3/128within-cellpairs and40localdivergence checks qualifytiesat2;
+3vsold1 gain6/128or0 byseed, no stablemetricratio. 767actualboundaryrecords
+and1UNKNOWN preserved, zero-byteprimaryflag read cause onlyobservednotattributed.
+Naturalfirstentry7contexts zero knownmoverWIN postfreeze; costly42queries0positive
+notWINrecallfailure. Oneactualplylater INCR2/7 at8s versusBFS0/7,14realmateplies.
+Sixconstructedhistoryreuse successes/freshverification andsixactualDRAWrejects
+are notnaturalcoverage:2459prefixes/14proofs give0differenthistoryrootmatches.
+
+Dot1792168572/1792170047 readinline79+complete78report only/no79execution.
+Adoptordinal/tiecoexistence, old1boundaryreference, fullhistoryintervention/
+terminal/costpairaudit andUNKNOWNbounds. Repeated256anchors alreadyfrozen;
+230.86s cost explicit, smaller qualificationcheaper. Firstentry677s sweep
+couldavoidlargebudget aftercheaprolequalification; checkerpassingnotquality.
+ClarifyDotmisread:248 is ONEslotID, not248UNKNOWNgames;3vsold1 hasnoU.
+CHATtwofullthreadsread/adoptlabeltiers+operationalutility+oneaxistransfer;
+NN/table/curriculum future-only, advisor suggestionsnotpolicy/workorders.
+PRIMARY1acff2b1f12bb5d5903d8c39fb598aae34c9b17e mainlineonlyread; ownersearch/
+capacityconsumerresultsnotrerunhere. Its own2hourcorrectionnowvisible; old
+policy-retentionreason superseded, noPRIMARYeditsorquietwindow.
+
+Exactraw21archivefirstreplayfailedoldpublishedinputbyteprojection/JSONequal;
+22ndsmallinputs/harnesssupplement retainsfailure, oldarchives immutable.
+Second22replayfails2266JSONLbyteprojection/recordsidentical;23rdsupplement
+preservesactualbytes. Final23freshreplay3586payloads/2919paths/11consumers
+and23testsPASS46.214s. Publicationreceiptfollows; deliverynotDotread/execution.
+OPEN: information-richmu, priceidentifiability, paidproofcostversusactualutility,
+LOWbudget/triggerisolation, fullgeneratedhistory/promotion/dropdomain.
+
 ## Bounded policy correction2026-10-17 — DEV_AUX
 
 User directly confirmed their2026-10-15 20:31 JST two-hour experiment window.

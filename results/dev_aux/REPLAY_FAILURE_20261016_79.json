@@ -1,0 +1,24 @@
+{
+  "status": "FIRST21_REPLAY_FAILED",
+  "stage": "closed2293",
+  "related_tests_passed": 23,
+  "closed2290_passed": true,
+  "error": "AssertionError: old2282/current2287 inputbytes mismatch",
+  "cause": "Earlierraw78 archive preserves prettyJSON;79anchors actually use publishedLF input projection. JSONidentical, actualbytepin must remain explicit.",
+  "correction": [
+    {
+      "path": "results/dev_aux/task2282/inputs.json",
+      "previous_sha": "ecf2f68c2a6dd7aed6ddd68e9569ae87f87371423468cff62e1e9c761a8a2227",
+      "current_sha": "36218977dcf6fcd1c84e23775eed20f936ba3c22d4fe07d57456bf93200778f8",
+      "change": "JSON-equivalent exactactualinput publicationprojection"
+    },
+    {
+      "path": "results/dev_aux/task2300/restore.py",
+      "previous_sha": "93fad110b1ec1cb5a340a0f9c952d6fba4df0e79a56470de9f7d9fa63269e24a",
+      "current_sha": "21d08180ac05d726bfb9432ed026084be8acd27f915bd3e7136d19fe66ea247e",
+      "change": "Explicitreplayharness22archive manifest/count correction; no producerchange"
+    }
+  ],
+  "earlier_archives_immutable": true,
+  "producers_rerun": false
+}

@@ -1,0 +1,18 @@
+{
+  "cap_seconds": 1100,
+  "caller_seconds": [
+    1.0,
+    8.0,
+    60.0
+  ],
+  "expected_queries": 42,
+  "estimated_seconds": 800,
+  "selection": "ALL7 unique actual ongoing first<=4actor contexts from ALL64games; full-history dedup only; BFS/INCREMENTAL method order alternating and caps cyclic, no WDL/price/outcome/root-success screening",
+  "scope": "Label-free late-entry coverage/cost NOT knownWIN recall or price benefit. Actualhistory verifier+currentcursor paid on every positive, actualconversion after. Same per-cap resource maxima/proof70pct/sharedverification25pct/normal5pct; atomicoverruns retained. No teacher/table import in discovery; no default/UI/PRIMARY change, no oldcap extension. One new full study <=1100s, no experiment >=2h.",
+  "inputs_sha": "d67daf98810d50da87fd8943428dc788837db1d4394ee699726181c4252f1957",
+  "pins": {
+    "results\\dev_aux\\task2285\\compare.py": "1422ca98519b947089688be71f4067c181c9512a6e10f46d168d9e7728e084ad",
+    "results\\dev_aux\\task2273\\incremental_adapted.py": "7fe792ab47a4cdd56ffaa40f470dcf7768ffa8b7d1e2888b79a5a8d310a5ad4e",
+    "results\\dev_aux\\task2210\\player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "DESCRIPTIVE_CORRELATED_FREQUENCY_COST",
+  "methods": {
+    "BFS": {
+      "unique_contexts": 7,
+      "positive": 0,
+      "query_measured_seconds": 39.35363609995693,
+      "frequency_weighted_query_seconds": 303.59219639963703,
+      "frequency_weighted_positive_occurrences": 0,
+      "occurrences": 54
+    },
+    "INCREMENTAL": {
+      "unique_contexts": 7,
+      "positive": 2,
+      "query_measured_seconds": 31.390719900024123,
+      "frequency_weighted_query_seconds": 239.88049680017866,
+      "frequency_weighted_positive_occurrences": 16,
+      "occurrences": 54
+    }
+  },
+  "scope": "Same7complete-recordcontexts,54correlatedappearances; weightedcostisrepetition-weightedsingleobservedquerycost, NOTremeasured54queries/amortizedcachegain/naturalpopulation or independentreplication."
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "archives": {
+    "SOURCE_REPRO_20261016_70_PUBLIC.zip": "a4a9fd8c234db912b4a303c65e07ddc299b40d5c104581e51ab1b99f08cf4cd6",
+    "EVIDENCE_20261016_70.zip": "01218815b4d5dc62ba1496f154fd0496d6588b2173534acb5e86ba58736f04fe",
+    "SOURCE_REPRO_20261016_71.zip": "5136e472bf0ea17d92f0cafca51fe2f2cf9e00ad5f7f61264c6c16ac5e7269bc",
+    "EVIDENCE_20261016_71.zip": "f72f8cfba373851c33b93dd1e069d436f8c75b375dafb9e34f28255ed284528d",
+    "TEACHER_CORE_20261016_71.zip": "a7cba6bf9bc0c93ea721b790b4749845e779ec0d77e7a36ae148a1870ba98b1b",
+    "TEACHER_WDL_20261016_71.zip": "3f54d893d16b67132dbd4b4261cd501c85d2c6cbc7a942d64bc09f2987901890",
+    "SOURCE_PIN_SUPPLEMENT_20261016_71.zip": "39d9fb581a59b671e9221a17774e7617a1fc5f39ab2d47ed8e264c17a5278a95",
+    "LATE_EVIDENCE_20261016_71.zip": "ed64bde5677b14c4bd5809721ca44cffadf83cfb6ab89b08cb3b8b4b8b97bd3b",
+    "DELTA_REPRO_20261016_72.zip": "ac0809fee0d3f2a4eac0b7b85650533dfb6855b4601fb30ee04ffb7371e591d5",
+    "DELTA_REPRO_20261016_73.zip": "e1456ed8f51b08bd260fb3e06359a3095b389a02acd53b431128dd8930e0a590",
+    "LATE_REPRO_20261016_73.zip": "63da4ef029a4346a97e19744a149c0a3a40aad259e04b4afe1537f77ee33a9bd",
+    "DELTA_REPRO_20261016_74.zip": "19cee64fdbf1c5bdd662c2ee2e792ae9612e593abaf0d86ee4a6a9cdf098d71c",
+    "DELTA_REPRO_20261016_75.zip": "6b89ca3ffc7ec1348e8afac3f9afaba1e454657ca4622814ef1928c35490aed4",
+    "DELTA_REPRO_20261016_76A.zip": "eb53233645b397345ec8cc11bc2132864b4399f01f7c0b9118d5f2f573d7441b",
+    "DELTA_REPRO_20261016_76B.zip": "82a66a1b57ea35017ca686ca7506a797fb8be6c194e408a6a49942b1c98a0c07",
+    "DELTA_REPRO_20261016_76C.zip": "f8e8d29555a4f147386a8c2b52fc1374b777727c980835fd3decaa1750253121",
+    "DELTA_REPRO_20261016_77.zip": "eb8a8b8d76c7ec10f5bc69cb7e21a3f6d70e43201f9c88a88bf14735b7835722",
+    "SOURCE_PIN_SUPPLEMENT_20261016_77.zip": "670107f046658ca41661ac69e47b07df321f907af8c0d4588c69ca1a8bf3f192",
+    "DELTA_REPRO_20261016_78.zip": "c77b0e7e01715c920ac058150f85301c4fead3198b72c548d9966f56c0e5ab4d",
+    "LATE_REPRO_20261016_78.zip": "3c43e51c4c83a6cf56cf01a456c35ee6185c721df7f15b7cac616ab9d74da4c9",
+    "DELTA_REPRO_20261016_79.zip": "8f97e2609dc5ded12ae9427668ac7a5c0197dec9f0e94b95839619c49ed4b508"
+  },
+  "new_delta": {
+    "file": "DELTA_REPRO_20261016_79.zip",
+    "sha256": "8f97e2609dc5ded12ae9427668ac7a5c0197dec9f0e94b95839619c49ed4b508",
+    "bytes": 1696041,
+    "payloads": 234,
+    "uncompressed_bytes": 27907476,
+    "overrides": {
+      "results/dev_aux/task2267/positive_dfs.py": "8bb9a7dff9fdfc675748894f5ea188a4bd06c314c097f3973bd07a719227683e",
+      "results/dev_aux/task2273/incremental_adapted.py": "11bee5bcdbeb17bb28aa00ab1645a4a00e49161ed72e9618edc1f7ccacf25165"
+    }
+  },
+  "prior_manifest": "ARCHIVE_MANIFEST_20261016_78_FINAL.json",
+  "scope": "21exactZIPs; new79consumerstagesafterdeclaredsourceoverlays. Prior78fresh20replayremainsitsownhistoricalreceipt; no oldproducer/fitrerun."
+}

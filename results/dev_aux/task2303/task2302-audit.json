@@ -1,0 +1,32 @@
+{
+  "verified_unique_contexts": 2,
+  "verified_correlated_occurrences": 16,
+  "status": "PASS_CLOSED_PAID_QUERY_CERTIFICATE_CURSOR",
+  "task": 2302,
+  "queries": 14,
+  "planned": 14,
+  "missing": 0,
+  "verified_instances": 2,
+  "actual_conversion_moves": 14,
+  "maximum_measured_atomic_overrun": 0.0,
+  "by_method_cap": [
+    {
+      "method": "BFS",
+      "caller_seconds": 8.0,
+      "queries": 7,
+      "mover_knownWIN": 0,
+      "verified": 0,
+      "measured_seconds": 39.35363609995693
+    },
+    {
+      "method": "INCREMENTAL",
+      "caller_seconds": 8.0,
+      "queries": 7,
+      "mover_knownWIN": 0,
+      "verified": 2,
+      "measured_seconds": 31.390719900024123
+    }
+  ],
+  "seconds": 0.34352759999455884,
+  "scope": "Closed actual-next-turnquery/rootrecord/returnedlegality/separatework/phasecost/paidindependent+currentcursor andactualconversions. SourcefreezeALL64/54occurrences/7contexts independentlycheckedbelow; no labels/rootselection/proofproducer/fit/newrewardgames. Frequencycoverageweights correlatedoccurrences, notindependent54/pricebenefit."
+}

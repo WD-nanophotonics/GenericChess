@@ -1,3 +1,76 @@
+# DEV_AUX current mainline —79,2026-10-16
+
+ScienceOPEN/PUBLIC/own sidemission; PRIMARYreadonly; no default/UI adoption.
+User-confirmed experiment window <2h no review, >=2h Dot assessment first;
+old one-hour retention superseded, old caps preserved; PRIMARY owner fixed own.
+863actualterminalgames/18495plies across3protocols, ONEUNKNOWN slotID248,
+0neverexecuted;32reusedbaselinegames not new. All producers closed.
+
+768boundary slots:767actualterminal/14800plies, original1500cap/830.138s;
+empty PRIMARY rollout read failedclosed; remaining slots originalclock, no248rerun.
+All256old2anchors exactrecords/rewards, cost230.86s. 3vsold1 gain6/128 at1977,
+0at8173: no stableordering benefit. 128within-cell pairs invariant/320D3queries;
+ALL18firstmaterialdifferences/8contexts/40queries show localties at2, notwholeW-Lcausality.
+
+Natural first<=4actor:54ongoingoccurrences/7unique actualhistories,42paidqueries
+0moverWIN/677s; postfreeze3moverLOSS+4referenceDRAW means not failedWINrecall.
+Exactlyone actualplylater:14matched8squeries, INCR2/7+BFS0/7,14actualconversion
+plies/16of54correlatedoccurrences. Coverage isnotW-Lbenefit/freeoracle.
+Constructed6samePosition/newhistory reuses require freshpaidverification/cursor;
+secondloop actualDRAW rejects6. Natural2459prefix scan:43exactrecordpairs,
+0differenthistoryhits. No bankadoption or all-domain quotient/NNimpossibilityclaim.
+
+Fixedfoe2x2 all64actualterminals2459plies/original3300cap:
+MATprices1/2 each2W2L12D versus two-regime60s INCR each3W2L11D.
+Gain1/16each, ONEfamily/8-familyenvelope[0,3/16]; pricecontrast0not equivalence.
+Costs291.72vs1879.84s(~6.44x); all6candidateproofs beforeownmaterialdecision.
+NEWLOW_ONLY8 all32terminal1236plies/416.16s/original900cap; reuse32MATbaselines.
+Eachprice2W2L12D/noaddedwin, costs416.15vs291.72s(~1.43x),4candidateproofs
+allafterownmaterialdecision. TriggerANDbudgetchanged; cannotisolatewhichlostgain.
+
+Currentselection: FIRST freezeALLunique actualownLOW attempts from2307 with
+remaininghorizon/roles beforelabels; diagnose targetcoverage andbudget versus
+trigger with one axis ONLYif decision-changing, notautomaticmoregames/grid/NN.
+Prefer existing records to broadDRAWcampaign; nohumanfit/DEVselection.
+CHATteacherlabeltiers/operationalutility/oneaxisfuturetransfer adopted;NN deferred.
+Dotreadinline79+78report only, no79source/execution. PRIMARY1acff2b1 mainline
+read-only/ownerreportedsearchresults, noAUXrerun. FixedfullSHA delivery follows.
+Report:results/dev_aux/SEGMENT_20261016_79.md. 21archivefirstreplayfailedinput
+byteprojection/JSONsame; immutable22ndsupplement retainsactual79input/harness.
+Final23freshreplay3586payloads/2919paths/11consumers+23testsPASS46.214s;
+second22failed2266JSONLbyteprojection/recordsidentical/23rdsupplementpreserved.
+All failures/UNKNOWN preserved.
+
+## Previous selections — historical evidence, not competing live tasks
+
+
+## CHAT reference suggestions considered79 (future selection, not new policy)
+
+Both complete threads were read and exact raw output saved privately before this
+assessment. CHAT_Comments are advice; current user directions and frozen studies win.
+
+- [Small-board teacher/local marginal values/identifiability](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792117966727689):
+  adopt explicit label tiers and comparison of actual decision utility per total cost.
+  Current evidence distinguishes exposed canonical WDL, actual-history positive
+  certificates, observed policy terminal rewards, finite material scores and UNKNOWN.
+  Those cannot be silently pooled as a single exact teacher. Small tables and NN
+  remain candidates, not a requirement. Our actual Position/history counterexample
+  and ordinal-cell argument motivate measuring an operational target before fitting
+  a state-dependent vector; they do not refute scalar averages under a distribution.
+- [Architecture spectrum/rule-transfer curriculum](https://nanomelon.slack.com/archives/C0C6L21UU20/p1792118043431309):
+  retain one-axis rule changes, input compatibility and paid transfer-versus-scratch
+  comparisons as future questions. Generic input generation is distinct from learned
+  weight transfer. No new model/curriculum/framework or zero-shot claim is launched.
+  First require credible same-rule targets, mapped actions and price/solver utility;
+  an all-domain history-aware representation is still open. Six constructed same-
+  Position histories are not natural reuse coverage or a board-size transfer result.
+
+This selection preserves the direct user-approved fixed-proof/actual-WL route.
+Readiness for a small teacher/table/NN comparison is evidence-dependent; never
+hide teacher prepayment, call canonical DRAW an actual-history DRAW, or use
+teacher fitting error alone as a strength claim. Neither memo changes AGENTS,
+product defaults, current caps or branch ownership.
+
 ## Current experiment-window correction2026-10-17
 
 User directly confirms the2026-10-15 20:31 JST decision relayed by Dot:
@@ -6,7 +79,7 @@ Dot necessity assessment. Earlier retention of the stricter one-hour instruction
 is superseded, not a pending conflict or extra approval queue. No old frozen cap
 is extended;60-90minute research cadence and all scope/resource boundaries stand.
 Bounded policy repair only; closed78 clock/results remain unchanged. PRIMARY
-policy was checked read-only and still contains >1hour; its owner applies it.
+policy initially retained >1hour; later read-only verification sees its owner's two-hour correction. DEV_AUX did not change PRIMARY.
 
 # DEV_AUX current mainline -78,2026-10-16
 

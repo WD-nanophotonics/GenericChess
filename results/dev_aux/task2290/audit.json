@@ -1,0 +1,156 @@
+{
+  "status": "PASS_CLOSED_BOUNDARY_INTERIOR_TRUE_WL_WITH_INTERRUPTED_UNKNOWN",
+  "producer_status": "COMPLETE_EXCEPT_INTERRUPTED_SLOT",
+  "games": 767,
+  "expected": 768,
+  "missing": 1,
+  "actual_moves": 14800,
+  "summary": {
+    "1977": {
+      "contrasts": {
+        "2.0-vs-1.5": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 1,
+          "net_lower": -0.015625,
+          "net_upper": 0.015625,
+          "descriptive95_envelope": [
+            -0.046875,
+            0.046875
+          ],
+          "positive_families": 0,
+          "negative_families": 0
+        },
+        "2.0-vs-3.0": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 0,
+          "net_lower": -0.0078125,
+          "net_upper": -0.0078125,
+          "descriptive95_envelope": [
+            -0.0234375,
+            0.0
+          ],
+          "positive_families": 0,
+          "negative_families": 1
+        },
+        "3.0-vs-1.5": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 1,
+          "net_lower": -0.0078125,
+          "net_upper": 0.0234375,
+          "descriptive95_envelope": [
+            -0.046875,
+            0.0625
+          ],
+          "positive_families": 1,
+          "negative_families": 0
+        }
+      },
+      "complete_triplets": 127,
+      "all_three_actual_records_identical": 124,
+      "profiles": {
+        "1.5": {
+          "L": 30,
+          "W": 33,
+          "D": 64
+        },
+        "2.0": {
+          "L": 30,
+          "W": 33,
+          "D": 65
+        },
+        "3.0": {
+          "L": 30,
+          "W": 34,
+          "D": 64
+        }
+      }
+    },
+    "8173": {
+      "contrasts": {
+        "2.0-vs-1.5": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 0,
+          "net_lower": 0.0078125,
+          "net_upper": 0.0078125,
+          "descriptive95_envelope": [
+            0.0,
+            0.0234375
+          ],
+          "positive_families": 1,
+          "negative_families": 0
+        },
+        "2.0-vs-3.0": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 0,
+          "net_lower": 0.0,
+          "net_upper": 0.0,
+          "descriptive95_envelope": [
+            0.0,
+            0.0
+          ],
+          "positive_families": 0,
+          "negative_families": 0
+        },
+        "3.0-vs-1.5": {
+          "family_blocks": 32,
+          "unknown_or_missing_pairs": 0,
+          "net_lower": 0.0078125,
+          "net_upper": 0.0078125,
+          "descriptive95_envelope": [
+            0.0,
+            0.0234375
+          ],
+          "positive_families": 1,
+          "negative_families": 0
+        }
+      },
+      "complete_triplets": 128,
+      "all_three_actual_records_identical": 123,
+      "profiles": {
+        "1.5": {
+          "L": 28,
+          "W": 29,
+          "D": 71
+        },
+        "2.0": {
+          "L": 28,
+          "W": 30,
+          "D": 70
+        },
+        "3.0": {
+          "L": 28,
+          "W": 30,
+          "D": 70
+        }
+      }
+    }
+  },
+  "normal_depths": [
+    {
+      "seed": 1977,
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 1209
+    },
+    {
+      "seed": 1977,
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 5777
+    },
+    {
+      "seed": 8173,
+      "source": "FULL_SESSION_MATERIAL_SEARCH",
+      "depth": 3,
+      "count": 1483
+    },
+    {
+      "seed": 8173,
+      "source": "FIXED_LOW_INVENTORY_RANK_GUIDANCE",
+      "depth": null,
+      "count": 6331
+    }
+  ],
+  "seconds": 3.637854599975981,
+  "scope": "ALL32TRAIN/2prefrozenseeds/1.5,2,3 boundary-interior trueW-L. Expectedslotsequence/fullcompletedrecords/limits/rewards replayed; interrupted slot absent/UNKNOWN full[-2,2]pairbounds, not DRAW or rerun. CompletefixedD3 versus actualdepthexplicit. No fit/DEV/rootreplacement/metricidentification, canonicalguideprepaymentunchanged. Separate32familyclustersperseed; no64independentfamily or all-ordercausalityclaim."
+}

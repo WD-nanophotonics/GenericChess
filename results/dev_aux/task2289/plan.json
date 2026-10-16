@@ -1,0 +1,41 @@
+{
+  "input": "results\\dev_aux\\task2289\\inputs.json",
+  "input_sha": "ec64c79eec723c916b0ac5eeb2373c09272848191f1651d1f81300c936545c5e",
+  "slots_sha": "163f737b12f53cb597ff1d7cd70f45521b3cefcaffcfaf0e8b7224b525e0a1ea",
+  "expected_games": 64,
+  "H": 96,
+  "one_cap_seconds": 3300,
+  "estimated_seconds": 2000,
+  "step_seconds": 1.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 42.0,
+    "verification_nodes": 32768,
+    "verification_seconds": 15.0,
+    "normal_seconds": 1.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    }
+  ],
+  "pins": {
+    "results\\dev_aux\\task2289\\pilot.py": "b8aac26c37710853052a2ee8bf8d1f4338e95b62fd20713f50af79b0bf9d2f23",
+    "results\\dev_aux\\task2210\\player.py": "260ef265a347f098d3e983438516a8de0ddf30cac87e67d493fc298c637bcb65",
+    "results\\dev_aux\\task2273\\incremental_adapted.py": "7fe792ab47a4cdd56ffaa40f470dcf7768ffa8b7d1e2888b79a5a8d310a5ad4e"
+  },
+  "selection": "ALLsame8exposedTRAINfamilies/64fixed-foe2x2slots copied from2266 without outcome/proof-success selection. OneNEWpolicy: candidategets atmostONEgenericINCREMENTAL proofattempt per HIGH(>4) and LOW(<=4)inventoryregime on actualownturn; cursorcontinuations remainactive; no newattemptwhilecursorbound. No table, no result-conditionedtrigger. Material-only control samefixedfoe andnormaldepth/resources.",
+  "scope": "ActualfiniteW-L fixed-foe2x2 phase-policy mechanism: candidateMATERIAL_ONLY vs two-regimeINCREMENTAL proof60s caller/42sproof/shared15sverification/1snormal; SAMEfoe BFS .2sproof/.1sverify/1snormal1.5s8192D3 inALLarms. Bothprices1/2prefrozen, nofit/DEV/newfoeselection. Extra solverresource actualpaidreported, not equalcompute efficiency orbaseline. Same8exposedfamilies notholdout; allpartial/missing/UNKNOWN retained underONE3300scap. No tableguide/default/UI/PRIMARY/oldcapreset/workers; <2hneedsnopreview. Earlier60scap-query feasibility motivatesfixedtrigger actualgame test, notextensionofoldquerycaps.",
+  "candidate_proof_caller_seconds": 60.0
+}
