@@ -1,3 +1,31 @@
+# DEV_AUX current selection - closed83,2026-10-17
+
+OPEN/PUBLIC/own sidemission, PRIMARYreadonly. Actual114queryruntimepanel: ALL19
+fixed512-positioncontexts samework/results/cert; BASE48.646s vshelper15.859s.
+Wall8.4 actualverifiedmates4vs5; scopeexposed8TRAINfamilies/19deduphistories,
+notnewpricelearning.2382earlyexceptionexitgap reproduced;2384separatefix.
+Persistentstop/conditional16pureunits, allCore/verifier/commitfreshchecks remain;
+no per-scalar/pulse/realtimeSLAequivalence/defaultadoption.
+Mechanism96planned:95terminal2773moves+UNKNOWNslot19twoactualcommits=2775.
+2385failedPRIMARYrolloutPermissionError after19; actualholder/causeunknown.
+2392normalREADshare7 handlesdemonstratedDELETE-accesspattern, exclusive still
+fails; heldtargetoverwriteWin5negative retained.2394ONLY76unstarted completed
+881.418s withinORIGINAL23:14:33.891908UTCdeadline; no partialreplay/capreset.
+Price1.5vs1:removalbounds[-1/16,+1/16],hand/noDROP0,hand/DROP+1/16ONEfamily
+CI[0,.1875].44/47completepairs identical,3firstdifferencesownfullD3/samefamily4.
+No refit/heldoutclaim, old82Cexposed; readerprotocolstrata/UNKNOWNkept.
+Real5actorWIN oldTOTAL4gate excluded; BOARD4TOTAL8 scopedheuristic only.
+Dormanthandnegativecontrol:573pairedhistoryoccurrences/2892legalchildren
+board/terminalequivalent butsharedhandcredit differs.2397explicitboardCURRENT/
+handBASEmaps qualified, notactivepolicy. Next Main rule-awarehandchannel
+admission/control (no-dropguard maystillusehands), thenfrozen2channelW-Lfit
+withprefitreserve. Don'tassumezerohandsfromdropmask/nohumanfit/default/UI.
+27archive4528checks/3351paths/80tests10consumersPASS. Dotinline83+82only,
+no83source/execution. PRIMARY0194d0ee mainline readonly/noindependent rerun.
+Report:results/dev_aux/SEGMENT_20261017_83.md; finaldeliveryreceipt follows.
+
+## Prior82 selection - historical
+
 # DEV_AUX current selection - closed82,2026-10-17
 
 OPEN/PUBLIC/own sidemission, PRIMARYreadonly. Actual generic-policy TRAIN160

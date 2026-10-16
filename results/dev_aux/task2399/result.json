@@ -1,0 +1,99 @@
+{
+  "status": "PASS_FIRST_DIVERGENCE_SOURCE_ACCOUNTING_NO_FIT",
+  "complete_pairs": 47,
+  "incomplete_pairs": 1,
+  "identical_full_records": 44,
+  "first_differences": [
+    {
+      "variant": "REMOVAL_NO_DROPS",
+      "family": 4,
+      "role": 1,
+      "first_difference_ply": 0,
+      "kind": "CANDIDATE_FULL_D3",
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "normal_depths": [
+        3,
+        3
+      ],
+      "proof_reasons": [
+        "new_proof_disabled",
+        "new_proof_disabled"
+      ],
+      "actual_rewards": [
+        0,
+        0
+      ],
+      "actual_gain": 0
+    },
+    {
+      "variant": "HAND_NO_DROPS",
+      "family": 4,
+      "role": 1,
+      "first_difference_ply": 0,
+      "kind": "CANDIDATE_FULL_D3",
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "normal_depths": [
+        3,
+        3
+      ],
+      "proof_reasons": [
+        "new_proof_disabled",
+        "new_proof_disabled"
+      ],
+      "actual_rewards": [
+        0,
+        0
+      ],
+      "actual_gain": 0
+    },
+    {
+      "variant": "HAND_WITH_DROPS",
+      "family": 4,
+      "role": 1,
+      "first_difference_ply": 0,
+      "kind": "CANDIDATE_FULL_D3",
+      "sources": [
+        "FULL_SESSION_MATERIAL_SEARCH",
+        "FULL_SESSION_MATERIAL_SEARCH"
+      ],
+      "normal_depths": [
+        3,
+        3
+      ],
+      "proof_reasons": [
+        "new_proof_disabled",
+        "new_proof_disabled"
+      ],
+      "actual_rewards": [
+        0,
+        1
+      ],
+      "actual_gain": 1
+    }
+  ],
+  "summary": [
+    {
+      "variant": "REMOVAL_NO_DROPS",
+      "kind": "CANDIDATE_FULL_D3",
+      "count": 1
+    },
+    {
+      "variant": "HAND_NO_DROPS",
+      "kind": "CANDIDATE_FULL_D3",
+      "count": 1
+    },
+    {
+      "variant": "HAND_WITH_DROPS",
+      "kind": "CANDIDATE_FULL_D3",
+      "count": 1
+    }
+  ],
+  "seconds": 0.14582559998962097,
+  "scope": "Allcompleteactualpairs underfrozen1vs1.5; no outcomefilter/refit/newsearch. Firstdivergencewithsamefullrecord/state distinguishesownfullD3fromfoe-first/proof/partialtiming. Doesnotproveunboundedvalue/causalmediation/stableprice; missingpairnotdraw. Protocolstrata handledseparately2388."
+}

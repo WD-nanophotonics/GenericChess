@@ -1,0 +1,16 @@
+{
+  "question": "Does eliminating BufferedReader/path wrapper overhead lower observed polling cost while retaining fresh bytes on every existing checkpoint?",
+  "changed_premise": "2377 intrusive currentTRAINentry attributes1.716of2.002s to54,150opens/reads; no pollfrequency change proposed.",
+  "candidate": "io.FileIO(path,r).readall() with fresh open/close; baselinePath.read_bytes",
+  "no_poll_skip": true,
+  "not_allowed": [
+    "helddescriptor",
+    "mtimeTTL",
+    "rewritePRIMARY",
+    "cachedstopbytes",
+    "extraworker",
+    "oldcapextension"
+  ],
+  "source_base_sha": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3",
+  "scope": "Freshregularfile observation equivalence controls and actualhostcost, notsnapshotatomicity acrosssixfiles/guaranteedlatency/allOSfiles."
+}

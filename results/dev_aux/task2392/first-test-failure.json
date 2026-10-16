@@ -1,0 +1,9 @@
+{
+  "tests": 4,
+  "passed": 3,
+  "failed": 1,
+  "observed": "os.replace over target held open by manuallyretainedGENERIC_READ/share7 handle returnedWinError5 onthisfilesystem",
+  "interpretation": "READ/WRITE/DELETEsharing doesnotguaranteeeveryreplacepattern; initialtestoverstatedcontract. Productionread_fresh closes everycall, so propercontracttest closesbeforeatomicreplacement. Negativeoriginalretained, no claimfullwriterrepair.",
+  "actual_root_cause": "HistoricalFileIOPermissionError errno13couldbecompatibleDELETEaccesssharingconflict (reproduced), butactualholder/access/transientwriterunidentified. Currentbothreadersvalid. NoACLchange/bypass/retry/PRIMARYwrite.",
+  "docs": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew"
+}

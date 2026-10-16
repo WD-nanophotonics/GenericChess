@@ -1,0 +1,681 @@
+{
+  "status": "CLOSED_FIXED_PRICE_MECHANISM_RESPONSE_WITH_CENSORING_AND_PROTOCOL_STRATA",
+  "original_returned": 19,
+  "recovery_returned": 76,
+  "actual_terminal": 95,
+  "returned_UNKNOWN": 0,
+  "unreturned": 1,
+  "old_interrupted_UNKNOWN": 1,
+  "known_old_unknown_prefix_plies": 2,
+  "actual_returned_moves": 2773,
+  "all_committed_moves": 2775,
+  "panels": [
+    {
+      "variant": "REMOVAL_NO_DROPS",
+      "by_price": {
+        "1.0": {
+          "W": 3,
+          "L": 2,
+          "D": 11,
+          "U": 0
+        },
+        "1.5": {
+          "W": 3,
+          "L": 2,
+          "D": 10,
+          "U": 1
+        }
+      },
+      "paired_slots": 16,
+      "family_bounds": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "empirical_gain_bounds": [
+        -0.0625,
+        0.0625
+      ],
+      "descriptive_family_bootstrap_envelope": [
+        -0.1875,
+        0.1875
+      ],
+      "identical_returned_record_pairs": 14,
+      "pair_protocols": [
+        {
+          "family": 0,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 0,
+          "color": 1,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 1,
+          "protocol": [
+            "OLD_FILEIO",
+            null
+          ],
+          "complete_actual_pair": false
+        },
+        {
+          "family": 2,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 2,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        }
+      ]
+    },
+    {
+      "variant": "HAND_NO_DROPS",
+      "by_price": {
+        "1.0": {
+          "W": 3,
+          "L": 2,
+          "D": 11,
+          "U": 0
+        },
+        "1.5": {
+          "W": 3,
+          "L": 2,
+          "D": 11,
+          "U": 0
+        }
+      },
+      "paired_slots": 16,
+      "family_bounds": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "empirical_gain_bounds": [
+        0.0,
+        0.0
+      ],
+      "descriptive_family_bootstrap_envelope": [
+        0.0,
+        0.0
+      ],
+      "identical_returned_record_pairs": 15,
+      "pair_protocols": [
+        {
+          "family": 0,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 0,
+          "color": 1,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 2,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 2,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        }
+      ]
+    },
+    {
+      "variant": "HAND_WITH_DROPS",
+      "by_price": {
+        "1.0": {
+          "W": 6,
+          "L": 7,
+          "D": 3,
+          "U": 0
+        },
+        "1.5": {
+          "W": 7,
+          "L": 7,
+          "D": 2,
+          "U": 0
+        }
+      },
+      "paired_slots": 16,
+      "family_bounds": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "empirical_gain_bounds": [
+        0.0625,
+        0.0625
+      ],
+      "descriptive_family_bootstrap_envelope": [
+        0.0,
+        0.1875
+      ],
+      "identical_returned_record_pairs": 15,
+      "pair_protocols": [
+        {
+          "family": 0,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 0,
+          "color": 1,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 0,
+          "protocol": [
+            "OLD_FILEIO",
+            "OLD_FILEIO"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 1,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 2,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 2,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 3,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 4,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 5,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 6,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 0,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        },
+        {
+          "family": 7,
+          "color": 1,
+          "protocol": [
+            "NEW_SHAREDREAD",
+            "NEW_SHAREDREAD"
+          ],
+          "complete_actual_pair": true
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "variant_vs_removal": "HAND_NO_DROPS",
+      "all8_price_gain_interaction_bounds": [
+        -0.0625,
+        0.0625
+      ],
+      "protocol_homogeneous_families": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "homogeneous_price_gain_interaction_bounds": [
+        0.0,
+        0.0
+      ],
+      "scope": "Family1excludedfromhomogeneousprotocolcontrastbecauseknowninterruption/readertypeboundary, NOToutcomeselection. All8boundskept. No inferentialcausality/populationclaim."
+    },
+    {
+      "variant_vs_removal": "HAND_WITH_DROPS",
+      "all8_price_gain_interaction_bounds": [
+        0.0,
+        0.125
+      ],
+      "protocol_homogeneous_families": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "homogeneous_price_gain_interaction_bounds": [
+        0.07142857142857142,
+        0.07142857142857142
+      ],
+      "scope": "Family1excludedfromhomogeneousprotocolcontrastbecauseknowninterruption/readertypeboundary, NOToutcomeselection. All8boundskept. No inferentialcausality/populationclaim."
+    }
+  ],
+  "seconds": 0.006429400003980845,
+  "scope": "No price fit/selection;1vspriorfrozen1.5 across3rulevariants/8exposedTRAINfamilies/roles/foe2. Partialprotocoldata: original19beforestopIOerror +boundedsharedreaderonlyunstarted underSAMEabsoluteoriginaldeadline; nevercompleteoldslot19/relabelU. Allplanned96includedinbounds, missing[-1,1] andpaired[-2,2], notdraw. Bootstrapdescriptive8familyclusters, no independent-gamecount. HAND_NO_DROPSisadversarialdormant-handcreditcontrol: currentcallbackgivesuselessnondeployablehandpiecesnonzeroweight, NOTvalidatedgenericpriceaxiom. Conditionalrulemechanismexploration, notcleanconfirmatorysingleprotocolmatrix/newinitialholdout/old82replication; nohumanfit/default/PRIMARYadoption."
+}

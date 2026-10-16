@@ -1,0 +1,1067 @@
+{
+  "status": "PASS_ACTUAL_COMPOSITE_GATE_COUNTEREXAMPLE",
+  "states": [
+    {
+      "setup": null,
+      "phase": "initial",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "inventory": {
+        "board": 5,
+        "hands": 0,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": false
+      },
+      "legal_choices": 4,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_002', geometry_id='g1', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_014', geometry_id='g4', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_023', geometry_id='g8', actor_type_id='P', from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='sem_01_capture_promote_expiring_right', geometry_id='g15', actor_type_id='P', from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    },
+    {
+      "setup": null,
+      "phase": "prefix1",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "inventory": {
+        "board": 4,
+        "hands": 1,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": true
+      },
+      "legal_choices": 7,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_004', geometry_id='g10', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_012', geometry_id='g3', actor_type_id='K', from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    },
+    {
+      "setup": null,
+      "phase": "prefix2",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "inventory": {
+        "board": 4,
+        "hands": 1,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": true
+      },
+      "legal_choices": 21,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_002', geometry_id='g1', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_008', geometry_id='g12', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_008', geometry_id='g12', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_010', geometry_id='g2', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_014', geometry_id='g4', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=0, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=2, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=3, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=0, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=1, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=2, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=1, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=2, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=3, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "checkmate"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=0, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=1, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='sem_00_drop_zone_capacity_guard', geometry_id='g14', base_type_id='R', to_square=Square(file=3, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    },
+    {
+      "setup": null,
+      "phase": "actual_terminal",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "geometry_id": "g14",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_zone_capacity_guard",
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "inventory": {
+        "board": 5,
+        "hands": 0,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": false
+      },
+      "legal_choices": 0,
+      "children": [],
+      "actual_status": "checkmate"
+    },
+    {
+      "setup": "swapped_bases",
+      "phase": "initial",
+      "record": {
+        "actions": [],
+        "initial_setup_key": "swapped_bases",
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 3
+      },
+      "inventory": {
+        "board": 5,
+        "hands": 0,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": false
+      },
+      "legal_choices": 4,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_002', geometry_id='g1', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_014', geometry_id='g4', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_023', geometry_id='g8', actor_type_id='P', from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='sem_01_capture_promote_expiring_right', geometry_id='g15', actor_type_id='P', from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    },
+    {
+      "setup": "swapped_bases",
+      "phase": "prefix1",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          }
+        ],
+        "initial_setup_key": "swapped_bases",
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 3
+      },
+      "inventory": {
+        "board": 4,
+        "hands": 1,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": true
+      },
+      "legal_choices": 7,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_004', geometry_id='g10', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_012', geometry_id='g3', actor_type_id='K', from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    },
+    {
+      "setup": "swapped_bases",
+      "phase": "prefix2",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "initial_setup_key": "swapped_bases",
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 3
+      },
+      "inventory": {
+        "board": 4,
+        "hands": 1,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": true
+      },
+      "legal_choices": 21,
+      "children": [
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_002', geometry_id='g1', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_006', geometry_id='g11', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_008', geometry_id='g12', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_008', geometry_id='g12', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_010', geometry_id='g2', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_014', geometry_id='g4', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticBoardMove(pattern_id='legacy_024', geometry_id='g9', actor_type_id='R', from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "inventory": {
+            "board": 4,
+            "hands": 1,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": true
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=0, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=2, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=3, rank=0))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=0, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=1, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=2, rank=1))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=1, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=2, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=3, rank=2))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=0, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=1, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        },
+        {
+          "action": "SemanticDropMove(pattern_id='legacy_026', geometry_id='g13', base_type_id='P', to_square=Square(file=3, rank=3))",
+          "inventory": {
+            "board": 5,
+            "hands": 0,
+            "total": 5,
+            "old_TOTAL4": false,
+            "new_BOARD4_TOTAL8": false
+          },
+          "actual_status": "ongoing"
+        }
+      ],
+      "actual_status": "ongoing"
+    }
+  ],
+  "actual_legal_children": 64,
+  "nonconserved_edges": [],
+  "witnesses": [
+    {
+      "setup": null,
+      "root_inventory": {
+        "board": 4,
+        "hands": 1,
+        "total": 5,
+        "old_TOTAL4": false,
+        "new_BOARD4_TOTAL8": true
+      },
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.005785499990452081,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_mate_moves": 1,
+      "actual_record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "base_type_id": "R",
+            "geometry_id": "g14",
+            "kind": "semantic_drop",
+            "pattern_id": "sem_00_drop_zone_capacity_guard",
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f651ccb1d465d7cbf0d2a22d66f5ecc163e8c9941ee97fa08a87ce90a96d8463",
+        "schema_version": 1
+      },
+      "winner": 0
+    }
+  ],
+  "seconds": 0.11407460001646541,
+  "scope": "Existing5actor actualcapture/promotion/hand/drop/expiringauxhistories; oldTOTAL4nevereligible alongtheseconservingedges despiteindependentlyverifiedexecutableWIN. NOnewproofquery/noheldoutlearninglabel. NewBOARD4TOTAL8eligibilityisheuristic/finitebudget, notproof/cost/completeness. CapturedpromotedtypeBASE semantics andallfullPosition/history retained. Notuniversalactorconservationunderarbitraryspawn/delete/royalremoval. Unknownswappedbase remainsUNKNOWN."
+}

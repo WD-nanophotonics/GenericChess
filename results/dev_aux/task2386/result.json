@@ -1,0 +1,135 @@
+{
+  "status": "PASS_COMPLETE_RUNTIME_RESULT_CERTIFICATE_AND_ACTUAL_MATE_REPLAY",
+  "queries": 114,
+  "distinct_complete_histories": 19,
+  "original_selected_calls": 58,
+  "fixed_work_identical_contexts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "certificates": 19,
+  "actual_conversion_moves": 257,
+  "summary": [
+    {
+      "mode": "FIXED_POSITIONS512",
+      "arm": "BASE",
+      "queries": 19,
+      "measured_seconds": 48.64561859992682,
+      "expanded": 2434,
+      "transitions": 11180,
+      "reader_reads": 1481976,
+      "reader_bytes": 21207076560,
+      "verified": 2,
+      "converted": 2,
+      "max_observed_cancel_start_gap": 0.019209799997042865
+    },
+    {
+      "mode": "FIXED_POSITIONS512",
+      "arm": "FILEIO",
+      "queries": 19,
+      "measured_seconds": 44.010309900098946,
+      "expanded": 2434,
+      "transitions": 11180,
+      "reader_reads": 1481976,
+      "reader_bytes": 21207076560,
+      "verified": 2,
+      "converted": 2,
+      "max_observed_cancel_start_gap": 0.018386999989161268
+    },
+    {
+      "mode": "FIXED_POSITIONS512",
+      "arm": "SELECTOR16",
+      "queries": 19,
+      "measured_seconds": 15.859090600017225,
+      "expanded": 2434,
+      "transitions": 11180,
+      "reader_reads": 461058,
+      "reader_bytes": 6597739980,
+      "verified": 2,
+      "converted": 2,
+      "max_observed_cancel_start_gap": 0.015674199996283278
+    },
+    {
+      "mode": "FIXED_WALL8.4",
+      "arm": "BASE",
+      "queries": 19,
+      "measured_seconds": 136.25664740003413,
+      "expanded": 5532,
+      "transitions": 26075,
+      "reader_reads": 4260060,
+      "reader_bytes": 60961458600,
+      "verified": 4,
+      "converted": 4,
+      "max_observed_cancel_start_gap": 0.00865400000475347
+    },
+    {
+      "mode": "FIXED_WALL8.4",
+      "arm": "FILEIO",
+      "queries": 19,
+      "measured_seconds": 135.34321099997032,
+      "expanded": 5901,
+      "transitions": 27884,
+      "reader_reads": 4625592,
+      "reader_bytes": 66192221520,
+      "verified": 4,
+      "converted": 4,
+      "max_observed_cancel_start_gap": 0.0217988999793306
+    },
+    {
+      "mode": "FIXED_WALL8.4",
+      "arm": "SELECTOR16",
+      "queries": 19,
+      "measured_seconds": 125.13083999999799,
+      "expanded": 17608,
+      "transitions": 81164,
+      "reader_reads": 3537210,
+      "reader_bytes": 50617475100,
+      "verified": 5,
+      "converted": 5,
+      "max_observed_cancel_start_gap": 0.019194599997717887
+    }
+  ],
+  "wall_verified_contexts": {
+    "BASE": [
+      1,
+      9,
+      16,
+      18
+    ],
+    "FILEIO": [
+      1,
+      9,
+      16,
+      18
+    ],
+    "SELECTOR16": [
+      1,
+      5,
+      9,
+      16,
+      18
+    ]
+  },
+  "helper_only_contexts": [
+    5
+  ],
+  "seconds": 4.517794199986383,
+  "scope": "Original2382helperqualification panel, NOT2384correctedsourceexecutionclaim. Fixedpositionsresult/certificate equality separatelyfromwallcoverage. Persistentstop/exceptionexitcontrolscorrected2384afterthispanel; oldsource/data retained. Bothsamenumericalbudget whiledifferentcompletedwork, nosemanticuniversality/speedguarantee/externalengine. ObservedgapnotstoplatencySLA. 19contextsfrom58calls/8TRAINfamilies/exposed, not19independentsamples; fullorderalternated(BASEfirstvsSELECTORfirst),FILEIOalwaysmiddle. No newprover/game/capreset."
+}

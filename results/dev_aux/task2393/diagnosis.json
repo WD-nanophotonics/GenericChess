@@ -1,0 +1,24 @@
+{
+  "observed_failure": {
+    "utc": "2026-10-16T22:43:49.131633+00:00",
+    "owner": "PRIMARY_READ_ONLY",
+    "file": "rollout.json",
+    "exception": "PermissionError errno13",
+    "bytes_observed": null,
+    "actual_writer_unknown": true
+  },
+  "impact": "2385stopped19terminals/one2commitUNKNOWN/76unstarted; no stopignored/failedgameassignedreward",
+  "checks": [
+    "onefreshbaselineandFileIOreadnowbothvalid/noactiveuserstop",
+    "isolatedotherDELETEaccesshandle:FileIOPermissionError reproduced/nativeREADshare7 succeeds",
+    "isolatedexclusivehandle:normalWin32readerdeniedWinError32 asrequired",
+    "sourceGETACCESSGENERIC_READ/OPEN_EXISTING/shareREADWRITEDELETE/normalattributes/nosecurityprivileges",
+    "12nativefreshread/sharingcontrolsPASS; initialmanuallyheldtargetoverwriteWinError5negativepreserved",
+    "original19records/12certificates/591journalcommits independentlyconsumed"
+  ],
+  "confirmed": "Specificreadsharingcompatibilitypattern reproduced andownopenercorrected; no sustained ACL/accessproblem now. Historicalactualhandle/access isunobserved, soNOTprovenactualrootcause orpermanentrepair.",
+  "no_retry_or_bypass": true,
+  "new_attempt": "2394reasonedONLYunstarted76 underoriginal2385absolute23:14:33.891908UTC; sameprices/rules/foe/phasecaps/sourceexceptqualifiedreadopener andremainingabsoluteclock. Originalfailedsource/slot19prefiximmutable. DifferentwallIOexplicit; entire96notcleanfreshsingleprotocolconfirmatoryexperiment.",
+  "source": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew",
+  "scope": "Compatible sharedelete doesnotoverrideexistingexclusiveshareorACL, nor guaranteeallatomicreplacementpatterns. Currentread validitynotproofhistoricalwriteridentity."
+}
