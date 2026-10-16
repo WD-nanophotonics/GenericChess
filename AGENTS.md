@@ -261,36 +261,22 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment69
+# DEV_AUX current scope:2026-10-16 segment70
 
-Science OPEN. User-approved material+fixed genericproof W-L work remains own
-sidemission; PRIMARY search/backend scope stays read-only. PUBLIC/checked
-project publication grants persist; no product/default/UI/visibility change.
-64fresh fixedopponent unitgames COMPLETE257.53s: R/N4vs1 gains.3125 atN360
-and.25 atN720; interaction.0625 CI[-.125,.25]. Both observed gains positive,
-not unit-equivalence. All16R4crossunit outcomes agree despite9trajectoryforks.
-R-freeKBN 96TRAIN+192DEV COMPLETE2323.38s: TRAIN.5 wins1point/only1nonflatfamily,
-DEV ALL192DRAW acrossbothprices. No priceidentification/equivalence; changing
-types alone failed to make informative outcomes. Older68R>N andBfailures retained.
-Root PN1K/4K/16K,192exposedcalls COMPLETE79.49s,0verifiedWIN; retain UNKNOWN,
-not theoreticaldraw or strongerteacher claim. No automaticbudget/volumeincrease.
-Fresh actualKRNB census40800syntactic/22976admissible/104128edges proves noWIN
-closedKK/N/B;R80positivewinningterminals. Exactcompiledfields/fullrecord guard,
-UNKNOWNonly; no6boardtransfer, reward or livelearningpolicychange. New32game
-fixedopponent candidate-onlycontrol231.54s has all16pairedactions/outcomes equal,
-normalnodesidentical, candidatePN521372->78485nodes; game130.09->100.91s.
-Scoped22.4%costsaving, not universalbehavior-equivalence/strength. Portable
-all-defense sample71edges/fouractualWINleaves, omitteddefenserejected.
-384newgames/29479moves/29196Nativebindings/40proof-adoptingactualwins source-only
-restore+5tests PASS; allclosedcaps preserved, API/testfailures retained/corrected.
-Next2054 ACTUALLYBEGUN inputonly:16NEWKRNB8TRAIN8DEV/0fitness, twoRanchors
-1260/priorTRAIN2880 x3mechanicalBprices, fixedopponent and separateBcontrasts
-withinR. Changed matingcooperation premise, not sameallDRAW expansion/DEVfit.
-Build2055source/6variantACK/96perfts beforefuture96TRAIN/max192DEV; expected
-2524.34s/one3300cap. Late2054directGit, outside earlier closed-studycapsules.
-CHATfutureteacher/architecture-transfer notes stay revisable mainline references,
-not hardrules/immediateNNwork. PRIMARY5fe6baad54c8cb2efa5b7772658b77254f94a260
-owner-message-read-only/no codeexecution/adoption/unitpool/crosswrites.
+Science OPEN; own sidemission, PRIMARYreadonly/PUBLIC. Closed2055B/N pilot
+288actualgames givesDEVgains0/-.04167, nofurtherexposedpricegrid. Teacherroute
+chosen because reliablelabels distinguish expression/search/conversion rather
+than repeat weakfeedback. ActualCoreteachers: base201344states/952224edges,
+nearbyNmovement99712/485440; exactfreshcanonicalWDL only, historyguarded.
+Cheapmechanicalpairinteractions improve exposeddevelopmentfit; noNNtrained,
+no uniquehumanprice/strength claim. 2063original1800cap CLOSED48finished+
+1UNKNOWN+47unrun; neverextend/restart. All failures/caps preserved.
+Ranktablepositiveadapter exports existingtypedSessioncertificates under strict
+realhistory/rank/budget guard;8exposedexamplesverified/executed, notgeneral
+MateSolvercompletion orproductdefault. NegativefilterreturnsUNKNOWNonly.
+Nextprospectivequalification beforeanotherfullpolicycomparison; costofteacher,
+inference, proof and allcensoring remain explicit. See segment70report for
+source/evidence/restore/consultation;69retainedashistory, notpending2055work.
 
 ## Current user publication grant2026-10-15
 

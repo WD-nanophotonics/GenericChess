@@ -1,0 +1,1263 @@
+{
+  "status": "FROZEN_BEFORE_PAIRED_DECISIONS",
+  "question": "Can audited graph non-win scheduling avoid futilePN under real full histories while keeping normal choices?",
+  "cases": [
+    {
+      "index": 0,
+      "source_slot": 0,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 1,
+      "source_slot": 1,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 2,
+      "source_slot": 2,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 3,
+      "source_slot": 3,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 4,
+      "source_slot": 3,
+      "source_ply": 23,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 1,
+      "positional_label": "DRAW",
+      "state_sha": "d3f3097716e23917e52c97fe3866f816effde05af6a74ae356751c9a6a057ba1"
+    },
+    {
+      "index": 5,
+      "source_slot": 4,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 6,
+      "source_slot": 5,
+      "source_ply": 0,
+      "family": 0,
+      "rules": "results\\dev_aux\\task2063\\rules-0.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "72fa766d6a2f2aee439101c9abc5f8ff51782cc5ac489cc58d8af5eefadcccb0",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "d57aa8cc979968680c5439e06a3ebc0fefb6334cc0ddc39255fcdb1242715c08"
+    },
+    {
+      "index": 7,
+      "source_slot": 6,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 8,
+      "source_slot": 7,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 9,
+      "source_slot": 7,
+      "source_ply": 29,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 1,
+      "positional_label": "DRAW",
+      "state_sha": "786387a63a29055768aaa63de9729cecfad97658e27a8421cc3de3e74372754e"
+    },
+    {
+      "index": 10,
+      "source_slot": 8,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 11,
+      "source_slot": 9,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 12,
+      "source_slot": 9,
+      "source_ply": 29,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 1,
+      "positional_label": "DRAW",
+      "state_sha": "786387a63a29055768aaa63de9729cecfad97658e27a8421cc3de3e74372754e"
+    },
+    {
+      "index": 13,
+      "source_slot": 10,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 14,
+      "source_slot": 11,
+      "source_ply": 0,
+      "family": 1,
+      "rules": "results\\dev_aux\\task2063\\rules-1.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "306f7b00affd8d7ab899d138afebab5679a465946a728803d5618be125c586d8",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "LOSS",
+      "state_sha": "49c567245aa0fa246d4e70bdec162ec61d771147046fc3383191bd32aab1a822"
+    },
+    {
+      "index": 15,
+      "source_slot": 12,
+      "source_ply": 0,
+      "family": 2,
+      "rules": "results\\dev_aux\\task2063\\rules-2.json",
+      "record": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "84e642eb49aedb90cb92910d521be69f76166711375c54f98009c1e78235707b",
+        "schema_version": 1
+      },
+      "expected_side": 0,
+      "positional_label": "DRAW",
+      "state_sha": "b9378c5fe2f7a324a456aedcb4bb0f689adbbad93ed28a018cc44abf3da61826"
+    }
+  ],
+  "arms": [
+    "original_inventory_filter",
+    "complete_graph_no_win_filter"
+  ],
+  "order": "Parityalternatesarmorderperprefix; coldseparatebankperarm, samefixedmaterialprojection/normal256depth2/.5s; PN1024/1.5s, verifier16384/.5, total3s.",
+  "normal_nodes": 256,
+  "normal_depth": 2,
+  "normal_seconds": 0.5,
+  "proof_nodes": 1024,
+  "proof_seconds": 1.5,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.5,
+  "proof_depth": 64,
+  "step_seconds": 3,
+  "seconds_cap": 120,
+  "expected_seconds": 25,
+  "sampling": "First16eligibleBN DRAW/LOSSpredecision prefixes acrosscompleted2063games, maxonepersource_slot/side. DeliberatelyeligibleEXPOSEDcostcases, notpopulationwinrate/strength/equivalence. No2063source/policy/capchanges.",
+  "teacher_build_cost_seconds": 50.2707456999924,
+  "source_sha": {
+    "results/dev_aux/task2072/no_win_filter.py": "12d0a5bf5d8ddf2e6d1274d368d51d356219ebd45a7dd3948b620512deddecac",
+    "results/dev_aux/task2068/teacher.py": "16faee1d10a015e5a01ab66e61d988d9d78925ec2e796a605c1288da9e8c3b23",
+    "results/dev_aux/task2063/campaign.py": "ed25078ad1b5fd43244c9c8ad586f641b76efc0cd653bee13414ef401b2d8b80",
+    "scripts/generic_session_cached_phase_player.py": "f1f6fd97a796e02b50917dd54c72c91322ae00d8be278fcd1ebcdfaf697fdfd1",
+    "scripts/generic_inventory_proof_transport.py": "c0726741ea77c9f030e4f6bc716377734818f00bb4a0b7f1922920444858c44a",
+    "results\\dev_aux\\task2076\\control.py": "1b75e9a068cf50983914b2f578f262f7e1bbe0197495c2a547fc139a2ac8e3d2"
+  }
+}

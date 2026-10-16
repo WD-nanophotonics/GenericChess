@@ -1,0 +1,34 @@
+{
+  "status": "FROZEN_BEFORE_NEW_RULE_FIT",
+  "question": "Does samearchitecture imply useful oldweighttransfer under one movement change?",
+  "oldteacher": "results/dev_aux/task2058/labels.jsonl",
+  "newteacher": "results/dev_aux/task2065/labels.jsonl",
+  "oldmodels": "results/dev_aux/task2060/models.json",
+  "audit": "results/dev_aux/task2066/result.json",
+  "models": [
+    "material",
+    "kingking",
+    "kingpiece"
+  ],
+  "split": "IdenticalD4/colororbit hash2060 residue0DEV. Newvalidcanonicalongoingstates only; oldpriortrained on oldTRAIN only. No newruleDEVlabels usedintraining.",
+  "samples": [
+    128,
+    512,
+    2048,
+    8192
+  ],
+  "sample_order": "Hash2067sample+rawboard labelblind, sameprefixdataset and identicalSGDshuffles for transfer/scratch.",
+  "epochs": 4,
+  "learning_rate": 0.02,
+  "ridge": 0.0001,
+  "seed": 20261016702067,
+  "target_MSE": 0.15,
+  "target_reason": "Prospective engineering error threshold between oldmaterial.191 andoldkingpiece.127; not actualstrength calibration.",
+  "methods": "Zero-shotoldweight; identicalnewdata/optimizer/updatecount from oldweight vszeros. No hyperparam/model selection fromDEV; retain all budgets, negative transfer, oldDEVforgetting. Prioroldteacher+fitcost counted separately, notfree initialization.",
+  "seconds_cap": 300,
+  "expected_seconds": 45,
+  "resources": "Oneprocess/BLAS1/noNN or newactualgames. <=710weights/model, sparse5features. Samearchitectureinput encodespositions/types butnot changedmovement; weights mayneed adaptation, inputcompatibilitynot weightcompatibility.",
+  "oldteacher_sha": "e820876e3d21ee0079b0bdb552c0ac2e4db4937ad01bebfa6668fae3c7aa9b93",
+  "newteacher_sha": "74022cc80893a8c01ae93122aaacdbc20584dd7a1cd917cba04ec38a232a8946",
+  "oldmodels_sha": "fca895df3425ccb0a165d0116d429bd8f15f207253b5768bd5429dca5e292cf9"
+}

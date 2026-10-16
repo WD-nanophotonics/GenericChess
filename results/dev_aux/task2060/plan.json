@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_BEFORE_REPRESENTATION_FIT",
+  "question": "Does cheap state representation reduce exactteacher residual and WDL action-ranking errors beyond scalar material?",
+  "teacher": "results/dev_aux/task2058/labels.jsonl",
+  "teacher_sha": "e820876e3d21ee0079b0bdb552c0ac2e4db4937ad01bebfa6668fae3c7aa9b93",
+  "audit": "results/dev_aux/task2059/result.json",
+  "distribution": "Allcanonicalfreshongoing4x4KK/KKN/KKB/sameownerKKBN states, uniformstates; not actualplaydistribution or fullChess/Shogi priceestimation.",
+  "split": "D4+colororbit minimum tuple, sha256 seed2060 plusrepr canonical, residue0=DEV/4 othersTRAIN; no orbitcrosssplit, labelsnotused. Teachergraph includes neighborsacrosssplit, thisisstateorbitsholdout not independentgames/rules.",
+  "models": [
+    "material2",
+    "material+side-conditionedkingking512",
+    "previous+king-relativeN/B196"
+  ],
+  "target": "ExactWDL fromside-to-move -1/0/+1. Ridge.01fixed, no model/price/hyperparam selection fromDEV. Diagnostic projections not claim NNtraining or actual strength. Uniformsameinventory cannotidentifyindividualB/N; include allcaptureclosedinventories andreport scope.",
+  "ridge": 0.01,
+  "seconds_cap": 300,
+  "expected_seconds": 30,
+  "action": "DEVongoingroots, frozen childfeatures/prediction no search; chooseallmax ties tolerance1e-9. Report optimistic/pessimistic/tie-average exactWDLregret only when actionQnonflat. Canonicalrootlabelscope,nohistoryoptimalQgeneralization.",
+  "resources": "OnePythonprocess, BLAS1thread; denseGram atmost710x710, activefeatures<=5/row, no denseNxbigfeatures matrix. NoextraNative/rewardgames/current2055policychange."
+}

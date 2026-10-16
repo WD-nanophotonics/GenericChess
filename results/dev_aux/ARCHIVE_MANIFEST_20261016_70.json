@@ -1,0 +1,48 @@
+{
+  "status": "PASS_IMMUTABLE_REVIEWED_SOURCE_EVIDENCE_SHA_CRC",
+  "archives": [
+    {
+      "path": "results/dev_aux/SOURCE_REPRO_20261016_70_PUBLIC.zip",
+      "bytes": 3992575,
+      "sha256": "a4a9fd8c234db912b4a303c65e07ddc299b40d5c104581e51ab1b99f08cf4cd6",
+      "payloads": 746,
+      "uncompressed_bytes": 17440717
+    },
+    {
+      "path": "results/dev_aux/EVIDENCE_20261016_70.zip",
+      "bytes": 49082953,
+      "sha256": "01218815b4d5dc62ba1496f154fd0496d6588b2173534acb5e86ba58736f04fe",
+      "payloads": 113,
+      "uncompressed_bytes": 517167826
+    }
+  ],
+  "large_local_originals_retained": [
+    "results/dev_aux/task2055/games.jsonl",
+    "results/dev_aux/task2055/moves.jsonl",
+    "results/dev_aux/task2055/run/transport.jsonl",
+    "results/dev_aux/task2056/states.jsonl",
+    "results/dev_aux/task2058/labels.jsonl",
+    "results/dev_aux/task2060/split.jsonl",
+    "results/dev_aux/task2063/moves.jsonl",
+    "results/dev_aux/task2064/states.jsonl",
+    "results/dev_aux/task2065/labels.jsonl",
+    "results/dev_aux/task2069/states.jsonl",
+    "results/dev_aux/task2073/labels.jsonl"
+  ],
+  "new_payload_paths_reviewed": 146,
+  "scope": "Bothproducersclosed; Nativeactualrecords, exactteachers, partial/failedcases and allsources retained. Newsource stillrequiresavailableNumPy1.26.4 torefit; independentrestoreaudits do not. No private rawSlack/credentials selected.",
+  "late_direct_git_artifacts_after_seal": [
+    "task2083/restore.json",
+    "task2087/inputs.py",
+    "task2087/study-freeze.json",
+    "task2087/inputs.json",
+    "task2087/rules-0..23.json",
+    "report/currentdecisions/quality/advisor/session/deliverymetadata"
+  ],
+  "publication_review": "task2089/review.json",
+  "original_source_private_ignored": true,
+  "publication_copy_changes": "Twooptionalpublicdependencycontactvalues removed; one duplicatehistoricalNativebuildZIP omitted (not neededforconsumerreplay). Exactoriginalsourcecapsule retainedignored. No executedprojectcode/scientificdata changed; newpublicationcopyreplay required.",
+  "publication_copy_restore": "task2083/restore-public.json",
+  "publication_content_review_members": 861,
+  "publication_payloads": 859
+}

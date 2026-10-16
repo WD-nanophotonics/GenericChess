@@ -237,7 +237,11 @@ def _payload_matches(observed, expected):
     actual = _canonical(observed); original = _canonical(expected)
     return actual in {original, _rendered_emphasis(original),
                       _rendered_bullets(original),
-                      _rendered_bullets(_rendered_emphasis(original))}
+                      _rendered_bullets(_rendered_emphasis(original)),
+                      _rendered_numbered_lists(original),
+                      _rendered_numbered_lists(_rendered_emphasis(original)),
+                      _rendered_numbered_lists(_rendered_bullets(original)),
+                      _rendered_numbered_lists(_rendered_bullets(_rendered_emphasis(original)))}
 
 
 def _rendered_bullets(text):
@@ -259,6 +263,21 @@ def _rendered_bullets(text):
             line = '• ' + line[2:]
         lines.append(line)
     return '\n'.join(lines)
+
+
+def _rendered_numbered_lists(text):
+    """Observed Slack prose '1) ' -> '1. '; preserve every body/code character."""
+    result = []; fenced = False; local_code = False
+    for line in text.splitlines():
+        if line.startswith('LOCAL_CODE_SNAPSHOT='): local_code = True
+        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'): local_code = False
+        if line.startswith('```'):
+            fenced = not fenced
+            result.append(line); continue
+        if not local_code and not fenced:
+            line = re.sub(r'^(\d{1,3})\) ', r'\1. ', line)
+        result.append(line)
+    return '\n'.join(result)
 
 
 def _known_receipt_readback(r, root, receipt_path):

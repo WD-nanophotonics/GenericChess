@@ -1,0 +1,80 @@
+{
+  "status": "PASS_STDLIB_INDEPENDENT_METRICS_AND_RIDGE_NORMAL_EQUATIONS",
+  "old_rule": {
+    "TRAIN": 79576,
+    "TRAIN_families": 4986,
+    "DEV_families": 1672,
+    "models": {
+      "material": {
+        "DEV_n": 26712,
+        "DEV_MSE": 0.19070619210443573,
+        "DEV_accuracy": 0.7595088349805331,
+        "normal_equation_max_residual": 2.771079032903856e-09
+      },
+      "kingking": {
+        "DEV_n": 26712,
+        "DEV_MSE": 0.14328777165485296,
+        "DEV_accuracy": 0.7837675950883498,
+        "normal_equation_max_residual": 3.300537620987143e-11
+      },
+      "kingpiece": {
+        "DEV_n": 26712,
+        "DEV_MSE": 0.12722091573189537,
+        "DEV_accuracy": 0.8089248277927523,
+        "normal_equation_max_residual": 2.492117623376089e-12
+      }
+    }
+  },
+  "new_rule_fullscratch": {
+    "TRAIN": 70432,
+    "TRAIN_families": 4414,
+    "DEV_families": 1482,
+    "models": {
+      "material": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.18927455757920844,
+        "DEV_accuracy": 0.7632556568726782,
+        "normal_equation_max_residual": 8.458866940230791e-10
+      },
+      "kingking": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.1458935857717203,
+        "DEV_accuracy": 0.77338736913205,
+        "normal_equation_max_residual": 2.0633827979565922e-11
+      },
+      "kingpiece": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.1293354151236731,
+        "DEV_accuracy": 0.8058088483620398,
+        "normal_equation_max_residual": 1.3906431561849786e-11
+      }
+    }
+  },
+  "oldweights_on_newrule": {
+    "TRAIN": 70432,
+    "TRAIN_families": 4414,
+    "DEV_families": 1482,
+    "models": {
+      "material": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.18948782588296426,
+        "DEV_accuracy": 0.7632556568726782,
+        "normal_equation_max_residual": null
+      },
+      "kingking": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.14670747396080594,
+        "DEV_accuracy": 0.7710233029381965,
+        "normal_equation_max_residual": null
+      },
+      "kingpiece": {
+        "DEV_n": 23688,
+        "DEV_MSE": 0.12995353123803113,
+        "DEV_accuracy": 0.7987166497804795,
+        "normal_equation_max_residual": null
+      }
+    }
+  },
+  "seconds": 11.619676400005119,
+  "no_NumPy_or_fitting_or_search": true
+}

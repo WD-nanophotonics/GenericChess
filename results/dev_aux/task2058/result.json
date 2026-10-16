@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_GRAPH_RETROGRADE_PENDING_INDEPENDENT_AUDIT",
+  "states": 109248,
+  "edges": 520528,
+  "by_inventory": {
+    "KK": {
+      "DRAW": 312
+    },
+    "KKN": {
+      "DRAW": 7936
+    },
+    "KKB": {
+      "DRAW": 7736
+    },
+    "KKBN": {
+      "WIN": 34240,
+      "DRAW": 27904,
+      "LOSS": 31120
+    }
+  },
+  "ongoing_WDL": {
+    "DRAW": 41248,
+    "WIN": 34240,
+    "LOSS": 30800
+  },
+  "maximum_decisive_rank": 28,
+  "ranks_over96": 0,
+  "labels_sha": "2f65a1f3bb33bf82ef9758560f1855493397e72435f2db4c6f368df1c425ca85",
+  "seconds": 2.3949176000023726,
+  "scope": "EXACT only for canonical fresh-history states in complete scoped4x4KK/B/N/BN sameowner graph, subject to independentBellman/rank/history audit. Rules drawonrepetition3/maxply96. No-loss drawpolicy and strictly decreasing winning ranks prevent winning-path repetitions from fresh root. Ranks>96 remain unresolvedforboundedrule; arbitraryprehistory NOTlabelled. No data-drivenrootfilter/price/NN/current2055change.",
+  "no_new_Native_or_prover_or_reward_games": true
+}

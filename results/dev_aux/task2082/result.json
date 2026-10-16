@@ -1,0 +1,225 @@
+{
+  "status": "COMPLETE_ALL_SIX_FIXED_MODELS",
+  "TRAIN": 146520,
+  "DEV": 48832,
+  "models": {
+    "material": {
+      "parameters": 2,
+      "TRAIN_MSE": 0.21752843903162794,
+      "DEV_MSE": 0.21664636497709958,
+      "DEV_accuracy": 0.5245740498034076,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.0
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 0.01819042253773403
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 0.09255628955546925
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.2799492279675353
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.07538196043203013
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.29296942453658975
+        }
+      }
+    },
+    "material_pairs": {
+      "parameters": 8,
+      "TRAIN_MSE": 0.1443774692425538,
+      "DEV_MSE": 0.14653836507687004,
+      "DEV_accuracy": 0.7878440366972477,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.0
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 1.5581105589991487e-12
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 6.312173765359586e-12
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.20360009912519839
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.005657876622281959
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.2295479957063792
+        }
+      },
+      "mechanical_pair_coefficients_WDL_units": {
+        "R*R": 0.0,
+        "R*N": 0.0,
+        "R*B": 0.0,
+        "N*N": 0.005094814364690176,
+        "N*B": 0.7197841192434717,
+        "B*B": 0.3405674268926091
+      }
+    },
+    "kingking": {
+      "parameters": 514,
+      "TRAIN_MSE": 0.1984019847732932,
+      "DEV_MSE": 0.1985079271192928,
+      "DEV_accuracy": 0.7185452162516383,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.1660458914131274
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 0.021091321499311255
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 0.02584919958471788
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.240394946605548
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.09327919863178431
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.2859275340948284
+        }
+      }
+    },
+    "kingking_pairs": {
+      "parameters": 520,
+      "TRAIN_MSE": 0.12915933560332338,
+      "DEV_MSE": 0.13246139737298887,
+      "DEV_accuracy": 0.7896461336828309,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.009540273812658484
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 0.015025828479824165
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 0.01503459256221223
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.16828710975881014
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.01961510865004729
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.21953168629941622
+        }
+      },
+      "mechanical_pair_coefficients_WDL_units": {
+        "R*R": 0.0,
+        "R*N": 0.0,
+        "R*B": 0.0,
+        "N*N": 0.01699896650824319,
+        "N*B": 0.727310206626635,
+        "B*B": 0.346485774173074
+      }
+    },
+    "kingpiece": {
+      "parameters": 710,
+      "TRAIN_MSE": 0.1863953531433098,
+      "DEV_MSE": 0.18998939462495418,
+      "DEV_accuracy": 0.7573722149410222,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.1868555668517684
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 0.012377058759006012
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 0.027878381639595343
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.22428695090966053
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.09276756559982402
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.2827183436155565
+        }
+      }
+    },
+    "kingpiece_pairs": {
+      "parameters": 716,
+      "TRAIN_MSE": 0.11791012729954659,
+      "DEV_MSE": 0.12235787313810804,
+      "DEV_accuracy": 0.8201179554390564,
+      "by_inventory": {
+        "KK": {
+          "n": 80,
+          "MSE": 0.01584611536209272
+        },
+        "KKN": {
+          "n": 2008,
+          "MSE": 0.007495664389416415
+        },
+        "KKB": {
+          "n": 2048,
+          "MSE": 0.011488976334889402
+        },
+        "KKBN": {
+          "n": 22576,
+          "MSE": 0.15006384140009787
+        },
+        "KKNN": {
+          "n": 11248,
+          "MSE": 0.02168961533849467
+        },
+        "KKBB": {
+          "n": 10872,
+          "MSE": 0.21185846003010717
+        }
+      },
+      "mechanical_pair_coefficients_WDL_units": {
+        "R*R": 0.0,
+        "R*N": 0.0,
+        "R*B": 0.0,
+        "N*N": 0.029216978730204443,
+        "N*B": 0.7395131951760872,
+        "B*B": 0.36422227181124384
+      }
+    }
+  },
+  "seconds": 12.958683500008192,
+  "scope": "No model/hyperparameter selection afterDEV; reportALLsixfits and byinventory residuals. Noactual2063policychange/retraining, scalarWDLcoefficients notuniquepieceprices. NoNN/extraNative or rewardgames. SamefrozenD4/colorhash2060 quarterDEV, ALLexpandedcaptureclosedKK/N/B/NN/BB/BN canonicalongoingstates. Earlieraggregate label/DEVresults exposed; thisisdevelopmentrepresentationdiagnostic onnewcompositionpool, notindependentfinalvalidation."
+}

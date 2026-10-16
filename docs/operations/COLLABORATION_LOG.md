@@ -1768,3 +1768,29 @@ exploratory, DEVselected-policy gains unlesssameB; no addedgames/caps/selection.
 Originalfreeze retained; physicalRpresence versusRpricingfactor separated.
 No reply/ackloop or externalapproval role. This late bounded metadata doesnot
 reset69actual75.637minute research receipt or rewriteimmutablecapsules.
+
+
+## DEV_AUX segment70 —2026-10-16
+
+DEV_AUX independently completed the frozen288game two-anchorBpilot (noDEV
+benefit), built/audited controlledexactteachers201344base+99712changed-rule
+states, compared scalar/table/mechanicalpair representations, retainednegative
+finetuning/costcontrols and the48finished/1UNKNOWN/47unrun Coreplayerpilot.
+Allsource/physical/history/censoring evidence remains scoped andpublished on
+sidemission. PRIMARY5fe6owner evidence is priorreadonly context; no newprimary
+execution/adoption/crosswrite/merge or resourcequietwindow wasrequested.
+
+Dot reply1792123155.482159 readold71b8filter andnewinlineassumptionsonly, not
+then-unpublished70sources/graphs/runs. Adopted negativeattractor-complement
+reasoning andsame-sessiontwo-targettest; fixedtargetconversionwasalreadycoded,
+explicitcontrolsadded/pass. Typedpositivecertificates subsequentlyverified8
+exposedexamples with existingfullSessionverifier/cursor. No strength/general
+coverage claim, noDEFAULT/UIchange or retiredcapextension. Onequestion/root,
+noack/resendloop; finalfixedrevisionevidence follows inthesamethread.
+
+Efficiency: proofcostdominatescensoredCorepilot; negativefilter16pairssaveonly
+.337s against50.27s teacherbuild, whilecheapcountpairbasisimproves exactlabel
+fitwithoutNN. FullnewTRAINridge ischeap andoldweightsalreadymeetthreshold,
+so smallSGDwarmstartadvantage alone doesnot provebesttransfercost. Ordinary
+concurrentcomputation limits walltime interpretation; no exclusiveCPUclaim.
+ScienceOPEN; nextprospectiveroot/prefixqualification beforepolicyexpansion.

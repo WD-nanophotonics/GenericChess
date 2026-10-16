@@ -1,0 +1,19 @@
+{
+  "status": "FROZEN_BEFORE_CORE_CENSUS",
+  "question": "Can cooperating B+N give a nondegenerate exact-label subdomain at affordable Core cost?",
+  "rules": "results/dev_aux/task2054/rules.json",
+  "rules_sha": "c9ea0351e5a4a965d57ff21ba929d7e5e64b24be3c65bb626a9afc1a8b5b08ad",
+  "inventories": [
+    "KK",
+    "KKN",
+    "KKB",
+    "KKBN"
+  ],
+  "syntactic_positions": 202080,
+  "seconds_cap": 600,
+  "expected_seconds": 180,
+  "cost_basis": "Existing2044 Core40800syntactic15sec forecast; cooperating202080 adds branching, conservative180sec, one600fuse; independent of unchanged2055rewardpolicy.",
+  "closure": "All4x4orderedkingpositions/bothturns/bothowners ofatmostoneB+oneN SAMEOWNER, pluscaptureclosure KK/N/B. Core checks eachterminal/ALLlegalchildren andliteralactor independently. Currentrecordfresh canonical Corestates, no arbitrary-history label yet. NoR,promotion,drops,aux/declarations/pass. Repetitiondraw/maxply96 require explicit later proof/label scope.",
+  "adoption": "Measure teachercoverage/edgecost/terminaldiversity before NN. No unknownrootlabel, no native/rewardgames. Ifpartial retainpartial; no capextension/restart.",
+  "source_sha": "f712e23c8ba771c8c697c16aafc510c1727b18a2a76bc2a8468d02ab6d55d4ac"
+}
