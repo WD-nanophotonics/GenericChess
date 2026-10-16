@@ -33,9 +33,14 @@
   "remaining": "No all-domain equivalence/balancedquality/longplayability/WDL/learnedbenefit claim. Source2harnessfailures andmissing2testmodule repair preserved.",
   "report": "INPUT_ADMISSION_AND_OPENING_WINS_20261017.md",
   "capsule": "../archive/input_admission_opening_20261017/evidence.zip",
-  "archive_sha256": "01ae3aec6cf1191dee064a6f1527b9b22ff18814dcaf8b063d64aa50a376c861",
+  "archive_sha256": "417bfeecd333863de39f2b9244bd5725952453a6a30878866fe6c39b23ceb5b2",
   "archive_members": 323,
   "source_members": 288,
   "restored_pytest": 129,
-  "source_repair": "Initial286source build/reader/controls passed; missing2testmodules caused collectionexit4/0tests; addtwoexistingmodules then129passed. Nativebuildinputsunchanged."
+  "source_repair": "Initial286source build/reader/controls passed; missing2testmodules caused collectionexit4/0tests; addtwoexistingmodules then129passed. Nativebuildinputsunchanged.",
+  "packaging_correction": {
+    "prior_published_sha": "c2ed6af46bc09f65cafaa0ce1bec2d6cd6a81cd8",
+    "prior_archive_sha256": "01ae3aec6cf1191dee064a6f1527b9b22ff18814dcaf8b063d64aa50a376c861",
+    "change": "Normalize only final CRLF in one new test to LF; cases/productbehavior/dataunchanged. Original source/archive retained privately and in publicGit."
+  }
 }

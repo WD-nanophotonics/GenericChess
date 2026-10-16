@@ -1360,8 +1360,8 @@
     },
     {
       "path": "source/tests/product/test_generation_opening_win_filter.py",
-      "bytes": 2161,
-      "sha256": "87dbeb0676038daf3f33aa8adaca7e46a92586f9453d168c794ca367d0602f5a"
+      "bytes": 2160,
+      "sha256": "c995b57411885a1f29f4cc3bcd533e0f202e2b9f620b9ae046ed94f2bde131fc"
     },
     {
       "path": "source/tests/product/test_generic_pass_action.py",
@@ -1619,6 +1619,11 @@
       "sha256": "6000c5a6b135621283feb509d9b548d33372219ff119b82af78a88c5906175c4"
     }
   ],
-  "archive_bytes": 1174743,
-  "archive_sha256": "01ae3aec6cf1191dee064a6f1527b9b22ff18814dcaf8b063d64aa50a376c861"
+  "archive_bytes": 1174740,
+  "archive_sha256": "417bfeecd333863de39f2b9244bd5725952453a6a30878866fe6c39b23ceb5b2",
+  "packaging_correction": {
+    "prior_published_sha": "c2ed6af46bc09f65cafaa0ce1bec2d6cd6a81cd8",
+    "prior_archive_sha256": "01ae3aec6cf1191dee064a6f1527b9b22ff18814dcaf8b063d64aa50a376c861",
+    "change": "Normalize only final CRLF in one new test to LF; cases/productbehavior/dataunchanged. Original source/archive retained privately and in publicGit."
+  }
 }
