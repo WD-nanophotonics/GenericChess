@@ -544,8 +544,20 @@ remain. This is Python-only; the normal Native kernel/C source are unchanged.
 Restart an existing backend process to load updated Python code if needed; do
 not reset game records or rebuild Native merely for this predicate change.
 
-No-progress search is still explicitly unsupported in the normal product; Native
-also declines pass/no-progress rules. A private complete-history prototype and a
-cheaper unfitted counter diagnostic are evidence, not activated backend paths.
-See SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md for current source tiers,
-actual deferred ambiguity, full-history costs and regression/restoration evidence.
+Core no-progress search is now supported through verified complete-root admission
+and reversible progress/error context, retaining full history and exact keys.
+Native still explicitly declines no-progress rules. In AlphaBetaPlayer, ordinary
+Native-legality preference declines to the existing Core path; no full Native
+search fallback is added. Opaque/incomplete/forged imported roots fail closed.
+
+Pure-semantic rules without legacy movement metadata require a compatible
+explicit evaluator_override: the old default profile limitation is now a precise
+ValueError before cache access. Existing rectangular error wording and all valid
+metadata-backed profiles/defaults remain. Do not silently promote a partial
+semantic opportunity projection or replace the rule/aux/history to make it run.
+Root import is cooperative and currently indivisible, not hard real-time.
+
+This Python-only capability leaves Native C/the loaded kernel unchanged; restart
+a consumer process to load updated Python if necessary, preserving its records.
+No UI Test process or another Agent's checkout is changed. Full source/failure/
+qualification tiers: research/NO_PROGRESS_SEARCH_CONTEXT_20261017.md.

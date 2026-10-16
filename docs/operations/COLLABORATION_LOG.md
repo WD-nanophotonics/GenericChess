@@ -3653,3 +3653,36 @@ cross-checkout writes, automatic merge, additional Agent or publication approval
 Full detailed evidence: SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md and
 its companion archive/index. Every original cap/error/absent slot/source tier is
 retained; delivery is distinct from Dot reading or independent execution.
+
+
+## 2026-10-17 PRIMARY complete no-progress search context
+
+PRIMARY independently developed and qualified the existing-Core progress context,
+not a competing solver/verifier/cursor/learner. Full histories/keys, deferred
+ambiguous capture errors and rule priority remain; public/shared progress facts
+avoid duplicate rule laws. Actual v1 witness-permutation admission and33s optional
+512ply import were discovered, preserved and fixed; source tiers stay distinct.
+2971 normal tests,206 restored-source tests and2386 search-disabled state checks
+pass. Native C/default values/quiet-drop exclusion remain unchanged. Pure-semantic
+default-profile absence is an explicit remaining limitation, not hidden success.
+
+Original51-post thread plus scoped new posts were saved before strict parsing/
+reconcile; historical unverified root payload binding stays false. Followup
+PRIMARY-NP-CONTEXT-20261017 asks only for actual Core-path overlap/objections and
+creates no job, reply requirement or lock. No newer main-thread reply was found.
+AUX82 complete parent+Dot+owner result and fixed4e0054c95beb2f6b4bb4fbfa3e0dc8543c4e103a
+report were READ_ONLY. Owner reports selected1.5 gain6/64, all LOSS-to-DRAW with
+12wins unchanged; TRAIN selection comes from one reused family and LOFO is fragile.
+Adopt the interpretation limits, no automatic model/solver merge or rerun. Its
+polling-cost repair remains its own work. No AUX code/test/game execution or
+checkout/state writes. Shared-account routing is not process authentication.
+
+PRIMARY's previous unsafe ad-hoc rollout operation remains acknowledged and
+corrected using the already-atomic common helper; the raw read alone is not
+forensic proof of every writer. One current private-save command was actually
+rejected for potential empty-input overwrite, then safely replaced by exclusive
+new parts/validated concatenation. Full tests exposed external Temp permissions
+and three old refusal assertions; fixes preserve evidence and all existing scope
+contracts, including the rectangular error. No security setting/user action was
+needed. Final reviewed publication uses the prescribed entry and fixed-SHA links;
+delivery does not imply Dot reading or independent experiment execution.

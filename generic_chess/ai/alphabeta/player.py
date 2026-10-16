@@ -11,6 +11,7 @@ from ..decision import PlayerDecision
 from ..evaluation.cache import EvaluationProfileCache
 from ..evaluation.config import EvaluationConfig
 from ..evaluation.evaluator import Evaluator
+from ..evaluation.profile import require_default_profile_metadata
 from ..limits import SearchLimits
 from .search import run_root_search
 from .native_legality import NativeSemanticLegalityProvider
@@ -59,6 +60,7 @@ class AlphaBetaPlayer:
         self._profile_cache_hit = False
         self._profile_cache = profile_cache
         if evaluator_override is None:
+            require_default_profile_metadata(compiled)
             self._profile_cache = profile_cache or EvaluationProfileCache(
                 use_disk=use_disk_cache, disk_dir=disk_cache_dir
             )

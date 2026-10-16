@@ -127,8 +127,9 @@ def repetition_identity_key(position: Position, compiled: "CompiledRuleSet") -> 
 
 
 def _history_adjudication_context(state: GameState, compiled) -> tuple:
-    if getattr(compiled, "consecutive_action_adjudications", ()):
-        # Exact signatures retain action-class runs across identical positions.
+    if (getattr(compiled, "consecutive_action_adjudications", ())
+            or getattr(compiled, "no_progress_draw", None)):
+        # Exact signatures retain action classes and progress across equal positions.
         return ("action_history", tuple(
             (record.position_key, record.actor, record.action_signature, record.gave_check)
             for record in state.history

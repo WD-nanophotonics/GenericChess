@@ -180,13 +180,6 @@ def test_history_adjudication_and_pass_keep_core_authority(policy):
         for i, c in enumerate(arms):
             state = states[i]
             assert PassAction() in legal_actions(state, c)
-            if policy == "no_progress":
-                # Compilation/Core execution does not remove the existing
-                # search path-state restriction.
-                with pytest.raises(NotImplementedError, match="path-state identity"):
-                    SearchPathRuntime.from_state(state, c)
-                states[i] = apply_action(state, PassAction(), c)
-                continue
             runtime = SearchPathRuntime.from_state(state, c)
             before = (runtime.position, runtime.search_key(), tuple(runtime.history), runtime.terminal_status)
             runtime.push(PassAction())

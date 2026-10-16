@@ -59,14 +59,9 @@ def test_history_sensitive_configurations_decline(field,value):
     c=compile_ruleset_for_execution(rules)
     from generic_chess.session.session import GameSession
     state=GameSession(c).state
-    if field=='no_progress_draw':
-        # Current Core search itself rejects this configuration. Verify that
-        # the exclusion gate also declines without claiming execution support.
-        with pytest.raises(NotImplementedError,match='no-progress'):
-            SearchPathRuntime(state,c)
-        rt=SimpleNamespace(ply_count=0)
-    else:
-        rt=SearchPathRuntime.from_state(state,c,history_witnesses=(state.position,))
+    # Core supports complete no-progress paths; this optional probe still
+    # conservatively declines every listed history-sensitive configuration.
+    rt=SearchPathRuntime.from_state(state,c,history_witnesses=(state.position,))
     ctx=SimpleNamespace(runtime=rt,compiled=c)
     assert QuietDropProbe().prepare(ctx) is None
 

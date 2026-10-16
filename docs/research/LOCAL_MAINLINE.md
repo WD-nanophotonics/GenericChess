@@ -14,16 +14,26 @@ a concrete choice. This preserves the user's selected research priority; it is
 not a permanent prohibition on WDL, solver or appropriate small training.
 DEV_AUX's separate solver/verifier/cursor/runtime/learning lane stays its own.
 
-Current concrete closure: repair the repeated-cycle search boundary's false
-auxiliary-default rejection using existing exact logical identity, and correct
-PRIMARY's ad-hoc non-atomic rollout write method. No-progress search remains an
-explicit missing capability: its private full-replay prototype is too costly on
-real512/1024 histories to activate. An unfitted counter component is now checked,
-but entity-creation error timing shows that an integer alone is not a qualified
-integration. Next consider a bounded complete counter/context/control feasibility
-with deferred ambiguity and actual caller payoff, coordinate genuine AUX overlap,
-and retain current refusals until qualified. No default/TT quotient/NN follows.
+Current concrete delivery: Core no-progress search now has verified complete root
+admission, reversible progress/deferred-error facts and exact action-sensitive
+history keys. The per-child full-replay route is superseded for cost; its original
+receipts remain. A real witness-permutation hole and slow optional witnessless
+import were corrected before delivery. Native still explicitly declines this
+policy; no automatic Native search fallback or evaluator/price change follows.
+NO_PROGRESS_SEARCH_CONTEXT_20261017.md owns2971 full/206 restored-source checks,
+2386 source state occurrences, actual caller/control/cost curves and all failures.
 
+Next selected question: can an existing explicit evaluator consume pure-semantic
+full-rule states without the inspection-only legacy metadata dependency? Actual
+24 default constructors fail; the new error names the existing scope instead of
+claiming generic default success. The existing semantic opportunity profile was
+actually tried on a triple mixture; it computes a scoped projection but its attack
+evaluator still fails in the base metadata constructor. Preserve this concrete
+negative result. Inspect the smallest compatible consumer/approximation with full
+promotion/drop/aux/history; no silent unity fallback, fresh model or AUX learner.
+Static tables and small learned candidates remain allowed under their stated
+scope. Earlier no-progress guard/refusal notes below describe superseded source
+tiers, not current prohibitions or permission gates.
 
 The user-selected Slack defect repair is CLOSED. Native/Core automatic PENDING,
 checked continuation, full-state imports and rule max-ply priority were qualified

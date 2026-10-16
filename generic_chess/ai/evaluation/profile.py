@@ -75,11 +75,26 @@ def _drop_profile(
     return freedom, avg
 
 
+def require_default_profile_metadata(compiled):
+    """Name the existing static-profile boundary before cache lookup/build."""
+    if compiled.board_size is None:
+        raise ValueError(
+            "default evaluation requires square-board legacy metadata; "
+            "supply an evaluator for rectangular search"
+        )
+    if not hasattr(compiled, "piece_types"):
+        raise ValueError(
+            "default evaluation requires legacy movement metadata; "
+            "supply evaluator_override for semantic-only search"
+        )
+
+
 def build_ruleset_profile(
     compiled: CompiledRuleSet,
     config: EvaluationConfig,
     capability_cache: "MovementCapabilityCache | None" = None,
 ) -> RuleSetEvaluationProfile:
+    require_default_profile_metadata(compiled)
     n = compiled.board_size
     if n is None:
         raise ValueError(

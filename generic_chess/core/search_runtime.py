@@ -26,6 +26,7 @@ from .movegen import (
     iter_legal_actions_from_position,
 )
 from .position import GameState, HistoryRecord, Position
+from .no_progress_context import NoProgressContext
 from .semantic_executor import _semantic_public_action, semantic_engine_for
 from .terminal import TerminalResult, TerminalStatus, terminal_from_search_runtime
 
@@ -402,6 +403,7 @@ class _Frame:
     child_occurrence_added: bool = False
     history_context: RuntimeHistoryContext | None = None
     child_in_check: bool | None = None
+    no_progress_context: NoProgressContext | None = None
 
 
 @dataclass(slots=True)
@@ -586,10 +588,6 @@ class SearchPathRuntime:
         availability_provider: Callable | None = None,
         check_provider: Callable | None = None,
     ):
-        if getattr(compiled, "no_progress_draw", None) is not None:
-            raise NotImplementedError(
-                "search for no-progress draw rules requires path-state identity support"
-            )
         ensure_ruleset_match(state.position, compiled)
         self.compiled = compiled
         # Opaque Core-neutral callback: Core never imports Native and never
@@ -696,9 +694,12 @@ class SearchPathRuntime:
         if state.history and not self._history_witness_by_key:
             self.history_witness_misses = len(self._opaque_imported_keys)
         self._history_aliases: dict[str, RuntimePositionIdentity] = {}
-        # Consecutive action rules distinguish pass from a semantic no-op even
-        # when every position/actor/check fact is identical.
-        self._history_action_sensitive = bool(getattr(compiled, "consecutive_action_adjudications", ()))
+        # Progress and consecutive-action rules distinguish action paths even
+        # when every position/actor/check fact and repetition count is identical.
+        self._history_action_sensitive = bool(
+            getattr(compiled, "consecutive_action_adjudications", ())
+            or getattr(compiled, "no_progress_draw", None)
+        )
         self._history_context = RuntimeHistoryContext.from_records(
             self._history, include_actions=self._history_action_sensitive,
         )
@@ -734,6 +735,17 @@ class SearchPathRuntime:
         self.legal_provider_decode_binding_seconds = 0.0
         self.legal_provider_fallbacks = 0
         self.legal_provider_operational_failures = 0
+        from .no_progress_context import prepare
+
+        self._no_progress_context = prepare(state, compiled, self._history)
+        if getattr(compiled, "no_progress_draw", None) is not None:
+            from .terminal import _repeated_cycle_target_history_projection
+            _repeated_cycle_target_history_projection(self)
+            from .adjudication import IncompleteAdjudicationHistoryError
+            if terminal_from_search_runtime(self) != state.terminal_status:
+                raise IncompleteAdjudicationHistoryError(
+                    "no-progress imported terminal does not match exact rule result"
+                )
 
     @staticmethod
     def _coerce_hash(value) -> RuntimeHash:
@@ -766,8 +778,21 @@ class SearchPathRuntime:
         self.history_reconstruction_attempts += 1
         from .transition import apply_action, initial_state
 
+        # This import is only a witness reconstruction. The no-progress root
+        # context below independently verifies exact replay and terminal status.
+        # Re-adjudicating every prefix here would replay it quadratically.
+        no_progress = getattr(self.compiled, "no_progress_draw", None)
+        replay_compiled = self.compiled
+        if no_progress is not None:
+            if hasattr(self.compiled, "support"):
+                replay_compiled = replace(
+                    self.compiled,
+                    support=replace(self.compiled.support, no_progress_draw=None),
+                )
+            else:
+                replay_compiled = replace(self.compiled, no_progress_draw=None)
         try:
-            replayed = initial_state(self.compiled)
+            replayed = initial_state(replay_compiled)
             self.history_reconstruction_key_computations += 1
             if not state.history:
                 raise ValueError("empty history")
@@ -778,14 +803,14 @@ class SearchPathRuntime:
                 # Public GameState has no setup key. A declared alternate start
                 # is still recoverable from its exact initial history record;
                 # custom/imported roots retain the opaque-history fallback.
-                engine = semantic_engine_for(self.compiled)
+                engine = semantic_engine_for(replay_compiled)
                 setups = (
                     engine.support.initial_setup_options
                     if engine is not None
-                    else self.compiled.initial_setup_positions
+                    else replay_compiled.initial_setup_positions
                 )
                 for setup_key in sorted(setups):
-                    candidate = initial_state(self.compiled, setup_key)
+                    candidate = initial_state(replay_compiled, setup_key)
                     self.history_reconstruction_key_computations += 1
                     if candidate.history[0] == first:
                         replayed = candidate
@@ -795,7 +820,7 @@ class SearchPathRuntime:
             witnesses = [replayed.position]
             for record in state.history[1:]:
                 action = action_from_dict(json.loads(record.action_signature))
-                replayed = apply_action(replayed, action, self.compiled)
+                replayed = apply_action(replayed, action, replay_compiled)
                 self.history_reconstruction_key_computations += 1
                 produced = replayed.history[-1]
                 if produced != record:
@@ -807,7 +832,7 @@ class SearchPathRuntime:
                 != _runtime_position_identity(state.position, self.compiled)
                 or replayed.ply_count != state.ply_count
                 or replayed.repetition_counts != tuple(state.repetition_counts)
-                or replayed.terminal_status != state.terminal_status
+                or (no_progress is None and replayed.terminal_status != state.terminal_status)
             ):
                 raise ValueError("replayed history does not match imported state")
 
@@ -1321,6 +1346,7 @@ class SearchPathRuntime:
             self._bindings = before_bindings
             if rollback_frame is not None:
                 self._history_context = rollback_frame.history_context
+                self._no_progress_context = rollback_frame.no_progress_context
                 self._restore_bridge(rollback_frame)
             self._sync_stats()
             raise
@@ -1349,6 +1375,7 @@ class SearchPathRuntime:
                 self._legal_cache,
                 self._bindings,
                 history_context=self._history_context,
+                no_progress_context=self._no_progress_context,
             )
         )
         parent = self.position
@@ -1418,6 +1445,12 @@ class SearchPathRuntime:
         self.runtime_hash = child_hash
         self._legal_cache = None
         self._bindings = {}
+        if self._no_progress_context is not None:
+            from .no_progress_context import advance
+            self._no_progress_context = advance(
+                self._no_progress_context, parent, child, action,
+                self.compiled.no_progress_draw, self.ply_count,
+            )
         self.terminal_status = terminal_from_search_runtime(self, checkpoint)
         self.hash_updates += 1
         self.pushes += 1
@@ -1440,6 +1473,7 @@ class SearchPathRuntime:
         self._legal_cache = frame.cache
         self._bindings = frame.bindings
         self._history_context = frame.history_context
+        self._no_progress_context = frame.no_progress_context
         self._restore_bridge(frame)
         self.pops += 1
         self._sync_stats()
