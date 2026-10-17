@@ -4007,3 +4007,36 @@ Next actual-consumer cost source inventory has begun: the opt-in localized-contr
 snapshot replays the complete root; inspect a standard shallow session copy only
 as a private feasibility alternative, retaining full child/witness equality and
 parent immutability. No copy optimization, new cache/API or training is adopted.
+
+
+## Actual Generic learning support and spatial snapshot cost - 2026-10-17
+
+PRIMARY read full AUX88thread supplement1792223854.185299 and fixed AUX89
+63b4ce1d source/report/archive; independently executed38owner tests and seven
+regenerated audits from187verifiedpayloads/46.542seconds, no AUX checkout or
+training writes. Same four-rule learner now executes;128actual outcome slots
+retain17UNKNOWN and gain[-.25,.28125]. This supersedes the earlier only-Chess
+feasibility premise, not the full-domain/strength/stable-ratio qualifications.
+
+PRIMARY authored independent paired arithmetic, exact leaf-input rank/nullspace
+and actual-state witnesses. Observed boardA=handA leaf alias in271002/271004 is
+not structural: one lawful child/an already queried root break it. No rank/WDL
+prerequisite, changed AUX curve/caps, TC implementation or duplicate learner.
+
+PRIMARY also checked real published fractional-model activation: scale1 erases
+8/8actual updates; supported explicit256 retains8/8. All657Native root values
+match integer-channel math;64Native D2choices match ownquantized Core optimum.
+32/32floating optimal sets retained at256 versus22/32at1, one training-induced
+preference change retained onlyat256. Private scoped semantic replays are not
+an all-domain legacy converter or product/API/default adoption.
+
+Owned code change is standard Sessioncopy in actual v3control snapshot only.
+Nine-rule whole collectors retain identical126point payloads/IDs; paired pooled
+4.5502to1.43985seconds. Three real auxiliary/setup context controls,72affected
+and3270full tests pass. First pytest Temp permission failure is preserved and
+resolved by a new project-local --basetemp; no security setting change or SAC
+attribution. Source/capsule qualification and fixed delivery are recorded in
+FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md. Dot's prior0e7153review
+is not review/execution of this later copy/precision study. No routineack needed;
+fixed-SHA result will be delivered after actual publication. Efficiency includes
+scoped measured producer costs, not complete engineering/token savings.

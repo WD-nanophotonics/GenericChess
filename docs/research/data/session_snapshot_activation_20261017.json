@@ -1,0 +1,552 @@
+{
+  "cost-summary": {
+    "caveat": "paired helper microcosts, not full learning throughput/strength/all-domain equivalence",
+    "rows": [
+      {
+        "absent_or_terminal": 0,
+        "median_candidate_ms": 0.72915,
+        "median_existing_ms": 0.78585,
+        "median_paired_speed_ratio": 1.0528012068847288,
+        "prefix": 0,
+        "returned": 9
+      },
+      {
+        "absent_or_terminal": 2,
+        "median_candidate_ms": 1.1475,
+        "median_existing_ms": 14.02545,
+        "median_paired_speed_ratio": 12.6684600843391,
+        "prefix": 16,
+        "returned": 7
+      },
+      {
+        "absent_or_terminal": 6,
+        "median_candidate_ms": 2.2919,
+        "median_existing_ms": 119.08255,
+        "median_paired_speed_ratio": 49.08275713895074,
+        "prefix": 64,
+        "returned": 3
+      }
+    ],
+    "seconds": 11.51600000000326,
+    "slots": 27,
+    "status": "COMPLETE"
+  },
+  "whole-summary": {
+    "physical_collectors": 18,
+    "points": 126,
+    "points_only_with_both_arms": 126,
+    "pooled_total_ratio": 3.1601849773343518,
+    "rules": 9,
+    "scope": "Frozen artificial unfitted v3 offsets / same public nine atom-generated rules; cost/trajectory integrity only, no learned strength or all-domain claim. Partial/error slots retained.",
+    "status": "COMPLETE",
+    "total_seconds": {
+      "copy": 1.4398510000610258,
+      "replay": 4.550195499992697
+    },
+    "total_spatial_seconds": {
+      "copy": 0.2856945999956224,
+      "replay": 3.401915999711491
+    },
+    "whole_trajectories_equal": true
+  },
+  "activation-summary": {
+    "binding_multiplicities": {
+      "1": 16187
+    },
+    "history_edges": 16187,
+    "models": 8,
+    "query_roots": 657,
+    "raw_changed": 8,
+    "scales": {
+      "1": {
+        "max_error": 2.4173684365991246,
+        "max_normalized_error": 0.22299405135798733,
+        "median_error": 0.2334251365139739,
+        "models_changed": 0,
+        "rms_error": 0.5639320897771251
+      },
+      "256": {
+        "max_error": 0.012166324710282339,
+        "max_normalized_error": 0.0006615569358034428,
+        "median_error": 0.0013902370153831,
+        "models_changed": 8,
+        "rms_error": 0.0031553190327050134
+      }
+    },
+    "scope": "Private explicit semantic representative replays and existing256precision, not originallegacyhistoryidentity/all-domainadapter/search/strength/newtraining or productdefaultadoption.",
+    "status": "COMPLETE"
+  },
+  "finite-summary": {
+    "comparison": [
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271001,
+        "seed": 1977,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271001,
+        "seed": 1977,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271001,
+        "seed": 8173,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271001,
+        "seed": 8173,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": false,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": false
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271002,
+        "seed": 1977,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271002,
+        "seed": 1977,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": false,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": false
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271002,
+        "seed": 8173,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": false,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": false
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271002,
+        "seed": 8173,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271003,
+        "seed": 1977,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": false,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": false
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": true,
+          "native_identical_action": false,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": true,
+        "rule": 271003,
+        "seed": 1977,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271003,
+        "seed": 8173,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": false,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": false
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271003,
+        "seed": 8173,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271004,
+        "seed": 1977,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271004,
+        "seed": 1977,
+        "which": "last"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271004,
+        "seed": 8173,
+        "which": "first"
+      },
+      {
+        "1": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "256": {
+          "initial_equals_float": true,
+          "initial_vs_trained_optimal_changed": false,
+          "native_identical_action": true,
+          "trained_equals_float": true
+        },
+        "float_initial_vs_trained_optimal_changed": false,
+        "rule": 271004,
+        "seed": 8173,
+        "which": "last"
+      }
+    ],
+    "completedD2": 64,
+    "core_visits": 2680,
+    "native_legal_optimal": 64,
+    "native_queries": 64,
+    "roots": 16,
+    "seconds": 1.952999999979511,
+    "status": "COMPLETE"
+  },
+  "generic-information": {
+    "actual_nonzero_updates": 22,
+    "behavior": {
+      "identical_records": 56,
+      "improved": 1,
+      "same_reward": 51,
+      "unresolved": 11,
+      "worse": 1
+    },
+    "episode_count": 32,
+    "paired_games": 128,
+    "pairs": 64,
+    "per_rule": [
+      {
+        "bounds": [
+          -0.5625,
+          0.6875
+        ],
+        "pairs": 16,
+        "rule": 271001
+      },
+      {
+        "bounds": [
+          0.0,
+          0.0
+        ],
+        "pairs": 16,
+        "rule": 271002
+      },
+      {
+        "bounds": [
+          -0.3125,
+          0.3125
+        ],
+        "pairs": 16,
+        "rule": 271003
+      },
+      {
+        "bounds": [
+          -0.125,
+          0.125
+        ],
+        "pairs": 16,
+        "rule": 271004
+      }
+    ],
+    "pooled_gain_bounds": [
+      -0.25,
+      0.28125
+    ],
+    "rows": [
+      {
+        "all_zero_nonterminal_inputs": 0,
+        "complete": 147,
+        "failed": 0,
+        "leaf_free_rank_exact": 5,
+        "never_observed_leaf_channels": [],
+        "nonterminal_pv": 137,
+        "nonzero_actual_gradients": 137,
+        "per_seed": [
+          {
+            "rank": 5,
+            "seed": 1977
+          },
+          {
+            "rank": 5,
+            "seed": 8173
+          }
+        ],
+        "queries": 147,
+        "root_free_rank_exact": 5,
+        "rule": 271001,
+        "terminal_pv": 10,
+        "trainable_dimensions": 5
+      },
+      {
+        "all_zero_nonterminal_inputs": 78,
+        "complete": 153,
+        "failed": 0,
+        "leaf_free_rank_exact": 4,
+        "never_observed_leaf_channels": [],
+        "nonterminal_pv": 142,
+        "nonzero_actual_gradients": 64,
+        "per_seed": [
+          {
+            "rank": 4,
+            "seed": 1977
+          },
+          {
+            "rank": 3,
+            "seed": 8173
+          }
+        ],
+        "queries": 153,
+        "root_free_rank_exact": 4,
+        "rule": 271002,
+        "terminal_pv": 11,
+        "trainable_dimensions": 5
+      },
+      {
+        "all_zero_nonterminal_inputs": 11,
+        "complete": 314,
+        "failed": 1,
+        "leaf_free_rank_exact": 5,
+        "never_observed_leaf_channels": [],
+        "nonterminal_pv": 304,
+        "nonzero_actual_gradients": 293,
+        "per_seed": [
+          {
+            "rank": 5,
+            "seed": 1977
+          },
+          {
+            "rank": 5,
+            "seed": 8173
+          }
+        ],
+        "queries": 315,
+        "root_free_rank_exact": 5,
+        "rule": 271003,
+        "terminal_pv": 10,
+        "trainable_dimensions": 5
+      },
+      {
+        "all_zero_nonterminal_inputs": 0,
+        "complete": 42,
+        "failed": 0,
+        "leaf_free_rank_exact": 4,
+        "never_observed_leaf_channels": [],
+        "nonterminal_pv": 30,
+        "nonzero_actual_gradients": 30,
+        "per_seed": [
+          {
+            "rank": 4,
+            "seed": 1977
+          },
+          {
+            "rank": 4,
+            "seed": 8173
+          }
+        ],
+        "queries": 42,
+        "root_free_rank_exact": 5,
+        "rule": 271004,
+        "terminal_pv": 12,
+        "trainable_dimensions": 5
+      }
+    ],
+    "scope": "Independent exact rational input-span and paired arithmetic on TRAIN-exposed four-rule closed data. Terminal leaf constants carry zero own derivative, not missing/ordinary zero features. Rank is necessary local sensitivity only, not unique price/utility/generalization.",
+    "status": "COMPLETE"
+  },
+  "test-summary": {
+    "affected-v2": {
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "72",
+      "time": "5.561"
+    },
+    "before-context": {
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "11",
+      "time": "0.315"
+    },
+    "full": {
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "3270",
+      "time": "293.666"
+    }
+  }
+}

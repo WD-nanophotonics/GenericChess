@@ -1,3 +1,16 @@
+## 2026-10-17 optional collector snapshot and fractional-price activation
+
+Python-only learning/selfplay change: actual v3control snapshots extend a private
+standard Session copy, preserving immutable full state/history/witnesses and live
+parent isolation. No Native rebuild, schema/API/search/model/default/UI change.
+3270full/72affected checks pass; fixed generated whole-collector payloads/IDs
+match and scoped cost improves. Published AUX89 prices were only privately
+qualified, not merged/deployed. Future fractional material activation must state
+precision explicitly: existing material_scale256 preserves changes erased by1
+in this eight-model scope. Keep boardCURRENT/handBASE/per-rule maps and replay
+actual semantic histories; no universal legacy adapter is supplied. Evidence:
+../research/FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md.
+
 ## 2026-10-17 original actor binding in semantic effects
 
 Rebuild Native for corrected action_base/action_current operands in move/shift,

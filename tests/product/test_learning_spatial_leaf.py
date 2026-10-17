@@ -88,3 +88,57 @@ def test_optional_rich_feature_roundtrip_preserves_legacy_payload():
     assert TrainingTrajectory.from_dict(changed.to_dict()).to_dict() == changed.to_dict()
     assert changed.trajectory_id != trajectory.trajectory_id
     assert changed.feature_payload(rich) != trajectory.feature_payload(point)
+
+
+@requires_native
+@pytest.mark.parametrize("case", ["ep-history", "castling-right", "alternate-start"])
+def test_spatial_pv_preserves_full_session_context_and_parent(case):
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.western_chess import build_western_chess_ruleset
+    from generic_chess.rules.schema import RuleInitialSetupOption
+    from generic_chess.core.coordinates import Square
+    from generic_chess.learning.selfplay import _spatial_snapshot
+    from generic_chess.native.semantic import spatial_features
+    from rule_semantics_ir_fixtures import castling_ruleset
+
+    if case == "ep-history":
+        compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+        session = GameSession(compiled)
+        double = next(a for a in session.legal_actions()
+                      if a.from_square == Square(0, 1) and a.to_square == Square(0, 3))
+        session.submit(double)
+        assert any(v is not None for _, v in session.state.position.aux_state)
+        pv = (session.legal_actions()[0],)
+    elif case == "castling-right":
+        compiled = compile_ruleset_for_execution(castling_ruleset())
+        session = GameSession(compiled)
+        pv = (next(a for a in session.legal_actions()
+                   if a.from_square == Square(4, 0) and a.to_square == Square(6, 0)),)
+    else:
+        rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)))
+        rule = make_ruleset(5, [king_type(), rook],
+                            lines=["....k", ".....", "R....", ".....", "K...."])
+        other = make_ruleset(5, [king_type(), rook],
+                             lines=["....k", ".....", ".R...", ".....", "K...."])
+        compiled = compile_legacy_ruleset_for_semantic_execution(replace(
+            rule, initial_setup_options=(RuleInitialSetupOption("other", other.initial_position),)))
+        session = GameSession(compiled, "other")
+        session.submit(session.legal_actions()[0])
+        pv = (session.legal_actions()[0],)
+    native = compile_native_semantic_rules(compiled)
+    checkpoint = LearnableMaterialCheckpoint(
+        localized_control_weights=(1.,0.,0.,0.,0.,0.,0.,0.,-1.))
+    parent = session.state, session.to_record(), session.history, session._search_witnesses
+    expected = GameSession.replay(compiled, session.to_record())
+    for a in pv:
+        expected.submit(a)
+    packed = pack_semantic_search_position(compiled, native, expected)
+    want = spatial_features(native, packed)["localized_control"]
+    assert _spatial_snapshot(compiled, native, session, pv, checkpoint, expected.state) == ((), want)
+    assert parent == (session.state, session.to_record(), session.history, session._search_witnesses)
+    # A rejected continuation must leave the same live parent intact too.
+    with pytest.raises(ValueError):
+        _spatial_snapshot(compiled, native, session,
+                          (replace(pv[0], pattern_id="invalid-pattern"),),
+                          checkpoint, expected.state)
+    assert parent == (session.state, session.to_record(), session.history, session._search_witnesses)

@@ -8,13 +8,27 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work - 2026-10-17
 
-LEARNING_METHODS_TERMINAL_LEAVES_AND_PREFIXES_20261017.md is the current follow-on.
-Latest result: both current terminal-PV and accepted-v3 frozen-offset consumer
-defects are repaired (final3267full/53affected pass); no generic learning win
-is claimed. Immediate next question is the actual opt-in control snapshot's
-full-history replay cost: source inventory begun, freeze bounded equality/cost
-controls before any alternative. This replaces the earlier broad consumer
-inspection as the next action; new published AUX exposure is a useful backup.
+FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md is current follow-on.
+Actual v3 control collector now uses a private standard Session copy, retaining
+complete immutable state/history/witnesses and parent isolation. All9rule paired
+whole collectors have identical126point/fullpayload/IDs; scoped pooled4.5502 to
+1.43985seconds, not a universal learning speed/strength claim.3270full/72affected
+checks pass. No Core/Cbinary/search/default/model/AUX source changes.
+
+New PUBLIC AUX89 fixed63b4ce1d has been read and EXECUTED:187payload hashes,
+38owner controls and7regenerated audits/229977logicalplies match. Same TD now
+actually executes4generated promotion/drop rules;28terminal4U/22updates,128EVAL
+111terminal17U/gain[-.25,.28125], not established Generic strength. AUX owns next
+registered Generic curve; no competing learner or unchangedChess16/64 repeat.
+PRIMARY independent rational PV-input ranks5/4/5/4 show boardA=handA alias in
+short data for271002/271004, yet actual lawful states break it: no structural
+invariance/rank gate. Naive Native scale1 erases8/8learned model changes; existing
+explicit256 retains8/8,657root evaluations equal integer math and64D2Native
+queries match quantized optimal sets.256preserves32/32floating optsets here,
+scale1only22/32. Future activation must specify precision/fullsemantic replay;
+no default/converter API or deployed strength claim follows. Immediate next:
+inspect useful newlypublished AUX curve then test one concrete deployment need;
+keep whole-domain target, terminal/UNKNOWN and per-rule channel distinctions.
 
 Published AUX88 fixed3f9afcc3 is now READ and EXECUTED here:197payload hashes,
 36owner tests and seven regenerated A/B audits agree; PRIMARY additionally wrote

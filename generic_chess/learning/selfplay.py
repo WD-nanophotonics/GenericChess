@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import random
+from copy import copy
 from dataclasses import dataclass
 
 from ..ai.limits import SearchLimits
@@ -260,7 +261,8 @@ def _dummy_profile(compiled, checkpoint):
 def _spatial_snapshot(compiled, native_rules, session, pv, checkpoint, leaf_state):
     """Frozen v3 offsets, with exact Native control semantics and full history.
 
-    Only the opt-in control component pays for session replay. Occupancy is a
+    The private session copy retains immutable state, records and every history
+    witness; submitting its PV cannot mutate the live parent. Occupancy is a
     position-only feature. Scoring terminal constants need neither offset.
     """
     if leaf_state.terminal_status.is_terminal:
@@ -277,7 +279,7 @@ def _spatial_snapshot(compiled, native_rules, session, pv, checkpoint, leaf_stat
         from ..native.semantic import spatial_features
         leaf_session = session
         if pv:
-            leaf_session = GameSession.replay(compiled, session.to_record())
+            leaf_session = copy(session)
             for action in pv:
                 leaf_session.submit(action)
         packed = pack_semantic_search_position(compiled, native_rules, leaf_session)
