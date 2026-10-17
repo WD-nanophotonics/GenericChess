@@ -337,3 +337,58 @@ rate grid, retaining fixed-rate controls and full same-cost deployment evidence.
 DEFER implementation/training here: the current informative premise concerns
 exposure, while AUX owns its learner and frozen experiments. No parameters are
 fitted to previous validation or human prices, and no training request is sent.
+
+
+## Follow-on current v3 collector defect and bounded correction
+
+The next actual consumer inspection found another distinct issue, rather than
+claiming terminal-PV tests qualified all model families. A valid unfitted v3
+checkpoint with fixed zero-sum anchor-location tables is accepted by current
+semantic self-play. One real D1 PV has Native/Python owner-0 raw4, hence
+tanh(.4)=.3799489623, while the collector and cutoff bootstrap record .0996679946
+from material1 alone. The existing v3 TD test asserted table passthrough, not
+complete value prediction. The substantive new native test fails before repair;
+a separate initial test-file quote typo is retained as preparation failure.
+
+The correction records optional typed occupancy/control feature snapshots on
+nonterminal PV leaves and uses the frozen parent's v3 components in prediction,
+bootstrap, trainer residual/derivative scale and the existing diagnostic mirror.
+These tables are not newly trainable coordinates; existing normalization remains.
+Empty added fields are omitted, preserving old payloads/IDs and reads. Old
+missing-feature records retain their historical partial-feature contract; no
+position-key reconstruction or retroactive archive repair is claimed. New rich
+points naturally have distinct IDs and feature payloads.
+
+Occupancy remains position-only. The opt-in localized-control extraction instead
+replays the COMPLETE current session plus PV and uses Native's actual feature
+semantics, preserving action history and runtime guards. A control at rule MAX1
+exposed why a naive Position-only Core fix is wrong: Core's ungated spatial
+control gives a different value, while Native's terminal trial gate applies.
+Terminal constants retain precedence and require neither offset nor own gradient.
+Unsupported compact-nonlinear TD and ordinary-Native spatial collection now
+refuse explicitly; existing offline nonlinear/evaluation paths are unchanged.
+No search, rule, binary, default, new learner or AUX checkout changes. Full replay
+cost is paid only for the opt-in control consumer; no speedup claim is made.
+
+Eight new controls cover actual Native occupancy/control PVs and cutoffs, terminal
+precedence, legacy/rich serialization/feature identity and explicit compact
+rejection at collector/trainer/diagnostic entry. Existing v3 table passthrough
+and terminal-credit tests remain.53affected checks pass. Actual normal-runtime
+combined24cases include7Native executions. An initial restored-source attempt
+also ran24 but inherited the installed Native binary through an editable import
+hook; it is NOT called binary-free. Corrected Python-S restoration with explicit
+dependencies verifies native unavailable and17PASS/7SKIP. Both tiers remain.
+
+The [new exact source/evidence capsule](../archive/rich_tdleaf_offsets_20261017/README.md)
+is separate from both earlier immutable capsules. Its qualification records the
+full-regression and required publisher results only after they actually finish.
+No richer-model training or generic strength conclusion follows from this repair.
+
+Final full active-layer regression3267PASS (process exit0),53final affected checks
+PASS. The final161member capsule itself verifies17sourcePASS/7explicitNativeSKIP;
+normal24combined cases separately execute7actualNative controls. New regression
+also verifies the full-value derivative through existing median normalization.
+Next actual-consumer cost source inventory has begun: the opt-in localized-control
+snapshot replays the complete root; inspect a standard shallow session copy only
+as a private feasibility alternative, retaining full child/witness equality and
+parent immutability. No copy optimization, new cache/API or training is adopted.

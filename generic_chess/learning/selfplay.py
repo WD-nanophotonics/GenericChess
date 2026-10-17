@@ -47,10 +47,14 @@ def collect_self_play(
 ) -> list[TrainingTrajectory]:
     """Play ``config.games`` games of Gen-N vs Gen-N with one frozen
     evaluator, recording a TDLeaf trajectory per game."""
+    if checkpoint.compact_nonlinear:
+        raise NotImplementedError("TDLeaf collection does not support compact nonlinear checkpoints")
     checkpoint.validate_ruleset(compiled)
     from ..rules.ir import CompiledSemanticRuleset
 
     semantic_path = isinstance(compiled, CompiledSemanticRuleset)
+    if not semantic_path and (checkpoint.spatial_occupancy_weights or checkpoint.localized_control_weights):
+        raise NotImplementedError("spatial TDLeaf collection requires semantic Native evaluation")
     eval_tables = None if semantic_path else compile_native_evaluation(
         native_rules,
         _dummy_profile(compiled, checkpoint),
@@ -100,6 +104,9 @@ def collect_self_play(
                     if semantic_path
                     else dynamic_features(leaf_state.position, compiled).as_tuple()
                 )
+                spatial, control = _spatial_snapshot(
+                    compiled, native_rules, session, pv, checkpoint, leaf_state
+                )
                 u = _normalized_value(
                     features,
                     checkpoint.board_weights,
@@ -107,6 +114,8 @@ def collect_self_play(
                     checkpoint.value_scale,
                     dynamic,
                     checkpoint.dynamic_weights,
+                    dict(spatial), checkpoint.spatial_occupancy_weights,
+                    control, checkpoint.localized_control_weights,
                 )
                 leaf_terminal_z = None
                 if leaf_state.terminal_status.is_terminal:
@@ -131,6 +140,8 @@ def collect_self_play(
                         completed_depth=result.completed_depth,
                         leaf_feature_dynamic=tuple(dynamic),
                         leaf_terminal_z=leaf_terminal_z,
+                        leaf_feature_spatial=spatial,
+                        leaf_feature_control=control,
                     )
                 )
             if getattr(result, "declaration_id", None) is not None:
@@ -159,6 +170,8 @@ def collect_self_play(
                     completed_depth=old.completed_depth,
                     leaf_feature_dynamic=old.leaf_feature_dynamic,
                     leaf_terminal_z=old.leaf_terminal_z,
+                    leaf_feature_spatial=old.leaf_feature_spatial,
+                    leaf_feature_control=old.leaf_feature_control,
                 )
             session.submit(action)
             ply += 1
@@ -190,6 +203,9 @@ def collect_self_play(
                 current_dynamic = dynamic_features(
                     session.state.position, compiled
                 ).as_tuple()
+            spatial, control = _spatial_snapshot(
+                compiled, native_rules, session, (), checkpoint, session.state
+            )
             bootstrap_value = _normalized_value(
                 current_features,
                 checkpoint.board_weights,
@@ -197,6 +213,8 @@ def collect_self_play(
                 checkpoint.value_scale,
                 current_dynamic,
                 checkpoint.dynamic_weights,
+                dict(spatial), checkpoint.spatial_occupancy_weights,
+                control, checkpoint.localized_control_weights,
             )
         else:
             termination_reason = result.status.value
@@ -237,3 +255,31 @@ def _dummy_profile(compiled, checkpoint):
         },
         evaluator_version=checkpoint.evaluator_version,
     )
+
+
+def _spatial_snapshot(compiled, native_rules, session, pv, checkpoint, leaf_state):
+    """Frozen v3 offsets, with exact Native control semantics and full history.
+
+    Only the opt-in control component pays for session replay. Occupancy is a
+    position-only feature. Scoring terminal constants need neither offset.
+    """
+    if leaf_state.terminal_status.is_terminal:
+        return (), ()
+    spatial = ()
+    if checkpoint.spatial_occupancy_weights:
+        from .features import spatial_occupancy_features
+        spatial = tuple(sorted(spatial_occupancy_features(
+            leaf_state.position, tuple(native_rules.type_ids)
+        ).items()))
+    control = ()
+    if checkpoint.localized_control_weights:
+        from ..native.adapter import pack_semantic_search_position
+        from ..native.semantic import spatial_features
+        leaf_session = session
+        if pv:
+            leaf_session = GameSession.replay(compiled, session.to_record())
+            for action in pv:
+                leaf_session.submit(action)
+        packed = pack_semantic_search_position(compiled, native_rules, leaf_session)
+        control = spatial_features(native_rules, packed)["localized_control"]
+    return spatial, control

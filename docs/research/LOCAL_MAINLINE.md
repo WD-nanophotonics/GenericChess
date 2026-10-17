@@ -9,6 +9,13 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 ## Current decision and immediate work - 2026-10-17
 
 LEARNING_METHODS_TERMINAL_LEAVES_AND_PREFIXES_20261017.md is the current follow-on.
+Latest result: both current terminal-PV and accepted-v3 frozen-offset consumer
+defects are repaired (final3267full/53affected pass); no generic learning win
+is claimed. Immediate next question is the actual opt-in control snapshot's
+full-history replay cost: source inventory begun, freeze bounded equality/cost
+controls before any alternative. This replaces the earlier broad consumer
+inspection as the next action; new published AUX exposure is a useful backup.
+
 Published AUX88 fixed3f9afcc3 is now READ and EXECUTED here:197payload hashes,
 36owner tests and seven regenerated A/B audits agree; PRIMARY additionally wrote
 independent all-gradient/paired-outcome calculations. All960validationgames retain
@@ -46,6 +53,18 @@ Shogi full methods remain unread after bounded normal-browser blank-page check.
 Next inspect published AUX richer-TRAIN evidence if available and consequential,
 or test a concrete complete-state/typed-count consumer; no oldfull87replay, extra
 training, unchanged qcampaign or expanded proof gate. Science remains OPEN.
+
+A new actual accepted-v3 consumer mismatch was subsequently reproduced: Native/
+Python frozen fullvalue raw4 versus recordedmaterial1 (.37995vs.09967). Corrected
+optional typed spatial/control snapshots now enter leaf/bootstrap/TD predictions;
+terminalconstants stilltakeprecedence. Oldmissingfields retain historicalpartial
+contract, not retroactivefullmodelqualification. ExactNative control extraction
+uses fullsession/PV replay onlywhenrequested; no Position-only historyquotient.
+UnsupportedcompactTD/ordinaryspatialcollection refuseexplicitly.53affectedpass,
+17pure-sourcepass/7Native-skips; final3267fullPASS. Publisher qualification records actualexit.
+No newmodel/training/Nativebinary/default/AUXchanges. Next close delivery then
+inspect actual owner exposure evidence or a concrete complete-state consumer,
+not a new unused sampler or adaptive-rate implementation.
 
 ## Preceding learning support and retained capability context
 
@@ -518,3 +537,9 @@ Independent fixed-TD213episode credit read matches actualupdates4.44e-16; per-st
 absolute versus episode-net aggregation materially differs. This is descriptive,
 not actualTCtraining or new default. Defer adaptive implementation to a real
 consumer/evidence need; AUX learning lane and all frozen conditions stay intact.
+
+Next source inventory BEGUN for the actual opt-in v3 control consumer: current
+full-root replay preserves complete history but may cost materially at longer
+prefixes. Freeze a small component-cost/completechild/witness/parent-integrity
+comparison before any shallow-copy alternative. No product optimization selected
+from source inspection; no newlearner/sampler/API or AUX interference.

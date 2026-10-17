@@ -237,6 +237,8 @@ def td_signal_diagnostics(trajectories, checkpoint, config: TDLeafConfig):
     plus a summary.  The recomputed weight deltas are verified (in tests) to
     match ``tdleaf_update`` exactly, proving the instrumentation does not
     change the learner."""
+    if checkpoint.compact_nonlinear:
+        raise NotImplementedError("TDLeaf diagnostics do not support compact nonlinear checkpoints")
     value_scale = config.value_scale or checkpoint.value_scale
     alpha = config.alpha or 0.01 * max(checkpoint.reference_median, 1.0)
     records: list[TDUpdateRecord] = []
@@ -256,6 +258,9 @@ def td_signal_diagnostics(trajectories, checkpoint, config: TDLeafConfig):
                     trajectory.leaf_features_at(p),
                     checkpoint.board_weights,
                     checkpoint.hand_weights,
+                    trajectory.dynamic_features_at(p), checkpoint.dynamic_weights,
+                    dict(p.leaf_feature_spatial), p.leaf_feature_control,
+                    checkpoint.spatial_occupancy_weights, checkpoint.localized_control_weights,
                 )
                 / value_scale
             )

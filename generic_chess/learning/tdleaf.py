@@ -41,9 +41,14 @@ def _normalized_value(
     value_scale: float,
     dynamic=None,
     dynamic_weights=None,
+    spatial=None,
+    spatial_weights=None,
+    control=None,
+    control_weights=None,
 ) -> float:
     v = linear_value(
-        features, board_weights, hand_weights, dynamic, dynamic_weights
+        features, board_weights, hand_weights, dynamic, dynamic_weights,
+        spatial, control, spatial_weights, control_weights,
     )
     return math.tanh(v / value_scale) if value_scale > 0 else 0.0
 
@@ -59,6 +64,8 @@ def tdleaf_update(
     ``checkpoint`` weights first; the eligibility-traced updates are then
     accumulated and applied once.
     """
+    if checkpoint.compact_nonlinear:
+        raise NotImplementedError("TDLeaf does not support compact nonlinear checkpoints")
     value_scale = config.value_scale or checkpoint.value_scale
     alpha = config.alpha
     if alpha is None:
@@ -98,6 +105,8 @@ def tdleaf_update(
                 value_scale,
                 trajectory.dynamic_features_at(p),
                 checkpoint.dynamic_weights,
+                dict(p.leaf_feature_spatial), checkpoint.spatial_occupancy_weights,
+                p.leaf_feature_control, checkpoint.localized_control_weights,
             )
             for p in points
         ]

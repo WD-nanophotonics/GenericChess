@@ -3981,3 +3981,29 @@ Independent fixed-TD213episode credit read matches actualupdates4.44e-16; per-st
 absolute versus episode-net aggregation materially differs. This is descriptive,
 not actualTCtraining or new default. Defer adaptive implementation to a real
 consumer/evidence need; AUX learning lane and all frozen conditions stay intact.
+
+
+## Accepted v3 collector follow-on —2026-10-17
+
+PRIMARY continued after the earlier publication checkpoint and actually found
+an independent current consumer defect: valid frozen-v3 Native/Python raw4
+versus collectedmaterial1; leaf/bootstrap/TD prediction omitted spatialoffsets.
+Eight new controls and optional complete typed snapshots correct this consumer
+without a new trainable layer, default, Core/C binary or AUX change. Existing
+v3 table passthrough/legacy payloads remain; oldmissingfeatures notreconstructed.
+53affected tests pass, pure-source17pass/7Native-skips distinct from24normal
+Native-inclusive cases. Initial restored runtime's editable Native fallback was
+identified and corrected for the pure-source tier, not concealed as independence.
+The first fullregression passed3267 before a small feature-payload completion;
+finalfull regression is repeated for finalsource and remains a distinct tier.
+Dot's earlier source review covers0e7153b2terminalfix ONLY; no review/execution
+or agreement on this later rich repair is claimed. No routineack requested.
+
+Final full active-layer regression3267PASS (process exit0),53final affected checks
+PASS. The final161member capsule itself verifies17sourcePASS/7explicitNativeSKIP;
+normal24combined cases separately execute7actualNative controls. New regression
+also verifies the full-value derivative through existing median normalization.
+Next actual-consumer cost source inventory has begun: the opt-in localized-control
+snapshot replays the complete root; inspect a standard shallow session copy only
+as a private feasibility alternative, retaining full child/witness equality and
+parent immutability. No copy optimization, new cache/API or training is adopted.
