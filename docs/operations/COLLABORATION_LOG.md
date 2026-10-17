@@ -1,3 +1,12 @@
+
+## DEV_AUX93 — continuous TD versus mean TreeStrap, bounded closure
+
+DEV_AUX completed all32 paid learning arms and all1536 D2 outcome slots; both learners improve initialization in finite pooled panels, while direct method advantage and stable price ordering remain unresolved. The prospective D3 panel stopped at its original1200s cap:654/768 returned,114 missing retained. All original producers are closed. Independent typed-history, interval, gradient and isolated43-test/16-output reproduction checks pass; two unavailable unchanged-model controls are explicitly N/A. All failures and partial results remain available in the sealed38th capsule. No Core/default/UI/PRIMARY changes or new workers.
+
+Dot advice was adopted for reusing all3436 old trajectories for role-credit diagnosis, with correlated-cell/local-target limitations; paper/inline advice is not source execution. PRIMARY earlier89 execution at0ca is owner-reported and no93 rerun/adoption is confirmed. Ordinary concurrent computation remains normal; paid node equality does not establish equal end-to-end CPU cost. No quiet window or automatic rerun.
+
+User requested pausing future inspection and closing the current batch safely. Official DEV_AUX heartbeat is PAUSED, no next experiment starts. Reviewed fixed source is sent once in the existing evidence thread; delivery is not reading or independent execution. Official ending and full remote SHA are recorded in DELIVERY_20261017_93.json after actual verification. Scientific status OPEN.
+
 # DEV_AUX91 — paired anchor release and next paid-WDL interface
 
 DEV_AUX's all32 fixed5/free6 arms completed6.4Mnodes and1536 shared validation

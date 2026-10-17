@@ -1,0 +1,2199 @@
+{
+  "status": "RECORDED_INFORMATION_AND_LOSS",
+  "methods": {
+    "TD": {
+      "paid_queries": 56500,
+      "paid_nodes": 3200000,
+      "paid_search_seconds": 974.8748965967097,
+      "failed_queries": 16,
+      "failed_query_nodes": 537,
+      "candidate_complete_queries": 28383,
+      "searched_terminal_PV": 3070,
+      "games": 3866,
+      "terminal_games": 3774,
+      "unknown_games": 92,
+      "changed_games": 2535,
+      "no_observations_games": 706,
+      "samples": 28293,
+      "summed_episode_mean_loss": 201.21274488708488
+    },
+    "TreeStrap": {
+      "paid_queries": 55395,
+      "paid_nodes": 3200000,
+      "paid_search_seconds": 981.139013909793,
+      "failed_queries": 16,
+      "failed_query_nodes": 667,
+      "candidate_complete_queries": 27795,
+      "searched_terminal_PV": 2786,
+      "samples": 375669,
+      "active_samples": 257616,
+      "query_updates": 27217,
+      "stored_parameter_change_queries": 27217,
+      "nonzero_delta_but_rounded_same_query": 0,
+      "summed_query_mean_loss": 1276.0149589782407,
+      "exact_samples": 90901,
+      "exact_terminal_search_targets": 6717,
+      "material_or_bound_active_residuals": 250899,
+      "terminal_gross_query_delta_l1": 25.647273463197248,
+      "material_or_bound_gross_query_delta_l1": 80.99003473924029,
+      "upper_samples": 161948,
+      "terminal_active_residuals": 6717,
+      "lower_samples": 122820,
+      "games": 3506,
+      "terminal_games": 3422,
+      "unknown_games": 84,
+      "changed_games": 2863,
+      "no_observations_games": 639
+    }
+  },
+  "curves": [
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 549,
+      "terminal_PV": 25,
+      "samples": 556,
+      "loss_sum": 8.970169059663831,
+      "episode_updates": 27
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 562,
+      "terminal_PV": 40,
+      "samples": 556,
+      "loss_sum": 12.765431724393729,
+      "episode_updates": 33
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 513,
+      "terminal_PV": 65,
+      "samples": 505,
+      "loss_sum": 22.76485499511531,
+      "episode_updates": 50
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 548,
+      "terminal_PV": 72,
+      "samples": 547,
+      "loss_sum": 22.996670540887816,
+      "episode_updates": 58
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 473,
+      "terminal_PV": 35,
+      "samples": 471,
+      "loss_sum": 14.385841748458956,
+      "episode_updates": 35
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 485,
+      "terminal_PV": 58,
+      "samples": 493,
+      "loss_sum": 19.248693438801304,
+      "episode_updates": 46
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 587,
+      "terminal_PV": 126,
+      "samples": 586,
+      "loss_sum": 41.67132874742868,
+      "episode_updates": 100
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 616,
+      "terminal_PV": 127,
+      "samples": 608,
+      "loss_sum": 36.74991739280407,
+      "episode_updates": 97
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 477,
+      "terminal_PV": 40,
+      "samples": 481,
+      "loss_sum": 14.00546796608902,
+      "episode_updates": 39
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 493,
+      "terminal_PV": 62,
+      "samples": 487,
+      "loss_sum": 21.166787141779768,
+      "episode_updates": 51
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 581,
+      "terminal_PV": 105,
+      "samples": 592,
+      "loss_sum": 32.13807022735429,
+      "episode_updates": 86
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 646,
+      "terminal_PV": 139,
+      "samples": 634,
+      "loss_sum": 37.40773791852803,
+      "episode_updates": 105
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 539,
+      "terminal_PV": 52,
+      "samples": 541,
+      "loss_sum": 19.971092193058766,
+      "episode_updates": 45
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 480,
+      "terminal_PV": 42,
+      "samples": 531,
+      "loss_sum": 13.502374129749159,
+      "episode_updates": 35
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 521,
+      "terminal_PV": 35,
+      "samples": 469,
+      "loss_sum": 11.98723111347133,
+      "episode_updates": 28
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 444,
+      "terminal_PV": 42,
+      "samples": 434,
+      "loss_sum": 16.526652207233727,
+      "episode_updates": 32
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 539,
+      "terminal_PV": 27,
+      "samples": 6016,
+      "active": 4498,
+      "query_updates": 530,
+      "loss_sum": 190.94166047523862
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 564,
+      "terminal_PV": 61,
+      "samples": 6463,
+      "active": 4431,
+      "query_updates": 543,
+      "loss_sum": 187.16407174907928
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 538,
+      "terminal_PV": 55,
+      "samples": 6556,
+      "active": 4483,
+      "query_updates": 527,
+      "loss_sum": 223.28315852334583
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 517,
+      "terminal_PV": 60,
+      "samples": 5802,
+      "active": 4237,
+      "query_updates": 502,
+      "loss_sum": 210.6355173636775
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 510,
+      "terminal_PV": 35,
+      "samples": 6537,
+      "active": 3107,
+      "query_updates": 485,
+      "loss_sum": 228.34252016915957
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 492,
+      "terminal_PV": 47,
+      "samples": 6151,
+      "active": 3722,
+      "query_updates": 482,
+      "loss_sum": 193.55435896286536
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 477,
+      "terminal_PV": 59,
+      "samples": 5338,
+      "active": 4417,
+      "query_updates": 470,
+      "loss_sum": 277.73361378189713
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 504,
+      "terminal_PV": 69,
+      "samples": 5659,
+      "active": 4636,
+      "query_updates": 498,
+      "loss_sum": 210.47032222564528
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 564,
+      "terminal_PV": 45,
+      "samples": 6427,
+      "active": 4459,
+      "query_updates": 544,
+      "loss_sum": 223.88343237646322
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 523,
+      "terminal_PV": 48,
+      "samples": 7628,
+      "active": 4361,
+      "query_updates": 518,
+      "loss_sum": 153.89036916242196
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 486,
+      "terminal_PV": 50,
+      "samples": 6494,
+      "active": 4331,
+      "query_updates": 481,
+      "loss_sum": 232.2454281195952
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 535,
+      "terminal_PV": 81,
+      "samples": 6195,
+      "active": 5009,
+      "query_updates": 531,
+      "loss_sum": 222.76320223875007
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 504,
+      "terminal_PV": 42,
+      "samples": 6286,
+      "active": 4111,
+      "query_updates": 498,
+      "loss_sum": 187.91475543792296
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 463,
+      "terminal_PV": 51,
+      "samples": 6316,
+      "active": 3453,
+      "query_updates": 445,
+      "loss_sum": 219.63138772400134
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 482,
+      "terminal_PV": 53,
+      "samples": 5972,
+      "active": 3831,
+      "query_updates": 471,
+      "loss_sum": 255.14651090887054
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 524,
+      "terminal_PV": 81,
+      "samples": 6385,
+      "active": 4737,
+      "query_updates": 514,
+      "loss_sum": 204.57330969118448
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 345,
+      "terminal_PV": 44,
+      "samples": 351,
+      "loss_sum": 15.139942142682626,
+      "episode_updates": 40
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 314,
+      "terminal_PV": 29,
+      "samples": 313,
+      "loss_sum": 6.873878510341441,
+      "episode_updates": 24
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 342,
+      "terminal_PV": 31,
+      "samples": 339,
+      "loss_sum": 6.663174136586809,
+      "episode_updates": 29
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 335,
+      "terminal_PV": 35,
+      "samples": 333,
+      "loss_sum": 7.817348063608432,
+      "episode_updates": 32
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 323,
+      "terminal_PV": 36,
+      "samples": 334,
+      "loss_sum": 13.766681918156877,
+      "episode_updates": 32
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 348,
+      "terminal_PV": 38,
+      "samples": 357,
+      "loss_sum": 14.00934722954372,
+      "episode_updates": 34
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 325,
+      "terminal_PV": 33,
+      "samples": 318,
+      "loss_sum": 9.535896952040993,
+      "episode_updates": 31
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 371,
+      "terminal_PV": 39,
+      "samples": 357,
+      "loss_sum": 12.154000512915774,
+      "episode_updates": 37
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 340,
+      "terminal_PV": 39,
+      "samples": 353,
+      "loss_sum": 12.370131159447173,
+      "episode_updates": 35
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 376,
+      "terminal_PV": 41,
+      "samples": 376,
+      "loss_sum": 11.69299952235333,
+      "episode_updates": 37
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 381,
+      "terminal_PV": 36,
+      "samples": 377,
+      "loss_sum": 12.155514889414167,
+      "episode_updates": 34
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 344,
+      "terminal_PV": 38,
+      "samples": 334,
+      "loss_sum": 12.610765392983174,
+      "episode_updates": 35
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 315,
+      "terminal_PV": 33,
+      "samples": 316,
+      "loss_sum": 10.691822659845533,
+      "episode_updates": 29
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 319,
+      "terminal_PV": 29,
+      "samples": 328,
+      "loss_sum": 7.7375120009351654,
+      "episode_updates": 26
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 345,
+      "terminal_PV": 33,
+      "samples": 336,
+      "loss_sum": 9.388813853804486,
+      "episode_updates": 30
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 345,
+      "terminal_PV": 26,
+      "samples": 343,
+      "loss_sum": 8.448423201051751,
+      "episode_updates": 26
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 343,
+      "terminal_PV": 43,
+      "samples": 4991,
+      "active": 3956,
+      "query_updates": 339,
+      "loss_sum": 203.8988825686295
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 373,
+      "terminal_PV": 43,
+      "samples": 5938,
+      "active": 4513,
+      "query_updates": 372,
+      "loss_sum": 158.46507654344882
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 323,
+      "terminal_PV": 28,
+      "samples": 5115,
+      "active": 3766,
+      "query_updates": 319,
+      "loss_sum": 136.57031067099092
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 328,
+      "terminal_PV": 33,
+      "samples": 5370,
+      "active": 4162,
+      "query_updates": 326,
+      "loss_sum": 107.25092773000213
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 322,
+      "terminal_PV": 35,
+      "samples": 4818,
+      "active": 3013,
+      "query_updates": 310,
+      "loss_sum": 257.2978541145657
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 311,
+      "terminal_PV": 24,
+      "samples": 4831,
+      "active": 3462,
+      "query_updates": 302,
+      "loss_sum": 200.87587826542867
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 290,
+      "terminal_PV": 24,
+      "samples": 4823,
+      "active": 3006,
+      "query_updates": 287,
+      "loss_sum": 239.48358948185825
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 296,
+      "terminal_PV": 24,
+      "samples": 5603,
+      "active": 3388,
+      "query_updates": 289,
+      "loss_sum": 146.8628590182049
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 333,
+      "terminal_PV": 38,
+      "samples": 4748,
+      "active": 3483,
+      "query_updates": 325,
+      "loss_sum": 236.28272547573576
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 358,
+      "terminal_PV": 30,
+      "samples": 5617,
+      "active": 4409,
+      "query_updates": 355,
+      "loss_sum": 159.0530518272899
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 343,
+      "terminal_PV": 36,
+      "samples": 5487,
+      "active": 3961,
+      "query_updates": 338,
+      "loss_sum": 134.99694895970754
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 332,
+      "terminal_PV": 32,
+      "samples": 5232,
+      "active": 4312,
+      "query_updates": 332,
+      "loss_sum": 189.53363588189492
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 316,
+      "terminal_PV": 35,
+      "samples": 5283,
+      "active": 4109,
+      "query_updates": 312,
+      "loss_sum": 189.57041199690678
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 298,
+      "terminal_PV": 22,
+      "samples": 5153,
+      "active": 3600,
+      "query_updates": 295,
+      "loss_sum": 176.7766680324037
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 312,
+      "terminal_PV": 28,
+      "samples": 5129,
+      "active": 3505,
+      "query_updates": 307,
+      "loss_sum": 145.3639660928503
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 288,
+      "terminal_PV": 22,
+      "samples": 5078,
+      "active": 2989,
+      "query_updates": 281,
+      "loss_sum": 138.18909487908246
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 531,
+      "terminal_PV": 11,
+      "samples": 528,
+      "loss_sum": 5.961281472951817,
+      "episode_updates": 16
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 536,
+      "terminal_PV": 9,
+      "samples": 545,
+      "loss_sum": 2.947570712654742,
+      "episode_updates": 13
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 559,
+      "terminal_PV": 3,
+      "samples": 566,
+      "loss_sum": 2.1700826151202186,
+      "episode_updates": 11
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 508,
+      "terminal_PV": 12,
+      "samples": 474,
+      "loss_sum": 7.161199074353693,
+      "episode_updates": 16
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 483,
+      "terminal_PV": 11,
+      "samples": 484,
+      "loss_sum": 4.492093033967824,
+      "episode_updates": 15
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 494,
+      "terminal_PV": 12,
+      "samples": 509,
+      "loss_sum": 5.447156969804679,
+      "episode_updates": 16
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 496,
+      "terminal_PV": 11,
+      "samples": 518,
+      "loss_sum": 6.44297816109383,
+      "episode_updates": 14
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 443,
+      "terminal_PV": 9,
+      "samples": 391,
+      "loss_sum": 3.535397074342396,
+      "episode_updates": 12
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 678,
+      "terminal_PV": 29,
+      "samples": 685,
+      "loss_sum": 11.771250862801795,
+      "episode_updates": 31
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 499,
+      "terminal_PV": 17,
+      "samples": 512,
+      "loss_sum": 7.199621684518312,
+      "episode_updates": 21
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 500,
+      "terminal_PV": 20,
+      "samples": 484,
+      "loss_sum": 6.981735052655577,
+      "episode_updates": 22
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 475,
+      "terminal_PV": 23,
+      "samples": 461,
+      "loss_sum": 7.269688206048101,
+      "episode_updates": 23
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 498,
+      "terminal_PV": 18,
+      "samples": 501,
+      "loss_sum": 7.221381313924067,
+      "episode_updates": 20
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 523,
+      "terminal_PV": 10,
+      "samples": 576,
+      "loss_sum": 5.221566781693069,
+      "episode_updates": 14
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 494,
+      "terminal_PV": 9,
+      "samples": 464,
+      "loss_sum": 4.715345138157452,
+      "episode_updates": 13
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 444,
+      "terminal_PV": 9,
+      "samples": 403,
+      "loss_sum": 3.4405737722759704,
+      "episode_updates": 14
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 509,
+      "terminal_PV": 17,
+      "samples": 6227,
+      "active": 4527,
+      "query_updates": 498,
+      "loss_sum": 122.69681873893919
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 559,
+      "terminal_PV": 13,
+      "samples": 6502,
+      "active": 4473,
+      "query_updates": 547,
+      "loss_sum": 95.89944807676882
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 518,
+      "terminal_PV": 15,
+      "samples": 5940,
+      "active": 4119,
+      "query_updates": 501,
+      "loss_sum": 124.03461572140874
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 537,
+      "terminal_PV": 23,
+      "samples": 6087,
+      "active": 4323,
+      "query_updates": 528,
+      "loss_sum": 110.12948503592014
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 507,
+      "terminal_PV": 10,
+      "samples": 6456,
+      "active": 3050,
+      "query_updates": 480,
+      "loss_sum": 112.65442457268934
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 519,
+      "terminal_PV": 16,
+      "samples": 6495,
+      "active": 4346,
+      "query_updates": 508,
+      "loss_sum": 103.81656036320292
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 521,
+      "terminal_PV": 14,
+      "samples": 6575,
+      "active": 4270,
+      "query_updates": 510,
+      "loss_sum": 115.76164854323852
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 492,
+      "terminal_PV": 13,
+      "samples": 8009,
+      "active": 3387,
+      "query_updates": 464,
+      "loss_sum": 83.83877901964347
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 671,
+      "terminal_PV": 21,
+      "samples": 6448,
+      "active": 4188,
+      "query_updates": 654,
+      "loss_sum": 100.17205191752366
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 540,
+      "terminal_PV": 19,
+      "samples": 5270,
+      "active": 4515,
+      "query_updates": 531,
+      "loss_sum": 115.10244173232965
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 545,
+      "terminal_PV": 17,
+      "samples": 6132,
+      "active": 4368,
+      "query_updates": 531,
+      "loss_sum": 80.43143578590055
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 487,
+      "terminal_PV": 16,
+      "samples": 7924,
+      "active": 3686,
+      "query_updates": 472,
+      "loss_sum": 74.34067441892307
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 544,
+      "terminal_PV": 17,
+      "samples": 6253,
+      "active": 5057,
+      "query_updates": 538,
+      "loss_sum": 111.47526122833224
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 469,
+      "terminal_PV": 17,
+      "samples": 7359,
+      "active": 3610,
+      "query_updates": 452,
+      "loss_sum": 124.30648304052815
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 463,
+      "terminal_PV": 12,
+      "samples": 6499,
+      "active": 3631,
+      "query_updates": 446,
+      "loss_sum": 144.69549163723295
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 521,
+      "terminal_PV": 19,
+      "samples": 5901,
+      "active": 3616,
+      "query_updates": 498,
+      "loss_sum": 92.98425258207264
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 379,
+      "terminal_PV": 70,
+      "samples": 383,
+      "loss_sum": 21.588826320335777,
+      "episode_updates": 52
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 393,
+      "terminal_PV": 83,
+      "samples": 396,
+      "loss_sum": 20.341849436959716,
+      "episode_updates": 55
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 424,
+      "terminal_PV": 84,
+      "samples": 417,
+      "loss_sum": 25.118259753971145,
+      "episode_updates": 64
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 446,
+      "terminal_PV": 93,
+      "samples": 445,
+      "loss_sum": 23.014365414254947,
+      "episode_updates": 69
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 367,
+      "terminal_PV": 67,
+      "samples": 369,
+      "loss_sum": 22.255406579332966,
+      "episode_updates": 49
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 371,
+      "terminal_PV": 80,
+      "samples": 372,
+      "loss_sum": 20.752203619634933,
+      "episode_updates": 51
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 409,
+      "terminal_PV": 81,
+      "samples": 411,
+      "loss_sum": 27.82219803103506,
+      "episode_updates": 65
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 370,
+      "terminal_PV": 76,
+      "samples": 364,
+      "loss_sum": 20.993614289555346,
+      "episode_updates": 53
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 406,
+      "terminal_PV": 89,
+      "samples": 411,
+      "loss_sum": 27.035383642922646,
+      "episode_updates": 63
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 391,
+      "terminal_PV": 79,
+      "samples": 392,
+      "loss_sum": 20.908053355326516,
+      "episode_updates": 55
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 383,
+      "terminal_PV": 71,
+      "samples": 379,
+      "loss_sum": 22.6825626098231,
+      "episode_updates": 55
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 426,
+      "terminal_PV": 89,
+      "samples": 423,
+      "loss_sum": 24.28003879403421,
+      "episode_updates": 65
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 385,
+      "terminal_PV": 59,
+      "samples": 414,
+      "loss_sum": 15.183611844447457,
+      "episode_updates": 44
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 340,
+      "terminal_PV": 66,
+      "samples": 318,
+      "loss_sum": 15.36589786720104,
+      "episode_updates": 39
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 363,
+      "terminal_PV": 58,
+      "samples": 360,
+      "loss_sum": 21.82664055158608,
+      "episode_updates": 47
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 387,
+      "terminal_PV": 87,
+      "samples": 382,
+      "loss_sum": 22.545186400308722,
+      "episode_updates": 60
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 0,
+      "queries": 389,
+      "terminal_PV": 73,
+      "samples": 5202,
+      "active": 4420,
+      "query_updates": 387,
+      "loss_sum": 279.93594236139273
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 1,
+      "queries": 393,
+      "terminal_PV": 84,
+      "samples": 5460,
+      "active": 4219,
+      "query_updates": 389,
+      "loss_sum": 297.8002301775215
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 2,
+      "queries": 416,
+      "terminal_PV": 90,
+      "samples": 5929,
+      "active": 4927,
+      "query_updates": 416,
+      "loss_sum": 327.51298910333304
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "node_bucket": 3,
+      "queries": 402,
+      "terminal_PV": 86,
+      "samples": 5694,
+      "active": 4849,
+      "query_updates": 397,
+      "loss_sum": 269.24411912335626
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 0,
+      "queries": 354,
+      "terminal_PV": 61,
+      "samples": 5017,
+      "active": 2871,
+      "query_updates": 340,
+      "loss_sum": 249.72884104584725
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 1,
+      "queries": 323,
+      "terminal_PV": 60,
+      "samples": 5974,
+      "active": 2869,
+      "query_updates": 314,
+      "loss_sum": 310.1729482577787
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 2,
+      "queries": 335,
+      "terminal_PV": 38,
+      "samples": 5062,
+      "active": 2918,
+      "query_updates": 324,
+      "loss_sum": 271.8663710501365
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "node_bucket": 3,
+      "queries": 406,
+      "terminal_PV": 92,
+      "samples": 5717,
+      "active": 4507,
+      "query_updates": 405,
+      "loss_sum": 334.5759283625155
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 0,
+      "queries": 386,
+      "terminal_PV": 75,
+      "samples": 5136,
+      "active": 3912,
+      "query_updates": 384,
+      "loss_sum": 309.3889109421533
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 1,
+      "queries": 378,
+      "terminal_PV": 75,
+      "samples": 5054,
+      "active": 3869,
+      "query_updates": 374,
+      "loss_sum": 269.3733974341612
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 2,
+      "queries": 357,
+      "terminal_PV": 56,
+      "samples": 5320,
+      "active": 4078,
+      "query_updates": 354,
+      "loss_sum": 331.6862985222586
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "node_bucket": 3,
+      "queries": 397,
+      "terminal_PV": 88,
+      "samples": 5555,
+      "active": 4667,
+      "query_updates": 397,
+      "loss_sum": 298.27858184332604
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 0,
+      "queries": 360,
+      "terminal_PV": 60,
+      "samples": 6233,
+      "active": 4653,
+      "query_updates": 359,
+      "loss_sum": 341.2606688802821
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 1,
+      "queries": 346,
+      "terminal_PV": 75,
+      "samples": 5837,
+      "active": 4416,
+      "query_updates": 343,
+      "loss_sum": 369.1998880577406
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 2,
+      "queries": 363,
+      "terminal_PV": 63,
+      "samples": 5351,
+      "active": 3230,
+      "query_updates": 351,
+      "loss_sum": 324.73048726957785
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "node_bucket": 3,
+      "queries": 400,
+      "terminal_PV": 90,
+      "samples": 5610,
+      "active": 4588,
+      "query_updates": 397,
+      "loss_sum": 317.0392309387039
+    }
+  ],
+  "raw_endpoint_weights": [
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        0.37186039411620975,
+        1.7714460936076146,
+        1.3791635153582589,
+        1.963073880468773,
+        0.07239531887733443,
+        1.1067328094441458
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.7838502640291319,
+        1.016437576826502,
+        0.9108209255998259,
+        0.9881710471980432,
+        0.8065308846977083,
+        0.9164323035723105
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.565182196587064,
+        1.8512435770776348,
+        0.8672557917209541,
+        1.354627789198422,
+        0.497203304417317,
+        0.6082710190683822
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.3091676896874946,
+        2.0434926363068753,
+        1.181972540378133,
+        1.5988080868535337,
+        -1.1965448873021318,
+        0.7219930011980309
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.7848787352909087,
+        1.033378608368117,
+        0.8818710401489981,
+        1.015541521706739,
+        0.8012854253502055,
+        0.7372876017339797
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        0.9099130210462603,
+        1.091847596116722,
+        0.9684040194743367,
+        1.0342542872874274,
+        0.9075070485847633,
+        0.9817508915313842
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        0.8623293924084621,
+        1.149728545993461,
+        0.9678261632012015,
+        1.010718407415531,
+        0.8883838677319843,
+        1.0197925411899402
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "TD",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        0.1977424101163068,
+        2.612193320383373,
+        1.507957506046864,
+        1.4543123254869532,
+        -0.02473452744024495,
+        1.099766748186536
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        1.0791998457379914,
+        1.3822263009816305,
+        1.8184665360086274,
+        1.7520499938052394,
+        0.17379702452296358,
+        1.7345989661838357
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.9167961185873854,
+        0.9389089773860095,
+        0.9591294803440692,
+        0.9364849660805494,
+        0.8908235204126447,
+        0.9564257751697173
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.1242613639278107,
+        0.6337221872139497,
+        2.485271330883912,
+        1.2188123467264735,
+        1.4010803712705222,
+        1.1669617023246353
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.9068074659455941,
+        0.4756623620097911,
+        2.18185122634081,
+        1.1158902129374138,
+        -0.8840135071678177,
+        1.5072104174069816
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.9705179198420146,
+        0.8824273451753782,
+        1.1023168780539894,
+        0.9560407366498302,
+        0.9680713754182781,
+        1.0300591545582765
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        1.0207700170023977,
+        1.007181550012175,
+        1.065932169028766,
+        1.1341270328138702,
+        1.0853978334254601,
+        1.0847432403286732
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        1.0698731871883516,
+        1.0840817800968519,
+        1.1485473006957534,
+        0.9973443255664067,
+        1.025573399701869,
+        1.12306440059098
+      ]
+    },
+    {
+      "rule": 271002,
+      "method": "TD",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        0.6498503175155336,
+        1.4360577337677234,
+        2.313337430745403,
+        1.0589033839268966,
+        -0.1776651573878108,
+        1.8720002574956265
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        -0.20837758679557938,
+        0.13526859908996058,
+        1.0559075354416891,
+        1.7665668519829132,
+        0.938812771886826,
+        1.6615668474628418
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.8487768530142232,
+        0.8651281387625298,
+        0.8432265101516018,
+        0.8684219888484263,
+        0.8585262848052139,
+        0.8711373629292432
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.3904947382277986,
+        -0.16930217075757373,
+        0.8961751886340497,
+        1.2115121745358817,
+        0.6768267920635029,
+        0.8267701139151201
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.013430735522077762,
+        0.03719920013886793,
+        0.46262802901620953,
+        1.5157989132199727,
+        1.1315188211349638,
+        1.3079506130632683
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.7874479418756751,
+        0.7943414880052184,
+        0.9972062838898342,
+        0.8744468524677386,
+        0.8279139470992984,
+        0.8486702561942447
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        0.92787182396145,
+        0.9143479545329495,
+        0.959821224373148,
+        1.0450106284430312,
+        0.9284910339313563,
+        0.9624979815250244
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        1.055663384937317,
+        1.0559896944162903,
+        1.0901579677997526,
+        1.0560916400440066,
+        1.056419248064309,
+        1.0925141000744771
+      ]
+    },
+    {
+      "rule": 271003,
+      "method": "TD",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        0.36258704558531935,
+        0.9022208618005682,
+        1.1552240084395964,
+        1.2221901966126996,
+        0.4547940700731223,
+        1.7355361101952462
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        1.308567535633128,
+        1.3473107490813319,
+        1.1536917558552218,
+        1.4040254152742637,
+        0.4002715370246648,
+        1.888698289050978
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        0.9627000712032083,
+        0.7727001295361541,
+        0.9524527238170217,
+        1.0002964691173635,
+        0.8854567829180027,
+        0.912990940529581
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.9788418152984115,
+        0.7522272557131947,
+        2.3128516858970674,
+        1.0375199541504507,
+        0.07801608079291802,
+        0.9333234804157032
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 8173,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "weights": [
+        1.4187214160465254,
+        1.2029305429694035,
+        1.115075443832725,
+        1.4634114520633503,
+        0.28732595959583396,
+        1.0177866732872043
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 1977,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "weights": [
+        0.9842267308960857,
+        0.8562926760557408,
+        1.0651870888986086,
+        0.9309815513000387,
+        0.8121021740581503,
+        0.904403600168153
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 31415,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "weights": [
+        1.0265801776657155,
+        0.8247637300642344,
+        1.0373535591077194,
+        1.157668338143012,
+        0.9923930541794307,
+        0.9953800279770809
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TreeStrap",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        1.083312640764535,
+        1.0519801329341547,
+        1.1088862417766792,
+        1.0128471243597417,
+        1.0261259203249882,
+        1.0282263186993614
+      ]
+    },
+    {
+      "rule": 271004,
+      "method": "TD",
+      "seed": 27182,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "weights": [
+        0.6646879027063782,
+        1.3807302493817408,
+        1.9303167445126632,
+        0.7229118230174677,
+        1.150839042666298,
+        1.3509155687214738
+      ]
+    }
+  ],
+  "seconds": 5.596132700040471,
+  "scope": "Actualpaidquery/foenodes, differentnumbersoftraininggames atfixednodebudget. TreeStrapmeanhinge loss and TDtransitionloss are DIFFERENT targets/counts, not commensurable objectivevalues. Bucket by observed startnodes; losses recomputed from auditedstats. Signal counts/changes/terminaltargetcoverage do not establish actualWLDgain or causal efficiency. Free6signedweights/scale10, no unique ratioidentification."
+}

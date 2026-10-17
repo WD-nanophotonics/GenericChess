@@ -1,0 +1,58 @@
+{
+  "status": "PASS_TYPED_HISTORY_EPISODE_TD_AND_MEAN_BOUND_AWARE_TREESTRAP",
+  "prefix_rule": null,
+  "arms": 32,
+  "counts": {
+    "prefix_plies": 28600,
+    "committed_drop_moves": 27478,
+    "committed_promotion_moves": 5988,
+    "training_plies": 111863,
+    "games": 7372,
+    "actual_terminal": 7196,
+    "unknown": 176,
+    "queries": 111895,
+    "observed": 56178,
+    "query_updates": 27217,
+    "nodes": 6400000,
+    "black_candidate_white_foe_finisher": 531,
+    "failed_queries": 32,
+    "failed_query_nodes": 1204,
+    "full_limit_failed_queries": 0,
+    "update_records": 7372
+  },
+  "by_method": {
+    "TD": {
+      "queries": 56500,
+      "candidate_queries": 28391,
+      "foe_queries": 28109,
+      "samples": 28293,
+      "loss_sum": 961.0075931276199,
+      "nodes": 3200000,
+      "games": 3866,
+      "query_updates": 0,
+      "actual_terminal": 3774,
+      "unknown": 92
+    },
+    "TreeStrap": {
+      "samples_exact": 90901,
+      "inactive_exact": 21656,
+      "samples": 375669,
+      "active": 257616,
+      "loss_sum": 12856.780206233814,
+      "queries": 55395,
+      "candidate_queries": 27802,
+      "foe_queries": 27593,
+      "samples_upper": 161948,
+      "inactive_upper": 56078,
+      "nodes": 3200000,
+      "games": 3506,
+      "query_updates": 27217,
+      "actual_terminal": 3422,
+      "unknown": 84,
+      "samples_lower": 122820,
+      "inactive_lower": 40319
+    }
+  },
+  "seconds": 103.60451209999155,
+  "scope": "Every paid candidate/foe/failed search, independent signedwhite feature-gradient math and reverseTD/one-sidedloss reconstruction; full typed legal replay and final public Session equality. Does not rerun every search. Bound correctness independently sampled by separate unpruned D2 audit; noexternalrulesengine."
+}

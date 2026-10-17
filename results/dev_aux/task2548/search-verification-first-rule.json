@@ -1,0 +1,1378 @@
+{
+  "status": "COMPLETE",
+  "expected": 16,
+  "available": 16,
+  "verified": 16,
+  "unverified": 0,
+  "nodes": 2294,
+  "verified_bounds": 172,
+  "nonexact_bounds": 123,
+  "rows": [
+    {
+      "key": [
+        271001,
+        "TD",
+        1977,
+        0
+      ],
+      "gameid": 461,
+      "ply": 0,
+      "nodes": 10,
+      "value": 1.974115070286956,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "-0.0658115860722347",
+          "upper": "-0.0658115860722347",
+          "exact_value": -0.0658115860722347,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "1.974115070286956",
+          "upper": "1.974115070286956",
+          "exact_value": 1.974115070286956,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "cfc99447ed6152bced7d079b8051fe6292c0781b3a7940cee7f499142eb637d9"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        1977,
+        100000
+      ],
+      "gameid": 540,
+      "ply": 15,
+      "nodes": 70,
+      "value": 5.347522065092006,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "5.347522065092006",
+          "upper": "5.347522065092006",
+          "exact_value": 5.347522065092006,
+          "child_record_sha": "378e1056523fe7bf93733823622024b3a614e61496cfac1fe970e91ad2dfe2a5"
+        },
+        {
+          "depth": 1,
+          "lower": "5.6523505737916135",
+          "upper": "inf",
+          "exact_value": 8.4505313701414,
+          "child_record_sha": "39153f50943cd862f06ac974dafc370c2117d1d3002abcde0183c824aa155211"
+        },
+        {
+          "depth": 1,
+          "lower": "8.4505313701414",
+          "upper": "inf",
+          "exact_value": 8.4505313701414,
+          "child_record_sha": "c8a417386e16a4d284b493843d004b1b3c0437dbffc7ad3b8ba2a974623fc2fd"
+        },
+        {
+          "depth": 1,
+          "lower": "5.6523505737916135",
+          "upper": "inf",
+          "exact_value": 8.4505313701414,
+          "child_record_sha": "296a8d0501020f13593809751a185f93e4c66adf17cac0901848959479a890ac"
+        },
+        {
+          "depth": 1,
+          "lower": "7.767122411703948",
+          "upper": "inf",
+          "exact_value": 7.767122411703948,
+          "child_record_sha": "155be7e0c8075eccdae83656d00a2fcbf82045dd2a6616ae6852c03d31a0a8c0"
+        },
+        {
+          "depth": 1,
+          "lower": "5.6523505737916135",
+          "upper": "inf",
+          "exact_value": 8.4505313701414,
+          "child_record_sha": "7ff43de1559eb1284eba38ab2af9be0b4c2c73340f0f097979398cb01b1079be"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "7f4cee4ceb3e33cb1fd63eeecd37315869cc9886a025ee52668f019759bcf9ad"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        8173,
+        0
+      ],
+      "gameid": 705,
+      "ply": 0,
+      "nodes": 10,
+      "value": 2.253467365687566,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.0",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "2.253467365687566",
+          "upper": "2.253467365687566",
+          "exact_value": 2.253467365687566,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "824710053b27da4c3cfaca99c55572c227a2faf29cd49312b5a79524c51b6c10"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        8173,
+        100000
+      ],
+      "gameid": 812,
+      "ply": 5,
+      "nodes": 47,
+      "value": 2.025029088794961,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "2.025029088794961",
+          "upper": "2.025029088794961",
+          "exact_value": 2.025029088794961,
+          "child_record_sha": "30ed0194a69c9757a7337eb9de952bbcb8caf10e9572aab85e2f1c51489093c2"
+        },
+        {
+          "depth": 1,
+          "lower": "2.1663125956267493",
+          "upper": "inf",
+          "exact_value": 4.3756197936828185,
+          "child_record_sha": "110880d82c13b9030bf2e42c6e933dcdae3f347922c2e91a3f20990a130f5ab1"
+        },
+        {
+          "depth": 1,
+          "lower": "2.1663125956267493",
+          "upper": "inf",
+          "exact_value": 1000000.0,
+          "child_record_sha": "8ba9aaf8b432afb764d3b6536290bf93cb7d70a03c8e9874de9192d279845a8e"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "b5b4fe7af77243d1c138a4fe167c6cf08527f5a39c6efb89805492fec15d204b"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        27182,
+        0
+      ],
+      "gameid": 1903,
+      "ply": 0,
+      "nodes": 10,
+      "value": 2.375025811841296,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.0",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "2.375025811841296",
+          "upper": "2.375025811841296",
+          "exact_value": 2.375025811841296,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "34a4e509cf64de1703ca4452c70113b022ab669e2b76e0ad69bc15879d84a6e1"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        27182,
+        100000
+      ],
+      "gameid": 2021,
+      "ply": 0,
+      "nodes": 78,
+      "value": 0.5905908095405992,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.0",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "5b86f5fb7c757e6173dfb25a4eb120ef711bc4cf27c6e4a6fa69ddae64adcb4f"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.5398153973661912",
+          "exact_value": -1000000.0,
+          "child_record_sha": "8ca35c99591b133f0f28c7bf4c32c232c05612b7e8620389ea15b267b9067668"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.6507446201811102",
+          "exact_value": -0.6507446201811102,
+          "child_record_sha": "3566c58def50d179e4f23da49e8a60122dfe4620d27226e5da5ea1b25a06e359"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.0",
+          "exact_value": -1.2413354297217094,
+          "child_record_sha": "d9a7322cfb207680ae2a00edbf06cbc056e78dd639d113b757806dfa387bf087"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "c4726a0d980f7cb6a5b23ce52d777712edfe19c525bb0e2da38176800bf4b638"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.05837463555150446",
+          "exact_value": -1.2997100652732139,
+          "child_record_sha": "e33dec64e0a4b3b057657e262e5b3d4b4f7b3a30e9e87431caf70aacd91e83a5"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "c7f1276e0811e84327e8a863ac593e0ce45173275601293c7ed261532f663b0b"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.2997100652732139",
+          "exact_value": -1.2997100652732139,
+          "child_record_sha": "7e6ad6b61267c2a52c711319aa1d3480fca5e2219d4dc2ae68f7c918750994b2"
+        },
+        {
+          "depth": 1,
+          "lower": "0.5905908095405992",
+          "upper": "0.5905908095405992",
+          "exact_value": 0.5905908095405992,
+          "child_record_sha": "0286c94ee1c1bff85fed70798dba661d3e1b0f74bf59c72d49c7129b85f4ccb4"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "dfd1b692a6c85602a19991132765d31ebd67c9c09fcd226e991f71bf44c353c1"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        31415,
+        0
+      ],
+      "gameid": 1,
+      "ply": 0,
+      "nodes": 10,
+      "value": 1.5425822030439713,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "-0.931334299528686",
+          "upper": "-0.931334299528686",
+          "exact_value": -0.931334299528686,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "1.5425822030439713",
+          "upper": "1.5425822030439713",
+          "exact_value": 1.5425822030439713,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "047b2408cf68a123dd5fe24fda298867dcb7d57c6619cd078506b255b65bc80f"
+    },
+    {
+      "key": [
+        271001,
+        "TD",
+        31415,
+        100000
+      ],
+      "gameid": 110,
+      "ply": 15,
+      "nodes": 544,
+      "value": 0.4635131540170918,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.7729174354499595",
+          "upper": "0.7729174354499595",
+          "exact_value": 0.7729174354499595,
+          "child_record_sha": "a515e522927ecc7c9618517198cc738e5af2670833dddbe219afdf3e3de28eac"
+        },
+        {
+          "depth": 1,
+          "lower": "1.013761322051339",
+          "upper": "inf",
+          "exact_value": 1.3268228419506938,
+          "child_record_sha": "b7c99e521fb38ca3efb30c074fe4da5a2db9d13d76903921dfb50cc44626ffd1"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "0.4635131540170918",
+          "exact_value": 0.4635131540170918,
+          "child_record_sha": "745d08ea453752b4bb2e742c0442b506cefba6fc5d4855b279b27f08764e91fb"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 0.4635131540170918,
+          "child_record_sha": "e05e7597f246802968d653193aad09fddeeaff1291e191fe29b670014b9c4e91"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 0.4635131540170918,
+          "child_record_sha": "167931aa5ccc2e7771fe1d8e98aca2c261587bb6f6f4c064622b24e879f10e2b"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7729174354499595",
+          "upper": "inf",
+          "exact_value": 1.5626563948142742,
+          "child_record_sha": "93ea64e0b3524178a21fe4889dce78f8ee1311cd0ea6af735e5479448905dd76"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 0.4635131540170918,
+          "child_record_sha": "00d31eb15991492281977e7176e530d9213b6be6c8719b2ead434cc8f3b164c5"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7729174354499595",
+          "upper": "inf",
+          "exact_value": 0.7729174354499595,
+          "child_record_sha": "7f8977fcd70fd949577d250554046e322ffd15406d20945d292ee71c96f4c090"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7729174354499595",
+          "upper": "inf",
+          "exact_value": 1.5626563948142742,
+          "child_record_sha": "6127ed6c6e558f378e0aedf790c11edc2914f55bfad12580b1d33687f340969e"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7729174354499595",
+          "upper": "inf",
+          "exact_value": 1.5626563948142742,
+          "child_record_sha": "60e4a40e65a6846a09e1eecc1440a99f707cfccb297ac83cff297f88d7c628ce"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 0.4635131540170918,
+          "child_record_sha": "1e18d98260bbacf540da9f0482d2b1b5c71ec5de6eb21fef1714668c6a91b553"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 0.7729174354499595,
+          "child_record_sha": "749935e734c476f415fa6525db95ca57aa4cba726779977ea969ced81ad6947c"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 1.2532521133814067,
+          "child_record_sha": "aa181d9b81da1fa792c1afa3913007be64b6026d957e0941975c0e7ac4762baa"
+        },
+        {
+          "depth": 1,
+          "lower": "1.017418560517826",
+          "upper": "inf",
+          "exact_value": 1.3268228419506938,
+          "child_record_sha": "01ee9723ff12c3a25a7424751f265a35b18877e2a953a9eedd8217f9e4db6d74"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 4.852713635355903,
+          "child_record_sha": "ec8a9ae18d4dfaad32d5ec01e7fb3868d6cfbd719bbc70b42ef533f059bc5794"
+        },
+        {
+          "depth": 1,
+          "lower": "1.017418560517826",
+          "upper": "inf",
+          "exact_value": 4.852713635355903,
+          "child_record_sha": "75754588f041713e92c04940a317495d16b53d0e1ae9c68f0aaebe221825c875"
+        },
+        {
+          "depth": 1,
+          "lower": "4.852713635355903",
+          "upper": "inf",
+          "exact_value": 4.852713635355903,
+          "child_record_sha": "d0976bb2bf926d2eb54765601f0e24488063ef821725209427bdedf71231be44"
+        },
+        {
+          "depth": 1,
+          "lower": "1.3268228419506938",
+          "upper": "inf",
+          "exact_value": 1.3268228419506938,
+          "child_record_sha": "388688c6b810fdbcfac32d4591ef2e5f57fd50023f73e4d00e3623f9a0ee33aa"
+        },
+        {
+          "depth": 1,
+          "lower": "4.852713635355903",
+          "upper": "inf",
+          "exact_value": 4.852713635355903,
+          "child_record_sha": "c21e99dd9607f4399949d56820b1efa181ff6d285a95fd01ddee22d010eac47b"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4635131540170918",
+          "upper": "inf",
+          "exact_value": 1.5626563948142742,
+          "child_record_sha": "0e559bd6fd6796c1009153867e3321f4a0eeecd94f32c4e8b142642533573db5"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "0da73535a9312390f82659432bedaadc2fd6cb55a5ecb14c3bb2cbccd1a7f3e2"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        1977,
+        0
+      ],
+      "gameid": 1120,
+      "ply": 0,
+      "nodes": 10,
+      "value": 1.974115070286956,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "-0.0658115860722347",
+          "upper": "-0.0658115860722347",
+          "exact_value": -0.0658115860722347,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "1.974115070286956",
+          "upper": "1.974115070286956",
+          "exact_value": 1.974115070286956,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "40366946355f8457ca39fb5dec1ed25d2e2712f49d56f6dd893a23e0eb2fce48"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        1977,
+        100000
+      ],
+      "gameid": 1224,
+      "ply": 26,
+      "nodes": 236,
+      "value": 10.07298842260277,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "8.00299230424188",
+          "upper": "8.00299230424188",
+          "exact_value": 8.00299230424188,
+          "child_record_sha": "407de4bb615592392d4d9daf19916cf6388edf2f58b3813fd5e2a2086fec3004"
+        },
+        {
+          "depth": 1,
+          "lower": "9.695562089510556",
+          "upper": "9.695562089510556",
+          "exact_value": 9.695562089510556,
+          "child_record_sha": "74071b9589968a6257883d0a344428c93e7a53ca1db97a285fcfa4ab3d0d1135"
+        },
+        {
+          "depth": 1,
+          "lower": "10.07298842260277",
+          "upper": "10.07298842260277",
+          "exact_value": 10.07298842260277,
+          "child_record_sha": "3b720810710e1b1efe7ee4f7e4a58f23032e8939262fc0eeee63394ab7a4c241"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743852717374835",
+          "exact_value": 9.743852717374835,
+          "child_record_sha": "d85abedbeb589d575e1c1eadab80430d388dd1b087b77fdb432386cb53d5525d"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.07276048769782",
+          "exact_value": 10.07276048769782,
+          "child_record_sha": "4f2008e1140234fa8cde78f957b8fe0a6314c88c6ef4be6c14dd7bfca84b7b87"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.07276048769782",
+          "exact_value": 9.743624782469887,
+          "child_record_sha": "d878ba2fe00fe42f51fd9abfea1196bfcd5b5ca8f300086bff79a5c57e4f3532"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743852717374835",
+          "exact_value": 9.743852717374835,
+          "child_record_sha": "3d6dd32cc92c1aa92d5c2385b7bdfd6a6fe5c6cf048d0c714cb2d3c5dcc75a58"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "8.0072556804487",
+          "exact_value": 7.825523326401551,
+          "child_record_sha": "cbb8c08b5772d0e88ac364086d30d8ed139a3d9c8d1030a61b85cac2b37633ec"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743624782469887",
+          "exact_value": 9.743624782469887,
+          "child_record_sha": "c36b464e0df24e1dd0d46e8a00e90a90c681063c6e7716d8e90fe0380307a726"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.024697794738492",
+          "exact_value": 10.024697794738492,
+          "child_record_sha": "41edab771fa5b968180138ba6b7d35e2cc27ae9b57bbaebc921d687d0c31f812"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743624782469887",
+          "exact_value": 9.743624782469887,
+          "child_record_sha": "3e6ae1cdd63c65c863b58f4f37ffcddfab08c507f3c434dbfc7c138d99d62db0"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.695562089510556",
+          "exact_value": 8.265612380400801,
+          "child_record_sha": "69529c01a885865219ea6259ee13617185f0cd50f638b202d92e0384cb709c2c"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743624782469887",
+          "exact_value": 8.0072556804487,
+          "child_record_sha": "9674bbc64a5df647aaf2974c288d92001aff0d7e53df98db79e3991a5b2fb68f"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "8.083880026353652",
+          "exact_value": 8.083880026353652,
+          "child_record_sha": "995cd95abefdae434e86c7ef664ef5d357afee5a2f11b271fc8e341480f0c76c"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743852717374835",
+          "exact_value": 9.743852717374835,
+          "child_record_sha": "18504521303cc5d5131093a72d86b67d7b0cf06d1b9157219a1c51483460df7b"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.695562089510556",
+          "exact_value": 9.695562089510556,
+          "child_record_sha": "a6e2c4b34e94019e4f8425de616662e318af05af30dea15f09c859cb33e4f401"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.07298842260277",
+          "exact_value": 10.07298842260277,
+          "child_record_sha": "a8b97f962621173dbd45552fad5ba210c53a4f37464773b95d8fece2af04a7bb"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.07276048769782",
+          "exact_value": 9.743624782469887,
+          "child_record_sha": "c76de7dd2d936e649cf9d8587273aa76de58c2c3beed4dab475d8f0ae1add96f"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.695562089510556",
+          "exact_value": 9.695562089510556,
+          "child_record_sha": "941f3d33ae52676d4b5c5037bd3a8e3250cc343bc82391cdb6b4b404953bccad"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.695562089510556",
+          "exact_value": 9.695562089510556,
+          "child_record_sha": "af32c865300751e172b87dab90ee8a2e19b85fb5a474ca26c392fdf0c9b65109"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "10.07276048769782",
+          "exact_value": 9.743624782469887,
+          "child_record_sha": "0b9ad2fe9b8a116d0aab998f99be4d3da69774337454fca481d730d0ab73d3df"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.695562089510556",
+          "exact_value": 9.695562089510556,
+          "child_record_sha": "c69ae846322b162ee24823878f981318551a9c39b87d40c247b647c20a85a8b0"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "9.743852717374835",
+          "exact_value": 9.743852717374835,
+          "child_record_sha": "7330092481a312ef9054ccb75046a96c2e8a03f36f1220802268ff52cd8ddd1d"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "1245e81a3e2285712f3c467b5e41d4b97e2665acb9b001d228cc864aad9eb078"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        8173,
+        0
+      ],
+      "gameid": 210,
+      "ply": 0,
+      "nodes": 10,
+      "value": 2.253467365687566,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.0",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "2.253467365687566",
+          "upper": "2.253467365687566",
+          "exact_value": 2.253467365687566,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "d49b18fe4ce727a37e0135cfefe1463cbbeb1845a2ef9e1f5dd335b6e896f640"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        8173,
+        100000
+      ],
+      "gameid": 307,
+      "ply": 11,
+      "nodes": 732,
+      "value": 0.020190381809364277,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "1.8033444098747495",
+          "upper": "1.8033444098747495",
+          "exact_value": 1.8033444098747495,
+          "child_record_sha": "ff2a87947581406850b5a80979c491a5ba63792993a748388df0981ff3bc722e"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9191494778514187",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "73a7cc170c76649d8b1c790965387e5e0f5a333cd7e6754dee59e78d84b7a795"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8557032987305093",
+          "upper": "inf",
+          "exact_value": 1.8557032987305093,
+          "child_record_sha": "869fc61c4c0b5e2d1e6121b308430d0755a6b7af562232e90be445bb370f0ef3"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8244855524358212",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "3e69f464c1854ae61ebf9e55616dd9e64097d01de1ca0e32577330966a5f889d"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "3071c8647d9c5836a5d84b79d11f2f659894e44241df436cd45168eb8558dbb1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9926722607059442",
+          "upper": "inf",
+          "exact_value": 1.9926722607059442,
+          "child_record_sha": "cbc0d8658289dfbe2c65e5bc3cf96a602bf01bf76c66c8163e919951744946cf"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "1d1f84082867fda9f6582e06d0fbea0082965b33b4af66331f347aadd148005a"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8110513395215369",
+          "upper": "inf",
+          "exact_value": 1.9926722607059442,
+          "child_record_sha": "a84b69c6de25bc88c074d382b06adf9399613f629e1e012cd7ae57fe55db0649"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9926722607059442",
+          "upper": "inf",
+          "exact_value": 1.9926722607059442,
+          "child_record_sha": "bc83550717663c33ea4e52b371460443ae9d6dc4d6c11c27ce134686a1eee73f"
+        },
+        {
+          "depth": 1,
+          "lower": "1.852382863891973",
+          "upper": "inf",
+          "exact_value": 1.852382863891973,
+          "child_record_sha": "43fc156fcf973bdd66ff10b91aab9f362ae1aa73735d15bfae311bdb420e0fa2"
+        },
+        {
+          "depth": 1,
+          "lower": "0.020190381809364277",
+          "upper": "0.020190381809364277",
+          "exact_value": 0.020190381809364277,
+          "child_record_sha": "83ce40cf15bbbd650268b1efe1f15fcffae6fbb9e6e198571bb353464d43add1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8557032987305093",
+          "upper": "inf",
+          "exact_value": 1.8557032987305093,
+          "child_record_sha": "fa1c7e9b068bec2fd5729c3ae640c7c10ffc75c739823853f2ccc7860d0385ca"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8033444098747495",
+          "upper": "inf",
+          "exact_value": 1.8033444098747495,
+          "child_record_sha": "81ebc80b90980503e247691897869ed8fe7c9fe32762c783c95620008c16eb3c"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "d1e15b31c37ef321f377e61b49b6818c2eb5827c616277ac8e45ad6c78a7349b"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8557032987305093",
+          "upper": "inf",
+          "exact_value": 1.8557032987305093,
+          "child_record_sha": "52ed1918601ad130e6212e427996b46dbb3c40fc05a500615d82275300bc7688"
+        },
+        {
+          "depth": 1,
+          "lower": "0.020190381809364277",
+          "upper": "inf",
+          "exact_value": 1.7899101969604652,
+          "child_record_sha": "0a76802cb5f397383f01698ab0ef6e7e3c5d33e3c4506bb798511da6383a323f"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9926722607059442",
+          "upper": "inf",
+          "exact_value": 1.9926722607059442,
+          "child_record_sha": "23274a1b7d8bb314f546b01665c16abcaed9e52e290f241ef85d5bfd3635d398"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8033444098747495",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "99bbce1384a033bd2c55a6167df3f1280fc24df4b316d93d5787ccbf814f1584"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9537638957647125",
+          "upper": "inf",
+          "exact_value": 1.9537638957647125,
+          "child_record_sha": "2a9f0b93981a633e26cac240b5142dd054e800a3adef9c45df222a0675b62186"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "3a2bb9ed6c338eef504e320e0b87d1953e50acdaa3437afe2237a3517b8fe001"
+        },
+        {
+          "depth": 1,
+          "lower": "0.020190381809364277",
+          "upper": "inf",
+          "exact_value": 1.9926722607059442,
+          "child_record_sha": "593cb1363ab7d9a4dbf1cc9c38e39a9f9a7409c9f15664050216233eeca2dfea"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8557032987305093",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "239a59a35119ba4fbb49b96ce611b839bff12d4003367577c02df6797abc5e22"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9191494778514187",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "59d78044a821533b51145bf67c5ba7f60b42bda0e39e97090d9c7c95403a4ee7"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "90b9ffe6d7d92cf2d0555e775a2f760b415aa762e83f350043b3381c678a2671"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9191494778514187",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "02559dbf2af5f2e33a53e29ced8ed843dd550e3af841003554daed3190790660"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9241877797182267",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "b7031c85f7b494167118a5c4f4b65fc4873347d918f51056ad8343b8baf6250f"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9537638957647125",
+          "upper": "inf",
+          "exact_value": 1.9537638957647125,
+          "child_record_sha": "b8664cb940bb651489ebc4be65f5d6b4d208f54cb21640edc06584c48fa99e85"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8557032987305093",
+          "upper": "inf",
+          "exact_value": 1.9241877797182267,
+          "child_record_sha": "555b9f65bbc7666705452c009198a44c90a26dd9fd7341ca028fc97921c7e0a4"
+        },
+        {
+          "depth": 1,
+          "lower": "1.7899101969604652",
+          "upper": "inf",
+          "exact_value": 1.7899101969604652,
+          "child_record_sha": "54d6db628db31c036057c1a561ee146b8beac71a82cdd8e17f78918dbd18bd05"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9191494778514187",
+          "upper": "inf",
+          "exact_value": 1.9191494778514187,
+          "child_record_sha": "c8b7735dfede72add3bb8b860e0866d83475f59858d5565588d857fdbab0bca8"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "9cd233cb1d99a7c67ae59624d493cd74e626e54d17782906aeb73408704b0878"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        27182,
+        0
+      ],
+      "gameid": 1634,
+      "ply": 0,
+      "nodes": 10,
+      "value": 2.375025811841296,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "0.0",
+          "upper": "0.0",
+          "exact_value": 0.0,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "2.375025811841296",
+          "upper": "2.375025811841296",
+          "exact_value": 2.375025811841296,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "51f4dc1cfdad559c29b2aee573543b9ef96099502949fbbcc35183c96fa7ca5c"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        27182,
+        100000
+      ],
+      "gameid": 1743,
+      "ply": 13,
+      "nodes": 301,
+      "value": -2.1066745155056985,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "2.0539181617816236",
+          "upper": "2.0539181617816236",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "c1fdd4562662f06c150ef317b1d87af0e143fd00f33d98b5098d5a45dcd7dfea"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8242485733457898",
+          "upper": "1.8242485733457898",
+          "exact_value": 1.8242485733457898,
+          "child_record_sha": "0c4f3a9e517350303a88064f058c054de8a0f99a20f2be2d6cddb219e7c626c6"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8242485733457898",
+          "upper": "inf",
+          "exact_value": 1.8242485733457898,
+          "child_record_sha": "8f0b7f10178b2c0b0b0934727440b803a6efa321e89c624fdeae19472bbf014d"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9580472173933259",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "ccc09a97830a5b773d57277fed45ff49da18c5c15259cc7e2bd551d3f8d54bb1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8242485733457898",
+          "upper": "inf",
+          "exact_value": 1.8242485733457898,
+          "child_record_sha": "9f8a2bd5507076a4607c2a9fc8e13ab0f221d4d46d7ad4f2bc74c2338113ecb7"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0539181617816236",
+          "upper": "inf",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "c82252d49351ee57319e01afdbb46416374cb716798c428de083004fc24ceca5"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8242485733457898",
+          "upper": "inf",
+          "exact_value": 1.8242485733457898,
+          "child_record_sha": "0040a91c26ba2bda49a05115daec53505a0e576d3164c2c1c4974a5f8bfedb57"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0539181617816236",
+          "upper": "inf",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "aeb7e43b756ea818ea1fc35ef486821051af6c17f6ac49b5b9a9e1c7c513588f"
+        },
+        {
+          "depth": 1,
+          "lower": "1.7647450252989334",
+          "upper": "1.7647450252989334",
+          "exact_value": 1.7647450252989334,
+          "child_record_sha": "de4fcbd393eca97c42d1193ce12b7ea474241d4dc31dcde8b5ec9a3937fe8cb8"
+        },
+        {
+          "depth": 1,
+          "lower": "-1.962955182313953",
+          "upper": "-1.962955182313953",
+          "exact_value": -1.962955182313953,
+          "child_record_sha": "e6d67c3f1b9db6a819ac9317ca1609fb154a15decdbafc1a0fd41890b5b243d6"
+        },
+        {
+          "depth": 1,
+          "lower": "-2.1066745155056985",
+          "upper": "-2.1066745155056985",
+          "exact_value": -2.1066745155056985,
+          "child_record_sha": "ee8b86e0921b86e497336dabd9905a87bdd3e396f6e8f8b255745c44ba68b032"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.422971780530226",
+          "upper": "inf",
+          "exact_value": -0.422971780530226,
+          "child_record_sha": "30bc689012e058ca35395f7119cc8e9442af8a6c1150e1abed063a2028d90105"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.0595035480468562",
+          "upper": "inf",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "fe10c8e82e944c90d5036a15ee47f01a0becd0f667b1eb4d5a9a6307912f0518"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.3850440808709876",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "3a3f5ab70cd25c32aaddbe4e2ecbcdff012e884a51d625e40a07fbf517761cba"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.28917313648268994",
+          "upper": "inf",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "0e49d763a3c6154275077d78c715a38d961f5e6eef42808a752aa8c540415e0d"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9580472173933259",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "e66f197565cc4be8c3a5deb2ba5b1e05fcb434fb0c4d188218038ec79a1bbe8b"
+        },
+        {
+          "depth": 1,
+          "lower": "1.933203408290525",
+          "upper": "inf",
+          "exact_value": 1.933203408290525,
+          "child_record_sha": "f44491ec8d6f3a30bf7aecd870efd17dfaac8eedf69b04b941e2ed3a53aa3145"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.18021830153795482",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "4ea17130d4af9051b50bc352b5cc7599a8a13bae8ad9397f408334df35d38d2b"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.18021830153795482",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "6e12c0315e7e3c54028e2268ba5ba8a467b5be395ceca00f5fc6c3b93da95e9c"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.08434735714965713",
+          "upper": "inf",
+          "exact_value": 2.0539181617816236,
+          "child_record_sha": "d84844abd6cef05b8c20b1d88b6d6487edc2f7a946fda083c5320ff083f2bcba"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.28917313648268994",
+          "upper": "inf",
+          "exact_value": 1.9580472173933259,
+          "child_record_sha": "f495e88a3737e7b174d96aaf25580a70fe6e798215ca9eb36a50ec7e2d25f6b9"
+        },
+        {
+          "depth": 1,
+          "lower": "-0.5188427249185237",
+          "upper": "inf",
+          "exact_value": 1.8242485733457898,
+          "child_record_sha": "a54916619294e823d1381ecef0a4f4a8ba5315eef4e8f7aa68c991597c9f2e48"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "aaa404530699eb879fc8a5b21247ea23a7a236924e9b91de118f2d88b8c2f8a1"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        31415,
+        0
+      ],
+      "gameid": 1364,
+      "ply": 0,
+      "nodes": 10,
+      "value": 1.5425822030439713,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "-0.931334299528686",
+          "upper": "-0.931334299528686",
+          "exact_value": -0.931334299528686,
+          "child_record_sha": "42e6757b06ba192a76d68c3de00c2b600a85d4700dc06d8d5982f55a814d0306"
+        },
+        {
+          "depth": 1,
+          "lower": "1.5425822030439713",
+          "upper": "1.5425822030439713",
+          "exact_value": 1.5425822030439713,
+          "child_record_sha": "75ec37f4e88fed19b96591b36bcb03e72b0394c03bebcc2ee95373026c4461da"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "22df859a22f208e6c4206aead69f8f17c71cba2bfb2b1f9551fd4071b5819610"
+    },
+    {
+      "key": [
+        271001,
+        "TreeStrap",
+        31415,
+        100000
+      ],
+      "gameid": 1471,
+      "ply": 17,
+      "nodes": 206,
+      "value": -4.481840067090756,
+      "interior_bounds": [
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "-4.481840067090756",
+          "exact_value": -4.481840067090756,
+          "child_record_sha": "465e4633a8a42820760b4350b340bed8e4612c12886a3743a9030dcf180ec463"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -2.504259569950898,
+          "child_record_sha": "f42e54b1de8562500bad902a9301da4cd8ab49d02ea7bd51668127aa61773f15"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -4.481840067090756,
+          "child_record_sha": "0a22903e7c212a031aa5b6da749d02d1bf68cc79f85f8aff092ab4c686d4a280"
+        },
+        {
+          "depth": 1,
+          "lower": "-2.3097845390827154",
+          "upper": "inf",
+          "exact_value": -2.3097845390827154,
+          "child_record_sha": "4a93b5d3b44c25cb2a127c8a7a9a90a7016fb2efef775cc305a076b283689c62"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -4.481840067090756,
+          "child_record_sha": "ea33582c0d97486cba4b5c9b3a87517f12bfe7d6933891cc6d56bbd680f5cee6"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "075b806d41ea0d292344e375f71d7fe11c5973fddb916a9c320f9957e431015b"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.464422628611812",
+          "upper": "inf",
+          "exact_value": -4.435103359611683,
+          "child_record_sha": "adac68d39b2dac9f28b0938e61a97a9c47e2d1d002da818d8f35f890cf78be89"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.435882638578024",
+          "upper": "inf",
+          "exact_value": -4.388930475495317,
+          "child_record_sha": "8db46ddc9520c809b20d4cf2c0fddd671b4c93766e7cd3410ab9ea21fed51df6"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -4.481840067090756,
+          "child_record_sha": "f2e6a0a73793eedddca59a2db8c40fb283b9a3cbd4f0abfca315cdfbd70b631e"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "297fcd2f3d138f843987db05386f16a014f21f9d94aad026591a5a763f596baa"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -4.481840067090756,
+          "child_record_sha": "4cb5ebea53063ba8e3f99aea4947a865810ba90dc9e264831f77258c0a97c313"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.45544558220654",
+          "upper": "inf",
+          "exact_value": -2.5101091381827247,
+          "child_record_sha": "d848bc1840fafaa7e693dd90d8f1639b89b6f1d5fead8696b7325b0e4258fcbd"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.45544558220654",
+          "upper": "inf",
+          "exact_value": -4.45544558220654,
+          "child_record_sha": "da1e59bf57af9090e4808e0d09a85d537ce47d9511c1f393f604b8d2d539e430"
+        },
+        {
+          "depth": 1,
+          "lower": "-2.242490153405152",
+          "upper": "inf",
+          "exact_value": -2.242490153405152,
+          "child_record_sha": "5c66e6c82f0724ee93bfb4700fdcc6d7b5bd8a8d6e79e66aad82816e8defcf18"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "9a5379559cd5a1224ad06c433a336060e823a3e30fd929dfa835c493fd820b71"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.481840067090756",
+          "upper": "inf",
+          "exact_value": -2.504259569950898,
+          "child_record_sha": "f1199ccb993af2522081f372ed1d23d90b8de64d89c2b4fbedfbb3a50f27d002"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "eec339928ed918f6a1b7ab290f960643c1160f9e9ce73a7626a3feb98f963435"
+        },
+        {
+          "depth": 1,
+          "lower": "-2.5101091381827247",
+          "upper": "inf",
+          "exact_value": -2.5101091381827247,
+          "child_record_sha": "beb4f41a97dcfe50baecd8ccdf2a230d96f8efa4f84d697e0c4a5e11c9265a86"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "dcd420b0ca95317079bec648f6988fa96c8e22194838562f7a0ab21f91ac8610"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.464422628611812",
+          "upper": "inf",
+          "exact_value": -4.435103359611683,
+          "child_record_sha": "a37f736c0312648886469688a4570f4651d0d845924dd6bf88cdaf07c7b2ed1e"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "39f774461aaadfe8c8dc5382e51b5144000a27d9f62887fca320b32eb436532f"
+        },
+        {
+          "depth": 1,
+          "lower": "-2.533578838951027",
+          "upper": "inf",
+          "exact_value": -2.533578838951027,
+          "child_record_sha": "eb4156f05ffc873ac388b66156414898c32317e051afee1e4000171df4d7ed20"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.45544558220654",
+          "upper": "inf",
+          "exact_value": -4.45544558220654,
+          "child_record_sha": "41d2e46348c8255cacfaeab5d1b7d5efabfe820c43fba4fe58ea4841d8a95ca4"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.473078476289118",
+          "upper": "inf",
+          "exact_value": -4.473078476289118,
+          "child_record_sha": "3a9146f59132083f741e195e5d97fb17d1994f8064d88083834877daf010f917"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.45544558220654",
+          "upper": "inf",
+          "exact_value": -4.45544558220654,
+          "child_record_sha": "f2c52e817e808727a69529ae235798e139488836399102ea09d9291053992e86"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.435103359611683",
+          "upper": "inf",
+          "exact_value": -4.435103359611683,
+          "child_record_sha": "a8a50774b47148ea3bf589ee513df4368aedd486d4ef987d45a3d9ca82989484"
+        },
+        {
+          "depth": 1,
+          "lower": "-4.464422628611812",
+          "upper": "inf",
+          "exact_value": -2.242490153405152,
+          "child_record_sha": "87608a502bbf9bdf8bc750e76722ccd8f28f26d49c0246d2ba9318f1b5af728a"
+        }
+      ],
+      "root_exact": true,
+      "committed_action_PV_witness": true,
+      "source_query_sha": "cb08f95296d5aa8f3d9197bc2ad5c926d1ee74fb4e481be6c3c8c6da8f76bbb9"
+    }
+  ],
+  "seconds": 3.44978429999901,
+  "scope": "Independent unpruned actual Session D2 root/committed child/PV witness and EVERY interior sample interval for 64fixedqueries. Root hash ordering binds all nonterminal child depth1 samples to exact paths; terminal child has no sample. Exact D1 minimax must lie inside fail-soft bound; bound NOT exactified. No training/deployment or old cap extension. Resource-limited slots remain unverified. Same actual Session authority; unpruned minimax independent of TrainingSearch/TreeStrap. Every nonterminal root child path bound checked, including bound inequalities. Not every TRAIN query rerun/all generated rules proved."
+}

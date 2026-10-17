@@ -1,0 +1,46 @@
+{
+  "producers": [
+    {
+      "phase": "task2546",
+      "status": "COMPLETE",
+      "nodes": 6400000,
+      "seconds": 2093.434666300018,
+      "expected_arms_or_slots": 32,
+      "actual": 32,
+      "missing": 0,
+      "actual_terminal": 7196,
+      "unknown": 176
+    },
+    {
+      "phase": "task2547",
+      "status": "COMPLETE",
+      "nodes": 2184080,
+      "seconds": 670.988421600021,
+      "expected_arms_or_slots": 1536,
+      "actual": 1536,
+      "missing": 0,
+      "actual_terminal": 1463,
+      "unknown": 73
+    },
+    {
+      "phase": "task2549",
+      "status": "PARTIAL_CAP",
+      "nodes": 4240834,
+      "seconds": 1200.0093639999977,
+      "expected_arms_or_slots": 768,
+      "actual": 654,
+      "missing": 114,
+      "actual_terminal": 648,
+      "unknown": 6
+    }
+  ],
+  "total_listed_nodes": 12824914,
+  "total_listed_seconds": 3964.4324519000365,
+  "additional_original_unpruned": {
+    "full": 10403,
+    "first_rule_repeated": 2294
+  },
+  "reused_TRAIN_role_diagnostic_new_search_nodes": 0,
+  "fresh_receipt": "task2550/fresh-receipt.json afteractualexecution",
+  "scope": "These3serialproducer totals include paidcandidate/foe/failures/baseline. SameTRAINvisitednodeceiling not equalCPU/energy/optimallearningrate. Engineering/audit/replay/plotting/transport/tokens notfullycounted; roleinputhistoricalpaidworknotfreefitness. D3 PARTIAL654of768/missing114 original1200cap preserved, no continuation."
+}

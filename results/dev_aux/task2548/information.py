@@ -1,0 +1,57 @@
+"""Prospective analysis of recorded information and loss on a paid node clock."""
+
+from pathlib import Path
+
+from collections import Counter,defaultdict
+
+import json,time
+
+from math import tanh
+
+D=Path('results/dev_aux/task2546');O=Path('results/dev_aux/task2548')
+
+def run():
+
+ began=time.perf_counter();p=json.loads((D/'plan.json').read_text());a=json.loads((D/'result.json').read_text());gs={r['gameid']:r for r in map(json.loads,(D/'games.jsonl').read_text().splitlines())};counts=defaultdict(Counter);curve=defaultdict(lambda:Counter());arms={}
+
+ for arm in a['arms']:arms[arm['generator_seed'],arm['method'],arm['seed']]=arm
+
+ for line in(D/'queries.jsonl').open():
+
+  q=json.loads(line);m=q['method'];c=counts[m];c['paid_queries']+=1;c['paid_nodes']+=q['nodes'];c['paid_search_seconds']+=q['seconds'];c['failed_queries']+=not q['complete'];c['failed_query_nodes']+=q['nodes']if not q['complete']else 0
+
+  if not q['observed']:continue
+
+  c['candidate_complete_queries']+=1;c['searched_terminal_PV']+=q['pv_terminal'];bucket=min(3,(q['total_nodes']-q['nodes'])//50000);r=curve[q['generator_seed'],m,q['seed'],bucket];r['queries']+=1;r['terminal_PV']+=q['pv_terminal']
+
+  if m=='TreeStrap':
+
+   st=q['learning'];c['samples']+=st['samples'];c['active_samples']+=st['active'];c['query_updates']+=st['changed'];c['stored_parameter_change_queries']+=q['weights_after']!=q['weights'];c['nonzero_delta_but_rounded_same_query']+=st['changed']and q['weights_after']==q['weights'];c['summed_query_mean_loss']+=st['loss'];r['samples']+=st['samples'];r['active']+=st['active'];r['query_updates']+=st['changed'];r['loss_sum']+=st['loss']*st['samples']
+
+   gross={'nondraw_terminal_value':[0.]*6,'other_exact_or_bound':[0.]*6}
+
+   for s in q['samples']:
+
+    lo=float(s['lower']);hi=float(s['upper']);c['exact_samples'if lo==hi else'lower_samples'if hi==float('inf')else'upper_samples']+=1;c['exact_nondraw_terminal_valued_targets']+=lo==hi and abs(lo)==1e6
+
+    pred=tanh(sum(a*b for a,b in zip(q['weights'],s['phi']))/10);tl=tanh(lo/10);th=tanh(hi/10);err=tl-pred if pred<tl else th-pred if pred>th else 0.;kind='nondraw_terminal_value'if lo==hi and abs(lo)==1e6 else'other_exact_or_bound'
+
+    c[kind+'_active_residuals']+=err!=0
+
+    for j,phi in enumerate(s['phi']):gross[kind][j]+=p['eta']*err*phi*(1-pred*pred)/10/len(q['samples'])
+
+   for k,v in gross.items():c[k+'_gross_query_delta_l1']+=sum(abs(x)for x in v)
+
+ for g in gs.values():
+
+  m=g['method'];c=counts[m];c['games']+=1;c['terminal_games']+=g['outcome']is not None;c['unknown_games']+=g['outcome']is None;c['changed_games']+=g['initial_weights']!=g['after_weights'];c['no_observations_games']+=g['observed']==0
+
+  if m=='TD':
+
+   st=g['stats'];c['samples']+=st['samples'];c['summed_episode_mean_loss']+=st['loss'];bucket=min(3,max(0,g['total_nodes']-g['nodes'])//50000);r=curve[g['generator_seed'],m,g['seed'],bucket];r['samples']+=st['samples'];r['loss_sum']+=st['loss']*st['samples'];r['episode_updates']+=g['initial_weights']!=g['after_weights']
+
+ out=dict(status='RECORDED_INFORMATION_AND_LOSS',methods={m:dict(v)for m,v in counts.items()},curves=[dict(rule=gs,method=m,seed=s,node_bucket=b,**dict(v))for(gs,m,s,b),v in sorted(curve.items())],raw_endpoint_weights=[dict(rule=a['generator_seed'],method=a['method'],seed=a['seed'],initial=a['initial'],weights=a['weights'])for a in arms.values()],seconds=time.perf_counter()-began,scope='Actualpaidquery/foenodes, differentnumbersoftraininggames atfixednodebudget. TreeStrapmeanhinge loss and TDtransitionloss are DIFFERENT targets/counts, not commensurable objectivevalues. Bucket by observed startnodes; losses recomputed from auditedstats. Signal counts/changes/terminaltargetcoverage do not establish actualWLDgain or causal efficiency. Only EXACT +/-MATE targets are classified nondraw-terminal-valued; zero draws cannot be separated from material zero with storedinteriorsamplefields and remain in OTHER. GrossL1 is before cancellation, notcausalshare. Free6signedweights/scale10, no unique ratioidentification.')
+
+ (O/'information.json').write_text(json.dumps(out,indent=2));print(json.dumps({k:v for k,v in out.items()if k not in('curves','raw_endpoint_weights')}))
+
+if __name__=='__main__':run()

@@ -1,0 +1,13 @@
+{
+  "registered_at": "2026-10-17T13:02:27.913336+00:00",
+  "TRAIN": "task2546",
+  "thresholds": [
+    0,
+    100000
+  ],
+  "selection": "first completed candidate query at each threshold for ALL4rules x4initials x2methods; no outcome/value selection",
+  "expected": 64,
+  "node_ceiling": 200000,
+  "cap_seconds": 120,
+  "scope": "Independent unpruned actual Session D2 root/committed child/PV witness and EVERY interior sample interval for 64fixedqueries. Root hash ordering binds all nonterminal child depth1 samples to exact paths; terminal child has no sample. Exact D1 minimax must lie inside fail-soft bound; bound NOT exactified. No training/deployment or old cap extension. Resource-limited slots remain unverified."
+}

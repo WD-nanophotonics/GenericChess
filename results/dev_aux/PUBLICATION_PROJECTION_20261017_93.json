@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "projection_only": true,
+  "archive": "DELTA_REPRO_20261017_93.zip",
+  "archive_sha": "6555360b81211eb3d3fb8f31793dcb0af64c3e371bedc15d3f611ea2e0c50755",
+  "late_archive": null,
+  "files": [
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "raw_sha": "64e7de465a48d0fc68518d949c6c3f04091e0b0a2ab8f802846280d84c33d78d",
+      "public_sha": "8306011061f2bfe67d6e1a6c187603523fb4f46ee9f8e85e19bde63d4569f890",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "docs/research/LOCAL_MAINLINE.md",
+      "raw_sha": "26c275088cabf35ab73aa51f10187a1e3f9941a79e525dd10c8171efbab22081",
+      "public_sha": "abd02a7ecafdeda2a3777354fb6b496365bee4ac0c6927000f857b9a93d99263",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/ADVISOR_20261017_93.json",
+      "raw_sha": "8ac6ff52a95e316a8796c0bc5e6b32877fbb4985f03dffca407aa3780ed0656f",
+      "public_sha": "03f2e78cf4a4e8cb8f9614e8a406f6d8111ffed2ee85c016231001a281bdc106",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_93.json",
+      "raw_sha": "660df7488e1b84d28a2c7ebc99dd49a38be9af8dce6f357950cefd248b369467",
+      "public_sha": "49a801c8c9f307035f9e111a9666ac837f953217822ca8bede01d87b5e9c3287",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/ARCHIVE_REVIEW_20261017_93.json",
+      "raw_sha": "ee69c73f51fffa9ffa4311886d342c0310b0c9aa0f894e90eb5b14a58ea6156c",
+      "public_sha": "97036fc19387ed3730d0a060e56c4e0086a5b15bc1e6dfdf0287dedcb763639d",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/COST_20261017_93.json",
+      "raw_sha": "8091c11382a9f6fdf37f85a90884779a2ddf10a4025706d1a266cfefe13975e4",
+      "public_sha": "8a931ca7fa4cfaefc4d1af2cfe5f90bab65e6f53a004eefb93bb7a70d0a83476",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/FAILURES_20261017_93.json",
+      "raw_sha": "89c8c13b8129a13715a0c6c65424f77e9d8cbfa0f83cf3f34388b89ded79ea2b",
+      "public_sha": "8769b2cc428d8fd396bd8d8e56e11e3a84580fc4300cb8bc3c135321a9223d62",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/FIGURE_REVIEW_20261017_93.json",
+      "raw_sha": "8b7d209e86437dc361a9154813b3c39abd04eb72431d71ae013006bc4af4b19a",
+      "public_sha": "c608d8fe270a15725deeea84b9d87fbfdbe0619035343c283cb494299e5e42db",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/JOURNAL_ROUTES_20261017_93.json",
+      "raw_sha": "08c039a9e0dd6127ff076a47fd9b2d55d5944e16f8b48b17385284c0d7e12dfb",
+      "public_sha": "1fd1b4a7e23e1fea43e896cb2b5abd64e5da1a03964c969713772a97caaf05bf",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/METHOD_20261017_93.md",
+      "raw_sha": "115da4eef320f5a1b17fba9ca42daedc6ea21a3e3c41b966a8fd578209cdc542",
+      "public_sha": "47c4cd16cc769b30f7863074d9128d353f2d937cf37a6aad890ff904cf160612",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/PUBLICATION_COPY_20261017_93.json",
+      "raw_sha": "88d3436f908f53e313139a53496a25d7b52cbb8ca2a7789f6dce2cbed256c91b",
+      "public_sha": "6364afdf066fca9e5c75801974dbc21c03a6f9c9a55cb7b213273e695d8772f7",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/REFERENCE_SCOPE_20261017_93.json",
+      "raw_sha": "7e8ce59911d984ebd20e8fc53144611755c0416e460cd8b1bda41639ca8bcc62",
+      "public_sha": "804c3af7dcc3979751b2022cadf606285e0485419838a8c00578bc4192d98506",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/SEGMENT_20261017_93.md",
+      "raw_sha": "f90fc844a35df722630b10c8f25610b138115a17a126d9213e88df8aa647c2f2",
+      "public_sha": "e508dc836d565e895a5f84e6458e0350bff9b91f27e699ec1cfc1b7390811777",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/TESTS_20261017_93.json",
+      "raw_sha": "123b91ac1904564a308548e297d0325cedddab3ac35235948e7748086df6e3c0",
+      "public_sha": "763b6fcbc3e20c46d9e01ba13d43b6eabf3826f3d11d7dc6f8a86c88380641c5",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/actual_weights.py",
+      "raw_sha": "2801f88791e4c83a4391eafe15285996d78eaaefede1576edb44fd275485d1e9",
+      "public_sha": "3f35c5e81e20be091aae30bf65362d8fbbe6179941b2a05e73c02dfdb4bb67c0",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/cells.json",
+      "raw_sha": "a9153db5e65628a10b1e0efe87fcf45ec4818c477111f1a3e515cdd2ee15b85a",
+      "public_sha": "58316c1ece102aecee02d183c324f78c8f20f618d402bf19fc3bdb41d26ac1c9",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/games.jsonl",
+      "raw_sha": "5fc5568bf2b5a3af78a5fc0df7ff2d4c0f705cb2a0f9839985104ec50b28796b",
+      "public_sha": "66c626d14281e04d701a6edce86bf4856e9a95d777cc9bfc3dee4a1976630ab4",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/plan.json",
+      "raw_sha": "8c318ce1722889ce3d7224ccdabd4a11fbdfeb06f39f10761eee9e28e67e557a",
+      "public_sha": "987c162e1376318f383c038cbbf9b72032e1430cce18eefb53c2e3a5a083dd44",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/plot.py",
+      "raw_sha": "12dcc3bbb9b3325c46b4f3493cde919309865e23da36f11b8ae7d8b13e939e94",
+      "public_sha": "414ab0fce742bc7b4bacb50127a55a10e46ccbd3a26e8d58ec72fad6c6da0160",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/recheck.json",
+      "raw_sha": "307e0b8065b20f6c0e82fc97f230247000849fc8337cb24f5a7c70e4a63bc8da",
+      "public_sha": "324a050d05374b5616d02e157ddd5f314f5e3d2c241e12e1aa85947436dbb83e",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/recheck.py",
+      "raw_sha": "b5566922d95a638dc16a0bbd6dd354474dafcc83a4eb6ada5cd2ed5fbebde0ea",
+      "public_sha": "94814c3a22e3c0470a45136cc6bbe407f963e97f871f89e008821bf6bc791925",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/result.json",
+      "raw_sha": "21d76a274d0b859d4c4fe14e13f057fcc66b38bf0cbc25693070bb40405a9b29",
+      "public_sha": "c4442878c30fce71ad239f35ec4f71180b21931f7221ffe48f44cf283c192a3d",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/run.py",
+      "raw_sha": "5e1ef1e78d8535ff38475d34d4dd39630e6e8c3b7abf729ac8309eb7d8d96d86",
+      "public_sha": "81c7907eab5aad96d0708f1bbd687db10fb232cdd5a847a8596070c533134abf",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2545/training-role-weights.json",
+      "raw_sha": "b920a48564fbb6d6c89e38f5452c6fb7007879042514f7d0352116696d90931a",
+      "public_sha": "60db9129766e355db715eeae508d93fb938fc7bbbbafe6e0f1020970108bc39c",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/games.jsonl",
+      "raw_sha": "4936fe38688f640350fe2e562276b392668d39927f7044bf8c35519a916e3b9b",
+      "public_sha": "3655e022df4d3022e93c05f273b3d3790e7d63068db5cc28dc0260cc34440d67",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/orchestration-ended.json",
+      "raw_sha": "382c5eb41f9b2c12fb07686fb4399d3faefe46bbc0891d07857bc10d9705b978",
+      "public_sha": "2cf8130ce50eb8b65b2d612758bcb4b7dfffca31c2ccbff35a75561b8aa8126d",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/orchestration-started.json",
+      "raw_sha": "cb6266b06ec3d1ad933eeb95364635877677affa33e95f770194770285650fec",
+      "public_sha": "32a8cc41d8e41a09ee5fad26048581cd10c4328b78a107c2817e3f94b6144121",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/pins.json",
+      "raw_sha": "2518c9f2940439e0b67197c7de11b21278971a5438a60773d44af57d27b65cfc",
+      "public_sha": "dad083b4b683e11bc5386c5cb821a43c0c887a53cea8fecf2c9fcec30e58f77a",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/plan.json",
+      "raw_sha": "3dc5d091c7d9d227a04b4cb79628c84fb1fec84233215cb0a81f1385defdd500",
+      "public_sha": "574f96bf4245eebc5382fed4a050331aad06eda71a0183ee507d096cdcdef4f5",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/result.json",
+      "raw_sha": "9959929d1f33664691202e8bc33c151bf75873713d3f88685f0b6c589fbbc8cf",
+      "public_sha": "d3f6d2c94f93856ff06dbc6e48b42ea172576d23ec49de50dc5d47f119274b6e",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/run.py",
+      "raw_sha": "0c68fb9cbec15b2618e15373c3a4441de8ba967794fc16344c3c23ec0d908812",
+      "public_sha": "49e70ebf3ac510248d8ef3879867f7097353b21c0b96f7b36667701c2850437b",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/started.json",
+      "raw_sha": "74536ecacff9a578c7426f53a37b6f283deb41c3a39941c0ba24a04645b343cd",
+      "public_sha": "d075f905abd4770c171752adf09a1d0b698a94b499306f774c44b10516a1c146",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/study.py",
+      "raw_sha": "42dcaf755df5efc42a0fde34d5d7bd1fc19c4235ce5997de5b883d62c76b36d5",
+      "public_sha": "11487f836112ad206868b30cdbe3fc4d0bc342db4f064224eac9dae9ff44ecef",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/test_learning.py",
+      "raw_sha": "44b23c82d0a9c51d040b6cb6aeb5376b4bda92f5b5f624ebd2741abae8758d19",
+      "public_sha": "10f9c0b16cf911e6526ddb6ceb80a6efbb1fe04107a58d20f0def4cc950da957",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2546/updates.jsonl",
+      "raw_sha": "bcd2230fa8f2c5779b6e2155ed953f4252d86fcc0b7f4c10430f1920adf02a89",
+      "public_sha": "7c0878a4fbd09b6200413dd7d0660183767ead39dff89656990f75d2c3cf417d",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/evaluate.py",
+      "raw_sha": "76305e28f79400786bc89da16e0a95935d3f88b30822898910a27b49afc64f32",
+      "public_sha": "ab8a84478738e15d74aa82c6cdef46366d6e8fd151efc25a7472041a4419915a",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/games.jsonl",
+      "raw_sha": "5da326cdf5071e8a428cb02017ac97363c3ca6af304e183a362309741b97e838",
+      "public_sha": "26948e99a569c5289ca88818b626f38a9346b0edbfdf525c1e49435125b37ddf",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/plan.json",
+      "raw_sha": "10e4646022ffd1d79f87d82fc9d3b5146bcc2ea65810705db421c329d129d5d5",
+      "public_sha": "c6fc4a62fd70c3437f2cad8aee0d00fca36b79eddaf8ebed89c8ac2091f848b1",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/pre-fitness-binding.json",
+      "raw_sha": "5c4d376f0732ef2b3d14ba94d5efaceae4d4bceb2b5406aee3fc43d44597d28f",
+      "public_sha": "3f28553a75e878c7759ed65e471e7656434688d9d82f8fbfcfacb82f96e30d11",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/result.json",
+      "raw_sha": "e5dad83df1bfa3cb06115d04a355b50670b7ac528d670a8f1602adae3e5353ce",
+      "public_sha": "53c0600b8245ac19e51bd6cb43eeadbfa791144ea547c52c32471103ee94fbac",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2547/started.json",
+      "raw_sha": "9e317c70238bdaa76d2a06c5bce95e5d2f98f03e574b4ad26c2e20f110820468",
+      "public_sha": "9fd0d93449d8438635c56c8a4d2781ca5b40636a78172c5ad3e5e80ca22e1b08",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/analysis-plan.json",
+      "raw_sha": "4d3c7c0a0e9dff78f5cead64a1f1e8ca7e23b3ce6a3b9f83261bf2d88f85b90e",
+      "public_sha": "4d3c61df685e339f1ba12d22d00139905b93e2b30417fd28820b4c1f5e8211fc",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/audit-entry-failure.json",
+      "raw_sha": "0181df2f35339910dbdc9c5af43b387b6943665eb43738711e0e0b64fd766146",
+      "public_sha": "91ecd23ecf3889ce50b1384ee5280c37cb458e915defdaf809486ad8777d2b41",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/diagnostic-plan.json",
+      "raw_sha": "2cb1d429ed4d9e0a7a589cfa79b5cae47d7abae4be10e6d9f3442633f3c19657",
+      "public_sha": "2b6c51428424e387c6a9bb6399cdcc90be03e18ad5916730d19bc2c3931514b9",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/diagnostics.json",
+      "raw_sha": "e7e795f6d40b64c755b9ed9ccec9202841cb985ccacfe61b667d96c9343f2782",
+      "public_sha": "d1271bddbc3c5c4c9caf0b9298bd20f5dbafb2869309922e1d7f62b2f2d0df3c",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/diagnostics.py",
+      "raw_sha": "33ff0cd5c1b876502576c5b516fc4afb7bed073c5d479c7d4ec598426fa3ba8a",
+      "public_sha": "5bf8297ac7d0699a89831a54b3d29d0836cfa11ca458be1ff7eb28a3206d8068",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/evaluation-D3-audit.json",
+      "raw_sha": "283cf5e827a575b2f0a86deafe416c021b1a964807dbb79237ee580223dc51cd",
+      "public_sha": "7d0e6f9a3e7505da760cfb4c5c881b72138679610168282d61b2906fc2bbe95a",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/evaluation-audit.json",
+      "raw_sha": "1cf33d3ff951df0734e05505c07b5fc22598a8ff804269dfbb6b1cbef22cb9f2",
+      "public_sha": "137dfef5ce63fcda54ab928458f04becd8db4dfc81b641a98f8458135a2f54ca",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/evaluation_D3_audit.py",
+      "raw_sha": "f3cab4348329fdc3004581188c7b541890f486f6acb9a847b83079f42d688be2",
+      "public_sha": "aa5d5a37c6fb82ba25aa84c461cf1befc2bbf13f0dbf70f9f910b60b2e2b1103",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/evaluation_audit.py",
+      "raw_sha": "bd69144c12a8bba98fe0a5d74564e44e6ac79e0bd113eb5102f35d8f6ec91eca",
+      "public_sha": "5b48f9e75fff640455b4307de5fcba5d6303481f18cbb76c63bcd01e5a2917bf",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/information-v1-executed.py.txt",
+      "raw_sha": "ebd47234c1cb62e0378722286b393d6cbb81cb98720fc14e1e7969bc8ae8837c",
+      "public_sha": "da8a267182435ea03363c7bad54ebfdabc6a0dd84884d3639470dfcd62a5f350",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/information-v1-result.json",
+      "raw_sha": "8bf822d686d072f2d4a0e45ecac0de19224040dd8b005316285508024d8cf488",
+      "public_sha": "e2bb54b6b71cf5a9d68b5b46a033b90ed2bc717e23c92f973ddfcdae86523653",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/information.json",
+      "raw_sha": "4d0d16714f0f2dcee20752e90cf01e04554749d3f5fbc3b7536a7679dab5f056",
+      "public_sha": "c10824ffe945564779309741784c837c0307e1dd239ff824cc72543b6b0fbe42",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/information.py",
+      "raw_sha": "58fe574b9721682048472b0c078608b3e5b635c9aaca49f56d492624c981f695",
+      "public_sha": "88f4ba3658cdb8a358c0824835da8df1cda9959b23f18a1d23db28487b78910b",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/loss-verification.json",
+      "raw_sha": "a36b2982a9b79430aeb69f888271bc8d361fc1ba430327b7434b8039ffbf541c",
+      "public_sha": "039deab27053bcff766502ad63ddc4b8f9e2ef8fe95297f9de18e17e58495c82",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/loss_verification.py",
+      "raw_sha": "985c856950e046c66dab72834d4dc36f6e97ff89dc82460ff592bff5b2bf18e7",
+      "public_sha": "8275e9852ad4cf6210079a6d8be62d64613ec894f051002574996dd9eec072bb",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/orders.json",
+      "raw_sha": "700ba53f9607733ff7edaf0e9fe9365f6ceafa62299f01ad2a8bc3286bc70c1c",
+      "public_sha": "b27b09459be57c789bc546547727b587cd0ce3780e32abcd1a819ee43b2c6220",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/orders.py",
+      "raw_sha": "f5685e7ddf429ede1e1bf52a4f0a37e1c4acc5968feae41553c0a76a1b28bbbb",
+      "public_sha": "0924d28e87442fc618be34101e16cfe9b020c99b40b43283f10fb2d6dbdc833f",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/plots-v1-executed.py.txt",
+      "raw_sha": "3f90bf309bb23c3c01e57893c03a1bd6c9b0b6b909e52848658c1dff3b92d2ea",
+      "public_sha": "168d70d1a781f82b7da5e7d7368411926587604baa59da609ffde6489c61fc3a",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/plots.py",
+      "raw_sha": "c3b8c5504baa885def699d6ebfe0cdf617792ed47dcac98681a2fc35722b8fb9",
+      "public_sha": "f827c64f2ec6b9f60229f55e442951321c179365c17ad80796d6d5507f406c72",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/roots-D3.json",
+      "raw_sha": "04fc6430ec99ae6863ce34ae46758ba50978b88512d7e3c0d68ef5fb793d730e",
+      "public_sha": "fea428cab225601a5f43676ea56d374b428ca2761654368e6b64268501bb77cb",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/roots.json",
+      "raw_sha": "155a0de870f4209de1629223b4797e5d323aa2d1b40cdd441fe7ef3f9bc41b84",
+      "public_sha": "7bbcb5b6a70c1d178416f3361df1b32be42b57a5a2c41859065c0ad89c98c364",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/roots.py",
+      "raw_sha": "a18d610f48bc530b13d3bb11c6494ca62a370ff08924d7cb670f854f51684d6a",
+      "public_sha": "73bebbcd46186aa7b5f6003cffccc38f2914167c8fff0e963a2d4f1805768526",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/roots_D3.py",
+      "raw_sha": "91799a5c5f7bee1349ceeb9f4f95e7d1a5683c0c24b6adccdddad004acc791d6",
+      "public_sha": "faddd0fb71039c86e0274869b7fecf01b583fafa2186c61459ad95f4162cdf31",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/search-plan.json",
+      "raw_sha": "c1bccb452c2cdf5d0021fd2e86f3c913a2c35d52c19064438fd418e4771ed38a",
+      "public_sha": "c37b4ceae0d7bd7ae71d994a350418b48d9f202ceca13367960a48162d14182e",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/search-verification-first-rule.json",
+      "raw_sha": "9cb4813a6c70330d230d88b041c7087566c154880967d5d074ce27ae2b29d5e8",
+      "public_sha": "f58bcab12046c4872cd04087e94253c1cf2e442c4ff56a5737c857396a22d696",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/search-verification.json",
+      "raw_sha": "71e03f6fd9fd654a25e1adca3b75f538d4c7fba016000c8337e41c290561526c",
+      "public_sha": "9475cb60c8e7a6270a05676b0d91c273f3397311314720d697f9c6652d6ad0dc",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/search_verification.py",
+      "raw_sha": "856801936332599c756bf2f3efa7184f58d09c117dfce50f99e0c3d47f0f5256",
+      "public_sha": "cdcb4e01a6c7f6c05c4050bc419da7fd2c7f266daf71c30d201840e3ece9be8b",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/span-plan.json",
+      "raw_sha": "0fdb5d9a45d91a42ecaa23737aaa0c6aa3ad418a4b578d356a4b8c7da991411e",
+      "public_sha": "e8ade7453d52547668918e3f1e7e663cf79943e04fe613a7b6dbf48977437f94",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/spans.json",
+      "raw_sha": "f3450e2dfe2325394e8a9de90c5b742086a3dbf0becae817412f372f5ea78019",
+      "public_sha": "c1824394667b9a1f2761ae45035d3a4665cdf7a2e464bc8497d898b7f8d228be",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/spans.py",
+      "raw_sha": "fc561f396b6b0b3ae01fdca693c00a04b1d6e42c9ebe20d5fec5b3c7ac746a68",
+      "public_sha": "96ae379120007ab5322e3bd00168158e7a3a18367ff732a201f8c741cabfb638",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/training-audit-first-rule.json",
+      "raw_sha": "b77a9f5b686c9eba228193714812524423b69d19cdfc829fe5a534c51bd2b810",
+      "public_sha": "aa0e63caf408dacfeddfac919ea965033ea391001dbe478ff1816d3ae33b3858",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/training-audit-v1-executed.py.txt",
+      "raw_sha": "c637144e43afaf08a156cccdf89d6c451d7d359dbf6ef745af30276f5cfb4626",
+      "public_sha": "f2aada0f453abc9cac55e654979a48ad8a53bb46384811b8cb73e03163eadb1f",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/training-audit-v2-executed.py.txt",
+      "raw_sha": "fd27ba4134508339e633e731ef650e17cc4c01bd0520358baf17184664bc07a0",
+      "public_sha": "f5143ceb8eab6614a0cb1a008466d1a2c0e1397e34259b2f77a4e1c54be6692b",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/training-audit.json",
+      "raw_sha": "1982a1b108df078dc3e466612aa5de7a0aefb5678da641fafd423d2fdd9bd0f0",
+      "public_sha": "e4e5560603372700a7d09459df449a3639f098e74f54635de5457e2772c703b0",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/training_audit.py",
+      "raw_sha": "bb516ef16b63a74b8d57c1a12ff306281e0b6d2c8cd85a01f73e17eac7c10d2b",
+      "public_sha": "e42542f9fe5394c695a35a4d0cfa841e4d1bb9ee6eb088e4dc0329f569e8e6c8",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged-D3.json",
+      "raw_sha": "8b9c42a203eae3e77bf92697080a07dee3e28d041a07f0b1709ea21316400503",
+      "public_sha": "2941d23843898973cd47fb0fae64f90f7f9797fe4094d8a76291e48d9ad0318f",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged-v1-executed.py.txt",
+      "raw_sha": "29ed1bce6b3a9c3d9eadf4e691e6a3a8edc36fa5d9eeee51b915c36ae2309cf2",
+      "public_sha": "7909c830d4f830261b8a4c8fa100d1fa4582db4e734c9a8d8b0b31b838dc1418",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged-v1-result.json",
+      "raw_sha": "46f73e407fc1e6fec490fa27df5b89bf271e686ed46e2e3703be826cb585289c",
+      "public_sha": "06b3f50f77758ce1ab92a56769f207d20eb5b71f85ef3ff8702734fb5fdf533b",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged.json",
+      "raw_sha": "72c01e37472727bea833b3ff7416841936c56fe2d54ce316427084d348b9823e",
+      "public_sha": "5da514392f54fa54f692cc5c2d410f0b5b35f763445c4386d3cba1ee22e3aefa",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged.py",
+      "raw_sha": "433ff250398ee493ed16dea27dcf22352d06f4abd2b62630188fc802e276183e",
+      "public_sha": "0dd7592d21728709b692ef99d623f237e19139606cbf6f2ba2224088cd36de0c",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2548/unchanged_D3.py",
+      "raw_sha": "3c4e0ff40a4b7a450c89b29567e013876ef011c50961a923463edd83341e3477",
+      "public_sha": "9c41c553c80a0a6bf97d953a8d9febf7f08b317a5ccc8ed9c16019fb189e00c5",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/after_original.py",
+      "raw_sha": "37fa19947f1542caf41f86ad1e040022e63e42919724009c48c54d0dac39daef",
+      "public_sha": "2e8e5b71f57e3d24a9076c463ab77ad7a8e1a901a81b66aac4177190bf1c8307",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/evaluate.py",
+      "raw_sha": "ca427b21d5676f891062ed7387e7bc39136ac25b515699b0fee3a9eb769df0e7",
+      "public_sha": "a2aa5276f947882fbf6f729aadeb73e1528853b0fc53de9c5a116cd9c4fd571f",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/games.jsonl",
+      "raw_sha": "54d08b72f1a46ff42d7dd85aa61cdba3ae249976ab0520ef4b72aa52bf6b56ff",
+      "public_sha": "522400abb7fd044e017a4dfbdb600656ce4488275c38da8e2435ff1fb3094cef",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/plan.json",
+      "raw_sha": "f83dc1e073e69a0f034d979081d1160cb05765f4c57ceba2443ea27df90b46a0",
+      "public_sha": "58d5b1281d5a833d83e28d93c9c29adafa0c5d9f491ddd49cb7da3b51e46fc83",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/pre-fitness-binding.json",
+      "raw_sha": "b472b70bec5a962b19006d018f41804a89a48056c62c72ab52f1d89f42285ef7",
+      "public_sha": "e9a1bf0664d7463e62dbea0b1bfad02ff50be419ffff38648b708c38d477b989",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/result.json",
+      "raw_sha": "c61379e03d177642d93995197a9222f830585f424fa738c5c003d86e8ed1bc57",
+      "public_sha": "b9c8aad3ed9955af8449f2da040be52af5108ec2489465a02654c257c3d239c0",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2549/started.json",
+      "raw_sha": "6dd8b38bd42e05a9044ece3a757735bc7d75926482983d08289d4152d5a5e851",
+      "public_sha": "7c1af12ed4b603832295a2b1490730c18021155809e53a92ecbd8e75760e53b9",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2550/README.md",
+      "raw_sha": "2d05a0fcc03c41102ba9acfca31e09e50a4c35e8fc1ed97deae3e3560875973d",
+      "public_sha": "79249ac16d4c9aebbfea651d20ffc4d7fe111d41ee3e2b766686bb4ac54b0562",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2550/bundle.py",
+      "raw_sha": "562b638d1169c9a63bc73133787b998dce782098b3a5cba5cf7dcdbff6955ef2",
+      "public_sha": "f067508114aaa4132e5db0daa7dda16e5536e866dffac31012d41601f2b9040d",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2550/fresh-receipt.json",
+      "raw_sha": "86308258383f0ebf14b738fa631a126b057bb9d006ebc20490fa68970aeb73c4",
+      "public_sha": "d7e1cc3f198ec9725e02a12b08872afa8cd087c6d977a5adb8bac5eab7a5f3a3",
+      "raw_exact_in_new_archive": false,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    },
+    {
+      "path": "results/dev_aux/task2550/fresh.py",
+      "raw_sha": "415e81c21825c4e46e8e0c8f2a6b5fa25538a6d3088263a25c4b84674e8b47ed",
+      "public_sha": "a4c65290e556f2b6a9f696d02e4095d044074257f53ed895abe44b07c34bdeba",
+      "raw_exact_in_new_archive": true,
+      "late_archive_authority": false,
+      "projection": "LF/EOFonly; PythonAST/JSONsemantic equality checked whereapplicable. RawZIPsource bytepins authoritative."
+    }
+  ],
+  "scope": "DirectGittextLF/EOF projection only; JSONLrecordtokens preserved andeachrecordparsed. NoSVGprojection. Exactexecutedcaps/source/pins remainimmutableZIP. Report/replaymetadata maynotbeinsideZIP; markedperfile. Noalgorithm/rule/price/action/reward/capchanged."
+}

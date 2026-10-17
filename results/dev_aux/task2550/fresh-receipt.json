@@ -1,0 +1,36 @@
+{
+  "status": "PASS_FRESH43_AND_16_REGENERATED_AUDITS",
+  "archive": "DELTA_REPRO_20261017_93.zip",
+  "archive_sha": "6555360b81211eb3d3fb8f31793dcb0af64c3e371bedc15d3f611ea2e0c50755",
+  "payloads": 220,
+  "tests": 43,
+  "derived": {
+    "task2545/recheck.json": "PASS_INDEPENDENT_ALL_REUSED_GAME_DELTAS_GROUP_MEANS_AND_ACTUAL_ROLE_WEIGHTS",
+    "task2548/training-audit.json": "PASS_TYPED_HISTORY_EPISODE_TD_AND_MEAN_BOUND_AWARE_TREESTRAP",
+    "task2548/training-audit-first-rule.json": "PASS_TYPED_HISTORY_EPISODE_TD_AND_MEAN_BOUND_AWARE_TREESTRAP",
+    "task2548/evaluation-audit.json": "PASS_FULL_RECORDS_ACTUAL_OUTCOMES_PAIRED_TD_VS_MEAN_TREESTRAP",
+    "task2548/evaluation-D3-audit.json": "PASS_FULL_RECORDS_ACTUAL_OUTCOMES_PAIRED_TD_VS_MEAN_TREESTRAP_D3",
+    "task2548/diagnostics.json": "ALL_RAW_ARMS_AND_PAID_COSTS_RETAINED",
+    "task2548/roots.json": "PASS_ALL_NEW_PRNG_ROOTS_FULL_HISTORY",
+    "task2548/roots-D3.json": "PASS_ALL_NEW_PRNG_ROOTS_FULL_HISTORY",
+    "task2548/information.json": "RECORDED_INFORMATION_AND_LOSS",
+    "task2548/search-verification.json": "COMPLETE",
+    "task2548/search-verification-first-rule.json": "COMPLETE",
+    "task2548/spans.json": "EXACT_FEATURE_SPANS_NOT_USEFULNESS_PROOF",
+    "task2548/orders.json": "ALL_INIT_EXACT_ORDER_AGREEMENT_DESCRIPTIVE",
+    "task2548/loss-verification.json": "PASS_ACTUAL_COMPLETE_QUERY_FIXED_BOUND_MEAN_LOSS_DERIVATIVES",
+    "task2548/unchanged.json": "NOT_AVAILABLE_NO_UNCHANGED_MODELS",
+    "task2548/unchanged-D3.json": "NOT_AVAILABLE_NO_UNCHANGED_MODELS"
+  },
+  "unavailable_controls": [
+    "task2548/unchanged.json",
+    "task2548/unchanged-D3.json"
+  ],
+  "legal_logical_plies": 237987,
+  "fresh_unpruned_nodes": 12697,
+  "fresh_unpruned_full_nodes": 10403,
+  "fresh_unpruned_first_rule_nodes": 2294,
+  "executed_wrapper_sha": "415e81c21825c4e46e8e0c8f2a6b5fa25538a6d3088263a25c4b84674e8b47ed",
+  "seconds": 214.12604249996366,
+  "scope": "ActualnewignoredUUID/exactextraction/hashverified/Python-S/emptyPYTHONPATH/importsourceasserted. ALL16sealedoutputsparkedBEFOREeachregeneration; compareexactsemanticresults exceptaudittime. Actualown+PRIMARYstops boundexplicitROOT, nofakeflagtrees. Logicalplycountincludesfirst-ruleAGAIN/fulloriginalTRAIN+twoactualEVALpanels, notuniquestates/allCorecalls. Rolefixedtrajectoryrecheck is not all92historicalrulehistoryrerun. No newtraining/fitness/allpriorconsumers/externalrulesengine. Naturalnegativecontrols with zeroeligibleunchangedmodels return NOT_AVAILABLE, not a realizedcontrolPASS. Existingchess/pytest dependenciesonly."
+}

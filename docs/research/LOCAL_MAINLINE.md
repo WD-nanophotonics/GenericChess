@@ -1,3 +1,28 @@
+# DEV_AUX93 — current work closed; future heartbeat PAUSED by user
+
+User requested pausing future inspection and finishing the current batch safely.
+Official dev-aux heartbeat PAUSED; no next experiment or automatic resume.
+Own sidemission/PUBLIC only; PRIMARY read-only. Science OPEN.
+Original93 session bd9f1bc1-02fe-4a95-9759-0141fb3dd34b start12:57:33UTC unchanged.
+All32 TRAIN arms complete6.4M nodes/7372games/7196term176UNKNOWN.
+D2all1536slots/1463term73UNKNOWN: both continuous learners improve initialization
+on finite pooled panels; direct TreeStrap-TD unresolved and adverse subgroups retained.
+D3original1200s cap CLOSED654/768,648term6UNKNOWN114missing; deeper robustness unresolved.
+No cap extension, rescheduling, missing-as-draw, new role features or model selection.
+All8rule/method groups lack unanimous full6channelorder across4initials.
+Exact38th archive sealed; fresh43tests+16 regenerated audits match, two natural
+unchanged controls NOT_AVAILABLE.237987 logical replays/12697 unprunednodes.
+No new TRAIN/fitness in reproduction; all producers and consumer closed.
+Dot advice adopted for existing-data role diagnosis:79 adverse/319 both-positive
+cells; local fixed-target fit only, not WDL gradient or causal role diagnosis.
+PRIMARY0ca earlier89 execution is owner-reported, not independent93 execution.
+No93reading/execution confirmation from Dot/PRIMARY. Fixed revision delivered separately.
+Full evidence: results/dev_aux/SEGMENT_20261017_93.md; official closure/delivery
+receipts recorded after actual completion. No PRIMARY/Core/default/UI changes.
+Any future work below is historical or contingent on explicit user resume.
+
+## Previous closed92 — historical source/results
+
 # DEV_AUX92 — closed81.393minutes/safe_checkpoint; scienceOPEN/PUBLIC
 
 Direct USER TD/search-bootstrap priority. Own sidemission/PUBLIC; PRIMARYreadonly,

@@ -1,0 +1,72 @@
+{
+  "session_id": "bd9f1bc1-02fe-4a95-9759-0141fb3dd34b",
+  "registered_at": "2026-10-17T12:59:58.770217+00:00",
+  "generator_seeds": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "arms_order": [
+    [
+      "TD",
+      31415
+    ],
+    [
+      "TreeStrap",
+      8173
+    ],
+    [
+      "TD",
+      1977
+    ],
+    [
+      "TD",
+      8173
+    ],
+    [
+      "TreeStrap",
+      1977
+    ],
+    [
+      "TreeStrap",
+      31415
+    ],
+    [
+      "TreeStrap",
+      27182
+    ],
+    [
+      "TD",
+      27182
+    ]
+  ],
+  "nodes_per_arm": 200000,
+  "cap_seconds": 3600,
+  "max_games": 4096,
+  "prefix_plies": 4,
+  "H": 128,
+  "depth": 2,
+  "nodes_per_query": 4096,
+  "seconds_per_query": 2.0,
+  "eta": 0.05,
+  "lam": 0.95,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "training_family_offset": 221000,
+  "ordering_seed_offset": 932546000,
+  "scope": "Operational fully paid equal-node Free6 comparison, not pure signal-count ablation/historical TreeStrap replication. TD candidate-clock episode-frozen eta.05 lambda.95; TreeStrap candidate-only mean one-sided tanh-loss updates after each completed query, all interior nonterminal D>0 nodes including bounds; weights frozen per query. Both same signed6channels/scale10/plainfullwidthD2. Fixed uniform foe; ALL baseline/foe/failed nodes paid; no exposed DEV selection/rolefeatures/prover/humanfit. Incomplete root query admits NO partial samples. Game terminal only actual rule; U not draw.",
+  "forecast": "one logical study about75-100min including engineering/6.4MTRAIN~35min/1536EVAL~10min/audits/repro/delivery, expected<120minutes; serial sole producer, no cap extension. Not split to evade assessment."
+}

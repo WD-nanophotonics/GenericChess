@@ -1,0 +1,56 @@
+{
+  "status": "PASS_TYPED_HISTORY_EPISODE_TD_AND_MEAN_BOUND_AWARE_TREESTRAP",
+  "prefix_rule": 271001,
+  "arms": 8,
+  "counts": {
+    "prefix_plies": 9244,
+    "training_plies": 33280,
+    "games": 2317,
+    "actual_terminal": 2269,
+    "unknown": 48,
+    "queries": 33288,
+    "observed": 16736,
+    "query_updates": 8039,
+    "nodes": 1600000,
+    "black_candidate_white_foe_finisher": 159,
+    "failed_queries": 8,
+    "failed_query_nodes": 333,
+    "full_limit_failed_queries": 0,
+    "update_records": 2317
+  },
+  "by_method": {
+    "TD": {
+      "queries": 16930,
+      "candidate_queries": 8514,
+      "foe_queries": 8416,
+      "samples": 8491,
+      "loss_sum": 346.25832054481765,
+      "nodes": 800000,
+      "games": 1283,
+      "query_updates": 0,
+      "actual_terminal": 1260,
+      "unknown": 23
+    },
+    "TreeStrap": {
+      "samples_exact": 26392,
+      "inactive_exact": 6845,
+      "samples": 100225,
+      "active": 67823,
+      "loss_sum": 3422.1736189101266,
+      "queries": 16358,
+      "candidate_queries": 8224,
+      "foe_queries": 8134,
+      "samples_upper": 44681,
+      "inactive_upper": 16927,
+      "nodes": 800000,
+      "games": 1034,
+      "query_updates": 8039,
+      "actual_terminal": 1009,
+      "unknown": 25,
+      "samples_lower": 29152,
+      "inactive_lower": 8630
+    }
+  },
+  "seconds": 28.811642800050322,
+  "scope": "Every paid candidate/foe/failed search, independent signedwhite feature-gradient math and reverseTD/one-sidedloss reconstruction; full typed legal replay and final public Session equality. Does not rerun every search. Bound correctness independently sampled by separate unpruned D2 audit; noexternalrulesengine."
+}
