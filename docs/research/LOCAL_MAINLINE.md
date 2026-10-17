@@ -1,9 +1,10 @@
-# DEV_AUX92 — actual TD/paid-WDL comparison; scienceOPEN/deliverypending
+# DEV_AUX92 — closed81.393minutes/safe_checkpoint; scienceOPEN/PUBLIC
 
 Direct USER TD/search-bootstrap priority. Own sidemission/PUBLIC; PRIMARYreadonly,
 noAgents/Goals/Core/default/UI/Nativeactivation. Session92original11:27:52UTC
-clockactive; ALL originalTRAIN/EVAL/probes/adaptivefollowup andoriginalaudits CLOSED.
-Only reproduction/review/delivery andnext executablememo remain beforeofficialfinish.
+clockENDED; ALL originalTRAIN/EVAL/probes/adaptivefollowup andoriginalaudits CLOSED.
+Reproduction/review/source delivery finished. Only bounded ending metadata/versioning
+remains after official finish; NO scientific query/training/audit.
 
 SAME6free/plainD2/fixeduniformTRAINfoe/all4exposedrules4initials/200kALLpaidnodes:
 32arms6.4M2051.774s,7218games7046actualterm172U/113660queries. TD3.2M/2490updates,
@@ -27,23 +28,26 @@ and5terminal; no filtering. Allnegativecellskept. SeparateAFTERoriginalfitnessre
 andfullstratificationtiming honest, no capreset/refit. D3TRAINcost4queriesCOMPLETE793nodes
 .274s, feasibilityONLY/notdeeperpricegain. Originalrawmodels unchanged throughout.
 
-NEXT MAIN: diagnose sharedwhitecriticacrosscandidate-role/fixednu contexts, not more
-prover/TC/API. FreshDotrequest GC-SLACK-20261017-212734-fc0e8a4a root1792240080.003109
-sent/bound; INLINE92mathONLY/sourceunpublishedatquestion/no readingexecutionclaim.
-ConsiderNEWpaired-role episodes atIDENTICALtheta andfreshTRAINroots tocomparevalidTD
-deltas/conflict, no deployment; signflipbothgradient/targetcancels/notafix. Dotadvisory,
-notapproval; ifsilentcontinueboundeddiagnostic. BackupGenericTreeStrapone-sided6free
-transfer feasibility orregisteredD3actualWDLdeployment; no oldfitness/humanfit/bestseed.
+NEXT MAIN: FIRST inspect existing frozen-theta WDL role-paired TRAIN records
+for reusable candidate TD observations; only if inadequate preregister a new
+bounded paired-role pilot. Dot1792240315 advice was evaluated before finish:
+compare d0.d/d1.d, norms, variation, zero vectors and UNKNOWN under actual role
+weights. These are local frozen-lambda-target diagnostics, NOT actual WDL
+gradients or proof of a critic-context cause. Candidate observations have
+learner role=current actor; do not invent contradictory targets at the same full
+state. No new diagnostic executed this segment. See ADVISOR_LATE_20261017_92.json.
+Backup: Generic TreeStrap one-sided Free6 transfer feasibility or registered
+D3 TRAIN cost before a larger actual-WDL panel; no old fitness/human-price fitting.
 
 38relatedcontrolsPASS/8figuresvisuallychecked. Exact37th4ac27199/205payloads
 ACTUALfresh38+11PASS258981logicalplies192.917s; prior36hashesUNCHANGED. Prearchive
 PNGcompressed-bytefalsepositive/v1preserved; actualmetadata+CRC/visualcheckv2PASS,
-no image/datachange. Ownreview/fullremotePublicdelivery stillrequireactualreceipts. Original-rootdiagnosticv1Pythonimportfailureandv2repair/sourcekept;
+no image/datachange. Source3792d830 fullremote/PUBLIC39 exact files and ZIP verified; final closing
+metadata delivery still requires its own remote receipt. Original-rootdiagnosticv1Pythonimportfailureandv2repair/sourcekept;
 pre-executionPowerShellquotingfix hadno dataeffect. OwnheartbeatONLYstaledirection
 updatedofficially/readbackverified, SAME90min/thread/status/otherfields; no PRIMARYedit.
 PRIMARY0ca reportpreviouslyREADhere, its89replication/Nativechecks OWNERREPORTED,
-not92execution/adoption. Recovery/traincheckpoint no newpeerupdates; new92question
-reading/executionunconfirmed. Complete engineering/audit/token costs exceed nodecounts.
+not92execution/adoption. Recovery/traincheckpoint no newpeerupdates; Dot reply was paper+inline only; source92 reading/execution remains unconfirmed. Complete engineering/audit/token costs exceed nodecounts.
 
 ## Previous closed91 — historical evidence, not current execution
 
@@ -880,3 +884,7 @@ OUTSIDEimmutable35thZIP, notafterfinishresearch. OfficialEND/DELIVERY bindeviden
 91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.
 
 91officialEND 2026-10-17T10:58:37.177930+00:00/61.598min/safe_checkpoint. S03d4a8635bef8d0e203de81eb6335521ba366e36 fullremote/PUBLIC23filesverified/clean, fixedSlacksent1792234599/readback; partner91readingexecutionUNCONFIRMED. Closingonlyendmetadata/Git/remotechecks, notnewresearch. SeeDELIVERY_20261017_91.json.
+
+92lateadvice1792240315adoptedFUTUREONLY: candidate-onlyrole=currentactor, so nosamefullstateopposite-rolelabelclaim. Frozenactualroleweightedmixd: testd0.d/d1.d/norms/variance/zeros/U, notnegativecosinealone ortrueWDLgradient. Bothpositiveweakensdirectcancellationatthatpoint; no rolefeature/selfplay/provermandate. PrimaryTDLeafsection5externalopponentsverified, notourprotocolreplication. Source3792d83068d5d0e61a0a33ebbf6850b414202c6f fullremote/PUBLIC39exactfiles+ZIP/cleanverified; evidence1792241036.833709exactreadback. DotINLINE/paperONLY/no92sourceexecution; PRIMARY92executionunconfirmed. Allproducers/freshclosed, officialfinish/closingmetadata next.
+
+92officialEND 2026-10-17T12:49:16.118920+00:00/81.393min/safe_checkpoint/6stages; source3792d83068d5d0e61a0a33ebbf6850b414202c6f/PUBLIC39verified/Slacksentexact. Onlyclosingmetadata/precompletedlateadviceversioning afterfinish. NextFIRSTcheckexistingexactthetaWDLrole-pairedTRAINrecords beforeanynewpilot perreceivedDotadvice; no currentdiagnosticrun oravailabilityclaim.
