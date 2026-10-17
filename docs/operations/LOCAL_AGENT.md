@@ -214,3 +214,5 @@ automation, external service, ownership framework or scheduler is needed here.
 Recovery evidence remains REBUILD_20261003.md; do not import old App databases,
 credentials, Goals or retired queues. Current hardware load is normal concurrency,
 not permission to alter other projects or demand exclusive timing windows.
+
+For archived source inspect hard-coded personal directory literals as well as generated JSON/logs, including doubled Windows backslashes. A passed narrow filename exclusion does not establish all-member privacy. Preserve originals privately and qualify sanitized source copies separately; never claim old Git history was purged by a normal deletion commit.

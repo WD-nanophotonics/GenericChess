@@ -4082,3 +4082,19 @@ history still contains the paths; no force/history rewrite is authorized.
 PRIMARY promptly told the user and repairs checked sequential publication and
 exact archive-member selection, not a new approval framework. Current/public
 V2verification is distinct from historical removal and no false purge is claimed.
+
+
+### Current TD declaration leaf boundary, after portability
+
+PRIMARY actually reproduces owner1WINdeclaration in fullNative decision_line,
+whileoldcollector physicalPVstores+.099667/nomarker instead. NO_CONTEST/RESTART
+floors omitclaimtoken, so score0 is not a WDLdraw. Threegenuine redcases and real
+rootWINcontrol separate product and initialmissingimportharness errors. Minimal
+currentcollector repair REFUSES these unsupportedcounterfactualtargets, no new
+schema/API orclaim of full-declarationtraining. Rootactualclaims/ordinaryterminal
+constants and completed4rulecandidate studies remain.76affected/3274fullPASS;
+exact153member source17pass14NativeSkip/31actualNativepass. NoNativebinary/AUX/
+model/default/search changes, no routineWDL/proofgate. Futurefullmetadata requires
+an actually replayable claimed-leaf contract, not episodeoutcome or numeric0.
+
+Publication scope correction: three replacement copies exclude a legacy module with personal directory; fresh retained-source leaf checks27/27/31 pass. Eight older archive groups and Git history remain unresolved. Earlier global-clean implications are withdrawn; no forced rewrite or AUX writes.

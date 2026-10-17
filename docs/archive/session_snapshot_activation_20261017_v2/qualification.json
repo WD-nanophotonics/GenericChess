@@ -1,0 +1,46 @@
+{
+  "status": "SEALED_HASH_CRC_VERIFIED",
+  "payloads": 211,
+  "members": 212,
+  "zip_bytes": 1169455,
+  "zip_sha256": "c7e898f14ddcd625371ae5f01ab7c1df5956843ff04e85816978e74fb4f8f734",
+  "source_qualification": "PASS",
+  "native_binary_included": false,
+  "tiers": [
+    {
+      "tier": "pure-source",
+      "tests": "27",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "10",
+      "time": "0.499",
+      "source_import_assertion": true,
+      "native": false
+    },
+    {
+      "tier": "explicit-existing-native",
+      "tests": "27",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.484",
+      "source_import_assertion": true,
+      "native": true
+    }
+  ],
+  "scientific_scripts_reexecuted": 6,
+  "exact_arithmetic_state_record_choices_equal": true,
+  "walltime_equality_not_required": true,
+  "scope": "Exact capsule source/noeditablehook; explicit existing sameversionNative is an external dependency, not suppliedbinary. All imported generic Python paths checked for tests. No retraining/AUXwrites.",
+  "publication_copy_correction": "Excluded an unrelated legacy compatibility module containing a personal absolute directory; retained payload bytes are unchanged. Earlier qualification describes retained consumer code, not the excluded legacy tool.",
+  "previous_zip_sha256": "db8489ce0e70c53d9c316d6f7a6b55ac75f9730c4b9cbdff20a660c1b02c5b5b",
+  "retained_payload_hashes_unchanged": true,
+  "new_copy_tests": {
+    "tests": "27",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "0.892",
+    "tier": "Restored Python source with explicit existing Native only; paths asserted"
+  }
+}

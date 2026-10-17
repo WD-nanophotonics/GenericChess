@@ -1,3 +1,15 @@
+## 2026-10-17 TD declaration-PV target refusal
+
+Python-only collector correctness: declaration-ended PVs and nonterminal semantic
+PVleaves with available non-scoring claims now explicitly raise unsupported.
+Native winningclaim lines can extend beyond physicalPV; neutral floors can omit
+the claimtoken. The previous collector silently recorded ordinary material.
+No full declaration-leaf training or schema/API/Native rebuild is supplied.
+Actual scoring ROOTclaims and ordinary GameState terminals remain supported;
+no-declaration candidate packet is unchanged. Final3274full/76affectedpass,
+31explicitNative/17source+14skip tiers are distinct. Purpose report:
+../research/FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md.
+
 ## 2026-10-17 optional collector snapshot and fractional-price activation
 
 Python-only learning/selfplay change: actual v3control snapshots extend a private

@@ -117,7 +117,7 @@ report. It contains source before/after, exact technical inputs and scripts;
 AUX's full owner reproduction source remains its fixed public archive dependency.
 Raw Slack/account output, OS-path logs, credentials and personal data stay private.
 Exact capsule has213members/212payloads,1172274bytes, SHA256
-db8489ce0e70c53d9c316d6f7a6b55ac75f9730c4b9cbdff20a660c1b02c5b5b.
+c7e898f14ddcd625371ae5f01ab7c1df5956843ff04e85816978e74fb4f8f734.
 Restored Python-S/noeditablehook source has17PASS/10NativeSKIP; the separately
 explicit existing same-version Native tier has27PASS/0SKIP, and every imported
 GenericChess Python module is asserted under restored source. All six scientific
@@ -206,7 +206,7 @@ run, claim identical future updates/games, or insist on a larger proof gate befo
 use. The portable packet already runs an actual small Generic AI through the
 existing backend; the scientific full-domain/strength/stable-ratio goals remain
 OPEN. The code and all raw technical receipts are in a separate immutable
-native_td_candidate_packet_20261017_v2 capsule; the preceding213member capsule stays
+native_td_candidate_packet_20261017_v3 capsule; the preceding213member capsule stays
 unchanged. No Native binary or private Slack/account output is published.
 
 ### Original-method reading and project consequence
@@ -260,7 +260,7 @@ path files; every retained source/input/result hash matches the actually execute
 V1source. Its direct executable checks and hash qualification are recorded below.
 
 Current V2: 302members/301payloads, 1581801bytes,
-SHA256c4ded657b84f1ad236981dbce0a18c8f449a480fa2b58fe90f98d3c54c19e773.
+SHA256b785a3369bb0974d7fae20dbcf9239170d02f3c2a0f99a550a4a30160dea4b3c.
 
 V2was then actually extracted separately:32checkpoint calls and16games/468queries
 pass again with identical full game records, no AUX import and allGenericPython
@@ -268,3 +268,73 @@ from that restored source. The earlier657pair execution remains justified only
 through unchanged source/input hashes; it is not falsely called a new V2full-run.
 All retained V2members pass actual privacy/content scan. OldGit5686history has
 NOT been purged; currenttree cleanup is the maximum performed under no-force.
+
+
+## Later actual declaration-PV consumer defect - corrected refusal boundary
+
+A new actual mechanism check after candidate delivery found a CURRENT collector
+mismatch. D1Native decision_line=(physicalmove,leaf_claim) really ends in owner1
+WIN, with score-99999999, while oldcollection replayed physicalPVonly and stored
++.0996679946, leaf_terminal_z=None and the same false ordinary bootstrap. Actual
+GameSession replay+declare confirms winner1; this is a concrete scoring endpoint,
+not a numeric-root-score inference. NO_CONTEST/RESTART neutral floors in the
+same rule return0 but OMIT the claim from decision_line; their nominal physical
+leaf remains ongoing and has an available non-scoring declaration. Thus it would
+also be wrong to infer a real draw or complete claimed leaf from that score.
+
+Current minimal repair explicitly refuses declaration-ended PV targets and
+nonterminal semanticPVleaves with available non-scoring declarations. There is
+no complete counterfactual declaration leaf metadata in this trajectory schema;
+the repair DOES NOT pretend to implement it, discard declarations from the final
+generic domain, or silently filter generated rules. This is an honest unsupported
+prototype boundary, not a new user approval/WDL gate. Ordinary actual terminal
+GameState constants, no-declaration collectors, existing8candidates and actual
+ROOT declarations remain supported. Real rootWIN control passes with terminal1.
+No schema/API/evaluator/search/default/Nativebinary/AUX change is introduced.
+
+Three genuine pre-fix regressions fail because no error was raised; actual root
+WIN control passes. An initial test-harness missingimport is separately preserved,
+not counted as product evidence. After repair76affected checks and final3274full
+checks pass. A new153member exactsource capsule has17purePASS/14NativeSKIP and
+31explicit-existing-Native PASS with restoredPythonpath assertions. Nativebinary
+remains external; full suite is separately executed, not inferred from skips.
+The capsule uses an exact technical file list with no raw paths/Slack/XMLhostnames.
+
+Next full declaration-TD support would need a real replayable claimed-leaf
+identity/outcome contract, particularly for neutral floors that currently omit
+the claim token. Do not fake this by copying the actual episodewinner into a
+counterfactual point or interpreting0asdraw. Until that concrete contract exists,
+explicit refusal is preferable to a quietly wrong target. The completed4rule
+models/query/compatibility studies contain no declarations and retain their
+original findings; they are not retrospectively expanded into whole-domain claims.
+
+Declaration capsule SHA256789ce0e2da9b0a49bc3b8f779017f902e671e957896f56b96cb32af64231ae32, 493058bytes;
+full suite296.439seconds.
+
+
+## Further publication review correction
+
+The initial V2 review was incomplete: an unused legacy compatibility source
+module also contained a hard-coded personal directory. A broad member-level
+Windows-path scan stopped the next commit. The three capsules delivered in this
+segment now use new publication-copy versions excluding that unrelated module;
+all retained source/input/result payload bytes are unchanged. Fresh extracted
+source leaf checks run with explicitly existing Native pass27/27/31 respectively.
+Previous member counts and claims about V2 privacy are superseded by this section.
+No personal path or credential pattern is present in the three replacement ZIPs
+under the recorded scan; this is scoped inspection, not a proof that all Git
+history or every prior project archive is free of personal data.
+
+The expanded scan also found legacy personal paths in eight older current-tree
+archive groups. Those older groups and old Git commits remain unresolved. No
+history rewrite/force push has been performed. Next operational work must
+inspect actual affected payloads, preserve private originals, publish technical
+copies and clearly retain historical-evidence qualifications. Ordinary project
+publication remains authorized; complete removal from existing Git history needs
+explicit history-rewrite authority because current policy forbids force push.
+
+Current copy `session_snapshot_activation_20261017_v2`: 212members, 1169455bytes, SHA256`c7e898f14ddcd625371ae5f01ab7c1df5956843ff04e85816978e74fb4f8f734`.
+
+Current copy `native_td_candidate_packet_20261017_v3`: 301members, 1578960bytes, SHA256`b785a3369bb0974d7fae20dbcf9239170d02f3c2a0f99a550a4a30160dea4b3c`.
+
+Current copy `tdleaf_declaration_boundary_20261017_v2`: 152members, 490243bytes, SHA256`789ce0e2da9b0a49bc3b8f779017f902e671e957896f56b96cb32af64231ae32`.

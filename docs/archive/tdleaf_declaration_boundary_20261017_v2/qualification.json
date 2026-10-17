@@ -1,0 +1,46 @@
+{
+  "status": "PASS_EXACT_SOURCE_CAPSULE",
+  "members": 152,
+  "payloads": 151,
+  "zip_bytes": 490243,
+  "zip_sha256": "789ce0e2da9b0a49bc3b8f779017f902e671e957896f56b96cb32af64231ae32",
+  "tiers": [
+    {
+      "tier": "source-only",
+      "tests": "31",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "14",
+      "time": "0.733"
+    },
+    {
+      "tier": "explicit-native",
+      "tests": "31",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.471"
+    }
+  ],
+  "external_native_only": true,
+  "all_generic_python_paths_asserted": true,
+  "full_regression": {
+    "tests": "3274",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "296.439"
+  },
+  "no_personal_paths_raw_slack_binary": true,
+  "publication_copy_correction": "Excluded an unrelated legacy compatibility module containing a personal absolute directory; retained payload bytes are unchanged. Earlier qualification describes retained consumer code, not the excluded legacy tool.",
+  "previous_zip_sha256": "b25a0c7c22d6084be98013a14a0619d4f5551dfba84682dad470256513d8be3e",
+  "retained_payload_hashes_unchanged": true,
+  "new_copy_tests": {
+    "tests": "31",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "0.851",
+    "tier": "Restored Python source with explicit existing Native only; paths asserted"
+  }
+}

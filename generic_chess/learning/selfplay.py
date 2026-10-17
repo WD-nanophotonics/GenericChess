@@ -93,9 +93,25 @@ def collect_self_play(
             )
             pv = result.principal_variation
             if result.completed_depth >= 1 and pv:
+                if semantic_path and any(isinstance(step, str) for step in
+                                         getattr(result, "decision_line", ())):
+                    raise NotImplementedError(
+                        "TDLeaf declaration-ended PV requires a complete declaration leaf record"
+                    )
                 leaf_state = session.state
                 for action in pv:
                     leaf_state = apply_action(leaf_state, action, compiled)
+                if (semantic_path and compiled.ir.declarations
+                        and not leaf_state.terminal_status.is_terminal):
+                    from ..core.declarations import available_declarations
+                    if any(claim.outcome in ("RESTART", "NO_CONTEST") for claim in
+                           available_declarations(leaf_state, compiled)):
+                        # Native neutral floors can omit the claim from the line.
+                        # Refuse this unsupported target rather than fabricate W/L/D
+                        # or train on a physical leaf that omits the declaration.
+                        raise NotImplementedError(
+                            "TDLeaf PV leaf with a non-scoring declaration is unsupported"
+                        )
                 leaf_key = position_identity_key(leaf_state.position, compiled)
                 features = material_features(
                     leaf_state.position, type_ids, perspective=0

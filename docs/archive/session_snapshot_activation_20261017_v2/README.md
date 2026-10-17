@@ -36,3 +36,6 @@ AUX89 ZIP at fixed63b4ce1d8f0e94755bf2102dfbd4f524a91c0264, SHA256
 2fa240c52fbfd1cd989c66110b74701dcd11412bcbad204ae003d348492cbf29,
 results/dev_aux/DELTA_REPRO_20261017_89.zip and task2524/fresh.py. PRIMARY actually
 ran it privately; no new training/game or AUX checkout edits were needed.
+
+
+Publication correction: unused legacy compatibility module removed from this copy because it contained a personal directory. All retained payload bytes are unchanged. Old public Git history is NOT purged. Qualification tiers remain explicit.

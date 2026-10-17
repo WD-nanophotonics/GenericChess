@@ -1,9 +1,9 @@
 {
   "status": "PASS_V2_SOURCE_AND_CONTENT",
-  "members": 302,
-  "payloads": 301,
-  "zip_bytes": 1581801,
-  "zip_sha256": "c4ded657b84f1ad236981dbce0a18c8f449a480fa2b58fe90f98d3c54c19e773",
+  "members": 301,
+  "payloads": 300,
+  "zip_bytes": 1578960,
+  "zip_sha256": "b785a3369bb0974d7fae20dbcf9239170d02f3c2a0f99a550a4a30160dea4b3c",
   "source_qualification": "V2_DIRECT_CONSUMER32_SMOKE16; FULL657_SOURCE_INPUT_PAYLOADS_IDENTICAL_TO_EXECUTED_V1",
   "binary_included": false,
   "all_generic_python_paths_under_restored_source": true,
@@ -26,5 +26,16 @@
   "v2_direct_smoke_queries": 468,
   "v2_full_records_equal": true,
   "privacy_member_scan": "PASS_ALL_RETAINED_MEMBERS",
-  "old_history_not_purged": true
+  "old_history_not_purged": true,
+  "publication_copy_correction": "Excluded an unrelated legacy compatibility module containing a personal absolute directory; retained payload bytes are unchanged. Earlier qualification describes retained consumer code, not the excluded legacy tool.",
+  "previous_zip_sha256": "c4ded657b84f1ad236981dbce0a18c8f449a480fa2b58fe90f98d3c54c19e773",
+  "retained_payload_hashes_unchanged": true,
+  "new_copy_tests": {
+    "tests": "27",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "0.843",
+    "tier": "Restored Python source with explicit existing Native only; paths asserted"
+  }
 }

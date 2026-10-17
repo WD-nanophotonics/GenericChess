@@ -41,3 +41,6 @@ still retains it because force/history rewriting is not authorized. No credentia
 or raw Slack/account export was found. V2 drops ONLY those two files; every retained
 source/input/result hash is identical, and all members were rechecked. Privacy
 review and mutations now execute as separate sequential checked operations.
+
+
+Publication correction: unused legacy compatibility module removed from this copy because it contained a personal directory. All retained payload bytes are unchanged. Old public Git history is NOT purged. Qualification tiers remain explicit.

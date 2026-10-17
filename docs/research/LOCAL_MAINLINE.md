@@ -30,9 +30,23 @@ no default/converter API or deployed strength claim follows. Immediate next:
 inspect useful newlypublished AUX curve then test one concrete deployment need;
 keep whole-domain target, terminal/UNKNOWN and per-rule channel distinctions.
 
+Latest realmechanism follow-on found declarationPVtarget omission: NativeWIN
+line endsactualclaim/winner1 butcollectorlogged+.099667ordinaryvalue. Neutral
+floors mayomitclaimtoken. Currentcollector explicitlyrefuses declaration-endedPVs
+andnonterminalPVleaveswithavailableNO_CONTEST/RESTART ratherthanfakeWDL. Root
+actualclaims/ordinaryterminalconstants/no-declaration8models preserved.76affected/
+3274fullPASS;153membersource17pass14NativeSkip/31explicitNativepass. This is not
+complete declaration-TDsupport; fullgenerateddomain target stays. Next realneed:
+replayablecounterfactualclaimidentity/outcome, especiallyneutralfloor; no newfield
+orallWDLgate without actualcontract. Nativeaccelerationremains optionalforAUX's
+future registeredcurve, neverchangeitscurrentrun or duplicatelearner.
+
 Operational correction: firstNativepacket5686c1cb included two incidental local
 pathJSONs after a failed Pythonreview did notstop PowerShell. Usernotified;
-currentV2retractsV1/dropsONLYthosefiles, retainedsource/resultsunchanged. OldGit
+Laterreviewalsofoundpersonalpathinunusedlegacycompatibilitysource; threecurrent
+segmentcopiesnowexcludeitwith27/27/31actualextractedsourcechecks. Eightolder
+archivegroupsalsohavepersonalpaths; inspectandcorrecttechnicalpublicationcopies
+NEXTbeforefurthermainline, withoutnewconsentqueue. Retainedpayloadsunchanged. OldGit
 history persists; noforce/historyrewrite withoutnewuserauthority. Review/mutation
 are now separatecheckedcalls andarchivepayloadswhitelisted. Thisdoesnot revoke
 projectpublicationgrant orreplace scientific mainline withanapprovalqueue.

@@ -148,3 +148,60 @@ def test_diagnostics_reject_empty_non_scoring_episode(terminal):
     t = replace(trajectory([], None), terminal=terminal)
     with pytest.raises(ValueError, match="non-scoring"):
         td_signal_diagnostics([t], checkpoint(), TDLeafConfig(alpha=.1))
+
+
+@requires_native
+@pytest.mark.parametrize("outcome", ["WIN", "NO_CONTEST", "RESTART"])
+def test_declaration_pv_is_not_silently_collected_as_ordinary_material(outcome):
+    from generic_chess.session.session import GameSession
+    from generic_chess.rules.schema import (RuleDeclaration, RuleWeightedMaterialMetric,
+                                           RuleDeclarationOutcomeBand)
+    from generic_chess.native.semantic_engine import SemanticSearchEngine
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.declarations import available_declarations
+    rule = make_ruleset(4, [king_type(), T("R", RayAtom((0,1)), RayAtom((0,-1)),
+        RayAtom((1,0)), RayAtom((-1,0)))], lines=["k...", "....", "....", "..RK"])
+    claim = RuleDeclaration("leaf_claim", 1, require_not_in_check=False,
+        weighted_metric=RuleWeightedMaterialMetric(weights={"K":1}),
+        outcome_bands=(RuleDeclarationOutcomeBand(1, outcome),))
+    compiled = compile_legacy_ruleset_for_semantic_execution(replace(rule, declarations=(claim,)))
+    native = compile_native_semantic_rules(compiled)
+    checkpoint = LearnableMaterialCheckpoint(ruleset_fingerprint=compiled.ruleset_fingerprint,
+        board_weights={"R":1.}, hand_weights={"R":1.}, value_scale=10., reference_median=1.)
+    session = GameSession(compiled)
+    result = SemanticSearchEngine(compiled, native, checkpoint=checkpoint, tt_megabytes=0).search(
+        session, SearchLimits(max_depth=1, max_nodes=1000, quiescence_max_depth=0))
+    assert result.completed_depth == 1 and result.principal_variation
+    leaf = GameSession(compiled)
+    for action in result.principal_variation:
+        leaf.submit(action)
+    if outcome == "WIN":
+        assert result.decision_line[-1] == "leaf_claim"
+        leaf.declare("leaf_claim")
+        assert leaf.result.winner == 1
+    else:
+        # Native neutral floors may not carry the declaration in decision_line.
+        # Available non-scoring claims are therefore an explicit unsupported
+        # TD boundary, never inferred to be a real draw from a numeric score.
+        assert any(x.outcome == outcome for x in available_declarations(leaf.state, compiled))
+    with pytest.raises(NotImplementedError, match="declaration"):
+        collect_self_play(compiled, native, checkpoint, SelfPlayConfig(games=1,
+            max_depth=1, nodes_per_move=1000, max_plies=1, epsilon=0., tt_megabytes=0))
+
+
+@requires_native
+def test_actual_scoring_root_declaration_remains_collectible():
+    from generic_chess.rules.schema import (RuleDeclaration, RuleWeightedMaterialMetric,
+                                           RuleDeclarationOutcomeBand)
+    rule = make_ruleset(4, [king_type()], lines=["...k", "....", "....", "K..."])
+    claim = RuleDeclaration("root_win", 0, require_not_in_check=False,
+        weighted_metric=RuleWeightedMaterialMetric(weights={"K":1}),
+        outcome_bands=(RuleDeclarationOutcomeBand(1,"WIN"),))
+    compiled = compile_legacy_ruleset_for_semantic_execution(replace(rule, declarations=(claim,)))
+    native = compile_native_semantic_rules(compiled)
+    checkpoint = LearnableMaterialCheckpoint(ruleset_fingerprint=compiled.ruleset_fingerprint,
+        value_scale=10., reference_median=1.)
+    trajectory, = collect_self_play(compiled, native, checkpoint,
+        SelfPlayConfig(games=1, max_depth=1, nodes_per_move=1000, max_plies=1))
+    assert trajectory.terminal_z == 1. and trajectory.winner == 0
+    assert not trajectory.points and not trajectory.truncated
