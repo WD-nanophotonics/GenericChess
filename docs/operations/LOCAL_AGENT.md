@@ -75,6 +75,16 @@ use a reader sharing delete access; preserve interrupted cases separately from
 budget-censored ones. Measure actual disk use before removing only redundant
 owned output; never delete unique evidence or user files blindly.
 
+For cold q0 node forecasts, include paid root scanning and the inclusive abort
+boundary: absent early wins/root declarations/warm TT, observed completedD1
+needs2N+2 nodes with scanON orN+2 OFF. This does not forecast wall completion
+or qsearch. Charge full import/generation time and preserve existing frozen caps.
+When OS pytest temp/cache access is refused, retain the actual setup errors and
+use supported cache_dir/--basetemp options in a fresh ignored project directory;
+verify the target before reuse, never alter machine security/ACLs or live flags.
+Keep units explicit:120seconds is2minutes; the single-run consultation threshold
+is7200seconds. This does not change the60–90minute Agent work-segment rule.
+
 ## Slack consultation and collaboration
 
 Use docs/operations/SLACK_WORKFLOW.md for exact request/receipt/reconcile commands,

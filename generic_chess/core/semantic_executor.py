@@ -293,6 +293,8 @@ def _resolve_square_ref(ref, support, aux_slots, position, side, binding):
         return r * shape.width + f
     if kind in ("offset_from_source", "offset_from_target"):
         base = source if kind == "offset_from_source" else target
+        if base is None:
+            return None  # A drop has no source to offset from.
         df, dr = ref.offset
         if ref.owner_relative and side == 1:
             df, dr = -df, -dr

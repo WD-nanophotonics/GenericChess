@@ -8,6 +8,23 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work —2026-10-17
 
+Latest correctness delivery: NATIVE_GUARD_COMPARISONS_AND_ROOT_BUDGET_20261017.md
+fixes actual Native zero-count/exists comparisons, Core unbound drop offsets,
+and explicitly declines source-bound wide drop guards (255 is a real square).
+Final3177normal/294isolated-source checks,4actual captured-hand callers and
+37record1396edge2333PV replay preserve complete semantics and source tiers.
+Late AUX85 completeparent+oneDotreply are read ONLY, no84/85source/report/tree
+execution. Owner's oldTRAIN3s gain disappears and heldP remainsUNKNOWN;
+Dot's newR/Ncapture/deployment sensitivity idea stays inAUXlane, notourtodo.
+No projection/cache/root-policy/model default is adopted.32prospective rootflag
+games give identical10W1L5UNKNOWN, allpairbounds[-.625,.625]; depth0wins remain
+successes. Private terminal-only and cold featureprojection miss their criteria.
+A warm16slot study is interrupted for the new defect:4terminal/1partial/11unstarted,
+including an adverseWtoL pair.99record+204PV states have equal checkedfeatures;
+that isnot allhistoricalleaf equivalence or proof that fastersearch improvesplay.
+Keep the user's search-first priority and current defaults; no unchanged reruns,
+new proof/approval gate or competing AUX learner. NEXT_WORK owns one new action.
+
 Keep search capability/completion and bottleneck attribution first, then revisit
 rule-only price/statistical/small-learning routes when measured evidence changes
 a concrete choice. This preserves the user's selected research priority; it is
@@ -200,7 +217,7 @@ fine-tune/scratch/forgetting. A5–10minute usable-player target is a vision.
 No architecture mandate, extra learner or immediate new training follows.
 NATIVE_TEACHER_AND_TRANSFER_20261016.md retains the completed feasibility study.
 
-Latest peer scope: AUX78 complete request+oneDotreply read ONLY, no78source/execution.
+Earlier peer scope: AUX78 complete request+oneDotreply read ONLY, no78source/execution.
 Canonical actionWDLutility differsfromfiniteSessionvalue/fixedfoereward.
 AUX76 fixedda6b0043 two reports READ_ONLY; AUX77 complete
 request and one Dot reply only, not77 source/execution. Prior75 reports remain historical. Dot's proposed

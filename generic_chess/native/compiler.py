@@ -922,6 +922,20 @@ def build_semantic_compile_payload(semantic, *,
         "semantic board size out of native range",
         fingerprint,
     )
+    # Packed drop actions reserve source=0xFF. On wide boards that number
+    # is a real square, while Core has no drop source. Until the binding is
+    # represented separately, decline source-dependent drop state guards.
+    if n >= 16:
+        for pattern in ir.patterns:
+            if not any(ir.geometry[gid].kind == "drop" for gid in pattern.geometry_ids):
+                continue
+            for guard in pattern.guards:
+                refs = guard.spatial.refs + ((guard.subject_ref,) if guard.subject_ref is not None else ())
+                _validate(
+                    not any(ref.kind in ("source", "offset_from_source", "path_step") for ref in refs),
+                    "wide drop state guards with source references require Core execution",
+                    fingerprint,
+                )
     _validate(ir.ir_version == 2, "unsupported semantic IR version", fingerprint)
     _validate(
         1 <= support.max_ply <= _max_rule_ply,
@@ -1289,6 +1303,20 @@ def _requires_actor_relative_effect_binding(semantic):
     return False
 
 
+
+def _requires_state_guard_comparisons(semantic):
+    # Older kernels failed unresolved subjects before comparing zero, and
+    # treated exists as a truth test regardless of its comparison/value.
+    # Conservatively decline all subject-bound guards on those kernels.
+    return any(
+        guard.subject_ref is not None
+        or (guard.aggregation == "exists"
+            and (guard.comparison, guard.value) != ("eq", 1))
+        for pattern in semantic.ir.patterns
+        for guard in pattern.guards
+    )
+
+
 def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSemanticCompiledRules:
     """Compile a CompiledSemanticRuleset into the C-owned semantic rules
     capsule (compile-only contract; no semantic execution).
@@ -1313,6 +1341,11 @@ def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSem
             and not capabilities.get("semantic_actor_relative_effect_binding", False)):
         raise NativeUnsupportedRuleError(
             "Native actor-relative type effects require a rebuilt kernel; "
+            "use Core execution")
+    if (_requires_state_guard_comparisons(semantic)
+            and not capabilities.get("semantic_state_guard_comparisons", False)):
+        raise NativeUnsupportedRuleError(
+            "Native state-guard comparisons require a rebuilt kernel; "
             "use Core execution")
     max_rule_ply = capabilities.get("semantic_max_rule_ply", GC_SEM_MAX_PLY)
     if type(max_rule_ply) is not int or max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):

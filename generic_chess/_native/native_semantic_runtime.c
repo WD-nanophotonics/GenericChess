@@ -266,11 +266,20 @@ static int state_guards_hold(const GCSemanticRules *r, const GCSemanticPosition 
         const GCSemStateGuard *g=&pattern->guards[gi]; if (g->location != 0) return 0;
         int count=0;
         uint16_t subject = 0;
-        if (g->has_subject_ref && !resolve_square(&g->subject_ref, r, NULL, pos, side, source, target, &subject)) return 0;
-        uint16_t first = g->has_subject_ref ? subject : 0;
-        uint16_t last = g->has_subject_ref ? (uint16_t)(subject + 1) : (uint16_t)(r->board_size*r->board_size);
+        uint16_t first = 0, last = (uint16_t)(r->board_size*r->board_size);
+        if (g->has_subject_ref) {
+            /* Core treats an unresolved subject as an empty candidate set.
+             * Its zero count still participates in the declared comparison. */
+            if (resolve_square(&g->subject_ref, r, NULL, pos, side, source, target, &subject)) {
+                first = subject;
+                last = (uint16_t)(subject + 1);
+            } else {
+                first = last = 0;
+            }
+        }
         for (uint16_t sq=first;sq<last;sq++) { const GCPiece *piece=&pos->board[sq]; if(!piece->occupied || !owner_ok(g->owner,piece->owner,side))continue; uint16_t want=0; if(g->type_ref.kind==0)want=action_base_type; else if(g->type_ref.kind==1)want=action_current_type; else if(g->type_ref.kind==2&&g->type_ref.has_type)want=g->type_ref.type_index; else if(g->type_ref.kind==3)want=piece->current_type; else return 0; uint16_t actual=g->compare_field==0?piece->base_type:piece->current_type; if(g->type_ref.kind!=3 && actual!=want)continue; if(g->promoted==0 && !piece->promoted)continue; if(g->promoted==1 && piece->promoted)continue; if(g->promoted>2)return 0; if(!spatial_holds(&g->spatial,r,pos,side,source,target,sq))continue; count++; }
-        int predicate = g->aggregation == 0 ? count > 0 : compare_value(g->comparison,count,g->value); if (!predicate) return 0;
+        int value = g->aggregation == 0 ? (count > 0) : count;
+        if (!compare_value(g->comparison, value, g->value)) return 0;
     }
     return 1;
 }

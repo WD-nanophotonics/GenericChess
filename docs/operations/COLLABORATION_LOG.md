@@ -3728,3 +3728,38 @@ stays its lane. Fixed PRIMARY report/data/source links are final delivery;
 no routine receipt, approval or partner rerun is claimed.
 
 Separate10-call existing-root-scan controls complete:3 selected time fallbacks improveD0-to-D1 with flagoff,2 true root-win controls remain actualwins inbothmodes. Default stayson, no all-reply safety/strength or old90s completion claim. Next semantic source audit covers child declarations before any reuse.
+
+
+## Root budgets and actual Native guard closure —2026-10-17
+
+PRIMARY's lawful declaration/override/node-boundary controls reject generic scan
+promotion/cache.32newrootflag games retain10W1L5UNKNOWN perarm and allnegative/
+unknown evidence; private terminal-only and coldmapprojection remain DEFERRED.
+The daily new request1792198926.102459 is exactly readback-verified. Dot's full
+single reply1792199141.915699 gives a source-only offboard count0 counterexample,
+not privatehelper/raw-data execution. PRIMARY reproduces it, adds actual exists0,
+wide dropsource255 and Coreunboundoffset findings, then repairs/refuses narrowly.
+Final3177normal/235focused/294isolated-source checks,4actual captured-hand callers
+and1396committed/2333PV edges qualify distinct source/consumer claims.
+
+The already frozen warm16slot run is deliberately interrupted only on verified
+ownPID after the concrete defect:4terminal/1partial27plies/11unstarted stay asis,
+including CoreWtoNativefeatureL. Decision preceded outcome inspection.99record/
+204PVstate feature checks on the guard-free family agree, without verifying old
+internal leaves. No rerun or general projection/default/strength adoption.
+AUX's latest retained fixed7e941ba78f68cd6490227cf550de30ddf5b65dd2 report is prior
+read-only context; no new AUX source/tests/games executed or checkout/state writes.
+No measured single-Agent counterfactual efficiency or extra worker is claimed.
+
+Real auto-review duplicate/receipt and seconds-versus-minutes errors are preserved
+and resolved by evidence and standing authority, with actual successful receipt
+separate from denials. Initial fullsuite200OS-temp setup errors are separately
+recovered, then a fresh final3177passes; no machine security/ACL change or SAC
+attribution. Public source/report/data/archive are reviewed and fixed-SHA links
+are sent only after verified publication, not as a request for routine approval.
+
+Late AUX85 recovery: complete root1792199773.630129+reply1792199941.907679 read,
+not84/85reports/source/trees/execution. Owner's oldTRAIN3s gain disappears;
+heldRWIN/heldPUNKNOWN cannot establish relativeprice, and122-node tree hasno
+secondactiveprice direction. Dot's R/Ncapture versusdeployment design stays
+reference in AUX's independently owned lane; PRIMARY doesnotduplicate it.
