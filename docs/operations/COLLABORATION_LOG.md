@@ -3763,3 +3763,31 @@ not84/85reports/source/trees/execution. Owner's oldTRAIN3s gain disappears;
 heldRWIN/heldPUNKNOWN cannot establish relativeprice, and122-node tree hasno
 secondactiveprice direction. Dot's R/Ncapture versusdeployment design stays
 reference in AUX's independently owned lane; PRIMARY doesnotduplicate it.
+
+
+## Guard encoding, session terminals and rejected cost routes —2026-10-17
+
+PRIMARY fixes equivalent exact-empty static candidate coefficients and real
+finished-session player behavior, retaining old no-result adapters. Local full
+3236 and isolated156 are final-source tiers; candidate3240 is unadopted. Four
+paired full16board continuations preserve402queries/edges. No price fit/default.
+Actual16budget games produce equal3W3L2UNKNOWN despite17completedD1 activations;
+projection1of4 andbindingfilter2of4 cost gates fail. No rescue panels or Core
+performance adoption. Failures, adverse timings and original slots remain.
+
+AUX86 fullparent+oneDotreply read ONLY: owner reports finite tree/tie/forced-first
+interventions; Dot recommends exploiting those causal cells before broad proof
+work. PRIMARY verifies only the stated5/8 algebra, not trees/source/execution.
+No AUX checkout/session changes, solver/learner duplication or worker is created.
+PRIMARY technical renewal PRIMARY-CHECKED-BINDING-FILTER-20261017 sent once in
+originaldaily thread; actual receipt1792205222.154099 and originals are private.
+No new reply at current checkpoint; old COMPLETED is not renewal completion.
+No new collaboration-efficiency percentage or publication approval is claimed.
+Exact source/scope and all negative decisions: GUARD_ENCODING_AND_SESSION_BOUNDARIES_20261017.md.
+
+Final renewal check: daily parent+four replies and AUX86 parent+one reply pass
+strict count/pagination checks. Dot1792205569 source-predicts overloaded-int
+coordinate mismatch; PRIMARY locally reproduces on the already rejected filter,
+while unchanged Core accepts. Adopt future builtin-original-component eligibility,
+without reviving cost failure. Existing verified-binding transition gives12full
+child/history equalities over16/32/48/64ply roots; no production resolver/cache.

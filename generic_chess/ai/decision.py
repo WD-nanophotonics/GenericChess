@@ -11,7 +11,8 @@ from ..core.actions import Action
 class PlayerDecision:
     """Result of one ``Player.choose_action`` call.
 
-    ``action`` is ``None`` only for terminal positions.  Scores are always in
+    ``action`` is ``None`` for terminal positions or already finished sessions.
+    A selected declaration is represented separately. Scores are always in
     the side-to-move perspective of the root position.
     """
 

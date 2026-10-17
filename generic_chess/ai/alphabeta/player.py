@@ -6,10 +6,12 @@ import time
 
 from ...rules.compiled import CompiledRuleSet
 from ...session.session import GameSession
+from ...session.result import SessionStatus
+from ...core.errors import ensure_ruleset_match
 from ..cancellation import CancellationToken
 from ..decision import PlayerDecision
 from ..evaluation.cache import EvaluationProfileCache
-from ..evaluation.config import EvaluationConfig
+from ..evaluation.config import EvaluationConfig, MATE_SCORE
 from ..evaluation.evaluator import Evaluator
 from ..evaluation.profile import require_default_profile_metadata
 from ..limits import SearchLimits
@@ -144,6 +146,24 @@ class AlphaBetaPlayer:
     ) -> PlayerDecision:
         state = session.state
         started = time.monotonic()
+        result = getattr(session, "result", None)
+        if result is not None and result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
+            # These session terminals deliberately leave the Core state/history
+            # ongoing. Searching that state would return an unexecutable action
+            # or reselect a declaration which has already ended the session.
+            ensure_ruleset_match(state.position, self._compiled)
+            score = (0 if result.winner is None else
+                     MATE_SCORE if result.winner == state.position.side_to_move
+                     else -MATE_SCORE)
+            return PlayerDecision(
+                action=None, score=score, principal_variation=(),
+                completed_depth=0, selective_depth=0, nodes=0, qnodes=0,
+                elapsed_seconds=time.monotonic() - started,
+                tt_probes=0, tt_hits=0, tt_cutoffs=0, beta_cutoffs=0,
+                evaluation_profile_cache_hit=self._profile_cache_hit,
+                termination_reason="terminal_position", choice_kind="TERMINAL",
+                result_source="terminal",
+            )
         stats = SearchStatistics()
         q_depths = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth)
         if self._tt_q_depths != q_depths:

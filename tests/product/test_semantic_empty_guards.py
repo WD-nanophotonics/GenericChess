@@ -75,7 +75,7 @@ def test_source_target_and_offboard_guards_are_conditioned(offset, quiet_factor,
 
 @pytest.mark.parametrize('change', [
     {'owner': 'self'}, {'value': 1}, {'comparison': 'ne'},
-    {'aggregation': 'exists'}, {'promoted': 'yes'},
+    {'aggregation': 'exists', 'value': 1}, {'promoted': 'yes'},
     {'type_ref': RuleTypeRef('explicit', type_id='H')},
     {'subject_ref': RuleSquareRef('target')},
 ])
@@ -141,3 +141,65 @@ def test_equal_subject_and_spatial_ref_preserves_global_count_semantics(offsets)
                 q = replace(p, ruleset_fingerprint=local_engine.support.ruleset_fingerprint)
                 key = lambda e, pos: {(a.source, a.target, a.pattern_id) for a in e.legal_actions(pos)}
                 assert key(global_engine, p) == key(local_engine, q)
+
+
+@pytest.mark.parametrize('offset', [(1, 0), (0, 0), (2, 1), (20, 0)])
+@pytest.mark.parametrize('relative', [False, True])
+@pytest.mark.parametrize('subject', [False, True])
+def test_exact_empty_exists_and_count_preserve_projection_and_inert_hand(offset, relative, subject):
+    from generic_chess.ai.evaluation.semantic import build_semantic_opportunity_profile
+    a = guarded_leap((offset,), relative=relative, subject=subject)
+    b = replace(a, semantic_actions=tuple(replace(action, state_guards=tuple(
+        replace(g, aggregation='exists') for g in action.state_guards))
+        for action in a.semantic_actions))
+    ca, cb = (compile_ruleset_for_execution(r) for r in (a, b))
+    pa, sa = build_semantic_opportunity_profile(ca, EvaluationConfig())
+    pb, sb = build_semantic_opportunity_profile(cb, EvaluationConfig())
+    assert sa['types'] == sb['types']
+    assert pa.board_value_by_type == pb.board_value_by_type
+    assert pa.hand_value_by_base_type == pb.hand_value_by_base_type
+    assert sa['hand_policy'] == sb['hand_policy'] == 'zero_proved_inert'
+    assert pa.evaluator_version == pb.evaluator_version
+    assert ca.ruleset_fingerprint != cb.ruleset_fingerprint
+
+
+def test_equivalent_empty_guards_reach_same_full_session_leaf_score():
+    from generic_chess.ai.evaluation.semantic import build_semantic_opportunity_profile
+    from generic_chess.ai.evaluation.evaluator import Evaluator
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.movement import RayAtom
+    from generic_chess.session.session import GameSession
+    a = guarded_leap()
+    board = [None] * 15
+    board[0], board[14] = Piece(0, 'K', 'K'), Piece(1, 'K', 'K')
+    board[5], board[12] = Piece(0, 'H', 'H'), Piece(1, 'B', 'B')
+    a = replace(a, initial_position=tuple(tuple(board[r*5:(r+1)*5]) for r in range(3)),
+                piece_types=tuple(PieceType('B', 'B', (RayAtom((1, 0)),))
+                                  if p.type_id == 'B' else p for p in a.piece_types))
+    b = replace(a, semantic_actions=tuple(replace(action, state_guards=tuple(
+        replace(g, aggregation='exists') for g in action.state_guards))
+        for action in a.semantic_actions))
+    cfg = EvaluationConfig(dynamic_mobility_weight=0, anchor_escape_weight=0,
+                           promotion_potential_weight=0)
+    results = []
+    for rule in (a, b):
+        c = compile_ruleset_for_execution(rule)
+        session = GameSession(c)
+        profile, _ = build_semantic_opportunity_profile(c, cfg)
+        player = AlphaBetaPlayer(c, evaluator_override=Evaluator(c, profile, cfg),
+                                 use_disk_cache=False, use_ordering=False,
+                                 use_native_semantic_legality=False)
+        before = session.to_record()
+        decision = player.choose_action(session, SearchLimits(
+            max_depth=1, max_nodes=256, max_time_seconds=5,
+            quiescence_max_depth=0, quiescence_hard_max_depth=0))
+        assert session.to_record() == before
+        assert decision.completed_depth == 1
+        session.submit(decision.action)
+        assert len(session.state.history) == 2
+        assert session.state.position.hands[0].count('B') == 1
+        results.append((decision.score, decision.action.pattern_id,
+                        decision.action.from_square, decision.action.to_square,
+                        session.state.position.board, session.state.position.hands))
+    assert results[0] == results[1]

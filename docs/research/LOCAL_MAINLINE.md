@@ -8,22 +8,32 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work —2026-10-17
 
-Latest correctness delivery: NATIVE_GUARD_COMPARISONS_AND_ROOT_BUDGET_20261017.md
-fixes actual Native zero-count/exists comparisons, Core unbound drop offsets,
-and explicitly declines source-bound wide drop guards (255 is a real square).
-Final3177normal/294isolated-source checks,4actual captured-hand callers and
-37record1396edge2333PV replay preserve complete semantics and source tiers.
-Late AUX85 completeparent+oneDotreply are read ONLY, no84/85source/report/tree
-execution. Owner's oldTRAIN3s gain disappears and heldP remainsUNKNOWN;
-Dot's newR/Ncapture/deployment sensitivity idea stays inAUXlane, notourtodo.
-No projection/cache/root-policy/model default is adopted.32prospective rootflag
-games give identical10W1L5UNKNOWN, allpairbounds[-.625,.625]; depth0wins remain
-successes. Private terminal-only and cold featureprojection miss their criteria.
-A warm16slot study is interrupted for the new defect:4terminal/1partial/11unstarted,
-including an adverseWtoL pair.99record+204PV states have equal checkedfeatures;
-that isnot allhistoricalleaf equivalence or proof that fastersearch improvesplay.
-Keep the user's search-first priority and current defaults; no unchanged reruns,
-new proof/approval gate or competing AUX learner. NEXT_WORK owns one new action.
+Latest delivery: GUARD_ENCODING_AND_SESSION_BOUNDARIES_20261017.md fixes the
+opt-in exact-empty count/exists representation boundary (candidatev4) and honors
+finished GameSession markers without breaking state+witness-only adapters.
+Final3236normal/156isolated-source tiers apply; unadopted binding-filter3240 is
+separate. Four paired16board continuations preserve402queries/402edges and full
+history observations; onepair actualmate, three64plyUNKNOWN, not a quality proof.
+
+Keep search-first and current defaults. New1024node budget admission completesD1
+on17actualwide roots, but16games give identical3W3L2UNKNOWN and allpairbounds
+[-.5,.5]. Nativeprojection gate1of4 fails, so16plannedgames neverstart. Existing
+binding-filter reuse passes semantics but freshcostgate2of4 fails; originalCore
+is restored. Do not rescue these gates, repeat their arenas or add a new cache.
+Actual long-history root admission remains a measured cost; next inspect the
+existing checked-binding/transition duplication before choosing any new route.
+The32ply counter measures285+285S3trials;12verified-binding component children
+match full public states at16/32/48/64plies. No resolver reuse is yet delivered.
+Dot renewal1792205569 gives a locally reproduced int-subclass filter mismatch;
+future fast paths need exact builtin original components/old fallback, not a
+new public rejection. The withdrawn coordinate-only cost candidate stays rejected.
+
+The preceding Nativeguard/Core unbound-offset repair remains at PUBLIC
+cb6eaff8ff0364683dba0717ff6d7720730d5070. Its interruptedwarm adverseWtoL cohort
+stays4terminal/1partial/11unstarted; no latest study completes those old slots.
+AUX86 parent+oneDotreply are read ONLY, no85/86 source/report/tree/program
+execution. Its price/tie/proof-frontier work stays inAUXlane. Peer advice is
+reference, not authority or a new WDL/approval gate. NEXT_WORK owns one action.
 
 Keep search capability/completion and bottleneck attribution first, then revisit
 rule-only price/statistical/small-learning routes when measured evidence changes

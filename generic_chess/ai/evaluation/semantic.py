@@ -20,8 +20,8 @@ from .profile import PieceValueProfile, RuleSetEvaluationProfile, _drop_profile,
 
 
 def _pure_empty_guard(guard):
-    """A count of all occupants at one source-relative square must be zero."""
-    return (guard.aggregation == 'count' and guard.comparison == 'eq'
+    """No occupant at one source-relative square (count or exists equals zero)."""
+    return (guard.aggregation in ('count', 'exists') and guard.comparison == 'eq'
             and guard.value == 0 and guard.owner == 'any'
             and guard.type_ref.kind == 'any' and guard.promoted == 'any'
             and guard.location == 'board'
@@ -287,7 +287,7 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
             is_anchor=pt.is_anchor, is_promotable=pt.is_promotable)
     profile = RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
-        evaluator_version='semantic-opportunity-v3-inert-hand' if inert_hand else 'semantic-opportunity-v3',
+        evaluator_version='semantic-opportunity-v4-inert-hand' if inert_hand else 'semantic-opportunity-v4',
         config_hash=config_hash(config), piece_profiles=pieces,
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
         median_non_anchor_value=_median([board[p.type_id] for p in piece_types if not p.is_anchor]))
