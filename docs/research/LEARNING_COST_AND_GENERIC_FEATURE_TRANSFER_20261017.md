@@ -1,9 +1,11 @@
 # Learning cost, signal coverage and Generic feature transfer - 2026-10-17
 
 Science remains OPEN. PRIMARY checks the existing positive AUX86 learner and
-its prospective Core consumer boundary. No new learner, training, game campaign,
-solver, product/default change or API is delivered. DEV_AUX retains its separate
-checkout and ongoing87 training-regime study.
+its prospective Core consumer boundary. A later actual PRIMARY W/L/D carrier
+and arena defect is repaired below. No new learner, training, game campaign,
+solver, default search/evaluator or API/schema is delivered. DEV_AUX retains its
+separate checkout and ongoing88method contrast;87is closed and independently
+checked below.
 
 ## Decision and actual cost
 
@@ -60,7 +62,8 @@ matter; full algebraic span does not make the trajectories equivalent.
 The two episode-impulse condition numbers are8.160/2.099. Those vectors combine
 credit and cancellation, not causal per-piece effects. No additional exploration
 batch, network or parameter selection is justified solely by a nonexistent exact
-nullspace. First assess the already-running87 contrast when published.
+nullspace. This motivated assessing87; later sections record its completed
+verification and the current88continuation.
 [Full observations](data/learning_signal_span_20261017.json).
 
 ## Original recipe and calibration are separate choices
@@ -155,7 +158,7 @@ The measured R finite-difference slope is+1 for the returned score and-1 for the
 nominal PV material. Merely recomputing the PV leaf gradient can reverse credit.
 Actual returned leaf/terminal/stand-pat identity is needed if a future Core-based
 learner uses qsearch. Current AUX search returns its own leaf; this finding
-requires no new API, production change or repeated q campaign now.
+requires no new q API, qsearch change or repeated q campaign now.
 
 All preparatory negative controls remain: four D1 calls use the first-iteration
 ordinary-q0 reserve; four D2 full-rook unit calls choose equal-material quiet PVs;
@@ -253,3 +256,141 @@ PRIMARY trajectory carrier automatically.
 retain the tier distinctions. Keep cheap plain training as the current comparison,
 inspect owner88's published common-deployment result next, and do not launch a
 duplicate learner or revive Core optimization without a needed consumer.
+
+
+## Usable gradient differs from active target count
+
+A follow-on relevant to owner88 uses four FIRST plain87 TRAIN queries, one per
+initialization, sharing the same complete opening history. All35returned interior
+nodes in each tree have zero N/B/R/Q count differences. Despite19-35nonzero
+interval residuals, the frozen mean TreeStrap update is therefore exactly zero
+for every free price coordinate. The actual selected PV feature is
+[1,0,-1,0,0], with a nonzero B derivative near-.1. This is available PV eligibility,
+not proof of a nonzero subsequent TD error or better return.
+
+[TreeStrap's original paper](https://papers.nips.cc/paper_files/paper/2009/file/389bc7bb1e1c2a5e7e147703232a88f6-Paper.pdf)
+uses summed linear one-sided losses. The published small variant averages
+transformed losses. Parameter features, active residuals, batch denominator and
+update timing must all be separated when interpreting the pending method
+comparison. More returned targets need not mean more usable parameter signal.
+
+The first four mean-loss finite differences and updates are zero; their
+normalization checks are vacuous and do not demonstrate a nonzero scale effect.
+A separately planned four-case check picks the first later complete root with
+non-pawn count imbalance, using counts rather than outcomes. All batches have
+N26: three still give zero update; only27182 gives a B increment2.17895e-5.
+Adding26synthetic, wholly inactive interval constraints halves that increment to
+1.08947e-5; duplicating the entire batch preserves the mean update. The actual
+mean-loss derivative agrees with independent finite differences. These are frozen
+counterfactual loss probes, not additional training trees or games.
+
+Retain all seven zero cases. These eight calls share one opening family across
+initials, not eight independent position families. They do not show TreeStrap
+cannot learn, diagnose unpublished88 outcomes, or mandate richer features.
+The next economical action is to inspect88's already recorded intervals for
+active FREE-coordinate gradients and actual update units before choosing a
+follow-on. Do not change its running eta/caps or add another training batch.
+
+The new guard also passed its seven existing actualGameSession controls with
+explicit import assertions for CURRENT PRIMARY Core plus the fixed AUX guard.
+That compatibility tier is separate from the32tests against archived AUX source;
+there was no code merge or full-domain qualification.
+[Summary](data/learning_mean_signal_20261017.json).
+
+The small zero-gradient examples were then checked against ALL48017completed
+87training roots with full history. A zero free-feature root plus all-zero legal
+one-ply children certifies zero free input at every possible D2main-interior
+sample. There are2499such roots(5.20%);44914have nonzero root input and604only
+potential nonzero child input.73033children were checked. This is a sufficient
+structural condition, not actual residual/gradient quality: terminal children
+may not yield an interior sample, residuals can be zero and gradients can cancel.
+It does not show a dominant representation bottleneck in these trajectories or
+predict88. Retain the useful counterexample, but do not extrapolate four early
+examples into a mandatory model change. The next check remains88actual active
+gradients once published. [Coverage](data/learning_free_feature_coverage_20261017.json).
+
+## New advisor suggestion and extended original source
+
+A fresh full88thread read includes Dot1792214792.511309. Adopt its important
+distinction: TDLeaf uses selected-leaf gradients; RootStrap/TreeStrap use each
+updated STATIC state, frozen transformed bounds, half-squared loss and the
+declared all-returned-node denominator. Our Core PV warning does not substitute
+a leaf gradient into TreeStrap. Its suggested future Root/Tree TRAIN-only RMS
+matching remains conditional, not a request to alter the running88study.
+
+A read-only check on the SAMEeight exposed batches finds RootRMS0 in both panels,
+while the later TreeRMS is nonzero. Hence its scale ratio is undefined here; do
+not manufacture an enormous Root step. This is not an independent TRAIN
+calibration set or a reusable multiplier. Inspect88actual logs first; no new
+paired training is started. It also shows the one internal-state gradient can
+exist when the current-root semi-gradient is zero, without proving a strength
+effect or all-node superiority.
+
+The extended original [Learning to Play Chess Using Temporal Differences](https://link.springer.com/content/pdf/10.1023/A:1007634325138.pdf)
+is now accessible and read, separate from the shorter1999papers. Section4.2
+compares a600game self-play version against an online-trained version in100games;
+its11percent score is relative performance in that configuration, not proof
+self-play cannot learn. It does not refute our scoped four-parameter result or
+authorize human-data fitting. Its CPU-time-versus-games distinction supports
+our total-cost accounting. AppendixA.10 stores actual evaluated positions
+alongside scores, supporting the selected-leaf identity requirement. Its
+conditional convergence discussion supplies no guarantee for our changing-policy
+tanh learner. No full paper text or new historical reproduction is published.
+
+## Completed whole87receipt reproduction
+
+The ONE bounded full replay is now CLOSED: all48017completed TRAIN queries
+match actions, values, returned PV features/terminal markers, gradients, node
+counts and deterministic stats, with complete roots restored. Actual cost is
+1074.125seconds and7998701nodes. No TDupdates were applied and no new game was
+played. The original8failedqueries/1299nodes remain original and were skipped;
+nominal full budgets cannot recreate their remaining-pool/time conditions.
+An independent stream read checks all48017emitted rows and the rolling hash.
+This is SAME-engine/frozen-parameter receipt reproduction, not an independent
+rule authority or proof every hypothetical branch was semantically optimal.
+It is supporting qualification, not a requirement to repeat before new research.
+[Receipt](data/learning_peer87_completed_replay_20261017.json).
+
+The later read-only Rootsemi-gradient audit covers all48017complete historical
+roots. Every seed/regime has a nonzero aggregate RootRMS(.00889-.01700), despite
+zeroRootRMS in our eight small controls. Do not generalize that local degeneracy
+into a universal Rootcontrol failure. These evolving87weights/trajectories are
+exposed, and paired Treegradients are absent: no Root/Tree multiplier is fitted.
+A genuinely new calibration would need the independent TRAIN sample proposed
+by Dot only if88results leave that question. [Audit](data/learning_root_signal_coverage_20261017.json).
+
+## PRIMARY owned W/L/D defect repaired
+
+The prior term old trajectory carrier was insufficiently precise: the carrier
+remains CURRENT callable product code. Source review of its real producers
+confirmed that Session declarations retain status=declaration and winner=None
+for both RESTART and NO_CONTEST. TrainingTrajectory.terminal_z silently returned0,
+and ArenaGameResult classified the same actual results as half-points. The
+existing arena guard only recognized the distinct Core no_contest status.
+AUX2511corrected its own adapter; it did not fix either PRIMARY site.
+
+Two minimal owned changes now reject these results: terminal_z raises a clear
+ValueError before any truncated/bootstrap path, including empty TD batches;
+ArenaGameResult treats winnerless declarations as non-scoring, so pair scoring
+uses the existing None/exclusion path. Current allowed declaration outcomes are
+WIN/LOSS/RESTART/NO_CONTEST, so existing terminal/winner fields are sufficient.
+No declaration-DRAW outcome exists in the current rule schema. A future such
+extension would require explicit reconsideration, not a silent inference.
+
+No trajectory/arena serialization fields, IDs, ordinary W/L/D targets, bootstrap
+contract or search/evaluator/learner parameters changed. Session records still
+carry exact declaration subtypes; no new metadata API is needed for this fix.
+Old frozen result archives are retained. This replaces the earlier proposal to
+add a subtype field: actual schema inspection showed it unnecessary here.
+
+Seven new tests use actual compiled GameSession claims, real selfplay collection
+with only engine choice stubbed, serialization and TD rejection/arena pairs;
+WIN/LOSS and an actual rule draw remain controls. Related59tests pass. Fresh
+tracked-source/Python-S restoration reproduces4failures/3passes before the two
+changes and7passes afterward. No native binary is needed for that qualification.
+[Source qualification](data/learning_non_scoring_fix_20261017.json).
+
+Final normal four-layer regression PASS: 3243tests, plus the distinct59focused
+and7clean-source tiers above. No Native rebuild was needed for these two Python
+scoring predicates. Required publisher checks and final fullremoteSHA are
+verified at delivery; a local commit alone is not publication.

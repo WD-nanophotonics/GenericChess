@@ -48,7 +48,13 @@ class TrainingTrajectory:
 
     @property
     def terminal_z(self) -> float:
-        """Owner-0 perspective terminal target (+1/-1/0)."""
+        """Owner-0 scoring target, or an explicit nonterminal bootstrap."""
+        # The rule schema's winnerless declarations are RESTART/NO_CONTEST,
+        # not draws. Reject them before the truncated-bootstrap path too.
+        if self.terminal == "no_contest" or (
+            self.terminal == "declaration" and self.winner is None
+        ):
+            raise ValueError("non-scoring terminal cannot be a TDLeaf W/L/D target")
         if self.terminal == "ongoing" or self.truncated:
             if self.bootstrap_value is None:
                 raise ValueError(

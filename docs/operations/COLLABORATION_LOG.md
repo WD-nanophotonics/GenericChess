@@ -3869,3 +3869,38 @@ non-scoring guard closes owner-side hazard via7executedactualcontrols, not old
 carrier/Chess rerun. AUX88new request read only; no88code/results execution,
 extra learner or AUX checkout write. Current decision is cheapplain comparison
 and owner88methodcontrast, not more qcoverage or a universal price claim.
+
+PRIMARY further reads originalTreeStrap sum versus publishedmean variant and
+executes8frozenroot controls. Active errors alone give no freegradient in four
+first trees; only one of four later controls moves a weight. Preserve sevenzero
+controls and vacuous initial normalization checks, no88outcome explanation.
+This motivates reading already-journaled activefreegradients after88publishes,
+not changing its ongoingeta/caps. Seven guardtests also pass on currentPRIMARY
+Core with moduleprovenance asserted, separate from archivedAUX32tests.
+
+Coverage follow-on counters overgeneralization: all48017existing87roots and
+73033legalchildren give2499sufficient structural-zero cases(5.20%), not a dominant
+bottleneck proof. Nonzero inputs still need active residuals and may cancel;
+no inference to88orGenericdomain. No newsearch/training/game in this read.
+
+Dot88fullreply1792214792read: static-state versus leaf-gradient distinction
+adopted; conditional Root/Tree RMS study deferred. Actual exposed8case read gives
+RootRMS0/laterTreeRMSnonzero, no finite calibration multiplier and no newfit.
+Extended2000original source now read; relative selfplay comparison is not a
+prohibition or current4parameter failure. No human/exposedlabel fitting.
+
+Whole87same-source replay closes48017completedqueries/7998701nodes/1074.125s
+matching actualleaf/action/gradient/work/fullhistory, no training/game. Original
+8failed/1299nodes retained, not nominally rerun. Full48017Rootsignal read shows
+nonzeroRMS in all8arms; earlier exposed8zeros are not a general Rootbarrier.
+
+Correction to prior ownership assessment: PRIMARY oldtrajectory is still current
+callable product code. Actual declaration/winnerNone was mislabeledTD0/arena.5;
+AUX2511fix did not cover it. PRIMARY fixes onlytwo existing predicates, with
+no newformat/ID/API or learning/search policy. Real selfplay collection/Session/
+TD/arena/serialization controls59pass; fresh source reproduces4fail/3pass then
+7pass. Current schema needs no subtype field for scoring; preserves ordinary
+rule draws/WL and oldarchives. AUX checkout/88computation remains untouched.
+
+Final normal active-layer regression 3243PASS, with59focused and7clean-source
+checks distinct. Only Python scoring predicates changed, no native rebuild.

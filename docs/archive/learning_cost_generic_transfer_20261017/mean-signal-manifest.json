@@ -1,0 +1,76 @@
+{
+  "payload": [
+    {
+      "bytes": 7711,
+      "path": ".local_agent/learning-cost-20261017/mean-signal-summary.json",
+      "sha256": "8d79de5aca492da61e3de86683afa28b95b161618aa1a2183024d3849e229112"
+    },
+    {
+      "bytes": 2974,
+      "path": ".local_agent/learning-cost-20261017/mean-signal-summary.py",
+      "sha256": "114834aa1b4edae66f2075730310373ed6dedf1175e0305bd719f8e127108b75"
+    },
+    {
+      "bytes": 5164,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract-nonzero.py",
+      "sha256": "2e7a4902d5164cfb34a3ec55401a5e56a2683fbfa09ed1ef794f60d034b1a95f"
+    },
+    {
+      "bytes": 790,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract-nonzero/plan.json",
+      "sha256": "9c85d0f91728f4feea7a808bf7fb20f7c0fed4202761469be95cb932d1d8e6c9"
+    },
+    {
+      "bytes": 33244,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract-nonzero/result.json",
+      "sha256": "69c5bce9c5f4b0829060154741da9693b2eb9e826d66035b343f584ae88df6ce"
+    },
+    {
+      "bytes": 4423,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract.py",
+      "sha256": "36421e8efa376ccb4446b01e38439cac44ab71d2467804a16a498d16dcb50616"
+    },
+    {
+      "bytes": 699,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract/plan.json",
+      "sha256": "f14da135420ef9cab83ba35abd9abe8607647b7a06c5d5c1ac9fdbde55be4f65"
+    },
+    {
+      "bytes": 43358,
+      "path": ".local_agent/learning-cost-20261017/mean-update-contract/result.json",
+      "sha256": "6321d7b153706403a2d8c2638276d46319520c680b496d6932f375d69319a564"
+    },
+    {
+      "bytes": 2065,
+      "path": ".local_agent/learning-cost-20261017/peer87-current-core-guard.py",
+      "sha256": "e4acd974191b59cb2121881f031862c73b4900d0c3b4df0a3f5158bb24e5fedc"
+    },
+    {
+      "bytes": 383,
+      "path": ".local_agent/learning-cost-20261017/peer87/current-core-guard-plan.json",
+      "sha256": "f97fe6cbb5a7779e4e1539d794f37ce2e0f11f44ceda9d5c37212d0a9d97f2c2"
+    },
+    {
+      "bytes": 422,
+      "path": ".local_agent/learning-cost-20261017/peer87/current-core-guard-result.json",
+      "sha256": "f6a00a3d2e32810f877090230d1f69cfee1d19bb10e83bd3ecc5defb8002d472"
+    },
+    {
+      "bytes": 652,
+      "path": ".local_agent/learning-cost-20261017/root-rms-plan.json",
+      "sha256": "be8b081beb773cdc300789ba6da59f9bdf8f8f2fa4aea3ee494e7ec38a40d6e8"
+    },
+    {
+      "bytes": 4956,
+      "path": ".local_agent/learning-cost-20261017/root-rms-result.json",
+      "sha256": "8164202bfa827072813c8db982b1c68677fa9b73dbf8e46d08ef47c3ededbdee"
+    },
+    {
+      "bytes": 2710,
+      "path": ".local_agent/learning-cost-20261017/root-rms.py",
+      "sha256": "0b9e1715a0f64587044466b4c4c6835699f08f86c4214e8dc56f22a4e27c5057"
+    }
+  ],
+  "scope": "Eight controlled frozen-root queries, independent mean-gradient/zero-signal diagnostics, seven current-Core guard compatibility tests. Not training/game/solver/88code.",
+  "source_dependency": "Existing public87fixed archive referenced in peer87-manifest.json; extract to same ignored path before producers."
+}

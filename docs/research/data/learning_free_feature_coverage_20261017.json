@@ -1,0 +1,173 @@
+{
+  "completed_roots_examined": 48017,
+  "counts": {
+    "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 2499,
+    "ONLY_POTENTIAL_CHILD_FREE_INPUT": 604,
+    "ROOT_FREE_INPUT_AVAILABLE": 44914
+  },
+  "digest_sha256": "bd61d1a05554f1a31e67609174bff0917b9b118e5ef89f3fa75991b26958fd89",
+  "examples": {
+    "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": {
+      "children_scanned": 34,
+      "full_root_record": {
+        "fen": "r1bq2nr/p1pnpkbp/1p1B1p2/3p2p1/4P3/1P3PK1/P1PP2PP/RN1Q1BNR w - - 2 9",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f3",
+          "g7g5",
+          "e1f2",
+          "f7f6",
+          "e2e4",
+          "f8g7",
+          "f2g3",
+          "e8f8",
+          "b2b3",
+          "d7d5",
+          "c1a3",
+          "f8f7",
+          "a3c5",
+          "b7b6",
+          "c5d6",
+          "b8d7"
+        ]
+      },
+      "game": 0,
+      "nonzero_children": 0,
+      "ply": 0,
+      "quiet": false,
+      "root_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 1977,
+      "tag": "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT"
+    },
+    "ONLY_POTENTIAL_CHILD_FREE_INPUT": {
+      "children_scanned": 28,
+      "full_root_record": {
+        "fen": "r1bq2nr/p1pnpkbp/1p1B1p2/3P2p1/8/1P3PK1/P1PP2PP/RN1Q1BNR b - - 0 9",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f3",
+          "g7g5",
+          "e1f2",
+          "f7f6",
+          "e2e4",
+          "f8g7",
+          "f2g3",
+          "e8f8",
+          "b2b3",
+          "d7d5",
+          "c1a3",
+          "f8f7",
+          "a3c5",
+          "b7b6",
+          "c5d6",
+          "b8d7",
+          "e4d5"
+        ]
+      },
+      "game": 0,
+      "nonzero_children": 2,
+      "ply": 1,
+      "quiet": false,
+      "root_phi": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "seed": 1977,
+      "tag": "ONLY_POTENTIAL_CHILD_FREE_INPUT"
+    },
+    "ROOT_FREE_INPUT_AVAILABLE": {
+      "children_scanned": 0,
+      "full_root_record": {
+        "fen": "r1bq2nr/p2npkbp/1p1p1p2/3P2p1/8/1P3PK1/P1PP2PP/RN1Q1BNR w - - 0 10",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f3",
+          "g7g5",
+          "e1f2",
+          "f7f6",
+          "e2e4",
+          "f8g7",
+          "f2g3",
+          "e8f8",
+          "b2b3",
+          "d7d5",
+          "c1a3",
+          "f8f7",
+          "a3c5",
+          "b7b6",
+          "c5d6",
+          "b8d7",
+          "e4d5",
+          "c7d6"
+        ]
+      },
+      "game": 0,
+      "nonzero_children": 0,
+      "ply": 2,
+      "quiet": false,
+      "root_phi": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "seed": 1977,
+      "tag": "ROOT_FREE_INPUT_AVAILABLE"
+    }
+  },
+  "expected": 48017,
+  "failure": null,
+  "oneply_children_examined": 73033,
+  "per_arm": {
+    "(1977, False)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 346,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 69,
+      "ROOT_FREE_INPUT_AVAILABLE": 9207
+    },
+    "(1977, True)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 164,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 47,
+      "ROOT_FREE_INPUT_AVAILABLE": 4029
+    },
+    "(27182, False)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 354,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 88,
+      "ROOT_FREE_INPUT_AVAILABLE": 6663
+    },
+    "(27182, True)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 144,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 57,
+      "ROOT_FREE_INPUT_AVAILABLE": 2995
+    },
+    "(31415, False)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 485,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 103,
+      "ROOT_FREE_INPUT_AVAILABLE": 7514
+    },
+    "(31415, True)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 102,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 46,
+      "ROOT_FREE_INPUT_AVAILABLE": 3938
+    },
+    "(8173, False)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 436,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 130,
+      "ROOT_FREE_INPUT_AVAILABLE": 7235
+    },
+    "(8173, True)": {
+      "CERTIFIED_ZERO_MAIN_INTERIOR_FREE_INPUT": 468,
+      "ONLY_POTENTIAL_CHILD_FREE_INPUT": 64,
+      "ROOT_FREE_INPUT_AVAILABLE": 3333
+    }
+  },
+  "scope": "A structural sufficient-zero condition over complete historical root/one-ply legal features only. Nonzero child could be terminal and absent from returnedinterior samples; its feature availability is only potential. Active errors/cancellation/target value are not inferred. Repeated trajectories/roles/seeds are not independent samples; no88data, newtraining/search/arena or Generic-domain proof.",
+  "seconds": 1.7810000000172295,
+  "status": "PASS_ALL_EXISTING_COMPLETED_ROOTS"
+}

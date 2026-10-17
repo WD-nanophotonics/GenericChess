@@ -51,14 +51,46 @@ learning/solver qualification. Twenty scoped Core calls also expose a concrete
 qleaf boundary: both compilers return-1 while nominal fullmainPV material is-3;
 R perturbation gives score slope+1 versus nominalleaf-1. Do not derive future
 qlearning gradients from mainPV. Existing AUX search returns its own leaf; no
-newAPI/product/default change or competing learner. Read published87 next.
+new qAPI/default change or competing learner; carrier repair is below.
+Read published88 next.
+
+Eight fixed87root controls separate residual count from free-price signal: all
+four first-root35node batches have19-35active errors but ZERO free features and
+update; selectedPV B eligibility is nonzero. Later four26node controls retain
+threezero/onenonzero; syntheticinactive padding halves only that one update.
+No88outcome/model conclusion: inspect its recorded active-free-gradient coverage
+and mean/perquery versus episode units before choosing a follow-on. All48017
+existing87roots/73033legalchildren yield2499certified structural-zero roots(5.20%),
+44914nonzero-root and604potential-child inputs. This does NOT establish a dominant
+representation bottleneck, actual useful-gradient rate or88generalization. New
+Dot88static-state/leaf distinction is adopted; Root/Tree RMS follow-on deferred.
+Our exposed8cases have RootRMS0 (later TreeRMSnonzero), so no finite scale is
+calibrated from them. Do not change88eta/caps or start a new batch now. Seven fixed
+non-scoring guard tests also pass with currentPRIMARY Core, no merge.
+
+The whole fixed87replay is CLOSED:48017completed queries/7998701nodes in
+1074.125s allmatch actions/value/actualleaf/gradient/work/fullhistory. Original
+8failed/1299nodes are not nominally rerun or relabeled; no newtraining/game.
+Do not repeat this qualification without a changed premise. Full48017root
+staticsemi-gradient read has nonzero RMS in all8arms; exposed8zeroRoot controls
+are NOT a general blocker or a calibration set. Await owner88fixed evidence.
+
+Actual PRIMARY repair: the old carrier is still current callable source. Real
+Session RESTART/NO_CONTEST have statusdeclaration/winnerNone, so both terminal_z
+and arena halfpoint paths were wrong. Two minimal predicates now reject them
+before bootstrap/TD and through existing non-scoring arena exclusion. Existing
+fields suffice under current four allowed declaration outcomes; no new metadata
+field, format/ID, learner/search/evaluator/default change. Ordinary W/L/D remains.
+59relatedchecks,7clean-source controls and3243normalfull checks pass;
+pre-fix4failures retained.
 
 Existing publicCore supports fractional values/fullhistory/PV in the measured
 scope; no new API or optimization follows. The old trajectory carrier and the
 frozen AUX86 SessionEnv both map actual RESTART/NO_CONTEST declarations0.
 Published87ScoringSessionEnv now rejects these via typedNonScoringTerminal;
 PRIMARY actually ran its7realGameSession controls within32tests. Use the new
-opt-in adapter for that boundary; old carrier/Chess pins remain. This is not
+opt-in adapter for that boundary; old frozen Chess pins remain. Current PRIMARY
+carrier and arena are also repaired as above. This is not
 Generic training/all-domain qualification. No AUX checkout edits here.
 Terminal PV is constant/zero gradient; prior eligibility and search-terminal
 anchors are distinct from the final actual-outcome residual. D0 fallbacks and

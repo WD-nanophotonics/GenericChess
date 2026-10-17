@@ -1,0 +1,21 @@
+{
+  "completed_queries": 48017,
+  "expected_completed_queries": 48017,
+  "failure": null,
+  "matched_fields_sha256": "720f2648a2644a181a2b7bd6338a4324b9132678e4aa00c2706062d1c31b4fdd",
+  "original_failed_queries_skipped": 8,
+  "per_arm": {
+    "(1977, False)": 9622,
+    "(1977, True)": 4240,
+    "(27182, False)": 7105,
+    "(27182, True)": 3196,
+    "(31415, False)": 8102,
+    "(31415, True)": 4086,
+    "(8173, False)": 7801,
+    "(8173, True)": 3865
+  },
+  "reexecuted_nodes": 7998701,
+  "scope": "Read fixed source/weights/complete historical trajectories. Reexecute search only; no TD updates applied, no new training/games/reward selection, no AUX checkout. Same-engine receipt reproduction, not independent rule authority or proof all generated games.",
+  "seconds": 1074.125,
+  "status": "PASS_ALL_COMPLETED_FROZEN_RECEIPTS"
+}
