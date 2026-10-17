@@ -1,8 +1,10 @@
-# DEV_AUX89 — results closed, delivery checkpoints active
+# DEV_AUX closed89 — incremental TD and scoped Generic learning
 
 Direct USER TD/search-bootstrap priority remains. Ownsidemission/PUBLIC;
 PRIMARYreadonly/noAgents/Goals/default/Core/UI changes. Scientific OPEN.
-All5producers CLOSED; session89 remainsactive through review/officialfinish.
+All5producers CLOSED;89ended62.552min/safe_checkpoint/5researchstages.
+Source63b4ce1d fullremote/PUBLIC/26canonicalfilesverified; Slacksent1792223854
+reading/executionunconfirmed. Boundedclosingmetadata only, no afterfinishresearch.
 
 SAMEepisodeTD16vs64/ALL4initials/newTRAIN:12Mnodes1660.18s,920episodes911actual
 terminal9U. All102912queries/reverse-credit/fullrecord auditPASS;8lastsmallpool
