@@ -1,3 +1,52 @@
+# DEV_AUX92 — actual TD/paid-WDL comparison; scienceOPEN/deliverypending
+
+Direct USER TD/search-bootstrap priority. Own sidemission/PUBLIC; PRIMARYreadonly,
+noAgents/Goals/Core/default/UI/Nativeactivation. Session92original11:27:52UTC
+clockactive; ALL originalTRAIN/EVAL/probes/adaptivefollowup andoriginalaudits CLOSED.
+Only reproduction/review/delivery andnext executablememo remain beforeofficialfinish.
+
+SAME6free/plainD2/fixeduniformTRAINfoe/all4exposedrules4initials/200kALLpaidnodes:
+32arms6.4M2051.774s,7218games7046actualterm172U/113660queries. TD3.2M/2490updates,
+WDL3.2M/220paidproposals29accepts84missingtailgames. ALLcredits/fulltypedrecords
+PASS;506realblackcandidate-whitefoefinishers and64UNPRUNEDD2PASS10808nodes.
+TDterms28657:2401nonzerotransitionstosearchedterminalPV; actualendpoint2980terms
+ALLzeroerror(lastpredictionalreadyterminal), NOTmissingterminalanchors/quantityreward.
+
+SharedNEW191001..8 ALL1536actualgames1473term63H128U/0missing/queryfailures.
+TD-WDLuniform[.0078125,.2578125]/random[.02734375,.16015625] positiveFINITEpanel;
+TD-initialbothpositive. Crosseddescriptiveenvelopesinclude0; adverseinitial1977random
+TD-WDL[-.09375,-.03125]/blackrolesunresolved retained. NOTuniversalTDwinner/stableprices.
+Sixunchangedmodels192/192exactfullrecords. Root32/4TRAINoverlaps/1terminal/no filtering.
+
+AdaptiveNEW211001..4 pairedprefix4/5 ALLfrozenmodels1536actualgames1484term52U,
+0missing,1266773nodes385.882s/original900cap; fullhistoryauditPASS/14legalparent-child
+edges2terminalparentsretained. Newprefix5randomfoeTD-WDLcandidate0[.09375,.125]
+butcandidate1[-.0625,-.03125]: first-action-onlyexplanationINSUFFICIENT. Notpurecolor
+causality/signbug/role-contextrootcauseproven. Roots32/30distinct/5TRAINoverlaps/0oldEVAL
+and5terminal; no filtering. Allnegativecellskept. SeparateAFTERoriginalfitnessregistration
+andfullstratificationtiming honest, no capreset/refit. D3TRAINcost4queriesCOMPLETE793nodes
+.274s, feasibilityONLY/notdeeperpricegain. Originalrawmodels unchanged throughout.
+
+NEXT MAIN: diagnose sharedwhitecriticacrosscandidate-role/fixednu contexts, not more
+prover/TC/API. FreshDotrequest GC-SLACK-20261017-212734-fc0e8a4a root1792240080.003109
+sent/bound; INLINE92mathONLY/sourceunpublishedatquestion/no readingexecutionclaim.
+ConsiderNEWpaired-role episodes atIDENTICALtheta andfreshTRAINroots tocomparevalidTD
+deltas/conflict, no deployment; signflipbothgradient/targetcancels/notafix. Dotadvisory,
+notapproval; ifsilentcontinueboundeddiagnostic. BackupGenericTreeStrapone-sided6free
+transfer feasibility orregisteredD3actualWDLdeployment; no oldfitness/humanfit/bestseed.
+
+38relatedcontrolsPASS/8figuresvisuallychecked. Exact37th4ac27199/205payloads
+ACTUALfresh38+11PASS258981logicalplies192.917s; prior36hashesUNCHANGED. Prearchive
+PNGcompressed-bytefalsepositive/v1preserved; actualmetadata+CRC/visualcheckv2PASS,
+no image/datachange. Ownreview/fullremotePublicdelivery stillrequireactualreceipts. Original-rootdiagnosticv1Pythonimportfailureandv2repair/sourcekept;
+pre-executionPowerShellquotingfix hadno dataeffect. OwnheartbeatONLYstaledirection
+updatedofficially/readbackverified, SAME90min/thread/status/otherfields; no PRIMARYedit.
+PRIMARY0ca reportpreviouslyREADhere, its89replication/Nativechecks OWNERREPORTED,
+not92execution/adoption. Recovery/traincheckpoint no newpeerupdates; new92question
+reading/executionunconfirmed. Complete engineering/audit/token costs exceed nodecounts.
+
+## Previous closed91 — historical evidence, not current execution
+
 # DEV_AUX91 — closed61.598minutes/safe_checkpoint; scienceOPEN
 
 DirectUSER TD/search-bootstrap route; own sidemission/PUBLIC, PRIMARYreadonly,

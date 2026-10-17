@@ -1,0 +1,59 @@
+{
+  "audited_prefix_rule": null,
+  "planned_arms": 32,
+  "status": "PASS_ALL_TYPED_HISTORIES_CANDIDATE_ONLY_TD_AND_PAID_STRICT_WDL",
+  "counts": {
+    "prefix_plies": 28156,
+    "training_plies": 113628,
+    "queries": 113660,
+    "foe_queries_excluded_from_TD": 28433,
+    "terminal_PV_observations": 2980,
+    "TD_terms": 28657,
+    "games": 7218,
+    "actual_terminal": 7046,
+    "unknown": 172,
+    "ACTUAL_TERMINAL": 7046,
+    "nodes": 6400000,
+    "observed": 28747,
+    "black_candidate_white_foe_finisher": 506,
+    "failed_queries": 32,
+    "failed_query_nodes": 1502,
+    "full_limit_failed_queries": 0,
+    "SEARCH_RESOURCE_UNKNOWN": 32,
+    "HORIZON_UNKNOWN": 140,
+    "arms": 32,
+    "WDL_proposals": 220,
+    "WDL_accepts": 29,
+    "WDL_missing_proposal_games": 84
+  },
+  "by_method": {
+    "TD": {
+      "queries": 57180,
+      "candidate_queries": 28758,
+      "foe_queries": 28422,
+      "games": 3782,
+      "nodes": 3200000,
+      "actual_terminal": 3692,
+      "unknown": 90
+    },
+    "WDL": {
+      "queries": 56480,
+      "candidate_queries": 28300,
+      "foe_queries": 28180,
+      "games": 3436,
+      "nodes": 3200000,
+      "actual_terminal": 3354,
+      "unknown": 82
+    }
+  },
+  "active_TD_coordinates": [
+    17911,
+    16300,
+    14813,
+    16226,
+    21465,
+    12284
+  ],
+  "audit_seconds": 100.86175859998912,
+  "scope": "Independent reverse future-error convolution/manualgradients/whitez-blackutility, deterministicproposal/rootreconstruction/fullpublichistory. Allcurrent/proposal/foe/failedqueries paid. No independentexternalrulesengine or allquerysearchrerun."
+}

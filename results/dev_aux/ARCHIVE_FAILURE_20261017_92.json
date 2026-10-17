@@ -1,0 +1,18 @@
+{
+  "status": "DIAGNOSED_PREARCHIVE_SCANNER_FALSE_POSITIVE_CORRECTED",
+  "archive_created_on_failed_attempt": false,
+  "failed_module": "task2542/bundle.py V1",
+  "failed_source_sha": "bfa25061852a0f4fb2854402ef68b980aa6d1957f226f822d72cd5de77325766",
+  "image": "results/dev_aux/task2541/weights-271003.png",
+  "image_sha": "058785f7c9c536c22d7bdc408f9bb8080e837535b4aea3170c1f3209eebcbeee",
+  "matches": [
+    {
+      "chunk": "IDAT",
+      "offset": 136467,
+      "matched_hex": "5540432e4b73"
+    }
+  ],
+  "cause": "Plainemailregexmatched6compressedIDATbytes, notactualtext. AllPNGchunkCRCsvalid andall8figuresvisuallyinspected. No image/experimentbyteschanged.",
+  "correction": "ParsePNGactualtEXt/zTXt/iTXt metadata andvalidateallchunkCRCs; rejectunknownmetadata; scanactualtextandvisuallyreviewrenderedlabels. Rawtext/JSON/JSONLchecksremain. SharedsameinspectionforarchiveandGitindex.",
+  "scope": "Owncontentcheckerfalsepositive, notplatformapprovalrejection; no dataredaction/oldcapreset/visibilitychange. PreserveV1anddiagnosis, V2notyetexecuted."
+}

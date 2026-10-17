@@ -2483,3 +2483,41 @@ resultcompletedbeforefinish, nowversionedoutsideimmutable35ZIP. Noafterfinishres
 91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.
 
 91officialclosure61.598minutes/safe_checkpoint/6stages; source03d4a8635bef8d0e203de81eb6335521ba366e36 reviewed/pushed/fullremote/PUBLIC23anonymousfiles+ZIPexact/clean BEFOREfinish. Fixedevidence1792234599.778629 sent/readback; Dot/PRIMARY91readingexecutionunconfirmed. Endingmetadata-onlyversioning follows, no scientificworkafterfinish.
+
+
+## DEV_AUX92 — actual paid-method control and role-dependent adverse finding
+
+DirectUSER TD/search-bootstrap route; own sidemission/PUBLIC/PRIMARYreadonly.
+32SAME6free/D2/fixedfoe arms6.4Mnodes/all4rules4initials; full113660query/history/
+reverseTD/220paidWDLproposal auditPASS,29accepts/84missingtail preserved. TD2490
+nonzeroepisodeupdates; no extrafoe-targetqueries. Original1536validation1473term63U
+complete. TD-WDLfiniteboundsuniform[.0078125,.2578125]/random[.02734375,.16015625],
+butdescriptiveenvelopesinclude0 andnegativeinitial/blackrolecellsremain. Notglobal
+methodwinner/stableprices. All64unprunedD2checked;6unchangedmodels192/192samefullrecords.
+
+Actuallybegan/completednewadaptivefrozenpriceprefix4/5panel1536/1484term52U,
+1266773nodes385.882s. Rootactormeasured; original31liveplayer0roots/1terminal.
+Player0advantagepersistsafterprefix5switchesinitiative; randomfoecandidate1TD-WDL
+[-.0625,-.03125]. Correctfirst-action-onlyinference, no signbug/criticcontextcause
+asserted. Fullrecord/parent-child/unchangedchecksPASS; no oldcap extension/refit.
+NewDottechnicalrequest GC-SLACK-20261017-212734-fc0e8a4a/root1792240080.003109 sent/bound,
+sharedcriticvsrole-specificfixednu contexts/smallestfalsifiablecheck. INLINEdesignonly;
+source92unpublishedatthequestion, notpeerreading/execution. Prior91Dotmathadviceadopted,
+actual506blacksigncasesverifywhiteTDz/blackutility-z. No naive sign-flip repair.
+
+TDterminalanchor timing nowactual:2980endpointtermszeroerrorbecauselastprediction
+alreadyterminal;2401earliernonzeroterminalPVtransitionsprovidecredit. Grosscredit
+beforecancellationnotcausalshare. D3cost4completequeries793nodes.274snotstrength.
+PRIMARY0ca265c711f55514b10ac06638b6934b159a81fc previouslyREAD here only;89execution/
+Nativeprecision OWNERREPORTED, not92adoption/rerun. No newpartnerpostsatreadcheckpoint.
+
+All4serialproducer cost9,600,011listednodes3026.513s excludesCore/replay/engineering/
+relatedtests/fresh/transport/tokens. Ordinaryconcurrency accepted/noquietwindow.
+38controlsPASS/8figureschecked; exact37th/fresh38+11/deliveryactualreceiptsfollow,
+notinferred. OwnheartbeatstaleWDL-onlydirectioncorrectedwithofficialtool/readback;
+SAMEcadence/thread/ACTIVE/otherpolicy. Privateoriginalsretained; no PRIMARYconfigwrite.
+Actualprivate-importdiagnosticfailureandv2repairkept; no producerreset/hiddenblock.
+Fixedrevisionevidencewillbedeliveredafterreview/Publicverification; reading/execution
+remainseparateandunconfirmeduntilactualevidence. ScienceOPEN/currentrolelearningquestion.
+
+92actualreproduction:37thZIP4ac271995a5c61d9ec8303a717dfc0be6be523926107a4c9a25653c79a2d9874/205payloads; prior36hashesunchanged. NEWignoredsourceextraction ACTUAL38tests+11REGENERATEDauditoutputsPASS258981logicalrecordplies192.917s/10808unprunednodes. First-ruleauditcountedagain, notuniquestates/allCorework. Prearchivev1falsepositiveemailregexonPNGcompressedIDAT diagnosedbychunk/CRC/metadata+8visualchecks; exactimage/dataunchanged/v1sourcepreserved/v2PASS. Notplatformapprovaldenial. Sourcepublication/readingexecution requireseparatereceipts.

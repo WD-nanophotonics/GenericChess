@@ -1,0 +1,41 @@
+{
+  "related_controls": 38,
+  "result": "PASS",
+  "actual_command": ".venv/Scripts/python.exe -X utf8 -m pytest -q eightlistedtargets",
+  "targets": [
+    "results/dev_aux/task2492/test_learning.py",
+    "results/dev_aux/task2492/test_episode.py",
+    "results/dev_aux/task2501/test_search.py",
+    "results/dev_aux/task2504/test_bounded.py",
+    "results/dev_aux/task2511/test_generic.py",
+    "results/dev_aux/task2512/test_methods.py",
+    "results/dev_aux/task2517/test_root.py",
+    "results/dev_aux/task2523/test_exposure.py"
+  ],
+  "scope": "Existing learning/search/rule controls, notPRIMARYfullsuite ornewmethodefficiencyproof.",
+  "actual_independent_audits": {
+    "TRAINqueries": 113660,
+    "TRAINfullhistorycredits": "PASS",
+    "paidWDLproposals": 220,
+    "accepted": 29,
+    "unprunedD2": "64/64PASS10808nodes",
+    "EVALgames": 1536,
+    "EVALfullhistoryoutcomes": "PASS",
+    "unchangedmodels": "6arms192/192exactrecords",
+    "adaptive_followup": "1536fullrecords1484terminal52U/192unchangedpairsPASS"
+  },
+  "figures": {
+    "files": [
+      "weights-271001.png",
+      "weights-271002.png",
+      "weights-271003.png",
+      "weights-271004.png",
+      "training-loss.png",
+      "actual-strength.png",
+      "paid-costs.png",
+      "task2544/prefix-role.png"
+    ],
+    "visually_inspected": true,
+    "midpoint_imputation": false
+  }
+}

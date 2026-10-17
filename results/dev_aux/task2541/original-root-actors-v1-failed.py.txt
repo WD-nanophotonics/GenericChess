@@ -1,0 +1,15 @@
+from pathlib import Path
+from collections import Counter
+import json
+from generic_chess.rules.compiler import compile_ruleset
+from generic_chess.rules.schema import ruleset_from_dict
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record
+from results.dev_aux.task2529.training_audit import terminal
+cc={g:compile_ruleset(ruleset_from_dict(json.loads(Path(f'results/dev_aux/task2525/rules-{g}.json').read_text())))for g in range(271001,271005)};seen={};counts=Counter()
+for line in Path('results/dev_aux/task2540/games.jsonl').open():
+ r=json.loads(line);key=r['generator_seed'],r['family']
+ if key in seen:continue
+ s=GameSession.replay(cc[key[0]],deserialize_game_record(json.dumps(r['initial_record'])));z=terminal(s);seen[key]=dict(actor=s.state.position.side_to_move,terminal=z);counts['roots']+=1;counts['ongoing_player'+str(s.state.position.side_to_move)]+=z is None;counts['already_terminal']+=z is not None
+out=dict(status='ACTUAL_ORIGINAL_ROOT_ACTORS_REPLAYED',counts=dict(counts),scope='32uniqueoriginalfullrecords; initiativeassociationrequiresactualactor, notassumingplyparity forarbitraryrules. Terminalrootprovidesnomodelchoice. No newquery orcolorcausalclaim.');Path('results/dev_aux/task2541/original-root-actors.json').write_text(json.dumps(out,indent=2));print(json.dumps(out))
+p=Path('results/dev_aux/TESTS_20261017_92.json');r=json.loads(p.read_text());r['actual_independent_audits']=dict(TRAINqueries=113660,TRAINfullhistorycredits='PASS',paidWDLproposals=220,accepted=29,unprunedD2='64/64PASS10808nodes',EVALgames=1536,EVALfullhistoryoutcomes='PASS',unchangedmodels='6arms192/192exactrecords');r['figures']=dict(files=[f'weights-{g}.png'for g in range(271001,271005)]+['training-loss.png','actual-strength.png','paid-costs.png'],visually_inspected=True,midpoint_imputation=False);p.write_text(json.dumps(r,indent=2))

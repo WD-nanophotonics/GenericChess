@@ -1,0 +1,75 @@
+{
+  "session_id": "a400d78d-ab8e-4dff-883b-82ef9432b183",
+  "generator_seeds": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "arms_order": [
+    [
+      "TD",
+      1977
+    ],
+    [
+      "TD",
+      8173
+    ],
+    [
+      "WDL",
+      27182
+    ],
+    [
+      "WDL",
+      8173
+    ],
+    [
+      "TD",
+      27182
+    ],
+    [
+      "WDL",
+      1977
+    ],
+    [
+      "WDL",
+      31415
+    ],
+    [
+      "TD",
+      31415
+    ]
+  ],
+  "nodes_per_arm": 200000,
+  "cap_seconds": 3600,
+  "max_games": 4096,
+  "max_blocks": 1024,
+  "prefix_plies": 4,
+  "H": 128,
+  "depth": 2,
+  "nodes_per_query": 4096,
+  "seconds_per_query": 2.0,
+  "eta": 0.05,
+  "lam": 0.95,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "training_family_offset": 181000,
+  "ordering_seed_offset": 92539000,
+  "grid_step": 0.25,
+  "pairs_per_proposal": 4,
+  "proposal_order_seed": 925390,
+  "scope": "Operational equal-total-node comparison, not pure information ablation/historical reproduction. All6 raw signed coefficients/scale10. Fixed uniform foe. Candidate-only TD with gamma1/lam.95 per candidate decision; white-oriented targets. WDL paired BOTHroles x4freshfamilies/current+proposal paid, strict positive worst-case utility lower bound, U/missing[-1,1]. Each block uses next4 distinct family IDs (8 role-balanced cells; next block offset4), allowing shared recipe but unequal samples/cost. No fitness selection/human fitting/prover/default changes.",
+  "forecast": "Whole logical study 75-105min from91 actual6.4M TRAIN34min+1536EVAL11min+engineering/audits/fresh/publication; <120min, no prior assessment needed. TRAINcap3600/EVAL1200 are upperbounds, no result-based extension."
+}
