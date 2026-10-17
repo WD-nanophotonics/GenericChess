@@ -1,0 +1,282 @@
+{
+  "status": "RESEARCH_SOURCE_VERIFIED_PUBLIC_BEFORE_OFFICIAL_FINISH",
+  "source_sha": "3f9afcc3f5d5cca722eda64c305d542a5b168203",
+  "branch": "sidemission",
+  "repository_public": true,
+  "visibility_mutation": false,
+  "session": {
+    "id": "4ea1db7d-c267-4a75-9edd-85a1339588d5",
+    "started_at": "2026-10-17T05:21:45.600860+00:00",
+    "ended_at": "2026-10-17T06:37:47.298584+00:00",
+    "elapsed_minutes": 76.028,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 7,
+    "duration_gate_passed": true
+  },
+  "science": "OPEN; incrementallearnabilityscopedpositive, stableprices/fullGeneric/generalmethodwinner/equalcostgridcomparisonunresolved",
+  "all_producers_closed": true,
+  "studies": {
+    "training_arms": 16,
+    "training_nodes": 12000000,
+    "training_episodes": 711,
+    "training_terminal": 692,
+    "training_unknown": 19,
+    "failed_training_queries": 16,
+    "failed_training_nodes": 1706,
+    "calibration_rows": 128,
+    "calibration_nodes": 28510,
+    "evaluation_games": 960,
+    "evaluation_terminal": 952,
+    "evaluation_unknown": 8,
+    "evaluation_missing": 0,
+    "failed_evaluation_queries": 0,
+    "legal_plies": 281024
+  },
+  "recorded_cost": {
+    "status": "RECORDED_PRODUCER_COST_ONLY",
+    "producers": [
+      {
+        "producer": "A_TRAIN",
+        "path": "task2512/result.json",
+        "nodes": 8000000,
+        "seconds": 1070.1427599000162
+      },
+      {
+        "producer": "A_endpoint",
+        "path": "task2513/endpoint/result.json",
+        "nodes": 5498727,
+        "seconds": 734.1131273999927
+      },
+      {
+        "producer": "A_midpoint",
+        "path": "task2513/midpoint/result.json",
+        "nodes": 3062431,
+        "seconds": 419.47124710000935
+      },
+      {
+        "producer": "A_different_foe",
+        "path": "task2516/different_foe/result.json",
+        "nodes": 3374211,
+        "seconds": 465.28959530001157
+      },
+      {
+        "producer": "B_initial_calibration",
+        "path": "task2517/result.json",
+        "nodes": 28510,
+        "seconds": 4.948237000004156
+      },
+      {
+        "producer": "B_TRAIN",
+        "path": "task2518/result.json",
+        "nodes": 4000000,
+        "seconds": 532.3368921000219
+      },
+      {
+        "producer": "B_endpoint",
+        "path": "task2519/root_control/result.json",
+        "nodes": 2957972,
+        "seconds": 389.2035723000008
+      }
+    ],
+    "total_nodes": 26921851,
+    "total_seconds": 3615.5054311000567,
+    "scope": "Actualclosedproducerwalltimes includingtheirlogging/update/setup but notcompleteengineering/tokencost; no nestedarmdoublecounting oralllifetimeresearchclaim. Sessionactualelapsed separatelyrecordsengineering/overlap/checkpoints. Audits/test/publication are checkpoints, notnewtraining. No equal-total-cost grid/Elo superiority claim."
+  },
+  "tests": {
+    "status": "PASS",
+    "tests": 36,
+    "scope": "Relevantlearning/search/fullSessionguards/mathcontrols; freshv2combined36PASS, notPRIMARY3243/59/7/104tiers."
+  },
+  "fresh": {
+    "status": "PASS_FRESH_EXACT_SOURCE_TESTS_ALL_UPDATES_AND_ACTUAL_GAME_RECORDS",
+    "archive": "DELTA_REPRO_20261017_88.zip",
+    "archive_sha": "1375cf3eb50a2818407791cfb32bb0d142daa1b77e7abaf0c36c8bbcfcf88717",
+    "payloads": 197,
+    "additional_fixture": {
+      "path": "results/dev_aux/task2505/queries.jsonl",
+      "sha256": "6c49693f460e34abee981654e038f18583b7216d1ce7a88a31a55ac019a95aba",
+      "source_archive": "DELTA_REPRO_20261017_87.zip",
+      "source_archive_sha": "5b1d8af5ddf32ab2d14ef2e81ffafb13a3ef8bf941be81ff68117289566678bf"
+    },
+    "dispatcher": "results/dev_aux/task2515/fresh_v2.py",
+    "dispatcher_sha": "36c21d3079070c13cb73f592aac756c944a1ed8cc705ac33f55ead9794e96840",
+    "tests": 36,
+    "legal_plies": 281024,
+    "seconds": 37.43186069998774,
+    "scope": "FreshignoredUUID/Python-S/emptyPYTHONPATH/extractedsourceasserted, correctedv2dispatcher+oneexact87testfixturedependency; original88ZIP/v1failurepreserved, explicitexistingchess+pytestdeps. Sealedderivedoutputsparkedbeforecompute; independentlycodedallTree/Rootgradients/forwardTD/calibration/allactualrecord/queryaudits regeneratedandequalexceptauditwalltime. No newproducer/training/fitness/alloldconsumerrerun/externalengine."
+  },
+  "archives": 33,
+  "immutable_archive_sha": "1375cf3eb50a2818407791cfb32bb0d142daa1b77e7abaf0c36c8bbcfcf88717",
+  "source_delivery": {
+    "status": "VERIFIED_FULL_REMOTE_SHA_ANONYMOUS_PUBLIC_EXACT_FILES",
+    "phase": "source",
+    "remote_sha": "3f9afcc3f5d5cca722eda64c305d542a5b168203",
+    "local_sha": "3f9afcc3f5d5cca722eda64c305d542a5b168203",
+    "public": true,
+    "anonymous_repo_api_status": 200,
+    "files": [
+      {
+        "path": "results/dev_aux/SEGMENT_20261017_88.md",
+        "status": 200,
+        "sha256": "878a6b9bc59c7de63287dad58f3eed36e27634b9edfd8e1af7c0678828c72e83",
+        "bytes": 20482
+      },
+      {
+        "path": "results/dev_aux/METHOD_20261017_88.md",
+        "status": 200,
+        "sha256": "8ff8d4aa248da316cf26e0d731e638c9dca635ba3ddd17e0cbbaa9758fbea187",
+        "bytes": 5065
+      },
+      {
+        "path": "results/dev_aux/task2512/result.json",
+        "status": 200,
+        "sha256": "859a8e26ad64d9e28765d9af9d4dee0309cae3ccbc3eaebc23098d9157f234f3",
+        "bytes": 136873
+      },
+      {
+        "path": "results/dev_aux/task2513/endpoint/result.json",
+        "status": 200,
+        "sha256": "c7f436eedff4b655217d496a802bfa58bf2c1e6ea1f8aeca7553b27fde890bd7",
+        "bytes": 2248
+      },
+      {
+        "path": "results/dev_aux/task2513/midpoint/result.json",
+        "status": 200,
+        "sha256": "b1f58875ce585d77b2fa4c3dbb1ba1ef94c6aa711ac4710b3383a18de1f0be5b",
+        "bytes": 2244
+      },
+      {
+        "path": "results/dev_aux/task2516/different_foe/result.json",
+        "status": 200,
+        "sha256": "57c0836658eba28d50179330b0bc5f9049c0cb0a48a513e2cd3a181b8e624df5",
+        "bytes": 2344
+      },
+      {
+        "path": "results/dev_aux/task2517/calibrate.py",
+        "status": 200,
+        "sha256": "57eca384a64fae786c890b406b1fef33d930c13ab1aa38e511a82c466fe4318b",
+        "bytes": 4188
+      },
+      {
+        "path": "results/dev_aux/task2517/result.json",
+        "status": 200,
+        "sha256": "98d49467e632e7c1a942c6a45cf99f1e099404a45a7f8c41a2d1de4be18df33e",
+        "bytes": 1332
+      },
+      {
+        "path": "results/dev_aux/task2518/result.json",
+        "status": 200,
+        "sha256": "3096500d3a3abea306f8a2467cf729e78d074fa0fff9c0b94de23d3e7e849f1e",
+        "bytes": 80704
+      },
+      {
+        "path": "results/dev_aux/task2519/root_control/result.json",
+        "status": 200,
+        "sha256": "854e3534f4bb5bda66eeb99f07ca48942186e0aca1db672b6548587e74c2a857",
+        "bytes": 2482
+      },
+      {
+        "path": "results/dev_aux/task2520/training-audit.json",
+        "status": 200,
+        "sha256": "f86996af76857145ac20386cdfdedff4f4774f150141bf16234e13869ff7711b",
+        "bytes": 104060
+      },
+      {
+        "path": "results/dev_aux/task2520/root_control-audit.json",
+        "status": 200,
+        "sha256": "dcaa0f0c24928f28bb1b41062347374dd9ae1ff6a64bc057ee7dc7a3b5640b47",
+        "bytes": 13723
+      },
+      {
+        "path": "results/dev_aux/task2515/fresh-receipt.json",
+        "status": 200,
+        "sha256": "e7987afd3fe2d7cce39983a9903cca04eb79ff7e6ecd270984fddaea93eb45b8",
+        "bytes": 1204
+      },
+      {
+        "path": "results/dev_aux/COST_20261017_88.json",
+        "status": 200,
+        "sha256": "82da7a5af7ad6da4fc9504f7409446e408201264d224ff7e655c2296679b4cfa",
+        "bytes": 1531
+      },
+      {
+        "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_88.json",
+        "status": 200,
+        "sha256": "c493b5aeb2618eb4fd6f3d46e6ddfd8f2d963ae85a334e653905138f748d5d6b",
+        "bytes": 3851
+      },
+      {
+        "path": "docs/research/LOCAL_MAINLINE.md",
+        "status": 200,
+        "sha256": "fdb95e48a71e37ec2dc92af0d5d643165f5ded96d6fb8797a52073eef0a24178",
+        "bytes": 43754
+      },
+      {
+        "path": "AGENTS.md",
+        "status": 200,
+        "sha256": "56b5457d497d570ec74ae96f025f1a76967c03e8c09256573681897e52419e6c",
+        "bytes": 24892
+      },
+      {
+        "path": "results/dev_aux/DELTA_REPRO_20261017_88.zip",
+        "status": 200,
+        "sha256": "1375cf3eb50a2818407791cfb32bb0d142daa1b77e7abaf0c36c8bbcfcf88717",
+        "bytes": 18295913
+      },
+      {
+        "path": "results/dev_aux/task2515/fresh_v2.py",
+        "status": 200,
+        "sha256": "36c21d3079070c13cb73f592aac756c944a1ed8cc705ac33f55ead9794e96840",
+        "bytes": 5562
+      },
+      {
+        "path": "results/dev_aux/task2515/README.md",
+        "status": 200,
+        "sha256": "8ebbbdf471dca66742bfb75fad3b62419047a18ce5f6af80269924c1586e4ab9",
+        "bytes": 1574
+      },
+      {
+        "path": "results/dev_aux/FRESH_TRANSPORT_FIX_20261017_88.json",
+        "status": 200,
+        "sha256": "bc2898167793e74802f81eb73ab3c9d9c5e4554510e1f91e775a5ef11ab5700d",
+        "bytes": 2295
+      },
+      {
+        "path": "results/dev_aux/LATE_ADVISOR_20261017_88.json",
+        "status": 200,
+        "sha256": "6ed1ed07ec50c49a0f3c5b17d717dbfd1792a49b99633d86f3dd9c934e02fd67",
+        "bytes": 1417
+      },
+      {
+        "path": "docs/operations/COLLABORATION_LOG.md",
+        "status": 200,
+        "sha256": "f91b055b971d5b9a9b2291bbe7ab861e39d04c1af8742eec6ac9b34b15627913",
+        "bytes": 233540
+      }
+    ],
+    "clean": true,
+    "observed_at": "2026-10-17T06:35:07.844121+00:00",
+    "postseal_extra_checks_at": "2026-10-17T06:35:52.164263+00:00"
+  },
+  "slack": {
+    "message_ts": "1792218997.204899",
+    "thread_ts": "1792214684.150599",
+    "followup_id": "DEV_AUX-88-TD-TREE-ROOT-3f9afcc3",
+    "payload_sha": "3f622d320f61c40ffbde33432c814bc8782eee67cea3da64c948c26a1be79689",
+    "accepted": true,
+    "readback": "Verifiedroot/ts/followup/fullsourceSHA/technicalmarkers; rawexactprivate",
+    "Dot_reading_execution": "UNCONFIRMED",
+    "PRIMARY_88_reading_execution": "UNCONFIRMED"
+  },
+  "limits": [
+    "All16traininglastpool failures+3H512censors retained; no fake draw/restart/capextension.",
+    "960actualreturnedvalidationgames include8H512UNKNOWN, no missing/failure-label imputation.",
+    "InitialRoot/TreeRMSmatchinglaterdrifts1.50-1.70xRoot; no pureinformation/equivalence/stablepriceclaim.",
+    "Freshv1 35PASS/1missinginheritedDATAfixture preserved; correctedGitv2+oneSHA-pinned87fixture all36andregeneratedauditsPASS. Original197payloadZIPunchanged; v2dependency explicit.",
+    "DirectGitLF/EOFprojection; exactexecutedbytepinsinrawZIP. Postseallatecollaboration/transport/live-report corrections versioned, no scientificdatamutation.",
+    "PRIMARY629fixednewsectionsREAD only here; its full87query/ownedCorefix testsowner-reported, no automaticmerge ornewCoreAPI."
+  ],
+  "no_new_research_after_finish": true,
+  "closing_publication": "ThisJSON is bounded closingmetadata afterofficialfinish. Its containingGitcommit is separatelyremote+anonymousverified; no selfreferentialfinalSHA claim.",
+  "observed_at": "2026-10-17T06:38:36.129341+00:00"
+}
