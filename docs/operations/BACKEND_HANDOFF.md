@@ -623,3 +623,17 @@ builds its own Native and retains192controls; no normalbinary/product/default/
 model/anothercheckout change. Large7040game study is explicitly a commonNative
 served-candidate regime, not reproducedCorefloatfitness. Exact source/limits:
 research/MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md.
+
+
+## 2026-10-17 fixed/probe score-band repair
+
+Rebuild before using semantic fixed/probe wrappers: the new capability is
+`semantic_fixed_depth_terminal_dominance`. These compatibility entries now score
+rule wins/losses at +/-100,000,000, outside unchanged static saturation90,000,000;
+older +/-1,000,000 terminals could lose to an accepted large material profile.
+No mate-distance adjustment is introduced here. Iterative/persistent production
+scores, result fields, full history and ordinary profile clipping are unchanged.
+Current wrappers explicitly refuse missing capability; use the existing production
+entry or Core until rebuilt. See PROBE_TERMINAL_SCORE_BAND_20261017.md for actual
+before/after and real separately bound old-kernel evidence.70affected checks and
+full3284 active regressions pass, with the former included in the latter.

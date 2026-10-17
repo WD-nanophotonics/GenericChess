@@ -53,6 +53,16 @@ include0 underUnit and are positive underrandom99031; retain protocol difference
 
 ## Serving choice and current semantic boundaries
 
+The compatibility fixed/probe source-scale hypothesis was actually reproduced:
+accepted rook1M chooses ordinary2M over mate1M. The narrow terminal100M fix keeps
+ordinary90M saturation and explicitly refuses stale kernels; full3284 active
+checks pass. Production iterative was already correct and prior frozen fitness
+is not rerun. See PROBE_TERMINAL_SCORE_BAND_20261017.md. A new registered
+movement-only zero-shot consumer comparison has begun: all12 ordered A-movement
+recombinations plus4identity controls, all48unchanged91 source tables, no fitting
+or AUX writes. Its full Core/source qualification is still in progress; no
+population-transfer/default winner is inferred from preliminary outcomes.
+
 Existing standard checkpoint/Native APIs preserve signed/zero board-P; no new
 schema is needed for that scope. New64 actual91 initial/midpoint inputs AND128
 endpoint inputs preserve their own source-floating and quantized Core D2 optima.

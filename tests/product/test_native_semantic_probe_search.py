@@ -57,7 +57,7 @@ def _python_probe(semantic, position, native_rules, depth, board_values=None, ha
         nonlocal nodes
         terminal = engine.terminal_result(state, ply, ())
         if terminal.status is TerminalStatus.CHECKMATE:
-            return -1_000_000, ()
+            return -100_000_000, ()
         if terminal.status is not TerminalStatus.ONGOING:
             return 0, ()
         if remaining == 0:

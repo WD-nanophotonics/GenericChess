@@ -73,7 +73,7 @@ def test_native_semantic_randomized_multi_fixture_closure():
                 if terminal.status is TerminalStatus.ONGOING:
                     assert native_probe["has_best"] == int(bool(native_actions)), f"{name} seed={seed} ply={ply} terminal"
                 elif terminal.status is TerminalStatus.CHECKMATE:
-                    assert native_probe["has_best"] == 0 and native_probe["score"] == -1_000_000, f"{name} seed={seed} ply={ply} checkmate"
+                    assert native_probe["has_best"] == 0 and native_probe["score"] == -100_000_000, f"{name} seed={seed} ply={ply} checkmate"
                 else:
                     assert native_probe["has_best"] == 0 and native_probe["score"] == 0, f"{name} seed={seed} ply={ply} terminal={terminal.status}"
                 if not python_actions:

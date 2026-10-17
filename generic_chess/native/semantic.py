@@ -392,6 +392,13 @@ def _run_search(native_rules, position, depth: int, *, board_values=None, hand_v
             "Native fixed/probe search does not score continuous-check winners; "
             "use semantic iterative search or Core"
         )
+    if not _backend(native_rules).native_capabilities().get(
+            "semantic_fixed_depth_terminal_dominance", False):
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native fixed/probe terminal score band requires a rebuilt kernel; "
+            "use semantic iterative search or Core"
+        )
     args = (native_rules.capsule, position, int(depth))
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
@@ -426,6 +433,11 @@ def fixed_depth_search(native_rules, position, depth: int, *, board_values=None,
     applied to each piece's current type and hand values to held base types,
     with the side-to-move perspective determining the sign.  Omitting both
     profiles retains the deterministic ``type_index + 1`` fallback.
+    Ordinary scores retain the existing +/-90,000,000 saturation. Rule wins
+    and losses score +/-100,000,000, strictly beyond that band; this corrects
+    older kernels whose +/-1,000,000 terminals could lose to accepted profiles.
+    These compatibility scores have no mate-distance adjustment. Iterative
+    and persistent search keep their existing root-relative mate scores.
     """
     return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_fixed_depth_search")
 

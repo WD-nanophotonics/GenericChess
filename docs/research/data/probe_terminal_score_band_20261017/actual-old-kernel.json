@@ -1,0 +1,47 @@
+{
+  "capability_old": null,
+  "cases": [
+    {
+      "entry": "fixed",
+      "message": "Native fixed/probe terminal score band requires a rebuilt kernel; use semantic iterative search or Core",
+      "result": "EXPLICIT_UNSUPPORTED"
+    },
+    {
+      "entry": "probe",
+      "message": "Native fixed/probe terminal score band requires a rebuilt kernel; use semantic iterative search or Core",
+      "result": "EXPLICIT_UNSUPPORTED"
+    },
+    {
+      "depth": 2,
+      "entry": "iterative",
+      "old_new_equal_fields": {
+        "best_action": 360675762887401760,
+        "completed_depth": 2,
+        "nodes": 74,
+        "principal_variation": [
+          360675762887401760
+        ],
+        "score": 99999999
+      },
+      "rook_value": 1
+    },
+    {
+      "depth": 2,
+      "entry": "iterative",
+      "old_new_equal_fields": {
+        "best_action": 360675762887401760,
+        "completed_depth": 2,
+        "nodes": 74,
+        "principal_variation": [
+          360675762887401760
+        ],
+        "score": 99999999
+      },
+      "rook_value": 1000000
+    }
+  ],
+  "old_binary_sha256": "264284b8c3b9bcbf1b4356835c849e6af62dfafae96fb61a768d96a9e5f1efb0",
+  "old_source_sha256": "8bbfee0c9aae7e83a397806e7b55bf06d9c8d33673de16b2e2e1e68498ece37f",
+  "scope": "Real prior sealed source binary, its own capsules; two stale wrapper calls refused. Four D2 production calls preserve exact score/action/PV/nodes/completeddepth across binaries. Limitedfixturecontrol, not all-domain/performanceequivalence.",
+  "status": "PASS_ACTUAL_SEPARATELY_BOUND_PRE_FIX_BINARY"
+}

@@ -4167,3 +4167,19 @@ stop/training/fitness change. Verifiedstage sum625.055s distinctfromwall/enginee
 MAINLINE43KB reducedto8KB withfixedPUBLICda1predecessor preservingcausalhistory;
 no newpolicyindex/authority orlostsourceevidence. Fullreport/data/source capsule:
 MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md. ScienceOPEN.
+
+
+## PRIMARY 2026-10-17 — compatibility terminal range
+
+PRIMARY actually reproduced the six-input accepted-profile counterexample,
+repaired only semantic fixed/probe terminal magnitude, rebuilt and passed70
+related checks plus full3284 active tests. Actual pre-fix separately bound binary
+is refused; two production D2 profiles preserve score/action/PV/nodes/depth across
+binaries. Old7040 production fitness stays frozen; no general equivalence claim.
+AUX92 request1792240080.003109 and complete Dot reply were read as INLINE math,
+not92source/execution. Adopt the distinction between role/distribution effects
+and causal update conflict; no naive extra sign flip, role-feature requirement,
+selfplay rewrite or competing learner follows. Current AUX91 published source
+remains the sole actual transferred model bank. PRIMARY independently began a
+registered movement-recombination consumer comparison; AUX checkout/work untouched.
+Specific evidence: PROBE_TERMINAL_SCORE_BAND_20261017.md. No routine reply gate.

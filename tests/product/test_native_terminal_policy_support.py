@@ -104,7 +104,7 @@ def test_same_physical_stalemate_policy_and_repetition_precedence(policy, winner
     assert terminal_status(native, packed) == {"status": "stalemate", "winner": winner}
     for entry in (fixed_depth_search, probe_search):
         result = entry(native, packed, 2)
-        assert result["score"] == (0 if winner is None else -1000000)
+        assert result["score"] == (0 if winner is None else -100000000)
         assert result["best_action"] is None
     for entry in (semantic_iterative_search, root_parallel_search):
         result = entry(native, packed, 2)
@@ -202,7 +202,7 @@ def test_fixed_reference_preserves_legally_replayed_continuous_winner(entry, che
     result = entry(terminal.native, terminal.position, 2,
                    board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
     assert ended.initial.terminal_status.winner == 1-checker
-    assert result['score'] == -1000000 and result['best_action'] is None
+    assert result['score'] == -100000000 and result['best_action'] is None
     assert result['nodes'] == 1
     assert snapshot(terminal.native, terminal.position) == before
 
@@ -217,7 +217,7 @@ def test_fixed_reference_preserves_legally_replayed_continuous_winner(entry, che
         child = apply_action(core.initial, actions[label], compiled)
         status = child.terminal_status
         expected = (0 if status.winner is None else
-                    (1000000 if status.winner == core.initial.position.side_to_move else -1000000)) if status.is_terminal else -core.material.evaluate(child)
+                    (100000000 if status.winner == core.initial.position.side_to_move else -100000000)) if status.is_terminal else -core.material.evaluate(child)
         observed = entry(board.native, make_checked(board.native, board.position, raw), 0,
                          board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
         assert -observed['score'] == expected
@@ -225,7 +225,7 @@ def test_fixed_reference_preserves_legally_replayed_continuous_winner(entry, che
     result = entry(board.native, board.position, 1,
                    board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
     best = max(values.values())
-    assert best == 1000000 and result['score'] == best
+    assert best == 100000000 and result['score'] == best
     assert result['best_action'] == min(raw for raw, score in values.items() if score == best)
     assert snapshot(board.native, board.position) == before
     assert core.restored() and board.restored()

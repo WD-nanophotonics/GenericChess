@@ -403,6 +403,9 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "semantic_fixed_depth_terminal_winners", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_fixed_depth_terminal_dominance", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "repetition_context_hash", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -3938,6 +3941,9 @@ static PyObject *gc_semantic_u64_tuple(const uint64_t *values, size_t count) {
 
 #define GC_SEMANTIC_PROBE_INF 1000000000
 #define GC_SEMANTIC_STATIC_LIMIT 90000000
+/* Strictly outside every clipped static score, including accepted large profiles.
+ * Compatibility fixed/probe scores have no mate-distance adjustment. */
+#define GC_SEMANTIC_PROBE_TERMINAL 100000000
 /* Internal failure lies outside clipped scores and is checked before negation. */
 #define GC_SEMANTIC_EVAL_ERROR INT_MIN
 
@@ -4522,7 +4528,8 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
     }
     if (terminal != 0) {
         result.score = winner < 0 ? 0 :
-            (winner == position->side_to_move ? 1000000 : -1000000);
+            (winner == position->side_to_move ? GC_SEMANTIC_PROBE_TERMINAL :
+                                                  -GC_SEMANTIC_PROBE_TERMINAL);
         return result;
     }
     if (depth == 0) return result;
