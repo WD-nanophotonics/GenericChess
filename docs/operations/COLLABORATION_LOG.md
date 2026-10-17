@@ -3829,3 +3829,9 @@ Exposure correction receipt1792211117.524309 informs AUX87 that90013-90020are
 now observed through PRIMARY86fixedpolicy work; preserve any existing registration,
 record shared exposure, no silent seed changes. Delivery only, no adoption claimed.
 Fresh PUBLIC-capsule/source restoration passes13tests and64old/128newrecord audits.
+
+Signal follow-on retains5299actual targets/gradients:35final residuals0, while
+33search-terminal entries and1444ordinary bootstrap terms carry nonzero updates.
+Independent forward arithmetic again matches37updates; this is attribution, not
+causal ablation. Original and supplemented source closures distinguish true draws,
+zero new terminal gradients and retained prior credit. No extra learner/training.

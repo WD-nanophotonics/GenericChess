@@ -175,3 +175,32 @@ access. Neither is silently promoted to a verified experimental recipe.
 No source/learning/default/API change is adopted from these observations.
 Further learner and adapter changes remain in AUX's lane. Fixed-SHA summaries
 are sent without routine acknowledgement or publication approval requirements.
+
+## What actually supplies learning signal
+
+A SECOND diagnostic replay saved the5299actual returned target/leaf-gradient
+receipts, without new training or games (76.89s, separate180s analysis cap).
+An independent receipt-only forward sum again matches all37updates to2.22e-16.
+Both terminal wins/losses AND actual draws have constant target/zero new gradient.
+The first audit mistakenly assumed every terminal was decisive; its failed source
+is preserved and corrected, with no learner/source change.
+
+Across both initializations, the35final actual-outcome residuals are all0. Yet
+33earlier transitions into a search-terminal anchor and1444ordinary bootstrap
+terms have nonzero update impulses (threshold1e-15). Raw per-term L1 impulse
+sums are51.8281 for anchor entries and365.8001 for ordinary bootstrap; these are
+not absolute net updates. The signed partitions reconstruct each final weight.
+This explains how dense intermediate estimates and earlier rule-terminal anchors
+supply signal even when the last residual adds nothing. It is descriptive credit
+attribution, not a causal ablation or proof that actual outcomes are dispensable.
+Preserve eligibility when the current terminal gradient becomes0; qtraining still
+needs the gradient from the actual returned leaf, not a nominal depth cutoff.
+
+The [signal supplement](../archive/learning_route_core_support_20261017/signal-manifest.json)
+retains actual receipts/source and its own CRC/hash/source-restoration evidence.
+It also adds complete serialized rules and an executable producer for the two
+already reported RESTART/NO_CONTEST adapter cases. Both match their earlier
+fingerprints and reproduce against the fixed-source export. An initial producer
+used a nonexistent compiled fingerprint field; corrected to the actual Position
+field, with failed source retained. No new defect, adapter patch or training
+framework is implied by closing that evidence omission.

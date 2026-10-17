@@ -24,6 +24,9 @@ learned-price result, not generic transfer, human ratios or universal strength.
 PRIMARY subsequently reproduced5299recorded frozen searches/actions/nodecounts
 and independently computed37episode forward TD updates (maxerror2.22e-16). This
 is same-source receipt reproduction, not new training/independent rule authority.
+A second diagnostic retainsactual5299targets/gradients:35finalresiduals0, but
+33earlierterminal-anchor entries and1444ordinarybootstrapterms produce updates.
+This supports existing credit/actual-leaf contracts, not causal qbenefit or newAPI.
 
 The fresh128slot fixed-policy D2/D3 study is CLOSED in265.86s, no cap extension.
 D2has64actualterminals and gains.0625/.75 on new90013-90020prefixes; the first

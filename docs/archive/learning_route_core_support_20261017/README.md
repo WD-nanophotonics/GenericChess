@@ -32,3 +32,10 @@ Manifest records both original and publication-copy hashes, plus ZIPCRC verified
 Only publication copies sanitize local home/project paths and machine identity.
 Private raw Slack/account originals and copyrighted papers are excluded. Source
 URLs and concise own findings remain in the report; no paper text is distributed.
+
+The immutable signal-mechanism.zip supplement adds actual5299TDleaf receipts,
+independent receipt arithmetic, credit partitions and complete non-scoring
+reproducer rules. Extract after evidence.zip. signal-qualification.json records
+receipt-only audit and2actual counterexamples on the fresh source export. No
+training/search arena is rerun by those restoration checks. Failed verifier
+sources are retained separately; neither was a product/learner defect.
