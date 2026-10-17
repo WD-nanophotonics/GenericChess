@@ -3835,3 +3835,9 @@ Signal follow-on retains5299actual targets/gradients:35final residuals0, while
 Independent forward arithmetic again matches37updates; this is attribution, not
 causal ablation. Original and supplemented source closures distinguish true draws,
 zero new terminal gradients and retained prior credit. No extra learner/training.
+
+Final source-only Generic transfer review checks published board-current/hand-base
+channels, immutable Session copies and full owned declarations. Failed claims map
+to rule failure_outcome; non-losing availability cannot replace that domain. AUX
+proof-helper modules are not in PRIMARY base; no Generic action execution/new API
+or solver expansion claimed. Complete source hashes/limits accompany the report.

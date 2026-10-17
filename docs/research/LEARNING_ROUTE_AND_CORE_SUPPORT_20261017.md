@@ -204,3 +204,14 @@ fingerprints and reproduce against the fixed-source export. An initial producer
 used a nonexistent compiled fingerprint field; corrected to the actual Position
 field, with failed source retained. No new defect, adapter patch or training
 framework is implied by closing that evidence omission.
+
+A final source-only transfer check keeps an important semantic distinction:
+AUX's declaration enumerator includes owned LOSS outcomes deliberately. A failed
+condition yields the rule's failure_outcome; it is not inherently an illegal
+choice. Core available_declarations filters non-losing claims, so substituting
+it would change the action domain. Board-current/hand-base channels and immutable
+Session state/history copies show no new Core API requirement. Full Generic
+actions also depend on AUX's published proof-helper modules absent from the
+PRIMARY96b96checkout; only the terminal method was executed here. The fixed
+source hashes and review limits are in data/generic_adapter_source_scope_20261017.json.
+No solver run, new adapter, hidden state truncation or alias defect is claimed.
