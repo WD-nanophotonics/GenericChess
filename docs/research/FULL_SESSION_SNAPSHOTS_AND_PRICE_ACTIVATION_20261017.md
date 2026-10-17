@@ -132,3 +132,106 @@ and consequential, then choose one actual deployment/representation question.
 No unchanged Chess grid, whole old87replay, automatic64prefix, proof gate or second
 learner. The new low-rank witnesses and activation precision are support findings,
 not a replacement for the current rule-price learning direction.
+
+
+## Actual portable candidates and TD-ready whole-stream follow-on
+
+The next concrete consumer step is executed, not just planned. The public
+[data/aux89_native_candidates_20261017](data/aux89_native_candidates_20261017/README.md)
+packet contains16standard checkpoints: all eight source initials and eight learned
+endpoints, four exact rules and16canonical complete semantic GameRecords. Source
+coefficients are unchanged, per-rule channels separate and precision256 explicit.
+Existing from_dict/Session/Native APIs load them without AUX imports. Normal and
+restored-Python-source/explicit-existing-Native runs each execute32actual D2calls
+with matching IDs, full state/history, legal choices and scores. Generation1 is
+an endpoint CONVERSION, not an invented optimizer step; no full optimizer lineage,
+resume guarantee, default/UI change or champion promotion is asserted.
+
+A separately frozen16game compatibility smoke uses ALL eight learned models in
+both roles versus Unit, fresh initial positions, q0/TT0/D2/8192nodes/2seconds,
+H64 and300seconds aggregate cap. All16return in1.656seconds:14actualterminal/
+2H64UNKNOWN,468actual queries ALLcompleteD2/no fallback,90743nodes,60drops/
+5promotions. All final complete records/states/witnesses replay identically.
+There is NO initial-model comparator, selected seed or strength/gain estimate.
+TwoUNKNOWN remain unknown; these four rules were already TRAIN-exposed.
+
+### Correction to the small timing pilot
+
+A32pair exposed-root pilot gave Native search caller.04765seconds versus
+published AUX search1.15086seconds, but20/32Native leaves were terminal and the
+stopwatch omitted the additional material leaf/gradient extraction. That number
+is retained as an imperfect pilot, not advertised as representative training
+speed. This changed premise justified a new separately registered full-query
+consumer study, without extending the old cap or original failed training query.
+
+ALL657actual Generic TRAINquery roots, in original stream order and per-query
+weights, are now run with BOTH backends on CURRENT PRIMARY Core/semantic state,
+identical quantized256 coefficients and newly frozen D2/8192node/2second limits.
+Published AUX Model/ScoringSessionEnv/TrainingSearch and action-choice wrappers
+are pinned dependencies; no AUX checkout edits, solver calls or learner swap.
+Native TD-ready timing includes engine construction, full root packing, checked
+PV, existing result3, private Sessioncopy/PV submit, boardCURRENT/handBASE features,
+terminal constants and own gradient. AUX timing includes its Env/Model/search/
+gradient. Shared source-stream translation, stop/log overhead and one-time rule
+compilation stay in aggregate time. Normal concurrent load remains a limitation.
+
+All657pairs complete in44.188seconds. TD-ready caller totals Native2.12290 versus
+published-search40.14239seconds (18.909ratio); nonterminal portions1.99543 and
+38.66126seconds. Nodes181648versus59853 have DIFFERENT counting/traversal/order
+semantics; this is not equal-work superiority or a full training speed forecast.
+All657root values match under their declared quantization and terminal encoding.
+Native44terminal/613ordinary leaves versus AUX43/614: oneNative chooses a lawful
+terminaldraw where AUX chooses an ordinary all-zero-feature leaf. Both prediction
+and own gradient are zero. All657quantized own gradients match. Root actions
+still differ in209cases, so matching frozen-root targets is not online-policy
+identity.202of656actually committed original source actions also differ after
+physical matching in this one-binding-per-edge scope.
+
+Original float coefficients were then evaluated on each actual Native-selected
+leaf, rather than silently treating an integer root score as its differentiable
+float prediction. ALL656source-complete queries retain exactly the original
+floating predictions and gradients in this closed stream. This is actual
+fixed-root evidence, not a guarantee for newly reached trajectories. The one
+original failed thin-pool query remains absent from that comparison; our newly
+larger diagnostic budget does not create its old training target or game result.
+Two zero-query terminal-prefix episodes have no query roots and are outside the
+657query timing study. Their six prefix edges are not concealed as timed work:
+30query-bearing episodes translate776logical edges; full original32episodes
+remain in the earlier229977-ply owner reproduction.
+
+Decision: the existing Native path is a worthwhile OPTIONAL next accelerator
+trial for the owner after its current frozen curve, with real leaf/precision/
+policy/cost boundaries, not a new PRIMARY learner. Do not replace an active AUX
+run, claim identical future updates/games, or insist on a larger proof gate before
+use. The portable packet already runs an actual small Generic AI through the
+existing backend; the scientific full-domain/strength/stable-ratio goals remain
+OPEN. The code and all raw technical receipts are in a separate immutable
+native_td_candidate_packet_20261017 capsule; the preceding213member capsule stays
+unchanged. No Native binary or private Slack/account output is published.
+
+### Original-method reading and project consequence
+
+The [extended TDLeaf manuscript](https://www.cs.princeton.edu/courses/archive/fall06/cos402/papers/chess-RL.pdf)
+was read in full26pages; equations5-8/10, figures13-14 and appendix23/25 were
+visually checked. Its transition clock combines an agent action and opponent
+response; its deployed chess experiment adds an opponent-blunder heuristic and
+increases score resolution for numerical derivatives. It reports limitations of
+self-play and search/evaluation cost. These are method distinctions, not a reason
+to import human piece values, that heuristic, an old rating claim or a convergence
+guarantee. The project's shared owner0 half-ply clock, frozen finite search,
+UNKNOWN handling and explicit precision remain separately stated. Our observed
+alias/rounding evidence supports checking exposure and actual consumption before
+claiming intrinsic prices; no new architecture, training rule or mandatory gate
+follows from literature alone.
+
+
+Final follow-on capsule qualification:304members/303payloads,1582429bytes,
+SHA256ee0a81c2d2486828fb7024519b8af9cbc74ddd958900bbebb37b5833cd7c12f0.
+Fresh extracted Python-S/noeditablehook source with an explicit existing compatible
+Native binary executes32checkpoint calls,16games/468queries and ALL657paired
+TD-ready calls. Every imported GenericChess Python module is under that restored
+source; no AUX import is needed for the portable consumer/smoke. All16complete
+smoke records and all657non-timing query fields match originals. The restored
+full-stream run takes43.063seconds versus44.188live, not identical walltime.
+No Native binary is supplied. This is executed source restoration, distinct from
+source review, source-only skips, original owner reproduction and a new learner.

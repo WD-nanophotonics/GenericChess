@@ -30,6 +30,20 @@ no default/converter API or deployed strength claim follows. Immediate next:
 inspect useful newlypublished AUX curve then test one concrete deployment need;
 keep whole-domain target, terminal/UNKNOWN and per-rule channel distinctions.
 
+Actual candidate packet now supplies16standard source-initial/endpoint
+checkpoints +4rules+16fullsemantic records, noAUXimports/default/championchange.
+16compatibilitygames onalleightlearnedmodels/bothroles finish14terminal2UNKNOWN,
+468allD2/60drops5promotions/fullreplayPASS, not strengthtest. A corrected ALL657
+actual-query TD-ready consumer costs Native2.1229s vs40.1424s/44.188saggregate;
+allrootvalues andquantizedgradients match, but209tie actionsdiffer. All656original
+completefloat predictions/gradients match whenreevaluated atactualNativeleaves;
+originalfailedquery/2zero-queryprefixepisodes retainlimits. This supports OPTIONAL
+futureAUXacceleratortrial afteritsfrozencurve, NOT newPRIMARYlearner oridentical
+online trajectoryclaim. NewNativehelperfiller/unchanged16boardpilot rejected:
+remaininghelper<20%ofsmallwholecost andprior44Native completions alreadyknown.
+Next inspect useful NEWpublishedGenericcurve or actualrequestedconsumer blocker;
+otherwise preserve this concrete executable artifact, no repeatedclosedaudit.
+
 Published AUX88 fixed3f9afcc3 is now READ and EXECUTED here:197payload hashes,
 36owner tests and seven regenerated A/B audits agree; PRIMARY additionally wrote
 independent all-gradient/paired-outcome calculations. All960validationgames retain

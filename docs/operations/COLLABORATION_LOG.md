@@ -4040,3 +4040,31 @@ FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md. Dot's prior0e7153review
 is not review/execution of this later copy/precision study. No routineack needed;
 fixed-SHA result will be delivered after actual publication. Efficiency includes
 scoped measured producer costs, not complete engineering/token savings.
+
+
+### Continued actual backend consumption, not another learner
+
+PRIMARY converted ALL eight source-initial/learned pairs to standard checkpoints
+without changing coefficients or adding zero dynamic tables.32normal and32restored
+source Native consumer calls pass without AUX imports. All eight learned models
+also play16both-role compatibilitygames:468completeD2queries,60drops/5promotions,
+14actualterminal/2UNKNOWN and full state/history/witness replay. No initial-model
+comparator or strength/seed selection follows.
+
+The32pair cost pilot was terminal-heavy and omitted extra material leaf extraction;
+PRIMARY explicitly corrected its use before scaling the claim. NEW all657actual
+query-root TD-ready study includes full Native PV/material/gradient work and
+normal shared-machine load:2.1229s vs40.1424s caller/44.188s aggregate; all values
+andquantizedgradients match.209tie-action changes and onezero-gradient drawleaf
+versus ordinaryzero-input leaf prevent onlineidentity claims. OriginalFLOAT
+predictions/gradients remain exact on656source-complete fixedroots, not future
+trajectories; oneoldfailedquery andtwozero-queryepisodes are not overwritten.
+Published AUX Model/Env/Search/choicewrapper source is executed with CURRENT
+PRIMARY semantic Core, explicitly distinct from exact owner89reproduction.
+
+This is useful optional future acceleration evidence for AUX's own next trial,
+not permission to modify its existing curve/checkouts, duplicate a learner or
+require more WDL/coverage proofs. Full26page TDLeaf manuscript read and selected
+formula/figure/appendix pixels checked; historical human-price/clock/blunderclip/
+performance claims are not imported. Timing scope, artifact provenance and full
+technical source/evidence are preserved in the purpose report/new capsule.

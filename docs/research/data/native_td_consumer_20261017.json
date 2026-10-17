@@ -1,0 +1,233 @@
+{
+  "full_stream": {
+    "annotation": "All657queryroots, not twozero-queryterminalprefixepisodes; sourceoriginalfailedquery1 retained, new8192diagnostic doesnotreplace itsoriginaltarget/outcome. Native vs originalcommittedaction comparison uses physical matching in the onebinding-per-source-edge scope; originalsourceactions remainimmutable.",
+    "arms": {
+      "native": {
+        "complete": 657,
+        "leaf_root_matches": 657,
+        "nodes": 181648,
+        "nonterminal_pv": 613,
+        "nonterminal_seconds": 1.9954344000434503,
+        "seconds": 2.122904700052459,
+        "terminal_pv": 44
+      },
+      "published_aux": {
+        "complete": 657,
+        "leaf_root_matches": 657,
+        "nodes": 59853,
+        "nonterminal_pv": 614,
+        "nonterminal_seconds": 38.66126170012285,
+        "seconds": 40.14239090011688,
+        "terminal_pv": 43
+      }
+    },
+    "leaf_contract_equal": 656,
+    "logical_translated_edges": 776,
+    "native_vs_source_original_committed_action_changes": 202,
+    "old_failed_roots_included": 1,
+    "planned": 657,
+    "reason": null,
+    "returned": 657,
+    "seconds": 44.187999999994645,
+    "source_complete_roots": 656,
+    "source_sha256": "82389eed5674fd6996a1c2c5041fb9cfb3dbe68ce4e841b5d90e778152bf1f3d",
+    "source_zero_query_episodes": 2,
+    "source_zero_query_prefix_edges_not_in_query_benchmark": 6,
+    "status": "COMPLETE",
+    "td_ready_caller_ratio": 18.90918179187456,
+    "translation_seconds": 1.0431840003002435,
+    "values_equal": 657
+  },
+  "float_leaf": {
+    "counts": {
+      "different_original_float_gradients": 0,
+      "different_original_float_leaf_contract": 1,
+      "different_original_float_predictions": 0,
+      "different_quantized_actions": 209,
+      "different_quantized_gradients": 0
+    },
+    "max_float_gradient_coordinate_difference": 0.0,
+    "max_float_prediction_difference": 0.0,
+    "rows": 657,
+    "scope": "Reevaluate ORIGINAL FLOATmodel on ACTUAL Native-selected leaf. This is the consistent floating TD surrogate, not the quantized Native root score derivative. No newupdates/training/strength; originalfailedroot staysunavailable in originalcomparison.",
+    "status": "PASS_CLOSED_DATA_COMPARISON"
+  },
+  "smoke": {
+    "all_full_replays_equal": true,
+    "depths": {
+      "2": 468
+    },
+    "drops": 60,
+    "endings": {
+      "ACTUAL_TERMINAL": 14,
+      "HORIZON_UNKNOWN": 2
+    },
+    "fallbacks": 0,
+    "nodes": 90743,
+    "planned": 16,
+    "promotions": 5,
+    "queries": 468,
+    "returned": 16,
+    "scope": "Compatibility smoke ONLY, allfourTRAIN-exposedrules/eightmodels/bothroles versusfixedUnit on freshinitialstates. No initial-model comparator/newlearning/seedselection or strength/winner/gain estimate. H64UNKNOWN distinct from actual rule512; allpartial/failed/unstarted slots retained. NoAUXimports/default/champion/UIchange.",
+    "seconds": 1.6560000000172295,
+    "status": "COMPLETE",
+    "unstarted": 0
+  },
+  "packet": {
+    "external_native": true,
+    "models": 16,
+    "new_games": 0,
+    "new_training": 0,
+    "no_aux_import": true,
+    "normal_queries": 32,
+    "python_source_paths_checked": true,
+    "restored_source_queries": 32,
+    "roots": 16,
+    "rules": 4,
+    "status": "PASS"
+  },
+  "original_pilot": {
+    "different_tied_actions": 10,
+    "pairs": 32,
+    "rows": {
+      "native": {
+        "complete": 32,
+        "lawful_optimal": 32,
+        "matching_values": 32,
+        "nodes": 5892,
+        "total_caller_seconds": 0.047647900035372004
+      },
+      "published_aux_search": {
+        "complete": 32,
+        "lawful_optimal": 32,
+        "matching_values": 32,
+        "nodes": 1581,
+        "total_caller_seconds": 1.1508613000041805
+      }
+    },
+    "scope": "Native Engine construction/rootpack/checkedPV/feature result versus AUXEnv+Modelfromsameprices/search; common source rule compilation and fullSessionreplay are outside per-call but within total. Different node accounting/order, equal nominal limits not equalwork.",
+    "seconds": 1.562999999994645,
+    "status": "COMPLETE"
+  },
+  "original_pilot_leaf": {
+    "different_gradients": 0,
+    "leaf_root_value_matches": 32,
+    "native_aux_leaf_contract_equal": 32,
+    "returned": 32,
+    "scope": "CurrentPRIMARYCore/semantic root and publishedAUXalgorithm, identical quantized256weights; sourceoriginallegacy and floattraining are NOT silently replaced. Equal exposedleaf contracts do not prove same all-domain policy/curve underdifferentordering/budget/precision.",
+    "seconds": 2.5940000000118744,
+    "status": "COMPLETE",
+    "terminal_leaves": 20
+  },
+  "recorded_cost_ledger": {
+    "runs": [
+      {
+        "run": "snapshot_component",
+        "seconds": 11.51600000000326,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "whole_collector",
+        "seconds": 6.1560000000172295,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "activation",
+        "seconds": 15.51600000000326,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "finite_precision",
+        "seconds": 1.952999999979511,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "null_directions",
+        "seconds": 0.09400000001187436,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "native_pilot",
+        "seconds": 1.562999999994645,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "native_leaf_pilot",
+        "seconds": 2.5940000000118744,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "full_stream_tdready",
+        "seconds": 44.187999999994645,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "smoke_initial_logging_version",
+        "seconds": 1.610000000015134,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "smoke_final_source",
+        "seconds": 1.6560000000172295,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "smoke_restored_source",
+        "seconds": 1.687999999994645,
+        "status": "COMPLETE",
+        "scope": "Recordedproduceronly; repeats/sourcequalifications not independent scientific samples."
+      },
+      {
+        "run": "restored_fullstream",
+        "seconds": 43.062999999994645,
+        "status": "COMPLETE",
+        "scope": "Source reexecution, not new independent evidence/cohort."
+      },
+      {
+        "run": "restored_old_component",
+        "seconds": 11.671999999991385,
+        "status": "COMPLETE",
+        "scope": "Source reexecution, not new independent evidence/cohort."
+      },
+      {
+        "run": "restored_whole_collector",
+        "seconds": 6.35899999999674,
+        "status": "COMPLETE",
+        "scope": "Source reexecution, not new independent evidence/cohort."
+      },
+      {
+        "run": "restored_activation",
+        "seconds": 15.90700000000652,
+        "status": "COMPLETE",
+        "scope": "Source reexecution, not new independent evidence/cohort."
+      },
+      {
+        "run": "restored_finite",
+        "seconds": 2.0780000000086147,
+        "status": "COMPLETE",
+        "scope": "Source reexecution, not new independent evidence/cohort."
+      }
+    ],
+    "recorded_producer_seconds": 167.6130000000412,
+    "full_regression_seconds": 293.666,
+    "owner89_source_reproduction_seconds": 46.54190069998731,
+    "not_complete_total": "Excludes some arithmetic/script/test/publisher/source setup/transport/engineering/token time; active session actual clock separate. Do not claim equal-total-cost training superiority.",
+    "resolved_failures": [
+      "FirstlargeSlacksave hit OS206 commandlength, exactoriginals saved6000char chunks beforeparse, no send repeated.",
+      "pytest affectedv1 had3WinError5 Tempfixture errors; fresh project-local basetemp fixed, all72pass. NoSACcausediagnosis.",
+      "One documentation cp1252 decodeerror fixedfrom confirmedHEAD/UTF8 beforepublication; original privateevidence retained.",
+      "Candidate generator v1 syntaxerror occurredbeforeanyoutput; corrected spacing and savedfailedsource.",
+      "Smoke actualtime-limit logging made explicit; prior and final16games retained, not32independent samples."
+    ]
+  }
+}

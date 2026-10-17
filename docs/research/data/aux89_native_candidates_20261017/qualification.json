@@ -1,0 +1,767 @@
+{
+  "status": "PASS_EXISTING_BACKEND_CHECKPOINT_PACKET",
+  "models": 16,
+  "rules": 4,
+  "full_semantic_roots": 16,
+  "native_queries": 32,
+  "no_aux_import": true,
+  "rows": [
+    {
+      "rule": 271001,
+      "seed": 1977,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "bed9adf38f78da2f42f1e57853f3f3f2e8d6ca8fb4bf0515e20769910dbf8bd1",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_025",
+        "geometry_id": "g4",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 8,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 1977,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "55254fb9053bda808711facf102ef5076b974e793978799b0d13825eb0ca2df1",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_025",
+        "geometry_id": "g4",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 8,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 1977,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "bed9adf38f78da2f42f1e57853f3f3f2e8d6ca8fb4bf0515e20769910dbf8bd1",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_036",
+        "geometry_id": "g18",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 3
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 148,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 1977,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "55254fb9053bda808711facf102ef5076b974e793978799b0d13825eb0ca2df1",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_036",
+        "geometry_id": "g18",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 3
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 148,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 8173,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "717a5d912cff0bced7b9b3e970d1ca0a8878aab7cb701435f0b8e802d4f74928",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_025",
+        "geometry_id": "g4",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 8,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 8173,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "4f631483ce4b91678bf73564b0ab9253ba15b7984837b120c1061bf252aac0b7",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_025",
+        "geometry_id": "g4",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 8,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 8173,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "717a5d912cff0bced7b9b3e970d1ca0a8878aab7cb701435f0b8e802d4f74928",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_036",
+        "geometry_id": "g18",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 0
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 165,
+      "used_fallback": false
+    },
+    {
+      "rule": 271001,
+      "seed": 8173,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "4f631483ce4b91678bf73564b0ab9253ba15b7984837b120c1061bf252aac0b7",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_036",
+        "geometry_id": "g18",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 0
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 165,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 1977,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "ac786b692a251d8013f21a070cc406cbd2174eba610c1ea38ed274fb8cd66c3a",
+      "score": 75,
+      "action": {
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 237,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 1977,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "80fbdc5d261650862f744d5e44891a5ec4e1eebc9e7c80a7f17ae4cb66555a74",
+      "score": 52,
+      "action": {
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 237,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 1977,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "ac786b692a251d8013f21a070cc406cbd2174eba610c1ea38ed274fb8cd66c3a",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_060",
+        "geometry_id": "g30",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 1
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 700,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 1977,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "80fbdc5d261650862f744d5e44891a5ec4e1eebc9e7c80a7f17ae4cb66555a74",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_060",
+        "geometry_id": "g30",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 1,
+          "rank": 1
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 700,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 8173,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "f25bcc723bfe13821d21a46b36c0ef50952c6d00a3310510d7eb74755b4676e6",
+      "score": 193,
+      "action": {
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 237,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 8173,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "81b20eb192c68ef927f5aff89717e5bb1ea0ace46809c72976c11bb48f6b7a26",
+      "score": 185,
+      "action": {
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 237,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 8173,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "f25bcc723bfe13821d21a46b36c0ef50952c6d00a3310510d7eb74755b4676e6",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_046",
+        "geometry_id": "g3",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 3,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 303,
+      "used_fallback": false
+    },
+    {
+      "rule": 271002,
+      "seed": 8173,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "81b20eb192c68ef927f5aff89717e5bb1ea0ace46809c72976c11bb48f6b7a26",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_046",
+        "geometry_id": "g3",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 3,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 303,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 1977,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "152a834355418b2bfe48b73b512e605388f7b4300403050fa9a173346ed2b1a4",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_011",
+        "geometry_id": "g13",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 1
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 47,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 1977,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "73cff3d3bd4c3b9319bb9beead7cc9400c196f47ecdce6e6fc1052580a612c08",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_011",
+        "geometry_id": "g13",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 1
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 47,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 1977,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "152a834355418b2bfe48b73b512e605388f7b4300403050fa9a173346ed2b1a4",
+      "score": 957,
+      "action": {
+        "pattern_id": "legacy_031",
+        "geometry_id": "g15",
+        "base_type_id": "P",
+        "to_square": {
+          "file": 0,
+          "rank": 1
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 217,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 1977,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "73cff3d3bd4c3b9319bb9beead7cc9400c196f47ecdce6e6fc1052580a612c08",
+      "score": 923,
+      "action": {
+        "pattern_id": "legacy_000",
+        "geometry_id": "g0",
+        "actor_type_id": "A",
+        "from_square": {
+          "file": 1,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 0,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 217,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 8173,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "b4b9931aee005b32eb85e92f1dd09584150d6f17ded82f6619b161744bb6a82a",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_011",
+        "geometry_id": "g13",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 1
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 47,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 8173,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "6935c8de82f919048f3a667761563e8113d0049e23141ca563c935453120e218",
+      "score": -2,
+      "action": {
+        "pattern_id": "legacy_011",
+        "geometry_id": "g13",
+        "actor_type_id": "X",
+        "from_square": {
+          "file": 2,
+          "rank": 0
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 1
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 47,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 8173,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "b4b9931aee005b32eb85e92f1dd09584150d6f17ded82f6619b161744bb6a82a",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_018",
+        "geometry_id": "g4",
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 1,
+          "rank": 3
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 188,
+      "used_fallback": false
+    },
+    {
+      "rule": 271003,
+      "seed": 8173,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "6935c8de82f919048f3a667761563e8113d0049e23141ca563c935453120e218",
+      "score": 0,
+      "action": {
+        "pattern_id": "legacy_018",
+        "geometry_id": "g4",
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 1,
+          "rank": 3
+        },
+        "to_square": {
+          "file": 2,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 188,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 1977,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "4fcf63d766f41ae303870d635774b944ff1ec31df16a6b685c38e98e97caef6f",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 2,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 116,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 1977,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "560036b62973f547e13f4971cb0e021515ae05a32c83411194c27eac390b10d2",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 2,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 116,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 1977,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "4fcf63d766f41ae303870d635774b944ff1ec31df16a6b685c38e98e97caef6f",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_049",
+        "geometry_id": "g24",
+        "base_type_id": "P",
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 214,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 1977,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "560036b62973f547e13f4971cb0e021515ae05a32c83411194c27eac390b10d2",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_049",
+        "geometry_id": "g24",
+        "base_type_id": "P",
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        }
+      },
+      "completed_depth": 2,
+      "nodes": 214,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 8173,
+      "root": "first",
+      "label": "initial",
+      "checkpoint_id": "847ea5e412ec32ec38e641b6c79db102b068755b4e019f65509b1e8ea1cd602a",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 2,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 116,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 8173,
+      "root": "first",
+      "label": "trained",
+      "checkpoint_id": "647ac8061305ebfa75f565c243c2be551bf5eee25297ffbd271c6e07123e9baf",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 2,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 3,
+          "rank": 2
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 116,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 8173,
+      "root": "last",
+      "label": "initial",
+      "checkpoint_id": "847ea5e412ec32ec38e641b6c79db102b068755b4e019f65509b1e8ea1cd602a",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 0,
+          "rank": 2
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 195,
+      "used_fallback": false
+    },
+    {
+      "rule": 271004,
+      "seed": 8173,
+      "root": "last",
+      "label": "trained",
+      "checkpoint_id": "647ac8061305ebfa75f565c243c2be551bf5eee25297ffbd271c6e07123e9baf",
+      "score": 99999999,
+      "action": {
+        "pattern_id": "legacy_012",
+        "geometry_id": "g14",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 0,
+          "rank": 2
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 3
+        },
+        "promotion_target_id": null
+      },
+      "completed_depth": 2,
+      "nodes": 195,
+      "used_fallback": false
+    }
+  ],
+  "seconds": 0.2943799000058789,
+  "scope": "Research-only floating model -> explicit existing256 quantization; TRAIN-exposed source roots, not a new game/learning/strength/unseenrule/all-domain converter or default/champion promotion. Source coefficients unchanged; no fake dynamic tables. Native extension remains external."
+}
