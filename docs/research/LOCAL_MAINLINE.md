@@ -1,3 +1,60 @@
+# DEV_AUX current selection — closed87, incremental TD actual-strength evidence
+
+DirectUSER TD/search-bootstrap route remains primary; realW-L evaluates strength,
+old grids/provercoverage historical controls, no solver prerequisite. Ownsidemission,
+PUBLIC, PRIMARYreadonly, no default/UI/worker/Goalchanges. ScienceOPEN.
+
+87ALL8arms/4randominitials:8Mnodes1117.59s,317episodes304actualterminal/13U,
+48004TDterms316nonzeroepisodeupdates. Allupdates independentlyforward-recomputed;
+53089actual+prefixplies replayed. Plain4Mnodes543.96s227games versusq2
+4M573.63s90games: completeTRAINregimes differ in states/targets/opportunities.
+AllfinalactualTDresiduals0afterearliersearchforecast; earlierchangescarrycredit,
+notactualWDLlabels.5H512U+8lastnodepoolU kept. No artificialdraw/quantityreward.
+
+NEW16families91000-91015/BOTHroles/commonplainD2/uniformfoe ALL384actualterminals,
+0U/missing,64096legalplies. ALL4initialsbothregimesimprove: plainpooledW-Lgain.5,
+q2.3046875,directq2-plain-.1953125. Two-waydescriptivefamily/seed envelopes
+[.28125,.71875]/[.109375,.515625]/[-.3828125,-.0234375]. Sharedbaseline128paidONCE;
+16families not64independentunits. Allfirstdifferencescandidate-turn; nosearchreplay.
+Supports scopedincremental utility, NOTq2superiority or stable/universalprices.
+FinalQ/Nrankingsstilldifferentacrossinitials; no humanfit/orderselection.
+
+PrefrozenNEW8families92000-92007/ALLquartercheckpoints: PARTIAL_CAP,
+547/576physicalgames,29missing; sharedbaseline
+61paidonce. At1Mplain gainbounds[0.375, 0.59375],
+q2[0.1875, 0.40625],directq2-plain[-0.3125, -0.0625].
+Everycheckpoint retained, no pickbest/exposure relabel/capextension.8families
+repeatacrosspoints/seeds; U/missingbounds notdraw; capmissingtime-ordered.
+New8family95%envelopesallcross0; two-wayseed/familyenvelopeswider. No robust
+populationreplication/monotonicity claim fromthispartialpanel.
+Actualcurves/trainingloss/coefficients in task2508; lossnotfixedvalidationquality.
+
+Fullq2502original240sCLOSEDUNKNOWN,2503fullqtrainingUNSTARTED. Separateq2
+qplycountsALLextensionsinclforcedevasions; noncheckcutoff>=2 maystatic, incheck
+extendsALLlegalmoves. Earlier "twooptionalplies" prosewasimprecise, correctedin
+q2-semantic-scope.json withoutchangingfrozencode/data. Otherfixture/metadata/cache
+errorsretained.32testsPASS(25learning+7generic); exact32ndcapsule+freshclosedreplay qualifiedseparately.
+
+Dot1792210638.828359 inlineonly/no87sourceorexecution; adoptedselectedPV/standpat/
+forcedevasion/credit/sharedbaseline/familychecks. PRIMARY1792211117.524309reports
+86independent5299searches/37updates and90013-90020D2positive/D3ALLunknown;
+fixedc01802cc72948d2309d4c3c072dca98c4b44887ereportread/ownnoexecution; noneofour91000/92000familiesoverlap. NoPRIMwrites.
+
+ConcretePRIMARYnon-scoring hazard nowindependentlyreproducedhere: NEW2511
+ScoringSessionEnv raisesNonScoringTerminal onRESTART/NO_CONTEST;7realSession
+regressionsPASS. Frozen2492adapters/Chesspinsunchanged; olddefectretainedand
+markedlegacy. OwnedLOSSchoices retained; nogenerictraining/CoreAPI/defaultchange.
+
+NextONE directmethodcontrast: bound-awareTreeStrap vs episodeTD under SAMEplain
+trainingsearch/newregisteredTRAIN/freshheldout/all4initials/costcurves; or different
+fixedfoereplication. DoNOTexpandq/provercoverage or tuneon exposed91000/92000.
+RetainedTreeStrap is transformed mean-batch variant, not literalpaperreproduction;
+stateeta/normalization differences before anyrun. FaithfulBealSmith, equal-totalcost
+WDLgridcontrol/stablematerialratios/fullGenericlearning OPEN, notdisproved.
+Report SEGMENT_20261017_87.md; delivery/replay receipts bindactualrevision.
+
+## Superseded86 selection — evidence preserved, not live tasks
+
 # DEV_AUX current selection —86 incremental TD,2026-10-17
 
 Direct USER route reset implemented: episode-frozen TDLeaf(lambda=.95) is now

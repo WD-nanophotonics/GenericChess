@@ -1,0 +1,86 @@
+{
+  "arms": [
+    {
+      "quiet": false,
+      "nodes": 4000000,
+      "seconds": 543.9637412999873,
+      "queries": 32634,
+      "games": 227,
+      "actual_terminal": 218,
+      "censored": 9,
+      "nonzero_updates": 227,
+      "TD_terms": 32621,
+      "q_cutoff_labels": 0,
+      "failed_query_nodes": 371
+    },
+    {
+      "quiet": true,
+      "nodes": 4000000,
+      "seconds": 573.6258837000059,
+      "queries": 15391,
+      "games": 90,
+      "actual_terminal": 86,
+      "censored": 4,
+      "nonzero_updates": 89,
+      "TD_terms": 15383,
+      "q_cutoff_labels": 1152906,
+      "failed_query_nodes": 928
+    }
+  ],
+  "scope": "Wholeactualarmwalltimes include training/filewrite/rulestatework; nodecostnotCPUcycles, walltimeconcurrentload interpretationlimited. Noquietwindow orautomaticrerun. q2hasfewerqueries/episodes atsameceiling; notpuretargetefficiency.",
+  "censored_ending_counts": {
+    "HORIZON_UNKNOWN": 5,
+    "SEARCH_RESOURCE_UNKNOWN": 8
+  },
+  "all_eight_failed_queries_exhaust_final_1M_arm_pool": true,
+  "failed_query_nodes": [
+    {
+      "seed": 1977,
+      "quiet": false,
+      "nodes": 146,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "nodes": 91,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "nodes": 509,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "nodes": 195,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "nodes": 28,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "nodes": 318,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "nodes": 10,
+      "total_nodes": 1000000
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "nodes": 2,
+      "total_nodes": 1000000
+    }
+  ]
+}

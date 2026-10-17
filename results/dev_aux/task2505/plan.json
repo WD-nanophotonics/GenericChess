@@ -1,0 +1,29 @@
+{
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "families": 16,
+  "opening_seed_base": 71000,
+  "opening_plies": 16,
+  "depth": 2,
+  "qstack": 96,
+  "node_limits": [
+    8192
+  ],
+  "completion_fraction": 0.8,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 120,
+  "freeze": "NEW approximate-q2 question AFTER full-q208query/240s cap; original2502 is closed, no extension/retry. ALLsame4initials/16TRAINroots BOTHarms, no fitness/filter. At noncheck q2horizon static label allowed+COUNTED; allcheckevasions still continue. Completion gate ONLY, no WDL/score/action selection. If infeasible do not expandqbudgets again; continue useful plainTD work.",
+  "question": "Can paper-style allcapture/checkevasion quiescence yield completed training targets at boundedcost?",
+  "whole_logical_estimate": "Allfullqfailure+approximation+TD/eval/engineering still expected60-90min,<2h; no newworker.",
+  "q_limit": 2,
+  "pins": {
+    "results/dev_aux/task2501/search.py": "abade3cb521a778fc498025aa4f650caacb66b3a48a0b702c309f50188209d76",
+    "results/dev_aux/task2504/search.py": "5017c69be2b57327cc01e3955386d42cd142b7d5b095648fbac2d362e659431d",
+    "results/dev_aux/task2502/pilot.py": "fe62ac2315c5696bb02b326ea2c4e0249af29a96a02fa8b9f02372fef7dd2bc7",
+    "results/dev_aux/task2505/pilot.py": "dbf244350c300006fc3905db1638a172695907b2375878a0c3d5ff3719ee0b5a"
+  }
+}

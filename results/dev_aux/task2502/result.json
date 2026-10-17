@@ -1,0 +1,23 @@
+{
+  "status": "PARTIAL_CAP",
+  "gate": "UNKNOWN",
+  "selected_search_nodes": null,
+  "queries": 208,
+  "nodes": 1764868,
+  "seconds": 240.00254420001875,
+  "phases": [
+    {
+      "node_limit": 8192,
+      "plain_complete": 64,
+      "quiet_complete": 4,
+      "quiet_expected": 64
+    },
+    {
+      "node_limit": 32768,
+      "plain_complete": 40,
+      "quiet_complete": 2,
+      "quiet_expected": 64
+    }
+  ],
+  "scope": "AllTRAIN roots/initials retained; gate uses query completion ONLY before training WDL, no action/score/root selection. New full qsearch labels bounded by nodes/time/qstack: aborted means UNKNOWN, never static label. No game outcome or holdout queried."
+}

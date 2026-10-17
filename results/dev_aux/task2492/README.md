@@ -1,4 +1,9 @@
-# Incremental material learning — research entry
+# Incremental material learning — reusable core and86 controls
+
+Current87training/search/cost-curve entries and raw-replay instructions are in
+[task2506/README](../task2506/README.md). This directory retains the reusable
+model/episode learner and historical control search; it does not replace the
+new frozen path-seeded search or its precisely qualified q2 semantics.
 
 The main candidate is TD-Leaf with episode-frozen weights and backward eligibility
 (`episode.py`), using the same alpha-beta engine as the online smoke comparison.
@@ -52,3 +57,10 @@ Primary references read: [TDLeaf Figure3](https://arxiv.org/pdf/cs/9901002),
 [temporal coherence, IJCAI1999](https://www.ijcai.org/Proceedings/99-1/Papers/081.pdf).
 Beal-Smith1997's [publisher abstract](https://journals.sagepub.com/doi/10.3233/ICG-1997-20302)
 was accessible; full text was not obtained, so no exact-method claim is made.
+
+Generic terminal correction87: legacy SessionEnv remains frozen evidence and
+mislabels RESTART/NO_CONTEST as0. Use ../task2511/generic.py ScoringSessionEnv
+for future generic work: non-scoring results raise NonScoringTerminal and require
+an explicit caller policy. They are neither draws nor numeric UNKNOWN targets.
+Seven actual GameSession regressions qualify this guard; no generic training
+was added and all current Chess byte pins remain unchanged.

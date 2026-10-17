@@ -1,0 +1,60 @@
+{
+  "arms": [
+    {
+      "seed": 1977,
+      "quiet": false
+    },
+    {
+      "seed": 1977,
+      "quiet": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false
+    },
+    {
+      "seed": 27182,
+      "quiet": false
+    },
+    {
+      "seed": 27182,
+      "quiet": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false
+    }
+  ],
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 1000000,
+  "max_games": 256,
+  "H": 512,
+  "opening_seed_base": 71000,
+  "opening_plies": 16,
+  "depth": 2,
+  "qstack": 96,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 2400,
+  "resource_gate": "results/dev_aux/task2505/result.json",
+  "pins": {
+    "results/dev_aux/task2504/search.py": "5017c69be2b57327cc01e3955386d42cd142b7d5b095648fbac2d362e659431d",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2506/train.py": "d63f2fc3a6bac2307bfd6043faec0ebe1691d447bee92482e0dc79f282d1cc34"
+  },
+  "freeze": "BEFORE2506fitness, after fullqTRAIN-cost failure: two search arms shareNEWpathseeded ordering, BOTH4initializations, ALLsameprice-independent legalprefixes; q2approximation counts unquiet cutoff targets and forcedevasions. Per-arm1Mnodeceilings, querybudget from2505completion-only, full logical studycap2400sec. Old2503 fullq training UNSTARTED/cap unchanged. NoWDL filtering/oldholdout price/seed selection.",
+  "question": "Does bounded optionalq2 improve episode TD usefulness at1Mnodes perarm, under commonPLAINdeployment?",
+  "evaluation": "FreezeALL learned arms plus one reused initial baseline perseed/NEW16family/tworoles under commonPLAIN D2deployment/uniform1foe. This isolates training-regime transfer, not a q-enabled deployed-player benefit.",
+  "logical_cost": "Full-q240s failure + boundedpilot120s + engineering+8Mnode TD(~18min) + commonplain heldout(~15min) +review forecast70-90min total (<2h); ifhardcap partial preserve, no fee/workers or splitting.",
+  "q_limit": 2
+}

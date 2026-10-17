@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTED_METADATA_NO_DATA_CHANGE",
+  "source": "task2504 bounded optional tactical plies",
+  "actual": "Atnoncheck qply>=2, finite static targets ARE admitted and counted, even if tactical moves remain. Allcheckevasions continue; node/time/qstack aborts rejectwholequery.",
+  "incorrect_inherited_result_text": "New full qsearch labels ... no static label",
+  "reason": "Pilot wrapper reused fullq result-scope string. Actual raw query stats/source/plan remain exact, engine/data unchanged.",
+  "gate": "All64quiet queries completed defined approximate target; no claim they were fullquiet targets or rule WDL."
+}

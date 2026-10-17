@@ -1,0 +1,6026 @@
+{
+  "status": "PASS_INDEPENDENT_FORWARD_TD_AND_ALL_ACTUAL_TRAINING_EVENTS",
+  "counts": {
+    "legal_prefix_moves": 5072,
+    "queries": 48025,
+    "legal_training_moves": 48017,
+    "terminal_search_targets": 785,
+    "episodes": 317,
+    "censored_episodes": 13,
+    "actual_terminal_episodes": 304,
+    "td_terms": 48004,
+    "nonzero_episode_updates": 316,
+    "nonzero_TD_errors": 12444,
+    "TD_errors_abs_gt_1e_8": 12444,
+    "actual_parameter_change_steps": 316,
+    "failed_queries": 8,
+    "queries_with_explicit_qcut": 10779
+  },
+  "arms": [
+    {
+      "seed": 1977,
+      "quiet": false,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        1.0175589751619185,
+        1.5104110405056208,
+        1.9741420465776034,
+        1.0638988453924245
+      ],
+      "nodes": 1000000,
+      "searches": 9623,
+      "games": 45,
+      "outcomes": {
+        "L": 13,
+        "D": 17,
+        "W": 10,
+        "U": 5
+      },
+      "td_terms": 9617,
+      "nonzero_episode_updates": 45,
+      "seconds": 144.36455169998226,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 146,
+      "qcut_leaf_targets": 0,
+      "qcap_still_tactical": 0,
+      "terminal_search_targets": 2354,
+      "mean_nodes_per_query": 103.91769718383041
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        1.323263047066107,
+        1.5471022063771434,
+        2.069403196686833,
+        1.2891668380678714
+      ],
+      "nodes": 1000000,
+      "searches": 4241,
+      "games": 21,
+      "outcomes": {
+        "L": 7,
+        "D": 3,
+        "W": 10,
+        "U": 1
+      },
+      "td_terms": 4239,
+      "nonzero_episode_updates": 21,
+      "seconds": 145.12119320000056,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 91,
+      "qcut_leaf_targets": 281538,
+      "qcap_still_tactical": 214930,
+      "terminal_search_targets": 3253,
+      "mean_nodes_per_query": 235.7934449422306
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.4943902138599788,
+        1.074637327920172,
+        1.84297265067643,
+        1.9682992752090644
+      ],
+      "nodes": 1000000,
+      "searches": 3866,
+      "games": 25,
+      "outcomes": {
+        "W": 13,
+        "L": 7,
+        "D": 4,
+        "U": 1
+      },
+      "td_terms": 3864,
+      "nonzero_episode_updates": 25,
+      "seconds": 143.36777579999762,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 509,
+      "qcut_leaf_targets": 288216,
+      "qcap_still_tactical": 220994,
+      "terminal_search_targets": 3327,
+      "mean_nodes_per_query": 258.6652871184687
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        1.1151901520903684,
+        0.8007389224776272,
+        2.4573249280091938,
+        2.5264149180144075
+      ],
+      "nodes": 1000000,
+      "searches": 7802,
+      "games": 62,
+      "outcomes": {
+        "L": 22,
+        "W": 26,
+        "D": 13,
+        "U": 1
+      },
+      "td_terms": 7800,
+      "nonzero_episode_updates": 62,
+      "seconds": 134.89181919998373,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 195,
+      "qcut_leaf_targets": 0,
+      "qcap_still_tactical": 0,
+      "terminal_search_targets": 1832,
+      "mean_nodes_per_query": 128.1722635221738
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.3552071252683813,
+        1.652761933607802,
+        1.537161826376856,
+        2.878659256905697
+      ],
+      "nodes": 1000000,
+      "searches": 7106,
+      "games": 63,
+      "outcomes": {
+        "D": 11,
+        "W": 32,
+        "L": 19,
+        "U": 1
+      },
+      "td_terms": 7104,
+      "nonzero_episode_updates": 63,
+      "seconds": 131.71610210000654,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 28,
+      "qcut_leaf_targets": 0,
+      "qcap_still_tactical": 0,
+      "terminal_search_targets": 1891,
+      "mean_nodes_per_query": 140.72614691809738
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.3073092309414858,
+        1.5596895018314394,
+        1.450659649734837,
+        2.2218906377783734
+      ],
+      "nodes": 1000000,
+      "searches": 3197,
+      "games": 21,
+      "outcomes": {
+        "L": 11,
+        "W": 8,
+        "D": 1,
+        "U": 1
+      },
+      "td_terms": 3195,
+      "nonzero_episode_updates": 20,
+      "seconds": 142.55578900000546,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 318,
+      "qcut_leaf_targets": 306201,
+      "qcap_still_tactical": 249765,
+      "terminal_search_targets": 4599,
+      "mean_nodes_per_query": 312.7932436659368
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.6267668529735224,
+        0.8783577445092976,
+        2.466507588634352,
+        0.7397788060125758
+      ],
+      "nodes": 1000000,
+      "searches": 4087,
+      "games": 23,
+      "outcomes": {
+        "D": 3,
+        "L": 13,
+        "W": 6,
+        "U": 1
+      },
+      "td_terms": 4085,
+      "nonzero_episode_updates": 23,
+      "seconds": 142.5811257000023,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 10,
+      "qcut_leaf_targets": 276951,
+      "qcap_still_tactical": 205133,
+      "terminal_search_targets": 3267,
+      "mean_nodes_per_query": 244.67824810374358
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.6326903925733605,
+        1.831116012949789,
+        2.694283910640644,
+        1.1471691323822555
+      ],
+      "nodes": 1000000,
+      "searches": 8103,
+      "games": 57,
+      "outcomes": {
+        "D": 17,
+        "L": 17,
+        "U": 2,
+        "W": 21
+      },
+      "td_terms": 8100,
+      "nonzero_episode_updates": 57,
+      "seconds": 132.99126830001478,
+      "cause": "TOTAL_NODES",
+      "failed_queries": 1,
+      "failed_query_nodes": 2,
+      "qcut_leaf_targets": 0,
+      "qcap_still_tactical": 0,
+      "terminal_search_targets": 2233,
+      "mean_nodes_per_query": 123.4110823151919
+    }
+  ],
+  "curves": [
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 0,
+      "nodes": 16626,
+      "weights": [
+        1.0,
+        0.9437575016172566,
+        1.0823647316315694,
+        1.1749552592841837,
+        0.9760697957902976
+      ],
+      "loss": 0.001816155387761358,
+      "td_terms": 170,
+      "nonzero_errors": 39,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 1,
+      "nodes": 47639,
+      "weights": [
+        1.0,
+        0.9375890793605492,
+        1.0206724841808026,
+        1.1003562548015546,
+        0.9807053283469427
+      ],
+      "loss": 0.0006522796575406315,
+      "td_terms": 374,
+      "nonzero_errors": 45,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 2,
+      "nodes": 53020,
+      "weights": [
+        1.0,
+        0.9310414894770549,
+        1.0133737476911784,
+        1.1076823005072902,
+        0.9792389439526785
+      ],
+      "loss": 0.0033485579941496765,
+      "td_terms": 29,
+      "nonzero_errors": 22,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 3,
+      "nodes": 66121,
+      "weights": [
+        1.0,
+        0.93289974536754,
+        1.1800287383087549,
+        1.1589562225102032,
+        0.9778789342024172
+      ],
+      "loss": 0.006038201885350528,
+      "td_terms": 59,
+      "nonzero_errors": 36,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 4,
+      "nodes": 81215,
+      "weights": [
+        1.0,
+        0.9380170914857493,
+        1.2539182127371729,
+        1.2053655939994214,
+        0.9786876890720118
+      ],
+      "loss": 0.00273546986823565,
+      "td_terms": 86,
+      "nonzero_errors": 37,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 5,
+      "nodes": 117100,
+      "weights": [
+        1.0,
+        0.9337156889314281,
+        1.2599808296417514,
+        1.2418699244169902,
+        0.975782088571863
+      ],
+      "loss": 0.00044955873264628925,
+      "td_terms": 511,
+      "nonzero_errors": 49,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 6,
+      "nodes": 137241,
+      "weights": [
+        1.0,
+        1.0093093583625175,
+        1.3960358577095249,
+        1.237182683673986,
+        0.9647514546618636
+      ],
+      "loss": 0.0034801284749604983,
+      "td_terms": 113,
+      "nonzero_errors": 62,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 7,
+      "nodes": 174297,
+      "weights": [
+        1.0,
+        1.0129171289310535,
+        1.5041416269417278,
+        1.2388708010634415,
+        0.9664113577203047
+      ],
+      "loss": 0.0005700628785296433,
+      "td_terms": 511,
+      "nonzero_errors": 62,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 8,
+      "nodes": 207342,
+      "weights": [
+        1.0,
+        1.0204718291096997,
+        1.4262628222169933,
+        1.2360371727391544,
+        0.9629791511835376
+      ],
+      "loss": 0.0008498293980425068,
+      "td_terms": 376,
+      "nonzero_errors": 50,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 9,
+      "nodes": 245407,
+      "weights": [
+        1.0,
+        1.0267746931992094,
+        1.3875654556170818,
+        1.2785271571116126,
+        0.9572586216689889
+      ],
+      "loss": 0.0004680093519068942,
+      "td_terms": 511,
+      "nonzero_errors": 44,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 10,
+      "nodes": 258932,
+      "weights": [
+        1.0,
+        1.0267746931992094,
+        1.409735304854537,
+        1.2896632397811236,
+        0.9602941532472427
+      ],
+      "loss": 0.002515255254144849,
+      "td_terms": 70,
+      "nonzero_errors": 47,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 11,
+      "nodes": 283871,
+      "weights": [
+        1.0,
+        1.1137074217530407,
+        1.5202603842390667,
+        1.3019997223122834,
+        0.9596204866824514
+      ],
+      "loss": 0.0017226530235960945,
+      "td_terms": 231,
+      "nonzero_errors": 71,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 12,
+      "nodes": 311504,
+      "weights": [
+        1.0,
+        1.0637117780192322,
+        1.5763182367439212,
+        1.3220779490625483,
+        0.9840187940700449
+      ],
+      "loss": 0.0002358709125871549,
+      "td_terms": 333,
+      "nonzero_errors": 31,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 13,
+      "nodes": 327839,
+      "weights": [
+        1.0,
+        1.1439254619552799,
+        1.6519420317769635,
+        1.376860136519322,
+        0.9840187940700449
+      ],
+      "loss": 0.003980410188024626,
+      "td_terms": 134,
+      "nonzero_errors": 62,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 14,
+      "nodes": 361706,
+      "weights": [
+        1.0,
+        1.1474398693814314,
+        1.6225076501483184,
+        1.3579743826000497,
+        0.9811475171136586
+      ],
+      "loss": 0.0009455375093724189,
+      "td_terms": 384,
+      "nonzero_errors": 67,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 15,
+      "nodes": 373473,
+      "weights": [
+        1.0,
+        1.1477474226060087,
+        1.6059646108594856,
+        1.446567088519571,
+        0.946758468089417
+      ],
+      "loss": 0.0032317557476668744,
+      "td_terms": 95,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 16,
+      "nodes": 401672,
+      "weights": [
+        1.0,
+        1.1673004092188675,
+        1.5435021155206385,
+        1.4583567694623694,
+        0.9704521322708654
+      ],
+      "loss": 0.0011938735825581782,
+      "td_terms": 345,
+      "nonzero_errors": 65,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 17,
+      "nodes": 410783,
+      "weights": [
+        1.0,
+        1.180952646742184,
+        1.6050836268043547,
+        1.5230695359270758,
+        0.9593350782480699
+      ],
+      "loss": 0.002708501540013656,
+      "td_terms": 57,
+      "nonzero_errors": 18,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 18,
+      "nodes": 438633,
+      "weights": [
+        1.0,
+        1.1637632769711865,
+        1.590544584200648,
+        1.5270531670872018,
+        0.9590777644277241
+      ],
+      "loss": 0.0015604517096649163,
+      "td_terms": 214,
+      "nonzero_errors": 60,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 19,
+      "nodes": 466636,
+      "weights": [
+        1.0,
+        1.1611549008456656,
+        1.5002848435858613,
+        1.5194444274265264,
+        0.9590777644277241
+      ],
+      "loss": 0.0011688695536845883,
+      "td_terms": 326,
+      "nonzero_errors": 63,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 20,
+      "nodes": 489915,
+      "weights": [
+        1.0,
+        1.127802113369673,
+        1.4826047495713737,
+        1.5076070501315133,
+        0.9713998676893825
+      ],
+      "loss": 0.001152240326522977,
+      "td_terms": 258,
+      "nonzero_errors": 71,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 21,
+      "nodes": 503672,
+      "weights": [
+        1.0,
+        1.1629472251739996,
+        1.543925867839433,
+        1.568798668687376,
+        0.9656623497617873
+      ],
+      "loss": 0.005678851796549019,
+      "td_terms": 76,
+      "nonzero_errors": 51,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 22,
+      "nodes": 511542,
+      "weights": [
+        1.0,
+        1.214393304060773,
+        1.6475131893056107,
+        1.4652113472211983,
+        0.9368425656185395
+      ],
+      "loss": 0.012892006442154052,
+      "td_terms": 44,
+      "nonzero_errors": 20,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 23,
+      "nodes": 529795,
+      "weights": [
+        1.0,
+        1.3089365796836059,
+        1.6475131893056107,
+        1.4535107758353505,
+        0.9310726682415705
+      ],
+      "loss": 0.008778031106118573,
+      "td_terms": 98,
+      "nonzero_errors": 54,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 24,
+      "nodes": 564862,
+      "weights": [
+        1.0,
+        1.2731077532823614,
+        1.5846311784641645,
+        1.4219271657616832,
+        0.9372219033152747
+      ],
+      "loss": 0.0008547019255659838,
+      "td_terms": 486,
+      "nonzero_errors": 43,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 25,
+      "nodes": 592536,
+      "weights": [
+        1.0,
+        1.2670236673691526,
+        1.6642312362537086,
+        1.4794951221689285,
+        0.9412582219005009
+      ],
+      "loss": 0.0019863327232153864,
+      "td_terms": 234,
+      "nonzero_errors": 62,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 26,
+      "nodes": 614201,
+      "weights": [
+        1.0,
+        1.2213445212623628,
+        1.6649313883611274,
+        1.4733909815283333,
+        0.9293006502600412
+      ],
+      "loss": 0.0038345998226105775,
+      "td_terms": 88,
+      "nonzero_errors": 58,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 27,
+      "nodes": 637886,
+      "weights": [
+        1.0,
+        1.1954454997753143,
+        1.6362267631254968,
+        1.470103802664844,
+        0.9171487244102248
+      ],
+      "loss": 0.0014337170464235561,
+      "td_terms": 200,
+      "nonzero_errors": 44,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 28,
+      "nodes": 674348,
+      "weights": [
+        1.0,
+        1.2109565135118534,
+        1.656832505384441,
+        1.4658960567821382,
+        0.9192447423256049
+      ],
+      "loss": 0.0005311199662314897,
+      "td_terms": 511,
+      "nonzero_errors": 53,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 29,
+      "nodes": 695536,
+      "weights": [
+        1.0,
+        1.1763948726238669,
+        1.6456623965299293,
+        1.5828753907026878,
+        0.9174112270735567
+      ],
+      "loss": 0.0022258911018745837,
+      "td_terms": 152,
+      "nonzero_errors": 58,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 30,
+      "nodes": 729484,
+      "weights": [
+        1.0,
+        1.1580435825530062,
+        1.5158244650740544,
+        1.5721947935870533,
+        0.939254748062214
+      ],
+      "loss": 0.0009728046900099817,
+      "td_terms": 424,
+      "nonzero_errors": 42,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 31,
+      "nodes": 737219,
+      "weights": [
+        1.0,
+        1.1428515169891746,
+        1.5374454711594197,
+        1.5721947935870533,
+        1.008304827450643
+      ],
+      "loss": 0.004970704950825895,
+      "td_terms": 52,
+      "nonzero_errors": 25,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 32,
+      "nodes": 751321,
+      "weights": [
+        1.0,
+        1.1278469066987833,
+        1.5374454711594197,
+        1.568453475497322,
+        1.0024475464665346
+      ],
+      "loss": 0.0025011325991778125,
+      "td_terms": 80,
+      "nonzero_errors": 34,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 33,
+      "nodes": 761171,
+      "weights": [
+        1.0,
+        1.1280469973903113,
+        1.5648376961131967,
+        1.6416105344107974,
+        1.025696273050285
+      ],
+      "loss": 0.002242884083090435,
+      "td_terms": 82,
+      "nonzero_errors": 28,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 34,
+      "nodes": 781699,
+      "weights": [
+        1.0,
+        1.1344585671839733,
+        1.6173352438315025,
+        1.6513801465742215,
+        1.044351259235248
+      ],
+      "loss": 0.0010231465829366822,
+      "td_terms": 127,
+      "nonzero_errors": 77,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 35,
+      "nodes": 822119,
+      "weights": [
+        1.0,
+        1.0805841087786885,
+        1.5712417347179801,
+        1.7835482180585411,
+        1.056837639132465
+      ],
+      "loss": 0.0019068881815497386,
+      "td_terms": 298,
+      "nonzero_errors": 60,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 36,
+      "nodes": 836999,
+      "weights": [
+        1.0,
+        1.108978708992051,
+        1.5768176466945487,
+        1.8620310913311773,
+        1.018460827292429
+      ],
+      "loss": 0.0029699072993850484,
+      "td_terms": 61,
+      "nonzero_errors": 36,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 37,
+      "nodes": 850333,
+      "weights": [
+        1.0,
+        1.1435354217721947,
+        1.5260991964600477,
+        1.941107503323906,
+        1.0429988963688508
+      ],
+      "loss": 0.001495894665768339,
+      "td_terms": 110,
+      "nonzero_errors": 30,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 38,
+      "nodes": 886088,
+      "weights": [
+        1.0,
+        1.0692550212272425,
+        1.5169805895312864,
+        1.9211636986936422,
+        1.0449704833372337
+      ],
+      "loss": 0.0017982687770304866,
+      "td_terms": 319,
+      "nonzero_errors": 91,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 39,
+      "nodes": 895966,
+      "weights": [
+        1.0,
+        1.052193716995993,
+        1.497343588202411,
+        1.9362171760429228,
+        1.050987907364564
+      ],
+      "loss": 0.002866689971899221,
+      "td_terms": 78,
+      "nonzero_errors": 39,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 40,
+      "nodes": 910012,
+      "weights": [
+        1.0,
+        1.0687487429542106,
+        1.513960899166834,
+        2.0006134030129727,
+        1.0503861436805075
+      ],
+      "loss": 0.003327853452615634,
+      "td_terms": 85,
+      "nonzero_errors": 40,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 41,
+      "nodes": 941167,
+      "weights": [
+        1.0,
+        1.0923983966430078,
+        1.5251551789304805,
+        2.0820884712675767,
+        1.060933258284014
+      ],
+      "loss": 0.0016878171450682845,
+      "td_terms": 237,
+      "nonzero_errors": 83,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 42,
+      "nodes": 956157,
+      "weights": [
+        1.0,
+        1.0614565867394536,
+        1.530923540338621,
+        2.0610353801993466,
+        1.0580947458321976
+      ],
+      "loss": 0.002970915476094184,
+      "td_terms": 80,
+      "nonzero_errors": 38,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 43,
+      "nodes": 994104,
+      "weights": [
+        1.0,
+        1.0263073703886842,
+        1.5027332014558616,
+        1.9741420465776034,
+        1.0583307255761316
+      ],
+      "loss": 0.0011661046942262835,
+      "td_terms": 477,
+      "nonzero_errors": 73,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": false,
+      "game": 44,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.0175589751619185,
+        1.5104110405056208,
+        1.9741420465776034,
+        1.0638988453924245
+      ],
+      "loss": 0.0031601717627545004,
+      "td_terms": 31,
+      "nonzero_errors": 22,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 0,
+      "nodes": 50996,
+      "weights": [
+        1.0,
+        0.9891963045579573,
+        1.0926012832069079,
+        1.1991578875823117,
+        0.9704891331746919
+      ],
+      "loss": 0.0003886638424056897,
+      "td_terms": 198,
+      "nonzero_errors": 28,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 1,
+      "nodes": 122083,
+      "weights": [
+        1.0,
+        0.9917540385056265,
+        1.1085594379118817,
+        1.1871249732099827,
+        0.9850601044325575
+      ],
+      "loss": 0.0001946141728836808,
+      "td_terms": 335,
+      "nonzero_errors": 25,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 2,
+      "nodes": 166559,
+      "weights": [
+        1.0,
+        0.9790734964101362,
+        1.0825866479659927,
+        1.1915625402936691,
+        0.9889228056231201
+      ],
+      "loss": 0.00020365329807762057,
+      "td_terms": 300,
+      "nonzero_errors": 20,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 3,
+      "nodes": 191158,
+      "weights": [
+        1.0,
+        0.9646982241451932,
+        1.1270776303003602,
+        1.2627655501711013,
+        1.0435051893525418
+      ],
+      "loss": 0.00516283859334176,
+      "td_terms": 32,
+      "nonzero_errors": 19,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 4,
+      "nodes": 258156,
+      "weights": [
+        1.0,
+        1.0218257558948627,
+        1.1280147418113795,
+        1.3978617486386504,
+        1.0419860576007203
+      ],
+      "loss": 0.0007148910132764717,
+      "td_terms": 286,
+      "nonzero_errors": 33,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 5,
+      "nodes": 306204,
+      "weights": [
+        1.0,
+        1.0171212583695273,
+        1.1559451447328701,
+        1.452858810568454,
+        1.061918275363291
+      ],
+      "loss": 0.0008604914256789042,
+      "td_terms": 212,
+      "nonzero_errors": 29,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 6,
+      "nodes": 366398,
+      "weights": [
+        1.0,
+        1.0268385949905907,
+        1.2054245264544077,
+        1.5887049230993935,
+        1.0640070990906048
+      ],
+      "loss": 0.0010576807882446474,
+      "td_terms": 322,
+      "nonzero_errors": 50,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 7,
+      "nodes": 428555,
+      "weights": [
+        1.0,
+        1.099034857609997,
+        1.274540978886948,
+        1.6401782384460448,
+        1.060500965273477
+      ],
+      "loss": 0.0006742335737203479,
+      "td_terms": 271,
+      "nonzero_errors": 34,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 8,
+      "nodes": 460578,
+      "weights": [
+        1.0,
+        1.155361679910406,
+        1.337827389176621,
+        1.66699253117555,
+        1.0568012859754476
+      ],
+      "loss": 0.00037863644270361765,
+      "td_terms": 195,
+      "nonzero_errors": 14,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 9,
+      "nodes": 533574,
+      "weights": [
+        1.0,
+        1.1396730349257838,
+        1.3193427169309433,
+        1.6680605493253877,
+        1.059577448803042
+      ],
+      "loss": 0.0002060418568784249,
+      "td_terms": 341,
+      "nonzero_errors": 22,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 10,
+      "nodes": 570171,
+      "weights": [
+        1.0,
+        1.2095212058435387,
+        1.2815368028881111,
+        1.7498452884130928,
+        1.0872632283203594
+      ],
+      "loss": 0.0006140614809836723,
+      "td_terms": 165,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 11,
+      "nodes": 618219,
+      "weights": [
+        1.0,
+        1.3179952869049927,
+        1.3124018020555797,
+        1.7883146517479496,
+        1.0872632283203594
+      ],
+      "loss": 0.00041066568167942965,
+      "td_terms": 257,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 12,
+      "nodes": 658469,
+      "weights": [
+        1.0,
+        1.3322315839923173,
+        1.3946705790196932,
+        1.8347885609492516,
+        1.0816027143910127
+      ],
+      "loss": 0.0012624256818929412,
+      "td_terms": 103,
+      "nonzero_errors": 11,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 13,
+      "nodes": 701276,
+      "weights": [
+        1.0,
+        1.3662698259596016,
+        1.4488781350034259,
+        1.9046137446347982,
+        1.0830092009011116
+      ],
+      "loss": 0.0006017303608500652,
+      "td_terms": 142,
+      "nonzero_errors": 25,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 14,
+      "nodes": 730495,
+      "weights": [
+        1.0,
+        1.3546211676190083,
+        1.4382376740101845,
+        1.8801455144245027,
+        1.1383597261165703
+      ],
+      "loss": 0.0012519120087734694,
+      "td_terms": 73,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 15,
+      "nodes": 791776,
+      "weights": [
+        1.0,
+        1.3755984146881903,
+        1.391324088208729,
+        2.0034398639196334,
+        1.1601484292140543
+      ],
+      "loss": 0.0011473367400414035,
+      "td_terms": 172,
+      "nonzero_errors": 47,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 16,
+      "nodes": 810637,
+      "weights": [
+        1.0,
+        1.3271840689303553,
+        1.4223004107380728,
+        2.020102649565182,
+        1.1845035133536668
+      ],
+      "loss": 0.006847054500406669,
+      "td_terms": 29,
+      "nonzero_errors": 25,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 17,
+      "nodes": 864787,
+      "weights": [
+        1.0,
+        1.3217793306985093,
+        1.495749695699007,
+        2.06991201613643,
+        1.1845035133536668
+      ],
+      "loss": 0.0002342659860250604,
+      "td_terms": 275,
+      "nonzero_errors": 22,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 18,
+      "nodes": 898214,
+      "weights": [
+        1.0,
+        1.2777287861405155,
+        1.5006948283939892,
+        2.0492670246558196,
+        1.2783582829406297
+      ],
+      "loss": 0.0019596532591465024,
+      "td_terms": 73,
+      "nonzero_errors": 18,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 19,
+      "nodes": 970263,
+      "weights": [
+        1.0,
+        1.3234971931825597,
+        1.5511373278603353,
+        2.0687524279272846,
+        1.2864635724441695
+      ],
+      "loss": 8.322071360165591e-05,
+      "td_terms": 417,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 1977,
+      "quiet": true,
+      "game": 20,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.323263047066107,
+        1.5471022063771434,
+        2.069403196686833,
+        1.2891668380678714
+      ],
+      "loss": 0.0006534701868690552,
+      "td_terms": 41,
+      "nonzero_errors": 14,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 0,
+      "nodes": 37261,
+      "weights": [
+        1.0,
+        0.5641950980679334,
+        0.5342973664772023,
+        0.9929511674652761,
+        1.3457090253874708
+      ],
+      "loss": 0.0013323041278048464,
+      "td_terms": 141,
+      "nonzero_errors": 16,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 1,
+      "nodes": 87778,
+      "weights": [
+        1.0,
+        0.5549399388835056,
+        0.5439764240753021,
+        1.0012619090410493,
+        1.3546141781798775
+      ],
+      "loss": 0.0018378137127322359,
+      "td_terms": 135,
+      "nonzero_errors": 15,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 2,
+      "nodes": 98765,
+      "weights": [
+        1.0,
+        0.5308273932296075,
+        0.5408021376839621,
+        1.0441393104246939,
+        1.3746403060663186
+      ],
+      "loss": 0.016997391930737057,
+      "td_terms": 19,
+      "nonzero_errors": 13,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 3,
+      "nodes": 145055,
+      "weights": [
+        1.0,
+        0.5641413631416012,
+        0.5453927860597856,
+        1.1103113964423557,
+        1.4107787108522776
+      ],
+      "loss": 0.0008585102000899318,
+      "td_terms": 161,
+      "nonzero_errors": 23,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 4,
+      "nodes": 183741,
+      "weights": [
+        1.0,
+        0.6341832256590583,
+        0.6488747278933908,
+        1.1585958528672877,
+        1.3951770358900533
+      ],
+      "loss": 0.001740163415246429,
+      "td_terms": 72,
+      "nonzero_errors": 25,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 5,
+      "nodes": 223790,
+      "weights": [
+        1.0,
+        0.6369522538538477,
+        0.6285908461215122,
+        1.2673669001523697,
+        1.4237843767081502
+      ],
+      "loss": 0.0009862781176866165,
+      "td_terms": 170,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 6,
+      "nodes": 293784,
+      "weights": [
+        1.0,
+        0.6356929629411449,
+        0.6113301392201944,
+        1.3576513481506474,
+        1.493440443357879
+      ],
+      "loss": 0.0009431055048020226,
+      "td_terms": 332,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 7,
+      "nodes": 343240,
+      "weights": [
+        1.0,
+        0.4798527130277983,
+        0.654904003877588,
+        1.4160086835889172,
+        1.536193068042317
+      ],
+      "loss": 0.0015394989536812716,
+      "td_terms": 121,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 8,
+      "nodes": 356161,
+      "weights": [
+        1.0,
+        0.45632034212338396,
+        0.6923085040598709,
+        1.3865335327255714,
+        1.5826667996654855
+      ],
+      "loss": 0.014333209288267085,
+      "td_terms": 24,
+      "nonzero_errors": 12,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 9,
+      "nodes": 424701,
+      "weights": [
+        1.0,
+        0.4475605843576982,
+        0.6967395446409751,
+        1.3875598314428614,
+        1.575233209844082
+      ],
+      "loss": 0.00021089876105689456,
+      "td_terms": 340,
+      "nonzero_errors": 35,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 10,
+      "nodes": 455134,
+      "weights": [
+        1.0,
+        0.511011829377004,
+        0.6936665190745994,
+        1.4368503934845016,
+        1.6132957467720355
+      ],
+      "loss": 0.000991333708110381,
+      "td_terms": 149,
+      "nonzero_errors": 22,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 11,
+      "nodes": 488238,
+      "weights": [
+        1.0,
+        0.5196635518644721,
+        0.7710402925312202,
+        1.5389280992433194,
+        1.6132957467720355
+      ],
+      "loss": 0.0013494341963557624,
+      "td_terms": 123,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 12,
+      "nodes": 541459,
+      "weights": [
+        1.0,
+        0.507667731412471,
+        0.8026806532766078,
+        1.5817971116893772,
+        1.6510368234332744
+      ],
+      "loss": 0.00033588463029257036,
+      "td_terms": 155,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 13,
+      "nodes": 604708,
+      "weights": [
+        1.0,
+        0.5695426552163007,
+        0.7992321131328526,
+        1.6511944247430879,
+        1.685547157666426
+      ],
+      "loss": 0.0005932138811289067,
+      "td_terms": 309,
+      "nonzero_errors": 15,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 14,
+      "nodes": 635152,
+      "weights": [
+        1.0,
+        0.5526276237447575,
+        0.862220902482749,
+        1.7105183373123203,
+        1.7291633672337288
+      ],
+      "loss": 0.0013261931138890588,
+      "td_terms": 66,
+      "nonzero_errors": 17,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 15,
+      "nodes": 680837,
+      "weights": [
+        1.0,
+        0.5106360112854184,
+        0.8708519504205763,
+        1.6918161306954351,
+        1.727232943676006
+      ],
+      "loss": 0.0002720295221466648,
+      "td_terms": 329,
+      "nonzero_errors": 28,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 16,
+      "nodes": 717957,
+      "weights": [
+        1.0,
+        0.5556277702211803,
+        0.9233079582563594,
+        1.7515892467572391,
+        1.7495547284283919
+      ],
+      "loss": 0.0006386402180119463,
+      "td_terms": 265,
+      "nonzero_errors": 22,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 17,
+      "nodes": 763229,
+      "weights": [
+        1.0,
+        0.5617848902905772,
+        0.9143293944693922,
+        1.726206886495952,
+        1.7495547284283919
+      ],
+      "loss": 0.0002301824527807335,
+      "td_terms": 226,
+      "nonzero_errors": 15,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 18,
+      "nodes": 787620,
+      "weights": [
+        1.0,
+        0.5422775264068942,
+        0.9453714731156156,
+        1.6977072317928805,
+        1.8307196782507216
+      ],
+      "loss": 0.0025372027206148604,
+      "td_terms": 57,
+      "nonzero_errors": 14,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 19,
+      "nodes": 823663,
+      "weights": [
+        1.0,
+        0.48254591153257415,
+        0.9995284453575928,
+        1.7697997257315385,
+        1.859163062244428
+      ],
+      "loss": 0.000884934902105428,
+      "td_terms": 112,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 20,
+      "nodes": 887917,
+      "weights": [
+        1.0,
+        0.546789579771282,
+        1.0118893089302174,
+        1.7730512047663194,
+        1.8898118112100448
+      ],
+      "loss": 0.0003820467898571817,
+      "td_terms": 192,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 21,
+      "nodes": 908842,
+      "weights": [
+        1.0,
+        0.5608150189112366,
+        1.059159059498205,
+        1.7790891163203368,
+        1.9445147362376327
+      ],
+      "loss": 0.0043850953312884345,
+      "td_terms": 35,
+      "nonzero_errors": 16,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 22,
+      "nodes": 941556,
+      "weights": [
+        1.0,
+        0.4926572969084938,
+        1.088933569820863,
+        1.834424998436686,
+        1.9929958234036307
+      ],
+      "loss": 0.0007979337865415509,
+      "td_terms": 75,
+      "nonzero_errors": 14,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 23,
+      "nodes": 994054,
+      "weights": [
+        1.0,
+        0.4943902138599788,
+        1.0741394106481468,
+        1.84297265067643,
+        1.9682992752090644
+      ],
+      "loss": 0.00034833998916155163,
+      "td_terms": 252,
+      "nonzero_errors": 19,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true,
+      "game": 24,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        0.4943902138599788,
+        1.074637327920172,
+        1.84297265067643,
+        1.9682992752090644
+      ],
+      "loss": 0.0035453124057581147,
+      "td_terms": 4,
+      "nonzero_errors": 3,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 0,
+      "nodes": 25525,
+      "weights": [
+        1.0,
+        0.6324141005188411,
+        0.60967686108319,
+        1.0609138245578054,
+        1.2906524365355427
+      ],
+      "loss": 0.0006932661634675565,
+      "td_terms": 358,
+      "nonzero_errors": 37,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 1,
+      "nodes": 36831,
+      "weights": [
+        1.0,
+        0.6153492386397861,
+        0.5903911948732964,
+        1.2262484625654904,
+        1.3280415042636624
+      ],
+      "loss": 0.004019482696285607,
+      "td_terms": 88,
+      "nonzero_errors": 45,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 2,
+      "nodes": 45202,
+      "weights": [
+        1.0,
+        0.6738736969670253,
+        0.5903785013985914,
+        1.2566621660186572,
+        1.3769949996781805
+      ],
+      "loss": 0.004806193154526508,
+      "td_terms": 40,
+      "nonzero_errors": 31,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 3,
+      "nodes": 55605,
+      "weights": [
+        1.0,
+        0.630799511942996,
+        0.5774824770376634,
+        1.3176168011662002,
+        1.405433337510017
+      ],
+      "loss": 0.004863010417498852,
+      "td_terms": 72,
+      "nonzero_errors": 33,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 4,
+      "nodes": 78805,
+      "weights": [
+        1.0,
+        0.6175877257332316,
+        0.5803077017844886,
+        1.3877275699207188,
+        1.4523201631619926
+      ],
+      "loss": 0.0017276235743260906,
+      "td_terms": 213,
+      "nonzero_errors": 40,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 5,
+      "nodes": 96507,
+      "weights": [
+        1.0,
+        0.6253774031614169,
+        0.5302028569452881,
+        1.4006931002871092,
+        1.4491384991989642
+      ],
+      "loss": 0.000914292449388676,
+      "td_terms": 190,
+      "nonzero_errors": 41,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 6,
+      "nodes": 109784,
+      "weights": [
+        1.0,
+        0.6276223960479601,
+        0.5330566799551758,
+        1.448174931536762,
+        1.487679223349287
+      ],
+      "loss": 0.0006447352464478174,
+      "td_terms": 126,
+      "nonzero_errors": 21,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 7,
+      "nodes": 125208,
+      "weights": [
+        1.0,
+        0.6547130897384345,
+        0.512231094206759,
+        1.4684893080573818,
+        1.5217123869395477
+      ],
+      "loss": 0.0011863513051251057,
+      "td_terms": 120,
+      "nonzero_errors": 32,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 8,
+      "nodes": 133914,
+      "weights": [
+        1.0,
+        0.7192572029248631,
+        0.539619618740169,
+        1.520316624691659,
+        1.5550072310587622
+      ],
+      "loss": 0.0028908048062581885,
+      "td_terms": 45,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 9,
+      "nodes": 145028,
+      "weights": [
+        1.0,
+        0.6887007802090878,
+        0.5294823375248602,
+        1.521685489575146,
+        1.5985111199021131
+      ],
+      "loss": 0.005123100951619692,
+      "td_terms": 52,
+      "nonzero_errors": 46,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 10,
+      "nodes": 158981,
+      "weights": [
+        1.0,
+        0.7485579274423868,
+        0.5768310754036844,
+        1.5945434898732431,
+        1.5529138445003086
+      ],
+      "loss": 0.004956679482605839,
+      "td_terms": 60,
+      "nonzero_errors": 34,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 11,
+      "nodes": 178800,
+      "weights": [
+        1.0,
+        0.8218014031973601,
+        0.576525938841057,
+        1.6781282764351353,
+        1.5529138445003086
+      ],
+      "loss": 0.0020683263391532663,
+      "td_terms": 213,
+      "nonzero_errors": 35,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 12,
+      "nodes": 194306,
+      "weights": [
+        1.0,
+        0.7923661600820362,
+        0.612447460675835,
+        1.6971866665623867,
+        1.5913518054808615
+      ],
+      "loss": 0.0010570870479941945,
+      "td_terms": 151,
+      "nonzero_errors": 27,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 13,
+      "nodes": 220767,
+      "weights": [
+        1.0,
+        0.9765598935472706,
+        0.5871075395014864,
+        1.608789769106348,
+        1.6928936638412673
+      ],
+      "loss": 0.001122121493784501,
+      "td_terms": 334,
+      "nonzero_errors": 42,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 14,
+      "nodes": 231261,
+      "weights": [
+        1.0,
+        0.9625364411241172,
+        0.6336433070416232,
+        1.6596058679873456,
+        1.6963483961138865
+      ],
+      "loss": 0.004022198027621731,
+      "td_terms": 48,
+      "nonzero_errors": 37,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 15,
+      "nodes": 241261,
+      "weights": [
+        1.0,
+        1.0029468902832448,
+        0.645837785722636,
+        1.739211237868227,
+        1.7520684841410425
+      ],
+      "loss": 0.003867167143304425,
+      "td_terms": 62,
+      "nonzero_errors": 35,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 16,
+      "nodes": 249680,
+      "weights": [
+        1.0,
+        1.0035792116860467,
+        0.6619424326804147,
+        1.7224282661861083,
+        1.7520684841410425
+      ],
+      "loss": 0.004667952109624263,
+      "td_terms": 39,
+      "nonzero_errors": 31,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 17,
+      "nodes": 263392,
+      "weights": [
+        1.0,
+        1.0734309150483978,
+        0.731054386640328,
+        1.8185342591314453,
+        1.7516712274355077
+      ],
+      "loss": 0.0030588558322638105,
+      "td_terms": 97,
+      "nonzero_errors": 37,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 18,
+      "nodes": 279263,
+      "weights": [
+        1.0,
+        1.1222669990859269,
+        0.7532727492496208,
+        1.8174741219146584,
+        1.788964869803144
+      ],
+      "loss": 0.0009573645740483599,
+      "td_terms": 253,
+      "nonzero_errors": 47,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 19,
+      "nodes": 292478,
+      "weights": [
+        1.0,
+        1.1570894851714821,
+        0.7795840720618313,
+        1.826623972478136,
+        1.8174539238754563
+      ],
+      "loss": 0.0007505823497431363,
+      "td_terms": 101,
+      "nonzero_errors": 25,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 20,
+      "nodes": 300396,
+      "weights": [
+        1.0,
+        1.1652138819426414,
+        0.8078127192306869,
+        1.8439467705055173,
+        1.836043194291059
+      ],
+      "loss": 0.0037824039629486697,
+      "td_terms": 32,
+      "nonzero_errors": 21,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 21,
+      "nodes": 335198,
+      "weights": [
+        1.0,
+        1.232877972163027,
+        0.7999153168023796,
+        1.9359008505502926,
+        1.8298635354659871
+      ],
+      "loss": 0.0009698882794342456,
+      "td_terms": 378,
+      "nonzero_errors": 66,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 22,
+      "nodes": 347765,
+      "weights": [
+        1.0,
+        1.2327817491755149,
+        0.744209467409147,
+        1.9927571995869795,
+        1.8863303707995522
+      ],
+      "loss": 0.005443479145147171,
+      "td_terms": 57,
+      "nonzero_errors": 31,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 23,
+      "nodes": 364558,
+      "weights": [
+        1.0,
+        1.1992530247405762,
+        0.6978518189786593,
+        2.010452923690726,
+        1.9279372247122004
+      ],
+      "loss": 0.004176780909933467,
+      "td_terms": 63,
+      "nonzero_errors": 46,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 24,
+      "nodes": 387224,
+      "weights": [
+        1.0,
+        1.2414800793293352,
+        0.6918174495077352,
+        2.0747677676537157,
+        1.9523647828824768
+      ],
+      "loss": 0.001268885991989903,
+      "td_terms": 271,
+      "nonzero_errors": 50,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 25,
+      "nodes": 409936,
+      "weights": [
+        1.0,
+        1.2335262844974224,
+        0.7062323884833965,
+        2.040329068026072,
+        1.9485170667763991
+      ],
+      "loss": 0.0019248596848613934,
+      "td_terms": 217,
+      "nonzero_errors": 68,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 26,
+      "nodes": 423060,
+      "weights": [
+        1.0,
+        1.2830322930062084,
+        0.7575550521931647,
+        2.0608138782549075,
+        1.9530225509639814
+      ],
+      "loss": 0.0020166936119105708,
+      "td_terms": 88,
+      "nonzero_errors": 46,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 27,
+      "nodes": 434177,
+      "weights": [
+        1.0,
+        1.2892552769335819,
+        0.7374255623606469,
+        2.0604970738192816,
+        1.950852813854408
+      ],
+      "loss": 0.00333640755983881,
+      "td_terms": 87,
+      "nonzero_errors": 42,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 28,
+      "nodes": 449935,
+      "weights": [
+        1.0,
+        1.2412273616743583,
+        0.7329543397832887,
+        1.9788449613059989,
+        1.9786782305615154
+      ],
+      "loss": 0.001393880327574938,
+      "td_terms": 165,
+      "nonzero_errors": 39,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 29,
+      "nodes": 472077,
+      "weights": [
+        1.0,
+        1.1713861609933645,
+        0.6867557960053432,
+        2.066293516008444,
+        2.002142391399812
+      ],
+      "loss": 0.0051729544171260885,
+      "td_terms": 111,
+      "nonzero_errors": 60,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 30,
+      "nodes": 486526,
+      "weights": [
+        1.0,
+        1.1832061714164293,
+        0.6724436254472931,
+        2.0512549407021097,
+        2.0015364887660025
+      ],
+      "loss": 0.0037285554090854757,
+      "td_terms": 89,
+      "nonzero_errors": 49,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 31,
+      "nodes": 516588,
+      "weights": [
+        1.0,
+        1.1536008976585301,
+        0.6527783911801534,
+        1.9827128074981164,
+        2.0144686633892843
+      ],
+      "loss": 0.001485376389535161,
+      "td_terms": 353,
+      "nonzero_errors": 62,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 32,
+      "nodes": 526054,
+      "weights": [
+        1.0,
+        1.2051721820658579,
+        0.627227938043854,
+        2.0377642961510856,
+        2.0144686633892843
+      ],
+      "loss": 0.00959251223305342,
+      "td_terms": 54,
+      "nonzero_errors": 32,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 33,
+      "nodes": 546726,
+      "weights": [
+        1.0,
+        1.111395396127847,
+        0.6367810084565085,
+        2.0163400518019836,
+        2.0807243000629017
+      ],
+      "loss": 0.0016916719940743455,
+      "td_terms": 194,
+      "nonzero_errors": 36,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 34,
+      "nodes": 565133,
+      "weights": [
+        1.0,
+        1.1079909595320796,
+        0.6781487507898947,
+        2.034443403303815,
+        2.109667181918466
+      ],
+      "loss": 0.0004349834481009719,
+      "td_terms": 183,
+      "nonzero_errors": 35,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 35,
+      "nodes": 571640,
+      "weights": [
+        1.0,
+        1.1341176293657973,
+        0.7043653321665914,
+        2.0460260128955956,
+        2.109667181918466
+      ],
+      "loss": 0.01309213225922461,
+      "td_terms": 27,
+      "nonzero_errors": 21,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 36,
+      "nodes": 577320,
+      "weights": [
+        1.0,
+        1.134362410423452,
+        0.6954440959223859,
+        2.0365186486025415,
+        2.109667181918466
+      ],
+      "loss": 0.005876059712559056,
+      "td_terms": 35,
+      "nonzero_errors": 33,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 37,
+      "nodes": 588678,
+      "weights": [
+        1.0,
+        1.0705749334535912,
+        0.7317688095786604,
+        2.0238080582523934,
+        2.109667181918466
+      ],
+      "loss": 0.009449749195125081,
+      "td_terms": 67,
+      "nonzero_errors": 30,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 38,
+      "nodes": 616416,
+      "weights": [
+        1.0,
+        1.0394990114671194,
+        0.7315704849680528,
+        2.0098888532918973,
+        2.109667181918466
+      ],
+      "loss": 0.005747254728491515,
+      "td_terms": 139,
+      "nonzero_errors": 104,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 39,
+      "nodes": 634468,
+      "weights": [
+        1.0,
+        1.0428609573551813,
+        0.7231412779972438,
+        2.006079748044481,
+        2.10700572146362
+      ],
+      "loss": 0.0059095177408430045,
+      "td_terms": 91,
+      "nonzero_errors": 84,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 40,
+      "nodes": 649616,
+      "weights": [
+        1.0,
+        1.0686880310844868,
+        0.7452793952893468,
+        2.0210120341950137,
+        2.1151286083971645
+      ],
+      "loss": 0.0016282172789421972,
+      "td_terms": 107,
+      "nonzero_errors": 48,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 41,
+      "nodes": 671463,
+      "weights": [
+        1.0,
+        1.0295000774055159,
+        0.6914955936942466,
+        2.019107323961997,
+        2.1715376110066664
+      ],
+      "loss": 0.002753965114702485,
+      "td_terms": 171,
+      "nonzero_errors": 59,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 42,
+      "nodes": 686748,
+      "weights": [
+        1.0,
+        1.0695461562288444,
+        0.679005126192903,
+        2.0845623854502793,
+        2.1715376110066664
+      ],
+      "loss": 0.007913473524832688,
+      "td_terms": 57,
+      "nonzero_errors": 51,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 43,
+      "nodes": 707887,
+      "weights": [
+        1.0,
+        1.1586612501625095,
+        0.6723478100114013,
+        2.0996796754572378,
+        2.1829460617504077
+      ],
+      "loss": 0.002657685125478662,
+      "td_terms": 138,
+      "nonzero_errors": 52,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 44,
+      "nodes": 715778,
+      "weights": [
+        1.0,
+        1.1130855413932843,
+        0.7596917750475561,
+        2.1593545021321385,
+        2.1829460617504077
+      ],
+      "loss": 0.007291397273053622,
+      "td_terms": 33,
+      "nonzero_errors": 30,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 45,
+      "nodes": 743318,
+      "weights": [
+        1.0,
+        1.1423581661926807,
+        0.7768294059987557,
+        2.2037931739857477,
+        2.1823912088582538
+      ],
+      "loss": 0.001329280087728426,
+      "td_terms": 215,
+      "nonzero_errors": 75,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 46,
+      "nodes": 752803,
+      "weights": [
+        1.0,
+        1.2232474755992881,
+        0.785166456797437,
+        2.2037931739857477,
+        2.1823912088582538
+      ],
+      "loss": 0.014410993321479465,
+      "td_terms": 36,
+      "nonzero_errors": 23,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 47,
+      "nodes": 775398,
+      "weights": [
+        1.0,
+        1.227288687093011,
+        0.8052161152044122,
+        2.2126291397791014,
+        2.232479728453005
+      ],
+      "loss": 0.00025040652001923996,
+      "td_terms": 249,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 48,
+      "nodes": 785914,
+      "weights": [
+        1.0,
+        1.1522670251315845,
+        0.8863827993941111,
+        2.2319171623687186,
+        2.3005543405350246
+      ],
+      "loss": 0.006092161986430189,
+      "td_terms": 49,
+      "nonzero_errors": 38,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 49,
+      "nodes": 800846,
+      "weights": [
+        1.0,
+        1.1258911189192102,
+        0.8802433692602268,
+        2.230448473207748,
+        2.27816991853658
+      ],
+      "loss": 0.0032063489900235427,
+      "td_terms": 60,
+      "nonzero_errors": 36,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 50,
+      "nodes": 821384,
+      "weights": [
+        1.0,
+        1.1054451543421544,
+        0.874192742960294,
+        2.230448473207748,
+        2.27816991853658
+      ],
+      "loss": 0.005196578158498801,
+      "td_terms": 84,
+      "nonzero_errors": 73,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 51,
+      "nodes": 832624,
+      "weights": [
+        1.0,
+        1.1234449425031603,
+        0.7795579139018111,
+        2.3113144482261787,
+        2.27816991853658
+      ],
+      "loss": 0.010585238560406942,
+      "td_terms": 44,
+      "nonzero_errors": 40,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 52,
+      "nodes": 847592,
+      "weights": [
+        1.0,
+        1.1098714685736168,
+        0.8131940768483003,
+        2.3323340047680605,
+        2.3023510307699477
+      ],
+      "loss": 0.0036205121317931374,
+      "td_terms": 78,
+      "nonzero_errors": 33,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 53,
+      "nodes": 872829,
+      "weights": [
+        1.0,
+        1.1558610202401696,
+        0.8251310850697092,
+        2.3600001588915283,
+        2.3238415561129027
+      ],
+      "loss": 0.0016484203159326182,
+      "td_terms": 185,
+      "nonzero_errors": 64,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 54,
+      "nodes": 893016,
+      "weights": [
+        1.0,
+        1.0910835583110547,
+        0.8334321413552407,
+        2.3827698862446005,
+        2.341280641751572
+      ],
+      "loss": 0.0020145431350420523,
+      "td_terms": 141,
+      "nonzero_errors": 50,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 55,
+      "nodes": 910963,
+      "weights": [
+        1.0,
+        1.1114612634082417,
+        0.8504474383154766,
+        2.388622667336893,
+        2.3570172899571644
+      ],
+      "loss": 0.002399425970899977,
+      "td_terms": 90,
+      "nonzero_errors": 49,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 56,
+      "nodes": 928322,
+      "weights": [
+        1.0,
+        1.0944989352020638,
+        0.814833847442588,
+        2.378790383695541,
+        2.443730748426522
+      ],
+      "loss": 0.004109091282667029,
+      "td_terms": 119,
+      "nonzero_errors": 53,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 57,
+      "nodes": 942693,
+      "weights": [
+        1.0,
+        1.129656197087275,
+        0.8226009284437207,
+        2.3862143144123693,
+        2.475360707801889
+      ],
+      "loss": 0.00045519800444559887,
+      "td_terms": 141,
+      "nonzero_errors": 20,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 58,
+      "nodes": 961355,
+      "weights": [
+        1.0,
+        1.1602459384345776,
+        0.822358539755492,
+        2.4277790025109853,
+        2.458824830876539
+      ],
+      "loss": 0.0012212770084361728,
+      "td_terms": 238,
+      "nonzero_errors": 32,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 59,
+      "nodes": 977195,
+      "weights": [
+        1.0,
+        1.1366068194679364,
+        0.8460263774270413,
+        2.458593242873595,
+        2.4870349971462584
+      ],
+      "loss": 0.00510622090087422,
+      "td_terms": 79,
+      "nonzero_errors": 44,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 60,
+      "nodes": 987410,
+      "weights": [
+        1.0,
+        1.1327675825812586,
+        0.8404804873326814,
+        2.4573249280091938,
+        2.4870349971462584
+      ],
+      "loss": 0.006159465670329712,
+      "td_terms": 51,
+      "nonzero_errors": 48,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false,
+      "game": 61,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.1151901520903684,
+        0.8007389224776272,
+        2.4573249280091938,
+        2.5264149180144075
+      ],
+      "loss": 0.0013008649044016277,
+      "td_terms": 72,
+      "nonzero_errors": 24,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 0,
+      "nodes": 25133,
+      "weights": [
+        1.0,
+        1.1198724657666543,
+        1.1446002318617554,
+        0.7625569089891061,
+        1.3875152572389666
+      ],
+      "loss": 0.0019874422479400594,
+      "td_terms": 219,
+      "nonzero_errors": 65,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 1,
+      "nodes": 30584,
+      "weights": [
+        1.0,
+        1.0984572853964871,
+        1.1824061786423778,
+        0.768070881197454,
+        1.413896487474431
+      ],
+      "loss": 0.003911395814867391,
+      "td_terms": 29,
+      "nonzero_errors": 20,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 2,
+      "nodes": 43473,
+      "weights": [
+        1.0,
+        1.08082118844778,
+        1.2087163361983027,
+        0.8323657801377623,
+        1.4142997937613138
+      ],
+      "loss": 0.006665573294639945,
+      "td_terms": 59,
+      "nonzero_errors": 55,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 3,
+      "nodes": 62750,
+      "weights": [
+        1.0,
+        1.1072329014019238,
+        1.1862683710355313,
+        0.8679346819907575,
+        1.4944766127789382
+      ],
+      "loss": 0.0020448962781123487,
+      "td_terms": 122,
+      "nonzero_errors": 53,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 4,
+      "nodes": 80006,
+      "weights": [
+        1.0,
+        1.141991535086348,
+        1.2271768760273398,
+        0.9294801438322646,
+        1.5414682823808308
+      ],
+      "loss": 0.0016775089606721502,
+      "td_terms": 107,
+      "nonzero_errors": 46,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 5,
+      "nodes": 85377,
+      "weights": [
+        1.0,
+        1.100512678959032,
+        1.1467604839261227,
+        0.9036871651072332,
+        1.5414682823808308
+      ],
+      "loss": 0.015393916307636573,
+      "td_terms": 30,
+      "nonzero_errors": 25,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 6,
+      "nodes": 105255,
+      "weights": [
+        1.0,
+        1.078700233689418,
+        1.1525378303807627,
+        0.8794824182449114,
+        1.5966164295624006
+      ],
+      "loss": 0.0009122885880694659,
+      "td_terms": 136,
+      "nonzero_errors": 36,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 7,
+      "nodes": 112617,
+      "weights": [
+        1.0,
+        1.068622200050884,
+        1.1685163234413782,
+        0.88409377067735,
+        1.6403542824956647
+      ],
+      "loss": 0.003790731410034733,
+      "td_terms": 42,
+      "nonzero_errors": 31,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 8,
+      "nodes": 126105,
+      "weights": [
+        1.0,
+        1.0770503207965418,
+        1.158365586354563,
+        0.9450199351323658,
+        1.7145638659411246
+      ],
+      "loss": 0.0026716115361760146,
+      "td_terms": 88,
+      "nonzero_errors": 23,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 9,
+      "nodes": 154789,
+      "weights": [
+        1.0,
+        1.1898355815672714,
+        1.253116941115842,
+        0.9778803782450034,
+        1.718087020894882
+      ],
+      "loss": 0.0012493357285735874,
+      "td_terms": 305,
+      "nonzero_errors": 72,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 10,
+      "nodes": 178445,
+      "weights": [
+        1.0,
+        1.2240442025393075,
+        1.2705876141959294,
+        0.8630521061435702,
+        1.8284672393479275
+      ],
+      "loss": 0.0033473332058878576,
+      "td_terms": 128,
+      "nonzero_errors": 65,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 11,
+      "nodes": 184287,
+      "weights": [
+        1.0,
+        1.3013808459841303,
+        1.3016306752798756,
+        0.7588258475414057,
+        1.8284672393479275
+      ],
+      "loss": 0.008490635463883857,
+      "td_terms": 36,
+      "nonzero_errors": 11,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 12,
+      "nodes": 187352,
+      "weights": [
+        1.0,
+        1.2698403924981767,
+        1.3375804887002374,
+        0.771187393631098,
+        1.8496105717631164
+      ],
+      "loss": 0.015960654921342153,
+      "td_terms": 13,
+      "nonzero_errors": 10,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 13,
+      "nodes": 196416,
+      "weights": [
+        1.0,
+        1.2577287485516029,
+        1.3495438102193467,
+        0.8053668335655315,
+        1.8655616527555854
+      ],
+      "loss": 0.002425106112333429,
+      "td_terms": 51,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 14,
+      "nodes": 209020,
+      "weights": [
+        1.0,
+        1.257420637801547,
+        1.3464146320565948,
+        0.7854456552366161,
+        1.8651895371059755
+      ],
+      "loss": 0.0054814198912520595,
+      "td_terms": 73,
+      "nonzero_errors": 59,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 15,
+      "nodes": 227860,
+      "weights": [
+        1.0,
+        1.2532042478950138,
+        1.4212626544054618,
+        0.8841915092722487,
+        1.8933875946231038
+      ],
+      "loss": 0.004567881872208702,
+      "td_terms": 84,
+      "nonzero_errors": 54,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 16,
+      "nodes": 253823,
+      "weights": [
+        1.0,
+        1.3351241071048068,
+        1.413175883030058,
+        0.8856256426820062,
+        1.89065491972991
+      ],
+      "loss": 0.0014517821604192397,
+      "td_terms": 230,
+      "nonzero_errors": 50,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 17,
+      "nodes": 260547,
+      "weights": [
+        1.0,
+        1.3734533633460086,
+        1.4377061103139936,
+        0.9227323867858737,
+        1.9011745057915073
+      ],
+      "loss": 0.001571104753913705,
+      "td_terms": 49,
+      "nonzero_errors": 31,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 18,
+      "nodes": 273127,
+      "weights": [
+        1.0,
+        1.4613707314728646,
+        1.4158589931996566,
+        0.9279114370803281,
+        1.9465160752615485
+      ],
+      "loss": 0.0006021365754524437,
+      "td_terms": 139,
+      "nonzero_errors": 23,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 19,
+      "nodes": 292298,
+      "weights": [
+        1.0,
+        1.5327241619413157,
+        1.4145443863897864,
+        0.9416025710334043,
+        1.9838532793282058
+      ],
+      "loss": 0.0018793516024959843,
+      "td_terms": 111,
+      "nonzero_errors": 58,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 20,
+      "nodes": 321739,
+      "weights": [
+        1.0,
+        1.50507006953776,
+        1.4551741402738432,
+        0.917965610016835,
+        1.9733553478517383
+      ],
+      "loss": 0.0008995056719611112,
+      "td_terms": 328,
+      "nonzero_errors": 38,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 21,
+      "nodes": 333613,
+      "weights": [
+        1.0,
+        1.4961429718159132,
+        1.5103325039234095,
+        0.962418372238281,
+        2.0366799784109064
+      ],
+      "loss": 0.0014775337422929537,
+      "td_terms": 89,
+      "nonzero_errors": 27,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 22,
+      "nodes": 350606,
+      "weights": [
+        1.0,
+        1.5401902908939396,
+        1.5119279033058333,
+        0.9965796363805446,
+        2.074078338249866
+      ],
+      "loss": 0.0007939926108319344,
+      "td_terms": 153,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 23,
+      "nodes": 361584,
+      "weights": [
+        1.0,
+        1.5416093234278085,
+        1.530807532325101,
+        1.0333558489649446,
+        2.0947181372933277
+      ],
+      "loss": 0.0033887836483804702,
+      "td_terms": 49,
+      "nonzero_errors": 39,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 24,
+      "nodes": 383584,
+      "weights": [
+        1.0,
+        1.5267609567352842,
+        1.4858880854782004,
+        1.0500475434609604,
+        2.0893089226504817
+      ],
+      "loss": 0.0028096796204667815,
+      "td_terms": 113,
+      "nonzero_errors": 54,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 25,
+      "nodes": 398468,
+      "weights": [
+        1.0,
+        1.5847673806789977,
+        1.5439668060210276,
+        1.080860858216429,
+        2.0961757665615144
+      ],
+      "loss": 0.004813094222197924,
+      "td_terms": 49,
+      "nonzero_errors": 37,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 26,
+      "nodes": 406212,
+      "weights": [
+        1.0,
+        1.6031589266646749,
+        1.5831338852951764,
+        1.080860858216429,
+        2.0961757665615144
+      ],
+      "loss": 0.017231830213647582,
+      "td_terms": 28,
+      "nonzero_errors": 23,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 27,
+      "nodes": 438033,
+      "weights": [
+        1.0,
+        1.5789743424947196,
+        1.6516234168083248,
+        1.0842439270259139,
+        2.141492658735131
+      ],
+      "loss": 0.0017177400942228421,
+      "td_terms": 364,
+      "nonzero_errors": 79,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 28,
+      "nodes": 447730,
+      "weights": [
+        1.0,
+        1.5673683813433423,
+        1.5900504897068009,
+        1.102110776104873,
+        2.1431953417364586
+      ],
+      "loss": 0.00885908669267638,
+      "td_terms": 56,
+      "nonzero_errors": 51,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 29,
+      "nodes": 467299,
+      "weights": [
+        1.0,
+        1.5729003181398342,
+        1.5922793353706097,
+        1.1715025345577093,
+        2.1744510546348734
+      ],
+      "loss": 0.005954419551917169,
+      "td_terms": 80,
+      "nonzero_errors": 64,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 30,
+      "nodes": 502750,
+      "weights": [
+        1.0,
+        1.5471302792375985,
+        1.588534181906547,
+        1.1267240502110853,
+        2.1818307994223827
+      ],
+      "loss": 0.0019313515640832534,
+      "td_terms": 270,
+      "nonzero_errors": 81,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 31,
+      "nodes": 527470,
+      "weights": [
+        1.0,
+        1.5254108177802848,
+        1.5675723627991374,
+        1.1184425533233675,
+        2.1816253007701527
+      ],
+      "loss": 0.0014322383783307655,
+      "td_terms": 201,
+      "nonzero_errors": 51,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 32,
+      "nodes": 538993,
+      "weights": [
+        1.0,
+        1.5873700136244182,
+        1.5684956851448983,
+        1.146795589825532,
+        2.1816253007701527
+      ],
+      "loss": 0.003120423668971415,
+      "td_terms": 54,
+      "nonzero_errors": 42,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 33,
+      "nodes": 545495,
+      "weights": [
+        1.0,
+        1.5800337415203034,
+        1.5618752392309088,
+        1.1466775267841205,
+        2.1816253007701527
+      ],
+      "loss": 0.005863450121326848,
+      "td_terms": 32,
+      "nonzero_errors": 25,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 34,
+      "nodes": 549280,
+      "weights": [
+        1.0,
+        1.5822055639782886,
+        1.6003150818472858,
+        1.1539938896342816,
+        2.2016327839012506
+      ],
+      "loss": 0.0038311707047407237,
+      "td_terms": 23,
+      "nonzero_errors": 12,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 35,
+      "nodes": 565998,
+      "weights": [
+        1.0,
+        1.5900967981388534,
+        1.6298299171386377,
+        1.1926252069604755,
+        2.2081874538240296
+      ],
+      "loss": 0.0033810502523051993,
+      "td_terms": 85,
+      "nonzero_errors": 47,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 36,
+      "nodes": 574635,
+      "weights": [
+        1.0,
+        1.583464751170125,
+        1.6633386469074687,
+        1.2245378279258832,
+        2.223966927316249
+      ],
+      "loss": 0.002616413662794441,
+      "td_terms": 59,
+      "nonzero_errors": 28,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 37,
+      "nodes": 600610,
+      "weights": [
+        1.0,
+        1.5936917323295055,
+        1.6801120175562059,
+        1.23013704880104,
+        2.252984027217443
+      ],
+      "loss": 0.0023091744809040416,
+      "td_terms": 230,
+      "nonzero_errors": 50,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 38,
+      "nodes": 609311,
+      "weights": [
+        1.0,
+        1.6343906516307214,
+        1.6897510722023263,
+        1.23013704880104,
+        2.2615696416341438
+      ],
+      "loss": 0.020629213685789488,
+      "td_terms": 34,
+      "nonzero_errors": 30,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 39,
+      "nodes": 631219,
+      "weights": [
+        1.0,
+        1.6067832100682549,
+        1.6901240155394115,
+        1.255177286553071,
+        2.3060046193211536
+      ],
+      "loss": 0.0024080528962289243,
+      "td_terms": 179,
+      "nonzero_errors": 67,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 40,
+      "nodes": 642021,
+      "weights": [
+        1.0,
+        1.6314478986798133,
+        1.70006582968526,
+        1.2824869792427227,
+        2.3205620686545485
+      ],
+      "loss": 0.0031974356023216554,
+      "td_terms": 61,
+      "nonzero_errors": 31,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 41,
+      "nodes": 668920,
+      "weights": [
+        1.0,
+        1.6151122242813316,
+        1.7178868498635584,
+        1.2261847755300705,
+        2.371172540052931
+      ],
+      "loss": 0.0031337377680548404,
+      "td_terms": 179,
+      "nonzero_errors": 78,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 42,
+      "nodes": 675744,
+      "weights": [
+        1.0,
+        1.617069544005281,
+        1.717782323718737,
+        1.225662361849308,
+        2.371172540052931
+      ],
+      "loss": 0.0052046300751251075,
+      "td_terms": 31,
+      "nonzero_errors": 23,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 43,
+      "nodes": 700283,
+      "weights": [
+        1.0,
+        1.5665446193558936,
+        1.7767247959300698,
+        1.2442910803312641,
+        2.4008479926850947
+      ],
+      "loss": 0.003718472567126681,
+      "td_terms": 151,
+      "nonzero_errors": 95,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 44,
+      "nodes": 721020,
+      "weights": [
+        1.0,
+        1.457199146670256,
+        1.8451906799706648,
+        1.3160947634178346,
+        2.4875795855444576
+      ],
+      "loss": 0.002812407036859789,
+      "td_terms": 145,
+      "nonzero_errors": 66,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 45,
+      "nodes": 723331,
+      "weights": [
+        1.0,
+        1.457199146670256,
+        1.812145676156277,
+        1.3160947634178346,
+        2.4875795855444576
+      ],
+      "loss": 0.04259733836236024,
+      "td_terms": 15,
+      "nonzero_errors": 9,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 46,
+      "nodes": 735112,
+      "weights": [
+        1.0,
+        1.246159948060603,
+        1.8577196035789387,
+        1.3409687965238377,
+        2.4875795855444576
+      ],
+      "loss": 0.012783067830395213,
+      "td_terms": 69,
+      "nonzero_errors": 57,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 47,
+      "nodes": 753076,
+      "weights": [
+        1.0,
+        1.2428376833275179,
+        1.8272230876291038,
+        1.365401220018537,
+        2.5322013956081255
+      ],
+      "loss": 0.0010843814335381658,
+      "td_terms": 173,
+      "nonzero_errors": 52,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 48,
+      "nodes": 775847,
+      "weights": [
+        1.0,
+        1.2229325714615795,
+        1.8928138205246732,
+        1.32843628945863,
+        2.6035284386071336
+      ],
+      "loss": 0.001786571816021867,
+      "td_terms": 223,
+      "nonzero_errors": 52,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 49,
+      "nodes": 788923,
+      "weights": [
+        1.0,
+        1.256196628331986,
+        1.8938698084189112,
+        1.3773456683957783,
+        2.65443803159421
+      ],
+      "loss": 0.0037475490044937988,
+      "td_terms": 63,
+      "nonzero_errors": 48,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 50,
+      "nodes": 803315,
+      "weights": [
+        1.0,
+        1.2293415584442717,
+        1.884961066256923,
+        1.3644715350014445,
+        2.65443803159421
+      ],
+      "loss": 0.005659671380259327,
+      "td_terms": 84,
+      "nonzero_errors": 65,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 51,
+      "nodes": 811530,
+      "weights": [
+        1.0,
+        1.2363101327927224,
+        1.8919739322295053,
+        1.3848388381977683,
+        2.668996378383086
+      ],
+      "loss": 0.0016115080098864896,
+      "td_terms": 72,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 52,
+      "nodes": 819839,
+      "weights": [
+        1.0,
+        1.2328180205183676,
+        1.8176423647522746,
+        1.456343070512349,
+        2.668996378383086
+      ],
+      "loss": 0.028634941209040553,
+      "td_terms": 34,
+      "nonzero_errors": 26,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 53,
+      "nodes": 841611,
+      "weights": [
+        1.0,
+        1.2229949451919124,
+        1.7868548207758477,
+        1.4951478863586882,
+        2.7083914052124127
+      ],
+      "loss": 0.0020868905181239228,
+      "td_terms": 175,
+      "nonzero_errors": 50,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 54,
+      "nodes": 865142,
+      "weights": [
+        1.0,
+        1.2102104771655575,
+        1.8157582517086879,
+        1.573901755887015,
+        2.6817554279917384
+      ],
+      "loss": 0.001928851041292343,
+      "td_terms": 297,
+      "nonzero_errors": 62,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 55,
+      "nodes": 881685,
+      "weights": [
+        1.0,
+        1.1998004351388472,
+        1.8091769987623656,
+        1.575159112902227,
+        2.6817554279917384
+      ],
+      "loss": 0.006426009031382241,
+      "td_terms": 86,
+      "nonzero_errors": 78,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 56,
+      "nodes": 898192,
+      "weights": [
+        1.0,
+        1.1635544144041938,
+        1.716089789216934,
+        1.514692720472735,
+        2.7713002524010135
+      ],
+      "loss": 0.00505454439672147,
+      "td_terms": 105,
+      "nonzero_errors": 74,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 57,
+      "nodes": 917434,
+      "weights": [
+        1.0,
+        1.188391880522033,
+        1.7221377560053879,
+        1.5204284299498427,
+        2.7937427370530057
+      ],
+      "loss": 0.0011087005580554424,
+      "td_terms": 129,
+      "nonzero_errors": 55,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 58,
+      "nodes": 928101,
+      "weights": [
+        1.0,
+        1.1693094892783344,
+        1.7199890366615598,
+        1.4692250480466214,
+        2.7937427370530057
+      ],
+      "loss": 0.006999506619970819,
+      "td_terms": 56,
+      "nonzero_errors": 45,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 59,
+      "nodes": 945486,
+      "weights": [
+        1.0,
+        1.2984536404934,
+        1.6537940225672796,
+        1.4911444846875916,
+        2.819353135616313
+      ],
+      "loss": 0.0027362488758293476,
+      "td_terms": 112,
+      "nonzero_errors": 52,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 60,
+      "nodes": 970686,
+      "weights": [
+        1.0,
+        1.33827033691294,
+        1.642068026108755,
+        1.5233715664976633,
+        2.824818398468248
+      ],
+      "loss": 0.0012006448303999388,
+      "td_terms": 185,
+      "nonzero_errors": 50,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 61,
+      "nodes": 985977,
+      "weights": [
+        1.0,
+        1.3618976818316066,
+        1.6551857945149013,
+        1.5325040907712508,
+        2.878659256905697
+      ],
+      "loss": 0.002444630272800616,
+      "td_terms": 79,
+      "nonzero_errors": 48,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": false,
+      "game": 62,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.3552071252683813,
+        1.652761933607802,
+        1.537161826376856,
+        2.878659256905697
+      ],
+      "loss": 0.010832403890999175,
+      "td_terms": 53,
+      "nonzero_errors": 49,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 0,
+      "nodes": 40884,
+      "weights": [
+        1.0,
+        1.2535887453880468,
+        1.113562674723119,
+        0.8659909771469685,
+        1.4138298753886225
+      ],
+      "loss": 0.0014467671846621105,
+      "td_terms": 138,
+      "nonzero_errors": 26,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 1,
+      "nodes": 63599,
+      "weights": [
+        1.0,
+        1.35257572954546,
+        1.1567546065662597,
+        0.949568059818978,
+        1.4518609518525885
+      ],
+      "loss": 0.0026446837229431243,
+      "td_terms": 46,
+      "nonzero_errors": 20,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 2,
+      "nodes": 123753,
+      "weights": [
+        1.0,
+        1.2987626220840236,
+        1.1742295972821128,
+        0.9906502247303095,
+        1.522959166018963
+      ],
+      "loss": 0.0008167335307672227,
+      "td_terms": 201,
+      "nonzero_errors": 38,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 3,
+      "nodes": 166199,
+      "weights": [
+        1.0,
+        1.2719307116555105,
+        1.205912007868423,
+        1.0465472145666723,
+        1.554841225309576
+      ],
+      "loss": 0.0007849068346160903,
+      "td_terms": 160,
+      "nonzero_errors": 22,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 4,
+      "nodes": 233561,
+      "weights": [
+        1.0,
+        1.3222849562543688,
+        1.2409493304238126,
+        1.080881357628105,
+        1.588386033579667
+      ],
+      "loss": 0.00046462818172882207,
+      "td_terms": 391,
+      "nonzero_errors": 27,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 5,
+      "nodes": 284078,
+      "weights": [
+        1.0,
+        1.2941689541317198,
+        1.27218921014341,
+        1.1436783395807735,
+        1.6433779925058922
+      ],
+      "loss": 0.0005270223459046233,
+      "td_terms": 211,
+      "nonzero_errors": 25,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 6,
+      "nodes": 330113,
+      "weights": [
+        1.0,
+        1.2792629442761896,
+        1.2949014959206417,
+        1.1614140686630194,
+        1.7178511781274404
+      ],
+      "loss": 0.00232546092181854,
+      "td_terms": 64,
+      "nonzero_errors": 21,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 7,
+      "nodes": 425835,
+      "weights": [
+        1.0,
+        1.2833532058820114,
+        1.3062984347027429,
+        1.1676224676664313,
+        1.682677250842683
+      ],
+      "loss": 0.0003798764920515101,
+      "td_terms": 350,
+      "nonzero_errors": 28,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 8,
+      "nodes": 471671,
+      "weights": [
+        1.0,
+        1.1946651531449162,
+        1.3778956430177949,
+        1.1703155466518966,
+        1.7664624874850192
+      ],
+      "loss": 0.000998938274645889,
+      "td_terms": 204,
+      "nonzero_errors": 57,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 9,
+      "nodes": 522709,
+      "weights": [
+        1.0,
+        1.232161684867656,
+        1.4612796120690827,
+        1.1438501362937348,
+        1.8148144728200524
+      ],
+      "loss": 0.001985309329548467,
+      "td_terms": 105,
+      "nonzero_errors": 38,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 10,
+      "nodes": 571655,
+      "weights": [
+        1.0,
+        1.2010154098861627,
+        1.5081368483705715,
+        1.2027649668131353,
+        1.8249398665047858
+      ],
+      "loss": 0.0025745506419409077,
+      "td_terms": 94,
+      "nonzero_errors": 38,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 11,
+      "nodes": 640328,
+      "weights": [
+        1.0,
+        1.2086596061333712,
+        1.6118316056053166,
+        1.2622536863398535,
+        1.8424894131658192
+      ],
+      "loss": 0.0004895939806669891,
+      "td_terms": 347,
+      "nonzero_errors": 57,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 12,
+      "nodes": 675330,
+      "weights": [
+        1.0,
+        1.2879397746629269,
+        1.539251012835705,
+        1.3183812640749815,
+        1.9156429570229747
+      ],
+      "loss": 0.0013614204045851166,
+      "td_terms": 68,
+      "nonzero_errors": 27,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 13,
+      "nodes": 742023,
+      "weights": [
+        1.0,
+        1.2628952941211118,
+        1.5160214627484743,
+        1.2989196746514031,
+        1.9563324004305007
+      ],
+      "loss": 0.00255510219562942,
+      "td_terms": 172,
+      "nonzero_errors": 54,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 14,
+      "nodes": 797617,
+      "weights": [
+        1.0,
+        1.2123438296717957,
+        1.6127141326624295,
+        1.3095633322976354,
+        2.022050057752349
+      ],
+      "loss": 0.0012700752045541905,
+      "td_terms": 108,
+      "nonzero_errors": 23,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 15,
+      "nodes": 846181,
+      "weights": [
+        1.0,
+        1.246558764836874,
+        1.571779397824879,
+        1.3020874132170872,
+        2.0764525803610345
+      ],
+      "loss": 0.0013580317880533066,
+      "td_terms": 137,
+      "nonzero_errors": 37,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 16,
+      "nodes": 875807,
+      "weights": [
+        1.0,
+        1.2534780272756323,
+        1.5971549775406861,
+        1.3265613655565114,
+        2.108414478607217
+      ],
+      "loss": 0.001694597692047951,
+      "td_terms": 51,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 17,
+      "nodes": 908845,
+      "weights": [
+        1.0,
+        1.1890224612446665,
+        1.5769577248121969,
+        1.3627928413268309,
+        2.191922854520466
+      ],
+      "loss": 0.005981815820334133,
+      "td_terms": 64,
+      "nonzero_errors": 20,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 18,
+      "nodes": 964862,
+      "weights": [
+        1.0,
+        1.2477190034387151,
+        1.5891419719415347,
+        1.3932654175570849,
+        2.2218906377783734
+      ],
+      "loss": 0.0006389736231027661,
+      "td_terms": 193,
+      "nonzero_errors": 38,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 19,
+      "nodes": 996566,
+      "weights": [
+        1.0,
+        1.3073092309414858,
+        1.5596895018314394,
+        1.450659649734837,
+        2.2218906377783734
+      ],
+      "loss": 0.0029535942786184594,
+      "td_terms": 90,
+      "nonzero_errors": 19,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 27182,
+      "quiet": true,
+      "game": 20,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.3073092309414858,
+        1.5596895018314394,
+        1.450659649734837,
+        2.2218906377783734
+      ],
+      "loss": 0.00044118048632049744,
+      "td_terms": 1,
+      "nonzero_errors": 1,
+      "actual_outcome": null,
+      "changed": false
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 0,
+      "nodes": 34972,
+      "weights": [
+        1.0,
+        1.0810370544053034,
+        0.792653622381888,
+        1.383145816034407,
+        0.5411702829366246
+      ],
+      "loss": 0.0003887412440568884,
+      "td_terms": 121,
+      "nonzero_errors": 19,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 1,
+      "nodes": 71978,
+      "weights": [
+        1.0,
+        1.109072196756161,
+        0.7831446391946647,
+        1.4866871414410288,
+        0.5434488479433878
+      ],
+      "loss": 0.0007236195652257444,
+      "td_terms": 264,
+      "nonzero_errors": 28,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 2,
+      "nodes": 89034,
+      "weights": [
+        1.0,
+        1.2150265494576256,
+        0.7620672836789916,
+        1.5251969603772522,
+        0.5934444108426448
+      ],
+      "loss": 0.006019471579711376,
+      "td_terms": 30,
+      "nonzero_errors": 21,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 3,
+      "nodes": 130888,
+      "weights": [
+        1.0,
+        1.2488912134005818,
+        0.8116930610461276,
+        1.6105280006439542,
+        0.5967834452550315
+      ],
+      "loss": 0.0012074787796870318,
+      "td_terms": 128,
+      "nonzero_errors": 29,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 4,
+      "nodes": 212458,
+      "weights": [
+        1.0,
+        1.2805821283028929,
+        0.7725788026780538,
+        1.5538542012871779,
+        0.598459991954786
+      ],
+      "loss": 0.0006042630987402069,
+      "td_terms": 376,
+      "nonzero_errors": 28,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 5,
+      "nodes": 250617,
+      "weights": [
+        1.0,
+        1.2692628048066434,
+        0.7664874523960485,
+        1.634797628923755,
+        0.6092226147710177
+      ],
+      "loss": 0.0004710846611587094,
+      "td_terms": 174,
+      "nonzero_errors": 26,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 6,
+      "nodes": 281043,
+      "weights": [
+        1.0,
+        1.2729476800739026,
+        0.7460445499130062,
+        1.7253382473768109,
+        0.6142303392049581
+      ],
+      "loss": 0.0005465325110227311,
+      "td_terms": 90,
+      "nonzero_errors": 22,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 7,
+      "nodes": 317180,
+      "weights": [
+        1.0,
+        1.2926698613972745,
+        0.7507807907176902,
+        1.7720398312483687,
+        0.6457000173825787
+      ],
+      "loss": 0.0004753033199112419,
+      "td_terms": 136,
+      "nonzero_errors": 25,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 8,
+      "nodes": 351295,
+      "weights": [
+        1.0,
+        1.3719420790467787,
+        0.8042528656637769,
+        1.7865199728831087,
+        0.6466188740249892
+      ],
+      "loss": 0.0007649264655037961,
+      "td_terms": 83,
+      "nonzero_errors": 30,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 9,
+      "nodes": 396944,
+      "weights": [
+        1.0,
+        1.3752636018989763,
+        0.8076543624431368,
+        1.865931933795861,
+        0.647746300390735
+      ],
+      "loss": 0.0008271999297992485,
+      "td_terms": 231,
+      "nonzero_errors": 35,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 10,
+      "nodes": 457616,
+      "weights": [
+        1.0,
+        1.41714523585709,
+        0.7861509134036173,
+        1.9795076694724874,
+        0.6485208418237473
+      ],
+      "loss": 0.00042539315079160374,
+      "td_terms": 287,
+      "nonzero_errors": 21,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 11,
+      "nodes": 484627,
+      "weights": [
+        1.0,
+        1.4610432155377702,
+        0.791220992714475,
+        2.05068776560911,
+        0.6496313816725463
+      ],
+      "loss": 0.00041472271710311286,
+      "td_terms": 123,
+      "nonzero_errors": 19,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 12,
+      "nodes": 528603,
+      "weights": [
+        1.0,
+        1.5292237768315633,
+        0.7881929246642139,
+        2.1196324365073456,
+        0.6521912804878027
+      ],
+      "loss": 0.0007469592641570114,
+      "td_terms": 234,
+      "nonzero_errors": 28,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 13,
+      "nodes": 567048,
+      "weights": [
+        1.0,
+        1.5522107239688687,
+        0.8037986386706834,
+        2.141670633110014,
+        0.6654867126192939
+      ],
+      "loss": 0.0004678652625024373,
+      "td_terms": 150,
+      "nonzero_errors": 23,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 14,
+      "nodes": 642547,
+      "weights": [
+        1.0,
+        1.6297912520312796,
+        0.872202355786734,
+        2.188106036565718,
+        0.6646594299297385
+      ],
+      "loss": 0.00033517173870453623,
+      "td_terms": 268,
+      "nonzero_errors": 22,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 15,
+      "nodes": 681531,
+      "weights": [
+        1.0,
+        1.673065466167986,
+        0.9147306821569544,
+        2.2139019083623106,
+        0.6855687829663681
+      ],
+      "loss": 0.00030015181478227644,
+      "td_terms": 212,
+      "nonzero_errors": 26,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 16,
+      "nodes": 691397,
+      "weights": [
+        1.0,
+        1.6464311401525082,
+        0.9301896364892058,
+        2.2464939089573646,
+        0.6987839476254201
+      ],
+      "loss": 0.02536059000130845,
+      "td_terms": 13,
+      "nonzero_errors": 11,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 17,
+      "nodes": 745492,
+      "weights": [
+        1.0,
+        1.632986393099975,
+        0.9051321190639485,
+        2.2120512765199214,
+        0.6997254153178831
+      ],
+      "loss": 0.0006869179315528663,
+      "td_terms": 276,
+      "nonzero_errors": 17,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 18,
+      "nodes": 772609,
+      "weights": [
+        1.0,
+        1.6691080820506319,
+        0.8893767535377203,
+        2.224540252259143,
+        0.7271471562448079
+      ],
+      "loss": 0.0010788221056105929,
+      "td_terms": 61,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 19,
+      "nodes": 859436,
+      "weights": [
+        1.0,
+        1.6128587803566456,
+        0.8868545264714001,
+        2.342400977127193,
+        0.7274992243677126
+      ],
+      "loss": 0.0007010333142273882,
+      "td_terms": 340,
+      "nonzero_errors": 28,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 20,
+      "nodes": 905524,
+      "weights": [
+        1.0,
+        1.614595997509777,
+        0.8873028947495766,
+        2.362279864766431,
+        0.7376649788978608
+      ],
+      "loss": 0.0002186726285325219,
+      "td_terms": 206,
+      "nonzero_errors": 24,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 21,
+      "nodes": 982026,
+      "weights": [
+        1.0,
+        1.6267668529735224,
+        0.8787642458465266,
+        2.4621783081119255,
+        0.7363605772735448
+      ],
+      "loss": 0.0004619772713617623,
+      "td_terms": 248,
+      "nonzero_errors": 39,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true,
+      "game": 22,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.6267668529735224,
+        0.8783577445092976,
+        2.466507588634352,
+        0.7397788060125758
+      ],
+      "loss": 7.136007285364024e-05,
+      "td_terms": 34,
+      "nonzero_errors": 7,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 0,
+      "nodes": 18395,
+      "weights": [
+        1.0,
+        1.0878151570930514,
+        0.7814463084527888,
+        1.3719352695161864,
+        0.5453940453780707
+      ],
+      "loss": 0.0023603524842379835,
+      "td_terms": 110,
+      "nonzero_errors": 55,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 1,
+      "nodes": 42398,
+      "weights": [
+        1.0,
+        1.083249694341058,
+        0.7783785979822435,
+        1.4840223460178195,
+        0.5448526884168721
+      ],
+      "loss": 0.005229552620477374,
+      "td_terms": 156,
+      "nonzero_errors": 94,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 2,
+      "nodes": 80856,
+      "weights": [
+        1.0,
+        1.0918310013069414,
+        0.7865491089790322,
+        1.480320441124278,
+        0.5457296926118391
+      ],
+      "loss": 0.00030891249493800567,
+      "td_terms": 511,
+      "nonzero_errors": 39,
+      "actual_outcome": null,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 3,
+      "nodes": 112471,
+      "weights": [
+        1.0,
+        1.185308204141635,
+        0.8591619436115352,
+        1.5375633016434795,
+        0.5441898241026848
+      ],
+      "loss": 0.0017670282146845621,
+      "td_terms": 265,
+      "nonzero_errors": 76,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 4,
+      "nodes": 129465,
+      "weights": [
+        1.0,
+        1.2910621935681459,
+        0.8038667939958788,
+        1.576813899171068,
+        0.54416792042795
+      ],
+      "loss": 0.002533307715887564,
+      "td_terms": 121,
+      "nonzero_errors": 49,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 5,
+      "nodes": 152470,
+      "weights": [
+        1.0,
+        1.303056561734103,
+        0.8611143514876314,
+        1.7003280878534686,
+        0.5430287697489544
+      ],
+      "loss": 0.0007797423109693891,
+      "td_terms": 305,
+      "nonzero_errors": 32,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 6,
+      "nodes": 166517,
+      "weights": [
+        1.0,
+        1.4085113556979452,
+        0.9018025924651519,
+        1.7521300686649361,
+        0.5374100314900817
+      ],
+      "loss": 0.0022423388469579183,
+      "td_terms": 83,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 7,
+      "nodes": 173707,
+      "weights": [
+        1.0,
+        1.4091167141926153,
+        0.8960099551402176,
+        1.8020353697605709,
+        0.5899227855978799
+      ],
+      "loss": 0.0020822821963028845,
+      "td_terms": 66,
+      "nonzero_errors": 22,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 8,
+      "nodes": 183646,
+      "weights": [
+        1.0,
+        1.3547471932128277,
+        0.9556270394386396,
+        1.826013132954717,
+        0.6716412449726554
+      ],
+      "loss": 0.005056166481688519,
+      "td_terms": 66,
+      "nonzero_errors": 33,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 9,
+      "nodes": 199419,
+      "weights": [
+        1.0,
+        1.3104877736309979,
+        0.9061404742396661,
+        1.9532168497476796,
+        0.6741514147255931
+      ],
+      "loss": 0.0020869562712146745,
+      "td_terms": 195,
+      "nonzero_errors": 51,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 10,
+      "nodes": 206723,
+      "weights": [
+        1.0,
+        1.333109848455118,
+        0.8443612421926099,
+        1.998645775103656,
+        0.6629437884392385
+      ],
+      "loss": 0.007596906274761699,
+      "td_terms": 47,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 11,
+      "nodes": 229038,
+      "weights": [
+        1.0,
+        1.3199711728957737,
+        0.9165191466326215,
+        2.069103222172669,
+        0.6614133974138753
+      ],
+      "loss": 0.0016451328899074707,
+      "td_terms": 202,
+      "nonzero_errors": 55,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 12,
+      "nodes": 247374,
+      "weights": [
+        1.0,
+        1.3063489633791856,
+        0.9503096151355588,
+        2.0834505907012364,
+        0.6827117400113634
+      ],
+      "loss": 0.0002704043410571587,
+      "td_terms": 223,
+      "nonzero_errors": 37,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 13,
+      "nodes": 257808,
+      "weights": [
+        1.0,
+        1.3026508817869349,
+        0.9763226417447873,
+        2.1169749304885697,
+        0.6936567528368647
+      ],
+      "loss": 0.0005720714278360876,
+      "td_terms": 143,
+      "nonzero_errors": 19,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 14,
+      "nodes": 276191,
+      "weights": [
+        1.0,
+        1.3024539837692288,
+        0.9629187392929774,
+        2.0981926632682013,
+        0.6934697240799963
+      ],
+      "loss": 0.0021962321058574623,
+      "td_terms": 201,
+      "nonzero_errors": 54,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 15,
+      "nodes": 308700,
+      "weights": [
+        1.0,
+        1.272435452976331,
+        0.9762210470044397,
+        2.0981926632682013,
+        0.6998187788470995
+      ],
+      "loss": 0.0013259365088998346,
+      "td_terms": 225,
+      "nonzero_errors": 57,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 16,
+      "nodes": 322492,
+      "weights": [
+        1.0,
+        1.2385944238125486,
+        0.9314757323228646,
+        2.159428283134107,
+        0.7475505958495977
+      ],
+      "loss": 0.0013308130223251692,
+      "td_terms": 119,
+      "nonzero_errors": 32,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 17,
+      "nodes": 330695,
+      "weights": [
+        1.0,
+        1.2950290300173675,
+        0.9834235539974368,
+        2.190046756985454,
+        0.7475505958495977
+      ],
+      "loss": 0.005729376473637654,
+      "td_terms": 57,
+      "nonzero_errors": 45,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 18,
+      "nodes": 343418,
+      "weights": [
+        1.0,
+        1.2739548104078422,
+        0.9650556142352262,
+        2.195643538324344,
+        0.7496222102983269
+      ],
+      "loss": 0.0016052252748738835,
+      "td_terms": 105,
+      "nonzero_errors": 30,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 19,
+      "nodes": 363178,
+      "weights": [
+        1.0,
+        1.3639370139021834,
+        0.9507494760217045,
+        2.195643538324344,
+        0.7487901689966228
+      ],
+      "loss": 0.0066318569687458286,
+      "td_terms": 97,
+      "nonzero_errors": 63,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 20,
+      "nodes": 374341,
+      "weights": [
+        1.0,
+        1.3566961763052185,
+        0.966119217543264,
+        2.1690458694631314,
+        0.7525159770951899
+      ],
+      "loss": 0.0015954826355435963,
+      "td_terms": 109,
+      "nonzero_errors": 29,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 21,
+      "nodes": 387221,
+      "weights": [
+        1.0,
+        1.3779401974746195,
+        0.9825703961100843,
+        2.184373407659895,
+        0.8316558377735356
+      ],
+      "loss": 0.0028962835882000576,
+      "td_terms": 71,
+      "nonzero_errors": 40,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 22,
+      "nodes": 418064,
+      "weights": [
+        1.0,
+        1.3570540007695275,
+        0.9793833621266517,
+        2.1322900517693197,
+        0.8290214274149921
+      ],
+      "loss": 0.0009702311793739612,
+      "td_terms": 364,
+      "nonzero_errors": 39,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 23,
+      "nodes": 423696,
+      "weights": [
+        1.0,
+        1.3570540007695275,
+        0.9851026034744353,
+        2.1322900517693197,
+        0.834293018406761
+      ],
+      "loss": 0.0019879136262142077,
+      "td_terms": 29,
+      "nonzero_errors": 13,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 24,
+      "nodes": 441053,
+      "weights": [
+        1.0,
+        1.3613583984458155,
+        1.0461882172886456,
+        2.162648786457343,
+        0.8338891113922973
+      ],
+      "loss": 0.003109868965372669,
+      "td_terms": 130,
+      "nonzero_errors": 38,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 25,
+      "nodes": 451441,
+      "weights": [
+        1.0,
+        1.4182424421835587,
+        1.076803678977967,
+        2.1803989194177604,
+        0.8524076544419011
+      ],
+      "loss": 0.0024178268565780703,
+      "td_terms": 64,
+      "nonzero_errors": 39,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 26,
+      "nodes": 464378,
+      "weights": [
+        1.0,
+        1.3941706953752362,
+        1.142350245850131,
+        2.208022386252164,
+        0.8450342440481459
+      ],
+      "loss": 0.006988199026569237,
+      "td_terms": 48,
+      "nonzero_errors": 36,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 27,
+      "nodes": 473186,
+      "weights": [
+        1.0,
+        1.3910010557383867,
+        1.1443539292551521,
+        2.2011395229660926,
+        0.8415446434121552
+      ],
+      "loss": 0.0027568181874375918,
+      "td_terms": 74,
+      "nonzero_errors": 29,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 28,
+      "nodes": 490701,
+      "weights": [
+        1.0,
+        1.3800989080227708,
+        1.1427224188808358,
+        2.2011395229660926,
+        0.8445574514229701
+      ],
+      "loss": 0.005216865406866045,
+      "td_terms": 89,
+      "nonzero_errors": 71,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 29,
+      "nodes": 512411,
+      "weights": [
+        1.0,
+        1.4118698350344507,
+        1.1528916883849718,
+        2.2011395229660926,
+        0.8363639088069013
+      ],
+      "loss": 0.003021065235095061,
+      "td_terms": 115,
+      "nonzero_errors": 76,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 30,
+      "nodes": 521493,
+      "weights": [
+        1.0,
+        1.4212242835862714,
+        1.173311890540266,
+        2.2170817356440935,
+        0.8812507445417964
+      ],
+      "loss": 0.0021711516211235945,
+      "td_terms": 85,
+      "nonzero_errors": 25,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 31,
+      "nodes": 553048,
+      "weights": [
+        1.0,
+        1.4628691413184334,
+        1.1620064981585143,
+        2.2665065863302547,
+        0.8993553262090375
+      ],
+      "loss": 0.0006302448818476813,
+      "td_terms": 335,
+      "nonzero_errors": 58,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 32,
+      "nodes": 573627,
+      "weights": [
+        1.0,
+        1.5329916368971321,
+        1.2039887786445596,
+        2.2786284831592547,
+        0.9135151760187643
+      ],
+      "loss": 0.003840597995505284,
+      "td_terms": 108,
+      "nonzero_errors": 60,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 33,
+      "nodes": 590348,
+      "weights": [
+        1.0,
+        1.5167503076810103,
+        1.1952665494408572,
+        2.263553452617043,
+        0.8951481790322047
+      ],
+      "loss": 0.001643738521519402,
+      "td_terms": 201,
+      "nonzero_errors": 47,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 34,
+      "nodes": 610090,
+      "weights": [
+        1.0,
+        1.5079837898232125,
+        1.245476584616581,
+        2.3050024974689736,
+        0.8936200942617085
+      ],
+      "loss": 0.0019508035952197516,
+      "td_terms": 123,
+      "nonzero_errors": 46,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 35,
+      "nodes": 629028,
+      "weights": [
+        1.0,
+        1.5801553010660336,
+        1.2297191417913989,
+        2.370075505299702,
+        0.8922208578775299
+      ],
+      "loss": 0.004249703166123941,
+      "td_terms": 106,
+      "nonzero_errors": 57,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 36,
+      "nodes": 657502,
+      "weights": [
+        1.0,
+        1.61172604829014,
+        1.2254424774414103,
+        2.422824495767229,
+        0.9106217540224967
+      ],
+      "loss": 0.0007517412525238471,
+      "td_terms": 308,
+      "nonzero_errors": 46,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 37,
+      "nodes": 666300,
+      "weights": [
+        1.0,
+        1.5865343547198292,
+        1.2359516900229521,
+        2.402058991520264,
+        0.9173657959992763
+      ],
+      "loss": 0.003872135149081192,
+      "td_terms": 80,
+      "nonzero_errors": 33,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 38,
+      "nodes": 683666,
+      "weights": [
+        1.0,
+        1.6241178224264785,
+        1.3123240795238609,
+        2.4382892321305514,
+        0.9173657959992763
+      ],
+      "loss": 0.0025338312634830594,
+      "td_terms": 118,
+      "nonzero_errors": 59,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 39,
+      "nodes": 697034,
+      "weights": [
+        1.0,
+        1.6586019416476607,
+        1.3561978711078764,
+        2.4756170297327906,
+        0.9743840522528502
+      ],
+      "loss": 0.0033066445106009717,
+      "td_terms": 82,
+      "nonzero_errors": 49,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 40,
+      "nodes": 729165,
+      "weights": [
+        1.0,
+        1.6473805396562182,
+        1.3215161851636383,
+        2.475818022424022,
+        0.982841425640723
+      ],
+      "loss": 0.0016095558227794352,
+      "td_terms": 221,
+      "nonzero_errors": 57,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 41,
+      "nodes": 744385,
+      "weights": [
+        1.0,
+        1.6563165461198486,
+        1.4130219575130456,
+        2.4886386589043155,
+        0.977054365132818
+      ],
+      "loss": 0.0033482671682303015,
+      "td_terms": 76,
+      "nonzero_errors": 52,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 42,
+      "nodes": 752185,
+      "weights": [
+        1.0,
+        1.690427736582896,
+        1.4334800588976382,
+        2.5351062583716666,
+        0.9911314657010484
+      ],
+      "loss": 0.0023880933632757255,
+      "td_terms": 39,
+      "nonzero_errors": 24,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 43,
+      "nodes": 760014,
+      "weights": [
+        1.0,
+        1.6854402508461352,
+        1.4302699139898254,
+        2.53201135385378,
+        0.990014643006391
+      ],
+      "loss": 0.00519892564803972,
+      "td_terms": 60,
+      "nonzero_errors": 33,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 44,
+      "nodes": 785048,
+      "weights": [
+        1.0,
+        1.693082305855692,
+        1.473746060266583,
+        2.579668513359465,
+        1.008525643644535
+      ],
+      "loss": 0.000865060195375383,
+      "td_terms": 181,
+      "nonzero_errors": 37,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 45,
+      "nodes": 800978,
+      "weights": [
+        1.0,
+        1.6332808473029536,
+        1.4926449876172294,
+        2.579668513359465,
+        1.094627443160246
+      ],
+      "loss": 0.005205220148589539,
+      "td_terms": 74,
+      "nonzero_errors": 41,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 46,
+      "nodes": 820909,
+      "weights": [
+        1.0,
+        1.6299947159097992,
+        1.4810057313435507,
+        2.572082956277684,
+        1.0973856145352205
+      ],
+      "loss": 0.004582835492809261,
+      "td_terms": 121,
+      "nonzero_errors": 65,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 47,
+      "nodes": 823344,
+      "weights": [
+        1.0,
+        1.6350789968240218,
+        1.4810057313435507,
+        2.572082956277684,
+        1.0973856145352205
+      ],
+      "loss": 0.02977418180084007,
+      "td_terms": 13,
+      "nonzero_errors": 9,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 48,
+      "nodes": 840535,
+      "weights": [
+        1.0,
+        1.613348100886845,
+        1.6581892936529599,
+        2.572082956277684,
+        1.0962598702100856
+      ],
+      "loss": 0.008441568198003237,
+      "td_terms": 85,
+      "nonzero_errors": 44,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 49,
+      "nodes": 862440,
+      "weights": [
+        1.0,
+        1.6737074324683319,
+        1.7360238763380662,
+        2.586797952572733,
+        1.0779318860798064
+      ],
+      "loss": 0.0017247759420336035,
+      "td_terms": 156,
+      "nonzero_errors": 42,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 50,
+      "nodes": 883731,
+      "weights": [
+        1.0,
+        1.5842635834069605,
+        1.7402416458444607,
+        2.6759988394503087,
+        1.0970234880217824
+      ],
+      "loss": 0.003236235563907348,
+      "td_terms": 141,
+      "nonzero_errors": 61,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 51,
+      "nodes": 902815,
+      "weights": [
+        1.0,
+        1.6018372771887937,
+        1.7526561169183066,
+        2.6984825860314565,
+        1.1023605561817231
+      ],
+      "loss": 0.0011611305841769217,
+      "td_terms": 150,
+      "nonzero_errors": 53,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 52,
+      "nodes": 941095,
+      "weights": [
+        1.0,
+        1.6121858113746323,
+        1.76927055457609,
+        2.730955865221376,
+        1.1028150110074701
+      ],
+      "loss": 0.0008624304178682961,
+      "td_terms": 460,
+      "nonzero_errors": 53,
+      "actual_outcome": -1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 53,
+      "nodes": 952370,
+      "weights": [
+        1.0,
+        1.6428339782032881,
+        1.8015285434243329,
+        2.7377443068645375,
+        1.11870266328201
+      ],
+      "loss": 0.004722074639446945,
+      "td_terms": 45,
+      "nonzero_errors": 26,
+      "actual_outcome": 1,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 54,
+      "nodes": 957660,
+      "weights": [
+        1.0,
+        1.6428339782032881,
+        1.7875512943615335,
+        2.7230180271840636,
+        1.1321503153936354
+      ],
+      "loss": 0.007412591135842948,
+      "td_terms": 27,
+      "nonzero_errors": 20,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 55,
+      "nodes": 977167,
+      "weights": [
+        1.0,
+        1.6354483988600619,
+        1.788978184780959,
+        2.700759438403965,
+        1.1472458015618912
+      ],
+      "loss": 0.005200561218368824,
+      "td_terms": 100,
+      "nonzero_errors": 55,
+      "actual_outcome": 0,
+      "changed": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false,
+      "game": 56,
+      "nodes": 1000000,
+      "weights": [
+        1.0,
+        1.6326903925733605,
+        1.831116012949789,
+        2.694283910640644,
+        1.1471691323822555
+      ],
+      "loss": 0.0026274135899022437,
+      "td_terms": 215,
+      "nonzero_errors": 69,
+      "actual_outcome": null,
+      "changed": true
+    }
+  ],
+  "scope": "Everycompleted episode weight update recomputed by independent forward lambda sum of saved PV gradients/predictions, legalactual moves/events reconstructed with python-chess. Searchleafvalue/gradient match saved receipt, not all internal hypothetical branches replayed. Same library rules, not independent engine strength. All U/failednodes retained."
+}

@@ -1,0 +1,50 @@
+{
+  "training": "results/dev_aux/task2506/result.json",
+  "training_sha": "BIND_AFTER_CLOSURE_BEFORE_CURVES",
+  "episodes": "results/dev_aux/task2506/episodes.jsonl",
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "families": [
+    92000,
+    92001,
+    92002,
+    92003,
+    92004,
+    92005,
+    92006,
+    92007
+  ],
+  "node_checkpoints": [
+    250000,
+    500000,
+    750000,
+    1000000
+  ],
+  "foe_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "opening_plies": 16,
+  "H": 512,
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 1200,
+  "expected_games": 576,
+  "pins": {
+    "results/dev_aux/task2510/curves.py": "d9499f0b3838db07b1f856f7090c91100b65ee024e59312646e6c5b09351535f",
+    "results/dev_aux/task2504/search.py": "5017c69be2b57327cc01e3955386d42cd142b7d5b095648fbac2d362e659431d",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f"
+  },
+  "registered_at": "2026-10-17T04:26:58.973025+00:00",
+  "freeze": "Before ANY91000or92000fitness, all8trainingarms notyetclosed. Deterministic lastCLOSEDepisode<=checkpoint; no interpolation/refit/rewardselection. ALL4initials andALL4checkpoints. New8family independentreplication, SAMErootsrepeatedthroughcurves not32independentfamilies. Baselinephysical64paidonce/sharedwith8trainedcheckpoints. Start ONLYafter2506and2507close, neversecondproducer.",
+  "decision": "Actualstrength vs work learningcurve distinguishes stableimprovement from weightmotion, and independent8familyreproducibility. DoNOTpickwinningq/seed/checkpoint. Logicalstudy total including576games forecast80-90min,<2h; oldcapsunchanged; one new1200s cap noextend."
+}

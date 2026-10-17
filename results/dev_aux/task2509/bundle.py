@@ -1,0 +1,129 @@
+"""Immutable87 exact-source/data capsule; prior31 archives remain unchanged."""
+
+from pathlib import Path
+
+import json,hashlib,ast,zipfile,re,time
+
+ROOT=Path.cwd();OUT=ROOT/'results/dev_aux'
+
+def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+def run():
+
+ for n in('task2502/result.json','task2503/activation.json','task2505/result.json','task2506/result.json','task2507/result.json','task2510/result.json','task2508/training-audit.json','task2508/evaluation-audit.json','task2508/curve-evaluation-audit.json'):
+
+  assert(OUT/n).is_file(),n
+
+ start=time.perf_counter();prior=json.loads((OUT/'ARCHIVE_MANIFEST_20261017_86.json').read_text());assert len(prior['archives'])==31
+
+ for n,h in prior['archives'].items():assert digest(OUT/n)==h,n
+
+ files={}
+
+ for task in range(2501,2512):
+
+  for p in(OUT/f'task{task}').rglob('*'):
+
+   if p.is_file()and '__pycache__'not in p.parts and p.suffix not in('.pyc','.pyo'):files[p.relative_to(ROOT).as_posix()]=p
+
+ for n in('ADVISOR_20261017_87.json','FAILURES_20261017_87.json','METHOD_20261017_87.md','SEGMENT_20261017_87.md','TESTS_20261017_87.json'):
+
+  files['results/dev_aux/'+n]=OUT/n
+
+ for task in range(2501,2512):
+
+  for pp in(OUT/f'task{task}').glob('*.json'):
+
+   p=json.loads(pp.read_text(encoding='utf-8-sig'))
+
+   for n in (p.get('pins',{})if isinstance(p,dict)else()):files[n]=ROOT/n
+
+ for n in('results/dev_aux/task2492/test_learning.py','results/dev_aux/task2492/test_episode.py'):files[n]=ROOT/n
+
+ # Snapshot local import closure; external rules/plot libraries installed separately.
+
+ todo=[p for p in files.values()if p.suffix=='.py'];seen=set()
+
+ while todo:
+
+  p=todo.pop();name=p.relative_to(ROOT).as_posix();assert 'alphasho'not in name.casefold()
+
+  if name in seen:continue
+
+  seen.add(name);files[name]=p;tree=ast.parse(p.read_text(encoding='utf-8-sig'))
+
+  for node in ast.walk(tree):
+
+   mods=[]
+
+   if isinstance(node,ast.Import):mods=[a.name for a in node.names]
+
+   elif isinstance(node,ast.ImportFrom):
+
+    if node.level:
+
+     base=list(p.parent.relative_to(ROOT).parts)
+
+     if node.level>1:base=base[:-(node.level-1)]
+
+     prefix='.'.join(base+([]if node.module is None else node.module.split('.')))
+
+    else:prefix=node.module or''
+
+    mods=[prefix]+[prefix+'.'+a.name for a in node.names]
+
+   for mod in mods:
+
+    pp=ROOT.joinpath(*mod.split('.'))
+
+    for found in(pp.with_suffix('.py'),pp/'__init__.py'):
+
+     if 'alphasho'in found.as_posix().casefold():continue
+
+     if found.is_file()and found.resolve().is_relative_to(ROOT.resolve())and '.local_agent'not in found.parts:todo.append(found)
+
+  parent=p.parent
+
+  while parent!=ROOT:
+
+   if(parent/'__init__.py').exists():todo.append(parent/'__init__.py')
+
+   parent=parent.parent
+
+ patterns=[re.compile(rb'(?i)(?:[A-Z]:[/\\]Users[/\\]|/(?:Users|home)/)[^\s"\x27<>|()\[\]]+'),re.compile(rb'(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}'),re.compile(rb'(?:xox[baprs]-[A-Za-z0-9-]{15,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})')]
+
+ entries={};jsons=asts=lines=0
+
+ for n,p in sorted(files.items()):
+
+  raw=p.read_bytes();assert not any(rx.search(raw)for rx in patterns),n;entries[n]=dict(sha256=hashlib.sha256(raw).hexdigest(),bytes=len(raw))
+
+  if p.suffix=='.py':ast.parse(raw.decode('utf-8-sig'));asts+=1
+
+  elif p.suffix=='.json':json.loads(raw);jsons+=1
+
+  elif p.suffix=='.jsonl':
+
+   for line in raw.splitlines():json.loads(line);lines+=1
+
+ manifest=dict(schema_version=1,files=entries,scope='Exact87 newpathseeded search/fullqfailedpilot/boundedq2approximation/all8episodeTDarms/new16familyendpoint/new8familyALLcheckpointcurves/actuallegalrecords/independentforwardTDcredit. Fullq2503neverstarted; originalcapsunchanged; nooldproducerrestarted. Exactexecutedsourcebytepins authoritative, directGittext mayLFnormalize. Dependencies installedseparately; not literalhistoricalreplication or generalconvergence.')
+
+ archive=OUT/'DELTA_REPRO_20261017_87.zip';assert not archive.exists()
+
+ with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True)as z:
+
+  z.writestr('MANIFEST_20261017_87.json',json.dumps(manifest,indent=2))
+
+  for n,p in sorted(files.items()):z.write(p,n)
+
+ with zipfile.ZipFile(archive)as z:assert z.testzip()is None
+
+ assert archive.stat().st_size<99*1024*1024
+
+ hashes=dict(prior['archives']);hashes[archive.name]=digest(archive);new=dict(file=archive.name,sha256=hashes[archive.name],bytes=archive.stat().st_size,payloads=len(entries),uncompressed_bytes=sum(r['bytes']for r in entries.values()))
+
+ (OUT/'ARCHIVE_MANIFEST_20261017_87.json').write_text(json.dumps(dict(schema_version=1,archives=hashes,new_delta=new,prior_manifest='ARCHIVE_MANIFEST_20261017_86.json',scope='32immutablecapsules; old31exacthasheschecked, NOTalloldconsumersrerun.'),indent=2))
+
+ (OUT/'ARCHIVE_REVIEW_20261017_87.json').write_text(json.dumps(dict(status='PASS_EXACT87_PAYLOAD_SHA_CRC_SENSITIVE_REVIEW',**new,prior_unchanged=31,sensitive_hits=0,AST_checks=asts,JSON_files=jsons,JSONL_records=lines,seconds=time.perf_counter()-start),indent=2));print(json.dumps(new))
+
+if __name__=='__main__':run()

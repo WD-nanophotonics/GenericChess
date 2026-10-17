@@ -1,0 +1,53 @@
+{
+  "training": "results/dev_aux/task2506/result.json",
+  "training_sha": "BIND_AFTER_CLOSURE_BEFORE_EVAL",
+  "expected_arms": 8,
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "families": [
+    91000,
+    91001,
+    91002,
+    91003,
+    91004,
+    91005,
+    91006,
+    91007,
+    91008,
+    91009,
+    91010,
+    91011,
+    91012,
+    91013,
+    91014,
+    91015
+  ],
+  "foe_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "opening_plies": 16,
+  "H": 512,
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 1200,
+  "ordering_seed_offset": 0,
+  "expected_games": 384,
+  "pins": {
+    "results/dev_aux/task2507/evaluate.py": "7e08ee3b6936d380850c96a7797977df5503330feebe43adf60bfdde0061bec7",
+    "results/dev_aux/task2504/search.py": "5017c69be2b57327cc01e3955386d42cd142b7d5b095648fbac2d362e659431d",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f"
+  },
+  "freeze": "BEFORE ANY91000-91015 fitness. No old90001-90012 reuse; ALL4seeds andBOTHlearned sets, no bestseed/root/price selection. Same initialbaseline exactlyonce, explicitly reused for bothtrainingregime contrasts, not256independentbaseline games. CommonPLAINdeployment only.",
+  "estimands": "W-L gain vsinitial for eachtrainingregime, paired q2-vsplain-trained contrast, perseed and pooled4seeds with family/seed clustering; Uintervals [-1,1], neverdraw. No significance/robustness from point estimates alone.",
+  "cost": "384actualgames expected~5-12min; source study8Mnode~18min+fullqfailure/engineering/review total60-90min,<2h. Original1200scap no reset/extension; incomplete weights/eval preservemissing and alternate useful short work."
+}

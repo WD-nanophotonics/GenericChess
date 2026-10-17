@@ -1,3 +1,37 @@
+## DEV_AUX2026-10-17 segment87 — incremental TD and frozen cost/strength curves
+
+DirectUSERroute is implemented: actualW-L assesses learned material, TD/search
+bootstraps provide gradualupdates. ALL8arms/4initials8Mnodes/317episodes/304terminal,
+independentforwardTDcredit/53089legalplies PASS. NEW16families384actualterminals,
+all4initialsbothmethodspositive; pooledplain gain.5,q2.3046875,direct-.1953125.
+SameplainD2deployment/fixeduniformfoe; sharedbaselinepaidonce. No stableprice/
+universal/Elo claim. Allfirstdifferencescandidate-turn, noindependentsearchrerun.
+NEW8families/allquartercheckpoints 547/576games,29missing,
+original1200cap kept; new8familyenvelopescross0, robustpopulationreplicationnot
+established. Actualcurves expose learningprogress, not justweightmotion.
+q2countsALLextensionpliesincludingforcedevasions; earlieroptionalwording corrected,
+fullqfailure/UNSTARTEDplan/metadata+fixtureerrors retained. No cap/conditionchange.
+
+Dot1792210638.828359 readinline/pilot ONLY; adoptedselectedPV/standpat/forcedevasion/
+terminalcredit andcorrelatedbaseline/family objections, no87source/executionclaimed.
+PRIMARY1792211117.524309 OWNERREPORT independentlyqualifies86 5299TRAINsearches/
+37updates andnew90013-90020fixedpolicies; D2positive/D3allUNKNOWNatold4096cap.
+Fixedreportc01802cc72948d2309d4c3c072dca98c4b44887eanonymouslyread; noPRIMARYrerun/write. Our91000/92000freshfamilies
+wereprefrozenanddonotoverlap that exposure. Old fullpolicyproof/grid tasks kept.
+Ordinaryconcurrency normal; no quietwindow/processmonitor/extraAgent/worker/fees.
+
+Contributionback alsoNEW2511non-scoringguard:7realSessionregressions reproduceold
+RESTART/NO_CONTEST0defect andprevent numericdrawtargets. FrozenChesspinsunchanged,
+ownedLOSSchoicesretained; no generictraining ornewCoreAPI.
+Contributionback: opted-inpathseededsearch/episodeTDcostcurves/realterminaloutcomes,
+allseeds retained, lowerqbootstraplossnotstrengthproof, preciseU/cap/gradientchecks.
+32relatedtests andfresh32ndexactcapsule closedreplay qualifydeliveredsource, notall
+priorconsumers. Prior31capsulesimmutable. PUBLICanonymousread verified; visibility
+notmutated. Reviewedownsidmission fixedrevision is supplied throughDELIVERY87and
+projectSlack. Delivery isnotDot/PRIMARYreading/adoption/independentexecution.
+NextdirectTreeStrap-vs-TD orfixedfoereplication, no qcoverage/NN/proverexpansion;
+fullGeneric/stableprices/faithfulhistorical/equal-costgridcontrol remainsOPEN.
+
 ## DEV_AUX2026-10-17 segment81 — actual reward transfer and interrupted TRAIN
 
 DEV_AUX independently delivered128 actual terminal games on16new conditional

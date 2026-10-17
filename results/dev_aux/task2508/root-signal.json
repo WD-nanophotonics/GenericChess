@@ -1,0 +1,2580 @@
+{
+  "status": "PASS_ALL64_MATCHED_TRAIN_QUERY_FEATURE_AND_GRADIENT_CHECKS",
+  "counts": {
+    "pairs": 64,
+    "score_changed": 28,
+    "PV_feature_changed": 28,
+    "gradient_changed": 25,
+    "root_action_changed": 22,
+    "same_features_and_score": 36,
+    "q_nonquiet_capped_targets": 23613,
+    "q_cap_still_tactical": 21796
+  },
+  "plain_nodes": 14935,
+  "q_nodes": 57061,
+  "plain_seconds": 1.9633344000321813,
+  "q_seconds": 8.481308499875013,
+  "details": [
+    {
+      "seed": 1977,
+      "family": 0,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -0.051470730018078115,
+      "q_score": 0.0,
+      "plain_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        -0.09999735081074038,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 360,
+      "q_nodes": 567
+    },
+    {
+      "seed": 1977,
+      "family": 1,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 1.0,
+      "q_score": 1.0395655465402507,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        2,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09892704209343475,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 208,
+      "q_nodes": 927
+    },
+    {
+      "seed": 1977,
+      "family": 2,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.039565546540250685,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 131,
+      "q_nodes": 732
+    },
+    {
+      "seed": 1977,
+      "family": 3,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 1.025884929713044,
+      "q_score": 1.025884929713044,
+      "plain_PV": [
+        2,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        2,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09895490051126925
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09895490051126925
+      ],
+      "plain_nodes": 126,
+      "q_nodes": 599
+    },
+    {
+      "seed": 1977,
+      "family": 4,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -1.0,
+      "q_score": -0.02588492971304379,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.09999932997340667
+      ],
+      "plain_nodes": 276,
+      "q_nodes": 1336
+    },
+    {
+      "seed": 1977,
+      "family": 5,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 1.1309629329175197,
+      "q_score": 1.1309629329175197,
+      "plain_PV": [
+        -1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.09873175123583618,
+        0.09873175123583618,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.09873175123583618,
+        0.09873175123583618,
+        0.0
+      ],
+      "plain_nodes": 237,
+      "q_nodes": 1661
+    },
+    {
+      "seed": 1977,
+      "family": 6,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.02588492971304379,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09999932997340667
+      ],
+      "plain_nodes": 190,
+      "q_nodes": 692
+    },
+    {
+      "seed": 1977,
+      "family": 7,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -1.0,
+      "q_score": -0.9741150702869562,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09905707045486231
+      ],
+      "plain_nodes": 192,
+      "q_nodes": 1328
+    },
+    {
+      "seed": 1977,
+      "family": 8,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": -0.9205077971005584,
+      "q_score": 0.07949220289944159,
+      "plain_PV": [
+        -2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09915742902001787,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09999368125586794,
+        0.0
+      ],
+      "plain_nodes": 168,
+      "q_nodes": 620
+    },
+    {
+      "seed": 1977,
+      "family": 9,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.039565546540250685,
+      "q_score": -0.039565546540250685,
+      "plain_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 561,
+      "q_nodes": 853
+    },
+    {
+      "seed": 1977,
+      "family": 10,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 89,
+      "q_nodes": 167
+    },
+    {
+      "seed": 1977,
+      "family": 11,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 0.0,
+      "q_score": 0.0536072731863978,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09999712631531649,
+        0.09999712631531649
+      ],
+      "plain_nodes": 265,
+      "q_nodes": 1154
+    },
+    {
+      "seed": 1977,
+      "family": 12,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0910362765583288,
+      "q_score": 0.0910362765583288,
+      "plain_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09999171285422473,
+        0.09999171285422473,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999171285422473,
+        0.09999171285422473,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 136,
+      "q_nodes": 846
+    },
+    {
+      "seed": 1977,
+      "family": 13,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.039565546540250685,
+      "q_score": 0.039565546540250685,
+      "plain_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 329,
+      "q_nodes": 1876
+    },
+    {
+      "seed": 1977,
+      "family": 14,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": -0.039565546540250685,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 227,
+      "q_nodes": 1044
+    },
+    {
+      "seed": 1977,
+      "family": 15,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.039565546540250685,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999843458386401,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 140,
+      "q_nodes": 1068
+    },
+    {
+      "seed": 8173,
+      "family": 0,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 0.4414858907632363,
+      "q_score": 0.4414858907632363,
+      "plain_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        -0.09980534319432463,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        -0.09980534319432463,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 336,
+      "q_nodes": 812
+    },
+    {
+      "seed": 8173,
+      "family": 1,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 1.0,
+      "q_score": 1.0028988651427306,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        2,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0990008999336229,
+        0.0
+      ],
+      "plain_nodes": 109,
+      "q_nodes": 575
+    },
+    {
+      "seed": 8173,
+      "family": 2,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.41943755873870847,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 150,
+      "q_nodes": 675
+    },
+    {
+      "seed": 8173,
+      "family": 3,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 1.0,
+      "q_score": 1.0,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 142,
+      "q_nodes": 493
+    },
+    {
+      "seed": 8173,
+      "family": 4,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": -1.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 147,
+      "q_nodes": 891
+    },
+    {
+      "seed": 8173,
+      "family": 5,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.5585141092367637,
+      "q_score": 0.5585141092367637,
+      "plain_PV": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0996887095471148,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0996887095471148,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 307,
+      "q_nodes": 1543
+    },
+    {
+      "seed": 8173,
+      "family": 6,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -0.25346736568756634,
+      "q_score": 0.0,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.09993578180125486
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 574,
+      "q_nodes": 1140
+    },
+    {
+      "seed": 8173,
+      "family": 7,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -1.0,
+      "q_score": -1.0,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 224,
+      "q_nodes": 1053
+    },
+    {
+      "seed": 8173,
+      "family": 8,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": -1.0,
+      "q_score": -0.0028988651427306333,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09999999159658135,
+        0.0
+      ],
+      "plain_nodes": 153,
+      "q_nodes": 410
+    },
+    {
+      "seed": 8173,
+      "family": 9,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.41943755873870847,
+      "q_score": -0.41943755873870847,
+      "plain_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 330,
+      "q_nodes": 760
+    },
+    {
+      "seed": 8173,
+      "family": 10,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 89,
+      "q_nodes": 262
+    },
+    {
+      "seed": 8173,
+      "family": 11,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 396,
+      "q_nodes": 1105
+    },
+    {
+      "seed": 8173,
+      "family": 12,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.022048332024527828,
+      "q_score": -0.022048332024527828,
+      "plain_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09999951387263041,
+        0.09999951387263041,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999951387263041,
+        0.09999951387263041,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 301,
+      "q_nodes": 1129
+    },
+    {
+      "seed": 8173,
+      "family": 13,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.41943755873870847,
+      "q_score": 0.41943755873870847,
+      "plain_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 197,
+      "q_nodes": 627
+    },
+    {
+      "seed": 8173,
+      "family": 14,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": -0.41943755873870847,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 188,
+      "q_nodes": 1214
+    },
+    {
+      "seed": 8173,
+      "family": 15,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.41943755873870847,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.099824278266231,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 137,
+      "q_nodes": 726
+    },
+    {
+      "seed": 27182,
+      "family": 0,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -0.1402175549090674,
+      "q_score": 0.0,
+      "plain_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        -0.09998034161403127,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 301,
+      "q_nodes": 499
+    },
+    {
+      "seed": 27182,
+      "family": 1,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 1.0,
+      "q_score": 1.0391083878364415,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        3,
+        -1,
+        0,
+        -1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09892797881515797,
+        0.0,
+        -0.09892797881515797,
+        0.0
+      ],
+      "plain_nodes": 195,
+      "q_nodes": 794
+    },
+    {
+      "seed": 27182,
+      "family": 2,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 260,
+      "q_nodes": 759
+    },
+    {
+      "seed": 27182,
+      "family": 3,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 1.0,
+      "q_score": 1.0,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 205,
+      "q_nodes": 949
+    },
+    {
+      "seed": 27182,
+      "family": 4,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": -1.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 215,
+      "q_nodes": 1008
+    },
+    {
+      "seed": 27182,
+      "family": 5,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 1.3150404887905833,
+      "q_score": 1.3150404887905833,
+      "plain_PV": [
+        -1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09829041213152614,
+        0.09829041213152614,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09829041213152614,
+        0.09829041213152614,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 232,
+      "q_nodes": 1434
+    },
+    {
+      "seed": 27182,
+      "family": 6,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -0.20020287795977998,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0999599295152378,
+        0.0,
+        0.0,
+        -0.0999599295152378
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 594,
+      "q_nodes": 928
+    },
+    {
+      "seed": 27182,
+      "family": 7,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -1.0,
+      "q_score": -1.0,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 426,
+      "q_nodes": 1300
+    },
+    {
+      "seed": 27182,
+      "family": 8,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -1.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 215,
+      "q_nodes": 329
+    },
+    {
+      "seed": 27182,
+      "family": 9,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.17482293388151593,
+      "q_score": 0.17482293388151593,
+      "plain_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09996944316804757,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09996944316804757,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 362,
+      "q_nodes": 1113
+    },
+    {
+      "seed": 27182,
+      "family": 10,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 89,
+      "q_nodes": 148
+    },
+    {
+      "seed": 27182,
+      "family": 11,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 439,
+      "q_nodes": 959
+    },
+    {
+      "seed": 27182,
+      "family": 12,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.03460537897244853,
+      "q_score": -0.03460537897244853,
+      "plain_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09999880247730666,
+        0.09999880247730666,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999880247730666,
+        0.09999880247730666,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 140,
+      "q_nodes": 1088
+    },
+    {
+      "seed": 27182,
+      "family": 13,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.17482293388151593,
+      "q_score": -0.17482293388151593,
+      "plain_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09996944316804757,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09996944316804757,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 299,
+      "q_nodes": 506
+    },
+    {
+      "seed": 27182,
+      "family": 14,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 208,
+      "q_nodes": 833
+    },
+    {
+      "seed": 27182,
+      "family": 15,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 123,
+      "q_nodes": 871
+    },
+    {
+      "seed": 31415,
+      "family": 0,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": true,
+      "plain_score": 0.21856927931435188,
+      "q_score": 0.21856927931435188,
+      "plain_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        -0.09995224268078629,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        -0.09995224268078629,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 398,
+      "q_nodes": 1062
+    },
+    {
+      "seed": 31415,
+      "family": 1,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 1.0,
+      "q_score": 1.0,
+      "plain_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 253,
+      "q_nodes": 857
+    },
+    {
+      "seed": 31415,
+      "family": 2,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 0.0,
+      "q_score": 0.3674307440450031,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        2,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09986511606507052,
+        0.0,
+        0.0,
+        -0.09986511606507052
+      ],
+      "plain_nodes": 267,
+      "q_nodes": 598
+    },
+    {
+      "seed": 31415,
+      "family": 3,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 1.4574177969560287,
+      "q_score": 1.4574177969560287,
+      "plain_PV": [
+        2,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        2,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0979056530300305
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0979056530300305
+      ],
+      "plain_nodes": 92,
+      "q_nodes": 486
+    },
+    {
+      "seed": 31415,
+      "family": 4,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": -0.9100129470889744,
+      "q_score": -0.4574177969560287,
+      "plain_PV": [
+        -2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0991764269978975,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.09979106046423063
+      ],
+      "plain_nodes": 186,
+      "q_nodes": 1828
+    },
+    {
+      "seed": 31415,
+      "family": 5,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 1.1653601703472798,
+      "q_score": 1.2553472232583054,
+      "plain_PV": [
+        -1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "q_PV": [
+        -2,
+        1,
+        1,
+        1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.09865413730669031,
+        0.09865413730669031,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09844051303919472,
+        0.09844051303919472,
+        0.09844051303919472,
+        0.0
+      ],
+      "plain_nodes": 184,
+      "q_nodes": 1165
+    },
+    {
+      "seed": 31415,
+      "family": 6,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.5474048498670543,
+      "q_score": 0.5474048498670543,
+      "plain_PV": [
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09970094552455702,
+        0.0,
+        0.0,
+        -0.09970094552455702
+      ],
+      "q_gradient": [
+        0.0,
+        0.09970094552455702,
+        0.0,
+        0.0,
+        -0.09970094552455702
+      ],
+      "plain_nodes": 433,
+      "q_nodes": 1503
+    },
+    {
+      "seed": 31415,
+      "family": 7,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.4525951501329457,
+      "q_score": -0.4525951501329457,
+      "plain_PV": [
+        -1,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        -1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09979543704168901,
+        0.0,
+        0.0,
+        -0.09979543704168901
+      ],
+      "q_gradient": [
+        0.0,
+        0.09979543704168901,
+        0.0,
+        0.0,
+        -0.09979543704168901
+      ],
+      "plain_nodes": 84,
+      "q_nodes": 593
+    },
+    {
+      "seed": 31415,
+      "family": 8,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": -0.6160705503383683,
+      "q_score": 0.38392944966163167,
+      "plain_PV": [
+        -2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "q_PV": [
+        -1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09962141536781412,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09985274290543478,
+        0.0
+      ],
+      "plain_nodes": 173,
+      "q_nodes": 406
+    },
+    {
+      "seed": 31415,
+      "family": 9,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0899870529110256,
+      "q_score": 0.0899870529110256,
+      "plain_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.09999190276743669,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.09999190276743669,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 224,
+      "q_nodes": 445
+    },
+    {
+      "seed": 31415,
+      "family": 10,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 89,
+      "q_nodes": 273
+    },
+    {
+      "seed": 31415,
+      "family": 11,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": true,
+      "plain_score": 0.0,
+      "q_score": -0.07348834729439702,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        -2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.09999459965724466,
+        0.09999459965724466
+      ],
+      "plain_nodes": 184,
+      "q_nodes": 1749
+    },
+    {
+      "seed": 31415,
+      "family": 12,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.3085563322253775,
+      "q_score": -0.3085563322253775,
+      "plain_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        -1,
+        1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09990485338642309,
+        0.09990485338642309,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09990485338642309,
+        0.09990485338642309,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 199,
+      "q_nodes": 1161
+    },
+    {
+      "seed": 31415,
+      "family": 13,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": -0.0899870529110256,
+      "q_score": -0.0899870529110256,
+      "plain_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        -0.09999190276743669,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        -0.09999190276743669,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 158,
+      "q_nodes": 1129
+    },
+    {
+      "seed": 31415,
+      "family": 14,
+      "score_changed": false,
+      "feature_changed": false,
+      "gradient_changed": false,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.0,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 175,
+      "q_nodes": 664
+    },
+    {
+      "seed": 31415,
+      "family": 15,
+      "score_changed": true,
+      "feature_changed": true,
+      "gradient_changed": true,
+      "action_changed": false,
+      "plain_score": 0.0,
+      "q_score": 0.21856927931435188,
+      "plain_PV": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "q_PV": [
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "plain_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_gradient": [
+        0.0,
+        0.0,
+        -0.09995224268078629,
+        0.0,
+        0.0
+      ],
+      "plain_nodes": 118,
+      "q_nodes": 739
+    }
+  ],
+  "scope": "AllinitialTRAINpairedroots, not selection orWDL. Score/features/action changes show intervention, NOT improved accuracy/strength; q2 remains an explicit approximation. No failed/fullqquery subset upgraded to a truth oracle."
+}

@@ -1,0 +1,59 @@
+{
+  "arms": [
+    {
+      "seed": 1977,
+      "quiet": false
+    },
+    {
+      "seed": 1977,
+      "quiet": true
+    },
+    {
+      "seed": 8173,
+      "quiet": true
+    },
+    {
+      "seed": 8173,
+      "quiet": false
+    },
+    {
+      "seed": 27182,
+      "quiet": false
+    },
+    {
+      "seed": 27182,
+      "quiet": true
+    },
+    {
+      "seed": 31415,
+      "quiet": true
+    },
+    {
+      "seed": 31415,
+      "quiet": false
+    }
+  ],
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 300000,
+  "max_games": 64,
+  "H": 512,
+  "opening_seed_base": 71000,
+  "opening_plies": 16,
+  "depth": 2,
+  "qstack": 96,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 900,
+  "resource_gate": "results/dev_aux/task2502/result.json",
+  "pins": {
+    "results/dev_aux/task2501/search.py": "abade3cb521a778fc498025aa4f650caacb66b3a48a0b702c309f50188209d76",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2503/train.py": "60e4ac62a968d14b5eab871ca552bbb7ca8b4724429bf16a69bfe2ee32a6c073"
+  },
+  "freeze": "BEFORE2503outcomes; actual perquery node limit from2502completion-only gate. All4initial seeds BOTHsearcharms and ALLlegalprefixes retained; no value/action/WDL filtering, no humanpriors/no90001-90012fitness. Both arms useNEWpathseeded ordering, so q0arm is not a byte/action reproduction of86globalRNGengine.",
+  "question": "Does complete quiescence improve useful episode TD learning per same totalnode budget despite fewer episodes?",
+  "evaluation": "FreezeALL learned arms plus one reused initial baseline perseed/NEW16family/tworoles under commonPLAIN D2deployment/uniform1foe. This isolates training-regime transfer, not a q-enabled deployed-player benefit.",
+  "logical_cost": "Pilot+implementation+training2.4Mnodes+evaluation forecast60-90min inclengineering/review,<2h. No fee/workers or split to evade necessity review."
+}
