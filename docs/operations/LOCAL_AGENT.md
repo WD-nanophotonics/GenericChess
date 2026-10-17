@@ -92,7 +92,16 @@ identity and pagination. Sole channel C0C6L21UU20; PRIMARY_SANDBOX and DEV_AUX
 share the verified account. Labels route messages, not process authentication.
 No per-message challenges. Read new roots plus full relevant/completed threads,
 with pagination coverage. Save exact originals in Git-ignored .local_agent BEFORE
-parsing/reconcile; local raw storage is expressly authorized. Long threads use limit20
+parsing/reconcile; numeric-looking Slack timestamps are opaque STRINGS. In
+PowerShell quote every --message-ts/--thread-ts argument (for example
+'1234567890.123456'), or pass the exact saved receipt string through structured
+arguments. A bare numeric token can round to five decimals before Python sees
+it, causing a real binding refusal. Never round/repair/rebind the ledger to that
+number or resend; use the exact original receipt/readback. This was reproduced
+on2026-10-17 and resolved with the existing bind_sent helper, without a source
+regex/identity change. The normal SQLite status helper writes WAL and therefore
+needs the same supported project permission as other local-state operations.
+Local raw storage is expressly authorized. Long threads use limit20
 with server cursors: a large response falsely claimed complete while omitting
 replies. Validate actual counts with the existing strict parser before coverage
 claims; preserve refused output and reread exact small pages, never reset/rebind.

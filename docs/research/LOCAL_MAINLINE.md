@@ -22,26 +22,30 @@ leaf_terminal_z stores the FULL Core leaf's constant0/+1/-1. Trainer and existin
 material TD diagnostics use zero own gradient while decaying prior eligibility.
 Non-scoring PVs reject explicitly. Old payloads/IDs remain unchanged, but absent
 old metadata is not magically reconstructed; historical archives stay historical.
-16newcases/56related checks and pure-source13pass/3Native-skips qualify the local
-repair; final full/publisher tiers belong to its report qualification, not a
-premature pass claim. No Native/search/default or AUX code changed.
+Final16newcases/56related and3259full checks PASS; pure-source13pass/3Native-skips
+remain distinct from normal actualNative execution. Published0e7153b2 remote/all13
+files anonymously verified. Dot fixed-source review found no scoped counterexample,
+not independent execution or all-domain proof; retain correction without new gates.
 
-New exposure evidence changes a future sampling choice, not training policy:
-the SAME32Chesspaths have nonzero free inputs3/20/28 at16/32/64plies, rank2/4/4.
-But72newgeneratedrule paths retain55ongoing starts/52nonzero at16 versus41/41at64,
-with817drops/185promotions. All72 stay in the denominator, earlyterminals unpadded.
-All3279actions/3351fullstates replay. This is the existing atom generator's scoped
-hybrid/promotion/drop domain, not full recombined-rule learning. Never universally
-replace16 by64 or reject a rule from a chosen short line. Future Generic samplers
-must declare start-state/rule measure and terminal handling before utility claims.
+NEW within-rule Generic continuation study is CLOSED: same72exposed atom-generator
+rules,16new uniform typed-binding paths each/1152slots/56250actions in151.765s.
+At16:974ongoing/919nonzero versus64:698/697; earlyterminals retained, no padding.
+Conditional surviving-rule TVfromuniform grows.08077 to.19890 (descriptive, noisy).
+49zero-input starts gain nonzero by64,270nonzero starts terminate, one loses input.
+Actual per-rule ranks at64 higher19/lower22/equal31; neither horizon dominates.
+Full57402states/1679checkpoint hashes replay in71.797s. Full promotion/drop/history
+preserved within stated atom domain, not the entire recombined/auxiliary domain.
+Do not universally replace16by64, reject a rule for short random lines, or claim
+importance weights restore absent support. Future real samplers freeze rule-first
+attempted mass, declared mixtures and actual terminal/status treatment. Existing
+PRIMARYselfplay starts frominitialsession; do not add unused API or competing learner.
 
-PRIMARY's original-source Buro/Clune/Flux reading retains sparse interactions,
-candidate feature stability, label/cost separation and semantic-encoding caveats.
-No network/GDL parser/abstract solver or feature training is selected from papers.
-Actual gradient directions differ beyond scalar normalization, but useful-strength
-advantage is unproved. Closed state-stability/rank is not payoff relevance or
-unique-price identification. Next inspect a concrete complete-state consumer or
-published owner exposure result; no extra scientific approval/proof gate.
+Buro/Clune/Flux original methods retain sparse interactions, feature stability and
+label/cost/semantic limits; no architecture or model selected by literature alone.
+Shogi full methods remain unread after bounded normal-browser blank-page check.
+Next inspect published AUX richer-TRAIN evidence if available and consequential,
+or test a concrete complete-state/typed-count consumer; no oldfull87replay, extra
+training, unchanged qcampaign or expanded proof gate. Science remains OPEN.
 
 ## Preceding learning support and retained capability context
 
@@ -505,3 +509,12 @@ helper now governs allmutableJSON updates. Currentstop flags preserved. Dot's
 new source advice explicitly evaluated; AUX81fixeddiagnosis/thread READ_ONLY,
 no AUX execution/checkoutwrites or unproved ownership lock. Scientific objective
 remainsOPEN; no newapproval queue or PRIVATE retry is introduced.
+
+PRIMARY also qualified uniform typed bindings versus physical intents on168
+existing states:24have duplicates/maxTV1/6;32first complete children differ only
+in action_signature history. Keep identities/fullhistory, no board quotient.
+Original Beal/Smith TC paper is now read fully, separate from unread Shogi methods.
+Independent fixed-TD213episode credit read matches actualupdates4.44e-16; per-step
+absolute versus episode-net aggregation materially differs. This is descriptive,
+not actualTCtraining or new default. Defer adaptive implementation to a real
+consumer/evidence need; AUX learning lane and all frozen conditions stay intact.

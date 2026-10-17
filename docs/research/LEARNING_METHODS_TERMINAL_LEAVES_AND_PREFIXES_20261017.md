@@ -214,3 +214,126 @@ execution, full regression and publication tests are separate evidence tiers.
 
 [Complete paired data](data/learning_methods_prefix_20261017.json) and
 [exact evidence/dependency instructions](../archive/learning_methods_terminal_prefix_20261017/README.md).
+
+
+## Fresh within-rule continuation check
+
+The one-path result could be continuation noise. A NEW frozen experiment keeps
+the SAME72exposed rules and samples16 fresh uniform typed-binding paths per rule
+(1152 slots, seeds and shuffled order registered before outcomes). No training,
+search, new rule selection, opening filter or AUX work is performed. The separate
+600s cap closes all slots in151.765s with56250actions,13248drops and3067promotions.
+447actual checkmates,7actual stalemates and698ongoing64-ply endpoints remain.
+This is72rule clusters, not1152independent games drawn from1152rules.
+
+| Prefix | Ongoing /1152 | Nonzero free-input ongoing | Rules with observed ongoing starts | Conditional rule TV from uniform |
+| --- | ---: | ---: | ---: | ---: |
+|16|974|919|72/72|.08077|
+|64|698|697|71/72|.19890|
+
+TV is half the sum of absolute differences between empirical survivor rule
+frequencies and uniform1/72. The two horizon-specific survivor distributions have
+TV.13794. These are finite descriptive statistics, including sampling noise,
+not confidence bounds or true survival probabilities. The4x4 group retains281
+ongoing starts at16 and126at64;6x6 retains325/243 and8x8 retains368/329. The
+one rule with zero observed64survivors still has16-ply survivors;16 misses do
+not prove impossible continuation or unplayability. No rule is rejected.
+
+Paired paths separate benefit from loss:49zero-input16-ply starts become nonzero
+at64, while270nonzero starts terminate by64 and one becomes zero;648remain
+nonzero and ongoing. Thus increased conditional density (.9435 to.9986) does not
+mean greater total usable exposure. Terminal-at-prefix is distinct from a path
+ending earlier:2terminal at16 and5at64, never padded draws or missing successes.
+All planned slots remain in the denominator.
+
+Typed material span is also mixed. Among72rules,64-ply observed rank is higher
+for19, lower for22 and equal for31. The union adds directions beyond16 alone
+in24rules, and beyond64 alone in28. Rank uses board-current and hand-base counts
+per rule, including zero vectors; it is not payoff relevance, TD gradient utility,
+unique prices or evidence for shared parameters across reused type spellings.
+No model/prefix is selected by validation reward.
+
+Empirically weighting each surviving path by inverse observed per-rule count
+flattens only the supported marginal. Its descriptive weight ESS is897.51at16
+and427.94at64; it cannot recover the absent1/72rule mass at64 or reconstruct
+unknown state probabilities. No unbiased importance-correction claim follows.
+A future real consumer should freeze rule-first attempted slots and a declared
+prefix mixture, retain actual terminal records/status tags, and report its
+ongoing-only estimand separately. Neither universal64 nor retry-until-filled
+filtering is adopted. Existing PRIMARY collect_self_play starts GameSession
+directly and has no prefix-import parameter; this diagnostic does not justify
+creating an unused sampler/API or duplicating AUX's learning lane.
+
+All1152final records/results,56250typed transitions and1679full checkpoint
+state hashes/history lengths were actually replayed (57402state occurrences,
+71.797s). This is same-Core reproduction, not independent rule authority. The
+[new exact supplement](../archive/generic_prefix_conditional_20261017/README.md)
+contains complete rules/records/plans/scripts; the earlier capsule stays fixed.
+
+## Consultation and delivery closure
+
+The terminal-leaf correction is PUBLIC at
+0e7153b2104f8e9cc32a968ed7e3aaca0ce29f28: required publisher56tests passed,
+fullremoteSHA and all13changed files anonymously match canonical Git blobs.
+Dot's full reply1792221286.806159 to the new technical request was saved before
+reconcile and explicitly adopted. Dot read this fixed source and found no
+accepted real-session counterexample in that review scope: keep terminal
+constants, zero own gradient/prior trace, true episode outcome distinction and
+legacy missing-marker limits. Dot did NOT execute code/Native or independently
+run3259/56tests; no all-domain proof, expanded WDL gate or routine acknowledgement.
+
+An actual Slack binding refusal was diagnosed locally: PowerShell converted an
+unquoted numeric-looking timestamp and rounded its final digit. Existing source
+regex was correct. Quoting the opaque string/exact saved receipt resolved binding
+without duplicate send or ledger reset; the operational manual now records it.
+No Smart App Control or automatic-approval rejection was observed in this segment.
+Optional full Shogi methods remain unread: even a normal dedicated browser
+navigation produced a blank page. Search snippets/abstracts are not methods.
+
+
+## The typed-binding sampling measure is consequential
+
+A separate120s-capped read of the existing72initial/16/64recorded ongoing states
+(168states,4.812s, no new games) checks the rule-encoding caveat from the original
+source reading.24states have multiple legal typed bindings for the same physical
+intent (actor/source/target/promotion or drop), with maximum intent-marginal TV
+from uniform physical intents1/6. Uniform bindings therefore does not imply
+uniform physical intents, even in these ordinary generated mixtures.
+
+For the first32duplicate-intent groups, actually computed full children differ
+only in the final history action_signature; their boards/other full fields agree.
+NONE are identical complete children. This does not prove those histories affect
+future play here, nor license dropping them across the generated domain. The
+recorded sampler remains uniformly typed, with all identities/history intact.
+Do not silently coalesce by board or call this uniform over physical moves.
+This is a practical consumer qualification, not a new equivalence API, rule
+quality filter or need for another learner/prover. The exact witnesses accompany
+the supplemental archive. Four archived conditional scripts were also actually
+executed from the preceding capsule's isolated source restoration, including the
+full56250-action replay; all exit0, without reading live source/private paths.
+
+
+## Cheap adaptive-step alternative: deferred, with an actual diagnostic
+
+[Beal and Smith, Temporal Coherence and Prediction Decay](https://www.ijcai.org/Proceedings/99-1/Papers/081.pdf),
+all6pages read, equations/graph-only page visually checked: per-coordinate TC uses
+absolute accumulated signed recommended credit divided by accumulated absolute
+PER-STEP credit. Apply the previous rate before updating its accumulators. Base
+scale c remains chosen. Prediction-decay lambda uses a distance-pair-weighted
+exponential fit and is not claimed optimal. Evidence is Chess self-play, not
+full Generic transfer or a guarantee that stable weights are correct.
+
+PRIMARY's new independent read of ALL213already-closed StudyA TD episodes
+(7censored retained,32482existing residual terms) reconstructs actual fixed-rate
+updates to4.44e-16 without modifying a weight. The descriptive final credit ratio
+ranges.0371-.2643; replacing per-step absolute credit with absolute episode NET
+credit gives.2307-.9432. End-of-game weight movement alone therefore does not
+implement the original statistic. The fixed-TD data was NOT generated by TC, so
+these are not adaptive rates, a TC outcome, optimal lambda or performance gains.
+The four free coordinates/pawn-fixed/tanh model also differ from the paper.
+
+A future actual consumer could evaluate TC as a cheap alternative to a learning-
+rate grid, retaining fixed-rate controls and full same-cost deployment evidence.
+DEFER implementation/training here: the current informative premise concerns
+exposure, while AUX owns its learner and frozen experiments. No parameters are
+fitted to previous validation or human prices, and no training request is sent.

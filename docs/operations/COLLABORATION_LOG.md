@@ -3945,3 +3945,39 @@ No measured collaboration efficiency percentage or unexecuted test claim.
 Final normal3259testsPASS after the existing diagnostic mirror correction;
 56related checksPASS. Sealed archive itself runs13Python-source cases with3explicit
 Native skips, separate from its3actualNative controls in the normal16-case suite.
+
+
+## Conditional Generic exposure and terminal-leaf review closure —2026-10-17
+
+PRIMARY published0e7153b2104f8e9cc32a968ed7e3aaca0ce29f28, verified fullremoteSHA
+and all13canonical files anonymously, sent fixed report link1792221219.902669.
+Dot read that fixed source and replied1792221286.806159 on the separate technical
+root1792221183.971259. No accepted scoped real-session counterexample found;
+adopt terminal constant/prior trace and legacy limits, no new WDL/coverage gate.
+This is Dot SOURCE REVIEW, not executed Native/3259/56test validation. Exact raw
+output saved first, request COMPLETED/adopt with no unreviewed response hash.
+No routine acknowledgement requested/sent. Latest88thread has five replies, no
+remaining pages or new AUX supplement; source/execution tier stays qualified above.
+
+PRIMARY then closed a distinct1152-path within-rule continuation study on the
+same72exposed rules, not a competing AUX training/solver experiment. 151.765s,
+56250actions,13248drops/3067promotions; all57402state occurrences replay in71.797s.
+974ongoing/919nonzero16-ply starts versus698/697at64; empirical survivor rule
+TVfromuniform.08077/.19890. Later span higher19/lower22/equal31rules, so no
+universal64policy or rule rejection. AUX's richer TRAIN lane remains untouched;
+no newtraining, model, automatic merge, default or additional Agent.
+
+Actual transport binding failure was own unquoted PowerShell timestamp rounding,
+not a regex, authorization or Smart App Control defect. Saved exact receipt
+resolved with existing helper, no duplicate send/reset; manual now quotes opaque
+IDs. No measured collaboration efficiency percentage; bounded producers, repeats,
+original failedfull diagnostic test and optional literature failures remain.
+
+PRIMARY also qualified uniform typed bindings versus physical intents on168
+existing states:24have duplicates/maxTV1/6;32first complete children differ only
+in action_signature history. Keep identities/fullhistory, no board quotient.
+Original Beal/Smith TC paper is now read fully, separate from unread Shogi methods.
+Independent fixed-TD213episode credit read matches actualupdates4.44e-16; per-step
+absolute versus episode-net aggregation materially differs. This is descriptive,
+not actualTCtraining or new default. Defer adaptive implementation to a real
+consumer/evidence need; AUX learning lane and all frozen conditions stay intact.
