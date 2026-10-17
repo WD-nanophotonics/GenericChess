@@ -1,0 +1,448 @@
+{
+  "segment": 90,
+  "session": {
+    "id": "7d538456-4854-4858-bc66-e755e035a769",
+    "started_at": "2026-10-17T08:27:08.663541+00:00",
+    "ended_at": "2026-10-17T09:43:59.256676+00:00",
+    "elapsed_minutes": 76.843,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 5,
+    "duration_gate_passed": true
+  },
+  "scientific_status": "OPEN",
+  "all_producers_closed": true,
+  "actual_study": {
+    "training_arms": 16,
+    "training_nodes": 4000000,
+    "training_episodes": 4697,
+    "training_terminal": 4628,
+    "training_unknown": 69,
+    "nonzero_updates": 3098,
+    "promotions": 3300,
+    "drops": 16375,
+    "evaluation_games": 1024,
+    "evaluation_terminal": 970,
+    "evaluation_unknown": 54,
+    "evaluation_missing": 0,
+    "evaluation_failed_queries": 0,
+    "logical_record_plies": 107984,
+    "independent_unpruned_contexts": 48,
+    "free_model_preflight": "ONEexposedreal6queryepisode/6partials/Papply/2realAPIqueries78nodes, NOTnewtraining/fitness"
+  },
+  "cost": {
+    "producers": [
+      {
+        "task": "task2527",
+        "status": "COMPLETE",
+        "episodes": 4697,
+        "actual_terminal": 4628,
+        "unknown": 69,
+        "nodes": 4000000,
+        "seconds": 1971.884530899988
+      },
+      {
+        "task": "task2528",
+        "status": "COMPLETE",
+        "actual": 512,
+        "missing": 0,
+        "nodes": 717996,
+        "queries": 13581,
+        "actual_terminal": 475,
+        "unknown": 37,
+        "seconds": 324.07582119997824
+      },
+      {
+        "task": "task2531",
+        "status": "COMPLETE",
+        "actual": 512,
+        "missing": 0,
+        "nodes": 646915,
+        "queries": 10848,
+        "actual_terminal": 495,
+        "unknown": 17,
+        "seconds": 265.77550150000025
+      }
+    ],
+    "three_producer_nodes": 5364911,
+    "three_producer_wall_seconds": 2561.7358535999665,
+    "independent_unpruned_verification": {
+      "contexts": 48,
+      "nodes": 10054,
+      "seconds": 4.837512900005095
+    },
+    "free_component_api_search": {
+      "queries": 2,
+      "nodes": 78,
+      "total_preflight_seconds": 0.05877230002079159
+    },
+    "listed_original_search_nodes": 5375043,
+    "logical_record_plies": 107984,
+    "training_queries": 61260,
+    "evaluation_queries": 24429,
+    "audits": {
+      "v1_training_seconds": 351.75640149999526,
+      "v1_uniform_seconds": 105.58716060000006,
+      "v2_training_seconds": 46.629064599983394,
+      "v2_uniform_seconds": 10.936880400025984,
+      "v2_foe_seconds": 8.705245700024534,
+      "v1_v2_validation_seconds": 57.701911900017876
+    },
+    "fresh_status": "ACTUAL_PASS9_REGENERATED_AUDITS_AND38_TESTS",
+    "scope": "Countslistactual3serialproducers plus48unprunedverificationcontexts+2newcomponentAPIqueries. Re-differentiatedold6queryepisode isNOTnewtraining. AllCore/recordreplay/engineering/plots/Git/Slack/tokens notallcountedbynodecounter; timeactualsessionseparate. Producerwallsum isnotCPUtime/wholeprojectcost. Someauditworkoverlappedfitness, ordinaryconcurrency interpretationonly/noquietwindow/automaticrerun. Freshverification/APIreplays add10132nodes whenactuallyexecuted, testsinternalworknotfullycounted. FreshreceiptactuallyPASS; no newlygeneratedTRAIN/EVALdata.",
+    "fresh_seconds": 78.49439070001245,
+    "fresh_additional_verification_API_nodes": 10132,
+    "listed_search_nodes_including_fresh_verification": 5385175
+  },
+  "tests": {
+    "status": "PASS",
+    "tests": 38,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "command": "python -m pytest -q --import-mode=importlib with eight existing related targets; exact targets in task2530/fresh.py",
+    "junit": "task2529/tests.xml",
+    "raw_private_preserved": true,
+    "public_xml_sha256": "7fab934638b6f5186df00d96b54910b2f70f58c9e323fcdb727d99bd244d74a2",
+    "sanitization": "Removedmachinehostnameattributeonly; testcounts/names/durations/resultsunchanged.",
+    "removed_attributes": 1,
+    "scope": "Actualexistinglearner/search/terminal/ruleguard controls, notfullPRIMARY/product/Native rerun or Genericstrength evidence. Actualfresh38+ALL9derivedregenerationsPASS; postsealreceipt isoutsideoriginalZIPsnapshot.",
+    "fresh": {
+      "status": "PASS_EXACT_FRESH38_AND_ALL_REGISTERED_RETURNED_GENERIC_CURVE_AUDITS",
+      "archive": "DELTA_REPRO_20261017_90.zip",
+      "archive_sha": "c682ab793866421f014c3b81ec730747265ffca26cba78449d1aecee787d55a0",
+      "payloads": 196,
+      "tests": 38,
+      "derived": {
+        "training-audit.json": "PASS_ALL_RETURNED_SCOPED_GENERIC_TD_CREDITS_AND_FULL_SESSION_RECORDS",
+        "evaluation-audit.json": "PASS_ALL_RETURNED_GENERIC_ACTUAL_OUTCOMES_FULL_RECORDS_AND_PAIRED_GAINS",
+        "learning-diagnostics.json": "CLOSED_RECEIPT_DIAGNOSTICS",
+        "search-verification.json": "COMPLETE",
+        "root-overlap.json": "PASS_ACTUAL_REGISTERED_ROOT_DRAW_BINDING",
+        "resource-diagnostics.json": "CLOSED_ACTUAL_RESOURCE_AND_CHECKPOINT_DIAGNOSTICS",
+        "free-model-preflight.json": "PASS_REAL_EPISODE_ALL6_GRADIENT_APPLY_CREDIT_AND_IDENTICAL_INITIAL_SEARCH",
+        "foe-audit.json": "PASS_ALL_RETURNED_GENERIC_ACTUAL_OUTCOMES_FULL_RECORDS_AND_PAIRED_GAINS",
+        "foe-shift.json": "PASS_MATCHED_FIXED_OPPONENT_SWITCH"
+      },
+      "legal_plies": 107984,
+      "seconds": 78.49439070001245,
+      "scope": "NewignoredUUID/Python-S/emptyPYTHONPATH/extractedsourceasserted. AllsealedderivedoutputsPARKEDbeforeRECOMPUTE; equalityexceptauditwalltimes. IndependentD2verification addsinternalnodesreportedelsewhere, no newtraining/fitness/alloldconsumerbatch/externalrulesengine. Sameinstalledchess+pytest deps; verificationexplicitlyreadsactualowner+PRIMARYstopflags viaownroot, notfakecopiedstops. No productioncode/datafallthrough."
+    }
+  },
+  "fresh": {
+    "status": "PASS_EXACT_FRESH38_AND_ALL_REGISTERED_RETURNED_GENERIC_CURVE_AUDITS",
+    "archive": "DELTA_REPRO_20261017_90.zip",
+    "archive_sha": "c682ab793866421f014c3b81ec730747265ffca26cba78449d1aecee787d55a0",
+    "payloads": 196,
+    "tests": 38,
+    "derived": {
+      "training-audit.json": "PASS_ALL_RETURNED_SCOPED_GENERIC_TD_CREDITS_AND_FULL_SESSION_RECORDS",
+      "evaluation-audit.json": "PASS_ALL_RETURNED_GENERIC_ACTUAL_OUTCOMES_FULL_RECORDS_AND_PAIRED_GAINS",
+      "learning-diagnostics.json": "CLOSED_RECEIPT_DIAGNOSTICS",
+      "search-verification.json": "COMPLETE",
+      "root-overlap.json": "PASS_ACTUAL_REGISTERED_ROOT_DRAW_BINDING",
+      "resource-diagnostics.json": "CLOSED_ACTUAL_RESOURCE_AND_CHECKPOINT_DIAGNOSTICS",
+      "free-model-preflight.json": "PASS_REAL_EPISODE_ALL6_GRADIENT_APPLY_CREDIT_AND_IDENTICAL_INITIAL_SEARCH",
+      "foe-audit.json": "PASS_ALL_RETURNED_GENERIC_ACTUAL_OUTCOMES_FULL_RECORDS_AND_PAIRED_GAINS",
+      "foe-shift.json": "PASS_MATCHED_FIXED_OPPONENT_SWITCH"
+    },
+    "legal_plies": 107984,
+    "seconds": 78.49439070001245,
+    "scope": "NewignoredUUID/Python-S/emptyPYTHONPATH/extractedsourceasserted. AllsealedderivedoutputsPARKEDbeforeRECOMPUTE; equalityexceptauditwalltimes. IndependentD2verification addsinternalnodesreportedelsewhere, no newtraining/fitness/alloldconsumerbatch/externalrulesengine. Sameinstalledchess+pytest deps; verificationexplicitlyreadsactualowner+PRIMARYstopflags viaownroot, notfakecopiedstops. No productioncode/datafallthrough."
+  },
+  "source_publication": {
+    "status": "VERIFIED_FULL_REMOTE_SHA_ANONYMOUS_PUBLIC_EXACT_FILES",
+    "phase": "source",
+    "remote_sha": "6ab620e7423cfe01b64f28a8b030ab998f635cc1",
+    "local_sha": "6ab620e7423cfe01b64f28a8b030ab998f635cc1",
+    "public": true,
+    "anonymous_repo_api_status": 200,
+    "files": [
+      {
+        "path": "results/dev_aux/SEGMENT_20261017_90.md",
+        "status": 200,
+        "sha256": "c750cdefe4a10e91c8eb038d6e93d078f42ba9901f6f57caa104e8b16f637dc2",
+        "bytes": 9437
+      },
+      {
+        "path": "results/dev_aux/METHOD_20261017_90.md",
+        "status": 200,
+        "sha256": "505a34f4825203763b236aaaf4c67bc74646576830b608a645c38f353c675b79",
+        "bytes": 8056
+      },
+      {
+        "path": "results/dev_aux/task2527/run.py",
+        "status": 200,
+        "sha256": "d327e5521a13d0d2f3b6925c5c95a0b26ffe1d5875b27528056e3a683c16fdc1",
+        "bytes": 8070
+      },
+      {
+        "path": "results/dev_aux/task2527/result.json",
+        "status": 200,
+        "sha256": "8902bd4077c190d067bcae3146fa0223d2623094a2788be98d3ecb496855b428",
+        "bytes": 30002
+      },
+      {
+        "path": "results/dev_aux/task2528/evaluate.py",
+        "status": 200,
+        "sha256": "76933f4925a7a5d5848452999828de06b0d62396e503f41fde5211d11ede7a27",
+        "bytes": 4518
+      },
+      {
+        "path": "results/dev_aux/task2528/result.json",
+        "status": 200,
+        "sha256": "0f9ea9cb4d5ae750904190d4bdf9c934e1fb7ae08829974fedb328ac63cbd6a3",
+        "bytes": 556
+      },
+      {
+        "path": "results/dev_aux/task2529/training-audit.json",
+        "status": 200,
+        "sha256": "0964e2f8dd62217d59fc470d26563150dce4cf4173c6b1e26384196340561bf5",
+        "bytes": 20697
+      },
+      {
+        "path": "results/dev_aux/task2529/evaluation-audit.json",
+        "status": 200,
+        "sha256": "1efd3cc3a9dd6fa35a344e364b1ee41a02eabc652a245bb337bfe54133fa3c56",
+        "bytes": 16507
+      },
+      {
+        "path": "results/dev_aux/task2529/learning-diagnostics.json",
+        "status": 200,
+        "sha256": "06b0f0b6064e667e6f8c042e0b47664374e019472532eb090b86f4f0ea58212a",
+        "bytes": 78341
+      },
+      {
+        "path": "results/dev_aux/task2529/root-overlap.json",
+        "status": 200,
+        "sha256": "6167f56c02278119083d2fea9f60351cbc9bd5e163f28badc0b9fc9c4325fa56",
+        "bytes": 6651
+      },
+      {
+        "path": "results/dev_aux/task2529/search-verification.json",
+        "status": 200,
+        "sha256": "53068f53c5056ac88321f48edc5a2f5a49ea57ca6ed22ee042a91549663eb656",
+        "bytes": 18610
+      },
+      {
+        "path": "results/dev_aux/task2530/fresh.py",
+        "status": 200,
+        "sha256": "ac7bf67122c512ad2e13ca4f564848c499c920ef31a90301ddce77cb6d0b0ebe",
+        "bytes": 4244
+      },
+      {
+        "path": "results/dev_aux/task2530/fresh-receipt.json",
+        "status": 200,
+        "sha256": "7ec46a44cf052df0992e33fedf491f652179893ef0446161b52c9316af459116",
+        "bytes": 1493
+      },
+      {
+        "path": "results/dev_aux/task2531/evaluate.py",
+        "status": 200,
+        "sha256": "440d09d8f671eb3d2016a52cd39c1f3948189b7e7d2eaa6001919ddd6c9bdb2c",
+        "bytes": 4770
+      },
+      {
+        "path": "results/dev_aux/ADVISOR_20261017_90.json",
+        "status": 200,
+        "sha256": "9113e22d73ef7b5ec7156673f7dddd254590d3afa5dfde26954c87a15e26bf77",
+        "bytes": 2762
+      },
+      {
+        "path": "results/dev_aux/COST_20261017_90.json",
+        "status": 200,
+        "sha256": "0cbe5a2c1a437a4e38dea5f2045b68f403c93c880e06cf7f30704bbe98213250",
+        "bytes": 2269
+      },
+      {
+        "path": "results/dev_aux/JOURNAL_ROUTES_20261017_90.json",
+        "status": 200,
+        "sha256": "5e5bde01db363bf29746209645f7ca139336908518c1a2b276807e0d6be4a969",
+        "bytes": 1509
+      },
+      {
+        "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_90.json",
+        "status": 200,
+        "sha256": "59aad00407f0d7a1f010dc91ac89d0d3d2727d983eee0b9451f9607b45049fdb",
+        "bytes": 4057
+      },
+      {
+        "path": "results/dev_aux/DELTA_REPRO_20261017_90.zip",
+        "status": 200,
+        "sha256": "c682ab793866421f014c3b81ec730747265ffca26cba78449d1aecee787d55a0",
+        "bytes": 10222982
+      },
+      {
+        "path": "docs/research/LOCAL_MAINLINE.md",
+        "status": 200,
+        "sha256": "dfdac57f968b1fd9b11bdc6c28eea056a601a5e60fa13c5ad9e5fff9f5d00477",
+        "bytes": 51161
+      },
+      {
+        "path": "docs/operations/COLLABORATION_LOG.md",
+        "status": 200,
+        "sha256": "a06dffe9baae4e5adc7e1d8d7a47cfd62ae45396e4870dac7ed17978034eea6a",
+        "bytes": 239017
+      },
+      {
+        "path": ".gitignore",
+        "status": 200,
+        "sha256": "f046c01bd1e9749f096b55dae89c2edfe034e75d996d25da1d82db0fa4ebb633",
+        "bytes": 4616
+      }
+    ],
+    "clean": true,
+    "observed_at": "2026-10-17T09:36:42.839380+00:00"
+  },
+  "slack": {
+    "message_ts": "1792230099.875459",
+    "thread_ts": "1792227318.115889",
+    "followup_id": "DEV_AUX-90-GENERIC-CURVE-6ab620e7",
+    "payload_sha": "3bee81e12ffb60960808357e75feb43f6174d78962925f60347161b81608ad65",
+    "accepted": true,
+    "readback": "Actualroot/ts/followup/fullSHA/107984/2153-2120markersverified/rawprivate",
+    "Dot90_reading_execution": "UNCONFIRMED",
+    "PRIMARY90_reading_execution": "UNCONFIRMED"
+  },
+  "post_source_pre_finish": {
+    "primary_message": "1792226009.761849",
+    "primary_report": "0ca265c711f55514b10ac06638b6934b159a81fc",
+    "primary_scope": "FullfixedreportREADhere only; PRIMARYreports89fixedsource/38controls+7audits executed/matched, Native/precisioncasesownerreportednotrerunhere/no90activation",
+    "closed_data_supplement": {
+      "status": "PASS_CLOSED90_EXACT_LEAF_SPAN_AND_OLD_NULL_COUNTERCHECK",
+      "input_source_sha": "6ab620e7423cfe01b64f28a8b030ab998f635cc1",
+      "archive_sha256": "c682ab793866421f014c3b81ec730747265ffca26cba78449d1aecee787d55a0",
+      "old_primary_report_sha": "0ca265c711f55514b10ac06638b6934b159a81fc",
+      "old_report_bytes_sha256": "a08ad5d4ff80eb5637dbb8a26d64d779691585d471f37a4e0c7c1436658944d9",
+      "old_evidence": "PRIMARYreported89ordinaryPVranks5/4/5/4; boardA=handAon2/4 was DATAcondition, notruleinvariant. ReportREADonlyhere/noPRIMARYNativeexecution.",
+      "free_coordinate_order": [
+        "boardA",
+        "boardX",
+        "handA",
+        "handP",
+        "handX"
+      ],
+      "rows": [
+        {
+          "generator_seed": 271001,
+          "exact_rational_free_PV_rank": 5,
+          "counts": {
+            "all_queries": 21277,
+            "ordinary_PV_leaves": 18014,
+            "ordinary_zero_vector": 545,
+            "terminal_PV_constants": 3259,
+            "boardA_handA_inequality_leaves": 11883,
+            "incomplete": 4
+          },
+          "first_old_null_breaking_leaf": {
+            "seed": 1977,
+            "game": 3,
+            "ply": 18,
+            "free_phi": [
+              1,
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            "source_total_nodes": 1182
+          },
+          "episodes": 1915,
+          "episodes_with_null_component_drift_gt_1e_12": 1069,
+          "max_abs_episode_null_component_drift": 0.28473583775785194
+        },
+        {
+          "generator_seed": 271002,
+          "exact_rational_free_PV_rank": 5,
+          "counts": {
+            "all_queries": 12076,
+            "terminal_PV_constants": 1175,
+            "ordinary_PV_leaves": 10897,
+            "ordinary_zero_vector": 617,
+            "boardA_handA_inequality_leaves": 2153,
+            "incomplete": 4
+          },
+          "first_old_null_breaking_leaf": {
+            "seed": 1977,
+            "game": 26,
+            "ply": 12,
+            "free_phi": [
+              2,
+              -1,
+              0,
+              -1,
+              -1
+            ],
+            "source_total_nodes": 21012
+          },
+          "episodes": 710,
+          "episodes_with_null_component_drift_gt_1e_12": 199,
+          "max_abs_episode_null_component_drift": 0.2968042555875693
+        },
+        {
+          "generator_seed": 271003,
+          "exact_rational_free_PV_rank": 5,
+          "counts": {
+            "all_queries": 14008,
+            "ordinary_PV_leaves": 13553,
+            "ordinary_zero_vector": 168,
+            "boardA_handA_inequality_leaves": 9061,
+            "terminal_PV_constants": 451,
+            "incomplete": 4
+          },
+          "first_old_null_breaking_leaf": {
+            "seed": 1977,
+            "game": 0,
+            "ply": 13,
+            "free_phi": [
+              1,
+              1,
+              0,
+              5,
+              0
+            ],
+            "source_total_nodes": 885
+          },
+          "episodes": 276,
+          "episodes_with_null_component_drift_gt_1e_12": 228,
+          "max_abs_episode_null_component_drift": 0.4100858126196626
+        },
+        {
+          "generator_seed": 271004,
+          "exact_rational_free_PV_rank": 5,
+          "counts": {
+            "all_queries": 13899,
+            "terminal_PV_constants": 2596,
+            "ordinary_PV_leaves": 11299,
+            "ordinary_zero_vector": 498,
+            "boardA_handA_inequality_leaves": 2120,
+            "incomplete": 4
+          },
+          "first_old_null_breaking_leaf": {
+            "seed": 1977,
+            "game": 1,
+            "ply": 5,
+            "free_phi": [
+              -1,
+              1,
+              1,
+              4,
+              1
+            ],
+            "source_total_nodes": 290
+          },
+          "episodes": 1796,
+          "episodes_with_null_component_drift_gt_1e_12": 265,
+          "max_abs_episode_null_component_drift": 0.2379230714520547
+        }
+      ],
+      "scope": "Postsource/pre-FINISHclosed-dataSUPPLEMENT, NOTinsideimmutable35thZIP. ReadsONLYpublicarchive withrawmemberhashes, exactFractionrank/noCore/search/newfitness/training. New90differsfrom89 inTRAINstreams/initials/work/H, notpuresamplesizeablation. Breakingoldleaf-null relation/refinedrankdoesNOTprovepriceidentifiability, uniqueoptimum/strength orfullrule-domain; notnewgate. Currentfloatresultsunchanged; NativequantizationconclusionsremainPRIMARYownerreportedonly/old8models/no90deployment/defaultadoption.",
+      "seconds": 3.3223373999935575
+    },
+    "scope": "Two2533filesalreadycompletedBEFOREofficialfinish, tobeversionedwithclosingmetadata; sourceS/immutable35thZIPunchanged. No additionaldata/search/training/fitness."
+  },
+  "failure_qualification": "Recoverablerootdocpath/privateauditmodulepath/exactbytepin/missingslotharnessfixedandpreserved. All16tailqueryfailures/53TRAINH128/54EVALH128 kept. V1/v2auditnumericalresultsidentical, rawhostnameprivate/publiccopyonly. No hardquota/OSblock/pendinguserconsent orcapreset.",
+  "closing_scope": "ONLYversioningalready-completedpre-finish2533closed-archiveanalysis+session/deliverymetadata andnormalGit/anonymousverification afterofficialfinish. No newresearch/queries/training/fitness/advisorwork. No raw35ZIP/sourcepins/input/output/caprewrites. FullcontainingcommitSHAverifiedseparately, no selfreferentialrewrite.",
+  "source_projection_scope": "PUBLICATION_PROJECTION_90 maps exactsciencepublication6ab620e7. Closingappendsmetadata/2precompleted2533files, notrewritingfrozenexperimentdata.",
+  "validator_scope": "Structural/time acceptance, notscientificquality/uniqueprices/all-domainproof.",
+  "next_work": "NEWpaired5fixed-vs6free/NEWcommonTRAIN/all4rules4initials/sharedNEWfitness. No old90comparison/refit/renorm/provergate."
+}

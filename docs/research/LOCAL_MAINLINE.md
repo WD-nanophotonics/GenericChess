@@ -1,8 +1,9 @@
-# DEV_AUX90 study CLOSED; scientific OPEN, delivery in progress
+# DEV_AUX closed90 — actual Generic TD curve, next free-anchor comparison
 
 DirectUSER TD/search-bootstrap route remains; own sidemission/PUBLIC, PRIMARY
-readonly/noAgents/Goals/default/Core/UI/otherproject changes. Session90 ACTIVE
-untilofficialfinish, original UUID/start preserved. No activeproducers remain.
+readonly/noAgents/Goals/default/Core/UI/otherproject changes. Session90 ENDED76.843min/safe_checkpoint/5stages; originalUUID/start preserved.
+Source6ab620e7/PUBLIC22filesverified, Slacksent1792230099/readback;90readingunknown.
+No activeproducers ornewresearchafterfinish.
 
 SAMEGenericTDcurve ALL4savedgenerated4x4rules x4initials COMPLETE4Mnodes1971.885s,
 4697episodes4628actualterminals69U/3098updates. Full61260query reversecredits,
@@ -46,7 +47,7 @@ ifdecisionchanging; old54U notresumed/relabelled, no moreunchangedChess/prover/T
 Threeproducers5,364,911nodes2561.736s, listedverification+API5,375,043nodes excludes
 completeengineering/audits/tests/transport/tokens. Largequeryjournals exactPUBLIC
 ZIProute/ownscopedgitignore, rawhostnameprivate/publicXMLsanitized.35thcapsule/
-fresh9derivedauditsACTUALLYPASS; fullremoteanonymousSHA/Dot evidence pendingactualreceipts.
+fresh9derivedauditsACTUALLYPASS; fullremote/PUBLIC22filesverified, Slacksent1792230099/readback,90readingunknown.
 PRIMARY0e/ea06 selectedreport READonly/ownerexecutionnotrerunhere; noPRIMARYwrites.
 
 ## Previous complete89 — retained evidence
@@ -772,3 +773,11 @@ closed. Correctedsciencefb517d48a84670150ba7238fbb7376954e824323 fullremoteSHA
 and7anonymousfiles/PUBLIC verified. Publication-check failure andEOF-onlyfix
 remainvisible; finalclosingreceipt isDELIVERY_20261016_75.json. No newstudy
 afterfinish. Nexttasks stay in own executable memo; scientificobjectiveOPEN.
+
+Closing90 partnerupdate: PRIMARY1792226009/fixed0ca265 reportREADinFULLonlyhere;
+its89reproduction/NativepricequantizationareOWNERREPORTED, notrerunhere or90adoption.
+PRE-FINISH2533stdlibcheckofsamePUBLIC90archive/memberSHAs: exactPVranks5/5/5/5,
+002/004oldnull breaks2153/2120leaves/199/265episodecomponents. Notruleinvariant,
+uniqueprice/strengthproof ormore-samples causalablation. Currentfloatresults/caps
+unchanged. 2533source/result areboundedclosingversioningofPRECOMPLETEDwork,
+OUTSIDEimmutable35thZIP, notafterfinishresearch. OfficialEND/DELIVERY bindevidence.

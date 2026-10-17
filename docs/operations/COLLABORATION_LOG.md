@@ -30,7 +30,7 @@ Ordinaryparallelprojects normal; noquietwindow/unrelatedmonitor/worker/fee chang
 
 38relatedtests/all5figuresPASS/checked; rawmachinehostnameprivate/publiccopysanized.
 Largequeries exactZIPonly (scopedown.gitignore) avoidsoversizedGitblobs, notdata
-suppression.35thcapsule/fresh9derivedreplays ACTUALLYPASS107984logicalplies78.494s; fixedPublicSHA evidence pendingactualdelivery. No force/sandbox/master/visibility/Core/UI changes.
+suppression.35thcapsule/fresh9derivedreplays ACTUALLYPASS107984logicalplies78.494s; fixedSource6ab620e7/PUBLIC22filesverified andSlacksent1792230099/readback;90readingunknown. No force/sandbox/master/visibility/Core/UI changes.
 ScienceOPEN; nextall6comparison andfullgenerateddomain remainunsettled. Historical
 failures/caps/rootexposures kept, notoverwrittenorrestored.
 
@@ -2435,3 +2435,12 @@ Closing89: ownofficialsession62.552min/safe_checkpoint/5stages at2026-10-17T07:5
 Source63b4ce1d8f0e94755bf2102dfbd4f524a91c0264 fullremote/PUBLIC/26anonymous
 canonicalfiles verified;87outgoingpaths/0sensitivehits. Evidence1792223854.185299
 sent/readback, Dot/PRIMARY89reading/executionUNCONFIRMED. No researchafterfinish.
+
+Closing90: officialsession76.843min/safe_checkpoint/5stages at2026-10-17T09:43:59.256676+00:00.
+Source6ab620e7423cfe01b64f28a8b030ab998f635cc1 fullremote/PUBLIC22files verified;
+86checkedpaths/0sensitivehits, sourceevidence1792230099.875459sent/readback,
+90Dot/PRIMARYreading/executionUNCONFIRMED. NewPRIMARY1792226009/0ca265fullreport
+READhere; its89reproduction38+7/matcheddata andNative8models precision areowner-
+reported notexecutedhere/no90Nativeadoption. NewPRE-FINISHclosed-archive2533check
+findsall4rank5/oldnullbreak002/0042153/2120leaves; notID/WDLproof/newgate. Script/
+resultcompletedbeforefinish, nowversionedoutsideimmutable35ZIP. Noafterfinishresearch.

@@ -1,0 +1,131 @@
+{
+  "status": "PASS_CLOSED90_EXACT_LEAF_SPAN_AND_OLD_NULL_COUNTERCHECK",
+  "input_source_sha": "6ab620e7423cfe01b64f28a8b030ab998f635cc1",
+  "archive_sha256": "c682ab793866421f014c3b81ec730747265ffca26cba78449d1aecee787d55a0",
+  "old_primary_report_sha": "0ca265c711f55514b10ac06638b6934b159a81fc",
+  "old_report_bytes_sha256": "a08ad5d4ff80eb5637dbb8a26d64d779691585d471f37a4e0c7c1436658944d9",
+  "old_evidence": "PRIMARYreported89ordinaryPVranks5/4/5/4; boardA=handAon2/4 was DATAcondition, notruleinvariant. ReportREADonlyhere/noPRIMARYNativeexecution.",
+  "free_coordinate_order": [
+    "boardA",
+    "boardX",
+    "handA",
+    "handP",
+    "handX"
+  ],
+  "rows": [
+    {
+      "generator_seed": 271001,
+      "exact_rational_free_PV_rank": 5,
+      "counts": {
+        "all_queries": 21277,
+        "ordinary_PV_leaves": 18014,
+        "ordinary_zero_vector": 545,
+        "terminal_PV_constants": 3259,
+        "boardA_handA_inequality_leaves": 11883,
+        "incomplete": 4
+      },
+      "first_old_null_breaking_leaf": {
+        "seed": 1977,
+        "game": 3,
+        "ply": 18,
+        "free_phi": [
+          1,
+          -1,
+          -1,
+          0,
+          -1
+        ],
+        "source_total_nodes": 1182
+      },
+      "episodes": 1915,
+      "episodes_with_null_component_drift_gt_1e_12": 1069,
+      "max_abs_episode_null_component_drift": 0.28473583775785194
+    },
+    {
+      "generator_seed": 271002,
+      "exact_rational_free_PV_rank": 5,
+      "counts": {
+        "all_queries": 12076,
+        "terminal_PV_constants": 1175,
+        "ordinary_PV_leaves": 10897,
+        "ordinary_zero_vector": 617,
+        "boardA_handA_inequality_leaves": 2153,
+        "incomplete": 4
+      },
+      "first_old_null_breaking_leaf": {
+        "seed": 1977,
+        "game": 26,
+        "ply": 12,
+        "free_phi": [
+          2,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "source_total_nodes": 21012
+      },
+      "episodes": 710,
+      "episodes_with_null_component_drift_gt_1e_12": 199,
+      "max_abs_episode_null_component_drift": 0.2968042555875693
+    },
+    {
+      "generator_seed": 271003,
+      "exact_rational_free_PV_rank": 5,
+      "counts": {
+        "all_queries": 14008,
+        "ordinary_PV_leaves": 13553,
+        "ordinary_zero_vector": 168,
+        "boardA_handA_inequality_leaves": 9061,
+        "terminal_PV_constants": 451,
+        "incomplete": 4
+      },
+      "first_old_null_breaking_leaf": {
+        "seed": 1977,
+        "game": 0,
+        "ply": 13,
+        "free_phi": [
+          1,
+          1,
+          0,
+          5,
+          0
+        ],
+        "source_total_nodes": 885
+      },
+      "episodes": 276,
+      "episodes_with_null_component_drift_gt_1e_12": 228,
+      "max_abs_episode_null_component_drift": 0.4100858126196626
+    },
+    {
+      "generator_seed": 271004,
+      "exact_rational_free_PV_rank": 5,
+      "counts": {
+        "all_queries": 13899,
+        "terminal_PV_constants": 2596,
+        "ordinary_PV_leaves": 11299,
+        "ordinary_zero_vector": 498,
+        "boardA_handA_inequality_leaves": 2120,
+        "incomplete": 4
+      },
+      "first_old_null_breaking_leaf": {
+        "seed": 1977,
+        "game": 1,
+        "ply": 5,
+        "free_phi": [
+          -1,
+          1,
+          1,
+          4,
+          1
+        ],
+        "source_total_nodes": 290
+      },
+      "episodes": 1796,
+      "episodes_with_null_component_drift_gt_1e_12": 265,
+      "max_abs_episode_null_component_drift": 0.2379230714520547
+    }
+  ],
+  "scope": "Postsource/pre-FINISHclosed-dataSUPPLEMENT, NOTinsideimmutable35thZIP. ReadsONLYpublicarchive withrawmemberhashes, exactFractionrank/noCore/search/newfitness/training. New90differsfrom89 inTRAINstreams/initials/work/H, notpuresamplesizeablation. Breakingoldleaf-null relation/refinedrankdoesNOTprovepriceidentifiability, uniqueoptimum/strength orfullrule-domain; notnewgate. Currentfloatresultsunchanged; NativequantizationconclusionsremainPRIMARYownerreportedonly/old8models/no90deployment/defaultadoption.",
+  "seconds": 3.3223373999935575
+}
