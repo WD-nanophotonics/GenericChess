@@ -1,3 +1,56 @@
+# DEV_AUX90 study CLOSED; scientific OPEN, delivery in progress
+
+DirectUSER TD/search-bootstrap route remains; own sidemission/PUBLIC, PRIMARY
+readonly/noAgents/Goals/default/Core/UI/otherproject changes. Session90 ACTIVE
+untilofficialfinish, original UUID/start preserved. No activeproducers remain.
+
+SAMEGenericTDcurve ALL4savedgenerated4x4rules x4initials COMPLETE4Mnodes1971.885s,
+4697episodes4628actualterminals69U/3098updates. Full61260query reversecredits,
+48closedcheckpoints/typedcurrentboard-basehand/fullhistory PASS.16lastsmallpool
+queries546nodes,0full4096failures;53H128U. Alloldcaps preserved. H128NEWregime
+vs89H64, notpureupdatecountablation; nominalmidpoints lag5..8913nodes/finalexact.
+
+ALL1024registeredEVALgames closed970actualterminals54H128U/0missing/0failedqueries.
+Uniform512gaincurves [0,.296875],[-.0234375,.2578125],[0,.25]; matchedrandomfoe512
+[.125,.234375],[.109375,.25],[.2265625,.3671875]. Finalrule271002 .3125/.625,
+271004 .375/.625, but31415adverse/unresolved andrule271003censors dominate.
+Descriptiverule/seed/familyfinal95 envelopes[-.53125,.6640625]/[-.390625,.890625]
+include0: no populationbenefit/stableprice/unseenrule/equivalence claim.
+Allcheckpoints/initials kept.312matchedfirstdiffsonFOEturn,200identicalrecords;
+finalinteraction[-.0234375,.3671875] contains0, notopponentinvariance.
+
+16freshPRNGfullroots distinct/4TRAINoverlaps/4alreadyterminal; nofiltering or
+strictunseen-stateclaim. Allstart16actors/16cells, notsparseendgames. Within-rule
+orderagreement rises but rawpriceRMSdispersion rises .388->.937/.796/.554/.665,
+notnumericconvergence.38relatedtestsPASS/all5figuresinspected/48independentD2
+minimax+action+PVleafchecksPASS10054nodes.107984logicallegalrecordplies audited.
+V1fullprefixTRAIN/EVALPASS351.756/105.587s preserved. V2incrementalpublicsubmit+
+everyqueryfullrecordidentity+finalpublicreplay sameALLmetrics46.629/10.937s;
+notcontrolledspeedup. No frozenlearning/fitness input/capchange. Actualfresh196payloads/38tests+9regeneratedaudits PASS107984logicalplies78.494s.
+
+Importantmodelrestriction: generatedP NOTChesspawn. FixedboardP=+1 excludes
+zero/negativeP andfixedtanhscale10 makeslearningamplitudenoninvariant; notmereunit
+choice/calibratedprobability. Dot1792227407 math/inlineONLY/no90sourceorexecution,
+rawfirst/exactreadback/reconcileadopted; noTC/prover/API orapprovalgate.
+Actualnextcomponent BEGUN:2532FreeModel ALL6trainable, realcontiguous6queryepisode
+redifferentiation/publicterminal; numerical6partials(oneactualvector/twoactive),
+P-onlyapply/sameinitialD2twoqueries78nodes PASS; rawP1->.985032964. This isNOTnew
+selfplay/heldout6freefitness/negativePbenefit. Pairedwholelearning UNSTARTED.
+
+NEXTMain freeze NEW paired5fixed-vs6free ALLrules/initialvectors/commonTRAIN/
+budgets/sharedNEWfitness; NOTnew6vsold90. RecordrawP/norm/sign, posthocL2only/
+zeroUndefined, no training/deploymentrenorm/humanpositiveclipping/bestcheckpoint.
+Backup newH128/H256censorcontrol orpaidD3deploymentcontrol onfreshfamilies only
+ifdecisionchanging; old54U notresumed/relabelled, no moreunchangedChess/prover/TC.
+
+Threeproducers5,364,911nodes2561.736s, listedverification+API5,375,043nodes excludes
+completeengineering/audits/tests/transport/tokens. Largequeryjournals exactPUBLIC
+ZIProute/ownscopedgitignore, rawhostnameprivate/publicXMLsanitized.35thcapsule/
+fresh9derivedauditsACTUALLYPASS; fullremoteanonymousSHA/Dot evidence pendingactualreceipts.
+PRIMARY0e/ea06 selectedreport READonly/ownerexecutionnotrerunhere; noPRIMARYwrites.
+
+## Previous complete89 — retained evidence
+
 # DEV_AUX closed89 — incremental TD and scoped Generic learning
 
 Direct USER TD/search-bootstrap priority remains. Ownsidemission/PUBLIC;

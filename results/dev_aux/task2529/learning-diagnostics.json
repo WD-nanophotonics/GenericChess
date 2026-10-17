@@ -1,0 +1,3145 @@
+{
+  "status": "CLOSED_RECEIPT_DIAGNOSTICS",
+  "bins": [
+    {
+      "generator_seed": 271001,
+      "seed": 1977,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1374,
+        "nonzero_gradient_queries": 1105,
+        "terminal_PV_queries": 158,
+        "gradient_square": 56.101450755417844,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09036675294143708
+      },
+      "episodes": {
+        "episodes": 92,
+        "zero_queries": 3,
+        "one_query": 20,
+        "nonzero_updates": 63,
+        "actual_terminal": 92,
+        "unknown": 0,
+        "loss_terms": 1366,
+        "half_square_sum": 34.64835954170254,
+        "episode_step_l2_sum": 3.1968763539580567
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 1977,
+      "node_bin": 1,
+      "queries": {
+        "queries": 1356,
+        "nonzero_gradient_queries": 1157,
+        "terminal_PV_queries": 145,
+        "gradient_square": 57.64958159790054,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.0922111063879144
+      },
+      "episodes": {
+        "episodes": 87,
+        "zero_queries": 5,
+        "one_query": 19,
+        "nonzero_updates": 58,
+        "actual_terminal": 87,
+        "unknown": 0,
+        "loss_terms": 1311,
+        "half_square_sum": 39.90757105805555,
+        "episode_step_l2_sum": 3.7172367949267544
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 1977,
+      "node_bin": 2,
+      "queries": {
+        "queries": 1422,
+        "nonzero_gradient_queries": 1125,
+        "terminal_PV_queries": 270,
+        "gradient_square": 64.07124938417488,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.0949285388078494
+      },
+      "episodes": {
+        "episodes": 159,
+        "zero_queries": 3,
+        "one_query": 40,
+        "nonzero_updates": 108,
+        "actual_terminal": 158,
+        "unknown": 1,
+        "loss_terms": 1405,
+        "half_square_sum": 57.30981009299596,
+        "episode_step_l2_sum": 4.5322320572047525
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 1977,
+      "node_bin": 3,
+      "queries": {
+        "queries": 1521,
+        "nonzero_gradient_queries": 1250,
+        "terminal_PV_queries": 251,
+        "gradient_square": 79.7238638127413,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.1023869391766837
+      },
+      "episodes": {
+        "episodes": 144,
+        "zero_queries": 4,
+        "one_query": 23,
+        "nonzero_updates": 103,
+        "actual_terminal": 141,
+        "unknown": 3,
+        "loss_terms": 1587,
+        "half_square_sum": 54.448890679896174,
+        "episode_step_l2_sum": 4.320069665434228
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 8173,
+      "node_bin": 0,
+      "queries": {
+        "queries": 555,
+        "nonzero_gradient_queries": 536,
+        "terminal_PV_queries": 15,
+        "gradient_square": 33.92641826114801,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11057005159772516
+      },
+      "episodes": {
+        "episodes": 12,
+        "zero_queries": 1,
+        "one_query": 1,
+        "nonzero_updates": 9,
+        "actual_terminal": 9,
+        "unknown": 3,
+        "loss_terms": 524,
+        "half_square_sum": 4.037412873024277,
+        "episode_step_l2_sum": 0.6444095479633581
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 8173,
+      "node_bin": 1,
+      "queries": {
+        "queries": 979,
+        "nonzero_gradient_queries": 867,
+        "terminal_PV_queries": 77,
+        "gradient_square": 51.787876294058115,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10285791174722844
+      },
+      "episodes": {
+        "episodes": 48,
+        "zero_queries": 1,
+        "one_query": 11,
+        "nonzero_updates": 33,
+        "actual_terminal": 45,
+        "unknown": 3,
+        "loss_terms": 996,
+        "half_square_sum": 18.758575655303986,
+        "episode_step_l2_sum": 2.1114116878726104
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 8173,
+      "node_bin": 2,
+      "queries": {
+        "queries": 1195,
+        "nonzero_gradient_queries": 1018,
+        "terminal_PV_queries": 115,
+        "gradient_square": 48.90571462224305,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09047130396176883
+      },
+      "episodes": {
+        "episodes": 73,
+        "zero_queries": 4,
+        "one_query": 20,
+        "nonzero_updates": 44,
+        "actual_terminal": 72,
+        "unknown": 1,
+        "loss_terms": 1200,
+        "half_square_sum": 24.071434488616653,
+        "episode_step_l2_sum": 2.893785796584684
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 8173,
+      "node_bin": 3,
+      "queries": {
+        "queries": 1257,
+        "nonzero_gradient_queries": 1073,
+        "terminal_PV_queries": 138,
+        "gradient_square": 60.49796873138621,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09811101202824805
+      },
+      "episodes": {
+        "episodes": 81,
+        "zero_queries": 3,
+        "one_query": 16,
+        "nonzero_updates": 58,
+        "actual_terminal": 80,
+        "unknown": 1,
+        "loss_terms": 1258,
+        "half_square_sum": 33.26367672538346,
+        "episode_step_l2_sum": 3.455326995644985
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 27182,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1230,
+        "nonzero_gradient_queries": 966,
+        "terminal_PV_queries": 232,
+        "gradient_square": 64.83697936843714,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10267715554732997
+      },
+      "episodes": {
+        "episodes": 140,
+        "zero_queries": 6,
+        "one_query": 34,
+        "nonzero_updates": 91,
+        "actual_terminal": 139,
+        "unknown": 1,
+        "loss_terms": 1218,
+        "half_square_sum": 48.674038900022175,
+        "episode_step_l2_sum": 4.267143940665341
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 27182,
+      "node_bin": 1,
+      "queries": {
+        "queries": 1409,
+        "nonzero_gradient_queries": 1140,
+        "terminal_PV_queries": 240,
+        "gradient_square": 74.3489205153758,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10272989280215403
+      },
+      "episodes": {
+        "episodes": 138,
+        "zero_queries": 3,
+        "one_query": 28,
+        "nonzero_updates": 100,
+        "actual_terminal": 137,
+        "unknown": 1,
+        "loss_terms": 1377,
+        "half_square_sum": 45.13977427115021,
+        "episode_step_l2_sum": 4.445301027276813
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 27182,
+      "node_bin": 2,
+      "queries": {
+        "queries": 1286,
+        "nonzero_gradient_queries": 1023,
+        "terminal_PV_queries": 235,
+        "gradient_square": 47.98358072337571,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.08638549782114176
+      },
+      "episodes": {
+        "episodes": 138,
+        "zero_queries": 6,
+        "one_query": 29,
+        "nonzero_updates": 94,
+        "actual_terminal": 138,
+        "unknown": 0,
+        "loss_terms": 1315,
+        "half_square_sum": 43.2172701103152,
+        "episode_step_l2_sum": 3.573698560045708
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 27182,
+      "node_bin": 3,
+      "queries": {
+        "queries": 1458,
+        "nonzero_gradient_queries": 1188,
+        "terminal_PV_queries": 255,
+        "gradient_square": 63.34214336190235,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09321431517983043
+      },
+      "episodes": {
+        "episodes": 148,
+        "zero_queries": 4,
+        "one_query": 30,
+        "nonzero_updates": 102,
+        "actual_terminal": 146,
+        "unknown": 2,
+        "loss_terms": 1469,
+        "half_square_sum": 52.89121363452337,
+        "episode_step_l2_sum": 4.574258118398397
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 31415,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1403,
+        "nonzero_gradient_queries": 1135,
+        "terminal_PV_queries": 234,
+        "gradient_square": 75.09043619509397,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10346142979271666
+      },
+      "episodes": {
+        "episodes": 140,
+        "zero_queries": 6,
+        "one_query": 34,
+        "nonzero_updates": 91,
+        "actual_terminal": 140,
+        "unknown": 0,
+        "loss_terms": 1387,
+        "half_square_sum": 47.845622432265394,
+        "episode_step_l2_sum": 4.567409109243295
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 31415,
+      "node_bin": 1,
+      "queries": {
+        "queries": 1578,
+        "nonzero_gradient_queries": 1291,
+        "terminal_PV_queries": 275,
+        "gradient_square": 83.85219302116035,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10309051544786016
+      },
+      "episodes": {
+        "episodes": 157,
+        "zero_queries": 3,
+        "one_query": 33,
+        "nonzero_updates": 114,
+        "actual_terminal": 157,
+        "unknown": 0,
+        "loss_terms": 1566,
+        "half_square_sum": 51.84725599220765,
+        "episode_step_l2_sum": 4.797419194232782
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 31415,
+      "node_bin": 2,
+      "queries": {
+        "queries": 1612,
+        "nonzero_gradient_queries": 1280,
+        "terminal_PV_queries": 316,
+        "gradient_square": 62.61191478414997,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.0881375495501968
+      },
+      "episodes": {
+        "episodes": 181,
+        "zero_queries": 6,
+        "one_query": 34,
+        "nonzero_updates": 124,
+        "actual_terminal": 181,
+        "unknown": 0,
+        "loss_terms": 1638,
+        "half_square_sum": 60.38754962741228,
+        "episode_step_l2_sum": 5.055782889613168
+      }
+    },
+    {
+      "generator_seed": 271001,
+      "seed": 31415,
+      "node_bin": 3,
+      "queries": {
+        "queries": 1638,
+        "nonzero_gradient_queries": 1315,
+        "terminal_PV_queries": 303,
+        "gradient_square": 68.56223805174903,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09149567004823887
+      },
+      "episodes": {
+        "episodes": 177,
+        "zero_queries": 5,
+        "one_query": 39,
+        "nonzero_updates": 124,
+        "actual_terminal": 176,
+        "unknown": 1,
+        "loss_terms": 1639,
+        "half_square_sum": 56.747392682640076,
+        "episode_step_l2_sum": 4.810589362678489
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 1977,
+      "node_bin": 0,
+      "queries": {
+        "queries": 874,
+        "nonzero_gradient_queries": 738,
+        "terminal_PV_queries": 97,
+        "gradient_square": 61.8771866690663,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11899386237759996
+      },
+      "episodes": {
+        "episodes": 58,
+        "zero_queries": 5,
+        "one_query": 9,
+        "nonzero_updates": 44,
+        "actual_terminal": 58,
+        "unknown": 0,
+        "loss_terms": 850,
+        "half_square_sum": 23.909095462109494,
+        "episode_step_l2_sum": 3.923627636093188
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 1977,
+      "node_bin": 1,
+      "queries": {
+        "queries": 749,
+        "nonzero_gradient_queries": 642,
+        "terminal_PV_queries": 78,
+        "gradient_square": 53.194909843171956,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11918157697073611
+      },
+      "episodes": {
+        "episodes": 46,
+        "zero_queries": 2,
+        "one_query": 10,
+        "nonzero_updates": 34,
+        "actual_terminal": 46,
+        "unknown": 0,
+        "loss_terms": 767,
+        "half_square_sum": 17.90786063337112,
+        "episode_step_l2_sum": 3.0879352022611837
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 1977,
+      "node_bin": 2,
+      "queries": {
+        "queries": 819,
+        "nonzero_gradient_queries": 703,
+        "terminal_PV_queries": 80,
+        "gradient_square": 74.3646905631753,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.1347585826409695
+      },
+      "episodes": {
+        "episodes": 51,
+        "zero_queries": 5,
+        "one_query": 12,
+        "nonzero_updates": 33,
+        "actual_terminal": 51,
+        "unknown": 0,
+        "loss_terms": 777,
+        "half_square_sum": 20.174089725905535,
+        "episode_step_l2_sum": 3.8962820641266167
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 1977,
+      "node_bin": 3,
+      "queries": {
+        "queries": 876,
+        "nonzero_gradient_queries": 777,
+        "terminal_PV_queries": 72,
+        "gradient_square": 62.300849471597715,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11926415318747119
+      },
+      "episodes": {
+        "episodes": 41,
+        "zero_queries": 2,
+        "one_query": 4,
+        "nonzero_updates": 35,
+        "actual_terminal": 40,
+        "unknown": 1,
+        "loss_terms": 923,
+        "half_square_sum": 20.65296282932998,
+        "episode_step_l2_sum": 4.054742798722871
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 8173,
+      "node_bin": 0,
+      "queries": {
+        "queries": 590,
+        "nonzero_gradient_queries": 458,
+        "terminal_PV_queries": 36,
+        "gradient_square": 18.595789104888382,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.07939557496290947
+      },
+      "episodes": {
+        "episodes": 24,
+        "zero_queries": 3,
+        "one_query": 6,
+        "nonzero_updates": 15,
+        "actual_terminal": 24,
+        "unknown": 0,
+        "loss_terms": 515,
+        "half_square_sum": 8.713433984681515,
+        "episode_step_l2_sum": 1.1368122608558733
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 8173,
+      "node_bin": 1,
+      "queries": {
+        "queries": 760,
+        "nonzero_gradient_queries": 684,
+        "terminal_PV_queries": 50,
+        "gradient_square": 44.795335576309455,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10857369020297672
+      },
+      "episodes": {
+        "episodes": 29,
+        "zero_queries": 2,
+        "one_query": 2,
+        "nonzero_updates": 25,
+        "actual_terminal": 28,
+        "unknown": 1,
+        "loss_terms": 771,
+        "half_square_sum": 12.70200768474382,
+        "episode_step_l2_sum": 1.7555464225095603
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 8173,
+      "node_bin": 2,
+      "queries": {
+        "queries": 525,
+        "nonzero_gradient_queries": 476,
+        "terminal_PV_queries": 38,
+        "gradient_square": 30.42717350204845,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10766291929562635
+      },
+      "episodes": {
+        "episodes": 23,
+        "zero_queries": 0,
+        "one_query": 6,
+        "nonzero_updates": 17,
+        "actual_terminal": 22,
+        "unknown": 1,
+        "loss_terms": 556,
+        "half_square_sum": 8.57725524382925,
+        "episode_step_l2_sum": 1.661801837183752
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 8173,
+      "node_bin": 3,
+      "queries": {
+        "queries": 580,
+        "nonzero_gradient_queries": 479,
+        "terminal_PV_queries": 50,
+        "gradient_square": 22.428493079800546,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.08794295384489711
+      },
+      "episodes": {
+        "episodes": 31,
+        "zero_queries": 2,
+        "one_query": 6,
+        "nonzero_updates": 23,
+        "actual_terminal": 30,
+        "unknown": 1,
+        "loss_terms": 610,
+        "half_square_sum": 12.875568268578883,
+        "episode_step_l2_sum": 1.8252140612206933
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 27182,
+      "node_bin": 0,
+      "queries": {
+        "queries": 822,
+        "nonzero_gradient_queries": 667,
+        "terminal_PV_queries": 97,
+        "gradient_square": 35.2036032076375,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09254919545031501
+      },
+      "episodes": {
+        "episodes": 58,
+        "zero_queries": 5,
+        "one_query": 9,
+        "nonzero_updates": 43,
+        "actual_terminal": 58,
+        "unknown": 0,
+        "loss_terms": 818,
+        "half_square_sum": 23.076041316127302,
+        "episode_step_l2_sum": 2.9081951614297896
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 27182,
+      "node_bin": 1,
+      "queries": {
+        "queries": 773,
+        "nonzero_gradient_queries": 658,
+        "terminal_PV_queries": 83,
+        "gradient_square": 35.50028561286884,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.095838757446787
+      },
+      "episodes": {
+        "episodes": 49,
+        "zero_queries": 2,
+        "one_query": 11,
+        "nonzero_updates": 36,
+        "actual_terminal": 49,
+        "unknown": 0,
+        "loss_terms": 776,
+        "half_square_sum": 18.624079901402634,
+        "episode_step_l2_sum": 2.379564188604647
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 27182,
+      "node_bin": 2,
+      "queries": {
+        "queries": 901,
+        "nonzero_gradient_queries": 774,
+        "terminal_PV_queries": 93,
+        "gradient_square": 83.29798133235023,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.13597837307016158
+      },
+      "episodes": {
+        "episodes": 57,
+        "zero_queries": 5,
+        "one_query": 12,
+        "nonzero_updates": 39,
+        "actual_terminal": 57,
+        "unknown": 0,
+        "loss_terms": 889,
+        "half_square_sum": 25.92816242818515,
+        "episode_step_l2_sum": 4.248815373825531
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 27182,
+      "node_bin": 3,
+      "queries": {
+        "queries": 827,
+        "nonzero_gradient_queries": 707,
+        "terminal_PV_queries": 90,
+        "gradient_square": 39.68906441507388,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09797102996412094
+      },
+      "episodes": {
+        "episodes": 54,
+        "zero_queries": 5,
+        "one_query": 5,
+        "nonzero_updates": 44,
+        "actual_terminal": 53,
+        "unknown": 1,
+        "loss_terms": 839,
+        "half_square_sum": 29.24079508961838,
+        "episode_step_l2_sum": 2.5897154267154097
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 31415,
+      "node_bin": 0,
+      "queries": {
+        "queries": 798,
+        "nonzero_gradient_queries": 688,
+        "terminal_PV_queries": 76,
+        "gradient_square": 49.771654450694584,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11168750538812837
+      },
+      "episodes": {
+        "episodes": 47,
+        "zero_queries": 5,
+        "one_query": 8,
+        "nonzero_updates": 34,
+        "actual_terminal": 47,
+        "unknown": 0,
+        "loss_terms": 797,
+        "half_square_sum": 18.3447698720572,
+        "episode_step_l2_sum": 3.424841316673715
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 31415,
+      "node_bin": 1,
+      "queries": {
+        "queries": 714,
+        "nonzero_gradient_queries": 609,
+        "terminal_PV_queries": 80,
+        "gradient_square": 56.781340022531666,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.12611557104978494
+      },
+      "episodes": {
+        "episodes": 46,
+        "zero_queries": 2,
+        "one_query": 8,
+        "nonzero_updates": 36,
+        "actual_terminal": 46,
+        "unknown": 0,
+        "loss_terms": 701,
+        "half_square_sum": 18.385308587476278,
+        "episode_step_l2_sum": 4.065687923061134
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 31415,
+      "node_bin": 2,
+      "queries": {
+        "queries": 733,
+        "nonzero_gradient_queries": 615,
+        "terminal_PV_queries": 76,
+        "gradient_square": 35.85053642039216,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09890331301915169
+      },
+      "episodes": {
+        "episodes": 48,
+        "zero_queries": 5,
+        "one_query": 9,
+        "nonzero_updates": 33,
+        "actual_terminal": 48,
+        "unknown": 0,
+        "loss_terms": 740,
+        "half_square_sum": 16.58537646212271,
+        "episode_step_l2_sum": 2.5755717352820895
+      }
+    },
+    {
+      "generator_seed": 271002,
+      "seed": 31415,
+      "node_bin": 3,
+      "queries": {
+        "queries": 731,
+        "nonzero_gradient_queries": 605,
+        "terminal_PV_queries": 79,
+        "gradient_square": 29.144515719089775,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.08929656045860493
+      },
+      "episodes": {
+        "episodes": 48,
+        "zero_queries": 2,
+        "one_query": 10,
+        "nonzero_updates": 36,
+        "actual_terminal": 47,
+        "unknown": 1,
+        "loss_terms": 737,
+        "half_square_sum": 20.86727166454817,
+        "episode_step_l2_sum": 2.447938427308736
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 1977,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1204,
+        "nonzero_gradient_queries": 1145,
+        "terminal_PV_queries": 46,
+        "gradient_square": 90.66538625485288,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.12272202488213586
+      },
+      "episodes": {
+        "episodes": 26,
+        "zero_queries": 0,
+        "one_query": 2,
+        "nonzero_updates": 24,
+        "actual_terminal": 24,
+        "unknown": 2,
+        "loss_terms": 1160,
+        "half_square_sum": 12.931135227575435,
+        "episode_step_l2_sum": 2.89478554554833
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 1977,
+      "node_bin": 1,
+      "queries": {
+        "queries": 1070,
+        "nonzero_gradient_queries": 1032,
+        "terminal_PV_queries": 34,
+        "gradient_square": 86.10200166480635,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.12686146809366386
+      },
+      "episodes": {
+        "episodes": 19,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 19,
+        "actual_terminal": 17,
+        "unknown": 2,
+        "loss_terms": 1009,
+        "half_square_sum": 9.606399919421284,
+        "episode_step_l2_sum": 2.0609126097618553
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 1977,
+      "node_bin": 2,
+      "queries": {
+        "queries": 801,
+        "nonzero_gradient_queries": 760,
+        "terminal_PV_queries": 29,
+        "gradient_square": 60.08175949784905,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.12248137721611525
+      },
+      "episodes": {
+        "episodes": 17,
+        "zero_queries": 0,
+        "one_query": 1,
+        "nonzero_updates": 16,
+        "actual_terminal": 15,
+        "unknown": 2,
+        "loss_terms": 895,
+        "half_square_sum": 6.008305235742646,
+        "episode_step_l2_sum": 1.5836283786533965
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 1977,
+      "node_bin": 3,
+      "queries": {
+        "queries": 1108,
+        "nonzero_gradient_queries": 1065,
+        "terminal_PV_queries": 24,
+        "gradient_square": 79.49746802253966,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11979033128667982
+      },
+      "episodes": {
+        "episodes": 16,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 16,
+        "actual_terminal": 12,
+        "unknown": 4,
+        "loss_terms": 1109,
+        "half_square_sum": 7.41813955282041,
+        "episode_step_l2_sum": 2.1320252839958282
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 8173,
+      "node_bin": 0,
+      "queries": {
+        "queries": 665,
+        "nonzero_gradient_queries": 616,
+        "terminal_PV_queries": 15,
+        "gradient_square": 45.4980572031293,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11697703290178398
+      },
+      "episodes": {
+        "episodes": 11,
+        "zero_queries": 0,
+        "one_query": 1,
+        "nonzero_updates": 10,
+        "actual_terminal": 8,
+        "unknown": 3,
+        "loss_terms": 621,
+        "half_square_sum": 3.6769650648214602,
+        "episode_step_l2_sum": 1.0249652923151609
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 8173,
+      "node_bin": 1,
+      "queries": {
+        "queries": 759,
+        "nonzero_gradient_queries": 735,
+        "terminal_PV_queries": 21,
+        "gradient_square": 43.48610645657422,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10704573592686893
+      },
+      "episodes": {
+        "episodes": 13,
+        "zero_queries": 0,
+        "one_query": 1,
+        "nonzero_updates": 12,
+        "actual_terminal": 11,
+        "unknown": 2,
+        "loss_terms": 769,
+        "half_square_sum": 4.263970107575154,
+        "episode_step_l2_sum": 1.2588138930309847
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 8173,
+      "node_bin": 2,
+      "queries": {
+        "queries": 586,
+        "nonzero_gradient_queries": 559,
+        "terminal_PV_queries": 21,
+        "gradient_square": 31.23535596950583,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10324984768808577
+      },
+      "episodes": {
+        "episodes": 12,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 12,
+        "actual_terminal": 11,
+        "unknown": 1,
+        "loss_terms": 537,
+        "half_square_sum": 5.134998515469289,
+        "episode_step_l2_sum": 1.5419755449722707
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 8173,
+      "node_bin": 3,
+      "queries": {
+        "queries": 537,
+        "nonzero_gradient_queries": 529,
+        "terminal_PV_queries": 8,
+        "gradient_square": 34.58095436762888,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11348705923426707
+      },
+      "episodes": {
+        "episodes": 7,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 7,
+        "actual_terminal": 4,
+        "unknown": 3,
+        "loss_terms": 611,
+        "half_square_sum": 1.7758779055584704,
+        "episode_step_l2_sum": 0.6269101487684565
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 27182,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1127,
+        "nonzero_gradient_queries": 1085,
+        "terminal_PV_queries": 31,
+        "gradient_square": 67.51612066119996,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10946033681077984
+      },
+      "episodes": {
+        "episodes": 20,
+        "zero_queries": 0,
+        "one_query": 2,
+        "nonzero_updates": 18,
+        "actual_terminal": 17,
+        "unknown": 3,
+        "loss_terms": 1050,
+        "half_square_sum": 6.86664617097957,
+        "episode_step_l2_sum": 1.727989096247434
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 27182,
+      "node_bin": 1,
+      "queries": {
+        "queries": 781,
+        "nonzero_gradient_queries": 756,
+        "terminal_PV_queries": 18,
+        "gradient_square": 30.767938009806283,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.08876437036792065
+      },
+      "episodes": {
+        "episodes": 12,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 12,
+        "actual_terminal": 9,
+        "unknown": 3,
+        "loss_terms": 844,
+        "half_square_sum": 4.992847880391668,
+        "episode_step_l2_sum": 1.2767877786096755
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 27182,
+      "node_bin": 2,
+      "queries": {
+        "queries": 663,
+        "nonzero_gradient_queries": 650,
+        "terminal_PV_queries": 12,
+        "gradient_square": 36.41107371624145,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10480330454912538
+      },
+      "episodes": {
+        "episodes": 10,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 10,
+        "actual_terminal": 6,
+        "unknown": 4,
+        "loss_terms": 631,
+        "half_square_sum": 3.6678001655865855,
+        "episode_step_l2_sum": 0.8135834398668617
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 27182,
+      "node_bin": 3,
+      "queries": {
+        "queries": 581,
+        "nonzero_gradient_queries": 573,
+        "terminal_PV_queries": 8,
+        "gradient_square": 38.26307348543825,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11476695459765733
+      },
+      "episodes": {
+        "episodes": 8,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 8,
+        "actual_terminal": 4,
+        "unknown": 4,
+        "loss_terms": 613,
+        "half_square_sum": 2.362695375426693,
+        "episode_step_l2_sum": 0.8534178908162328
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 31415,
+      "node_bin": 0,
+      "queries": {
+        "queries": 1287,
+        "nonzero_gradient_queries": 1190,
+        "terminal_PV_queries": 68,
+        "gradient_square": 68.91334606422595,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10348499740312796
+      },
+      "episodes": {
+        "episodes": 37,
+        "zero_queries": 0,
+        "one_query": 2,
+        "nonzero_updates": 35,
+        "actual_terminal": 36,
+        "unknown": 1,
+        "loss_terms": 1223,
+        "half_square_sum": 19.72934893943977,
+        "episode_step_l2_sum": 2.6925006004946943
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 31415,
+      "node_bin": 1,
+      "queries": {
+        "queries": 1165,
+        "nonzero_gradient_queries": 1095,
+        "terminal_PV_queries": 55,
+        "gradient_square": 63.254049111945136,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10420683387008087
+      },
+      "episodes": {
+        "episodes": 30,
+        "zero_queries": 0,
+        "one_query": 1,
+        "nonzero_updates": 29,
+        "actual_terminal": 28,
+        "unknown": 2,
+        "loss_terms": 1217,
+        "half_square_sum": 14.976003577670339,
+        "episode_step_l2_sum": 2.1646802618003256
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 31415,
+      "node_bin": 2,
+      "queries": {
+        "queries": 989,
+        "nonzero_gradient_queries": 937,
+        "terminal_PV_queries": 42,
+        "gradient_square": 72.93082755085031,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.12144298204065253
+      },
+      "episodes": {
+        "episodes": 23,
+        "zero_queries": 0,
+        "one_query": 0,
+        "nonzero_updates": 22,
+        "actual_terminal": 21,
+        "unknown": 2,
+        "loss_terms": 960,
+        "half_square_sum": 13.345162813113012,
+        "episode_step_l2_sum": 2.089739712360954
+      }
+    },
+    {
+      "generator_seed": 271003,
+      "seed": 31415,
+      "node_bin": 3,
+      "queries": {
+        "queries": 681,
+        "nonzero_gradient_queries": 658,
+        "terminal_PV_queries": 19,
+        "gradient_square": 32.57730630945059,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09781355141175434
+      },
+      "episodes": {
+        "episodes": 15,
+        "zero_queries": 1,
+        "one_query": 1,
+        "nonzero_updates": 12,
+        "actual_terminal": 11,
+        "unknown": 4,
+        "loss_terms": 713,
+        "half_square_sum": 5.5484334681739815,
+        "episode_step_l2_sum": 1.3320735263070618
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 1977,
+      "node_bin": 0,
+      "queries": {
+        "queries": 823,
+        "nonzero_gradient_queries": 666,
+        "terminal_PV_queries": 139,
+        "gradient_square": 42.301654838793326,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10138968151907914
+      },
+      "episodes": {
+        "episodes": 94,
+        "zero_queries": 9,
+        "one_query": 31,
+        "nonzero_updates": 50,
+        "actual_terminal": 94,
+        "unknown": 0,
+        "loss_terms": 815,
+        "half_square_sum": 27.8116170018955,
+        "episode_step_l2_sum": 3.8147435200096917
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 1977,
+      "node_bin": 1,
+      "queries": {
+        "queries": 955,
+        "nonzero_gradient_queries": 697,
+        "terminal_PV_queries": 214,
+        "gradient_square": 39.87299687798007,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09138033616878652
+      },
+      "episodes": {
+        "episodes": 154,
+        "zero_queries": 25,
+        "one_query": 44,
+        "nonzero_updates": 82,
+        "actual_terminal": 154,
+        "unknown": 0,
+        "loss_terms": 961,
+        "half_square_sum": 42.28712570674096,
+        "episode_step_l2_sum": 4.46525175845543
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 1977,
+      "node_bin": 2,
+      "queries": {
+        "queries": 945,
+        "nonzero_gradient_queries": 728,
+        "terminal_PV_queries": 192,
+        "gradient_square": 40.07909113309118,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.0920996597700271
+      },
+      "episodes": {
+        "episodes": 131,
+        "zero_queries": 20,
+        "one_query": 30,
+        "nonzero_updates": 74,
+        "actual_terminal": 131,
+        "unknown": 0,
+        "loss_terms": 947,
+        "half_square_sum": 38.5876215222102,
+        "episode_step_l2_sum": 3.7761464019150033
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 1977,
+      "node_bin": 3,
+      "queries": {
+        "queries": 996,
+        "nonzero_gradient_queries": 734,
+        "terminal_PV_queries": 232,
+        "gradient_square": 39.574065395386235,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.08914370127488082
+      },
+      "episodes": {
+        "episodes": 156,
+        "zero_queries": 21,
+        "one_query": 35,
+        "nonzero_updates": 93,
+        "actual_terminal": 155,
+        "unknown": 1,
+        "loss_terms": 995,
+        "half_square_sum": 48.65135238356315,
+        "episode_step_l2_sum": 4.563148776270647
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 8173,
+      "node_bin": 0,
+      "queries": {
+        "queries": 722,
+        "nonzero_gradient_queries": 563,
+        "terminal_PV_queries": 137,
+        "gradient_square": 38.6443170459802,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.103463988738331
+      },
+      "episodes": {
+        "episodes": 92,
+        "zero_queries": 8,
+        "one_query": 31,
+        "nonzero_updates": 48,
+        "actual_terminal": 92,
+        "unknown": 0,
+        "loss_terms": 722,
+        "half_square_sum": 26.47339335680981,
+        "episode_step_l2_sum": 3.130299785647415
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 8173,
+      "node_bin": 1,
+      "queries": {
+        "queries": 820,
+        "nonzero_gradient_queries": 679,
+        "terminal_PV_queries": 124,
+        "gradient_square": 55.73123616494091,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.11658895501064152
+      },
+      "episodes": {
+        "episodes": 89,
+        "zero_queries": 16,
+        "one_query": 22,
+        "nonzero_updates": 49,
+        "actual_terminal": 89,
+        "unknown": 0,
+        "loss_terms": 806,
+        "half_square_sum": 25.244034949363268,
+        "episode_step_l2_sum": 4.545652724668034
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 8173,
+      "node_bin": 2,
+      "queries": {
+        "queries": 870,
+        "nonzero_gradient_queries": 682,
+        "terminal_PV_queries": 153,
+        "gradient_square": 51.53069032302789,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10883995454998681
+      },
+      "episodes": {
+        "episodes": 108,
+        "zero_queries": 16,
+        "one_query": 31,
+        "nonzero_updates": 57,
+        "actual_terminal": 108,
+        "unknown": 0,
+        "loss_terms": 882,
+        "half_square_sum": 28.142864679157338,
+        "episode_step_l2_sum": 3.8025004584210618
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 8173,
+      "node_bin": 3,
+      "queries": {
+        "queries": 714,
+        "nonzero_gradient_queries": 540,
+        "terminal_PV_queries": 125,
+        "gradient_square": 29.81829750559443,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.0913918173978467
+      },
+      "episodes": {
+        "episodes": 82,
+        "zero_queries": 10,
+        "one_query": 17,
+        "nonzero_updates": 48,
+        "actual_terminal": 81,
+        "unknown": 1,
+        "loss_terms": 715,
+        "half_square_sum": 26.194720034380158,
+        "episode_step_l2_sum": 2.9474716478910956
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 27182,
+      "node_bin": 0,
+      "queries": {
+        "queries": 869,
+        "nonzero_gradient_queries": 679,
+        "terminal_PV_queries": 165,
+        "gradient_square": 38.87555563822676,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09458960552063483
+      },
+      "episodes": {
+        "episodes": 114,
+        "zero_queries": 14,
+        "one_query": 35,
+        "nonzero_updates": 60,
+        "actual_terminal": 114,
+        "unknown": 0,
+        "loss_terms": 862,
+        "half_square_sum": 32.23901521706011,
+        "episode_step_l2_sum": 3.439354171290104
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 27182,
+      "node_bin": 1,
+      "queries": {
+        "queries": 926,
+        "nonzero_gradient_queries": 709,
+        "terminal_PV_queries": 181,
+        "gradient_square": 39.28347268579578,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09211162432627604
+      },
+      "episodes": {
+        "episodes": 128,
+        "zero_queries": 18,
+        "one_query": 39,
+        "nonzero_updates": 70,
+        "actual_terminal": 128,
+        "unknown": 0,
+        "loss_terms": 917,
+        "half_square_sum": 39.11296783210243,
+        "episode_step_l2_sum": 3.648659013151047
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 27182,
+      "node_bin": 2,
+      "queries": {
+        "queries": 914,
+        "nonzero_gradient_queries": 722,
+        "terminal_PV_queries": 164,
+        "gradient_square": 51.6430692557449,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10630358785662619
+      },
+      "episodes": {
+        "episodes": 107,
+        "zero_queries": 15,
+        "one_query": 20,
+        "nonzero_updates": 66,
+        "actual_terminal": 107,
+        "unknown": 0,
+        "loss_terms": 899,
+        "half_square_sum": 35.940387850357396,
+        "episode_step_l2_sum": 3.943759598726091
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 27182,
+      "node_bin": 3,
+      "queries": {
+        "queries": 944,
+        "nonzero_gradient_queries": 733,
+        "terminal_PV_queries": 187,
+        "gradient_square": 45.34932081434232,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.09801993140270589
+      },
+      "episodes": {
+        "episodes": 132,
+        "zero_queries": 22,
+        "one_query": 30,
+        "nonzero_updates": 72,
+        "actual_terminal": 131,
+        "unknown": 1,
+        "loss_terms": 974,
+        "half_square_sum": 39.18858721364538,
+        "episode_step_l2_sum": 3.614615244506853
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 31415,
+      "node_bin": 0,
+      "queries": {
+        "queries": 847,
+        "nonzero_gradient_queries": 693,
+        "terminal_PV_queries": 135,
+        "gradient_square": 47.282611433818275,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10566326348365415
+      },
+      "episodes": {
+        "episodes": 91,
+        "zero_queries": 8,
+        "one_query": 31,
+        "nonzero_updates": 48,
+        "actual_terminal": 91,
+        "unknown": 0,
+        "loss_terms": 801,
+        "half_square_sum": 22.506070004846535,
+        "episode_step_l2_sum": 3.470570261837315
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 31415,
+      "node_bin": 1,
+      "queries": {
+        "queries": 810,
+        "nonzero_gradient_queries": 651,
+        "terminal_PV_queries": 122,
+        "gradient_square": 42.45138635342323,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10238077842529182
+      },
+      "episodes": {
+        "episodes": 88,
+        "zero_queries": 16,
+        "one_query": 22,
+        "nonzero_updates": 49,
+        "actual_terminal": 88,
+        "unknown": 0,
+        "loss_terms": 826,
+        "half_square_sum": 26.328761028925896,
+        "episode_step_l2_sum": 3.632048185316055
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 31415,
+      "node_bin": 2,
+      "queries": {
+        "queries": 858,
+        "nonzero_gradient_queries": 645,
+        "terminal_PV_queries": 178,
+        "gradient_square": 45.792275825849316,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10331597247858458
+      },
+      "episodes": {
+        "episodes": 124,
+        "zero_queries": 18,
+        "one_query": 33,
+        "nonzero_updates": 68,
+        "actual_terminal": 124,
+        "unknown": 0,
+        "loss_terms": 861,
+        "half_square_sum": 35.187754103812466,
+        "episode_step_l2_sum": 4.3683707974739105
+      }
+    },
+    {
+      "generator_seed": 271004,
+      "seed": 31415,
+      "node_bin": 3,
+      "queries": {
+        "queries": 882,
+        "nonzero_gradient_queries": 680,
+        "terminal_PV_queries": 148,
+        "gradient_square": 47.189009481137596,
+        "gradient_span_rank": 5,
+        "all_query_gradient_RMS": 0.10344300684269117
+      },
+      "episodes": {
+        "episodes": 106,
+        "zero_queries": 18,
+        "one_query": 24,
+        "nonzero_updates": 59,
+        "actual_terminal": 105,
+        "unknown": 1,
+        "loss_terms": 908,
+        "half_square_sum": 25.625658360450835,
+        "episode_step_l2_sum": 3.6692796981337406
+      }
+    }
+  ],
+  "curves": [
+    {
+      "generator_seed": 271001,
+      "level": "initial",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.38800876307048937,
+        "all_channel_pairwise_order_agreement": 0.4111111111111111,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.353482831918923,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.9604344534597493,
+            1.0514707300180781,
+            1.0794922028994416,
+            0.9741150702869562,
+            0.6298037935571559
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.2584250742012326,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.5805624412612915,
+            0.5585141092367637,
+            0.9971011348572694,
+            1.2534673656875663,
+            0.9413298823386276
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7082524511818695,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.174822933881516,
+            1.1402175549090674,
+            0.7860686782820425,
+            1.375025811841296,
+            1.0703860941874797
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.461835680099305,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.0899870529110256,
+            0.7814307206856481,
+            1.3839294496616317,
+            0.5425822030439713,
+            1.0258035876152212
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271001,
+      "level": "n62500",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.6667718789402071,
+        "all_channel_pairwise_order_agreement": 0.45555555555555555,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.8143187547713087,
+          "target_nodes": 62500,
+          "nodes": 62097,
+          "game": 91,
+          "weights": [
+            1.0,
+            1.2884004459684353,
+            1.1335256638036202,
+            1.6384387354291425,
+            0.8996925084245209,
+            0.6939782520472635
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.3914393895111052,
+          "target_nodes": 62500,
+          "nodes": 59546,
+          "game": 11,
+          "weights": [
+            1.0,
+            0.6447823628521213,
+            0.8116424517288255,
+            1.2436828284232486,
+            1.0761913666613268,
+            0.969298588372272
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.900299949102206,
+          "target_nodes": 62500,
+          "nodes": 61507,
+          "game": 139,
+          "weights": [
+            1.0,
+            2.1093571978457786,
+            0.4713193376162961,
+            0.8891719110107893,
+            0.8718615033143747,
+            1.0906149276235038
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.8615253453347242,
+          "target_nodes": 62500,
+          "nodes": 61523,
+          "game": 139,
+          "weights": [
+            1.0,
+            2.0934109964866607,
+            1.2948511807239926,
+            0.533311654043762,
+            0.011576394454405215,
+            0.9191097803374548
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271001,
+      "level": "n125000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.8850266438497975,
+        "all_channel_pairwise_order_agreement": 0.5666666666666667,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.9647952094926726,
+          "target_nodes": 125000,
+          "nodes": 122365,
+          "game": 178,
+          "weights": [
+            1.0,
+            1.3685067004877947,
+            1.4915215323467033,
+            1.739573658343737,
+            0.2160351695145656,
+            0.7872584430962002
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.5729543245317434,
+          "target_nodes": 125000,
+          "nodes": 124458,
+          "game": 59,
+          "weights": [
+            1.0,
+            0.5874621250814086,
+            1.1983433779783832,
+            1.4687944056370528,
+            0.8218127681031313,
+            1.0031062378077207
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.5047641523990687,
+          "target_nodes": 125000,
+          "nodes": 122587,
+          "game": 277,
+          "weights": [
+            1.0,
+            2.6853635565998912,
+            0.02617001269165343,
+            1.2945047353214592,
+            0.840205887027103,
+            1.299931160061094
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.688071165345342,
+          "target_nodes": 125000,
+          "nodes": 123422,
+          "game": 296,
+          "weights": [
+            1.0,
+            2.984555673664215,
+            1.1874742410678363,
+            0.8476268152040636,
+            0.7330289088371966,
+            1.014099935512682
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271001,
+      "level": "n250000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.9371797298925463,
+        "all_channel_pairwise_order_agreement": 0.7,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.8128158895403135,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 481,
+          "weights": [
+            1.0,
+            3.092686902056022,
+            1.1613517891792118,
+            1.1747053164698371,
+            0.5484934721755281,
+            0.9712554172774509
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.709190602255489,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 213,
+          "weights": [
+            1.0,
+            1.302117420504726,
+            0.9020425909283809,
+            1.7025313606500223,
+            0.3340502828597528,
+            0.9057154526910177
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 4.6073998536734235,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 563,
+          "weights": [
+            1.0,
+            3.8579033945077232,
+            0.6094213747646502,
+            1.27852915032202,
+            0.8145150105792818,
+            1.6356188148751283
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 4.863567818393983,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 654,
+          "weights": [
+            1.0,
+            4.278038822500153,
+            1.5911811127716156,
+            0.8210839726649733,
+            0.4588112747863645,
+            0.9675390160709908
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271002,
+      "level": "initial",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.38800876307048937,
+        "all_channel_pairwise_order_agreement": 0.4111111111111111,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.353482831918923,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.9604344534597493,
+            1.0514707300180781,
+            1.0794922028994416,
+            0.9741150702869562,
+            0.6298037935571559
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.2584250742012326,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.5805624412612915,
+            0.5585141092367637,
+            0.9971011348572694,
+            1.2534673656875663,
+            0.9413298823386276
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7082524511818695,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.174822933881516,
+            1.1402175549090674,
+            0.7860686782820425,
+            1.375025811841296,
+            1.0703860941874797
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.461835680099305,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.0899870529110256,
+            0.7814307206856481,
+            1.3839294496616317,
+            0.5425822030439713,
+            1.0258035876152212
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271002,
+      "level": "n62500",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5500105596622236,
+        "all_channel_pairwise_order_agreement": 0.45555555555555555,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.887929426886635,
+          "target_nodes": 62500,
+          "nodes": 60095,
+          "game": 57,
+          "weights": [
+            1.0,
+            1.396310253286116,
+            1.654808258976819,
+            1.116667086363315,
+            0.2081495936663404,
+            1.16695845776846
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.0984655922791617,
+          "target_nodes": 62500,
+          "nodes": 56226,
+          "game": 23,
+          "weights": [
+            1.0,
+            0.6391188252105817,
+            0.5556816969450331,
+            1.0946812921837092,
+            0.8750207298883002,
+            0.8498908234179364
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.2678568080080095,
+          "target_nodes": 62500,
+          "nodes": 62220,
+          "game": 57,
+          "weights": [
+            1.0,
+            1.204487493483613,
+            2.0321409130671015,
+            0.8691748434020455,
+            1.0373696674199948,
+            1.5056229839633244
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.4943395610472825,
+          "target_nodes": 62500,
+          "nodes": 62386,
+          "game": 46,
+          "weights": [
+            1.0,
+            1.0707094016814194,
+            1.0165359647458485,
+            1.1438339651212792,
+            0.5691506661470728,
+            1.1872982922560238
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271002,
+      "level": "n125000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.6884540125031994,
+        "all_channel_pairwise_order_agreement": 0.45555555555555555,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.5641428939094193,
+          "target_nodes": 125000,
+          "nodes": 124689,
+          "game": 103,
+          "weights": [
+            1.0,
+            1.3907983931149974,
+            2.430874104507272,
+            1.3195626081326062,
+            0.4861643922426214,
+            1.371876157998001
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.435251094539245,
+          "target_nodes": 125000,
+          "nodes": 118494,
+          "game": 52,
+          "weights": [
+            1.0,
+            0.8315787615522373,
+            0.6313423705610698,
+            1.3580530102882185,
+            1.037721834175454,
+            0.9587266993501365
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.8899448394330607,
+          "target_nodes": 125000,
+          "nodes": 124978,
+          "game": 106,
+          "weights": [
+            1.0,
+            1.4172580229589795,
+            2.594133357684092,
+            0.9243606446421854,
+            1.3089429476961953,
+            1.6809962614634344
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.9972157113713296,
+          "target_nodes": 125000,
+          "nodes": 122979,
+          "game": 92,
+          "weights": [
+            1.0,
+            1.2637722639252713,
+            1.3508185540096629,
+            1.3521547532238616,
+            0.9692146493903901,
+            1.3393175151205796
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271002,
+      "level": "n250000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.7962610619647058,
+        "all_channel_pairwise_order_agreement": 0.6888888888888889,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 4.309650277880454,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 195,
+          "weights": [
+            1.0,
+            1.514021608582548,
+            3.2078697336014237,
+            1.262036208587677,
+            0.2715070880210824,
+            1.8231687711213336
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7572613488069004,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 106,
+          "weights": [
+            1.0,
+            0.8879791058540458,
+            1.2760046779053038,
+            1.394047548964269,
+            0.9839863642575182,
+            1.1288036061852673
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 4.666672911206796,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 217,
+          "weights": [
+            1.0,
+            2.1235850438542667,
+            3.348214740206087,
+            0.8175634892007982,
+            0.6727039833707028,
+            1.984121963756128
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.704153727272821,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 188,
+          "weights": [
+            1.0,
+            0.8417851063539291,
+            2.6425383283215464,
+            0.9778361395381018,
+            0.9912158373110695,
+            1.7579736919016564
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271003,
+      "level": "initial",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.38800876307048937,
+        "all_channel_pairwise_order_agreement": 0.4111111111111111,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.353482831918923,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.9604344534597493,
+            1.0514707300180781,
+            1.0794922028994416,
+            0.9741150702869562,
+            0.6298037935571559
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.2584250742012326,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.5805624412612915,
+            0.5585141092367637,
+            0.9971011348572694,
+            1.2534673656875663,
+            0.9413298823386276
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7082524511818695,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.174822933881516,
+            1.1402175549090674,
+            0.7860686782820425,
+            1.375025811841296,
+            1.0703860941874797
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.461835680099305,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.0899870529110256,
+            0.7814307206856481,
+            1.3839294496616317,
+            0.5425822030439713,
+            1.0258035876152212
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271003,
+      "level": "n62500",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5104448216324673,
+        "all_channel_pairwise_order_agreement": 0.5,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.34612242245275,
+          "target_nodes": 62500,
+          "nodes": 58153,
+          "game": 25,
+          "weights": [
+            1.0,
+            0.5692037656121782,
+            0.9831131053225357,
+            0.7638932172519612,
+            1.35868888199051,
+            0.8855607212853234
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.44593443108586,
+          "target_nodes": 62500,
+          "nodes": 58293,
+          "game": 10,
+          "weights": [
+            1.0,
+            0.3070263991133388,
+            0.5825518539829294,
+            1.0585630058486808,
+            1.5426060007075704,
+            1.0240968987695747
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.0315494808787844,
+          "target_nodes": 62500,
+          "nodes": 53915,
+          "game": 19,
+          "weights": [
+            1.0,
+            0.7890198914102882,
+            1.1527240532690417,
+            0.835893562287786,
+            1.958393136087986,
+            1.3057355781472806
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7170604057735877,
+          "target_nodes": 62500,
+          "nodes": 59496,
+          "game": 36,
+          "weights": [
+            1.0,
+            1.3413806020658556,
+            0.8417008205831541,
+            1.382252333732384,
+            0.675514208635643,
+            1.227890099917887
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271003,
+      "level": "n125000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5086504374680575,
+        "all_channel_pairwise_order_agreement": 0.5444444444444444,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.119218836695182,
+          "target_nodes": 125000,
+          "nodes": 116087,
+          "game": 44,
+          "weights": [
+            1.0,
+            0.4530945701889909,
+            1.0491675577096775,
+            0.540531258960106,
+            1.0249587667457136,
+            0.9177835848807461
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.618187508365956,
+          "target_nodes": 125000,
+          "nodes": 121969,
+          "game": 23,
+          "weights": [
+            1.0,
+            0.6241225227595426,
+            0.4364995251878187,
+            1.0629424338252191,
+            1.7336364427272462,
+            1.0674751223707017
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.9087869234951538,
+          "target_nodes": 125000,
+          "nodes": 124405,
+          "game": 31,
+          "weights": [
+            1.0,
+            0.6619041786339438,
+            1.0191311912021477,
+            1.2198617955553672,
+            1.6218180343220299,
+            1.3659938883518044
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.012901716341783,
+          "target_nodes": 125000,
+          "nodes": 124320,
+          "game": 66,
+          "weights": [
+            1.0,
+            1.3835198122729735,
+            0.8757981353560101,
+            1.5036745540233172,
+            0.9459684757067179,
+            1.4968412694879307
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271003,
+      "level": "n250000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5541592173368786,
+        "all_channel_pairwise_order_agreement": 0.6333333333333333,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.615193108869018,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 77,
+          "weights": [
+            1.0,
+            -0.12940709316495208,
+            1.1762293925241494,
+            1.091704659051263,
+            0.8337456900206827,
+            1.5975050168480127
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.9050199642964727,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 42,
+          "weights": [
+            1.0,
+            0.4221471602498272,
+            0.3675991371955267,
+            1.5007955208834676,
+            1.8769276438293303,
+            1.162135562966985
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.119791259827716,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 49,
+          "weights": [
+            1.0,
+            0.5990724759467086,
+            1.0157326679315046,
+            1.4434626975003306,
+            1.7510496751288605,
+            1.4807894168022053
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.1044722999662744,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 104,
+          "weights": [
+            1.0,
+            1.2905975216151029,
+            0.7037119728080427,
+            1.460097616012467,
+            1.6470939495101995,
+            1.2775336516065081
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271004,
+      "level": "initial",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.38800876307048937,
+        "all_channel_pairwise_order_agreement": 0.4111111111111111,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.353482831918923,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.9604344534597493,
+            1.0514707300180781,
+            1.0794922028994416,
+            0.9741150702869562,
+            0.6298037935571559
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.2584250742012326,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            0.5805624412612915,
+            0.5585141092367637,
+            0.9971011348572694,
+            1.2534673656875663,
+            0.9413298823386276
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.7082524511818695,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.174822933881516,
+            1.1402175549090674,
+            0.7860686782820425,
+            1.375025811841296,
+            1.0703860941874797
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.461835680099305,
+          "nodes": 0,
+          "game": -1,
+          "weights": [
+            1.0,
+            1.0899870529110256,
+            0.7814307206856481,
+            1.3839294496616317,
+            0.5425822030439713,
+            1.0258035876152212
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271004,
+      "level": "n62500",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5266714875899372,
+        "all_channel_pairwise_order_agreement": 0.4777777777777778,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.4197670463782126,
+          "target_nodes": 62500,
+          "nodes": 62010,
+          "game": 93,
+          "weights": [
+            1.0,
+            0.889353676401899,
+            1.1380241465229468,
+            0.6500766317878274,
+            1.1798086389144966,
+            0.9770750162015195
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.3696430038799883,
+          "target_nodes": 62500,
+          "nodes": 62495,
+          "game": 91,
+          "weights": [
+            1.0,
+            0.6123684480940863,
+            0.7646156267123139,
+            1.3122138382837942,
+            0.49059681766628294,
+            1.3011477234026039
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.0232463198501445,
+          "target_nodes": 62500,
+          "nodes": 61559,
+          "game": 113,
+          "weights": [
+            1.0,
+            1.1720755009802137,
+            1.6748784926371905,
+            0.6463783090226782,
+            1.3068852121567858,
+            1.3547270903254618
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.876885750785948,
+          "target_nodes": 62500,
+          "nodes": 57142,
+          "game": 90,
+          "weights": [
+            1.0,
+            1.1132523429688383,
+            1.2638656859980586,
+            1.423482486381412,
+            0.267335177862314,
+            1.5303639715273603
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271004,
+      "level": "n125000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.5717844720052214,
+        "all_channel_pairwise_order_agreement": 0.6666666666666666,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.6708319233300206,
+          "target_nodes": 125000,
+          "nodes": 124834,
+          "game": 247,
+          "weights": [
+            1.0,
+            1.139720508884489,
+            1.469259155481228,
+            0.7402619239925248,
+            1.0058457545170834,
+            1.056382724370411
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.729798078706181,
+          "target_nodes": 125000,
+          "nodes": 123869,
+          "game": 180,
+          "weights": [
+            1.0,
+            0.660879044348237,
+            1.066119573579587,
+            1.4685488612152877,
+            0.410844636634341,
+            1.5978098825742304
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.1452819186177767,
+          "target_nodes": 125000,
+          "nodes": 123456,
+          "game": 241,
+          "weights": [
+            1.0,
+            1.4119340434037007,
+            2.0652250351704593,
+            0.4978898377802496,
+            0.9247467866094856,
+            1.2373500914686038
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.800467175521158,
+          "target_nodes": 125000,
+          "nodes": 122852,
+          "game": 178,
+          "weights": [
+            1.0,
+            0.8429715329775861,
+            1.177385723677238,
+            1.172314170846991,
+            0.06745388137992353,
+            1.8349135435109776
+          ]
+        }
+      ]
+    },
+    {
+      "generator_seed": 271004,
+      "level": "n250000",
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "X"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "X"
+        ]
+      ],
+      "summary": {
+        "free_coordinate_pairwise_RMS": 0.6647710338502241,
+        "all_channel_pairwise_order_agreement": 0.7666666666666667,
+        "models": 4
+      },
+      "all_models": [
+        {
+          "seed": 1977,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.1890533468718623,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 534,
+          "weights": [
+            1.0,
+            0.9299707946828663,
+            2.367595656080746,
+            0.7915202513248588,
+            0.8035042249591948,
+            1.1948150617373732
+          ]
+        },
+        {
+          "seed": 8173,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.8197510397687133,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 370,
+          "weights": [
+            1.0,
+            0.5827501464009173,
+            1.4193791737577266,
+            1.0365820451841725,
+            0.9116972232388305,
+            1.640447131421701
+          ]
+        },
+        {
+          "seed": 27182,
+          "raw_P": 1.0,
+          "weight_L2_norm": 3.5811422571477007,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 480,
+          "weights": [
+            1.0,
+            1.042912652374102,
+            2.5965886906218922,
+            0.5667830298423917,
+            0.8316894671329214,
+            1.7267570369117564
+          ]
+        },
+        {
+          "seed": 31415,
+          "raw_P": 1.0,
+          "weight_L2_norm": 2.734507307721106,
+          "target_nodes": 250000,
+          "nodes": 250000,
+          "game": 408,
+          "weights": [
+            1.0,
+            0.07311582805120806,
+            1.1196380832331072,
+            0.7343161140804594,
+            -0.05381834319956661,
+            2.16251665537624
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Eachrule separately/ALLmodels/checkpoints; boardPscale1 only, generatedPnotChesspawn. ALLchannelordering includesboard-current andhand-base contexts, notintrinsicuniversalpieceordering. Gramrank=observedgradientspan, noidentifiability/proof/strengthclaim. Lossbins underchangingonpolicytraining are NOTfixedvalidationloss; eta/unit/horizonfixed. No newsearch/fitness/modelselection.",
+  "seconds": 1.9188610000128392
+}

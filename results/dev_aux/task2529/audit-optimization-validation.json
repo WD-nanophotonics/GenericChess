@@ -1,0 +1,19 @@
+{
+  "status": "PASS_V2_INCREMENTAL_VS_COMPLETED_V1_ALL_METRICS_AND_COUNTS",
+  "comparisons": [
+    {
+      "file": "training-audit.json",
+      "numerical_and_count_results_identical": true,
+      "old_seconds": 351.75640149999526,
+      "new_seconds": 46.629064599983394
+    },
+    {
+      "file": "evaluation-audit.json",
+      "numerical_and_count_results_identical": true,
+      "old_seconds": 105.58716060000006,
+      "new_seconds": 10.936880400025984
+    }
+  ],
+  "seconds": 57.701911900017876,
+  "scope": "Sameclosed61260TRAINqueries/4697episodes+13581EVALqueries/512games. Everyqueryfullrecordidentity+publicincrementalsubmit; publicfinalreplay/fullstate/result/record. Exactv1executedsource+outputs preserved. Timingsobservedwithdifferentconcurrentwork, notcontrolledhardware speedup. No training/fitness/sourceinputs/caps changed."
+}

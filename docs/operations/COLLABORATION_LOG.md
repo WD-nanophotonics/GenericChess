@@ -1,3 +1,39 @@
+# DEV_AUX90 — Generic TD curve and positive-anchor correction (study closed)
+
+Own sidemission/PUBLIC, PRIMARY read only. ALL16rule-conditioned models x250k
+complete4Mnodes/4697episodes/3098nonzeroupdates, actualrules/promotion/drops/history.
+ALL1024both-role/three-checkpoint games againsttwofixedfoes:970terminal54UNKNOWN,
+0missing/failedqueries. Uniformfinalgain[0,.25], randomfoe[.2265625,.3671875];
+rules271002/271004 improvewithinfinitepanels, seed31415bad/unresolved, descriptive
+between-rule/family/seed envelopes stillcross0. No selectedwinner/stableprices claim.
+16PRNGrootdraws include4TRAINoverlaps/4terminal; notstrictunseenroot/sparseendgame.
+
+Dot071ccf02/root1792227318 reply1792227407 math/inlineonly/no90sourceorexecution
+confirms fixedarbitraryP+1 ismodelrestriction, scale10commonparameterization not
+validatedcalibration. Adoptnext paired5fixed/6free withSAME NEWTRAIN/fullinitials/
+budgets/NEWsharedvalidation, not6newvs90old; recordP/norm/sign, no deploymentL2
+renorm/positiveclipping/TC/prover gate. Current90neverchanged. Actual2532free-model
+componentpreflight begun: real6querycontinuousrecord/publicoutcome, finitepartials,
+P-onlyapply and2identicalinitialsearchesPASS78nodes. NOTnew6freetraining/fitness.
+
+PRIMARY0e7153/ea06 previouslyselectedreportsource-read onlyhere: terminalPVowner
+repair/1152rootpaths/TCdiagnostics ownerreported, no rerun/adoption/duplicatelearner.
+No newPRIMARYroot thisrecovery; Dot89reading/execution remainsunconfirmed. Shared
+accountlabels notcryptographicidentity, no newchallenges/approvalqueues/routineacks.
+
+Independentall61260TRAINqueries/allfulltypedrecords+W-Lintervals+48unprunedD2
+checksPASS. Oldv1fullprefixaudits351.756/105.587s retained; actualincrementalpublic
+submit/everyqueryidentity/finalpublicreplay givesIDENTICALallmetrics46.629/10.937s.
+Differentconcurrentload, notcontrolledhardware speedup. Threeproducerlistedcost
+5,364,911nodes2561.736s excludesfullengineering/audit/test/transport/token cost.
+Ordinaryparallelprojects normal; noquietwindow/unrelatedmonitor/worker/fee changes.
+
+38relatedtests/all5figuresPASS/checked; rawmachinehostnameprivate/publiccopysanized.
+Largequeries exactZIPonly (scopedown.gitignore) avoidsoversizedGitblobs, notdata
+suppression.35thcapsule/fresh9derivedreplays ACTUALLYPASS107984logicalplies78.494s; fixedPublicSHA evidence pendingactualdelivery. No force/sandbox/master/visibility/Core/UI changes.
+ScienceOPEN; nextall6comparison andfullgenerateddomain remainunsettled. Historical
+failures/caps/rootexposures kept, notoverwrittenorrestored.
+
 # DEV_AUX segment88 —2026-10-17
 
 DEV_AUX completed incremental TD/Tree training and a separate Root/Tree initial

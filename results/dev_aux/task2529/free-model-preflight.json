@@ -1,0 +1,55 @@
+{
+  "status": "PASS_REAL_EPISODE_ALL6_GRADIENT_APPLY_CREDIT_AND_IDENTICAL_INITIAL_SEARCH",
+  "source_episode": {
+    "generator_seed": 271001,
+    "seed": 1977,
+    "game": 0,
+    "queries": 6,
+    "actual_terminal": -1,
+    "fullrecord_sha256": "2836619c2197c3c19fee5a7e755209d5af68375fe30ed9ebd6af414baf8412d9"
+  },
+  "all6_finite_difference": {
+    "phi": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "analytic": [
+      0.09620192906363005,
+      0.0,
+      0.0,
+      0.0,
+      0.09620192906363005,
+      0.0
+    ],
+    "numerical": [
+      0.09620192906317769,
+      0.0,
+      0.0,
+      0.0,
+      0.09620192906317769,
+      0.0
+    ],
+    "old_fixed_P_gradient": 0.0
+  },
+  "old_fixed_update_exact": true,
+  "raw_P_before": 1.0,
+  "raw_P_after_free_episode": 0.9850329640151471,
+  "P_changed": true,
+  "new_free_weights": [
+    0.9850329640151471,
+    0.9701198685923423,
+    1.0514707300180781,
+    1.0891776180320345,
+    0.9591480343021033,
+    0.6298037935571559
+  ],
+  "actual_search_queries": 2,
+  "actual_search_nodes": 78,
+  "source_record_replay_plies": 10,
+  "scope": "Componentpreflight AFTER90learningcurveclosed; no newselfplaytraining/heldoutperformance/negativePbenefit claim. Actualcontiguousrecordedepisode +publicSessionreplay, all6finite-differences, oldfixedupdatecompatibility andtwoactualD2searches withsameinitialvector. Futurepaired5vs6fullNEWTRAIN+NEWsharedfitness remainsUNSTARTED. Oldrecordedtargets/selectedPV/contiguousactualoutcome are re-differentiated withSAMEweights; NOTnewselfplayrollouts ornewfitness. AdditionaltwoD2queries areAPIcompatibility ONLY. No sign-benefit/wholetraining/controlwinner claim.",
+  "seconds": 0.05877230002079159
+}

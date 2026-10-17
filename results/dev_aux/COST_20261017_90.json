@@ -1,0 +1,64 @@
+{
+  "producers": [
+    {
+      "task": "task2527",
+      "status": "COMPLETE",
+      "episodes": 4697,
+      "actual_terminal": 4628,
+      "unknown": 69,
+      "nodes": 4000000,
+      "seconds": 1971.884530899988
+    },
+    {
+      "task": "task2528",
+      "status": "COMPLETE",
+      "actual": 512,
+      "missing": 0,
+      "nodes": 717996,
+      "queries": 13581,
+      "actual_terminal": 475,
+      "unknown": 37,
+      "seconds": 324.07582119997824
+    },
+    {
+      "task": "task2531",
+      "status": "COMPLETE",
+      "actual": 512,
+      "missing": 0,
+      "nodes": 646915,
+      "queries": 10848,
+      "actual_terminal": 495,
+      "unknown": 17,
+      "seconds": 265.77550150000025
+    }
+  ],
+  "three_producer_nodes": 5364911,
+  "three_producer_wall_seconds": 2561.7358535999665,
+  "independent_unpruned_verification": {
+    "contexts": 48,
+    "nodes": 10054,
+    "seconds": 4.837512900005095
+  },
+  "free_component_api_search": {
+    "queries": 2,
+    "nodes": 78,
+    "total_preflight_seconds": 0.05877230002079159
+  },
+  "listed_original_search_nodes": 5375043,
+  "logical_record_plies": 107984,
+  "training_queries": 61260,
+  "evaluation_queries": 24429,
+  "audits": {
+    "v1_training_seconds": 351.75640149999526,
+    "v1_uniform_seconds": 105.58716060000006,
+    "v2_training_seconds": 46.629064599983394,
+    "v2_uniform_seconds": 10.936880400025984,
+    "v2_foe_seconds": 8.705245700024534,
+    "v1_v2_validation_seconds": 57.701911900017876
+  },
+  "fresh_status": "ACTUAL_PASS9_REGENERATED_AUDITS_AND38_TESTS",
+  "scope": "Countslistactual3serialproducers plus48unprunedverificationcontexts+2newcomponentAPIqueries. Re-differentiatedold6queryepisode isNOTnewtraining. AllCore/recordreplay/engineering/plots/Git/Slack/tokens notallcountedbynodecounter; timeactualsessionseparate. Producerwallsum isnotCPUtime/wholeprojectcost. Someauditworkoverlappedfitness, ordinaryconcurrency interpretationonly/noquietwindow/automaticrerun. Freshverification/APIreplays add10132nodes whenactuallyexecuted, testsinternalworknotfullycounted. FreshreceiptactuallyPASS; no newlygeneratedTRAIN/EVALdata.",
+  "fresh_seconds": 78.49439070001245,
+  "fresh_additional_verification_API_nodes": 10132,
+  "listed_search_nodes_including_fresh_verification": 5385175
+}
