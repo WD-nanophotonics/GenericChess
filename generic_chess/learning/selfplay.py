@@ -9,6 +9,7 @@ from ..ai.limits import SearchLimits
 from ..ai.evaluation.config import EvaluationConfig
 from ..core.identity import position_identity_key
 from ..core.transition import apply_action
+from ..core.terminal import TerminalStatus
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
 from ..native.semantic_engine import SemanticSearchEngine
@@ -107,6 +108,13 @@ def collect_self_play(
                     dynamic,
                     checkpoint.dynamic_weights,
                 )
+                leaf_terminal_z = None
+                if leaf_state.terminal_status.is_terminal:
+                    if leaf_state.terminal_status.status is TerminalStatus.NO_CONTEST:
+                        raise ValueError("non-scoring PV leaf cannot be a TDLeaf W/L/D target")
+                    winner = leaf_state.terminal_status.winner
+                    leaf_terminal_z = 0.0 if winner is None else 1.0 if winner == 0 else -1.0
+                    u = leaf_terminal_z
                 points.append(
                     TrainingPoint(
                         ply=ply,
@@ -122,6 +130,7 @@ def collect_self_play(
                         leaf_value=u,
                         completed_depth=result.completed_depth,
                         leaf_feature_dynamic=tuple(dynamic),
+                        leaf_terminal_z=leaf_terminal_z,
                     )
                 )
             if getattr(result, "declaration_id", None) is not None:
@@ -149,6 +158,7 @@ def collect_self_play(
                     leaf_value=old.leaf_value,
                     completed_depth=old.completed_depth,
                     leaf_feature_dynamic=old.leaf_feature_dynamic,
+                    leaf_terminal_z=old.leaf_terminal_z,
                 )
             session.submit(action)
             ply += 1

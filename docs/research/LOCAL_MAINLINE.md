@@ -8,6 +8,43 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work - 2026-10-17
 
+LEARNING_METHODS_TERMINAL_LEAVES_AND_PREFIXES_20261017.md is the current follow-on.
+Published AUX88 fixed3f9afcc3 is now READ and EXECUTED here:197payload hashes,
+36owner tests and seven regenerated A/B audits agree; PRIMARY additionally wrote
+independent all-gradient/paired-outcome calculations. All960validationgames retain
+952terminals/8UNKNOWN; no universal TD/Tree/Root winner or stable ratios follow.
+Keep TD as cheap comparison. AUX owns its richer TRAIN-exposure follow-on;
+no competing learner, oldcapextension, old87fullreplay or qexpansion here.
+
+A separate CURRENT PRIMARY terminal-PV defect is now repaired: collection used
+material values/derivatives even after actual scoring terminal PVs. New optional
+leaf_terminal_z stores the FULL Core leaf's constant0/+1/-1. Trainer and existing
+material TD diagnostics use zero own gradient while decaying prior eligibility.
+Non-scoring PVs reject explicitly. Old payloads/IDs remain unchanged, but absent
+old metadata is not magically reconstructed; historical archives stay historical.
+16newcases/56related checks and pure-source13pass/3Native-skips qualify the local
+repair; final full/publisher tiers belong to its report qualification, not a
+premature pass claim. No Native/search/default or AUX code changed.
+
+New exposure evidence changes a future sampling choice, not training policy:
+the SAME32Chesspaths have nonzero free inputs3/20/28 at16/32/64plies, rank2/4/4.
+But72newgeneratedrule paths retain55ongoing starts/52nonzero at16 versus41/41at64,
+with817drops/185promotions. All72 stay in the denominator, earlyterminals unpadded.
+All3279actions/3351fullstates replay. This is the existing atom generator's scoped
+hybrid/promotion/drop domain, not full recombined-rule learning. Never universally
+replace16 by64 or reject a rule from a chosen short line. Future Generic samplers
+must declare start-state/rule measure and terminal handling before utility claims.
+
+PRIMARY's original-source Buro/Clune/Flux reading retains sparse interactions,
+candidate feature stability, label/cost separation and semantic-encoding caveats.
+No network/GDL parser/abstract solver or feature training is selected from papers.
+Actual gradient directions differ beyond scalar normalization, but useful-strength
+advantage is unproved. Closed state-stability/rank is not payoff relevance or
+unique-price identification. Next inspect a concrete complete-state consumer or
+published owner exposure result; no extra scientific approval/proof gate.
+
+## Preceding learning support and retained capability context
+
 Current PRIMARY selection: support and independently check the now-published
 AUX material-learning example using its SAME frozen model/search, rather than
 start the reserved Core binding-reuse optimization or another learner. The new
@@ -38,8 +75,8 @@ tests,317updates/931closedvalidationgames/208013legalplies pass. PRIMARY-authore
 forward convolution matches317updates to4.44e-16; independent paired endpoint
 gains plain.5/q2.3046875/direct-.1953125 and curve29missing/4U stay.18selected
 actual search receipts match actions/nodes/leafgradients/fullhistory. Keep plain
-as cheap comparison; no qexpansion or duplicate learner. AUX88 owns the already
-running TD-versus-mean-TreeStrap contrast; request read ONLY, no88source/execution.
+as cheap comparison; no qexpansion or duplicate learner. AUX88 owns the frozen TD-versus-mean-TreeStrap contrast; fixed88 source and
+closed evidence were subsequently read/executed as qualified above.
 
 Current support follow-on: LEARNING_COST_AND_GENERIC_FEATURE_TRANSFER_20261017.md
 records233.30s final TRAIN+twoEVAL versus78.04s TRAIN alone,690.46s all six
@@ -52,7 +89,7 @@ qleaf boundary: both compilers return-1 while nominal fullmainPV material is-3;
 R perturbation gives score slope+1 versus nominalleaf-1. Do not derive future
 qlearning gradients from mainPV. Existing AUX search returns its own leaf; no
 new qAPI/default change or competing learner; carrier repair is below.
-Read published88 next.
+Published88 was subsequently checked as recorded in the current selection.
 
 Eight fixed87root controls separate residual count from free-price signal: all
 four first-root35node batches have19-35active errors but ZERO free features and
@@ -73,7 +110,7 @@ The whole fixed87replay is CLOSED:48017completed queries/7998701nodes in
 8failed/1299nodes are not nominally rerun or relabeled; no newtraining/game.
 Do not repeat this qualification without a changed premise. Full48017root
 staticsemi-gradient read has nonzero RMS in all8arms; exposed8zeroRoot controls
-are NOT a general blocker or a calibration set. Await owner88fixed evidence.
+are NOT a general blocker or a calibration set. Fixed88 evidence has since been checked as qualified above.
 
 Actual PRIMARY repair: the old carrier is still current callable source. Real
 Session RESTART/NO_CONTEST have statusdeclaration/winnerNone, so both terminal_z

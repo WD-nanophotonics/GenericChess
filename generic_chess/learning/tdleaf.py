@@ -85,9 +85,13 @@ def tdleaf_update(
         points = trajectory.points
         if not points:
             continue
-        # Frozen evaluator: precompute all leaf values.
+        for point in points:
+            if point.leaf_terminal_z is not None and point.leaf_terminal_z not in (-1., 0., 1.):
+                raise ValueError("terminal PV leaf requires a finite W/L/D value")
+        # Scoring terminal PV leaves are constants under the frozen evaluator.
+        # Older records without the marker retain their recorded feature contract.
         values = [
-            _normalized_value(
+            p.leaf_terminal_z if p.leaf_terminal_z is not None else _normalized_value(
                 trajectory.leaf_features_at(p),
                 checkpoint.board_weights,
                 checkpoint.hand_weights,
@@ -106,7 +110,8 @@ def tdleaf_update(
             u_next = terminal if t == len(points) - 1 else values[t + 1]
             delta = u_next - u_t
             td_errors.append(delta)
-            grad_scale = (1.0 - u_t * u_t) / value_scale
+            grad_scale = (0.0 if point.leaf_terminal_z is not None
+                          else (1.0 - u_t * u_t) / value_scale)
             for tid, bc in zip(trajectory.type_ids, point.leaf_feature_board):
                 eligibility_board[tid] = (
                     config.lambd * eligibility_board.get(tid, 0.0)

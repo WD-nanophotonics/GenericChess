@@ -243,11 +243,15 @@ def td_signal_diagnostics(trajectories, checkpoint, config: TDLeafConfig):
     board_delta: dict[str, float] = {}
     hand_delta: dict[str, float] = {}
     for game_id, trajectory in enumerate(trajectories):
+        terminal = trajectory.terminal_z
         points = trajectory.points
         if not points:
             continue
+        for point in points:
+            if point.leaf_terminal_z is not None and point.leaf_terminal_z not in (-1., 0., 1.):
+                raise ValueError("terminal PV leaf requires a finite W/L/D value")
         values = [
-            math.tanh(
+            p.leaf_terminal_z if p.leaf_terminal_z is not None else math.tanh(
                 linear_value(
                     trajectory.leaf_features_at(p),
                     checkpoint.board_weights,
@@ -262,12 +266,13 @@ def td_signal_diagnostics(trajectories, checkpoint, config: TDLeafConfig):
         for t, point in enumerate(points):
             u_t = values[t]
             u_next = (
-                trajectory.terminal_z
+                terminal
                 if t == len(points) - 1
                 else values[t + 1]
             )
             delta = u_next - u_t
-            grad_scale = (1.0 - u_t * u_t) / value_scale
+            grad_scale = (0.0 if point.leaf_terminal_z is not None
+                          else (1.0 - u_t * u_t) / value_scale)
             features = trajectory.leaf_features_at(point)
             feature_norm = math.sqrt(
                 sum(v * v for v in features.array())

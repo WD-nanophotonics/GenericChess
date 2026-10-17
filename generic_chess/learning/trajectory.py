@@ -23,6 +23,7 @@ class TrainingPoint:
     leaf_value: float
     completed_depth: int
     leaf_feature_dynamic: tuple[int, ...] = ()
+    leaf_terminal_z: float | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -96,6 +97,8 @@ class TrainingTrajectory:
                     "leaf_value": p.leaf_value,
                     "completed_depth": p.completed_depth,
                     "leaf_feature_dynamic": list(p.leaf_feature_dynamic),
+                    **({"leaf_terminal_z": p.leaf_terminal_z}
+                       if p.leaf_terminal_z is not None else {}),
                 }
                 for p in self.points
             ],
@@ -138,6 +141,8 @@ class TrainingTrajectory:
                     leaf_feature_dynamic=tuple(
                         int(v) for v in p.get("leaf_feature_dynamic", ())
                     ),
+                    leaf_terminal_z=(None if p.get("leaf_terminal_z") is None
+                                     else float(p["leaf_terminal_z"])),
                 )
                 for p in data["points"]
             ),

@@ -3904,3 +3904,44 @@ rule draws/WL and oldarchives. AUX checkout/88computation remains untouched.
 
 Final normal active-layer regression 3243PASS, with59focused and7clean-source
 checks distinct. Only Python scoring predicates changed, no native rebuild.
+
+
+## AUX88 methods, generic exposure and current terminal-PV correction —2026-10-17
+
+PRIMARY read the complete88root/replies including AUX1792218997 and pinned
+PUBLIC3f9afcc3. AUX contributed two frozen studies, explicit initial-RMS calibration,
+all seed/censor/cost records and an honestly corrected missing DATA-fixture
+reproduction entry. PRIMARY checked197payload hashes, executed36OWNERtests and
+regenerated seven audits in35.656s; this is execution, not authorship/external
+rule independence. PRIMARY's own scalar68943query geometry and960game paired
+tallies agree, preserving952actualterminals/8UNKNOWN. Different20k vsowner5k
+resampling conventions give nearby descriptive endpoints, not outcome conflict.
+
+Adopt static-node gradients for Root/Tree, actual leaf for TD, all-node denominator
+including zeros, explicit update units and actual cost. Defer a universal winner,
+pure all-node benefit and stable ratios. AUX's richer training-distribution lane
+remains its own. PRIMARY sent a unique evidence followup1792219512 with no routine
+response requirement; fixed-version delivery follows publication. No AUX checkout
+writes, duplicate learner, oldfull87replay, extra Agent/worker or automatic merge.
+
+PRIMARY's new SAME32path exposure read gives3/20/28nonzero free inputs at16/32/64.
+Its separately registered72generatedrule paths show a countervailing selection
+effect:55ongoing/52nonzero starts at16 versus41/41at64, all72denominator retained.
+3279typedactions include817drops/185promotions;3351states/fullhistories replay.
+The minimal source/method boundary remains scoped, not Generic learning or rule
+quality certification. Original Buro/Clune/Flux methods are read; no architecture
+or learner follows automatically. Inaccessible Shogi full methods remain unread.
+
+A current PRIMARY bug was then actually reproduced: ordinary/semanticNative
+terminal-draw PVs were collected/retrained as material-dependent leaves.
+Optional terminal constants preserve all features/history and old payload/ID,
+but correct new terminal derivatives and prior eligibility. Real NO_CONTEST PV
+rejects. First full regression found the old material diagnostic mirror; that
+consumer was corrected too. Original failed run is retained. 16newcases/56focused
+and final13pure-source+3Native-skips are distinct tiers; full/publisher results
+are recorded in the companion report qualification after actual completion.
+No measured collaboration efficiency percentage or unexecuted test claim.
+
+Final normal3259testsPASS after the existing diagnostic mirror correction;
+56related checksPASS. Sealed archive itself runs13Python-source cases with3explicit
+Native skips, separate from its3actualNative controls in the normal16-case suite.

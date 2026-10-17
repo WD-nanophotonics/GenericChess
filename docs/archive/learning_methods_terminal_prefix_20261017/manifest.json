@@ -1,0 +1,700 @@
+{
+  "archive": "evidence.zip",
+  "bytes": 1227328,
+  "files": {
+    "analysis/feature-stability.py": {
+      "bytes": 4728,
+      "sha256": "02e5a1a8a3c6d75338dd2cd07c340c61b26914ed2a65c80f6a1c048298db440c"
+    },
+    "analysis/generic-prefix.py": {
+      "bytes": 6301,
+      "sha256": "2f2a61d4a964cc16bb42914284b5a2318a2533d8e135ea55b91c193190c88508"
+    },
+    "analysis/gradient-geometry.py": {
+      "bytes": 5402,
+      "sha256": "5f20992ead5657199f659421877083222befa4304f7a53696a38b32ff2dd74e5"
+    },
+    "analysis/paired-outcomes.py": {
+      "bytes": 4107,
+      "sha256": "cf3077ada927a353957375f791270c04a8e770687d646579dc2a2deac89531cf"
+    },
+    "analysis/prefix-exposure.py": {
+      "bytes": 3403,
+      "sha256": "9752446ff9aa8db8001dd43436d69af44ca355879c3d57349f54b7e13ff3cb28"
+    },
+    "dependencies.json": {
+      "bytes": 811,
+      "sha256": "4141f049eca08529b6fe5bd579e849e5010dddc557c5decb2b45977618aa05ca"
+    },
+    "evidence/feature-stability-plan.json": {
+      "bytes": 488,
+      "sha256": "75579be208d838f3ad9c53d31915f17aa66da645760bd478cac6c04d7fb2d545"
+    },
+    "evidence/feature-stability.json": {
+      "bytes": 213681,
+      "sha256": "fb3b0ee4b3b357ac3e63710925ae8f5de26de5efaa536a6c6dbf87aa77d98f04"
+    },
+    "evidence/generic-prefix-summary.json": {
+      "bytes": 9479,
+      "sha256": "e33b3e6e496f9af9f873ae5df4a893f919af00c6449f42b99831b2ad9878d318"
+    },
+    "evidence/gradient-geometry.json": {
+      "bytes": 19869,
+      "sha256": "900e45d8f3940b4fb2ecc3574a3d02ab7e53a4d1c5c6beab48f8af33859bcb85"
+    },
+    "evidence/gradient-plan.json": {
+      "bytes": 762,
+      "sha256": "e982c57b5cb018b6e995878dad19c66fc29cdb1ec7bc9421d337ae57f4cc53a5"
+    },
+    "evidence/owner-audits-result.json": {
+      "bytes": 732,
+      "sha256": "ad060d8b302da17f8449fe565fdd06226e84dafb93363612e0adf3f19c7ff347"
+    },
+    "evidence/paired-outcomes.json": {
+      "bytes": 46644,
+      "sha256": "a8c89ed0939894ab7822acbdc56fb0f40305ce73df0c8ebddb6ae83e37b6aa7a"
+    },
+    "evidence/prefix-exposure.json": {
+      "bytes": 104695,
+      "sha256": "4d06a1aa9302edb92c28c684eb91b0ec954e0d9047f4c786aaaf844c4dc75130"
+    },
+    "evidence/terminal-source-result-v2.json": {
+      "bytes": 23482,
+      "sha256": "31096a49cf566e6504a3c3186f1a58662b95f952b30771fe7c0224aa9ad9bf29"
+    },
+    "evidence/terminal-source-result.json": {
+      "bytes": 23481,
+      "sha256": "425ec836b384bc5d73c994f15cc779d074b3390fd7f26fcbe4f2b8dd612772ce"
+    },
+    "generic-prefix/edges.jsonl": {
+      "bytes": 1035306,
+      "sha256": "1264fe264076951703ab86f08aa42713e002d9fe168224d2ae0f5a05c5199d08"
+    },
+    "generic-prefix/plan.json": {
+      "bytes": 11197,
+      "sha256": "abd76909de1399553047df21be87f12fadcd8864cff46f19b2eaa6bbabcc0e0b"
+    },
+    "generic-prefix/result.json": {
+      "bytes": 8663045,
+      "sha256": "4726172600cac0bc20655dbeb9a25d5b251cff273b963dbd31a90aa621471fd3"
+    },
+    "generic-prefix/started.json": {
+      "bytes": 51,
+      "sha256": "ed027c919f8e3a244d4928eace1b47348398a22324ba3813aca7a588fad51588"
+    },
+    "preparation_failure/generic-prefix-zero-action.json": {
+      "bytes": 255,
+      "sha256": "4dc22e69168eaa3360c26dde16307cfcd383152ae0557660b774df00ce82cf40"
+    },
+    "source/generic_chess/__init__.py": {
+      "bytes": 3106,
+      "sha256": "6df435c3f0bbf52d13295f57c726fb4e426e73bfe118515893c06596145bf70b"
+    },
+    "source/generic_chess/ai/__init__.py": {
+      "bytes": 608,
+      "sha256": "f561e5d133e7aa787f7b9d89a1dc7e21a1838e356a91edbb7772aec05935fd92"
+    },
+    "source/generic_chess/ai/alphabeta/__init__.py": {
+      "bytes": 534,
+      "sha256": "21411e89d27aab52e69a4af956aef2113e5d2d7ee2c4f488b0ba898e06e94bce"
+    },
+    "source/generic_chess/ai/alphabeta/backend.py": {
+      "bytes": 1250,
+      "sha256": "db8f97e6d13286f258874bf283ab2df9498dc35c394409d89edb4c6f49f03488"
+    },
+    "source/generic_chess/ai/alphabeta/native_legality.py": {
+      "bytes": 15780,
+      "sha256": "d45fc163fb72312ffbab1a645636e2da1da40637580f12bd5df5c272e02ad1e8"
+    },
+    "source/generic_chess/ai/alphabeta/ordering.py": {
+      "bytes": 7834,
+      "sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
+    },
+    "source/generic_chess/ai/alphabeta/player.py": {
+      "bytes": 12913,
+      "sha256": "d6b0bdc705c0a7970aac828f3b8a04ae034c296d5cde0ab69da6837a28e84d31"
+    },
+    "source/generic_chess/ai/alphabeta/quiescence.py": {
+      "bytes": 5039,
+      "sha256": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da"
+    },
+    "source/generic_chess/ai/alphabeta/search.py": {
+      "bytes": 53708,
+      "sha256": "9b9f5dbb542259f24912826bc4c360d5b083dbd7438c9b1a1eafef7f55be73d7"
+    },
+    "source/generic_chess/ai/alphabeta/snapshot.py": {
+      "bytes": 702,
+      "sha256": "26c43b038dfc14999276c90cb5a69b5d7a88f23b7198ecd6f568e8dfd532c273"
+    },
+    "source/generic_chess/ai/alphabeta/statistics.py": {
+      "bytes": 5662,
+      "sha256": "afd20e2f34f602b8c1d53bbb8c7debe1abdd5763bd2ce46d6f15d80443abb0db"
+    },
+    "source/generic_chess/ai/alphabeta/transposition.py": {
+      "bytes": 3523,
+      "sha256": "120ea3195058c120bfc4d1e9f7166a93c857e57558dba2aafb74bb2c83595a2b"
+    },
+    "source/generic_chess/ai/alphabeta/tuning.py": {
+      "bytes": 2372,
+      "sha256": "d283621e5bc62232c7c0a5b45a4859911f500bc244aca0e177afe3148676349b"
+    },
+    "source/generic_chess/ai/audit_instrumentation.py": {
+      "bytes": 2116,
+      "sha256": "e3c6e85422207b3787d4cea51b6916ca371b69d5be93b15e96501cf0acbc0f15"
+    },
+    "source/generic_chess/ai/budget.py": {
+      "bytes": 3813,
+      "sha256": "ec00a90123bef72182cde82f7304e95169f1ced0c5ef8ef38af61d4d9cfc7370"
+    },
+    "source/generic_chess/ai/cancellation.py": {
+      "bytes": 1895,
+      "sha256": "e97828a960a8fc2928ab7d754cedcd174e921032ea2c0347932b125214a5ba32"
+    },
+    "source/generic_chess/ai/cli/__init__.py": {
+      "bytes": 55,
+      "sha256": "89b8669b5ef3a479fb46533f2b6b060f7382df6bce8646003de1b815d5671c7c"
+    },
+    "source/generic_chess/ai/cli/analyze_ruleset.py": {
+      "bytes": 2498,
+      "sha256": "c7ea6534419b813c3e1eed7723e50d6c06c2d0983bba44bcf3cfad2aefe2875d"
+    },
+    "source/generic_chess/ai/cli/audit_native_readiness.py": {
+      "bytes": 6829,
+      "sha256": "e902000b20b26f70e433fa9e49ba89a44f81598c98fd23a51563c0ae5394cf2a"
+    },
+    "source/generic_chess/ai/cli/benchmark_alphabeta.py": {
+      "bytes": 5233,
+      "sha256": "c41255f4ca0536d6deed0cc5e0194290a1b5c02c4b32998537adc5a46076dfb6"
+    },
+    "source/generic_chess/ai/decision.py": {
+      "bytes": 3777,
+      "sha256": "be7ec28e645e91e7ee4233f7248fe8e859d71d4b8d47d8ad88700cf6c079d608"
+    },
+    "source/generic_chess/ai/evaluation/__init__.py": {
+      "bytes": 510,
+      "sha256": "eccd9513c65b76b94c03d646242d61faf19b853b193c8dd72e01a6b4abbfdcf1"
+    },
+    "source/generic_chess/ai/evaluation/analyzer.py": {
+      "bytes": 3684,
+      "sha256": "ed8d7b0046a568253601b818ae1b030d1b3c4b8c26229e7dd5037ede29013683"
+    },
+    "source/generic_chess/ai/evaluation/cache.py": {
+      "bytes": 8797,
+      "sha256": "6f9af3f1163a0028197380691d28824c3887dde53a5a0b7df015cdf8a5863ca9"
+    },
+    "source/generic_chess/ai/evaluation/config.py": {
+      "bytes": 1303,
+      "sha256": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db"
+    },
+    "source/generic_chess/ai/evaluation/diagnostics.py": {
+      "bytes": 2137,
+      "sha256": "ddd6bda87b4f07091f1c660cb1c21f1a5bfd79b81bcceff5821c29061ae33e2b"
+    },
+    "source/generic_chess/ai/evaluation/evaluator.py": {
+      "bytes": 6558,
+      "sha256": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf"
+    },
+    "source/generic_chess/ai/evaluation/mobility.py": {
+      "bytes": 6257,
+      "sha256": "828a4f1a9fa93a48955e98042dd976d69f4305a45fe87e86455b22a1b16c8d83"
+    },
+    "source/generic_chess/ai/evaluation/movement_graph.py": {
+      "bytes": 6120,
+      "sha256": "254fb838e0fd58de2e71d0a2c39154a2773d9b962eaaa5b0aeafe970896f287b"
+    },
+    "source/generic_chess/ai/evaluation/native_compat.py": {
+      "bytes": 2131,
+      "sha256": "2df50ad35d73868f7637cecf4189af3695edf43ce24228054210c319d8951b3a"
+    },
+    "source/generic_chess/ai/evaluation/profile.py": {
+      "bytes": 6832,
+      "sha256": "5caba8ea9de8706e7c039f31cf0d59ce30341b24135e9f6ef6aa74e356212710"
+    },
+    "source/generic_chess/ai/evaluation/semantic.py": {
+      "bytes": 16164,
+      "sha256": "cee55e9188fcb78cf650b3e858f5ab84b797a44696e5126462414d221f44d511"
+    },
+    "source/generic_chess/ai/evaluation/semantic_attacks.py": {
+      "bytes": 2359,
+      "sha256": "a9f2b952941e40a44bb22a7a1681b80ecfe1745826f1a824fe2b959172f8e9c6"
+    },
+    "source/generic_chess/ai/limits.py": {
+      "bytes": 1630,
+      "sha256": "f6d79d01b419b23cbb8931401272f40100ac8d5338e68ccf240baf26e725a524"
+    },
+    "source/generic_chess/ai/player.py": {
+      "bytes": 656,
+      "sha256": "5657516d17099abc41c87b6c090db2336fc654a4c347fa75935bcad4b306df12"
+    },
+    "source/generic_chess/benchmark/__init__.py": {
+      "bytes": 1178,
+      "sha256": "b6844ffea56726c9770dee1abe9a23294f2dcafd8dd5f07ef4310723a3378bd3"
+    },
+    "source/generic_chess/benchmark/agent_ladder.py": {
+      "bytes": 3286,
+      "sha256": "c5eabc6f8f178f89159dd7636f4640b38d938661be0b7b64f6f30024f786e910"
+    },
+    "source/generic_chess/benchmark/game_quality.py": {
+      "bytes": 19325,
+      "sha256": "e17f218f7f5db1f758037e2e9b874b2709f9cad109e0eb7b1896c014a966c0f8"
+    },
+    "source/generic_chess/benchmark/mate_capacity.py": {
+      "bytes": 1064,
+      "sha256": "8a567bbca165ac6dad54937d4f3cc80a3ff88a59bb22efc7dac463aee6ea3991"
+    },
+    "source/generic_chess/benchmark/minimal_generator.py": {
+      "bytes": 7818,
+      "sha256": "3d103871c49c3d60d07feeac69798e11beedcc1c32c8c18fbad4607167aca366"
+    },
+    "source/generic_chess/benchmark/policy_tape.py": {
+      "bytes": 1131,
+      "sha256": "8c9e9164cc68857009fcadc23e0159a30cb99e7d00ef140c9fe56feeee0aa862"
+    },
+    "source/generic_chess/benchmark/qualification.py": {
+      "bytes": 74265,
+      "sha256": "f0bcaf9c0bbc911291ead77db54437e53a72ff58522de37a690743dba468f92f"
+    },
+    "source/generic_chess/benchmark/strength_response.py": {
+      "bytes": 38105,
+      "sha256": "1a7ca0b0f0116914f208a0c4de1b912c882cfe8c31406e2060e64ee0dbdd09b7"
+    },
+    "source/generic_chess/benchmark/tactical_probe.py": {
+      "bytes": 4128,
+      "sha256": "70eddfde7891f21c4a7e52711b3b2d3ce4f648052ae7ec6c384f068c9d4d6109"
+    },
+    "source/generic_chess/cli/__init__.py": {
+      "bytes": 73,
+      "sha256": "7bc807d0946d3743939cee8dda5d1579dcbd9186179903b117a95c3504aed5e8"
+    },
+    "source/generic_chess/cli/play.py": {
+      "bytes": 12121,
+      "sha256": "4272f8f573909bf4c18b19f320bbd545834593e4756c441aa3ccb6878f54277f"
+    },
+    "source/generic_chess/cli/render.py": {
+      "bytes": 2889,
+      "sha256": "9d63273f05adb1bf14cc5d7ce43bba6b4aa5d2dba4f02d229ea4746a4b47fea4"
+    },
+    "source/generic_chess/cli/replay.py": {
+      "bytes": 2324,
+      "sha256": "929803536cfb765e2dc296c7620b8fb3504642fedb32f52825a7117fdcf88b9a"
+    },
+    "source/generic_chess/clock.py": {
+      "bytes": 6500,
+      "sha256": "4146228dc887e3ef825fafd62bf98d228978935a4f0dccdc2f8d7f5df684cf25"
+    },
+    "source/generic_chess/core/__init__.py": {
+      "bytes": 39,
+      "sha256": "89f7576f218a947dd73e406081e34f190c662d39d8a937fc4bb10313c892a2eb"
+    },
+    "source/generic_chess/core/actions.py": {
+      "bytes": 6371,
+      "sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285"
+    },
+    "source/generic_chess/core/adjudication.py": {
+      "bytes": 10440,
+      "sha256": "a550f2f56c7835fb463e46c9de2b6eab93574ff0fc32dc6644ae8aaf6092617e"
+    },
+    "source/generic_chess/core/attacks.py": {
+      "bytes": 4092,
+      "sha256": "51faa8f9839e47e70715f74e70a4e22d97f7c550a6a9ed07e7ce1169ccac9907"
+    },
+    "source/generic_chess/core/capture_pressure_trace.py": {
+      "bytes": 10924,
+      "sha256": "f87f3d2319c66dab4e1872edb3ae1788fe07f0e7c23061881e28a3b276f819a5"
+    },
+    "source/generic_chess/core/capture_sources.py": {
+      "bytes": 16145,
+      "sha256": "b2cb7d885a02540fd2cd4d53523b54c99b88fb2946c5184ac5f988e0b3eedf65"
+    },
+    "source/generic_chess/core/coordinates.py": {
+      "bytes": 4600,
+      "sha256": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9"
+    },
+    "source/generic_chess/core/declarations.py": {
+      "bytes": 7599,
+      "sha256": "5b7b957ce2e382ed1d8ee6c4b7fcd238857a21deac59fdab4680a97b17b7965f"
+    },
+    "source/generic_chess/core/errors.py": {
+      "bytes": 916,
+      "sha256": "fd8ce4f15da860637e200e00f126641e88dd077160eda5cda77e2341e8b2ad66"
+    },
+    "source/generic_chess/core/history_cycle_trace.py": {
+      "bytes": 17171,
+      "sha256": "5bcc409ac1e4029e9005271e8d2939d7849b626a92422d71aeeca1749f531299"
+    },
+    "source/generic_chess/core/history_provenance.py": {
+      "bytes": 8819,
+      "sha256": "2f951fcaaf462e601ef26eefeec521b3485a078f8038584f76941f3c516946f1"
+    },
+    "source/generic_chess/core/history_recapture_trace.py": {
+      "bytes": 6289,
+      "sha256": "cb911ac7e426a15105f9f432647d069ce6ce8cf72f1a659bff51fe9969bec5e8"
+    },
+    "source/generic_chess/core/identity.py": {
+      "bytes": 7568,
+      "sha256": "13d6e6a0c2b565dd447fe637052ab9b2694f5c0d11fe24c739993863d5f42727"
+    },
+    "source/generic_chess/core/keys.py": {
+      "bytes": 3742,
+      "sha256": "afde1c673230887f16929e111e73f9b04201b351ca6fccd576c31d0a85b127ba"
+    },
+    "source/generic_chess/core/lazy_transitions.py": {
+      "bytes": 5222,
+      "sha256": "fc393d061116dc0ffeb6f6ebcdd729cbd05b3deec5a30d81fb74a8a28816ef9c"
+    },
+    "source/generic_chess/core/movegen.py": {
+      "bytes": 13068,
+      "sha256": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3"
+    },
+    "source/generic_chess/core/movement.py": {
+      "bytes": 2896,
+      "sha256": "4f843acaba10451c06c6876aa4264d81da194857db32b74191dce5170d6c0ead"
+    },
+    "source/generic_chess/core/no_progress_context.py": {
+      "bytes": 6462,
+      "sha256": "c622d8dd3afadbc3c679b833f5c24263aa529a9a47a610923c62fa968b177acc"
+    },
+    "source/generic_chess/core/pieces.py": {
+      "bytes": 1363,
+      "sha256": "d5f71951902d98df50319bdad4cece4d9f9a7455872bf07b59ce06d0c2894d23"
+    },
+    "source/generic_chess/core/position.py": {
+      "bytes": 4748,
+      "sha256": "552a447c2fede326c6b5f309b0f50f0bd19b4d580cedef8aff835b73c34dd2b6"
+    },
+    "source/generic_chess/core/repetition.py": {
+      "bytes": 534,
+      "sha256": "bd2c5868192157b89307878a0a854fa5c82c028af39f2bc15c59043717fa217d"
+    },
+    "source/generic_chess/core/search_runtime.py": {
+      "bytes": 63434,
+      "sha256": "1db2d8d3477c7cf3360a45399f436ab267087ba66c186ed9a3c21c06ab1edb4a"
+    },
+    "source/generic_chess/core/semantic_executor.py": {
+      "bytes": 82199,
+      "sha256": "75c3ea8fb4d5e61ca8ce9e5f78cc377b93dd14a5dc10371ceea565df26d58d9c"
+    },
+    "source/generic_chess/core/terminal.py": {
+      "bytes": 21499,
+      "sha256": "27aa3f696263e884fa1f1389ba2a38368f8715eec9b92ce531ceb23cc0e57cbd"
+    },
+    "source/generic_chess/core/transition.py": {
+      "bytes": 9538,
+      "sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682"
+    },
+    "source/generic_chess/demo/__init__.py": {
+      "bytes": 30,
+      "sha256": "5dd4bce40dff13a1632c9467c4b2e927f86277803be5d61d5bf5018f8533d823"
+    },
+    "source/generic_chess/demo/headless_demo.py": {
+      "bytes": 6208,
+      "sha256": "cd4d6e817ecb208757d8960cd1d44dec95098023bc25ad431bc98e7591323f11"
+    },
+    "source/generic_chess/generation/__init__.py": {
+      "bytes": 60,
+      "sha256": "f22a59280df64f6c215a5668efd81230dd924e1ed6324f278b3a5dfcc75c2037"
+    },
+    "source/generic_chess/generation/config.py": {
+      "bytes": 2738,
+      "sha256": "10dafdbdede2adf3d635cc83709f79b46a7a1b67c76237fd2ac1dc5fd084bd4f"
+    },
+    "source/generic_chess/generation/drop_derivation.py": {
+      "bytes": 499,
+      "sha256": "82807779f15029dc2e89373c3d052ed364afcba2d93923c15a7e77a7da60334f"
+    },
+    "source/generic_chess/generation/filters.py": {
+      "bytes": 3849,
+      "sha256": "f3927f528a3724782d5dc8a4ea22c99002ccf0cf7c5340482fde1607a67cd9c2"
+    },
+    "source/generic_chess/generation/generator.py": {
+      "bytes": 7250,
+      "sha256": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70"
+    },
+    "source/generic_chess/generation/piece_generator.py": {
+      "bytes": 6539,
+      "sha256": "dc21765d9162772b7e4572c9bd53850489e8a4606f145d47a2a94e146958d47f"
+    },
+    "source/generic_chess/generation/presets.py": {
+      "bytes": 3152,
+      "sha256": "f541eae97e563cd3447ed6a7387b3b6955b40e1bdfbb03b4b900162d14e78477"
+    },
+    "source/generic_chess/generation/promotion_derivation.py": {
+      "bytes": 1346,
+      "sha256": "b7526959525f5ff21f0aee710a446755f6a294c8b6fc75d9324057918bb9cf8c"
+    },
+    "source/generic_chess/generation/report.py": {
+      "bytes": 1102,
+      "sha256": "771ea92cee6a12504d690d735d409da57ee493ba483855ceb902439a862d52e5"
+    },
+    "source/generic_chess/generation/setup_generator.py": {
+      "bytes": 1878,
+      "sha256": "f1f40b6cb5327f38684880ffe70e45d5f953da157818c455d919bc5d0bfc6d6c"
+    },
+    "source/generic_chess/learning/__init__.py": {
+      "bytes": 890,
+      "sha256": "36f8261a0e78d92cae19857d0c096d741579ed6eb3f85e02ded82603b43b8718"
+    },
+    "source/generic_chess/learning/alphasho_bridge.py": {
+      "bytes": 8182,
+      "sha256": "3cb20e65dd4a1cc047a5ea1d0de88469c7389bd65dca9d9b52616dbd93be5696"
+    },
+    "source/generic_chess/learning/arena.py": {
+      "bytes": 74142,
+      "sha256": "203cb5062a589ea404d8db8c6e19ffbbecefa7fc139e5ccc294c40c4b5975fb3"
+    },
+    "source/generic_chess/learning/compact_checkpoint.py": {
+      "bytes": 3590,
+      "sha256": "615d6950e9805b266dbcddac7e058ccfa373bae810a6249907a42e9dc60b9a74"
+    },
+    "source/generic_chess/learning/diagnostics.py": {
+      "bytes": 41668,
+      "sha256": "4b2e7486f29c6c79a6e74a5f2809e3a3c15cf967ce28f7fc3fb4970197c531ef"
+    },
+    "source/generic_chess/learning/experiment.py": {
+      "bytes": 20553,
+      "sha256": "25f933f23980ba1d45110efa0a595f1d63fd31a1d4cbbc921d68be0fc4970e47"
+    },
+    "source/generic_chess/learning/features.py": {
+      "bytes": 13279,
+      "sha256": "b793b6ed3f507c19fea625ff643d1e74570411d01a9815d56f60e7eba6df0857"
+    },
+    "source/generic_chess/learning/gumbel_mcts.py": {
+      "bytes": 25449,
+      "sha256": "ddb474fbbaf746a0b31e44b7827fe25e41c179a659e491164844cba52334cb78"
+    },
+    "source/generic_chess/learning/leverage.py": {
+      "bytes": 60150,
+      "sha256": "7bf0db542190870c91bd29db3cde106bb1f83233db1ed06891545af099770ee1"
+    },
+    "source/generic_chess/learning/material.py": {
+      "bytes": 19641,
+      "sha256": "56dbcea269ff12ea7b731bc55b7d7212c7ae448dd3edeec272af69fb93a3aae8"
+    },
+    "source/generic_chess/learning/nonlinear.py": {
+      "bytes": 10015,
+      "sha256": "bf33824fa411d90cb3c8ecfae42045a84eb37abf23b2a9dbb2f60951f85810a1"
+    },
+    "source/generic_chess/learning/openings.py": {
+      "bytes": 6655,
+      "sha256": "1c088b6108c7586b869f41f0c6b6a73f899a5682e8c15699ece8f41ee9c6e8d1"
+    },
+    "source/generic_chess/learning/phase18.py": {
+      "bytes": 20866,
+      "sha256": "44ec889ddc48a4def92a0b7308db954713df8d032834fc6584de2cc415a4be71"
+    },
+    "source/generic_chess/learning/policy.py": {
+      "bytes": 18789,
+      "sha256": "30732aac8b209b302c8c310bd18c771b7de434edde3d7e2ca7b2232b531e00be"
+    },
+    "source/generic_chess/learning/policy_v1.py": {
+      "bytes": 14874,
+      "sha256": "b2e52977d2cd16ca7a952a40f6ce3a6f239713f59ffd44e1c2641f6fc1f8430b"
+    },
+    "source/generic_chess/learning/round5_benchmark.py": {
+      "bytes": 62217,
+      "sha256": "0d6949874c969a2bc5c54206e64191c10decc1544cadd2732bd3108e41853314"
+    },
+    "source/generic_chess/learning/round5_corrective_r1.py": {
+      "bytes": 31510,
+      "sha256": "28e4ea999c38d6935b0d6534c26eaa0866e0fd247f817f5daa1af742b136c462"
+    },
+    "source/generic_chess/learning/round5_corrective_r1_2.py": {
+      "bytes": 40179,
+      "sha256": "08ec3b1018037948382530acc86affb9b806192525b2865cc794a25c037c741f"
+    },
+    "source/generic_chess/learning/round5_corrective_r1_3.py": {
+      "bytes": 31120,
+      "sha256": "b2fef464b768c89c6495f118b56533a84ea500fa54f8bbf5d7646438398a0265"
+    },
+    "source/generic_chess/learning/round5_corrective_r1_4.py": {
+      "bytes": 16869,
+      "sha256": "1334e38d01e9517030392aa11e7710937048c7573d19f5c92444a44bcdbdf5e9"
+    },
+    "source/generic_chess/learning/selfplay.py": {
+      "bytes": 9757,
+      "sha256": "c61cffc84449de2e718fa155bc5d4805173d962c57f1aabc51e5c1523b3430c7"
+    },
+    "source/generic_chess/learning/serialization.py": {
+      "bytes": 472,
+      "sha256": "496a8a0c817f09500864458e3d01d4c9256a003e04d3360697189ed60330369b"
+    },
+    "source/generic_chess/learning/shogi_certification.py": {
+      "bytes": 32210,
+      "sha256": "cbf4cdf8279c126628b86f9c008ced7e886c84cb496fc713e336fad19822bba5"
+    },
+    "source/generic_chess/learning/shogi_rules.py": {
+      "bytes": 22186,
+      "sha256": "4e9db254096c72010e79b28431c16106e943b95f8e834f857762d633a84c1909"
+    },
+    "source/generic_chess/learning/shogi_semantic_rules.py": {
+      "bytes": 2981,
+      "sha256": "436a2eac10cc7e10a6182af44474396d7dd21ab2b3575edda1ccc153a1f84f36"
+    },
+    "source/generic_chess/learning/statistics.py": {
+      "bytes": 1117,
+      "sha256": "ee4469a7f095343311ba76d0235127af2a4ef120a036ea511b1e8ac851df5068"
+    },
+    "source/generic_chess/learning/tdleaf.py": {
+      "bytes": 8907,
+      "sha256": "084922f886b921ef250cc5ec3aa6f02fece9685ded88d0aa178047c01074a34b"
+    },
+    "source/generic_chess/learning/trajectory.py": {
+      "bytes": 6768,
+      "sha256": "ce68d50b45140f46d8f9730e29a361bba2c43e75e3a2cd4414c225d591d55217"
+    },
+    "source/generic_chess/native/__init__.py": {
+      "bytes": 4832,
+      "sha256": "17ec452a105b18b85efffb6a88fac8229921e8ec903857e9b83636361a5d3b5e"
+    },
+    "source/generic_chess/native/adapter.py": {
+      "bytes": 16448,
+      "sha256": "f649b9e40590720ebe8ffa4bdf6d212299b11d87d36f6f90430d12ae354383a0"
+    },
+    "source/generic_chess/native/compiler.py": {
+      "bytes": 52172,
+      "sha256": "23322b05050acc041419e03416086040cd2011a09e92a3ebf16078c0662d42f2"
+    },
+    "source/generic_chess/native/differential.py": {
+      "bytes": 4382,
+      "sha256": "fd599dbbdb398fb87497a7d14c7bd0241c7360d9535a91a0a9928ed3b52175d0"
+    },
+    "source/generic_chess/native/engine.py": {
+      "bytes": 7167,
+      "sha256": "6d94326951b5f0d3a49cf7af48f037c445546c3b83efa339c6f64dcf9b45d641"
+    },
+    "source/generic_chess/native/mirror.py": {
+      "bytes": 13022,
+      "sha256": "1038851395f0de1014c61dfb7b105c4b5ba7f207acff6d8dc5d3cc3d0aa0a0da"
+    },
+    "source/generic_chess/native/phase2c_differential.py": {
+      "bytes": 5381,
+      "sha256": "bfcdc666d737330552e588a9c7f91ade41c8682608317c233e33ece30b0fed9f"
+    },
+    "source/generic_chess/native/reference.py": {
+      "bytes": 5748,
+      "sha256": "1f725730529baead19ed6a377b5f705e41368f26636e0133927735d94a81c7ae"
+    },
+    "source/generic_chess/native/search.py": {
+      "bytes": 4971,
+      "sha256": "c2205f12121e8cdfeb2b454c8be7e9d8445b5f857a19671019f4f34c6699346d"
+    },
+    "source/generic_chess/native/search_differential.py": {
+      "bytes": 5554,
+      "sha256": "32a014442fe6cae346a6468dfa3234232481a37d949c2b907c12422ecc991aa1"
+    },
+    "source/generic_chess/native/semantic.py": {
+      "bytes": 30762,
+      "sha256": "6f6a94475a56e2c6def8b2792e8bd89bbf8ceab510804b197d80b8b548babe6f"
+    },
+    "source/generic_chess/native/semantic_engine.py": {
+      "bytes": 37936,
+      "sha256": "89eb706807fd4b41156c9e835d90dfc89181f67a7c954714a3ee95a39aaada45"
+    },
+    "source/generic_chess/rules/__init__.py": {
+      "bytes": 1210,
+      "sha256": "bfb11e62abd56dd061cd6d860d4e8b04dd004a4e338254cf312378ef5864bb3d"
+    },
+    "source/generic_chess/rules/catalog.py": {
+      "bytes": 1668,
+      "sha256": "dc973dd011c5d10d0804ed8c9b09d2f3270e7c1839ad23632e57b658d0ffa198"
+    },
+    "source/generic_chess/rules/compiled.py": {
+      "bytes": 4052,
+      "sha256": "139180ec703686787a4cfd25532cce262d469474eebe8ca057efdacc09803068"
+    },
+    "source/generic_chess/rules/compiler.py": {
+      "bytes": 105605,
+      "sha256": "3b09ebb5b3f3fc54393187e4a5644151a4fcc133c87aeaf0a51de6ae6934dcc1"
+    },
+    "source/generic_chess/rules/execution.py": {
+      "bytes": 1807,
+      "sha256": "2d2d608357aee2b803c583266f4751188cc00e50d8cb6d9ecd3c6fb007df5507"
+    },
+    "source/generic_chess/rules/ir.py": {
+      "bytes": 51426,
+      "sha256": "9aac52fe848446430c4b4118702331a5d9d10863d8eaf7266df739199c90bbeb"
+    },
+    "source/generic_chess/rules/schema.py": {
+      "bytes": 77524,
+      "sha256": "ef6c25f1c4bebd355711131e815bbc5531251b6d7972e859d0f05a3887fa94e8"
+    },
+    "source/generic_chess/rules/serialization.py": {
+      "bytes": 842,
+      "sha256": "aa0d105a2de55e0f40cf3a3562521033f0056df72904246cc0c94718d76bc04f"
+    },
+    "source/generic_chess/rules/standard_shogi.py": {
+      "bytes": 8818,
+      "sha256": "6ae08bafaea0b427e03da045a2d3e8a8820532d233422cbdb33739919e31b43c"
+    },
+    "source/generic_chess/rules/validation.py": {
+      "bytes": 1050,
+      "sha256": "96a44a2b80475808db1f7fe73048aeaea735112f613dccb2357fed0f09235c48"
+    },
+    "source/generic_chess/rules/western_chess.py": {
+      "bytes": 12135,
+      "sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a"
+    },
+    "source/generic_chess/rules/xiangqi_diagnostic.py": {
+      "bytes": 9642,
+      "sha256": "00d0772a0bb1b6aa1c49bcbd5fd38c16c59897584e6ee233cb946111c056c99d"
+    },
+    "source/generic_chess/session/__init__.py": {
+      "bytes": 1147,
+      "sha256": "8501fcf4d713b0a88737ed28a6cca6c91901b83dba0748010069924f0be36a38"
+    },
+    "source/generic_chess/session/record.py": {
+      "bytes": 1286,
+      "sha256": "5118156ebf06203a00e7e4cd09a81914676e833be6aee9009d37cdf31586eed9"
+    },
+    "source/generic_chess/session/result.py": {
+      "bytes": 3543,
+      "sha256": "d6a45c241eba85725829cfec79333842a21afddcf2028d85e762c82ef61e89e9"
+    },
+    "source/generic_chess/session/serialization.py": {
+      "bytes": 13088,
+      "sha256": "65f3b1c850eb6e37df4f3a51c730b0d98aa4950b8c7b07df4d7de628568aa073"
+    },
+    "source/generic_chess/session/session.py": {
+      "bytes": 10232,
+      "sha256": "24730e5085f3afc44686156cd0e331b43dcd972bd96f838f787ea0e42e9a81ad"
+    },
+    "source/scripts/research_record.py": {
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    "source/tests/conftest.py": {
+      "bytes": 7230,
+      "sha256": "e6640a3c11449ebd8f66c1739ec10f85a40873daf160691eb80161b3c3ed0b21"
+    },
+    "source/tests/native_test_helpers.py": {
+      "bytes": 2322,
+      "sha256": "6eea8aafb4713dcb23ce735a40777b2b78048d3990d614bb721b34ac8df23d30"
+    },
+    "source/tests/product/test_learning_terminal_leaf.py": {
+      "bytes": 7015,
+      "sha256": "8da6d568ae3951077147e59839068a909c3ae8b15875216f6775eae94c25c85c"
+    },
+    "source/tools/local_agent/common.py": {
+      "bytes": 1344,
+      "sha256": "b9a515c830396328c246d03436c7ca4ba0937015662e05b9a0cda5ded37bd8dd"
+    },
+    "source_before/generic_chess/learning/diagnostics.py": {
+      "bytes": 42464,
+      "sha256": "96fa88f26ad5b941c79f583f2c89cd323d58d76f8e45bfb38b172fb9cf8d9e7b"
+    },
+    "source_before/generic_chess/learning/selfplay.py": {
+      "bytes": 9351,
+      "sha256": "2a106a3a4080db750b0535c34355435ee5a8d91e7b2ec8b7d44db3fb78821594"
+    },
+    "source_before/generic_chess/learning/tdleaf.py": {
+      "bytes": 8665,
+      "sha256": "4654cce13b49d1a83669c3a6bc0227a528cc4998c73c3645676924d83adcdcf7"
+    },
+    "source_before/generic_chess/learning/trajectory.py": {
+      "bytes": 6613,
+      "sha256": "343adbe164730c0c8076ddc2c40647684963b227eb6c239a0c00c292d5df6764"
+    }
+  },
+  "members": 174,
+  "sha256": "39718e65196058ec648c4b641e6a7cae326903b8c535e3e755cde21bb0e803a2"
+}
