@@ -1,3 +1,67 @@
+# DEV_AUX current selection — closed88, incremental learning works in scoped panels
+
+Direct USER TD/search-bootstrap priority remains active; actual rule W/L/D
+validates strength, search targets train. Old WDL grids/prover coverage remain
+historical controls, never prerequisites. Own sidemission/PUBLIC; PRIMARY is
+read only. No product/Core/default/UI/extra worker changes. Science OPEN.
+
+StudyA: all4initializations x TD/mean-Tree x1Mnodes COMPLETE8M/1070.14s,
+453episodes442actualterminals/11censors. New16-family endpoint ALL384returned,
+382terminals/2H512UNKNOWN; every initialization has positive finite-panel gain
+bounds for both methods. PooledTD[.40625,.4375], Tree[.2734375,.2890625], direct
+Tree-TD[-.1484375,-.1328125]. Crossed seed/family envelope[-.3984375,.1875]
+includes0: no general algorithm winner or stable price ordering established.
+
+New8-family midpoint192/3U and matched8 different-random-foe192/3U COMPLETE,
+no missing or failed EVAL queries. Midpoint/endpoint are DIFFERENT families,
+not a paired convergence curve. Matched foe-switch186firstdivergences all on
+foe turn;6identical. Interaction envelopes cross0, not equivalence. New opponent
+is random, not assumed stronger. Shared initial baseline paid once perpanel/foe.
+
+StudyB is separately registered after A endpoint and executed SERIAL after A
+close. Initial TRAIN-only128frozen trees/28510nodes/4.95s yield commonc1.411724;
+zeros included. Both Root/Tree now update perquery/static-state/half-square;
+Rooteta.0705862/Tree.05 fixed, all4initials x500k COMPLETE4M/532.34s,
+258episodes250actualterminals/8lastnodepoolU. NEW8family95000-95007 ALL192actual
+terminals0U/missing,389.20s. Rootgain+.125, Tree+.109375, Tree-Root-.015625,
+crossed95envelope[-.09375,0]. No clear all-node actual-strength advantage.
+INITIAL RMS match did NOT persist: actual Root query RMS1.50-1.70xTree. No retune,
+no pure information-effect claim; original64ply calibration differs from16ply starts.
+
+All711training episodes/101320queries independently reconstructed;16failed
+last-small-nodepool queries and3H512 censors preserved. All960validationgames,
+952actualterminals/8H512U/0missing/0failedqueries, all full histories/querybudgets
+audited.32fixed search receipts replayed exactly, not every search.36related
+controls pass separately; exact33rdcapsule197payloads; v1transport35PASS/1missingoldfixture failure retained.
+CorrectedGitv2 restoresoneSHA-pinned87testfixture;36tests/allregeneratedaudits
+PASS281024legalplies. OriginalZIPunchanged, livepostseal amendments explicit. Recorded7producer cost26,921,851nodes/3615.505s excludes
+complete engineering/token cost; session elapsed separately records real work.
+
+Dot1792214792 reviewed inline/paper only, no88source/execution. Adopted interior
+static gradient vsTD PV distinction and allnodes mean; Root control implemented
+as new study, not an old cap extension. PRIMARY350abb80ef69fbdd8c71cad39cdfdb181b716c3a
+fixed report READ here only; its87independent arithmetic/closed replay+18searches
+and futureCore qleaf warning are owner-reported, not rerun here. 350abb had recorded the full87replay RUNNING. New message1792216878/fixed629fd
+now reports CLOSED48017queries/7998701nodes/1074.125s; selectednewsource sections
+read here, notrerun. Its currentcallableCorecarrier/arena defects are fixed by
+PRIMARYownedpredicates; noAUXCoremerge. FullRootRMSpositiveall87arms defeats
+universalclaimsfromsmallzerocontrols. Own selected-leaf
+TrainingSearch remains; no Core API/q/proof expansion needed. New2511typed
+non-scoring Generic adapter remains future entry; old frozen adapter unchanged.
+
+Next ONE changed TRAIN exposure/exploration premise: freeze a same-learner
+16-vs64legal-prefix comparison with NEW TRAIN/families/opponents/all4initials,
+no outcome root filtering or human-price fit. Test cross-initialization consistency
+AND new actual W-L at equal work, retaining loss/step/censor costs. Do not repeat
+price grids, q coverage or claim current near-ties prove equivalence. Full Generic
+transfer and stable rule-conditioned ratios remain OPEN; same typed full-state
+adapter is an alternative scoped next step, not a solver prerequisite.
+
+Report: results/dev_aux/SEGMENT_20261017_88.md. All old partial/cap/failure states
+remain history; no after-finish research. Publication status comes from delivery.
+
+## Superseded87 selection — evidence preserved, not live work
+
 # DEV_AUX current selection — closed87, incremental TD actual-strength evidence
 
 DirectUSER TD/search-bootstrap route remains primary; realW-L evaluates strength,

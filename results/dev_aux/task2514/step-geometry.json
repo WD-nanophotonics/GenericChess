@@ -1,0 +1,222 @@
+{
+  "status": "ACTUAL_STEP_SCALE_DESCRIPTIVE_ONLY",
+  "arms": [
+    {
+      "seed": 1977,
+      "method": "td",
+      "update_unit": "CLOSED_EPISODE",
+      "actual_update_L2": {
+        "count": 44,
+        "zero": 0,
+        "RMS": 0.08443664254419948,
+        "sum": 3.3797321316463034,
+        "median": 0.07483481652100019,
+        "p95": 0.12691421481932927,
+        "max": 0.15720657714391972
+      },
+      "closed_episode_net_L2": {
+        "count": 44,
+        "zero": 0,
+        "RMS": 0.08443664254419948,
+        "sum": 3.3797321316463034,
+        "median": 0.07483481652100019,
+        "p95": 0.12691421481932927,
+        "max": 0.15720657714391972
+      },
+      "initial_to_final_L2": 1.5838894320119128,
+      "nodes": 1000000,
+      "seconds": 141.95471309998538,
+      "games": 44
+    },
+    {
+      "seed": 1977,
+      "method": "tree",
+      "update_unit": "COMPLETE_SEARCH",
+      "actual_update_L2": {
+        "count": 8948,
+        "zero": 3694,
+        "RMS": 0.0005081398020137087,
+        "sum": 1.7570096562748039,
+        "median": 2.4317029483697172e-05,
+        "p95": 0.0008833104282525155,
+        "max": 0.010759910399292826
+      },
+      "closed_episode_net_L2": {
+        "count": 53,
+        "zero": 0,
+        "RMS": 0.01242551343486781,
+        "sum": 0.5860080744306118,
+        "median": 0.009894097821371732,
+        "p95": 0.02170935060109875,
+        "max": 0.024579869685696854
+      },
+      "initial_to_final_L2": 0.31478193838212604,
+      "nodes": 1000000,
+      "seconds": 137.00657250001677,
+      "games": 53
+    },
+    {
+      "seed": 8173,
+      "method": "tree",
+      "update_unit": "COMPLETE_SEARCH",
+      "actual_update_L2": {
+        "count": 7691,
+        "zero": 2351,
+        "RMS": 0.0005348651209254485,
+        "sum": 1.7678260358950237,
+        "median": 4.529077372862784e-05,
+        "p95": 0.0008584638411369118,
+        "max": 0.00983793200122371
+      },
+      "closed_episode_net_L2": {
+        "count": 74,
+        "zero": 0,
+        "RMS": 0.00969775371321831,
+        "sum": 0.6514107959166588,
+        "median": 0.00818299651957271,
+        "p95": 0.015155127246985296,
+        "max": 0.024592460420426166
+      },
+      "initial_to_final_L2": 0.49095732803081343,
+      "nodes": 1000000,
+      "seconds": 126.47624170000199,
+      "games": 74
+    },
+    {
+      "seed": 8173,
+      "method": "td",
+      "update_unit": "CLOSED_EPISODE",
+      "actual_update_L2": {
+        "count": 59,
+        "zero": 0,
+        "RMS": 0.08534914352527569,
+        "sum": 4.3278615219189795,
+        "median": 0.07833843499619635,
+        "p95": 0.13303548029757556,
+        "max": 0.23393946484570172
+      },
+      "closed_episode_net_L2": {
+        "count": 59,
+        "zero": 0,
+        "RMS": 0.08534914352527569,
+        "sum": 4.3278615219189795,
+        "median": 0.07833843499619635,
+        "p95": 0.13303548029757556,
+        "max": 0.23393946484570172
+      },
+      "initial_to_final_L2": 2.2751415353470743,
+      "nodes": 1000000,
+      "seconds": 130.7260021000111,
+      "games": 59
+    },
+    {
+      "seed": 27182,
+      "method": "td",
+      "update_unit": "CLOSED_EPISODE",
+      "actual_update_L2": {
+        "count": 56,
+        "zero": 1,
+        "RMS": 0.08224503267527392,
+        "sum": 4.134547406145735,
+        "median": 0.06735838993232353,
+        "p95": 0.12306161776584698,
+        "max": 0.19293887846197794
+      },
+      "closed_episode_net_L2": {
+        "count": 56,
+        "zero": 1,
+        "RMS": 0.08224503267527392,
+        "sum": 4.134547406145735,
+        "median": 0.06735838993232353,
+        "p95": 0.12306161776584698,
+        "max": 0.19293887846197794
+      },
+      "initial_to_final_L2": 1.9472797804870852,
+      "nodes": 1000000,
+      "seconds": 134.6767318000202,
+      "games": 56
+    },
+    {
+      "seed": 27182,
+      "method": "tree",
+      "update_unit": "COMPLETE_SEARCH",
+      "actual_update_L2": {
+        "count": 7896,
+        "zero": 2588,
+        "RMS": 0.0005397834160464721,
+        "sum": 1.8460169345637167,
+        "median": 4.55159549576821e-05,
+        "p95": 0.000929889555662382,
+        "max": 0.009916982718069534
+      },
+      "closed_episode_net_L2": {
+        "count": 59,
+        "zero": 0,
+        "RMS": 0.01100501569439826,
+        "sum": 0.5889318870488132,
+        "median": 0.009120587701918157,
+        "p95": 0.0181003728457792,
+        "max": 0.023861952094112834
+      },
+      "initial_to_final_L2": 0.378301191996697,
+      "nodes": 1000000,
+      "seconds": 131.10547139999107,
+      "games": 59
+    },
+    {
+      "seed": 31415,
+      "method": "tree",
+      "update_unit": "COMPLETE_SEARCH",
+      "actual_update_L2": {
+        "count": 9461,
+        "zero": 3958,
+        "RMS": 0.0004524624843914788,
+        "sum": 1.7031659893938866,
+        "median": 2.5672807498078302e-05,
+        "p95": 0.0008405003453531342,
+        "max": 0.006340604225526736
+      },
+      "closed_episode_net_L2": {
+        "count": 54,
+        "zero": 0,
+        "RMS": 0.010221769847918769,
+        "sum": 0.46242953861700703,
+        "median": 0.00750899059590139,
+        "p95": 0.01727163030184245,
+        "max": 0.03259248859524153
+      },
+      "initial_to_final_L2": 0.2722648494783712,
+      "nodes": 1000000,
+      "seconds": 135.5779011999839,
+      "games": 54
+    },
+    {
+      "seed": 31415,
+      "method": "td",
+      "update_unit": "CLOSED_EPISODE",
+      "actual_update_L2": {
+        "count": 54,
+        "zero": 0,
+        "RMS": 0.07467783228012376,
+        "sum": 3.453504409869211,
+        "median": 0.06307963569968314,
+        "p95": 0.12215368498906029,
+        "max": 0.17438804181788334
+      },
+      "closed_episode_net_L2": {
+        "count": 54,
+        "zero": 0,
+        "RMS": 0.07467783228012376,
+        "sum": 3.453504409869211,
+        "median": 0.06307963569968314,
+        "p95": 0.12215368498906029,
+        "max": 0.17438804181788334
+      },
+      "initial_to_final_L2": 1.414364808645086,
+      "nodes": 1000000,
+      "seconds": 132.6180050999974,
+      "games": 54
+    }
+  ],
+  "scope": "Actualfloatingpointchanges (inclzeros) atdeclared perqueryTree/perepisodeTD updateunits, notsameunits orcausalnormmediation. One-sidederrors/PVobjectives andon-policydata differ. These areNOTindependentinitialTRAINRMScalibration, cannotbeusedtochooseeta foralreadyfrozenstudies orclaim RootStrapnormmatched. No newsearch/training/fitness."
+}

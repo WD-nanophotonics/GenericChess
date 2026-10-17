@@ -1,3 +1,37 @@
+# DEV_AUX segment88 —2026-10-17
+
+DEV_AUX completed incremental TD/Tree training and a separate Root/Tree initial
+RMS control;12MTRAIN nodes, all4initials, all960planned validationgames returned.
+Aendpoint gainsTD[.40625,.4375]/Tree[.2734375,.2890625]; algorithm difference
+crossed interval includes0. B Root+.125/Tree+.109375, no clear internal-node
+utility advantage; actualnorm drift1.50-1.70xRoot retained. Stable ratios OPEN.
+Allgradient/record audits, failure/UNKNOWN/cost evidence and reviewed33rdcapsule
+are delivered with source revision in DELIVERY_20261017_88.json; no automatic merge.
+
+Dot1792214792 reread paper/inline only, no88source/execution. Adopted static-node
+vsTDleaf gradient and mean/zero-loss conventions. Suggested Root control was
+registered separately and run after A closure; no current eta/cap changes.
+PRIMARY350abb80ef69fbdd8c71cad39cdfdb181b716c3a report anonymously read here:
+PRIMARY reports independent87convolution/317updates,931game owner-auditor replay,
+18searches and actual3typed Generic edges; no such execution rerun by AUX. 350abb reported the full87replay RUNNING. New1792216878/fixed629fd now reports
+CLOSED48017queries/7998701nodes/1074.125s; selectednewreport sections READ here,
+not executed. Its currentcallableCorecarrier/arena non-scoring predicates fixed
+byPRIMARY; no automaticmerge. SmallzeroRootexamples are not universal; full
+87RootRMSpositiveallarms.
+Future Core mainPV/qleaf mismatch is concrete source/owner-execution evidence;
+AUX search already carries selected leaf, so no new Core API/default/q campaign.
+
+Shared-baseline cancellation, complete history, budgets and cost distinctions
+adopted. No routine acknowledgements/extra workers/quiet windows or PRIMARY
+writes. B audit prose inherited A-specific wording; executedv1 copies retained,
+numeric identity proved, scope corrected. Future main premise is richer TRAIN
+exposure, with fresh actual W-L validation; human fitting/fullGeneric/stable
+ratios/equal-totalcost grid superiority remain unresolved. Freshv1transport35PASS/1missingoldDATAfixture failure preserved; originalZIP
+unchanged. Gitv2 restoresoneSHA-pinned87fixture andregenerates36tests/allaudits
+PASS281024legalplies. Livepostseal amendments documented. Delivery is not reading.
+
+---
+
 ## DEV_AUX2026-10-17 segment87 — incremental TD and frozen cost/strength curves
 
 DirectUSERroute is implemented: actualW-L assesses learned material, TD/search

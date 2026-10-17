@@ -290,9 +290,12 @@ permitted. Continuing authorization survives restart/compaction; no per-upload
 approval queue. Supported tools/escalation only; report actual persistent denial.
 Separate checkouts/branches, stops and machine safety remain mandatory.
 
-## DEV_AUX current direction — user implementation2026-10-15
+## Historical completed-player route2026-10-15 — superseded2026-10-17
 
-The approved complete-player experiment separates material choices from fixed
+This historical architecture is an optional control after the direct2026-10-17
+TD/search-bootstrap priority, never a learning prerequisite or WDL-only training
+rule. Actual W/L/D evaluates strength; search targets train. The old experiment
+separates material choices from fixed
 rule-win proofs and executable rank-decreasing strategies. Actual rule terminals
 alone earn rewards, UNKNOWN stays distinct. No declaration board-action shortcut
 or theoretical reward. See GENERIC_WIN_PROOF.md, LOCAL_MAINLINE.md and segment56.

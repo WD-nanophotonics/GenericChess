@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETE",
+  "panel": "root_control",
+  "expected": 192,
+  "actual": 192,
+  "nodes": 2957972,
+  "queries": 28940,
+  "seconds": 389.2035723000008,
+  "results": [
+    {
+      "seed": 1977,
+      "tallies": {
+        "initial": {
+          "W": 10,
+          "L": 3,
+          "D": 3,
+          "U": 0
+        },
+        "root": {
+          "W": 10,
+          "L": 3,
+          "D": 3,
+          "U": 0
+        },
+        "tree": {
+          "W": 10,
+          "L": 3,
+          "D": 3,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 8173,
+      "tallies": {
+        "initial": {
+          "W": 7,
+          "L": 6,
+          "D": 3,
+          "U": 0
+        },
+        "root": {
+          "W": 10,
+          "L": 3,
+          "D": 3,
+          "U": 0
+        },
+        "tree": {
+          "W": 10,
+          "L": 3,
+          "D": 3,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 27182,
+      "tallies": {
+        "initial": {
+          "W": 11,
+          "L": 2,
+          "D": 3,
+          "U": 0
+        },
+        "root": {
+          "W": 10,
+          "L": 2,
+          "D": 4,
+          "U": 0
+        },
+        "tree": {
+          "W": 10,
+          "L": 2,
+          "D": 4,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 31415,
+      "tallies": {
+        "initial": {
+          "W": 5,
+          "L": 4,
+          "D": 7,
+          "U": 0
+        },
+        "root": {
+          "W": 6,
+          "L": 2,
+          "D": 8,
+          "U": 0
+        },
+        "tree": {
+          "W": 6,
+          "L": 3,
+          "D": 7,
+          "U": 0
+        }
+      }
+    }
+  ],
+  "scope": "NEW methodcontrol,4initials/BOTH perquerylearners sameplainD2/staticstateprediction+gradient/tanh/half-square/detachedtargets: Rootusesonlyroot, TreeMEANallinteriors. SingleinitialTRAINRMSfactor c, etaRoot=.05c/etaTree=.05. 500ksearchednodes/arm, NEWTRAIN82000+episode, same16legalrandomprefix; no TDcredit/eta grids/fitnesscalibration. Initialnormmatched only oncalibration64plyrandomdistribution; lateron-policy gradients/norms/states maydiffer, recordallactualsteps, notpureinformationcausation. NEW8family95000-95007 validation/ALL4initials/roles/initial+Root+Tree frozenbeforecalibration. Caps900train/600eval, allU/missing/failednodes retained. Newsmalllogicalstudy forecast20-25mininclcalibration/engineering/4Mnodes/192games/audit; <2h, nofee/worker/oldcapextension. MustwaitallprecedingAproducersclose beforeanyBsearch."
+}

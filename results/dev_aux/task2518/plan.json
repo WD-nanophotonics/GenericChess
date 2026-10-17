@@ -1,0 +1,90 @@
+{
+  "arms": [
+    {
+      "seed": 1977,
+      "method": "root"
+    },
+    {
+      "seed": 1977,
+      "method": "tree"
+    },
+    {
+      "seed": 8173,
+      "method": "tree"
+    },
+    {
+      "seed": 8173,
+      "method": "root"
+    },
+    {
+      "seed": 27182,
+      "method": "root"
+    },
+    {
+      "seed": 27182,
+      "method": "tree"
+    },
+    {
+      "seed": 31415,
+      "method": "tree"
+    },
+    {
+      "seed": 31415,
+      "method": "root"
+    }
+  ],
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 500000,
+  "max_games": 256,
+  "H": 512,
+  "opening_seed_base": 82000,
+  "opening_plies": 16,
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 900,
+  "pins": {
+    "results/dev_aux/task2518/train.py": "afeacb73eee43cce749a37e1a75c95edb2870983cc67dcaad25b230ad6472ab8",
+    "results/dev_aux/task2517/calibrate.py": "db9fe32a9342304a0c2248a4a6d9e15a9b67653c79c9da56ea0a9c3fa0b19c91",
+    "results/dev_aux/task2517/plan.json": "dc1cbd3d1c6fa00f66541029f164f58e7a4970564cb7e82e0855049cd13a3939",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52"
+  },
+  "scope": "NEW methodcontrol,4initials/BOTH perquerylearners sameplainD2/staticstateprediction+gradient/tanh/half-square/detachedtargets: Rootusesonlyroot, TreeMEANallinteriors. SingleinitialTRAINRMSfactor c, etaRoot=.05c/etaTree=.05. 500ksearchednodes/arm, NEWTRAIN82000+episode, same16legalrandomprefix; no TDcredit/eta grids/fitnesscalibration. Initialnormmatched only oncalibration64plyrandomdistribution; lateron-policy gradients/norms/states maydiffer, recordallactualsteps, notpureinformationcausation. NEW8family95000-95007 validation/ALL4initials/roles/initial+Root+Tree frozenbeforecalibration. Caps900train/600eval, allU/missing/failednodes retained. Newsmalllogicalstudy forecast20-25mininclcalibration/engineering/4Mnodes/192games/audit; <2h, nofee/worker/oldcapextension. MustwaitallprecedingAproducersclose beforeanyBsearch.",
+  "evaluation": {
+    "families": [
+      95000,
+      95001,
+      95002,
+      95003,
+      95004,
+      95005,
+      95006,
+      95007
+    ],
+    "foe": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "depth": 2,
+    "nodes": 8192,
+    "seconds": 5,
+    "H": 512,
+    "cap_seconds": 600
+  },
+  "registration": "BEFORE first newTRAIN/fitness. ALLseeds and BOTHmethods, allregisteredcheckpoints retained, sharedinitialbaseline paidonce perpanel. No outcomes/root/seed/weight selection; no frozen capextensions. Internal TRAIN bootstraploss notsame scientificunits acrossmethods.",
+  "calibration": "results/dev_aux/task2517/result.json",
+  "preceding_closed": [
+    "results/dev_aux/task2512/result.json",
+    "results/dev_aux/task2513/endpoint/result.json",
+    "results/dev_aux/task2513/midpoint/result.json",
+    "results/dev_aux/task2516/different_foe/result.json"
+  ]
+}

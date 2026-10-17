@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "tests": 36,
+  "failures": 0,
+  "targets": [
+    "task2492/test_learning.py",
+    "task2492/test_episode.py",
+    "task2501/test_search.py",
+    "task2504/test_bounded.py",
+    "task2511/test_generic.py",
+    "task2512/test_methods.py",
+    "task2517/test_root.py"
+  ],
+  "scope": "Existing32learning/search/fullSessionboundarychecks plus2new method controls:64independenttoyminimax interval/selectedleaf checks and finite-difference halfsquaredmean one-sidedgradient including inactivebound/pawnfixed/partialdiscard. Same source/rulelibrary, no externalengine/fullgamelearning proof. Two newRootstatic-vs-PV selection andinitialRMS(includingzeros/zerogate)controlsPASS separately. Freshcombined36-test v2replay PASS with explicitpriorfixture; v1missingdependencyfailure retained.",
+  "observed_at": "2026-10-17T05:35:20.681061+00:00",
+  "fresh": {
+    "status": "PASS_FRESH_EXACT_SOURCE_TESTS_ALL_UPDATES_AND_ACTUAL_GAME_RECORDS",
+    "archive": "DELTA_REPRO_20261017_88.zip",
+    "archive_sha": "1375cf3eb50a2818407791cfb32bb0d142daa1b77e7abaf0c36c8bbcfcf88717",
+    "payloads": 197,
+    "additional_fixture": {
+      "path": "results/dev_aux/task2505/queries.jsonl",
+      "sha256": "6c49693f460e34abee981654e038f18583b7216d1ce7a88a31a55ac019a95aba",
+      "source_archive": "DELTA_REPRO_20261017_87.zip",
+      "source_archive_sha": "5b1d8af5ddf32ab2d14ef2e81ffafb13a3ef8bf941be81ff68117289566678bf"
+    },
+    "dispatcher": "results/dev_aux/task2515/fresh_v2.py",
+    "dispatcher_sha": "36c21d3079070c13cb73f592aac756c944a1ed8cc705ac33f55ead9794e96840",
+    "tests": 36,
+    "legal_plies": 281024,
+    "seconds": 37.43186069998774,
+    "scope": "FreshignoredUUID/Python-S/emptyPYTHONPATH/extractedsourceasserted, correctedv2dispatcher+oneexact87testfixturedependency; original88ZIP/v1failurepreserved, explicitexistingchess+pytestdeps. Sealedderivedoutputsparkedbeforecompute; independentlycodedallTree/Rootgradients/forwardTD/calibration/allactualrecord/queryaudits regeneratedandequalexceptauditwalltime. No newproducer/training/fitness/alloldconsumerrerun/externalengine."
+  }
+}
