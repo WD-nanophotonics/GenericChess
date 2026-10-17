@@ -1,8 +1,8 @@
-# DEV_AUX91 — study closed, session/delivery still active
+# DEV_AUX91 — closed61.598minutes/safe_checkpoint; scienceOPEN
 
 DirectUSER TD/search-bootstrap route; own sidemission/PUBLIC, PRIMARYreadonly,
 noAgents/Goals/Core/default/UI/Nativepriceactivation. Original91clock9:57:01UTC
-notreset; alllearning/evaluationproducersCLOSED, officialfinishnotyetissued.
+notreset; alllearning/evaluationproducersCLOSED, officialfinishaccepted61.598min/6stages. No researchafterfinish.
 
 NEWpairedfixed5/free6 ALL4rulesx4initials exact200knodes/arm:6.4M2049.225s,
 6512episodes6342actualterm170U/4494updates. Shared1536NEWfamily151001..8
@@ -829,3 +829,5 @@ unchanged. 2533source/result areboundedclosingversioningofPRECOMPLETEDwork,
 OUTSIDEimmutable35thZIP, notafterfinishresearch. OfficialEND/DELIVERY bindevidence.
 
 91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.
+
+91officialEND 2026-10-17T10:58:37.177930+00:00/61.598min/safe_checkpoint. S03d4a8635bef8d0e203de81eb6335521ba366e36 fullremote/PUBLIC23filesverified/clean, fixedSlacksent1792234599/readback; partner91readingexecutionUNCONFIRMED. Closingonlyendmetadata/Git/remotechecks, notnewresearch. SeeDELIVERY_20261017_91.json.

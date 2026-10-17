@@ -31,7 +31,7 @@ window/monitor/worker/fee changes. LargequeriespublicexactZIProute; rawaccount/
 Slackmetadata staysignored.38controlsPASS/allfiguresinspected.36thcapsule,
 fresh11outputs andfullremote/Publicdelivery getactualseparatereceipts; nofake
 publication/partner-readingclaim. Previousfailures/caps/unknowns kept. Scientific
-OPEN; auxiliarysidmissiononly/noautomaticmerge, sandbox/master/visibilitymutation.
+OPEN; auxiliarysidemissiononly/noautomaticmerge, sandbox/master/visibilitymutation.
 
 # DEV_AUX90 — Generic TD curve and positive-anchor correction (study closed)
 
@@ -2481,3 +2481,5 @@ findsall4rank5/oldnullbreak002/0042153/2120leaves; notID/WDLproof/newgate. Scrip
 resultcompletedbeforefinish, nowversionedoutsideimmutable35ZIP. Noafterfinishresearch.
 
 91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.
+
+91officialclosure61.598minutes/safe_checkpoint/6stages; source03d4a8635bef8d0e203de81eb6335521ba366e36 reviewed/pushed/fullremote/PUBLIC23anonymousfiles+ZIPexact/clean BEFOREfinish. Fixedevidence1792234599.778629 sent/readback; Dot/PRIMARY91readingexecutionunconfirmed. Endingmetadata-onlyversioning follows, no scientificworkafterfinish.
