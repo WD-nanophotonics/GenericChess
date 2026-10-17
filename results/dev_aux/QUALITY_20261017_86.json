@@ -1,0 +1,50 @@
+{
+  "status": "REVIEWED_SCOPED_POSITIVE_INCREMENTAL_TD_LEARNING",
+  "science": "OPEN",
+  "all_producers_closed": true,
+  "primary_method": "Episode-frozen TDLeaf(lambda=.95), random material-only Chess, fixedpawn1, no solver prerequisite",
+  "actual_heldout_replication": {
+    "games": 64,
+    "all_terminal": true,
+    "new_families": 8,
+    "initializations": 2,
+    "uniform_foe": true,
+    "W_minus_L_gains": [
+      0.25,
+      0.5625
+    ],
+    "descriptive_family_envelopes": [
+      [
+        -0.1875,
+        0.5625
+      ],
+      [
+        0.0625,
+        1.125
+      ]
+    ],
+    "limits": "First crosses0; twoinitializations share8families; no stable/universal/human-ratio or full1997replication claim"
+  },
+  "actual_tests": 101,
+  "new_tests": 13,
+  "new_chess_legal_plies": 51928,
+  "old_partial": {
+    "returned_games": 115,
+    "partial_commits": 3,
+    "never_started": 76,
+    "cap_reset": false
+  },
+  "session_end": {
+    "id": "4b7e29ad-081c-4dea-9b7a-6507e34202e8",
+    "started_at": "2026-10-17T02:37:21.991809+00:00",
+    "ended_at": "2026-10-17T03:52:38.650103+00:00",
+    "elapsed_minutes": 75.278,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 6,
+    "duration_gate_passed": true
+  },
+  "verified_source_sha": "10ac0500688c143d9dfc6b0709b56b3c5d443260",
+  "public_before_finish": true,
+  "slack_result_ts": "1792209129.785009",
+  "dot_read_execution": "Final revision unconfirmed; lastconfirmed papers+inline only"
+}

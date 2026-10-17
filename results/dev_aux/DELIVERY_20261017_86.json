@@ -1,0 +1,90 @@
+{
+  "status": "SOURCE_VERIFIED_PUBLIC_BEFORE_SESSION_FINISH",
+  "source_sha": "10ac0500688c143d9dfc6b0709b56b3c5d443260",
+  "verification": {
+    "status": "VERIFIED_FULL_REMOTE_SHA_ANONYMOUS_PUBLIC_EXACT_FILES",
+    "phase": "source",
+    "remote_sha": "10ac0500688c143d9dfc6b0709b56b3c5d443260",
+    "local_sha": "10ac0500688c143d9dfc6b0709b56b3c5d443260",
+    "public": true,
+    "anonymous_repo_api_status": 200,
+    "files": [
+      {
+        "path": "results/dev_aux/SEGMENT_20261017_86.md",
+        "status": 200,
+        "sha256": "652aaf140e1f731a9a802c605550368c1e24649a74c7035686906f0742723d29",
+        "bytes": 8406
+      },
+      {
+        "path": "results/dev_aux/task2492/learning.py",
+        "status": 200,
+        "sha256": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+        "bytes": 7366
+      },
+      {
+        "path": "results/dev_aux/task2492/episode.py",
+        "status": 200,
+        "sha256": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+        "bytes": 1703
+      },
+      {
+        "path": "results/dev_aux/task2497/result.json",
+        "status": 200,
+        "sha256": "f1e51bdd2c6c7cc897e844435b38f6465028ee9cd2b903d009a6887dd9a80598",
+        "bytes": 1510
+      },
+      {
+        "path": "results/dev_aux/task2496/result.json",
+        "status": 200,
+        "sha256": "973e2782e6439fbe52a0b9c780c135f1dbc3d36624f9f130dbd7621ec13f181e",
+        "bytes": 937
+      },
+      {
+        "path": "results/dev_aux/task2500/result.json",
+        "status": 200,
+        "sha256": "30304a64f9e8171441419e6f65f1e0dfdf206849fc7d2d944b60a7ef1fd487e9",
+        "bytes": 945
+      },
+      {
+        "path": "results/dev_aux/task2500/audit.json",
+        "status": 200,
+        "sha256": "1905ae88721ce981590fb888cc4f99594df6f249226c8c690c4b108c76608681",
+        "bytes": 7155
+      },
+      {
+        "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_86.json",
+        "status": 200,
+        "sha256": "48bc8ac1e62afedc65201efc59ea51c2d289f0738f19686ba2e8646f9e1e9324",
+        "bytes": 9907
+      },
+      {
+        "path": "docs/research/LOCAL_MAINLINE.md",
+        "status": 200,
+        "sha256": "49585852bd79932f18c63e766bdb70678e55f6972fce1082553e9d1bc0b415fd",
+        "bytes": 35678
+      },
+      {
+        "path": "results/dev_aux/DELTA_REPRO_20261017_86.zip",
+        "status": 200,
+        "sha256": "3339b9f87b2d65cc0ef23dd2d8b26c96a2fae7fec729dbd122697e0b069b10db",
+        "bytes": 10270468
+      }
+    ],
+    "clean": true,
+    "observed_at": "2026-10-17T03:51:33.347048+00:00"
+  },
+  "session": {
+    "id": "4b7e29ad-081c-4dea-9b7a-6507e34202e8",
+    "started_at": "2026-10-17T02:37:21.991809+00:00",
+    "ended_at": "2026-10-17T03:52:38.650103+00:00",
+    "elapsed_minutes": 75.278,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 6,
+    "duration_gate_passed": true
+  },
+  "archive_sha": "3339b9f87b2d65cc0ef23dd2d8b26c96a2fae7fec729dbd122697e0b069b10db",
+  "slack_result_ts": "1792209129.785009",
+  "slack_root_ts": "1792207500.820269",
+  "final_metadata": "This bounded closing metadata commit will be independently checked at fullremoteSHA. No new science after sessionfinish.",
+  "read_execution": "Slack delivery confirmed; final revision read/execution unconfirmed"
+}
