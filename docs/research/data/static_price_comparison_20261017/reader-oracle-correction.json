@@ -1,0 +1,8 @@
+{
+  "all_ordinary_material_checks_matched": 12200,
+  "cause": "Reader assumed full-game-ply mate distance; Native root_ply_offset defaults0 and returns current-query-root-relative mate distance.",
+  "evidence": "All515residuals exactly equal signedparentplyoffset; no alteredrecord/query/cap/product. Corrected oracle checks1e8-lenPV.",
+  "initial_residuals": 515,
+  "product_bug_claim": false,
+  "source": "generic_chess/_native/native_module.c:root_ply_offset initialization"
+}

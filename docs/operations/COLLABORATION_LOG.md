@@ -4104,3 +4104,28 @@ Publication scope correction: three replacement copies exclude a legacy module w
 
 Eightknownolderarchivegroups now have distinct publication copies:10actualpersonalpathmembers changed;2893remainingpayloads identical/numericJSON equal. Sevenisolated Nativebuilds and11sourcetiers give3411pass/10NativeSkip;404pass/74missingtempparentsetup errors fromfirstharness retained. Product/default/normalbinary/AUXunchanged. OldGit/widerlegacytextnotgloballyclean.
 AUX90completeparent+oneDotreply readONLY, no90source/execution orcurrentcurvemodification. PRIMARYnew48NativeD2/16fullroot/-1,0,+1Pcontrols retainexacttablesandCoreoptimalmembership; existingAPI sufficient. CurrentPRIMARYmedian normalization is differentoptimizer:294/613existingordinarypredictions change atfixedscale10,max.24067. KeepAUXoptimizer ifa futureNativequeryconsumertrial is selected. No newlearner/fitness/pricefit. Newreport andcheckedsource/data preserve failedharness/invalidDRAW hypothesis and unreaduniversityPDFscope.
+
+
+### 2026-10-17 PRIMARY static comparator and AUX90 executed evidence
+
+PRIMARY closes registered352physical/384logical fixed-Unit games,53.656s,
+12744D2queries/2684467nodes,306terminal46UNKNOWN. Static cheap comparator useful
+on four exposed rules; learned-initial utility remains unresolved. ALL25learned
+first-divergences are genuine source-float preferences, not256rounding/ties.
+Explicit Unit role reuse cancels unknown coefficients without declaring draws;
+conditional family envelopes and per-rule losses retained. FullCore history/PV
+reader passes; initial mate-distance oracle and lazy-source packaging errors
+preserved privately and corrected, no product or frozen fitness changes.
+
+AUX90final340694acff94ccdfbc9ed06d42faa55066aad26b read; source6ab620e7
+actually restored196hashes/38owner tests/9regenerated audits/107984logicalplies,
+78.264s, all non-time fields equal. Post-seal span source also executed:5/5/5/5,
+002/0042153/2120null-breaking leaves; oldshortsample relation is not permanent.
+This is owner-source reproduction, not independent algorithm authority or new
+fitness. New90gain is foe/seed dependent; no mismatched89/90methodcomparison.
+AUX91root+completeDotreply readONLY; no unpublished code/checkout changes.
+Adopt future candidate-turn clock/sign/all-arm cost caution, not newpolicy or
+approval gate. AUX owns six-free paired learning and future paid-WDL design;
+PRIMARY keeps existing servingAPI/256 and does not replace AUXoptimizer with its
+median-normalized TD. No default/model/API/Native/product change this follow-on.
+Exact report/data/capsule: RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.

@@ -1,0 +1,66 @@
+{
+  "status": "PASS_EXTRACTED_SOURCE_AND_ALL_REGENERATED_READERS",
+  "members": 203,
+  "payloads": 202,
+  "zip_bytes": 1869301,
+  "zip_sha256": "44546cf9a64b8b1510093e61d295aa1c8597ae2b75624e083141280dd78dbb6e",
+  "all_actual_members_inspected": true,
+  "contains_native_binary": false,
+  "contains_raw_slack_or_accounts": false,
+  "payload_hashes_checked": 202,
+  "derived_outputs_parked_before_regeneration": 7,
+  "non_time_derived_outputs_identical": true,
+  "search_disabled_replay_queries": 12744,
+  "pv_edges": 25193,
+  "core_commits": 12744,
+  "isolated_native_build": true,
+  "signed_native_calls": 48,
+  "normalization_ordinary_inputs": 613,
+  "normalization_changed_predictions": 294,
+  "real_primary_stop_flags_bound": true,
+  "extra_games_or_training": 0,
+  "steps": [
+    {
+      "script": "reader.py",
+      "exit_code": 0,
+      "seconds": 29.51600000000326
+    },
+    {
+      "script": "analyze.py",
+      "exit_code": 0,
+      "seconds": 0.625
+    },
+    {
+      "script": "role-coupling.py",
+      "exit_code": 0,
+      "seconds": 0.40600000001722947
+    },
+    {
+      "script": "first-divergence-control.py",
+      "exit_code": 0,
+      "seconds": 1.6089999999967404
+    },
+    {
+      "script": "learned-change-fidelity.py",
+      "exit_code": 0,
+      "seconds": 2.0160000000032596
+    },
+    {
+      "script": "build_native_zig.py",
+      "exit_code": 0,
+      "seconds": 10.125
+    },
+    {
+      "script": "consumer.py",
+      "exit_code": 0,
+      "seconds": 2.422000000020489
+    },
+    {
+      "script": "normalization.py",
+      "exit_code": 0,
+      "seconds": 0.40600000001722947
+    }
+  ],
+  "seconds": 47.5,
+  "scope": "Exact source restore and derived-output regeneration. No frozen fitness producer rerun. Optional signed serving control uses own rebuilt Native, not normal binary. Costs are qualification costs, not original producer time."
+}

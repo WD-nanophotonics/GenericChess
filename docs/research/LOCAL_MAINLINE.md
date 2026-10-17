@@ -8,15 +8,37 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work - 2026-10-17
 
-PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md closes the eight known
-current archive-copy corrections, not historicalGitpurge. New actual48signed/zeroP
-Nativequeries allpass on16exposedroots withfullstate, existingAPI unchanged.
-PRIMARYmedian-normalizedTD is a DIFFERENToptimizer fromAUXfixedP:294/613existing
-ordinaryleafpredictions change, max.24067. KeepAUXoptimizer in anyfutureNative
-queryadapter; no newlearner/default. AUX90parent+Dotreply readONLY, curveuntouched.
-Next concrete scientific option is one registered fixed-opponent rule-onlystatic
-baseline diagnostic versus frozen endpoint/initial models; preserve allinitials,
-newfullprefixes and UNKNOWN, no label fitting or claimedall-domainstrength.
+RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.md closes the registered
+352physical/384logical fixed-Unit comparator on four TRAIN-exposed rules. Static
+39W17L3D5U retains useful cheap comparison: explicit physical-role reuse bounds
+[.265625,.421875], conditional within-rule family envelope[.109375,.59375].
+Learned-own-initial bounds[-.265625,.28125],103/128same records,3better/3worse;
+ALL25firstdivergences nevertheless preserve source-floating optima and change
+floating preference sets. Keep256 here, no new precision/API/default/learner.
+Whole12744queries/25193PVedges replay with complete histories; first mate-score
+oracle and missing lazy-import capsule failures are preserved and corrected.
+
+New fixedAUX90 is now READ AND EXECUTED:196payload hashes,38owner controls,
+9regenerated audits/107984logicalplies; same non-time outputs. Separate post-seal
+source execution finds free-PV ranks5/5/5/5 and2153/2120oldnull-breaking leaves
+on002/004. Old89sample rank deficiency is superseded as a general bottleneck,
+not erased historically. New streams/initials/work/H prevent a pure-data ablation.
+Final90uniform gain[0,.25], fixedrandomfoe[.2265625,.3671875]; descriptive family/
+seed envelopes cross0. No cross-study89-versus90 method comparison or uniqueprice
+claim. AUX91 fixed/freeP study remains its own unpublished lane; new root and
+Dot design reply read ONLY, not91code/execution. Candidate-turn TD signs/clock,
+per-episode theta and all-arm paid work are future design cautions, not newpolicy.
+All32newroot complete records are distinct and none match647saved89TRAINrecords;
+not a Position novelty/unseenrule/holdout claim, no filtering. Next inspect
+published91 evidence when consequential, or a concrete full-semantic
+consumer dependency; do not repeat closed89/90 or launch a competing learner.
+
+PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md closes eight known current
+archive-copy corrections, not historical Git purge/global clean. Actual48signed/
+zeroP Native calls pass. PRIMARY median-normalized TD is a DIFFERENT optimizer
+fromAUX:294/613old ordinary predictions change,max.24067 atfixedscale10. Portable
+normalization.py and exact89support reproduce it. KeepAUXoptimizer in any future
+query-only Native adapter; no newlearner/default or authorization queue.
 
 FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md is current follow-on.
 Actual v3 control collector now uses a private standard Session copy, retaining
@@ -310,7 +332,7 @@ question under the current priority. Do not expand Native storage, invent a new
 diagnostics/fallback framework, or rerun old q campaigns merely because this
 boundary is repaired. NEXT_WORK.md carries the next executable question.
 
-## Required error follow-on —2026-10-16
+## Required error follow-on â€”2026-10-16
 
 The capacity follow-up kept the conservative S4 storage margin:76 typed actions
 and152 imported-Position child controls do not justify widening its boundary.
@@ -410,7 +432,7 @@ label trust/coverage and actual decision value; define lawful counterfactual or
 ranking targets before claiming unique piece prices; compare frozen constants,
 small interaction tables and rule-conditioned sparse models by total cost.
 Transfer/curriculum tests should change one rule axis and separate zero-shot,
-fine-tune/scratch/forgetting. A5–10minute usable-player target is a vision.
+fine-tune/scratch/forgetting. A5â€“10minute usable-player target is a vision.
 No architecture mandate, extra learner or immediate new training follows.
 NATIVE_TEACHER_AND_TRANSFER_20261016.md retains the completed feasibility study.
 
@@ -470,7 +492,7 @@ freeze rootdegree/nodeforecast BEFOREqueries, notextendthisfailedtarget. Native
 cap remains explicit; no task/featuretruncation orAUXlearner follows.
 
 
-## Completed Core Position input follow-on —2026-10-17
+## Completed Core Position input follow-on â€”2026-10-17
 
 The old320degree/256node D0 failure stays. Prospective fresh root forecasts now
 allow8/8 completed D1 and4/4 D2 Core calls with full5145 inputs; ephemeral Core3/9
@@ -507,7 +529,7 @@ shortline isnot evidence thewhole ruleis unplayable. Threecases remain; nofilter
 newsolver, pricefit, gamecampaign or changeofgenericdomain follows automatically.
 
 
-## Corrected input admission and optional opening preference —2026-10-17
+## Corrected input admission and optional opening preference â€”2026-10-17
 
 Dot's new action-relative effect objection was actual, not a new approval gate.
 The prior max-only research bridge accepted two max2 victim-filter rules with
@@ -534,7 +556,7 @@ competing AUX solver, repeated toy cost panel or implicit default change follows
 AUX80 parent+oneDotreply read ONLY, no80 code/report execution or adoption.
 
 
-## Native actor binding and conditional continuation —2026-10-17
+## Native actor binding and conditional continuation â€”2026-10-17
 
 The research guard follow-on exposed an accepted production set_current_type
 case: Core4/Native6 andwrong3/9. Fix the three Native effect operand resolution
@@ -561,7 +583,7 @@ freeze theirmeasure before comparison; no unique price/return/humanfit claim.
 ACTOR_BINDING_AND_CONDITIONAL_CONTINUATION_20261017.md owns exact ratios, budgets,
 original failures and frozen/current source tiers. AUX80 remains read-only context.
 
-## Semantic sampling and complete-history boundaries —2026-10-17
+## Semantic sampling and complete-history boundaries â€”2026-10-17
 
 SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md owns exact source/data tiers.
 18retained fullparents/72clonearms/14590children prove conditional sampling means

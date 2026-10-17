@@ -586,3 +586,22 @@ This Python-only capability leaves Native C/the loaded kernel unchanged; restart
 a consumer process to load updated Python if necessary, preserving its records.
 No UI Test process or another Agent's checkout is changed. Full source/failure/
 qualification tiers: research/NO_PROGRESS_SEARCH_CONTEXT_20261017.md.
+
+
+## Optional material-price serving contract —2026-10-17
+
+Existing LearnableMaterialCheckpoint loader and explicit Native material_scale256
+can serve signed/zero board-P without a schema/API change:48actualD2 controls
+retain all six board/hand channels and full semantic state/history. Scope is the
+published four-rule candidate packet, not all-domain qualification or activation.
+Do not replace the owning AUX learning loop: PRIMARY normalize_and_clip changes
+294/613ordinary89predictions at fixed scale10; coefficient+temperature algebraic
+rescaling is not fixed-step optimizer equivalence. Preserve source coefficients,
+actual PV typed bindings, terminal-constant zero gradients, non-scoring explicit
+refusal, query-work units and complete history. Tied actions and online trajectories
+need not match. Current neutral/declaration counterfactual TD remains explicitly
+unsupported; do not reinterpret numeric0 as a draw or truncate the generic target.
+No UI, AUX checkout, installed default/model or normal Native binary is changed.
+The registered static comparison independently preserves source-floating optima
+at all25actuallearned-initial first divergences; precision work has no observed
+need in this scope. Source/reproduction: research/RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.md.
