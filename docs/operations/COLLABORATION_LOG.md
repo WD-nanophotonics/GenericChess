@@ -4068,3 +4068,17 @@ require more WDL/coverage proofs. Full26page TDLeaf manuscript read and selected
 formula/figure/appendix pixels checked; historical human-price/clock/blunderclip/
 performance claims are not imported. Timing scope, artifact provenance and full
 technical source/evidence are preserved in the purpose report/new capsule.
+
+
+### Owned publication sequencing failure and correction
+
+PRIMARY's first follow-on Native packet accidentally included two incidental
+local Windows source-path JSONs. The Python content review raised; PowerShell
+continued subsequent commit/publish because the Agent did not check native exit
+status. Published5686c1cb is affected. No credential/raw Slack export was found.
+Currenttree V1is retracted and V2drops only those files; retained source/data
+hashes match actual executed originals. Exact originals stay private. OldGit
+history still contains the paths; no force/history rewrite is authorized.
+PRIMARY promptly told the user and repairs checked sequential publication and
+exact archive-member selection, not a new approval framework. Current/public
+V2verification is distinct from historical removal and no false purge is claimed.

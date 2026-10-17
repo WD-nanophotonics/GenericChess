@@ -29,3 +29,15 @@ Use qualification.json for actual restored-source execution, not source review
 as a substitute. Original smaller pilot, imperfect timing, fixed source models,
 all UNKNOWNs and later corrections remain. Source files for the original213member
 capsule are reused unchanged; its hash remains immutable and separately published.
+
+
+V2 publication correction: the first capsule accidentally included two diagnostic
+source-paths-private.json files with local Windows user/project paths. The failed
+Python review was followed by commit/publish in a PowerShell command that did not
+stop for native exit failure. This was an Agent command-sequencing error, not lack
+of user authorization or an approval-review rejection. V1 is removed from the
+current tree; its exact original remains private evidence. Git5686c1cb history
+still retains it because force/history rewriting is not authorized. No credential
+or raw Slack/account export was found. V2 drops ONLY those two files; every retained
+source/input/result hash is identical, and all members were rechecked. Privacy
+review and mutations now execute as separate sequential checked operations.

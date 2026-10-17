@@ -229,5 +229,13 @@
       "Candidate generator v1 syntaxerror occurredbeforeanyoutput; corrected spacing and savedfailedsource.",
       "Smoke actualtime-limit logging made explicit; prior and final16games retained, not32independent samples."
     ]
+  },
+  "publication_correction": {
+    "affected_commit": "5686c1cb9fe2339cf7220620e5bf7ac17cda8aef",
+    "data": "Two incidental local Windows username/project-path diagnosticJSONs, no credentials/rawSlack found",
+    "cause": "AgentPowerShellnativefailuresequencing; a failedreview incorrectly followedbycommit/publish",
+    "current_tree": "V1removed, V2has302members/301payloadsanddropsONLYthosefiles, retainedsource/input/resultbytesunchanged",
+    "history": "Oldcommitstillcontainslocalpaths; noforce/historyrewritewithoutnewuserauthorization",
+    "remediation": "Separatechecked review/commit/publish toolcalls, exacttechnicalmemberallowlists, frozenunsafeV1packager; not newuserapprovalqueue"
   }
 }

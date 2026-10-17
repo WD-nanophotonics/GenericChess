@@ -293,10 +293,6 @@
       "bytes": 37261,
       "sha256": "2dfc25b91643242b336277eaa5cc1710acde8c88a0414031b10549001c4439b3"
     },
-    "source/.local_agent/spatial-snapshot-20261017/native-td-consumer/source-paths-private.json": {
-      "bytes": 285,
-      "sha256": "a9796d58dc07b10b931d38ac238bc3fbea2a8466bd88f7cf0f8d1b7a8d6fc37e"
-    },
     "source/.local_agent/spatial-snapshot-20261017/native-td-leaf.py": {
       "bytes": 8132,
       "sha256": "e0ad5e863cdaae3f963c1efa8b01fbae0eb1925046bd7256970e1daeb0692098"
@@ -312,10 +308,6 @@
     "source/.local_agent/spatial-snapshot-20261017/native-td-leaf/result.json": {
       "bytes": 2508823,
       "sha256": "315311710e4aa4434a23ef7fc4ab5c2739e69798b1dde5ac143661cedceaf6f8"
-    },
-    "source/.local_agent/spatial-snapshot-20261017/native-td-leaf/source-paths-private.json": {
-      "bytes": 285,
-      "sha256": "a9796d58dc07b10b931d38ac238bc3fbea2a8466bd88f7cf0f8d1b7a8d6fc37e"
     },
     "source/.local_agent/spatial-snapshot-20261017/null-directions.py": {
       "bytes": 5743,
@@ -1217,5 +1209,10 @@
       "bytes": 1344,
       "sha256": "b9a515c830396328c246d03436c7ca4ba0937015662e05b9a0cda5ded37bd8dd"
     }
+  },
+  "privacy_correction": {
+    "incident_commit": "5686c1cb9fe2339cf7220620e5bf7ac17cda8aef",
+    "removed": "Two incidental source-paths-private.json files; source/input/results otherwise byte-identical. Absolute local Windows user/project paths were mistakenly included. No password/token/rawSlack was found.",
+    "history": "CurrentHEAD replacement only; oldGitcommitremains without authorized historyrewrite. No forcepush."
   }
 }

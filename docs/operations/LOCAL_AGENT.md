@@ -150,6 +150,21 @@ No force-push or automatic untested master promotion. Report actual failures.
 Keep unrelated unfinished changes out of a bounded document delivery; if owned
 changes are temporarily stashed, restore them and verify exact file hashes.
 
+## Stop on failed native commands before publication
+
+A native Python error does not stop default PowerShell execution. Run content
+review, inspect its successful result, commit, and publish as SEPARATE sequential
+checked operations. If commands must share a script, test $LASTEXITCODE after
+EVERY native command and throw on nonzero; ErrorActionPreference alone is not
+a sufficient native-exit guard. A failed review must never be followed by commit
+or publish. This is operating correctness, not a new approval/consent queue.
+For publication copies use an exact technical-member allowlist, not all-JSON
+globs over private diagnostic directories; inspect actual contents as AGENTS
+requires. Source origin by itself does not revoke the user's project-data grant.
+The2026-10-17 first Native TDpacket violated this through two incidental local-path
+JSONs. CurrentV2 excludes them; the bad commit remains historical evidence and
+must not be restored/retried. No force/history rewrite without NEWuser authority.
+
 ## Finish, real limits and failure reporting
 
 Before final RESEARCH reply:

@@ -206,7 +206,7 @@ run, claim identical future updates/games, or insist on a larger proof gate befo
 use. The portable packet already runs an actual small Generic AI through the
 existing backend; the scientific full-domain/strength/stable-ratio goals remain
 OPEN. The code and all raw technical receipts are in a separate immutable
-native_td_candidate_packet_20261017 capsule; the preceding213member capsule stays
+native_td_candidate_packet_20261017_v2 capsule; the preceding213member capsule stays
 unchanged. No Native binary or private Slack/account output is published.
 
 ### Original-method reading and project consequence
@@ -235,3 +235,36 @@ smoke records and all657non-timing query fields match originals. The restored
 full-stream run takes43.063seconds versus44.188live, not identical walltime.
 No Native binary is supplied. This is executed source restoration, distinct from
 source review, source-only skips, original owner reproduction and a new learner.
+
+
+## Publication failure and current-tree correction
+
+The first follow-on V1capsule at5686c1cb was source-executed but NOT privacy-clean:
+it mistakenly included two incidental source-paths-private.json files containing
+local Windows username/project paths. A Python content check correctly failed;
+Agent command sequencing then let PowerShell continue to commit and publish.
+This was my error, not a platform-review rejection or missing user authorization.
+The preceding claim of no private local paths for that V1archive was wrong.
+Full member inspection finds ONLY those two path records; no password/token or
+raw Slack/account export was found. Exact originals and failure evidence remain
+private. V1is removed from the CURRENTtree, with a new V2technical archive; no
+already-published history is rewritten or falsely called purged. The bad Git
+commit still retains paths; complete historical removal requires new explicit
+history-rewrite authorization because the user forbids force-push.
+
+Operating repair: review and mutations execute as separate checked operations;
+PowerShell native exit codes are checked, and exact technical-member allowlists
+replace all-JSON glob selection. Existing standing project publication authority
+is unchanged; this creates no approval queue. V2drops only the two incidental
+path files; every retained source/input/result hash matches the actually executed
+V1source. Its direct executable checks and hash qualification are recorded below.
+
+Current V2: 302members/301payloads, 1581801bytes,
+SHA256c4ded657b84f1ad236981dbce0a18c8f449a480fa2b58fe90f98d3c54c19e773.
+
+V2was then actually extracted separately:32checkpoint calls and16games/468queries
+pass again with identical full game records, no AUX import and allGenericPython
+from that restored source. The earlier657pair execution remains justified only
+through unchanged source/input hashes; it is not falsely called a new V2full-run.
+All retained V2members pass actual privacy/content scan. OldGit5686history has
+NOT been purged; currenttree cleanup is the maximum performed under no-force.

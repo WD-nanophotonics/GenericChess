@@ -30,6 +30,13 @@ no default/converter API or deployed strength claim follows. Immediate next:
 inspect useful newlypublished AUX curve then test one concrete deployment need;
 keep whole-domain target, terminal/UNKNOWN and per-rule channel distinctions.
 
+Operational correction: firstNativepacket5686c1cb included two incidental local
+pathJSONs after a failed Pythonreview did notstop PowerShell. Usernotified;
+currentV2retractsV1/dropsONLYthosefiles, retainedsource/resultsunchanged. OldGit
+history persists; noforce/historyrewrite withoutnewuserauthority. Review/mutation
+are now separatecheckedcalls andarchivepayloadswhitelisted. Thisdoesnot revoke
+projectpublicationgrant orreplace scientific mainline withanapprovalqueue.
+
 Actual candidate packet now supplies16standard source-initial/endpoint
 checkpoints +4rules+16fullsemantic records, noAUXimports/default/championchange.
 16compatibilitygames onalleightlearnedmodels/bothroles finish14terminal2UNKNOWN,
