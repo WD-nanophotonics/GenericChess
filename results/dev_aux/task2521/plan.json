@@ -1,0 +1,59 @@
+{
+  "arms": [
+    {
+      "seed": 1977,
+      "method": "p16"
+    },
+    {
+      "seed": 1977,
+      "method": "p64"
+    },
+    {
+      "seed": 8173,
+      "method": "p64"
+    },
+    {
+      "seed": 8173,
+      "method": "p16"
+    },
+    {
+      "seed": 27182,
+      "method": "p16"
+    },
+    {
+      "seed": 27182,
+      "method": "p64"
+    },
+    {
+      "seed": 31415,
+      "method": "p64"
+    },
+    {
+      "seed": 31415,
+      "method": "p16"
+    }
+  ],
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 1500000,
+  "max_games": 512,
+  "H": 512,
+  "opening_seed_base": 111000,
+  "prefix_by_method": {
+    "p16": 16,
+    "p64": 64
+  },
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 5.0,
+  "cap_seconds": 2400,
+  "pins": {
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2521/train.py": "d087b09477b4080836ec991b7364b00657d011a3c70268a7054de2176368b1e2"
+  },
+  "scope": "PREREGISTERED same episode-frozen TDLeaf eta.05/lambda.95/tanh10/pawn1/all4initials; only random legal TRAINprefix16vs64 changes. Same family seed111000+episode, longerprefix actualterminal retained, no outcome filtering. Equal1.5Mnodes/arm; no q/prover/ordering priors/SEE/default/Core/UI. Actual WDL validates, U notdraw. Originalcap2400 notextended. Whole study forecast75-100min includingengineering/training~27min/eval~25min/audit/delivery UNDER2h, no priorreview needed. No seed/weight/root/checkpoint selection; stable ratios remainOPEN."
+}

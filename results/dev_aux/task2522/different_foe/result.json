@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETE",
+  "panel": "different_foe",
+  "expected": 192,
+  "actual": 192,
+  "nodes": 2806235,
+  "queries": 23192,
+  "seconds": 378.9389816999901,
+  "results": [
+    {
+      "seed": 1977,
+      "tallies": {
+        "initial": {
+          "W": 8,
+          "L": 3,
+          "D": 4,
+          "U": 1
+        },
+        "p16": {
+          "W": 11,
+          "L": 2,
+          "D": 3,
+          "U": 0
+        },
+        "p64": {
+          "W": 15,
+          "L": 0,
+          "D": 1,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 8173,
+      "tallies": {
+        "initial": {
+          "W": 6,
+          "L": 8,
+          "D": 2,
+          "U": 0
+        },
+        "p16": {
+          "W": 14,
+          "L": 1,
+          "D": 1,
+          "U": 0
+        },
+        "p64": {
+          "W": 15,
+          "L": 0,
+          "D": 1,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 27182,
+      "tallies": {
+        "initial": {
+          "W": 9,
+          "L": 2,
+          "D": 4,
+          "U": 1
+        },
+        "p16": {
+          "W": 15,
+          "L": 1,
+          "D": 0,
+          "U": 0
+        },
+        "p64": {
+          "W": 13,
+          "L": 1,
+          "D": 2,
+          "U": 0
+        }
+      }
+    },
+    {
+      "seed": 31415,
+      "tallies": {
+        "initial": {
+          "W": 7,
+          "L": 6,
+          "D": 3,
+          "U": 0
+        },
+        "p16": {
+          "W": 13,
+          "L": 2,
+          "D": 1,
+          "U": 0
+        },
+        "p64": {
+          "W": 13,
+          "L": 1,
+          "D": 2,
+          "U": 0
+        }
+      }
+    }
+  ],
+  "scope": "BEFORE anyTRAIN/fitness; NEW16endpointfamilies96000..96015, matched8differentrandomfoe96000..96007 NOT independentnewfamilies. Bothroles/all4initials/initial+TD16+TD64; baseline paidonce perpanel/foe. Same plainD2/capH512; UNKNOWN/missing[-1,1]. Equalworknot equal walltime. Fixedrandomfoe not assumedstronger. Crossedseed/family descriptive envelopes; no humanfit/price selection/capextensions."
+}

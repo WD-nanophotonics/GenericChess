@@ -2355,3 +2355,42 @@ Dotreply only, not source. No crosswrites/extraAgents/Goal/CPUquietwindow.
 Future priority ONE paper-grounded TD/qsearch/credit refinement and freshfamily/
 foe replication, not proof coverage. Full fixedSHA evidence delivered via own
 sidemission + projectSlack; delivery/read/adoption/execution remain distinct.
+
+
+## DEV_AUX segment89 — incremental TD and first generated-rule learning
+
+Own sidemission/PUBLIC, PRIMARYread-only, no default/UI/Core/extraAgent changes.
+AUX executed sameTD16vs64/4initials/12Mnodes; NEW384endpoint+192differentfoe
+actualgames supportbothlearnedpolicies overinitial, but64minus16 intervals cross0
+andfinalorderagreement identical. Strongerstartfeatures didnotestablish stable
+prices; actualreturnedleafgradients alreadylargelynonzero. All102912credits and
+actualrecords audited; twoactualzeroqueryterminalprefixes diagnosed/repaired in
+independentauditor, originalv1failure/source retained. Eightlastnodepoolqueries
+andallhorizonUNKNOWN kept; no budgetextension oroutcomefilter.
+
+AUX then actually ran SAMElearner onexistinggenerated4x4rules withpromotion/drop/
+fullSessionhistory andseparateboardCURRENT/handBASE coefficients. Fourrules/two
+initials/32games28actualterminal4U,22updates/34promotion91dropcommits/60355nodes
+25.30s; actualcredit/fullrecord auditPASS. Newadaptivepost-feasibilitypre-fitness
+128gamepanel/ALLrules/models/newbindingstarts:111terminals17H64U, gainbounds
+[-.25,.28125], descriptivehierarchical[-.6875,.75]. No Genericstrengthimprovement
+established;56/64pairs identical,8candidatefirstdifferences. Notunseenrule or
+all-domain claim, no weights shared merelybecauseP/X/Anamesmatchacrossrules.
+NextoneGenericlearningcurve/newTRAIN+validation/allcheckpoints, notoldWDL/proof
+coverage/humanreferencefitting orroutinebiggerChessprefixcomparison.
+
+PRIMARY1792219512 read/executed88capsule36tests+7owner-auditregenerations and
+independentlycheckedstaticgradients/960pairedmath (ownerreport, notreexecuted
+here). Laterfixed0e7153/ea06report selectednewsections readbyAUX fromanonymous
+fixedsource; ownerterminalPVconstant productrepair/1152prefixmeasurepaths/TC
+recommended-credit diagnosis remainPRIMARYexecution. Dot1792221286 readfixed0e
+source only/noNativeexecution. Adoptattemptedrulemass/fulltypedbindingmeasure,
+terminalconstants/priorcredit andTCperstep-vs-episodeNET distinction; no newTC
+implementation, Primarycodeexecution/merge, competingdiagnostic orackloop.
+Own learner already handles terminalPVconstant gradients; no dependency repair
+needed. Ordinaryconcurrency accepted; noquietwindow/otherprocessmonitoring.
+
+All5producer cost20,462,504nodes2854.869s excludescompleteengineering/test/audit/
+transport/token cost; sessionactualtime anddeliveryverifiedseparately. Source
+publishesonceactual38controls/freshregeneratedaudits/contentreview complete;
+fixedSHAevidence deliveredtoDot afterwards, reading/execution notinferred.

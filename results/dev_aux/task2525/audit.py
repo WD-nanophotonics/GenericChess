@@ -1,0 +1,56 @@
+"""Independent scalar credit and full generated-GameSession record audit."""
+from pathlib import Path
+from collections import defaultdict,Counter
+from math import tanh,isclose
+import json,time,hashlib,random
+from generic_chess.rules.schema import ruleset_from_dict
+from generic_chess.rules.compiler import compile_ruleset
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record,serialize_game_record
+D=Path('results/dev_aux/task2525')
+def near(a,b):return isclose(a,b,rel_tol=1e-10,abs_tol=1e-12)
+def terminal(s):
+ r=s.result
+ assert r.status.value!='no_contest'and r.declaration_outcome not in('RESTART','NO_CONTEST')
+ return None if r.status.value=='ongoing'else 0 if r.winner is None else 1 if r.winner==0 else-1
+def feat(s,names):
+ board=Counter();hand=Counter()
+ for pc in s.state.position.board:
+  if pc:board[pc.current_type_id]+=1 if pc.owner==0 else-1
+ for owner,h in enumerate(s.state.position.hands):
+  for t,n in h.counts:hand[t]+=(1 if owner==0 else-1)*n
+ return [(board if kind=='board'else hand)[t]for kind,t in names]
+def run():
+ began=time.perf_counter();p=json.loads((D/'registration.json').read_text());done=json.loads((D/'result.json').read_text());pins=json.loads((D/'pins.json').read_text())['pins'];assert all(hashlib.sha256(Path(n).read_bytes()).hexdigest()==h for n,h in pins.items());assert json.loads((D/'started.json').read_text())['registration_sha']==hashlib.sha256((D/'registration.json').read_bytes()).hexdigest()
+ compiled={gs:compile_ruleset(ruleset_from_dict(json.loads((D/('rules-'+str(gs)+'.json')).read_text())))for gs in p['generator_seeds']if(D/('rules-'+str(gs)+'.json')).exists()};qq=defaultdict(list);counts=Counter();current={};used=Counter()
+ for line in(D/'queries.jsonl').open():
+  q=json.loads(line);qq[q['generator_seed'],q['seed'],q['game']].append(q)
+ for line in(D/'episodes.jsonl').open():
+  e=json.loads(line);key=e['generator_seed'],e['seed'];names=e['channels'];cc=compiled[e['generator_seed']];rr=qq[key+(e['game'],)]
+  if key not in current:
+   rng=random.Random(e['seed']);current[key]=[1.]+[rng.uniform(.5,1.5)for _ in names[1:]]
+  w=current[key];assert e['initial_weights']==w and names[0]==['board','P'];previous=e['initial_record'];s=GameSession.replay(cc,deserialize_game_record(json.dumps(previous)));counts['prefix_plies']+=len(s.to_record().actions);preds=[];grads=[];assert e['queries']==len(rr)
+  for i,q in enumerate(rr):
+   assert q['ply']==i and q['record_before']==previous and q['weights']==w and q['channels']==names;assert terminal(s)is None and q['features']==feat(s,names);assert 0<q['effective_node_limit']<=p['nodes_per_query']and q['nodes']<=q['effective_node_limit']and 0<q['effective_wall_limit']<=p['seconds_per_query'];used[key]+=q['nodes'];assert q['total_nodes']==used[key];counts['queries']+=1
+   if q['complete']:
+    pred=tanh(q['value']/10);g=[0.]*len(w)if q['pv_terminal']else[0. if j==0 else x*(1-pred*pred)/10 for j,x in enumerate(q['pv_phi'])]
+    if not q['pv_terminal']:assert q['value']==sum(x*v for x,v in zip(q['pv_phi'],w))
+    else:assert q['value']in(-1e6,0,1e6)
+    assert pred==q['prediction']and all(near(x,y)for x,y in zip(g,q['gradient']));preds.append(pred);grads.append(g);assert len(q['record_after']['actions'])==len(previous['actions'])+1
+   else:assert i==len(rr)-1 and q['record_after']==previous and q['prediction']is None and q['gradient']is None;counts['failed_queries']+=1
+   # Authoritative public replay of every selected transition, full history retained.
+   after=GameSession.replay(cc,deserialize_game_record(json.dumps(q['record_after'])));assert json.loads(serialize_game_record(after.to_record()))==q['record_after'];counts['training_plies']+=len(after.to_record().actions)-len(s.to_record().actions);
+   for action in after.to_record().actions[len(s.to_record().actions):]:
+    counts['drop_commits']+=type(action).__name__ in('DropMove','SemanticDropMove');counts['promotion_commits']+=getattr(action,'promotion_target_id',None)is not None
+   s=after;previous=q['record_after']
+  assert sum(q['nodes']for q in rr)==e['nodes']and used[key]==e['total_nodes'];assert e['record']==previous and terminal(s)==e['outcome'];assert(e['outcome']is not None)==(e['ending']=='ACTUAL_TERMINAL');errors=[preds[i+1]-preds[i]for i in range(len(preds)-1)]
+  if preds and e['outcome']is not None:errors.append(e['outcome']-preds[-1])
+  future=0.;delta=[0.]*len(w)
+  for i in reversed(range(len(preds))):
+   future=(errors[i]if i<len(errors)else 0)+p['lambda']*future;delta=[x+future*y for x,y in zip(delta,grads[i])]
+  expected=[v+p['eta']*d for v,d in zip(w,delta)];expected[0]=1.;assert all(near(x,y)for x,y in zip(expected,e['weights']));assert e['stats']['samples']==len(errors)and near(e['stats']['loss'],sum(x*x/2 for x in errors)/max(1,len(errors)));current[key]=e['weights'];counts['episodes']+=1;counts['actual_terminal']+=e['outcome']is not None;counts['unknown']+=e['outcome']is None;counts['nonzero_updates']+=e['weights']!=w
+ for a in done['arms']:
+  key=a['generator_seed'],a['seed'];assert current[key]==a['weights']and used[key]==a['nodes']
+ assert counts['drop_commits']==done['counters'].get('drop_commits',0)and counts['promotion_commits']==done['counters'].get('promotion_commits',0);assert sum(used.values())==done['nodes']and counts['episodes']==done['episodes']and counts['queries']==done['counters'].get('queries',0)
+ record=dict(status='PASS_ALL_RETURNED_SCOPED_GENERIC_TD_CREDITS_AND_FULL_SESSION_RECORDS',planned_arms=done['expected_arms'],returned_arms=len(done['arms']),counts=dict(counts),producer_status=done['status'],scope='SAME Model/TDLeafEpisode/Search overexistinggenerated4x4rules, independent scalarfuture-errorcredits and currentboard/basehandfeatures, fullGameSession publicrecordreplay. No mateprover/table/rewardquantity. Same Coreauthority, noexternalengine/fullgenerateddomain/aux/customDSL coverage or actualstrength claim. U/caps/failed/unstarted retained.',audit_seconds=time.perf_counter()-began);(D/'audit.json').write_text(json.dumps(record,indent=2),encoding='utf-8');print(json.dumps(record))
+if __name__=='__main__':run()

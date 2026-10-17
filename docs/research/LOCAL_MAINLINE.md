@@ -1,3 +1,61 @@
+# DEV_AUX89 — results closed, delivery checkpoints active
+
+Direct USER TD/search-bootstrap priority remains. Ownsidemission/PUBLIC;
+PRIMARYreadonly/noAgents/Goals/default/Core/UI changes. Scientific OPEN.
+All5producers CLOSED; session89 remainsactive through review/officialfinish.
+
+SAMEepisodeTD16vs64/ALL4initials/newTRAIN:12Mnodes1660.18s,920episodes911actual
+terminal9U. All102912queries/reverse-credit/fullrecord auditPASS;8lastsmallpool
+queries724nodes+1H512 kept. Two64prefix37plyactualmate/zeroqueryepisodes exposed
+inheritedauditstream assumption; failedv1source and executedv2prose retained,
+correctedwhile-loop handlesallactualrecords. No data/capreset.
+
+Richerstarts achieved:16nonzero70/349 vs64=540/571, but actualPVgradientRMS
+.12940/.12744, rank4both. FinalrawpriceRMS.8818/1.0240 andpairorderagreement
+.6111BOTH: no stable/unique prices or purecoverage gain. Constanteta/half-ply
+clock/sharedwhitevalue andassociatedseedexploration qualifications explicit.
+
+NEW16familyendpointALL384actualterminals,0U/missing/failedquery: TD16gain.546875,
+TD64.5703125; ALL4initialspositive. Direct64minus16=.0234375, crossedseed/family
+95[-.0546875,.125]. Matched8differentfixedfoeALL192/190terminals2H512U,
+0missing/failedqueries; bothgainspositive, directenvelope[-.15625,.40625].
+This supports scopedincrementalstrength, NOT64superiority/equivalence/universal
+ratios. No furtherunchangedChessprefix/oldWDL/provercoverage campaign selected.
+
+SAME Model/TDLeafEpisode/TrainingSearch+2511typedguard ACTUALLY executed onfour
+EXISTINGgenerated4x4promotion/drop rules, rule-conditioned models/2initials:
+32episodes28terminals4U/60355nodes25.30s/22updates,34actualpromotions91drops.
+Independentall657queries/782logicalplies/typedboardCURRENT-handBASE/fullSession
+history andTDcredit/loss PASS. Uniformrule-firstattemptedmass/prefix4/FULLtyped
+bindings; no survivalfilter/boardcoalescing/reusedP/X/Apricesacrossrules. Scope
+ordinarygeneratedconfigs, NOTaux/customDSL/fullgenerateddomain.
+
+Adaptivepost-feasibility BUTpre-fitnessnew128gamevalidation, ALL4TRAIN-exposed
+rules/8models/new4bindingpaths/bothroles/fixeduniformfoe, original600cap: ALL128
+returned111actualterminal17H64U/0missing,183932nodes76.88s. Pairedgainbounds
+[-.25,.28125], hierarchicaldescriptive[-.6875,.75];56/64identicalfullrecords,
+8candidatefirstdiffs,11unresolvedpairs; resolved51same/1improved/1worse. Full
+actualSessionrecordauditPASS3321logicalplies. No Genericstrengthgain proved,
+not failure/impossibility of TD fromonly4TRAINgames perarm. Oldcaps retained.
+
+NEXTMain: freeze ONE actual Generic learningcurve with NEW TRAINstreams/fresh
+bindingvalidation/allrule-conditionedinitials, fixed checkpoints andallresults;
+measuregradients/updates/terminalcoverage ANDactualW-L, nochoosebest or113001..4
+refit. Existingtypedbridgeworks; don'taddsolver/API/TC/humanprices asprerequisite.
+Backup: one GenericH64censor mechanism/registeredHcomparison onlyif decision-
+changing; or independent source/credit repair for observeddefect, notmorecensus.
+
+PRIMARY1792221219/1792222282 fixed0e7153/ea06report selectednewsections READ only;
+ownerproductterminalPVrepair/1152prefixpaths/TCdiag andDot1792221286source-review
+notexecutionhere. Adoptattemptedrulemass/typedbindings/terminalconstants; no
+PRIMARYmerge/parallellearner/routineack. OwnTDalreadyterminal-aware. RawSlack
+privatelysavedBEFOREassessment. All5producer cost20,462,504nodes2854.869s excludes
+completeengineering/audits/transport/token overhead. Fourall-seedplotschecked.
+38relatedlocalcontrolsPASS; 34thcapsule/fresh/review/delivery status comesfrom
+actualreceipts, notthisselectionnote. ReportSEGMENT_20261017_89.md.
+
+## Previous closed88 — preserved evidence
+
 # DEV_AUX current selection — closed88, incremental learning works in scoped panels
 
 Direct USER TD/search-bootstrap priority remains active; actual rule W/L/D
