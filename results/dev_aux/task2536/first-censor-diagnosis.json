@@ -1,0 +1,31 @@
+{
+  "status": "PASS_FIRST_ACTUAL_H128_RECORD_DIAGNOSIS",
+  "rule": 271001,
+  "method": "free6",
+  "seed": 27182,
+  "game": 15,
+  "source_record_sha": "9591dc9a3a0ede13e50a15d42dc74212902ff761e0bcb9911e0ef42117e0b157",
+  "prefix_plies": 4,
+  "actual_play_plies": 128,
+  "observed_positions": 133,
+  "distinct_full_Position_repr": 125,
+  "maximum_equal_Position_repr_occurrences": 3,
+  "repeated_Position_occurrences": 8,
+  "actual_terminal_at_horizon": false,
+  "declared_repetition_limit": 4,
+  "declared_max_ply": 512,
+  "rule_top_keys": [
+    "schema_version",
+    "piece_types",
+    "initial_position",
+    "drop_allowed",
+    "promotion_allowed",
+    "promotion_forced",
+    "repetition_limit",
+    "max_ply",
+    "stalemate_result",
+    "board_size",
+    "metadata"
+  ],
+  "scope": "FIRSTreturnedHORIZON_UNKNOWN exposedTRAINrecord; fullpublicsubmit/replay, noquery orcontinuation/relabelling/filtering. Positionrepr includesPosition fields but NOT completeSessionhistory; equality here is a repetitiondiagnostic NOTstatequotient/drawproof orallfuturecycleproof. OriginalH128U andrulecap remainunchanged."
+}

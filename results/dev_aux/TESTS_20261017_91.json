@@ -1,0 +1,47 @@
+{
+  "related_controls": 38,
+  "result": "PASS",
+  "targets": [
+    "2492test_learning",
+    "2492test_episode",
+    "2501test_search",
+    "2504test_bounded",
+    "2511test_generic",
+    "2512test_methods",
+    "2517test_root",
+    "2523test_exposure"
+  ],
+  "actual_command": ".venv/Scripts/python.exe -X utf8 -m pytest -q <eightlistedtargets>",
+  "independent_audits": {
+    "TRAIN95895": "PASS_ALL_CREDITS_FULL_RECORDS",
+    "checkpoints64": "PASS",
+    "unpruned_D2_64": "PASS10614nodes",
+    "EVAL1536": "PASS_ACTUAL_TERMINALS_RECORDS_GAINS",
+    "first_pairs16": "PASS",
+    "finite_partials6": "PASS",
+    "observed_trainable_spans32": "PASS5or6",
+    "pilot16": "PASSincluding3blackwhitefoeterminals"
+  },
+  "fresh": {
+    "status": "PASS_EXACT_FRESH38_AND_ALL_REGISTERED_RETURNED_GENERIC_PAIRED_ANCHOR_AUDITS",
+    "tests": 38,
+    "derived": 11,
+    "legal_plies": 166524,
+    "seconds": 135.90740019996883,
+    "archive_sha": "cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309",
+    "wrapper_v1_failed_before_tests": true,
+    "wrapper_v2_outsideZIP": true
+  },
+  "scope": "LocalrelatedcontrolsnotPRIMARYfullsuite/Nativeorwholetrainingproof",
+  "figures": {
+    "files": [
+      "results\\dev_aux\\task2536\\weights-271001.png",
+      "results\\dev_aux\\task2536\\weights-271002.png",
+      "results\\dev_aux\\task2536\\weights-271003.png",
+      "results\\dev_aux\\task2536\\weights-271004.png",
+      "results\\dev_aux\\task2536\\actual-strength.png"
+    ],
+    "visually_inspected": true,
+    "interval_midpoint_dots_removed": true
+  }
+}

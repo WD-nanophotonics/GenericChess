@@ -1,0 +1,64 @@
+{
+  "science": "OPEN",
+  "old_failures_preserved": true,
+  "entry_corrections": [
+    {
+      "event": "RootAUXILIARY_VALIDATION.md absent",
+      "cause": "Manualisdocs/operations/AUXILIARY_VALIDATION.md",
+      "resolution": "Readactualfilefullybeforestart",
+      "research_exception": false
+    },
+    {
+      "event": "Default-sandbox Gitstatus outside writable root failed worktree",
+      "cause": "Confirmedtargetoutside defaultwritableroots; exactGit-layerworktreevisibilitycause notisolated. SameexplicitOWNpath succeedswith normalrequire_escalated.",
+      "resolution": "Normalrequire_escalatedwithOWNexplicitworkdir succeeded;branchsidemissionclean",
+      "research_exception": false
+    },
+    {
+      "event": "Privateone-linewrapperrepair SyntaxErrorbeforeexecution",
+      "cause": "PowerShell/Pythoninlinequote",
+      "resolution": "Literalhere-stringfileappliedcorrectly; producer/pins/datauntouched",
+      "research_exception": false
+    },
+    {
+      "event": "Privatepre-fitnesslauncher ModuleNotFoundError(results) BEFOREbinding/queries",
+      "cause": "Pythonfilepathentry adds.local_agent instead ofrepositoryroot tosys.path",
+      "resolution": "Preservedfailedv1; insertedOWNcwd explicitly; all32rawmodels/plan bindingthenpassed",
+      "research_exception": false
+    }
+  ],
+  "unexecuted_source_review_fixes": [
+    "freshcomparisonbaseline path2536 not2529",
+    "capsulecount36 not35"
+  ],
+  "actual_producer_failures": {
+    "TRAIN": {
+      "failed_queries": 32,
+      "all_last_small_pool": true,
+      "effective_limit_max": 224,
+      "nodes": 1649,
+      "ordinary_full4096_failures": 0,
+      "H128_unknown": 138,
+      "resource_unknown": 32
+    },
+    "EVAL": {
+      "missing": 0,
+      "failed_queries": 0,
+      "H128_unknown": 84
+    },
+    "pilot": {
+      "missing": 0,
+      "H64_unknown": 4
+    }
+  },
+  "scope": "Alloldcaps/failures/partial/UNKNOWN retained; noquota/entryerrorinventedasendingexception. Exactprivateoriginalskept. Firstcensorv1source/outputpreserved; v2addsactualrulethresholds, no label/capchange.",
+  "fresh_v1_failure": {
+    "error_type": "ValueError",
+    "message": "Invalid name 'task2536/training-audit.json.sealed-original'",
+    "stage": "FirstparkingtargetBEFOREanytest/audit",
+    "cause": "outputs became relativepaths; Path.with_name needs basename",
+    "actual_tests_before_failure": 0,
+    "actual_audits_before_failure": 0
+  },
+  "fresh_v2_repair": "ACTUALPASS38tests+11recomputedoutputs/166524logicalplies135.907s; exactZIPunchanged. SeePOSTSEAL."
+}

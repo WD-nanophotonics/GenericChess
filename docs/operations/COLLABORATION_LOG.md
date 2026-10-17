@@ -1,3 +1,38 @@
+# DEV_AUX91 — paired anchor release and next paid-WDL interface
+
+DEV_AUX's all32 fixed5/free6 arms completed6.4Mnodes and1536 shared validation
+games. BothTDmethods improve initialization on the finite panels under both
+fixedfoes evenwithUNKNOWNbounds; directfree6-fixed5 spans0 underboth. Rule/foe
+reversals and adverseinitials remain, no stableprice/winner/all-domain claim.
+Full95895credit/recordaudit,64unprunedD2 and allactivefeature-span checksPASS.
+AllPpositive, so no negativePmechanismclaim; no renorm/priceclipping/defaults.
+
+The user-requested method comparison is next: SAMEengine/budget TD versus paid
+terminal-WDL proposals. Actual2538 TRAIN-onlyinterface completed16games and
+independentcandidate-onlycredit/ALLnode/WDLsignaudits, including3realblack-
+candidate/whitefoefinishercases. No candidateproposal deployed orfullcomparison
+winner claimed. It uses new TRAIN families, not currentfitness orhumanlabels.
+
+Dotnewroot1792231782/reply1792231880 reviewedINLINE MATHonly, not91source or
+execution. Adoptcandidate-decisiongamma1/lam.95 andwhiteTDz/blackWDL-z plus
+ALLbaseline/proposal/opponent/failednodecosts. Actualarguments/receipt/rawreads
+savedprivatelybeforereconcile; no approval/identitygate/routineack/retryloop.
+Current91conditions/capsremainedfrozen. SOURCEreading/independentexecution
+of91byDot/PRIMARY remainsUNCONFIRMED untilactualseparateevidence.
+
+PRIMARY's latestfixed0ca265c711f55514b10ac06638b6934b159a81fc report was READ
+in90onlyhere; its89reproduction/Nativequantization tests areOWNERREPORTED, not
+rerun/adoptedinto91. Newchannelroots andrelevant90/88threads readallpages this
+checkpoint: nonewpeerupdate. No PRIMARY code/state/stop/output/branch changes.
+
+Three serial producers8,606,617nodes2715.420s excludecompleteengineering/audit/
+test/fresh/transport/token overhead; ordinaryconcurrentprojectsnormal, noquiet
+window/monitor/worker/fee changes. LargequeriespublicexactZIProute; rawaccount/
+Slackmetadata staysignored.38controlsPASS/allfiguresinspected.36thcapsule,
+fresh11outputs andfullremote/Publicdelivery getactualseparatereceipts; nofake
+publication/partner-readingclaim. Previousfailures/caps/unknowns kept. Scientific
+OPEN; auxiliarysidmissiononly/noautomaticmerge, sandbox/master/visibilitymutation.
+
 # DEV_AUX90 — Generic TD curve and positive-anchor correction (study closed)
 
 Own sidemission/PUBLIC, PRIMARY read only. ALL16rule-conditioned models x250k
@@ -2444,3 +2479,5 @@ READhere; its89reproduction38+7/matcheddata andNative8models precision areowner-
 reported notexecutedhere/no90Nativeadoption. NewPRE-FINISHclosed-archive2533check
 findsall4rank5/oldnullbreak002/0042153/2120leaves; notID/WDLproof/newgate. Script/
 resultcompletedbeforefinish, nowversionedoutsideimmutable35ZIP. Noafterfinishresearch.
+
+91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.

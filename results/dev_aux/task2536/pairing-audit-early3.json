@@ -1,0 +1,39 @@
+{
+  "status": "PASS_RETURNED_FIRST_EPISODE_COMMON_SEARCH_AND_CREDIT",
+  "expected": 16,
+  "actual": 3,
+  "missing": 13,
+  "rows": [
+    {
+      "rule": 271001,
+      "seed": 1977,
+      "queries": 4,
+      "nodes": 118,
+      "outcome": -1,
+      "fixed_P": 1.0,
+      "free_P": 0.994252481159744,
+      "same_other5": true
+    },
+    {
+      "rule": 271001,
+      "seed": 8173,
+      "queries": 128,
+      "nodes": 12395,
+      "outcome": null,
+      "fixed_P": 1.0,
+      "free_P": 0.9465575415781169,
+      "same_other5": true
+    },
+    {
+      "rule": 271001,
+      "seed": 27182,
+      "queries": 28,
+      "nodes": 1802,
+      "outcome": -1,
+      "fixed_P": 1.0,
+      "free_P": 0.9646464712718261,
+      "same_other5": true
+    }
+  ],
+  "scope": "Firstgame perrule/seed fixedbeforeoutcomes; SAME rawinitial/prefix/order/actions/PV/nodecounts/outcome. OnlyPcreditmaskedinfixed5, other5updatesidentical. No claim laterpolicies/episodecountsidentical, noactualstrengthproof."
+}

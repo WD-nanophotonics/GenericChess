@@ -1,3 +1,49 @@
+# DEV_AUX91 — study closed, session/delivery still active
+
+DirectUSER TD/search-bootstrap route; own sidemission/PUBLIC, PRIMARYreadonly,
+noAgents/Goals/Core/default/UI/Nativepriceactivation. Original91clock9:57:01UTC
+notreset; alllearning/evaluationproducersCLOSED, officialfinishnotyetissued.
+
+NEWpairedfixed5/free6 ALL4rulesx4initials exact200knodes/arm:6.4M2049.225s,
+6512episodes6342actualterm170U/4494updates. Shared1536NEWfamily151001..8
+bothroles/twofixedfoes COMPLETE1452terminal84H128U/0missing/failedqueries.
+Fixed5gainuniform[.06640625,.35546875]/random[.05078125,.23046875]; free6
+[.15234375,.36328125]/[.09375,.28125]. Thus bothhavepositiveFINITEpanelgain
+bounds evenwithU, notpopulationbenefit. Directfree6-fixed5[-.0859375,.1796875]
+/[-.04296875,.13671875] unresolved; rule/opponentreversals/negativeinitials
+retained. DoNOTadopt6freeaswinner orclaimstableprices/fullgeneratedtransfer.
+
+ALL95895TRAINqueries/reversecredits/typedrecords/64checkpoints PASS;
+64unprunedD2checksPASS10614nodes. All32activefeaturespans5or6FULL, notTD
+identifiability. ALLfreeP trajectoriespositive; no negativePbenefitclaim.
+Endpointraw/L2dispersionstillmaterial, no training/deploymentrenorm. NEWroots32
+include8currentTRAINoverlaps/3terminal, nonefiltered/notstrictunseenstates.
+32failedTRAINqueries1649nodes ALLlastsmallpool<=224,0full4096failures;
+138H128U+32resourceU retained. FirstactualH128recordmaxrepeat3 vsrulelimit4,
+maxply512: trueUNKNOWN, notdraw/cycleproof; nooldcontinuation/capreset.
+
+2538NEXTmethodinterface ACTUALLYBEGUN/COMPLETE16TRAIN-onlygames12term4U,
+23094nodes6.722s/105candidateTDobservations/105foequeriesexcluded. Threeactual
+blackcandidate-whitefoeterminaltests PASSwhiteTDz/blackWDL-z/earliereligibility.
+TwoP+.25proposalspositiveinTRAIN, oneUandone0; nothingdeployed, NOTfullmethod
+comparison/fitness. Dot1792231880math/inlineONLY/no91sourceexecution adopted
+candidate-decisiongamma1/lam.95/whitez/paidALLnodes, no currentstudychanges.
+
+NEXT MAIN: freezeNEW SAME6free/search/fixedfoe/initials/budget TDcandidateclock
+versuspaidWDLsignedcoordinate+strictbound proposals; ALLbaseline/candidate/foe/
+failednodescount, sharedNEWactualfitness. No old151001..8refit orpreselected
+winner. This servesUSERmethod-efficiencyquestion, notmoreP/TC/prover/APIwork.
+BackupnewH128/H256censorcontrol orD3deployment ifdecisionchanging only.
+
+Threeproducers8,606,617nodes2715.420s; notwholeengineering/audit/test/fresh/token
+cost. Related38PASS/all5figuresinspected; exact36thcapsule/fresh11derived and
+publicdelivery are recorded bytheiractualreceipts, notinferredfromthisheader.
+Prior35capsuleskept. Dot/PRIMARY91reading/execution remainsUNCONFIRMED.
+PRIMARY0ca reportREADonlyhere; its89reproduction/Nativeprecision ownerreported,
+not90/91rerun/adoption. No newpeerroots/supplements thischeckpoint.
+
+## Previous closed90 — retained source and evidence
+
 # DEV_AUX closed90 — actual Generic TD curve, next free-anchor comparison
 
 DirectUSER TD/search-bootstrap route remains; own sidemission/PUBLIC, PRIMARY
@@ -781,3 +827,5 @@ PRE-FINISH2533stdlibcheckofsamePUBLIC90archive/memberSHAs: exactPVranks5/5/5/5,
 uniqueprice/strengthproof ormore-samples causalablation. Currentfloatresults/caps
 unchanged. 2533source/result areboundedclosingversioningofPRECOMPLETEDwork,
 OUTSIDEimmutable35thZIP, notafterfinishresearch. OfficialEND/DELIVERY bindevidence.
+
+91 post-seal execution:36thZIP cf3bbee1fdf003250ddd2c1b8a1e0442d7d0ce5751d256d32b0649778736a309 unchanged/191payloads/prior35hashesPASS. DriverV1failedbeforetests(a relativepath with_name error); V2OUTSIDEZIP fixesbasename and ACTUALLYPASS38+11derived/166524logicalplies135.907s. Failure/sourcekept, no learning/fitnessrerun. Sourcepublication/partnerreading stillrequireactualreceipts.

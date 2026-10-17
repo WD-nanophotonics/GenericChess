@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETE",
+  "expected": 16,
+  "actual": 16,
+  "missing": 0,
+  "nodes": 23094,
+  "seconds": 6.722186400031205,
+  "queries": 436,
+  "actual_terminal": 12,
+  "unknown": 4,
+  "candidate_TD_observations": 105,
+  "paired": [
+    {
+      "rule": 271001,
+      "bounds": [
+        1.0,
+        1.0
+      ],
+      "strict_accept_would_be": true,
+      "applied": false
+    },
+    {
+      "rule": 271002,
+      "bounds": [
+        1.0,
+        1.0
+      ],
+      "strict_accept_would_be": true,
+      "applied": false
+    },
+    {
+      "rule": 271003,
+      "bounds": [
+        -2.0,
+        2.0
+      ],
+      "strict_accept_would_be": false,
+      "applied": false
+    },
+    {
+      "rule": 271004,
+      "bounds": [
+        0.0,
+        0.0
+      ],
+      "strict_accept_would_be": false,
+      "applied": false
+    }
+  ],
+  "scope": "TRAIN-onlyinterface/costpilot notcomparativelearning/fitness. Candidate-turnONLYTDgamma1/lambda.95perdecision/newregime, actualwhiteoutcome. Frozenepisodeweights/opponentweights, nofoegradients. PaidpairedactualWDL baseline/proposal+P.25/sameroots/roles; noactualparameterselection/deployment/cachingcredit. Physicalbaseline trace reused forTDARITHMETICdiagnosticonly, notfreecomputeinnewfullcomparison. ALL16attemptedslots retained/H64U/notdraw; new171001notvalidation151001..8 oroldTRAIN. 200knodes/180saggregatecap/noreset; forecastunder3min. Original91studyuntouched."
+}

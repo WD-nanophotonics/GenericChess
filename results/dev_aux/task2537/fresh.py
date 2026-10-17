@@ -1,0 +1,31 @@
+"""Fresh exact source/data consumer:38controls and recomputed91audits."""
+from pathlib import Path
+import hashlib,json,zipfile,subprocess,sys,uuid,os,time
+ROOT=Path.cwd();OUT=ROOT/'results/dev_aux'
+def run():
+ start=time.perf_counter();archive=OUT/'DELTA_REPRO_20261017_91.zip';fresh=ROOT/'.local_agent'/('method91-fresh-'+uuid.uuid4().hex);fresh.mkdir()
+ with zipfile.ZipFile(archive)as z:
+  manifest=json.loads(z.read('MANIFEST_20261017_91.json'))
+  for name in z.namelist():
+   assert(fresh/name).resolve().is_relative_to(fresh.resolve());z.extract(name,fresh)
+ for name,r in manifest['files'].items():assert hashlib.sha256((fresh/name).read_bytes()).hexdigest()==r['sha256'],name
+ targets=['results/dev_aux/task2492/test_learning.py','results/dev_aux/task2492/test_episode.py','results/dev_aux/task2501/test_search.py','results/dev_aux/task2504/test_bounded.py','results/dev_aux/task2511/test_generic.py','results/dev_aux/task2512/test_methods.py','results/dev_aux/task2517/test_root.py','results/dev_aux/task2523/test_exposure.py']
+ # Explicit2ndorder real-qDATAdependency; no currentcheckout receipt fallthrough.
+ outputs=['training-audit.json','evaluation-audit.json','diagnostics.json','search-verification.json','roots.json','partials.json','pairing-audit.json','resources.json','spans.json','first-censor-diagnosis.json']
+ outputs=['task2536/'+name for name in outputs]+['task2538/audit.json']
+ for name in outputs:
+  t=fresh/'results/dev_aux'/name;t.rename(t.with_name(t.name+'.sealed-original'));assert not t.exists()
+ (fresh/'pytest.ini').write_text('[pytest]\naddopts=\n');site=str(ROOT/'.venv/Lib/site-packages');env=dict(os.environ);env['PYTHONPATH']='';env['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'
+ code="import sys,pathlib;sys.path[:0]="+repr([str(fresh),site])+";import results.dev_aux.task2504.search as source;assert pathlib.Path(source.__file__).resolve().is_relative_to(pathlib.Path.cwd());import pytest;assert pytest.main(['-q','--import-mode=importlib','--confcutdir=.','-c','pytest.ini','--junitxml=tests.xml']+"+repr(targets)+")==0"
+ for mod in ('training_audit','evaluation_audit','diagnostics','roots','partials','pairing','resources','spans','first_censor'):
+  code+=';from results.dev_aux.task2536.'+mod+' import run as again;again()'
+ code+=';from results.dev_aux.task2538.audit import run as pilot;pilot()'
+ code+=';from results.dev_aux.task2536.search_verification import run as sv;sv(stop_root='+repr(str(ROOT))+')'
+ with(ROOT/'.local_agent/method91-fresh.log').open('w')as f:r=subprocess.run([sys.executable,'-S','-X','utf8','-c',code],cwd=fresh,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=600)
+ assert r.returncode==0,'Inspectprivate method91-fresh.log';counts={};legal=0
+ for name in outputs:
+  a=json.loads((fresh/'results/dev_aux'/name).read_text());b=json.loads((OUT/name).read_text())
+  for k in('audit_seconds','seconds'):a.pop(k,None);b.pop(k,None)
+  assert a==b,name;counts[name]=a['status'];cs=a.get('counts',{});legal+=sum(cs.get(k,0)for k in('prefix_plies','training_plies','legal_prefix_plies','legal_play_plies'))
+ record=dict(executed_wrapper_sha=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),sealed_wrapper_sha=manifest['files']['results/dev_aux/task2537/fresh.py']['sha256'],wrapper_note='PostsealV2fixwith_nameusesbasenameonly; sealedZIPunchanged/source-data-auditmodulesunmodified. V1failedBEFOREparking/tests/audits, retainedasfresh-v1-executed.py.txt.',status='PASS_EXACT_FRESH38_AND_ALL_REGISTERED_RETURNED_GENERIC_PAIRED_ANCHOR_AUDITS',archive=archive.name,archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest(),payloads=len(manifest['files']),tests=38,derived=counts,legal_plies=legal,seconds=time.perf_counter()-start,scope='NewignoredUUID/Python-S/emptyPYTHONPATH/extractedsourceasserted. AllsealedderivedoutputsPARKEDbeforeRECOMPUTE; equalityexceptauditwalltimes. IndependentD2verification addsinternalnodesreportedelsewhere, no newtraining/fitness/alloldconsumerbatch/externalrulesengine. Sameinstalledchess+pytest deps; verificationexplicitlyreadsactualowner+PRIMARYstopflags viaownroot, notfakecopiedstops. No productioncode/datafallthrough.');(OUT/'task2537/fresh-receipt.json').write_text(json.dumps(record,indent=2));print(json.dumps(record))
+if __name__=='__main__':run()

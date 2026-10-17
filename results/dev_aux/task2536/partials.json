@@ -1,0 +1,172 @@
+{
+  "status": "PASS_ACTUAL_PV_PARTIALS_AND_TERMINAL_CONSTANTS",
+  "complete_queries": 95863,
+  "terminal_constants": 10411,
+  "ordinary_coordinate_nonzero_counts": [
+    56373,
+    49477,
+    46721,
+    46754,
+    66496,
+    35382
+  ],
+  "coordinate_witnesses": {
+    "1": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 0,
+      "phi": [
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": 0.09984902226700675,
+      "analytic": 0.0998490222667062,
+      "actual_trainer_gradient": 0.0998490222667062
+    },
+    "3": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 0,
+      "phi": [
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": -0.09984902226631286,
+      "analytic": -0.0998490222667062,
+      "actual_trainer_gradient": -0.0998490222667062
+    },
+    "0": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 1,
+      "phi": [
+        1,
+        1,
+        0,
+        -1,
+        1,
+        0
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": 0.09273430449374674,
+      "analytic": 0.092734304493726,
+      "actual_trainer_gradient": 0.092734304493726
+    },
+    "4": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 1,
+      "phi": [
+        1,
+        1,
+        0,
+        -1,
+        1,
+        0
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": 0.09273430449374674,
+      "analytic": 0.092734304493726,
+      "actual_trainer_gradient": 0.092734304493726
+    },
+    "2": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 4,
+      "phi": [
+        1,
+        -1,
+        1,
+        -3,
+        1,
+        1
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": 0.0989001650679444,
+      "analytic": 0.09890016506690201,
+      "actual_trainer_gradient": 0.09890016506690201
+    },
+    "5": {
+      "rule": 271001,
+      "method": "free6",
+      "seed": 27182,
+      "game": 0,
+      "ply": 4,
+      "phi": [
+        1,
+        -1,
+        1,
+        -3,
+        1,
+        1
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "numerical": 0.0989001650679444,
+      "analytic": 0.09890016506690201,
+      "actual_trainer_gradient": 0.09890016506690201
+    }
+  },
+  "scope": "FirstnonzeroactualordinaryPVforeachcoordinate, nooutcome/fitselection. Finitepartials includeP eveniffixed5mask0; alltrainingcreditmaskcheckedseparately. ActualterminalPVconstantgradients0; earliertracesnotremoved. Notfullfeaturedomain orstrengthproof."
+}
