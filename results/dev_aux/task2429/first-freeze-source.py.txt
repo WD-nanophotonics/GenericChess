@@ -1,0 +1,21 @@
+from pathlib import Path
+from dataclasses import replace
+import json,hashlib,datetime
+from generic_chess.core.pieces import Piece,PieceType
+from generic_chess.core.movement import LeapAtom
+from generic_chess.rules.serialization import serialize_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import serialize_game_record
+from results.dev_aux.task2400.qualify import definition,ready
+out=Path('results/dev_aux/task2429');out.mkdir(exist_ok=False)
+base=definition('consume');knight=PieceType('N','SupportN',tuple(LeapAtom(x)for x in((-2,-1),(-2,1),(-1,-2),(-1,2),(1,-2),(1,2),(2,-1),(2,1))))
+def add_n(rows):
+ rows=[list(r)for r in rows];assert rows[3][1]is None;rows[3][1]=Piece(0,'N','N');return tuple(tuple(r)for r in rows)
+rs=replace(base,piece_types=base.piece_types+(knight,),initial_position=add_n(base.initial_position),initial_setup_options=tuple(replace(o,position=add_n(o.position))for o in base.initial_setup_options),drop_allowed={**base.drop_allowed,'N':tuple(tuple(tuple(False for _ in range(4))for _ in range(4))for _ in range(2))})
+(out/'rules.json').write_text(serialize_ruleset(rs));c=compile_ruleset_for_execution(rs);cases=[]
+for setup in(None,'swapped_bases'):
+ s=ready(c,setup);cases.append(dict(setup=setup,rules=(out/'rules.json').as_posix(),record=json.loads(serialize_game_record(s.to_record())),state_sha=hashlib.sha256(repr(s.state).encode()).hexdigest(),hand=[dict(h.counts)for h in s.state.position.hands],legal=len(s.legal_actions())))
+(out/'inputs.json').write_text(json.dumps(cases,indent=2))
+p=dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),question='Can unchanged genericproof execute actual WIN via ordinary non-drop board action consuming heldBASE R after real capture/promotion/auxexpiry?',construction='Add ONEordinarysupportN at(1,3) beforeexecution to2400actualcapturefixture, bothinventorypreservingsetups. No price/WDLteacher/candidatefit selection. FutureanticipatedmoveRto(3,2) needsstockandNdefense; actualresult unqueried beforefreeze.',cap_seconds=60,forecast_seconds=20,query_nodes=4096,query_seconds=5.,verification_seconds=3.,max_depth=8,cases=2,scope='ConstructedcompleteRule/Corefullhistories,noDROP/handguard/compilerbypass. SameCURRENTboard/aux/side butdifferentBASEboard+heldstock underinitialinventory. No universalhandprice/inertclassifier/defaultclaim. BothproofresultUNKNOWNifbudgetunproved; unprovedcontrolnotLOSS.',pins={n:hashlib.sha256(Path(n).read_bytes()).hexdigest()for n in[(out/'rules.json').as_posix(),(out/'inputs.json').as_posix(),'results/dev_aux/task2384/incremental.py','results/dev_aux/task2392/reader.py']})
+(out/'plan.json').write_text(json.dumps(p,indent=2));print(json.dumps(dict(cases=cases)))

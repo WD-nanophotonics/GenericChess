@@ -1,3 +1,32 @@
+# DEV_AUX current selection - closed85,2026-10-17
+
+OPEN/PUBLIC/own sidemission, PRIMARYreadonly.186unique newactualterminals,
+2367commits/105gamecertinstances; all2217ordinarycommittedcallsD3.
+NEWmatched-depth oldTRAINpair bothLOSS/13moves/identicalrecords; original1sgain
+noterasedbutmatched-depthinterpretationfails. No broadreservegainerasure.
+Typed/nodrop2corporaD3inactive; actualhandconsumeWIN1/PstockUNKNOWN retained.
+UnchangedR/Nnewbalanced6actorlegaldualcapture12roots/4DESIGN+8reserved before
+pricequeries; ONEdesignD3root independentactiveplanes. Fullrational17cellmodel
+captureR=max(2a,a+b)vsN2;71floatingD3checks notallIEEEproof/uniqueprices.
+Primary48TRAINplateau/noimprover=>BASE1.5/1.5;16BASEreserve9W7L notfakegain.
+TRAIN-derivedcommonoffsetpair(.75,0)vs(1.5,.75) holdsdeploymentdelta.75; ALL8
+reservedfamilies/bothroles/fixedfoes2/.5/4 frozenbeforeANYreservefitness.
+Actualgains1/16,3/16,3/16, widefamilyenvelopes/2positivefamilies/adversefoe2
+family, no stable/universalprice ornewwinnerbeatingoriginalBASE. Allfirstdiffs
+matchedordinaryD3; positivepairsNOownverifiedWINentry, no solverbenefitclaim.
+Nboard=Nhand1 ismodelrestrictionbeyondscale;3actualD3querieschangechoice.
+NewNhand24TRAIN+8once-reusedanchorbaselinegames alsoNOstrictimprover=>1.
+NEW8reserveorbits remainUNQUERIED, conditional32branchfalse; primaryconditional64
+branchfalse. No fakegames/UNKNOWNlabels/humanfit/default/Core/PRIMARYchanges.
+30immutablearchives fresh5334checks/3884paths/86tests+22consumersPASS; actual
+failures/oldcaps preserved. PRIMARYcb6eaff8readonly ownerguardfixreported,
+read85request+Dotreplyonly; Dotfixed84+inline85/no85sourceorexecution.
+NextONEshared-rootD3mechanism for commonoffsetDROP-locationdivergence, orNhand2
+loss firstdifference; no biggerunchangedgrid/refit/unqueriedreservespending.
+Report SEGMENT_20261017_85.md; finalfixedSHA/sessionreceiptsfollow.
+
+## Prior84 selection - historical
+
 # DEV_AUX current selection - closed84,2026-10-17
 
 OPEN/PUBLIC/own sidemission, PRIMARYreadonly.224newactualterminalgames,

@@ -1,0 +1,19 @@
+from pathlib import Path
+import json,hashlib,datetime
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.serialization import deserialize_ruleset
+from generic_chess.session.session import GameSession
+from scripts.generic_proof_rnb_bridge import orbit,actor_state
+out=Path('results/dev_aux/task2460');out.mkdir(exist_ok=False)
+old=json.loads(Path('results/dev_aux/task2439/inputs.json').read_text());excluded=[]
+for r in old:
+ s=GameSession(compile_ruleset_for_execution(deserialize_ruleset(Path(r['rules']).read_text())));excluded.append(min(map(repr,orbit(actor_state(s.state)))))
+(out/'excluded-orbits.json').write_text(json.dumps(excluded,indent=2))
+s=Path('results/dev_aux/task2439/generate.py').read_text().replace("OUT=Path('results/dev_aux/task2439')","OUT=Path('results/dev_aux/task2460')").replace('random.Random(853901)','random.Random(856001)').replace('len(roots)==12','len(roots)==8').replace('range(16),6','range(16),6')
+s=s.replace('from results.dev_aux.task2392.reader import SharedDeleteStopReader','from results.dev_aux.task2392.reader import SharedDeleteStopReader\nfrom scripts.generic_proof_rnb_bridge import orbit,actor_state')
+s=s.replace("key=repr(s.state.position.board)","key=min(map(repr,orbit(actor_state(s.state))))")
+s=s.replace('seen=set();roots=[]','seen=set(json.loads((OUT/\'excluded-orbits.json\').read_text()));roots=[]')
+s=s.replace("partition='DESIGN'if i<4 else'RESERVE'","partition='RESERVE'").replace('design=min(4,len(roots)),reserve=max(0,len(roots)-4)','design=0,reserve=len(roots)')
+(out/'generate.py').write_text(s)
+p=json.loads(Path('results/dev_aux/task2439/plan.json').read_text());p.update(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),seed=856001,question='Reserve a NEWeightinitial-orbit set BEFOREanyNhandfitness, for modelconstraint qualification, unchangedR/Ndualcapability.',scope='Samebalanced6actorR/Nfullrules andsameactorlegalR-vs-Ncapture predicate; first8seed856001legalinitials excludeALL12old2439initialD4/color+sideorbits BEFOREANYnewNhandfitness. Actuallegal/ongoingonly, noθ/WDLteacher/outcomefilter. No earlyreservepricequeries; alloriginalcorpora/evidencekept. Newthird-channelTRAINmotivatedby2457actualchoicecounterexample, notreservefit.'))
+(out/'plan.json').write_text(json.dumps(p,indent=2))

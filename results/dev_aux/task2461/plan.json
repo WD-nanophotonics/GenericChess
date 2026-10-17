@@ -1,0 +1,97 @@
+{
+  "input": "results/dev_aux/task2461/inputs.json",
+  "input_sha": "84cb7a0f28ea7c9669c459cc24b0f3d3f71f12e07c5cf338c13b8363810142d7",
+  "slots_sha": "4ec8646387f9094f067afa643421ddfb52136c0a6372cb76767d662cd0643245",
+  "expected_games": 24,
+  "H": 96,
+  "one_cap_seconds": 700,
+  "estimated_seconds": 250,
+  "step_seconds": 3.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 3.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 3.0
+    }
+  ],
+  "pins": {
+    "results/dev_aux/task2441/pilot.py": "386c8925a34be1d0db817f3b44489ef13a8fbaa8be039a41589447f70edd56ff",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf",
+    "results/dev_aux/task2384/incremental.py": "d2282b4ab66c9d874feafc244567f5f3d717b184f17ada1c88998176842cdf14",
+    "results/dev_aux/task2440/result.json": "def0281338777ff7231e2222ce597ec1f23e6bc42e218325e5434be8422ef05c",
+    "results/dev_aux/task2442/inputs.json": "98ee118b80fef135ac9c8dbb433ed162a967a7d3d370d118b519126309d93dbe",
+    "results/dev_aux/task2439/rules-0.json": "9cb0170025b8dd0aa86e8268f883e53428fac104224faf19886cf175c10004d8",
+    "results/dev_aux/task2439/rules-1.json": "4d8be0f8f0c8bf93485faae142a1e0c38c35a538e1626bde8b17d0cb7d9c977c",
+    "results/dev_aux/task2439/rules-2.json": "a53053a1cfb360f39bef4b1b17d5f23cdaa278d010cdbf8403a6328ee9bb9164",
+    "results/dev_aux/task2439/rules-3.json": "b36cca16c50bc088ad383366b2d3908749e664be0a3f7881393fd7313ce74d23",
+    "results/dev_aux/task2439/rules-4.json": "24f6665247f793042a28a7efb237cc2dcc838db17fdfec2ce71faf5e17bab779",
+    "results/dev_aux/task2439/rules-5.json": "6925627fa4519b2ac652513f679ed1d72b618a5b6032edcc67fae0cca09133a0",
+    "results/dev_aux/task2439/rules-6.json": "071d13563e57ebf6bf7b2f1563103a32116ec7670128da770cc668e9da7b3c29",
+    "results/dev_aux/task2439/rules-7.json": "c63c41715a55e4390837ad88a95fcc9973c3194c9decbc46049cbd27ab23a8b8",
+    "results/dev_aux/task2439/rules-8.json": "fc26e9e28d7629dcca0110ecba2a3cb10a62ec676ccf5dde905d67d3cb30a39a",
+    "results/dev_aux/task2439/rules-9.json": "fee9ec99b97da56f9c57839428b20a783f86733929d012e9505f5641c4c72a5e",
+    "results/dev_aux/task2439/rules-10.json": "6904e37ebacfe999a373ddcb6b560ed296f91b6a138f136fbea36d182eafd1af",
+    "results/dev_aux/task2439/rules-11.json": "e232d8c90b3d15c6db43c87f02625bb04c40aae43fcc8082812390d157bc448b",
+    "results/dev_aux/task2461/pilot.py": "875cfd43537afbc083c2c78b0d3d039a86a442e11ea8df895329886dd8b26dd7",
+    "results/dev_aux/task2462/inputs.json": "910682b44aa2386eacb352dc58295f2d3bdae7b7515e754332cf887abee492b6",
+    "results/dev_aux/task2457/result.json": "88d29c4ef2cbce8fd46b651df9113a318376c2850d37f1c69948c490ef1979df"
+  },
+  "selection": "Actual terminal W-L only. Missing/UNKNOWN interval [-1,1]. Accept candidate only if mean LOWER bound strictly exceeds baseline UPPER bound; among maximum lower bound ties baseline then lexicographic(board_R,hand_R). No reserve fitness before immutable selection. If baseline selected, run only baseline once per role/reserve family (16) and explicitly no independent gain contrast.",
+  "scope": "NEWTRAIN-only modelrestrictiondiagnostic: candidateRboard/hand(.75,.75)fixed/boardN1, varyONLYcandidateNhand0/.5/2; foeR2/Nboth1 unchanged. Anchorislexfirsttiedmaxpricefromclosed2441TRAIN, notreservefit.8originalNhand1anchorTRAINgames reusedONCE afterconfig/semantic-equivalence qualification, not8newgames. Same4DESIGNroots/allroles/fixedproof/strictD3/H96; noquantityreward/humanfit/defaultchange. Future8NEWinitialorbits2460 frozenbeforeanyNhandfitness; conditionalreserveonlyifstrictTRAINimprover. Updatedwholelogicalforecast5250seconds<7200, no splitting/oldcapextension.",
+  "candidate_proof_caller_seconds": 14.5,
+  "forecast_seconds": 250,
+  "candidate_prices": [
+    [
+      0.75,
+      0.0
+    ],
+    [
+      0.75,
+      0.75
+    ],
+    [
+      0.75,
+      1.5
+    ],
+    [
+      1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.75
+    ],
+    [
+      1.5,
+      1.5
+    ]
+  ],
+  "variants": [
+    "REMOVAL_NO_DROPS",
+    "HAND_NO_DROPS",
+    "HAND_WITH_DROPS"
+  ],
+  "candidate_step_seconds": 3.5,
+  "candidate_Nhand_values": [
+    0.0,
+    0.5,
+    2.0
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-17T01:48:58.318227+00:00",
+  "question": "Did fixing BOTH N channels at1 hide useful actualW-L information?",
+  "changed_premise": "2457 actualcompleteD3atfixedR(.75,.75)changescaptureRvsN whenONLYheldNchanges; scale fixesboardN1 butdoesnotforceheldN1. Primary2DTRAINnoimprover/plateau retained.",
+  "anchor": [
+    0.75,
+    0.75
+  ],
+  "N_hand_grid": [
+    0.0,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "baseline_N_hand": 1.0,
+  "baseline_reuse": 8,
+  "newTRAINgames": 24,
+  "selector": "ActualruleW-L; missing/U[-1,1]. StrictLOWERmean>baselineUPPERmean; amongmaxlowerchooseminNhand, retain1ifnone. No newreservefitnessbeforeimmutablechoice.",
+  "reserve": "NEW8seed856001samelegaldualcapmu exclude12oldinitialorbits BEFOREANYNhandfitness, nofitness/rootWDLfilter. Activate32BASEvsimmutablewinner onlyifstrictimprover; otherwiseleave8untouched, nofakevalidation.",
+  "TRAIN_cap": 700,
+  "conditional_reserve_cap": 700,
+  "whole_logical_forecast_seconds": 5250,
+  "threshold_seconds": 7200,
+  "scope": "NEWTRAIN-only modelrestrictiondiagnostic: candidateRboard/hand(.75,.75)fixed/boardN1, varyONLYcandidateNhand0/.5/2; foeR2/Nboth1 unchanged. Anchorislexfirsttiedmaxpricefromclosed2441TRAIN, notreservefit.8originalNhand1anchorTRAINgames reusedONCE afterconfig/semantic-equivalence qualification, not8newgames. Same4DESIGNroots/allroles/fixedproof/strictD3/H96; noquantityreward/humanfit/defaultchange. Future8NEWinitialorbits2460 frozenbeforeanyNhandfitness; conditionalreserveonlyifstrictTRAINimprover. Updatedwholelogicalforecast5250seconds<7200, no splitting/oldcapextension."
+}

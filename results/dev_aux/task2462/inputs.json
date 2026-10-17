@@ -1,0 +1,1554 @@
+[
+  {
+    "index": 0,
+    "family": 0,
+    "rules": "results/dev_aux/task2460/rules-0.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "f14e8100ed9fa3ff4ccf19e0d3665fc2614cb0ee66161630a87ef07a148f4853",
+      "schema_version": 1
+    },
+    "state_sha": "32a2a7afdd5b2463401f121e541581aad03afb94a023c44add70463b17cf519c",
+    "attempt": 47,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "family": 1,
+    "rules": "results/dev_aux/task2460/rules-1.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "04093fdd3c710df5ea68696717972c610376a5fef831b285126931620ad6f089",
+      "schema_version": 1
+    },
+    "state_sha": "235504a09c599297bd152f86f46b0c6fd06e9eafe383e268f81ca9adc50073e3",
+    "attempt": 72,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          2,
+          0
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          0
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "family": 2,
+    "rules": "results/dev_aux/task2460/rules-2.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "aa9214cc2cc5dc7d7885be804d8719d478757ccfb14da100705b767b7d83847c",
+      "schema_version": 1
+    },
+    "state_sha": "dc8154c9aaa794f84920e14aa824ba622d8f7712111a352eb26ec2bf712b75e3",
+    "attempt": 98,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            0,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          0
+        ],
+        "to": [
+          3,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          3,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "family": 3,
+    "rules": "results/dev_aux/task2460/rules-3.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bbfdf593e1064a5817812722a03e2e80a8c6266510ae353f211c2ae9e2adaa29",
+      "schema_version": 1
+    },
+    "state_sha": "12f0dd4fef5ef617b5d916fb23d85c222bf5ee94ed6bf09ab71bf26e0f2ff25d",
+    "attempt": 130,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            3,
+            0
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            3,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          3,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          0
+        ],
+        "to": [
+          3,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "family": 4,
+    "rules": "results/dev_aux/task2460/rules-4.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "5522cd519e55ed1f9066196495de00b4a60f7e5342f5d2e554e0110a55a63525",
+      "schema_version": 1
+    },
+    "state_sha": "56abb44d7a747ef2e0f07fbf8e02b281a4873c153124cf4ba189a34fb6353326",
+    "attempt": 134,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            0,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          3,
+          3
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "family": 5,
+    "rules": "results/dev_aux/task2460/rules-5.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "2bc67bdd68ae87285c67c2f7aadf866f6758c468ebef219ca78e31b79b367171",
+      "schema_version": 1
+    },
+    "state_sha": "b94652cae62b3a550d8b6e10a2ce88c205b33c331af4dcdaf8e54b83db0680d6",
+    "attempt": 142,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            2,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            2,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            2,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          2
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          2
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          2
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "family": 6,
+    "rules": "results/dev_aux/task2460/rules-6.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "1c337ef46a25861704d339c14dd3238092d83fecebfc0a20f4104e3373fa78d3",
+      "schema_version": 1
+    },
+    "state_sha": "3f8fb94e2f1c2223b4e6f1efafd62359b15c50e9b9f8a1eb5cecddd27555a856",
+    "attempt": 151,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            2,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            1
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            2,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          0,
+          1
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          3,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          1
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          2,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "family": 7,
+    "rules": "results/dev_aux/task2460/rules-7.json",
+    "record": {
+      "actions": [],
+      "resigned_by": null,
+      "ruleset_fingerprint": "95886e0f080163e0d6da416628d50f609dd81d6c2347593f9e19e026c5192eb9",
+      "schema_version": 1
+    },
+    "state_sha": "66e98cfd0e7b7d5e101c95960f37f63c93c6070582a59179d6b41deea3d146a6",
+    "attempt": 167,
+    "partition": "RESERVE",
+    "captures": {
+      "R": [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            1,
+            3
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "N": [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    },
+    "same_actor_pairs": [
+      [
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            3,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            2,
+            3
+          ],
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    "all_legal_actions": [
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          0
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          1,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          3,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "board",
+        "from": [
+          1,
+          3
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      }
+    ]
+  }
+]

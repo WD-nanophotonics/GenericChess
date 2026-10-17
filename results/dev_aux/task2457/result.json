@@ -1,0 +1,78 @@
+{
+  "status": "CLOSED_N_HAND_MODELING_CONSTRAINT_DIAGNOSTIC",
+  "nodes": 709,
+  "folds": 24,
+  "actual_normal_queries": [
+    {
+      "N_hand": 0.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "score": 1.5,
+      "nodes": 211,
+      "completed_depth": 3,
+      "seconds": 0.3416813000221737
+    },
+    {
+      "N_hand": 1.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            1,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "score": 2.0,
+      "nodes": 245,
+      "completed_depth": 3,
+      "seconds": 0.3823259000200778
+    },
+    {
+      "N_hand": 2.0,
+      "choice": {
+        "kind": "ACTION",
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            1,
+            3
+          ],
+          "promotion_target_id": null
+        },
+        "declaration_id": null
+      },
+      "score": 3.0,
+      "nodes": 267,
+      "completed_depth": 3,
+      "seconds": 0.41620439998223446
+    }
+  ],
+  "seconds": 1.7238635999965481,
+  "scope": "ONEfrozenexistingD3tree, ALL24folds/separateboardR-handR-handN-boardNfeatures. ThreeactualfullD3normalrootqueries fixedR(.75,.75), Nhand0/1/2; no actualWDLgames/fit/DEVquery. One scale can fixNboard1; additionallyNhand1 isexplicitmodelrestriction. Changesnotlearnedprices or proofhumanrelation. CurrentTRAIN/foe/solver/defaultsunchanged; fullcompleteCoresemanticreplay. Previous2Dresults conditionalonthisNhandconstraint."
+}

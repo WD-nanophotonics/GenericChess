@@ -1,0 +1,1698 @@
+[
+  {
+    "index": 0,
+    "family": 0,
+    "rules": "results/dev_aux/task2435/rules-0.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            1,
+            2
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            3
+          ],
+          "geometry_id": "g10",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_004",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            1
+          ],
+          "geometry_id": "g5",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "d19b9ff01788aef129c54c6c475d166be41203f37c5e57eba15e18b5a9d69476",
+      "schema_version": 1
+    },
+    "state_sha": "9a59639fd5304b46b759bcb1c4dc39824a1a8fa8a8891adc6d4d1872c4d8c768",
+    "attempt": 7,
+    "partition": "TRAIN",
+    "structural_key": "((Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, None, None, None), (Hands(counts=(('R', 1),)), Hands(counts=())), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 1,
+    "family": 1,
+    "rules": "results/dev_aux/task2435/rules-1.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            3
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g20",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_037",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "787919905c74b49e51497f8a019d5e53a3d0a7bc972a7185fb66f8f281261e77",
+      "schema_version": 1
+    },
+    "state_sha": "34334a736d50e4237eb818738472c464faecb1b65b5bdadc0e57d60a03c58a56",
+    "attempt": 11,
+    "partition": "TRAIN",
+    "structural_key": "((None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None), (Hands(counts=(('R', 1),)), Hands(counts=(('N', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 2,
+    "family": 2,
+    "rules": "results/dev_aux/task2435/rules-2.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g13",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g17",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_019",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            3
+          ],
+          "geometry_id": "g10",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_004",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g13",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_001",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9afbaa20475b52777153e911a3cee299a40b1d82916cd986bbf19d08e22a8df1",
+      "schema_version": 1
+    },
+    "state_sha": "635e79239141a59cd954ea5731a76f5c3641ea5a8b0979205b621f6ccc1350f7",
+    "attempt": 18,
+    "partition": "TRAIN",
+    "structural_key": "((None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, Piece(owner=1, base_type_id='R', current_type_id='R', promoted=False), None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), (Hands(counts=()), Hands(counts=(('N', 1), ('R', 1)))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 3,
+    "family": 3,
+    "rules": "results/dev_aux/task2435/rules-3.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g8",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            1,
+            1
+          ],
+          "geometry_id": "g14",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g9",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "212e1ffd9ba0469c2fe96e82f0a04ca8eeafe93a6f80143e1fee7f0fbbd6ca44",
+      "schema_version": 1
+    },
+    "state_sha": "42d0a48136b6537900dd5254a424dc4bfa3296da009f65963fd2c86b43ebcd58",
+    "attempt": 21,
+    "partition": "TRAIN",
+    "structural_key": "((Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, None, None, None, None, None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None), (Hands(counts=(('R', 1),)), Hands(counts=())), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 4,
+    "family": 4,
+    "rules": "results/dev_aux/task2435/rules-4.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            0,
+            3
+          ],
+          "geometry_id": "g12",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            3
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            2
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_036",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g18",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            1
+          ],
+          "geometry_id": "g1",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "37788fb3bbb0e49e197ea35f84e764df7d3ed254abbe2f2a0bfce70920105f06",
+      "schema_version": 1
+    },
+    "state_sha": "afd9a90b67e436f9c31e3ff6b5ca84e950b76d763b885a89aef1f13030ff2ca3",
+    "attempt": 59,
+    "partition": "TRAIN",
+    "structural_key": "((Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None, None, None, None, None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False)), (Hands(counts=(('R', 1),)), Hands(counts=(('N', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 5,
+    "family": 5,
+    "rules": "results/dev_aux/task2435/rules-5.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g13",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            3
+          ],
+          "geometry_id": "g1",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g1",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g1",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g8",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g20",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "3b7359c666fb925ac5c1637024cb6af93f64aade26f1f1aae338184b172696e1",
+      "schema_version": 1
+    },
+    "state_sha": "dd48ba7b734e349fe6f40600f0cd4ef940471e3dc324f35d0f8a8ade1d04fea0",
+    "attempt": 92,
+    "partition": "TRAIN",
+    "structural_key": "((None, None, None, None, Piece(owner=1, base_type_id='R', current_type_id='R', promoted=False), Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), (Hands(counts=()), Hands(counts=(('R', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 6,
+    "family": 6,
+    "rules": "results/dev_aux/task2435/rules-6.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "P",
+          "from": [
+            0,
+            2
+          ],
+          "geometry_id": "g16",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_016",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g17",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_019",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g2",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g5",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_032",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            1,
+            2
+          ],
+          "geometry_id": "g19",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_023",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "e26aeb9833490ba5aa3cfc22184c98544c2b9661487b7d0bd58f9ab40d7294be",
+      "schema_version": 1
+    },
+    "state_sha": "352befa69ebcd3a405e339cbd74b08b60d9a8b235626f334cd7e9c614695cdba",
+    "attempt": 131,
+    "partition": "TRAIN",
+    "structural_key": "((None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None), (Hands(counts=(('R', 1),)), Hands(counts=(('N', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 7,
+    "family": 7,
+    "rules": "results/dev_aux/task2435/rules-7.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            3,
+            3
+          ],
+          "geometry_id": "g19",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_023",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g17",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_019",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g13",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_010",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            3
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9510a90483f66ece9a76bd661e424239b5b9052a6ec8723801c8a652d49a9c42",
+      "schema_version": 1
+    },
+    "state_sha": "f7ba7493d014775e25c96b05c0755a59819fe385cb1a746628e2fedfa2d0ed7d",
+    "attempt": 164,
+    "partition": "TRAIN",
+    "structural_key": "((None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=1, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, None, Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False)), (Hands(counts=()), Hands(counts=(('P', 1), ('R', 1)))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 8,
+    "family": 8,
+    "rules": "results/dev_aux/task2435/rules-8.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g9",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            0,
+            2
+          ],
+          "geometry_id": "g12",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_009",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "ad3a7e81dc624347d92c79ec185a81a1fba7f3df96602c52343e002f1a84b4dc",
+      "schema_version": 1
+    },
+    "state_sha": "295d6c587b716b870d8c84995f0f30b3e60c96970ed153ac497dccd061e62488",
+    "attempt": 171,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False)), (Hands(counts=(('R', 1),)), Hands(counts=(('N', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 9,
+    "family": 9,
+    "rules": "results/dev_aux/task2435/rules-9.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g9",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_041",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            0,
+            2
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_037",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g12",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_008",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "a062fc0f579900ab5a4892666d6f245372186de610ed164f666771c6655f9511",
+      "schema_version": 1
+    },
+    "state_sha": "74336f227cb2a83b8aa9c489232633324d5e38f88f5c5e31015ae1eec1bd3aa1",
+    "attempt": 254,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None), (Hands(counts=(('R', 1),)), Hands(counts=(('P', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 10,
+    "family": 10,
+    "rules": "results/dev_aux/task2435/rules-10.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            1
+          ],
+          "geometry_id": "g11",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_006",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            0,
+            3
+          ],
+          "geometry_id": "g18",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_036",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            1,
+            3
+          ],
+          "geometry_id": "g19",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_023",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            1
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "341e3e9d005b3c9985e65e986bca0f1f94a53b1c49dcc3d82b6b1e1edb730ca9",
+      "schema_version": 1
+    },
+    "state_sha": "1ce0f081e144ea4b0e95018248e175ce9cdb740ab5c0011d3bdb2c49a39dbabd",
+    "attempt": 300,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, Piece(owner=1, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None), (Hands(counts=()), Hands(counts=(('N', 1), ('R', 1)))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 11,
+    "family": 11,
+    "rules": "results/dev_aux/task2435/rules-11.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "R",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g20",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            1
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_036",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "56ab7167e81ad57825b8f42e8616af0bb50bdcece955e6c6c8d501f743f1035a",
+      "schema_version": 1
+    },
+    "state_sha": "514c1d16c8b2d0749f26b276d5180b97cf581b7e3ced0612f28dc9bd474ba2ef",
+    "attempt": 301,
+    "partition": "RESERVE",
+    "structural_key": "((None, Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False)), (Hands(counts=(('R', 1),)), Hands(counts=())), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 12,
+    "family": 12,
+    "rules": "results/dev_aux/task2435/rules-12.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g8",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_038",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            3
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_031",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            1,
+            1
+          ],
+          "geometry_id": "g17",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_019",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            2
+          ],
+          "geometry_id": "g0",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_000",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_036",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            3
+          ],
+          "geometry_id": "g1",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "c29ea881b24ecd2cf5e1aa6595b126243be684f376d72ee61441e7c4f9eec6c8",
+      "schema_version": 1
+    },
+    "state_sha": "e5162d4c510a651a5336dfa8fda3138e5a9d128d4e5d6a3dba1adf2524c2f0f6",
+    "attempt": 312,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None), (Hands(counts=(('R', 1),)), Hands(counts=(('N', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 13,
+    "family": 13,
+    "rules": "results/dev_aux/task2435/rules-13.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "N",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g9",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_040",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g19",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_023",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_035",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            3
+          ],
+          "geometry_id": "g7",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_036",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            1,
+            1
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "ca93f1acb45cf937b859b886f28eba249e2e105349fb1e8532ba696edd99b8a4",
+      "schema_version": 1
+    },
+    "state_sha": "9b1ca789abce77837e7299b855a4e223bd3325000517dd92ec8b0d88b2b7baea",
+    "attempt": 315,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, None, None, None), (Hands(counts=(('R', 1),)), Hands(counts=(('P', 1),))), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 14,
+    "family": 14,
+    "rules": "results/dev_aux/task2435/rules-14.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            0
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            1
+          ],
+          "geometry_id": "g2",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            1,
+            3
+          ],
+          "geometry_id": "g20",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g6",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_034",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            0
+          ],
+          "geometry_id": "g2",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            0
+          ],
+          "geometry_id": "g3",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "9843dfc4b8467bc7818b1f5a3364fd040339bc2275200fb99db2b27d233aa11b",
+      "schema_version": 1
+    },
+    "state_sha": "8da698da1a02e1f07c1337e4044a7d89adb17a1064e7d3873a57e24e6e44361d",
+    "attempt": 360,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, Piece(owner=0, base_type_id='R', current_type_id='R', promoted=False), Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, None, None, None), (Hands(counts=(('R', 1),)), Hands(counts=())), 0, (((0, -1), 0),))"
+  },
+  {
+    "index": 15,
+    "family": 15,
+    "rules": "results/dev_aux/task2435/rules-15.json",
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from": [
+            0,
+            2
+          ],
+          "geometry_id": "g4",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_030",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            3,
+            2
+          ],
+          "geometry_id": "g5",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_032",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            2,
+            2
+          ],
+          "geometry_id": "g10",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_004",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            0
+          ]
+        },
+        {
+          "actor_type_id": "K",
+          "from": [
+            2,
+            3
+          ],
+          "geometry_id": "g2",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "actor_type_id": "N",
+          "from": [
+            1,
+            0
+          ],
+          "geometry_id": "g15",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "actor_type_id": "R",
+          "from": [
+            1,
+            1
+          ],
+          "geometry_id": "g18",
+          "kind": "semantic_board",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "27f2bef5b538f97100147e529f05efe14a72fc7c7a01162ec38142ba6ed98b0b",
+      "schema_version": 1
+    },
+    "state_sha": "a0473a1273b2d663373470b9a33033b293b2e56aa597e7e57f06e6135d41af84",
+    "attempt": 383,
+    "partition": "RESERVE",
+    "structural_key": "((None, None, None, None, Piece(owner=0, base_type_id='P', current_type_id='P', promoted=False), None, Piece(owner=1, base_type_id='R', current_type_id='R', promoted=False), Piece(owner=0, base_type_id='N', current_type_id='N', promoted=False), None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None), (Hands(counts=()), Hands(counts=(('R', 1),))), 0, (((0, -1), 0),))"
+  }
+]

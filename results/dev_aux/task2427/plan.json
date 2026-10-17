@@ -1,0 +1,85 @@
+{
+  "input": "results/dev_aux/task2427/inputs.json",
+  "input_sha": "ed8f34740658f0c8d33aebba09092d1e3089b7ca8661749e51abc1aff756bcd6",
+  "slots_sha": "adedb3346d3c5eba4a271216a0c81ac37444c91bf5b8db9468155119f5840c60",
+  "expected_games": 2,
+  "H": 96,
+  "one_cap_seconds": 600,
+  "estimated_seconds": 120,
+  "step_seconds": 1.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 3.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 1.0
+    }
+  ],
+  "pins": {
+    "results/dev_aux/task2427/pilot.py": "451b7b3bf70069f6e7bf4fd5c3cfa15d126874356c350869dbde481dbf09386c",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf",
+    "results/dev_aux/task2384/incremental.py": "d2282b4ab66c9d874feafc244567f5f3d717b184f17ada1c88998176842cdf14",
+    "results/dev_aux/task2405/selection.json": "cf14149808a4df8d15c2b9dfb7d21c8fbfccfd7496cb2fe34f6d6d019591df66",
+    "results/dev_aux/task2419/result.json": "4272438d34eab50aa3c4700fbac6e5bd96bb6b39a5f24d38b867eccf338a2bd9",
+    "results/dev_aux/task2385/rules-v2-f0.json": "e31d833d364d738b929c4c82efbe1f06dd1ecae39f47e9fdad9b30fee7bcf62f",
+    "results/dev_aux/task2385/rules-v2-f1.json": "b4938eeac268f232c481caa7e39554182b955e49192c648eb50eccda897aa472",
+    "results/dev_aux/task2385/rules-v2-f2.json": "c685090d019b86b96092ab03812b64167399c5878e946506d9db8e03f87e1e63",
+    "results/dev_aux/task2385/rules-v2-f3.json": "67c1bf95bcf5c4d2abb965af656ea28cb7150fdf00dd7ce36beddcd34391d430",
+    "results/dev_aux/task2385/rules-v2-f4.json": "4d361e22a2c493f02813233cf6628aa19b949ae38d645a8dd8ffc2ab58292a53",
+    "results/dev_aux/task2385/rules-v2-f5.json": "237b70d84ac9288067b37987333d5f15fa7dfcba3c5e745b604bf86e273ea747",
+    "results/dev_aux/task2385/rules-v2-f6.json": "819cd6f16244ac45444f55f02d0635746e5675e6b8228b7b3a3ff709f7c2b873",
+    "results/dev_aux/task2385/rules-v2-f7.json": "52bb009976b32a6e7a9beb48a4d0472c6bf527dc755e7d58b85c386987b69346"
+  },
+  "selection": "Actual terminal W-L only. Missing/UNKNOWN interval [-1,1]. Accept candidate only if mean LOWER bound strictly exceeds baseline UPPER bound; among maximum lower bound ties baseline then lexicographic(board_R,hand_R). No reserve fitness before immutable selection. If baseline selected, run only baseline once per role/reserve family (16) and explicitly no independent gain contrast.",
+  "scope": "NEWpostfit diagnostic of ONLY exposedTRAINfamily4role0 BASEvsimmutable selected, actualcompletegames fixedfoe2/H96. Candidate normal3s/strictcompletedD3 diagnostic, firstLOWcaller14.5/ordinary3.5; foeunchanged1s/caller1.5. Proof8.4verify3 unchanged. Not extensionofold1scap/newholdout/refit/wholegameinferencefromtree. ActualterminalW-L and strictdepth UNKNOWN separate. No humanprices/default/Core/PRIMARYchanges.",
+  "candidate_proof_caller_seconds": 14.5,
+  "forecast_seconds": 120,
+  "candidate_prices": [
+    [
+      0.75,
+      0.0
+    ],
+    [
+      0.75,
+      0.75
+    ],
+    [
+      0.75,
+      1.5
+    ],
+    [
+      1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.75
+    ],
+    [
+      1.5,
+      1.5
+    ]
+  ],
+  "variants": [
+    "REMOVAL_NO_DROPS",
+    "HAND_NO_DROPS",
+    "HAND_WITH_DROPS"
+  ],
+  "candidate_step_seconds": 3.5
+}

@@ -1,0 +1,195 @@
+{
+  "status": "CLOSED_ORDINARY_HAND_CONSUMING_PROOF_CONTROL",
+  "rows": [
+    {
+      "setup": null,
+      "rules": "results/dev_aux/task2429/rules.json",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "92da0235969a4d1f45e5d4494c39fbadb1742f0503ab6df951a42c2a22e67fc8",
+        "schema_version": 1
+      },
+      "state_sha": "9f92362e173e383e03e75142ea23aba4cbc4212278b8eb64b541848b355a5c43",
+      "hand": [
+        {
+          "R": 1
+        },
+        {}
+      ],
+      "legal": 12,
+      "proof_reason": "requires_independent_graph_verification",
+      "verified": true,
+      "work": {
+        "positions": 10,
+        "expanded": 1,
+        "transitions": 9,
+        "seconds": 0.01783980001346208
+      },
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.004813499981537461,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "fullhistory_tree": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "seconds": 0.004165399994235486,
+        "terminal_leaves": {
+          "checkmate:None": 1
+        },
+        "session_transitions": 1
+      },
+      "actual_record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "92da0235969a4d1f45e5d4494c39fbadb1742f0503ab6df951a42c2a22e67fc8",
+        "schema_version": 1
+      },
+      "winner": 0,
+      "actual_mate_moves": 1
+    },
+    {
+      "setup": "swapped_bases",
+      "rules": "results/dev_aux/task2429/rules.json",
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          }
+        ],
+        "initial_setup_key": "swapped_bases",
+        "resigned_by": null,
+        "ruleset_fingerprint": "92da0235969a4d1f45e5d4494c39fbadb1742f0503ab6df951a42c2a22e67fc8",
+        "schema_version": 3
+      },
+      "state_sha": "e203f7999d7f8376e283aff997ebacf888380ae42ab289aa0d83287eebff2388",
+      "hand": [
+        {
+          "P": 1
+        },
+        {}
+      ],
+      "legal": 6,
+      "proof_reason": "time_budget",
+      "verified": false,
+      "work": {
+        "positions": 1222,
+        "expanded": 652,
+        "transitions": 2268,
+        "seconds": 5.000101399986306
+      }
+    }
+  ],
+  "seconds": 5.084144899999956,
+  "scope": "ConstructedcompleteRule/Corefullhistories,noDROP/handguard/compilerbypass. SameCURRENTboard/aux/side butdifferentBASEboard+heldstock underinitialinventory. No universalhandprice/inertclassifier/defaultclaim. BothproofresultUNKNOWNifbudgetunproved; unprovedcontrolnotLOSS."
+}

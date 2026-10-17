@@ -1,0 +1,62 @@
+{
+  "status": "CLOSED_ACTUAL_MATCHED_COMPLETED_D3",
+  "actual_terminal_outcomes": [
+    "L",
+    "L"
+  ],
+  "actual_record_identical": true,
+  "strict_depths": [
+    {
+      "side_candidate": false,
+      "depth": 3,
+      "count": 12
+    },
+    {
+      "side_candidate": true,
+      "depth": 3,
+      "count": 12
+    }
+  ],
+  "decisions": 26,
+  "commits": 26,
+  "seconds": 27.70948910000152,
+  "old_affected": [
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "outcome": "D",
+      "plies": 19
+    },
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "outcome": "L",
+      "plies": 13
+    }
+  ],
+  "new_affected": [
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "outcome": "L",
+      "plies": 13
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "outcome": "L",
+      "plies": 13
+    }
+  ],
+  "all_ordinary_D3": true,
+  "new_price_gain": 0,
+  "scope": "ONEexposedpostfitTRAINpair,new3snormalprotocol. GainvanishesatmatchedcompletedD3; old1ssignalnotestablishedasdepthmatchedmaterialbenefit. Notwholetraininggridrerun/reselection/newholdout orclaimallreservegainsdisappear. Wallbudgetintervention changesordinarycapacity; onlynewactualrecords supportthiscase."
+}

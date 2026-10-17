@@ -1,0 +1,39 @@
+{
+  "status": "PASS_ACTUAL85_PAYLOAD_SENSITIVE_CONTENT_AST_JSON_SHA_AND_CRC",
+  "archive": "DELTA_REPRO_20261017_85.zip",
+  "archive_sha": "1bf0fe598bab584a3b409233c195c46f63ac09e59ac6771565de06c6e7e0bcb0",
+  "bytes": 1692578,
+  "payloads": 523,
+  "raw_bytes": 24227438,
+  "sensitive_hits": 0,
+  "AST_checks": 166,
+  "JSON_files": 300,
+  "JSONL_records": 9687,
+  "semantic_equivalent_overlays": [
+    {
+      "path": "results/dev_aux/task2400/consume-rules.json",
+      "old_sha": "2b609acee196b56a2a3f6b1ae4a798747d2a5a8ae8e97182b8e97467bb531c79",
+      "new_sha": "901ba40ac748ab82b1036e01e39316bb9ac52b9e10a993dae4995e427fb836c0",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2400/qualify.py",
+      "old_sha": "3676806964368c7d10d817e99a0ed45c53e78268da13b110dcdb63e48df63bc6",
+      "new_sha": "88b9e24041dd950981ca0d5a7740df4b3fe0235aad3728dcc2a6e8c0c321c50e",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2405/selection.json",
+      "old_sha": "80917038a72e168c3c123cdffb427ee93619938f32c4c54f9eb496fb3e91ffe1",
+      "new_sha": "cf14149808a4df8d15c2b9dfb7d21c8fbfccfd7496cb2fe34f6d6d019591df66",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2419/result.json",
+      "old_sha": "02827594f74767e4fe244be12e8d425fda28565ed7f22030208765cf5c4f375f",
+      "new_sha": "4272438d34eab50aa3c4700fbac6e5bd96bb6b39a5f24d38b867eccf338a2bd9",
+      "semantic_equal": true
+    }
+  ],
+  "seconds": 3.414349700004095
+}

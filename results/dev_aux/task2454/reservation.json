@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-17T01:33:18.532260+00:00",
+  "question": "Does a COMMONoffset of boardR/handR matter for actualW-L at IDENTICAL deploymentcontrast, including NEWroot/opponentconfigurations?",
+  "changed_premise": "2440D3designroot2 hasindependentcaptureplanes, andongoing2441TRAIN alreadyshows(.75,0)L vs(1.5,.75)W there. Bothhaveboard-hand=.75. ThisisTRAIN-derivedmechanisticcontrast,nottopselectedwinnerorDEVfit.",
+  "prices": [
+    [
+      0.75,
+      0.0
+    ],
+    [
+      1.5,
+      0.75
+    ]
+  ],
+  "equal_deployment_contrast": 0.75,
+  "training_seen": "2441partialthroughslot28 beforefreeze; selectedpair usesTRAINmechanism/outcomes, notreserve. Primary2441baseline1.5/1.5 selectorunchanged, no retroactiveclaimprefitpairchoice.",
+  "reserved_roots": "ALL8initials2439indices4..11 frozenBEFOREANYpricequery; futureinputs2442same8, no search/fitnessyet. ALLroles, nooutcome-basedrootsubset.",
+  "panels": [
+    {
+      "task": 2454,
+      "foe_R": [
+        2.0
+      ],
+      "games": 32,
+      "cap_seconds": 800,
+      "forecast_seconds": 500
+    },
+    {
+      "task": 2455,
+      "foe_R": [
+        0.5,
+        4.0
+      ],
+      "games": 64,
+      "cap_seconds": 1500,
+      "forecast_seconds": 1000
+    }
+  ],
+  "activation": "BOTHpanelspredeclarednowbeforeanyreservefitness, unconditionalonreservedoutcomes. No pair/foe/root/weight/timingrefit. LaunchsequentiallyafterTRAINclosure/selection andoriginalreservedplanactivation.",
+  "strict_depth": "SAME2441candidateandfoe3sD3/8192/firstLOW14.5ordinary3.5; incompleteordinaryDO_NOT_COMMIT/U, actualruleterminalonly. Fixedproof/gate/opponentratios asstated. Unknown/missing[-1,1], allfamilyblockedpairedcontrasts.",
+  "interpretation": "Positivepairedgain showscommonoffsetmatters forcompletefixedpolicyatconstantdeploymentcontrast; NOTuniqueprices/2Dpopulationidentifiability/convergence/humanreference. Existing4DESIGNrootsusedforhypothesis, new8rule-onlystructuralrootsconditionalmu. Differentfoesnotunseenhistorically; exactnewroot/priceperformancenotfit.",
+  "whole_logical_forecast_seconds": 4600,
+  "whole_cap_seconds": 7100,
+  "threshold_seconds": 7200,
+  "scope": "Boundedcontrolledcommonoffsetcounterexample/transfer, not extraunchangedcount. Sourceforecast3100 plus1500new; oldcapsneverextended. NoAgents/workers/fees/default/Core/PRIMARYwrites."
+}

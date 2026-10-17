@@ -1,0 +1,42 @@
+[
+  {
+    "setup": null,
+    "certificate": {
+      "target": 0,
+      "nodes": [
+        {
+          "rank": 1,
+          "terminal": null,
+          "edges": [
+            {
+              "action": {
+                "kind": "semantic_board",
+                "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                "geometry_id": "g17",
+                "actor_type_id": "R",
+                "from": [
+                  0,
+                  2
+                ],
+                "to": [
+                  3,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              "child": 1
+            }
+          ]
+        },
+        {
+          "rank": 0,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "edges": []
+        }
+      ]
+    }
+  }
+]

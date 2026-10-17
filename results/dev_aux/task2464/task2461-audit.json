@@ -1,0 +1,248 @@
+{
+  "status": "PASS_FULL_HISTORY_PHASES_CERTIFICATES_DUAL_CHANNEL_CONTRACT",
+  "task": 2461,
+  "games": 24,
+  "expected": 24,
+  "missing": 0,
+  "actual_moves": 241,
+  "uncommitted": [],
+  "outcomes": {
+    "W": 11,
+    "L": 13
+  },
+  "attempts": {
+    "LOW": 12
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 226,
+    "VERIFIED_GRAPH_STRATEGY": 13,
+    "VERIFIED_GRAPH_CONTINUATION": 2
+  },
+  "normal_depths": [
+    {
+      "is_candidate": true,
+      "depth": 3,
+      "count": 120
+    },
+    {
+      "is_candidate": false,
+      "depth": 3,
+      "count": 106
+    }
+  ],
+  "material_before_proofs": [],
+  "proofs": [
+    {
+      "kind": "GRAPH",
+      "slot": 2,
+      "ply": 39,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.009511600015684962,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 3,
+      "ply": 4,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0038508000143337995,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 4,
+      "ply": 4,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.004178600007435307,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 5,
+      "ply": 4,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0038038000056985766,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 9,
+      "ply": 8,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.008138199977111071,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 10,
+      "ply": 8,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.007985100004589185,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 11,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.004286499985028058,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 15,
+      "ply": 26,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.007185199996456504,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 16,
+      "ply": 22,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.006461800017859787,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 17,
+      "ply": 22,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.006155899987788871,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 21,
+      "ply": 0,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.002837600011844188,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 22,
+      "ply": 0,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.002983799990033731,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 23,
+      "ply": 0,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.002903599990531802,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    }
+  ],
+  "candidate_measured_seconds": 137.59995720002917,
+  "foe_measured_seconds": 60.36990809996496,
+  "seconds": 0.41808440000750124,
+  "scope": "ALLclosed/partialactualrecords/sourcepins/slotorder/phasecost/LOWtriggerorinclusiveHIGHtrigger/fullgameoutcomes, independentlyreconstructed. Allsavedgraphcandidates andcurrentcursors replayed, U/missing notDRAW. Sameengine/verifier notexternalexecution; nofit/DEV/defaultadoption."
+}

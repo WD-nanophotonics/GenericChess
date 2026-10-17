@@ -1,0 +1,95 @@
+{
+  "status": "CLOSED_COMPETING_ACTION_TRUE_WIN_PROOF_CONTROL",
+  "rows": [
+    {
+      "victim": "R",
+      "rules": "results/dev_aux/task2439/rules-2.json",
+      "root_action": {
+        "kind": "board",
+        "from": [
+          1,
+          1
+        ],
+        "to": [
+          1,
+          0
+        ],
+        "promotion_target_id": null
+      },
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "15ad1f7b7ceb34af3809392f4ac9ed7b2774734189e08f6c9b9277851af76d64",
+        "schema_version": 1
+      },
+      "state_sha": "c30b0827f4d53a5c12db41a359bb39bd7b3d77de9c6414200678416352f6b6c7",
+      "proof_reason": "time_budget",
+      "verified": false,
+      "work": {
+        "positions": 7868,
+        "expanded": 887,
+        "transitions": 8907,
+        "seconds": 15.000252400001045
+      }
+    },
+    {
+      "victim": "N",
+      "rules": "results/dev_aux/task2439/rules-2.json",
+      "root_action": {
+        "kind": "board",
+        "from": [
+          1,
+          1
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "15ad1f7b7ceb34af3809392f4ac9ed7b2774734189e08f6c9b9277851af76d64",
+        "schema_version": 1
+      },
+      "state_sha": "cde72e42ab08926db2d02ab51880d48393fae9cd77874b8de429192eb4351536",
+      "proof_reason": "time_budget",
+      "verified": false,
+      "work": {
+        "positions": 7815,
+        "expanded": 926,
+        "transitions": 8980,
+        "seconds": 15.00020539999241
+      }
+    }
+  ],
+  "seconds": 30.025934400007827,
+  "scope": "ONEpreexistingD3-sensitiveDESIGNroot aftereachofTWOactualcapturingchoices, bothfrozenBEFOREnewWDLproofquery. GenericfullPositionproof/fullhistoryverification/executableall-defensepolicy, target0evenrootdefendermove. UNKNOWNnotLOSS/DRAW, no pricechange/fitnesslabel/refit/oldcapextension. Normalplayersunchanged/gatebypassedONLYstandalonequalificationnotproduction."
+}
