@@ -8,6 +8,16 @@ Older reports are evidence, never automatic instructions to repeat their runs.
 
 ## Current decision and immediate work - 2026-10-17
 
+PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md closes the eight known
+current archive-copy corrections, not historicalGitpurge. New actual48signed/zeroP
+Nativequeries allpass on16exposedroots withfullstate, existingAPI unchanged.
+PRIMARYmedian-normalizedTD is a DIFFERENToptimizer fromAUXfixedP:294/613existing
+ordinaryleafpredictions change, max.24067. KeepAUXoptimizer in anyfutureNative
+queryadapter; no newlearner/default. AUX90parent+Dotreply readONLY, curveuntouched.
+Next concrete scientific option is one registered fixed-opponent rule-onlystatic
+baseline diagnostic versus frozen endpoint/initial models; preserve allinitials,
+newfullprefixes and UNKNOWN, no label fitting or claimedall-domainstrength.
+
 FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md is current follow-on.
 Actual v3 control collector now uses a private standard Session copy, retaining
 complete immutable state/history/witnesses and parent isolation. All9rule paired
@@ -44,9 +54,10 @@ future registeredcurve, neverchangeitscurrentrun or duplicatelearner.
 Operational correction: firstNativepacket5686c1cb included two incidental local
 pathJSONs after a failed Pythonreview did notstop PowerShell. Usernotified;
 Laterreviewalsofoundpersonalpathinunusedlegacycompatibilitysource; threecurrent
-segmentcopiesnowexcludeitwith27/27/31actualextractedsourcechecks. Eightolder
-archivegroupsalsohavepersonalpaths; inspectandcorrecttechnicalpublicationcopies
-NEXTbeforefurthermainline, withoutnewconsentqueue. Retainedpayloadsunchanged. OldGit
+segmentcopiesnowexcludeitwith27/27/31actualextractedsourcechecks. Theeightolder
+archivegroupsnowhaveversionedtechnicalcopies:10pathmemberschanged/2893payloads
+unchanged;3411sourcecheckpasses/10explicitSkips across11tiers. OldGithistoryand
+widerlegacytextremain; noglobalcleanclaim ornewconsentqueue. OldGit
 history persists; noforce/historyrewrite withoutnewuserauthority. Review/mutation
 are now separatecheckedcalls andarchivepayloadswhitelisted. Thisdoesnot revoke
 projectpublicationgrant orreplace scientific mainline withanapprovalqueue.

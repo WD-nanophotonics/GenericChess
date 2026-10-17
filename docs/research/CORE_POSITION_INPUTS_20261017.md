@@ -135,7 +135,7 @@ source/data whitelist. A result-index grouping error is repaired without rewriti
 the already valid archive. Exact original local logs stay private where needed.
 
 [Structured results](data/core_position_inputs_20261017.json) and
-[checked source/records](../archive/core_position_inputs_20261017/README.md) retain
+[checked source/records](../archive/core_position_inputs_20261017_public_v2/README.md) retain
 all cohorts, source tiers, limits, counterexamples, producer failures and hashes.
 No raw Slack/account output, personal path, credential or binary is published.
 
@@ -192,3 +192,5 @@ all existing exact originals and resolve the save. No alternative transport,
 security bypass, lost evidence or renewed user consent is involved. Raw outputs
 stay private. The fixed-source technical question is sent, still pending at the
 closing read, and is not a publication or research continuation gate.
+
+Current relative archive links use the separately versioned personal-path-corrected publication copies. Historical source hashes/counts above retain their original execution tier; the new manifests identify only personal-directory substitutions. See [publication-copy qualification](PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md). Old Git history has not been purged.

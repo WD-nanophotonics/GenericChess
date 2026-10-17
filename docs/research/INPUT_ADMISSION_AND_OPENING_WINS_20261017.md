@@ -139,7 +139,7 @@ unit tests are a distinct tier. No AUX source/program, NN, diagnostics API,
 storage expansion, new worker or abandoned PRIVATE route is part of this work.
 
 [Data](data/input_admission_opening_20261017.json) indexes the exact source/evidence
-[capsule](../archive/input_admission_opening_20261017/README.md). The new bridge
+[capsule](../archive/input_admission_opening_20261017_public_v2/README.md). The new bridge
 eligibility correction supersedes only the prior max-only research qualification;
 existing generated-rule measurements retain their original source/exposure tier.
 
@@ -157,3 +157,5 @@ claim about longer games, name a prospective distribution, fixed continuation
 policy and censoring rule. Do not retrofit old cohorts, infer WDL from continuing
 alternatives, or repeat the closed manual-model/packing cost panels. The generic
 AI objective, including complete generated rules and relevant history, stays OPEN.
+
+Current relative archive links use the separately versioned personal-path-corrected publication copies. Historical source hashes/counts above retain their original execution tier; the new manifests identify only personal-directory substitutions. See [publication-copy qualification](PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md). Old Git history has not been purged.

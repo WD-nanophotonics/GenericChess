@@ -4098,3 +4098,9 @@ model/default/search changes, no routineWDL/proofgate. Futurefullmetadata requir
 an actually replayable claimed-leaf contract, not episodeoutcome or numeric0.
 
 Publication scope correction: three replacement copies exclude a legacy module with personal directory; fresh retained-source leaf checks27/27/31 pass. Eight older archive groups and Git history remain unresolved. Earlier global-clean implications are withdrawn; no forced rewrite or AUX writes.
+
+
+### 2026-10-17 PRIMARY eight-copy correction and signed-price support
+
+Eightknownolderarchivegroups now have distinct publication copies:10actualpersonalpathmembers changed;2893remainingpayloads identical/numericJSON equal. Sevenisolated Nativebuilds and11sourcetiers give3411pass/10NativeSkip;404pass/74missingtempparentsetup errors fromfirstharness retained. Product/default/normalbinary/AUXunchanged. OldGit/widerlegacytextnotgloballyclean.
+AUX90completeparent+oneDotreply readONLY, no90source/execution orcurrentcurvemodification. PRIMARYnew48NativeD2/16fullroot/-1,0,+1Pcontrols retainexacttablesandCoreoptimalmembership; existingAPI sufficient. CurrentPRIMARYmedian normalization is differentoptimizer:294/613existingordinarypredictions change atfixedscale10,max.24067. KeepAUXoptimizer ifa futureNativequeryconsumertrial is selected. No newlearner/fitness/pricefit. Newreport andcheckedsource/data preserve failedharness/invalidDRAW hypothesis and unreaduniversityPDFscope.

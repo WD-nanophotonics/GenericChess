@@ -43,7 +43,7 @@ IDs and the diagnostic consumer. The original9-case run had8 failures/1pass befo
 the correction. Final isolated Python-only16-case red/green has12fail/1pass/3Native
 skips before versus13pass/3skips after. The3 Native cases execute in the normal
 PRIMARY environment. Final3259 complete checks and56related checks pass. The initially failing
-instrumentation case passes after correction. [Qualification](../archive/learning_methods_terminal_prefix_20261017/qualification.json)
+instrumentation case passes after correction. [Qualification](../archive/learning_methods_terminal_prefix_20261017_public_v2/qualification.json)
 keeps full, publisher, normal Native and isolated-source tiers separate.
 
 ## AUX88: actual evidence and independent scope
@@ -213,7 +213,7 @@ execution, full regression and publication tests are separate evidence tiers.
 
 
 [Complete paired data](data/learning_methods_prefix_20261017.json) and
-[exact evidence/dependency instructions](../archive/learning_methods_terminal_prefix_20261017/README.md).
+[exact evidence/dependency instructions](../archive/learning_methods_terminal_prefix_20261017_public_v2/README.md).
 
 
 ## Fresh within-rule continuation check
@@ -379,7 +379,7 @@ also ran24 but inherited the installed Native binary through an editable import
 hook; it is NOT called binary-free. Corrected Python-S restoration with explicit
 dependencies verifies native unavailable and17PASS/7SKIP. Both tiers remain.
 
-The [new exact source/evidence capsule](../archive/rich_tdleaf_offsets_20261017/README.md)
+The [new exact source/evidence capsule](../archive/rich_tdleaf_offsets_20261017_public_v2/README.md)
 is separate from both earlier immutable capsules. Its qualification records the
 full-regression and required publisher results only after they actually finish.
 No richer-model training or generic strength conclusion follows from this repair.
@@ -392,3 +392,5 @@ Next actual-consumer cost source inventory has begun: the opt-in localized-contr
 snapshot replays the complete root; inspect a standard shallow session copy only
 as a private feasibility alternative, retaining full child/witness equality and
 parent immutability. No copy optimization, new cache/API or training is adopted.
+
+Current relative archive links use the separately versioned personal-path-corrected publication copies. Historical source hashes/counts above retain their original execution tier; the new manifests identify only personal-directory substitutions. See [publication-copy qualification](PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md). Old Git history has not been purged.

@@ -139,7 +139,9 @@ was checked separately. Two failed source URLs are recorded; no access control
 was bypassed. No paper full text or human labels enter this project capsule.
 
 [Data](data/actor_binding_continuation_20261017.json) and the two-tier
-[source/evidence capsule](../archive/actor_binding_continuation_20261017/README.md)
+[source/evidence capsule](../archive/actor_binding_continuation_20261017_public_v2/README.md)
 retain declared protocols, failures, original observations, complete rules/records,
 all finite decisions, exact means, current source and frozen-source distinctions.
 The generic scientific objective remains OPEN; no AUX program was executed.
+
+Current relative archive links use the separately versioned personal-path-corrected publication copies. Historical source hashes/counts above retain their original execution tier; the new manifests identify only personal-directory substitutions. See [publication-copy qualification](PUBLICATION_COPIES_AND_SIGNED_PRICE_SERVING_20261017.md). Old Git history has not been purged.

@@ -1,0 +1,44 @@
+{
+  "runs": [
+    {
+      "copy": "learning_methods_terminal_prefix_20261017_public_v2",
+      "external_bridge_calls_forbidden": true,
+      "generic_python_paths_asserted": true,
+      "returncode": 0,
+      "seconds": 1.3599999999860302,
+      "source_tree": "source",
+      "suite": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "3",
+        "tests": "16",
+        "time": "0.568"
+      },
+      "targets": [
+        "tests/product/test_learning_terminal_leaf.py"
+      ],
+      "tier": "pure-source"
+    },
+    {
+      "copy": "learning_methods_terminal_prefix_20261017_public_v2",
+      "external_bridge_calls_forbidden": true,
+      "generic_python_paths_asserted": true,
+      "returncode": 0,
+      "seconds": 0.7029999999795109,
+      "source_tree": "source",
+      "suite": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "16",
+        "time": "0.270"
+      },
+      "targets": [
+        "tests/product/test_learning_terminal_leaf.py"
+      ],
+      "tier": "explicit-current-native"
+    }
+  ],
+  "scope": "Restored-copy tests only; historical outcomes and original wall clocks not rerun; rebuiltNative differsfromexplicitinstalled tier. Externalbridgeaccessforbidden.",
+  "status": "PASS"
+}

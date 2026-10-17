@@ -1,0 +1,46 @@
+{
+  "runs": [
+    {
+      "copy": "rich_tdleaf_offsets_20261017_public_v2",
+      "external_bridge_calls_forbidden": true,
+      "generic_python_paths_asserted": true,
+      "returncode": 0,
+      "seconds": 1.3439999999827705,
+      "source_tree": "source",
+      "suite": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "7",
+        "tests": "24",
+        "time": "0.595"
+      },
+      "targets": [
+        "tests/product/test_learning_spatial_leaf.py",
+        "tests/product/test_learning_terminal_leaf.py"
+      ],
+      "tier": "pure-source"
+    },
+    {
+      "copy": "rich_tdleaf_offsets_20261017_public_v2",
+      "external_bridge_calls_forbidden": true,
+      "generic_python_paths_asserted": true,
+      "returncode": 0,
+      "seconds": 0.7339999999967404,
+      "source_tree": "source",
+      "suite": {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "24",
+        "time": "0.292"
+      },
+      "targets": [
+        "tests/product/test_learning_spatial_leaf.py",
+        "tests/product/test_learning_terminal_leaf.py"
+      ],
+      "tier": "explicit-current-native"
+    }
+  ],
+  "scope": "Restored-copy tests only; historical outcomes and original wall clocks not rerun; rebuiltNative differsfromexplicitinstalled tier. Externalbridgeaccessforbidden.",
+  "status": "PASS"
+}
