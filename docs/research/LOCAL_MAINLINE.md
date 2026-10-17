@@ -85,9 +85,17 @@ selection from these cells. Full Core92896commits/182869PVedges PASS,0mismatch; 
 source regenerates2outputs/203.199s. Separate96componentqualification uses
 an explicit stop-root-only post-seal portability overlay after a before-query
 setup refusal; originalsource/archive/failedtree retained, nofakeflags. See
-RULE_A_CAPABILITY_MAPPING_20261017.md; preserve all original panels. Four bounded
-raw-feature neutrality checks now pass numerically; complete legacy action/history
-equivalence remains the next concrete consumer question, not a new provergate.
+RULE_A_CAPABILITY_MAPPING_20261017.md; preserve all original panels. The four
+numeric neutrality pairs now have a bounded complete-consumer continuation:
+eight actual271001 prefix states/all56 children agree, including full history and
+explicit ruleset/key isomorphism. This is not all-state/all-domain equivalence.
+An actual4-ply auxiliary-only fixture refuses default geometry metadata while
+explicit signed checkpoints complete NativeD2/Core24visits; kings-only material
+gives no utility claim. See RULE_ENCODING_NEUTRALITY_20261017.md.
+User requested paused inspection and termination at this completed check:
+no new nearest-rule/all-type transfer experiment launched (zero inputs/games).
+Resume requires explicit user direction; keep its provisional plan, reassess
+premise/cost before acting. No new prover/API/default or competing AUX work.
 
 ## Current backend boundaries
 

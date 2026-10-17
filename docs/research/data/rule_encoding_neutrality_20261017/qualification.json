@@ -1,0 +1,35 @@
+{
+  "added_public_dependencies": {
+    "generic_chess/ai/evaluation/semantic.py": {
+      "sha256": "cee55e9188fcb78cf650b3e858f5ab84b797a44696e5126462414d221f44d511",
+      "source_sha": "d7cf7e6996bb881c53e6ac0ccdfc7f9e9b0602d6"
+    },
+    "tests/product/test_repeated_cycle_aux_defaults.py": {
+      "sha256": "ee422bb6c75b5f684f3e037b02d5ebbccaf7195a27a1bc18a4a00231af0d5e5f",
+      "source_sha": "d7cf7e6996bb881c53e6ac0ccdfc7f9e9b0602d6"
+    }
+  },
+  "first_attempt": "Parentcapsule omits existingsemantic.py; Corecheckpassed butauxscriptimportfailed BEFORENative/Corecalls. Failedtree/logkept. NEWtree adds EXACTfixedPUBLIC d7cf module/testfixture, no sourcealgorithm/input/capchange. No claimfirstattemptpassed.",
+  "full_state_history_preserved": true,
+  "native": "Copied actually built source-pinned compatibility-fixed C from prior qualified parent; no new build claim.",
+  "non_time_results_equal": true,
+  "origins": "Python-S emptyPYTHONPATH; allGenericChess imports assertedunderNEWownSOURCE; actualPRIMARYstoproot, nofakeflags.",
+  "outputs_parked": 2,
+  "scope": "Published portabledrivers rerun two bounded checks from savedrule/plan; no TRAIN/fitness/AUXexecution/newexperiment/defaultchange.",
+  "seconds": 1.6604366999818012,
+  "source_dependency_sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+  "source_version": "bd8054de31ec687676e5bc2720578cabb2f725d7",
+  "status": "PASS_PUBLISHED_DRIVERS_FRESH_DATA_EXTRACTED_PINNED_SOURCE",
+  "steps": [
+    {
+      "driver": "core_check.py",
+      "exit_code": 0,
+      "seconds": 0.9052923999843188
+    },
+    {
+      "driver": "aux_check.py",
+      "exit_code": 0,
+      "seconds": 0.6821449999697506
+    }
+  ]
+}

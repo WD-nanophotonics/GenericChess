@@ -4224,3 +4224,21 @@ PAID_TD_AND_SIGNED_PRICE_CONSUMERS_20261017.md and
 RULE_A_CAPABILITY_MAPPING_20261017.md, exact public capsules/fullstate records and
 reviewed source. Final full remote SHA/anonymous byte checks and useful one-way
 Dot/DEV_AUX fixed-version delivery are recorded after publication, no ack gate.
+
+
+## PRIMARY 2026-10-17 — bounded neutrality checks and user stop
+
+PRIMARY closes the next concrete feature-consumer question: eight paired existing
+271001 Core states/all56 legal children preserve complete state/history under
+explicit fingerprint/key isomorphism for the finite-board one-step ray/leap change.
+The auxiliary-only repeated-cycle4-ply fixture refuses missing default geometry
+metadata but serves2signed Native checkpoints/Core24visits. Its kings-only
+material is zero: no value/usefulness conclusion. No new API/default/AUX writes.
+
+Complete PRIMARY7-post Slack thread read/reconcile finds the same final result
+and no newly unevaluated Dot response. Channel roots through the previously
+covered boundary show no new93 root; this does not certify every AUX supplement
+or future reply. No routine response loop or duplicate learner. User then pauses
+inspection and requests stopping at a suitable point: publish these completed
+checks, preserve provisional next plan without launching it, then persist stop.
+Details and qualified research drivers: RULE_ENCODING_NEUTRALITY_20261017.md.

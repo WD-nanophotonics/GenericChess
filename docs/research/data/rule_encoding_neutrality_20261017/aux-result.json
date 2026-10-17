@@ -1,0 +1,1141 @@
+{
+  "complete_input": {
+    "history": [
+      {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_018",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        "after_key": "9aba8b95742c80e6eff0535c7435b516133e28abe5f71116d75c6a0eb98204c2",
+        "before_key": "b9e8017a463c431de066f5d3fea0adbf5ead402ae601e20ee60279b66994ca1e",
+        "player": 0,
+        "ply": 1
+      },
+      {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 7,
+            "rank": 7
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_018",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 6,
+            "rank": 7
+          }
+        },
+        "after_key": "4e0197221dac2003701e171cbab19bb53edaa3d1ea6252932ecbfa4686aaba65",
+        "before_key": "9aba8b95742c80e6eff0535c7435b516133e28abe5f71116d75c6a0eb98204c2",
+        "player": 1,
+        "ply": 2
+      },
+      {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        "after_key": "ec28d7871e7f4487af01de398d746c73f6d33ee27f99fa6bdc4dc23375c1d30c",
+        "before_key": "4e0197221dac2003701e171cbab19bb53edaa3d1ea6252932ecbfa4686aaba65",
+        "player": 0,
+        "ply": 3
+      },
+      {
+        "action": {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 6,
+            "rank": 7
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 7,
+            "rank": 7
+          }
+        },
+        "after_key": "b9e8017a463c431de066f5d3fea0adbf5ead402ae601e20ee60279b66994ca1e",
+        "before_key": "ec28d7871e7f4487af01de398d746c73f6d33ee27f99fa6bdc4dc23375c1d30c",
+        "player": 1,
+        "ply": 4
+      }
+    ],
+    "record": {
+      "actions": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_018",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 7,
+            "rank": 7
+          },
+          "geometry_id": "g6",
+          "pattern_id": "legacy_018",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 6,
+            "rank": 7
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 6,
+            "rank": 7
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_002",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 7,
+            "rank": 7
+          }
+        }
+      ],
+      "declaration": null,
+      "initial_setup_key": null,
+      "resigned_by": null,
+      "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+      "schema_version": 1
+    },
+    "state": {
+      "history": [
+        {
+          "action_signature": "",
+          "actor": -1,
+          "gave_check": false,
+          "position_key": "b9e8017a463c431de066f5d3fea0adbf5ead402ae601e20ee60279b66994ca1e"
+        },
+        {
+          "action_signature": "{\"actor_type_id\":\"K\",\"from\":[0,0],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[1,0]}",
+          "actor": 0,
+          "gave_check": false,
+          "position_key": "9aba8b95742c80e6eff0535c7435b516133e28abe5f71116d75c6a0eb98204c2"
+        },
+        {
+          "action_signature": "{\"actor_type_id\":\"K\",\"from\":[7,7],\"geometry_id\":\"g6\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_018\",\"promotion_target_id\":null,\"to\":[6,7]}",
+          "actor": 1,
+          "gave_check": false,
+          "position_key": "4e0197221dac2003701e171cbab19bb53edaa3d1ea6252932ecbfa4686aaba65"
+        },
+        {
+          "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,0],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,0]}",
+          "actor": 0,
+          "gave_check": false,
+          "position_key": "ec28d7871e7f4487af01de398d746c73f6d33ee27f99fa6bdc4dc23375c1d30c"
+        },
+        {
+          "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,7],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[7,7]}",
+          "actor": 1,
+          "gave_check": false,
+          "position_key": "b9e8017a463c431de066f5d3fea0adbf5ead402ae601e20ee60279b66994ca1e"
+        }
+      ],
+      "ply_count": 4,
+      "position": {
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board": [
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          }
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 0
+      },
+      "repetition_counts": [
+        [
+          "4e0197221dac2003701e171cbab19bb53edaa3d1ea6252932ecbfa4686aaba65",
+          1
+        ],
+        [
+          "9aba8b95742c80e6eff0535c7435b516133e28abe5f71116d75c6a0eb98204c2",
+          1
+        ],
+        [
+          "b9e8017a463c431de066f5d3fea0adbf5ead402ae601e20ee60279b66994ca1e",
+          2
+        ],
+        [
+          "ec28d7871e7f4487af01de398d746c73f6d33ee27f99fa6bdc4dc23375c1d30c",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      }
+    },
+    "witnesses": [
+      {
+        "aux_state": [],
+        "board": [
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          }
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 0
+      },
+      {
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board": [
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          }
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 1
+      },
+      {
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board": [
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          },
+          null
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 0
+      },
+      {
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board": [
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          },
+          null
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 1
+      },
+      {
+        "aux_state": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "board": [
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 0,
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "owner": 1,
+            "promoted": false
+          }
+        ],
+        "board_height": null,
+        "board_width": null,
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "side_to_move": 0
+      }
+    ]
+  },
+  "core_visits": 24,
+  "default_refusal": "default evaluation requires legacy movement metadata; supply evaluator_override for semantic-only search",
+  "rows": [
+    {
+      "action": {
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "geometry_id": "g4",
+        "pattern_id": "legacy_014",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 0,
+          "rank": 1
+        }
+      },
+      "checkpoint": {
+        "board_weights": {
+          "K": 0,
+          "R": 1,
+          "TP": 2
+        },
+        "evaluation_profile_version": "scoped-aux-serving-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "K": 0,
+          "R": 0.5,
+          "TP": 1
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1,
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10,
+        "w_max": 100000.0
+      },
+      "completed_depth": 2,
+      "nodes": 17,
+      "pv": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g4",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 7,
+            "rank": 7
+          },
+          "geometry_id": "g4",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 7,
+            "rank": 6
+          }
+        }
+      ],
+      "score": 0,
+      "sign": 1
+    },
+    {
+      "action": {
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "geometry_id": "g4",
+        "pattern_id": "legacy_014",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 0,
+          "rank": 1
+        }
+      },
+      "checkpoint": {
+        "board_weights": {
+          "K": 0,
+          "R": -1,
+          "TP": -2
+        },
+        "evaluation_profile_version": "scoped-aux-serving-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "K": 0,
+          "R": -0.5,
+          "TP": -1
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1,
+        "ruleset_fingerprint": "36a3663ca6be7493f0235e02dcaab4c6d263e02c7def392beeb9e1cfefdba6f8",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10,
+        "w_max": 100000.0
+      },
+      "completed_depth": 2,
+      "nodes": 17,
+      "pv": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g4",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 7,
+            "rank": 7
+          },
+          "geometry_id": "g4",
+          "pattern_id": "legacy_014",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 7,
+            "rank": 6
+          }
+        }
+      ],
+      "score": 0,
+      "sign": -1
+    }
+  ],
+  "scope": "Actual4-ply sparse/default auxiliary/repeatedcycle state;2rawsignedCP consumer checks,0truncate/defaultmetadata fallback. Kings-only materialcounts allzero: no usefulprice/causalvalueclaim; semanticopportunity candidate excludesstateeffects and is NOTdrop-in rawA mapping.",
+  "seconds": 0.09588199999416247,
+  "semantic_candidate_scope": {
+    "candidate": "semantic-opportunity-v4",
+    "complete_legal_mobility": false,
+    "hand_policy": "legacy_scale_unvalidated",
+    "ignored": "Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling outside the proved-inert subset, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.",
+    "ir_source": "compiled_semantic",
+    "law": "Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.",
+    "types": {
+      "K": {
+        "capture_endpoints": 420.0,
+        "curves": [
+          {
+            "capture": 0.0,
+            "density": 0.0,
+            "quiet": 6.5625,
+            "total": 6.5625
+          },
+          {
+            "capture": 0.41015625,
+            "density": 0.125,
+            "quiet": 5.7421875,
+            "total": 6.15234375
+          },
+          {
+            "capture": 0.8203125,
+            "density": 0.25,
+            "quiet": 4.921875,
+            "total": 5.7421875
+          },
+          {
+            "capture": 1.23046875,
+            "density": 0.375,
+            "quiet": 4.1015625,
+            "total": 5.33203125
+          },
+          {
+            "capture": 1.640625,
+            "density": 0.5,
+            "quiet": 3.28125,
+            "total": 4.921875
+          }
+        ],
+        "excluded": [],
+        "included": [
+          "legacy_000",
+          "legacy_001",
+          "legacy_002",
+          "legacy_003",
+          "legacy_010",
+          "legacy_011",
+          "legacy_012",
+          "legacy_013",
+          "legacy_014",
+          "legacy_015",
+          "legacy_016",
+          "legacy_017",
+          "legacy_018",
+          "legacy_019",
+          "legacy_020",
+          "legacy_021"
+        ],
+        "quiet_endpoints": 420.0,
+        "raw": 5.816015625,
+        "signature": "ddca4d468cce4e4fb5539db16e0724a82b7e07ca08ce4361d34f9730339baa61"
+      },
+      "R": {
+        "capture_endpoints": 896.0,
+        "curves": [
+          {
+            "capture": 0.0,
+            "density": 0.0,
+            "quiet": 14.0,
+            "total": 14.0
+          },
+          {
+            "capture": 0.6872178316116333,
+            "density": 0.125,
+            "quiet": 9.621049642562866,
+            "total": 10.3082674741745
+          },
+          {
+            "capture": 1.1001129150390625,
+            "density": 0.25,
+            "quiet": 6.600677490234375,
+            "total": 7.7007904052734375
+          },
+          {
+            "capture": 1.3488553762435913,
+            "density": 0.375,
+            "quiet": 4.496184587478638,
+            "total": 5.845039963722229
+          },
+          {
+            "capture": 1.501953125,
+            "density": 0.5,
+            "quiet": 3.00390625,
+            "total": 4.505859375
+          }
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_026",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          },
+          {
+            "pattern": "sem_00_promotion_grants_one_turn_right",
+            "reasons": [
+              "compound/state effect",
+              "target relation"
+            ]
+          }
+        ],
+        "included": [
+          "legacy_004",
+          "legacy_005",
+          "legacy_006",
+          "legacy_007",
+          "legacy_022",
+          "legacy_023",
+          "legacy_024",
+          "legacy_025"
+        ],
+        "quiet_endpoints": 896.0,
+        "raw": 8.91991486310959,
+        "signature": "2e166eceda4326c74c5975dead71e81c945aaf010f64ddb262b475526a0eded0"
+      },
+      "TP": {
+        "capture_endpoints": 56.0,
+        "curves": [
+          {
+            "capture": 0.0,
+            "density": 0.0,
+            "quiet": 0.875,
+            "total": 0.875
+          },
+          {
+            "capture": 0.0546875,
+            "density": 0.125,
+            "quiet": 0.765625,
+            "total": 0.8203125
+          },
+          {
+            "capture": 0.109375,
+            "density": 0.25,
+            "quiet": 0.65625,
+            "total": 0.765625
+          },
+          {
+            "capture": 0.1640625,
+            "density": 0.375,
+            "quiet": 0.546875,
+            "total": 0.7109375
+          },
+          {
+            "capture": 0.21875,
+            "density": 0.5,
+            "quiet": 0.4375,
+            "total": 0.65625
+          }
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_027",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "included": [
+          "legacy_008",
+          "legacy_009"
+        ],
+        "quiet_endpoints": 56.0,
+        "raw": 0.77546875,
+        "signature": "d96f9486152568be7050ba66ff92c7bee3c2114cf1cf136d6bca92400da5ae31"
+      }
+    }
+  },
+  "status": "PASS_EXPLICIT_SERVING_AND_CLEAR_DEFAULT_BOUNDARY"
+}
