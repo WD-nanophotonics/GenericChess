@@ -23,19 +23,31 @@ policy; no automatic Native search fallback or evaluator/price change follows.
 NO_PROGRESS_SEARCH_CONTEXT_20261017.md owns2971 full/206 restored-source checks,
 2386 source state occurrences, actual caller/control/cost curves and all failures.
 
-The next explicit-evaluator question was actually executed:24 default constructors
-fail on pure-semantic metadata absence, but existing zero-dynamic weights already
-avoid those geometry dependencies. The unmodified semantic opportunity profile/
-attack evaluator completes12 real full-rule NP D1 calls and907 material-state
-checks. No adapter/learner is needed for that explicit candidate. An initial
-unconditional-loop premise was wrong; source already had the guards, no patch.
-The default nonzero dynamic path and unvalidated projection effects remain open.
-Next select one decision-changing projection/ranking test under a declared measure,
-full promotion/drop/aux/history and fair finite resources. Do not infer useful
-prices from constructor success, repeat a solved adapter task or duplicate AUX.
-Static tables and small learned candidates remain allowed under their stated
-scope. Earlier no-progress guard/refusal notes below describe superseded source
-tiers, not current prohibitions or permission gates.
+The explicit evaluator route is now tested beyond construction. Existing semantic
+opportunity material and mobility-only Core attacks work without a new adapter;
+full promotion/drop/aux/history remain. SEMANTIC_MOBILITY_AND_PRICE_DESIGN_20261017.md
+owns the new evidence: two positive unfitted price tables agree on303 old scalars
+but reverse lawful drop choices in8 actual D1/D2 calls. This selects better
+observation design if fitting prices, not a new network or useful-price claim.
+
+Keep cheap material and the existing attack feature opt-in. The low-inventory
+NP7 consumer48games are all true draws. The prospective12 wider generated families
+complete all48cells/2254plies; material9W/4L/11UNKNOWN versus attack7W/4L/1D/12UNKNOWN,
+with all-pair gain bounds spanning0. D0 terminal wins are successful, separated
+from16 versus78 true time fallbacks. No fit/default/strength conclusion follows.
+A private clear-ray bulk optimization misses its whole-caller cost criterion
+(.962 median with adversity), so DEFER it; normal source/Native stay unchanged.
+
+The paid root-tactical startup follow-on now has10 separately frozen cold calls:
+three true timed-scan cases completeD1 with existing flagoff versusD0 on; both
+real root-win controls remain actual terminalwins inbothmodes. The old90s all-reply
+protocol remains partial. Keep defaulton; this is scoped completion, not safety
+or strength. Next inspect actual child-declaration/evaluator contracts before
+reusing a scan asD1 or adding root caches. No old Native scout revival/newarena.
+Exact full public96game/PV replay is qualified in isolated Core source after
+fixing validation-only per-scalar stop-file overhead. Original capped readers
+remain partial. Default nonzero anchor/promotion geometry still needs metadata;
+no silent unity, feature truncation, competing AUX learner or model patch.
 
 The user-selected Slack defect repair is CLOSED. Native/Core automatic PENDING,
 checked continuation, full-state imports and rule max-ply priority were qualified

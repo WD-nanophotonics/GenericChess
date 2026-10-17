@@ -3693,3 +3693,38 @@ existing zero-dynamic semantic profile/attack consumer works on12 NP rules and
 an unconditional constructor loop; the guard already exists, so no duplicate
 adapter or evaluator patch. Default/nonzero geometry limitation and projection
 exclusions remain. No AUX material-helper code copied/executed or new fit follows.
+
+
+## 2026-10-17 PRIMARY semantic mobility and observation design
+
+PRIMARY preserves ordinary source/Native/defaults, tests the existing opt-in
+semantic evaluator and qualifies the full rule/history consumer. Two positive
+unfitted tables are indistinguishable on303 old scalars but reverse lawful drop
+choices; no price fit or richer model follows. New48NP games are all true draws;
+prospective48 wider cells retain23UNKNOWN and no robust mobility benefit. Current
+cost/stability evidence favors the cheap comparator. The private bulk-clear-ray
+candidate misses its declared whole-caller criterion and is deferred with adverse
+pairs. A timed root-scan probe is partial, not a default-off result.
+
+Own status-label bug invalidated48 one-ply attempts; all originals remain and the
+user was notified. Existing compiler dispatch repaired only12 unstarted atom-only
+cells under the same original1800s clock. Initial source qualification accidentally
+loaded normalNative through editablefinder, explicitly corrected to53PASS/6skips.
+Public reader240s/83cases and scalar-poll reader180s partials remain; separate v3
+fresh-boundary/deadline protocol qualifies96games/2802fullstates/4543PV from isolated
+Core source, with4 controlled stop/error cases. No hidden failure or quota claim.
+
+Primary thread53posts/three cursor pages plus new roots and full AUX83 parent/two
+replies were saved before strict parse/reconcile; no new primary Dot response,
+historical payload binding remains false. AUX83 fixed7e941ba78f68cd6490227cf550de30ddf5b65dd2
+report READ_ONLY; report SHA256=e0743902f84fbb28d2ae28fc9d3b0da018e4cdf2de16168335dd1bf0799b34fb.
+Owner reports95terminal+1interruptedUNKNOWN, fragile one-family hand/drop gain,
+separate hand channels and stop-reader sharing controls. Historical holder/cause
+of its errno13 remains unobserved; PRIMARY makes no OS-writer attribution or own
+execution claim. Adopt bounded cooperative-unit/exception-exit reasoning for a
+private validation reader, no AUX source/helper copied, source/tests/games/proofs
+executed, checkout writes, automatic merge or new worker. AUX hand-channel learner
+stays its lane. Fixed PRIMARY report/data/source links are final delivery;
+no routine receipt, approval or partner rerun is claimed.
+
+Separate10-call existing-root-scan controls complete:3 selected time fallbacks improveD0-to-D1 with flagoff,2 true root-win controls remain actualwins inbothmodes. Default stayson, no all-reply safety/strength or old90s completion claim. Next semantic source audit covers child declarations before any reuse.

@@ -1,0 +1,2691 @@
+{
+  "members": 446,
+  "source_files": 122,
+  "zip_bytes": 3816311,
+  "zip_sha256": "25aa01248817a5156cbd880cea8d022b1e33ba676170caf418f5c11696ca13fd",
+  "crc_and_all_payload_hashes_passed": true,
+  "sensitive_hits": [],
+  "manifest": [
+    {
+      "member": "recorded/aggregate.py",
+      "original_sha256": "55d12a7fdbb4a1311ec9e1bf53be9ee032c07a7b757cc6932f43311f74bd4e94",
+      "published_sha256": "fbb9190610fbaa8a5c535e087968cb92f87072e9d260277a9b6e71603f7e3e50",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/attribute-D0.py",
+      "original_sha256": "bd28e617d79efefc5efb1fd907dfb038573daf75527d07ad46fbabc4e61966d8",
+      "published_sha256": "7414843f9d77475a5b3c91de8c51eca284b608cbb758198bc137befd3393c174",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/decision.json",
+      "original_sha256": "0e381d569139698cdedbfb49f2c68380f1eb2e571e0635c3c4a3cdf4a0dfa390",
+      "published_sha256": "d1c8f3c1f35df959f297183c33e2a6e59f51cf492a5b3c1795fbf10613de9385",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/plan.json",
+      "original_sha256": "12c892a6f0c6d5ada289d3fe456466bdeceb825051cfcd9ef1b7254edf439064",
+      "published_sha256": "ca3d76b1911494ad0a5c224ba65dff4a921bbff7fdc3bcbd174feed2d4fea5fa",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/profile-plan.json",
+      "original_sha256": "555c3f1eff712c9b863d34df7b6850f74ba774ec6a914de68cdda064b66233e9",
+      "published_sha256": "a1fa98117347405eb06a1d80ed5f73c9f14b705f8b82be4307852c5c2eb8bfec",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/profile-result.json",
+      "original_sha256": "83321e0150fab5129f7f511d5172ab8f91b3990c58f49f28431b856dcf3660ac",
+      "published_sha256": "2631c6e4a18c0f83dbc05cc03c2ff1bc48ff38fb1f2cab76b1e8d8f161973654",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/progress.json",
+      "original_sha256": "c756ef757be1d4f0a6f938e1ec233aaa1563e5a669fa27580ac85f096be92b17",
+      "published_sha256": "560edc09846baf3cd3c4119f5794564aa6877b3b66c324be7a0057307b0aad65",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/result.json",
+      "original_sha256": "edf841716f68f5ad339053f1bbcc3fe6bee70bcbd9c90ba458e89e5843c1e5c7",
+      "published_sha256": "34cb88522e30b843590c62513f2a167dce4a38e34dc16fceacbb82e0baba7d8a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/run.py",
+      "original_sha256": "1df0df53429d8910dc2c81f94fcba0314b97ad06cb7e5b991259a30b0f997a94",
+      "published_sha256": "7b19811e0be944e0484277993da982517db1efcd7235fcb99571f716ef6975ce",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/source-candidate.py",
+      "original_sha256": "0c1a878704f993a23a862add76179a82109b287d6e8865501bb0bb0db08bedf0",
+      "published_sha256": "0e008ea267794ad9ad751b02cd4366ae45bb3e97a3bd92e39e7295e04f14c1b3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/bulk-attack/source-original.py",
+      "original_sha256": "058588a61f18ece62637ead093c73a0a1ce00ec6eaa13ccc0b4e1fde48926e89",
+      "published_sha256": "bd37d8430d1ab6ffb1e591626e2b975a6a158c88a80670e99799f275c1bec9d2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-analysis.json",
+      "original_sha256": "5d40c17460adcb10d9f9276ee8fd3eec1e314bd2254f2b28e104ebb17baaf3f2",
+      "published_sha256": "ce82d7353794dd2748e83820933bb669ff7f5235e4dd7fa51ba4b90dbbe148cf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-00-profiles.json",
+      "original_sha256": "bb97e8832cde8b53a68310fb184995fa6093164660516a8c9f0da9e41b77956b",
+      "published_sha256": "0e30495a871153b1e55592721c1dcae76233083e302f837a5b8ef6d7ef4393ef",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-01-profiles.json",
+      "original_sha256": "223b4d4aceee58c7eefdef7167156b0bc36d6116c81e0a3cbee50f503c339af7",
+      "published_sha256": "6b482b527ee3e66a1b6ae59055e9add1e19c353f6b339c0eb02008e0abbc9c98",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-02-profiles.json",
+      "original_sha256": "3cf1d1b2084a31e637533a06d12cc40d1a90a57709b5729a3465520ad3cd4c70",
+      "published_sha256": "ca98fac56f1a03c2c3bb9a5fae459163dcbed2702a4805871b67a9be791ad93f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-03-profiles.json",
+      "original_sha256": "503424fc44ee20d6087df50f780e77731c061335af325fe6eaeba691fcafe235",
+      "published_sha256": "39a8f3b1abbf995ab01df706b5a858089363ec9e88cb2ac8944b00479654964d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-04-profiles.json",
+      "original_sha256": "7285fb68c900f20d805809136df407654c016104710946d9604cdd2e55e05d9a",
+      "published_sha256": "18defdc150442e61f29cee32b64d6209eee32bd41c90b11d2d987772abd07cc1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-05-profiles.json",
+      "original_sha256": "d21faafe108b74360efe707a85f128bbf7241ae67e83910d8a8ea86f5aa8b5c5",
+      "published_sha256": "d9a9945641dd585c040b23f76518d0f40eab606c95c91e1545e58af34d42f55f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-06-profiles.json",
+      "original_sha256": "cfb3a15d46e7c7c9deb392ea365f25163bf8621ce6ab9f94051a4647064b9b48",
+      "published_sha256": "b4bebe31735370f9cfaa48c9f6de883712350bf231063f2a4ab5f176d9eaf6d3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-07-profiles.json",
+      "original_sha256": "188647d8ef2889951e6dec646820604f06da9358b13f9a1af915637d6fda574e",
+      "published_sha256": "163dfa156c2c1122681bcd17c0e5d919ff469a74c2b477e5df9a4c07f686efd0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-08-profiles.json",
+      "original_sha256": "a0a74bff322a2796aff3219045d11e9f62f410839df6b3bff556e19b0977e72b",
+      "published_sha256": "99a01888a1115f7b2dc6b3384bedd21adc1c4c0d048b852c6e738da8143baf61",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-09-profiles.json",
+      "original_sha256": "b949ffdcf133e30ca1522c4d113ba7d3fb57567d876742c56a7960aa43a33a67",
+      "published_sha256": "c5562cf9bb98011aa3a4360388a67baa6e4fe84ee80e85bd3b2972519d4bb885",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-10-profiles.json",
+      "original_sha256": "f490fa0f0508c51a0db619597945fb5c2f52c1e6d84ac8c24e178718803b1233",
+      "published_sha256": "7c14facbe06429d478826ba8f93a04ff44132176fbef475f6f776c38f04ff0be",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-family-11-profiles.json",
+      "original_sha256": "a1984f7bca48bde64e0210a5e1df56e570a2993b717aaf96f664b5f40ae60f50",
+      "published_sha256": "14d889aac06409bd4b81e869dc54ae9ef916b0149959de5a6d73c72210df8521",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-00.json",
+      "original_sha256": "af916f4ee434e91146469ed1a9b465e7c3809d730406a6f6e9052098a8b291a8",
+      "published_sha256": "34bc55490889fcc5c09e931d86e0c1766614cc95988baeb65f85b22b78cbb1e1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-01.json",
+      "original_sha256": "8959b413ff9c60eeff68f5e50c28553ac9e5a698845409a7ee570ad4eb58f1fe",
+      "published_sha256": "15516a0252d8404dc9c9045f2981b1330594cda1b08b359d1095e79ee2d99af9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-02.json",
+      "original_sha256": "b4ed28517ed1c97a9e51b40a8f5547fa03445cdd797486a753d8335f5e3e044c",
+      "published_sha256": "c5850cf990f9e855d96d46cc3c882debc0b7a62fa382f02208fb686caa736f2d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-03.json",
+      "original_sha256": "eec60a91f528423eb2f79b2a3cafb15f8519bb1815c70f06aca8a5212a9e4211",
+      "published_sha256": "c487c7656b980e6a5ffebb1ea8da82a5c8a2532cdcf22a50d57c6bd8ad78953b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-04.json",
+      "original_sha256": "e36cb3a11954216999b41eda018a2de130fc3444e84eb7bd39e11f2aca305ec9",
+      "published_sha256": "d27d55e01a7475f1a9d61352d92ae311d48ffed509d649a19a8d97b5970b7964",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-05.json",
+      "original_sha256": "cbd25038a04f43d8d71c518d01a04878ca19ae05597a84585ff21b99dca0f458",
+      "published_sha256": "60af87c693638343cae0e6d372d24ebb6f4b19b9a6c9f9da0d53da8969ffa69d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-06.json",
+      "original_sha256": "16ab739f1af5568209c800109dd95c7a97e028e477ac6165306fff4cebe9af21",
+      "published_sha256": "2e0e6a7df86f0551a3cab4caec86fd44c559457271c9282c6aae982a4f4e44b5",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-07.json",
+      "original_sha256": "4a03e20f4c6f19c757db0a4501bc1805a6dea73719e42a530db7ab92ed9e7004",
+      "published_sha256": "e04b2e3238fe53d5e76314d10110ca4c17ddbf8524068de68e3cd9b10a0a40c3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-08.json",
+      "original_sha256": "3065e40f86d1e6c3910c2dbdf4f8bafe2eaf2395aa3487124966c65b0045e11b",
+      "published_sha256": "2a167945eff57cd0a97e8239a985eceda537fbfdfcc9fd3c68346f31c86af4c9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-09.json",
+      "original_sha256": "910245b8d6db168b055f6f9583741f6e8ecb97efd790eab6de18df239025b38f",
+      "published_sha256": "89f715bc98928a68463ccf9cd675b2e522330d6e54adce11f41c7281ca387dfe",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-10.json",
+      "original_sha256": "dcf08f5fd017912ddfab2812f8f3b00eb20acfbb6687d434e3c03680c56c4d2a",
+      "published_sha256": "b8dcd7bec5e36d79d74cf518fed73470aacd6ff209171a7ca12c90d6609679e1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-11.json",
+      "original_sha256": "9da0603efea4b234a80262c7ae14dd16ad79fd829573100c4ef4029adfdada8e",
+      "published_sha256": "3a808601fd452559cb0bb69334a5daf8237908c83b533e66ffedf9fa98ce1213",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-12.json",
+      "original_sha256": "6ff4ad8ec43cb937dfab74ebf2487c7e48cc73eb61f9787e1d0a0d73369719bc",
+      "published_sha256": "59a27854302395df75014fd441ec6ca7465ed1d802bbd30d242205ccf5f6186f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-13.json",
+      "original_sha256": "7f9a772ae03affb3394e394ab4564e34ce4cd66139b9c29a09386ab6a18c18d6",
+      "published_sha256": "ce052b765995450220225d77c2ab64d7b5ccdb620c818693ff8d189260288449",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-14.json",
+      "original_sha256": "fcb74aefaefa6c3f744852d8638b95b026333706b6a60c39d83f4a772f0bf4a1",
+      "published_sha256": "32b1834fb6c2ac413b6e31f531fefd83408143430d614a2756bb38e6fe2ba440",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-15.json",
+      "original_sha256": "72aa4aaedef920d349b9cc98f54237d51c9210d567963af09f4d7236eac96ae4",
+      "published_sha256": "6c369b1de4e9f54468c9d48da1c3c263db5e922cb233c80277c574059f53cf64",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-16.json",
+      "original_sha256": "8174334208c0f3a67ef6ea89f82e45a95c1ceb3af68c3a947aa45fdd2ca4376e",
+      "published_sha256": "a376bb031ac9aa1161561e2975e80b8bb18c7dfe5251389a38c230fea9c5e4d6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-17.json",
+      "original_sha256": "0388d0eb8ca5a17cb5d5103384b87918648bc797699379de78d1906b0c5439ae",
+      "published_sha256": "60542d75cac2d83b58d5f0b281942f3c5e638d539db207ba812fba6d9ff05cdf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-18.json",
+      "original_sha256": "59afe6750c3f7fb933f1028997799190658e81df4fc5771dfbcdb6191a03ba1f",
+      "published_sha256": "d50c7ef68a86e7b12046ef0e8c833fa47c51e9c8e62a76db6a51d9930823db9f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-19.json",
+      "original_sha256": "134511ca352a57c810173e1324e6846ccb0f7699b2ecedba1873dc813a3f9671",
+      "published_sha256": "1beb88f6ca94390cb53902faeb1e184d2ded87fa4cb5a022216c426c1e78b20f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-20.json",
+      "original_sha256": "541af144ffe5bd5d59be6e881cd4aa23c2cacfedc054dc71b3457e8c2c4dbff2",
+      "published_sha256": "959c7ae367f50fca22ecb576b553af6600ebf841f346e40158e9a7f05feacee2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-21.json",
+      "original_sha256": "e65548f2a9e10fb343c79fabf9a8c03ab48b82192e6a87968d809ade1886218c",
+      "published_sha256": "c041c1df6275f01b552b3d10f33247307355ac7ce5d0eeb591ab564f37778177",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-22.json",
+      "original_sha256": "7463a5b53149707f5d6deef8890895d9b30fac4117af8cd4a17040ae0c13f054",
+      "published_sha256": "20b7e75eb6de9313a271e90a45b4cda42a39743d0a7f1d0077b91049dc2a7206",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-23.json",
+      "original_sha256": "86d0ae224101cdf1726013aae56aeadeb6393a674e67a95cfbf28aa55ee9ba94",
+      "published_sha256": "52413d061db075904de7cd4a9ec6ab7746195222b95ea94d915efc2e67af34e9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-24.json",
+      "original_sha256": "8917f0986e374eaa954f4acf60e421c72b5dff0c8f09aab7484ae149e6a20ba6",
+      "published_sha256": "eb543150a35bf0290d3ed711d698bdcfdf96a6df3034e55512e9c1e21169d6dc",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-25.json",
+      "original_sha256": "4fb1c1ba0b11695c097ebf28a0d4f1e0a51ada72130bf06e405ec1de561dc091",
+      "published_sha256": "f6e1e22541c1735653a656f4eb271ab22606ba84202234b92d372e7c055a2b62",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-26.json",
+      "original_sha256": "760c1e7f1ae56fea382b59560fe82354c1b153f58bf7be114bb16adaa943c003",
+      "published_sha256": "6796251680da823fe15ce1d2a3f4316925d662b5ab4d223f86e6947ac2e7182e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-27.json",
+      "original_sha256": "19d0b5936e946c3d06034431d39f989ba41e2c10a028fe85cf16cf0f03d4d31d",
+      "published_sha256": "9dd5aa02a3b885fc3e8b93093ca858f80b316550b61b97ccd810e6da0b53ae2f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-28.json",
+      "original_sha256": "3cf93a64409554355837237c32576ef44d27a64a07c07ca47d6287e0cb3620d4",
+      "published_sha256": "7be755efd90f47ef5545644a7e6c60299d29e2f6b649882d721aee41fd937692",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-29.json",
+      "original_sha256": "a8308a9fbf1f477558e42b7bc6bd51f6b7f098a738c0b4e091ea26c07b394953",
+      "published_sha256": "4622d8d1af91b0f0e0ac471cdd482797355d461341338dd4352af42640e4f02e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-30.json",
+      "original_sha256": "dcb6b5261bdb92a7eb6d8dacad585b6b2021dd5d2dfb87e14cc512f905471f0e",
+      "published_sha256": "4342b89e08fbd0a525461a5da7a82f9ffbbb26b75de4f21bf6070eb353a80f03",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-31.json",
+      "original_sha256": "2b4ef9718de5f0b4ae5e65b8a2633e0899a625244c1b2191a1526d8e338454b5",
+      "published_sha256": "b9182218dbab15ed9f5a403c4037515a2ce6be8f1b68e7efd773d23503fb769c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-32.json",
+      "original_sha256": "a651b2ace518c1245de457b7e50ea9cda6238894ed0046f40988c747e42c1e6f",
+      "published_sha256": "2d19c05d9067738c715fb1d64424821720e8ba04b524bbc5cfc4576170d27459",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-33.json",
+      "original_sha256": "9aa552424b1dc2b525ac57ea63f323c3801a653ab7203be62ebbf07a4ece9530",
+      "published_sha256": "4c6c0c79c956f4c33d013fb23b10a19dc8c325a216221277e15fc7b76c978292",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-34.json",
+      "original_sha256": "525ab777fca5e0a51a0e9b7cd606ab6884ec4e4125dc18a57d7f32e24564f428",
+      "published_sha256": "5d9b1df11a2fb6fce781b90b85e0296782c7e2e41d8a85706553bb8454634e63",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-35.json",
+      "original_sha256": "0ecfa0d53eedec9a37114cd6d2d592e71c4eaaca87610d26ba9fa7fac34dd64f",
+      "published_sha256": "19a658723aa83bb759c049993c3619763475fcd50398445bfe86a7aa268c0d0d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-36.json",
+      "original_sha256": "1da9d0b557c1a2c866885060f69adbd99e55abfdf708dadaddd2dec9ac558525",
+      "published_sha256": "9db0ff363daf2c602545c3f0e987a5a737a02495b9c903d0937cccf85d6603ef",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-37.json",
+      "original_sha256": "1fffa04b3b19e1834316a5b54b09e77a8a11f93c51d329bb93603cba2f7987e8",
+      "published_sha256": "d2d785d1c210062b2cb54bd70903b4d2876d26f1a28143b2f1cf7225b1802dc3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-38.json",
+      "original_sha256": "8aa52ef8516e09cc9e965ba5770e61516747752bd9c581f32c6f21e92c03ddd5",
+      "published_sha256": "aba8b2150a32173571556bfe22554ea15a215de99b32bfdb9972ec19177d3daf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-39.json",
+      "original_sha256": "b4f2e165cd5293e1edc20eacef3ef870b113f767b9d0318833622f7b86320377",
+      "published_sha256": "0e74bc65c90535ebc7d8286e088c78420e6fc61fca88ca8ec2fc72753accfda8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-40.json",
+      "original_sha256": "90564529d9d7f26e2ca74ea4fcd144d738068c8f30208fbae7332dd4e3cc5fda",
+      "published_sha256": "b306266d221727623e54609105c84350ada2b941b7ff32e38eb4715c74107951",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-41.json",
+      "original_sha256": "b821c097bca0198978ee4efc5d5ccb304399dd4f0eb665cdd0c643d989b44d0f",
+      "published_sha256": "c087ab270a704ce2b78b32f06f3a670a2448905fb7c273453153bc4f15c426e5",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-42.json",
+      "original_sha256": "d9338383d7a0f801e7c81ce96592b24adce56af7113c65660169168f35e58b08",
+      "published_sha256": "452b60a5d7c1bec66edc3b554e05f9f07e7c8601e42ff3c88b047740ab1ff98f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-43.json",
+      "original_sha256": "325a4931fa48dbf399d1ac2bfe1288c2ef937eac0048329efcb30d521dfa0627",
+      "published_sha256": "a67b7509a09844c9bca64316dd4b6477bdc625be2c58928af8d9f6529f5c5650",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-44.json",
+      "original_sha256": "21692aff2bdf691be0d249375b609f93c724565ae916c4703bb534c884d74462",
+      "published_sha256": "37cd761d673b944c1591bad91b790c61642b84f9cd129e70c16819418ee842cf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-45.json",
+      "original_sha256": "70bd19e73d0ab530d86def0ee355359dc6d22478606b5c1b115e29e2776132cd",
+      "published_sha256": "cf14df65424ca0f3aab78b3522af2fae5b279b9e815d5e16d28daa6163609009",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-46.json",
+      "original_sha256": "2bdd41a6e13063074507ae01ad4ddf24d4baa980ef7b5f0cdd5da725473fb150",
+      "published_sha256": "0d9ca0f1be8e6ef2df110461ae30036328ab55de611f21d9bf107c63b4bc2d44",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-game-47.json",
+      "original_sha256": "f2e9d5f9403f574c914711453017046e0d827ad307d44a9901b9f8fcc0d64cc9",
+      "published_sha256": "f33a2329da15dc26dce59390042b9c4f2737701eccc9afbc2f364b1b57b412d0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-inputs.json",
+      "original_sha256": "d61c8cbdd99c46db5d53af89ef5becbd2cf7088b960fda23856fc4eef5051db9",
+      "published_sha256": "07aa1dc82cf2b17c545c3403bdde28b44380ce00282528c9131e4dc7422c0c90",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-plan.json",
+      "original_sha256": "13648a327887b5cf2619e4337261ff39b879811832f5a9a9db857e57c61ee63d",
+      "published_sha256": "239c5692b6f3c994d4c7d80c74a326fe7880a83d6406dd8cacab158f790fa577",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-producer.json",
+      "original_sha256": "b5e9b87b677f91c1f42eb4110e1eb1564fdd4f9dac2320422dcd29b989d58ed5",
+      "published_sha256": "9fb4030ad9249ef014d9e6cc5195fdc475a6c6dbb738c2b36246cdf0c9561a96",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-progress.json",
+      "original_sha256": "d24f90c1d9b14d8b9eb9fdb76537977dcd4edab83a098f3bc253a0b4c81840f2",
+      "published_sha256": "196d5afd9afe1c3b240abb1357c2cea37dd76325a94bde28b2e77ecd5040e8c0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-repair.json",
+      "original_sha256": "56de90d78cce2944ba09d03217eeda6f2da06df2ca94826b802dfae243f56708",
+      "published_sha256": "a3bc0802b6ccd8d9660582385ffceb7891e8a6261c739f21a0b9239f4fdb14b6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-result.json",
+      "original_sha256": "768be42789a9aa515470db7c81fa2ad94d59c8ce71ce6139d0125a9f504c292f",
+      "published_sha256": "3c90e361a7b0d3499d838a1e6894e21b5da0865cad3217f13eb88a343b182286",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-source-binding.json",
+      "original_sha256": "695af4f4e2918f8ab25f7e71566d8f65f727bb66cd4c71091d6e4c3bbdc8c0e7",
+      "published_sha256": "c899440dd45e0088b9f751195a2a447c767acd180cf0707025d13c61a97675b8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v0-syntax-failure.py",
+      "original_sha256": "96cabba18631eb2f32c6394d5adc1984ba7759aca2010e394a3f22a2ea737e05",
+      "published_sha256": "dd5657405a239ae86a0f61556f107d733bb6d86215b8a7b10e28d33fb7c5a52b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-00-profiles.json",
+      "original_sha256": "f0e6247d96aec7ab04e861700ccf9dea6bdbf288fc189b44790dde07e39a31b1",
+      "published_sha256": "4cdef57775fcf4555db179aedb7ea5b2745cdf6d093f8204abb1d2e99d0f1462",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-01-profiles.json",
+      "original_sha256": "223b4d4aceee58c7eefdef7167156b0bc36d6116c81e0a3cbee50f503c339af7",
+      "published_sha256": "6b482b527ee3e66a1b6ae59055e9add1e19c353f6b339c0eb02008e0abbc9c98",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-02-profiles.json",
+      "original_sha256": "6fad6c33ee5a5ea339ff12e1050e202708a683c70186d4876fe6753a6ba308da",
+      "published_sha256": "1f79825ee7bd3908c5327a0e7b17c69cc196354a8a82f82d5c5bbca9c200dc68",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-03-profiles.json",
+      "original_sha256": "ad62d8740dbe0225f8c3b4c2909cfd0e360d4d17f06b48449a6b1b0435765847",
+      "published_sha256": "1181ab3f68be1091f9abd2fde9fd8dd1fced473440e2baa3c12e355ee525089e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-04-profiles.json",
+      "original_sha256": "7285fb68c900f20d805809136df407654c016104710946d9604cdd2e55e05d9a",
+      "published_sha256": "18defdc150442e61f29cee32b64d6209eee32bd41c90b11d2d987772abd07cc1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-05-profiles.json",
+      "original_sha256": "544fd12b5d2888f227a4e29820a391ab0d81e91020947b4c7056b7faea85aa64",
+      "published_sha256": "a8ee490d8fae4a2787330ad6415f37a83ef8ac3b878259c7460a6dae4ecfc6e9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-06-profiles.json",
+      "original_sha256": "ac86556b7ebb9c42d042b297d56dbf65b96b45279cad6340b0f0461b7e938706",
+      "published_sha256": "8cfe096213a32dd5bdb7db6d7e1a2bd833865ee6961578907137dd151c4617b3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-07-profiles.json",
+      "original_sha256": "c6074879f0860f381b04692861e64dbe7ba66edc967514a96dee37ff05999546",
+      "published_sha256": "ecaaccccbd780ac0b4dc0a50795a627d83a69e51d0aad7092599dc6ba57046d7",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-08-profiles.json",
+      "original_sha256": "a0a74bff322a2796aff3219045d11e9f62f410839df6b3bff556e19b0977e72b",
+      "published_sha256": "99a01888a1115f7b2dc6b3384bedd21adc1c4c0d048b852c6e738da8143baf61",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-09-profiles.json",
+      "original_sha256": "b949ffdcf133e30ca1522c4d113ba7d3fb57567d876742c56a7960aa43a33a67",
+      "published_sha256": "c5562cf9bb98011aa3a4360388a67baa6e4fe84ee80e85bd3b2972519d4bb885",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-10-profiles.json",
+      "original_sha256": "20bd4a07374dbd529623b7a05bbb14ad95cd92a35cd7ce93f1d44aab642e27f5",
+      "published_sha256": "3350abd5db5405707072639dce959feaaa69be6e9c53ce14834a4dc2bf38e9e0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-family-11-profiles.json",
+      "original_sha256": "e1741798d298900a297af7633ad88cf2deeef8342ceaa737d83afc4fd0278a42",
+      "published_sha256": "53c7f8f3222f20778ad955ff0cc6939344975ab3c3d11ed03c59d31bf951a044",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-00.json",
+      "original_sha256": "387c22552eb081feb37f4ec3355984d053346495505aa27c3c46d0acb0c1c296",
+      "published_sha256": "d9f88ac4ed2c323175710f5bec5064398e0c86943c60d9969b756a2db02e9528",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-01.json",
+      "original_sha256": "e9204cf99ba3f09913304a0dd16df37155e4a26815f2368aef236d1ec06c2f69",
+      "published_sha256": "a9e3a30d27c43cca8d3c8bf2b381243a2ec0006cd827806fe4ccd7308283382f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-02.json",
+      "original_sha256": "5d85f1c154f569452dd6cfdd7553f8551dc850fbbcda06baf71ee0c90f7b67b2",
+      "published_sha256": "b8536d5fdb85c97fff34f125d06777e0f44879402067b5531c25a21a2abac8e9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-03.json",
+      "original_sha256": "656478cbb7fe933606066460483dbf6c037e0647e0f0d8bd3e4bfd81da9b28e0",
+      "published_sha256": "75c4cf6a7a3c91af67ae5d760708953f6b6143d86eb4b2b8ac288ebd1e28722c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-04.json",
+      "original_sha256": "b561e23ce9059fca59f8107b394daf21143971ae447be498521c6ad3b408e5fe",
+      "published_sha256": "9e56d50e65f8c763eb93fbcd2b6c7dd55dbfa2662c7c65bbd826c5bb5b71693d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-05.json",
+      "original_sha256": "311dd9aeea5f1d9dccab14ba5492189be65d2ee4c45675701a3239dc8f7992d9",
+      "published_sha256": "070459c59b0a0a5efce61b95de690e1b43c845cb21f6504da4fa42d751f2bb50",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-06.json",
+      "original_sha256": "f3effe4c8743bb9a992d6b663ee3b66c61e8b7ef4c9e663ea3473eeb10d0f1de",
+      "published_sha256": "d3d2f2e3367a10ded6b0d5ed3b520b598d33885d07f2d45709b2f63112b19fb9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-07.json",
+      "original_sha256": "5ca802e5167328420b20de9ea828d4d3d517f154fcd1f1d867fe35765aaca8a1",
+      "published_sha256": "a963babc9d9c8c77b177712e8e265c955b7cf3f2f1d73a5ccc29dad15b91e508",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-08.json",
+      "original_sha256": "044cb26b0e8603c8e595f7f7fe6e2038da63823e369b7744165b00514b5eaa91",
+      "published_sha256": "cc0005dc448262167f975554123442f44cf9ccc906d25b6373d5d4b5214bb26e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-09.json",
+      "original_sha256": "6a47057ad3bd567dfe5959781e95831266ad6f2a615e3db32631c6dcbab44fd7",
+      "published_sha256": "928e63df207ffb18777e4a5c085015a60d4d28b7b5ca1fb70f8efb5f1ced2453",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-10.json",
+      "original_sha256": "adfb91a296617267cd4c70295dbb16398f80e5bb842b9a631bdef42d15ba8c42",
+      "published_sha256": "57b96ff16e0593d3cd4ac0cde9703dd096bbbc1e16ab21b0e4c41002b009b4b9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-11.json",
+      "original_sha256": "7366c992b889a0cee9f105f557314c1595144f8b5fff6dcc2d899a13e528f580",
+      "published_sha256": "8a1fa1c310f6afecf07f722030e925171dbd9ec3a89643143a66fbe8ae8b17ab",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-12.json",
+      "original_sha256": "2879372ffe2aa40c68ba7f167a9eaec5be923abf15724e1ed86b3e946044b544",
+      "published_sha256": "07940e586552a998568416bd9fda6576db4756658a895fdfccbbfbdeeacb9f17",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-13.json",
+      "original_sha256": "5892aa9e7dae84f2dd494d1c620b4c85d851f5bcb8fac075c526daed9c025f1e",
+      "published_sha256": "edbad99a3f63c9db31db7d2e77dfd479ad5188e3d597563fa04ecd045995ea63",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-14.json",
+      "original_sha256": "280d20d0af163555f297efb527d7075afdabba2ea46bc7b35e2433a555c43695",
+      "published_sha256": "06eec57785606c1eba78f42d5bd20dd117a8d7a011d4ca061ec4a9efc6575962",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-15.json",
+      "original_sha256": "c08add0075babc9c8c56a51bd32516c22c2e906fc9c7e70aad3d0fb7555f34d8",
+      "published_sha256": "424aa8236e575bf3482b9dff72bbf30c6e92bfa7a59d9bcc2d8154d14c513662",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-16.json",
+      "original_sha256": "bb51bd77a191c6194d817fd36cbca3c4ca6ed2a645bb93810fa32f27d8aaa60b",
+      "published_sha256": "7026b16d2ab1cbde943b89467222c5c9e7390df4f0d751e676fe2f909fd69beb",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-17.json",
+      "original_sha256": "f69db79686bfc16fa33bb3f8871efd94dbfa374b213c5e1738da13558fccd6cb",
+      "published_sha256": "16d66242128ccda084e9439dc97fd65b7d80fdcbc08d8376f642765e560c86de",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-18.json",
+      "original_sha256": "df543a6f94addf7bf8ad9f31b5fb985146465e5faf78536cf8ce1f0fc6aa487c",
+      "published_sha256": "6f159be343af365b128d62ca91c5fa482285c96484e1feba354ea81003ab166a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-19.json",
+      "original_sha256": "9ecaf818f3859f19bdfa5c19c2888f8f2ce535369bc0db5f86bc9ea4b7151d97",
+      "published_sha256": "a45cb9cc2a7ce14e571d0c062220b8d538c928f8f7e85b2ffbfb046f40565e0f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-20.json",
+      "original_sha256": "f0b01d98f6aadaa708c030b22a25f38487b722fd4402a0d91e04da1b4afa83a8",
+      "published_sha256": "44fe6b413c8db4e330a8d0918b149e141f6e258a1b37e3be7c578d943a0ea002",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-21.json",
+      "original_sha256": "456b5cc01767f503b1c596b1fc5bb53f8964384a2b5b4bd52cd83e305aefe5d9",
+      "published_sha256": "c9d8a846a26bbc6ef8e9758d238164d742b3f027f47e788f30d2102aef91cb7f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-22.json",
+      "original_sha256": "6fea26c4fcc084072d46c6d1bd7158f813b552133c5cdc5d482ea74928eeb58a",
+      "published_sha256": "8e7313874fd5582cb81df9ad576ae4522de64d339eeee5dd1dd2c6c1fa990d3f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-23.json",
+      "original_sha256": "432552061530d6a567e34691a9c2152d2cca1201436784f5ba220a5068fda046",
+      "published_sha256": "45949873c9eb7d4e76e3678b778f0455ef64858c6ad8a116faddd3999fa878db",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-24.json",
+      "original_sha256": "e45044bb992be724d2630432b6537059f91697544c098f9ac0a207a411fa8651",
+      "published_sha256": "af71a3f9348d248d965037938528b3a274057142d6338b62619afbc2641f5165",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-25.json",
+      "original_sha256": "41947482271a1d4fd15cf791f6416b01439042a0e0290adb709d370b9e1a1895",
+      "published_sha256": "286fff4cee82c98f5c44bcfae03e49f86a4d7af4f7c5aea75f56b67d0308d3e8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-26.json",
+      "original_sha256": "92491dbe1d227b5129da07a9f119327d5fa53cf599998f9fcaf5e0c157aa7aaa",
+      "published_sha256": "bb5badb825529a145be4431f230d32a60023f9f1afdfd6a570451db1dbeaa742",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-27.json",
+      "original_sha256": "556b8a2419d51d8b218343b520754208bf6e78003eed9fdbfc304ecd47bbb25a",
+      "published_sha256": "f12e73a8da7d48abf69af64d8abbc3ee1f78fedf8d5d2e7601f993b3e34bb624",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-28.json",
+      "original_sha256": "a579ca23d9f8537c8829e36f87cd64586adcc2459b33d34e50e5aae0d585f0f8",
+      "published_sha256": "894707c10e87d2f7869ea413ee97184c7b3e06e7febfb08194c4a9afac81b8a5",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-29.json",
+      "original_sha256": "e5486ad3f8067668042dc3e5603f5ce3fa3db802a5b55a23fd2488ab0d2f42be",
+      "published_sha256": "ac081635122903bc2700615905bb0d0220f5d7b725ab0ae6cd073b9f13e5a821",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-30.json",
+      "original_sha256": "8f131834eb8a4275eeeaa6e357e41c1894ccd468a39db14ca3628438e1b4dab1",
+      "published_sha256": "a6a9282d37d0320169a592068f84a8b5c8fd9df81c889b6786712a50dcfdf3cb",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-31.json",
+      "original_sha256": "e9cdbfae548befd36d98eb4f37596bc491f9b5de8c2f36f9f1d8befc4a403579",
+      "published_sha256": "d277aad4c0eda5e8f8a76c054cbe333e561af83585f97a2299aba6aff0081561",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-32.json",
+      "original_sha256": "bc2af4664122e5abc2978c55145caeff40a8784b5e7f433b16d832744cf6752e",
+      "published_sha256": "7955364ed685cc17fb18cf6549d4daae7fc570ab48c37c39acc56d5bdfbfca54",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-33.json",
+      "original_sha256": "f642785ed3d4fc3281d5079329985ecfc6a2b57a94e698062ffcc4746f5d03ee",
+      "published_sha256": "35c0009e9338ed11ddb7b5ef57372afde508242fe4e02884c1c4bb67598d796b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-34.json",
+      "original_sha256": "ad0132c034a3323fe166e1894d1e1a330beebc9b5e20be0856f1815b690a2e43",
+      "published_sha256": "feedac04a8ea94c44611c71c3b382246d760976cd347d328c08d6ba7fd0fbbdf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-35.json",
+      "original_sha256": "19202468c4c04e96bb6e6dbac150d5d26532723f9dcd4c4c9062fa49b71e8333",
+      "published_sha256": "0be1f45715183f16c73283309cc913f435fb634a4deda98091974cfe96bada28",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-36.json",
+      "original_sha256": "c55e5bd26f7122885f30595fd0cd90458eb42ea1efcb1d2f570aaf69b81925a4",
+      "published_sha256": "401a00a3e35a129801fc84f5d086fa025acc445b8d9d6c4bfdd52aed7af4b4dc",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-37.json",
+      "original_sha256": "4c5243304740565ea09d5107bc584e77feb6778bac5f7f5725f637840db5afda",
+      "published_sha256": "db50090df767858dbe32790bbb970ff66e92928d7df1a711076648914d357406",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-38.json",
+      "original_sha256": "9f98058ddbb69845b4ada97cfcfa810ca2b2ea92fbf9cadde8b73de34de35446",
+      "published_sha256": "668b1e1be4cb860ca6e8829f35f089e8f4a3fb883f60f2eef0278cdde940ab49",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-39.json",
+      "original_sha256": "5678c08eea725ef9fbd51ea821a4f2be86326ec2f64baae931976dfabca0bebe",
+      "published_sha256": "30c3d4cf9c0f8051c0de9fd5d46df9cccd98ec8ea9d8a90365f07c59b41412f1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-40.json",
+      "original_sha256": "4881dfc634f81ef9880b25529f4e7c276e4171abafb7d587e5f93b16fc58474e",
+      "published_sha256": "0622045fd07bbc3f8a07cea0b4fdeedea7745f3fbf46e66478d04839fd5f4f60",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-41.json",
+      "original_sha256": "f7277432c7b5dd331a92410a7f8a79168a316fc2d474d8b93daa79997707c50a",
+      "published_sha256": "6d3a229527dc3af719838f0b7c04ebac430c06b63d26d64e0d3f47d8fe5b733e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-42.json",
+      "original_sha256": "17ff05ac111df21834f96decc367693d5ee2b06ca90a6e88684bd16b16c186a5",
+      "published_sha256": "2288646e68ee163da4d5c7ed719d12d4663a26fd3015bdcc48c392a779875cb9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-43.json",
+      "original_sha256": "5169d4ce00a610d232354d4d2d57ccba6fe2583b99136c948f5df4996615db56",
+      "published_sha256": "6222ee7aa5d8a97eeca944e7bf62574ae727d1b6c1c52d24a9f63f7e16cc1517",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-44.json",
+      "original_sha256": "c0b8e2084f2ad9b7ce8e612c67d4097cc93f5b1f210b58554c3033a1092c2e47",
+      "published_sha256": "44097312a5f2d1491c7080e64d5c116ef2a066cfae29bd8d3e575bfaaf347672",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-45.json",
+      "original_sha256": "cf47535d4412a5f19753ebf2aa8e30aed8b26e2989a5ec2b0b18447058c0a17d",
+      "published_sha256": "315879e210252231bd1fb8689aeca5747f37e761cb25f3283f3c423dcb08b1d8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-46.json",
+      "original_sha256": "8ad75953eb28db1cb285a04336a03e29b46e74bdb80161a9360933c56513be22",
+      "published_sha256": "b94a4ebd44eccb33c000736391731b084ba2af9432e6c892b0c6f517e8277cf1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-game-47.json",
+      "original_sha256": "ee87b2d1cad438fcc45bbedff115fdea67f2822e9500b3cc4c28ea385a9f3a8b",
+      "published_sha256": "a7be6c6ab7879ddebd81d15448f012d4ec1645a08536bda10720d766c5b8ad4f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-producer.json",
+      "original_sha256": "0d27399327c6262c2108c236fac11473ced201204f02c035cf6b056fc71d8b32",
+      "published_sha256": "69a4e965400d8951c5b61de80dcfbf4a81a375b4151435469aec3d3e67458529",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-progress.json",
+      "original_sha256": "a6b320eefe8b1ff7ecdb50f97489f2f805f1a0847c648e85b8d053fea2e538db",
+      "published_sha256": "08922d375b165adb3af567d7eacc33b5b2bbb7ac130e862bc0a50c3c661cfdce",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer-result.json",
+      "original_sha256": "dcc6d7dbcfbc161c2b0c08749b690baa234fe8d92059f9952bb169b4098b2141",
+      "published_sha256": "cb83d06f864b967134899536715b31c6004ff1e83aa702448000fc124a928f58",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer-v1-invalid-status/consumer.py",
+      "original_sha256": "6c9aea82ec6e9d2bff932595e9824b1ae72da2a81b8a07a4fc8e5a0c4d4a4793",
+      "published_sha256": "61ac2a1fef6602b55801d3787360fae90c38aa5e4951c2d522812c5c2d0561de",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/consumer.py",
+      "original_sha256": "4216d6db34df05a87fb8f81aba273b5ef7a00c65fdd3a9213cef0953e9be855c",
+      "published_sha256": "3992cedaa5779a8f212788e372c2afa07e2bb8c8650ddb42b94e8e27021c9709",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/D0-attribution-before-terminal-classification.json",
+      "original_sha256": "f9fae3d44093671f627709d802399c6214a0cd2f7ec872b8e3cb9a5c30d9157a",
+      "published_sha256": "f8d89f157b9d04ed3d271bf6dd937ac30d305679287b071bc121a1db1e77f544",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/D0-attribution.json",
+      "original_sha256": "0d7e50b2710cceed6fee55ae1fe0c1a3c33a11a5e25012390272da8cae79168f",
+      "published_sha256": "b52c40b570ebd6979897833713053246ee1a5ec9399748ce51693237d70a8fc0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/drop-direction-analysis.json",
+      "original_sha256": "5ba0cf6b4d716e6e62b36a08783357fc737df863e8c6885f333eb52646429c3c",
+      "published_sha256": "37a5319375cd944cecc4aad0c6d1ec40525a2aa97e05447dd3af35a894f7df58",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/drop-direction-plan.json",
+      "original_sha256": "ba93e3812d1fdd1ee474ed21609ef3f7697ebef733ea7b8ff3e070d4bde3a5b8",
+      "published_sha256": "5ba0cf4c25075c5b3893a84b943bf03ff8f408974ece83a6fd82f2a7aaed2be9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/drop-direction-result.json",
+      "original_sha256": "779927dcc3bc19a617b70448a4f6872df375525b08903ea28a481016c5181131",
+      "published_sha256": "c75f925f1c887829a6e0561e5ae6ab1da5fa49bdea191c3ecd494bf0c5b6f658",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/drop-direction.py",
+      "original_sha256": "906558df9cceee73e4b8605ad0424ca195555d8cb7789e89d3f1e30cdcaafbc5",
+      "published_sha256": "98e209c56a66e20f5482f88cea00884572a408eb58b2cf56b2991942451caf5b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/failure-summary.json",
+      "original_sha256": "0153c3418dce8afdee87dfa9509717e28e2ac6a10aa39cf441ab5753dd9ef666",
+      "published_sha256": "1a51fd235770a03b99405e2483e32f0f95aa02998f35c09817fa9fad91c10793",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-01-profiles.json",
+      "original_sha256": "9d4049a23264634b1be8603942dc8dd88fdcf99bc5cf9e73b40db5bd4b786af7",
+      "published_sha256": "1d0c4e091371db0d8158e0af028dc5180ae29d8d3c947521edf087e2fe56f6c8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-02-profiles.json",
+      "original_sha256": "4fea8f089d7da1d6d8e6be347a42b4b599dc51b953851f014a0e70927443570a",
+      "published_sha256": "73fb7c927268d03bbc661466a27180566b9b58249f8f716a4c51d80d093c29ed",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-03-profiles.json",
+      "original_sha256": "5d2f230e0da6127896cde643fda4580f1675d6cc11352d382c9f8c18ee9672c0",
+      "published_sha256": "9da56bdba0ef90ba64d092caf833381fff20d02becee54d9f76160a9bd22173e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-05-profiles.json",
+      "original_sha256": "72945581044abc7005f04062dd18770bef9e3f2553f8c6de10edf3afdb036bb7",
+      "published_sha256": "aed085fb11c2f883f4f944a03aa85b27fed0f06a34a83d2bf4aae6fe5ab28279",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-06-profiles.json",
+      "original_sha256": "ae6b977b85851dfaccd85ea63bae743e1a9e46403bf331774bfa6ec8002c824b",
+      "published_sha256": "05266413fc8827de60a12983219368eaf0a3d41ba00346f6c5ced469e7462dc0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-07-profiles.json",
+      "original_sha256": "83dea98b8723ac44fbe5656e3a16e7b934169180291c20f08ca838921f5a11b2",
+      "published_sha256": "91b9752ac45fd542d509d6fe1bb31e78903eac6ebdaec381751844207ad2bab8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-09-profiles.json",
+      "original_sha256": "0924318a544e99d65ef9ea135ad98f57bae9534883012943bc2ac20b81b0928e",
+      "published_sha256": "af8ec8786040fd16cfbb9c5c8dc8a8ffd59951e8ea1d3a061ee3cfca61c4d263",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-10-profiles.json",
+      "original_sha256": "a21e682aaf3a9c898c84237f12e262cb309a1204cb82dc86f169201dadc539b2",
+      "published_sha256": "98dab7eb515c9fbd7d63587ba082e06a6a9cccc0157a67f92a534688b9421ca8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-family-11-profiles.json",
+      "original_sha256": "93245a8fa56ab5dd87cc5e4ae3fd07ef723d5922ce75dfd286e40504692f9582",
+      "published_sha256": "f5b35dea348343f2ed863add91046a5576fbf80170420a0b22f4ebfaec7b2451",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-00.json",
+      "original_sha256": "4b50d0f17753aa45a36bd15c98da363b91f59ac295693cb1b572116a5fc529c3",
+      "published_sha256": "59aa2fcae4b2971c6ba14eeb7c6e5579dcba18b2fe1035c2c938e2ba6b36d836",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-01.json",
+      "original_sha256": "abc9be06a30959a85229d8827b4586c9894505a7cbbdf4fa8c89b883f1c59e4a",
+      "published_sha256": "478bde0e7e552d389f7c57e88bcd7c14bb47841ac9e8385b313f112c21fa04e0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-02.json",
+      "original_sha256": "2dccac2e253d7fed6065c9a5d7c127a175876b0a8b3c89bf6b4121648c21391e",
+      "published_sha256": "f21486c9180045abebac18e419f81c5394cc227644056e95b0c3f70c60f98765",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-03.json",
+      "original_sha256": "61c0d1b14bd84028443d0ce9b2d4dbc404e297cbb5fc107faac03b72ffeef16c",
+      "published_sha256": "5fa25619ac91a71a6fd7cc45f2258cbb66b00a6a8cdb39d565a5a79bf9730af3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-04.json",
+      "original_sha256": "e0f0f12ea24b86caca94bab86f0cf70306e853e0f058054a3cce34b1a81b5ef3",
+      "published_sha256": "8f18a7aca715d35f92e50d5ded3d069f8b8f40383d253e43f8c8592a6a2066d8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-05.json",
+      "original_sha256": "8f676521e2b49c781a448b103d26a2003e39552654c251118e721dd7af06c794",
+      "published_sha256": "c19515c53bd5dfa98a73d82c961fc0fcaf44c376423710ed0729e405f76ac494",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-06.json",
+      "original_sha256": "2148acfa7c85e35ab399fdfbb726ad5329223635d61333f7629c789f93ea300b",
+      "published_sha256": "b4a1314070ebea719a7ed9594402f2fe0d8cfcdb73749c2c8c294aa59071c4ef",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-07.json",
+      "original_sha256": "1e26553273116447a83e68be8f607d8fd5419bd3d22bb3d1a9cfc516c34edc43",
+      "published_sha256": "22316b53cf9f002a7a0359494169f0419c58873f6f5fa998161306df7438aede",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-08.json",
+      "original_sha256": "9c77c15506eb920b87f13b4695b037ca110576a53c5a898755b08ceb97ebd60d",
+      "published_sha256": "e9733f4722d83a47806adc8483637cf1c254e2495c1b72ca837320ff0414eb14",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-09.json",
+      "original_sha256": "694134290c856e08e0396594305fefb6d2b6c947e2fcc93fcc179a0550d04c5c",
+      "published_sha256": "e42a2af9978d906e65c240783f001814f5714aca176a02c87dbfcd287233ae20",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-10.json",
+      "original_sha256": "a2c5d82ee4eaba0ad428880a2faed24bc86083dc48b11cca4ed86538f82d8835",
+      "published_sha256": "2c631eacf0302b977ed4a018923142e1b4846e399ba7ee0caf78ccb7eeeb3985",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-11.json",
+      "original_sha256": "479cbaa1da6cc0378a9306e55b2914e3e0e47fc52b516fd9c162298e341a5b14",
+      "published_sha256": "3025296a21a5d3e9386b8f9ef74c4696b181346502e6eabbbe86317799770c07",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-12.json",
+      "original_sha256": "ddbb36a9a00f993b9f5726f8c9edfd909ddd8d07f63a6bcd90cdb2e580e36e76",
+      "published_sha256": "fef3265d8aa49737daf89bcb0751c05a90cca7d19ff496d38d7fb2bdf13d89cb",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-13.json",
+      "original_sha256": "3f5ca0b5a1514a91c2c6c796636b4c2bf3c46a42cf2b0c17d646f4267444c591",
+      "published_sha256": "ca0ab264d73c4eaebeef9fa535b98a5713b7d5ffb161dbee465d91e6ceac9c40",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-14.json",
+      "original_sha256": "545e3fb415479203245b6befcdf8cb31ca0133837363ad89179f44ae0c46d4b5",
+      "published_sha256": "8e2f35a7e301e04e084edbb5cfbb5aaa382680edb508e4201fade99a6b82cf10",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-15.json",
+      "original_sha256": "106085e1d7f9ab1296e4257391bc60552cdc3f739f2990c685fcbbcc8fd74552",
+      "published_sha256": "756b7364a0d3eb6c47cd598b83063571a4390e2a0f6473c02149415ca6a5317b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-16.json",
+      "original_sha256": "663c9088beb22315911577e8a04a1b11abcf443a7db0406d51eba76f3860e55a",
+      "published_sha256": "7a007fdd9783cc97372bc8794fad586ab7eec72ee4cdeb929f579521a76aa0e4",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-17.json",
+      "original_sha256": "22a2fa817817d0b0ed00f8e53fd316a58ee704899665008c107ece412c0081c8",
+      "published_sha256": "9039ce96fd3c175be21e40e38dcc82fc5cbfa747c21e547565224abaecca0e66",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-18.json",
+      "original_sha256": "5dda1948ee9e1a46ff1b156415520236d5b1ec11716896041bd83303a60104e7",
+      "published_sha256": "20b827b9dfc29a39a2cd70fc3e2e01e6def61dc30989f9c4cc6b6aab772fc166",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-19.json",
+      "original_sha256": "8dc5b90a163bb0c31d2ee3c24480f32bc4af3f8085a7b1ebdc95b8bb55ffb4e7",
+      "published_sha256": "e272e94e493214e6affb8d7e1baf6baf4d2fa40e04ccca5d98f216ba9b9cb32b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-20.json",
+      "original_sha256": "0ee274b48570830e965bc44d1f8a48a7d71defc8b669d892cc1e16afcfececf7",
+      "published_sha256": "b28f6943a3480fd761082b04653d2612ef8fa30c9d8e1e801a0ef033de6eda3a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-21.json",
+      "original_sha256": "d188184ea8f9424ed177d684f4fe2745fcd8d23124bcbd50298a3f6ba37f9f14",
+      "published_sha256": "800e4c1fe6795ff8da0104069fe52c431e19d687d0258a30d6a194bd17acb5d6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-22.json",
+      "original_sha256": "dd3e152100f3670b8027ddc76ea4eab21bd7c8f8f1df9ed2dcbb35636e0ed3c1",
+      "published_sha256": "368e638548300ed4006956132ff6b74418fdc849d606ab4a3b3844460618ae36",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-23.json",
+      "original_sha256": "264518e21eec0bbe83ba596a9eecc296ad3a478da55bf2251b46fa46e4261c81",
+      "published_sha256": "0f4fd470bdebeece295262c7e25cc983b414939ba2cfc73d9f140b1f189e9b2c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-24.json",
+      "original_sha256": "bfbe9501c992fc62705110c4185f56025ed936e45ae21ae25f91765dc24052e7",
+      "published_sha256": "7a761770d159623601a1178920f7e5d2f70a2262d56ddd31de3db0c94fd05a5f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-25.json",
+      "original_sha256": "f953d08ecf611d37e67466743a71978ac034b1f549e551dfce033ed632195851",
+      "published_sha256": "b2331c67babaf850f9f7e71c48ec04edd9a66fbad83d1c624502a8ee0c512adb",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-26.json",
+      "original_sha256": "50e76d5755fa0d903ed2d2881ab7633d37e7c089fdce1b6c00b0a00005e9a0fe",
+      "published_sha256": "e8d16627fe16cb69d343061c6318fd3e8b4ec4344895c8beed8da5ad89e89080",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-27.json",
+      "original_sha256": "bd3020008de8d3bfba3790e5e15bbe25dfaddb9e232b30aa288d07d9933dc463",
+      "published_sha256": "9e0c6462815c932d2a03ca9fca516f2d1818290504cc9228be7113c49bfb514f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-28.json",
+      "original_sha256": "03627615648d58a4df2f73a83ef07d5a490c2aa3664b7eb76a65c6a0aafdc1f4",
+      "published_sha256": "e554b3af00d967d13257284001deae6d2af47934b49cb972675c35e889c1155b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-29.json",
+      "original_sha256": "ae49bcb37c80b497423b375b5737f1f1931187ab20baa4602a285e2ec48ce73e",
+      "published_sha256": "e6a7e5c1d6a7121e160f6c03810dbaa4f1b2699405458e21b8b7451d082487f5",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-30.json",
+      "original_sha256": "9be61b828fa4e3e69788ea6030d68e1da0fed6c48b1b13d6d4b1b63e1966a732",
+      "published_sha256": "0c87a2109db9d522c9e9fbc3ac8d2e8cbd2c21aee90fd9ce93cb38d4314336b0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-31.json",
+      "original_sha256": "c03c4d945ca102332e078e7f7ef468c803a0fab85eb5ecbe9d6aad777aa83073",
+      "published_sha256": "92bb51370063eeacf5d137ee8fe3440104b6708671fdc865bca6e4d7a8e72fec",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-32.json",
+      "original_sha256": "02e43badcf0e49de502c8bc1a894db22e57b5825657753fcfc45881dc5a6d6bf",
+      "published_sha256": "a5249c426e2119f2262e7535fa229cef93a80813cdf379fadc6ed0684e9c9f20",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-33.json",
+      "original_sha256": "b560ea26e588469cd2ff988405ad5bee0928e4f63710691af903e02e6f402bfd",
+      "published_sha256": "d33aec10fef515cf8ff8615603f5b1dd3ad43d9c0ca039162d92d9cd3ff42087",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-34.json",
+      "original_sha256": "34cd23abb2a4a0570c52d37db8c995c742679ab27955889a0960c1a95c3ee170",
+      "published_sha256": "95ede8dfa794bf08d92cacc66e823cfc9b732cf0fd24ab4c412a6734c848ac70",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-game-35.json",
+      "original_sha256": "e0ebe36744b157e891d35343bf25d5398ce31272af6aa9ae0b82d600884386cf",
+      "published_sha256": "e25529f794c5ab7887e63cf06f9de483e4c339c3b17b11c54e57520cc6863ec2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-inputs.json",
+      "original_sha256": "5fc9a419c868663f14a23a53f8d1fb8361bdd2eacd848f6cd91918f10423d934",
+      "published_sha256": "ca16772a53d559632e3c489fea0fe74d56fbe856ea2eacd55f806653f6482039",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-producer.json",
+      "original_sha256": "27374cb69fb266f1dd0468a7521dbab35de778ffb329b18da654a74879549cc2",
+      "published_sha256": "c7a92bc5e1fb79c531bc92186355d2d4307a1ea72d1e90a95e2117b353fa858d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-progress.json",
+      "original_sha256": "975e14ccb170a1e447a89e5c30a777717c8983df3ce56b2c3a9bf71eeb0359e4",
+      "published_sha256": "c412e87fbfb3a885a1feac278d57a3500284777552b2ef0f90293557531d5841",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-result.json",
+      "original_sha256": "f0ada62c8e57e390de16af4394db8518aeaff8953f26f49914e9dbcf9b9ae929",
+      "published_sha256": "706d81f8994ad00e51c16750bff73c11d568522f85bac1cd7c31647e92f04297",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer-source-binding.json",
+      "original_sha256": "db27705a0109d8a2706608b0e4f1d397062f7ab8aafc75e0edbbd8dc2efce935",
+      "published_sha256": "87ebd3faf5c9eaa407ef371c91c17ffda7a2600304a5bcd3cc80e77bf30a81a6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/consumer.py",
+      "original_sha256": "614863d5f9c8a3b259c54222fb0fa02efbaea956f557c0ba47aaab12e9d617e8",
+      "published_sha256": "d97a80d69dbfd8edab0850fea9149bb294f33fcc26a76f5a5e7b10d2fa9f3514",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/generate.py",
+      "original_sha256": "e4824e1162d5c32a7414da10bcc4dd0c83aec5d18962dcf4955f8a57c6d8068d",
+      "published_sha256": "961664b67e0af6da469e57a842dc6b45dc66b9d36db7ac27f346b4b8879069b8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/generation-progress.json",
+      "original_sha256": "b5161d637525ef656bae8daccf501f7b8a62112afb11f6f611b4bbd1f2d3227e",
+      "published_sha256": "f60a2e3480870b44120c9cb8f5878166e4abbb09eb2d5231650947b88c9a820d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/generation-result.json",
+      "original_sha256": "91e8e3736d58dfc1ceaa9d6fa327bd6babed749ead274a134a05fcd8e62f7d7e",
+      "published_sha256": "f8bfd22d5a44e8d938854009d8ac6f8d2f01006bba2c1a50178c4128c0508d53",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/generation-start.json",
+      "original_sha256": "c8c3b63c28de418ba7183a9cf9059a583d153ea6fc0d8e131caefda0451d4b88",
+      "published_sha256": "358df68766d3f038b066ca6056eb25677d5249bc3e7edd1e97312c9d2d783da9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-family-00-profiles.json",
+      "original_sha256": "0ee281c346cb904f3b5b791e505751d6913de1bf583727cf3f301b932b1600ac",
+      "published_sha256": "d0842d0db083b705ac5fa6e5833ce827072019e4b04d8d53431a4f87694ccbce",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-family-04-profiles.json",
+      "original_sha256": "08fecd83fd024f5385cdbc1bdc11df00ad6c2d0de20d695d5133212c35efafef",
+      "published_sha256": "816dc2ae9f6617cfe48da081ad7793d492b1f858dbfb85e7fefd958350ad74a1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-family-08-profiles.json",
+      "original_sha256": "4814b78431745d384f18c8789093f25e47e71ebb9f0ee1fdb151128149d22145",
+      "published_sha256": "af3b6eb6319754e23f4ab58685c873f29d22e58a6de200f87426e0d72067b120",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-00.json",
+      "original_sha256": "ec909c80bdbf8cd842da217db44365255de4c7c8ad425bf2447f098b71d8b91e",
+      "published_sha256": "c12da5a1f5a7ae155efa914f5a603ab938f0b7e3441acdf084a490b251081203",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-01.json",
+      "original_sha256": "ca690e83712a20cfaf2c206a5ec7cbe0a521456461c92f0314aff9ca2e6a2364",
+      "published_sha256": "54b3dfa813ccb35ccfc96e5656280af312e9c89b5d6d7ab4a2824337709c517c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-02.json",
+      "original_sha256": "f60e39b4d46a25b1167786ad1a750b590bb236067998cbd0c2aab3047b8dc1d0",
+      "published_sha256": "dbd832be26b495a7d3a674c1f97ac471703d4903d4b4cd4b5de1812545f77310",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-03.json",
+      "original_sha256": "00b86ff6b69f20ec12ac8f707ef0750e923dabf7964c51a15791b3611821b047",
+      "published_sha256": "6953ce0416d11341a603a717723053617df9c957cb30344ad2bde6cffd360806",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-04.json",
+      "original_sha256": "2210618014fbff1022396571a5e6980e1efe389784e26a3226cf0f4e00e044bd",
+      "published_sha256": "f3b19a3a07ed1452a45f7690bb2df0ff8386cf6b38731bc8e338edf4c2a1a73e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-05.json",
+      "original_sha256": "d4768fb2a399163d154b3b8c0d29a73a82559feec300156491348eda4bf378e3",
+      "published_sha256": "ba35e7647a471f5f9fb445a9fef237e2d83f88ba35793c2242e988c5aa8c2656",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-06.json",
+      "original_sha256": "e4fb37d5b6bfa95d283cee9b4e2b454f4a7e3f191b371d1ed199bd9ab9da2328",
+      "published_sha256": "84bcf211ec3ae92ac2c42c9d014adaf371c24e3f8a3121324f8be4856c8ccf56",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-07.json",
+      "original_sha256": "9b5a738eaf830090b762d07a873141ffe3d5c31b070c267d3a9ebe3dac6db413",
+      "published_sha256": "1fe9f86860a8b585f8f8c097ea40a47ccc1fcb97a97bdd6474aeea39e3da6738",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-08.json",
+      "original_sha256": "b89cc0a6c9fb4f71797c5cbc61240cbc8455d6e4add4c0ffff4c48a02925058d",
+      "published_sha256": "5c2beeb3c52d898db38437b27868067abefba4fab0932ea83d9ef302b58afb73",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-09.json",
+      "original_sha256": "a756669e3e39bd3a8ed60ddf2dc690d8702d26d6bf6fdc9d58da19f9a642e6ef",
+      "published_sha256": "7239c8efa81d73d8cf918409455841b14174ae2771ac8765fdb182996e29f0fe",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-10.json",
+      "original_sha256": "de3161ee8d2ce78a129948a5b73d07e1dc34342b64f7f8829f3ef01f9660925e",
+      "published_sha256": "6bf91e8317fdd8b639da0c4a1120939a638723d66dd3c9f5f96bff656936e7b2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-game-11.json",
+      "original_sha256": "fece59ee629cdd744052a298af9c5324d668de4da220cffe6c4075d10accd0c8",
+      "published_sha256": "9891e30a73ef7e0c69724ec2ea42400d4952a1e5d83a01e813535443aba7c879",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-inputs.json",
+      "original_sha256": "483df3d76657e3530336c26ed76cb24b0cdbbe0b752e9087a9440cd0ac56fdfd",
+      "published_sha256": "a10babdf9baa8aa0740ffbe823971469d268f33681e6e028b7d348c4e74e79f0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-producer.json",
+      "original_sha256": "5b33d6548a10d505e4a3cdf59c2cb86d8f7e1d6beb40be5623e4168397d3cc46",
+      "published_sha256": "bd368a0fa1ff2b178c4e7abc89a773504d0347568883a01cca7e2e0a9432b1d6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-progress.json",
+      "original_sha256": "540450c6cd1638fc1f55942738ff88fba065893101d122089fed2559c4d76139",
+      "published_sha256": "90aa93d186faa14ca6e5fa791f869362450273fb7a786298e0b33021ac794529",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-result.json",
+      "original_sha256": "a81a68e272a359f059ae2ca1218f23d02a6e828e7d8ebdfeaebb5768be45435d",
+      "published_sha256": "4df714115525d92cd3a59d7a3c652a470259bbeee9d354bd74d4bad5a52765b0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer-source-binding.json",
+      "original_sha256": "8008cf1df9e2731655aa3d47706681cadc4469c7abbf58fc62acac33690bb830",
+      "published_sha256": "75eca7ed75831e0e147def5f206719540fd618faf8b39d259cfa95f2071235e9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/consumer.py",
+      "original_sha256": "8a464a2e3a0adab7654bf382531275da639916a6416533aae66634146a22c483",
+      "published_sha256": "eb6f1aeb3e0261213239619b2593593b52e0eb3276ea250b7aaad02496f8cb7c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/generation-start.json",
+      "original_sha256": "c8c3b63c28de418ba7183a9cf9059a583d153ea6fc0d8e131caefda0451d4b88",
+      "published_sha256": "358df68766d3f038b066ca6056eb25677d5249bc3e7edd1e97312c9d2d783da9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/plan.json",
+      "original_sha256": "7cce749415d38554166d92fbca5103eace538149b0a425da45993361d543c8f6",
+      "published_sha256": "7c28892ae09424016b318effffa0c8c90c08fd2e4a9415f68b59d00c75899509",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/missing-atom-repair/preflight.json",
+      "original_sha256": "24224c7f2d9739f64396361ac8e80f031aec146ff211dea5c7c3f98f6daabe79",
+      "published_sha256": "207bdc2ef9219771686178889296968f269e2ed270e88e7ed418c2d9c8d7b02b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer/plan.json",
+      "original_sha256": "aab7bafe4b9bae0a35f05a743bec7db37c546f17f2404d4a8f5f8d3551c4a617",
+      "published_sha256": "69055103bcc870decd359aca02306c67a2f5d5fff4f28b9a675090d4dd797ac0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/fresh-transfer-analysis.json",
+      "original_sha256": "6367c717bf495b3aef827c276784742752f7161b1c7f88324948f3335d07fa42",
+      "published_sha256": "d55f25fb26c6cca8c4e7716fa950cb4046c82149430362180f884187c25ea61d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/game-reader-bounded-result.json",
+      "original_sha256": "16e7fd19aefdd2c0db25dd47138c3c07710e1c76afb110176cbab5b93302119c",
+      "published_sha256": "ef925fecc1a2f2ccaab798e80ddbe443629c7cb08b6cb934af5db67dc2efe3bb",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/game-reader-v0-syntax-failure.py",
+      "original_sha256": "472d3b733be6005f667108acbf65dcc00885f1bd8cd4927a5d6c328c49831652",
+      "published_sha256": "ae677873a990f4b3dfc571bd7874ac29fc6e463f1dbc435e26686164ea558be7",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/game-reader.log",
+      "original_sha256": "6d41c81b0e3f9c4aacd86eb3308049d24a0a837ab8e7b1cc7eea1ef2bc588e11",
+      "published_sha256": "87cd0afb238efc6bdedb140b08ffb7751d08a6ee6795e58bda19f964283f43d0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/game-reader.py",
+      "original_sha256": "c872b6255c41647b03a13dfb5439c8bef9634df647d4bf2973387d94416d3ed7",
+      "published_sha256": "54cc960b3413562edd3039ebe2b49eed44017b255233a0a623c4128476d9bdcf",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/inputs.json",
+      "original_sha256": "3dc6be2e3810fff530265b7eab5353bdeba7e5d7730af4aca63c8637b58275c5",
+      "published_sha256": "5b9a637a3d7867fd69eccbf574fc966cf92c5ca4c660bec167fa8caee019426e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/literature-reading.json",
+      "original_sha256": "0d74b930e7d5bf3b888db6a6e684681f504c754237a3bfebd0ed96e5d6449840",
+      "published_sha256": "9332320e7e55a980c41bf676cd41628bb0f9c2d5b97fe2b8957af335a2fc9ce0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/paired-analysis-corrected.json",
+      "original_sha256": "864d472c9b2043fa89dfa3d1da9f81858446ad7b5a7df617f5be7837996806a3",
+      "published_sha256": "afc4ada994f619692a30db277c88107176a5ddb58791f03ae1982de98a4c87df",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/paired-analysis.json",
+      "original_sha256": "a108c90e7e8e9539b6eafc0fb5c92f654dcee61742726563e5575b0fef996a8e",
+      "published_sha256": "839bf98df010369f80ea372b88f39ed41bb5fb1e39858dc84b63d071ed158610",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/plan.json",
+      "original_sha256": "0719636c0730ed5bd07ceb2077a69d2915cf5ab4e49cb9886e92f928d0f56c11",
+      "published_sha256": "0389f8aeb0bc36cb3791799589b936cad2192ae43d63182a19b302c67b4b026c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/price-design-audit.json",
+      "original_sha256": "aba9ade66cc6805b9d384099ff156b0cb91fcc81fc665e89c8ec9e2b42fcbcd1",
+      "published_sha256": "fea485ad341ce0eaae2772fc830bfa2be86b9703e8f8e7413b64fd3210eba337",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/profiles.json",
+      "original_sha256": "dfb3d09fd0d3574229e72453daf21ef55df3ae722bf88b62abb5d74fa846de8c",
+      "published_sha256": "53e6faca83f073c2815bf9f80cadd3aed20748b813e13bd6afb523d44ce75e21",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/progress.json",
+      "original_sha256": "62ee901063c20a140d2e0998f03e496a4d64d71b0fec7c265f047fb9bb9f5db0",
+      "published_sha256": "d00d6daeb0329a7ad79f1f884097050421a9f8c2d9a21177986dc4c616d43acd",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/reader-boundary-controls.json",
+      "original_sha256": "8bca11e6b3e464a4ef95be0ff8d0e6c6e844ba82ba36653df1c4bf3c9502e836",
+      "published_sha256": "5bc2698502663b3f505094a0e7d296b0a964ee677373ebf3bddbbf30bf9c681d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/reader-plan.json",
+      "original_sha256": "a106c485d695a9825b9e18179734679175a58e2240b36b9b251a80826ac0a3e7",
+      "published_sha256": "b6d3a53aa95015403b69f94695951fafd5087f24dcb22478449bd3bb4c355a53",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/reader-result.json",
+      "original_sha256": "65952c6d1a0c6ee2ecfe592ede5e6cec345f40f8e4a3c178d4e8c96672318352",
+      "published_sha256": "f30605446519b1022bf727b573571f3b1f1d5b20c171531b1c43de76baa14894",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/reader.py",
+      "original_sha256": "26c596a952556d44ced340d1b0bbc93e6c56ef2955722bdc14fb895d7f7be956",
+      "published_sha256": "ffda2f3b1bd8f862425632ab1faedc0a9a2734b525d623249298668ce942155a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/result.json",
+      "original_sha256": "7109f6ef658da8229189b5f732cea62334937245dd9634c881f3b7bc1d376f1f",
+      "published_sha256": "ad7d1597b3d27ff51bb04da48ec00ad2272399a476fbd1a34dbcb8f22491406b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-scan-bounded-result.json",
+      "original_sha256": "6b60fc5c17db0cf05f08069aeb80cf07af3d0f781fb0f53e57a1099977f7978d",
+      "published_sha256": "d6086692554f4a6374330ae449399e347e1d96a127766dddfca470f0ce62b329",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-scan-plan.json",
+      "original_sha256": "b909b3eeea80a98177fb93f0e894c7fea7649426e2118098b858efb22fea0843",
+      "published_sha256": "9dd50939ce59b7df8ff02070dfcdaede39e0af58d2f14abb33e0b76bac8a1982",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-scan-recorder-fix.json",
+      "original_sha256": "606326b243dbfbb096a22c05afa1e7652e3989e8cdcdd561e9886bad9f927562",
+      "published_sha256": "233e89fb82d6c549efb9860481562f9999eb34cb1c60dcca070d81cde54fa942",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-scan-v1-capped.py",
+      "original_sha256": "a14cc59c16828ab230a856becc5fe2eb0cc79026fed9a3baec6bad6b2a1738a3",
+      "published_sha256": "a5b8eb9627530707ab1518264a1fde6a0558ad40bc9f3b16cb2ac2ca65839359",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-scan.py",
+      "original_sha256": "9eda6aa774f847ee15245fb9efb510b935fcdd1559754a57f26478a7dc66ff39",
+      "published_sha256": "79c0e90bde73ae282db9eb57f05c7731e41caa3f3d14d40d1aff4449c9de5f6f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/run.py",
+      "original_sha256": "1362d94cd396549932ae9ef96d242e260977a3e06cbf1f905f20650996e3f579",
+      "published_sha256": "dd857fe1ee57dad216d8e1b98267cfb7443f0d7715450cd1ac4537b60d735666",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-origin.json",
+      "original_sha256": "6c410c999816bf3b0cf4d9c9e66a15b33adcee049df826ce4886ae5a78f608ea",
+      "published_sha256": "121213e94ff6fcec203e03c16094316321b46c6d280bdf53d033d40ce3fa65d4",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-plan.json",
+      "original_sha256": "9951d6d3f4560c7125f16299ec5c483ea7a8facf20362d9a800e7fa85a05ba80",
+      "published_sha256": "b4a6e576854464c2d61b0532455cc744f9f13804aaee75ec431e5532451e0a48",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-qualification.json",
+      "original_sha256": "e7a04a6840faef5c947eddbcc015a78bb182e8117fa70382cd47a8c62ba505c8",
+      "published_sha256": "e811d5c94351d362b8e937814be10e0b0a6f071e88bea917e750ec89d48d8371",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v1-record-failure-result.json",
+      "original_sha256": "2b49335a48263bb1e6dc5405bfb28950387de990a872908407e847b714e86778",
+      "published_sha256": "f126888ae6cbcd1e6989ecd5bfa6f34b841e7f0f450bb0ab2662eebcd18874ca",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v1-record-failure.log",
+      "original_sha256": "fbba3a644defba9e70210acdbf02d8571579e573b78fd9c85e1c3407ce0fb8b9",
+      "published_sha256": "b8bf71c6def0a0741e7f193877d001805b04615fe7410604122d812209447d7a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v1-record-failure.py",
+      "original_sha256": "7ad9f2faf265d1d900fd57fac72fe215d69fd4ad213a9d050ed0fa2c3a01aa53",
+      "published_sha256": "d2cfbfd30dc3b5604ebc622dcba65c15138cd4db74c7e0fe89ce394900a523b2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v2-bounded-result.json",
+      "original_sha256": "840263e5daba5c814279e554cdfd9030ba364ccf01ef12ccf7390d8646936866",
+      "published_sha256": "8332a077487af38816eff89e4828d43f30e2d98fa7aba433469e00c36aec853f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v2-bounded.log",
+      "original_sha256": "de83b5b49bba106788edcb419ff101dfc03cd7bd4fe58b179eb5bd3ee5fa94e7",
+      "published_sha256": "a15be2f46adeb4e6b193772c33944f0accd7b93c05f7dd8f3ca86961c40c0a42",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v2-every-scalar-flags.py",
+      "original_sha256": "ac1fafe11dbbea83d4e84ebee135f86e3bf313014cccf279eb1c4c2474b77f09",
+      "published_sha256": "c0971303528c325afb6c8d84b22b0b80cfe8eace7e209b23dec58402b720cf34",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v3-plan.json",
+      "original_sha256": "4123a1978f9ce17da10de09be9490b5c117f7f8a3072f493358d437b1a838169",
+      "published_sha256": "dd38359df5399dffb8435238eaa892f3f43812d0e6e1d00384f933289fd50fe9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v3-result.json",
+      "original_sha256": "5f676237129ac96ff8caad3b64aaab3d6431179a22f47291abf1e93dca52d040",
+      "published_sha256": "846ee4c2377a0c9598748ac171ba18614cc70c8c9a054c306fce7ce255e78a48",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader-v3.log",
+      "original_sha256": "888351b310ea3ff90e495d2573c191e2d9fa7977acc863224edb32d731e304b1",
+      "published_sha256": "c9ccd6847744e0b7dfb0ff9202468682fb7eeb4ff2493a4ce36aed473d0a3957",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/runtime-reader.py",
+      "original_sha256": "b772cace67fcc643ea9ef502ead726e9e89e8f4062395f775eacc235c9eb19a7",
+      "published_sha256": "0b7b3e07b0c15ceee97f3ee69681b160d25203663073962bbf124ecf3b30e7f6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slack-reading-summary.json",
+      "original_sha256": "d5066dfdb726e24d44526999bc28943b780108b13095a04baf489851b9637a48",
+      "published_sha256": "b49dd89f192dce3b29354af5d3bf8071093c3f62bcc90ec8998487c37b3dee00",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-00.json",
+      "original_sha256": "dca9b4b5d9ef6f68fa09f3707d748a6e125598c2ddef180b22a12d1229823a17",
+      "published_sha256": "a0b240dcfaa52ce4234ae6572ac6798700ad6d622871396f61e996a16a46dbc7",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-01.json",
+      "original_sha256": "5c1c051f7e872bcfa821eeeb3075cae82ad811c5859b51bf02ca61c954db8965",
+      "published_sha256": "424674151f4070fcdddbf8e56d141deb28c51c4d8ae7407e52e62d4c2eb8f477",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-02.json",
+      "original_sha256": "193a21455f61f244bb4bbfe687a02b8e96f01cfaf6d28b7ace42b79918714dc5",
+      "published_sha256": "2a9e654e318db9604ba0fcaa7bddb8816bbf726bb906e30b41c812d3d46d1bc1",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-03.json",
+      "original_sha256": "5b5a875596b7a77de1733247d53de9072c68de2262ec01902004588417972569",
+      "published_sha256": "ee567613aed031f9fc062f896d59396bfab9048a564c6f632866f648fd1e63f8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-04.json",
+      "original_sha256": "d48f815cf991d749a650caae5de0d7e765f83be22907c21535a662842672d013",
+      "published_sha256": "c330916d1e39ec92862cf648563e330394228b4452278a0aee83218eefc00488",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-05.json",
+      "original_sha256": "de1a26c2ba26184c33971846a1f3f87540e4a7bd9050cfe769280a21a06dbff9",
+      "published_sha256": "6d769a2499bd95082bba6810d99092ea7054da6cd643162b1be4c99b2e5429ca",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-06.json",
+      "original_sha256": "b879bcff51db7938f2eb00888ed60e4a650fc41381c3a1a1476064054622d82a",
+      "published_sha256": "ed4e82718b22ba7b97f09625db37b74a8495523807fd076b3d9609ad8c337b32",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-07.json",
+      "original_sha256": "ae7a081ce50277f309303914609005159657741587a570f31062d175b6e75fcc",
+      "published_sha256": "216423e9eb86ed423e6ee22a0c28beca91038fee884db90c84fae6a07024a6a7",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-08.json",
+      "original_sha256": "a9cf021c36a8647a2cf53ec84c54aecb7237ec1407ab5f5c4e2b603bbf2d0aec",
+      "published_sha256": "33f79da5f62eb01b84e68849ca56242a4b397125ed1666c59eea627a388aca34",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-09.json",
+      "original_sha256": "3a6c55cbf5a2aafcaa9f6a32e70ead7042bc66146725ae5a892900c2d76a6ae1",
+      "published_sha256": "c46850c147472b04bf3b4eca485e8bded5fe891d0b28123b5bd03f76a631a68b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-10.json",
+      "original_sha256": "0bdcf9562170b779f0df57c325e4c05c3e19a6f8975a9b1fca825ebed5c4b21d",
+      "published_sha256": "6cb21284dda2f338a1c97a8967909a4779e12b2a454bc939496362a84d33d6f8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-11.json",
+      "original_sha256": "15aec0c8ede708ffe3cee957bf22144b4b8fbe238fb9418bf687f6870e46a5b0",
+      "published_sha256": "24bfebe834b07f71ea65e4a3ee0b835891112a8b491619335bd7295fd4ce2d56",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-12.json",
+      "original_sha256": "2b9cf6a082a32cf222ad91eeae7b4ec449044fad7e9e5973b61457ec02be5bfe",
+      "published_sha256": "8a68fff2caf3e98bb402daa45b661c6ed8641dd85ffe10f319ddf16a37f83524",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-13.json",
+      "original_sha256": "66aea62a63cca7841d37cceef7300f6a4a5889c31f07842310b070d207b04088",
+      "published_sha256": "c5bc49eddf4f51c46d9b3687621b561541596fca1f3876c8e94b753be8fb05f7",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-14.json",
+      "original_sha256": "172de7e908275d4e7975425f3fddd59d9cdbc4df4584f1404ed3752bd849c2a5",
+      "published_sha256": "ba61a8492e979abf86e2e49699e1976fce0c95d68642f2f21017a05329aed73e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/slot-15.json",
+      "original_sha256": "618135afbf43f2afa197d921e474c16cdcfcbf24d39f869123e8dea21f0b80d7",
+      "published_sha256": "69bb259be8509d7a45e1bf32d5a2ef17505bd6950cc5fb65d19d80d2ccf99208",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/source-binding.json",
+      "original_sha256": "8e00c2732ab0372217810192fbadec9cee30e91c070261a03aed7c7aedac1322",
+      "published_sha256": "15e1ebb0c6ff6cb4bed7aad68ea2d49bbef656e688c09f5fde881155db9f4b0c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/source-closure-inventory.json",
+      "original_sha256": "ed0a4b7ac43d5c17a7c8107a36d768d178767cd0271c7005cfd634a7a194590a",
+      "published_sha256": "51b111a2505549f0e57d3335b6ad77aa56ad8502eb1d0d4e44a642c751828ae5",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/source-qualification.json",
+      "original_sha256": "5f9c5ecabbe5e3c9bdc393fcc1375e7181405d91d0f479e6ac5769668139b421",
+      "published_sha256": "5847a5f66e77f3b2e7745a4499ed53bfcbea02aaa199e1fe0b53e793df02d49d",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-progress.json",
+      "original_sha256": "9e97062fea270750706ddaeb7685035a26f42961fa03c51035a5342d17a1b0d8",
+      "published_sha256": "b0a031cdae82c319fd48b4ef7524b4329d30308a4189674dd19f127a14da375f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-reference-plan.json",
+      "original_sha256": "b331070ad26fb9960a77258e506904500d2102534b8d581d056732896b3cb80b",
+      "published_sha256": "ee86bdf83710093a561852343f99c78b1888f11699aa72329a17f1b6408dd361",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-reference.py",
+      "original_sha256": "cf3462cfdc0ad97496a221dbf204db51abbda99ced87e04ebc78b61f76a1591a",
+      "published_sha256": "84af03e32d3e342ada18147d14e34a21a96ee3b0304168009192068edc60fdc9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-result.json",
+      "original_sha256": "f0225c1952eb1fd1ebc2de1f5483b5768a7043090b3de9370ced60a5f9904049",
+      "published_sha256": "85e4d0e22a6f9826c699f685a4641a9bf41489b769f3ee0d0cdcae7b4a7eecb6",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-00.json",
+      "original_sha256": "8f8ab202fd5df0b2d670689ed543b38f80e3e918df6792b73d4e3bfc957bac7a",
+      "published_sha256": "c7cff649401afa8419c849470110b7acdb8f09f5d703dca15f334dc9b48e1ced",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-01.json",
+      "original_sha256": "4b256bcd834c0b1597828ffc329b9767c89a7d5327b5e4fd30aac1f8c678920e",
+      "published_sha256": "439ba154b2ac4ae1bced5306b6e6d95fe9bd8e3a195cd2905168db281c301da2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-02.json",
+      "original_sha256": "4476753071e352f2e7a1a888f067ed38b303b4856eb1661fc97bbb09b2f229e7",
+      "published_sha256": "8e8177c0a477593d6b79316a0fed1aff656d995a5d614c62f755218f161f86d0",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-03.json",
+      "original_sha256": "78b69d4fa0e50633c284bd8fa0b60c07e98ad6153cbfa27271c92eaec5c38575",
+      "published_sha256": "d45379b6f0a2091f8ab0e79953baceb4e9ce042a1e6a5278bfe891a98a418f27",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-04.json",
+      "original_sha256": "a857870297343308eb992daad9832f481db1a9999a73f3330a2b36027992250d",
+      "published_sha256": "97a92da77124e7b85c6c70e4116427556c18aede8a66b610275874f416e0a82b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-05.json",
+      "original_sha256": "ee36688485b01ac70c18d3c5af0e75b118746e54a06af541dd4358e7e3edabdf",
+      "published_sha256": "764079f3b5d860ea540afdbb6811d9d3b30167b366c90d81bcb9e0cf7156bff4",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-06.json",
+      "original_sha256": "9e5f42f5804dc92c330f1e0c23d5ba10c94c88b8ce6c19999787b5edcb341efb",
+      "published_sha256": "1ab25c63ff44b8ac110a690dbec7a6ff363ecb024c4518c870367e02832b1de9",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-07.json",
+      "original_sha256": "cf1b7689a4cec38abc51e81aaff871a5f2ad8bd6145bc1b786421bb0b7a92468",
+      "published_sha256": "864beb85b810337e3ccb706d083279cb111e55e60af93a284580d551b5c806b2",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-08.json",
+      "original_sha256": "f798b62ae3e7939189d8ab134eda079a74022dfced76f68546078d5f345e1b4a",
+      "published_sha256": "e292b0d9a87fd27beca257a44b9ba9d415d6f13e321498487118f5c010cd5d83",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-09.json",
+      "original_sha256": "af61132750d5e2458f75dbea9bf9674c77669e8fd836b86ad2180c26eb9eac7e",
+      "published_sha256": "7927985dced2163dcf0a6c14825cf1a1d6fb8ca9911040711ccc738393434e9b",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-10.json",
+      "original_sha256": "c647a1e095eb86e8726d23357acf72d081a6f5943170e150be1e53bb3631d5d9",
+      "published_sha256": "c7e1e0a465088f3236f8c918da9596e0dcbf35cbff939c96d426d4400372938c",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-11.json",
+      "original_sha256": "131169a4f5c01d9cbf9362d661b391dcbb846fc4786384dc204849c5e417e0dc",
+      "published_sha256": "1ff99253d140fe30765333488dfed2d245c02e852a933cbaf9816ea98f50d98f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-12.json",
+      "original_sha256": "d97aa46011adbfdda529bd314fc6449deea281800610529004df32bb207c045f",
+      "published_sha256": "6be47714bb1ae1f8b8513b1d6172c6a189d825449bcdc551a066b0872eeee402",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-13.json",
+      "original_sha256": "cf16a25cc2841a0893373f3b489f771ef3ced74cb196e93e59443177488723b1",
+      "published_sha256": "cc0574c1fa20735b034ed415c87b724c7dc93e386ab95a717e498e6d5e9c055a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-14.json",
+      "original_sha256": "55337dbcc7b69b31672fe18291e8130c3658497065a57eb91f5443eb24da8ee8",
+      "published_sha256": "d365d89f22b52e8d37ed2a70e7fe722b399da623770b976c31213b29fe06d939",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/terminal-slot-15.json",
+      "original_sha256": "bddd7b5b9edc722db30590cf99b2e39ab8d09569cd88a3eb0f47bd21f6a19050",
+      "published_sha256": "d929aa1911d55b4dfd2faf0f59f895d7334425c632d611ce8a0fab425d4afd77",
+      "sanitized_copy": true
+    },
+    {
+      "member": "source/generic_chess/__init__.py",
+      "original_sha256": "6df435c3f0bbf52d13295f57c726fb4e426e73bfe118515893c06596145bf70b",
+      "published_sha256": "6df435c3f0bbf52d13295f57c726fb4e426e73bfe118515893c06596145bf70b",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/__init__.py",
+      "original_sha256": "f561e5d133e7aa787f7b9d89a1dc7e21a1838e356a91edbb7772aec05935fd92",
+      "published_sha256": "f561e5d133e7aa787f7b9d89a1dc7e21a1838e356a91edbb7772aec05935fd92",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/__init__.py",
+      "original_sha256": "21411e89d27aab52e69a4af956aef2113e5d2d7ee2c4f488b0ba898e06e94bce",
+      "published_sha256": "21411e89d27aab52e69a4af956aef2113e5d2d7ee2c4f488b0ba898e06e94bce",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/backend.py",
+      "original_sha256": "db8f97e6d13286f258874bf283ab2df9498dc35c394409d89edb4c6f49f03488",
+      "published_sha256": "db8f97e6d13286f258874bf283ab2df9498dc35c394409d89edb4c6f49f03488",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/native_legality.py",
+      "original_sha256": "d45fc163fb72312ffbab1a645636e2da1da40637580f12bd5df5c272e02ad1e8",
+      "published_sha256": "d45fc163fb72312ffbab1a645636e2da1da40637580f12bd5df5c272e02ad1e8",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/ordering.py",
+      "original_sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e",
+      "published_sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/player.py",
+      "original_sha256": "ac87c5b1c6246fe13150585cf470d266d5aff01ff473cb6ebe89dd8aa3a7e49f",
+      "published_sha256": "ac87c5b1c6246fe13150585cf470d266d5aff01ff473cb6ebe89dd8aa3a7e49f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/quiescence.py",
+      "original_sha256": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da",
+      "published_sha256": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/search.py",
+      "original_sha256": "9b9f5dbb542259f24912826bc4c360d5b083dbd7438c9b1a1eafef7f55be73d7",
+      "published_sha256": "9b9f5dbb542259f24912826bc4c360d5b083dbd7438c9b1a1eafef7f55be73d7",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/snapshot.py",
+      "original_sha256": "26c43b038dfc14999276c90cb5a69b5d7a88f23b7198ecd6f568e8dfd532c273",
+      "published_sha256": "26c43b038dfc14999276c90cb5a69b5d7a88f23b7198ecd6f568e8dfd532c273",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/statistics.py",
+      "original_sha256": "afd20e2f34f602b8c1d53bbb8c7debe1abdd5763bd2ce46d6f15d80443abb0db",
+      "published_sha256": "afd20e2f34f602b8c1d53bbb8c7debe1abdd5763bd2ce46d6f15d80443abb0db",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/transposition.py",
+      "original_sha256": "120ea3195058c120bfc4d1e9f7166a93c857e57558dba2aafb74bb2c83595a2b",
+      "published_sha256": "120ea3195058c120bfc4d1e9f7166a93c857e57558dba2aafb74bb2c83595a2b",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/alphabeta/tuning.py",
+      "original_sha256": "d283621e5bc62232c7c0a5b45a4859911f500bc244aca0e177afe3148676349b",
+      "published_sha256": "d283621e5bc62232c7c0a5b45a4859911f500bc244aca0e177afe3148676349b",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/audit_instrumentation.py",
+      "original_sha256": "e3c6e85422207b3787d4cea51b6916ca371b69d5be93b15e96501cf0acbc0f15",
+      "published_sha256": "e3c6e85422207b3787d4cea51b6916ca371b69d5be93b15e96501cf0acbc0f15",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/budget.py",
+      "original_sha256": "ec00a90123bef72182cde82f7304e95169f1ced0c5ef8ef38af61d4d9cfc7370",
+      "published_sha256": "ec00a90123bef72182cde82f7304e95169f1ced0c5ef8ef38af61d4d9cfc7370",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/cancellation.py",
+      "original_sha256": "e97828a960a8fc2928ab7d754cedcd174e921032ea2c0347932b125214a5ba32",
+      "published_sha256": "e97828a960a8fc2928ab7d754cedcd174e921032ea2c0347932b125214a5ba32",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/cli/__init__.py",
+      "original_sha256": "89b8669b5ef3a479fb46533f2b6b060f7382df6bce8646003de1b815d5671c7c",
+      "published_sha256": "89b8669b5ef3a479fb46533f2b6b060f7382df6bce8646003de1b815d5671c7c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/cli/analyze_ruleset.py",
+      "original_sha256": "c7ea6534419b813c3e1eed7723e50d6c06c2d0983bba44bcf3cfad2aefe2875d",
+      "published_sha256": "c7ea6534419b813c3e1eed7723e50d6c06c2d0983bba44bcf3cfad2aefe2875d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/cli/audit_native_readiness.py",
+      "original_sha256": "e902000b20b26f70e433fa9e49ba89a44f81598c98fd23a51563c0ae5394cf2a",
+      "published_sha256": "e902000b20b26f70e433fa9e49ba89a44f81598c98fd23a51563c0ae5394cf2a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/cli/benchmark_alphabeta.py",
+      "original_sha256": "c41255f4ca0536d6deed0cc5e0194290a1b5c02c4b32998537adc5a46076dfb6",
+      "published_sha256": "c41255f4ca0536d6deed0cc5e0194290a1b5c02c4b32998537adc5a46076dfb6",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/decision.py",
+      "original_sha256": "ab390ea8830f682546da3ea0df7033589b9475373dbd2312321fbe480d1e958d",
+      "published_sha256": "ab390ea8830f682546da3ea0df7033589b9475373dbd2312321fbe480d1e958d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/__init__.py",
+      "original_sha256": "eccd9513c65b76b94c03d646242d61faf19b853b193c8dd72e01a6b4abbfdcf1",
+      "published_sha256": "eccd9513c65b76b94c03d646242d61faf19b853b193c8dd72e01a6b4abbfdcf1",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/analyzer.py",
+      "original_sha256": "ed8d7b0046a568253601b818ae1b030d1b3c4b8c26229e7dd5037ede29013683",
+      "published_sha256": "ed8d7b0046a568253601b818ae1b030d1b3c4b8c26229e7dd5037ede29013683",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/cache.py",
+      "original_sha256": "6f9af3f1163a0028197380691d28824c3887dde53a5a0b7df015cdf8a5863ca9",
+      "published_sha256": "6f9af3f1163a0028197380691d28824c3887dde53a5a0b7df015cdf8a5863ca9",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/config.py",
+      "original_sha256": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db",
+      "published_sha256": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/diagnostics.py",
+      "original_sha256": "ddd6bda87b4f07091f1c660cb1c21f1a5bfd79b81bcceff5821c29061ae33e2b",
+      "published_sha256": "ddd6bda87b4f07091f1c660cb1c21f1a5bfd79b81bcceff5821c29061ae33e2b",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/evaluator.py",
+      "original_sha256": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf",
+      "published_sha256": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/mobility.py",
+      "original_sha256": "828a4f1a9fa93a48955e98042dd976d69f4305a45fe87e86455b22a1b16c8d83",
+      "published_sha256": "828a4f1a9fa93a48955e98042dd976d69f4305a45fe87e86455b22a1b16c8d83",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/movement_graph.py",
+      "original_sha256": "254fb838e0fd58de2e71d0a2c39154a2773d9b962eaaa5b0aeafe970896f287b",
+      "published_sha256": "254fb838e0fd58de2e71d0a2c39154a2773d9b962eaaa5b0aeafe970896f287b",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/native_compat.py",
+      "original_sha256": "2df50ad35d73868f7637cecf4189af3695edf43ce24228054210c319d8951b3a",
+      "published_sha256": "2df50ad35d73868f7637cecf4189af3695edf43ce24228054210c319d8951b3a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/profile.py",
+      "original_sha256": "5caba8ea9de8706e7c039f31cf0d59ce30341b24135e9f6ef6aa74e356212710",
+      "published_sha256": "5caba8ea9de8706e7c039f31cf0d59ce30341b24135e9f6ef6aa74e356212710",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/semantic.py",
+      "original_sha256": "abf5237529873fef30e5e4d9d7120efcc98507e2a979d3647c3f1c89518dba7a",
+      "published_sha256": "abf5237529873fef30e5e4d9d7120efcc98507e2a979d3647c3f1c89518dba7a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/evaluation/semantic_attacks.py",
+      "original_sha256": "a9f2b952941e40a44bb22a7a1681b80ecfe1745826f1a824fe2b959172f8e9c6",
+      "published_sha256": "a9f2b952941e40a44bb22a7a1681b80ecfe1745826f1a824fe2b959172f8e9c6",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/limits.py",
+      "original_sha256": "f6d79d01b419b23cbb8931401272f40100ac8d5338e68ccf240baf26e725a524",
+      "published_sha256": "f6d79d01b419b23cbb8931401272f40100ac8d5338e68ccf240baf26e725a524",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/ai/player.py",
+      "original_sha256": "5657516d17099abc41c87b6c090db2336fc654a4c347fa75935bcad4b306df12",
+      "published_sha256": "5657516d17099abc41c87b6c090db2336fc654a4c347fa75935bcad4b306df12",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/cli/__init__.py",
+      "original_sha256": "7bc807d0946d3743939cee8dda5d1579dcbd9186179903b117a95c3504aed5e8",
+      "published_sha256": "7bc807d0946d3743939cee8dda5d1579dcbd9186179903b117a95c3504aed5e8",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/cli/play.py",
+      "original_sha256": "4272f8f573909bf4c18b19f320bbd545834593e4756c441aa3ccb6878f54277f",
+      "published_sha256": "4272f8f573909bf4c18b19f320bbd545834593e4756c441aa3ccb6878f54277f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/cli/render.py",
+      "original_sha256": "9d63273f05adb1bf14cc5d7ce43bba6b4aa5d2dba4f02d229ea4746a4b47fea4",
+      "published_sha256": "9d63273f05adb1bf14cc5d7ce43bba6b4aa5d2dba4f02d229ea4746a4b47fea4",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/cli/replay.py",
+      "original_sha256": "929803536cfb765e2dc296c7620b8fb3504642fedb32f52825a7117fdcf88b9a",
+      "published_sha256": "929803536cfb765e2dc296c7620b8fb3504642fedb32f52825a7117fdcf88b9a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/clock.py",
+      "original_sha256": "4146228dc887e3ef825fafd62bf98d228978935a4f0dccdc2f8d7f5df684cf25",
+      "published_sha256": "4146228dc887e3ef825fafd62bf98d228978935a4f0dccdc2f8d7f5df684cf25",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/__init__.py",
+      "original_sha256": "89f7576f218a947dd73e406081e34f190c662d39d8a937fc4bb10313c892a2eb",
+      "published_sha256": "89f7576f218a947dd73e406081e34f190c662d39d8a937fc4bb10313c892a2eb",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/actions.py",
+      "original_sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285",
+      "published_sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/adjudication.py",
+      "original_sha256": "a550f2f56c7835fb463e46c9de2b6eab93574ff0fc32dc6644ae8aaf6092617e",
+      "published_sha256": "a550f2f56c7835fb463e46c9de2b6eab93574ff0fc32dc6644ae8aaf6092617e",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/attacks.py",
+      "original_sha256": "51faa8f9839e47e70715f74e70a4e22d97f7c550a6a9ed07e7ce1169ccac9907",
+      "published_sha256": "51faa8f9839e47e70715f74e70a4e22d97f7c550a6a9ed07e7ce1169ccac9907",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/capture_pressure_trace.py",
+      "original_sha256": "f87f3d2319c66dab4e1872edb3ae1788fe07f0e7c23061881e28a3b276f819a5",
+      "published_sha256": "f87f3d2319c66dab4e1872edb3ae1788fe07f0e7c23061881e28a3b276f819a5",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/capture_sources.py",
+      "original_sha256": "b2cb7d885a02540fd2cd4d53523b54c99b88fb2946c5184ac5f988e0b3eedf65",
+      "published_sha256": "b2cb7d885a02540fd2cd4d53523b54c99b88fb2946c5184ac5f988e0b3eedf65",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/coordinates.py",
+      "original_sha256": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9",
+      "published_sha256": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/declarations.py",
+      "original_sha256": "5b7b957ce2e382ed1d8ee6c4b7fcd238857a21deac59fdab4680a97b17b7965f",
+      "published_sha256": "5b7b957ce2e382ed1d8ee6c4b7fcd238857a21deac59fdab4680a97b17b7965f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/errors.py",
+      "original_sha256": "fd8ce4f15da860637e200e00f126641e88dd077160eda5cda77e2341e8b2ad66",
+      "published_sha256": "fd8ce4f15da860637e200e00f126641e88dd077160eda5cda77e2341e8b2ad66",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/history_cycle_trace.py",
+      "original_sha256": "5bcc409ac1e4029e9005271e8d2939d7849b626a92422d71aeeca1749f531299",
+      "published_sha256": "5bcc409ac1e4029e9005271e8d2939d7849b626a92422d71aeeca1749f531299",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/history_provenance.py",
+      "original_sha256": "2f951fcaaf462e601ef26eefeec521b3485a078f8038584f76941f3c516946f1",
+      "published_sha256": "2f951fcaaf462e601ef26eefeec521b3485a078f8038584f76941f3c516946f1",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/history_recapture_trace.py",
+      "original_sha256": "cb911ac7e426a15105f9f432647d069ce6ce8cf72f1a659bff51fe9969bec5e8",
+      "published_sha256": "cb911ac7e426a15105f9f432647d069ce6ce8cf72f1a659bff51fe9969bec5e8",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/identity.py",
+      "original_sha256": "13d6e6a0c2b565dd447fe637052ab9b2694f5c0d11fe24c739993863d5f42727",
+      "published_sha256": "13d6e6a0c2b565dd447fe637052ab9b2694f5c0d11fe24c739993863d5f42727",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/keys.py",
+      "original_sha256": "afde1c673230887f16929e111e73f9b04201b351ca6fccd576c31d0a85b127ba",
+      "published_sha256": "afde1c673230887f16929e111e73f9b04201b351ca6fccd576c31d0a85b127ba",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/lazy_transitions.py",
+      "original_sha256": "fc393d061116dc0ffeb6f6ebcdd729cbd05b3deec5a30d81fb74a8a28816ef9c",
+      "published_sha256": "fc393d061116dc0ffeb6f6ebcdd729cbd05b3deec5a30d81fb74a8a28816ef9c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/movegen.py",
+      "original_sha256": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3",
+      "published_sha256": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/movement.py",
+      "original_sha256": "4f843acaba10451c06c6876aa4264d81da194857db32b74191dce5170d6c0ead",
+      "published_sha256": "4f843acaba10451c06c6876aa4264d81da194857db32b74191dce5170d6c0ead",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/no_progress_context.py",
+      "original_sha256": "c622d8dd3afadbc3c679b833f5c24263aa529a9a47a610923c62fa968b177acc",
+      "published_sha256": "c622d8dd3afadbc3c679b833f5c24263aa529a9a47a610923c62fa968b177acc",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/pieces.py",
+      "original_sha256": "d5f71951902d98df50319bdad4cece4d9f9a7455872bf07b59ce06d0c2894d23",
+      "published_sha256": "d5f71951902d98df50319bdad4cece4d9f9a7455872bf07b59ce06d0c2894d23",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/position.py",
+      "original_sha256": "552a447c2fede326c6b5f309b0f50f0bd19b4d580cedef8aff835b73c34dd2b6",
+      "published_sha256": "552a447c2fede326c6b5f309b0f50f0bd19b4d580cedef8aff835b73c34dd2b6",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/repetition.py",
+      "original_sha256": "bd2c5868192157b89307878a0a854fa5c82c028af39f2bc15c59043717fa217d",
+      "published_sha256": "bd2c5868192157b89307878a0a854fa5c82c028af39f2bc15c59043717fa217d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/search_runtime.py",
+      "original_sha256": "1db2d8d3477c7cf3360a45399f436ab267087ba66c186ed9a3c21c06ab1edb4a",
+      "published_sha256": "1db2d8d3477c7cf3360a45399f436ab267087ba66c186ed9a3c21c06ab1edb4a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/semantic_executor.py",
+      "original_sha256": "eb87d5627059b15205fa07b3eada54b3a521a9e3d68a3b72624b4e9f8b7ee9ec",
+      "published_sha256": "eb87d5627059b15205fa07b3eada54b3a521a9e3d68a3b72624b4e9f8b7ee9ec",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/terminal.py",
+      "original_sha256": "27aa3f696263e884fa1f1389ba2a38368f8715eec9b92ce531ceb23cc0e57cbd",
+      "published_sha256": "27aa3f696263e884fa1f1389ba2a38368f8715eec9b92ce531ceb23cc0e57cbd",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/core/transition.py",
+      "original_sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682",
+      "published_sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/demo/__init__.py",
+      "original_sha256": "5dd4bce40dff13a1632c9467c4b2e927f86277803be5d61d5bf5018f8533d823",
+      "published_sha256": "5dd4bce40dff13a1632c9467c4b2e927f86277803be5d61d5bf5018f8533d823",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/demo/headless_demo.py",
+      "original_sha256": "cd4d6e817ecb208757d8960cd1d44dec95098023bc25ad431bc98e7591323f11",
+      "published_sha256": "cd4d6e817ecb208757d8960cd1d44dec95098023bc25ad431bc98e7591323f11",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/__init__.py",
+      "original_sha256": "f22a59280df64f6c215a5668efd81230dd924e1ed6324f278b3a5dfcc75c2037",
+      "published_sha256": "f22a59280df64f6c215a5668efd81230dd924e1ed6324f278b3a5dfcc75c2037",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/config.py",
+      "original_sha256": "10dafdbdede2adf3d635cc83709f79b46a7a1b67c76237fd2ac1dc5fd084bd4f",
+      "published_sha256": "10dafdbdede2adf3d635cc83709f79b46a7a1b67c76237fd2ac1dc5fd084bd4f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/drop_derivation.py",
+      "original_sha256": "82807779f15029dc2e89373c3d052ed364afcba2d93923c15a7e77a7da60334f",
+      "published_sha256": "82807779f15029dc2e89373c3d052ed364afcba2d93923c15a7e77a7da60334f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/filters.py",
+      "original_sha256": "f3927f528a3724782d5dc8a4ea22c99002ccf0cf7c5340482fde1607a67cd9c2",
+      "published_sha256": "f3927f528a3724782d5dc8a4ea22c99002ccf0cf7c5340482fde1607a67cd9c2",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/generator.py",
+      "original_sha256": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70",
+      "published_sha256": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/piece_generator.py",
+      "original_sha256": "dc21765d9162772b7e4572c9bd53850489e8a4606f145d47a2a94e146958d47f",
+      "published_sha256": "dc21765d9162772b7e4572c9bd53850489e8a4606f145d47a2a94e146958d47f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/presets.py",
+      "original_sha256": "f541eae97e563cd3447ed6a7387b3b6955b40e1bdfbb03b4b900162d14e78477",
+      "published_sha256": "f541eae97e563cd3447ed6a7387b3b6955b40e1bdfbb03b4b900162d14e78477",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/promotion_derivation.py",
+      "original_sha256": "b7526959525f5ff21f0aee710a446755f6a294c8b6fc75d9324057918bb9cf8c",
+      "published_sha256": "b7526959525f5ff21f0aee710a446755f6a294c8b6fc75d9324057918bb9cf8c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/report.py",
+      "original_sha256": "771ea92cee6a12504d690d735d409da57ee493ba483855ceb902439a862d52e5",
+      "published_sha256": "771ea92cee6a12504d690d735d409da57ee493ba483855ceb902439a862d52e5",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/generation/setup_generator.py",
+      "original_sha256": "f1f40b6cb5327f38684880ffe70e45d5f953da157818c455d919bc5d0bfc6d6c",
+      "published_sha256": "f1f40b6cb5327f38684880ffe70e45d5f953da157818c455d919bc5d0bfc6d6c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/__init__.py",
+      "original_sha256": "17ec452a105b18b85efffb6a88fac8229921e8ec903857e9b83636361a5d3b5e",
+      "published_sha256": "17ec452a105b18b85efffb6a88fac8229921e8ec903857e9b83636361a5d3b5e",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/adapter.py",
+      "original_sha256": "f649b9e40590720ebe8ffa4bdf6d212299b11d87d36f6f90430d12ae354383a0",
+      "published_sha256": "f649b9e40590720ebe8ffa4bdf6d212299b11d87d36f6f90430d12ae354383a0",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/compiler.py",
+      "original_sha256": "11ca2616646a05aa5cd638abe22f4a1415413b771cd9e1c51e86d6b1d80d5002",
+      "published_sha256": "11ca2616646a05aa5cd638abe22f4a1415413b771cd9e1c51e86d6b1d80d5002",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/differential.py",
+      "original_sha256": "fd599dbbdb398fb87497a7d14c7bd0241c7360d9535a91a0a9928ed3b52175d0",
+      "published_sha256": "fd599dbbdb398fb87497a7d14c7bd0241c7360d9535a91a0a9928ed3b52175d0",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/engine.py",
+      "original_sha256": "6d94326951b5f0d3a49cf7af48f037c445546c3b83efa339c6f64dcf9b45d641",
+      "published_sha256": "6d94326951b5f0d3a49cf7af48f037c445546c3b83efa339c6f64dcf9b45d641",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/mirror.py",
+      "original_sha256": "1038851395f0de1014c61dfb7b105c4b5ba7f207acff6d8dc5d3cc3d0aa0a0da",
+      "published_sha256": "1038851395f0de1014c61dfb7b105c4b5ba7f207acff6d8dc5d3cc3d0aa0a0da",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/phase2c_differential.py",
+      "original_sha256": "bfcdc666d737330552e588a9c7f91ade41c8682608317c233e33ece30b0fed9f",
+      "published_sha256": "bfcdc666d737330552e588a9c7f91ade41c8682608317c233e33ece30b0fed9f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/reference.py",
+      "original_sha256": "1f725730529baead19ed6a377b5f705e41368f26636e0133927735d94a81c7ae",
+      "published_sha256": "1f725730529baead19ed6a377b5f705e41368f26636e0133927735d94a81c7ae",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/search.py",
+      "original_sha256": "c2205f12121e8cdfeb2b454c8be7e9d8445b5f857a19671019f4f34c6699346d",
+      "published_sha256": "c2205f12121e8cdfeb2b454c8be7e9d8445b5f857a19671019f4f34c6699346d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/search_differential.py",
+      "original_sha256": "32a014442fe6cae346a6468dfa3234232481a37d949c2b907c12422ecc991aa1",
+      "published_sha256": "32a014442fe6cae346a6468dfa3234232481a37d949c2b907c12422ecc991aa1",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/semantic.py",
+      "original_sha256": "6f6a94475a56e2c6def8b2792e8bd89bbf8ceab510804b197d80b8b548babe6f",
+      "published_sha256": "6f6a94475a56e2c6def8b2792e8bd89bbf8ceab510804b197d80b8b548babe6f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/native/semantic_engine.py",
+      "original_sha256": "89eb706807fd4b41156c9e835d90dfc89181f67a7c954714a3ee95a39aaada45",
+      "published_sha256": "89eb706807fd4b41156c9e835d90dfc89181f67a7c954714a3ee95a39aaada45",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/__init__.py",
+      "original_sha256": "bfb11e62abd56dd061cd6d860d4e8b04dd004a4e338254cf312378ef5864bb3d",
+      "published_sha256": "bfb11e62abd56dd061cd6d860d4e8b04dd004a4e338254cf312378ef5864bb3d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/catalog.py",
+      "original_sha256": "dc973dd011c5d10d0804ed8c9b09d2f3270e7c1839ad23632e57b658d0ffa198",
+      "published_sha256": "dc973dd011c5d10d0804ed8c9b09d2f3270e7c1839ad23632e57b658d0ffa198",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/compiled.py",
+      "original_sha256": "139180ec703686787a4cfd25532cce262d469474eebe8ca057efdacc09803068",
+      "published_sha256": "139180ec703686787a4cfd25532cce262d469474eebe8ca057efdacc09803068",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/compiler.py",
+      "original_sha256": "3b09ebb5b3f3fc54393187e4a5644151a4fcc133c87aeaf0a51de6ae6934dcc1",
+      "published_sha256": "3b09ebb5b3f3fc54393187e4a5644151a4fcc133c87aeaf0a51de6ae6934dcc1",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/execution.py",
+      "original_sha256": "2d2d608357aee2b803c583266f4751188cc00e50d8cb6d9ecd3c6fb007df5507",
+      "published_sha256": "2d2d608357aee2b803c583266f4751188cc00e50d8cb6d9ecd3c6fb007df5507",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/ir.py",
+      "original_sha256": "9aac52fe848446430c4b4118702331a5d9d10863d8eaf7266df739199c90bbeb",
+      "published_sha256": "9aac52fe848446430c4b4118702331a5d9d10863d8eaf7266df739199c90bbeb",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/schema.py",
+      "original_sha256": "ef6c25f1c4bebd355711131e815bbc5531251b6d7972e859d0f05a3887fa94e8",
+      "published_sha256": "ef6c25f1c4bebd355711131e815bbc5531251b6d7972e859d0f05a3887fa94e8",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/serialization.py",
+      "original_sha256": "aa0d105a2de55e0f40cf3a3562521033f0056df72904246cc0c94718d76bc04f",
+      "published_sha256": "aa0d105a2de55e0f40cf3a3562521033f0056df72904246cc0c94718d76bc04f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/standard_shogi.py",
+      "original_sha256": "6ae08bafaea0b427e03da045a2d3e8a8820532d233422cbdb33739919e31b43c",
+      "published_sha256": "6ae08bafaea0b427e03da045a2d3e8a8820532d233422cbdb33739919e31b43c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/validation.py",
+      "original_sha256": "96a44a2b80475808db1f7fe73048aeaea735112f613dccb2357fed0f09235c48",
+      "published_sha256": "96a44a2b80475808db1f7fe73048aeaea735112f613dccb2357fed0f09235c48",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/western_chess.py",
+      "original_sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+      "published_sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/rules/xiangqi_diagnostic.py",
+      "original_sha256": "00d0772a0bb1b6aa1c49bcbd5fd38c16c59897584e6ee233cb946111c056c99d",
+      "published_sha256": "00d0772a0bb1b6aa1c49bcbd5fd38c16c59897584e6ee233cb946111c056c99d",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/session/__init__.py",
+      "original_sha256": "8501fcf4d713b0a88737ed28a6cca6c91901b83dba0748010069924f0be36a38",
+      "published_sha256": "8501fcf4d713b0a88737ed28a6cca6c91901b83dba0748010069924f0be36a38",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/session/record.py",
+      "original_sha256": "5118156ebf06203a00e7e4cd09a81914676e833be6aee9009d37cdf31586eed9",
+      "published_sha256": "5118156ebf06203a00e7e4cd09a81914676e833be6aee9009d37cdf31586eed9",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/session/result.py",
+      "original_sha256": "d6a45c241eba85725829cfec79333842a21afddcf2028d85e762c82ef61e89e9",
+      "published_sha256": "d6a45c241eba85725829cfec79333842a21afddcf2028d85e762c82ef61e89e9",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/session/serialization.py",
+      "original_sha256": "65f3b1c850eb6e37df4f3a51c730b0d98aa4950b8c7b07df4d7de628568aa073",
+      "published_sha256": "65f3b1c850eb6e37df4f3a51c730b0d98aa4950b8c7b07df4d7de628568aa073",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/session/session.py",
+      "original_sha256": "24730e5085f3afc44686156cd0e331b43dcd972bd96f838f787ea0e42e9a81ad",
+      "published_sha256": "24730e5085f3afc44686156cd0e331b43dcd972bd96f838f787ea0e42e9a81ad",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/__init__.py",
+      "original_sha256": "3bf370612fa8700b2ed36bfa8cada72219c375d1e5ef396b5412e0a0201a7403",
+      "published_sha256": "3bf370612fa8700b2ed36bfa8cada72219c375d1e5ef396b5412e0a0201a7403",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/preview.py",
+      "original_sha256": "47ff164007da719db7b28f49fba309fabbf3a5188ea56357eaa3ebc1f71894dc",
+      "published_sha256": "47ff164007da719db7b28f49fba309fabbf3a5188ea56357eaa3ebc1f71894dc",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/texture_geometry.py",
+      "original_sha256": "e10040d3909b2b0db68fc784697698d8877c3e0de24abdde31088b6f356b216f",
+      "published_sha256": "e10040d3909b2b0db68fc784697698d8877c3e0de24abdde31088b6f356b216f",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/texture_style.py",
+      "original_sha256": "93a827ab14a69ab1e62b4556b608568214896199c8052b7f6cba083967912572",
+      "published_sha256": "93a827ab14a69ab1e62b4556b608568214896199c8052b7f6cba083967912572",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/texture_svg.py",
+      "original_sha256": "95186b286d5968171caf8f6dd817083945d5cd7f2e944dcd44142e59490853f0",
+      "published_sha256": "95186b286d5968171caf8f6dd817083945d5cd7f2e944dcd44142e59490853f0",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/generic_chess/visual/textures.py",
+      "original_sha256": "2ddb8d937d1096424729c6fae59d348f03668603622e948c0a306871cc83ef04",
+      "published_sha256": "2ddb8d937d1096424729c6fae59d348f03668603622e948c0a306871cc83ef04",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/pytest.ini",
+      "original_sha256": "13d7025728b49f878f57a327642fdf919f705648c486ccb6e24567521eaa31a2",
+      "published_sha256": "13d7025728b49f878f57a327642fdf919f705648c486ccb6e24567521eaa31a2",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/qualify-source.py",
+      "original_sha256": "6dc852c81fc7e34ac7aff1f9745a954891c9622295c1e29e6084801564dad01c",
+      "published_sha256": "6dc852c81fc7e34ac7aff1f9745a954891c9622295c1e29e6084801564dad01c",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/scripts/research_record.py",
+      "original_sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a",
+      "published_sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tests/conftest.py",
+      "original_sha256": "e6640a3c11449ebd8f66c1739ec10f85a40873daf160691eb80161b3c3ed0b21",
+      "published_sha256": "e6640a3c11449ebd8f66c1739ec10f85a40873daf160691eb80161b3c3ed0b21",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tests/product/test_no_progress_search_context.py",
+      "original_sha256": "f6478b11d8f420a694dba17a29f77a9c0babe19fa61fabe14dd18e436267af35",
+      "published_sha256": "f6478b11d8f420a694dba17a29f77a9c0babe19fa61fabe14dd18e436267af35",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tests/product/test_semantic_attack_map.py",
+      "original_sha256": "1b751be82d9f5855282389784ddd07a6612d737dac9060301156e1ac7b367cb0",
+      "published_sha256": "1b751be82d9f5855282389784ddd07a6612d737dac9060301156e1ac7b367cb0",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tests/product/test_semantic_opportunity.py",
+      "original_sha256": "8b301ecee6b5c6368aeef46d8b3d1df02251ba324bebe9faec5275d65056781a",
+      "published_sha256": "8b301ecee6b5c6368aeef46d8b3d1df02251ba324bebe9faec5275d65056781a",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tests/rule_semantics_ir_fixtures.py",
+      "original_sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7",
+      "published_sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tools/local_agent/__init__.py",
+      "original_sha256": "9f8b747f5851d416b724bb3ea600577756f33be1d302c71b94d162f242589a01",
+      "published_sha256": "9f8b747f5851d416b724bb3ea600577756f33be1d302c71b94d162f242589a01",
+      "sanitized_copy": false
+    },
+    {
+      "member": "source/tools/local_agent/common.py",
+      "original_sha256": "b9a515c830396328c246d03436c7ca4ba0937015662e05b9a0cda5ded37bd8dd",
+      "published_sha256": "b9a515c830396328c246d03436c7ca4ba0937015662e05b9a0cda5ded37bd8dd",
+      "sanitized_copy": false
+    },
+    {
+      "member": "recorded/root-startup-contract-analysis.json",
+      "original_sha256": "38782a701cab28b46150bb1d840aab38a01d49fbdb12474ab8b794ba9cfbb620",
+      "published_sha256": "cec6a675fe66d2250788e7b18f2d0910ef9aaa62e16baaa1d409e273e9c6de36",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-0-0.json",
+      "original_sha256": "c19783491fca11e05d1ce361bb88046de9f2b28e47d79d1dde4f363f83454f47",
+      "published_sha256": "d157a90a8bdcdae505a5e734dfce3c12bcaef50d6fcf1b56e6c643b889caad1f",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-0-1.json",
+      "original_sha256": "d4887bca4cc0995603163688cc12ece9bf2766a8829400d3cc2e7e1a131c9066",
+      "published_sha256": "8d2a2b9ae263e3d7f6986c3711591f8f36687a31df6b5f74e613b453b972eb6a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-1-0.json",
+      "original_sha256": "f4445bc04f3e08425da5404ab2396eecce89052524fd02905b7476021dd28486",
+      "published_sha256": "39b140385d45329187e3606cf53f5e8aca3c6b893d6b4e39e9eb72f16e2d2da4",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-1-1.json",
+      "original_sha256": "d97ce53b9c0459d7a03552bd98a50ed4cc32d5aaa7f9b4d0fb5c9f993f90b9ad",
+      "published_sha256": "7eec190f5382e84c1d8123d42afc2ab3abb71415623fec3db0aaf39e49d5312a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-2-0.json",
+      "original_sha256": "be764629d7dbc88efbfaa98d7a792963744f563c541da9a30b3376ecbcaa9973",
+      "published_sha256": "146b51a4f44d7198aa48c5bf58538477e16a1084d113070a4f9e7778e03a39e8",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-2-1.json",
+      "original_sha256": "32d0d7b7a54cbcb19aa4c9ffdc2955e3203dc32a5dd9c71f723175c790921786",
+      "published_sha256": "b873b2c80cd5fc5ceb13be78a59a7d3a3e9c601f5796404b5d00e9790754b867",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-3-0.json",
+      "original_sha256": "d08481cf439f468c1fbf913a6feacf8496edca8a86da48baf152df1cecafe0a6",
+      "published_sha256": "e781c303b2b2e4c5abb8d597751d3aefdfcabe6069eed8f178ad0363d8b2fb4e",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-3-1.json",
+      "original_sha256": "35a71b43fb27374c58e537077064bf4044043cf94885ce1489e1b09b257049c7",
+      "published_sha256": "f596015eedb07df9c18c258e6a2a7a49a962e2ab089b733cef1fe089c15b1b29",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-4-0.json",
+      "original_sha256": "5adae8e367e1524f9f71c885123eb95a6e58c41322eedcf36306a8f93c9a89e7",
+      "published_sha256": "18b7a45b1ba8eae2a8b0c89040930bcf235c312779184e01b8e206985eab8a9a",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-call-4-1.json",
+      "original_sha256": "159862e424564a3df11f070be8e18722785deb479e455a82b5439d9b456b2b12",
+      "published_sha256": "d5d572fed58a1a549922ecfbfe4de83e595f9f7dad0fdb3afe11386dcdd41912",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-plan.json",
+      "original_sha256": "e648da4706ad545a885c7c8afbab526693fc8c43f62030e3a529d607f8cb0774",
+      "published_sha256": "debc28ec1b41c2982e8ecb5c4184a632bde89c3c9d5585e6d08ddd7986721121",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-progress.json",
+      "original_sha256": "fa95ba8bdf1cd9ed66590b24c947bd4f62f09819bd9634ddb2825e1682e6f679",
+      "published_sha256": "3653add3c60fd6f6a5721023b9ca6bc60833f2efd974072a788b976f3672c5b3",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract-result.json",
+      "original_sha256": "52bcc82249aa6b9adb46504cb8131dba0114791666e1801fdb92f91fc7cd2254",
+      "published_sha256": "5f30e7b3e787c21bf6fcd454527238d883d837e66dfef0a37d577371cbe0f465",
+      "sanitized_copy": true
+    },
+    {
+      "member": "recorded/root-startup-contract.py",
+      "original_sha256": "803b45d6196c3c24581e66b55e1a27583b6abeb3fdb65d12e44c2b0d4c1bb1c5",
+      "published_sha256": "eaf584d92977f5ec41e9fc8d8165512c8b2a171529b7c025ffb22eaab8c4edf4",
+      "sanitized_copy": true
+    }
+  ],
+  "publication_exclusions": [
+    "Raw Slack/account originals remain ignored; fixed AUX report linked without duplicate.",
+    "Private publication-helper scanner contains local personal patterns; private original retained, removed only its outgoing duplicate."
+  ],
+  "privacy": "Actual local-user paths redacted only in publication copies. Full project rules, states, numeric successes/failures and source retained."
+}
