@@ -1,0 +1,86 @@
+{
+  "beta_current": 0.1,
+  "beta_paper": 0.25541281188299536,
+  "claim": "Local derivative diagnostics on recorded leaves only. Different ratios mean no single global alpha rescales all these derivatives. Does not compare new trajectories or select an alpha/beta from game rewards. Keep frozen87unchanged.",
+  "max_returned_gradient_error": 4.163336342344337e-17,
+  "original_inline_result_matches": true,
+  "rows": [
+    {
+      "abs_prediction_over_0point95": {
+        "beta_0point1": 0,
+        "beta_atanh0point25": 476
+      },
+      "current_beta_gradient_L1_quantiles": {
+        "0": 0.0,
+        "0.1": 0.09638082139785255,
+        "0.5": 0.20121806551350363,
+        "0.9": 0.29258007895662463,
+        "1": 0.399913264262888
+      },
+      "gradient_ratio_quantiles": {
+        "0": 0.20837169617083295,
+        "0.1": 0.30316809314296617,
+        "0.5": 1.018683942859029,
+        "0.9": 2.537762658722357,
+        "1": 2.5541233934638714
+      },
+      "nonterminal_leaves": 3053,
+      "paper_beta_gradient_L1_quantiles": {
+        "0": 0.0,
+        "0.1": 0.03502564677946494,
+        "0.5": 0.19429287461722555,
+        "0.9": 0.48059273592038304,
+        "1": 1.0202072069019659
+      },
+      "raw_material_quantiles": {
+        "0": -7.728710983863982,
+        "0.1": -6.088283916775572,
+        "0.5": 1.658612762803698,
+        "0.9": 7.7625755949124855,
+        "1": 8.984927036181748
+      },
+      "seed": 1977,
+      "terminal_constant_leaves": 27,
+      "zero_feature_gradient_leaves": 226
+    },
+    {
+      "abs_prediction_over_0point95": {
+        "beta_0point1": 0,
+        "beta_atanh0point25": 470
+      },
+      "current_beta_gradient_L1_quantiles": {
+        "0": 0.0,
+        "0.1": 0.0995379133375482,
+        "0.5": 0.19504728201253063,
+        "0.9": 0.32694056453214193,
+        "1": 0.5753869637469705
+      },
+      "gradient_ratio_quantiles": {
+        "0": 0.07941985829290477,
+        "0.1": 0.22768486662816118,
+        "0.5": 1.1610270981646993,
+        "0.9": 2.472764006036602,
+        "1": 2.554076385604569
+      },
+      "nonterminal_leaves": 2178,
+      "paper_beta_gradient_L1_quantiles": {
+        "0": 0.0,
+        "0.1": 0.04056933433097774,
+        "0.5": 0.22369535383760913,
+        "0.9": 0.6510713635317764,
+        "1": 1.258293149831322
+      },
+      "raw_material_quantiles": {
+        "0": -9.904987347452522,
+        "0.1": -6.400818856162813,
+        "0.5": -0.13469481770660174,
+        "0.9": 8.240652800332771,
+        "1": 11.73764161390012
+      },
+      "seed": 8173,
+      "terminal_constant_leaves": 41,
+      "zero_feature_gradient_leaves": 47
+    }
+  ],
+  "seconds": 0.030999999988125637
+}

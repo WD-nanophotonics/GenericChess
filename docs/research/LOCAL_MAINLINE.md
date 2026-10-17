@@ -33,15 +33,33 @@ D2has64actualterminals and gains.0625/.75 on new90013-90020prefixes; the first
 approximate family interval crosses0. D3has64SEARCH_LIMIT_UNKNOWN, no reward
 gain estimate (logicalbounds[-2,2]). Same-limit failed-query replays64/64hit4096
 nodes; do not treat that preflight miss as learned-price failure or fund reruns.
-Next read AUX87fixedsource/common-plain-deployment results when published, inspect
-actual leaf-gradient and whole-training-regime contrast. Current87request/Dot
-reply read ONLY; no87source/execution claim, duplicate training or new API.
+Published87fixed0d9cba18 is NOW independently checked:173payload hashes,32owner
+tests,317updates/931closedvalidationgames/208013legalplies pass. PRIMARY-authored
+forward convolution matches317updates to4.44e-16; independent paired endpoint
+gains plain.5/q2.3046875/direct-.1953125 and curve29missing/4U stay.18selected
+actual search receipts match actions/nodes/leafgradients/fullhistory. Keep plain
+as cheap comparison; no qexpansion or duplicate learner. AUX88 owns the already
+running TD-versus-mean-TreeStrap contrast; request read ONLY, no88source/execution.
+
+Current support follow-on: LEARNING_COST_AND_GENERIC_FEATURE_TRANSFER_20261017.md
+records233.30s final TRAIN+twoEVAL versus78.04s TRAIN alone,690.46s all six
+learning-route producers, retained abort/duplicate-baseline cost and exact
+four-coordinate observed span. Full local rank is not unique-price identification.
+One complete promotedcapture/reply/drop path now actually executes through the
+published AUX helper; this upgrades only that feature/action tier, not Generic
+learning/solver qualification. Twenty scoped Core calls also expose a concrete
+qleaf boundary: both compilers return-1 while nominal fullmainPV material is-3;
+R perturbation gives score slope+1 versus nominalleaf-1. Do not derive future
+qlearning gradients from mainPV. Existing AUX search returns its own leaf; no
+newAPI/product/default change or competing learner. Read published87 next.
 
 Existing publicCore supports fractional values/fullhistory/PV in the measured
 scope; no new API or optimization follows. The old trajectory carrier and the
-published AUX86 SessionEnv both map actual RESTART/NO_CONTEST declarations0.
-Owner was notified of this concrete Generic-transfer hazard; it does not
-invalidate the standardChess positive result. No AUX source/checkout edits here.
+frozen AUX86 SessionEnv both map actual RESTART/NO_CONTEST declarations0.
+Published87ScoringSessionEnv now rejects these via typedNonScoringTerminal;
+PRIMARY actually ran its7realGameSession controls within32tests. Use the new
+opt-in adapter for that boundary; old carrier/Chess pins remain. This is not
+Generic training/all-domain qualification. No AUX checkout edits here.
 Terminal PV is constant/zero gradient; prior eligibility and search-terminal
 anchors are distinct from the final actual-outcome residual. D0 fallbacks and
 counterfactual old-PV leaf derivatives are not completed on-policy TDLeaf.

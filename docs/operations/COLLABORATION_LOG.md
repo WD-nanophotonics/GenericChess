@@ -3841,3 +3841,31 @@ channels, immutable Session copies and full owned declarations. Failed claims ma
 to rule failure_outcome; non-losing availability cannot replace that domain. AUX
 proof-helper modules are not in PRIMARY base; no Generic action execution/new API
 or solver expansion claimed. Complete source hashes/limits accompany the report.
+
+
+## PRIMARY learning cost / Generic interface follow-on - 2026-10-17
+
+PRIMARY independently accounts fixed86cost233.30s finalTRAIN+twoEVAL and690.46s
+all recorded learning-route producers, retaining302abortednodes and actual16
+duplicatebaseline executions. Both observed four-parameter matrices have full
+span, without unique-price or exploration guarantees. Three complete promotion/
+capture/drop typed actions now execute through published86helpers with full
+state/history and reversible vectors; no AUXsolver/training is run. Twenty Core
+consumer controls expose mainPV/qleaf disagreement and opposite R sensitivity;
+current AUX returns its own leaf, so no new API or owner-code fix follows.
+AUX87 complete parent+fourreplies freshly read; no newpeer source at that read,
+remaining OWNER_REPORTED. PRIMARY does not touch its checkout or duplicate its
+regime study. Use its fixed common-deployment publication when available.
+Clean247file source restoration reruns eightproducers,20queries/3actions and
+all non-time evidence. Original setup errors and unit-value negative controls
+remain. Details: LEARNING_COST_AND_GENERIC_FEATURE_TRANSFER_20261017.md.
+
+Later same-segment publication changed87tier: fixed0d9cba18/173payloads verified;
+PRIMARY runs32owner tests and closed317update/931game/208013ply auditors, then
+its own convolution/tally (error4.44e-16) and18selected search receipt checks.
+All4initials improve but q2 is lower than plain under commondeployment. Shared
+baseline cancellation narrows direct curve bounds;29missing/4U remain. New2511
+non-scoring guard closes owner-side hazard via7executedactualcontrols, not old
+carrier/Chess rerun. AUX88new request read only; no88code/results execution,
+extra learner or AUX checkout write. Current decision is cheapplain comparison
+and owner88methodcontrast, not more qcoverage or a universal price claim.
