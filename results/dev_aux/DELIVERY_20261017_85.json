@@ -1,0 +1,106 @@
+{
+  "status": "RESEARCH_ENDED_SCIENCE_SOURCE_VERIFIED_PUBLIC",
+  "source_sha": "6d9094bc92aec106432c0d2586e700b1104df344",
+  "source_delivery": {
+    "status": "VERIFIED_FULL_REMOTE_SHA_ANONYMOUS_PUBLIC_EXACT_FILES",
+    "phase": "source",
+    "remote_sha": "6d9094bc92aec106432c0d2586e700b1104df344",
+    "local_sha": "6d9094bc92aec106432c0d2586e700b1104df344",
+    "public": true,
+    "anonymous_repo_api_status": 200,
+    "files": [
+      {
+        "path": "results/dev_aux/SEGMENT_20261017_85.md",
+        "status": 200,
+        "sha256": "4c8e76b5d9c0972cb58abe58d34672313933cfca78ecabeb6beaa72170034354",
+        "bytes": 11017
+      },
+      {
+        "path": "results/dev_aux/REPLAY_20261017_85.md",
+        "status": 200,
+        "sha256": "70a3df5d8fe8093ae0671cb573c126db1026d63488a8aaaab4b78e041e53f28a",
+        "bytes": 1851
+      },
+      {
+        "path": "results/dev_aux/task2441/pilot.py",
+        "status": 200,
+        "sha256": "32bff5a71cb7969067ab8b3b1334d1c15a2531a181b7ff3d01d953e38d8c2e2a",
+        "bytes": 11305
+      },
+      {
+        "path": "results/dev_aux/task2444/selection.json",
+        "status": 200,
+        "sha256": "4bd23946727618fbb12ee3e8b67776270e590a00582ddc13c00ebb1e726ac198",
+        "bytes": 2291
+      },
+      {
+        "path": "results/dev_aux/task2445/result.json",
+        "status": 200,
+        "sha256": "61e5af475465a74af9b82794f3709791608cd492bb9de4604916eaec69c4a666",
+        "bytes": 67607
+      },
+      {
+        "path": "results/dev_aux/task2463/selection.json",
+        "status": 200,
+        "sha256": "dbd1d7972782155eee734d5835f32c47906957dacb8d4889cf15bb53f682d23e",
+        "bytes": 2525
+      },
+      {
+        "path": "results/dev_aux/task2459/result.json",
+        "status": 200,
+        "sha256": "690389c76f7941269b49a5bf0dbd065ea8ac1b202fa8240c0a9ae988d1c0d43f",
+        "bytes": 2808
+      },
+      {
+        "path": "results/dev_aux/task2466/restore-receipt.json",
+        "status": 200,
+        "sha256": "e1d8c37d412f907e1abb8f43050414210989e5d5144fc87bcbdc3d719c5ffc92",
+        "bytes": 1695
+      },
+      {
+        "path": "results/dev_aux/ARCHIVE_MANIFEST_20261017_85.json",
+        "status": 200,
+        "sha256": "93eef62a1e094b4efcd58163b7c3763f904057c7180bc5edf7ab309cda53e513",
+        "bytes": 4132
+      },
+      {
+        "path": "docs/operations/COLLABORATION_LOG.md",
+        "status": 200,
+        "sha256": "33c719d42453e88863faccf2908019b43119a4298c9de087423048d3b1550848",
+        "bytes": 226974
+      },
+      {
+        "path": "results/dev_aux/DELTA_REPRO_20261017_85.zip",
+        "status": 200,
+        "sha256": "1bf0fe598bab584a3b409233c195c46f63ac09e59ac6771565de06c6e7e0bcb0",
+        "bytes": 1692578
+      }
+    ],
+    "clean": true,
+    "observed_at": "2026-10-17T02:13:15.339593+00:00"
+  },
+  "session": {
+    "id": "13d08ae8-d9ed-40cd-930f-e5c0051cc23c",
+    "started_at": "2026-10-17T01:10:42.274726+00:00",
+    "ended_at": "2026-10-17T02:13:28.605976+00:00",
+    "elapsed_minutes": 62.772,
+    "reason": "safe_checkpoint",
+    "research_stage_count": 7,
+    "duration_gate_passed": true
+  },
+  "scientific_status": "OPEN",
+  "new_unique_actual_terminal_games": 186,
+  "committed_moves": 2367,
+  "in_game_certificate_instances": 105,
+  "related_tests": 86,
+  "fresh_closed_consumers": 22,
+  "archive_count": 30,
+  "fresh_payload_checks": 5334,
+  "fresh_unique_paths": 3884,
+  "primary_selector_retains_baseline": true,
+  "Nhand_selector_retains_baseline": true,
+  "new8initial_orbits_fitness_unqueried": true,
+  "closing_scope": "Only bounded delivery metadata after officialfinish; no research/queries/training/pricechanges afterended_at. Finalclosingrevisionverifiedseparately, no self-referentialcommitSHAclaim.",
+  "slack_status_at_this_commit": "Finalresultnotsentyet; sendfixedfinalSHAonce, reading/executionunconfirmed. Exactlaterreceiptprivate/projectthread.",
+  "observed_at": "2026-10-17T02:15:08.000657+00:00"
+}
