@@ -1,0 +1,305 @@
+{
+  "status": "CLOSED_FIXED_OPPONENT_TWO_BY_TWO_PRICE_AND_CANDIDATE_PROOF",
+  "rows": [
+    {
+      "policy": "ON",
+      "price": [
+        1.5,
+        1.5
+      ],
+      "counts": {
+        "W": 5,
+        "L": 6,
+        "D": 5,
+        "U": 0
+      },
+      "actual_game_seconds": 190.87537870000233
+    },
+    {
+      "policy": "ON",
+      "price": [
+        0.75,
+        1.5
+      ],
+      "counts": {
+        "W": 6,
+        "L": 5,
+        "D": 5,
+        "U": 0
+      },
+      "actual_game_seconds": 202.55648820006172
+    },
+    {
+      "policy": "OFF",
+      "price": [
+        1.5,
+        1.5
+      ],
+      "counts": {
+        "W": 5,
+        "L": 6,
+        "D": 5,
+        "U": 0
+      },
+      "actual_game_seconds": 95.29017019993626
+    },
+    {
+      "policy": "OFF",
+      "price": [
+        0.75,
+        1.5
+      ],
+      "counts": {
+        "W": 6,
+        "L": 5,
+        "D": 5,
+        "U": 0
+      },
+      "actual_game_seconds": 106.33545210005832
+    }
+  ],
+  "solver_effects_fixed_price": [
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "ONminusOFF": {
+        "family_gain_bounds": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_gain_bounds": [
+          0.0,
+          0.0
+        ],
+        "descriptive_cluster_bootstrap_envelope": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "ONminusOFF": {
+        "family_gain_bounds": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_gain_bounds": [
+          0.0,
+          0.0
+        ],
+        "descriptive_cluster_bootstrap_envelope": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "price_effects_fixed_solver": [
+    {
+      "policy": "ON",
+      "selected_minus_BASE": {
+        "family_gain_bounds": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_gain_bounds": [
+          0.125,
+          0.125
+        ],
+        "descriptive_cluster_bootstrap_envelope": [
+          0.0,
+          0.375
+        ]
+      }
+    },
+    {
+      "policy": "OFF",
+      "selected_minus_BASE": {
+        "family_gain_bounds": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "mean_gain_bounds": [
+          0.125,
+          0.125
+        ],
+        "descriptive_cluster_bootstrap_envelope": [
+          0.0,
+          0.375
+        ]
+      }
+    }
+  ],
+  "interaction": {
+    "family_bounds": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "mean_bounds": [
+      0.0,
+      0.0
+    ],
+    "descriptive_cluster_bootstrap_envelope": [
+      0.0,
+      0.0
+    ]
+  },
+  "seconds": 0.007395099994027987,
+  "scope": "FIXED SAMEfoe2/playerbudgets, onlycandidateproofON/OFF. ALL32ONalreadyqualified2402 reusedwithoutduplication,32OFFnew; rootsnowexposed/post-fitmechanismnotconfirmation. Samephase/callerCEILINGS, OFFunusedproofbudgetnotreallocated; NOTequalspentcostorbestextra-normal-searchcomparison. U/missingintervals preserved. Paired8familybootstrapdescriptive; nohuman/quantityreward/refit/default/PRIMARYadoption."
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS_ACTUAL_TIMING_CONTEXTS_CERTIFICATES_AND_CONVERSIONS",
+  "planned": 32,
+  "rows": 32,
+  "queried": 17,
+  "stages": [
+    {
+      "stage": "FIRST_LOW",
+      "planned": 16,
+      "available": 13,
+      "returned": 16,
+      "queried": 13,
+      "verified": 1,
+      "actual_mates": 1,
+      "not_reached": 3,
+      "shortened_allocations": 0
+    },
+    {
+      "stage": "FIFTH_LOW",
+      "planned": 16,
+      "available": 4,
+      "returned": 16,
+      "queried": 4,
+      "verified": 0,
+      "actual_mates": 0,
+      "not_reached": 12,
+      "shortened_allocations": 0
+    }
+  ],
+  "paired_available": [
+    {
+      "family": 1,
+      "role": 0,
+      "first_verified": false,
+      "later_verified": false,
+      "first_actual_mate": false,
+      "later_actual_mate": false
+    },
+    {
+      "family": 6,
+      "role": 0,
+      "first_verified": false,
+      "later_verified": false,
+      "first_actual_mate": false,
+      "later_actual_mate": false
+    },
+    {
+      "family": 6,
+      "role": 1,
+      "first_verified": false,
+      "later_verified": false,
+      "first_actual_mate": false,
+      "later_actual_mate": false
+    },
+    {
+      "family": 7,
+      "role": 1,
+      "first_verified": false,
+      "later_verified": false,
+      "first_actual_mate": false,
+      "later_actual_mate": false
+    }
+  ],
+  "verified_paths": [
+    {
+      "slot": 19,
+      "stage": "FIRST_LOW",
+      "actual_mate": true,
+      "moves": 3
+    }
+  ],
+  "seconds": 0.1115494999976363,
+  "scope": "ALL16baselinehistories, fifthLOWavailability/survivalbias explicit. Existinggames unchanged, new2.1s early/laterqueries only. No unavailablecontext asUNKNOWNgame/draw, no capextension/policyadoption. IndependentpublicGraphverifier/cursor plus actualCorepaths; notexternalengine. Descriptiveproofavailability, notcausalnewgameW-Lbenefit."
+}

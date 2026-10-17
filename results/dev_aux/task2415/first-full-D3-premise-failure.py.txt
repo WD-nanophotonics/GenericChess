@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,hashlib,datetime
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.rules.serialization import deserialize_ruleset
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record
+out=Path('results/dev_aux/task2415');out.mkdir();Path('results/dev_aux/task2416').mkdir();f=Path('results/dev_aux/task2401');games=list(map(json.loads,(f/'games.jsonl').read_text().splitlines()));ds=list(map(json.loads,(f/'decisions.jsonl').read_text().splitlines()));selection=json.loads(Path('results/dev_aux/task2405/selection.json').read_text());selected=selection['selected'];base=[1.5,1.5];matches=[]
+for family in range(8):
+ for role in(0,1):
+  gs=[next(g for g in games if g['root']==family and g['candidate_color']==role and[g['ratio'],g['hand_ratio']]==p)for p in(base,selected)];pair=[[d for d in ds if d['slot']==g['slot']]for g in gs]
+  for a,b in zip(*pair):
+   if a['choice']!=b['choice']:
+    assert a['root_record']==b['root_record'];normal=all(x['is_candidate']and x['source']=='FULL_SESSION_MATERIAL_SEARCH'and x['normal_receipt']['completed_depth']==3 for x in(a,b))
+    if normal:matches.append(dict(family=family,role=role,ply=a['ply'],record=a['root_record'],state_sha=a['root_state_sha'],source_slots=[g['slot']for g in gs],saved=[dict(price=p,choice=x['choice'],normal_receipt=x['normal_receipt'])for p,x in zip((base,selected),(a,b))]))
+    break
+assert matches;chosen=min(matches,key=lambda r:(r['family'],r['role'],r['ply']));roots=json.loads((f/'inputs.json').read_text());chosen['rules']=roots[chosen['family']]['rules'];same=[d for d in ds if d['root_record']==chosen['record']and d['is_candidate']and d['normal_receipt']is not None and d['normal_receipt']['completed_depth']==3];lookup={g['slot']:[g['ratio'],g['hand_ratio']]for g in games};chosen['all_saved_matching_points']=[dict(price=lookup[d['slot']],choice=d['choice'],normal_receipt=d['normal_receipt'],slot=d['slot'])for d in same];(out/'root.json').write_text(json.dumps(chosen,indent=2));contract=dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),selection='FIRSTlexicographicfamily/role/ply BASEvsimmutableTRAINselected ownFULLD3 actualchoice divergence, no outcome/rootgain screen. AllsixpointsatthisSAMEsavedrecord evaluated.',depth=3,cap_seconds=180,max_nodes=30000,grid=json.loads((f/'registration.json').read_text())['train_grid'],potential_outcomes='Allchoiceboundariescollinear vsindependentfeaturedirections, terminalpriority vs materialconstraints, exact tie vsstrictmargin; finite grid cannotuniqueprice.',scope='One post-fit explanatory boundedcompleteCoretree replay, NOT newtraining/game/holdout or genericproof. Fullleafrecords/terminalpriority/stablechoiceorder/PVfeatures; compareactualsixsavedD3receiptswhenavailable. No parameterselection/refit/capextension. Wholelogicalproject forecast3880sunder2h.',pins={name:hashlib.sha256(Path(name).read_bytes()).hexdigest()for name in[(out/'root.json').as_posix(),chosen['rules'],'results/dev_aux/task2148/normal.py','results/dev_aux/task2397/material.py']});(out/'plan.json').write_text(json.dumps(contract,indent=2));print(json.dumps({k:chosen[k]for k in('family','role','ply','source_slots')}));print('saved_matching_points',len(same))

@@ -1,3 +1,32 @@
+# DEV_AUX current selection - closed84,2026-10-17
+
+OPEN/PUBLIC/own sidemission, PRIMARYreadonly.224newactualterminalgames,
+3790commits/136gamecertificateinstances fullrecord/cursorreplayed. GenericCore
+fixed-proof+normalD3, explicitboardCURRENT/handBASEmaps; noquantityreward.
+SixgridTRAIN96 selects(.75,1.5)vs(1.5,1.5), gain1/16ONEfamily/LOFOdrop4=>BASE.
+SOLETRAINfirstdiffbaselineD3/420visits vsselectedD2/time760; completedcachedD3
+needs910 andBOTHpriceschooseSAMEaction there. Notpurematched-depthpricegain.
+Newprefit8randominitialorbits/32games gain1/8ONEfamilyL->W; firstdiffbothD3.
+Differentfoes.5/4 ALL64games gain.25each,4positivepooledfamilies/descriptive
+CI[.0625,.4375], no refit. Initialsnowexposed; historicalreferenceknowledgekept.
+MatchedD2/D3 trees2703+2748nodes/actualsavedreceipts/pruningexact; audited
+competingfeaturedirectionrank1locally, no unique/globalpriceidentification.
+Correctedfixedfoe2 candidateproofON/OFF32pairsIDENTICALrecords/main0/interact0;
+observedON393.44s/OFF201.64s, equalceilingsnotspentcost/reallocatedbudget.
+SelectedreservegainhasNOownproofentry; winsordinaryactualmate, notmorecertified
+advantagesupply. TimingFIRSTvsFIFTHLOW32slots/17queryable2.1s:early1actual
+3-moveWIN/later0,4matchedbothunknown; no repeat-proof-policyadoption.
+NoDROPzero-handshortcut:actualhand-consumingboardmoves/declarationWIN/LOSS;
+handguardcompilerunsupported. Richactualboard4/hand6 WIN2nodes/1moveexcluded
+bytotal8gate. Currentgamegatesunchanged; noCore/default/UI/PRIMARYwrites.
+Firstrestore82PASS2FAILconfirmedancestorpytestroot/modulealias; original28ZIP
+kept,29thsupplementisolatesconfiguration. Fresh4811checks/3498paths/84tests/
+20consumersPASS. NextONEfixed-priceactualmatched-completed-D3affectedpair
+withNEWprefrozencostcontract; theninformativeactivefeaturedirections, notmore
+unchangedgames/humanfit/oldcapextension. Report SEGMENT_20261017_84.md.
+
+## Prior83 selection - historical
+
 # DEV_AUX current selection - closed83,2026-10-17
 
 OPEN/PUBLIC/own sidemission, PRIMARYreadonly. Actual114queryruntimepanel: ALL19

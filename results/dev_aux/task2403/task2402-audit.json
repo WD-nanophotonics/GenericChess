@@ -1,0 +1,307 @@
+{
+  "status": "PASS_FULL_HISTORY_PHASES_CERTIFICATES_DUAL_CHANNEL_CONTRACT",
+  "task": 2402,
+  "games": 32,
+  "expected": 32,
+  "missing": 0,
+  "actual_moves": 673,
+  "uncommitted": [],
+  "outcomes": {
+    "D": 10,
+    "L": 11,
+    "W": 11
+  },
+  "attempts": {
+    "LOW": 26
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 647,
+    "VERIFIED_GRAPH_STRATEGY": 15,
+    "VERIFIED_GRAPH_CONTINUATION": 11
+  },
+  "normal_depths": [
+    {
+      "is_candidate": false,
+      "depth": 3,
+      "count": 319
+    },
+    {
+      "is_candidate": true,
+      "depth": 3,
+      "count": 327
+    },
+    {
+      "is_candidate": true,
+      "depth": 2,
+      "count": 1
+    }
+  ],
+  "material_before_proofs": [
+    {
+      "slot": 18,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 19,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 22,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 23,
+      "ply": 2,
+      "material_decisions_before": 1
+    }
+  ],
+  "proofs": [
+    {
+      "kind": "GRAPH",
+      "slot": 4,
+      "ply": 26,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 8,
+        "edges": 7,
+        "seconds": 0.014809299987973645,
+        "unrolled_tree_nodes": 8,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 5,
+      "ply": 26,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 8,
+        "edges": 7,
+        "seconds": 0.015062599995872006,
+        "unrolled_tree_nodes": 8,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 12,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003835099982097745,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 13,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0038087999855633825,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 16,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005909800005611032,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 17,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005933699983870611,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 18,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006035300000803545,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 19,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005863300000783056,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 20,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003933100000722334,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 21,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003712500008987263,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 22,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.035384399991016835,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 23,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.03269699998782016,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 24,
+      "ply": 20,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.005942199990386143,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 28,
+      "ply": 44,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.0119358999945689,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 29,
+      "ply": 30,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.007139300025301054,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    }
+  ],
+  "candidate_measured_seconds": 263.8180399998964,
+  "foe_measured_seconds": 128.7142648996669,
+  "seconds": 0.8880263000028208,
+  "scope": "ALLclosed/partialactualrecords/sourcepins/slotorder/phasecost/LOWtriggerorinclusiveHIGHtrigger/fullgameoutcomes, independentlyreconstructed. Allsavedgraphcandidates andcurrentcursors replayed, U/missing notDRAW. Sameengine/verifier notexternalexecution; nofit/DEV/defaultadoption."
+}

@@ -1,0 +1,1095 @@
+{
+  "status": "QUALIFIED_NO_DROP_MASK_IS_INSUFFICIENT",
+  "controls": {
+    "unsupported_guard": {
+      "status": "REJECTED_BY_ACTUAL_COMPILER",
+      "error": "[HAND_PREDICATE_UNSUPPORTED] ruleset.semantic_actions hand_R_unlocks_rook_quiet state_guards: location=hand state predicates are fail-closed in the B-2 reference executor (no hand-query contract yet)"
+    },
+    "consume": {
+      "status": "PASS_ACTUAL_COMPLETE_CORE_HISTORY",
+      "same_current_type_owner_board": true,
+      "full_base_board_equal": false,
+      "rows": [
+        {
+          "setup": null,
+          "root_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+            "schema_version": 1
+          },
+          "hands": [
+            {
+              "R": 1
+            },
+            {}
+          ],
+          "legal_actions": [
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "geometry_id": "g1",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "geometry_id": "g4",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g11",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                3
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                2,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                3,
+                2
+              ],
+              "promotion_target_id": null
+            }
+          ],
+          "actual_status": "ongoing",
+          "consuming_children": [
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g11",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      3
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            },
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g12",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      1
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            },
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g12",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            },
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g9",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      1,
+                      2
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            },
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g9",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      2,
+                      2
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            },
+            {
+              "record": {
+                "actions": [
+                  {
+                    "actor_type_id": "P",
+                    "from": [
+                      0,
+                      1
+                    ],
+                    "geometry_id": "g14",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_00_capture_promote_expiring_right",
+                    "promotion_target_id": null,
+                    "to": [
+                      0,
+                      2
+                    ]
+                  },
+                  {
+                    "actor_type_id": "K",
+                    "from": [
+                      3,
+                      0
+                    ],
+                    "geometry_id": "g3",
+                    "kind": "semantic_board",
+                    "pattern_id": "legacy_012",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      1
+                    ]
+                  },
+                  {
+                    "actor_type_id": "R",
+                    "from": [
+                      0,
+                      2
+                    ],
+                    "geometry_id": "g9",
+                    "kind": "semantic_board",
+                    "pattern_id": "sem_01_hand_R_unlocks_rook_quiet",
+                    "promotion_target_id": null,
+                    "to": [
+                      3,
+                      2
+                    ]
+                  }
+                ],
+                "resigned_by": null,
+                "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+                "schema_version": 1
+              },
+              "status": "ongoing"
+            }
+          ]
+        },
+        {
+          "setup": "swapped_bases",
+          "root_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "initial_setup_key": "swapped_bases",
+            "resigned_by": null,
+            "ruleset_fingerprint": "853bb9e2ca1d33468c9b4abd777f5e0a803a9355467d40212c87d247bf1070c0",
+            "schema_version": 3
+          },
+          "hands": [
+            {
+              "P": 1
+            },
+            {}
+          ],
+          "legal_actions": [
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "geometry_id": "g1",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "geometry_id": "g4",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "promotion_target_id": null
+            }
+          ],
+          "actual_status": "ongoing",
+          "consuming_children": []
+        }
+      ]
+    },
+    "declaration": {
+      "status": "PASS_ACTUAL_COMPLETE_CORE_HISTORY",
+      "same_current_type_owner_board": true,
+      "full_base_board_equal": false,
+      "rows": [
+        {
+          "setup": null,
+          "root_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "resigned_by": null,
+            "ruleset_fingerprint": "4f064c2a550cc312ea1312d633f13a0631b119032e4aa8572d147ded376144b2",
+            "schema_version": 1
+          },
+          "hands": [
+            {
+              "R": 1
+            },
+            {}
+          ],
+          "legal_actions": [
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "geometry_id": "g1",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "geometry_id": "g11",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                3
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "geometry_id": "g4",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                2,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                3,
+                2
+              ],
+              "promotion_target_id": null
+            }
+          ],
+          "actual_status": "declaration",
+          "actual_winner": 0,
+          "actual_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "declaration": {
+              "declaration_id": "stock_rule_win",
+              "declared_by": 0,
+              "outcome": "WIN",
+              "weighted_score": 1
+            },
+            "resigned_by": null,
+            "ruleset_fingerprint": "4f064c2a550cc312ea1312d633f13a0631b119032e4aa8572d147ded376144b2",
+            "schema_version": 2
+          }
+        },
+        {
+          "setup": "swapped_bases",
+          "root_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "initial_setup_key": "swapped_bases",
+            "resigned_by": null,
+            "ruleset_fingerprint": "4f064c2a550cc312ea1312d633f13a0631b119032e4aa8572d147ded376144b2",
+            "schema_version": 3
+          },
+          "hands": [
+            {
+              "P": 1
+            },
+            {}
+          ],
+          "legal_actions": [
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "geometry_id": "g1",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "geometry_id": "g11",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                3
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                0,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "geometry_id": "g4",
+              "actor_type_id": "K",
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                2,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "R",
+              "from": [
+                0,
+                2
+              ],
+              "to": [
+                3,
+                2
+              ],
+              "promotion_target_id": null
+            }
+          ],
+          "actual_status": "declaration",
+          "actual_winner": 1,
+          "actual_record": {
+            "actions": [
+              {
+                "actor_type_id": "P",
+                "from": [
+                  0,
+                  1
+                ],
+                "geometry_id": "g14",
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_capture_promote_expiring_right",
+                "promotion_target_id": null,
+                "to": [
+                  0,
+                  2
+                ]
+              },
+              {
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  0
+                ],
+                "geometry_id": "g3",
+                "kind": "semantic_board",
+                "pattern_id": "legacy_012",
+                "promotion_target_id": null,
+                "to": [
+                  3,
+                  1
+                ]
+              }
+            ],
+            "declaration": {
+              "declaration_id": "stock_rule_win",
+              "declared_by": 0,
+              "outcome": "LOSS",
+              "weighted_score": 0
+            },
+            "initial_setup_key": "swapped_bases",
+            "resigned_by": null,
+            "ruleset_fingerprint": "4f064c2a550cc312ea1312d633f13a0631b119032e4aa8572d147ded376144b2",
+            "schema_version": 3
+          }
+        }
+      ]
+    }
+  },
+  "seconds": 0.07604450001963414,
+  "scope": "Constructed same-current-type-board countercontrols; surviving base types also differ under inventory-preserving setups, so not full-Position equivalence. Constructed semantic/adjudication countercontrols, not training labels or price evidence. Guard unsupported retained, not bypassed. Board-action hand consumption changes legalchoices; independent declared actual rule changes WIN/LOSS. Explicit declaration weights define this synthetic rule, not human/evaluator-price fitting. No product/default/Core/PRIMARY changes. Inert-hand proof remains limited to2396 simpleclass; complete-domain hand-zero classifier not implemented."
+}

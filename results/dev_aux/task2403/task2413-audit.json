@@ -1,0 +1,698 @@
+{
+  "status": "PASS_FULL_HISTORY_PHASES_CERTIFICATES_DUAL_CHANNEL_CONTRACT",
+  "task": 2413,
+  "games": 64,
+  "expected": 64,
+  "missing": 0,
+  "actual_moves": 1375,
+  "uncommitted": [],
+  "outcomes": {
+    "L": 22,
+    "D": 10,
+    "W": 32
+  },
+  "attempts": {
+    "LOW": 58
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 1308,
+    "VERIFIED_GRAPH_STRATEGY": 36,
+    "VERIFIED_GRAPH_CONTINUATION": 31
+  },
+  "normal_depths": [
+    {
+      "is_candidate": false,
+      "depth": 3,
+      "count": 650
+    },
+    {
+      "is_candidate": true,
+      "depth": 3,
+      "count": 652
+    },
+    {
+      "is_candidate": true,
+      "depth": 2,
+      "count": 4
+    },
+    {
+      "is_candidate": false,
+      "depth": 2,
+      "count": 2
+    }
+  ],
+  "material_before_proofs": [
+    {
+      "slot": 12,
+      "ply": 24,
+      "material_decisions_before": 12
+    },
+    {
+      "slot": 13,
+      "ply": 24,
+      "material_decisions_before": 12
+    },
+    {
+      "slot": 16,
+      "ply": 3,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 17,
+      "ply": 3,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 36,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 37,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 38,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 39,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 44,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 45,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 46,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 47,
+      "ply": 2,
+      "material_decisions_before": 1
+    },
+    {
+      "slot": 60,
+      "ply": 20,
+      "material_decisions_before": 10
+    },
+    {
+      "slot": 61,
+      "ply": 20,
+      "material_decisions_before": 10
+    }
+  ],
+  "proofs": [
+    {
+      "kind": "GRAPH",
+      "slot": 0,
+      "ply": 54,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.012564799981191754,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 1,
+      "ply": 54,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.01351220000651665,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 6,
+      "ply": 33,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.008082599990302697,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 7,
+      "ply": 33,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.008018299995455891,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 8,
+      "ply": 26,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 8,
+        "edges": 7,
+        "seconds": 0.014837599999736995,
+        "unrolled_tree_nodes": 8,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 9,
+      "ply": 26,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 8,
+        "edges": 7,
+        "seconds": 0.014537899987772107,
+        "unrolled_tree_nodes": 8,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 11,
+      "ply": 16,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.008353700017323717,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 12,
+      "ply": 24,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 6,
+        "edges": 5,
+        "seconds": 0.012410700001055375,
+        "unrolled_tree_nodes": 6,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 13,
+      "ply": 24,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 6,
+        "edges": 5,
+        "seconds": 0.011693599983118474,
+        "unrolled_tree_nodes": 6,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 16,
+      "ply": 3,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006295099999988452,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 17,
+      "ply": 3,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006403799983672798,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 20,
+      "ply": 57,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 8,
+        "edges": 7,
+        "seconds": 0.018371299986029044,
+        "unrolled_tree_nodes": 8,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 24,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003855999995721504,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 25,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0038750000239815563,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 26,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.005737500003306195,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 27,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003918600006727502,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 32,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.00609090001671575,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 33,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005770999996457249,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 34,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005949799990048632,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 35,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006141799996839836,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 36,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005906300008064136,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 37,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.006076599995139986,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 38,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.005940900009591132,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 39,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.007609899999806657,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 40,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003853700007312,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 41,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003861400007735938,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 42,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.0038973000191617757,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 43,
+      "ply": 6,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.003735699981916696,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 44,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.03573189998860471,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 45,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.031674700003350154,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 46,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.03340830001980066,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 47,
+      "ply": 2,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 24,
+        "edges": 23,
+        "seconds": 0.032698399998480454,
+        "unrolled_tree_nodes": 24,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 5,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 51,
+      "ply": 20,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.006326900009298697,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 59,
+      "ply": 62,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.014598999987356365,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 60,
+      "ply": 20,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.008762599987676367,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 61,
+      "ply": 20,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "edges": 3,
+        "seconds": 0.008649299998069182,
+        "unrolled_tree_nodes": 4,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 3,
+      "actual_terminal": true
+    }
+  ],
+  "candidate_measured_seconds": 536.389017899608,
+  "foe_measured_seconds": 265.8697096000833,
+  "seconds": 2.1014606000098865,
+  "scope": "ALLclosed/partialactualrecords/sourcepins/slotorder/phasecost/LOWtriggerorinclusiveHIGHtrigger/fullgameoutcomes, independentlyreconstructed. Allsavedgraphcandidates andcurrentcursors replayed, U/missing notDRAW. Sameengine/verifier notexternalexecution; nofit/DEV/defaultadoption."
+}

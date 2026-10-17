@@ -1,0 +1,98 @@
+{
+  "status": "PASS_CLOSED_SELECTOR_AND_PREFIT_PROVENANCE",
+  "actual_selected": [
+    0.75,
+    1.5
+  ],
+  "finite_candidate_bounds": [
+    {
+      "price": [
+        0.75,
+        0.0
+      ],
+      "bounds": [
+        -0.125,
+        -0.125
+      ]
+    },
+    {
+      "price": [
+        0.75,
+        0.75
+      ],
+      "bounds": [
+        -0.125,
+        -0.125
+      ]
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "bounds": [
+        0.0625,
+        0.0625
+      ]
+    },
+    {
+      "price": [
+        1.5,
+        0.0
+      ],
+      "bounds": [
+        -0.125,
+        -0.125
+      ]
+    },
+    {
+      "price": [
+        1.5,
+        0.75
+      ],
+      "bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "bounds": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "reserved_initial_orbits": 8,
+  "excluded_old_initial_orbits": 24,
+  "reserve_registration_before_TRAIN_before_selection_before_reserve_start": true,
+  "caps": [
+    {
+      "task": 2401,
+      "original_cap": 2400,
+      "forecast": 1900
+    },
+    {
+      "task": 2402,
+      "original_cap": 900,
+      "forecast": 600
+    },
+    {
+      "task": 2413,
+      "original_cap": 1800,
+      "forecast": 1200
+    },
+    {
+      "task": 2420,
+      "original_cap": 900,
+      "forecast": 600
+    }
+  ],
+  "whole_logical_forecast_including_two180sdiagnostics": 4660,
+  "whole_max_frozen_caps_plus2diagnostics_and_gate": 6390,
+  "seconds": 0.07769179999013431,
+  "scope": "Independent arithmetic/provenance/initialorbit audit, notnewfitter/fitness/teacherlabelqueries. New8initialorbits excludedoldTRAIN+82Conly, NOTallhistoricaltrajectories/rules orunseenreferenceknowledge. Sameconditionalprice/parameters/caps, nooutcomesreplacedbysuccess."
+}

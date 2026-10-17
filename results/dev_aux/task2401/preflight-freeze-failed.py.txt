@@ -1,0 +1,49 @@
+from pathlib import Path
+from dataclasses import replace
+import json,hashlib,random,datetime
+from generic_chess.core.pieces import Piece
+from generic_chess.rules.serialization import deserialize_ruleset,serialize_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution
+from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import serialize_game_record,deserialize_game_record
+from generic_chess.session.result import SessionStatus
+from scripts.generic_proof_rnb_bridge import actor_state,orbit
+root=Path.cwd();out=Path('results/dev_aux/task2401');out.mkdir();reserve=Path('results/dev_aux/task2402');reserve.mkdir();base=json.loads(Path('results/dev_aux/task2385/plan.json').read_text());oldroots=json.loads(Path('results/dev_aux/task2385/inputs.json').read_text());roots=[]
+for r in oldroots[16:24]:
+ rr=dict(r,index=len(roots));roots.append(rr)
+(out/'inputs.json').write_text(json.dumps(roots,indent=2))
+grid=[(.75,0.),(.75,.75),(.75,1.5),(1.5,0.),(1.5,.75),(1.5,1.5)];slots=[]
+for family in range(8):
+ for role in(0,1):
+  for board,hand in(grid if(family+role)%2==0 else reversed(grid)):
+   slots.append(dict(slot=len(slots),root=family,opponent=0,candidate_color=role,ratio=board,hand_ratio=hand,arm='LOW_ONLY_INCREMENTAL'))
+(out/'slots.json').write_text(json.dumps(slots,indent=2))
+source=Path('results/dev_aux/task2385/pilot.py').read_text().replace("OUT=Path('results/dev_aux/task2385')","OUT=Path('results/dev_aux/task2401')").replace('from results.dev_aux.task2379.reader import FreshFileIOStopReader as EvidenceStopReader','from results.dev_aux.task2392.reader import SharedDeleteStopReader as EvidenceStopReader').replace('from results.dev_aux.task2376.material import material as semantic_material','from results.dev_aux.task2397.material import material as semantic_material')
+source=source.replace('def material(pos,target,ratio):','def material(pos,target,ratio,hand_ratio):').replace("for t in definition.piece_types if not t.is_anchor},excluded_type_ids=anchors)","for t in definition.piece_types if not t.is_anchor},{t.type_id:(hand_ratio if t.type_id=='R'else 1.)for t in definition.piece_types if not t.is_anchor},excluded_type_ids=anchors)")
+source=source.replace("material(pos,t,slot['ratio'])","material(pos,t,slot['ratio'],slot['hand_ratio'])").replace("material(pos,t,foe['ratio'])","material(pos,t,foe['ratio'],foe['ratio'])")
+(out/'pilot.py').write_text(source)
+# Reserve generated without teacher values or candidate queries. Exclude old TRAIN/82C initial-orbit projections.
+def group(s):return min(repr(x)for x in orbit(tuple(actor_state(s.state))))
+excluded=set()
+for rr in json.loads(Path('results/dev_aux/task2358/inputs.json').read_text())+json.loads(Path('results/dev_aux/task2341/inputs.json').read_text())['roots']:
+ c=compile_ruleset_for_execution(deserialize_ruleset(Path(rr['rules']).read_text()));ss=GameSession.replay(c,deserialize_game_record(json.dumps(rr['record'])));excluded.add(group(ss))
+rng=random.Random(841701);new=[];attempts=0;template=deserialize_ruleset(Path(roots[0]['rules']).read_text());seengroups=set(excluded)
+while len(new)<8 and attempts<500:
+ attempts+=1;squares=rng.sample(range(16),5);pieces=['K','k']+(['R','n','n']if len(new)%2==0 else['r','N','N']);flat=[None]*16
+ for ix,ch in zip(squares,pieces):flat[ix]=Piece(int(ch.islower()),ch.upper(),ch.upper())
+ definition=replace(template,initial_position=tuple(tuple(flat[i:i+4])for i in range(0,16,4)),initial_setup_options=());c=compile_ruleset_for_execution(definition);s=GameSession(c)
+ if s.result.status is not SessionStatus.ONGOING:continue
+ quiet=[a for a in s.legal_actions()if hasattr(a,'from_square')and s.state.position.board[a.to_square.rank*4+a.to_square.file]is None]
+ if not quiet:continue
+ quiet.sort(key=lambda a:hashlib.sha256(repr(a).encode()).hexdigest());s.submit(quiet[0])
+ if s.result.status is not SessionStatus.ONGOING or len(s.legal_actions())<2:continue
+ g=group(s)
+ if g in seengroups:continue
+ seengroups.add(g);path=reserve/f'rules-{len(new)}.json';path.write_text(serialize_ruleset(definition));new.append(dict(index=len(new),family=len(new),rules=path.as_posix(),record=json.loads(serialize_game_record(s.to_record())),state_sha=hashlib.sha256(repr(s.state).encode()).hexdigest(),group=g,selection='seed841701 legalrandom5actor+firsthashquietprefix; actualONGOING/2choices; no WDLteacher/prices/rootoutcomes queried',attempt=attempts))
+assert len(new)==8
+(reserve/'inputs.json').write_text(json.dumps(new,indent=2));contract=dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),question='Does separately learning deployed R and held-base R improve actual finite W-L with the SAME fixed proof/foe?',train_grid=grid,baseline=[1.5,1.5],train_families=8,train_slots=96,reserve_families=8,reserve_slots=32,selection='Actual terminal W-L only. Missing/UNKNOWN interval [-1,1]. Accept candidate only if mean LOWER bound strictly exceeds baseline UPPER bound; among maximum lower bound ties baseline then lexicographic(board_R,hand_R). No reserve fitness before immutable selection. If baseline selected, run only baseline once per role/reserve family (16) and explicitly no independent gain contrast.',candidate_N_board_hand=1.,fixed_foe_R_board_hand=2.,teacher='NONE for new reserve; oldTRAIN/reference labels alreadyexposed and unused objective. Newreserveinitialorbits exclude oldTRAIN and82C but not comprehensive allhistorical trajectory/rule holdout.',training_cap=2400,training_forecast=1900,reserve_cap=900,reserve_forecast=600,total_forecast=2500,scope='Conditional smallR/N4x4 hand-drop study, not allgeneratedrules/uniqueprices/convergencefromrandomstarts/humanreference. Samefixed2384solver,2392reader,BOARD4TOTAL8gate/D3/H96; no quantityreward/UNKNOWN-as-D. Unequal candidate/foe proof budgets fixed acrossprices. Under2h/no priorreview; no frozenoldcap extension/82Cfit/newworkers/defaults.')
+(reserve/'reservation.json').write_text(json.dumps(contract,indent=2));(out/'registration.json').write_text(json.dumps(contract,indent=2))
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+p=dict(base);p.update(input=(out/'inputs.json').as_posix(),input_sha=sha(out/'inputs.json'),slots_sha=sha(out/'slots.json'),expected_games=96,one_cap_seconds=2400,estimated_seconds=1900,forecast_seconds=1900,selection=contract['selection'],scope=contract['scope'],candidate_prices=grid)
+p['pins']={name:sha(name)for name in[(out/'pilot.py').as_posix(),'results/dev_aux/task2392/reader.py','results/dev_aux/task2397/material.py','results/dev_aux/task2384/incremental.py','results/dev_aux/task2400/result.json',(reserve/'inputs.json').as_posix(),(reserve/'reservation.json').as_posix()]+[r['rules']for r in roots+new]};(out/'plan.json').write_text(json.dumps(p,indent=2))
+print(json.dumps(dict(TRAIN=len(slots),RESERVE=len(new),reserve_generation_attempts=attempts,forecast=2500,grid=grid)))

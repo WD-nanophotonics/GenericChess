@@ -1,0 +1,186 @@
+{
+  "status": "PASS_COMPLETE_CORE_TREE_MATCHED_DEPTH_MARGIN_REPLAY",
+  "nodes": 2703,
+  "actual_edges": 2702,
+  "price_depth_folds": [
+    {
+      "price": [
+        0.75,
+        0.0
+      ],
+      "depth": 2,
+      "root_score": 1.25,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        0.75,
+        0.75
+      ],
+      "depth": 2,
+      "root_score": 1.25,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "depth": 2,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        0.0
+      ],
+      "depth": 2,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        0.75
+      ],
+      "depth": 2,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "depth": 2,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        0.75,
+        0.0
+      ],
+      "depth": 3,
+      "root_score": 2.0,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        0.75,
+        0.75
+      ],
+      "depth": 3,
+      "root_score": 1.25,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "depth": 3,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        0.0
+      ],
+      "depth": 3,
+      "root_score": 2.0,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        0.75
+      ],
+      "depth": 3,
+      "root_score": 1.25,
+      "all_root_actions": 19
+    },
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "depth": 3,
+      "root_score": 0.5,
+      "all_root_actions": 19
+    }
+  ],
+  "finite_competing_feature_rank": 1,
+  "actual_receipt_matches": [
+    {
+      "price": [
+        1.5,
+        1.5
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 420,
+      "actual_seconds": 0.5685857000062242,
+      "actual_exit": "depth_budget"
+    },
+    {
+      "price": [
+        0.75,
+        1.5
+      ],
+      "actual_completed_depth": 2,
+      "exact_choice_and_score": true,
+      "actual_nodes": 760,
+      "actual_seconds": 1.0002604000037536,
+      "actual_exit": "time_budget"
+    },
+    {
+      "price": [
+        0.75,
+        0.0
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 403,
+      "actual_seconds": 0.6839287000184413,
+      "actual_exit": "depth_budget"
+    },
+    {
+      "price": [
+        0.75,
+        0.75
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 402,
+      "actual_seconds": 0.5355834000220057,
+      "actual_exit": "depth_budget"
+    },
+    {
+      "price": [
+        1.5,
+        0.0
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 403,
+      "actual_seconds": 0.5472410999936983,
+      "actual_exit": "depth_budget"
+    },
+    {
+      "price": [
+        1.5,
+        0.75
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 399,
+      "actual_seconds": 0.5525607000163291,
+      "actual_exit": "depth_budget"
+    }
+  ],
+  "seconds": 2.118857900000876,
+  "scope": "ActualfullhistoryCoreedgecompleteness and independentbottom-up2397material folds, no newsearch/game. Featuredirectionrank conditionaloncompetitivePVpairs, notunique/globalidentification. Terminalpriority/ties explicit. SoleTRAINgain firstdifferenceD3versusD2, notmatched-depthpriceeffect; fixed1sprotocol stillactualpolicyperformance."
+}

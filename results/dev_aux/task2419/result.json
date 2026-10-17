@@ -1,0 +1,907 @@
+{
+  "status": "PASS_PRUNING_WORK_NOT_WALL_CAUSE_ATTRIBUTION",
+  "panels": [
+    {
+      "task": 2415,
+      "status": "PASS_EXACT_FINITE_TREE_WORK_AND_SAVED_RECEIPTS",
+      "rows": [
+        {
+          "price": [
+            0.75,
+            0.0
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 2.0,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 72,
+              "cumulative_visits": 92,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 311,
+              "cumulative_visits": 403,
+              "score": 2.0,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 403,
+              "actual_seconds": 0.6839287000184413,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 403,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        },
+        {
+          "price": [
+            0.75,
+            0.75
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 71,
+              "cumulative_visits": 91,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 311,
+              "cumulative_visits": 402,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 402,
+              "actual_seconds": 0.5355834000220057,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 402,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        },
+        {
+          "price": [
+            0.75,
+            1.5
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 243,
+              "cumulative_visits": 263,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 647,
+              "cumulative_visits": 910,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 2,
+              "actual_visits": 760,
+              "actual_seconds": 1.0002604000037536,
+              "actual_exit": "time_budget",
+              "counterfactual_complete_D3_visits": 910,
+              "remaining_visits_to_complete_D3": 150
+            }
+          ]
+        },
+        {
+          "price": [
+            1.5,
+            0.0
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 2.0,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 72,
+              "cumulative_visits": 92,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 311,
+              "cumulative_visits": 403,
+              "score": 2.0,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 403,
+              "actual_seconds": 0.5472410999936983,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 403,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        },
+        {
+          "price": [
+            1.5,
+            0.75
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 72,
+              "cumulative_visits": 92,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 307,
+              "cumulative_visits": 399,
+              "score": 1.25,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 399,
+              "actual_seconds": 0.5525607000163291,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 399,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        },
+        {
+          "price": [
+            1.5,
+            1.5
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 20,
+              "cumulative_visits": 20,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 71,
+              "cumulative_visits": 91,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 329,
+              "cumulative_visits": 420,
+              "score": 0.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "N",
+                  "to": [
+                    1,
+                    1
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 420,
+              "actual_seconds": 0.5685857000062242,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 420,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task": 2417,
+      "status": "PASS_EXACT_FINITE_TREE_WORK_AND_SAVED_RECEIPTS",
+      "rows": [
+        {
+          "price": [
+            0.75,
+            0.0
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 43,
+              "cumulative_visits": 64,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 450,
+              "cumulative_visits": 514,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": []
+        },
+        {
+          "price": [
+            0.75,
+            0.75
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 43,
+              "cumulative_visits": 64,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 450,
+              "cumulative_visits": 514,
+              "score": 0.75,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": []
+        },
+        {
+          "price": [
+            0.75,
+            1.5
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    1,
+                    0
+                  ],
+                  "to": [
+                    0,
+                    0
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 57,
+              "cumulative_visits": 78,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    1,
+                    0
+                  ],
+                  "to": [
+                    0,
+                    0
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 618,
+              "cumulative_visits": 696,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "board",
+                  "from": [
+                    1,
+                    0
+                  ],
+                  "to": [
+                    0,
+                    0
+                  ],
+                  "promotion_target_id": null
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 696,
+              "actual_seconds": 0.8918941000010818,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 696,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        },
+        {
+          "price": [
+            1.5,
+            0.0
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 43,
+              "cumulative_visits": 64,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 450,
+              "cumulative_visits": 514,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": []
+        },
+        {
+          "price": [
+            1.5,
+            0.75
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 43,
+              "cumulative_visits": 64,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 450,
+              "cumulative_visits": 514,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": []
+        },
+        {
+          "price": [
+            1.5,
+            1.5
+          ],
+          "depths": [
+            {
+              "depth": 1,
+              "visits": 21,
+              "cumulative_visits": 21,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 2,
+              "visits": 43,
+              "cumulative_visits": 64,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            },
+            {
+              "depth": 3,
+              "visits": 450,
+              "cumulative_visits": 514,
+              "score": 1.5,
+              "choice": {
+                "kind": "ACTION",
+                "action": {
+                  "kind": "drop",
+                  "base_type_id": "R",
+                  "to": [
+                    0,
+                    0
+                  ]
+                },
+                "declaration_id": null
+              }
+            }
+          ],
+          "actual_comparisons": [
+            {
+              "completed_depth": 3,
+              "actual_visits": 514,
+              "actual_seconds": 0.6680348999798298,
+              "actual_exit": "depth_budget",
+              "counterfactual_complete_D3_visits": 514,
+              "remaining_visits_to_complete_D3": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seconds": 0.08483290000003763,
+  "scope": "Pureofflineorderedalpha-beta fold of independentlyCore-verifiedfiniteD3trees; exactactualcompletedreceiptvisitcounts/choice/scores. No newsearch/game/reexecutionof1swallprotocol. More deterministicvisits establish differentpruningwork, not OSload/clock cause orfutureactualW-L atanotherbudget. Fixed2channelprices/oldcaps unchanged; no defaultoptimization/humanfit. Rootchoice equalitydoesnotmean equalruntime orallsubtreepolicy."
+}
