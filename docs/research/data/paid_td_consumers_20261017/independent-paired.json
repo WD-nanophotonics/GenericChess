@@ -1,0 +1,318 @@
+{
+  "adaptive_TD_minus_WDL_role_cells": [
+    {
+      "bounds": [
+        0.15625,
+        0.3125
+      ],
+      "color": 0,
+      "foe": "uniform",
+      "pairs": 64,
+      "prefix": 4
+    },
+    {
+      "bounds": [
+        -0.203125,
+        0.140625
+      ],
+      "color": 1,
+      "foe": "uniform",
+      "pairs": 64,
+      "prefix": 4
+    },
+    {
+      "bounds": [
+        0.0625,
+        0.21875
+      ],
+      "color": 0,
+      "foe": "random99031",
+      "pairs": 64,
+      "prefix": 4
+    },
+    {
+      "bounds": [
+        -0.09375,
+        0.0625
+      ],
+      "color": 1,
+      "foe": "random99031",
+      "pairs": 64,
+      "prefix": 4
+    },
+    {
+      "bounds": [
+        0.140625,
+        0.171875
+      ],
+      "color": 0,
+      "foe": "uniform",
+      "pairs": 64,
+      "prefix": 5
+    },
+    {
+      "bounds": [
+        -0.09375,
+        0.15625
+      ],
+      "color": 1,
+      "foe": "uniform",
+      "pairs": 64,
+      "prefix": 5
+    },
+    {
+      "bounds": [
+        0.09375,
+        0.125
+      ],
+      "color": 0,
+      "foe": "random99031",
+      "pairs": 64,
+      "prefix": 5
+    },
+    {
+      "bounds": [
+        -0.0625,
+        -0.03125
+      ],
+      "color": 1,
+      "foe": "random99031",
+      "pairs": 64,
+      "prefix": 5
+    }
+  ],
+  "adaptive_games": 1536,
+  "adaptive_unknown": 52,
+  "contrasts": [
+    {
+      "bounds": [
+        0.01171875,
+        0.25390625
+      ],
+      "by_role": {
+        "0": [
+          0.1796875,
+          0.3828125
+        ],
+        "1": [
+          -0.15625,
+          0.125
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          -0.046875,
+          0.109375
+        ],
+        "27182": [
+          -0.03125,
+          0.34375
+        ],
+        "31415": [
+          -0.09375,
+          0.125
+        ],
+        "8173": [
+          0.21875,
+          0.4375
+        ]
+      },
+      "comparison": "TD-initial",
+      "foe": "uniform",
+      "pairs": 256
+    },
+    {
+      "bounds": [
+        -0.08203125,
+        0.08203125
+      ],
+      "by_role": {
+        "0": [
+          -0.0234375,
+          0.1640625
+        ],
+        "1": [
+          -0.140625,
+          0.0
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          0.0,
+          0.125
+        ],
+        "27182": [
+          -0.203125,
+          0.109375
+        ],
+        "31415": [
+          -0.09375,
+          0.0
+        ],
+        "8173": [
+          -0.03125,
+          0.09375
+        ]
+      },
+      "comparison": "WDL-initial",
+      "foe": "uniform",
+      "pairs": 256
+    },
+    {
+      "bounds": [
+        0.0078125,
+        0.2578125
+      ],
+      "by_role": {
+        "0": [
+          0.09375,
+          0.328125
+        ],
+        "1": [
+          -0.078125,
+          0.1875
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          -0.109375,
+          0.046875
+        ],
+        "27182": [
+          0.015625,
+          0.390625
+        ],
+        "31415": [
+          -0.0625,
+          0.1875
+        ],
+        "8173": [
+          0.1875,
+          0.40625
+        ]
+      },
+      "comparison": "TD-WDL",
+      "foe": "uniform",
+      "pairs": 256
+    },
+    {
+      "bounds": [
+        0.08984375,
+        0.21484375
+      ],
+      "by_role": {
+        "0": [
+          0.203125,
+          0.3125
+        ],
+        "1": [
+          -0.0234375,
+          0.1171875
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          0.03125,
+          0.09375
+        ],
+        "27182": [
+          0.125,
+          0.28125
+        ],
+        "31415": [
+          0.0625,
+          0.125
+        ],
+        "8173": [
+          0.140625,
+          0.359375
+        ]
+      },
+      "comparison": "TD-initial",
+      "foe": "random99031",
+      "pairs": 256
+    },
+    {
+      "bounds": [
+        0.0234375,
+        0.09375
+      ],
+      "by_role": {
+        "0": [
+          0.03125,
+          0.09375
+        ],
+        "1": [
+          0.015625,
+          0.09375
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          0.125,
+          0.125
+        ],
+        "27182": [
+          0.046875,
+          0.234375
+        ],
+        "31415": [
+          -0.046875,
+          -0.046875
+        ],
+        "8173": [
+          -0.03125,
+          0.0625
+        ]
+      },
+      "comparison": "WDL-initial",
+      "foe": "random99031",
+      "pairs": 256
+    },
+    {
+      "bounds": [
+        0.02734375,
+        0.16015625
+      ],
+      "by_role": {
+        "0": [
+          0.140625,
+          0.25
+        ],
+        "1": [
+          -0.0859375,
+          0.0703125
+        ]
+      },
+      "by_seed": {
+        "1977": [
+          -0.09375,
+          -0.03125
+        ],
+        "27182": [
+          -0.046875,
+          0.171875
+        ],
+        "31415": [
+          0.109375,
+          0.171875
+        ],
+        "8173": [
+          0.140625,
+          0.328125
+        ]
+      },
+      "comparison": "TD-WDL",
+      "foe": "random99031",
+      "pairs": 256
+    }
+  ],
+  "original_games": 1536,
+  "original_unknown": 63,
+  "scope": "PRIMARY math-only candidate-role sign/actualreward/U[-1,+1]/initialrecord pair checks. Adaptivefollowup keptseparate, no pooling/refit/causalcolor orsharedcriticbugclaim; ownerCorefullrecord/audit reproduction is separate source execution, not an externalrulesengine. Crossedpopulationenvelopes stillinclude0; no populationmethodwinner.",
+  "seconds": 0.16869419999420643,
+  "source_sha": "3792d83068d5d0e61a0a33ebbf6850b414202c6f",
+  "status": "PASS_PRIMARY_ALL1536_OUTCOME_AND_ADAPTIVE_STRATA_BOUNDS",
+  "unchanged_fullrecords_and_rewards": 192,
+  "unchanged_models": 6
+}

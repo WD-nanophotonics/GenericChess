@@ -637,3 +637,17 @@ Current wrappers explicitly refuse missing capability; use the existing producti
 entry or Core until rebuilt. See PROBE_TERMINAL_SCORE_BAND_20261017.md for actual
 before/after and real separately bound old-kernel evidence.70affected checks and
 full3284 active regressions pass, with the former included in the latter.
+
+
+## Actual signed92 and movement-recombination consumers
+
+Current standard checkpoint/Native paths serve ALL128 fixed actual92 endpoint
+inputs, including4 negative-P TD models/16 role-foe inputs, preserving Core float
+and integer D2 optima. No new API/normalization/default or optimizer swap. Source
+EVAL gradients are absent, not zero/equal; legacy/semantic object comparison is not
+move equality. Separate fresh-source128-call qualification passed. Newly learned
+signed coefficients make old91positive-cone reasoning conditional, not a P=1 rule.
+See PAID_TD_AND_SIGNED_PRICE_CONSUMERS_20261017.md. Complete movement-only16variant
+receipt/source qualification is documented in MOVEMENT_RECOMBINATION_PRICE_TRANSFER_20261017.md;
+all promotion/drop/history data retained, no full-domain extrapolation. A-only
+capability-ratio utility is a separate adaptive experimental consumer, no activation.

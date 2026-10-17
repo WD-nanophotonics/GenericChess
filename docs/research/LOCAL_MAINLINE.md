@@ -1,139 +1,149 @@
 # Current local research mainline
 
-AGENTS.md and latest user directions govern. Science is OPEN. This file contains
-current research choices, their reasons, alternatives and reconsideration points.
-Operational instructions are in LOCAL_AGENT.md; detailed evidence is in reports.
-The full preceding mainline is preserved at PUBLIC revision
-[da1dac94272b8ed37f3ec258c44cf445048113ea](https://github.com/WD-nanophotonics/GenericChess/blob/da1dac94272b8ed37f3ec258c44cf445048113ea/docs/research/LOCAL_MAINLINE.md).
-Its dated "next" actions are historical evidence, never an active backlog.
-This consolidation replaces repeated campaign summaries without discarding their
-causal history, changing user authority or adding a policy index/approval system.
+AGENTS.md and latest user directions govern. Science is OPEN. This file owns
+revisable research choices/reasons/reconsideration points; LOCAL_AGENT.md owns
+operations. Full preceding mainline is preserved at PUBLIC
+[bd8054de31ec687676e5bc2720578cabb2f725d7](https://github.com/WD-nanophotonics/GenericChess/blob/bd8054de31ec687676e5bc2720578cabb2f725d7/docs/research/LOCAL_MAINLINE.md),
+with earlier links retaining the causal chain. Historical dated next actions are
+not a backlog. Current tasks/clock are in .local_agent/NEXT_WORK.md.
 
-## Current choice and its cause — 2026-10-17
+## Current choice and cause — 2026-10-17
 
-Actual positive learning evidence changed the earlier search-before-learning
-selection. PRIMARY supports/checks the now-published learning route and concrete
-complete-state backend consumers; DEV_AUX owns training/solver work in sidemission.
-The user's Slack-first defect plan is CLOSED (SLACK_REVIEW_FIXES_20261015.md),
-so it does not halt resumed research. No routine Dot receipt is a continuation gate.
+Actual finite learning gains changed the earlier search-before-learning choice.
+Keep incremental TD/search bootstrapping as a main candidate, the specified paid
+terminal-WDL method as a control, and cheap rule-only static tables as candidates.
+PRIMARY supports complete-state backend consumers/transfer comparisons; existing
+DEV_AUX owns learning/solver work in its separate sidemission checkout. No automatic
+merge, duplicate learner or model/default activation. The user's Slack-first
+specific defect plan is CLOSED (SLACK_REVIEW_FIXES_20261015.md), not a halt on
+research. Dot is a partner, not an approval/receipt gate.
 
-Published AUX91 source03d4a8635bef8d0e203de81eb6335521ba366e36 has actually been
-restored here:191 payload hashes,38 owner controls,11 parked-then-regenerated audits,
-166524 logical record plies,131.281s, exact non-time results. This is owner-source
-reproduction, not an external rules authority. PRIMARY forward eligibility also
-independently matches all6512 episodes/95895 query credits and all endpoint updates.
-Four TRAIN-exposed4x4 promotion/drop rules and all4 initializations are retained.
-Fixed5 and free6 beat their own initials on both finite foe panels; free6−fixed5
-bounds include0 under both foes. Negative-P benefit, unique prices, population
-strength, convergence and unseen-rule transfer are not established. Full observed
-feature span is not identifiability. Posthoc exposure/leave-one-rule-out diagnostics
-retain all1536 cells; they do not manufacture a new holdout or justify filtering.
+New fixed AUX92 source3792d83068d5d0e61a0a33ebbf6850b414202c6f was actually
+restored here:205payload hashes,38 owner controls,11 parked/regenerated audits,
+258981 logical record plies/196.391s. Those are owner-authored/Core checks, not
+an external rules authority or new training. PRIMARY independent forward credits
+match ALL7218 games/113660 queries/6.4M paid nodes; direct interval arithmetic
+matches220 WDL proposals/29 accepts, including84 missing tail games. Original
+1536 outcomes give TD-WDL finite bounds[.0078125,.2578125] underUnit and
+[.02734375,.16015625] underrandom99031; crossed population envelopes include0.
+Keep all adverse seeds/roles and UNKNOWN. The separate adaptive prefix4/5 study
+is not pooled; randomfoe prefix5 player1 TD-WDL[-.0625,-.03125] is retained.
+No population winner, stable prices, causal role diagnosis or naive sign flip.
 
-The preceding static comparison (RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.md)
-used weak89 endpoints,352 physical/384 logical cells. Static39W17L3D5U was useful
-against Unit; learned−initial utility stayed unresolved despite25 real floating
-preference changes. More-trained91 endpoints are a CHANGED premise, not a reason
-to rerun that frozen panel or claim a cross-study method effect.
+Earlier91 source03d4a8635bef8d0e203de81eb6335521ba366e36 and all corresponding
+finite positive-gain/negative evidence remain fixed. Its all-positive P endpoints
+supported only a CONDITIONAL positive-scaling policy argument. Actual92 has4
+negative-P TD endpoints; positive scaling cannot pin them to+1. This does not
+prove negative-P benefit or generic Chess pawn values. Existing standard
+checkpoint/Native supports raw signed/zero coefficients: ALL128 actual92 endpoint
+inputs, including16 negative-P inputs, preserve independent Core float/int D2
+optima,0prediction error. A separate fresh-source128-call check matches. Source
+EVAL has NO PV/gradient reference: absence is not zero/equal online trajectories.
+See PAID_TD_AND_SIGNED_PRICE_CONSUMERS_20261017.md.
 
-CURRENT registered follow-on: mature-static-20261017 compares ALL48actual91
-initial/fixed5/free6 tables with existing static/Unit, on128 fresh complete roots,
-all4 fixed seeds and two fixed foes using ONE Native256 backend.7040 physical/
-7168 logical cells, D2/8192nodes/2s/q0/TT0/H128,1800s/1GiB producer cap.32families
-per rule were chosen before fitness to reduce the prior8-family conditional
-uncertainty; they do not create new rules or population evidence. Keep every
-terminal, UNKNOWN, missing slot and frozen limit. Validate full histories/PVs and
-physical Unit-role/shared-baseline coupling before interpreting outcomes.
-The producer is CLOSED:7040/7040 in686.984s,166514actualD2queries/0fallback,
-31606003nodes/6573actualterminals467UNKNOWN. FullCore record/PV reader PASSES
-(all326840PVedges/166514commits/0mismatch). Freshsource176+191hashes,11own
-outputs/38owner controls/11audits/192Nativecalls pass in two phases after
-fixing an isolated missing pytest shim; no fitness/TRAIN rerun. Static−Unit finite bounds are positive under both foes; static−mature
-comparisons do not establish a general winner. Native learned−initial bounds
-include0 underUnit and are positive underrandom99031; retain protocol differences.
+## Rule-only transfer and actual utility
 
-## Serving choice and current semantic boundaries
+The preceding mature91 comparison (MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md)
+closed7040 physical/7168 logical cells on four TRAIN-exposed rules. Static-Unit
+was useful; static-versus-learned and free-versus-fixed did not select a universal
+winner. Do not repeat its frozen fitness or use it as population evidence.
 
-The compatibility fixed/probe source-scale hypothesis was actually reproduced:
-accepted rook1M chooses ordinary2M over mate1M. The narrow terminal100M fix keeps
-ordinary90M saturation and explicitly refuses stale kernels; full3284 active
-checks pass. Production iterative was already correct and prior frozen fitness
-is not rerun. See PROBE_TERMINAL_SCORE_BAND_20261017.md. A new registered
-movement-only zero-shot consumer comparison has begun: all12 ordered A-movement
-recombinations plus4identity controls, all48unchanged91 source tables, no fitting
-or AUX writes. Its full Core/source qualification is still in progress; no
-population-transfer/default winner is inferred from preliminary outcomes.
+New MOVEMENT_RECOMBINATION_PRICE_TRANSFER_20261017.md changes ONLY A movement:
+ALL12 ordered donor recombinations plus4identitycontrols,4fixed source initials,
+8fresh families/variant, bothroles/twofixedfoes, Native256 D2/8192nodes/2s/q0/TT0/
+H128. All48source vectors numerically unchanged by explicit type-ID recipe;
+static recomputed from each rule. This is not a rule-conditioned learned map or
+new movement ingredients. Shared RNG gives different legal prefix states, not a
+pure identical-state rule intervention. Preserve5 terminal prefixes/128 roots.
 
-Existing standard checkpoint/Native APIs preserve signed/zero board-P; no new
-schema is needed for that scope. New64 actual91 initial/midpoint inputs AND128
-endpoint inputs preserve their own source-floating and quantized Core D2 optima.
-The latter includes P=.02864485 outside the earlier sample. All64 recorded TRAIN
-leaf predictions/gradients agree; original EVAL records have NO reference PV or
-gradient, so those absent fields are not zero/equivalence evidence. Legacy versus
-semantic action objects differ; physical projection is descriptive only and must
-not erase typed binding identity or relevant history. No adapter/default/model
-is activated. Sub-resolution timing zeros are not free computation or a speedup.
+All7040 physical/7168 logical cells close760.766s,189063D2/31481867nodes,
+6551terminals489UNKNOWN/0missing. Core replays all371850PVedges and full histories,
+0mismatch. Twelve nonidentity static-Unit finite/envelope bounds are positive
+underbothfoes; learned-initial positive finite bounds under randomfoe have
+zero-containing linked-family envelopes. Free6seed31415 randomfoe gain
+[-.09375,-.020833] is retained. No demonstrated universal transfer collapse,
+free6superiority or static/learned winner. All difference-of-gain bounds include0.
+382of384 prespecified divergence groups show actual floating preferences/0float
+regret;2groups without observed divergence stay unfilled.186payload source capsule
+regenerates11 outputs, then buildsC/10new controls:479.481s successful stages,
+no original fitness/TRAIN rerun. Rename/reorder profile controls pass for16variants.
 
-Keep AUX's optimizer if a future query-only accelerator is actually needed.
-PRIMARY median normalization is a different update rule. On actual91 free inputs,
-pinning positive P while holding tanh temperature10 changes40316/42080 predictions
-(max.857849). Co-scaling temperature10/P restores predictor algebra only, not a
-fixed-eta training trajectory. Keep the cheap static comparator and both fixed/
-free candidates; new precision, API or optimizer work needs a concrete mismatch.
+Actual full-state/history+rule/profile/request contexts repeat20.71% of recorded
+caller work, between the5% and30% diagnostic decision points. No new cache follows:
+key construction/invalidation and resource fairness costs are unpaid, cross-rule
+or board-only aliases are forbidden, and ensemble repetition is not live-game gain.
 
-Current product supports full typed spatial/control snapshots and private standard
-Session-copy collection; terminal PVs use actual constant0/+1/−1 and zero OWN
-gradient while earlier eligibility persists. Old missing fields remain historical
-partial contracts, not retroactively complete models. Declaration-ended PVs and
-non-scoring claim leaves currently REFUSE unsupported TD targets explicitly;
-numeric0 is not a draw. A future full declaration-TD carrier needs an actually
-replayable claimed leaf, not a fresh framework or complete-WDL prerequisite.
-Evidence: FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md and
-LEARNING_METHODS_TERMINAL_LEAVES_AND_PREFIXES_20261017.md.
+A separate ADAPTIVE rule-aware mapping follows a NEW premise, not old-cap refill:
+onlyA board/hand coefficients multiply targetrawA/originalrecipientrawA.96fixed
+existing-input feasibility queries yield15strict changes/0float regret, not utility.
+New291001..4 families/all12nonidentityvariants compare8direct+8mapped+static
+profiles/bothroles/twofoes:3264physical/no virtualcopies,900s/1GiB cap unchanged.
+All3264close372.797s/92896D2/15405555nodes,2991terminals273UNKNOWN. Fixed5
+mapped-direct underrandom99031 has finite[.015625,.151042], but linked-family
+envelope includes0; other mapped-direct bounds include0. No model/recipe/default
+selection from these cells. Full Core92896commits/182869PVedges PASS,0mismatch; checksum-pinnedfresh
+source regenerates2outputs/203.199s. Separate96componentqualification uses
+an explicit stop-root-only post-seal portability overlay after a before-query
+setup refusal; originalsource/archive/failedtree retained, nofakeflags. See
+RULE_A_CAPABILITY_MAPPING_20261017.md; preserve all original panels. Four bounded
+raw-feature neutrality checks now pass numerically; complete legacy action/history
+equivalence remains the next concrete consumer question, not a new provergate.
 
-Core no-progress search retains verified complete state/history/error context;
-Native still declines unsupported rules/capacity explicitly. Rule max-ply65535
-capability is distinct from unchanged1024 Native storage. Core remains available
-beyond storage; no automatic full-search fallback/history truncation follows.
-Actor base/current binding, auxiliary defaults, required-error propagation and
-existing conservative admission guards remain. Public getter identity deferral
-is adopted after whole-consumer evidence; private packing/scout/cache proposals
-remain unadopted unless a changed premise and discriminating test justify them.
-Evidence: NO_PROGRESS_SEARCH_CONTEXT_20261017.md, CORE_CAPACITY_HANDOFF_20261016.md,
-CORE_POSITION_INPUTS_20261017.md and REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md.
+## Current backend boundaries
 
-Censored6.63%games consume41.58%caller time, not missing API work. PositiveP
-normalization preserves exact bounded material-policy ordering conditionally,
-but NOT fixedT10TDprediction/update or re-roundedNative behavior; no model
-renormalization/default change follows. Detailed source, bounds and caveats:
-MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md.
+The compatibility fixed/probe accepted-profile defect is CLOSED at PUBLIC
+bd8054de31ec687676e5bc2720578cabb2f725d7: mate1M wrongly lost to ordinary2M.
+Fixed/probe now terminal100M outside unchanged static90M, no mate-distance tweak;
+old kernels missing semantic_fixed_depth_terminal_dominance refuse explicitly.
+Production iterative/persistent scores were already correct.70related checks and
+full3284 active tests pass; original datasets are not rerun. Real separately bound
+old-kernel controls preserve production D2 score/action/PV/nodes/depth on2profiles.
+See PROBE_TERMINAL_SCORE_BAND_20261017.md; no all-domain/performance identity claim.
 
-## What remains scientifically open
+Full typed Session-copy/spatial/control snapshots, history and required errors
+remain. Terminal PVs supply actual constant0/+1/-1 and zero own gradient while
+earlier eligibility persists. Declaration-ended/non-scoring claim TD targets
+explicitly refuse unsupported carriers, not numeric draw0. Rule max-ply65535
+is distinct from unchanged1024 Native storage; beyond capacity Core is available,
+without silent history truncation or automatic full-search fallback. Keep base/
+current actor bindings, auxiliary defaults and admission guards. Evidence:
+FULL_SESSION_SNAPSHOTS_AND_PRICE_ACTIVATION_20261017.md,
+CORE_CAPACITY_HANDOFF_20261016.md, NO_PROGRESS_SEARCH_CONTEXT_20261017.md and
+REQUIRED_NATIVE_ERROR_PROPAGATION_20261016.md. Getter identity deferral remains;
+private packing/scout/cache changes need a concrete changed premise/useful test.
 
-The targets remain rule-only generic prices/cross-game ratios/bias and efficient
-stable search on unfamiliar movement mixtures/recombined rules. The complete
-promotion/drop/current-base/aux/history domain is the target, not four hand-made
-games. Scoped prototypes and the current four exposed generated rules qualify
-local claims only. Material/order prices and actual rule rewards stay distinct.
-Static averages require a declared state/action distribution; context dependence
-alone does not refute them. Binding versus intent sampling, surviving-rule bias,
-terminal roots and prior exposure matter. Longer prefixes do not automatically
-improve coverage: the72-rule continuation study changed surviving-rule measure.
-Source: SEMANTIC_SAMPLING_AND_HISTORY_BOUNDARIES_20261017.md and
-LEARNING_METHODS_TERMINAL_LEAVES_AND_PREFIXES_20261017.md.
+Keep AUX's optimizer if query-only acceleration becomes useful. PRIMARY median
+normalization is a different update. At fixedT10, positive P-pinning changed
+40316/42080 actual91 ordinary predictions; co-scaling temperature restores only
+predictor algebra, not fixed-eta updates/learning trajectories. Signed92 data
+reinforces no forced normalization. Raw/normalized/rounded/clipped values and
+source versus Native node/cost units stay distinct.
 
-CHAT_Comments are reference suggestions. Retain their useful distinctions between
-input cost, representation, trustworthy targets and actual decision value; future
-transfer comparisons distinguish zero-shot/fine-tune/scratch and change one rule
-axis. Defer Leaper-only embeddings, TC, larger networks and new teacher APIs until
-the active question needs them. No architecture or theorem is a development gate.
-Old89 sample ranks5/4/5/4 were not structural: actual90 data reaches5/5/5/5 and91
-active spans reach5/6. New streams/initializations/work prevent a pure-data ablation.
-Do not repeat closed87–90 reproductions or old q campaigns without a new premise.
+## Open goal, advice and reconsideration
 
-PUBLIC exists so Dot/Chat can read source/evidence; PRIVATE404 was abandoned.
-Eight known old archive groups now have corrected current copies; old Git history
-and wider legacy text were not globally purged. Standing project publication
-continues; no force rewrite, global-clean claim or new consent queue follows.
-The two-hour run threshold supersedes the mistaken one-hour interpretation;
-frozen experiment caps and separate60–90minute Agent work segments remain.
-Next actual question/clock and concrete backups are in .local_agent/NEXT_WORK.md.
+The target remains rule-only generic prices/cross-game ratios/bias and efficient
+stable search on unfamiliar mixtures/recombined generated rules, including full
+promotion/drop/auxiliary state/relevant history. Four exposed rules plus their
+movement recombinations are scoped prototypes, not a reduced task definition.
+No Elo/position patching, human-price/exposed-label fitting or Xiangqi holdout reads.
+Static averages require an explicit distribution; context dependence alone does
+not refute them. Binding/intention sampling, terminal roots and surviving-rule
+bias matter. Longer prefixes do not automatically broaden rule coverage.
+
+CHAT_Comments remain reference suggestions. Adopt input-versus-representation
+cost and genuine-decision-versus-utility distinctions, explicit mapping and separate
+zero-shot/fine-tune/scratch evaluation. Recent primary transfer literature supports
+these distinctions, not a required GNN/TC/teacher API/prover. Reconsider a larger
+representation only for a concrete mismatch or useful new learning comparison.
+At candidate-only times role equals side-to-move; role groups visit different
+states. Dot's frozen-trajectory credit-conflict diagnostic is advisory and stays
+in AUX's learning lane; no role feature/selfplay rewrite is inferred. Do not redo
+old87-91 reproductions or closed q campaigns without a changed premise.
+
+PUBLIC exists so Dot/Chat can read source and evidence; PRIVATE404 was abandoned.
+Old permission exclusions and visibility plans never revive after compaction.
+Known old publication copies were corrected, not all Git history globally purged.
+All project content sans personalinfo/passwords/credentials remains authorized.
+The <120min autonomous / >=120min Dot assessment threshold supersedes old1hour
+interpretation; frozen caps, machine safety and separate60-90min work segments
+remain. Preserve current decision/reason/abandoned alternative and executable memo.

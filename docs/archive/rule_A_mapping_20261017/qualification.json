@@ -1,0 +1,31 @@
+{
+  "status": "PASS_ADAPTIVE_RECORDS_AND_ANALYSIS_FRESH_PINNED_SOURCE",
+  "payloads": 33,
+  "zip_bytes": 10390031,
+  "zip_sha256": "153ce847d9338049b2d822bacdebe9a2525d7fdb6281c09ddcf2de9949286faf",
+  "parent_source_sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+  "actual_payloads_reviewed": true,
+  "source_dependency_files": 134,
+  "own_outputs_parked_before_regeneration": 2,
+  "all_non_time_fields_equal": true,
+  "recorded_original_costs_equal": true,
+  "python_S_extracted_origins": true,
+  "Native_absent_for_Core": true,
+  "real_primary_stops": true,
+  "new_fitness_games": 0,
+  "new_training": 0,
+  "steps": [
+    {
+      "name": "reader.py",
+      "seconds": 199.56380569998873,
+      "exit_code": 0
+    },
+    {
+      "name": "analyze.py",
+      "seconds": 1.2601039000437595,
+      "exit_code": 0
+    }
+  ],
+  "seconds": 203.19859690003796,
+  "scope": "Ownthinarchivehash+parentchecksum/sourcefilehashesverified; onlyparentsourcehydrated, nooriginalparentfitness or91/92TRAIN/EVALrerun. Fullnew3264Corehistory/PVreader andphysicalboundanalysisactuallyregenerated. Existingtestedbd805Cconsumercontract notrebuiltorre-executed here; no claim186parentmembers newlyregenerated."
+}

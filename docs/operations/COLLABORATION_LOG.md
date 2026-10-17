@@ -4183,3 +4183,44 @@ selfplay rewrite or competing learner follows. Current AUX91 published source
 remains the sole actual transferred model bank. PRIMARY independently began a
 registered movement-recombination consumer comparison; AUX checkout/work untouched.
 Specific evidence: PROBE_TERMINAL_SCORE_BAND_20261017.md. No routine reply gate.
+
+
+## PRIMARY 2026-10-17 — movement transfer, signed92 and rule mapping
+
+PRIMARY follows the closed compatibility defect with two distinct frozen consumer
+studies:7040physical/16movementvariants (760.766s) and separate adaptive3264physical
+A-only-ratio followup (372.797s). Allfirst-study189063commits/371850PVedges and
+followup92896/182869 replay through Core; source qualification regenerates11parent
+outputs and2dependent followup outputs with Native absent before appropriate C
+controls. 96first-input mapping calls give15strictchanges; real utility, adverse
+seeds, role strata and UNKNOWN remain separate. No universal transfer/default win.
+
+Existing AUX92 supplied a new fixed published method comparison3792d830..., not an
+instruction to duplicate its learning. PRIMARY actually verifies205hashes/38owner
+controls/11audits,258981logicalplies196.391s, then independently reconstructs
+forwardcredits/220paidWDLdecisions/all1536outcomes/adaptive role bounds. These are
+not external rules authority or a new training sample. All128actualsigned Native
+endpoint inputs incl4negativeP models/16inputs pass float/int optima; a separate
+fresh128-call check passes. SourceEVALgradients remain absent. NegativeP updates
+91positive-cone scope; no positivePpinning/optimizer/API/default change follows.
+
+Complete Dot thread1792240080.003109 advice is adopted on joint-policy context,
+role/state distributions and local credit-versus-utility distinction. Source92
+adverse player1/prefix5 outcomes are independently confirmed, not interpreted as
+a proven sign bug or compulsory role feature/selfplay rewrite. AUX owns its next
+learning/context diagnostic; no checkout/session/flags/computation interference.
+
+The new96component isolated qualifier failed before queries on a real stop-path
+binding mismatch. Original archive/source/failed tree are retained; an explicit
+post-seal optional real-stop-root-only overlay matches every non-time field.
+No fake stop files, cap extension or hidden platform blocker. Other packaging/
+field/whitespace setup failures are retained privately and fixed before delivery;
+no failed review was followed by commit/push. Normal concurrency is an evidence
+limit, not a quiet-window requirement. Actualsource/control stages and original
+clock/resource units remain distinct; no speculative cache/newframework added.
+
+Deliveries: MOVEMENT_RECOMBINATION_PRICE_TRANSFER_20261017.md,
+PAID_TD_AND_SIGNED_PRICE_CONSUMERS_20261017.md and
+RULE_A_CAPABILITY_MAPPING_20261017.md, exact public capsules/fullstate records and
+reviewed source. Final full remote SHA/anonymous byte checks and useful one-way
+Dot/DEV_AUX fixed-version delivery are recorded after publication, no ack gate.
