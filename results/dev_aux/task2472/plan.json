@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-17T02:39:46.559053+00:00",
+  "question": "Does the old actualD3 price-choice divergence persist in a NEW completeD5 tree of the SAME frozenroot?",
+  "depth": 5,
+  "depths": [
+    3,
+    4,
+    5
+  ],
+  "grid": [
+    [
+      0.75,
+      0.75,
+      1
+    ],
+    [
+      0.75,
+      0.75,
+      2
+    ]
+  ],
+  "max_nodes": 500000,
+  "cap_seconds": 420,
+  "forecast_seconds": 180,
+  "pins": {
+    "results/dev_aux/task2472/root.json": "76ea669bcd8a386116b780ebc6d2ece5f0ba64cf9e2f703ebcf7226a9fad3ad8",
+    "results/dev_aux/task2472/margin.py": "d6b90ce91eab6dd5774942abb187499f10a8ab7ca93ea345835c5694c2424060",
+    "results/dev_aux/task2439/rules-0.json": "e7950da912c88d23c1a8355e25dc697fd6ccc5fabb4a9cca311563587b3474ff",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf"
+  },
+  "scope": "Newdepthsensitivity mechanism study, NOTextension/rerun ofoldgamecap/pricefit. ALLrootactions/corehistories; bothprices samecompleteddepth. Terminalmate priority distinguishedfromfiniteleafscore; no infinitehorizonWDLclaim. Freshnew8reservedorbits remainUNQUERIED."
+}

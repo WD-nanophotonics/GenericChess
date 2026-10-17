@@ -1,0 +1,98 @@
+{
+  "input": "results/dev_aux/task2481/inputs.json",
+  "input_sha": "110b89f9bf6f696cb86d32fe468b1f06930723e637f8fe1d572479d0111991d7",
+  "slots_sha": "f490396a18f512a446a4e760364c879c7cef9f54fb97bfd90b2b362663462791",
+  "expected_games": 192,
+  "H": 96,
+  "one_cap_seconds": 3300,
+  "estimated_seconds": 2400,
+  "step_seconds": 3.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 12.0,
+    "normal_depth": 4,
+    "normal_nodes": 65536,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 3.0,
+      "normal_depth": 3
+    }
+  ],
+  "pins": {
+    "results/dev_aux/task2481/pilot.py": "b1ab579d4998055fa08ead66b883a5b73c45d87480aeda861f666b946b5a94a3",
+    "results/dev_aux/task2480/plan.json": "d22033135b6ebcaf676be5d4c7d2535af64dc623c935f01011d6a7c1d6450db8",
+    "results/dev_aux/task2480/result.json": "64c2a778cd52a65ae6ca2899f1995b882f076f6cb4075ebeeda090caeee8125e",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf",
+    "results/dev_aux/task2384/incremental.py": "d2282b4ab66c9d874feafc244567f5f3d717b184f17ada1c88998176842cdf14",
+    "results/dev_aux/task2480/rules-0.json": "cac456c3f08e0c63498fff8dec2db25aa32376225ad77369ef2a57a1b82cb450",
+    "results/dev_aux/task2480/rules-1.json": "54e19f738914f51911f0ebc425e78eea432d80663521cf064801235257a3ae21",
+    "results/dev_aux/task2480/rules-2.json": "aa11b845519c44b8ac17463a2ee8c5b43b0c5784edfd50fdb7b46ed62833724f",
+    "results/dev_aux/task2480/rules-3.json": "aad897cbdd80c7b3a9baba6cadcf104816dcbc64f6ab7e71315398f38dec643f",
+    "results/dev_aux/task2480/rules-4.json": "a7172dd6cb600da9269e6f29a17822e40ba17565122d577ef0f0bac2531b40ed",
+    "results/dev_aux/task2480/rules-5.json": "9c429b59cb9e949d296e454c3d2ebd02200810ce9ee69b2c4bd237d4048ceae6",
+    "results/dev_aux/task2480/rules-6.json": "1774062d8586ff664cbef31bec54c7c8a373fd5a79755ff1b54d5850c4dca5f3",
+    "results/dev_aux/task2480/rules-7.json": "2f87c5e3daad664815bb4d6f17fc8b2cc3d7f55492c8012081167343a044c722",
+    "results/dev_aux/task2480/rules-8.json": "510ad2c4527090ceec9ac659deddc7a29e14798b17b1d8b8f53b1685d64906fb",
+    "results/dev_aux/task2480/rules-9.json": "c1ad9044254e6d7a37e8304c2afa2b2ebf0380a3d4cc42eed1dfd114383a3882",
+    "results/dev_aux/task2480/rules-10.json": "560c4b1686737e0b9be832899cf55f0115b60072be04ba486de4747f87af9a8a",
+    "results/dev_aux/task2480/rules-11.json": "4a04204c120ec8e41a0a87ec2c1872558af2cdf33d8ad3a0b1ef17c2fb546248",
+    "results/dev_aux/task2480/rules-12.json": "0b7438bbd3a2a9f50e2b9dbe0e180e49f6068b4c23749e0fc82463b796a8ae34",
+    "results/dev_aux/task2480/rules-13.json": "ac45f29f025d741e84cc9e803aa412ef9ae3b8da4f2661b6f2f2f020c63609cf",
+    "results/dev_aux/task2480/rules-14.json": "43e173ea9a6caf5a203eb7891cc24e61784a77824f8862bf6c1bd4069e0374c2",
+    "results/dev_aux/task2480/rules-15.json": "cc9c92f3d035d25d5f91f9cb265bed688f219ef58d2f4075af0e3e1cc98d820c"
+  },
+  "selection": "ActualruleW-L only, ALL192plannedcells includingmissing/U[-1,1]. Baseline(1.5,1.5)retainunlesscandidate meanlower STRICTLYexceedsbaselineupper; maximal lowermeanthenlex(a,b). Sixoldgridpointsunchanged; Nboth1conditionalmodel. NOreserveactivationin86 regardlessresult. No outcome-dependentresampling/extraattempts/capextension.",
+  "scope": "NEW16TRAINlegalinitialorbitfamilies/ALL192sixRprice xrolecells. Changedpremise candidateD4/fixedUNCHANGEDD3foe, following observedD3tie/horizonartifact; SAME6Rpointsno densergrid, actualW-Ltraining nottreefitness. Corpus legalpredicates/seed862480/orbitexclude20 frozenBEFOREpricequeries, no sensitivity/WDLfilter. StrictcandidateD4/foeD3 beforeeachnormalcommit, Uintervalelse. OLD4family2479 iscalibration notpoolednewevidence; ALL32newcalibrationgamesmustclose/strictdepthPASS beforeactivation, conditionNOT W-L. Fresh2460reserve8UNQUERIEDREGARDLESSresult. Fullfixedproof/cursors/H96/Rboardcurrent/handbase; Nboth1isexplicitrestrictionnotscaleproof. No Core/UI/default/PRIMARYwrites/extraAgents/fees. Wholelogicalforecast6000seconds<7200 includesprecedingresearch/preparation/audits/replay; newonecap3300seconds unchanged afterlaunch.",
+  "candidate_proof_caller_seconds": 23.5,
+  "forecast_seconds": 2400,
+  "candidate_prices": [
+    [
+      0.75,
+      0.0
+    ],
+    [
+      0.75,
+      0.75
+    ],
+    [
+      0.75,
+      1.5
+    ],
+    [
+      1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.75
+    ],
+    [
+      1.5,
+      1.5
+    ]
+  ],
+  "variants": [
+    "REMOVAL_NO_DROPS",
+    "HAND_NO_DROPS",
+    "HAND_WITH_DROPS"
+  ],
+  "candidate_step_seconds": 12.5,
+  "candidate_Nhand_values": [
+    0.0,
+    0.5,
+    2.0
+  ]
+}

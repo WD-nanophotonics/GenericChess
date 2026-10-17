@@ -2264,3 +2264,26 @@ Dot1792199941.907679 readfixed84report+inline85 only/no85source/execution. Adopt
 Allactualpreflight/collection failures kept andcorrected: firstcombinedpytestbasenamecollision, maskshape/syntax, PowerShellroundedts, wrongnormalmethod repairedwithin ORIGINAL90sfuse, andcheckpoint463 correctedto440commits. Auto-review3100s-over2h arithmeticerror correctedwithactual51m40s<7200s/usergrant, samecommandaccepted/no bypass. Logicalforecastupdated5250s, ordinaryconcurrency allowed/no quietwindow. New30thcapsule1bf0fe598bab584a3b409233c195c46f63ac09e59ac6771565de06c6e7e0bcb0 preserves29predecessors; fresh5334checks/3884paths/86tests+22closedconsumersPASS, no producer/fitness/censusrerun. CheckedprojectevidencePublicsidemission, raw sensitiveaccount/Slack originalsprivateignored. FinalfixedSHA/delivery/readstatus separatelyrecorded. ScienceOPEN; nextsmall shared-root mechanism test, noAgent/Goal/worker/fee/default/UI/security/visibilitychange.
 
 DEV_AUX85 closing: 62.772minutes/safe_checkpoint/7recordedstages, allproducersclosed. Science6d9094bc92aec106432c0d2586e700b1104df344 fullremoteSHA/Public/11anonymoussourcebytesverifiedbeforeofficialfinish. Closingmetadataonlyafterfinish; finalSlackreading/executionstillunconfirmed.
+
+## DEV_AUX86 — direct user learning route reset,2026-10-17
+
+DEV_AUX implemented incremental episode TDLeaf(lambda=.95), accurate standard
+Chess reference and same fullGameSession adapter. Original finite-grid/prover
+work is historical control; old2481 stopped115returned/3partialcommits/76unstarted,
+allcap/failure evidence retained. New37episode trajectories/35terminal/600000nodes
+then16new2family and64new8family paired evaluations. Against uniform1foe, both
+random initializations improve actual W-L by4/16 and9/16, first8family envelope
+crosses0: scopedpositive, no stable/universalprice claim.51928legal Chess plies
+replayed;101relatedtests PASS. No humanfit/solver prerequisite/default/UI changes.
+
+Dot newroot1792207500.820269/reply1792207751.615979 read papers+inline only,
+not code/results or execution. Adopted PVgradient, terminaltrace and bound-tie
+checks; actual trace defect repaired with originalv1bytes/results preserved.
+CHATsupplement1792207488.849489 assessed as advice consistent with direct user
+priority, not new authority. Preliminary111oldreturned count corrected115.
+PRIMARY96b96b830e70e4a15a5ca8a24006e21075fc884c readonly: owner finished-session/
+empty-guard fixes; AUX did not rerun/merge. PRIMARY previously readAUXrequest+
+Dotreply only, not source. No crosswrites/extraAgents/Goal/CPUquietwindow.
+Future priority ONE paper-grounded TD/qsearch/credit refinement and freshfamily/
+foe replication, not proof coverage. Full fixedSHA evidence delivered via own
+sidemission + projectSlack; delivery/read/adoption/execution remain distinct.

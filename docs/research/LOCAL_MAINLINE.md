@@ -1,3 +1,42 @@
+# DEV_AUX current selection —86 incremental TD,2026-10-17
+
+Direct USER route reset implemented: episode-frozen TDLeaf(lambda=.95) is now
+primary, standardChess first chosen environment; no generic solver prerequisite.
+Reason: actual W-L evaluates utility, while TD/search targets provide incremental
+credit. Old finite-grid/proof coverage is historical control, not live mainline.
+No PRIMARY/default/UI changes; full generated-domain learning remains OPEN.
+
+13new learning/rules/gradient/terminal-credit tests +88related checks PASS.
+TD Model/PV alpha-beta keeps coefficient-independent shuffled order, strictbest,
+EXACT/LOWER/UPPER targets; noSEE/materialordering/nullmove/NNUE/table reward.
+Pawn1; random othercoefficients; tanhmaterial/10, actualterminal+/-1/0, Ucensored.
+Episode weights frozen pergame, actual-outcome trace retained. Online/TC and
+one-sided TreeStrap variants are controls, not blended or literal reproductions.
+
+Episode2497:2seeds/600000nodes/37games(35actualterminal),5297TDterms/37nonzero
+batchupdates. FirstNEW2families2496:16games, bothconservativegains>=.5, oneUkept.
+NEW8families/uniform1foe replication2500:ALL64realterminals.1977 initial8W3L5D
+->11W2L3D, W-Lgain4/16;8173 initial6W6L4D->12W3L1D,gain9/16. Same8families
+across2seeds, not16independentfamilies. Descriptivefamilyenvelopes[-.1875,.5625]
+and[.0625,1.125]; firstcrosses0. Scopedpositive, NOTstable/universalprice/Elo or
+human-order recovery. Qlowin1977 remains. No price/seed chosen on heldout.
+AllnewChess51928legalplies replayed:2499audit41799 +2500audit10129.
+
+Originalsmoke45games/48heldout retained; terminaltracebug corrected, exactv1
+source/testbytes retained in86ZIP. Correctedonline119games/118terminals iscontrol.
+FullGameSession adapter4actualsteps demonstrates interface only, no genericgain.
+Old2481 USER-route interrupted115returned+3partialcommits/76neverstarted; oldcap
+unchanged, selectors2482/2486 andD5probe2490neverrun.137835oldtree nodes preserved.
+Dot1792207751 readpapers/inlineonly,no source/execution; trace/tiechecks adopted.
+
+Next: choose ONE paper-grounded TRAIN-only qsearch/horizon/credit premise, then
+fresh largerfamily/foe replication and total-cost methodcurves. Do notreuse90001–
+90012 as unexposed or fit humanratios. No more proofcoverage/grid/infrastructure
+as substitute for successful learning. Exact historical replication/equal-cost
+WDLcontrol/fullGeneric transfer remain OPEN. Source/result:SEGMENT_20261017_86.md.
+
+## Superseded previous route — evidence preserved, not live tasks
+
 # DEV_AUX current selection - closed85,2026-10-17
 
 OPEN/PUBLIC/own sidemission, PRIMARYreadonly.186unique newactualterminals,

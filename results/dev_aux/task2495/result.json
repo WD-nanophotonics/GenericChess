@@ -1,0 +1,67 @@
+{
+  "status": "SMOKE_CLOSED",
+  "seconds": 249.0697630000068,
+  "arms": [
+    {
+      "seed": 1977,
+      "method": "td",
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        0.9253553999428724,
+        1.3747635499012274,
+        1.5813124763595983,
+        1.1840680251590836
+      ],
+      "nodes": 1000000,
+      "search_updates": 8780,
+      "training_samples": 8779,
+      "nonzero_update_steps": 4176,
+      "outcomes": {
+        "W": 22,
+        "L": 18,
+        "D": 14,
+        "U": 1
+      },
+      "seconds": 134.49570080000558,
+      "reason": "NODE_BUDGET"
+    },
+    {
+      "seed": 8173,
+      "method": "td",
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.7297477360304649,
+        0.782195055597711,
+        1.4436409074554233,
+        1.8060345317014554
+      ],
+      "nodes": 880039,
+      "search_updates": 6481,
+      "training_samples": 6481,
+      "nonzero_update_steps": 3833,
+      "outcomes": {
+        "W": 33,
+        "L": 23,
+        "D": 8,
+        "U": 0
+      },
+      "seconds": 114.57278969997424,
+      "reason": "MAX_GAMES"
+    }
+  ],
+  "claim": "Execution/learning signal feasibility only. No convergence/heldout strength/equal-cost grid comparison completed. Unknown is censored, never draw."
+}

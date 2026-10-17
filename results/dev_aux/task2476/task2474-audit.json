@@ -1,0 +1,71 @@
+{
+  "status": "PASS_FOUR_CELL_FIRST_ACTION_INTERVENTION_FULL_HISTORY_AND_PHASES",
+  "task": 2474,
+  "games": 4,
+  "expected": 4,
+  "missing": 0,
+  "actual_moves": 90,
+  "uncommitted": [],
+  "outcomes": {
+    "W": 2,
+    "L": 2
+  },
+  "attempts": {
+    "LOW": 2
+  },
+  "sources": {
+    "FULL_SESSION_MATERIAL_SEARCH": 88,
+    "VERIFIED_GRAPH_STRATEGY": 2
+  },
+  "normal_depths": [
+    {
+      "is_candidate": true,
+      "depth": 3,
+      "count": 46
+    },
+    {
+      "is_candidate": false,
+      "depth": 3,
+      "count": 42
+    }
+  ],
+  "material_before_proofs": [],
+  "proofs": [
+    {
+      "kind": "GRAPH",
+      "slot": 1,
+      "ply": 39,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.01018739998107776,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    },
+    {
+      "kind": "GRAPH",
+      "slot": 3,
+      "ply": 39,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "edges": 1,
+        "seconds": 0.009806200017919764,
+        "unrolled_tree_nodes": 2,
+        "scope": "QualifiedpositionDAG only; fullruleguard/rootbinding/rank/horizon/prehistory/identitychecks. Publiccanonicaledgeexecution, notprovercache."
+      },
+      "actual_cursor_plies": 1,
+      "actual_terminal": true
+    }
+  ],
+  "candidate_measured_seconds": 29.124801900004968,
+  "foe_measured_seconds": 22.543752100027632,
+  "seconds": 0.16178220001165755,
+  "scope": "ALLclosed/partialactualrecords/sourcepins/slotorder/phasecost/LOWtriggerorinclusiveHIGHtrigger/fullgameoutcomes, independentlyreconstructed. Allsavedgraphcandidates andcurrentcursors replayed, U/missing notDRAW. Sameengine/verifier notexternalexecution; nofit/DEV/defaultadoption."
+}

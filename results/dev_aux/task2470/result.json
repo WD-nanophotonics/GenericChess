@@ -1,0 +1,96 @@
+{
+  "status": "PASS_COMPLETE_TYPED_HAND_CONSUMPTION_CORE_TREE",
+  "nodes": 727,
+  "actual_edges": 726,
+  "price_depth_folds": [
+    {
+      "price": [
+        0.75,
+        0.75,
+        1
+      ],
+      "depth": 1,
+      "root_score": 2.0,
+      "all_root_actions": 8
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        2
+      ],
+      "depth": 1,
+      "root_score": 3.0,
+      "all_root_actions": 8
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        1
+      ],
+      "depth": 2,
+      "root_score": 1.5,
+      "all_root_actions": 8
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        2
+      ],
+      "depth": 2,
+      "root_score": 1.5,
+      "all_root_actions": 8
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        1
+      ],
+      "depth": 3,
+      "root_score": 1.5,
+      "all_root_actions": 8
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        2
+      ],
+      "depth": 3,
+      "root_score": 1.5,
+      "all_root_actions": 8
+    }
+  ],
+  "finite_competing_feature_rank": 2,
+  "actual_receipt_matches": [
+    {
+      "price": [
+        0.75,
+        0.75,
+        1
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 347,
+      "actual_seconds": 0.45448769998620264,
+      "actual_exit": "depth_budget"
+    },
+    {
+      "price": [
+        0.75,
+        0.75,
+        2
+      ],
+      "actual_completed_depth": 3,
+      "exact_choice_and_score": true,
+      "actual_nodes": 361,
+      "actual_seconds": 0.47287019999930635,
+      "actual_exit": "depth_budget"
+    }
+  ],
+  "seconds": 0.5263328999863006,
+  "scope": "ActualfullhistoryCoreedgecompleteness and independentbottom-up2397material folds, no newsearch/game. Featuredirectionrank conditionaloncompetitivePVpairs, notunique/globalidentification. Terminalpriority/ties explicit. ThissharedrootBOTHactualordinaryD3; mechanismnotnewW-Lcausality orsolvercontribution."
+}

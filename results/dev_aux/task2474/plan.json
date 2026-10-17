@@ -1,0 +1,81 @@
+{
+  "input": "results/dev_aux/task2474/inputs.json",
+  "input_sha": "d7c7fd336db4c5049132d760e67ff69c0dd214fa1b1c42ffe4dccfaab56c26b1",
+  "slots_sha": "0fac1afebbdf24e6f0ad27957ba592f94b754321cea36052c3e3ae4cf671b803",
+  "expected_games": 4,
+  "H": 96,
+  "one_cap_seconds": 240,
+  "estimated_seconds": 60,
+  "step_seconds": 3.5,
+  "candidate": {
+    "proof_nodes": 65536,
+    "proof_seconds": 8.4,
+    "verification_nodes": 32768,
+    "verification_seconds": 3.0,
+    "normal_seconds": 3.0,
+    "normal_depth": 3,
+    "normal_nodes": 8192,
+    "proof_depth": 96,
+    "graph_positions": 65536,
+    "graph_edges": 524288
+  },
+  "opponents": [
+    {
+      "ratio": 2.0,
+      "normal_nodes": 8192,
+      "proof_nodes": 8192,
+      "proof_seconds": 0.2,
+      "verification_nodes": 16384,
+      "verification_seconds": 0.1,
+      "normal_seconds": 3.0
+    }
+  ],
+  "pins": {
+    "results/dev_aux/task2474/pilot.py": "b38a955ac4b22282801cdf39f398bb81e644f8c1eb3002b6582dc704d6c9bad2",
+    "results/dev_aux/task2469/result.json": "4e3a190e63842837cdb1226d6ab77090435bafcb36ab0115c194f20314588cb6",
+    "results/dev_aux/task2439/rules-0.json": "e7950da912c88d23c1a8355e25dc697fd6ccc5fabb4a9cca311563587b3474ff",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf",
+    "results/dev_aux/task2384/incremental.py": "d2282b4ab66c9d874feafc244567f5f3d717b184f17ada1c88998176842cdf14"
+  },
+  "selection": "NONE; posthoc diagnostic TWOrootactions x TWO Nhand values ALLfour reported; no price/condition/opponent/root selection.",
+  "scope": "Posthoc first-action intervention: SAME exposed2469root/candidateR(.75,.75)/fixedfoeR2/Nboth1/fixedproof/H96/strictD3. ActualnormalD3search paid atroot andsavedunchangedreceipt, then forceoneoftwolegalrootchoices; restunmodifiedpolicy. Allfourcells frozenbeforeoutcomes. No newreserve/learning/refit/oldcapextension/automaticdefaultadoption. Atq1 forcingbadcaptureisSUBOPTIMALintervention; atq2 bothactionscooptimal finiteD3. Wholelogicalstudyforecast<2h.",
+  "candidate_proof_caller_seconds": 14.5,
+  "forecast_seconds": 60,
+  "candidate_prices": [
+    [
+      0.75,
+      0.0
+    ],
+    [
+      0.75,
+      0.75
+    ],
+    [
+      0.75,
+      1.5
+    ],
+    [
+      1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.75
+    ],
+    [
+      1.5,
+      1.5
+    ]
+  ],
+  "variants": [
+    "REMOVAL_NO_DROPS",
+    "HAND_NO_DROPS",
+    "HAND_WITH_DROPS"
+  ],
+  "candidate_step_seconds": 3.5,
+  "candidate_Nhand_values": [
+    0.0,
+    0.5,
+    2.0
+  ]
+}

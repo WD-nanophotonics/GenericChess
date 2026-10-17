@@ -1,0 +1,413 @@
+{
+  "status": "PASS_ACTUAL_CHESS_REPLAY_AND_FINITE_CURVES",
+  "train_games": 45,
+  "train_legal_plies": 6459,
+  "evaluation_legal_plies": 9684,
+  "curve_rows": 5769,
+  "summaries": [
+    {
+      "seed": 1977,
+      "method": "td",
+      "samples": 1042,
+      "weights": [
+        1.0,
+        0.9385809181025598,
+        1.0961669778481409,
+        1.1144650736945867,
+        0.9775908993039437
+      ],
+      "first_quarter_loss": 0.0016308286472677535,
+      "last_quarter_loss": 0.001517828854765919,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    },
+    {
+      "seed": 1977,
+      "method": "td_tc",
+      "samples": 1042,
+      "weights": [
+        1.0,
+        0.9577917006159385,
+        1.0545013541097623,
+        1.0825511406601602,
+        0.9726379518948614
+      ],
+      "first_quarter_loss": 0.0016348526682032362,
+      "last_quarter_loss": 0.001537358311253071,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    },
+    {
+      "seed": 1977,
+      "method": "tree",
+      "samples": 23733,
+      "weights": [
+        1.0,
+        0.9498246751783588,
+        1.0877170163698842,
+        1.106972824766422,
+        0.9838147649165105
+      ],
+      "first_quarter_loss": 0.0013715931722868024,
+      "last_quarter_loss": 0.0024354892334387075,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    },
+    {
+      "seed": 8173,
+      "method": "td",
+      "samples": 839,
+      "weights": [
+        1.0,
+        0.5957247377072081,
+        0.5538720206718394,
+        1.0690774097460465,
+        1.3446008135323593
+      ],
+      "first_quarter_loss": 0.001069868658680123,
+      "last_quarter_loss": 0.0022259916415772927,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    },
+    {
+      "seed": 8173,
+      "method": "td_tc",
+      "samples": 839,
+      "weights": [
+        1.0,
+        0.5803642411295408,
+        0.5584551272582707,
+        1.01996438595261,
+        1.271134828612464
+      ],
+      "first_quarter_loss": 0.0010753871033881927,
+      "last_quarter_loss": 0.0022607919166018776,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    },
+    {
+      "seed": 8173,
+      "method": "tree",
+      "samples": 20724,
+      "weights": [
+        1.0,
+        0.5975808402728449,
+        0.5751686665221809,
+        1.0427618749396557,
+        1.3151884636874371
+      ],
+      "first_quarter_loss": 0.0012700603421045903,
+      "last_quarter_loss": 0.00665852543053488,
+      "scope": "On-policy changing-state losses, NOT fixed validation loss or proof of improvement."
+    }
+  ],
+  "runner_reason_corrections": [
+    {
+      "seed": 8173,
+      "method": "td",
+      "reported": "NODE_BUDGET",
+      "actual": "MAX_GAMES",
+      "reason": "Original runner default reason not changed after8game loop exhaustion; no data loss or budget excess. Original result preserved."
+    },
+    {
+      "seed": 8173,
+      "method": "td_tc",
+      "reported": "NODE_BUDGET",
+      "actual": "MAX_GAMES",
+      "reason": "Original runner default reason not changed after8game loop exhaustion; no data loss or budget excess. Original result preserved."
+    },
+    {
+      "seed": 8173,
+      "method": "tree",
+      "reported": "NODE_BUDGET",
+      "actual": "MAX_GAMES",
+      "reason": "Original runner default reason not changed after8game loop exhaustion; no data loss or budget excess. Original result preserved."
+    }
+  ],
+  "heldout_pairs": [
+    {
+      "key": [
+        1977,
+        "td",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td",
+        90002,
+        0
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td",
+        90002,
+        1
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td_tc",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td_tc",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td_tc",
+        90002,
+        0
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "td_tc",
+        90002,
+        1
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "tree",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "tree",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "tree",
+        90002,
+        0
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        1977,
+        "tree",
+        90002,
+        1
+      ],
+      "lower": -2,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": true
+    },
+    {
+      "key": [
+        8173,
+        "td",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td",
+        90002,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td",
+        90002,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td_tc",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td_tc",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td_tc",
+        90002,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "td_tc",
+        90002,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "tree",
+        90001,
+        0
+      ],
+      "lower": 0,
+      "upper": 2,
+      "actual_difference": null,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "tree",
+        90001,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "tree",
+        90002,
+        0
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    },
+    {
+      "key": [
+        8173,
+        "tree",
+        90002,
+        1
+      ],
+      "lower": 0,
+      "upper": 0,
+      "actual_difference": 0,
+      "identical_full_record": false
+    }
+  ],
+  "scope": "Actual rules/legal records checked using same independent library rule authority. No external engine strength validation. Parameter motion/search-target counts are not strength. Search trace correctness separately exhaustively tested on toy trees."
+}

@@ -12,17 +12,20 @@ access experiment is superseded, never a retry task. Change visibility only
 after a NEW explicit user direction. Actual checked project content of any
 origin may be published to origin/sidemission and project Slack; exclude actual
 personal information/passwords/credentials, preserve sensitive originals ignored.
-PRIMARY owns search/backend integration on sandbox; DEV_AUX independently owns
-the user-approved material-plus-fixed-proof experiment on sidemission. The old
-blanket no-auxiliary premise is superseded; no automatic spawning/cross-writes.
-Mutable selection/evidence belongs in LOCAL_MAINLINE.md. Latest user priority
-is Slack defect closure FIRST; own cursor/reporting repairs were already closed
-at11dddd801c68ef9289ff8293dba1dbb00701ede9 and read by PRIMARY. Recovery75
-verified no new defect/reply before resuming research. Prior search-first choice
-is historical context, not a competing live policy or authority to take over
-PRIMARY. CHAT_Comments advise; they do not override user directions.
-Carry purpose, superseded premise and consequence into recovery, not isolated
-historical permissions. Update current decisions with reasons when they change.
+PRIMARY owns search/backend integration on sandbox; DEV_AUX owns its separate
+research learner/validation on sidemission. Latest DIRECT USER decision2026-10-17
+replaces terminal-WDL finite-grid selection as main learning route with classical
+TD/search bootstrapping: standard Chess first, then SAME learner on full generic
+rules. Fixed material scale, random/uniform initialization, no human material
+priors in search/ordering/SEE/pruning. Actual terminal W/L/D remains final strength
+evaluation; search targets are training signals, bounds stay one-sided, UNKNOWN
+is never a draw/quantity label. Generic WIN Prover is an optional control/future
+architecture, not a learning prerequisite or coverage-work priority. Preserve old
+partial/failed studies as controls; no old cap reset. Mutable experiments belong
+in LOCAL_MAINLINE.md. This supersedes old material-plus-proof/grid/search-first
+selections and the already-closed Slack-defect-first selection; no PRIMARY takeover.
+CHAT_Comments advise; this direct user route decision is authoritative. Carry
+reason, superseded premise and execution consequence into recovery.
 
 User2026-10-11 explicitly authorizes a user-established auxiliary validation
 Agent. This scoped exception does not authorize automatic spawning/delegation.
@@ -96,8 +99,8 @@ has two lines: rule-only generic piece-value generation, cross-game ordering/
 ratio comparisons and explanation of bias; and efficient/stable search with a
 generic interface on unfamiliar rules (familiar-piece mixtures, recombined
 mechanics, existing-generator random rules with simple playability filtering).
-Games are secondary price-hole diagnostics, not a player-strength optimization
-goal. Do not keep adding positional patches or chasing classical/engine Elo.
+Games now evaluate the incremental material learner under the latest explicit
+user route. Do not replace learning with positional patches or chasing engine Elo.
 Static rule-derived tables remain candidates and cheap baselines, not a required
 predecessor to every evaluation route. Learning/frozen constants and small state
 interaction evaluators may receive literature and low-cost feasibility review.
@@ -257,7 +260,7 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment75
+# Historical scoped prototype qualifications:2026-10-16 segment75 (not research priority)
 
 Own sidemission/PUBLIC; PRIMARYreadonly. Current route/results:LOCAL_MAINLINE.
 Finite positive WIN certificates may be lifted to actual history only after

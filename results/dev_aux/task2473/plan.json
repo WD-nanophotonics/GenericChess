@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-17T02:41:13.449149+00:00",
+  "question": "What EXACT finite parameter intervals change optimalrootactions or only create earlier ties?",
+  "panels": [
+    {
+      "task": 2467,
+      "parameter": "common_R_offset_t",
+      "domain": [
+        0,
+        0.75
+      ],
+      "base": [
+        0.75,
+        0
+      ],
+      "direction": [
+        1,
+        1
+      ]
+    },
+    {
+      "task": 2469,
+      "parameter": "N_hand_q",
+      "domain": [
+        0,
+        3
+      ],
+      "base": [
+        0.75,
+        0.75,
+        0
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "scope": "Closed completeD3 trees only; exact rational leaf-order arrangement on explicitly declaredline/domain, not WDLfit/newholdout/uniqueprices/allfloatingIEEEequivalence.",
+  "pins": {
+    "results/dev_aux/task2467/nodes.jsonl": "4e28001d222207c6fb37d2a8dc0b076b3e12689b094e189a6551ddd826214b79",
+    "results/dev_aux/task2467/result.json": "6d1d2055c6c41b9c63668439f06ac992ac7043e2e9bfcee2610558049415e0b0",
+    "results/dev_aux/task2467/root.json": "80c5bc501117dc3e33dbc0b32e02cbee81faa61d54aaadaee34ce2a338a0ece5",
+    "results/dev_aux/task2469/nodes.jsonl": "d3a2ce8969b1564607be359f65fe9d0157582ccca5d09ab749fc23db5aa785e3",
+    "results/dev_aux/task2469/result.json": "4e3a190e63842837cdb1226d6ab77090435bafcb36ab0115c194f20314588cb6",
+    "results/dev_aux/task2469/root.json": "76ea669bcd8a386116b780ebc6d2ece5f0ba64cf9e2f703ebcf7226a9fad3ad8"
+  }
+}

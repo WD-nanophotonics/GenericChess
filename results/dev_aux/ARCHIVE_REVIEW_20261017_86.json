@@ -1,0 +1,333 @@
+{
+  "status": "PASS_ACTUAL86_PAYLOAD_SENSITIVE_CONTENT_AST_JSON_SHA_AND_CRC",
+  "archive": "DELTA_REPRO_20261017_86.zip",
+  "archive_sha": "3339b9f87b2d65cc0ef23dd2d8b26c96a2fae7fec729dbd122697e0b069b10db",
+  "bytes": 10270468,
+  "payloads": 380,
+  "raw_bytes": 155917221,
+  "sensitive_hits": 0,
+  "AST_checks": 167,
+  "JSON_files": 175,
+  "JSONL_records": 169058,
+  "semantic_equivalent_overlays": [
+    {
+      "path": "results/dev_aux/task2429/rules.json",
+      "old_sha": "83c04da1920d57aceb991d37e0f96a9f8608dfd149dfbb9b97bba80573ae3954",
+      "new_sha": "793200e0cc56f408714436fff274d78636a61a4f8732ee844808a99cd0ad6101",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-0.json",
+      "old_sha": "c4b68044c7cdb2f7b6a24f0dbc801bbe44cc8ebf8f146f7a796ac23df667cf5d",
+      "new_sha": "33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-1.json",
+      "old_sha": "6234832fb9bc82be318f331cbcef6a720a92578884f8e8c72ffbb0db21ddf956",
+      "new_sha": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-10.json",
+      "old_sha": "2e709f499265516046046ccc4626c24fb8fe21cf79cc1fb8a5aa508d34602f77",
+      "new_sha": "05a0df69683245e57d80d106b06a72f127fee05c133c83fe9207d3d2411ae4e8",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-11.json",
+      "old_sha": "73647c92e9ac900ede7b1512d79333bd38b03c2984662ae668fdf50567c4bc15",
+      "new_sha": "12a4bcac9191c8597ba4808b2343f8bcbe695f468f8493b9e78b40a4fa6a6b1d",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-12.json",
+      "old_sha": "bfe9c727aa761cb641584257765abcd7ff5c2cf87ee50f8712e7205a1029b20f",
+      "new_sha": "afa8e0ec11c54e47bdf9eab13a96e37467dd33ffa946d3bc3b43f50f87c82ede",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-13.json",
+      "old_sha": "9a8a80fe3b3fe7a4e2fa31d2443e120504909d15e8f29546a370c6fd4761ae40",
+      "new_sha": "a2ee57f632878223c4e4fc0c9c4aa15672d8b4db6e65e09d8de28336fb357024",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-14.json",
+      "old_sha": "6b72ec849e1c26bc87dbce07560c9ed24683c3f31cc0c9a5bfc6cb33c1897f83",
+      "new_sha": "6a19e82108867210e12768791c97a12542feea2f65dcded97bfe75b01c06f062",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-15.json",
+      "old_sha": "75df7251e34564ffb6043a425245e7a3c28865fe0f83981a45a056961797df28",
+      "new_sha": "28736c100941698a4218fb0532b0cc65017a4c9b820070faf1951f7bf523c284",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-2.json",
+      "old_sha": "62bf93ff946d7632b2b29fa194f6e36755f524fe275b35d68c7a838e187fb300",
+      "new_sha": "c19d75ddf41e364ee1e05fcc0613bb247aa380f69f027212fb0196bfda691550",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-3.json",
+      "old_sha": "5453d6395b75d8a4292ebbc42c189ad6bfcdff74367ec20ffdb1551cfa18e33d",
+      "new_sha": "6b77cccc63c09fd3543f60c3c8a5ac25e7ef9271ff931d150a0029150749febf",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-4.json",
+      "old_sha": "d5c97e9f082c400f107529dc68e968546d1f6aa7e38454b5cc9b754d47b6ecd8",
+      "new_sha": "68d723068ad56685ad421d8a99af4bff3dcd07cdf318747a4f49d3359926d0af",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-5.json",
+      "old_sha": "a90782b931889ab78956d306106c755c653ed430642f67c02bd3006b718b6c16",
+      "new_sha": "3198725357010ecb9c77e1e8b5fee2b9ca3a64b00f4b1139fb23970f42ee0f9e",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-6.json",
+      "old_sha": "9310a95635d57c968758553ad1ebc0e00feb7e16639dc5086f0f44ad8ca7bce7",
+      "new_sha": "a42644f0a40c6138324da95a452ed5e4865ad29c331ac43bb8014a940a8cab90",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-7.json",
+      "old_sha": "fb2b196630db1e7cd1f7250320289f26bb498cd578eb6fa73fcd0be35cecb2fc",
+      "new_sha": "0c4e9d5c2206b9ee36f5de2b6d7a46a035bcb47ca18acbf7e9b167bfdf2d4e13",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-8.json",
+      "old_sha": "0956c496b7d6c52d6954c9dc624522c124fdd088862d5f2161a0ecfdd50a3713",
+      "new_sha": "b02a157c47fe9f7e52b9300307ab993a7af5aa3f7ea035dccc9e9a32f655d90c",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2433/rules-9.json",
+      "old_sha": "db280c28c1bde28e075822a3d77a6225bb04cb7a8b69a65241c56d38cdb6a02e",
+      "new_sha": "0687225510e7bd889b1ba45145deac891de3a3198beb2222267ee46fa66d8836",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-0.json",
+      "old_sha": "5f168609decba83fad175058e97646f46c5dc0164f1c29ec00e70c09f62172f5",
+      "new_sha": "b8369eae189a5038480aeb6a0ba960198196f2f9e2634b21f2494253c7989551",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-1.json",
+      "old_sha": "cdce3f1cd10f8667d74c972d66dfe2ad225b02ab9e14fe6e97e0fafe29e4d3f4",
+      "new_sha": "0866a6f1d17dac081d607df26fbc5f20c83e3e3eb28ef4210a04e850297f7a52",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-10.json",
+      "old_sha": "5fa361424e33d9ac6f854f4e9df3f1a38b496dac2968007d361ce2f1a5f99a48",
+      "new_sha": "256f6dfa14c5ccd84a25cca1ae525ebe3683192fcfdddab0bed839940b1fde54",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-11.json",
+      "old_sha": "b21156e9f49e78dffa4a0c0f1462a7ccad1955ca305feb654eff829c2c8998ba",
+      "new_sha": "2afc7ef0c8ebf598d0f36040109fa951280806a5fbecfd209b3632d4aa709c41",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-12.json",
+      "old_sha": "300b73afbc10aa7d422c0844d3d236f5297410ae207ec9644e7b5043cc2404d6",
+      "new_sha": "01740172f8b063fb87ab4364593613c91b4177bc19180f75d15d814e059012fd",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-13.json",
+      "old_sha": "56cede1398a98d60d948d0dbfc5a991f1a92711bf520202a51c80f9ef169aaea",
+      "new_sha": "a65aa11f8956bbfd19f3487fe27b559edd675aeecb42101c5383599165e69bbb",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-14.json",
+      "old_sha": "fd958a77c08112773299d36596dde96007626787c595f76732939c0cbf9de1c9",
+      "new_sha": "c23990328672142f1d0d5967e32aa142bc948689da7be2ee0faf5db7959b8614",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-15.json",
+      "old_sha": "43bf72ab287f9767c4458254ec362535bf8d5dcab761a7d8f4a3e0f04efca92f",
+      "new_sha": "688f3bcb380feb2cdd001f5d22baa789bf32407490c58ebd609887c89ab75aff",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-2.json",
+      "old_sha": "fd1115c55c18288abe496bed0b9db8f8889228778cfe86fcb6d9164263e7507c",
+      "new_sha": "1f1c184ac0f7e170e3913b46903a7e26e30f41ddc100e7f1f1012d145b246c39",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-3.json",
+      "old_sha": "a0f9a54277d02c7ee8507f768a6969e81505ec003b45bfd14313b9466d1f29c3",
+      "new_sha": "6c1b18de58a4addd49f50ec66d4a4dd0499ef1680fa76883deaa7bcbbafdaec1",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-4.json",
+      "old_sha": "8aa0fb706b4eac1d1a39a8439cd522949b65424f8fb5a0de195fbbcf75d6b3f0",
+      "new_sha": "211a57da2cb071f9a64e3b52b77b583e965f0ce7440f6b8ea30ead06bf50e2bd",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-5.json",
+      "old_sha": "25e1b2bb2d1f0f6bebdf81b4d54b1e26c3041a5e41f40f7ea4fa528697759fee",
+      "new_sha": "931dc0e345cf7fc2223ed521079cea701d1bf60786db2d8fff2591c57d5548b3",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-6.json",
+      "old_sha": "60a1009379745d063aa598ef92ecc2cb16b917920ecdc9ac787466446d787d8d",
+      "new_sha": "c8c6d7b2b8db20a02aeb59981867ee3ed6e24224e75b9449f0ffc966d5566e4a",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-7.json",
+      "old_sha": "8144569a4f304d51c4cb61246355953010a8f45a8b6c2a2dfd882042139c5ace",
+      "new_sha": "af002db98c7fc3cbcbd53b68fef584519fef3515db2ab4baf03b62723131a73a",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-8.json",
+      "old_sha": "802c0d34932af3eeee97dec1c1a8c4dfce0d643fd6bda56ac816296d1a154602",
+      "new_sha": "e6ea4e6530351db6eb636cd4a7016a00928815a3ba1fabc20761f7fd6df70472",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2435/rules-9.json",
+      "old_sha": "c7b50881c1ad7cc1ff211e04979d5ec232463c5d547790e89bd55c5333d036b3",
+      "new_sha": "bb4249afabf63bda5bd6392b93184d56e9f3e0afb375f53ccaf40f9fd6a7a39b",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-0.json",
+      "old_sha": "9cb0170025b8dd0aa86e8268f883e53428fac104224faf19886cf175c10004d8",
+      "new_sha": "e7950da912c88d23c1a8355e25dc697fd6ccc5fabb4a9cca311563587b3474ff",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-1.json",
+      "old_sha": "4d8be0f8f0c8bf93485faae142a1e0c38c35a538e1626bde8b17d0cb7d9c977c",
+      "new_sha": "d07cf6ee89ce53d72ff3f21925876cabead9eb3fc8cf025a2f46a9756f82f829",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-10.json",
+      "old_sha": "6904e37ebacfe999a373ddcb6b560ed296f91b6a138f136fbea36d182eafd1af",
+      "new_sha": "05bffe91fde6b7286eed8816e4465474757a99903873b2a7f6357ff1ae624522",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-11.json",
+      "old_sha": "e232d8c90b3d15c6db43c87f02625bb04c40aae43fcc8082812390d157bc448b",
+      "new_sha": "a645c04ecb9be71da5580b4b6c880ba5ed81f1bf52e6bfaba59fc912bf185baa",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-2.json",
+      "old_sha": "a53053a1cfb360f39bef4b1b17d5f23cdaa278d010cdbf8403a6328ee9bb9164",
+      "new_sha": "e7a68abf3168383f6e95518be582137504e2731cb2e2e85fac855aca95525ebd",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-3.json",
+      "old_sha": "b36cca16c50bc088ad383366b2d3908749e664be0a3f7881393fd7313ce74d23",
+      "new_sha": "1838279e944467dfac6f6df73ae5004887cf7b96deac225749991f7c0b0b62d4",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-4.json",
+      "old_sha": "24f6665247f793042a28a7efb237cc2dcc838db17fdfec2ce71faf5e17bab779",
+      "new_sha": "07ce02bc4bdc34094e17bb744353da92a0f08ae5924e6aeb8fa69515b404e9b4",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-5.json",
+      "old_sha": "6925627fa4519b2ac652513f679ed1d72b618a5b6032edcc67fae0cca09133a0",
+      "new_sha": "43699e26fcbe7ad5c083f3765c5e4aa8960b797e34b69e9632c1fd2ba04336c2",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-6.json",
+      "old_sha": "071d13563e57ebf6bf7b2f1563103a32116ec7670128da770cc668e9da7b3c29",
+      "new_sha": "f3908acc073c309e7d0f167f2cccf5642550799b7812c250c556dfff78cd8c84",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-7.json",
+      "old_sha": "c63c41715a55e4390837ad88a95fcc9973c3194c9decbc46049cbd27ab23a8b8",
+      "new_sha": "372d1eb3a24e711c3568ee64a9d76f85099a31b48501627205143b900c008098",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-8.json",
+      "old_sha": "fc26e9e28d7629dcca0110ecba2a3cb10a62ec676ccf5dde905d67d3cb30a39a",
+      "new_sha": "e934ee03d507b35145b836b193219e19f139b460cbd63e02d62397bf33f90949",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2439/rules-9.json",
+      "old_sha": "fee9ec99b97da56f9c57839428b20a783f86733929d012e9505f5641c4c72a5e",
+      "new_sha": "4a07bd454db26e5a6b1f87c4a69d4fdc7282c916c24e04b08509f51345e1521a",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-0.json",
+      "old_sha": "4530cfb710d9df2e239baba810d7c40f3c250c1be6cd7be9253a0a60650465f7",
+      "new_sha": "816261c31b84a2fa08bf0858e35a49b7d13a6aeda37855b327106588dbd4e7aa",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-1.json",
+      "old_sha": "2924f75c60f134d24da98cf63893d2990ecb107d372a9286379b56bf57d1a6bb",
+      "new_sha": "f907eef226ebef30ccea55a9eadadf508eb0562118d21060cb7191940b4c9352",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-2.json",
+      "old_sha": "581438bbc3f9da1dbdde500389a30150ef7b3859890c4c1123fd3db64230d186",
+      "new_sha": "a0dddc96f11f1df00f96377bb072f9ce2eadd68cdc349c711e0c045d304fc746",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-3.json",
+      "old_sha": "057e1a060da078cbc39f61077b9fa69e616829b32a05ad6ba35368c5682bd6ec",
+      "new_sha": "547c26a46f9182f4ffcfaf0008aeb7d7e46da0a93853b2db95eabc59df02de65",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-4.json",
+      "old_sha": "a3fa71e9bdc92a8b6face4d70829e2cdad2d03a736d89e3e2cb3dc2ecb629f39",
+      "new_sha": "5d8035380f85a3842a2b68b55ca71fb9e85931013ab84e228eec9aebc248fe23",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-5.json",
+      "old_sha": "e2ae2b9a000d1b959b569804dbb59a8c9a504a127ed4e73f666d9f1694d5fbaa",
+      "new_sha": "4a133810fae82e5e75a967db573f58693319480b4adee8e9acb4da9fc3b40cac",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-6.json",
+      "old_sha": "1775be64e808886aaf7355fe478cfa51e49f1fa13fa3e7097f6acfc7860eefd6",
+      "new_sha": "d3eca2dd55c65e040ba111540cd7ba46530e916708669dcc73771fff871fcde6",
+      "semantic_equal": true
+    },
+    {
+      "path": "results/dev_aux/task2460/rules-7.json",
+      "old_sha": "9ec7e2b7f4ca9600fb76efdcc178fbbbdd28040e610cb318bfba1d787a370aa1",
+      "new_sha": "37883261edc2c5aa94de5173a207e7917a7037996b34001a803a6b0a8188d09a",
+      "semantic_equal": true
+    }
+  ],
+  "seconds": 13.890947800013237
+}

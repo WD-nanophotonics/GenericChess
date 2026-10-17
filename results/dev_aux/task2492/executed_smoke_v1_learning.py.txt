@@ -1,0 +1,161 @@
+"""Material-only incremental learning, research API; no product defaults.
+
+Scores/features always use player0 perspective. Search weights are frozen per
+call. Bounds describe THIS fixed-depth/q-depth search, never rule WDL.
+"""
+from dataclasses import dataclass
+from math import tanh,isfinite,inf
+import random,time
+MATE=1_000_000.
+
+@dataclass(frozen=True)
+class Sample:
+ phi:tuple
+ lower:float
+ upper:float
+ depth:int
+
+@dataclass(frozen=True)
+class Receipt:
+ action:object
+ value:float|None
+ pv_phi:tuple|None
+ pv_terminal:bool
+ samples:tuple
+ nodes:int
+ complete:bool
+ q_caps:int
+ seconds:float
+ reason:str
+
+class BudgetEnd(Exception):pass
+
+class Model:
+ def __init__(self,weights,*,fixed=0,scale=10.):
+  self.weights=list(map(float,weights));self.fixed=fixed;self.scale=float(scale)
+  if not self.weights or not all(map(isfinite,self.weights)) or not 0<=fixed<len(weights) or scale<=0:raise ValueError('invalid model')
+  self.weights[fixed]=1.
+ def raw(self,phi):
+  if len(phi)!=len(self.weights):raise ValueError('feature dimension')
+  v=sum(x*w for x,w in zip(phi,self.weights))
+  if not isfinite(v) or abs(v)>=MATE/2:raise ValueError('finite material magnitude exceeds terminal safety margin')
+  return v
+ def prediction(self,phi):return tanh(self.raw(phi)/self.scale)
+ def gradient(self,phi):
+  v=self.prediction(phi);return tuple(0. if i==self.fixed else x*(1-v*v)/self.scale for i,x in enumerate(phi))
+ def apply(self,delta):
+  candidate=[w+d for w,d in zip(self.weights,delta)];candidate[self.fixed]=1.
+  if len(delta)!=len(self.weights) or not all(map(isfinite,candidate)):raise ValueError('nonfinite update')
+  self.weights=candidate
+
+def transformed(x,scale):return tanh(x/scale)
+def interval_error(v,lower,upper):
+ if lower>upper:raise ValueError('reversed interval')
+ return lower-v if v<lower else upper-v if v>upper else 0.
+
+class AlphaBeta:
+ """Full-width D search, bounded all-capture/check-evasion qsearch.
+
+ No TT, SEE, MVV-LVA, nullmove, futility, material-based ordering/pruning.
+ Legal actions are randomly permuted independently of material coefficients.
+ Qdepth exhaustion while in check aborts (no illegal stand-pat evaluation).
+ """
+ def __init__(self,depth=2,qdepth=2):
+  if depth<1 or qdepth<0:raise ValueError('invalid depth')
+  self.depth,self.qdepth=depth,qdepth
+ def search(self,env,model,*,nodes=8192,seconds=5.,seed=0,cancel=lambda:None):
+  start=time.perf_counter();count=0;caps=0;samples=[];rng=random.Random(seed)
+  def poll():
+   nonlocal count
+   if count>=nodes or time.perf_counter()-start>=seconds:raise BudgetEnd('resource limit')
+   if count%128==0:cancel()
+   count+=1
+  def walk(depth,qleft,alpha,beta):
+   nonlocal caps
+   poll();terminal=env.terminal()
+   if terminal is not None:return MATE*terminal,None,True,None
+   phi=env.features();a0,b0=alpha,beta;own=env.player()==0
+   if depth==0:
+    checked=env.in_check()
+    if qleft==0:
+     if checked and self.qdepth>0:raise BudgetEnd('qdepth in check')
+     caps+=1;return model.raw(phi),phi,False,None
+    actions=list(env.actions())
+    if not checked:actions=[a for a in actions if env.tactical(a)]
+    best=(-inf if own else inf) if checked else model.raw(phi)
+    best_phi=phi;best_terminal=False;chosen=None
+    if not checked:
+     if own:alpha=max(alpha,best)
+     else:beta=min(beta,best)
+     if alpha>=beta:return best,best_phi,False,None
+   else:
+    actions=list(env.actions());best=-inf if own else inf;best_phi=None;best_terminal=False;chosen=None
+   rng.shuffle(actions)
+   for a in actions:
+    env.push(a)
+    try:score,pv,pvt,_=walk(max(0,depth-1),qleft if depth else qleft-1,alpha,beta)
+    finally:env.pop()
+    if (own and score>best) or (not own and score<best):best,best_phi,best_terminal,chosen=score,pv,pvt,a
+    if own:alpha=max(alpha,best)
+    else:beta=min(beta,best)
+    if alpha>=beta:break
+   if not isfinite(best):raise ValueError('ongoing state without actions')
+   if depth>0:
+    lo,hi=(-inf,best) if best<=a0 else (best,inf) if best>=b0 else (best,best)
+    samples.append(Sample(tuple(phi),lo,hi,depth))
+   return best,best_phi,best_terminal,chosen
+  try:
+   cancel();v,pv,pvt,action=walk(self.depth,self.qdepth,-inf,inf)
+   return Receipt(action,v,pv,pvt,tuple(samples),count,True,caps,time.perf_counter()-start,'complete')
+  except BudgetEnd as e:
+   # Partial descendants cannot become an admitted root or training batch.
+   return Receipt(None,None,None,False,(),count,False,caps,time.perf_counter()-start,str(e))
+
+class TreeStrap:
+ """One-sided transformed losses, mean batch semi-gradient (explicit variant).
+
+ All targets/gradients computed BEFORE update; lower/upper never exactified.
+ Mean rather than paper sum makes eta independent of observed tree size.
+ """
+ def __init__(self,eta=.05):self.eta=eta
+ def update(self,model,receipt):
+  if not receipt.complete:return dict(samples=0,loss=None,changed=False)
+  delta=[0.]*len(model.weights);loss=0.;active=0
+  for s in receipt.samples:
+   pred=model.prediction(s.phi);lo=transformed(s.lower,model.scale);hi=transformed(s.upper,model.scale)
+   err=interval_error(pred,lo,hi);loss+=err*err/2;active+=err!=0
+   for i,g in enumerate(model.gradient(s.phi)):delta[i]+=err*g
+  n=len(receipt.samples)
+  if n:model.apply([self.eta*d/n for d in delta])
+  return dict(samples=n,active=active,loss=loss/max(1,n),changed=any(delta))
+
+class TDLeaf:
+ """TD(lambda) at PV leaves; stored semi-gradients, white-oriented targets.
+
+ Fixed lambda/gamma1, optional temporal-coherence learning rates; not a full
+ Beal-Smith1997/1999 reproduction (no adaptive prediction decay). Terminal
+ value is only actual rules outcome. UNKNOWN discards pending trace unchanged.
+ """
+ def __init__(self,eta=.05,lam=.7,coherence=False):
+  if not 0<=lam<=1:raise ValueError('lambda')
+  self.eta,self.lam,self.coherence=eta,lam,coherence;self.reset();self.net=None;self.total=None
+ def reset(self):self.previous=None;self.elig=None
+ def _step(self,model,target):
+  if self.previous is None:return dict(samples=0,loss=None,changed=False)
+  pred,grad=self.previous
+  if self.elig is None:self.elig=[0.]*len(grad)
+  self.elig=[self.lam*e+g for e,g in zip(self.elig,grad)];err=target-pred;rec=[err*e for e in self.elig]
+  if self.net is None:self.net=[0.]*len(grad);self.total=[0.]*len(grad)
+  rates=[abs(n)/a if a else 1. for n,a in zip(self.net,self.total)] if self.coherence else [1.]*len(grad)
+  model.apply([self.eta*r*d for r,d in zip(rates,rec)])
+  self.net=[n+d for n,d in zip(self.net,rec)];self.total=[a+abs(d) for a,d in zip(self.total,rec)]
+  return dict(samples=1,loss=err*err/2,changed=any(rec))
+ def observe(self,model,receipt):
+  if not receipt.complete:self.reset();return dict(samples=0,loss=None,changed=False)
+  target=transformed(receipt.value,model.scale)
+  # Store prediction and derivative from the SAME pre-update parameter snapshot.
+  next_previous=None if receipt.pv_terminal else (model.prediction(receipt.pv_phi),model.gradient(receipt.pv_phi))
+  stats=self._step(model,target);self.previous=next_previous;return stats
+ def finish(self,model,outcome):
+  stats=dict(samples=0,loss=None,changed=False) if outcome is None else self._step(model,float(outcome))
+  self.reset();return stats

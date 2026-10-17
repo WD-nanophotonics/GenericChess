@@ -192,3 +192,12 @@ commit and push in separate checked tool calls, or explicitly abort on the
 actual exit code. A later successful command does not prove earlier checks
 passed. Segment75 preserves the failed EOF check and its publication correction;
 raw executed sources and sealed evidence are unchanged.
+
+## Direct user research priority2026-10-17
+
+TD/search-bootstrap material learning replaces terminal-WDL grid selection as
+mainline: standard Chess reproduction before generic transfer. WDL evaluates
+final strength; search targets train with bound-aware losses. Preserve old studies
+and UNKNOWN. The generic WIN Prover is optional, never a prerequisite for this
+learning work. This is an explicit user route decision, not CHAT advisory adoption.
+See current LOCAL_MAINLINE.md and task2492 for implementation scope/limitations.

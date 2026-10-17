@@ -1,0 +1,84 @@
+{
+  "status": "INTERRUPTED_USER_RESEARCH_ROUTE_RESET",
+  "utc": "2026-10-17T03:24:44.603699+00:00",
+  "games": 115,
+  "expected_games": 192,
+  "missing": 77,
+  "decisions": 1598,
+  "certificates": 61,
+  "outcomes": {
+    "W": 64,
+    "L": 46,
+    "D": 5,
+    "U": 0
+  },
+  "partial": {
+    "slot": {
+      "slot": 115,
+      "root": 9,
+      "opponent": 0,
+      "candidate_color": 1,
+      "ratio": 0.75,
+      "hand_ratio": 0.75,
+      "N_hand": 1.0,
+      "arm": "LOW_ONLY_INCREMENTAL"
+    },
+    "plies": 3,
+    "record": {
+      "actions": [
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "e9a917b775312e596b216032cffd8d4a2c20c425d93abe5b2fb08b8d54a95270",
+      "schema_version": 1
+    },
+    "state_sha": "7612387f2cd4d882a3af48f10d49c288b55414c5e91acc73426f358dce990031",
+    "actual_status": "ongoing",
+    "winner": null
+  },
+  "partial_reward": null,
+  "termination": "OS Stop-Process of verified own module processes21860/14736; Python finally not executed. Flushed journals preserved; no relabel or restart.",
+  "pins": {
+    "games.jsonl": "caff026fda6fa90149ef719b1ffb9317fa72bcb3b9b9c2b5cfc1b1036328befe",
+    "commits.jsonl": "3f8a487e8ff8e8b2f749d4904dea15079fa437737666c99c929ead93518a5712",
+    "decisions.jsonl": "749d5d2fbe33613dcf113b48f29bb1c35a1cf2f82ecdf84d34ac13d70964dda9",
+    "certificates.jsonl": "a73aee4c76862a134b3798249b061c6bc87cd5ea95b2e17ed34617cc934db892",
+    "started.json": "c89f4838800bfbacc02efd2fbe78dcda7ae999c16a1f580fa2e45d61452d55da",
+    "plan.json": "601f4244979155a123a348caa0eeff4fd3c971eba0bc89a53031070718405be8"
+  }
+}
