@@ -6,40 +6,54 @@ The complete preceding selection/evidence is preserved at PUBLIC Git
 2d3e54105bae3e7e38a1543b4f98cdc7442e479e, this same path and its purpose reports.
 Older reports are evidence, never automatic instructions to repeat their runs.
 
-## Current decision and immediate work —2026-10-17
+## Current decision and immediate work - 2026-10-17
 
-Latest delivery: GUARD_ENCODING_AND_SESSION_BOUNDARIES_20261017.md fixes the
-opt-in exact-empty count/exists representation boundary (candidatev4) and honors
-finished GameSession markers without breaking state+witness-only adapters.
-Final3236normal/156isolated-source tiers apply; unadopted binding-filter3240 is
-separate. Four paired16board continuations preserve402queries/402edges and full
-history observations; onepair actualmate, three64plyUNKNOWN, not a quality proof.
+Current PRIMARY selection: support and independently check the now-published
+AUX material-learning example using its SAME frozen model/search, rather than
+start the reserved Core binding-reuse optimization or another learner. The new
+Slack route comment1792207488 and AUX request1792207500 were read completely;
+CHAT remains reference, not a new authority or permanent permission change.
+Actual positive evidence changes the former search-before-learning premise.
+AUX owns training/adapter changes and its separate sidemission checkout.
 
-Keep search-first and current defaults. New1024node budget admission completesD1
-on17actualwide roots, but16games give identical3W3L2UNKNOWN and allpairbounds
-[-.5,.5]. Nativeprojection gate1of4 fails, so16plannedgames neverstart. Existing
-binding-filter reuse passes semantics but freshcostgate2of4 fails; originalCore
-is restored. Do not rescue these gates, repeat their arenas or add a new cache.
-Actual long-history root admission remains a measured cost; next inspect the
-existing checked-binding/transition duplication before choosing any new route.
-The32ply counter measures285+285S3trials;12verified-binding component children
-match full public states at16/32/48/64plies. No resolver reuse is yet delivered.
-Dot renewal1792205569 gives a locally reproduced int-subclass filter mismatch;
-future fast paths need exact builtin original components/old fallback, not a
-new public rejection. The withdrawn coordinate-only cost candidate stays rejected.
+LEARNING_ROUTE_AND_CORE_SUPPORT_20261017.md records original-source boundaries,
+PRIMARY's13AUXtests/64closedgames/10129legal-ply replay and paired .25/.5625 W-L
+gains. Both frozen seeds remain; first descriptive interval crosses0 and the
+same8families are reused, not16independent families. This is a scoped positive
+learned-price result, not generic transfer, human ratios or universal strength.
+PRIMARY subsequently reproduced5299recorded frozen searches/actions/nodecounts
+and independently computed37episode forward TD updates (maxerror2.22e-16). This
+is same-source receipt reproduction, not new training/independent rule authority.
 
-The preceding Nativeguard/Core unbound-offset repair remains at PUBLIC
-cb6eaff8ff0364683dba0717ff6d7720730d5070. Its interruptedwarm adverseWtoL cohort
-stays4terminal/1partial/11unstarted; no latest study completes those old slots.
-AUX86 parent+oneDotreply are read ONLY, no85/86 source/report/tree/program
-execution. Its price/tie/proof-frontier work stays inAUXlane. Peer advice is
-reference, not authority or a new WDL/approval gate. NEXT_WORK owns one action.
+The fresh128slot fixed-policy D2/D3 study is CLOSED in265.86s, no cap extension.
+D2has64actualterminals and gains.0625/.75 on new90013-90020prefixes; the first
+approximate family interval crosses0. D3has64SEARCH_LIMIT_UNKNOWN, no reward
+gain estimate (logicalbounds[-2,2]). Same-limit failed-query replays64/64hit4096
+nodes; do not treat that preflight miss as learned-price failure or fund reruns.
+Next read AUX87fixedsource/common-plain-deployment results when published, inspect
+actual leaf-gradient and whole-training-regime contrast. Current87request/Dot
+reply read ONLY; no87source/execution claim, duplicate training or new API.
 
-Keep search capability/completion and bottleneck attribution first, then revisit
-rule-only price/statistical/small-learning routes when measured evidence changes
-a concrete choice. This preserves the user's selected research priority; it is
-not a permanent prohibition on WDL, solver or appropriate small training.
-DEV_AUX's separate solver/verifier/cursor/runtime/learning lane stays its own.
+Existing publicCore supports fractional values/fullhistory/PV in the measured
+scope; no new API or optimization follows. The old trajectory carrier and the
+published AUX86 SessionEnv both map actual RESTART/NO_CONTEST declarations0.
+Owner was notified of this concrete Generic-transfer hazard; it does not
+invalidate the standardChess positive result. No AUX source/checkout edits here.
+Terminal PV is constant/zero gradient; prior eligibility and search-terminal
+anchors are distinct from the final actual-outcome residual. D0 fallbacks and
+counterfactual old-PV leaf derivatives are not completed on-policy TDLeaf.
+
+Previous guard/session delivery remains PUBLIC
+96b96b830e70e4a15a5ca8a24006e21075fc884c with3236normal/156exactsource checks.
+The empty count/exists candidate v4 and finished-session fixes remain. The
+Nativeprojection1of4 and coordinatefilter2of4 cost gates failed; originalCore is
+restored. The reserve transient-binding proposal had285+285S3trials/12equal
+componentchildren but was NOT started this segment: no learner dependency yet.
+Do not rescue those gates or revive the interrupted warm cohort.
+
+The prior search-first selection below is historical context for current
+capabilities, not an instruction to postpone the positive learner or repeat
+old arenas. Reconsider engineering only for a concrete needed consumer.
 
 Current concrete delivery: Core no-progress search now has verified complete root
 admission, reversible progress/deferred-error facts and exact action-sensitive

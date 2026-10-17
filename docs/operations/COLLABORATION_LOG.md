@@ -3791,3 +3791,41 @@ coordinate mismatch; PRIMARY locally reproduces on the already rejected filter,
 while unchanged Core accepts. Adopt future builtin-original-component eligibility,
 without reviving cost failure. Existing verified-binding transition gives12full
 child/history equalities over16/32/48/64ply roots; no production resolver/cache.
+
+
+## Material-learning support and independent fixed-source check - 2026-10-17
+
+New route comment1792207488 and AUX request1792207500+Dot reply1792207751
+were read fully, saved before parsing. CHAT remains reference; PRIMARY selects
+support because AUX now supplies an actual scoped positive learner. Reserved
+binding-reuse engineering was not started; no competing learner or worker.
+
+At fixed5f3cc0aada9f75794a55f12119f1e78e59039142 PRIMARY verified380capsule
+payload hashes, executed13new tests and independently replayed64closed evaluation
+games/10129legalplies, confirming paired gains .25/.5625 with no16ply training
+opening-history match. Initial legal-replay tier was later strengthened by5299recorded frozen searches
+and37independent forward-lambda update computations; no new training replication.
+AUX's two-seed/shared8family and first-interval-crosses0 limits remain.
+
+PRIMARY's fullCore PV observations preserve710committed/312PVedges,14terminal/
+10UNKNOWN, with404nonterminalD0 slots retained. Fractional and cold/warm finite
+callers do not justify a new API. Actual old-carrier non-scoring/terminal-leaf
+hazards were then checked in the published AUX SessionEnv: RESTART/NO_CONTEST
+returns0 there too. Owner notified; PRIMARY did not edit its learning lane.
+StandardChess positive result is unaffected. Original1999 material-only source
+and local scale arithmetic were shared without a routine response request.
+
+One independent fixed-policy D2/D3 study uses AUX's existing model/search/runner,
+NEW8families/all2frozen sets/bothroles/commonall1foe,128slots under one1800s cap.
+No training or price selection. All128slots close in265.86s: D2gains.0625/.75,
+D3all64UNKNOWN at4096nodes (all64same-limit final queries reproduce refusal).
+12533newlegalplies replayed; first seed still weak, no D3/Genericstrength claim.
+AUX87root1792210550+Dotreply1792210638read fully, OWNER_REPORTED code/run only;
+retain whole TRAIN-regime interpretation under common deployment, not isolated
+q-target quality. Next use its fixed results, not duplicate qtraining. No estimated
+single-Agent efficiency percentage, quiet window or publication approval gate.
+
+Exposure correction receipt1792211117.524309 informs AUX87 that90013-90020are
+now observed through PRIMARY86fixedpolicy work; preserve any existing registration,
+record shared exposure, no silent seed changes. Delivery only, no adoption claimed.
+Fresh PUBLIC-capsule/source restoration passes13tests and64old/128newrecord audits.
