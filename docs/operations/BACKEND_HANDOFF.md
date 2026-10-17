@@ -605,3 +605,21 @@ No UI, AUX checkout, installed default/model or normal Native binary is changed.
 The registered static comparison independently preserves source-floating optima
 at all25actuallearned-initial first divergences; precision work has no observed
 need in this scope. Source/reproduction: research/RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.md.
+
+
+## Actual mature-price serving checks —2026-10-17
+
+The unchanged standard checkpoint/Native256 consumer now has64AUX91initial/mid
+and128endpoint controls, includingP=.02864485, all ownCorefloat/integerD2optimal.
+Recorded TRAINleaf gradients match; EVALdidnotrecord referencePV/gradients, so
+no equality is invented. LegacyBoardMove and SemanticBoardMove objects differ:
+45/64physicalprojections match,19differ withsame checkedgradient. Projection is
+not a generic binding/history quotient or a completed AUXcaller adapter.
+
+CurrentPpositivevectors admit a conditional exact bounded material-policy
+rescaling, but fixedT10TDpredictors/gradients/steps change; do not normalize the
+owner's weights or swap PRIMARYmedianTDintoitsloop. Fresh sourcequalification
+builds its own Native and retains192controls; no normalbinary/product/default/
+model/anothercheckout change. Large7040game study is explicitly a commonNative
+served-candidate regime, not reproducedCorefloatfitness. Exact source/limits:
+research/MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md.

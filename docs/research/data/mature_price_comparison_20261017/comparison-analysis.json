@@ -1,0 +1,843 @@
+{
+  "all_first_action_differences_on_candidate_turn": true,
+  "caller_seconds": 248.62126210861607,
+  "contrasts": [
+    {
+      "bounds": [
+        0.2265625,
+        0.3046875
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        0.1328125,
+        0.40234375
+      ],
+      "counts": {
+        "resolved_better": 58,
+        "resolved_pairs": 222,
+        "resolved_worse": 17,
+        "same_full_records": 95
+      },
+      "foe": "uniform",
+      "name": "static-unit",
+      "pairs": 256,
+      "per_rule": {
+        "271001": [
+          0.515625,
+          0.546875
+        ],
+        "271002": [
+          0.3125,
+          0.3125
+        ],
+        "271003": [
+          -0.078125,
+          0.203125
+        ],
+        "271004": [
+          0.15625,
+          0.15625
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.115234375,
+        0.310546875
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.1689453125,
+        0.373046875
+      ],
+      "counts": {
+        "resolved_better": 98,
+        "resolved_pairs": 848,
+        "resolved_worse": 60,
+        "same_full_records": 419
+      },
+      "foe": "uniform",
+      "name": "fixed-initial",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          -0.140625,
+          0.3125
+        ],
+        "271002": [
+          0.078125,
+          0.2421875
+        ],
+        "271003": [
+          -0.55078125,
+          0.52734375
+        ],
+        "271004": [
+          0.15234375,
+          0.16015625
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.03515625,
+        0.3515625
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.095703125,
+        0.4189453125
+      ],
+      "counts": {
+        "resolved_better": 123,
+        "resolved_pairs": 858,
+        "resolved_worse": 57,
+        "same_full_records": 399
+      },
+      "foe": "uniform",
+      "name": "free-initial",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          -0.03125,
+          0.421875
+        ],
+        "271002": [
+          0.171875,
+          0.2890625
+        ],
+        "271003": [
+          -0.41015625,
+          0.55859375
+        ],
+        "271004": [
+          0.12890625,
+          0.13671875
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.17578125,
+        0.296875
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.240234375,
+        0.3564453125
+      ],
+      "counts": {
+        "resolved_better": 85,
+        "resolved_pairs": 841,
+        "resolved_worse": 63,
+        "same_full_records": 441
+      },
+      "foe": "uniform",
+      "name": "free-fixed",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          -0.1484375,
+          0.3671875
+        ],
+        "271002": [
+          0.015625,
+          0.125
+        ],
+        "271003": [
+          -0.546875,
+          0.71875
+        ],
+        "271004": [
+          -0.0234375,
+          -0.0234375
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.041015625,
+        0.29296875
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.134765625,
+        0.3857421875
+      ],
+      "counts": {
+        "resolved_better": 102,
+        "resolved_pairs": 863,
+        "resolved_worse": 55,
+        "same_full_records": 451
+      },
+      "foe": "uniform",
+      "name": "static-fixed",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.25,
+          0.5390625
+        ],
+        "271002": [
+          0.08984375,
+          0.16796875
+        ],
+        "271003": [
+          -0.43359375,
+          0.53515625
+        ],
+        "271004": [
+          -0.0703125,
+          -0.0703125
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.08203125,
+        0.212890625
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.16796875,
+        0.306640625
+      ],
+      "counts": {
+        "resolved_better": 88,
+        "resolved_pairs": 879,
+        "resolved_worse": 65,
+        "same_full_records": 441
+      },
+      "foe": "uniform",
+      "name": "static-free",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.140625,
+          0.4296875
+        ],
+        "271002": [
+          0.04296875,
+          0.07421875
+        ],
+        "271003": [
+          -0.46484375,
+          0.39453125
+        ],
+        "271004": [
+          -0.046875,
+          -0.046875
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        0.1875,
+        0.2890625
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        0.078125,
+        0.39453125
+      ],
+      "counts": {
+        "resolved_better": 46,
+        "resolved_pairs": 244,
+        "resolved_worse": 17,
+        "same_full_records": 105
+      },
+      "foe": "random99031",
+      "name": "static-unit",
+      "pairs": 256,
+      "per_rule": {
+        "271001": [
+          0.609375,
+          0.640625
+        ],
+        "271002": [
+          0.171875,
+          0.234375
+        ],
+        "271003": [
+          -0.09375,
+          0.21875
+        ],
+        "271004": [
+          0.0625,
+          0.0625
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        0.078125,
+        0.193359375
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        0.015625,
+        0.2578125
+      ],
+      "counts": {
+        "resolved_better": 138,
+        "resolved_pairs": 969,
+        "resolved_worse": 70,
+        "same_full_records": 450
+      },
+      "foe": "random99031",
+      "name": "fixed-initial",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.28125,
+          0.28125
+        ],
+        "271002": [
+          0.265625,
+          0.265625
+        ],
+        "271003": [
+          -0.29296875,
+          0.16796875
+        ],
+        "271004": [
+          0.05859375,
+          0.05859375
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        0.1162109375,
+        0.2490234375
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        0.0498046875,
+        0.3251953125
+      ],
+      "counts": {
+        "resolved_better": 153,
+        "resolved_pairs": 964,
+        "resolved_worse": 67,
+        "same_full_records": 452
+      },
+      "foe": "random99031",
+      "name": "free-initial",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.26171875,
+          0.31640625
+        ],
+        "271002": [
+          0.328125,
+          0.328125
+        ],
+        "271003": [
+          -0.1953125,
+          0.28125
+        ],
+        "271004": [
+          0.0703125,
+          0.0703125
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        -0.0283203125,
+        0.1220703125
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.078125,
+        0.177734375
+      ],
+      "counts": {
+        "resolved_better": 96,
+        "resolved_pairs": 956,
+        "resolved_worse": 72,
+        "same_full_records": 465
+      },
+      "foe": "random99031",
+      "name": "free-fixed",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          -0.01953125,
+          0.03515625
+        ],
+        "271002": [
+          0.0625,
+          0.0625
+        ],
+        "271003": [
+          -0.16796875,
+          0.37890625
+        ],
+        "271004": [
+          0.01171875,
+          0.01171875
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        0.06640625,
+        0.1640625
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.015625,
+        0.2548828125
+      ],
+      "counts": {
+        "resolved_better": 129,
+        "resolved_pairs": 975,
+        "resolved_worse": 71,
+        "same_full_records": 474
+      },
+      "foe": "random99031",
+      "name": "static-fixed",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.328125,
+          0.328125
+        ],
+        "271002": [
+          0.109375,
+          0.109375
+        ],
+        "271003": [
+          -0.125,
+          0.265625
+        ],
+        "271004": [
+          -0.046875,
+          -0.046875
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    },
+    {
+      "bounds": [
+        0.0107421875,
+        0.1259765625
+      ],
+      "conditional_fixed_rules_fixed_seeds_family_95_envelope": [
+        -0.078125,
+        0.2158203125
+      ],
+      "counts": {
+        "resolved_better": 122,
+        "resolved_pairs": 967,
+        "resolved_worse": 93,
+        "same_full_records": 472
+      },
+      "foe": "random99031",
+      "name": "static-free",
+      "pairs": 1024,
+      "per_rule": {
+        "271001": [
+          0.29296875,
+          0.34765625
+        ],
+        "271002": [
+          0.046875,
+          0.046875
+        ],
+        "271003": [
+          -0.23828125,
+          0.16796875
+        ],
+        "271004": [
+          -0.05859375,
+          -0.05859375
+        ]
+      },
+      "scope": "UNKNOWNphysicalvariables[-1,+1]; explicitUnitoppositerolereusecoefficientsaggregatedbeforebounds. Staticrepeatedacrossseedcontrastsnotindependentobservations. 2000withinrulefamilyresamplesconditiononFOURTRAINrules/FOURfixedinitials, notpopulationconfidence/unseenrule/uniqueprice/equivalence."
+    }
+  ],
+  "depths": {
+    "2": 166514
+  },
+  "first_divergences": 6088,
+  "kernel_seconds": 91.90582879999961,
+  "logical_cells": 7168,
+  "max_caller_seconds": 0.008688699977938086,
+  "planned_physical": 7040,
+  "profiles": [
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 0,
+      "label": "unit",
+      "outcomes": {
+        "D": 38,
+        "L": 96,
+        "U": 26,
+        "W": 96
+      },
+      "physical_slots": 128
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 68,
+      "label": "rule_static_v2",
+      "outcomes": {
+        "D": 2,
+        "L": 88,
+        "U": 10,
+        "W": 156
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 32,
+      "label": "initial1977",
+      "outcomes": {
+        "D": 5,
+        "L": 102,
+        "U": 15,
+        "W": 134
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": -39,
+      "label": "initial8173",
+      "outcomes": {
+        "D": 15,
+        "L": 120,
+        "U": 40,
+        "W": 81
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 11,
+      "label": "initial27182",
+      "outcomes": {
+        "D": 9,
+        "L": 106,
+        "U": 24,
+        "W": 117
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 39,
+      "label": "initial31415",
+      "outcomes": {
+        "D": 1,
+        "L": 104,
+        "U": 8,
+        "W": 143
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 25,
+      "label": "fixed51977",
+      "outcomes": {
+        "D": 6,
+        "L": 96,
+        "U": 33,
+        "W": 121
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 1,
+      "label": "fixed58173",
+      "outcomes": {
+        "D": 12,
+        "L": 97,
+        "U": 49,
+        "W": 98
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 77,
+      "label": "fixed527182",
+      "outcomes": {
+        "D": 2,
+        "L": 80,
+        "U": 17,
+        "W": 157
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 40,
+      "label": "fixed531415",
+      "outcomes": {
+        "D": 4,
+        "L": 90,
+        "U": 32,
+        "W": 130
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 59,
+      "label": "free61977",
+      "outcomes": {
+        "D": 5,
+        "L": 83,
+        "U": 26,
+        "W": 142
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 16,
+      "label": "free68173",
+      "outcomes": {
+        "D": 7,
+        "L": 92,
+        "U": 49,
+        "W": 108
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 73,
+      "label": "free627182",
+      "outcomes": {
+        "D": 2,
+        "L": 81,
+        "U": 19,
+        "W": 154
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "uniform",
+      "known_reward_sum": 57,
+      "label": "free631415",
+      "outcomes": {
+        "D": 4,
+        "L": 89,
+        "U": 17,
+        "W": 146
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -50,
+      "label": "unit",
+      "outcomes": {
+        "D": 5,
+        "L": 146,
+        "U": 9,
+        "W": 96
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": 11,
+      "label": "rule_static_v2",
+      "outcomes": {
+        "D": 5,
+        "L": 118,
+        "U": 4,
+        "W": 129
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -36,
+      "label": "initial1977",
+      "outcomes": {
+        "D": 6,
+        "L": 140,
+        "U": 6,
+        "W": 104
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -87,
+      "label": "initial8173",
+      "outcomes": {
+        "D": 1,
+        "L": 169,
+        "U": 4,
+        "W": 82
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -65,
+      "label": "initial27182",
+      "outcomes": {
+        "D": 1,
+        "L": 155,
+        "U": 10,
+        "W": 90
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -25,
+      "label": "initial31415",
+      "outcomes": {
+        "D": 4,
+        "L": 136,
+        "U": 5,
+        "W": 111
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -40,
+      "label": "fixed51977",
+      "outcomes": {
+        "D": 1,
+        "L": 141,
+        "U": 13,
+        "W": 101
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -36,
+      "label": "fixed58173",
+      "outcomes": {
+        "D": 3,
+        "L": 141,
+        "U": 7,
+        "W": 105
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": 12,
+      "label": "fixed527182",
+      "outcomes": {
+        "D": 2,
+        "L": 118,
+        "U": 6,
+        "W": 130
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -10,
+      "label": "fixed531415",
+      "outcomes": {
+        "L": 129,
+        "U": 8,
+        "W": 119
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": 9,
+      "label": "free61977",
+      "outcomes": {
+        "D": 1,
+        "L": 118,
+        "U": 10,
+        "W": 127
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": -46,
+      "label": "free68173",
+      "outcomes": {
+        "D": 1,
+        "L": 143,
+        "U": 15,
+        "W": 97
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": 11,
+      "label": "free627182",
+      "outcomes": {
+        "L": 120,
+        "U": 5,
+        "W": 131
+      },
+      "physical_slots": 256
+    },
+    {
+      "cells": 256,
+      "foe": "random99031",
+      "known_reward_sum": 0,
+      "label": "free631415",
+      "outcomes": {
+        "D": 1,
+        "L": 121,
+        "U": 13,
+        "W": 121
+      },
+      "physical_slots": 256
+    }
+  ],
+  "query_counts": {
+    "fallbacks": 0,
+    "nodes": 31606003,
+    "queries": 166514
+  },
+  "returned_physical": 7040,
+  "scope": "NewcommonNative256served-candidate diagnostic. No oldAUXfitnessrerun/alltrajectoryfloatidentity/modelselection/default/fit/AUXwrites. Fullrules/history retained withinfourTRAIN-exposedgeneratedrules; originalcaps/missing/U retained. Costsnotcompleteengineering/tokenorstrongersearch/WDLproof.",
+  "seconds": 2.3894038999569602,
+  "status": "COMPLETE_FROZEN_SERVED_CANDIDATE_ANALYSIS"
+}

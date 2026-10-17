@@ -4129,3 +4129,41 @@ approval gate. AUX owns six-free paired learning and future paid-WDL design;
 PRIMARY keeps existing servingAPI/256 and does not replace AUXoptimizer with its
 median-normalized TD. No default/model/API/Native/product change this follow-on.
 Exact report/data/capsule: RULE_ONLY_STATIC_BASELINE_AND_LEARNED_DECISIONS_20261017.
+
+
+### 2026-10-17 PRIMARY mature comparison and AUX91 fixed-source reproduction
+
+PRIMARY read complete91root/two replies and executed pinned03d4a863 source:
+191hashes/38owner controls/11regenerated audits/166524logicalplies pass131.281s.
+Independent PRIMARY forward credits match6512episodes/95895queries/4494updates
+exactly; paired1536actualoutcomes retain84UNKNOWN/8TRAIN-overlap roots and
+rule/foe reversals. Posthoc nonoverlap remains positive, not a newholdout; omitting
+002 removes positive lower bounds in3of4TD-initial contrasts. No92unpublished
+source/checkout/learning modification. Dot's reply remains mathematical advice,
+not independent code execution or publication approval. No routine reply loop.
+
+Changed premise: actual91mature paired gains versus weak89oldstatic comparator.
+New registered ALL48tables/static/Unit,128fresh roots/all4seeds/two fixed foes,
+7040physical/7168logical closes686.984s/166514D2queries/31.606Mnodes/0fallback,
+6573terminal467H128U. Static-Unit positive bothfoes; static-mature family envelopes
+include0; learned-initial positive randomfoe butUnit bounds include0. No universal
+winner/uniqueprices/default/Elo claim; Native served-policy is a distinct regime
+fromoriginalCorefloatfitness. SharedphysicalUnitroles/initials/staticseedcopies
+and all actual query work are explicit, not independent extra observations.
+
+FullCore record/PV reader checks166514commits/326840PVedges with0mismatch.96first-
+divergence groups allfloatoptsetchanges/74strict22one-sided/0ties/0floatregret.
+ALL467last-censor queries also CoreD2optimal;2finalwinning/43drawing children
+never replace UNKNOWN.6.63%censored games consume41.58%caller time. No next
+unchanged arena/precision/API campaign follows. Existing192actual91serving
+controls pass;64TRAINgradients match,128EVALreferencegradients remain absent.
+Legacy/semantic action objects and normalizedP/fixedT optimizer differences stay.
+
+Fresh sealed artifact176outer+191upstream payloads,all11own outputs/38controls/
+11owner audits/ownNativebuild/192componentcalls PASS. Initialisolatedpyteststartup
+missedinstalledpy.py shim AFTERsevenCore/math stages; failedtree/log preserved,
+existingvendor dependencyfixed,onlyremainingstages resumed. No source/data/cap/
+stop/training/fitness change. Verifiedstage sum625.055s distinctfromwall/engineering.
+MAINLINE43KB reducedto8KB withfixedPUBLICda1predecessor preservingcausalhistory;
+no newpolicyindex/authority orlostsourceevidence. Fullreport/data/source capsule:
+MATURE_LEARNED_PRICE_AND_STATIC_COMPARISON_20261017.md. ScienceOPEN.

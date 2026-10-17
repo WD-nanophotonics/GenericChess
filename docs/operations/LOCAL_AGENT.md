@@ -85,6 +85,14 @@ verify the target before reuse, never alter machine security/ACLs or live flags.
 Keep units explicit:120seconds is2minutes; the single-run consultation threshold
 is7200seconds. This does not change the60–90minute Agent work-segment rule.
 
+For sub-millisecond caller measurements use perf_counter; a sub-resolution zero
+is not zero cost. Restored Python-S drivers need their declared external vendor
+dependencies and explicit source origins, with no editable-project fallthrough
+or fake stop trees. Preserve setup failures before repairing the disposable
+runtime layout; resume only affected stages when source/data hashes remain
+unchanged. Do not extend experimental caps or rerun frozen fitness to fix a
+qualification harness. Record multi-phase qualification and actual costs honestly.
+
 ## Slack consultation and collaboration
 
 Use docs/operations/SLACK_WORKFLOW.md for exact request/receipt/reconcile commands,

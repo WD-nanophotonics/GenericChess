@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETE_POSTSEAL_PHYSICAL_COST_BREAKDOWN",
+  "input_sha256": {
+    "games.jsonl": "60c8ac952c55e11ff44d5d1707331bf2c807a8b30b7136c15c594ef0ffaf4b1c",
+    "queries.jsonl": "99bbfb3131a66884e46d207d64680af826aa4ee209ed40046e1de354037f8043"
+  },
+  "groups": [
+    {
+      "kind": "all",
+      "label": "all",
+      "games": 7040,
+      "queries": 166514,
+      "nodes": 31606003,
+      "caller_seconds": 248.62126210861607,
+      "kernel_seconds": 91.90582879999961
+    },
+    {
+      "kind": "censor",
+      "label": "all",
+      "games": 467,
+      "queries": 59776,
+      "nodes": 12088907,
+      "caller_seconds": 103.38108180626296,
+      "kernel_seconds": 34.01888909999978
+    },
+    {
+      "kind": "foe",
+      "label": "random99031",
+      "games": 3584,
+      "queries": 70041,
+      "nodes": 10877917,
+      "caller_seconds": 94.42172020080034,
+      "kernel_seconds": 32.37833709999965
+    },
+    {
+      "kind": "foe",
+      "label": "uniform",
+      "games": 3456,
+      "queries": 96473,
+      "nodes": 20728086,
+      "caller_seconds": 154.19954190781573,
+      "kernel_seconds": 59.52749170000057
+    },
+    {
+      "kind": "rule",
+      "label": "271001",
+      "games": 1760,
+      "queries": 33532,
+      "nodes": 5787179,
+      "caller_seconds": 49.01420790125849,
+      "kernel_seconds": 17.543877799999866
+    },
+    {
+      "kind": "rule",
+      "label": "271002",
+      "games": 1760,
+      "queries": 27116,
+      "nodes": 7136817,
+      "caller_seconds": 45.12089550693054,
+      "kernel_seconds": 22.50033880000012
+    },
+    {
+      "kind": "rule",
+      "label": "271003",
+      "games": 1760,
+      "queries": 89882,
+      "nodes": 15002302,
+      "caller_seconds": 131.840568002488,
+      "kernel_seconds": 40.95546830000016
+    },
+    {
+      "kind": "rule",
+      "label": "271004",
+      "games": 1760,
+      "queries": 15984,
+      "nodes": 3679705,
+      "caller_seconds": 22.645590697939042,
+      "kernel_seconds": 10.906143899999984
+    },
+    {
+      "kind": "terminal",
+      "label": "all",
+      "games": 6573,
+      "queries": 106738,
+      "nodes": 19517096,
+      "caller_seconds": 145.2401803023531,
+      "kernel_seconds": 57.88693970000111
+    }
+  ],
+  "censored_fractions": {
+    "games": 0.06633522727272727,
+    "queries": 0.3589848301043756,
+    "nodes": 0.3824876875446731,
+    "caller_seconds": 0.4158175408227897,
+    "kernel_seconds": 0.3701494186405719
+  },
+  "seconds": 1.6924285999848507,
+  "scope": "Physical7040games ONLY;128logicalUnitrolecopies incur noextraexecutions. Allcandidate+foeworkpaid; equalquerylimits/Hnot equalactualwork/wholelearningcost. CensorstratificationisPOSTHOCdiagnosisnotfilter/newlabel/holdout; no futurecostextrapolation oroldcapextension. NewlargerfamilycountdoesnoteliminateH128identificationwidth; choosechangedquestionbeforeanothercampaign. Recordedclockfieldscome fromoriginalfrozenjournal, notnewsearch."
+}
