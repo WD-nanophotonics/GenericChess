@@ -4412,3 +4412,24 @@ hand_weight=0 judge was answered from stored files only. Delivery:
 PROFILE_TRANSFORM_INVARIANCE_20261018.md plus a sanitized 32-file evidence copy
 whose rebuild from the private originals reproduces the published bytes 33/33;
 149 focused product tests pass.
+
+### DEEPSEEK_AUX stage 8: the in-zone bonus pays pieces that cannot promote
+  (2026-10-18, session `6de032cc`, endpoint pre-registered in
+  `plan_bind_reachability_to_decisions.json` with one amendment written before
+  the extended run).** Stage 7 counted occurrences; this asks whether the paid
+  piece can promote at all. The same 182 deduplicated games reproduce the
+  Stage 7 counts exactly (2,489 / 3,944 / 1,650, 0 replay failures), and
+  `legal_actions` shows that only 53 of the 2,489 in-zone payments (2.13%) have
+  a legal promotion in that position, against 782 of 5,594 not-in-zone
+  promotable observations (13.98%) - a 6.56x difference, so the pre-registered
+  contrast fires. All 782 promotion-capable observations are in the dead-intent
+  class whose half bonus is never paid; the 1,650 "neither" observations have
+  no legal promotion at all. Of 267 played promotions, 17 came from in-zone
+  squares, 219 from dead-intent squares, 31 from neither.
+  Consequence, stated narrowly: the 30.8% in-zone share must not be read as
+  promotion-relevant activity, and a future attempt at this term should target
+  the dead half-bonus branch, where promotability actually lives. Not a repair
+  proposal, not a strength or utility claim; board 4, depth 2-3, one start
+  position per ruleset. The public evidence copy grows to 40 files plus its
+  manifest, and rebuilding it from the private originals reproduces the
+  published bytes 41/41.

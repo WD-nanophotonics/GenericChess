@@ -25,6 +25,11 @@ fitness.
 
 ## Sanitization
 
+Stage 8 shares Stage 7's scope: `bind_reachability_to_decisions.py` replays the
+same stored games and asks whether the in-zone bonus is paid to pieces that can
+actually promote, with its endpoint in
+`plan_bind_reachability_to_decisions.json`. It adds no search either.
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing
@@ -59,6 +64,8 @@ the published copy.
 | `results_stored_games_leaf_terms.json` | 38673 | `42d04b16b97db8a4eeaeb67a8dc8e87da9b3e115e38a471387d0bc5ac3a7ac1b` |
 | `plan_games_leaf_terms.json` | 3384 | `d92116a58bfe17e7fc07d73023ae51c144bd9632c12462ca729a409e0070f9bb` |
 | `results_static_zone_share.json` | 1020 | `a01b2e591924789591f9e229807436c3ece27838b0905405b43d47782658eeab` |
+| `plan_bind_reachability_to_decisions.json` | 5055 | `dceb6678f312b96c6cdf9e9fc1fea93942ba42bbfd673bf60fa7e70133b82b02` |
+| `results_bind_reachability_to_decisions.json` | 60327 | `db342f25686d769c169ce380b95dc726d3a5809113d3ef07426dc89db66b08dc` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -73,7 +80,8 @@ the published copy.
 | `audit_leaf_terms.py` | 16581 | `f48e06fef9cf1b4ef863387f3a7908ee796e35f790a61a7465a037360fbde545` |
 | `scan_stored_games_leaf_terms.py` | 11149 | `2a134c3ee8e6ff8d6635fc1e57fe9ef3276df7aaf79bd9ebd57d69f13d4b7db4` |
 | `static_zone_share_boards.py` | 3066 | `fb30e7d47d639273c1da0fe9446773ec9f4ce8b88203cf783be1a879c9e2383b` |
-| `make_public_evidence.py` | 4144 | `b42ce81ad6580d458cb1f0c39c8ae81b910e1bdb1dffcb37b668d42c198745c3` |
+| `bind_reachability_to_decisions.py` | 17890 | `3822e63f6ff5ec31a02b709905831c11cf9e7b80b2d5a698f6344d920e98f2f9` |
+| `make_public_evidence.py` | 4690 | `90a66899a9ab28fe041efd51b4b9034a3fd8098b6b1acfae3164749b3684b869` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -96,6 +104,8 @@ the published copy.
 | `results_stored_games_leaf_terms.json` | `leaf_terms_occur_on_stored_game_paths` — replaying 182 already-stored board-4 games reproduces every stored terminal result and shows the in-zone branch on 2,489/8,083 promotable observations, the dead half-bonus condition on 3,944, and at least one anchor-attack position in every game |
 | `plan_games_leaf_terms.json` | the endpoint for that replay scan, written before it ran |
 | `results_static_zone_share.json` | structural check of the same definition: in-zone squares average 38.2% of the board at size 4, 21.7% at 6, 16.4% at 8, so the played 30.8% is not inflated for its board and must not be carried to other sizes |
+| `plan_bind_reachability_to_decisions.json` | the endpoint for the Stage 8 replay, written before it ran, plus one amendment that adds the promotability comparison and was written before the extended run |
+| `results_bind_reachability_to_decisions.json` | `in_zone_full_bonus_has_immediate_promotion_contact` with `promotability_contrast=in_zone_promotability_is_depressed_relative_to_other_promotable_pieces`: only 53 of 2,489 in-zone payments (2.13%) have a legal promotion in that position against 782 of 5,594 not-in-zone observations (13.98%), a 6.56x difference |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
@@ -122,6 +132,38 @@ counted as a mismatch (134 of them) and reported
 mis-specified, not falsified: no measured number changed, the raw first output
 stays in `results_zone_effect_heldout_first.json`, and its hash is recorded in
 the corrected file's `instrument_error` block.
+
+## Does the in-zone bonus pay pieces that can promote? (Stage 8, post-hoc)
+
+Stage 7 counted occurrences, and a share of occurrences is only meaningful if
+the paid piece is in a position to promote. The zone is defined as "no empty
+forward step from this square", so the opposite is plausible. Stage 8 replays
+the same 182 deduplicated games (identical replay precondition, identical
+2,489 / 3,944 / 1,650 occurrence counts, so the two scripts agree on the
+corpus) and asks `legal_actions` for each scanned position.
+
+Result: of the 2,489 in-zone payments, **53 (2.13%)** stand on a square with at
+least one legal promotion in that same position; of the 5,594 promotable
+observations that are not in the zone, **782 (13.98%)** do. The not-in-zone
+rate is **6.56x** the in-zone rate, so the pre-registered contrast fires and
+the full bonus is paid where immediate promotability is *lower*, not higher.
+All 782 of those promotion-capable observations are in the dead-intent class -
+the class whose half bonus the coded comparison never pays - and the remaining
+1,650 "neither" observations have no legal promotion at all (0/1,650).
+
+Chosen moves agree with that ordering: of 267 promotions actually played, 17
+came from in-zone squares, 219 from dead-intent squares and 31 from neither.
+The 21 board moves made from in-zone squares were promotions 17 times; the 307
+board moves from dead-intent squares were promotions 219 times.
+
+Reading limit that the count fixes but does not remove: 2,292 of the 2,489
+in-zone observations arise during play (36 seeds) and only 197 come from the
+start position (13 seeds, 63 of 182 games), so this is not a start-position
+artefact; but these are depth-2 and depth-3 games from one board size, one
+preset and one start position per ruleset. Zero or near-zero contact here does
+not bound deeper search at boards 6 and 8, and a legal promotion being
+available still does not mean search would choose it. The term is a search
+preference under this evaluator, not a measure of strength.
 
 ## UNKNOWN and limits
 

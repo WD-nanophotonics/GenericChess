@@ -40,6 +40,8 @@ JSON_FILES = [
     "results_stored_games_leaf_terms.json",
     "plan_games_leaf_terms.json",
     "results_static_zone_share.json",
+    "plan_bind_reachability_to_decisions.json",
+    "results_bind_reachability_to_decisions.json",
 ]
 
 PY_FILES = [
@@ -57,6 +59,7 @@ PY_FILES = [
     "audit_leaf_terms.py",
     "scan_stored_games_leaf_terms.py",
     "static_zone_share_boards.py",
+    "bind_reachability_to_decisions.py",
     "make_public_evidence.py",
 ]
 
@@ -68,6 +71,9 @@ EXTRA_SOURCES = {
     "scan_stored_games_leaf_terms.py": HERE.parent / "games-leaf-terms-20261018" / "scan_stored_games_leaf_terms.py",
     "results_static_zone_share.json": HERE.parent / "games-leaf-terms-20261018" / "results_static_zone_share.json",
     "static_zone_share_boards.py": HERE.parent / "games-leaf-terms-20261018" / "static_zone_share_boards.py",
+    "plan_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "plan_bind_reachability_to_decisions.json",
+    "results_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "results_bind_reachability_to_decisions.json",
+    "bind_reachability_to_decisions.py": HERE.parent / "games-leaf-terms-20261018" / "bind_reachability_to_decisions.py",
 }
 
 _HOME = re.compile(r"[A-Za-z]:\\\\?Users\\\\?[^\\\\\"]+", re.IGNORECASE)

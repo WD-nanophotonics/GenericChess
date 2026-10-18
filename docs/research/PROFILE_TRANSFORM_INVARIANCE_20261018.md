@@ -324,6 +324,33 @@ be carried over to boards 6 and 8 without playing games there.
 
 ## What a consumer may and may not conclude
 
+### Does that bonus pay pieces that can promote? (Stage 8)
+
+Occurrence is not promotability. The zone is "no empty forward step", which is
+the opposite of a promotion rank, and a piece standing there may be unable to
+advance at all. `bind_reachability_to_decisions.py` therefore replays the same
+182 deduplicated games - reproducing the Stage 7 counts exactly - and asks
+`legal_actions` whether the paid piece has a legal promotion in that position.
+The endpoint, and one amendment that adds the comparison, were written before
+their runs.
+
+Of 2,489 in-zone payments, 53 (2.13%) coincide with a legal promotion; of the
+5,594 promotable observations outside the zone, 782 (13.98%) do. The pre-
+registered contrast therefore fires: the not-in-zone rate is 6.56 times the
+in-zone rate, so the full `weight * unit` bonus is paid where immediate
+promotability is lowest. Every one of those 782 promotion-capable
+observations sits in the dead-intent class - the class whose half bonus the
+broken comparison never pays - and the 1,650 "neither" observations have no
+legal promotion at all. Chosen moves follow the same order: 17 of 267 played
+promotions came from in-zone squares, 219 from dead-intent squares and 31 from
+neither.
+
+This does not turn the earlier reachability note into a repair proposal, and
+it does not make the term's sign or size a strength statement. It does mean
+the 30.8% in-zone share must not be read as promotion-relevant activity, and
+that any future attempt at this term should target the dead half-bonus branch,
+where promotability actually lives, rather than the branch that already pays.
+
 Allowed, for this generator family and these two board sizes:
 
 * static per-type values may be de-duplicated across a 180-degree rotation of
@@ -345,8 +372,10 @@ constructed for measurement rather than shown reachable in play.
   atoms on promotable types, or whether that is specific to this preset;
 * whether reachable positions in real games put promotable pieces in the zone
   often enough for the term to matter — partially answered for the stored
-  board-4 games (Stage 7: 30.8% of promotable observations are in zone), still
-  open for deeper search, other board sizes and other presets;
+  board-4 games (Stage 7: 30.8% of promotable observations are in zone;
+  Stage 8: only 2.13% of those in-zone payments have a legal promotion against
+  13.98% outside the zone), still open for deeper search, other board sizes
+  and other presets;
 * whether the half-bonus branch was intended to fire — its unreachability is a
   finding, not a diagnosis, and no behaviour change is proposed from here;
 * how often the anchor-capture penalty, confirmed live above, fires in
