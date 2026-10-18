@@ -1,8 +1,8 @@
 # DEV_AUX98 — actual cost curves and policy dependence; scientific OPEN
 
-Own sessiona14f40bc-61e7-4718-b55d-64f2a0dbb793 start2026-10-18T21:04:36.742654+00:00 unchanged; ACTIVE;allscience/reproclosed;officialfinishpending.
-All producers/auditors/fresh CLOSED. SourcePENDING_REVIEWED_PUBLICATION (publicationpending, notclaimedremote).
-SlackNOT_SENT_PENDING_FIXED_SOURCE ;reading/executionUNCONFIRMED. No PRIMARY/DS newexecution/adoption claim.
+Own sessiona14f40bc-61e7-4718-b55d-64f2a0dbb793 start2026-10-18T21:04:36.742654+00:00 unchanged; ENDED74.161min/safe_checkpoint/7stages.
+All producers/auditors/fresh CLOSED. Source684769bc5f78927aaf1fe741f9b153be0a6784eb fullremote/PUBLIC/27anonymousfiles/clean verified.
+SlackACCEPTED_EXACT_READBACK 1792361814.382939;reading/executionUNCONFIRMED. No PRIMARY/DS newexecution/adoption claim.
 Own sidemission/PUBLIC; nootherrole/Core/default/UI writes, worker, Goal orautomaticmerge.
 
 ALL832snapshotEVAL actualterminal/0U/0missing: TDuniform gains

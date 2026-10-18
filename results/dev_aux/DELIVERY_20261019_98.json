@@ -5,15 +5,149 @@
   "official_session": {
     "id": "a14f40bc-61e7-4718-b55d-64f2a0dbb793",
     "started_at": "2026-10-18T21:04:36.742654+00:00",
-    "state": "active",
-    "research_stage_count": 6
+    "state": "ended",
+    "ended_at": "2026-10-18T22:18:46.387089+00:00",
+    "elapsed_minutes": 74.161,
+    "research_stage_count": 7,
+    "reason": "safe_checkpoint"
   },
-  "source_sha": null,
+  "source_sha": "684769bc5f78927aaf1fe741f9b153be0a6784eb",
   "source": {
-    "status": "PENDING_REVIEWED_SOURCE_PUBLICATION"
+    "status": "PASS_FULL_REMOTE_SOURCE_PUBLIC_ANONYMOUS27_EXACTFILES",
+    "source_sha": "684769bc5f78927aaf1fe741f9b153be0a6784eb",
+    "remote_sha": "684769bc5f78927aaf1fe741f9b153be0a6784eb",
+    "public": true,
+    "clean": true,
+    "anonymous_files": {
+      "results/dev_aux/SEGMENT_20261019_98.md": {
+        "bytes": 8659,
+        "sha256": "ba99d3fbf4cc4f6e68a3a0be7cb22c54077be44a07bef737fb5fa2438f18fb51"
+      },
+      "results/dev_aux/DELTA_REPRO_20261019_98.zip": {
+        "bytes": 18656643,
+        "sha256": "332b44e52852800fe75131ad188b03ef815b882258c3b4d0efcfbce948cbcc35"
+      },
+      "results/dev_aux/ARCHIVE_MANIFEST_20261019_98.json": {
+        "bytes": 4881,
+        "sha256": "786be45accceeda7e9147e0a0cb56ff26ec4388d03fc150c0a1c481b7c4cd8d9"
+      },
+      "results/dev_aux/PUBLICATION_PROJECTION_20261019_98.json": {
+        "bytes": 33424,
+        "sha256": "72566546908bfa8bd68df4dc36d5b77a1530f458ce11bf3af8f50df87680d64e"
+      },
+      "results/dev_aux/task2571/freeze.json": {
+        "bytes": 2349,
+        "sha256": "da935e24e73fcba6334380c5d77b8358bb4bd67f7a8ac1d1ffd9cd392da7fd84"
+      },
+      "results/dev_aux/task2571/result.json": {
+        "bytes": 24794,
+        "sha256": "adae6d813b1866fb94e2b244fd903ea47c2d1e82de03faef86e5442499d577a5"
+      },
+      "results/dev_aux/task2571/eval-result.json": {
+        "bytes": 218,
+        "sha256": "27f92aa0bafd171530e3c2ff3dfd0139d11b6bf450b5292c97e3c0e21916ca86"
+      },
+      "results/dev_aux/task2571/deployment-audit.json": {
+        "bytes": 351,
+        "sha256": "6b1244e353e6b1c92028fa38a5d5316a5448f41601cd2db75d1d8ebbbaff9264"
+      },
+      "results/dev_aux/task2571/summary.json": {
+        "bytes": 1398249,
+        "sha256": "4a0e4bbb27717f7ed94a4c239fc33c9e015286f2614c2d228cd96c2e9d5c5097"
+      },
+      "results/dev_aux/task2571/loss-diagnostics.json": {
+        "bytes": 348687,
+        "sha256": "7c50249374e77eca36c2cf314d4f483f0c435e78db8879f4f76b0cb321aa8524"
+      },
+      "results/dev_aux/task2572/evaluate.py": {
+        "bytes": 4104,
+        "sha256": "ce2bdc9d01ffb77895f6944473c92c9f2e96304f659ddb59d885ea7febd7d946"
+      },
+      "results/dev_aux/task2572/freeze.json": {
+        "bytes": 1925,
+        "sha256": "413c133f0cbedc5b545b9b4c0be73425851fd9d2250e52c43db91fef8c8860d7"
+      },
+      "results/dev_aux/task2572/summary.json": {
+        "bytes": 212577,
+        "sha256": "4042e52ec4bfa7a499e4c900f56a89350c80648d5a3ec6740340e2c0362ecb73"
+      },
+      "results/dev_aux/task2572/absolute-wld.json": {
+        "bytes": 6654,
+        "sha256": "ffcdefba53f9977719ec27d0a9880ab2ea658828e21135f4927a6bff579c0e0b"
+      },
+      "results/dev_aux/task2574/train.py": {
+        "bytes": 7144,
+        "sha256": "b195c52360e041b9480b92f83fa18336237c75fb4f3088a0bdd0551b27def5da"
+      },
+      "results/dev_aux/task2574/registration.json": {
+        "bytes": 1454,
+        "sha256": "f5434df0cdf77a511a25a4b2519fb3cc5eee2f93f8e48d0ada3947ab080709f3"
+      },
+      "results/dev_aux/task2574/plan.json": {
+        "bytes": 2796,
+        "sha256": "80ed780124c9502f733ba2e7622ee9ed4920194fb5936a0e8cb2c86ca4377fa3"
+      },
+      "results/dev_aux/task2574/result.json": {
+        "bytes": 5901,
+        "sha256": "ba382d038d635e1732b51002e53630e8c350f4ee4a600d96273900d842b11205"
+      },
+      "results/dev_aux/task2574/audit.json": {
+        "bytes": 722,
+        "sha256": "f0f25423311d39df1c8cd7fddab4f9740e683f9d9543e93c16c1bfd492dfec85"
+      },
+      "results/dev_aux/task2575/summary.json": {
+        "bytes": 242869,
+        "sha256": "8f6e7f272f239ab7547ba725229260fd4bae7e8d8cd555e8359353d9a28224ed"
+      },
+      "results/dev_aux/task2575/deployment-audit.json": {
+        "bytes": 350,
+        "sha256": "9bf4b1b863cddc2335bb5646d52dc6440ef3f26cc03e3b375bb21ed235e4b475"
+      },
+      "results/dev_aux/task2573/fresh.py": {
+        "bytes": 4552,
+        "sha256": "67abaf1b6ce2b99c33cac2e1cdf26ae96a63f11fd2c0da35ac30e6f236d89840"
+      },
+      "results/dev_aux/task2573/fresh-receipt.json": {
+        "bytes": 1526,
+        "sha256": "e8200be9e670ffbdb0bb308aae8cafda6e48c0c54c6179d688cebd9e55ad811c"
+      },
+      "docs/research/LOCAL_MAINLINE.md": {
+        "bytes": 78321,
+        "sha256": "fc1dcc486aa82be60e33cca32291684989a2e7f41c6fd45ca52ef038395aed3f"
+      },
+      "docs/operations/COLLABORATION_LOG.md": {
+        "bytes": 260297,
+        "sha256": "041533a3e666e55a1f57f08341c2dec64654c8b857ee337da79e194b568e0821"
+      },
+      "results/dev_aux/task2574/comparisons.jsonl": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "results/dev_aux/PUBLICATION_CORRECTION_20261019_98.json": {
+        "bytes": 953,
+        "sha256": "c8ed66b803307f23712b1bfd26b2dd4f2b268eac3763aef91a46d3321f76b385"
+      }
+    },
+    "observed_at": "2026-10-18T22:15:36.433501+00:00",
+    "seconds": 10.470497600035742,
+    "scope": "NoAuthorization/cookies; anonymousRepoAPIpublic and27fixedrevisionrawbytechecks includingnew98capsule. No visibilitymutation; delivery notDotreading/execution."
   },
   "slack": {
-    "status": "NOT_SENT_PENDING_FIXED_SOURCE"
+    "status": "ACCEPTED_EXACT_READBACK",
+    "message_ts": "1792361814.382939",
+    "channel_id": "C0C6L21UU20",
+    "thread_ts": "1792240080.003109",
+    "message_link": "https://nanomelon.slack.com/archives/C0C6L21UU20/p1792361814382939?thread_ts=1792240080.003109&cid=C0C6L21UU20",
+    "request_id": "GC-SLACK-20261017-212734-fc0e8a4a",
+    "followup_id": "DEV_AUX98-LEARNING-POLICY-684769bc",
+    "source_sha": "684769bc5f78927aaf1fe741f9b153be0a6784eb",
+    "original_body_sha": "ed6c58aec750827e0857c72e301aebf26f276fb225e5d8967326940f2841f309",
+    "canonical_body_sha": "a54c37efe02d7037a29894f08aede060d9eab32588187ae3df3362fb02592b91",
+    "readback_projection": "OnlySlackautoURLlabels, numbered1)to1., blanklinepresentation andSentUsingfooter; allremainingorderedlinesexact.",
+    "all_pages": true,
+    "observed_at": "2026-10-18T22:17:27.284098+00:00",
+    "reading_execution": "UNCONFIRMED",
+    "resend": false
   },
   "dot_reading_execution": "UNCONFIRMED",
   "archive": {
@@ -54,6 +188,7 @@
   "union_paid_nodes": 39619004,
   "new_producer_seconds": 3634.0726355000515,
   "all_owned_producers_auditors_fresh_closed": true,
-  "metadata_final_pending": true,
+  "metadata_final_pending": false,
+  "final_metadata_scope": "Thisrecordistheclosingcommit; finalHEAD/remoteandanonymousbyteproofrecordedprivatelyafterpush. SourceproofbindsfixedsourceSHA, noself-digestclaim.",
   "scope": "Exactrawcapsuleauthority; directGitLF/EOFprojection disclosed. No newscienceafterofficialfinish, onlydeliverymetadata. Allnegativecoefficients/U/missing preserved; no universalprice/policy-independent/convergenceclaim."
 }
