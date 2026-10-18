@@ -1,0 +1,28 @@
+{
+  "agent_id": "DEEPSEEK_AUX",
+  "session_id": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "written_before_run": true,
+  "relationship_to_primary_plan": "supplementary robustness check on the already-written judged-divergence plan; the primary endpoint stays the hand-blind depth-4 judge. This variant was conceived after the primary aggregate was seen, so it is explicitly exploratory and cannot change the primary verdict.",
+  "question": "Are the depth-4 verdicts of the primary judged-divergence run stable when the depth-4 judge itself carries hand_weight 0.9 instead of 0.0? A judge that shares the blind arm's evaluator could favour blind-style moves by construction, which would make 'the deeper search prefers the blind move' partly a judge-configuration artefact.",
+  "method": "identical reconstruction, identical first-divergence positions, identical candidate moves (asserted against the saved move lists exactly as in the primary run); only the depth-4 judge's EvaluationConfig.hand_weight changes 0.0 -> 0.9; no depth-6 tie-break (--no-tie-break) so this variant adds no new endpoint.",
+  "inputs": "the same four served-blind result files under .local_agent/hand-utility-games-20261018/",
+  "guards": {
+    "max_searches": 400,
+    "max_seconds": 900,
+    "separate_output": "results_judged_divergence_servedjudge.json",
+    "no_overwrite": "refuses to write an existing result path"
+  },
+  "reported_quantities": "per-cell sign agreement between the two judges, the paired 2x2 verdict table, and the subset of cells whose absolute delta is mate-scale (>= 1e6)",
+  "fixed_weight_curve": {
+    "declared_before_third_run": true,
+    "weights": [0.0, 0.9, 1.8],
+    "purpose": "a third fixed judge point at double the served coefficient, used only to test whether the shared verdict drift is monotone in the judge's own hand_weight; it adds no new endpoint, no selection over weights and no search beyond the declared 400/900 guards",
+    "prediction_if_judge_coefficient_explains_the_flip": "served_better count increases from 0.0 to 0.9 to 1.8 while the mate-scale cells keep their sign"
+  },
+  "done_condition": "second result file written, agreement table produced by the reader, README/claim note added",
+  "limitations_prewritten": [
+    "two fixed judges, neither is ground truth",
+    "same 45 pair-cells / 35 distinct positions; depth-2 and depth-3 cells can share one judged position, so the two judges' agreement is not independent replication",
+    "no significance claim, no strength/generality claim, no product change"
+  ]
+}

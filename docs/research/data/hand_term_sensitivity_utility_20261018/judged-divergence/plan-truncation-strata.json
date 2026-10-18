@@ -1,0 +1,49 @@
+{
+  "written_before_computing": true,
+  "written_at": "2026-10-18T11:10:00Z",
+  "author": "DEEPSEEK_AUX",
+  "kind": "post hoc, zero-search re-analysis of already saved judge records",
+  "motivation": "The judge's recorded reason codes show that many candidate evaluations did not complete depth 4 within 20k nodes (node_limit or qsearch_check_hard_limit at 8 plies). The published aggregate (served 13 / blind 28 / tie 4) therefore mixes completed and truncated evaluations. Decision needed: does the served-vs-blind direction survive when only fully completed evaluations are counted?",
+  "question": "Among the 45 judged divergence cells, how many candidate evaluations actually completed the prewritten depth-4/20k search, and does the served-vs-blind verdict distribution differ between the fully completed stratum and the truncated strata?",
+  "inputs": {
+    "results_judged_divergence.json": "444CDA26",
+    "results_judged_divergence_servedjudge.json": "E4A970A9",
+    "results_judged_divergence_w18judge.json": "5C030104",
+    "note": "SHA256 prefixes of the exact files read; no file is rewritten by this analysis"
+  },
+  "cell_unit": "one (seed, depth) judged record; 72 records total, 45 judged, 27 no_divergence",
+  "group_definition": {
+    "config_decided": ["sweep", "blind"],
+    "divergent_split": ["split"],
+    "note": "matches the grouping already fixed in README section 4 and summarize_judged_divergence.py"
+  },
+  "stratum_definition": {
+    "both_completed": "oracle.blind.reason == 'completed_depth' and oracle.served.reason == 'completed_depth'",
+    "one_truncated": "exactly one candidate reason is not 'completed_depth'",
+    "both_truncated": "neither candidate reason is 'completed_depth'"
+  },
+  "endpoints_written_in_advance": [
+    "E1: cell counts per truncation pattern x group x depth",
+    "E2: verdict distribution (served_better / blind_better / tie) per stratum and per group, using the recorded verdict field (4 cells whose verdict came from the prewritten depth-6 tie-break are counted separately so they can also be excluded)",
+    "E3: seed-level tally, counting each seed once by the majority verdict of its judged cells within the stratum; no p-values, no significance test",
+    "E4: cross-weight robustness restricted to the both_completed stratum; plus the parameter-free 3-weight majority verdict distribution over all 45 cells, with an explicit statement that the three judges are a correlated one-parameter family and therefore not independent evidence"
+  ],
+  "decision_rule_written_in_advance": {
+    "if_both_completed_n_ge_10_and_blind_majority_retained": "record truncation as a scope limitation but keep the direction as a stratified descriptive result; still no strength or quality claim",
+    "if_both_completed_n_ge_10_and_no_blind_majority": "the published unstratified direction is truncation-confounded and must be qualified in README/claim as not surviving the completed-evaluation stratum; no quality claim in either direction",
+    "if_both_completed_n_lt_10": "record the stratum as too small to decide; the aggregate direction remains UNKNOWN with respect to completed evaluation, and that is the recorded conclusion"
+  },
+  "cost": "zero new searches, zero new games; read three existing JSON files and emit one small JSON plus stdout",
+  "outputs": {
+    "result": "results_judged_divergence_strata.json",
+    "script": "stratify_judged_divergence.py"
+  },
+  "guards": [
+    "never rewrite or overwrite an existing result file; write only the new strata file and fail if it already exists",
+    "assert the three input files contain the same 45 judged cells and the same candidate move strings per cell",
+    "assert stored aggregate in the primary file still matches the recomputed aggregate before stratifying",
+    "no p-values, no endpoint tuning, no claim that the judge is ground truth"
+  ],
+  "done_condition": "strata result JSON exists, asserts pass, README section 5 and claim.json record the stratified finding and this plan hash, and every JSON file in the directory parses",
+  "consumer": "the published README section 4/5 evidence claim about whether the hand term's early divergence is a quality change; a truncation-confounded direction must not be published as a judge preference"
+}

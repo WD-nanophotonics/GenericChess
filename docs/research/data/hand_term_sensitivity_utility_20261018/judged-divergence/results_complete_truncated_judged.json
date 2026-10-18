@@ -1,0 +1,1051 @@
+{
+  "written_at_utc": "2026-10-18T11:51:35Z",
+  "role": "DEEPSEEK_AUX",
+  "segment": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "plan": "judged-divergence/plan-complete-truncated-judged.json (written before this run)",
+  "inputs": {
+    "results_judged_divergence.json": "444CDA26",
+    "results_judged_divergence_strata.json": "F8808A6B",
+    "results_judged_divergence_distinct_strata.json": "396982CC"
+  },
+  "question": "When the recorded hand-blind depth-4 judge is re-run on the 31 truncated cells with an escalated node cap, how many cells reach completed_depth for both candidates, and does the served-vs-blind verdict of the newly completed cells agree with the recorded truncated verdict?",
+  "weight": 0.0,
+  "ladder": [
+    20000,
+    40000,
+    80000,
+    160000
+  ],
+  "secondary_instrument": {
+    "max_depth": 4,
+    "max_nodes": 80000,
+    "quiescence_max_depth": 4,
+    "quiescence_hard_max_depth": 16
+  },
+  "guards": {
+    "primary_max_searches": 400,
+    "primary_max_seconds": 900.0,
+    "primary_searches_used": 291,
+    "primary_elapsed_seconds": 602.3,
+    "secondary_max_searches": 100,
+    "secondary_max_seconds": 600.0,
+    "secondary_searches_used": 14,
+    "secondary_elapsed_seconds": 602.3,
+    "total_nodes_and_qnodes": 2045965
+  },
+  "interrupted": "max_seconds 600.0 hit before secondary seed79 d2 served",
+  "problems": [
+    "max_seconds 600.0 hit before secondary seed79 d2 served"
+  ],
+  "counts": {
+    "truncated_cells": 31,
+    "newly_completed": 10,
+    "still_truncated": 21,
+    "instrument_unstable": 0,
+    "rebuild_failed": 0
+  },
+  "C1_per_cell_completion": [
+    {
+      "seed": 59,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": 1,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 60,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 62,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 4
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 64,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 3
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 67,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 69,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 70,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 71,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 72,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 74,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 75,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 2,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 79,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 80,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 2
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 84,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": 2
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 88,
+      "depth": 2,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 94,
+      "depth": 2,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 2
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 59,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": 1,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 60,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 62,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 4
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 64,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 2,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 67,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 69,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 71,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 72,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 74,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 75,
+      "depth": 3,
+      "recorded_stratum": "both_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 2,
+        "blind": 2
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 76,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 2,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 79,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": null,
+        "blind": 1
+      },
+      "final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 80,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": 1,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 85,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "newly_completed",
+      "completed_rung": {
+        "served": 1,
+        "blind": 2
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    },
+    {
+      "seed": 88,
+      "depth": 3,
+      "recorded_stratum": "one_truncated",
+      "status": "still_truncated",
+      "completed_rung": {
+        "served": 1,
+        "blind": null
+      },
+      "final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "reproduced_20k": {
+        "served": true,
+        "blind": true
+      }
+    }
+  ],
+  "C2_newly_completed_verdicts": {
+    "cells": [
+      {
+        "seed": 62,
+        "depth": 2,
+        "pair_kind": "split",
+        "delta": -1771,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 64,
+        "depth": 2,
+        "pair_kind": "split",
+        "delta": -1002,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 75,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "delta": -1529,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 80,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "delta": -2365,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 94,
+        "depth": 2,
+        "pair_kind": "split",
+        "delta": 83,
+        "verdict": "served_better",
+        "recorded_verdict": "served_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 62,
+        "depth": 3,
+        "pair_kind": "sweep",
+        "delta": -1771,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 64,
+        "depth": 3,
+        "pair_kind": "split",
+        "delta": 10,
+        "verdict": "served_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": false
+      },
+      {
+        "seed": 75,
+        "depth": 3,
+        "pair_kind": "split",
+        "delta": -391,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      },
+      {
+        "seed": 76,
+        "depth": 3,
+        "pair_kind": "sweep",
+        "delta": 0,
+        "verdict": "tie",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": false
+      },
+      {
+        "seed": 85,
+        "depth": 3,
+        "pair_kind": "split",
+        "delta": -17,
+        "verdict": "blind_better",
+        "recorded_verdict": "blind_better",
+        "recorded_tie_break": false,
+        "recorded_sign_agrees": true
+      }
+    ],
+    "counts": {
+      "blind_better": 7,
+      "served_better": 2,
+      "tie": 1
+    },
+    "recorded_sign_agrees": 8,
+    "seed_majority": {
+      "mixed": 2,
+      "blind_better": 4,
+      "served_better": 1
+    }
+  },
+  "C3_merged_completed_set": {
+    "originally_completed_cells": 14,
+    "newly_completed_cells": 10,
+    "verdicts": {
+      "tie": 3,
+      "served_better": 9,
+      "blind_better": 12
+    },
+    "distinct_positions": 22,
+    "position_verdicts": {
+      "tie": 3,
+      "served_better": 9,
+      "blind_better": 10
+    },
+    "seed_majority": {
+      "mixed": 6,
+      "served_better": 3,
+      "blind_better": 5
+    }
+  },
+  "C4_still_truncated": {
+    "cells": [
+      {
+        "seed": 59,
+        "depth": 2,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "completed_depth",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 60,
+        "depth": 2,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "completed_depth",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": "tie"
+      },
+      {
+        "seed": 67,
+        "depth": 2,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "node_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 69,
+        "depth": 2,
+        "pair_kind": "blind",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "completed_depth",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": "blind_better"
+      },
+      {
+        "seed": 70,
+        "depth": 2,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "completed_depth",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": "blind_better"
+      },
+      {
+        "seed": 71,
+        "depth": 2,
+        "pair_kind": "blind",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "node_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 72,
+        "depth": 2,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_reason": {
+          "served": "completed_depth",
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 74,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": "node_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 79,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 84,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 88,
+        "depth": 2,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 59,
+        "depth": 3,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "completed_depth",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 60,
+        "depth": 3,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 67,
+        "depth": 3,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 69,
+        "depth": 3,
+        "pair_kind": "blind",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 71,
+        "depth": 3,
+        "pair_kind": "blind",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 72,
+        "depth": 3,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 74,
+        "depth": 3,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 79,
+        "depth": 3,
+        "pair_kind": "split",
+        "remaining_reason": {
+          "served": "qsearch_check_hard_limit",
+          "blind": "completed_depth"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 80,
+        "depth": 3,
+        "pair_kind": "blind",
+        "remaining_reason": {
+          "served": "completed_depth",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      },
+      {
+        "seed": 88,
+        "depth": 3,
+        "pair_kind": "sweep",
+        "remaining_reason": {
+          "served": "completed_depth",
+          "blind": "qsearch_check_hard_limit"
+        },
+        "secondary_reason": {
+          "served": null,
+          "blind": null
+        },
+        "secondary_pair_verdict": null
+      }
+    ],
+    "remaining_reason_counts": {
+      "completed_depth": 9,
+      "qsearch_check_hard_limit": 33
+    },
+    "secondary_completed": 11,
+    "secondary_pair_verdicts": {
+      "tie": 1,
+      "blind_better": 2
+    }
+  },
+  "decision": "blind_direction_survives_completion",
+  "decision_basis": "prewritten rule in plan-complete-truncated-judged.json; seed-level majority inside the newly completed cells"
+}

@@ -1,0 +1,733 @@
+{
+  "written_at_utc": "2026-10-18T12:03:58Z",
+  "role": "DEEPSEEK_AUX",
+  "segment": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "plan": "judged-divergence/plan-secondary-completion.json A4616098 (written before this run)",
+  "inputs": {
+    "results_complete_truncated_judged.json": "618EEED9",
+    "results_judged_divergence.json": "444CDA26"
+  },
+  "question": "Under the pre-written secondary instrument (depth 4, 80k nodes, quiescence hard 16), do the candidate evaluations still truncated after the primary ladder complete, and what are their separate per-cell verdicts?",
+  "instrument": {
+    "max_depth": 4,
+    "max_nodes": 80000,
+    "quiescence_max_depth": 4,
+    "quiescence_hard_max_depth": 16
+  },
+  "weight": 0.0,
+  "guards": {
+    "phase_max_searches": 100,
+    "phase_max_seconds": 600.0,
+    "phase_searches_used": 96,
+    "phase_elapsed_seconds": 224.0,
+    "secondary_nodes_and_qnodes": 784763,
+    "clock_scope": "starts at the phase boundary"
+  },
+  "interrupted": null,
+  "problems": [],
+  "counts": {
+    "still_truncated_cells": 21,
+    "missing_secondary_evaluations": 19,
+    "new_secondary_evaluations": 19,
+    "reused_secondary_reasons": 14,
+    "secondary_reason_counts": {
+      "completed_depth": 25,
+      "node_limit": 8
+    },
+    "pair_status_counts": {
+      "mixed_instrument": 9,
+      "reused_verdict": 3,
+      "incomplete": 6,
+      "computed": 3
+    }
+  },
+  "S1_per_candidate": {
+    "newly_run": [
+      {
+        "seed": 79,
+        "depth": 2,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -700,
+          "reason": "node_limit",
+          "nodes": 2053,
+          "qnodes": 77947,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 84,
+        "depth": 2,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -2,
+          "reason": "completed_depth",
+          "nodes": 1284,
+          "qnodes": 12136,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 88,
+        "depth": 2,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -392,
+          "reason": "completed_depth",
+          "nodes": 721,
+          "qnodes": 8477,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 88,
+        "depth": 2,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": -999999993,
+          "reason": "completed_depth",
+          "nodes": 1633,
+          "qnodes": 18330,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 59,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": -1663,
+          "reason": "completed_depth",
+          "nodes": 1250,
+          "qnodes": 26306,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 60,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": 999999998,
+          "reason": "completed_depth",
+          "nodes": 986,
+          "qnodes": 46995,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 60,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": 999999998,
+          "reason": "completed_depth",
+          "nodes": 1068,
+          "qnodes": 39523,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 67,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -713,
+          "reason": "node_limit",
+          "nodes": 2457,
+          "qnodes": 77543,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 67,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": 999999998,
+          "reason": "completed_depth",
+          "nodes": 473,
+          "qnodes": 12454,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 69,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": 1244,
+          "reason": "completed_depth",
+          "nodes": 700,
+          "qnodes": 26132,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 69,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": 1248,
+          "reason": "completed_depth",
+          "nodes": 660,
+          "qnodes": 31754,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 71,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -2412,
+          "reason": "node_limit",
+          "nodes": 2667,
+          "qnodes": 77333,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 71,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": 1757,
+          "reason": "completed_depth",
+          "nodes": 618,
+          "qnodes": 11530,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 72,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": 559,
+          "reason": "completed_depth",
+          "nodes": 926,
+          "qnodes": 25853,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 74,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -1873,
+          "reason": "node_limit",
+          "nodes": 2713,
+          "qnodes": 77287,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 74,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": -1166,
+          "reason": "completed_depth",
+          "nodes": 934,
+          "qnodes": 27623,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 79,
+        "depth": 3,
+        "arm": "served",
+        "secondary": {
+          "score_for_mover": -700,
+          "reason": "node_limit",
+          "nodes": 2053,
+          "qnodes": 77947,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 80,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": 4585,
+          "reason": "completed_depth",
+          "nodes": 2642,
+          "qnodes": 64201,
+          "node_cap_hit": false
+        }
+      },
+      {
+        "seed": 88,
+        "depth": 3,
+        "arm": "blind",
+        "secondary": {
+          "score_for_mover": -252,
+          "reason": "completed_depth",
+          "nodes": 1003,
+          "qnodes": 18551,
+          "node_cap_hit": false
+        }
+      }
+    ],
+    "reused_reason_only": [
+      {
+        "seed": 59,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 60,
+        "depth": 2,
+        "arm": "served",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 60,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 67,
+        "depth": 2,
+        "arm": "served",
+        "reason": "node_limit"
+      },
+      {
+        "seed": 67,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 69,
+        "depth": 2,
+        "arm": "served",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 69,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 70,
+        "depth": 2,
+        "arm": "served",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 70,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 71,
+        "depth": 2,
+        "arm": "served",
+        "reason": "node_limit"
+      },
+      {
+        "seed": 71,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 72,
+        "depth": 2,
+        "arm": "served",
+        "reason": "completed_depth"
+      },
+      {
+        "seed": 74,
+        "depth": 2,
+        "arm": "served",
+        "reason": "node_limit"
+      },
+      {
+        "seed": 74,
+        "depth": 2,
+        "arm": "blind",
+        "reason": "completed_depth"
+      }
+    ],
+    "note": "frozen 618EEED9 preserved secondary reasons but not their scores/nodes; those 11 reasons are reused read-only"
+  },
+  "S2_per_cell": [
+    {
+      "seed": 59,
+      "depth": 2,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 60,
+      "depth": 2,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "reused_verdict",
+      "secondary_pair_verdict": "tie",
+      "reused_pair_verdict": true
+    },
+    {
+      "seed": 67,
+      "depth": 2,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "node_limit",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 69,
+      "depth": 2,
+      "pair_kind": "blind",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "reused_verdict",
+      "secondary_pair_verdict": "blind_better",
+      "reused_pair_verdict": true
+    },
+    {
+      "seed": 70,
+      "depth": 2,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "completed_depth",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "reused_verdict",
+      "secondary_pair_verdict": "blind_better",
+      "reused_pair_verdict": true
+    },
+    {
+      "seed": 71,
+      "depth": 2,
+      "pair_kind": "blind",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "node_limit",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 72,
+      "depth": 2,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "recorded_secondary_reason": {
+        "served": "completed_depth",
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 74,
+      "depth": 2,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": "node_limit",
+        "blind": "completed_depth"
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 79,
+      "depth": 2,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 84,
+      "depth": 2,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 88,
+      "depth": 2,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "computed",
+      "secondary_pair_verdict": "served_better",
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 59,
+      "depth": 3,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 60,
+      "depth": 3,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "computed",
+      "secondary_pair_verdict": "tie",
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 67,
+      "depth": 3,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 69,
+      "depth": 3,
+      "pair_kind": "blind",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "computed",
+      "secondary_pair_verdict": "blind_better",
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 71,
+      "depth": 3,
+      "pair_kind": "blind",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 72,
+      "depth": 3,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 74,
+      "depth": 3,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "incomplete",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 79,
+      "depth": 3,
+      "pair_kind": "split",
+      "primary_final_reason": {
+        "served": "qsearch_check_hard_limit",
+        "blind": "completed_depth"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 80,
+      "depth": 3,
+      "pair_kind": "blind",
+      "primary_final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    },
+    {
+      "seed": 88,
+      "depth": 3,
+      "pair_kind": "sweep",
+      "primary_final_reason": {
+        "served": "completed_depth",
+        "blind": "qsearch_check_hard_limit"
+      },
+      "recorded_secondary_reason": {
+        "served": null,
+        "blind": null
+      },
+      "secondary_pair_status": "mixed_instrument",
+      "secondary_pair_verdict": null,
+      "reused_pair_verdict": false
+    }
+  ],
+  "S3": {
+    "reason_counts": {
+      "completed_depth": 25,
+      "node_limit": 8
+    },
+    "pair_verdicts": {
+      "tie": 2,
+      "blind_better": 3,
+      "served_better": 1
+    },
+    "pair_verdict_differs_from_recorded": [
+      {
+        "seed": 69,
+        "depth": 2,
+        "recorded_verdict": "served_better",
+        "secondary_pair_verdict": "blind_better"
+      },
+      {
+        "seed": 69,
+        "depth": 3,
+        "recorded_verdict": "served_better",
+        "secondary_pair_verdict": "blind_better"
+      }
+    ]
+  },
+  "S4": {
+    "phase_searches": 96,
+    "phase_elapsed_seconds": 224.0,
+    "secondary_nodes_and_qnodes": 784763
+  },
+  "decision": "diagnostic_only",
+  "decision_basis": "prewritten rule in plan-secondary-completion.json: no primary endpoint, direction or decision changes; the result records instrument sensitivity only"
+}

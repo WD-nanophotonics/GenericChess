@@ -1,0 +1,3207 @@
+{
+  "aggregate": {
+    "groups": {
+      "config_decided": {
+        "by_depth": {
+          "2": {
+            "positions": 10,
+            "verdicts": {
+              "blind_better": 6,
+              "served_better": 4
+            }
+          },
+          "3": {
+            "positions": 11,
+            "verdicts": {
+              "blind_better": 6,
+              "served_better": 5
+            }
+          }
+        },
+        "delta_max": 999999343,
+        "delta_min": -3124,
+        "node_cap_hits": 0,
+        "positions": 21,
+        "reasons": {
+          "completed_depth": 18,
+          "node_limit": 7,
+          "qsearch_check_hard_limit": 17
+        },
+        "tie_break": {},
+        "verdicts": {
+          "blind_better": 12,
+          "served_better": 9
+        }
+      },
+      "divergent_split": {
+        "by_depth": {
+          "2": {
+            "positions": 13,
+            "verdicts": {
+              "blind_better": 8,
+              "served_better": 3,
+              "tie": 2
+            }
+          },
+          "3": {
+            "positions": 11,
+            "verdicts": {
+              "blind_better": 8,
+              "served_better": 1,
+              "tie": 2
+            }
+          }
+        },
+        "delta_max": 999998847,
+        "delta_min": -1000000803,
+        "node_cap_hits": 0,
+        "positions": 24,
+        "reasons": {
+          "completed_depth": 27,
+          "node_limit": 8,
+          "qsearch_check_hard_limit": 13
+        },
+        "tie_break": {
+          "judged": 4
+        },
+        "verdicts": {
+          "blind_better": 16,
+          "served_better": 4,
+          "tie": 4
+        }
+      }
+    },
+    "statuses": {
+      "judged": 45,
+      "no_divergence": 27
+    },
+    "total_records": 72
+  },
+  "elapsed_seconds": 281.1,
+  "guards": {
+    "max_searches": 400,
+    "max_seconds": 900.0,
+    "searches_used": 252,
+    "tie_break_searches": 8
+  },
+  "interrupted": null,
+  "oracle": {
+    "max_depth": 4,
+    "max_nodes": 20000,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "plan": "judged-divergence/plan.json (written before the run)",
+  "problems": [],
+  "question": "At the first move-divergence position of each colour-swapped pair, does a hand-blind deeper oracle prefer the served move, and does that preference separate config-decided pairs from divergent splits?",
+  "records": [
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 58,
+          "qnodes": 1433,
+          "reason": "completed_depth",
+          "score": -2213
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 60,
+          "qnodes": 1883,
+          "reason": "completed_depth",
+          "score": -1428
+        }
+      },
+      "delta": -999997773,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 456,
+          "qnodes": 10368,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -2220,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 613,
+          "qnodes": 6732,
+          "reason": "completed_depth",
+          "score_for_mover": -999999993,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')"
+      },
+      "seed": 59,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 96,
+          "qnodes": 758,
+          "reason": "qsearch_check_hard_limit",
+          "score": 1312
+        },
+        "served": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 201,
+          "qnodes": 11094,
+          "reason": "completed_depth",
+          "score": 999999997
+        }
+      },
+      "delta": 0,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 6,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 53,
+          "qnodes": 3317,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 103,
+          "qnodes": 6242,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+        "served": "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))"
+      },
+      "seed": 60,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "tie_break": {
+        "delta": 0,
+        "scores": {
+          "blind": {
+            "node_cap_hit": false,
+            "nodes": 53,
+            "qnodes": 3317,
+            "reason": "qsearch_check_hard_limit",
+            "score_for_mover": 999999998
+          },
+          "served": {
+            "node_cap_hit": false,
+            "nodes": 103,
+            "qnodes": 6242,
+            "reason": "qsearch_check_hard_limit",
+            "score_for_mover": 999999998
+          }
+        },
+        "status": "judged",
+        "verdict": "tie"
+      },
+      "verdict": "tie"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 61,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 138,
+          "qnodes": 4388,
+          "reason": "completed_depth",
+          "score": 1319
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 100,
+          "qnodes": 3200,
+          "reason": "completed_depth",
+          "score": 4635
+        }
+      },
+      "delta": -1017,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 433,
+          "qnodes": 19567,
+          "reason": "node_limit",
+          "score_for_mover": 2464,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1289,
+          "qnodes": 15068,
+          "reason": "completed_depth",
+          "score_for_mover": 1447,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+        "served": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      },
+      "seed": 62,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=3))",
+          "node_cap_hit": false,
+          "nodes": 51,
+          "qnodes": 163,
+          "reason": "completed_depth",
+          "score": -3471
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 32,
+          "qnodes": 34,
+          "reason": "completed_depth",
+          "score": -8263
+        }
+      },
+      "delta": 0,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 673,
+          "qnodes": 1724,
+          "reason": "completed_depth",
+          "score_for_mover": -999999997,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 693,
+          "qnodes": 2070,
+          "reason": "completed_depth",
+          "score_for_mover": -999999997,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=3))",
+        "served": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=0), promotion_target_id='A')"
+      },
+      "seed": 63,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "tie_break": {
+        "delta": 0,
+        "scores": {
+          "blind": {
+            "node_cap_hit": false,
+            "nodes": 7024,
+            "qnodes": 19501,
+            "reason": "completed_depth",
+            "score_for_mover": -999999997
+          },
+          "served": {
+            "node_cap_hit": false,
+            "nodes": 6911,
+            "qnodes": 20510,
+            "reason": "completed_depth",
+            "score_for_mover": -999999997
+          }
+        },
+        "status": "judged",
+        "verdict": "tie"
+      },
+      "verdict": "tie"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 54,
+          "qnodes": 533,
+          "reason": "completed_depth",
+          "score": -5
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 53,
+          "qnodes": 652,
+          "reason": "completed_depth",
+          "score": -3609
+        }
+      },
+      "delta": -592,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 3,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1029,
+          "qnodes": 18971,
+          "reason": "node_limit",
+          "score_for_mover": -415,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 295,
+          "qnodes": 2440,
+          "reason": "completed_depth",
+          "score_for_mover": -1007,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id='A')",
+        "served": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='A')"
+      },
+      "seed": 64,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 65,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 66,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 118,
+          "qnodes": 4126,
+          "reason": "completed_depth",
+          "score": 999999997
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 52,
+          "qnodes": 1537,
+          "reason": "qsearch_check_hard_limit",
+          "score": 539
+        }
+      },
+      "delta": -1000000803,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 123,
+          "qnodes": 4824,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 67,
+          "qnodes": 1144,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -805,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+        "served": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+      },
+      "seed": 67,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 68,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 67,
+          "qnodes": 3755,
+          "reason": "completed_depth",
+          "score": 9
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 38,
+          "qnodes": 2107,
+          "reason": "qsearch_check_hard_limit",
+          "score": 4614
+        }
+      },
+      "delta": 11,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 19,
+          "qnodes": 555,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -11,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 23,
+          "qnodes": 252,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 0,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_loss"
+      ],
+      "pair_kind": "blind",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "served": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 69,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 53,
+          "qnodes": 807,
+          "reason": "completed_depth",
+          "score": 999999993
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 24,
+          "qnodes": 198,
+          "reason": "qsearch_check_hard_limit",
+          "score": 2095
+        }
+      },
+      "delta": -999996974,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 6,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 80,
+          "qnodes": 878,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999994,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 167,
+          "qnodes": 4371,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 3020,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 70,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 95,
+          "qnodes": 1084,
+          "reason": "completed_depth",
+          "score": -11
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 86,
+          "qnodes": 1295,
+          "reason": "qsearch_check_hard_limit",
+          "score": -3158
+        }
+      },
+      "delta": -3124,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 563,
+          "qnodes": 10254,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 1,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 126,
+          "qnodes": 4853,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -3123,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_loss"
+      ],
+      "pair_kind": "blind",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+        "served": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 71,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 30,
+          "qnodes": 1090,
+          "reason": "completed_depth",
+          "score": 294
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 41,
+          "qnodes": 2051,
+          "reason": "completed_depth",
+          "score": -736
+        }
+      },
+      "delta": -1715,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 321,
+          "qnodes": 11262,
+          "reason": "completed_depth",
+          "score_for_mover": 1269,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 371,
+          "qnodes": 9272,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -446,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+      },
+      "seed": 72,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 73,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 98,
+          "qnodes": 7365,
+          "reason": "completed_depth",
+          "score": -1164
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 43,
+          "qnodes": 2229,
+          "reason": "qsearch_check_hard_limit",
+          "score": 1920
+        }
+      },
+      "delta": -1004,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 219,
+          "qnodes": 8019,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -873,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 48,
+          "qnodes": 1091,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -1877,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 74,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=3, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 88,
+          "qnodes": 1013,
+          "reason": "completed_depth",
+          "score": 1405
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+          "node_cap_hit": false,
+          "nodes": 79,
+          "qnodes": 984,
+          "reason": "completed_depth",
+          "score": 3073
+        }
+      },
+      "delta": -1534,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 256,
+          "qnodes": 2463,
+          "reason": "completed_depth",
+          "score_for_mover": 3536,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 2041,
+          "qnodes": 17959,
+          "reason": "node_limit",
+          "score_for_mover": 2002,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=3, rank=0))",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')"
+      },
+      "seed": 75,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 71,
+          "qnodes": 1590,
+          "reason": "completed_depth",
+          "score": 2144
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 72,
+          "qnodes": 1516,
+          "reason": "completed_depth",
+          "score": 2212
+        }
+      },
+      "delta": 4,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1257,
+          "qnodes": 14945,
+          "reason": "completed_depth",
+          "score_for_mover": 3144,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1619,
+          "qnodes": 14493,
+          "reason": "completed_depth",
+          "score_for_mover": 3148,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+      },
+      "seed": 76,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 77,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 85,
+          "qnodes": 1112,
+          "reason": "completed_depth",
+          "score": -2260
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 56,
+          "qnodes": 370,
+          "reason": "completed_depth",
+          "score": -128
+        }
+      },
+      "delta": -734,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1251,
+          "qnodes": 14667,
+          "reason": "completed_depth",
+          "score_for_mover": -1271,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1736,
+          "qnodes": 16691,
+          "reason": "completed_depth",
+          "score_for_mover": -2005,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+        "served": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+      },
+      "seed": 78,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 125,
+          "qnodes": 3685,
+          "reason": "completed_depth",
+          "score": -23
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 96,
+          "qnodes": 2845,
+          "reason": "completed_depth",
+          "score": -1668
+        }
+      },
+      "delta": -1013,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 179,
+          "qnodes": 3549,
+          "reason": "completed_depth",
+          "score_for_mover": 1326,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 472,
+          "qnodes": 19528,
+          "reason": "node_limit",
+          "score_for_mover": 313,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 79,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 74,
+          "qnodes": 1136,
+          "reason": "completed_depth",
+          "score": 4461
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 72,
+          "qnodes": 1291,
+          "reason": "completed_depth",
+          "score": 4353
+        }
+      },
+      "delta": -3,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1024,
+          "qnodes": 18976,
+          "reason": "node_limit",
+          "score_for_mover": 2232,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 272,
+          "qnodes": 2314,
+          "reason": "completed_depth",
+          "score_for_mover": 2229,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 80,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 56,
+          "qnodes": 378,
+          "reason": "completed_depth",
+          "score": -4482
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 44,
+          "qnodes": 328,
+          "reason": "completed_depth",
+          "score": -3101
+        }
+      },
+      "delta": -480,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 847,
+          "qnodes": 10267,
+          "reason": "completed_depth",
+          "score_for_mover": -3453,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1294,
+          "qnodes": 14724,
+          "reason": "completed_depth",
+          "score_for_mover": -3933,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')"
+      },
+      "seed": 81,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 82,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 83,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=3, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 127,
+          "qnodes": 1515,
+          "reason": "completed_depth",
+          "score": -5
+        },
+        "served": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 132,
+          "qnodes": 1500,
+          "reason": "completed_depth",
+          "score": -1033
+        }
+      },
+      "delta": -162,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 4,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1557,
+          "qnodes": 18443,
+          "reason": "node_limit",
+          "score_for_mover": 15,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 335,
+          "qnodes": 2543,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -147,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=3, rank=1))",
+        "served": "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))"
+      },
+      "seed": 84,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=0, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 80,
+          "qnodes": 428,
+          "reason": "completed_depth",
+          "score": 4199
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 71,
+          "qnodes": 278,
+          "reason": "completed_depth",
+          "score": 6244
+        }
+      },
+      "delta": 815,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 491,
+          "qnodes": 2235,
+          "reason": "completed_depth",
+          "score_for_mover": 4652,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 646,
+          "qnodes": 1957,
+          "reason": "completed_depth",
+          "score_for_mover": 5467,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=0, rank=0))",
+        "served": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      },
+      "seed": 85,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 59,
+          "qnodes": 897,
+          "reason": "completed_depth",
+          "score": 1499
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 57,
+          "qnodes": 632,
+          "reason": "completed_depth",
+          "score": 4343
+        }
+      },
+      "delta": 824,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 440,
+          "qnodes": 2978,
+          "reason": "completed_depth",
+          "score_for_mover": 1664,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 803,
+          "qnodes": 6208,
+          "reason": "completed_depth",
+          "score_for_mover": 2488,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "served": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+      },
+      "seed": 86,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 87,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 62,
+          "qnodes": 850,
+          "reason": "completed_depth",
+          "score": 242
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 79,
+          "qnodes": 1157,
+          "reason": "completed_depth",
+          "score": 1040
+        }
+      },
+      "delta": 999999343,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 253,
+          "qnodes": 4449,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -999999993,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 544,
+          "qnodes": 7849,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -650,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+        "served": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+      },
+      "seed": 88,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 89,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+          "node_cap_hit": false,
+          "nodes": 31,
+          "qnodes": 107,
+          "reason": "completed_depth",
+          "score": 984
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 28,
+          "qnodes": 54,
+          "reason": "completed_depth",
+          "score": 2083
+        }
+      },
+      "delta": 999998847,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 104,
+          "qnodes": 317,
+          "reason": "completed_depth",
+          "score_for_mover": 1149,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 148,
+          "qnodes": 230,
+          "reason": "completed_depth",
+          "score_for_mover": 999999996,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+        "served": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+      },
+      "seed": 90,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 91,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 92,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 2,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 93,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=2, rank=3))",
+          "node_cap_hit": false,
+          "nodes": 82,
+          "qnodes": 655,
+          "reason": "completed_depth",
+          "score": -1444
+        },
+        "served": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=0, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 64,
+          "qnodes": 608,
+          "reason": "completed_depth",
+          "score": -546
+        }
+      },
+      "delta": 552,
+      "depth": 2,
+      "divergence_side": 1,
+      "first_diff_ply": 3,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1213,
+          "qnodes": 18787,
+          "reason": "node_limit",
+          "score_for_mover": -1008,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 385,
+          "qnodes": 7653,
+          "reason": "completed_depth",
+          "score_for_mover": -456,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='A', to_square=Square(file=2, rank=3))",
+        "served": "DropMove(base_type_id='A', to_square=Square(file=0, rank=2))"
+      },
+      "seed": 94,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 198,
+          "qnodes": 4494,
+          "reason": "completed_depth",
+          "score": -1545
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 223,
+          "qnodes": 6468,
+          "reason": "completed_depth",
+          "score": -647
+        }
+      },
+      "delta": -999997773,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 456,
+          "qnodes": 10368,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -2220,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 613,
+          "qnodes": 6732,
+          "reason": "completed_depth",
+          "score_for_mover": -999999993,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')"
+      },
+      "seed": 59,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 96,
+          "qnodes": 758,
+          "reason": "qsearch_check_hard_limit",
+          "score": 1312
+        },
+        "served": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 374,
+          "qnodes": 19626,
+          "reason": "node_limit",
+          "score": 999999997
+        }
+      },
+      "delta": 0,
+      "depth": 3,
+      "divergence_side": 1,
+      "first_diff_ply": 6,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 53,
+          "qnodes": 3317,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 103,
+          "qnodes": 6242,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+        "served": "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))"
+      },
+      "seed": 60,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "tie_break": {
+        "delta": 0,
+        "scores": {
+          "blind": {
+            "node_cap_hit": false,
+            "nodes": 53,
+            "qnodes": 3317,
+            "reason": "qsearch_check_hard_limit",
+            "score_for_mover": 999999998
+          },
+          "served": {
+            "node_cap_hit": false,
+            "nodes": 103,
+            "qnodes": 6242,
+            "reason": "qsearch_check_hard_limit",
+            "score_for_mover": 999999998
+          }
+        },
+        "status": "judged",
+        "verdict": "tie"
+      },
+      "verdict": "tie"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 61,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 969,
+          "qnodes": 15502,
+          "reason": "completed_depth",
+          "score": 2464
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 740,
+          "qnodes": 11876,
+          "reason": "completed_depth",
+          "score": 5146
+        }
+      },
+      "delta": -1017,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 433,
+          "qnodes": 19567,
+          "reason": "node_limit",
+          "score_for_mover": 2464,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1289,
+          "qnodes": 15068,
+          "reason": "completed_depth",
+          "score_for_mover": 1447,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+        "served": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      },
+      "seed": 62,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 63,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 339,
+          "qnodes": 6119,
+          "reason": "completed_depth",
+          "score": -46
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 286,
+          "qnodes": 4238,
+          "reason": "completed_depth",
+          "score": -3682
+        }
+      },
+      "delta": -409,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 3,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 143,
+          "qnodes": 1852,
+          "reason": "completed_depth",
+          "score_for_mover": -46,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1238,
+          "qnodes": 18762,
+          "reason": "node_limit",
+          "score_for_mover": -455,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))",
+        "served": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+      },
+      "seed": 64,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 65,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 66,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 139,
+          "qnodes": 5229,
+          "reason": "qsearch_check_hard_limit",
+          "score": 999999997
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 52,
+          "qnodes": 1537,
+          "reason": "qsearch_check_hard_limit",
+          "score": 539
+        }
+      },
+      "delta": -1000000803,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 123,
+          "qnodes": 4824,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 999999998,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 67,
+          "qnodes": 1144,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -805,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+        "served": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+      },
+      "seed": 67,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 68,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 72,
+          "qnodes": 3995,
+          "reason": "qsearch_check_hard_limit",
+          "score": 9
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 38,
+          "qnodes": 2107,
+          "reason": "qsearch_check_hard_limit",
+          "score": 4614
+        }
+      },
+      "delta": 11,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 19,
+          "qnodes": 555,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -11,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 23,
+          "qnodes": 252,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 0,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_loss"
+      ],
+      "pair_kind": "blind",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "served": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 69,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 70,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 183,
+          "qnodes": 5917,
+          "reason": "qsearch_check_hard_limit",
+          "score": -11
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 86,
+          "qnodes": 1295,
+          "reason": "qsearch_check_hard_limit",
+          "score": -3158
+        }
+      },
+      "delta": -3124,
+      "depth": 3,
+      "divergence_side": 1,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 563,
+          "qnodes": 10254,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": 1,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 126,
+          "qnodes": 4853,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -3123,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_loss"
+      ],
+      "pair_kind": "blind",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+        "served": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 71,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 131,
+          "qnodes": 3293,
+          "reason": "completed_depth",
+          "score": 990
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 115,
+          "qnodes": 4538,
+          "reason": "qsearch_check_hard_limit",
+          "score": -736
+        }
+      },
+      "delta": -1715,
+      "depth": 3,
+      "divergence_side": 1,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 321,
+          "qnodes": 11262,
+          "reason": "completed_depth",
+          "score_for_mover": 1269,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 371,
+          "qnodes": 9272,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -446,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+      },
+      "seed": 72,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 73,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 144,
+          "qnodes": 9669,
+          "reason": "qsearch_check_hard_limit",
+          "score": -1164
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 43,
+          "qnodes": 2229,
+          "reason": "qsearch_check_hard_limit",
+          "score": 1920
+        }
+      },
+      "delta": -1004,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 219,
+          "qnodes": 8019,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -873,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 48,
+          "qnodes": 1091,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -1877,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 74,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+          "node_cap_hit": false,
+          "nodes": 587,
+          "qnodes": 4349,
+          "reason": "completed_depth",
+          "score": 2004
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 519,
+          "qnodes": 4601,
+          "reason": "completed_depth",
+          "score": 3092
+        }
+      },
+      "delta": -2282,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 2041,
+          "qnodes": 17959,
+          "reason": "node_limit",
+          "score_for_mover": 2002,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1916,
+          "qnodes": 18084,
+          "reason": "node_limit",
+          "score_for_mover": -280,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+        "served": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+      },
+      "seed": 75,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=2, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 550,
+          "qnodes": 7266,
+          "reason": "completed_depth",
+          "score": 3150
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 340,
+          "qnodes": 4189,
+          "reason": "completed_depth",
+          "score": 3924
+        }
+      },
+      "delta": -1003,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1255,
+          "qnodes": 18419,
+          "reason": "completed_depth",
+          "score_for_mover": 3110,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1439,
+          "qnodes": 18561,
+          "reason": "node_limit",
+          "score_for_mover": 2107,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=2, rank=0))",
+        "served": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      },
+      "seed": 76,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 77,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 245,
+          "qnodes": 2500,
+          "reason": "completed_depth",
+          "score": -1000
+        },
+        "served": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 255,
+          "qnodes": 2736,
+          "reason": "completed_depth",
+          "score": 84
+        }
+      },
+      "delta": 1005,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 483,
+          "qnodes": 6549,
+          "reason": "completed_depth",
+          "score_for_mover": -1021,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1042,
+          "qnodes": 11080,
+          "reason": "completed_depth",
+          "score_for_mover": -16,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))",
+        "served": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))"
+      },
+      "seed": 78,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 733,
+          "qnodes": 18079,
+          "reason": "completed_depth",
+          "score": 1322
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 396,
+          "qnodes": 15638,
+          "reason": "completed_depth",
+          "score": -218
+        }
+      },
+      "delta": -1013,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 179,
+          "qnodes": 3549,
+          "reason": "completed_depth",
+          "score_for_mover": 1326,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 472,
+          "qnodes": 19528,
+          "reason": "node_limit",
+          "score_for_mover": 313,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 79,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 763,
+          "qnodes": 13418,
+          "reason": "completed_depth",
+          "score": 4594
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 537,
+          "qnodes": 10127,
+          "reason": "completed_depth",
+          "score": 4617
+        }
+      },
+      "delta": 1351,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 736,
+          "qnodes": 19264,
+          "reason": "node_limit",
+          "score_for_mover": 3234,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 472,
+          "qnodes": 5064,
+          "reason": "completed_depth",
+          "score_for_mover": 4585,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_loss"
+      ],
+      "pair_kind": "blind",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "served": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+      },
+      "seed": 80,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 196,
+          "qnodes": 2862,
+          "reason": "completed_depth",
+          "score": -4241
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 135,
+          "qnodes": 1429,
+          "reason": "completed_depth",
+          "score": -3121
+        }
+      },
+      "delta": -480,
+      "depth": 3,
+      "divergence_side": 1,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 847,
+          "qnodes": 10267,
+          "reason": "completed_depth",
+          "score_for_mover": -3453,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1294,
+          "qnodes": 14724,
+          "reason": "completed_depth",
+          "score_for_mover": -3933,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')"
+      },
+      "seed": 81,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 82,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 83,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=3, rank=1))",
+          "node_cap_hit": false,
+          "nodes": 239,
+          "qnodes": 1412,
+          "reason": "completed_depth",
+          "score": 0
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 223,
+          "qnodes": 1307,
+          "reason": "completed_depth",
+          "score": -1042
+        }
+      },
+      "delta": -136,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 385,
+          "qnodes": 3203,
+          "reason": "completed_depth",
+          "score_for_mover": 860,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1495,
+          "qnodes": 10428,
+          "reason": "completed_depth",
+          "score_for_mover": 724,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='A', to_square=Square(file=3, rank=1))",
+        "served": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+      },
+      "seed": 84,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 213,
+          "qnodes": 2037,
+          "reason": "completed_depth",
+          "score": -4752
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 186,
+          "qnodes": 1007,
+          "reason": "completed_depth",
+          "score": -5674
+        }
+      },
+      "delta": -4,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 7,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 2877,
+          "qnodes": 17123,
+          "reason": "node_limit",
+          "score_for_mover": -5190,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 1872,
+          "qnodes": 11674,
+          "reason": "completed_depth",
+          "score_for_mover": -5194,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+      },
+      "seed": 85,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 214,
+          "qnodes": 1635,
+          "reason": "completed_depth",
+          "score": 1686
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 235,
+          "qnodes": 1484,
+          "reason": "completed_depth",
+          "score": 4496
+        }
+      },
+      "delta": 1609,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 653,
+          "qnodes": 7761,
+          "reason": "completed_depth",
+          "score_for_mover": 879,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 803,
+          "qnodes": 6208,
+          "reason": "completed_depth",
+          "score_for_mover": 2488,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+      },
+      "seed": 86,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 87,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+          "node_cap_hit": false,
+          "nodes": 395,
+          "qnodes": 4024,
+          "reason": "completed_depth",
+          "score": -242
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 431,
+          "qnodes": 6266,
+          "reason": "completed_depth",
+          "score": -723
+        }
+      },
+      "delta": 254,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 669,
+          "qnodes": 10429,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -1365,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 981,
+          "qnodes": 14874,
+          "reason": "completed_depth",
+          "score_for_mover": -1111,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_win"
+      ],
+      "pair_kind": "sweep",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+        "served": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+      },
+      "seed": 88,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 89,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=3, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 226,
+          "qnodes": 550,
+          "reason": "completed_depth",
+          "score": 2834
+        },
+        "served": {
+          "move": "DropMove(base_type_id='P', to_square=Square(file=3, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 211,
+          "qnodes": 509,
+          "reason": "completed_depth",
+          "score": 3774
+        }
+      },
+      "delta": 974,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 238,
+          "qnodes": 574,
+          "reason": "completed_depth",
+          "score_for_mover": 2991,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 170,
+          "qnodes": 873,
+          "reason": "completed_depth",
+          "score_for_mover": 3965,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='A', to_square=Square(file=3, rank=0))",
+        "served": "DropMove(base_type_id='P', to_square=Square(file=3, rank=0))"
+      },
+      "seed": 90,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "served_better"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "seed": 91,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "depth": 3,
+      "first_diff_ply": null,
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "seed": 92,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "no_divergence"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 187,
+          "qnodes": 481,
+          "reason": "completed_depth",
+          "score": 13450
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 181,
+          "qnodes": 421,
+          "reason": "completed_depth",
+          "score": 18029
+        }
+      },
+      "delta": 0,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 0,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 415,
+          "qnodes": 1118,
+          "reason": "completed_depth",
+          "score_for_mover": 14452,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 362,
+          "qnodes": 1053,
+          "reason": "completed_depth",
+          "score_for_mover": 14452,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      },
+      "seed": 93,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "tie_break": {
+        "delta": -4,
+        "scores": {
+          "blind": {
+            "node_cap_hit": false,
+            "nodes": 3810,
+            "qnodes": 8520,
+            "reason": "completed_depth",
+            "score_for_mover": 999999994
+          },
+          "served": {
+            "node_cap_hit": false,
+            "nodes": 4872,
+            "qnodes": 10984,
+            "reason": "completed_depth",
+            "score_for_mover": 999999990
+          }
+        },
+        "status": "judged",
+        "verdict": "blind_better"
+      },
+      "verdict": "tie"
+    },
+    {
+      "candidates": {
+        "blind": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=0, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 639,
+          "qnodes": 8751,
+          "reason": "completed_depth",
+          "score": 1452
+        },
+        "served": {
+          "move": "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))",
+          "node_cap_hit": false,
+          "nodes": 611,
+          "qnodes": 10582,
+          "reason": "completed_depth",
+          "score": 546
+        }
+      },
+      "delta": -2,
+      "depth": 3,
+      "divergence_side": 0,
+      "first_diff_ply": 2,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 1127,
+          "qnodes": 11662,
+          "reason": "completed_depth",
+          "score_for_mover": 1002,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 958,
+          "qnodes": 12546,
+          "reason": "completed_depth",
+          "score_for_mover": 1000,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_win",
+        "served_loss"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "DropMove(base_type_id='A', to_square=Square(file=0, rank=0))",
+        "served": "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))"
+      },
+      "seed": 94,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    }
+  ],
+  "role": "DEEPSEEK_AUX",
+  "segment": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "tie_break_limits": {
+    "max_depth": 6,
+    "max_nodes": 40000,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "written_at": "2026-10-18T10:48:57Z"
+}

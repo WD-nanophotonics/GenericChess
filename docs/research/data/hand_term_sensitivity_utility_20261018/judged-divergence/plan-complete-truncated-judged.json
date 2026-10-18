@@ -1,0 +1,68 @@
+{
+  "written_before_computing": true,
+  "written_at": "2026-10-18T11:52:00Z",
+  "author": "DEEPSEEK_AUX",
+  "kind": "bounded new-search completion check of the 31 previously truncated judged cells",
+  "motivation": "Section 5 shows that 31 of the 45 judged divergence cells contain an oracle evaluation that did not report completed_depth (30 qsearch_check_hard_limit, 15 node_limit over 62 candidate evaluations). The served/blind direction therefore rests on a small completed stratum (14 cells). This check asks whether the same judge can be made to complete those cells by spending more search, and whether completion changes the direction. It does not re-judge the 14 already completed cells and does not touch the frozen 1344-game or 92/93 panels.",
+  "question": "When the recorded hand-blind depth-4 judge is re-run on the 31 truncated cells with an escalated node cap, how many cells reach completed_depth for both candidates, and does the served-vs-blind verdict of the newly completed cells agree with the recorded truncated verdict?",
+  "inputs": {
+    "results_judged_divergence.json": "444CDA26",
+    "results_judged_divergence_strata.json": "F8808A6B",
+    "results_judged_divergence_distinct_strata.json": "396982CC",
+    "check_judged_divergence.py": "791115DC",
+    "note": "the recorded judge file is read-only; the arm game files are re-read only to rebuild the shared prefix and the two candidate moves"
+  },
+  "cell_set": "the 31 judged cells of 444CDA26 whose recorded oracle reason is not completed_depth for at least one candidate, keyed by (seed, depth); expected pattern counts one_truncated d2 8, one_truncated d3 9, both_truncated d2 8, both_truncated d3 6",
+  "primary_instrument": {
+    "same_definition_as_recorded_judge": {
+      "max_depth": 4,
+      "quiescence_max_depth": 4,
+      "quiescence_hard_max_depth": 8,
+      "hand_weight": 0.0,
+      "use_tt": false,
+      "use_ordering": true
+    },
+    "node_cap_ladder": [20000, 40000, 80000, 160000],
+    "rule": "run each candidate at 20000 first; while the reason is not completed_depth, rerun the same candidate at the next cap; stop at the first completed_depth or after 160000",
+    "reproduction_guard": "at the 20000 rung the score, reason, nodes and qnodes of each candidate must equal the saved oracle record; a mismatch flags the cell as instrument_unstable and is reported, never silently substituted"
+  },
+  "secondary_instrument": {
+    "label": "different instrument, reported separately and never pooled with the primary verdicts",
+    "spec": {
+      "max_depth": 4,
+      "max_nodes": 80000,
+      "quiescence_max_depth": 4,
+      "quiescence_hard_max_depth": 16,
+      "hand_weight": 0.0,
+      "use_tt": false,
+      "use_ordering": true
+    },
+    "applies_to": "every candidate evaluation that is still truncated after the primary ladder, regardless of outcome",
+    "purpose": "test whether the remaining truncation is the fixed 8-ply hard check cutoff rather than the node budget; a verdict that needs this instrument is a different judge and is not evidence for the recorded one"
+  },
+  "endpoints_written_in_advance": [
+    "C1: per cell, the first rung at which each candidate reports completed_depth, or null; counts by original truncation pattern and depth",
+    "C2: verdict (served_better / blind_better / tie) of every newly completed cell at its completed rung, with sign agreement against the recorded 20k verdict and the recorded tie-break cells flagged",
+    "C3: merged completed set = the 14 originally completed cells (recorded verdicts) plus the newly completed cells; cell-unit and distinct-position verdict distributions and the seed-level majority tally, with ties kept",
+    "C4: cells still truncated after the primary ladder, classified by remaining reason; secondary-instrument completion counts and, only where both candidates receive the secondary instrument, its separate verdict",
+    "C5: exact per-search score, reason, nodes and qnodes for every rung; total searches, wall seconds and nodes"
+  ],
+  "decision_rule_written_in_advance": {
+    "if_newly_completed_cells_ge_10": "report the merged completed verdict distribution; if the seed-level blind majority holds inside the newly completed cells, record that the blind-leaning direction survives completion of the same judge; otherwise record that it does not and that the direction is truncation-dependent; either way no quality or strength claim",
+    "if_0_lt_newly_completed_cells_lt_10": "report the expansion descriptively; the newly completed part is too small to decide, so the completed-evaluation direction stays UNKNOWN",
+    "if_newly_completed_cells_eq_0": "record the truncation as structural for this instrument at the bounded caps; the completed-evaluation direction stays UNKNOWN and the secondary instrument is diagnostic only"
+  },
+  "guards": [
+    "refuse to overwrite an existing result file",
+    "fixed budgets: primary <= 400 searches / 900 s, secondary <= 100 searches / 600 s",
+    "reproduction guard at the 20000 rung; mismatches are flagged as instrument_unstable and excluded from the verdict endpoints",
+    "no p-values, no significance test, no endpoint beyond C1-C5",
+    "single process, no new worker, no product or default change"
+  ],
+  "cost_estimate": "at most 62 rung-1 searches plus escalation for truncated candidates (<= 232 primary searches) and <= 62 secondary searches; expected wall time under 25 minutes, below the 120-minute autonomous threshold",
+  "outputs": {
+    "result": "results_complete_truncated_judged.json",
+    "script": "complete_truncated_judged.py"
+  },
+  "done_condition": "the result JSON exists with C1-C5 populated, the pre-written decision rule is applied verbatim, README section 6 and claim.json record the finding and this plan hash, and every JSON file in the directory parses"
+}

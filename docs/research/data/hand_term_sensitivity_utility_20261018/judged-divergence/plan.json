@@ -1,0 +1,48 @@
+{
+  "agent_id": "DEEPSEEK_AUX",
+  "session_id": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "written_before_run": true,
+  "question": "At the first position where the served (hand_weight 0.9) and blind (0.0) arms choose different moves, does a hand-blind deeper oracle prefer the served move, and does that preference separate config-decided pairs from divergent splits?",
+  "why_now": "The 2026-10-18 d2 reason tally showed every decisive game ends at a root mate-in-1, so terminal tactical access is not the mechanism; pair divergence starts at ply 0-4. The remaining question is whether the coefficient's early divergences are quality improvements or arbitrary perturbations.",
+  "consumer": "The decision whether further hand-policy work should target evaluation quality (the term carries positional information) or should be treated as a perturbation whose outcome effects are incidental; no product or default change follows from this bounded result either way.",
+  "inputs": {
+    "result_files": [
+      "results_hand_term_match_served-blind_d2_n20000_s59-70.json",
+      "results_hand_term_match_served-blind_d2_n20000_s71-94.json",
+      "results_hand_term_match_served-blind_d3_n20000_s59-70.json",
+      "results_hand_term_match_served-blind_d3_n20000_s71-94.json"
+    ],
+    "positions": "one shared position per colour-swapped pair: the first ply index where the two saved move lists differ",
+    "groups": {
+      "config_decided": "pairs where the served-configured side won both colours (2) or lost both colours (0)",
+      "divergent_split": "pairs where the move lists differ but the same colour won both games"
+    }
+  },
+  "method": {
+    "position_reconstruction": "replay the first game's saved moves through the shipped root search with that game's arm config, asserting each chosen action's text equals the saved move; both games share this prefix",
+    "candidate_moves": "regenerate both arms' root choices at the shared position with their own configs and assert they equal the saved moves",
+    "oracle": "apply each candidate move, then run a fresh hand-blind (hand_weight 0.0) depth-4, 20000-node, quiescence 4/hard 8, ordering-on, TT-off root search from the resulting state; value = negative of the returned score so it is expressed for the mover at the shared position",
+    "search_budget_per_position": "2 reconstruction-side searches for candidates + 2 oracle searches plus the replay prefix"
+  },
+  "guards": {
+    "max_searches": 400,
+    "max_seconds": 900,
+    "no_overwrite": "refuses to write an existing result path",
+    "abort_behaviour": "on guard trip, write the partial file with an explicit interrupted flag and no aggregate claim"
+  },
+  "endpoint": {
+    "primary": "counts of served-better / blind-better / tie judged deltas in the config-decided group",
+    "secondary": "same counts in the divergent-split group",
+    "prewritten_tie_break": "only for positions whose depth-4 oracle gives an exact tie, and only if at most 60 searches and 600 s remain of the budget already declared above: re-judge the same pair with hand_weight 0.0 at depth 6 and 40000 nodes, and report both the depth-4 and the depth-6 sign so the depth-4 tie count is not silently upgraded to a preference",
+    "reported_quantities": "per-position delta, both oracle scores, oracle node/qnode totals and termination reasons, tie threshold equals exact score equality",
+    "no_p_values": "Designed as a descriptive quality check on already-observed positions; no hypothesis test, no endpoint tuning."
+  },
+  "done_condition": "result file written with all reachable positions (or explicit per-position failures), reader reproduces the aggregate, README/claim updated, no product code touched",
+  "limitations_prewritten": [
+    "a depth-4 hand-blind search is a stronger judge but not ground truth; it shares the shipped evaluation except the hand term",
+    "the depth-6 tie-break is a second fixed judge at a different budget, not ground truth, and is applied only to depth-4 exact ties so it cannot select the depth-4 endpoint",
+    "4x4 generated seeds with one start each; positions are only where the two arms diverged",
+    "ties and quantisation can make equal scores hide different play",
+    "no strength, distribution or generality claim; no independent rerun by another role"
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "written_at_utc": "2026-10-18T11:14:00Z",
+  "plan": "judged-divergence/plan-truncation-strata.json (written before this analysis)",
+  "question": "Do the judged divergence verdicts survive when only fully completed depth-4/20k oracle evaluations are counted?",
+  "inputs": {
+    "0.0_primary": "444CDA26",
+    "0.9_served": "E4A970A9",
+    "1.8_double": "5C030104"
+  },
+  "counts": {
+    "judged_cells": 45,
+    "both_completed": 14,
+    "one_truncated": 17,
+    "both_truncated": 14
+  },
+  "E1_truncation_by_group_depth": {
+    "config_decided": {
+      "both_completed|d2": 2,
+      "both_completed|d3": 3,
+      "both_truncated|d2": 5,
+      "both_truncated|d3": 3,
+      "one_truncated|d2": 3,
+      "one_truncated|d3": 5
+    },
+    "divergent_split": {
+      "both_completed|d2": 5,
+      "both_completed|d3": 4,
+      "both_truncated|d2": 3,
+      "both_truncated|d3": 3,
+      "one_truncated|d2": 5,
+      "one_truncated|d3": 4
+    }
+  },
+  "E2_verdicts_by_group_stratum": {
+    "config_decided|both_completed": {
+      "blind_better": 1,
+      "served_better": 4
+    },
+    "config_decided|both_truncated": {
+      "blind_better": 5,
+      "served_better": 3
+    },
+    "config_decided|one_truncated": {
+      "blind_better": 6,
+      "served_better": 2
+    },
+    "divergent_split|both_completed": {
+      "blind_better": 4,
+      "served_better": 3,
+      "tie": 2
+    },
+    "divergent_split|both_truncated": {
+      "blind_better": 4,
+      "tie": 2
+    },
+    "divergent_split|one_truncated": {
+      "blind_better": 8,
+      "served_better": 1
+    }
+  },
+  "E2b_verdicts_by_stratum_excluding_tiebreak": {
+    "both_completed": {
+      "blind_better": 5,
+      "served_better": 7
+    },
+    "both_truncated": {
+      "blind_better": 9,
+      "served_better": 3
+    },
+    "one_truncated": {
+      "blind_better": 14,
+      "served_better": 3
+    }
+  },
+  "E2c_tiebreak_cells": [
+    {
+      "seed": 60,
+      "depth": 2,
+      "group": "divergent_split",
+      "stratum": "both_truncated",
+      "verdict": "tie"
+    },
+    {
+      "seed": 63,
+      "depth": 2,
+      "group": "divergent_split",
+      "stratum": "both_completed",
+      "verdict": "tie"
+    },
+    {
+      "seed": 60,
+      "depth": 3,
+      "group": "divergent_split",
+      "stratum": "both_truncated",
+      "verdict": "tie"
+    },
+    {
+      "seed": 93,
+      "depth": 3,
+      "group": "divergent_split",
+      "stratum": "both_completed",
+      "verdict": "tie"
+    }
+  ],
+  "E3_seed_level_by_stratum": {
+    "both_completed": {
+      "seeds": 10,
+      "seed_majority": {
+        "blind_better": 3,
+        "mixed": 3,
+        "served_better": 4
+      },
+      "seed_majority_served": 4,
+      "seed_majority_blind": 3,
+      "seed_majority_mixed": 3
+    },
+    "both_truncated": {
+      "seeds": 9,
+      "seed_majority": {
+        "blind_better": 6,
+        "mixed": 1,
+        "served_better": 2
+      },
+      "seed_majority_served": 2,
+      "seed_majority_blind": 6,
+      "seed_majority_mixed": 1
+    },
+    "one_truncated": {
+      "seeds": 11,
+      "seed_majority": {
+        "blind_better": 8,
+        "mixed": 1,
+        "served_better": 2
+      },
+      "seed_majority_served": 2,
+      "seed_majority_blind": 8,
+      "seed_majority_mixed": 1
+    }
+  },
+  "E4_cross_weight": {
+    "majority_over_weights_all_45": {
+      "blind_better": 20,
+      "mixed": 1,
+      "served_better": 24
+    },
+    "unanimous_all_three_weights": {
+      "blind_better": 13,
+      "served_better": 11
+    },
+    "weight_matches_3weight_majority": {
+      "0.0": 29,
+      "0.9": 40,
+      "1.8": 42
+    },
+    "both_completed_majority_over_weights": {
+      "blind_better": 4,
+      "mixed": 1,
+      "served_better": 9
+    },
+    "both_completed_weight_matches_majority": {
+      "0.0": 9,
+      "0.9": 13,
+      "1.8": 13
+    },
+    "caveat": "the three judges are one correlated coefficient family over the same positions; agreement is a stability diagnostic, not independent evidence"
+  },
+  "mate_scale_cells_by_stratum": {
+    "both_completed": 1,
+    "both_truncated": 6,
+    "one_truncated": 2
+  },
+  "mate_scale_cells_same_sign_all_weights": 7,
+  "decision": "no_blind_majority_in_completed_stratum",
+  "decision_basis": "prewritten rule in plan-truncation-strata.json; seed-level majority inside the both_completed stratum",
+  "no_significance_statement": "no p-values are computed; cells within a seed and depth pair are correlated and the three judges are one coefficient family"
+}

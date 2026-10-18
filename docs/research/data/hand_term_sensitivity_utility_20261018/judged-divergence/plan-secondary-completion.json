@@ -1,0 +1,46 @@
+{
+  "written_before_computing": true,
+  "written_at": "2026-10-18T12:06:00Z",
+  "author": "DEEPSEEK_AUX",
+  "kind": "bounded completion of the secondary-instrument coverage left by a clock-scope defect",
+  "motivation": "In results_complete_truncated_judged.json (618EEED9) the secondary Budget object was created together with the primary Budget, so its max_seconds clock included the whole primary phase and tripped at 600 s of process time after only 14 secondary searches. C4 therefore has secondary values for 8 of the 21 still-truncated cells. The primary endpoint C1-C3 is complete and unaffected. This supplementary run finishes the remaining secondary evaluations under the same pre-written secondary instrument, with its own clock, and does not rewrite the frozen primary result.",
+  "question": "Under the pre-written secondary instrument (depth 4, node cap 80k, quiescence hard depth 16), do the candidate evaluations still truncated after the primary ladder complete, and what are their separate per-cell verdicts?",
+  "inputs": {
+    "results_complete_truncated_judged.json": "618EEED9",
+    "results_judged_divergence.json": "444CDA26",
+    "script": "complete_secondary_phase.py",
+    "note": "618EEED9 is read-only; its recorded secondary values are reused, never regenerated"
+  },
+  "cell_set": "the 21 cells whose status is still_truncated in 618EEED9; the candidate evaluations still without a secondary record, expected 19 (three d2 cells and the ten d3 cells)",
+  "instrument": {
+    "max_depth": 4,
+    "max_nodes": 80000,
+    "quiescence_max_depth": 4,
+    "quiescence_hard_max_depth": 16,
+    "hand_weight": 0.0,
+    "use_tt": false,
+    "use_ordering": true,
+    "label": "different instrument from the recorded judge; never pooled with primary verdicts"
+  },
+  "endpoints_written_in_advance": [
+    "S1: per candidate, the secondary reason, score, nodes and qnodes",
+    "S2: per cell, a secondary pair verdict only when both candidates have a completed secondary evaluation; cells with a primary-completed candidate are marked mixed_instrument and get no verdict",
+    "S3: counts of secondary completed_depth versus node_limit, and the set of cells whose secondary pair verdict differs from the recorded verdict",
+    "S4: cost (searches, wall seconds, nodes)"
+  ],
+  "decision_rule_written_in_advance": {
+    "diagnostic_only": "no primary endpoint, direction or decision changes from this run; the finding is recorded as instrument sensitivity, not as evidence about the recorded judge"
+  },
+  "guards": [
+    "refuse to overwrite an existing result file",
+    "secondary clock starts at the beginning of the secondary phase, not at process start",
+    "max 100 searches / 600 s for the phase",
+    "no p-values, no significance test, no product or default change"
+  ],
+  "cost_estimate": "about 19 secondary searches plus the prefix/candidate rebuilds needed to reach the children (about 30 searches at 20k nodes); expected under 5 minutes",
+  "outputs": {
+    "result": "results_secondary_completion_judged.json",
+    "script": "complete_secondary_phase.py"
+  },
+  "done_condition": "the result JSON exists with S1-S4, the frozen 618EEED9 is unchanged, and README section 6 plus claim.json record the combined secondary coverage"
+}

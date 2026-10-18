@@ -1,0 +1,175 @@
+{
+  "written_at_utc": "2026-10-18T11:30:00Z",
+  "plan": "judged-divergence/plan-distinct-position-strata.json (written before this analysis)",
+  "question": "does the truncation stratification hold on distinct positions rather than correlated seed-depth cells?",
+  "input": {
+    "results_judged_divergence.json": "444CDA26"
+  },
+  "counts": {
+    "judged_cells": 45,
+    "distinct_positions": 35,
+    "duplicate_cells": 10,
+    "duplicate_stratum_conflicts": 0
+  },
+  "D1_group_by_stratum": {
+    "config_decided": {
+      "both_completed": 4,
+      "both_truncated": 5,
+      "one_truncated": 6
+    },
+    "divergent_split": {
+      "both_completed": 9,
+      "both_truncated": 4,
+      "one_truncated": 7
+    }
+  },
+  "D2_verdicts_by_stratum": {
+    "both_completed": {
+      "blind_better": 4,
+      "served_better": 7,
+      "tie": 2
+    },
+    "both_truncated": {
+      "blind_better": 6,
+      "served_better": 2,
+      "tie": 1
+    },
+    "one_truncated": {
+      "blind_better": 10,
+      "served_better": 3
+    }
+  },
+  "D2b_verdicts_by_stratum_excluding_tiebreak": {
+    "both_completed": {
+      "blind_better": 4,
+      "served_better": 7
+    },
+    "both_truncated": {
+      "blind_better": 6,
+      "served_better": 2
+    },
+    "one_truncated": {
+      "blind_better": 10,
+      "served_better": 3
+    }
+  },
+  "D3_seed_level_by_stratum": {
+    "both_completed": {
+      "seeds": 10,
+      "seed_majority": {
+        "blind_better": 3,
+        "mixed": 3,
+        "served_better": 4
+      }
+    },
+    "both_truncated": {
+      "seeds": 9,
+      "seed_majority": {
+        "blind_better": 6,
+        "mixed": 1,
+        "served_better": 2
+      }
+    },
+    "one_truncated": {
+      "seeds": 11,
+      "seed_majority": {
+        "blind_better": 8,
+        "mixed": 1,
+        "served_better": 2
+      }
+    }
+  },
+  "duplicates": [
+    {
+      "seed": 59,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "one_truncated",
+      "extra_stratum": "one_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 60,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_truncated",
+      "extra_stratum": "both_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 62,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "one_truncated",
+      "extra_stratum": "one_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 67,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_truncated",
+      "extra_stratum": "both_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 69,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_truncated",
+      "extra_stratum": "both_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 71,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_truncated",
+      "extra_stratum": "both_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 72,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "one_truncated",
+      "extra_stratum": "one_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 74,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_truncated",
+      "extra_stratum": "both_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 79,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "one_truncated",
+      "extra_stratum": "one_truncated",
+      "verdict_equal": true,
+      "delta_equal": true
+    },
+    {
+      "seed": 81,
+      "kept_depth": 2,
+      "extra_depth": 3,
+      "kept_stratum": "both_completed",
+      "extra_stratum": "both_completed",
+      "verdict_equal": true,
+      "delta_equal": true
+    }
+  ],
+  "no_significance_statement": "descriptive counts only; each seed contributes one start and the duplicate cells are the same positions judged at two arm depths"
+}

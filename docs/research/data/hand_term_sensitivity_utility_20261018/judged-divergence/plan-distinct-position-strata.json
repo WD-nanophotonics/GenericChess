@@ -1,0 +1,34 @@
+{
+  "written_before_computing": true,
+  "written_at": "2026-10-18T11:27:00Z",
+  "author": "DEEPSEEK_AUX",
+  "kind": "post hoc, zero-search re-analysis of the primary judge file only",
+  "motivation": "Section 5 stratifies by cell, but 45 cells are not 45 positions: ten cells re-judge a position the other depth produced. Section 4 already reports distinct-position counts, so section 5 must not mix units. This analysis repeats the truncation stratification on distinct positions.",
+  "question": "Does the truncation stratification of section 5 hold on distinct positions rather than correlated seed-depth cells?",
+  "input": {
+    "results_judged_divergence.json": "444CDA26",
+    "note": "primary hand-blind judge only; no other file is read"
+  },
+  "position_key": "(seed, first_diff_ply, divergence_side, saved_moves_at_divergence.served, saved_moves_at_divergence.blind) - the same definition already used by summarize_judged_divergence.py",
+  "dedupe_rule": "first occurrence ordered by depth (d2 kept), as in summarize_judged_divergence.py",
+  "endpoints_written_in_advance": [
+    "D1: distinct position count and per-stratum counts, plus the number of positions whose duplicate occurrence has a different truncation stratum",
+    "D2: verdict distribution per stratum on distinct positions, and the same table excluding depth-6 tie-break cells",
+    "D3: seed-level majority tally per stratum on distinct positions",
+    "D4: group split (config_decided vs divergent_split) per stratum"
+  ],
+  "decision_rule_written_in_advance": {
+    "if_completed_stratum_distinct_positions_show_no_blind_majority": "the section-5 conclusion is recorded as holding on the distinct-position unit too; README and claim gain the distinct-position table as the primary form",
+    "if_completed_stratum_distinct_positions_show_blind_majority": "the section-5 conclusion must be recorded as cell-level only and the completed stratum on distinct positions as not showing the same direction; both numbers are kept",
+    "if_distinct_positions_in_completed_stratum_lt_8": "record the distinct-position stratum as too small to decide and keep the cell-level statement as the only reported one"
+  },
+  "cost": "zero searches, zero games; one file read",
+  "output": "results_judged_divergence_distinct_strata.json",
+  "guards": [
+    "refuse to overwrite an existing output file",
+    "assert the recomputed distinct-position count equals the 35 already recorded in README section 4",
+    "no p-values, no significance test, no new endpoint beyond D1-D4"
+  ],
+  "done_condition": "result JSON exists, the 35-position assertion passes, README section 5 carries the distinct-position numbers with the same post hoc label, and claim.json records this plan hash",
+  "consumer": "the published truncation-stratified verdict in README section 5 and claim.json truncation_strata"
+}

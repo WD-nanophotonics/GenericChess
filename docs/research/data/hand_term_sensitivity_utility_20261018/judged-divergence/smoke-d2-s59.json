@@ -1,0 +1,118 @@
+{
+  "aggregate": {
+    "groups": {
+      "divergent_split": {
+        "by_depth": {
+          "2": {
+            "positions": 1,
+            "verdicts": {
+              "blind_better": 1
+            }
+          }
+        },
+        "delta_max": -999997773,
+        "delta_min": -999997773,
+        "node_cap_hits": 0,
+        "positions": 1,
+        "reasons": {
+          "completed_depth": 1,
+          "qsearch_check_hard_limit": 1
+        },
+        "tie_break": {},
+        "verdicts": {
+          "blind_better": 1
+        }
+      }
+    },
+    "statuses": {
+      "judged": 1
+    },
+    "total_records": 1
+  },
+  "elapsed_seconds": 4.1,
+  "guards": {
+    "max_searches": 400,
+    "max_seconds": 900.0,
+    "searches_used": 5,
+    "tie_break_searches": 0
+  },
+  "interrupted": null,
+  "oracle": {
+    "max_depth": 4,
+    "max_nodes": 20000,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "plan": "judged-divergence/plan.json (written before the run)",
+  "problems": [],
+  "question": "At the first move-divergence position of each colour-swapped pair, does a hand-blind deeper oracle prefer the served move, and does that preference separate config-decided pairs from divergent splits?",
+  "records": [
+    {
+      "candidates": {
+        "blind": {
+          "move": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "node_cap_hit": false,
+          "nodes": 58,
+          "qnodes": 1433,
+          "reason": "completed_depth",
+          "score": -2213
+        },
+        "served": {
+          "move": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+          "node_cap_hit": false,
+          "nodes": 60,
+          "qnodes": 1883,
+          "reason": "completed_depth",
+          "score": -1428
+        }
+      },
+      "delta": -999997773,
+      "depth": 2,
+      "divergence_side": 0,
+      "first_diff_ply": 1,
+      "oracle": {
+        "blind": {
+          "node_cap_hit": false,
+          "nodes": 456,
+          "qnodes": 10368,
+          "reason": "qsearch_check_hard_limit",
+          "score_for_mover": -2220,
+          "terminal": false
+        },
+        "served": {
+          "node_cap_hit": false,
+          "nodes": 613,
+          "qnodes": 6732,
+          "reason": "completed_depth",
+          "score_for_mover": -999999993,
+          "terminal": false
+        }
+      },
+      "outcomes": [
+        "served_loss",
+        "served_win"
+      ],
+      "pair_kind": "split",
+      "saved_moves_at_divergence": {
+        "blind": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "served": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')"
+      },
+      "seed": 59,
+      "served_sides": [
+        0,
+        1
+      ],
+      "status": "judged",
+      "verdict": "blind_better"
+    }
+  ],
+  "role": "DEEPSEEK_AUX",
+  "segment": "78213c35-4252-44bb-8c11-acb79a5005e7",
+  "tie_break_limits": {
+    "max_depth": 6,
+    "max_nodes": 40000,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4
+  },
+  "written_at": "2026-10-18T10:48:44Z"
+}

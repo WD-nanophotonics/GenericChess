@@ -1,0 +1,972 @@
+{
+  "design": {
+    "arms": {
+      "blind": 0.0,
+      "served": 0.9
+    },
+    "color_swapped": true,
+    "games_per_seed": 2,
+    "ruleset_size": 4,
+    "search": {
+      "max_depth": 2,
+      "max_nodes": 20000,
+      "quiescence_hard_max_depth": 8,
+      "quiescence_max_depth": 4,
+      "use_ordering": true,
+      "use_tt": false
+    },
+    "seeds": [
+      59,
+      70
+    ],
+    "watchdog_plies": 160
+  },
+  "games": [
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=0), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=2))",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 511,
+        "served": 180
+      },
+      "outcome": "served_loss",
+      "plies": 13,
+      "qnodes": {
+        "blind": 5171,
+        "served": 3627
+      },
+      "seed": 59,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 12,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=0), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=1, rank=1))",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=0, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=1))",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=0))",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=3))",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=0))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 1587,
+        "served": 1401
+      },
+      "outcome": "served_win",
+      "plies": 29,
+      "qnodes": {
+        "blind": 19965,
+        "served": 18313
+      },
+      "seed": 59,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 28,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=0, rank=1))"
+      ],
+      "nodes": {
+        "blind": 304,
+        "served": 205
+      },
+      "outcome": "served_loss",
+      "plies": 9,
+      "qnodes": {
+        "blind": 4963,
+        "served": 16170
+      },
+      "seed": 60,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 13,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 7,
+        "qsearch_check_hard_limit": 1,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=1))",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=1))"
+      ],
+      "nodes": {
+        "blind": 213,
+        "served": 398
+      },
+      "outcome": "served_win",
+      "plies": 9,
+      "qnodes": {
+        "blind": 16956,
+        "served": 15667
+      },
+      "seed": 60,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 13,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 8,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=2), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 115,
+        "served": 22
+      },
+      "outcome": "served_loss",
+      "plies": 3,
+      "qnodes": {
+        "blind": 3102,
+        "served": 255
+      },
+      "seed": 61,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=2), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 22,
+        "served": 115
+      },
+      "outcome": "served_win",
+      "plies": 3,
+      "qnodes": {
+        "blind": 123,
+        "served": 3258
+      },
+      "seed": 61,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=0, rank=2))",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=3))",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=3))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=0, rank=2))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=0))"
+      ],
+      "nodes": {
+        "blind": 760,
+        "served": 868
+      },
+      "outcome": "served_win",
+      "plies": 19,
+      "qnodes": {
+        "blind": 5702,
+        "served": 10670
+      },
+      "seed": 62,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 18,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=0), promotion_target_id='X')",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=0))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=2, rank=3), promotion_target_id='X')",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=0))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))"
+      ],
+      "nodes": {
+        "blind": 588,
+        "served": 218
+      },
+      "outcome": "served_loss",
+      "plies": 11,
+      "qnodes": {
+        "blind": 13425,
+        "served": 8299
+      },
+      "seed": 62,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 10,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=3))",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=1))"
+      ],
+      "nodes": {
+        "blind": 94,
+        "served": 128
+      },
+      "outcome": "served_win",
+      "plies": 5,
+      "qnodes": {
+        "blind": 217,
+        "served": 219
+      },
+      "seed": 63,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 4,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=1))"
+      ],
+      "nodes": {
+        "blind": 130,
+        "served": 66
+      },
+      "outcome": "served_loss",
+      "plies": 5,
+      "qnodes": {
+        "blind": 302,
+        "served": 70
+      },
+      "seed": 63,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 4,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=3))",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 523,
+        "served": 474
+      },
+      "outcome": "served_loss",
+      "plies": 17,
+      "qnodes": {
+        "blind": 7405,
+        "served": 5565
+      },
+      "seed": 64,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 16,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=2))",
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=0))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))"
+      ],
+      "nodes": {
+        "blind": 612,
+        "served": 706
+      },
+      "outcome": "served_win",
+      "plies": 21,
+      "qnodes": {
+        "blind": 5834,
+        "served": 8695
+      },
+      "seed": 64,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 19,
+        "qsearch_check_hard_limit": 1,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=0))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=3))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=3))"
+      ],
+      "nodes": {
+        "blind": 104,
+        "served": 344
+      },
+      "outcome": "served_win",
+      "plies": 7,
+      "qnodes": {
+        "blind": 4402,
+        "served": 9288
+      },
+      "seed": 65,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 5,
+        "qsearch_check_hard_limit": 1,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=0))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=3))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=3))"
+      ],
+      "nodes": {
+        "blind": 316,
+        "served": 104
+      },
+      "outcome": "served_loss",
+      "plies": 7,
+      "qnodes": {
+        "blind": 6907,
+        "served": 4713
+      },
+      "seed": 65,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 5,
+        "qsearch_check_hard_limit": 1,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=3))"
+      ],
+      "nodes": {
+        "blind": 28,
+        "served": 83
+      },
+      "outcome": "served_win",
+      "plies": 3,
+      "qnodes": {
+        "blind": 393,
+        "served": 1449
+      },
+      "seed": 66,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=3))"
+      ],
+      "nodes": {
+        "blind": 83,
+        "served": 28
+      },
+      "outcome": "served_loss",
+      "plies": 3,
+      "qnodes": {
+        "blind": 1283,
+        "served": 409
+      },
+      "seed": 66,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=3))"
+      ],
+      "nodes": {
+        "blind": 160,
+        "served": 369
+      },
+      "outcome": "served_win",
+      "plies": 9,
+      "qnodes": {
+        "blind": 3295,
+        "served": 7659
+      },
+      "seed": 67,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 3,
+        "qsearch_check_hard_limit": 5,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))",
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=3))"
+      ],
+      "nodes": {
+        "blind": 246,
+        "served": 31
+      },
+      "outcome": "served_loss",
+      "plies": 5,
+      "qnodes": {
+        "blind": 6016,
+        "served": 699
+      },
+      "seed": 67,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 3,
+        "qsearch_check_hard_limit": 1,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=3))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+      ],
+      "nodes": {
+        "blind": 18,
+        "served": 90
+      },
+      "outcome": "served_win",
+      "plies": 3,
+      "qnodes": {
+        "blind": 170,
+        "served": 841
+      },
+      "seed": 68,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=3))",
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+      ],
+      "nodes": {
+        "blind": 90,
+        "served": 18
+      },
+      "outcome": "served_loss",
+      "plies": 3,
+      "qnodes": {
+        "blind": 864,
+        "served": 389
+      },
+      "seed": 68,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))"
+      ],
+      "nodes": {
+        "blind": 63,
+        "served": 118
+      },
+      "outcome": "served_loss",
+      "plies": 6,
+      "qnodes": {
+        "blind": 420,
+        "served": 2515
+      },
+      "seed": 69,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "qsearch_check_hard_limit": 5,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=3), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 167,
+        "served": 75
+      },
+      "outcome": "served_loss",
+      "plies": 7,
+      "qnodes": {
+        "blind": 5976,
+        "served": 1785
+      },
+      "seed": 69,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 8,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 2,
+        "qsearch_check_hard_limit": 4,
+        "root_immediate_win": 1
+      },
+      "winner": 0
+    },
+    {
+      "game_index": 0,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=0, rank=1))",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=1))",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      ],
+      "nodes": {
+        "blind": 337,
+        "served": 155
+      },
+      "outcome": "served_loss",
+      "plies": 13,
+      "qnodes": {
+        "blind": 3961,
+        "served": 4462
+      },
+      "seed": 70,
+      "served_side": 0,
+      "side_arm": {
+        "0": "served",
+        "1": "blind"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 10,
+        "qsearch_check_hard_limit": 2,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    },
+    {
+      "game_index": 1,
+      "moves": [
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=0, rank=1))",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=3, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=3))",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=0))",
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=1, rank=0))"
+      ],
+      "nodes": {
+        "blind": 537,
+        "served": 689
+      },
+      "outcome": "served_win",
+      "plies": 21,
+      "qnodes": {
+        "blind": 15049,
+        "served": 17841
+      },
+      "seed": 70,
+      "served_side": 1,
+      "side_arm": {
+        "0": "blind",
+        "1": "served"
+      },
+      "start_ply": 9,
+      "status": "checkmate",
+      "termination_reasons": {
+        "completed_depth": 17,
+        "qsearch_check_hard_limit": 3,
+        "root_immediate_win": 1
+      },
+      "winner": 1
+    }
+  ],
+  "pair_patterns": {
+    "served_loss/served_loss": 1,
+    "served_loss/served_win": 11
+  },
+  "pair_tag": "served-blind",
+  "problems": [],
+  "question": "Does replacing the served hand term (0.9) with a hand-blind control (0.0) change head-to-head game outcomes on generated 4x4 rulesets at a fixed search budget?",
+  "role": "DEEPSEEK_AUX",
+  "segment": "d16d7db6-d36f-4a8c-9437-ef210b31df0c",
+  "side_wins": {
+    "0": 13,
+    "1": 11
+  },
+  "summary": {
+    "games": 24,
+    "mean_plies": 9.625,
+    "node_totals": {
+      "blind": 7608,
+      "served": 6885
+    },
+    "outcomes": {
+      "served_loss": 13,
+      "served_win": 11
+    },
+    "qnode_totals": {
+      "blind": 131901,
+      "served": 142858
+    },
+    "served_score": 11.0,
+    "served_score_fraction": 0.4583333333333333,
+    "statuses": {
+      "checkmate": 24
+    }
+  }
+}
