@@ -60,6 +60,7 @@ PY_FILES = [
     "scan_stored_games_leaf_terms.py",
     "static_zone_share_boards.py",
     "bind_reachability_to_decisions.py",
+    "verify_bind_reachability_consistency.py",
     "make_public_evidence.py",
 ]
 

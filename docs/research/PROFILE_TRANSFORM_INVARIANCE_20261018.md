@@ -350,6 +350,11 @@ it does not make the term's sign or size a strength statement. It does mean
 the 30.8% in-zone share must not be read as promotion-relevant activity, and
 that any future attempt at this term should target the dead half-bonus branch,
 where promotability actually lives, rather than the branch that already pays.
+`verify_bind_reachability_consistency.py` re-derives those numbers from the
+stored files alone - per-game sums, the class partitions, both rates, the ratio
+and the four Stage 7 counts - and fails on a deliberately perturbed copy; it is
+a bookkeeping check of two files written by the same scripts, not an
+independent measurement.
 
 Allowed, for this generator family and these two board sizes:
 

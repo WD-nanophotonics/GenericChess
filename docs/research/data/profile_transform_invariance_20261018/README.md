@@ -81,7 +81,8 @@ the published copy.
 | `scan_stored_games_leaf_terms.py` | 11149 | `2a134c3ee8e6ff8d6635fc1e57fe9ef3276df7aaf79bd9ebd57d69f13d4b7db4` |
 | `static_zone_share_boards.py` | 3066 | `fb30e7d47d639273c1da0fe9446773ec9f4ce8b88203cf783be1a879c9e2383b` |
 | `bind_reachability_to_decisions.py` | 17890 | `3822e63f6ff5ec31a02b709905831c11cf9e7b80b2d5a698f6344d920e98f2f9` |
-| `make_public_evidence.py` | 4690 | `90a66899a9ab28fe041efd51b4b9034a3fd8098b6b1acfae3164749b3684b869` |
+| `verify_bind_reachability_consistency.py` | 5766 | `3e8696945ab6a84e2a327686947eebe1c39745ca26095a43b7e3454a9e484f66` |
+| `make_public_evidence.py` | 4738 | `b66cf0e36c8c1986084fcafecd739bd3a2acb556deefda044e4cca017e63950c` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -106,6 +107,7 @@ the published copy.
 | `results_static_zone_share.json` | structural check of the same definition: in-zone squares average 38.2% of the board at size 4, 21.7% at 6, 16.4% at 8, so the played 30.8% is not inflated for its board and must not be carried to other sizes |
 | `plan_bind_reachability_to_decisions.json` | the endpoint for the Stage 8 replay, written before it ran, plus one amendment that adds the promotability comparison and was written before the extended run |
 | `results_bind_reachability_to_decisions.json` | `in_zone_full_bonus_has_immediate_promotion_contact` with `promotability_contrast=in_zone_promotability_is_depressed_relative_to_other_promotable_pieces`: only 53 of 2,489 in-zone payments (2.13%) have a legal promotion in that position against 782 of 5,594 not-in-zone observations (13.98%), a 6.56x difference |
+| `verify_bind_reachability_consistency.py` | `stored_numbers_are_self_consistent` - arithmetic and bookkeeping audit of the Stage 8 file with no replay and no search: per-game sums against the summary, the three class partitions, both rates and the ratio re-derived from the raw counts, and the four Stage 7 counts re-read from `results_stored_games_leaf_terms.json`; a deliberately perturbed copy fails it |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
@@ -164,6 +166,15 @@ preset and one start position per ruleset. Zero or near-zero contact here does
 not bound deeper search at boards 6 and 8, and a legal promotion being
 available still does not mean search would choose it. The term is a search
 preference under this evaluator, not a measure of strength.
+
+`verify_bind_reachability_consistency.py` re-derives the reported numbers from
+the stored file without a replay: per-game records against the summary, the
+three class partitions, both rates and the 6.56x ratio from the raw counts, and
+the four Stage 7 counts re-read from `results_stored_games_leaf_terms.json`. It
+prints `stored_numbers_are_self_consistent` on the published file and fails on
+a copy with one count perturbed, so "reproduces Stage 7 exactly" is checkable
+offline. Agreement between two files written by the same scripts is a
+bookkeeping check, not independent confirmation of the measurement.
 
 ## UNKNOWN and limits
 
