@@ -373,10 +373,10 @@ No oldNative/games/training/UNKNOWNreference rerun. ExistingV0/V1 featureinputs
 havezeroaliases among1746actions; coordinatebucketscanhave differentstates.
 Retainexactactions, defer representationAPI growth; no universalinjectivityclaim.
 
-Nextquestion isalreadybegun separately AFTERtheseal: oneNEW641001/6 fullgenerated
-compoundshift rule isNativeadmitted; actualtwoactor/foursquaretrigger andfirstreply
-yield3fullSessionparents. No searchesyet. Execute boundedD2q0consumer controls,
-preservingallsemantics/UNKNOWN; do not mechanicallyexpandunchangedfitness.
+The prepared641001/6 compound consumer is now CLOSED by
+COMPOUND_SEARCH_AND_POLICY_LIMITS_20261019.md:37completecheckedchildren,
+sixNative/threeCoreD2q0 controls and fullhistory agree. That preparation is not
+a pending second launch; its old zero-query state remains historical evidence.
 ExistingAUXlearning/solver andDS hand/static work stay their own. ScienceOPEN.
 Technicalpayload delivery isfixedPUBLIC31a2c9c9163986efd124932da926695b1422fe3b,
 17anonymousfiles exact-byteverified/fullremoteSHA/clean/publisher59checks.
@@ -408,6 +408,65 @@ Closingdiscovery readsnewDEV_AUX TC-methodrequest1792347194.501519 andoneDotrepl
 1792347372.984689, complete/unpaginated. Those areowner/Dot statements, not
 PRIMARY source/executionverification. LeaveAUX96/currentTCmethodwork unchanged;
 frozenmaterialNativeconsumer hasno dependency onthatmethoduncertainty.
+
+## Compound consumer, policy limits and final sampling — 2026-10-19
+
+[COMPOUND_SEARCH_AND_POLICY_LIMITS_20261019.md](COMPOUND_SEARCH_AND_POLICY_LIMITS_20261019.md)
+closes a NEW128-game/two-actor generated-rule panel:100terminals/28UNKNOWN,
+5126queries/35.082Mmain visits, all5126commits/11798PV and205actualcompound
+moves replay through fullCore. True-False finite bounds include0 under both
+fixed foes; the6x6/static stratum ispositive. Retain the existing scoped
+static/q0/True prior andFalse controls; do not infer an all-compound winner,
+refill censored games, or expand unchanged root-window campaigns.
+
+A32-call ordinal input gate has24CoreD2 controls plus8direct known wins,
+not8UNKNOWN. All initial actions agree; no ratio-utility expansion follows.
+The attempted Native-only capacity contrast was ill-posed: BOTHschema/IR and
+Native cap effects at4. Only the first4-actor rule/sixpublicCorecalls ran;
+the5-effect candidate correctly refused beforeNative, other cells remain
+unexecuted. No five/six-effect fallback or capacity extension is claimed.
+
+Two secondary destinations with identical primary-action metadata expose80
+actualV0/V1 feature-alias buckets. Three of16prespecified pairs have unequal
+finite child targets; one includes a root-optimal action. Full search remains
+correct and keeps separate branches. Complete logit inputs/categorical branches
+and32fixed-randomNativeV1 calls/1040logits are checked, without optimizer updates.
+Native alias logits are bitwiseequal; Python roundoff is explicitly retained.
+Dot's1792349458 logical review is adopted with its evidence boundary, not
+misreported as independent code execution or a request to rebuild encoders.
+
+The default already starts with the good action in the single oracle witness.
+Existing child features distinguish all80buckets collectively, but their
+availability is not utility. A64-call deployable root-prior gate deducts its
+cost from the same allowance and leaves static/q0 evaluation unchanged:
+D2 becomes3.44xslower; roughly26percent of the50ms allowance pays preprocessing.
+No positive utility case follows from fewer main nodes or similar depths.
+Defer new games, encoder/schema/API work and any learner migration for this
+route; reconsider for a concrete consumer and changed paid-budget premise.
+Approximation remains allowed, not gated on completeWDL/injectiveinputs. Reused
+history records also alias existing policy inputs while retaining a shared
+optimal action; preserve full execution history, do not call this policy regret.
+
+The optional opening preference now has a real placement counterexample:
+13/16bases pass but12/16complete compositions pass. Seed651002/6 gains a
+two-actor opening mate. FUTUREcomposed consumers requesting that preference
+must check the final composition; base-only checking is insufficient.
+This changes the research sampling recipe, not the ordinary generator default.
+All128closed games remain included; no retrospective selection or balance claim.
+
+The new67-payload/nine-output captured-source qualification is distinct from
+the older67/11 capsule. It rebuilds86CLOSED Coretargets/all148non-gamePV
+receipts, complete inputs/models/features/filterwitness and game arithmetic;
+UNKNOWN, Native searches, games and training are not rerun.
+Science remains OPEN; existingAUXlearning/solver andDS studies remain theirs.
+
+The next distinct step is actually prepared AFTER this seal: seed671001/12,
+a valid FOUR-effect combination of two-actor movement, current-type change
+and persistent per-owner one-use right. Native admits it; final preference
+passes, and actualtrigger/reply yield3fullSessionparents with changedtype/
+auxiliary state/history. No searches/games/training yet. Consume these exact
+parents with the frozen60s sixNative/threeCore q0control, preserving explicit
+refusals/UNKNOWN rather than repeating invalid5/6-effect cases.
 
 ## Previous learning choice still retained — 2026-10-17
 

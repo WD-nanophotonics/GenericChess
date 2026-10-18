@@ -1,0 +1,87 @@
+{
+  "status": "PASS_CAPTURED_SOURCE_NINE_OUTPUTS",
+  "outputs": [
+    {
+      "directory": "compound-consumer-20261019",
+      "script": "verify-controls.py",
+      "output": "controls-reader-result.json",
+      "seconds": 6.276379899994936,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-consumer-20261019",
+      "script": "verify-inputs.py",
+      "output": "input-reader-result.json",
+      "seconds": 1.8370122999767773,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-window-20261019",
+      "script": "analyze.py",
+      "output": "analysis.json",
+      "seconds": 2.3008636999875307,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-window-20261019",
+      "script": "reader.py",
+      "output": "reader-result.json",
+      "seconds": 18.615947900048923,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-window-20261019",
+      "script": "mechanism-audit.py",
+      "output": "mechanism-audit.json",
+      "seconds": 6.285048499994446,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-alias-hint-20261019",
+      "script": "analyze.py",
+      "output": "analysis.json",
+      "seconds": 0.17854069999884814,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-root-prior-20261019",
+      "script": "analyze.py",
+      "output": "analysis.json",
+      "seconds": 0.18067719996906817,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-filter-placement-20261019",
+      "script": "reader.py",
+      "output": "result.json",
+      "seconds": 1.3520270000444725,
+      "numerical_and_semantic_fields_equal": true
+    },
+    {
+      "directory": "compound-filter-placement-20261019",
+      "script": "witness.py",
+      "output": "witness.json",
+      "seconds": 0.21293890004744753,
+      "numerical_and_semantic_fields_equal": true
+    }
+  ],
+  "output_count": 9,
+  "seconds": 38.812739399960265,
+  "technical_payloads": 67,
+  "technical_archive_sha256": "a12954377f0ecec779b4d367b22da0451d280afd4cbc1f04fc5b478b605e20b8",
+  "product_source_archive_sha256": "deba57e6adfc5ce944b0981976115127fd3fdb11faecd54def561c2fac48dd2e",
+  "source_overlays": [
+    "generic_chess/generation/filters.py"
+  ],
+  "Python_S": true,
+  "Native_absent": true,
+  "all_generic_modules_from_extracted_source": true,
+  "real_PRIMARY_stop_flags": true,
+  "completed_Core_targets_rebuilt": 86,
+  "original_UNKNOWN_references_rerun": 0,
+  "Native_searches": 0,
+  "Native_policy_calls": 0,
+  "new_games": 0,
+  "optimizer_updates": 0,
+  "scope": "Receipt arithmetic/fullCoreSession/PVs/completepolicyinputs/savedmodels/closedreferences/existingfeatures/filterwitness only. NoNativebinary/sourceequivalence, game/train rerun orwhole-domain/utilityclaim."
+}

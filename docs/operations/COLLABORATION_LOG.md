@@ -4611,3 +4611,47 @@ owner/Dot reported, notPRIMARY paper/code/training verification oradoption.
 No methodintervention/duplicateexperiment/message toAUX. OriginalPRIMARY
 14replythread re-reconcilespayload/oldresponsehashunchanged; twoCHATthreads
 stillzero-reply/referenceonly. Privateoriginals savedbeforeevaluation.
+
+## PRIMARY compound service and policy-input closure — 2026-10-19
+
+PRIMARY independently closes prepared641001 control, NEW128compound games
+and the scoped ordinal/capacity/policy/prior investigations. No product code,
+default, binary, trained model or external worker changes. ExistingDEV_AUX
+TC/learning/solver andDS hand/normalization/rotation work is neither edited nor
+executed here. Once-per-heartbeat DS read covers2completedcontrol-chatturns,
+desktopidle, historical repairs owner-reported; no current recurrence proved.
+That bounded view is not global API health or proof the executor stopped.
+
+Actual128game service preserves100terminal/28UNKNOWN,5126Corecommits and
+11798PV. Both whole-compound True-False intervals cross0. Policy-v0/v1 aliases
+different secondary effects in80buckets, but all search roots remain correct.
+32completed randomV1Native logit calls/1040actions and complete source inputs
+support the representation limit; an earlier failed strict-float attempt has
+an unrecorded call count, not silently folded into32. Python floating spread
+and actualNativebitwise equality are distinguished. No training occurred.
+
+Dot request GC-SLACK-20261019-034930-c225578b was actually delivered to root
+1792349395.780849; complete saved reply1792349458.909609 is strictly reconciled
+and explicitly adopted. Dot assessed the stated logic, not unpublished code or
+independent execution. Its full-input, candidate-preservation and cost/utility
+objections are addressed with limits: existinghint code swapsfirstcandidate,
+fullpair-onlyordering was not instrumented, and the original200000cap was not
+literally rerun. No routine acknowledgement or publication gate is added.
+
+The actual nohint already starts near; oraclehint yields no gain. Existing child
+features distinguish80/80 but a deployable fixed prior spends about26percent
+of50ms on preprocessing and makesD2 3.44xslower. Defer encoder/API/newgame work.
+The original prior clock includes the caller profile-form repair and retained
+baseline; twoextraCoreUNKNOWNs stayunfilled. The ill-posed five-effect test
+failed at the SHAREDschema/IR cap, leaving otherplannedcells unexecuted.
+It is not evidence for a Core-only five/six-effect fallback.
+
+An actual new sampler consequence is retained: base-only optional no-opening-win
+checking misses a compound mate on651002/6. Apply it to the final composition in
+future requested sampling; all old games stayincluded. A source-only67payload/
+nine-output capsule checks complete Core records/models/features and onlyclosed
+targets. Next valid four-effect671001/12 rule is already prepared, finalpreference
+passes,3realparents/Nativeadmission,0searches. Current scientific goal remains OPEN.
+Closing channel/original15-reply/new1-reply reads are complete with no newDotrevision.
+Publication uses the tested role-bound publisher; full SHA/Public bytes and
+actual Slack delivery are checked separately and retained privately.
