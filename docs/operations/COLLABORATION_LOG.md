@@ -4521,3 +4521,13 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   Scope: board 4, `classic_like`, those six stored files. Delivery: public
   evidence copy rebuilds 53/53 including the verifier's own output, 14 checks
   pass, 73 focused tests pass.
+  The same accounting also closes the two seeds the disjointness artifact left
+  open (`results_zone_promotion_disjointness.json` nonclaim): seed 61 has 32
+  in-zone paid observations of the side to move, all on promotion sources with
+  no reachable allowed destination, and seed 72 has 17, of which 12 are idle-side
+  and 5 are sources without a reachable allowed destination. Neither seed has a
+  dead-target or anchor-safety case, so their zero contact counts are forced by
+  the compiled pairs and by turn order rather than unexplained - by a different
+  mechanism than the pooled majority, which is dominated by missing source
+  squares. Still no in-zone-versus-outside comparison and no search or strength
+  claim.

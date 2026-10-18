@@ -489,6 +489,31 @@ promotions in seed 77 while that run reported 6, which is how the leak surfaced.
 The cache is now keyed by `compiled.ruleset_fingerprint`; both discarded runs are
 recorded by SHA-256 in `defect_corrections` and no number from them is used.
 
+#### The two seeds the disjointness artifact left open
+
+`results_zone_promotion_disjointness.json` carries the nonclaim that seeds whose
+zone does intersect a promotion source yet show no in-zone contact are not
+explained by that artifact, and names seeds 61 and 72. The same replay
+accounting settles both on the stored corpus, again with no new games and no
+search:
+
+* seed 61 — four stored games, 32 in-zone paid observations, 0 contacts. All 32
+  belong to the side to move and all 32 sit on squares that *are* promotion
+  sources, but no pseudo-legal move from them reaches an allowed promotion
+  destination.
+* seed 72 — six stored games, 17 in-zone paid observations, 0 contacts. Twelve
+  belong to the idle side and so cannot be contacts by turn order; the other 5
+  are sources without a reachable allowed destination.
+
+Neither seed contributes an observation to the dead-target bucket or to the
+anchor-safety bucket, so on these two rulesets a zero contact count is still
+forced by the compiled promotion pairs and by turn order rather than left
+unexplained — but the mechanism is destination geometry and turn order, not the
+absence of a source square that dominates the pooled mass. This is a statement
+about the stored observations only: it compares no in-zone observation with an
+outside-zone one, and it shows nothing about what search would choose or about
+strength.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward
