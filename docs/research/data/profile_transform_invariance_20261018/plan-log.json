@@ -57,6 +57,10 @@
   {
    "at": "2026-10-18T13:51:15Z",
    "event": "audit_leaf_terms.py run: decision leaf_terms_are_type_live_except_the_half_bonus; 6 in/not-in comparisons found by AST in evaluator.py, only line 112 (Square against int zone) is type-impossible; 140/140 promotable records have a promotion-gain key; 226 zone records with 0 coded target hits, 6164 index-converted target pairs and 4256 squares that would receive the half bonus (matches the earlier square-level figure); anchor-capture penalty triggered in 400 of 4881 constructed states and all 400 served deltas equal weight*((esc0-esc1)-10*attacked0+10*attacked1); 1.4 s, no search"
+  },
+  {
+   "at": "2026-10-18T13:52:38Z",
+   "event": "leaf audit extended to the second held-out seed set 292101-292112 after the fit run, endpoint unchanged: the per-rule audit and the aggregation were factored into summarise() so both seed sets run through the same code, and the fit-set numbers were reproduced before adding the held-out block"
   }
  ]
 }

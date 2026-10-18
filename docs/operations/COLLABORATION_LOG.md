@@ -4378,6 +4378,11 @@ Result chain, each stage labelled with its real status:
   `weight * ((esc0 - esc1) - 10*attacked0 + 10*attacked1)`. The two scripts
   agree at different granularity (0 target hits as coded, 6,164 target pairs
   converted, 4,256 squares that would then receive the half bonus).
+  The audit was then repeated on the held-out seeds 292101–292112 after the fit
+  run (same endpoint, fit numbers reproduced first): 53 promotable records,
+  92 zone records, 0 coded versus 2,648 converted target pairs, 1,696 squares,
+  1,453 constructed states and 120/120 anchor-penalty matches, same verdict.
+  It is a repetition on unseen seeds, not a new prediction.
 
 Consumer consequence for this family: static per-type values may be
 de-duplicated across a 180-degree rotation, but a rule and its rotation are not

@@ -252,6 +252,18 @@ in 400 cases, and in all 400 the served score change against
 therefore a real part of the served score, not a dead branch, and any future
 rotation or evaluation comparison has to keep it.
 
+The same audit was then repeated on the third seed set, 292101–292112 (post-hoc
+extension, same endpoint, same code path through `summarise()`, fit-set numbers
+reproduced first): 53 promotable type records, 46 of them with a positive gain,
+all 53 with a promotion-gain key; 92 zone records giving 0 coded target hits,
+2,648 index-converted target pairs and 1,696 squares that would receive the
+half bonus; and 1,453 constructed states with 120 anchor-penalty triggers, all
+120 deltas matching the formula. The verdict is unchanged
+(`leaf_terms_are_type_live_except_the_half_bonus`, stored as
+`verdict_heldout` beside the fit-set `verdict` in the same file). This is a
+repetition on unseen seeds, not a new prediction, so it can only show that the
+source-level statement is not an accident of the 40 fit seeds.
+
 This is recorded as a source-level observation only. No repair is proposed
 here and no measurement in this note depends on the half bonus: A4's
 `near_zone` cases are zero for the same reason the `far` cases are, and the

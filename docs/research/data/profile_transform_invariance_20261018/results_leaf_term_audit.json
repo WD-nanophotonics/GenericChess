@@ -1,11 +1,11 @@
 {
  "role": "DEEPSEEK_AUX",
- "generated_at_utc": "2026-10-18T13:50:04Z",
+ "generated_at_utc": "2026-10-18T13:52:39Z",
  "provenance": "post-hoc source audit of the served leaf score, endpoint written in plan-log.json before the run; follows the A4 half-bonus observation",
  "source_sha256": {
   "generic_chess/ai/evaluation/evaluator.py": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf"
  },
- "git_head": "e6d36be6288dc38f927d9913347a4adb5c438982",
+ "git_head": "5796e040f5b8776a658ea219b130f8e2bca7bbbb",
  "design": {
   "seeds": [
    292001,
@@ -48,6 +48,20 @@
    292038,
    292039,
    292040
+  ],
+  "heldout_seeds": [
+   292101,
+   292102,
+   292103,
+   292104,
+   292105,
+   292106,
+   292107,
+   292108,
+   292109,
+   292110,
+   292111,
+   292112
   ],
   "board_sizes": [
    6,
@@ -270,6 +284,33 @@
   "constructed_states_probed": 4881,
   "anchor_penalty_triggers": 400,
   "anchor_penalty_delta_matches": 400
+ },
+ "verdict_heldout": {
+  "decision": "leaf_terms_are_type_live_except_the_half_bonus",
+  "half_bonus_never_true_by_type": true,
+  "promotable_types": 53,
+  "promotable_types_with_positive_gain": 46,
+  "zone_records": 92,
+  "coded_target_membership_hits": 0,
+  "index_converted_target_membership_hits": 2648,
+  "squares_receiving_half_bonus_if_index_converted": 1696,
+  "constructed_states_probed": 1453,
+  "anchor_penalty_triggers": 120,
+  "anchor_penalty_delta_matches": 120
+ },
+ "comparison_types_heldout": {
+  "zone_element_types": [
+   "int"
+  ],
+  "forward_target_element_types": [
+   "Square"
+  ],
+  "other_comparisons": {
+   "promotion_gain_key_lookup": "str base id tested against a dict keyed by str base id; 53/53 promotable type records have a key",
+   "zone_index_membership": "int index tested against {int} zone entries",
+   "anchor_square_in_attack_map": "Square tested against a frozenset of Square",
+   "anchor_escape_target_in_attack_map": "Square tested against a frozenset of Square"
+  }
  },
  "rules": [
   {
@@ -10229,6 +10270,3334 @@
      "anchor_element_type": "Square",
      "attacked0": false,
      "attacked1": true
+    }
+   ]
+  }
+ ],
+ "rules_heldout": [
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    }
+   ],
+   "promotable_types": 1,
+   "promotable_types_in_promotion_gain": 1,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 24,
+   "squares_with_index_converted_hit": 20,
+   "states_probed": 29,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 20,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": -50,
+     "expected_delta": -50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 20,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 40,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 8,
+     "squares_with_index_converted_hit": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 40,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 8,
+     "squares_with_index_converted_hit": 6
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 40,
+   "squares_with_index_converted_hit": 36,
+   "states_probed": 27,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 14,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 16,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 32,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 32,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 12
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 56,
+   "squares_with_index_converted_hit": 48,
+   "states_probed": 28,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 18,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": -45,
+     "expected_delta": -45,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 13,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 18,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 2,
+     "dst": 13,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292104,
+   "board_size": 6,
+   "zone_records": [],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 0,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 0,
+   "squares_with_index_converted_hit": 0,
+   "states_probed": 25,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 14,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 15,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 15,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 54,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 54,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 110,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 110,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 24
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 148,
+   "squares_with_index_converted_hit": 104,
+   "states_probed": 29,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 13,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 3,
+     "esc1": 0,
+     "observed_delta": -35,
+     "expected_delta": -35,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 14,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 3,
+     "esc1": 0,
+     "observed_delta": -35,
+     "expected_delta": -35,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 2,
+     "dst": 13,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 2,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 32,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 32,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 18
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 112,
+   "squares_with_index_converted_hit": 60,
+   "states_probed": 21,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 14,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 20,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 20,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 6
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 30,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 30,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 18
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 132,
+   "squares_with_index_converted_hit": 84,
+   "states_probed": 29,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 14,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 18,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 18,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 10
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 88,
+   "squares_with_index_converted_hit": 56,
+   "states_probed": 27,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 19,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 23,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 19,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 23,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 28,
+     "squares_with_index_converted_hit": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 56,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 28,
+     "squares_with_index_converted_hit": 12
+    }
+   ],
+   "promotable_types": 1,
+   "promotable_types_in_promotion_gain": 1,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 56,
+   "squares_with_index_converted_hit": 24,
+   "states_probed": 27,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 20,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": -45,
+     "expected_delta": -45,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 20,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 24,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 18
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 48,
+   "squares_with_index_converted_hit": 36,
+   "states_probed": 74,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 18,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 19,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 5,
+     "esc1": 0,
+     "observed_delta": -25,
+     "expected_delta": -25,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 22,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 5,
+     "esc1": 0,
+     "observed_delta": -25,
+     "expected_delta": -25,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 18,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 19,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 2,
+     "dst": 22,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 54,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 54,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 32,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 18
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 144,
+   "squares_with_index_converted_hit": 72,
+   "states_probed": 21,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 14,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 20,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 14,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 20,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 90,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 30
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 90,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 30,
+     "squares_with_index_converted_hit": 30
+    }
+   ],
+   "promotable_types": 1,
+   "promotable_types_in_promotion_gain": 1,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 60,
+   "squares_with_index_converted_hit": 60,
+   "states_probed": 27,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 20,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": -50,
+     "expected_delta": -50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 20,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 22,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 12,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    }
+   ],
+   "promotable_types": 1,
+   "promotable_types_in_promotion_gain": 1,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 48,
+   "squares_with_index_converted_hit": 40,
+   "states_probed": 111,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 43,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 45,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 3,
+     "dst": 24,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 43,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 45,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 3,
+     "dst": 24,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 48,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 48,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 16,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 84,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 84,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 8
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 56,
+   "squares_with_index_converted_hit": 48,
+   "states_probed": 92,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 37,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 26,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 37,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 26,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 72,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 72,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 120,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 120,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 40,
+     "squares_with_index_converted_hit": 16
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 168,
+   "squares_with_index_converted_hit": 96,
+   "states_probed": 95,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 41,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 47,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 42,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 41,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 47,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 42,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292104,
+   "board_size": 8,
+   "zone_records": [],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 0,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 0,
+   "squares_with_index_converted_hit": 0,
+   "states_probed": 75,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 36,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 36,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 130,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 130,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 280,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 44
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 280,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 44
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    }
+   ],
+   "promotable_types": 4,
+   "promotable_types_in_promotion_gain": 4,
+   "promotable_types_with_positive_gain": 4,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 304,
+   "squares_with_index_converted_hit": 216,
+   "states_probed": 109,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 3,
+     "dst": 24,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 2,
+     "esc1": 0,
+     "observed_delta": -40,
+     "expected_delta": -40,
+     "matches": true
+    },
+    {
+     "src": 3,
+     "dst": 25,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 3,
+     "esc1": 0,
+     "observed_delta": -35,
+     "expected_delta": -35,
+     "matches": true
+    },
+    {
+     "src": 3,
+     "dst": 26,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 3,
+     "esc1": 0,
+     "observed_delta": -35,
+     "expected_delta": -35,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 3,
+     "dst": 24,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 3,
+     "dst": 25,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    },
+    {
+     "src": 3,
+     "dst": 26,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
+    }
+   ]
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 72,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 72,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 154,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 154,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 200,
+   "squares_with_index_converted_hit": 112,
+   "states_probed": 43,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 36,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 36,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 126,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 18,
+     "squares_with_index_converted_hit": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 126,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 18,
+     "squares_with_index_converted_hit": 8
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 42,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 42,
+     "squares_with_index_converted_hit": 24
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 192,
+   "squares_with_index_converted_hit": 112,
+   "states_probed": 105,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 41,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 41,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 132,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 132,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 152,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 24,
+     "squares_with_index_converted_hit": 20
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 42,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 70,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 42,
+     "squares_with_index_converted_hit": 24
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 3,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 228,
+   "squares_with_index_converted_hit": 136,
+   "states_probed": 105,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 42,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 46,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 42,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 46,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 132,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 44,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 132,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 44,
+     "squares_with_index_converted_hit": 16
+    }
+   ],
+   "promotable_types": 1,
+   "promotable_types_in_promotion_gain": 1,
+   "promotable_types_with_positive_gain": 1,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 88,
+   "squares_with_index_converted_hit": 32,
+   "states_probed": 107,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 26,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 30,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 26,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 30,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 36,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 36,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 60,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 20,
+     "squares_with_index_converted_hit": 16
+    }
+   ],
+   "promotable_types": 3,
+   "promotable_types_in_promotion_gain": 3,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 112,
+   "squares_with_index_converted_hit": 80,
+   "states_probed": 105,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 1,
+     "dst": 41,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 1,
+     "dst": 47,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 2,
+     "dst": 41,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 1,
+     "esc1": 0,
+     "observed_delta": 55,
+     "expected_delta": 55,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 1,
+     "dst": 41,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 1,
+     "dst": 47,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 2,
+     "dst": 41,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 130,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 130,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 48,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 154,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 154,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 24
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 208,
+   "squares_with_index_converted_hit": 96,
+   "states_probed": 43,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 35,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 35,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 37,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 43,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    }
+   ]
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "zone_records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 224,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 56
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 224,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 56,
+     "squares_with_index_converted_hit": 56
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 84,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 8
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "zone_element_types": [
+      "int"
+     ],
+     "target_element_types": [
+      "Square"
+     ],
+     "targets_tested": 84,
+     "coded_target_hits": 0,
+     "index_converted_target_hits": 12,
+     "squares_with_index_converted_hit": 8
+    }
+   ],
+   "promotable_types": 2,
+   "promotable_types_in_promotion_gain": 2,
+   "promotable_types_with_positive_gain": 2,
+   "coded_target_hits": 0,
+   "index_converted_target_hits": 136,
+   "squares_with_index_converted_hit": 128,
+   "states_probed": 99,
+   "anchor_penalty_triggers": 5,
+   "anchor_penalty_matches": 5,
+   "anchor_penalty_examples": [
+    {
+     "src": 0,
+     "dst": 43,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 0,
+     "dst": 45,
+     "attacked0": false,
+     "attacked1": true,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": 50,
+     "expected_delta": 50,
+     "matches": true
+    },
+    {
+     "src": 3,
+     "dst": 16,
+     "attacked0": true,
+     "attacked1": false,
+     "esc0": 0,
+     "esc1": 0,
+     "observed_delta": -50,
+     "expected_delta": -50,
+     "matches": true
+    }
+   ],
+   "anchor_penalty_first_triggers": [
+    {
+     "src": 0,
+     "dst": 43,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 0,
+     "dst": 45,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": false,
+     "attacked1": true
+    },
+    {
+     "src": 3,
+     "dst": 16,
+     "piece_owner": 0,
+     "attack_element_types": [
+      "Square"
+     ],
+     "anchor_element_type": "Square",
+     "attacked0": true,
+     "attacked1": false
     }
    ]
   }

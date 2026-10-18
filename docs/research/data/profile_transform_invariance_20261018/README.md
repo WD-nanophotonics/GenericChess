@@ -36,7 +36,7 @@ the published copy.
 | `plan_evaluator_equivariance.json` | 3070 | `a21d27aacb53540ee512971b4007e458e0318b17fee001dfb19307efd5c6c3fd` |
 | `plan_a4.json` | 6969 | `0cb71b3ab7f625280e422c3a37208a1225cf1a4f3028f795e3bec7e9b19249d4` |
 | `plan_a5.json` | 3019 | `ac50a0cc16a151168a1d7290e66d5e68709d1d459c9dc400456dd50ddebde37c` |
-| `plan-log.json` | 5006 | `40fa392f640113e291a354e3f7e86c17251a396f32ee12cf8103d23a8edda1b3` |
+| `plan-log.json` | 5359 | `c5a795a4cc221f7725a066e333a3c414b41130b234c3c1fc95eedb73d2273995` |
 | `results_profile_transform.json` | 290851 | `0dd0ac89beb6b195c5ace350bc33b4641f369fdbb772f2ea26baf4b78f810183` |
 | `results_profile_transform_a3.json` | 128468 | `ed08a6a5ec899ff7de0ae4075c8ad75651e813530391f9824fb9a65dfa3a5582` |
 | `results_a3_verification.json` | 1232 | `d685cb3248ed46718fd88c6ddb59b49b6970e1a7a1204e7035fdf422e6618c6d` |
@@ -49,7 +49,7 @@ the published copy.
 | `results_promotion_zone_equivariance_heldout.json` | 141565 | `b39f4ebb1baacbd83fd9931f49abc944cfab9a692094a1316859cb337ad7f7de` |
 | `results_zone_effect_heldout.json` | 48962 | `3befe98f0ef1fd21b7a0ba79668ff56dcf93c06fb833827859cbb2e7839ea57b` |
 | `results_zone_effect_heldout_first.json` | 67063 | `8a0dca3cc66e41e03396e5e68eef9a37e8e8337eade19969a3037a828eb8fb85` |
-| `results_leaf_term_audit.json` | 218249 | `7c2673af9ba4307dbfd541514fabdca0e9cafa56019ceb1e324799f6b6720e41` |
+| `results_leaf_term_audit.json` | 290571 | `1c0486e66ad60dd80bc9a510163d449eadec40814c2eb7cc37ede41f7a40bc5f` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -61,7 +61,7 @@ the published copy.
 | `verify_promotion_cancellation.py` | 5409 | `7cc294025c1a6d89211ffaa5e5e6297bc76ba1ecdd1c6515da5562aeb4ca269c` |
 | `verify_zone_effect_heldout.py` | 12398 | `eaddc2f61988fb3bd866988dbbedcb5a65b3558961ce76bb8e9cfb1193cb3f5f` |
 | `verify_public_copy_rebuild.py` | 2030 | `a35b3c7afab8ead1492779ddb92dbcfbc6adbb15b7a0e2cb9e951cc926541e04` |
-| `audit_leaf_terms.py` | 15558 | `f5a2e57da48521467aca404edf4c4b4280ced8153490d39d394bbc5646920a03` |
+| `audit_leaf_terms.py` | 16581 | `f48e06fef9cf1b4ef863387f3a7908ee796e35f790a61a7465a037360fbde545` |
 | `make_public_evidence.py` | 3163 | `dd71ea17e4b1caae818670682f81f2ed959ba1a261cd8bcdbb913d259047d95a` |
 
 `manifest.json` holds the same table in machine-readable form.
@@ -81,7 +81,7 @@ the published copy.
 | `results_promotion_zone_equivariance_heldout.json` | the A4 measurement repeated on 12 fresh seeds (292101–292112): 14/14 in-zone cases differ, 0/134 near/far |
 | `results_zone_effect_heldout.json` | `fresh_seeds_confirms_the_zone_consequence` — predicted whole-board zone matches nonzero difference 14/14, and the difference equals the change in the summed promotion term 14/14 |
 | `results_zone_effect_heldout_first.json` | the first, mis-specified formulation of that prediction (kept as an instrument-error record) |
-| `results_leaf_term_audit.json` | `leaf_terms_are_type_live_except_the_half_bonus` — of the six `in`/`not in` comparisons in `evaluator.py` only the half bonus is type-impossible; the anchor-capture penalty fires and matches the expected delta in 400/400 constructed states |
+| `results_leaf_term_audit.json` | `leaf_terms_are_type_live_except_the_half_bonus` — of the six `in`/`not in` comparisons in `evaluator.py` only the half bonus is type-impossible; the anchor-capture penalty fires and matches the expected delta in 400/400 constructed states; the audit was repeated on held-out seeds 292101–292112 with the same verdict (`verdict_heldout`) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
@@ -122,3 +122,14 @@ The leaf-term audit only establishes which comparisons in `evaluator.py` can be
 true by type and that the anchor-capture penalty matches its own formula on
 constructed states; it says nothing about how often those terms matter in
 reachable play.
+
+`audit_leaf_terms.py` was run first on the 40 fit seeds and then repeated on
+the held-out set 292101–292112, after that first run, through the same
+`summarise()` code path and with the fit-set numbers reproduced before the
+held-out block was added. The endpoint was in `plan-log.json` before either
+run and did not change. Held-out counts: 53 promotable records (46 with a
+positive gain), 92 zone records, 0 coded versus 2,648 index-converted target
+pairs, 1,696 squares that would receive the half bonus, 1,453 constructed
+states and 120 anchor-penalty triggers, all 120 matching the formula. This is a
+repetition on unseen seeds, not a new prediction; it shows the source-level
+statement is not specific to the fit seeds.

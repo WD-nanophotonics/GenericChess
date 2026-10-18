@@ -66,6 +66,7 @@ from generic_chess.generation.generator import generate_game  # noqa: E402
 OUT = HERE / "results_leaf_term_audit.json"
 SEEDS = base.SEEDS
 SIZES = base.SIZES
+HELDOUT_SEEDS = tuple(range(292101, 292113))
 EVALUATOR_PATH = "generic_chess/ai/evaluation/evaluator.py"
 TRIGGER_CAP = 5  # verified anchor-penalty states per rule
 
@@ -248,12 +249,8 @@ def audit_rule(seed: int, size: int) -> dict:
     }
 
 
-def main() -> int:
-    started = time.time()
-    source = (ROOT / EVALUATOR_PATH).read_text(encoding="utf-8")
-    inventory = ast_inventory(source)
-    rules = [audit_rule(seed, size) for size in SIZES for seed in SEEDS]
-
+def summarise(rules: list[dict]) -> dict:
+    """Aggregate per-rule records into the fixed verdict and type table."""
     zone_records = [rec for rule in rules for rec in rule["zone_records"]]
     coded = sum(rule["coded_target_hits"] for rule in rules)
     converted = sum(rule["index_converted_target_hits"] for rule in rules)
@@ -292,25 +289,6 @@ def main() -> int:
     )
 
     payload = {
-        "role": "DEEPSEEK_AUX",
-        "generated_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "provenance": "post-hoc source audit of the served leaf score, endpoint written in plan-log.json before the run; follows the A4 half-bonus observation",
-        "source_sha256": {EVALUATOR_PATH: base.sha256_file(ROOT / EVALUATOR_PATH)},
-        "git_head": subprocess.run(
-            ["git", "rev-parse", "HEAD"],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            check=True,
-        ).stdout.strip(),
-        "design": {
-            "seeds": list(SEEDS),
-            "board_sizes": list(SIZES),
-            "hand_weight": base.HAND_WEIGHT,
-            "trigger_cap_per_rule": TRIGGER_CAP,
-            "endpoint": "AST inventory of every in/not-in comparison and every subscript lookup in evaluator.py, runtime element types per comparison, as-coded versus index-converted hit counts, and anchor-penalty score-delta identity on constructed states",
-        },
-        "ast_inventory": inventory,
         "comparison_types": {
             "zone_element_types": zone_types,
             "forward_target_element_types": target_types,
@@ -329,7 +307,47 @@ def main() -> int:
             "anchor_penalty_triggers": triggers,
             "anchor_penalty_delta_matches": matches,
         },
+    }
+    return payload
+
+
+def main() -> int:
+    started = time.time()
+    source = (ROOT / EVALUATOR_PATH).read_text(encoding="utf-8")
+    inventory = ast_inventory(source)
+    rules = [audit_rule(seed, size) for size in SIZES for seed in SEEDS]
+    summary = summarise(rules)
+    heldout_rules = [
+        audit_rule(seed, size) for size in SIZES for seed in HELDOUT_SEEDS
+    ]
+    heldout_summary = summarise(heldout_rules)
+
+    payload = {
+        "role": "DEEPSEEK_AUX",
+        "generated_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "provenance": "post-hoc source audit of the served leaf score, endpoint written in plan-log.json before the run; follows the A4 half-bonus observation",
+        "source_sha256": {EVALUATOR_PATH: base.sha256_file(ROOT / EVALUATOR_PATH)},
+        "git_head": subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip(),
+        "design": {
+            "seeds": list(SEEDS),
+            "heldout_seeds": list(HELDOUT_SEEDS),
+            "board_sizes": list(SIZES),
+            "hand_weight": base.HAND_WEIGHT,
+            "trigger_cap_per_rule": TRIGGER_CAP,
+            "endpoint": "AST inventory of every in/not-in comparison and every subscript lookup in evaluator.py, runtime element types per comparison, as-coded versus index-converted hit counts, and anchor-penalty score-delta identity on constructed states",
+        },
+        "ast_inventory": inventory,
+        **summary,
+        "verdict_heldout": heldout_summary["verdict"],
+        "comparison_types_heldout": heldout_summary["comparison_types"],
         "rules": rules,
+        "rules_heldout": heldout_rules,
         "nonclaims": [
             "no search, no strength, utility, strength or outcome claim",
             "one generator family, square boards 6 and 8, 40 stored seeds",
@@ -344,6 +362,13 @@ def main() -> int:
                 "out": str(OUT),
                 "elapsed_seconds": round(time.time() - started, 2),
                 **payload["verdict"],
+                "heldout_decision": payload["verdict_heldout"]["decision"],
+                "heldout_anchor_penalty_triggers": payload["verdict_heldout"][
+                    "anchor_penalty_triggers"
+                ],
+                "heldout_coded_target_membership_hits": payload["verdict_heldout"][
+                    "coded_target_membership_hits"
+                ],
                 "sha256": base.sha256_file(OUT),
             },
             indent=1,
