@@ -1,0 +1,233 @@
+{
+  "status": "CLOSED",
+  "state_records_rebuilt": 9,
+  "root_targets": [
+    {
+      "case": "persistent",
+      "phase": 1,
+      "status": "COMPLETE",
+      "score": 0,
+      "expected": 0,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 77,
+      "qnodes": 173,
+      "seconds": 0.14422830002149567,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "persistent",
+      "phase": 2,
+      "status": "COMPLETE",
+      "score": 0,
+      "expected": 0,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 88,
+      "qnodes": 320,
+      "seconds": 0.18480649997945875,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "temporary",
+      "phase": 0,
+      "status": "COMPLETE",
+      "score": 300,
+      "expected": 300,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 68,
+      "qnodes": 311,
+      "seconds": 0.18200890003936365,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "temporary",
+      "phase": 1,
+      "status": "COMPLETE",
+      "score": -300,
+      "expected": -300,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 17,
+      "qnodes": 9,
+      "seconds": 0.004520900023635477,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "temporary",
+      "phase": 2,
+      "status": "COMPLETE",
+      "score": 300,
+      "expected": 300,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 22,
+      "qnodes": 12,
+      "seconds": 0.006159300042781979,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "compound",
+      "phase": 0,
+      "status": "COMPLETE",
+      "score": 999999997,
+      "expected": 999999997,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 96,
+      "qnodes": 981,
+      "seconds": 0.5528019999619573,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "compound",
+      "phase": 1,
+      "status": "COMPLETE",
+      "score": -400,
+      "expected": -400,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 44,
+      "qnodes": 272,
+      "seconds": 0.15242589998524636,
+      "cause": "completed_depth"
+    },
+    {
+      "case": "compound",
+      "phase": 2,
+      "status": "COMPLETE",
+      "score": 999999997,
+      "expected": 999999997,
+      "equal_target": true,
+      "action_equal": true,
+      "nodes": 133,
+      "qnodes": 1318,
+      "seconds": 0.822671000030823,
+      "cause": "completed_depth"
+    }
+  ],
+  "selected_children": [
+    {
+      "case": "persistent",
+      "phase": 2,
+      "action": {
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 6,
+          "rank": 0
+        },
+        "geometry_id": "g2",
+        "pattern_id": "legacy_008",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 5,
+          "rank": 1
+        }
+      },
+      "expected": 0,
+      "status": "COMPLETE",
+      "child_score": 0,
+      "backed_up": 0,
+      "equal_root_target": true,
+      "nodes": 16,
+      "qnodes": 72,
+      "seconds": 0.03696490003494546
+    },
+    {
+      "case": "temporary",
+      "phase": 0,
+      "action": {
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "geometry_id": "g6",
+        "pattern_id": "legacy_018",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 1,
+          "rank": 0
+        }
+      },
+      "expected": 300,
+      "status": "COMPLETE",
+      "child_score": -300,
+      "backed_up": 300,
+      "equal_root_target": true,
+      "nodes": 4,
+      "qnodes": 103,
+      "seconds": 0.06991770002059639
+    },
+    {
+      "case": "temporary",
+      "phase": 2,
+      "action": {
+        "actor_type_id": "K",
+        "from_square": {
+          "file": 0,
+          "rank": 0
+        },
+        "geometry_id": "g4",
+        "pattern_id": "legacy_014",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 0,
+          "rank": 1
+        }
+      },
+      "expected": 300,
+      "status": "COMPLETE",
+      "child_score": -300,
+      "backed_up": 300,
+      "equal_root_target": true,
+      "nodes": 6,
+      "qnodes": 5,
+      "seconds": 0.001399400003720075
+    },
+    {
+      "case": "compound",
+      "phase": 2,
+      "action": {
+        "actor_type_id": "R",
+        "from_square": {
+          "file": 2,
+          "rank": 2
+        },
+        "geometry_id": "g8",
+        "pattern_id": "legacy_020",
+        "promotion_target_id": null,
+        "to_square": {
+          "file": 6,
+          "rank": 2
+        }
+      },
+      "expected": 999999997,
+      "status": "COMPLETE",
+      "child_score": -999999997,
+      "backed_up": 999999997,
+      "equal_root_target": true,
+      "nodes": 3,
+      "qnodes": 55,
+      "seconds": 0.031268500024452806
+    }
+  ],
+  "previous_root_reused": {
+    "case": "persistent",
+    "phase": 0,
+    "evidence": "source-admission-result.json",
+    "not_rerun": true
+  },
+  "native_absent": true,
+  "python_S_extracted_origins": true,
+  "real_primary_stops": true,
+  "stop_poll_seconds": 0.1,
+  "global_cap_seconds": 120,
+  "new_Native_queries": 0,
+  "new_games": 0,
+  "new_training": 0,
+  "scope": "Remaining finite captured-source targets only. No all-domain correctness, utility or WDL admission gate.",
+  "archive_sha256": "deba57e6adfc5ce944b0981976115127fd3fdb11faecd54def561c2fac48dd2e",
+  "seconds": 2.9710453000152484
+}

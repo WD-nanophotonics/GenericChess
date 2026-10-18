@@ -19,9 +19,8 @@ Initialscope producer2.610s/9Corecalls plus642main/3962qvisits. The zero-query
 CompiledSemanticRuleset metadata setup failure is preserved; repairedweight
 inventory uses the declared fullRuleSet types without droppingmechanisms.
 
-This preliminary consumer is not included in the prior seven-output proof and
-has not yet independently rebuilt allq4targets from capturedsource. Its complete
-rules/records/queries are sufficient for that next boundedcheck. Tests fixture
+This consumer is separate from the prior seven-output proof. Its source-target
+qualification was completed by the later bounded supplement below. Tests fixture
 definitions remain in theproject at the fixed delivery version. NoAUX/DS code,
 Nativebinary rebuild, game/training or oldUNKNOWNrefill.
 
@@ -31,3 +30,18 @@ the sealed234payload source, Python-S/Nativeabsence, rebuildsall9fullSession
 records/witnesses, and ONLYthe persistentphase0Coreq4 target (1.054s). It does
 not reclassify theother8root/4child targets as source-qualified. See the exact
 source-admission-result.json; no Native/games/training rerun.
+
+
+## Captured-source completion
+
+source-complete.py closes the remaining eight root and four selected-child
+targets using the SAME captured product source, Python -S and no Native module.
+All nine full Session records/witnesses are restored again; the previously
+qualified persistent phase0 target is reused, not rerun. All twelve new Core
+values agree with their saved targets: 574 main plus 3631 q visits, 2.971 seconds
+including extraction, within one continuous 120-second clock. Real PRIMARY stop
+flags are polled with a .1-second cache. See source-complete-result.json.
+
+This closes this finite source qualification. It neither enlarges the earlier
+234-payload/seven-output seal nor creates an all-domain/WDL/utility gate. No
+Native query, new game, training or AUX execution is part of this supplement.

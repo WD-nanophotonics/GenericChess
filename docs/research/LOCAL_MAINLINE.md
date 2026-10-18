@@ -332,22 +332,51 @@ features. AUX93's Corefloat/path consumer remains separate, not executed or
 migrated. OriginalTreeStrap bound-loss/node-credit distinctions support keeping
 target, feature provenance, sample weighting and update rules separate.
 
-CURRENT CHOICE: retain explicitTrue as the scoped full-static q0 AND q4-requested
-research option, False/actualresource controls and APIdefaultFalse. No q4learner
-activation, diagnostics/path API, genericdedup rewrite or unchangedprice/fitness
-expansion. Next useful mainline work is a nonduplicated complete-mechanism
-consumer/admission check before extending this legacy-generated scope; preserve
-full temporary/compound/aux/history semantics. That nextstep is now actuallyexecuted separately: threeexistingIR consumers/
-9realtrigger-replyparents/18coldNativeD2q4 scalarresults match9Coretargets;
-fourunique differentactions independentlytie. Diagnosticintegertables are not
-service-static prices; no freshfixedsource alltargetrebuild or mechanismutility
-claim. Next boundedsource/state/target check may use the alreadycaptured product
-source; do not mechanically expand another fitness/proof campaign.
-The captured-source followup has actuallybegun: all9IR Sessionstate/history/
-witness records agree and onepersistentphase0Coreq4 target rebuilds in1.054s;
-eightroot/fourselectedchild targets are not yetfreshsourcequalified. No new
-Native/training/game execution. Current tinyfinitechecks do not demand a
-genericproof/API or automaticutilitypanel expansion.
+CURRENT CHOICE updated by the generated-auxiliary consumer:
+[GENERATED_AUX_SEARCH_AND_PRICE_20261019.md](GENERATED_AUX_SEARCH_AND_PRICE_20261019.md).
+Use existingfullstatic/explicitq0/root-windowTrue for the next appropriate
+generatedauxconsumer, retainingUnit/q4/False controls and allAPI/generator defaults.
+This supersedes only the provisional newauxq4 choice, not priorlegacy evidence.
+
+Eightbase6/8rules/fourlinkedseeds become16explicitpersistent/temporaryaux
+compositions. Forty-eightrealparents/1746checkedNative-Corechildren agree.
+288Nativeoperationalqueries match53completeCoreq4results; Core28complete+
+6exactwin controls+14UNKNOWN (the earlier20non-D2 label includedknownwins).
+All64sameactualdepth/q/hard-policy pairs agree. D2q4 completion17False/37True
+anddifferentcosts establish operational scope, not utility.
+
+Actualservice128q4games, then64NEWstaticq0 and64NEWUnitq0 games, retainall
+256physicalslots/222terminals/34UNKNOWN. Reusedcontrols do notaddexecutions.
+q0-minus-q4 finiteUnit[.46875,1.03125], static[.8125,1.1875] support the frontier
+choice. Static-minus-Unit atq0 is[.0625,.5]/[.8125,1.0625], supportingthischeap
+candidateunderfixedbudget, not universalprice ratios/handcausality. Unitq4notrun:
+no price-by-q interactionclaim. Fourlinkedseed rangesandadaptiveexposure limit
+generality. All9035commits/17964PV/fullhistories pass; drops/promotions/auxmoves
+areactuallyplayed, not omitted. No newmodel/learner orAUX/DS program executed.
+
+The existingCorecapture-onlyq4 feasibility doesNOT justifyaNativeport:
+27complete+6wins/15UNKNOWN versus28+6/14 forfullq4, similar1Mvisits andhigher
+observedcost. Existingfullq4unknowns untouched. Material/promotion branching
+remainslarge afterquietchecks vanish; defer newAPI/options withoutnewpremise.
+
+A concretepostcompositionfilterconsumer defect IS fixed: position-onlyenumeration
+lostsemanticbindingidentity andcheckedtrialactions raisedambiguity. FullstateCore
+legalactions nowserve semanticfilters; defaultatomonlygeneration keepsitsoldpath.
+Fiveafter-fix regressions (fourobservedbeforefailures)+54relatedchecks pass, and16savedLegacyreports agree.
+Optionalopeningpreference accepts7/8bases and14/16compositions; closedcells are
+notretrofiltered, and thereisno measuredacceptanceorder differencehere.
+
+The preceding3IRfixture sourcegap isCLOSED: eightremainingroots/fourchildren
+rebuild2.971s, previousone targetreused. New67technicalpayload/11output proof
+passes49.504s withcapturedPython+explicitfilteroverlay/noNative/realstops.
+No oldNative/games/training/UNKNOWNreference rerun. ExistingV0/V1 featureinputs
+havezeroaliases among1746actions; coordinatebucketscanhave differentstates.
+Retainexactactions, defer representationAPI growth; no universalinjectivityclaim.
+
+Nextquestion isalreadybegun separately AFTERtheseal: oneNEW641001/6 fullgenerated
+compoundshift rule isNativeadmitted; actualtwoactor/foursquaretrigger andfirstreply
+yield3fullSessionparents. No searchesyet. Execute boundedD2q0consumer controls,
+preservingallsemantics/UNKNOWN; do not mechanicallyexpandunchangedfitness.
 ExistingAUXlearning/solver andDS hand/static work stay their own. ScienceOPEN.
 
 New CHAT_Comments1792340863.718509/1792340830.677639 were read withcomplete
@@ -364,14 +393,15 @@ A future concreteintegration may review itsfixedpublishedpatch and focused
 controls; do not require newWDL before a correctnessclaim, nor inferstrength
 gain from a typefix. No rotation/halfbonuscampaign orDSmessage/control launched.
 
-The once-per-mainline-patrol DS workflow check now sees recent active work and
-successful tool exits in the bounded existing control-chat view. Its prior
-JSON-fence failure is owner-reported repaired; no current recurrence is proved.
-This supersedes the old desktop-activation-pending snapshot, without asserting
-global runtime health. Scientific review remains Slack; no DS state/config
-edits, messages or automatic controls. A metadata-repair report alone does not
-prove unauthorized force-push; absent the actual command/authority, retain that
-uncertainty rather than accuse a current fault.
+The once-per-patrol DS check atthissegmentstart reads2completedcontrol-chat
+turns, desktopidle andsuccessfulrecentcommands afteronefailedfilesysteminventory.
+Slackread/token-interpretation repairs areownerreported; no currentrecurrence
+isproved. This boundedchatview isnotglobalAPIexecutorhealth or proofitstopped.
+NoDS messages/controls/state/configuration writes; science staysSlack.
+Closingdiscovery readsnewDEV_AUX TC-methodrequest1792347194.501519 andoneDotreply
+1792347372.984689, complete/unpaginated. Those areowner/Dot statements, not
+PRIMARY source/executionverification. LeaveAUX96/currentTCmethodwork unchanged;
+frozenmaterialNativeconsumer hasno dependency onthatmethoduncertainty.
 
 ## Previous learning choice still retained — 2026-10-17
 

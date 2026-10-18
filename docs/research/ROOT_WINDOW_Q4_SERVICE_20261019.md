@@ -169,5 +169,8 @@ nine real trigger/reply parents, 18 complete cold Native D2/q4 requests match
 all nine Core scalar targets. Four unique different selected actions independently
 tie in Core child searches. Persistent/temporary rights and compound state are
 retained; weights are explicit diagnostic integers, not the service static table.
-This is preliminary consumer feasibility without a fresh fixed-source q4-target
-rebuild, not new utility or all-mechanism qualification.
+The later bounded source supplement now closes the remaining eight root and
+four child targets (2.971s), reusing the earlier one root. This remains finite
+consumer qualification, not all-mechanism correctness. The separate generated
+auxiliary utility and frontier choice is recorded in
+[GENERATED_AUX_SEARCH_AND_PRICE_20261019.md](GENERATED_AUX_SEARCH_AND_PRICE_20261019.md).

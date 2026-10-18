@@ -4561,3 +4561,49 @@ no claimlegacypositionalterm invalidates ourpurematerialNativeconsumer.
 Nextcaptured-sourceIRcheck actuallybegun: all9fullrecords/witnesses andONLYone
 Coreq4target pass1.054s; remaining8root/4child targets explicitlyunqualified.
 No newNative/training/games orDSstate/checkout/messages.
+
+
+## PRIMARY generated auxiliary consumers and actual filter repair —2026-10-19
+
+PRIMARY alone creates8newbase/16composedrules/48actualSessionparents, then
+288Nativeoperationalqueries and48Corecontrols. Sourceclosure oftheprevious
+8root/4childgap passes2.971s. CompleteNative/Corechecked1746children agree;
+ordinarygame/PV/history replays cover9035commits/17964PV across256physicalgames,
+222terminal34UNKNOWN. Sixexactmatecontrols wereoriginally groupedwith14censored
+trees as20non-D2 outputs; correctionretainsoriginalreceipts withoutrefill.
+
+Root-windowq4conditionalgain doesnotselectq4frontier: 64newstaticq0 cells reuseALL
+64priorq4True cells; finiteq0gains positiveunderbothfoes. Another64Unitq0 cells
+reuseALL64staticq0controls; finiteStatic-Unit gains positiveunderboth. Select
+fullstatic/q0/True forthisconsumer, notAPI/default/population orlearnedcandidate
+rejection. Unitq4missing meansnointeractionclaim. Fourlinkedseed dependence,
+adaptiveexposure andnormalconcurrentload retained. No DS/AUX code/state/tests/
+learning/fitness executed orwritten; all work/artifacts belong toPRIMARY.
+
+ExistingCorecapture-onlyq4 offersno positivecost/completion case here, so noNative
+flag/API isengineered. ExistingV0/V1 numericencoders havezeroaliases in1746actual
+actions; exactcoordinatecoalescence would lose3differentposition buckets.
+A primaryLudii/Polygames paper suppliesmethod context only, notprojectverification
+or a policy/representation obligation. CHAT_Comments remainreferences.
+
+Actualpostcompositionopeningfilter raiseslegacyactionambiguity. PRIMARYfix keeps
+losslessCoreactions anddefaultatom-generator fastpath. Fournewcases failbefore,
+fiveafter controls plus54existingrelatedchecks pass;16savedLegacyreports match
+oldcapturedimplementation. This is a consumerbug, notq4/cancellationdriver issue.
+All67technicalpayloads/allresultfields arepreservedcompressed;11captured-source
+outputs pass49.504s withonlyexplicitfilter/testoverlay, noNative orfrozenreruns.
+Separate641001/6compoundinput/3parents isactuallypreparedafterseal/zeroqueries.
+
+Once-per-patrol gcdeepseek辅助 read isbounded to2recentcompletedturns: desktopidle,
+oldSlackread/token-interpretation repairs ownerreported, onefailedfilesystem
+inventoryfollowedbysuccessfulcommands; no materialrecurrenceproved. No global
+executorhealthcertificate, DSmessage, control/configuration/statewrite orscientific
+approval. Recoveryoriginal14replythread strictreconciled, no newDotrevision then.
+FinalSlackdiscovery/delivery andfullPublicSHA verification followpublication.
+
+ClosingSlackdiscovery coversnewDEV_AUXrequest1792347194.501519 anditsoneDotreply
+1792347372.984689 withcompletepagination. Current96/TC-method claims remain
+owner/Dot reported, notPRIMARY paper/code/training verification oradoption.
+No methodintervention/duplicateexperiment/message toAUX. OriginalPRIMARY
+14replythread re-reconcilespayload/oldresponsehashunchanged; twoCHATthreads
+stillzero-reply/referenceonly. Privateoriginals savedbeforeevaluation.
