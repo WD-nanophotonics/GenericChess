@@ -13,7 +13,23 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[4]
+HERE = Path(__file__).resolve().parent
+
+
+def _worktree_root(start: Path) -> Path:
+    """Locate the checkout root by marker, not by fixed depth.
+
+    ``parents[4]`` happened to be the root only at the published depth
+    (``<root>/docs/research/data/<study>/file.py``); running the same file from
+    the private study directory raised ModuleNotFoundError instead.
+    """
+    for candidate in (start, *start.parents):
+        if (candidate / "generic_chess").is_dir() and (candidate / "docs").is_dir():
+            return candidate
+    raise SystemExit(f"cannot locate the worktree root above {start}")
+
+
+ROOT = _worktree_root(HERE)
 sys.path.insert(0, str(ROOT))
 
 from generic_chess.ai.evaluation.config import EvaluationConfig  # noqa: E402
@@ -22,7 +38,6 @@ from generic_chess.ai.evaluation.profile import build_ruleset_profile  # noqa: E
 from generic_chess.generation.config import GeneratorConfig  # noqa: E402
 from generic_chess.generation.generator import generate_game  # noqa: E402
 
-HERE = Path(__file__).resolve().parent
 RESULTS = HERE / "results_stage15_board_scale_zone_disjointness.json"
 STAGE10 = HERE / "results_zone_promotion_disjointness.json"
 OUT = HERE / "verification_stage15_board_scale_zone_disjointness.json"

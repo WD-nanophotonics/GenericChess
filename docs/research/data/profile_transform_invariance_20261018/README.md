@@ -194,6 +194,19 @@ not a result. Inside a checkout, `tests/specification/test_profile_transform_inv
 re-checks the sizes and SHA-256 in this table and in `manifest.json` against the
 stored files and rejects an artifact that was added without being listed.
 
+Two mechanical properties of this directory are worth knowing before re-running
+anything. First, the Stage 15 and Stage 16 verifiers used to derive the checkout
+root as `parents[4]`, which is correct only at this published depth; they now
+locate it by marker like `verify_public_copy_rebuild.py`, so the same file runs
+from the git-ignored private study directory and from here. Both were executed
+both ways on 2026-10-18 and reported 8/8 checks each. Second, the sanitizer
+re-serialises every `.json` at `indent=1` after stripping `<repo>`/`<home>`
+paths, while the verifiers themselves write `indent=2`; executing a verifier
+inside this directory therefore rewrites its own `verification_*.json` with
+different bytes that are semantically identical but no longer match the table
+below. Reproduce in a scratch copy, or restore the file afterwards; the stored
+record is the sanitised one listed in the table.
+
 ## Files
 
 | file | bytes | SHA-256 |
@@ -271,9 +284,9 @@ stored files and rejects an artifact that was added without being listed.
 | `analyze_stage14_seed_closures.py` | 10921 | `f5df1b3fb27e5800b05622e58bdf7cee5529314cb38e33834dc4038f8f56531f` |
 | `verify_stage14_seed_closures.py` | 6548 | `f1fccc62ae526dd9d197c7dff061d496014274eaed4b367e8ccea16e34b4772a` |
 | `scan_stage15_board_scale_zone_disjointness.py` | 7491 | `ec1c12f431f3bf8b37185ed808ac9d95849fe11bfec20181acd92546f908b7de` |
-| `verify_stage15_board_scale_zone_disjointness.py` | 6710 | `292acbf61a28116f1e1d0522c0c221436781838195b9ad621b1266f206e74888` |
+| `verify_stage15_board_scale_zone_disjointness.py` | 7277 | `2e154ef5aa7e41532a37d933e977c4f79ee2da153bdc8d335ce04ad23a66d17d` |
 | `scan_stage16_preset_dependence_zone_disjointness.py` | 9767 | `4a8c911f8849443dfd686303632147289615c147a884cb0eceb3e5e5a94c9a96` |
-| `verify_stage16_preset_dependence_zone_disjointness.py` | 6949 | `4d8395dba568f21d17c4ca3244aadd8acbd27f76277b8ea9d8b9fc2654e9a8b7` |
+| `verify_stage16_preset_dependence_zone_disjointness.py` | 7516 | `f6941d30f63c25f507880e7b9cde755249c3d489d3020ac847ed2614c57e3d2d` |
 | `make_public_evidence.py` | 6918 | `3b900033dffb7bebe3e6b5a6b93d4888b88bcbd07899c6151c53ede5afbafff1` |
 
 `manifest.json` holds the same table in machine-readable form.
