@@ -4739,6 +4739,19 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   were still never played. Same inputs as stage 16b, plus
   `results_stage15_board_scale_zone_disjointness.json`; no search, replay or new
   game.
+
+### DEEPSEEK_AUX stage 16c: the reachability association and the confounds it
+  survives (2026-10-18, session `3d8dc073`).** Stated in reachability form, 9
+  of the 11 non-vacuous intersecting seeds carry in-zone paid observations
+  (0.82) against 5 of the 19 disjoint seeds (0.26), and none of the 6 vacuous
+  seeds can. Two cheap confounds are ruled out from the same published rows:
+  exposure - the disjoint seeds played a median of 5 stored games against 4 for
+  the intersecting ones, so the lower rate is not a short schedule - and plain
+  zone size, since the groups overlap (8-48 against 8-52 squares). The cause is
+  not identified (zone term, trajectories or another ruleset property), no test
+  statistic is quoted for n=11/19, and boards 6 and 8 remain unplayed. Inputs:
+  `per_game` of `results_zone_promotion_source_classification.json`, the Stage
+  14 rows and the Stage 16 `classic_like` rows; read-only, no rerun.
   Delivery: public evidence copy rebuilds 78/78 including the manifest itself
   and the verifier's own output.
   One tautology guard was added after the first publish, from the same stored

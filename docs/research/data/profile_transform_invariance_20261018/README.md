@@ -154,7 +154,12 @@ for the presets, and the seven contact seeds keep their category - intersecting
 - at all three sizes. The played stratum stays in the minority: 5/14, 4/14 and
 4/14 disjoint at boards 4, 6 and 8 against 19/30, 20/34 and 19/35 among
 non-vacuous panel seeds. Read-only join of the Stage 14 and Stage 15 rows; the
-gap is described, not explained.
+gap is described, not explained. In reachability form, 9 of the 11 intersecting
+seeds carry in-zone paid observations (0.82) against 5 of the 19 disjoint ones
+(0.26) and none of the 6 vacuous ones. Game count does not explain it (the
+disjoint seeds played a median of 5 stored games against 4) and neither does a
+plain zone-size difference (the groups overlap, 8-48 against 8-52 squares);
+the cause stays unidentified and no test is quoted.
 
 These disjoint counts are not a restatement of the zone definition. The zone
 holds squares where the base type has no forward move

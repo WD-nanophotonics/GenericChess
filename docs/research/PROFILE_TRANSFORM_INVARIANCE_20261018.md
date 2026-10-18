@@ -776,6 +776,17 @@ both axes, while the contact seeds themselves are stable. The mechanism is not
 identified here; the gap is reported as a property of this panel, not explained
 by it, and no test statistic is attached to 14 or 7 seeds.
 
+The association is easiest to state in reachability form: of the panel's 30
+seeds with a non-empty zone at board 4, 9 of the 11 intersecting seeds carry
+in-zone paid observations (0.82) against 5 of the 19 disjoint seeds (0.26), and
+none of the 6 vacuous seeds can carry any. Two cheap confounds the stored rows do
+rule out are exposure and plain zone size: the disjoint seeds played a median of
+5 stored games against 4 for the intersecting ones, so the lower rate is not a
+short-schedule effect, and the groups' zone sizes overlap (8-48 squares against
+8-52). What is not settled is the cause - whether the zone term itself, the
+particular game trajectories, or another property of these rulesets drives it -
+and with 11 and 19 seeds no test statistic is quoted for it.
+
 #### One tautology this does not rest on
 
 The zone is built from `compiled.empty_forward_mobility[type][owner][idx]`:
