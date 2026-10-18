@@ -1,6 +1,9 @@
-# DEV_AUX96 — closed research; publication/official safe checkpoint pending
+# DEV_AUX96 — completed84.190minutes/safe_checkpoint; scientificOPEN
 
-Own sessionfade19ca-d51e-4592-b0b4-e69f0f78723e start2026-10-18T18:00:46UTC unchanged.
+Own sessionfade19ca-d51e-4592-b0b4-e69f0f78723e start2026-10-18T18:00:46UTC unchanged;
+ENDED2026-10-18T19:24:57.487417UTC/84.190minutes/7researchstages. Source254dad5935d9ca5574b2228decef60e8bd2815aa
+fullremote/PUBLIC/21anonymousfiles verified; Slack1792351410.157839 exactreadback,
+reading/executionUNCONFIRMED. No newscience afterofficialfinish; closingmetadataonly.
 ALL60TRAIN8.4Mnodes;923of928EVAL783terminal140U/5missing; alloldcaps unchanged.
 GenericFixed-init finitebounds uniform[.25,.5]/random[.234375,.390625], while both
 selfplay regimes weaker thanFixed onthispanel. Retain rule271003randomnegative
