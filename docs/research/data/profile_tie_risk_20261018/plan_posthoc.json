@@ -1,0 +1,37 @@
+{
+ "task": "DEEPSEEK_AUX-PROFILE-TIE-GAP-20261018-POSTHOC",
+ "agent_id": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "created_at_utc": "2026-10-18T13:31:00+00:00",
+ "status": "POST_HOC_EXPLORATORY_NOT_PRE_REGISTERED",
+ "why_this_is_not_a_new_experiment": "It consumes only .local_agent/profile-tie-risk-20261018/results_tie_risk.json, written before this plan existed. No rule is generated, no seed is added, no threshold is changed and no published cell is rerun. It exists because the pre-registered tie counts alone cannot say how close a non-tying pair came to colliding, so the practical risk per rule was not expressible.",
+ "question": "Among pairs of types with genuinely distinct movement signatures, is a rounding tie explained by the exact normalized gap falling below one grid unit, and what does that imply for near-miss headroom per rule?",
+ "inputs": {
+  "results": ".local_agent/profile-tie-risk-20261018/results_tie_risk.json",
+  "rules": 1080,
+  "new_rules": 0,
+  "searches": 0,
+  "external_services": 0
+ },
+ "cost": {
+  "expected_seconds_upper": 60,
+  "measured_seconds": null
+ },
+ "method": {
+  "exact_reconstruction": "exact = 1000 * raw / median(raw over ordinary types), board = max(1, min(round(exact), MAX_STATIC_EVAL)); reconstruction must match every stored board integer exactly.",
+  "capability_distinction": "a pair counts only when the two movement signatures differ",
+  "near_equal_definition": "raw ratio <= 1.001",
+  "reachability_condition": "a tie implies exact_gap < 1.0; the converse does not hold because two values inside one unit can still land in adjacent integers",
+  "primary_report": "per board size, the conversion of near-equal raw-ratio pairs and of exact_gap<1 pairs into actual stored ties, plus the distribution of each rule's nearest distinct exact gap"
+ },
+ "predictions": {
+  "definitional": "tied_pairs_outside_gap_lt_1 must be 0; any nonzero value means the reconstruction or the tie definition is wrong",
+  "expected_not_guaranteed": "raw ratio alone should convert poorly at small normalized values and better at large ones, so exact_gap conversion should exceed raw-ratio conversion; a tie is a grid collision, not a ratio statement"
+ },
+ "decision_use": "If exact_gap<1 conversion is high and the per-rule nearest gap is the binding quantity, then rule-level tie risk should be reported as headroom below one grid unit rather than as a raw-ratio threshold. If conversion is low, near-equal raw ratios are not a usable proxy at all and only direct normalization is informative.",
+ "nonclaims": [
+  "post-hoc, no p-value or pre-registered threshold",
+  "no strength, utility or game-outcome claim",
+  "signature difference is a capability-encoding fact, not proof of strategic non-equivalence"
+ ]
+}

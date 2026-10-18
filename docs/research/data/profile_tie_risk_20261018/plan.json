@@ -1,0 +1,44 @@
+{
+ "task": "DEEPSEEK_AUX-PROFILE-TIE-RISK-20261018",
+ "agent_id": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "created_at_utc": "2026-10-18T13:02:17+00:00",
+ "question": "Does integer rounding collapse more distinct capability pairs as a rule carries more ordinary types, and does that ordering hold under all three setup presets?",
+ "why_this_is_a_new_question": "The published scans measured tie presence at one size per preset: zero ties at sizes 4, 6 and 8 under classic_like, and 5 tie groups at size 8 under two other presets. Neither design varied types-per-rule and preset together, so the practical risk that richer rules compress distinct capabilities was never measured. This is a new size x preset design with its own fresh seed blocks, not a rerun of the published cells.",
+ "inputs": {
+  "generator": "generic_chess.generation.generator.generate_game",
+  "seed_blocks": {
+   "classic_like": "294001-294120",
+   "bilateral_random": "295001-295120",
+   "free_random": "296001-296120"
+  },
+  "board_sizes": [4, 6, 8],
+  "types_per_rule_expected": {"4": 3, "6": 4, "8": 5},
+  "evaluator": "build_ruleset_profile with EvaluationConfig(hand_weight=0.9)",
+  "search": false,
+  "endpoint_code": ".local_agent/profile-normalization-20261018/scan_profile_normalization.py scan_rule() imported unchanged; only BOARD_SIZE and the generate_game binding are substituted. Aggregation reuses .local_agent/profile-normalization-scale-20261018/scan_profile_scale.py aggregate() unchanged.",
+  "scan_script_sha256": "51daaf5529a695274a7b63eac3e34d0d1b2fbcdaba966b71e7eecba4a09b3f61"
+ },
+ "cost": {
+  "expected_seconds_upper": 120,
+  "cells": 9,
+  "rules": 1080,
+  "searches": 0,
+  "external_services": 0
+ },
+ "endpoint": {
+  "primary": "tie_groups per cell (rules with at least one pair of distinct-movement types mapped to the same normalized integer), plus material tie groups at within-group raw ratio >= 1.10.",
+  "secondary": "ratio pairs, ordering inversions, ceiling clips, floor value 1, max/median ratio distortion, quantization bound check 0.5*(1/v_min+1/v_max), hand and promotion consistency.",
+  "tie_detail": "for every tie group store seed, shared integer, types, both raw scores, raw ratio, material flag and whether the signatures coincide."
+ },
+ "pre_written_prediction": "Within each preset, tie_groups must be non-decreasing from size 4 to 6 to 8, because the number of within-rule type pairs grows 3 -> 6 -> 10 and capability gaps near the median shrink; and tie_groups at size 8 must exceed size 4 in at least two of the three presets. The mechanism is that error/compression scales with 0.5/v_min, and v_min grows with types per rule, so ties should be easier rather than harder at larger sizes. A flat or decreasing profile would refute this mechanism.",
+ "decision_rule_written_before_run": "If tie_groups are non-decreasing in all three presets and strictly higher at 8 than 4 in at least two, decision tie_risk_increases_with_types_per_rule. If any preset decreases, decision tie_risk_not_monotone_in_types_per_rule. Otherwise decision tie_risk_flat_between_sizes. Counts are recorded for all nine cells either way; no seed, size, preset or threshold is retuned after seeing the result.",
+ "consumer": "rule-only generic prices and cross-game ratios: if richer rules tie more often, normalized integers cannot be treated as a lossless price summary for complex generated rules, and the compression rate must be reported per rule complexity rather than as one number.",
+ "nonclaims": [
+  "no strength, game-outcome or utility claim",
+  "no human or external price fit",
+  "three presets, three board sizes, one seed block per preset",
+  "a tie group is a normalization compression fact, not evidence of strategic equality",
+  "seed blocks are shared across board sizes within a preset, so cells are paired, not independent"
+ ]
+}
