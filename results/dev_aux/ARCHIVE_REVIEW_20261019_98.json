@@ -1,0 +1,109 @@
+{
+  "status": "PASS_RAW_BYTEPINS_CRC_ACTUAL_CONTENT_REVIEW",
+  "file": "DELTA_REPRO_20261019_98.zip",
+  "sha256": "332b44e52852800fe75131ad188b03ef815b882258c3b4d0efcfbce948cbcc35",
+  "bytes": 18656643,
+  "payloads": 194,
+  "uncompressed_bytes": 664644601,
+  "prior_unchanged": 42,
+  "sensitive_hits": 0,
+  "png_review": {
+    "results/dev_aux/task2571/actual-snapshot-costs.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2571/strength-curves.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2571/training-loss-cost.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2572/context-gains.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2575/teacher-transfer.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    }
+  },
+  "AST_checks": 130,
+  "JSON_files": 45,
+  "JSONL_records": 250290,
+  "seconds": 26.171633000019938
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "segment": 98,
+  "scientific_status": "OPEN",
+  "official_session": {
+    "id": "a14f40bc-61e7-4718-b55d-64f2a0dbb793",
+    "started_at": "2026-10-18T21:04:36.742654+00:00",
+    "state": "active",
+    "research_stage_count": 6
+  },
+  "source_sha": null,
+  "source": {
+    "status": "PENDING_REVIEWED_SOURCE_PUBLICATION"
+  },
+  "slack": {
+    "status": "NOT_SENT_PENDING_FIXED_SOURCE"
+  },
+  "dot_reading_execution": "UNCONFIRMED",
+  "archive": {
+    "file": "DELTA_REPRO_20261019_98.zip",
+    "sha256": "332b44e52852800fe75131ad188b03ef815b882258c3b4d0efcfbce948cbcc35",
+    "bytes": 18656643,
+    "payloads": 194,
+    "uncompressed_bytes": 664644601
+  },
+  "actual_fresh": {
+    "status": "PASS_ACTUAL_FRESH39_AND15_REGENERATIONS",
+    "tests": 39,
+    "derived": {
+      "task2571/binding-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2571/deployment-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2571/summary.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2571/trajectory-divergence.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2571/loss-diagnostics.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2572/deployment-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2572/summary.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2572/trajectory-divergence.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2572/absolute-wld.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2574/audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2574/signals.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2574/witness-queries.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2575/result.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2575/deployment-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2575/summary.json": "MATCH_EXCEPT_AUDIT_SECONDS"
+    },
+    "payloads": 194,
+    "archive_sha": "332b44e52852800fe75131ad188b03ef815b882258c3b4d0efcfbce948cbcc35",
+    "seconds": 80.05288850003853,
+    "wrapper_sha": "add624e82d6391c46d919ca5a3c69e3797bd9465122d18defeab017504a48262",
+    "scope": "ActualnewUUIDextraction, exactpayloadhashes andsourcepathassertions; outputs parkedbefore39tests/15regenerations. Actualownstoproot; no fakeflags/newTRAIN/fitnessrerun/oldcaprefill. Samechessauthority, notexternalengine/allruleproof."
+  },
+  "new_paid_nodes": 27619004,
+  "reused97_training_nodes": 12000000,
+  "union_paid_nodes": 39619004,
+  "new_producer_seconds": 3634.0726355000515,
+  "all_owned_producers_auditors_fresh_closed": true,
+  "metadata_final_pending": true,
+  "scope": "Exactrawcapsuleauthority; directGitLF/EOFprojection disclosed. No newscienceafterofficialfinish, onlydeliverymetadata. Allnegativecoefficients/U/missing preserved; no universalprice/policy-independent/convergenceclaim."
+}

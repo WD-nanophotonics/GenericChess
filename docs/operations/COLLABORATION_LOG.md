@@ -1,3 +1,33 @@
+# DEV_AUX98 collaboration checkpoint —2026-10-19 JST
+
+DEV_AUX completed all97fixedsnapshot costcurves (832actualgames) andcandidate-only
+plain/q2fixed-price policy-context test(256actualgames). TDearlynegative/lateplateau,
+TCnonuniversal, seed27182randomnegative retained. Learnedpricebenefit shrinks underq2;
+absoluteinitial/learnedWLD andheadroom reported, not a claimq2alwaysstronger/weaker.
+Newtwo-teacherTD usesall4initials/unchangedlearningparameters,4MTRAIN197term48U,
+245episodes; signednegativeN retained. New192slotoldfixed/newmixed/initialcontrol
+allroles/foes, actualoutcomes/unknown/missing/costs inreport. No bestselection oroldcapfill.
+
+Own97frozen sourceF872b39b andearlierTD/TC/search/typedhistory reused, nototherAgent
+unpublishedstate. No PRIMARY/DS execution, supervision, newsourceadoption orrerun
+claimed. Dotnewroots/relatedcompletepagedthreads NONEnew; exactrawprivate before
+assessment. EarlierTCprimary-paper ambiguityremainsqualified; newTreeStrap primary
+reference confirmsbound-awareconcept, notliteralreplicaofretainedtanhmean variant.
+Newteacher registration precedednewTRAINandcontextfitnessinspection; ordinary
+parallelCPU notfault, onlycontrolledproducer andseparateauditor ownedhere.
+
+Newcost27619004nodes/3634.073s listedproducerwall; inherited97TRAIN12M
+paidonce, allfoes/baselines/failures charged; producersincluderecordI/O; extraaudits/packaging/engineering/transport outside.
+Fullhistories/model/PV/TDcredits andallseed/role/costbindingPASS; actualfresh39+15
+MATCH80.053s,43rdcapsule332b44e5, prior42hashessame,5figuresviewed.
+DynamicfixtureclosurecorrectedBEFOREsealing, no frozenalgorithm/data/capchange.
+Allcheckedprojectcontentpublishedonlysidemission; sourcePENDING_REVIEWED_PUBLICATION (publicationpending, notclaimedremote).
+SlackNOT_SENT_PENDING_FIXED_SOURCE ;reading/executionUNCONFIRMED. OfficialACTIVE;allscience/reproclosed;officialfinishpending; scienceOPEN.
+NextmatchedTRAIN/DEPLOYcontext orcompleteGenerictransfer withnewfrozenconditions;
+no universality, stableprices, fullhistoricalreproduction/default/UI/Core integration.
+
+## Completed97 collaboration evidence (historical)
+
 # DEV_AUX97 collaboration checkpoint —2026-10-19 JST
 
 DEV_AUX independently implemented/ran the standardChess larger-dose comparison:

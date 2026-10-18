@@ -1,0 +1,130 @@
+{
+  "status": "ALL_FROZEN_MECHANICAL_ROOTS_DESCRIBED",
+  "roots": [
+    {
+      "family": 441001,
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a3",
+          "b7b6",
+          "h2h4",
+          "g7g5",
+          "b1c3",
+          "g5h4",
+          "d2d4",
+          "d7d5"
+        ],
+        "fen": "rnbqkbnr/p1p1pp1p/1p6/3p4/3P3p/P1N5/1PP1PPP1/R1BQKBNR w KQkq - 0 5"
+      },
+      "features": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "side": 0,
+      "legal_actions": 30,
+      "terminal": null,
+      "castling": "KQkq",
+      "en_passant": 43,
+      "has_capture": true,
+      "has_check": false
+    },
+    {
+      "family": 441002,
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e3",
+          "g8f6",
+          "e3e4",
+          "b8a6",
+          "g2g4",
+          "c7c5",
+          "f1g2",
+          "a8b8"
+        ],
+        "fen": "1rbqkb1r/pp1ppppp/n4n2/2p5/4P1P1/8/PPPP1PBP/RNBQK1NR w KQk - 2 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "side": 0,
+      "legal_actions": 26,
+      "terminal": null,
+      "castling": "KQk",
+      "en_passant": null,
+      "has_capture": false,
+      "has_check": false
+    },
+    {
+      "family": 441003,
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "c2c4",
+          "f7f5",
+          "e2e4",
+          "e7e6",
+          "g2g4",
+          "g8h6",
+          "f1d3",
+          "g7g6"
+        ],
+        "fen": "rnbqkb1r/pppp3p/4p1pn/5p2/2P1P1P1/3B4/PP1P1P1P/RNBQK1NR w KQkq - 0 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "side": 0,
+      "legal_actions": 28,
+      "terminal": null,
+      "castling": "KQkq",
+      "en_passant": null,
+      "has_capture": true,
+      "has_check": false
+    },
+    {
+      "family": 441004,
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f3",
+          "e7e6",
+          "b2b3",
+          "a7a5",
+          "b1c3",
+          "a8a7",
+          "c1a3",
+          "g8f6"
+        ],
+        "fen": "1nbqkb1r/rppp1ppp/4pn2/p7/8/BPN2P2/P1PPP1PP/R2QKBNR w KQk - 4 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "side": 0,
+      "legal_actions": 28,
+      "terminal": null,
+      "castling": "KQk",
+      "en_passant": null,
+      "has_capture": true,
+      "has_check": false
+    }
+  ],
+  "scope": "No humanopening/database/fitness input. Allfrozenconsecutivefamilies retained regardlessofmaterial/tacticalprofile. Four main/twocontext roots are fewcorrelatedlegalrandomopenings, notpopulationrepresentative orhistoricalunexposed guarantee."
+}

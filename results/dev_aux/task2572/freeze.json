@@ -1,0 +1,30 @@
+{
+  "status": "REGISTERED_BEFORE_ANY98_FITNESS_INSPECTION",
+  "session_id": "a14f40bc-61e7-4718-b55d-64f2a0dbb793",
+  "registered_at": "2026-10-18T21:06:21.786275+00:00",
+  "question": "Do frozen learnedmaterialgains dependonplainsearchcontext?",
+  "changed_premise": "97training/evalplainD2; price usefulness relative tofullsearchcontext remainsuntested.",
+  "expected_seconds": 1100,
+  "cap_seconds": 1500,
+  "execution": "Aftermain2571 closes; no concurrentproducer ornewworker",
+  "comparisons": [
+    "TD/TC/WDL minusinitial WITHINeachcontext",
+    "differenceofgains acrosscandidatecontexts, samefixedplainfoes",
+    "rawcandidateandfoequery/nodefailure costs"
+  ],
+  "decision": "Mayrestrictclaims toplainD2 orsupportlimitedcontexttransfer; no newpricefit/parameterselection",
+  "pins": {
+    "results/dev_aux/task2572/result.json": "a9562c8581f0b51bcc352a2636cb85527dc11d0e580e3d1c3c762c3ac766af70",
+    "results/dev_aux/task2572/eval-plan.json": "6fd2d123b0ca196f9321c68af4d4a583568921cffad6796a3b445305d0e341a6",
+    "results/dev_aux/task2572/evaluate.py": "d9d8ba1821fdebd5341ea5c3223f5f1cbd6f989151d19e38048300360092e5e3",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df"
+  },
+  "prelaunch_instrumentation_update": {
+    "at": "2026-10-18T21:07:26.262760+00:00",
+    "before": "88e42aa033d2183b78d17cc1509705a473e16f1fac0fd5a52395f565219f9396",
+    "after": "d9d8ba1821fdebd5341ea5c3223f5f1cbd6f989151d19e38048300360092e5e3",
+    "reason": "Recordactualqnodes/checkevasions/truncatedtacticalleaves perquery forcontextcost interpretation; nosearchrule/model/budgetchange. Contextpanel notstarted, mainfitness notinspected."
+  }
+}

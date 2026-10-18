@@ -1,3 +1,52 @@
+# DEV_AUX98 — actual cost curves and policy dependence; scientific OPEN
+
+Own sessiona14f40bc-61e7-4718-b55d-64f2a0dbb793 start2026-10-18T21:04:36.742654+00:00 unchanged; ACTIVE;allscience/reproclosed;officialfinishpending.
+All producers/auditors/fresh CLOSED. SourcePENDING_REVIEWED_PUBLICATION (publicationpending, notclaimedremote).
+SlackNOT_SENT_PENDING_FIXED_SOURCE ;reading/executionUNCONFIRMED. No PRIMARY/DS newexecution/adoption claim.
+Own sidemission/PUBLIC; nootherrole/Core/default/UI writes, worker, Goal orautomaticmerge.
+
+ALL832snapshotEVAL actualterminal/0U/0missing: TDuniform gains
+-.1875/.125/.34375/.34375 at250/500/750/1000k; random final+.34375,
+laststep-.03125; seed27182random endpoint-.125 retained. TCaggregate
+increases butindividualcurves/TCvsTD notuniversal. ALL48models boundfrom
+actualpaidclosedepisodes/WDLdecisions,400samepricefullrecord/nodecontrols.
+Full147844queries/history/PV/model/costPASS; actualsnapshotlags reported.
+TRAINloss notheldoutaccuracy andnotmonotonic; allseeds/costs kept, nobestcheckpoint.
+
+ALL256candidatecontextEVAL actualterminal/0U/missing, foesalwaysplainD2.
+TDpricegainplain+.1875/+.3125 becomesq2 0/0; TCplain+.4375/+.3125
+becomesq2 0/+.0625. Thisdoesnotmeanzeropolicyeffect:q2initialWLD
+13W1L2D/15W0L1D givesdifferentheadroom; TCq2uniformactuallyworse
+thanplain. Allactualqnodes/foeplain/full32194queryhistoriesPASS,32samepricecontrols.
+Old87qTRAINedpricecontrastdifferent; oldpartialcaps remainclosed.
+
+Newtwo-teacherTD registeredbeforeitsTRAIN/fitness, sameeta/lambda/TRAINroot/order,
+all4initials/1Mnodes each. Actual4000000nodes/245games/
+197term/48U/500.344s.
+ALLreverseTD/teacher-role/fullhistory/costPASS. Source8173N=-.088582 retainedsigned,
+notreasonablepriceorder proof. New192EVAL actual192,U0,missing0;
+Mixed-oldTD macro+.21875/+.03125, but8173bothfoes-.25 and31415random-.125. ALLoldfixedTD/newmixed/initial/roles/foes preserved. Actualperseedmatchedcostflag,
+allnegativecells/teacherrolecounts/raworders in task2575/summary.json.
+random99031 nowTRAINteacher fornewmodel, notnewholdout; random48821 prefrozen.
+
+Newproducer27619004nodes/3634.073s plusinherited97TRAIN12M once,
+union39619004; allopponent/baseline/failedwork paid.
+ProducerwallincludesownrecordingI/O; extraaudits/packaging/engineering/transportadditional; notisolatedCPU orpopulationCI.
+Actualfresh39tests+15parked/regeneratedMATCH80.053s,43rdZIP
+332b44e5/194payloads/18656643bytes, previous42same.
+5actualfigures viewed. Dynamiccheck-evasion fixturedependency restoredBEFOREsealing,
+no production/cap/datachange. Rawlargequeries inexactZIP, notdirectGit.
+
+Next MAIN: matched TRAIN/DEPLOY policy-context study withSAME TD/allinitials,
+newregisteredinputs/fixedfoes/paidtotalcost; diagnosebaselineheadroom before claiming
+pricegeneralization. No q/provercoverageexpansion orDEVprice/humanfit.
+Backup: SAMElearner newcompletegeneratedGenericrules/fullpromotion-drops-history,
+allinitials/paidcontrols, preservingold93D3/96missing andalloldcaps.
+Teacherdiversity result isfiniteprotocol evidence, notautomaticwinner selection.
+Fullreport results/dev_aux/SEGMENT_20261019_98.md; delivery/officialclosure inDELIVERY98.
+
+## Completed97 evidence (historical; closing completed at F872b39b)
+
 # DEV_AUX97 — completed67.825minutes/safe_checkpoint; scientific OPEN
 
 Own session80fa4333-247e-420a-bff3-ed759f78affe actualstart2026-10-18T19:30:14.912941UTC
