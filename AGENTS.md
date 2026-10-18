@@ -1,11 +1,22 @@
 # GenericChess local research policy
 
-This is the sole active policy; user instructions take precedence. One DEV_AUX local
-Agent works on sidemission in this independent checkout; PRIMARY owns sandbox elsewhere. Never touch alphasho, its audits,
+This is the sole active policy; user instructions take precedence. DEV_AUX is the original auxiliary on sidemission in this independent checkout;
+PRIMARY_SANDBOX owns sandbox and DEEPSEEK_AUX owns codex/deepseek-aux elsewhere.
+These three existing roles keep separate identity/state; no additional workers. Never touch alphasho, its audits,
 tasks or other projects. No automatic spawning/delegation, extra fees or uncontrolled/unbounded jobs.
 User-authorized bounded project work is permitted.
 
 ## Current decisions and reasons — user2026-10-15
+
+User2026-10-18 explicitly restores DEV_AUX90-minute same-chat heartbeat.
+The old2026-10-17 own pause is preserved as history and superseded by this resume;
+new user stops still apply. Recover this role's committed task and next research
+point, not overall engineering supervision or DeepSeek status polling. User will
+not activate both auxiliaries together; DeepSeek may have done some work without
+transferring identity, writing authority or mainline ownership. PRIMARY remains
+independent. Only own state/sidemission files change. Do not revive historical
+pause text into a new stop or reset the ended93 clock. New research uses its own
+session start; this bounded configuration/recovery is not a research sample.
 
 PUBLIC repository enables anonymous Dot/Chat evidence access; failed PRIVATE
 access experiment is superseded, never a retry task. Change visibility only

@@ -1,3 +1,7 @@
+## DEV_AUX bounded recovery2026-10-18
+
+Explicit user resume restores only original DEV_AUX90-minute heartbeat and own consultation/state. Clean pre-change sidemission matched remote48eb27d0; no unpublished code or active93producer. Recovery records current source4dbba471, completed TRAIN/D2 and original-cap partialD3, with a new smaller prospectively frozen D3 panel as next research. This is configuration/recovery, not a research-duration sample or new experiment. No DeepSeek/PRIMARY supervision, execution/adoption claim, state write, new worker or global engineering work. Segment93 clock/evidence remains unchanged; own old pause preserved and explicitly superseded. No substantive consultation needed for this configuration-only update.
+
 
 ## DEV_AUX93 — continuous TD versus mean TreeStrap, bounded closure
 

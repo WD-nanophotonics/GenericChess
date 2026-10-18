@@ -1,3 +1,29 @@
+# DEV_AUX recovery2026-10-18 — explicit resume; next research ready
+
+Original DEV_AUX/sidemission only. User restored own90-minute same-chat heartbeat
+and requested own task/commit/continuation recovery, not overall engineering or
+DeepSeek supervision. Existing three roles keep separate files/state/identity.
+Bounded recovery/configuration is not a new research-duration sample. Segment93
+stays ended; next research calls own session start with its actual new clock.
+
+Verified clean local and origin/sidemission48eb27d02f634c8de4b1506622d15c1013a8da2d;
+science implementation4dbba471885be4a6d48a99e7230a007702f27424. No unpublished code.
+All93 producers/reproduction closed;32TRAIN and1536D2 slots complete. D3 remains
+original-cap partial654/768,648terminal6UNKNOWN114missing; never fill oldcap slots.
+43tests/16fresh-derived results matched, two unchanged controls unavailable.
+D2 both learners beat initialization in finite panels; method winner/order stability
+and D3 robustness remain OPEN. No new result or another role's adoption is claimed.
+
+Next own research: preregister a smaller NEW D3 robustness panel using all saved93
+models/initials/roles/fixed foes, paying all work and freezing the entire budget
+before fitness. Use existing cost records for feasibility; keep all negative/missing
+outcomes and avoid best-seed/root selection or old-cap continuation. Standard
+Chess/TD route and full generic semantics stay; no default/Core/UI/mainline takeover.
+The current memo gives executable main/backups. Old own pause below is HISTORY,
+explicitly superseded by2026-10-18 resume, never grounds for automatic re-pausing.
+
+## Historical segment93 closure and prior work
+
 # DEV_AUX93 — current work closed; future heartbeat PAUSED by user
 
 User requested pausing future inspection and finishing the current batch safely.
