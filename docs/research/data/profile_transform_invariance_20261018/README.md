@@ -7,8 +7,8 @@ Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
 disjointness, source-classification, Stage 12 contact-choice, Stage 13
 option-set and Stage 14 seed-closure artifacts below were added from the same
-role's later session, together with the Stage 15 board-scale artifacts
-`3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
+role's later session, together with the Stage 15 board-scale and Stage 16
+preset-dependence artifacts `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
 no other role has rerun it. No strength, playing-quality, utility, human-price
 or game-outcome claim is made anywhere in this directory.
 
@@ -109,6 +109,33 @@ regenerates every ruleset through its own index arithmetic, reproduces all 108
 seed-by-board rows, re-derives the decision and cross-checks the board-4 column
 against the separately published Stage 10 disjoint list (8 checks).
 
+`scan_stage16_preset_dependence_zone_disjointness.py` asks the companion
+question: is that exclusion specific to `classic_like`? The board is held at 4,
+because Stage 15 already varies it, and the same 36 seeds are regenerated under
+`classic_like`, `bilateral_random` and `free_random`; again no search, no replay
+and no new game. The disjoint share is 25/36 (0.694) under `classic_like`,
+27/36 (0.750) under `bilateral_random` and 25/36 (0.694) under `free_random`,
+the median seed has no promotion source inside its zone under all three, 16
+seeds are disjoint under every supported preset, and no (seed, preset) pair
+failed to build. Both non-reference shares exceed three quarters of the
+reference, so the pre-registered rule fires
+`disjointness_is_generic_across_presets`: the exclusion is not a `classic_like`
+artefact. One definitional caveat is visible in the stored rows: a seed whose
+promotable types have no zone at all counts as disjoint because the
+intersection is empty, and that count differs by preset (6 seeds under
+`classic_like`, 10 under `bilateral_random`, 5 under `free_random`). Read
+without those vacuous cases the shares are 19/36, 17/36 and 20/36, the smallest
+ratio to the reference is about 0.89, and 9 seeds rather than 16 are disjoint
+with a non-empty zone under all three presets - so the decision does not rest
+on the empty-zone seeds. Those two recomputations are a re-read of the stored
+`per_seed_preset` rows, not a new run.
+`verify_stage16_preset_dependence_zone_disjointness.py` regenerates every
+ruleset through its own index arithmetic, matches all 108 seed-by-preset rows,
+re-derives the decision and cross-checks the `classic_like` column against the
+separately published Stage 10 list (8 checks). Scope is geometry only: the
+other presets were regenerated, never played, and nothing here says they are
+balanced or comparable to `classic_like` as games.
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing
@@ -178,6 +205,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage15_board_scale_zone_disjointness.json` | 3781 | `e1ee626b53321f002a0a2b0c1d4a419bad8cf3310cc66a731d0f5410b45f9869` |
 | `results_stage15_board_scale_zone_disjointness.json` | 40297 | `47ac9a6602979a75b22330648d0d58a6ce770fb2dbc37af926f91d9eef0b6bf6` |
 | `verification_stage15_board_scale_zone_disjointness.json` | 1254 | `ef5b873921fb330d35156ed468574576940f1b2babe6ccecbd9d111fe8d4c8f5` |
+| `plan_stage16_preset_dependence_zone_disjointness.json` | 3765 | `f45f15269253e478fa76a69f298fafc1f5ad0ac7e5a77682f44953da4a0b801a` |
+| `results_stage16_preset_dependence_zone_disjointness.json` | 41768 | `d7a368c0997227639393c1224ab1f38fdcb410a5029acab2b7f07547a493b6ea` |
+| `verification_stage16_preset_dependence_zone_disjointness.json` | 1278 | `b8117fab599f21a7e092812b55909af60b01a845ac1c74679b25bda206f580c0` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -207,7 +237,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_stage14_seed_closures.py` | 6548 | `f1fccc62ae526dd9d197c7dff061d496014274eaed4b367e8ccea16e34b4772a` |
 | `scan_stage15_board_scale_zone_disjointness.py` | 7491 | `ec1c12f431f3bf8b37185ed808ac9d95849fe11bfec20181acd92546f908b7de` |
 | `verify_stage15_board_scale_zone_disjointness.py` | 6710 | `292acbf61a28116f1e1d0522c0c221436781838195b9ad621b1266f206e74888` |
-| `make_public_evidence.py` | 6599 | `9c0245b118be7c944b30568596b0f79c62f1e3c18fdd9ef9cd1c1cbb42e377a3` |
+| `scan_stage16_preset_dependence_zone_disjointness.py` | 9767 | `4a8c911f8849443dfd686303632147289615c147a884cb0eceb3e5e5a94c9a96` |
+| `verify_stage16_preset_dependence_zone_disjointness.py` | 6949 | `4d8395dba568f21d17c4ca3244aadd8acbd27f76277b8ea9d8b9fc2654e9a8b7` |
+| `make_public_evidence.py` | 6918 | `3b900033dffb7bebe3e6b5a6b93d4888b88bcbd07899c6151c53ede5afbafff1` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -247,6 +279,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage15_board_scale_zone_disjointness.json` | the endpoint, the board sizes, the two-measure decision rule and the unsupported-board handling for the Stage 15 pass, written before the run; the later `execution` record and `status` are added by the scan |
 | `results_stage15_board_scale_zone_disjointness.json` | `disjointness_persists_across_board_sizes` - the same 36 seeds regenerated at boards 4, 6 and 8 give disjoint shares 25/36 (0.694), 22/36 (0.611) and 20/36 (0.556), and the median seed has no zone square that is a promotion source at any size, so the board-4 exclusion is not a small-board artefact; geometry only, no contact count and no rate |
 | `verify_stage15_board_scale_zone_disjointness.py` | independent regeneration through `Square.rank`/`Square.file` index arithmetic instead of the scan's helper, matching all 108 seed-by-board rows, re-deriving the decision and cross-checking the board-4 column against the published Stage 10 list (`all_checks_passed`, 8 checks) |
+| `plan_stage16_preset_dependence_zone_disjointness.json` | the endpoint, the three presets, the explicit `reference_preset`, the two-measure decision rule and the unsupported-pair handling for the Stage 16 pass, written before the run; the later `execution` record and `status` are added by the scan |
+| `results_stage16_preset_dependence_zone_disjointness.json` | `disjointness_is_generic_across_presets` - the same 36 seeds regenerated at board 4 under `classic_like`, `bilateral_random` and `free_random` give disjoint shares 25/36 (0.694), 27/36 (0.750) and 25/36 (0.694), the median seed has no promotion source in its zone under any preset and 16 seeds are disjoint under all three, so the exclusion is not a `classic_like` artefact; geometry only, with the first run's preset-lookup defect kept in `defect_corrections` |
+| `verify_stage16_preset_dependence_zone_disjointness.py` | independent regeneration through index arithmetic instead of the scan's helper, matching all 108 seed-by-preset rows, re-deriving the decision and cross-checking the `classic_like` column against the published Stage 10 disjoint list (`all_checks_passed`, 8 checks) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
@@ -358,6 +393,14 @@ case. The rotated states are constructed for measurement and are not shown to
 be reachable in play. The A3 legality check is one ply from the initial
 position, not a game-tree isomorphism proof. Whether the half-bonus branch was
 intended to fire is unknown and no repair is proposed here.
+
+Stage 16 widens the structural statement from `classic_like` to the other two
+presets the generator offers here, but only as geometry: `bilateral_random` and
+`free_random` rulesets were regenerated, never played, so reachability in play
+is still unmeasured outside `classic_like`. Whether presets outside these three
+(or generator versions with different type tables) behave the same is open; the
+scan records an unbuildable (seed, preset) pair as unsupported instead of
+substituting one.
 
 The leaf-term audit only establishes which comparisons in `evaluator.py` can be
 true by type and that the anchor-capture penalty matches its own formula on

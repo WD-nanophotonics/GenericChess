@@ -687,6 +687,57 @@ different preset behaving differently. No contact count and no in-zone-versus-
 outside rate is produced, and no strength, playing-quality, utility or causal
 claim follows. Scope is boards 4, 6 and 8 with `classic_like` only.
 
+### Is the exclusion specific to one setup preset? (Stage 16, geometry only)
+
+Stages 10, 14 and 15 all measure one preset, so the natural companion objection
+is that the zone/promotion-source exclusion is a property of `classic_like`
+rather than of the generator. That matters for scope: if the exclusion is
+generic it can be stated for generated rules generally, and if it is
+`classic_like`-specific then every earlier structural sentence has to be
+narrowed and the next valuation step should sample presets instead of boards.
+`scan_stage16_preset_dependence_zone_disjointness.py` holds the board at 4
+(Stage 15 already varies it) and regenerates the same 36 seeds under
+`classic_like`, `bilateral_random` and `free_random`, recomputing the identical
+partition - no search, no replay, no new game, ruleset regeneration and set
+arithmetic only. Endpoint, presets, the explicit `reference_preset` and the
+two-measure decision rule were fixed in
+`plan_stage16_preset_dependence_zone_disjointness.json` first.
+
+The disjoint share is 25 of 36 seeds under `classic_like` (0.694), 27 under
+`bilateral_random` (0.750) and 25 under `free_random` (0.694); the median seed
+has no promotion source anywhere in its zone under all three, 16 seeds are
+disjoint under every supported preset, and no (seed, preset) pair failed to
+build. Both non-reference shares exceed three quarters of the reference, so the
+pre-written rule fires `disjointness_is_generic_across_presets`. One
+definitional caveat is worth carrying: a seed whose promotable types have no
+zone at all is counted as disjoint, since the intersection is empty, and that
+count differs by preset (6, 10 and 5 seeds respectively). Recomputed without
+those vacuous cases the shares are 19/36, 17/36 and 20/36, the smallest ratio to
+the reference is about 0.89, and 9 seeds rather than 16 are disjoint with a
+non-empty zone under all three presets - the decision does not depend on the
+empty-zone seeds. Those two numbers are a re-read of the stored
+`per_seed_preset` rows, not a new run.
+`verify_stage16_preset_dependence_zone_disjointness.py` regenerates every
+ruleset through its own index arithmetic rather than the scan's helper, matches
+all 108 seed-by-preset rows, re-derives the decision from the stored shares and
+cross-checks the `classic_like` column against the separately published Stage 10
+disjoint list (8 checks, all passing). The first run of the scan is kept as a
+defect: it read the plan's prose `reference` field as if it were a preset key,
+so the lookup always failed and the decision fell through to
+`insufficient_supported_presets` while the same run printed three complete
+preset summaries; the plan now carries `reference_preset` and the thresholds
+are unchanged, no measurement moved and the wrong output was never published.
+
+The limit is the same as Stage 15's, with a second edge. This is geometry, not
+behaviour: it says whether a promotion action can exist on an in-zone square
+under each preset, not whether search would choose it, and not what the zone
+term is worth. The other two presets were regenerated, never played, so
+reachability in play remains entirely unmeasured for them and nothing here says
+they are balanced, playable or comparable to `classic_like` as games. No contact
+count and no in-zone-versus-outside rate is produced, and no strength,
+playing-quality, utility or causal claim follows. Scope is board 4 with the
+three presets the generator offers at this place in the code.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward
@@ -699,7 +750,9 @@ claim follows. Scope is boards 4, 6 and 8 with `classic_like` only.
   and other presets — Stage 15 now shows the *structural* availability
   (a promotion source inside the paid zone) also fails on boards 6 and 8, but
   no played positions exist at those sizes, so reachability there remains
-  entirely unmeasured;
+  entirely unmeasured — and Stage 16 shows the same structural failure under
+  `bilateral_random` and `free_random` at board 4, but those presets were
+  regenerated only and never played, so their reachability is unmeasured too;
 * whether the half-bonus branch was intended to fire — its unreachability is a
   finding, not a diagnosis, and no behaviour change is proposed from here;
 * how often the anchor-capture penalty, confirmed live above, fires in

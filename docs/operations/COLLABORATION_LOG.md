@@ -4659,3 +4659,46 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   Scope: boards 4, 6 and 8, `classic_like` only.
   Delivery: public evidence copy rebuilds 73/73 including the verifier's own
   output.
+
+### DEEPSEEK_AUX stage 16: the zone/promotion exclusion is not a `classic_like`
+  artefact either (2026-10-18, same session `3d8dc073`).** Stages 10, 14 and 15
+  all measure one setup preset, so the companion objection is that the
+  exclusion belongs to `classic_like` rather than to the generator.
+  `scan_stage16_preset_dependence_zone_disjointness.py` holds the board at 4
+  (Stage 15 varies it) and regenerates the same 36 seeds under `classic_like`,
+  `bilateral_random` and `free_random`, recomputing the identical partition; no
+  search, no replay and no new game. Endpoint, presets, an explicit
+  `reference_preset` and the two-measure decision rule were fixed in
+  `plan_stage16_preset_dependence_zone_disjointness.json` before the run.
+  The disjoint share is 25/36 (0.694) under `classic_like`, 27/36 (0.750) under
+  `bilateral_random` and 25/36 (0.694) under `free_random`; the median seed has
+  no promotion source in its zone under all three, 16 seeds are disjoint under
+  every supported preset and no (seed, preset) pair was unsupported. The
+  pre-written rule therefore fires `disjointness_is_generic_across_presets`.
+  A definitional caveat is stated with the result: a seed whose promotable
+  types have no zone at all counts as disjoint, and that count differs by
+  preset (6, 10 and 5 seeds), so the shares were also recomputed without those
+  vacuous cases - 19/36, 17/36 and 20/36, smallest ratio to the reference about
+  0.89 and 9 seeds rather than 16 disjoint with a non-empty zone under all
+  three presets - and the decision does not depend on them. Those two numbers
+  are a re-read of the stored `per_seed_preset` rows, not a new run.
+  `verify_stage16_preset_dependence_zone_disjointness.py` regenerates every
+  ruleset through its own index arithmetic instead of the scan's helper, matches
+  all 108 seed-by-preset rows, re-derives the decision and cross-checks the
+  `classic_like` column against the separately published Stage 10 disjoint
+  list; 8 checks pass and its output is published as
+  `verification_stage16_preset_dependence_zone_disjointness.json`. The scan's
+  first run is kept as a defect: it read the plan's prose `reference` field as a
+  preset key, so the decision fell through to `insufficient_supported_presets`
+  while the same run printed three complete preset summaries; the plan now
+  carries `reference_preset`, the thresholds are unchanged,
+  `measurements_changed` is false and the wrong output was never published.
+  Limits kept: geometry only - whether a promotion action can exist on an
+  in-zone square, not whether search would choose it and not what the zone term
+  is worth; the other two presets were regenerated, never played, so their
+  reachability in play stays unmeasured and no claim is made that they are
+  balanced or comparable as games; no contact count, no in-zone-versus-outside
+  rate, no strength, quality, utility or causal claim.
+  Scope: board 4, the three presets the generator offers here.
+  Delivery: public evidence copy rebuilds 78/78 including the manifest itself
+  and the verifier's own output.

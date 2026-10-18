@@ -1,0 +1,49 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "verifies": "results_stage16_preset_dependence_zone_disjointness.json",
+ "decision": "disjointness_is_generic_across_presets",
+ "verdict": "all_checks_passed",
+ "checks": [
+  {
+   "check": "every_seed_times_every_preset_present",
+   "passed": true,
+   "detail": "rows=108 seeds=36 presets=3"
+  },
+  {
+   "check": "no_unsupported_pair",
+   "passed": true,
+   "detail": "unsupported=[]"
+  },
+  {
+   "check": "independent_rebuild_matches_every_row",
+   "passed": true,
+   "detail": "mismatches=0"
+  },
+  {
+   "check": "per_preset_tallies_and_shares_reproduce",
+   "passed": true,
+   "detail": "all presets"
+  },
+  {
+   "check": "cross_preset_intersection_recomputes",
+   "passed": true,
+   "detail": "count=16"
+  },
+  {
+   "check": "classic_like_column_matches_the_published_stage10_disjoint_list",
+   "passed": true,
+   "detail": "classic_like=25 stage10=25"
+  },
+  {
+   "check": "decision_recomputed_from_the_rule",
+   "passed": true,
+   "detail": "expected=disjointness_is_generic_across_presets stored=disjointness_is_generic_across_presets"
+  },
+  {
+   "check": "withdrawn_rate_markers_absent",
+   "passed": true,
+   "detail": "found=[]"
+  }
+ ]
+}

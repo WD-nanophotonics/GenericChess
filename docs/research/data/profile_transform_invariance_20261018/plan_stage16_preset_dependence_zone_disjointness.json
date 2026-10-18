@@ -1,0 +1,51 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "stage": 16,
+ "question": "Is the zone/promotion-source disjointness specific to setup_preset classic_like, or does it also hold under bilateral_random and free_random?",
+ "why_this_question": "Stage 10, Stage 14 and Stage 15 all measure one preset. The report's UNKNOWN list already asks whether the missing promotion interaction is specific to this preset, and the answer changes the scope of every earlier structural claim: if the exclusion is generic to the generator it can be stated for generated rules generally, and if it is classic_like-specific then this study's conclusions must be narrowed to that preset and the next valuation step should sample presets instead of boards.",
+ "design": {
+  "seeds": "exactly the 36 seeds of the stored Stage 8 corpus, so the comparison is controlled by seed",
+  "board": 4,
+  "board_held_fixed_because": "Stage 15 already measured board-size dependence at board 4, 6 and 8; this stage isolates the preset",
+  "presets": [
+   "classic_like",
+   "bilateral_random",
+   "free_random"
+  ],
+  "no_search": true,
+  "no_replay": true,
+  "no_new_games": true,
+  "only_ruleset_regeneration": true,
+  "zone": "evaluator._zones[(base_type_id, side)] for base types with a positive promotion gain",
+  "promotion_sources": "from_square of compiled.promotion_allowed[base_type_id][side]",
+  "counting": "per (base type, side) pair, so one square may be counted for more than one pair"
+ },
+ "endpoint": "per_seed_preset rows (seed x preset) plus a per_preset summary carrying seeds_examined, seeds_unsupported, seeds_disjoint, disjoint_share, median_zone_square_share_that_are_promotion_sources, and the count of seeds disjoint under every supported preset",
+ "decision_rule_written_before_the_run": {
+  "reference": "classic_like disjoint_share, the preset every earlier stage used",
+  "reference_preset": "classic_like",
+  "disjointness_is_generic_across_presets": "for every other supported preset, disjoint_share >= 0.75 * reference",
+  "classic_like_specific_disjointness": "for at least one other supported preset, disjoint_share <= 0.5 * reference",
+  "mixed_preset_dependence": "any other outcome",
+  "unsupported_handling": "a (seed, preset) pair that cannot be built is recorded as unsupported and excluded; a preset with fewer than half of the seeds built is marked insufficient and excluded from the decision; nothing is fabricated or interpolated",
+  "tie_handling": "0.5 < 0.75 keeps the two decision branches mutually exclusive"
+ },
+ "expected_cost": "one ruleset-regeneration pass over 36 seeds x 3 presets at board 4 in-process, seconds of wall time; no search, no replay and no evaluator change",
+ "consumer": "the scope statement of every structural claim in this report, and the UNKNOWN item about whether the missing promotion interaction is preset-specific",
+ "nonclaims": [
+  "structural geometry only - no contact count and no contact rate is produced, and the withdrawn 0-vs-53 contrast stays excluded",
+  "no search behaviour, strength, playing-quality, utility or causal claim",
+  "no claim that the other presets are played, balanced or otherwise comparable to classic_like as games",
+  "the partition depends on the served evaluator's zone definition and on compiled.promotion_allowed"
+ ],
+ "status": "executed",
+ "execution": {
+  "at": "2026-10-18T15:01:47.731276+00:00",
+  "script": "scan_stage16_preset_dependence_zone_disjointness.py",
+  "output": "results_stage16_preset_dependence_zone_disjointness.json",
+  "output_sha256": "a8b116e9ddab5e60a5d858704aedb54a8dea558fbea611d8fab1a75534c5a2e6",
+  "seeds": 36,
+  "decision": "disjointness_is_generic_across_presets"
+ }
+}
