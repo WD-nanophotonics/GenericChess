@@ -1,0 +1,23 @@
+{
+  "status": "PASS_EXACT_REGISTERED_RECIPE_AND_ALL64_ENDPOINTS",
+  "models_verified": 64,
+  "slots_verified": 640,
+  "registered_plan_sha": "8331d91c85d5f75f121534b5e013afd7af642caf33f7b6b9f05ac229ac9a5a96",
+  "registered_line_endings": "CRLF",
+  "training_design_equal_keys": [
+    "generator_seeds",
+    "initial_seeds",
+    "arms_order",
+    "nodes_per_arm",
+    "max_games",
+    "prefix_plies",
+    "H",
+    "eta",
+    "lam",
+    "foe",
+    "training_family_offset",
+    "ordering_seed_offset"
+  ],
+  "future_binding": "Only future result/source/model hashes appended; exact prebinding bytecopy recovered by filtering pins and validated against BEFORETRAIN registration SHA. Current active plan untouched.",
+  "scope": "Code/data/source provenance and complete endpoint inclusion, not independent identity authentication or scientific usefulness."
+}

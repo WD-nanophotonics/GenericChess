@@ -1,0 +1,3278 @@
+{
+  "status": "PASS_ALL_TYPED_OUTCOMES_AND_FIXED_FOE_DEPTH_DISPATCH",
+  "planned": 768,
+  "returned": 768,
+  "missing": 0,
+  "counts": {
+    "prefix_plies": 3072,
+    "queries": 19538,
+    "foe_queries": 9722,
+    "drops": 5016,
+    "promotions": 1000,
+    "played_plies": 19538,
+    "candidate_queries": 9816,
+    "ACTUAL_TERMINAL": 738,
+    "games": 768,
+    "HORIZON_UNKNOWN": 30
+  },
+  "paid": [
+    {
+      "depth": 2,
+      "treatment": "TD",
+      "foe": "random99031",
+      "nodes": 88279,
+      "queries": 1425,
+      "search_seconds": 25.460330099915154,
+      "candidate_nodes": 43182,
+      "foe_nodes": 45097,
+      "games": 64,
+      "unknown": 2
+    },
+    {
+      "depth": 2,
+      "treatment": "TD",
+      "foe": "uniform",
+      "nodes": 122968,
+      "queries": 2233,
+      "search_seconds": 34.40206120302901,
+      "foe_nodes": 53133,
+      "candidate_nodes": 69835,
+      "games": 64,
+      "unknown": 5
+    },
+    {
+      "depth": 2,
+      "treatment": "TreeStrap",
+      "foe": "random99031",
+      "nodes": 112408,
+      "queries": 1739,
+      "search_seconds": 32.47213449928677,
+      "candidate_nodes": 56832,
+      "foe_nodes": 55576,
+      "games": 64,
+      "unknown": 3
+    },
+    {
+      "depth": 2,
+      "treatment": "TreeStrap",
+      "foe": "uniform",
+      "nodes": 127305,
+      "queries": 2216,
+      "search_seconds": 36.7286702998681,
+      "foe_nodes": 53610,
+      "candidate_nodes": 73695,
+      "games": 64,
+      "unknown": 6
+    },
+    {
+      "depth": 2,
+      "treatment": "initial",
+      "foe": "random99031",
+      "nodes": 104324,
+      "queries": 1690,
+      "search_seconds": 30.351206799270585,
+      "candidate_nodes": 51747,
+      "foe_nodes": 52577,
+      "games": 64,
+      "unknown": 2
+    },
+    {
+      "depth": 2,
+      "treatment": "initial",
+      "foe": "uniform",
+      "nodes": 124659,
+      "queries": 2096,
+      "search_seconds": 36.02039739926113,
+      "foe_nodes": 53342,
+      "candidate_nodes": 71317,
+      "games": 64,
+      "unknown": 5
+    },
+    {
+      "depth": 3,
+      "treatment": "TD",
+      "foe": "random99031",
+      "nodes": 368609,
+      "queries": 1478,
+      "search_seconds": 103.62616540020099,
+      "candidate_nodes": 323072,
+      "foe_nodes": 45537,
+      "games": 64,
+      "unknown": 2
+    },
+    {
+      "depth": 3,
+      "treatment": "TD",
+      "foe": "uniform",
+      "nodes": 350163,
+      "queries": 1276,
+      "search_seconds": 97.93289339961484,
+      "foe_nodes": 32017,
+      "candidate_nodes": 318146,
+      "games": 64,
+      "unknown": 1
+    },
+    {
+      "depth": 3,
+      "treatment": "TreeStrap",
+      "foe": "random99031",
+      "nodes": 390532,
+      "queries": 1429,
+      "search_seconds": 108.68038759968476,
+      "candidate_nodes": 339356,
+      "foe_nodes": 51176,
+      "games": 64,
+      "unknown": 2
+    },
+    {
+      "depth": 3,
+      "treatment": "TreeStrap",
+      "foe": "uniform",
+      "nodes": 370988,
+      "queries": 1228,
+      "search_seconds": 105.16106369986665,
+      "foe_nodes": 32700,
+      "candidate_nodes": 338288,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "initial",
+      "foe": "random99031",
+      "nodes": 365953,
+      "queries": 1421,
+      "search_seconds": 103.42668630089611,
+      "candidate_nodes": 316472,
+      "foe_nodes": 49481,
+      "games": 64,
+      "unknown": 1
+    },
+    {
+      "depth": 3,
+      "treatment": "initial",
+      "foe": "uniform",
+      "nodes": 369715,
+      "queries": 1307,
+      "search_seconds": 101.84174879977945,
+      "foe_nodes": 32965,
+      "candidate_nodes": 336750,
+      "games": 64,
+      "unknown": 1
+    }
+  ],
+  "contrasts": [
+    {
+      "foe": "uniform",
+      "name": "TD-initial@D2",
+      "bounds": [
+        -0.03125,
+        0.28125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.5,
+              0.625
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.25,
+              0.75
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.5,
+              0.75
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.5,
+              -0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.0625,
+              0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.125,
+              0.1875
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.0,
+              0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.0625,
+              0.25
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.875,
+        1.0
+      ],
+      "terms": [
+        [
+          "TD",
+          2,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-initial@D2",
+      "bounds": [
+        0.109375,
+        0.453125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.5625,
+              0.6875
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.4375,
+              0.8125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.375,
+              0.875
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.25,
+              -0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.53125,
+              0.84375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.3125,
+              0.0625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.125,
+              0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.34375,
+              0.59375
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.6875,
+        1.25
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          2,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-TD@D2",
+      "bounds": [
+        -0.015625,
+        0.328125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.6875,
+              0.6875
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.0625,
+              0.3125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.0,
+              0.375
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.34375,
+              0.59375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.375,
+              0.0625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.25,
+              0.125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.21875,
+              0.53125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.875,
+        1.0
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          2,
+          1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TD-initial@D3",
+      "bounds": [
+        0.15625,
+        0.21875
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.25,
+              0.0
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.375,
+              0.5
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.1875,
+              0.1875
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.125,
+              0.1875
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.1875,
+              0.25
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.3125,
+        0.6875
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-initial@D3",
+      "bounds": [
+        0.375,
+        0.40625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.5,
+              0.625
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.5625,
+              0.5625
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.1875,
+              0.25
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.4375,
+              0.5
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.3125,
+              0.3125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.3125,
+        1.0
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-TD@D3",
+      "bounds": [
+        0.1875,
+        0.21875
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.0,
+              0.0625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.3125,
+              0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.0625,
+              0.125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.25,
+        0.75
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TD",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "initial:D3-D2",
+      "bounds": [
+        0.0625,
+        0.25
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.375,
+              1.0
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.125,
+              0.375
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.0625,
+              0.25
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.0625,
+              0.25
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.375,
+        0.875
+      ],
+      "terms": [
+        [
+          "initial",
+          3,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TD:D3-D2",
+      "bounds": [
+        0.125,
+        0.3125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.875
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.25,
+              0.5
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.5,
+              0.75
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.0625,
+              0.1875
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.1875,
+              0.4375
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.0625,
+              0.0625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.3125,
+              0.5625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5,
+        1.0
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap:D3-D2",
+      "bounds": [
+        0.171875,
+        0.359375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.4375,
+              1.1875
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.125,
+              0.375
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.1875,
+              0.3125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.0,
+              0.25
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.375,
+              0.5
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.03125,
+              0.09375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.375,
+              0.625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.25,
+              0.5
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.09375,
+              0.21875
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.25,
+        1.125
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "DepthInteraction:TD-initial",
+      "bounds": [
+        -0.125,
+        0.25
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.875,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.5,
+              0.875
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.625,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.5,
+              -0.25
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.125,
+              0.375
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.1875,
+              0.125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.0625,
+              0.375
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.1875,
+              0.1875
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.0625,
+              0.3125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.9375,
+        1.0
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ],
+        [
+          "initial",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "DepthInteraction:TreeStrap-initial",
+      "bounds": [
+        -0.078125,
+        0.296875
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.5625,
+              0.8125
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.375,
+              0.75
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.3125,
+              0.1875
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.375,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.0,
+              0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.28125,
+              0.03125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.125,
+              0.5625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.125,
+              0.625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.28125,
+              -0.03125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.75,
+        1.0
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ],
+        [
+          "initial",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "DepthInteraction:TreeStrap-TD",
+      "bounds": [
+        -0.140625,
+        0.234375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.4375,
+              1.0625
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              -0.75,
+              -0.75
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0625,
+              0.4375
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.125,
+              0.375
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.375,
+              0.0
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.21875,
+              0.03125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.0625,
+              0.4375
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.1875,
+              0.5625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.46875,
+              -0.09375
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.8125,
+        1.125
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TD",
+          3,
+          -1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ],
+        [
+          "TD",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TD-initial@D2",
+      "bounds": [
+        0.0,
+        0.125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.0,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.3125,
+              -0.25
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.3125,
+              0.5
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.0,
+              0.1875
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.0,
+              0.0625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.875,
+        0.875
+      ],
+      "terms": [
+        [
+          "TD",
+          2,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-initial@D2",
+      "bounds": [
+        0.34375,
+        0.5
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.75
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.5
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.4375,
+              0.5
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.25,
+              0.5
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.4375,
+              0.625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.25,
+        1.0
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          2,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-TD@D2",
+      "bounds": [
+        0.28125,
+        0.4375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.75
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.75,
+              0.75
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.1875,
+              0.125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.3125,
+              0.5625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.25,
+              0.3125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5,
+        1.0
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          2,
+          1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TD-initial@D3",
+      "bounds": [
+        -0.03125,
+        0.0625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              0.0
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.3125,
+              -0.1875
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.25,
+              0.3125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.3125,
+              0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.375,
+              -0.1875
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.625,
+        0.75
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-initial@D3",
+      "bounds": [
+        0.0625,
+        0.15625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.125,
+              0.0
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.0,
+              0.125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.125,
+              0.1875
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.0,
+              0.1875
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5,
+        0.75
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-TD@D3",
+      "bounds": [
+        0.03125,
+        0.15625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.0,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.0,
+              0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.375,
+              -0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.1875,
+              -0.0625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.1875,
+              -0.1875
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.25,
+              0.5
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.625,
+        0.6875
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TD",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "initial:D3-D2",
+      "bounds": [
+        0.34375,
+        0.4375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.5,
+              0.75
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.5,
+              0.625
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.4375,
+              0.5
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.1875,
+              0.25
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.5,
+              0.625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.25,
+        1.125
+      ],
+      "terms": [
+        [
+          "initial",
+          3,
+          1
+        ],
+        [
+          "initial",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TD:D3-D2",
+      "bounds": [
+        0.28125,
+        0.40625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.125,
+              0.625
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.25,
+              0.375
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.375,
+              0.5
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.625,
+              0.625
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              0.3125,
+              0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.25,
+              0.4375
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.375,
+              0.5
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.1875,
+              0.3125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5,
+        1.125
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap:D3-D2",
+      "bounds": [
+        0.0,
+        0.15625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.125,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.5,
+              0.5
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.125,
+              0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.375,
+              0.5
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.25,
+              -0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.125,
+              -0.0625
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              0.125,
+              0.375
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.25,
+              -0.125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.25,
+              0.4375
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5,
+        0.9375
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "DepthInteraction:TD-initial",
+      "bounds": [
+        -0.15625,
+        0.0625
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.375,
+              0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.5,
+              -0.125
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.25,
+              0.0
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.0625,
+              0.125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.25,
+              0.0
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.125,
+              0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.4375,
+              -0.1875
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.9375,
+        0.875
+      ],
+      "terms": [
+        [
+          "TD",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ],
+        [
+          "TD",
+          2,
+          -1
+        ],
+        [
+          "initial",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "DepthInteraction:TreeStrap-initial",
+      "bounds": [
+        -0.4375,
+        -0.1875
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.625,
+              0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.875,
+              -0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.25,
+              0.0
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.625,
+              -0.5
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.5,
+              -0.3125
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.375,
+              -0.0625
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.5,
+              -0.3125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.375,
+              -0.0625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -1.0625,
+        0.5
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ],
+        [
+          "initial",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "DepthInteraction:TreeStrap-TD",
+      "bounds": [
+        -0.40625,
+        -0.125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.75,
+              0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.5,
+              0.0
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.875,
+              -0.75
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 251001,
+            "bounds": [
+              -0.5,
+              -0.375
+            ]
+          },
+          {
+            "value": 251002,
+            "bounds": [
+              -0.3125,
+              0.125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.75,
+              -0.5
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.0625,
+              0.25
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -1.0625,
+        0.8125
+      ],
+      "terms": [
+        [
+          "TreeStrap",
+          3,
+          1
+        ],
+        [
+          "TD",
+          3,
+          -1
+        ],
+        [
+          "TreeStrap",
+          2,
+          -1
+        ],
+        [
+          "TD",
+          2,
+          1
+        ]
+      ]
+    }
+  ],
+  "behavior": [
+    {
+      "foe": "uniform",
+      "name": "TD-initial@D2",
+      "counts": {
+        "first_difference_candidate": 59,
+        "same_reward": 28,
+        "improved": 15,
+        "worse": 12,
+        "unresolved_pair": 9,
+        "identical_record": 5
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-initial@D2",
+      "counts": {
+        "first_difference_candidate": 58,
+        "same_reward": 35,
+        "improved": 15,
+        "identical_record": 6,
+        "worse": 6,
+        "unresolved_pair": 8
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-TD@D2",
+      "counts": {
+        "identical_record": 7,
+        "same_reward": 36,
+        "first_difference_candidate": 57,
+        "improved": 13,
+        "worse": 7,
+        "unresolved_pair": 8
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TD-initial@D3",
+      "counts": {
+        "first_difference_candidate": 48,
+        "same_reward": 44,
+        "improved": 12,
+        "identical_record": 16,
+        "worse": 6,
+        "unresolved_pair": 2
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-initial@D3",
+      "counts": {
+        "first_difference_candidate": 45,
+        "improved": 15,
+        "identical_record": 19,
+        "same_reward": 45,
+        "worse": 3,
+        "unresolved_pair": 1
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap-TD@D3",
+      "counts": {
+        "first_difference_candidate": 42,
+        "improved": 11,
+        "identical_record": 22,
+        "same_reward": 47,
+        "worse": 5,
+        "unresolved_pair": 1
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "initial:D3-D2",
+      "counts": {
+        "first_difference_candidate": 51,
+        "worse": 6,
+        "identical_record": 13,
+        "same_reward": 44,
+        "unresolved_pair": 5,
+        "improved": 9
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TD:D3-D2",
+      "counts": {
+        "first_difference_candidate": 62,
+        "worse": 7,
+        "identical_record": 2,
+        "same_reward": 40,
+        "improved": 12,
+        "unresolved_pair": 5
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "TreeStrap:D3-D2",
+      "counts": {
+        "first_difference_candidate": 56,
+        "same_reward": 46,
+        "identical_record": 8,
+        "worse": 3,
+        "improved": 9,
+        "unresolved_pair": 6
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TD-initial@D2",
+      "counts": {
+        "identical_record": 12,
+        "same_reward": 35,
+        "first_difference_candidate": 52,
+        "worse": 12,
+        "improved": 14,
+        "unresolved_pair": 3
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-initial@D2",
+      "counts": {
+        "identical_record": 14,
+        "same_reward": 36,
+        "first_difference_candidate": 50,
+        "worse": 5,
+        "improved": 19,
+        "unresolved_pair": 4
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-TD@D2",
+      "counts": {
+        "identical_record": 18,
+        "same_reward": 42,
+        "first_difference_candidate": 46,
+        "improved": 15,
+        "worse": 3,
+        "unresolved_pair": 4
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TD-initial@D3",
+      "counts": {
+        "identical_record": 17,
+        "same_reward": 39,
+        "first_difference_candidate": 47,
+        "worse": 11,
+        "improved": 11,
+        "unresolved_pair": 3
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-initial@D3",
+      "counts": {
+        "identical_record": 21,
+        "same_reward": 47,
+        "first_difference_candidate": 43,
+        "worse": 6,
+        "improved": 9,
+        "unresolved_pair": 2
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap-TD@D3",
+      "counts": {
+        "identical_record": 21,
+        "same_reward": 45,
+        "first_difference_candidate": 43,
+        "improved": 9,
+        "worse": 6,
+        "unresolved_pair": 4
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "initial:D3-D2",
+      "counts": {
+        "identical_record": 13,
+        "same_reward": 37,
+        "first_difference_candidate": 51,
+        "worse": 6,
+        "improved": 18,
+        "unresolved_pair": 3
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TD:D3-D2",
+      "counts": {
+        "identical_record": 7,
+        "same_reward": 34,
+        "first_difference_candidate": 57,
+        "worse": 8,
+        "improved": 18,
+        "unresolved_pair": 4
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "TreeStrap:D3-D2",
+      "counts": {
+        "identical_record": 13,
+        "same_reward": 38,
+        "first_difference_candidate": 51,
+        "worse": 10,
+        "improved": 11,
+        "unresolved_pair": 5
+      }
+    }
+  ],
+  "audit_seconds": 15.84003219997976,
+  "scope": "Actual full typed Session histories/terminals and EVERY recorded role/depth/weight dispatch/PV scalar. No exhaustive correctness of allsearches/externalrulesengine. Paired depth changes candidate only with fixed D2foe and same roots/order/queryceilings; extra actualwork paid. Finite conditionalpolicy utility, allseeds/roles/UNKNOWN/missing retained; bootstrapdescriptive notconfidence/equivalence/generalprices."
+}

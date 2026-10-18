@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-18T16:00:32.534108+00:00",
+  "cause": "Initial exact-copy verifier assumed LF serialization; original Path.write_text on Windows writes CRLF. JSON/slots/model hashes were not changed.",
+  "repair": "Try only known LF/CRLF serialization copies and require EXACT immutable BEFORETRAIN SHA match; preserve original v1 code. No live plan mutation, no producer/price/cap changes."
+}

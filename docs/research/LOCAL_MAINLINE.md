@@ -1,4 +1,43 @@
-# DEV_AUX recovery2026-10-18 — explicit resume; next research ready
+# DEV_AUX94 — completed prospective learning-depth studies; actual exact reproduction passed; delivery closing
+
+Direct user2026-10-19 starts own work; optional saved DeepSeek reuse only, no DS
+restart/globalengineering. Own sidemission/PUBLIC; allotherrolefiles read-only.
+Original94clock714d6508-8ff8-426b-811a-bb01ff639ebc start2026-10-18T15:05:35UTC.
+All producers and original audits CLOSED. Source93 partial D3/caps never resumed.
+
+Matched768slots ALLreturned738terminal30H128UNKNOWN/0missing/2895903nodes878.773s.
+Same fullroots/order/ceilings, candidateD2D3 ONLY, foes fixedD2. Full19538query/history
+replay PASS;96unpruned root/action/PV PASS40902nodes. OldmeanTree D3 gainspositive
+finite bothfoes; TD-random unresolved. RandomTree depthinteraction negative; finite
+conditionalpanel not population. Allnegative strata retained,2of8rootTRAINoverlap.
+
+Newsamelearner candidateD3TRAIN/fixedD2foe all32arms200kpaidnodes:6.4M1809.103s,
+1988games1948terminal40U; full23272queries/23240plays/7752prefixgradient/historyPASS.
+32smalltail failures12580nodes0fullconfiguredfailures, originals preserved. Unpruned
+all32D3 PASS16680nodes; observed+active credit feature rank6 in ALL64old/newarms.
+New640D3deployment slots ALLreturned636terminal4H128U/0missing3028929nodes816.466s.
+All64endpoints and640slots match exact beforeTRAIN planSHA; full10815queryauditPASS.
+NewTD-oldTD uniform[-.1875,-.125]/random[.125,.15625] mixed. NewmeanTree-oldmeanTree
+uniform[-.3125,-.28125]/random[-.09375,-.09375] negative FINITEpanel; notgenericTD/
+TreeStrap/deepersearch failure or populationwinner. Newroots8/3TRAINoverlap2terminal,
+all retained. Two panels not pooled and rules already TRAINexposed.
+
+Equalpaidnodes do not preserve optimizationsteps: TD28293->6001terms/2535->597episode
+updates; meanTree375669->417722samples but257616->257661active/27217->5790queries.
+No causal attribution: data/targets/visitation/updates change. Next choose ONE
+prospectively frozen update-clock control before merely deepeningagain; alternative
+rule-only data-diversity or conditioningdiagnostic in memo. No eta fit from DEV.
+
+All3producers12324832nodes3504.342s/3396physicalgames, not independentgames/equalCPU.
+8figuresactuallyviewed. Exact39thcapsule1b8239da/217payloads34.344MB passed content/CRC,
+prior38hashes unchanged. Actualfresh87849 CLOSED/PASS43checks+ALL13outputs parked thenregenerated,75370logical
+plies/57582unprunednodes89.826s; no newfitness. Sourcepublication requires actual
+remote receipt below, not inferred from localcommit. Science OPEN.
+Fullreport results/dev_aux/SEGMENT_20261019_94.md. No Core/default/UI/Native optimizer
+adoption. DeepSeek eab6606 read only for judge caveat, no code/rerun; PRIMARY41b trace
+interval caveat noted, not execution. RawSlackprivate/no newcheckpointroots/no ackloop.
+
+## Historical recovery2026-10-18 (superseded by active94 above)
 
 Original DEV_AUX/sidemission only. User restored own90-minute same-chat heartbeat
 and requested own task/commit/continuation recovery, not overall engineering or

@@ -1,0 +1,39 @@
+{
+  "status": "PRESERVED_DIAGNOSED_FAILURES_NO_CAP_RESET",
+  "failures": [
+    {
+      "kind": "entry",
+      "evidence": "task2552/initialization-recovery.json",
+      "effect": "0search0game, original clock preserved"
+    },
+    {
+      "kind": "diagnostic_label",
+      "evidence": "task2557/signal-label-correction.json",
+      "effect": "No mathematical/count/producer change; v1 sources/results retained"
+    },
+    {
+      "kind": "private_raw_capture",
+      "error": "Windows command line os206 too long for exact full Slack JSON",
+      "repair": "Chunked exact JSON into ignored files using append-no-newline; no repeat send/role control",
+      "effect": "Raw originals retained before interpretation, not a platform-approval rejection"
+    },
+    {
+      "kind": "audit_failure_budget_counter",
+      "evidence": "task2557/failed-budget-check.json",
+      "effect": "Original shared-ceiling counter guard corrected for D3candidate16384 versus D2foe4096. All32 actualfailures independently verified aggregate-tail, totals unchanged; original executedsource/full+firstauditoutputs retained. No producer/weight/action/cap change."
+    },
+    {
+      "kind": "design_verifier_serialization",
+      "evidence": "task2557/design-binding-entry-failure.json",
+      "effect": "v1 LF assumption corrected to known LF/CRLF variants; exact prior SHA matches original CRLF, all64models640slots verified. Active producer/plans unchanged."
+    },
+    {
+      "kind": "bundle_metadata_entry",
+      "observed_at": "2026-10-18T16:11:06.124617+00:00",
+      "original_tool_chunk": "f8608f",
+      "cause": "Route writer wrongly required alreadytracked old2505 testfixture to be Gitignored. Four large journals correctly ignored. PowerShell continued to bundle after native writer exit1, causing missing routes metadata error.",
+      "repair": "Permit only the known tracked fixture with explicit directGit+capsule provenance; new largejournals remain ignored. Required metadata restored; checked sequential invocation before sealing. No archive created/overwritten, no scientific data/cap changed.",
+      "bundle_source": "task2554/bundle.py"
+    }
+  ]
+}

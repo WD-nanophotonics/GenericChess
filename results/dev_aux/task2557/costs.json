@@ -1,0 +1,123 @@
+{
+  "status": "PASS_ALL_NEW_PAID_WORK_RECOUNTED",
+  "stages": [
+    {
+      "stage": "matched_candidate_depth",
+      "task": 2552,
+      "status": "COMPLETE",
+      "games": 768,
+      "planned": 768,
+      "missing": 0,
+      "original_cap": 1800,
+      "producer_wall_seconds": 878.7733293000492,
+      "counts": {
+        "queries": 19538,
+        "nodes": 2895903,
+        "search_seconds": 816.1037455006735,
+        "foe_nodes": 557211,
+        "failed_queries": 0,
+        "failed_nodes": 0,
+        "candidate_nodes": 2338692,
+        "actual_terminal": 738,
+        "unknown": 30
+      },
+      "by_depth": [
+        {
+          "depth": 2,
+          "queries": 15432,
+          "nodes": 923819
+        },
+        {
+          "depth": 3,
+          "queries": 4106,
+          "nodes": 1972084
+        }
+      ]
+    },
+    {
+      "stage": "new_candidate_D3_TRAIN",
+      "task": 2555,
+      "status": "COMPLETE",
+      "games": 1988,
+      "planned": 32,
+      "missing": null,
+      "original_cap": 2700,
+      "producer_wall_seconds": 1809.103462500032,
+      "counts": {
+        "queries": 23272,
+        "nodes": 6400000,
+        "search_seconds": 1781.2205666980008,
+        "candidate_nodes": 5796633,
+        "failed_queries": 32,
+        "failed_nodes": 12580,
+        "foe_nodes": 603367,
+        "actual_terminal": 1948,
+        "unknown": 40
+      },
+      "by_depth": [
+        {
+          "depth": 2,
+          "queries": 11427,
+          "nodes": 603367
+        },
+        {
+          "depth": 3,
+          "queries": 11845,
+          "nodes": 5796633
+        }
+      ]
+    },
+    {
+      "stage": "new_D3_deployment",
+      "task": 2556,
+      "status": "COMPLETE",
+      "games": 640,
+      "planned": 640,
+      "missing": 0,
+      "original_cap": 900,
+      "producer_wall_seconds": 816.4656762999948,
+      "counts": {
+        "queries": 10815,
+        "nodes": 3028929,
+        "search_seconds": 804.8739606016316,
+        "candidate_nodes": 2680963,
+        "failed_queries": 0,
+        "failed_nodes": 0,
+        "foe_nodes": 347966,
+        "actual_terminal": 636,
+        "unknown": 4
+      },
+      "by_depth": [
+        {
+          "depth": 2,
+          "queries": 5349,
+          "nodes": 347966
+        },
+        {
+          "depth": 3,
+          "queries": 5466,
+          "nodes": 2680963
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "queries": 53625,
+    "nodes": 12324832,
+    "search_seconds": 3402.198272800306,
+    "foe_nodes": 1508544,
+    "failed_queries": 32,
+    "failed_nodes": 12580,
+    "candidate_nodes": 10816288,
+    "actual_terminal": 3322,
+    "unknown": 74
+  },
+  "listed_producer_wall_seconds": 3504.342468100076,
+  "historical93TRAIN_reused_not_executed_again": {
+    "nodes": 6400000,
+    "source": "4dbba471885be4a6d48a99e7230a007702f27424"
+  },
+  "new_unpruned_verification_nodes": 57582,
+  "seconds": 1.9816218999912962,
+  "scope": "Every newcandidate/foe/baseline/failed search node charged. Producer elapsed versus search-receipt seconds versus pipeline/audit/encoding/plots/transport/tokens are different; no complete end-to-end equalCPU claim. 2552 originalelapsed includes initialization/repair withzero search; old93training reusedhistorically, not charged asnewexecution. Caps and missing preserved, no load-basedrerun."
+}

@@ -1,0 +1,74 @@
+{
+  "session_id": "714d6508-8ff8-426b-811a-bb01ff639ebc",
+  "registered_at": "2026-10-18T15:14:53.087077+00:00",
+  "generator_seeds": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "arms_order": [
+    [
+      "TD",
+      31415
+    ],
+    [
+      "TreeStrap",
+      8173
+    ],
+    [
+      "TD",
+      1977
+    ],
+    [
+      "TD",
+      8173
+    ],
+    [
+      "TreeStrap",
+      1977
+    ],
+    [
+      "TreeStrap",
+      31415
+    ],
+    [
+      "TreeStrap",
+      27182
+    ],
+    [
+      "TD",
+      27182
+    ]
+  ],
+  "nodes_per_arm": 200000,
+  "cap_seconds": 2700,
+  "max_games": 4096,
+  "prefix_plies": 4,
+  "H": 128,
+  "depth": 3,
+  "nodes_per_query": 16384,
+  "seconds_per_query": 2.0,
+  "eta": 0.05,
+  "lam": 0.95,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "training_family_offset": 221000,
+  "ordering_seed_offset": 932546000,
+  "scope": "Same6free TD/meanTreeStrap learner/initials/source rules/prefix recipes/orderseed/eta/lambda/200kALLpaidnodes as93, candidate search D3 instead ofD2; fixed uniform foe remainsD2/4096nodes. CandidateD3 ceiling16384, incomplete root admits NO samples. Different visitation/samplemix/update counts caused by trainingpolicy, not puretarget/depthablation/equalCPU. ALL32prospective endpoints retained; actualWLD on new matched deployment panel, no humanfit/prover/default/UI. Existing93 TRAIN evidence not rerun.",
+  "forecast": "Whole new TRAIN+deployment study expected45-60minutes including audit/delivery, original caps2700+900seconds, under120minutes. Runs serial with current2552producer; no secondAgent/worker, no splitting to evade assessment. If cap expires keep partial/missing/no extension.",
+  "opponent_depth": 2,
+  "opponent_nodes_per_query": 4096
+}
