@@ -1,0 +1,41 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "written_at_utc": "2026-10-18T13:17:30Z",
+ "status": "written_before_run",
+ "question": "Are the rounding-tie compressions between capabilities whose movement signatures are nearly identical (benign aliases of one another) or between dissimilar capabilities (real information loss)?",
+ "why": "The closed tie-risk study measured that ties happen and how close the raw scores are. It did not measure whether the tied capabilities are near-duplicates in movement, which changes how a consumer should read a sub-1-percent compression.",
+ "inputs": {
+  "results": "docs/research/data/profile_tie_risk_20261018/results_tie_risk.json",
+  "pair_detail": ".local_agent/profile-tie-risk-20261018/results_gap_headroom.json",
+  "new_rules": 0,
+  "new_seeds": 0,
+  "search": "none"
+ },
+ "method": {
+  "signature_token": "one token per movement entry, decoded from the stored JSON signature string, e.g. [\"L\",-3,3] or [\"R\",-1,2,-1]",
+  "similarity": "Jaccard index |A intersect B| / |A union B| over the token sets of the two tied types",
+  "tied_set": "the 31 distinct-score tied pairs (raw scores differ, exact gap < 1, stored board equal)",
+  "reference_set": "every distinct-capability pair in the same nine cells (same extraction as the closed gap analysis)",
+  "aggregation": "per-size and pooled; report median, quartiles and the reference percentile of the tied median"
+ },
+ "pre_written_decision": {
+  "benign_concentration": "tied-pair median Jaccard is at or above the 90th percentile of the reference set",
+  "dissimilar_ties": "tied-pair median Jaccard is at or below the 75th percentile of the reference set",
+  "otherwise": "inconclusive_similarity"
+ },
+ "endpoint": "one of benign_concentration | dissimilar_ties | inconclusive_similarity, plus the two distributions",
+ "cost_estimate": "under 1 minute of compute, one read of the stored 3.3 MB result; no rule generation",
+ "consumer": "the tie-risk report and any backend consumer choosing whether a sub-1-percent integer compression is acceptable; a benign result would justify tolerating ties, a dissimilar result would not",
+ "limits": [
+  "22 unordered signature classes among 31 tied pairs, so the tied distribution is small",
+  "syntactic movement similarity is not strategic equivalence",
+  "one generator family and hand_weight 0.9",
+  "no strength, utility or human-price claim"
+ ],
+ "nonclaims": [
+  "not a rerun of the closed tie-risk scan",
+  "not a PRIMARY 411001..411008 panel",
+  "not a solver or game-strength experiment"
+ ]
+}
