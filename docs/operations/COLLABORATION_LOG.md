@@ -4446,3 +4446,14 @@ advisor revision. Prior semantic-guard advice remains adopted, no routine
 receipt/approval gate. Fixed-SHA result delivery follows completed publication;
 scientific next-step questions are discussion, not permission. No claimed
 collaboration-efficiency percentage or independent AUX rerun is inferred.
+
+Dot's new1792330290.248999 fixed-report/qualification/source review is completely
+read after raw save and reconciled with the original request and unique
+PRIMARY-ROOT-WINDOW-20261018-1329 followup. Its symmetry/limited-adoption advice
+is adopted, not called independent execution or permission. Crucially, its one
+small next check replaces a larger128input rerun:16published negative-P parents,
+32actualpairedD2 calls,945Corevisits/64PV/1785nodes, allcorrect. Allrawsigns and
+UNKNOWN/oldmissing boundaries are preserved, no learning or AUX writes. One
+repeatedcontext is disclosed. Separate source-only one-output qualification is
+after the main capsule, not retroactive26-output evidence. Next deeper-signed
+cost gate has15uniquecontexts/60plannedrequests prepared but not launched.

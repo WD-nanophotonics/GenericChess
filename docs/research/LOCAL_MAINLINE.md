@@ -224,12 +224,22 @@ and untested evaluator regimes. No new API, competing learner or default/model
 change. Three separate game panels close896physical invocations/111UNKNOWN;
 terminal-prefix and symmetric-role dependencies remain explicit.
 
-NEXT question is the already published signed learned-table consumer, not more
-unchanged price/node panels: inspect its complete-state/checkpoint inputs and
-whether existing exact references permit a bounded mode comparison. PRIMARY
-may qualify backend use without training/modifying AUX or refilling its frozen
-experiments. Separate compatibility from learning benefit and retain all signed/
-zero coefficients. Larger-board utility can wait for a decision-changing use.
+Dot's actual fixed-report/source review1792330290.248999 supports the scoped
+choice/symmetric interpretation without independent execution. Adopt its smallest
+next signed check: only16published negative-P fullinputs, pairedD2/q0/TT0.
+All32coldqueries complete0.728s/1785nodes,945Corevisits/64PVedges; allinteger
+optima/optimalsets and parents match. Original rawsigns/history retained; one
+exactcontext repeats, so15distinct contexts, not16independent examples. Separate
+one-output pinned-source/noNative check passes1.554s, not retroactively part of
+the main119payload/26output capsule. No signedlearning/strength/default claim.
+
+NEXT question is deeper signed consumer COST, not more unchanged price-fitness:
+15unique savedfullcontexts,60requests at8192/32768nodes,D8/q0/TT0/.5s/twomodes,
+frozen120second cap already prepared, no query started. Determine whether static
+work savings transfer before recommending signed query-only acceleration; retain
+fullPV/parent/control/cost and all unresolved depths. PRIMARY backend use does
+not train/modify AUX or refill frozen experiments. Larger-board utility can wait
+for a decision-changing use.
 
 The once-per-mainline-patrol DS workflow check now sees recent active work and
 successful tool exits in the bounded existing control-chat view. Its prior

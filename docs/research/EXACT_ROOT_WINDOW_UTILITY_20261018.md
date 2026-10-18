@@ -222,11 +222,10 @@ creating-kernel capability guard. No new diagnostics API, learner, optimizer,
 solver, generator default or historical fitness rerun is needed. This scoped
 choice does not wait for full WDL or a universal-price/population proof.
 
-The next consumer question is signed learned tables: the successful positive
-static-table experiments do not execute the published signed AUX endpoints with
-this option. PRIMARY may inspect the already published complete-state consumer
-evidence and define a distinct bounded backend comparison. It does not train
-or modify the auxiliary learner or refill its experiments.
+Signed learned tables require their own compatibility check; the static results
+do not execute them. The after-delivery minimal component below now qualifies
+16negative-P inputs, without training or modifying AUX. Realistic deeper signed
+resource savings and learning usefulness remain separate OPEN questions.
 
 All896physical planned game invocations close,111UNKNOWN retained; actual
 terminal-prefix and symmetric-control dependencies remain explicit. The three
@@ -256,3 +255,36 @@ Native search, games or training are rerun. The [qualification record](../archiv
 passes all26nonruntime output comparisons in172.789seconds; sealed original timing fields remain receipt
 evidence, not remeasured historical speed. No external rules authority or
 all-domain equivalence is claimed.
+
+## After-delivery signed component: actual Dot advice and execution
+
+Dot1792330290.248999 reads the fixed4ced01d1 report/qualification and reviews
+the root-window code. It finds no consequential objection to the scoped static/
+q0 choice or the symmetric-control interpretation, but does not independently
+execute the experiment. Its one cheapest next check is the16published negative-P
+inputs with unchanged checkpoints, paired True/False D2/q0/TT0 versus complete
+Core integer optima. PRIMARY adopts and actually executes that limited check;
+no request for routine approval, full128panel, new games or training.
+
+All32coldcalls completeD2 in0.728seconds:1785nodes (False1085/True700),945Core
+reference visits and64legalPVedges. Every score and action agrees with the full
+integer optimal value/set; all16pairs happen to choose the same action, while
+legitimate ties would be allowed. Full parents/history/witnesses and raw signed
+coefficients remain unchanged. No P division/signflip/clipping or gradient
+reference is invented. One exact parent/checkpoint is repeated:16published
+inputs cover15distinct contexts, and all32actual calls/costs remain reported.
+These are scoped signed semantic controls, not a signed learning/strength gain.
+
+The [separate technical supplement](data/root_window_signed_20261018/README.md)
+publishes inputs, frozen plan, producer, raw query/reference records, Core reader
+and qualification. Fresh search-disabled Core reconstruction repeats all16trees/
+32PVchecks; pinned-source Python-S/no-Native qualification regenerates its one
+output in1.554seconds. It is NOT part of the earlier119payloads/26outputs and does
+not rerun Native fitness, generation or training. The earlier published source
+reference EVAL PV/gradients remain absent, not zero.
+
+The next distinct cost question is already begun: identify15unique signed
+parent/checkpoint contexts and freeze60requests for D8 at8192/32768nodes, two
+modes/q0/TT0/.5s,120second global cap. No query from that next plan has started.
+This tests transfer of work/completion savings to signed consumers; it cannot
+by itself establish deeper optimality or online learning benefit.
