@@ -1,0 +1,1542 @@
+{
+  "counts": {
+    "COMPLETE_ROOT": 2127,
+    "TERMINAL_ROOT": 108,
+    "UNRECORDED_UNKNOWN": 2364,
+    "Unit_integer_nonoptimal": 0,
+    "Unit_integer_score_mismatch": 0,
+    "quantized_exactsets_disjoint": 0,
+    "quantized_optimalsets_differ": 6,
+    "static_Unit_exactsets_disjoint": 69,
+    "static_exact_regret": 4,
+    "static_integer_nonoptimal": 0,
+    "static_integer_score_mismatch": 0
+  },
+  "distinct_exact_returned_rule_record_checkpoint_contexts": 1346,
+  "distinct_positive_regret_contexts": 2,
+  "first16_regret_witnesses": [
+    {
+      "exact_quant_disjoint": false,
+      "filter": true,
+      "key": "128-1",
+      "prefix": 0,
+      "regret_material_units": 0.001,
+      "regret_numerator": 256,
+      "slot": 128
+    },
+    {
+      "exact_quant_disjoint": false,
+      "filter": false,
+      "key": "128-0",
+      "prefix": 0,
+      "regret_material_units": 0.001,
+      "regret_numerator": 256,
+      "slot": 128
+    },
+    {
+      "exact_quant_disjoint": false,
+      "filter": false,
+      "key": "128-0",
+      "prefix": 16,
+      "regret_material_units": 0.001,
+      "regret_numerator": 256,
+      "slot": 128
+    },
+    {
+      "exact_quant_disjoint": false,
+      "filter": true,
+      "key": "128-1",
+      "prefix": 16,
+      "regret_material_units": 0.001,
+      "regret_numerator": 256,
+      "slot": 128
+    }
+  ],
+  "observations_are_not_unique_or_independent": true,
+  "positive_regret": {
+    "max": 0.001,
+    "median": 0.001,
+    "n": 4
+  },
+  "producer_status": "PARTIAL_LIMIT",
+  "rows": [
+    {
+      "counts": {
+        "COMPLETE_ROOT": 30,
+        "UNRECORDED_UNKNOWN": 34,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 30,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 30,
+        "UNRECORDED_UNKNOWN": 34,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 30,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 24,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 37,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 27,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 26,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 37,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 27,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 20,
+        "TERMINAL_ROOT": 6,
+        "UNRECORDED_UNKNOWN": 38,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 26,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 23,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 38,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 26,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "TERMINAL_ROOT": 6,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "TERMINAL_ROOT": 5,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 25,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 38,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 26,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 26,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 26,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 23,
+        "TERMINAL_ROOT": 5,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 24,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 27,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "UNRECORDED_UNKNOWN": 34,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 35,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 35,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 27,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "TERMINAL_ROOT": 9,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "TERMINAL_ROOT": 6,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 35,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 4,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 3,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 3,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 24,
+        "TERMINAL_ROOT": 7,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 30,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "TERMINAL_ROOT": 9,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 34,
+        "TERMINAL_ROOT": 2,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 1,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 1,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 30,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 25,
+        "TERMINAL_ROOT": 5,
+        "UNRECORDED_UNKNOWN": 34,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 30,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 1,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "TERMINAL_ROOT": 2,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 1,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 20,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 43,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 21,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 21,
+        "UNRECORDED_UNKNOWN": 43,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 21,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 32,
+        "TERMINAL_ROOT": 2,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 5,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 6,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "TERMINAL_ROOT": 2,
+        "UNRECORDED_UNKNOWN": 29,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 35,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 34,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 29,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 35,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 25,
+        "TERMINAL_ROOT": 4,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 6,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "UNRECORDED_UNKNOWN": 37,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 27,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "UNRECORDED_UNKNOWN": 37,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 27,
+        "static_Unit_exactsets_disjoint": 4,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 22,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 41,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 23,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 23,
+        "UNRECORDED_UNKNOWN": 41,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 23,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 30,
+        "TERMINAL_ROOT": 4,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 1,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 37,
+        "UNRECORDED_UNKNOWN": 27,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 37,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 37,
+        "UNRECORDED_UNKNOWN": 27,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 37,
+        "static_Unit_exactsets_disjoint": 3,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 28,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 27,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 36,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 28,
+        "static_Unit_exactsets_disjoint": 2,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "TERMINAL_ROOT": 3,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 30,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 34,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "classic_like",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 31,
+        "UNRECORDED_UNKNOWN": 33,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 31,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 35,
+        "TERMINAL_ROOT": 1,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 36,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 36,
+        "TERMINAL_ROOT": 2,
+        "UNRECORDED_UNKNOWN": 26,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 38,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 38,
+        "UNRECORDED_UNKNOWN": 26,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 38,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "bilateral"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 29,
+        "UNRECORDED_UNKNOWN": 35,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 29,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 0,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 36,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 36,
+        "UNRECORDED_UNKNOWN": 28,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 36,
+        "static_Unit_exactsets_disjoint": 1,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 4,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": false,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    },
+    {
+      "counts": {
+        "COMPLETE_ROOT": 33,
+        "UNRECORDED_UNKNOWN": 31,
+        "Unit_integer_nonoptimal": 0,
+        "Unit_integer_score_mismatch": 0,
+        "quantized_exactsets_disjoint": 0,
+        "quantized_optimalsets_differ": 0,
+        "returned": 33,
+        "static_Unit_exactsets_disjoint": 0,
+        "static_exact_regret": 0,
+        "static_integer_nonoptimal": 0,
+        "static_integer_score_mismatch": 0
+      },
+      "filter": true,
+      "prefix": 16,
+      "setup": "free_random",
+      "size": 8,
+      "symmetry": "none"
+    }
+  ],
+  "scope": "Integer/rational fullD2preferences only atCOMPLETEexecutedroots. Nonzeroexactregret isquantizedchoice effect, notWDL/utility/trainingharm. Allcapped/unstarted remainUNKNOWN;3generationfailurepairs notsuccess. Denominators andregimes explicit; no populationestimate.",
+  "status": "DERIVED_EXECUTED_ROOTS_ONLY"
+}

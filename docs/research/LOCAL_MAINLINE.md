@@ -76,13 +76,39 @@ selection/availability, not improved learning on identical games. Fullstate/PV/
 gradient/source checks pass. Preserve OPTIONAL future diagnostic sampler status,
 not default/balance/training-gain adoption.
 
-Next useful choice: specify a learning-input comparison that separates changed
-rule measure from per-input update value before paying another training/fitness
-campaign. First inventory actual recorded residual/eligibility fields available
-from fixed owner artifacts; do not assume them from phi or start a competing
-learner. If insufficient, prefer a bounded same-rule input diagnostic with Unit,
-static and learned controls; define its decision-changing question before launch.
-No repeat of completed mapping/TT/606same-rule checks without a changed premise.
+[FULL_TYPE_STATIC_INPUT_AND_PRECISION_20261018.md](FULL_TYPE_STATIC_INPUT_AND_PRECISION_20261018.md)
+closes the changed-objective question:1533complete profiles, including1024B/C
+rules;4599static observations/4334D2queries/3671686nodes. Prefix16 static
+nonzero own-gradient availability569->617 persists, versus Unit574->623; all606
+same-rule pairs agree. Raw-predictor gradients are conditional on the selected
+leaf, not derivatives through integer search or actual TD eligibility/credit.
+
+A distinct frozen50minute complete-Core D2 reference returns2127trees+108terminal
+roots, leaving2364UNKNOWN including one interrupted tree; paid cost retains504
+interrupted edges. All2127static andUnit Native choices/scores match their
+integer targets. Four .001pre-Native profile gaps are duplicate observations of
+two full contexts of one6x6rule, not four independent failures or a WDL loss.
+Existing material-only scale1000 restores that table optimum in both posthoc
+controls; no new API/default is justified. Source-only eight-output rebuild
+passes181.134s with declared partial semantic controls, not all-leaf/WDL proof.
+
+Optimal-continuation nonzero-gradient ambiguity is780/2127 forUnit versus7 for
+quantized static. Completed paired-subset filter envelopes remain positive,
+but the UNKNOWN tail blocks a whole-panel tie-invariance claim. Existing hint
+stress controls27queries/9contexts leave actual action/PV/features unchanged;
+abstract optimal-PV ambiguity does not establish algorithm instability. Keep
+OPTIONAL sampler status and static/learned/Unit controls; no training/default
+activation, new tie policy or refill of the capped2364tail.
+
+Next useful choice: measure complete acquisition cost before inferring useful
+input throughput. Source inventory has begun: query_seconds excludes Core root/
+PV replay, feature/gradient extraction and recording; producer wall includes
+those but excludes earlier generation and separate profile construction. Freeze
+one small paired end-to-end cost protocol using existing runners, cold/warm and
+failure/terminal slots explicit. If full cost erases availability gains, retain
+the cheap unfiltered route; if not, consider a scoped AUX-owned learning test
+with actual residual/eligibility, not another PRIMARY learner. This supersedes
+the unqualified Unit-only input-count next action, not the main AI objective.
 All new capsules pin source/dependencies and regenerate derived readers without
 old fitness/training; that validates receipt arithmetic, not independent WDL or
 an external rules authority. PUBLIC evidence enables review, not proof of reading.

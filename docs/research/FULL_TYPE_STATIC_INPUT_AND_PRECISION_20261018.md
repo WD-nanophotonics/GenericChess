@@ -1,0 +1,70 @@
+# Full-type static inputs and Native precision
+
+PRIMARY_SANDBOX, baseline0ab3c49dc44f013c566dbf13619b9c4469a6ccba. This follows the previous finite sampler study with a changed objective and an independent precision question; it does not repeat AUX92/93, DeepSeek experiments, generation, fitness games or training. Product code/defaults remain unchanged.
+
+## Does the filter observation depend on Unit?
+
+The previous study found more nonzero selected-leaf inputs under an unfitted Unit table, but every increase came from accepted-rule replacements, not improvement to the same game. That left an actual decision uncertainty: could the apparent availability gain disappear under the existing static objective? Before any new query, freeze the same4599saved complete observations and served limits, plus a complete-type profile admission check.
+
+ALL1533accepted generated rules admit existing `build_ruleset_profile(EvaluationConfig())` values for every board-CURRENT/hand-BASE type. Every actual anchor is set to0 by its anchor property. Type sets have3nonanchors in509rules,4in512 and5in512;1024include B/C beyond P/A/X. Hybrids, promotion/drop, auxiliary state and complete recorded history remain; no P/A/X projection or new hand-written-game task definition. This checks the existing finite4/6/8-board sample, not the entire generated domain or arbitrary long histories.
+
+Static weights are existing integer profile board/hand values divided1000, with material_scale256 and tanh value_scale10. The profile values are ALREADY normalized/rounded/clipped; they are not raw movement capability scores. No dynamic/spatial/nonlinear evaluator or learned move-ordering checkpoint is added. The previous Unit record is reused as a matched control, not rerun. Per ongoing root: Native D2/32768nodes/.5s/q0/TT0/root_window_pruningFalse. The Unit checkpoint has independent per-type board/hand coordinates initialized numerically to1; it is not a single shared scalar parameter. No TD residual, eligibility trace or parameter update is collected.
+
+All4599points return in83.536s:4334usable queries, all completedD2,3671686nodes,0refusal/incomplete/fallback;265actual terminal roots stay in the measure. Static has2540nonzero chosen-leaf gradients and429terminal leaves with zero own gradient; Unit had2653 and427. Historical Unit producer83.460s is a separate observation, not a paired same-machine timing control. Static profile coverage took18.207s separately; do not hide that input cost. Kernel/caller, profile, full recording/replay and old learning costs differ.
+
+| Prefix | Unit off/on | Static off/on | Static filter delta | Intended slots per condition |
+| --- | --- | --- | ---: | ---: |
+|0|181/214|113/150|37|768|
+|4|505/556|523/568|45|768|
+|16|574/623|569/617|48|768|
+
+The filtered side has765successful rules;3bounded generator refusals mean unavailable inputs, not measured zero gradients. Counts use intended slots. The positive finite availability difference persists under this static objective, while the identities and number of derivative-bearing inputs change. At prefix16, static-minus-Unit filter-increment is-1input. No population interval, learning gain, utility gain or default choice follows.
+
+All606same-complete-rule pairs match scientific fields at each prefix: roots, actions/PVs, nodes, predictions/features and gradients. Static prefix16 delta48 is0from same rules,+50from159replacements,-2from bounded refusals. Prefix0 is0/+37/0; prefix4 is0/+47/-2. Thus the finite change remains accepted-rule selection. Full-cost rate and actual TD credit are still required before claiming a better training sampler; neither nonzero count nor a returned material vector supplies those quantities.
+
+## What exactly is the recorded derivative?
+
+It is the derivative of the frozen raw-coefficient tanh predictor at the ACTUAL Native-selected leaf, conditional on that leaf. It is not a derivative through integer rounding, argmax or tied PV selection. Existing product `selfplay.py` recomputes the predictor from returned features and checkpoint weights, and `tdleaf.py` recomputes frozen predictions/leaf gradients; this source inspection is not a new learner execution or adoption of AUX's optimizer.
+
+Native integer leaf scores are independently checked against quantized coefficients. The raw-coefficient prediction is a different calculation: across3905ordinary static leaves its maximum difference from tanh(dequantized score/10) is.001249034687. This numerical difference is preserved, not hidden as0. All ordinary nonzero raw feature vectors here have nonzero floating gradients, so no zero-gradient observation was caused by tanh saturation in this panel. Terminal gradients are actual constants0, while earlier episode eligibility could still persist. The raw journal field `eligible_native_gradient` is only a nonzero-own-gradient flag; it is not a measured TD eligibility trace or proof that an update occurs.
+
+A separate POSTHOC descriptive analysis examines response magnitude. Mean L2norm per intended prefix16slot is Unit .202353->.217852 and static .195109->.208909. It also bounds a single PRE-NORMALIZATION gradientstep with ZEROincoming eligibility: for any next target z in[-1,1], `||eta*(z-pred)*grad||2 <= eta*(1+abs(pred))*||grad||2`. This is an upper bound, not actual/expected credit or a lower bound on learning; it excludes episode traces and later normalization/clipping. No residual or eta was fitted. It does not turn availability into a training result or measure whole-pipeline time.
+
+Independent Counter-based Core reader reconstructs every root/history,4334chosen actions,8265PVedges, all terminal constants, predictions and gradients in58.278s. The14payload647256byte capsule hasSHA256 `6dc9a7536777d082900deb0f11fe709f8fa34a4884eaf782e9b0ffa4e3cef780`. Three fixed PUBLIC source/input capsules are dependencies. Fresh extracted source, Python-S and Native absent regenerate six parked outputs in78.408s. The historical coverage script needs exactly one documented stop-root read overlay; its source hash differs, other non-time outputs agree. Actual query journal bytes remain hash-exact, not remeasured. No fake stop files or live editable source fallback. Post-seal response and convention scripts separately reproduce against those extracted inputs.
+
+## Precision reference
+
+A separate adaptive reference freezes complete Core D2 trees for the same4599saved observations, three objectives per shared tree: pre-Native static profile represented EXACTLY as integer/1000 rational values, Native256 integer static, and Unit integer. Root/opponent backups include actual terminal constants and mate distance, full types/history; no alpha-beta or new Native call in this reference. The schedule is fixed before computation. A provenance erratum records an omitted already-PUBLIC Unit query-journal hash after registration/one progress read; no condition, schedule or numerical result was rewritten. The original ambiguous wording “unrounded/raw” is explicitly restricted to BEFORE Native256 conversion, after the profile's own normalization/rounding/clipping.
+
+The fixed50minute cap ends at3000.130s:2235returned observations,2127complete trees and108terminal roots. There are1346distinct literal returned rule/record/checkpoint contexts, not2235independent states. Remaining2364observations are UNKNOWN:1partly computed unrecorded tree and2363not started. Original `unstarted_saved_points` meant planned-minus-returned; the boundary audit corrects this label without altering the original. The last tree's504paid traversal edges/491leaf evaluations remain in cost. Total paid reference traversal1821568edges, closed1821064; root replay/compile/recording costs are outside that edge counter and inside whole wall time. No cap extension, refill or new run.
+
+Independent reader replays all2235root histories and complete root legal-action sets, and recomputes1770694frontier leaves' three-objective backups. Detailed semantic controls replay98complete trees (first96complete records plus2distinct regret contexts) and first/middle/last branch/reply paths in the other2029trees:98515checked edges/90489leaf controls,169.070s. This is NOT independent semantic replay of every leaf or an external rules authority. A separate receipt binding rechecks both original Native choices/indices/root IDs/depths/scores: all2127static and2127Unit complete roots match their respective integer optima and scores. Capped tails are not included in that claim.
+
+Six executed observations have different pre-Native/quantized optimal action sets; none has disjoint sets. Four Native-selected actions have pre-Native profile regret.001material units, from TWOdifferent full histories of ONE6x6rule, duplicated across identical filtered/unfiltered inputs. These are quantization/tie choices: there remains a shared optimum, and no integer-target engine defect is demonstrated. This does not measure WDL, real-game utility or learning harm. Exact finite-tree error bounds hold throughout: min/max are1-Lipschitz under leaf supnorm, giving root error<=epsilon and selected-action regret<=2epsilon. A coefficient-plus-multiply/add roundoff bound also separates these positive gaps from binary table representation noise. Bounds concern this finite tree and profile, not arbitrary cached/selective search.
+
+Two POSTHOC unique-context controls independently rebuild Fraction-valued Core D2 trees1112edges and make4fresh Native calls. Existing MATERIAL-ONLY scale1000 represents the already-integer profile table exactly and restores its optimum in both contexts; scale256 retains the.001gap while still integer-optimal. Actual ordinary frontiers are below the90Mstatic band. This is an existing explicit option, not a new API/default recommendation or a result for dynamic/nonlinear evaluators. Cross-scale mate/raw score magnitudes are not compared without their declared units.
+
+### Optimal-continuation ambiguity and actual hints
+
+The stored full frontier supports a new POSTHOC envelope question without another search: over all optimal root choices and optimal opponent replies, MUST every literal continuation provide a nonzero raw-predictor own gradient, or COULD at least one? Per-type coordinates stay independent; this is not a subgradient proof or a proposal to average gradients/alter tie policy.
+
+| Objective,2127complete roots | MUSTnonzero | COULDnonzero | Zero/nonzero depends on optimal continuation |
+| --- | ---: | ---: | ---: |
+| Unit |988|1768|780|
+| Native256 static |1279|1286|7|
+| Pre-Native rational static |1279|1283|4|
+
+Thus a single Unit PV count is strongly convention-dependent in absolute level. That does not imply actual algorithm nondeterminism or overturn the observed finite filter difference. Combine shared full rule/history/model coefficients BEFORE interval arithmetic, under a fixed deterministic full-context selection assumption. In paired-completed SUBSETS, the Native256-static filter increments are[20,21]atprefix0(363pairs),[24,24]atprefix4(363),[29,29]atprefix16(389). Unit ranges are[1,65],[12,39],[26,31]. These are conservative optimal-continuation envelopes, not sampling confidence or proof every cross-context endpoint combination is realizable by one policy. They are positive in these subsets; the cost-censored unrecorded tail prevents a whole-panel tie-invariance claim or population inference.
+
+An additional POSTHOC stress check uses the existing `root_order_hint` API: first3distinct ambiguous Unit contexts per4/6/8board, freshTT0D2 engines, None/first/last optimal root hints,27queries. Supplied hints are reported legal/applied; all choices/scores remain integer-optimal. All9contexts return the SAMEaction/PV/features/nonzero flag across hints. Independent Core replay checks54PVedges. Abstract continuation ambiguity therefore is not evidence of hint-induced instability in these cases. This does not perturb every internal tie-break, warm cache or learned-ordering policy; no new tie API/logger/model/default is justified.
+
+The32payload1932760byte [reference capsule](../archive/static_fulltype_d2_reference_20261018/README.md) isSHA256 `21a1fea0f8e342386a0f7bd14cf63c925764e2e367a397b470a2f0cd5748159a`. All124pinned GenericChess source files match the live research modules modulo LF, without claiming old binary attestation. It pins four source/input dependencies and preserves original Native control records, not reruns of them. Fresh extracted source, Python-S and Native absent regenerate all eight parked derived outputs in181.134s; all non-time fields agree and the original query journal hash is exact. This reruns the declared readers/bounds/bindings, not the50minute producer or31Native precision/hint calls. No source stop overlay is needed for this reference. The independent semantic scope remains the declared control subset, not every frontier leaf or WDL.
+
+
+## Interpretation and next choice
+
+Keep optional filter status, static/learned/Unit controls and full types/history. This does not justify activating a sampler, changing precision/defaults, refitting exposed labels or adding an evaluator API. Independent exact-input science can expose a concrete precision option without demonstrating game utility. Full rule-domain goals remain; every claim here is scoped to the actual records and fixed served configuration.
+
+[Static input data](data/static_input_objective_20261018) and [sealed dependency/qualification](../archive/static_input_objective_20261018/README.md). The related budget and cache claims remain in [the previous report](SEARCH_WORK_CURVES_AND_CACHE_CONTRACT_20261018.md), whose general cached scores are not literal-PV/WDL certificates.
+
+The next cost inventory finds `query_seconds` wraps only `engine.search`: Core root/PV replay, feature/gradient extraction and recording occur outside it. Whole producer time includes those stages but excludes earlier generation and separate profile construction. Thus per-filter whole-pipeline input throughput is not measured; freeze a small complete acquisition-cost comparison before another learner/fitness campaign.

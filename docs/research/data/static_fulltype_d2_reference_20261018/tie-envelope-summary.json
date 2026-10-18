@@ -1,0 +1,217 @@
+{
+  "counts": {
+    "Unit_could_nonzero": 1768,
+    "Unit_must_nonzero": 988,
+    "Unit_tie_dependent_zero_nonzero": 780,
+    "complete_roots": 2127,
+    "exact_static_could_nonzero": 1283,
+    "exact_static_must_nonzero": 1279,
+    "exact_static_tie_dependent_zero_nonzero": 4,
+    "quantized_static_could_nonzero": 1286,
+    "quantized_static_must_nonzero": 1279,
+    "quantized_static_tie_dependent_zero_nonzero": 7,
+    "terminal_roots": 108
+  },
+  "paired_completed": [
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 65,
+        "off_must": 63,
+        "on_could": 85,
+        "on_must": 83
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        20,
+        20
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "exact_static",
+      "prefix": 0,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        18,
+        22
+      ],
+      "zero_combined_contexts": 280
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 66,
+        "off_must": 63,
+        "on_could": 87,
+        "on_must": 83
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        20,
+        21
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "quantized_static",
+      "prefix": 0,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        17,
+        24
+      ],
+      "zero_combined_contexts": 280
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 236,
+        "off_must": 6,
+        "on_could": 301,
+        "on_must": 7
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        1,
+        65
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "Unit",
+      "prefix": 0,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        -229,
+        295
+      ],
+      "zero_combined_contexts": 280
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 240,
+        "off_must": 240,
+        "on_could": 264,
+        "on_must": 264
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        24,
+        24
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "exact_static",
+      "prefix": 4,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        24,
+        24
+      ],
+      "zero_combined_contexts": 297
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 240,
+        "off_must": 240,
+        "on_could": 264,
+        "on_must": 264
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        24,
+        24
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "quantized_static",
+      "prefix": 4,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        24,
+        24
+      ],
+      "zero_combined_contexts": 297
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 363,
+        "off_could": 280,
+        "off_must": 174,
+        "on_could": 309,
+        "on_must": 196
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        12,
+        39
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "Unit",
+      "prefix": 4,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        -84,
+        135
+      ],
+      "zero_combined_contexts": 297
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 389,
+        "off_could": 299,
+        "off_must": 299,
+        "on_could": 328,
+        "on_must": 328
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        29,
+        29
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "exact_static",
+      "prefix": 16,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        29,
+        29
+      ],
+      "zero_combined_contexts": 304
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 389,
+        "off_could": 299,
+        "off_must": 299,
+        "on_could": 328,
+        "on_must": 328
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        29,
+        29
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "quantized_static",
+      "prefix": 16,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        29,
+        29
+      ],
+      "zero_combined_contexts": 304
+    },
+    {
+      "counts": {
+        "both_returned_pairs": 389,
+        "off_could": 305,
+        "off_must": 288,
+        "on_could": 335,
+        "on_must": 315
+      },
+      "coupled_full_context_filter_increment_envelope": [
+        26,
+        31
+      ],
+      "coupling_assumption": "Samefullrule/history/model deterministiccontinuationselection; combine sharedcoefficientsbeforebounds. This doesnotclaim every crosscontext endpointchoice isrealizable byonealgorithm.",
+      "model": "Unit",
+      "prefix": 16,
+      "scope": "Pairedcompletedsubmeasure only; notwholeplannedpanel/population. Threegenerationfailuresunavailable, allmissing/capUNKNOWN.",
+      "uncoupled_filter_increment_envelope": [
+        10,
+        47
+      ],
+      "zero_combined_contexts": 304
+    }
+  ],
+  "scope": "LiteraloptimalD2continuations underdeclaredroot/opponentobjectives; owners0/evenprefixinputs. Per-typeparametersindependent,anchorsfixed. Conditionalrawpredictorderivatives, NOTsubgradient/searchderivativeornewtiepolicy. No inferenceoflearning/utilitygain fromfeatures. Intervals reflecttiedcontinuations, notsamplingconfidence; capped/unstartedUNKNOWN.",
+  "status": "POSTHOC_COMPLETE_CONTINUATION_ENVELOPES"
+}

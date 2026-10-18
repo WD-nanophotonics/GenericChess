@@ -1,0 +1,5 @@
+# Censored full-type D2 reference and continuation envelopes
+
+Run `.venv/Scripts/python.exe docs/archive/static_fulltype_d2_reference_20261018/reproduce.py`. It extracts hash-pinned source/input dependencies, parks eight derived outputs and rebuilds them with Native absent and real PRIMARY stop flags. It never reruns the50minute producer or preserved4precision/27hint Native queries. All returned root histories/legal actions and frontier arithmetic are checked; semantic controls are98exhaustive roots plus declared first/middle/last paths elsewhere, not all-leaf independent replay or WDL.
+
+Original PARTIAL_LIMIT and2364unrecorded observations remainUNKNOWN. One interrupted root's504traversal edges/491leaf evaluations remain in cost; originalunstarted label is clarified in end-boundary-audit.json, not rewritten. Four small.001pre-Native preference gaps are TWOcontexts inONErule, not independent failures. Scope/provenance errata are retained. Report: FULL_TYPE_STATIC_INPUT_AND_PRECISION_20261018.md.

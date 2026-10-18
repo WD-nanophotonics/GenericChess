@@ -1,0 +1,16 @@
+{
+  "status": "PASS_FINITE_TREE_ERROR_AND_FLOAT_ROUNDOFF_BOUNDS",
+  "counts": {
+    "Unit_choice_gap_larger_than_twice_precision_error": 932,
+    "Unit_choice_static_regret": 937,
+    "complete_roots": 2127,
+    "positive_quant_choice_regret": 4,
+    "positive_regret_float_robust": 4
+  },
+  "maximum_executed_leaf_error_material_units": 0.016125,
+  "maximum_executed_quant_choice_regret_material_units": 0.001,
+  "all_root_error_and_2epsilon_choice_bounds_verified": true,
+  "derivation": "Minandmaxare1-Lipschitz underleafsupnorm. Thus eachrootvalueerror<=eps andquantizedoptimalaction exactregret<=2eps. Binarymaterialdot-product error uses coefficientrepresentation plus gamma_2n*sum(maxabsfeature_i*abs(floatcoef_i)), u=2^-53, finiteIEEE round-to-nearest multiply/add model. Positivegaps>2bound surviveboth. Minmaxselection addsno arithmeticerror beyond leafvalues.",
+  "scope": "SamefinitecompleteD2tree/terminalconstants only; no statementaboutqsearch/deeperTT/selectivebudget/utility/WDL/traininggain orrawmovementcapabilities. Doesnotbound allfuturelearningupdates, onlythisprofilematerialdot-product representation, not tanh orfuturequeries. Independentsemantic replay scope remains inreader-result.",
+  "full_per_root_rows": "sealed evidence.zip data/precision-bounds.json"
+}

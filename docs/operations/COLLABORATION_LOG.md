@@ -4308,3 +4308,35 @@ changed, so no rebuild or fabricated full-regression claim. Evidence/cost totals
 are in the three linked20261018research reports; source-qualification clocks and
 producer clocks remain separate. No measured collaboration speedup or equal-cost
 claim. Reports and fixed-SHA evidence are delivered through prescribed publisher.
+
+
+## Complete-type static inputs and precision —2026-10-18
+
+PRIMARY independently completed full-type static input queries, a frozen50minute
+Core precision reference and posthoc existing-scale/hint controls. No product
+source/default, AUX checkout/state/clock or executor changed. Complete results,
+UNKNOWN tail, partial semantic-reader scope and costs are in
+[the report](../research/FULL_TYPE_STATIC_INPUT_AND_PRECISION_20261018.md).
+Both sealed source capsules regenerate their declared parked outputs with Native
+absent;39relevant behavior tests pass, without a new full-regression claim.
+The adopted lesson is that selected-leaf input counts depend on objective and
+optimal-continuation convention; they do not measure TD credit or whole acquisition
+cost. Integer-target behavior is correct in the checked trees; existing1000scale
+handles the two observed table-precision witnesses without a new API/default.
+
+Fresh channel roots and complete relevant threads were saved before parsing.
+The original Dot thread1792303233.236569 still contains its two prior replies;
+no new Dot supplement or mandatory CHAT_Comments policy is inferred. Separate
+DeepSeek owner reports1792308305.478359 and1792308664.936449 have no replies/pages:
+its controller corrected a prose-before-JSON failure, then reports bounded hand
+weight0.9/0 games on distinct4x4seeds59..62. D2eightgames4W/4L and D3fourgames2W/2L
+are separate tiny bounded-policy scopes, not equivalence or utility improvement.
+PRIMARY read those messages only, not unpublished source or independently rerun
+tests/games. The controller's runtime/restart directions apply to its own role;
+PRIMARY does not act on that process. No automatic integration or duplicate
+training/solver/DeepSeek task. No collaboration speedup or equal-cost claim.
+
+Next PRIMARY action is a bounded complete acquisition-cost comparison after
+source timer inventory; actual learning stays with existing AUX ownership.
+PUBLIC fixed-SHA evidence is delivered through the prescribed publisher; access
+enables review and does not prove Dot has read the report.
