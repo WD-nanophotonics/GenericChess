@@ -58,6 +58,7 @@ the published copy.
 | `results_leaf_term_audit.json` | 290571 | `1c0486e66ad60dd80bc9a510163d449eadec40814c2eb7cc37ede41f7a40bc5f` |
 | `results_stored_games_leaf_terms.json` | 38673 | `42d04b16b97db8a4eeaeb67a8dc8e87da9b3e115e38a471387d0bc5ac3a7ac1b` |
 | `plan_games_leaf_terms.json` | 3384 | `d92116a58bfe17e7fc07d73023ae51c144bd9632c12462ca729a409e0070f9bb` |
+| `results_static_zone_share.json` | 1020 | `a01b2e591924789591f9e229807436c3ece27838b0905405b43d47782658eeab` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -71,7 +72,8 @@ the published copy.
 | `verify_public_copy_rebuild.py` | 2030 | `a35b3c7afab8ead1492779ddb92dbcfbc6adbb15b7a0e2cb9e951cc926541e04` |
 | `audit_leaf_terms.py` | 16581 | `f48e06fef9cf1b4ef863387f3a7908ee796e35f790a61a7465a037360fbde545` |
 | `scan_stored_games_leaf_terms.py` | 11149 | `2a134c3ee8e6ff8d6635fc1e57fe9ef3276df7aaf79bd9ebd57d69f13d4b7db4` |
-| `make_public_evidence.py` | 3841 | `6e6af5ea46ceed1de2d42e0082d635ef177e81f24e218dff1b837484794f30e3` |
+| `static_zone_share_boards.py` | 3066 | `fb30e7d47d639273c1da0fe9446773ec9f4ce8b88203cf783be1a879c9e2383b` |
+| `make_public_evidence.py` | 4144 | `b42ce81ad6580d458cb1f0c39c8ae81b910e1bdb1dffcb37b668d42c198745c3` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -93,6 +95,7 @@ the published copy.
 | `results_leaf_term_audit.json` | `leaf_terms_are_type_live_except_the_half_bonus` — of the six `in`/`not in` comparisons in `evaluator.py` only the half bonus is type-impossible; the anchor-capture penalty fires and matches the expected delta in 400/400 constructed states; the audit was repeated on held-out seeds 292101–292112 with the same verdict (`verdict_heldout`) |
 | `results_stored_games_leaf_terms.json` | `leaf_terms_occur_on_stored_game_paths` — replaying 182 already-stored board-4 games reproduces every stored terminal result and shows the in-zone branch on 2,489/8,083 promotable observations, the dead half-bonus condition on 3,944, and at least one anchor-attack position in every game |
 | `plan_games_leaf_terms.json` | the endpoint for that replay scan, written before it ran |
+| `results_static_zone_share.json` | structural check of the same definition: in-zone squares average 38.2% of the board at size 4, 21.7% at 6, 16.4% at 8, so the played 30.8% is not inflated for its board and must not be carried to other sizes |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 

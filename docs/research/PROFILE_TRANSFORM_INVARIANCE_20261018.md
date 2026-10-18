@@ -314,6 +314,14 @@ starting position per ruleset, and games searched at depth 2–3 with a 20,000
 node cap. It says nothing about deeper search, other board sizes or other
 generator presets.
 
+One structural comparison, because a small board could inflate that share
+(`static_zone_share_boards.py`, same 40 fit seeds, no search): the share of
+board squares whose forward mobility is empty averages 38.2% at board 4, 21.7%
+at board 6 and 16.4% at board 8 (medians 25.0%, 16.7%, 12.5%). The played
+30.8% therefore sits below its own board's structural share rather than above
+it, and the structural share falls with board size, so these numbers must not
+be carried over to boards 6 and 8 without playing games there.
+
 ## What a consumer may and may not conclude
 
 Allowed, for this generator family and these two board sizes:

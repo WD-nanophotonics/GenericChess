@@ -1,0 +1,48 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "question": "Is the board-4 in-zone share a small-board artefact?",
+ "design": {
+  "seeds": [
+   292001,
+   292040
+  ],
+  "boards": [
+   4,
+   6,
+   8
+  ],
+  "setup_preset": "classic_like",
+  "measure": "share of board squares whose forward mobility is empty, per promotable type and owner",
+  "no_new_search": true
+ },
+ "records": [
+  {
+   "board_size": 4,
+   "records": 116,
+   "mean_share": 0.3815,
+   "median_share": 0.25,
+   "min_share": 0.25,
+   "max_share": 0.875
+  },
+  {
+   "board_size": 6,
+   "records": 132,
+   "mean_share": 0.2172,
+   "median_share": 0.1667,
+   "min_share": 0.1667,
+   "max_share": 0.5
+  },
+  {
+   "board_size": 8,
+   "records": 148,
+   "mean_share": 0.1639,
+   "median_share": 0.125,
+   "min_share": 0.125,
+   "max_share": 0.375
+  }
+ ],
+ "nonclaims": [
+  "structural share only; played positions need not sample squares uniformly",
+  "board 4 is included for comparability with Stage 7, not as a study board"
+ ]
+}

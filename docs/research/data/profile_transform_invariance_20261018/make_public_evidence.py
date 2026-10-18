@@ -39,6 +39,7 @@ JSON_FILES = [
     "results_leaf_term_audit.json",
     "results_stored_games_leaf_terms.json",
     "plan_games_leaf_terms.json",
+    "results_static_zone_share.json",
 ]
 
 PY_FILES = [
@@ -55,6 +56,7 @@ PY_FILES = [
     "verify_public_copy_rebuild.py",
     "audit_leaf_terms.py",
     "scan_stored_games_leaf_terms.py",
+    "static_zone_share_boards.py",
     "make_public_evidence.py",
 ]
 
@@ -64,6 +66,8 @@ EXTRA_SOURCES = {
     "results_stored_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "results_stored_games_leaf_terms.json",
     "plan_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "plan_games_leaf_terms.json",
     "scan_stored_games_leaf_terms.py": HERE.parent / "games-leaf-terms-20261018" / "scan_stored_games_leaf_terms.py",
+    "results_static_zone_share.json": HERE.parent / "games-leaf-terms-20261018" / "results_static_zone_share.json",
+    "static_zone_share_boards.py": HERE.parent / "games-leaf-terms-20261018" / "static_zone_share_boards.py",
 }
 
 _HOME = re.compile(r"[A-Za-z]:\\\\?Users\\\\?[^\\\\\"]+", re.IGNORECASE)
