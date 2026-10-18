@@ -177,24 +177,68 @@ featureconstruction; no newcheaperextractor/default orcandidateelimination.
 This adaptivelychosen6boardregime is prospective onnewseeds, notwhole-domain
 holdout. Do not refill earlier144missing or theoneCoreD2cappedroot.
 
-Stop automaticprice-panel expansion absentachangedpremise. Next bounded PRIMARY
-question concerns the EXISTING exactroot-window search option oncomplete typed
-savedroots: its extra paidroot/PV work versus useful completed search at tight
-nodebudgets. Inspectactualcaller/capability/terminal/PV contract, then freeze the
-smallest cost/semantic diagnostic that can change whether a utilitypilot isworth
-trying. No newAPI/default, WDL requirement, competingAUXsolver oroldqcampaign rerun.
-Source review has actually begun: wrappercapabilityguard, mode-separatedTTscore
-context andpaid full-PV re-search are present, notnewperformanceevidence. Reuse
-ONLY12alreadycompletedD2referencecontexts andstatic/geo inputs for a small
-false/true fixednodecap querycontrol; do not finish theonecappedCoretree or treat
-D0/D1/terminal/fallback receipts as completeD2. No newquery hasstarted yet.
+Stop automatic price-panel expansion without a changed premise. The next existing
+root-window option is now actually tested:
+[EXACT_ROOT_WINDOW_UTILITY_20261018.md](EXACT_ROOT_WINDOW_UTILITY_20261018.md).
+191persisted saved-parent requests match all129complete CoreD2 optima/320PVedges;
+one receipt lost by an unsupported cleanup method remains UNKNOWN with unknown
+paid cost, never refilled. At1024nodes True completes24/24 D2 versus6/24False;
+23matched high-cap pairs use6972 versus69249nodes. This is completion/work
+evidence, not decision utility. An independent192-call persistent consumer
+control passes120exactD2 results and24pre-cancels across deeper/mode/profile TT
+transitions;48warmups do not prove deeper optimality.
 
+NEW512physical matches on481001..8 fulltype6/8rules close967.531s/188.9Mnodes:
+444terminals/68UNKNOWN, all16217commits/40611PVedges replay exactly. Same static
+checkpoint, only candidate root-window mode changes, fixedUnit/static D2foes.
+Three of four finite True-False bounds are strictly positive; all linked-eight-
+seed envelopes cross0. Retain scoped conditional gain, no population/default
+claim or competing AUX learner. All24recorded same-parent-depth groups agree
+on scores/actions at depths2..5; no new Native query is inferred from replay.
 
-User now requires once-per-mainline-patrol inspection of the existing DS helper
-chat for workflow/runtime faults. Heartbeat and manuals implement this bounded
-read-only check; it is not scientific approval or a transferofmainlinework. Recent
-controlchat repair is owner-reported with desktopactivationpending, not independently
-validated here. Science discussions remain Slack; no routinechatmessages orDScontrol.
+The changed resource question is now closed with a NEW256game50ms-kernel/
+no-candidate-nodecap panel on491001..8:399.593s/77.66Mnodes,29UNKNOWN.
+Core10118commits/22673PV pass. True-False bounds are Unit[.375,.78125] and
+static[.3125,.8125], linked-seed envelopes[.125,1.0625]/[0,1]. All candidate
+calls are time-bound; every actual caller exceeds50ms, none exceeds60ms observed,
+without a worst-case guarantee. Kernel budget is not whole API-ready deadline.
+
+A NEW128game stronger staticD8/8192/True fixed-foe control on501001..8 closes
+199.969s/36.56Mnodes/14UNKNOWN, Core4463commits/12303PV pass. True-False
+finite[.40625,.84375], descriptive eight-seed envelope[.125,1.125]. The True
+arm's32role pairs are actually identical full trajectories with opposite known
+rewards or bothUNKNOWN:64physical executions, not64independent games. This
+is False underperformance against the fixed True control, not positive raw
+True-selfplay reward. No panel pooling or posthoc missingness tightening.
+
+A cheap NEW12rule10/12/16board operational gate on511001..4 closes96queries/
+682154nodes/10.735s. All admitted/usable, Core199PV and100typedcoefficients
+rebuild;16x16at50ms yields False8D1 versusTrue8D2. This qualifies operational
+scope, not larger-board utility or a new fitness campaign.
+
+CURRENT CHOICE: prefer existing explicit root-window=True for the next
+appropriate full-static/q0 research consumer, retain False/resource controls.
+Actual utility warrants this scoped operational choice; no fullWDL/population
+proof is a gate. Preserve production defaultFalse/creating-kernel compatibility
+and untested evaluator regimes. No new API, competing learner or default/model
+change. Three separate game panels close896physical invocations/111UNKNOWN;
+terminal-prefix and symmetric-role dependencies remain explicit.
+
+NEXT question is the already published signed learned-table consumer, not more
+unchanged price/node panels: inspect its complete-state/checkpoint inputs and
+whether existing exact references permit a bounded mode comparison. PRIMARY
+may qualify backend use without training/modifying AUX or refilling its frozen
+experiments. Separate compatibility from learning benefit and retain all signed/
+zero coefficients. Larger-board utility can wait for a decision-changing use.
+
+The once-per-mainline-patrol DS workflow check now sees recent active work and
+successful tool exits in the bounded existing control-chat view. Its prior
+JSON-fence failure is owner-reported repaired; no current recurrence is proved.
+This supersedes the old desktop-activation-pending snapshot, without asserting
+global runtime health. Scientific review remains Slack; no DS state/config
+edits, messages or automatic controls. A metadata-repair report alone does not
+prove unauthorized force-push; absent the actual command/authority, retain that
+uncertainty rather than accuse a current fault.
 
 ## Previous learning choice still retained — 2026-10-17
 

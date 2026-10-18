@@ -4407,3 +4407,42 @@ pass, no newwinner/default. These concrete negative/conditional findings end
 further unchangedprice-panel expansion. All8newseeds andpaidcost/UNKNOWN are kept.
 Scientificgoal remainsOPEN; next bounded existing-root-window consumer study is
 scoped to currenttypedcontexts and exact resource/semanticreturn contracts.
+
+## Exact root windows, resource regimes and workflow watch —2026-10-18
+
+PRIMARY independently executes the existing exact-root-window cost control,
+persistent/mode/profile/cancel consumer control, NEW512nodecap/256deadline/
+128strong-foe games, and96larger-board operational queries. FullCore/history/PV,
+profiles/planned arithmetic and source-only26output reproduction are reported in
+EXACT_ROOT_WINDOW_UTILITY_20261018.md. Actual utility supports scoped explicit
+True for future suitable static/q0 consumers, retaining False/resource curves
+and the public default/older-kernel guard. This does not claim generic final
+AI completion, universal prices or a new learner/solver.
+
+A real PRIMARY cleanup-method mistake loses one frozen query's receipt; its
+UNKNOWN completion/paid work are retained and never refilled. Derived coverage
+initially asked for a nonexistent result.reason; corrected to actual status
+before qualification, no search rerun. Frozen node/deadline plan base fields
+were inherited; actual producer hashes/base and134file canonical-source check
+are authoritative, with preserved erratum. These are own recording corrections,
+not Native failures or fabricated missing user authorization.
+
+The stronger True-vs-True arm is a symmetric control: all32observed role pairs
+have the same full trajectory and opposite known rewards/bothUNKNOWN. PRIMARY
+explicitly audits and reports this dependence, actual duplicate execution cost
+and unchanged conservative bounds. Distinct future seeds/resource/opponent
+questions are not pooled as independent population evidence.
+
+The required once-per-patrol bounded gc deepseek辅助 read sees recent active
+progress/successful exits; the old JSON-fence failure is owner-reported repaired.
+No present loop or recurring hard failure is proved in that view, and global
+runtime health is not certified. PRIMARY does not message/control/edit DS or
+scientifically review its work, inspect another checkout, start an executor,
+or rerun AUX frozen learning/solver/hand studies. Prior pending-activation wording
+is superseded by the actual bounded current observation.
+
+The original Dot thread is freshly read/reconciled at recovery with no new
+advisor revision. Prior semantic-guard advice remains adopted, no routine
+receipt/approval gate. Fixed-SHA result delivery follows completed publication;
+scientific next-step questions are discussion, not permission. No claimed
+collaboration-efficiency percentage or independent AUX rerun is inferred.

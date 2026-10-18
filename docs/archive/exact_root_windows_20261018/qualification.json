@@ -1,0 +1,121 @@
+{
+  "status": "PASS_SEALED_EXACT_ROOT_WINDOWS_CORE_AND_ARITHMETIC",
+  "payloads": 119,
+  "regenerated_outputs": 26,
+  "steps": [
+    {
+      "directory": "rank-ratio-d2-20261018",
+      "script": "reader.py",
+      "seconds": 35.87331470003119
+    },
+    {
+      "directory": "root-window-budget-20261018",
+      "script": "reader.py",
+      "seconds": 4.782008900016081
+    },
+    {
+      "directory": "root-window-stateful-20261018",
+      "script": "reader.py",
+      "seconds": 4.792071199975908
+    },
+    {
+      "directory": "root-window-utility-20261018",
+      "script": "reader.py",
+      "seconds": 56.25864479999291
+    },
+    {
+      "directory": "root-window-utility-20261018",
+      "script": "analyze.py",
+      "seconds": 0.7629562999936752
+    },
+    {
+      "directory": "root-window-utility-20261018",
+      "script": "profile-reader.py",
+      "seconds": 0.7628399999812245
+    },
+    {
+      "directory": "root-window-utility-20261018",
+      "script": "common-parent-analysis.py",
+      "seconds": 0.5112390000140294
+    },
+    {
+      "directory": "root-window-utility-20261018",
+      "script": "coverage.py",
+      "seconds": 0.5149898999952711
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "reader.py",
+      "seconds": 38.14150279999012
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "analyze.py",
+      "seconds": 0.5181093999999575
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "profile-reader.py",
+      "seconds": 0.7633788000093773
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "common-parent-analysis.py",
+      "seconds": 0.5132305999868549
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "coverage.py",
+      "seconds": 0.5144286999711767
+    },
+    {
+      "directory": "root-window-wall-20261018",
+      "script": "deadline-cost.py",
+      "seconds": 0.5091219999594614
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "reader.py",
+      "seconds": 19.95198019995587
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "analyze.py",
+      "seconds": 0.2545619999873452
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "profile-reader.py",
+      "seconds": 0.7564505999907851
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "common-parent-analysis.py",
+      "seconds": 0.2552893999963999
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "coverage.py",
+      "seconds": 0.25470699998550117
+    },
+    {
+      "directory": "root-window-strong-20261018",
+      "script": "symmetry-analysis.py",
+      "seconds": 0.2551946999737993
+    },
+    {
+      "directory": "root-window-large-20261018",
+      "script": "reader.py",
+      "seconds": 4.034484600008
+    }
+  ],
+  "seconds": 172.78895600000396,
+  "native_absent": true,
+  "python_S_extracted_origins": true,
+  "real_primary_stops": true,
+  "new_Native_queries": 0,
+  "new_games": 0,
+  "new_generation": 0,
+  "new_training": 0,
+  "scope": "AllsavedcompleteCoreD2 references,191persistedcostqueries,192statefulcalls andnew512nodecap/256deadline/128strongfoegame/96largeboard receipts/arithmetic/profile inputs frompinnedparent/exactCoretransition. LostfirstqueryUNKNOWN/unobservedpaidnodes, oldcappedtree notrefilled. Allnonruntimefields equalincludingrecordedcosts. No Native/generation/fitness/training rerun or timing/binary/WDL/externalrules/populationproof."
+}
