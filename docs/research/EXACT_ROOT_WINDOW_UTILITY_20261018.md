@@ -283,8 +283,10 @@ output in1.554seconds. It is NOT part of the earlier119payloads/26outputs and do
 not rerun Native fitness, generation or training. The earlier published source
 reference EVAL PV/gradients remain absent, not zero.
 
-The next distinct cost question is already begun: identify15unique signed
-parent/checkpoint contexts and freeze60requests for D8 at8192/32768nodes, two
-modes/q0/TT0/.5s,120second global cap. No query from that next plan has started.
-This tests transfer of work/completion savings to signed consumers; it cannot
-by itself establish deeper optimality or online learning benefit.
+The distinct deeper signed cost continuation is now completed in
+[SIGNED_ROOT_WINDOW_AND_PAID_RETURN_COST_20261018.md](SIGNED_ROOT_WINDOW_AND_PAID_RETURN_COST_20261018.md):
+sixtyD8calls plusninety matchedD4-D6calls onfifteen distinctcontexts preserve
+fullsigned objectives/PV/history. All45same-target action/scorepairs agree;
+actualwork/caller savings support scopedexplicituse, notonlinelearningbenefit
+or independent deeperminimax/WDL. That continuation also retains latewider
+states, wholepublic-consumer cost and UNKNOWNreference tails.

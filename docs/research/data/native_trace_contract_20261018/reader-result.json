@@ -1,0 +1,33 @@
+{
+  "arms": {
+    "False": {
+      "EXACT": 999,
+      "nodes": 999,
+      "nonterminal_interiors": 130,
+      "queries": 15,
+      "raw_records": 999,
+      "rows": 999,
+      "terminal_rows": 2
+    },
+    "True": {
+      "EXACT": 119,
+      "LOWER": 312,
+      "UPPER": 76,
+      "nodes": 654,
+      "nonterminal_interiors": 130,
+      "queries": 15,
+      "raw_records": 654,
+      "rows": 507,
+      "terminal_rows": 2
+    }
+  },
+  "counts": {
+    "Core_visits": 999,
+    "ambiguous_rows": 0,
+    "queries": 30,
+    "trace_rows_checked": 1506
+  },
+  "scope": "All1506tracebounds/countfeatures matched freshfullCore D1/D2 contexts for15signedparents/twoexposedrules. Dynamic/auxfeaturelearningnotvalidated; Native traceidentitydoesnotcarryfullhistory/path andthissampledoesnotcertifyhistory-safeall-domaindedup orAUXlearningequivalence. No Native/trainingrerun.",
+  "seconds": 0.8922700000111945,
+  "status": "PASS_SCOPED_NATIVE_TRACE_INTEGER_BOUNDS"
+}

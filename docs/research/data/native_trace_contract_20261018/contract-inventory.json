@@ -1,0 +1,16 @@
+{
+  "aux_pinned_sha": "89e4adf66385301af40f934d87dd5edb5390437f",
+  "aux_science_sha": "4dbba471885be4a6d48a99e7230a007702f27424",
+  "findings": [
+    "AUX currently uses Core TrainingSearch/path-seeded coefficient-independent ordering, float raw objective, +/-MATE constant and per-visited-interior lower/upper samples; this is not our Native consumer",
+    "Native uses quantized integer/raw root-relative mate and optional trace dedup(position_identity,side,remainingdepth); trace field does not include exact history/path",
+    "Equal rootvalue/action/PV or faster scalarquery does not imply sameinternal trainingbatch orsameTreeStrap credit; any migration needs explicit owner protocol, not automatic adoption"
+  ],
+  "primary_next": "Test currentNative trace bounds only against existingfullCoreD2integer targets/fullparents; no training orclaim ofCorelearner equivalence. Opposite result changes Native-trace consumer feasibility; do not create API before concretefault.",
+  "read_files": [
+    "results/dev_aux/METHOD_20261017_93.md",
+    "results/dev_aux/task2546/run.py",
+    "results/dev_aux/task2504/search.py"
+  ],
+  "tier": "SOURCE_CONTRACT_READ_ONLY; no source/tests/learning/fitness execution or integration"
+}

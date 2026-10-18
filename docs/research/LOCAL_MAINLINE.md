@@ -233,13 +233,57 @@ exactcontext repeats, so15distinct contexts, not16independent examples. Separate
 one-output pinned-source/noNative check passes1.554s, not retroactively part of
 the main119payload/26output capsule. No signedlearning/strength/default claim.
 
-NEXT question is deeper signed consumer COST, not more unchanged price-fitness:
-15unique savedfullcontexts,60requests at8192/32768nodes,D8/q0/TT0/.5s/twomodes,
-frozen120second cap already prepared, no query started. Determine whether static
-work savings transfer before recommending signed query-only acceleration; retain
-fullPV/parent/control/cost and all unresolved depths. PRIMARY backend use does
-not train/modify AUX or refill frozen experiments. Larger-board utility can wait
-for a decision-changing use.
+[SIGNED_ROOT_WINDOW_AND_PAID_RETURN_COST_20261018.md](SIGNED_ROOT_WINDOW_AND_PAID_RETURN_COST_20261018.md)
+now closes the deeper signed COST question on fifteen distinct contexts from
+two exposed source rules. All60coldD8calls usable/311CorePV;28of30True deeper,
+but almostequal paidnodecaps/slightlyslowerwall, so depthaloneisnotgain. A
+separate90same-targetD4-D6calls/442PV completesall45pairs with identical
+actions/scores, True-False caller ratios .378/.246/.208. Prefer existing
+explicitTrue for appropriate signed/fullstatic q0 research, retainFalse and
+actualresourcecurves; APIdefaultFalse and learning/strengthlimits remain.
+
+A distinct late10/12/16gate reuses24fullprefix8parents, observing16/32/64:
+288slots/280usablequeries/8terminalnosearch,1306continuationmoves112drops/
+94promotions,72fullparents/571CorePV and100typedcoefficients pass. Max218legal/
+126drops; requested50ms kernel searchcalls <=52.640ms observed, while
+coldrecordrestore costs upto235.193ms. No guaranteedwholecaller deadline or
+largerboardutility follows. Two families/three targets are dependent.
+
+Observed shallow signedcall overhead prompts realcomponent localization, not
+a newdiagnosticsAPI. Actual180A/Bcalls/90fullnonruntimefieldpairs retain all
+twelve1025integerarrays and choose twelve equivalent tuple(map(int,...))
+projections. D2caller ratio.7382; D6aggregate1.00135, notdeeperspeedgain.
+All3306active tests pass, including missingolderfields/coercibleiterators/
+invalidintegererrors; no NativeC/binary or defaultchange.
+
+Crucially, actual publicsearch+Corecheckedsubmit on36widerparents closes216
+episode slots/414calls/244950nodes:207fullresult/completechildpairs agree,
+69uniqueparentcontexts. Retainedpipeline ratio.98099, coldrestoreincluded
+.99381; the shallow26percent cannotbe claimed forwholepipeline. This small
+safechange doesnotjustify a newAPI/cache/learner or anotherunchangedcostcampaign.
+
+An optional12root independentwideCoreD2diagnostic usesoriginal900s/200kedgecap.
+Eightclosedfrontiers/173472edges match21actualD2receipts;11otherdepthoutputs
+remainuncompared. Paid181962edges include8490interrupted ninthtree edges;
+fourroots stayUNKNOWN and arenotrefilled. This is finite diagnosis, notWDL
+admission. Sourceonlyreproduction checksONLYtheeightclosedfrontiers.
+
+FixedAUX93contract89e4adf6/source4dbba471 was onlyread, notexecuted/adopted:
+Corefloat/pathseed/interiorbound learning isnot ourNativequantizedscalarcaller.
+The distinct30call trace supplement nowmatchesall1506integerbounds/countfields
+toCore999visits. All15rootaction/score/PVs match and130interiorkeys match,
+yet76EXACTtargets become validLOWERbounds underrootwindows. Do notinfer same
+trainingcredit fromsame root. Native trace identity lacksfullpath/history;
+zeroambiguousmatches onthese2exposedrules isnot whole-domain certification.
+Next boundedhistory-contract inventory/120s32queryplan hasactuallybegun;
+nohistoryquery/AUXmigration/newlearner orautomaticdefault change. Sealed78/11
+sourceproof passes887.291s; distincttrace1outputproof1.845s isaftertheseal.
+
+Currentnext selection mustuse a changedscientificpremise or realconsumer need:
+do not mechanically expand pricefitness, tiny-overhead optimization, capped
+references or representation proofs. ExistingAUX learning/solver andDS static/
+hand studies remain their own; PRIMARY may read published dependency/contracts
+and test a genuinely different complete-state backend consumer. ScienceOPEN.
 
 The once-per-mainline-patrol DS workflow check now sees recent active work and
 successful tool exits in the bounded existing control-chat view. Its prior

@@ -4457,3 +4457,50 @@ UNKNOWN/oldmissing boundaries are preserved, no learning or AUX writes. One
 repeatedcontext is disclosed. Separate source-only one-output qualification is
 after the main capsule, not retroactive26-output evidence. Next deeper-signed
 cost gate has15uniquecontexts/60plannedrequests prepared but not launched.
+
+## Signed resource consumers and measured return projection —2026-10-18
+
+PRIMARY independently completes60deep-signed/90matchedtarget/280late-state/
+90component/180source-A-B/414paid-transition Native requests. No newlearner,
+solver, matchfitness or auxiliaryexecution is added. Fullcontext/query/child
+receipts distinguish semantic correctness, actualwork, kernel/caller,
+coldrecordrestore and conservative UNKNOWN. The inherited sixteen observations
+cover fifteen distinctcontexts/two exposedrules, not an independentholdout.
+
+RootwindowTrue now has scoped signed same-target work evidence:45D4-D6pairs
+match actions/scores; differentdepth capreturns arenotqualityproof. The cheap
+D2return-overhead finding motivates only12equivalent integer-tuple projections.
+Allfields/12full1025arrays remain, includingoldermissing/coercible/error cases.
+Actual180A/Bcalls preserve allnonruntimefields. Shallowcaller -26.2percent is
+notwholepipeline:216widerpublic-consumer episodes/414calls give only -1.9percent
+retainedsearch+submit, or -0.6percent includingcoldrestore. All3306active tests
+pass; NativeC/binary andpublicdefaults remain.
+
+OptionalCoreD2contradiction-check could alter widerNative adoption, so it is
+bounded900s/200kedges. Eightclosedfrontiers/21D2receipts agree; fourunknownroots,
+including8490paidpartialedges, remainunknown. The source qualifier re-enumerates
+onlyclosedfrontiers, never extends theoriginalcap or turns themintoWDLproof.
+
+Recoveryread saves exactSlack outputs privately beforeparse/reconcile; original
+ten-replythread has no newDotrevision, no emptyconsultation/ack/permissiongate.
+DS scientificnotes remainownerreports, not independentlyrun/adoptedPRIMARYwork.
+Once-per-patrol boundedcontrol-chat read sees recentprogress/successfultools;
+no provedrecurringworkflowfault or globalhealthcertificate. No DSmessage,
+control/state/checkoutmutation, duplicateexecutor or AUXworktreewrite.
+
+PRIMARY setup failures are preserved: Windowscommandlength, reader/sealer import
+paths, overbroad prequeryregex, prematuredependentarchive read andCRLFdiffnoise.
+They are repaired through supportedsteps withsuccessfulchecks beforepublication,
+not described as platformapproval orNative failures. Fixed-SHAdelivery follows
+actual sourcequalification, review and prescribedpublication; no efficiency
+claim forcollaboration or independentAUXreexecution is inferred.
+
+ReadfixedpublishedAUX93METHOD/run/TrainingSearch89e4adf6(science4dbba471) for
+consumercontract only; no training/source/tests/fitness execution orscientific
+winner adoption. This reveals a concrete boundary:30newNative tracedqueries
+preserve all15root/PVs but76of130interior exacttargets becomevalidLOWERbounds.
+All1506tracebounds/countfields passCore999visits; no wholehistorysafety or
+TreeStrap-credit equivalence follows. Separateone-output proof1.845s follows
+the78payload/11output maincapsuleproof887.291s; neither is retroactive inother.
+Nextreachablehistory-contract fixtureinventory begun, frozen120s32queryplan;
+do notauto-migrate AUX orremovehistory toforceNativeadmission.

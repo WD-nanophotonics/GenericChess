@@ -119,3 +119,51 @@ def test_compile_metadata_uses_same_captured_backend(monkeypatch):
     assert nr.backend_module is expected
     pos = pack_semantic_search_position(session.compiled, nr, session)
     assert sem.snapshot(nr, pos)["ply"] == 0
+
+@pytest.mark.parametrize("payload", ["older_missing", "coercible", "invalid"])
+def test_result_diagnostic_arrays_keep_conversion_contract(monkeypatch, payload):
+    """Faster projection retains older-owner defaults and integer errors."""
+    from dataclasses import fields
+    from generic_chess.native.semantic_engine import SemanticIterativeSearchResult
+    import generic_chess.native.compiler as compiler
+
+    session = fixture()
+    module = native._module()
+    keys = tuple(
+        field.name for field in fields(SemanticIterativeSearchResult)
+        if field.name.endswith("_by_ply")
+        or field.name == "ordering_skipped_by_remaining_depth"
+    )
+    assert len(keys) == 12
+
+    class DiagnosticOwner:
+        def __getattr__(self, name):
+            return getattr(module, name)
+
+        def semantic_engine_search(self, *args):
+            raw = dict(module.semantic_engine_search(*args))
+            for key in keys:
+                if payload == "older_missing":
+                    raw.pop(key, None)
+                elif payload == "coercible":
+                    raw[key] = iter(("2", 3.9, False))
+            if payload == "invalid":
+                raw[keys[0]] = ("not-an-integer",)
+            return raw
+
+    monkeypatch.setattr(compiler, "_module", lambda: DiagnosticOwner())
+    rules = compiler.compile_native_semantic_rules(session.compiled)
+    engine = SemanticSearchEngine(session.compiled, rules,
+        board_values=Material.values, hand_values=Material.values,
+        tt_megabytes=0, ordering_cache_enabled=False)
+    before = (session.state, session.to_record(), session._search_witnesses)
+    limits = SearchLimits(max_depth=1, max_time_seconds=5, quiescence_max_depth=0)
+    if payload == "invalid":
+        with pytest.raises(ValueError, match="invalid literal"):
+            engine.search(session, limits)
+    else:
+        result = engine.search(session, limits)
+        expected = () if payload == "older_missing" else (2, 3, 0)
+        assert all(getattr(result, key) == expected for key in keys)
+        assert all(type(value) is int for key in keys for value in getattr(result, key))
+    assert before == (session.state, session.to_record(), session._search_witnesses)
