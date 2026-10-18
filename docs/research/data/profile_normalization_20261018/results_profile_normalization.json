@@ -1,0 +1,3372 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "generated_at_utc": "2026-10-18T12:51:40Z",
+ "plan_sha256": "eeadd8ca8f5c42f05f78d1f5bbecf734193ec1525b2156c7e172330611894c64",
+ "source_sha256": {
+  "generic_chess/ai/evaluation/config.py": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db",
+  "generic_chess/ai/evaluation/profile.py": "5caba8ea9de8706e7c039f31cf0d59ce30341b24135e9f6ef6aa74e356212710",
+  "generic_chess/generation/generator.py": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70"
+ },
+ "git_head": "b1d13325d7b013249707f1ad15bb287b099f9de9",
+ "design": {
+  "seeds": [
+   291001,
+   291002,
+   291003,
+   291004,
+   291005,
+   291006,
+   291007,
+   291008,
+   291009,
+   291010,
+   291011,
+   291012,
+   291013,
+   291014,
+   291015,
+   291016,
+   291017,
+   291018,
+   291019,
+   291020,
+   291021,
+   291022,
+   291023,
+   291024,
+   291025,
+   291026,
+   291027,
+   291028,
+   291029,
+   291030,
+   291031,
+   291032,
+   291033,
+   291034,
+   291035,
+   291036,
+   291037,
+   291038,
+   291039,
+   291040
+  ],
+  "board_size": 4,
+  "setup_preset": "classic_like",
+  "hand_weight": 0.9,
+  "max_static_eval": 10000000,
+  "material_tie_raw_ratio": 1.1,
+  "ratio_pair_min_raw_ratio": 1.05,
+  "search": false,
+  "decision_rule": "any inversion or ceiling clip -> defect_detected; else material-tie rule fraction >=0.10 -> coarse_normalization_supported; else ratio_rounding_bounded"
+ },
+ "aggregate": {
+  "rules": 40,
+  "ordinary_types": 120,
+  "rules_with_inversion": 0,
+  "inversion_count": 0,
+  "rules_with_ceiling_clip": 0,
+  "ceiling_clip_types": 0,
+  "rules_with_floor_value_1": 0,
+  "floor_value_1_types": 0,
+  "rules_with_any_tie": 0,
+  "tie_groups": 0,
+  "rules_with_material_tie": 0,
+  "material_tie_rules": [],
+  "material_tie_groups": 0,
+  "material_tie_rule_fraction": 0.0,
+  "ratio_pairs": 113,
+  "max_ratio_distortion": 0.005048833958370635,
+  "median_ratio_distortion": 0.0003137233505653425,
+  "repeated_movement_signatures": 18,
+  "signature_raw_mismatches": 0,
+  "hand_rounding_max_deviation": 0.002912621359223322,
+  "hand_rounding_median_deviation": 0.00012515862389217425,
+  "promotion_checks": 62,
+  "promotion_inconsistent": 0,
+  "decision": "ratio_rounding_bounded"
+ },
+ "signature_mismatches": [],
+ "rules": [
+  {
+   "seed": 291001,
+   "ruleset_fingerprint": "6b2fe23f5330b1317fb5c76b3762c9778ee748562c272c61c27b7f6ebecfa911",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.5705108599290782,
+     "board": 777,
+     "hand": 699,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",-1,0],[\\\"L\\\",1,0],[\\\"L\\\",3,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.97763917460244,
+     "board": 2462,
+     "hand": 2216,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,2,-1],[\\\"R\\\",2,-1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.0219637453445065,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-2,1],[\\\"L\\\",0,1],[\\\"L\\\",0,3],[\\\"L\\\",2,1],[\\\"L\\\",3,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.1694395127119477,
+     "normalized_ratio": 3.168597168597169,
+     "distortion": 0.00026577068639432877
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.287456073647154,
+     "normalized_ratio": 1.287001287001287,
+     "distortion": 0.00035324439813988473
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.461784582470018,
+     "normalized_ratio": 2.462,
+     "distortion": 8.75046222630349e-05
+    }
+   ],
+   "max_ratio_distortion": 0.00035324439813988473,
+   "hand_rounding_deviations": [
+    0.00038610038610042974,
+    8.123476848087563e-05,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1685,
+     "actual_gain": 1685,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291002,
+   "ruleset_fingerprint": "2084a43fbd767ee63fb4e9f15ba4bc083a7c04bbf9c32566638be134775db3ab",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.27239583333333334,
+     "board": 316,
+     "hand": 284,
+     "signature": "\"[[\\\"L\\\",-2,3],[\\\"L\\\",2,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.1285863095238096,
+     "board": 2472,
+     "hand": 2225,
+     "signature": "\"[[\\\"L\\\",-2,0],[\\\"L\\\",-2,2],[\\\"L\\\",-2,3],[\\\"L\\\",0,-2],[\\\"L\\\",2,0],[\\\"L\\\",2,2],[\\\"L\\\",2,3]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.8612079973118281,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",-2,-2],[\\\"L\\\",0,-3],[\\\"L\\\",2,-2],[\\\"L\\\",3,3]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 7.814313029226987,
+     "normalized_ratio": 7.822784810126582,
+     "distortion": 0.0010841363620714972
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.1616048849688525,
+     "normalized_ratio": 3.1645569620253164,
+     "distortion": 0.0009337273833611714
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.4716285916619123,
+     "normalized_ratio": 2.472,
+     "distortion": 0.00015026866873957268
+    }
+   ],
+   "max_ratio_distortion": 0.0010841363620714972,
+   "hand_rounding_deviations": [
+    0.0012658227848101333,
+    8.090614886724357e-05,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 2156,
+     "actual_gain": 2156,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291003,
+   "ruleset_fingerprint": "005235eb30cab4df42e8e03e65a81c58438b663a2cd2f8829d5dcd37cfc76c2c",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.86421875,
+     "board": 484,
+     "hand": 436,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",-1,3],[\\\"L\\\",1,3],[\\\"L\\\",3,0]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.7839322916666664,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",-2,3],[\\\"L\\\",-1,1],[\\\"L\\\",1,1],[\\\"L\\\",2,3],[\\\"L\\\",3,0]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.964283685793822,
+     "board": 1101,
+     "hand": 991,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.0642138251069726,
+     "normalized_ratio": 2.0661157024793386,
+     "distortion": 0.0009213567650954158
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.27290102858081,
+     "normalized_ratio": 2.274793388429752,
+     "distortion": 0.0008325746810560197
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.1010976677588247,
+     "normalized_ratio": 1.101,
+     "distortion": 8.870035936370257e-05
+    }
+   ],
+   "max_ratio_distortion": 0.0009213567650954158,
+   "hand_rounding_deviations": [
+    0.0008264462809917106,
+    0.0,
+    9.082652134417835e-05
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 617,
+     "actual_gain": 617,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 101,
+     "actual_gain": 101,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291004,
+   "ruleset_fingerprint": "36756384918be2a8848cffb499abd148f88af0eac147e89a18bb2f6a5b2d3e52",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.34759375,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-2,0],[\\\"L\\\",-1,3],[\\\"L\\\",1,3],[\\\"L\\\",2,0]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.695111607142857,
+     "board": 2000,
+     "hand": 1800,
+     "signature": "\"[[\\\"L\\\",-3,2],[\\\"L\\\",-2,1],[\\\"L\\\",-1,0],[\\\"L\\\",-1,3],[\\\"L\\\",1,0],[\\\"L\\\",1,3],[\\\"L\\\",2,1],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.6276418821839082,
+     "board": 466,
+     "hand": 419,
+     "signature": "\"[[\\\"L\\\",-1,-3],[\\\"L\\\",0,3],[\\\"L\\\",1,-3]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.9999436826883898,
+     "normalized_ratio": 2.0,
+     "distortion": 2.8159448737241632e-05
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.1470742922874853,
+     "normalized_ratio": 2.1459227467811157,
+     "distortion": 0.0005363323991657287
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 4.294027667123002,
+     "normalized_ratio": 4.291845493562231,
+     "distortion": 0.0005081880532531446
+    }
+   ],
+   "max_ratio_distortion": 0.0005363323991657287,
+   "hand_rounding_deviations": [
+    0.0,
+    0.0,
+    0.0008583690987125081
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291005,
+   "ruleset_fingerprint": "a4378ecbd1bedb94fc037a94ecb6514ed37730763c57a2c1ec46229b0aafd521",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.6305126953125,
+     "board": 989,
+     "hand": 890,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,0,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 3.671180865359506,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 5.069695436532857,
+     "board": 1381,
+     "hand": 1243,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.3964130859750314,
+     "normalized_ratio": 1.3963599595551062,
+     "distortion": 3.8044916979673715e-05
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.3809440674441955,
+     "normalized_ratio": 1.381,
+     "distortion": 4.050312907177833e-05
+    }
+   ],
+   "max_ratio_distortion": 4.050312907177833e-05,
+   "hand_rounding_deviations": [
+    0.00010111223458042495,
+    0.0,
+    7.241129616220032e-05
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 392,
+     "actual_gain": 392,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291006,
+   "ruleset_fingerprint": "62043a3d1bcd90fa008785b6c5670ef97a22e781be806ece05b31d2d88e97ac1",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.8903436654373253,
+     "board": 1647,
+     "hand": 1482,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.043626077586207,
+     "board": 865,
+     "hand": 778,
+     "signature": "\"[[\\\"L\\\",-2,-2],[\\\"L\\\",-2,2],[\\\"L\\\",-1,-3],[\\\"L\\\",0,-1],[\\\"L\\\",1,-3],[\\\"L\\\",2,-2],[\\\"L\\\",2,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.361554203539823,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,1],[\\\"L\\\",-3,3],[\\\"L\\\",-2,2],[\\\"L\\\",-1,0],[\\\"L\\\",1,0],[\\\"L\\\",2,2],[\\\"L\\\",3,1],[\\\"L\\\",3,3]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.903647496039166,
+     "normalized_ratio": 1.9040462427745666,
+     "distortion": 0.00020946458639548027
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.6473658151085169,
+     "normalized_ratio": 1.647,
+     "distortion": 0.00022206064078900134
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.1555705955412017,
+     "normalized_ratio": 1.1560693641618498,
+     "distortion": 0.00043162107323668764
+    }
+   ],
+   "max_ratio_distortion": 0.00043162107323668764,
+   "hand_rounding_deviations": [
+    0.00018214936247729074,
+    0.0005780346820809523,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291007,
+   "ruleset_fingerprint": "0b70a5344c673882a5a74bbb0465cba0cbbbe509f94aea763db8beb241c34340",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.5250687081473213,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 0.6294831730769231,
+     "board": 413,
+     "hand": 372,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",-3,3],[\\\"L\\\",3,0],[\\\"L\\\",3,3]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 3.6714649405763105,
+     "board": 2407,
+     "hand": 2166,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1],[\\\"R\\\",2,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.4227314936676745,
+     "normalized_ratio": 2.4213075060532687,
+     "distortion": 0.0005877612183304848
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.407409529132931,
+     "normalized_ratio": 2.407,
+     "distortion": 0.00017011195144622793
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 5.832506884386019,
+     "normalized_ratio": 5.828087167070218,
+     "distortion": 0.0007577731845688218
+    }
+   ],
+   "max_ratio_distortion": 0.0007577731845688218,
+   "hand_rounding_deviations": [
+    0.0,
+    0.0007263922518159216,
+    0.00012463647694227475
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 1407,
+     "actual_gain": 1407,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 1994,
+     "actual_gain": 1994,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291008,
+   "ruleset_fingerprint": "578b50adbceeeb63f23ec31188e687306c82e8fa35fd825ddf75413d6de33af1",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7534375,
+     "board": 781,
+     "hand": 703,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",0,3],[\\\"L\\\",3,0]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.312591499660326,
+     "board": 4471,
+     "hand": 4024,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.9645833333333333,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,2],[\\\"L\\\",-1,2],[\\\"L\\\",1,2],[\\\"L\\\",3,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 5.72388751510288,
+     "normalized_ratio": 5.7247119078105,
+     "distortion": 0.00014402671356572583
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.2802433291856767,
+     "normalized_ratio": 1.2804097311139564,
+     "distortion": 0.00012997679775872406
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 4.470937191872476,
+     "normalized_ratio": 4.471,
+     "distortion": 1.4048089880924763e-05
+    }
+   ],
+   "max_ratio_distortion": 0.00014402671356572583,
+   "hand_rounding_deviations": [
+    0.0001280409731113652,
+    2.236636099306466e-05,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 3690,
+     "actual_gain": 3690,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 3471,
+     "actual_gain": 3471,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291009,
+   "ruleset_fingerprint": "f49ed7d5ecb0113eccb0a58b1071486bf0a5af87dc1f6f09928d3dc6119457ce",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 295,
+     "hand": 266,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.587778217299578,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,2],[\\\"L\\\",-2,-3],[\\\"L\\\",-1,-2],[\\\"L\\\",-1,0],[\\\"L\\\",1,-2],[\\\"L\\\",1,0],[\\\"L\\\",2,-3],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 3.4116976876986227,
+     "board": 1318,
+     "hand": 1186,
+     "signature": "\"[[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.3896399080469295,
+     "normalized_ratio": 3.389830508474576,
+     "distortion": 5.623028782331119e-05
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 4.468863119376009,
+     "normalized_ratio": 4.467796610169492,
+     "distortion": 0.00023865336172268492
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.3183887494264592,
+     "normalized_ratio": 1.318,
+     "distortion": 0.0002948670690858801
+    }
+   ],
+   "max_ratio_distortion": 0.0002948670690858801,
+   "hand_rounding_deviations": [
+    0.0016949152542372614,
+    0.0,
+    0.00015174506828530276
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1023,
+     "actual_gain": 1023,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291010,
+   "ruleset_fingerprint": "5f1e7e74c674807fece69793d7d191ab615decb06c13ac5be6a9d3326d8d8aa7",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.2651708984374999,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",0,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.964283685793822,
+     "board": 1553,
+     "hand": 1398,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.2098777173913045,
+     "board": 956,
+     "hand": 860,
+     "signature": "\"[[\\\"L\\\",-2,1],[\\\"L\\\",-2,2],[\\\"L\\\",2,1],[\\\"L\\\",2,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.552583677208932,
+     "normalized_ratio": 1.553,
+     "distortion": 0.000268148375626609
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.6235390218022536,
+     "normalized_ratio": 1.6244769874476988,
+     "distortion": 0.0005777290430653004
+    }
+   ],
+   "max_ratio_distortion": 0.0005777290430653004,
+   "hand_rounding_deviations": [
+    0.0,
+    0.00019317450096589805,
+    0.00041841004184106634
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 553,
+     "actual_gain": 553,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 597,
+     "actual_gain": 597,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291011,
+   "ruleset_fingerprint": "c363f679645a54fa5bd634ef84fe261a0c5e8eb7548998724b60206d079f64a0",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 0.4947916666666667,
+     "board": 648,
+     "hand": 583,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",-1,3],[\\\"L\\\",1,3],[\\\"L\\\",3,3]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.822471438172043,
+     "board": 2387,
+     "hand": 2148,
+     "signature": "\"[[\\\"L\\\",-1,-1],[\\\"L\\\",-1,2],[\\\"L\\\",1,-1],[\\\"L\\\",1,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.5429473684210528,
+     "normalized_ratio": 1.5432098765432098,
+     "distortion": 0.0001701342038813447
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.3871914048917464,
+     "normalized_ratio": 2.387,
+     "distortion": 8.017995178521975e-05
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 3.6833106960950763,
+     "normalized_ratio": 3.683641975308642,
+     "distortion": 8.994061074374393e-05
+    }
+   ],
+   "max_ratio_distortion": 0.0001701342038813447,
+   "hand_rounding_deviations": [
+    0.0,
+    0.00030864197530866555,
+    0.00012568077084207374
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 1387,
+     "actual_gain": 1387,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 1739,
+     "actual_gain": 1739,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291012,
+   "ruleset_fingerprint": "a915774b178ad362625adbf3e0879e1931024c267e5c0da49ef8a01a68e7ae2e",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 513,
+     "hand": 462,
+     "signature": "\"[[\\\"L\\\",-2,1],[\\\"L\\\",2,1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.4887207943925236,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,-2,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.9133496437610034,
+     "board": 1957,
+     "hand": 1761,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.9500231445174272,
+     "normalized_ratio": 1.949317738791423,
+     "distortion": 0.0003617422326435138
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.8160944985817475,
+     "normalized_ratio": 3.814814814814815,
+     "distortion": 0.000335338594840473
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.9569483107474182,
+     "normalized_ratio": 1.957,
+     "distortion": 2.641319257024044e-05
+    }
+   ],
+   "max_ratio_distortion": 0.0003617422326435138,
+   "hand_rounding_deviations": [
+    0.0005847953216373547,
+    0.0,
+    0.00015329586101175963
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1444,
+     "actual_gain": 1444,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291013,
+   "ruleset_fingerprint": "4cef822bfbedc87c0580fc8c877a78d5e79dc66fa1ac28d5b2568bafceb0cf79",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.5250687081473213,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 0.7421875,
+     "board": 487,
+     "hand": 438,
+     "signature": "\"[[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 4.167495031524122,
+     "board": 2733,
+     "hand": 2460,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.054829417293233,
+     "normalized_ratio": 2.0533880903490758,
+     "distortion": 0.0007014338669805165
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.732660508513655,
+     "normalized_ratio": 2.733,
+     "distortion": 0.00012423478338696725
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 5.615151200369343,
+     "normalized_ratio": 5.611909650924025,
+     "distortion": 0.0005772862260779998
+    }
+   ],
+   "max_ratio_distortion": 0.0007014338669805165,
+   "hand_rounding_deviations": [
+    0.0,
+    0.0006160164271047375,
+    0.00010976948408336629
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 1733,
+     "actual_gain": 1733,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 2246,
+     "actual_gain": 2246,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291014,
+   "ruleset_fingerprint": "a6dee15d3d3a6244db5a2ae75ff48f42414b5d5c2007e266483402c43f77fe83",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 429,
+     "hand": 386,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.7778340382205513,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-3,2],[\\\"L\\\",-1,-2],[\\\"L\\\",0,-2],[\\\"L\\\",1,-2],[\\\"L\\\",3,-1],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 3.9077757932428727,
+     "board": 2198,
+     "hand": 1978,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.328722440567238,
+     "normalized_ratio": 2.331002331002331,
+     "distortion": 0.000979030560008587
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 5.118658427497827,
+     "normalized_ratio": 5.123543123543124,
+     "distortion": 0.0009542922456118319
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.1980543229750498,
+     "normalized_ratio": 2.198,
+     "distortion": 2.471411851923122e-05
+    }
+   ],
+   "max_ratio_distortion": 0.000979030560008587,
+   "hand_rounding_deviations": [
+    0.00023310023310030292,
+    0.0,
+    9.099181073701779e-05
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1769,
+     "actual_gain": 1769,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291015,
+   "ruleset_fingerprint": "5f486e3caf0bf5de2346b78a5841efba190bac4595f3410c57f071f519a7297d",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.1320104289504718,
+     "board": 1075,
+     "hand": 968,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.098884698275862,
+     "board": 377,
+     "hand": 339,
+     "signature": "\"[[\\\"L\\\",-1,1],[\\\"L\\\",1,1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.9141166218672647,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,2,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.850172027933924,
+     "normalized_ratio": 2.8514588859416445,
+     "distortion": 0.00045150187255660335
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.074771821226423,
+     "normalized_ratio": 1.075,
+     "distortion": 0.00021230438784347605
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.6518857041502915,
+     "normalized_ratio": 2.6525198938992043,
+     "distortion": 0.00023914671281666244
+    }
+   ],
+   "max_ratio_distortion": 0.00045150187255660335,
+   "hand_rounding_deviations": [
+    0.00046511627906975495,
+    0.0007957559681698312,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 623,
+     "actual_gain": 623,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291016,
+   "ruleset_fingerprint": "10534d44417947e58e6897f16cf7a66d4a0db86970c09bfb6207d8fd6bd56514",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.0980180921052631,
+     "board": 602,
+     "hand": 542,
+     "signature": "\"[[\\\"L\\\",-1,3],[\\\"L\\\",0,1],[\\\"L\\\",1,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.8235297736220473,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-2,1],[\\\"L\\\",-1,-1],[\\\"L\\\",1,-1],[\\\"L\\\",2,1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 3.8903436654373253,
+     "board": 2133,
+     "hand": 1920,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.6607465639530026,
+     "normalized_ratio": 1.6611295681063123,
+     "distortion": 0.00023062167438614445
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.543059712229561,
+     "normalized_ratio": 3.543189368770764,
+     "distortion": 3.6594512013321534e-05
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.133413844792893,
+     "normalized_ratio": 2.133,
+     "distortion": 0.00019398242582102654
+    }
+   ],
+   "max_ratio_distortion": 0.00023062167438614445,
+   "hand_rounding_deviations": [
+    0.00033222591362125353,
+    0.0,
+    0.00014064697608995314
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 398,
+     "actual_gain": 398,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291017,
+   "ruleset_fingerprint": "b87b4175447c7d623daab7d4f17fe8e214e1086105cf977c34849561181fada9",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 2.6922424077052702,
+     "board": 1035,
+     "hand": 932,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 0.7497418478260869,
+     "board": 288,
+     "hand": 259,
+     "signature": "\"[[\\\"L\\\",-3,1],[\\\"L\\\",-1,-3],[\\\"L\\\",1,-3],[\\\"L\\\",3,1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.6005074368990386,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,2,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.5908925392274136,
+     "normalized_ratio": 3.59375,
+     "distortion": 0.000795752237464864
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 3.4685371297325034,
+     "normalized_ratio": 3.4722222222222223,
+     "distortion": 0.0010624342055127745
+    }
+   ],
+   "max_ratio_distortion": 0.0010624342055127745,
+   "hand_rounding_deviations": [
+    0.00048309178743954906,
+    0.000694444444444442,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291018,
+   "ruleset_fingerprint": "95a553190ee7a8767b239cdb2979d2b53a9d51b6f7ebe1ff60b062b3c5e6a858",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.6305126953125,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,0,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.4816456761853445,
+     "board": 1234,
+     "hand": 1111,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",2,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.7421875,
+     "board": 204,
+     "hand": 184,
+     "signature": "\"[[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.2344387838036694,
+     "normalized_ratio": 1.234,
+     "distortion": 0.0003554520559678753
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 4.891638157894737,
+     "normalized_ratio": 4.901960784313726,
+     "distortion": 0.002110259607475129
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 6.038427858439201,
+     "normalized_ratio": 6.049019607843137,
+     "distortion": 0.0017540574553909227
+    }
+   ],
+   "max_ratio_distortion": 0.002110259607475129,
+   "hand_rounding_deviations": [
+    0.0,
+    0.00032414910858991064,
+    0.0019607843137254832
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 234,
+     "actual_gain": 234,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 1030,
+     "actual_gain": 1030,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291019,
+   "ruleset_fingerprint": "b650362275e2ae2bd0659c6abe7a248ba825afd01817bb3d6c0319964d4dabf5",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.86421875,
+     "board": 593,
+     "hand": 534,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",-1,3],[\\\"L\\\",1,3],[\\\"L\\\",3,0]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.312591499660326,
+     "board": 2958,
+     "hand": 2662,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.4581250000000001,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,2,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 4.990161923309724,
+     "normalized_ratio": 4.988195615514334,
+     "distortion": 0.00039403687207129057
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.6872175013559936,
+     "normalized_ratio": 1.6863406408094435,
+     "distortion": 0.0005197080671848209
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.9576281180696617,
+     "normalized_ratio": 2.958,
+     "distortion": 0.00012573654140846102
+    }
+   ],
+   "max_ratio_distortion": 0.0005197080671848209,
+   "hand_rounding_deviations": [
+    0.0005059021922427798,
+    6.761325219750702e-05,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 2365,
+     "actual_gain": 2365,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291020,
+   "ruleset_fingerprint": "89e57d209c92cd5973dc51d00f3af40bfef408197d1b7bb3f37234ea059b71e0",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.5250687081473213,
+     "board": 511,
+     "hand": 460,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.4816456761853445,
+     "board": 1502,
+     "hand": 1352,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,-2,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",2,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.9831136067708335,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.9386516504097195,
+     "normalized_ratio": 2.939334637964775,
+     "distortion": 0.00023241528302953007
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.9560519410268205,
+     "normalized_ratio": 1.9569471624266144,
+     "distortion": 0.000457667499015324
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.5023382502138913,
+     "normalized_ratio": 1.502,
+     "distortion": 0.00022514917252702826
+    }
+   ],
+   "max_ratio_distortion": 0.000457667499015324,
+   "hand_rounding_deviations": [
+    0.00019569471624258927,
+    0.00013315579227690666,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 991,
+     "actual_gain": 991,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291021,
+   "ruleset_fingerprint": "35c7f69df4b0c81c3719600f3bbdf3c574101fe81a728905550ff8617aeb0cdb",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.39109375,
+     "board": 356,
+     "hand": 320,
+     "signature": "\"[[\\\"L\\\",-3,1],[\\\"L\\\",3,1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.0989398521505378,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-2],[\\\"L\\\",-1,3],[\\\"L\\\",0,-2],[\\\"L\\\",1,3],[\\\"L\\\",3,-2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.9831136067708335,
+     "board": 2715,
+     "hand": 2444,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.8099141245559096,
+     "normalized_ratio": 2.808988764044944,
+     "distortion": 0.000329319854610044
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 7.62761769210281,
+     "normalized_ratio": 7.626404494382022,
+     "distortion": 0.00015905329419474423
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.7145376527506193,
+     "normalized_ratio": 2.715,
+     "distortion": 0.0001703226510458844
+    }
+   ],
+   "max_ratio_distortion": 0.000329319854610044,
+   "hand_rounding_deviations": [
+    0.0011235955056180247,
+    0.0,
+    0.0001841620626150675
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 2359,
+     "actual_gain": 2359,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291022,
+   "ruleset_fingerprint": "721afe8038e22878c39863a03b33c4783c24a228274472bb18276ce1084cf852",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.2651708984374999,
+     "board": 558,
+     "hand": 502,
+     "signature": "\"[[\\\"R\\\",0,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.266250594106464,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,2],[\\\"L\\\",-2,-3],[\\\"L\\\",-1,-1],[\\\"L\\\",-1,2],[\\\"L\\\",1,-1],[\\\"L\\\",1,2],[\\\"L\\\",2,-3],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 5.069695436532857,
+     "board": 2237,
+     "hand": 2013,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,0,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.7912604509835854,
+     "normalized_ratio": 1.7921146953405018,
+     "distortion": 0.00047689567223319074
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 4.007123024086301,
+     "normalized_ratio": 4.008960573476703,
+     "distortion": 0.0004585707449848986
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.2370409740727433,
+     "normalized_ratio": 2.237,
+     "distortion": 1.831619233538806e-05
+    }
+   ],
+   "max_ratio_distortion": 0.00047689567223319074,
+   "hand_rounding_deviations": [
+    0.00035842293906807043,
+    0.0,
+    0.00013410818059900187
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1679,
+     "actual_gain": 1679,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291023,
+   "ruleset_fingerprint": "cd1474744527f4610706c8753780dd65ef2b3b023c73782498736696785c1d32",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 384,
+     "hand": 346,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.9866927179641274,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-2,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.933292717889908,
+     "board": 1476,
+     "hand": 1328,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-3,2],[\\\"L\\\",-2,0],[\\\"L\\\",-1,0],[\\\"L\\\",1,0],[\\\"L\\\",2,0],[\\\"L\\\",3,-1],[\\\"L\\\",3,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.60229909843848,
+     "normalized_ratio": 2.6041666666666665,
+     "distortion": 0.0007176608673873375
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.8422172317837515,
+     "normalized_ratio": 3.84375,
+     "distortion": 0.00039892804695407236
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.4764702620422416,
+     "normalized_ratio": 1.476,
+     "distortion": 0.0003185042424025397
+    }
+   ],
+   "max_ratio_distortion": 0.0007176608673873375,
+   "hand_rounding_deviations": [
+    0.0010416666666666075,
+    0.0,
+    0.00027100271002711285
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1092,
+     "actual_gain": 1092,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291024,
+   "ruleset_fingerprint": "00f000856e51e65f794d325b0195875343941b7db313c7a83dd5d1ae3efb71af",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 2.1955246064157197,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.2480004555106965,
+     "board": 1024,
+     "hand": 922,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1],[\\\"R\\\",2,-1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.433125,
+     "board": 653,
+     "hand": 588,
+     "signature": "\"[[\\\"L\\\",-2,1],[\\\"L\\\",0,1],[\\\"L\\\",2,1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.5319840254100094,
+     "normalized_ratio": 1.5313935681470139,
+     "distortion": 0.00038541998689411994
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.5686004050663387,
+     "normalized_ratio": 1.5681470137825422,
+     "distortion": 0.00028904192701473264
+    }
+   ],
+   "max_ratio_distortion": 0.00038541998689411994,
+   "hand_rounding_deviations": [
+    0.0,
+    0.0003906249999999778,
+    0.0004594180704440287
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 24,
+     "actual_gain": 24,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 371,
+     "actual_gain": 371,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291025,
+   "ruleset_fingerprint": "654f1d33a6cd4c320df46f48162558c7c9a57fe555f7ff6357b40caa8165013c",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.8495267210144929,
+     "board": 309,
+     "hand": 278,
+     "signature": "\"[[\\\"L\\\",-3,0],[\\\"L\\\",-3,1],[\\\"L\\\",3,0],[\\\"L\\\",3,1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 3.1316065705128207,
+     "board": 1140,
+     "hand": 1026,
+     "signature": "\"[[\\\"L\\\",-2,0],[\\\"L\\\",-2,2],[\\\"L\\\",-1,0],[\\\"L\\\",-1,3],[\\\"L\\\",1,0],[\\\"L\\\",1,3],[\\\"L\\\",2,0],[\\\"L\\\",2,2]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.746277251372466,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.686295549094795,
+     "normalized_ratio": 3.6893203883495147,
+     "distortion": 0.0008205634123565897
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.232714384890566,
+     "normalized_ratio": 3.236245954692557,
+     "distortion": 0.001092447207367675
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.1403096934032368,
+     "normalized_ratio": 1.14,
+     "distortion": 0.00027158710044172807
+    }
+   ],
+   "max_ratio_distortion": 0.001092447207367675,
+   "hand_rounding_deviations": [
+    0.00032362459546930733,
+    0.0,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 691,
+     "actual_gain": 691,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291026,
+   "ruleset_fingerprint": "d875cf31ec4d37a895bbf9fa7f3f45b2c4cd1b1f5ed3f724971eee6021058b68",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.2651708984374999,
+     "board": 618,
+     "hand": 556,
+     "signature": "\"[[\\\"R\\\",0,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.04578125,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-2,-3],[\\\"L\\\",-2,2],[\\\"L\\\",-2,3],[\\\"L\\\",-1,-1],[\\\"L\\\",1,-1],[\\\"L\\\",2,-3],[\\\"L\\\",2,2],[\\\"L\\\",2,3]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.1955246064157197,
+     "board": 1073,
+     "hand": 966,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.616999926671221,
+     "normalized_ratio": 1.6181229773462784,
+     "distortion": 0.0006945273506409055
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.735358131559315,
+     "normalized_ratio": 1.7362459546925566,
+     "distortion": 0.0005116080174436544
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.073196172081311,
+     "normalized_ratio": 1.073,
+     "distortion": 0.00018279237889062827
+    }
+   ],
+   "max_ratio_distortion": 0.0006945273506409055,
+   "hand_rounding_deviations": [
+    0.00032362459546930733,
+    0.0,
+    0.0002795899347622921
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 382,
+     "actual_gain": 382,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291027,
+   "ruleset_fingerprint": "1208966158d87a610b437d3b2819764cefda6d18e3acc044845d7c87f3ae23dd",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.38359375,
+     "board": 287,
+     "hand": 258,
+     "signature": "\"[[\\\"L\\\",-1,3],[\\\"L\\\",1,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.3368437499999999,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-2,3],[\\\"L\\\",-1,-2],[\\\"L\\\",1,-2],[\\\"L\\\",2,3],[\\\"L\\\",3,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.4887207943925236,
+     "board": 1114,
+     "hand": 1003,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1],[\\\"R\\\",2,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.4850509164969448,
+     "normalized_ratio": 3.484320557491289,
+     "distortion": 0.00020956910620684166
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.880982926318595,
+     "normalized_ratio": 3.8815331010452963,
+     "distortion": 0.0001417616972674285
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.113608672960115,
+     "normalized_ratio": 1.114,
+     "distortion": 0.00035140444699033324
+    }
+   ],
+   "max_ratio_distortion": 0.00035140444699033324,
+   "hand_rounding_deviations": [
+    0.001045296167247356,
+    0.0,
+    0.00035906642728900096
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 827,
+     "actual_gain": 827,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291028,
+   "ruleset_fingerprint": "ff0c8197ba8622211929f36497e92819bd5ecd190113c2e93484797b7d8bc6d4",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.8903436654373253,
+     "board": 1245,
+     "hand": 1120,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 3.123918185763889,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.7248541666666667,
+     "board": 232,
+     "hand": 209,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",-1,-3],[\\\"L\\\",0,-3],[\\\"L\\\",1,-3],[\\\"L\\\",3,3]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.2453410858088856,
+     "normalized_ratio": 1.245,
+     "distortion": 0.00027388946913597945
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 5.3670708458883,
+     "normalized_ratio": 5.366379310344827,
+     "distortion": 0.00012884785077915684
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 4.309719567633336,
+     "normalized_ratio": 4.310344827586207,
+     "distortion": 0.00014508135461221983
+    }
+   ],
+   "max_ratio_distortion": 0.00027388946913597945,
+   "hand_rounding_deviations": [
+    0.00040160642570286065,
+    0.0,
+    0.0008620689655172153
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291029,
+   "ruleset_fingerprint": "afecb3f7a91b1e7798f706b0f9f6ad1bfdf6f22c2864f4f9e0caafc2197da50e",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 623,
+     "hand": 561,
+     "signature": "\"[[\\\"L\\\",0,1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.2246577380952381,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-2,2],[\\\"L\\\",-1,-3],[\\\"L\\\",1,-3],[\\\"L\\\",2,2],[\\\"L\\\",3,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.746277251372466,
+     "board": 2242,
+     "hand": 2018,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.6041362103580685,
+     "normalized_ratio": 1.6051364365971108,
+     "distortion": 0.0006235294936824953
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 3.597252232661437,
+     "normalized_ratio": 3.5987158908507224,
+     "distortion": 0.0004068822797567151
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.2424855255018983,
+     "normalized_ratio": 2.242,
+     "distortion": 0.00021651221217566796
+    }
+   ],
+   "max_ratio_distortion": 0.0006235294936824953,
+   "hand_rounding_deviations": [
+    0.00048154093097907413,
+    0.0,
+    8.92060660124816e-05
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1619,
+     "actual_gain": 1619,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291030,
+   "ruleset_fingerprint": "2fed1a57aacf963d6a260754242921649257953b666c4e5e013f2da2c9506d52",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 3.8903436654373253,
+     "board": 1465,
+     "hand": 1318,
+     "signature": "\"[[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.098884698275862,
+     "board": 414,
+     "hand": 373,
+     "signature": "\"[[\\\"L\\\",-1,1],[\\\"L\\\",1,1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.6551303140219153,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,-2,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-2,-1],[\\\"R\\\",2,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.540265572485659,
+     "normalized_ratio": 3.5386473429951693,
+     "distortion": 0.0004570926834038813
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.465217599638017,
+     "normalized_ratio": 1.465,
+     "distortion": 0.00014851011758987287
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.4162046465728255,
+     "normalized_ratio": 2.4154589371980677,
+     "distortion": 0.0003086284002539186
+    }
+   ],
+   "max_ratio_distortion": 0.0004570926834038813,
+   "hand_rounding_deviations": [
+    0.0003412969283276279,
+    0.0009661835748792091,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 586,
+     "actual_gain": 586,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291031,
+   "ruleset_fingerprint": "6fa109e0886fa72d4cf6daf885d28806ca8134cd8b716226c99b54f92d99abe2",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.14869791666666665,
+     "board": 103,
+     "hand": 93,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",3,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.4887207943925236,
+     "board": 1026,
+     "hand": 923,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1],[\\\"R\\\",2,-1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.4506004901960783,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-1,1],[\\\"L\\\",1,1],[\\\"L\\\",3,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 10.011712522709791,
+     "normalized_ratio": 9.96116504854369,
+     "distortion": 0.005048833958370635
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 9.755351807973627,
+     "normalized_ratio": 9.70873786407767,
+     "distortion": 0.004778294500651148
+    }
+   ],
+   "max_ratio_distortion": 0.005048833958370635,
+   "hand_rounding_deviations": [
+    0.002912621359223322,
+    0.0003898635477582735,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 923,
+     "actual_gain": 923,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291032,
+   "ruleset_fingerprint": "4f0f65e95a7d78ed0489cb9b0fb5bd7e6e357b78c08edb4db4f08e09d1c50a73",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.9133827837775734,
+     "board": 3816,
+     "hand": 3434,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,-1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",2,-1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.7634375000000001,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.816137907526907,
+     "normalized_ratio": 3.816,
+     "distortion": 3.613798302071203e-05
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 3.816137907526907,
+     "normalized_ratio": 3.816,
+     "distortion": 3.613798302071203e-05
+    }
+   ],
+   "max_ratio_distortion": 3.613798302071203e-05,
+   "hand_rounding_deviations": [
+    0.0,
+    0.00010482180293502896,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 2816,
+     "actual_gain": 2816,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 2816,
+     "actual_gain": 2816,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291033,
+   "ruleset_fingerprint": "19ceba94cebdf097b05dbd5fd606840eeb2c982a61f294812f640a66a895af74",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.5250687081473213,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 4.9777448381696425,
+     "board": 3264,
+     "hand": 2938,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",1,2,-1],[\\\"R\\\",2,-1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.6274373234463279,
+     "board": 411,
+     "hand": 370,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-3,2],[\\\"L\\\",3,-1],[\\\"L\\\",3,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.263947920232846,
+     "normalized_ratio": 3.264,
+     "distortion": 1.595606560722551e-05
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 2.4306311581379467,
+     "normalized_ratio": 2.4330900243309004,
+     "distortion": 0.0010116163387114963
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 7.933453513457505,
+     "normalized_ratio": 7.9416058394160585,
+     "distortion": 0.0010275885457353695
+    }
+   ],
+   "max_ratio_distortion": 0.0010275885457353695,
+   "hand_rounding_deviations": [
+    0.0,
+    0.0001225490196078427,
+    0.00024330900243307862
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 2264,
+     "actual_gain": 2264,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291034,
+   "ruleset_fingerprint": "720e1c34c09e40b861a8b633d9e36d04ca32852210b5ee9ce4e2a13fe3b4daf6",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 2.1046659482758625,
+     "board": 1584,
+     "hand": 1426,
+     "signature": "\"[[\\\"L\\\",-3,1],[\\\"L\\\",-2,1],[\\\"L\\\",-1,1],[\\\"L\\\",1,1],[\\\"L\\\",2,1],[\\\"L\\\",3,1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.3285257227891156,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-3,0],[\\\"L\\\",-2,2],[\\\"L\\\",2,2],[\\\"L\\\",3,-1],[\\\"L\\\",3,0]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.14869791666666665,
+     "board": 112,
+     "hand": 101,
+     "signature": "\"[[\\\"L\\\",-3,3],[\\\"L\\\",3,3]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.584211665738254,
+     "normalized_ratio": 1.584,
+     "distortion": 0.0001336095061231779
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 14.153970650401599,
+     "normalized_ratio": 14.142857142857142,
+     "distortion": 0.0007851865613512921
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 8.934393652382145,
+     "normalized_ratio": 8.928571428571429,
+     "distortion": 0.00065166412374984
+    }
+   ],
+   "max_ratio_distortion": 0.0007851865613512921,
+   "hand_rounding_deviations": [
+    0.0002525252525252819,
+    0.0,
+    0.0017857142857142794
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 888,
+     "actual_gain": 888,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291035,
+   "ruleset_fingerprint": "9c29918232be97faab85763fce69bf69357ad86b83c911ab7df9e7f9dfc980d4",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 4.295889850484914,
+     "board": 1259,
+     "hand": 1133,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,0,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,0,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 3.4109210418947944,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,2,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.1955246064157197,
+     "board": 644,
+     "hand": 580,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,1,-1],[\\\"R\\\",2,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.2594515668115591,
+     "normalized_ratio": 1.259,
+     "distortion": 0.0003585424191439035
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.9566575741996004,
+     "normalized_ratio": 1.954968944099379,
+     "distortion": 0.0008630176902119091
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.5535790543761008,
+     "normalized_ratio": 1.5527950310559007,
+     "distortion": 0.000504656211727128
+    }
+   ],
+   "max_ratio_distortion": 0.0008630176902119091,
+   "hand_rounding_deviations": [
+    7.942811755368151e-05,
+    0.0,
+    0.0006211180124223725
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 356,
+     "actual_gain": 356,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291036,
+   "ruleset_fingerprint": "a7994d790197116cc9722224d0f43e169de9567576d307dae5dd49664c0a3742",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 2.6922424077052702,
+     "board": 1371,
+     "hand": 1234,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 1.964283685793822,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-2,-1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",2,-1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.6274373234463279,
+     "board": 319,
+     "hand": 287,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-3,2],[\\\"L\\\",3,-1],[\\\"L\\\",3,2]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 1.370597550229747,
+     "normalized_ratio": 1.371,
+     "distortion": 0.00029363088397871273
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 4.290854730983452,
+     "normalized_ratio": 4.297805642633229,
+     "distortion": 0.0016199363729527683
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 3.130645265099296,
+     "normalized_ratio": 3.134796238244514,
+     "distortion": 0.001325916159040208
+    }
+   ],
+   "max_ratio_distortion": 0.0016199363729527683,
+   "hand_rounding_deviations": [
+    7.293946024800047e-05,
+    0.0,
+    0.00031347962382444194
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 0,
+     "actual_gain": 0,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291037,
+   "ruleset_fingerprint": "46c48ca9186cbe6e940d39600fc2fae1dff71105d331bd345dfc8fd6b04b9e4c",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.7634375000000001,
+     "board": 256,
+     "hand": 230,
+     "signature": "\"[[\\\"R\\\",-2,1,-1],[\\\"R\\\",2,1,-1]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.9831136067708335,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",-1,1,-1],[\\\"R\\\",1,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 3.9077757932428727,
+     "board": 1310,
+     "hand": 1179,
+     "signature": "\"[[\\\"R\\\",-1,-1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",0,1,-1],[\\\"R\\\",1,-1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 3.9074758664210667,
+     "normalized_ratio": 3.90625,
+     "distortion": 0.0003137233505653425
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 5.118658427497827,
+     "normalized_ratio": 5.1171875,
+     "distortion": 0.00028736582420219037
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 1.3099654617153416,
+     "normalized_ratio": 1.31,
+     "distortion": 2.636579792980598e-05
+    }
+   ],
+   "max_ratio_distortion": 0.0003137233505653425,
+   "hand_rounding_deviations": [
+    0.0015625000000000222,
+    0.0,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 1054,
+     "actual_gain": 1054,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291038,
+   "ruleset_fingerprint": "b981e3d2dae318fdeb43a53977e7e2c30f007df97d4a44529dcff9f83588d107",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.6147214673913044,
+     "board": 828,
+     "hand": 745,
+     "signature": "\"[[\\\"L\\\",-3,1],[\\\"L\\\",-3,2],[\\\"L\\\",3,1],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.4897991071428573,
+     "board": 3355,
+     "hand": 3020,
+     "signature": "\"[[\\\"L\\\",-3,-1],[\\\"L\\\",-1,0],[\\\"L\\\",0,1],[\\\"L\\\",1,0],[\\\"L\\\",3,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 0.7421875,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 4.050288202409502,
+     "normalized_ratio": 4.0519323671497585,
+     "distortion": 0.00040593771556274305
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.207355752760065,
+     "normalized_ratio": 1.2077294685990339,
+     "distortion": 0.00030953249538479
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 3.3546766917293236,
+     "normalized_ratio": 3.355,
+     "distortion": 9.637538886342334e-05
+    }
+   ],
+   "max_ratio_distortion": 0.00040593771556274305,
+   "hand_rounding_deviations": [
+    0.00024154589371983004,
+    0.00014903129657228842,
+    0.0
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 2527,
+     "actual_gain": 2527,
+     "consistent": true
+    },
+    {
+     "type_id": "A",
+     "targets": [
+      "X"
+     ],
+     "expected_gain": 2355,
+     "actual_gain": 2355,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291039,
+   "ruleset_fingerprint": "edd68d83d505deecaa557ef67ce61c33d4063e34ef960a044da3e4a3eecd501f",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 0.27239583333333334,
+     "board": 101,
+     "hand": 91,
+     "signature": "\"[[\\\"L\\\",-3,2],[\\\"L\\\",3,2]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 2.6893665994623657,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-3,-3],[\\\"L\\\",-1,-1],[\\\"L\\\",-1,1],[\\\"L\\\",0,-2],[\\\"L\\\",1,-1],[\\\"L\\\",1,1],[\\\"L\\\",3,-3]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 2.746277251372466,
+     "board": 1021,
+     "hand": 919,
+     "signature": "\"[[\\\"R\\\",-1,1,-1],[\\\"R\\\",0,-1,-1],[\\\"R\\\",1,1,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 9.873009313513847,
+     "normalized_ratio": 9.900990099009901,
+     "distortion": 0.0028340685810712696
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 10.081935607332953,
+     "normalized_ratio": 10.108910891089108,
+     "distortion": 0.002675605638319478
+    }
+   ],
+   "max_ratio_distortion": 0.0028340685810712696,
+   "hand_rounding_deviations": [
+    0.000990099009900991,
+    0.0,
+    9.794319294809117e-05
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "X",
+      "A"
+     ],
+     "expected_gain": 920,
+     "actual_gain": 920,
+     "consistent": true
+    }
+   ]
+  },
+  {
+   "seed": 291040,
+   "ruleset_fingerprint": "d65f2fe1f2fabcdd8d527cd78a26d6fd1a208bf7f6eed2be2ebf7becf5763428",
+   "ordinary_types": [
+    {
+     "type_id": "P",
+     "raw": 1.6824526515151517,
+     "board": 1000,
+     "hand": 900,
+     "signature": "\"[[\\\"L\\\",-2,3],[\\\"L\\\",-1,0],[\\\"L\\\",1,0],[\\\"L\\\",2,3]]\""
+    },
+    {
+     "type_id": "X",
+     "raw": 0.7421875,
+     "board": 441,
+     "hand": 397,
+     "signature": "\"[[\\\"R\\\",-1,2,-1],[\\\"R\\\",1,2,-1]]\""
+    },
+    {
+     "type_id": "A",
+     "raw": 1.8235297736220473,
+     "board": 1084,
+     "hand": 976,
+     "signature": "\"[[\\\"L\\\",-2,-1],[\\\"L\\\",-1,1],[\\\"L\\\",1,1],[\\\"L\\\",2,-1]]\""
+    }
+   ],
+   "ceiling_clips": [],
+   "floor_clips": [],
+   "inversions": [],
+   "tie_groups": [],
+   "material_tie_groups": [],
+   "ratio_distortions": [
+    {
+     "pair": [
+      "P",
+      "X"
+     ],
+     "raw_ratio": 2.2668835725677834,
+     "normalized_ratio": 2.2675736961451247,
+     "distortion": 0.00030443715137939975
+    },
+    {
+     "pair": [
+      "A",
+      "P"
+     ],
+     "raw_ratio": 1.083852060846911,
+     "normalized_ratio": 1.084,
+     "distortion": 0.00013649386150849097
+    },
+    {
+     "pair": [
+      "A",
+      "X"
+     ],
+     "raw_ratio": 2.4569664318276003,
+     "normalized_ratio": 2.4580498866213154,
+     "distortion": 0.0004409725666902897
+    }
+   ],
+   "max_ratio_distortion": 0.0004409725666902897,
+   "hand_rounding_deviations": [
+    0.0,
+    0.00022675736961452753,
+    0.00036900369003689537
+   ],
+   "promotion_checks": [
+    {
+     "type_id": "P",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 84,
+     "actual_gain": 84,
+     "consistent": true
+    },
+    {
+     "type_id": "X",
+     "targets": [
+      "A"
+     ],
+     "expected_gain": 643,
+     "actual_gain": 643,
+     "consistent": true
+    }
+   ]
+  }
+ ],
+ "nonclaims": [
+  "no strength, utility or game-outcome claim",
+  "no human-price or external-label fit",
+  "one generator family, board size 4 and one fixed seed block",
+  "clipping and tie counts are descriptive, not a threshold for product use"
+ ]
+}

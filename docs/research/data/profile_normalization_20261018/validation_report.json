@@ -1,0 +1,48 @@
+{
+ "recomputed": {
+  "rules": 40,
+  "ordinary_types": 120,
+  "types_per_rule_min": 3,
+  "types_per_rule_max": 3,
+  "types_per_rule_uniform": true,
+  "rules_with_inversion": 0,
+  "inversion_count": 0,
+  "inversion_count_from_rows": 0,
+  "rules_with_ceiling_clip": 0,
+  "ceiling_clip_types": 0,
+  "rules_with_floor_value_1": 0,
+  "floor_value_1_types": 0,
+  "rules_with_any_tie": 0,
+  "tie_groups": 0,
+  "tie_groups_from_rows": 0,
+  "rules_with_material_tie": 0,
+  "material_tie_rules": [],
+  "material_tie_groups": 0,
+  "material_tie_rule_fraction": 0.0,
+  "ratio_pairs": 113,
+  "ratio_pairs_from_rows": 113,
+  "max_ratio_distortion": 0.005048833958370635,
+  "max_ratio_distortion_from_rows": 0.005048833958370635,
+  "median_ratio_distortion": 0.0003137233505653425,
+  "median_ratio_distortion_from_rows": 0.0003137233505653425,
+  "hand_rounding_max_deviation": 0.002912621359223322,
+  "hand_rounding_median_deviation": 0.00012515862389217425,
+  "promotion_checks": 62,
+  "promotion_inconsistent": 0,
+  "decision": "ratio_rounding_bounded"
+ },
+ "types_per_rule": [
+  3,
+  3,
+  true
+ ],
+ "replay": {
+  "replay_path": ".local_agent\\profile-replay-20261018\\results_profile_normalization.json",
+  "rules_identical": true,
+  "aggregate_identical": true,
+  "source_hashes_identical": true,
+  "plan_hash_identical": true
+ },
+ "problems": [],
+ "ok": true
+}

@@ -1,0 +1,36 @@
+{
+ "task": "DEEPSEEK_AUX-PROFILE-NORMALIZATION-20261018",
+ "agent_id": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "created_at_utc": "2026-10-18T12:51:19.868622+00:00",
+ "question": "Across deterministic generated rules, does the served static profile preserve raw piece-value ratios and ordering after median normalization, integer rounding, and [1, MAX_STATIC_EVAL] clipping, and how coarse are the normalized values?",
+ "inputs": {
+  "generator": "generic_chess.generation.generator.generate_game",
+  "seeds": "291001-291040 inclusive",
+  "board_size": 4,
+  "setup_preset": "classic_like",
+  "evaluator": "build_ruleset_profile with EvaluationConfig(hand_weight=0.9)",
+  "search": false
+ },
+ "cost": {
+  "expected_seconds_upper": 120,
+  "searches": 0,
+  "rules": 40,
+  "external_services": 0
+ },
+ "endpoint": {
+  "primary": "For each rule, count ceiling clips (normalized==MAX_STATIC_EVAL), floor clips (normalized==1), raw-order inversions, and distinct-raw tie groups after rounding.",
+  "material_tie": "a tie group whose largest/smallest raw ratio is >=1.10",
+  "ratio_distortion": "for type pairs with raw ratio>=1.05, |normalized_ratio/raw_ratio-1|",
+  "cross_rule_raw": "for movement signatures occurring in more than one rule, exact raw-score equality",
+  "hand_rounding": "|normalized_hand/normalized_board - 0.9| for ordinary types",
+  "promotion_gain": "promotion_gain equals max target board value minus source board value"
+ },
+ "decision_rule_written_before_run": "If any raw-order inversion or ceiling clip occurs, record defect_detected. Else if >=10% of the 40 rules contain a material tie, record coarse_normalization_supported. Else record ratio_rounding_bounded. Record all counts either way; do not retune seeds or thresholds.",
+ "consumer": "rule-only generic prices and cross-game ratios: whether normalized board values can be used as ratio evidence at the observed resolution, or whether raw capability scores must accompany them.",
+ "nonclaims": [
+  "no search strength or game-outcome claim",
+  "no human or external price fit",
+  "single generator family and one fixed seed block"
+ ]
+}
