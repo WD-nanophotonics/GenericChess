@@ -806,10 +806,54 @@ promotion source". Those per-seed counts are a re-read of the same published
 Stage 16 rows, with the mechanism checked in the two source files named above;
 nothing was re-run.
 
+### Why the promotion term cannot be rotation-invariant in this family (Stage 17, source read only)
+
+The first bullet under UNKNOWN asked whether promotable types outside
+`classic_like` also lack backward atoms. In this generator that question has no
+empirical content. `generic_chess/generation/piece_generator.py:63-65` defines
+`derive_is_promotable` as "at least one forward atom and no backward atom", and
+`generate_ordinary_types` stores exactly that value on every ordinary type
+(`piece_generator.py:175`). `generator.py:55-56` only adds the `classic_like`
+requirement that type `P` must satisfy it; it opens no second route to
+promotability. Promotion eligibility is then built only for types carrying that
+flag (`generator.py:58-60`, `generator.py:71-77`), and the evaluator's gain is
+zero for every other type (`ai/evaluation/profile.py:147-153`).
+
+Discarded probe. Over the same 36 board-4 seeds under the three presets, none of
+the 115 paid (gain > 0) type instances has a backward atom (0/42, 0/34, 0/39).
+That follows from composing the two definitions above. It is a tautology of the
+generator, not evidence about play, search or design intent, and the
+paid-versus-unpaid contrast (115 versus 317 instances) is not used anywhere in
+this report.
+
+Retained, and it changes how Stage 4 must be read. The A3 transform rotates atom
+offsets but keeps each type's `is_promotable` flag and maps `promotion_allowed`
+through the rotation (private `scan_profile_transform_a3.py:80-112`). Replaying
+that transform over the same 80 rules, all 140 promotable type instances lose
+every forward atom after rotation, so the generator's own predicate would call
+the rotated type non-promotable (140/140), and the forward-mobility zone derived
+from the rotated atoms covers the whole board (140/140). The rotated rule is
+therefore not a member of the family `generate_game` can emit. The 24/24 in-zone
+promotion difference is a genuine property of the evaluator on that constructed
+object, but it is forced by the transform's choice to preserve eligibility while
+reversing direction; it is not an independent measurement of evaluator
+sensitivity.
+
+What still stands from Stage 2 is unaffected: rotating every atom preserves the
+move sets, so the 2,327-action bijection and the 440/440 exact value agreement
+for the movement terms remain as published. The scoped statement is that the
+profile is invariant to 180-degree rotation in the terms that do not reference
+forward direction, and that promotion potential cannot be, in this family,
+because "promotable" is defined by that direction. A future equivariance study
+would need either to re-derive promotability per owner after rotation — a
+different transform and a different question — or to exclude the promotion term
+explicitly.
+
 ## UNKNOWN
 
-* whether generated rule families outside `classic_like` also lack backward
-  atoms on promotable types, or whether that is specific to this preset;
+* ~~whether generated rule families outside `classic_like` also lack backward
+  atoms on promotable types~~ — closed structurally in Stage 17 above: the
+  absence is a definition, so nothing about a preset can be inferred from it;
 * whether reachable positions in real games put promotable pieces in the zone
   often enough for the term to matter — partially answered for the stored
   board-4 games (Stage 7: 30.8% of promotable observations are in zone;

@@ -4763,3 +4763,23 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   "in most of this panel the zone is not a promotion square", not "the zone can
   never hold one". Nothing was re-run for it; the counts come from the published
   Stage 16 rows.
+
+### DEEPSEEK_AUX stage 17: two promotion questions are answered by definition,
+  not by measurement (2026-10-18, session `3d8dc073`).** A probe over the same
+  36 board-4 seeds under all three presets found that none of the 115 paid
+  (gain > 0) type instances carries a backward atom (0/42, 0/34, 0/39). It was
+  discarded as a tautology: `derive_is_promotable` is "forward atom present and
+  no backward atom" (`piece_generator.py:63-65`, stored at line 175),
+  `generator.py:55-56` only forces `P` in `classic_like` rather than opening a
+  second route, eligibility is built only for flagged types
+  (`generator.py:58-60`, `71-77`), and the evaluator's gain is zero otherwise
+  (`ai/evaluation/profile.py:147-153`). The same read changes how Stage 4 must be
+  interpreted: the A3 transform rotates atoms but keeps each `is_promotable`
+  flag and maps `promotion_allowed` (`scan_profile_transform_a3.py:80-112`), so
+  over the same 80 rules all 140 promotable type instances lose every forward
+  atom (140/140), the generator's own predicate would call them non-promotable
+  (140/140), and the derived zone becomes the whole board (140/140). The rotated
+  rule is outside the generated family; the 24/24 in-zone promotion difference
+  is forced by that construction, while the 2,327-action bijection and the
+  440/440 movement-term agreement are unaffected. No evaluator call, no search,
+  no score recomputation, no frozen run touched.

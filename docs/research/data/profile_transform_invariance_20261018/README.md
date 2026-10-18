@@ -422,6 +422,20 @@ supplies 9 of them.
 
 ## UNKNOWN and limits
 
+The open question "do promotable types outside `classic_like` also lack backward
+atoms" is closed as structural, not measured: the generator defines
+promotability as "has a forward atom and no backward atom"
+(`generic_chess/generation/piece_generator.py:63-65`, stored at line 175), so no
+preset can differ on it. For the same reason the A3 transform, which rotates
+atoms while keeping the `is_promotable` flags and mapping `promotion_allowed`,
+produces a rule the generator cannot emit: all 140 promotable type instances
+over the 80 rules lose every forward atom under rotation and their derived zone
+becomes the whole board (140/140). The 24/24 in-zone promotion difference is
+therefore forced by the transform rather than an independent sensitivity
+measurement, while the 2,327-action bijection and the 440/440 movement-term
+agreement stand. Full argument in Stage 17 of
+`docs/research/PROFILE_TRANSFORM_INVARIANCE_20261018.md`.
+
 One generator family (`classic_like`), square boards 6 and 8, 40 measurement
 seeds plus two 12-seed check sets, `hand_weight = 0.9`, one relocated piece per
 case. The rotated states are constructed for measurement and are not shown to
