@@ -1,0 +1,29 @@
+{
+ "agent_id": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:44:00Z",
+ "status": "pre-registered, not run",
+ "relation_to_prior_plans": {
+  "a4_result": "promotion_term_breaks_rotation_equivariance: 24 of 24 in-zone placements differ under the promotion-only configuration, 12 rules, max |delta| = 3, material and mobility+anchor terms zero everywhere",
+  "observed_structure": "in every one of the 152 rule-owner records the A3-rotated rule's promotion zone is the whole board (36 squares at n=6, 64 at n=8), while the original zone is a 1-3 row band (6/8/12/16/18/24 squares)",
+  "post_hoc_label": "A5 is written after A4 and only explains the structure A4 measured; it does not change A4's decision"
+ },
+ "question": "Is the whole-board degeneration of the A3-rotated promotion zone a deterministic consequence of the generator's movement-atom direction span, rather than an artifact of the transform?",
+ "derivation": {
+  "rule": "empty_forward_mobility[base][owner] at square s is the subset of empty-board atom targets whose rank advances for that owner, with is_forward using absolute rank (owner 0: rank increases, owner 1: rank decreases) and with the owner-1 atom offsets negated by the compiler",
+  "prediction_zone_band": "the original owner-0 zone is the top band of ranks r with r + max_forward_dr <= n-1, so its row count equals min(n, max(0, max_forward_dr)); owner 1 is the mirrored bottom band",
+  "prediction_rotated_full": "after A3 every atom's dr is negated, so the rotated zone is the whole board exactly when max_forward_dr <= 0",
+  "max_forward_dr": "maximum over the base type's atoms of dr for a leap and of dr * max_steps for a ray"
+ },
+ "method": "for every (rule, owner, promotable base type with positive gain) record used by A4: compute max_forward_dr from the original rule's atoms, measure the original zone row count and the rotated zone size, and compare both against the prediction",
+ "pre_written_decision": {
+  "zone_geometry_is_explained_by_atom_span": "every record matches both predictions exactly",
+  "zone_geometry_only_partially_explained": "some records match one prediction but not the other; list them",
+  "zone_geometry_is_not_explained_by_atom_span": "the band prediction fails on records where the zone is nonempty, so the mechanism explanation in the report must be withdrawn to the observed facts only"
+ },
+ "inputs": "the same 80 rulesets and their A3 rotations; zero search, zero evaluation of positions, zero new seeds",
+ "cost_estimate": "under 2 minutes",
+ "consumer": "the mechanism paragraph of the profile-transform report: it decides whether the report may say the rotation degenerates the promotion zone for a stated structural reason",
+ "nonduplication_check": "no search, no PRIMARY roots, no AUX92/93, no frozen fitness, no hand-policy fixture",
+ "limitations": "one generator family, square boards 6 and 8; explains the zone geometry only, not any evaluation value, strength or outcome"
+}

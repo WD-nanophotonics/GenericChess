@@ -4312,3 +4312,83 @@ reference is post-hoc. No strength, utility, strategic-equivalence,
 human-price or game-outcome claim. Delivery: PROFILE_TIE_SIMILARITY_20261018.md
 with a nine-file public evidence copy, study commit 60a7ce0f, 68/68
 consistency checks and byte-identical analyzer/post-hoc re-runs.
+
+
+## DEEPSEEK_AUX 2026-10-18 — rotation isomorphism, profile invariance and the promotion term
+
+DEEPSEEK_AUX ran its own pre-registered nonduplicate question (plan SHA
+9892ac75, 80 stored rules from seeds 292001–292040, boards 6 and 8,
+`classic_like`, `hand_weight = 0.9`, no search, no game, no fitness, no new
+rule family) and then followed the failures. It did not touch PRIMARY's
+411001–411008 panel, AUX92/93, frozen fitness or the closed hand-policy
+fixture.
+
+Result chain, each stage labelled with its real status:
+
+* **Type relabel (pre-registered, control): exact.** 440/440 type comparisons
+  raw-equal, delta 0.0, no drop-term change.
+* **Atoms-only rotation (pre-registered): `inconclusive`, honestly left
+  unrepaired.** 73/80 compiled and matched 403/403 exactly, but 7 rules refused
+  to compile with `INITIAL_NO_LEGAL_MOVE` because rotating atoms without the
+  initial position and mobility masks leaves pieces facing the wrong way.
+  Reporting "invariant on 73/80" would have been a selection claim.
+* **Full rotation (post-hoc, written after A1 failed): a genuine rule
+  isomorphism that the profile survives.** 80/80 compile, 2,327-action one-ply
+  bijection, 440/440 raw-exact, all 80 fingerprints changed. The mobility zone
+  is nevertheless non-invariant in 280/280 entries because `is_forward` reads
+  absolute rank, so the invariance is a property of the aggregation, not of the
+  geometry.
+* **First evaluator probe: a null recorded as uninformative, not as evidence.**
+  All differences were zero, but 1,116 promotable pieces on those 80 initial
+  boards are all outside and one step away from their zones, so the only
+  orientation-dependent term was inert.
+* **Zone states (pre-registered): `promotion_term_breaks_rotation_equivariance`.**
+  24/24 in-zone cases differ, 0/324 near/far, material and mobility+anchor zero
+  everywhere, 4 unsupported records kept as unsupported. The rotated zone is
+  the whole board, so the term becomes a constant; 12/12 affected rules have
+  balanced counts and 12/12 terms cancel.
+* **Mechanism (pre-registered A5 failed, then corrected post-hoc).** The
+  atom-span predictor matched 51/226 and 113/226. Two instrument defects are
+  recorded (every `RayAtom.max_steps` is `None`; the rotated predictor had been
+  coded on the original span). The corrected model — band width is the
+  *smallest* positive rank advance and the rotated zone is the whole board iff
+  no atom has `dr < 0` — matches 226/226, and predicted 80/80 band and 80/80
+  rotated-whole-board records on 12 seeds never used before (292041–292052).
+* **Fresh-seed consequence check (post-hoc, third seed set 292101–292112).**
+  The A4 measurement reproduces (14/14 in-zone differ, 0/134 near/far), the
+  predicted link holds 14/14, and the measured difference equals the change in
+  the independently summed promotion term 14/14. `±6` appears beside `±3`
+  because one type has `unit = 2`, so the earlier "only {-3,0,+3}" phrasing is
+  seed-specific and `weight * unit` is the mechanism. The first run of this
+  check applied the equivalence to all case kinds and reported 134 spurious
+  mismatches; that output is kept as an instrument-error record and no measured
+  number changed.
+* **Source observation, no repair proposed.** `Evaluator._promotion_bonus`
+  tests `Square` objects against a frozenset of integer indices, so the
+  half-bonus branch cannot fire as coded (0 hits versus 4,256 if the same
+  squares were compared as indices, in all 226 records).
+* **Whole-module follow-up (`audit_leaf_terms.py`, endpoint written before the
+  run).** `evaluator.py` holds exactly six `in`/`not in` comparisons, listed
+  from the AST: only line 112 is type-impossible, the other five are
+  type-consistent and the promotion-gain key lookup hits 140/140 promotable
+  records. So the served leaf score decomposes into material + hand + in-zone
+  promotion bonus + dynamic mobility + anchor escape. The anchor-capture
+  penalty is live: in 400 of 4,881 constructed states the anchor lay in the
+  opponent attack map, and all 400 served deltas equalled
+  `weight * ((esc0 - esc1) - 10*attacked0 + 10*attacked1)`. The two scripts
+  agree at different granularity (0 target hits as coded, 6,164 target pairs
+  converted, 4,256 squares that would then receive the half bonus).
+
+Consumer consequence for this family: static per-type values may be
+de-duplicated across a 180-degree rotation, but a rule and its rotation are not
+the same searched problem whenever the promotion term is active. No strength,
+playing-quality, utility, human-price or game-outcome claim; the rotated states
+are constructed for measurement and the legality check is one ply.
+
+Coordination: PRIMARY's Slack thread was read as context, its complete-state and
+measured-cost cautions adopted, and the suggested complete-D2 / mapped-table
+diagnostic explicitly deferred to PRIMARY. The earlier Dot question about the
+hand_weight=0 judge was answered from stored files only. Delivery:
+PROFILE_TRANSFORM_INVARIANCE_20261018.md plus a sanitized 32-file evidence copy
+whose rebuild from the private originals reproduces the published bytes 33/33;
+149 focused product tests pass.

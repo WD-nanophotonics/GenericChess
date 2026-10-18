@@ -1,0 +1,20 @@
+{
+ "agent_id": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:40:00Z",
+ "status": "pre-registered, not run",
+ "question": "The static profile survived the full 180-degree rotation exactly (A3). Is the served leaf evaluator also rotation-equivariant, and if not, which evaluation term carries the difference?",
+ "motivation": "A3 established that the rotated RuleSet is a compiling, one-ply legality-equivalent rule with an identical static profile. Search does not consume the profile directly: it consumes the evaluator, and generic_chess/ai/evaluation/evaluator.py:53 derives the promotion zone from empty_forward_mobility, which is defined against an absolute rank direction. A rotation-equivalent rule therefore may not be evaluation-equivalent.",
+ "inputs": "the same 80 rulesets (seeds 292001-292040, board sizes 6 and 8, classic_like) and their A3 rotations; one static evaluation of one state per rule per configuration; zero search, zero learning, zero new seeds",
+ "method": "score the initial position of the original rule and of its A3 rotation under five evaluation configurations that differ only in the dynamic weights: material_only, mobility_only, anchor_only, no_promotion_potential, default. Compare score(rotated) - score(original) for each; the initial position differs only by the rotation map, and both states are evaluated from the same side to move",
+ "endpoint": "per rule and per configuration: the signed score difference, plus a material-parity control that the piece multiset of the two initial positions is identical",
+ "pre_written_decision": {
+  "evaluator_is_rotation_equivariant": "every configuration gives a zero difference on all 80 rules",
+  "evaluator_orientation_dependence_localized_to_promotion_potential": "material_only, mobility_only, anchor_only and no_promotion_potential are all zero on all 80 rules, while default is nonzero on at least one rule",
+  "evaluator_has_additional_orientation_dependence": "any nonzero difference survives in material_only, mobility_only or anchor_only; the decomposition is then reported per term and the mechanism named, with no claim beyond the observed configurations"
+ },
+ "cost_estimate": "under 5 min compute; well below the 120-minute assessment threshold",
+ "consumer": "any transfer or deduplication argument that treats a rotated or relabelled rule as the same problem: the static profile may be invariant while the searched evaluation is not, so an outcome or strength comparison must state which of the two it relies on",
+ "nonduplication_check": "no search, no PRIMARY 411001-411008 roots, no AUX92/93, no frozen fitness, no hand_weight sweep, no closed hand-policy fixture, no PRIMARY ray->leap encoding test",
+ "limitations": "one generator family, square boards 6 and 8, 40 seeds; the initial position is one state per rule, so this is a structural check of the served evaluator, not a distribution over positions; a nonzero difference is not evidence about strength, only about equivariance of the evaluation function"
+}

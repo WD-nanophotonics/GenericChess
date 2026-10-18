@@ -1,0 +1,58 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "checked_results": "results_profile_transform_a3.json",
+ "checked_sha256": "c10e556179ea00c0f1291e75970aa1814b0dfcd8271ec9e79f7f1a070d45a6ad",
+ "claim_matches_stored_json": true,
+ "mismatches": {},
+ "recomputed": {
+  "rules_total": 80,
+  "rules_supported": 80,
+  "rules_unsupported": 0,
+  "violation_count": 0,
+  "signature_failure_count": 0,
+  "bijection_rules_passed": 80,
+  "actions_checked": 2327,
+  "types_compared": 440,
+  "raw_exact_matches": 440,
+  "median_mismatch_rules": 0
+ },
+ "verdict_decision": "rotation_is_a_rule_isomorphism_and_profile_invariant",
+ "forward_zone_relation": {
+  "promotable_type_instances": 140,
+  "sigma_zone_owner0_equals_zone_owner1": 140,
+  "counterexamples": 0,
+  "distinct_size_triples": [
+   [
+    6,
+    6,
+    6
+   ],
+   [
+    6,
+    12,
+    12
+   ],
+   [
+    6,
+    18,
+    18
+   ],
+   [
+    8,
+    8,
+    8
+   ],
+   [
+    8,
+    16,
+    16
+   ],
+   [
+    8,
+    24,
+    24
+   ]
+  ],
+  "reading": "the evaluator forward convention is player-relative and absolute-rank based: under 180-degree board rotation the promoted-zone set of owner 0 maps exactly onto the zone of owner 1, never onto itself"
+ }
+}

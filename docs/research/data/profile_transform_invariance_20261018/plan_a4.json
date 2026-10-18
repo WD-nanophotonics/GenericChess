@@ -1,0 +1,66 @@
+{
+ "agent_id": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:47:00Z",
+ "status": "pre-registered, not run",
+ "relation_to_prior_plans": {
+  "prior_plan_sha256_prefix": {
+   "9892ac75": "transform A1 (atoms only) - verdict inconclusive",
+   "A3 (plan_a3.json)": "full rotation - rotation_is_a_rule_isomorphism_and_profile_invariant",
+   "evaluator_equivariance (plan_evaluator_equivariance.json)": "evaluator_is_rotation_equivariant, 0 nonzero differences"
+  },
+  "why_another_follow_up": "The evaluator-equivalence scan evaluated only each rule's initial position. A feasibility probe run before writing this plan (recorded below) shows that at the initial position no promotable piece sits in or next to the promotion zone in either rule, so the promotion-potential term contributes exactly 0 on both sides. That null therefore does not test the one term that the source identifies as orientation dependent (evaluator.py:53,95-116).",
+  "post_hoc_label": "A4 is written after A3, after the evaluator null, and after the zone probe. It is post-hoc and is reported as such; it is not folded into the earlier pre-written decisions."
+ },
+ "feasibility_probe_recorded_before_this_run": {
+  "script": ".local_agent/profile-transform-invariance-20261018/_probe_zones.py",
+  "observation_seeds": [
+   292001,
+   292012
+  ],
+  "findings": [
+   "original rule, base type P: owner-0 promotion zone = rank n-1 only (6 of 36 squares at n=6), owner-1 zone = rank 0 only; the two owner zones are disjoint",
+   "A3-rotated rule, base type P: owner-0 and owner-1 promotion zones are BOTH the whole board (36 of 36), because every rotated atom has negative dr, so no target is 'forward' in either owner's absolute-rank sense",
+   "sigma(owner0 zone) != rotated owner0 zone in both probed rules",
+   "at the initial position of each rule no promotable piece is inside or forward-adjacent to its own zone, so the served promotion bonus is 0 for every piece and cancels out of the initial-position null"
+  ],
+  "interpretation_boundary": "these are two rules, inspected only to check that the planned test has reachable cases; no decision was taken from them"
+ },
+ "question": "When a promotable piece is actually placed inside / immediately forward of the promotion zone, does the served evaluator's promotion-potential term stay rotation-equivariant between the original rule and its A3 rotation?",
+ "method": {
+  "per_rule": "compile the original rule and its A3 rotation; for each owner with a promotable, non-promoted piece of the chosen base type on the initial board, read the zone Z_o = squares whose compiled empty_forward_mobility[base][o] is empty",
+  "placements": [
+   "in_zone: an empty square s in Z_o (own bonus weight*unit)",
+   "near_zone: an empty square s not in Z_o whose forward mobility meets Z_o (half bonus)",
+   "far: an empty square s not in Z_o with no forward target in Z_o (zero bonus, control)"
+  ],
+  "choice": "candidates are sorted by board index and the first candidate whose sigma image is also empty on the rotated initial board is used; when no such candidate exists the case is recorded as no_candidate, never substituted",
+  "states": "original state = initial board of the original rule with the owner-o piece moved from its initial square to s; rotated state = initial board of the A3 rule with the corresponding piece moved from sigma(initial square) to sigma(s); nothing else changes and the side to move is the initial side to move in both",
+  "correspondence_check": "the rotated board must hold the same owner and same base/current type at sigma(initial square); otherwise the case is recorded composition_mismatch and skipped",
+  "configurations": {
+   "material_only": "hand_weight 0.9, all dynamic weights 0",
+   "promotion_only": "hand_weight 0.9, promotion_potential_weight 3, mobility 0, anchor 0",
+   "no_promotion": "hand_weight 0.9, mobility 2, anchor 5, promotion 0",
+   "default": "hand_weight 0.9, mobility 2, anchor 5, promotion 3"
+  },
+  "scores": "score(rotated state under the rotated rule) - score(original state under the original rule), same side to move, per configuration",
+  "structural_record": "per rule and owner: |Z_o|, the rotated rule's |Z'_o|, whether sigma(Z_o) equals Z'_o, and the promotion unit and gain used"
+ },
+ "instrument_guard": "material_only delta must be 0 and the piece multiset must be identical in every case; a nonzero material delta marks that case instrument_unstable and it is excluded from the verdict and reported",
+ "pre_written_decision": {
+  "promotion_term_breaks_rotation_equivariance": "material_only is 0 everywhere, and at least one case has a nonzero promotion_only delta; report the count, sign pattern, magnitudes and the structural record that explains it",
+  "evaluator_is_rotation_equivariant_on_zone_states": "material_only, promotion_only, no_promotion and default are all 0 in every case on all 80 rules",
+  "evaluator_has_additional_orientation_dependence": "no_promotion (mobility+anchor) is nonzero in at least one case; then the terms are reported separately and no mechanism beyond the observed configurations is claimed",
+  "instrument_failure": "any instrument_unstable case is reported as such and never silently dropped; if every case is unstable the verdict is instrument_failure, not a scientific result"
+ },
+ "reading_boundary": {
+  "what_a_nonzero_delta_means": "the rotated rule is not the same search problem as the original even though its static profile is identical; the evaluation function, not the profile, carries the asymmetry",
+  "what_it_does_not_mean": "not a statement about strength, utility, outcome, or which side is better; the constructed states are not claimed to be reachable in play; no search is run",
+  "no_repair_proposed": "no change to evaluator.py or the compiler is proposed here; a defect claim would need its own decision premise"
+ },
+ "inputs": "the same 80 rulesets (seeds 292001-292040 at board sizes 6 and 8, classic_like, hand_weight 0.9) and their A3 rotations; zero search, zero new seeds, zero learning, zero position sampling",
+ "cost_estimate": "under 5 minutes of compute, far below the 120-minute assessment threshold",
+ "consumer": "any claim that a rotated, mirrored or relabelled generated rule is the same problem for search or for outcome comparison; and any deduplication rule that treats orientation as presentation detail",
+ "nonduplication_check": "no search, no PRIMARY 411001-411008 roots, no AUX92/93, no frozen fitness, no hand_weight sweep, no closed hand-policy fixture, no PRIMARY ray->leap encoding test",
+ "limitations": "one generator family, square boards 6 and 8, 40 seeds, one relocation per case, states not claimed reachable; the rotation is a 180-degree point reflection only; a nonzero delta is a structural statement about five evaluation configurations, not a distribution over positions"
+}

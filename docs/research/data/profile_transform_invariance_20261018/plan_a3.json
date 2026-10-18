@@ -1,0 +1,35 @@
+{
+ "agent_id": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:52:00Z",
+ "status": "pre-registered, not run",
+ "relation_to_prior_plan": {
+  "prior_plan_sha256_prefix": "9892ac75",
+  "prior_decision": "inconclusive",
+  "trigger": "The prior plan's own feasibility gate fired: 7 of 80 transformed rulesets were rejected by the compiler with INITIAL_NO_LEGAL_MOVE, because transform A1 rotates movement atoms while leaving the generator's initial position and per-owner masks fixed. The prior plan forbade substituting a claimed transform for an unsupported one, so those 7 were recorded unsupported rather than fabricated.",
+  "post_hoc_label": "This follow-up was written AFTER seeing that result. It is a post-hoc follow-up, not part of the prior pre-written decision, and is reported in a separate section with that label."
+ },
+ "question": "If the whole rule geometry is rotated by one board automorphism (not only the movement atoms), is the rotated RuleSet a compiling, legality-equivalent rule, and is the served static profile still exactly equal?",
+ "transform_A3_full_rotation": {
+  "square_map": "sigma(f, r) = (n-1-f, n-1-r) on a square n x n board",
+  "movement_atoms": "LeapAtom.offset and RayAtom.direction negated via coordinates.rotate_offset (180-degree relative rotation); max_steps unchanged",
+  "initial_position": "rows reversed and row order reversed (row-major list reversed), then pieces unchanged",
+  "drop_allowed": "each per-owner flat mask reversed (index i -> n*n-1-i)",
+  "promotion_allowed": "every (from, to) square pair mapped through sigma",
+  "promotion_forced": "every square mapped through sigma",
+  "unchanged": "type ids, names, anchor/promotable flags, promotion_target_ids, repetition/max_ply/stalemate policy, metadata",
+  "not_attempted": "any field whose spatial meaning cannot be established from the schema is recorded unsupported rather than guessed"
+ },
+ "inputs": "the same 40 deterministic seeds 292001-292040 at board sizes 6 and 8, classic_like, hand_weight 0.9; zero search, zero new seeds, zero learning",
+ "endpoint": "per rule: (i) does A3 compile; (ii) one-ply legal-action bijection at the initial position - equal action count and every action maps under sigma to a legal action of the rotated rule; (iii) exact equality of normalized_board_value, normalized_hand_value, promotion_option_value and median_non_anchor_value under the identity type-id map",
+ "pre_written_decision": "80/80 compile and 80/80 one-ply bijection and 0 value mismatches => rotation_is_a_rule_isomorphism_and_profile_invariant; any compile failure => that rule unsupported with the exact error, never fabricated; any bijection failure => transform_not_a_rule_isomorphism (report the mechanism); bijection holds but a value differs => profile_not_a_function_of_rule_structure",
+ "mechanism_check": {
+  "question": "Does the served leaf evaluator share the profile's rotation invariance?",
+  "method": "for each ruleset and owner, take the evaluator's promotion zone - the set of squares with empty empty_forward_mobility - and check whether it is invariant under sigma; no evaluation of positions, no search",
+  "pre_written_reading": "a non-invariant zone proves the served evaluator carries an absolute-rank forward dependence that the static profile does not have; this is a structural statement only, not a strength claim"
+ },
+ "cost_estimate": "under 10 min compute, well below the 120-minute assessment threshold",
+ "consumer": "cross-rule static-value comparison and rule deduplication: tells whether orientation/labels can be treated as presentation detail for the profile, and separately whether the served evaluator may be treated the same way",
+ "nonduplication_check": "not the PRIMARY ray->leap re-encoding test, not PRIMARY 411001-411008, not AUX92/93, not the closed hand-policy fixture, no frozen fitness",
+ "limitations": "one generator family (classic_like), square boards 6 and 8, 40 seeds; the one-ply bijection is a bounded legality check and is not a claim of full game-tree equivalence; rotation invariance is undefined on rectangular boards here; no strength, utility or outcome claim"
+}

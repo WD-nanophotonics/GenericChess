@@ -1,0 +1,6138 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "generated_at_utc": "2026-10-18T13:46:20Z",
+ "plan_sha256": "140b7d0538fa5a7ee54159a9d4328a11b2c01659e70b103616c86d45ff460c4a",
+ "a3_plan_sha256": "c10e556179ea00c0f1291e75970aa1814b0dfcd8271ec9e79f7f1a070d45a6ad",
+ "a3_results_sha256": "ed08a6a5ec899ff7de0ae4075c8ad75651e813530391f9824fb9a65dfa3a5582",
+ "source_sha256": {
+  "generic_chess/ai/evaluation/config.py": "319939334267c117c9048123081cb8f464c66a93a66bb303544bc3315293a7db",
+  "generic_chess/ai/evaluation/profile.py": "5caba8ea9de8706e7c039f31cf0d59ce30341b24135e9f6ef6aa74e356212710",
+  "generic_chess/ai/evaluation/analyzer.py": "ed8d7b0046a568253601b818ae1b030d1b3c4b8c26229e7dd5037ede29013683",
+  "generic_chess/ai/evaluation/mobility.py": "828a4f1a9fa93a48955e98042dd976d69f4305a45fe87e86455b22a1b16c8d83",
+  "generic_chess/ai/evaluation/movement_graph.py": "254fb838e0fd58de2e71d0a2c39154a2773d9b962eaaa5b0aeafe970896f287b",
+  "generic_chess/core/coordinates.py": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9",
+  "generic_chess/core/movement.py": "b9c922b13d584adf76eb7f9af056747ea01789e49ab1b6015491727318cf64a8",
+  "generic_chess/generation/generator.py": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70",
+  "generic_chess/generation/drop_derivation.py": "e95b892b04c35d27b125324bbb62816ac24bf25e583c2c7a87b431f14253b486",
+  "generic_chess/generation/promotion_derivation.py": "9b78542912c8231e543879ce34bc44d13e69881a5e0ea26377d0f4f4350a0d2e",
+  "generic_chess/ai/evaluation/evaluator.py": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf",
+  "generic_chess/core/position.py": "552a447c2fede326c6b5f309b0f50f0bd19b4d580cedef8aff835b73c34dd2b6",
+  "generic_chess/core/transition.py": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682"
+ },
+ "git_head": "e6d36be6288dc38f927d9913347a4adb5c438982",
+ "design": {
+  "seeds": [
+   292101,
+   292102,
+   292103,
+   292104,
+   292105,
+   292106,
+   292107,
+   292108,
+   292109,
+   292110,
+   292111,
+   292112
+  ],
+  "board_sizes": [
+   6,
+   8
+  ],
+  "setup_preset": "classic_like",
+  "profile_hand_weight": 0.9,
+  "search": false,
+  "placements_per_owner": [
+   "in_zone",
+   "near_zone",
+   "far"
+  ],
+  "configurations": {
+   "material_only": {
+    "dynamic_mobility_weight": 0,
+    "anchor_escape_weight": 0,
+    "promotion_potential_weight": 0
+   },
+   "promotion_only": {
+    "dynamic_mobility_weight": 0,
+    "anchor_escape_weight": 0,
+    "promotion_potential_weight": 3
+   },
+   "no_promotion": {
+    "dynamic_mobility_weight": 2,
+    "anchor_escape_weight": 5,
+    "promotion_potential_weight": 0
+   },
+   "default": {
+    "dynamic_mobility_weight": 2,
+    "anchor_escape_weight": 5,
+    "promotion_potential_weight": 3
+   }
+  },
+  "endpoint": "score(rotated relocated state under the rotated rule) - score(original relocated state under the original rule), same side to move, per configuration",
+  "decision_rule": "see plan_a4.json; promotion_only isolates the promotion-potential term because every other dynamic weight is 0 there"
+ },
+ "verdict": {
+  "decision": "promotion_term_breaks_rotation_equivariance",
+  "rules_total": 24,
+  "cases_usable": 148,
+  "cases_instrument_unstable": 0,
+  "cases_no_candidate": 128,
+  "cases_by_kind": {
+   "in_zone": {
+    "cases": 14,
+    "promotion_nonzero": 14
+   },
+   "near_zone": {
+    "cases": 82,
+    "promotion_nonzero": 0
+   },
+   "far": {
+    "cases": 52,
+    "promotion_nonzero": 0
+   }
+  },
+  "cases_by_owner": {
+   "0": {
+    "cases": 74,
+    "promotion_nonzero": 7
+   },
+   "1": {
+    "cases": 74,
+    "promotion_nonzero": 7
+   }
+  },
+  "rules_with_promotion_difference": 5,
+  "rules_with_promotion_difference_sample": [
+   [
+    292107,
+    6
+   ],
+   [
+    292107,
+    8
+   ],
+   [
+    292108,
+    8
+   ],
+   [
+    292110,
+    6
+   ],
+   [
+    292110,
+    8
+   ]
+  ],
+  "nonzero_by_configuration": {
+   "material_only": {
+    "cases": 0,
+    "sample": []
+   },
+   "promotion_only": {
+    "cases": 14,
+    "sample": [
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "A",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "A",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292110,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292110,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292107,
+      "board_size": 8,
+      "base_type": "A",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 8,
+      "base_type": "A",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     }
+    ]
+   },
+   "no_promotion": {
+    "cases": 0,
+    "sample": []
+   },
+   "default": {
+    "cases": 14,
+    "sample": [
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "A",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "A",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292110,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292110,
+      "board_size": 6,
+      "base_type": "P",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     },
+     {
+      "seed": 292107,
+      "board_size": 8,
+      "base_type": "A",
+      "owner": 0,
+      "kind": "in_zone",
+      "difference": -3
+     },
+     {
+      "seed": 292107,
+      "board_size": 8,
+      "base_type": "A",
+      "owner": 1,
+      "kind": "in_zone",
+      "difference": 3
+     }
+    ]
+   }
+  },
+  "distinct_promotion_differences": [
+   -6,
+   -3,
+   0,
+   3,
+   6
+  ],
+  "structural_summary": {
+   "records": 44,
+   "sigma_zone_equals_rotated_zone": 0,
+   "zone_is_invariant_under_sigma": 0,
+   "original_zone_sizes": [
+    6,
+    8,
+    12,
+    16,
+    18,
+    24
+   ],
+   "rotated_zone_sizes": [
+    36,
+    64
+   ]
+  },
+  "unsupported": [
+   {
+    "seed": 292104,
+    "board_size": 6,
+    "reason": "no_promotable_type_with_positive_gain_on_board"
+   },
+   {
+    "seed": 292104,
+    "board_size": 8,
+    "reason": "no_promotable_type_with_positive_gain_on_board"
+   }
+  ]
+ },
+ "rules": [
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "ruleset_fingerprint": "eeef458d7e6c28fab0de0a20fc77c3880f8c80d53536394a9cbb657bf62e794b",
+   "rotated_fingerprint": "e247d0db0afbcda79cf9fdc82ccff806ad176deb524b70e8b4c5c1a4eeb948d7",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 936,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 936,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 14,
+     "rotated_square": 21,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "ruleset_fingerprint": "bea3455e1276ada80904c79823cc6c7ac5aa9dc9294f5478673e1b283289bada",
+   "rotated_fingerprint": "fb96cd2d252a7d012cf96041570a02bcd279f7a92f0294a9920e5dd6d7cbc4f9",
+   "promotable_types_with_gain": [
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 2269,
+     "unit": 2,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 2269,
+     "unit": 2,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "ruleset_fingerprint": "2d13f290ada4b22956b84b7133c5c3dc2051159e983f62420e7c716536c0e30f",
+   "rotated_fingerprint": "02c33eb82a1da577303f4aeec17eb9bea2025f925eab853e01875604093f3f12",
+   "promotable_types_with_gain": [
+    "B",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 1887,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 1887,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292104,
+   "board_size": 6,
+   "ruleset_fingerprint": "0904584577245e9709621292434e8448fddda6dec3daf42172eca27c4ab353e8",
+   "rotated_fingerprint": "14f4791c5cbf42ed4f67c009e1404824f8bb4607bcc2d211a66c42009111a76b",
+   "promotable_types_with_gain": [],
+   "structural": {},
+   "cases": [],
+   "unsupported": [
+    {
+     "reason": "no_promotable_type_with_positive_gain_on_board"
+    }
+   ]
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "ruleset_fingerprint": "b0f87061a9c4e89a64e8889c9f59caf36cc99a4389bf8247a26c7a45cc3c4b0c",
+   "rotated_fingerprint": "9856e56e8673aa5cd412ddf8dcce0793adff2472cb8e40d1009b976d7cde37ac",
+   "promotable_types_with_gain": [
+    "A",
+    "B",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 1583,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 1583,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 14,
+     "rotated_square": 21,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 9,
+      "default": 9
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 9,
+      "default": 9
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "ruleset_fingerprint": "12b0b7e43029bb39e3d7b189673cb269ff0fa65817a931c70f464f9f9362cb66",
+   "rotated_fingerprint": "1f520c187c8aa12e5468c8bf0b8b4f3c01bb660ac26510ae36411252c5e92f0b",
+   "promotable_types_with_gain": [
+    "A",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 2356,
+     "unit": 2,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 2356,
+     "unit": 2,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "ruleset_fingerprint": "54cafe4d3926095a47ee35791733163245f234134cfe786bf9b247e3ef1cf309",
+   "rotated_fingerprint": "48abc7a5c4983a6c7d9cabd88512edd0da34a5ba47d8fa4c20b8605a78774296",
+   "promotable_types_with_gain": [
+    "A",
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 767,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 767,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": -2,
+      "default": 1
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 2,
+      "default": -1
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -3,
+      "default": -3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -3,
+      "default": -3
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "ruleset_fingerprint": "820fc3b45f4aec8dc46cfce3ec49242e642af3e972f1b1a490c55b63806fa45e",
+   "rotated_fingerprint": "f6062998737971b5153b3c02bf43261af259a9c06d95bb88b1397ea11a489485",
+   "promotable_types_with_gain": [
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 1731,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 1731,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 14,
+     "rotated_square": 21,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "ruleset_fingerprint": "c50678dc35afaab67ea72ed72314b62153bd797631f8a06d415dd16dd502be8a",
+   "rotated_fingerprint": "7be7f46d81fae2f22ff01ca950e628171dd55b18032846d79e9ca75c3940c8b1",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 1510,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 1510,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "ruleset_fingerprint": "1a736a97fc46fc3c9c086bc2b16e322595764fb2c41635eca892b1fb864e61ee",
+   "rotated_fingerprint": "770adaddb1dd82ab48010d4bc15d1dab0d665ca0f7ab29f03b7b78440d534862",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 521,
+     "unit": 1,
+     "zone_squares": 18,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 521,
+     "unit": 1,
+     "zone_squares": 18,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 2,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": -2,
+      "default": -5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 18,
+     "rotated_square": 17,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "ruleset_fingerprint": "9baaeeba12d272d594335eb638628653213aa54a3a980c62f9a8407f08cd2dd2",
+   "rotated_fingerprint": "cbed2ca4200cec4fa10ebde6dca7599176b4f18fca7f27ad259a4dcf53500a39",
+   "promotable_types_with_gain": [
+    "A",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 721,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 721,
+     "unit": 1,
+     "zone_squares": 12,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "ruleset_fingerprint": "c4270a89817618fa5dac452adf7174e518e970840cf831de8e198207bafc7fb8",
+   "rotated_fingerprint": "71f27b1daabf8957bd68f604b263d38ad582c13e6d10de0116c96a516d128fb2",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 548,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 548,
+     "unit": 1,
+     "zone_squares": 6,
+     "rotated_zone_squares": 36,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 12,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "ruleset_fingerprint": "3e2acd9dad2546f34d027a2d1bff53dbadfd20d43a1a5dc247bce00b281e52fe",
+   "rotated_fingerprint": "c4e9b58858fcdecd2e650eada4d0b7ed84b2518c34ce3f4f8a16bf04b85aed79",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 874,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 874,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 26,
+     "rotated_square": 37,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "ruleset_fingerprint": "ac31ab5defc5c2071b716c9d78fde84c4200643f80b432acc176abb145ffae23",
+   "rotated_fingerprint": "ec3f932954c5667238738eec3ad2d0b0ccaf36585bb6c500627630fe0c77b0a8",
+   "promotable_types_with_gain": [
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 2989,
+     "unit": 2,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 2989,
+     "unit": 2,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -5,
+      "default": -5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "ruleset_fingerprint": "602cda24f87e294196a402e7d44f48543712b3a4179fb1a1b6f3742ec135e091",
+   "rotated_fingerprint": "791dccbc12872defada958cc7999c346127cf7fc6bfc080edf059550a05b54fb",
+   "promotable_types_with_gain": [
+    "B",
+    "C",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 3562,
+     "unit": 3,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 3562,
+     "unit": 3,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292104,
+   "board_size": 8,
+   "ruleset_fingerprint": "39593865e90c5fc3a3c11653ebe1df0c9f4f8e5bd18b445550cc2500c80f92cb",
+   "rotated_fingerprint": "30153a75c6ccb0851a281ac37bfd800fada18d9c0c32593a6e9ff735668036e9",
+   "promotable_types_with_gain": [],
+   "structural": {},
+   "cases": [],
+   "unsupported": [
+    {
+     "reason": "no_promotable_type_with_positive_gain_on_board"
+    }
+   ]
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "ruleset_fingerprint": "dc9539829a9f63a2638640e51be4299641e439e1ee99e66d17bbd222922b6dea",
+   "rotated_fingerprint": "840a91892d6e44275e9dd54c25d3243962ad472c2b5506d2a44213e00fc351fa",
+   "promotable_types_with_gain": [
+    "A",
+    "B",
+    "C",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 1180,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 1180,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 26,
+     "rotated_square": 37,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 18,
+      "default": 18
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 18,
+      "default": 18
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 19,
+     "rotated_square": 44,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 20,
+      "default": 20
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 20,
+      "default": 20
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -14,
+      "default": -14
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -14,
+      "default": -14
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 43,
+     "rotated_square": 20,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -18,
+      "default": -18
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -18,
+      "default": -18
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 19,
+      "default": 19
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 19,
+      "default": 19
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -14,
+      "default": -14
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -14,
+      "default": -14
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 26,
+     "rotated_square": 37,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "ruleset_fingerprint": "5a582b4ffaf24325c495177d5f8ee7fdb187e4ebfafd4d41f9596afb41f3e4be",
+   "rotated_fingerprint": "aa5687033bfc0b758667cfe627c73317b670b0cf9c98fe938d961c80da7ee572",
+   "promotable_types_with_gain": [
+    "A",
+    "C",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 3751,
+     "unit": 3,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 3751,
+     "unit": 3,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "ruleset_fingerprint": "50d15cc5ae35a00904dee2b55a6164df26bc3f12332e6198b1fa7f89ed268d5b",
+   "rotated_fingerprint": "bfce4fc50872389ff19446a31f7290d1ddde231e988008bd6e05710cd47edb17",
+   "promotable_types_with_gain": [
+    "A",
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 896,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 896,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": -2,
+      "default": 1
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 2,
+      "default": -1
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "ruleset_fingerprint": "8d8e601eff1f0aa49aa177bed9477fa3bde9db1fc38990810682fbfc3cf02306",
+   "rotated_fingerprint": "dc4f233aca02dd888ca697bfcf0d18d7d5e5eb2b932c90c5a521f4920c4f1bae",
+   "promotable_types_with_gain": [
+    "C",
+    "P",
+    "X"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "X",
+     "gain": 2505,
+     "unit": 2,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "X",
+     "gain": 2505,
+     "unit": 2,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 6,
+      "no_promotion": 5,
+      "default": 11
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -6,
+      "no_promotion": 0,
+      "default": -6
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -6,
+      "no_promotion": 0,
+      "default": -6
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 6,
+      "no_promotion": 0,
+      "default": 6
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 9,
+      "default": 9
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 9,
+      "default": 9
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 7,
+      "default": 7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -7,
+      "default": -7
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 26,
+     "rotated_square": 37,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -11,
+      "default": -11
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -11,
+      "default": -11
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "ruleset_fingerprint": "2d5e1011f8e959e1c8f33020b8de4358c79897121bf882d94db16e162ffaaf76",
+   "rotated_fingerprint": "e02f0b2f99f376ee8ba070d7aaa0e592b4fbbec0c68d689b2af513d2ee2a9cbf",
+   "promotable_types_with_gain": [
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 1403,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 1403,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "ruleset_fingerprint": "efa06cf73135c332e276362984c7bbb9c3a4946da0153880ac67e3efcf73e5d9",
+   "rotated_fingerprint": "66c6ac3babfdb64d102e76030a470422f9d5756dfe6bf5667b1232828bc91c30",
+   "promotable_types_with_gain": [
+    "C",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 683,
+     "unit": 1,
+     "zone_squares": 24,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 683,
+     "unit": 1,
+     "zone_squares": 24,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 5,
+      "default": 5
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 3,
+      "default": 3
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 3,
+      "default": 3
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -54,
+      "default": -54
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 32,
+     "rotated_square": 31,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -4,
+      "default": -4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 2,
+      "default": 5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": 0,
+      "default": -3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": true,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": -3,
+      "no_promotion": -2,
+      "default": -5
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 3,
+      "no_promotion": 0,
+      "default": 3
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "ruleset_fingerprint": "a95c3f7696546b6917f5689118f419b1715ea78c94a0e0bb73eedf81f325d751",
+   "rotated_fingerprint": "6b5584ac8c49852d2d593fc431a792872f2ddfaafb0c456e8fd5e76a1a7ee981",
+   "promotable_types_with_gain": [
+    "A",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 899,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 899,
+     "unit": 1,
+     "zone_squares": 16,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 24,
+     "rotated_square": 39,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 4,
+      "default": 4
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 2,
+      "default": 2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -52,
+      "default": -52
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 40,
+     "rotated_square": 23,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -2,
+      "default": -2
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    }
+   ],
+   "unsupported": []
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "ruleset_fingerprint": "dcc7bb2700314e3e83171cce2cd4b548c9f37e743c70a0d4d9625b4a4daa2f93",
+   "rotated_fingerprint": "ddc9d3b2f4cf674e71d060f707e650bd65b0048a14adfe62dbaba9f65049ec64",
+   "promotable_types_with_gain": [
+    "C",
+    "P"
+   ],
+   "structural": {
+    "0": {
+     "base_type": "P",
+     "gain": 823,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    },
+    "1": {
+     "base_type": "P",
+     "gain": 823,
+     "unit": 1,
+     "zone_squares": 8,
+     "rotated_zone_squares": 64,
+     "sigma_zone_equals_rotated_zone": false,
+     "zone_is_invariant_under_sigma": false
+    }
+   },
+   "cases": [
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -1,
+      "default": -1
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -1,
+      "default": -1
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "kind": "far",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": -6,
+      "default": -6
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 0,
+     "kind": "far",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "in_zone",
+     "status": "no_candidate"
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "near_zone",
+     "status": "ok",
+     "original_square": 16,
+     "rotated_square": 47,
+     "square_in_zone": false,
+     "square_in_rotated_zone": true,
+     "material_multiset_equal": true,
+     "original_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "rotated_scores": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     },
+     "differences": {
+      "material_only": 0,
+      "promotion_only": 0,
+      "no_promotion": 0,
+      "default": 0
+     }
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "kind": "far",
+     "status": "no_candidate"
+    }
+   ],
+   "unsupported": []
+  }
+ ],
+ "nonclaims": [
+  "no strength, utility or game-outcome claim",
+  "the constructed states are relocations of one piece from the rule's own initial board and are not claimed reachable in play",
+  "one generator family, square boards 6 and 8, 40 seeds, one placement square per case",
+  "a nonzero difference is a statement about the evaluation function under five configurations, not a distribution over positions",
+  "no repair to evaluator.py or the compiler is proposed or implied"
+ ]
+}

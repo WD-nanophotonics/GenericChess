@@ -1,0 +1,62 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "entries": [
+  {
+   "at": "2026-10-18T13:40:03Z",
+   "event": "plan_a5.json written and saved before any run (file write time; its internal created_utc field says 13:44:00Z, which is about 4 minutes ahead of the real write time and is recorded here as a header timestamp error, not a reordering: the first execution was after the file existed)"
+  },
+  {
+   "at": "2026-10-18T13:40:40Z",
+   "event": "first execution crashed: TypeError, RayAtom.max_steps is None for every ray in this generator, so dr * max_steps is undefined"
+  },
+  {
+   "at": "2026-10-18T13:41:00Z",
+   "event": "instrument fix 1: unbounded rays capped at n-1 rank steps; pre-written predictors untouched"
+  },
+  {
+   "at": "2026-10-18T13:41:05Z",
+   "event": "instrument fix 2: the rotated-whole-board predictor had been coded against the original atom span; plan_a5 states it in terms of the rotated span (every dr negated), so the code now does what the plan says"
+  },
+  {
+   "at": "2026-10-18T13:41:17Z",
+   "event": "pre-registered run completed: decision zone_geometry_is_not_explained_by_atom_span; band 51/226, rotated 113/226; results_zone_mechanism.json sha 4e7ef91f"
+  },
+  {
+   "at": "2026-10-18T13:41:20Z",
+   "event": "post-hoc corrected model added and reported separately: zone row count is the smallest positive rank advance (same for both owners, because the compiler negates owner-1 offsets), rotated zone is the whole board iff no atom has dr < 0; it matches 226/226 records"
+  },
+  {
+   "at": "2026-10-18T13:41:30Z",
+   "event": "held-out predictive check on seeds 292041-292052, never used by the transform study: 80/80 band matches and 80/80 rotated matches, results_zone_mechanism_heldout.json sha 8cf8d533"
+  },
+  {
+   "at": "2026-10-18T13:45:08Z",
+   "event": "verify_public_copy_rebuild.py written and run: rebuilding the sanitized copy from the private originals reproduces the published bytes file-for-file (26/26 including manifest.json), so the published copy is current and the sanitizer is deterministic"
+  },
+  {
+   "at": "2026-10-18T13:45:51Z",
+   "event": "first fresh-seed consequence check (seeds 292101-292112) run with a mis-specified prediction: the 'nonzero iff predicted whole-board zone' equivalence was applied to every case kind, so 134 near_zone/far cases where no difference can arise counted as mismatches; output kept as results_zone_effect_heldout_first.json, decision fresh_seeds_do_not_confirm_the_zone_consequence"
+  },
+  {
+   "at": "2026-10-18T13:46:20Z",
+   "event": "instrument corrected without touching any measured number: P1 evaluated on in_zone cases only, P2 as a zero check on near/far, P3 added as the promotion-term decomposition; decision fresh_seeds_confirms_the_zone_consequence (14/14 in_zone predicted and nonzero, 0/134 near/far nonzero, 14/14 decomposition equals the measured difference); first output hash recorded in instrument_error"
+  },
+  {
+   "at": "2026-10-18T13:46:20Z",
+   "event": "the A4 measurement itself repeated on the fresh seeds reproduces promotion_term_breaks_rotation_equivariance: 14/14 in-zone differ, 0/134 near/far, 0 instrument_unstable; observed magnitudes {3,6} because type C at seed 292108 board 8 has unit 2, so the fit-set statement 'differences take only {-3,0,+3}' is seed-specific and weight*unit is the mechanism"
+  },
+  {
+   "at": "2026-10-18T13:47:00Z",
+   "event": "public evidence copy extended with the three new result files and two new scripts, regenerated, and the README file table rewritten from the regenerated manifest (30 evidence files plus manifest.json and README.md)"
+  },
+  {
+   "at": "2026-10-18T13:49:31Z",
+   "event": "endpoint for audit_leaf_terms.py written before the run: AST inventory of every in/not-in comparison and subscript lookup in evaluator.py, runtime element types per comparison on the 80 stored rules, as-coded versus index-converted hit counts, and an anchor-capture-penalty score-delta identity on constructed states (one piece moved to an empty square of the initial board, cap 5 triggering states per rule); decision leaf_terms_are_type_live_except_the_half_bonus only if the half-bonus comparison is the sole type-impossible one and every triggered delta matches weight*((esc0-esc1)-10*attacked0+10*attacked1)"
+  },
+  {
+   "at": "2026-10-18T13:51:15Z",
+   "event": "audit_leaf_terms.py run: decision leaf_terms_are_type_live_except_the_half_bonus; 6 in/not-in comparisons found by AST in evaluator.py, only line 112 (Square against int zone) is type-impossible; 140/140 promotable records have a promotion-gain key; 226 zone records with 0 coded target hits, 6164 index-converted target pairs and 4256 squares that would receive the half bonus (matches the earlier square-level figure); anchor-capture penalty triggered in 400 of 4881 constructed states and all 400 served deltas equal weight*((esc0-esc1)-10*attacked0+10*attacked1); 1.4 s, no search"
+  }
+ ]
+}

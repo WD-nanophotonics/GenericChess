@@ -1,0 +1,3723 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "generated_at_utc": "2026-10-18T13:39:45Z",
+ "provenance": "post-hoc verification of an observation made while reading the A4 near-zone cases; written after the A4 run and labelled as such in the report",
+ "source_sha256": {
+  "generic_chess/ai/evaluation/evaluator.py": "a99b5a38499fb3c29e75ebf495ea2fe685ee3fd967e4d307dd51f0e9cc3922bf",
+  "generic_chess/rules/compiler.py": "3b09ebb5b3f3fc54393187e4a5644151a4fcc133c87aeaf0a51de6ae6934dcc1",
+  "generic_chess/core/coordinates.py": "76fc2d31446629b05c36190fc84521eccd1e27d7250e69b9f694adc91fed14a9"
+ },
+ "git_head": "e6d36be6288dc38f927d9913347a4adb5c438982",
+ "design": {
+  "seeds": [
+   292001,
+   292002,
+   292003,
+   292004,
+   292005,
+   292006,
+   292007,
+   292008,
+   292009,
+   292010,
+   292011,
+   292012,
+   292013,
+   292014,
+   292015,
+   292016,
+   292017,
+   292018,
+   292019,
+   292020,
+   292021,
+   292022,
+   292023,
+   292024,
+   292025,
+   292026,
+   292027,
+   292028,
+   292029,
+   292030,
+   292031,
+   292032,
+   292033,
+   292034,
+   292035,
+   292036,
+   292037,
+   292038,
+   292039,
+   292040
+  ],
+  "board_sizes": [
+   6,
+   8
+  ],
+  "endpoint": "count of forward-target membership tests that are True as coded versus after converting the target to a board index",
+  "square_type_reference": "generic_chess.core.coordinates.Square"
+ },
+ "verdict": {
+  "decision": "forward_adjacency_half_bonus_branch_cannot_fire_as_coded",
+  "records": 226,
+  "distinct_forward_entry_types": [
+   "Square"
+  ],
+  "distinct_zone_element_types": [
+   "int"
+  ],
+  "target_membership_hits_as_coded": 0,
+  "target_membership_hits_if_index_converted": 4256,
+  "squares_receiving_half_bonus_as_coded": 0,
+  "squares_receiving_half_bonus_if_index_converted": 4256,
+  "records_with_unreachable_branch": 226
+ },
+ "rules": [
+  {
+   "seed": 292001,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 693,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 693,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292002,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 943,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 943,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1421,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1421,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292003,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 353,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 353,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 324,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 324,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292004,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 800,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 800,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    }
+   ]
+  },
+  {
+   "seed": 292005,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 239,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 239,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    }
+   ]
+  },
+  {
+   "seed": 292006,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1077,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1077,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292007,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1239,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1239,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292008,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 976,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 976,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292009,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 358,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 358,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292010,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 471,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 471,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292011,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1203,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1203,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 364,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 364,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292012,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1383,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1383,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292013,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 465,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 465,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 147,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 147,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292014,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 944,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 944,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 750,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 750,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292015,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1459,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1459,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292016,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 952,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 952,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 952,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 952,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    }
+   ]
+  },
+  {
+   "seed": 292017,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1532,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1532,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292018,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 901,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 901,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292019,
+   "board_size": 6,
+   "records": []
+  },
+  {
+   "seed": 292020,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1180,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1180,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1920,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1920,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292021,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1341,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1341,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1006,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1006,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292022,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 376,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 376,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292023,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 525,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 525,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    }
+   ]
+  },
+  {
+   "seed": 292024,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1372,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1372,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292025,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 569,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 569,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 10,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 10
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 348,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 348,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292026,
+   "board_size": 6,
+   "records": []
+  },
+  {
+   "seed": 292027,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1446,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1446,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1222,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1222,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292028,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1581,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1581,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292029,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1231,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1231,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1032,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1032,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    }
+   ]
+  },
+  {
+   "seed": 292030,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1468,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1468,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292031,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 589,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 589,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 13,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 13,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292032,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 959,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 959,
+     "unit": 1,
+     "zone_squares": 18,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 208,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 208,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 18,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 18
+    }
+   ]
+  },
+  {
+   "seed": 292033,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 324,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 324,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292034,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 215,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 215,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 199,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 199,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292035,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1026,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1026,
+     "unit": 1,
+     "zone_squares": 12,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 726,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 726,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 12,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 12
+    }
+   ]
+  },
+  {
+   "seed": 292036,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 383,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 383,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292037,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1748,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1748,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292038,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 635,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 635,
+     "unit": 1,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 30,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 30
+    }
+   ]
+  },
+  {
+   "seed": 292039,
+   "board_size": 6,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2177,
+     "unit": 2,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2177,
+     "unit": 2,
+     "zone_squares": 6,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 6,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 6
+    }
+   ]
+  },
+  {
+   "seed": 292040,
+   "board_size": 6,
+   "records": []
+  },
+  {
+   "seed": 292001,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 875,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 875,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292002,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1378,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1378,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1862,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1862,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1202,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1202,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292003,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 590,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 590,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 473,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 473,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292004,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 686,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 686,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    }
+   ]
+  },
+  {
+   "seed": 292005,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 96,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 96,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    }
+   ]
+  },
+  {
+   "seed": 292006,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1670,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1670,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292007,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1520,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1520,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1347,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1347,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    }
+   ]
+  },
+  {
+   "seed": 292008,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1351,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1351,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    }
+   ]
+  },
+  {
+   "seed": 292009,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 700,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 700,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292010,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 791,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 791,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292011,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1229,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1229,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 404,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 404,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292012,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2266,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2266,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2423,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2423,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292013,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1343,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1343,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1203,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1203,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292014,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1005,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1005,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292015,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1660,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1660,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1006,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1006,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    }
+   ]
+  },
+  {
+   "seed": 292016,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1415,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1415,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1415,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1415,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    }
+   ]
+  },
+  {
+   "seed": 292017,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1964,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1964,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292018,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 803,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 803,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292019,
+   "board_size": 8,
+   "records": []
+  },
+  {
+   "seed": 292020,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1262,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1262,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    }
+   ]
+  },
+  {
+   "seed": 292021,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1206,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1206,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 984,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 984,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292022,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 495,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 495,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292023,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 663,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 663,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1866,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1866,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292024,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1664,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1664,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292025,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 892,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 892,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 20,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 20
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 763,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 763,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 314,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 314,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    }
+   ]
+  },
+  {
+   "seed": 292026,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 221,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 221,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292027,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1284,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1284,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1060,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1060,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292028,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1851,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1851,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    }
+   ]
+  },
+  {
+   "seed": 292029,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 887,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 887,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 752,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 752,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    }
+   ]
+  },
+  {
+   "seed": 292030,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2213,
+     "unit": 2,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2213,
+     "unit": 2,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  },
+  {
+   "seed": 292031,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 838,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 838,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 11,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 11,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292032,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1923,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1923,
+     "unit": 1,
+     "zone_squares": 24,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 24,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 24
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1115,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 36,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 36
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1115,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 36,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 36
+    }
+   ]
+  },
+  {
+   "seed": 292033,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 574,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 574,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    }
+   ]
+  },
+  {
+   "seed": 292034,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 298,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 298,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "X",
+     "owner": 0,
+     "status": "ok",
+     "gain": 113,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "X",
+     "owner": 1,
+     "status": "ok",
+     "gain": 113,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292035,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2022,
+     "unit": 2,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2022,
+     "unit": 2,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "A",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1841,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "A",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1841,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "B",
+     "owner": 0,
+     "status": "ok",
+     "gain": 970,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "B",
+     "owner": 1,
+     "status": "ok",
+     "gain": 970,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292036,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 512,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 512,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    }
+   ]
+  },
+  {
+   "seed": 292037,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 1678,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 1678,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    }
+   ]
+  },
+  {
+   "seed": 292038,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 993,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 993,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 56,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 56
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 760,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 760,
+     "unit": 1,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292039,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "P",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2929,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "P",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2929,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 8,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 8
+    },
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 2777,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 2777,
+     "unit": 2,
+     "zone_squares": 8,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 44,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 44
+    }
+   ]
+  },
+  {
+   "seed": 292040,
+   "board_size": 8,
+   "records": [
+    {
+     "base_type": "C",
+     "owner": 0,
+     "status": "ok",
+     "gain": 833,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    },
+    {
+     "base_type": "C",
+     "owner": 1,
+     "status": "ok",
+     "gain": 833,
+     "unit": 1,
+     "zone_squares": 16,
+     "forward_entry_type": "Square",
+     "zone_element_type": "int",
+     "coded_target_membership_hits": 0,
+     "index_converted_target_membership_hits": 16,
+     "squares_receiving_half_bonus_as_coded": 0,
+     "squares_receiving_half_bonus_if_index_converted": 16
+    }
+   ]
+  }
+ ],
+ "nonclaims": [
+  "no search and no strength, utility or outcome claim",
+  "this records an unreachable evaluation branch, not a validated defect report or a proposed repair",
+  "one generator family, square boards 6 and 8, 40 seeds"
+ ]
+}

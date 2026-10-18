@@ -1,0 +1,17 @@
+{
+ "agent_id": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:33:00Z",
+ "status": "pre-registered, not run",
+ "question": "Is the served static profile invariant to rule-preserving transformations: (a) 180-degree rotation of every movement atom on a square board, and (b) relabeling of piece type ids that keeps movement atoms, anchor flags and promotion edges isomorphic?",
+ "inputs": "40 deterministic generated rules already used in profile_normalization_scale_20261018 seeds 292001-292040 at board sizes 6 and 8, rebuilt with transformed movement atoms/type ids; zero search, zero new seeds; uses coordinates.rotate_offset for (a) and a pure renaming map for (b)",
+ "exclusions": "no search, no learning, no fitness, no new rule family, no hand_weight sweep (PRIMARY target-sensitivity panel), no PRIMARY 411001-411008, no AUX92/93",
+ "endpoint": "per-piece normalized_board_value, normalized_hand_value, promotion_option_value and median_non_anchor_value compared between original and transformed rule; violation = any per-piece value or per-rule median mismatch under a bijection that preserves the movement-signature multiset",
+ "pre_written_decision": "0 violations in both transforms on all 40 rules x 2 sizes => profile_transform_invariant; any violation whose pattern is explained by anchor/promotion/rounding mechanics and reproducible => transform_sensitive_with_mechanism; otherwise inconclusive",
+ "cost_estimate": "under 5 min compute; under 60 min engineering total, well below the 120-minute assessment threshold",
+ "consumer": "cross-rule static-value comparison and rule deduplication: a transform-equivalent rule must not be counted as an independent value sample, and any value dependence on labels/orientation would need an explicit interpretation boundary",
+ "feasibility_gate": "first confirm that MovementAtom offsets accept rotate_offset and that a renamed ruleset compiles with identical fingerprints of movement; if either is unsupported, stop and record unsupported rather than fabricating a transform",
+ "nonduplication_check": "read docs/research/RULE_ENCODING_NEUTRALITY_20261017.md and the PRIMARY 411001-411008 panel notes first; if profile-level equality under transforms is already covered, choose a different fallback question instead of rerunning",
+ "limitations": "one generator family and hand_weight 0.9; rotation invariance is only defined on square boards; relabeling test cannot detect value dependence on type-id order because the builder sorts, which is itself the property under test at code level but not an independent behavioural sample",
+ "prior_work": "PRIMARY RULE_ENCODING_NEUTRALITY_20261017 already shows a ray->leap syntactic re-encoding keeps raw score, normalized board/hand value and promotion option equal for 8 states in one rule; this plan does NOT re-test ray->leap. It tests two untested global transforms across 40 rules: 180-degree rotation of all movement atoms and type-id relabeling. If rotation invariance is not constructible from MovementAtom offsets without changing semantics, record unsupported and do not substitute a claimed transform."
+}

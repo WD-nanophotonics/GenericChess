@@ -1,0 +1,2877 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "generated_at_utc": "2026-10-18T13:45:51Z",
+ "status": "post-hoc predictive check on seeds never used before",
+ "measured_file": "results_promotion_zone_equivariance_heldout.json",
+ "measured_sha256": "0f1ae05745d98a41315f3a3a9f47f896690d29ded009d79c9c3d5d7b0311211d",
+ "seeds": [
+  292101,
+  292102,
+  292103,
+  292104,
+  292105,
+  292106,
+  292107,
+  292108,
+  292109,
+  292110,
+  292111,
+  292112
+ ],
+ "board_sizes": [
+  6,
+  8
+ ],
+ "previous_seed_sets": {
+  "fit": [
+   292001,
+   292040
+  ],
+  "earlier_heldout": [
+   292041,
+   292052
+  ],
+  "this_check": [
+   292101,
+   292112
+  ]
+ },
+ "prediction": "for usable in_zone cases, promotion_only differs from zero exactly when the base type has no backward atom (predicted whole-board rotated zone)",
+ "usable_cases": 148,
+ "in_zone_cases": 14,
+ "in_zone_predicted_nonzero": 14,
+ "in_zone_observed_nonzero": 14,
+ "non_in_zone_cases": 134,
+ "non_in_zone_observed_nonzero": 0,
+ "mismatches": [
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  }
+ ],
+ "decision": "fresh_seeds_do_not_confirm_the_zone_consequence",
+ "a4_decision_on_these_seeds": "promotion_term_breaks_rotation_equivariance",
+ "nonclaims": [
+  "no strength, utility, game-outcome or reachability claim",
+  "one generator family, boards 6 and 8, 12 fresh seeds, arithmetic on initial boards only",
+  "the fitted model is post-hoc; this file only tests its consequence on new seeds"
+ ],
+ "checks": [
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 6,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292110,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 6,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292101,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292102,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292103,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "B",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292105,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292106,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292107,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -6,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 6,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292108,
+   "board_size": 8,
+   "base_type": "X",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292109,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": -3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "in_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 3,
+   "matches_prediction": true
+  },
+  {
+   "seed": 292110,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "A",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292111,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 0,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "C",
+   "owner": 1,
+   "kind": "far",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 0,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  },
+  {
+   "seed": 292112,
+   "board_size": 8,
+   "base_type": "P",
+   "owner": 1,
+   "kind": "near_zone",
+   "predicted_whole_board_rotated_zone": true,
+   "observed_promotion_difference": 0,
+   "matches_prediction": false
+  }
+ ]
+}
