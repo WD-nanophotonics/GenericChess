@@ -1,0 +1,510 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "6de032cc-45b4-4938-8700-2abdcae346aa",
+ "question": "Does the in-zone promotion-contact contrast hold when the seed, not the position observation, is treated as the independent unit?",
+ "source": "results_bind_reachability_to_decisions.json",
+ "source_sha256": "0979ef27dda4e3e5542b6b6e3eff3340ec32502300fef66f83cb702a00b4ff80",
+ "reaggregation_checks": {
+  "in_zone_observations_match": true,
+  "in_zone_hits_match": true,
+  "not_in_zone_observations_match": true,
+  "not_in_zone_hits_match": true,
+  "dead_intent_matches": true,
+  "dead_intent_hits_match": true,
+  "neither_matches": true,
+  "neither_hits_match": true,
+  "games_match": true
+ },
+ "reaggregates_to_published_summary": true,
+ "seeds": 36,
+ "seeds_with_any_in_zone_observation": 14,
+ "seeds_with_any_contact": 7,
+ "contact_hits_total": 53,
+ "largest_seed_contact_count": 18,
+ "largest_seed_contact_share": 0.3396,
+ "top3_seed_contact_share": 0.6981,
+ "seeds_with_both_arms": 14,
+ "seeds_not_in_zone_rate_higher": 9,
+ "seeds_in_zone_rate_higher": 5,
+ "seeds_tied_in_both_arms": 0,
+ "seeds_where_in_zone_rate_exceeds_outside": [
+  65,
+  68,
+  77,
+  80,
+  89
+ ],
+ "in_zone_rate_inside_those_seeds": 0.2012,
+ "in_zone_hits_inside_those_seeds": 34,
+ "in_zone_observations_inside_those_seeds": 169,
+ "in_zone_rate_in_remaining_seeds": 0.0082,
+ "in_zone_hits_in_remaining_seeds": 19,
+ "in_zone_observations_in_remaining_seeds": 2320,
+ "games_with_any_contact": 30,
+ "contact_games": [
+  {
+   "seed": 94,
+   "depth": 3,
+   "game_index": 0,
+   "hits": 9,
+   "in_zone": 93,
+   "positions": 54
+  },
+  {
+   "seed": 80,
+   "depth": 3,
+   "game_index": 1,
+   "hits": 6,
+   "in_zone": 12,
+   "positions": 16
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 1,
+   "hits": 4,
+   "in_zone": 8,
+   "positions": 15
+  },
+  {
+   "seed": 90,
+   "depth": 2,
+   "game_index": 1,
+   "hits": 3,
+   "in_zone": 72,
+   "positions": 10
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 0,
+   "hits": 2,
+   "in_zone": 4,
+   "positions": 18
+  },
+  {
+   "seed": 80,
+   "depth": 3,
+   "game_index": 0,
+   "hits": 2,
+   "in_zone": 3,
+   "positions": 19
+  },
+  {
+   "seed": 94,
+   "depth": 3,
+   "game_index": 1,
+   "hits": 2,
+   "in_zone": 106,
+   "positions": 42
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 0,
+   "hits": 2,
+   "in_zone": 3,
+   "positions": 20
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 1,
+   "hits": 2,
+   "in_zone": 3,
+   "positions": 20
+  },
+  {
+   "seed": 65,
+   "depth": 2,
+   "game_index": 0,
+   "hits": 1,
+   "in_zone": 3,
+   "positions": 8
+  },
+  {
+   "seed": 65,
+   "depth": 2,
+   "game_index": 1,
+   "hits": 1,
+   "in_zone": 3,
+   "positions": 8
+  },
+  {
+   "seed": 68,
+   "depth": 2,
+   "game_index": 0,
+   "hits": 1,
+   "in_zone": 15,
+   "positions": 4
+  }
+ ],
+ "decision": "contrast_is_seed_concentrated",
+ "per_seed": [
+  {
+   "seed": 59,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 365,
+   "not_in_zone_hit": 26,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.07123
+  },
+  {
+   "seed": 60,
+   "games": 5,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 61,
+   "games": 4,
+   "in_zone": 32,
+   "in_zone_hit": 0,
+   "not_in_zone": 20,
+   "not_in_zone_hit": 12,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.6
+  },
+  {
+   "seed": 62,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 63,
+   "games": 5,
+   "in_zone": 155,
+   "in_zone_hit": 0,
+   "not_in_zone": 35,
+   "not_in_zone_hit": 7,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.2
+  },
+  {
+   "seed": 64,
+   "games": 5,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 190,
+   "not_in_zone_hit": 42,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.22105
+  },
+  {
+   "seed": 65,
+   "games": 4,
+   "in_zone": 12,
+   "in_zone_hit": 4,
+   "not_in_zone": 248,
+   "not_in_zone_hit": 12,
+   "in_zone_rate": 0.33333,
+   "not_in_zone_rate": 0.04839
+  },
+  {
+   "seed": 66,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 76,
+   "not_in_zone_hit": 4,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.05263
+  },
+  {
+   "seed": 67,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 68,
+   "games": 4,
+   "in_zone": 60,
+   "in_zone_hit": 4,
+   "not_in_zone": 20,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": 0.06667,
+   "not_in_zone_rate": 0.0
+  },
+  {
+   "seed": 69,
+   "games": 5,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 70,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 475,
+   "not_in_zone_hit": 55,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.11579
+  },
+  {
+   "seed": 71,
+   "games": 5,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 163,
+   "not_in_zone_hit": 27,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.16564
+  },
+  {
+   "seed": 72,
+   "games": 6,
+   "in_zone": 17,
+   "in_zone_hit": 0,
+   "not_in_zone": 360,
+   "not_in_zone_hit": 25,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.06944
+  },
+  {
+   "seed": 73,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 74,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 90,
+   "not_in_zone_hit": 26,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.28889
+  },
+  {
+   "seed": 75,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 450,
+   "not_in_zone_hit": 49,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.10889
+  },
+  {
+   "seed": 76,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 0,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": null,
+   "not_in_zone_rate": null
+  },
+  {
+   "seed": 77,
+   "games": 4,
+   "in_zone": 20,
+   "in_zone_hit": 4,
+   "not_in_zone": 36,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": 0.2,
+   "not_in_zone_rate": 0.0
+  },
+  {
+   "seed": 78,
+   "games": 5,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 213,
+   "not_in_zone_hit": 67,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.31455
+  },
+  {
+   "seed": 79,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 503,
+   "not_in_zone_hit": 78,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.15507
+  },
+  {
+   "seed": 80,
+   "games": 6,
+   "in_zone": 33,
+   "in_zone_hit": 18,
+   "not_in_zone": 418,
+   "not_in_zone_hit": 8,
+   "in_zone_rate": 0.54545,
+   "not_in_zone_rate": 0.01914
+  },
+  {
+   "seed": 81,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 71,
+   "not_in_zone_hit": 28,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.39437
+  },
+  {
+   "seed": 82,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 132,
+   "not_in_zone_hit": 24,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.18182
+  },
+  {
+   "seed": 83,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 112,
+   "not_in_zone_hit": 4,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.03571
+  },
+  {
+   "seed": 84,
+   "games": 6,
+   "in_zone": 424,
+   "in_zone_hit": 0,
+   "not_in_zone": 77,
+   "not_in_zone_hit": 19,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.24675
+  },
+  {
+   "seed": 85,
+   "games": 5,
+   "in_zone": 507,
+   "in_zone_hit": 0,
+   "not_in_zone": 254,
+   "not_in_zone_hit": 66,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.25984
+  },
+  {
+   "seed": 86,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 381,
+   "not_in_zone_hit": 57,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.14961
+  },
+  {
+   "seed": 87,
+   "games": 4,
+   "in_zone": 124,
+   "in_zone_hit": 0,
+   "not_in_zone": 52,
+   "not_in_zone_hit": 24,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.46154
+  },
+  {
+   "seed": 88,
+   "games": 6,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 299,
+   "not_in_zone_hit": 43,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.14381
+  },
+  {
+   "seed": 89,
+   "games": 4,
+   "in_zone": 44,
+   "in_zone_hit": 4,
+   "not_in_zone": 52,
+   "not_in_zone_hit": 0,
+   "in_zone_rate": 0.09091,
+   "not_in_zone_rate": 0.0
+  },
+  {
+   "seed": 90,
+   "games": 5,
+   "in_zone": 460,
+   "in_zone_hit": 6,
+   "not_in_zone": 58,
+   "not_in_zone_hit": 24,
+   "in_zone_rate": 0.01304,
+   "not_in_zone_rate": 0.41379
+  },
+  {
+   "seed": 91,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 172,
+   "not_in_zone_hit": 8,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.04651
+  },
+  {
+   "seed": 92,
+   "games": 4,
+   "in_zone": 0,
+   "in_zone_hit": 0,
+   "not_in_zone": 124,
+   "not_in_zone_hit": 12,
+   "in_zone_rate": null,
+   "not_in_zone_rate": 0.09677
+  },
+  {
+   "seed": 93,
+   "games": 4,
+   "in_zone": 102,
+   "in_zone_hit": 0,
+   "not_in_zone": 108,
+   "not_in_zone_hit": 19,
+   "in_zone_rate": 0.0,
+   "not_in_zone_rate": 0.17593
+  },
+  {
+   "seed": 94,
+   "games": 6,
+   "in_zone": 499,
+   "in_zone_hit": 13,
+   "not_in_zone": 40,
+   "not_in_zone_hit": 16,
+   "in_zone_rate": 0.02605,
+   "not_in_zone_rate": 0.4
+  }
+ ],
+ "nonclaims": [
+  "observations inside one game are not independent; this file only re-weights to the seed",
+  "the seed panel is 36 rulesets, far too few for an interval worth quoting",
+  "no claim that any term changed a chosen action, an outcome or a strength ranking"
+ ]
+}

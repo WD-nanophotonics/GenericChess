@@ -270,6 +270,22 @@ def main() -> int:
                     promotions_chosen=local["promotions_chosen"],
                     promotions_from_in_zone=local["promotions_from_in_zone"],
                     promotions_from_dead_intent=local["promotions_from_dead_intent"],
+                    # Per-arm denominators per game, added after the first run.
+                    # The summary above is unchanged by these fields; they let a
+                    # reader decompose both arms by seed instead of trusting the
+                    # pooled 2.13% against 13.98% contrast.
+                    promotable_in_zone=local["promotable_in_zone"],
+                    promotable_in_zone_with_promotion=local[
+                        "promotable_in_zone_with_promotion"
+                    ],
+                    promotable_dead_intent=local["promotable_dead_intent"],
+                    promotable_dead_intent_with_promotion=local[
+                        "promotable_dead_intent_with_promotion"
+                    ],
+                    promotable_neither=local["promotable_neither"],
+                    promotable_neither_with_promotion=local[
+                        "promotable_neither_with_promotion"
+                    ],
                 )
             )
 

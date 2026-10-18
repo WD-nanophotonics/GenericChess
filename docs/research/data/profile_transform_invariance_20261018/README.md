@@ -65,7 +65,8 @@ the published copy.
 | `plan_games_leaf_terms.json` | 3384 | `d92116a58bfe17e7fc07d73023ae51c144bd9632c12462ca729a409e0070f9bb` |
 | `results_static_zone_share.json` | 1020 | `a01b2e591924789591f9e229807436c3ece27838b0905405b43d47782658eeab` |
 | `plan_bind_reachability_to_decisions.json` | 5055 | `dceb6678f312b96c6cdf9e9fc1fea93942ba42bbfd673bf60fa7e70133b82b02` |
-| `results_bind_reachability_to_decisions.json` | 60327 | `db342f25686d769c169ce380b95dc726d3a5809113d3ef07426dc89db66b08dc` |
+| `results_bind_reachability_to_decisions.json` | 101870 | `0979ef27dda4e3e5542b6b6e3eff3340ec32502300fef66f83cb702a00b4ff80` |
+| `results_contact_concentration.json` | 10154 | `2f2fe05b70ff60ae76cff8dda5a095853e2136eef45a80e0f8b177b0f0e190be` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -80,9 +81,10 @@ the published copy.
 | `audit_leaf_terms.py` | 16581 | `f48e06fef9cf1b4ef863387f3a7908ee796e35f790a61a7465a037360fbde545` |
 | `scan_stored_games_leaf_terms.py` | 11149 | `2a134c3ee8e6ff8d6635fc1e57fe9ef3276df7aaf79bd9ebd57d69f13d4b7db4` |
 | `static_zone_share_boards.py` | 3066 | `fb30e7d47d639273c1da0fe9446773ec9f4ce8b88203cf783be1a879c9e2383b` |
-| `bind_reachability_to_decisions.py` | 17890 | `3822e63f6ff5ec31a02b709905831c11cf9e7b80b2d5a698f6344d920e98f2f9` |
+| `bind_reachability_to_decisions.py` | 18860 | `48c5c1429f1b237dc1c4972043a4c7b6f17251173194ce48784f3e263b339bf9` |
 | `verify_bind_reachability_consistency.py` | 5766 | `3e8696945ab6a84e2a327686947eebe1c39745ca26095a43b7e3454a9e484f66` |
-| `make_public_evidence.py` | 4738 | `b66cf0e36c8c1986084fcafecd739bd3a2acb556deefda044e4cca017e63950c` |
+| `analyze_contact_concentration.py` | 9537 | `3a0c74f94eb670e48742bd45af4da0b44446121a8fd07749c712e96e818609e1` |
+| `make_public_evidence.py` | 5068 | `6c9f500e9bc46ab4dd7ebe5daf750217dcdcf414e3741e5e70d53822ba6d214d` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -108,6 +110,8 @@ the published copy.
 | `plan_bind_reachability_to_decisions.json` | the endpoint for the Stage 8 replay, written before it ran, plus one amendment that adds the promotability comparison and was written before the extended run |
 | `results_bind_reachability_to_decisions.json` | `in_zone_full_bonus_has_immediate_promotion_contact` with `promotability_contrast=in_zone_promotability_is_depressed_relative_to_other_promotable_pieces`: only 53 of 2,489 in-zone payments (2.13%) have a legal promotion in that position against 782 of 5,594 not-in-zone observations (13.98%), a 6.56x difference |
 | `verify_bind_reachability_consistency.py` | `stored_numbers_are_self_consistent` - arithmetic and bookkeeping audit of the Stage 8 file with no replay and no search: per-game sums against the summary, the three class partitions, both rates and the ratio re-derived from the raw counts, and the four Stage 7 counts re-read from `results_stored_games_leaf_terms.json`; a deliberately perturbed copy fails it |
+| `results_contact_concentration.json` | `contrast_is_seed_concentrated` - the Stage 8 file re-partitioned by seed: 7 of 36 seeds hold all 53 contacts, the top seed holds 34%, and the 5 seeds where in-zone promotability is higher supply 34/169 = 20.1% against 19/2,320 = 0.82% elsewhere |
+| `analyze_contact_concentration.py` | the re-partition itself: reads the Stage 8 file, checks that nine totals re-aggregate to the published summary, and writes the per-seed table; no replay, no search, no new game |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
@@ -181,11 +185,35 @@ case by case: `empty_mobility` is an empty-board geometry
 (`generic_chess/core/movement.py`), so "in zone" means the piece has no
 advancing destination at all, while eligibility to promote is a separate
 compiled frozenset of `(from, to)` pairs (`promotion_allowed` in
-`generic_chess/rules/compiled.py`) that need not be a forward move. Every
-stored contact example stands on the mover's own promotion rank. The 2.13% is
-therefore a measured coincidence between an independent geometry and an
-independent pair set, not a restatement of the zone definition - and it still
-says nothing about whether search would ever choose such a promotion.
+`generic_chess/rules/compiled.py`) that need not be a forward move. All eight
+contact examples written into the results file stand on the mover's own
+promotion rank; only those 8 of the 53 were inspected case by case, so this is
+a checked sample and not a census. The 2.13% is therefore a measured
+coincidence between an independent geometry and an independent pair set, not a
+restatement of the zone definition - and it still says nothing about whether
+search would ever choose such a promotion.
+
+### The ratio is a composition average (Stage 9, post-hoc, stored numbers only)
+
+`analyze_contact_concentration.py` reads only the Stage 8 file and
+re-partitions it by seed; nine re-aggregation checks reproduce the published
+summary exactly, so this is a re-weighting, not a new measurement. Of the 36
+seeds, 14 contribute any in-zone observation and only 7 produce any contact;
+the largest single seed supplies 18 of the 53 contacts (34%) and the top three
+70%. Among the 14 seeds that have both arms, 9 have a higher not-in-zone rate
+and 5 a higher in-zone rate.
+
+That split carries the interpretation. The 5 seeds where in-zone promotability
+is *higher* hold 34 of the 53 contacts from 169 in-zone observations (20.1%);
+the other 31 seeds hold 19 contacts from 2,320 observations (0.82%). The pooled
+2.13% against 13.98% therefore averages over two kinds of ruleset - one whose
+zone acts in practice as the promotion rank and one whose zone is a pocket
+unrelated to promotion. Read at seed level the defensible sentence is the weak
+one, *in most of this panel the zone is not a promotion square*, not a uniform
+"the bonus is paid where promotability is lowest". Thirty-six seeds support no
+interval, and the contacts are repeated plies of standing pieces rather than
+independent choices: 30 of the 182 games contain any contact and one game
+supplies 9 of them.
 
 ## UNKNOWN and limits
 

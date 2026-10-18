@@ -42,6 +42,7 @@ JSON_FILES = [
     "results_static_zone_share.json",
     "plan_bind_reachability_to_decisions.json",
     "results_bind_reachability_to_decisions.json",
+    "results_contact_concentration.json",
 ]
 
 PY_FILES = [
@@ -61,6 +62,7 @@ PY_FILES = [
     "static_zone_share_boards.py",
     "bind_reachability_to_decisions.py",
     "verify_bind_reachability_consistency.py",
+    "analyze_contact_concentration.py",
     "make_public_evidence.py",
 ]
 
@@ -75,6 +77,8 @@ EXTRA_SOURCES = {
     "plan_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "plan_bind_reachability_to_decisions.json",
     "results_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "results_bind_reachability_to_decisions.json",
     "bind_reachability_to_decisions.py": HERE.parent / "games-leaf-terms-20261018" / "bind_reachability_to_decisions.py",
+    "results_contact_concentration.json": HERE.parent / "games-leaf-terms-20261018" / "results_contact_concentration.json",
+    "analyze_contact_concentration.py": HERE.parent / "games-leaf-terms-20261018" / "analyze_contact_concentration.py",
 }
 
 _HOME = re.compile(r"[A-Za-z]:\\\\?Users\\\\?[^\\\\\"]+", re.IGNORECASE)

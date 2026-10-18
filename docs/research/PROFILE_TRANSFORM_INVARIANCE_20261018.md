@@ -360,9 +360,35 @@ The small contact share is not a tautology in either direction. The zone is an
 empty-board geometry (no advancing destination exists), while eligibility to
 promote is a separate compiled set of `(from, to)` pairs that need not be a
 forward move, so "in zone" and "can promote here" are independent conditions;
-the stored contact cases all stand on the mover's own promotion rank. Why so
-few of them, and whether search would ever choose such a promotion, remain
-unmeasured.
+the eight contact cases written into the results file all stand on the mover's
+own promotion rank, but only 8 of the 53 were written out and the rest were not
+inspected case by case. Why so few of them, and whether search would ever
+choose such a promotion, remain unmeasured.
+
+### The 6.56x is a composition average, not a uniform geometric fact (Stage 9)
+
+`analyze_contact_concentration.py` re-partitions the same stored per-game
+records by seed and re-aggregates to the published summary exactly (nine
+checks, all equal), so nothing here is a new measurement - it is a re-weighting
+of the Stage 8 counts to the independent unit. Over the 36 seeds, only 14
+contribute any in-zone observation at all and only 7 produce any contact; the
+largest single seed supplies 18 of the 53 contacts (34%) and the top three
+supply 70%. Inside the 14 seeds that have both arms, 9 show a higher
+not-in-zone rate and 5 show a higher in-zone rate.
+
+That split is the informative part. The 5 seeds in which in-zone promotability
+is *higher* hold 34 of the 53 contacts from 169 in-zone observations (20.1%),
+while the other 31 seeds hold 19 contacts from 2,320 observations (0.82%). The
+pooled 2.13% against 13.98% therefore mixes two kinds of ruleset: ones whose
+zone is, in practice, the promotion rank, where the full bonus is paid to a
+promotable piece about a fifth of the time, and ones whose zone is a blocked
+pocket unrelated to promotion. The pre-registered contrast still fires as
+written; the sentence it supports has to be the weaker one - *in most of this
+panel the zone is not a promotion square* - rather than a uniform "the bonus is
+paid where promotability is lowest". Thirty-six seeds cannot support an
+interval, and the contacts are repeated plies of standing pieces rather than
+independent choices (30 of 182 games contain any contact and one game supplies
+9), so neither count nor ratio should be treated as precise.
 
 Allowed, for this generator family and these two board sizes:
 
