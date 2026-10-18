@@ -2576,3 +2576,11 @@ actualremotePUBLICverification; this entry does not assert pre-push delivery.
 Next TDselfplay/fixednu context control is a hypothesis; allseeds/costs/actualWLD
 will be frozen, not a posteriori rate/price/seed fit. No Core/default/UI changes,
 automatic integration, extraAgents/workers/fees or oldcap continuation.
+
+95actualdelivery: science d0a479a18c9b417599ba943331436a7e4faeebd0 fullremoteSHA/PUBLIC/33anonymousexactfiles
+includingimmutableZIP verified; ownworkingtreeclean beforemetadata. Slackaccepted
+1792345544.918859 andexactv2bodyreadback aftersame-messageformatrepair; no new
+messageorrequestloop, no reading/executionconfirmed. Originalprepushguard rejected
+HEADalias; fullsiderefs succeeded, no bypass/force. Officialended84.623min/8stages/
+safe_checkpoint; no newscience afterfinish. Closingmetadata receives separate
+remoteverification. Existingown90minuteheartbeat remainsACTIVE.

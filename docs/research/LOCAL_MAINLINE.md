@@ -1,7 +1,10 @@
 # DEV_AUX95 — completed rate controls and actual fresh reconstruction; science OPEN
 
 Session89acbbed-2fed-4f4c-a8fe-65ac68804488 start2026-10-18T16:24:29UTC unchanged;
-allproducers/audits/fresh CLOSED; officialfinish/publication receipts pending below.
+allproducers/audits/fresh CLOSED; officialENDED84.623min/safe_checkpoint,8researchstages.
+Source d0a479a18c9b417599ba943331436a7e4faeebd0 fullremote/PUBLIC/33anonymousfiles verified/clean;
+Slack1792345544.918859 exactv2readback, reading/executionUNCONFIRMED.
+No newscience afterofficialfinish; closingmetadata verifiedseparately.
 Own sidemission/PUBLIC/90minuteheartbeat only; no otherrole/default/Core/UI writes.
 All48arms9.6MTRAINnodes; first384EVALallterminal, new512EVAL508terminal4H128U/0missing.
 Combined13335898paidnodes/50406queries/4102physicalgames4042actualterm60U; allfoe/
