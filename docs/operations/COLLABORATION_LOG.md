@@ -4372,3 +4372,38 @@ its own corrections and sole API executor. No auxiliary checkout/state/computati
 was touched and no frozen AUX/DeepSeek experiment repeated. PRIMARY's product
 Core hot-path claim remains distinct. Science OPEN; actual downstream utility
 and all-domain equivalence remain unresolved.
+
+## Mainline workflow watch and broader static utility —2026-10-18
+
+User explicitly adds one read-only DS helper workflow check per mainline patrol,
+not frequent dialogue or scientific review. PRIMARY updates existing genericchess
+heartbeat through the app tool, verifies ACTIVE/same90min/sameoriginalthread, and
+reads recent gc deepseek辅助 turns. Owner reports contextcatalog repair and new-
+process950K verification, desktopreload pending. PRIMARY does not test/configure
+or control that runtime, claim currentactivation or createanotherexecutor. Current
+AGENTS/LOCAL_AGENT record decision, reason and consequence for compaction.
+
+PRIMARY independently executes full-type6/8board static/Unit256games and a separate
+geo-only256games; Corecompletehistories/PV/source-qualified arithmetic are delivered
+in BROAD_TYPE_STATIC_RESOURCE_CURVES_20261018. An additionalstaticfoe panel loses its
+process after112games withoutfooter; failure causeunconfirmed,144outcomesremain
+UNKNOWN and are neverrefilled. Scale/geometry/blocker/ratioD2diagnostics separate
+representation, localdecision andutility. Exact12completedD2trees,9disjoint float/
+intoptima, do notidentifybetterprices; cappedone andinputadapterfailure are retained.
+
+Fresh originalconsultationthread read covers allsixreplies/no pagination and
+reconcile finds no newadvisorrevision. Previouslyadopted Dot semanticguard remains
+implemented; no newapprovalrequest orroutineacknowledgement. NewDS ownerroot
+1792324200.364759 andfullthread are read, rawsavedprivately: its truncation/hand
+study andruntimeclaims remain owner-reported. No AUXworktree/statewrites, learner/
+solver duplication, frozenfitness rerun or scientificreview ofDS is claimed.
+Scientific gains are conditional; no demonstratedcollaborationefficiency percentage
+or populationwinner. Public fixed-SHA result delivery follows actualqualification.
+
+The separate NEW128game ordinalBOARD control holds HANDweights and Nativeboard
+weakordering exactlyfixed, so it is not a duplicate ofDShandweight sensitivity.
+Bothfixedfoe contrast/envelopes include0; Coreandfresh-source four-output replay
+pass, no newwinner/default. These concrete negative/conditional findings end
+further unchangedprice-panel expansion. All8newseeds andpaidcost/UNKNOWN are kept.
+Scientificgoal remainsOPEN; next bounded existing-root-window consumer study is
+scoped to currenttypedcontexts and exact resource/semanticreturn contracts.

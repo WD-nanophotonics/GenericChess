@@ -35,6 +35,21 @@ heartbeat are independent and bound to their respective existing control chats.
 Scoped stops pause only the targeted role; whole-project stop must explicitly
 address all roles. Existing DEV_AUX controls remain its own.
 
+At each PRIMARY heartbeat, inspect the existing gc deepseek辅助 chat once:
+threadId 01a14ade-739d-7172-97a4-183ace749529, host local. Use bounded recent
+read_thread turns/tools; expand only for a concrete runtime anomaly. Check loops,
+repeated compaction without progress, approval/tool errors and unrelated framework
+or role drift. Do not dump whole histories into mainline context. Distinguish
+owner-reported repair from verified activation/recurrence; unavailable reads are
+a visibility limit. This replaces optional supervision with a once-per-patrol
+workflow check, not scientific approval. No routine dialogue, auto-restart/stop,
+configuration/state writes or extra executor. Notify only material faults and
+continue mainline work; scientific assessment stays with Slack partners.
+Extract bounded status/summaries and relevant tool snippets before displaying
+the result to mainline context: nested command/event logs can exceed the tool's
+nominal per-item truncation. Never dump an embedded full rollout merely to watch
+another chat; the check itself must not provoke context churn.
+
 Publish keeps its sandbox default; --branch codex/deepseek-aux is accepted ONLY
 from that role-bound checkout. Both routes require clean reviewed commits,
 relevant tests, fast-forward ancestry and complete remote SHA verification.

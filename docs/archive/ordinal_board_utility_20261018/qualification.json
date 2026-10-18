@@ -1,0 +1,31 @@
+{
+  "status": "PASS_SEALED_ORDINAL_BOARD_FULL_CORE_AND_ARITHMETIC",
+  "payloads": 17,
+  "regenerated_outputs": 4,
+  "steps": [
+    {
+      "directory": "ordinal-board-utility-20261018",
+      "script": "reader.py",
+      "seconds": 10.639438900048845
+    },
+    {
+      "directory": "ordinal-board-utility-20261018",
+      "script": "analyze.py",
+      "seconds": 0.512797299947124
+    },
+    {
+      "directory": "ordinal-board-utility-20261018",
+      "script": "profile-reader.py",
+      "seconds": 0.7652816000045277
+    }
+  ],
+  "seconds": 13.313994699972682,
+  "native_absent": true,
+  "python_S_extracted_origins": true,
+  "real_primary_stops": true,
+  "new_Native_queries": 0,
+  "new_games": 0,
+  "new_generation": 0,
+  "new_training": 0,
+  "scope": "Alloriginal fullstate/PV andfourderivedoutputs frompinnedparent+exactpublishedCoretransition. Staticprofiles rebuilt, heldhands/Nativeboardranks/checkpointids preserved. Allnonruntimefields equalincludingoriginalpaidcosts inanalysis. Not timing/binary/WDL/externalrules/populationproof."
+}

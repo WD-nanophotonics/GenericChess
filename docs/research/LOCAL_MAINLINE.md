@@ -131,6 +131,71 @@ and distribution/resource conditions explicit. All capsules validate receipt
 semantics/arithmetic, not external rules authority, fullWDL or population winners.
 PUBLIC enables review, not proof of reading.
 
+## Broader full-type utility and ratios —2026-10-18
+
+[BROAD_TYPE_STATIC_RESOURCE_CURVES_20261018.md](BROAD_TYPE_STATIC_RESOURCE_CURVES_20261018.md)
+answers the preceding next question with actual downstream games, not more own-
+gradient counts. Six/eight-board full-type/hybrid16rules/32roots:256Unit/static
+matches close559.313s/119.6Mnodes. Higher-budget static−Unit finite[.15625,.75]
+has a zero-containing eight-linked-seed envelope;6x6positive,8x8unresolved.
+The same-root staticfoe control abruptly loses its process/footer after112games;
+actual cause unconfirmed. ALL144missing/unclosed outcomes stayUNKNOWN, no restart.
+Closedrecords and12querytail replays qualify separately; no invented outcome/wall.
+
+New geo-only256matches with bothfixedfoes close491.781s/102.6Mnodes. Exact unique
+empty-target mean/median pricing has highbudget geo−Unit finite[.125,.75], but
+all geo−static bounds/envelopes include0. Staticfoe baseline missingness remains.
+Full Core8097commits/16107PVedges pass. Keep bothcheap rule-only candidates and
+Unit/learned controls; do not infer equivalence, universalwinner ornewdefault.
+
+Scaling control496queries shows finite active-integer x4 policy/work invariance,
+not learning/globalinvariance. Two formulas differ numerically onall16rules but
+share weakordering on13. ALL128Unitfoe paired trajectories yield34later candidate
+firstdivergences,17same-ordering; initialsame-rank48querypairs chooseidentically.
+A bounded completeCoreD2 diagnostic on13distinct later parents completes12trees,
+9with disjoint float/int optimalsets; one15000edge-capped root staysUNKNOWN.
+Original setup-format error occurs beforeanytreeedges, is preserved and repaired
+within the originaldeadline. Ratio magnitude can matter for localshallowchoices,
+not proofwhichratiosimproveutility orwhichdeepactionisbetter.
+
+A direct finite blocker counterexample has identicalemptygeometry but different
+occupiedpseudo-mobility; currentanalyticstaticcurve matches exact11664pattern
+integration. Thus a usefulcheap emptybaseline cannot replace fullmechanism/rule
+representation. Current route is to distinguish rank versus numeric-ratio utility
+in a NEW prospective controlled rule sample, with paidbudgets/actualwork/UNKNOWN;
+not refill oldpanels or use PVleaf preferences as minimax/WDL/utility proofs.
+Existing AUX learning/solver and DS hand-weight studies remain their own.
+
+The NEW prospective [ORDINAL_BOARD_PRICE_UTILITY_20261018.md](ORDINAL_BOARD_PRICE_UTILITY_20261018.md)
+now closes128games/8new6x6rules471001..8: numericstatic versus average ranks of
+its Native boardvalues, EXACTsame boardweakordering and HANDcoefficients. All128
+complete245.782s/61.09Mnodes,14UNKNOWN/oneactualdraw; Core3614commits/8788PVedges
+pass. Static−ordinal bounds[-.34375,.28125] againstUnit and[0,.25] againststatic;
+eightlinkedseed envelopes bothinclude0. Numericmagnitudes can affectlocalD2
+preferences, but extrautility is notdemonstrated here. Rankstillrequiresstatic
+featureconstruction; no newcheaperextractor/default orcandidateelimination.
+This adaptivelychosen6boardregime is prospective onnewseeds, notwhole-domain
+holdout. Do not refill earlier144missing or theoneCoreD2cappedroot.
+
+Stop automaticprice-panel expansion absentachangedpremise. Next bounded PRIMARY
+question concerns the EXISTING exactroot-window search option oncomplete typed
+savedroots: its extra paidroot/PV work versus useful completed search at tight
+nodebudgets. Inspectactualcaller/capability/terminal/PV contract, then freeze the
+smallest cost/semantic diagnostic that can change whether a utilitypilot isworth
+trying. No newAPI/default, WDL requirement, competingAUXsolver oroldqcampaign rerun.
+Source review has actually begun: wrappercapabilityguard, mode-separatedTTscore
+context andpaid full-PV re-search are present, notnewperformanceevidence. Reuse
+ONLY12alreadycompletedD2referencecontexts andstatic/geo inputs for a small
+false/true fixednodecap querycontrol; do not finish theonecappedCoretree or treat
+D0/D1/terminal/fallback receipts as completeD2. No newquery hasstarted yet.
+
+
+User now requires once-per-mainline-patrol inspection of the existing DS helper
+chat for workflow/runtime faults. Heartbeat and manuals implement this bounded
+read-only check; it is not scientific approval or a transferofmainlinework. Recent
+controlchat repair is owner-reported with desktopactivationpending, not independently
+validated here. Science discussions remain Slack; no routinechatmessages orDScontrol.
+
 ## Previous learning choice still retained — 2026-10-17
 
 Actual finite learning gains changed the earlier search-before-learning choice.

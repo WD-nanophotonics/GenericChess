@@ -39,6 +39,17 @@ branches remain their own. No additional workers may be created.
   stays untouched. No timer may launch another role or transfer its identity.
   DeepSeek-related periodic supervision reports actual work/evidence/problems/
   corrections/next action; no extra progress-writing burden on DeepSeek.
+- User direction2026-10-18: once per PRIMARY heartbeat inspect the existing
+  gc deepseek辅助 chat's recent status/turns/tools for workflow faults: loops,
+  repeated compaction without progress, approval/tool failures, unrelated
+  framework work, duplicate execution or role drift. Prefer bounded read_thread;
+  investigate further only on evidence, without routine dialogue or polling.
+  Distinguish repaired history, pending activation and actual recurrence; an
+  unreadable chat is a visibility limit, not evidence of health. This adds a
+  runtime check to independent mainline work, not scientific review: scientific
+  questions remain Slack discussion. Report material anomalies with evidence and
+  minimal correction advice; do not auto-control DS, edit its state/configuration,
+  or message it. Otherwise remain quiet and continue PRIMARY research.
 - Publish reviewed mainline work to sandbox, original AUX to sidemission, and
   DeepSeek auxiliary work to codex/deepseek-aux through tested, role-bound
   publication. PRIMARY integrates selected auxiliary changes deliberately,
@@ -65,8 +76,9 @@ branches remain their own. No additional workers may be created.
   interference with another Agent's computation violate the boundary. Do not
   request quiet windows or monitor unrelated processes.
 - Mutable research selection and evidence live in LOCAL_MAINLINE.md, not in
-  permanent policy. Latest user instruction is Slack defect closure FIRST;
-  the prior search-first selection is preserved there for later continuation.
+  permanent policy. The specific Slack defect-closure plan is completed, as
+  recorded there; its earlier priority must not revive a research halt. Current
+  learning/search choices and reconsideration conditions stay in that file.
 
 When direction changes, UPDATE the current decision with its reason, superseded
 alternative and execution consequence. Preserve old evidence in reports/Git;
