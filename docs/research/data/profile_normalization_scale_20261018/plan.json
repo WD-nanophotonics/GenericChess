@@ -1,0 +1,41 @@
+{
+ "task": "DEEPSEEK_AUX-PROFILE-NORMALIZATION-SCALE-20261018",
+ "agent_id": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "created_at_utc": "2026-10-18T12:54:55+00:00",
+ "question": "The 4x4/3-type normalization scan found no inversion, clipping or tie and <=0.51% ratio distortion. Does that bounded-rounding result persist at the generator's default board size 8 (5 ordinary types, 10 pairs) and at board size 6 (4 types, 6 pairs), where integer rounding has more pairs to collapse and large-ratio pairs have lower-valued members?",
+ "why_this_is_a_new_question": "The published 4x4 report names 'larger type sets' as the main untested boundary of its null result. This test uses a different board geometry and fresh seed block, keeps the published endpoint definitions verbatim, and adds one falsifiable prediction: for every pair, ratio distortion must not exceed 0.5*(1/v_min + 1/v_max) of the two normalized integers, the bound implied by independent integer rounding.",
+ "inputs": {
+  "generator": "generic_chess.generation.generator.generate_game",
+  "seeds_per_size": "292001-292040 inclusive",
+  "board_sizes": [
+   6,
+   8
+  ],
+  "setup_preset": "classic_like",
+  "evaluator": "build_ruleset_profile with EvaluationConfig(hand_weight=0.9)",
+  "search": false,
+  "endpoint_code": ".local_agent/profile-normalization-20261018/scan_profile_normalization.py scan_rule() imported directly, so endpoint definitions are identical to the published 4x4 scan"
+ },
+ "cost": {
+  "expected_seconds_upper": 120,
+  "searches": 0,
+  "rules": 80,
+  "external_services": 0
+ },
+ "endpoint": {
+  "primary": "Same counts as the 4x4 scan for each board size: rules with an ordering inversion, ceiling clips, floor value 1, tie groups, material tie groups (within-group raw ratio >= 1.10).",
+  "ratio_distortion": "for pairs with raw ratio >= 1.05, |normalized_ratio/raw_ratio - 1|, reported per board size with max and median.",
+  "quantization_bound": "check per pair that distortion <= 0.5*(1/v_min + 1/v_max) + 1e-12; record violations.",
+  "granularity_relation": "report Spearman-free descriptive relation: maximum distortion per rule against that rule's minimum normalized value; state whether the largest distortions sit on the smallest values.",
+  "promotion_and_hand": "same consistency checks as the 4x4 scan."
+ },
+ "decision_rule_written_before_run": "If any inversion or ceiling clip occurs at either size, record defect_at_larger_size. Else if >=10% of rules at either size carry a material tie, record coarse_normalization_at_larger_size. Else record ratio_rounding_bounded_persists. Record all counts for both sizes either way; do not retune seeds, thresholds or sizes after seeing the result. If the quantization bound is violated for any pair, record bound_violated and report it as a defect in the reasoning, not as a new threshold.",
+ "consumer": "rule-only generic prices and cross-game ratios: whether the published 4x4 ratio-preservation statement can be extended to the generator's default geometry, or must stay scoped to the toy case.",
+ "nonclaims": [
+  "no search strength or game-outcome claim",
+  "no human or external price fit",
+  "two board sizes from one generator family and one fresh seed block",
+  "a null result at sizes 6 and 8 does not prove ratio preservation for every generated rule"
+ ]
+}
