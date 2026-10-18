@@ -176,6 +176,17 @@ a copy with one count perturbed, so "reproduces Stage 7 exactly" is checkable
 offline. Agreement between two files written by the same scripts is a
 bookkeeping check, not independent confirmation of the measurement.
 
+Where the 53 contact cases can come from, read from source rather than measured
+case by case: `empty_mobility` is an empty-board geometry
+(`generic_chess/core/movement.py`), so "in zone" means the piece has no
+advancing destination at all, while eligibility to promote is a separate
+compiled frozenset of `(from, to)` pairs (`promotion_allowed` in
+`generic_chess/rules/compiled.py`) that need not be a forward move. Every
+stored contact example stands on the mover's own promotion rank. The 2.13% is
+therefore a measured coincidence between an independent geometry and an
+independent pair set, not a restatement of the zone definition - and it still
+says nothing about whether search would ever choose such a promotion.
+
 ## UNKNOWN and limits
 
 One generator family (`classic_like`), square boards 6 and 8, 40 measurement

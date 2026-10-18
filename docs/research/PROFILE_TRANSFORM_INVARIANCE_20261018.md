@@ -356,6 +356,14 @@ and the four Stage 7 counts - and fails on a deliberately perturbed copy; it is
 a bookkeeping check of two files written by the same scripts, not an
 independent measurement.
 
+The small contact share is not a tautology in either direction. The zone is an
+empty-board geometry (no advancing destination exists), while eligibility to
+promote is a separate compiled set of `(from, to)` pairs that need not be a
+forward move, so "in zone" and "can promote here" are independent conditions;
+the stored contact cases all stand on the mover's own promotion rank. Why so
+few of them, and whether search would ever choose such a promotion, remain
+unmeasured.
+
 Allowed, for this generator family and these two board sizes:
 
 * static per-type values may be de-duplicated across a 180-degree rotation of

@@ -4433,3 +4433,14 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   position per ruleset. The public evidence copy grows to 40 files plus its
   manifest, and rebuilding it from the private originals reproduces the
   published bytes 41/41.
+  Follow-up in the same session: `verify_bind_reachability_consistency.py`
+  re-derives the per-game sums, the class partitions, both rates, the ratio and
+  the four Stage 7 counts from the stored JSON with no replay, passes on the
+  published file and fails on a perturbed copy, so "reproduces Stage 7 exactly"
+  is checkable offline (41 files plus manifest, rebuild 42/42). Reading the
+  source also settles the mechanism question in the narrow sense only: the zone
+  is empty-board geometry while `promotion_allowed` is an independent compiled
+  set of `(from, to)` pairs, so the two conditions are not restatements of each
+  other; why only 2.13% coincide, and whether search would choose such a
+  promotion, stay unmeasured. GPT's review, not this log, decides whether the
+  auxiliary delivery is accepted.
