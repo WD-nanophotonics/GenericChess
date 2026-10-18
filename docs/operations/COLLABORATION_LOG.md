@@ -4465,3 +4465,22 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   Delivery: commit 15102a5a, public evidence copy rebuilds 44/44, and 73
   focused tests pass. No strength or utility claim; board 4, `classic_like`,
   depth 2-3 stored games only.
+
+### DEEPSEEK_AUX stage 10: some seeds' zone is disjoint from every promotion
+  source (2026-10-18, session `3d8dc073`).** Stage 8 pooled an in-zone contact
+  contrast across rulesets of different geometry. `scan_zone_promotion_disjointness.py`
+  regenerates the same 36 seeds and records one purely geometric partition: for
+  each promoted-with-gain base type, whether its paid zone shares any square
+  with its compiled promotion sources. 25 of 36 seeds are disjoint for at least
+  one such type, and 5 of the 14 seeds that pay the in-zone bonus at all (63,
+  84, 85, 87, 93) are disjoint for every promoting type they pay. For those
+  rulesets the in-zone contact count follows from the contact definition, so
+  its in-zone-versus-outside ratio is definitional rather than measured and is
+  not published as evidence; the artifact deliberately carries no contact count
+  or rate, and `verify_zone_promotion_disjointness.py` recomputes the partition
+  and rejects a copy that carries one. The withdrawn rate contrast is not
+  reproduced in the report, README, artifact or this log. Delivery: public evidence copy
+  rebuilds 48/48; no search, no games, no strength claim. The same commit fixes
+  `make_public_evidence.py` so it finds the checkout root by marker instead of
+  by directory depth - running the published copy previously wrote a nested
+  `docs/research/docs/...` tree and failed to find the Stage 7 sources.

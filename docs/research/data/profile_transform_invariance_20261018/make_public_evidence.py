@@ -14,8 +14,26 @@ import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.resolve().parents[1]
-DEST = ROOT / "docs" / "research" / "data" / "profile_transform_invariance_20261018"
+STUDY_DIR = "profile_transform_invariance_20261018"
+
+
+def _worktree_root(start: Path) -> Path:
+    """Locate the checkout root whether this file runs from the private or the
+    published copy.  An earlier version derived the root from ``HERE`` alone,
+    which wrote a nested docs/research/docs/... tree when the published copy was
+    run; the root is now found by a marker instead of by depth."""
+    for candidate in (start, *start.parents):
+        if (candidate / "generic_chess").is_dir() and (candidate / "docs").is_dir():
+            return candidate
+    raise SystemExit(f"cannot locate the worktree root above {start}")
+
+
+ROOT = _worktree_root(HERE)
+PRIVATE = ROOT / ".local_agent" / STUDY_DIR
+# Originals preferred: the private study directory when it exists, else this one.
+SOURCE = PRIVATE if (PRIVATE / "plan.json").exists() else HERE
+EXTRA_DIR = ROOT / ".local_agent" / "games-leaf-terms-20261018"
+DEST = ROOT / "docs" / "research" / "data" / STUDY_DIR
 
 JSON_FILES = [
     "plan.json",
@@ -43,6 +61,8 @@ JSON_FILES = [
     "plan_bind_reachability_to_decisions.json",
     "results_bind_reachability_to_decisions.json",
     "results_contact_concentration.json",
+    "plan_zone_promotion_disjointness.json",
+    "results_zone_promotion_disjointness.json",
 ]
 
 PY_FILES = [
@@ -63,22 +83,27 @@ PY_FILES = [
     "bind_reachability_to_decisions.py",
     "verify_bind_reachability_consistency.py",
     "analyze_contact_concentration.py",
+    "scan_zone_promotion_disjointness.py",
+    "verify_zone_promotion_disjointness.py",
     "make_public_evidence.py",
 ]
 
 # Stage 7 lives in its own private directory because it reads stored games
 # rather than generating rules; it is still part of this study's evidence.
 EXTRA_SOURCES = {
-    "results_stored_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "results_stored_games_leaf_terms.json",
-    "plan_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "plan_games_leaf_terms.json",
-    "scan_stored_games_leaf_terms.py": HERE.parent / "games-leaf-terms-20261018" / "scan_stored_games_leaf_terms.py",
-    "results_static_zone_share.json": HERE.parent / "games-leaf-terms-20261018" / "results_static_zone_share.json",
-    "static_zone_share_boards.py": HERE.parent / "games-leaf-terms-20261018" / "static_zone_share_boards.py",
-    "plan_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "plan_bind_reachability_to_decisions.json",
-    "results_bind_reachability_to_decisions.json": HERE.parent / "games-leaf-terms-20261018" / "results_bind_reachability_to_decisions.json",
-    "bind_reachability_to_decisions.py": HERE.parent / "games-leaf-terms-20261018" / "bind_reachability_to_decisions.py",
-    "results_contact_concentration.json": HERE.parent / "games-leaf-terms-20261018" / "results_contact_concentration.json",
-    "analyze_contact_concentration.py": HERE.parent / "games-leaf-terms-20261018" / "analyze_contact_concentration.py",
+    name: EXTRA_DIR / name
+    for name in (
+        "results_stored_games_leaf_terms.json",
+        "plan_games_leaf_terms.json",
+        "scan_stored_games_leaf_terms.py",
+        "results_static_zone_share.json",
+        "static_zone_share_boards.py",
+        "plan_bind_reachability_to_decisions.json",
+        "results_bind_reachability_to_decisions.json",
+        "bind_reachability_to_decisions.py",
+        "results_contact_concentration.json",
+        "analyze_contact_concentration.py",
+    )
 }
 
 _HOME = re.compile(r"[A-Za-z]:\\\\?Users\\\\?[^\\\\\"]+", re.IGNORECASE)
@@ -99,7 +124,7 @@ def main() -> int:
     DEST.mkdir(parents=True, exist_ok=True)
     written = []
     for name in JSON_FILES + PY_FILES:
-        src = EXTRA_SOURCES.get(name, HERE / name)
+        src = EXTRA_SOURCES.get(name, SOURCE / name)
         if not src.exists():
             raise SystemExit(f"missing {name}")
         text = sanitize(src.read_text(encoding="utf-8"))

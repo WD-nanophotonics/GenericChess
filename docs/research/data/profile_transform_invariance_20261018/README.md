@@ -4,9 +4,11 @@ Public copy of the evidence behind
 `docs/research/PROFILE_TRANSFORM_INVARIANCE_20261018.md`.
 
 Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
-`6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18. Auxiliary result; no other
-role has rerun it. No strength, playing-quality, utility, human-price or
-game-outcome claim is made anywhere in this directory.
+`6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
+disjointness artifact below was added from the same role's later session
+`3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result; no other role has
+rerun it. No strength, playing-quality, utility, human-price or game-outcome
+claim is made anywhere in this directory.
 
 The study generates rules only through the existing generator
 (`GeneratorConfig`, seeds 292001–292052 and 292101–292112, board sizes 6 and 8,
@@ -30,13 +32,24 @@ same stored games and asks whether the in-zone bonus is paid to pieces that can
 actually promote, with its endpoint in
 `plan_bind_reachability_to_decisions.json`. It adds no search either.
 
+`scan_zone_promotion_disjointness.py` adds no games and no search: it
+regenerates the same 36 seeds and records only whether each base type's paid
+zone intersects that type's compiled promotion sources, with its endpoint in
+`plan_zone_promotion_disjointness.json`. Five of the 14 seeds that pay the
+in-zone bonus are disjoint, so an in-zone contact ratio on those seeds is
+definitional rather than measured; the artifact carries no contact count or
+rate and `verify_zone_promotion_disjointness.py` rejects it if one is added.
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing
 else is changed, and every JSON file was re-parsed after substitution so a
 broken file could not be published. `make_public_evidence.py` performs that
 substitution, so its own drive-letter regex is the only path-shaped token in
-the published copy.
+the published copy. That script now locates the checkout root by a marker
+rather than by directory depth and reads the private originals when they are
+present, so running the published copy no longer writes a nested
+`docs/research/docs/...` tree or fails on the Stage 7 sources.
 
 ## Files
 
@@ -67,6 +80,8 @@ the published copy.
 | `plan_bind_reachability_to_decisions.json` | 5055 | `dceb6678f312b96c6cdf9e9fc1fea93942ba42bbfd673bf60fa7e70133b82b02` |
 | `results_bind_reachability_to_decisions.json` | 101870 | `0979ef27dda4e3e5542b6b6e3eff3340ec32502300fef66f83cb702a00b4ff80` |
 | `results_contact_concentration.json` | 10154 | `2f2fe05b70ff60ae76cff8dda5a095853e2136eef45a80e0f8b177b0f0e190be` |
+| `plan_zone_promotion_disjointness.json` | 2316 | `e3561e1bfcdcd76b8a5ccd7586a87876196438625694887ebbc4962b051f2ec9` |
+| `results_zone_promotion_disjointness.json` | 13545 | `83b076348312882762307acafcc1c7a4c1044c1fa29678f7485d7465a7cf7507` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -84,7 +99,9 @@ the published copy.
 | `bind_reachability_to_decisions.py` | 18860 | `48c5c1429f1b237dc1c4972043a4c7b6f17251173194ce48784f3e263b339bf9` |
 | `verify_bind_reachability_consistency.py` | 5766 | `3e8696945ab6a84e2a327686947eebe1c39745ca26095a43b7e3454a9e484f66` |
 | `analyze_contact_concentration.py` | 9537 | `3a0c74f94eb670e48742bd45af4da0b44446121a8fd07749c712e96e818609e1` |
-| `make_public_evidence.py` | 5068 | `6c9f500e9bc46ab4dd7ebe5daf750217dcdcf414e3741e5e70d53822ba6d214d` |
+| `scan_zone_promotion_disjointness.py` | 7131 | `03b46440c099101de44b889b589255dea8af7dec2c514607b552927217f500f5` |
+| `verify_zone_promotion_disjointness.py` | 4343 | `5e3657a4ae101d9489cbd639beaf71c5ed07e227e598b3d056223cffc9b947f7` |
+| `make_public_evidence.py` | 5406 | `4e4bc85025414bc906b7684214275efd65af0356f5748310a4cf5e40554708a6` |
 
 `manifest.json` holds the same table in machine-readable form.
 

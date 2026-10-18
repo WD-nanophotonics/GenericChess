@@ -1,0 +1,421 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "question": "For which stored rulesets is the evaluator promotion zone disjoint from every compilation-legal promotion source square?",
+ "plan": "plan_zone_promotion_disjointness.json",
+ "source": "results_bind_reachability_to_decisions.json",
+ "source_sha256": "0979ef27dda4e3e5542b6b6e3eff3340ec32502300fef66f83cb702a00b4ff80",
+ "design": {
+  "seeds": "every seed that appears in the stored Stage 8 per-game records",
+  "zone": "evaluator._zones[(base_type_id, side)] for base types with a positive promotion gain",
+  "promotion_sources": "from_square of compiled.promotion_allowed[base_type_id][side]",
+  "counting": "per (base type, side) pair, so one square can be counted for more than one pair"
+ },
+ "seeds_examined": 36,
+ "seeds_with_an_in_zone_paid_observation": 14,
+ "seeds_whose_zone_is_disjoint_from_every_promotion_source": [
+  59,
+  60,
+  62,
+  63,
+  64,
+  66,
+  67,
+  69,
+  70,
+  71,
+  73,
+  74,
+  75,
+  76,
+  78,
+  79,
+  81,
+  82,
+  84,
+  85,
+  86,
+  87,
+  88,
+  91,
+  93
+ ],
+ "disjoint_seed_count": 25,
+ "opportunity_seeds_whose_zone_is_disjoint": [
+  63,
+  84,
+  85,
+  87,
+  93
+ ],
+ "opportunity_disjoint_seed_count": 5,
+ "structural_statement": "For these seeds the evaluator promotion zone contains no square from which any positively-valued base type can promote, so no in-zone paid square in them can carry a legal promotion action. This follows from the contact definition plus compiled.promotion_allowed and is not evidence about how search chooses moves. The opportunity list restricts this to seeds that actually pay the in-zone bonus in the stored corpus.",
+ "per_seed": [
+  {
+   "seed": 59,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 8,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 60,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 61,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 24,
+   "promotion_source_squares": 32,
+   "zone_squares_that_are_promotion_sources": 24,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 32,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 62,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 63,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 48,
+   "promotion_source_squares": 16,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 155,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 64,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 65,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 16,
+   "promotion_source_squares": 32,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 12,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 66,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 24,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 67,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 68,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 20,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 60,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 69,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 70,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 16,
+   "promotion_source_squares": 44,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 71,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 24,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 72,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 32,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 17,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 73,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 74,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 75,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 8,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 76,
+   "base_type_side_pairs_with_a_zone": 0,
+   "zone_squares": 0,
+   "promotion_source_squares": 0,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 77,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 28,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 20,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 78,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 32,
+   "promotion_source_squares": 16,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 79,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 80,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 4,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 33,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 81,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 20,
+   "promotion_source_squares": 12,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 82,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 16,
+   "promotion_source_squares": 24,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 83,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 32,
+   "promotion_source_squares": 40,
+   "zone_squares_that_are_promotion_sources": 24,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 84,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 24,
+   "promotion_source_squares": 8,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 424,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 85,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 24,
+   "promotion_source_squares": 8,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 507,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 86,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 16,
+   "promotion_source_squares": 44,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 87,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 48,
+   "promotion_source_squares": 16,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 124,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 88,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 8,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 89,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 36,
+   "promotion_source_squares": 48,
+   "zone_squares_that_are_promotion_sources": 20,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 44,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 90,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 52,
+   "promotion_source_squares": 36,
+   "zone_squares_that_are_promotion_sources": 24,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 460,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 91,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 8,
+   "promotion_source_squares": 20,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 92,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 16,
+   "promotion_source_squares": 48,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 0,
+   "can_contribute_an_in_zone_contact": true
+  },
+  {
+   "seed": 93,
+   "base_type_side_pairs_with_a_zone": 4,
+   "zone_squares": 40,
+   "promotion_source_squares": 24,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "in_zone_paid_observations": 102,
+   "can_contribute_an_in_zone_contact": false
+  },
+  {
+   "seed": 94,
+   "base_type_side_pairs_with_a_zone": 2,
+   "zone_squares": 24,
+   "promotion_source_squares": 24,
+   "zone_squares_that_are_promotion_sources": 16,
+   "zone_disjoint_from_every_promotion_source": false,
+   "in_zone_paid_observations": 499,
+   "can_contribute_an_in_zone_contact": true
+  }
+ ],
+ "nonclaims": [
+  "no contact count and no contact rate are recorded here; the withdrawn 0-vs-53 rate contrast is not reproduced",
+  "no search-time or strength claim",
+  "the partition depends on the served evaluator's zone definition and the compiled promotion pairs",
+  "seeds that intersect yet show no contact are not explained by this artifact"
+ ]
+}

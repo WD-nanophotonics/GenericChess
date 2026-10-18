@@ -1,0 +1,26 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "created_utc": "2026-10-18T14:33Z",
+ "question": "For which stored rulesets is the evaluator promotion zone disjoint from every compilation-legal promotion source square?",
+ "why_it_changes_a_decision": "It decides whether the pooled in-zone contact ratio can be read as a uniform geometric effect: seeds whose zone contains no promotion source can never contribute to the in-zone column, so the pooled ratio is a composition average over two rule regimes. Without this partition the ratio reads as a property of the term.",
+ "inputs": [
+  "docs/research/data/profile_transform_invariance_20261018/results_bind_reachability_to_decisions.json (published Stage 8 per-game records)",
+  "generic_chess.generation.generator.generate_game with GeneratorConfig(seed, board_size=4, setup_preset='classic_like')",
+  "generic_chess.ai.evaluation.evaluator.Evaluator zone tables and compiled.promotion_allowed"
+ ],
+ "no_new_search": "ruleset regeneration only; no search, no game replay, no frozen fitness",
+ "design": {
+  "seeds": "every seed present in the stored Stage 8 per-game records",
+  "zone": "evaluator._zones[(base_type_id, side)] for base types with positive promotion gain",
+  "promotion_sources": "from_square entries of compiled.promotion_allowed[base_type_id][side]",
+  "per_seed_output": "zone square count, promotion source count, intersection count, disjointness flag"
+ },
+ "excluded_on_purpose": {
+  "contact_count": "not recorded; a zero for disjoint seeds is definitional because movegen only builds a promotion variant when (from,to) is in compiled.promotion_allowed",
+  "rate_contrast": "the earlier 0-vs-53 in-zone rate contrast is withdrawn and must not be reproduced here"
+ },
+ "endpoint_written_before_the_run": "decision zone_disjointness_partition_recorded if every seed in the corpus is classified and the artifact carries no contact count or rate field; otherwise decision blocked_with_reason plus the failing seeds",
+ "done_condition": "results_zone_promotion_disjointness.json regenerated from scratch by the committed scan script, a verifier reproduces it, and the public evidence copy rebuilds byte-identically",
+ "git_head_at_plan_time": "abe0e4cb18a49b90b589cae30ccd1be705ad3fed"
+}

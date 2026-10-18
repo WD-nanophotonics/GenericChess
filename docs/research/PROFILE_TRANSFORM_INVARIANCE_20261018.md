@@ -405,6 +405,27 @@ plus the two 12-seed check sets (292041–292052, 292101–292112),
 `hand_weight = 0.9`, one relocated piece per case, and states that are
 constructed for measurement rather than shown reachable in play.
 
+### Where the zone excludes promotion entirely (structural)
+
+`scan_zone_promotion_disjointness.py` regenerates the same 36 seeds and asks a
+purely geometric question: for a piece's base type, is any paid zone square
+also a promotion source square in the compiled rule set? The artifact records a
+partition and nothing else - no contact count and no rate - under the endpoint
+in `plan_zone_promotion_disjointness.json`, and
+`verify_zone_promotion_disjointness.py` recomputes the partition independently
+and rejects a copy that carries a contact statistic. Of the 36 seeds, 25 have
+at least one promoted-with-gain base type whose paid zone is disjoint from
+every promotion source; of the 14 seeds that pay the in-zone bonus at all, 5
+(seeds 63, 84, 85, 87, 93) are disjoint for every promoting type they pay.
+
+For those 5 rulesets the in-zone contact count follows from how a contact is
+defined and cannot be anything else. An in-zone-versus-outside ratio computed
+on them is therefore definitional, not an empirical finding, and is *not*
+reported here as evidence. Its only role is explanatory: it is one concrete
+mechanism, alongside the seed-level split above, for why the pooled Stage 8
+ratio is a composition average over heterogeneous ruleset geometries rather
+than a uniform property of this generator.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward
