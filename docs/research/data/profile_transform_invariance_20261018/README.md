@@ -136,6 +136,16 @@ separately published Stage 10 list (8 checks). Scope is geometry only: the
 other presets were regenerated, never played, and nothing here says they are
 balanced or comparable to `classic_like` as games.
 
+These disjoint counts are not a restatement of the zone definition. The zone
+holds squares where the base type has no forward move
+(`compiled.empty_forward_mobility`), while promotion eligibility is a separate
+generated `(from, to)` mask, and on the stored rows the two do intersect: 11 of
+36 `classic_like` seeds (9 under `bilateral_random`, 11 under `free_random`)
+have a non-empty intersection, with every zone square a promotion source on
+seeds 61, 72 and 77. Read "in most of this panel the zone is not a promotion
+square", not "the zone can never hold one"; the per-seed counts are a re-read of
+the Stage 16 rows and no scan was re-run for them.
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing

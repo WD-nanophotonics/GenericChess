@@ -738,6 +738,25 @@ count and no in-zone-versus-outside rate is produced, and no strength,
 playing-quality, utility or causal claim follows. Scope is board 4 with the
 three presets the generator offers at this place in the code.
 
+#### One tautology this does not rest on
+
+The zone is built from `compiled.empty_forward_mobility[type][owner][idx]`:
+a square is in it when the base type has no forward move from there
+(`evaluator.py`, zone construction). Promotion eligibility is a separate
+generated mask of `(from, to)` pairs (`compiled.promotion_allowed`, validated
+as an explicit per-type set), so a promotion source can sit on a square with no
+forward move at all - and on the stored rows it does: 11 of the 36
+`classic_like` seeds have a non-empty intersection between zone and sources
+(9 under `bilateral_random`, 11 under `free_random`), and on seeds 61, 72 and 77
+every zone square is a promotion source (share 1.0; seeds 74 and 89 under
+`bilateral_random`; seeds 60, 61, 62, 79, 88 and 93 under `free_random`). So
+"the zone contains no promotion source" is a majority statement about these
+generated rulesets, not an arithmetic consequence of how the zone is defined,
+and the disjoint count must not be re-read as "the zone can never hold a
+promotion source". Those per-seed counts are a re-read of the same published
+Stage 16 rows, with the mechanism checked in the two source files named above;
+nothing was re-run.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward

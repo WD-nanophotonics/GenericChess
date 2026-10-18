@@ -4702,3 +4702,12 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   Scope: board 4, the three presets the generator offers here.
   Delivery: public evidence copy rebuilds 78/78 including the manifest itself
   and the verifier's own output.
+  One tautology guard was added after the first publish, from the same stored
+  rows and a source read (`evaluator.py` zone construction vs the separate
+  `compiled.promotion_allowed` mask): the disjointness is not definitional,
+  because 11 of 36 `classic_like` seeds (9 under `bilateral_random`, 11 under
+  `free_random`) have a non-empty zone/source intersection and seeds 61, 72 and
+  77 have every zone square as a promotion source. The defensible sentence is
+  "in most of this panel the zone is not a promotion square", not "the zone can
+  never hold one". Nothing was re-run for it; the counts come from the published
+  Stage 16 rows.
