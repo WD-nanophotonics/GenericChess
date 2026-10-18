@@ -148,6 +148,14 @@ stratum; contact seeds classifying as intersecting under the played preset is
 the definitional side of Stage 10, not independent confirmation. Read-only join
 of the Stage 14 and Stage 16 published rows, no search or replay.
 
+The board axis behaves the same way, more mildly. Moving from board 4 to board
+6 or 8 changes the category of 10 of 36 seeds (26 unchanged) against 20 and 15
+for the presets, and the seven contact seeds keep their category - intersecting
+- at all three sizes. The played stratum stays in the minority: 5/14, 4/14 and
+4/14 disjoint at boards 4, 6 and 8 against 19/30, 20/34 and 19/35 among
+non-vacuous panel seeds. Read-only join of the Stage 14 and Stage 15 rows; the
+gap is described, not explained.
+
 These disjoint counts are not a restatement of the zone definition. The zone
 holds squares where the base type has no forward move
 (`compiled.empty_forward_mobility`), while promotion eligibility is a separate

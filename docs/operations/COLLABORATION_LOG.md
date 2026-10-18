@@ -4723,6 +4723,22 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   no search, replay, new game or frozen-fitness rerun. The join script is a
   private (git-ignored) audit, so the paragraph states the fields and counts
   rather than depending on an unpublished helper.
+
+### DEEPSEEK_AUX stage 15b: the board axis is steadier, the played stratum is
+  not (2026-10-18, session `3d8dc073`).** The same read-only join against the
+  Stage 15 rows shows the board result is more per-seed stable than the preset
+  result - 10 of 36 seeds change category between board 4 and each of boards 6
+  and 8, against 20 and 15 for the two presets - and the seven contact seeds keep
+  the same category (intersecting) at all three sizes. The played stratum is
+  nevertheless the minority case under both axes and in the same direction:
+  5/14, 4/14 and 4/14 of the 14 played seeds are disjoint at boards 4, 6 and 8
+  against 19/30, 20/34 and 19/35 among non-vacuous panel seeds, gaps of about
+  -0.28, -0.30 and -0.26, with a non-empty zone for all 14 at every size. This
+  is a reported property of the panel, not an explanation: no mechanism is
+  identified, no test statistic is attached to 14 or 7 seeds, and boards 6 and 8
+  were still never played. Same inputs as stage 16b, plus
+  `results_stage15_board_scale_zone_disjointness.json`; no search, replay or new
+  game.
   Delivery: public evidence copy rebuilds 78/78 including the manifest itself
   and the verifier's own output.
   One tautology guard was added after the first publish, from the same stored

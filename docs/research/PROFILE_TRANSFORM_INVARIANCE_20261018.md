@@ -762,6 +762,20 @@ paragraph is a read-only join of two already-published tables: the
 `zone_disjoint_from_every_promotion_source` fields of the Stage 16 rows. No
 search, replay or new game was run.
 
+The same join against the Stage 15 rows shows the board axis is the steadier
+one, and that the played-stratum gap is not a preset artefact either. Changing
+the board from 4 to 6 or to 8 moves 10 of 36 seeds between categories, against
+20 and 15 for the two presets, so 26 of 36 seeds keep their classification; the
+seven contact seeds keep theirs at all three sizes and stay intersecting. The
+played stratum is again the minority case, in the same direction and at a
+similar size: 5/14, 4/14 and 4/14 disjoint against 19/30, 20/34 and 19/35 among
+the panel's non-vacuous seeds at boards 4, 6 and 8, gaps of about -0.28, -0.30
+and -0.26, and all 14 played seeds have a non-empty zone at every size. So the
+seeds that produced play are consistently less disjoint than the panel across
+both axes, while the contact seeds themselves are stable. The mechanism is not
+identified here; the gap is reported as a property of this panel, not explained
+by it, and no test statistic is attached to 14 or 7 seeds.
+
 #### One tautology this does not rest on
 
 The zone is built from `compiled.empty_forward_mobility[type][owner][idx]`:
