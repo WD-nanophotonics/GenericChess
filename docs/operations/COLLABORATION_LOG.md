@@ -4700,6 +4700,29 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   balanced or comparable as games; no contact count, no in-zone-versus-outside
   rate, no strength, quality, utility or causal claim.
   Scope: board 4, the three presets the generator offers here.
+
+### DEEPSEEK_AUX stage 16b: the preset decision is aggregate, not per-seed
+  (2026-10-18, session `3d8dc073`).** A read-only join of the already-published
+  Stage 14 and Stage 16 rows checks whether the stable shares describe the same
+  seeds. They do not: classifying each seed as vacuous/no-zone, disjoint with a
+  non-empty zone, or intersecting, 20 of 36 seeds change category between
+  `classic_like` and `bilateral_random` and 15 between `classic_like` and
+  `free_random`. The played stratum is also unrepresentative - the 14 seeds with
+  in-zone paid observations are 5/14 disjoint under `classic_like` against 19 of
+  the panel's 30 non-vacuous seeds, a gap of about ten seeds of 36 that survives
+  excluding vacuous seeds, and three of the seven contact seeds have no zone at
+  all under `bilateral_random`. Nothing here reverses
+  `disjointness_is_generic_across_presets`; it bounds it to an aggregate
+  statement about the regenerated rule population, not a per-seed invariant and
+  not a property of the stratum that produced the contact data. Contact seeds
+  classifying as intersecting under the played preset is the definitional side
+  of the Stage 10 statement, since a disjoint seed cannot contribute a contact,
+  and is not independent confirmation. Inputs are the
+  `in_zone_paid_observations` field of the Stage 14 rows and the `zone_squares`
+  and `zone_disjoint_from_every_promotion_source` fields of the Stage 16 rows;
+  no search, replay, new game or frozen-fitness rerun. The join script is a
+  private (git-ignored) audit, so the paragraph states the fields and counts
+  rather than depending on an unpublished helper.
   Delivery: public evidence copy rebuilds 78/78 including the manifest itself
   and the verifier's own output.
   One tautology guard was added after the first publish, from the same stored

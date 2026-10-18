@@ -738,6 +738,30 @@ count and no in-zone-versus-outside rate is produced, and no strength,
 playing-quality, utility or causal claim follows. Scope is board 4 with the
 three presets the generator offers at this place in the code.
 
+#### The shares are aggregate; the seeds are not
+
+`disjointness_is_generic_across_presets` is a statement about the regenerated
+rule population, not a per-seed invariant, and the gap is large enough to
+matter. Classifying each seed on the stored `per_seed_preset` rows as vacuous
+(no zone), disjoint with a non-empty zone, or intersecting, 20 of 36 seeds
+change category between `classic_like` and `bilateral_random` and 15 between
+`classic_like` and `free_random`. The played stratum is also not a typical
+sample of the panel: the 14 seeds that carry in-zone paid observations are 5/14
+disjoint under `classic_like` against 19 of the panel's 30 non-vacuous seeds, a
+gap of about ten seeds of 36 that survives excluding vacuous seeds; under
+`bilateral_random` three of the seven contact seeds have no zone at all. Only
+`classic_like` was ever played, so none of this contradicts the decision, but it
+bounds what the decision says: the exclusion is not a `classic_like` artefact
+in aggregate, and it is neither a property of the same seeds under other
+presets nor a property of the stratum that produced the contact data. Those
+contact seeds classify as intersecting under the played preset, which is the
+definitional side of the Stage 10 statement - a disjoint seed cannot contribute
+a contact - and not an independent confirmation of it. Every count in this
+paragraph is a read-only join of two already-published tables: the
+`in_zone_paid_observations` field of the Stage 14 rows and the `zone_squares` /
+`zone_disjoint_from_every_promotion_source` fields of the Stage 16 rows. No
+search, replay or new game was run.
+
 #### One tautology this does not rest on
 
 The zone is built from `compiled.empty_forward_mobility[type][owner][idx]`:

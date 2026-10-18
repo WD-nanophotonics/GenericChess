@@ -136,6 +136,18 @@ separately published Stage 10 list (8 checks). Scope is geometry only: the
 other presets were regenerated, never played, and nothing here says they are
 balanced or comparable to `classic_like` as games.
 
+The decision is aggregate and must be read that way: classifying each seed on
+the stored rows as vacuous, disjoint or intersecting, 20 of 36 seeds change
+category between `classic_like` and `bilateral_random` and 15 between
+`classic_like` and `free_random`. The 14 seeds that carry in-zone paid
+observations are 5/14 disjoint under `classic_like` against 19 of the panel's 30
+non-vacuous seeds, and three of the seven contact seeds have no zone at all
+under `bilateral_random`. So the exclusion is not a `classic_like` artefact in
+aggregate, but it is not a per-seed invariant and not a property of the played
+stratum; contact seeds classifying as intersecting under the played preset is
+the definitional side of Stage 10, not independent confirmation. Read-only join
+of the Stage 14 and Stage 16 published rows, no search or replay.
+
 These disjoint counts are not a restatement of the zone definition. The zone
 holds squares where the base type has no forward move
 (`compiled.empty_forward_mobility`), while promotion eligibility is a separate
