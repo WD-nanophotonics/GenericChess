@@ -343,7 +343,26 @@ fourunique differentactions independentlytie. Diagnosticintegertables are not
 service-static prices; no freshfixedsource alltargetrebuild or mechanismutility
 claim. Next boundedsource/state/target check may use the alreadycaptured product
 source; do not mechanically expand another fitness/proof campaign.
+The captured-source followup has actuallybegun: all9IR Sessionstate/history/
+witness records agree and onepersistentphase0Coreq4 target rebuilds in1.054s;
+eightroot/fourselectedchild targets are not yetfreshsourcequalified. No new
+Native/training/game execution. Current tinyfinitechecks do not demand a
+genericproof/API or automaticutilitypanel expansion.
 ExistingAUXlearning/solver andDS hand/static work stay their own. ScienceOPEN.
+
+New CHAT_Comments1792340863.718509/1792340830.677639 were read withcomplete
+zero-replythreads and rawoutputs preserved. Treat asreference, notpolicy.
+Adopt the finitecomplete-rule/state/path witness standard before claiming
+rotation-equivalence or trainingdedup; one-ply actionbijection/staticprofile
+equality alone is insufficient. PublishedDS6b05e3d4 report was source-read,
+notindependentlyexecuted here; its numericalstudies remain ownerreported.
+Local source confirms legacyEvaluator half-bonus comparesSquare targets with
+integerzones. DS alreadyidentified this; deferduplicateimplementation/experiment
+while it owns the study. CurrentPRIMARY materialNative consumers do not call
+thatlegacypositionbonus, so no automaticinvalidating/rerunning ourpanels.
+A future concreteintegration may review itsfixedpublishedpatch and focused
+controls; do not require newWDL before a correctnessclaim, nor inferstrength
+gain from a typefix. No rotation/halfbonuscampaign orDSmessage/control launched.
 
 The once-per-mainline-patrol DS workflow check now sees recent active work and
 successful tool exits in the bounded existing control-chat view. Its prior

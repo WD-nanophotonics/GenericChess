@@ -4547,3 +4547,17 @@ underactualCorechild searches. Explicitdiagnosticweights, notservice-static
 prices/learning. No freshfixedsourcealltargetrebuild orutilityclaim yet.
 Originalzeroquerymetadata setupfailure and42.109s stop-polling overhead retained;
 no discardedresults orfrozenUNKNOWNrefill.
+
+
+Primary delivery f53ead75df4082c67a6ac598ca4a22d6c47359cf is actuallyPublic,
+54anonymousfiles exact-bytechecked, publisher15tests/clean/fullremoteSHA;
+Slack delivery1792341204.162779 in the existingthread, noack/request loop.
+Endingread covers13complete replies with no newDotrevision; two newCHAT roots
+1792340863.718509/1792340830.677639 and theircompletezeroreplythreads assessed.
+Referenceadoption: completefinitepath/state evidence before rotationalequivalence/
+dedup claims. Source-read DS report6b05e3d4 only, notindependentrerun. Confirmed
+localSquare/index mismatch isalreadyDSidentified; no duplicatefix/experiment,
+no claimlegacypositionalterm invalidates ourpurematerialNativeconsumer.
+Nextcaptured-sourceIRcheck actuallybegun: all9fullrecords/witnesses andONLYone
+Coreq4target pass1.054s; remaining8root/4child targets explicitlyunqualified.
+No newNative/training/games orDSstate/checkout/messages.

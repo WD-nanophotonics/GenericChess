@@ -24,3 +24,10 @@ has not yet independently rebuilt allq4targets from capturedsource. Its complete
 rules/records/queries are sufficient for that next boundedcheck. Tests fixture
 definitions remain in theproject at the fixed delivery version. NoAUX/DS code,
 Nativebinary rebuild, game/training or oldUNKNOWNrefill.
+
+
+The nextcaptured-sourcecheck has now actuallybegun: source-admission.py uses
+the sealed234payload source, Python-S/Nativeabsence, rebuildsall9fullSession
+records/witnesses, and ONLYthe persistentphase0Coreq4 target (1.054s). It does
+not reclassify theother8root/4child targets as source-qualified. See the exact
+source-admission-result.json; no Native/games/training rerun.
