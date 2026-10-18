@@ -1,0 +1,37 @@
+{
+  "content_scan_pass": true,
+  "parent_sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+  "payloads": 35,
+  "status": "PASS_EXTRACTED_PINNED_SOURCE_THREE_OUTPUTS_REGENERATED",
+  "zip_bytes": 6270674,
+  "zip_sha256": "d4c8248d597b830e52bcf89cda6c23761e7dca51d906c211911dadc1ea180aca",
+  "own_payloads_hash_verified": 35,
+  "parent_source_payloads_hash_verified": 134,
+  "all_derived_outputs_parked_before_regeneration": true,
+  "all_non_time_fields_equal": true,
+  "original_query_clock_fields_compare_exactly": true,
+  "python_S_extracted_origins": true,
+  "native_absent": true,
+  "real_primary_stop_root": true,
+  "new_fitness_games": 0,
+  "new_training": 0,
+  "steps": [
+    {
+      "script": "reader.py",
+      "seconds": 112.72058909997577,
+      "exit_code": 0
+    },
+    {
+      "script": "analyze.py",
+      "seconds": 1.2625408000312746,
+      "exit_code": 0
+    },
+    {
+      "script": "divergence.py",
+      "seconds": 19.089643499988597,
+      "exit_code": 0
+    }
+  ],
+  "seconds": 134.09672839997802,
+  "scope": "Core fullstate/history/PV receipt reconstruction, integerleafvalues, fourobjectivefirstdivergence and linkedoutcomebounds; not independentWDL/rulesauthority or oldtraining reexecution. Parent source fixed bySHA. No fakeflags or liveeditable fallback."
+}

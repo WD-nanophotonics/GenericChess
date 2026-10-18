@@ -1,0 +1,527 @@
+{
+  "actual_diagnostic_seconds": 166.23780900007114,
+  "actual_generation_seconds": 25.972808999125846,
+  "all_same_rule_full_states_equal": true,
+  "generation_pair_counts": {
+    "both_failed": 0,
+    "both_success": 765,
+    "complete_pairs": 768,
+    "only_default_success": 3,
+    "only_filtered_success": 0,
+    "replaced_rule_pairs": 159,
+    "same_rule_pairs": 606
+  },
+  "paired_differences": [
+    {
+      "by_setup": {
+        "classic_like": [
+          0.0,
+          0.0
+        ],
+        "free_random": [
+          -0.0078125,
+          -0.0078125
+        ]
+      },
+      "by_size": {
+        "4": [
+          -0.01171875,
+          -0.01171875
+        ],
+        "6": [
+          0.0,
+          0.0
+        ],
+        "8": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          -0.005208333333333333,
+          -0.005208333333333333
+        ],
+        "none": [
+          -0.0026041666666666665,
+          -0.0026041666666666665
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        -0.00390625,
+        -0.00390625
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        -0.009114583333333334,
+        0.0
+      ],
+      "metric": "ongoing",
+      "prefix": 0
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.0,
+          0.0
+        ],
+        "free_random": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.0,
+          0.0
+        ],
+        "6": [
+          0.0,
+          0.0
+        ],
+        "8": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.0,
+          0.0
+        ],
+        "none": [
+          0.0,
+          0.0
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.0,
+        0.0
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        0.0,
+        0.0
+      ],
+      "metric": "material_nonzero",
+      "prefix": 0
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.015625,
+          0.015625
+        ],
+        "free_random": [
+          -0.0234375,
+          -0.0234375
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.0,
+          0.0
+        ],
+        "6": [
+          -0.01953125,
+          -0.01953125
+        ],
+        "8": [
+          0.0078125,
+          0.0078125
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          -0.015625,
+          -0.015625
+        ],
+        "none": [
+          0.0078125,
+          0.0078125
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        -0.00390625,
+        -0.00390625
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        -0.01953125,
+        0.013020833333333334
+      ],
+      "metric": "material_choice_contrast",
+      "prefix": 0
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.0546875,
+          0.0546875
+        ],
+        "free_random": [
+          0.020833333333333332,
+          0.020833333333333332
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.0390625,
+          0.0390625
+        ],
+        "6": [
+          0.06640625,
+          0.06640625
+        ],
+        "8": [
+          0.0078125,
+          0.0078125
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.049479166666666664,
+          0.049479166666666664
+        ],
+        "none": [
+          0.026041666666666668,
+          0.026041666666666668
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.037760416666666664,
+        0.037760416666666664
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        0.020833333333333332,
+        0.055989583333333336
+      ],
+      "metric": "ongoing",
+      "prefix": 4
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.005208333333333333,
+          0.005208333333333333
+        ],
+        "free_random": [
+          -0.015625,
+          -0.015625
+        ]
+      },
+      "by_size": {
+        "4": [
+          -0.00390625,
+          -0.00390625
+        ],
+        "6": [
+          -0.01953125,
+          -0.01953125
+        ],
+        "8": [
+          0.0078125,
+          0.0078125
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.0,
+          0.0
+        ],
+        "none": [
+          -0.010416666666666666,
+          -0.010416666666666666
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        -0.005208333333333333,
+        -0.005208333333333333
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        -0.024739583333333332,
+        0.014322916666666666
+      ],
+      "metric": "material_nonzero",
+      "prefix": 4
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.044270833333333336,
+          0.044270833333333336
+        ],
+        "free_random": [
+          0.020833333333333332,
+          0.020833333333333332
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.0234375,
+          0.0234375
+        ],
+        "6": [
+          0.06640625,
+          0.06640625
+        ],
+        "8": [
+          0.0078125,
+          0.0078125
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.033854166666666664,
+          0.033854166666666664
+        ],
+        "none": [
+          0.03125,
+          0.03125
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.032552083333333336,
+        0.032552083333333336
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        0.013020833333333334,
+        0.053385416666666664
+      ],
+      "metric": "material_choice_contrast",
+      "prefix": 4
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.078125,
+          0.078125
+        ],
+        "free_random": [
+          0.046875,
+          0.046875
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.046875,
+          0.046875
+        ],
+        "6": [
+          0.09375,
+          0.09375
+        ],
+        "8": [
+          0.046875,
+          0.046875
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.08072916666666667,
+          0.08072916666666667
+        ],
+        "none": [
+          0.044270833333333336,
+          0.044270833333333336
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.0625,
+        0.0625
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        0.040364583333333336,
+        0.0859375
+      ],
+      "metric": "ongoing",
+      "prefix": 16
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.010416666666666666,
+          0.010416666666666666
+        ],
+        "free_random": [
+          0.0026041666666666665,
+          0.0026041666666666665
+        ]
+      },
+      "by_size": {
+        "4": [
+          -0.01171875,
+          -0.01171875
+        ],
+        "6": [
+          0.01953125,
+          0.01953125
+        ],
+        "8": [
+          0.01171875,
+          0.01171875
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.010416666666666666,
+          0.010416666666666666
+        ],
+        "none": [
+          0.0026041666666666665,
+          0.0026041666666666665
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.006510416666666667,
+        0.006510416666666667
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        -0.0078125,
+        0.020833333333333332
+      ],
+      "metric": "material_nonzero",
+      "prefix": 16
+    },
+    {
+      "by_setup": {
+        "classic_like": [
+          0.07291666666666667,
+          0.07291666666666667
+        ],
+        "free_random": [
+          0.044270833333333336,
+          0.044270833333333336
+        ]
+      },
+      "by_size": {
+        "4": [
+          0.0390625,
+          0.0390625
+        ],
+        "6": [
+          0.09375,
+          0.09375
+        ],
+        "8": [
+          0.04296875,
+          0.04296875
+        ]
+      },
+      "by_symmetry": {
+        "bilateral": [
+          0.0703125,
+          0.0703125
+        ],
+        "none": [
+          0.046875,
+          0.046875
+        ]
+      },
+      "filtered_minus_default_bounds": [
+        0.05859375,
+        0.05859375
+      ],
+      "fixed_grid_seed_block_95_envelope": [
+        0.036458333333333336,
+        0.08203125
+      ],
+      "metric": "material_choice_contrast",
+      "prefix": 16
+    }
+  ],
+  "scope": "Missinggeneration property[0,1], observedboundedgeneration refusal yields0availablediagnostic opportunities (NOTgame draw). Terminalstates retained. Fixedcondition-grid seedblockresampling retains all12conditions/flags perseed; descriptive NOTpopulationconfidence. Extra filtering replacesrulemeasure; samefingerprints haveidenticalfullrecords/witnesses/materialcontrast. Generationclock includesfilter; semanticcompile/JSON/engineering costs notin percase sum, wholeproducer islarger. ConcurrentCPUload precludes causal timing/speedup or learning/balance claims.",
+  "seconds": 1.2573181999614462,
+  "status": "COMPLETE_FINITE_INTENTION_TO_GENERATE_ANALYSIS",
+  "summary": [
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 81.65727959992364,
+      "filter": false,
+      "generation_failures": 0,
+      "generation_seconds": 7.288807300094049,
+      "generation_successes": 768,
+      "has_drop_action": 0,
+      "has_promotion_action": 370,
+      "intended": 768,
+      "material_choice_contrast": 600,
+      "material_nonzero": 0,
+      "ongoing": 768,
+      "prefix": 0
+    },
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 81.65727959992364,
+      "filter": false,
+      "generation_failures": 0,
+      "generation_seconds": 7.288807300094049,
+      "generation_successes": 768,
+      "has_drop_action": 277,
+      "has_promotion_action": 385,
+      "intended": 768,
+      "material_choice_contrast": 667,
+      "material_nonzero": 510,
+      "ongoing": 722,
+      "prefix": 4
+    },
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 81.65727959992364,
+      "filter": false,
+      "generation_failures": 0,
+      "generation_seconds": 7.288807300094049,
+      "generation_successes": 768,
+      "has_drop_action": 363,
+      "has_promotion_action": 324,
+      "intended": 768,
+      "material_choice_contrast": 615,
+      "material_nonzero": 717,
+      "ongoing": 640,
+      "prefix": 16
+    },
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 84.5805294001475,
+      "filter": true,
+      "generation_failures": 3,
+      "generation_seconds": 18.684001699031796,
+      "generation_successes": 765,
+      "has_drop_action": 0,
+      "has_promotion_action": 361,
+      "intended": 768,
+      "material_choice_contrast": 597,
+      "material_nonzero": 0,
+      "ongoing": 765,
+      "prefix": 0
+    },
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 84.5805294001475,
+      "filter": true,
+      "generation_failures": 3,
+      "generation_seconds": 18.684001699031796,
+      "generation_successes": 765,
+      "has_drop_action": 285,
+      "has_promotion_action": 375,
+      "intended": 768,
+      "material_choice_contrast": 692,
+      "material_nonzero": 506,
+      "ongoing": 751,
+      "prefix": 4
+    },
+    {
+      "actual_generation_calls": 768,
+      "diagnostic_seconds": 84.5805294001475,
+      "filter": true,
+      "generation_failures": 3,
+      "generation_seconds": 18.684001699031796,
+      "generation_successes": 765,
+      "has_drop_action": 399,
+      "has_promotion_action": 327,
+      "intended": 768,
+      "material_choice_contrast": 660,
+      "material_nonzero": 722,
+      "ongoing": 688,
+      "prefix": 16
+    }
+  ],
+  "unchanged_rules_not_independent_new_samples": true,
+  "whole_recorded_seconds": 214.01600000000326
+}

@@ -16,11 +16,78 @@ role. Auxiliaries normally alternate; explicit nonconflicting parallel work is
 allowed. DeepSeek API execution remains single-instance.
 The mistaken DeepSeekPRIMARY configuration and outputs are preserved privately
 with provenance; its asymmetric-static study belongs to DEEPSEEK_AUX and is
-not a new mainline experiment. Await reviewed fixed auxiliary evidence before
-integration; do not rerun its frozen1344games/AUX92/93. Reassess the existing
-nearest-rule plan against new auxiliary findings before any launch.
+not a new mainline experiment. Do not rerun its frozen1344games/AUX92/93.
+This mainline resumed explicitly and reassessed the provisional nearest-source
+plan before freezing the distinct complete3328-cell panel described below.
+The separate DeepSeek controller now reports an artificial hand-weight sensitivity
+study; this is owner-reported, not independently executed or adopted here.
 
-## Current choice and cause — 2026-10-17
+## Current incremental choice and evidence —2026-10-18
+
+Explicit resume returns PRIMARY to independent mainline research; role setup is
+complete. Three distinct prospective panels are now CLOSED, with later bounded
+mechanism/input diagnostics. They do not refill old AUX92/93 or DeepSeek work.
+No product code, generator default, evaluator, optimizer or model was changed.
+
+[NEW_RULE_PRICE_TRANSFER_20261018.md](NEW_RULE_PRICE_TRANSFER_20261018.md): eight
+prespecified new4x4rules411001..8, nearest of4 sources selected from rule-only
+P/A/X capability before fitness. All4signed TD/WDL endpoints and initials retained;
+boardCURRENT/handBASE type ratios, no Ppin/signflip. All3328physical games close,
+82UNKNOWN,51372queries/7.635Mnodes. Mapped-direct finite gains are conditional;
+ALL family envelopes cross0, and static-minus-mapped randomfoe bounds/envelopes
+are positive. This does not isolate source-selection value. Core all100122PVedges
+and source-only derived outputs qualify. No larger mapping campaign/default.
+
+Dot's bounded hybrid diagnostic corrected our interpretation: independent scalar
+coefficients do not imply the full search ignores promotion/hands. Full D2 float/
+int minimax on16canonical Unit states/all4TDseeds yields3joint channel witnesses;
+one is ordinary target-piece effect, two include handP changes, none proves net
+promotedP-target changes in the backed-up lines. Separate ten-objective factorial
+has9/64nonzero backed-up interactions despite additive leaves. This favors using
+existing search before assuming a missing interaction model; no causal fitness,
+new learner or state-feature claim. Original scope-wording erratum is retained.
+
+[SEARCH_WORK_CURVES_AND_CACHE_CONTRACT_20261018.md](SEARCH_WORK_CURVES_AND_CACHE_CONTRACT_20261018.md):
+new32binding prefixes,1536physical slots/10UNKNOWN, fixedD2foes, candidateD3/8192
+versusD8/131072. Actual candidate nodes8.6M versus430.5M. Static-minus-Unit against
+Unit changes [.21875,.28125] to[-.09375,-.09375], with corresponding descriptive
+envelopes separated from0 in opposite directions. Thus budget can change table
+ordering; this replaces any inference from one shallow regime, not static or
+learned candidates themselves. MappedTD-static envelopes atD8 still include0.
+Keep complete budgets/actual work/fixed foes; no pure-depth or population claim.
+
+Cost-only gate then selects distinct512physical TT0/4MiB comparison on new roots,
+only Unit/static, fixedD2/TT0foes. All close622.875s/1UNKNOWN/186.2Mnodes; no stable
+TT gain. Core3248commits/10333PVedges legal. TWO warm-selective scores differ from
+literal PV leaf;12new bounded diagnostics reproduce them. Existing public API
+explicitly disclaims this equality, and deeper cached bounds explain it; cold
+and existing exact-root checks agree with their own leaves. Preserve differences,
+not a fictitious engine defect or score-asWDL assertion. No production fix/default.
+
+[PLAYABILITY_FILTER_OPPORTUNITIES_20261018.md](PLAYABILITY_FILTER_OPPORTUNITIES_20261018.md):
+unchanged optional no-opening-win preference tested over768paired seed/settings,
+4/6/8boards, both setups/symmetries, hybrids permitted.1533success/3boundedrefusals;
+606same rules/159replacements. Prefix16ongoing640->688; generation7.289->18.684s.
+All4599full observations/101545children qualify. Separate NativeUnit D2input probe
+returns4334usablequeries/2653nonzero chosenleaf gradients, no learning updates.
+Prefix16nonzero574->623 decomposes0same-rule,+51replacement,-2refusal. All606
+same-rule pairs match scientific query/features. Thus this is accepted-rule
+selection/availability, not improved learning on identical games. Fullstate/PV/
+gradient/source checks pass. Preserve OPTIONAL future diagnostic sampler status,
+not default/balance/training-gain adoption.
+
+Next useful choice: specify a learning-input comparison that separates changed
+rule measure from per-input update value before paying another training/fitness
+campaign. First inventory actual recorded residual/eligibility fields available
+from fixed owner artifacts; do not assume them from phi or start a competing
+learner. If insufficient, prefer a bounded same-rule input diagnostic with Unit,
+static and learned controls; define its decision-changing question before launch.
+No repeat of completed mapping/TT/606same-rule checks without a changed premise.
+All new capsules pin source/dependencies and regenerate derived readers without
+old fitness/training; that validates receipt arithmetic, not independent WDL or
+an external rules authority. PUBLIC evidence enables review, not proof of reading.
+
+## Previous learning choice still retained — 2026-10-17
 
 Actual finite learning gains changed the earlier search-before-learning choice.
 Keep incremental TD/search bootstrapping as a main candidate, the specified paid
@@ -105,10 +172,10 @@ explicit ruleset/key isomorphism. This is not all-state/all-domain equivalence.
 An actual4-ply auxiliary-only fixture refuses default geometry metadata while
 explicit signed checkpoints complete NativeD2/Core24visits; kings-only material
 gives no utility claim. See RULE_ENCODING_NEUTRALITY_20261017.md.
-User requested paused inspection and termination at this completed check:
-no new nearest-rule/all-type transfer experiment launched (zero inputs/games).
-Resume requires explicit user direction; keep its provisional plan, reassess
-premise/cost before acting. No new prover/API/default or competing AUX work.
+At that earlier stop no nearest-rule/all-type inputs or games had launched.
+The later explicit resume supersedes that stopped state; the reassessed panel
+now closed as recorded above. Keep both causal facts, not an obsolete stop or
+a second launch instruction. No new prover/API/default or competing AUX work.
 
 ## Current backend boundaries
 

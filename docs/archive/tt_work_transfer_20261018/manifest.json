@@ -1,0 +1,115 @@
+{
+  "format": "Complete original diagnostic receipts plus independent readers; no fitness/train rerun",
+  "private_directory": "tt-work-transfer-20261018",
+  "parent_source": {
+    "path": "../movement_price_transfer_20261017/evidence.zip",
+    "sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+    "source_prefix": "source/"
+  },
+  "files": {
+    "data/plan.json": {
+      "bytes": 2383,
+      "sha256": "f56d791115d0fd1a63714edaabb0739df1274de3f81c98295d2ca9d6086b6fb8"
+    },
+    "data/result.json": {
+      "bytes": 684,
+      "sha256": "7eee08204edb6a221dfda1b23be606464ac91cdabe8b6ae39b159b15876676f3"
+    },
+    "data/queries.jsonl": {
+      "bytes": 4537968,
+      "sha256": "c17d04c06f889dfbbbf8a6bcf8aeed6d44760d9d54e36d4899223418c50c1ebe"
+    },
+    "analysis/producer.py": {
+      "bytes": 10057,
+      "sha256": "adf19dd819d841271f5212d6d38d7dc9d049ea4edb7cd93be0a8cde17832e1d4"
+    },
+    "data/reader-result.json": {
+      "bytes": 16630,
+      "sha256": "625e41f20591332b1b02da0b83b617ce961f6e3b018694430a66c26a89364c1d"
+    },
+    "data/analysis.json": {
+      "bytes": 15684,
+      "sha256": "85933c4156de3ee4e54a072103675d5fdeeda71d14f0eebf6ce8cd75e64b8362"
+    },
+    "data/consumer-contract-result.json": {
+      "bytes": 726,
+      "sha256": "801d04557ab72f43215eeec647ae3dc736d6610e9711bbdc3002b9b342411020"
+    },
+    "analysis/reader.py": {
+      "bytes": 7501,
+      "sha256": "2f4635c9dc81ab15b426c45ab2b0e82d4ef861b3157042d8577c4024301674d3"
+    },
+    "analysis/analyze.py": {
+      "bytes": 4452,
+      "sha256": "2f2a9a360814f468dfd05ea501c09f2e654fbc3dcdb91309c720b40c077e32ef"
+    },
+    "analysis/consumer_contract.py": {
+      "bytes": 2513,
+      "sha256": "5301968e0a05e03a31cd518023f5e4c13ed5cff4eeafb0f9285963d6f4dda6f1"
+    },
+    "analysis/warm_cold_repro.py": {
+      "bytes": 3908,
+      "sha256": "0ddb8aa94499e34b996d356440c9196c8a07525696abf5cc5409cd48bf53ff02"
+    },
+    "data/warm-cold-repro-result.json": {
+      "bytes": 15468,
+      "sha256": "4131838d69055402e0bf83a082a6c5a380e67763682e66b85cd1cee3fa118245"
+    },
+    "data/roots.json": {
+      "bytes": 61140,
+      "sha256": "d784436bde0c3ffb8000e2795257309eae190a220f55cd9b5cf09ecb40e79a0c"
+    },
+    "data/models.json": {
+      "bytes": 58518,
+      "sha256": "1cbed059773f114aaeab1f87e3f2ff537c04c15c5f9a46522883a886fe725363"
+    },
+    "data/slots.json": {
+      "bytes": 50200,
+      "sha256": "9a5bdf1089486e4d26bb65dcf899fcb066be65f56718b488e89dfa9c26dae7c9"
+    },
+    "data/games.jsonl": {
+      "bytes": 1140356,
+      "sha256": "2e4dc812b5e606bbc6e17e780729d5f939d55fd47ee901be91635665416563f9"
+    },
+    "data/cost-gate-input.json": {
+      "bytes": 272,
+      "sha256": "a112c229663d66b0bb623cd1aca9579c2d19cbdff1709d8f60b5503c56ac9e94"
+    },
+    "data/producer-source.json": {
+      "bytes": 520,
+      "sha256": "d786eb6250d8e502a9a4d6eae6e8a64bd3181b96789bd7234ccd49d297fea4a5"
+    },
+    "data/rule-411001.json": {
+      "bytes": 12509,
+      "sha256": "75b8d567d0d05adf32a0ed503e8b6c261ec83c75c74c83f2cba15e04c35fa674"
+    },
+    "data/rule-411002.json": {
+      "bytes": 8747,
+      "sha256": "59bbe2c5be850c06592aa0f4d956f0bc08f2b49ec702fe54309fa424f565c76d"
+    },
+    "data/rule-411003.json": {
+      "bytes": 9069,
+      "sha256": "e54d04adb3da989ea7bf471d0c49db2deadcd8d718bb23121bc05a831759d938"
+    },
+    "data/rule-411004.json": {
+      "bytes": 11173,
+      "sha256": "76b52976ed9dd0e3f16b6c3f879b4c07b32e6746e5e7dbfcd5eb5cc65c994006"
+    },
+    "data/rule-411005.json": {
+      "bytes": 11999,
+      "sha256": "06ec5691a8f408c30bb81b8f181ff6d29d3f5a9310b36bbf4b4c46c267e6481f"
+    },
+    "data/rule-411006.json": {
+      "bytes": 11568,
+      "sha256": "26a84d0e45216f68ffee13ad5ad4ffb3c3f3bf78a880d3cd4e63bdad0e3429c2"
+    },
+    "data/rule-411007.json": {
+      "bytes": 10748,
+      "sha256": "6fd88a90f37809f9743d998bae8fc1714f96f23943f8f7d87187c9b360f614b2"
+    },
+    "data/rule-411008.json": {
+      "bytes": 11260,
+      "sha256": "5b0cfa8dc37d9f8466b59c2d7c6892a0ae3e06b5508e8f5b0fba6468786b4dd5"
+    }
+  }
+}

@@ -4258,3 +4258,53 @@ completed research. Auxiliary scientific outputs are migrated with hashes and
 provenance, not republished as PRIMARY work. No AUX checkout/stop/timer changed.
 Mainline timer targets the original chat; DeepSeek supervision stays in its
 existing control chat. Publication remains Public, tested and role-bound.
+
+
+## Independent mainline transfer, budget and sampler decisions —2026-10-18
+
+PRIMARY resumed independent GPT mainline with its own UUID/start; it did not
+launch DeepSeek, delegate or edit either auxiliary checkout/clock/stop flags.
+Existing DEV_AUX92 source3792d830 and its previously restored complete source
+are reused as fixed source weights, not new training or an independently rerun
+optimizer. AUX93 and frozen411-cell work are not duplicated. The DeepSeek control
+chat independently reports artificial hand-weight0.9/0 sensitivity and its local
+unpublished contribution73f9b1f4; this mainline read the complete progress root
+1792303572.986559 only, not that unpublished code/tests. No automatic merge,
+reported-to-executed upgrade or interference with its controller/runtime.
+
+PRIMARY's new3328physical nearest-source/all-type transfer panel closes with
+complete signed models, full rule/state/history and adverse/UNKNOWN outcomes.
+Dot consultation GC-SLACK-20261018-145858-1ff2484e has one complete reply1792303342.398419,
+reread after completion with no further page/supplement. Exact raws precede
+reconcile. Adopted correction: independent coefficient scaling does not imply
+search ignores promotion/BASE capture/drop. PRIMARY adapts the bounded complete
+D2 diagnostic to the actual declared P target, not an assumed uniform P->X,
+then separates joint/individual channels.3local witnesses are not all promotion
+witnesses;9/64nonzero minimax interaction terms do not justify a new model or
+causal fitness explanation. Source-only and actual execution tiers are explicit.
+
+The original first Slack send was automatically refused because a pre-send
+SEND_UNCERTAIN ledger was interpreted as an earlier actual send. Fresh exact
+channel read proved no root; actual continuing authorization/workflow evidence
+resolved a deliberate reviewed attempt, yielding one delivered root. No ledger
+reset, duplicate, automatic resend or disabled controls. A later snapshot import
+refused our descriptive source label; canonical CLI source literal imported the
+unchanged saved original, preserving the failed wrapper. No user action remains.
+
+Budget curve1536physical and separate cost-gated TT512physical games show why
+single-depth table rankings and cached search scores cannot serve as generic
+value certificates. All histories/PVs are replayed. TWO warm cached score/leaf
+differences are explicitly retained; existing API disclaims equality, and12new
+bounded queries reproduce warm/cold/exact behavior. No product defect or fix is
+invented. TT has no stable measured gain; no defaults changed.
+
+The768paired existing-filter survey and4599point actual Nativeinput follow-up
+show more nonzero selected-leaf inputs, but606same-rule pairs agree exactly:
+all net increase arises from rule replacements minus bounded refusals. This
+supports a prospective distribution-aware input question, not training success.
+All sealed dependency-pinned readers regenerate from extracted source with
+Native absent. Three existing behavior test targets pass34tests; no product code
+changed, so no rebuild or fabricated full-regression claim. Evidence/cost totals
+are in the three linked20261018research reports; source-qualification clocks and
+producer clocks remain separate. No measured collaboration speedup or equal-cost
+claim. Reports and fixed-SHA evidence are delivered through prescribed publisher.

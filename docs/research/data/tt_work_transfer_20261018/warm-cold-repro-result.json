@@ -1,0 +1,642 @@
+{
+  "rows": [
+    {
+      "depth": 4,
+      "mode": "warm4",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        }
+      ],
+      "pv_white_value": -512,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": 0,
+      "seed_depth": 6,
+      "seed_score": -99999996,
+      "slot": 330,
+      "tt_cutoffs": 2990,
+      "tt_hits": 10410
+    },
+    {
+      "depth": 4,
+      "mode": "cold4",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g5",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_007",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        }
+      ],
+      "pv_white_value": -512,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": -512,
+      "seed_depth": null,
+      "seed_score": null,
+      "slot": 330,
+      "tt_cutoffs": 0,
+      "tt_hits": 6802
+    },
+    {
+      "depth": 5,
+      "mode": "cold0",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g5",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_007",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_012",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        }
+      ],
+      "pv_white_value": 0,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": 0,
+      "seed_depth": null,
+      "seed_score": null,
+      "slot": 330,
+      "tt_cutoffs": 0,
+      "tt_hits": 0
+    },
+    {
+      "depth": 6,
+      "mode": "warm4_exact",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "geometry_id": "g3",
+          "pattern_id": "legacy_028",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_024",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        {
+          "base_type_id": "P",
+          "geometry_id": "g21",
+          "pattern_id": "legacy_043",
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 1,
+            "rank": 2
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_001",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g11",
+          "pattern_id": "legacy_007",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        }
+      ],
+      "pv_white_value": -1024,
+      "reason": "node_budget",
+      "root_window_pruning": true,
+      "score": -1024,
+      "seed_depth": 8,
+      "seed_score": -99999996,
+      "slot": 330,
+      "tt_cutoffs": 281,
+      "tt_hits": 5755
+    },
+    {
+      "depth": 4,
+      "mode": "warm4",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g5",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        }
+      ],
+      "pv_white_value": -396,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": 34,
+      "seed_depth": 6,
+      "seed_score": -99999996,
+      "slot": 505,
+      "tt_cutoffs": 3942,
+      "tt_hits": 10977
+    },
+    {
+      "depth": 4,
+      "mode": "cold4",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g5",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        }
+      ],
+      "pv_white_value": -396,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": -396,
+      "seed_depth": null,
+      "seed_score": null,
+      "slot": 505,
+      "tt_cutoffs": 0,
+      "tt_hits": 6259
+    },
+    {
+      "depth": 4,
+      "mode": "cold0",
+      "nodes": 131072,
+      "pv": [
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        {
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "geometry_id": "g5",
+          "pattern_id": "legacy_033",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 0,
+            "rank": 3
+          },
+          "geometry_id": "g1",
+          "pattern_id": "legacy_003",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        }
+      ],
+      "pv_white_value": -396,
+      "reason": "node_budget",
+      "root_window_pruning": false,
+      "score": -396,
+      "seed_depth": null,
+      "seed_score": null,
+      "slot": 505,
+      "tt_cutoffs": 0,
+      "tt_hits": 0
+    },
+    {
+      "depth": 6,
+      "mode": "warm4_exact",
+      "nodes": 131072,
+      "pv": [
+        {
+          "base_type_id": "P",
+          "geometry_id": "g21",
+          "pattern_id": "legacy_043",
+          "to_square": {
+            "file": 3,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "geometry_id": "g2",
+          "pattern_id": "legacy_025",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 3,
+            "rank": 3
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_012",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "A",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "geometry_id": "g0",
+          "pattern_id": "legacy_001",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          }
+        },
+        {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g15",
+          "pattern_id": "legacy_015",
+          "promotion_target_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        }
+      ],
+      "pv_white_value": -1308,
+      "reason": "node_budget",
+      "root_window_pruning": true,
+      "score": -1308,
+      "seed_depth": 7,
+      "seed_score": -99999996,
+      "slot": 505,
+      "tt_cutoffs": 274,
+      "tt_hits": 7263
+    }
+  ],
+  "scope": "Posthoc eight new bounded diagnostic parent queries plus four cache-seeding queries; no fitness rerun. Public API explicitly does not promise literalPVleafscore equality in cached selective mode.",
+  "status": "COMPLETE"
+}

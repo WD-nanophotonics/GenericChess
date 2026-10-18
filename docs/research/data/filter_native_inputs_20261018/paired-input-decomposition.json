@@ -1,0 +1,72 @@
+{
+  "rows": [
+    {
+      "counts": {
+        "bounded_generation_refusal_off_nonzero": 0,
+        "bounded_generation_refusal_on_nonzero": 0,
+        "replacement_rule_off_nonzero": 0,
+        "replacement_rule_on_nonzero": 33,
+        "same_complete_rule_off_nonzero": 181,
+        "same_complete_rule_on_nonzero": 181
+      },
+      "nonzero_input_delta": {
+        "bounded_generation_refusal": 0,
+        "replacement_rule": 33,
+        "same_complete_rule": 0
+      },
+      "pairs": {
+        "bounded_generation_refusal": 3,
+        "replacement_rule": 159,
+        "same_complete_rule": 606
+      },
+      "prefix": 0,
+      "total_nonzero_delta": 33
+    },
+    {
+      "counts": {
+        "bounded_generation_refusal_off_nonzero": 2,
+        "bounded_generation_refusal_on_nonzero": 0,
+        "replacement_rule_off_nonzero": 67,
+        "replacement_rule_on_nonzero": 120,
+        "same_complete_rule_off_nonzero": 436,
+        "same_complete_rule_on_nonzero": 436
+      },
+      "nonzero_input_delta": {
+        "bounded_generation_refusal": -2,
+        "replacement_rule": 53,
+        "same_complete_rule": 0
+      },
+      "pairs": {
+        "bounded_generation_refusal": 3,
+        "replacement_rule": 159,
+        "same_complete_rule": 606
+      },
+      "prefix": 4,
+      "total_nonzero_delta": 51
+    },
+    {
+      "counts": {
+        "bounded_generation_refusal_off_nonzero": 2,
+        "bounded_generation_refusal_on_nonzero": 0,
+        "replacement_rule_off_nonzero": 83,
+        "replacement_rule_on_nonzero": 134,
+        "same_complete_rule_off_nonzero": 489,
+        "same_complete_rule_on_nonzero": 489
+      },
+      "nonzero_input_delta": {
+        "bounded_generation_refusal": -2,
+        "replacement_rule": 51,
+        "same_complete_rule": 0
+      },
+      "pairs": {
+        "bounded_generation_refusal": 3,
+        "replacement_rule": 159,
+        "same_complete_rule": 606
+      },
+      "prefix": 16,
+      "total_nonzero_delta": 49
+    }
+  ],
+  "scope": "All768intendedpairs; unavailablegeneratedinputs countasavailabilityfalse, not measuredzerogradient. All606same-completerulepairs agree onscientificquery/featurefields atallthreeprefixes. Replacementmeasure isselectedrulechange, not samegamecausalbenefit ortraininggain. No new Native query/generation/fitness/train.",
+  "status": "PASS_PAIRED_DECOMPOSITION"
+}

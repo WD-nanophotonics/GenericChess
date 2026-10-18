@@ -1,0 +1,37 @@
+{
+  "actual_content_scan_pass": true,
+  "parent_sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+  "payloads": 16,
+  "status": "PASS_FILTER_EXTRACTED_SOURCE_THREE_OUTPUTS_REGENERATED",
+  "zip_bytes": 1298785,
+  "zip_sha256": "122458e96c04d4a33f71adc399f89f4231c3763aedbc0722b0530f630367dd19",
+  "own_payloads_hash_verified": 16,
+  "parent_source_payloads_hash_verified": 134,
+  "all_derived_outputs_parked_before_regeneration": true,
+  "all_non_time_fields_equal": true,
+  "original_query_clock_fields_compare_exactly": true,
+  "python_S_extracted_origins": true,
+  "native_absent": true,
+  "real_primary_stop_root": true,
+  "new_fitness_games": 0,
+  "new_training": 0,
+  "steps": [
+    {
+      "script": "reader.py",
+      "seconds": 173.69237760000397,
+      "exit_code": 0
+    },
+    {
+      "script": "analyze.py",
+      "seconds": 1.5095203999662772,
+      "exit_code": 0
+    },
+    {
+      "script": "opportunity.py",
+      "seconds": 166.42209449998336,
+      "exit_code": 0
+    }
+  ],
+  "seconds": 342.3440030000056,
+  "scope": "Core fullstate/history/ALLchildfeature reconstruction, linkedgenerationpairs and posthoc terminalawareopportunities; not independentWDL/rulesauthority or oldtraining reexecution. Parent source fixed bySHA. No fakeflags or liveeditable fallback."
+}

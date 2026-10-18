@@ -1,0 +1,33 @@
+{
+  "status": "PASS_BOTH_CHANNEL_OUTPUTS_EXTRACTED_SOURCE",
+  "payload_sha256": {
+    "coupling-plan.json": "60ede3325b3c452c5829cefdf633c204d1b16b9f7e66adab8ea6c3496d395bb7",
+    "coupling-inputs.json": "b3f05c8852919194db2034705e46e439aae3536dd3edeb850a32441a531c281a",
+    "coupling.py": "e4ad4e4104324023b11404c27f8965037d8ae3f82cedb4cf632464cf9bc59aec",
+    "coupling-result.json": "a52524d91f75539cff3358ac897e430041e6421b1fa824e0a111218189898f56",
+    "coupling-factorial.py": "94410b18d6f5e22c8f171a8a0af589ce79cf7243867f60193a87ee0e681526f7",
+    "coupling-factorial-result.json": "d814dfd7cfb9c8d02f916d3fe982937985e2f5973554c86ffea74272fd362aec"
+  },
+  "source_parent_sha256": "59d7aee577d2d567543cb3a805dbdc0b88227e7cb7f67014ff93373c6b60efb4",
+  "both_outputs_parked_before_regeneration": true,
+  "all_non_time_fields_equal": true,
+  "native_absent": true,
+  "python_S_extracted_origins": true,
+  "real_primary_stop_root": true,
+  "new_fitness_games": 0,
+  "new_training": 0,
+  "steps": [
+    {
+      "script": "coupling.py",
+      "seconds": 4.342014299996663,
+      "exit_code": 0
+    },
+    {
+      "script": "coupling-factorial.py",
+      "seconds": 4.263605599990115,
+      "exit_code": 0
+    }
+  ],
+  "seconds": 8.808923800010234,
+  "scope": "Separate post-seal64input six/tenobjective scientific diagnostics; not silently part of original35payloadcapsule. OriginalSIXwordingscopeerratum applies toactualtenobjectivefactorial data. No promotionutility or all-domainclaim."
+}
