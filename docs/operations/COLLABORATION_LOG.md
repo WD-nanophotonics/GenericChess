@@ -4271,7 +4271,7 @@ pair stayed inside the analytic rounding bound. The pre-registered 3x3 tie scan
 tie_risk_increases_with_types_per_rule: pooled rules with a tie were 4/360, 12/360
 and 14/360 at sizes 4, 6 and 8; 30 groups, 0 material (raw ratio >= 1.10), 0
 inversions, 0 promotion inconsistencies. A clearly post-hoc gap analysis of the
-same stored result reproduced all 5040 board integers, found zero ties outside a
+same stored result reproduced all 4320 board integers, found zero ties outside a
 sub-unit exact gap, and separated 53 gap<1 pairs into 17 equal-score pairs (not
 compression) and 36 distinct-score pairs, of which 31 tied and 5 landed in
 adjacent integers.
@@ -4280,5 +4280,9 @@ Limits: one seed block per preset shared across board sizes, per-cell tie counts
 1-7, one generator family and hand_weight 0.9; Wilson/Fisher figures are
 descriptive. No strength, utility, human-price or game-outcome claim. Deliveries:
 PROFILE_TIE_RISK_20261018.md with a 10-file public evidence copy, published to
-codex/deepseek-aux as 9e943fec with the headroom follow-up in the same report;
-the earlier qsearch drop-exclusion report and 24-file copy remain at b1d13325.
+codex/deepseek-aux in 9e943fec (report + evidence), 6ef1bd3f (post-hoc headroom
+tail and scaled-ratio check), ddcabcbb (signature-pair recurrence limit) and
+9a647bea (anchor and per-pair-rate wording); final remote SHA 9a647bea. A final
+105-check consistency audit recomputed the published figures and corrected the
+reconstructed-integer count in the draft to 4,320. The earlier qsearch
+drop-exclusion report and 24-file copy remain at b1d13325.

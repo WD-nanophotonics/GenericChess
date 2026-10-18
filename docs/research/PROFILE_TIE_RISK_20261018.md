@@ -85,7 +85,7 @@ clearly post-hoc analysis recomputed the exact normalized scores from the
 stored raw values and asked which pairs lie within one rounding grid unit.
 
 Checks first. Reconstructing `exact = 1000 * raw / median(raw)` and
-`max(1, min(round(exact), MAX_STATIC_EVAL))` reproduces **all 5,040 stored
+`max(1, min(round(exact), MAX_STATIC_EVAL))` reproduces **all 4,320 stored
 board integers exactly** (0 mismatches), so the reconstruction is the real
 normalization, not an approximation. And, as the definition requires, **no tie
 occurred outside `exact_gap < 1`** in any of the nine cells — the necessary
@@ -133,7 +133,7 @@ Two further observations bound how this should be read:
 
 - 50 of the 53 near pairs had their smaller exact value at or just above the
   normalization anchor: median 1000.0 at size 4, 1130-1191 at size 6 and
-  1000-1004 at size 8, with only three pairs below 999. The anchor sets the
+  1000.0-1004.3 at size 8, with only three pairs below 999. The anchor sets the
   scale, but it is not the only collision site: 14 of the 31 tied pairs have a
   smaller exact value that rounds to 1000, while the others sit at normalized
   magnitudes from 724 to 2261. A tie needs two values to straddle whichever

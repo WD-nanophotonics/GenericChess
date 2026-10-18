@@ -64,7 +64,7 @@ pairs; the private original has them.
   signature, so 31 pairs compare distinct values and are recounted as tied;
   the equal-score pair is excluded as capability equality, not compression.
   No pair inside any tie group shares a movement signature.
-- Gap analysis self-check: the exact reconstruction reproduces all 5,040
+- Gap analysis self-check: the exact reconstruction reproduces all 4,320
   stored board integers with 0 mismatches, and no tie falls outside
   `exact_gap < 1` in any cell. The summary also separates near pairs with
   exactly equal raw scores (zero gap, 17 across the scan, none a compression
@@ -80,6 +80,12 @@ pairs; the private original has them.
 - Determinism: re-running the gap script produced a byte-identical file; the
   published summary was produced by running the published copy in place with
   `--summary-only` and matches the private full result minus the `pairs` field.
+- Final consistency audit (DEEPSEEK_AUX, private `check_report_consistency.py`):
+  105 checks recomputed from the published JSON and README table, including
+  every tie count, gap conversion, tail count, Wilson interval, Fisher value,
+  signature recurrence and file hash. It found one wrong integer in an earlier
+  draft (5,040 reconstructed integers where the data contain 1,080 rules x
+  3/4/5 ordinary types = 4,320); the count above and the report are corrected.
 
 ## Limits
 
