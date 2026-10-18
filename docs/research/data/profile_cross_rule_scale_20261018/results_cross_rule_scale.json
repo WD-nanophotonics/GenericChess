@@ -1,0 +1,53 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "status": "secondary_post_hoc_analysis_not_pre_registered",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "source_files": {
+  "board4_result_sha256": "900f31275e8e3fd628e948dcb00e94bfc61d80c1315393a5fcce9350391bcec1",
+  "scale68_result_sha256": "a025f8e167e62128a1a45d6be76ee54a88b17c0ff51566e603ac068719e3f1c3"
+ },
+ "blocks": [
+  {
+   "board_size": "4",
+   "rules": 40,
+   "raw_median_min": 0.7421875,
+   "raw_median_p25": 1.34759375,
+   "raw_median_p50": 1.803731032644357,
+   "raw_median_p75": 2.6551303140219153,
+   "raw_median_max": 3.671180865359506,
+   "max_over_min": 4.946433165958071,
+   "p75_over_p25": 1.9702750283769983,
+   "normalized_median_is": 1000
+  },
+  {
+   "board_size": "6",
+   "rules": 40,
+   "raw_median_min": 1.6677821464977427,
+   "raw_median_p25": 2.383392466209476,
+   "raw_median_p50": 3.0881640388019553,
+   "raw_median_p75": 3.8160726944574836,
+   "raw_median_max": 5.6910902988474765,
+   "max_over_min": 3.412370321146845,
+   "p75_over_p25": 1.60110965716298,
+   "normalized_median_is": 1000
+  },
+  {
+   "board_size": "8",
+   "rules": 40,
+   "raw_median_min": 2.184048241585447,
+   "raw_median_p25": 3.3930046595322527,
+   "raw_median_p50": 3.884729135805513,
+   "raw_median_p75": 4.343466291085656,
+   "raw_median_max": 8.006727527329753,
+   "max_over_min": 3.666003055645648,
+   "p75_over_p25": 1.2801238804324044,
+   "normalized_median_is": 1000
+  }
+ ],
+ "interpretation_limits": [
+  "raw capability units are not semantically identical across rules, because the movement atoms and their weights differ",
+  "the measurement shows only how much per-rule scale the median normalization removes",
+  "no new rules were generated, so this adds no independent sample",
+  "no strength, utility or human-price claim"
+ ]
+}

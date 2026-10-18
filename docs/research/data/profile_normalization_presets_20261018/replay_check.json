@@ -1,0 +1,123 @@
+{
+ "replay_blocks_identical": true,
+ "replay_design_identical": true,
+ "replay_plan_hash_identical": true,
+ "replay_source_hashes_identical": true,
+ "replay_overall_identical": true,
+ "first_attempt_blocks_identical": true,
+ "stored_plan_sha256": "ec1e8d355c37013f99adb56ea8069853332cd83a97e5aa61e4750a04c5d4496a",
+ "stored_git_head": "3187803782637b1de1bb4ffaad5b186cb03a8d6f",
+ "stored_file_sha256": "a65013c73e968c13ed5e3addeaaf0e566790c144b6c46b325263d55874d76137",
+ "first_attempt_file_sha256": "840a266002f1ac82d85ad4dad3affdb9e79fe288ab918cafcd9cf421fdcf4ac3",
+ "script_sha256": "b8d5879f1ca083215c33e6a15a0a27bbfa46a6a1a92bf243863420f6a5b435bf",
+ "plan_file_sha256": "ec1e8d355c37013f99adb56ea8069853332cd83a97e5aa61e4750a04c5d4496a",
+ "bilateral_random": {
+  "rules": 40,
+  "types": 200,
+  "pairs": 375,
+  "median_recomputed": 0.0003378956740764938,
+  "max_recomputed": 0.0025067356565877663,
+  "tie_detail": [
+   {
+    "seed": 293010,
+    "board_value": 1000,
+    "types": [
+     "A",
+     "P"
+    ],
+    "raw_scores": [
+     4.288465969,
+     4.288166501
+    ],
+    "raw_ratio": 1.0000698360791174,
+    "material": false,
+    "same_signature": false
+   },
+   {
+    "seed": 293021,
+    "board_value": 1000,
+    "types": [
+     "A",
+     "X"
+    ],
+    "raw_scores": [
+     6.942469355,
+     6.943419172
+    ],
+    "raw_ratio": 1.0001368125220882,
+    "material": false,
+    "same_signature": false
+   },
+   {
+    "seed": 293033,
+    "board_value": 1000,
+    "types": [
+     "A",
+     "C"
+    ],
+    "raw_scores": [
+     2.679364347,
+     2.678258228
+    ],
+    "raw_ratio": 1.0004129990918282,
+    "material": false,
+    "same_signature": false
+   }
+  ],
+  "ties_identical_signature": 0,
+  "bound_max_ratio_to_bound": 0.9780184154886218,
+  "hand_rounding_max": 0.0023622047244095112,
+  "promotion_checks": 75,
+  "promotion_inconsistent": 0,
+  "max_norm": 5552,
+  "min_norm": 127,
+  "rules_with_floor_value_1": 0
+ },
+ "free_random": {
+  "rules": 40,
+  "types": 200,
+  "pairs": 379,
+  "median_recomputed": 0.00024119598882810234,
+  "max_recomputed": 0.003909612472891344,
+  "tie_detail": [
+   {
+    "seed": 293010,
+    "board_value": 1000,
+    "types": [
+     "A",
+     "P"
+    ],
+    "raw_scores": [
+     4.288465969,
+     4.288166501
+    ],
+    "raw_ratio": 1.0000698360791174,
+    "material": false,
+    "same_signature": false
+   },
+   {
+    "seed": 293033,
+    "board_value": 1000,
+    "types": [
+     "A",
+     "C"
+    ],
+    "raw_scores": [
+     2.679364347,
+     2.678258228
+    ],
+    "raw_ratio": 1.0004129990918282,
+    "material": false,
+    "same_signature": false
+   }
+  ],
+  "ties_identical_signature": 0,
+  "bound_max_ratio_to_bound": 0.9159651934048771,
+  "hand_rounding_max": 0.0023622047244095112,
+  "promotion_checks": 70,
+  "promotion_inconsistent": 0,
+  "max_norm": 5552,
+  "min_norm": 127,
+  "rules_with_floor_value_1": 0
+ }
+}

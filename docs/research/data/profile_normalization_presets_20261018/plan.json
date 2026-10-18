@@ -1,0 +1,41 @@
+{
+ "task": "DEEPSEEK_AUX-PROFILE-NORMALIZATION-PRESETS-20261018",
+ "agent_id": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "created_at_utc": "2026-10-18T12:57:43+00:00",
+ "question": "Both published normalization scans used setup_preset=classic_like, where no tie, clip or inversion appeared at 120 rules. Do the other generator presets (bilateral_random, free_random) at board size 8 produce rounding ties, clipping or inversions that the classic_like sample never exercised?",
+ "why_this_is_a_new_question": "classic_like was the only preset measured, and it was the limiting scope of both earlier reports. A feasibility probe (seeds 293001-293003) showed free_random seed 293002 collapsing two types onto normalized value 416, so the tie endpoint is reachable in a different regime. This test measures it rather than assuming the null generalizes.",
+ "inputs": {
+  "generator": "generic_chess.generation.generator.generate_game",
+  "seeds_per_preset": "293001-293040 inclusive",
+  "board_size": 8,
+  "setup_presets": [
+   "bilateral_random",
+   "free_random"
+  ],
+  "evaluator": "build_ruleset_profile with EvaluationConfig(hand_weight=0.9)",
+  "search": false,
+  "endpoint_code": ".local_agent/profile-normalization-20261018/scan_profile_normalization.py scan_rule() imported unchanged; only its generate_game binding is wrapped to substitute the preset via dataclasses.replace"
+ },
+ "cost": {
+  "expected_seconds_upper": 120,
+  "searches": 0,
+  "rules": 80,
+  "external_services": 0
+ },
+ "endpoint": {
+  "primary": "Same endpoints as the published scans: ordering inversions, ceiling clips, floor value 1, tie groups, material tie groups (within-group raw ratio >= 1.10).",
+  "ratio_distortion": "for pairs with raw ratio >= 1.05, |normalized_ratio/raw_ratio - 1|, with max and median per preset.",
+  "quantization_bound": "per pair check distortion <= 0.5*(1/v_min + 1/v_max) + 1e-12; violations are a defect in the reasoning.",
+  "tie_detail": "for every tie group record the two raw scores, the shared integer and the material flag; report whether the weakest member's raw gap is below one integer step.",
+  "promotion_and_hand": "same consistency checks as before."
+ },
+ "decision_rule_written_before_run": "Per preset: any inversion or ceiling clip -> defect_at_other_presets. Else material-tie rule fraction >= 0.10 -> coarse_normalization_at_other_presets. Else ratio_rounding_bounded_persists_at_other_presets. Any bound violation -> bound_violated. Record every count for both presets either way; do not retune seeds, thresholds or presets after seeing the result.",
+ "consumer": "rule-only generic prices and cross-game ratios: the earlier ratio-preservation statements must be scoped by preset, or extended, on measured evidence rather than on the classic_like null alone.",
+ "nonclaims": [
+  "no search strength or game-outcome claim",
+  "no human or external price fit",
+  "two presets, one board size, one fresh seed block",
+  "a tie group is a normalization compression fact, not evidence that the two pieces are strategically equal"
+ ]
+}

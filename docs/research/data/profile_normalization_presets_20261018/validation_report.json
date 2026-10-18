@@ -1,0 +1,92 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+ "validated_at_utc": "2026-10-18T13:00:02Z",
+ "replay": {
+  "blocks_identical": true,
+  "design_identical": true,
+  "plan_sha256_identical": true,
+  "source_sha256_identical": true,
+  "overall_decision_identical": true
+ },
+ "first_attempt_vs_fixed": {
+  "blocks_identical": true,
+  "only_difference": "generated_at_utc"
+ },
+ "signature_raw_consistency": {
+  "type_rows": 400,
+  "distinct_signatures": 199,
+  "signatures_with_more_than_one_raw": 0
+ },
+ "per_preset": {
+  "bilateral_random": {
+   "rules": 40,
+   "ordinary_types": 200,
+   "ratio_pairs": 375,
+   "rules_with_inversion": 0,
+   "ceiling_clip_types": 0,
+   "rules_with_floor_value_1": 0,
+   "tie_groups": 3,
+   "tie_groups_with_identical_signature": 0,
+   "rules_with_material_tie": 0,
+   "material_tie_rule_fraction": 0.0,
+   "max_ratio_distortion": 0.0025067356565877663,
+   "median_ratio_distortion": 0.0003378956740764938,
+   "min_normalized_value": 127,
+   "max_normalized_value": 5552,
+   "quantization_bound_violations": 0,
+   "quantization_bound_max_ratio_to_bound": 0.9780184154886218,
+   "promotion_checks": 75,
+   "promotion_inconsistent": 0,
+   "hand_rounding_max_deviation": 0.0023622047244095112,
+   "hand_rounding_median_deviation": 0.00015613918646772973,
+   "decision": "ratio_rounding_bounded_persists"
+  },
+  "free_random": {
+   "rules": 40,
+   "ordinary_types": 200,
+   "ratio_pairs": 379,
+   "rules_with_inversion": 0,
+   "ceiling_clip_types": 0,
+   "rules_with_floor_value_1": 0,
+   "tie_groups": 2,
+   "tie_groups_with_identical_signature": 0,
+   "rules_with_material_tie": 0,
+   "material_tie_rule_fraction": 0.0,
+   "max_ratio_distortion": 0.003909612472891344,
+   "median_ratio_distortion": 0.00024119598882810234,
+   "min_normalized_value": 127,
+   "max_normalized_value": 5552,
+   "quantization_bound_violations": 0,
+   "quantization_bound_max_ratio_to_bound": 0.9159651934048771,
+   "promotion_checks": 70,
+   "promotion_inconsistent": 0,
+   "hand_rounding_max_deviation": 0.0023622047244095112,
+   "hand_rounding_median_deviation": 0.00014982694146536968,
+   "decision": "ratio_rounding_bounded_persists"
+  }
+ },
+ "classic_like_post_hoc_check": {
+  "note": "post_hoc_classic_like_check_not_pre_registered",
+  "seeds": [
+   "293010",
+   "293021",
+   "293033"
+  ],
+  "rounding_ties": {
+   "293010": {},
+   "293021": {},
+   "293033": {
+    "1000": [
+     "X",
+     "B"
+    ]
+   }
+  }
+ },
+ "checks": {
+  "stored_json_parses": true,
+  "replay_json_parses": true,
+  "script_byte_compiles": true
+ }
+}

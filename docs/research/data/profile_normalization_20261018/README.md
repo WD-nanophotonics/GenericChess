@@ -11,8 +11,11 @@ strength, utility or game-outcome claim.
 
 The files were copied byte-for-byte from the Git-ignored private directory
 `.local_agent/profile-normalization-20261018/`. Private originals remain
-there; nothing in this directory has been edited after the run except the
-report itself.
+there. The stored `results_profile_normalization.json` and `plan.json` are
+unchanged since the run. `validate_profile_results.py` and its
+`validation_report.json` were revised in the same session (2026-10-18) to
+recompute two further aggregate fields; the stored result was re-validated,
+not rewritten.
 
 ## Files
 
@@ -22,7 +25,8 @@ report itself.
 | `plan-log.json` | 204 | `b0ed2e4217e6c6ff2b2c334879226037367ead21558eb0478b0ce2ef588f8881` |
 | `scan_profile_normalization.py` | 11048 | `2a8f630d919681d35c11c563d635c73b1ff01f5b31d4415cd65f6be0c331a397` |
 | `results_profile_normalization.json` | 78662 | `900f31275e8e3fd628e948dcb00e94bfc61d80c1315393a5fcce9350391bcec1` |
-| `validation_report.json` | 1398 | `4bd7a49e66aa406d11a436fbb977012c8e19a153dd87278dff44e64c794d0b6a` |
+| `validate_profile_results.py` | 7943 | `231bdaaa31160ff06f5b9416f60781bc8603304f403fe8f5c574e48f9febcad1` |
+| `validation_report.json` | 1471 | `68bc00df9d50b27a78117470e824b0f55b93231cd75e987e6ac58fc2ecd60e0e` |
 
 `plan.json` carries the pre-written endpoints and decision rule; its hash is
 `eeadd8ca...`, recorded in `plan-log.json` with
@@ -60,6 +64,13 @@ the only evidence.
   stored per-rule rows, re-derived inversions, tie groups and ratio pairs
   directly from the raw rows, and re-checked the stored decision against the
   pre-written rule. `validation_report.json` records `problems: []`.
+- That validator revision also re-derives `repeated_movement_signatures` and
+  `signature_raw_mismatches` from the stored per-row `signature` and `raw`
+  values (18 and 0 respectively), so the "every aggregate field" statement
+  includes those two fields. A copy of the validator is published here; it
+  accepts `--stored <result.json>` so it can run against the public copy:
+  `python validate_profile_results.py --stored results_profile_normalization.json
+  <replay.json>`.
 - The scan script was byte-compiled and the result and plan JSON parsed
   successfully.
 

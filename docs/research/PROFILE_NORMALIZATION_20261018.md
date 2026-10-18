@@ -120,7 +120,12 @@ construction implies.
   run. `validate_profile_results.py` then recomputed every aggregate field
   from the stored per-rule rows, re-derived inversions, tie groups and ratio
   pairs directly from the raw rows, and re-checked the stored decision against
-  the pre-written rule; it reported zero problems.
+  the pre-written rule; it reported zero problems. A later revision of the
+  validator also re-derives `repeated_movement_signatures` and
+  `signature_raw_mismatches` by grouping the stored per-row `signature` and
+  `raw` values (18 repeated signatures, 0 raw mismatches); with that revision
+  the "every aggregate field" statement is literally true, and it is the
+  version published beside this result.
 - A first execution failed before writing output because the script resolved
   the checkout root one level too high (`parents[2]` instead of `parents[1]`).
   The path was corrected and the successful run is the only evidence. The
