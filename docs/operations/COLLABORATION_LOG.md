@@ -4393,6 +4393,11 @@ Result chain, each stage labelled with its real status:
   the anchor-attack penalty in every game (364 owner-0, 537 owner-1
   positions). Occurrence is not utility: the half bonus pays zero as coded and
   nothing here shows a repair would change an action or a result.
+  A structural baseline (`static_zone_share_boards.py`, no search) puts the
+  share of in-zone squares at 38.2% (board 4), 21.7% (board 6) and 16.4%
+  (board 8) over the same 40 fit seeds, so the played 30.8% is not an inflated
+  artefact of the small board and the number must not be carried to boards 6
+  and 8 without games there.
 
 Consumer consequence for this family: static per-type values may be
 de-duplicated across a 180-degree rotation, but a rule and its rotation are not
