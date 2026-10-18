@@ -4593,3 +4593,38 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   in-zone-versus-outside rate is carried and the withdrawn markers stay rejected.
   Delivery: public evidence copy rebuilds 63/63 including the verifier's own
   output.
+
+### DEEPSEEK_AUX stage 14: every zero-contact seed has a named structural closure
+  (2026-10-18, same session `3d8dc073`).** Stages 10-13 left three seeds with a
+  zero in-zone contact count and no stated reason, so the loop was closed by
+  bookkeeping rather than by more search. `analyze_stage14_seed_closures.py`
+  imports no search and adds no games: it reads the stored per-seed rows of
+  Stages 10, 11 and 12, re-aggregates them against the published globals and
+  assigns one closure class per seed with the rule fixed in advance in
+  `plan_stage14_seed_closures.json`. Reconciliation first: per-seed contacts sum
+  to 53 and the recomputed buckets match the published ones (53 / 1,972 / 378 /
+  0 / 12 / 74). Of 36 seeds, 14 carry in-zone observations and all 14 close:
+  7 with contacts (65, 68, 77, 80, 89, 90, 94), 2 with a promotion source but no
+  reachable allowed destination (61: 32 blocked observations over 24 source
+  squares; 72: 5 blocked plus 12 where the played move was not the promotion) and
+  5 with a zone disjoint from every promotion source (63, 84, 85, 87, 93 - the
+  same 1,312 observations already published as structural). Decision
+  `every_zero_contact_seed_has_a_named_structural_closure`, no unexplained seed.
+  One defect was caught pre-publication and kept in the record: the first run
+  read the observation count from the Stage 11 row, where the key does not
+  exist, and labelled all 14 seeds `no_in_zone_observation`; that contradicts the
+  53 contacts in the same file, so it was discarded, the count now comes from the
+  Stage 10 row, and `defect_corrections` records `numbers_changed: false`. The
+  wrong output was never published. `verify_stage14_seed_closures.py`
+  re-implements the rule from the three source files rather than importing the
+  analysis, reproduces every class and the decision, re-checks the buckets and
+  rejects the withdrawn rate markers; 8 checks pass and its output is published
+  as `verification_stage14_seed_closures.json`.
+  Limits kept: a closure class explains why a contact could not occur, not what
+  the zone term is worth; re-reading three files written by the same scripts is
+  bookkeeping, not independent measurement; the numbers inherit any earlier
+  error; no in-zone-versus-outside rate is carried and the 0-versus-53 contrast
+  stays excluded; no strength, quality, utility or causal claim. Scope: board 4,
+  `classic_like`, the six stored Stage-8 files.
+  Delivery: public evidence copy rebuilds 68/68 including the verifier's own
+  output.

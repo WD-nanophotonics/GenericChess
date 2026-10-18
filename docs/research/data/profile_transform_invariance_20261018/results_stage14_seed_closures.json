@@ -1,0 +1,280 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "question": "Is every zero-contact seed explained by a named structural closure?",
+ "plan": "plan_stage14_seed_closures.json",
+ "design": {
+  "re_read_only": true,
+  "no_replay": true,
+  "no_search": true,
+  "no_new_games": true,
+  "sources": [
+   "results_zone_promotion_disjointness.json",
+   "results_zone_promotion_source_classification.json",
+   "results_stage12_contact_choice.json"
+  ],
+  "closure_rule": "fixed in plan_stage14_seed_closures.json before the run"
+ },
+ "summary": {
+  "decision": "every_zero_contact_seed_has_a_named_structural_closure",
+  "seeds_with_in_zone_observations": 14,
+  "seeds_examined": 36,
+  "unexplained_seeds": [],
+  "closure_counts": {
+   "contact_observed": 7,
+   "source_present_but_no_allowed_destination": 2,
+   "zone_disjoint_from_every_promotion_source": 5
+  },
+  "closure_seeds": {
+   "contact_observed": [
+    65,
+    68,
+    77,
+    80,
+    89,
+    90,
+    94
+   ],
+   "source_present_but_no_allowed_destination": [
+    61,
+    72
+   ],
+   "zone_disjoint_from_every_promotion_source": [
+    63,
+    84,
+    85,
+    87,
+    93
+   ]
+  },
+  "recomputed_global_buckets": {
+   "in_zone_contact": 53,
+   "zone_geometry_no_source": 1972,
+   "no_reachable_allowed_destination": 378,
+   "dead_promotion_target": 0,
+   "pseudo_promotion_filtered_by_legal_safety": 12,
+   "would_promote_but_not_to_move": 74
+  },
+  "wall_seconds": 0.001
+ },
+ "per_seed": [
+  {
+   "seed": 61,
+   "in_zone_paid_observations": 32,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 24,
+   "zone_squares": 24,
+   "to_move_no_reachable_allowed_destination": 32,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "source_present_but_no_allowed_destination",
+   "closure_reason": "the paid square is a promotion source for the base type, but no allowed destination is reachable in any of these positions"
+  },
+  {
+   "seed": 63,
+   "in_zone_paid_observations": 155,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_squares": 48,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 155,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "zone_disjoint_from_every_promotion_source",
+   "closure_reason": "no square in the seed's zone is a promotion source for that base type, so a contact is impossible by construction"
+  },
+  {
+   "seed": 65,
+   "in_zone_paid_observations": 12,
+   "contacts": 4,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_squares": 16,
+   "to_move_no_reachable_allowed_destination": 8,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 68,
+   "in_zone_paid_observations": 60,
+   "contacts": 4,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_squares": 20,
+   "to_move_no_reachable_allowed_destination": 4,
+   "to_move_zone_geometry_no_source": 48,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 4,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 72,
+   "in_zone_paid_observations": 17,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_squares": 8,
+   "to_move_no_reachable_allowed_destination": 5,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 12,
+   "closure": "source_present_but_no_allowed_destination",
+   "closure_reason": "the paid square is a promotion source for the base type, but no allowed destination is reachable in any of these positions"
+  },
+  {
+   "seed": 77,
+   "in_zone_paid_observations": 20,
+   "contacts": 4,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 8,
+   "zone_squares": 8,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 8,
+   "would_promote_but_not_to_move": 8,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 80,
+   "in_zone_paid_observations": 33,
+   "contacts": 18,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 4,
+   "zone_squares": 8,
+   "to_move_no_reachable_allowed_destination": 2,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 13,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 84,
+   "in_zone_paid_observations": 424,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_squares": 24,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 424,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "zone_disjoint_from_every_promotion_source",
+   "closure_reason": "no square in the seed's zone is a promotion source for that base type, so a contact is impossible by construction"
+  },
+  {
+   "seed": 85,
+   "in_zone_paid_observations": 507,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_squares": 24,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 507,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "zone_disjoint_from_every_promotion_source",
+   "closure_reason": "no square in the seed's zone is a promotion source for that base type, so a contact is impossible by construction"
+  },
+  {
+   "seed": 87,
+   "in_zone_paid_observations": 124,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_squares": 48,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 124,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "zone_disjoint_from_every_promotion_source",
+   "closure_reason": "no square in the seed's zone is a promotion source for that base type, so a contact is impossible by construction"
+  },
+  {
+   "seed": 89,
+   "in_zone_paid_observations": 44,
+   "contacts": 4,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 20,
+   "zone_squares": 36,
+   "to_move_no_reachable_allowed_destination": 32,
+   "to_move_zone_geometry_no_source": 0,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 8,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 90,
+   "in_zone_paid_observations": 460,
+   "contacts": 6,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 24,
+   "zone_squares": 52,
+   "to_move_no_reachable_allowed_destination": 270,
+   "to_move_zone_geometry_no_source": 173,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 11,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  },
+  {
+   "seed": 93,
+   "in_zone_paid_observations": 102,
+   "contacts": 0,
+   "zone_disjoint_from_every_promotion_source": true,
+   "zone_squares_that_are_promotion_sources": 0,
+   "zone_squares": 40,
+   "to_move_no_reachable_allowed_destination": 0,
+   "to_move_zone_geometry_no_source": 102,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 0,
+   "would_promote_but_not_to_move": 0,
+   "closure": "zone_disjoint_from_every_promotion_source",
+   "closure_reason": "no square in the seed's zone is a promotion source for that base type, so a contact is impossible by construction"
+  },
+  {
+   "seed": 94,
+   "in_zone_paid_observations": 499,
+   "contacts": 13,
+   "zone_disjoint_from_every_promotion_source": false,
+   "zone_squares_that_are_promotion_sources": 16,
+   "zone_squares": 24,
+   "to_move_no_reachable_allowed_destination": 25,
+   "to_move_zone_geometry_no_source": 439,
+   "to_move_pseudo_promotion_filtered_by_legal_safety": 4,
+   "would_promote_but_not_to_move": 18,
+   "closure": "contact_observed",
+   "closure_reason": "at least one in-zone contact occurs in this seed"
+  }
+ ],
+ "reconciliation": {
+  "stage12_per_seed_contact_total": 53,
+  "stage12_summary_contact_total": 53,
+  "stage11_summary_contact_total": 53,
+  "problems": []
+ },
+ "defect_corrections": [
+  {
+   "defect": "the closure rule read in_zone_paid_observations from the Stage 11 per-seed row",
+   "observed": "that key exists only in the Stage 10 rows, so the first run returned closure 'no_in_zone_observation' for all 14 seeds and its decision was not kept",
+   "correction": "the count is now read from the Stage 10 row and the bucket counts stay from Stage 11",
+   "how_detected": "the first run's closure_counts held a single class covering every seed, which contradicts the stored contacts in the same file",
+   "numbers_changed": false
+  }
+ ],
+ "nonclaims": [
+  "a closure class explains why a contact could not occur in that seed; it does not value the zone term",
+  "no in-zone-versus-outside rate is produced and the withdrawn 0-vs-53 contrast stays excluded",
+  "no strength, playing-quality, utility or causal claim",
+  "re-reading three files written by the same scripts is bookkeeping, not independent measurement",
+  "board 4, classic_like, the six stored files only"
+ ]
+}

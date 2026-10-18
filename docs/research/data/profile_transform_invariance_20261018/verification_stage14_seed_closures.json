@@ -1,0 +1,72 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "verifier": "verify_stage14_seed_closures.py",
+ "verdict": "all_checks_passed",
+ "checks": [
+  {
+   "check": "closure_per_seed_matches_independent_reimplementation",
+   "passed": true,
+   "detail": {
+    "mismatched": {},
+    "extra": [],
+    "missing": []
+   }
+  },
+  {
+   "check": "contact_totals_agree_across_stages_11_and_12",
+   "passed": true,
+   "detail": [
+    53,
+    53,
+    53
+   ]
+  },
+  {
+   "check": "published_per_seed_contacts_match_stage_12",
+   "passed": true,
+   "detail": 53
+  },
+  {
+   "check": "published_observations_match_stage_10",
+   "passed": true,
+   "detail": 2489
+  },
+  {
+   "check": "observation_total_reconciles_with_stage_11",
+   "passed": true,
+   "detail": 2489
+  },
+  {
+   "check": "buckets_reaggregate_to_stage_11_summary",
+   "passed": true,
+   "detail": "six buckets"
+  },
+  {
+   "check": "decision_rule_reproduces",
+   "passed": true,
+   "detail": "every_zero_contact_seed_has_a_named_structural_closure"
+  },
+  {
+   "check": "no_in_zone_versus_outside_rate_is_carried",
+   "passed": true,
+   "detail": []
+  }
+ ],
+ "independent_recomputation": {
+  "61": "source_present_but_no_allowed_destination",
+  "63": "zone_disjoint_from_every_promotion_source",
+  "65": "contact_observed",
+  "68": "contact_observed",
+  "72": "source_present_but_no_allowed_destination",
+  "77": "contact_observed",
+  "80": "contact_observed",
+  "84": "zone_disjoint_from_every_promotion_source",
+  "85": "zone_disjoint_from_every_promotion_source",
+  "87": "zone_disjoint_from_every_promotion_source",
+  "89": "contact_observed",
+  "90": "contact_observed",
+  "93": "zone_disjoint_from_every_promotion_source",
+  "94": "contact_observed"
+ },
+ "scope": "board 4, classic_like, the six stored Stage-8 files; re-read only"
+}

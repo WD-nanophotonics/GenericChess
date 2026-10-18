@@ -1,0 +1,36 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "stage": 14,
+ "status": "written_before_run",
+ "question": "For every seed that contributes at least one in-zone paid observation, is the number of in-zone contacts explained by a named structural closure, and which closure is it - a zone disjoint from every promotion source, a source square with no reachable allowed destination, or the legal-safety filter?",
+ "why_now": "The supervisor flagged seeds 61 and 72 as an unresolved residual needing a new endpoint. Stage 10 (disjointness), Stage 11 (source classification) and Stage 12 (played classes) each stored per-seed rows, so the question can be settled by re-reading them; no scan, no replay, no search and no new game are permitted for this stage.",
+ "inputs": {
+  "results_zone_promotion_disjointness.json": "per-seed zone squares, promotion-source squares and in_zone_paid_observations",
+  "results_zone_promotion_source_classification.json": "per-seed to-move bucket counts",
+  "results_stage12_contact_choice.json": "per-seed contact counts by played class"
+ },
+ "method": "join the three stored files by seed, re-derive the global bucket totals from the per-seed rows, and assign each seed exactly one closure class by the rule below",
+ "closure_rule": [
+  "if the seed has no in-zone paid observation: closure 'no_in_zone_observation'",
+  "else if stage 10 says the seed's zone is disjoint from every promotion source: closure 'zone_disjoint_from_every_promotion_source'",
+  "else if the seed has at least one contact: closure 'contact_observed'",
+  "else if to_move_no_reachable_allowed_destination > 0: closure 'source_present_but_no_allowed_destination'",
+  "else if to_move_pseudo_promotion_filtered_by_legal_safety > 0: closure 'source_present_but_legally_filtered'",
+  "else: closure 'unexplained'"
+ ],
+ "decision_rule": "every seed with at least one in-zone paid observation is either 'contact_observed' or has a named structural closure -> decision 'every_zero_contact_seed_has_a_named_structural_closure'; otherwise decision 'unexplained_zero_contact_seed_remains'",
+ "reconciliation_checks": [
+  "per-seed contact counts sum to 53, the published Stage 12 total",
+  "per-seed bucket counts sum to each published Stage 11 global bucket",
+  "the set of seeds with in-zone observations agrees between Stage 10 and Stage 11"
+ ],
+ "cost": "seconds; three JSON files read, no compute",
+ "consumer": "the next research choice, which must decide whether a contact-based endpoint can be extended by more games on the zero-contact seeds or whether the binding constraint is destination reachability rather than zone geometry",
+ "nonclaims": [
+  "a closure class explains why a contact could not occur in that seed, it does not value the zone term",
+  "no in-zone-versus-outside rate is produced and the withdrawn 0-vs-53 contrast stays excluded",
+  "no strength, playing-quality, utility or causal claim",
+  "re-reading three files written by the same scripts is bookkeeping, not independent measurement"
+ ]
+}

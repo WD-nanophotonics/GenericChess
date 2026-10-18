@@ -597,6 +597,59 @@ deeper or differently weighted search would see different option sets
 altogether. This artifact carries no in-zone-versus-outside rate and the
 verifier rejects the withdrawn markers if they reappear.
 
+### Does every zero-contact seed have a named structural closure? (Stage 14, re-read only)
+
+Stages 10 to 13 left three seeds with a zero contact count and no stated
+reason. That is an open loop: an unexplained zero is indistinguishable from a
+measurement that failed, so the next step is bookkeeping, not new search.
+`analyze_stage14_seed_closures.py` adds no compute at all - it reads the stored
+per-seed rows of Stages 10, 11 and 12, re-aggregates them against the published
+globals, and assigns exactly one closure class per seed using the six-class rule
+and decision rule fixed in `plan_stage14_seed_closures.json` before the run.
+
+The re-aggregation reconciles first: the per-seed contact counts sum to 53 and
+the recomputed buckets reproduce the published ones (53 contacts, 1,972
+zone-geometry-no-source, 378 no-reachable-allowed-destination, 0 dead promotion
+target, 12 filtered by the parent move's legal-safety rule, 74
+would-promote-but-not-to-move). Of the 36 seeds examined, 14 carry in-zone paid
+observations and all 14 are explained by the decision
+`every_zero_contact_seed_has_a_named_structural_closure`, with no seed left in
+an unexplained class:
+
+* 7 `contact_observed` - seeds 65, 68, 77, 80, 89, 90, 94;
+* 2 `source_present_but_no_allowed_destination` - seed 61 (32 observations from
+  24 zone squares that are all promotion sources, every one with no reachable
+  allowed destination) and seed 72 (17 observations from 8 source squares: 5
+  destination-blocked and 12 where the piece could promote but the move played
+  in the record was not the promotion);
+* 5 `zone_disjoint_from_every_promotion_source` - seeds 63, 84, 85, 87, 93,
+  the same 1,312 observations already described as structural above, where a
+  contact is impossible by construction rather than merely unobserved.
+
+One defect was caught before anything was written up. The first run read the
+observation count from the Stage 11 per-seed row, where that key does not exist,
+so it silently compared against zero and labelled all 14 seeds
+`no_in_zone_observation`. That class covers every seed, which contradicts the
+53 contacts stored in the same file, so the output was discarded and the count
+is now read from the Stage 10 row with the buckets still taken from Stage 11.
+The correction is recorded in the results file's `defect_corrections`, the
+numbers did not change as a result, and the wrong output was never published.
+`verify_stage14_seed_closures.py` re-implements the rule from the three source
+files instead of importing the analysis, reproduces every per-seed class and the
+decision, re-checks the bucket re-aggregation, and rejects the withdrawn rate
+markers - 8 checks, all passing, written to
+`verification_stage14_seed_closures.json`.
+
+What this buys is a closed ledger, and nothing more. A closure class says why a
+contact could not arise in that seed; it is not a valuation, and it does not make
+the surviving contacts more informative than they were. Re-reading three files
+written by the same scripts is bookkeeping, not independent measurement, and the
+numbers inherit whatever error the earlier stages carry. No in-zone-versus-
+outside rate is produced - the withdrawn 0-versus-53 contrast stays excluded and
+the verifier rejects its markers if they reappear - and no strength,
+playing-quality, utility or causal claim follows. Scope remains board 4,
+`classic_like` and the six stored Stage-8 files.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward

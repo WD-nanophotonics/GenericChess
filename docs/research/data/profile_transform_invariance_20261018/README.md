@@ -5,8 +5,9 @@ Public copy of the evidence behind
 
 Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
-disjointness, source-classification, Stage 12 contact-choice and Stage 13
-option-set artifacts below were added from the same role's later session
+disjointness, source-classification, Stage 12 contact-choice, Stage 13
+option-set and Stage 14 seed-closure artifacts below were added from the same
+role's later session
 `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
 no other role has rerun it. No strength, playing-quality, utility, human-price
 or game-outcome claim is made anywhere in this directory.
@@ -79,6 +80,22 @@ and it says nothing about whether the choice was good.
 `verify_stage13_option_set.py` rebuilds the positions and the option sets from
 the stored move lists without importing the scan and reproduces all 15 checks.
 
+`analyze_stage14_seed_closures.py` adds no compute at all: it reads the stored
+per-seed rows of Stages 10, 11 and 12, re-aggregates them against the published
+globals, and assigns exactly one closure class to every seed with the rule fixed
+in `plan_stage14_seed_closures.json` before the run. The 14 seeds that carry
+in-zone observations split into 7 with contacts, 2 whose paid squares are
+promotion sources but never offer a reachable allowed destination (seeds 61 and
+72) and 5 whose zone is disjoint from every promotion source (seeds 63, 84, 85,
+87 and 93, together the 1,312 observations already described as structural).
+The decision is `every_zero_contact_seed_has_a_named_structural_closure`, with
+no unexplained seed left. Its own first run is kept as a correction: it read the
+observation count from the Stage 11 row, found it absent and labelled every seed
+`no_in_zone_observation`; the count is read from the Stage 10 row now and the
+wrong output was not carried anywhere. `verify_stage14_seed_closures.py`
+re-implements the rule from the three source files and reproduces every row and
+the decision (8 checks).
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing
@@ -142,6 +159,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage13_option_set.json` | 4025 | `acc48d4f9651474f6e8e932709e5116495d355ce1f5d5f386922042cac1ecb1c` |
 | `results_stage13_option_set.json` | 49664 | `b8b77064bc41958fc73a464f493a0eeddc804e9c130026b56396d782f4c9770c` |
 | `verification_stage13_option_set.json` | 2417 | `07a1a1ea0f28e9916ec5d3cb4e7c9aae66fbc446639de35d0a5a5592281cd4d6` |
+| `plan_stage14_seed_closures.json` | 3089 | `516900c30c7f79b66588cb7beb3da35b77ac8724f4b8e6b74298d674b339a412` |
+| `results_stage14_seed_closures.json` | 10610 | `a6934149f3b6f331251fd022ded6f9d817a2d5362d446aa50b0a0ff69eb0d52e` |
+| `verification_stage14_seed_closures.json` | 1837 | `85d55d08709395c0ee0910e77f1b67ad11d48a43c18eec617e9484fbc3aba66c` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -167,7 +187,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_stage12_contact_choice.py` | 11154 | `48dab628cb5979ac92fc95b10a882152b64e2e938aeb51f0b1f7b0de23ebaf35` |
 | `scan_stage13_option_set.py` | 14710 | `0b78201952d60ea4a429288920c033fccda3c1d801bc14c2c39ae20dd6755712` |
 | `verify_stage13_option_set.py` | 13890 | `70e1792eecfc4c1c991364170290b34052eb1408f0d29ec158ff4d86a25ff43a` |
-| `make_public_evidence.py` | 6098 | `fdeee6447ecb8ca7b3a80c2cfa6eac6659a582c3ae1d2ba32133711108e2acea` |
+| `analyze_stage14_seed_closures.py` | 10921 | `f5df1b3fb27e5800b05622e58bdf7cee5529314cb38e33834dc4038f8f56531f` |
+| `verify_stage14_seed_closures.py` | 6548 | `f1fccc62ae526dd9d197c7dff061d496014274eaed4b367e8ccea16e34b4772a` |
+| `make_public_evidence.py` | 6310 | `4d5dedcca8493adbdd81cb42d77fe03c777fff838bb10fee3144d747079e4760` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -201,6 +223,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage13_option_set.json` | the endpoint for the Stage 13 replay, its forcedness classes and its decision rule, written before the run; only the later `execution` record and `status` were added |
 | `results_stage13_option_set.json` | `no_played_contact_promotion_was_forced` - of the 17 contacts where the promotion from the paid square was played, 0 were forced: every one had at least one unpromoted sibling from that square, and no contact position had a single legal action (legal-action totals 3-22, actions from the paid square 2 or 3); availability only, no value reading |
 | `verify_stage13_option_set.py` | independent replay of the same six stored files: rebuilds every contact position and its legal action set without importing the scan, matches every event and per-seed row, and reproduces the decision (`all_checks_passed`, 15 checks) |
+| `plan_stage14_seed_closures.json` | the endpoint, the six-class closure rule and the decision rule for the Stage 14 re-read, written before the run; only the later `execution` record was added |
+| `results_stage14_seed_closures.json` | `every_zero_contact_seed_has_a_named_structural_closure` - the 14 seeds with in-zone observations split 7 with contacts / 2 with a promotion source but no reachable allowed destination (seeds 61, 72) / 5 with a zone disjoint from every promotion source (seeds 63, 84, 85, 87, 93), leaving no unexplained seed; re-read only, and a closure is not a valuation |
+| `verify_stage14_seed_closures.py` | re-implements the closure rule from the three stored source files instead of importing the analysis, reproduces every per-seed class and the decision, re-checks the bucket re-aggregation and rejects the withdrawn rate markers (`all_checks_passed`, 8 checks) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
