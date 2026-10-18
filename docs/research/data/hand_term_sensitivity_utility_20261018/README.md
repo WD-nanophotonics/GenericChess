@@ -54,7 +54,21 @@ Top level (13 files):
 - One determinism smoke record: `smoke-d2-s59.json`, byte-identical to the seed
   59 depth-2 record in the primary result.
 
-The 33 technical files above total 1,095,971 bytes, and each is byte-identical
+`judged-divergence/move-class/` (6 files, added 2026-10-18 after the first copy):
+
+- Plans written before their analyses (2): `plan-move-class.json`,
+  `plan-legal-move-baseline.json`.
+- Results (2): `results_move_class_tally.json` (class of both first-divergence
+  moves per judged cell, crossed with verdict, pair kind and completion) and
+  `results_move_class_baseline.json` (legal-action class mix at the 35 distinct
+  positions, with served/blind choice shares against it).
+- Readers (2): `tally_move_class.py` and `baseline_legal_move_mix.py`. Both read
+  only frozen inputs and refuse to overwrite their results; neither runs a
+  search. The baseline reader regenerates each position with the stored
+  `sample_start` rule and applies the saved prefix moves, asserting the action
+  `repr` round-trip and that both games share the prefix.
+
+The 39 technical files above total 1,172,522 bytes, and each is byte-identical
 to its private original (verified by SHA-256 on 2026-10-18, 0 mismatches).
 This README is additional: it has no private counterpart and is not part of that
 count or hash table.
@@ -70,6 +84,12 @@ count or hash table.
 | judged-divergence/complete_secondary_phase.py | `3431B0638C9CFCE4DC7F55A0867C202A27B0B1F4BD24787D19E70BB3EE28780A` |
 | judged-divergence/complete_truncated_judged.py | `56E2F1DEAA9AD2B6864D61CF4DBD850805393B6D0D057A18EF31F6853F9D79EA` |
 | judged-divergence/distinct_position_strata.py | `AB26ED42ED8941DBB7C71670DE02E49B612DEB3FE47F3C1A9915130FF7637C60` |
+| judged-divergence/move-class/baseline_legal_move_mix.py | `111063C3A4DB193BB6F5914BA119737D12D6B302F8DBB61720004F4685FFEA91` |
+| judged-divergence/move-class/plan-legal-move-baseline.json | `8C5604B07CB1B4AFF497A999432FBF5BD352AA67AEE896CF6C7DCBE3B20386A1` |
+| judged-divergence/move-class/plan-move-class.json | `78729045E2D044B3FE21AC081CD3FF8A6424830667EDAE3447A277A63CC2A55A` |
+| judged-divergence/move-class/results_move_class_baseline.json | `DCA269F1BC58C1F82D8EA278FB48FCCD9A49ECBEB2C3272C0118B18060C7FBAF` |
+| judged-divergence/move-class/results_move_class_tally.json | `6BAAECEA139F41CD477D8D44FB78760F2FA8D72D2ED50AE4C504FDF9B4AFF75C` |
+| judged-divergence/move-class/tally_move_class.py | `3A522A1FD3DD48B9A5F2A591C9A64D1FA3774F487B5F8E65A22D09C25D1BA161` |
 | judged-divergence/plan-complete-truncated-judged.json | `B43AC36E7EF3E48D6ACEE055E3A2C10CB4C3A87EB226F40392C88A2A976A8C79` |
 | judged-divergence/plan-distinct-position-strata.json | `7C5A0516995120B649963D31D722B4C418B13443D9D1E1642DC7B159CAF7C769` |
 | judged-divergence/plan-judge-robustness.json | `B434F2C21EB21BB59C252EBFA550D2A431E1526BC872D0FDB257B1F331CC18DA` |
@@ -152,6 +172,28 @@ Verified outputs from that run:
   judge totals (24/18/3 with 16 sign flips, median judge-delta gap 1009;
   26/18/1 with 18 flips, median gap 2025; median primary |delta| 1003).
 
+**2b. Move-class readers (no search).** In a scratch tree, delete the copied
+`results_move_class_*.json` first so the overwrite guard does not stop the
+reader (never do this in the private originals):
+
+```powershell
+Remove-Item '.local_agent/hand-utility-games-20261018/judged-divergence/move-class/results_move_class_tally.json'
+Remove-Item '.local_agent/hand-utility-games-20261018/judged-divergence/move-class/results_move_class_baseline.json'
+& $py '.local_agent/hand-utility-games-20261018/judged-divergence/move-class/tally_move_class.py'
+& $py '.local_agent/hand-utility-games-20261018/judged-divergence/move-class/baseline_legal_move_mix.py'
+```
+
+Verified outputs from that run: `tally_move_class.py` reports 45 judged cells,
+30 class-changing pairs, 29 cells involving a drop, 16 involving a promotion,
+7 quiet-vs-quiet, and decision
+`class_changing_share_at_or_above_one_third`; `baseline_legal_move_mix.py`
+reports 45 cells / 35 distinct positions / 0 prefix mismatches, 420 legal
+actions (drop 192, promotion 48, quiet 180; shares .4571 / .1143 / .4286),
+served choices 7 drop / 13 promotion / 25 quiet, blind choices 29 / 4 / 12,
+blind drops over-represented by 18.7 points and served drops
+under-represented by 30.2 points against that availability, and 5 of the 7
+quiet-vs-quiet cells had a legal drop.
+
 **3. Overwrite guards (expected to refuse).** Both strata writers assert the
 stored aggregate and then refuse to replace their result file:
 
@@ -186,6 +228,16 @@ files above without any of those four commands.
 - The judged-divergence aggregate measures the judge's configuration, not
   configuration-free move quality: the verdict moves with the judge's own
   hand weight at roughly the magnitude of the effect measured.
+- The move-class tally classifies only the **chosen** first-divergence actions
+  and compares them with the legal-action mix at the same positions. Drops are
+  45.7% of legal actions there; the blind arm's 29/45 drop choices are
+  over-represented by 18.7 points and the served arm's 7/45 by -30.2, so the
+  coefficient changes the action-class mix. This is not evidence that drops or
+  promotions are better or worse, and the judge shares the blind arm's
+  coefficient. Blind-drop cells are not where the blind-leaning verdicts
+  concentrate (17 blind / 9 served / 3 tie of 29, versus 11 / 4 / 1 of 16
+  elsewhere), so a shared-coefficient class preference does not by itself
+  explain the aggregate verdict.
 - Within the completion check, the blind-leaning direction survives at the
   pre-written 10-cell threshold, but that branch is threshold-exact and weak;
   the residual truncation is the fixed 8-ply quiescence hard check, structural

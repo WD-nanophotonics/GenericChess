@@ -1,0 +1,952 @@
+{
+  "availability_distinct_positions": {
+    "actions_by_class": {
+      "drop": 192,
+      "promotion": 48,
+      "quiet": 180
+    },
+    "legal_action_instances": 420,
+    "positions": 35,
+    "share_by_class": {
+      "drop": 0.4571,
+      "promotion": 0.1143,
+      "quiet": 0.4286
+    }
+  },
+  "cells": [
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 9,
+      "legal_drop": 2,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        59,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+      ],
+      "seed": 59,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 41,
+      "legal_drop": 33,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "split",
+      "position_key": [
+        60,
+        6,
+        1,
+        "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+        "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))"
+      ],
+      "seed": 60,
+      "served_class": "drop",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 15,
+      "legal_drop": 5,
+      "legal_promotion": 4,
+      "legal_quiet": 6,
+      "pair_kind": "split",
+      "position_key": [
+        62,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))"
+      ],
+      "seed": 62,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 4,
+      "legal_drop": 2,
+      "legal_promotion": 1,
+      "legal_quiet": 1,
+      "pair_kind": "split",
+      "position_key": [
+        63,
+        1,
+        1,
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=0), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=3))"
+      ],
+      "seed": 63,
+      "served_class": "promotion",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "promotion",
+      "depth": 2,
+      "legal_actions": 9,
+      "legal_drop": 2,
+      "legal_promotion": 4,
+      "legal_quiet": 3,
+      "pair_kind": "split",
+      "position_key": [
+        64,
+        3,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=1, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id='A')"
+      ],
+      "seed": 64,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 22,
+      "legal_drop": 15,
+      "legal_promotion": 0,
+      "legal_quiet": 7,
+      "pair_kind": "split",
+      "position_key": [
+        67,
+        2,
+        0,
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))"
+      ],
+      "seed": 67,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 10,
+      "legal_drop": 2,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "blind",
+      "position_key": [
+        69,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+      ],
+      "seed": 69,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 9,
+      "legal_drop": 2,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        70,
+        6,
+        1,
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 70,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 10,
+      "legal_drop": 3,
+      "legal_promotion": 1,
+      "legal_quiet": 6,
+      "pair_kind": "blind",
+      "position_key": [
+        71,
+        0,
+        1,
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))"
+      ],
+      "seed": 71,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 5,
+      "legal_drop": 0,
+      "legal_promotion": 0,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        72,
+        1,
+        1,
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 72,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 11,
+      "legal_drop": 4,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "sweep",
+      "position_key": [
+        74,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))"
+      ],
+      "seed": 74,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 15,
+      "legal_drop": 8,
+      "legal_promotion": 1,
+      "legal_quiet": 6,
+      "pair_kind": "sweep",
+      "position_key": [
+        75,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')",
+        "DropMove(base_type_id='X', to_square=Square(file=3, rank=0))"
+      ],
+      "seed": 75,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 11,
+      "legal_drop": 2,
+      "legal_promotion": 2,
+      "legal_quiet": 7,
+      "pair_kind": "sweep",
+      "position_key": [
+        76,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+      ],
+      "seed": 76,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 9,
+      "legal_drop": 5,
+      "legal_promotion": 1,
+      "legal_quiet": 3,
+      "pair_kind": "split",
+      "position_key": [
+        78,
+        2,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))"
+      ],
+      "seed": 78,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 10,
+      "legal_drop": 4,
+      "legal_promotion": 4,
+      "legal_quiet": 2,
+      "pair_kind": "sweep",
+      "position_key": [
+        79,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))"
+      ],
+      "seed": 79,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 13,
+      "legal_drop": 6,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "sweep",
+      "position_key": [
+        80,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+      ],
+      "seed": 80,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 2,
+      "legal_actions": 7,
+      "legal_drop": 4,
+      "legal_promotion": 1,
+      "legal_quiet": 2,
+      "pair_kind": "split",
+      "position_key": [
+        81,
+        0,
+        1,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 81,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 15,
+      "legal_drop": 9,
+      "legal_promotion": 0,
+      "legal_quiet": 6,
+      "pair_kind": "sweep",
+      "position_key": [
+        84,
+        4,
+        0,
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=1))"
+      ],
+      "seed": 84,
+      "served_class": "drop",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 15,
+      "legal_drop": 9,
+      "legal_promotion": 2,
+      "legal_quiet": 4,
+      "pair_kind": "sweep",
+      "position_key": [
+        85,
+        2,
+        1,
+        "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=0, rank=0))"
+      ],
+      "seed": 85,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 10,
+      "legal_drop": 3,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        86,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))"
+      ],
+      "seed": 86,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "promotion",
+      "depth": 2,
+      "legal_actions": 9,
+      "legal_drop": 3,
+      "legal_promotion": 2,
+      "legal_quiet": 4,
+      "pair_kind": "sweep",
+      "position_key": [
+        88,
+        1,
+        1,
+        "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=0), promotion_target_id='A')"
+      ],
+      "seed": 88,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "promotion",
+      "depth": 2,
+      "legal_actions": 6,
+      "legal_drop": 1,
+      "legal_promotion": 1,
+      "legal_quiet": 4,
+      "pair_kind": "split",
+      "position_key": [
+        90,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=3), promotion_target_id='X')"
+      ],
+      "seed": 90,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 2,
+      "legal_actions": 13,
+      "legal_drop": 8,
+      "legal_promotion": 0,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        94,
+        3,
+        1,
+        "DropMove(base_type_id='A', to_square=Square(file=0, rank=2))",
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=3))"
+      ],
+      "seed": 94,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 9,
+      "legal_drop": 2,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        59,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+      ],
+      "seed": 59,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 41,
+      "legal_drop": 33,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "split",
+      "position_key": [
+        60,
+        6,
+        1,
+        "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+        "DropMove(base_type_id='X', to_square=Square(file=3, rank=1))"
+      ],
+      "seed": 60,
+      "served_class": "drop",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 15,
+      "legal_drop": 5,
+      "legal_promotion": 4,
+      "legal_quiet": 6,
+      "pair_kind": "sweep",
+      "position_key": [
+        62,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=2))"
+      ],
+      "seed": 62,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 11,
+      "legal_drop": 4,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "split",
+      "position_key": [
+        64,
+        3,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))"
+      ],
+      "seed": 64,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 22,
+      "legal_drop": 15,
+      "legal_promotion": 0,
+      "legal_quiet": 7,
+      "pair_kind": "split",
+      "position_key": [
+        67,
+        2,
+        0,
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='X', to_square=Square(file=1, rank=0))"
+      ],
+      "seed": 67,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 10,
+      "legal_drop": 2,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "blind",
+      "position_key": [
+        69,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+      ],
+      "seed": 69,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 10,
+      "legal_drop": 3,
+      "legal_promotion": 1,
+      "legal_quiet": 6,
+      "pair_kind": "blind",
+      "position_key": [
+        71,
+        0,
+        1,
+        "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=1))"
+      ],
+      "seed": 71,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 5,
+      "legal_drop": 0,
+      "legal_promotion": 0,
+      "legal_quiet": 5,
+      "pair_kind": "sweep",
+      "position_key": [
+        72,
+        1,
+        1,
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 72,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 11,
+      "legal_drop": 4,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "sweep",
+      "position_key": [
+        74,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=1))"
+      ],
+      "seed": 74,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "promotion",
+      "depth": 3,
+      "legal_actions": 15,
+      "legal_drop": 8,
+      "legal_promotion": 1,
+      "legal_quiet": 6,
+      "pair_kind": "split",
+      "position_key": [
+        75,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id='X')"
+      ],
+      "seed": 75,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 11,
+      "legal_drop": 2,
+      "legal_promotion": 2,
+      "legal_quiet": 7,
+      "pair_kind": "sweep",
+      "position_key": [
+        76,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=2, rank=0))"
+      ],
+      "seed": 76,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 9,
+      "legal_drop": 5,
+      "legal_promotion": 1,
+      "legal_quiet": 3,
+      "pair_kind": "sweep",
+      "position_key": [
+        78,
+        2,
+        0,
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))",
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=2))"
+      ],
+      "seed": 78,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 10,
+      "legal_drop": 4,
+      "legal_promotion": 4,
+      "legal_quiet": 2,
+      "pair_kind": "split",
+      "position_key": [
+        79,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))"
+      ],
+      "seed": 79,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 17,
+      "legal_drop": 10,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "blind",
+      "position_key": [
+        80,
+        2,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')",
+        "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+      ],
+      "seed": 80,
+      "served_class": "promotion",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 7,
+      "legal_drop": 4,
+      "legal_promotion": 1,
+      "legal_quiet": 2,
+      "pair_kind": "sweep",
+      "position_key": [
+        81,
+        0,
+        1,
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=0), promotion_target_id='A')",
+        "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 81,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 13,
+      "legal_drop": 5,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "split",
+      "position_key": [
+        84,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=0), promotion_target_id=None)",
+        "DropMove(base_type_id='A', to_square=Square(file=3, rank=1))"
+      ],
+      "seed": 84,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 6,
+      "legal_drop": 1,
+      "legal_promotion": 2,
+      "legal_quiet": 3,
+      "pair_kind": "split",
+      "position_key": [
+        85,
+        7,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+      ],
+      "seed": 85,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 10,
+      "legal_drop": 3,
+      "legal_promotion": 2,
+      "legal_quiet": 5,
+      "pair_kind": "sweep",
+      "position_key": [
+        86,
+        1,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 86,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 12,
+      "legal_drop": 4,
+      "legal_promotion": 0,
+      "legal_quiet": 8,
+      "pair_kind": "sweep",
+      "position_key": [
+        88,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+        "DropMove(base_type_id='P', to_square=Square(file=1, rank=2))"
+      ],
+      "seed": 88,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 12,
+      "legal_drop": 7,
+      "legal_promotion": 1,
+      "legal_quiet": 4,
+      "pair_kind": "split",
+      "position_key": [
+        90,
+        2,
+        0,
+        "DropMove(base_type_id='P', to_square=Square(file=3, rank=0))",
+        "DropMove(base_type_id='A', to_square=Square(file=3, rank=0))"
+      ],
+      "seed": 90,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "depth": 3,
+      "legal_actions": 9,
+      "legal_drop": 1,
+      "legal_promotion": 1,
+      "legal_quiet": 7,
+      "pair_kind": "split",
+      "position_key": [
+        93,
+        0,
+        0,
+        "BoardMove(from_square=Square(file=0, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+        "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+      ],
+      "seed": 93,
+      "served_class": "quiet",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "depth": 3,
+      "legal_actions": 17,
+      "legal_drop": 10,
+      "legal_promotion": 0,
+      "legal_quiet": 7,
+      "pair_kind": "split",
+      "position_key": [
+        94,
+        2,
+        0,
+        "DropMove(base_type_id='A', to_square=Square(file=2, rank=0))",
+        "DropMove(base_type_id='A', to_square=Square(file=0, rank=0))"
+      ],
+      "seed": 94,
+      "served_class": "drop",
+      "verdict": "blind_better"
+    }
+  ],
+  "checks": {
+    "chosen_not_legal": 0,
+    "distinct_positions": 35,
+    "judged_cells": 45,
+    "prefix_mismatches": 0,
+    "repr_round_trip_failures": 0
+  },
+  "input": {
+    "plan_sha256": "8C5604B07CB1B4AFF497A999432FBF5BD352AA67AEE896CF6C7DCBE3B20386A1",
+    "results_judged_divergence.json": "444CDA2632E59ABBB06A2C747AA22A0488385C38C7E987E1B3B70B3434882979"
+  },
+  "limits": [
+    "Availability is measured on the legal move set, not on any policy distribution; over-representation is not evidence of strength or error.",
+    "The blind arm and the judge share hand_weight=0.0, so blind-side drop concentration may reflect shared evaluation rather than quality.",
+    "Colour-swapped pairs and duplicate depths correlate the cells; exact counts are descriptive.",
+    "A drop move can be a capture-to-hand or a plain hand drop; this tally does not separate them.",
+    "No promotion/hand interaction claim follows from the class mix alone."
+  ],
+  "observed_choices_45_cells": {
+    "blind": {
+      "drop": 29,
+      "promotion": 4,
+      "quiet": 12
+    },
+    "comparison": {
+      "blind": {
+        "drop": {
+          "assessment": "over_represented",
+          "availability_share": 0.45714285714285713,
+          "delta_points": 18.7,
+          "observed_share": 0.6444444444444445
+        },
+        "promotion": {
+          "assessment": "consistent_with_availability",
+          "availability_share": 0.11428571428571428,
+          "delta_points": -2.5,
+          "observed_share": 0.08888888888888889
+        },
+        "quiet": {
+          "assessment": "consistent_with_availability",
+          "availability_share": 0.42857142857142855,
+          "delta_points": -16.2,
+          "observed_share": 0.26666666666666666
+        }
+      },
+      "served": {
+        "drop": {
+          "assessment": "consistent_with_availability",
+          "availability_share": 0.45714285714285713,
+          "delta_points": -30.2,
+          "observed_share": 0.15555555555555556
+        },
+        "promotion": {
+          "assessment": "over_represented",
+          "availability_share": 0.11428571428571428,
+          "delta_points": 17.5,
+          "observed_share": 0.28888888888888886
+        },
+        "quiet": {
+          "assessment": "over_represented",
+          "availability_share": 0.42857142857142855,
+          "delta_points": 12.7,
+          "observed_share": 0.5555555555555556
+        }
+      }
+    },
+    "served": {
+      "drop": 7,
+      "promotion": 13,
+      "quiet": 25
+    }
+  },
+  "owner": "DEEPSEEK_AUX",
+  "question": "Are drop/promotion moves over-represented among first-divergence choices relative to their availability in the same positions?",
+  "quiet_vs_quiet_cells": {
+    "cells": 7,
+    "cells_with_a_legal_drop": 5
+  },
+  "zero_new_search": true
+}

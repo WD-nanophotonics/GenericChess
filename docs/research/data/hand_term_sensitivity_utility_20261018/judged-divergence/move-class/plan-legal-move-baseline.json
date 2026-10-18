@@ -1,0 +1,47 @@
+{
+  "question": "Are drop/promotion moves over-represented among first-divergence choices relative to their availability in the same positions?",
+  "written_before_run_at": "2026-10-18T12:26Z",
+  "owner": "DEEPSEEK_AUX",
+  "inputs": {
+    "judged": {
+      "path": ".local_agent/hand-utility-games-20261018/judged-divergence/results_judged_divergence.json",
+      "sha256": "444CDA2632E59ABBB06A2C747AA22A0488385C38C7E987E1B3B70B3434882979"
+    },
+    "games": {
+      "glob": ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-blind_d{2,3}_*.json",
+      "use": "seed -> two games with start_ply and move list"
+    }
+  },
+  "method": {
+    "position_reconstruction": "sample_start(compiled, seed) as in check_judged_divergence.py, then apply the parsed shared prefix moves[:first_diff_ply]; assert start ply, action repr round-trip, and that both games agree on the prefix",
+    "action_parse": "BoardMove(from_square, to_square, promotion_target_id) and DropMove(base_type_id, to_square) reconstructed from the saved repr text",
+    "legal_mix": "classify every legal_actions(state, compiled) entry as drop / promotion / quiet",
+    "units": "45 judged cells and 35 distinct positions (dedupe key from distinct_position_strata.py)"
+  },
+  "zero_new_search": true,
+  "endpoints_written_in_advance": {
+    "primary": "observed drop/promotion share among the chosen first-divergence moves (served 45 choices, blind 45 choices) versus the availability share p = sum(class actions)/sum(all legal actions) over distinct positions",
+    "secondary": "per-cell availability of the chosen class; count cells where the chosen class was available (expected 45/45 if reconstruction is correct)",
+    "interpretation_rule": "call a class 'over-represented' only if its observed chosen share exceeds its pooled availability share by at least 10 percentage points; otherwise report 'consistent with availability'; report exact values either way",
+    "no_test": "no significance test; positions are correlated through colour-swapped pairs, shared starts and duplicate depth cells"
+  },
+  "checks_before_reporting": [
+    "45 cells reconstruct without mismatch",
+    "35 distinct positions",
+    "action repr round-trip exact for every prefix move and both candidates",
+    "both games of a seed share the stored prefix",
+    "chosen class is legal in its position"
+  ],
+  "limits_to_state": [
+    "Availability is measured on the legal move set, not on any policy distribution; over-representation is not evidence of strength or error.",
+    "The blind arm and the judge share hand_weight=0.0, so blind-side drop concentration may reflect shared evaluation rather than quality.",
+    "Colour-swapped pairs and duplicate depths correlate the cells; exact counts are descriptive.",
+    "A drop move can be a capture-to-hand or a plain hand drop; this tally does not separate them.",
+    "No promotion/hand interaction claim follows from the class mix alone."
+  ],
+  "output": {
+    "script": ".local_agent/hand-utility-games-20261018/judged-divergence/move-class/baseline_legal_move_mix.py",
+    "result": ".local_agent/hand-utility-games-20261018/judged-divergence/move-class/results_move_class_baseline.json",
+    "overwrite_guard": "refuse if the result path already exists"
+  }
+}

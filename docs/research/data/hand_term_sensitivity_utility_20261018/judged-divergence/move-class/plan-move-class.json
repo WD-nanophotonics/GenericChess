@@ -1,0 +1,61 @@
+{
+  "question": "Is the coefficient's action divergence concentrated in drop/promotion moves?",
+  "written_before_run_at": "2026-10-18T12:17Z",
+  "owner": "DEEPSEEK_AUX",
+  "source": {
+    "path": ".local_agent/hand-utility-games-20261018/judged-divergence/results_judged_divergence.json",
+    "sha256": "444CDA2632E59ABBB06A2C747AA22A0488385C38C7E987E1B3B70B3434882979",
+    "records_used": "records with status == judged (expected 45)",
+    "fields_read_only": [
+      "seed",
+      "depth",
+      "pair_kind",
+      "verdict",
+      "saved_moves_at_divergence.served",
+      "saved_moves_at_divergence.blind",
+      "oracle.served.reason",
+      "oracle.blind.reason"
+    ]
+  },
+  "zero_new_search": true,
+  "move_classification": {
+    "drop": "move text starts with 'DropMove('",
+    "promotion": "move text starts with 'BoardMove(' and contains a non-None promotion_target_id",
+    "quiet": "move text starts with 'BoardMove(' and contains promotion_target_id=None",
+    "other": "anything else; must be 0 for the tally to be reported"
+  },
+  "group_derivation": {
+    "divergent_split": "pair_kind == split (expected 24 cells)",
+    "config_decided": "pair_kind in {sweep, blind} (expected 21 cells)"
+  },
+  "completion_derivation": {
+    "both_completed": "both oracle reasons == completed_depth",
+    "one_truncated": "exactly one oracle reason in {node_limit, qsearch_check_hard_limit}",
+    "both_truncated": "both oracle reasons in {node_limit, qsearch_check_hard_limit}"
+  },
+  "checks_before_reporting": [
+    "45 judged cells",
+    "verdict totals match the stored aggregate (served_better 13, blind_better 28, tie 4)",
+    "pair-kind group totals match the stored aggregate (divergent_split 24, config_decided 21)",
+    "0 moves classified as other",
+    "saved move text is non-empty for both sides"
+  ],
+  "endpoints_written_in_advance": {
+    "primary": "counts of cells whose first-divergence pair involves at least one drop, at least one promotion, and neither (quiet-vs-quiet); counts of class-changing pairs (served class != blind class)",
+    "concentration_threshold": "report 'caution applies' if class-changing pairs >= 15 of 45 (one third), otherwise report 'divergence mostly quiet-move sensitivity'; state the number either way",
+    "secondary": "cross-tabulate pair class against group, verdict and completion stratum, with exact cell counts only",
+    "no_baseline_claim": "no legal-move population baseline is computed here; drop/promotion frequency among chosen moves is not compared to their availability in the position"
+  },
+  "limits_to_state": [
+    "Descriptive tally only; no search, no new evaluation, no strength or utility inference.",
+    "Cells are correlated (10 duplicate positions across depths, colour-swapped pairs); exact counts are not independent samples.",
+    "A class label says what the first differing move was, not why the coefficient changed it.",
+    "Absence of a drop/promotion difference does not show the search ignores promotion, capture-to-base or drop transitions.",
+    "Truncation strata are inherited from the stored oracle reasons, not re-verified here."
+  ],
+  "output": {
+    "script": ".local_agent/hand-utility-games-20261018/judged-divergence/move-class/tally_move_class.py",
+    "result": ".local_agent/hand-utility-games-20261018/judged-divergence/move-class/results_move_class_tally.json",
+    "overwrite_guard": "refuse if the result path already exists"
+  }
+}

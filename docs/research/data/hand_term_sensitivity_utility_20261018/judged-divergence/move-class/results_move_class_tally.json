@@ -1,0 +1,809 @@
+{
+  "cells": [
+    {
+      "blind_class": "quiet",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=quiet",
+      "pair_kind": "split",
+      "seed": 59,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "split",
+      "seed": 60,
+      "served_class": "drop",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 62,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "split",
+      "seed": 63,
+      "served_class": "promotion",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "promotion",
+      "class_changing": false,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=promotion",
+      "pair_kind": "split",
+      "seed": 64,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 67,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "blind",
+      "seed": 69,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "split",
+      "seed": 70,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "blind",
+      "seed": 71,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "split",
+      "seed": 72,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 74,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 75,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "sweep",
+      "seed": 76,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 78,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 79,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=quiet",
+      "pair_kind": "sweep",
+      "seed": 80,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=quiet",
+      "pair_kind": "split",
+      "seed": 81,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 84,
+      "served_class": "drop",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 85,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 86,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "promotion",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 2,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=quiet|blind=promotion",
+      "pair_kind": "sweep",
+      "seed": 88,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "promotion",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=quiet|blind=promotion",
+      "pair_kind": "split",
+      "seed": 90,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "one_truncated",
+      "depth": 2,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "split",
+      "seed": 94,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=quiet",
+      "pair_kind": "split",
+      "seed": 59,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "split",
+      "seed": 60,
+      "served_class": "drop",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 62,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 64,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 67,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "blind",
+      "seed": 69,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "blind",
+      "seed": 71,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "sweep",
+      "seed": 72,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 74,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "promotion",
+      "class_changing": true,
+      "completion": "both_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=quiet|blind=promotion",
+      "pair_kind": "split",
+      "seed": 75,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 76,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 78,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "split",
+      "seed": 79,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=drop",
+      "pair_kind": "blind",
+      "seed": 80,
+      "served_class": "promotion",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": true,
+      "pair_class": "served=promotion|blind=quiet",
+      "pair_kind": "sweep",
+      "seed": 81,
+      "served_class": "promotion",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "split",
+      "seed": 84,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "split",
+      "seed": 85,
+      "served_class": "quiet",
+      "verdict": "blind_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "sweep",
+      "seed": 86,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": true,
+      "completion": "one_truncated",
+      "depth": 3,
+      "group": "config_decided",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=drop",
+      "pair_kind": "sweep",
+      "seed": 88,
+      "served_class": "quiet",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "split",
+      "seed": 90,
+      "served_class": "drop",
+      "verdict": "served_better"
+    },
+    {
+      "blind_class": "quiet",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": false,
+      "involves_promotion": false,
+      "pair_class": "served=quiet|blind=quiet",
+      "pair_kind": "split",
+      "seed": 93,
+      "served_class": "quiet",
+      "verdict": "tie"
+    },
+    {
+      "blind_class": "drop",
+      "class_changing": false,
+      "completion": "both_completed",
+      "depth": 3,
+      "group": "divergent_split",
+      "involves_drop": true,
+      "involves_promotion": false,
+      "pair_class": "served=drop|blind=drop",
+      "pair_kind": "split",
+      "seed": 94,
+      "served_class": "drop",
+      "verdict": "blind_better"
+    }
+  ],
+  "checks": {
+    "groups": {
+      "config_decided": 21,
+      "divergent_split": 24
+    },
+    "judged_cells": 45,
+    "unclassified_moves": 0,
+    "verdicts": {
+      "blind_better": 28,
+      "served_better": 13,
+      "tie": 4
+    }
+  },
+  "cross_tabs": {
+    "by_completion": {
+      "both_completed": {
+        "cells": 14,
+        "pair_classes": {
+          "served=drop|blind=drop": 3,
+          "served=promotion|blind=drop": 1,
+          "served=promotion|blind=quiet": 2,
+          "served=quiet|blind=drop": 4,
+          "served=quiet|blind=promotion": 1,
+          "served=quiet|blind=quiet": 3
+        },
+        "verdicts": {
+          "blind_better": 5,
+          "served_better": 7,
+          "tie": 2
+        }
+      },
+      "both_truncated": {
+        "cells": 14,
+        "pair_classes": {
+          "served=drop|blind=drop": 3,
+          "served=promotion|blind=drop": 2,
+          "served=quiet|blind=drop": 6,
+          "served=quiet|blind=promotion": 2,
+          "served=quiet|blind=quiet": 1
+        },
+        "verdicts": {
+          "blind_better": 9,
+          "served_better": 3,
+          "tie": 2
+        }
+      },
+      "one_truncated": {
+        "cells": 17,
+        "pair_classes": {
+          "served=drop|blind=drop": 1,
+          "served=promotion|blind=drop": 4,
+          "served=promotion|blind=promotion": 1,
+          "served=promotion|blind=quiet": 3,
+          "served=quiet|blind=drop": 5,
+          "served=quiet|blind=quiet": 3
+        },
+        "verdicts": {
+          "blind_better": 14,
+          "served_better": 3
+        }
+      }
+    },
+    "by_group": {
+      "config_decided": {
+        "cells": 21,
+        "pair_classes": {
+          "served=drop|blind=drop": 2,
+          "served=promotion|blind=drop": 5,
+          "served=promotion|blind=quiet": 2,
+          "served=quiet|blind=drop": 8,
+          "served=quiet|blind=promotion": 1,
+          "served=quiet|blind=quiet": 3
+        },
+        "verdicts": {
+          "blind_better": 12,
+          "served_better": 9
+        }
+      },
+      "divergent_split": {
+        "cells": 24,
+        "pair_classes": {
+          "served=drop|blind=drop": 5,
+          "served=promotion|blind=drop": 2,
+          "served=promotion|blind=promotion": 1,
+          "served=promotion|blind=quiet": 3,
+          "served=quiet|blind=drop": 7,
+          "served=quiet|blind=promotion": 2,
+          "served=quiet|blind=quiet": 4
+        },
+        "verdicts": {
+          "blind_better": 16,
+          "served_better": 4,
+          "tie": 4
+        }
+      }
+    },
+    "by_verdict": {
+      "blind_better": {
+        "cells": 28,
+        "pair_classes": {
+          "served=drop|blind=drop": 2,
+          "served=promotion|blind=drop": 5,
+          "served=promotion|blind=promotion": 1,
+          "served=promotion|blind=quiet": 5,
+          "served=quiet|blind=drop": 10,
+          "served=quiet|blind=promotion": 1,
+          "served=quiet|blind=quiet": 4
+        },
+        "verdicts": {
+          "blind_better": 28
+        }
+      },
+      "served_better": {
+        "cells": 13,
+        "pair_classes": {
+          "served=drop|blind=drop": 3,
+          "served=promotion|blind=drop": 1,
+          "served=quiet|blind=drop": 5,
+          "served=quiet|blind=promotion": 2,
+          "served=quiet|blind=quiet": 2
+        },
+        "verdicts": {
+          "served_better": 13
+        }
+      },
+      "tie": {
+        "cells": 4,
+        "pair_classes": {
+          "served=drop|blind=drop": 2,
+          "served=promotion|blind=drop": 1,
+          "served=quiet|blind=quiet": 1
+        },
+        "verdicts": {
+          "tie": 4
+        }
+      }
+    }
+  },
+  "judged_cells": 45,
+  "limits": [
+    "Descriptive tally only; no search, no new evaluation, no strength or utility inference.",
+    "Cells are correlated (10 duplicate positions across depths, colour-swapped pairs); exact counts are not independent samples.",
+    "A class label says what the first differing move was, not why the coefficient changed it.",
+    "Absence of a drop/promotion difference does not show the search ignores promotion, capture-to-base or drop transitions.",
+    "Truncation strata are inherited from the stored oracle reasons, not re-verified here."
+  ],
+  "owner": "DEEPSEEK_AUX",
+  "plan_sha256": "78729045E2D044B3FE21AC081CD3FF8A6424830667EDAE3447A277A63CC2A55A",
+  "question": "Is the coefficient's action divergence concentrated in drop/promotion moves?",
+  "source": {
+    "path": "hand-utility-games-20261018\\judged-divergence\\results_judged_divergence.json",
+    "sha256": "444CDA2632E59ABBB06A2C747AA22A0488385C38C7E987E1B3B70B3434882979"
+  },
+  "summary": {
+    "cells_involving_a_drop": 29,
+    "cells_involving_a_promotion": 16,
+    "cells_with_neither_drop_nor_promotion": 7,
+    "class_changing_pairs": 30,
+    "decision": "class_changing_share_at_or_above_one_third",
+    "pair_class_counts": {
+      "served=drop|blind=drop": 7,
+      "served=drop|blind=promotion": 0,
+      "served=drop|blind=quiet": 0,
+      "served=promotion|blind=drop": 7,
+      "served=promotion|blind=promotion": 1,
+      "served=promotion|blind=quiet": 5,
+      "served=quiet|blind=drop": 15,
+      "served=quiet|blind=promotion": 3,
+      "served=quiet|blind=quiet": 7
+    },
+    "pre_written_threshold": "report 'caution applies' if class-changing pairs >= 15 of 45 (one third), otherwise report 'divergence mostly quiet-move sensitivity'; state the number either way",
+    "quiet_vs_quiet_pairs": 7,
+    "same_class_pairs": 15
+  },
+  "zero_new_search": true
+}

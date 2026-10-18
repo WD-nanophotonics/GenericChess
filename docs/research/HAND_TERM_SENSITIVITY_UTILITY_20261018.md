@@ -286,6 +286,39 @@ Per the pre-written rule the decision is `diagnostic_only`: no primary
 endpoint, direction or decision changes, and the secondary verdicts are never
 pooled with the primary ones.
 
+## Move-class concentration of the first divergence
+
+Two zero-search readers (`judged-divergence/move-class/`, plans written before
+running) classify the two first-divergence moves of each judged cell as drop,
+promotion or quiet board move, and compare the choices with the legal-action
+mix at the same 35 distinct positions.
+
+Of the 45 cells, 30 change action class between arms and 29 contain a drop on
+at least one side; 16 contain a promotion and only 7 are quiet-vs-quiet. Every
+one of the 29 drop cells has the drop on the blind side: 15 served-quiet /
+blind-drop, 7 served-promotion / blind-drop, 7 drop-vs-drop. The served arm
+chooses 7 drop / 13 promotion / 25 quiet; the blind arm 29 / 4 / 12.
+
+That shift is large against availability: at the 35 distinct positions there
+are 420 legal actions, 192 drops (45.7%), 48 promotions (11.4%) and 180 quiet
+moves (42.9%). Blind drops are over-represented by +18.7 points; served drops
+are under-represented by -30.2 points and served promotions over-represented
+by +17.5. The coefficient therefore does not only change which quiet move is
+picked; it changes the action-class mix at the divergence point. This makes
+the adopted caution concrete: a scalar comparison that ignores drop/promotion
+structure would misdescribe what this coefficient does, even though the tally
+says nothing about which class is better.
+
+Two limits are worth stating. Availability is a uniform legal-move baseline,
+not the arms' policy distribution, so over-representation is not error. And
+the blind arm shares `hand_weight=0.0` with the judge; but the blind-leaning
+verdicts are not concentrated in the blind-drop cells (17 blind / 9 served / 3
+tie there versus 11 / 4 / 1 elsewhere), so a shared-coefficient class
+preference does not by itself explain the aggregate verdict. The
+`plan-move-class.json` threshold (class-changing pairs >= 15 of 45) fired at
+30, so on this fixture the promotion/drop caution applies to the divergence
+loci as well as to the rule semantics.
+
 ## Conclusion and limits
 
 The hand-policy **quality** question stays UNKNOWN for this instrument.
@@ -304,9 +337,10 @@ Limits: deterministic single-start games, depth 2-3 arms at 20k nodes, 36
 generated seeds, several cells inspected, correlated seed-depth cells, no
 p-values, no independent rerun by another role, and no exploration of deeper
 play budgets where the original ordering flips were measured. Nothing here is
-a strength, distribution, generality or promotion/drop/auxiliary-state claim;
-the searched rules used the full shipped transition semantics, but this study
-does not test them.
+a strength, generality or auxiliary-state claim; the move-class section is a
+descriptive tally of chosen actions at divergence points, not a policy
+distribution or per-class utility claim, and the searched rules used the full
+shipped transition semantics without this study testing them.
 
 ## Preserved defects and corrections
 
