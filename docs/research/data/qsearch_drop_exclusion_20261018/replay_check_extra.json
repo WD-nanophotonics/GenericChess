@@ -1,0 +1,58 @@
+{
+  "all_match": true,
+  "fields_compared": [
+    "offset",
+    "ply",
+    "legal_actions",
+    "excluded_drops",
+    "checking_drops",
+    "terminal_drops",
+    "blind_threat_drops",
+    "profitable_blind_threat_drops",
+    "d2_score",
+    "d3_score",
+    "d2_action",
+    "d3_action",
+    "action_equal_2_3",
+    "abs_score_delta_2_3",
+    "mate_bound"
+  ],
+  "probe_script_sha256": "5081a20d42d4fee8edf70d3753f9b714e0e9d248f94f3e56b219bde7ea63d19d",
+  "role": "DEEPSEEK_AUX",
+  "rows": [
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 117
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 134
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 155
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 156
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 159
+    }
+  ],
+  "seeds": [
+    117,
+    134,
+    155,
+    156,
+    159
+  ],
+  "source_script_sha256": "bc7d413e0c29904de91c87cf55630b88c6fa3a17e02772cb142af3cb06a5fe94",
+  "stage1_module_sha256": "a50b1205364217247a61813660a5f91cfd7d6f0aabcf676cad76abb23236d17a"
+}

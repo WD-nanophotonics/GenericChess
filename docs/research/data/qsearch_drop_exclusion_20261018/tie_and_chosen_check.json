@@ -1,0 +1,98 @@
+{
+  "counts": {
+    "stage2_chosen_excluded": 5,
+    "ties": 4,
+    "ties_chosen": 4
+  },
+  "role": "DEEPSEEK_AUX",
+  "source": [
+    "results_stage2_fresh_seeds.json",
+    "results_addendum.json"
+  ],
+  "stage2_chosen_excluded_drops": [
+    {
+      "action_key": "P@d3",
+      "blind_threats": 1,
+      "depth": [
+        "d3"
+      ],
+      "new_enemy_attacks": 1,
+      "seed": 134
+    },
+    {
+      "action_key": "A@a1",
+      "blind_threats": 0,
+      "depth": [
+        "d2"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 155
+    },
+    {
+      "action_key": "P@a1",
+      "blind_threats": 0,
+      "depth": [
+        "d3"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 155
+    },
+    {
+      "action_key": "A@a1",
+      "blind_threats": 0,
+      "depth": [
+        "d2",
+        "d3"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 156
+    },
+    {
+      "action_key": "P@d3",
+      "blind_threats": 0,
+      "depth": [
+        "d3"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 159
+    }
+  ],
+  "ties": [
+    {
+      "child_value": -3821,
+      "chosen_at_d2": false,
+      "chosen_at_d3": true,
+      "d2_action": "a3-c4=A",
+      "d3_action": "P@d3",
+      "seed": 134,
+      "tie_action": "P@d3"
+    },
+    {
+      "child_value": 5259,
+      "chosen_at_d2": false,
+      "chosen_at_d3": true,
+      "d2_action": "A@a1",
+      "d3_action": "P@a1",
+      "seed": 155,
+      "tie_action": "P@a1"
+    },
+    {
+      "child_value": 2479,
+      "chosen_at_d2": true,
+      "chosen_at_d3": true,
+      "d2_action": "A@a1",
+      "d3_action": "A@a1",
+      "seed": 156,
+      "tie_action": "A@a1"
+    },
+    {
+      "child_value": -1240,
+      "chosen_at_d2": false,
+      "chosen_at_d3": true,
+      "d2_action": "d1-c2",
+      "d3_action": "P@d3",
+      "seed": 159,
+      "tie_action": "P@d3"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "blind_confirmations_above_parent_static": 0,
+  "blind_threat_drops": 2,
+  "chosen_excluded_drops": [
+    {
+      "action_key": "X@d3",
+      "blind_threats": 0,
+      "depth": [
+        "d2"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 102
+    },
+    {
+      "action_key": "X@a4",
+      "blind_threats": 0,
+      "depth": [
+        "d3"
+      ],
+      "new_enemy_attacks": 1,
+      "seed": 102
+    },
+    {
+      "action_key": "X@c1",
+      "blind_threats": 0,
+      "depth": [
+        "d2"
+      ],
+      "new_enemy_attacks": 0,
+      "seed": 112
+    }
+  ],
+  "eligible_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    109,
+    110,
+    112
+  ],
+  "excluded_drop_count": 57,
+  "interpretation": "Both observed blind threats attack a piece worth less than the dropped base type (negative value gap) and both depth-1 confirmations are below the parent static score, so the exclusion hid no material-winning drop in this panel. The 10-position panel is too small and 2 rows are mate-bound; this remains descriptive.",
+  "kind": "post-hoc descriptive classification; pre-written decision unchanged",
+  "mate_bound_seeds": [
+    101,
+    105
+  ],
+  "missing_seeds": [
+    108,
+    111
+  ],
+  "new_enemy_attack_drops": 13,
+  "non_mate_action_flips": 2,
+  "non_mate_median_abs_delta": 135.5,
+  "non_mate_positions": 8,
+  "positions": 10,
+  "profitable_blind_threat_drops": 0,
+  "role": "DEEPSEEK_AUX",
+  "rows": [
+    {
+      "abs_score_delta_2_3": 0,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 2,
+      "mate_bound": true,
+      "new_enemy_attack_drops": 0,
+      "profitable_blind_threat_drops": 0,
+      "seed": 101
+    },
+    {
+      "abs_score_delta_2_3": 3,
+      "action_flip_2_3": true,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": true,
+      "d3_chosen_drop": true,
+      "excluded_drops": 4,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 2,
+      "profitable_blind_threat_drops": 0,
+      "seed": 102
+    },
+    {
+      "abs_score_delta_2_3": 268,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 5,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 1,
+      "profitable_blind_threat_drops": 0,
+      "seed": 103
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 4,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 2,
+      "profitable_blind_threat_drops": 0,
+      "seed": 104
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 1,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 17,
+      "mate_bound": true,
+      "new_enemy_attack_drops": 1,
+      "profitable_blind_threat_drops": 0,
+      "seed": 105
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 4,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 1,
+      "profitable_blind_threat_drops": 0,
+      "seed": 106
+    },
+    {
+      "abs_score_delta_2_3": 910,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 3,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 0,
+      "profitable_blind_threat_drops": 0,
+      "seed": 107
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 6,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 1,
+      "profitable_blind_threat_drops": 0,
+      "seed": 109
+    },
+    {
+      "abs_score_delta_2_3": 1762,
+      "action_flip_2_3": false,
+      "blind_threat_drops": 0,
+      "d2_chosen_drop": false,
+      "d3_chosen_drop": false,
+      "excluded_drops": 5,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 3,
+      "profitable_blind_threat_drops": 0,
+      "seed": 110
+    },
+    {
+      "abs_score_delta_2_3": 1609,
+      "action_flip_2_3": true,
+      "blind_threat_drops": 1,
+      "d2_chosen_drop": true,
+      "d3_chosen_drop": true,
+      "excluded_drops": 7,
+      "mate_bound": false,
+      "new_enemy_attack_drops": 2,
+      "profitable_blind_threat_drops": 0,
+      "seed": 112
+    }
+  ],
+  "source": "results_qsearch_drop_exclusion.json"
+}

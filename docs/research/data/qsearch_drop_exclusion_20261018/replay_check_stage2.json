@@ -1,0 +1,52 @@
+{
+  "all_match": true,
+  "fields_compared": [
+    "offset",
+    "ply",
+    "legal_actions",
+    "excluded_drops",
+    "checking_drops",
+    "terminal_drops",
+    "blind_threat_drops",
+    "profitable_blind_threat_drops",
+    "d2_score",
+    "d3_score",
+    "d2_action",
+    "d3_action",
+    "action_equal_2_3",
+    "abs_score_delta_2_3",
+    "mate_bound"
+  ],
+  "probe_script_sha256": "5081a20d42d4fee8edf70d3753f9b714e0e9d248f94f3e56b219bde7ea63d19d",
+  "role": "DEEPSEEK_AUX",
+  "rows": [
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 124
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 127
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 147
+    },
+    {
+      "differences": {},
+      "matches": true,
+      "seed": 150
+    }
+  ],
+  "seeds": [
+    124,
+    127,
+    147,
+    150
+  ],
+  "source_script_sha256": "66e4a0ef2bf30a1bc066da5e5574c546acc19df4f2360eab424c5df8af78685c",
+  "stage1_module_sha256": "a50b1205364217247a61813660a5f91cfd7d6f0aabcf676cad76abb23236d17a"
+}

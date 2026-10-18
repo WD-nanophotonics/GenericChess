@@ -1,0 +1,50 @@
+{
+  "agent_id": "DEEPSEEK_AUX",
+  "branch": "codex/deepseek-aux",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+  "created_at_utc": "2026-10-18T12:50:00Z",
+  "kind": "independent confirmatory panel with materially refined endpoint",
+  "premise_from_stage1": "Seeds 101-112 gave 57 excluded quiet drops, 13 with any new enemy-piece attack, 2 with an undefended target, 0 where the target was worth more than the dropped base type. Both blind threats were below the parent static score at depth-1 confirmation. Attacking a cheaper piece is not a material threat, so stage 2 asks the materially refined question on fresh seeds instead of rerunning stage 1.",
+  "question": "In a fresh 48-seed panel of generated 4x4 drop rules, how often does an excluded quiet drop create a profitable blind threat (a new attack on an undefended enemy piece whose board value exceeds the dropped base type's value), and is the dropped piece itself left en prise or defended? Secondary: do positions with any blind-threat drop show a larger served depth-2 vs depth-3 score change than positions without one, restricted to non-mate positions?",
+  "inputs": {
+    "seed_range": [113, 160],
+    "generator": "generic_chess.generation.generator.generate_game",
+    "generator_config": {"board_size": 4, "setup_preset": "classic_like"},
+    "start_position_recipe": "deterministic Random(seed*1009+offset) walk, offsets 0..11; first state at ply>=10, ply<80, with >=6 legal actions and no terminal child; record offset and ply.",
+    "evaluator": "build_ruleset_profile(compiled, EvaluationConfig(hand_weight=0.9)); Evaluator(compiled, profile, config)",
+    "search": "run_root_search, use_tt=False, use_ordering=True, SearchLimits(max_depth=d, max_nodes=20000, quiescence_max_depth=4, quiescence_hard_max_depth=8), depths 2 and 3; depth 4 descriptive only",
+    "quiescence_policy": "generic_chess.ai.alphabeta.quiescence.classify_noisy (served policy) as the exclusion set; cross-check SearchStatistics.nonchecking_drop_excluded"
+  },
+  "measurement": {
+    "excluded_drop": "legal drop that classify_noisy does not return, with a non-terminal child that does not give check",
+    "new_attack": "after the drop the mover's pseudo_attacks contain a square holding an enemy piece that was not attacked before the drop",
+    "blind_threat": "new attack whose square is not attacked by any enemy piece after the drop (pseudo-attack geometry; pins ignored)",
+    "profitable_blind_threat": "blind threat whose target board value > dropped base type board value",
+    "dropped_square_status": "after the drop, is the drop square attacked by the enemy and is it defended by another mover piece",
+    "confirmation": "depth-1 search from each child with a blind threat; mover-perspective score compared with the parent static score",
+    "per_position_record": ["seed", "offset", "ply", "side_to_move", "ruleset_fingerprint", "legal_actions", "drops_total", "excluded_drops", "checking_drops", "terminal_drops", "blind_threat_drops", "profitable_blind_threat_drops", "excluded_drop_records", "d2_score", "d3_score", "d4_score", "action_equal_2_3", "abs_score_delta_2_3", "search_reason_d2", "search_reason_d3"]
+  },
+  "decision_rule_written_before_run": {
+    "profitable_endpoint": "If 0 profitable blind threats occur in >=30 eligible positions, report 'no material-winning hidden drop observed in this panel' together with a one-sided 95% Wilson upper bound on the per-excluded-drop rate. If >=1 occurs, list each and its depth-1 confirmation; do not produce a strength claim.",
+    "horizon_endpoint": "Restrict to positions whose d2 and d3 scores are below MATE_THRESHOLD. Let group = positions with >=1 blind-threat drop and rest = positions with none. Support a horizon association only if |group| >= 3 AND (group median abs(d3-d2) >= 2x rest median with rest median > 0, OR group action-flip rate >= 2x rest with >= 3 group flips). Otherwise report inconclusive.",
+    "either_way": "Report every count, the missing/unsampled seeds, and both endpoints separately; a null result stays a null result."
+  },
+  "expected_evidence": "results_stage2_fresh_seeds.json, stage2-analysis.json, README section, plan-log2.json with source and script hashes.",
+  "cost_estimate": {
+    "engineering_minutes": 25,
+    "search_seconds_estimate": 180,
+    "seeds": 48,
+    "positions_expected": "40-48 after start-recipe failures",
+    "total_expected_minutes": 30,
+    "dot_assessment_needed": false,
+    "reason": "single bounded run far below the 120-minute threshold; no games, training or frozen-panel rerun"
+  },
+  "consumer": "Decides whether even-depth hand-policy comparisons need a drop-aware qsearch caveat, or whether the served conservative drop exclusion is empirically harmless on generated 4x4 drop rules.",
+  "explicit_nonclaims": [
+    "no strength or utility claim; no games",
+    "pseudo-attack geometry ignores pins; defense is geometric only",
+    "fixed 48 generated rules with one position each: not a population statement",
+    "no product code, default, cap or frozen-panel change"
+  ],
+  "done_condition": "both endpoints evaluated with the pre-written rules; counts and hashes recorded; README states the scoped answer and limits."
+}

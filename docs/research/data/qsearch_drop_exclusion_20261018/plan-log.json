@@ -1,0 +1,52 @@
+{
+  "design": {
+    "depths": [
+      2,
+      3
+    ],
+    "hand_weight": 0.9,
+    "node_cap": 20000,
+    "quiescence": {
+      "hard_max_depth": 8,
+      "max_depth": 4
+    },
+    "secondary_depth": 4,
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "start_recipe": {
+      "max_offsets": 4,
+      "min_actions": 6,
+      "min_ply": 10
+    },
+    "use_ordering": true,
+    "use_tt": false
+  },
+  "elapsed_seconds": 21.83,
+  "generated_at": "2026-10-18T12:28:29Z",
+  "git_head": "cf91089e0895226f105bd1b8d30e9a2471fc0c77",
+  "hashes": {
+    "check_qsearch_drop_exclusion.py": "a50b1205364217247a61813660a5f91cfd7d6f0aabcf676cad76abb23236d17a",
+    "generic_chess/ai/alphabeta/quiescence.py": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da",
+    "generic_chess/ai/alphabeta/search.py": "9b9f5dbb542259f24912826bc4c360d5b083dbd7438c9b1a1eafef7f55be73d7",
+    "generic_chess/ai/alphabeta/statistics.py": "afd20e2f34f602b8c1d53bbb8c7debe1abdd5763bd2ce46d6f15d80443abb0db",
+    "generic_chess/core/attacks.py": "51faa8f9839e47e70715f74e70a4e22d97f7c550a6a9ed07e7ce1169ccac9907",
+    "generic_chess/core/movegen.py": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3",
+    "generic_chess/core/transition.py": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682",
+    "generic_chess/generation/generator.py": "82914de95903ed0b7b72a274a9262df7be187f91a490835d6eacd0bfe0afcf70",
+    "plan.json": "0c9fc09a7570dfbcd105e76516541c86e03b3276f106fa0a6852337a1b594dda"
+  },
+  "role": "DEEPSEEK_AUX",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7"
+}

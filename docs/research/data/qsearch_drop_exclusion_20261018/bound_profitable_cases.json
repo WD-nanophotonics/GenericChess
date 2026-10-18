@@ -1,0 +1,579 @@
+{
+  "cases": [
+    {
+      "action": "P@c2",
+      "action_key": "P@c2",
+      "best_static_mover_after_reply": 1297,
+      "depth1_child_score_side_to_move": 1914,
+      "depth1_mover_score_replay": -1914,
+      "depth1_replay_matches_stored": true,
+      "drop_value": 708,
+      "dropped_base_type": "P",
+      "large_cap": {
+        "action": "d1-b2",
+        "chosen_this_drop": false,
+        "max_nodes": 200000,
+        "nodes": 500,
+        "qnodes": 2768,
+        "reason": "completed_depth",
+        "score": 802
+      },
+      "legal_replies": 16,
+      "offset": 0,
+      "parent_static": 1220,
+      "ply": 10,
+      "replies": [
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b2-a1=X",
+          "static_mover_after_reply": -1564,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b2-a1=A",
+          "static_mover_after_reply": -1914,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b2-c1=X",
+          "static_mover_after_reply": 993,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b2-c1=A",
+          "static_mover_after_reply": 648,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b3-d2",
+          "static_mover_after_reply": 1240,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b3-a4",
+          "static_mover_after_reply": 1292,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b3-c4",
+          "static_mover_after_reply": 1297,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b4-c4",
+          "static_mover_after_reply": 1288,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b4-c3",
+          "static_mover_after_reply": -628,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "b4-a3",
+          "static_mover_after_reply": 1292,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a2",
+          "static_mover_after_reply": 1162,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@d2",
+          "static_mover_after_reply": 1219,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a3",
+          "static_mover_after_reply": 1224,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a4",
+          "static_mover_after_reply": 1219,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@c4",
+          "static_mover_after_reply": 1222,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@d4",
+          "static_mover_after_reply": 1219,
+          "terminal": false
+        }
+      ],
+      "replies_capturing_dropped": 0,
+      "replies_moving_threatened_piece": 0,
+      "seed": 124,
+      "stored_depth1_mover_score": -1914,
+      "stored_depth1_reason": "completed_depth",
+      "target_square": [
+        3,
+        2
+      ],
+      "target_type": "X",
+      "target_value": 1000,
+      "terminal_replies": 0,
+      "worst_static_mover_after_reply": -1914
+    },
+    {
+      "action": "P@b3",
+      "action_key": "P@b3",
+      "best_static_mover_after_reply": 3889,
+      "depth1_child_score_side_to_move": 999999999,
+      "depth1_mover_score_replay": -999999999,
+      "depth1_replay_matches_stored": true,
+      "drop_value": 1000,
+      "dropped_base_type": "P",
+      "large_cap": {
+        "action": "A@d3",
+        "chosen_this_drop": false,
+        "max_nodes": 200000,
+        "nodes": 932,
+        "qnodes": 8843,
+        "reason": "completed_depth",
+        "score": 999999997
+      },
+      "legal_replies": 14,
+      "offset": 4,
+      "parent_static": 3780,
+      "ply": 10,
+      "replies": [
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-b4",
+          "static_mover_after_reply": 3880,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-b2",
+          "static_mover_after_reply": 3889,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a1=X",
+          "static_mover_after_reply": 1930,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a1=A",
+          "static_mover_after_reply": 1747,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-d2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": true,
+          "reply": "d4-a4",
+          "static_mover_after_reply": 3880,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": true,
+          "reply": "d4-b2",
+          "static_mover_after_reply": 3882,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b2",
+          "static_mover_after_reply": 3780,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@d3",
+          "static_mover_after_reply": 3782,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a4",
+          "static_mover_after_reply": 3782,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b4",
+          "static_mover_after_reply": 3783,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@c4",
+          "static_mover_after_reply": 3780,
+          "terminal": false
+        }
+      ],
+      "replies_capturing_dropped": 0,
+      "replies_moving_threatened_piece": 2,
+      "seed": 147,
+      "stored_depth1_mover_score": -999999999,
+      "stored_depth1_reason": "root_immediate_win",
+      "target_square": [
+        3,
+        3
+      ],
+      "target_type": "A",
+      "target_value": 1084,
+      "terminal_replies": 3,
+      "worst_static_mover_after_reply": 1747
+    },
+    {
+      "action": "X@d3",
+      "action_key": "X@d3",
+      "best_static_mover_after_reply": 3878,
+      "depth1_child_score_side_to_move": 999999999,
+      "depth1_mover_score_replay": -999999999,
+      "depth1_replay_matches_stored": true,
+      "drop_value": 905,
+      "dropped_base_type": "X",
+      "large_cap": {
+        "action": "A@d3",
+        "chosen_this_drop": false,
+        "max_nodes": 200000,
+        "nodes": 932,
+        "qnodes": 8843,
+        "reason": "completed_depth",
+        "score": 999999997
+      },
+      "legal_replies": 14,
+      "offset": 4,
+      "parent_static": 3780,
+      "ply": 10,
+      "replies": [
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-b4",
+          "static_mover_after_reply": 3864,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-b2",
+          "static_mover_after_reply": 3878,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a1=X",
+          "static_mover_after_reply": 1919,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a1=A",
+          "static_mover_after_reply": 1736,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-d2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-a2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": true,
+          "reply": "d4-a4",
+          "static_mover_after_reply": 3869,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": true,
+          "reply": "d4-b2",
+          "static_mover_after_reply": 3871,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a2",
+          "static_mover_after_reply": null,
+          "terminal": true
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b2",
+          "static_mover_after_reply": 3769,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b3",
+          "static_mover_after_reply": 3771,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a4",
+          "static_mover_after_reply": 3769,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b4",
+          "static_mover_after_reply": 3772,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@c4",
+          "static_mover_after_reply": 3769,
+          "terminal": false
+        }
+      ],
+      "replies_capturing_dropped": 0,
+      "replies_moving_threatened_piece": 2,
+      "seed": 147,
+      "stored_depth1_mover_score": -999999999,
+      "stored_depth1_reason": "root_immediate_win",
+      "target_square": [
+        3,
+        3
+      ],
+      "target_type": "A",
+      "target_value": 1084,
+      "terminal_replies": 3,
+      "worst_static_mover_after_reply": 1736
+    },
+    {
+      "action": "P@d3",
+      "action_key": "P@d3",
+      "best_static_mover_after_reply": 2107,
+      "depth1_child_score_side_to_move": 4,
+      "depth1_mover_score_replay": -4,
+      "depth1_replay_matches_stored": true,
+      "drop_value": 1000,
+      "dropped_base_type": "P",
+      "large_cap": {
+        "action": "d2-a3",
+        "chosen_this_drop": false,
+        "max_nodes": 200000,
+        "nodes": 322,
+        "qnodes": 1730,
+        "reason": "completed_depth",
+        "score": 5691
+      },
+      "legal_replies": 14,
+      "offset": 0,
+      "parent_static": 1800,
+      "ply": 10,
+      "replies": [
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-b3",
+          "static_mover_after_reply": 1911,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-b3=X",
+          "static_mover_after_reply": 2106,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-b3=A",
+          "static_mover_after_reply": 803,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "a3-d2",
+          "static_mover_after_reply": 0,
+          "terminal": false
+        },
+        {
+          "captures_dropped": true,
+          "moves_threatened_piece": false,
+          "reply": "c3-d3",
+          "static_mover_after_reply": -4,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-b3",
+          "static_mover_after_reply": 1912,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-b3=X",
+          "static_mover_after_reply": 2107,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c3-b3=A",
+          "static_mover_after_reply": 806,
+          "terminal": false
+        },
+        {
+          "captures_dropped": true,
+          "moves_threatened_piece": false,
+          "reply": "c4-d3",
+          "static_mover_after_reply": -2,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "c4-b3",
+          "static_mover_after_reply": 1889,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "d4-b3",
+          "static_mover_after_reply": 1909,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@a2",
+          "static_mover_after_reply": 1800,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@c2",
+          "static_mover_after_reply": 1799,
+          "terminal": false
+        },
+        {
+          "captures_dropped": false,
+          "moves_threatened_piece": false,
+          "reply": "P@b3",
+          "static_mover_after_reply": 1809,
+          "terminal": false
+        }
+      ],
+      "replies_capturing_dropped": 2,
+      "replies_moving_threatened_piece": 0,
+      "seed": 150,
+      "stored_depth1_mover_score": -4,
+      "stored_depth1_reason": "completed_depth",
+      "target_square": [
+        0,
+        3
+      ],
+      "target_type": "A",
+      "target_value": 2109,
+      "terminal_replies": 0,
+      "worst_static_mover_after_reply": -4
+    }
+  ],
+  "nonclaims": [
+    "geometry ignores pins; a legal reply list is not a proof of best play",
+    "larger node cap is not a solve; reason field states truncation",
+    "no strength or utility claim"
+  ],
+  "role": "DEEPSEEK_AUX",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+  "source_result": ".local_agent/qsearch-drop-exclusion-20261018/results_stage2_fresh_seeds.json",
+  "summary": {
+    "cases": 4,
+    "cases_best_static_above_parent": 4,
+    "cases_chosen_at_larger_cap": 0,
+    "cases_with_opponent_capture_of_dropped": 1,
+    "cases_with_target_escaping_move": 2,
+    "cases_with_terminal_reply": 2,
+    "depth1_replay_mismatches": []
+  }
+}

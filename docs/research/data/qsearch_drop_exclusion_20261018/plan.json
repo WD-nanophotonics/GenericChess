@@ -1,0 +1,49 @@
+{
+  "agent_id": "DEEPSEEK_AUX",
+  "branch": "codex/deepseek-aux",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+  "created_at_utc": "2026-10-18T12:30:00Z",
+  "kind": "bounded auxiliary search-verification study",
+  "question": "In drop-enabled generated rules, how many positions contain a quiet (non-checking) drop that the served quiescence policy excludes but that creates a new attack on an undefended enemy piece, and do those positions show a larger depth-2 vs depth-3 served score change than positions without such an excluded drop?",
+  "changed_premise": "Prior DEEPSEEK_AUX work measured the hand-term coefficient (sensitivity, truncation, move classes) and material-transition semantics. None of it measured whether the documented conservative quiescence inclusion rule (ordinary quiet drops stay out) hides materially meaningful drops at the even-depth leaf. This asks a different question about a different code path with new seeds.",
+  "inputs": {
+    "generator": "generic_chess.generation.generator.generate_game",
+    "generator_config": {"board_size": 4, "setup_preset": "classic_like", "seeds": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]},
+    "generator_seed_note": "Fresh seed range; not used by the closed hand-term panel (59-94), the material-transition panel (7/11/13, 21-26) or the asymmetric-static panel (281001-281006).",
+    "start_position_recipe": "deterministic Random(seed*1009+offset) walk, offset 0 first; take the first state at ply_count>=10 with >=6 legal actions and no terminal child; up to 4 offsets; record offset and ply.",
+    "evaluator": "build_ruleset_profile(compiled, EvaluationConfig(hand_weight=0.9)); Evaluator(compiled, profile, config)",
+    "search": "run_root_search, use_tt=False, use_ordering=True, TranspositionTable(20000), SearchLimits(max_depth=d, max_nodes=20000, quiescence_max_depth=4, quiescence_hard_max_depth=8)",
+    "depths": [2, 3],
+    "depth4_secondary": "descriptive only, same limits",
+    "quiescence_policy_source": "generic_chess.ai.alphabeta.quiescence.classify_noisy (engine's own set) + SearchStatistics.nonchecking_drop_excluded cross-check"
+  },
+  "measurement": {
+    "excluded_drop": "legal drop action that classify_noisy does not return for the position (ordinary quiet drop; terminal and checking drops are included by policy and counted separately as controls)",
+    "blind_threat": "after applying an excluded drop, the mover's pseudo_attacks contain a square occupied by an enemy piece that was not attacked before the drop and that is not attacked by any enemy piece after the drop (is_square_attacked by the enemy). Value uses profile.board_value_by_type of the attacked piece and of the dropped base type.",
+    "per_position_record": ["seed", "offset", "ply", "legal_actions", "excluded_drops", "checking_drops", "terminal_drops", "blind_threat_drops", "attacked_only_drops", "max_blind_threat_value_gap", "d2_score", "d3_score", "d4_score", "d2_action", "d3_action", "action_equal_2_3", "abs_score_delta_2_3", "search_reason_d2", "search_reason_d3", "nodes", "qnodes"],
+    "confirmation": "for each blind-threat drop, one depth-1 search from the child position with the same limits; record child_score (negated to the mover's perspective) and whether it exceeds the parent's static-free baseline"
+  },
+  "decision_rule_written_before_run": {
+    "support": ">=3 of 12 positions contain at least one blind-threat drop AND the blind-threat group's median abs(score_d3-score_d2) is at least 2x the median of the remaining positions (or the group's action-flip rate is at least 2x and the group has >=3 flips).",
+    "no_support": "otherwise: the exclusion has no measurable horizon association on this panel and no change to the policy is justified by these data.",
+    "either_way": "the study reports the per-drop blind-threat rate and the checking-drop control, so a small absolute count is visible and cannot be read as a strength claim."
+  },
+  "expected_evidence": "results_qsearch_drop_exclusion.json (per-position records + aggregate + decision), plan-log.json with script/source hashes, README.md with scoped finding. Predicted outcome is genuinely open: blind-threat rate could be near zero (drops rarely create undefended attacks in these rules) or high.",
+  "cost_estimate": {
+    "engineering_minutes": 45,
+    "search_seconds_estimate": 90,
+    "positions": 12,
+    "searches": 48,
+    "total_expected_minutes": 60,
+    "dot_assessment_needed": false,
+    "reason": "expected single run well under the 120-minute threshold; no games, no training, no frozen-panel rerun"
+  },
+  "consumer": "Decides whether the ordinary-drop exclusion in qsearch is a measurable even-depth evaluation blind spot in drop rules (and therefore whether even-depth comparisons like the hand-term d2 panel need a drop-aware caveat), or whether the policy is empirically harmless on generated drop rules.",
+  "explicit_nonclaims": [
+    "not a strength or utility claim; no games are played",
+    "pseudo-attack geometry ignores pins, so 'undefended' is approximate",
+    "12 fixed rules, one position each: not a population statement about the generator",
+    "no change to product code, defaults, caps or frozen panels"
+  ],
+  "done_condition": "results file written with all 12 positions and the pre-written decision evaluated; README states the scoped answer and limits; hashes recorded; no claim beyond the measured set."
+}

@@ -1,0 +1,39 @@
+{
+  "agent_id": "DEEPSEEK_AUX",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7",
+  "created_at_utc": "2026-10-18T12:42:00Z",
+  "kind": "bounded exploratory addendum to the stage-2 panel",
+  "premise": "Stage 2 measured whether excluded quiet drops create geometrically profitable blind threats. Four did, but all four were refuted at depth 1 and none was chosen at a 200k-node depth-3 re-search. The remaining consumer question is direct: would the search value any excluded drop above its own served root choice?",
+  "question": "Across the 238 excluded quiet drops in the stage-2 panel, how many have a child-search mover value strictly above the parent's served depth-2 score (and depth-3 score), and how many are static-material improvements over the parent?",
+  "inputs": {
+    "panel": ".local_agent/qsearch-drop-exclusion-20261018/results_stage2_fresh_seeds.json (seeds 113-160, one position each)",
+    "state_reconstruction": "same generated rule and sample_start2 offset as the stored position record",
+    "parent_scores": "stored d2_score and d3_score from the stage-2 run (20k nodes, qdepth 4/hard 8, TT off, ordering on)",
+    "child_search": "run_root_search from the excluded-drop child with max_depth=2, max_nodes=20000, quiescence_max_depth=4, quiescence_hard_max_depth=8, use_tt=False, use_ordering=True",
+    "child_confirm": "for candidates above the parent d3 score, re-run the child at max_depth=3, max_nodes=200000 and record the reason",
+    "static_check": "mover static after drop = -evaluator.evaluate(child) compared with evaluator.evaluate(parent); no search"
+  },
+  "decision_rule_written_before_run": {
+    "depth_matched_count": "Count excluded drops with child depth-2 mover value strictly greater than the stored parent d3 score. Both searches cover three plies from the parent, so this is the depth-matched improvement test. Also count exact ties.",
+    "shallower_reference_count": "Count excluded drops with child depth-2 mover value strictly greater than the stored parent d2 score. This is not depth-matched (drop plus two plies versus two plies) and is reported only as a reference.",
+    "static_count": "Count excluded drops whose static mover value after the drop exceeds the parent static score.",
+    "interpretation": "Zero in all three counts supports 'no excluded drop was valued above the served root choice in this panel' as a descriptive statement, not a proof of harmlessness. Any candidate above the parent d3 score is listed with its depth-3/200k confirmation; a score above the parent is sensitivity, not proof of strength, and may reflect search noise, ties or truncation.",
+    "mate_bound": "Parents whose stored d2 or d3 score is at or beyond MATE_THRESHOLD are counted separately and excluded from improvement comparisons."
+  },
+  "resource_bound": {
+    "max_wall_seconds": 600,
+    "expected_searches": 238,
+    "expected_minutes": "3-8",
+    "on_cap": "stop, write partial results with interrupted=true and the completed seed list; do not pool partial counts as a complete panel",
+    "dot_assessment_needed": false,
+    "reason": "single bounded run well below 120 minutes; no games, training, product change or frozen-panel rerun"
+  },
+  "consumer": "States whether the conservative drop exclusion is empirically harmless in the owned 4x4 generated panel, or whether a larger study is warranted.",
+  "explicit_nonclaims": [
+    "exploratory addendum, not a pre-registered confirmation of the stage-2 endpoint",
+    "child search values are not utility or playing strength",
+    "one position per generated rule; not a population statement",
+    "no product code, default, cap or frozen-panel change"
+  ],
+  "done_condition": "counts, candidate list, cap/interruption status and source hashes recorded; report states the descriptive answer and limits."
+}

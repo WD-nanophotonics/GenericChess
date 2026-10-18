@@ -1,0 +1,2828 @@
+{
+  "aggregate": {
+    "action_flips_2_3": 2,
+    "classification_crosscheck_mismatches": [],
+    "mate_bound_positions": [
+      101,
+      105
+    ],
+    "median_abs_score_delta_2_3": 1.5,
+    "positions": 10,
+    "positions_with_blind_threat_drop": 2,
+    "search_seconds_total": 21.64,
+    "total_attacked_only_drops": 13,
+    "total_blind_threat_drops": 2,
+    "total_checking_drops": 13,
+    "total_excluded_drops": 57,
+    "total_terminal_drops": 0
+  },
+  "decision": {
+    "blind_group_flip_rate": 0.5,
+    "blind_group_flips": 1,
+    "blind_group_median_abs_delta": 804.5,
+    "blind_group_positions": 2,
+    "criterion_source": "plan.json decision_rule_written_before_run",
+    "delta_criterion": true,
+    "delta_ratio": 536.3333333333334,
+    "flip_criterion": false,
+    "outcome": "no_support",
+    "rest_flip_rate": 0.125,
+    "rest_flips": 1,
+    "rest_median_abs_delta": 1.5,
+    "rest_positions": 8,
+    "supported": false
+  },
+  "design": {
+    "board_size": 4,
+    "depths": [
+      2,
+      3
+    ],
+    "hand_weight": 0.9,
+    "node_cap": 20000,
+    "quiescence_hard_max_depth": 8,
+    "quiescence_max_depth": 4,
+    "secondary_depth": 4,
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "setup_preset": "classic_like",
+    "use_ordering": true,
+    "use_tt": false
+  },
+  "nonclaims": [
+    "search-horizon measurement only; no games and no strength/utility claim",
+    "pseudo-attack geometry ignores pins, so undefended is approximate",
+    "12 fixed generated rules with one position each: not a population statement",
+    "no change to product code, defaults, caps or frozen panels"
+  ],
+  "positions": [
+    {
+      "abs_score_delta_2_3": 0,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 0,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [],
+      "checking_drops": 0,
+      "classify_noisy_count": 6,
+      "classify_nonchecking_drop_excluded": 2,
+      "d2_action": {
+        "from": [
+          0,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d2_score": 999999997,
+      "d3_action": {
+        "from": [
+          0,
+          3
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d3_score": 999999997,
+      "d4_score": 999999997,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        "action_key": "a4-b3",
+        "checking_drop_qactions": 336,
+        "completed_depth": 2,
+        "nodes": 94,
+        "nonchecking_drop_excluded": 1636,
+        "qnodes": 1820,
+        "reason": "qsearch_check_hard_limit",
+        "score": 999999997,
+        "seconds": 0.437
+      },
+      "drops_total": 2,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              0
+            ]
+          },
+          "action_key": "P@b1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 256,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "P@c3",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 256,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 2,
+      "legal_actions": 11,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "9b1e5e1b6930737e13e025f133eeca57decb52bbfd680f2ccaef8ae60f158f6e",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "qsearch_check_hard_limit",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "a4-b3",
+          "checking_drop_qactions": 249,
+          "completed_depth": 2,
+          "nodes": 88,
+          "nonchecking_drop_excluded": 1306,
+          "qnodes": 1443,
+          "reason": "completed_depth",
+          "score": 999999997,
+          "seconds": 0.328
+        },
+        "3": {
+          "action": {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "a4-b3",
+          "checking_drop_qactions": 336,
+          "completed_depth": 2,
+          "nodes": 94,
+          "nonchecking_drop_excluded": 1636,
+          "qnodes": 1820,
+          "reason": "qsearch_check_hard_limit",
+          "score": 999999997,
+          "seconds": 0.438
+        }
+      },
+      "seed": 101,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 3,
+      "action_equal_2_3": false,
+      "attacked_only_drops": 2,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              1
+            ]
+          },
+          "action_key": "X@a2",
+          "base_type": "X",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 1,
+      "classify_noisy_count": 3,
+      "classify_nonchecking_drop_excluded": 4,
+      "d2_action": {
+        "base_type_id": "X",
+        "kind": "drop",
+        "to": [
+          3,
+          2
+        ]
+      },
+      "d2_score": 818,
+      "d3_action": {
+        "base_type_id": "X",
+        "kind": "drop",
+        "to": [
+          0,
+          3
+        ]
+      },
+      "d3_score": 821,
+      "d4_score": 764,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        "action_key": "c1-d3",
+        "checking_drop_qactions": 578,
+        "completed_depth": 4,
+        "nodes": 726,
+        "nonchecking_drop_excluded": 3041,
+        "qnodes": 4503,
+        "reason": "completed_depth",
+        "score": 764,
+        "seconds": 0.922
+      },
+      "drops_total": 5,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "X@b2",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2952,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 2,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                3,
+                0
+              ],
+              "target_type": "X",
+              "target_value": 2952
+            },
+            {
+              "defended": true,
+              "square": [
+                2,
+                2
+              ],
+              "target_type": "P",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "X@d3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2952,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          "action_key": "X@a4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2952,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                2,
+                2
+              ],
+              "target_type": "P",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "X@c4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2952,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 4,
+      "legal_actions": 9,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "e44a1ae0646529924b3a24a42e94cfb31e5715f82d1ca5f01115e5e9eeb86da2",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "X@d3",
+          "checking_drop_qactions": 34,
+          "completed_depth": 2,
+          "nodes": 61,
+          "nonchecking_drop_excluded": 189,
+          "qnodes": 299,
+          "reason": "completed_depth",
+          "score": 818,
+          "seconds": 0.063
+        },
+        "3": {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          "action_key": "X@a4",
+          "checking_drop_qactions": 144,
+          "completed_depth": 3,
+          "nodes": 210,
+          "nonchecking_drop_excluded": 839,
+          "qnodes": 1219,
+          "reason": "completed_depth",
+          "score": 821,
+          "seconds": 0.234
+        }
+      },
+      "seed": 102,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 268,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 1,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "X@a1",
+          "base_type": "X",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "X@c1",
+          "base_type": "X",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              1,
+              3
+            ]
+          },
+          "action_key": "X@b4",
+          "base_type": "X",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 3,
+      "classify_noisy_count": 5,
+      "classify_nonchecking_drop_excluded": 5,
+      "d2_action": {
+        "from": [
+          1,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          0
+        ]
+      },
+      "d2_score": -2704,
+      "d3_action": {
+        "from": [
+          1,
+          0
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          0
+        ]
+      },
+      "d3_score": -2436,
+      "d4_score": -2798,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            1,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        },
+        "action_key": "b1-c1",
+        "checking_drop_qactions": 2438,
+        "completed_depth": 4,
+        "nodes": 1844,
+        "nonchecking_drop_excluded": 25839,
+        "qnodes": 12542,
+        "reason": "completed_depth",
+        "score": -2798,
+        "seconds": 3.469
+      },
+      "drops_total": 8,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "P@a1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 141,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "X@d3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1028,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          "action_key": "X@a4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1028,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "X@c4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1028,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                2,
+                2
+              ],
+              "target_type": "P",
+              "target_value": 141
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              3
+            ]
+          },
+          "action_key": "X@d4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1028,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 5,
+      "legal_actions": 13,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "a34ac2e71184ece31bf336741e441d7924253304cd7edc5ee6e34e1a01e81c05",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "b1-c1",
+          "checking_drop_qactions": 180,
+          "completed_depth": 2,
+          "nodes": 106,
+          "nonchecking_drop_excluded": 2077,
+          "qnodes": 959,
+          "reason": "completed_depth",
+          "score": -2704,
+          "seconds": 0.282
+        },
+        "3": {
+          "action": {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "b1-c1",
+          "checking_drop_qactions": 713,
+          "completed_depth": 3,
+          "nodes": 394,
+          "nonchecking_drop_excluded": 6845,
+          "qnodes": 3707,
+          "reason": "completed_depth",
+          "score": -2436,
+          "seconds": 0.968
+        }
+      },
+      "seed": 103,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 2,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              3
+            ]
+          },
+          "action_key": "P@d4",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 1,
+      "classify_noisy_count": 3,
+      "classify_nonchecking_drop_excluded": 4,
+      "d2_action": {
+        "from": [
+          2,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          2
+        ]
+      },
+      "d2_score": -16,
+      "d3_action": {
+        "from": [
+          2,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          2
+        ]
+      },
+      "d3_score": -16,
+      "d4_score": -16,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        "action_key": "c2-a3",
+        "checking_drop_qactions": 229,
+        "completed_depth": 2,
+        "nodes": 114,
+        "nonchecking_drop_excluded": 1173,
+        "qnodes": 1327,
+        "reason": "qsearch_check_hard_limit",
+        "score": -16,
+        "seconds": 0.328
+      },
+      "drops_total": 5,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              1
+            ]
+          },
+          "action_key": "P@a2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              1
+            ]
+          },
+          "action_key": "P@d2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "P@d3",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                1,
+                3
+              ],
+              "target_type": "X",
+              "target_value": 359
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          "action_key": "P@a4",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                1,
+                3
+              ],
+              "target_type": "X",
+              "target_value": 359
+            }
+          ]
+        }
+      ],
+      "excluded_drops": 4,
+      "legal_actions": 8,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "9903e9df2596aff0f3c1c094eb2f1537bf28fe92550c46f730675014f6c83fd4",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "qsearch_check_hard_limit",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "c2-a3",
+          "checking_drop_qactions": 60,
+          "completed_depth": 2,
+          "nodes": 50,
+          "nonchecking_drop_excluded": 316,
+          "qnodes": 375,
+          "reason": "completed_depth",
+          "score": -16,
+          "seconds": 0.094
+        },
+        "3": {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "c2-a3",
+          "checking_drop_qactions": 229,
+          "completed_depth": 2,
+          "nodes": 114,
+          "nonchecking_drop_excluded": 1173,
+          "qnodes": 1327,
+          "reason": "qsearch_check_hard_limit",
+          "score": -16,
+          "seconds": 0.312
+        }
+      },
+      "seed": 104,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 1,
+      "blind_threat_drops": 1,
+      "checking_drop_records": [],
+      "checking_drops": 0,
+      "classify_noisy_count": 4,
+      "classify_nonchecking_drop_excluded": 17,
+      "d2_action": {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d2_score": 999999997,
+      "d3_action": {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d3_score": 999999997,
+      "d4_score": 999999997,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        "action_key": "a2-b3",
+        "checking_drop_qactions": 3172,
+        "completed_depth": 3,
+        "nodes": 667,
+        "nonchecking_drop_excluded": 12667,
+        "qnodes": 13644,
+        "reason": "qsearch_check_hard_limit",
+        "score": 999999997,
+        "seconds": 2.735
+      },
+      "drops_total": 17,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "A@a1",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "A@c1",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "A@b2",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              3,
+              1
+            ]
+          },
+          "action_key": "A@d2",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "A@a3",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              1,
+              3
+            ]
+          },
+          "action_key": "A@b4",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "A@c4",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 679,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "P@a1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1001,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "P@c1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1001,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "P@b2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1001,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              1
+            ]
+          },
+          "action_key": "P@d2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1001,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "P@a3",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1001,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "X@a1",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "X@c1",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "X@b2",
+          "base_type": "X",
+          "blind_threats": 1,
+          "child_terminal": false,
+          "confirmation": {
+            "child_score_mover_perspective": -1986,
+            "child_score_side_to_move": 1986,
+            "exceeds_parent_static": false,
+            "nodes": 23,
+            "parent_static": -179,
+            "qnodes": 14,
+            "reason": "completed_depth",
+            "seconds": 0.0
+          },
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": -321,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": false,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 679
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              1
+            ]
+          },
+          "action_key": "X@d2",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "X@a3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 17,
+      "legal_actions": 24,
+      "max_blind_threat_value_gap": -321,
+      "offset": 1,
+      "ply": 10,
+      "ruleset_fingerprint": "5ff503e6c18047bd51310b4372b080920c2b4baecf1e82d7ffb420acff5c65f2",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "a2-b3",
+          "checking_drop_qactions": 168,
+          "completed_depth": 2,
+          "nodes": 100,
+          "nonchecking_drop_excluded": 908,
+          "qnodes": 947,
+          "reason": "completed_depth",
+          "score": 999999997,
+          "seconds": 0.203
+        },
+        "3": {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "a2-b3",
+          "checking_drop_qactions": 2211,
+          "completed_depth": 3,
+          "nodes": 557,
+          "nonchecking_drop_excluded": 9259,
+          "qnodes": 9730,
+          "reason": "completed_depth",
+          "score": 999999997,
+          "seconds": 1.937
+        }
+      },
+      "seed": 105,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 1,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [],
+      "checking_drops": 0,
+      "classify_noisy_count": 4,
+      "classify_nonchecking_drop_excluded": 4,
+      "d2_action": {
+        "from": [
+          1,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          2
+        ]
+      },
+      "d2_score": 628,
+      "d3_action": {
+        "from": [
+          1,
+          2
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          2,
+          2
+        ]
+      },
+      "d3_score": 628,
+      "d4_score": 628,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        "action_key": "b3-c3",
+        "checking_drop_qactions": 158,
+        "completed_depth": 1,
+        "nodes": 47,
+        "nonchecking_drop_excluded": 656,
+        "qnodes": 760,
+        "reason": "qsearch_check_hard_limit",
+        "score": 628,
+        "seconds": 0.187
+      },
+      "drops_total": 4,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              1
+            ]
+          },
+          "action_key": "P@a2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              1
+            ]
+          },
+          "action_key": "P@c2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                3,
+                1
+              ],
+              "target_type": "P",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "P@a3",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              3
+            ]
+          },
+          "action_key": "P@a4",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 4,
+      "legal_actions": 12,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 11,
+      "ruleset_fingerprint": "1a26ec0c50393b5499406f99ef5c22019cf3ece3df3159071417a304de7fc31d",
+      "search_reason_d2": "qsearch_check_hard_limit",
+      "search_reason_d3": "qsearch_check_hard_limit",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "b3-c3",
+          "checking_drop_qactions": 158,
+          "completed_depth": 1,
+          "nodes": 47,
+          "nonchecking_drop_excluded": 656,
+          "qnodes": 760,
+          "reason": "qsearch_check_hard_limit",
+          "score": 628,
+          "seconds": 0.188
+        },
+        "3": {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "b3-c3",
+          "checking_drop_qactions": 158,
+          "completed_depth": 1,
+          "nodes": 47,
+          "nonchecking_drop_excluded": 656,
+          "qnodes": 760,
+          "reason": "qsearch_check_hard_limit",
+          "score": 628,
+          "seconds": 0.172
+        }
+      },
+      "seed": 106,
+      "side_to_move": 1,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 910,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 0,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [],
+      "checking_drops": 0,
+      "classify_noisy_count": 4,
+      "classify_nonchecking_drop_excluded": 3,
+      "d2_action": {
+        "from": [
+          2,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d2_score": 160,
+      "d3_action": {
+        "from": [
+          2,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          1,
+          2
+        ]
+      },
+      "d3_score": 1070,
+      "d4_score": 214,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        "action_key": "c2-b3",
+        "checking_drop_qactions": 680,
+        "completed_depth": 4,
+        "nodes": 621,
+        "nonchecking_drop_excluded": 6112,
+        "qnodes": 4508,
+        "reason": "completed_depth",
+        "score": 214,
+        "seconds": 1.046
+      },
+      "drops_total": 3,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              0
+            ]
+          },
+          "action_key": "P@b1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 477,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              1
+            ]
+          },
+          "action_key": "P@a2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 477,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              1
+            ]
+          },
+          "action_key": "P@d2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 477,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 3,
+      "legal_actions": 9,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "4e7f82275908d5c3d1802b8ca28d85b5b75389712eeb36b6bcfdb23beaf9a18c",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "c2-b3",
+          "checking_drop_qactions": 56,
+          "completed_depth": 2,
+          "nodes": 52,
+          "nonchecking_drop_excluded": 496,
+          "qnodes": 352,
+          "reason": "completed_depth",
+          "score": 160,
+          "seconds": 0.094
+        },
+        "3": {
+          "action": {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "c2-b3",
+          "checking_drop_qactions": 194,
+          "completed_depth": 3,
+          "nodes": 199,
+          "nonchecking_drop_excluded": 1855,
+          "qnodes": 1262,
+          "reason": "completed_depth",
+          "score": 1070,
+          "seconds": 0.313
+        }
+      },
+      "seed": 107,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 0,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 1,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              2,
+              1
+            ]
+          },
+          "action_key": "A@c2",
+          "base_type": "A",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "A@c3",
+          "base_type": "A",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "P@b3",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "P@d3",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 4,
+      "classify_noisy_count": 10,
+      "classify_nonchecking_drop_excluded": 6,
+      "d2_action": {
+        "from": [
+          3,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": "A",
+        "to": [
+          1,
+          3
+        ]
+      },
+      "d2_score": 3614,
+      "d3_action": {
+        "from": [
+          3,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": "A",
+        "to": [
+          1,
+          3
+        ]
+      },
+      "d3_score": 3614,
+      "d4_score": 3614,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": "A",
+          "to": [
+            1,
+            3
+          ]
+        },
+        "action_key": "d2-b4=A",
+        "checking_drop_qactions": 43,
+        "completed_depth": 1,
+        "nodes": 47,
+        "nonchecking_drop_excluded": 132,
+        "qnodes": 252,
+        "reason": "qsearch_check_hard_limit",
+        "score": 3614,
+        "seconds": 0.047
+      },
+      "drops_total": 10,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "A@a1",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              1,
+              2
+            ]
+          },
+          "action_key": "A@b3",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "A",
+            "kind": "drop",
+            "to": [
+              3,
+              2
+            ]
+          },
+          "action_key": "A@d3",
+          "base_type": "A",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "P@a1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 776,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              1
+            ]
+          },
+          "action_key": "P@c2",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 776,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "P@c3",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 776,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 6,
+      "legal_actions": 21,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "51cc33ad63bd2c0d7cddad0380aa1f77a15e65a9d41c2aa032297bb7b1723507",
+      "search_reason_d2": "qsearch_check_hard_limit",
+      "search_reason_d3": "qsearch_check_hard_limit",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": "A",
+            "to": [
+              1,
+              3
+            ]
+          },
+          "action_key": "d2-b4=A",
+          "checking_drop_qactions": 43,
+          "completed_depth": 1,
+          "nodes": 47,
+          "nonchecking_drop_excluded": 132,
+          "qnodes": 252,
+          "reason": "qsearch_check_hard_limit",
+          "score": 3614,
+          "seconds": 0.047
+        },
+        "3": {
+          "action": {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": "A",
+            "to": [
+              1,
+              3
+            ]
+          },
+          "action_key": "d2-b4=A",
+          "checking_drop_qactions": 43,
+          "completed_depth": 1,
+          "nodes": 47,
+          "nonchecking_drop_excluded": 132,
+          "qnodes": 252,
+          "reason": "qsearch_check_hard_limit",
+          "score": 3614,
+          "seconds": 0.047
+        }
+      },
+      "seed": 109,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 1762,
+      "action_equal_2_3": true,
+      "attacked_only_drops": 3,
+      "blind_threat_drops": 0,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "X@c1",
+          "base_type": "X",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 1,
+      "classify_noisy_count": 3,
+      "classify_nonchecking_drop_excluded": 5,
+      "d2_action": {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          0
+        ]
+      },
+      "d2_score": 5568,
+      "d3_action": {
+        "from": [
+          0,
+          1
+        ],
+        "kind": "board",
+        "promotion_target_id": null,
+        "to": [
+          0,
+          0
+        ]
+      },
+      "d3_score": 3806,
+      "d4_score": 3701,
+      "depth4_secondary": {
+        "action": {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            0
+          ]
+        },
+        "action_key": "a2-a1",
+        "checking_drop_qactions": 678,
+        "completed_depth": 4,
+        "nodes": 556,
+        "nonchecking_drop_excluded": 4203,
+        "qnodes": 3639,
+        "reason": "completed_depth",
+        "score": 3701,
+        "seconds": 0.781
+      },
+      "drops_total": 6,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              3,
+              0
+            ]
+          },
+          "action_key": "P@d1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 200,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              1,
+              0
+            ]
+          },
+          "action_key": "X@b1",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2753,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 1000
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              3,
+              0
+            ]
+          },
+          "action_key": "X@d1",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2753,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "X@a3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2753,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "X@c4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 2753,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 1000
+            }
+          ]
+        }
+      ],
+      "excluded_drops": 5,
+      "legal_actions": 10,
+      "max_blind_threat_value_gap": null,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "b5ba642983d97359fa304688a770e3b443b52c68d67a1a44388ac4ec428edf6d",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "a2-a1",
+          "checking_drop_qactions": 24,
+          "completed_depth": 2,
+          "nodes": 47,
+          "nonchecking_drop_excluded": 192,
+          "qnodes": 191,
+          "reason": "completed_depth",
+          "score": 5568,
+          "seconds": 0.047
+        },
+        "3": {
+          "action": {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          "action_key": "a2-a1",
+          "checking_drop_qactions": 364,
+          "completed_depth": 3,
+          "nodes": 201,
+          "nonchecking_drop_excluded": 2179,
+          "qnodes": 1742,
+          "reason": "completed_depth",
+          "score": 3806,
+          "seconds": 0.36
+        }
+      },
+      "seed": 110,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    },
+    {
+      "abs_score_delta_2_3": 1609,
+      "action_equal_2_3": false,
+      "attacked_only_drops": 2,
+      "blind_threat_drops": 1,
+      "checking_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "P@a3",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "P@c3",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "P@c4",
+          "base_type": "P",
+          "child_terminal": false,
+          "gives_check": true,
+          "in_noisy_set": true
+        }
+      ],
+      "checking_drops": 3,
+      "classify_noisy_count": 4,
+      "classify_nonchecking_drop_excluded": 7,
+      "d2_action": {
+        "base_type_id": "X",
+        "kind": "drop",
+        "to": [
+          2,
+          0
+        ]
+      },
+      "d2_score": -3233,
+      "d3_action": {
+        "base_type_id": "P",
+        "kind": "drop",
+        "to": [
+          0,
+          2
+        ]
+      },
+      "d3_score": -1624,
+      "d4_score": -1624,
+      "depth4_secondary": {
+        "action": {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            2
+          ]
+        },
+        "action_key": "P@a3",
+        "checking_drop_qactions": 4171,
+        "completed_depth": 3,
+        "nodes": 787,
+        "nonchecking_drop_excluded": 10817,
+        "qnodes": 19213,
+        "reason": "node_limit",
+        "score": -1624,
+        "seconds": 3.406
+      },
+      "drops_total": 10,
+      "excluded_drop_records": [
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "P@c1",
+          "base_type": "P",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1958,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "P@b2",
+          "base_type": "P",
+          "blind_threats": 1,
+          "child_terminal": false,
+          "confirmation": {
+            "child_score_mover_perspective": -999999999,
+            "child_score_side_to_move": 999999999,
+            "exceeds_parent_static": false,
+            "nodes": 11,
+            "parent_static": -1630,
+            "qnodes": 0,
+            "reason": "root_immediate_win",
+            "seconds": 0.0
+          },
+          "drop_value": 1958,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": -1332,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": false,
+              "square": [
+                3,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 626
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "X@c1",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              1,
+              1
+            ]
+          },
+          "action_key": "X@b2",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 1,
+          "threats": [
+            {
+              "defended": true,
+              "square": [
+                0,
+                3
+              ],
+              "target_type": "A",
+              "target_value": 626
+            }
+          ]
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "X@a3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              2
+            ]
+          },
+          "action_key": "X@c3",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        },
+        {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              3
+            ]
+          },
+          "action_key": "X@c4",
+          "base_type": "X",
+          "blind_threats": 0,
+          "child_terminal": false,
+          "confirmation": null,
+          "drop_value": 1000,
+          "gives_check": false,
+          "in_noisy_set": false,
+          "max_blind_threat_value_gap": null,
+          "new_enemy_attacks": 0,
+          "threats": []
+        }
+      ],
+      "excluded_drops": 7,
+      "legal_actions": 15,
+      "max_blind_threat_value_gap": -1332,
+      "offset": 0,
+      "ply": 10,
+      "ruleset_fingerprint": "72fc0012b1634bcecb6b45dd8a7ca7632a544a0e0871657e66169665d39aba6a",
+      "search_reason_d2": "completed_depth",
+      "search_reason_d3": "completed_depth",
+      "searches": {
+        "2": {
+          "action": {
+            "base_type_id": "X",
+            "kind": "drop",
+            "to": [
+              2,
+              0
+            ]
+          },
+          "action_key": "X@c1",
+          "checking_drop_qactions": 932,
+          "completed_depth": 2,
+          "nodes": 116,
+          "nonchecking_drop_excluded": 2055,
+          "qnodes": 3850,
+          "reason": "completed_depth",
+          "score": -3233,
+          "seconds": 0.672
+        },
+        "3": {
+          "action": {
+            "base_type_id": "P",
+            "kind": "drop",
+            "to": [
+              0,
+              2
+            ]
+          },
+          "action_key": "P@a3",
+          "checking_drop_qactions": 1995,
+          "completed_depth": 3,
+          "nodes": 289,
+          "nonchecking_drop_excluded": 4519,
+          "qnodes": 8422,
+          "reason": "completed_depth",
+          "score": -1624,
+          "seconds": 1.484
+        }
+      },
+      "seed": 112,
+      "side_to_move": 0,
+      "terminal_drop_records": [],
+      "terminal_drops": 0
+    }
+  ],
+  "problems": [
+    "seed 108: no eligible start position",
+    "seed 111: no eligible start position"
+  ],
+  "question": "In drop-enabled generated rules, how many positions contain a quiet (non-checking) drop that the served quiescence policy excludes but that creates a new attack on an undefended enemy piece, and do those positions show a larger depth-2 vs depth-3 served score change?",
+  "role": "DEEPSEEK_AUX",
+  "session_id": "4615243a-f2b9-40ce-a634-266bb0b2e3b7"
+}
