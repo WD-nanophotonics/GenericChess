@@ -216,7 +216,7 @@ A cheap NEW12rule10/12/16board operational gate on511001..4 closes96queries/
 rebuild;16x16at50ms yields False8D1 versusTrue8D2. This qualifies operational
 scope, not larger-board utility or a new fitness campaign.
 
-CURRENT CHOICE: prefer existing explicit root-window=True for the next
+The q0 panels select existing explicit root-window=True for the next
 appropriate full-static/q0 research consumer, retain False/resource controls.
 Actual utility warrants this scoped operational choice; no fullWDL/population
 proof is a gate. Preserve production defaultFalse/creating-kernel compatibility
@@ -283,11 +283,67 @@ no removedsemantics ortracebug claim. Next inventory supportedcyclefixture
 before allocating the32querycap. Sealed78/11
 sourceproof passes887.291s; distincttrace1outputproof1.845s isaftertheseal.
 
-Currentnext selection mustuse a changedscientificpremise or realconsumer need:
-do not mechanically expand pricefitness, tiny-overhead optimization, capped
-references or representation proofs. ExistingAUX learning/solver andDS static/
-hand studies remain their own; PRIMARY may read published dependency/contracts
-and test a genuinely different complete-state backend consumer. ScienceOPEN.
+## Current consumer choice and complete-history correction —2026-10-19
+
+[NATIVE_TRACE_HISTORY_CONTEXT_20261019.md](NATIVE_TRACE_HISTORY_CONTEXT_20261019.md)
+closes the actual supported-history alternative after Pass refusal. Real ordinary
+cycles give24Nativecalls/1600nodes; fullCore1048visits/1028edges/310rows/50PV
+and four canonical witness children pass. A same-ply7/sameboard tracekey has
+correct targets-2 and0 under both modes. One branching query's interiorEXACT
+also aliases different history values. Every root remains correct and every
+emitted bound matches at least one context; no wrongNativeexecution path proved.
+No Native search/dedup/API or AUX learner change. Only a result-field comment
+and two real-history regression controls are added. Separate two-output fixed
+source reconstruction passes; previous30trace/78member seals remain unchanged.
+Budget accounting LIMIT:24of32queries, eightunused closed, but the intended
+continuous120second clock was not enforced across stagedAgentwork (421second
+file-time span). The .21155successfulproducerseconds is NOT totalexperiment
+orengineeringtime. Preserve this deviation; do not claim a compliant globalcap.
+
+[ROOT_WINDOW_Q4_SERVICE_20261019.md](ROOT_WINDOW_Q4_SERVICE_20261019.md) tests a
+changed search regime with the existing runner. New32fulltype6/8rules/64parents,
+512physicalslots close834.844s:436terminals/76UNKNOWN,20531queries. Main56.956M
+plusq38.445M visits are separate. All20531commits/33041PV/fullhistories replay.
+True-False finite bounds Unit[.046875,.84375], static[.1328125,.5234375] are
+positive, but both16linkedseed envelopes cross0; both8x8contrasts include0.
+BothTrue rawrewardbounds are negative against their fixedfoes. No population
+winner, q4-versus-q0 improvement or new model/default follows.
+
+The service is REQUESTEDq4, not a uniformq4teacher: actualordinaryq4 returned
+415/5168False versus1732/5027True. Ordinaryq0reserve retains hardcheck8, unlike
+explicitqdepth0; all39ordinaryq0 PV-gap cases have realincheckPVleaves. Paid
+abortedqwork is not retainedtargetcredit. Callermax56.670/56.397ms is an
+observation, not an API-readydeadline guarantee. Keep actualbothpolicyfields.
+
+A separate existingCoreproduct D2/q4 target control closes32roots/468.937s:
+27completeq4, twoimmediatewins/oneterminal, twoUNKNOWN (qhard/time) neverrefilled.
+All40completedNative q4 results match the27Coretargets; twounique different
+actions independently tie in selectedchildCoreq4 searches. Do not require
+completeWDL or allactions before a scopeddevelopmentchoice. Fixedsource
+234payload/sevenoutput reproduction passes415.143s, rerunning ONLYprevious
+closedCorecontrols, not the twoUNKNOWN roots or anyNative/games/training.
+
+The1046PV/root-scoregaps are retained, not falsely repaired. Separateafterseal
+twooutput proof27.942s replays all1046leafrecords/40896Corecommits. Hypothetically
+replacing actualleafpredictor withnormalizedRootScore changes442predictions
+by>.1; this is NOT an observedlearningerror/gain. Actual PRIMARY product
+selfplay/Arena explicitlyq0; collector/tdleaf update recompute frozenrawleaf
+features. AUX93's Corefloat/path consumer remains separate, not executed or
+migrated. OriginalTreeStrap bound-loss/node-credit distinctions support keeping
+target, feature provenance, sample weighting and update rules separate.
+
+CURRENT CHOICE: retain explicitTrue as the scoped full-static q0 AND q4-requested
+research option, False/actualresource controls and APIdefaultFalse. No q4learner
+activation, diagnostics/path API, genericdedup rewrite or unchangedprice/fitness
+expansion. Next useful mainline work is a nonduplicated complete-mechanism
+consumer/admission check before extending this legacy-generated scope; preserve
+full temporary/compound/aux/history semantics. That nextstep is now actuallyexecuted separately: threeexistingIR consumers/
+9realtrigger-replyparents/18coldNativeD2q4 scalarresults match9Coretargets;
+fourunique differentactions independentlytie. Diagnosticintegertables are not
+service-static prices; no freshfixedsource alltargetrebuild or mechanismutility
+claim. Next boundedsource/state/target check may use the alreadycaptured product
+source; do not mechanically expand another fitness/proof campaign.
+ExistingAUXlearning/solver andDS hand/static work stay their own. ScienceOPEN.
 
 The once-per-mainline-patrol DS workflow check now sees recent active work and
 successful tool exits in the bounded existing control-chat view. Its prior

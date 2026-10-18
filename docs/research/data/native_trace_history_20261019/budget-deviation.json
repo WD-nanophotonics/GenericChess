@@ -1,0 +1,14 @@
+{
+  "actual_queries": 24,
+  "correction": "Close remaining8 Native slots, preserve originals and this deviation; future staged protocols must explicitly separate elapsed experiment clock from paid producer time, or use a shared durable clock. No new framework needed and no rerun of this diagnostic.",
+  "first_query_file_created_utc": "2026-10-18T15:37:46.457542+00:00",
+  "impact": "Finite actual paths/targets still check independently. This is a bounded mechanism diagnostic, no fitness/training or unknown-tail refill; root-witness evidence is not invalidated. Total engineering/recording time belongs to session quality, not 0.21155s.",
+  "intended_global_seconds": 120,
+  "last_witness_query_write_utc": "2026-10-18T15:44:47.450702+00:00",
+  "limit": "The three producers guarded per-stage/aggregate producer time, not one continuous elapsed clock across Agent preparation and analysis. Therefore do NOT claim the original global120s cap was enforced across the staged diagnostic.",
+  "observed_stage_span_seconds": 420.9931604862213,
+  "planned_query_cap": 32,
+  "status": "PROTOCOL_ACCOUNTING_LIMIT",
+  "successful_producer_seconds": 0.21154650003882125,
+  "unused_slots_closed": 8
+}

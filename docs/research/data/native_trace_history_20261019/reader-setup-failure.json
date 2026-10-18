@@ -1,0 +1,7 @@
+{
+  "cause": "record_value dataclass receipts are lossless but are not canonical serialize_game_record wire format.",
+  "error": "SessionRecordError MISSING_FIELD actions[0].kind",
+  "native_queries": 0,
+  "repair": "Replay each recorded semantic action against Session legal actions, verify complete record/state/history; preserve original receipts.",
+  "stage": "Before Core tree traversal"
+}

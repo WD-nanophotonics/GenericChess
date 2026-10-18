@@ -1,0 +1,1624 @@
+{
+  "checkpoint": {
+    "board_weights": {
+      "F": 2.0,
+      "G": 1.0,
+      "K": 0.0,
+      "Z": 0.0
+    },
+    "evaluation_profile_version": "",
+    "games_seen": 0,
+    "generation": 0,
+    "hand_weights": {
+      "F": 2.0,
+      "G": 1.0,
+      "K": 0.0,
+      "Z": 0.0
+    },
+    "material_scale": 1.0,
+    "parent_checkpoint_id": null,
+    "positions_seen": 0,
+    "promoted_to_champion": false,
+    "reference_median": 0.0,
+    "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+    "schema_version": 2,
+    "training_config_hash": "",
+    "training_seed": null,
+    "training_updates": 0,
+    "value_scale": 1.0,
+    "w_max": 100000.0
+  },
+  "last_state": {
+    "history": [
+      {
+        "action_signature": "",
+        "actor": -1,
+        "gave_check": false,
+        "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+        "actor": 0,
+        "gave_check": false,
+        "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+      },
+      {
+        "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+        "actor": 1,
+        "gave_check": false,
+        "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+      }
+    ],
+    "ply_count": 12,
+    "position": {
+      "aux_state": [],
+      "board": [
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "base_type_id": "Z",
+          "current_type_id": "Z",
+          "owner": 1,
+          "promoted": false
+        },
+        {
+          "base_type_id": "F",
+          "current_type_id": "F",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "base_type_id": "G",
+          "current_type_id": "G",
+          "owner": 1,
+          "promoted": false
+        },
+        {
+          "base_type_id": "Z",
+          "current_type_id": "Z",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 1,
+          "promoted": false
+        }
+      ],
+      "board_height": null,
+      "board_width": null,
+      "hands": [
+        {
+          "counts": []
+        },
+        {
+          "counts": []
+        }
+      ],
+      "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+      "side_to_move": 0
+    },
+    "repetition_counts": [
+      [
+        "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+        3
+      ],
+      [
+        "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+        3
+      ],
+      [
+        "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+        3
+      ],
+      [
+        "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+        4
+      ]
+    ],
+    "terminal_status": {
+      "status": "repetition",
+      "winner": null
+    }
+  },
+  "parents": [
+    {
+      "history": [
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 1
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 2
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 3
+        }
+      ],
+      "ply": 3,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          }
+        ],
+        "declaration": null,
+        "initial_setup_key": null,
+        "resigned_by": null,
+        "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+        "schema_version": 1
+      },
+      "state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          }
+        ],
+        "ply_count": 3,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "F",
+              "current_type_id": "F",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "G",
+              "current_type_id": "G",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+          "side_to_move": 1
+        },
+        "repetition_counts": [
+          [
+            "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+            1
+          ],
+          [
+            "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+            1
+          ],
+          [
+            "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+            1
+          ],
+          [
+            "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "state_sha256": "ba9653939a2a75f08f014105f57c3388fbed9aa977d196b1b8af1c13f28c73ac",
+      "witness_sha256": "cde2aec663a9e10ec51a1c3db3dfd9fdd24540d151d2a1f7785b57ba4d577625"
+    },
+    {
+      "history": [
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 1
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 2
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 3
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          "after_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "before_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "player": 1,
+          "ply": 4
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 5
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 6
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 7
+        }
+      ],
+      "ply": 7,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          }
+        ],
+        "declaration": null,
+        "initial_setup_key": null,
+        "resigned_by": null,
+        "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+        "schema_version": 1
+      },
+      "state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          }
+        ],
+        "ply_count": 7,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "F",
+              "current_type_id": "F",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "G",
+              "current_type_id": "G",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+          "side_to_move": 1
+        },
+        "repetition_counts": [
+          [
+            "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+            2
+          ],
+          [
+            "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+            2
+          ],
+          [
+            "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+            2
+          ],
+          [
+            "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+            2
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "state_sha256": "245af3683fc92a770d432f0201cef76b272af01ee73a04be3e401910643ebf92",
+      "witness_sha256": "e46565811dbc925072d887e8d184d9dd462153e542b07aef03266538a44daaed"
+    },
+    {
+      "history": [
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 1
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 2
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 3
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          "after_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "before_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "player": 1,
+          "ply": 4
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 5
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 6
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 7
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          "after_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "before_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "player": 1,
+          "ply": 8
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          "after_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "before_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+          "player": 0,
+          "ply": 9
+        },
+        {
+          "action": {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          "after_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "before_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+          "player": 1,
+          "ply": 10
+        },
+        {
+          "action": {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          "after_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+          "before_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+          "player": 0,
+          "ply": 11
+        }
+      ],
+      "ply": 11,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g3",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "G",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "F",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 1
+            }
+          }
+        ],
+        "declaration": null,
+        "initial_setup_key": null,
+        "resigned_by": null,
+        "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+        "schema_version": 1
+      },
+      "state": {
+        "history": [
+          {
+            "action_signature": "",
+            "actor": -1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,1],\"geometry_id\":\"g3\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_006\",\"promotion_target_id\":null,\"to\":[3,2]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_000\",\"promotion_target_id\":null,\"to\":[0,2]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"G\",\"from\":[3,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[3,1]}",
+            "actor": 1,
+            "gave_check": false,
+            "position_key": "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3"
+          },
+          {
+            "action_signature": "{\"actor_type_id\":\"F\",\"from\":[0,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_002\",\"promotion_target_id\":null,\"to\":[0,1]}",
+            "actor": 0,
+            "gave_check": false,
+            "position_key": "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc"
+          }
+        ],
+        "ply_count": 11,
+        "position": {
+          "aux_state": [],
+          "board": [
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 1,
+              "promoted": false
+            },
+            {
+              "base_type_id": "F",
+              "current_type_id": "F",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "G",
+              "current_type_id": "G",
+              "owner": 1,
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            {
+              "base_type_id": "Z",
+              "current_type_id": "Z",
+              "owner": 0,
+              "promoted": false
+            },
+            null,
+            null,
+            {
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "owner": 1,
+              "promoted": false
+            }
+          ],
+          "board_height": null,
+          "board_width": null,
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "ruleset_fingerprint": "f2f734ad96ef11d76214c18362dc2cb856b8c5748332c4222a055ac615d57e5d",
+          "side_to_move": 1
+        },
+        "repetition_counts": [
+          [
+            "170c82a2a585b22ecf02c0c072ba9580d01ffeccc93d2a5a1912789d8a4876f3",
+            3
+          ],
+          [
+            "7e3f0f55b57c876be0462ff780ecdc532e54e49b137f150989fb855c8cacc4dc",
+            3
+          ],
+          [
+            "829299407d0c2f43c8e65d66e6f6d1099f66bcbd5d0a01b51fb93a970c864757",
+            3
+          ],
+          [
+            "9541c2c63cbf2c5279895c6290e4e5b56afe74b88ff8532218810c14d09b1ee2",
+            3
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      "state_sha256": "03636e173a1f7cf40621723eccafbd49b15ae4a390eda61a43559c98681fe509",
+      "witness_sha256": "b5bb60ff51d26e7ade8789b29f8226606e3a2878f6b1d3a5565ac3e34e53e0dc"
+    }
+  ],
+  "rule": {
+    "board_size": 4,
+    "drop_allowed": {
+      "F": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "G": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "Z": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ]
+    },
+    "initial_position": [
+      [
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "base_type_id": "Z",
+          "current_type_id": "Z",
+          "owner": 1,
+          "promoted": false
+        }
+      ],
+      [
+        {
+          "base_type_id": "F",
+          "current_type_id": "F",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "base_type_id": "G",
+          "current_type_id": "G",
+          "owner": 1,
+          "promoted": false
+        }
+      ],
+      [
+        {
+          "base_type_id": "Z",
+          "current_type_id": "Z",
+          "owner": 0,
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "owner": 1,
+          "promoted": false
+        }
+      ]
+    ],
+    "max_ply": 512,
+    "metadata": {},
+    "piece_types": [
+      {
+        "is_anchor": true,
+        "is_promotable": false,
+        "movement_atoms": [],
+        "name": "K",
+        "promotion_target_ids": [],
+        "type_id": "K"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          }
+        ],
+        "name": "F",
+        "promotion_target_ids": [],
+        "type_id": "F"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "kind": "leap",
+            "offset": [
+              0,
+              -1
+            ]
+          }
+        ],
+        "name": "G",
+        "promotion_target_ids": [],
+        "type_id": "G"
+      },
+      {
+        "is_anchor": false,
+        "is_promotable": false,
+        "movement_atoms": [],
+        "name": "Z",
+        "promotion_target_ids": [],
+        "type_id": "Z"
+      }
+    ],
+    "promotion_allowed": {},
+    "promotion_forced": {},
+    "repetition_limit": 4,
+    "schema_version": 1,
+    "stalemate_result": "draw"
+  },
+  "source": "Existing test_native_history.py deterministic cycle, unchanged complete RuleSet, real Session submissions."
+}

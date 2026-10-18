@@ -158,6 +158,11 @@ class SemanticIterativeSearchResult:
     policy_state_inferences_by_ply: tuple[int, ...] = ()
     policy_actions_scored_by_ply: tuple[int, ...] = ()
     policy_elapsed_nanoseconds_by_ply: tuple[int, ...] = ()
+    # Diagnostic, deduplicated bounds from this query, not all visited paths.
+    # position_identity excludes relevant history; even equal search_ply and
+    # remaining_depth can have different valid targets after real repetitions.
+    # Rows do not identify which full history produced a retained bound. Keep
+    # query provenance; do not infer history-safe target reuse or learner credit.
     training_trace: tuple[dict, ...] = ()
     training_trace_enabled: bool = False
     training_trace_count: int = 0

@@ -4504,3 +4504,46 @@ TreeStrap-credit equivalence follows. Separateone-output proof1.845s follows
 the78payload/11output maincapsuleproof887.291s; neither is retroactive inother.
 Nextreachablehistory-contract fixtureinventory begun, frozen120s32queryplan;
 do notauto-migrate AUX orremovehistory toforceNativeadmission.
+
+
+## PRIMARY complete-history and q4 service —2026-10-19
+
+PRIMARY independently executes the supported-history alternative:24Nativecalls/
+1600nodes, allrootvalues and310tracebounds have validfullCorecontexts. Sameboard/
+sameply7 histories still require differentEXACTtargets-2/0. An interiorrow can
+alias those contexts withinonequery. Noenginebug/AUXmigration inferred; comment
+andtwoNativehistory regressioncontrols only. The intendedcontinuous120scap was
+not enforced acrossstagedwork; budget-deviation.json retains421sfile-time span.
+24of32queries used/eightclosed, .21155producerseconds is nottotalengineering.
+
+New q4-requested window-only service on32rules/512physicalslots closes834.844s,
+436terminals76UNKNOWN/20531queries/95.401Mmain+qvisits. Full20531Corecommits/
+33041PV replays pass. Bothfixedfoe finitecontrasts positive, both16seed descriptive
+envelopes cross0; True remains rawnegative againstbothfoes. Returnedordinaryq4
+415False/1732True, ordinaryq0/hardcheck8 retainedotherwise. Notpureq4gain.
+IndependentCoreproduct32rootcontrol:27completeq4/3exactterminal/2UNKNOWN;40
+same-targetNative values agree, twounique differentactions tie byactualchild.
+OriginaltwoUNKNOWN neverrefilled. 234payload/7output sourceproof415.143s passes.
+
+Afterseal consumercheck1046PV-scoregaps/40896Corecommits+39incheckreservewitnesses
+has its own2outputproof27.942s. Hypothetical rootscore-asleaf changesnumbers, not
+actuallearning: currentselfplay/Arena explicitq0 andfrozenleafrecalculation remain.
+No collector/trainer, AUX code/tests/fitness orDS computation executed orwritten.
+FixedAUX93source89e4adf6/4dbba471 remains source-reviewed only, notnewrerun.
+PrimaryTreeStrap source distinguishes bound loss/targets/node credit; no default
+or representation demand follows. No messages toDS or auto-controls.
+
+Once-per-patrol DS controlchat read was bounded: recentcompletedcommands exit0,
+ownerreports activeprogress andoldrepairs; no currentrecurrenceproved, notglobal
+executorhealth. PrivateSlack full12replyraw preserved/reconciled; no newDot
+revision at recovery. FinalfixedSHA delivery/anysubstantivefollowup recorded
+separately afterpublication; delivery is not independentreading/execution.
+
+
+The nextnonduplicatedIRconsumer actuallyexecutes separately aftertheseal:
+3existingpersistent/temporary/compoundfixtures,9realSessiontrigger/replyparents,
+18completecoldNativeD2q4 scalarresults matchCore;4unique differentactions tie
+underactualCorechild searches. Explicitdiagnosticweights, notservice-static
+prices/learning. No freshfixedsourcealltargetrebuild orutilityclaim yet.
+Originalzeroquerymetadata setupfailure and42.109s stop-polling overhead retained;
+no discardedresults orfrozenUNKNOWNrefill.
