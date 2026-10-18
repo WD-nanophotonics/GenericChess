@@ -114,6 +114,21 @@ orders of magnitude away from collision. Only 17 of 360 size-8 rules have a
 distinct-score pair within one unit; 8 further rules have only an equal-score
 pair at zero gap.
 
+That median hides a long tail, which is the part a consumer with a tolerance
+choice actually cares about. Counting rules whose nearest distinct-score pair
+is closer than `k` grid units (pooled over presets, 360 rules per size):
+
+| `k` | size 4 | size 6 | size 8 |
+|---:|---:|---:|---:|
+| 1 | 5 (1.4%) | 13 (3.6%) | 17 (4.7%) |
+| 5 | 6 (1.7%) | 21 (5.8%) | 29 (8.1%) |
+| 20 | 22 (6.1%) | 42 (11.7%) | 70 (19.4%) |
+| 100 | 79 (21.9%) | 145 (40.3%) | 223 (61.9%) |
+
+So the collision risk is concentrated: most rules are far from a boundary,
+but at size 8 nearly one rule in five is within 20 grid units and three in
+five are within 100. A single median understates that tail.
+
 Two further observations bound how this should be read:
 
 - 50 of the 53 near pairs had their smaller exact value at or just above the
@@ -123,9 +138,14 @@ Two further observations bound how this should be read:
   median normalization, not a property of the movement atoms.
 - The raw-ratio screen `<= 1.001` selected exactly the same pairs as
   `gap < 1` in all nine cells, with the largest reachable raw ratio at
-  `1.00079`. That coincidence is **sample-specific**: at exact value 5000, a
-  ratio of 1.0006 is already more than one grid unit apart. The grid condition
-  is the criterion; the ratio screen merely happened to be conservative here.
+  `1.00079`. This is not a second criterion: a tie requires
+  `(raw_ratio - 1) * smaller_exact_value < 1`, and the observed maximum of
+  that product was 0.894 (0.79 and 0.69 at sizes 4 and 6), while the smallest
+  gap at or above one unit was 1.41. Because the near pairs sit at a smaller
+  exact value near 1000, `1 + 1/v` is close to `1.001`, so the ratio screen
+  nearly coincides with the grid condition in this sample. The coincidence
+  would break at a different anchor scale: at exact value 5000, a ratio of
+  1.0006 is already more than one grid unit apart.
 
 ## What follows for the rule-only price target
 

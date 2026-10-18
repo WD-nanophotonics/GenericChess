@@ -22,8 +22,8 @@ replay copy is in `.local_agent/profile-tie-risk-replay-20261018/` (identical
 | `results_tie_risk.json` | 3338477 | `6091573d59134c9020f7ae3977cdc94adf286b4dd20efeb20b31959e7d88e85d` |
 | `validation_report.json` | 737 | `dd9941cbec9e51bb7136b59ca7ae130aa76ef8446a708fc07f3189ba9cb3d91d` |
 | `plan_posthoc.json` | 2785 | `59818a3a3bd347cc657a216e25860c1459815656af5cf53a6e86ff42c88a3eee` |
-| `analyze_gap_headroom.py` | 11839 | `a0389b18556a36acf6f84caeac0b015e6d2fdfac3892aa9010337843dae127d7` |
-| `results_gap_headroom.summary.json` | 15249 | `55ab41b6e12e74bb178c7c0b5b7d53c3d5454f2ba811d8cee7ac0bb388801ceb` |
+| `analyze_gap_headroom.py` | 14275 | `f57f23b715126284caf74c2ff2e2e62c7f6abd52d628b163bf98d99f58dfd9bb` |
+| `results_gap_headroom.summary.json` | 19853 | `824e6b15707e8b46a4398f3096796eda9e484e8d5c61d165c2c7eddb4223df0c` |
 
 `plan.json` carries the pre-written endpoints and decision rule. Its hash
 `659b509a...` is recorded in `plan-log.json` with `status:
@@ -69,7 +69,9 @@ pairs; the private original has them.
   `exact_gap < 1` in any cell. The summary also separates near pairs with
   exactly equal raw scores (zero gap, 17 across the scan, none a compression
   tie) from distinct-score near pairs, so the published conversion figures use
-  the correct denominator.
+  the correct denominator. The same summary records the per-rule headroom
+  counts below 1/2/5/10/20/50/100 grid units and the scaled ratio-excess check
+  `(raw_ratio - 1) * smaller_exact_value`.
 - Determinism: re-running the gap script produced a byte-identical file; the
   published summary was produced by running the published copy in place with
   `--summary-only` and matches the private full result minus the `pairs` field.

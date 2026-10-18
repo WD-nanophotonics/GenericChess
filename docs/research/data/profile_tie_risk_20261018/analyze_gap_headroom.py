@@ -129,6 +129,7 @@ def main(argv: list[str] | None = None) -> int:
         cell_pairs: list[dict] = []
         rules_with_distinct_pair = 0
         nearest_gaps: list[float] = []
+        nearest_distinct_gaps: list[float] = []
         nearest_ratios: list[float] = []
         for rule in block["rules"]:
             check, pairs = rule_pairs(rule)
@@ -141,6 +142,11 @@ def main(argv: list[str] | None = None) -> int:
                 rules_with_distinct_pair += 1
                 nearest_gaps.append(min(p["exact_gap"] for p in distinct))
                 nearest_ratios.append(min(p["raw_ratio"] for p in distinct))
+                distinct_score = [p for p in distinct if p["distinct_raw"]]
+                if distinct_score:
+                    nearest_distinct_gaps.append(
+                        min(p["exact_gap"] for p in distinct_score)
+                    )
 
         near = [p for p in cell_pairs if p["raw_ratio"] <= NEAR_EQUAL_RAW_RATIO]
         near_tied = [p for p in near if p["tied"]]
@@ -204,6 +210,43 @@ def main(argv: list[str] | None = None) -> int:
                     "rules_below_1": sum(1 for g in nearest_gaps if g < 1.0),
                     "rules_below_2": sum(1 for g in nearest_gaps if g < 2.0),
                 },
+                "nearest_distinct_score_gap": {
+                    "rules": len(nearest_distinct_gaps),
+                    "min": (
+                        min(nearest_distinct_gaps)
+                        if nearest_distinct_gaps
+                        else None
+                    ),
+                    "median": (
+                        statistics.median(nearest_distinct_gaps)
+                        if nearest_distinct_gaps
+                        else None
+                    ),
+                    "rules_below": {
+                        str(t): sum(1 for g in nearest_distinct_gaps if g < t)
+                        for t in (1, 2, 5, 10, 20, 50, 100)
+                    },
+                },
+                "scaled_ratio_excess": {
+                    "max_below_gap_1": max(
+                        ((p["raw_ratio"] - 1.0) * p["exact_low"] for p in reachable),
+                        default=None,
+                    ),
+                    "median_below_gap_1": (
+                        statistics.median(
+                            [
+                                (p["raw_ratio"] - 1.0) * p["exact_low"]
+                                for p in reachable
+                            ]
+                        )
+                        if reachable
+                        else None
+                    ),
+                    "min_gap_at_or_above_1": min(
+                        (p["exact_gap"] for p in cell_pairs if p["exact_gap"] >= 1.0),
+                        default=None,
+                    ),
+                },
                 "nearest_raw_ratio": {
                     "min": min(nearest_ratios) if nearest_ratios else None,
                     "median": statistics.median(nearest_ratios) if nearest_ratios else None,
@@ -228,6 +271,21 @@ def main(argv: list[str] | None = None) -> int:
             "exact_gap_lt_1_tied": reach_tied,
             "exact_gap_conversion": reach_tied / reach if reach else None,
             "tied_pairs": sum(c["tied_pairs"] for c in rows),
+            "distinct_score_rules_below_gap": {
+                str(t): sum(
+                    c["nearest_distinct_score_gap"]["rules_below"][str(t)]
+                    for c in rows
+                )
+                for t in (1, 2, 5, 10, 20, 50, 100)
+            },
+            "max_scaled_ratio_excess_below_gap_1": max(
+                (
+                    c["scaled_ratio_excess"]["max_below_gap_1"]
+                    for c in rows
+                    if c["scaled_ratio_excess"]["max_below_gap_1"] is not None
+                ),
+                default=None,
+            ),
         }
 
     result = {
