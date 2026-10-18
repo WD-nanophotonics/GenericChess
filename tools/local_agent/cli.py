@@ -125,6 +125,7 @@ def parser() -> argparse.ArgumentParser:
     rec.add_argument("--full", action="store_true", help="include full request/reply evidence")
     pub = sub.add_parser("publish")
     pub.add_argument("--tests", nargs="+", required=True)
+    pub.add_argument("--branch", default="sandbox", choices=["sandbox", "codex/deepseek-aux"])
     pro = sub.add_parser("promote")
     pro.add_argument("--candidate", required=True)
     pro.add_argument("--tests", nargs="+", required=True)
@@ -191,7 +192,7 @@ def main(argv: list[str] | None = None) -> int:
                 else:
                     result = consult_status(request_id=args.request_id)
         elif args.command == "publish":
-            result = publish(args.tests)
+            result = publish(args.tests, branch=args.branch)
         else:
             result = promote(args.candidate, args.tests)
         if args.command in {'consult-status', 'reconcile'} and not args.full:

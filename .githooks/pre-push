@@ -9,6 +9,12 @@ do
         exit 1
       }
       ;;
+    refs/heads/codex/deepseek-aux)
+      [ "${GENERIC_CHESS_LOCAL_PUSH:-}" = "publish" ] || {
+        echo "Use role-bound generic-chess-local publish for DeepSeek auxiliary" >&2
+        exit 1
+      }
+      ;;
     refs/heads/master)
       [ "${GENERIC_CHESS_LOCAL_PUSH:-}" = "promote" ] || {
         echo "Use generic-chess-local.cmd promote for tested master fast-forwards" >&2

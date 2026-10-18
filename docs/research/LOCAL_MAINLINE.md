@@ -7,6 +7,19 @@ operations. Full preceding mainline is preserved at PUBLIC
 with earlier links retaining the causal chain. Historical dated next actions are
 not a backlog. Current tasks/clock are in .local_agent/NEXT_WORK.md.
 
+## Role correction and current ownership —2026-10-18
+
+PRIMARY_SANDBOX is this original GPT mainline again; DeepSeek does not replace it.
+DEV_AUX and DEEPSEEK_AUX are independent auxiliaries on separate branches and
+state. PRIMARY may supervise without surrendering its research/implementation
+role. Auxiliaries normally alternate; explicit nonconflicting parallel work is
+allowed. DeepSeek API execution remains single-instance.
+The mistaken DeepSeekPRIMARY configuration and outputs are preserved privately
+with provenance; its asymmetric-static study belongs to DEEPSEEK_AUX and is
+not a new mainline experiment. Await reviewed fixed auxiliary evidence before
+integration; do not rerun its frozen1344games/AUX92/93. Reassess the existing
+nearest-rule plan against new auxiliary findings before any launch.
+
 ## Current choice and cause — 2026-10-17
 
 Actual finite learning gains changed the earlier search-before-learning choice.

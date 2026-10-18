@@ -42,6 +42,16 @@ that this already-authorized local save lacks user consent.
 
 ## Destination and evidence
 
+User correction2026-10-18: PRIMARY_SANDBOX is the independent GPT mainline,
+DEV_AUX the original auxiliary, DEEPSEEK_AUX the sole DeepSeek auxiliary.
+Use each role's AGENT_ID/RECIPIENT and separate checkout-local consultation
+ledger. DeepSeek reports may add REPORTER_ID=PRIMARY_SANDBOX_GPT when GPT
+transports/reviews its evidence; do not impersonate PRIMARY execution. Old
+PRIMARY_SANDBOX_DEEPSEEK messages remain historical provenance, not current
+routing. Dot/remote Chat are advisers. No extra sender, challenge or consent
+queue. A role-specific pause suspends only its own sends/monitoring; explicit
+whole-project stop targets all roles without altering their evidence.
+
 Standing user authorization, reaffirmed 2026-10-04: the GenericChess Agent may
 send through the connected user account to the dedicated NanoMelon channel
 #generic-chess C0C6L21UU20 and its consultation threads without asking for each

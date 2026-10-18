@@ -4242,3 +4242,19 @@ or future reply. No routine response loop or duplicate learner. User then pauses
 inspection and requests stopping at a suitable point: publish these completed
 checks, preserve provisional next plan without launching it, then persist stop.
 Details and qualified research drivers: RULE_ENCODING_NEUTRALITY_20261017.md.
+
+
+## 2026-10-18 — user corrects three independent roles
+
+The previous DeepSeekPRIMARY/GPT-supervisor-only interpretation was wrong. User
+clarifies PRIMARY GPT independently runs mainline; DEV_AUX and the sole DeepSeek
+API executor are auxiliaries, normally alternating. Shared topics do not permit
+duplicate experiments or concurrent ownership of the same relative source files.
+The old runtime changed mainline flags/memo/thread and paused its timer; this
+repair separates checkout, branch/index, memo/session/stop/consultation state.
+Old runtimePID8652/tool85806 were already absent while control saidrunning;
+original events/session and actual interruption are retained, not passed off as
+completed research. Auxiliary scientific outputs are migrated with hashes and
+provenance, not republished as PRIMARY work. No AUX checkout/stop/timer changed.
+Mainline timer targets the original chat; DeepSeek supervision stays in its
+existing control chat. Publication remains Public, tested and role-bound.

@@ -4,9 +4,17 @@ User2026-10-11 established these simple participant names:
 
 |Participant|AGENT_ID|Branch|Work|
 |---|---|---|---|
-|Primary Agent|PRIMARY_SANDBOX|sandbox|Mainline research, product changes and final integration/publication|
-|开发辅助|DEV_AUX|sidemission|Independent validation, bounded counterexamples and its own evidence|
-|Dot|DOT|No local writing|Research advice and review of actual evidence|
+|Mainline GPT|PRIMARY_SANDBOX|sandbox|Independent mainline research, implementation, tests, delivery and useful supervision|
+|Original auxiliary|DEV_AUX|sidemission|Auxiliary research in its existing separate checkout|
+|DeepSeek auxiliary|DEEPSEEK_AUX|codex/deepseek-aux|Single API executor, auxiliary tasks in its own worktree|
+|Dot|DOT|None|Advisory research partner|
+
+User correction2026-10-18 supersedes DeepSeekPRIMARY/GPT-only-supervision.
+Mainline may run alongside either auxiliary. The auxiliaries normally alternate;
+explicit user direction permits both with distinct tasks/files. At most one
+DeepSeek API executor across directories. Never edit another role's checkout,
+flags, session or unpublished outputs. Check relative file claims as well as
+duplicate experiments. PRIMARY integrates deliberately; no automatic merge.
 
 The user confirmed that 开发辅助 belongs to this same GenericChess project and
 shares the Slack account. These fixed IDs are ordinary routing labels under
@@ -47,8 +55,8 @@ Same-machine fallback uses separate producer directories in an agreed shared
 handoff location: primary writes tasks, DEV_AUX writes results. Write files
 atomically on completion and do not overwrite the other's files. For another
 machine, use sidemission or agreed file transfer; a local path grants no remote
-access. Publish Agent-produced evidence only; exclude user/private inputs,
-raw Slack/account records and credentials.
+access. Publish any project evidence after excluding actual personal information,
+passwords and credentials; source origin alone is not a publication exclusion.
 
 ## Slack
 
@@ -70,7 +78,7 @@ separately; do not fabricate strict imports or turn them into a research gate.
 
 Keep frozen source/data/conditions and actual backend/fallback/evaluator visible.
 Cross-machine timing is descriptive, not a controlled speedup claim. Small
-interruptible runs are allowed; a single run expected above one hour first
+interruptible runs are allowed; a single run expected at least two hours (>=120min) first
 gets Dot's necessity assessment. Stop flags, human-data boundaries, machine
 safety and no uncontrolled jobs remain. A result does not automatically merge
 code or change q/evaluator/UI defaults.
@@ -81,9 +89,9 @@ code or change q/evaluator/UI defaults.
 Primary keeps docs/operations/COLLABORATION_LOG.md as concise segment summaries
 of both participants' contributions, actual coordination, disagreements/errors,
 adopt/defer/reject decisions, efficiency evidence and unresolved issues. Update
-at completed segments and publish with reviewed Agent-only work to sandbox;
+at completed segments and publish with reviewed project work to sandbox;
 verify the full remote SHA and provide Dot a fixed-revision link for review.
-Preserve corrections and references; exclude raw messages/account/private data.
+Preserve corrections and references; exclude actual personal information, passwords and credentials from outgoing copies.
 No invented speedup or guaranteed receipt/reply/review. No auxiliary activity
 is recorded honestly; summaries do not require waking the auxiliary for routine
 acknowledgements or adding approval/identity gates. Scientific evidence remains

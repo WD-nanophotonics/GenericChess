@@ -4,10 +4,51 @@ This is the sole active policy. Latest explicit user directions take precedence.
 PRIMARY_SANDBOX is the sole writer/publisher of sandbox in this checkout.
 Never touch alphasho, its audits/tasks, or other projects. Do not spawn/delegate
 Agents, create extra Work/Codex workers, add fees, or run uncontrolled jobs.
-The existing user-established DEV_AUX is a scoped exception, not permission to
-start a duplicate. Its separate checkout and sidemission branch remain its own.
+The existing user-established DEV_AUX and single DEEPSEEK_AUX are scoped
+exceptions, not permission to start duplicates. Their separate checkouts and
+branches remain their own. No additional workers may be created.
 
 ## Current decisions and their reasons —2026-10-15
+
+- User correction2026-10-18: THREE existing independent roles. PRIMARY_SANDBOX
+  is the GPT mainline executor in the original mainline chat/checkout on sandbox.
+  DEV_AUX is the original auxiliary in its existing checkout on sidemission.
+  DEEPSEEK_AUX is the sole DeepSeek API executor, controlled/viewed from its
+  existing DeepSeek chat, in its own worktree on codex/deepseek-aux. DeepSeek
+  does NOT replace PRIMARY, and GPT is NOT restricted to supervision. PRIMARY
+  independently researches/implements/tests/publishes mainline work and may
+  supervise either auxiliary when useful. Auxiliaries normally do auxiliary
+  work; a specific mainline exception needs an explicit task/file assignment.
+  This replaces the mistaken DeepSeekPRIMARY/GPT-supervisor-only arrangement.
+- Mainline may run concurrently with either auxiliary. The two auxiliaries
+  normally alternate; explicit user direction permits both only on distinct
+  tasks/inputs/files. This is a default scheduling choice, not a global mutex
+  blocking mainline. At most ONE DeepSeek API execution process is permitted
+  across all worktrees; changing a directory cannot create another executor.
+  No fourth worker, replacement AUX, extra fee scheme or model discussion chain.
+- Each role owns its checkout, branch/index, memo, session clock, stop flags,
+  research outputs and consultation ledger. DeepSeek Start/Stop changes ONLY
+  DeepSeek state. A role-specific stop never stops another role; explicit whole-
+  project stop suspends all roles through their authorized control paths.
+  No automatic clearing of stops. Shared Git objects/account do not share
+  writing authority. Check both relative file claims and duplicate experiments
+  before concurrent work; separate worktrees alone do not prevent merge conflicts.
+- Restore the original genericchess90-minute mainline heartbeat in the original
+  mainline chat. genericchess-deepseek-gpt supervises/continues ONLY DEEPSEEK_AUX
+  from the existing DeepSeek control chat. Existing DEV_AUX automation/state
+  stays untouched. No timer may launch another role or transfer its identity.
+  DeepSeek-related periodic supervision reports actual work/evidence/problems/
+  corrections/next action; no extra progress-writing burden on DeepSeek.
+- Publish reviewed mainline work to sandbox, original AUX to sidemission, and
+  DeepSeek auxiliary work to codex/deepseek-aux through tested, role-bound
+  publication. PRIMARY integrates selected auxiliary changes deliberately,
+  never automatically. GPT supervision of an auxiliary is not a gate on
+  PRIMARY's own work/publication. PUBLIC, standing upload authority, full
+  semantics, frozen caps and the <120min/>=120min run threshold remain.
+- Keep the existing direct DeepSeek API/Codex runtime and saved private key;
+  no native UI/provider migration or global provider edits in this repair.
+  Old DeepSeekPRIMARY outputs retain original provenance as historical evidence,
+  not instructions to replace mainline again after compaction.
 
 - Keep WD-nanophotonics/GenericChess PUBLIC: Dot/Chat must directly read source
   and evidence. PRIVATE failed connected access with404 and was abandoned. A
@@ -69,6 +110,12 @@ content boundary and is not an alternative to the current PUBLIC decision.
 
 ## Agent and branch ownership
 
+The checkout-local ignored .local_agent/role.json selects the active role and
+branch. In the isolated DeepSeek worktree, all recovery/session/stop/memo and
+publication commands refer to DEEPSEEK_AUX's own checkout and branch, never the
+parent PRIMARY state. Descriptions of this original mainline do not transfer
+its identity to a copied worktree. Stop any mismatched role/branch operation.
+
 PRIMARY delivers tested backend changes on sandbox. DEV_AUX independently owns
 its solver/verifier/cursor/runtime/learning work on sidemission; read pinned
 source/results for dependencies, do not edit its checkout, session, stop flags,
@@ -76,7 +123,7 @@ memo, computation or unpublished work. No automatic merge or competing solver.
 Neither Agent maintains/publishes UI Test; the user maintains it elsewhere.
 Backend activation/compatibility: docs/operations/BACKEND_HANDOFF.md.
 
-Use simple fixed AGENT_ID=PRIMARY_SANDBOX / DEV_AUX and RECIPIENT labels. The
+Use fixed AGENT_ID=PRIMARY_SANDBOX / DEV_AUX / DEEPSEEK_AUX and RECIPIENT labels. The
 shared Slack account does not cryptographically authenticate separate processes;
 do not invent per-message identity challenges. Coordinate for actual dependencies,
 blockers or decision-changing evidence, not routine acknowledgements. At completed

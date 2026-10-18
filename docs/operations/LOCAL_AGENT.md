@@ -6,6 +6,40 @@ LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current
 policy from dated consultation history. Full pre-cleanup manuals remain at
 Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks.
 
+## Independent mainline and auxiliary controls —2026-10-18
+
+PRIMARY GPT owns mainline research on sandbox in the original chat. DEV_AUX
+owns sidemission elsewhere. The single DEEPSEEK_AUX uses its isolated worktree
+on codex/deepseek-aux; its existing control chat provides GPT supervision.
+This corrects the mistaken DeepSeekPRIMARY replacement. Mainline remains able
+to implement and publish independently while either auxiliary works.
+
+DeepSeek control source, encrypted key, unique lock and private cycle receipts
+stay in ignored .local_agent/deepseek-runtime in the main checkout. paths.json
+binds the execution worktree; its local role.json binds DEEPSEEK_AUX and its
+publication branch. DeepSeek commands execute only in that bound worktree.
+Start/Stop cannot rewrite mainline rollout/session/memo/consultation flags.
+Separate default auxiliary scheduling from the one-DeepSeek hard process lock:
+never auto-start the other auxiliary; explicit parallel auxiliary work needs
+nonoverlapping task/file claims. No monitoring unrelated processes or AUX writes.
+
+Existing deepseek-control.cmd Start/Stop/Status retains compatibility. Start
+resumes only DeepSeek using its existing private key; Stop cancels only its
+owned process tree. Keep the tracked foreground tool session while running;
+record dead PID/missing receipt as interrupted, never as successful completion.
+An isolated worker uses its own session UUID/start/memo; no clock reset on resume.
+No fourth worker, global provider/security edits, key duplication or new daemon.
+
+The mainline genericchess heartbeat and auxiliary genericchess-deepseek-gpt
+heartbeat are independent and bound to their respective existing control chats.
+Scoped stops pause only the targeted role; whole-project stop must explicitly
+address all roles. Existing DEV_AUX controls remain its own.
+
+Publish keeps its sandbox default; --branch codex/deepseek-aux is accepted ONLY
+from that role-bound checkout. Both routes require clean reviewed commits,
+relevant tests, fast-forward ancestry and complete remote SHA verification.
+Auxiliary review never creates a new mainline consent queue.
+
 ## Start, recovery and memo
 
 1. Read .local_agent/NEXT_WORK.md in full, AGENTS.md, LOCAL_MAINLINE.md and
