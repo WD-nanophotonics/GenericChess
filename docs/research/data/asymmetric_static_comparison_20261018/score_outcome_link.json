@@ -1,0 +1,104 @@
+{
+ "free6_nonmirror_5x5": {
+  "pairs": 166,
+  "by_foe": {
+   "fixed_random99031_channels": 97,
+   "uniform": 69
+  },
+  "outcome_diff_counts": {
+   "-2": 13,
+   "-1": 6,
+   "0": 99,
+   "1": 15,
+   "2": 33
+  },
+  "spearman": -0.04606832554020078,
+  "spearman_family_cluster_envelope": [
+   -0.17973984490896625,
+   0.09006494721796686
+  ],
+  "per_foe_owner": {
+   "fixed_random99031_channels:owner0": {
+    "pairs": 55,
+    "spearman": -0.05934178373121189,
+    "nonzero_both": 25,
+    "concordant": 12
+   },
+   "fixed_random99031_channels:owner1": {
+    "pairs": 42,
+    "spearman": -0.14435167777077973,
+    "nonzero_both": 15,
+    "concordant": 8
+   },
+   "uniform:owner0": {
+    "pairs": 69,
+    "spearman": 0.0027921853742981476,
+    "nonzero_both": 20,
+    "concordant": 11
+   }
+  },
+  "nonzero_both": 60,
+  "concordant": 31,
+  "discordant": 29,
+  "sign_test_p_two_sided": 0.8974218269914305,
+  "mean_outcome_diff_if_score_positive": 0.27380952380952384,
+  "mean_outcome_diff_if_score_negative": 0.2608695652173913,
+  "owner0_foe_duplicate_note": "owner-0 served scores are identical across the uniform and fixed-random foes, but their game outcomes are different games; per_foe_owner cells separate the two gaming contexts, the pooled correlation does not.",
+  "dropped": {
+   "terminal_band": 18,
+   "horizon_unknown": 386
+  },
+  "scope": "Post-hoc both-resolved pairs only (terminal-band and horizon-UNKNOWN excluded); tie-averaged Spearman; family-cluster bootstrap 2.5/97.5 of 2000 resamples; descriptive, not a new outcome, not a full-cohort or causal claim."
+ },
+ "classic4_bilateral_4x4": {
+  "pairs": 255,
+  "by_foe": {
+   "random99031": 176,
+   "uniform": 79
+  },
+  "outcome_diff_counts": {
+   "-2": 18,
+   "-1": 4,
+   "0": 157,
+   "1": 25,
+   "2": 51
+  },
+  "spearman": 0.09355566691365416,
+  "spearman_family_cluster_envelope": [
+   -0.015290802507103395,
+   0.19958570858228294
+  ],
+  "per_foe_owner": {
+   "random99031:owner0": {
+    "pairs": 89,
+    "spearman": 0.0941814404859218,
+    "nonzero_both": 35,
+    "concordant": 21
+   },
+   "random99031:owner1": {
+    "pairs": 87,
+    "spearman": -0.030950885033199895,
+    "nonzero_both": 26,
+    "concordant": 14
+   },
+   "uniform:owner0": {
+    "pairs": 79,
+    "spearman": 0.21693591838475298,
+    "nonzero_both": 30,
+    "concordant": 20
+   }
+  },
+  "nonzero_both": 91,
+  "concordant": 55,
+  "discordant": 36,
+  "sign_test_p_two_sided": 0.05857352841018888,
+  "mean_outcome_diff_if_score_positive": 0.36551724137931035,
+  "mean_outcome_diff_if_score_negative": 0.29213483146067415,
+  "owner0_foe_duplicate_note": "owner-0 served scores are identical across the uniform and fixed-random foes, but their game outcomes are different games; per_foe_owner cells separate the two gaming contexts, the pooled correlation does not.",
+  "dropped": {
+   "terminal_band": 58,
+   "horizon_unknown": 29
+  },
+  "scope": "Post-hoc both-resolved pairs only (terminal-band and horizon-UNKNOWN excluded); tie-averaged Spearman; family-cluster bootstrap 2.5/97.5 of 2000 resamples; descriptive, not a new outcome, not a full-cohort or causal claim."
+ }
+}

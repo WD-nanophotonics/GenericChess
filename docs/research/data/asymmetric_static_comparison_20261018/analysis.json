@@ -1,0 +1,214 @@
+{
+  "caller_seconds": 116.54231379722478,
+  "contrasts": [
+    {
+      "bounds": [
+        -0.5963541666666666,
+        0.9401041666666666
+      ],
+      "conditional_fixed_rules_family_95_envelope": [
+        -0.6979166666666666,
+        1.0442708333333333
+      ],
+      "counts": {
+        "both_unknown": 67,
+        "one_unknown": 161,
+        "resolved_better": 28,
+        "resolved_pairs": 156,
+        "resolved_worse": 15,
+        "same_full_records": 29
+      },
+      "families_per_rule": {
+        "281001": 32,
+        "281002": 32,
+        "281003": 32,
+        "281004": 32,
+        "281005": 32,
+        "281006": 32
+      },
+      "foe": "uniform",
+      "name": "static-unit",
+      "pairs": 384,
+      "per_owner": {
+        "0": [
+          -0.5364583333333334,
+          1.0052083333333333
+        ],
+        "1": [
+          -0.65625,
+          0.875
+        ]
+      },
+      "per_rule": {
+        "281001": [
+          -0.6875,
+          1.03125
+        ],
+        "281002": [
+          -0.640625,
+          0.609375
+        ],
+        "281003": [
+          -0.625,
+          0.84375
+        ],
+        "281004": [
+          -0.828125,
+          1.359375
+        ],
+        "281005": [
+          -0.21875,
+          1.25
+        ],
+        "281006": [
+          -0.578125,
+          0.546875
+        ]
+      },
+      "scope": "UNKNOWN reward kept [-1,+1]; six fixed generated rules; family-group resampling conditional on those rules; not population confidence."
+    },
+    {
+      "bounds": [
+        -0.84375,
+        1.125
+      ],
+      "conditional_fixed_rules_family_95_envelope": [
+        -0.953125,
+        1.2213541666666667
+      ],
+      "counts": {
+        "both_unknown": 108,
+        "one_unknown": 162,
+        "resolved_better": 30,
+        "resolved_pairs": 114,
+        "resolved_worse": 14,
+        "same_full_records": 32
+      },
+      "families_per_rule": {
+        "281001": 32,
+        "281002": 32,
+        "281003": 32,
+        "281004": 32,
+        "281005": 32,
+        "281006": 32
+      },
+      "foe": "fixed_random99031_channels",
+      "name": "static-unit",
+      "pairs": 384,
+      "per_owner": {
+        "0": [
+          -0.8020833333333334,
+          1.0625
+        ],
+        "1": [
+          -0.8854166666666666,
+          1.1875
+        ]
+      },
+      "per_rule": {
+        "281001": [
+          -0.953125,
+          0.640625
+        ],
+        "281002": [
+          -1.453125,
+          1.484375
+        ],
+        "281003": [
+          -0.53125,
+          1.03125
+        ],
+        "281004": [
+          -0.90625,
+          1.53125
+        ],
+        "281005": [
+          -0.609375,
+          1.390625
+        ],
+        "281006": [
+          -0.609375,
+          0.671875
+        ]
+      },
+      "scope": "UNKNOWN reward kept [-1,+1]; six fixed generated rules; family-group resampling conditional on those rules; not population confidence."
+    }
+  ],
+  "depths": {
+    "2": 59650
+  },
+  "generation_failures": [],
+  "kernel_seconds": 63.01163909999962,
+  "logical_cells": 1536,
+  "max_caller_seconds": 0.01633640000363812,
+  "planned_physical": 1344,
+  "profiles": [
+    {
+      "cells": 384,
+      "foe": "uniform",
+      "label": "unit",
+      "outcomes": {
+        "D": 58,
+        "L": 88,
+        "U": 150,
+        "W": 88
+      },
+      "physical_slots": 192
+    },
+    {
+      "cells": 384,
+      "foe": "uniform",
+      "label": "rule_static_v2",
+      "outcomes": {
+        "D": 55,
+        "L": 59,
+        "U": 145,
+        "W": 125
+      },
+      "physical_slots": 384
+    },
+    {
+      "cells": 384,
+      "foe": "fixed_random99031_channels",
+      "label": "unit",
+      "outcomes": {
+        "D": 30,
+        "L": 83,
+        "U": 203,
+        "W": 68
+      },
+      "physical_slots": 384
+    },
+    {
+      "cells": 384,
+      "foe": "fixed_random99031_channels",
+      "label": "rule_static_v2",
+      "outcomes": {
+        "D": 24,
+        "L": 73,
+        "U": 175,
+        "W": 112
+      },
+      "physical_slots": 384
+    }
+  ],
+  "query_counts": {
+    "fallbacks": 0,
+    "nodes": 20334363,
+    "queries": 59650
+  },
+  "returned_physical": 1344,
+  "root_attempts": 192,
+  "root_terminal_attempts": 0,
+  "rules": [
+    281001,
+    281002,
+    281003,
+    281004,
+    281005,
+    281006
+  ],
+  "scope": "New served-candidate diagnostic on six freshly generated free_random/asymmetric rules. No fit, learner, AUX checkpoint, AUX state or default change. UNKNOWN/missing retained; caps not extended.",
+  "seconds": 0.5220101999584585,
+  "status": "COMPLETE_FROZEN_SERVED_CANDIDATE_ANALYSIS"
+}

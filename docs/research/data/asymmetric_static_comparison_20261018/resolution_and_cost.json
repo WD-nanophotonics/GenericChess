@@ -1,0 +1,324 @@
+{
+ "free6_nonmirror_5x5": {
+  "censoring": {
+   "by_resolution": {
+    "unit_resolved__static_resolved": {
+     "pairs": 166,
+     "mean_diff": 3.4096385542168677,
+     "median_diff": 6,
+     "nonzero": 153
+    },
+    "unit_resolved__static_unknown": {
+     "pairs": 108,
+     "mean_diff": 6.527777777777778,
+     "median_diff": 0,
+     "nonzero": 95
+    },
+    "unit_unknown__static_resolved": {
+     "pairs": 138,
+     "mean_diff": 39.731884057971016,
+     "median_diff": 14,
+     "nonzero": 128
+    },
+    "unit_unknown__static_unknown": {
+     "pairs": 140,
+     "mean_diff": 42.114285714285714,
+     "median_diff": 30,
+     "nonzero": 128
+    }
+   },
+   "by_rule": {
+    "281001": {
+     "unit_resolved__static_resolved": {
+      "pairs": 24,
+      "mean_diff": 8.541666666666666
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 20,
+      "mean_diff": 2.05
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 26,
+      "mean_diff": 5.346153846153846
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 16,
+      "mean_diff": 30.875
+     }
+    },
+    "281002": {
+     "unit_resolved__static_resolved": {
+      "pairs": 20,
+      "mean_diff": 52.4
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 26,
+      "mean_diff": 50.84615384615385
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 12,
+      "mean_diff": 82.33333333333333
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 38,
+      "mean_diff": 44.81578947368421
+     }
+    },
+    "281003": {
+     "unit_resolved__static_resolved": {
+      "pairs": 30,
+      "mean_diff": -89.63333333333334
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 20,
+      "mean_diff": 22.4
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 22,
+      "mean_diff": 138.86363636363637
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 17,
+      "mean_diff": 50.588235294117645
+     }
+    },
+    "281004": {
+     "unit_resolved__static_resolved": {
+      "pairs": 21,
+      "mean_diff": 41.04761904761905
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 11,
+      "mean_diff": -12.0
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 27,
+      "mean_diff": 7.037037037037037
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 37,
+      "mean_diff": 16.54054054054054
+     }
+    },
+    "281005": {
+     "unit_resolved__static_resolved": {
+      "pairs": 27,
+      "mean_diff": 27.48148148148148
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 13,
+      "mean_diff": -27.615384615384617
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 31,
+      "mean_diff": 5.516129032258065
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 22,
+      "mean_diff": 57.09090909090909
+     }
+    },
+    "281006": {
+     "unit_resolved__static_resolved": {
+      "pairs": 44,
+      "mean_diff": 9.045454545454545
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 18,
+      "mean_diff": -34.166666666666664
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 20,
+      "mean_diff": 47.0
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 10,
+      "mean_diff": 97.1
+     }
+    }
+   },
+   "missing_pair_slots": 0
+  },
+  "cost": {
+   "logged_queries": 59650,
+   "logged_nodes": 20334363,
+   "queries_with_completed_depth_1": 0,
+   "queries_with_fallback": 0,
+   "label_slots_without_queries": 0,
+   "label_slots_without_queries_and_zero_reported": 0,
+   "label_pairs": 576,
+   "pairs_with_identical_query_count": 185,
+   "pairs_with_identical_node_count": 44,
+   "first_decision_pairs": 570,
+   "first_decision_same_nodes": 570,
+   "first_decision_mean_nodes": {
+    "unit": 256.29824561403507,
+    "rule_static_v2": 256.29824561403507
+   },
+   "per_label": {
+    "unit": {
+     "games": 576,
+     "games_with_queries_in_log": 576,
+     "logged_queries": 26431,
+     "reported_queries": 26431,
+     "logged_nodes": 10168610,
+     "reported_nodes": 10168610,
+     "nodes_per_logged_query": 384.7228633044531,
+     "endings": {
+      "ACTUAL_TERMINAL": 298,
+      "HORIZON_UNKNOWN": 278
+     },
+     "total_plies": 26431,
+     "max_plies": 64
+    },
+    "rule_static_v2": {
+     "games": 768,
+     "games_with_queries_in_log": 768,
+     "logged_queries": 33219,
+     "reported_queries": 33219,
+     "logged_nodes": 10165753,
+     "reported_nodes": 10165753,
+     "nodes_per_logged_query": 306.02224630482556,
+     "endings": {
+      "ACTUAL_TERMINAL": 448,
+      "HORIZON_UNKNOWN": 320
+     },
+     "total_plies": 33219,
+     "max_plies": 64
+    }
+   }
+  },
+  "scope": "Frozen files only. Group means use the terminal-band-excluded first-decision served score diff. Resolution groups are descriptive and outcome-adjacent; not a preregistered test and not a new outcome."
+ },
+ "classic4_bilateral_4x4": {
+  "censoring": {
+   "by_resolution": {
+    "unit_resolved__static_resolved": {
+     "pairs": 255,
+     "mean_diff": 46.48627450980392,
+     "median_diff": 26,
+     "nonzero": 234
+    },
+    "unit_resolved__static_unknown": {
+     "pairs": 7,
+     "mean_diff": -53.57142857142857,
+     "median_diff": 70,
+     "nonzero": 7
+    },
+    "unit_unknown__static_resolved": {
+     "pairs": 20,
+     "mean_diff": 105.1,
+     "median_diff": 73,
+     "nonzero": 15
+    },
+    "unit_unknown__static_unknown": {
+     "pairs": 2,
+     "mean_diff": 177.0,
+     "median_diff": 225,
+     "nonzero": 2
+    }
+   },
+   "by_rule": {
+    "271001": {
+     "unit_resolved__static_resolved": {
+      "pairs": 61,
+      "mean_diff": 43.80327868852459
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 1,
+      "mean_diff": -693.0
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 4,
+      "mean_diff": 42.75
+     }
+    },
+    "271002": {
+     "unit_resolved__static_resolved": {
+      "pairs": 62,
+      "mean_diff": 80.48387096774194
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 3,
+      "mean_diff": 598.0
+     }
+    },
+    "271003": {
+     "unit_resolved__static_resolved": {
+      "pairs": 69,
+      "mean_diff": 54.666666666666664
+     },
+     "unit_resolved__static_unknown": {
+      "pairs": 6,
+      "mean_diff": 53.0
+     },
+     "unit_unknown__static_resolved": {
+      "pairs": 13,
+      "mean_diff": 10.538461538461538
+     },
+     "unit_unknown__static_unknown": {
+      "pairs": 2,
+      "mean_diff": 177.0
+     }
+    },
+    "271004": {
+     "unit_resolved__static_resolved": {
+      "pairs": 63,
+      "mean_diff": 6.666666666666667
+     }
+    }
+   },
+   "missing_pair_slots": 0
+  },
+  "cost": {
+   "logged_queries": 166514,
+   "logged_nodes": 31606003,
+   "queries_with_completed_depth_1": 0,
+   "queries_with_fallback": 0,
+   "label_slots_without_queries": 49,
+   "label_slots_without_queries_and_zero_reported": 49,
+   "label_pairs": 384,
+   "pairs_with_identical_query_count": 167,
+   "pairs_with_identical_node_count": 151,
+   "first_decision_pairs": 342,
+   "first_decision_same_nodes": 342,
+   "first_decision_mean_nodes": {
+    "unit": 95.4298245614035,
+    "rule_static_v2": 95.4298245614035
+   },
+   "per_label": {
+    "unit": {
+     "games": 384,
+     "games_with_queries_in_log": 363,
+     "logged_queries": 9024,
+     "reported_queries": 9024,
+     "logged_nodes": 1659126,
+     "reported_nodes": 1659126,
+     "nodes_per_logged_query": 183.85704787234042,
+     "endings": {
+      "ACTUAL_TERMINAL": 362,
+      "HORIZON_UNKNOWN": 22
+     },
+     "total_plies": 9024,
+     "max_plies": 128
+    },
+    "rule_static_v2": {
+     "games": 512,
+     "games_with_queries_in_log": 484,
+     "logged_queries": 9679,
+     "reported_queries": 9679,
+     "logged_nodes": 1302157,
+     "reported_nodes": 1302157,
+     "nodes_per_logged_query": 134.53424940593035,
+     "endings": {
+      "ACTUAL_TERMINAL": 498,
+      "HORIZON_UNKNOWN": 14
+     },
+     "total_plies": 9679,
+     "max_plies": 128
+    }
+   }
+  },
+  "scope": "Frozen files only. Group means use the terminal-band-excluded first-decision served score diff. Resolution groups are descriptive and outcome-adjacent; not a preregistered test and not a new outcome."
+ }
+}

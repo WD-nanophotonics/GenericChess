@@ -1,0 +1,375 @@
+{
+ "endings": {
+  "ACTUAL_TERMINAL": 863,
+  "HORIZON_UNKNOWN": 673
+ },
+ "known_rewards": 863,
+ "logical_cells": 1536,
+ "logical_reused_owner1_unit_uniform": 192,
+ "per_rule": {
+  "281001": {
+   "games": 256,
+   "mean_plies": 41.9921875,
+   "plies": 10750,
+   "terminal": 150,
+   "unknown": 106
+  },
+  "281002": {
+   "games": 256,
+   "mean_plies": 48.578125,
+   "plies": 12436,
+   "terminal": 122,
+   "unknown": 134
+  },
+  "281003": {
+   "games": 256,
+   "mean_plies": 41.09375,
+   "plies": 10520,
+   "terminal": 159,
+   "unknown": 97
+  },
+  "281004": {
+   "games": 256,
+   "mean_plies": 48.96875,
+   "plies": 12536,
+   "terminal": 108,
+   "unknown": 148
+  },
+  "281005": {
+   "games": 256,
+   "mean_plies": 47.41015625,
+   "plies": 12137,
+   "terminal": 145,
+   "unknown": 111
+  },
+  "281006": {
+   "games": 256,
+   "mean_plies": 37.70703125,
+   "plies": 9653,
+   "terminal": 179,
+   "unknown": 77
+  }
+ },
+ "physical_endings": {
+  "ACTUAL_TERMINAL": 746,
+  "HORIZON_UNKNOWN": 598
+ },
+ "physical_games": 1344,
+ "resolved_pairs": {
+  "('281001|fixed_random99031_channels|owner0', 'better')": 1,
+  "('281001|fixed_random99031_channels|owner0', 'equal')": 8,
+  "('281001|fixed_random99031_channels|owner0', 'resolved')": 13,
+  "('281001|fixed_random99031_channels|owner0', 'unresolved')": 19,
+  "('281001|fixed_random99031_channels|owner0', 'worse')": 4,
+  "('281001|fixed_random99031_channels|owner1', 'better')": 2,
+  "('281001|fixed_random99031_channels|owner1', 'equal')": 5,
+  "('281001|fixed_random99031_channels|owner1', 'resolved')": 9,
+  "('281001|fixed_random99031_channels|owner1', 'unresolved')": 23,
+  "('281001|fixed_random99031_channels|owner1', 'worse')": 2,
+  "('281001|uniform|owner0', 'better')": 2,
+  "('281001|uniform|owner0', 'equal')": 10,
+  "('281001|uniform|owner0', 'resolved')": 12,
+  "('281001|uniform|owner0', 'unresolved')": 20,
+  "('281001|uniform|owner0', 'worse')": 0,
+  "('281001|uniform|owner1', 'better')": 1,
+  "('281001|uniform|owner1', 'equal')": 7,
+  "('281001|uniform|owner1', 'resolved')": 8,
+  "('281001|uniform|owner1', 'unresolved')": 24,
+  "('281001|uniform|owner1', 'worse')": 0,
+  "('281002|fixed_random99031_channels|owner0', 'better')": 0,
+  "('281002|fixed_random99031_channels|owner0', 'equal')": 4,
+  "('281002|fixed_random99031_channels|owner0', 'resolved')": 4,
+  "('281002|fixed_random99031_channels|owner0', 'unresolved')": 28,
+  "('281002|fixed_random99031_channels|owner0', 'worse')": 0,
+  "('281002|fixed_random99031_channels|owner1', 'better')": 1,
+  "('281002|fixed_random99031_channels|owner1', 'equal')": 2,
+  "('281002|fixed_random99031_channels|owner1', 'resolved')": 3,
+  "('281002|fixed_random99031_channels|owner1', 'unresolved')": 29,
+  "('281002|fixed_random99031_channels|owner1', 'worse')": 0,
+  "('281002|uniform|owner0', 'better')": 0,
+  "('281002|uniform|owner0', 'equal')": 13,
+  "('281002|uniform|owner0', 'resolved')": 13,
+  "('281002|uniform|owner0', 'unresolved')": 19,
+  "('281002|uniform|owner0', 'worse')": 0,
+  "('281002|uniform|owner1', 'better')": 0,
+  "('281002|uniform|owner1', 'equal')": 16,
+  "('281002|uniform|owner1', 'resolved')": 16,
+  "('281002|uniform|owner1', 'unresolved')": 16,
+  "('281002|uniform|owner1', 'worse')": 0,
+  "('281003|fixed_random99031_channels|owner0', 'better')": 5,
+  "('281003|fixed_random99031_channels|owner0', 'equal')": 8,
+  "('281003|fixed_random99031_channels|owner0', 'resolved')": 14,
+  "('281003|fixed_random99031_channels|owner0', 'unresolved')": 18,
+  "('281003|fixed_random99031_channels|owner0', 'worse')": 1,
+  "('281003|fixed_random99031_channels|owner1', 'better')": 3,
+  "('281003|fixed_random99031_channels|owner1', 'equal')": 7,
+  "('281003|fixed_random99031_channels|owner1', 'resolved')": 11,
+  "('281003|fixed_random99031_channels|owner1', 'unresolved')": 21,
+  "('281003|fixed_random99031_channels|owner1', 'worse')": 1,
+  "('281003|uniform|owner0', 'better')": 2,
+  "('281003|uniform|owner0', 'equal')": 8,
+  "('281003|uniform|owner0', 'resolved')": 12,
+  "('281003|uniform|owner0', 'unresolved')": 20,
+  "('281003|uniform|owner0', 'worse')": 2,
+  "('281003|uniform|owner1', 'better')": 4,
+  "('281003|uniform|owner1', 'equal')": 11,
+  "('281003|uniform|owner1', 'resolved')": 17,
+  "('281003|uniform|owner1', 'unresolved')": 15,
+  "('281003|uniform|owner1', 'worse')": 2,
+  "('281004|fixed_random99031_channels|owner0', 'better')": 3,
+  "('281004|fixed_random99031_channels|owner0', 'equal')": 1,
+  "('281004|fixed_random99031_channels|owner0', 'resolved')": 5,
+  "('281004|fixed_random99031_channels|owner0', 'unresolved')": 27,
+  "('281004|fixed_random99031_channels|owner0', 'worse')": 1,
+  "('281004|fixed_random99031_channels|owner1', 'better')": 1,
+  "('281004|fixed_random99031_channels|owner1', 'equal')": 8,
+  "('281004|fixed_random99031_channels|owner1', 'resolved')": 9,
+  "('281004|fixed_random99031_channels|owner1', 'unresolved')": 23,
+  "('281004|fixed_random99031_channels|owner1', 'worse')": 0,
+  "('281004|uniform|owner0', 'better')": 4,
+  "('281004|uniform|owner0', 'equal')": 3,
+  "('281004|uniform|owner0', 'resolved')": 7,
+  "('281004|uniform|owner0', 'unresolved')": 25,
+  "('281004|uniform|owner0', 'worse')": 0,
+  "('281004|uniform|owner1', 'better')": 1,
+  "('281004|uniform|owner1', 'equal')": 5,
+  "('281004|uniform|owner1', 'resolved')": 8,
+  "('281004|uniform|owner1', 'unresolved')": 24,
+  "('281004|uniform|owner1', 'worse')": 2,
+  "('281005|fixed_random99031_channels|owner0', 'better')": 3,
+  "('281005|fixed_random99031_channels|owner0', 'equal')": 5,
+  "('281005|fixed_random99031_channels|owner0', 'resolved')": 8,
+  "('281005|fixed_random99031_channels|owner0', 'unresolved')": 24,
+  "('281005|fixed_random99031_channels|owner0', 'worse')": 0,
+  "('281005|fixed_random99031_channels|owner1', 'better')": 4,
+  "('281005|fixed_random99031_channels|owner1', 'equal')": 4,
+  "('281005|fixed_random99031_channels|owner1', 'resolved')": 8,
+  "('281005|fixed_random99031_channels|owner1', 'unresolved')": 24,
+  "('281005|fixed_random99031_channels|owner1', 'worse')": 0,
+  "('281005|uniform|owner0', 'better')": 6,
+  "('281005|uniform|owner0', 'equal')": 7,
+  "('281005|uniform|owner0', 'resolved')": 14,
+  "('281005|uniform|owner0', 'unresolved')": 18,
+  "('281005|uniform|owner0', 'worse')": 1,
+  "('281005|uniform|owner1', 'better')": 3,
+  "('281005|uniform|owner1', 'equal')": 9,
+  "('281005|uniform|owner1', 'resolved')": 12,
+  "('281005|uniform|owner1', 'unresolved')": 20,
+  "('281005|uniform|owner1', 'worse')": 0,
+  "('281006|fixed_random99031_channels|owner0', 'better')": 6,
+  "('281006|fixed_random99031_channels|owner0', 'equal')": 8,
+  "('281006|fixed_random99031_channels|owner0', 'resolved')": 18,
+  "('281006|fixed_random99031_channels|owner0', 'unresolved')": 14,
+  "('281006|fixed_random99031_channels|owner0', 'worse')": 4,
+  "('281006|fixed_random99031_channels|owner1', 'better')": 1,
+  "('281006|fixed_random99031_channels|owner1', 'equal')": 10,
+  "('281006|fixed_random99031_channels|owner1', 'resolved')": 12,
+  "('281006|fixed_random99031_channels|owner1', 'unresolved')": 20,
+  "('281006|fixed_random99031_channels|owner1', 'worse')": 1,
+  "('281006|uniform|owner0', 'better')": 4,
+  "('281006|uniform|owner0', 'equal')": 12,
+  "('281006|uniform|owner0', 'resolved')": 18,
+  "('281006|uniform|owner0', 'unresolved')": 14,
+  "('281006|uniform|owner0', 'worse')": 2,
+  "('281006|uniform|owner1', 'better')": 1,
+  "('281006|uniform|owner1', 'equal')": 12,
+  "('281006|uniform|owner1', 'resolved')": 19,
+  "('281006|uniform|owner1', 'unresolved')": 13,
+  "('281006|uniform|owner1', 'worse')": 6
+ },
+ "scope": "Descriptive only; censoring at the frozen 64-ply horizon is not a draw.",
+ "terminal_by_label_foe": {
+  "(281001, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   24,
+   32
+  ],
+  "(281001, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   17,
+   32
+  ],
+  "(281001, 'rule_static_v2', 'uniform', 0)": [
+   19,
+   32
+  ],
+  "(281001, 'rule_static_v2', 'uniform', 1)": [
+   18,
+   32
+  ],
+  "(281001, 'unit', 'fixed_random99031_channels', 0)": [
+   18,
+   32
+  ],
+  "(281001, 'unit', 'fixed_random99031_channels', 1)": [
+   18,
+   32
+  ],
+  "(281001, 'unit', 'uniform', 0)": [
+   18,
+   32
+  ],
+  "(281001, 'unit', 'uniform', 1)": [
+   18,
+   32
+  ],
+  "(281002, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   9,
+   32
+  ],
+  "(281002, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   5,
+   32
+  ],
+  "(281002, 'rule_static_v2', 'uniform', 0)": [
+   18,
+   32
+  ],
+  "(281002, 'rule_static_v2', 'uniform', 1)": [
+   18,
+   32
+  ],
+  "(281002, 'unit', 'fixed_random99031_channels', 0)": [
+   10,
+   32
+  ],
+  "(281002, 'unit', 'fixed_random99031_channels', 1)": [
+   10,
+   32
+  ],
+  "(281002, 'unit', 'uniform', 0)": [
+   26,
+   32
+  ],
+  "(281002, 'unit', 'uniform', 1)": [
+   26,
+   32
+  ],
+  "(281003, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   20,
+   32
+  ],
+  "(281003, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   22,
+   32
+  ],
+  "(281003, 'rule_static_v2', 'uniform', 0)": [
+   17,
+   32
+  ],
+  "(281003, 'rule_static_v2', 'uniform', 1)": [
+   22,
+   32
+  ],
+  "(281003, 'unit', 'fixed_random99031_channels', 0)": [
+   21,
+   32
+  ],
+  "(281003, 'unit', 'fixed_random99031_channels', 1)": [
+   15,
+   32
+  ],
+  "(281003, 'unit', 'uniform', 0)": [
+   21,
+   32
+  ],
+  "(281003, 'unit', 'uniform', 1)": [
+   21,
+   32
+  ],
+  "(281004, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   15,
+   32
+  ],
+  "(281004, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   14,
+   32
+  ],
+  "(281004, 'rule_static_v2', 'uniform', 0)": [
+   19,
+   32
+  ],
+  "(281004, 'rule_static_v2', 'uniform', 1)": [
+   17,
+   32
+  ],
+  "(281004, 'unit', 'fixed_random99031_channels', 0)": [
+   8,
+   32
+  ],
+  "(281004, 'unit', 'fixed_random99031_channels', 1)": [
+   13,
+   32
+  ],
+  "(281004, 'unit', 'uniform', 0)": [
+   11,
+   32
+  ],
+  "(281004, 'unit', 'uniform', 1)": [
+   11,
+   32
+  ],
+  "(281005, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   17,
+   32
+  ],
+  "(281005, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   23,
+   32
+  ],
+  "(281005, 'rule_static_v2', 'uniform', 0)": [
+   21,
+   32
+  ],
+  "(281005, 'rule_static_v2', 'uniform', 1)": [
+   22,
+   32
+  ],
+  "(281005, 'unit', 'fixed_random99031_channels', 0)": [
+   13,
+   32
+  ],
+  "(281005, 'unit', 'fixed_random99031_channels', 1)": [
+   11,
+   32
+  ],
+  "(281005, 'unit', 'uniform', 0)": [
+   19,
+   32
+  ],
+  "(281005, 'unit', 'uniform', 1)": [
+   19,
+   32
+  ],
+  "(281006, 'rule_static_v2', 'fixed_random99031_channels', 0)": [
+   23,
+   32
+  ],
+  "(281006, 'rule_static_v2', 'fixed_random99031_channels', 1)": [
+   20,
+   32
+  ],
+  "(281006, 'rule_static_v2', 'uniform', 0)": [
+   25,
+   32
+  ],
+  "(281006, 'rule_static_v2', 'uniform', 1)": [
+   23,
+   32
+  ],
+  "(281006, 'unit', 'fixed_random99031_channels', 0)": [
+   27,
+   32
+  ],
+  "(281006, 'unit', 'fixed_random99031_channels', 1)": [
+   17,
+   32
+  ],
+  "(281006, 'unit', 'uniform', 0)": [
+   22,
+   32
+  ],
+  "(281006, 'unit', 'uniform', 1)": [
+   22,
+   32
+  ]
+ }
+}

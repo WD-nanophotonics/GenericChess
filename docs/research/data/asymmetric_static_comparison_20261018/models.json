@@ -1,0 +1,979 @@
+{
+  "channels": {
+    "281001": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ],
+    "281002": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ],
+    "281003": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ],
+    "281004": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ],
+    "281005": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ],
+    "281006": [
+      [
+        "board",
+        "A"
+      ],
+      [
+        "board",
+        "B"
+      ],
+      [
+        "board",
+        "P"
+      ],
+      [
+        "hand",
+        "A"
+      ],
+      [
+        "hand",
+        "B"
+      ],
+      [
+        "hand",
+        "P"
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "e09d0d5aabc821108b6d4e3b6f68e4a23d933931da2e39ed9b75ae81365d1669",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "2634c5703d6658a01a44d8a36fce5b5759348a545ec5de81af010589c4b87fc9",
+      "label": "unit",
+      "rule": 281001
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.012,
+          "K": 0.0,
+          "P": 0.717
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.9,
+          "B": 0.911,
+          "K": 0.0,
+          "P": 0.645
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "e09d0d5aabc821108b6d4e3b6f68e4a23d933931da2e39ed9b75ae81365d1669",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "cf4a68724284b26c3b85a9a2c3e49867c1ea795b64f6ae567316578e0bd3ef7d",
+      "label": "rule_static_v2",
+      "rule": 281001
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "e09d0d5aabc821108b6d4e3b6f68e4a23d933931da2e39ed9b75ae81365d1669",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "9b25e79ca39c2c18312ef2755aa933f6c0a84974af4e1e9e758b2196e9346a1a",
+      "label": "foe_uniform",
+      "rule": 281001
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "e09d0d5aabc821108b6d4e3b6f68e4a23d933931da2e39ed9b75ae81365d1669",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "54a5b02ab28593789cd19857599dcd31509690b9a9c33f6229cc61bd2be3ab97",
+      "label": "foe_fixed_random",
+      "rule": 281001
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "219b6d530ce382ac187351159542b93e79b85cd0461ca4786d76d027cefe446f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "39a8fe44f0bc9005b57d8684d9a9ec39c9daaf8fe402da71b1f6b3e56974b2ad",
+      "label": "unit",
+      "rule": 281002
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 0.417,
+          "B": 1.81,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.375,
+          "B": 1.629,
+          "K": 0.0,
+          "P": 0.9
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "219b6d530ce382ac187351159542b93e79b85cd0461ca4786d76d027cefe446f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "ca25c5b78447eec8f4aa2536bd0298ae4b14de993842b465aefbe14ebe9f6e8d",
+      "label": "rule_static_v2",
+      "rule": 281002
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "219b6d530ce382ac187351159542b93e79b85cd0461ca4786d76d027cefe446f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "0b6a453c424038773f57a49e79b14765521f24b84dda8eef487d05fb1f8181d1",
+      "label": "foe_uniform",
+      "rule": 281002
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "219b6d530ce382ac187351159542b93e79b85cd0461ca4786d76d027cefe446f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "3b91df39b2af63aa3e2cd46edcd49f0e6ff523a59aad6f665fff290573a7dc69",
+      "label": "foe_fixed_random",
+      "rule": 281002
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "283281d076794a3999961f7719f492c191a8eb957909b18754a4f5683a9d39f0",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "3bc35ef1a7c38a7d2f22884f9a7ba43026353f5c120ea7ee6fd3a068c440637d",
+      "label": "unit",
+      "rule": 281003
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 0.277,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.238
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.249,
+          "B": 0.9,
+          "K": 0.0,
+          "P": 1.114
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "283281d076794a3999961f7719f492c191a8eb957909b18754a4f5683a9d39f0",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "814490c909cb02998b619828a4780f7e240c151dce4e123c0897aba7237ef150",
+      "label": "rule_static_v2",
+      "rule": 281003
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "283281d076794a3999961f7719f492c191a8eb957909b18754a4f5683a9d39f0",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "d573baa9de51a1c0190606139f1d92a3aba54649e27f16807164c327298f8c01",
+      "label": "foe_uniform",
+      "rule": 281003
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "283281d076794a3999961f7719f492c191a8eb957909b18754a4f5683a9d39f0",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "04d18d08964932bdf3bf70e71dddf3902dc934159f9d6cb5ca33a78cd36aff40",
+      "label": "foe_fixed_random",
+      "rule": 281003
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "23f16198be0602f8109e8821126ecc29a2a3102363078e91d999c8851f23e68f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "16ca6550f521b6e97b885b967112425b95535928c930adbc2348482b960177e9",
+      "label": "unit",
+      "rule": 281004
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.241,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.9,
+          "B": 1.117,
+          "K": 0.0,
+          "P": 0.9
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "23f16198be0602f8109e8821126ecc29a2a3102363078e91d999c8851f23e68f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "3ba081b2b7be1d585c61de8e2707a55cc1c953355524e57140ecaccf5f1936c2",
+      "label": "rule_static_v2",
+      "rule": 281004
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "23f16198be0602f8109e8821126ecc29a2a3102363078e91d999c8851f23e68f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "d8fc01f515b8dc52e7f500bb8044c42c49c5b583e4833dd49953f68468ffcdad",
+      "label": "foe_uniform",
+      "rule": 281004
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "23f16198be0602f8109e8821126ecc29a2a3102363078e91d999c8851f23e68f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "11cd7eec893b6a9a70b7fbd85c2fe7a061e9bfaa3b18bded372e835643178d26",
+      "label": "foe_fixed_random",
+      "rule": 281004
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "96351d9ae80a853af7663b87a08cfdc75ef8a8b05ee4adc92bd0656bd804d83f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "d814599705a7c4606d88fe598bec1ebfdbdd26ac769a1d4f6f76091290b3d78a",
+      "label": "unit",
+      "rule": 281005
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 0.31,
+          "K": 0.0,
+          "P": 1.444
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.9,
+          "B": 0.279,
+          "K": 0.0,
+          "P": 1.3
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "96351d9ae80a853af7663b87a08cfdc75ef8a8b05ee4adc92bd0656bd804d83f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "4f3d4e4fc1a1725eef92e72b9fb5a3620373d71695f4c8268c2af71cdcdfac25",
+      "label": "rule_static_v2",
+      "rule": 281005
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "96351d9ae80a853af7663b87a08cfdc75ef8a8b05ee4adc92bd0656bd804d83f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "6c92ef8bf199486769ed69f0f8b5fee743ad65c932b609e3aeaf8c17721ddd31",
+      "label": "foe_uniform",
+      "rule": 281005
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "96351d9ae80a853af7663b87a08cfdc75ef8a8b05ee4adc92bd0656bd804d83f",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "cc9e45ff5d8f306c95ef4e305f641699baa1952eaaf2c3326f843152b4855471",
+      "label": "foe_fixed_random",
+      "rule": 281005
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "unfitted-uniform-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "f2773fe7764537db87e35489ac58e0d203dc3dc6450a32d668005692cc173e42",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "94ec0486ebccb6a143ab9fd868f5ebae9b932eb9420ee7657b2d3691f1eb9ca1",
+      "label": "unit",
+      "rule": 281006
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 2.222,
+          "K": 0.0,
+          "P": 0.424
+        },
+        "evaluation_profile_version": "existing-rule-only-generic-v2-material-control",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 0.9,
+          "B": 2.0,
+          "K": 0.0,
+          "P": 0.382
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "f2773fe7764537db87e35489ac58e0d203dc3dc6450a32d668005692cc173e42",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "68187bc4c2f7406489e4ea5e1fcbc3a22edd357bd5c9fb203d822b2e119437da",
+      "label": "rule_static_v2",
+      "rule": 281006
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "evaluation_profile_version": "fixed-uniform-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.0,
+          "B": 1.0,
+          "K": 0.0,
+          "P": 1.0
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "f2773fe7764537db87e35489ac58e0d203dc3dc6450a32d668005692cc173e42",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "2397f37c6617adcbd121ce6e74d56fd8864483e953f7dc9efcbc3c71645dc431",
+      "label": "foe_uniform",
+      "rule": 281006
+    },
+    {
+      "checkpoint": {
+        "board_weights": {
+          "A": 1.0,
+          "B": 1.4106491989128949,
+          "K": 0.0,
+          "P": 0.7659333865420771
+        },
+        "evaluation_profile_version": "frozen-deterministic-random-foe",
+        "games_seen": 0,
+        "generation": 0,
+        "hand_weights": {
+          "A": 1.136200535517595,
+          "B": 0.6565261145043573,
+          "K": 0.0,
+          "P": 1.0420397060515065
+        },
+        "material_scale": 256,
+        "parent_checkpoint_id": null,
+        "positions_seen": 0,
+        "promoted_to_champion": false,
+        "reference_median": 1.0,
+        "ruleset_fingerprint": "f2773fe7764537db87e35489ac58e0d203dc3dc6450a32d668005692cc173e42",
+        "schema_version": 2,
+        "training_config_hash": "",
+        "training_seed": null,
+        "training_updates": 0,
+        "value_scale": 10.0,
+        "w_max": 100000.0
+      },
+      "checkpoint_id": "6649615dc24be0e3fa282d999a6403ed7dfbd42ce4b0001e5a8be5a576967136",
+      "label": "foe_fixed_random",
+      "rule": 281006
+    }
+  ],
+  "scope": "unit/static/fixed foe vectors frozen before outcomes; 256 scale, no fit/default change."
+}

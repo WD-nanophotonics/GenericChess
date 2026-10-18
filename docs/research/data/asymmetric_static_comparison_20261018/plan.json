@@ -1,0 +1,48 @@
+{
+  "task_id": "DEEPSEEK-SHARED-ASYMMETRIC-STATIC-20261018",
+  "question": "Does the existing rule-only static-v2 material profile keep a positive finite served-candidate W-L advantage over unfitted uniform material on newly generated free_random / asymmetric-movement rules?",
+  "changed_premise": "Mature-static positive Static-Unit evidence exists only on four bilateral classic_like TRAIN rules; asymmetric movement plus free setup is a distinct mechanism class inside the stated generic domain.",
+  "rules": {
+    "generator": "generic_chess.generation.generate_game",
+    "seeds": [281001, 281002, 281003, 281004, 281005, 281006],
+    "fallback_seeds": [281007, 281008, 281009, 281010, 281011, 281012],
+    "config": {
+      "board_size": 5,
+      "setup_preset": "free_random",
+      "movement_symmetry": "none"
+    },
+    "policy": "Generate in seed order; if a seed raises GenerationError, record the failure and take the next fallback seed, keeping six rules. Rule dicts and sha256 frozen in rules.json before any game outcome."
+  },
+  "families": {
+    "prefix_plies": 4,
+    "attempts_per_rule": 64,
+    "selected_per_rule": 32,
+    "policy": "Fitness-blind deterministic prefixes: random.Random(gs*1000000+index) chooses among sorted-repr legal actions; keep the first 32 prefixes that are still ongoing after 4 plies; record every attempt including terminals."
+  },
+  "profiles": ["unit", "rule_static_v2"],
+  "foes": ["uniform", "fixed_random99031_channels"],
+  "foe_construction": {
+    "uniform": "all channel weights 1.0",
+    "fixed_random99031_channels": "first channel weight 1.0 then random.Random(99031).uniform(0.5,1.5) per remaining channel in sorted channel order; frozen here before outcomes, explicitly NOT the AUX random99031 vector (different channel space)"
+  },
+  "search": {
+    "backend": "current Native Semantic, all profiles",
+    "depth": 2,
+    "nodes_per_query": 8192,
+    "seconds_per_query": 2.0,
+    "q0": true,
+    "tt_megabytes": 0,
+    "root_window_pruning": false
+  },
+  "horizon_after_prefix": 64,
+  "limits": {
+    "forecast_seconds": 600,
+    "global_cap_seconds": 1200,
+    "max_output_bytes": 268435456
+  },
+  "physical_games_expected": 1344,
+  "reuse": "Unit vs uniform is paid once per rule/family at owner 0 and reused as the opposite-role logical cell with sign flip; all other label/foe/owner combinations are paid separately.",
+  "statistics": "Paired candidate-minus-unit differences; UNKNOWN reward contributes [-1,+1]*|coefficient| so every interval is finite and explicit. Pooled envelope from 2000 within-rule family-group resamples (conditional on the six fixed rules). Per-rule intervals reported separately.",
+  "decision": "Positive vs zero-containing/reversing per-rule intervals on this new mechanism class; no population, equivalence, best-seed or unique-price claim.",
+  "scope": "One bounded served-candidate diagnostic on six fixed generated rules. No fit, learner, optimizer, AUX checkpoint or AUX-side state; UNKNOWN and failures retained; caps not extended."
+}

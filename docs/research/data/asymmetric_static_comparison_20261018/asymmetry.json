@@ -1,0 +1,1019 @@
+{
+ "all_owner_mirror_image": false,
+ "any_left_right_symmetric": false,
+ "any_owner_mirror_image": false,
+ "rules": [
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 5,
+     "B": 3,
+     "K": 1,
+     "P": 1
+    },
+    "1": {
+     "A": 5,
+     "B": 3,
+     "K": 1,
+     "P": 1
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 29,
+    "1": 29
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 2,
+   "nonanchor_forward_atoms": 4,
+   "owner_mirror_image": false,
+   "rule": 281001,
+   "types": {
+    "A": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        -1,
+        0
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        1,
+        -2
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        0,
+        1
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        3,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        2
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  },
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 3,
+     "B": 3,
+     "K": 1,
+     "P": 3
+    },
+    "1": {
+     "A": 3,
+     "B": 3,
+     "K": 1,
+     "P": 3
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 12,
+    "1": 12
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 4,
+   "nonanchor_forward_atoms": 3,
+   "owner_mirror_image": false,
+   "rule": 281002,
+   "types": {
+    "A": {
+     "atoms": 1,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -2,
+        2
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        -2,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        2
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        1,
+        -2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -3,
+        2
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        -3
+       ]
+      ],
+      [
+       "leap",
+       [
+        2,
+        -2
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  },
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 8,
+     "K": 1,
+     "P": 1
+    },
+    "1": {
+     "A": 8,
+     "K": 1,
+     "P": 1
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 13,
+    "1": 13
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 3,
+   "nonanchor_forward_atoms": 3,
+   "owner_mirror_image": false,
+   "rule": 281003,
+   "types": {
+    "A": {
+     "atoms": 1,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        -2,
+        1
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        1,
+        -2
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        1,
+        2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 5,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -3,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        2,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        -2
+       ]
+      ],
+      [
+       "leap",
+       [
+        -2,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  },
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 2,
+     "B": 3,
+     "K": 1,
+     "P": 4
+    },
+    "1": {
+     "A": 2,
+     "B": 3,
+     "K": 1,
+     "P": 4
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 20,
+    "1": 20
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 2,
+   "nonanchor_forward_atoms": 4,
+   "owner_mirror_image": false,
+   "rule": 281004,
+   "types": {
+    "A": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        2,
+        1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        -2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        2
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        3,
+        3
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        2,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  },
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 1,
+     "B": 4,
+     "K": 1,
+     "P": 4
+    },
+    "1": {
+     "A": 1,
+     "B": 4,
+     "K": 1,
+     "P": 4
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 26,
+    "1": 26
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 3,
+   "nonanchor_forward_atoms": 3,
+   "owner_mirror_image": false,
+   "rule": 281005,
+   "types": {
+    "A": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        0,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -1,
+        2
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 1,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        -1,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        -2,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        0,
+        1
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  },
+  {
+   "initial_pieces": {
+    "0": {
+     "A": 4,
+     "B": 3,
+     "K": 1,
+     "P": 2
+    },
+    "1": {
+     "A": 4,
+     "B": 3,
+     "K": 1,
+     "P": 2
+    }
+   },
+   "initial_pseudo_targets": {
+    "0": 18,
+    "1": 18
+   },
+   "initial_total": {
+    "0": 10,
+    "1": 10
+   },
+   "layout_rot180_symmetric": true,
+   "left_right_symmetric": false,
+   "nonanchor_backward_atoms": 2,
+   "nonanchor_forward_atoms": 3,
+   "owner_mirror_image": false,
+   "rule": 281006,
+   "types": {
+    "A": {
+     "atoms": 2,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        3
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "B": {
+     "atoms": 3,
+     "atoms_repr": [
+      [
+       "ray",
+       [
+        -1,
+        -2
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        0,
+        -1
+       ],
+       null
+      ],
+      [
+       "ray",
+       [
+        2,
+        1
+       ],
+       null
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    },
+    "K": {
+     "atoms": 8,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        -1,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        -1
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        0
+       ]
+      ],
+      [
+       "leap",
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": true,
+     "rotation_180_invariant": true
+    },
+    "P": {
+     "atoms": 1,
+     "atoms_repr": [
+      [
+       "leap",
+       [
+        -2,
+        1
+       ]
+      ]
+     ],
+     "left_right_symmetric": false,
+     "rotation_180_invariant": false
+    }
+   }
+  }
+ ],
+ "scope": "Atom sets are owner-relative; rotation_180_invariant means the two owners have mirror-image move sets (owner-symmetric rule). Movement symmetry=none applies no left-right mirroring. Pseudo-target counts are on the initial position with no attack/anchor filtering."
+}

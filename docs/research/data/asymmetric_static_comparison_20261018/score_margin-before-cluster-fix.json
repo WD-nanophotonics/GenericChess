@@ -1,0 +1,240 @@
+{
+ "free6_nonmirror_5x5": {
+  "dataset": "free6_nonmirror_5x5",
+  "pairs": 570,
+  "reused_or_missing_pairs": {
+   "('unit',)": 192
+  },
+  "pairs_without_candidate_decision": {
+   "(False, False)": 6
+  },
+  "same_state_pairs": 570,
+  "same_root_pairs": 570,
+  "same_ply_pairs": 570,
+  "same_action_pairs": 265,
+  "terminal_band_pairs": 18,
+  "plies": {
+   "0": 384,
+   "1": 186
+  },
+  "per_foe": {
+   "fixed_random99031_channels": {
+    "pairs": 367,
+    "mean": 15.160762942779291,
+    "median": 23,
+    "min": -1847,
+    "max": 1560,
+    "positive": 193,
+    "zero": 29,
+    "negative": 145,
+    "sign_test_p_two_sided": 0.010467963133836163,
+    "changed_action": 200,
+    "family_envelope": [
+     -17.809264305177113,
+     48.62125340599455
+    ],
+    "rules": {
+     "281001": {
+      "pairs": 57,
+      "mean": 13.473684210526315,
+      "positive": 32,
+      "negative": 22
+     },
+     "281002": {
+      "pairs": 64,
+      "mean": 60.78125,
+      "positive": 37,
+      "negative": 23
+     },
+     "281003": {
+      "pairs": 59,
+      "mean": 36.96610169491525,
+      "positive": 31,
+      "negative": 23
+     },
+     "281004": {
+      "pairs": 64,
+      "mean": 21.09375,
+      "positive": 35,
+      "negative": 22
+     },
+     "281005": {
+      "pairs": 62,
+      "mean": 7.241935483870968,
+      "positive": 31,
+      "negative": 23
+     },
+     "281006": {
+      "pairs": 61,
+      "mean": -50.39344262295082,
+      "positive": 27,
+      "negative": 32
+     }
+    }
+   },
+   "uniform": {
+    "pairs": 185,
+    "mean": 38.3027027027027,
+    "median": 0,
+    "min": -1131,
+    "max": 1560,
+    "positive": 92,
+    "zero": 19,
+    "negative": 74,
+    "sign_test_p_two_sided": 0.1868538216468368,
+    "changed_action": 105,
+    "family_envelope": [
+     -8.913513513513514,
+     83.73513513513514
+    ],
+    "rules": {
+     "281001": {
+      "pairs": 29,
+      "mean": 3.8275862068965516,
+      "positive": 13,
+      "negative": 14
+     },
+     "281002": {
+      "pairs": 32,
+      "mean": 36.59375,
+      "positive": 19,
+      "negative": 10
+     },
+     "281003": {
+      "pairs": 30,
+      "mean": -16.9,
+      "positive": 13,
+      "negative": 14
+     },
+     "281004": {
+      "pairs": 32,
+      "mean": 5.6875,
+      "positive": 15,
+      "negative": 14
+     },
+     "281005": {
+      "pairs": 31,
+      "mean": 43.903225806451616,
+      "positive": 16,
+      "negative": 9
+     },
+     "281006": {
+      "pairs": 31,
+      "mean": 153.80645161290323,
+      "positive": 16,
+      "negative": 13
+     }
+    }
+   }
+  },
+  "per_rule_foe": {},
+  "scope": "Same frozen prefix state, candidate first decision only. Served Native depth-2 actor-perspective score in native units; terminal band pairs excluded from means and counted. Post-hoc secondary observable, not W-L and not a preregistered endpoint."
+ },
+ "classic4_bilateral_4x4": {
+  "dataset": "classic4_bilateral_4x4",
+  "pairs": 342,
+  "reused_or_missing_pairs": {
+   "('unit',)": 128
+  },
+  "pairs_without_candidate_decision": {
+   "(False, False)": 42
+  },
+  "same_state_pairs": 342,
+  "same_root_pairs": 342,
+  "same_ply_pairs": 342,
+  "same_action_pairs": 243,
+  "terminal_band_pairs": 58,
+  "plies": {
+   "0": 242,
+   "1": 100
+  },
+  "per_foe": {
+   "random99031": {
+    "pairs": 188,
+    "mean": 52.40425531914894,
+    "median": 27.0,
+    "min": -850,
+    "max": 1037,
+    "positive": 110,
+    "zero": 14,
+    "negative": 64,
+    "sign_test_p_two_sided": 0.0006052447871282059,
+    "changed_action": 63,
+    "family_envelope": [
+     7.0212765957446805,
+     96.09574468085107
+    ],
+    "rules": {
+     "271001": {
+      "pairs": 44,
+      "mean": 89.11363636363636,
+      "positive": 31,
+      "negative": 11
+     },
+     "271002": {
+      "pairs": 43,
+      "mean": 54.97674418604651,
+      "positive": 22,
+      "negative": 12
+     },
+     "271003": {
+      "pairs": 60,
+      "mean": 60.583333333333336,
+      "positive": 36,
+      "negative": 21
+     },
+     "271004": {
+      "pairs": 41,
+      "mean": -1.6585365853658536,
+      "positive": 21,
+      "negative": 20
+     }
+    }
+   },
+   "uniform": {
+    "pairs": 96,
+    "mean": 42.53125,
+    "median": 26.0,
+    "min": -767,
+    "max": 966,
+    "positive": 53,
+    "zero": 12,
+    "negative": 31,
+    "sign_test_p_two_sided": 0.02138318993714459,
+    "changed_action": 36,
+    "family_envelope": [
+     -23.458333333333332,
+     104.94791666666667
+    ],
+    "rules": {
+     "271001": {
+      "pairs": 22,
+      "mean": -80.5,
+      "positive": 13,
+      "negative": 7
+     },
+     "271002": {
+      "pairs": 22,
+      "mean": 200.9090909090909,
+      "positive": 8,
+      "negative": 6
+     },
+     "271003": {
+      "pairs": 30,
+      "mean": 31.533333333333335,
+      "positive": 19,
+      "negative": 9
+     },
+     "271004": {
+      "pairs": 22,
+      "mean": 22.181818181818183,
+      "positive": 13,
+      "negative": 9
+     }
+    }
+   }
+  },
+  "per_rule_foe": {},
+  "scope": "Same frozen prefix state, candidate first decision only. Served Native depth-2 actor-perspective score in native units; terminal band pairs excluded from means and counted. Post-hoc secondary observable, not W-L and not a preregistered endpoint."
+ }
+}

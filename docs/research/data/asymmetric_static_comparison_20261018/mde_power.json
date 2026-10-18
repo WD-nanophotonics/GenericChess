@@ -1,0 +1,171 @@
+{
+ "free6_nonmirror_5x5": {
+  "pairs": 166,
+  "dropped": {
+   "terminal_band": 18,
+   "horizon_unknown": 386
+  },
+  "mean_u": 0.29518072289156627,
+  "iid_se": 0.08340511211239363,
+  "rule_cluster_se": 0.12203054068670582,
+  "rule_clusters": 6,
+  "rule_foe_cluster_se": 0.10279545909035824,
+  "rule_foe_clusters": 12,
+  "mde80_iid": 0.23366651101740032,
+  "mde80_rule_cluster": 0.34187893232976474,
+  "mde80_rule_foe_cluster": 0.2879902162556613,
+  "mde80_rule_cluster_t": 0.42590196284472986,
+  "mde80_rule_foe_cluster_t": 0.3162931983933869,
+  "mde80_rule_cluster_wins_per_100_pairs": 21.295098142236494,
+  "ci95_halfwidth_rule_cluster": 0.2391754666464787,
+  "ci95_halfwidth_rule_cluster_t": 0.3136895113395136,
+  "ci95_rule_cluster_t": [
+   -0.018508788447947344,
+   0.6088702342310799
+  ],
+  "per_rule": {
+   "281001": {
+    "pairs": 24,
+    "mean": -0.08333333333333333,
+    "wins_minus_losses": -2
+   },
+   "281002": {
+    "pairs": 20,
+    "mean": 0.05,
+    "wins_minus_losses": 1
+   },
+   "281003": {
+    "pairs": 30,
+    "mean": 0.23333333333333334,
+    "wins_minus_losses": 7
+   },
+   "281004": {
+    "pairs": 21,
+    "mean": 0.6190476190476191,
+    "wins_minus_losses": 13
+   },
+   "281005": {
+    "pairs": 27,
+    "mean": 0.7777777777777778,
+    "wins_minus_losses": 21
+   },
+   "281006": {
+    "pairs": 44,
+    "mean": 0.20454545454545456,
+    "wins_minus_losses": 9
+   }
+  },
+  "between_rule_sd": 0.33258476636474765,
+  "rule_sign_flip_p_two_sided": 0.09375,
+  "rule_sign_flip_assignments": 64,
+  "leave_one_rule_out_range": [
+   0.2014388489208633,
+   0.3591549295774648
+  ],
+  "leave_one_rule_out": {
+   "281001": 0.3591549295774648,
+   "281002": 0.3287671232876712,
+   "281003": 0.3088235294117647,
+   "281004": 0.2482758620689655,
+   "281005": 0.2014388489208633,
+   "281006": 0.32786885245901637
+  },
+  "rules_needed_for_common_shift": {
+   "0.05": 348,
+   "0.10": 87,
+   "0.20": 22
+  },
+  "u_counts": {
+   "-2": 13,
+   "-1": 6,
+   "0": 99,
+   "1": 15,
+   "2": 33
+  },
+  "scope": "Post-hoc both-resolved pairs only; UNKNOWN and terminal-band pairs excluded; rule-exchanged clustering; MDE=2.802*SE; no new games or outcomes; not equivalence and not a population claim."
+ },
+ "classic4_bilateral_4x4": {
+  "pairs": 255,
+  "dropped": {
+   "terminal_band": 58,
+   "horizon_unknown": 29
+  },
+  "mean_u": 0.3411764705882353,
+  "iid_se": 0.0651973698593191,
+  "rule_cluster_se": 0.181967709276295,
+  "rule_clusters": 4,
+  "rule_foe_cluster_se": 0.13565009160438102,
+  "rule_foe_clusters": 8,
+  "mde80_iid": 0.18265597343732048,
+  "mde80_rule_cluster": 0.509798004792829,
+  "mde80_rule_foe_cluster": 0.38003526188745984,
+  "mde80_rule_cluster_t": 0.7571527169465029,
+  "mde80_rule_foe_cluster_t": 0.4423080137901914,
+  "mde80_rule_cluster_wins_per_100_pairs": 37.85763584732514,
+  "ci95_halfwidth_rule_cluster": 0.35665015934400424,
+  "ci95_halfwidth_rule_cluster_t": 0.5791024085155079,
+  "ci95_rule_cluster_t": [
+   -0.23792593792727257,
+   0.9202788791037432
+  ],
+  "per_rule": {
+   "271001": {
+    "pairs": 61,
+    "mean": 0.8688524590163934,
+    "wins_minus_losses": 53
+   },
+   "271002": {
+    "pairs": 62,
+    "mean": 0.3548387096774194,
+    "wins_minus_losses": 22
+   },
+   "271003": {
+    "pairs": 69,
+    "mean": 0.043478260869565216,
+    "wins_minus_losses": 3
+   },
+   "271004": {
+    "pairs": 63,
+    "mean": 0.14285714285714285,
+    "wins_minus_losses": 9
+   }
+  },
+  "between_rule_sd": 0.36790845515559395,
+  "rule_sign_flip_p_two_sided": 0.125,
+  "rule_sign_flip_assignments": 16,
+  "leave_one_rule_out_range": [
+   0.17525773195876287,
+   0.45161290322580644
+  ],
+  "leave_one_rule_out": {
+   "271001": 0.17525773195876287,
+   "271002": 0.33678756476683935,
+   "271003": 0.45161290322580644,
+   "271004": 0.40625
+  },
+  "rules_needed_for_common_shift": {
+   "0.05": 425,
+   "0.10": 107,
+   "0.20": 27
+  },
+  "u_counts": {
+   "-2": 18,
+   "-1": 4,
+   "0": 157,
+   "1": 25,
+   "2": 51
+  },
+  "scope": "Post-hoc both-resolved pairs only; UNKNOWN and terminal-band pairs excluded; rule-exchanged clustering; MDE=2.802*SE; no new games or outcomes; not equivalence and not a population claim."
+ },
+ "checks": {
+  "free_pairs_166": true,
+  "classic_pairs_255": true,
+  "six_free_rule_clusters": true,
+  "twelve_rule_foe_clusters": true,
+  "mde_positive": true,
+  "mde_at_least_observed_mean": true,
+  "rule_cluster_t_ci_reported": true,
+  "sign_flip_p_in_unit_interval": true
+ },
+ "status": "PASS"
+}

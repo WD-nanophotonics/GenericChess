@@ -1,0 +1,27 @@
+{
+ "checks": [
+  "5 frozen inputs still match producer-source.json hashes",
+  "report states the bundled domain change and paid-node-only parity (no per-query/lifecycle neutrality claim)",
+  "pooled W-L table matches both contrasts exactly",
+  "per-rule W-L table matches 6 rules x 2 foes",
+  "prose per-owner W-L intervals match analysis.json",
+  "execution bullets match analyze/describe/result JSON",
+  "570+342 same-state pairs and 192/192 owner-0 duplicate verified",
+  "served-score role table matches score_margin.json",
+  "leave-one-rule audit table, drivers and cross-role counts match owner_role_influence.json; owner/ply/root confound verified",
+  "served-score/outcome link tables and scope match score_outcome_link.json (mainline wording check skipped)",
+  "censoring/cost tables, recomputed totals, same-state node parity and per-rule reversal/non-monotone prose match resolution_and_cost.json (mainline wording check skipped)",
+  "MDE section numbers, sign-flip/LOO values, independent pair cross-check and reproduction commands match mde_power.json / paired_mean_crosscheck.json (mainline wording check skipped)",
+  "determinism rerun hashes and normal-power constant match the logged outputs; t-quantile check limitation recorded",
+  "all 34 referenced analysis files exist (2 raw jsonl present as .gz)"
+ ],
+ "mainline_checks": "skipped (--mainline omitted)",
+ "skipped_mainline_assertions": [
+  "mainline states state-identity vs action-change correctly",
+  "mainline leave-one-rule driver and cross-role clauses",
+  "mainline score-proxy limitation clause",
+  "mainline cost and censoring clauses",
+  "mainline MDE-forecast consequence clauses"
+ ],
+ "status": "PASS"
+}

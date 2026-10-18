@@ -1,0 +1,21 @@
+free6_nonmirror_5x5: n=166 mean_u=+0.2952 iid_se=0.0834 rule_se=0.1220 ruleXfoe_se=0.1028
+  MDE80 reward units: iid=0.234 rule-cluster=0.342 rule-cluster(t5)=0.426 (21.3 wins/100 pairs) ruleXfoe=0.288; CI95(t5)=[-0.019, 0.609]
+  between-rule SD=0.333; rules needed delta .05/.10/.20 -> [348, 87, 22]
+  rule sign-flip p=0.0938 (64 assignments); LOO means [0.201, 0.359]
+  u_counts={'-2': 13, '-1': 6, '0': 99, '1': 15, '2': 33} dropped={'terminal_band': 18, 'horizon_unknown': 386}
+    rule 281001: n=24 mean=-0.0833 sum=-2
+    rule 281002: n=20 mean=+0.0500 sum=+1
+    rule 281003: n=30 mean=+0.2333 sum=+7
+    rule 281004: n=21 mean=+0.6190 sum=+13
+    rule 281005: n=27 mean=+0.7778 sum=+21
+    rule 281006: n=44 mean=+0.2045 sum=+9
+classic4_bilateral_4x4: n=255 mean_u=+0.3412 iid_se=0.0652 rule_se=0.1820 ruleXfoe_se=0.1357
+  MDE80 reward units: iid=0.183 rule-cluster=0.510 rule-cluster(t5)=0.757 (37.9 wins/100 pairs) ruleXfoe=0.380; CI95(t5)=[-0.238, 0.92]
+  between-rule SD=0.368; rules needed delta .05/.10/.20 -> [425, 107, 27]
+  rule sign-flip p=0.1250 (16 assignments); LOO means [0.175, 0.452]
+  u_counts={'-2': 18, '-1': 4, '0': 157, '1': 25, '2': 51} dropped={'terminal_band': 58, 'horizon_unknown': 29}
+    rule 271001: n=61 mean=+0.8689 sum=+53
+    rule 271002: n=62 mean=+0.3548 sum=+22
+    rule 271003: n=69 mean=+0.0435 sum=+3
+    rule 271004: n=63 mean=+0.1429 sum=+9
+status=PASS wrote .local_agent/asymmetric-static-20261018/mde_power.json

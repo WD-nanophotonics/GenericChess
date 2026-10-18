@@ -1,0 +1,924 @@
+{
+ "free6_nonmirror_5x5": {
+  "dataset": "free6_nonmirror_5x5",
+  "pairs": 570,
+  "reused_or_missing_pairs": {
+   "('unit',)": 192
+  },
+  "pairs_without_candidate_decision": {
+   "(False, False)": 6
+  },
+  "same_state_pairs": 570,
+  "same_root_pairs": 570,
+  "same_ply_pairs": 570,
+  "same_action_pairs": 265,
+  "terminal_band_pairs": 18,
+  "plies": {
+   "0": 384,
+   "1": 186
+  },
+  "per_foe": {
+   "fixed_random99031_channels": {
+    "pairs": 367,
+    "mean": 15.160762942779291,
+    "median": 23,
+    "min": -1847,
+    "max": 1560,
+    "positive": 193,
+    "zero": 29,
+    "negative": 145,
+    "sign_test_p_two_sided": 0.010467963133836163,
+    "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+    "changed_action": 200,
+    "families": {
+     "281001": 29,
+     "281002": 32,
+     "281003": 30,
+     "281004": 32,
+     "281005": 31,
+     "281006": 31
+    },
+    "family_cluster_envelope": [
+     -5.994520547945205,
+     34.79178082191781
+    ],
+    "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+    "rules": {
+     "281001": {
+      "pairs": 57,
+      "mean": 13.473684210526315,
+      "positive": 32,
+      "negative": 22,
+      "families": 29
+     },
+     "281002": {
+      "pairs": 64,
+      "mean": 60.78125,
+      "positive": 37,
+      "negative": 23,
+      "families": 32
+     },
+     "281003": {
+      "pairs": 59,
+      "mean": 36.96610169491525,
+      "positive": 31,
+      "negative": 23,
+      "families": 30
+     },
+     "281004": {
+      "pairs": 64,
+      "mean": 21.09375,
+      "positive": 35,
+      "negative": 22,
+      "families": 32
+     },
+     "281005": {
+      "pairs": 62,
+      "mean": 7.241935483870968,
+      "positive": 31,
+      "negative": 23,
+      "families": 31
+     },
+     "281006": {
+      "pairs": 61,
+      "mean": -50.39344262295082,
+      "positive": 27,
+      "negative": 32,
+      "families": 31
+     }
+    },
+    "per_owner": {
+     "0": {
+      "pairs": 185,
+      "mean": 38.3027027027027,
+      "median": 0,
+      "min": -1131,
+      "max": 1560,
+      "positive": 92,
+      "zero": 19,
+      "negative": 74,
+      "sign_test_p_two_sided": 0.1868538216468368,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 105,
+      "families": {
+       "281001": 29,
+       "281002": 32,
+       "281003": 30,
+       "281004": 32,
+       "281005": 31,
+       "281006": 31
+      },
+      "family_cluster_envelope": [
+       -8.783783783783784,
+       83.73513513513514
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "281001": {
+        "pairs": 29,
+        "mean": 3.8275862068965516,
+        "positive": 13,
+        "negative": 14,
+        "families": 29
+       },
+       "281002": {
+        "pairs": 32,
+        "mean": 36.59375,
+        "positive": 19,
+        "negative": 10,
+        "families": 32
+       },
+       "281003": {
+        "pairs": 30,
+        "mean": -16.9,
+        "positive": 13,
+        "negative": 14,
+        "families": 30
+       },
+       "281004": {
+        "pairs": 32,
+        "mean": 5.6875,
+        "positive": 15,
+        "negative": 14,
+        "families": 32
+       },
+       "281005": {
+        "pairs": 31,
+        "mean": 43.903225806451616,
+        "positive": 16,
+        "negative": 9,
+        "families": 31
+       },
+       "281006": {
+        "pairs": 31,
+        "mean": 153.80645161290323,
+        "positive": 16,
+        "negative": 13,
+        "families": 31
+       }
+      }
+     },
+     "1": {
+      "pairs": 182,
+      "mean": -8.362637362637363,
+      "median": 26.0,
+      "min": -1847,
+      "max": 903,
+      "positive": 101,
+      "zero": 10,
+      "negative": 71,
+      "sign_test_p_two_sided": 0.026730285527994155,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 95,
+      "families": {
+       "281001": 28,
+       "281002": 32,
+       "281003": 29,
+       "281004": 32,
+       "281005": 31,
+       "281006": 30
+      },
+      "family_cluster_envelope": [
+       -56.505494505494504,
+       36.027472527472526
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "281001": {
+        "pairs": 28,
+        "mean": 23.464285714285715,
+        "positive": 19,
+        "negative": 8,
+        "families": 28
+       },
+       "281002": {
+        "pairs": 32,
+        "mean": 84.96875,
+        "positive": 18,
+        "negative": 13,
+        "families": 32
+       },
+       "281003": {
+        "pairs": 29,
+        "mean": 92.6896551724138,
+        "positive": 18,
+        "negative": 9,
+        "families": 29
+       },
+       "281004": {
+        "pairs": 32,
+        "mean": 36.5,
+        "positive": 20,
+        "negative": 8,
+        "families": 32
+       },
+       "281005": {
+        "pairs": 31,
+        "mean": -29.419354838709676,
+        "positive": 15,
+        "negative": 14,
+        "families": 31
+       },
+       "281006": {
+        "pairs": 30,
+        "mean": -261.4,
+        "positive": 11,
+        "negative": 19,
+        "families": 30
+       }
+      }
+     }
+    },
+    "balanced_owner0": {
+     "pairs": 185,
+     "mean": 38.3027027027027,
+     "median": 0,
+     "min": -1131,
+     "max": 1560,
+     "positive": 92,
+     "zero": 19,
+     "negative": 74,
+     "sign_test_p_two_sided": 0.1868538216468368,
+     "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+     "changed_action": 105,
+     "families": {
+      "281001": 29,
+      "281002": 32,
+      "281003": 30,
+      "281004": 32,
+      "281005": 31,
+      "281006": 31
+     },
+     "family_cluster_envelope": [
+      -8.783783783783784,
+      83.73513513513514
+     ],
+     "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+     "rules": {
+      "281001": {
+       "pairs": 29,
+       "mean": 3.8275862068965516,
+       "positive": 13,
+       "negative": 14,
+       "families": 29
+      },
+      "281002": {
+       "pairs": 32,
+       "mean": 36.59375,
+       "positive": 19,
+       "negative": 10,
+       "families": 32
+      },
+      "281003": {
+       "pairs": 30,
+       "mean": -16.9,
+       "positive": 13,
+       "negative": 14,
+       "families": 30
+      },
+      "281004": {
+       "pairs": 32,
+       "mean": 5.6875,
+       "positive": 15,
+       "negative": 14,
+       "families": 32
+      },
+      "281005": {
+       "pairs": 31,
+       "mean": 43.903225806451616,
+       "positive": 16,
+       "negative": 9,
+       "families": 31
+      },
+      "281006": {
+       "pairs": 31,
+       "mean": 153.80645161290323,
+       "positive": 16,
+       "negative": 13,
+       "families": 31
+      }
+     }
+    }
+   },
+   "uniform": {
+    "pairs": 185,
+    "mean": 38.3027027027027,
+    "median": 0,
+    "min": -1131,
+    "max": 1560,
+    "positive": 92,
+    "zero": 19,
+    "negative": 74,
+    "sign_test_p_two_sided": 0.1868538216468368,
+    "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+    "changed_action": 105,
+    "families": {
+     "281001": 29,
+     "281002": 32,
+     "281003": 30,
+     "281004": 32,
+     "281005": 31,
+     "281006": 31
+    },
+    "family_cluster_envelope": [
+     -8.783783783783784,
+     83.73513513513514
+    ],
+    "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+    "rules": {
+     "281001": {
+      "pairs": 29,
+      "mean": 3.8275862068965516,
+      "positive": 13,
+      "negative": 14,
+      "families": 29
+     },
+     "281002": {
+      "pairs": 32,
+      "mean": 36.59375,
+      "positive": 19,
+      "negative": 10,
+      "families": 32
+     },
+     "281003": {
+      "pairs": 30,
+      "mean": -16.9,
+      "positive": 13,
+      "negative": 14,
+      "families": 30
+     },
+     "281004": {
+      "pairs": 32,
+      "mean": 5.6875,
+      "positive": 15,
+      "negative": 14,
+      "families": 32
+     },
+     "281005": {
+      "pairs": 31,
+      "mean": 43.903225806451616,
+      "positive": 16,
+      "negative": 9,
+      "families": 31
+     },
+     "281006": {
+      "pairs": 31,
+      "mean": 153.80645161290323,
+      "positive": 16,
+      "negative": 13,
+      "families": 31
+     }
+    },
+    "per_owner": {
+     "0": {
+      "pairs": 185,
+      "mean": 38.3027027027027,
+      "median": 0,
+      "min": -1131,
+      "max": 1560,
+      "positive": 92,
+      "zero": 19,
+      "negative": 74,
+      "sign_test_p_two_sided": 0.1868538216468368,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 105,
+      "families": {
+       "281001": 29,
+       "281002": 32,
+       "281003": 30,
+       "281004": 32,
+       "281005": 31,
+       "281006": 31
+      },
+      "family_cluster_envelope": [
+       -8.783783783783784,
+       83.73513513513514
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "281001": {
+        "pairs": 29,
+        "mean": 3.8275862068965516,
+        "positive": 13,
+        "negative": 14,
+        "families": 29
+       },
+       "281002": {
+        "pairs": 32,
+        "mean": 36.59375,
+        "positive": 19,
+        "negative": 10,
+        "families": 32
+       },
+       "281003": {
+        "pairs": 30,
+        "mean": -16.9,
+        "positive": 13,
+        "negative": 14,
+        "families": 30
+       },
+       "281004": {
+        "pairs": 32,
+        "mean": 5.6875,
+        "positive": 15,
+        "negative": 14,
+        "families": 32
+       },
+       "281005": {
+        "pairs": 31,
+        "mean": 43.903225806451616,
+        "positive": 16,
+        "negative": 9,
+        "families": 31
+       },
+       "281006": {
+        "pairs": 31,
+        "mean": 153.80645161290323,
+        "positive": 16,
+        "negative": 13,
+        "families": 31
+       }
+      }
+     }
+    },
+    "balanced_owner0": {
+     "pairs": 185,
+     "mean": 38.3027027027027,
+     "median": 0,
+     "min": -1131,
+     "max": 1560,
+     "positive": 92,
+     "zero": 19,
+     "negative": 74,
+     "sign_test_p_two_sided": 0.1868538216468368,
+     "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+     "changed_action": 105,
+     "families": {
+      "281001": 29,
+      "281002": 32,
+      "281003": 30,
+      "281004": 32,
+      "281005": 31,
+      "281006": 31
+     },
+     "family_cluster_envelope": [
+      -8.783783783783784,
+      83.73513513513514
+     ],
+     "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+     "rules": {
+      "281001": {
+       "pairs": 29,
+       "mean": 3.8275862068965516,
+       "positive": 13,
+       "negative": 14,
+       "families": 29
+      },
+      "281002": {
+       "pairs": 32,
+       "mean": 36.59375,
+       "positive": 19,
+       "negative": 10,
+       "families": 32
+      },
+      "281003": {
+       "pairs": 30,
+       "mean": -16.9,
+       "positive": 13,
+       "negative": 14,
+       "families": 30
+      },
+      "281004": {
+       "pairs": 32,
+       "mean": 5.6875,
+       "positive": 15,
+       "negative": 14,
+       "families": 32
+      },
+      "281005": {
+       "pairs": 31,
+       "mean": 43.903225806451616,
+       "positive": 16,
+       "negative": 9,
+       "families": 31
+      },
+      "281006": {
+       "pairs": 31,
+       "mean": 153.80645161290323,
+       "positive": 16,
+       "negative": 13,
+       "families": 31
+      }
+     }
+    }
+   }
+  },
+  "per_rule_foe": {},
+  "scope": "Same frozen prefix state, candidate first decision only. Served Native depth-2 actor-perspective score in native units; terminal band pairs excluded from means and counted. Post-hoc secondary observable, not W-L and not a preregistered endpoint. Coverage is limited to cells where the candidate profile actually moved first: the Unit-vs-uniform owner-0 game is the only paid uniform cell, so the uniform foe cells contain owner-0 candidate pairs only, while both-owner cells exist for the fixed-random foes. The served first-decision score is foe-independent, so the owner-0 cells are identical across foes; only the owner split adds information. However the owner split is confounded with ply and decision state: every scorable owner-0 pair is at relative ply 0 and every owner-1 pair at ply 1, and no (rule, family) shares the candidate's first-decision state across owners (0/182 free, 0/92 classic), although 576/576 free and 3456/3456 classic both-owner game groups start from the same frozen game root. The role cells are therefore not a matched replication."
+ },
+ "classic4_bilateral_4x4": {
+  "dataset": "classic4_bilateral_4x4",
+  "pairs": 342,
+  "reused_or_missing_pairs": {
+   "('unit',)": 128
+  },
+  "pairs_without_candidate_decision": {
+   "(False, False)": 42
+  },
+  "same_state_pairs": 342,
+  "same_root_pairs": 342,
+  "same_ply_pairs": 342,
+  "same_action_pairs": 243,
+  "terminal_band_pairs": 58,
+  "plies": {
+   "0": 242,
+   "1": 100
+  },
+  "per_foe": {
+   "random99031": {
+    "pairs": 188,
+    "mean": 52.40425531914894,
+    "median": 27.0,
+    "min": -850,
+    "max": 1037,
+    "positive": 110,
+    "zero": 14,
+    "negative": 64,
+    "sign_test_p_two_sided": 0.0006052447871282059,
+    "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+    "changed_action": 63,
+    "families": {
+     "271001": 22,
+     "271002": 22,
+     "271003": 30,
+     "271004": 22
+    },
+    "family_cluster_envelope": [
+     36.34054054054054,
+     67.59473684210526
+    ],
+    "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+    "rules": {
+     "271001": {
+      "pairs": 44,
+      "mean": 89.11363636363636,
+      "positive": 31,
+      "negative": 11,
+      "families": 22
+     },
+     "271002": {
+      "pairs": 43,
+      "mean": 54.97674418604651,
+      "positive": 22,
+      "negative": 12,
+      "families": 22
+     },
+     "271003": {
+      "pairs": 60,
+      "mean": 60.583333333333336,
+      "positive": 36,
+      "negative": 21,
+      "families": 30
+     },
+     "271004": {
+      "pairs": 41,
+      "mean": -1.6585365853658536,
+      "positive": 21,
+      "negative": 20,
+      "families": 22
+     }
+    },
+    "per_owner": {
+     "0": {
+      "pairs": 96,
+      "mean": 42.53125,
+      "median": 26.0,
+      "min": -767,
+      "max": 966,
+      "positive": 53,
+      "zero": 12,
+      "negative": 31,
+      "sign_test_p_two_sided": 0.02138318993714459,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 36,
+      "families": {
+       "271001": 22,
+       "271002": 22,
+       "271003": 30,
+       "271004": 22
+      },
+      "family_cluster_envelope": [
+       -22.875,
+       104.94791666666667
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "271001": {
+        "pairs": 22,
+        "mean": -80.5,
+        "positive": 13,
+        "negative": 7,
+        "families": 22
+       },
+       "271002": {
+        "pairs": 22,
+        "mean": 200.9090909090909,
+        "positive": 8,
+        "negative": 6,
+        "families": 22
+       },
+       "271003": {
+        "pairs": 30,
+        "mean": 31.533333333333335,
+        "positive": 19,
+        "negative": 9,
+        "families": 30
+       },
+       "271004": {
+        "pairs": 22,
+        "mean": 22.181818181818183,
+        "positive": 13,
+        "negative": 9,
+        "families": 22
+       }
+      }
+     },
+     "1": {
+      "pairs": 92,
+      "mean": 62.70652173913044,
+      "median": 85.5,
+      "min": -850,
+      "max": 1037,
+      "positive": 57,
+      "zero": 2,
+      "negative": 33,
+      "sign_test_p_two_sided": 0.014866752945626244,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 27,
+      "families": {
+       "271001": 22,
+       "271002": 21,
+       "271003": 30,
+       "271004": 19
+      },
+      "family_cluster_envelope": [
+       1.0434782608695652,
+       121.80434782608695
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "271001": {
+        "pairs": 22,
+        "mean": 258.72727272727275,
+        "positive": 18,
+        "negative": 4,
+        "families": 22
+       },
+       "271002": {
+        "pairs": 21,
+        "mean": -97.9047619047619,
+        "positive": 14,
+        "negative": 6,
+        "families": 21
+       },
+       "271003": {
+        "pairs": 30,
+        "mean": 89.63333333333334,
+        "positive": 17,
+        "negative": 12,
+        "families": 30
+       },
+       "271004": {
+        "pairs": 19,
+        "mean": -29.263157894736842,
+        "positive": 8,
+        "negative": 11,
+        "families": 19
+       }
+      }
+     }
+    },
+    "balanced_owner0": {
+     "pairs": 96,
+     "mean": 42.53125,
+     "median": 26.0,
+     "min": -767,
+     "max": 966,
+     "positive": 53,
+     "zero": 12,
+     "negative": 31,
+     "sign_test_p_two_sided": 0.02138318993714459,
+     "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+     "changed_action": 36,
+     "families": {
+      "271001": 22,
+      "271002": 22,
+      "271003": 30,
+      "271004": 22
+     },
+     "family_cluster_envelope": [
+      -22.875,
+      104.94791666666667
+     ],
+     "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+     "rules": {
+      "271001": {
+       "pairs": 22,
+       "mean": -80.5,
+       "positive": 13,
+       "negative": 7,
+       "families": 22
+      },
+      "271002": {
+       "pairs": 22,
+       "mean": 200.9090909090909,
+       "positive": 8,
+       "negative": 6,
+       "families": 22
+      },
+      "271003": {
+       "pairs": 30,
+       "mean": 31.533333333333335,
+       "positive": 19,
+       "negative": 9,
+       "families": 30
+      },
+      "271004": {
+       "pairs": 22,
+       "mean": 22.181818181818183,
+       "positive": 13,
+       "negative": 9,
+       "families": 22
+      }
+     }
+    }
+   },
+   "uniform": {
+    "pairs": 96,
+    "mean": 42.53125,
+    "median": 26.0,
+    "min": -767,
+    "max": 966,
+    "positive": 53,
+    "zero": 12,
+    "negative": 31,
+    "sign_test_p_two_sided": 0.02138318993714459,
+    "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+    "changed_action": 36,
+    "families": {
+     "271001": 22,
+     "271002": 22,
+     "271003": 30,
+     "271004": 22
+    },
+    "family_cluster_envelope": [
+     -22.875,
+     104.94791666666667
+    ],
+    "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+    "rules": {
+     "271001": {
+      "pairs": 22,
+      "mean": -80.5,
+      "positive": 13,
+      "negative": 7,
+      "families": 22
+     },
+     "271002": {
+      "pairs": 22,
+      "mean": 200.9090909090909,
+      "positive": 8,
+      "negative": 6,
+      "families": 22
+     },
+     "271003": {
+      "pairs": 30,
+      "mean": 31.533333333333335,
+      "positive": 19,
+      "negative": 9,
+      "families": 30
+     },
+     "271004": {
+      "pairs": 22,
+      "mean": 22.181818181818183,
+      "positive": 13,
+      "negative": 9,
+      "families": 22
+     }
+    },
+    "per_owner": {
+     "0": {
+      "pairs": 96,
+      "mean": 42.53125,
+      "median": 26.0,
+      "min": -767,
+      "max": 966,
+      "positive": 53,
+      "zero": 12,
+      "negative": 31,
+      "sign_test_p_two_sided": 0.02138318993714459,
+      "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+      "changed_action": 36,
+      "families": {
+       "271001": 22,
+       "271002": 22,
+       "271003": 30,
+       "271004": 22
+      },
+      "family_cluster_envelope": [
+       -22.875,
+       104.94791666666667
+      ],
+      "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+      "rules": {
+       "271001": {
+        "pairs": 22,
+        "mean": -80.5,
+        "positive": 13,
+        "negative": 7,
+        "families": 22
+       },
+       "271002": {
+        "pairs": 22,
+        "mean": 200.9090909090909,
+        "positive": 8,
+        "negative": 6,
+        "families": 22
+       },
+       "271003": {
+        "pairs": 30,
+        "mean": 31.533333333333335,
+        "positive": 19,
+        "negative": 9,
+        "families": 30
+       },
+       "271004": {
+        "pairs": 22,
+        "mean": 22.181818181818183,
+        "positive": 13,
+        "negative": 9,
+        "families": 22
+       }
+      }
+     }
+    },
+    "balanced_owner0": {
+     "pairs": 96,
+     "mean": 42.53125,
+     "median": 26.0,
+     "min": -767,
+     "max": 966,
+     "positive": 53,
+     "zero": 12,
+     "negative": 31,
+     "sign_test_p_two_sided": 0.02138318993714459,
+     "sign_test_note": "exact two-sided binomial, zeros dropped; uncorrected post-hoc test, four cells reported",
+     "changed_action": 36,
+     "families": {
+      "271001": 22,
+      "271002": 22,
+      "271003": 30,
+      "271004": 22
+     },
+     "family_cluster_envelope": [
+      -22.875,
+      104.94791666666667
+     ],
+     "envelope_note": "2.5/97.5 percentile of 2000 resamples; distinct families resampled with replacement within each rule, all scorable pairs of a sampled family kept.",
+     "rules": {
+      "271001": {
+       "pairs": 22,
+       "mean": -80.5,
+       "positive": 13,
+       "negative": 7,
+       "families": 22
+      },
+      "271002": {
+       "pairs": 22,
+       "mean": 200.9090909090909,
+       "positive": 8,
+       "negative": 6,
+       "families": 22
+      },
+      "271003": {
+       "pairs": 30,
+       "mean": 31.533333333333335,
+       "positive": 19,
+       "negative": 9,
+       "families": 30
+      },
+      "271004": {
+       "pairs": 22,
+       "mean": 22.181818181818183,
+       "positive": 13,
+       "negative": 9,
+       "families": 22
+      }
+     }
+    }
+   }
+  },
+  "per_rule_foe": {},
+  "scope": "Same frozen prefix state, candidate first decision only. Served Native depth-2 actor-perspective score in native units; terminal band pairs excluded from means and counted. Post-hoc secondary observable, not W-L and not a preregistered endpoint. Coverage is limited to cells where the candidate profile actually moved first: the Unit-vs-uniform owner-0 game is the only paid uniform cell, so the uniform foe cells contain owner-0 candidate pairs only, while both-owner cells exist for the fixed-random foes. The served first-decision score is foe-independent, so the owner-0 cells are identical across foes; only the owner split adds information. However the owner split is confounded with ply and decision state: every scorable owner-0 pair is at relative ply 0 and every owner-1 pair at ply 1, and no (rule, family) shares the candidate's first-decision state across owners (0/182 free, 0/92 classic), although 576/576 free and 3456/3456 classic both-owner game groups start from the same frozen game root. The role cells are therefore not a matched replication."
+ }
+}
