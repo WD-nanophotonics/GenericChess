@@ -1,0 +1,59 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "written_at_utc": "2026-10-18T14:42:00Z",
+ "written_before_the_run": true,
+ "git_head_at_plan_time": "a35da1c2798a82557220268d3d2e2960ea511a33",
+ "question": "When the in-zone promotion bonus pays a promotable piece and no legal promotion action exists from that square, why not - because the square is no promotion source for that piece's base type at all, because no allowed promotion destination is reachable, or because every allowed promotion target is structurally dead at that destination?",
+ "why_it_changes_a_decision": "The previous artifacts establish a contact count and a seed-level zone/promotion disjointness partition. Neither says how the non-contact mass splits between geometry fixed by the compiled rules and destination-side effects that depend on the played position. If the mass is mostly geometry, the honest reading is that the zone is not a promotion square for the pieces actually observed and the terms should not be expected to coincide; if it is mostly destination-side, the same rulesets can bind promotion in principle and the observed zero is a property of these positions rather than of the rules. The two readings imply different follow-up work, so the split decides the next question.",
+ "inputs": {
+  "stored_games_dir": ".local_agent/hand-utility-games-20261018",
+  "stored_game_files": {
+   "results_hand_term_match_served-blind_d2_n20000_s59-70.json": "b83fe7eb9989a5852e924cb7ab000f941a01cfe831cd9d38e11abfb5a30e1f01",
+   "results_hand_term_match_served-blind_d2_n20000_s71-94.json": "ca7be8851b9193c7f6b073eec1acab4d6eba73b540b88d668f56c25fc17ec77c",
+   "results_hand_term_match_served-blind_d3_n20000_s59-70.json": "0f5b4bddb9f886a2fe3b46a7249ba50b1a0a578097c011d188d4151e5a2ab25b",
+   "results_hand_term_match_served-blind_d3_n20000_s71-94.json": "6f153e666727e9f494fb9ed36f9a05b9ddd3a7198b4dab8c054aac0e1db56359",
+   "results_hand_term_match_served-served_d2_n20000_s59-70.json": "3b6cc674198371b996030c4bcf63de233570aea640fa5b97adda8a62650132b3",
+   "results_hand_term_match_served-served_d2_n20000_s71-94.json": "1b28ba7520051b5709e403d14635d06bca474fd040174a5d6064367cb4c9b36e"
+  },
+  "cross_check_inputs": {
+   "results_bind_reachability_to_decisions.json": "0979ef27dda4e3e5542b6b6e3eff3340ec32502300fef66f83cb702a00b4ff80",
+   "results_zone_promotion_disjointness.json": "83b076348312882762307acafcc1c7a4c1044c1fa29678f7485d7465a7cf7507"
+  },
+  "rules": "GeneratorConfig(seed, board_size=4, setup_preset='classic_like') regenerated deterministically per seed; the served evaluator, its zone definition and compiled.promotion_allowed are used unchanged"
+ },
+ "no_new_search": true,
+ "no_new_games": true,
+ "replay_precondition": "terminal status, winner and ply count of each replayed game must equal the stored values, as in Stage 8",
+ "contact_definition": "unchanged from Stage 8: an in-zone paid square that is the from_square of a legal BoardMove whose promotion_target_id is not None",
+ "partition": {
+  "in_zone_contact": "legal promotion action exists from the square (identical to the Stage 8 contact count)",
+  "zone_geometry_no_source": "the square is not a promotion source for this piece's base type and side in compiled.promotion_allowed",
+  "no_reachable_allowed_destination": "the square is a source, but no pseudo-legal move from it reaches an allowed promotion destination; recorded sub-split no_legal_move_from_square against moves_exist_but_none_is_an_allowed_promotion",
+  "dead_promotion_target": "a pseudo-legal move reaches an allowed promotion destination, but every promotion target type has zero empty mobility there",
+  "filtered_by_legal_safety": "the promotion is pseudo-legal but absent from legal_actions; expected zero, recorded rather than assumed"
+ },
+ "amendment_1": {
+  "written_at_utc": "2026-10-18T14:44:30Z",
+  "written_before_the_run": true,
+  "reason": "Reading generic_chess/core/movegen.py before running shows legal_actions only ever contains moves of position.side_to_move, while the evaluator pays the in-zone bonus to promotable pieces of either owner. An idle-side observation therefore cannot be a contact for a reason that is definitional, and folding it into the non-contact mass would make the decision rule uninterpretable. The change is derived from the source, not from any result.",
+  "change": "Every observation is also tagged piece_to_move. The five buckets are computed for all observations, and no-legal-action cases on the idle side are named would_promote_but_not_to_move instead of being called filtered_by_legal_safety. The decision rule below is applied to the non-contact mass of the pieces that are to move, and the idle-side mass is reported separately as descriptive only."
+ },
+ "pre_written_decision_rule": {
+  "let": "N = in-zone paid observations, D = in_zone_contact, M = non-contact mass among pieces that are to move; the idle-side mass never enters the rule",
+  "if_zone_geometry_no_source_at_least_half_of_M": "missing_contact_is_mostly_zone_geometry",
+  "elif no_reachable_allowed_destination_plus_dead_promotion_target_at_least_half_of_M": "missing_contact_is_mostly_destination_side",
+  "else": "missing_contact_is_split_without_a_majority",
+  "if_M_is_zero": "no_missing_contact_mass_to_classify",
+  "if_filtered_by_legal_safety_above_zero": "record it and do not fold it into the destination-side bucket"
+ },
+ "endpoint": "in_zone_missing_contact_partition_recorded",
+ "done_condition": "results_zone_promotion_source_classification.json exists with the five buckets summing to N, D equal to the Stage 8 contact total, every opportunity-disjoint seed contributing only zone_geometry_no_source observations, and the pre-written decision rule reported as fired or not",
+ "excluded_on_purpose": [
+  "no rate contrast between the in-zone and outside-zone arms; the withdrawn contrast is not recomputed",
+  "no statement that a term changed a chosen action, an outcome or a strength",
+  "no claim beyond board 4, classic_like, the six stored game files listed above",
+  "no new games, no search, no fitness evaluation, no evaluator edit"
+ ],
+ "cost_estimate": "one replay of 182 deduplicated stored games, about three seconds of compute; engineering and report writing are the rest"
+}

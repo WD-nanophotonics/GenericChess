@@ -13,7 +13,20 @@ import tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.resolve().parents[1]
+
+
+def _worktree_root(start: Path) -> Path:
+    """Find the checkout root by marker, so this check behaves the same from the
+    private study directory and from the published copy.  Deriving the root from
+    ``HERE.parents[1]`` pointed the published copy at a nonexistent
+    docs/research/docs/... tree."""
+    for candidate in (start, *start.parents):
+        if (candidate / "generic_chess").is_dir() and (candidate / "docs").is_dir():
+            return candidate
+    raise SystemExit(f"cannot locate the worktree root above {start}")
+
+
+ROOT = _worktree_root(HERE)
 PUBLISHED = ROOT / "docs" / "research" / "data" / "profile_transform_invariance_20261018"
 
 

@@ -426,6 +426,69 @@ mechanism, alongside the seed-level split above, for why the pooled Stage 8
 ratio is a composition average over heterogeneous ruleset geometries rather
 than a uniform property of this generator.
 
+### Why an in-zone promotable piece has no legal promotion (Stage 11, replay only)
+
+`scan_zone_promotion_source_classification.py` replays the same six stored game
+files as Stage 8: 182 games, 34 duplicate move lists dropped, 3,062 positions,
+and every replay reproduces its stored terminal status, winner and ply count. It
+adds no games, no search and no evaluator change. The partition and the decision
+rule were written in `plan_zone_promotion_source_classification.json` before the
+run, with one amendment that is also timestamped before the run and derived from
+`movegen.py` rather than from a result.
+
+The observations are identical to Stage 8: 2,489 in-zone paid observations and
+53 contacts. Of the 2,436 non-contacts, 1,281 are observations of a piece that is
+not to move. `legal_actions` only ever contains moves of the side to move
+(`generic_chess/core/movegen.py`), so an idle piece cannot be a contact by turn
+order; those cases are named `would_promote_but_not_to_move` and are kept out of
+the decision rule as descriptive only.
+
+On the 1,155 non-contact observations of pieces that are to move, the
+pre-written rule fires `missing_contact_is_mostly_zone_geometry`:
+
+* 969 (83.9 %) — the paid square is not a promotion source for that base type at
+  all in `compiled.promotion_allowed`, so the compiled rules never allow a
+  promotion from there;
+* 174 (15.1 %) — the square is a source, but no pseudo-legal move from it reaches
+  an allowed promotion destination (338 observations in the whole set have no
+  move from the square at all, 40 have moves but none to an allowed promotion
+  destination);
+* 0 — the destination is allowed and reachable but every promotion target type
+  has zero empty mobility there;
+* 12 — the promotion variant is pseudo-legal, alive and allowed, yet absent from
+  `legal_actions`.
+
+The 12 are not promotion-specific. In every one of them the unpromoted sibling
+move from the same square is also absent from `legal_actions`, so the
+anchor-safety filter refuted the parent move and its promotion variants with it;
+there are 0 cases with a legal unpromoted sibling and 0 forced-promotion squares.
+The zero in the dead-target row is measured on geometrically reachable
+destinations and also has no library-side counterpart, because
+`movegen._promotion_variants` only emits a variant whose target type has mobility
+there.
+
+What this changes is the reading of the Stage 8 contact count, not its size. For
+most of the observed mass the bonus pays at squares from which the compiled rules
+cannot promote at all, so the zone term and the promotion term should not be
+expected to coincide on these rulesets; a minority is destination-side, where the
+same rulesets can bind promotion in principle and the absence belongs to the
+position. It is still not a rate contrast: nothing here compares in-zone with
+outside-zone, and nothing here shows that any term changed a chosen action, an
+outcome or a strength. Scope: board 4, `classic_like`, these six stored files.
+
+`verify_zone_promotion_source_classification.py` re-implements the start walker,
+the geometric destination enumeration and the bucket derivation without importing
+the scan under test, and reproduces every bucket count with 0 replay mismatches;
+its 14 checks pass and its output is published as
+`verification_zone_promotion_source_classification.json`. One defect was found
+and fixed before publication: the first private run cached the promotion table by
+`id(compiled)`, and because each game builds a fresh ruleset whose id can be
+recycled, one ruleset's promotion table could be reused for another seed — seed
+77 lost cases. An independent per-case probe reported 8 pseudo-legal-but-illegal
+promotions in seed 77 while that run reported 6, which is how the leak surfaced.
+The cache is now keyed by `compiled.ruleset_fingerprint`; both discarded runs are
+recorded by SHA-256 in `defect_corrections` and no number from them is used.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward

@@ -63,6 +63,9 @@ JSON_FILES = [
     "results_contact_concentration.json",
     "plan_zone_promotion_disjointness.json",
     "results_zone_promotion_disjointness.json",
+    "plan_zone_promotion_source_classification.json",
+    "results_zone_promotion_source_classification.json",
+    "verification_zone_promotion_source_classification.json",
 ]
 
 PY_FILES = [
@@ -85,6 +88,8 @@ PY_FILES = [
     "analyze_contact_concentration.py",
     "scan_zone_promotion_disjointness.py",
     "verify_zone_promotion_disjointness.py",
+    "scan_zone_promotion_source_classification.py",
+    "verify_zone_promotion_source_classification.py",
     "make_public_evidence.py",
 ]
 

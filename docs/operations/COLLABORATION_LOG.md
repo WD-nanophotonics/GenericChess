@@ -4484,3 +4484,40 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   `make_public_evidence.py` so it finds the checkout root by marker instead of
   by directory depth - running the published copy previously wrote a nested
   `docs/research/docs/...` tree and failed to find the Stage 7 sources.
+
+### DEEPSEEK_AUX stage 11: the in-zone non-contact mass is mostly zone geometry
+  (2026-10-18, session `3d8dc073`).** Stage 8 counted contacts; Stage 10 showed
+  some rulesets make that count definitional. Neither said how the remaining
+  mass splits, and the two readings imply different follow-up work.
+  `scan_zone_promotion_source_classification.py` replays the same six stored
+  game files (182 games, 34 duplicate move lists dropped, 3,062 positions,
+  every replay reproducing its stored terminal status, winner and ply count; no
+  new games, no search, no evaluator change), with the partition and decision
+  rule pre-written in `plan_zone_promotion_source_classification.json`. A
+  pre-run amendment derived from `movegen.py` separates the 1,281 observations
+  of pieces that are not to move: `legal_actions` only contains the side to
+  move, so an idle piece cannot be a contact by turn order, and that mass is
+  reported as descriptive rather than folded into the rule.
+  The observations are identical to Stage 8 (2,489 in-zone paid, 53 contacts).
+  On the 1,155 non-contact observations of pieces that are to move the rule
+  fires `missing_contact_is_mostly_zone_geometry`: 969 (83.9%) sit on squares
+  that are not a promotion source for that base type in
+  `compiled.promotion_allowed` at all, 174 (15.1%) are sources with no
+  pseudo-legal move to an allowed promotion destination, 0 reach an allowed
+  destination whose promotion targets are all immobile, and 12 are
+  pseudo-legal-but-illegal. All 12 are refutations of the parent move by the
+  anchor-safety filter - the unpromoted sibling from the same square is illegal
+  too - so 0 are promotion-specific; the verifier reproduces that split with
+  its own sibling test. One real defect was found and fixed before publication:
+  the first private run cached the promotion table by `id(compiled)`, and since
+  each game compiles a fresh ruleset whose id can be recycled, one ruleset's
+  table leaked into another seed and seed 77 lost cases; an independent
+  per-case probe reported 8 pseudo-legal-but-illegal promotions there while the
+  run reported 6. The cache is keyed by `compiled.ruleset_fingerprint`, both
+  discarded runs are recorded by SHA-256 in `defect_corrections`, and no number
+  from them is used. Limits carried into the report: this changes the reading
+  of the Stage 8 count, not its size; no in-zone-versus-outside rate is
+  computed, and no chosen action, outcome, utility or strength is claimed.
+  Scope: board 4, `classic_like`, those six stored files. Delivery: public
+  evidence copy rebuilds 53/53 including the verifier's own output, 14 checks
+  pass, 73 focused tests pass.

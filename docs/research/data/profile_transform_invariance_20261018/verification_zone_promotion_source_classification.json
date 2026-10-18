@@ -1,0 +1,131 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "verifier": "verify_zone_promotion_source_classification.py",
+ "verdict": "all_checks_passed",
+ "checks": [
+  {
+   "check": "all_buckets_sum_to_observation_total",
+   "passed": true,
+   "detail": {
+    "buckets": [
+     "in_zone_contact",
+     "zone_geometry_no_source",
+     "no_reachable_allowed_destination",
+     "dead_promotion_target",
+     "pseudo_promotion_filtered_by_legal_safety",
+     "would_promote_but_not_to_move"
+    ],
+    "sum": 2489,
+    "total": 2489
+   }
+  },
+  {
+   "check": "side_split_reconciles",
+   "passed": true,
+   "detail": {
+    "to_move": 1208,
+    "idle": 1281,
+    "contact": 53,
+    "moving": 1155,
+    "recorded": 1155
+   }
+  },
+  {
+   "check": "contact_equals_stage8",
+   "passed": true,
+   "detail": {
+    "here": 53,
+    "stage8": 53
+   }
+  },
+  {
+   "check": "observations_equal_stage8",
+   "passed": true,
+   "detail": {
+    "here": 2489,
+    "stage8": 2489
+   }
+  },
+  {
+   "check": "no_problems_recorded",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "per_seed_rows_match_summary",
+   "passed": true,
+   "detail": {}
+  },
+  {
+   "check": "disjoint_seeds_are_geometry_only",
+   "passed": true,
+   "detail": {
+    "seeds": [
+     63,
+     84,
+     85,
+     87,
+     93
+    ],
+    "offending": {}
+   }
+  },
+  {
+   "check": "decision_rule_reproduces",
+   "passed": true,
+   "detail": {
+    "fired": "missing_contact_is_mostly_zone_geometry"
+   }
+  },
+  {
+   "check": "withdrawn_rate_contrast_absent",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "defect_corrections_recorded",
+   "passed": true,
+   "detail": [
+    {
+     "what": "promotion-table cache keyed by id(compiled)",
+     "how_found": "the independent per-case probe recorded 8 pseudo-legal-but-illegal promotions while this scan reported 6, all in seed 77",
+     "cause": "each game builds a fresh compiled ruleset; the released object's id was recycled, so a promotion table could be reused across seeds",
+     "fix": "cache keyed by compiled.ruleset_fingerprint",
+     "discarded_runs": [
+      "564bf23dac55da5ccbb9abc94be21ecb3d0512afc2b8095873122b8a19ff38da",
+      "716e993fe74cc810d6787fd5fb4a18d6f1ca9feb31a6a3ae5a53cb90d1fa160"
+     ],
+     "status": "private and unpublished; no number from either run is used in a report"
+    }
+   ]
+  },
+  {
+   "check": "independent_replay_matches_all_buckets",
+   "passed": true,
+   "detail": {
+    "replay_mismatch": 0
+   }
+  },
+  {
+   "check": "independent_expansion_uniform",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "filtered_cases_have_no_legal_unpromoted_sibling",
+   "passed": true,
+   "detail": {
+    "legal_sibling": 0,
+    "no_legal_sibling": 12,
+    "recorded_promotion_specific": 0,
+    "recorded_parent_move": 12,
+    "filtered_total": 12
+   }
+  },
+  {
+   "check": "independent_per_seed_contact_matches",
+   "passed": true,
+   "detail": null
+  }
+ ]
+}

@@ -5,10 +5,10 @@ Public copy of the evidence behind
 
 Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
-disjointness artifact below was added from the same role's later session
-`3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result; no other role has
-rerun it. No strength, playing-quality, utility, human-price or game-outcome
-claim is made anywhere in this directory.
+disjointness and source-classification artifacts below were added from the same
+role's later session `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
+no other role has rerun it. No strength, playing-quality, utility, human-price
+or game-outcome claim is made anywhere in this directory.
 
 The study generates rules only through the existing generator
 (`GeneratorConfig`, seeds 292001–292052 and 292101–292112, board sizes 6 and 8,
@@ -39,6 +39,16 @@ zone intersects that type's compiled promotion sources, with its endpoint in
 in-zone bonus are disjoint, so an in-zone contact ratio on those seeds is
 definitional rather than measured; the artifact carries no contact count or
 rate and `verify_zone_promotion_disjointness.py` rejects it if one is added.
+
+`scan_zone_promotion_source_classification.py` shares the replay-only scope and
+adds the split of the in-zone non-contact mass: is the paid square no promotion
+source at all, is no allowed destination reachable, or is every target dead?
+Its endpoint and its decision rule are in
+`plan_zone_promotion_source_classification.json` (with one amendment written
+before the run), it carries no in-zone-versus-outside rate, and
+`verify_zone_promotion_source_classification.py` recomputes every bucket
+independently and writes the verdict published here as
+`verification_zone_promotion_source_classification.json`.
 
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
@@ -82,6 +92,9 @@ present, so running the published copy no longer writes a nested
 | `results_contact_concentration.json` | 10154 | `2f2fe05b70ff60ae76cff8dda5a095853e2136eef45a80e0f8b177b0f0e190be` |
 | `plan_zone_promotion_disjointness.json` | 2316 | `e3561e1bfcdcd76b8a5ccd7586a87876196438625694887ebbc4962b051f2ec9` |
 | `results_zone_promotion_disjointness.json` | 13545 | `83b076348312882762307acafcc1c7a4c1044c1fa29678f7485d7465a7cf7507` |
+| `plan_zone_promotion_source_classification.json` | 6353 | `553ad2f7f540d2743b9bf8bde3b83ada4de223675cbd328d3682c0ff338dd841` |
+| `results_zone_promotion_source_classification.json` | 64409 | `317790885790abca5c3b7170b76342a6474a2381828f3988f926a8f88387b7cd` |
+| `verification_zone_promotion_source_classification.json` | 3006 | `38674713b150c6a079c91c48f4b6fa7b73d20bedf5e144eedd7b61db37d05057` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -92,7 +105,7 @@ present, so running the published copy no longer writes a nested
 | `verify_half_bonus_branch.py` | 8655 | `1e441a47c9699606f4586d4a2f5b017e7d80ff644a3666ccca51057feb96051f` |
 | `verify_promotion_cancellation.py` | 5409 | `7cc294025c1a6d89211ffaa5e5e6297bc76ba1ecdd1c6515da5562aeb4ca269c` |
 | `verify_zone_effect_heldout.py` | 12398 | `eaddc2f61988fb3bd866988dbbedcb5a65b3558961ce76bb8e9cfb1193cb3f5f` |
-| `verify_public_copy_rebuild.py` | 2030 | `a35b3c7afab8ead1492779ddb92dbcfbc6adbb15b7a0e2cb9e951cc926541e04` |
+| `verify_public_copy_rebuild.py` | 2580 | `7c20f36da483ee8864f15b984e009a52ce7127a4c77bcf39a2dff69c26011f95` |
 | `audit_leaf_terms.py` | 16581 | `f48e06fef9cf1b4ef863387f3a7908ee796e35f790a61a7465a037360fbde545` |
 | `scan_stored_games_leaf_terms.py` | 11149 | `2a134c3ee8e6ff8d6635fc1e57fe9ef3276df7aaf79bd9ebd57d69f13d4b7db4` |
 | `static_zone_share_boards.py` | 3066 | `fb30e7d47d639273c1da0fe9446773ec9f4ce8b88203cf783be1a879c9e2383b` |
@@ -101,7 +114,9 @@ present, so running the published copy no longer writes a nested
 | `analyze_contact_concentration.py` | 9537 | `3a0c74f94eb670e48742bd45af4da0b44446121a8fd07749c712e96e818609e1` |
 | `scan_zone_promotion_disjointness.py` | 7131 | `03b46440c099101de44b889b589255dea8af7dec2c514607b552927217f500f5` |
 | `verify_zone_promotion_disjointness.py` | 4343 | `5e3657a4ae101d9489cbd639beaf71c5ed07e227e598b3d056223cffc9b947f7` |
-| `make_public_evidence.py` | 5406 | `4e4bc85025414bc906b7684214275efd65af0356f5748310a4cf5e40554708a6` |
+| `scan_zone_promotion_source_classification.py` | 23754 | `153d857499c1e6e771a0965bed4426391121f985fd3b7389001e3364dad612e0` |
+| `verify_zone_promotion_source_classification.py` | 19203 | `8e088f0449829aa056fa1710e41b74bb78f4b239cda1cf413a22d77b8ce5dd5f` |
+| `make_public_evidence.py` | 5690 | `cb3c66973c3ea9bb7f850fca3f538cd3deed0537be497814def9fc2aaa734dc8` |
 
 `manifest.json` holds the same table in machine-readable form.
 
