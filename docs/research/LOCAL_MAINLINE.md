@@ -1,7 +1,7 @@
 # DEV_AUX99 — matched TRAIN/DEPLOY contexts; scientific OPEN
 
-Own session9219e39a-a1b9-48b5-88ae-d4dd4d37224d actualstart2026-10-18T22:31:24.003355+00:00 unchanged; ACTIVE;science/reproclosed, officialfinishpending.
-SourcePENDING_REVIEWED_SOURCE_PUBLICATION; own sidemission/PUBLIC; otherrolesreadonly/noadoptionclaim.
+Own session9219e39a-a1b9-48b5-88ae-d4dd4d37224d actualstart2026-10-18T22:31:24.003355+00:00 unchanged; ENDED77.275min/safe_checkpoint.
+Sourcedeebe6eae5c48e1dddfac5d89bfa5f68dbaeffee; own sidemission/PUBLIC; otherrolesreadonly/noadoptionclaim.
 ALL8TRAINarms each1.5Mpaidnodes, SAME TD eta.05 lambda.95/all4initials;
 candidateplain/q2, fixedplainuniformfoe. Main576fullmatrix/allcontexts;
 separate192newrootpanel ALLprices/candidateq2 vsSAMEq2foes, registeredbeforemainfitness.
