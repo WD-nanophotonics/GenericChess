@@ -75,6 +75,9 @@ JSON_FILES = [
     "plan_stage14_seed_closures.json",
     "results_stage14_seed_closures.json",
     "verification_stage14_seed_closures.json",
+    "plan_stage15_board_scale_zone_disjointness.json",
+    "results_stage15_board_scale_zone_disjointness.json",
+    "verification_stage15_board_scale_zone_disjointness.json",
 ]
 
 PY_FILES = [
@@ -105,6 +108,8 @@ PY_FILES = [
     "verify_stage13_option_set.py",
     "analyze_stage14_seed_closures.py",
     "verify_stage14_seed_closures.py",
+    "scan_stage15_board_scale_zone_disjointness.py",
+    "verify_stage15_board_scale_zone_disjointness.py",
     "make_public_evidence.py",
 ]
 

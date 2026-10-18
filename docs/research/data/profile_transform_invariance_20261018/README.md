@@ -7,7 +7,7 @@ Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
 disjointness, source-classification, Stage 12 contact-choice, Stage 13
 option-set and Stage 14 seed-closure artifacts below were added from the same
-role's later session
+role's later session, together with the Stage 15 board-scale artifacts
 `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
 no other role has rerun it. No strength, playing-quality, utility, human-price
 or game-outcome claim is made anywhere in this directory.
@@ -96,6 +96,19 @@ wrong output was not carried anywhere. `verify_stage14_seed_closures.py`
 re-implements the rule from the three source files and reproduces every row and
 the decision (8 checks).
 
+`scan_stage15_board_scale_zone_disjointness.py` asks whether that exclusion is a
+board-4 artefact. It regenerates the same 36 seeds at board sizes 4, 6 and 8
+with `classic_like` and recomputes the same geometric partition; there is no
+search, no replay and no new game. The disjoint share falls slowly with board
+size - 25 of 36 seeds at board 4 (0.694), 22 at board 6 (0.611), 20 at board 8
+(0.556) - and the median seed has no zone square that is a promotion source at
+any of the three sizes. The pre-registered rule therefore fires
+`disjointness_persists_across_board_sizes`: the structural exclusion is not
+created by the small board. `verify_stage15_board_scale_zone_disjointness.py`
+regenerates every ruleset through its own index arithmetic, reproduces all 108
+seed-by-board rows, re-derives the decision and cross-checks the board-4 column
+against the separately published Stage 10 disjoint list (8 checks).
+
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
 the checkout root with `<repo>` and any home directory with `<home>`; nothing
@@ -162,6 +175,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage14_seed_closures.json` | 3089 | `516900c30c7f79b66588cb7beb3da35b77ac8724f4b8e6b74298d674b339a412` |
 | `results_stage14_seed_closures.json` | 10610 | `a6934149f3b6f331251fd022ded6f9d817a2d5362d446aa50b0a0ff69eb0d52e` |
 | `verification_stage14_seed_closures.json` | 1837 | `85d55d08709395c0ee0910e77f1b67ad11d48a43c18eec617e9484fbc3aba66c` |
+| `plan_stage15_board_scale_zone_disjointness.json` | 3781 | `e1ee626b53321f002a0a2b0c1d4a419bad8cf3310cc66a731d0f5410b45f9869` |
+| `results_stage15_board_scale_zone_disjointness.json` | 40297 | `47ac9a6602979a75b22330648d0d58a6ce770fb2dbc37af926f91d9eef0b6bf6` |
+| `verification_stage15_board_scale_zone_disjointness.json` | 1254 | `ef5b873921fb330d35156ed468574576940f1b2babe6ccecbd9d111fe8d4c8f5` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -189,7 +205,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_stage13_option_set.py` | 13890 | `70e1792eecfc4c1c991364170290b34052eb1408f0d29ec158ff4d86a25ff43a` |
 | `analyze_stage14_seed_closures.py` | 10921 | `f5df1b3fb27e5800b05622e58bdf7cee5529314cb38e33834dc4038f8f56531f` |
 | `verify_stage14_seed_closures.py` | 6548 | `f1fccc62ae526dd9d197c7dff061d496014274eaed4b367e8ccea16e34b4772a` |
-| `make_public_evidence.py` | 6310 | `4d5dedcca8493adbdd81cb42d77fe03c777fff838bb10fee3144d747079e4760` |
+| `scan_stage15_board_scale_zone_disjointness.py` | 7491 | `ec1c12f431f3bf8b37185ed808ac9d95849fe11bfec20181acd92546f908b7de` |
+| `verify_stage15_board_scale_zone_disjointness.py` | 6710 | `292acbf61a28116f1e1d0522c0c221436781838195b9ad621b1266f206e74888` |
+| `make_public_evidence.py` | 6599 | `9c0245b118be7c944b30568596b0f79c62f1e3c18fdd9ef9cd1c1cbb42e377a3` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -226,6 +244,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage14_seed_closures.json` | the endpoint, the six-class closure rule and the decision rule for the Stage 14 re-read, written before the run; only the later `execution` record was added |
 | `results_stage14_seed_closures.json` | `every_zero_contact_seed_has_a_named_structural_closure` - the 14 seeds with in-zone observations split 7 with contacts / 2 with a promotion source but no reachable allowed destination (seeds 61, 72) / 5 with a zone disjoint from every promotion source (seeds 63, 84, 85, 87, 93), leaving no unexplained seed; re-read only, and a closure is not a valuation |
 | `verify_stage14_seed_closures.py` | re-implements the closure rule from the three stored source files instead of importing the analysis, reproduces every per-seed class and the decision, re-checks the bucket re-aggregation and rejects the withdrawn rate markers (`all_checks_passed`, 8 checks) |
+| `plan_stage15_board_scale_zone_disjointness.json` | the endpoint, the board sizes, the two-measure decision rule and the unsupported-board handling for the Stage 15 pass, written before the run; the later `execution` record and `status` are added by the scan |
+| `results_stage15_board_scale_zone_disjointness.json` | `disjointness_persists_across_board_sizes` - the same 36 seeds regenerated at boards 4, 6 and 8 give disjoint shares 25/36 (0.694), 22/36 (0.611) and 20/36 (0.556), and the median seed has no zone square that is a promotion source at any size, so the board-4 exclusion is not a small-board artefact; geometry only, no contact count and no rate |
+| `verify_stage15_board_scale_zone_disjointness.py` | independent regeneration through `Square.rank`/`Square.file` index arithmetic instead of the scan's helper, matching all 108 seed-by-board rows, re-deriving the decision and cross-checking the board-4 column against the published Stage 10 list (`all_checks_passed`, 8 checks) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 

@@ -4628,3 +4628,34 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   `classic_like`, the six stored Stage-8 files.
   Delivery: public evidence copy rebuilds 68/68 including the verifier's own
   output.
+
+### DEEPSEEK_AUX stage 15: the board-4 zone/promotion exclusion is not a
+  small-board artefact (2026-10-18, same session `3d8dc073`).** Every
+  measurement in this study is board 4, so the natural objection to Stages 10
+  and 14 is that a 4x4 board is simply too small for a paid zone to meet a
+  promotion source. `scan_stage15_board_scale_zone_disjointness.py` regenerates
+  the *same* 36 seeds at board sizes 4, 6 and 8 with `classic_like` and
+  recomputes the identical geometric partition; no search, no replay and no new
+  game. Endpoint, boards, decision rule and unsupported-board handling were
+  fixed in `plan_stage15_board_scale_zone_disjointness.json` before the run.
+  The disjoint share falls from 25/36 (0.694) at board 4 to 22/36 (0.611) at
+  board 6 and 20/36 (0.556) at board 8, and the median seed's share of zone
+  squares that are promotion sources is exactly 0.0 at all three sizes, so the
+  pre-written rule fires `disjointness_persists_across_board_sizes`: the
+  exclusion is structural rather than a small-board artefact.
+  `verify_stage15_board_scale_zone_disjointness.py` regenerates every ruleset
+  through its own `Square.rank`/`Square.file` index arithmetic instead of the
+  scan's helper, matches all 108 seed-by-board rows, re-derives the decision
+  and cross-checks the board-4 column against the separately published Stage 10
+  disjoint list (25 seeds, equal); 8 checks pass and its output is published as
+  `verification_stage15_board_scale_zone_disjointness.json`.
+  Limits kept: this is geometry, not behaviour - it says whether a promotion
+  action can exist on an in-zone square, not whether search would choose it or
+  what the zone term is worth; larger boards give both bigger zones and more
+  sources in absolute squares, so the modest decline is consistent with mild
+  dilution rather than a qualitative change; no played positions exist at board
+  6 or 8, so reachability there stays unmeasured; no contact count, no
+  in-zone-versus-outside rate, no strength, quality, utility or causal claim.
+  Scope: boards 4, 6 and 8, `classic_like` only.
+  Delivery: public evidence copy rebuilds 73/73 including the verifier's own
+  output.

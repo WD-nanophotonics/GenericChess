@@ -1,0 +1,49 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "verifies": "results_stage15_board_scale_zone_disjointness.json",
+ "decision": "disjointness_persists_across_board_sizes",
+ "verdict": "all_checks_passed",
+ "checks": [
+  {
+   "check": "every_seed_times_every_board_present",
+   "passed": true,
+   "detail": "rows=108 seeds=36 boards=3"
+  },
+  {
+   "check": "no_unsupported_board",
+   "passed": true,
+   "detail": "unsupported=[]"
+  },
+  {
+   "check": "independent_rebuild_matches_every_row",
+   "passed": true,
+   "detail": "mismatches=0"
+  },
+  {
+   "check": "per_board_tallies_and_shares_reproduce",
+   "passed": true,
+   "detail": "all boards"
+  },
+  {
+   "check": "board4_column_matches_the_published_stage10_disjoint_list",
+   "passed": true,
+   "detail": "board4=25 stage10=25"
+  },
+  {
+   "check": "board4_disjoint_count_is_25",
+   "passed": true,
+   "detail": "count=25"
+  },
+  {
+   "check": "decision_recomputed_from_the_rule",
+   "passed": true,
+   "detail": "expected=disjointness_persists_across_board_sizes stored=disjointness_persists_across_board_sizes"
+  },
+  {
+   "check": "withdrawn_rate_markers_absent",
+   "passed": true,
+   "detail": "found=[]"
+  }
+ ]
+}

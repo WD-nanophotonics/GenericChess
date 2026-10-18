@@ -1,0 +1,49 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "stage": 15,
+ "question": "Is the board-4 zone/promotion-source disjointness a small-board artefact, or does it persist at board sizes 6 and 8?",
+ "why_this_question": "Stage 10 and Stage 14 close the zero-contact seeds with zone geometry, but every measurement in this study is board 4 with setup_preset classic_like. If the disjointness is a small-board artefact then the published low in-zone contact rate says nothing about larger boards and the next valuation step should move there; if it persists then the structural exclusion is generic and the zone term's promotion interaction is weak for reasons that do not depend on board size. Either answer changes where the next research step should go, and neither is answerable from the stored files.",
+ "design": {
+  "seeds": "exactly the seeds that appear in the stored Stage 8 per-game records - the same 36 seeds already examined, so the comparison is controlled by seed",
+  "boards": [
+   4,
+   6,
+   8
+  ],
+  "setup_preset": "classic_like",
+  "no_search": true,
+  "no_replay": true,
+  "no_new_games": true,
+  "only_ruleset_regeneration": true,
+  "zone": "evaluator._zones[(base_type_id, side)] for base types with a positive promotion gain",
+  "promotion_sources": "from_square of compiled.promotion_allowed[base_type_id][side]",
+  "counting": "per (base type, side) pair, so one square may be counted for more than one pair"
+ },
+ "endpoint": "per_seed_board_rows (seed x board) plus a per_board summary carrying: seeds_examined, seeds_disjoint, disjoint_share, median_zone_square_share_that_are_promotion_sources, unsupported_boards",
+ "decision_rule_written_before_the_run": {
+  "primary_measure": "disjoint_share = seeds_disjoint / seeds_examined, computed per board",
+  "board4_disjointness_is_a_small_board_artefact": "disjoint_share(6) <= 0.5 * disjoint_share(4) AND disjoint_share(8) <= 0.5 * disjoint_share(4)",
+  "disjointness_persists_across_board_sizes": "disjoint_share(6) >= 0.75 * disjoint_share(4) AND disjoint_share(8) >= 0.75 * disjoint_share(4)",
+  "mixed_board_size_dependence": "any other outcome",
+  "unsupported_handling": "a board size that the generator or the profile cannot build is recorded as unsupported and excluded from the decision; it is never replaced by a fabricated or interpolated result",
+  "tie_handling": "the two decision branches are mutually exclusive by construction because 0.5 < 0.75; no seed is dropped from any board size"
+ },
+ "expected_cost": "one short ruleset-regeneration pass over 36 seeds x 3 boards in-process, seconds of wall time; no search, no game replay, no evaluator change",
+ "consumer": "the next selection of a valuation or search experiment for the zone term, and the UNKNOWN list of PROFILE_TRANSFORM_INVARIANCE_20261018.md which currently records board size as unmeasured",
+ "nonclaims": [
+  "structural geometry only - no contact count and no contact rate is produced, and the withdrawn 0-vs-53 contrast stays excluded",
+  "no search behaviour, strength, playing-quality, utility or causal claim",
+  "no claim that larger boards make the zone term matter in play; only whether a promotion action is geometrically available on an in-zone square",
+  "the partition depends on the served evaluator's zone definition and on compiled.promotion_allowed"
+ ],
+ "status": "executed",
+ "execution": {
+  "at": "2026-10-18T14:59:27.394064+00:00",
+  "script": "scan_stage15_board_scale_zone_disjointness.py",
+  "output": "results_stage15_board_scale_zone_disjointness.json",
+  "output_sha256": "db12134ad96545fd5e1d06194d93456862b5503e73cbb20f138ee1ca56034a35",
+  "seeds": 36,
+  "decision": "disjointness_persists_across_board_sizes"
+ }
+}

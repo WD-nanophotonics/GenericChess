@@ -650,6 +650,43 @@ the verifier rejects its markers if they reappear - and no strength,
 playing-quality, utility or causal claim follows. Scope remains board 4,
 `classic_like` and the six stored Stage-8 files.
 
+### Is the board-4 exclusion a small-board artefact? (Stage 15, geometry only)
+
+Every measurement above is board 4. With Stages 10 and 14 now resting the
+zero-contact seeds on zone geometry, the obvious objection is that a 4x4 board
+may simply be too small for a paid zone to meet a promotion source. If so, the
+low in-zone contact rate would say nothing about larger boards and the next
+valuation step should move there; if the exclusion persists, it is structural
+for reasons independent of board size. `scan_stage15_board_scale_zone_disjointness.py`
+answers that by regenerating the *same* 36 seeds at board sizes 4, 6 and 8 with
+`classic_like` and recomputing the identical partition - no search, no replay,
+no new games, ruleset regeneration and set arithmetic only. The endpoint, the
+three boards, the two-measure decision rule and the handling of an unsupported
+board were fixed in `plan_stage15_board_scale_zone_disjointness.json` first.
+
+The disjoint share shrinks with board size but far too little to call the result
+an artefact: 25 of 36 seeds at board 4 (0.694), 22 at board 6 (0.611) and 20 at
+board 8 (0.556). The pre-written rule fires
+`disjointness_persists_across_board_sizes`, since both larger boards stay above
+three quarters of the board-4 share. The same picture appears in the continuous
+measure: the median seed's share of zone squares that are promotion sources is
+exactly 0.0 at all three sizes, so the typical ruleset still has no promotion
+source anywhere in its paid zone. `verify_stage15_board_scale_zone_disjointness.py`
+regenerates every ruleset through its own `Square.rank`/`Square.file` index
+arithmetic rather than the scan's helper, matches all 108 seed-by-board rows,
+re-derives the decision from the stored shares, and cross-checks the board-4
+disjoint set against the separately published Stage 10 list (25 seeds, equal) -
+8 checks, all passing.
+
+The limit is that this is geometry, not behaviour: it says whether a promotion
+action can exist on an in-zone square, not whether search would choose it, and
+not what the zone term is worth. Larger boards give both bigger zones and more
+sources in absolute squares, so the modest decline is consistent with a mild
+dilution rather than a qualitative change, and nothing here rules out a
+different preset behaving differently. No contact count and no in-zone-versus-
+outside rate is produced, and no strength, playing-quality, utility or causal
+claim follows. Scope is boards 4, 6 and 8 with `classic_like` only.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward
@@ -659,7 +696,10 @@ playing-quality, utility or causal claim follows. Scope remains board 4,
   board-4 games (Stage 7: 30.8% of promotable observations are in zone;
   Stage 8: only 2.13% of those in-zone payments have a legal promotion against
   13.98% outside the zone), still open for deeper search, other board sizes
-  and other presets;
+  and other presets — Stage 15 now shows the *structural* availability
+  (a promotion source inside the paid zone) also fails on boards 6 and 8, but
+  no played positions exist at those sizes, so reachability there remains
+  entirely unmeasured;
 * whether the half-bonus branch was intended to fire — its unreachability is a
   finding, not a diagnosis, and no behaviour change is proposed from here;
 * how often the anchor-capture penalty, confirmed live above, fires in
