@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "counts": {
+    "failed_queries": 60,
+    "failed_nodes": 2890,
+    "games": 307,
+    "queries": 46230,
+    "nodes": 5000000,
+    "actual_terminal": 246,
+    "unknown": 61,
+    "observed": 14026,
+    "terms": 13985,
+    "episode_updates": 177,
+    "comparisons": 33,
+    "accepted": 2
+  },
+  "seconds": 13.624739599996246,
+  "scope": "ALL typedChess legalhistory/fullclaimpolicy, frozenmodel/actor, independentreverseTDsum, TCrawnet/absolute/oldrates acrossALLEpisodes, robustpairedWDLacceptance and allpaidwork. Same rulesauthority, notexternalengine or humanpriceagreement. PREFIXDIAGNOSTIC onlyclosedTRAINarms, notfullstudy.",
+  "arms": [
+    [
+      1977,
+      "TD"
+    ],
+    [
+      8173,
+      "TC"
+    ],
+    [
+      8173,
+      "WDL"
+    ],
+    [
+      27182,
+      "TD"
+    ],
+    [
+      27182,
+      "WDL"
+    ]
+  ],
+  "observed_at": "2026-10-18T19:44:02.217368+00:00"
+}

@@ -1,0 +1,97 @@
+{
+  "session_id": "80fa4333-247e-420a-bff3-ed759f78affe",
+  "registered_at": "2026-10-18T19:32:16.192487+00:00",
+  "domain": "chess",
+  "arms_order": [
+    [
+      27182,
+      "WDL"
+    ],
+    [
+      1977,
+      "TD"
+    ],
+    [
+      27182,
+      "TD"
+    ],
+    [
+      8173,
+      "WDL"
+    ],
+    [
+      8173,
+      "TC"
+    ],
+    [
+      31415,
+      "WDL"
+    ],
+    [
+      31415,
+      "TC"
+    ],
+    [
+      31415,
+      "TD"
+    ],
+    [
+      27182,
+      "TC"
+    ],
+    [
+      1977,
+      "TC"
+    ],
+    [
+      1977,
+      "WDL"
+    ],
+    [
+      8173,
+      "TD"
+    ]
+  ],
+  "dimension": 5,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 1000000,
+  "nodes_per_game": 25000,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 2.0,
+  "depth": 2,
+  "H": 1024,
+  "training_family_offset": 411000,
+  "prefix_plies": 8,
+  "ordering_seed_offset": 972568000,
+  "snapshot_nodes": [
+    250000,
+    500000,
+    750000
+  ],
+  "max_games": 10000,
+  "cap_seconds": 2100,
+  "pins": {
+    "results/dev_aux/task2568/train.py": "e84bee6fe808d667cdd70ed9883874f4d9f803a4dd0830b746b870721e4ee442",
+    "results/dev_aux/task2568/evaluate.py": "ed84db24709eed5dbf7750921f22e67857c48aab2c8b28322648fd8b438987af",
+    "results/dev_aux/task2568/test_training.py": "ecff1e482c7d1a4efbd98705de6da78bf622383a484f0b1d28ebda99a7b3a2db",
+    "results/dev_aux/task2566/tc.py": "6b479122969de1c1b7dc2bf73ee78c5bf21be4c30dbf6836703e048016442dfd",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3",
+    "results/dev_aux/task2131/stop_reader.py": "634b3fac91a893314e1818e1af542184df22a3ad2ad60e7db052be998960b911",
+    "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37"
+  },
+  "scope": "D2/plain exact-root search targets/frozen episode weights; fixed uniform foe/candidate-only same clock. TC raw impulses persistent across episodes/old rates, fixedlambda explicit variant not fullhistorical reproduction. WDL one seededcoordinate multiplicativeproposal, two colors eachincumbent/proposal, robustpositive lowerpairedW-Lbound only; unknown spans[-1,1]. Allactors/failedquery/node/game workpaid; equalnodes+gamecaps not equalgames/updates. No humanprices/prover/oldcapcontinuation."
+}

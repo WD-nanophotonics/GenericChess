@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-18T19:36:35.212604+00:00",
+  "frozen_plans_unchanged": true,
+  "interpretation": [
+    "This compares specificmethods and costcurves, not an algorithm-only causaleffect. TD/TC are unrestricted finite signed additiveupdates; WDL seededmultiplicativeproposals frompositiveinitials remainpositive. Candidateparameterdomains thereforediffer, evenifeventualTDweights staypositive. No midrun domainchange.",
+    "WDL pays both incumbent andproposal games, including duplicateincumbentsearches, fourgames percomparison. TD/TCuse bothcolors butdifferentfamilyvisitation rates. Equalnode/gameceilings donot imply equalepisodes/labels/searchtrajectories.",
+    "The25k per-game nodeceiling appliesALLTRAINmethods; H1024 alone doesnotguaranteefullterminalgames. EVAL hasno25k per-game nodeceiling, common8192/query/2s/global1500s. UNKNOWN neverdraw; realclaimablethreefold/fiftymove followscommonChessrulepolicy.",
+    "TC rawnet/absolute persistsacrossallepisodes; oldrates applied thenaccumulatorsupdated. Fixedlambda .95 perobservedcandidateinterval, not adaptivepredictiondecay orfaithfulhistoricalBealSmith replica.",
+    "No frozen96snapshot/missing slotresumed; no fitnessreadbefore97registration. Newfullrecords mayoverlapTRAINbychance: retainandreport, newfamilyrecipe notguaranteedholdoutstate.",
+    "FinalWLD independent of TRAINacceptance butfinite8families/2foes/4initials only. Draws fromweakD2materialpolicy legitimate butnotproofthat learnedweights reflectstrongplay or uniqueuniversalprices."
+  ]
+}

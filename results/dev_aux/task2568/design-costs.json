@@ -1,0 +1,37 @@
+{
+  "status": "PASS_ALL_FROZEN_INPUTS_SOURCE_AND_ENDPOINT_BINDINGS",
+  "panels": {
+    "2568": {
+      "planned": 512,
+      "executed": 512,
+      "actual_terminal": 512,
+      "unknown": 0,
+      "missing": 0,
+      "complete_unchanged_model_controls": 64,
+      "unresolved_unchanged_model_controls": 0
+    },
+    "2570": {
+      "planned": 256,
+      "executed": 256,
+      "actual_terminal": 256,
+      "unknown": 0,
+      "missing": 0,
+      "complete_unchanged_model_controls": 32,
+      "unresolved_unchanged_model_controls": 0
+    }
+  },
+  "source_pins": 13,
+  "all_expected_training_arms": 12,
+  "actual_training_arms": 12,
+  "producer_nodes": 26047558,
+  "listed_producer_seconds": 3312.6709001999698,
+  "components": {
+    "TRAIN_nodes": 12000000,
+    "TRAIN_seconds": 1488.4921004999778,
+    "2568_EVAL_nodes": 8972888,
+    "2568_EVAL_seconds": 1151.4632943000179,
+    "2570_EVAL_nodes": 5074670,
+    "2570_EVAL_seconds": 672.7155053999741
+  },
+  "scope": "All threeproducerphases paidonce, includingopponent/baseline/proposal/failed searches. TRAIN result reused fortransfer, NOTchargedtwice. Auditnodes/engineering/I-O/transportadditional. AllCartesianinputs/clock/pins beforeEVAL; no DEVselection/oldcaps extension."
+}

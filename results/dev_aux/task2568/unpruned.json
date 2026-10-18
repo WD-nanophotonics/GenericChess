@@ -1,0 +1,394 @@
+{
+  "status": "COMPLETE",
+  "expected": 24,
+  "verified": 24,
+  "nodes": 17916,
+  "seconds": 2.1298956999671645,
+  "rows": [
+    {
+      "key": [
+        0,
+        27182,
+        "WDL"
+      ],
+      "which": "first",
+      "gameid": 1,
+      "ply": 0,
+      "value": 1.1402175549090674,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "WDL"
+      ],
+      "which": "last",
+      "gameid": 65,
+      "ply": 4,
+      "value": -0.17482293388151593,
+      "nodes": 1435,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "TD"
+      ],
+      "which": "first",
+      "gameid": 66,
+      "ply": 0,
+      "value": 1.077355659731122,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "TD"
+      ],
+      "which": "last",
+      "gameid": 120,
+      "ply": 72,
+      "value": 17.706994726277635,
+      "nodes": 248,
+      "root_actions": 43,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "TD"
+      ],
+      "which": "first",
+      "gameid": 121,
+      "ply": 0,
+      "value": 1.1402175549090674,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "TD"
+      ],
+      "which": "last",
+      "gameid": 176,
+      "ply": 159,
+      "value": 10.537819730225731,
+      "nodes": 115,
+      "root_actions": 3,
+      "optimal_actions": 3,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "WDL"
+      ],
+      "which": "first",
+      "gameid": 177,
+      "ply": 0,
+      "value": 0.5585141092367637,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "WDL"
+      ],
+      "which": "last",
+      "gameid": 240,
+      "ply": 119,
+      "value": -1.310817272741621,
+      "nodes": 703,
+      "root_actions": 36,
+      "optimal_actions": 14,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "TC"
+      ],
+      "which": "first",
+      "gameid": 241,
+      "ply": 0,
+      "value": 0.5585141092367637,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "TC"
+      ],
+      "which": "last",
+      "gameid": 307,
+      "ply": 98,
+      "value": 13.363879067919965,
+      "nodes": 138,
+      "root_actions": 42,
+      "optimal_actions": 33,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "WDL"
+      ],
+      "which": "first",
+      "gameid": 308,
+      "ply": 0,
+      "value": 1.2388485176416768,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "WDL"
+      ],
+      "which": "last",
+      "gameid": 360,
+      "ply": 180,
+      "value": 4.767858899323263,
+      "nodes": 170,
+      "root_actions": 33,
+      "optimal_actions": 12,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "TC"
+      ],
+      "which": "first",
+      "gameid": 361,
+      "ply": 0,
+      "value": 1.2388485176416768,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "TC"
+      ],
+      "which": "last",
+      "gameid": 416,
+      "ply": 5,
+      "value": 1.614259742840563,
+      "nodes": 860,
+      "root_actions": 27,
+      "optimal_actions": 26,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "TD"
+      ],
+      "which": "first",
+      "gameid": 417,
+      "ply": 0,
+      "value": 1.2388485176416768,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "TD"
+      ],
+      "which": "last",
+      "gameid": 474,
+      "ply": 149,
+      "value": -10.262812589631213,
+      "nodes": 173,
+      "root_actions": 46,
+      "optimal_actions": 46,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "TC"
+      ],
+      "which": "first",
+      "gameid": 475,
+      "ply": 0,
+      "value": 1.1402175549090674,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "TC"
+      ],
+      "which": "last",
+      "gameid": 540,
+      "ply": 45,
+      "value": -1.297042228808233,
+      "nodes": 779,
+      "root_actions": 38,
+      "optimal_actions": 25,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "TC"
+      ],
+      "which": "first",
+      "gameid": 541,
+      "ply": 0,
+      "value": 1.077355659731122,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "TC"
+      ],
+      "which": "last",
+      "gameid": 594,
+      "ply": 1,
+      "value": 1.0,
+      "nodes": 1034,
+      "root_actions": 29,
+      "optimal_actions": 3,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "WDL"
+      ],
+      "which": "first",
+      "gameid": 595,
+      "ply": 0,
+      "value": 1.077355659731122,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 1,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "WDL"
+      ],
+      "which": "last",
+      "gameid": 666,
+      "ply": 11,
+      "value": -0.13945174073968336,
+      "nodes": 972,
+      "root_actions": 38,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "TD"
+      ],
+      "which": "first",
+      "gameid": 667,
+      "ply": 0,
+      "value": 0.5585141092367637,
+      "nodes": 915,
+      "root_actions": 34,
+      "optimal_actions": 28,
+      "selected_optimal": true,
+      "pv_valid": true
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "TD"
+      ],
+      "which": "last",
+      "gameid": 736,
+      "ply": 209,
+      "value": -3.0586267168980497,
+      "nodes": 309,
+      "root_actions": 17,
+      "optimal_actions": 13,
+      "selected_optimal": true,
+      "pv_valid": true
+    }
+  ],
+  "scope": "Prospective first AND last complete OBSERVED query per arm, not independent states/allqueries/external rules. Node/wall budget includes all work."
+}

@@ -1,3 +1,31 @@
+# DEV_AUX97 — science/verification CLOSED, delivery pending; scientific OPEN
+
+Own session80fa4333-247e-420a-bff3-ed759f78affe actualstart2026-10-18T19:30:14.912941UTC
+unchanged; officialfinish pendingafterreview/publication. No newscience/fitness now.
+StandardChess TD/TC/paidWDL all4initials/1Mnodes each/D2plain/H1024/fixeduniformTRAINfoe.
+ALL12TRAIN12Mnodes736trajectories590actual146U/110225queries/36837TDterms closed1488.492s.
+ALL768EVAL actualterminal/noU/no missing; full127262query/model/history/PV/cost replayPASS.
+OriginalTD-init gains+.484375/+.46875, bothroles/all4initialspositive. Newfoes+.8125/+.40625;
+newlograndom initial1977 TD-init0 andTD-WDL-.125 retained. TD-WDLmacropositiveALL4foes.
+TC-initpositiveALL4foes butTC-TD+.015625/-.140625/-.3125/+.15625 mixed, includingseed1977
+uniform_nonpawn2 -1. WDL5acceptedrounds3/2/0/0; positiveproposaldomain differsTD/TCsigned.
+No unanimousfullpriceorder/stableuniversalratios/historicalD5/2000sequence reproduction.
+Whole26047558paidnodes/3312.671s listedproducerwalls, audits/engineeringadditional.
+Sameprices96completepairedcontrols exactrecords/costs. Source13pins/plans fixedbeforefitness,
+0currentTRAINoverlap in8original+4transferroots; notallhistoricalexposureguarantee.
+Trainingcredit36073materialsearch/383terminalPV/381actualend;382PVeventualmatches/1U.
+Actualendcreditusually0because terminalPVtargetarrivesearlier, notunanchoredTDclaim;
+selectedzeroPVterminalnotall-defenseDRAWproof. All8freefeatureGrams rank4, notuniquevalues.
+24firstlastunpruned17916nodesPASS; 3figuresactualpixelsviewed. 42ndcapsule48d4c06c/174files,
+17154015bytes; prior41hashesunchanged. ACTUALfresh33tests+12parked/regeneratedMATCH78.883s,
+noTRAIN/EVALrerun. Smallmetadata/plotformatfailurescorrected/preserved; no productionchange.
+Next PRIORITY ALL97fixedcostsnapshots250k/500k/750k/1M+initial actualstrengthcurves onnewroots,
+notbestcheckpointselection/etaDEVfit/provercoverage. NEXT_STUDY97 isPROPOSEDonly, notstarted.
+Own sidemission/PUBLIC only; noCore/default/UI/otherrolewrites/integration; scienceOPEN.
+Report results/dev_aux/SEGMENT_20261019_97.md; delivery andofficialactualtime recordedlater.
+
+## Completed96 evidence (historical)
+
 # DEV_AUX96 — completed84.190minutes/safe_checkpoint; scientificOPEN
 
 Own sessionfade19ca-d51e-4592-b0b4-e69f0f78723e start2026-10-18T18:00:46UTC unchanged;

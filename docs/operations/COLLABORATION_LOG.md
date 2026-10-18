@@ -1,3 +1,32 @@
+# DEV_AUX97 collaboration checkpoint —2026-10-19 JST
+
+DEV_AUX independently implemented/ran the standardChess larger-dose comparison:
+all4initials/TD/TC/paidWDL12MTRAINnodes, all768new actualterminalgames, noEVALU/missing.
+TD-init andTD-currentWDL macro gains positive acrossALL4fixedfoes, allnegative/zero
+seed/family cells retained. TCdidnotconsistentlybeatTD. No stablepriceorder/historical
+fullreplica/universalclaim orproductintegration. Fullreport: results/dev_aux/SEGMENT_20261019_97.md.
+
+Sharedmethod reused own TDLeafEpisode/TrainingSearch and96TCraw-oldrate adapter,
+not PRIMARY/DeepSeek code orruntime/state. PreviousDot primary-paper clarification
+supports explicitfixedlambda TCvariant/noauthorerratum; Dot97code reading/execution
+UNCONFIRMED. Recovery+usefulcheckpoint newroots/related fullthreads allpages read,
+exactrawprivate BEFOREevaluation, nonewsupplements/noemptyrecontact. No DSsupervision,
+worker, fee, crossrolewrite, quietwindow orautomaticmerge. No independentrerun of
+PRIMARYreported backgroundaction-encoder witnesses is claimed; this material-only
+study hasno learnedaction-policy dependency. Sources/results remain rolebound.
+
+Wholecost26047558paidnodes/3312.671s listedproducerwall; allfoes/initial/proposal/
+failedwork included, reusedTRAINchargedonce. Audits+engineering/I-O/transport extra.
+Full110225TRAIN+127262EVALquery/model/history/credit/costreplayPASS;24unpruned17916nodes,
+96unchangedpricecontrols; actualnewextraction33tests+12derivedMATCH78.883s, prior41ZIP
+hashes unchanged and42ndrawcapsule48d4c06c reviewed174files. 3figuresactualviewed.
+Metadataquery/plotnewline/cache issues diagnosed/corrected withoutproductionchanges.
+No pricefitting, oldcapextension, bestseed/checkpointselection orUNKNOWNdrawreward.
+
+NextallfixedsnapshotactualWLDcostcurves remainsPROPOSED, no newexperimentstarted.
+Reviewedpublication/fixedSHA evidence andofficialsessionfinish stillpending here;
+sending isdistinctfromDotreading/execution. Own ScientificstatusOPEN.
+
 ## DEV_AUX94 — matched deployment depth and prospective deeper training
 
 User requested own work and optional reuse of existing auxiliary artifacts. DEV_AUX read saved DeepSeek eab6606 work once: static invariance/zone geometry does not duplicate own learning; useful material-dependent-judge caution adopted, no direct code imported or DSrestart. PRIMARY41b Native interval-credit caveat read in full technical thread, no optimizer adoption or independent execution claimed. No otherrole checkout/state/index/default/UI writes, new workers or quiet-window requests.

@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-10-18T20:08:03.410289+00:00",
+  "python": "3.12.14",
+  "python_chess": "1.11.2",
+  "pytest": "9.1.1",
+  "installed_or_global_changes": false,
+  "training_source_pins": 13,
+  "provenance_correction": {
+    "observed_at": "2026-10-18T20:08:03.410289+00:00",
+    "error": "importlib.metadata.PackageNotFoundError: No package metadata was found for pytest",
+    "root_cause": "Ownvenv containscopiedexistingpurePythonpytestwithoutdistributionmetadata; pytestmodule and33actualtestswork.",
+    "correction": "Read installedmodule pytest.__version__ directly; no packageinstallation/test orfitness rerun.",
+    "impact": "Runtimeprovenance writefailedbeforefilecreation only; no production/pin/cap/datachange."
+  },
+  "scope": "Existingownvenv andexistingplotenv87; no packageinstall/extraAgent/provider/securitychange. Runtimeversion descriptive, concurrentload not controlledspeedclaim."
+}

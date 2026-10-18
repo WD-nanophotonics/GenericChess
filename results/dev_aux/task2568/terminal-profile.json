@@ -1,0 +1,302 @@
+{
+  "TRAIN": {
+    "counts": {
+      "UNKNOWN:SEARCH_RESOURCE_UNKNOWN": 145,
+      "trajectories": 736,
+      "played_plies": 110080,
+      "wins_actual": 515,
+      "draws_actual": 75,
+      "THREEFOLD_REPETITION": 48,
+      "CHECKMATE": 515,
+      "INSUFFICIENT_MATERIAL": 4,
+      "FIFTY_MOVES": 20,
+      "UNKNOWN:AGGREGATE_OR_GAME_CAP_UNKNOWN": 1,
+      "STALEMATE": 3
+    },
+    "by_method": {
+      "WDL": {
+        "UNKNOWN:SEARCH_RESOURCE_UNKNOWN": 45,
+        "candidate_wins": 159,
+        "candidate_losses": 25,
+        "draws": 25,
+        "THREEFOLD_REPETITION": 19,
+        "CHECKMATE": 184,
+        "INSUFFICIENT_MATERIAL": 2,
+        "FIFTY_MOVES": 3,
+        "STALEMATE": 1
+      },
+      "TD": {
+        "candidate_wins": 141,
+        "candidate_losses": 20,
+        "draws": 25,
+        "CHECKMATE": 161,
+        "THREEFOLD_REPETITION": 16,
+        "UNKNOWN:SEARCH_RESOURCE_UNKNOWN": 52,
+        "FIFTY_MOVES": 7,
+        "UNKNOWN:AGGREGATE_OR_GAME_CAP_UNKNOWN": 1,
+        "INSUFFICIENT_MATERIAL": 1,
+        "STALEMATE": 1
+      },
+      "TC": {
+        "candidate_wins": 138,
+        "candidate_losses": 32,
+        "draws": 25,
+        "CHECKMATE": 170,
+        "UNKNOWN:SEARCH_RESOURCE_UNKNOWN": 48,
+        "THREEFOLD_REPETITION": 13,
+        "FIFTY_MOVES": 10,
+        "STALEMATE": 1,
+        "INSUFFICIENT_MATERIAL": 1
+      }
+    }
+  },
+  "EVAL": {
+    "counts": {
+      "wins_actual": 433,
+      "draws_actual": 79,
+      "FIFTY_MOVES": 52,
+      "trajectories": 512,
+      "played_plies": 82848,
+      "CHECKMATE": 433,
+      "THREEFOLD_REPETITION": 19,
+      "INSUFFICIENT_MATERIAL": 5,
+      "STALEMATE": 3
+    },
+    "by_method": {
+      "WDL": {
+        "candidate_wins": 83,
+        "candidate_losses": 28,
+        "draws": 17,
+        "FIFTY_MOVES": 11,
+        "CHECKMATE": 111,
+        "THREEFOLD_REPETITION": 4,
+        "STALEMATE": 1,
+        "INSUFFICIENT_MATERIAL": 1
+      },
+      "TC": {
+        "candidate_wins": 95,
+        "candidate_losses": 18,
+        "draws": 15,
+        "CHECKMATE": 113,
+        "FIFTY_MOVES": 11,
+        "THREEFOLD_REPETITION": 3,
+        "INSUFFICIENT_MATERIAL": 1
+      },
+      "initial": {
+        "candidate_wins": 62,
+        "candidate_losses": 38,
+        "draws": 28,
+        "CHECKMATE": 100,
+        "FIFTY_MOVES": 17,
+        "THREEFOLD_REPETITION": 7,
+        "INSUFFICIENT_MATERIAL": 2,
+        "STALEMATE": 2
+      },
+      "TD": {
+        "candidate_wins": 97,
+        "candidate_losses": 12,
+        "draws": 19,
+        "FIFTY_MOVES": 13,
+        "CHECKMATE": 109,
+        "THREEFOLD_REPETITION": 5,
+        "INSUFFICIENT_MATERIAL": 1
+      }
+    }
+  },
+  "status": "PASS",
+  "eval_roots": {
+    "421001": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e4",
+          "h7h6",
+          "g2g3",
+          "b7b5",
+          "h2h3",
+          "e7e5",
+          "f1g2",
+          "g8f6"
+        ],
+        "fen": "rnbqkb1r/p1pp1pp1/5n1p/1p2p3/4P3/6PP/PPPP1PB1/RNBQK1NR w KQkq - 2 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421002": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1a3",
+          "g7g5",
+          "c2c4",
+          "d7d6",
+          "h2h4",
+          "c7c6",
+          "h4h5",
+          "d6d5"
+        ],
+        "fen": "rnbqkbnr/pp2pp1p/2p5/3p2pP/2P5/N7/PP1PPPP1/R1BQKBNR w KQkq - 0 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421003": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "h2h3",
+          "e7e5",
+          "b2b3",
+          "g7g6",
+          "h1h2",
+          "f8d6",
+          "g2g4",
+          "d8g5"
+        ],
+        "fen": "rnb1k1nr/pppp1p1p/3b2p1/4p1q1/6P1/1P5P/P1PPPP1R/RNBQKBN1 w Qkq - 1 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421004": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a3",
+          "b8a6",
+          "f2f4",
+          "g8f6",
+          "g2g4",
+          "g7g5",
+          "a3a4",
+          "f6d5"
+        ],
+        "fen": "r1bqkb1r/pppppp1p/n7/3n2p1/P4PP1/8/1PPPP2P/RNBQKBNR w KQkq - 1 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421005": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "a7a6",
+          "d2d3",
+          "g8h6",
+          "h2h4",
+          "f7f6",
+          "c1d2",
+          "h6g4"
+        ],
+        "fen": "rnbqkb1r/1pppp1pp/p4p2/8/1P4nP/3P4/P1PBPPP1/RN1QKBNR w KQkq - 2 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421006": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a4",
+          "a7a5",
+          "f2f3",
+          "a8a6",
+          "c2c4",
+          "b8c6",
+          "a1a3",
+          "f7f6"
+        ],
+        "fen": "2bqkbnr/1pppp1pp/r1n2p2/p7/P1P5/R4P2/1P1PP1PP/1NBQKBNR w Kk - 0 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421007": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "g2g4",
+          "g7g5",
+          "a2a4",
+          "h7h6",
+          "b2b4",
+          "b7b5",
+          "b1c3",
+          "h6h5"
+        ],
+        "fen": "rnbqkbnr/p1pppp2/8/1p4pp/PP4P1/2N5/2PPPP1P/R1BQKBNR w KQkq - 0 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    },
+    "421008": {
+      "record": {
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e3",
+          "h7h6",
+          "g2g4",
+          "e7e6",
+          "a2a3",
+          "d8e7",
+          "b1c3",
+          "e7c5"
+        ],
+        "fen": "rnb1kbnr/pppp1pp1/4p2p/2q5/6P1/P1N1P3/1PPP1P1P/R1BQKBNR w KQkq - 3 5"
+      },
+      "features": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "outcome": null
+    }
+  },
+  "scope": "Samepython-chess fullhistory actualoutcome/claimpolicy; realdraw subtypes are outcomes, Uresources remainU. Piececounts/features describe inputs, neverterminalpayoff orhumanpricetarget."
+}
