@@ -276,7 +276,11 @@ yet76EXACTtargets become validLOWERbounds underrootwindows. Do notinfer same
 trainingcredit fromsame root. Native trace identity lacksfullpath/history;
 zeroambiguousmatches onthese2exposedrules isnot whole-domain certification.
 Next boundedhistory-contract inventory/120s32queryplan hasactuallybegun;
-nohistoryquery/AUXmigration/newlearner orautomaticdefault change. Sealed78/11
+nohistoryquery/AUXmigration/newlearner orautomaticdefault change. Firstactual
+admission preserves the reachablePass/historyfixture: Core successors differ,
+semanticlift accepts, Native explicitlyrefuses coordinate-freePass;0searches,
+no removedsemantics ortracebug claim. Next inventory supportedcyclefixture
+before allocating the32querycap. Sealed78/11
 sourceproof passes887.291s; distincttrace1outputproof1.845s isaftertheseal.
 
 Currentnext selection mustuse a changedscientificpremise or realconsumer need:

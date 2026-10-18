@@ -1,0 +1,18 @@
+{
+  "different_fullhistories": true,
+  "error_type": "NativeUnsupportedRuleError",
+  "fixture": "tests/development/test_reference_history_scope.py:histories",
+  "modified_semantics": false,
+  "native": "UNSUPPORTED_FULL_RULE",
+  "native_queries": 0,
+  "reason": "coordinate-free pass actions are unsupported by native semantic execution (ruleset fingerprint 86629e0485e40346ece5c47cde699897b4a972d7c3f362916f15e40f14a200d3, native schema native-0.5.0)",
+  "same_position_ply_counts": true,
+  "scope": "Actualreachable Corehistory successor differs; Nativecompile-only/refusal doesnotprove tracecollision/bug/parity orall-domainhistorysafety. No Pass/aux/history removed, no search/learner/AUXexecution; nextplan remainder untouched.",
+  "seconds": 0.009715599997434765,
+  "semantic_lift": "ADMITTED",
+  "stage": "NEXT_PLAN_FIRST_ADMISSION_ONLY",
+  "successor_statuses": [
+    "ongoing",
+    "action_class_draw"
+  ]
+}
