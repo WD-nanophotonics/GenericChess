@@ -4286,3 +4286,29 @@ tail and scaled-ratio check), ddcabcbb (signature-pair recurrence limit) and
 105-check consistency audit recomputed the published figures and corrected the
 reconstructed-integer count in the draft to 4,320. The earlier qsearch
 drop-exclusion report and 24-file copy remain at b1d13325.
+
+
+## DEEPSEEK_AUX 2026-10-18 — movement similarity of rounding ties
+
+DEEPSEEK_AUX asked whether the 31 distinct-score rounding ties are near-aliases
+or dissimilar capabilities in movement. A pre-registered rule (plan SHA
+30d5fc3a) compared the tied pairs' movement-token set Jaccard against all 6,811
+distinct-capability pairs of the same nine zero-search cells; the analysis read
+the stored tie-risk result and ran no new rule, seed or search (under 1 s).
+The pre-written decision fired benign_concentration: tied median set Jaccard
+1.0 versus 0.72727 reference, 25/31 tied pairs with an identical token set and
+15/31 with an identical movement multiset, while 0/31 share the stored
+signature string. A post-hoc matched reference (n=4,961 non-tied pairs sharing
+signature types) gives 12.11% identical token sets and median multiset Jaccard
+0.5375 versus 0.976744 for tied pairs; the Fisher figure is descriptive only
+because pairs share types and rules, and equal-score escaped pairs show the
+same concentration, so this describes the near-collision population rather than
+isolating a tie-specific cause. Neither the reference p90 nor any other
+threshold in the pre-written rule is sharp: reference p90 is also 1.0.
+
+Limits: one generator family and hand_weight 0.9, 31 tied pairs from 1,080
+rules, token-set similarity ignores geometry magnitudes, and the matched
+reference is post-hoc. No strength, utility, strategic-equivalence,
+human-price or game-outcome claim. Delivery: PROFILE_TIE_SIMILARITY_20261018.md
+with a nine-file public evidence copy, study commit 60a7ce0f, 68/68
+consistency checks and byte-identical analyzer/post-hoc re-runs.
