@@ -4383,6 +4383,16 @@ Result chain, each stage labelled with its real status:
   92 zone records, 0 coded versus 2,648 converted target pairs, 1,696 squares,
   1,453 constructed states and 120/120 anchor-penalty matches, same verdict.
   It is a repetition on unseen seeds, not a new prediction.
+* **Reachability on already-stored games (Stage 7, post-hoc,
+  `scan_stored_games_leaf_terms.py`, endpoint in `plan_games_leaf_terms.json`
+  before the run).** Replaying 182 distinct stored board-4 games (34 duplicate
+  move lists dropped) reproduces every stored terminal status, winner and ply
+  count, so the reconstruction is exact. Over 3,062 positions and 8,083
+  promotable observations the live in-zone branch occurs 2,489 times (30.8%,
+  67 games), the dead half-bonus condition 3,944 times (48.8%, 150 games), and
+  the anchor-attack penalty in every game (364 owner-0, 537 owner-1
+  positions). Occurrence is not utility: the half bonus pays zero as coded and
+  nothing here shows a repair would change an action or a result.
 
 Consumer consequence for this family: static per-type values may be
 de-duplicated across a 180-degree rotation, but a rule and its rotation are not

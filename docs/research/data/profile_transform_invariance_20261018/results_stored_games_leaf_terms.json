@@ -1,0 +1,1866 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "question": "Do the promotion-leaf terms and the anchor-attack penalty occur on positions that were actually played in already-stored games?",
+ "design": {
+  "board_size": 4,
+  "setup_preset": "classic_like",
+  "replay_precondition": "terminal status, winner and ply count must equal the stored values",
+  "deduplicate_by": "(seed, depth, game_index, moves)",
+  "weights": "EvaluationConfig defaults: promotion_potential_weight=3, anchor_escape_weight=5",
+  "no_new_search": true
+ },
+ "summary": {
+  "decision": "leaf_terms_occur_on_stored_game_paths",
+  "files_used": [
+   "results_hand_term_match_served-blind_d2_n20000_s59-70.json",
+   "results_hand_term_match_served-blind_d2_n20000_s71-94.json",
+   "results_hand_term_match_served-blind_d3_n20000_s59-70.json",
+   "results_hand_term_match_served-blind_d3_n20000_s71-94.json",
+   "results_hand_term_match_served-served_d2_n20000_s59-70.json",
+   "results_hand_term_match_served-served_d2_n20000_s71-94.json"
+  ],
+  "games_scanned": 182,
+  "games_deduplicated": 34,
+  "games_failed_replay": 0,
+  "positions_scanned": 3062,
+  "promotable_observations": 8083,
+  "in_zone_live": 2489,
+  "half_bonus_dead_branch_intent": 3944,
+  "neither_branch": 1650,
+  "anchor_penalty_owner0": 364,
+  "anchor_penalty_owner1": 537,
+  "games_with_in_zone_live": 67,
+  "games_with_dead_branch": 150,
+  "games_with_anchor_penalty": 182,
+  "distinct_seeds": 36,
+  "problems": []
+ },
+ "per_game": [
+  {
+   "seed": 59,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 14,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 3,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 59,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 30,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 19,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 60,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 60,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 61,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 8,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 61,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 8,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 62,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 20,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 62,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 63,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 6,
+   "in_zone_live": 27,
+   "half_bonus_dead_branch_intent": 9,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 63,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 6,
+   "in_zone_live": 27,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 64,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 18,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 27,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 64,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 65,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 24,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 65,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 24,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 66,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 19,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 66,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 19,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 67,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 67,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 6,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 68,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 15,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 68,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 15,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 69,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 7,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 69,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 70,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 14,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 53,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 70,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 69,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 71,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 38,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 71,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 72,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 19,
+   "in_zone_live": 4,
+   "half_bonus_dead_branch_intent": 57,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 72,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 29,
+   "in_zone_live": 2,
+   "half_bonus_dead_branch_intent": 60,
+   "anchor_penalty": 11
+  },
+  {
+   "seed": 73,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 73,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 74,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 11,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 74,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 7,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 22,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 75,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 24,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 4,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 75,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 21,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 3,
+   "anchor_penalty": 10
+  },
+  {
+   "seed": 76,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 76,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 29,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 77,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 5,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 77,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 5,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 78,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 15,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 18,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 78,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 19,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 23,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 79,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 77,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 223,
+   "anchor_penalty": 20
+  },
+  {
+   "seed": 79,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 54,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 86,
+   "anchor_penalty": 16
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 18,
+   "in_zone_live": 4,
+   "half_bonus_dead_branch_intent": 8,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 15,
+   "in_zone_live": 8,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 81,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 13,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 81,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 17,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 6,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 82,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 16,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 82,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 16,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 83,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 7,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 83,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 7,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 84,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 30,
+   "in_zone_live": 84,
+   "half_bonus_dead_branch_intent": 10,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 84,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 19,
+   "in_zone_live": 57,
+   "half_bonus_dead_branch_intent": 18,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 85,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 21,
+   "in_zone_live": 75,
+   "half_bonus_dead_branch_intent": 32,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 85,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 12,
+   "in_zone_live": 39,
+   "half_bonus_dead_branch_intent": 17,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 86,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 41,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 86,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 51,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 87,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 31,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 87,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 31,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 88,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 4,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 88,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 41,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 50,
+   "anchor_penalty": 15
+  },
+  {
+   "seed": 89,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 11,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 89,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 11,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 90,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 6,
+   "in_zone_live": 41,
+   "half_bonus_dead_branch_intent": 3,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 90,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 72,
+   "half_bonus_dead_branch_intent": 2,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 91,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 40,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 91,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 40,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 92,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 28,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 92,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 28,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 93,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 6,
+   "in_zone_live": 18,
+   "half_bonus_dead_branch_intent": 15,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 93,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 6,
+   "in_zone_live": 18,
+   "half_bonus_dead_branch_intent": 15,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 94,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 34,
+   "in_zone_live": 81,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 94,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 32,
+   "in_zone_live": 59,
+   "half_bonus_dead_branch_intent": 3,
+   "anchor_penalty": 10
+  },
+  {
+   "seed": 59,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 10,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 59,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 20,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 34,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 60,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 60,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 61,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 8,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 61,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 8,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 62,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 24,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 62,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 31,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 63,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 37,
+   "half_bonus_dead_branch_intent": 8,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 63,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 37,
+   "half_bonus_dead_branch_intent": 8,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 64,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 24,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 40,
+   "anchor_penalty": 8
+  },
+  {
+   "seed": 64,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 24,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 24,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 65,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 24,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 65,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 24,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 66,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 19,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 66,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 19,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 67,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 67,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 6,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 68,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 15,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 68,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 15,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 69,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 7,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 69,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 70,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 60,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 70,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 60,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 71,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 38,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 71,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 72,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 24,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 72,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 72,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 21,
+   "in_zone_live": 4,
+   "half_bonus_dead_branch_intent": 71,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 73,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 73,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 74,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 11,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 74,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 7,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 22,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 75,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 18,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 42,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 75,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 38,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 22,
+   "anchor_penalty": 12
+  },
+  {
+   "seed": 76,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 14,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 76,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 63,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 13
+  },
+  {
+   "seed": 77,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 5,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 77,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 5,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 78,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 36,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 68,
+   "anchor_penalty": 12
+  },
+  {
+   "seed": 78,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 47,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 55,
+   "anchor_penalty": 13
+  },
+  {
+   "seed": 79,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 53,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 56,
+   "anchor_penalty": 16
+  },
+  {
+   "seed": 79,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 33,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 70,
+   "anchor_penalty": 11
+  },
+  {
+   "seed": 80,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 19,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 9,
+   "anchor_penalty": 10
+  },
+  {
+   "seed": 80,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 16,
+   "in_zone_live": 12,
+   "half_bonus_dead_branch_intent": 7,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 81,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 13,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 4,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 81,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 74,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 36,
+   "anchor_penalty": 11
+  },
+  {
+   "seed": 82,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 16,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 82,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 16,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 83,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 7,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 83,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 7,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 84,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 37,
+   "in_zone_live": 74,
+   "half_bonus_dead_branch_intent": 32,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 84,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 13,
+   "in_zone_live": 35,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 85,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 31,
+   "in_zone_live": 107,
+   "half_bonus_dead_branch_intent": 31,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 85,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 103,
+   "in_zone_live": 247,
+   "half_bonus_dead_branch_intent": 157,
+   "anchor_penalty": 11
+  },
+  {
+   "seed": 86,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 17,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 46,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 86,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 60,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 131,
+   "anchor_penalty": 13
+  },
+  {
+   "seed": 87,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 8,
+   "in_zone_live": 31,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 87,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 31,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 88,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 28,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 32,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 88,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 25,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 11,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 89,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 4,
+   "in_zone_live": 11,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 89,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 4,
+   "in_zone_live": 11,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 90,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 24,
+   "in_zone_live": 165,
+   "half_bonus_dead_branch_intent": 30,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 90,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 20,
+   "in_zone_live": 141,
+   "half_bonus_dead_branch_intent": 20,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 91,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 40,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 91,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 40,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 92,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 92,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 12,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 4
+  },
+  {
+   "seed": 93,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 14,
+   "in_zone_live": 42,
+   "half_bonus_dead_branch_intent": 57,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 93,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 8,
+   "in_zone_live": 24,
+   "half_bonus_dead_branch_intent": 21,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 94,
+   "depth": 3,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 54,
+   "in_zone_live": 93,
+   "half_bonus_dead_branch_intent": 17,
+   "anchor_penalty": 12
+  },
+  {
+   "seed": 94,
+   "depth": 3,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 42,
+   "in_zone_live": 106,
+   "half_bonus_dead_branch_intent": 13,
+   "anchor_penalty": 14
+  },
+  {
+   "seed": 59,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 39,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 28,
+   "anchor_penalty": 13
+  },
+  {
+   "seed": 59,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 39,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 28,
+   "anchor_penalty": 13
+  },
+  {
+   "seed": 60,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 10,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 62,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 16,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 62,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 16,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 63,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 6,
+   "in_zone_live": 27,
+   "half_bonus_dead_branch_intent": 5,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 64,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 18,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 27,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 67,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 16,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 67,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 16,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 69,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 7,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 1
+  },
+  {
+   "seed": 70,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 19,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 75,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 70,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 19,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 75,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 71,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 29,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 72,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 34,
+   "in_zone_live": 2,
+   "half_bonus_dead_branch_intent": 50,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 72,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 34,
+   "in_zone_live": 2,
+   "half_bonus_dead_branch_intent": 50,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 74,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 11,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 12,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 74,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 11,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 12,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 75,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 21,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 75,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 21,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 76,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 26,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 76,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 26,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 0,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 78,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 15,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 18,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 79,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 20,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 26,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 79,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 20,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 26,
+   "anchor_penalty": 5
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 20,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 25,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 80,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 20,
+   "in_zone_live": 3,
+   "half_bonus_dead_branch_intent": 25,
+   "anchor_penalty": 9
+  },
+  {
+   "seed": 81,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 11,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 6,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 81,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 11,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 6,
+   "anchor_penalty": 3
+  },
+  {
+   "seed": 84,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 29,
+   "in_zone_live": 87,
+   "half_bonus_dead_branch_intent": 8,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 84,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 29,
+   "in_zone_live": 87,
+   "half_bonus_dead_branch_intent": 8,
+   "anchor_penalty": 6
+  },
+  {
+   "seed": 85,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 12,
+   "in_zone_live": 39,
+   "half_bonus_dead_branch_intent": 17,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 86,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 39,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 86,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 9,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 39,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 88,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_win",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 18,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 88,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 22,
+   "in_zone_live": 0,
+   "half_bonus_dead_branch_intent": 18,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 90,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_loss",
+   "positions": 6,
+   "in_zone_live": 41,
+   "half_bonus_dead_branch_intent": 3,
+   "anchor_penalty": 2
+  },
+  {
+   "seed": 94,
+   "depth": 2,
+   "game_index": 0,
+   "outcome": "served_loss",
+   "positions": 29,
+   "in_zone_live": 80,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 7
+  },
+  {
+   "seed": 94,
+   "depth": 2,
+   "game_index": 1,
+   "outcome": "served_win",
+   "positions": 29,
+   "in_zone_live": 80,
+   "half_bonus_dead_branch_intent": 1,
+   "anchor_penalty": 7
+  }
+ ],
+ "nonclaims": [
+  "utility/outcome/strength: a term occurring on a path does not imply it changed any chosen action or result",
+  "the dead half-bonus branch is counted as intent only; as coded it contributes zero",
+  "board 4 classic_like only; the published leaf audit measured boards 6 and 8",
+  "not a sample of play: these are 2- and 3-ply games from one fixed start position per ruleset"
+ ]
+}

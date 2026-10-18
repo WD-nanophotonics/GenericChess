@@ -269,6 +269,51 @@ here and no measurement in this note depends on the half bonus: A4's
 `near_zone` cases are zero for the same reason the `far` cases are, and the
 `in_zone` result uses the other branch.
 
+## Stage 7 — do those terms occur on positions that were actually played?
+
+Stage 6 leaves an obvious gap: the study's positions are constructed, so
+nothing above says whether the promotion and anchor terms are ever *live* in a
+played game. `scan_stored_games_leaf_terms.py` closes that gap for the games
+this session already stored, without running any search. It replays the stored
+move lists of 182 distinct games (seeds 59–94, board 4, `classic_like`,
+`AlphaBetaPlayer` at depth 2 or 3, 20,000 nodes, colour-swapped pairs, the
+served/`hand_weight = 0.9` and hand-blind/`0.0` arms plus the served-vs-served
+control) and inspects the start position and every position after each move.
+The replay is exact: all 182 games reproduce their stored terminal status,
+winner and ply count, and 34 further game records were dropped as duplicates
+because the same move list appears in more than one stored file.
+
+Over 3,062 positions and 8,083 observations of an unpromoted piece whose base
+type has a positive promotion gain:
+
+| branch | observations | share | games containing it |
+|---|---:|---:|---:|
+| in-zone, live branch (`weight * unit`) | 2,489 | 30.8% | 67 / 182 |
+| half-bonus condition satisfied if `Square` were converted to an index | 3,944 | 48.8% | 150 / 182 |
+| neither | 1,650 | 20.4% | — |
+
+The anchor-attack penalty is live in play too: the owner-0 anchor lay in the
+opponent attack map in 364 positions and the owner-1 anchor in 537, and every
+one of the 182 games contains at least one such position.
+
+Two cautions about reading the in-zone share. First, `zone` is defined in the
+served code as the squares from which a piece of that base type has *no*
+forward move at all, not as a designated promotion rank; a 30.8% share
+therefore means "the piece can no longer advance", which is the condition the
+code actually pays for. Second, counts are not utilities: a term occurring on
+3,944 positions changes the static score of those positions only if the
+half-bonus branch were repaired, and this scan establishes neither that a
+repair is desirable nor that any chosen action would change. As coded the half
+bonus contributes exactly zero, so the practical reading is that the served
+evaluator pays the full in-zone bonus on roughly a third of promotable
+observations and pays nothing in the other branch that was evidently intended
+to pay half.
+
+Scope of the reachability statement: board 4, one generator family, one
+starting position per ruleset, and games searched at depth 2–3 with a 20,000
+node cap. It says nothing about deeper search, other board sizes or other
+generator presets.
+
 ## What a consumer may and may not conclude
 
 Allowed, for this generator family and these two board sizes:
@@ -291,12 +336,14 @@ constructed for measurement rather than shown reachable in play.
 * whether generated rule families outside `classic_like` also lack backward
   atoms on promotable types, or whether that is specific to this preset;
 * whether reachable positions in real games put promotable pieces in the zone
-  often enough for the term to matter;
+  often enough for the term to matter — partially answered for the stored
+  board-4 games (Stage 7: 30.8% of promotable observations are in zone), still
+  open for deeper search, other board sizes and other presets;
 * whether the half-bonus branch was intended to fire — its unreachability is a
   finding, not a diagnosis, and no behaviour change is proposed from here;
 * how often the anchor-capture penalty, confirmed live above, fires in
-  reachable play — the audit only shows that the term is type-correct and that
-  its arithmetic matches the served score on constructed states;
+  reachable play — Stage 7 shows it fires in all 182 stored games, but not how
+  much it changes any outcome;
 * whether any rotation-sensitive term other than promotion potential exists in
   configurations not measured here (the mobility and anchor terms were zero on
   the initial boards and in all relocation cases).

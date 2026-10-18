@@ -1,0 +1,35 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "branch": "codex/deepseek-aux",
+ "created_utc": "2026-10-18T13:59:00Z",
+ "question": "On games that were already played and stored, do the two promotion-leaf terms and the anchor-attack penalty actually occur on the played path, so that the source-level finding has a reachability statement rather than only a type statement?",
+ "inputs": [
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-blind_d2_n20000_s59-70.json",
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-blind_d2_n20000_s71-94.json",
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-blind_d3_n20000_s59-70.json",
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-blind_d3_n20000_s71-94.json",
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-served_d2_n20000_s59-70.json",
+  ".local_agent/hand-utility-games-20261018/results_hand_term_match_served-served_d2_n20000_s71-94.json"
+ ],
+ "no_new_search": "The scan replays stored move lists only. No search, no game generation, no fitness evaluation.",
+ "design": {
+  "deduplicate": "a game is identified by (seed, depth, game_index, tuple(moves)) so the served-blind-reasons files, which replay the same games with extra termination metadata, are not counted twice",
+  "replay_precondition": "each stored move list is applied with apply_action on a reconstructed start position; the replayed terminal status and winner must equal the stored ones, else the game is recorded as a problem and excluded from the counts",
+  "position_scan": "the start position and every position after each stored move",
+  "promotion_leaf": "for every unpromoted piece whose base type has a positive promotion gain, record whether square_index is in the evaluator zone (live branch, bonus weight*unit), and otherwise whether the intended half-bonus condition would hold if Square targets were compared as indices (dead branch)",
+  "anchor_term": "record whether anchor_square(owner) lies in the opponent pseudo-attack map (the -weight*10 penalty)",
+  "weights": "EvaluationConfig defaults as used by the stored games: promotion_potential_weight=3, anchor_escape_weight=5, hand_weight as recorded in each file's design"
+ },
+ "endpoint_written_before_the_run": {
+  "decision": "leaf_terms_occur_on_stored_game_paths if at least one position exercises the live in-zone branch and at least one exercises the dead half-bonus condition, else leaf_terms_are_absent_on_stored_game_paths; in both cases report counts and the number of distinct games and rulesets involved",
+  "counts_to_report": [
+   "games scanned, games passing the replay precondition, problems",
+   "positions scanned",
+   "promotable-piece observations, of which in-zone (live) and half-bonus-intent (dead) and neither",
+   "anchor-penalty triggers, split by owner",
+   "distinct games and seeds with at least one live in-zone observation, with at least one dead-branch observation, and with at least one anchor trigger"
+  ],
+  "what_this_cannot_establish": "not utility, not outcome effect, not search-behaviour effect, not a strength claim; a term that never fires on these paths may still fire elsewhere and a term that fires need not change any chosen action"
+ },
+ "git_head_at_plan_time": "660fcf7f517eeba34a6439392385b6abe9b1c16a"
+}

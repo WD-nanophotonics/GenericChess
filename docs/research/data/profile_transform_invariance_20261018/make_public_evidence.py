@@ -37,6 +37,8 @@ JSON_FILES = [
     "results_zone_effect_heldout.json",
     "results_zone_effect_heldout_first.json",
     "results_leaf_term_audit.json",
+    "results_stored_games_leaf_terms.json",
+    "plan_games_leaf_terms.json",
 ]
 
 PY_FILES = [
@@ -52,8 +54,17 @@ PY_FILES = [
     "verify_zone_effect_heldout.py",
     "verify_public_copy_rebuild.py",
     "audit_leaf_terms.py",
+    "scan_stored_games_leaf_terms.py",
     "make_public_evidence.py",
 ]
+
+# Stage 7 lives in its own private directory because it reads stored games
+# rather than generating rules; it is still part of this study's evidence.
+EXTRA_SOURCES = {
+    "results_stored_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "results_stored_games_leaf_terms.json",
+    "plan_games_leaf_terms.json": HERE.parent / "games-leaf-terms-20261018" / "plan_games_leaf_terms.json",
+    "scan_stored_games_leaf_terms.py": HERE.parent / "games-leaf-terms-20261018" / "scan_stored_games_leaf_terms.py",
+}
 
 _HOME = re.compile(r"[A-Za-z]:\\\\?Users\\\\?[^\\\\\"]+", re.IGNORECASE)
 
@@ -73,7 +84,7 @@ def main() -> int:
     DEST.mkdir(parents=True, exist_ok=True)
     written = []
     for name in JSON_FILES + PY_FILES:
-        src = HERE / name
+        src = EXTRA_SOURCES.get(name, HERE / name)
         if not src.exists():
             raise SystemExit(f"missing {name}")
         text = sanitize(src.read_text(encoding="utf-8"))
