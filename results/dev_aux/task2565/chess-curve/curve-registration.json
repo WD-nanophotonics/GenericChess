@@ -1,0 +1,14 @@
+{
+  "registered_at": "2026-10-18T18:20:04.787126+00:00",
+  "before_any_96_fitness": true,
+  "question": "Does actualChess strength change along ALLregistered learning costcurves, beyond changing bootstrap loss?",
+  "expected_slots": 288,
+  "new_cap_seconds": 600,
+  "selection": "Last closedepisode<=nominalboundary for every arm; if none, initial at0. No terminal/DEV/seed selection.",
+  "existing_inputs_sha": {
+    "results\\dev_aux\\task2565\\chess\\result.json": "cc616638aaa9a37c8fbbe4e341da21c75e2077671fd9011e5d4e8e7596ef5702"
+  },
+  "combined_expected_minutes": 75,
+  "not_cap_extension": true,
+  "not_faithful_classic_or_convergence": true
+}

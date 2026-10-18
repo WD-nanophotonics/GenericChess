@@ -1,0 +1,44 @@
+{
+  "status": "EXACT_RECIPE_HISTORY_AUDIT",
+  "training_games": {
+    "SelfEvery": 30,
+    "Fixed": 26,
+    "SelfCandidate": 28
+  },
+  "unique_training_recipe_rules": 5,
+  "unique_training_fullrecords": 5,
+  "unique_roots_by_method": {
+    "SelfEvery": 5,
+    "Fixed": 4,
+    "SelfCandidate": 5
+  },
+  "zeroquery_games": {
+    "SelfEvery": 0,
+    "Fixed": 0,
+    "SelfCandidate": 0
+  },
+  "prefix_plies": {
+    "SelfEvery": 240,
+    "Fixed": 208,
+    "SelfCandidate": 224
+  },
+  "eval_roots": [
+    {
+      "rule": 0,
+      "family": 321001,
+      "record_hash": "e7cf7d8ad135fe4ddab6e1a48957ec5994e02c06e2dafe4e3b31fa4919528681",
+      "terminal": null,
+      "current_training_record_overlap": false
+    },
+    {
+      "rule": 0,
+      "family": 321002,
+      "record_hash": "7cdbe372cbc90e4795e62fb46a3220966d86c2350843a8e25fe5a98ce5c372c3",
+      "terminal": null,
+      "current_training_record_overlap": false
+    }
+  ],
+  "eval_unique_fullrecords": 2,
+  "eval_train_overlap": 0,
+  "scope": "Current96 TRAIN fullrecords only, not all historicalexposure. Fresh recipe IDs do not prove unseen states. Per-role/model/seed repetitions are not independentroots; generated rules TRAINexposed. Prefix and replay work costs are in wall time/explicitplies, not in searchnode budget. Zeroquerygames actualterminalinitialprefixes generate no TD sample."
+}

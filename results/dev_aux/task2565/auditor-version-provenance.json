@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "source": "audit.py",
+      "old_exact": "audit-executed-v1.py",
+      "oldsha": "8441f2d14d11dbf8fa710b5d8cf5d2e559b6cbe736172fd8ccd3d9b21b23dec3",
+      "change": "Optional stop_root argument only, default actual owner unchanged; original Chess executions used saved v1, fresh audit uses current default/explicitowner. No producer/credit/action/capchanges."
+    },
+    {
+      "source": "verify.py",
+      "old_exact": "verify-executed-v1.py",
+      "oldsha": "0a1a9dec45cf61cfe3345c89664d5286e7536324a434e4d50fbd7a39e89b33b0",
+      "change": "Optional stop_root argument only, default actual owner unchanged; original Chess executions used saved v1, fresh audit uses current default/explicitowner. No producer/credit/action/capchanges."
+    }
+  ]
+}

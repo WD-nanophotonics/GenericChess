@@ -1,0 +1,53 @@
+{
+  "status": "PARTIAL_CAP",
+  "expected": 288,
+  "actual": 283,
+  "missing": 5,
+  "missing_slots": [
+    [
+      0,
+      27182,
+      321002,
+      1,
+      "SelfCandidate@25000",
+      "uniform"
+    ],
+    [
+      0,
+      1977,
+      321002,
+      1,
+      "Fixed@50000",
+      "uniform"
+    ],
+    [
+      0,
+      8173,
+      321002,
+      0,
+      "SelfEvery@25000",
+      "random99031"
+    ],
+    [
+      0,
+      1977,
+      321002,
+      1,
+      "Fixed@75000",
+      "uniform"
+    ],
+    [
+      0,
+      31415,
+      321001,
+      1,
+      "SelfEvery@25000",
+      "random99031"
+    ]
+  ],
+  "actual_terminal": 203,
+  "unknown": 80,
+  "nodes": 4931209,
+  "queries": 44064,
+  "seconds": 600.0032097999938
+}

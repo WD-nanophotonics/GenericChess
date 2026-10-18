@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-18T18:06:59.633464+00:00",
+  "frozen_plan_hashes": {
+    "results\\dev_aux\\task2565\\chess\\plan.json": "81be24162bcee5612656e5f5027c1a4dafc32abf91bf07153b0fdc619c097bb4",
+    "results\\dev_aux\\task2565\\generic\\plan.json": "0ae8b581e41a388e139c592044077d3459b3ce9e6c96cb213cad0b18e7624f63"
+  },
+  "source_boundary": "Rechecked primary KnightCap paper cs/9901002 Figure3 and sections2-4, plus original saved METHOD87. No producer/eta/lambda/source/cap change.",
+  "interpretation": [
+    "SelfEvery lambda=.95 discounts one observed halfmove; SelfCandidate/Fixed lambda=.95 discounts one candidate-turn interval (typically two halfmoves). Therefore SelfEvery versus SelfCandidate changes physical trace horizon as well as observed nodes. It is a complete training-regime contrast, not isolated observation-count causality.",
+    "Each training selfplay trajectory uses one frozen theta for both actors and search internals. Fixednu trajectories use theta-minimax only at candidate turns, nu-minimax at foe turns. This aligns an internal policy context hypothesis, but data and number of episodes change under equal paid nodes.",
+    "KnightCap Figure3 gives episode PV-gradient TD but its headline learning started from expert material and played external online opponents with richer features. It does NOT establish selfplay superiority; this study explicitly tests rather than assumes that. Current price-only/D2/q0/shuffled ties/four randominitials is not full Beal-Smith or KnightCap reproduction.",
+    "Tie-selected PV derivative is a branch choice, not a unique classical gradient at ties; same seeded action-path ordering and strict comparison are fixed across regimes.",
+    "Chess available draw claims use existing common legal claim policy. Material-only fixeddepth evaluates checked cutoff states as a stated heuristic; no illegal standpat qsearch claim. Generic full typed actions/promotions/drops/history retained.",
+    "Chess fixedP and Generic all6free are distinct parameterizations. SAME learner and search code transfers; successful standard Chess learning is not established merely by engineering/math PASS, nor does a generic result establish arbitrary rule learnability."
+  ],
+  "next_if_negative": "Inspect paid trajectory diversity and endpoint/credit usefulness; do not select a best seed, increase eta from DEV, revive prover prerequisite, or extend old caps.",
+  "receding_horizon_clarification_before_fitness": {
+    "at": "2026-10-18T18:31:09.749452+00:00",
+    "scope": "Selfplay aligns evaluator coefficients, not an exact joint-policy critic. A rootD2 search models opponent at one remainingply; actual opponent starts a newD2 search. Even SAMEtheta therefore retains finitehorizon/replanning mismatch. Neither tanhmaterial nor backedupscore is calibrated WDL/probability. Removal of nu coefficient mismatch is a regime hypothesis, not complete policy-value consistency or diagnosis."
+  }
+}

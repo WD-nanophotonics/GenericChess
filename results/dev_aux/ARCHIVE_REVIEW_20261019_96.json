@@ -1,0 +1,161 @@
+{
+  "status": "PASS_RAW_BYTEPINS_CRC_ACTUAL_CONTENT_REVIEW",
+  "file": "DELTA_REPRO_20261019_96.zip",
+  "sha256": "8df61e26d238d3245a05814311f628ad46fced443fc6a78f41b0e66ce5035c40",
+  "bytes": 19682223,
+  "payloads": 324,
+  "uncompressed_bytes": 776397147,
+  "prior_unchanged": 40,
+  "sensitive_hits": 0,
+  "png_review": {
+    "results/dev_aux/task2565/chess-curve/strength.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/chess/loss-terms.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/chess/weights.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/generic/weights-271001.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/generic/weights-271002.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/generic/weights-271003.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    },
+    "results/dev_aux/task2565/generic/weights-271004.png": {
+      "status": "PASS_ACTUAL_PNG_TEXT_METADATA_AND_ALL_CHUNK_CRC",
+      "chunks": [
+        "IHDR",
+        "tEXt",
+        "pHYs",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "texts": [
+        {
+          "chunk": "tEXt",
+          "text": "Software\u0000Matplotlib version3.10.7, https://matplotlib.org/"
+        }
+      ],
+      "scope": "CompressedIDATnotinterpretedasplaintext; all8renderedfigures+plotlabelsvisuallyreviewedseparately. Rawimagebytesunchanged."
+    }
+  },
+  "AST_checks": 242,
+  "JSON_files": 62,
+  "JSONL_records": 203981,
+  "seconds": 39.71083519997774
+}

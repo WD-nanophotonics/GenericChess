@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ALL_SNAPSHOTS_AND_PRE_FITNESS_BINDINGS",
+  "domains": {
+    "chess": {
+      "registered_arms": 12,
+      "returned_arms": 12,
+      "missing_arms": 0,
+      "registered_slots": 128,
+      "snapshot_audits": 48,
+      "train_nodes": 1200000
+    },
+    "generic": {
+      "registered_arms": 48,
+      "returned_arms": 48,
+      "missing_arms": 0,
+      "registered_slots": 512,
+      "snapshot_audits": 192,
+      "train_nodes": 7200000
+    }
+  },
+  "curve_models": 36,
+  "curve_slots": 288,
+  "all_pre_fitness_plan_hashes": true,
+  "source_inventory_unchanged": 202,
+  "scope": "All planned slots and absentmodels retained, ALL snapshots are last closedepisode <=boundary. Originalcaps/fixedfoes/source preserved, no postfitnessselection or oldcap extension. Equal searchnodes only: prefix/replay/engineering paidwall/explicit work separately."
+}

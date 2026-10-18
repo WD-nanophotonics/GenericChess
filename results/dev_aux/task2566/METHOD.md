@@ -1,0 +1,29 @@
+# Scoped TC mechanics and unresolved prediction-quality source
+
+
+
+The optional `tc.py` implements section3 raw recommendation accumulators of [Beal–Smith1999](https://www.ijcai.org/Proceedings/99-1/Papers/081.pdf). Each episode applies OLD coordinate rates before accumulating the net and absolute RAW temporal impulses. It can recover after a zero rate. The PV/tanh transform and fixed lambda remain explicit choices, not the paper’s complete material learner. No96 training or WLD uses this adapter.
+
+
+
+The physical PDFpage3 scan visibly prints x quadratic `2(1+p)x²-4px+p=0`, whose discriminant is `8p(p-1)<0` for interior probabilities, and s quadratic `2s²-5s+1=0`, with roots outside `[.5,1]`. Fullsource/zoom were read privately; its publisher scan is retained there, not republished. A new Dot request asks for primary clarification; delivered does not mean answered. The public technical-report/thesis links returned HTML rather than PDF in this environment. This is not evidence of an inaccessible learning algorithm or a user blocker.
+
+
+
+`prediction_quality.py` is an INDEPENDENT construction, not an approved erratum. Mirror p<.5. Set q=1-p and r=abs(p-pEarlier). A continuous two-line function has value `1-r/z` before z, then `-p(r-z)/(p-z)`. Its expectation over a uniform earlier probability is strictly increasing in z, so the zero-mean breakpoint is unique. Density of r is2 up to q, then1 up to p. Integration gives:
+
+
+
+* z<=q: `2(1+p)z² -4pz +p(p²+q²)=0` (smaller root).
+
+* z>=q: `(1+p)z² +(2q-p²)z -q²=0` (positive root).
+
+* The joining probability is `(sqrt(17)-1)/4`; z=q there.
+
+
+
+The second polynomial matches the displayed y equation. The first and joining threshold differ from the scan. This does NOT verify the author’s intended correction. Exact integral roots, numerical quadrature, symmetry, continuity, range and terminal extremes are tested; no probability calibration, convergence, learning speed or chess strength follows. Prediction-decay adaptation is NOT deployed or claimed reproduced. Future learning experiments must register their precise variant before fitness, keep all initializations and actual terminal evaluations.
+
+
+
+Dot reply1792347372.984689 independently rendered the official page, corroborated the transcription and supplied the p=.5 counterexample now independently checked here. No verified author erratum or localcode execution followed. Adopt the limitedTC/explicitvariant boundary; no current96 run changes.

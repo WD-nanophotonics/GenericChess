@@ -1,0 +1,962 @@
+[
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.25,
+      -0.25
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.25,
+      -0.25
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.25,
+      -0.25
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      0.0,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.5,
+      1.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "uniform",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -1.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.25,
+      0.75
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -1.25,
+      0.25
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "Fixed",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.0
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.25,
+      0.75
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      1.0
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.25,
+      0.75
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfCandidate",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 1977,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -1.25,
+      0.25
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 8173,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.25,
+      0.75
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 27182,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 25000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 50000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 75000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  },
+  {
+    "seed": 31415,
+    "method": "SelfEvery",
+    "foe": "random99031",
+    "nominal_nodes": 100000,
+    "gain_bounds": [
+      -0.5,
+      0.5
+    ]
+  }
+]

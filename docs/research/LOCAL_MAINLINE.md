@@ -1,3 +1,26 @@
+# DEV_AUX96 — closed research; publication/official safe checkpoint pending
+
+Own sessionfade19ca-d51e-4592-b0b4-e69f0f78723e start2026-10-18T18:00:46UTC unchanged.
+ALL60TRAIN8.4Mnodes;923of928EVAL783terminal140U/5missing; alloldcaps unchanged.
+GenericFixed-init finitebounds uniform[.25,.5]/random[.234375,.390625], while both
+selfplay regimes weaker thanFixed onthispanel. Retain rule271003randomnegative
+[-.4375,-.0625] and seed31415lower0;2of8roots TRAINoverlap, rulesexposed. No
+population/all-rule/stablepriceclaim. Chess5-9TRAINepisodes/arm andcensoredactual
+WLD/costcurves remainunresolved; nofullclassicalreproduction or TD/WDLcomparison.
+All195499root/PVcoherence/credits/fullhistory/nodesPASS;120unprunedchecks36798nodes,
+80distinctinputs. Actualfresh44+21regenerationsMATCH125.024s,41stZIP8df61e26/324files;
+prior40same/7figuresviewed. Inventoryscope error corrected beforeZIP: exclude one
+unrelatedoptionalbridge hash, retain originalprivate/202unchangedrelevant pins;
+no code/data/capchange. Do not reintroduce broad forbidden-source enumeration.
+NewTC-onlymechanics14checks availablebutNOTdeployed; propertyQexplicitvariant,
+Dotconfirmsprintedscancontradiction/noauthorerratum orlocalcodeexecution.
+Next PRIORITY standardChess largerdose/fullterminalcoverage andmatchedpaidWDL
+control; keepFixednucompetitive, do notassumeSelfplay/solver needed. Newroles/
+inputs/foes/costs beforefitness, allseeds/failures/U; nooldcurve5slot continuation.
+Own sidemission/PUBLIC only; scienceOPEN, noCore/default/UI/otherrolewrites.
+
+## Completed95 evidence (historical)
+
 # DEV_AUX95 — completed rate controls and actual fresh reconstruction; science OPEN
 
 Session89acbbed-2fed-4f4c-a8fe-65ac68804488 start2026-10-18T16:24:29UTC unchanged;

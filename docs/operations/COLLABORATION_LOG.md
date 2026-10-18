@@ -2584,3 +2584,24 @@ messageorrequestloop, no reading/executionconfirmed. Originalprepushguard reject
 HEADalias; fullsiderefs succeeded, no bypass/force. Officialended84.623min/8stages/
 safe_checkpoint; no newscience afterfinish. Closingmetadata receives separate
 remoteverification. Existingown90minuteheartbeat remainsACTIVE.
+
+## DEV_AUX96 — TD policy/clock evidence and classical-method boundary
+
+ALL60TRAIN/923paidEVAL and allnegative/U/missing recorded; Genericfixednu TD
+improves finiteaggregate vsinitial butselfplayweaker andrule271003negative.
+Chesssmall-dose actualstrength remainsunresolved. Fullcredits/history/195499PV
+checks andactualfresh44+21PASS125.024s. Prior40capsules preserved; current41st
+8df61e26/324payloads; noautomaticintegration/product/default/UI change. Dot
+1792347372 independentlyrenderedpublisherformula/noauthorerratum, reviewedmath
+inline, notnewlocalcode/run; adoptedrawTC/oldrate/explicitvariant boundary.
+Ownscopeinventorymistake excludedbeforearchive; oldoriginalprivate and202pins
+retained, no otherprojectwrites. No PRIMARY/DeepSeek currentcode execution or
+contribution independentlyreviewed thissegment; no supervisor/rolecontrol.
+FixedSHA/publicdelivery follows actualreview; delivery is notreading/execution.
+Next standardChess dose/fullterminal/paidWDLcomparison, no bestseed/rootchoice.
+
+Closingchannelread: PRIMARY request1792349395 reports16rule actionencoder alias
+witnesses at base8f9c2fe92abef142619b435af149af5946bdc2e4; Dot1792349458 gives
+ordering-only logic advice, not sourceexecution. DEFER for96: our ordering is
+coefficient-independent/no learnedactionpolicy, no dependency or duplicate AUX
+task. Fullthread/pages savedprivate; no source read/rerun or adoption claimed.

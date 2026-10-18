@@ -1,0 +1,54 @@
+{
+  "status": "PASS_ALL_ROOT_VALUE_PV_COHERENCE",
+  "counts": {
+    "queries": 195499,
+    "nodes": 16236710,
+    "material_PV": 181855,
+    "terminal_PV": 13584,
+    "failed_queries": 60,
+    "failed_nodes": 3464,
+    "full_configured_query_limit_failures": 0
+  },
+  "journals": {
+    "results\\dev_aux\\task2565\\chess\\queries.jsonl": {
+      "queries": 9802,
+      "nodes": 1200000,
+      "material_PV": 9674,
+      "terminal_PV": 116,
+      "failed_queries": 12,
+      "failed_nodes": 1119,
+      "full_configured_query_limit_failures": 0
+    },
+    "results\\dev_aux\\task2565\\generic\\queries.jsonl": {
+      "queries": 110263,
+      "nodes": 7200000,
+      "material_PV": 98186,
+      "terminal_PV": 12030,
+      "failed_queries": 47,
+      "failed_nodes": 2251,
+      "full_configured_query_limit_failures": 0
+    },
+    "results\\dev_aux\\task2565\\chess\\eval-queries.jsonl": {
+      "queries": 20084,
+      "nodes": 2233355,
+      "material_PV": 19900,
+      "terminal_PV": 184
+    },
+    "results\\dev_aux\\task2565\\chess-curve\\eval-queries.jsonl": {
+      "queries": 44064,
+      "nodes": 4931209,
+      "material_PV": 43659,
+      "terminal_PV": 404,
+      "failed_queries": 1,
+      "failed_nodes": 94
+    },
+    "results\\dev_aux\\task2565\\generic\\eval-queries.jsonl": {
+      "queries": 11286,
+      "nodes": 672146,
+      "terminal_PV": 850,
+      "material_PV": 10436
+    }
+  },
+  "seconds": 4.367225900001358,
+  "scope": "ALL complete root scores equal actual recorded selected PV material dot/terminalconstant; no derivative computed from another leaf. ALLfailedreceipts have NOtarget/PV. This does not prove unobserved subtrees/minimax correctness, externalrules or calibrated WDL. Root/action/PV optimality sampled separately; fullhistory/math replay separate."
+}
