@@ -133,9 +133,12 @@ Two further observations bound how this should be read:
 
 - 50 of the 53 near pairs had their smaller exact value at or just above the
   normalization anchor: median 1000.0 at size 4, 1130-1191 at size 6 and
-  1000-1004 at size 8, with only three pairs below 999. Pairs involving the
-  median type are the ones that can collide, which is a direct consequence of
-  median normalization, not a property of the movement atoms.
+  1000-1004 at size 8, with only three pairs below 999. The anchor sets the
+  scale, but it is not the only collision site: 14 of the 31 tied pairs have a
+  smaller exact value that rounds to 1000, while the others sit at normalized
+  magnitudes from 724 to 2261. A tie needs two values to straddle whichever
+  half-integer boundary lies between them; median normalization makes values
+  just above the anchor the densest such region, not the only one.
 - The raw-ratio screen `<= 1.001` selected exactly the same pairs as
   `gap < 1` in all nine cells, with the largest reachable raw ratio at
   `1.00079`. This is not a second criterion: a tie requires
@@ -153,6 +156,12 @@ Two further observations bound how this should be read:
   rules, and the compression rate is a function of rule complexity, not one
   number. A single "tie rate" quoted for the generator would understate rich
   rules.
+- The pre-registered unit is the rule, not the pair. The per-pair collision
+  rate is 4/1,074 = 0.37%, 12/2,152 = 0.56% and 15/3,585 = 0.42% at sizes
+  4/6/8: not monotone. Richer rules add more pairs, so the per-rule count
+  still rises, but an individual additional pair is not more likely to
+  collide. A consumer that draws one rule should use the per-rule count; a
+  per-pair rate is a different quantity.
 - Ties are small when they happen: at most 0.07% of a ratio, never material by
   the 1.10 threshold, and never between identical movement encodings.
 - For any consumer that needs exact within-rule ordering, the headroom measure
