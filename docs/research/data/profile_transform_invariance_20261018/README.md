@@ -61,6 +61,18 @@ rather than by directory depth and reads the private originals when they are
 present, so running the published copy no longer writes a nested
 `docs/research/docs/...` tree or fails on the Stage 7 sources.
 
+Reproduction boundary: copying this directory somewhere else is **not** enough
+to re-run the scans or verifiers. Every one of them needs the checkout root for
+the `generic_chess` package and the stored game files, which live in the
+git-ignored private tree, so an outside reader has the scripts, the pre-run
+plans, the stored results and the verifier's own output, not a runnable
+pipeline. Checked directly on 2026-10-18: `verify_zone_promotion_source_classification.py`
+copied alone into a temporary directory exits 1 with
+`cannot locate the worktree root above <dir>`, which is the intended failure and
+not a result. Inside a checkout, `tests/specification/test_profile_transform_invariance_evidence.py`
+re-checks the sizes and SHA-256 in this table and in `manifest.json` against the
+stored files and rejects an artifact that was added without being listed.
+
 ## Files
 
 | file | bytes | SHA-256 |
