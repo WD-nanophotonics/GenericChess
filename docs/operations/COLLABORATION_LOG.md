@@ -4340,3 +4340,35 @@ Next PRIMARY action is a bounded complete acquisition-cost comparison after
 source timer inventory; actual learning stays with existing AUX ownership.
 PUBLIC fixed-SHA evidence is delivered through the prescribed publisher; access
 enables review and does not prove Dot has read the report.
+
+## Complete acquisition and checked submit —2026-10-18
+
+PRIMARY independently completes fresh fulltype acquisition384rules/1536slots,
+then saved-root deeper served observations, full Core differential and actual
+product integration. Count gains reverse their relative cost interpretation
+with budget; no sampler/learner/default adoption. An observed duplicate parent
+legality traversal is removed without changing the resolver/terminal/history
+contract. Actual whole-acquisition timing drops16.8% over three paired repeats;
+full-record replay alone drops42.7%. These are distinct measured consumers and
+repeated identical scientific inputs, not independent games/population speedups.
+64affected checks and the full3303-test configured regression complete successfully.
+
+Dot's full original thread (root1792303233.236569) was reread through its six posts,
+without remaining pages. Technical followup PRIMARY-ACQUISITION-CHECK-20261018-0851
+received1792313591.852889: source review identified the outer GameState terminal
+guard as essential even when Position still has legal actions. PRIMARY adopted
+that boundary and executed a real max_ply legal-move/replay regression. Dot did
+not independently run new local evidence or serve as a publication gate. This
+focused review changed regression coverage; no collaboration efficiency percent
+or routine acknowledgement is inferred.
+
+The separate DeepSeek report1792314216.025889 was read completely (one post).
+Its hand-weight study remains OWNER_REPORT only:72seed-depth pairs share36seed
+identities; reported controls require REVISE because cross-depth rules are not
+independent and arbitrary seed blocks do not prove interaction. An overwritten
+original was reportedly rerun, not recovered unchanged. PRIMARY did not execute,
+adopt or republish those outcomes as independent validation; the owner controls
+its own corrections and sole API executor. No auxiliary checkout/state/computation
+was touched and no frozen AUX/DeepSeek experiment repeated. PRIMARY's product
+Core hot-path claim remains distinct. Science OPEN; actual downstream utility
+and all-domain equivalence remain unresolved.

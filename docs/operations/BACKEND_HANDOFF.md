@@ -1,3 +1,17 @@
+## 2026-10-18 checked semantic submission cost
+
+Python Core only: apply_action keeps its complete legality/legacy-ambiguity and
+outer GameState terminal guards, then reuses existing verified-binding child
+materialization instead of enumerating parent legality twice. Full history,
+repetition, terminal priorities, Pass and public SemanticEngine.apply remain.
+Consumers keep their existing Session/transition imports and APIs; no Native
+rebuild, new trusted-caller contract, default evaluator or UI selection changes.
+64affected checks/full3303configured tests pass. Actual complete acquisition is
+16.8%cheaper across three paired timing repeats with identical scientific rows;
+isolated full-record replay is42.7%cheaper. These finite timings are distinct,
+not universal game-strength/learning gains. Evidence and source-only qualification:
+../research/ACQUISITION_COST_AND_CHECKED_SUBMIT_20261018.md.
+
 ## 2026-10-17 TD declaration-PV target refusal
 
 Python-only collector correctness: declaration-ended PVs and nonterminal semantic

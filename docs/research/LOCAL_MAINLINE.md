@@ -27,7 +27,7 @@ study; this is owner-reported, not independently executed or adopted here.
 Explicit resume returns PRIMARY to independent mainline research; role setup is
 complete. Three distinct prospective panels are now CLOSED, with later bounded
 mechanism/input diagnostics. They do not refill old AUX92/93 or DeepSeek work.
-No product code, generator default, evaluator, optimizer or model was changed.
+Those three panels changed no product code, generator default, evaluator, optimizer or model. The later checked-submit optimization below changes only Core submission.
 
 [NEW_RULE_PRICE_TRANSFER_20261018.md](NEW_RULE_PRICE_TRANSFER_20261018.md): eight
 prespecified new4x4rules411001..8, nearest of4 sources selected from rule-only
@@ -100,18 +100,36 @@ abstract optimal-PV ambiguity does not establish algorithm instability. Keep
 OPTIONAL sampler status and static/learned/Unit controls; no training/default
 activation, new tie policy or refill of the capped2364tail.
 
-Next useful choice: measure complete acquisition cost before inferring useful
-input throughput. Source inventory has begun: query_seconds excludes Core root/
-PV replay, feature/gradient extraction and recording; producer wall includes
-those but excludes earlier generation and separate profile construction. Freeze
-one small paired end-to-end cost protocol using existing runners, cold/warm and
-failure/terminal slots explicit. If full cost erases availability gains, retain
-the cheap unfiltered route; if not, consider a scoped AUX-owned learning test
-with actual residual/eligibility, not another PRIMARY learner. This supersedes
-the unqualified Unit-only input-count next action, not the main AI objective.
-All new capsules pin source/dependencies and regenerate derived readers without
-old fitness/training; that validates receipt arithmetic, not independent WDL or
-an external rules authority. PUBLIC evidence enables review, not proof of reading.
+[ACQUISITION_COST_AND_CHECKED_SUBMIT_20261018.md](ACQUISITION_COST_AND_CHECKED_SUBMIT_20261018.md)
+closes the complete-cost question. Fresh192paired settings produce384rules/1536slots;
+D2 nonzero392->453 costs24.648->30.134s, input-rate ratio.9452. Actual deeper
+served observations (depths2..8, only108completeD8) yield projected rate1.1530;
+this is budget-dependent sampler accounting, not TDcredit/learning gain or an
+actual wholeD8 timing repeat. Keep optional sampler/static/learned/Unit controls.
+
+The measured bottleneck is repeated Core legal validation. Public checked submit
+now retains the complete resolver/terminal guard and uses existing verified-binding
+materialization once. Actual public-function1536root/34230child/3072invalid-ID
+checks match old complete state/errors;64affected tests and full3303active tests
+pass. Three paired complete acquisition repeats match all11520scientific rows;
+actualonline time168.784->140.453s (-16.8%), versus isolated fullreplay -42.7%.
+An additional12generated10/12/16rules gives2209matching children; all are actually
+Native-admitted, not a fallback experiment. No generator/model/search-budget
+default changes. Source-only capsule readers distinguish baseline and product.
+
+Next useful question is downstream decision/learning usefulness at a fixed paid
+budget, not more counts or another unchanged cost campaign. PRIMARY will inspect
+the existing complete-state consumer contract and identify one nonduplicated
+backend/transfer comparison; AUX continues owning learning/solver experiments.
+Initial consumer inventory is complete: search lazy handles are parent-identity
+bound, whereas Session.submit additionally owns keys/ActionRecord/witnesses and
+atomic commit. No existing handle-submit API exists; defer adding one until
+downstream paid utility warrants maintenance, and never bypass Session internals.
+Do not add a competing learner, rerun frozen fitness, or infer benefit from own
+raw-gradient availability. Reconsider sampling only with actual credit/utility
+and distribution/resource conditions explicit. All capsules validate receipt
+semantics/arithmetic, not external rules authority, fullWDL or population winners.
+PUBLIC enables review, not proof of reading.
 
 ## Previous learning choice still retained — 2026-10-17
 
