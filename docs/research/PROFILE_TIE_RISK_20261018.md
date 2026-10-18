@@ -164,8 +164,11 @@ Two further observations bound how this should be read:
 
 - The 120 seeds are a single fresh block per preset and are **shared across
   the three board sizes**, so cells are paired, not independent. Capability
-  signatures also repeat across seeds, so the Wilson intervals and the Fisher
-  test describe the sample; they are not a population inference.
+  signatures also repeat across seeds: the 31 distinct-score tied pairs map to
+  only 22 unordered signature pairs, six of which recur two or three times.
+  The 1,080 rules still have distinct ruleset fingerprints, so these are not
+  seed duplicates, but the Wilson intervals and the Fisher test describe the
+  sample; they are not a population inference.
 - Counts per cell are 1-7. The three-preset agreement is the reason to take
   the ordering seriously; no single preset would support it alone.
 - One generator family, one evaluator configuration (`hand_weight=0.9`), three

@@ -72,6 +72,11 @@ pairs; the private original has them.
   the correct denominator. The same summary records the per-rule headroom
   counts below 1/2/5/10/20/50/100 grid units and the scaled ratio-excess check
   `(raw_ratio - 1) * smaller_exact_value`.
+- Independence check: the 31 distinct-score tied pairs in `results_tie_risk.json`
+  map to 22 unordered movement-signature pairs (six recur two or three times),
+  while all 1,080 rules carry distinct ruleset fingerprints. Recurring
+  capability patterns, not duplicate seeds, are the reason the counts are not
+  360 independent capability draws.
 - Determinism: re-running the gap script produced a byte-identical file; the
   published summary was produced by running the published copy in place with
   `--summary-only` and matches the private full result minus the `pairs` field.
