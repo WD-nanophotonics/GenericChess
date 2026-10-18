@@ -4444,3 +4444,24 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   other; why only 2.13% coincide, and whether search would choose such a
   promotion, stay unmeasured. GPT's review, not this log, decides whether the
   auxiliary delivery is accepted.
+
+### DEEPSEEK_AUX stage 9: the 6.56x contrast is a composition average
+  (2026-10-18, session `6de032cc`).** Stage 8 pooled 36 rulesets into one
+  ratio. `analyze_contact_concentration.py` re-partitions the same stored
+  per-game records by seed with no replay; nine re-aggregation checks reproduce
+  the published summary exactly, so this is a re-weighting rather than a new
+  measurement. Only 14 of the 36 seeds contribute any in-zone observation and
+  only 7 produce any of the 53 contacts; the largest seed holds 18/53 (34%) and
+  the top three hold 70%. Among the 14 seeds with both arms, 9 have a higher
+  not-in-zone rate and 5 a higher in-zone rate; those 5 supply 34 contacts from
+  169 in-zone observations (20.1%) while the other 31 seeds supply 19 from
+  2,320 (0.82%). The pooled 2.13% vs 13.98% therefore averages a
+  zone-is-the-promotion-rank regime against a blocked-pocket regime, so the
+  defensible sentence is "in most of this panel the zone is not a promotion
+  square", not a uniform geometric law. Contacts are also repeated plies of
+  standing pieces - 30 of 182 games contain any and one game supplies 9 - so
+  they are not 53 independent choices. The report and README were narrowed from
+  "every stored contact case" to the 8 of 53 cases actually written out.
+  Delivery: commit 15102a5a, public evidence copy rebuilds 44/44, and 73
+  focused tests pass. No strength or utility claim; board 4, `classic_like`,
+  depth 2-3 stored games only.
