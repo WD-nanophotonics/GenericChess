@@ -1,7 +1,9 @@
-# DEV_AUX97 — science/verification CLOSED, delivery pending; scientific OPEN
+# DEV_AUX97 — completed67.825minutes/safe_checkpoint; scientific OPEN
 
 Own session80fa4333-247e-420a-bff3-ed759f78affe actualstart2026-10-18T19:30:14.912941UTC
-unchanged; officialfinish pendingafterreview/publication. No newscience/fitness now.
+unchanged; ENDED2026-10-18T20:38:04.383082+00:00,7researchstages. No newscience/fitness afterfinish.
+Sourced86ecdcfccb2bd268a19d7860014b2b7ff677be0 fullremote/PUBLIC/21anonymousfiles verified; Slack1792355760.968619
+exactreadback, reading/executionUNCONFIRMED. Onlyclosingmetadata versioning remains.
 StandardChess TD/TC/paidWDL all4initials/1Mnodes each/D2plain/H1024/fixeduniformTRAINfoe.
 ALL12TRAIN12Mnodes736trajectories590actual146U/110225queries/36837TDterms closed1488.492s.
 ALL768EVAL actualterminal/noU/no missing; full127262query/model/history/PV/cost replayPASS.
@@ -22,7 +24,7 @@ noTRAIN/EVALrerun. Smallmetadata/plotformatfailurescorrected/preserved; no produ
 Next PRIORITY ALL97fixedcostsnapshots250k/500k/750k/1M+initial actualstrengthcurves onnewroots,
 notbestcheckpointselection/etaDEVfit/provercoverage. NEXT_STUDY97 isPROPOSEDonly, notstarted.
 Own sidemission/PUBLIC only; noCore/default/UI/otherrolewrites/integration; scienceOPEN.
-Report results/dev_aux/SEGMENT_20261019_97.md; delivery andofficialactualtime recordedlater.
+Report results/dev_aux/SEGMENT_20261019_97.md; officialtime/sourceproof inDELIVERY_20261019_97.json.
 
 ## Completed96 evidence (historical)
 

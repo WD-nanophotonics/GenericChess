@@ -24,8 +24,10 @@ Metadataquery/plotnewline/cache issues diagnosed/corrected withoutproductionchan
 No pricefitting, oldcapextension, bestseed/checkpointselection orUNKNOWNdrawreward.
 
 NextallfixedsnapshotactualWLDcostcurves remainsPROPOSED, no newexperimentstarted.
-Reviewedpublication/fixedSHA evidence andofficialsessionfinish stillpending here;
-sending isdistinctfromDotreading/execution. Own ScientificstatusOPEN.
+Sourced86ecdcfccb2bd268a19d7860014b2b7ff677be0 fullremote/PUBLIC/21anonymousfiles verified/clean;
+fixedSlacksent1792355760.968619 exactreadback, reading/executionUNCONFIRMED.
+OfficialEND2026-10-18T20:38:04.383082+00:00/67.825min/safe_checkpoint/7stages;
+allcomputations closed, onlyclosingmetadata afterfinish. Own ScientificstatusOPEN.
 
 ## DEV_AUX94 — matched deployment depth and prospective deeper training
 
