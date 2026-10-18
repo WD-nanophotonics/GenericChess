@@ -1,3 +1,32 @@
+# DEV_AUX99 — matched TRAIN/DEPLOY contexts; scientific OPEN
+
+Own session9219e39a-a1b9-48b5-88ae-d4dd4d37224d actualstart2026-10-18T22:31:24.003355+00:00 unchanged; ACTIVE;science/reproclosed, officialfinishpending.
+SourcePENDING_REVIEWED_SOURCE_PUBLICATION; own sidemission/PUBLIC; otherrolesreadonly/noadoptionclaim.
+ALL8TRAINarms each1.5Mpaidnodes, SAME TD eta.05 lambda.95/all4initials;
+candidateplain/q2, fixedplainuniformfoe. Main576fullmatrix/allcontexts;
+separate192newrootpanel ALLprices/candidateq2 vsSAMEq2foes, registeredbeforemainfitness.
+TRAINactual532term/174U.
+MainEVAL576term/0U/0missing;
+q2foeEVAL192term/0U/0missing.
+Allseed/role/foe negativecells, initialbaselines/headroom/actualcosts andsignedprices kept.
+SameTRAINbudget changesdata; internalminimaxstillthetaforbothplayers,
+notexactfixedfoepolicycritic. Approxq2 notfullquiet/prover.
+Pairedfinitebounds notCI/populationwin/stableuniversalprices.
+Producer31265336nodes/4019.549s plusactualsearchreplay/audit/engineeringcosts.
+Actualfresh38tests+15regenerations,44thZIPfe0c116f, previous43same.
+No bestseed/price/root selection/humanfit/Xiangqiholdout/oldcapfill.
+Report results/dev_aux/SEGMENT_20261019_99.md andtask2577/2579 allcell summaries.
+Currentdecision: SAMEplainTD next testsTRAIN resetdistribution early8 versus
+balanced8/64/all4initials/commonNEWactualWLD/costs, notanotherqcoverageexpansion.
+Reason:q2TRAIN-plain underq2DEPLOY-.041667/-.0625 andfixedq2foes-.375/-.15625;
+plaintrained-init nonnegativeALLseed/foecells, butpriceordersnotunanimous.
+NewTRAIN-only16-rootpreflight:early0/16freephi/rank0, late14/16/rank4, both0terminal;
+laterTRAINgradientsalreadyrank4, rootrichnessnotprovedcause.531kTRAIN-exposed.
+ExecuteNEWregistration per task2576/next-reset-proposal.json; no nextTRAIN/EVALstarted.
+FullGenericSessiontransfer backup preservespromotion/drops/aux/history andnonscoringUNKNOWN.
+
+## Historical completed98
+
 # DEV_AUX98 — actual cost curves and policy dependence; scientific OPEN
 
 Own sessiona14f40bc-61e7-4718-b55d-64f2a0dbb793 start2026-10-18T21:04:36.742654+00:00 unchanged; ENDED74.161min/safe_checkpoint/7stages.

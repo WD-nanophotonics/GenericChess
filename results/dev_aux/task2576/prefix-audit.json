@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "counts": {
+    "candidate_q2_queries": 7159,
+    "candidate_q2_nodes": 2159776,
+    "qnodes": 1911838,
+    "check_evasion_nodes": 166211,
+    "q_cap_still_tactical": 459903,
+    "teacher_uniform_candidate0": 184,
+    "games": 368,
+    "queries": 38394,
+    "nodes": 6000000,
+    "actual_terminal": 289,
+    "unknown": 79,
+    "observed": 19212,
+    "terms": 19133,
+    "episode_updates": 360,
+    "teacher_uniform_candidate1": 184,
+    "failed_queries": 78,
+    "failed_nodes": 6685
+  },
+  "seconds": 11.035291899985168,
+  "scope": "ALL typedChess legalhistory/fullclaimpolicy, frozenmodel/actor anddeclaredteacher-cycle/role, independentreverseTDsum andallpaidwork. Only TD_plain/TD_q2 arms; fixed plain foes and actual candidate q2 statistics. Same source rules, not independent search execution. Same rulesauthority, notexternalengine or humanpriceagreement.",
+  "prefix_scope": "FIRST4closedarms only; restproduceractive, no fullcompletionclaim.",
+  "observed_at": "2026-10-18T22:45:23.031569+00:00",
+  "last_gameid": 368
+}

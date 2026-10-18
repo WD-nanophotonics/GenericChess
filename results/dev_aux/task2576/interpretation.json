@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-10-18T22:39:00.948120+00:00",
+  "no_change_to": "Originalregisteredarms/roots/seeds/weights/eta/lambda/nodeorwallcaps/EVALslots unchanged; interpretationclarification beforeanynewEVALfitness.",
+  "candidate_context_matching": "TRAINcandidate and DEPLOYcandidate bothuse plain orboundedq2 aslabelled. Actualfixedfoes alwaysplain, sameweights/order withinpairedcells. Internalminimaxsearchstillassumescurrenttheta forBOTHplayers; this isnot anexactactualopponent-policycritic orcompletecontextrepair.",
+  "gain": "g(train,deploy)=mean[WLD(theta_train,deploy,fixednu)-WLD(theta_initial,deploy,fixednu)] forALLdeclaredseed/root/role/foecells.",
+  "matching_interaction": "(WLD(qTRAIN,qDEPLOY)-WLD(plainTRAIN,qDEPLOY))-(WLD(qTRAIN,plainDEPLOY)-WLD(plainTRAIN,plainDEPLOY)); initialcancelsalgebraically. Finitebounds[-4,4], notCI.",
+  "fairness": "TRAINnodes1.5Mperarm includesBOTHactors/failedsearch. EVALsamequerycaps butnotnecessarilyequalactualnodes/wall; reportALLnodes/wall includinginitial/baseline/foes, anddo notclaimsameTOTALexperimentcostormoreefficientwithoutcostevidence.",
+  "ceilings": "AbsoluteW/L/D/U androom-to-max accompanypricegains; q2initialstronger mayreduceheadroom. No EVALmodel/root/seed/priceselection.",
+  "domain": "All standardChess legalpromotion/castling/EP/history andpredeclared claimavailabledrawpolicy. q2noncheckcapturecutoffmayretainstaticevaluation, notfullquiet/allrulegenericproof. Priorstudies/caps unchanged."
+}

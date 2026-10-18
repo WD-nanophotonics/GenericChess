@@ -1,0 +1,33 @@
+"""New TRAIN-only reset-distribution feasibility, no model/fitness selection."""
+from pathlib import Path
+from fractions import Fraction
+import json,time,datetime,hashlib
+from results.dev_aux.task2492.adapters import ChessEnv
+from results.dev_aux.task2565.train import prefix,restore
+from results.dev_aux.task2392.reader import SharedDeleteStopReader
+def rank(rows):
+ a=[[Fraction(x)for x in r]for r in rows];k=0
+ for j in range(4):
+  pivot=next((i for i in range(k,len(a))if a[i][j]),None)
+  if pivot is None:continue
+  a[k],a[pivot]=a[pivot],a[k];v=a[k][j];a[k]=[x/v for x in a[k]]
+  for i in range(k+1,len(a)):
+   v=a[i][j];a[i]=[x-v*y for x,y in zip(a[i],a[k])]
+  k+=1
+  if k==len(a):break
+ return k
+def run():
+ d=Path("results/dev_aux/task2576");p=json.loads((d/"reset-preflight-plan.json").read_text());start=time.perf_counter();stop=SharedDeleteStopReader(Path.cwd());stop();rows=[]
+ for family in p["families"]:
+  if time.perf_counter()-start>=p["hard_seconds"]:break
+  pair=[]
+  for n in p["prefix_lengths"]:
+   stop();e=ChessEnv();prefix(e,0,family,n);r=e.record();assert restore(0,None,r).record()==r;out=e.board.outcome(claim_draw=True)
+   pair.append(dict(family=family,requested_prefix=n,actual_prefix=len(r["moves"]),record=r,phi=list(e.features()),terminal=None if out is None else out.termination.name,outcome=e.terminal()))
+  assert pair[1]["record"]["moves"][:len(pair[0]["record"]["moves"])]==pair[0]["record"]["moves"];rows.extend(pair)
+ summary={}
+ for n in p["prefix_lengths"]:
+  rr=[r for r in rows if r["requested_prefix"]==n];summary[str(n)]=dict(roots=len(rr),terminal=sum(r["terminal"]is not None for r in rr),nonzero_free_material=sum(any(r["phi"][1:])for r in rr),free_material_feature_rank=rank([r["phi"][1:]for r in rr]),actual_random_plies=sum(r["actual_prefix"]for r in rr),distinct_full_records=len({json.dumps(r["record"],sort_keys=True)for r in rr}))
+ r=dict(status="COMPLETE"if len(rows)==len(p["families"])*len(p["prefix_lengths"])else"PARTIAL_FROZEN_PREFLIGHT_CAP",plan_sha=hashlib.sha256((d/"reset-preflight-plan.json").read_bytes()).hexdigest(),actual_start=datetime.datetime.now(datetime.timezone.utc).isoformat(),summary=summary,rows=rows,search_nodes=0,seconds=time.perf_counter()-start,scope=p["scope"])
+ (d/"reset-preflight.json").write_text(json.dumps(r,indent=2));print(json.dumps({k:v for k,v in r.items()if k!="rows"}))
+if __name__=="__main__":run()

@@ -1,3 +1,21 @@
+# DEV_AUX99 collaboration checkpoint —2026-10-19 JST
+
+Own TD/search/history implementation reused; no PRIMARY/DS writes or execution claimed.
+New12MmatchedTRAIN/full576deployment matrix and192fixedq2foe newrootpanel.
+Allinitials/roles/foes/negativecells/signedprices/terminal-U-missing/costs retained.
+All-history/reverseTD/querypolicy audits; actualsearchreplay; fresh38+15 reconstruction.
+ScientificOPEN; no universalprice/order/policy-independent/convergence/costwinner claim.
+SourcePENDING_REVIEWED_SOURCE_PUBLICATION; SlackNOT_SENT; reading/executionUNCONFIRMED.
+Dot1792360739 reply inPRIMARY H512thread read asmethodreference only; inline-designreview, no ownsourceexecution.
+No routineack/newworker/delegation/automaticmerge; prior93D3/96missing/98caps closed.
+Nextlearning-distributioncontrol prepared:early8 versusbalanced8/64/SAMEplainTD,
+TRAIN-only16-rootpreflight0vs14nonzerofreephi, no newθ/fitness.
+Matchingq2notdominant main orfixedq2foepanel; allseednegativecases kept.
+44thrawcapsulefe0c116fd54548c8820e774e2268f2a14ec1b96d16e2758d5165c66a322dc6b4; previous43 unchanged; directGit LF/EOFprojection disclosed.
+Fullallseed/role/context results, headroom andcosts: results/dev_aux/SEGMENT_20261019_99.md.
+
+## Historical completed98
+
 # DEV_AUX98 collaboration checkpoint —2026-10-19 JST
 
 DEV_AUX completed all97fixedsnapshot costcurves (832actualgames) andcandidate-only

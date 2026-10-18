@@ -1,0 +1,19 @@
+{
+  "session_id": "9219e39a-a1b9-48b5-88ae-d4dd4d37224d",
+  "registered_at": "2026-10-18T22:32:01.020537+00:00",
+  "question": "Does matching TRAIN and DEPLOY search context recover material-price gains over same-context initial baselines?",
+  "expected_seconds": 3600,
+  "hard_producer_seconds": 4800,
+  "arms": 8,
+  "train_nodes": 12000000,
+  "eval_slots": 576,
+  "evaluation": "ALL4initials x initial/TD_plain/TD_q2 x plain/q2DEPLOY x6mechanicalfreshroots x2roles x2fixedplainfoes. No model/root/seed/checkpoint selection; missing/U intervals preserve known side.",
+  "estimands": "Within eachfixedDEPLOYcontext TDq2-minus-initial, TDplain-minus-initial, TDq2-minus-TDplain; difference of gains across DEPLOY contexts. AbsoluteWLD/headroom/allseed/roles also; budget changes episodes, not pure causal optimizer effect.",
+  "cheaper_alternative": "Reuse98endpointpanel cannot test q2-trained prices. Eight1.5Marms chosen prospectively; no expanding q/prover coverage.",
+  "scope": "StandardChess completelegal/history/claimpolicy; q2 approximate truncated noncheckcaptures/allcheckevasions/qstack96 abort. Old93/96/98 caps remainclosed.",
+  "pins": {
+    "results\\dev_aux\\task2576\\plan.json": "d029603d90ba3d53078efad2908563b4f230a6668d783b3908367fa6adbf69c8",
+    "results\\dev_aux\\task2577\\eval-plan.json": "f0d4c735ae99e4928777589b6d880a24044651c156821ecd8c8130c710bd6c9b",
+    "results\\dev_aux\\task2577\\evaluate.py": "d9d8ba1821fdebd5341ea5c3223f5f1cbd6f989151d19e38048300360092e5e3"
+  }
+}

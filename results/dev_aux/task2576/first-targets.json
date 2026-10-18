@@ -1,0 +1,287 @@
+{
+  "status": "PASS_ALL_PREFROZEN_FIRST_ROOT_BINDINGS",
+  "distinct_full_roots": 1,
+  "rows": [
+    {
+      "seed": 1977,
+      "status": "SAME_INITIAL_MODEL_ROOT_AND_ORDER",
+      "initial_weights": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "plain": {
+        "complete": true,
+        "nodes": 268,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 0,
+          "max_qply": 0,
+          "standpat_nodes": 0,
+          "check_evasion_nodes": 0,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 224,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 0,
+          "q_cap_still_tactical": 0,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "q2": {
+        "complete": true,
+        "nodes": 1565,
+        "value": 1.1053771326124853,
+        "prediction": 0.11008969792562602,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          1,
+          -1
+        ],
+        "PV_terminal": false,
+        "action": "f3f7",
+        "search_stats": {
+          "qnodes": 1521,
+          "max_qply": 3,
+          "standpat_nodes": 723,
+          "check_evasion_nodes": 157,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 735,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 641,
+          "q_cap_still_tactical": 580,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "same_action": false,
+      "same_search_value": false,
+      "same_PV_features": false
+    },
+    {
+      "seed": 8173,
+      "status": "SAME_INITIAL_MODEL_ROOT_AND_ORDER",
+      "initial_weights": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "plain": {
+        "complete": true,
+        "nodes": 284,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 0,
+          "max_qply": 0,
+          "standpat_nodes": 0,
+          "check_evasion_nodes": 0,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 240,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 0,
+          "q_cap_still_tactical": 0,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "q2": {
+        "complete": true,
+        "nodes": 939,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 895,
+          "max_qply": 3,
+          "standpat_nodes": 549,
+          "check_evasion_nodes": 88,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 307,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 258,
+          "q_cap_still_tactical": 223,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "same_action": true,
+      "same_search_value": true,
+      "same_PV_features": true
+    },
+    {
+      "seed": 27182,
+      "status": "SAME_INITIAL_MODEL_ROOT_AND_ORDER",
+      "initial_weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "plain": {
+        "complete": true,
+        "nodes": 284,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 0,
+          "max_qply": 0,
+          "standpat_nodes": 0,
+          "check_evasion_nodes": 0,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 240,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 0,
+          "q_cap_still_tactical": 0,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "q2": {
+        "complete": true,
+        "nodes": 819,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 775,
+          "max_qply": 3,
+          "standpat_nodes": 494,
+          "check_evasion_nodes": 75,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 241,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 206,
+          "q_cap_still_tactical": 169,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "same_action": true,
+      "same_search_value": true,
+      "same_PV_features": true
+    },
+    {
+      "seed": 31415,
+      "status": "SAME_INITIAL_MODEL_ROOT_AND_ORDER",
+      "initial_weights": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "plain": {
+        "complete": true,
+        "nodes": 268,
+        "value": 1.0,
+        "prediction": 0.09966799462495582,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "PV_terminal": false,
+        "action": "f3g4",
+        "search_stats": {
+          "qnodes": 0,
+          "max_qply": 0,
+          "standpat_nodes": 0,
+          "check_evasion_nodes": 0,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 224,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 0,
+          "q_cap_still_tactical": 0,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "q2": {
+        "complete": true,
+        "nodes": 1332,
+        "value": 1.8413472466176604,
+        "prediction": 0.1820815005757859,
+        "PV_phi": [
+          1,
+          0,
+          0,
+          1,
+          -1
+        ],
+        "PV_terminal": false,
+        "action": "f3f7",
+        "search_stats": {
+          "qnodes": 1288,
+          "max_qply": 3,
+          "standpat_nodes": 596,
+          "check_evasion_nodes": 136,
+          "actual_terminal_nodes": 0,
+          "static_or_quiet_leaves": 627,
+          "ordering": "sha256(seed,full action path), coefficient-independent; strict best only",
+          "q_truncated_leaf_labels": 556,
+          "q_cap_still_tactical": 498,
+          "q_limit": 2,
+          "scope": "Approximate bounded tactical horizon; noncheck cutoff allowed and counted, NEVER labeled full quiet. All forced check evasions continue until quiet/terminal/resource limit."
+        }
+      },
+      "same_action": false,
+      "same_search_value": false,
+      "same_PV_features": false
+    }
+  ],
+  "scope": "Deterministicindex0/ply0diagnostic designedwhileTRAINactive, beforeanynewEVALfitness; allseedsincludingresourcefailures. Same firstTRAINroot sharedacrossinitials, notfourindependentstates. Internalheuristictargetchangeatidenticalinitialtheta/history/order, nottargetaccuracy/policystrength/causalexplanationoflatertraining. Candidate0onlyfirstroot, no role-generalclaim."
+}
