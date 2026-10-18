@@ -460,13 +460,56 @@ receipts, complete inputs/models/features/filterwitness and game arithmetic;
 UNKNOWN, Native searches, games and training are not rerun.
 Science remains OPEN; existingAUXlearning/solver andDS studies remain theirs.
 
-The next distinct step is actually prepared AFTER this seal: seed671001/12,
-a valid FOUR-effect combination of two-actor movement, current-type change
-and persistent per-owner one-use right. Native admits it; final preference
-passes, and actualtrigger/reply yield3fullSessionparents with changedtype/
-auxiliary state/history. No searches/games/training yet. Consume these exact
-parents with the frozen60s sixNative/threeCore q0control, preserving explicit
-refusals/UNKNOWN rather than repeating invalid5/6-effect cases.
+That exact671001/12 preparation is now CLOSED by
+[FOUR_EFFECT_TERMINAL_UTILITY_20261019.md](FOUR_EFFECT_TERMINAL_UTILITY_20261019.md):
+122fullcheckedchildren/6Native3CoreD2 agree. Its old zero-query state is historical,
+not a second launch instruction. Four-effect wider service and the prospective
+finite-evaluation certificate below supersede that pending task.
+
+## Current four-effect consumer and evaluation choice —2026-10-19
+
+Retain existing fullstatic/explicitq0/root-windowTrue for appropriate research
+consumers, withFalse controls and all production/model/generator defaults.
+NEW128H96slots on681001..8 x10/12 close625.182s,58terminals70UNKNOWN;
+whole finiteTrue-False intervals cross0. NEW64different-ruleH512slots on
+691001..4 allreachactualruleterminals621.258s; finiteTrue-False is1.0/1.25,
+but fourlinkedseedrangesinclude0. No crossbatch causalhorizon orpopulation claim.
+Pairedsavedtrajectory bookkeeping shows19post96terminals=15wins/losses,
+3verifiedpostsubmit512MAX_PLYdraws and1repetition; no common-MAXdrawpairs.
+Marginal4386queries39.421Mmain/315.074querycaller seconds are distinctfrom
+wholewall. Old70UNKNOWN remainunfilled.
+
+A known-conversion positive-material hint avoidsfullchildfeaturepreprocessing,
+butD2caller1.2546x andD8no gain close that gate. No additionalhintgames/encoder/
+orderingAPI orlearner is justified. Ordinalnew3parents also change0actions;
+do notexpand unchangedpricefitness. Optional8actualboth-rights-consumedD3
+Coretargets allcomplete:True8D3 vsFalse1;9sameD3scalarcomparisons agree,
+not16completeNativeD3 or all-state/utilityproof.
+
+Saved64original-order finitecertificate cost motivates ONE prospective study,
+not a statisticalracing framework. NEW701001..4 x10/12 stopsat48/64 after
+both ALLplanned-slot lowerbounds>0:Unit[.0625,1.1875],static[.3125,1.1875].
+The16unexecuted slots remainUNKNOWN. Runtime797.678s/12011queries79.544Mmain;
+unknown counterfactualtailcost preventsanactualwall-saving claim. Linkedseed
+rangescross0. Treat as optionalconditionalfiniteevaluation, notpopulation
+confidence, mandatoryworkflow, WDL/development gate or a reason for more
+unchangedmodepanels. PrimarySequentialHalving assumptions were read; its
+independent-sample/pull-budget theorem isnot importedintoourdependentfamily/
+variable-cost setting. No productionframework/default change.
+
+Dot1792360739.582489 is logicalreview ofsuppliedfacts, notlocal/sourceexecution.
+Adoptedpairedledger/known-UNKNOWN andruleterminal-versus-strength distinctions
+areactuallyimplemented.77technicalpayload/15captured-source outputs qualify,
+only17closedCoretargets rebuilt; originalNative/games/training/UNKNOWN notrerun.
+
+Next distinct step is actually prepared AFTER this seal:711001/8 FOUR-effect
+secondarycapture-to-baseHAND/currenttype/one-use-right. Native admits it,
+finalpreferencepasses,15realprefixplies thenactualcapture/reply leave4full
+parents/3changedsquares/baseC handgain. Zero rootqueries/fitness/training.
+Consume exactdata/secondary_capture_next_20261019/prepared.json underits
+frozen90s eightNative/fourCoreD2q0 fullstate/history/hand controls; no regeneration
+or impliedfallbackexecution. ExistingAUXlearning/solver andDS work remaintheir
+own. ScienceOPEN; futurechangedpremises can revise these researchselections.
 
 ## Previous learning choice still retained — 2026-10-17
 

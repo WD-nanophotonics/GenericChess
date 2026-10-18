@@ -4655,3 +4655,47 @@ passes,3realparents/Nativeadmission,0searches. Current scientific goal remains O
 Closing channel/original15-reply/new1-reply reads are complete with no newDotrevision.
 Publication uses the tested role-bound publisher; full SHA/Public bytes and
 actual Slack delivery are checked separately and retained privately.
+
+
+## PRIMARY four-effect terminal/certificate evaluation —2026-10-19
+
+PRIMARY independently closes exact671001 consumer,128newwiderH96games,
+64newrule-terminalH512games,64callcheapconversionhint gate andoptional8CoreD3
+contexts. No product/default/binary/model/optimizer/extra-worker change.
+All actual fullrules/types/promotion/drop/base-current/aux/history retained;
+old70H96UNKNOWN stayunfilled. ExistingDEV_AUX TC/learning/solver andDS studies
+are not edited, executed or automatically adopted. One boundedDS control-chat
+read finds no current recurrence proved; old repairs are owner-reported and
+the recent completed chat view is not global executor-health certification.
+No DS message/control/configuration/checkout write.
+
+Fresh request GC-SLACK-20261019-065700-a34be881 is delivered at1792360643.681779.
+Complete raw reply1792360739.582489 was saved before strictreconcile, adopted
+as logicalreview only. Its concern about forceddraws and known sides ofUNKNOWN
+pairs is answered by actualpairedledger:19post96terminals include15wins/losses,
+3actualMAX_PLYdraws and1repetition,0bothMAXdrawpairs. No independentDot execution
+is claimed. Old completed threads15/15 and2/2 are also freshlyreconciled with
+unchanged responsehashes. No routineack or publication approval gate.
+
+Retrospectivefinitecertificate tail accounting motivates one NEWprospective
+64planned-slot study; it actuallystops48/64 withbothconservativeplanned bounds
+positive,16unexecutedUNKNOWN intact.797.678s isactualwholeproducerwall;
+unexecuted counterfactualcost isunknown, not a measuredspeedgain. Fourlinkedseed
+ranges stillcross0. This is finiteconditionalarithmetic, notpopulationconfidence,
+statisticalracing implementation, broaderbestplayer or mandatoryWDL gate.
+Cheapconversionhint fails itscostgate evenwith1.67percentpreprocessing;
+stop that engineering route. Keep scopedq0True andFalse/otherprice controls.
+
+77rawtechnicalpayloads preserveeveryoriginalNativefield; pinnedPython-S/
+noNative/realstop qualification rebuilds15outputs including17closedCoretargets,
+fullCorehistories/PVs/terminal/certificate ledgers. UNKNOWN,Native queries,games
+andtraining arenot rerun.41relatedchecks pass, repeatedpublishercount notadded.
+PrivateSlack/account/control originals stayignored; actualoutgoingcontent is
+reviewed forpersonalinfo/passwords/credentials undercontinuingPublic authority.
+FullremoteSHA/anonymousbytes andactualfixed-link Slackdelivery are separate
+postcommit checks, not inferredfromlocalcommit orPublicaccess alone.
+
+A new711001/8 secondarycapture/baseHAND/type/right input isactuallyprepared
+afterseal, with4realparents and0rootqueries; it is outside the15-output seal.
+Its frozen90s consumercheck is the executable next task. ScientificgoalOPEN;
+no repeatofunchangedfitness, hiddenmissingness or automaticAUX/DS integration.

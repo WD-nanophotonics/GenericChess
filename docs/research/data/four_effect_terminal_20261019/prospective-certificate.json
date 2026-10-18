@@ -1,0 +1,862 @@
+{
+  "actual_early": true,
+  "all_unexecuted_slots": [
+    {
+      "foe": "unit",
+      "mode": true,
+      "name": "701003-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 48
+    },
+    {
+      "foe": "unit",
+      "mode": false,
+      "name": "701001-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 49
+    },
+    {
+      "foe": "static",
+      "mode": true,
+      "name": "701004-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 50
+    },
+    {
+      "foe": "unit",
+      "mode": true,
+      "name": "701001-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 51
+    },
+    {
+      "foe": "static",
+      "mode": false,
+      "name": "701003-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 52
+    },
+    {
+      "foe": "static",
+      "mode": true,
+      "name": "701003-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 53
+    },
+    {
+      "foe": "unit",
+      "mode": true,
+      "name": "701004-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 54
+    },
+    {
+      "foe": "static",
+      "mode": false,
+      "name": "701002-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 55
+    },
+    {
+      "foe": "unit",
+      "mode": true,
+      "name": "701001-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 56
+    },
+    {
+      "foe": "static",
+      "mode": true,
+      "name": "701004-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 57
+    },
+    {
+      "foe": "unit",
+      "mode": false,
+      "name": "701001-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 58
+    },
+    {
+      "foe": "unit",
+      "mode": false,
+      "name": "701003-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 59
+    },
+    {
+      "foe": "static",
+      "mode": false,
+      "name": "701001-10",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 60
+    },
+    {
+      "foe": "unit",
+      "mode": false,
+      "name": "701002-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 61
+    },
+    {
+      "foe": "unit",
+      "mode": true,
+      "name": "701002-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 0,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 62
+    },
+    {
+      "foe": "static",
+      "mode": true,
+      "name": "701001-12",
+      "outcome": "UNEXECUTED_UNKNOWN",
+      "owner": 1,
+      "reward_interval": [
+        -1,
+        1
+      ],
+      "slot": 63
+    }
+  ],
+  "closed": 48,
+  "first_strict_positive": {
+    "bounds": {
+      "static": [
+        0.3125,
+        1.1875
+      ],
+      "unit": [
+        0.0625,
+        1.1875
+      ]
+    },
+    "closed": 48
+  },
+  "known_terminal": 48,
+  "main": 79543846,
+  "new_games": 0,
+  "new_searches": 0,
+  "paired_independent_curve": [
+    {
+      "bounds": {
+        "static": [
+          -2.0,
+          2.0
+        ],
+        "unit": [
+          -2.0,
+          2.0
+        ]
+      },
+      "closed": 0
+    },
+    {
+      "bounds": {
+        "static": [
+          -2.0,
+          2.0
+        ],
+        "unit": [
+          -1.875,
+          2.0
+        ]
+      },
+      "closed": 1
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.875,
+          2.0
+        ],
+        "unit": [
+          -1.875,
+          2.0
+        ]
+      },
+      "closed": 2
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.875,
+          2.0
+        ],
+        "unit": [
+          -1.875,
+          1.875
+        ]
+      },
+      "closed": 3
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.875,
+          2.0
+        ],
+        "unit": [
+          -1.8125,
+          1.8125
+        ]
+      },
+      "closed": 4
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.875,
+          2.0
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 5
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.8125,
+          1.9375
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 6
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.75,
+          1.875
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 7
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.6875,
+          1.8125
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 8
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.5625,
+          1.8125
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 9
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.5,
+          1.75
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 10
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.5,
+          1.625
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 11
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.375,
+          1.625
+        ],
+        "unit": [
+          -1.6875,
+          1.8125
+        ]
+      },
+      "closed": 12
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.375,
+          1.625
+        ],
+        "unit": [
+          -1.5625,
+          1.8125
+        ]
+      },
+      "closed": 13
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.25,
+          1.625
+        ],
+        "unit": [
+          -1.5625,
+          1.8125
+        ]
+      },
+      "closed": 14
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.25,
+          1.625
+        ],
+        "unit": [
+          -1.5,
+          1.75
+        ]
+      },
+      "closed": 15
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.25,
+          1.625
+        ],
+        "unit": [
+          -1.375,
+          1.75
+        ]
+      },
+      "closed": 16
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.1875,
+          1.5625
+        ],
+        "unit": [
+          -1.375,
+          1.75
+        ]
+      },
+      "closed": 17
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.1875,
+          1.5625
+        ],
+        "unit": [
+          -1.3125,
+          1.6875
+        ]
+      },
+      "closed": 18
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.0625,
+          1.5625
+        ],
+        "unit": [
+          -1.3125,
+          1.6875
+        ]
+      },
+      "closed": 19
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.0625,
+          1.5625
+        ],
+        "unit": [
+          -1.25,
+          1.625
+        ]
+      },
+      "closed": 20
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.0625,
+          1.5625
+        ],
+        "unit": [
+          -1.1875,
+          1.5625
+        ]
+      },
+      "closed": 21
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.0625,
+          1.5625
+        ],
+        "unit": [
+          -1.125,
+          1.5
+        ]
+      },
+      "closed": 22
+    },
+    {
+      "bounds": {
+        "static": [
+          -1.0,
+          1.5
+        ],
+        "unit": [
+          -1.125,
+          1.5
+        ]
+      },
+      "closed": 23
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.875,
+          1.5
+        ],
+        "unit": [
+          -1.125,
+          1.5
+        ]
+      },
+      "closed": 24
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.75,
+          1.5
+        ],
+        "unit": [
+          -1.125,
+          1.5
+        ]
+      },
+      "closed": 25
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.75,
+          1.5
+        ],
+        "unit": [
+          -1.0,
+          1.5
+        ]
+      },
+      "closed": 26
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.75,
+          1.5
+        ],
+        "unit": [
+          -0.875,
+          1.5
+        ]
+      },
+      "closed": 27
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.625,
+          1.5
+        ],
+        "unit": [
+          -0.875,
+          1.5
+        ]
+      },
+      "closed": 28
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.5,
+          1.5
+        ],
+        "unit": [
+          -0.875,
+          1.5
+        ]
+      },
+      "closed": 29
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.5,
+          1.5
+        ],
+        "unit": [
+          -0.75,
+          1.5
+        ]
+      },
+      "closed": 30
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.5,
+          1.5
+        ],
+        "unit": [
+          -0.625,
+          1.5
+        ]
+      },
+      "closed": 31
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.5,
+          1.5
+        ],
+        "unit": [
+          -0.5625,
+          1.4375
+        ]
+      },
+      "closed": 32
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.375,
+          1.5
+        ],
+        "unit": [
+          -0.5625,
+          1.4375
+        ]
+      },
+      "closed": 33
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.25,
+          1.5
+        ],
+        "unit": [
+          -0.5625,
+          1.4375
+        ]
+      },
+      "closed": 34
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.1875,
+          1.4375
+        ],
+        "unit": [
+          -0.5625,
+          1.4375
+        ]
+      },
+      "closed": 35
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.1875,
+          1.4375
+        ],
+        "unit": [
+          -0.5625,
+          1.3125
+        ]
+      },
+      "closed": 36
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.125,
+          1.375
+        ],
+        "unit": [
+          -0.5625,
+          1.3125
+        ]
+      },
+      "closed": 37
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.125,
+          1.375
+        ],
+        "unit": [
+          -0.4375,
+          1.3125
+        ]
+      },
+      "closed": 38
+    },
+    {
+      "bounds": {
+        "static": [
+          -0.125,
+          1.25
+        ],
+        "unit": [
+          -0.4375,
+          1.3125
+        ]
+      },
+      "closed": 39
+    },
+    {
+      "bounds": {
+        "static": [
+          0.0,
+          1.25
+        ],
+        "unit": [
+          -0.4375,
+          1.3125
+        ]
+      },
+      "closed": 40
+    },
+    {
+      "bounds": {
+        "static": [
+          0.0,
+          1.25
+        ],
+        "unit": [
+          -0.375,
+          1.25
+        ]
+      },
+      "closed": 41
+    },
+    {
+      "bounds": {
+        "static": [
+          0.125,
+          1.25
+        ],
+        "unit": [
+          -0.375,
+          1.25
+        ]
+      },
+      "closed": 42
+    },
+    {
+      "bounds": {
+        "static": [
+          0.125,
+          1.25
+        ],
+        "unit": [
+          -0.3125,
+          1.1875
+        ]
+      },
+      "closed": 43
+    },
+    {
+      "bounds": {
+        "static": [
+          0.125,
+          1.25
+        ],
+        "unit": [
+          -0.1875,
+          1.1875
+        ]
+      },
+      "closed": 44
+    },
+    {
+      "bounds": {
+        "static": [
+          0.125,
+          1.25
+        ],
+        "unit": [
+          -0.0625,
+          1.1875
+        ]
+      },
+      "closed": 45
+    },
+    {
+      "bounds": {
+        "static": [
+          0.1875,
+          1.1875
+        ],
+        "unit": [
+          -0.0625,
+          1.1875
+        ]
+      },
+      "closed": 46
+    },
+    {
+      "bounds": {
+        "static": [
+          0.3125,
+          1.1875
+        ],
+        "unit": [
+          -0.0625,
+          1.1875
+        ]
+      },
+      "closed": 47
+    },
+    {
+      "bounds": {
+        "static": [
+          0.3125,
+          1.1875
+        ],
+        "unit": [
+          0.0625,
+          1.1875
+        ]
+      },
+      "closed": 48
+    }
+  ],
+  "planned": 64,
+  "producer_seconds": 797.6772619999829,
+  "q": 0,
+  "queries": 12011,
+  "recorded_UNKNOWN": 0,
+  "scope": "Pairedindependentknownsidepreservingintervals overALL64plannedslots; prospectivefirststopverified withoutfutureoutcomes. Missingphysicalslots remainUNKNOWN, notdraws/successes. Conditionalfinitepanelcertificate only, notpopulationconfidence,WDLproof or actualsavedwall forunexecutedwork.",
+  "status": "PASS_PROSPECTIVE_FINITE_CERTIFICATE",
+  "unexecuted": 16
+}
