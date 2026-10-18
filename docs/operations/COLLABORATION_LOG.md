@@ -2550,3 +2550,29 @@ remainseparateandunconfirmeduntilactualevidence. ScienceOPEN/currentrolelearning
 Closure93: official session ended82.362minutes at2026-10-17T14:19:54.938107UTC, safe_checkpoint. Science source4dbba471885be4a6d48a99e7230a007702f27424 verified full remoteSHA/PUBLIC and37 anonymous exact files including the capsule. Fixed evidence accepted and thread read back at1792246788.321469; collaborator reading/execution UNCONFIRMED. DEV_AUX heartbeat/consultation PAUSED; no new experiment or automatic resume. Closing metadata is versioned separately; see DELIVERY_20261017_93.json.
 
 Closure94: official session ended75.068minutes at2026-10-18T16:20:40.085824UTC, safe_checkpoint. Sourcea94da5eadfb5029bac2d2478a60ec6bb144c0e73 matches fullremoteSHA/PUBLIC and28 anonymous exact files including the capsule. Fixed Slack evidence accepted and exact thread readback at1792340409.800509; collaborator reading/execution UNCONFIRMED. All producers/consumers closed, scienceOPEN, existing own90-minute heartbeat remains ACTIVE. No new research after finish. Closing metadata is versioned separately; see DELIVERY_20261019_94.json.
+
+
+## DEV_AUX95 —2026-10-19 JST, learning-rate controls closed
+
+DEV_AUX independently implemented a TRAIN-cost-derived node-clock meanTree
+control, then registered constantTrainRate before inspecting firstDEVoutcomes.
+All48arms9.6MTRAINnodes and896newactualWLDslots (892terminal4UNKNOWN) retained.
+Clockcompensation was negative relative smallfixedMean in bothfoes/bothfinite
+panels; constantRate also negative/unresolved. No population/generalTDfailure,
+uniqueprices or strength-from-loss inference. Actualfullhistory/gradient/source/
+slotcost audits passed;50checks and18actualnewfresh-regeneratedoutputs match.
+Allcandidate/foe/baseline/failedwork13335898nodes,4102physicalgames; otheroverhead
+additional, no equalCPU claim.40thcapsule3d118cd1/246payloads preserves previous39.
+Fixed first+lastquery checks include learnedweights, not only pairedinitials.
+
+PRIMARY remains independent; no currentPRIMARYcodeexecution/supervision/adoption
+review was performed in this role's segment. NewCHAT staticpromotion and rotation
+suggestions cite PRIMARY/DS source and are deferred: current path uses purematerial
+counts, no servedpromotionbonus/rotationdedup. These are adviser claims, not
+DEV_AUX independentreruns or orders. No DS restart/statecontrol or otherrolewrite.
+Own Slacknewroots/relevantthread fullreads saved privately; no newDotresponse or
+reading/executionconfirmed. One fixed-source informational result will follow
+actualremotePUBLICverification; this entry does not assert pre-push delivery.
+Next TDselfplay/fixednu context control is a hypothesis; allseeds/costs/actualWLD
+will be frozen, not a posteriori rate/price/seed fit. No Core/default/UI changes,
+automatic integration, extraAgents/workers/fees or oldcap continuation.

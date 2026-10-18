@@ -1,0 +1,49 @@
+{
+  "status": "PASS_ALL_TYPED_HISTORY_TRAIN_COST_CONSTANT_RATE_AND_BOUND_AWARE_GRADIENTS",
+  "prefix_rule": null,
+  "arms": 16,
+  "counts": {
+    "prefix_plies": 4196,
+    "committed_drop_moves": 3321,
+    "committed_promotion_moves": 582,
+    "training_plies": 11995,
+    "games": 1069,
+    "actual_terminal": 1051,
+    "unknown": 18,
+    "queries": 12011,
+    "observed": 6101,
+    "query_updates": 6097,
+    "nodes": 3200000,
+    "failed_queries": 16,
+    "failed_query_nodes": 6055,
+    "full_limit_failed_queries": 0,
+    "update_records": 1069
+  },
+  "by_method": {
+    "TrainRate": {
+      "clock_interval_nodes": 3192681,
+      "eta_sum": 1458.0784912859297,
+      "eta_max": 0.23899008216455533,
+      "samples_exact": 90836,
+      "inactive_exact": 11224,
+      "samples_lower": 163644,
+      "inactive_lower": 71381,
+      "samples_upper": 171301,
+      "inactive_upper": 86493,
+      "samples": 425781,
+      "active": 256683,
+      "loss_sum": 18663.257440777208,
+      "queries": 12011,
+      "candidate_queries": 6115,
+      "foe_queries": 5896,
+      "nodes": 3200000,
+      "games": 1069,
+      "query_updates": 6097,
+      "actual_terminal": 1051,
+      "unknown": 18,
+      "trailing_uncredited_nodes": 7319
+    }
+  },
+  "seconds": 12.156754399999045,
+  "scope": "Every paid candidate/foe/failed search, independent signedwhite feature-gradient math and fixed TRAIN-derived rate/one-sidedloss reconstruction; legacy TD branch unexercised by this TrainRate-only producer; full typed legal replay and final public Session equality. Does not rerun every search. Bound correctness independently sampled by separate unpruned D3 audit; noexternalrulesengine."
+}

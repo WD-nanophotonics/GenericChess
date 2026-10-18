@@ -1,0 +1,8 @@
+{
+  "kind": "AUDIT_ONLY_IMPORT_BEFORE_ANY_REPLAY_OR_SEARCH",
+  "cause": "Existing plotenv87 has NumPy but lacks python-chess required transitively by the shared stop-reader adapter. All producer bytepins unchanged.",
+  "fix": "Use existing project .venv Python and add existing plotenv87 site-packages for NumPy; no installs or provider/globalenv changes.",
+  "production_affected": false,
+  "source_or_caps_changed": false,
+  "raw_private": ".local_agent/audit95-full-v1.log"
+}

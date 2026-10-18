@@ -1,0 +1,1471 @@
+{
+  "status": "COMPLETE",
+  "prefix_rule": 271001,
+  "expected_queries": 8,
+  "available": 8,
+  "verified": 8,
+  "counts": {
+    "rerun_nodes": 782,
+    "independent_nodes": 6432,
+    "exact": 60,
+    "lower": 60,
+    "upper": 68,
+    "verified_queries": 8
+  },
+  "rows": [
+    {
+      "rule": 271001,
+      "method": "CostClock",
+      "seed": 1977,
+      "source_query_sha": "e4ba6ad941acc468177acbdbb43c49db834e75a1d8c7fb00c873c0b22512bd6e",
+      "source_game": 69,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 9,
+        "lower": 13,
+        "upper": 7
+      },
+      "independent_nodes": 853,
+      "rerun_nodes": 118,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "-0.039926656359190904",
+          "upper": "-0.039926656359190904",
+          "independent_value": -0.039926656359190904,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "-0.039926656359190904",
+          "upper": "-0.039926656359190904",
+          "independent_value": -0.039926656359190904,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "d3ffd4e6335483ad03904f03a3dc5c28980b5aa05f485113cfb87ee4e8a1d5e6"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8431521373694366",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "33aafeb76820fe8bf9f7e00118085ac42cfd6d94f8224109fdabe80a8ee330e4"
+        },
+        {
+          "depth": 1,
+          "lower": "0.039565546540250685",
+          "upper": "inf",
+          "independent_value": 2.0280214728813633,
+          "record_sha": "69db944c6598d41aac9d21c85ff13b1c761a1c06a9fba8a2efb16908cd5dd102"
+        },
+        {
+          "depth": 1,
+          "lower": "1.962209886809129",
+          "upper": "inf",
+          "independent_value": 2.1190577494396923,
+          "record_sha": "e9b28058d629764c36a8605ae9d37a12e116c37775b3935822c08063da52ed26"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1000000.0",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "2.0",
+          "independent_value": 2.0,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0794922028994414",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "85bb235c7d411fcfa322a10920effc97030adec28de80d9bc35e741aeea55f0b"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8172672076563927",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "8c6728d876df0c2957b3fafabbc4929a4af2198b951a96349cd4ef45cb8df4ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "f5a2ec05fbcf40f635d4f0f722d0051b60a2870bda99b991bff710f4d53dae72"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "3de00e1213419d57c48f2fe5657f3bbe620164213cff385193f489814febd126"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9345495237467056",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "2b8713f6d2e4ed244d15c240857e9b5e0cf700f517c5acf7cf077c23482b63a2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d560dcd6f0eb5d6d829b5763c3dd5e7b479255717a9d3d637ffc2643699e0cf1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.962209886809129",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4a64fcf43eb3ab7630e9f72b9c74934f9e62a515164439005422ba7cb66655e"
+        },
+        {
+          "depth": 2,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.9482301405739124",
+          "independent_value": -1.9482301405739124,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.9482301405739124",
+          "independent_value": -2.105078003204476,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "1.974115070286956",
+          "upper": "1.974115070286956",
+          "independent_value": 1.974115070286956,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "CostClock",
+      "seed": 8173,
+      "source_query_sha": "f068bbfc8068b0e4f62a4c840f161b62ae85861a54563169a8b898cd72ee6723",
+      "source_game": 445,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 6,
+        "upper": 10,
+        "lower": 2
+      },
+      "independent_nodes": 755,
+      "rerun_nodes": 77,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.44438475590596693",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.697852121593533",
+          "upper": "2.697852121593533",
+          "independent_value": 2.697852121593533,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "3.114390815189511",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.8090826097815995",
+          "independent_value": -1.8090826097815995,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.8090826097815995",
+          "independent_value": -2.484886399350605,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "2.253467365687566",
+          "upper": "2.253467365687566",
+          "independent_value": 2.253467365687566,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.25346736568756634",
+          "independent_value": -0.25346736568756634,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.25346736568756634",
+          "independent_value": -0.25346736568756634,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "CostClock",
+      "seed": 27182,
+      "source_query_sha": "173e9ede12602cb60f2b471a8eb2e7ac0710de2536c2ec1f9f8d84c9e5c4759a",
+      "source_game": 273,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 6,
+        "upper": 10,
+        "lower": 2
+      },
+      "independent_nodes": 755,
+      "rerun_nodes": 79,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.07371376680889008",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.448739578650186",
+          "upper": "2.448739578650186",
+          "independent_value": 2.448739578650186,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-2.3013120450324056",
+          "independent_value": -2.3013120450324056,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-2.3013120450324056",
+          "independent_value": -2.7154462447101433,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "2.375025811841296",
+          "upper": "2.375025811841296",
+          "independent_value": 2.375025811841296,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3750258118412959",
+          "independent_value": -0.3750258118412959,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3750258118412959",
+          "independent_value": -0.3750258118412959,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "CostClock",
+      "seed": 31415,
+      "source_query_sha": "6e08489d318148cad8a67cbfe9ad2a6e3be07be1835ac0108c3ae6f9e30100e1",
+      "source_game": 144,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 9,
+        "lower": 13,
+        "upper": 7
+      },
+      "independent_nodes": 853,
+      "rerun_nodes": 117,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "-0.1653601703472798",
+          "upper": "-0.1653601703472798",
+          "independent_value": -0.1653601703472798,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "-0.1653601703472798",
+          "upper": "-0.1653601703472798",
+          "independent_value": -0.1653601703472798,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4574177969560287",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "d3ffd4e6335483ad03904f03a3dc5c28980b5aa05f485113cfb87ee4e8a1d5e6"
+        },
+        {
+          "depth": 1,
+          "lower": "1.3772220326966915",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "33aafeb76820fe8bf9f7e00118085ac42cfd6d94f8224109fdabe80a8ee330e4"
+        },
+        {
+          "depth": 1,
+          "lower": "0.586000023359355",
+          "upper": "inf",
+          "independent_value": 2.6024987289759833,
+          "record_sha": "69db944c6598d41aac9d21c85ff13b1c761a1c06a9fba8a2efb16908cd5dd102"
+        },
+        {
+          "depth": 1,
+          "lower": "0.586000023359355",
+          "upper": "inf",
+          "independent_value": 2.3839294496616317,
+          "record_sha": "e9b28058d629764c36a8605ae9d37a12e116c37775b3935822c08063da52ed26"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1000000.0",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0899870529110256",
+          "upper": "2.0899870529110256",
+          "independent_value": 2.0899870529110256,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "2.3839294496616317",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "85bb235c7d411fcfa322a10920effc97030adec28de80d9bc35e741aeea55f0b"
+        },
+        {
+          "depth": 1,
+          "lower": "0.9198042357406628",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "8c6728d876df0c2957b3fafabbc4929a4af2198b951a96349cd4ef45cb8df4ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7659741291814062",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "f5a2ec05fbcf40f635d4f0f722d0051b60a2870bda99b991bff710f4d53dae72"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "3de00e1213419d57c48f2fe5657f3bbe620164213cff385193f489814febd126"
+        },
+        {
+          "depth": 1,
+          "lower": "1.632569255954997",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "2b8713f6d2e4ed244d15c240857e9b5e0cf700f517c5acf7cf077c23482b63a2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d560dcd6f0eb5d6d829b5763c3dd5e7b479255717a9d3d637ffc2643699e0cf1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.6711644294472976",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4a64fcf43eb3ab7630e9f72b9c74934f9e62a515164439005422ba7cb66655e"
+        },
+        {
+          "depth": 2,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.0851644060879426",
+          "independent_value": -1.0851644060879426,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.0851644060879426",
+          "independent_value": -1.661859547448705,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "1.5425822030439713",
+          "upper": "1.5425822030439713",
+          "independent_value": 1.5425822030439713,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "Mean",
+      "seed": 1977,
+      "source_query_sha": "19eee10ae6da67eb13b3c0348cc62fe82caa7d3115769e1c8dd8ba4ec8f95d95",
+      "source_game": 497,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 9,
+        "lower": 13,
+        "upper": 7
+      },
+      "independent_nodes": 853,
+      "rerun_nodes": 118,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "-0.039926656359190904",
+          "upper": "-0.039926656359190904",
+          "independent_value": -0.039926656359190904,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "-0.039926656359190904",
+          "upper": "-0.039926656359190904",
+          "independent_value": -0.039926656359190904,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "d3ffd4e6335483ad03904f03a3dc5c28980b5aa05f485113cfb87ee4e8a1d5e6"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8431521373694366",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "33aafeb76820fe8bf9f7e00118085ac42cfd6d94f8224109fdabe80a8ee330e4"
+        },
+        {
+          "depth": 1,
+          "lower": "0.039565546540250685",
+          "upper": "inf",
+          "independent_value": 2.0280214728813633,
+          "record_sha": "69db944c6598d41aac9d21c85ff13b1c761a1c06a9fba8a2efb16908cd5dd102"
+        },
+        {
+          "depth": 1,
+          "lower": "1.962209886809129",
+          "upper": "inf",
+          "independent_value": 2.1190577494396923,
+          "record_sha": "e9b28058d629764c36a8605ae9d37a12e116c37775b3935822c08063da52ed26"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1000000.0",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "2.0",
+          "independent_value": 2.0,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0794922028994414",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "85bb235c7d411fcfa322a10920effc97030adec28de80d9bc35e741aeea55f0b"
+        },
+        {
+          "depth": 1,
+          "lower": "1.8172672076563927",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "8c6728d876df0c2957b3fafabbc4929a4af2198b951a96349cd4ef45cb8df4ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.02588492971304379",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "f5a2ec05fbcf40f635d4f0f722d0051b60a2870bda99b991bff710f4d53dae72"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "3de00e1213419d57c48f2fe5657f3bbe620164213cff385193f489814febd126"
+        },
+        {
+          "depth": 1,
+          "lower": "1.9345495237467056",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "2b8713f6d2e4ed244d15c240857e9b5e0cf700f517c5acf7cf077c23482b63a2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d560dcd6f0eb5d6d829b5763c3dd5e7b479255717a9d3d637ffc2643699e0cf1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.962209886809129",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4a64fcf43eb3ab7630e9f72b9c74934f9e62a515164439005422ba7cb66655e"
+        },
+        {
+          "depth": 2,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.9482301405739124",
+          "independent_value": -1.9482301405739124,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.9482301405739124",
+          "independent_value": -2.105078003204476,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "1.974115070286956",
+          "upper": "1.974115070286956",
+          "independent_value": 1.974115070286956,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.02588492971304379",
+          "upper": "0.02588492971304379",
+          "independent_value": 0.02588492971304379,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "Mean",
+      "seed": 8173,
+      "source_query_sha": "97253bfd2f84ac1e9464e269e9011e89d4f48b95600bbe91240ecdc47179f0cb",
+      "source_game": 212,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 6,
+        "upper": 10,
+        "lower": 2
+      },
+      "independent_nodes": 755,
+      "rerun_nodes": 77,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.44438475590596693",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.697852121593533",
+          "upper": "2.697852121593533",
+          "independent_value": 2.697852121593533,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "3.114390815189511",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.8090826097815995",
+          "independent_value": -1.8090826097815995,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.8090826097815995",
+          "independent_value": -2.484886399350605,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.2314190336630385",
+          "independent_value": -0.2314190336630385,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "2.253467365687566",
+          "upper": "2.253467365687566",
+          "independent_value": 2.253467365687566,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.25346736568756634",
+          "independent_value": -0.25346736568756634,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.25346736568756634",
+          "independent_value": -0.25346736568756634,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.44438475590596693",
+          "upper": "0.44438475590596693",
+          "independent_value": 0.44438475590596693,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "Mean",
+      "seed": 27182,
+      "source_query_sha": "50a642be3e6bdaa2c19c79c89b47ed6c8357bb407728bde5be0dfcc1872eb41d",
+      "source_game": 357,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 6,
+        "upper": 10,
+        "lower": 2
+      },
+      "independent_nodes": 755,
+      "rerun_nodes": 79,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.07371376680889008",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.448739578650186",
+          "upper": "2.448739578650186",
+          "independent_value": 2.448739578650186,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-2.3013120450324056",
+          "independent_value": -2.3013120450324056,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-2.3013120450324056",
+          "independent_value": -2.7154462447101433,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3404204328688474",
+          "independent_value": -0.3404204328688474,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "2.375025811841296",
+          "upper": "2.375025811841296",
+          "independent_value": 2.375025811841296,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-0.3750258118412959",
+          "independent_value": -0.3750258118412959,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-0.3750258118412959",
+          "independent_value": -0.3750258118412959,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.07371376680889008",
+          "upper": "0.07371376680889008",
+          "independent_value": 0.07371376680889008,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    },
+    {
+      "rule": 271001,
+      "method": "Mean",
+      "seed": 31415,
+      "source_query_sha": "79c0de535ccab8304044a07be3ef657b31e37ef1e758b0bc1d864de515ab6284",
+      "source_game": 1,
+      "source_ply": 0,
+      "sample_counts": {
+        "exact": 9,
+        "lower": 13,
+        "upper": 7
+      },
+      "independent_nodes": 853,
+      "rerun_nodes": 117,
+      "checks": [
+        {
+          "depth": 1,
+          "lower": "-0.1653601703472798",
+          "upper": "-0.1653601703472798",
+          "independent_value": -0.1653601703472798,
+          "record_sha": "3dab23214c592da9613b3738da6847c177785a9c08b2f5d5f0a3e26c791b4837"
+        },
+        {
+          "depth": 2,
+          "lower": "-0.1653601703472798",
+          "upper": "-0.1653601703472798",
+          "independent_value": -0.1653601703472798,
+          "record_sha": "d45b1bb087ea6631552f2ffa99073bc160846db1f0c799a326c5905c298147ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.4574177969560287",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "857228451948c54eaaf59f422eeca11154274a5f236dd6d177691e04e151a942"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "d3ffd4e6335483ad03904f03a3dc5c28980b5aa05f485113cfb87ee4e8a1d5e6"
+        },
+        {
+          "depth": 1,
+          "lower": "1.3772220326966915",
+          "upper": "inf",
+          "independent_value": 2.0,
+          "record_sha": "33aafeb76820fe8bf9f7e00118085ac42cfd6d94f8224109fdabe80a8ee330e4"
+        },
+        {
+          "depth": 1,
+          "lower": "0.586000023359355",
+          "upper": "inf",
+          "independent_value": 2.6024987289759833,
+          "record_sha": "69db944c6598d41aac9d21c85ff13b1c761a1c06a9fba8a2efb16908cd5dd102"
+        },
+        {
+          "depth": 1,
+          "lower": "0.586000023359355",
+          "upper": "inf",
+          "independent_value": 2.3839294496616317,
+          "record_sha": "e9b28058d629764c36a8605ae9d37a12e116c37775b3935822c08063da52ed26"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1000000.0",
+          "independent_value": -1000000.0,
+          "record_sha": "3f0eb38c14a6b18017278c90dbb38c5c0f54109514a0098fc727f8a574e64da2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "1000000.0",
+          "independent_value": 1000000.0,
+          "record_sha": "61687b1b5f5229871dc48ecad13e67ec80c12d2a30cf6ce5e35e0d47ac2b7b30"
+        },
+        {
+          "depth": 1,
+          "lower": "2.0899870529110256",
+          "upper": "2.0899870529110256",
+          "independent_value": 2.0899870529110256,
+          "record_sha": "61abfc4ab1d849e149a8bd72ae7230962df9a195d7eabf5f7cfd4a394909ec86"
+        },
+        {
+          "depth": 1,
+          "lower": "2.3839294496616317",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4750fc735bcb4734353c03e69e45f9e68e8081c81002e828591511f9cc949f0"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "c6f96be7047fc132ceb83d8aaf76e5db8e21201ddcaabc90e9e722fb0412a767"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "516c8e547f58007e37490032e19522b1c0d29346ef3a01e473e5800ca2bfaeba"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "85bb235c7d411fcfa322a10920effc97030adec28de80d9bc35e741aeea55f0b"
+        },
+        {
+          "depth": 1,
+          "lower": "0.9198042357406628",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "8c6728d876df0c2957b3fafabbc4929a4af2198b951a96349cd4ef45cb8df4ed"
+        },
+        {
+          "depth": 1,
+          "lower": "0.7659741291814062",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "f5a2ec05fbcf40f635d4f0f722d0051b60a2870bda99b991bff710f4d53dae72"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "3de00e1213419d57c48f2fe5657f3bbe620164213cff385193f489814febd126"
+        },
+        {
+          "depth": 1,
+          "lower": "1.632569255954997",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "2b8713f6d2e4ed244d15c240857e9b5e0cf700f517c5acf7cf077c23482b63a2"
+        },
+        {
+          "depth": 1,
+          "lower": "1000000.0",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d560dcd6f0eb5d6d829b5763c3dd5e7b479255717a9d3d637ffc2643699e0cf1"
+        },
+        {
+          "depth": 1,
+          "lower": "1.6711644294472976",
+          "upper": "inf",
+          "independent_value": 1000000.0,
+          "record_sha": "d4a64fcf43eb3ab7630e9f72b9c74934f9e62a515164439005422ba7cb66655e"
+        },
+        {
+          "depth": 2,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "d44507d41e3d38ec195c797eceeea4be1abcc7100193915ac4a962567dc2d990"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "-1.0851644060879426",
+          "independent_value": -1.0851644060879426,
+          "record_sha": "63cd312d0939376f0d8b550cc408f44102252051f8feeb46b6072ff4bd7d7492"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "-1.0851644060879426",
+          "independent_value": -1.661859547448705,
+          "record_sha": "902a22dc1d6fb903eccc2b4bac409c643a95822ddf388a5dc18d08ffcd5ce35e"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "9513be60ab3b3b9a132f6d927d6c8fd3db0945acbe3f7ec587532177ee1724e6"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "e3c9eff4493db51a9f40e3f941824f61e67e32b694f5b1b375f38d6a63e8d608"
+        },
+        {
+          "depth": 1,
+          "lower": "1.5425822030439713",
+          "upper": "1.5425822030439713",
+          "independent_value": 1.5425822030439713,
+          "record_sha": "16819ca6ff5075148903520487a310b2933ce36d71f9cb608f997ccc80fbaae7"
+        },
+        {
+          "depth": 1,
+          "lower": "-inf",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "0d3801af9a08a0a5a72f92a46ff70e0c7db33c2e47b83d4b7ee07f38e62bebc1"
+        },
+        {
+          "depth": 2,
+          "lower": "-inf",
+          "upper": "0.4574177969560287",
+          "independent_value": 0.4574177969560287,
+          "record_sha": "3955aea007de65faeb172d0555f92c467bc71aa5b1dfd614563754c29dd68704"
+        },
+        {
+          "depth": 3,
+          "lower": "0.7659741291814062",
+          "upper": "0.7659741291814062",
+          "independent_value": 0.7659741291814062,
+          "record_sha": "f882b9d15ef102db41f32c1ad95ff07cf31d56ccd89b3d075e5633c8c31027b0"
+        }
+      ]
+    }
+  ],
+  "seconds": 1.900373300013598,
+  "scope": "Sample factory intercepted only in this separate audit process; actualproduction TrainingSearch rerun matches originalreceipt/nodes/action and every selected interior sample is independently fullwidthminimax-checked on its complete exact Session history. No production edit, training update or new fitness. Same Core, selected32queries not every training tree/allrules/externalengine proof. Separate rerun+unpruned auditwork charged."
+}

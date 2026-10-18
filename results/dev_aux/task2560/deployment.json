@@ -1,0 +1,869 @@
+{
+  "status": "PASS_ALL_TYPED_OUTCOMES_AND_FIXED_FOE_DEPTH_DISPATCH",
+  "planned": 384,
+  "returned": 384,
+  "missing": 0,
+  "counts": {
+    "prefix_plies": 1536,
+    "queries": 5532,
+    "foe_queries": 2742,
+    "drops": 1563,
+    "promotions": 292,
+    "played_plies": 5532,
+    "candidate_queries": 2790,
+    "ACTUAL_TERMINAL": 384,
+    "games": 384
+  },
+  "paid": [
+    {
+      "depth": 3,
+      "treatment": "CostClock",
+      "foe": "random99031",
+      "nodes": 175899,
+      "queries": 921,
+      "search_seconds": 45.52936419949401,
+      "candidate_nodes": 147305,
+      "foe_nodes": 28594,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "CostClock",
+      "foe": "uniform",
+      "nodes": 185741,
+      "queries": 861,
+      "search_seconds": 48.43941839877516,
+      "candidate_nodes": 164531,
+      "foe_nodes": 21210,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "Mean",
+      "foe": "random99031",
+      "nodes": 223455,
+      "queries": 984,
+      "search_seconds": 58.81356439960655,
+      "candidate_nodes": 191344,
+      "foe_nodes": 32111,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "Mean",
+      "foe": "uniform",
+      "nodes": 214201,
+      "queries": 964,
+      "search_seconds": 54.68352350051282,
+      "foe_nodes": 22866,
+      "candidate_nodes": 191335,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "initial",
+      "foe": "random99031",
+      "nodes": 195141,
+      "queries": 845,
+      "search_seconds": 51.5893415021128,
+      "foe_nodes": 26946,
+      "candidate_nodes": 168195,
+      "games": 64,
+      "unknown": 0
+    },
+    {
+      "depth": 3,
+      "treatment": "initial",
+      "foe": "uniform",
+      "nodes": 211230,
+      "queries": 957,
+      "search_seconds": 55.05323500058148,
+      "foe_nodes": 23189,
+      "candidate_nodes": 188041,
+      "games": 64,
+      "unknown": 0
+    }
+  ],
+  "contrasts": [
+    {
+      "foe": "uniform",
+      "name": "CostClock-Mean@D3",
+      "bounds": [
+        -0.09375,
+        -0.09375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              -0.0625,
+              -0.0625
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.0625,
+              -0.0625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.5625,
+        0.25
+      ],
+      "terms": [
+        [
+          "CostClock",
+          3,
+          1
+        ],
+        [
+          "Mean",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "CostClock-initial@D3",
+      "bounds": [
+        0.0,
+        0.0
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.0625,
+              -0.0625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.0625,
+              0.0625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.375,
+        0.375
+      ],
+      "terms": [
+        [
+          "CostClock",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "uniform",
+      "name": "Mean-initial@D3",
+      "bounds": [
+        0.09375,
+        0.09375
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              0.375,
+              0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              0.25,
+              0.25
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              0.0625,
+              0.0625
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.0625,
+              0.0625
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              0.125,
+              0.125
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        0.0,
+        0.375
+      ],
+      "terms": [
+        [
+          "Mean",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "CostClock-Mean@D3",
+      "bounds": [
+        -0.21875,
+        -0.21875
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              -0.3125,
+              -0.3125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.1875,
+              -0.1875
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.75,
+        0.125
+      ],
+      "terms": [
+        [
+          "CostClock",
+          3,
+          1
+        ],
+        [
+          "Mean",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "CostClock-initial@D3",
+      "bounds": [
+        -0.25,
+        -0.25
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              -0.375,
+              -0.375
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.5,
+              -0.5
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              -0.1875,
+              -0.1875
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              -0.3125,
+              -0.3125
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.25,
+              -0.25
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.75,
+        0.0
+      ],
+      "terms": [
+        [
+          "CostClock",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    },
+    {
+      "foe": "random99031",
+      "name": "Mean-initial@D3",
+      "bounds": [
+        -0.03125,
+        -0.03125
+      ],
+      "strata": {
+        "rule": [
+          {
+            "value": 271001,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 271003,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          },
+          {
+            "value": 271004,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "seed": [
+          {
+            "value": 1977,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 8173,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 27182,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 31415,
+            "bounds": [
+              -0.125,
+              -0.125
+            ]
+          }
+        ],
+        "family": [
+          {
+            "value": 281001,
+            "bounds": [
+              -0.0625,
+              -0.0625
+            ]
+          },
+          {
+            "value": 281002,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "role": [
+          {
+            "value": 0,
+            "bounds": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "value": 1,
+            "bounds": [
+              -0.0625,
+              -0.0625
+            ]
+          }
+        ]
+      },
+      "descriptive_95": [
+        -0.1875,
+        0.0
+      ],
+      "terms": [
+        [
+          "Mean",
+          3,
+          1
+        ],
+        [
+          "initial",
+          3,
+          -1
+        ]
+      ]
+    }
+  ],
+  "behavior": [
+    {
+      "foe": "uniform",
+      "name": "CostClock-Mean@D3",
+      "counts": {
+        "identical_record": 48,
+        "same_reward": 55,
+        "first_difference_candidate": 16,
+        "improved": 3,
+        "worse": 6
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "CostClock-initial@D3",
+      "counts": {
+        "identical_record": 46,
+        "same_reward": 54,
+        "first_difference_candidate": 18,
+        "improved": 5,
+        "worse": 5
+      }
+    },
+    {
+      "foe": "uniform",
+      "name": "Mean-initial@D3",
+      "counts": {
+        "identical_record": 56,
+        "same_reward": 59,
+        "first_difference_candidate": 8,
+        "improved": 4,
+        "worse": 1
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "CostClock-Mean@D3",
+      "counts": {
+        "identical_record": 50,
+        "same_reward": 55,
+        "first_difference_candidate": 14,
+        "worse": 8,
+        "improved": 1
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "CostClock-initial@D3",
+      "counts": {
+        "identical_record": 49,
+        "same_reward": 56,
+        "first_difference_candidate": 15,
+        "worse": 8
+      }
+    },
+    {
+      "foe": "random99031",
+      "name": "Mean-initial@D3",
+      "counts": {
+        "identical_record": 57,
+        "same_reward": 63,
+        "first_difference_candidate": 7,
+        "worse": 1
+      }
+    }
+  ],
+  "audit_seconds": 4.087489700003061,
+  "scope": "Actual full typed Session histories/terminals and EVERY recorded role/depth/weight dispatch/PV scalar. No exhaustive correctness of allsearches/externalrulesengine. All candidate deployment D3/fixed D2foe, fixed-eta versus cost-clock D3 meanTree endpoints; sameTRAINnodes not equal CPU or purefrequencycausaltest; same total TRAIN nodes but different visitation/update counts; extra actualwork paid. Finite conditionalpolicy utility, allseeds/roles/UNKNOWN/missing retained; bootstrapdescriptive notconfidence/equivalence/generalprices."
+}

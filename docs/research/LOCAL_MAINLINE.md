@@ -1,3 +1,46 @@
+# DEV_AUX95 — completed rate controls and actual fresh reconstruction; science OPEN
+
+Session89acbbed-2fed-4f4c-a8fe-65ac68804488 start2026-10-18T16:24:29UTC unchanged;
+allproducers/audits/fresh CLOSED; officialfinish/publication receipts pending below.
+Own sidemission/PUBLIC/90minuteheartbeat only; no otherrole/default/Core/UI writes.
+All48arms9.6MTRAINnodes; first384EVALallterminal, new512EVAL508terminal4H128U/0missing.
+Combined13335898paidnodes/50406queries/4102physicalgames4042actualterm60U; allfoe/
+initial/failedwork charged, listedproducerwalls3711.922s, otheroverheadadditional.
+Clock-Mean firstpanel uniform-.09375/random-.21875; newpaneluniform[-.140625,-.109375]
+/random[-.078125,-.046875]. NewTRAIN-onlyderivedconstant eta.23899008216455533 was
+registered BEFOREfirstDEVresults inspected; Rate-Meanuniform[-.171875,-.140625]/
+random[-.09375,0]. No populationconfidence/equivalence or universalalgorithmfailure:
+allcrosseddescriptiveenvelopes include0. Mean's gainoverinitialalsoinconsistent.
+
+Both largerstep compensations unsupported in thesefinitepanels; do not keep
+blindly increasingeta. First11906nonzero actualupdates lower localfrozen-targetloss;
+fullall48gradient/history/ratedispatch verified. Initialpairbatches identical;
+newfirst+lastqueries add learned-weightcoverage. Rootwitnesses32+32PASS81826nodes,
+940interiorboundchecks45538nodes+4540rerun; sameCore/sampled, notallrulesproof.
+First32Jacobian/update directions rank6 withmoderatecondition<59, yet all4initial
+orders notunanimous. No uniqueprices or strengthfromloss claim. No humanfit/holdout.
+
+Actualnewfresh PASS50tests+ALL18derivedoutputs parkedthenregenerated,75429logical
+replayplies/81826rootnodes+45538boundnodes+4540rerun,107.163s; no newfitness or oldcaps.
+40thZIP3d118cd191884dd805583f96b337f3290f7b90d6ae58b6f79beb5fdfd24c2c10/246payloads;
+prior39hashesunchanged,10figuresactuallyviewed. Sourcepins exactZIPbytes authoritative;
+directGit LF/EOF projection disclosed. Auditor-only syntax/import/scope failures
+resolved and originalssaved; no production/parameter/capchanges or installs.
+
+Next main: prospectively compare classical TD selfplay with fixednu training,
+first using savedstandardChess implementation/knowncosts then samelearner/full
+generic rules; all4initials/freshactualWLD/totalcost fixed beforefitness. Jointpolicy
+consistency is a hypothesis, not diagnosed cause; selfplay changes data/updatecount
+as well as context. No return to WDL-onlygrid/prover prerequisite, no rateDEVfit.
+Backup bounded fixedtheta role-credit conflict diagnostic or allseed costcurves,
+not more framework-only audits. OwnNEXT_WORK supplies immediateexecutabletasks.
+
+CHATstaticpromotion/transform suggestions deferred for this purematerial path;
+rawnewroots/ownthread reads saved, nonewDotresponse; no DS/currentPRIMARYexecution
+or adoption claimed. Fullreport results/dev_aux/SEGMENT_20261019_95.md.
+
+## Completed94 evidence (historical; not an active producer)
+
 # DEV_AUX94 — completed prospective learning-depth studies; closed75.068minutes/safe_checkpoint; exact reproduction and public source verified
 
 Direct user2026-10-19 starts own work; optional saved DeepSeek reuse only, no DS
