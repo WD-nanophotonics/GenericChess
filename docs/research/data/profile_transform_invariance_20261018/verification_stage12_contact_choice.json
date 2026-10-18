@@ -1,0 +1,94 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "verifier": "verify_stage12_contact_choice.py",
+ "verdict": "all_checks_passed",
+ "checks": [
+  {
+   "check": "recomputed_classes_match_summary",
+   "passed": true,
+   "detail": {
+    "played_move_is_the_promotion_from_the_paid_square": [
+     17,
+     17
+    ],
+    "played_move_is_another_move_from_the_paid_square": [
+     1,
+     1
+    ],
+    "played_move_is_from_a_different_square": [
+     35,
+     35
+    ],
+    "no_played_move_after_this_position": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "check": "contact_total_reconciles",
+   "passed": true,
+   "detail": 53
+  },
+  {
+   "check": "contact_total_matches_stage_11",
+   "passed": true,
+   "detail": [
+    53,
+    53
+   ]
+  },
+  {
+   "check": "no_replay_mismatches",
+   "passed": true,
+   "detail": 0
+  },
+  {
+   "check": "every_played_move_is_legal_in_the_reconstruction",
+   "passed": true,
+   "detail": 0
+  },
+  {
+   "check": "games_scanned_reconciles",
+   "passed": true,
+   "detail": [
+    182,
+    182
+   ]
+  },
+  {
+   "check": "per_seed_rows_match_independent_walk",
+   "passed": true,
+   "detail": {
+    "mismatched": {},
+    "seeds_only_in_result": []
+   }
+  },
+  {
+   "check": "per_game_rows_sum_to_total",
+   "passed": true,
+   "detail": 53
+  },
+  {
+   "check": "promotion_events_have_a_promotion_available",
+   "passed": true,
+   "detail": 0
+  },
+  {
+   "check": "decision_rule_reproduces",
+   "passed": true,
+   "detail": "contact_choice_is_mixed"
+  },
+  {
+   "check": "withdrawn_rate_contrast_absent",
+   "passed": true,
+   "detail": []
+  }
+ ],
+ "independent_recomputation": {
+  "played_move_is_from_a_different_square": 35,
+  "played_move_is_the_promotion_from_the_paid_square": 17,
+  "played_move_is_another_move_from_the_paid_square": 1
+ },
+ "scope": "board 4, classic_like, the six stored Stage-8 files; replay only"
+}

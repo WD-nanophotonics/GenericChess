@@ -4531,3 +4531,36 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   mechanism than the pooled majority, which is dominated by missing source
   squares. Still no in-zone-versus-outside comparison and no search or strength
   claim.
+
+### DEEPSEEK_AUX stage 12: at the 53 contacts the promotion is played 17 times
+  (2026-10-18, same session `3d8dc073`).** Stage 11 explained why most in-zone
+  observations cannot be contacts; it did not record whether the places where
+  the zone term and the promotion term do meet are live choices in the served
+  corpus or only available-but-unselected options. Both answers change the next
+  research choice (an endpoint can either read stored events or must construct
+  its own counterfactual), so the question, the three played-move classes and
+  the decision rule were written in `plan_stage12_contact_choice.json` before
+  the run.
+  `scan_stage12_contact_choice.py` replays the same six stored files (182 games,
+  34 duplicate move lists dropped, 0 replay mismatches, every played move legal
+  in the reconstruction) and adds no games, no search and no evaluator change.
+  The contact set is unchanged at 53, and the played action partitions 17
+  promotions from the paid square / 1 another move from that square / 35 moves
+  from elsewhere / 0 contacts without a successor, so the pre-written rule
+  fires `contact_choice_is_mixed`. The mass is seed-concentrated in the same way
+  as the Stage 9 re-partition: seeds 77, 80, 90 and 94 supply all 17 promotion
+  events (4, 8, 4 and 1), while seeds 65, 68 and 89 supply only moves from other
+  squares; seed 94 also holds the single same-square non-promotion.
+  `verify_stage12_contact_choice.py` rebuilds every position from the stored
+  move list with its own walker and re-derives the contact set and each played
+  action's class without importing the scan; all 11 checks pass and its output
+  is published as `verification_stage12_contact_choice.json`.
+  Limits kept in the report and README: a played move is not a counterfactual,
+  so this shows only that 17 promotions from paid squares were actually played;
+  it does not show that the zone term caused any choice, that the alternatives
+  were worse, or that any outcome or strength would change. The 53 events are
+  repeated plies of standing pieces in 30 of the 182 games, not independent
+  decisions. No in-zone-versus-outside rate is carried and the withdrawn
+  contrast stays out. Scope: board 4, `classic_like`, those six stored files.
+  Delivery: public evidence copy rebuilds 57/57 including the verifier's own
+  output.

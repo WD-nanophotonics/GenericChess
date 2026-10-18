@@ -514,6 +514,49 @@ about the stored observations only: it compares no in-zone observation with an
 outside-zone one, and it shows nothing about what search would choose or about
 strength.
 
+### Was the promotion actually played at those 53 contacts? (Stage 12, replay only)
+
+`scan_stage12_contact_choice.py` replays the same six stored files once more and
+asks a narrower question than Stage 11: at a contact, was the move the stored
+game actually played the promotion from the paid square, another move from that
+same square, or a move from a different square? The endpoint, the three classes
+and the decision rule are in `plan_stage12_contact_choice.json`, which was
+written before the run; no game, no search and no evaluator change is added.
+
+The contact set is unchanged (53 contacts over 182 games, 34 duplicate move
+lists dropped, 0 replay mismatches, every played move legal in the
+reconstruction). The partition is 17 / 1 / 35 / 0:
+
+* 17 — the played move *is* the promotion from the paid square;
+* 1 — the played move leaves that same square without promoting;
+* 35 — the played move comes from a different square;
+* 0 — contacts with no recorded successor (the last ply of a game).
+
+The pre-written rule therefore fires `contact_choice_is_mixed` (the leading
+class is below half the contacts). The mass is also seed-concentrated in the
+same way the Stage 9 re-partition showed: seed 77 contributes 4 promotions and
+nothing else, seed 80 contributes 8 promotions against 10 moves elsewhere,
+seed 90 4 against 2, seed 94 1 plus the single same-square non-promotion
+against 11 elsewhere, and seeds 65, 68 and 89 contribute only moves from other
+squares. `verify_stage12_contact_choice.py` rebuilds each position from the
+stored move list with its own walker, re-derives the contact set and the class
+of each played action without importing the scan, and reproduces all four
+counts, every per-seed row and the decision; its checks pass and it writes
+`verification_stage12_contact_choice.json`.
+
+The reading is deliberately narrow. A played move is not a counterfactual: a
+contact only says that a promotion from the paid square was legal in that
+position, so choosing something else does not show that the promotion was
+worse, that the zone term caused the choice, or that any outcome would have
+changed. These 53 events are repeated plies of standing pieces in 30 of the 182
+games rather than independent decisions. This artifact also carries no
+in-zone-versus-outside rate, and the verifier rejects the withdrawn marker if it
+reappears. What it does establish is that the stored corpus contains realised
+promotions from paid squares (17 of 53), so a future cost-bounded utility
+endpoint can build on stored events instead of having to construct every
+counterfactual from scratch - and that such an endpoint is still required,
+because availability is not selection.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward

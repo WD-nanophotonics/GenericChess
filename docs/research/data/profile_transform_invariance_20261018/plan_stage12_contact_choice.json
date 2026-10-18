@@ -1,0 +1,60 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "written_before_run_utc": "2026-10-18T14:50:00Z",
+ "status": "executed",
+ "question": "At the 53 in-zone contacts of the six stored Stage-8 game files, was the action actually played the promotion move from the paid square, another move from that same square, or a move from a different square?",
+ "why_decision_changing": [
+  "Stage 11 established that most in-zone paid observations cannot be contacts at all, so the zone term and the promotion term mostly do not meet. What is still unrecorded is whether the 53 places where they do meet are live choices in the served corpus or merely available-but-unselected options.",
+  "If the promotion is almost never played there, any future utility endpoint has to build its own counterfactual rather than read one off the stored games; if it is usually played, the stored games already contain realised promotion-on-paid-square events and a cost-bounded endpoint can be designed around them.",
+  "Both outcomes change the next research choice, so the question is decided before it is run."
+ ],
+ "inputs": {
+  "games": "the same six stored Stage-8 files under .local_agent/hand-utility-games-20261018, unchanged",
+  "rules": "the compiled ruleset built from each game's stored seed and setup preset, unchanged generator",
+  "new_games": false,
+  "new_search": false,
+  "evaluator_edit": false,
+  "frozen_fitness": false
+ },
+ "endpoint": {
+  "unit": "one in-zone contact observation, defined exactly as in Stage 8 and Stage 11",
+  "classes": [
+   "played_move_is_the_promotion_from_the_paid_square",
+   "played_move_is_another_move_from_the_paid_square",
+   "played_move_is_from_a_different_square"
+  ],
+  "reported": "class counts overall and per seed, plus the contact total, and the number of contacts whose played move is absent from the stored move list (must be 0)",
+  "decision_rule": {
+   "contact_promotion_is_usually_played": "first class share >= 0.5",
+   "contacts_are_available_but_unselected": "first class count == 0",
+   "contact_choice_is_mixed": "otherwise"
+  }
+ },
+ "cost": {
+  "kind": "replay of six stored files, no search",
+  "expected_wall_seconds": "under 10 for the scan; a second independent replay under 10",
+  "engineering": "one scan plus one verifier, no new framework, no new game generation"
+ },
+ "verification": [
+  "a second walker re-derives the contact set from the stored move list and the compiled ruleset without importing the scan under test",
+  "the played move must be legal in the reconstructed position; a mismatch is recorded rather than dropped",
+  "per-seed rows must sum to the overall counts",
+  "no in-zone-versus-outside rate may be computed, and the withdrawn 0-vs-53 contrast must not reappear"
+ ],
+ "non_goals": [
+  "no strength, playing-quality or utility claim: the played move is not a counterfactual and cannot show that the hand term caused the choice",
+  "not the closed hand-policy fixture: that fixture compared served and blind arms of a hand_weight=0 judge; this reads only the served corpus",
+  "no PRIMARY panel 411001..411008, no AUX92/93 rerun, no frozen-fitness rerun"
+ ],
+ "execution": {
+  "ran_after_registration": true,
+  "scan_wall_seconds": 2.91,
+  "verify_wall_seconds": 2.78,
+  "scan_sha256": "1ed52178330f28bcce8b88406852aa7ca9d469c0e22b515c6d7cda7b738abf21",
+  "verify_sha256": "55f64b1630f4ec900f718530da3c3e2705349f415da3beb5bc9d05c2583ba8fa",
+  "verifier_verdict": "all_checks_passed",
+  "note": "the endpoint, decision rule and non-goals above were not edited after the run; only this execution record and the status were added"
+ },
+ "done_condition": "results and verification JSON are stored, the verifier verdict is all_checks_passed, and the reading is either published as a short report paragraph or explicitly held with the reason recorded"
+}

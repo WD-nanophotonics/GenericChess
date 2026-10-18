@@ -5,8 +5,9 @@ Public copy of the evidence behind
 
 Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
-disjointness and source-classification artifacts below were added from the same
-role's later session `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
+disjointness, source-classification and Stage 12 contact-choice artifacts below
+were added from the same role's later session
+`3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
 no other role has rerun it. No strength, playing-quality, utility, human-price
 or game-outcome claim is made anywhere in this directory.
 
@@ -49,6 +50,17 @@ before the run), it carries no in-zone-versus-outside rate, and
 `verify_zone_promotion_source_classification.py` recomputes every bucket
 independently and writes the verdict published here as
 `verification_zone_promotion_source_classification.json`.
+
+`scan_stage12_contact_choice.py` keeps that replay-only scope and asks whether
+the move actually played at a contact was the promotion from the paid square,
+another move from that square, or a move from elsewhere. Its endpoint, three
+classes and decision rule are in `plan_stage12_contact_choice.json`, written
+before the run; it carries no in-zone-versus-outside rate, and
+`verify_stage12_contact_choice.py` rebuilds every position and class from the
+stored move list without importing the scan. The classes are 17 promotions /
+1 same-square non-promotion / 35 elsewhere / 0 absent, so the rule fires
+`contact_choice_is_mixed`; a played move is not a counterfactual and no
+strength, causal or utility reading is attached to it.
 
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
@@ -107,6 +119,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_zone_promotion_source_classification.json` | 6353 | `553ad2f7f540d2743b9bf8bde3b83ada4de223675cbd328d3682c0ff338dd841` |
 | `results_zone_promotion_source_classification.json` | 64409 | `317790885790abca5c3b7170b76342a6474a2381828f3988f926a8f88387b7cd` |
 | `verification_zone_promotion_source_classification.json` | 3006 | `38674713b150c6a079c91c48f4b6fa7b73d20bedf5e144eedd7b61db37d05057` |
+| `plan_stage12_contact_choice.json` | 3915 | `9aff2cf6b723931d5d235941d03f21c18d58a366684a0376c16d73f09f7f8c65` |
+| `results_stage12_contact_choice.json` | 50205 | `dd5d347c6e885c45da8c867982abcf4a3fc7abf349d70d62a682ee9021811641` |
+| `verification_stage12_contact_choice.json` | 1915 | `7240328d95c59f23570d42cbc13c8fd09e5bb14b6bbc033d0bedabef554b6ace` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -128,7 +143,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_zone_promotion_disjointness.py` | 4343 | `5e3657a4ae101d9489cbd639beaf71c5ed07e227e598b3d056223cffc9b947f7` |
 | `scan_zone_promotion_source_classification.py` | 23754 | `153d857499c1e6e771a0965bed4426391121f985fd3b7389001e3364dad612e0` |
 | `verify_zone_promotion_source_classification.py` | 19203 | `8e088f0449829aa056fa1710e41b74bb78f4b239cda1cf413a22d77b8ce5dd5f` |
-| `make_public_evidence.py` | 5690 | `cb3c66973c3ea9bb7f850fca3f538cd3deed0537be497814def9fc2aaa734dc8` |
+| `scan_stage12_contact_choice.py` | 13775 | `44cd708fad182add097ca558146c0f63bf060dd90182f6555d79051d46c52631` |
+| `verify_stage12_contact_choice.py` | 11154 | `48dab628cb5979ac92fc95b10a882152b64e2e938aeb51f0b1f7b0de23ebaf35` |
+| `make_public_evidence.py` | 5904 | `9f3ed75e36eadc51453001ec9544423c653f6a5b3c7ba02579c9dee8f36b56e7` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -156,6 +173,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_bind_reachability_consistency.py` | `stored_numbers_are_self_consistent` - arithmetic and bookkeeping audit of the Stage 8 file with no replay and no search: per-game sums against the summary, the three class partitions, both rates and the ratio re-derived from the raw counts, and the four Stage 7 counts re-read from `results_stored_games_leaf_terms.json`; a deliberately perturbed copy fails it |
 | `results_contact_concentration.json` | `contrast_is_seed_concentrated` - the Stage 8 file re-partitioned by seed: 7 of 36 seeds hold all 53 contacts, the top seed holds 34%, and the 5 seeds where in-zone promotability is higher supply 34/169 = 20.1% against 19/2,320 = 0.82% elsewhere |
 | `analyze_contact_concentration.py` | the re-partition itself: reads the Stage 8 file, checks that nine totals re-aggregate to the published summary, and writes the per-seed table; no replay, no search, no new game |
+| `plan_stage12_contact_choice.json` | the endpoint for the Stage 12 replay, its three played-move classes and its decision rule, written before the run; only the later `execution` record and `status` were added |
+| `results_stage12_contact_choice.json` | `contact_choice_is_mixed` - at the 53 contacts the played move is the promotion from the paid square 17 times, another move from that square once and a move from elsewhere 35 times, with 0 contacts lacking a successor; played is not a counterfactual and no rate is carried |
+| `verify_stage12_contact_choice.py` | independent replay of the same six stored files: rebuilds every position, re-derives the contact set and each played action's class without importing the scan, and reproduces all counts, per-seed rows and the decision (`all_checks_passed`) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 
