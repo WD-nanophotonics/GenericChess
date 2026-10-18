@@ -69,6 +69,9 @@ JSON_FILES = [
     "plan_stage12_contact_choice.json",
     "results_stage12_contact_choice.json",
     "verification_stage12_contact_choice.json",
+    "plan_stage13_option_set.json",
+    "results_stage13_option_set.json",
+    "verification_stage13_option_set.json",
 ]
 
 PY_FILES = [
@@ -95,6 +98,8 @@ PY_FILES = [
     "verify_zone_promotion_source_classification.py",
     "scan_stage12_contact_choice.py",
     "verify_stage12_contact_choice.py",
+    "scan_stage13_option_set.py",
+    "verify_stage13_option_set.py",
     "make_public_evidence.py",
 ]
 

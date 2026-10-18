@@ -557,6 +557,46 @@ endpoint can build on stored events instead of having to construct every
 counterfactual from scratch - and that such an endpoint is still required,
 because availability is not selection.
 
+### Was the played promotion a forced move or an eligible choice? (Stage 13, replay only)
+
+Stage 12 counts what was played but not whether an alternative existed. If the
+promotion from the paid square had been the only legal action at those 17
+contacts, the record would carry no preference information at all: a forced
+move is what any search plays. `scan_stage13_option_set.py` therefore replays
+the same six stored files a fourth time, rebuilds each contact position and
+lists its complete legal action set, with the endpoint and the forcedness
+classes fixed in `plan_stage13_option_set.json` before the run.
+
+The replay precondition is unchanged (182 games, 34 duplicate move lists
+dropped, 0 replay mismatches, every played move legal in the reconstruction,
+the contact total reconciles with Stage 12's 53). The result is
+`no_played_contact_promotion_was_forced`:
+
+* 0 of the 17 played contact promotions were the only legal action;
+* 17 of 17 had at least one unpromoted sibling move from the same paid square;
+* 0 contact positions had a single legal action, and legal-action totals across
+  the 53 contacts run from 3 to 22;
+* the paid square itself offered 2 actions in 4 of the 17 played promotions and
+  3 in the other 13.
+
+`verify_stage13_option_set.py` rebuilds the positions and their option sets
+from the stored move lists without importing the scan, matches every event row
+and every per-seed row, and reproduces the decision - 15 checks, all passing,
+written to `verification_stage13_option_set.json`.
+
+What this changes is only the precondition for reading Stage 12: those 17
+events are *optional* promotions under this evaluator, so they are eligible
+choice data rather than forced transitions, and the class partition is not an
+artefact of zugzwang-like single-action positions. What it does not change is
+the interpretation. Availability is not selection, a chosen action is not a
+counterfactual, an overlapping optimal set or a tie in the depth-2/3 search can
+produce the same single chosen action, and nothing here measures the value of
+the promotion, the effect of the zone term on the choice, or strength. The
+forcedness classes also describe one evaluator at depth 2-3 on board 4; a
+deeper or differently weighted search would see different option sets
+altogether. This artifact carries no in-zone-versus-outside rate and the
+verifier rejects the withdrawn markers if they reappear.
+
 ## UNKNOWN
 
 * whether generated rule families outside `classic_like` also lack backward

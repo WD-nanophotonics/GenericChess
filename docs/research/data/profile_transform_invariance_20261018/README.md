@@ -5,8 +5,8 @@ Public copy of the evidence behind
 
 Provenance: **DEEPSEEK_AUX**, branch `codex/deepseek-aux`, session
 `6de032cc-45b4-4938-8700-2abdcae346aa`, 2026-10-18; the zone/promotion
-disjointness, source-classification and Stage 12 contact-choice artifacts below
-were added from the same role's later session
+disjointness, source-classification, Stage 12 contact-choice and Stage 13
+option-set artifacts below were added from the same role's later session
 `3d8dc073-5fcc-456e-933c-a7b6646296e5`. Auxiliary result;
 no other role has rerun it. No strength, playing-quality, utility, human-price
 or game-outcome claim is made anywhere in this directory.
@@ -61,6 +61,23 @@ stored move list without importing the scan. The classes are 17 promotions /
 1 same-square non-promotion / 35 elsewhere / 0 absent, so the rule fires
 `contact_choice_is_mixed`; a played move is not a counterfactual and no
 strength, causal or utility reading is attached to it.
+
+`scan_stage13_option_set.py` stays replay-only and asks the one follow-up that
+the Stage 12 class counts cannot answer: at the 17 contacts where the promotion
+from the paid square was played, was that promotion the only legal action, or
+did the position offer alternatives? Its endpoint, three forcedness classes and
+decision rule are in `plan_stage13_option_set.json`, written before the run. For
+each rebuilt contact position it lists the legal actions, counts those that
+start on the paid square, and records whether an unpromoted sibling move from
+that square existed. The result is
+`no_played_contact_promotion_was_forced`: 0 of 17 played promotions were forced,
+all 17 had at least one unpromoted sibling, and no contact position had a single
+legal action (legal-action totals run 3-22). That matters only as a
+precondition - an optional promotion is at least an eligible choice under this
+evaluator, whereas a forced one would have carried no preference information -
+and it says nothing about whether the choice was good.
+`verify_stage13_option_set.py` rebuilds the positions and the option sets from
+the stored move lists without importing the scan and reproduces all 15 checks.
 
 The private originals under `.local_agent/profile-transform-invariance-20261018/`
 contain compiler tracebacks with absolute checkout paths. This copy replaces
@@ -122,6 +139,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage12_contact_choice.json` | 3915 | `9aff2cf6b723931d5d235941d03f21c18d58a366684a0376c16d73f09f7f8c65` |
 | `results_stage12_contact_choice.json` | 50205 | `dd5d347c6e885c45da8c867982abcf4a3fc7abf349d70d62a682ee9021811641` |
 | `verification_stage12_contact_choice.json` | 1915 | `7240328d95c59f23570d42cbc13c8fd09e5bb14b6bbc033d0bedabef554b6ace` |
+| `plan_stage13_option_set.json` | 4025 | `acc48d4f9651474f6e8e932709e5116495d355ce1f5d5f386922042cac1ecb1c` |
+| `results_stage13_option_set.json` | 49664 | `b8b77064bc41958fc73a464f493a0eeddc804e9c130026b56396d782f4c9770c` |
+| `verification_stage13_option_set.json` | 2417 | `07a1a1ea0f28e9916ec5d3cb4e7c9aae66fbc446639de35d0a5a5592281cd4d6` |
 | `scan_profile_transform.py` | 22410 | `7b5efc0c7ae45442802194f802c25e6a667bb71503ccfad819d9e382bb741101` |
 | `scan_profile_transform_a3.py` | 16008 | `d988fa30e9043923450e0067f99dac39035715101fdf5ffea4f6ffda643f3ec6` |
 | `verify_a3_results.py` | 4986 | `3e6b233e322e7e4d0751c6260cdfb42e948dcd4a3558784a076206bc70e77d1f` |
@@ -145,7 +165,9 @@ stored files and rejects an artifact that was added without being listed.
 | `verify_zone_promotion_source_classification.py` | 19203 | `8e088f0449829aa056fa1710e41b74bb78f4b239cda1cf413a22d77b8ce5dd5f` |
 | `scan_stage12_contact_choice.py` | 13775 | `44cd708fad182add097ca558146c0f63bf060dd90182f6555d79051d46c52631` |
 | `verify_stage12_contact_choice.py` | 11154 | `48dab628cb5979ac92fc95b10a882152b64e2e938aeb51f0b1f7b0de23ebaf35` |
-| `make_public_evidence.py` | 5904 | `9f3ed75e36eadc51453001ec9544423c653f6a5b3c7ba02579c9dee8f36b56e7` |
+| `scan_stage13_option_set.py` | 14710 | `0b78201952d60ea4a429288920c033fccda3c1d801bc14c2c39ae20dd6755712` |
+| `verify_stage13_option_set.py` | 13890 | `70e1792eecfc4c1c991364170290b34052eb1408f0d29ec158ff4d86a25ff43a` |
+| `make_public_evidence.py` | 6098 | `fdeee6447ecb8ca7b3a80c2cfa6eac6659a582c3ae1d2ba32133711108e2acea` |
 
 `manifest.json` holds the same table in machine-readable form.
 
@@ -176,6 +198,9 @@ stored files and rejects an artifact that was added without being listed.
 | `plan_stage12_contact_choice.json` | the endpoint for the Stage 12 replay, its three played-move classes and its decision rule, written before the run; only the later `execution` record and `status` were added |
 | `results_stage12_contact_choice.json` | `contact_choice_is_mixed` - at the 53 contacts the played move is the promotion from the paid square 17 times, another move from that square once and a move from elsewhere 35 times, with 0 contacts lacking a successor; played is not a counterfactual and no rate is carried |
 | `verify_stage12_contact_choice.py` | independent replay of the same six stored files: rebuilds every position, re-derives the contact set and each played action's class without importing the scan, and reproduces all counts, per-seed rows and the decision (`all_checks_passed`) |
+| `plan_stage13_option_set.json` | the endpoint for the Stage 13 replay, its forcedness classes and its decision rule, written before the run; only the later `execution` record and `status` were added |
+| `results_stage13_option_set.json` | `no_played_contact_promotion_was_forced` - of the 17 contacts where the promotion from the paid square was played, 0 were forced: every one had at least one unpromoted sibling from that square, and no contact position had a single legal action (legal-action totals 3-22, actions from the paid square 2 or 3); availability only, no value reading |
+| `verify_stage13_option_set.py` | independent replay of the same six stored files: rebuilds every contact position and its legal action set without importing the scan, matches every event and per-seed row, and reproduces the decision (`all_checks_passed`, 15 checks) |
 
 ## Fresh-seed consequence check (seeds 292101–292112)
 

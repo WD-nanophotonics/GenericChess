@@ -4564,3 +4564,32 @@ whose rebuild from the private originals reproduces the published bytes 33/33;
   contrast stays out. Scope: board 4, `classic_like`, those six stored files.
   Delivery: public evidence copy rebuilds 57/57 including the verifier's own
   output.
+
+### DEEPSEEK_AUX stage 13: none of the 17 played contact promotions was forced
+  (2026-10-18, same session `3d8dc073`).** Stage 12 counted what was played at
+  the 53 in-zone contacts; it did not record whether an alternative existed. Had
+  the promotion from the paid square been the only legal action there, the event
+  would carry no preference information, so the question, the forcedness classes
+  and the decision rule were written in `plan_stage13_option_set.json` before the
+  run. `scan_stage13_option_set.py` replays the same six stored files (182 games,
+  34 duplicates dropped, 0 replay mismatches, every played move legal, contact
+  total reconciles with Stage 12 at 53) and adds no games, no search and no
+  evaluator change.
+  Result `no_played_contact_promotion_was_forced`: 0 of the 17 played contact
+  promotions were the only legal action, all 17 had at least one unpromoted
+  sibling move from the paid square, no contact position had a single legal
+  action, and legal-action totals run 3-22 (the paid square offered 2 actions in
+  4 cases and 3 in 13). `verify_stage13_option_set.py` rebuilds the positions and
+  option sets from the stored move lists without importing the scan, matches
+  every event and per-seed row, and reproduces the decision; 15 checks pass and
+  its output is published as `verification_stage13_option_set.json`.
+  What this buys is a precondition, not a result about value: the 17 events are
+  optional promotions under this evaluator rather than forced transitions, so
+  the Stage 12 partition is not an artefact of single-action positions.
+  Availability is still not selection, a chosen action is not a counterfactual,
+  an overlapping optimal set or a tie can produce the same chosen action, and
+  nothing here measures the promotion's value, the zone term's effect or
+  strength. The classes describe one evaluator at depth 2-3 on board 4. No
+  in-zone-versus-outside rate is carried and the withdrawn markers stay rejected.
+  Delivery: public evidence copy rebuilds 63/63 including the verifier's own
+  output.

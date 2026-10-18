@@ -1,0 +1,63 @@
+{
+ "role": "DEEPSEEK_AUX",
+ "session": "3d8dc073-5fcc-456e-933c-a7b6646296e5",
+ "written_before_run_utc": "2026-10-18T14:56:00Z",
+ "status": "executed",
+ "question": "At the 17 in-zone contacts where the promotion from the paid square was actually played, was that promotion the only legal action in the position, or did the position offer alternatives that search declined?",
+ "why_decision_changing": [
+  "Stage 12 recorded what was played at the 53 contacts but not what else was legal there. A played move is only weak evidence of a preference if something else could have been played; if the promotion was the sole legal action it carries no information about the evaluator at all.",
+  "This decides whether the stored corpus can supply any play-side preference evidence for the zone/promotion interaction, or whether a future utility endpoint must construct every comparison itself. The two answers send the next segment to different work."
+ ],
+ "inputs": {
+  "games": "the same six stored Stage-8 files under .local_agent/hand-utility-games-20261018, unchanged",
+  "rules": "the compiled ruleset built from each game's stored seed and the unchanged setup preset",
+  "new_games": false,
+  "new_search": false,
+  "evaluator_edit": false,
+  "frozen_fitness": false
+ },
+ "endpoint": {
+  "unit": "one Stage-8/Stage-12 contact observation",
+  "recorded_per_observation": [
+   "legal action count in the reconstructed position",
+   "how many legal actions leave the paid square",
+   "how many legal promotions leave the paid square",
+   "whether the promotion from the paid square is the only legal action",
+   "whether an unpromoted sibling move from the same square is legal",
+   "the Stage-12 played class"
+  ],
+  "decision_rule": {
+   "no_played_promotions_to_classify": "the played promotion count is 0",
+   "every_played_contact_promotion_was_forced": "every played promotion is the only legal action",
+   "no_played_contact_promotion_was_forced": "no played promotion is the only legal action",
+   "played_contact_promotions_are_a_mixture_of_forced_and_optional": "otherwise"
+  },
+  "secondary_reported": "how many of the played promotions still had an unpromoted sibling move from the same square, i.e. how many were a within-square choice"
+ },
+ "cost": {
+  "kind": "replay of six stored files, no search",
+  "expected_wall_seconds": "under 10 for the scan; a second independent replay under 10",
+  "engineering": "one scan plus one verifier, no new framework, no new game generation"
+ },
+ "verification": [
+  "a second walker re-derives the option set from the stored move list and the compiled ruleset without importing the scan under test",
+  "the played move must be legal in the reconstructed position and the contact set must stay at 53",
+  "per-seed rows must sum to the overall counts",
+  "no in-zone-versus-outside rate may be computed, and the withdrawn contrast must not reappear"
+ ],
+ "non_goals": [
+  "no strength, playing-quality or utility claim: a forced move carries no preference information, and an optional one is a depth-2/3 search outcome under one evaluator, not a value judgement",
+  "not the closed hand-policy fixture and not the hand_weight=0 judge comparison",
+  "no PRIMARY panel 411001..411008, no AUX92/93 rerun, no frozen-fitness rerun"
+ ],
+ "execution": {
+  "ran_after_registration": true,
+  "scan_wall_seconds": 2.46,
+  "verify_wall_seconds": 2.8,
+  "scan_sha256": "7cd7fe8e5cd06b7105f56baab9075f1afd3bbbc30ea48dc6cfd1e7360eaca251",
+  "verify_sha256": "53df80a82e93ae0eb56365a892ffd371757715088d79d9e0aca60d7917c90a79",
+  "verifier_verdict": "all_checks_passed",
+  "note": "the endpoint, decision rule and non-goals above were not edited after the run; only this execution record and the status were added"
+ },
+ "done_condition": "results and verification JSON are stored, the verifier verdict is all_checks_passed, and the reading is published as a short report paragraph or explicitly held with the reason recorded"
+}
