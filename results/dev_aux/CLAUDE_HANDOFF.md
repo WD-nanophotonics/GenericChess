@@ -134,3 +134,66 @@ those files to review.
   kept locally and NOT committed. I did not build a DELTA_REPRO ZIP or fresh
   reproduction bundle (the task2582-style step); it is left for normal DEV_AUX
   packaging if wanted.
+
+---
+
+## Report 5 — 2026-10-19 (delivery)
+
+- With the user's explicit OK in the Claude chat, d861db87 was pushed to
+  origin/sidemission as a fast-forward from 0488bc06.
+- Verification: `ls-remote` returns the full SHA
+  d861db8767c2c296e21cfe06c6cfa9142d48fdaf. The anonymous GitHub API branch
+  endpoint returns the same SHA, and the files are readable at that SHA.
+- The first push attempt used a raw SHA refspec. The pre-push hook rejected it
+  as designed (it accepts only refs/heads/sidemission), so nothing was sent.
+  The retry pushed the branch ref.
+- This report is a local follow-up edit made after the push. It is not
+  committed; the next DEV_AUX commit can include it.
+
+---
+
+## Report 6 — 2026-10-19 (Slack: AUX_CLAUDE identity, first Dot request)
+
+- User direction: talk to Dot in #generic-chess (C0C6L21UU20) and continue
+  development. Slack ID: **AGENT_ID=AUX_CLAUDE** (Claude Code; auxiliary
+  material/learning work in this DEV_AUX checkout/sidemission). It is not a
+  new checkout or worker, and it is never run at the same time as Codex
+  DEV_AUX. Messages are sent with Claude's Slack connector through the same
+  shared user account. They do not carry "Sent using ChatGPT".
+- Sent AGENT_REQUEST GC-SLACK-20261019-AUXCLAUDE-101a, ts 1792397389.731309.
+  It contains the 101 result, a descriptive-only material-order pair count, and
+  a request for one interpretation gap and one smallest next step among
+  (a) Generic transfer, (b) a matched-terms feedback-density control,
+  (c) a changed target. Send record: .local_agent/slack/auxclaude-101a-send.json.
+- Descriptive pair count, external P<(N,B)<R<Q, 9 strict pairs per model,
+  totals over 4 seeds out of 36: initial 21, Fx 1.25M 26, Fx 2.5M 27,
+  SC 1.25M 30, SC 2.5M 30. Not a gate or selection criterion
+  (see the CHAT_Comments correction, ts 1792376812.571529).
+
+---
+
+## Report 7 — 2026-10-19 (Dot reply adopted; order-utility check)
+
+- Dot DOT_REPLY ts 1792397818.663009, about 7 min after the request. The
+  AUX_CLAUDE route works: messages "Sent using Claude" pass Dot's filter.
+  Summary:
+  - Keep Fixednu as the control; there is no reason to switch to SC.
+  - Gap: closeness to the traditional order is not linked to utility.
+  - Smallest next step: an existing-records cross-check.
+  - Afterwards: prefer (a), a small full-semantics Generic transfer with a
+    Fixednu control. Defer (b). (c) has no priority.
+  - Decision: ADOPT.
+- Done: task2585/order_utility.py, output task2585/order-utility.json. No new
+  games.
+  - 32 cells; SC has the higher order score in 20 of them.
+  - Of those 20: 9 W−L up, 8 zero, 3 W−L DOWN (seed 1977, uniform foe;
+    1.25M p8/p64 −.125 and 2.5M p64 −.375).
+  - Initial absolute vs random48821: 24W/7D/1L (p8) and 19W/12D/1L (p64), a
+    ceiling.
+  - Conclusion: the strong claim "more traditional order ⇒ stronger" is refuted
+    on this panel. The order-split is CLOSED as a reason for a dedicated
+    experiment; order stays descriptive.
+- Next (NEXT_WORK Main): (a) a small Generic transfer of the SAME learner, with
+  Fixednu as the control and full promotion/drop/aux/history. First prove it is
+  executable and can separate the candidates; scale only after that. Any design
+  expected to take >=120 min goes to Dot first.
