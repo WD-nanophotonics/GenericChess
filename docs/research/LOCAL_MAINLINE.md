@@ -560,19 +560,28 @@ Strictfloatoptimalleafgradient sets areunique in192D2+96D3contexts; allactual
 scale256PVs reachthose signatures, not proofAUXtraining/intervalsampleidentity.
 Deliverall32existing-schema scale256artifacts asSCOPEDexamples, no champion.
 
-Nextusefulchoice is a concrete query-only consumer/cost integration under the
-sourcelearner's own actual receipt/update contract, if its owner needs it;
-fixed-sourceTDLeafEpisode consumes complete/value/PVphi/terminal, not subnode
-intervalsamples. Their absence isnot an integrationgate for thisparticularTD;
-preserve episodeclock/censoring/rawT10/sourceCore and paidcost differences.
-otherwise choose a different decision-changing unfamiliar-rule search problem.
-Do not duplicateAUXlearning, infergenericprecision/strength fromthese4rules,
-refillcacheUNKNOWN, adddiagnostics/learnerAPI orcontinueunchangedpricefitness.
+The query-only consumer/cost question is now CLOSED for the existing published
+TDLeaf trainer; see [TD_QUERY_CONSUMER_COMPOSITION_20261019.md](TD_QUERY_CONSUMER_COMPOSITION_20261019.md).
+The saved 5x5 panel matches complete/value/PVphi/terminal/prediction/gradient
+for every completed Native query and shows much lower caller time, but Native
+chooses a different legal action on 54/288 triplets across four physical roots.
+One changes a promotion and its immediate material vector. The target signature
+records PV material-feature membership, not action optimality. Replacing one
+query therefore changes the trainer's actor policy; preserving the Source action
+requires a redundant second query whose target fields add no information here.
+No Native-to-TD API or current-trainer substitution follows. This supersedes the
+conditional suggestion to pursue query-only integration if useful. PRIMARY's
+next work must be a different decision-changing unfamiliar-rule search question;
+do not duplicate AUX learning, infer generic precision/strength from these four
+rules, refill cache UNKNOWN, add a diagnostics/learner API, or repeat unchanged
+price fitness.
 CHAT correction keepshumanChessorder descriptiveonly; today'sAUX source/reports
 do notcreatea human-label gate, representationceiling or rolechange.
-ScienceOPEN. User2026-10-19 pauses ONLY genericchess heartbeat; currentresearch/
-consultation/publication continues, auxiliaries untouched. Explicit resume is
-required for the timer; research user_paused/stopped flags remain unchanged.
+ScienceOPEN. Usercorrection2026-10-19: the earlier one-time “pause inspection”
+applied only to that patrol; it did not authorize disabling the recurring
+genericchess heartbeat. The existing timer is restored ACTIVE with its prior
+settings. Future one-time pauses leave it active unless the user explicitly asks
+to pause/disable the schedule. Research flags and auxiliary lanes are unchanged.
 
 ## Previous learning choice still retained — 2026-10-17
 

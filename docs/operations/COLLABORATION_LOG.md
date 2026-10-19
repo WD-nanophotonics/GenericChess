@@ -4799,3 +4799,35 @@ allpagescomplete; exactraworiginals saved beforestrictreconcile, responsehash
 unchanged. Fixed-SHA delivery remains a separate post-publication fact.
 TimerPAUSED also verified with name/prompt/schedule/target unchanged; research
 and auxiliary state remain untouched. ScienceOPEN with an executable nextmemo.
+
+## PRIMARY timer correction and TD query consumer —2026-10-19
+
+Correction to the historical timer entry above: the user requested a one-time
+pause of the current inspection, not a change to the recurring schedule. PRIMARY
+mistakenly paused the existing `genericchess` heartbeat, then restored it ACTIVE
+with its previous settings after the user's correction. No research stop flag
+was changed. `AGENTS.md`, `LOCAL_MAINLINE.md` and `LOCAL_AGENT.md` now explicitly
+keep one-time patrol pauses separate from schedule changes.
+
+PRIMARY read the published DEV_AUX task2565 trainer at fixed
+`origin/sidemission` SHA `57696f621cda9957bbef8f10d5ff8515f8482616`; this was source
+review, not AUX execution or ownership. The existing TDLeaf call uses the same
+complete query for `observe` and the next action. Saved finite receipts show
+equal completed Native target fields but action changes in54/288 triplets; a
+separate no-query replay finds12/32 actual witness children/history differ while
+all32 source records reproduce. One audited physical root changes promotion.
+The fixed-trajectory/off-policy alternative has no distinct current consumer
+and would overlap AUX learning. Five-effect refusal is an explicit schema/IR
+cap, outside the current random generator's semantic-effect construction; it is
+not a fresh Native-only defect. No new search, game, optimizer or training run.
+
+PRIMARY independently reran the published captured-source capsule: four outputs
+match on non-time fields in7.978s with Python-S, Native absent, zero new games,
+updates or UNKNOWN refill. The capsule manifest verifies60/60 payload hashes and
+the archive digest; publication-copy scans found no credential patterns or
+personal paths. Existing AUX/DS worktrees and state were not edited; bounded
+DeepSeek chat read at this heartbeat showed no evidenced current workflow
+recurrence. No Dot inquiry or adoption is claimed. Relevant validation was
+`git diff --check`, archive/hash audit and the captured-source replay; product
+pytest was not relevant to these documentation/evidence-only changes. Science
+remains OPEN; no distinct unclosed unfamiliar-rule search consumer was found.

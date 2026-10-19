@@ -34,12 +34,13 @@ The mainline genericchess heartbeat and auxiliary genericchess-deepseek-gpt
 heartbeat are independent and bound to their respective existing control chats.
 Scoped stops pause only the targeted role; whole-project stop must explicitly
 address all roles. Existing DEV_AUX controls remain its own.
-When the user explicitly says "暂停巡检，继续工作", pause ONLY the named mainline
-heartbeat through the app automation tool. Keep the current research segment,
-UUID/UTC clock and research/consultation/publication stop flags unchanged.
-This is a timer pause, not a role stop; record the distinction in NEXT_WORK.md.
-Auxiliary timers and work remain their own. Resume that timer only on explicit
-user direction. The2026-10-19 instruction exercised this distinction.
+A one-time request to pause the current inspection, including
+"暂停巡检，继续工作", applies to that patrol and does NOT disable or modify the
+recurring heartbeat. Leave its status and settings untouched unless the user
+explicitly asks to pause or turn off the recurring schedule. Keep the research
+segment UUID/UTC clock and role stop flags unchanged; a patrol pause is not a
+role stop. Do not change auxiliary timers or work. The2026-10-19 correction
+reversed the earlier mistake of treating a one-time pause as a schedule change.
 
 At each PRIMARY heartbeat, inspect the existing gc deepseek辅助 chat once:
 threadId 01a14ade-739d-7172-97a4-183ace749529, host local. Use bounded recent

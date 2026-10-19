@@ -10,6 +10,14 @@ branches remain their own. No additional workers may be created.
 
 ## Current decisions and their reasons —2026-10-15
 
+- User correction2026-10-19: a one-time request to pause/stop the current
+  inspection applies to that inspection only; it does not disable the user's
+  recurring heartbeat. Keep the existing `genericchess` automation active unless
+  the user explicitly asks to pause or turn off the recurring schedule. This
+  supersedes the mistaken interpretation that “pause inspection” requires an
+  automation update. Preserve all role/project stop flags; this clarification
+  changes schedule handling, not the scope or clearing of research stops.
+
 - User correction2026-10-18: THREE existing independent roles. PRIMARY_SANDBOX
   is the GPT mainline executor in the original mainline chat/checkout on sandbox.
   DEV_AUX is the original auxiliary in its existing checkout on sidemission.
@@ -150,8 +158,11 @@ At start/restart/heartbeat/after compaction FIRST read .local_agent/NEXT_WORK.md
 in full, then this file, docs/research/LOCAL_MAINLINE.md and rollout/advisor/slack
 stop flags. Reconcile current decision/reason with newer user directions BEFORE
 acting. Never clear a user stop; restart or flag inspection does not revoke it.
-Explicit stop suspends work, consultation/publication and heartbeat, and cancels
-Dot monitoring. Resume requires explicit user direction. Keep existing evidence.
+A one-time stop/pause of the current inspection suspends that inspection only;
+do not alter the recurring heartbeat unless the user explicitly asks to pause or
+turn off the schedule. A role/project stop flag still suspends work,
+consultation/publication within its scope and is never cleared automatically;
+resume research only on explicit user direction. Keep existing evidence.
 
 Memo <=20lines/2048 UTF-8 bytes, exactly one State/Segment/Main/Backup1/Backup2/
 Evidence. Tasks: question | immediate action | expected evidence | done condition.

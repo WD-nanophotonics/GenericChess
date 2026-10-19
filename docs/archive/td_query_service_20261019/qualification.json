@@ -1,0 +1,47 @@
+{
+  "status": "PASS_PINNED_CORE_SOURCE_FOUR_OUTPUTS",
+  "jobs": [
+    {
+      "script": "reader.py",
+      "output": "reader-result.json",
+      "before_adapter": false,
+      "seconds": 3.686608499963768,
+      "non_time_fields_equal": true
+    },
+    {
+      "script": "source_query.py",
+      "output": "source-single-result.json",
+      "before_adapter": false,
+      "seconds": 0.2392039999831468,
+      "non_time_fields_equal": true
+    },
+    {
+      "script": "post-return-control.py",
+      "output": "post-return-before.json",
+      "before_adapter": true,
+      "seconds": 0.32880309998290613,
+      "non_time_fields_equal": true
+    },
+    {
+      "script": "post-return-control.py",
+      "output": "post-return-after.json",
+      "before_adapter": false,
+      "seconds": 0.3334677999955602,
+      "non_time_fields_equal": true
+    }
+  ],
+  "output_count": 4,
+  "payload_count": 60,
+  "archive_sha256": "509b8bbdd804bf90b64ac3a838cd8c3a377788a0ea0113a4b43076741ddc2b87",
+  "Python_S": true,
+  "Native_absent": true,
+  "generic_module_origin_checked": true,
+  "published_source_query_module_origin_checked": true,
+  "actual_source_query_calls": 1,
+  "Native_queries": 0,
+  "TRAIN_EVAL_games": 0,
+  "optimizer_updates": 0,
+  "original_UNKNOWN_refilled": 0,
+  "seconds": 7.977950200031046,
+  "scope": "Replays648 recordedNative PVs/1284edges with capturedCore; evaluates existing closed D3 trees atD2, exactreceipt arithmetic/wholedeadline accounting; executes ONE alreadyclosed publishedquery overcapturedPRIMARYCore, not originalAUXCore. Bothresearchadapterfaultinjection versions reproduced, no newNative/library migration/learner execution."
+}
