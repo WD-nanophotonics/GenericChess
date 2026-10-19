@@ -418,3 +418,33 @@ those files to review.
   pilot >= 100 games.
 - Next (auto, per user): segment 105 = registered completion of exactly the
   527 missing slots, then re-apply the registered rule to the union.
+
+---
+
+## Report 18 — 2026-10-19T12:35Z (segment 105 started: completion)
+
+- Session d11897fc-2a63-4039-805d-10296a9899e9, started 12:30:11Z.
+- task2589 registers the completion of exactly the 527 slots missing from 104.
+  The bound models are byte-identical copies; roots, foes, ordering seeds and
+  depth are the same.
+- union.py (pinned) re-applies the 104 LEARNS_5x5 rule to the union. Estimate
+  ~17 min, cap 40 min.
+- Slack: AGENT_REQUEST 104a (ts 1792413012.505629) asks Dot whether a
+  game-matched or node-matched 5x5 dose is the right currency.
+
+---
+
+## Report 19 — 2026-10-19T12:52Z (105 result: LEARNS_5x5)
+
+- Union of the 104 and 105 games: 0 missing; deployment audit PASS.
+  - Registered decision LEARNS_5x5: Cold@100k-Cold@0 [+.041,+.123].
+  - The 5x5 curve is still rising at 100k.
+- Dot reply 1792413417.828509 (ADOPTED):
+  - Paid nodes stay the currency; report actual time; no game-matched dose.
+  - Separate compute efficiency from exposure.
+  - The widened factor is the generated domain, not board size alone.
+  - 104+105 is one logical experiment: total ~83 min, under 120.
+- Exposure table (task2589/exposure-table.json): 5x5 vs 4x4 at 100k gives
+  0.52x terms and 0.30x updates/games.
+- Files: SEGMENT_20261019_105.md, task2589/*, LOCAL_MAINLINE, COLLAB_LOG,
+  NEXT_WORK (Main: ask Dot which ONE further generator factor matters).

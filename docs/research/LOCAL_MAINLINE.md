@@ -1,3 +1,16 @@
+# DEV_AUX105 — 5x5 completion; registered decision LEARNS_5x5
+
+Executor AUX_CLAUDE; session d11897fc-2a63-4039-805d-10296a9899e9 start 2026-10-19T12:30:11Z.
+Registered completion of exactly the 527 missing 104 slots (same models/roots/foes/ordering); deployment PASS.
+Union decision LEARNS_5x5: Cold@100k-Cold@0 [+.041,+.123] (both foes lower>0); TT492 +33, U41 kept.
+5x5 curve still rising (100k-25k [+.037,+.146]) unlike 4x4. Rule 356001 -.023, 356004 [+.195,+.258].
+Exposure (existing logs): at 100k nodes 5x5 has 0.52x TD terms, 0.30x updates/games of 4x4 cold.
+Dot 1792413417.828509 adopted: paid nodes stay budget currency; no game-matched dose; widened DOMAIN not board size alone.
+104+105 total ~83 min (<120). Next: ask Dot which ONE further generator factor is decision-relevant before new training.
+Report results/dev_aux/SEGMENT_20261019_105.md.
+
+## Historical completed104
+
 # DEV_AUX104 — SAME cold Generic Fixed TD on NEW 5x5 rules; UNRESOLVED (PARTIAL_CAP)
 
 Executor AUX_CLAUDE; session 4c1dc011-80a9-498b-b427-690e92b799c1 start 2026-10-19T11:20:05Z.

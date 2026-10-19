@@ -2747,3 +2747,11 @@ runner hook (no audited file edited). TRAIN and audits PASS; EVAL stopped at
 its registered cap (PARTIAL_CAP 1521/2048) so the pre-registered decision is
 UNRESOLVED. Cap not extended; cost-estimate error recorded. Next: registered
 completion of the missing slots. No PRIMARY/DeepSeek code read or run.
+
+## DEV_AUX105 — 5x5 completion (AUX_CLAUDE)
+
+Registered completion of the 527 missing 104 slots; union re-applies the 104
+rule: LEARNS_5x5 [+.041,+.123]. Dot 1792413417.828509 adopted: node budget
+stays the currency, exposure table from existing logs (5x5 has ~.52x TD terms
+of 4x4 at equal nodes), the widened factor is the generated domain, not board
+size alone. No PRIMARY/DeepSeek code read or run.
