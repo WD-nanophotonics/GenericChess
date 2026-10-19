@@ -1,0 +1,510 @@
+{
+  "arms": [
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "boundary": 0,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "snapshot_nodes": 0
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "Fixednu@1.25M|plain",
+      "original_method": "Fixednu",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        1.8017757830043495,
+        2.466696571175697,
+        3.1747570604798763,
+        1.6308393443127152
+      ],
+      "snapshot_nodes": 1249785,
+      "snapshot_lag": 215,
+      "snapshot_games": 92,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "Fixednu@2.5M|plain",
+      "original_method": "Fixednu",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        2.1231584704698903,
+        2.7422135933291534,
+        3.7578294474674743,
+        2.2865515451293805
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 179,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "SelfCandidate@1.25M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        1.1071509401930313,
+        1.632640696636107,
+        1.6427367167559368,
+        1.9757373671307543
+      ],
+      "snapshot_nodes": 1239469,
+      "snapshot_lag": 10531,
+      "snapshot_games": 77,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "SelfCandidate@2.5M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        1.1414367401780254,
+        2.036924679797194,
+        1.5967636828515797,
+        3.1820114371179544
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 171,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "boundary": 0,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "snapshot_nodes": 0
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "Fixednu@1.25M|plain",
+      "original_method": "Fixednu",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.6068574485401602,
+        1.21455977298824,
+        3.1726496947686456,
+        2.4885308100179357
+      ],
+      "snapshot_nodes": 1232727,
+      "snapshot_lag": 17273,
+      "snapshot_games": 94,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "Fixednu@2.5M|plain",
+      "original_method": "Fixednu",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.3833932053601827,
+        1.8239503014759701,
+        4.204168871118234,
+        3.633735263050035
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 193,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "SelfCandidate@1.25M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.5810162628001525,
+        1.0083255629317287,
+        2.122753387640246,
+        2.6597269411532043
+      ],
+      "snapshot_nodes": 1227535,
+      "snapshot_lag": 22465,
+      "snapshot_games": 101,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "SelfCandidate@2.5M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.8612977950976881,
+        1.6954628599482597,
+        3.048141176182913,
+        3.536809316822913
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 188,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "boundary": 0,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "snapshot_nodes": 0
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "Fixednu@1.25M|plain",
+      "original_method": "Fixednu",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        2.4930709284630796,
+        1.752581663184309,
+        1.9047256394419163,
+        3.043216377806892
+      ],
+      "snapshot_nodes": 1246714,
+      "snapshot_lag": 3286,
+      "snapshot_games": 92,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "Fixednu@2.5M|plain",
+      "original_method": "Fixednu",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        3.3142421399773783,
+        1.9388752887142686,
+        2.94089273542806,
+        4.132264890313372
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 197,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "SelfCandidate@1.25M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.9995288923418173,
+        1.7974125579255553,
+        1.8832537696846254,
+        2.8436072955644813
+      ],
+      "snapshot_nodes": 1234486,
+      "snapshot_lag": 15514,
+      "snapshot_games": 86,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "SelfCandidate@2.5M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        2.0697089717403983,
+        1.829482672206594,
+        2.396603707940023,
+        3.7078637568342754
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 177,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "boundary": 0,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "snapshot_nodes": 0
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "Fixednu@1.25M|plain",
+      "original_method": "Fixednu",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.3625848189655485,
+        1.4093700054294642,
+        3.3830824246465863,
+        0.6906402738259249
+      ],
+      "snapshot_nodes": 1236128,
+      "snapshot_lag": 13872,
+      "snapshot_games": 84,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "Fixednu@2.5M|plain",
+      "original_method": "Fixednu",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.497541176487999,
+        2.060859185520727,
+        4.394332341493854,
+        0.7379029570438981
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 166,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "SelfCandidate@1.25M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 1250000,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.4306195367673098,
+        1.7834598323998496,
+        2.7564555620908955,
+        0.5667583841243437
+      ],
+      "snapshot_nodes": 1247720,
+      "snapshot_lag": 2280,
+      "snapshot_games": 73,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "SelfCandidate@2.5M|plain",
+      "original_method": "SelfCandidate",
+      "boundary": 2500000,
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.5326404336251536,
+        2.469104450181467,
+        3.22367852857884,
+        0.8473101206517373
+      ],
+      "snapshot_nodes": 2500000,
+      "snapshot_lag": 0,
+      "snapshot_games": 143,
+      "arm_nodes": 2500000,
+      "matched_training_budget": true
+    }
+  ],
+  "training_source": "results\\dev_aux\\task2583\\result.json",
+  "training_sha": "96590359daf44f8a8c66299644f248952afe45b6d6938317dbb4535e1eb11574"
+}

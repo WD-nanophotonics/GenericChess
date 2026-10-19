@@ -2708,3 +2708,14 @@ DEV_AUX96 officialENDED84.190minutes/7stages/safe_checkpoint. Source254dad5935d9
 fullremote/PUBLIC/21anonymous exactfiles inclZIP verified/clean. Slack1792351410.157839
 accepted/exactreadback; reading/executionunconfirmed. Onlyclosingmetadata afterward;
 no newscience orfitness. Actualscope/data/failed/missing outputs remainunchanged.
+
+## DEV_AUX101 — Fixednu vs SelfCandidate TD at 2.5M/arm (Claude substitute)
+
+Executed by Claude Code as a substitute DEV_AUX executor on direct user
+direction 2026-10-19 (Codex DEV_AUX not running; no new worker). Implemented
+task2583/2584 from the task2580 proposal; registered before fitness; 20M TRAIN
+and 640 EVAL complete, all audits PASS. SelfCandidate shows no clear advantage
+over Fixednu (pooled +.0078 at 2.5M, signs differ by foe/prefix/seed) and fewer
+TD terms per node. No PRIMARY/DeepSeek code read, run or adopted; no Slack send.
+Handoff log results/dev_aux/CLAUDE_HANDOFF.md. Local commit only until the user
+approves publication.

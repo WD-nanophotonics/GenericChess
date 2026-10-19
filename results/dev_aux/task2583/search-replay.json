@@ -1,0 +1,220 @@
+{
+  "status": "COMPLETE",
+  "expected": 16,
+  "actual": 16,
+  "matched": 16,
+  "nodes": 3159,
+  "seconds": 0.42650900001171976,
+  "plan_sha": "45883afbc41dd58d4563f84b462f6d5b81dcf1dffc6a4d85b1bdae3d46bb2f5a",
+  "rows": [
+    {
+      "key": [
+        0,
+        1977,
+        "Fixednu"
+      ],
+      "which": "first",
+      "gameid": 1,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 264,
+      "seconds": 0.03635220002615824
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "Fixednu"
+      ],
+      "which": "last",
+      "gameid": 179,
+      "ply": 6,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 114,
+      "seconds": 0.012390199990477413
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "SelfCandidate"
+      ],
+      "which": "first",
+      "gameid": 180,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 264,
+      "seconds": 0.03722850000485778
+    },
+    {
+      "key": [
+        0,
+        1977,
+        "SelfCandidate"
+      ],
+      "which": "last",
+      "gameid": 350,
+      "ply": 20,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 260,
+      "seconds": 0.028209100011736155
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "SelfCandidate"
+      ],
+      "which": "first",
+      "gameid": 351,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 264,
+      "seconds": 0.03801199997542426
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "SelfCandidate"
+      ],
+      "which": "last",
+      "gameid": 493,
+      "ply": 98,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 83,
+      "seconds": 0.007414199993945658
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "Fixednu"
+      ],
+      "which": "first",
+      "gameid": 494,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 211,
+      "seconds": 0.029738299956079572
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "Fixednu"
+      ],
+      "which": "last",
+      "gameid": 690,
+      "ply": 4,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 257,
+      "seconds": 0.02885559998685494
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "Fixednu"
+      ],
+      "which": "first",
+      "gameid": 691,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 264,
+      "seconds": 0.04612690000794828
+    },
+    {
+      "key": [
+        0,
+        31415,
+        "Fixednu"
+      ],
+      "which": "last",
+      "gameid": 856,
+      "ply": 47,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 248,
+      "seconds": 0.027404799999203533
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "Fixednu"
+      ],
+      "which": "first",
+      "gameid": 857,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 211,
+      "seconds": 0.02970919996732846
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "Fixednu"
+      ],
+      "which": "last",
+      "gameid": 1049,
+      "ply": 58,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 139,
+      "seconds": 0.017594599979929626
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "SelfCandidate"
+      ],
+      "which": "first",
+      "gameid": 1050,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 211,
+      "seconds": 0.02929709997260943
+    },
+    {
+      "key": [
+        0,
+        8173,
+        "SelfCandidate"
+      ],
+      "which": "last",
+      "gameid": 1237,
+      "ply": 113,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 45,
+      "seconds": 0.004808700003195554
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "SelfCandidate"
+      ],
+      "which": "first",
+      "gameid": 1238,
+      "ply": 0,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 211,
+      "seconds": 0.029662800021469593
+    },
+    {
+      "key": [
+        0,
+        27182,
+        "SelfCandidate"
+      ],
+      "which": "last",
+      "gameid": 1414,
+      "ply": 102,
+      "status": "MATCH_VALUE_ACTION_PV_NODES_QSTATS",
+      "nodes": 113,
+      "seconds": 0.013085900049190968
+    }
+  ],
+  "scope": "First AND last complete observed query per ALL8 arms, actual search replay, no update/fitness choice."
+}

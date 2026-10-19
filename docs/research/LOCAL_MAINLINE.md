@@ -1,3 +1,23 @@
+# DEV_AUX101 — Fixednu vs SelfCandidate SAME plain TD at 2.5M/arm; scientific OPEN
+
+Executor: Claude Code substitute for DEV_AUX (user direction 2026-10-19); log results/dev_aux/CLAUDE_HANDOFF.md.
+Own session 7cb1af86-0f47-4a9e-87a1-abf7906b0e64 start 2026-10-19T06:12:40Z; base 0488bc06; no other-role execution/adoption claim.
+Heartbeat stays user-PAUSED; no automatic resume.
+ALL8 TRAIN arms 2.5M paid nodes, SAME TD eta.05/lambda.95/all4initials, mixed8,8,64,64, candidate-only observation;
+Fixednu fixed uniform foe vs SelfCandidate episode-frozen theta both seats. Snapshots 1.25M/2.5M (last closed episode).
+TRAIN COMPLETE 20M/3309s 1414 games 1223 actual/191U (Fx78/SC113 U); audit PASS, replay16/16, unpruned16/16.
+EVAL 640 common NEW slots (591001-4 x prefix8/64) 640 actual/0U/0missing, deployment audit PASS.
+SC-Fx pooled +.03125@1.25M/+.0078125@2.5M; @2.5M uniform -.0625/random +.078125, prefix8 +.0625/prefix64 -.046875;
+seeds disagree. Both >> initial vs uniform (+.47..+.53), ~0 vs random48821. Dose 1.25->2.5M: Fx +.03125, SC +.0078.
+SC ~23% fewer valid TD terms/paid node. Orders not unanimous for any model. Paired finite bounds, not CIs.
+Caps 3600/2400s set before registration (proposal 3300/1800) after smoke under alphasho load; not reached.
+Current decision: SelfCandidate gives no clear utility advantage over Fixednu at this dose; keep Fixednu as control.
+Next candidate: Backup1 full Generic transfer of SAME learner, or feedback-density control at matched terms; register first.
+No oldcap fill/bestseed/humanfit/Xiangqi holdout/PRIMARY takeover/product default/UI change.
+Report results/dev_aux/SEGMENT_20261019_101.md.
+
+## Historical completed100
+
 # DEV_AUX100 — SAME TD reset distributions; scientific OPEN
 
 Own session317ee713-377e-4626-8791-b890e91d8bca actualstart2026-10-18T23:57:52.174032+00:00 unchanged; ENDED62.172min/safe_checkpoint.

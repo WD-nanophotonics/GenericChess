@@ -1,0 +1,102 @@
+{
+  "session_id": "7cb1af86-0f47-4a9e-87a1-abf7906b0e64",
+  "registered_at": "2026-10-19T06:18:46.032909+00:00",
+  "domain": "chess",
+  "arms_order": [
+    [
+      1977,
+      "Fixednu"
+    ],
+    [
+      1977,
+      "SelfCandidate"
+    ],
+    [
+      31415,
+      "SelfCandidate"
+    ],
+    [
+      27182,
+      "Fixednu"
+    ],
+    [
+      31415,
+      "Fixednu"
+    ],
+    [
+      8173,
+      "Fixednu"
+    ],
+    [
+      8173,
+      "SelfCandidate"
+    ],
+    [
+      27182,
+      "SelfCandidate"
+    ]
+  ],
+  "dimension": 5,
+  "eta": 0.05,
+  "lambda": 0.95,
+  "nodes_per_arm": 2500000,
+  "nodes_per_game": 25000,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 2.0,
+  "depth": 2,
+  "H": 1024,
+  "training_family_offset": 581000,
+  "ordering_seed_offset": 1002583000,
+  "snapshot_nodes": [
+    1250000,
+    2500000
+  ],
+  "max_games": 20000,
+  "cap_seconds": 3600,
+  "pins": {
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2565/audit.py": "6384b6fbeed0705f87c4116ba5ad84fb33d49789bbe75a431cfbf4e5644bd357",
+    "results/dev_aux/task2580/train.py": "ec7cd0c8910a7acaaaa3069d6752d95b22ea2cb868142f392557bd4ae34bfb4f",
+    "results/dev_aux/task2580/replay.py": "be0c98271098c3d5739b9e4c37502944d9873478e2e64ef15ddeec5df9af06d7",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2153/stop_evidence.py": "2792b087226a6e627956e4ed04e0c229253c6877469d9f59e7e8fa3befeb50e3",
+    "results/dev_aux/task2131/stop_reader.py": "634b3fac91a893314e1818e1af542184df22a3ad2ad60e7db052be998960b911",
+    "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37",
+    "results/dev_aux/task2581/evaluate.py": "53623bee0ca434f4c23cc838a2d7ee2a66daf835310e8fa5a9e8bda7001a0132",
+    "results/dev_aux/task2581/verify.py": "ffbbf34f8c41763ea57377917b0ffe0732f5c22ccf982aa439d8e83f707436c4",
+    "results/dev_aux/task2568/summary.py": "dd6222910efbbf37a76fc7fb26b4608472f12260c04c60105b5aef4422356b7d",
+    "results/dev_aux/task2583/train.py": "7cf47f11684386ec544716f08dfcd589b193f87ac880d5ac62b641c4d664dae0",
+    "results/dev_aux/task2583/audit.py": "3fd55c3a0906fce664bc72f34ea71072ae1ad52c61d525c6441b4104935db846",
+    "results/dev_aux/task2583/register.py": "cd3ff0ba08ab3c4b09fef84f7713b7516043bcd4dfe582c781161cba3fb90d9c",
+    "results/dev_aux/task2584/bind.py": "86405c85cd558062770b8b49f47adc819df14af152edaa4a2666954cfa3f2ee7"
+  },
+  "scope": "NEW SAME plain TD Fixednu (candidate vs fixed uniform foe) versus SelfCandidate (episode-frozen candidate theta plays BOTH actors), both observe ONLY designated candidate-colour searches; mixed8,8,64,64 paired-role resets, all4initials, all paid nodes incl failed/opponent. No filter/bestseed/human prior. All existing caps CLOSED; new caps independent. Selfplay removes coefficient-foe mismatch only, not finite horizon/replanning mismatch.",
+  "foes": {
+    "uniform": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "foe_cycle": [
+    "uniform"
+  ],
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "mixed_prefix_cycle": [
+    8,
+    8,
+    64,
+    64
+  ]
+}
