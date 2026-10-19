@@ -4831,3 +4831,19 @@ recurrence. No Dot inquiry or adoption is claimed. Relevant validation was
 `git diff --check`, archive/hash audit and the captured-source replay; product
 pytest was not relevant to these documentation/evidence-only changes. Science
 remains OPEN; no distinct unclosed unfamiliar-rule search consumer was found.
+
+## PRIMARY stale-memo correction —2026-10-19
+
+The resumed NEXT_WORK and continuation summary described the exact
+671001/12 four-effect input as still unsearched. Before reporting, a direct
+source-of-truth check found LOCAL_MAINLINE already closes that fixture in
+FOUR_EFFECT_TERMINAL_UTILITY. I nevertheless executed one redundant 9.728s
+local repeat under its frozen 60s cap. Preserve the ignored receipt for
+provenance; it adds no independent experiment, report, game, training update or
+UNKNOWN completion and is not published as a new finding. The memo is corrected
+to treat the existing closure as authoritative. A scan of the explicit
+641001/6, 711001/8 and 741001/8 prepared inputs also found each already closed;
+the four-effect schema limit and five-effect refusal remain explicit. No AUX or
+DeepSeek code/state was read or changed, no Dot inquiry was needed, and no new
+scientific decision was identified. This corrects a task-selection error, not
+the published report; next work requires a genuinely new primary search question.
