@@ -1,0 +1,140 @@
+{
+  "plan_sha256": "8772c2433a8981d106929628c60881c8566a7c51a55619401a258bb48ec52030",
+  "root_rows_sha256": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
+  "rules": {
+    "271001": {
+      "classification_counts": {
+        "ACCEPT_FIRST_16": 16,
+        "EVAL_EXACT_RECORD_DUPLICATE": 100,
+        "PREFIX_TERMINAL_OR_SHORT": 40,
+        "TRAIN_EXACT_RECORD_OVERLAP": 715,
+        "VALID_AFTER_TARGET": 153
+      },
+      "duplicate_training_records": 295,
+      "eval_candidate_roots": 1024,
+      "selected_count": 16,
+      "selected_family_ids": [
+        991002,
+        991006,
+        991007,
+        991008,
+        991011,
+        991012,
+        991013,
+        991020,
+        991024,
+        991027,
+        991028,
+        991031,
+        991032,
+        991034,
+        991040,
+        991052
+      ],
+      "status": "PASS",
+      "training_family_roots": 512,
+      "unique_valid_training_records": 196
+    },
+    "271002": {
+      "classification_counts": {
+        "ACCEPT_FIRST_16": 16,
+        "EVAL_EXACT_RECORD_DUPLICATE": 142,
+        "PREFIX_TERMINAL_OR_SHORT": 84,
+        "TRAIN_EXACT_RECORD_OVERLAP": 320,
+        "VALID_AFTER_TARGET": 462
+      },
+      "duplicate_training_records": 104,
+      "eval_candidate_roots": 1024,
+      "selected_count": 16,
+      "selected_family_ids": [
+        991000,
+        991001,
+        991002,
+        991007,
+        991012,
+        991015,
+        991016,
+        991018,
+        991019,
+        991021,
+        991023,
+        991024,
+        991027,
+        991030,
+        991033,
+        991034
+      ],
+      "status": "PASS",
+      "training_family_roots": 512,
+      "unique_valid_training_records": 372
+    },
+    "271003": {
+      "classification_counts": {
+        "ACCEPT_FIRST_16": 16,
+        "EVAL_EXACT_RECORD_DUPLICATE": 154,
+        "TRAIN_EXACT_RECORD_OVERLAP": 479,
+        "VALID_AFTER_TARGET": 375
+      },
+      "duplicate_training_records": 130,
+      "eval_candidate_roots": 1024,
+      "selected_count": 16,
+      "selected_family_ids": [
+        991000,
+        991003,
+        991005,
+        991006,
+        991009,
+        991012,
+        991015,
+        991016,
+        991018,
+        991020,
+        991022,
+        991023,
+        991024,
+        991025,
+        991027,
+        991028
+      ],
+      "status": "PASS",
+      "training_family_roots": 512,
+      "unique_valid_training_records": 381
+    },
+    "271004": {
+      "classification_counts": {
+        "ACCEPT_FIRST_16": 16,
+        "EVAL_EXACT_RECORD_DUPLICATE": 152,
+        "PREFIX_TERMINAL_OR_SHORT": 127,
+        "TRAIN_EXACT_RECORD_OVERLAP": 409,
+        "VALID_AFTER_TARGET": 320
+      },
+      "duplicate_training_records": 150,
+      "eval_candidate_roots": 1024,
+      "selected_count": 16,
+      "selected_family_ids": [
+        991000,
+        991001,
+        991004,
+        991005,
+        991008,
+        991011,
+        991017,
+        991019,
+        991022,
+        991028,
+        991032,
+        991033,
+        991034,
+        991037,
+        991039,
+        991042
+      ],
+      "status": "PASS",
+      "training_family_roots": 512,
+      "unique_valid_training_records": 311
+    }
+  },
+  "scope": "Feasibility of exact record-disjoint 4-ply starts only; not a trained result, outcome estimate, or all-history-state holdout.",
+  "status": "PASS",
+  "task": "DEV_AUX2607_ROOT_FEASIBILITY"
+}

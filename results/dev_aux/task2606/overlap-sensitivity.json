@@ -1,0 +1,35 @@
+{
+  "exact_train_start_exposed": {
+    "TD95": {
+      "exact_pairs": 85,
+      "mean_lower": -0.045454545454545456,
+      "mean_upper": 0.09090909090909091,
+      "slots": 88,
+      "unknown_pairs": 3
+    },
+    "initial": {
+      "exact_pairs": 83,
+      "mean_lower": 0.07954545454545454,
+      "mean_upper": 0.3068181818181818,
+      "slots": 88,
+      "unknown_pairs": 5
+    }
+  },
+  "no_exact_start_match": {
+    "TD95": {
+      "exact_pairs": 145,
+      "mean_lower": -0.17857142857142858,
+      "mean_upper": 0.36904761904761907,
+      "slots": 168,
+      "unknown_pairs": 23
+    },
+    "initial": {
+      "exact_pairs": 151,
+      "mean_lower": 0.11904761904761904,
+      "mean_upper": 0.5238095238095238,
+      "slots": 168,
+      "unknown_pairs": 17
+    }
+  },
+  "warning": "Post-hoc descriptive sensitivity by exact rule+serialized start-history match to observed training-game starts. It does not replace registered primary slots, semantically normalize histories, or imply population effects."
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_candidate_family_ids": [
+    991000,
+    992023
+  ],
+  "expected_duration_minutes": 2,
+  "hard_cap_seconds": 120,
+  "identity": "Complete canonical GameSession record including ruleset_fingerprint and complete action history; no normalization that could hide exact collisions.",
+  "minimum_selected_unique_disjoint_roots_per_rule": 16,
+  "prefix_plies": 4,
+  "purpose": "Root-sampler feasibility only; no training, model fitting, or outcomes.",
+  "question": "Can a deterministic reserved family-ID pool provide at least 16 unique, exact full-rule/history evaluation roots per rule, disjoint from every potential 4-ply training-family root?",
+  "rejection_precedence": [
+    "PREFIX_TERMINAL_OR_SHORT",
+    "TRAIN_EXACT_RECORD_OVERLAP",
+    "EVAL_EXACT_RECORD_DUPLICATE",
+    "ACCEPT_FIRST_16",
+    "VALID_AFTER_TARGET"
+  ],
+  "rules": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "selection": "For each rule, scan candidate family IDs ascending; accept the first 16 legal, nonterminal, full-4-ply roots whose exact canonical GameSession record is absent from the complete 512-family training set and earlier accepted eval records. No outcome-dependent selection.",
+  "shortage": "If any rule yields fewer than 16, stop with INSUFFICIENT_ROOTS; do not expand ranges or relax criteria.",
+  "source_pins": {
+    "results/dev_aux/task2525/rules-271001.json": "b05c8135dabd6abff28400c6840e640eaac847b2ca7cda5f0b7098e1636b77ff",
+    "results/dev_aux/task2525/rules-271002.json": "cebe9e3d3bdb42326fa4ed4130355809c017f1df3bcbc1ed0f87e7debb3008f4",
+    "results/dev_aux/task2525/rules-271003.json": "d058c1be18c97a2ca5069e857a1efe730b028eea1ecfece40fe2615f61b95792",
+    "results/dev_aux/task2525/rules-271004.json": "322062ff7dce408256e6fdc5927b1fc232601b17519b7547148f004aa1592400",
+    "results/dev_aux/task2606/train.py": "7809a50ac912baa5c26164d8bea1821dc9d76f840a4bad91c474fd18bc924738"
+  },
+  "state": "FROZEN_BEFORE_AUDIT",
+  "task": "DEV_AUX2607_ROOT_FEASIBILITY",
+  "training_family_ids": [
+    990000,
+    990511
+  ]
+}

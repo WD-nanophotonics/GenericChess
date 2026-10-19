@@ -1,0 +1,129 @@
+{
+  "evaluation_duplicate_groups": [
+    {
+      "families": [
+        991000,
+        991001
+      ],
+      "rule": 271001
+    }
+  ],
+  "evaluation_root_family_count": 32,
+  "exact_overlap_eval_family_count": 11,
+  "exact_overlapping_unique_eval_roots": 10,
+  "identity_method": "Exact canonical JSON of (complete rule-seed identity, complete stored initial_record) pairs; no semantic normalization of log/irrelevant IDs.",
+  "observed_unique_training_rule_history_pairs": 579,
+  "overlaps": [
+    {
+      "eval_families": [
+        991005
+      ],
+      "observed_train_families": [
+        990107
+      ],
+      "rule": 271001
+    },
+    {
+      "eval_families": [
+        991003
+      ],
+      "observed_train_families": [
+        990152,
+        990169
+      ],
+      "rule": 271001
+    },
+    {
+      "eval_families": [
+        991000,
+        991001
+      ],
+      "observed_train_families": [
+        990028,
+        990064,
+        990093,
+        990102,
+        990112,
+        990121,
+        990141,
+        990164,
+        990167,
+        990168,
+        990178,
+        990183,
+        990194,
+        990245,
+        990265,
+        990282,
+        990286
+      ],
+      "rule": 271001
+    },
+    {
+      "eval_families": [
+        991004
+      ],
+      "observed_train_families": [
+        990171
+      ],
+      "rule": 271001
+    },
+    {
+      "eval_families": [
+        991003
+      ],
+      "observed_train_families": [
+        990030
+      ],
+      "rule": 271002
+    },
+    {
+      "eval_families": [
+        991005
+      ],
+      "observed_train_families": [
+        990052
+      ],
+      "rule": 271002
+    },
+    {
+      "eval_families": [
+        991007
+      ],
+      "observed_train_families": [
+        990052
+      ],
+      "rule": 271003
+    },
+    {
+      "eval_families": [
+        991006
+      ],
+      "observed_train_families": [
+        990032,
+        990176
+      ],
+      "rule": 271004
+    },
+    {
+      "eval_families": [
+        991007
+      ],
+      "observed_train_families": [
+        990187
+      ],
+      "rule": 271004
+    },
+    {
+      "eval_families": [
+        991003
+      ],
+      "observed_train_families": [
+        990175
+      ],
+      "rule": 271004
+    }
+  ],
+  "scope_limit": "This checks start histories appearing in completed training games, not every potential recipe root or any later training search state. Exact match is sufficient to flag overlap; no match is not proof of semantic novelty.",
+  "unique_evaluation_rule_history_pairs": 31
+}

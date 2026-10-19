@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "started_at_utc": "2026-10-19T21:07:36.776998+00:00",
+  "ended_before_first_slot": true,
+  "exception": "KeyError",
+  "missing_key": "prefix_plies",
+  "games_written": 0,
+  "queries_written": 0,
+  "cause": "The frozen evaluator plan omitted the four-ply prefix length required by the runner.",
+  "action": "Preserve task2608 registration and zero-row failure; correction is separately registered as task2609.",
+  "task2607_prefix_plies": 4
+}

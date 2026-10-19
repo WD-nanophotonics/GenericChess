@@ -1,0 +1,11 @@
+{
+  "task": "DEV_AUX2606",
+  "status": "EXECUTION_ACCOUNTING_CORRECTION",
+  "observed_before_outcome_review": true,
+  "frozen_plan_sha256": "bd3d83eb2de63ae30138e9d550c6a64bd3bb16314532298194bbf35d508442a7",
+  "finding": "The registered plan's phrases 'candidate-paid nodes' and 'equal candidate search nodes only' are inaccurate. In train.py the per-arm `used` counter increments on every completed query, irrespective of learner_actor, and the opponent also runs TrainingSearch with the same model-free node limit. Therefore nodes_per_arm=312500 is the combined candidate-plus-fixed-opponent search-node budget for each arm.",
+  "impact": "This does not change the run or its equal per-arm total search budget. It changes the interpretation of the cost unit: report combined paid nodes, and separately sum query nodes for actor==assigned color versus the fixed-opponent side. Do not claim equal candidate-only nodes or equal candidate-side node allocation.",
+  "conditions_changed": false,
+  "caps_changed": false,
+  "source": "results/dev_aux/task2606/train.py: line containing `used+=r.nodes`; the query record stores actor, color, learner_actor and nodes."
+}

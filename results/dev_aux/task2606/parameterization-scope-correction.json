@@ -1,0 +1,14 @@
+{
+  "task": "DEV_AUX2606",
+  "status": "PARAMETERIZATION_SCOPE_CORRECTION",
+  "discovered_during_training_before_evaluation_outcomes": true,
+  "frozen_plan_sha256": "bd3d83eb2de63ae30138e9d550c6a64bd3bb16314532298194bbf35d508442a7",
+  "evidence": [
+    "results/dev_aux/task2492/learning.py: Model.update resets its fixed coordinate to 1.0",
+    "results/dev_aux/task2532/free_model.py: FreeModel.update changes every coefficient without a fixed coordinate",
+    "task2606 first completed arm initialized at weight[0]=1.0 and ended at 0.5931307586190206"
+  ],
+  "impact": "Both Generic arms use the same six-dimensional FreeModel, initialization, fixed opponent and per-arm aggregate node budget, so their within-task contrast remains interpretable. Generic's free scale differs from standard-Chess Model's fixed-pawn scale; task2606 is an algorithmic update-rule transfer pilot, not a strict fixed-scale parameterization replication. Report raw weights and ratios descriptively; do not claim fixed scale or direct price-ratio equivalence.",
+  "conditions_changed": false,
+  "caps_changed": false
+}

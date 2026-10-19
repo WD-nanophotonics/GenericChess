@@ -1,49 +1,66 @@
-## Current direction — DEV_AUX109 (2026-10-20)
+## Current direction — DEV_AUX111 (2026-10-20)
 
-The user's 2026-10-17 direction supersedes DEV_AUX108's temporary pause on new
-Generic learning experiments: prioritize TD/TD-Leaf/search bootstrapping as a
-learning method, validate the same learner on standard Chess first, then migrate
-it to complete Generic rules. Actual rules W/L/D remains the final strength
-measure; finite WDL grid selection is a control, and a WIN prover is optional.
-The reason is methodological: terminal-only parameter selection discards
-search-target information, while the 101-108 record already shows both positive
-and negative cases and does not establish a population failure rate.
+The user's 2026-10-17 route decision remains active: make TD/TD-Leaf/search
+bootstrapping the primary learning method, first validate on standard Chess,
+then carry the same learner to complete Generic rules. Actual complete-rule
+W/L/D is the final strength measure; finite WDL selection stays a control and
+WIN proving is optional, not a prerequisite. This replaced task101-108's
+terminal-only candidate-grid path because it used little information per search
+and could not establish a population failure rate.
 
-The 2592 leap-only result is retained as a finite dev/regression panel, not
-confirmation: pooled LEARNS_LEAP [+0.125,+0.1875], 3/4 positive and 364003
-negative. A fresh exact-root audit confirmed the known exposure: all 256 eval
-rows for 364004 shared TRAIN roots; the other three rules had zero such rows.
-Therefore 364004 is exposed and cannot serve as held-out evidence; no
-failure-rate claim follows from these 20 rules.
+Task2594 completed the standard-Chess finite probe. Outcome-gated local trace
+TD passed its finite panel versus TD(.95) and initialization, justifying a
+scoped Generic transfer test. Task2606 now completed that transfer comparison:
+32 arms / 10M total search nodes, 768 actual-outcome slots and 41 UNKNOWN.
+LocalLambda's conservative finite reward-difference bound was [+0.1055,+0.4492]
+versus initialization, but [-0.1328,+0.2734] versus TD(.95). It therefore does
+not establish that LocalLambda beats TD(.95). Training residual loss did not
+fall monotonically; the coefficient vectors also vary and include negatives.
 
-Before new training, define a learner distinct from global lambda=1 and a
-decision-changing adoption rule. Candidate for a standard-Chess engineering
-probe: keep TDLeaf eta=.05 and lambda=.95, but for each bootstrap residual whose
-next observed search has `pv_terminal=true`, compute that residual's eligibility
-trace with lambda=1; all heuristic-target residuals and the final known W/L
-residual use lambda=.95. For UNKNOWN, censor the terminal residual as before.
-This changes only credit for exact terminal-PV targets, unlike task2591's global
-lambda change. It is a hypothesis, not an adopted learner. Freeze a paired
-standard-Chess comparison against ordinary lambda=.95 and initial weights, with
-fresh roots, all four seeds, fixed search/foe/cost, complete W/L/D/UNKNOWN
-accounting. Require audits to pass and the candidate's finite paired lower
-W-L bound to be positive against both ordinary TD and its initialization before
-migrating the same update to Generic; otherwise retain the result and do not
-migrate. Count terminal-target events; if either training arm has fewer than
-128 by its frozen cap, classify the probe as under-exposed and do not migrate.
-The exact prospective arms/cost/decision details are in
-`results/dev_aux/task2593/design.json` (still not registered): reuse the four
-frozen DEV_AUX97 TD(lambda=.95) 1M-node endpoints and initial vectors, train the
-candidate for 1M nodes on each of the same four seeds, and compare all three
-endpoints on 64 fresh matched-root slots per seed/endpoint (768 total) against
-the fixed uniform foe. Use D2 plain search and balance roles. Count historical
-baseline cost in the report, keep UNKNOWN/missing outcomes conservative, and
-re-check exact TRAIN/EVAL root overlap before unblinding fitness.
-The estimated study is below 120 minutes using DEV_AUX97 costs; reassess before
-launch and consult Dot first if the estimate reaches 120 minutes. The isolated
-prototype is in `results/dev_aux/task2593/episode.py`; its four standard-library
-algebra/censoring tests pass. It has not been trained or adopted.
+A post-run exact full-rule/history audit found a major task2606 limitation:
+only 31 unique rule-history roots exist among 32 registered evaluation family
+IDs, and 10 of those 31 exactly match starts observed in training (11 family IDs
+affected). The frozen 768-slot outcomes remain intact, but are training-exposed
+descriptive evidence, not an independent holdout or generalization test. See
+`results/dev_aux/task2606/REPORT.md`, `observed-root-overlap.json`, and
+`overlap-sensitivity.json`.
 
+Task2607 enumerated the full 512-family four-ply training-root pool per rule
+and passed the preregistered first-16 unique exact-record-disjoint root
+feasibility criterion for all four rules. Task2608's evaluator failed before
+any game/query row because its frozen plan omitted `prefix_plies`; its
+zero-row artifacts and registration remain unchanged. Separately registered
+task2609 corrected that runner contract and completed all 1,536 slots on 64
+selected starts in 691.419s (2,167,464 nodes; 93 UNKNOWN). Full per-slot query
+and terminal replay audit passed. Conservative paired mean-reward bounds are
+[+0.0430,+0.4414] for LocalLambda minus initialization and
+[-0.1406,+0.2891] for LocalLambda minus TD95. This finite panel favors
+LocalLambda over initialization even with worst-case UNKNOWN assignments, but
+leaves LocalLambda versus TD95 unresolved. The 512 paired strata reuse roots
+across seeds and colors; these finite bounds are not independent-sample
+confidence intervals. Descriptive rule strata are heterogeneous: rule271002
+favors LocalLambda versus TD95, rule271004 slightly favors TD95, and rule271003
+is too UNKNOWN-heavy for resolution. Seed strata likewise do not establish a
+consistent LocalLambda advantage over TD95.
+
+Task2609 establishes only exact start-record disjointness from the 512 possible
+task2606 training-family roots. A post-hoc exact full-record audit found zero
+intersection between the 27,537 unique logged task2609 query pre/post histories
+and task2606's logged training-query pre/post histories across all four rules.
+Unlogged interior search states and semantic/transposition-equivalent positions
+were not compared; this is not a distributional holdout or broad Generic
+transfer. Do not claim stable
+Generic price order, strict Chess-to-Generic fixed-scale transfer, novel-rule
+performance or population effects. Preserve the task2608 implementation failure
+and task2606 training-root overlap as open limitations. See
+`results/dev_aux/task2607/REPORT.md`, `results/dev_aux/task2608/attempt-1-failure.json`,
+and `results/dev_aux/task2609/REPORT.md`. No product default, UI, Primary or
+DeepSeek state changes.
+
+DEV_AUX's sidemission can be read, written, tested, and pushed through the
+supported reviewed-escalation path. The live ordinary sandbox still does not
+list this checkout as writable; this segment does not claim its setting was
+reloaded. No ACL, security control or other role environment was changed.
 # Historical completed108 — leap-only 4x4 panel; LEARNS_LEAP pooled, 1/4 negative
 
 Executor AUX_CLAUDE; inside session a6ffbcc4 (107 clock). Dot silent on 107a; chose "how common are per-rule failures".

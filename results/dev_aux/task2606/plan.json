@@ -1,0 +1,242 @@
+{
+  "H": 128,
+  "arms_order": [
+    [
+      271001,
+      1977,
+      "TD95"
+    ],
+    [
+      271001,
+      1977,
+      "LocalLambda"
+    ],
+    [
+      271001,
+      8173,
+      "TD95"
+    ],
+    [
+      271001,
+      8173,
+      "LocalLambda"
+    ],
+    [
+      271001,
+      27182,
+      "TD95"
+    ],
+    [
+      271001,
+      27182,
+      "LocalLambda"
+    ],
+    [
+      271001,
+      31415,
+      "TD95"
+    ],
+    [
+      271001,
+      31415,
+      "LocalLambda"
+    ],
+    [
+      271002,
+      1977,
+      "TD95"
+    ],
+    [
+      271002,
+      1977,
+      "LocalLambda"
+    ],
+    [
+      271002,
+      8173,
+      "TD95"
+    ],
+    [
+      271002,
+      8173,
+      "LocalLambda"
+    ],
+    [
+      271002,
+      27182,
+      "TD95"
+    ],
+    [
+      271002,
+      27182,
+      "LocalLambda"
+    ],
+    [
+      271002,
+      31415,
+      "TD95"
+    ],
+    [
+      271002,
+      31415,
+      "LocalLambda"
+    ],
+    [
+      271003,
+      1977,
+      "TD95"
+    ],
+    [
+      271003,
+      1977,
+      "LocalLambda"
+    ],
+    [
+      271003,
+      8173,
+      "TD95"
+    ],
+    [
+      271003,
+      8173,
+      "LocalLambda"
+    ],
+    [
+      271003,
+      27182,
+      "TD95"
+    ],
+    [
+      271003,
+      27182,
+      "LocalLambda"
+    ],
+    [
+      271003,
+      31415,
+      "TD95"
+    ],
+    [
+      271003,
+      31415,
+      "LocalLambda"
+    ],
+    [
+      271004,
+      1977,
+      "TD95"
+    ],
+    [
+      271004,
+      1977,
+      "LocalLambda"
+    ],
+    [
+      271004,
+      8173,
+      "TD95"
+    ],
+    [
+      271004,
+      8173,
+      "LocalLambda"
+    ],
+    [
+      271004,
+      27182,
+      "TD95"
+    ],
+    [
+      271004,
+      27182,
+      "LocalLambda"
+    ],
+    [
+      271004,
+      31415,
+      "TD95"
+    ],
+    [
+      271004,
+      31415,
+      "LocalLambda"
+    ]
+  ],
+  "baseline": "TDLeafEpisode(eta=.05, lambda=.95), same observation/update timing, initial vector, assigned color, root-family recipe, depth and paid-node cap.",
+  "candidate": "OutcomeGatedTDLeafEpisode(eta=.05, base_lambda=.95): lambda_i=1 only when the next complete fixed-depth root target has pv_terminal=true; otherwise .95. Known final W/L/D uses the existing episode end update. UNKNOWN censors the final outcome residual; incomplete root searches are not observed.",
+  "cap_seconds": 5400,
+  "changed_premise": "Standard-Chess task2594 passed its finite panel. This is a scoped Generic transfer with a fixed uniform opponent; task2606's inherited runner was audited and repaired so both arms now learn only on their assigned color.",
+  "depth": 2,
+  "dimension": 6,
+  "domain": "Generic complete GameSession semantics through RecordedSessionEnv; four existing rule definitions only, no novel-rule or all-domain claim.",
+  "eta": 0.05,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "initialization": "For each seed, [1.0] + five Uniform(.5,1.5) weights from Python random.Random(seed); same exact vector reused across rule definitions and both methods. This fixes one scale coordinate and is not a human price prior.",
+  "lambda": 0.95,
+  "max_games": 1024,
+  "methods": [
+    "TD95",
+    "LocalLambda"
+  ],
+  "nodes_per_arm": 312500,
+  "nodes_per_query": 8192,
+  "ordering_seed_offset": 972606000,
+  "pins": {
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2525/rules-271001.json": "b05c8135dabd6abff28400c6840e640eaac847b2ca7cda5f0b7098e1636b77ff",
+    "results/dev_aux/task2525/rules-271002.json": "cebe9e3d3bdb42326fa4ed4130355809c017f1df3bcbc1ed0f87e7debb3008f4",
+    "results/dev_aux/task2525/rules-271003.json": "d058c1be18c97a2ca5069e857a1efe730b028eea1ecfece40fe2615f61b95792",
+    "results/dev_aux/task2525/rules-271004.json": "322062ff7dce408256e6fdc5927b1fc232601b17519b7547148f004aa1592400",
+    "results/dev_aux/task2525/run.py": "c4d14b0ff9757d9e20c6294a30ee04993fb06651951eb7009370228f2bc1fe6f",
+    "results/dev_aux/task2532/free_model.py": "769eff3aa3f88691c26959ca9f40412421a471e22039b1a7963a2c0f13d4062a",
+    "results/dev_aux/task2593/episode.py": "9e5449e87972ee4a46df7ba3c3a2a96310e77cae2553980447296fb3636abc9e",
+    "results/dev_aux/task2606/evaluate.py": "3d5aa51a7afa1c71e5bd721284db987c25ebf2c2ed1512b46306dde68fa2108a",
+    "results/dev_aux/task2606/prepare.py": "c915bb4b076a0bd79b8bbe91603cb4340c6b766e2ed3c42478dd79a7d422fd3b",
+    "results/dev_aux/task2606/train.py": "7809a50ac912baa5c26164d8bea1821dc9d76f840a4bad91c474fd18bc924738"
+  },
+  "prefix_plies": 4,
+  "question": "Does the local-terminal-target TD(lambda) update transfer better than frozen TD(lambda=.95) from the same initialization on a finite family of complete Generic-rule games?",
+  "root_manifest_sha256": "87fb9947f28fc95fdf541b8474d50a755da10705b1f110cab98cd752287036ee",
+  "rules": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "runtime": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14",
+    "python_chess": "1.11.2"
+  },
+  "scope": "32 training arms (4 rules x 4 seeds x 2 methods), each 312500 candidate-paid nodes; equal candidate search nodes only. Fixed six-weight uniform foe. No search prover, qsearch, SEE/material ordering, result-based arm/seed/root selection, or cap extension. Root search returns completed full-window depth-2 minimax values; incomplete searches are excluded; unknown game outcomes remain censored.",
+  "seconds_per_query": 2,
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "session_id": "8f439e5f-543a-4c23-975c-0851b47cfa39",
+  "snapshot_nodes": [
+    78125,
+    156250,
+    234375
+  ],
+  "source_base_commit": "e8f3abdf4345e481cd16576d28e0ba8fb1f458eb",
+  "state": "REGISTERED_BEFORE_TRAIN_AND_EVALUATION",
+  "target_training_nodes": 10000000,
+  "task": "DEV_AUX2606",
+  "training_family_offset": 990000,
+  "training_family_recipe": "family=990000+index//2; learner color alternates by index; same family/prefix recipe per (rule, seed, method) index."
+}
