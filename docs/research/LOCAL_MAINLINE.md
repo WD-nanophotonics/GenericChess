@@ -1629,3 +1629,26 @@ Next map one concrete production caller to a still-uncovered unfamiliar-rule
 state/result invariant. First inspect its actual consumed fields and existing
 regressions; only run a reproducer or change code if a mismatch remains possible
 and its opposite outcome changes a real caller/API decision.
+
+## Close benchmark PlayerDecision caller source check — 2026-10-20
+
+The public `ai.benchmark.runner.play_game` caller binds the selected player to
+the actual side to move, branches on `choice_kind`, applies declarations through
+`GameSession.declare` and verifies actor/outcome/weighted score, and submits only
+non-null ordinary actions through `GameSession.submit`. Malformed declaration
+or missing/illegal action paths count as failed rather than fabricating a draw.
+`test_benchmark.py` covers both candidate colors for root WIN declarations,
+RESTART as unresolved, no-progress full-history draws, terminal adjudication,
+and max-ply unresolved handling; `test_f27_declaration_integration.py` covers
+the selected action/declaration contracts. This caller adds no uncovered
+invariant or reproduced defect; no API, runner or search change follows. The
+separate UI declaration limitation and UI Test ownership remain unchanged.
+
+Next test whether the rule-only static profile is equivariant under a bijective
+piece-type-ID rename on one schema-valid fixture: map all declarations and
+promotion targets, then compare raw capability scores and board/hand/promotion
+values after applying the same ID map. Existing coverage checks piece-type
+declaration order but no ID-renaming property was found. A mismatch would expose
+an identifier-dependent price defect; exact mapped equality closes this narrow
+invariant only. Use no games/training and do not claim broader utility or
+semantic-IR coverage from a legacy fixture.

@@ -5346,6 +5346,30 @@ only. Dot advice did not govern or gate this work. The DeepSeek control-chat
 read was limited to a historical page and `notLoaded`; current status remains
 unknown, not healthy. PRIMARY neither messaged nor controlled it.
 
+### PRIMARY_SANDBOX — benchmark PlayerDecision caller source close — 2026-10-20
+
+PRIMARY traced the production `play_game` consumer in `ai/benchmark/runner.py`
+and checked its current benchmark and declaration regressions. Root choice kind
+is separated; declarations pass through `GameSession.declare` and are checked
+against actor/outcome/score, while ordinary actions must be present and accepted
+by `GameSession.submit`. Both candidate colors, RESTART unresolved, full-history
+draw, terminal outcome, and external max-ply unresolved behavior already have
+coverage. No further caller defect/API change was found. This is a bounded
+source/test inventory, not independent auxiliary validation or UI coverage; the
+UI declaration limitation remains outside this backend change. Next step is to
+select a distinct decision-changing rule-price or unfamiliar-search premise
+from existing evidence before any broader run.
+
+Follow-on premise selected and begun source-only: static rule prices should be
+equivariant when all type IDs are bijectively renamed while semantics are held
+fixed. The profile builder derives each raw capability from movement atoms and
+normalizes over ordinary types, while existing evaluation tests cover declaration
+order but no explicit ID-renaming invariant was found. Next construct one
+schema-valid fixture with a complete ID map (including promotion targets), compare
+raw and normalized outputs by inverse map, and stop on exact equality; a
+counterexample would justify a narrow semantic-key fix/test. This is a profile
+consistency check, not game utility or complete semantic-IR coverage.
+
 ## PRIMARY_SANDBOX — result/callback contract source audit — 2026-10-20
 
 The progress callback is exposed on the shared Player protocol without a
