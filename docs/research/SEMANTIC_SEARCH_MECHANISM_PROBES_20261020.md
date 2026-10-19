@@ -390,3 +390,176 @@ about16ms. This confirms the duplicate fallback path, not an unbounded delay or
 a product defect; one 24x24 case provides no basis for changing the contract.
 Exact compact evidence is `data/generated_root_cancel_fallback_20261020.json`;
 raw output is in ignored `.local_agent/quality-20261020/generated-root-cancel-fallback-raw.txt`.
+
+## Public AlphaBeta PassAction and generated-semantic root checks — 2026-10-20
+
+On the existing pass-enabled4x4 legacy fixture with a draw after two consecutive
+passes, a test-only board-preserving evaluator made the public `AlphaBetaPlayer`
+select `PassAction` at depth1 for both sides. Each returned PV began with pass
+and replayed to the same Core child used by `GameSession.submit`. The first pass
+left the game ongoing; the second produced `ACTION_CLASS_DRAW`. Serialization
+and record replay preserved the complete state/result, unchanged board/hands,
+and both pass action signatures. A subsequent player call returned no action
+with `TERMINAL`/`terminal_position`.
+
+On the existing pass-enabled5x5 auxiliary-state fixture, Core and
+`SearchPathRuntime` produced the same five-action root set, including PassAction
+and `sem_00_mark_ephemeral`. Public depth1 probes selected each of those action
+kinds; both were in the Core root set, began the PV, and submitted/serialized/
+replayed to the same state/result. The selected semantic action set its guarded
+auxiliary slot to1. A pre-cancelled4x4 call returned ordinary legal fallback
+`a1-a2` at depth0 while PassAction was also present in the Core root set; the
+caller state object/history remained unchanged. This confirms fallback legality
+for the fixture, not that PassAction is selected as fallback.
+
+The initial three public-route regressions are in
+`test_generic_consecutive_action_adjudication.py` and `test_generic_pass_action.py`;
+both files passed39 tests at that checkpoint. These checks
+close only the named public-route contracts. They do not establish complete
+generated-rule equivalence, fallback quality or utility, and no production
+behavior change was warranted. Compact outputs:
+`data/pass_alpha_beta_public_route_20261020.json`.
+
+A parameterized public-route regression checks both sides of the qsearch
+terminal-child boundary. On a4x4 position where each side has only PassAction,
+the same depth2 search and test evaluator scores a terminal third pass as0 with
+qdepth1, versus -1000 at qdepth0. With a draw threshold of four, the third pass
+is still ongoing and qdepth1 retains -1000, excluding that nonterminal quiet
+pass; the fourth pass is a Core draw. An instrumented one-off probe confirmed
+the terminal third child is classified as `ACTION_CLASS_DRAW`. These checks
+show the bounded legacy route includes terminal pass children but does not
+extend quiet passes; they are not a value, strength or all-rule coverage claim.
+The two focused files now pass41 tests.
+
+The same threshold3 terminal-child control was then run through an
+`ExecutableSemanticRuleset` built from the existing pass/mate fixture, retaining
+both configured semantic action definitions while blocking all pieces that could
+produce them. Core exposes only PassAction: qdepth0 scores -1000 and qdepth1
+scores0 at the same completed depth2, with three qnodes. This supports parity
+of the semantic-compiled execution route for a terminal pass, but the semantic
+actions themselves were not generated in the blocked position. One product
+regression preserves that distinction; the two focused files now pass42 tests.
+
+A separate history-sensitive control uses the same blocked 4x4 legacy fixture
+with repetition limit3 and no consecutive-action rule. The third pass remains
+ongoing; the fourth returns `REPETITION` from the complete position history.
+At depth3, qdepth0 scores1000 while qdepth1 reaches four qnodes and scores0,
+with PassAction still selected. Thus the public legacy qsearch also includes a
+terminal pass child whose result depends on repetition history, not only the
+action-class terminal status above. The evaluator is intentionally adversarial
+to stand-pat and supplies no utility/strength evidence. The focused pair of
+files then passed43 tests.
+
+The repetition control also passes through `ExecutableSemanticRuleset` with
+two semantic definitions configured and no pieces that can generate them on
+the blocked board. With the consecutive-action policy removed, the fourth pass
+is `REPETITION`; public depth3 qdepth0/qdepth1 scores are1000/0, and qdepth1
+reaches four qnodes. This confirms the semantic-compiled route retains the
+history-dependent terminal pass child. It does not test generated semantic
+actions in qsearch; the exact limit is retained in the regression/data. The two
+focused files now pass44 tests.
+
+## Native semantic-search qsearch on a history-terminal child — 2026-10-19
+
+The prior qsearch checks exercised the public Python AlphaBeta route. A separate
+Native-kernel control now uses the existing deterministic4x4 F/G cycle, rebuilt
+as a RuleSet and passed through `compile_legacy_ruleset_for_semantic_execution`.
+There is exactly one legal move at each ply. Starting at ply8 with nine history
+records, the depth3 line reaches an ongoing frontier at ply11; its only action
+creates the fourth occurrence and a Core `REPETITION` terminal.
+
+With a fixed test material profile K=0/F=500/G=100/Z=0, no TT, and the Native
+root window disabled, qdepth0 returns400 while qdepth1 returns0 with four qnodes.
+The independent Core route returns the same raw scores, action and PV at both
+qdepths; both complete depth3 and leave the caller's ply/history unchanged.
+This verifies one complete-history terminal child through the Native semantic
+search kernel. The fixture is legacy-atom-derived semantic execution, not a
+DSL-generated action or generated hybrid. Test-evaluator contrasts establish
+neither playing strength nor utility, and no production behavior change was
+needed. Regression: `tests/product/test_native_semantic_qsearch.py::test_native_semantic_qsearch_includes_full_history_repetition_child`.
+The four focused qsearch/pass/history files pass63 tests. Compact data:
+`data/pass_alpha_beta_public_route_20261020.json`.
+
+## Public AlphaBeta dispatch with PassAction — 2026-10-20
+
+Source inspection confirms `AlphaBetaPlayer.choose_action` always calls the
+Python `run_root_search`; its optional Native component is a legality provider,
+not `SemanticSearchEngine`. `SearchPathRuntime` appends the Core-checked
+`PassAction` after a successful Native semantic binding query, and otherwise
+builds semantic bindings in Core. Native semantic compilation explicitly
+rejects coordinate-free pass rules.
+
+On the existing blocked5x5 `ExecutableSemanticRuleset` with repetition limit3,
+the public player returned a PassAction PV of length3, score0, completed depth3,
+and four qnodes. The Native legality provider was unavailable for this
+execution ruleset, with zero Native legality calls/fallbacks; the complete
+caller history remained unchanged. This confirms the tested public entry stays
+on Core and does not surface the standalone Native pass rejection. It does not
+claim Native pass support or exercise the separate `CompiledSemanticRuleset`
+provider path. A new typed-`CompiledSemanticRuleset` regression then exercised
+that provider-construction boundary directly: Native was declined and the same
+Core qsearch result/counters were preserved. No production code change is
+warranted. The two pass-focused files pass45 tests; the four-file
+pass/history/Native suite passes65. Regression:
+`tests/product/test_generic_consecutive_action_adjudication.py::test_compiled_semantic_pass_rules_decline_native_and_keep_core_qsearch`.
+
+The existing Native history qsearch test used `compile_legacy_ruleset_for_semantic_execution`,
+so it did not cover generated semantic action IDs. A bounded4x4 cycle now
+replaces the F/G legacy movement with four declared F/G up/down semantic
+actions; Native compilation succeeds and exactly one semantic action is legal
+at each ply. The ply0 and ply8 roots have the same board/side, but histories
+contain1 and9 records. At qdepth1, both Core and Native score the short-history
+root400; on the long-history root they score0 because the third mainline edge
+reaches an ongoing q frontier whose sole generated-semantic child is the fourth
+occurrence (`REPETITION`). qdepth0 remains400 on the long root; Native qdepth1
+visits four qnodes and matches Core action/PV. This is a focused history contract
+control, not utility/strength or all-domain evidence. The five-file
+pass/history/Native suite passes75. Regression:
+`tests/product/test_native_semantic_qsearch.py::test_native_qsearch_full_history_on_declared_semantic_actions`.
+
+The terminal-policy source audit found no Native-supported consecutive-action
+history class distinct from `pass` (the schema admits only that action class,
+and Native compilation rejects pass-enabled rules). A separate still-open
+history distinction is continuous-check repetition loss: current Native tests
+check its terminal transition at an actual Shogi root, while qsearch history
+tests cover ordinary repetition. One existing Shogi cycle now supplies a
+bounded full-history check: from ply10, its next rook check and quiet king
+reply produce `PERPETUAL_CHECK` for the checker at ply12. The root keeps11
+history records with exact check events; the largest identity multiplicity is3
+against repetition limit4. On that root, a depth1/qdepth1/hard-check-depth12
+search with a zero evaluator completes in both Core and Native at score0 with
+the same action and PV; Native reaches46 qnodes (Core40). Native reports
+ordinary qdepth0 because the first iterative result reserves that policy, while
+the checking hard extension is active. The returned PV avoids the certified
+perpetual-check line, so this is full-history result parity around that line,
+not proof that the particular terminal child appears in the PV or a traced
+q-node. Source review confirms qsearch checks terminal status at node entry;
+the near-threshold repeat multiplicity disables the transient quiet-history
+deferral for this root, retaining checked full-history child transitions.
+
+The bounded regression is
+`test_native_shogi_check_history_search_result_matches_core`. It also checks
+Native's imported history-event stream and Core's terminal outcome along the
+certified continuation. No Core/Native decision divergence or production
+defect was observed, so no backend change follows. Compact data:
+`data/native_shogi_perpetual_qsearch_20261020.json`. This does not establish a
+general Shogi qsearch theorem or playing-strength claim.
+
+## Native qsearch with a generated-semantic promotion at the frontier — 2026-10-20
+
+One existing `SHOGI_LIKE` 3x3 fixture from the F23V generated-rules helper was
+reused without adding a game. From its custom root, two main-search plies leave
+the side to move with a legal generated `SemanticBoardMove` promotion
+`b2-b3=G` at the depth-two qsearch frontier. The Native semantic compiler
+accepts this ruleset. A zero-dynamic test evaluator assigns P=100/G=1000; all
+calls use no TT/order/root-tactical scan, a 1000-node cap and a 3-second limit.
+
+At qdepth0, Core and Native both complete depth2 at score1000 with the same
+promotion action and legal two-action PV. At qdepth1, both still complete depth2
+at score1000 and both PVs replay legally, but Core selects that promotion while
+Native selects `a3-a2`; qnode counts are11 and16 respectively. The equal score
+and absence of exact root-action values leave a tie/order explanation open, so
+the action difference is not classified as a semantic defect or utility change.
+This records one finite generated-semantic promotion case only. No backend or
+qsearch default change follows. Compact evidence:
+`data/native_semantic_promotion_qfrontier_20261020.json`.

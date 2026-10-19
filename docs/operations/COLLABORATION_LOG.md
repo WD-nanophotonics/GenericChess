@@ -5083,3 +5083,34 @@ The final combined nine-file focused regression command also completed successfu
 recombined semantic lifecycle, search path runtime, Native semantic repack,
 generation, search-generation accounting, root terminal wins, semantic checkpoint,
 result provenance, and search latency. No full-suite success is claimed.
+
+## PRIMARY_SANDBOX — profile-scale and generated-semantic qsearch continuation — 2026-10-20
+
+PRIMARY audited the competing per-declaration and unique-movement-signature
+median normalizers using the already-recorded unused-N2 profile and canonical
+Western/Shogi profiles. Source review confirms the normalizer scales all static
+prices while dynamic weights stay fixed; the alternative deduplicates only
+leap/ray geometry and would need an evaluator-version/cache and learned-profile
+compatibility plan. The synthetic score shift did not change action/PV, and no
+utility consumer separated the choices, so the existing normalizer remains.
+The report now limits the N2 claim to reachability from the canonical start and
+does not claim an unverified replay result.
+
+PRIMARY then reused one F23V Shogi-like 3x3 fixture for a depth-two generated-
+semantic promotion-at-qfrontier Core/Native check. At qdepth0 both select the
+promotion; at qdepth1 both complete with score1000 and legal PVs, but choose
+different first actions. Without exact action-value separation this stays an
+unresolved tie/order sensitivity, not a defect or strength result. No product
+behavior/default changed. The combined focused profile, evaluator, pass,
+history, Native qsearch and semantic action-classification test command passed.
+Exact outputs are in the static-profile and semantic-search reports/data;
+probe setup errors were saved privately in ignored `.local_agent`.
+
+DEV_AUX and DEEPSEEK_AUX contributed no source changes to this segment. The
+Slack CHAT_Comments about task2594 were recognized as DEV_AUX's own sampling
+lane and were not adopted or repeated; the generic-v2/v3 comment was resolved
+against PRIMARY's existing local construction probe. No AUX checkout/state or
+unpublished output was edited or integrated, and no dependency or disagreement
+required coordination. The current next step is to retain the bounded Native
+qfrontier tie result as a diagnostic and select another concrete mainline gap
+only if it changes the next code or study choice.

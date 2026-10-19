@@ -1072,12 +1072,108 @@ make no code change from this evidence. Evidence:
 `SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
 `data/generated_root_cancel_fallback_20261020.json`.
 
-The bounded search-interface return/cancel investigation now has no observed
-action/PV, state/history or finite-root failure warranting a product change.
-Next check the public AlphaBeta route for an explicitly enabled `PassAction`
-under consecutive-pass adjudication: force a pass with a test-only evaluator on
-the existing4x4 fixture, replay the returned PV, then commit/replay the action
-record and compare pass count, terminal state, board/hands and history with
-Core. This tests an action kind not yet demonstrated through the public search
-consumer; make no production change unless it disagrees with Core. Keep the
-rule-only price question available after this bounded search-interface check.
+The bounded search-interface return/cancel investigation found no observed
+action/PV, state/history or finite-root defect. Public AlphaBeta now has fixed
+regressions showing PassAction selection, PV/record replay, generated semantic
+root-action inclusion, legal pre-cancel fallback, qsearch inclusion of terminal
+pass children, and exclusion of a nonterminal quiet pass. Legacy and
+semantic-compiled public routes both include a full-history repetition terminal
+pass child. The two focused pass files pass44 tests total.
+
+A separate Native semantic-search kernel check now covers the same
+history-sensitive terminal class on an actual four-cycle search path. It starts
+from a complete recorded history, reaches a fourth-occurrence repetition at
+the qsearch frontier, and compares Native against independent Core with qdepth
+0/1. Scores, selected action and PV agree; both switch 400 to0 when qsearch
+includes the terminal. The four-file pass/history/Native-qsearch suite passes63
+tests. This fixture is legacy-atom-derived semantic execution, not a DSL-
+generated semantic action or generated hybrid; all results remain bounded
+behavior checks, not strength or utility evidence. No production behavior
+change is warranted. Exact data and scope are in
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/pass_alpha_beta_public_route_20261020.json`.
+
+The public AlphaBeta dispatch check confirms `choose_action` always invokes the
+Python `run_root_search`; the optional Native component is only a semantic
+legality provider. On the existing blocked5x5 `ExecutableSemanticRuleset`, that
+provider is unavailable, and the Core route returns the complete PassAction PV
+(score0, depth3, four qnodes) with caller history unchanged. The Native
+compiler explicitly rejects pass-enabled semantic rules. Thus this public
+entry does not surface the standalone Native PassAction rejection; it does not
+claim Native pass support. A new direct `CompiledSemanticRuleset` regression
+also confirms provider construction declines the pass-enabled rule and public
+qsearch preserves the same Core behavior. The four-file pass/history/Native
+suite passes65. No production change is warranted. Details:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/pass_alpha_beta_public_route_20261020.json`.
+
+Native qsearch history coverage previously used only legacy-atom-derived
+semantic execution. A new typed `CompiledSemanticRuleset` 4x4 cycle uses four
+declared F/G movement actions, all generated and Native-executable. The ply0
+and ply8 roots have the same board/side but history lengths1/9; at qdepth1 both
+Core and Native score400 for the short history and0 for the long history, where
+the terminal q child reaches fourth-occurrence `REPETITION`. qdepth0 remains400;
+Native qdepth1 visits four qnodes and matches Core action/PV. The five-file
+pass/history/Native suite passes75. This bounded fixture confirms generated
+action + complete position history, not utility/strength or full-domain support.
+
+Source audit found `CONSECUTIVE_ACTION_CLASSES` admits only `pass`, which Native
+explicitly rejects, so no distinct supported consecutive-action history
+qsearch class exists. The remaining decision-relevant candidate is continuous-
+check repetition loss: Native tests cover its real Shogi terminal transition,
+but qsearch-history tests exercise only ordinary repetition. Next assess one
+existing finite Shogi perpetual-check line with its final checking action at
+the qsearch frontier; compare Core/Native scores and preserve exact check-event
+history. Skip a broad terminal-policy matrix.
+
+That bounded check is complete. The existing standard-Shogi cycle has11 exact
+history records at ply10 (repetition limit4, maximum identity multiplicity3);
+the next check plus quiet reply yields `PERPETUAL_CHECK`, winner1. Native qsearch
+uses the full terminal authority for this near-threshold history rather than
+the transient quiet-history shortcut. At depth1/qdepth1/hard-check-depth12,
+Core and Native both complete score0 with the same action/PV; Native has46
+qnodes, Core40. The result's PV avoids the certified terminal line, so this
+does not claim a traced terminal q-child. The focused regression preserves the
+bounded contract and input history; no product change follows. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/native_shogi_perpetual_qsearch_20261020.json`.
+
+Next inspect the actual unfamiliar-rule search gap map for one distinct
+decision-changing finite behavior not already covered by pass, history, root
+budget, PV replay, cancellation or deadline probes; if none is concrete, switch
+to the current rule-price transfer question rather than widening terminal
+testing.
+
+The bounded guard-only static profile audit found that canonical Western P's
+guarded executable movement has a visible unsupported-profile boundary rather
+than a silent zero price; guarded Xiangqi E/H retain a legacy-atom fallback.
+No behavior fix follows from one synthetic fixture. The current Slack default
+profile comment is also resolved by a direct public construction probe: the
+standard default gives Western P 361/325, an explicit `generic-v2` label on the
+semantic-compiled rules still gives 361/325, while the legacy-atom control gives
+1/1. This matches the current correctness-first v3 decision; no strength gain
+is claimed. The AUX task2594 sampling comment stays in DEV_AUX's lane.
+
+A separate rule-price representation probe added an exact N geometry/type
+declaration not reachable from the canonical Western start. The current per-type
+raw median
+scaled all static values by about 12.7% (P/N/B/R/Q 361/775/1000/1462/2439 to
+407/873/1127/1647/2749). On two equal-budget public roots the opening action/PV
+was unchanged; the first registered seed301 prefix score shifted 368 to 414
+with the same action/PV after a completed D2, then hit the same 4096-node cap.
+All eight frozen 301–308 prefixes lacked captures, so no post-capture control
+was available; no new root was made. Unique-signature median is an unvalidated
+alternative, not an adopted formula. Keep the current normalization until a
+real consumer can distinguish these choices. Exact scope and data:
+`STATIC_PROFILE_DECLARATION_SENSITIVITY_20261020.md` and
+`data/median_profile_duplicate_type_20261020.json`.
+
+A separate bounded Native qsearch check reuses one existing3x3 Shogi-like
+generated-semantic fixture with a legal P→G promotion at the depth-two qsearch
+frontier. At qdepth0, Core/Native both return score1000 and the same legal PV;
+at qdepth1 they still agree on score1000 and legal replay, but select different
+first actions (promotion versus king move). With no exact root-action values,
+this remains unresolved tie/order sensitivity, not a backend defect or strength
+claim. No code/default change follows. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/native_semantic_promotion_qfrontier_20261020.json`.

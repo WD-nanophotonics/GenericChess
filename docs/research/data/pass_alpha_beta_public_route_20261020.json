@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "question": "Does the public AlphaBeta route preserve PassAction, consecutive-pass adjudication, generated semantic actions, and legal fallback behavior?",
+  "scope": "Two existing deterministic local fixtures; interface and state-transition checks only, with test-only evaluators. No utility, strength, timing, or full-domain claim.",
+  "legacy_consecutive_pass_fixture": {
+    "source": "tests/product/test_generic_consecutive_action_adjudication.py::_legacy_ruleset",
+    "board_size": "4x4",
+    "pass_enabled": true,
+    "pass_adjudication": "DRAW after two consecutive pass actions",
+    "limits": {
+      "max_depth": 1,
+      "max_nodes": 10000,
+      "max_time_seconds": 5,
+      "quiescence_max_depth": 0,
+      "quiescence_hard_max_depth": 0
+    },
+    "results": [
+      {
+        "ply": 0,
+        "selected_action": "pass",
+        "completed_depth": 1,
+        "nodes": 17,
+        "pv": [
+          "pass"
+        ],
+        "pv_replay_equals_core_transition": true,
+        "committed_ply_count": 1,
+        "terminal_status": "ongoing"
+      },
+      {
+        "ply": 1,
+        "selected_action": "pass",
+        "completed_depth": 1,
+        "nodes": 9,
+        "pv": [
+          "pass"
+        ],
+        "pv_replay_equals_core_transition": true,
+        "committed_ply_count": 2,
+        "terminal_status": "action_class_draw"
+      }
+    ],
+    "record_roundtrip": {
+      "pass_action_signatures": [
+        {
+          "kind": "pass"
+        },
+        {
+          "kind": "pass"
+        }
+      ],
+      "serialized_record_replay_state_equal": true,
+      "serialized_record_replay_result_equal": true,
+      "board_unchanged": true,
+      "hands_unchanged": true,
+      "history_length_including_root": 3
+    },
+    "post_adjudication_search": {
+      "action": null,
+      "choice_kind": "TERMINAL",
+      "termination_reason": "terminal_position"
+    }
+  },
+  "pre_cancelled_root_fallback": {
+    "fixture": "same 4x4 pass-enabled legacy ruleset before any action",
+    "cancelled_before_search": true,
+    "termination_reason": "cancelled",
+    "completed_depth": 0,
+    "nodes": 0,
+    "fallback_action": "a1-a2",
+    "fallback_in_core_legal_set": true,
+    "pass_also_in_core_legal_set": true,
+    "caller_state_same_object_and_equal": true
+  },
+  "qsearch_pass_child_policy": {
+    "fixture": "4x4 legacy rules with both Kings blocked by own immobile pieces; every side-to-move has only PassAction",
+    "threshold_cases": [
+      {
+        "draw_after": 3,
+        "pre_qsearch_state_after_two_passes": "ongoing",
+        "third_pass_core_result": "action_class_draw",
+        "qdepth_zero": {
+          "score": -1000,
+          "completed_depth": 2,
+          "qnodes": 0
+        },
+        "qdepth_one": {
+          "score": 0,
+          "completed_depth": 2,
+          "qnodes": 3,
+          "selected_action": "pass",
+          "noisy_child_classification": "terminal action_class_draw"
+        }
+      },
+      {
+        "draw_after": 4,
+        "pre_qsearch_state_after_two_passes": "ongoing",
+        "third_pass_core_result": "ongoing",
+        "fourth_pass_core_result": "action_class_draw",
+        "qdepth_zero": {
+          "score": -1000,
+          "completed_depth": 2,
+          "qnodes": 0
+        },
+        "qdepth_one": {
+          "score": -1000,
+          "completed_depth": 2,
+          "qnodes": 3,
+          "selected_action": "pass",
+          "interpretation": "nonterminal quiet pass is excluded from qsearch"
+        }
+      }
+    ],
+    "limits": {
+      "max_depth": 2,
+      "max_nodes": 1000,
+      "quiescence_hard_max_depth": 2,
+      "same_test_evaluator": true
+    },
+    "regression": "tests/product/test_generic_consecutive_action_adjudication.py::test_public_qsearch_pass_child_policy",
+    "interpretation": "Bounded interface test: qsearch includes a terminal PassAction before its depth cutoff and excludes a nonterminal quiet pass. The deliberately chosen static evaluator and one fixture do not imply utility, strength, or complete qsearch coverage."
+  },
+  "semantic_qsearch_terminal_pass": {
+    "fixture": "5x5 ExecutableSemanticRuleset from _pass_mate_ruleset(threshold=3), with both Kings blocked by own immobile pieces; two semantic action definitions remain configured but have no pieces on this position",
+    "core_root_actions": [
+      "pass"
+    ],
+    "after_first_pass_actions": [
+      "pass"
+    ],
+    "after_two_passes": "ongoing",
+    "after_three_passes": "action_class_draw",
+    "limits": {
+      "max_depth": 2,
+      "max_nodes": 1000,
+      "quiescence_hard_max_depth": 2
+    },
+    "qdepth_zero": {
+      "score": -1000,
+      "completed_depth": 2,
+      "qnodes": 0
+    },
+    "qdepth_one": {
+      "score": 0,
+      "completed_depth": 2,
+      "qnodes": 3,
+      "selected_action": "pass"
+    },
+    "regression": "tests/product/test_generic_consecutive_action_adjudication.py::test_public_semantic_qsearch_includes_terminal_pass_child",
+    "interpretation": "The public semantic-compiled executor agrees with the bounded legacy terminal-pass qsearch contract. Semantic action definitions were configured but not generated on the blocked position; this does not establish generated-semantic qsearch coverage or complete-domain equivalence."
+  },
+  "qsearch_repetition_pass_child": {
+    "fixture": "4x4 legacy pass-only rules; both Kings blocked by own immobile pieces; repetition limit3",
+    "root_actions": [
+      "pass"
+    ],
+    "repetition_path": [
+      {
+        "pass_count": 3,
+        "terminal_status": "ongoing"
+      },
+      {
+        "pass_count": 4,
+        "terminal_status": "repetition"
+      }
+    ],
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 1000,
+      "quiescence_hard_max_depth": 2
+    },
+    "qdepth_zero": {
+      "score": 1000,
+      "completed_depth": 3,
+      "qnodes": 0
+    },
+    "qdepth_one": {
+      "score": 0,
+      "completed_depth": 3,
+      "qnodes": 4,
+      "selected_action": "pass"
+    },
+    "regression": "tests/product/test_generic_consecutive_action_adjudication.py::test_public_qsearch_includes_repetition_pass_child",
+    "interpretation": "The public legacy qsearch includes the fourth pass when its complete history makes the child a repetition draw. Scores use a deliberately chosen test evaluator and are behavioral contrasts, not utility or strength estimates."
+  },
+  "semantic_qsearch_repetition_pass_child": {
+    "fixture": "5x5 ExecutableSemanticRuleset with two configured semantic action definitions, but no semantic pieces on the blocked pass-only board; repetition limit3 and no consecutive-action policy",
+    "root_actions": [
+      "pass"
+    ],
+    "repetition_path": [
+      {
+        "pass_count": 3,
+        "terminal_status": "ongoing"
+      },
+      {
+        "pass_count": 4,
+        "terminal_status": "repetition"
+      }
+    ],
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 1000,
+      "quiescence_hard_max_depth": 2
+    },
+    "qdepth_zero": {
+      "score": 1000,
+      "completed_depth": 3,
+      "qnodes": 0
+    },
+    "qdepth_one": {
+      "score": 0,
+      "completed_depth": 3,
+      "qnodes": 4,
+      "selected_action": "pass"
+    },
+    "regression": "tests/product/test_generic_consecutive_action_adjudication.py::test_public_semantic_qsearch_includes_repetition_pass_child",
+    "interpretation": "The semantic-compiled route preserves the same complete-history repetition terminal child as legacy. Semantic action definitions remain configured but are not generated by this blocked position; no claim is made about generated semantic action qsearch or full-domain equivalence."
+  },
+  "native_semantic_qsearch_repetition_child": {
+    "fixture": "Existing deterministic 4x4 F/G four-cycle, reconstructed as a RuleSet and compiled through compile_legacy_ruleset_for_semantic_execution; exactly one legal semantic action at every ply",
+    "root": {
+      "ply": 8,
+      "history_records_including_root": 9,
+      "terminal_status": "ongoing"
+    },
+    "qsearch_frontier": {
+      "mainline_plies_to_frontier": 3,
+      "frontier_status": "ongoing",
+      "sole_semantic_action_child": "repetition (fourth occurrence under complete played history)"
+    },
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 500,
+      "quiescence_hard_max_depth": 2,
+      "root_window_pruning": false,
+      "transposition_table_mb": 0
+    },
+    "evaluator": {
+      "K": 0,
+      "F": 500,
+      "G": 100,
+      "Z": 0
+    },
+    "qdepth_zero": {
+      "core_score": 400,
+      "native_score_normalized": 400,
+      "completed_depth": 3,
+      "native_qnodes": 0
+    },
+    "qdepth_one": {
+      "core_score": 0,
+      "native_score_normalized": 0,
+      "completed_depth": 3,
+      "native_qnodes": 4,
+      "core_native_action_equal": true,
+      "core_native_pv_equal": true
+    },
+    "regression": "tests/product/test_native_semantic_qsearch.py::test_native_semantic_qsearch_includes_full_history_repetition_child",
+    "focused_suite": {
+      "files": [
+        "test_native_semantic_qsearch.py",
+        "test_generic_pass_action.py",
+        "test_generic_consecutive_action_adjudication.py",
+        "test_native_history.py"
+      ],
+      "passed": 63
+    },
+    "interpretation": "The native semantic-search kernel and independent Core agree on this translated legacy-atom semantic fixture. It is not a DSL-generated semantic action or generated-hybrid coverage, nor an all-domain, strength, or utility claim."
+  },
+  "generated_semantic_fixture": {
+    "source": "tests/product/test_generic_pass_action.py::_semantic_temp_ruleset",
+    "board_size": "5x5",
+    "pass_enabled": true,
+    "core_root_action_count": 5,
+    "search_runtime_root_action_count": 5,
+    "core_and_runtime_root_sets_equal": true,
+    "core_root_actions": [
+      "legacy_000:g0:b2-c2",
+      "legacy_016:g5:a1-a2",
+      "legacy_020:g7:a1-b1",
+      "sem_00_mark_ephemeral:g14:b2-c2",
+      "pass"
+    ],
+    "selected_route_checks": [
+      {
+        "selection": "PassAction",
+        "selected_action_in_core_root": true,
+        "pv_starts_with_action": true,
+        "submitted_record_replay_state_and_result_equal": true
+      },
+      {
+        "selection": "sem_00_mark_ephemeral",
+        "selected_action_in_core_root": true,
+        "pv_starts_with_action": true,
+        "auxiliary_slot_after_commit": 1,
+        "submitted_record_replay_state_and_result_equal": true
+      }
+    ]
+  },
+  "regressions": [
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_public_alphabeta_pass_pv_submits_and_replays_consecutive_pass_draw",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_public_qsearch_pass_child_policy",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_public_semantic_qsearch_includes_terminal_pass_child",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_public_qsearch_includes_repetition_pass_child",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_public_semantic_qsearch_includes_repetition_pass_child",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_pre_cancelled_public_alphabeta_returns_legal_fallback_with_pass_available",
+    "tests/product/test_generic_pass_action.py::test_public_alphabeta_root_selects_pass_and_generated_semantic_action",
+    "tests/product/test_generic_consecutive_action_adjudication.py::test_compiled_semantic_pass_rules_decline_native_and_keep_core_qsearch",
+    "tests/product/test_native_semantic_qsearch.py::test_native_qsearch_full_history_on_declared_semantic_actions"
+  ],
+  "focused_validation": {
+    "command": "pytest tests/product/test_generic_pass_action.py tests/product/test_generic_consecutive_action_adjudication.py -q -p no:cacheprovider",
+    "passed": 45,
+    "two_file_passed": 44,
+    "four_file_command": "pytest tests/product/test_native_semantic_qsearch.py tests/product/test_generic_pass_action.py tests/product/test_generic_consecutive_action_adjudication.py tests/product/test_native_history.py -q -p no:cacheprovider",
+    "four_file_passed": 65,
+    "five_file_command": "pytest tests/product/test_native_semantic_qsearch.py tests/product/test_generic_pass_action.py tests/product/test_generic_consecutive_action_adjudication.py tests/product/test_native_history.py tests/product/test_native_q_history_deferral.py -q -p no:cacheprovider",
+    "five_file_passed": 75
+  },
+  "interpretation": "No defect or production behavior change was observed. The assertions cover only the named deterministic fixtures and bounded probes. The native semantic route here is legacy-atom-derived, not DSL-generated; these results do not establish complete generated-rule-domain equivalence, fallback selection quality, search strength, or utility.",
+  "public_alphabeta_native_dispatch_pass": {
+    "fixture": "Existing blocked 5x5 ExecutableSemanticRuleset with two configured semantic actions, neither generated on this board; repetition limit3; test evaluator from the existing public qsearch regression",
+    "source_dispatch": {
+      "player": "AlphaBetaPlayer.choose_action calls run_root_search and passes the optional NativeSemanticLegalityProvider only as a legal-binding provider",
+      "runtime": "SearchPathRuntime appends Core-checked PassAction after successful semantic bindings; otherwise enumerates bindings in Core",
+      "native_compiler": "Native semantic ruleset compilation rejects pass-enabled rules",
+      "scope": "This public AlphaBeta entry does not route to standalone SemanticSearchEngine"
+    },
+    "observed": {
+      "compiled_type": "ExecutableSemanticRuleset",
+      "native_legality_provider_available": false,
+      "action": "pass",
+      "score": 0,
+      "completed_depth": 3,
+      "qnodes": 4,
+      "native_legality_calls": 0,
+      "native_legality_fallbacks": 0,
+      "native_legality_operational_failures": 0,
+      "pv": [
+        "PassAction",
+        "PassAction",
+        "PassAction"
+      ],
+      "caller_history_unchanged": true
+    },
+    "regression_source": "tests/product/test_generic_consecutive_action_adjudication.py::test_public_semantic_qsearch_includes_repetition_pass_child",
+    "focused_suite": {
+      "files": [
+        "test_native_semantic_qsearch.py",
+        "test_generic_pass_action.py",
+        "test_generic_consecutive_action_adjudication.py",
+        "test_native_history.py"
+      ],
+      "passed": 64
+    },
+    "interpretation": "Both the existing ExecutableSemanticRuleset public route and a new CompiledSemanticRuleset regression safely decline Native legality for pass-enabled rules and preserve Core PassAction qsearch. The standalone Native kernel still does not support PassAction; no code change or strength claim.",
+    "compiled_semantic_regression": "tests/product/test_generic_consecutive_action_adjudication.py::test_compiled_semantic_pass_rules_decline_native_and_keep_core_qsearch"
+  },
+  "native_declared_semantic_history_repetition_qsearch": {
+    "fixture": "4x4 typed CompiledSemanticRuleset reconstructed from the deterministic F/G cycle, with legacy F/G atoms removed and four declared F/G up/down semantic actions; each state in the 12-ply cycle has exactly one generated semantic action",
+    "native_executable": true,
+    "same_position_roots": {
+      "short": {
+        "ply": 0,
+        "history_records_including_root": 1,
+        "qdepth_one_core_score": 400,
+        "qdepth_one_native_score_normalized": 400
+      },
+      "long": {
+        "ply": 8,
+        "history_records_including_root": 9,
+        "qdepth_one_core_score": 0,
+        "qdepth_one_native_score_normalized": 0,
+        "qnodes": 4
+      }
+    },
+    "terminal_path": "From the ply8 root, three forced mainline moves reach an ongoing frontier; its sole declared semantic action reaches the fourth occurrence and Core REPETITION.",
+    "limits": {
+      "max_depth": 3,
+      "max_nodes": 500,
+      "quiescence_hard_max_depth": 2,
+      "transposition_table_mb": 0,
+      "root_window_pruning": false
+    },
+    "evaluator": {
+      "K": 0,
+      "F": 500,
+      "G": 100,
+      "Z": 0
+    },
+    "regression": "tests/product/test_native_semantic_qsearch.py::test_native_qsearch_full_history_on_declared_semantic_actions",
+    "interpretation": "Native and Core agree for qdepth0/1 on a true typed generated-semantic cycle. Same board/side with one versus nine history records yields qdepth1 scores400 versus0 solely at the bounded repetition boundary. No strength, utility, general support or all-domain claim."
+  },
+  "native_action_event_terminal_audit": {
+    "source": "generic_chess/rules/schema.py::CONSECUTIVE_ACTION_CLASSES; generic_chess/native/compiler.py::NativeSemanticRules.require_terminal_policy_support; tests/product/test_generic_pass_action.py::test_native_compilation_fails_closed_for_enabled_pass",
+    "supported_consecutive_action_classes": [
+      "pass"
+    ],
+    "native_pass_rule": "rejected explicitly by Native compilation",
+    "conclusion": "No Native-supported consecutive-action terminal class distinct from pass was found. Do not construct a redundant event-class matrix.",
+    "separate_candidate": "Continuous-check repetition loss has Native terminal transition tests, but no qsearch child parity test alongside ordinary repetition qsearch controls; inspect one existing finite Shogi line before deciding whether a regression is warranted."
+  }
+}

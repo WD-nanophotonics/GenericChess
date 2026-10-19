@@ -1,0 +1,68 @@
+{
+  "question": "Does an exact-duplicate movement type not reachable from the canonical start alter existing rule-only static prices through per-declared-type median normalization?",
+  "source_revision": "0e8aa129fe9febff259c4b165cea55d17dbfcf2f",
+  "construction": {
+    "base": "canonical Western Chess",
+    "variant": "append N2 with the exact N movement atoms and same drop mask; no canonical-start piece, promotion edge, or rule action creates it; custom imported positions containing N2 were not tested",
+    "runtime_semantics_check": "canonical starting and seed301-prefix legal action sets match by actor/from/to/promotion; reconstructed positions, hands and side-to-move match",
+    "normalizer_alternative": "median of one raw capability per unique movement_signature; arithmetic diagnostic only, not adopted"
+  },
+  "profile": {
+    "canonical": {
+      "declared_nonanchors": 5,
+      "unique_movement_signatures": 5,
+      "board_values": {"P": 361, "N": 775, "B": 1000, "R": 1462, "Q": 2439},
+      "hand_values": {"P": 325, "N": 698, "B": 900, "R": 1316, "Q": 2195}
+    },
+    "unused_duplicate": {
+      "declared_nonanchors": 6,
+      "unique_movement_signatures": 5,
+      "board_values": {"P": 407, "N": 873, "B": 1127, "R": 1647, "Q": 2749, "N2": 873},
+      "hand_values": {"P": 366, "N": 786, "B": 1014, "R": 1482, "Q": 2474, "N2": 786}
+    },
+    "normalized_cross_type_ratios": "close after rounding; no exact policy or utility claim",
+    "raw_medians": {
+      "western_declared_and_unique_signature": 6.217622245358478,
+      "shogi_declared_and_unique_signature": 4.709791718138191
+    },
+    "shogi_repeated_signature_group": {
+      "type_ids": ["G", "TP", "TL", "TN", "TS"],
+      "raw_capability_scores": [4.709791718138191, 4.709791718138191, 4.709791718138191, 4.709791718138191, 4.709791718138191],
+      "relation_to_both_medians": "exactly the shared median; deduplicating this group does not move the normalization anchor"
+    },
+    "unique_signature_diagnostic": "returns the canonical Western values for this duplicate-only construction; on canonical Shogi, 13 non-anchor declarations collapse to 9 signatures but the current integer board values also remain unchanged because the repeated G/TP/TL/TN/TS signature group has raw value equal to both medians"
+  },
+  "public_search": {
+    "conditions": "AlphaBetaPlayer; same Core rules/history within each pair; TT/order/root tactical scan off; q0; max_nodes=4096",
+    "canonical_start": {
+      "root_actions_each": 20,
+      "depth_each": 3,
+      "nodes_each": 2239,
+      "score_each": 21,
+      "selected_action_and_pv_equal_by_rule_move_fields": true
+    },
+    "first_registered_corrected-panel_prefix_seed301": {
+      "prefix_plies": 12,
+      "captured_or_hand_pieces": 0,
+      "root_actions_each": 34,
+      "depth_each": 2,
+      "nodes_each": 4096,
+      "stop_each": "node_limit after a completed depth-2 iteration",
+      "scores": {"canonical": 368, "unused_duplicate": 414},
+      "selected_action_and_pv_equal_by_rule_move_fields": true,
+      "positions_hands_side_and_terminal_status_equal": true
+    }
+  },
+  "frozen_prefix_inventory": {
+    "study": "semantic_pawn_utility_corrected_20261020",
+    "seeds": [301, 302, 303, 304, 305, 306, 307, 308],
+    "prefix_plies": 12,
+    "hand_pieces_on_all_eight_reconstructed_roots": 0,
+    "consequence": "no post-capture root was available in this already-frozen panel; do not create or select a new root for this diagnostic"
+  },
+  "interpretation": [
+    "The current median is over declarations, so adding a duplicate not reachable from the canonical start changes the normalization anchor and scales the static material term by about 12.7%.",
+    "The fixed seed301 search changed its returned score but not its selected action/PV; this is representation sensitivity, not observed utility or a move-quality defect.",
+    "Unique-signature normalization is a candidate correction only. A single synthetic equivalence does not justify a global default/version change or further game panel; profile and capability caches include evaluator_version, and learned checkpoints persist the profile version."
+  ]
+}

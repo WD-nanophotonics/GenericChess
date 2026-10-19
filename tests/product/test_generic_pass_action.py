@@ -4,7 +4,13 @@ from dataclasses import replace
 import pytest
 
 from generic_chess import build_western_chess_ruleset
-from generic_chess.core.actions import PassAction, action_from_dict, action_to_dict
+from generic_chess.core.actions import (
+    PassAction,
+    SemanticBoardMove,
+    SemanticDropMove,
+    action_from_dict,
+    action_to_dict,
+)
 from generic_chess.core.coordinates import Square
 from generic_chess.core.errors import IllegalActionError
 from generic_chess.core.history_provenance import reconstruct_history_provenance
@@ -13,6 +19,8 @@ from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.search_runtime import SearchPathRuntime, _full_runtime_hash
 from generic_chess.core.transition import apply_action, initial_state, legal_successors
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
 from generic_chess.rules.compiler import compile_ruleset, compile_ruleset_for_execution
 from generic_chess.rules.schema import (
     RuleActionEffect,
@@ -280,6 +288,61 @@ def test_semantic_pass_expires_aux_and_replays_history() -> None:
 def _compiled_semantic_temp():
     ruleset = _semantic_temp_ruleset()
     return ruleset, compile_ruleset_for_execution(ruleset)
+
+
+def test_public_alphabeta_root_selects_pass_and_generated_semantic_action() -> None:
+    _, compiled = _compiled_semantic_temp()
+    initial = initial_state(compiled)
+    core_root = set(legal_actions(initial, compiled))
+    runtime_root = set(SearchPathRuntime.from_state(initial, compiled).legal_actions())
+    semantic_actions = {
+        action
+        for action in core_root
+        if isinstance(action, (SemanticBoardMove, SemanticDropMove))
+    }
+    assert runtime_root == core_root
+    assert PassAction() in core_root
+    assert any(getattr(action, "pattern_id", "").endswith("mark_ephemeral")
+               for action in semantic_actions)
+
+    class PreferPassEvaluator:
+        def evaluate(self, state):
+            return -10_000 if state.position.board == initial.position.board else 10_000
+
+    class PreferMarkedEvaluator:
+        def evaluate(self, state):
+            return -10_000 if any(value == 1 for _, value in state.position.aux_state) else 10_000
+
+    limits = SearchLimits(
+        max_depth=1,
+        max_nodes=10_000,
+        max_time_seconds=5,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+    for evaluator, expected_type in (
+        (PreferPassEvaluator(), PassAction),
+        (PreferMarkedEvaluator(), (SemanticBoardMove, SemanticDropMove)),
+    ):
+        session = GameSession(compiled)
+        decision = AlphaBetaPlayer(
+            compiled,
+            evaluator_override=evaluator,
+            use_disk_cache=False,
+        ).choose_action(session, limits)
+        assert decision.completed_depth == 1
+        assert isinstance(decision.action, expected_type)
+        assert decision.action in core_root
+        assert decision.principal_variation
+        assert decision.principal_variation[0] == decision.action
+        assert apply_action(session.state, decision.action, compiled) == apply_action(
+            session.state, decision.principal_variation[0], compiled
+        )
+        session.submit(decision.action)
+        record = deserialize_game_record(serialize_game_record(session.to_record()))
+        replayed = GameSession.replay(compiled, record)
+        assert replayed.state == session.state
+        assert replayed.result == session.result
 
 
 @pytest.mark.parametrize("side", [0, 1], ids=["owner-0", "owner-1"])
