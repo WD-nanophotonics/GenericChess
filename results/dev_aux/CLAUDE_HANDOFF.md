@@ -333,3 +333,29 @@ those files to review.
   LOCAL_MAINLINE head 103, COLLABORATION_LOG, NEXT_WORK (Main = descriptive
   rule-capability vs transfer table, existing records only).
 - Descriptive table task2587/rule-capability-table.json: per-rule transfer gain vs cold learning gain over 8 NEW rules, Spearman 0.857 (midpoints, n=8). Transfer helps where cold TD gains strongly and hurts where it gains ~0. Hypothesis only. SEGMENT_102 has an appended 'Update after DEV_AUX103' erratum.
+- Backup2 descriptive (task2587/warm-credit-description.json): warm/cold update magnitudes are similar; cold drifts hand-P net -0.10/episode vs warm -0.01; weight displacement cold 0.98 vs warm 0.71. Hypothesis only. Slack AGENT_REQUEST 103a ts 1792406894.300239 sent.
+
+---
+
+## Report 14 — 2026-10-19T11:00Z (Dot 103 reply adopted; transfer line closed)
+
+- DOT_REPLY to 103a, read 11:00Z:
+  - Transfer = W0-C0 and learning = C100-C0 share the subtrahend C0, so
+    Spearman .857 cannot establish learnability->transfer.
+  - Price-insensitivity is not the explanation either (348001/348002 react
+    strongly).
+  - Don't do (a) or (b). Make (c), widening ONE domain factor at a time, the
+    next main direction.
+  - Smallest step: direct paired W0-C100 plus absolute W/D/L/U per rule/foe.
+  - Decision: ADOPTED.
+- Done: task2587/direct_w0_c100.py, output direct-w0-c100.json, both panels,
+  existing records only.
+  - W0-C100 over 16 rule x foe cells: 13 strictly negative, 0 positive,
+    3 undetermined (351002/random, 351003 x2; U-heavy).
+  - So zero-training OldRulesMean never beats trained cold@100k, and the
+    practical choice is unchanged. The transfer diagnosis is CLOSED; no
+    simulation for .857.
+- NEXT_WORK Main: widen ONE domain factor (board size 5x5, same generator
+  config otherwise) with the SAME cold per-rule Fixed TD at 100k, registered
+  first. Check channel/type admission first; record the generator outcome as
+  is.
