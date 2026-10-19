@@ -1,0 +1,7 @@
+Read-only replay verification — 2026-10-20
+
+Working directory: DEV_AUX checkout; Python: existing .venv Python 3.12.14.
+Replay: task2601 v2 parser on the frozen task2595 TRAIN array only; task2602 v2 audit() on the frozen task2568 query JSONL, decoding only its five registered top-level fields. No EVAL outcomes, game records, weights, or training runs were accessed.
+Assertions: replayed task2601 metrics exactly equal root-concentration-v2.json; replayed task2602 object exactly equals task2593-baseline-exposure-v2.json.
+Observed: task2601 8,192 rows / 3,702 unique histories / 3,031 terminal prefixes. task2602 110,225 rows / 186 selected / seed counts 1977=37, 27182=38, 31415=45, 8173=66.
+Interpretation: artifact reproducibility only; not learner success/failure or a changed admission result.
