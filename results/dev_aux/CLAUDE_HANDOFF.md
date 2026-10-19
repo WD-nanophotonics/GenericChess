@@ -555,3 +555,24 @@ those files to review.
      (>=120 min per cell, so Dot review first).
   2. Hand back to Codex DEV_AUX, using the synthesis and NEXT_WORK.
 - All work is pushed; origin/sidemission is at the latest SHA in git log.
+
+---
+
+## Report 26 — 2026-10-19 (FINAL: handed back to Codex DEV_AUX)
+
+- User decision (2026-10-19): stop here and hand back to Codex DEV_AUX,
+  which continues from results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md and
+  .local_agent/NEXT_WORK.md.
+- AUX_CLAUDE is stopping. No background runs or monitors are active, and no
+  uncommitted project files are left, except the raw queries.jsonl /
+  eval-queries.jsonl, which stay local by convention.
+- Session a6ffbcc4 (segment 107) is still ACTIVE. Resume it and finish it
+  (evidence: SEGMENT_20261019_107.md, 108.md); do not reset its clock.
+- Throwaway smoke folders .local_agent/smoke25xx and the .local_agent/run10x.sh
+  scripts and logs are ignored and can be deleted.
+- Things worth reviewing first:
+  - task2586/run.py: the rule-file hook.
+  - task2587/{train,audit}.py: diff them against task2565.
+  - task2588/run.py: the channel hook.
+  - task2590/credit_split.py.
+  - The Dot threads 101a-107a in #generic-chess.
