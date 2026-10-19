@@ -1,0 +1,50 @@
+{
+  "schema": "primary-static-5x5-price-transfer-candidate96-v2",
+  "question": "Does the existing rule-only full-type static material candidate improve finite game utility over Unit on fresh generated 5x5 rules at a fixed paid budget, when the censor horizon is 96 candidate plies as specified?",
+  "changed_premise": "The retained first panel had an implementation deviation: its producer stopped after 96 total plies (48 candidate plies), although its plan specified 96 candidate plies. Do not extend/refill that frozen panel. This separate validation uses never-used rule seeds and implements the original candidate-relative horizon.",
+  "source_head": "419822bbf9ca6a536834941d1156e4d055076b9e",
+  "rules": {
+    "board_size": 5,
+    "seeds": [522001, 522002, 522003, 522004, 522005, 522006, 522007, 522008],
+    "setups_by_seed_order": ["classic_like", "bilateral_random", "free_random"],
+    "movement_symmetry_by_seed_order": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "opening_win_filter": false,
+    "generation_attempts": 16,
+    "selection": "All eight deterministic generated rules and every prespecified prefix are retained; no outcome- or feature-based filtering. Seeds are distinct from the retained 521001-521008 panel. No AUX rules/files or training outputs are reused."
+  },
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies": 4,
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "terminal_prefixes": "Retain as zero-search terminal slots; do not replace."
+  },
+  "arms": {
+    "candidates": ["unit", "static_v2"],
+    "fixed_foes": ["unit", "static_v2"],
+    "candidate_budget": {"max_depth": 8, "max_nodes": 8192, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "foe_budget": {"max_depth": 2, "max_nodes": 32768, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "root_window_pruning": false,
+    "tt_megabytes": 0,
+    "physical_games": 128,
+    "color_swap": "Both candidate colors on each identical root/opponent pair. Candidate and foe checkpoints are fixed before any games."
+  },
+  "outcomes": {
+    "horizon": "Stop only after the candidate has completed 96 legal candidate moves, unless an actual Core terminal occurs first. An ongoing game at that boundary is UNKNOWN; preserve it in finite bounds as [-1,1]. Do not convert to draw or extend the horizon.",
+    "actual_terminal": "Score the actual Core Session result, including actual repetition or rule max-ply terminal outcomes.",
+    "contrast": "Within each fixed-foe/root/color-swapped pair, static_v2 candidate score minus Unit candidate score; report each foe separately, all seed-family values, finite bounds, UNKNOWN counts and actual nodes/caller time.",
+    "decision": "Strictly positive finite bounds against both foes retain static_v2 as a 5x5 candidate only. Nonpositive upper bounds against both de-prioritize it for this sampled 5x5 regime. Otherwise unresolved. No default, global price, training, population or strength claim."
+  },
+  "cost": {
+    "expected": "128 games with up to twice the first panel's total-ply horizon; the first panel spent 93 seconds for 48 candidate plies at most, suggesting under 4 minutes plus setup/replay. Budgeted below 40 minutes.",
+    "hard_cap_seconds": 2400,
+    "cheaper_alternative": "The retained 48-candidate-ply panel provides a conditional shorter-horizon sensitivity only and cannot answer the registered 96-candidate-ply question. Profile-only calculations cannot answer game utility."
+  },
+  "integrity": [
+    "No training, solver, new worker, AUX checkout write or old panel refill.",
+    "Preserve promotion, drop, full Session history, repetition and real terminal results.",
+    "No seed replacement or outcome imputation; the prior panel remains separately reported as protocol-deviant."
+  ]
+}

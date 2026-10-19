@@ -1,0 +1,145 @@
+{
+  "question": "Do bounded generated legacy rule mixes preserve exact static movement atoms and promotable forward-target zones after semantic execution compilation?",
+  "seeds_by_size": {
+    "4": [
+      771101,
+      771102
+    ],
+    "5": [
+      771201,
+      771202
+    ],
+    "6": [
+      771301,
+      771302
+    ],
+    "8": [
+      771401,
+      771402
+    ]
+  },
+  "rulesets": [
+    {
+      "seed": 771101,
+      "board_size": 4,
+      "types": 4,
+      "profile_values": {
+        "K": 0,
+        "P": 389,
+        "X": 1181,
+        "A": 1000
+      },
+      "promotable_types": [
+        "P"
+      ]
+    },
+    {
+      "seed": 771102,
+      "board_size": 4,
+      "types": 4,
+      "profile_values": {
+        "K": 0,
+        "P": 747,
+        "X": 1427,
+        "A": 1000
+      },
+      "promotable_types": [
+        "P"
+      ]
+    },
+    {
+      "seed": 771201,
+      "board_size": 5,
+      "types": 4,
+      "profile_values": {
+        "K": 0,
+        "P": 770,
+        "A": 1000,
+        "B": 1529
+      },
+      "promotable_types": [
+        "P"
+      ]
+    },
+    {
+      "seed": 771202,
+      "board_size": 5,
+      "types": 4,
+      "profile_values": {
+        "K": 0,
+        "P": 898,
+        "A": 2418,
+        "B": 1000
+      },
+      "promotable_types": [
+        "P"
+      ]
+    },
+    {
+      "seed": 771301,
+      "board_size": 6,
+      "types": 5,
+      "profile_values": {
+        "K": 0,
+        "P": 1736,
+        "X": 1204,
+        "A": 796,
+        "B": 622
+      },
+      "promotable_types": [
+        "B"
+      ]
+    },
+    {
+      "seed": 771302,
+      "board_size": 6,
+      "types": 5,
+      "profile_values": {
+        "K": 0,
+        "P": 979,
+        "X": 1021,
+        "A": 1222,
+        "B": 392
+      },
+      "promotable_types": [
+        "B"
+      ]
+    },
+    {
+      "seed": 771401,
+      "board_size": 8,
+      "types": 6,
+      "profile_values": {
+        "K": 0,
+        "P": 1490,
+        "X": 649,
+        "A": 1000,
+        "B": 165,
+        "C": 1607
+      },
+      "promotable_types": [
+        "X",
+        "B"
+      ]
+    },
+    {
+      "seed": 771402,
+      "board_size": 8,
+      "types": 6,
+      "profile_values": {
+        "K": 0,
+        "P": 1625,
+        "X": 1000,
+        "A": 2541,
+        "B": 570,
+        "C": 191
+      },
+      "promotable_types": [
+        "X",
+        "C"
+      ]
+    }
+  ],
+  "mismatches": [],
+  "passed": true
+}

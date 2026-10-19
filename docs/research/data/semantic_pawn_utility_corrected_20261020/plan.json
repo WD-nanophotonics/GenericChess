@@ -1,0 +1,33 @@
+{
+  "question": "With both arms using corrected promotion-potential geometry, does the generic-v3 semantic Western P profile outperform the exact old generic-v2 atom-only price profile in a fresh paired finite-game sample?",
+  "ruleset": "canonical Western Chess",
+  "fresh_prefix_seeds": [
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308
+  ],
+  "prefix_plies": 12,
+  "games_per_prefix": 2,
+  "max_additional_plies": 128,
+  "search": {
+    "max_depth": 3,
+    "max_nodes_total": 4096,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 0,
+    "tt": false,
+    "ordering": false,
+    "root_tactical": false
+  },
+  "candidate": "generic-v3 P board=361 hand=325; semantic profile",
+  "control": "exact generic-v2 profile rebuilt from legacy declared atoms; P board=1 hand=1",
+  "shared_dynamic_evaluator": "corrected profile_movement_atoms projection for both arms",
+  "pairing": "same fresh prefix, both candidate colors",
+  "unknown_policy": "ongoing at capped additional ply remains unresolved; no refill",
+  "max_elapsed_seconds": 3000,
+  "started_unix": 1792426337.8843262
+}

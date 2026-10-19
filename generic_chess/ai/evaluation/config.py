@@ -33,7 +33,9 @@ class EvaluationConfig:
     normal_piece_median_value: int = 1000
     # Retained for explicit legacy sampling; exact profile curves ignore it.
     mc_samples: int = 64
-    evaluator_version: str = "generic-v2"
+    # Bump this whenever rule-derived profile inputs change. The value participates
+    # in both profile-cache keys and learned-evaluator compatibility metadata.
+    evaluator_version: str = "generic-v3"
 
 
 def config_hash(config: EvaluationConfig) -> str:

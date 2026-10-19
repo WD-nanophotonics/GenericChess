@@ -731,3 +731,145 @@ All project content sans personalinfo/passwords/credentials remains authorized.
 The <120min autonomous / >=120min Dot assessment threshold supersedes old1hour
 interpretation; frozen caps, machine safety and separate60-90min work segments
 remain. Preserve current decision/reason/abandoned alternative and executable memo.
+
+## 5x5 rule-only static utility —2026-10-20
+
+[STATIC_5X5_PRICE_TRANSFER_20261020.md](STATIC_5X5_PRICE_TRANSFER_20261020.md)
+closes the previously untested 5x5 static-vs-Unit question. The first fresh
+128-game panel is retained as protocol-deviant: its producer capped 96 total
+plies instead of 96 candidate moves. A separate corrected 128-game panel on
+never-used seeds closes the intended candidate-relative horizon with 126 actual
+terminals/2 UNKNOWN. Static-minus-Unit conservative paired bounds are positive
+against both fixed foes in the registered 50/50 candidate-color mix; all
+one-seed-omission lower bounds remain positive, but linked seed families
+contain neutral and adverse cases. The owner-1/Unit-foe subgroup includes zero.
+Retain static_v2 as a 5x5 candidate under this tested budget/color mix only; no
+global prices, population or default claim, no pooling/refill, and no unchanged
+follow-up panel. The next
+PRIMARY question returns to a distinct decision-changing unfamiliar-rule search
+issue. DEV_AUX's 5x5 learning result remains separate and was not rerun or edited.
+
+The first Native-admission fallback probe is closed: ordinary generated legacy
+rules remain on the tested Core search path when the optional semantic Native
+provider declines them, so a board-capacity sample would repeat known coverage.
+A new canonical static-profile audit instead finds a concrete rule-price gap:
+Western semantic pawn movement is executable but invisible to the atom-only
+profile (P raw=0, board/hand=1). A bounded geometry prototype now derives
+unguarded direct semantic movement while preserving legacy fallback for guarded
+Xiangqi E/H. It changes Western P to board/hand 361/325 and preserves the other
+23 canonical profile inputs. The earlier 446 proxy incorrectly treated the
+guarded exact-two-step ray as ordinary and is rejected. This is a code-level
+price-input correction candidate, not an evaluated utility gain or universal
+price recommendation. See
+[SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md](SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md).
+The first fixed-root q0 diagnostic used a hand-edited P=1 profile but retained
+the candidate's promotion-gain field; it was not an exact old-v2 comparator and
+its score/node results are not used. A corrected same-seed 12-root depth2 panel
+rebuilds generic-v2 from legacy movement atoms and changes the selected action
+on 3/12 complete pairs (all under equal 3000-node caps); this establishes
+decision sensitivity, not which choice is better. Its first capture counter
+read a field not present on semantic actions; it was corrected to count board
+pieces and the same seeds were rerun (one captured piece in the twelve
+prefixes). Exact public data and limits are in
+SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md and its JSON.
+The profile algorithm advances the default evaluator/cache identity from
+generic-v2 to generic-v3 so old disk profiles cannot mask the semantic input;
+a stale-cache regression and the wider profile/search suite pass (92 tests).
+During the in-flight finite-game panel, a further integration check found that
+the default evaluator's promotion-potential zone still used the legacy empty
+P movement table, making all 64 Western squares appear in the heuristic's
+no-forward-mobility zone. The evaluator now derives cached forward targets/
+zones from the same bounded semantic projection. Review also found the old
+half-step test compared `Square` values with integer zone indices; it never
+matched. The refactor preserves legacy geometric zones and makes the intended
+half-step bonus operative. The focused profile/evaluation/search suite passes
+(94 cases). The already-running 16-game panel imported pre-fix code. It
+completed with 0 candidate wins, 7 losses, 0 draws and 9 unresolved
+(conservative reward [-1.000,+0.125]); preserve as-built outputs, but it does
+not establish utility for the corrected generic-v3 evaluator. A distinct
+corrected-evaluator test is now preregistered on fresh seeds 301–308, 16
+color-swapped games with the same node/ply caps. Both arms use the corrected
+dynamic geometry; only profile prices and their derived promotion gain differ.
+The frozen 3,000 s elapsed check is between games: it starts no new game after
+the threshold but does not kill an in-flight game. Expected cost was about
+20 minutes including recording, below the 120-minute Dot-assessment threshold.
+The corrected panel completed all 16 paired slots in 985.625 s: 1 win, 4
+losses, 0 draws and 11 UNKNOWN. Independently checked 1,670 move events and
+4,918,610 nodes; no failed games, fallbacks, invalid timings or over-cap nodes.
+Conservative all-slot reward is [-0.875,+0.500], wide and including both harm
+and benefit. This does not validate utility or promote 361/325 to a generally
+validated price/default. Retain the semantic geometry implementation as an
+explicit provisional rule-derived candidate rather than silently treating
+executable semantic P as immobile; report the price and utility limitation
+together. Do not tune or repeat this unchanged panel. Keep the earlier 12-root
+panel as adaptive sensitivity evidence, not a holdout; preserve full
+rules/history, UNKNOWN and equal per-move budgets.
+
+An eight-rule generated-profile compatibility audit then sampled sizes4/5/6/8,
+two fixed seeds each. All38 non-anchor types preserve exact movement atom sets
+through the semantic execution adapter; every promotable forward-target map
+also matches on all squares for both owners. No mismatches or profile failures.
+This only covers legacy atom-generated mixes, not arbitrary semantic-only
+guards/effects or recombined DSL rules, and adds no utility evidence. See
+`data/semantic_generated_profile_audit_20261020.json`.
+
+The price-input gap is now fixed in code and the generated legacy sample shows
+no projection regression, but the corrected utility panel does not justify a
+general price/default claim. Do not extend this unchanged Western panel. Return
+to a distinct, decision-changing unfamiliar-rule search question after this
+delivery; preserve the full generated-domain target and current feature costs.
+
+## Semantic search interface smoke correction — 2026-10-20
+
+The first attempted depth-1 search check on five existing semantic fixtures was
+only an initial-position interface smoke test. All 20 calls completed and
+repeated/reference scores matched, but each root had only three legal actions,
+searched four nodes, and selected a legacy King move. Source inspection shows
+the `weird_rulesets()` roots contain only Kings and empty hands while their
+named semantic actor is R. Thus those searches did not exercise screen-count,
+guarded drop, auxiliary/promotion, compound shift or S3-reply behavior. The
+earlier checkpoint's mechanism-level wording is withdrawn; exact scope/result
+are recorded in `SEMANTIC_SEARCH_INTERFACE_SMOKE_20261020.md` and its compact
+JSON. Do not count the smoke run as mechanism legality/PV or generic-search
+coverage. A first custom compound-shift root with two R pieces also produced
+ordinary R moves but no compound-pattern action because I placed its adjacent
+piece with file/rank reversed. Correcting the prepared root exposed exactly one
+compound action; its multi-piece transition passed, and plain/public-bundle
+depth-1 scores matched a completed Core reference. A second prepared two-screen
+root exposed the intended semantic capture, verified the capture-to-hand
+transition, and both depth-1 controls selected that capture while matching the
+Core reference. A third real-hand guarded-drop root after a capture and legal
+opponent reply contained one permitted drop among 78 legal actions; depth-1
+controls completed and matched the Core reference, but the drop was not the
+selected PV. A separate direct transition check placed the R at the target and
+removed it from hand. See
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and its JSON. These are targeted
+fixture-level checks only: no repeats, utility, performance or broad Native-
+parity claims. The five original roots remain interface smokes only. The
+lifecycle fixture's actual `sem_01` promotion action was reached after four
+legal plies; direct Core application set TP/promoted and the auxiliary slot,
+then a legal opponent King reply expired the slot. Its45-action root search
+completed in both controls and matched the45-leaf Core reference; the promotion
+was not selected in the PV. This closes one scoped auxiliary-history path only;
+no repeated utility or cost campaign is proposed. Exact evidence is in
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and its JSON. No utility result
+or general feature claim follows.
+
+The existing S3 `uchifuzume_ruleset` also begins without a piece in hand. A
+bounded reachable history captured an opposing P and then made a legal reply;
+the resulting 62-action root excluded the checking P drop at (7,6) while
+retaining a nonchecking control drop. Plain/public-bundle depth-1 searches
+completed at63 nodes and matched the62-leaf Core reference. The hypothetical
+forbidden child's reply set was not instrumented, so this establishes the
+reachable legality/search boundary but does not independently validate the
+mate explanation or isolate a single postcondition. Two focused S3
+conjunction/Native-probe tests pass. No utility, timing or general Native claim
+follows. See `SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and its JSON.
+Source review confirms search timing wraps semantic successor iteration and
+S3 scans cooperatively poll cancellation/deadlines; a new regression verifies
+cancellation propagation alongside existing early-exit/nested-S4 tests. Internal
+S3 reply candidates do not increment AlphaBeta node counters, so a node cap
+bounds searched nodes but not all nested legality work. This is an interpretation
+limit, not a measured defect. Next run one small fixed-root S3/no-S3 paired
+measurement of searched nodes, legal-generation time and cancellation response;
+add no counter/API unless it demonstrates a decision-relevant gap.

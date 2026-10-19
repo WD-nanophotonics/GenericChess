@@ -295,6 +295,66 @@ def test_promoted_uses_current_type_and_hand_uses_base():
     assert delta == profile.hand_value_by_base_type["P"]
 
 
+def test_semantic_western_pawn_promotion_zone_uses_profile_geometry():
+    from types import SimpleNamespace
+
+    from generic_chess.core.coordinates import Square, square_to_index
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.western_chess import build_western_chess_ruleset
+
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    config = EvaluationConfig()
+    profile = build_ruleset_profile(compiled, config)
+    evaluator = Evaluator(compiled, profile, config)
+
+    # The legacy P atom table is empty although semantic P has direct moves.
+    # The projected single-step/capture geometry places only the terminal rank
+    # in the no-forward-move promotion zone, mirrored for the other owner.
+    assert evaluator._zones[("P", 0)] == frozenset(
+        square_to_index(Square(file, 7), 8) for file in range(8)
+    )
+    assert evaluator._zones[("P", 1)] == frozenset(
+        square_to_index(Square(file, 0), 8) for file in range(8)
+    )
+    pawn = SimpleNamespace(promoted=False, base_type_id="P", owner=0)
+    unit = max(1, profile.promotion_gain_by_type["P"] // 1000)
+    assert evaluator._promotion_bonus(pawn, square_to_index(Square(3, 7), 8)) == 3 * unit
+    assert evaluator._promotion_bonus(pawn, square_to_index(Square(3, 6), 8)) == 3 * unit // 2
+    assert evaluator._promotion_bonus(pawn, square_to_index(Square(3, 5), 8)) == 0
+
+
+def test_legacy_promotion_zone_matches_compiled_forward_table():
+    from types import SimpleNamespace
+
+    from generic_chess.core.coordinates import Square, square_to_index
+
+    compiled = build_promotion()
+    config = EvaluationConfig()
+    profile = build_ruleset_profile(compiled, config)
+    evaluator = Evaluator(compiled, profile, config)
+    for pt in compiled.piece_types:
+        if not pt.is_promotable:
+            continue
+        for owner in (0, 1):
+            expected_forward = tuple(
+                tuple(square_to_index(target, compiled.board_size) for target in targets)
+                for targets in compiled.empty_forward_mobility[pt.type_id][owner]
+            )
+            assert evaluator._promotion_forward[(pt.type_id, owner)] == expected_forward
+            expected_zone = frozenset(
+                idx for idx, targets in enumerate(expected_forward) if not targets
+            )
+            assert evaluator._zones[(pt.type_id, owner)] == expected_zone
+
+    # Forward targets and zone members now share integer-index representation;
+    # the previous Square-vs-int membership check silently suppressed this band.
+    pawn = SimpleNamespace(promoted=False, base_type_id="P", owner=0)
+    unit = max(1, profile.promotion_gain_by_type["P"] // 1000)
+    assert evaluator._promotion_bonus(
+        pawn, square_to_index(Square(3, 6), 8)
+    ) == config.promotion_potential_weight * unit // 2
+
+
 def test_mate_score_beats_static():
     compiled = build_4x4_rooks()
     profile = build_ruleset_profile(compiled, _config())

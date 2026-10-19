@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-20",
+  "question": "Do five existing semantic-rule fixtures complete through the unfamiliar-rule interface from their supplied initial positions?",
+  "scope": "Initial-root depth-1 dispatch smoke only; not target-mechanism coverage.",
+  "cases": [
+    "screen_count_capture",
+    "zone_guarded_drop",
+    "expiring_aux_promotion",
+    "compound_shift",
+    "s3_reply_condition"
+  ],
+  "conditions": {
+    "depth": 1,
+    "controls_per_case": ["python_plain", "public_bundle"],
+    "repeats_per_control": 2,
+    "node_limit": 4096,
+    "time_limit_seconds": 5,
+    "reference": "bounded plain Core minimax at the same depth"
+  },
+  "result": {
+    "completed_searches": 20,
+    "all_reference_scores_equal": true,
+    "all_repeats_equal": true,
+    "public_bundle_native_provider_present": true,
+    "public_bundle_native_fallbacks": 0,
+    "nodes_per_search": 4,
+    "root_legal_actions_per_case": 3,
+    "selected_action_actor": "K",
+    "selected_action_family": "legacy King move"
+  },
+  "fixture_limit": "tests/rule_semantics_ir_fixtures.py weird_rulesets() uses the default kings-only board and empty hands; the semantic actor R is absent. Therefore none of the named R mechanisms can be activated from these roots.",
+  "followup_probe": "The first custom compound-shift root reversed file/rank for the adjacent R and was invalid. With corrected placement, the compound action appeared, applied correctly and was included in a completed depth-1 search that matched the Core reference. See the separate mechanism-probes report/JSON.",
+  "interpretation": "The five original roots remain initial-position dispatch smoke only. Corrected targeted probes are separate evidence, not utility/strength or full-domain evidence.",
+  "private_source_directory": ".local_agent/semantic-search-interface-20261020/"
+}

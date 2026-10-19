@@ -44,15 +44,19 @@ def test_supplied_semantic_rule_uses_product_boundary_and_core_reference(tmp_pat
         run_rule(output, ruleset_to_dict(cannon_ruleset()), depth=1)
 
 
-def test_semantic_only_movement_is_not_claimed_as_static_capability():
+def test_semantic_only_movement_contributes_to_static_capability():
     from generic_chess.rules.western_chess import build_western_chess_ruleset
     from generic_chess.rules.compiler import compile_ruleset_for_execution
     from generic_chess.ai.evaluation.profile import build_ruleset_profile
     from generic_chess.ai.evaluation.config import EvaluationConfig
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
     scope = profile_input_scope(compiled)
-    assert scope['semantic_moving_types_without_atoms'] == ['P']
-    assert build_ruleset_profile(compiled, EvaluationConfig()).piece_profiles['P'].raw_capability_score == 0
+    assert scope['semantic_moving_types_without_legacy_atoms'] == ['P']
+    assert scope['semantic_geometry_profile_types'] == ['P']
+    assert scope['semantic_patterns_used_for_static_capability']
+    profile = build_ruleset_profile(compiled, EvaluationConfig())
+    assert profile.piece_profiles['P'].raw_capability_score > 0
+    assert profile.board_value_by_type['P'] > 1
 
 
 def test_existing_benchmark_ruleset_option_executes_semantics(tmp_path, capsys):

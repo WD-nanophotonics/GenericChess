@@ -8,7 +8,11 @@ from typing import TYPE_CHECKING, Mapping
 from ...core.pieces import PieceType
 from ...core.coordinates import BoardShape
 from ...rules.compiled import CompiledRuleSet
-from .analyzer import MovementCapabilityProfile, build_movement_capability
+from .analyzer import (
+    MovementCapabilityProfile,
+    build_movement_capability,
+    profile_movement_atoms,
+)
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
 
 if TYPE_CHECKING:
@@ -107,10 +111,11 @@ def build_ruleset_profile(
     ordinary: list[PieceType] = []
 
     for pt in compiled.piece_types:
+        atoms = profile_movement_atoms(compiled, pt.type_id)
         if capability_cache is not None:
-            capability, _ = capability_cache.get_or_build(n, pt.movement_atoms, config)
+            capability, _ = capability_cache.get_or_build(n, atoms, config)
         else:
-            capability = build_movement_capability(n, pt.movement_atoms, config)
+            capability = build_movement_capability(n, atoms, config)
         capabilities[pt.type_id] = capability
         raw[pt.type_id] = _raw_capability_score(capability, config)
         drop[pt.type_id] = _drop_profile(compiled, pt.type_id, n)

@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-20",
+  "scope": "Five targeted semantic mechanisms in hand-prepared roots, one depth-1 run per control; action legality/transition and bounded Core score comparison only.",
+  "controls": [
+    "python_plain",
+    "public_bundle"
+  ],
+  "reference": "Plain Core minimax with a 4096-leaf/5-second fuse; both references completed.",
+  "compound_shift": {
+    "fixture": "move_and_shift_adjacent_friendly",
+    "root": {
+      "actor_R_file_rank": [
+        2,
+        2
+      ],
+      "adjacent_R_file_rank": [
+        2,
+        3
+      ],
+      "destination_file_rank": [
+        2,
+        4
+      ]
+    },
+    "legal_root_actions": 24,
+    "matching_compound_actions": 1,
+    "transition_verified": true,
+    "transition": "actor to (3,3); adjacent R to (2,4); both source squares empty",
+    "depth1_nodes_each": 25,
+    "reference_leaves": 24,
+    "both_searches_complete": true,
+    "both_scores_match_reference": true,
+    "target_action_in_selected_pv": false,
+    "setup_correction": "Initial probe reversed file/rank for the companion; corrected root places it at (file=2, rank=3)."
+  },
+  "screen_count_capture": {
+    "fixture": "ray_quiet_zero_capture_two_screens",
+    "root": {
+      "actor_R_file_rank": [
+        2,
+        2
+      ],
+      "friendly_screens_file_rank": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "enemy_R_file_rank": [
+        5,
+        2
+      ]
+    },
+    "legal_root_actions": 27,
+    "matching_capture_actions": 1,
+    "transition_verified": true,
+    "transition": "actor occupies target; enemy removed; own R hand count increases by one",
+    "depth1_nodes_each": 28,
+    "reference_leaves": 27,
+    "both_searches_complete": true,
+    "both_scores_match_reference": true,
+    "target_action_in_selected_pv": true
+  },
+  "guarded_drop_after_capture_history": {
+    "fixture": "drop_zone_capacity_guard",
+    "setup": "Enable R drops; own R at (2,2), enemy R at (3,2); capture the enemy R, then make one legal opponent King reply.",
+    "hand_R_after_capture": 1,
+    "legal_root_actions": 78,
+    "matching_guarded_drop_to_file_rank_0_1": 1,
+    "depth1_nodes_each": 79,
+    "reference_leaves": 78,
+    "both_searches_complete": true,
+    "both_scores_match_reference": true,
+    "target_action_in_selected_pv": false,
+    "direct_drop_transition_inspected": true,
+    "drop_transition": "R appears at (0,1); R hand count falls from 1 to 0"
+  },
+  "expiring_aux_promotion": {
+    "fixture": "promotion_grants_one_turn_right",
+    "pattern_id": "sem_01_promotion_grants_one_turn_right",
+    "root_reached_by": "Four legal plies in the existing lifecycle fixture, with both guarded-drop and promotion semantic actions present.",
+    "legal_root_actions": 45,
+    "target_actions": 1,
+    "direct_transition": "R becomes promoted TP; expiring auxiliary slot becomes1",
+    "next_legal_opponent_king_reply": "auxiliary slot expires back to0",
+    "depth1_nodes_each": 46,
+    "reference_leaves": 45,
+    "both_searches_complete": true,
+    "both_scores_match_reference": true,
+    "target_action_in_selected_pv": false
+  },
+  "s3_no_legal_reply_after_capture_history": {
+    "fixture": "uchifuzume_ruleset",
+    "semantic_action": "sem_00_drop_no_legal_reply_forbidden",
+    "postconditions": [
+      "opponent_checked",
+      "no_legal_reply:S3"
+    ],
+    "history": "Side0 P captures opposing P; side1 makes a legal reply; side0 retains P in hand.",
+    "root_features": "Side0 K at (6,5); opposing K at (7,7); friendly P at (6,6); target checking drop is (7,6).",
+    "legal_root_actions": 62,
+    "forbidden_candidate_drop_count": 0,
+    "nonchecking_control_drop_3_0_count": 1,
+    "depth1_nodes_each": 63,
+    "reference_leaves": 62,
+    "both_searches_complete": true,
+    "both_scores_match_reference": true,
+    "forbidden_candidate_in_selected_pv": false,
+    "hypothetical_child_reply_set_instrumented": false,
+    "focused_regression_tests": 2
+  },
+  "interpretation": "Concrete fixture-level evidence only; no repeats, utility, population, performance, or general Native parity claim.",
+  "s3_search_boundary_audit": {
+    "source_review": "semantic_executor._exists_s3_reply polls checkpoint at each pattern and candidate; search legal_generation_seconds covers semantic successor-handle iteration, including nested S3 scans. No dedicated S3 trial counter.",
+    "runtime_cost_measured": false,
+    "cancellation_regression": "Injected cancellation on third checkpoint propagates from _exists_s3_reply.",
+    "focused_tests": [
+      "test_s3_reply_probe_propagates_cooperative_cancellation",
+      "test_reply_probe_early_exits",
+      "test_nested_s4_disabled_in_reply_probe"
+    ],
+    "focused_tests_passed": 3,
+    "diagnostics_api_change": "not justified; no timing-boundary omission/cancellation swallowing observed",
+    "node_budget_scope": "S3 reply candidates do not increment AlphaBeta node counters; node cap bounds searched nodes, not all nested legality work.",
+    "interpretation": "Potential equal-node-budget workload difference remains unmeasured; no defect or API change claimed.",
+    "next_question": "Measure one fixed-root S3 reply-scan case against its no-S3 control, recording nodes/legal-generation time/cancellation."
+  }
+}

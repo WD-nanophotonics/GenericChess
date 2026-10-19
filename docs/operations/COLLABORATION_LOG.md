@@ -4858,3 +4858,92 @@ commit that made this memo stale. `git diff --check` passed and the session
 workflow target passed all31 tests with an isolated local pytest temp;
 published commit `e98650c6c59e20b85fb8e97f4a3411a06b2c0a77` was verified at the
 same full `origin/sandbox` SHA.
+
+## PRIMARY semantic movement price and corrected panel —2026-10-20
+
+The mainline found a concrete profile gap: canonical Western semantic P had no
+legacy movement atoms, so the rule-only profile assigned board/hand 1/1 despite
+executable movement. PRIMARY added a bounded direct-geometry projection,
+versioned the evaluator cache to generic-v3, and found/fixed two connected
+promotion-potential geometry/index defects. The old 16-game run was retained as
+pre-fix only. The fresh corrected 16-slot panel completed in985.625s with
+1W/4L/0D/11UNKNOWN and conservative reward [-0.875,+0.500]; the interval is
+inconclusive and does not validate a general price/default. An independent
+8-generated-rule, 38-type compatibility sample found exact legacy-atom and
+promotable-forward-zone parity. These findings and exact outputs are in
+SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md and its public data directory.
+
+A source audit corrected the preregistered 3000s wording: it prevents starting
+another game but is not a hard kill for an in-flight game. The observed run ended
+well below that threshold. Focused pre-panel tests passed94 cases; final
+publisher verification still required. Static 5x5 artifacts already present in
+this checkout were preserved for the same delivery. No DEV_AUX or DEEPSEEK_AUX
+work was independently executed, changed or merged; their checkouts/state and
+unpublished work were not touched. The once-per-patrol DeepSeek read showed no
+evidenced current workflow recurrence; this bounded view is not a global health
+claim.
+
+The recent completed Slack root concerned an older AUX105 model-consumer route
+and did not change this mainline choice. Its exact raw thread was saved before
+reconcile; the local reconciler rejected the connector's thread metadata as
+`unrecognized Slack parent metadata`. No send retry or adoption followed. This
+transport bookkeeping failure does not block research or publication.
+
+## PRIMARY semantic search smoke correction — 2026-10-20
+
+The 5-fixture depth-1 check completed 20 calls with repeat and bounded-reference
+score parity, but it did not exercise the named mechanisms: every supplied root
+has only Kings and empty hands, while each semantic actor is R. The search chose
+legacy King moves in four nodes. PRIMARY withdrew the checkpoint's broader
+mechanism-coverage wording and recorded the exact scope in
+`SEMANTIC_SEARCH_INTERFACE_SMOKE_20261020.md` plus its compact JSON. A prepared
+compound-shift root with two R pieces initially failed to expose the intended
+semantic action because the adjacent piece was placed with file/rank reversed;
+corrected setup generated exactly one compound action and verified its transition.
+This was a setup correction, not a product fix. AUX checkouts,
+state and computation were not touched or adopted. The bounded DeepSeek chat
+read returned idle status and historical research artifacts; it does not
+establish current execution health, and no action was taken on that role.
+The seven targeted semantic-profile, evaluator/cache, unfamiliar-search,
+recombined-lifecycle, rectangular-capability and Native-search test files pass
+all90 cases. A corrected compound-shift root identified the initial probe's
+file/rank setup error; its actual semantic action and transition passed, with
+depth-1 plain/public-bundle scores equal to the completed Core reference. A
+second prepared screen-count root generated and applied its semantic capture;
+both controls selected it in the depth-1 PV and matched the completed Core
+reference. The two probes are fixture-level only, without repeats, utility or
+broad Native-parity claims. Full scope is in
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and its JSON. No AUX work was
+read from its checkout, edited, merged or adopted.
+An additional real-hand guarded-drop root after capture/history and a legal
+opponent reply contained one permitted drop among78 legal actions; both depth-1
+controls completed and matched Core, with the drop not selected in the PV. A
+separate direct transition check placed the piece and decremented the hand. The
+next scope was the auxiliary-expiry/promotion path. Its `sem_01` promotion
+action was reached after four legal plies; direct Core application set TP and
+the auxiliary slot, and a legal opponent King reply expired the slot. The
+45-action depth-1 root completed in both controls and matched Core, but the
+promotion was not selected in the PV. These remain fixture-level observations,
+not utility/performance/general Native claims; full evidence is in
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and its JSON.
+
+PRIMARY then completed the S3 reachable-hand boundary check: a real P capture
+and legal opponent reply supplied the hand state; the candidate checking drop
+was absent from the 62 legal root actions while a nonchecking control remained.
+Plain/public-bundle depth-1 searches completed at63 nodes and matched the62-leaf
+Core reference. The hypothetical child's reply set was not instrumented, so no
+mate explanation is asserted. The two focused S3 conjunction/Native-probe tests
+pass. This closes the scoped search-boundary question, not utility or general
+Native parity. The next bounded source/test inspection asks whether S3 reply
+probe work is represented in existing search counters/cancellation behavior;
+no new diagnostics API is planned without a measured discrepancy. No auxiliary
+checkout, session, computation or unpublished output was touched/adopted.
+
+The follow-up source audit found cancellation/deadline polls in S3 pattern and
+candidate loops, and confirmed full successor-iteration time is included in
+`legal_generation_seconds`. A new regression verifies an injected cancellation
+propagates; existing early-exit and nested-S4 tests also pass (3 targeted tests).
+Internal S3 reply candidates do not increment search node counts, so node-cap
+parity is not total-work parity. This is an interpretation limit, not yet a
+measured defect. PRIMARY has begun selecting a fixed-root S3/no-S3 paired cost
+measurement; no API/counter or policy change has been made.

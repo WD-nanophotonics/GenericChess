@@ -265,6 +265,36 @@ def test_reply_probe_early_exits(monkeypatch):
     assert len(trials) < total_candidates, "probe did not stop at the first reply"
 
 
+def test_s3_reply_probe_propagates_cooperative_cancellation():
+    engine = _engine(multiple_replies_ruleset)
+    s = engine.support
+    parent = multiple_replies_position(s)
+    parent_action = next(
+        action for action in engine.legal_actions(parent)
+        if action.pattern_id == "sem_00_parent_no_reply"
+    )
+    child = engine.apply(parent, parent_action)
+
+    class _Cancelled(Exception):
+        pass
+
+    checks = 0
+
+    def cancel_during_scan():
+        nonlocal checks
+        checks += 1
+        if checks == 3:
+            raise _Cancelled
+
+    try:
+        engine._exists_s3_reply(child, checkpoint=cancel_during_scan)
+    except _Cancelled:
+        pass
+    else:
+        raise AssertionError("S3 reply scan swallowed cooperative cancellation")
+    assert checks == 3
+
+
 # ------------------------------------------------------- nested S4 disabled
 
 

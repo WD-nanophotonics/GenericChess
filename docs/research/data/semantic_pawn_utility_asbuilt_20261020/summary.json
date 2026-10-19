@@ -1,0 +1,111 @@
+{
+  "games_total": 16,
+  "candidate_wins": 0,
+  "candidate_losses": 7,
+  "rule_draws": 0,
+  "unresolved": 9,
+  "failed": 0,
+  "fallback_games": 0,
+  "timing_invalid_games": 0,
+  "eligible_games": 7,
+  "candidate_score": 0.0,
+  "by_color": {
+    "0": {
+      "wins": 0,
+      "losses": 4,
+      "draws": 0
+    },
+    "1": {
+      "wins": 0,
+      "losses": 3,
+      "draws": 0
+    }
+  },
+  "paired_results": [
+    {
+      "position": "western_seed201",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "candidate_loss",
+        "unresolved"
+      ]
+    },
+    {
+      "position": "western_seed202",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "unresolved",
+        "candidate_loss"
+      ]
+    },
+    {
+      "position": "western_seed203",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "unresolved",
+        "unresolved"
+      ]
+    },
+    {
+      "position": "western_seed204",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "candidate_loss",
+        "unresolved"
+      ]
+    },
+    {
+      "position": "western_seed205",
+      "eligible": true,
+      "sweep": "control_sweep",
+      "results": [
+        "candidate_loss",
+        "candidate_loss"
+      ]
+    },
+    {
+      "position": "western_seed206",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "unresolved",
+        "candidate_loss"
+      ]
+    },
+    {
+      "position": "western_seed207",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "candidate_loss",
+        "unresolved"
+      ]
+    },
+    {
+      "position": "western_seed208",
+      "eligible": true,
+      "sweep": "split",
+      "results": [
+        "unresolved",
+        "unresolved"
+      ]
+    }
+  ],
+  "planned_games": 16,
+  "unstarted_games": 0,
+  "elapsed_seconds": 921.9530000000377,
+  "candidate_reward_bounds": {
+    "lower": -1.0,
+    "upper": 0.125
+  },
+  "profile_values": {
+    "candidate_P_board": 361,
+    "candidate_P_hand": 325,
+    "control_P_board": 1,
+    "control_P_hand": 1
+  }
+}
