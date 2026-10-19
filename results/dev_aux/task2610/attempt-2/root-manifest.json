@@ -1,0 +1,3500 @@
+{
+  "identity": "Complete canonical GameSession record including ruleset_fingerprint and complete action history; no normalization that could hide exact collisions.",
+  "prefix_plies": 4,
+  "prior_panel_manifest_sha256": "6c62717a45a1384240e0e5862f8173f2e7171679521ed37fccca237b9b028c37",
+  "roots": {
+    "271001:991053": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "base_type_id": "A",
+          "kind": "drop",
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991059": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991061": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            3,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991072": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991076": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991079": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991082": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991083": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991089": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            0,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991098": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991104": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991130": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_type_id": "A",
+          "kind": "drop",
+          "to": [
+            1,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991131": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991132": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991133": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            0,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271001:991138": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "776af8cde79cc41013b253889284c652f78bbc6cfdceaf5dde94bd585704112d",
+      "schema_version": 1
+    },
+    "271002:991036": {
+      "actions": [
+        {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991037": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991038": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991041": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "A",
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991042": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991043": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991044": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991046": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991052": {
+      "actions": [
+        {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991053": {
+      "actions": [
+        {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991054": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991056": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991057": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991060": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991062": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271002:991063": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7fa60c26c3224ec495ae215806736943623f3b14a1c05ac0a9be552b31369781",
+      "schema_version": 1
+    },
+    "271003:991030": {
+      "actions": [
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991031": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991034": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991035": {
+      "actions": [
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991036": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991040": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991042": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991044": {
+      "actions": [
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991045": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991046": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991047": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991050": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            0
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991053": {
+      "actions": [
+        {
+          "from": [
+            3,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991054": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991055": {
+      "actions": [
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271003:991056": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "bf2aed442ac751766fe584f5ced00417027503479d2bf27ae0ecb1c33b92ed9c",
+      "schema_version": 1
+    },
+    "271004:991043": {
+      "actions": [
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "base_type_id": "X",
+          "kind": "drop",
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991044": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991045": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991046": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            0,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991051": {
+      "actions": [
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": "A",
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991052": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991056": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991058": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991062": {
+      "actions": [
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            1,
+            3
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991063": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991064": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            1,
+            3
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            2,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991065": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": "X",
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991069": {
+      "actions": [
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            0,
+            2
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991070": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        {
+          "from": [
+            3,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991072": {
+      "actions": [
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            3
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            1
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            1
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    },
+    "271004:991073": {
+      "actions": [
+        {
+          "from": [
+            2,
+            0
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            2,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        },
+        {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": "A",
+          "to": [
+            3,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            2
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            0
+          ]
+        }
+      ],
+      "resigned_by": null,
+      "ruleset_fingerprint": "7cff0c646a81ce53f4b8ecb2705c1de9364a1d25c42818ae5b98b6e4ad6042e4",
+      "schema_version": 1
+    }
+  },
+  "selected_families": {
+    "271001": [
+      991053,
+      991059,
+      991061,
+      991072,
+      991076,
+      991079,
+      991082,
+      991083,
+      991089,
+      991098,
+      991104,
+      991130,
+      991131,
+      991132,
+      991133,
+      991138
+    ],
+    "271002": [
+      991036,
+      991037,
+      991038,
+      991041,
+      991042,
+      991043,
+      991044,
+      991046,
+      991052,
+      991053,
+      991054,
+      991056,
+      991057,
+      991060,
+      991062,
+      991063
+    ],
+    "271003": [
+      991030,
+      991031,
+      991034,
+      991035,
+      991036,
+      991040,
+      991042,
+      991044,
+      991045,
+      991046,
+      991047,
+      991050,
+      991053,
+      991054,
+      991055,
+      991056
+    ],
+    "271004": [
+      991043,
+      991044,
+      991045,
+      991046,
+      991051,
+      991052,
+      991056,
+      991058,
+      991062,
+      991063,
+      991064,
+      991065,
+      991069,
+      991070,
+      991072,
+      991073
+    ]
+  },
+  "selection_rule": "Per rule, ascending family ID, first 16 rows preclassified VALID_AFTER_TARGET in the task2607 outcome-blind candidate artifact. Those rows are legal nonterminal 4-ply records absent all 512 potential training start records and unique from the original task2609 panel. Selection reads no outcomes.",
+  "source_candidates_sha256": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
+  "state": "FROZEN_BEFORE_EVALUATION"
+}
