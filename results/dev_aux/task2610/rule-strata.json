@@ -1,0 +1,233 @@
+[
+  {
+    "panel": "task2609",
+    "rule": 271001,
+    "wdl": {
+      "initial": {
+        "DRAW": 1,
+        "LOSS": 66,
+        "WIN": 58,
+        "UNKNOWN": 3
+      },
+      "TD95": {
+        "WIN": 66,
+        "LOSS": 61,
+        "UNKNOWN": 1
+      },
+      "LocalLambda": {
+        "WIN": 69,
+        "LOSS": 58,
+        "UNKNOWN": 1
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 2,
+      "mean_bound": [
+        0.03125,
+        0.09375
+      ]
+    }
+  },
+  {
+    "panel": "task2609",
+    "rule": 271002,
+    "wdl": {
+      "initial": {
+        "WIN": 54,
+        "LOSS": 73,
+        "DRAW": 1
+      },
+      "TD95": {
+        "WIN": 86,
+        "LOSS": 42
+      },
+      "LocalLambda": {
+        "WIN": 98,
+        "LOSS": 28,
+        "DRAW": 2
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 0,
+      "mean_bound": [
+        0.203125,
+        0.203125
+      ]
+    }
+  },
+  {
+    "panel": "task2609",
+    "rule": 271003,
+    "wdl": {
+      "initial": {
+        "LOSS": 40,
+        "DRAW": 3,
+        "WIN": 59,
+        "UNKNOWN": 26
+      },
+      "TD95": {
+        "LOSS": 38,
+        "WIN": 59,
+        "UNKNOWN": 31
+      },
+      "LocalLambda": {
+        "LOSS": 32,
+        "UNKNOWN": 30,
+        "WIN": 66
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 53,
+      "mean_bound": [
+        -0.765625,
+        0.890625
+      ]
+    }
+  },
+  {
+    "panel": "task2609",
+    "rule": 271004,
+    "wdl": {
+      "initial": {
+        "WIN": 73,
+        "LOSS": 54,
+        "UNKNOWN": 1
+      },
+      "TD95": {
+        "WIN": 75,
+        "LOSS": 53
+      },
+      "LocalLambda": {
+        "WIN": 73,
+        "LOSS": 55
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 0,
+      "mean_bound": [
+        -0.03125,
+        -0.03125
+      ]
+    }
+  },
+  {
+    "panel": "task2610",
+    "rule": 271001,
+    "wdl": {
+      "initial": {
+        "WIN": 64,
+        "LOSS": 60,
+        "DRAW": 1,
+        "UNKNOWN": 3
+      },
+      "TD95": {
+        "WIN": 77,
+        "LOSS": 50,
+        "UNKNOWN": 1
+      },
+      "LocalLambda": {
+        "WIN": 78,
+        "LOSS": 49,
+        "UNKNOWN": 1
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 2,
+      "mean_bound": [
+        -0.015625,
+        0.046875
+      ]
+    }
+  },
+  {
+    "panel": "task2610",
+    "rule": 271002,
+    "wdl": {
+      "initial": {
+        "WIN": 60,
+        "LOSS": 67,
+        "DRAW": 1
+      },
+      "TD95": {
+        "WIN": 94,
+        "LOSS": 34
+      },
+      "LocalLambda": {
+        "WIN": 92,
+        "LOSS": 35,
+        "DRAW": 1
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 0,
+      "mean_bound": [
+        -0.0234375,
+        -0.0234375
+      ]
+    }
+  },
+  {
+    "panel": "task2610",
+    "rule": 271003,
+    "wdl": {
+      "initial": {
+        "WIN": 48,
+        "LOSS": 51,
+        "UNKNOWN": 23,
+        "DRAW": 6
+      },
+      "TD95": {
+        "WIN": 56,
+        "UNKNOWN": 38,
+        "LOSS": 32,
+        "DRAW": 2
+      },
+      "LocalLambda": {
+        "UNKNOWN": 33,
+        "WIN": 59,
+        "LOSS": 32,
+        "DRAW": 4
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 60,
+      "mean_bound": [
+        -0.9375,
+        0.9375
+      ]
+    }
+  },
+  {
+    "panel": "task2610",
+    "rule": 271004,
+    "wdl": {
+      "initial": {
+        "WIN": 62,
+        "LOSS": 66
+      },
+      "TD95": {
+        "WIN": 70,
+        "LOSS": 58
+      },
+      "LocalLambda": {
+        "WIN": 70,
+        "LOSS": 58
+      }
+    },
+    "ll_minus_td95": {
+      "pairs": 128,
+      "unknown_pairs": 0,
+      "mean_bound": [
+        0.0,
+        0.0
+      ]
+    }
+  }
+]

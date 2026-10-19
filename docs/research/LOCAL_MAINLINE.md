@@ -57,6 +57,34 @@ and task2606 training-root overlap as open limitations. See
 and `results/dev_aux/task2609/REPORT.md`. No product default, UI, Primary or
 DeepSeek state changes.
 
+Task2610 is an evaluation-only second pre-outcome-selected root panel, with 64 distinct exact rule-plus-full-history roots and zero intersections with task2609, of the
+same frozen task2606 models, not another training run. Its 1,536 slots finished
+in 702.419s; independent replay/accounting passed, with 99 UNKNOWN censored.
+Across both finite panels LocalLambda-minus-initial bounds are positive
+([+0.0430,+0.4414] and [+0.0195,+0.4414]), while LocalLambda-minus-TD95 spans
+zero in both ([-0.1406,+0.2891] and [-0.2441,+0.2402]). TD95-minus-initial
+is unresolved on the first panel and positive on the second. Pre-fixed
+per-seed/per-rule analyses show no stable learner-method ranking; rule271003
+is especially UNKNOWN-heavy. Thus the additional roots reproduce only a
+bounded LocalLambda-vs-initialization signal, not a TD95/LocalLambda winner.
+These are paired finite-panel bounds, not confidence intervals; seeds are
+crossed over roots, descendants are not proven disjoint, and broad transfer is
+not established. Both panels and all failures remain intact. Details, hashes,
+seed/rule strata and archived streams are in
+results/dev_aux/task2610/REPORT.md and its JSON evidence. This remains OPEN
+and does not alter the main learning route or any engine/UI default.
+A pre-outcome-only task2611 feasibility check found a distinct next step if
+seed replication is worth the cost: use deterministic new seeds
+[296135, 436664, 665887, 920190], the next 16 unused eligible roots per rule
+from task2607, and the same two learners, uniform foe and frozen per-arm budget.
+The deterministic seeds [296135, 436664, 665887, 920190] do not collide with the task2594/task2606 seeds. All 64 proposed four-ply full records replay as nonterminal and are exact-history
+disjoint from both prior panels. The observed task2606 training time (3469.318s)
+plus task2610-sized evaluation (702.419s) estimates 4171.737s (~69.5min), below
+the 120min consultation threshold. This is feasibility only, not a registered
+or launched task; task2611 must bind a fresh session UUID, freeze source/seed/
+root manifests and retain its own caps before execution. A four-seed batch is
+still small and cannot establish population effects. See
+results/dev_aux/task2611/FEASIBILITY.md.
 DEV_AUX's sidemission can be read, written, tested, and pushed through the
 supported reviewed-escalation path. The live ordinary sandbox still does not
 list this checkout as writable; this segment does not claim its setting was

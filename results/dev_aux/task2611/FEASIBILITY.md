@@ -1,0 +1,238 @@
+# task2611 feasibility — fresh-seed learner replication
+
+This is a design-only feasibility check. No training or evaluation was launched.
+
+{
+  "task": "DEV_AUX2611_FEASIBILITY_ONLY",
+  "candidate_source_sha256": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
+  "pre_outcome_source": "task2607 outcome-blind deterministic scan; classification predates task2609 and task2610",
+  "old_root_manifests": {
+    "results\\dev_aux\\task2609\\root-manifest.json": "6c62717a45a1384240e0e5862f8173f2e7171679521ed37fccca237b9b028c37",
+    "results\\dev_aux\\task2610\\attempt-2\\root-manifest.json": "042ef4ad447f63837c4a502ae05c7f640234e5c2906ac48ccb8b8540e9f08ca3"
+  },
+  "valid_candidate_counts_and_used": {
+    "271001": {
+      "valid_total": 153,
+      "used_panel_families": [
+        991053,
+        991059,
+        991061,
+        991072,
+        991076,
+        991079,
+        991082,
+        991083,
+        991089,
+        991098,
+        991104,
+        991130,
+        991131,
+        991132,
+        991133,
+        991138
+      ]
+    },
+    "271002": {
+      "valid_total": 462,
+      "used_panel_families": [
+        991036,
+        991037,
+        991038,
+        991041,
+        991042,
+        991043,
+        991044,
+        991046,
+        991052,
+        991053,
+        991054,
+        991056,
+        991057,
+        991060,
+        991062,
+        991063,
+        991064,
+        991069,
+        991072,
+        991073,
+        991076,
+        991079,
+        991082,
+        991083,
+        991130,
+        991131,
+        991132
+      ]
+    },
+    "271003": {
+      "valid_total": 375,
+      "used_panel_families": [
+        991030,
+        991031,
+        991034,
+        991035,
+        991036,
+        991040,
+        991042,
+        991044,
+        991045,
+        991046,
+        991047,
+        991050,
+        991053,
+        991054,
+        991055,
+        991056,
+        991057,
+        991060,
+        991061,
+        991063,
+        991064,
+        991065,
+        991069,
+        991072,
+        991079,
+        991083,
+        991089,
+        991098,
+        991132
+      ]
+    },
+    "271004": {
+      "valid_total": 320,
+      "used_panel_families": [
+        991043,
+        991044,
+        991045,
+        991046,
+        991051,
+        991052,
+        991056,
+        991058,
+        991062,
+        991063,
+        991064,
+        991065,
+        991069,
+        991070,
+        991072,
+        991073,
+        991082,
+        991098,
+        991131
+      ]
+    }
+  },
+  "proposed_third_panel": {
+    "271001": [
+      991145,
+      991151,
+      991154,
+      991155,
+      991165,
+      991168,
+      991173,
+      991177,
+      991178,
+      991187,
+      991190,
+      991210,
+      991211,
+      991213,
+      991217,
+      991219
+    ],
+    "271002": [
+      991067,
+      991071,
+      991075,
+      991077,
+      991080,
+      991081,
+      991085,
+      991086,
+      991087,
+      991088,
+      991090,
+      991091,
+      991092,
+      991094,
+      991102,
+      991105
+    ],
+    "271003": [
+      991066,
+      991074,
+      991075,
+      991081,
+      991085,
+      991088,
+      991092,
+      991093,
+      991095,
+      991099,
+      991100,
+      991102,
+      991103,
+      991107,
+      991109,
+      991111
+    ],
+    "271004": [
+      991074,
+      991080,
+      991084,
+      991086,
+      991087,
+      991088,
+      991092,
+      991093,
+      991100,
+      991101,
+      991105,
+      991106,
+      991107,
+      991108,
+      991110,
+      991111
+    ]
+  },
+  "proposed_new_seeds": [
+    296135,
+    436664,
+    665887,
+    920190
+  ],
+  "prior_seed_sets_checked": {
+    "task2594": [
+      1977,
+      8173,
+      27182,
+      31415
+    ],
+    "task2606": [
+      1977,
+      8173,
+      27182,
+      31415
+    ]
+  },
+  "training_arms": 32,
+  "nodes_per_arm": 312500,
+  "total_training_nodes": 10000000,
+  "observed_training_wall_seconds_task2606": 3469.31793010002,
+  "evaluation_slots": 1536,
+  "expected_evaluation_seconds_task2609_2610": [
+    691.419,
+    702.419
+  ],
+  "estimated_combined_seconds": 4171.73693010002,
+  "purpose": "If pursued, train all four rules \u00d7 four new deterministic seeds \u00d7 both fixed learner arms from scratch at the same nodes-per-arm, then evaluate on the next 16 eligible roots/rule, same uniform foe, endpoint/color/depth/node/H conditions. Distinguishes learner-seed replication using a new root panel; no model or root selection from 2609/2610 outcomes.",
+  "preflight_replayed_roots": 64,
+  "status": "FEASIBLE DESIGN ONLY; NOT REGISTERED OR RUN",
+  "limits": [
+    "One four-seed batch remains small and cannot establish population effects.",
+    "Evaluation-root selection is deterministic from the existing pre-outcome candidate stream, not a random sample.",
+    "Combined estimated run is ~70 minutes using observed task2606 training and task2610 evaluation times; actual must be reported."
+  ]
+}

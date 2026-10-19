@@ -1,0 +1,244 @@
+{
+  "attempt2_audit": {
+    "actual_terminals": 1437,
+    "complete_searches": 39958,
+    "incomplete_searches": 0,
+    "paired_reward_bounds": [
+      {
+        "difference_mean_bounds": [
+          0.046875,
+          0.46875
+        ],
+        "difference_sum_bounds": [
+          24,
+          240
+        ],
+        "left": "TD95",
+        "right": "initial",
+        "strata": 512,
+        "uncertain_pairs": 54
+      },
+      {
+        "difference_mean_bounds": [
+          0.01953125,
+          0.44140625
+        ],
+        "difference_sum_bounds": [
+          10,
+          226
+        ],
+        "left": "LocalLambda",
+        "right": "initial",
+        "strata": 512,
+        "uncertain_pairs": 54
+      },
+      {
+        "difference_mean_bounds": [
+          -0.244140625,
+          0.240234375
+        ],
+        "difference_sum_bounds": [
+          -125,
+          123
+        ],
+        "left": "LocalLambda",
+        "right": "TD95",
+        "strata": 512,
+        "uncertain_pairs": 62
+      }
+    ],
+    "queries": 39958,
+    "replayed_terminals": 1536,
+    "scope": "Finite 64-root exact-start-disjoint evaluation of frozen task2606 models against the uniform opponent. Not a descendant-state/history holdout or broad transfer claim.",
+    "search_nodes": 2201293,
+    "slots": 1536,
+    "status": "PASS",
+    "task": "DEV_AUX2610_ATTEMPT2",
+    "unique_full_start_roots": 64,
+    "unique_slots": 1536,
+    "unknown_horizons": 99,
+    "wdl_by_endpoint": {
+      "LocalLambda": {
+        "DRAW": 5,
+        "LOSS": 174,
+        "UNKNOWN": 34,
+        "WIN": 299
+      },
+      "TD95": {
+        "DRAW": 2,
+        "LOSS": 174,
+        "UNKNOWN": 39,
+        "WIN": 297
+      },
+      "initial": {
+        "DRAW": 8,
+        "LOSS": 244,
+        "UNKNOWN": 26,
+        "WIN": 234
+      }
+    }
+  },
+  "hashes": {
+    "attempt2_audit_sha256": "1bd230abf956406a72d854c9a57b5e04d15b529296caf7924307a228e9a0e7c0",
+    "attempt2_eval_plan_sha256": "5c21875097d4107d900591d0e2544e42f8fe88c00a78ce9f689fdd112b3e5484",
+    "attempt2_root_manifest_sha256": "042ef4ad447f63837c4a502ae05c7f640234e5c2906ac48ccb8b8540e9f08ca3",
+    "task2609_audit_sha256": "21f6c899198dde4bfac934e9eff723301821d2914ac62fa1302b251d8ed8f78a"
+  },
+  "limits": [
+    "Two finite pre-outcome-selected 64-root panels; not a random-sample confidence interval.",
+    "Four frozen parameter seeds are crossed with each root in each panel, not independent seed replication.",
+    "Descendant-state/history nonoverlap and broad rule/population transfer are not established.",
+    "99 UNKNOWN outcomes in the new panel remain censored; each affected pair widens to [-2,+2].",
+    "LocalLambda vs TD95 spans zero in both panels; the learner-method contrast is unresolved."
+  ],
+  "panels": [
+    {
+      "contrast": "TD95-initial",
+      "mean_bound": [
+        -0.048828125,
+        0.380859375
+      ],
+      "n": 512,
+      "panel": "task2609",
+      "unknown_pairs": 55
+    },
+    {
+      "contrast": "LocalLambda-initial",
+      "mean_bound": [
+        0.04296875,
+        0.44140625
+      ],
+      "n": 512,
+      "panel": "task2609",
+      "unknown_pairs": 51
+    },
+    {
+      "contrast": "LocalLambda-TD95",
+      "mean_bound": [
+        -0.140625,
+        0.2890625
+      ],
+      "n": 512,
+      "panel": "task2609",
+      "unknown_pairs": 55
+    },
+    {
+      "contrast": "TD95-initial",
+      "mean_bound": [
+        0.046875,
+        0.46875
+      ],
+      "n": 512,
+      "panel": "task2610",
+      "unknown_pairs": 54
+    },
+    {
+      "contrast": "LocalLambda-initial",
+      "mean_bound": [
+        0.01953125,
+        0.44140625
+      ],
+      "n": 512,
+      "panel": "task2610",
+      "unknown_pairs": 54
+    },
+    {
+      "contrast": "LocalLambda-TD95",
+      "mean_bound": [
+        -0.244140625,
+        0.240234375
+      ],
+      "n": 512,
+      "panel": "task2610",
+      "unknown_pairs": 62
+    }
+  ],
+  "per_rule_local_lambda_vs_td95": [
+    {
+      "mean_bound": [
+        0.03125,
+        0.09375
+      ],
+      "n": 128,
+      "panel": "task2609",
+      "rule": 271001,
+      "unknown_pairs": 2
+    },
+    {
+      "mean_bound": [
+        0.203125,
+        0.203125
+      ],
+      "n": 128,
+      "panel": "task2609",
+      "rule": 271002,
+      "unknown_pairs": 0
+    },
+    {
+      "mean_bound": [
+        -0.765625,
+        0.890625
+      ],
+      "n": 128,
+      "panel": "task2609",
+      "rule": 271003,
+      "unknown_pairs": 53
+    },
+    {
+      "mean_bound": [
+        -0.03125,
+        -0.03125
+      ],
+      "n": 128,
+      "panel": "task2609",
+      "rule": 271004,
+      "unknown_pairs": 0
+    },
+    {
+      "mean_bound": [
+        -0.015625,
+        0.046875
+      ],
+      "n": 128,
+      "panel": "task2610",
+      "rule": 271001,
+      "unknown_pairs": 2
+    },
+    {
+      "mean_bound": [
+        -0.0234375,
+        -0.0234375
+      ],
+      "n": 128,
+      "panel": "task2610",
+      "rule": 271002,
+      "unknown_pairs": 0
+    },
+    {
+      "mean_bound": [
+        -0.9375,
+        0.9375
+      ],
+      "n": 128,
+      "panel": "task2610",
+      "rule": 271003,
+      "unknown_pairs": 60
+    },
+    {
+      "mean_bound": [
+        0.0,
+        0.0
+      ],
+      "n": 128,
+      "panel": "task2610",
+      "rule": 271004,
+      "unknown_pairs": 0
+    }
+  ],
+  "root_identity_audit": {
+    "exact_rule_full_history_intersections": 0,
+    "task2609_roots": 64,
+    "task2610_roots": 64
+  },
+  "task": "DEV_AUX2610"
+}
