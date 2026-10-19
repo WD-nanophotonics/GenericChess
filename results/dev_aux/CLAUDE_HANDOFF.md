@@ -359,3 +359,4 @@ those files to review.
   config otherwise) with the SAME cold per-rule Fixed TD at 100k, registered
   first. Check channel/type admission first; record the generator outcome as
   is.
+- Admission check (in memory, seeds 900001-3, nothing written): board_size 5 yields non-anchor types P/A/B, not P/A/X. The task2565 CHANNELS are hard-coded to P/A/X, so the 5x5 step first needs rule-derived channels (as task2525 did), done as a copy + small diff. Recorded in NEXT_WORK Main. Segment 103 closed after this.
