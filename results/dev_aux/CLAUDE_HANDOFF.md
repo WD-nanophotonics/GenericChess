@@ -197,3 +197,74 @@ those files to review.
   Fixednu as the control and full promotion/drop/aux/history. First prove it is
   executable and can separate the candidates; scale only after that. Any design
   expected to take >=120 min goes to Dot first.
+
+---
+
+## Report 8 — 2026-10-19T08:28Z (segment 102 started: NEW-rule Generic transfer)
+
+- User direction: start 102 = a small transfer trial of the SAME learner on
+  full-semantics Generic rules, with a Fixednu control; keep hourly reports.
+  Session b1ad62e2-2eeb-4d9a-be02-ff71eb508b82, started 08:21:03Z.
+- Design (task2586, registered before any fitness):
+  - NEW rules: generator seeds 351001-351004, 4x4, generated once with no
+    retry or outcome filter, 0 failures. Neither checkout's plans had used
+    this block. PRIMARY used 291001-4, so I avoided it.
+  - TRAIN: the existing audited task2565 Generic code, unchanged. Fixed
+    regime (candidate vs fixed uniform nu), 6 free channel coefficients,
+    eta .05, lambda .95, D2, H128, prefix 4, all 4 initializations.
+    16 arms x 400k nodes, snapshots at 100k/200k/400k. Families 341000+.
+  - EVAL: 2560 slots = 4 rules x 4 seeds x 5 models x 8 NEW families
+    (345001-8) x 2 roles x 2 foes (DEV_AUX96 uniform/random99031).
+  - The 5 models are initial, Fixed@100k/200k/400k and OldRulesMean.
+    OldRulesMean is the per-seed mean of the DEV_AUX96 Fixed endpoints trained
+    on the OLD rules 271001-4. It tests transfer of learned prices with no
+    retraining.
+- The only new code is task2586/run.py. It patches task2565.train.compiled()
+  to also load task2586/rules-*.json, then calls the unchanged task2565
+  train/audit/verify/evaluate. The rest is register.py, bind.py and analyze.py.
+- Smoke test in ignored .local_agent/smoke2586: train, audit PASS,
+  unpruned 4/4, eval 16 games, deployment PASS.
+- Estimate ~65 min total, under 120 min, so no Dot pre-review is needed.
+  Running .local_agent/run102.sh, log .local_agent/run102.log.
+
+---
+
+## Report 9 — 2026-10-19T09:05Z (102 TRAIN closed, EVAL running)
+
+- TRAIN COMPLETE: 16/16 arms x 400k = 6.4M nodes in 2154 s.
+  - 8115 games: 7933 actual terminal, 182 UNKNOWN.
+  - 62,784 TD terms.
+  - 16 failed queries (658 nodes); these were paid for and are kept.
+- Unchanged task2565 audit PASS on all 124,962 queries (full history,
+  reverse credits, cost). Unpruned 32/32 verified.
+- Bound initial, Fixed@100k/200k/400k and OldRulesMean. EVAL (2560 slots)
+  started 09:04Z, ~26 min. No fitness has been read yet.
+- Rule notes (rule files only):
+  - All 4 share the same 4x4 initial layout.
+  - 351001/351002: P and X promote (forced); P/X drops are partly restricted.
+  - 351003: only P promotes (optional); drops are unrestricted.
+  - 351004: only P promotes (forced broadly); P drops on one rank only.
+
+---
+
+## Report 10 — 2026-10-19T09:30Z (segment 102 finished)
+
+- EVAL 2560/2560: 2439 actual, 121 U, 0 missing. Deployment audit PASS;
+  registered analysis PASS.
+- Result: on NEW rules, Fixed TD beats initial at every snapshot.
+  - Pooled: 100k [+.174,+.299], 400k [+.133,+.305]; both foes > 0.
+  - The curve saturates: 400k-100k is [-.131,+.096].
+  - OldRulesMean (no retraining) - initial: [+.084,+.197]. Fixed400k -
+    OldRulesMean: [-.029,+.186].
+  - Adverse: 351002 vs random99031. U rises with training.
+  - 16/32 EVAL roots were also TRAIN roots. A POST-HOC fresh-only check
+    (exposure_sensitivity.py) gives the same signs.
+- Files: SEGMENT_20261019_102.md, task2586/*, LOCAL_MAINLINE head 102,
+  COLLABORATION_LOG entry, NEXT_WORK rewritten (Main = separate H128
+  censoring from saturation using existing records).
+- Session finish: safe_checkpoint, 63.5 min.
+- About the 30-min routine: the user asked for one, but auto mode refused
+  CronCreate as unauthorized persistence. I gave the user a /loop command to
+  start themselves; none is running unless they started it.
+- Raw query logs stay local and uncommitted (convention): task2586/generic/queries.jsonl
+  and task2586/eval/eval-queries.jsonl.

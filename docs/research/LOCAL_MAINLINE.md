@@ -1,3 +1,20 @@
+# DEV_AUX102 — SAME Generic TD on NEW generated full-semantics rules; scientific OPEN
+
+Executor AUX_CLAUDE (Claude Code) in DEV_AUX checkout; session b1ad62e2-2eeb-4d9a-be02-ff71eb508b82 start 2026-10-19T08:21:03Z; base 66bd587f.
+Basis: DOT_REPLY 1792397818.663009 ranked small full-semantics Generic transfer with Fixednu control first.
+NEW rules 351001-4 (4x4, generated once, 0 failures, promotion/drops/history), unchanged task2565 Generic TD Fixed regime,
+all4initials, 16 arms x400k, snapshots 100/200/400k; OldRulesMean = per-seed mean of DEV_AUX96 Fixed endpoints (old rules).
+TRAIN 6.4M/2154s 8115g 7933actual/182U, audit PASS 124962q, unpruned32/32; EVAL 2560 2439actual/121U/0missing, deployment PASS.
+Fixed-initial pooled 100k[+.174,+.299]/400k[+.133,+.305], both foes positive; 400k-100k[-.131,+.096] (saturates early).
+OldRulesMean-initial[+.084,+.197]; Fixed400k-OldRulesMean[-.029,+.186] includes 0. Rule351002 vs random99031 negative all trained.
+U grows with training (init9 -> 400k35, H128). 16/32 EVAL roots TRAIN-exposed (layout+4ply collisions); POST-HOC fresh-only
+contrasts same signs (100k[+.254,+.410], OldRulesMean[+.117,+.258]). No population/all-rule/stable-price claim.
+Current decision: SAME learner transfers to these NEW rules; old-rule averaged prices are a competitive no-retrain prior.
+Next: separate horizon censoring from learning saturation on existing records, then consider warm-start-from-OldRulesMean dose test.
+Report results/dev_aux/SEGMENT_20261019_102.md.
+
+## Historical completed101
+
 # DEV_AUX101 — Fixednu vs SelfCandidate SAME plain TD at 2.5M/arm; scientific OPEN
 
 Executor: Claude Code substitute for DEV_AUX (user direction 2026-10-19); log results/dev_aux/CLAUDE_HANDOFF.md.

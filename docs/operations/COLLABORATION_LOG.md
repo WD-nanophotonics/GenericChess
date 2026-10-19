@@ -2719,3 +2719,14 @@ over Fixednu (pooled +.0078 at 2.5M, signs differ by foe/prefix/seed) and fewer
 TD terms per node. No PRIMARY/DeepSeek code read, run or adopted; no Slack send.
 Handoff log results/dev_aux/CLAUDE_HANDOFF.md. Local commit only until the user
 approves publication.
+
+## DEV_AUX102 — Generic transfer on NEW rules (AUX_CLAUDE)
+
+AUX_CLAUDE (Claude Code, user-directed substitute in the DEV_AUX checkout)
+adopted Dot reply 1792397818.663009: small full-semantics Generic transfer with
+Fixednu control. NEW rules 351001-4, unchanged task2565 learner/audits; all
+audits PASS. Fixed TD beats initial on new rules at every snapshot (pooled
+lower bound > 0, both foes); gain saturates by 100k; old-rule averaged prices
+transfer partially. Rule 351002/random foe adverse; U rises with training;
+16/32 EVAL roots TRAIN-exposed (post-hoc fresh-only check same sign).
+No PRIMARY/DeepSeek code read, run or adopted.
