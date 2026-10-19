@@ -2804,3 +2804,28 @@ residuals use lambda=.95 and UNKNOWN remains censored. The tests cover baseline
 equivalence, selective trace change, UNKNOWN and incomplete searches. No
 standard-Chess fitness or Generic training has begun; no shared learner or
 other role was touched.
+
+Fixed revision `ef505baed2bb137016ee7f84bc6d2a28d8543119` was sent as an
+evidence-only follow-up in the existing 107a thread (message ts
+1792424234.091699); thread readback confirms delivery. Dot reading, adoption or
+independent execution remains unconfirmed.
+
+## DEV_AUX task2594 preregistration checkpoint — 2026-10-20
+
+Following the user's 2026-10-17 route decision, DEV_AUX froze a standard-Chess
+probe of the outcome-gated local TDLeaf trace before training or fitness. It
+reuses the same four seeds and 1M-node TD(.95) baseline endpoints from task2568,
+adds only four candidate 1M-node arms, and evaluates initial/baseline/candidate
+on 768 fixed slots from 128 new exact-history roots. Existing baseline terminal-PV
+target exposure is 186 pooled (37/66/38/45 by seed). UNKNOWN and missing outcomes
+remain bounded; migration requires audited updates, >=128 candidate terminal
+PV targets, and positive finite paired W-L lower bounds against both baseline
+and initialization. The accounted estimate is 84 minutes including historical
+baseline cost and audit allowance, below the user's 120-minute assessment gate.
+
+The frozen task2568 runner contract was checked directly. Three pre-run
+registration versions were retained as superseded history while data pins and
+required top-level runner fields were added; v4 is the active registration. No
+training/fitness run had started during these corrections. Root/source/plan
+hashes and runner contracts pass; the task2593 learner's four unit tests pass.
+No Generic migration or product default change is authorized by this result.
