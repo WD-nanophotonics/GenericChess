@@ -940,3 +940,144 @@ on a real generated-rule substrate, while remaining one-seed/profile-only
 sensitivity without utility or companion-shift valuation. Keep the semantic
 bridge provisional; do not claim generic-domain validation. Exact evidence:
 `SEMANTIC_PRICE_GENERATED_SUBSTRATE_20261020.md` and its JSON.
+
+## Compound semantic search return under node caps — 2026-10-20
+
+The scoped action/PV question now includes five deterministic node caps on the
+same serialized reachable compound-shift fixture. All returned a root-legal
+action and preserved caller history. Before a completed iteration the action
+was a legal fallback and PV empty; after depth1 or depth2 completed, PV began
+with the action and every retained edge replayed. The API documentation now
+states that `action` is the executable choice and PV is the last completed line.
+The lifecycle regression and 109 relevant tests pass. This closes only the
+fixed fixture's output-contract question, not fallback quality, strength or
+all-domain interruption behavior. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/compound_search_node_budget_20261020.json`.
+
+The full suite was attempted using an ignored project-local temp root: 74
+optional Native fault-build setup errors (runtime Python libraries inaccessible
+to Zig), two synthetic Git fixture failures before their intended remote/hook
+assertions, and one unchanged product assertion expecting a Western generic-v3
+pawn value of1 but observing361. The full log is preserved privately; no full
+suite pass is claimed. These do not block the completed targeted interface
+check and are not attributed to this patch.
+
+The same return contract was then checked on the existing reachable en-passant
+double-step root, where action-base removal intentionally leaves legality on
+Core. At caps1 and25 both returned legal fallback actions; depth0 returned an
+empty PV, and the completed depth1 PV began with the action and replayed. The
+caller history remained unchanged; the provider was absent with zero Native
+calls/fallbacks/failures. The targeted lifecycle regression passes. These low-
+budget fallbacks did not select the probe-targeted off-target capture, which is
+not a quality/strength claim and does not make the Core route defective. Data:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/core_only_en_passant_budget_20261020.json`.
+
+Next select one high-value unknown-rule search condition not already exhausted
+by fixed action/PV interface checks—prefer a finite-behavior or stability
+question with a result that changes backend/search-interface work. Before any
+new fixture, inspect current LOCAL_MAINLINE evidence and executable callers to
+avoid repeating the completed interruption-contract probes. Keep scope to one
+bounded case and record the decision criterion before running it.
+
+One fixed stock-generated8x8 bilateral-random opening was then checked with
+the default player and node caps1/64/256. Its44 legal root actions returned a
+legal selection at every cap; the first two stopped before a completed
+iteration with empty PV, while cap256 retained a depth2 PV beginning with the
+action and replayed it. Nodes stayed within each cap and input history stayed
+unchanged. This confirms a narrow budget/interface path on stock atom-generated
+rules, not a semantic-action generator or strength claim. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/generated_root_node_budget_20261020.json`.
+
+The related source/test inventory already covers root fallback provenance,
+history/cycle keys, and semantic checkpoints; all three public consumers use
+`decision.action` rather than deriving the choice from the PV. Do not repeat
+generic cap/PV or unchanged-history checks. Next choose a distinct uncertain
+failure mode from the unfamiliar-rule search objective and state what result
+would change implementation before running it.
+
+An explicit cancellation on the compound fixture, triggered by the callback
+after completed depth1, returned `cancelled` while retaining the exact compound
+action and one-edge PV; replay was legal and the input history remained
+unchanged (53 nodes, one Native call, no fallback). The targeted lifecycle test
+passes. This checks one semantic completed-iteration boundary, not general
+deadline or cancellation behavior. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/compound_search_cancel_20261020.json`.
+
+Next inspect whether a deterministic deadline-expiration test already exercises
+the *between-iterations* return boundary on unfamiliar semantic actions. If
+not, use one fake-clock probe to decide whether the last fully completed PV is
+retained; do not start a timing/performance sweep.
+
+The bounded fake-clock probe and regression now cover that missing case on the
+same serialized compound rule. After depth1 completed (53 nodes), the callback
+expired the deadline; result was `time_limit`, with the exact compound action
+and one-edge PV retained, legally replayed, and caller history unchanged (one
+Native call, no fallback). This complements the node-cap and explicit-cancel
+checks without making a real-time or all-domain claim. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/compound_search_deadline_20261020.json`.
+
+This closes the bounded return/PV contract across node cap, explicit
+cancellation, fake-clock deadline, Core-only en-passant routing, and one stock-
+generated root. The next mainline action is a fresh review of the remaining
+unfamiliar-rule search gaps in `UNFAMILIAR_RULE_SEARCH.md`; formulate one
+different implementation-changing question before any new run. Do not broaden
+this completed fixture suite into a cap or timing campaign.
+
+As a distinct root-cost spot check, one existing24x24 generated hybrid (seed
+2026101965,96 pieces) exposed222 legal root actions. A default depth1/one-node
+call returned a legal depth0 fallback, empty PV, exactly1 search node and
+reported about15ms to first legal action; input history stayed unchanged. This
+shows root preparation is measured separately from node visits, but this single
+latency does not suggest a broad bottleneck or justify a counter/API change.
+Evidence: `SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/generated_large_root_budget_20261020.json`.
+
+Next ask whether a specific unfamiliar-rule shape produces materially high
+root-preparation cost relative to its finite caller budget; choose a declared
+generated/recombined input where the result could justify a scheduling or
+generation change. Do not widen into a generic benchmark sweep absent an
+adverse concrete case.
+
+The fixed24x24 generated root was paired at cap256 with the default root
+tactical scan and with only that scan disabled. Default consumed222 scan nodes,
+stopped before depth1 and returned legal ongoing fallback `g2-g23`; scan-off
+completed depth1 in223 nodes and returned that same legal ongoing action. Both
+preserved history. This confirms a local budget/depth tradeoff, while existing
+root-terminal-win tests cover a separate correctness benefit of the scan.
+One root supplies no strength or distribution claim, so retain the default and
+make no code change. The18 root-scan/generation/latency tests pass. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/generated_root_scan_budget_pair_20261020.json`.
+
+Next inspect one concrete unfamiliar-rule search failure mode outside root
+scan/PV/cancellation contracts, using `UNFAMILIAR_RULE_SEARCH.md` and current
+public callers to identify a falsifiable finite-behavior/stability gap. State
+what result would change backend work before any bounded run; do not expand to
+a timing sweep or alter root-scan defaults from this single-root control.
+
+That review found one unmeasured cancellation boundary: semantic root action
+enumeration aborts cooperatively, after which fallback repeats the legal-action
+request without a checkpoint to return an executable action. A single
+size24/222-action generated-root probe injected cancellation at poll100; it
+observed two legality requests, a legal fallback, zero search nodes/depth,
+unchanged input history, about26ms aggregate generation and about16ms to first
+legal action. This confirms the designed fallback retry on one high-branch
+case, not a defect or a general latency bound. Keep the fallback contract and
+make no code change from this evidence. Evidence:
+`SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
+`data/generated_root_cancel_fallback_20261020.json`.
+
+The bounded search-interface return/cancel investigation now has no observed
+action/PV, state/history or finite-root failure warranting a product change.
+Next check the public AlphaBeta route for an explicitly enabled `PassAction`
+under consecutive-pass adjudication: force a pass with a test-only evaluator on
+the existing4x4 fixture, replay the returned PV, then commit/replay the action
+record and compare pass count, terminal state, board/hands and history with
+Core. This tests an action kind not yet demonstrated through the public search
+consumer; make no production change unless it disagrees with Core. Keep the
+rule-only price question available after this bounded search-interface check.

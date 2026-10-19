@@ -1,0 +1,32 @@
+{
+  "schema": "generic_chess.generated_large_root_budget_probe.v1",
+  "config": {
+    "seed": 2026101965,
+    "board_size": 24,
+    "setup_preset": "bilateral_random",
+    "allow_hybrid": true
+  },
+  "entities": 96,
+  "root_legal_actions": 222,
+  "limits": {
+    "max_depth": 1,
+    "max_nodes": 1,
+    "q_depth": 0,
+    "default_player": true
+  },
+  "result": {
+    "termination_reason": "node_limit",
+    "completed_depth": 0,
+    "nodes": 1,
+    "qnodes": 0,
+    "time_to_first_legal_action_seconds": 0.014999999955762178,
+    "elapsed_seconds": 0.014999999955762178,
+    "action_legal": true,
+    "pv_edges": 0,
+    "pv_replays": true,
+    "history_unchanged": true,
+    "native_calls": 0,
+    "native_fallbacks": 0
+  },
+  "interpretation": "One existing large generated case exposes root-generation latency separately from search-node count; no performance generalization or root-generation defect claim."
+}

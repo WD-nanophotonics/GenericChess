@@ -1,0 +1,33 @@
+{
+  "schema": "generic_chess.compound_search_deadline_probe.v1",
+  "fixture": "serialized weird_rulesets()[3], reachable two-ply public GameSession history",
+  "deadline": {
+    "max_depth": 3,
+    "max_time_seconds": 1.0,
+    "fake_clock_expired_after_completed_depth": 1,
+    "q_depth": 0,
+    "q_hard_depth": 0,
+    "q_nodes": 0,
+    "tt": false,
+    "ordering": false,
+    "evaluator": "test-only exact compound-effect probe"
+  },
+  "completion_callbacks": [
+    {
+      "depth": 1,
+      "nodes": 53,
+      "qnodes": 0
+    }
+  ],
+  "termination_reason": "time_limit",
+  "completed_depth": 1,
+  "action_pattern": "sem_00_move_and_shift_adjacent_friendly",
+  "action_root_legal": true,
+  "pv_edges": 1,
+  "pv_starts_action": true,
+  "pv_replays": true,
+  "caller_history_unchanged": true,
+  "native_calls": 1,
+  "native_fallbacks": 0,
+  "interpretation": "Deterministic fake-clock expiration between completed iterations preserves the prior compound-action PV on one fixture; no wall-time, strength, or all-rule claim."
+}

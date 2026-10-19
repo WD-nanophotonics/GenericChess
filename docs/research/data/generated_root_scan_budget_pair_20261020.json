@@ -1,0 +1,51 @@
+{
+  "schema": "generic_chess.generated_root_scan_budget_pair.v1",
+  "config": {
+    "seed": 2026101965,
+    "board_size": 24,
+    "setup_preset": "bilateral_random",
+    "allow_hybrid": true,
+    "max_generation_attempts": 4,
+    "root_legal_actions": 222,
+    "node_cap": 256,
+    "max_depth": 1,
+    "quiescence_max_depth": 0
+  },
+  "arms": [
+    {
+      "name": "default_root_tactical_scan",
+      "termination_reason": "node_limit",
+      "completed_depth": 0,
+      "nodes": 256,
+      "root_scan_nodes": 222,
+      "root_scan_used_fallback": true,
+      "action": "g2-g23",
+      "action_legal": true,
+      "child_terminal_status": "ONGOING",
+      "child_winner": null,
+      "score": 0,
+      "pv_length": 0,
+      "history_unchanged": true,
+      "elapsed_seconds": 0.25,
+      "time_to_first_legal_action_seconds": 0.030999999959021807
+    },
+    {
+      "name": "root_tactical_scan_disabled",
+      "termination_reason": "completed_depth",
+      "completed_depth": 1,
+      "nodes": 223,
+      "root_scan_nodes": 0,
+      "root_scan_used_fallback": false,
+      "action": "g2-g23",
+      "action_legal": true,
+      "child_terminal_status": "ONGOING",
+      "child_winner": null,
+      "score": 3514,
+      "pv_length": 1,
+      "history_unchanged": true,
+      "elapsed_seconds": 0.20300000003771856,
+      "time_to_first_legal_action_seconds": 0.015000000013969839
+    }
+  ],
+  "interpretation": "Single deterministic configuration diagnostic: scan allocation prevented a completed depth-1 iteration on this root, while both arms selected the same ongoing legal action. Existing root-terminal-win tests protect a distinct safety use of the scan. No strength, universal cost, or default-policy claim."
+}

@@ -5033,3 +5033,53 @@ research; PRIMARY did not inspect its checkout/data or validate its science.
 Exact source/runtime evidence is in `SEMANTIC_PROFILE_DEFAULT_STATUS_20261020.md`
 and its JSON; existing cache-separation and semantic-profile tests are the
 relevant regression basis.
+
+## PRIMARY_SANDBOX — bounded search-result contract continuation — 2026-10-20
+
+PRIMARY completed a scoped review of AlphaBeta's public action/PV result on a
+serialized compound semantic rule, its reachable Core-only en-passant route,
+and one stock-generated mixed-movement root. Deterministic node caps returned
+legal actions; when a full iteration existed, its PV began with the action and
+replayed; depth0 correctly had an empty PV. Explicit cancellation and a
+fake-clock between-iteration deadline retained the compound action/PV from the
+last completed depth. Caller histories remained unchanged. PRIMARY clarified
+`PlayerDecision` documentation and added product regressions/data; no search
+algorithm or evaluator behavior changed.
+
+Five relevant product files pass109 tests. A full-suite attempt remains
+non-clean:74 setup errors from optional Zig fault-build access to runtime
+Python libraries, two temporary Git fixture failures before their intended
+remote/hook assertions, and one unresolved assertion in an unchanged semantic
+opportunity test (expected1, observed361). Raw log and detailed classification
+are private under ignored `.local_agent`; no full-suite pass is claimed.
+Initial test-harness mistakes (missing local temp parent, then fake-clock proxy
+without `perf_counter`) were recorded and corrected; neither was a product
+failure. All changed files/data were checked for whitespace/JSON validity.
+
+DEV_AUX and DEEPSEEK_AUX had no contribution needed for this scoped contract
+check; PRIMARY did not edit their checkouts, inspect their private state, or
+repeat their experiments. No disagreement or integration decision arose. The
+next action is to select a distinct decision-changing unfamiliar-search gap
+from `UNFAMILIAR_RULE_SEARCH.md`, avoiding another generic cap/PV fixture.
+
+During this continuation PRIMARY paired the existing size24 root at cap256
+with root tactical scanning on/off. The scan spent222 nodes and left no
+completed iteration; scan-off completed depth1 in223, but both arms selected
+the same legal ongoing action. Existing root-terminal-win regressions cover the
+scan's separate correctness purpose. A controlled cancel at checkpoint poll100
+during semantic root generation caused the designed uncancelled legal-fallback
+retry: two legality requests, legal action, unchanged history, about26ms
+aggregate generation and16ms to first action. Eighteen focused root-scan/
+generation/latency tests pass. These single-root controls do not justify a
+default change or broad latency claim; no product code changed in this
+continuation. AUX roles had no dependency on this check and were not contacted.
+The next selection checks public AlphaBeta on an explicitly enabled
+`PassAction`: force it using a test-only evaluator on the existing4x4
+consecutive-pass fixture, replay its PV, and compare GameSession commit/record
+replay with Core. This probes a distinct action kind through the actual search
+consumer without changing production defaults. Exact records are in the
+current mainline report and its compact JSON files.
+The final combined nine-file focused regression command also completed successfully:
+recombined semantic lifecycle, search path runtime, Native semantic repack,
+generation, search-generation accounting, root terminal wins, semantic checkpoint,
+result provenance, and search latency. No full-suite success is claimed.

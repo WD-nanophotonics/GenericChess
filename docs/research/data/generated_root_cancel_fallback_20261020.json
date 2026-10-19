@@ -1,0 +1,26 @@
+{
+  "schema": "generic_chess.generated_root_cancel_fallback.v1",
+  "config": {
+    "seed": 2026101965,
+    "board_size": 24,
+    "setup_preset": "bilateral_random",
+    "allow_hybrid": true,
+    "max_generation_attempts": 4,
+    "cancel_after_root_checkpoint_polls": 100
+  },
+  "result": {
+    "termination_reason": "cancelled",
+    "completed_depth": 0,
+    "nodes": 0,
+    "legal_generation_requests": 2,
+    "root_checkpoint_polls": 100,
+    "legal_actions_generated_on_successful_request": 222,
+    "legal_generation_seconds_including_abort_and_fallback": 0.026265399996191263,
+    "time_to_first_legal_action_seconds": 0.01600000000325963,
+    "fallback_action": "a2-d5",
+    "fallback_action_legal": true,
+    "history_unchanged": true,
+    "result_source": "legal_fallback"
+  },
+  "interpretation": "One controlled cancellation during the root legal-action request causes a second uncancelled request in the public fallback path. The aggregate generation cost was about 26ms on this fixed 24x24 generated root. This is bounded one-case behavior; no material user-visible delay or generic defect is established."
+}

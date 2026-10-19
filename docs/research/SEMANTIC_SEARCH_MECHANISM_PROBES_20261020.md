@@ -149,3 +149,244 @@ an executable legacy King action, and its PV replayed legally. The root had5
 legal actions. This confirms search accepts that state and returns a legal
 line, but the selected line did not exercise promotion/drop transitions, so it
 is only an interface check and adds no mechanism-utility or performance claim.
+
+## Public AlphaBeta compound-shift action/PV follow-up
+
+A focused lifecycle regression now exercises `weird_rulesets()[3]` with a
+fixed 8x8 legal setup containing K/R/R and a two-ply public `GameSession`
+history. A test-only evaluator rewards exactly the companion shift's two-piece
+result so the search must carry the compound `Action` through the public
+decision interface. At completed depth2, Native legality returned the exact
+Core-generated `sem_00_move_and_shift_adjacent_friendly` action; both PV edges
+replayed through `GameSession.submit`; the caller session record remained
+unchanged during search, and the board contained the expected R pieces on e5
+and d6. The target file and adjacent runtime-history/Native-repack
+tests pass (63 tests across the three files). This test guards one concrete API
+contract; the custom evaluator does not establish natural preference or
+strength.
+
+The same action was recombined onto generator-produced seed21/size6 hybrid
+types K/P/X/A/B. The action and replacement K/P/A setup are synthetic and are
+not emitted by the generator; the generator-produced type definitions,
+promotion targets and compilation boundary are real. The default evaluator
+completed depth2 with a legal two-edge PV (15 Native calls, zero fallback or
+operational failure). A separate controlled probe forced the exact P action;
+it returned the same `Action` identity at depth2 and replayed the PV through
+Core. These checks establish only supported compilation/search and replay for
+these two constructed roots, not native-generator action coverage or
+all-generated-domain equivalence.
+
+On the 8x8 fixture, owner0-normalized material-only evaluation was unchanged
+(2000 before/after) across the actual compound transition, while the default
+score moved 2044->2052. A synthetic main-move-only control moved 2044->2044;
+feature ablation assigns the +8 companion increment to dynamic mobility
+(dynamic-only +8, material-only 0, anchor-only 0). On a fixed two-ply root, a
+depth3/q0/node2500 pair with dynamic-mobility weight2 versus0 completed both
+arms and retained the same action and three-edge PV (scores2122/2070; nodes
+2089/1724). This is one evaluator-sensitivity example, not a benefit or
+strength result. It gives no reason to add an action-specific value term or
+change default weights.
+
+A separate existing castling fixture checks an action with a persistent auxiliary
+right: bounded depth1 public AlphaBeta search selected the exact Core
+`sem_00_king_side_shift` action, and replay moved both king and rook while
+clearing the owner's right. Search left the caller's session record unchanged;
+Native legality was used without fallback or operational failure. A test-only
+evaluator targeted this transition. This is a fixed-fixture action/PV contract
+check, not a utility or strength result.
+
+A bounded history-dependent off-target-capture case uses the actual public
+sequence P c2-c4 (setting the transient token), then P b4xc3. Core AlphaBeta
+selected the exact token-guarded action and its full depth2 PV replayed through
+`GameSession`; the captured pawn entered owner1's hand and the token cleared.
+The caller record stayed unchanged. Native was deliberately not created:
+`NativeSemanticLegalityProvider.try_create` declines action-base removal
+semantics, retaining Core. An initial Native-call expectation failed and was
+corrected after source inspection; this is an existing route boundary, not a
+Native defect or general coverage claim. A separate depth2 call on the same
+reachable root with the unmodified default evaluator also selected this exact
+off-target capture (46 nodes; two PV edges), and the PV replay verified the
+capture-to-hand/token-clear transition. This is one local choice, not evidence
+of strength or optimality.
+
+An adjacent rule-price projection audit holds the transient-token declaration
+and double-step action fixed, removing only both guarded off-target capture
+patterns. The full and control P inputs match exactly: the same forward-ray
+signature, raw2.2299787158, normalized board1000/hand900, and semantic signature.
+The full profile explicitly lists both captures as excluded for compound/state
+effects. This says those omitted capture patterns do not alter this static
+projection; it does not say their actual rule utility is zero. A broader
+control that removed every semantic action changed hand classification because
+the aux slot disappeared, so it is retained privately as a confounded attempt.
+
+
+The same lifecycle now also forces the real semantic promotion at ply4 through
+a depth1 public AlphaBeta call. Its exact action and PV replay preserve the base
+R/current TP/promoted identity and set the auxiliary right; the probe evaluator
+is test-only and the search leaves the caller history unchanged. This is a
+reachable interface check, not a preference or strength result.
+
+A further action-interface check extends the existing capture/promotion/expiry
+lifecycle. After real public-session history produced58 legal R drops, a bounded
+depth1 AlphaBeta call with a test-only effect probe selected the exact R drop to
+a1. The returned action replayed through `GameSession`, placed the rook, and
+decremented hand count once; the caller history remained unchanged during
+search. This is a reachable-state API check, not natural preference or strength.
+
+The compact public evidence is in
+`docs/research/data/compound_search_interface_followup_20261020.json`; full
+experiment records remain locally available in ignored `.local_agent`.
+
+
+## Stock generated-rule caller and reachable lifecycle sample
+
+The ordinary `generic_chess.generation.generate_game` implementation constructs
+its `RuleSet` from generated movement atoms and derived promotion/drop data; it
+does not supply `semantic_actions`. A fixed 12-config sample (two presets,
+board sizes 4/6/8, two prespecified seeds) confirms zero semantic actions in
+every output. With the unmodified default evaluator, public AlphaBeta completed
+depth 2 on ten roots and returned a rule-immediate win before iteration on two
+4x4 roots. Across the 12 roots, 3,011 nodes and 22 returned PV edges were
+recorded; every PV replayed and every caller record remained unchanged. Those
+PV edges comprised 20 captures, no promotion or drop.
+
+To exercise actual generated promotion/drop histories, the same 12 fixed
+configs were advanced through deterministic legal histories, stopping at the
+first available promotion or drop. Eight reached promotion and four reached a
+drop within seven plies. A bounded depth-1 search with a test-only exact
+successor probe selected the target in 11 cases; the remaining root had an
+independent immediate-win result before a completed iteration. All 12 returned
+PV edges replayed through `GameSession`, and all input records stayed unchanged.
+This is selected-fixture interface evidence, not event frequency, strategy,
+strength or utility. It distinguishes the stock atom generator from the broader
+semantic/recombined rule target; the latter remains covered by the separate
+fixture-level probes above, with their synthetic boundaries explicit. The data
+records exact configs and per-root outcomes in
+`data/generated_search_interface_followup_20261020.json`; raw attempts remain
+in ignored `.local_agent/quality-20261020/`.
+
+
+A separate end-to-end persistence check serialized and reloaded the fixed
+compound-shift `RuleSet` before compilation and search. Exact `RuleSet` equality
+and stable serialized bytes held; the public two-ply `GameSession` then returned
+the exact compound action in a completed depth-2 search, and both PV edges
+replayed after reload (110 nodes, 27 Native calls, no fallback). The focused
+regression now includes this serialize/reload boundary. This is one fixed
+semantic rule with a test-only evaluator, not generated-semantic coverage or a
+utility/strength claim. Hash and details are in
+`data/generated_search_interface_followup_20261020.json`.
+
+The same persisted compound-shift route now also round-trips the two-ply
+`GameRecord` before search and asserts exact equality on replay. This closes the
+scoped serialized rule + serialized history interface check; it does not extend
+the fixture/domain or utility conclusions.
+
+
+## Interrupted compound-search result contract
+
+On that same serialized, reachable compound-shift root, five deterministic
+node-budget probes at caps30,50,80,110,150 all stopped with `node_limit` and
+returned a root-legal action without mutating caller history. At caps30 and50 no
+uniform iteration completed (`completed_depth=0`) and the PV was empty. At
+caps80 and110 depth1 was retained; at150 depth2 was retained. In each nonempty
+case the PV began with the separately returned action and every PV edge replayed
+legally. Native legality was used without fallback. These bounded probes show
+the current API distinction: callers execute `decision.action`; the PV is only
+the last completed line and can be empty. They do not show strength, value of
+the fallback, or all-rule interruption behavior. `PlayerDecision` now documents
+that distinction, with a regression on the compound action. Compact rows are
+in `data/compound_search_node_budget_20261020.json`.
+
+The five-file targeted search/lifecycle suite passes 109 tests after this change.
+A full-suite attempt completed with 74 setup errors and 3 failures: optional
+Native fault-build fixtures could not read the runtime Python `libs` directory
+and Zig could not find `python312`; two synthetic Git publication fixtures
+could not push/read their temporary remote; a separate existing semantic
+opportunity assertion expected the generic-v3 Western pawn value to equal 1 but
+observed 361. None of these changed files are in this patch; the last is an
+unresolved unrelated baseline expectation, not treated as an environmental
+error. Full raw output is retained privately under ignored
+`.local_agent/quality-20261020/full-pytest-local-basetemp.log`; no full-suite
+pass is claimed.
+
+The interrupted-return contract was also checked on the reachable en-passant
+double-step root, whose action-base removal makes the Native legality provider
+decline and leaves Core as the legal-generation route. At node caps1 and25,
+`node_limit` returned root-legal ordinary fallback actions; cap1 had no completed
+iteration and an empty PV, while cap25 retained a one-edge depth1 PV beginning
+with the action. Both PV shapes replayed, caller history was unchanged, and no
+Native call/fallback/failure was reported. The test-only evaluator was aimed at
+the off-target capture, but these small-budget fallback actions did not select
+it; no choice-quality claim follows. See
+`data/core_only_en_passant_budget_20261020.json`.
+
+The product consumers checked in `ui.controller`, `benchmark.runner`, and the
+benchmark CLI submit or record `decision.action` directly; none derives the
+move from `principal_variation[0]`. That matches the documented interrupted-
+search contract.
+
+Finally, the default player was checked on one fixed8x8 bilateral-random
+generated root with 44 legal actions and no explicit semantic actions. Caps 1 and
+64 returned legal actions at depth 0 with empty PVs; cap 256 retained depth 2 and a
+two-edge replayable PV beginning with the selected action. All counters met
+their caps, caller history stayed unchanged, and there were no Native
+fallback/failure events. This single generated-root budget check adds finite
+interface evidence, not generated-semantic coverage, utility or strength. Rows
+are in `data/generated_root_node_budget_20261020.json`.
+
+An explicit cancellation was then requested from the progress callback after
+the first completed iteration on the serialized compound fixture. Search
+returned `cancelled`, retained depth 1, returned the exact compound action as
+the PV head, and replayed that line legally without mutating caller history
+(53 nodes; one Native call, no fallback). This verifies the existing
+completed-iteration contract for one compound-action case; it is not a
+strength or broad cancellation claim. Regression and compact data are in
+`tests/product/test_recombined_semantic_lifecycle.py` and
+`data/compound_search_cancel_20261020.json`.
+
+A deterministic fake-clock deadline was expired by the progress callback after
+depth 1 on the same fixture. Search returned `time_limit`, retained the exact
+compound action and one-edge PV from depth 1, replayed it legally, and left the
+caller history unchanged (53 nodes; one Native call, no fallback). This is one
+between-iteration deadline check, not real-time responsiveness or all-rule
+coverage. The regression is in the same lifecycle test; compact evidence is
+`data/compound_search_deadline_20261020.json`. The initial harness attempt
+omitted `perf_counter` and produced no observations; that setup error and its
+correction remain in ignored `.local_agent`.
+
+One existing generated24x24 bilateral-random hybrid configuration (seed
+2026101965,96 pieces) was also checked at a one-node cap. It had222 legal root
+actions; search returned a legal depth0 fallback at exactly1 node with empty
+PV and reported about15ms to first legal action, leaving caller history intact.
+This makes clear that legal-root preparation is a distinct cost from counted
+search nodes, while the measured single-case latency is not evidence of a
+material general bottleneck. Exact row:
+`data/generated_large_root_budget_20261020.json`.
+
+To separate budget allocation from immediate-win protection, the same fixed
+24x24 root was rerun at a 256-node cap with the default root tactical scan and
+with only that scan disabled. The default spent 222 root-scan nodes, stopped at
+the cap before depth1, and returned legal ongoing action `g2-g23` as a depth0
+fallback with empty PV. The scan-disabled arm completed depth1 in223 nodes and
+returned the same legal ongoing action, with a one-edge PV. Both left caller
+history unchanged. This is a concrete budget/depth tradeoff on one root, not a
+strength or policy result. Existing `test_root_terminal_wins.py` exercises the
+scan's distinct purpose: retaining immediate terminal wins, including history-
+dependent continuous-check wins, at the budget boundary. Given the single-root
+comparison and that correctness role, no default or algorithm change follows.
+The focused root-scan, generation-accounting and latency tests pass18 tests.
+Exact compact data: `data/generated_root_scan_budget_pair_20261020.json`; raw
+stdout and the corrected harness attempt are retained in ignored
+`.local_agent/quality-20261020/generated-root-scan-pair-raw.txt`.
+
+Source review then found one unmeasured cancellation boundary: when semantic
+root legal-action enumeration aborts, the public fallback retries the same
+request without a checkpoint so it can still return an executable legal move.
+On the same size24/222-action root, a controlled cancellation at root checkpoint
+poll100 caused two legality requests; the uncancelled fallback returned legal
+`a2-d5`, with no search nodes/depth and unchanged history. Both attempts plus
+fallback accounted for about26ms, and the API reported first legal action at
+about16ms. This confirms the duplicate fallback path, not an unbounded delay or
+a product defect; one 24x24 case provides no basis for changing the contract.
+Exact compact evidence is `data/generated_root_cancel_fallback_20261020.json`;
+raw output is in ignored `.local_agent/quality-20261020/generated-root-cancel-fallback-raw.txt`.

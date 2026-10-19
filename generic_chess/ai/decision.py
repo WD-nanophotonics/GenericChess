@@ -13,7 +13,11 @@ class PlayerDecision:
 
     ``action`` is ``None`` for terminal positions or already finished sessions.
     A selected declaration is represented separately. Scores are always in
-    the side-to-move perspective of the root position.
+    the side-to-move perspective of the root position. If a bounded search is
+    interrupted before a full iteration completes, ``action`` can still hold a
+    legal root fallback while ``principal_variation`` is empty. Otherwise the
+    variation is the line from the last completed iteration (or a separately
+    completed root proof).
     """
 
     action: Action | None
