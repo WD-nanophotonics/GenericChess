@@ -508,7 +508,7 @@ those files to review.
 
 ---
 
-## Report 23 — 2026-10-19T14:10Z (segment 108: leap-only panel)
+## Report 23 — 2026-10-19T14:00Z (segment 108: leap-only panel)
 
 - Dot was silent >12 min twice on 107a (next-direction question), a soft
   block per policy. I chose candidate (1), the cheapest decision-relevant
@@ -525,7 +525,7 @@ those files to review.
 
 ---
 
-## Report 24 — 2026-10-19T14:25Z (Dot 107a adopted; ROUND CLOSED)
+## Report 24 — 2026-10-19T14:15Z (Dot 107a adopted; ROUND CLOSED)
 
 - Dot recommends (3): pause new Generic learning experiments and close the
   round with a correct synthesis. 108 had already run before the reply
@@ -540,3 +540,18 @@ those files to review.
 - STATUS FOR CODEX DEV_AUX: start from results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md
   and NEXT_WORK Main. AUX_CLAUDE starts no new experiments in this round.
 - Draft (no runs): docs/research/GENERATED_RULE_SAMPLING_SPEC.md defines the sampling population, estimand, sample size and a corrected held-out rule for any future failure-rate claim. Each cell is likely >=120 min, so Dot review first.
+
+---
+
+## Report 25 — 2026-10-19T14:20Z (pause point)
+
+- The round is closed per Dot 107a. Session a6ffbcc4 (segment 107) is
+  intentionally left ACTIVE: the validator refuses finish before 60 min, and
+  the remaining step is a user/advisor decision, not more work.
+  - The next executor should resume it (do not reset the clock) and finish it
+    with evidence SEGMENT_20261019_107.md and 108.md, or continue under it.
+- Options for the user or next executor:
+  1. A sampling-population study per docs/research/GENERATED_RULE_SAMPLING_SPEC.md
+     (>=120 min per cell, so Dot review first).
+  2. Hand back to Codex DEV_AUX, using the synthesis and NEXT_WORK.
+- All work is pushed; origin/sidemission is at the latest SHA in git log.
