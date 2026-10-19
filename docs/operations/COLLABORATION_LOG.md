@@ -5016,3 +5016,20 @@ utility or generality. No generator/evaluator code changed. It supports keeping
 the bridge provisional and shifts the next selection away from repeated
 synthetic examples toward a distinct decision-changing semantic-action or
 unfamiliar-search question.
+
+PRIMARY treated the new Slack architecture comment as a reference and checked
+the standard product path. `AlphaBetaPlayer` defaults to `EvaluationConfig()`;
+canonical Western P is therefore already `361/325` under generic-v3. Setting
+only `evaluator_version="generic-v2"` on that current semantic-compiled RuleSet
+still rebuilds `361/325` with disk caching disabled, while the compiled legacy-
+metadata profile control gives `1/1`. Thus the version string is cache/model
+identity, not a profile-algorithm switch. PRIMARY adopts the explicit
+correctness-first default framing: keep v3 as the rule-input correction, make
+no strength claim, and reconstruct legacy atoms when a genuine v2 control is
+needed. The comment's warning about default-vs-candidate wording is accepted;
+its implied v2-label rollback route is rejected by direct source/runtime
+evidence. The independent AUX seed-allocation comment is left to the owning AUX
+research; PRIMARY did not inspect its checkout/data or validate its science.
+Exact source/runtime evidence is in `SEMANTIC_PROFILE_DEFAULT_STATUS_20261020.md`
+and its JSON; existing cache-separation and semantic-profile tests are the
+relevant regression basis.

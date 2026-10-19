@@ -88,7 +88,9 @@ across the twelve prefixes.
 
 ## Interpretation and next falsifiable step
 
-The mismatch is concrete and localized. The bounded prototype passed exact
+The mismatch is concrete and localized. The semantic geometry correction is
+already the product default (`generic-v3`), for rule-input correctness rather
+than a demonstrated strength gain. The bounded implementation passed exact
 old-profile parity for all 23 matching canonical types, exercised Western P,
 retained legacy fallback for guarded Xiangqi E/H, and reports unsupported
 semantic-only movement visibly. Promotion, drops, guards, auxiliary state and

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-20",
+  "question": "Is semantic geometry only an experiment or already the default, and does an evaluator_version label restore the old profile algorithm?",
+  "decision": "Keep generic-v3 as the semantic-correctness product default; make no strength-gain claim. Use legacy-atom profile reconstruction for generic-v2 research controls.",
+  "source_anchors": {
+    "default_config": "generic_chess/ai/evaluation/config.py:EvaluationConfig.evaluator_version",
+    "default_player": "generic_chess/ai/alphabeta/player.py:AlphaBetaPlayer.__init__",
+    "profile_builder": "generic_chess/ai/evaluation/profile.py:build_ruleset_profile",
+    "geometry_projection": "generic_chess/ai/evaluation/analyzer.py:profile_movement_atoms",
+    "promotion_geometry": "generic_chess/ai/evaluation/evaluator.py:Evaluator.__init__",
+    "cache_identity": "generic_chess/ai/evaluation/cache.py:EvaluationProfileCache._memory_key,_disk_path,_load_disk"
+  },
+  "read_only_runtime": {
+    "canonical_rules": "Western Chess",
+    "default_alpha_beta_version": "generic-v3",
+    "default_p_board_hand": [361,325],
+    "same_current_semantic_compiled_rules_with_only_version_label_generic_v2": {
+      "profile_label": "generic-v2",
+      "p_board_hand": [361,325],
+      "disk_cache": false
+    },
+    "legacy_compiled_movement_metadata_with_generic_v2_config": {
+      "p_board_hand": [1,1],
+      "disk_cache": false
+    }
+  },
+  "interpretation": "The evaluator version participates in cache/compatibility identity but does not choose profile_movement_atoms versus legacy movement atoms. A v2 label alone is not a faithful algorithm rollback. The v3 default corrects a known rule-derived input; evidence does not demonstrate a playing-strength gain or universal optimality.",
+  "quality_checks": [
+    "tests/product/test_ai_cache.py::test_profile_algorithm_version_ignores_pre_semantic_projection_disk_cache",
+    "tests/development/test_semantic_movement_profile.py"
+  ]
+}

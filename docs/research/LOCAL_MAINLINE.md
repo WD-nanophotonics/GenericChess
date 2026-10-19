@@ -759,8 +759,10 @@ unguarded direct semantic movement while preserving legacy fallback for guarded
 Xiangqi E/H. It changes Western P to board/hand 361/325 and preserves the other
 23 canonical profile inputs. The earlier 446 proxy incorrectly treated the
 guarded exact-two-step ray as ordinary and is rejected. This is a code-level
-price-input correction candidate, not an evaluated utility gain or universal
-price recommendation. See
+semantic price-input correction now used by the product default, not an
+evaluated utility gain or universal price recommendation. The default choice is
+correctness-first: canonical executable Western P must not appear immobile to
+the rule-derived static evaluator. See
 [SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md](SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md).
 The first fixed-root q0 diagnostic used a hand-edited P=1 profile but retained
 the candidate's promotion-gain field; it was not an exact old-v2 comparator and
@@ -798,11 +800,13 @@ losses, 0 draws and 11 UNKNOWN. Independently checked 1,670 move events and
 4,918,610 nodes; no failed games, fallbacks, invalid timings or over-cap nodes.
 Conservative all-slot reward is [-0.875,+0.500], wide and including both harm
 and benefit. This does not validate utility or promote 361/325 to a generally
-validated price/default. Retain the semantic geometry implementation as an
-explicit provisional rule-derived candidate rather than silently treating
-executable semantic P as immobile; report the price and utility limitation
-together. Do not tune or repeat this unchanged panel. Keep the earlier 12-root
-panel as adaptive sensitivity evidence, not a holdout; preserve full
+validated utility gain. Keep the semantic geometry implementation as the
+current correctness-oriented product default rather than silently treating
+executable semantic P as immobile; explicitly distinguish this rule-input
+correction from a strength-validated price. Reconstruct the legacy-atom profile
+for v2 controls: setting `evaluator_version="generic-v2"` alone does not select
+the old algorithm. Do not tune or repeat this unchanged panel. Keep the earlier
+12-root panel as adaptive sensitivity evidence, not a holdout; preserve full
 rules/history, UNKNOWN and equal per-move budgets.
 
 An eight-rule generated-profile compatibility audit then sampled sizes4/5/6/8,
@@ -813,10 +817,12 @@ This only covers legacy atom-generated mixes, not arbitrary semantic-only
 guards/effects or recombined DSL rules, and adds no utility evidence. See
 `data/semantic_generated_profile_audit_20261020.json`.
 
-The price-input gap is now fixed in code and the generated legacy sample shows
-no projection regression, but the corrected utility panel does not justify a
-general price/default claim. Do not extend this unchanged Western panel. Return
-to a distinct, decision-changing unfamiliar-rule search question after this
+The price-input gap is fixed in code and the generated legacy sample shows no
+projection regression, but the corrected utility panel does not justify a
+general strength claim. The semantic geometry profile remains the product
+default as a correctness repair, with legacy-atom reconstruction retained as
+the experimental control. Do not extend this unchanged Western panel. Return to
+a distinct, decision-changing unfamiliar-rule search question after this
 delivery; preserve the full generated-domain target and current feature costs.
 
 ## Semantic search interface smoke correction — 2026-10-20
@@ -913,7 +919,14 @@ the compound companion shift remained unrepresented. This answers the local
 normalization-sensitivity question but provides no utility, robustness or
 generated-domain evidence. Keep the bridge provisional. Consider a distinct
 generated composition only if it can change whether this candidate is retained;
-do not repeat synthetic Western profiles. Exact result:
+do not repeat synthetic Western profiles. The resulting prices are not validated
+strength gains, but the underlying input correction is already the product
+default. `evaluator_version` is a cache/compatibility identity, not an algorithm
+selector; a v2-labeled rebuild on current compiled semantics still yields the
+new profile, while the old profile requires legacy-atom reconstruction. This
+default/control distinction was checked against the public AlphaBetaPlayer path
+and is recorded in `SEMANTIC_PROFILE_DEFAULT_STATUS_20261020.md` and its JSON.
+Exact relative-price result:
 `SEMANTIC_PRICE_TWO_TYPE_COMPOSITION_20261020.md` and its JSON.
 
 A second bounded check used generated seed21/size4/bilateral-random hybrid
