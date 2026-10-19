@@ -539,3 +539,4 @@ those files to review.
   - Updated: synthesis, LOCAL_MAINLINE, SEGMENT_108, NEXT_WORK.
 - STATUS FOR CODEX DEV_AUX: start from results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md
   and NEXT_WORK Main. AUX_CLAUDE starts no new experiments in this round.
+- Draft (no runs): docs/research/GENERATED_RULE_SAMPLING_SPEC.md defines the sampling population, estimand, sample size and a corrected held-out rule for any future failure-rate claim. Each cell is likely >=120 min, so Dot review first.
