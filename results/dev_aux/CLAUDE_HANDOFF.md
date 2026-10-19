@@ -451,7 +451,7 @@ those files to review.
 
 ---
 
-## Report 20 — 2026-10-19T13:15Z (Dot 105a adopted; task2590 hybrid-movement panel running)
+## Report 20 — 2026-10-19T13:00Z (Dot 105a adopted; task2590 hybrid-movement panel running)
 
 - DOT_REPLY 1792414510.091249 (ADOPTED):
   - Next factor: one pre-fixed 4x4 movement-generator change, keeping P/A/X.
@@ -476,7 +476,7 @@ those files to review.
 
 ---
 
-## Report 21 — 2026-10-19T13:50Z (363001 diagnosis per Dot)
+## Report 21 — 2026-10-19T13:30Z (363001 diagnosis per Dot)
 
 - Dot 106a reply (ADOPTED): narrowed to option (a), a raw-record ledger and
   credit split for 363001. Corrections: a near-0 mean reward is not "no
