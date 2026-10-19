@@ -4987,3 +4987,32 @@ The first focused test launch hit the sandbox's unwritable OS Temp path during
 `tmp_path` setup (not a product assertion); rerunning the same cases with a
 Git-ignored project-local pytest basetemp passed all10 tests. No test condition
 or source changed between attempts.
+
+PRIMARY continued the rule-only price bridge question after the one-type
+compound fixture showed raw-input sensitivity but no normalized price effect.
+The existing fixture inventory contained no matching multi-non-anchor fixture,
+so a controlled synthetic profile-only composition added an independent legacy
+knight type to the compound-shift RuleSet, with identical type lists in both
+arms. The candidate's normalized R:N ratio changed from1.8860 to2.0303
+(+7.65%); the companion shift remains outside the geometry projection. This
+is a sensitivity result only, not utility, robustness or generated-domain
+evidence. DEV_AUX/DEEPSEEK_AUX contributions were not needed or adopted for this
+step, and no AUX checkout/state/output was touched. The bounded DS chat check
+for this heartbeat showed idle status and a completed visible turn; pagination
+left older turns unread, so no full-history health claim is made. The ten
+targeted profile/search/lifecycle tests pass with a project-local ignored temp
+directory. Next consider a decision-relevant generated composition only if it
+can change retention of the provisional bridge. One existing fixture was reused;
+no game/search, training, worker, or API was launched.
+
+PRIMARY checked the generated-rule boundary: the base generator constructs
+`RuleSet` without semantic actions, so an action-bearing generated profile
+requires explicit recombination. On generated seed21/size4/bilateral-random
+hybrid substrate, adding the existing compound action to generated P for a
+profile-only candidate moved normalized P:X from0.07606 to0.22761 (+199.26%);
+the median stayed A, and X/A inputs were unchanged. This is one synthetic
+recombination on a generated substrate, not native generator semantic support,
+utility or generality. No generator/evaluator code changed. It supports keeping
+the bridge provisional and shifts the next selection away from repeated
+synthetic examples toward a distinct decision-changing semantic-action or
+unfamiliar-search question.

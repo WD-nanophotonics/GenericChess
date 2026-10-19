@@ -903,3 +903,27 @@ composition with eligible and excluded semantic movement patterns, compare
 exact projected inputs and normalized relative prices, and stop if no existing
 fixture provides the required contrast. Full evidence is in
 `SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md` and the mechanism-probe JSON.
+
+The existing fixture inventory had no multi-non-anchor variant of that
+compound-shift mechanism, so PRIMARY formed one narrow synthetic profile input
+by adding an independent legacy knight type to the existing R compound-shift
+fixture. With the identical type list in both arms, the normalized R:N ratio
+moved from1.8860 to2.0303 (+7.65%) when the eligible semantic leap was included;
+the compound companion shift remained unrepresented. This answers the local
+normalization-sensitivity question but provides no utility, robustness or
+generated-domain evidence. Keep the bridge provisional. Consider a distinct
+generated composition only if it can change whether this candidate is retained;
+do not repeat synthetic Western profiles. Exact result:
+`SEMANTIC_PRICE_TWO_TYPE_COMPOSITION_20261020.md` and its JSON.
+
+A second bounded check used generated seed21/size4/bilateral-random hybrid
+rules as the unchanged control substrate, then explicitly recombined the same
+compound action onto generated P for the profile-only candidate. The base
+generator constructs no semantic actions; the candidate therefore tests one
+synthetic recombination, not native generator coverage. Median remained A;
+P:X normalized ratio shifted0.07606→0.22761 (+199.26%), with X/A raw and
+normalized inputs unchanged. This shows the relative-input effect also occurs
+on a real generated-rule substrate, while remaining one-seed/profile-only
+sensitivity without utility or companion-shift valuation. Keep the semantic
+bridge provisional; do not claim generic-domain validation. Exact evidence:
+`SEMANTIC_PRICE_GENERATED_SUBSTRATE_20261020.md` and its JSON.

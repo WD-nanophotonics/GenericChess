@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-20",
+  "question": "Can an eligible direct semantic geometry change a normalized cross-type static-price ratio when more than one non-anchor type is present?",
+  "scope": "Synthetic profile-only composition; no board, search, game, or utility run.",
+  "source_fixture": "tests/rule_semantics_ir_fixtures.py:weird_rulesets()[3]",
+  "semantic_action": "move_and_shift_adjacent_friendly",
+  "candidate_rule_fingerprint": "3d4bd99d79b259eb1ad5f10f4e28e1bbde72f183cf73acfe8a58bf25fa9f71e6",
+  "control_rule_fingerprint": "99a2a83d97f8e484ee2e85680fcf11a786897302fc7f22f259e6a00d5b37abf3",
+  "synthetic_type_added": {
+    "type_id": "N",
+    "movement": "eight standard knight leaps",
+    "anchor": false,
+    "semantic_actions": []
+  },
+  "arms": {
+    "control": "Same type list and all other RuleSet fields; semantic action omitted so R uses its four declared orthogonal rays.",
+    "candidate": "Same synthetic type list; existing compound semantic action is compiled and eligible R direct geometry is unioned into the static projection."
+  },
+  "types": {
+    "R": {
+      "legacy_atoms": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+      "candidate_atoms": "[[\"L\",1,1],[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+      "companion_shift_in_profile": false,
+      "raw_control": 9.08791486310959,
+      "raw_candidate": 9.766529115404786,
+      "normalized_control": 1307,
+      "normalized_candidate": 1340
+    },
+    "N": {
+      "legacy_atoms": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+      "candidate_atoms": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+      "raw_control": 4.815702525575447,
+      "raw_candidate": 4.815702525575447,
+      "normalized_control": 693,
+      "normalized_candidate": 660
+    }
+  },
+  "normalized_ratio": {
+    "control_R_over_N": 1.886002886002886,
+    "candidate_R_over_N": 2.0303030303030303,
+    "relative_change": 0.07651109410864576
+  },
+  "interpretation": "One controlled composition establishes sensitivity of the median-normalized relative input, not utility, robustness, generated-domain generality, search behavior, or a recommended price."
+}

@@ -246,7 +246,9 @@ still geometry-only and does not price the companion shift. On this ruleset's
 only non-anchor type, raw capability rises from9.088 (legacy-only) to9.767
 (union), but median normalization pins both normalized R prices to1000. Thus
 the fixture verifies input inclusion but cannot establish a cross-piece price
-effect. Exact compact output is in
-`data/semantic_search_mechanism_probes_20261020.json`; next choose an existing
-multi-non-anchor composition with the same eligible/excluded pattern mix before
-claiming any relative-price consequence.
+effect. Two later profile-only compositions do change normalized relative
+inputs: synthetic R:N from1.8860 to2.0303, and a generated seed21 substrate
+with one recombined semantic action P:X from0.07606 to0.22761. Neither has
+utility or broad-domain evidence. Details are in
+`SEMANTIC_PRICE_TWO_TYPE_COMPOSITION_20261020.md` and
+`SEMANTIC_PRICE_GENERATED_SUBSTRATE_20261020.md` with their JSON data.

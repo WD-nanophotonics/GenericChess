@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-20",
+  "question": "Does the geometry-only semantic profile bridge change a cross-piece price in a generator-produced ruleset after one existing semantic action is recombined onto a generated mover?",
+  "scope": "One seed-21 4x4 generator-produced substrate plus one synthetic semantic recombination; profile-only, no position/search/game/utility run.",
+  "generator_config": {
+    "seed": 21,
+    "board_size": 4,
+    "setup_preset": "bilateral_random",
+    "allow_hybrid": true
+  },
+  "generator_source_finding": "generic_chess/generation/generator.py constructs RuleSet without setting semantic_actions; generated base therefore contains legacy movement atoms only.",
+  "generated_rule_fingerprint": "a3807253490f8161c6a18418795a2e887a8edd0aadd5b1da827d88a42f15adc1",
+  "candidate_rule_fingerprint": "1b5e2f2c38fbe85fbe092c5cb87330c049372106602456dc60e410fcfacc77e2",
+  "recombined_action": "move_and_shift_adjacent_friendly",
+  "augmented_type": "P",
+  "non_anchor_ids": ["P", "X", "A"],
+  "types": {
+    "P": {
+      "control_signature": "[[\"L\",-3,2],[\"L\",3,2]]",
+      "candidate_signature": "[[\"L\",-3,2],[\"L\",1,1],[\"L\",3,2]]",
+      "raw_control": 0.27239583333333334,
+      "raw_candidate": 0.813828125,
+      "normalized_control": 135,
+      "normalized_candidate": 404
+    },
+    "X": {
+      "control_signature": "[[\"L\",-2,0],[\"L\",-1,2],[\"L\",0,-2],[\"L\",1,2],[\"L\",2,0],[\"R\",-1,1,-1],[\"R\",1,1,-1]]",
+      "candidate_signature": "[[\"L\",-2,0],[\"L\",-1,2],[\"L\",0,-2],[\"L\",1,2],[\"L\",2,0],[\"R\",-1,1,-1],[\"R\",1,1,-1]]",
+      "raw_control": 3.579028013603172,
+      "raw_candidate": 3.579028013603172,
+      "normalized_control": 1775,
+      "normalized_candidate": 1775
+    },
+    "A": {
+      "control_signature": "[[\"L\",-2,0],[\"L\",-1,1],[\"L\",1,1],[\"L\",2,0]]",
+      "candidate_signature": "[[\"L\",-2,0],[\"L\",-1,1],[\"L\",1,1],[\"L\",2,0]]",
+      "raw_control": 2.0158916917670684,
+      "raw_candidate": 2.0158916917670684,
+      "normalized_control": 1000,
+      "normalized_candidate": 1000
+    }
+  },
+  "normalization": {
+    "control_median_type": "A",
+    "candidate_median_type": "A",
+    "control_P_over_X": 0.07605633802816901,
+    "candidate_P_over_X": 0.2276056338028169,
+    "relative_change": 1.992592592592593
+  },
+  "interpretation": "One generated substrate supports profile-price sensitivity after synthetic semantic recombination, not base-generator semantic coverage, utility, companion-effect valuation, or generality."
+}
