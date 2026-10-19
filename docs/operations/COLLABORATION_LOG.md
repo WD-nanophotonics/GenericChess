@@ -42,6 +42,11 @@ no strength/training speedup claimed. Full report/artifacts:
 Only the mainline timer remains PAUSED; manual research/sends/publication active,
 auxiliaries untouched. No DS heartbeat supervision claimed on this manual turn.
 
+Finalsource inspection clarifies that AUX105TDLeafEpisode uses complete/value/
+PVphi/terminal, not the searcher's intervalsamplelist. Missingintervalsamples
+alone isnot itsquery-replacement blocker. This narrows the earlier generic
+receipt caution without executing a learner or changing its optimizer/lane.
+
 ## Late auxiliary declaration evidence adopted locally —2026-10-15
 
 Final whole-thread read discovers AUX EVIDENCE1792052598.523969, posted after

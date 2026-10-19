@@ -205,6 +205,16 @@ new API is executed here. Keep a future query-only integration conditional on a
 concrete auxiliary consumer and paid-cost/usefulness comparison; do not force an
 encoder/model change merely because input/PV contracts differ.
 
+A final fixed-source consumer check narrows that caution: AUX105's
+`task2565/train.py` calls `TDLeafEpisode.observe`, whose published
+`task2492/episode.py` consumes `complete`, `value`, `pv_phi` and `pv_terminal`,
+**not** `receipt.samples`. Missing subnode interval samples alone therefore does
+not block this particular TD query replacement. Preserve its episode-frozen
+weights, observation clock, censoring, raw/T10 perspective and original update;
+the remaining source-Core/order/budget/terminal differences still require a
+concrete qualification. This is source inspection, with no learner execution or
+automatic migration. Do not turn an unused receipt field into a new gate.
+
 ## Advice and delivery boundaries
 
 Today's CHAT_Comments correction is adopted: human Chess ordering is at most

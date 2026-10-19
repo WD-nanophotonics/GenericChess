@@ -561,7 +561,10 @@ scale256PVs reachthose signatures, not proofAUXtraining/intervalsampleidentity.
 Deliverall32existing-schema scale256artifacts asSCOPEDexamples, no champion.
 
 Nextusefulchoice is a concrete query-only consumer/cost integration under the
-sourcelearner's own optimizer/interval-samplecontract, if its owner needs it;
+sourcelearner's own actual receipt/update contract, if its owner needs it;
+fixed-sourceTDLeafEpisode consumes complete/value/PVphi/terminal, not subnode
+intervalsamples. Their absence isnot an integrationgate for thisparticularTD;
+preserve episodeclock/censoring/rawT10/sourceCore and paidcost differences.
 otherwise choose a different decision-changing unfamiliar-rule search problem.
 Do not duplicateAUXlearning, infergenericprecision/strength fromthese4rules,
 refillcacheUNKNOWN, adddiagnostics/learnerAPI orcontinueunchangedpricefitness.
