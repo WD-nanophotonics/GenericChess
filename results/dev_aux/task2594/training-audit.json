@@ -1,0 +1,61 @@
+{
+  "status": "PASS_INDEPENDENT_UPDATE_HISTORY_AND_COST_REPLAY",
+  "candidate_status": "COMPLETE",
+  "nodes": 4000000,
+  "queries": 36526,
+  "games": 253,
+  "actual_terminal": 210,
+  "unknown": 43,
+  "observed_searches": 18272,
+  "td_residual_terms": 18229,
+  "candidate_terminal_target_residuals_pooled": 216,
+  "candidate_terminal_target_residuals_by_seed": {
+    "1977": 54,
+    "8173": 64,
+    "27182": 55,
+    "31415": 43
+  },
+  "baseline_terminal_target_residuals_pooled": 186,
+  "per_seed": {
+    "1977": {
+      "games": 63,
+      "nodes": 1000000,
+      "targets": 54,
+      "observed": 4609,
+      "terms": 4600,
+      "actual": 54,
+      "unknown": 9
+    },
+    "8173": {
+      "games": 72,
+      "nodes": 1000000,
+      "targets": 64,
+      "observed": 4054,
+      "terms": 4046,
+      "actual": 64,
+      "unknown": 8
+    },
+    "27182": {
+      "games": 63,
+      "nodes": 1000000,
+      "targets": 55,
+      "observed": 4597,
+      "terms": 4585,
+      "actual": 51,
+      "unknown": 12
+    },
+    "31415": {
+      "games": 55,
+      "nodes": 1000000,
+      "targets": 43,
+      "observed": 5012,
+      "terms": 4998,
+      "actual": 41,
+      "unknown": 14
+    }
+  },
+  "training_wall_seconds": 513.8752044999856,
+  "cap_seconds": 1200,
+  "source_pins_pass": true,
+  "scope": "Finite training trace/cost/history audit only; no strength or transfer claim."
+}

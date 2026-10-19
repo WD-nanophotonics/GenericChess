@@ -2829,3 +2829,7 @@ required top-level runner fields were added; v4 is the active registration. No
 training/fitness run had started during these corrections. Root/source/plan
 hashes and runner contracts pass; the task2593 learner's four unit tests pass.
 No Generic migration or product default change is authorized by this result.
+
+## DEV_AUX task2594 — Chess learner finite-panel result
+
+The frozen 4-seed candidate completed 4M training nodes and the 768-slot panel completed within its 2100s cap. Independent training-update/history/cost replay and full deployment history/endpoint/terminal/node replay both pass. Candidate terminal-PV residual exposure was 216 pooled (baseline 186). Outcomes were candidate 220W/21D/15L, TD(.95) 198W/31D/27L, and same initialization 142W/43D/71L. The preregistered finite paired reward-difference lower bounds are +0.1328 versus TD(.95) and +0.5234 versus initialization; all conditions pass. This supports a bounded Generic-rule transfer pilot only. The four learned weight rankings vary substantially, and the finite panel is not a population estimate or a full historical TreeStrap reproduction. The full query streams (373 MB combined) remain locally preserved with hashes in `results/dev_aux/task2594/REPORT.md`; curated game traces, scripts and audit summaries are included. No PRIMARY/DEEPSEEK state, product default or UI was touched. No Dot assessment was required or requested because the registered work stayed below 120 minutes; fixed-SHA evidence will be sent after publication.
