@@ -472,3 +472,4 @@ those files to review.
 - Running .local_agent/run106.sh, ~20 min.
 - 106 RESULT: LEARNS_HYBRID pooled [+.010,+.084]; per rule 3 positive, 363001 strictly negative [-.328,-.156]; seeds 2+/2-; 0 held-out overlap. Report SEGMENT_20261019_106.md. Next: describe the 363001 failure from existing records, then Dot.
 - 363001 failure description (task2590/failure-description.json): TRAIN candidate reward +.048 (others +.17..+.28); weights drift board X -.77, board P -.38, hand A +.33, hand P +.50; EVAL wins 67->51; length is not the separator. Slack AGENT_REQUEST 106a sent.
+- credit-by-outcome (task2590/credit-by-outcome.json): positive rules have strongly opposed W/L credits; 363001 has small credits and weak W/L contrast. Hypothesis: weak outcome signal plus bootstrap drift. Descriptive only.
