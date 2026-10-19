@@ -1177,3 +1177,17 @@ this remains unresolved tie/order sensitivity, not a backend defect or strength
 claim. No code/default change follows. Evidence:
 `SEMANTIC_SEARCH_MECHANISM_PROBES_20261020.md` and
 `data/native_semantic_promotion_qfrontier_20261020.json`.
+
+The follow-up gap-map review found no distinct finite search defect beyond the
+already-covered pass, complete-history, root-budget, PV replay, cancellation,
+deadline and qfrontier controls. The remaining promotion/king choice difference
+cannot be distinguished through the public result interfaces without adding a
+test-only root-value path, so leave it unresolved rather than widening the
+campaign. Switch to one rule-price transfer question: reconstruct a captured
+position from the already-frozen 5x5 static_v2 game records and compare the
+existing profile against the exact unused-N2 declaration at identical bounded
+public AlphaBeta settings. The query records contain only state hashes, while
+the frozen games preserve complete action histories; first verify replay and
+look for a qualifying state. No new games or model changes are planned. If no
+same-state captured root can be reproduced from saved evidence, stop this route
+and choose another decision-changing question from the current price evidence.
