@@ -2875,3 +2875,5 @@ mainline checkout or other role state was changed. Official reference:
 https://learn.chatgpt.com/docs/config-file/config-reference
 
 Publication-path correction (2026-10-20): the first task2602 commit included a local Windows profile path in this log. The current revision removes that path. The already-published earlier commit remains in Git history; no force push or history rewrite was used. The report refers to the checkout generically going forward.
+
+Delivery follow-up (2026-10-20): initial explicit-refspec push was rejected by the DEV_AUX guard (DEV_AUX may only publish sidemission). Using the owned branch name with git push origin sidemission succeeded. Corrective revision a21cef14d0a873545666438e466714e089e1d438 exactly matched the remote SHA. The live executor still denies non-escalated writes after the persistent writable-root config change; app reload has not been tested. The previous commit's local profile path was removed from the current tree, but remains in reachable history; no force push was used.
