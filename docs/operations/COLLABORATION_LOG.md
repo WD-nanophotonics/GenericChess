@@ -2739,3 +2739,11 @@ start learns less than cold at equal nodes and does not save dose. Warm@0 is
 not better than random initial here, so the 102 cross-rule transfer did not
 replicate (rule-dependent). Cold TD learning gain replicates. All audits PASS.
 No PRIMARY/DeepSeek code read, run or adopted.
+
+## DEV_AUX104 — 5x5 widening (AUX_CLAUDE)
+
+Per Dot (103a) widened ONE factor: NEW 5x5 rules, rule-derived channels via
+runner hook (no audited file edited). TRAIN and audits PASS; EVAL stopped at
+its registered cap (PARTIAL_CAP 1521/2048) so the pre-registered decision is
+UNRESOLVED. Cap not extended; cost-estimate error recorded. Next: registered
+completion of the missing slots. No PRIMARY/DeepSeek code read or run.

@@ -361,3 +361,60 @@ those files to review.
   is.
 - Admission check (in memory, seeds 900001-3, nothing written): board_size 5 yields non-anchor types P/A/B, not P/A/X. The task2565 CHANNELS are hard-coded to P/A/X, so the 5x5 step first needs rule-derived channels (as task2525 did), done as a copy + small diff. Recorded in NEXT_WORK Main. Segment 103 closed after this.
 - 5x5 design note: task2565 CHANNELS is a module constant used by environment()/restore()/audit/verify.unpruned (feat). Plan: copy those modules with CHANNELS derived per rule as in task2525 (board P first, then sorted others; hand sorted). For P/A/B that is still 6 dims. Smoke and diff-review before registration.
+
+---
+
+## Report 15 — 2026-10-19T11:35Z (segment 104 started: 5x5 widening)
+
+- User direction (2026-10-19): continue segments without asking each time.
+  Session 4c1dc011-80a9-498b-b427-690e92b799c1, start 11:20:05Z.
+- task2588 (registered before fitness):
+  - ONE widened factor: board_size 5. NEW rules 356001-4; all admitted with
+    types P/A/B (0 failures).
+  - Same cold Fixed TD; 16 arms x 100k; snapshots 25k/50k/100k.
+  - EVAL 2048 slots: Cold@0/25k/50k/100k x NEW families 356801-8 x 2 roles
+    x 2 foes.
+  - Decision rule: LEARNS_5x5 if lower(Cold@100k-initial) > 0; NO_GAIN if
+    upper <= 0; otherwise UNRESOLVED.
+- Code: task2588/run.py sets task2565.train.CHANNELS from the rule types
+  (board P,A,B; hand A,B,P; same ordering rule as task2525) before importing
+  the audited modules. The compiled() hook is reused from task2586. No
+  audited file was edited.
+- Pre-fitness root note: 8 of 32 EVAL roots are already terminal after <=4
+  random plies. They are kept (no filtering) and only lower sensitivity.
+- Running .local_agent/run104.sh, ~55 min.
+
+---
+
+## Report 16 — 2026-10-19T12:24Z (104 EVAL near its cap)
+
+- TRAIN COMPLETE: 16 arms, 1.6M nodes, 868 s.
+  - Only 471 games and 312 updates. 5x5 games cost about 3.4k nodes each,
+    so 100k/arm is a much smaller learning dose than on 4x4 (about 3x
+    fewer games).
+  - Audit PASS on 11,498 queries; unpruned 32/32.
+- EVAL is slower than the smoke estimate: ~1.95 s/game vs 1.27 s.
+  - Trained models play longer games, and the smoke sample (16 games) was
+    too small.
+  - Projection: the 3000 s cap stops EVAL at ~1550/2048 games, i.e.
+    PARTIAL_CAP.
+  - The cap is NOT extended (policy). Missing slots enter the bounds as
+    [-1,1], so the pre-registered decision may come out UNRESOLVED.
+- If UNRESOLVED: the follow-up is a separately registered completion of
+  exactly the missing slots (same models, roots, foes; existing results
+  kept). Under 120 min, and a cost estimate from >= 100 pilot games.
+
+---
+
+## Report 17 — 2026-10-19T12:32Z (segment 104 closed: UNRESOLVED)
+
+- EVAL PARTIAL_CAP at 3000 s: 1521/2048 games, 527 missing. Deployment audit
+  PASS.
+- Registered decision UNRESOLVED: Cold@100k-Cold@0 [-.543,+.625];
+  TT 259 (+13).
+- Descriptive both-terminal mean +.05 (vs ~+.18 on 4x4). The effective 5x5
+  dose was small (471 games, 312 updates).
+- Cost-estimate error: smoke 1.27 s/game vs actual ~1.97 s/game. Next time,
+  pilot >= 100 games.
+- Next (auto, per user): segment 105 = registered completion of exactly the
+  527 missing slots, then re-apply the registered rule to the union.

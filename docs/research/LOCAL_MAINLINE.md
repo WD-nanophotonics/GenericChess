@@ -1,3 +1,16 @@
+# DEV_AUX104 — SAME cold Generic Fixed TD on NEW 5x5 rules; UNRESOLVED (PARTIAL_CAP)
+
+Executor AUX_CLAUDE; session 4c1dc011-80a9-498b-b427-690e92b799c1 start 2026-10-19T11:20:05Z.
+NEW 5x5 rules 356001-4 (types P/A/B; rule-derived channels via runner), 16 cold arms x100k, 2048 EVAL slots.
+TRAIN 1.6M/868s only 471 games/312 updates (5x5 ~3.4k nodes/game); audit PASS, unpruned 32/32.
+EVAL PARTIAL_CAP at registered 3000s: 1521/2048, 527 missing; deployment PASS. Decision UNRESOLVED [-.543,+.625].
+Descriptive both-terminal mean Cold@100k-Cold@0 +.05 (n=259) vs ~+.18 on 4x4; smaller effective dose.
+Cost-estimate error recorded (smoke 1.27 vs actual ~1.97 s/game); future estimates use >=100 pilot games.
+Next: DEV_AUX105 registered completion of exactly the 527 missing slots, then re-apply registered rule.
+Report results/dev_aux/SEGMENT_20261019_104.md.
+
+## Historical completed103
+
 # DEV_AUX103 — warm (OldRulesMean) vs cold Generic Fixed TD on NEW rules; scientific OPEN
 
 Executor AUX_CLAUDE; session d0cde1b3-3a07-47e9-bdcc-861840f4d117 start 2026-10-19T09:55:25Z. Basis Dot 1792402091.889509 (threshold first).
