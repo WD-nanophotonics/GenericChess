@@ -1,0 +1,49 @@
+{
+  "task_id": 2604,
+  "status": "SOURCE_ONLY_ENTRYPOINT_AUDIT",
+  "source_sha256": {
+    "run.py": "3775937650eb594fcdbdfa4056e5ebd21d7dd8e66993a13a1c576cba4848aa3f",
+    "learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f"
+  },
+  "top_level_classes": {
+    "run.py": [],
+    "learning.py": [
+      "AlphaBeta",
+      "BudgetEnd",
+      "Model",
+      "Receipt",
+      "Sample",
+      "TDLeaf",
+      "TreeStrap"
+    ],
+    "episode.py": [
+      "TDLeafEpisode"
+    ],
+    "adapters.py": [
+      "ChessEnv",
+      "SessionEnv"
+    ]
+  },
+  "run_learning_imports": {
+    "Model": "results.dev_aux.task2492.learning.Model",
+    "AlphaBeta": "results.dev_aux.task2492.learning.AlphaBeta",
+    "TreeStrap": "results.dev_aux.task2492.learning.TreeStrap",
+    "TDLeaf": "results.dev_aux.task2492.learning.TDLeaf",
+    "ChessEnv": "results.dev_aux.task2492.adapters.ChessEnv"
+  },
+  "run_references_tdleaf_episode": false,
+  "run_learner_calls": [
+    "learner.finish",
+    "learner.observe",
+    "learner.reset",
+    "learner.update"
+  ],
+  "adapter_support": {
+    "ChessEnv": true,
+    "SessionEnv": true,
+    "generic_tactical_qsearch": false
+  },
+  "scope": "AST/source read only; no result, weight, query, game-record, or training execution read/performed."
+}
