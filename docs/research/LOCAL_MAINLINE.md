@@ -530,17 +530,43 @@ bundledright/B-H limits. Correct its failurecount toONEcurrent721002-8; noOFFgam
 notisolatedcapture causality. PublishedAUX d8631613 source-read only; learning/
 solver/TC andDS studies remain theirs, no duplicate execution or automaticmerge.
 
-The nextdistinctinput is ACTUALLY prepared AFTER the82-payload seal:741001/8,
-[globalsharedright](data/global_capture_next_20261019/README.md), fourfullparents,
-oneordinaryply/actualside1capture/reply, BASEP handgain/currentB/global-1slot0,
-finalpreferencepasses, Nativeadmitted. Zero rootqueries/fitness/training.
-Consume exactpreparedstatus underits frozen90s/eightNative/fourCoreD2 plan.
-This is outside the15-output qualification, no impliedNativeexecution proof.
-It tests whether one use removes availability forBOTH
-owners while fullhistory/import/export/search remain consistent. No newprice
-fitness, ORDINALrepeat, policyencoder, API or competingAUXlearner is queued.
-The four actual parents are fixed. If the consumer refuses or times out, retain
-that result and fullhistory; do not regenerate or fabricate successful continuations.
+The prepared741001/8 global input is now CLOSED by
+[GLOBAL_STATE_AND_LEARNED_INFERENCE_20261019.md](GLOBAL_STATE_AND_LEARNED_INFERENCE_20261019.md):
+fourparents/174children,8Native4CoreD2 allcomplete,7687/753main12PV.
+Actualside1capture consumes sharedGLOBAL-owner-1default1 toexplicit0 forboth.
+Existingcheckpoint4newNative and4Session-copy/snapshot/record consumers pass;
+originalCoretargets reused, no fullSessionJSON API or modelmigration needed.
+The former zero-query status is historical, not another launch instruction.
+
+New8samephysical KEEP/SPEND global contexts retaindifferentaux/history. All160
+NativeD2 cold/warmreceipts cohere,300PVreplay; only761002-8 changesvalue(+52).
+Ownper-node stop-fileIO exhausted ALL16one-secondCoretargets: UNKNOWN remains,
+no refill or independentcache-correctness claim, no128forcedbranchgames.
+
+ActualpublishedAUX105 rawmodels at57696f621cda9957bbef8f10d5ff8515f8482616
+qualify existingRuleSet-boundinference:all32initial/finalmodels/all32exposedroots,
+8terminalroots retained.32completeCoreD2trees6130edges/1152Nativecalls2256PV,
+allintegertargets match. Scale1 has59/192uniquecontext rawregrets(max2.233975);
+existing256/1000 have0. SignedhandP(-.4770938), allrawcoefficients andtanhT10
+areunchanged; noPpin/normalization/default/training or originalAUXexecution.
+12Core/rulesfiles differ fromsourceAUX; explicitexistinglegacy-semantic adapter
+preservesphysical/fullhistoryisomorphism, not literalkeyidentity.
+
+Prospectivefixed861001..4prefixes onthe SAME4rules retain4terminals/16roots:
+71755completeCoreD3edges/384Nativequeries/1152PV,0integer mismatch/floatregret
+at256/1000.32actualserializedJSONNativeconsumers matchconstructedobjects with
+96wrongRuleSetrefusals. ExistingPythonpredictor matches384modelrootcontexts.
+Strictfloatoptimalleafgradient sets areunique in192D2+96D3contexts; allactual
+scale256PVs reachthose signatures, not proofAUXtraining/intervalsampleidentity.
+Deliverall32existing-schema scale256artifacts asSCOPEDexamples, no champion.
+
+Nextusefulchoice is a concrete query-only consumer/cost integration under the
+sourcelearner's own optimizer/interval-samplecontract, if its owner needs it;
+otherwise choose a different decision-changing unfamiliar-rule search problem.
+Do not duplicateAUXlearning, infergenericprecision/strength fromthese4rules,
+refillcacheUNKNOWN, adddiagnostics/learnerAPI orcontinueunchangedpricefitness.
+CHAT correction keepshumanChessorder descriptiveonly; today'sAUX source/reports
+do notcreatea human-label gate, representationceiling or rolechange.
 ScienceOPEN. User2026-10-19 pauses ONLY genericchess heartbeat; currentresearch/
 consultation/publication continues, auxiliaries untouched. Explicit resume is
 required for the timer; research user_paused/stopped flags remain unchanged.

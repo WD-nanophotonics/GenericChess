@@ -653,6 +653,30 @@ before/after and real separately bound old-kernel evidence.70affected checks and
 full3284 active regressions pass, with the former included in the latter.
 
 
+## 2026-10-19 raw AUX105 model inference and global state
+
+Existing semantic Session/checkpoint/search APIs qualify the exact global capture
+consumer, including shared owner-1 default/consumed state and complete history.
+Existing32 AUX105 raw initial/final checkpoints use the explicit legacy-rule
+semantic execution adapter; RuleSet fingerprint matches while history/action
+representations require full replay, not copying legacy key strings.
+
+Historical material-only scale1 loses59/192 exposed raw-float D2 optima. Existing
+256/1000 show no loss there or at96new fixed-prefixD3 contexts. Preserve raw signed
+weights, value_scale10 and the original optimizer. This is scoped current-backend
+inference, not original AUX training/EVAL identity (12Core/rules files differ),
+generic precision, strength or a default change. All32 JSON models and actual
+engine rebinding/TT identity/atomic wrong-rule refusal paths qualify. No new API.
+Public data and runnable example:
+[learned_native_inference_20261019](../research/data/learned_native_inference_20261019/README.md).
+
+Do not treat root/PV qualification as AUX subnode-interval sample or optimizer
+equivalence. Actual strict optimal leaf-gradient signatures are unique in288
+observed contexts, but source AUX uses different ordering/terminal conventions.
+The separate global-context TT panel leaves16Core targets UNKNOWN after its
+own stop-file I/O exhausted1s budgets; do not refill or imply independent cache
+correctness. Full report: GLOBAL_STATE_AND_LEARNED_INFERENCE_20261019.md.
+
 ## Actual signed92 and movement-recombination consumers
 
 Current standard checkpoint/Native paths serve ALL128 fixed actual92 endpoint

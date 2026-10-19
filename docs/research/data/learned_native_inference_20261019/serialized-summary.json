@@ -1,0 +1,2409 @@
+{
+  "Core_queries": 0,
+  "Native_main": 18702,
+  "Native_queries": 32,
+  "rows": [
+    {
+      "caller_seconds": 0.0040139000047929585,
+      "checkpoint_id": "196c7e04da8d6e7adbabd3590723622da781b5432c02da5abb715c6e74a2acfc",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 761,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-1977-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0035678999847732484,
+      "checkpoint_id": "a9043129284c7fbb2f88d03773a8604500c1bbdbf2aad223277f47c4df620f3d",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 758,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-1977-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0031636999920010567,
+      "checkpoint_id": "06a0de9975540ec8279c19eff14cc07a10d46747f161301250399834b726d071",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 596,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-27182-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.003480500017758459,
+      "checkpoint_id": "0880c2e8041308fc81c550438df15f68bfe8a5e25bacddb4a91829f89d7feeb6",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 768,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-27182-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.005493000033311546,
+      "checkpoint_id": "77ee013d8f8a5dff936ae73068285ecc69e96dce838e28ce2ce89b4173eaf3d7",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 836,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-31415-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0039240000187419355,
+      "checkpoint_id": "753c6e688af23c7d954462482600c46101db98e7d392d559ab25b21a14c50367",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 836,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-31415-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0034593999735079706,
+      "checkpoint_id": "19d4a06f399f34b76b73ff413fd7a19db43a00c75341dcd305334fc9264f5d88",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 692,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-8173-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.003678700013551861,
+      "checkpoint_id": "f6ad3bbabb56b4b45a41ecdcfc168814493096b2ec48da837bff128da8b4621d",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "A",
+          "geometry_id": "g22",
+          "pattern_id": "legacy_044",
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "A",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_044",
+            "to_square": {
+              "file": 2,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 4
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g22",
+            "pattern_id": "legacy_046",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 747,
+        "qnodes": 0,
+        "score": 99999997
+      },
+      "family": 861003,
+      "model": "356001-8173-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0017485000425949693,
+      "checkpoint_id": "8ac4b2fd37b5b64e4d7308eb4440f3c39e6498e165ad0f07570a87b708014d0b",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 3
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 343,
+        "qnodes": 0,
+        "score": 830
+      },
+      "family": 861001,
+      "model": "356002-1977-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0017979000112973154,
+      "checkpoint_id": "7b5d3082b0c155d2c7d6e6ec60c164fb590bdfab64e7069be6f40ce923b515ac",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "base_type_id": "P",
+          "geometry_id": "g16",
+          "pattern_id": "legacy_034",
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "base_type_id": "P",
+            "geometry_id": "g16",
+            "pattern_id": "legacy_034",
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 2
+            },
+            "geometry_id": "g15",
+            "pattern_id": "legacy_015",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 0,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 333,
+        "qnodes": 0,
+        "score": 603
+      },
+      "family": 861001,
+      "model": "356002-1977-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0016030000406317413,
+      "checkpoint_id": "ac22f6d166aa42d7f0ee380b06c9443289890e9b19a93415d6f3bc6ab0c26115",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 3
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 327,
+        "qnodes": 0,
+        "score": 1237
+      },
+      "family": 861001,
+      "model": "356002-27182-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0017563000437803566,
+      "checkpoint_id": "d26aca6aaa0082cbc58dc974e285448b74ba7f62e1ecbf2f96a3bab483aacf19",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 3
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 327,
+        "qnodes": 0,
+        "score": 1052
+      },
+      "family": 861001,
+      "model": "356002-27182-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.001975499966647476,
+      "checkpoint_id": "33889db046324c54087124484ee673885672c452b06dc10ec23286e1c892f182",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 399,
+        "qnodes": 0,
+        "score": 1091
+      },
+      "family": 861001,
+      "model": "356002-31415-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0019474999862723053,
+      "checkpoint_id": "1c0e5ff157d19bf51d0519014db91196e2fa2c8de429871b2cc39986e5a5e174",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 399,
+        "qnodes": 0,
+        "score": 850
+      },
+      "family": 861001,
+      "model": "356002-31415-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0017355000018142164,
+      "checkpoint_id": "065c8a2c69626f383e4aa51a1f4804b6bf3cb32d4b51887e56fcdb45113c8376",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 3
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 351,
+        "qnodes": 0,
+        "score": 839
+      },
+      "family": 861001,
+      "model": "356002-8173-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0017817000043578446,
+      "checkpoint_id": "3688387db4f7a98823822fcb6c8bb16d3a6fe011127423bcb889a86987de9afa",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 1
+          },
+          "geometry_id": "g14",
+          "pattern_id": "legacy_013",
+          "promotion_target_id": "A",
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": "A",
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g8",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 1,
+              "rank": 3
+            },
+            "geometry_id": "g2",
+            "pattern_id": "legacy_017",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            }
+          }
+        ],
+        "nodes": 360,
+        "qnodes": 0,
+        "score": 490
+      },
+      "family": 861001,
+      "model": "356002-8173-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0029208000050857663,
+      "checkpoint_id": "12a1babd351d40e3e9a92461f43fe62aba5df4185286c0cc69f6c2404b366581",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 499,
+        "qnodes": 0,
+        "score": 830
+      },
+      "family": 861001,
+      "model": "356003-1977-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0026747999945655465,
+      "checkpoint_id": "981bf00822f72099f02ba001974e9ef0ea19bcd19d98cda229c7331f1b532381",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 599,
+        "qnodes": 0,
+        "score": -157
+      },
+      "family": 861001,
+      "model": "356003-1977-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0022701999987475574,
+      "checkpoint_id": "7c83c6c249bad9fd5e512896b152e46e5a98793d53bdcfaa65d25850d332f760",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 473,
+        "qnodes": 0,
+        "score": 1202
+      },
+      "family": 861001,
+      "model": "356003-27182-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.00225210003554821,
+      "checkpoint_id": "7da59c566a8b5eeac069a060672bda293bb036e06d1ab4a22aff7e2250648cf4",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 473,
+        "qnodes": 0,
+        "score": 1250
+      },
+      "family": 861001,
+      "model": "356003-27182-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.002301700005773455,
+      "checkpoint_id": "764b97038a9a7467a6a36f781266e92ea7af6d2283c8f9f9bdd8bdc19c45f304",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 2
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 525,
+        "qnodes": 0,
+        "score": 924
+      },
+      "family": 861001,
+      "model": "356003-31415-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.002377199998591095,
+      "checkpoint_id": "ba3dc98415d42fa3fc8935510aafc661aa9b4772bec56425c65b6ba7d4ae3909",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "geometry_id": "g6",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 0,
+              "rank": 2
+            }
+          }
+        ],
+        "nodes": 528,
+        "qnodes": 0,
+        "score": 148
+      },
+      "family": 861001,
+      "model": "356003-31415-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0022137999767437577,
+      "checkpoint_id": "6b4e6178b7d4fd682982259459a669cfd6bb84628e31a4e591e882ee8feab49d",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 2
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 499,
+        "qnodes": 0,
+        "score": 1087
+      },
+      "family": 861001,
+      "model": "356003-8173-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0024483000161126256,
+      "checkpoint_id": "373574ef5798dfa56766942368566e774ec47df683fb8866beb3722ed8bcea49",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "geometry_id": "g18",
+          "pattern_id": "legacy_021",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 3
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 2,
+              "rank": 4
+            },
+            "geometry_id": "g16",
+            "pattern_id": "legacy_016",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 1,
+              "rank": 2
+            },
+            "geometry_id": "g18",
+            "pattern_id": "legacy_021",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 525,
+        "qnodes": 0,
+        "score": 1023
+      },
+      "family": 861001,
+      "model": "356003-8173-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0031205000123009086,
+      "checkpoint_id": "a1bb47b83427d74df051bb25b26800d0bdb588f98f9b68064d7ded2398c2157a",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g5",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 696,
+        "qnodes": 0,
+        "score": 312
+      },
+      "family": 861001,
+      "model": "356004-1977-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.003417300002183765,
+      "checkpoint_id": "d01fc3093dc95dac9c6afb42cf357f98c92f6b0c65dfc392a239d26b43486307",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g5",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 823,
+        "qnodes": 0,
+        "score": 57
+      },
+      "family": 861001,
+      "model": "356004-1977-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0030817000078968704,
+      "checkpoint_id": "211332acf64a645881dfe776be6a640d27608d16e5ae77f8b5272a5f7960d43e",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g4",
+            "pattern_id": "legacy_033",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 684,
+        "qnodes": 0,
+        "score": 558
+      },
+      "family": 861001,
+      "model": "356004-27182-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.003102299990132451,
+      "checkpoint_id": "300c783e8b952b256641dfa7ac004e7d74d40fb913da389708f3a2afc467301e",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g5",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 746,
+        "qnodes": 0,
+        "score": 323
+      },
+      "family": 861001,
+      "model": "356004-27182-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.003080099995713681,
+      "checkpoint_id": "1011734b6f3c96c53369b5f4b49d7253a72a433ce7bbf8f0e1660c1f2ea13c3d",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g5",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 733,
+        "qnodes": 0,
+        "score": 405
+      },
+      "family": 861001,
+      "model": "356004-31415-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0034718000097200274,
+      "checkpoint_id": "98e69a39f405ade16159a5f15cb14fc362605caa18b2664044b1badc5d63c264",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 4
+            },
+            "geometry_id": "g5",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 864,
+        "qnodes": 0,
+        "score": -4
+      },
+      "family": 861001,
+      "model": "356004-31415-Cold@100k",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.0026809999835677445,
+      "checkpoint_id": "54f78a31c5c9ec3ee77c702d7421f0ff69d3fad9b1279c13be66aff1502dcbf1",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_001",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 601,
+        "qnodes": 0,
+        "score": 590
+      },
+      "family": 861001,
+      "model": "356004-8173-Cold@0",
+      "wrong_rule_refusals": 3
+    },
+    {
+      "caller_seconds": 0.002688499982468784,
+      "checkpoint_id": "f394ce59466f43ab7d62578307eac71a2e7f913cb11f86c3976f778809f4516d",
+      "equal_fields": {
+        "action": true,
+        "completed_depth": true,
+        "decision_line": true,
+        "nodes": true,
+        "qnodes": true,
+        "score": true
+      },
+      "expected_result": {
+        "action": {
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 4,
+            "rank": 1
+          },
+          "geometry_id": "g21",
+          "pattern_id": "legacy_029",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 1,
+            "rank": 2
+          }
+        },
+        "completed_depth": 3,
+        "decision_line": [
+          {
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "geometry_id": "g21",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 4
+            },
+            "geometry_id": "g0",
+            "pattern_id": "legacy_001",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            }
+          },
+          {
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "geometry_id": "g1",
+            "pattern_id": "legacy_003",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 2,
+              "rank": 3
+            }
+          }
+        ],
+        "nodes": 601,
+        "qnodes": 0,
+        "score": 719
+      },
+      "family": 861001,
+      "model": "356004-8173-Cold@100k",
+      "wrong_rule_refusals": 3
+    }
+  ],
+  "scope": "All32existing-schema rawcheckpoint JSON artifacts atscale256 match existing constructed-objectD3receipts, preservingparentfullstate/history. No newformat/default/learner or strengthclaim; reusedclosedCoretargets, not independentreferences.",
+  "seconds": 0.9714586999616586,
+  "status": "PASS_JSON_TO_NATIVE_BOUND_CONSUMER",
+  "wrong_rule_refusals": 96
+}

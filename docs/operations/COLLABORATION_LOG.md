@@ -1,3 +1,47 @@
+## Actual AUX-model inference qualified without auxiliary execution —2026-10-19
+
+PRIMARY reads fixed published sidemission57696f621cda9957bbef8f10d5ff8515f8482616:
+all32 AUX105 initial/final raw models, four exact typed RuleSets and original
+exposed prefix lines. No AUX checkout/state write, learner execution, frozen
+EVAL refill, automatic merge or extra worker. Twelve differing Core/rules files
+limit the claim to current-backend inference, not an independent original audit.
+
+Existing legacy-to-semantic full replay/checkpoint format preserves the actual
+raw predictor, signs and temperature10. D2 scale1 loses59/192 raw optima;256/1000
+lose0 here. A distinct prespecified16-prefixD3 check retains4terminals and closes
+384Native/71755Coreedges with0floatregret at256/1000. Actual32serialized consumers
+and96wrongRuleSetrefusals pass. Strictoptimalleafgradient signatures areunique in
+288nonterminalcontexts; this is not AUX optimizer/subnode-interval equivalence.
+All32models remain examples, not a selected champion or activation/default.
+
+The exact global capture consumer also closes. A different warm-cache check has
+16CoreUNKNOWN due PRIMARY's per-node stop-file I/O; all remain unfilled. Native
+coherence and Core PV legality are weaker than independent value correctness.
+This failure prompted a disjoint learned-consumer question, not hidden refills.
+
+Full relevant CHAT/AUX105/AUX103 threads were read before selection, raw privately
+saved. Adopt CHAT's corrected human-order descriptive-only limit, Dot's52UNKNOWN
+correction (43+9; primarycontrast21), separate post-cap registration and shared-
+subtrahend objection. Auxiliary learning/movement studies remain owner-owned;
+reported executor substitution is not a new PRIMARY role policy. Dot's prior
+logical reviews are not source execution. New daily request root1792415496.983269
+was sent/read back exactly. Closing fullread finds Dot1792416963.183959 and
+reconciles/adopts modelcontract/precision/scope plus coldB-not-gated-on-cacheA.
+Its smallest-one-case suggestion arrived after the prespecifiedpanels closed;
+keepalltheiroutcomes, no furtherunchangedexpansion. Dot source/logicalreview is
+not local execution. Closing AUX106/107 roots/fullthreads are owner/Dot reports,
+notPRIMARYreruns: signedmean0 isnotnosignal, mergedfoegain isnotper-rule/population
+gain; lambda-probe improvement doesnotestablishcompletecausalexplanation.
+Learningchoices/executorhandoff stay auxiliary-owned, no duplicate task launched.
+
+Cost savings from sharing32closedD2trees among models are actual avoided reference
+duplication, not a measured cross-agent efficiency percentage. ProspectiveD3
+producer116.892s and independentCore replay108.012s are distinct paid stages;
+no strength/training speedup claimed. Full report/artifacts:
+[GLOBAL_STATE_AND_LEARNED_INFERENCE_20261019](../research/GLOBAL_STATE_AND_LEARNED_INFERENCE_20261019.md).
+Only the mainline timer remains PAUSED; manual research/sends/publication active,
+auxiliaries untouched. No DS heartbeat supervision claimed on this manual turn.
+
 ## Late auxiliary declaration evidence adopted locally —2026-10-15
 
 Final whole-thread read discovers AUX EVIDENCE1792052598.523969, posted after
