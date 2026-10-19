@@ -268,3 +268,25 @@ those files to review.
   start themselves; none is running unless they started it.
 - Raw query logs stay local and uncommitted (convention): task2586/generic/queries.jsonl
   and task2586/eval/eval-queries.jsonl.
+- Slack: AGENT_REQUEST GC-SLACK-20261019-AUXCLAUDE-102a ts 1792401964.302919 (102 result + next-step question). Commit 37bce378 pushed, remote verified.
+
+---
+
+## Report 11 — 2026-10-19T09:45Z (Dot 102 reply adopted; censoring decomposition)
+
+- DOT_REPLY ts 1792402091.889509 corrected my use of the both-terminal
+  subset. That subset is selected by a model-affected outcome, so it only
+  describes itself; I withdraw the "saturation is not censoring" reading. Dot
+  asked for a full 512-pair decomposition and a decision threshold before any
+  H256 or warm-start run. ADOPTED.
+- Done: task2586/censor_decomposition.py, output eval/censor-decomposition.json.
+  No new games.
+  - Pair counts: TT 464 (+3 known), 400kU/100kT 25 [-38,+12],
+    400kT/100kU 13 [-12,+14], UU 10 [-20,+20].
+  - Total [-.131,+.096]. All U are HORIZON_UNKNOWN; none are search failures.
+  - Decision rule, fixed now: prefer 400k (4x cost) only if gain >= +.0625,
+    which needs +29 of the max +46 unresolved.
+  - Dot's counterexample 351004/31415 (all 32 terminal, -.0625) shows that not
+    all regressions are censoring.
+- Decision: keep Fixed@100k as the cheap default checkpoint. No H256 re-EVAL
+  or warm-start run now; revisit only if a downstream choice depends on it.

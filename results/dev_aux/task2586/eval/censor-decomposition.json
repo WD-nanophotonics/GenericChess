@@ -1,0 +1,43 @@
+{
+  "status": "COMPLETE_EXISTING_RECORDS",
+  "contrast": "Fixed@400k - Fixed@100k",
+  "denominator": 512,
+  "categories": {
+    "TT": 464,
+    "UT": 25,
+    "TU": 13,
+    "UU": 10
+  },
+  "known_TT_sum": 3,
+  "per_category_bounds": {
+    "TT": [
+      3,
+      3
+    ],
+    "UT": [
+      -38,
+      12
+    ],
+    "TU": [
+      -12,
+      14
+    ],
+    "UU": [
+      -20,
+      20
+    ]
+  },
+  "total_bounds": [
+    -0.130859375,
+    0.095703125
+  ],
+  "unknown_causes": {
+    "Fixed@400k:HORIZON_UNKNOWN": 35,
+    "Fixed@100k:HORIZON_UNKNOWN": 23
+  },
+  "decision_rule": "Prefer Fixed@400k over the 4x cheaper Fixed@100k only if the full paired gain >= 0.0625. Threshold fixed here before any new evaluation.",
+  "threshold_reachable": true,
+  "required_unresolved_contribution": 29.0,
+  "max_unresolved_contribution": 46,
+  "scope": "Descriptive existing-record decomposition; both-terminal subset is outcome-selected and only describes itself. No new games."
+}
