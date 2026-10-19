@@ -2769,3 +2769,10 @@ Following Dot's minimal-targeted-check rule after the credit split showed
 heuristic-bootstrap dominance. Registered 363001-only lambda 1.0 probe:
 NO_FLIP (still below initial) but degradation halved vs lambda .95. Line
 stopped as partly explained. All audits PASS.
+
+## DEV_AUX108 — leap-only panel (AUX_CLAUDE)
+
+Dot silent on 107a; AUX_CLAUDE chose the cheapest decision-relevant option.
+Pooled LEARNS_LEAP; 1/4 rules negative. Held-out rule assumption failed for
+one rule (TRAIN family overflow), reported with a post-hoc sensitivity check.
+Cross-panel 20 NEW rules: 13 positive, 4 negative, 3 undetermined.

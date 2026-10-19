@@ -505,3 +505,20 @@ those files to review.
 - Line stopped (partly explained). Next: a synthesis doc, then ask Dot for
   one next main direction.
 - Synthesis doc: results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md (101-107 in one page, with Dot's wording corrections).
+
+---
+
+## Report 23 — 2026-10-19T14:10Z (segment 108: leap-only panel)
+
+- Dot was silent >12 min twice on 107a (next-direction question), a soft
+  block per policy. I chose candidate (1), the cheapest decision-relevant
+  option: how common are per-rule failures?
+- task2592 is a sed-derived copy of task2590 with only the constants changed:
+  - leap_probability=1.0, ray_probability=0.0.
+  - NEW rules 364001-4, P/A/X, 0 failures.
+  - TRAIN families 364100+; held-out EVAL families from 364600 (outside the
+    TRAIN check range this time).
+  - 1 of 32 held-out roots is terminal (kept).
+- Same decision form: pooled LEARNS_LEAP plus per-rule counts. Running
+  run108.sh within session 107 (a6ffbcc4).
+- 108 RESULT: LEARNS_LEAP [+.125,+.188]; 364003 negative; held-out FAILED for 364004 (TRAIN family 364651 > 500-span assumption), post-hoc fresh-only same sign. Cross-panel 20 NEW rules 13+/4-/3?. Synthesis updated.

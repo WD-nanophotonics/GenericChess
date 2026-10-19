@@ -1,0 +1,307 @@
+{
+  "status": "PASS_ALL_REGISTERED_CONTRASTS",
+  "decision": "LEARNS_LEAP",
+  "decision_input": [
+    0.125,
+    0.1875
+  ],
+  "per_rule": {
+    "positive": 3,
+    "negative": 1
+  },
+  "contrast": {
+    "all": {
+      "n": 512,
+      "bounds": [
+        0.125,
+        0.1875
+      ],
+      "counts": {
+        "both_terminal": 498,
+        "missing": 0
+      }
+    },
+    "by_foe": {
+      "uniform": {
+        "n": 256,
+        "bounds": [
+          0.14453125,
+          0.23046875
+        ],
+        "counts": {
+          "both_terminal": 246,
+          "missing": 0
+        }
+      },
+      "random99031": {
+        "n": 256,
+        "bounds": [
+          0.10546875,
+          0.14453125
+        ],
+        "counts": {
+          "both_terminal": 252,
+          "missing": 0
+        }
+      }
+    },
+    "by_rule": {
+      "364001": {
+        "n": 128,
+        "bounds": [
+          0.0234375,
+          0.0859375
+        ],
+        "counts": {
+          "both_terminal": 126,
+          "missing": 0
+        }
+      },
+      "364002": {
+        "n": 128,
+        "bounds": [
+          0.53125,
+          0.65625
+        ],
+        "counts": {
+          "both_terminal": 120,
+          "missing": 0
+        }
+      },
+      "364003": {
+        "n": 128,
+        "bounds": [
+          -0.0859375,
+          -0.0390625
+        ],
+        "counts": {
+          "both_terminal": 125,
+          "missing": 0
+        }
+      },
+      "364004": {
+        "n": 128,
+        "bounds": [
+          0.03125,
+          0.046875
+        ],
+        "counts": {
+          "both_terminal": 127,
+          "missing": 0
+        }
+      }
+    },
+    "by_rule_foe": {
+      "364001/uniform": {
+        "n": 64,
+        "bounds": [
+          0.0,
+          0.0625
+        ],
+        "counts": {
+          "both_terminal": 63,
+          "missing": 0
+        }
+      },
+      "364001/random99031": {
+        "n": 64,
+        "bounds": [
+          0.046875,
+          0.109375
+        ],
+        "counts": {
+          "both_terminal": 63,
+          "missing": 0
+        }
+      },
+      "364002/uniform": {
+        "n": 64,
+        "bounds": [
+          0.59375,
+          0.8125
+        ],
+        "counts": {
+          "both_terminal": 57,
+          "missing": 0
+        }
+      },
+      "364002/random99031": {
+        "n": 64,
+        "bounds": [
+          0.46875,
+          0.5
+        ],
+        "counts": {
+          "both_terminal": 63,
+          "missing": 0
+        }
+      },
+      "364003/uniform": {
+        "n": 64,
+        "bounds": [
+          -0.015625,
+          0.015625
+        ],
+        "counts": {
+          "both_terminal": 63,
+          "missing": 0
+        }
+      },
+      "364003/random99031": {
+        "n": 64,
+        "bounds": [
+          -0.15625,
+          -0.09375
+        ],
+        "counts": {
+          "both_terminal": 62,
+          "missing": 0
+        }
+      },
+      "364004/uniform": {
+        "n": 64,
+        "bounds": [
+          0.0,
+          0.03125
+        ],
+        "counts": {
+          "both_terminal": 63,
+          "missing": 0
+        }
+      },
+      "364004/random99031": {
+        "n": 64,
+        "bounds": [
+          0.0625,
+          0.0625
+        ],
+        "counts": {
+          "both_terminal": 64,
+          "missing": 0
+        }
+      }
+    },
+    "by_seed": {
+      "1977": {
+        "n": 128,
+        "bounds": [
+          -0.0078125,
+          0.0546875
+        ],
+        "counts": {
+          "both_terminal": 124,
+          "missing": 0
+        }
+      },
+      "8173": {
+        "n": 128,
+        "bounds": [
+          0.2734375,
+          0.3671875
+        ],
+        "counts": {
+          "both_terminal": 124,
+          "missing": 0
+        }
+      },
+      "27182": {
+        "n": 128,
+        "bounds": [
+          0.2265625,
+          0.2890625
+        ],
+        "counts": {
+          "both_terminal": 124,
+          "missing": 0
+        }
+      },
+      "31415": {
+        "n": 128,
+        "bounds": [
+          0.0078125,
+          0.0390625
+        ],
+        "counts": {
+          "both_terminal": 126,
+          "missing": 0
+        }
+      }
+    }
+  },
+  "decomposition": {
+    "denominator": 512,
+    "categories": {
+      "TT": 498,
+      "UU": 2,
+      "TU": 6,
+      "UT": 6
+    },
+    "per_category": [
+      {
+        "category": "TT",
+        "bounds": [
+          76,
+          76
+        ]
+      },
+      {
+        "category": "TU",
+        "bounds": [
+          -2,
+          10
+        ]
+      },
+      {
+        "category": "UT",
+        "bounds": [
+          -6,
+          6
+        ]
+      },
+      {
+        "category": "UU",
+        "bounds": [
+          -4,
+          4
+        ]
+      }
+    ]
+  },
+  "U_by_model": {
+    "Cold@100k": 8,
+    "Cold@0": 8
+  },
+  "U_total": 16,
+  "eval_slots_with_actual_TRAIN_root": 256,
+  "TRAIN": {
+    "status": "COMPLETE",
+    "expected_arms": 16,
+    "nodes": 1600000,
+    "seconds": 547.0324634999852,
+    "counts": {
+      "games": 5581,
+      "actual_terminal": 5535,
+      "unknown": 46,
+      "queries": 31753,
+      "observed": 15942,
+      "terms": 15896,
+      "episode_updates": 1352
+    },
+    "scope": "ONE pre-fixed movement-generator change: leap_probability=1.0,ray_probability=0.0 (leap-only) on 4x4, all else default; P/A/X channels unchanged. NEW rules 364001-4. SAME task2565 Generic TD Fixed regime, cold seed-random initial, 100k paid nodes. No selection/regeneration."
+  },
+  "EVAL": {
+    "status": "COMPLETE",
+    "expected": 1024,
+    "actual": 1024,
+    "missing": 0,
+    "missing_slots": [],
+    "actual_terminal": 1008,
+    "unknown": 16,
+    "nodes": 860621,
+    "queries": 15273,
+    "seconds": 284.7463291999884
+  },
+  "paid_nodes": 2460621,
+  "producer_seconds": 831.7787926999736,
+  "scope": "One pre-fixed movement config; finite pooled paired bounds; per-rule counts reported; held-out roots by pre-fitness rule (actual overlap re-checked). No CI/population/all-rule claim."
+}

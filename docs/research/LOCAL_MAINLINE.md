@@ -1,3 +1,14 @@
+# DEV_AUX108 — leap-only 4x4 panel; LEARNS_LEAP pooled, 1/4 negative; cross-panel 13+/4-/3?
+
+Executor AUX_CLAUDE; inside session a6ffbcc4 (107 clock). Dot silent on 107a; chose "how common are per-rule failures".
+NEW rules 364001-4 leap-only, 16 cold arms x100k; audits PASS. Pooled [+.125,+.188]; 364003 [-.086,-.039].
+Held-out rule FAILED for rule 364004 (TRAIN reached family 364651 > 500-span assumption): 256/1024 slots exposed;
+POST-HOC fresh-only [+.156,+.234] same sign. Future: TRAIN check span >= max_games/2.
+Cross-panel 20 NEW rules: 13 positive, 4 strictly negative (only 363001 large), 3 undetermined. Claim stays per rule.
+Report results/dev_aux/SEGMENT_20261019_108.md; synthesis results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md.
+
+## Historical completed107
+
 # DEV_AUX107 — lambda=1 mechanism probe on hybrid rule 363001: NO_FLIP, degradation halved
 
 Executor AUX_CLAUDE; session a6ffbcc4-57f0-4fa7-8630-41d48b7fda41 start 2026-10-19T13:42:11Z.

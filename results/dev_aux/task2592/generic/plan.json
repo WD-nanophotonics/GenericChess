@@ -1,0 +1,146 @@
+{
+  "session_id": "a6ffbcc4-57f0-4fa7-8630-41d48b7fda41",
+  "registered_at": "2026-10-19T13:59:23.020650+00:00",
+  "domain": "generic",
+  "dimension": 6,
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "methods": [
+    "Fixed"
+  ],
+  "arms_order": [
+    [
+      364002,
+      27182,
+      "Fixed"
+    ],
+    [
+      364004,
+      8173,
+      "Fixed"
+    ],
+    [
+      364004,
+      1977,
+      "Fixed"
+    ],
+    [
+      364003,
+      1977,
+      "Fixed"
+    ],
+    [
+      364002,
+      8173,
+      "Fixed"
+    ],
+    [
+      364002,
+      1977,
+      "Fixed"
+    ],
+    [
+      364004,
+      31415,
+      "Fixed"
+    ],
+    [
+      364004,
+      27182,
+      "Fixed"
+    ],
+    [
+      364002,
+      31415,
+      "Fixed"
+    ],
+    [
+      364003,
+      8173,
+      "Fixed"
+    ],
+    [
+      364001,
+      1977,
+      "Fixed"
+    ],
+    [
+      364003,
+      31415,
+      "Fixed"
+    ],
+    [
+      364001,
+      27182,
+      "Fixed"
+    ],
+    [
+      364001,
+      8173,
+      "Fixed"
+    ],
+    [
+      364001,
+      31415,
+      "Fixed"
+    ],
+    [
+      364003,
+      27182,
+      "Fixed"
+    ]
+  ],
+  "nodes_per_arm": 100000,
+  "cap_seconds": 2400,
+  "max_games": 4096,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 2.0,
+  "H": 128,
+  "prefix_plies": 4,
+  "training_family_offset": 364100,
+  "ordering_seed_offset": 1002594000,
+  "eta": 0.05,
+  "lambda": 0.95,
+  "snapshot_nodes": [
+    100000
+  ],
+  "pins": {
+    "results/dev_aux/task2592/run.py": "861542254222940c8276cd8fc419c40514a5cdb6fbd487dc1d9307530ab0bf99",
+    "results/dev_aux/task2592/register.py": "9690ca7414772b430504487618ad2f70630b0f0d528dd210bcb72de563f95f4e",
+    "results/dev_aux/task2592/bind.py": "b3fc378cfb42763bf6de7bea9df0115147ab5083754eb84a9aaf2f2d751abfac",
+    "results/dev_aux/task2586/run.py": "ed37e8e5897ffbe2a1b5a3978c861e97271a645e099b8391cc64d3eff347dc20",
+    "results/dev_aux/task2586/analyze.py": "7b901668b3002d5205693cb99f616ebdbd459bdf4de325005cfdfc7095722240",
+    "results/dev_aux/task2587/analyze.py": "9637278d8fca692425f8b80cf5999a2fb19e68fa3f1b45bff0bcebdebde1e98d",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2565/audit.py": "6384b6fbeed0705f87c4116ba5ad84fb33d49789bbe75a431cfbf4e5644bd357",
+    "results/dev_aux/task2565/verify.py": "004fae0317b85c74cb1728cf5a183313ead7bf519c0dc856fa06c7157a448101",
+    "results/dev_aux/task2565/evaluate.py": "113ff35490bc9eb8847a17eef3dca0eca1586dbdbd06e26664665810d31a1013",
+    "results/dev_aux/task2525/run.py": "c4d14b0ff9757d9e20c6294a30ee04993fb06651951eb7009370228f2bc1fe6f",
+    "results/dev_aux/task2511/generic.py": "ab5f0e58d50bc2c6adb55af438639396dcd3dbf3ad082959852cca89c2389d7e",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2532/free_model.py": "769eff3aa3f88691c26959ca9f40412421a471e22039b1a7963a2c0f13d4062a",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2529/training_audit.py": "029cb7e32da02f15bbfa2de8d73f5e2f17f4ce9e54e9a5ba1910f3d6d596d190",
+    "results/dev_aux/task2529/incremental_replay.py": "5e2e83f244af375ba1bb5ae86b73345f0d8901e47975136a7d97fab6a83e9a04",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "generic_chess/generation/generator.py": "466f86600a903b9067a0c3995bc914d8f9517e530e6d3bb1be7b494b7fe9d557",
+    "generic_chess/generation/config.py": "609d9e362d5472272aa4835e8faa68b907bf683323a2aa6917ad7957e45a0e73",
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b"
+  },
+  "scope": "ONE pre-fixed movement-generator change: leap_probability=1.0,ray_probability=0.0 (leap-only) on 4x4, all else default; P/A/X channels unchanged. NEW rules 364001-4. SAME task2565 Generic TD Fixed regime, cold seed-random initial, 100k paid nodes. No selection/regeneration."
+}
