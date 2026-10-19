@@ -234,3 +234,19 @@ both were corrected without source edits or changed experiment conditions. The
 first random-prefix recorder also used the wrong enum-case comparison and
 emitted no rows; that status check was corrected and the same seeds rerun before
 interpreting results.
+
+## Mixed legacy plus eligible semantic mover projection
+
+The existing `move_and_shift_adjacent_friendly` fixture supplies a useful
+projection boundary: R has four legacy orthogonal rays plus an unguarded direct
+semantic leap(+1,+1) pattern whose transition also shifts a companion. The
+current `profile_movement_atoms` returns the union, so the eligible direct
+geometry is not silently omitted when legacy atoms coexist. The projection is
+still geometry-only and does not price the companion shift. On this ruleset's
+only non-anchor type, raw capability rises from9.088 (legacy-only) to9.767
+(union), but median normalization pins both normalized R prices to1000. Thus
+the fixture verifies input inclusion but cannot establish a cross-piece price
+effect. Exact compact output is in
+`data/semantic_search_mechanism_probes_20261020.json`; next choose an existing
+multi-non-anchor composition with the same eligible/excluded pattern mix before
+claiming any relative-price consequence.

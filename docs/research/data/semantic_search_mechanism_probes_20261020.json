@@ -116,7 +116,7 @@
   "interpretation": "Concrete fixture-level evidence only; no repeats, utility, population, performance, or general Native parity claim.",
   "s3_search_boundary_audit": {
     "source_review": "semantic_executor._exists_s3_reply polls checkpoint at each pattern and candidate; search legal_generation_seconds covers semantic successor-handle iteration, including nested S3 scans. No dedicated S3 trial counter.",
-    "runtime_cost_measured": false,
+    "runtime_cost_measured": true,
     "cancellation_regression": "Injected cancellation on third checkpoint propagates from _exists_s3_reply.",
     "focused_tests": [
       "test_s3_reply_probe_propagates_cooperative_cancellation",
@@ -126,7 +126,66 @@
     "focused_tests_passed": 3,
     "diagnostics_api_change": "not justified; no timing-boundary omission/cancellation swallowing observed",
     "node_budget_scope": "S3 reply candidates do not increment AlphaBeta node counters; node cap bounds searched nodes, not all nested legality work.",
-    "interpretation": "Potential equal-node-budget workload difference remains unmeasured; no defect or API change claimed.",
-    "next_question": "Measure one fixed-root S3 reply-scan case against its no-S3 control, recording nodes/legal-generation time/cancellation."
+    "interpretation": "One fixed-root pilot now measures a small legality-time difference; no decision-relevant defect or API change is supported.",
+    "next_question": "Compare projected geometry and normalized price on an existing multi-non-anchor semantic/legacy composition, if one is available."
+  },
+  "s3_reachable_candidate_child": {
+    "root_setup": "Same two-ply legal P capture and opponent P reply used in the cost pilot; side 0 has P in hand.",
+    "root_legal_actions": 64,
+    "candidate_drop": [7, 6],
+    "candidate_child_checked": true,
+    "candidate_child_legal_reply_count": 0,
+    "exists_s3_reply": false,
+    "guard_interpretation": "For this reachable child, opponent_checked and no_legal_reply:S3 both hold, so the S3 forbidden-action conjunction is satisfied.",
+    "scope": "One existing fixture and one reachable history; no cross-position or cross-ruleset claim."
+  },
+  "recombined_active_aux_depth1_probe": {
+    "fixture": "Existing combined guarded-drop/promotion-expiry lifecycle fixture at the five-ply promotion checkpoint.",
+    "auxiliary_state": {"slot_0_global": 1},
+    "root_legal_actions": 5,
+    "completed_depth": 1,
+    "nodes": 6,
+    "qnodes": 0,
+    "termination": "completed_depth",
+    "selected_action_legal": true,
+    "pv_replay_legal": true,
+    "selected_action_family": "legacy King move",
+    "interpretation": "Product search accepts an active-aux state and returns a legal depth-1 PV. The selected line did not exercise the combined semantic action, so this is interface viability only, not mechanism coverage/utility/performance."
+  },
+  "mixed_legacy_semantic_profile_projection": {
+    "fixture": "Existing move_and_shift_adjacent_friendly ruleset (weird_rulesets index 3).",
+    "type_id": "R",
+    "legacy_atoms": ["ray(+1,0)", "ray(-1,0)", "ray(0,+1)", "ray(0,-1)"],
+    "eligible_semantic_direct_move": {"pattern_id": "sem_00_move_and_shift_adjacent_friendly", "geometry": "owner-relative leap(+1,+1)", "effects": ["move", "shift"], "guarded": false},
+    "projection_includes_semantic_leap": true,
+    "raw_capability_legacy_only": 9.08791486310959,
+    "raw_capability_semantic_union": 9.766529115404786,
+    "normalized_R_value_both_arms": 1000,
+    "limitation": "Only one non-anchor type exists, so median normalization pins its board value to the configured normal-piece median; the raw capability change cannot identify a cross-type price change. The companion shift is not represented by geometry-only atoms.",
+    "interpretation": "No eligible direct semantic geometry was silently omitted in this mixed fixture; geometry-only price impact remains unresolved because the fixture has no second non-anchor type."
+  },
+  "s3_fixed_root_cost_pilot": {
+    "question": "Do equal search-node counts conceal a measurable S3 reply-scan cost on one reachable hand root?",
+    "root": "Two legal plies: side 0 captures an opposing P, side 1 makes a legal P reply; side 0 has P in hand. Same board/hand/side/history in both arms.",
+    "treatment": "opponent_checked + no_legal_reply:S3",
+    "control": "Removed only no_legal_reply; retained opponent_checked. Not globally semantics-equivalent; exact sorted root action set happened to match.",
+    "root_actions": {"S3": 64, "control": 64, "sorted_sets_equal": true},
+    "s3_reply_probe_calls_per_root_generation": {"S3": 7, "control": 0},
+    "design": "Eight alternating paired depth-1 runs; first two per arm excluded as warm-up; identical node/time limits, evaluator, TT/order/root-tactical disabled, q-depth zero.",
+    "measured_runs_per_arm": 6,
+    "metrics": {
+      "nodes_each_run": 65,
+      "legal_actions_generated_each_run": 128,
+      "legal_generation_calls_each_run": 2,
+      "termination_each_run": "completed_depth",
+      "selected_action_equal": true,
+      "upper_median_wall_seconds": {"S3": 0.010393000033218414, "control": 0.009482599969487637},
+      "upper_median_legal_generation_seconds": {"S3": 0.0016386999632231891, "control": 0.0008984999731183052},
+      "observed_legal_generation_difference_seconds": 0.000740199990105927,
+      "deadline": "Both arms completed under 5 s; no deadline hit.",
+      "cancellation": "Not injected in this pilot; separate focused cancellation regression passes."
+    },
+    "interpretation": "One tiny fixture suggests about 0.74 ms additional timed legality work, but no population inference or decision-relevant defect; timing noise and control-semantic difference limit attribution. Do not add counter/API.",
+    "next_question": "Find one existing multi-non-anchor composition with an eligible direct semantic mover and compare legacy-only versus projected inputs; stop if no suitable fixture exists."
   }
 }

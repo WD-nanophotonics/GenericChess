@@ -108,3 +108,44 @@ made yet. The next test is a small, fixed-root paired measurement of an S3
 reply-scan case versus its no-S3 control, recording node counts, legal-generation
 time and cancellation behavior to see whether equal node budgets conceal a
 material cost difference.
+
+## Fixed-root S3 cost pilot
+
+For a single reachable root, a legal side-0 P capture and legal side-1 P reply
+produce a side-0 hand containing P (two history plies). The S3 treatment uses
+the fixture's `opponent_checked + no_legal_reply:S3` action. The diagnostic
+control removes only `no_legal_reply` and retains `opponent_checked`; this is
+not a globally behavior-equivalent ruleset, but on this exact root its sorted
+legal-action set matched the S3 treatment (64 actions), and its reply-probe
+count was zero versus seven for S3. This isolates one bounded reply-scan path;
+it does not establish all-rule equivalence or a population cost.
+
+Eight alternating paired depth-1 searches used identical root histories,
+node/time limits, evaluator, no TT/order/root tactical, and q-depth zero. The
+first two runs per arm were excluded as warm-up. Each remaining run completed
+65 nodes, generated 128 actions in two explicitly timed legal-generation calls,
+and chose the same action. Upper medians were 10.393 ms total / 1.639 ms legal
+generation for S3 and 9.483 ms / 0.898 ms for control. The observed legal-time
+difference is about 0.740 ms on this microfixture; it is small, unreplicated
+across positions, and may include Python timing noise. Both arms completed
+before the 5 s deadline; this pilot did not inject cancellation. The separate
+focused cancellation regression remains the cancellation evidence (3 targeted
+tests pass). No decision-relevant defect or need for an API/counter emerged;
+retain node-cap versus total-legality-work as an interpretation limitation.
+Full per-run values are in `data/semantic_search_mechanism_probes_20261020.json`.
+
+The formerly uninspected candidate child was then reconstructed from the same
+two-ply capture/reply root by applying the target P drop at (7,6). The child is
+checked, produces zero legal replies, and the existing `_exists_s3_reply`
+returns false (meaning no S3-or-lower reply exists), matching the guard's
+forbidden condition for this concrete reachable state. This closes that
+specific explanation gap; it does not validate other positions or all rule
+families.
+
+The fixture inventory found an existing combined drop-capacity/promotion
+lifecycle route. At its five-ply promotion checkpoint the auxiliary right was
+active; a depth-1 product `AlphaBetaPlayer` call completed at6 nodes, selected
+an executable legacy King action, and its PV replayed legally. The root had5
+legal actions. This confirms search accepts that state and returns a legal
+line, but the selected line did not exercise promotion/drop transitions, so it
+is only an interface check and adds no mechanism-utility or performance claim.

@@ -873,3 +873,33 @@ bounds searched nodes but not all nested legality work. This is an interpretatio
 limit, not a measured defect. Next run one small fixed-root S3/no-S3 paired
 measurement of searched nodes, legal-generation time and cancellation response;
 add no counter/API unless it demonstrates a decision-relevant gap.
+
+The bounded paired S3 pilot completed on one reachable two-ply hand root. Six
+measured depth-1 runs per arm (after two warmups) all completed at65 nodes and
+128 generated actions; one S3 root generation entered seven reply scans versus
+zero for a control that removed only `no_legal_reply` and retained
+`opponent_checked`. The sorted action sets matched on this root, but the
+control is not globally semantics-equivalent. Upper-median legal-generation
+time was1.639ms versus0.898ms (about0.740ms difference); both completed under
+the5s deadline. This small single-fixture timing does not establish a useful
+total-work gap, and cancellation was covered separately by the passing focused
+regression. Keep existing counters/API; do not infer node caps equal total
+legality work. Direct inspection of the candidate child on this same reachable
+two-ply root found check=true, zero legal replies, and `_exists_s3_reply=false`,
+confirming the conjunction for this case only. This closes the local
+explanation gap, not cross-position coverage. The fixture inventory identified
+an existing combined drop-capacity/promotion lifecycle. At its five-ply
+checkpoint with auxiliary right active, a depth-1 product AlphaBetaPlayer call
+completed at6 nodes and returned a legal King PV; the5-action root did not
+exercise the semantic action in its selected line. This is interface viability
+only, not mechanism/utility/performance evidence. An existing compound-shift
+fixture resolves the inclusion check: R's four legacy rays are unioned with the
+eligible unguarded semantic leap(+1,+1), so that geometry is not silently
+omitted. The geometry-only projection does not represent the companion shift.
+Its raw capability changes9.088 to9.767, but the fixture has only one
+non-anchor type, so normalized R remains1000 in both arms and no cross-type
+price conclusion is possible. Next select one existing multi-non-anchor
+composition with eligible and excluded semantic movement patterns, compare
+exact projected inputs and normalized relative prices, and stop if no existing
+fixture provides the required contrast. Full evidence is in
+`SEMANTIC_MOVEMENT_PRICE_BRIDGE_20261020.md` and the mechanism-probe JSON.

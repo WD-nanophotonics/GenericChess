@@ -4947,3 +4947,43 @@ Internal S3 reply candidates do not increment search node counts, so node-cap
 parity is not total-work parity. This is an interpretation limit, not yet a
 measured defect. PRIMARY has begun selecting a fixed-root S3/no-S3 paired cost
 measurement; no API/counter or policy change has been made.
+
+PRIMARY completed the scoped fixed-root cost pilot on a two-ply reachable P-in-
+hand history. Six measured depth-1 runs per arm completed at65 nodes/128
+generated actions; the S3 arm entered seven reply probes per root generation.
+Upper-median timed legal generation was1.639ms (S3) versus0.898ms (control),
+but the control only removes `no_legal_reply`, is not generally semantics-
+equivalent, and the observed sub-millisecond difference is one-fixture timing,
+not an engineering case for new counters/API. The separate injected-cancel
+test covers cancellation; no deadline fired in this pilot. PRIMARY retained
+these limits in the report and next selected direct inspection of the existing
+candidate child's reply set; no auxiliary checkout or output was read/adopted.
+
+At the user's requested once-per-PRIMARY-heartbeat check, the existing
+DEEPSEEK_AUX control chat was readable and idle. Its bounded recent view showed
+a completed turn and project commits/report work; no current loop, tool failure,
+duplicate executor, or role drift was evident. Pagination indicated older turns
+remain outside this inspection, so this is not a full-history health claim. No
+message/control/configuration change was made to DEEPSEEK_AUX. The sample check
+was bounded and did not delay the PRIMARY experiment.
+
+After the user's request to continue, PRIMARY directly inspected the target
+S3 candidate child on the same two-ply reachable P-capture/P-reply root: the
+child is checked, has zero generated legal replies, and
+`_exists_s3_reply` returns false. This confirms the forbidden conjunction for
+that root; it remains one-fixture evidence. A separate bounded depth-1 probe
+on the existing recombined promotion/drop lifecycle, with its global auxiliary
+right active after five legal plies, completed in6 nodes and replayed a legal
+King PV from a5-action root. It is interface viability only; the chosen line did
+not traverse the semantic action. The mixed legacy/semantic profile inspection
+found that fixture R's four legacy rays are unioned with eligible semantic
+leap(+1,+1), with the compound companion shift intentionally absent from the
+geometry-only projection. This fixture has one non-anchor type, so normalized
+price stays1000 despite raw capability changing9.088 to9.767; no relative price
+claim follows. Next select an existing multi-non-anchor composition to test
+whether this eligible input changes normalized prices, or close that route if
+no suitable fixture exists. No source defect or code change was found.
+The first focused test launch hit the sandbox's unwritable OS Temp path during
+`tmp_path` setup (not a product assertion); rerunning the same cases with a
+Git-ignored project-local pytest basetemp passed all10 tests. No test condition
+or source changed between attempts.
