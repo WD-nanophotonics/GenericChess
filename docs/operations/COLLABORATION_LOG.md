@@ -5228,3 +5228,132 @@ still only a scale/reference-set effect; no outcomes exist for the alternative
 profile. Exactly two saved roots (`521005-0/1`) are available for the next
 matched D4/4096/q0/TT0 action-sensitivity check. No new game or normalizer
 change is planned.
+
+## PRIMARY_SANDBOX — 521005 median sensitivity and public search binding — 2026-10-20
+
+PRIMARY compared the existing all-type median with an in-memory one-per-exact-
+signature median on the only saved duplicate-signature 5x5 RuleSet, using only
+roots 521005-0/1. Both arms matched the locked root hashes, completed D3 at the
+same 4096-node cap and returned identical actions/PVs. Scores were 394/424 and
+-416/-448 (all-type/one-per-signature); they show score sensitivity only, not
+utility. The first implementation passed normalized floats through a direct
+adapter that integer-truncated them. PRIMARY caught this before publication,
+preserved that invalid result privately, marked it superseded, and reran using
+the established LearnableMaterialCheckpoint path. Only the corrected result
+supports the finite action/PV observation. All four three-ply PVs replayed
+legally, including the semantic A-hand drop. No games, training or product code
+changed.
+
+A separate bounded caller check confirmed ongoing cross-RuleSet AlphaBetaPlayer
+input is rejected by SearchPathRuntime before search; finished-session fast-path
+mismatch is independently guarded and covered by tests. No API defect was found.
+Evidence and exact inputs are in STATIC_SIGNATURE_MEDIAN_CHOICE_521005_20261020.md,
+SEARCH_CALLER_RULESET_BINDING_20261020.md and their data folders.
+
+The once-per-patrol DeepSeek read returned notLoaded; its current health remains
+unknown. The bounded page showed a previously recorded running status but no
+verified current recurrence or material workflow fault. PRIMARY neither messaged
+nor controlled DEEPSEEK_AUX. DEV_AUX supplied no changes adopted or independently
+rerun here; no auxiliary checkout, state or computation was touched. No
+coordination dependency or disagreement arose. Efficiency limits: two saved
+roots, four fixed-node searches, zero new games/training, plus one pre-search
+ruleset-rejection probe. The next route is a distinct unfamiliar-rule search
+contract, selected only if opposite evidence could change the interface choice.
+
+## PRIMARY_SANDBOX — corrected price probe and checked-root fallback — 2026-10-20
+
+The preliminary 521005 median comparison was invalid because the direct Native
+value adapter integer-truncated fractional normalized prices. PRIMARY preserved
+its exact output privately, replaced the user-facing result only after switching
+to the existing LearnableMaterialCheckpoint representation, and reran the same
+two locked roots/caps. Corrected scores shifted from 394 to424 and -416 to-448,
+but actions/PVs remained identical; every PV replayed legally. This is score
+sensitivity without choice/outcome utility evidence; all-type median remains.
+
+PRIMARY then tested one concrete public-call combination not previously covered
+as a single assertion: a pre-cancelled AlphaBeta call with its mover in check
+returned a legal evasion from `legal_fallback` and preserved the session snapshot.
+No product/API fix followed. The focused AlphaBeta/finished-session regression
+files passed 62 tests (only pytest cache-write warning). A source inventory of
+the saved candidate96 paired-arm machinery has begun to identify a concrete next
+cross-rule price-transfer decision; this observation alone does not justify a
+new game/training panel. The prior once-per-patrol DeepSeek read returned
+`notLoaded`, so current health is unknown; its visible evidence is historical,
+with no verified current recurrence. No message/control or auxiliary checkout
+change occurred.
+
+At the next checkpoint, PRIMARY inspected the saved candidate96 comparison
+machinery rather than starting another panel: its112 candidate-move records
+reduce to37 state hashes, the56 Unit/static slots are paired only within each
+seed, and no exact candidate-state hash crosses RuleSet seeds. It therefore
+cannot answer cross-rule transfer. The bounded next choice is to identify a
+same-target-rule control before considering any transfer run. The current
+Slack channel and complete threads for the two recent `CHAT_Comments` posts and
+the related DEV_AUX request were saved privately before review; all three
+threads had no further replies. The comments remain advice: the DEV_AUX root
+admission suggestion stays in its lane, and the evaluator-default note does
+not alter this explicit-checkpoint experiment or justify a product change.
+
+## PRIMARY_SANDBOX — raw-profile scale and search-contract continuation — 2026-10-20
+
+The same-rule control check found no exact candidate96 state hashes shared
+across rules, so it could not estimate transfer on a common state/action space.
+PRIMARY instead compared raw-capability and saved normalized weights on the
+four existing roots from the exact-signature pair 521004:P/522008:A. An initial
+manifest hash was malformed; the first escalation stopped before search, the
+full SHA was corrected, and the failed frontier was preserved. The corrected
+eight searches used existing checkpoints, D4/4096/Q0/TT0 caps and only saved
+roots. All four completed D3 at the node cap; action and PV matched on every
+root, while evaluator scores changed. Independent PV replay confirmed all
+three-ply lines legal. This closes only finite fixed-root scale sensitivity,
+not utility or a price law; normalized profiles/defaults remain. Full input,
+failure, result and limits are in `RAW_PROFILE_SCALE_FIXED_ROOT_20261020.md`
+and its data folder.
+
+The initial non-escalated attempt was interrupted before emitting a result;
+the cause was not established. A later project-local Python write to ignored
+`.local_agent` was denied by the restricted runner, so no claim of private raw
+failure-log preservation is made for that write. The same runner accepted the
+documented escalation for the bounded experiment; it was not used to bypass a
+control. No product changes, games, training, or auxiliary edits occurred.
+Earlier 62 focused search tests still apply because the product code is
+unchanged. The next route returns to a concrete unfamiliar-rule search
+contract; both auxiliary roles remain independent and untouched. Dot's
+CHAT_Comments were considered as suggestions and did not alter the current
+experiment or defaults. DeepSeek's recent chat remains `notLoaded`; the visible
+page is historical and cannot establish current health. No coordination
+dependency or independently rerun auxiliary result is claimed.
+
+## PRIMARY_SANDBOX — finite-time search-input contract — 2026-10-20
+
+After closing the finite raw-vs-normalized root comparison, PRIMARY returned to
+the unfamiliar-search caller line. A source-backed pre-fix check showed that
+NaN and positive infinity passed `SearchLimits` construction and never tripped
+the cooperative deadline comparison (`monotonic >= NaN` is false); negative
+time was also accepted as an already-expired limit. The documented `None`
+value already means unlimited. PRIMARY added constructor validation for finite,
+non-negative seconds, retained zero-time fallback semantics and did not change
+deadline polling. The 76 focused AlphaBeta, Native-budget and finished-session
+tests pass. No games/training or auxiliary files/runs were involved. This
+protects the bounded public API contract; it is not a hard realtime or strength
+claim. Evidence is in `SEARCH_LIMITS_NONFINITE_TIME_20261020.md`.
+
+The next bounded step is a different documented public search-result/callback
+contract, source and regression review first; no follow-up code is planned
+without a reproduced contradiction. Earlier bootstrap failure on the raw-scale
+experiment is documented, and its corrected result stays finite/sensitivity-
+only. Dot advice did not govern or gate this work. The DeepSeek control-chat
+read was limited to a historical page and `notLoaded`; current status remains
+unknown, not healthy. PRIMARY neither messaged nor controlled it.
+
+## PRIMARY_SANDBOX — result/callback contract source audit — 2026-10-20
+
+The progress callback is exposed on the shared Player protocol without a
+specified cadence or exception contract. Source shows AlphaBeta emits it only
+after complete main iterations; no production caller or contrary documented
+promise was found. Existing result-field tests already cover declaration,
+terminal, fallback and PV semantics across the declaration-integration,
+provenance, root-terminal, no-contest and finished-session suites. No duplicate
+probe or API change was warranted. The next step is a different production
+caller with an actually uncovered unfamiliar-rule invariant, starting from its
+consumed fields and present regression map.

@@ -1530,3 +1530,102 @@ search invariant beyond the closed lifecycle, history, terminal, fallback,
 root-budget, cancellation, and qfrontier cases. Start with a concrete public
 caller and one falsifiable state/result contract; do not add APIs or launch a
 game panel unless opposite outcomes would change the next implementation.
+
+## Close 521005 signature-median choice sensitivity — 2026-10-20
+
+The only saved within-rule duplicate-signature profile (521005, promotable A/P)
+was compared on exactly its two frozen roots. At matched D4/4096/q0/TT0 caps,
+both all-type and one-per-signature medians completed D3 at 4096 nodes and
+selected identical action/PV on both roots; all four three-ply PVs replayed
+legally through GameSession, including the semantic hand drop. Correct scores
+were 394/424 and -416/-448 (all-type/one-per-signature), showing score
+sensitivity but no choice change. An initial direct-float adapter run silently
+truncated normalized weights and is preserved privately, superseded, and not
+evidence; the corrected run used the existing LearnableMaterialCheckpoint
+path. This closes the finite choice-sensitivity follow-up only: no alternative-arm
+game outcomes exist, so it does not identify the correct reference measure or
+establish usefulness. Retain the current all-type median; do not expand the
+price panel or change defaults. Full inputs, hashes and reproducer:
+STATIC_SIGNATURE_MEDIAN_CHOICE_521005_20261020.md.
+
+A separate source-and-call probe closed one public search-interface invariant:
+ongoing sessions passed to a player bound to another generated RuleSet are
+rejected by SearchPathRuntime before search; the finished-session fast path has
+its own fingerprint guard. Existing terminal-mismatch regression plus the
+saved ongoing-call probe show no API defect or need for duplicate validation.
+See SEARCH_CALLER_RULESET_BINDING_20261020.md.
+
+## Close checked-root cancellation fallback contract — 2026-10-20
+
+A focused public `AlphaBetaPlayer.choose_action` probe started from a valid
+ongoing 4x4-rook root where the mover was in check, with cancellation already
+set. The two legal evasions were the fallback source; the returned action was
+one of them, result source was `legal_fallback`, termination was `cancelled`,
+depth/nodes were zero and the input session snapshot stayed unchanged. This
+combines existing fallback and check-evasion behavior on one caller; the probe
+seeds its state privately only as a test fixture and does not imply a supported
+state setter. No product/API change follows and no latency bound is claimed.
+Evidence: `SEARCH_CHECKED_ROOT_FALLBACK_20261020.md` and
+`data/search_checked_root_fallback_20261020/`.
+
+The candidate96 source audit found 112 candidate-move records but only37 unique
+state hashes; all56 saved Unit/static slots are matched within their own seed,
+and no exact candidate state hash is shared across different rule seeds. Thus
+these records cannot isolate cross-rule price transfer on the same state/action
+space. The audit was read-only and launched no games or training.
+
+## Close raw-vs-normalized scale on the exact-signature pair — 2026-10-20
+
+The exact-signature pair `521004:P`/`522008:A` has equal raw capability score
+but differently normalized values. A matched fixed-root comparison on the four
+already-saved roots changed all four score magnitudes but none of the actions or
+three-ply PVs: each arm reached D3 at 4096 nodes. Legal PV replay passed. This
+is finite scale sensitivity only; no game utility, preferred reference measure,
+cross-rule transfer law, or default change follows. Retain normalized profiles
+and close this pair. The first escalated attempt stopped before search on a
+truncated manifest hash; the corrected full hash and failed frontier are kept
+with the reproducer. An earlier restricted-run interruption has unknown cause
+and produced no result.
+
+Do not expand the price panel absent a changed premise or a same-target-rule
+control with a direct decision consequence. Return to the unfamiliar-rule
+search line: choose one concrete public consumer/state contract beyond the
+closed lifecycle, ruleset binding, history, terminal, fallback, budget,
+cancellation and qfrontier checks; inspect current code and a falsifiable
+regression/limited probe, then change implementation only for an observed
+defect. Full result and limits: `RAW_PROFILE_SCALE_FIXED_ROOT_20261020.md`.
+
+## Preserve finite-time bounds at the public search input — 2026-10-20
+
+The next public-contract probe found a real `SearchLimits` defect: NaN creates
+a deadline that can never expire, while infinity silently behaves as unlimited
+despite `None` being the documented unlimited value. Negative time likewise
+means accidental immediate fallback. `SearchLimits` now rejects negative and
+non-finite time values at construction; zero remains valid and existing
+cooperative deadline polling is unchanged. The three focused AlphaBeta,
+Native-budget and finished-session files pass (76 tests). This is resource-bound
+input correctness only, not a strict wall-time or search-quality claim. See
+`SEARCH_LIMITS_NONFINITE_TIME_20261020.md`.
+
+Next inspect one remaining public search result/callback contract not covered
+by the closed caller checks; require a concrete mismatch between the documented
+protocol and implementation before changing it. Avoid broadening time-budget
+validation into unrelated fields without evidence; the only demonstrated gap
+was non-finite/negative wall-time input.
+
+## Close progress/result metadata source check — 2026-10-20
+
+The shared `Player` protocol exposes an untyped optional progress callback but
+does not promise cadence/error handling. AlphaBeta forwards it only after a
+completed main iteration; no production caller or contrary documented contract
+was found, so no callback behavior change is justified. The public
+`PlayerDecision` declaration/fallback/PV semantics are already covered across
+`test_f27_declaration_integration`, `test_search_result_provenance`,
+`test_root_terminal_wins`, `test_no_contest_search` and
+`test_finished_session_search`; another duplicate probe would not change the
+implementation choice. No code change follows this source audit.
+
+Next map one concrete production caller to a still-uncovered unfamiliar-rule
+state/result invariant. First inspect its actual consumed fields and existing
+regressions; only run a reproducer or change code if a mismatch remains possible
+and its opposite outcome changes a real caller/API decision.

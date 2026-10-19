@@ -1,0 +1,53 @@
+{
+  "schema": "primary-signature-median-choice-pv-replay-v1",
+  "result_sha256": "79c86e08fed81629af9c42d737202f033b21e19debcd37e153e3c766fbd6207b",
+  "roots": [
+    {
+      "root_id": "521005-0",
+      "root_sha256": "ec79815c0660011461ba53c2459982fbb04bfe5033a242740a45c53a9f6e9063"
+    },
+    {
+      "root_id": "521005-1",
+      "root_sha256": "0378ec2d6fa00c956916066fc9b0a1e286124b7692fdb9bd3de395cafd5619ee"
+    }
+  ],
+  "checks": [
+    {
+      "root_id": "521005-0",
+      "arms": {
+        "current_all_type_median": {
+          "pv_plies": 3,
+          "legal_actions_all": true,
+          "ending_status": "ongoing",
+          "final_ply": 7
+        },
+        "counterfactual_one_per_exact_signature": {
+          "pv_plies": 3,
+          "legal_actions_all": true,
+          "ending_status": "ongoing",
+          "final_ply": 7
+        }
+      },
+      "same_pv": true
+    },
+    {
+      "root_id": "521005-1",
+      "arms": {
+        "current_all_type_median": {
+          "pv_plies": 3,
+          "legal_actions_all": true,
+          "ending_status": "ongoing",
+          "final_ply": 7
+        },
+        "counterfactual_one_per_exact_signature": {
+          "pv_plies": 3,
+          "legal_actions_all": true,
+          "ending_status": "ongoing",
+          "final_ply": 7
+        }
+      },
+      "same_pv": true
+    }
+  ],
+  "status": "COMPLETE"
+}

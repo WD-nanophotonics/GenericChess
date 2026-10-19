@@ -1,0 +1,25 @@
+{
+  "schema": "primary-raw-profile-scale-pair-v1",
+  "question": "Does using unnormalized raw capability scores instead of the saved per-RuleSet normalized static profile change fixed-budget Native choices on the exact-signature cross-rule pair's existing roots?",
+  "changed_premise": "The saved pair 521004:P/522008:A has identical raw capability score 1.346842971 but normalized board/hand prices 615/554 versus 1000/900. The prior 521005 duplicate-signature check tested a separate counterfactual median and found no fixed-root action change; it did not test raw versus normalized profile scale.",
+  "inputs": [
+    {"rule_id":"521004","root_ids":["521004-0","521004-1"],"profile_sha256":"90ab29a9810a4b636ed5b6c190991584cfedf93633b17d3cba6d742529d0fd03","rule_sha256":"f7bd62cd5ad5abbf31740971161a1ac30e693e5d681d367b5ce09b96f606f16c","roots_manifest_sha256":"3d8f6cd488dfaba3525a91797edc8672d48c3d1a4b037f9a9d0aa05a2462da07"},
+    {"rule_id":"522008","root_ids":["522008-0","522008-1"],"profile_sha256":"ba6da0917c9b675c41a18235765e8bd704331ae6c8dc8063e4342a5129af8441","rule_sha256":"9f101d613d26e10ba51e528678463bf77287a638fd8569f81fcf7dbdd1c89123","roots_manifest_sha256":"b06a6a837e5571ce781015a7bca5387fe89703daf080546fa4825ea55a57ff04"}
+  ],
+  "conditions": {
+    "arms": ["saved_normalized_profile", "raw_capability_scale"],
+    "board_size": 5,
+    "max_depth": 4,
+    "max_nodes": 4096,
+    "max_time_seconds_per_query": 30,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 0,
+    "tt_megabytes": 0,
+    "root_window_pruning": false,
+    "saved_roots_only": true,
+    "games_or_training": false,
+    "raw_hand_weight": "raw capability score multiplied by existing EvaluationConfig.hand_weight"
+  },
+  "cost": "Eight searches at a 30-second per-search ceiling plus replay/setup; hard process cap 150 seconds. Expected far below 120 minutes; no Dot assessment needed.",
+  "decision": "An action/PV change is finite scale sensitivity only; scores are not utility. No action changes closes this pair as scale-insensitive under these caps. No profile/default or cross-rule price law follows either way."
+}

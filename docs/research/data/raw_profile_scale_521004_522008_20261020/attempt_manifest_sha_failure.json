@@ -1,0 +1,16 @@
+{
+  "schema": "primary-raw-profile-scale-failed-attempt-v1",
+  "status": "STOPPED_BEFORE_SEARCH",
+  "command": ".venv\\Scripts\\python.exe docs/research/data/raw_profile_scale_521004_522008_20261020/producer.py",
+  "failure": "AssertionError: input SHA256 mismatch for 521004 roots manifest",
+  "expected_malformed_sha256": "3d8f6cd488dfaba3525a91797edc8672d48f9a9d0aa05a2462da07",
+  "actual_sha256": "3d8f6cd488dfaba3525a91797edc8672d48c3d1a4b037f9a9d0aa05a2462da07",
+  "queries_started": 0,
+  "partial_frontier": {
+    "plan_sha256": "df7f7aa2b1217b6410507844ff61bc06782b0665d6885cb374652059d0edb7a6",
+    "inputs": [],
+    "roots": []
+  },
+  "correction": "Restored the complete digest from a fresh SHA256 calculation over the frozen roots.json before rerunning the same pre-registered comparison.",
+  "superseded_by_result_sha256": "b41d67c3862d94032cbb985eee14a4fecf79eb0983dfcfd516c1387f3bb5d50f"
+}

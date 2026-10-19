@@ -271,6 +271,22 @@ def test_budget_deadline_and_cancel_checked_during_qsearch():
     assert "cancelled" in str(exc.value)
 
 
+@pytest.mark.parametrize(
+    "seconds",
+    [-1.0, float("nan"), float("inf"), -float("inf"), 10**400, "1"],
+)
+def test_search_limits_reject_invalid_time_budgets(seconds):
+    with pytest.raises(
+        ValueError,
+        match="max_time_seconds must be a finite non-negative number",
+    ):
+        SearchLimits(max_time_seconds=seconds)
+
+
+def test_search_limits_allow_zero_time_as_immediate_budget():
+    assert SearchLimits(max_time_seconds=0.0).max_time_seconds == 0.0
+
+
 def test_quiescence_searches_evasions_when_in_check():
     from generic_chess.ai.alphabeta.transposition import TranspositionTable
     from generic_chess.core.attacks import is_in_check

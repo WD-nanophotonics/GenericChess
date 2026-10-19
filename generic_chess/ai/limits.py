@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 
@@ -32,6 +33,19 @@ class SearchLimits:
     deterministic: bool = True
 
     def __post_init__(self) -> None:
+        if self.max_time_seconds is not None:
+            try:
+                valid_time_limit = (
+                    math.isfinite(self.max_time_seconds)
+                    and self.max_time_seconds >= 0
+                )
+            except (OverflowError, TypeError, ValueError):
+                valid_time_limit = False
+            if not valid_time_limit:
+                raise ValueError(
+                    "max_time_seconds must be a finite non-negative number; "
+                    "use None for no time limit"
+                )
         if self.quiescence_hard_max_depth < self.quiescence_max_depth:
             raise ValueError(
                 "quiescence_hard_max_depth must be >= quiescence_max_depth "
