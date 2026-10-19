@@ -2866,10 +2866,12 @@ reading or adoption is claimed for this segment.
 
 Correction to the provisional paragraph above: the persistent writable-root
 setting is available. After checking the official Codex configuration reference,
-I added only C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX to the
+I added only the DEV_AUX checkout root to the
 user-level config.toml sandbox_workspace_write.writable_roots list and validated
 the TOML. An ordinary write in this already-running executor still returned
 Access denied, so the new setting has not yet been shown to load into this live
 sandbox. Reviewed escalation remains the working path for this session. No ACL,
 mainline checkout or other role state was changed. Official reference:
 https://learn.chatgpt.com/docs/config-file/config-reference
+
+Publication-path correction (2026-10-20): the first task2602 commit included a local Windows profile path in this log. The current revision removes that path. The already-published earlier commit remains in Git history; no force push or history rewrite was used. The report refers to the checkout generically going forward.
