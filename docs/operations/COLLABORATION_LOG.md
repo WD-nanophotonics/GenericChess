@@ -5153,3 +5153,78 @@ data verification only; zero games/training and no broader suite claim. The
 next task is to inspect frozen candidate96 profile ratios across its existing
 rule seeds, then decide whether there is a new cross-rule price question that
 could alter the candidate's scope.
+
+## PRIMARY_SANDBOX — reproducible price-scale closure and qfrontier follow-up — 2026-10-20
+
+PRIMARY reconstructed the explicit raw-capability-to-1000 mapping against the
+saved normalized profile on all32 existing 5x5 roots: first action, PV, depth and
+nodes matched32/32. A changed-regime sample of four archived 8x8 generated
+hybrid/promotion/drop roots also matched action/PV/depth/nodes4/4; score shifts
+were not utility. All root/profile hashes and serialized 16-ply replay checked;
+no games, training, evaluator/default or source changes followed. The earlier
+unpreserved one-action report is retained as non-authoritative and superseded by
+the exact full reruns. Evidence is in
+`STATIC_5X5_PRICE_TRANSFER_20261020.md` and `LOCAL_MAINLINE.md`.
+
+On the existing generated-semantic promotion qfrontier, the saved Core/Native
+D2/q1 action divergence reproduced. Native exact-root mode and both legal root
+hints still chose the quiet king move at score1000. The fixed-child D1 scores
+cannot answer the original q1 backup question because the first complete
+iteration reserves qdepth0. No public exact per-root-action backup trace is
+returned, so the finding remains unresolved rather than labeled tie or defect;
+no search code/default changed. A separate bounded audit also found that public
+`PlayerDecision.score` is root-perspective diagnostic telemetry, not a game
+outcome input.
+
+The benchmark terminal-accounting correction applies declarations through
+`GameSession`, distinguishes rule draws from no-contest/ongoing cutoffs, and
+labels declaration actions. The ordinary sandbox test run was denied project
+write permission; the normal authorized elevated focused run passed51 tests in
+`test_benchmark.py` and `test_f24c_mixed_mechanic_certification.py` (pytest cache
+warning only). `git diff --check` passes after converting a mixed-CRLF report to
+canonical LF. Review found no personal data, passwords or credentials in the
+outgoing project content. The single DS patrol returned `notLoaded`; health is
+unknown. No verified new AUX contribution was adopted or independently rerun;
+no auxiliary checkout/state/process was touched and no coordination dependency
+arose. No disagreement beyond the unreproducible raw-scale checkpoint was
+hidden; the corrected explicit reruns are authoritative for that claim.
+
+## PRIMARY_SANDBOX — AI resignation/search cancellation — 2026-10-20
+
+The source audit followed `MainWindow._resign` into the controller while the
+same window may own an active `_AiThread` and cancellation token. A successful
+resignation invalidated any late result but did not request cancellation; the
+bounded search could continue after the game ended. PRIMARY updated only the
+controller and added a Qt-free late-result regression; all20
+`tests/product/test_ai_match.py` tests pass. The deterministic test proves
+token/state/result handling, not actual thread exit time. The remaining
+timeout/action mutation paths are the next bounded caller check. No science,
+evaluator, search algorithm or auxiliary work was changed. DEV_AUX and
+DEEPSEEK_AUX contributions remain independently owned; no auxiliary checkout,
+state, process or unpublished result was touched or claimed as rerun.
+
+The bounded remaining `SearchSnapshot` caller scan found GUI board/hand guards,
+existing timeout cancellation and session-replacing restart/load; the only
+confirmed live GUI mutation without cancellation was resignation. The
+controller-internal low-level `submit_action` is not exported/documented as an
+external contract, and arbitrary concurrent direct calls remain unsupported.
+
+PRIMARY also computed a no-game median-multiplicity counterfactual from eight
+saved 5x5 profiles: 46/72 existing board/hand value pairs changed when one
+existing raw type score was duplicated in that profile's median; maximum
+deltas were4560/4104. No exact within-rule signature duplicate exists in those
+eight rules, and this does not establish generated-domain frequency or utility.
+No profile/source default changed. The exact formula, hashes and limits are in
+`STATIC_PROFILE_MEDIAN_MULTIPLICITY_20261020.md`; next work is a distinct
+unfamiliar-rule search invariant, not another price panel absent reachable
+exposure and a decision-changing consequence.
+
+Correction from the full frozen 5x5 profile audit: the counterfactual scan's
+candidate96 subset had no within-rule duplicate, but profile521005 in the
+original subset does contain same-signature `A/P`. Its all-type median is
+3.023646 versus2.804477 if each signature class contributes once, shifting
+all three existing board values by +67..78 and hand values by +60..70. This is
+still only a scale/reference-set effect; no outcomes exist for the alternative
+profile. Exactly two saved roots (`521005-0/1`) are available for the next
+matched D4/4096/q0/TT0 action-sensitivity check. No new game or normalizer
+change is planned.

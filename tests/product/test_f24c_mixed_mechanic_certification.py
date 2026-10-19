@@ -24,6 +24,9 @@ from generic_chess.ai.alphabeta.quiescence import classify_noisy
 from generic_chess.ai.alphabeta.statistics import SearchStatistics
 from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.core.transition import legal_successors
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
+from generic_chess.session.session import GameSession
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import (
     RuleActionEffect,
@@ -426,3 +429,97 @@ def test_mixed_semantic_capture_promotion_and_drop_keep_f24b_tactical_parity():
     staged = list(StagedMovePicker(state, [promotion, capture], _OrderingEvaluator(), 1, None, None, orderer, SearchTuning(), picker_stats))
     assert staged == [capture, promotion]
     assert picker_stats.move_picker_yielded_by_stage == {"good_capture": 1, "promotion": 1}
+
+
+def test_public_search_preserves_promotion_capture_to_hand_then_drop():
+    rules = _mixed_ruleset()
+    rows = [[None for _ in range(N)] for _ in range(N)]
+    for file, rank, piece in (
+        (0, 0, Piece(0, H0, H0)),
+        (6, 6, Piece(1, H0, H0)),
+        (4, 4, Piece(0, A0, A0)),
+        (6, 4, Piece(1, B0, B0)),
+        (0, 2, Piece(0, C0, C0)),
+    ):
+        rows[rank][file] = piece
+    compiled = compile_semantic_ruleset(
+        replace(rules, initial_position=tuple(tuple(row) for row in rows))
+    )
+    session = GameSession(compiled)
+
+    def target_index(action):
+        if hasattr(action, "target"):
+            return action.target
+        return action.to_square.rank * N + action.to_square.file
+
+    def submit_one(predicate):
+        candidates = tuple(action for action in session.legal_actions() if predicate(action))
+        assert len(candidates) == 1, candidates
+        session.submit(candidates[0])
+        return candidates[0]
+
+    promotion = submit_one(lambda action: action.promotion_target_id == A1)
+    promoted = session.state.position.board[target_index(promotion)]
+    assert (promoted.base_type_id, promoted.current_type_id, promoted.promoted) == (
+        A0, A1, True
+    )
+
+    submit_one(
+        lambda action: "capture_B0_A0" in getattr(action, "pattern_id", "")
+        and target_index(action) == target_index(promotion)
+    )
+    assert session.state.position.hands[1].count(A0) == 1
+
+    submit_one(lambda action: "advance_C0" in getattr(action, "pattern_id", ""))
+    dropped = submit_one(
+        lambda action: "drop_A0" in getattr(action, "pattern_id", "")
+        and target_index(action) == promotion.from_square.rank * N + promotion.from_square.file
+    )
+    assert session.state.position.board[target_index(dropped)].base_type_id == A0
+    assert session.state.position.hands[1].count(A0) == 0
+    assert session.state.ply_count == 4
+    assert len(session._search_witnesses) == 5
+
+    class FlatEvaluator:
+        def evaluate(self, _state):
+            return 0
+
+        def capture_order_value(self, _mover, _victim):
+            return 0
+
+        def type_value(self, _type_id):
+            return 0
+
+    limits = SearchLimits(
+        max_depth=2,
+        max_nodes=4096,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+    native_requested = AlphaBetaPlayer(
+        compiled, evaluator_override=FlatEvaluator(), use_disk_cache=False
+    )
+    core_only = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=FlatEvaluator(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    )
+    assert native_requested.native_legality_provider is not None
+    native_decision = native_requested.choose_action(session, limits)
+    core_decision = core_only.choose_action(session, limits)
+    assert (
+        native_decision.action,
+        native_decision.score,
+        native_decision.completed_depth,
+        native_decision.principal_variation,
+        native_decision.nodes,
+    ) == (
+        core_decision.action,
+        core_decision.score,
+        core_decision.completed_depth,
+        core_decision.principal_variation,
+        core_decision.nodes,
+    )
+    assert native_decision.completed_depth == 2
+    assert native_decision.principal_variation[0] == native_decision.action

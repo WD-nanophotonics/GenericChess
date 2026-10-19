@@ -563,3 +563,23 @@ the action difference is not classified as a semantic defect or utility change.
 This records one finite generated-semantic promotion case only. No backend or
 qsearch default change follows. Compact evidence:
 `data/native_semantic_promotion_qfrontier_20261020.json`.
+
+## Recheck of the saved generated-semantic promotion qfrontier — 2026-10-20
+
+The prior 3x3 SHOGI_LIKE record was reconstructed with the same semantic rule,
+material values, full valid history sentinel, and D2/1000-node/3-second/qdepth1
+budget. Core again selected `b2-b3=G` (score1000,30 total nodes/11 qnodes);
+Native again selected `a3-a2` (score1000,32/16). Native exact-root mode retained
+a3-a2 (33/15). Making either move a legal root-order hint in exact-root mode
+still selected a3-a2 with score1000; this does not distinguish a tie from a
+strictly better quiet move.
+
+A fixed-child D1 probe gave both engines equal values per action (promotion1000,
+quiet100), but the engine's first completed iteration intentionally uses ordinary
+qdepth0 even when qdepth1 is requested. Those values are therefore not the
+same D2/qdepth1 action backups and cannot resolve the original discrepancy. The
+public result exposes selected action/PV and iteration metadata, not all exact
+root-action backup values. No utility, semantic defect, source change or default
+change follows. Keep this as a bounded unresolved traversal/value question; do
+not add a tracing API or another game panel for this one fixture. A new question
+needs a separate changed premise and a decision consequence.

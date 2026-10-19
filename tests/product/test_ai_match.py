@@ -478,3 +478,24 @@ def test_finish_ai_move_rejects_stale_snapshot():
     decision = _stub_runner()(ctrl.session, ctrl.ai_limits(), token)
     assert not ctrl.finish_ai_move(decision, snapshot)
     assert ctrl.session.state.ply_count == 0
+
+
+def test_resign_cancels_inflight_ai_search_and_discards_its_result():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(0))
+    _human_move(ctrl)
+    assert ctrl.ai_move_needed()
+
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    # Model a worker result that arrives after the user's resignation.
+    decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+
+    assert ctrl.resign()
+    assert token.is_cancelled()
+    assert not ctrl.ai_thinking
+    assert ctrl.session.result.status.value == "resignation"
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.state.ply_count == 1

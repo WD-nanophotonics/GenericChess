@@ -574,6 +574,9 @@ class UIController:
             return False
         self._bump_ai_generation()
         self._resigned_by = self._session.to_record().resigned_by
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
         if self._match is not None and self._clock is not None:
             self._clock.pause()
         self._interaction.clear_selection()

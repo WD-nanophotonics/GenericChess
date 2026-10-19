@@ -1358,3 +1358,175 @@ Do not expand this into a board-size sweep without a concrete shared-size
 consumer whose choice could change. Return the next segment to a distinct
 unfamiliar-rule search invariant or a price-transfer question with actual
 reachable exposure and a prespecified decision consequence.
+
+## Candidate96 profile-ratio range audit — 2026-10-20
+
+Recomputed board/hand P:B and A:B ratios and within-profile ranks from the eight
+frozen candidate96 profile files only. Board ranks were A>B>P once, P>A>B three
+times, B>P>A three times and B>A>P once; hand ranks matched. Board P:B range
+was 0.1591–3.7937 (median 0.8190), A:B 0.1357–2.4272 (median 1.0614). The
+letters are generated type IDs, not homologous piece classes: signatures and
+promotion status differ across seeds. Therefore this descriptive spread does
+not support transfer of a shared P/B/A price vector or a policy/default change.
+No games, search or training ran. Reproducer and full source hashes are in
+`STATIC_5X5_PRICE_TRANSFER_20261020.md` and its `candidate96/profile_ratio_summary.json`.
+
+Close the label-ratio transfer question: it is not a common-piece comparison.
+Resume unfamiliar-rule search with one concrete current public caller versus
+its tested invariant; if existing coverage fully closes it, select a different
+new issue rather than adding infrastructure or reopening the saved panels.
+
+## Benchmark terminal-caller repair — 2026-10-20
+
+[BENCHMARK_DECLARATION_AND_TERMINAL_ADJUDICATION_20261020.md](BENCHMARK_DECLARATION_AND_TERMINAL_ADJUDICATION_20261020.md)
+records a reproduced public benchmark defect: AlphaBeta selected an available
+WIN declaration with no ordinary action, but `play_game` scored it as `failed`
+without applying `GameSession.declare()`. The runner now executes/records that
+session-level decision, maps all current generic terminal outcomes, and keeps
+winnerless RESTART/no-contest unresolved. The existing declaration fixture
+reproduces both candidate-color results; a complete four-ply semantic
+no-progress cycle reaches `rule_draw`. The focused benchmark/declaration/
+no-progress suite passes 63. This changes measurement correctness only; no price,
+search or evaluator conclusion/default changes. Source review found a distinct
+UI consumer limitation for declaration-capable imported rules; it is not fixed
+or covered by this backend change, so UI declaration support remains unclaimed.
+
+The next research question returns to the open goal: choose one rule-price or
+unfamiliar-search premise whose opposite outcomes alter the next implementation
+choice, using reachable generated-rule exposure and existing data where
+possible; avoid repeating candidate96 D3 sensitivity and closed caller probes.
+
+## Remaining PlayerDecision callers and owner-asymmetric hand prices — 2026-10-20
+
+The remaining bounded public caller inventory found no second backend gameplay
+or benchmark outcome-adjudication defect. Arena/self-play apply declarations;
+the Shogi history audit uses a no-declaration legacy fixture and records
+counters; readiness/unfamiliar-search routes are telemetry/legality diagnostics,
+not game adjudicators. UIController still commits only ordinary actions for
+declaration-capable imported rules, but UI Test is user-maintained and out of
+this backend lane; keep the limitation explicit and make no UI claim. See
+`PLAYER_DECISION_CALLER_AUDIT_20261020.md`.
+
+A matched read-only 4x4 legacy fixture with owner-0 rook drops disabled and
+owner-1 drops enabled yielded 3 versus17 legal actions (0 versus14 rook drops)
+while each side-to-move hand state received the same +900 static evaluation.
+The profile's drop metadata is owner-0-only and the evaluator's hand price is
+shared by owner/type. This proves a structural asymmetry, not utility or a
+correct owner-specific price. Next test whether an existing reachable state or
+a minimal matched search control makes that asymmetry decision-changing. If no
+cheap utility witness exists, close it without broad games/training and resume
+the unfamiliar-rule search line. Do not alter prices/defaults from action-count
+or score sensitivity alone.
+
+## AlphaBeta vs-random CLI terminal outcome accounting — 2026-10-20
+
+`ALPHABETA_RANDOM_CLI_TERMINAL_OUTCOMES_20261020.md` records and fixes a
+separate public diagnostic-caller defect: its no-action branch treated an
+available root WIN declaration as a draw, and its external 400-ply ongoing
+cutoff also fell through to draw. The CLI now applies declarations through
+`GameSession`, credits only the recorded winner, preserves explicit rule draws,
+and reports no-contest/cutoff outcomes as unresolved. The deterministic
+two-game reproduction yields one AlphaBeta declaration win, one unresolved
+400-ply game and zero draws; the one-shot report names declarations explicitly.
+Benchmark/declaration/no-progress tests pass (68).
+This is result-accounting correctness, not search, price, strength or default
+evidence. Next return to one distinct decision-changing unfamiliar-search or
+rule-price premise; do not expand CLI smoke runs into a strength campaign.
+
+## Close generated-domain owner asymmetry; exact-signature normalization — 2026-10-20
+
+The asymmetric-mask fixture is schema-valid but outside the current generator:
+`generator.py` derives both owners' masks from the same owner-relative atoms,
+and `relative_to_absolute` relates the masks by 180-degree rotation. A read-only
+scan found no exception among29 existing JSON rules. No owner-specific price
+change follows for the generated-rule target; keep the custom-import limitation
+scoped separately.
+
+The16 existing static 5x5 profiles contain48 non-anchor entries and46 exact
+movement-signature classes (allowing horizontal reflection only to preserve
+forward direction). Only one exact class repeats across rules: 521004:P and
+522008:A, both promotable. Their raw capability scores match exactly at
+1.346842971, but board/hand prices are615/554 versus1000/900 because their
+per-ruleset raw medians are2.188674 and1.346843. This is evidence that exact
+geometry does not transfer a normalized price independently of the other types
+in its RuleSet; one pair is not a global law or utility result. No code/default
+change. See `PLAYER_DECISION_CALLER_AUDIT_20261020.md`.
+
+That gate is now completed on both the saved 32-root 5x5 panel and a changed
+four-root 8x8 generated-hybrid panel. Under the explicit fixed `round(1000 *
+raw_capability_score)` mapping, neither panel changed an action or PV at equal
+caps; scores shifted on 25/32 5x5 roots and all four 8x8 roots. The 8x8 arms
+preserved 16-ply action/history/hands/auxiliary replay; two pairs stopped at D2
+node cap and two completed D3. The prior ephemeral one-action-change summary
+was not reproducible because its exact mapping/output was not retained; the
+explicit full reruns agree, including two hash-seeded checks of 521005-0.
+Existing saved outcomes do not include either raw-profile arm, so no utility
+claim is available. Close this scale-sensitivity route without games, training
+or profile/default changes; the score is a root-perspective diagnostic, not
+cross-rule utility. See `STATIC_5X5_PRICE_TRANSFER_20261020.md` for bounded
+methods, inputs and limits. Return to a distinct decision-changing unfamiliar-
+rule search question; do not enlarge another price panel absent a concrete
+consumer or changed premise.
+
+## In-flight search cancellation on resignation — 2026-10-20
+
+The actual GUI resignation path reaches the Qt-free `UIController` while an AI
+worker may be active. The old controller invalidated the eventual result but did
+not cancel its worker token or clear the thinking state, leaving a completed
+game's bounded search running. The controller now cancels the active token and
+clears thinking state after a successful resignation. A product regression
+models the delayed result and verifies it is discarded without another move;
+20 `test_ai_match.py` tests pass. This is a cancellation/lifecycle correction,
+not a search-quality or timing claim. Exact scope and limitation:
+`AI_RESIGN_CANCELLATION_20261020.md`.
+
+Next check only the remaining state-mutation path that can reach a live worker:
+compare timeout/ordinary-action/controller entry guards against the shared
+`SearchSnapshot.session` reference. Close source-only if the existing paths
+either cancel or reject before mutation; do not add deep-copy/session APIs or
+expand this into a GUI refactor.
+
+Boundary result: the live GUI board/hand handlers reject actions while the AI
+is thinking, timeout cancels its token, and restart/load replace the session
+and invalidate the generation. Repository production callers of the lower-level
+`submit_action` are controller-internal; direct programmatic calls have no
+worker-state guard, so arbitrary concurrent direct submission is not claimed
+safe. The active-game Resign menu was the confirmed unhandled UI mutation path
+and now cancels its worker. Next determine, source-only, whether the low-level
+direct-submission surface is a supported external contract or only an internal
+controller primitive; change it only if an actual supported caller violates
+the snapshot lifecycle, otherwise close this caller audit without a new API.
+
+The direct-submission boundary check found no exported or documented external
+`UIController.submit_action` production caller: current production calls are
+inside the controller, with human UI actions first passing its AI-thinking
+guards and AI actions committed only after the worker returns. Thus the
+confirmed in-flight GUI mutation was resignation; no general snapshot API or
+deep-copy change is justified. The intentionally unguarded low-level method
+still does not promise arbitrary concurrent direct calls.
+
+An existing-profile formula check found that counterfactually duplicating one
+type's raw capability in the per-ruleset median changed 46/72 original board/
+hand price pairs across candidate96 profiles 522001–522008; maximum deltas were
+4560/4104. None of these eight rules has a within-rule duplicate movement
+signature. The generator has no explicit cross-type uniqueness check, but this
+small saved sample gives no occurrence rate or utility. Keep the current
+normalizer; a revisit requires an observed reachable duplicate plus a
+decision-changing consequence. Details: `STATIC_PROFILE_MEDIAN_MULTIPLICITY_20261020.md`.
+
+Correction after checking the complete frozen 5x5 profile set: candidate96's
+eight 522001–522008 profiles have no within-rule duplicate, but the existing
+profile 521005 does contain same-signature types `A` and `P`. A counterfactual
+median over unique signatures changes its saved board values `1000/855/1000`
+to `1078/922/1078` and hand values `900/770/900` to `970/830/970` (7.815%
+scale change). These are semantically distinct types, and this does not choose
+the correct reference measure or show utility. The route is no longer a
+reachability question: compare only the two frozen profiles on the existing
+521005 roots at matched limits; if no robust decision difference appears,
+retain the current all-type normalizer and stop this branch without games.
+
+Next use existing source and regressions to test one distinct unfamiliar-rule
+search invariant beyond the closed lifecycle, history, terminal, fallback,
+root-budget, cancellation, and qfrontier cases. Start with a concrete public
+caller and one falsifiable state/result contract; do not add APIs or launch a
+game panel unless opposite outcomes would change the next implementation.
