@@ -4840,10 +4840,16 @@ source-of-truth check found LOCAL_MAINLINE already closes that fixture in
 FOUR_EFFECT_TERMINAL_UTILITY. I nevertheless executed one redundant 9.728s
 local repeat under its frozen 60s cap. Preserve the ignored receipt for
 provenance; it adds no independent experiment, report, game, training update or
-UNKNOWN completion and is not published as a new finding. The memo is corrected
-to treat the existing closure as authoritative. A scan of the explicit
-641001/6, 711001/8 and 741001/8 prepared inputs also found each already closed;
-the four-effect schema limit and five-effect refusal remain explicit. No AUX or
-DeepSeek code/state was read or changed, no Dot inquiry was needed, and no new
-scientific decision was identified. This corrects a task-selection error, not
-the published report; next work requires a genuinely new primary search question.
+UNKNOWN completion and is not published as a new finding. Its hand-written
+Core reference counts recursive calls including leaves; the earlier report's
+instrumented Core visits are not directly comparable, so no speed inference is
+made. The memo is corrected to treat the existing closure as authoritative. A
+scan of the explicit 641001/6, 711001/8 and 741001/8 prepared inputs also found
+each already closed; the four-effect schema limit and five-effect refusal
+remain explicit. No AUX or DeepSeek code/state was read or changed, no Dot
+inquiry was needed, and no new scientific decision was identified. This
+corrects a task-selection error, not the published report; next work requires a
+genuinely new primary search question. `git diff --check` passed and the
+session workflow target passed all31 tests with an isolated local pytest temp;
+published commit `e98650c6c59e20b85fb8e97f4a3411a06b2c0a77` was verified at the
+same full `origin/sandbox` SHA.
