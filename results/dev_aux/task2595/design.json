@@ -15,7 +15,8 @@
       "Complete schema fields include piece types, initial position, drop and promotion rules, repetition limit, max ply, stalemate result, board size and metadata.",
       "Non-anchor type IDs are exactly A,P,X; K is the sole anchor; at least one non-anchor piece is promotable with a valid target.",
       "Initial position is nonterminal and has legal actions; at least 24 of the 32 frozen four-ply evaluation roots are nonterminal and have legal actions.",
-      "Failure of any admission criterion is retained as seed failure; no replacement seed or outcome-based rule selection."
+      "Failure of any admission criterion is retained as seed failure; no replacement seed or outcome-based rule selection.",
+      "Drop maps cover A,P,X and each type has at least one allowed drop square for each player; hand channels are therefore semantically reachable."
     ],
     "training_root_families": "500000..508191 (8192 deterministic families; each family is used at most twice per arm, same paired sequence across methods).",
     "evaluation_root_families": "510000..510031; both candidate colors per family; exact serialized histories must be unique and have zero overlap with every TRAIN root before fitness."
