@@ -1,0 +1,75 @@
+{
+  "session_id": "a6ffbcc4-57f0-4fa7-8630-41d48b7fda41",
+  "registered_at": "2026-10-19T13:42:44.521992+00:00",
+  "domain": "generic",
+  "dimension": 6,
+  "initial_seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "methods": [
+    "Fixed"
+  ],
+  "arms_order": [
+    [
+      363001,
+      1977,
+      "Fixed"
+    ],
+    [
+      363001,
+      8173,
+      "Fixed"
+    ],
+    [
+      363001,
+      27182,
+      "Fixed"
+    ],
+    [
+      363001,
+      31415,
+      "Fixed"
+    ]
+  ],
+  "nodes_per_arm": 100000,
+  "cap_seconds": 2400,
+  "max_games": 4096,
+  "foe": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "depth": 2,
+  "nodes_per_query": 8192,
+  "seconds_per_query": 2.0,
+  "H": 128,
+  "prefix_plies": 4,
+  "training_family_offset": 363100,
+  "ordering_seed_offset": 1002592000,
+  "eta": 0.05,
+  "lambda": 1.0,
+  "snapshot_nodes": [
+    100000
+  ],
+  "pins": {
+    "results/dev_aux/task2591/run.py": "02051f49cf50ce4dfed501aba97310bb7051d818a581d301cc63b4a2c654d068",
+    "results/dev_aux/task2591/register.py": "d16a747f62747cc24ffb4f50e4d100a37550c64c5b24f2201c1bd991e6ce5a0d",
+    "results/dev_aux/task2591/bind.py": "258f78cf5738dfb97e61bd5c167d75ff89bd7036adcd253131f667b5406dba1d",
+    "results/dev_aux/task2586/run.py": "ed37e8e5897ffbe2a1b5a3978c861e97271a645e099b8391cc64d3eff347dc20",
+    "results/dev_aux/task2586/analyze.py": "7b901668b3002d5205693cb99f616ebdbd459bdf4de325005cfdfc7095722240",
+    "results/dev_aux/task2587/analyze.py": "9637278d8fca692425f8b80cf5999a2fb19e68fa3f1b45bff0bcebdebde1e98d",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2565/audit.py": "6384b6fbeed0705f87c4116ba5ad84fb33d49789bbe75a431cfbf4e5644bd357",
+    "results/dev_aux/task2565/verify.py": "004fae0317b85c74cb1728cf5a183313ead7bf519c0dc856fa06c7157a448101",
+    "results/dev_aux/task2565/evaluate.py": "113ff35490bc9eb8847a17eef3dca0eca1586dbdbd06e26664665810d31a1013",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69"
+  },
+  "scope": "MECHANISM PROBE: task2590 rule 363001 arms with lambda 1.0 instead of .95; all else identical (same families/ordering, cold initial, 100k)."
+}

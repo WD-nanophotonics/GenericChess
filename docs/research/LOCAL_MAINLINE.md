@@ -1,3 +1,13 @@
+# DEV_AUX107 — lambda=1 mechanism probe on hybrid rule 363001: NO_FLIP, degradation halved
+
+Executor AUX_CLAUDE; session a6ffbcc4-57f0-4fa7-8630-41d48b7fda41 start 2026-10-19T13:42:11Z.
+Probe (hyperparameter change, not SAME-learner claim): 363001 only, lambda .95->1.0, all else identical; audits PASS.
+Lam1@100k-Cold@0 [-.164,-.070] -> NO_FLIP; Lam1@100k-Cold@100k(.95) [+.055,+.195] both foes.
+Heuristic-bootstrap dominance is PART of the 363001 failure, not all; line stopped per Dot (partly explained).
+Report results/dev_aux/SEGMENT_20261019_107.md.
+
+## Historical completed106
+
 # DEV_AUX106 — cold Generic TD under ONE pre-fixed hybrid-movement config; LEARNS_HYBRID pooled, 1/4 rules negative
 
 Executor AUX_CLAUDE; inside session d11897fc (105 clock), stage 2. Basis Dot 1792414510.091249.

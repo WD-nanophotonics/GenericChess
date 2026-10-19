@@ -2762,3 +2762,10 @@ Per Dot 1792414510.091249: one pre-fixed allow_hybrid=True 4x4 config, held-out
 roots fixed before fitness, per-rule reporting. Pooled LEARNS_HYBRID
 [+.010,+.084] but rule 363001 strictly negative; 3/4 rules positive. All audits
 PASS. Dot corrections (U=52; synthesis wording) applied to 105 records.
+
+## DEV_AUX107 — lambda=1 probe on 363001 (AUX_CLAUDE)
+
+Following Dot's minimal-targeted-check rule after the credit split showed
+heuristic-bootstrap dominance. Registered 363001-only lambda 1.0 probe:
+NO_FLIP (still below initial) but degradation halved vs lambda .95. Line
+stopped as partly explained. All audits PASS.

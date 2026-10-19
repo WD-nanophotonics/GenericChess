@@ -491,3 +491,16 @@ those files to review.
   - Heuristic drift pushes board X down on all 4 seeds.
 - Next: propose to Dot a minimal targeted check (363001 only: lambda=1, or a
   heuristic-step down-weight, vs the original). Registered first, small.
+
+---
+
+## Report 22 — 2026-10-19T13:50Z (segment 107: lambda probe)
+
+- Dot did not answer follow-up split1 within 10 min. Per Dot's earlier rule
+  (strong mechanism found -> ONE minimal check) and the <120-min policy, I
+  registered and ran the probe: 363001 only, lambda .95 -> 1.0, everything
+  else identical. Audits PASS.
+- Decision NO_FLIP: Lam1-C0 [-.164,-.070]. But Lam1-C100(.95) is
+  [+.055,+.195]: the degradation is halved without a flip.
+- Line stopped (partly explained). Next: a synthesis doc, then ask Dot for
+  one next main direction.

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "counts": {
+    "queries": 8027,
+    "played_plies": 8023,
+    "nodes": 400000,
+    "games": 616,
+    "actual_terminal": 601,
+    "unknown": 15,
+    "observed": 4020,
+    "terms": 4005,
+    "updates": 276,
+    "failed_queries": 4,
+    "failed_nodes": 216
+  },
+  "by_arm": {
+    "(363001, 1977, 'Fixed')": {
+      "terminal_PV": 80,
+      "zero_gradient": 86,
+      "queries": 2060,
+      "games": 153,
+      "actual_terminal": 149,
+      "unknown": 4,
+      "observed": 1033,
+      "terms": 1029,
+      "loss_sum": 32.36556557547435,
+      "credit_l1": 390.3168115367915,
+      "updates": 70
+    },
+    "(363001, 8173, 'Fixed')": {
+      "terminal_PV": 67,
+      "zero_gradient": 73,
+      "queries": 1874,
+      "games": 131,
+      "actual_terminal": 126,
+      "unknown": 5,
+      "observed": 938,
+      "terms": 933,
+      "loss_sum": 27.471881340670247,
+      "credit_l1": 253.04764570291943,
+      "updates": 60
+    },
+    "(363001, 27182, 'Fixed')": {
+      "terminal_PV": 71,
+      "zero_gradient": 79,
+      "queries": 2216,
+      "games": 135,
+      "actual_terminal": 130,
+      "unknown": 5,
+      "observed": 1107,
+      "terms": 1102,
+      "loss_sum": 31.970666542250328,
+      "credit_l1": 364.42957536158013,
+      "updates": 64
+    },
+    "(363001, 31415, 'Fixed')": {
+      "terminal_PV": 102,
+      "zero_gradient": 111,
+      "queries": 1877,
+      "games": 197,
+      "actual_terminal": 196,
+      "unknown": 1,
+      "observed": 942,
+      "terms": 941,
+      "loss_sum": 34.66802197539031,
+      "credit_l1": 295.3569373718297,
+      "updates": 82
+    }
+  },
+  "seconds": 5.645906899997499,
+  "scope": "ALL independent reverse lambda-return updates, exact pre/post full public history/terminal/clock/actor/cost replay. Same rules authority; no external engine/allrule proof. Unknown terminal endpoint omitted, valid bootstrap transitions retained."
+}
