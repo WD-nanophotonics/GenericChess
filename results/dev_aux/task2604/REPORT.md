@@ -12,4 +12,5 @@ Migration boundary: ChessEnv uses python-chess as legal/terminal authority and s
 
 Decision: treat the learner and producer wiring as separate audited components. Before a future controlled comparison, freeze which TD implementation is intended, bind its source hash to the producer and tests, and retain actual terminal W/L/D as the strength endpoint. No training/result conclusion or change to product defaults follows from this map.
 
-Cross-check pinned for this migration note: esults/dev_aux/task2511/generic.py SHA-256 AB5F0E58D50BC2C6ADB55AF438639396DCD3DBF3AD082959852CCA89C2389D7E. Its ScoringSessionEnv.terminal raises NonScoringTerminal for NO_CONTEST and declaration outcomes RESTART/NO_CONTEST; these do not become numeric draw targets.
+Cross-check pinned for this migration note:
+results/dev_aux/task2511/generic.py SHA-256 AB5F0E58D50BC2C6ADB55AF438639396DCD3DBF3AD082959852CCA89C2389D7E. Its ScoringSessionEnv.terminal raises NonScoringTerminal for NO_CONTEST and declaration outcomes RESTART/NO_CONTEST; these do not become numeric draw targets.
