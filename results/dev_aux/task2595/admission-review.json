@@ -1,0 +1,54 @@
+{
+  "status": "SEED_ADMISSION_FAILED",
+  "fitness_started": false,
+  "registered_result_status": "SEED_ADMISSION_FAILED",
+  "registered_design_sha256_verified": true,
+  "registered_rule_sha256_verified": true,
+  "registered_root_manifest_sha256_verified": true,
+  "registered_gate_results": {
+    "schema_fields_exact": true,
+    "schema_roundtrip": true,
+    "full_compile": true,
+    "nonanchor_types_A_P_X": true,
+    "sole_anchor_K": true,
+    "promotion_target": true,
+    "drop_reachable_A_P_X_each_player": true,
+    "initial_nonterminal_legal": true,
+    "evaluation_histories_unique": false,
+    "no_train_eval_history_overlap": false,
+    "at_least_24_nonterminal_eval_roots": false
+  },
+  "failed_registered_gates": [
+    "evaluation_histories_unique",
+    "no_train_eval_history_overlap",
+    "at_least_24_nonterminal_eval_roots"
+  ],
+  "extra_script_failure_not_in_design": {
+    "check": "train_root_uniqueness",
+    "reported_by_registration_script": true,
+    "treatment": "diagnostic only; the human-readable preregistration requires evaluation roots unique and disjoint from TRAIN, but does not require TRAIN roots unique among themselves."
+  },
+  "counts": {
+    "train_roots": 8192,
+    "train_unique_histories": 3702,
+    "evaluation_roots": 32,
+    "evaluation_unique_histories": 28,
+    "train_eval_overlap_histories": 17,
+    "evaluation_nonterminal_legal": 22,
+    "evaluation_terminal": 10,
+    "train_terminal": 3031,
+    "train_history_plies": {
+      "1": 1520,
+      "2": 891,
+      "3": 357,
+      "4": 5424
+    },
+    "evaluation_history_plies": {
+      "1": 4,
+      "2": 4,
+      "4": 24
+    }
+  },
+  "rule_seed": 364005,
+  "conclusion": "Seed 364005 is not eligible for learner fitness because registered evaluation-root uniqueness, TRAIN/EVAL disjointness, and nonterminal-count gates fail. Preserve this seed and rule; do not substitute another seed or rerun fitness on these roots."
+}

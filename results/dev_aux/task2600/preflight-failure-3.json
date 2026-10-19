@@ -1,0 +1,11 @@
+{
+  "status": "PREFLIGHT_ABORTED_BEFORE_ROOT_RECONSTRUCTION",
+  "phase": "input SHA256 verification",
+  "file": "results/dev_aux/task2592/rules-364004.json",
+  "expected_sha256": "dbd814a049d37045c6947ed4aecac1259dc6c665cf7fc81466587d869ca525874",
+  "observed_sha256": "dbd814a049d37045c6947ed4aeca1259dc6c665cf7fc81466587d869ca525874",
+  "cause": "manual hash transcription error",
+  "effect": "no registration or training-history content was loaded by the audit",
+  "remedy": "design-v3 corrects only this pin and preserves all registered roots",
+  "data_processed": false
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": 2600,
+  "status": "FROZEN_BEFORE_STRUCTURE_AUDIT",
+  "question": "Did task2592's registered held-out root selector produce mutually unique evaluation histories and zero overlap with the roots actually used by its generic training games?",
+  "scope": {
+    "rules": [364001, 364002, 364003, 364004],
+    "evaluation_families": {
+      "364001": [364600, 364601, 364602, 364604, 364605, 364606, 364607, 364608],
+      "364002": [364603, 364606, 364608, 364610, 364612, 364613, 364615, 364616],
+      "364003": [364600, 364603, 364608, 364609, 364610, 364612, 364616, 364617],
+      "364004": [364600, 364602, 364603, 364609, 364611, 364613, 364614, 364616]
+    },
+    "operation": "Reconstruct exactly those registered four-ply family roots from the frozen task2592 rules; compare canonical full-history records for uniqueness within each rule and against initial_record values actually present in the corresponding generic training games.jsonl.",
+    "forbidden": "Do not read W/L outcomes, scores, learner weights or evaluation game logs; do not select different families; do not regenerate rules, rerun fitness or modify task2592/task2595 results."
+  },
+  "decision": {
+    "pass": "All eight registered EVAL histories are unique within each rule and none equals any actual TRAIN initial history for the same rule.",
+    "fail": "Report exact duplicate and overlap counts per rule. A structural failure only; it does not invalidate task2592 W/L outcomes, but narrows the independence claim and requires a corrected pre-registration before any new reuse."
+  },
+  "frozen_sha256": {
+    "results/dev_aux/task2592/register.py": "9690ca7414772b430504487618ad2f70630b0f0d528dd210bcb72de563f95f4e",
+    "results/dev_aux/task2592/registration.json": "db3f303d4cc54fe0e651b066713bafaeb3d7d11ba36f16a66b05d306fd043470b",
+    "results/dev_aux/task2592/generic/games.jsonl": "94ceaf0541c2e0a9be84df9cff116661f563ae2f48ce28a048ffa0a569017e89",
+    "results/dev_aux/task2592/eval/eval-plan.json": "3b4c6ed1e5a81c11669bae2d8a7a35df4f967907611d1ee49c1057001216c95e",
+    "results/dev_aux/task2592/generic/plan.json": "434802ac15edae21023f8fbca8096803564f55f90b5fc7e7b230a7e0f7ae2250",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2592/rules-364001.json": "ab4b3a7dc02bde6e03b2bea88286251a1a6941020c84a22d0901dffbf530b218",
+    "results/dev_aux/task2592/rules-364002.json": "7bd01b84d307e7ef8d1b0287bdf2d35d43e0f61a244b5ff28db299161e9856e1",
+    "results/dev_aux/task2592/rules-364003.json": "a96d8cbe0d93e177d1590287456d0c9ef923b0f89a1bb9fcc617bea967c4a244",
+    "results/dev_aux/task2592/rules-364004.json": "dbd814a049d37045c6947ed4aecac1259dc6c665cf7fc81466587d869ca525874"
+  },
+  "cost": "Read-only local processing of one existing 9.1 MB training record file and 32 existing root constructions; expected under 2 minutes.",
+  "no_new_fitness": true,
+  "scientific_status": "OPEN"
+}

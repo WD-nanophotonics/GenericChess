@@ -1,0 +1,9 @@
+{
+  "status": "PREFLIGHT_ABORTED_BEFORE_DATA_READ",
+  "phase": "design status assertion",
+  "observed_design_status": "FROZEN_PRE_AUDIT_AFTER_PIN_CORRECTION",
+  "expected_by_script": "FROZEN_BEFORE_STRUCTURE_AUDIT",
+  "effect": "audit stopped before input hashes or root histories were loaded",
+  "remedy": "accept the explicitly recorded v2 status; no sampling criteria or family IDs changed",
+  "data_processed": false
+}

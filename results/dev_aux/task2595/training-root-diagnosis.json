@@ -1,0 +1,143 @@
+{
+  "status": "DESCRIPTIVE_TRAIN_ONLY_DIAGNOSIS",
+  "registration_status": "SEED_ADMISSION_FAILED",
+  "fitness_started": false,
+  "immutable_inputs": {
+    "rule_sha256": "9584fee921ab06cab029cadc83e86c97afdae1ceea11786fc67f1ecd5298455a",
+    "root_manifest_sha256": "ca15e77503348c2ae6054627a7051422b47c8359086a0dc896fbb88a8a0373f9"
+  },
+  "initial_position": {
+    "terminal": null,
+    "legal_moves": 16,
+    "immediate_terminal_moves": 3,
+    "first_moves": [
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 14
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": 1,
+        "reply_count": 0
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=3, rank=3), promotion_target_id='A'), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 15
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=3, rank=3), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 15
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 14
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 14
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=3), promotion_target_id='A'), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 13
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=3), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 1
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=3), promotion_target_id='A'), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 15
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=3), promotion_target_id=None), declaration_id=None)",
+        "terminal": 1,
+        "reply_count": 0
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": 1,
+        "reply_count": 0
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 1
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 14
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id='A'), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 16
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 16
+      },
+      {
+        "move": "SessionChoice(kind='ACTION', action=BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None), declaration_id=None)",
+        "terminal": null,
+        "reply_count": 14
+      }
+    ]
+  },
+  "train": {
+    "total_roots": 8192,
+    "unique_histories": 3702,
+    "duplicate_excess": 4490,
+    "terminal_prefixes": 3031,
+    "lengths": {
+      "1": {
+        "rows": 1520,
+        "unique_action_sequences": 3,
+        "duplicate_excess": 1517,
+        "terminal_or_no_legal": 1520,
+        "terminal_results": {
+          "1": 1520
+        }
+      },
+      "2": {
+        "rows": 891,
+        "unique_action_sequences": 25,
+        "duplicate_excess": 866,
+        "terminal_or_no_legal": 891,
+        "terminal_results": {
+          "-1": 891
+        }
+      },
+      "3": {
+        "rows": 357,
+        "unique_action_sequences": 142,
+        "duplicate_excess": 215,
+        "terminal_or_no_legal": 357,
+        "terminal_results": {
+          "1": 357
+        }
+      },
+      "4": {
+        "rows": 5424,
+        "unique_action_sequences": 3532,
+        "duplicate_excess": 1892,
+        "terminal_or_no_legal": 263,
+        "terminal_results": {
+          "-1": 263,
+          "None": 5161
+        }
+      }
+    }
+  },
+  "interpretation": "Four-ply random legal-prefix sampling stops at terminal positions. In this fixed rule, 3 of 16 initial legal moves end the game immediately; sampled short prefixes therefore dominate duplicates. This is a root-sampling/admission failure, not evidence about either learner. The registered evaluation set was not inspected by this diagnostic; its frozen admission failure remains as separately recorded.",
+  "scope": "No rule regeneration, no new/evaluation root selection, no fitness run, no seed substitution."
+}
