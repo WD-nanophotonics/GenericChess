@@ -10,7 +10,7 @@ ScientificOPEN/nohumanfit/stableuniversalprices orcausalfeature-rankclaim.
 Dot1792366078 PRIMARYreplyread asmethodreference only: fixedpairedcosts and
 intervention changesbundledmechanics; no AUXsource/executeclaim. Unrelated
 PRIMARYright-off experimentdeferred; no routineack/duplicateconsultation.
-SourcePENDING_REVIEWED_SOURCE_PUBLICATION; SlackNOT_SENT; reading/executionUNCONFIRMED.
+Source6a80c3d3f07fdcb50d32e09e48931b86fab4f32d; SlackACCEPTED_EXACT_READBACK; reading/executionUNCONFIRMED.
 User pauses ONLY dev-aux heartbeat; currentmanualresearch/consultationcontinued,
 no other-role stop/control ortimerrestore. AllhistoricalcapsCLOSED.
 Next decision/evidence: task2580/next-dose-proposal.json and100report.

@@ -1,7 +1,7 @@
 # DEV_AUX100 — SAME TD reset distributions; scientific OPEN
 
-Own session317ee713-377e-4626-8791-b890e91d8bca actualstart2026-10-18T23:57:52.174032+00:00 unchanged; ACTIVE; all science/reproduction closed, official finish pending.
-SourcePENDING_REVIEWED_SOURCE_PUBLICATION; own sidemission/PUBLIC; no other-role execution/adoption claim.
+Own session317ee713-377e-4626-8791-b890e91d8bca actualstart2026-10-18T23:57:52.174032+00:00 unchanged; ENDED62.172min/safe_checkpoint.
+Source6a80c3d3f07fdcb50d32e09e48931b86fab4f32d; own sidemission/PUBLIC; no other-role execution/adoption claim.
 User2026-10-19 pauses ONLY future dev-aux90-minute heartbeat; officialPAUSED.
 Currentmanualresearch/consultationcontinued, no workstop or automaticresume.
 ALL8 TRAINarms each1.5Mpaidnodes, SAMEplain TD eta.05/lambda.95/all4initials,

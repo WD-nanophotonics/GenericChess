@@ -4,14 +4,144 @@
   "official_session": {
     "id": "317ee713-377e-4626-8791-b890e91d8bca",
     "started_at": "2026-10-18T23:57:52.174032+00:00",
-    "state": "active",
-    "research_stage_count": 4
+    "state": "ended",
+    "ended_at": "2026-10-19T01:00:02.496393+00:00",
+    "elapsed_minutes": 62.172,
+    "research_stage_count": 6,
+    "reason": "safe_checkpoint"
   },
   "source": {
-    "status": "PENDING"
+    "status": "PASS_FULL_REMOTE_SOURCE_PUBLIC_ANONYMOUS26_EXACTFILES",
+    "source_sha": "6a80c3d3f07fdcb50d32e09e48931b86fab4f32d",
+    "remote_sha": "6a80c3d3f07fdcb50d32e09e48931b86fab4f32d",
+    "public": true,
+    "clean": true,
+    "anonymous_files": {
+      "results/dev_aux/SEGMENT_20261019_100.md": {
+        "bytes": 11055,
+        "sha256": "ab8c334c1289bdf15ea82c4227c17749c9669a00d32701b14c99b801119a487c"
+      },
+      "results/dev_aux/DELTA_REPRO_20261019_100.zip": {
+        "bytes": 17741318,
+        "sha256": "efaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109"
+      },
+      "results/dev_aux/ARCHIVE_MANIFEST_20261019_100.json": {
+        "bytes": 5089,
+        "sha256": "dc52dd314f6113696618e9a59aa954ae12a5ba321551bb20d7cbade42ccd0c78"
+      },
+      "results/dev_aux/PUBLICATION_PROJECTION_20261019_100.json": {
+        "bytes": 20432,
+        "sha256": "403ce0f9c9c664ccdcafbc8c811ffbd1b1a75e32801c195918d10059f9bc971d"
+      },
+      "results/dev_aux/task2580/registration.json": {
+        "bytes": 1838,
+        "sha256": "b0ab491082f30d5341a5aabbcdf88b871467702497b2639c125d4541c3985bcf"
+      },
+      "results/dev_aux/task2580/plan.json": {
+        "bytes": 3343,
+        "sha256": "7e2fb931303292e061189cded5f038cba2f195e49eb6cf02e0ee73b3fe6406b3"
+      },
+      "results/dev_aux/task2580/train.py": {
+        "bytes": 7436,
+        "sha256": "ec7cd0c8910a7acaaaa3069d6752d95b22ea2cb868142f392557bd4ae34bfb4f"
+      },
+      "results/dev_aux/task2580/result.json": {
+        "bytes": 9345,
+        "sha256": "e543b287797bf10808485eb1453aa644314e305b05de60a232b061845690d5d8"
+      },
+      "results/dev_aux/task2580/audit.json": {
+        "bytes": 892,
+        "sha256": "26cc64ec305f8ad159e0517ac5440b49921c4f161825f07d24a671b5ddfd3174"
+      },
+      "results/dev_aux/task2580/search-replay.json": {
+        "bytes": 4403,
+        "sha256": "63e35f8e0dc5e099bd3cd43b1e8072a9f69c4f27084ec6d95d067e8b0ac766ae"
+      },
+      "results/dev_aux/task2580/unpruned.json": {
+        "bytes": 5074,
+        "sha256": "76c83080831e19a84775a200e81c1d016c83812a8cfe81dd94b4b166c77aa93b"
+      },
+      "results/dev_aux/task2580/information.json": {
+        "bytes": 18019,
+        "sha256": "b911957ec20eae869d050cb841acaf72c3e0f20a1ff13dac359d177e56623993"
+      },
+      "results/dev_aux/task2580/distribution.json": {
+        "bytes": 13696,
+        "sha256": "91b8a7a68532c9eec2d57bd6b0148c16554e6eb472d1ff25033f8a0c4c4b7ce2"
+      },
+      "results/dev_aux/task2580/stability.json": {
+        "bytes": 27967,
+        "sha256": "517775784c6aff7d166b9ccbcc498a779028c501068b8c1d61dc127ed0863565"
+      },
+      "results/dev_aux/task2580/comparisons.jsonl": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "results/dev_aux/task2581/eval-plan.json": {
+        "bytes": 78104,
+        "sha256": "c3d52bab4e1840be79712df4d641e4e10697407af949bac581eabc840e96b5e4"
+      },
+      "results/dev_aux/task2581/evaluate.py": {
+        "bytes": 4150,
+        "sha256": "53623bee0ca434f4c23cc838a2d7ee2a66daf835310e8fa5a9e8bda7001a0132"
+      },
+      "results/dev_aux/task2581/verify.py": {
+        "bytes": 5987,
+        "sha256": "ffbbf34f8c41763ea57377917b0ffe0732f5c22ccf982aa439d8e83f707436c4"
+      },
+      "results/dev_aux/task2581/summary.json": {
+        "bytes": 2364490,
+        "sha256": "897c58cafe0b77563c11a67fa6c3c4887da4febfd68e00046ffbce740d572806"
+      },
+      "results/dev_aux/task2581/terminal-ledger.json": {
+        "bytes": 448620,
+        "sha256": "fb056bfca409b517bba5c0daf4f348197bc6353871c67301cd01d921ca46522d"
+      },
+      "results/dev_aux/task2582/fresh.py": {
+        "bytes": 4015,
+        "sha256": "2115881e65eb4d40c33f465aae5b78d7f30ffe7b5eea6a1d2ff3b3601c19331a"
+      },
+      "results/dev_aux/task2582/fresh-receipt.json": {
+        "bytes": 1324,
+        "sha256": "71cf1ea747fdfe7122445b2d3921a4dbcd6968ba62d61d402a3a3763ecb68cdc"
+      },
+      "AGENTS.md": {
+        "bytes": 25885,
+        "sha256": "e0cb8c826f6d7a105ba6456f7a8dd35ff2362b913ae5dd71719aa6a2c44bf21a"
+      },
+      "docs/operations/DEV_AUX_WORKFLOW.md": {
+        "bytes": 13357,
+        "sha256": "1f54f0db5053dcac7b2ad80be02e617da70d83c1ba1eec3f4f0d28487be9895f"
+      },
+      "docs/research/LOCAL_MAINLINE.md": {
+        "bytes": 83220,
+        "sha256": "369e22364df0c512ee8ff170f872aaf094bd98243ecbbd35adfc81db80444744"
+      },
+      "docs/operations/COLLABORATION_LOG.md": {
+        "bytes": 262784,
+        "sha256": "034d18fd8eabed446a97a864248123a8abd4ef90ac87eb21635eb7e660448cf4"
+      }
+    },
+    "observed_at": "2026-10-19T00:57:12.903782+00:00",
+    "seconds": 10.376273399975616,
+    "scope": "NoAuthorization/cookies; anonymousRepoAPIpublic and26fixedrevisionrawbytechecks includingnew100capsule. No visibilitymutation; delivery notDotreading/execution."
   },
   "slack": {
-    "status": "NOT_SENT"
+    "status": "ACCEPTED_EXACT_READBACK",
+    "message_ts": "1792371519.996989",
+    "channel_id": "C0C6L21UU20",
+    "thread_ts": "1792240080.003109",
+    "message_link": "https://nanomelon.slack.com/archives/C0C6L21UU20/p1792371519996989?thread_ts=1792240080.003109&cid=C0C6L21UU20",
+    "request_id": "GC-SLACK-20261017-212734-fc0e8a4a",
+    "followup_id": "DEV_AUX100-RESET-6a80c3d3",
+    "source_sha": "6a80c3d3f07fdcb50d32e09e48931b86fab4f32d",
+    "original_body_sha": "6c7c3c04be52766535eb2dc6c922ad3465bec80656cdfa814247c72694176dfb",
+    "canonical_body_sha": "dddd856e50117856ced2d9ff6b20ca98b9470f3b8b4d980a4060c60fa0920a2c",
+    "readback_projection": "OnlySlackautoURLlabels/blanklines/SentUsingfooter; allremainingorderedlinesexact.",
+    "all_pages": true,
+    "observed_at": "2026-10-19T00:59:29.231743+00:00",
+    "reading_execution": "UNCONFIRMED",
+    "resend": false
   },
   "dot_reading_execution": "UNCONFIRMED",
   "archive": {
@@ -50,5 +180,5 @@
   "unpruned_nodes": 8841,
   "all_owned_producers_auditors_fresh_closed": true,
   "heartbeat": "PAUSED_USER_REQUEST_CURRENTWORK_CONTINUED",
-  "metadata_final_pending": true
+  "metadata_final_pending": false
 }
