@@ -4,7 +4,7 @@
 
 ## Frozen question and protocol
 
-The registered question was whether the `OutcomeGatedTDLeafEpisode` update improves standard-Chess W-L against both frozen TD(lambda=.95) and the same initialization at equal candidate training-node cost. Four frozen seeds (1977, 8173, 27182, 31415) each received 1M candidate nodes. The evaluation paid 768 slots: 128 fresh exact-history roots, each repeated across the four seeds and both colors, for initial, baseline, and candidate endpoints. Opponent weights were uniform; search was depth 2, at most 8192 nodes/2 seconds per query, and 1024 plies. Only actual ChessEnv terminal outcomes count; this run completed all slots within its 2100-second cap.
+The registered question was whether the `OutcomeGatedTDLeafEpisode` update improves standard-Chess W-L against both frozen TD(lambda=.95) and the same initialization at equal candidate training-node cost. Four frozen seeds (1977, 8173, 27182, 31415) each received 1M candidate nodes. The evaluation paid 768 slots over 128 fresh exact-history roots total, allocated as a different 32-root block to each seed; each root is evaluated on both colors for initial, baseline, and candidate endpoints. See task2603/REPORT.md for the outcome-blind allocation audit and the cross-seed interpretation limit. Opponent weights were uniform; search was depth 2, at most 8192 nodes/2 seconds per query, and 1024 plies. Only actual ChessEnv terminal outcomes count; this run completed all slots within its 2100-second cap.
 
 The candidate update sets the residual trace lambda to 1 only when the next observed search target has `pv_terminal=true`; otherwise it uses .95. Final known-outcome residuals use .95. UNKNOWN outcomes are censored from training, and incomplete searches are not observations.
 
@@ -22,7 +22,7 @@ Independent training replay passed: 4M candidate nodes, 253 games (210 actual te
 
 ## Interpretation and limits
 
-All preregistered finite-panel conditions passed, so this supports carrying the *same* learner into a Generic-rule pilot. It does not show stable learned price ordering: per-seed candidate rankings differ substantially. It is not a full historical TD/TreeStrap reproduction, a population estimate, a human-price fit, or evidence for arbitrary Generic rules. The four seeds share the same 128 root families, so the 256 slot pairs are a finite panel rather than 256 independent samples. No Generic training was done in this task and no product default/UI was changed.
+All preregistered finite-panel conditions passed, so this supports carrying the *same* learner into a Generic-rule pilot. It does not show stable learned price ordering: per-seed candidate rankings differ substantially. It is not a full historical TD/TreeStrap reproduction, a population estimate, a human-price fit, or evidence for arbitrary Generic rules. Each seed has a different 32-root EVAL block. Candidate-versus-baseline comparisons remain paired within each seed/root/color slot, but between-seed differences combine initialization and root-block differences. The 256 candidate-versus-TD slot pairs are a finite panel, not 256 independent roots; see task2603/REPORT.md. No Generic training was done in this task and no product default/UI was changed.
 
 The full raw query streams remain in this checkout because they are large; this commit includes the game traces, root manifest, exact replay scripts and audit summaries. Raw trace SHA-256:
 

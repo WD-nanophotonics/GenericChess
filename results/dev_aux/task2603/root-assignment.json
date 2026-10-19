@@ -1,0 +1,228 @@
+{
+  "task_id": 2603,
+  "status": "POST_HOC_ROOT_ALLOCATION_CORRECTION",
+  "sources": {
+    "root_manifest_sha256": "c51d8ce10977873133926e950f299da28539ddd5bb0d2c1ef1ceaa8bb4ab59c6",
+    "eval_plan_sha256": "f4d2d155a794edc142c696c7ee3923280f6c6d7f9bed262246a858551320b7b5",
+    "fields_used": [
+      "eval_families_by_seed",
+      "slots",
+      "scope"
+    ]
+  },
+  "plan_scope": "All four seeds, three endpoints, same 32 fresh roots and both colors per seed; no DEV selection; preserve UNKNOWN/missing.",
+  "per_seed": {
+    "1977": {
+      "root_count": 32,
+      "root_min": 611000,
+      "root_max": 611031,
+      "roots": [
+        611000,
+        611001,
+        611002,
+        611003,
+        611004,
+        611005,
+        611006,
+        611007,
+        611008,
+        611009,
+        611010,
+        611011,
+        611012,
+        611013,
+        611014,
+        611015,
+        611016,
+        611017,
+        611018,
+        611019,
+        611020,
+        611021,
+        611022,
+        611023,
+        611024,
+        611025,
+        611026,
+        611027,
+        611028,
+        611029,
+        611030,
+        611031
+      ],
+      "slot_count": 192,
+      "slots_per_root_counts": {
+        "6": 32
+      },
+      "colors_per_root_counts": {
+        "2": 32
+      },
+      "endpoints_per_root_counts": {
+        "3": 32
+      }
+    },
+    "8173": {
+      "root_count": 32,
+      "root_min": 611032,
+      "root_max": 611063,
+      "roots": [
+        611032,
+        611033,
+        611034,
+        611035,
+        611036,
+        611037,
+        611038,
+        611039,
+        611040,
+        611041,
+        611042,
+        611043,
+        611044,
+        611045,
+        611046,
+        611047,
+        611048,
+        611049,
+        611050,
+        611051,
+        611052,
+        611053,
+        611054,
+        611055,
+        611056,
+        611057,
+        611058,
+        611059,
+        611060,
+        611061,
+        611062,
+        611063
+      ],
+      "slot_count": 192,
+      "slots_per_root_counts": {
+        "6": 32
+      },
+      "colors_per_root_counts": {
+        "2": 32
+      },
+      "endpoints_per_root_counts": {
+        "3": 32
+      }
+    },
+    "27182": {
+      "root_count": 32,
+      "root_min": 611064,
+      "root_max": 611095,
+      "roots": [
+        611064,
+        611065,
+        611066,
+        611067,
+        611068,
+        611069,
+        611070,
+        611071,
+        611072,
+        611073,
+        611074,
+        611075,
+        611076,
+        611077,
+        611078,
+        611079,
+        611080,
+        611081,
+        611082,
+        611083,
+        611084,
+        611085,
+        611086,
+        611087,
+        611088,
+        611089,
+        611090,
+        611091,
+        611092,
+        611093,
+        611094,
+        611095
+      ],
+      "slot_count": 192,
+      "slots_per_root_counts": {
+        "6": 32
+      },
+      "colors_per_root_counts": {
+        "2": 32
+      },
+      "endpoints_per_root_counts": {
+        "3": 32
+      }
+    },
+    "31415": {
+      "root_count": 32,
+      "root_min": 611096,
+      "root_max": 611127,
+      "roots": [
+        611096,
+        611097,
+        611098,
+        611099,
+        611100,
+        611101,
+        611102,
+        611103,
+        611104,
+        611105,
+        611106,
+        611107,
+        611108,
+        611109,
+        611110,
+        611111,
+        611112,
+        611113,
+        611114,
+        611115,
+        611116,
+        611117,
+        611118,
+        611119,
+        611120,
+        611121,
+        611122,
+        611123,
+        611124,
+        611125,
+        611126,
+        611127
+      ],
+      "slot_count": 192,
+      "slots_per_root_counts": {
+        "6": 32
+      },
+      "colors_per_root_counts": {
+        "2": 32
+      },
+      "endpoints_per_root_counts": {
+        "3": 32
+      }
+    }
+  },
+  "pairwise_root_overlap_counts": {
+    "1977:8173": 0,
+    "1977:27182": 0,
+    "1977:31415": 0,
+    "8173:27182": 0,
+    "8173:31415": 0,
+    "27182:31415": 0
+  },
+  "total_seed_root_assignments": 128,
+  "total_distinct_roots": 128,
+  "interpretation": "The 128 roots are four disjoint 32-root blocks, one per seed. Within-seed method comparisons remain paired on the same root/color slots; cross-seed differences combine initialization and root-block differences.",
+  "scope_exclusions": [
+    "No W/L/D outcomes or eval summaries read.",
+    "No query traces or learner weights read.",
+    "No replay, training, or rerun of the frozen evaluation."
+  ]
+}

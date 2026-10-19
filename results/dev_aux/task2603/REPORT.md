@@ -1,0 +1,7 @@
+# Task2603 — task2594 root-allocation correction
+
+A field-limited audit of the frozen root manifest and evaluation plan confirms 128 distinct evaluation family IDs total, partitioned into four mutually disjoint blocks of 32: seed 1977 uses 611000–611031, 8173 uses 611032–611063, 27182 uses 611064–611095, and 31415 uses 611096–611127. Pairwise intersections are zero. Each root has six planned slots (two colors × three endpoints), giving 192 slots per seed and 768 overall.
+
+Therefore task2594/REPORT.md's prior statement that all four seeds shared the same 128 root families was wrong. The correction does not invalidate candidate-vs-baseline pairing within each `(seed, root, color)` slot: all three endpoints are evaluated on that seed's same root block. It does narrow cross-seed interpretation: differences between learned initializations are confounded with different evaluation-root blocks and cannot be called a pure same-root initialization effect. The pooled candidate-vs-TD finite-panel summary remains a comparison over the registered 256 seed/root/color slots, not 256 independent roots or a population-strength estimate.
+
+The audit read only root IDs and slot metadata. No outcomes, query traces, weight vectors, or endpoint summaries were inspected, and the frozen experiment was not rerun. The original wording is preserved here as the corrected historical claim; no game result or cap changed.
