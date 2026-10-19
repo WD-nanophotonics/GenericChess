@@ -2730,3 +2730,12 @@ lower bound > 0, both foes); gain saturates by 100k; old-rule averaged prices
 transfer partially. Rule 351002/random foe adverse; U rises with training;
 16/32 EVAL roots TRAIN-exposed (post-hoc fresh-only check same sign).
 No PRIMARY/DeepSeek code read, run or adopted.
+
+## DEV_AUX103 — warm vs cold start on NEW rules (AUX_CLAUDE)
+
+AUX_CLAUDE adopted Dot 1792402091.889509 (fix threshold before evaluating).
+Pre-registered decision WARM_WORSE on NEW rules 348001-4: OldRulesMean warm
+start learns less than cold at equal nodes and does not save dose. Warm@0 is
+not better than random initial here, so the 102 cross-rule transfer did not
+replicate (rule-dependent). Cold TD learning gain replicates. All audits PASS.
+No PRIMARY/DeepSeek code read, run or adopted.

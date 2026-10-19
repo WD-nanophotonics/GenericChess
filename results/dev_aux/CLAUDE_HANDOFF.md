@@ -290,3 +290,46 @@ those files to review.
     all regressions are censoring.
 - Decision: keep Fixed@100k as the cheap default checkpoint. No H256 re-EVAL
   or warm-start run now; revisit only if a downstream choice depends on it.
+
+---
+
+## Report 12 — 2026-10-19T10:00Z (segment 103 started: warm vs cold start)
+
+- User direction: 103 = Fixed TD on NEW rules, warm start from OldRulesMean vs
+  cold start, at the same paid nodes, with a decision threshold fixed in
+  advance; keep hourly reports. Session d0cde1b3-3a07-47e9-bdcc-861840f4d117,
+  start 09:55:25Z.
+- task2587 (registered before any fitness):
+  - NEW rules 348001-4 (unused block, 0 failures). 32 arms = 4 rules x 4 seeds
+    x {Fixed cold, FixedWarm}, 100k nodes each, snapshots 25k/50k/100k.
+  - EVAL 4096 slots: 8 models (Cold/Warm @0/25k/50k/100k) x NEW families
+    347801-8 x 2 roles x 2 foes.
+  - Decision rule (margin .0625, full paired bounds, U = [-1,1]):
+    - WARM_SAVES_DOSE if lower(Warm@25k-Cold@100k) >= -.0625 AND
+      lower(Warm@100k-Cold@100k) >= -.0625.
+    - WARM_WORSE if upper(Warm@100k-Cold@100k) < 0.
+    - Else UNRESOLVED, which keeps the cold default.
+  - Full T/U decomposition for the two decision contrasts.
+- Code: task2587/train.py and audit.py are copies of task2565 with exactly two
+  edits each (FixedWarm initial taken from plan.initial_weights; FixedWarm
+  treated as the Fixed regime). Check with `diff --strip-trailing-cr`.
+  The smoke test found a runner bug (the copy's own compiled() was not hooked);
+  it was fixed before registration.
+- Running .local_agent/run103.sh, log .local_agent/run103.log; ~55 min.
+
+---
+
+## Report 13 — 2026-10-19T10:52Z (segment 103 result)
+
+- Pre-registered DECISION: WARM_WORSE.
+  - Warm@100k-Cold@100k [-.088,-.072]; Warm@25k-Cold@100k [-.217,-.197].
+  - Only 17 U out of 4096; the decomposition shows U cannot change the
+    decision.
+- KEY: Warm@0-Cold@0 is [-.033,-.014]. 102's OldRulesMean transfer
+  (+.084..+.197) did NOT replicate on rules 348001-4; it is rule-dependent.
+  The 102 transfer claim is narrowed to that panel (see SEGMENT_..._103).
+- Cold learning replicates: Cold@100k-Cold@0 is [+.174,+.189].
+- All audits PASS. Files: SEGMENT_20261019_103.md, task2587/*,
+  LOCAL_MAINLINE head 103, COLLABORATION_LOG, NEXT_WORK (Main = descriptive
+  rule-capability vs transfer table, existing records only).
+- Descriptive table task2587/rule-capability-table.json: per-rule transfer gain vs cold learning gain over 8 NEW rules, Spearman 0.857 (midpoints, n=8). Transfer helps where cold TD gains strongly and hurts where it gains ~0. Hypothesis only. SEGMENT_102 has an appended 'Update after DEV_AUX103' erratum.

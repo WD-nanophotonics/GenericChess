@@ -1,0 +1,240 @@
+{
+  "status": "DESCRIPTIVE_ONLY",
+  "note": "8 NEW rules; transfer = 102 OldRulesMean-initial (mean over foes) / 103 Warm@0-Cold@0; learn = 102 Fixed@100k-initial / 103 Cold@100k-Cold@0. Hypothesis generation only, no fitting or selection.",
+  "rows": [
+    {
+      "rule": 348001,
+      "old_mean_gain": [
+        -0.211,
+        -0.195
+      ],
+      "cold_learn": [
+        0.0,
+        0.016
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 4,
+        "X": 3,
+        "A": 6
+      },
+      "promo": {
+        "P": 48
+      },
+      "forced": {
+        "P": 0
+      },
+      "drops": {
+        "P": 32,
+        "X": 28,
+        "A": 28
+      }
+    },
+    {
+      "rule": 348002,
+      "old_mean_gain": [
+        -0.18,
+        -0.18
+      ],
+      "cold_learn": [
+        -0.016,
+        -0.016
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 6,
+        "X": 2,
+        "A": 6
+      },
+      "promo": {
+        "P": 20,
+        "X": 24
+      },
+      "forced": {
+        "P": 0,
+        "X": 8
+      },
+      "drops": {
+        "P": 32,
+        "X": 24,
+        "A": 32
+      }
+    },
+    {
+      "rule": 348003,
+      "old_mean_gain": [
+        0.258,
+        0.258
+      ],
+      "cold_learn": [
+        0.453,
+        0.453
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 3,
+        "X": 3,
+        "A": 6
+      },
+      "promo": {
+        "P": 48
+      },
+      "forced": {
+        "P": 0
+      },
+      "drops": {
+        "P": 32,
+        "X": 32,
+        "A": 32
+      }
+    },
+    {
+      "rule": 348004,
+      "old_mean_gain": [
+        0.0,
+        0.062
+      ],
+      "cold_learn": [
+        0.258,
+        0.305
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 2,
+        "X": 2,
+        "A": 6
+      },
+      "promo": {
+        "P": 8,
+        "X": 8
+      },
+      "forced": {
+        "P": 8,
+        "X": 8
+      },
+      "drops": {
+        "P": 24,
+        "X": 24,
+        "A": 32
+      }
+    },
+    {
+      "rule": 351001,
+      "old_mean_gain": [
+        0.055,
+        0.07
+      ],
+      "cold_learn": [
+        0.211,
+        0.227
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 3,
+        "X": 2,
+        "A": 6
+      },
+      "promo": {
+        "P": 32,
+        "X": 8
+      },
+      "forced": {
+        "P": 8,
+        "X": 8
+      },
+      "drops": {
+        "P": 24,
+        "X": 24,
+        "A": 32
+      }
+    },
+    {
+      "rule": 351002,
+      "old_mean_gain": [
+        -0.172,
+        0.031
+      ],
+      "cold_learn": [
+        -0.141,
+        0.078
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 2,
+        "X": 4,
+        "A": 6
+      },
+      "promo": {
+        "P": 24,
+        "X": 16
+      },
+      "forced": {
+        "P": 8,
+        "X": 8
+      },
+      "drops": {
+        "P": 24,
+        "X": 24,
+        "A": 32
+      }
+    },
+    {
+      "rule": 351003,
+      "old_mean_gain": [
+        0.336,
+        0.555
+      ],
+      "cold_learn": [
+        0.312,
+        0.578
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 4,
+        "X": 7,
+        "A": 6
+      },
+      "promo": {
+        "P": 44
+      },
+      "forced": {
+        "P": 0
+      },
+      "drops": {
+        "P": 32,
+        "X": 32,
+        "A": 32
+      }
+    },
+    {
+      "rule": 351004,
+      "old_mean_gain": [
+        0.117,
+        0.133
+      ],
+      "cold_learn": [
+        0.312,
+        0.312
+      ],
+      "atoms": {
+        "K": 8,
+        "P": 1,
+        "X": 4,
+        "A": 6
+      },
+      "promo": {
+        "P": 8
+      },
+      "forced": {
+        "P": 24
+      },
+      "drops": {
+        "P": 8,
+        "X": 32,
+        "A": 32
+      }
+    }
+  ],
+  "spearman_cold_learn_vs_transfer_midpoints": 0.8571428571428572,
+  "observation": "Transfer gain is positive on rules where cold TD itself gains strongly and negative where cold TD gains ~0. Descriptive, n=8 rules, interval midpoints, no test; motivates a registered prediction on NEW rules."
+}

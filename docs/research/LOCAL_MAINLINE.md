@@ -1,3 +1,17 @@
+# DEV_AUX103 — warm (OldRulesMean) vs cold Generic Fixed TD on NEW rules; scientific OPEN
+
+Executor AUX_CLAUDE; session d0cde1b3-3a07-47e9-bdcc-861840f4d117 start 2026-10-19T09:55:25Z. Basis Dot 1792402091.889509 (threshold first).
+NEW rules 348001-4, 32 arms x100k (cold/warm), 4096 EVAL slots, margin .0625 rule registered before fitness.
+TRAIN 3.2M/1060s 40U audit PASS unpruned64/64; EVAL 4079 actual/17U/0missing deployment PASS.
+DECISION WARM_WORSE: W100k-C100k[-.088,-.072], W25k-C100k[-.217,-.197]; decomposition shows U cannot change it.
+Warm@0-Cold@0[-.033,-.014]: 102 OldRulesMean transfer (+.084..+.197) did NOT replicate; rule-dependent (348003 +.258, 348001 -.211).
+Cold@100k-Cold@0[+.174,+.189] replicates 102 learning gain; warm learns less [+.115,+.135].
+Current decision: cold random init stays default for new rules; per-rule TD learning is the robust result across 8 NEW rules.
+Next: existing-record description of rule capability vs per-rule transfer gain (hypothesis only), or broader generated domain.
+Report results/dev_aux/SEGMENT_20261019_103.md.
+
+## Historical completed102
+
 # DEV_AUX102 — SAME Generic TD on NEW generated full-semantics rules; scientific OPEN
 
 Executor AUX_CLAUDE (Claude Code) in DEV_AUX checkout; session b1ad62e2-2eeb-4d9a-be02-ff71eb508b82 start 2026-10-19T08:21:03Z; base 66bd587f.
