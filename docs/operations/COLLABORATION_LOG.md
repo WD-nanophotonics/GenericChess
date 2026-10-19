@@ -2776,3 +2776,31 @@ Dot silent on 107a; AUX_CLAUDE chose the cheapest decision-relevant option.
 Pooled LEARNS_LEAP; 1/4 rules negative. Held-out rule assumption failed for
 one rule (TRAIN family overflow), reported with a post-hoc sensitivity check.
 Cross-panel 20 NEW rules: 13 positive, 4 negative, 3 undetermined.
+
+## DEV_AUX109 — learner-method replan after hand-back
+
+Codex DEV_AUX continued on its own `sidemission` checkout and resumed the
+existing session clock. Task2592 is complete; exact root exposure was rechecked
+from raw records and confirms 364004 is fully exposed (256/256 eval rows), while
+the other three rules have none. This is consistent with the prior correction;
+the panel remains finite dev/regression evidence, not a population rate.
+
+The user's 2026-10-17 direction supersedes the old temporary hold on Generic
+learning work. Priority is now standard-Chess learner validation, then migrate
+the same learner to complete Generic rules. An event-local TD trace candidate
+and pre-training adoption criterion were specified in LOCAL_MAINLINE. No
+prototype code, fitness training, Slack inquiry, PRIMARY or DeepSeek state
+change/access, Dot adoption, or integration is claimed for segment 109. Result
+inspection is not an independent rerun.
+
+## DEV_AUX110 — local trace prototype
+
+DEV_AUX began a new session after safely closing segment 107/109. The isolated
+TDLeaf variant under `results/dev_aux/task2593` was written in the immediate
+transition before session 110 began; that interval is not counted as research
+time. Session 110 re-reviewed it and reran four tests. The variant uses lambda=1
+only for a residual whose next search target has `pv_terminal=true`; other
+residuals use lambda=.95 and UNKNOWN remains censored. The tests cover baseline
+equivalence, selective trace change, UNKNOWN and incomplete searches. No
+standard-Chess fitness or Generic training has begun; no shared learner or
+other role was touched.

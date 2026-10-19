@@ -1,4 +1,50 @@
-# DEV_AUX108 — leap-only 4x4 panel; LEARNS_LEAP pooled, 1/4 negative; cross-panel 13+/4-/3?
+## Current direction — DEV_AUX109 (2026-10-20)
+
+The user's 2026-10-17 direction supersedes DEV_AUX108's temporary pause on new
+Generic learning experiments: prioritize TD/TD-Leaf/search bootstrapping as a
+learning method, validate the same learner on standard Chess first, then migrate
+it to complete Generic rules. Actual rules W/L/D remains the final strength
+measure; finite WDL grid selection is a control, and a WIN prover is optional.
+The reason is methodological: terminal-only parameter selection discards
+search-target information, while the 101-108 record already shows both positive
+and negative cases and does not establish a population failure rate.
+
+The 2592 leap-only result is retained as a finite dev/regression panel, not
+confirmation: pooled LEARNS_LEAP [+0.125,+0.1875], 3/4 positive and 364003
+negative. A fresh exact-root audit confirmed the known exposure: all 256 eval
+rows for 364004 shared TRAIN roots; the other three rules had zero such rows.
+Therefore 364004 is exposed and cannot serve as held-out evidence; no
+failure-rate claim follows from these 20 rules.
+
+Before new training, define a learner distinct from global lambda=1 and a
+decision-changing adoption rule. Candidate for a standard-Chess engineering
+probe: keep TDLeaf eta=.05 and lambda=.95, but for each bootstrap residual whose
+next observed search has `pv_terminal=true`, compute that residual's eligibility
+trace with lambda=1; all heuristic-target residuals and the final known W/L
+residual use lambda=.95. For UNKNOWN, censor the terminal residual as before.
+This changes only credit for exact terminal-PV targets, unlike task2591's global
+lambda change. It is a hypothesis, not an adopted learner. Freeze a paired
+standard-Chess comparison against ordinary lambda=.95 and initial weights, with
+fresh roots, all four seeds, fixed search/foe/cost, complete W/L/D/UNKNOWN
+accounting. Require audits to pass and the candidate's finite paired lower
+W-L bound to be positive against both ordinary TD and its initialization before
+migrating the same update to Generic; otherwise retain the result and do not
+migrate. Count terminal-target events; if either training arm has fewer than
+128 by its frozen cap, classify the probe as under-exposed and do not migrate.
+The exact prospective arms/cost/decision details are in
+`results/dev_aux/task2593/design.json` (still not registered): reuse the four
+frozen DEV_AUX97 TD(lambda=.95) 1M-node endpoints and initial vectors, train the
+candidate for 1M nodes on each of the same four seeds, and compare all three
+endpoints on 64 fresh matched-root slots per seed/endpoint (768 total) against
+the fixed uniform foe. Use D2 plain search and balance roles. Count historical
+baseline cost in the report, keep UNKNOWN/missing outcomes conservative, and
+re-check exact TRAIN/EVAL root overlap before unblinding fitness.
+The estimated study is below 120 minutes using DEV_AUX97 costs; reassess before
+launch and consult Dot first if the estimate reaches 120 minutes. The isolated
+prototype is in `results/dev_aux/task2593/episode.py`; its four standard-library
+algebra/censoring tests pass. It has not been trained or adopted.
+
+# Historical completed108 — leap-only 4x4 panel; LEARNS_LEAP pooled, 1/4 negative
 
 Executor AUX_CLAUDE; inside session a6ffbcc4 (107 clock). Dot silent on 107a; chose "how common are per-rule failures".
 NEW rules 364001-4 leap-only, 16 cold arms x100k; audits PASS. Pooled [+.125,+.188]; 364003 [-.086,-.039].

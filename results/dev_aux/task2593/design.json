@@ -1,0 +1,40 @@
+{
+  "status": "PROPOSAL_NOT_REGISTERED_OR_STARTED",
+  "question": "Does terminal-target-local eligibility trace lambda improve standard-Chess W-L over fixed TDLeaf lambda=.95 at equal paid training nodes?",
+  "candidate": {
+    "eta": 0.05,
+    "base_lambda": 0.95,
+    "per_residual_rule": "For residual delta_t with next observed target q[t+1], use eligibility sum_j lambda_t^(t-j)*gradient_j; lambda_t=1 only if q[t+1].pv_terminal is true, else .95.",
+    "final_known_outcome_lambda": 0.95,
+    "unknown": "Censor final residual; never impute draw or win/loss.",
+    "incomplete_search": "Do not observe or update."
+  },
+  "conditions": {
+    "domain": "standard Chess",
+    "seeds": [1977, 8173, 27182, 31415],
+    "candidate_nodes_per_seed": 1000000,
+    "baseline": "Reuse frozen task2568 TD(lambda=.95) endpoints at 1M nodes and matching initial vectors; count their historical paid cost.",
+    "search": "D2 plain with task2568 query and history semantics",
+    "foe": "fixed uniform material weights",
+    "candidate_training_prefix_plies": 8,
+    "evaluation": "Initial, frozen baseline-TD endpoint, and candidate endpoint for each seed; 64 matched fresh-root slots per endpoint/seed (768 slots total), balanced roles against the same uniform foe.",
+    "training_root_policy": "Use task2568's registered Chess training family semantics with new nonoverlapping candidate families; audit exact root overlap before evaluation.",
+    "evaluation_root_policy": "Generate and freeze fresh roots before candidate fitness; mechanically exclude every root in all TRAIN records."
+  },
+  "decision_rule": {
+    "adopt_for_generic_transfer_only_if": [
+      "Independent update/history/cost audits pass.",
+      "At least 128 terminal-target residuals are observed in each of the existing baseline and candidate training conditions.",
+      "Finite paired W-L lower bound is >0 for candidate endpoint minus ordinary TD endpoint.",
+      "Finite paired W-L lower bound is >0 for candidate endpoint minus its initial weights."
+    ],
+    "otherwise": "Retain all results; do not migrate this update to Generic and do not tune on these evaluation roots.",
+    "unknown_and_missing": "Keep UNKNOWN in [-1,1] paired bounds; report missing slots and frozen-cap partials without extending caps."
+  },
+  "cost": {
+    "estimate_basis": "DEV_AUX97 1M-node Chess endpoints and NEXT_STUDY_20261019_97 832-slot cost estimate.",
+    "expected_total": "<120 minutes, provisional; re-estimate before registration.",
+    "threshold": "If expected duration reaches 120 minutes, obtain Dot necessity assessment before launch; do not split to evade."
+  },
+  "scope": "Engineering validation of a prospective search-target update on a finite Chess panel; not full TreeStrap reproduction, population strength claim, or Generic result."
+}
