@@ -504,3 +504,4 @@ those files to review.
   [+.055,+.195]: the degradation is halved without a flip.
 - Line stopped (partly explained). Next: a synthesis doc, then ask Dot for
   one next main direction.
+- Synthesis doc: results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md (101-107 in one page, with Dot's wording corrections).
