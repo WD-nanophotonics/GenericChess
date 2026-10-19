@@ -2880,3 +2880,5 @@ Delivery follow-up (2026-10-20): initial explicit-refspec push was rejected by t
 
 
 Task2603 correction: Dot's CHAT_Comments flagged task2594 root reuse across seeds. A metadata-only manifest/plan audit confirmed four disjoint 32-root blocks (128 distinct roots total), each with six color/endpoint slots. Corrected task2594 report wording; within-seed candidate/baseline pairing remains, but cross-seed weight comparisons also vary EVAL roots. No outcomes read and no old experiment rerun. Evidence and exact source hashes are in results/dev_aux/task2603/REPORT.md; full per-seed IDs in root-assignment.json.
+
+Task2603 delivery follow-up (2026-10-20): posted the corrected four-disjoint-root interpretation and full SHA 77691d881f5ded4f47b2af3be8b9b7e408399f7c to Dot in the existing task2600 thread (message ts 1792431405.340669). Delivery confirmed by Slack response; reading, adoption and independent execution remain unconfirmed. Private receipt is retained under .local_agent.
