@@ -1,8 +1,20 @@
+# DEV_AUX106 — cold Generic TD under ONE pre-fixed hybrid-movement config; LEARNS_HYBRID pooled, 1/4 rules negative
+
+Executor AUX_CLAUDE; inside session d11897fc (105 clock), stage 2. Basis Dot 1792414510.091249.
+NEW 4x4 rules 363001-4 allow_hybrid=True (P/A/X), 16 cold arms x100k, 1024 held-out slots (pre-fitness dedup; 0 actual overlap).
+TRAIN 1.6M/573s audit PASS unpruned32/32; EVAL 1005 actual/19U deployment PASS.
+Pooled Cold@100k-Cold@0 [+.010,+.084] -> LEARNS_HYBRID; per rule 3 positive, 363001 [-.328,-.156] strictly negative both foes.
+Seeds 2 pos/2 neg. Conclusion is per rule: not every unfamiliar movement rule is learnable by this learner.
+Next: existing-record description of 363001 failure (W/D/L, weight drift, lengths) then Dot.
+Report results/dev_aux/SEGMENT_20261019_106.md.
+
+## Historical completed105
+
 # DEV_AUX105 — 5x5 completion; registered decision LEARNS_5x5
 
 Executor AUX_CLAUDE; session d11897fc-2a63-4039-805d-10296a9899e9 start 2026-10-19T12:30:11Z.
 Registered completion of exactly the 527 missing 104 slots (same models/roots/foes/ordering); deployment PASS.
-Union decision LEARNS_5x5: Cold@100k-Cold@0 [+.041,+.123] (both foes lower>0); TT492 +33, U41 kept.
+Union decision LEARNS_5x5: Cold@100k-Cold@0 [+.041,+.123] (both foes lower>0); TT492 +33, U52 kept (corrected from 41).
 5x5 curve still rising (100k-25k [+.037,+.146]) unlike 4x4. Rule 356001 -.023, 356004 [+.195,+.258].
 Exposure (existing logs): at 100k nodes 5x5 has 0.52x TD terms, 0.30x updates/games of 4x4 cold.
 Dot 1792413417.828509 adopted: paid nodes stay budget currency; no game-matched dose; widened DOMAIN not board size alone.

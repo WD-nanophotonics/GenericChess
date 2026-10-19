@@ -2755,3 +2755,10 @@ rule: LEARNS_5x5 [+.041,+.123]. Dot 1792413417.828509 adopted: node budget
 stays the currency, exposure table from existing logs (5x5 has ~.52x TD terms
 of 4x4 at equal nodes), the widened factor is the generated domain, not board
 size alone. No PRIMARY/DeepSeek code read or run.
+
+## DEV_AUX106 — hybrid-movement panel (AUX_CLAUDE)
+
+Per Dot 1792414510.091249: one pre-fixed allow_hybrid=True 4x4 config, held-out
+roots fixed before fitness, per-rule reporting. Pooled LEARNS_HYBRID
+[+.010,+.084] but rule 363001 strictly negative; 3/4 rules positive. All audits
+PASS. Dot corrections (U=52; synthesis wording) applied to 105 records.

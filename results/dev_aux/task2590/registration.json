@@ -1,0 +1,109 @@
+{
+  "registered_at": "2026-10-19T12:59:30.513451+00:00",
+  "session_id": "d11897fc-2a63-4039-805d-10296a9899e9",
+  "executor": "AUX_CLAUDE (Claude Code) in DEV_AUX checkout, user direction 2026-10-19",
+  "question": "Does the SAME cold per-rule Generic TD re-learn a gain under ONE pre-fixed unfamiliar movement configuration (allow_hybrid=True, 4x4, P/A/X)?",
+  "dot_basis": "DOT_REPLY 1792414510.091249: 4x4 fixed P/A/X movement-generator change, one pre-fixed config, initial vs one endpoint, held-out roots fixed before fitness, per-rule reporting.",
+  "generator_config": {
+    "board_size": 4,
+    "allow_hybrid": true,
+    "max_generation_attempts": 32
+  },
+  "decision_rule": {
+    "pooled": "LEARNS_HYBRID if lower(Cold@100k-Cold@0)>0; NO_GAIN if upper<=0; else UNRESOLVED",
+    "per_rule": "report counts lower>0 / upper<0 / undetermined; no pooling away failures"
+  },
+  "heldout_rule": "per rule first 8 families >= 363501 whose 4-ply root not among TRAIN families 363100..363599",
+  "heldout_families": {
+    "363001": [
+      363600,
+      363603,
+      363606,
+      363610,
+      363613,
+      363614,
+      363617,
+      363618
+    ],
+    "363002": [
+      363600,
+      363603,
+      363604,
+      363608,
+      363610,
+      363612,
+      363614,
+      363619
+    ],
+    "363003": [
+      363600,
+      363601,
+      363603,
+      363604,
+      363605,
+      363606,
+      363607,
+      363608
+    ],
+    "363004": [
+      363602,
+      363604,
+      363605,
+      363606,
+      363609,
+      363610,
+      363613,
+      363618
+    ]
+  },
+  "terminal_heldout_roots": {
+    "363001": 0,
+    "363002": 0,
+    "363003": 0,
+    "363004": 0
+  },
+  "generation_failures": [],
+  "admission_failures": [],
+  "rules": [
+    363001,
+    363002,
+    363003,
+    363004
+  ],
+  "expected_minutes": "TRAIN 1.6M nodes ~10 min (4x4 measured 3.0-3.3k nodes/s; cap 40) + EVAL 1024 games ~8 min (4x4 measured 0.42-0.45 s/game; cap 40) + audits ~3; well under 120.",
+  "pins": {
+    "results/dev_aux/task2590/run.py": "b57346c9fe54083cc9e1fb5a4d0b67c31369d71b3ada493e790666bb365484aa",
+    "results/dev_aux/task2590/register.py": "f4448615c34fb98916c03fcfd03dee3de0238cd990a6025be8414a604344448e",
+    "results/dev_aux/task2590/bind.py": "6b8ccf9a8df9bf92192aae1e68d360bebaef68899054e85d40a46c2b86296d3a",
+    "results/dev_aux/task2590/analyze.py": "2919a17e76123f0f00086c8d015163169d1e043a3547f13f0590c79e7c8e09cd",
+    "results/dev_aux/task2586/run.py": "ed37e8e5897ffbe2a1b5a3978c861e97271a645e099b8391cc64d3eff347dc20",
+    "results/dev_aux/task2586/analyze.py": "7b901668b3002d5205693cb99f616ebdbd459bdf4de325005cfdfc7095722240",
+    "results/dev_aux/task2587/analyze.py": "9637278d8fca692425f8b80cf5999a2fb19e68fa3f1b45bff0bcebdebde1e98d",
+    "results/dev_aux/task2565/train.py": "38ff56df922a9d9e590d7d6502f051adfbddd379d8fed1fff85bc2a732b66f7d",
+    "results/dev_aux/task2565/audit.py": "6384b6fbeed0705f87c4116ba5ad84fb33d49789bbe75a431cfbf4e5644bd357",
+    "results/dev_aux/task2565/verify.py": "004fae0317b85c74cb1728cf5a183313ead7bf519c0dc856fa06c7157a448101",
+    "results/dev_aux/task2565/evaluate.py": "113ff35490bc9eb8847a17eef3dca0eca1586dbdbd06e26664665810d31a1013",
+    "results/dev_aux/task2525/run.py": "c4d14b0ff9757d9e20c6294a30ee04993fb06651951eb7009370228f2bc1fe6f",
+    "results/dev_aux/task2511/generic.py": "ab5f0e58d50bc2c6adb55af438639396dcd3dbf3ad082959852cca89c2389d7e",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2532/free_model.py": "769eff3aa3f88691c26959ca9f40412421a471e22039b1a7963a2c0f13d4062a",
+    "results/dev_aux/task2504/search.py": "a3035830a4e6591bda2ce759540f53b3b184d3a0af41b6754dd35db04c522a69",
+    "results/dev_aux/task2529/training_audit.py": "029cb7e32da02f15bbfa2de8d73f5e2f17f4ce9e54e9a5ba1910f3d6d596d190",
+    "results/dev_aux/task2529/incremental_replay.py": "5e2e83f244af375ba1bb5ae86b73345f0d8901e47975136a7d97fab6a83e9a04",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "generic_chess/generation/generator.py": "466f86600a903b9067a0c3995bc914d8f9517e530e6d3bb1be7b494b7fe9d557",
+    "generic_chess/generation/config.py": "609d9e362d5472272aa4835e8faa68b907bf683323a2aa6917ad7957e45a0e73",
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "results/dev_aux/task2590/generic/plan.json": "6ee24905e3aad92d2d2fd1235a6b9b565c6b1f3a6b956a62f5a9efe69b9373f1",
+    "results/dev_aux/task2590/audit-plan.json": "6307faf7199fc58d9056dd344b3d04cb293ed173b9d64eeb3b3bd2f2d85de943",
+    "results/dev_aux/task2590/eval/eval-plan.json": "b47b7a1b6f48b7d5334c5649fab2bf48c7b13395a7445d973c10e156b3433a15",
+    "results/dev_aux/task2590/rules-363001.json": "43d463bcbb509395b47775b4c6c79fb7e5ee7be55a9275eb4e49aee3ea14dfef",
+    "results/dev_aux/task2590/rules-363002.json": "8fef4caaf422171d28b3dcda47b626a72a4aba47d712ca1c432338cc236f8821",
+    "results/dev_aux/task2590/rules-363003.json": "a868780e1ca91add63d2717439c66f6f5b4710b1ad07a530425c5adab0a28586",
+    "results/dev_aux/task2590/rules-363004.json": "80fe099c78e55474ae6975d17c92bdb1a9dd106c8220b0e9bc6b1a46cb99b131"
+  },
+  "scientific_status": "OPEN",
+  "no_new_fitness_yet": true
+}

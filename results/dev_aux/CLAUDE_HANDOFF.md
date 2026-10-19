@@ -448,3 +448,26 @@ those files to review.
   0.52x terms and 0.30x updates/games.
 - Files: SEGMENT_20261019_105.md, task2589/*, LOCAL_MAINLINE, COLLAB_LOG,
   NEXT_WORK (Main: ask Dot which ONE further generator factor matters).
+
+---
+
+## Report 20 — 2026-10-19T13:15Z (Dot 105a adopted; task2590 hybrid-movement panel running)
+
+- DOT_REPLY 1792414510.091249 (ADOPTED):
+  - Next factor: one pre-fixed 4x4 movement-generator change, keeping P/A/X.
+  - Gap: pooled gains do not show per-rule learnability; report rules
+    individually.
+  - Fix held-out roots before fitness.
+  - Corrections, applied to SEGMENT_105 and LOCAL_MAINLINE: union U = 52
+    (not 41); 4x4 "no gain shown after 100k" (not "saturated"); 103
+    OldRulesMean-initial is strictly negative; Chess SC advantage "not
+    established on this panel".
+- task2590 runs inside session 105 (d11897fc) as its second research stage;
+  report name SEGMENT_20261019_106.md.
+  - NEW rules 363001-4 with allow_hybrid=True, 4x4, P/A/X; 0 failures.
+  - 16 cold arms x 100k.
+  - EVAL: 1024 slots, Cold@0 vs Cold@100k, held-out families per rule (root
+    not among TRAIN families 363100..363599). 0 terminal roots.
+  - Decision: LEARNS_HYBRID if lower > 0, plus per-rule counts.
+- Running .local_agent/run106.sh, ~20 min.
+- 106 RESULT: LEARNS_HYBRID pooled [+.010,+.084]; per rule 3 positive, 363001 strictly negative [-.328,-.156]; seeds 2+/2-; 0 held-out overlap. Report SEGMENT_20261019_106.md. Next: describe the 363001 failure from existing records, then Dot.
