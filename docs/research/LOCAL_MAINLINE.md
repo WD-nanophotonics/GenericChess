@@ -4,7 +4,8 @@ Executor AUX_CLAUDE; inside session a6ffbcc4 (107 clock). Dot silent on 107a; ch
 NEW rules 364001-4 leap-only, 16 cold arms x100k; audits PASS. Pooled [+.125,+.188]; 364003 [-.086,-.039].
 Held-out rule FAILED for rule 364004 (TRAIN reached family 364651 > 500-span assumption): 256/1024 slots exposed;
 POST-HOC fresh-only [+.156,+.234] same sign. Future: TRAIN check span >= max_games/2.
-Cross-panel 20 NEW rules: 13 positive, 4 strictly negative (only 363001 large), 3 undetermined. Claim stays per rule.
+Cross-panel 20 rules: 13 positive, 4 strictly negative (only 363001 large), 3 undetermined (counts only; NOT a failure rate - no sampling population defined). These rules are now a dev/regression set.
+ROUND CLOSED per Dot 107a: no new Generic learning experiments; 107 per-seed corrected (mechanism not isolated); credit-split conclusions limited to 106 records.
 Report results/dev_aux/SEGMENT_20261019_108.md; synthesis results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md.
 
 ## Historical completed107

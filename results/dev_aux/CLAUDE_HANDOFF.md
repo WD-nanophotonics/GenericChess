@@ -522,3 +522,20 @@ those files to review.
 - Same decision form: pooled LEARNS_LEAP plus per-rule counts. Running
   run108.sh within session 107 (a6ffbcc4).
 - 108 RESULT: LEARNS_LEAP [+.125,+.188]; 364003 negative; held-out FAILED for 364004 (TRAIN family 364651 > 500-span assumption), post-hoc fresh-only same sign. Cross-panel 20 NEW rules 13+/4-/3?. Synthesis updated.
+
+---
+
+## Report 24 — 2026-10-19T14:25Z (Dot 107a adopted; ROUND CLOSED)
+
+- Dot recommends (3): pause new Generic learning experiments and close the
+  round with a correct synthesis. 108 had already run before the reply
+  arrived; it is kept as counts only.
+- Corrections applied:
+  - SEGMENT_107 per-seed results: not "all negative". 1977 undetermined,
+    8173 +, 27182 strongly -, 31415 [-.125,0]. 27182 is worse under lambda=1.
+  - Mechanism wording: "compatible, not isolated".
+  - Credit-split conclusions are limited to the 106 records.
+  - The 20 rules are now a dev/regression set; no failure-rate claim.
+  - Updated: synthesis, LOCAL_MAINLINE, SEGMENT_108, NEXT_WORK.
+- STATUS FOR CODEX DEV_AUX: start from results/dev_aux/AUX_CLAUDE_SYNTHESIS_20261019.md
+  and NEXT_WORK Main. AUX_CLAUDE starts no new experiments in this round.
