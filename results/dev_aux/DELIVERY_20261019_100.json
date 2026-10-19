@@ -1,0 +1,54 @@
+{
+  "segment": 100,
+  "scientific_status": "OPEN",
+  "official_session": {
+    "id": "317ee713-377e-4626-8791-b890e91d8bca",
+    "started_at": "2026-10-18T23:57:52.174032+00:00",
+    "state": "active",
+    "research_stage_count": 4
+  },
+  "source": {
+    "status": "PENDING"
+  },
+  "slack": {
+    "status": "NOT_SENT"
+  },
+  "dot_reading_execution": "UNCONFIRMED",
+  "archive": {
+    "file": "DELTA_REPRO_20261019_100.zip",
+    "sha256": "efaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109",
+    "bytes": 17741318,
+    "payloads": 176,
+    "uncompressed_bytes": 667976521
+  },
+  "actual_fresh": {
+    "status": "PASS_ACTUAL_FRESH38_AND12_REGENERATIONS",
+    "tests": 38,
+    "derived": {
+      "task2580/audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/signals.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/witness-queries.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/information.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/training-curves.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/distribution.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2580/stability.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2581/result.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2581/deployment-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2581/summary.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2581/trajectory-divergence.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+      "task2581/terminal-ledger.json": "MATCH_EXCEPT_AUDIT_SECONDS"
+    },
+    "payloads": 176,
+    "archive_sha": "efaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109",
+    "seconds": 78.86966600001324,
+    "wrapper_sha": "2115881e65eb4d40c33f465aae5b78d7f30ffe7b5eea6a1d2ff3b3601c19331a",
+    "scope": "ActualnewUUIDextraction, exactpayloadhashes andsourcepathassertions; outputs parkedbefore38tests/12regenerations. Actualownstoproot; no fakeflags/newTRAIN/fitnessrerun/oldcaprefill. Samechessauthority, notexternalengine/allruleproof."
+  },
+  "paid_producer_nodes": 23046430,
+  "producer_seconds": 3017.626614800014,
+  "search_replay_nodes": 2292,
+  "unpruned_nodes": 8841,
+  "all_owned_producers_auditors_fresh_closed": true,
+  "heartbeat": "PAUSED_USER_REQUEST_CURRENTWORK_CONTINUED",
+  "metadata_final_pending": true
+}

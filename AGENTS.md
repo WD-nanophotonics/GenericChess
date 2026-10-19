@@ -8,8 +8,10 @@ User-authorized bounded project work is permitted.
 
 ## Current decisions and reasons — user2026-10-15
 
-User2026-10-18 explicitly restores DEV_AUX90-minute same-chat heartbeat.
-The old2026-10-17 own pause is preserved as history and superseded by this resume;
+User2026-10-19 explicitly pauses DEV_AUX90-minute heartbeat but continues
+current manual research/consultation. Official dev-aux schedule is PAUSED;
+do not auto-resume it or set work/consultation stops for this schedule-only request.
+The2026-10-18 restoration and2026-10-17 pause remain historical;
 new user stops still apply. Recover this role's committed task and next research
 point, not overall engineering supervision or DeepSeek status polling. User will
 not activate both auxiliaries together; DeepSeek may have done some work without

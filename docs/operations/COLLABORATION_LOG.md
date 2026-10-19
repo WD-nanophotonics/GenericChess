@@ -1,3 +1,22 @@
+# DEV_AUX100 collaboration checkpoint —2026-10-19 JST
+
+Own SAME TD/Chess/search/history implementation reused, no PRIMARY/DS writes,
+processinspection, independent execution oradoptionclaimed.
+New12M TRAINearly8/mixed8,64 / ALL768common actual-WLD slots, ALL4initials/
+twofoes/bothroles/bothprefixes/initialbaselines/negativecells/UNKNOWN/costs.
+Fullhistory/reset/reverseTD/PV/accounting audits,16actualreplay+16unprunedwitnesses.
+Fresh38tests+12regeneratedoutputs;45thrawcapsuleefaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109, prior44same.
+ScientificOPEN/nohumanfit/stableuniversalprices orcausalfeature-rankclaim.
+Dot1792366078 PRIMARYreplyread asmethodreference only: fixedpairedcosts and
+intervention changesbundledmechanics; no AUXsource/executeclaim. Unrelated
+PRIMARYright-off experimentdeferred; no routineack/duplicateconsultation.
+SourcePENDING_REVIEWED_SOURCE_PUBLICATION; SlackNOT_SENT; reading/executionUNCONFIRMED.
+User pauses ONLY dev-aux heartbeat; currentmanualresearch/consultationcontinued,
+no other-role stop/control ortimerrestore. AllhistoricalcapsCLOSED.
+Next decision/evidence: task2580/next-dose-proposal.json and100report.
+
+## Historical completed99
+
 # DEV_AUX99 collaboration checkpoint —2026-10-19 JST
 
 Own TD/search/history implementation reused; no PRIMARY/DS writes or execution claimed.

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_ACTUAL_FRESH38_AND12_REGENERATIONS",
+  "tests": 38,
+  "derived": {
+    "task2580/audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/signals.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/witness-queries.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/information.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/training-curves.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/distribution.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2580/stability.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2581/result.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2581/deployment-audit.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2581/summary.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2581/trajectory-divergence.json": "MATCH_EXCEPT_AUDIT_SECONDS",
+    "task2581/terminal-ledger.json": "MATCH_EXCEPT_AUDIT_SECONDS"
+  },
+  "payloads": 176,
+  "archive_sha": "efaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109",
+  "seconds": 78.86966600001324,
+  "wrapper_sha": "2115881e65eb4d40c33f465aae5b78d7f30ffe7b5eea6a1d2ff3b3601c19331a",
+  "scope": "ActualnewUUIDextraction, exactpayloadhashes andsourcepathassertions; outputs parkedbefore38tests/12regenerations. Actualownstoproot; no fakeflags/newTRAIN/fitnessrerun/oldcaprefill. Samechessauthority, notexternalengine/allruleproof."
+}

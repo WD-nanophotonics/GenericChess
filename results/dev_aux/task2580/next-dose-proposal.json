@@ -1,0 +1,34 @@
+{
+  "status": "PROPOSED_ONLY_NOT_REGISTERED_OR_STARTED",
+  "prepared_at": "2026-10-19T00:53:36.667547+00:00",
+  "question": "At a substantially larger same paid dose, does SelfCandidate TD improve actual utility and cross-initial price consistency over competitive Fixednu TD under SAME mixed legal reset distribution?",
+  "reason": "100 mixedresets yield13.09% moreTDterms/paidnode andpositivepooled price utility butcounterexamples/full-order instability remain; all4initials pooledpositive vsinitial, notstableuniversalprices. Old96 standardChess selfplay comparison only100knodes/5-9episodes andcensoredEVAL was inconclusive, distinct from negativeGeneric finding.",
+  "supersedes": "Completed100 early-vs-mixeddistribution question; doesnotrevive oldq/provercoverage/grid-only route orassume selfplay superiority. Alternative dose-onlystudy leaves policycontext unresolved; new matchedtwo-regime costcurve can addressboth.",
+  "immediate_action": "NEWsession+tasks, SAME Model/TDLeafEpisode/plainD2/eta.05/lambda.95/P1/freeNBRQ/all4initials; newTRAINfamilies andcommonNEW WLD beforefitness. Fixednu: theta candidate/uniformfoe. SelfCandidate: SAMEfrozenepisode theta BOTHactualactors, observe designatedcandidate turns only. NOeveryply variant/horizonchange. All4seeds/BOTHroles/newmixed8,8,64,64 schedule.",
+  "prospective_budget": {
+    "arms": 8,
+    "nodes_per_arm": 2500000,
+    "total_TRAIN_nodes": 20000000,
+    "snapshot_nodes": [
+      1250000,
+      2500000
+    ],
+    "TRAIN_cap_seconds": 3300,
+    "EVAL_cap_seconds": 1800,
+    "common_EVAL_slots": 640,
+    "eval_recipe": "4initials x(initial+Fixed1.25/2.5M+SelfCandidate1.25/2.5M) x4newunderlyingfamilies xprefix8/64 xBOTHroles x2fixedplainfoes; allmodels/snapshots retained, nobestcheckpoint.",
+    "basis": {
+      "measured100_TRAIN_nodes": 12000000,
+      "measured100_TRAIN_seconds": 1533.6169689000235,
+      "measured100_EVAL_games": 768,
+      "measured100_EVAL_seconds": 1484.0096458999906
+    },
+    "estimated_TRAIN_seconds": 2556.028281500039,
+    "estimated_EVAL_seconds": 1236.6747049166588,
+    "expected_total_minutes": "75-90 including engineering/audits/reproduction/delivery; re-estimateBEFOREregistration, >=120min requiresDotfirst.",
+    "why_2_5M": "A bounded doubled within-trajectory1.25->2.5M learning curve plus matchedregimecontrol fitsnormalresearchwindow. This is not a promised1000game replication split to evade review; greaterdose effects beyondthisremainOPEN. Earlier3M alternative was a prospective estimate only, neverfrozen orstarted."
+  },
+  "validation": "Actualcomplete ruleWLD/allseed/role/foe/rootnegativecells/loss/orders/paidquerycounts/wall/U/missing. Snapshotlastclosedepisode<=boundary withactualnodelag; eachnewTRAINchargedONCE, no current100EVALreuse/oldpartialfill or initialprice/seedchoice. Newrootrecipes mechanicallyfixedwithoutmaterial/outcome filter.",
+  "interpretation": "Selfplay removes coefficient-nu mismatch only, not finitehorizon/replanning mismatch, exactpolicycritic orprobabilitycalibration. Data/episode/target counts change atsamepaidnodes. KeepFixednu competitive, allsignedprices, nohumanfit/Xiangqiholdout.",
+  "backup": "SAMElearner newcompleteGenericSessionfamilies/fulltypedpromotion-drops-aux-history andpaidnonscoringUNKNOWN. No Core/default/UI/otherrole changes."
+}

@@ -7,6 +7,13 @@ the historical single-heartbeat rule is overridden only to this extent.
 
 ## Recovery and research segments
 
+Current user direction2026-10-19 pauses ONLY future dev-aux90-minute heartbeat;
+official automation status PAUSED was read back. Current manual research and
+consultation continue. Do not set rollout/advisor/slack work stops for this
+schedule-only request or automatically restore the timer. Earlier ACTIVE setup
+and2026-10-18 restoration below remain historical; a new explicit full-work stop
+still suspends this role through its own paths.
+
 Use only the user-established GenericChess-DEV_AUX independent clone (absolute path in private local configuration), sidemission.
 The native heartbeat dev-aux targets chat 01a128cf-ae2d-7352-a456-06bd38367221.
 Read own NEXT_WORK first, AGENTS, mainline, this file, assignment and own stops.

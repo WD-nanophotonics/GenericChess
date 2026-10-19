@@ -1,0 +1,1179 @@
+{
+  "status": "ALL_INITIALS_COEFFICIENTS_AND_PAIRS_RETAINED",
+  "groups": {
+    "initial": {
+      "rows": [
+        {
+          "seed": 1977,
+          "weights": [
+            1.0,
+            0.9604344534597493,
+            1.0514707300180781,
+            1.0794922028994416,
+            0.9741150702869562
+          ]
+        },
+        {
+          "seed": 8173,
+          "weights": [
+            1.0,
+            0.5805624412612915,
+            0.5585141092367637,
+            0.9971011348572694,
+            1.2534673656875663
+          ]
+        },
+        {
+          "seed": 27182,
+          "weights": [
+            1.0,
+            1.174822933881516,
+            1.1402175549090674,
+            0.7860686782820425,
+            1.375025811841296
+          ]
+        },
+        {
+          "seed": 31415,
+          "weights": [
+            1.0,
+            1.0899870529110256,
+            0.7814307206856481,
+            1.3839294496616317,
+            0.5425822030439713
+          ]
+        }
+      ],
+      "coefficients": [
+        {
+          "piece": "P",
+          "n": 4,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "rms_deviation": 0.0
+        },
+        {
+          "piece": "N",
+          "n": 4,
+          "mean": 0.9514517203783956,
+          "min": 0.5805624412612915,
+          "max": 1.174822933881516,
+          "rms_deviation": 0.22733581121294932
+        },
+        {
+          "piece": "B",
+          "n": 4,
+          "mean": 0.8829082787123893,
+          "min": 0.5585141092367637,
+          "max": 1.1402175549090674,
+          "rms_deviation": 0.22921094846226947
+        },
+        {
+          "piece": "R",
+          "n": 4,
+          "mean": 1.0616478664250963,
+          "min": 0.7860686782820425,
+          "max": 1.3839294496616317,
+          "rms_deviation": 0.2146473903471291
+        },
+        {
+          "piece": "Q",
+          "n": 4,
+          "mean": 1.0362976127149475,
+          "min": 0.5425822030439713,
+          "max": 1.375025811841296,
+          "rms_deviation": 0.3199691660218826
+        }
+      ],
+      "all10pairs": [
+        {
+          "pair": [
+            "P",
+            "N"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.039565546540250685
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.41943755873870847
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.17482293388151593
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.0899870529110256
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.051470730018078115
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.4414858907632363
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.1402175549090674
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.21856927931435188
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.07949220289944159
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.0028988651427306333
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.21393132171795748
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.38392944966163167
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.02588492971304379
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.25346736568756634
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.3750258118412959
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.4574177969560287
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.0910362765583288
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.022048332024527828
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.03460537897244853
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.3085563322253775
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.11905774943969227
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.41653869359597784
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.3887542555994734
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.29394239675060607
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.013680616827206893
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.6729049244262748
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.20020287795977998
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.5474048498670543
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.028021472881363474
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.43858702562050567
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.3541488766270249
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.6024987289759836
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.0773556597311219
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.6949532564508026
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.2348082569322285
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.2388485176416768
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "R",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.10537713261248538
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.25636623083029697
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.5889571335592534
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.8413472466176604
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        }
+      ],
+      "unanimous_pairs": 0,
+      "total_pairs": 10,
+      "full_order_unanimous": false
+    },
+    "TD_early": {
+      "rows": [
+        {
+          "seed": 1977,
+          "weights": [
+            1.0,
+            0.5349568277335683,
+            2.8457351445443133,
+            2.939839166656945,
+            1.7999321743431682
+          ]
+        },
+        {
+          "seed": 8173,
+          "weights": [
+            1.0,
+            0.46207668858218487,
+            -0.1656510898752001,
+            2.844082214512628,
+            4.034056454799076
+          ]
+        },
+        {
+          "seed": 27182,
+          "weights": [
+            1.0,
+            2.89394459102976,
+            1.9637518883503624,
+            1.8228800144621122,
+            3.48015435329269
+          ]
+        },
+        {
+          "seed": 31415,
+          "weights": [
+            1.0,
+            1.6482120044411863,
+            2.7960043322394146,
+            3.0022898473567112,
+            1.187752284693325
+          ]
+        }
+      ],
+      "coefficients": [
+        {
+          "piece": "P",
+          "n": 4,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "rms_deviation": 0.0
+        },
+        {
+          "piece": "N",
+          "n": 4,
+          "mean": 1.3847975279466749,
+          "min": 0.46207668858218487,
+          "max": 2.89394459102976,
+          "rms_deviation": 0.9900195714701038
+        },
+        {
+          "piece": "B",
+          "n": 4,
+          "mean": 1.8599600688147226,
+          "min": -0.1656510898752001,
+          "max": 2.8457351445443133,
+          "rms_deviation": 1.2208403531002328
+        },
+        {
+          "piece": "R",
+          "n": 4,
+          "mean": 2.652272810747099,
+          "min": 1.8228800144621122,
+          "max": 3.0022898473567112,
+          "rms_deviation": 0.48215391548512804
+        },
+        {
+          "piece": "Q",
+          "n": 4,
+          "mean": 2.625473816782065,
+          "min": 1.187752284693325,
+          "max": 4.034056454799076,
+          "rms_deviation": 1.1686686950164018
+        }
+      ],
+      "all10pairs": [
+        {
+          "pair": [
+            "P",
+            "N"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.46504317226643166
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.5379233114178151
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.89394459102976
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.6482120044411863
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -1.8457351445443133
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 1.1656510898752002
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.9637518883503624
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.7960043322394146
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -1.9398391666569448
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -1.8440822145126279
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.8228800144621122
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -2.0022898473567112
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "P",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.7999321743431682
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -3.0340564547990763
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -2.48015435329269
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.18775228469332506
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "N",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -2.3107783168107447
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.6277277784573849
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.9301927026793977
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.1477923277982283
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -2.404882338923376
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -2.382005525930443
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 1.0710645765676479
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.354077842915525
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -1.2649753466095999
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -3.5719797662168915
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.5862097622629299
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.46045971974786126
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.09410402211263147
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -3.009733304387828
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.14087187388825018
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.20628551511729665
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 1.045802970201145
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -4.199707544674276
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.5164024649423276
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 1.6082520475460895
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "R",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 1.1399069923137766
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -1.1899742402864484
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.6572743388305777
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 1.8145375626633862
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        }
+      ],
+      "unanimous_pairs": 2,
+      "total_pairs": 10,
+      "full_order_unanimous": false
+    },
+    "TD_mixed": {
+      "rows": [
+        {
+          "seed": 1977,
+          "weights": [
+            1.0,
+            2.3051036906108746,
+            1.8900663231653416,
+            3.162760363433471,
+            1.7757619693560662
+          ]
+        },
+        {
+          "seed": 8173,
+          "weights": [
+            1.0,
+            0.09186439740356454,
+            2.466487885841453,
+            2.891383776200274,
+            3.7997378441988627
+          ]
+        },
+        {
+          "seed": 27182,
+          "weights": [
+            1.0,
+            1.8748273918561809,
+            2.5095072192473085,
+            2.030633285657273,
+            3.4033232432060654
+          ]
+        },
+        {
+          "seed": 31415,
+          "weights": [
+            1.0,
+            1.8902069534110806,
+            2.006421824467027,
+            3.2043062492555494,
+            1.3691555207678876
+          ]
+        }
+      ],
+      "coefficients": [
+        {
+          "piece": "P",
+          "n": 4,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "rms_deviation": 0.0
+        },
+        {
+          "piece": "N",
+          "n": 4,
+          "mean": 1.5405006083204251,
+          "min": 0.09186439740356454,
+          "max": 2.3051036906108746,
+          "rms_deviation": 0.8539955607340186
+        },
+        {
+          "piece": "B",
+          "n": 4,
+          "mean": 2.2181208131802825,
+          "min": 1.8900663231653416,
+          "max": 2.5095072192473085,
+          "rms_deviation": 0.27341746956993934
+        },
+        {
+          "piece": "R",
+          "n": 4,
+          "mean": 2.822270918636642,
+          "min": 2.030633285657273,
+          "max": 3.2043062492555494,
+          "rms_deviation": 0.4725861786195561
+        },
+        {
+          "piece": "Q",
+          "n": 4,
+          "mean": 2.5869946443822203,
+          "min": 1.3691555207678876,
+          "max": 3.7997378441988627,
+          "rms_deviation": 1.0342109352055588
+        }
+      ],
+      "all10pairs": [
+        {
+          "pair": [
+            "P",
+            "N"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -1.3051036906108746
+            },
+            {
+              "seed": 8173,
+              "sign": 1,
+              "difference": 0.9081356025964354
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.8748273918561809
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.8902069534110806
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "P",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.8900663231653416
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -1.466487885841453
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.5095072192473085
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.006421824467027
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "P",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -2.162760363433471
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -1.891383776200274
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.0306332856572729
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -2.2043062492555494
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "P",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.7757619693560662
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -2.7997378441988627
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -2.4033232432060654
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.3691555207678876
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "N",
+            "B"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.415037367445533
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -2.3746234884378885
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.6346798273911276
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -0.11621487105594652
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "N",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -0.8576566728225963
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -2.7995193787967096
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.155805893801092
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.3140992958444688
+            }
+          ],
+          "unanimous": true,
+          "common_sign": -1
+        },
+        {
+          "pair": [
+            "N",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.5293417212548084
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -3.7078734467952983
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.5284958513498845
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.521051432643193
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "R"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": -1,
+              "difference": -1.2726940402681293
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.42489589035882114
+            },
+            {
+              "seed": 27182,
+              "sign": 1,
+              "difference": 0.4788739335900356
+            },
+            {
+              "seed": 31415,
+              "sign": -1,
+              "difference": -1.1978844247885223
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "B",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 0.1143043538092754
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -1.3332499583574098
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -0.8938160239587569
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 0.6372663036991395
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        },
+        {
+          "pair": [
+            "R",
+            "Q"
+          ],
+          "votes": [
+            {
+              "seed": 1977,
+              "sign": 1,
+              "difference": 1.3869983940774047
+            },
+            {
+              "seed": 8173,
+              "sign": -1,
+              "difference": -0.9083540679985886
+            },
+            {
+              "seed": 27182,
+              "sign": -1,
+              "difference": -1.3726899575487925
+            },
+            {
+              "seed": 31415,
+              "sign": 1,
+              "difference": 1.8351507284876618
+            }
+          ],
+          "unanimous": false,
+          "common_sign": null
+        }
+      ],
+      "unanimous_pairs": 4,
+      "total_pairs": 10,
+      "full_order_unanimous": false
+    }
+  },
+  "scope": "TRAIN-only descriptive analysis prepared after trained weights were observed but before EVAL fitness inspection; all5coefficients/10pairs shown, no favorable pair/seed/price selection. Pfixed1 raw gauge; four seeds not population/statistical convergence or human ratio target. Snapshot drift/dispersion does not prove identifiability or playing strength."
+}

@@ -1,0 +1,270 @@
+{
+  "training_sha": "38e8728d3e924f15e512f903083e5c1462b4c50f264c55e58f679e5776d0a1c6",
+  "plan_sha": "cb74fc3aa5351154dbc26b069c9e1969bbde119d3fd95f4c1bbb4f51a7809453",
+  "all_models": [
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "actual_training_nodes": 0,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "TD_early|plain",
+      "original_method": "TD_early",
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        0.5349568277335683,
+        2.8457351445443133,
+        2.939839166656945,
+        1.7999321743431682
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 1977,
+      "method": "TD_mixed|plain",
+      "original_method": "TD_mixed",
+      "initial": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562
+      ],
+      "weights": [
+        1.0,
+        2.3051036906108746,
+        1.8900663231653416,
+        3.162760363433471,
+        1.7757619693560662
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "actual_training_nodes": 0,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "TD_early|plain",
+      "original_method": "TD_early",
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.46207668858218487,
+        -0.1656510898752001,
+        2.844082214512628,
+        4.034056454799076
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 8173,
+      "method": "TD_mixed|plain",
+      "original_method": "TD_mixed",
+      "initial": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663
+      ],
+      "weights": [
+        1.0,
+        0.09186439740356454,
+        2.466487885841453,
+        2.891383776200274,
+        3.7997378441988627
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "actual_training_nodes": 0,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "TD_early|plain",
+      "original_method": "TD_early",
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        2.89394459102976,
+        1.9637518883503624,
+        1.8228800144621122,
+        3.48015435329269
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 27182,
+      "method": "TD_mixed|plain",
+      "original_method": "TD_mixed",
+      "initial": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296
+      ],
+      "weights": [
+        1.0,
+        1.8748273918561809,
+        2.5095072192473085,
+        2.030633285657273,
+        3.4033232432060654
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "initial|plain",
+      "original_method": "initial",
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "actual_training_nodes": 0,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "TD_early|plain",
+      "original_method": "TD_early",
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.6482120044411863,
+        2.7960043322394146,
+        3.0022898473567112,
+        1.187752284693325
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    },
+    {
+      "generator_seed": 0,
+      "seed": 31415,
+      "method": "TD_mixed|plain",
+      "original_method": "TD_mixed",
+      "initial": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713
+      ],
+      "weights": [
+        1.0,
+        1.8902069534110806,
+        2.006421824467027,
+        3.2043062492555494,
+        1.3691555207678876
+      ],
+      "actual_training_nodes": 1500000,
+      "matched_training_budget": true
+    }
+  ]
+}

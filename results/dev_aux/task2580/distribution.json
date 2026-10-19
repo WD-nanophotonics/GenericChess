@@ -1,0 +1,522 @@
+{
+  "status": "PASS_ACTUAL_PREFIX_COUNTS_COSTS_AND_CREDITS",
+  "rows": {
+    "(8173, 'TD_early', 8)": {
+      "counts": {
+        "games": 106,
+        "nodes": 1500000,
+        "queries": 11803,
+        "terms": 5914,
+        "actual_terminal": 101,
+        "unknown": 5,
+        "role0": 53,
+        "role1": 53,
+        "candidate_nodes": 778344,
+        "failed_nodes": 247,
+        "observations": 5919,
+        "terminal_PV": 101,
+        "free_phi_nonzero": 5461,
+        "foe_nodes": 721656
+      },
+      "root_records": 53,
+      "terms_per_M_all_paid_nodes": 3942.6666666666665,
+      "nonzero_PV_per_M_all_paid_nodes": 3640.6666666666665,
+      "changing_data_loss": 0.002842439825898187,
+      "net_credit": [
+        0.0,
+        -2.3697150535821354,
+        -14.483303982239274,
+        36.93962159310718,
+        55.611781782230146
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        71.80715900506523,
+        64.2717182849478,
+        50.87632352192958,
+        58.158433109124125
+      ],
+      "credit_coherence": [
+        null,
+        0.03300109747295499,
+        0.2253449008166818,
+        0.7260670393603585,
+        0.9562118304990158
+      ]
+    },
+    "(31415, 'TD_early', 8)": {
+      "counts": {
+        "games": 90,
+        "nodes": 1500000,
+        "queries": 12748,
+        "terms": 6353,
+        "actual_terminal": 71,
+        "unknown": 19,
+        "role0": 45,
+        "role1": 45,
+        "candidate_nodes": 792766,
+        "failed_nodes": 829,
+        "observations": 6372,
+        "terminal_PV": 71,
+        "free_phi_nonzero": 5948,
+        "foe_nodes": 707234
+      },
+      "root_records": 45,
+      "terms_per_M_all_paid_nodes": 4235.333333333333,
+      "nonzero_PV_per_M_all_paid_nodes": 3965.3333333333335,
+      "changing_data_loss": 0.0019271265097601012,
+      "net_credit": [
+        0.0,
+        11.16449903060323,
+        40.291472231075325,
+        32.367207953901584,
+        12.903401632987066
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        55.84646856380143,
+        55.24537166229374,
+        39.377073841402776,
+        26.879553703474215
+      ],
+      "credit_coherence": [
+        null,
+        0.19991414529368892,
+        0.7293185115555154,
+        0.8219810360786455,
+        0.48004523346380135
+      ]
+    },
+    "(31415, 'TD_mixed', 8)": {
+      "counts": {
+        "games": 54,
+        "nodes": 895106,
+        "queries": 7448,
+        "terms": 3711,
+        "actual_terminal": 44,
+        "unknown": 10,
+        "role0": 27,
+        "role1": 27,
+        "candidate_nodes": 482004,
+        "failed_nodes": 696,
+        "observations": 3721,
+        "terminal_PV": 44,
+        "free_phi_nonzero": 3438,
+        "foe_nodes": 413102
+      },
+      "root_records": 27,
+      "terms_per_M_all_paid_nodes": 4145.87769493222,
+      "nonzero_PV_per_M_all_paid_nodes": 3840.885883906487,
+      "changing_data_loss": 0.0023403997927063237,
+      "net_credit": [
+        0.0,
+        12.268119579292021,
+        18.391838747664277,
+        18.915420684049458,
+        9.470247441267665
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        30.196804432777725,
+        30.29636053441536,
+        24.42816379330506,
+        23.313444899261054
+      ],
+      "credit_coherence": [
+        null,
+        0.40627211421005016,
+        0.6070642949595196,
+        0.7743283876798608,
+        0.40621398863141994
+      ]
+    },
+    "(31415, 'TD_mixed', 64)": {
+      "counts": {
+        "games": 53,
+        "nodes": 604894,
+        "queries": 7277,
+        "terms": 3629,
+        "actual_terminal": 44,
+        "unknown": 9,
+        "role0": 27,
+        "role1": 26,
+        "candidate_nodes": 327904,
+        "failed_nodes": 444,
+        "observations": 3638,
+        "terminal_PV": 44,
+        "free_phi_nonzero": 3461,
+        "foe_nodes": 276990
+      },
+      "root_records": 27,
+      "terms_per_M_all_paid_nodes": 5999.398241675401,
+      "nonzero_PV_per_M_all_paid_nodes": 5721.663630322007,
+      "changing_data_loss": 0.0018936164182575166,
+      "net_credit": [
+        0.0,
+        3.7362784307090706,
+        6.107983327963287,
+        17.492115307828914,
+        7.061218913210682
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        22.850328844698502,
+        22.260787258526285,
+        30.692580401779896,
+        9.704221126076995
+      ],
+      "credit_coherence": [
+        null,
+        0.16351092608349588,
+        0.27438307805685613,
+        0.5699134800283696,
+        0.7276440655536911
+      ]
+    },
+    "(1977, 'TD_mixed', 8)": {
+      "counts": {
+        "games": 55,
+        "nodes": 921086,
+        "queries": 8064,
+        "terms": 4019,
+        "actual_terminal": 43,
+        "unknown": 12,
+        "role0": 28,
+        "role1": 27,
+        "candidate_nodes": 496016,
+        "failed_nodes": 590,
+        "observations": 4031,
+        "terminal_PV": 44,
+        "free_phi_nonzero": 3689,
+        "foe_nodes": 425070
+      },
+      "root_records": 28,
+      "terms_per_M_all_paid_nodes": 4363.327637158745,
+      "nonzero_PV_per_M_all_paid_nodes": 4005.0549025823866,
+      "changing_data_loss": 0.002276902903942975,
+      "net_credit": [
+        0.0,
+        19.526778350671904,
+        10.858443735724542,
+        18.943868910253453,
+        7.990689458322014
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        36.25599826826045,
+        28.711167966084947,
+        24.819201769417795,
+        20.194659740458885
+      ],
+      "credit_coherence": [
+        null,
+        0.5385806289539188,
+        0.37819582082314007,
+        0.7632747050550223,
+        0.3956832925643758
+      ]
+    },
+    "(1977, 'TD_mixed', 64)": {
+      "counts": {
+        "games": 54,
+        "nodes": 578914,
+        "queries": 6854,
+        "terms": 3427,
+        "actual_terminal": 50,
+        "unknown": 4,
+        "role0": 27,
+        "role1": 27,
+        "candidate_nodes": 315967,
+        "failed_nodes": 136,
+        "observations": 3431,
+        "terminal_PV": 50,
+        "free_phi_nonzero": 3342,
+        "foe_nodes": 262947
+      },
+      "root_records": 27,
+      "terms_per_M_all_paid_nodes": 5919.704826623643,
+      "nonzero_PV_per_M_all_paid_nodes": 5772.878182251595,
+      "changing_data_loss": 0.0023622909911143295,
+      "net_credit": [
+        0.0,
+        7.3666063923506,
+        5.913468127220748,
+        22.721494300427114,
+        8.04224852306019
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        24.923832381188934,
+        23.47370871873422,
+        38.8577760508509,
+        11.234739397348966
+      ],
+      "credit_coherence": [
+        null,
+        0.29556475423540757,
+        0.2519187827572064,
+        0.5847348101109241,
+        0.7158375676215418
+      ]
+    },
+    "(27182, 'TD_mixed', 8)": {
+      "counts": {
+        "games": 58,
+        "nodes": 889510,
+        "queries": 7034,
+        "terms": 3520,
+        "actual_terminal": 53,
+        "unknown": 5,
+        "role0": 29,
+        "role1": 29,
+        "candidate_nodes": 463227,
+        "failed_nodes": 301,
+        "observations": 3525,
+        "terminal_PV": 53,
+        "free_phi_nonzero": 3245,
+        "foe_nodes": 426283
+      },
+      "root_records": 29,
+      "terms_per_M_all_paid_nodes": 3957.2348821261144,
+      "nonzero_PV_per_M_all_paid_nodes": 3648.0759069600117,
+      "changing_data_loss": 0.00217095507431857,
+      "net_credit": [
+        0.0,
+        16.673844254031263,
+        15.978096134757678,
+        6.37231030705538,
+        23.86897814884495
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        31.125508218673776,
+        28.236262550236933,
+        19.66905958939582,
+        26.221553471648974
+      ],
+      "credit_coherence": [
+        null,
+        0.5356970924583258,
+        0.5658714961418859,
+        0.3239763588133559,
+        0.9102808563440891
+      ]
+    },
+    "(27182, 'TD_mixed', 64)": {
+      "counts": {
+        "games": 58,
+        "nodes": 610490,
+        "queries": 7302,
+        "terms": 3651,
+        "actual_terminal": 55,
+        "unknown": 3,
+        "role0": 29,
+        "role1": 29,
+        "candidate_nodes": 335340,
+        "failed_nodes": 92,
+        "observations": 3654,
+        "terminal_PV": 55,
+        "free_phi_nonzero": 3566,
+        "foe_nodes": 275150
+      },
+      "root_records": 29,
+      "terms_per_M_all_paid_nodes": 5980.441940080918,
+      "nonzero_PV_per_M_all_paid_nodes": 5841.209520221461,
+      "changing_data_loss": 0.002467040919865035,
+      "net_credit": [
+        0.0,
+        -2.673755094537964,
+        11.407697152007117,
+        18.518981840449214,
+        16.69697047845046
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        22.430778017248414,
+        26.41151867310874,
+        31.114177971496872,
+        23.00838669266062
+      ],
+      "credit_coherence": [
+        null,
+        0.11920028331081285,
+        0.4319212875714725,
+        0.595194314868743,
+        0.7256906232272504
+      ]
+    },
+    "(1977, 'TD_early', 8)": {
+      "counts": {
+        "games": 89,
+        "nodes": 1500000,
+        "queries": 13432,
+        "terms": 6700,
+        "actual_terminal": 72,
+        "unknown": 17,
+        "role0": 45,
+        "role1": 44,
+        "candidate_nodes": 793703,
+        "failed_nodes": 615,
+        "observations": 6717,
+        "terminal_PV": 78,
+        "free_phi_nonzero": 6306,
+        "foe_nodes": 706297
+      },
+      "root_records": 45,
+      "terms_per_M_all_paid_nodes": 4466.666666666667,
+      "nonzero_PV_per_M_all_paid_nodes": 4204.0,
+      "changing_data_loss": 0.0019285208611954788,
+      "net_credit": [
+        0.0,
+        -8.509552514523635,
+        35.88528829052477,
+        37.20693927515006,
+        16.516342081124233
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        55.013998675428596,
+        55.432601515732784,
+        48.06702470680301,
+        31.596711077952524
+      ],
+      "credit_coherence": [
+        null,
+        0.15467976732119154,
+        0.6473679262615858,
+        0.7740637058795132,
+        0.5227234581591932
+      ]
+    },
+    "(27182, 'TD_early', 8)": {
+      "counts": {
+        "games": 103,
+        "nodes": 1500000,
+        "queries": 11605,
+        "terms": 5811,
+        "actual_terminal": 96,
+        "unknown": 7,
+        "role0": 52,
+        "role1": 51,
+        "candidate_nodes": 780988,
+        "failed_nodes": 445,
+        "observations": 5818,
+        "terminal_PV": 96,
+        "free_phi_nonzero": 5323,
+        "foe_nodes": 719012
+      },
+      "root_records": 52,
+      "terms_per_M_all_paid_nodes": 3874.0,
+      "nonzero_PV_per_M_all_paid_nodes": 3548.6666666666665,
+      "changing_data_loss": 0.0023704609564358507,
+      "net_credit": [
+        0.0,
+        34.3824331429649,
+        16.470686668825902,
+        20.7362267236014,
+        42.10257082902787
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        64.08056659810383,
+        59.15058912538319,
+        31.63182137939898,
+        45.338500456948076
+      ],
+      "credit_coherence": [
+        null,
+        0.5365500801296331,
+        0.27845346787523145,
+        0.6555495643101472,
+        0.9286273344882031
+      ]
+    },
+    "(8173, 'TD_mixed', 8)": {
+      "counts": {
+        "games": 68,
+        "nodes": 896503,
+        "queries": 5910,
+        "terms": 2967,
+        "actual_terminal": 67,
+        "unknown": 1,
+        "role0": 34,
+        "role1": 34,
+        "candidate_nodes": 454735,
+        "failed_nodes": 41,
+        "observations": 2968,
+        "terminal_PV": 67,
+        "free_phi_nonzero": 2613,
+        "foe_nodes": 441768
+      },
+      "root_records": 34,
+      "terms_per_M_all_paid_nodes": 3309.5260138560607,
+      "nonzero_PV_per_M_all_paid_nodes": 2914.658400473841,
+      "changing_data_loss": 0.003294732834418497,
+      "net_credit": [
+        0.0,
+        -6.141851043055489,
+        19.701570414416505,
+        18.069768304741853,
+        33.23584495504102
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        42.50230845705678,
+        31.274236075986718,
+        26.41274768328387,
+        34.24669193816231
+      ],
+      "credit_coherence": [
+        null,
+        0.1445062930937282,
+        0.6299616836858232,
+        0.6841305766979279,
+        0.9704833685850146
+      ]
+    },
+    "(8173, 'TD_mixed', 64)": {
+      "counts": {
+        "games": 67,
+        "nodes": 603497,
+        "queries": 6184,
+        "terms": 3098,
+        "actual_terminal": 65,
+        "unknown": 2,
+        "role0": 34,
+        "role1": 33,
+        "candidate_nodes": 330583,
+        "failed_nodes": 90,
+        "observations": 3100,
+        "terminal_PV": 62,
+        "free_phi_nonzero": 2916,
+        "foe_nodes": 272914
+      },
+      "root_records": 34,
+      "terms_per_M_all_paid_nodes": 5133.414084908459,
+      "nonzero_PV_per_M_all_paid_nodes": 4831.838434988078,
+      "changing_data_loss": 0.003674698802977203,
+      "net_credit": [
+        0.0,
+        -3.632109834099041,
+        18.4579051176773,
+        19.81588452211826,
+        17.689564615184917
+      ],
+      "absolute_episode_credit": [
+        0.0,
+        27.195800590098195,
+        34.918527441756574,
+        35.03454438028659,
+        23.78156934980709
+      ],
+      "credit_coherence": [
+        null,
+        0.13355406920513557,
+        0.5285991841570274,
+        0.5656098822643276,
+        0.7438350411188659
+      ]
+    }
+  },
+  "scope": "Balanced scheduled episode-cycle is not equal node mixture. Prefix subgroups differ family/weight/visitation/episode cost, not randomized fixed-theta causal credit or strength comparisons. All seeds/prefixes/censored/failed/opponent costs retained; no new label/query/model selection."
+}

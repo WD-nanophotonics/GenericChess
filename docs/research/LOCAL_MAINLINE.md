@@ -1,3 +1,35 @@
+# DEV_AUX100 — SAME TD reset distributions; scientific OPEN
+
+Own session317ee713-377e-4626-8791-b890e91d8bca actualstart2026-10-18T23:57:52.174032+00:00 unchanged; ACTIVE; all science/reproduction closed, official finish pending.
+SourcePENDING_REVIEWED_SOURCE_PUBLICATION; own sidemission/PUBLIC; no other-role execution/adoption claim.
+User2026-10-19 pauses ONLY future dev-aux90-minute heartbeat; officialPAUSED.
+Currentmanualresearch/consultationcontinued, no workstop or automaticresume.
+ALL8 TRAINarms each1.5Mpaidnodes, SAMEplain TD eta.05/lambda.95/all4initials,
+early8 versus scheduledbalanced8,8,64,64/fullhistory/fixeduniformfoe.
+ALL768commonEVALslots includeinitial/early/mixed prices, BOTH8/64prefixes,
+8mechanicalfamilies/BOTHroles/SAME2fixedplainfoes; allcosts/failures/U kept.
+TRAIN761actual/94U; EVAL768actual/0U/0missing.
+No root/material/outcomefilter/bestseed/checkpoint/price orhumanfit/Xiangqiholdout.
+Prefix subgroups unequalactualnodecost; changesvisitation/targets/episodes,
+not purefeature-rankcausality. Loss/Gramrank notstrength/identifiability.
+Orders{'TD_early': False, 'TD_mixed': False}; allsignedprices andnegativecells preserved.
+Paired finitebounds notCIs/population/universalprices. Allcontrasts:
+{"all": {"TD_early-initial": {"uniform": [0.328125, 0.328125], "random48821": [0.234375, 0.234375]}, "TD_mixed-initial": {"uniform": [0.4375, 0.4375], "random48821": [0.3046875, 0.3046875]}, "TD_mixed-TD_early": {"uniform": [0.109375, 0.109375], "random48821": [0.0703125, 0.0703125]}}, "8": {"TD_early-initial": {"uniform": [0.5, 0.5], "random48821": [0.3125, 0.3125]}, "TD_mixed-initial": {"uniform": [0.65625, 0.65625], "random48821": [0.296875, 0.296875]}, "TD_mixed-TD_early": {"uniform": [0.15625, 0.15625], "random48821": [-0.015625, -0.015625]}}, "64": {"TD_early-initial": {"uniform": [0.15625, 0.15625], "random48821": [0.15625, 0.15625]}, "TD_mixed-initial": {"uniform": [0.21875, 0.21875], "random48821": [0.3125, 0.3125]}, "TD_mixed-TD_early": {"uniform": [0.0625, 0.0625], "random48821": [0.15625, 0.15625]}}}
+Listedproducer23046430nodes/3017.627s plusreplay,
+unpruned/audit/engineering/packaging/fresh/transportcosts.
+Actualfresh38+12 outputsMATCH;45thZIPefaf0d34812bfef21b846b2677868fffca8510d652d454fdd6f0104f6c456109; prior44same.
+Currentdecision: NEWmatchedSelfCandidate/Fixednu SAMEplainTD/mixedresets/ALL4initials,
+within-trajectory1.25M/2.5M costcurve/commonNEWactualWLD; no newrunstarted.
+Reason:100mixedpositivepooled butnegativecells/fullorderinstabilityremain; old96
+standardChess100k/5-9episodes inconclusive, distinctfromGenericnegative.
+Keepfixednucompetitive; selfplay doesnotremove finitehorizon/replanningmismatch.
+Moreq/provercoverage lacks changedpremise here; no oldcapfill orbestseed.
+Task/execution/cost: results/dev_aux/task2580/next-dose-proposal.json.
+All originalcapsCLOSED; no oldpartialfill/PRIMARYtakeover/productdefault/UIchange.
+Report results/dev_aux/SEGMENT_20261019_100.md.
+
+## Historical completed99
+
 # DEV_AUX99 — matched TRAIN/DEPLOY contexts; scientific OPEN
 
 Own session9219e39a-a1b9-48b5-88ae-d4dd4d37224d actualstart2026-10-18T22:31:24.003355+00:00 unchanged; ENDED77.275min/safe_checkpoint.

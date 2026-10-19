@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-19T00:49:09.184095+00:00",
+  "EVAL_outcomes_inspected": false,
+  "all_original_producer_and_estimator_pins_unchanged": true,
+  "original_analysis_plan_sha": "01de8a326d6f6358755c7b4991ac4208be3479b16003a2e9960f9998c044157d",
+  "comparisons": [
+    {
+      "path": "results/dev_aux/task2580/information.py",
+      "original_prepared_sha": "540a10ea10d0a61368b8b6bff3efbfa5f5f50dfdcce9b7ff6fce03d28400ed63",
+      "ready_sha": "540a10ea10d0a61368b8b6bff3efbfa5f5f50dfdcce9b7ff6fce03d28400ed63",
+      "unchanged": true
+    },
+    {
+      "path": "results/dev_aux/task2580/replay.py",
+      "original_prepared_sha": "be0c98271098c3d5739b9e4c37502944d9873478e2e64ef15ddeec5df9af06d7",
+      "ready_sha": "be0c98271098c3d5739b9e4c37502944d9873478e2e64ef15ddeec5df9af06d7",
+      "unchanged": true
+    },
+    {
+      "path": "results/dev_aux/task2581/analyze.py",
+      "original_prepared_sha": "98a5195c9ace2304182f9d556b20ea6cce675d41a447bfaa423f68c0035c1cd9",
+      "ready_sha": "98a5195c9ace2304182f9d556b20ea6cce675d41a447bfaa423f68c0035c1cd9",
+      "unchanged": true
+    },
+    {
+      "path": "results/dev_aux/task2581/terminals.py",
+      "original_prepared_sha": "930881088a4532b4e64ce6139a3331d515d942f02d8c83d3f414601a3f0f2d27",
+      "ready_sha": "930881088a4532b4e64ce6139a3331d515d942f02d8c83d3f414601a3f0f2d27",
+      "unchanged": true
+    },
+    {
+      "path": "results/dev_aux/task2582/bundle.py",
+      "original_prepared_sha": "a29ee3aa4d200a82e16982f27989d455480aae8d655335f9fddafb491d32d276",
+      "ready_sha": "a29ee3aa4d200a82e16982f27989d455480aae8d655335f9fddafb491d32d276",
+      "unchanged": true
+    },
+    {
+      "path": "results/dev_aux/task2582/fresh.py",
+      "original_prepared_sha": "c1ecea9c660101f1718d9b6d7504638db40699d3fb7d1f429145b03bddc6d168",
+      "ready_sha": "2115881e65eb4d40c33f465aae5b78d7f30ffe7b5eea6a1d2ff3b3601c19331a",
+      "unchanged": false
+    }
+  ],
+  "reproduction_only_revision": "Fresh wrapper expanded10->12 regenerated outputs to include ALLprefix credit accounting and ALLcoefficient/pair dispersion. No TRAIN/EVAL/summary estimator source, condition, model/seed/root selection or cap change. Original planned wrapper was not executed; final actual wrapper is sealed and its hash is also returned by actual fresh receipt.",
+  "stability_diagnostic": "Designed after observing TRAINweights/beforeEVALoutcomes, descriptive ALL5coefficients/10pairs, not preregistered strength metric or selection."
+}
