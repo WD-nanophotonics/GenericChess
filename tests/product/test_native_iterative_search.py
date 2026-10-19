@@ -4,6 +4,8 @@ fallback, PV)."""
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generic_chess.ai.evaluation.config import EvaluationConfig
@@ -73,6 +75,39 @@ def test_iterative_terminal_root():
     assert result.completed_depth == 0
     assert result.termination_reason == "terminal_position"
     assert result.nodes == 1
+
+
+@requires_native
+@pytest.mark.parametrize("kind", ["RESIGNATION", "WIN", "LOSS", "RESTART", "NO_CONTEST"])
+@pytest.mark.parametrize("owner", [0, 1])
+def test_iterative_session_level_terminal_matches_core(kind, owner):
+    from test_finished_session_search import finish, rules
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.evaluation.config import MATE_SCORE
+    from generic_chess.rules.compiler import compile_ruleset
+
+    compiled = compile_ruleset(rules(kind, owner))
+    session = GameSession(compiled)
+    finish(session, kind, owner)
+    engine = _engine(compiled, tt_mb=0)
+
+    for current in (session, GameSession.replay(compiled, session.to_record())):
+        native = engine.search(
+            current, SearchLimits(max_depth=2, quiescence_max_depth=0)
+        )
+        core = AlphaBetaPlayer(compiled).choose_action(
+            current, SearchLimits(max_depth=2, quiescence_max_depth=0)
+        )
+        result = current.result
+        side_to_move = current.state.position.side_to_move
+        expected = (0 if result.winner is None else
+                    MATE_SCORE if result.winner == side_to_move else -MATE_SCORE)
+
+        assert native.action is None
+        assert native.principal_variation == ()
+        assert native.score == core.score == expected
+        assert native.completed_depth == native.nodes == native.qnodes == 0
+        assert native.termination_reason == "terminal_position"
 
 
 @requires_native

@@ -1,0 +1,254 @@
+{
+  "comparison": "same augmented ruleset/state per pair; candidate profile from compiled semantic action versus legacy-atom-reconstructed profile; public AlphaBeta D2, TT/order/root-tactical/qsearch disabled, 4096 node ceiling",
+  "decision": "close without a utility panel: all four D2 action/PV choices match and none exposes a legal compound action; score differences alone do not show usefulness",
+  "games_run": 0,
+  "limitations": [
+    "four generated rules and fixed 12-ply roots only",
+    "finite action sensitivity is not game utility or a validated static price",
+    "no broad semantic-action or generic-domain claim"
+  ],
+  "question": "Do the first four fresh P-start generated rules expose this recombined profile contrast in a legal compound action or a depth-2 action choice?",
+  "roots": [
+    {
+      "augmented_fingerprint": "1522aa9ba875320d41421f1389f1d8c2196d14a21d0e3763ae7c5747010a6a3b",
+      "base_fingerprint": "789c32b7c6a4d39488b5694f7bdcf90d3d14360f51aa9e7dd4b72e462a24e0af",
+      "board_P_count": 0,
+      "candidate_P_board": 1856,
+      "candidate_P_hand": 1670,
+      "candidate_static_score": -7157,
+      "control_P_board": 1646,
+      "control_P_hand": 1481,
+      "control_static_score": -6779,
+      "generator_seed": 202610301,
+      "hand_P_count": 4,
+      "initial_P_count": 4,
+      "legal_action_count": 11,
+      "legal_semantic_actions": [],
+      "prefix": [
+        "legacy_037:g25:d2-b3",
+        "legacy_037:g25:a3-c2",
+        "legacy_053:g26:P@d2",
+        "legacy_051:g9:c4-b3",
+        "legacy_035:g24:a2-c3",
+        "legacy_039:g3:b3-c3",
+        "legacy_006:g11:d2-a3",
+        "legacy_040:g4:c3-d2",
+        "legacy_008:g12:a3-b3",
+        "legacy_035:g24:d4-b3",
+        "legacy_036:g25:c1-a2",
+        "legacy_035:g24:d3-b2"
+      ],
+      "prefix_plies": 12,
+      "prefix_seed": 203510301,
+      "search": [
+        {
+          "action": "legacy_037:g25:d1-b2",
+          "arm": "candidate",
+          "depth": 2,
+          "nodes": 126,
+          "pv": [
+            "legacy_037:g25:d1-b2",
+            "legacy_035:g24:c2-a1"
+          ],
+          "score": -7140,
+          "stop": "completed_depth"
+        },
+        {
+          "action": "legacy_037:g25:d1-b2",
+          "arm": "control",
+          "depth": 2,
+          "nodes": 126,
+          "pv": [
+            "legacy_037:g25:d1-b2",
+            "legacy_035:g24:c2-a1"
+          ],
+          "score": -6762,
+          "stop": "completed_depth"
+        }
+      ],
+      "side_to_move": 0,
+      "status": "ongoing"
+    },
+    {
+      "augmented_fingerprint": "2d86d79b6d15e391ac9e93eab5f23f2f4f02b1f2cde63af0369c303230b7d9f2",
+      "base_fingerprint": "05ccaddc7d859a1ceb6781fc57c0cb7ca7fad7374d120b8e94399c9a074ef963",
+      "board_P_count": 9,
+      "candidate_P_board": 1591,
+      "candidate_P_hand": 1432,
+      "candidate_static_score": 1961,
+      "control_P_board": 1358,
+      "control_P_hand": 1222,
+      "control_static_score": 1938,
+      "generator_seed": 202610302,
+      "hand_P_count": 1,
+      "initial_P_count": 10,
+      "legal_action_count": 6,
+      "legal_semantic_actions": [],
+      "prefix": [
+        "legacy_015:g15:d2-a3",
+        "legacy_017:g16:d3-a2",
+        "legacy_039:g19:P@d2",
+        "legacy_039:g19:P@d3",
+        "legacy_017:g16:a3-d4",
+        "legacy_015:g15:a2-d1",
+        "legacy_009:g12:d2-d1",
+        "legacy_038:g19:A@a2",
+        "legacy_015:g15:d1-a2",
+        "legacy_029:g5:c4-d4",
+        "legacy_039:g19:P@a3",
+        "legacy_004:g10:d4-c4"
+      ],
+      "prefix_plies": 12,
+      "prefix_seed": 203510302,
+      "search": [
+        {
+          "action": "legacy_017:g16:a2-d3",
+          "arm": "candidate",
+          "depth": 2,
+          "nodes": 35,
+          "pv": [
+            "legacy_017:g16:a2-d3",
+            "legacy_031:g6:c4-d3"
+          ],
+          "score": 1956,
+          "stop": "completed_depth"
+        },
+        {
+          "action": "legacy_017:g16:a2-d3",
+          "arm": "control",
+          "depth": 2,
+          "nodes": 35,
+          "pv": [
+            "legacy_017:g16:a2-d3",
+            "legacy_031:g6:c4-d3"
+          ],
+          "score": 1933,
+          "stop": "completed_depth"
+        }
+      ],
+      "side_to_move": 0,
+      "status": "ongoing"
+    },
+    {
+      "augmented_fingerprint": "dc814cc4a5ec76ece2fa0817630dccec96569ba67ee192da453cbf194b06fd45",
+      "base_fingerprint": "b43122cc0c67484a4505986fbbd7156c47383a23d4f81cc7533afee478c41f46",
+      "board_P_count": 1,
+      "candidate_P_board": 1798,
+      "candidate_P_hand": 1618,
+      "candidate_static_score": 3191,
+      "control_P_board": 1499,
+      "control_P_hand": 1349,
+      "control_static_score": 2892,
+      "generator_seed": 202610303,
+      "hand_P_count": 0,
+      "initial_P_count": 2,
+      "legal_action_count": 9,
+      "legal_semantic_actions": [],
+      "prefix": [
+        "legacy_019:g17:d2-b3",
+        "legacy_021:g18:c3-a2",
+        "legacy_044:g21:X@c3",
+        "legacy_044:g21:X@d2",
+        "legacy_035:g6:b1-a2",
+        "legacy_021:g18:d4-b3",
+        "legacy_039:g8:a2-a3",
+        "legacy_044:g21:X@d4",
+        "legacy_019:g17:c3-a4",
+        "legacy_011:g13:b4-a4",
+        "legacy_044:g21:X@a2",
+        "legacy_008:g12:a4-b4=A"
+      ],
+      "prefix_plies": 12,
+      "prefix_seed": 203510303,
+      "search": [
+        {
+          "action": "legacy_021:g18:b2-d3",
+          "arm": "candidate",
+          "depth": 2,
+          "nodes": 46,
+          "pv": [
+            "legacy_021:g18:b2-d3",
+            "legacy_003:g1:b4-d3"
+          ],
+          "score": 3189,
+          "stop": "completed_depth"
+        },
+        {
+          "action": "legacy_021:g18:b2-d3",
+          "arm": "control",
+          "depth": 2,
+          "nodes": 46,
+          "pv": [
+            "legacy_021:g18:b2-d3",
+            "legacy_003:g1:b4-d3"
+          ],
+          "score": 2890,
+          "stop": "completed_depth"
+        }
+      ],
+      "side_to_move": 0,
+      "status": "ongoing"
+    },
+    {
+      "augmented_fingerprint": "4ac1692b6c06d64e50234152e3ddd98154742a4d1635d4b82d779ec7e73bcc1c",
+      "base_fingerprint": "c1ffa1a27a450d39b663d9a3ecf649d1688b1e6b7f1090b9e5d0c2b465b95780",
+      "board_P_count": 2,
+      "candidate_P_board": 400,
+      "candidate_P_hand": 360,
+      "candidate_static_score": 4934,
+      "control_P_board": 400,
+      "control_P_hand": 360,
+      "control_static_score": 4934,
+      "generator_seed": 202610304,
+      "hand_P_count": 0,
+      "initial_P_count": 2,
+      "legal_action_count": 3,
+      "legal_semantic_actions": [],
+      "prefix": [
+        "legacy_017:g16:b2-b3",
+        "legacy_034:g5:d3-b2",
+        "legacy_029:g21:b3-a3",
+        "legacy_000:g0:b2-d3",
+        "legacy_017:g16:c2-c3",
+        "legacy_025:g2:d3-c3",
+        "legacy_012:g14:c1-b2",
+        "legacy_046:g22:X@d3",
+        "legacy_044:g22:A@b3",
+        "legacy_017:g16:d3-d2",
+        "legacy_017:g16:a3-a4",
+        "legacy_044:g22:A@c1"
+      ],
+      "prefix_plies": 12,
+      "prefix_seed": 203510304,
+      "search": [
+        {
+          "action": "legacy_029:g21:d1-c1",
+          "arm": "candidate",
+          "depth": 2,
+          "nodes": 27,
+          "pv": [
+            "legacy_029:g21:d1-c1",
+            "legacy_011:g13:c4-b3"
+          ],
+          "score": 4979,
+          "stop": "completed_depth"
+        },
+        {
+          "action": "legacy_029:g21:d1-c1",
+          "arm": "control",
+          "depth": 2,
+          "nodes": 27,
+          "pv": [
+            "legacy_029:g21:d1-c1",
+            "legacy_011:g13:c4-b3"
+          ],
+          "score": 4979,
+          "stop": "completed_depth"
+        }
+      ],
+      "side_to_move": 0,
+      "status": "ongoing"
+    }
+  ],
+  "selection": "first four P-start generated rules in fixed block 202610301-202610304; deterministic 12-ply legal prefix RNG = generator seed + 900000; no selection on evaluations, actions, or game outcomes"
+}

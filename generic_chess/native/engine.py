@@ -12,8 +12,10 @@ from dataclasses import dataclass
 
 from ..ai.cancellation import CancellationToken
 from ..ai.limits import SearchLimits
+from ..ai.evaluation.config import MATE_SCORE
 from ..core.actions import Action
 from ..core.transition import apply_action
+from ..session.result import SessionStatus
 from . import _module, native_available
 from .adapter import (
     pack_native_search_position,
@@ -96,9 +98,14 @@ class NativeSearchEngine:
                 "NativeSearchEngine does not implement qsearch; pass "
                 "quiescence_max_depth=0"
             )
-        if session.result.status.value == "resignation":
+        if session.result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
+            result = session.result
+            side_to_move = session.state.position.side_to_move
+            score = (0 if result.winner is None else
+                     MATE_SCORE if result.winner == side_to_move
+                     else -MATE_SCORE)
             return NativeIterativeSearchResult(
-                score=0,
+                score=score,
                 action=None,
                 principal_variation=(),
                 completed_depth=0,

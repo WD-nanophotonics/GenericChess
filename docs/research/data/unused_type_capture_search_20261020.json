@@ -1,0 +1,40 @@
+{
+  "question": "On captured states replayed from frozen generated 5x5 games, does appending an unreachable exact duplicate declaration change the public AlphaBeta choice when its per-type median shifts static prices?",
+  "source": "docs/research/data/static_5x5_price_20261020/candidate96/roots.json and saved rules 522001..522008; no new games or altered source records",
+  "intervention": "Append N2 as an exact movement-atom copy of P, non-anchor/non-promotable with no promotion targets; N2 is absent from the initial position and existing action histories. Copy P drop mask (no N2 can enter hand).",
+  "reconstruction": "First family-order root per rule with an actual captured piece in its frozen prefix; replayed baseline state hash matches roots.json. Replayed alias variant has equal board, hands, side, auxiliary state, full normalized semantic history and legal actions. Strip compiler-local geometry_id/pattern_id only when comparing semantic history; retain actor, from/to, promotion/drop, check status, order and length.",
+  "depth3": {
+    "limits": {"max_depth": 3, "max_nodes": 100000, "max_time_seconds": null, "qdepth": 0, "tt": false, "ordering": false, "root_tactical": false},
+    "roots": [
+      {"seed": 522001, "root": "522001-1", "capture_plies": [1,2,4], "P_value_ratio": 1.5364, "action_changed": false, "base": {"action":"P 1,1-4,3 promote B", "score":3308, "nodes":474, "depth":3}, "alias": {"action":"P 1,1-4,3 promote B", "score":5079, "nodes":472, "depth":3}},
+      {"seed": 522002, "root": "522002-0", "capture_plies": [1,4], "P_value_ratio": 0.7494, "action_changed": false, "base": {"action":"A 0,1-0,2", "score":958, "nodes":214, "depth":3}, "alias": {"action":"A 0,1-0,2", "score":719, "nodes":214, "depth":3}},
+      {"seed": 522003, "root": "522003-0", "capture_plies": [3], "P_value_ratio": 0.999, "action_changed": false, "base": {"action":"K 1,1-0,2", "score":999999999, "nodes":69, "depth":3}, "alias": {"action":"K 1,1-0,2", "score":999999999, "nodes":69, "depth":3}},
+      {"seed": 522004, "root": "522004-0", "capture_plies": [1,3,4], "P_value_ratio": 1.0, "action_changed": false, "base": {"action":"drop P to 3,3", "score":999999999, "nodes":902, "depth":3}, "alias": {"action":"drop P to 3,3", "score":999999999, "nodes":902, "depth":3}},
+      {"seed": 522005, "root": "522005-0", "capture_plies": [1,2,3], "P_value_ratio": 1.0, "action_changed": false, "base": {"action":"B 1,1-3,3", "score":18506, "nodes":3174, "depth":3}, "alias": {"action":"B 1,1-3,3", "score":18506, "nodes":3039, "depth":3}},
+      {"seed": 522006, "root": "522006-0", "capture_plies": [3,4], "P_value_ratio": 1.1096, "action_changed": false, "base": {"action":"B 2,1-3,3", "score":2753, "nodes":1498, "depth":3}, "alias": {"action":"B 2,1-3,3", "score":3054, "nodes":1498, "depth":3}},
+      {"seed": 522007, "root": "522007-0", "capture_plies": [1,2], "P_value_ratio": 1.0, "action_changed": false, "base": {"action":"P 4,1-3,3 promote A", "score":2192, "nodes":2477, "depth":3}, "alias": {"action":"P 4,1-3,3 promote A", "score":2192, "nodes":2477, "depth":3}},
+      {"seed": 522008, "root": "522008-0", "capture_plies": [1,4], "P_value_ratio": 0.7806, "action_changed": false, "base": {"action":"K 2,0-2,1", "score":1993, "nodes":351, "depth":3}, "alias": {"action":"K 2,0-2,1", "score":1559, "nodes":351, "depth":3}}
+    ]
+  },
+  "deeper_subset": {
+    "selection": "Seeds with the largest absolute P-price multiplier departure from 1 among the eight depth-3 rules; selected by profile effect, before inspecting deeper actions.",
+    "limits": {"max_depth": 6, "max_nodes": 20000, "max_time_seconds": null, "qdepth": 0, "tt": false, "ordering": false, "root_tactical": false},
+    "roots": [
+      {"seed":522001,"root":"522001-1","P_value_ratio":1.5364,"action_changed":false,"base":{"action":"P 1,1-4,3 promote B","score":2863,"nodes":20000,"depth":5,"stop":"node_limit"},"alias":{"action":"P 1,1-4,3 promote B","score":4396,"nodes":20000,"depth":5,"stop":"node_limit"}},
+      {"seed":522002,"root":"522002-0","P_value_ratio":0.7494,"action_changed":false,"base":{"action":"A 0,1-0,2","score":2449,"nodes":20000,"depth":5,"stop":"node_limit"},"alias":{"action":"A 0,1-0,2","score":1839,"nodes":20000,"depth":5,"stop":"node_limit"}},
+      {"seed":522008,"root":"522008-0","P_value_ratio":0.7806,"action_changed":false,"base":{"action":"B 3,0-0,2 promote P","score":1332,"nodes":20000,"depth":5,"stop":"node_limit"},"alias":{"action":"B 3,0-0,2 promote P","score":1046,"nodes":20000,"depth":5,"stop":"node_limit"}}
+    ]
+  },
+  "deeper_subset_100k": {
+    "selection": "Same three roots selected by the largest absolute profile multiplier departures before deeper actions were observed; this is a fixed continuation, not a new sample.",
+    "limits": {"max_depth": 8, "max_nodes": 100000, "max_time_seconds": null, "qdepth": 0, "tt": false, "ordering": false, "root_tactical": false},
+    "roots": [
+      {"seed": 522001, "root": "522001-1", "P_value_ratio": 1.5364, "action_changed": false, "base": {"action": "P 1,1-4,3 promote B", "score": 959, "nodes": 100000, "depth": 6, "stop": "node_limit", "seconds": 17.258}, "alias": {"action": "P 1,1-4,3 promote B", "score": 1474, "nodes": 100000, "depth": 6, "stop": "node_limit", "seconds": 18.245}},
+      {"seed": 522002, "root": "522002-0", "P_value_ratio": 0.7494, "action_changed": false, "base": {"action": "A 0,1-0,2", "score": 2337, "nodes": 100000, "depth": 7, "stop": "node_limit", "seconds": 19.776}, "alias": {"action": "A 0,1-0,2", "score": 1754, "nodes": 100000, "depth": 7, "stop": "node_limit", "seconds": 19.848}},
+      {"seed": 522008, "root": "522008-0", "P_value_ratio": 0.7806, "action_changed": false, "base": {"action": "B 3,0-0,2 promote P", "score": -1015, "nodes": 100000, "depth": 6, "stop": "node_limit", "seconds": 17.551}, "alias": {"action": "B 3,0-0,2 promote P", "score": -788, "nodes": 100000, "depth": 6, "stop": "node_limit", "seconds": 18.255}}
+    ]
+  },
+  "interpretation": "No same-state action/PV change was observed across eight depth-3 roots or three profile-effect-selected depth-5 roots despite large profile/score shifts. This rules out an immediate action-level consequence in these saved samples and budgets, not global invariance or utility equivalence. The duplicate declaration itself is semantically unreachable in each saved root; compiled ids and ruleset-specific repetition hashes differ, so comparison is by full normalized semantic action history reconstructed under each ruleset.",
+  "no_new_games": true,
+  "no_training": true
+}

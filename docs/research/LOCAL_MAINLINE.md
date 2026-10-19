@@ -1191,3 +1191,170 @@ the frozen games preserve complete action histories; first verify replay and
 look for a qualifying state. No new games or model changes are planned. If no
 same-state captured root can be reproduced from saved evidence, stop this route
 and choose another decision-changing question from the current price evidence.
+
+## Captured-state declaration sensitivity and price/action linkage — 2026-10-20
+
+The saved candidate96 generated-5x5 captured roots were replayed under the
+existing per-type median and the unused exact-N2 declaration. All eight roots
+at D3 and the three profile-effect-selected roots at 20k and 100k node caps
+returned the same action/PV across profiles; the 100k arms hit the cap at D6/7.
+This closes the narrow saved-sample action-flip question, not global alias
+invariance. Keep normalization/version unchanged; do not launch another panel
+for this question.
+
+A read-only pairing of the frozen 128 candidate96 game rows found 64 matched
+root/foe/color pairs: 22 first-candidate action changes among 56 shared-action
+contexts, 34 same-action pairs, and eight terminal pairs with no candidate
+move in either arm. Candidate-relative static_v2-minus-Unit reward contrast
+averaged +0.90 on the 20 complete changed-action pairs versus +0.176 on 34
+same-action pairs; UNKNOWN-arm bounds yield [+.727,+.909] for changed pairs
+and [+.344,+.406] overall. This is post hoc association including later play,
+not a causal action effect; the owner-1/Unit-foe interval remains unresolved.
+It does not change the scoped 5x5 candidate decision. Sources:
+`UNUSED_TYPE_CAPTURE_SEARCH_20261020.md`,
+`data/unused_type_capture_search_20261020.json`, and
+`data/static_v2_first_choice_contrast_20261020.json` with its saved-data checker.
+
+Return to unfamiliar-rule search, but do not invent a defect where the reviewed
+finite gap map has none. First test whether the existing public search result
+and caller surfaces expose exact per-root-action scores for the already-known
+promotion/king qfrontier divergence. If an existing supported field/caller can
+answer it, use that route; otherwise close the diagnostic as unsupported and
+select a new concrete issue from current source/evidence without adding a
+test-only instrumentation API.
+
+## Semantic action-ID tie sensitivity — 2026-10-20
+
+The source-selected tie-key probe is complete. Reversing two behavior-equivalent
+semantic action declarations changes compiler IDs and the serialized ruleset
+fingerprint. With identical visible legal actions and a flat evaluator, the
+public AlphaBeta result selects a different visible move among score-0 ties at
+completed D2 (10 nodes); at a 16-node D3 cap, both retain the same D2 score and
+depth but different tied actions. The documented contract is deterministic
+canonical-string ordering within one fixed ruleset, not cross-fingerprint
+invariance. ADR-015 deliberately preserves semantic binding identities. This
+shows declaration-sensitive tie choice, not value loss or a defect; no fix or
+default change follows. Evidence and exact limits:
+`SEMANTIC_ACTION_ORDER_TIE_20261020.md`,
+`data/semantic_action_order_tie_20261020.json`, and its reproduction script.
+
+Do not broaden this into a general ID-normalization campaign. Continue the
+unfamiliar-rule search route only if a new concrete caller consequence appears;
+otherwise advance the current rule-price transfer question using an existing
+decision-changing premise rather than re-opening the closed N2 action-flip
+panel.
+
+## Exact duplicate legacy atom boundary — 2026-10-20
+
+The bounded exact-duplicate-ray probe closes the remaining signature-
+normalization backup: one synthetic 5x5 legacy rule retained a different full
+ruleset fingerprint, but its canonical movement signature, profile values,
+legal-action list and public AlphaBeta outputs at six fixed node caps were
+identical with or without the duplicate. The per-ruleset profile cache kept the
+distinct identities separate while the movement-capability cache reused both
+geometries. Existing generator source plus 128 fixed configurations/640 types
+showed no duplicate atoms in the sampled standard generator path. This does not
+establish all-atom or all-domain idempotence, cache-pressure cost or performance;
+no normalization/compiler/cache change follows. Exact evidence:
+`DUPLICATE_MOVEMENT_ATOM_PROFILE_AND_SEARCH_20261020.md` and
+`data/duplicate_atom_search_probe_20261020.json`.
+
+Next inspect one distinct price-transfer premise before launching anything.
+The saved seed21 generated substrate shows a large normalized P:X shift when
+the compound semantic action is recombined onto P, but it has no position or
+utility evidence. A paired fixed-rule profile-control diagnostic could change
+whether this explicit recombination is retained as a scoped rule-price
+candidate; preregister equal roots/colors/budgets and UNKNOWN handling first.
+It must keep the same augmented semantic ruleset in both arms and vary only
+the static profile/control, not compare different action spaces. If a credible
+paired source/control cannot be reconstructed from the pinned seed and existing
+action fixture, close this route without new games and choose another new
+premise. Do not extend the Western panel or reopen N2.
+
+## Generated compound-profile utility preflight — 2026-10-20
+
+The planned seed21 utility panel was not run: all20 eligible 12-ply roots from
+its fixed32 prefix seeds lack P on board/in hand; candidate/control root scores
+match and no compound action is legal. A fresh fixed20-rule generator block
+contains15 P-start setups. On the first four seed-ordered P-start rules, fixed
+12-ply roots retain P but expose no compound action. Equal-budget public D2
+candidate/legacy-profile pairs complete at the same node counts and select the
+same action/PV on all four roots; scores shift on three. This is score sensitivity,
+not utility. The profile projects direct geometry and omits the companion shift;
+no general pricing defect is established. Close the proposed game panel without
+replacement roots; make no code/default change. Reproducers and exact records:
+`SEMANTIC_GENERATED_SUBSTRATE_UTILITY_PREFLIGHT_20261020.md` and the two
+`semantic_generated_substrate_*_20261020` audit/preflight JSONs.
+
+Next question: is there a new unfamiliar-rule search-interface defect in current
+public callers beyond the closed action/PV, history, pass, root-budget,
+cancellation, deadline and qfrontier probes? | Audit current call sites against
+current closure evidence; choose one falsifiable failure condition only if a
+real gap remains | A concrete invariant/caller with existing regression coverage
+or a minimal reproducible gap | Close source-only if all candidate behavior is
+already tested; otherwise begin one bounded public-route probe, no broad sweep.
+
+## Native session-level terminal contract — 2026-10-20
+
+A focused public-interface probe found that `NativeSearchEngine.search` could
+search after a declaration ended the `GameSession`: Core kept the underlying
+`GameState` ongoing, but `GameSession.legal_actions()` was empty. Before the
+fix, Native returned `a4-a3` at completed depth 2 after22 nodes, while Core
+returned a terminal no-action result with zero search work. The persistent
+Native engine now short-circuits both declaration and resignation results,
+using Core's winner/side-to-move score sign and the existing terminal sentinel.
+A 10-case matrix spans five finish kinds, both owners, and direct/replayed
+sessions; together with checkmate control, the focused test run passed11 cases.
+The full affected module passed14 tests. Public arena/self-play callers already
+search only ongoing sessions and diagnostics filter terminal states, so no
+caller edits were needed. `SemanticSearchEngine` retains its separate neutral
+zero/no-action terminal estimate: its result contract says score does not
+certify terminal outcome. No semantic API or broader refactor follows.
+Evidence: `NATIVE_SESSION_TERMINAL_CONTRACT_20261020.md`,
+`generic_chess/native/engine.py`, and
+`tests/product/test_native_iterative_search.py`.
+
+This closes the newly reproduced search-interface defect without changing a
+scientific price conclusion. Resume price research from a new decision-changing
+premise: identify an existing generated-rule/state contrast where the candidate
+price changes a reachable legal action under the same ruleset. First inspect
+current saved profiles and action exposure; if no such state/source control can
+be reconstructed under frozen conditions, close this synthetic compound-price
+route and choose another supported price-transfer question. Do not repeat the
+closed N2 action-flip or seed21 no-exposure panels.
+
+## Saved static_v2 decision sensitivity — 2026-10-20
+
+A read-only audit of the frozen candidate96 game rows found56 candidate-action
+pairs with identical pre-move states and the same recorded 8,192-node cap in
+both Unit and static_v2 arms. First actions differ in22 pairs and scores in43;
+some completed depths differ under the equal node cap. This confirms finite
+decision sensitivity to the profile in these saved contexts, not equal-depth
+comparison, causal outcome benefit, or a population estimate. The existing
+post-hoc reward association remains confounded by subsequent play and UNKNOWN
+arms; it does not change the current scoped candidate decision. No games or
+training were run. Details and reproducible pairing: `UNUSED_TYPE_CAPTURE_SEARCH_20261020.md`,
+`data/static_v2_first_choice_contrast_20261020.json`, and its saved-data checker.
+
+Next examine the current static profile construction for one new cross-rule
+transfer premise that can be evaluated without reusing the already closed N2
+or seed21 synthetic panel. First state how opposite outcomes would alter the
+candidate selection; if the saved data and fixed rules cannot isolate that
+contrast, close this route and move to another current price decision.
+
+## Same-atom board-size price sensitivity — 2026-10-20
+
+A source-derived geometry-only calculation reused rule522001's exact non-anchor
+movement atoms on 4x4,5x5 and8x8 boards. Rank stayed A>B>P, while normalized
+P:B changed0.248→0.302→0.357 and A:B changed1.356→1.234→1.231. The estimator
+rebuilds finite-board mobility/graph metrics and renormalizes by that board's
+ordinary-piece median. This is one rule and omits setup, promotion, drop, game
+utility and population variation; it supports no global ratio law or value
+change. The existing profile already recomputes by board size, so no code
+change follows. Reproducer/data: `cross_size_static_price_sensitivity_20261020.py`
+and `data/cross_size_static_price_sensitivity_20261020.json`.
+
+Do not expand this into a board-size sweep without a concrete shared-size
+consumer whose choice could change. Return the next segment to a distinct
+unfamiliar-rule search invariant or a price-transfer question with actual
+reachable exposure and a prespecified decision consequence.

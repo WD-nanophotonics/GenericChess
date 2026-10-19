@@ -5114,3 +5114,42 @@ unpublished output was edited or integrated, and no dependency or disagreement
 required coordination. The current next step is to retain the bounded Native
 qfrontier tie result as a diagnostic and select another concrete mainline gap
 only if it changes the next code or study choice.
+
+## PRIMARY_SANDBOX — session-terminal repair and size-aware price review — 2026-10-20
+
+PRIMARY reproduced a concrete experimental `NativeSearchEngine` defect: a
+completed declaration left Core's underlying state ongoing but removed all
+session legal actions; Core returned a terminal no-action result while Native
+searched and returned `a4-a3` at D2/22 nodes. The Native wrapper now handles
+session `DECLARATION` and `RESIGNATION` terminals before entering the kernel,
+with Core-compatible winner sign and zero search work. Direct/replayed cases
+cover five finish outcomes and both owners; the focused matrix plus checkmate
+control passed11 tests and the full affected product module passed14. A bounded
+caller audit found arena/self-play ongoing guards and terminal filtering in
+teacher diagnostics, so no caller edits were made. The separate semantic search
+result documents its score as a non-adjudicating estimate; no speculative
+semantic-score change followed. Evidence: `NATIVE_SESSION_TERMINAL_CONTRACT_20261020.md`.
+
+PRIMARY also rechecked saved candidate96 pairs: 56 same-state first decisions
+used the same recorded8192-node cap; 22 actions and43 scores differed between
+Unit and static_v2. This is finite decision sensitivity, not equal-depth
+comparison or causal reward evidence. A no-game/no-training geometry diagnostic
+then reused rule522001's exact A/B/P movement atoms at board sizes4/5/8. Rank
+stayed A>B>P; normalized P:B varied .248/.302/.357. Existing profile builds
+geometry per size and fingerprints/cache keys include board size, so no code or
+cross-size default change was warranted. Reproducer/data are
+`cross_size_static_price_sensitivity_20261020.py` and its JSON; byte-identical
+rerun SHA256 was verified. Mainline and source limitations are recorded in
+`LOCAL_MAINLINE.md` and `UNUSED_TYPE_CAPTURE_SEARCH_20261020.md`.
+
+The required single DS patrol read returned `notLoaded` and only a bounded page
+of old completed/interrupted turns, with no reliable current-health evidence.
+This remains a visibility limit; PRIMARY did not claim the executor healthy or
+faulty, and sent no DS control/message. DEV_AUX contributed no changes to this
+segment; no checkout, state, experiment or unpublished output was touched or
+integrated. No disagreement or coordination dependency arose. Efficiency:
+11 focused then14 full-module test cases, one small profile computation, saved-
+data verification only; zero games/training and no broader suite claim. The
+next task is to inspect frozen candidate96 profile ratios across its existing
+rule seeds, then decide whether there is a new cross-rule price question that
+could alter the candidate's scope.

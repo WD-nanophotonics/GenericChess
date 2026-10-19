@@ -1,0 +1,97 @@
+{
+  "question": "Do fixed movement atoms preserve normalized static ratios when only board size changes?",
+  "ratios": {
+    "4x4_to_5x5": {
+      "A_over_B": [
+        1.356,
+        1.234
+      ],
+      "P_over_B": [
+        0.248,
+        0.302
+      ],
+      "rank_order_same": true
+    },
+    "4x4_to_8x8": {
+      "A_over_B": [
+        1.356,
+        1.231
+      ],
+      "P_over_B": [
+        0.248,
+        0.357
+      ],
+      "rank_order_same": true
+    },
+    "5x5_to_8x8": {
+      "A_over_B": [
+        1.234,
+        1.231
+      ],
+      "P_over_B": [
+        0.302,
+        0.357
+      ],
+      "rank_order_same": true
+    }
+  },
+  "schema": "primary-cross-size-static-price-sensitivity-v1",
+  "scope": "One frozen generated rule; direct movement capability only; no setup, promotion, drop, state, game utility, or population claim.",
+  "sizes": {
+    "4": {
+      "normalized_board_value": {
+        "A": 1356,
+        "B": 1000,
+        "P": 248
+      },
+      "ordinary_median_raw": 1.09753125,
+      "rank_desc": [
+        "A",
+        "B",
+        "P"
+      ],
+      "raw_capability": {
+        "A": 1.4887207943925236,
+        "B": 1.09753125,
+        "P": 0.27239583333333334
+      }
+    },
+    "5": {
+      "normalized_board_value": {
+        "A": 1234,
+        "B": 1000,
+        "P": 302
+      },
+      "ordinary_median_raw": 1.645036018384132,
+      "rank_desc": [
+        "A",
+        "B",
+        "P"
+      ],
+      "raw_capability": {
+        "A": 2.029574432938856,
+        "B": 1.645036018384132,
+        "P": 0.49695555555555554
+      }
+    },
+    "8": {
+      "normalized_board_value": {
+        "A": 1231,
+        "B": 1000,
+        "P": 357
+      },
+      "ordinary_median_raw": 2.5932813227420857,
+      "rank_desc": [
+        "A",
+        "B",
+        "P"
+      ],
+      "raw_capability": {
+        "A": 3.1921596460855963,
+        "B": 2.5932813227420857,
+        "P": 0.9260513277500921
+      }
+    }
+  },
+  "source": "docs/research/data/static_5x5_price_20261020/candidate96/rule-522001.json"
+}

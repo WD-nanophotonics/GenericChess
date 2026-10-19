@@ -1,0 +1,185 @@
+{
+  "comparison": {
+    "bounded_results_equal": true,
+    "fingerprints_differ": true,
+    "legal_action_lists_equal": true,
+    "profile_inputs_and_values_equal": true
+  },
+  "controls": {
+    "duplicate": {
+      "board_value": 1000,
+      "capability_cache_build_count": 2,
+      "fingerprint": "9d549619c1c0ab7699e563fc72bbc666b811a1d9a2936aa644af6d6e9198d32b",
+      "hand_value": 900,
+      "legal_actions": [
+        "a1-a2",
+        "a1-b1",
+        "a1-b2",
+        "c3-c4",
+        "c3-c5"
+      ],
+      "legal_count": 5,
+      "movement_signature": "[[\"R\",0,1,-1]]",
+      "profile_cache_hit_on_first_lookup": false,
+      "profile_cache_hit_on_repeat_lookup": true,
+      "raw_score": 1.5710626627604165,
+      "repeat_returns_same_profile_object": true,
+      "search": {
+        "12": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 12,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "16": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 16,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "20": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 20,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "24": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 24,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        },
+        "32": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 32,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        },
+        "48": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 48,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        }
+      },
+      "unique_visible_action_count": 5
+    },
+    "single": {
+      "board_value": 1000,
+      "capability_cache_build_count": 2,
+      "fingerprint": "54e6c899be6b7d5b0096fa2f2bfa74ef1b5c572badbb7f67848311add5d72b2a",
+      "hand_value": 900,
+      "legal_actions": [
+        "a1-a2",
+        "a1-b1",
+        "a1-b2",
+        "c3-c4",
+        "c3-c5"
+      ],
+      "legal_count": 5,
+      "movement_signature": "[[\"R\",0,1,-1]]",
+      "profile_cache_hit_on_first_lookup": false,
+      "profile_cache_hit_on_repeat_lookup": true,
+      "raw_score": 1.5710626627604165,
+      "repeat_returns_same_profile_object": true,
+      "search": {
+        "12": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 12,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "16": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 16,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "20": {
+          "action": "a1-b2",
+          "depth": 1,
+          "nodes": 20,
+          "pv": [
+            "a1-b2"
+          ],
+          "score": 1034,
+          "stop": "node_limit"
+        },
+        "24": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 24,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        },
+        "32": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 32,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        },
+        "48": {
+          "action": "a1-b2",
+          "depth": 2,
+          "nodes": 48,
+          "pv": [
+            "a1-b2",
+            "e5-d4"
+          ],
+          "score": 1014,
+          "stop": "node_limit"
+        }
+      },
+      "unique_visible_action_count": 5
+    }
+  },
+  "generator_scan": {
+    "configurations": 128,
+    "piece_types": 640,
+    "types_with_duplicate_atoms": 0
+  }
+}

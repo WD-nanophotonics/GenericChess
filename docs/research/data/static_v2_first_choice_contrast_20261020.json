@@ -1,0 +1,67 @@
+{
+  "schema": "primary-static-v2-first-choice-contrast-v1",
+  "source": "docs/research/data/static_5x5_price_20261020/candidate96/games.jsonl",
+  "question": "Within the frozen candidate96 panel, is the static_v2-minus-Unit candidate-relative reward contrast descriptively associated with whether their first candidate actions differ at the same state?",
+  "method": {
+    "pair_key": "root id before |foe=, fixed foe, candidate_owner",
+    "arms": ["unit", "static_v2"],
+    "first_action": "first saved query with role=candidate",
+    "same_state": "exact state_before hash equality",
+    "action_identity": "kind, actor_type_id, base_type_id, from_square, to_square, promotion_target_id; compiler-local geometry/pattern IDs omitted",
+    "contrast": "candidate-relative reward(static_v2) - candidate-relative reward(unit)",
+    "unknown_bounds": "For each pair, bound only the missing arm reward in [-1,+1], retaining the observed arm; do not replace UNKNOWN with draw.",
+    "scope": "Post hoc descriptive association in eight linked generated-rule seeds and fixed budgets; not causal, a population estimate, or independent-seed inference."
+  },
+  "integrity": {
+    "selected_game_rows": 128,
+    "matched_pairs": 64,
+    "unpaired_rows": 0,
+    "state_mismatch_pairs": 0,
+    "first_action_categories_sum_to_pairs": true,
+    "rewards_are_candidate_relative": true
+  },
+  "categories": {
+    "changed_action_same_state": {
+      "pairs": 22,
+      "complete_pairs": 20,
+      "unknown_pairs": 2,
+      "complete_delta_sum": 18,
+      "complete_pair_mean": 0.9,
+      "unknown_pair_delta_intervals": [[-2, 0], [0, 2]],
+      "all_pair_mean_bounds": [0.7272727273, 0.9090909091]
+    },
+    "same_action_same_state": {
+      "pairs": 34,
+      "complete_pairs": 34,
+      "unknown_pairs": 0,
+      "complete_delta_sum": 6,
+      "complete_pair_mean": 0.1764705882,
+      "all_pair_mean_bounds": [0.1764705882, 0.1764705882]
+    },
+    "no_candidate_action_in_either_arm": {
+      "pairs": 8,
+      "complete_pairs": 8,
+      "unknown_pairs": 0,
+      "complete_delta_sum": 0,
+      "complete_pair_mean": 0,
+      "all_pair_mean_bounds": [0, 0]
+    }
+  },
+  "overall": {
+    "complete_pairs": 62,
+    "unknown_pairs": 2,
+    "complete_delta_sum": 24,
+    "complete_pair_mean": 0.3870967742,
+    "all_pair_mean_bounds": [0.34375, 0.40625]
+  },
+  "by_fixed_foe_and_candidate_owner": {
+    "unit_foe_owner_0": {"pairs": 16, "unknown_pairs": 1, "all_pair_mean_bounds": [0.5, 0.625]},
+    "unit_foe_owner_1": {"pairs": 16, "unknown_pairs": 1, "all_pair_mean_bounds": [-0.0625, 0.0625]},
+    "static_v2_foe_owner_0": {"pairs": 16, "unknown_pairs": 0, "all_pair_mean_bounds": [0.625, 0.625]},
+    "static_v2_foe_owner_1": {"pairs": 16, "unknown_pairs": 0, "all_pair_mean_bounds": [0.3125, 0.3125]}
+  },
+  "interpretation": "Changed first actions co-occur with a larger positive finite reward contrast than unchanged first actions in this saved sample. The action category is post hoc and later play remains part of the reward, so this is an association, not an action-level causal effect. It does not resolve the unit-foe/owner-1 UNKNOWN interval or alter the existing static_v2 retention decision.",
+  "new_games": 0,
+  "new_queries": 0,
+  "new_training": 0
+}
