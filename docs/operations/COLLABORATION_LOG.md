@@ -4699,3 +4699,54 @@ A new711001/8 secondarycapture/baseHAND/type/right input isactuallyprepared
 afterseal, with4realparents and0rootqueries; it is outside the15-output seal.
 Its frozen90s consumercheck is the executable next task. ScientificgoalOPEN;
 no repeatofunchangedfitness, hiddenmissingness or automaticAUX/DS integration.
+
+
+## PRIMARY secondary-capture consumer and price validation —2026-10-19
+
+PRIMARY independently closes exact711001 and8newfullrule capture consumers,
+paidcapture-hint negativegate,128prototype and32ordinal-shallow games.
+Fulltypes/promotion/drop/current-vs-base/aux/history retained. 56newnongame
+Native/28Core targets; original/reused/reverification counts distinct.
+Existingcheckpointcarrier matches current explicit tables and rejects8wrong
+rulefingerprints, no AUX learner/format adoption or product changes.
+
+Dot reply1792366078.844969 onfreshrequestGC-SLACK-20261019-082529-c1fc1249
+is logicalreview/literature read, not execution ofunpublishedpanels. Adopt its
+smallest96outcome matched-shallow ledger and bundled-right/B-H interpretation
+limits; correct its currentpreferencefailurecount fromtwo toONE721002-8.
+NoOFFgames: zero-query130Coreprefix feasibility changes wholeactionbundle,
+notcapture-only causality. Conditionalnewseedvalidation was frozen BEFORE
+prototypeoutcomes, then activated aftersame-signpaidfoes/fullreader/ledger.
+The NEW32-rule/16-linked-seed validation closes 256/256 slots in 1986.8566s: 256 actual terminals, 0 recorded UNKNOWN and 0 missing UNKNOWN. Actual work is 32151 queries/251624666 main visits; all original planned denominators remain256.
+Extend the existing static prior ONLY to this event-conditioned capture recipe, retaining Unit controls.
+
+The once-per-heartbeat DS control-chat view shows no demonstrated current
+recurrence in those turns; it doesnot establish globalAPIhealth. No DScontrols/messages/config/state/checkoutwrites.
+AUX published d8631613 material/compact checkpoint and TC report source-read,
+not execution/adoption; dynamic typedictionary doesnotneednewconsumer API.
+Publishedbaseline geometry provenance rebuilds all41rules, no semantic-right
+priceconstructor claim. ExistingAUX/DS research remainsindependent.
+
+User pauses ONLY mainline genericchess timer, confirmedPAUSED throughapp tool.
+Currentresearch/consultation/publication continues; no researchstopflags or
+auxiliary automation/state changed. Source qualification/delivery are recorded
+below onlyafter actual completion; no new consent gate or routineack required.
+
+The82 exacttechnicalpayloads seal at6f2866d2c2d3b6ac033f2130c3627becc8df399b643e9a8391ab9b90c68ac8ae,
+19,431,742compressed bytes. CapturedPython-S/noNative/realPRIMARYstop driver
+passes all15 outputs in495.0819s:28CLOSED Coretargets, fullstoredhistories/PVs
+and non-timederivedfields. RepeatedCore verification isnotnewfitness; noNative
+queries/games/optimizer/UNKNOWNrefill. Direct15checks passed after the documented
+temp-setup repair; publisher repeats thesame targets, not30unique tests.
+
+AFTERseal oneNEW741001/8 GLOBALsharedright rule isactuallyprepared:oneordinary
+ply/actualside1capture/reply,4parents/3changedsquares/BASEP handgain/currentB,
+globalowner-1slot0 persists, finalpreferencepasses/Nativeadmits. This iszero
+rootqueries/fitness/training and outside15-outputqualification. The fixed90s
+nextplan tests fullstate/import/history/continuedavailability, notmoreprices.
+
+Closingnewroots andcompletedoriginalthread read have no newposts/supplements,
+allpagescomplete; exactraworiginals saved beforestrictreconcile, responsehash
+unchanged. Fixed-SHA delivery remains a separate post-publication fact.
+TimerPAUSED also verified with name/prompt/schedule/target unchanged; research
+and auxiliary state remain untouched. ScienceOPEN with an executable nextmemo.

@@ -502,14 +502,48 @@ Adoptedpairedledger/known-UNKNOWN andruleterminal-versus-strength distinctions
 areactuallyimplemented.77technicalpayload/15captured-source outputs qualify,
 only17closedCoretargets rebuilt; originalNative/games/training/UNKNOWN notrerun.
 
-Next distinct step is actually prepared AFTER this seal:711001/8 FOUR-effect
-secondarycapture-to-baseHAND/currenttype/one-use-right. Native admits it,
-finalpreferencepasses,15realprefixplies thenactualcapture/reply leave4full
-parents/3changedsquares/baseC handgain. Zero rootqueries/fitness/training.
-Consume exactdata/secondary_capture_next_20261019/prepared.json underits
-frozen90s eightNative/fourCoreD2q0 fullstate/history/hand controls; no regeneration
-or impliedfallbackexecution. ExistingAUXlearning/solver andDS work remaintheir
-own. ScienceOPEN; futurechangedpremises can revise these researchselections.
+The prepared711001/8 consumer is CLOSED by
+[SECONDARY_CAPTURE_PRICE_UTILITY_20261019.md](SECONDARY_CAPTURE_PRICE_UTILITY_20261019.md):
+148checkedchildren/8Native4CoreD2; allnew8capture roots177children/16Native8CoreD3
+agree. Old zero-query711001 is historical, not another launch. Existing paid
+capture-gain hint costs1.239x D2 caller despite fewer nodes: close hint engineering.
+No new product/default/API/model/learner or Native binary change.
+
+New128prototype games allreachactualterminals; static-Unit shallow+.375/+.1875,
+paid+.375/+.6875 underUnit/static foes. The additional32ordinal-shallow games
+reuse ORIGINAL staticcontrols: static-ordinal+.0625/+.125, adverse seed cases
+remain. ALL8BOARDmedians256/HANDfixed, but typewiseBOARD/HAND ratioschange:
+no purewithin-BOARD spacing orcapture-to-HAND causalclaim. Fullstatic means
+allTYPEcoverage of unchanged BASEgeometry profile, not all-effect/right pricing.
+Existingmaterialcheckpoint8Native8Core controls match exacttables/fulltypes
+and all8 wrongfingerprints refuse; no format/learner migration follows.
+
+The NEW32-rule/16-linked-seed validation closes 256/256 slots in 1986.8566s: 256 actual terminals, 0 recorded UNKNOWN and 0 missing UNKNOWN. Actual work is 32151 queries/251624666 main visits; all original planned denominators remain256.
+Static-Unit is+.09375(Unitfoe)/+.609375(staticfoe), linkedseedranges
+[-1,.75]/[-.5,1.5]. Extend the existing static prior ONLY to this event-conditioned
+capture recipe, retaining Unit controls and all adverse families.
+Prototype and validation are neverpooled; allmissing/censored outcomesUNKNOWN,
+linkedseeds descriptive notconfidence, eventselected roots notinitialdistribution.
+Dot logicalreview adopted the existing-record96shallow-outcome ledger and
+bundledright/B-H limits. Correct its failurecount toONEcurrent721002-8; noOFFgames.
+130prefixCoreedges establish onlyright-offfeasibility under newfingerprints,
+notisolatedcapture causality. PublishedAUX d8631613 source-read only; learning/
+solver/TC andDS studies remain theirs, no duplicate execution or automaticmerge.
+
+The nextdistinctinput is ACTUALLY prepared AFTER the82-payload seal:741001/8,
+[globalsharedright](data/global_capture_next_20261019/README.md), fourfullparents,
+oneordinaryply/actualside1capture/reply, BASEP handgain/currentB/global-1slot0,
+finalpreferencepasses, Nativeadmitted. Zero rootqueries/fitness/training.
+Consume exactpreparedstatus underits frozen90s/eightNative/fourCoreD2 plan.
+This is outside the15-output qualification, no impliedNativeexecution proof.
+It tests whether one use removes availability forBOTH
+owners while fullhistory/import/export/search remain consistent. No newprice
+fitness, ORDINALrepeat, policyencoder, API or competingAUXlearner is queued.
+The four actual parents are fixed. If the consumer refuses or times out, retain
+that result and fullhistory; do not regenerate or fabricate successful continuations.
+ScienceOPEN. User2026-10-19 pauses ONLY genericchess heartbeat; currentresearch/
+consultation/publication continues, auxiliaries untouched. Explicit resume is
+required for the timer; research user_paused/stopped flags remain unchanged.
 
 ## Previous learning choice still retained — 2026-10-17
 

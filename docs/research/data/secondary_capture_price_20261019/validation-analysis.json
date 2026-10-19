@@ -1,0 +1,328 @@
+{
+  "actual_trigger_roots": 32,
+  "contrasts": {
+    "paid50ms_static": {
+      "arms": {
+        "static": {
+          "D": 8,
+          "L": 6,
+          "UNKNOWN": 0,
+          "W": 50,
+          "planned": 64,
+          "reward_bounds": [
+            0.6875,
+            0.6875
+          ]
+        },
+        "unit": {
+          "D": 13,
+          "L": 23,
+          "UNKNOWN": 0,
+          "W": 28,
+          "planned": 64,
+          "reward_bounds": [
+            0.078125,
+            0.078125
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.46875,
+          0.46875
+        ],
+        "8": [
+          0.75,
+          0.75
+        ]
+      },
+      "descriptive_seed_range": [
+        -0.5,
+        1.5
+      ],
+      "per_linked_seed": {
+        "731001": [
+          0.25,
+          0.25
+        ],
+        "731002": [
+          0.75,
+          0.75
+        ],
+        "731003": [
+          0.5,
+          0.5
+        ],
+        "731004": [
+          1.0,
+          1.0
+        ],
+        "731005": [
+          0.0,
+          0.0
+        ],
+        "731006": [
+          0.25,
+          0.25
+        ],
+        "731007": [
+          1.5,
+          1.5
+        ],
+        "731008": [
+          0.75,
+          0.75
+        ],
+        "731009": [
+          0.0,
+          0.0
+        ],
+        "731010": [
+          0.5,
+          0.5
+        ],
+        "731011": [
+          1.5,
+          1.5
+        ],
+        "731012": [
+          0.5,
+          0.5
+        ],
+        "731013": [
+          1.5,
+          1.5
+        ],
+        "731014": [
+          1.0,
+          1.0
+        ],
+        "731015": [
+          0.25,
+          0.25
+        ],
+        "731016": [
+          -0.5,
+          -0.5
+        ]
+      },
+      "static_minus_unit": [
+        0.609375,
+        0.609375
+      ]
+    },
+    "paid50ms_unit": {
+      "arms": {
+        "static": {
+          "D": 2,
+          "L": 9,
+          "UNKNOWN": 0,
+          "W": 53,
+          "planned": 64,
+          "reward_bounds": [
+            0.6875,
+            0.6875
+          ]
+        },
+        "unit": {
+          "D": 16,
+          "L": 5,
+          "UNKNOWN": 0,
+          "W": 43,
+          "planned": 64,
+          "reward_bounds": [
+            0.59375,
+            0.59375
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.15625,
+          0.15625
+        ],
+        "8": [
+          0.03125,
+          0.03125
+        ]
+      },
+      "descriptive_seed_range": [
+        -1.0,
+        0.75
+      ],
+      "per_linked_seed": {
+        "731001": [
+          -0.25,
+          -0.25
+        ],
+        "731002": [
+          0.0,
+          0.0
+        ],
+        "731003": [
+          0.0,
+          0.0
+        ],
+        "731004": [
+          0.0,
+          0.0
+        ],
+        "731005": [
+          0.25,
+          0.25
+        ],
+        "731006": [
+          0.75,
+          0.75
+        ],
+        "731007": [
+          0.5,
+          0.5
+        ],
+        "731008": [
+          0.5,
+          0.5
+        ],
+        "731009": [
+          0.5,
+          0.5
+        ],
+        "731010": [
+          0.0,
+          0.0
+        ],
+        "731011": [
+          -0.5,
+          -0.5
+        ],
+        "731012": [
+          0.25,
+          0.25
+        ],
+        "731013": [
+          0.0,
+          0.0
+        ],
+        "731014": [
+          0.0,
+          0.0
+        ],
+        "731015": [
+          0.5,
+          0.5
+        ],
+        "731016": [
+          -1.0,
+          -1.0
+        ]
+      },
+      "static_minus_unit": [
+        0.09375,
+        0.09375
+      ]
+    }
+  },
+  "final_preference_failed": [
+    "731003-8",
+    "731003-10",
+    "731008-8",
+    "731009-8"
+  ],
+  "interactions": {},
+  "main": 251624666,
+  "producer_seconds": 1986.8565734000294,
+  "q": 0,
+  "queries": 32151,
+  "recorded_UNKNOWN": 0,
+  "scope": "Prospective16-new-linkedseed full-rule8/10 validation, sameeventconditioning, bothroles/fixedfoes; descriptive ranges not confidence. Root opportunity is selected BEFORE profile/budget execution. No unchanged oldpanel refill/learning/default or population result.",
+  "status": "PASS_ALL_PLANNED_ARITHMETIC",
+  "terminal": 256,
+  "unexecuted_UNKNOWN": 0,
+  "work": {
+    "foe_static": {
+      "caller_max_seconds": 0.28416629997082055,
+      "caller_seconds": 292.7087994001922,
+      "causes": {
+        "completed": 8419,
+        "node_budget": 376
+      },
+      "depths": {
+        "1": 376,
+        "2": 8419
+      },
+      "kernel_seconds": 264.91073530000045,
+      "main": 45639907,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 8795
+      },
+      "queries": 8795
+    },
+    "foe_unit": {
+      "caller_max_seconds": 0.2880794000229798,
+      "caller_seconds": 498.98256360163214,
+      "causes": {
+        "completed": 6583,
+        "node_budget": 662
+      },
+      "depths": {
+        "1": 662,
+        "2": 6583
+      },
+      "kernel_seconds": 475.98846419999927,
+      "main": 76929050,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 7245
+      },
+      "queries": 7245
+    },
+    "paid50ms_static": {
+      "caller_max_seconds": 0.06432590004988015,
+      "caller_seconds": 332.23110959946644,
+      "causes": {
+        "completed": 11,
+        "time_budget": 6286
+      },
+      "depths": {
+        "2": 2092,
+        "3": 3242,
+        "4": 946,
+        "5": 4,
+        "6": 2,
+        "8": 11
+      },
+      "kernel_seconds": 314.3287654000001,
+      "main": 47629559,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 6297
+      },
+      "queries": 6297
+    },
+    "paid50ms_unit": {
+      "caller_max_seconds": 0.0643992000259459,
+      "caller_seconds": 523.480367904529,
+      "causes": {
+        "completed": 28,
+        "time_budget": 9786
+      },
+      "depths": {
+        "2": 6036,
+        "3": 2778,
+        "4": 777,
+        "5": 189,
+        "6": 4,
+        "7": 2,
+        "8": 28
+      },
+      "kernel_seconds": 489.5132038000002,
+      "main": 81426150,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 9814
+      },
+      "queries": 9814
+    }
+  }
+}

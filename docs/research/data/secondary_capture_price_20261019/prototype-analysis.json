@@ -1,0 +1,437 @@
+{
+  "actual_trigger_roots": 8,
+  "contrasts": {
+    "paid50ms_static": {
+      "arms": {
+        "static": {
+          "D": 3,
+          "L": 1,
+          "UNKNOWN": 0,
+          "W": 12,
+          "planned": 16,
+          "reward_bounds": [
+            0.6875,
+            0.6875
+          ]
+        },
+        "unit": {
+          "D": 4,
+          "L": 6,
+          "UNKNOWN": 0,
+          "W": 6,
+          "planned": 16,
+          "reward_bounds": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.875,
+          0.875
+        ],
+        "8": [
+          0.5,
+          0.5
+        ]
+      },
+      "descriptive_seed_range": [
+        0.5,
+        1.0
+      ],
+      "per_linked_seed": {
+        "721001": [
+          0.75,
+          0.75
+        ],
+        "721002": [
+          0.5,
+          0.5
+        ],
+        "721003": [
+          0.5,
+          0.5
+        ],
+        "721004": [
+          1.0,
+          1.0
+        ]
+      },
+      "static_minus_unit": [
+        0.6875,
+        0.6875
+      ]
+    },
+    "paid50ms_unit": {
+      "arms": {
+        "static": {
+          "D": 2,
+          "L": 1,
+          "UNKNOWN": 0,
+          "W": 13,
+          "planned": 16,
+          "reward_bounds": [
+            0.75,
+            0.75
+          ]
+        },
+        "unit": {
+          "D": 8,
+          "L": 1,
+          "UNKNOWN": 0,
+          "W": 7,
+          "planned": 16,
+          "reward_bounds": [
+            0.375,
+            0.375
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.625,
+          0.625
+        ],
+        "8": [
+          0.125,
+          0.125
+        ]
+      },
+      "descriptive_seed_range": [
+        0.0,
+        0.75
+      ],
+      "per_linked_seed": {
+        "721001": [
+          0.75,
+          0.75
+        ],
+        "721002": [
+          0.25,
+          0.25
+        ],
+        "721003": [
+          0.5,
+          0.5
+        ],
+        "721004": [
+          0.0,
+          0.0
+        ]
+      },
+      "static_minus_unit": [
+        0.375,
+        0.375
+      ]
+    },
+    "shallow_static": {
+      "arms": {
+        "static": {
+          "D": 6,
+          "L": 5,
+          "UNKNOWN": 0,
+          "W": 5,
+          "planned": 16,
+          "reward_bounds": [
+            0.0,
+            0.0
+          ]
+        },
+        "unit": {
+          "D": 3,
+          "L": 8,
+          "UNKNOWN": 0,
+          "W": 5,
+          "planned": 16,
+          "reward_bounds": [
+            -0.1875,
+            -0.1875
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.125,
+          0.125
+        ],
+        "8": [
+          0.25,
+          0.25
+        ]
+      },
+      "descriptive_seed_range": [
+        -0.25,
+        0.5
+      ],
+      "per_linked_seed": {
+        "721001": [
+          -0.25,
+          -0.25
+        ],
+        "721002": [
+          0.0,
+          0.0
+        ],
+        "721003": [
+          0.5,
+          0.5
+        ],
+        "721004": [
+          0.5,
+          0.5
+        ]
+      },
+      "static_minus_unit": [
+        0.1875,
+        0.1875
+      ]
+    },
+    "shallow_unit": {
+      "arms": {
+        "static": {
+          "D": 2,
+          "L": 4,
+          "UNKNOWN": 0,
+          "W": 10,
+          "planned": 16,
+          "reward_bounds": [
+            0.375,
+            0.375
+          ]
+        },
+        "unit": {
+          "D": 10,
+          "L": 3,
+          "UNKNOWN": 0,
+          "W": 3,
+          "planned": 16,
+          "reward_bounds": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "by_size": {
+        "10": [
+          0.5,
+          0.5
+        ],
+        "8": [
+          0.25,
+          0.25
+        ]
+      },
+      "descriptive_seed_range": [
+        -0.25,
+        1.0
+      ],
+      "per_linked_seed": {
+        "721001": [
+          -0.25,
+          -0.25
+        ],
+        "721002": [
+          0.0,
+          0.0
+        ],
+        "721003": [
+          0.75,
+          0.75
+        ],
+        "721004": [
+          1.0,
+          1.0
+        ]
+      },
+      "static_minus_unit": [
+        0.375,
+        0.375
+      ]
+    }
+  },
+  "final_preference_failed": [
+    "721002-8"
+  ],
+  "interactions": {
+    "static": {
+      "paid_gain_minus_shallow_gain": [
+        0.5,
+        0.5
+      ],
+      "per_linked_seed": {
+        "721001": [
+          1.0,
+          1.0
+        ],
+        "721002": [
+          0.5,
+          0.5
+        ],
+        "721003": [
+          0.0,
+          0.0
+        ],
+        "721004": [
+          0.5,
+          0.5
+        ]
+      },
+      "scope": "Finite paired-budget interaction; budgets differ in node/time/depth limits, not pure depth or causal population."
+    },
+    "unit": {
+      "paid_gain_minus_shallow_gain": [
+        0.0,
+        0.0
+      ],
+      "per_linked_seed": {
+        "721001": [
+          1.0,
+          1.0
+        ],
+        "721002": [
+          0.25,
+          0.25
+        ],
+        "721003": [
+          -0.25,
+          -0.25
+        ],
+        "721004": [
+          -1.0,
+          -1.0
+        ]
+      },
+      "scope": "Finite paired-budget interaction; budgets differ in node/time/depth limits, not pure depth or causal population."
+    }
+  },
+  "main": 125386656,
+  "producer_seconds": 1122.142231500009,
+  "q": 0,
+  "queries": 24710,
+  "recorded_UNKNOWN": 0,
+  "scope": "Event-conditioned full-rule8/10 prototype,4linkedseedblocks, bothroles/fixedfoes; descriptive ranges not confidence. Root opportunity is selected BEFORE profile/budget execution. No unchanged oldpanel refill/learning/default or population result.",
+  "status": "PASS_ALL_PLANNED_ARITHMETIC",
+  "terminal": 128,
+  "unexecuted_UNKNOWN": 0,
+  "work": {
+    "foe_static": {
+      "caller_max_seconds": 0.29411280003841966,
+      "caller_seconds": 182.50242040265584,
+      "causes": {
+        "completed": 6270,
+        "node_budget": 118
+      },
+      "depths": {
+        "1": 118,
+        "2": 6270
+      },
+      "kernel_seconds": 160.2794587999999,
+      "main": 27128244,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 6388
+      },
+      "queries": 6388
+    },
+    "foe_unit": {
+      "caller_max_seconds": 0.2780903999810107,
+      "caller_seconds": 318.50277100194944,
+      "causes": {
+        "completed": 5602,
+        "node_budget": 356
+      },
+      "depths": {
+        "1": 356,
+        "2": 5602
+      },
+      "kernel_seconds": 297.4838084000002,
+      "main": 47283022,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 5958
+      },
+      "queries": 5958
+    },
+    "paid50ms_static": {
+      "caller_max_seconds": 0.06296349997865036,
+      "caller_seconds": 133.1496862003114,
+      "causes": {
+        "completed": 7,
+        "time_budget": 2502
+      },
+      "depths": {
+        "2": 919,
+        "3": 1308,
+        "4": 210,
+        "5": 29,
+        "6": 17,
+        "7": 19,
+        "8": 7
+      },
+      "kernel_seconds": 125.13152029999998,
+      "main": 19664976,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 2509
+      },
+      "queries": 2509
+    },
+    "paid50ms_unit": {
+      "caller_max_seconds": 0.06253559998003766,
+      "caller_seconds": 190.7090379964793,
+      "causes": {
+        "completed": 9,
+        "time_budget": 3549
+      },
+      "depths": {
+        "2": 1672,
+        "3": 1739,
+        "4": 137,
+        "5": 1,
+        "8": 9
+      },
+      "kernel_seconds": 177.52038460000034,
+      "main": 28702775,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 3558
+      },
+      "queries": 3558
+    },
+    "shallow_static": {
+      "caller_max_seconds": 0.032312900002580136,
+      "caller_seconds": 17.33830809936626,
+      "causes": {
+        "completed": 3037
+      },
+      "depths": {
+        "2": 3037
+      },
+      "kernel_seconds": 6.807686500000012,
+      "main": 919046,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 3037
+      },
+      "queries": 3037
+    },
+    "shallow_unit": {
+      "caller_max_seconds": 0.02462000004015863,
+      "caller_seconds": 25.476462101214565,
+      "causes": {
+        "completed": 3260
+      },
+      "depths": {
+        "2": 3260
+      },
+      "kernel_seconds": 13.552187999999983,
+      "main": 1688593,
+      "q": 0,
+      "qpolicies": {
+        "(0, 0)": 3260
+      },
+      "queries": 3260
+    }
+  }
+}
