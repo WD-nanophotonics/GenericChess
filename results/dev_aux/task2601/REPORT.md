@@ -1,0 +1,11 @@
+# Task 2601 — TRAIN-root concentration follow-up
+
+This is a post-hoc descriptive reproducibility check, not preregistration or a new inferential test. The exact root concentration was explored before this note was written. It reads only the TRAIN array from task2595's frozen root manifest; it does not access EVAL rows or any fitness outcomes.
+
+For 8,192 TRAIN draws, 3,702 (45.19%) are distinct complete histories and duplicate excess is 4,490. The frequency-weighted Simpson concentration equivalent is 81.13 draws; this is a descriptive measure of how concentrated row weights are, **not** an independent sample-size estimate. The most frequent complete history appears 555 times (6.78%). There are 3,031 terminal draws (37.00%); depth counts are 1-ply 1,520, 2-ply 891, 3-ply 357, and 4-ply 5,424.
+
+The results strengthen the root-sampler diagnosis: nominal row count overstates the spread of distinct full histories, and repeated/terminal mass is substantial. They do not establish that repeated training draws are invalid: repetition is appropriate if the intended target is the sampled distribution, but uncertainty and held-out comparisons must respect canonical-history clusters. Nor do these data determine whether a future evaluation should use an unconditional family distribution or a stated decision-bearing conditional distribution.
+
+Task2595 remains an admission failure under its original frozen gates. No learner fitness ran; no new roots or seeds were generated; no EVAL information, outcomes, scores, weights or game logs were read. No admission criterion was added retroactively. Scientific status remains OPEN.
+
+Scope correction: v1 used json.loads on the full manifest, which decoded the EVAL array even though the analysis indexed only TRAIN and computed no EVAL metrics. This violated the intended strict TRAIN-only parsing scope; see SCOPE_CORRECTION.md. The original v1 artifacts remain unchanged. The corrected v2 parser structurally skips non-TRAIN values, decodes TRAIN only, and reproduces the same metrics. Reproduce the scoped result with `audit_train_root_concentration_v2.py` and inspect `root-concentration-v2.json`; it records the source manifest SHA and TRAIN-only decode scope.

@@ -2835,3 +2835,41 @@ No Generic migration or product default change is authorized by this result.
 The frozen 4-seed candidate completed 4M training nodes and the 768-slot panel completed within its 2100s cap. Independent training-update/history/cost replay and full deployment history/endpoint/terminal/node replay both pass. Candidate terminal-PV residual exposure was 216 pooled (baseline 186). Outcomes were candidate 220W/21D/15L, TD(.95) 198W/31D/27L, and same initialization 142W/43D/71L. The preregistered finite paired reward-difference lower bounds are +0.1328 versus TD(.95) and +0.5234 versus initialization; all conditions pass. This supports a bounded Generic-rule transfer pilot only. The four learned weight rankings vary substantially, and the finite panel is not a population estimate or a full historical TreeStrap reproduction. The full query streams (373 MB combined) remain locally preserved with hashes in `results/dev_aux/task2594/REPORT.md`; curated game traces, scripts and audit summaries are included. No PRIMARY/DEEPSEEK state, product default or UI was touched. No Dot assessment was required or requested because the registered work stayed below 120 minutes; fixed-SHA evidence was sent after publication; delivery receipt is recorded below.
 
 Slack checkpoint for task2594: DEV_AUX read channel roots from the previous full coverage boundary and read the complete related AUX_CLAUDE107a thread. That older thread concerns a distinct Generic mechanism probe and predates the current direct user route; it was deferred and did not change this Chess result or the next task. Evidence-only result for task2594 was delivered to #generic-chess at root ts 1792427731.102229 with fixed SHA c5777049d603fd9878c99281f6c8b6df1fcfe9e2 (receipt in ignored `.local_agent/slack/task2594-result-send.json`). Delivery is confirmed; Dot reading or adoption is not.
+
+## DEV_AUX task2602 / environment recovery (2026-10-20)
+
+DEV_AUX resumed its own active sidemission session and diagnosed the reported
+workspace issue: the app sandbox writable roots include the primary checkout,
+not the DEV_AUX clone. Ordinary calls therefore cannot write this checkout;
+reviewed require_escalated tool calls work. A reversible write/read/delete
+probe in DEV_AUX passed; .venv\Scripts\python.exe reports Python 3.12.14;
+git ls-remote origin refs/heads/sidemission succeeded and matched the local
+pre-change full HEAD 49a6d4c0d78910a6df59b747a630e60f2bcf5d10. No ACL, host
+configuration, mainline checkout, or other role state was changed. The supported
+operational path is to use reviewed escalation for DEV_AUX filesystem/network
+commands; a persistent workspace-root permission change is outside this task's
+available controls.
+
+Research follow-through used a field-selective streaming parser on the frozen
+task2568 query JSONL. It reproduced 186 baseline terminal-PV exposures
+(37/38/45/66 by seed), below task2593's frozen 128-per-seed gate. This is
+infeasible exposure under that old proposal, not a learner failure; task2594 is
+the later, separately registered comparison. A prior v1 parser decoded all
+fields, and a diagnostic command exposed endpoint-weight summary/aggregate eval
+metadata; exact scope correction is retained in task2602. Those values were not
+used for inference. No new training/evaluation run, generic migration, or
+product/default/UI change occurred. The committed task2594 finite-panel report is
+the current evidence; its generic-transfer claim remains limited/open. No Dot
+reading or adoption is claimed for this segment.
+
+### Environment repair follow-up
+
+Correction to the provisional paragraph above: the persistent writable-root
+setting is available. After checking the official Codex configuration reference,
+I added only C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX to the
+user-level config.toml sandbox_workspace_write.writable_roots list and validated
+the TOML. An ordinary write in this already-running executor still returned
+Access denied, so the new setting has not yet been shown to load into this live
+sandbox. Reviewed escalation remains the working path for this session. No ACL,
+mainline checkout or other role state was changed. Official reference:
+https://learn.chatgpt.com/docs/config-file/config-reference

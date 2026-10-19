@@ -1351,3 +1351,13 @@ OUTSIDEimmutable35thZIP, notafterfinishresearch. OfficialEND/DELIVERY bindeviden
 Closure93: official session ended82.362minutes at2026-10-17T14:19:54.938107UTC, safe_checkpoint. Science source4dbba471885be4a6d48a99e7230a007702f27424 verified full remoteSHA/PUBLIC and37 anonymous exact files including the capsule. Fixed evidence accepted and thread read back at1792246788.321469; collaborator reading/execution UNCONFIRMED. DEV_AUX heartbeat/consultation PAUSED; no new experiment or automatic resume. Closing metadata is versioned separately; see DELIVERY_20261017_93.json.
 
 Closure94: official session ended75.068minutes at2026-10-18T16:20:40.085824UTC, safe_checkpoint. Sourcea94da5eadfb5029bac2d2478a60ec6bb144c0e73 matches fullremoteSHA/PUBLIC and28 anonymous exact files including the capsule. Fixed Slack evidence accepted and exact thread readback at1792340409.800509; collaborator reading/execution UNCONFIRMED. All producers/consumers closed, scienceOPEN, existing own90-minute heartbeat remains ACTIVE. No new research after finish. Closing metadata is versioned separately; see DELIVERY_20261019_94.json.
+
+Task2602 source-map follow-through: fixed-field v2 streaming audit of the frozen
+task2568 training query stream reads only seed/method/observed/complete/pv_terminal;
+186 terminal-PV rows match task2594's published baseline exposure, with per-seed
+counts 37/38/45/66. All are below task2593's frozen 128-per-seed threshold, so
+that proposal alone would not qualify and its cap is not extended. This is an
+exposure/design condition, not learner failure. Scope correction records that v1
+decoded complete rows and a diagnostic command exposed task2568 aggregate metadata;
+the values were not used. Task2594 remains the later, separately registered
+finite-panel comparison; generic-transfer claims stay bounded/open.

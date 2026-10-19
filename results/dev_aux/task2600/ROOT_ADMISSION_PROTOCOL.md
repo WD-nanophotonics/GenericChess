@@ -1,5 +1,7 @@
 # Prospective root-admission protocol for TD material-learning comparisons
 
+Superseded as next-task guidance by results/dev_aux/task2601/ROOT_ADMISSION_PROTOCOL_V3.md. This original two-estimand draft is retained as historical design evidence; consult v3 for the current DEV_AUX recommendation.
+
 This is a design note only. It creates no roots and does not reopen task2592 or task2595.
 
 ## Freeze the estimand first

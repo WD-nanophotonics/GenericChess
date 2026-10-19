@@ -1,0 +1,27 @@
+{
+  "task_id": 2602,
+  "status": "BASELINE_EXPOSURE_SCOPE_CORRECTED",
+  "source": {
+    "path": "results/dev_aux/task2568/queries.jsonl",
+    "sha256": "69ea044a02c2f2b3bd4d9b52f64315c3d5498148b120a4c705c8debc1ed92f3d",
+    "rows_scanned": 110225,
+    "decoded_top_level_fields_only": [
+      "complete",
+      "method",
+      "observed",
+      "pv_terminal",
+      "seed"
+    ],
+    "all_other_top_level_values": "structurally skipped without JSON decoding"
+  },
+  "selection": "method=TD AND observed=true AND complete=true AND pv_terminal=true",
+  "selected_rows": 186,
+  "counts_by_seed": {
+    "1977": 37,
+    "27182": 38,
+    "31415": 45,
+    "8173": 66
+  },
+  "interpretation": "Counts are exposure diagnostics only. They do not read or score outcomes, and cannot establish learning success or failure.",
+  "decision": "The previously proposed >=128 terminal-PV exposure gate is not met by any listed frozen baseline seed; do not extend or relabel the old cap."
+}
