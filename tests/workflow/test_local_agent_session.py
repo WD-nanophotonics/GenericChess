@@ -42,7 +42,7 @@ def quality(workspace, reason='safe_checkpoint'):
     target = path/'quality.json'
     target.write_text(json.dumps(dict(
         session_id=current['id'], ending_reason=reason,
-        reviewed_work_intervals=current['recorded_work_intervals'],
+        reviewed_work_intervals=current.get('work_intervals', []),
         effective_seconds=current['effective_seconds'], old_conclusions_excluded=True,
         research_questions=[cp['question'] for cp in current['checkpoints']
                             if cp['kind'] == 'research'
@@ -347,6 +347,11 @@ def test_effective_work_requires_matching_quality_acceptance(workspace):
     report_path = quality(workspace)
     report = json.loads((path/'quality.json').read_text())
     report['effective_seconds'] += 60
+    (path/'quality.json').write_text(json.dumps(report))
+    with pytest.raises(LocalFlowError, match='matching'):
+        session.finish('safe_checkpoint', report_path)
+    report['effective_seconds'] -= 60
+    report['reviewed_work_intervals'] = report['reviewed_work_intervals'][:-1]
     (path/'quality.json').write_text(json.dumps(report))
     with pytest.raises(LocalFlowError, match='matching'):
         session.finish('safe_checkpoint', report_path)

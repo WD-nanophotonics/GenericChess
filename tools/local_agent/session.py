@@ -246,7 +246,7 @@ def _validate_quality_review(reason, evidence, current, metrics, fresh):
     questions = report.get('research_questions')
     if (report.get('session_id') != current['id']
             or report.get('ending_reason') != reason
-            or report.get('reviewed_work_intervals') != metrics['recorded_work_intervals']
+            or report.get('reviewed_work_intervals') != current.get('work_intervals', [])
             or report.get('effective_seconds') != metrics['effective_seconds']
             or report.get('old_conclusions_excluded') is not True
             or not isinstance(questions, list) or not questions
