@@ -85,6 +85,52 @@ def test_completed_child_not_incomplete_iteration_is_retained(nodes, winning, pr
     assert proves_root_h3(session, decision.action) is winning
 
 
+def test_benchmark_keeps_interrupted_completed_root_proof_eligible(monkeypatch):
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    from generic_chess.ai.benchmark import runner
+    from generic_chess.ai.benchmark.profiles import BenchmarkProfile
+
+    session = prepared()
+    monkeypatch.setattr(runner, "GameSession", lambda _compiled: session)
+
+    class ProofThenFullBudgetPlayer(AlphaBetaPlayer):
+        calls = 0
+
+        def choose_action(self, current, limits, **kwargs):
+            self.calls += 1
+            effective = (
+                SearchLimits(max_depth=2, max_nodes=99, max_time_seconds=5,
+                             quiescence_max_depth=2)
+                if self.calls == 1
+                else SearchLimits(max_depth=4, max_nodes=100_000,
+                                  max_time_seconds=5, quiescence_max_depth=2)
+            )
+            return super().choose_action(current, effective, **kwargs)
+
+    player = ProofThenFullBudgetPlayer(
+        session.compiled, use_disk_cache=False, use_native_semantic_legality=False
+    )
+    profile = BenchmarkProfile("proof-contract", SearchTuning())
+    config = runner.RunConfig(
+        control=profile, candidate=profile, suite=(), seconds=None,
+        nodes=100_000, max_plies=8,
+    )
+
+    outcome, events = runner.play_game(
+        session.compiled, (), "completed-proof", "completed-proof", 0,
+        player, player, config,
+    )
+
+    assert events[0].termination_reason == "node_limit"
+    assert events[0].completed_depth == 1
+    assert not events[0].fallback
+    assert not outcome.candidate_fallback and not outcome.control_fallback
+    assert outcome.result == "candidate_win"
+    summary = runner.summarize([outcome])
+    assert summary["fallback_games"] == 0
+    assert summary["eligible_games"] == 1
+
+
 @pytest.mark.parametrize("native", [False, True])
 def test_cancellation_keeps_completed_proof_and_actual_stop_reason(monkeypatch, native):
     if native and not native_available():

@@ -1867,3 +1867,245 @@ score `-100`, a reference-optimal action, a valid PV and unchanged root. See
 contract with no observed defect; it does not establish all-rule or Native
 equivalence. Continue to a distinct search contract only if the caller map
 shows a concrete gap.
+
+## Close one quiet semantic qsearch discriminator — 2026-10-20
+
+A fixed-budget AlphaBeta comparison on the existing `weird_rulesets()[3]`
+compound-shift fixture found no root action/PV/score change when that one
+material-conserving quiet semantic action was forced into qsearch. With a
+3,000 total-node ceiling and q-cap raised to 3,000, both arms completed D2 at
+score 2072; the forced arm used 43 more qnodes (443 vs 400) and two more main
+nodes. At q-cap 200 both retained the same D1 decision and stopped at the
+documented qsearch budget. Direct default-evaluator q score changed 2046 to
+2062, sensitivity rather than utility. The focused qsearch modules pass 48
+tests. Do not broaden qsearch from this fixture; reopen only for a distinct
+reachable generated/recombined action with a changed public root decision at
+matched ceilings and without a fabricated evaluator. See
+`SEARCH_QUIET_SEMANTIC_QSUPPORT_20261020.md` and
+`data/search_quiet_semantic_qsupport_20261020/`.
+
+## Close static-profile owner-label symmetry probe — 2026-10-20
+
+The production Standard Shogi static profile was rebuilt after physical 180°
+rotation plus owner swap, including the transformed owner-specific drop,
+promotion and forced-promotion masks. All exposed fields for all14 types and
+the median were identical; active P/L/N drop restrictions and forced/optional
+promotion masks were nonempty. A separate one-square owner0-only P-drop mutation
+changed only the drop-freedom diagnostic, not raw or normalized board/hand/
+promotion values. The asymmetry is outside the generated mask contract, and
+these diagnostics are not read by Evaluator; no price/default change follows.
+This is profile-input symmetry, not full semantic-rule isomorphism or utility.
+The focused evaluation and Standard Shogi product modules pass33 tests. Full
+methods and limits: `PROFILE_OWNER_ROTATION_SHOGI_20261020.md` and
+`data/profile_owner_rotation_shogi_20261020/`.
+
+Next inspect one distinct current unfamiliar-rule caller contract against the
+already closed action/PV/history/pass/terminal/deadline/cancellation/qfrontier
+map. Choose one concrete user-facing or backend caller invariant only if a real
+gap is visible; otherwise perform bounded source closure and return to the
+separate rule-price transfer evidence without reopening this owner-symmetry
+panel.
+A follow-up full-evaluator check used two fixed Standard Shogi states with both
+a promoted board piece and asymmetric hands. Under rotation+owner swap, keeping
+the same side-to-move label negates the default evaluator score exactly; also
+swapping the turn preserves the same actor's score. The two new focused product
+regressions pass with the Shogi profile and product checks (34 total). This
+covers the default static/dynamic evaluation symmetry in two fixed states, not
+all positions or utility. No evaluator/default change follows. See the
+supplementary section in `PROFILE_OWNER_ROTATION_SHOGI_20261020.md`.
+
+## Close public benchmark fallback-eligibility gap — 2026-10-20
+
+A one-node public generated 4x4 search returned a legal `root_scan_fallback`
+with `termination_reason=node_limit` and depth0. Both paired-game benchmark and
+Native-readiness reporting classified fallbacks by the stop-reason string
+`"fallback"`, so this retained move was counted as a normal eligible game.
+They now derive the fallback flag from `PlayerDecision.result_source`, retaining
+the stop reason as a separate field and preserving the legacy generic spelling.
+An integration regression checks both candidate colors and benchmark
+eligibility/counts; a second covers the readiness budget row. The four affected
+modules pass90 tests. This corrects
+which finite game rows may enter utility summaries, not search behavior or
+strength. Historical records remain unchanged. Details and scope:
+`BENCHMARK_FALLBACK_RESULT_PROVENANCE_20261020.md`.
+
+Slack reconciliation: the `CHAT_Comments` concern that semantic `generic-v3`
+was already default without strength evidence is already resolved by the
+correctness-first policy and explicit v2-control boundary in
+`SEMANTIC_PROFILE_DEFAULT_STATUS_20261020.md` and the earlier mainline entry;
+no default reversal follows. The AUX-owned WDL-censoring bound, cross-seed root
+confounding, and learner-comparison design comments remain references for
+DEV_AUX's own scientific work. They do not authorize or justify PRIMARY editing
+its checkout or duplicating its analyses. Their full raw Slack pages are
+preserved privately; the relevant visible request thread had one complete Dot
+reply, and no further replies were present in the captured pages.
+
+Next choose one remaining rule-price transfer premise with an actual reachable
+same-rule action/outcome contrast, or another uncovered public generated-search
+contract only if a specific caller gap is visible. Avoid reopening closed
+owner-symmetry, fallback/provenance, history, terminal, budget, or qfrontier
+checks.
+
+Follow-up archive audit for the fallback-eligibility correction found only two
+committed benchmark summaries with `fallback_games`: the 2026-10-20 as-built
+and corrected semantic-pawn records. All recorded node-limit events in both
+had completed depth2 (932 and870 events); none was a zero-depth abort retaining
+only a legal fallback. Their zero-fallback summaries remain valid and were not
+rewritten. `MoveEvent` already records the eligibility bit plus termination
+cause; a new `result_source` field is deferred because no current consumer needs
+the finer enum. The scope is those committed datasets, not arbitrary external
+runs; details are in `BENCHMARK_FALLBACK_RESULT_PROVENANCE_20261020.md`.
+
+The scheduled price-route audit found no remaining existing-data discriminator
+meeting the stricter next-step condition of a reachable same-rule action/outcome
+contrast: the two-type semantic composition is profile-only, while the saved
+same-rule static-profile root comparisons preserved choices and the cross-rule
+capture evidence has rule/trajectory confounds. Do not open another price panel
+without a new reachable witness and a choice-changing consequence. Resume the
+unfamiliar-search caller map from a concrete uncovered contract.
+
+The fallback audit's next caller check closed a positive-result boundary too:
+the existing completed-root-win producer was tested under `node_limit`, but
+had no end-to-end benchmark row. A new regression sends that actual proved
+result through `play_game`, follows the forced line to a candidate win, and
+confirms the stopped search is not censored as fallback and the terminal game
+is eligible. The five focused benchmark/readiness/result modules pass116 tests
+after adding pre-cancelled `legal_fallback` cases to the paired-game and
+Native-readiness consumers.
+No result-source API field or broader benchmark change is needed; this is one
+bounded caller regression, not a strength or price result.
+
+The paired Native-readiness source check found the same retained-action
+classification set in both consumers. Terminal, declaration, immediate-win,
+completed-iteration and completed-root-proof results remain non-fallback;
+`no_legal_fallback` returns no action and is failed by the paired-game consumer.
+Native-readiness preserves a null action plus the explicit stop reason in its
+row, and no such row exists in saved outputs. No divergent live case or need
+for a new aggregate/API field was found, so close this parity check source-only.
+
+## Keep CLI result source separate from stop cause — 2026-10-20
+
+The public `benchmark_alphabeta` command printed `termination_reason` and
+completed depth, but omitted the already available `PlayerDecision.result_source`.
+After the fallback-cause audit, a generated 4x4 search stopped at one node is a
+concrete case where the distinction matters: `root_scan_fallback` is the
+retained legal action source while `node_limit` is why search stopped. The CLI
+now prints both fields, and regressions check the interrupted root-scan and
+pre-cancelled legal-fallback sources; all45 tests in
+`tests/product/test_benchmark.py` pass. This is diagnostic-output clarity only:
+no search policy, benchmark eligibility rule, training input, or price choice
+changes. The generated semantic caller route remains open for a different
+uncovered contract, not another provenance/API expansion without a consumer.
+
+The bounded direct-caller scan found no second PRIMARY defect: paired benchmark
+and readiness use provenance for eligibility; the CLI now emits it; its
+vs-random mode applies returned actions and scores actual generic terminal
+outcomes under the advertised node budget, so a legal fallback remains part of
+that budgeted policy rather than a censored result. The learning arena already
+records `used_fallback` and is DEV_AUX-owned; no changes were made there. UI
+integration remains user-owned. Keep those ownership and interpretation limits
+when selecting the next distinct contract.
+
+The Native/Python fixed-depth differential caller remains a separate contract:
+it compares reference score and canonical action for a completed fixed-depth
+request, not an interrupted iterative decision, so it has no current need for
+the iterative `result_source` field. Its parity suite already covers that
+scope; no provenance change is inferred for the Native fixed-depth API.
+
+Literature cross-check for action representations: Soemers et al.,
+[*Spatial State-Action Features for General Games*](https://doi.org/10.1016/j.artint.2023.103937),
+uses local action anchors such as `from`/`to` and optional previous-action
+locations, while explicitly noting that this feature vocabulary need not
+distinguish every state/action pair. Its speed/playing results are for feature-
+guided MCTS in Ludii, not this AlphaBeta caller. This supports treating alias
+as a concrete-representation question, not assuming generic encoding
+injectivity; the existing PRIMARY alias probe still found no root policy regret,
+so it does not justify a feature/action schema change or another experiment.
+
+## Close child-node declaration decision coverage — 2026-10-20
+
+The custom generic declaration ruleset exposed a distinct caller contract:
+at depth1, a root action can leave the opponent with a winning declaration, or
+with a neutral `RESTART`/`NO_CONTEST` declaration that floors its child value
+at zero. In the same owner-1-to-move parent, a b8-b1 rook capture removes
+owner0's zone claim. AlphaBeta and bounded reference minimax choose that
+capture when the claim is enabled; with the declaration removed, both select a
+king move. The WIN case returns score0, and the neutral-floor case with a
+branch-separating test-only evaluator returns1 versus the no-declaration
+control's5. Both regressions exercise TT plus ordering and preserve the root
+state. They isolate search semantics, not playing utility; no production search
+change follows. Details: `SEARCH_CHILD_DECLARATION_DECISIONS_20261020.md`.
+
+This boundary review also found an adjacent save/restore defect: the generic
+rule schema, assessor and GameSession accept valid `NO_CONTEST` declarations,
+and the record writer emitted them, but the record reader rejected that fourth
+outcome. The reader now uses the shared schema outcome set. A product regression
+round-trips and replays all four supported outcomes without changing record
+versions or old data. This restores a supported ruleset result at the public
+session boundary; it is not a WDL or search-value change. The real benchmark
+caller now also confirms `NO_CONTEST` declarations remain unresolved rather
+than becoming draws or failed games. Details:
+`DECLARATION_NO_CONTEST_RECORD_ROUNDTRIP_20261020.md`.
+
+Next inspect one distinct generated-search caller contract not covered by the
+closed action/PV, history, terminal, declaration, qsearch, budget, cancellation
+or provenance checks. Require a concrete call/state transition whose outcome
+could change a backend or search-interface choice; otherwise close it source-
+only and resume the active rule-price route without reopening these contracts.
+
+## Close captured search-envelope caller review —2026-10-20
+
+The distinct `SearchSnapshot`/backend caller review found that the frozen
+dataclass is a shallow envelope: `session` is the original mutable
+`GameSession`, not a copied state bundle. The Python backend and UI worker both
+pass that session to `Player.choose_action`; the worker does not touch the
+controller. The board/history/witness inputs used by search are immutable
+values. Controller restart/load/undo rebuilds or replaces the session, while
+resignation/timeout increments the generation and cancels; result commit checks
+generation, root key and ruleset fingerprint before submitting anything.
+Existing product tests cover frozen limits, stale restart rejection and
+resignation cancellation/discard. No current generated-rule result mismatch or
+caller choice change was found. The snapshot docstring now names the shallow
+boundary and directs a future backend needing isolated state to define that
+contract explicitly. No state-copy API, UI Test change or search behavior
+change follows. This is a source-contract closure, not a concurrency stress
+test. Resume price-transfer evidence only if a new reachable same-rule
+action/outcome contrast could change a price choice; otherwise select another
+distinct search caller with a concrete interface consequence.
+
+## Close SearchBackend production-caller claim — 2026-10-20
+
+A bounded call-site audit found that `SearchBackend`/`PythonSearchBackend` are
+used only by two product tests; the UI worker and benchmark game loop call the
+`Player.choose_action` protocol directly. The UI path also supplies progress
+callbacks, which the experimental `SearchBackend.search` signature does not
+carry. No current behavior mismatch was found because this adapter is not a
+production route. Corrected its misleading module/protocol docstrings. The
+MainWindow's worker and the benchmark game loop use `Player.choose_action`;
+the controller's runner-taking helper is only exercised by product tests.
+Native-readiness instrumentation is a separate direct AlphaBeta/`AuditRecorder`
+path. Do not add an adapter layer until an actual generated-rule backend needs
+one. Any future integration must preserve UI progress/cancellation and the
+`PlayerDecision` metadata used by benchmark accounting. This source audit
+changes the future integration target but proves neither runtime failure nor
+all-domain backend interchangeability. Details:
+`SEARCH_BACKEND_PRODUCTION_CALLERS_20261020.md`.
+
+After this reviewed batch is published, continue with a different concrete
+generated-search contract whose result could change an implementation choice.
+Return to rule-price transfer only if new reachable same-rule evidence shows an
+action/outcome contrast that could change a scoped price decision; do not rerun
+the closed panel on unchanged data.
+
+## Close interrupted last-complete-iteration contract — 2026-10-20
+
+A deterministic abort injected before depth2 on generated 4x4 seed43 retained
+the same depth1 action, score2814 and PV as a fresh depth1 control, while
+reporting the actual `cancelled` cause. A new product regression fixes this
+ordinary iterative result contract and checks root immutability. The
+implementation already behaved correctly; this closes a concrete test gap,
+not an observed search defect or backend-interchange claim. Focused
+`test_ai_search.py`, provenance and completed-root-win modules pass. See
+`SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`. Continue the caller map at
+a distinct uncovered generated-rule contract; do not reopen cancellation,
+fallback or result-provenance cases without new evidence.

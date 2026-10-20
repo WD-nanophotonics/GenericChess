@@ -5478,3 +5478,175 @@ alone performed the TT probes; no auxiliary computation or change was merged.
 Next: leave the cap/default unchanged and return to the current search/caller
 mainline. Reopen byte-budget work only after a representative workload or an
 actual memory limit makes the decision consequential.
+
+## PRIMARY_SANDBOX — benchmark result-source eligibility — 2026-10-20
+
+PRIMARY found that paired-game and Native-readiness consumers used the stop
+reason `fallback` as a proxy for the retained move. On a generated 4x4 root
+with a one-node cap, AlphaBeta returned `root_scan_fallback` at depth0 with
+`node_limit`; both callers had admitted it as an ordinary result. They now
+classify the three legal-fallback result sources separately from termination,
+and integration tests confirm fallback games are ineligible for utility.
+Native-readiness accounting is also checked at node budgets0 and1, covering
+both immediate legal fallback and interrupted root scanning.
+The separate pre-cancelled `legal_fallback` source is also driven through the
+paired-game consumer and confirmed ineligible.
+The positive boundary is covered too: an actual completed-root proof survives
+a later node-limit stop, the benchmark follows its forced win, and that terminal
+game remains eligible. Five focused modules pass116 tests.
+
+The two committed semantic-pawn game summaries report zero fallback games; all
+their node-limit events had completed depth2 and neither event set contains a
+depth-zero abort, so their old totals remain valid and were not rewritten.
+No additional result-source API field is needed for current consumers. The
+Native-readiness mapping matches; no-action source rows remain explicit as a
+null action plus stop reason, with no saved instance found. No new schema work
+was justified. Slack's semantic-v3 concern was already resolved by the current
+correctness-first/default-control decision; AUX scientific comments remain
+references for their owners and were not duplicated. No new message or AUX
+coordination was necessary. Existing DeepSeek patrol evidence was stale and
+limited (`notLoaded` with historical turns), not a health certification; no
+control or state change was taken. The price-route audit found no remaining
+existing-data same-rule outcome discriminator; resume unfamiliar-search work
+only from a concrete caller gap. Details: `docs/research/BENCHMARK_FALLBACK_RESULT_PROVENANCE_20261020.md`.
+
+## PRIMARY_SANDBOX — CLI retained-result provenance — 2026-10-20
+
+The generated-search caller audit found one narrow visibility gap: the public
+AlphaBeta benchmark CLI printed why a bounded search stopped but omitted which
+result source it retained. A 4x4 one-node run exercises `root_scan_fallback`
+with `node_limit`; the CLI now emits both independently, protected by an
+end-to-end output regression. All44 `test_benchmark.py` tests pass. This makes
+caller evidence interpretable without changing search behavior or utility
+eligibility. No AUX-owned experiment, code or checkout was used; no Slack
+science question or coordination dependency arose. Next continue the generated
+search caller map from a distinct unclosed contract, avoiding duplicate
+provenance work absent another consumer decision.
+
+The surrounding caller scan confirms the CLI vs-random path applies each legal
+returned action and scores the actual terminal outcome under its advertised
+node budget; fallback is part of that policy, not an incomplete-data censor.
+Learning-arena telemetry already records `used_fallback` and is AUX-owned; UI
+integration is user-owned. The generated CLI smoke ended in a draw after66 plies
+with0 unresolved games, which is a behavior check only, not strength evidence.
+The first unfamiliar-search test invocation hit a Windows permission error in
+the system pytest temp directory before assertions; the same10 tests passed
+using an isolated basetemp in ignored `.local_agent`. The failure and retry are
+preserved in `validation.txt` under the private evidence folder.
+
+A bounded literature cross-check found Soemers et al. (Artificial Intelligence,
+2023, DOI 10.1016/j.artint.2023.103937): their general-game spatial features
+use local `from`/`to` and optional previous-action anchors, while explicitly
+allowing distinct state/action pairs to alias. Their empirical results concern
+feature evaluation and MCTS in Ludii, not this AlphaBeta interface. This
+reinforces checking representation against a concrete caller without treating
+non-injectivity as measured regret; our existing alias probe showed no root
+policy regret. No feature expansion or new experiment follows.
+
+## PRIMARY_SANDBOX — child-node declaration search contract — 2026-10-20
+
+PRIMARY found a test-coverage gap, not an engine defect: a one-ply custom
+generic semantic claim can become available only after the opponent's move.
+With the claim enabled, the existing AlphaBeta search and bounded reference
+both chose the rook capture that removes a child WIN claim; parameterized
+RESTART and NO_CONTEST neutral floors also change the parent action under a
+branch-separating test-only evaluator. Product regressions check these
+decision-sensitive outcomes through TT plus ordering, reference agreement and
+parent-state immutability. The test-only values expose the search floor, not
+utility evidence. No production search or pricing policy changed.
+
+The same boundary review reproduced a separate persistence defect: a valid
+NO_CONTEST declaration was serialized but rejected by the GameRecord reader's
+three-outcome allowlist. The reader now shares the rule schema's four-outcome
+constant, and a regression round-trips/replays WIN, RESTART, NO_CONTEST and LOSS
+records. The benchmark game integration also keeps RESTART and NO_CONTEST
+declarations unresolved instead of relabeling them as draws or failures. This
+restores an existing session contract without rewriting saved data. Details:
+`docs/research/DECLARATION_NO_CONTEST_RECORD_ROUNDTRIP_20261020.md`.
+
+No DEV_AUX or DEEPSEEK_AUX source, checkout, unpublished result or computation
+was used, modified or integrated; no cross-role dependency or coordination was
+needed. The earlier benchmark/provenance batch and this narrow persistence
+correction remain PRIMARY-owned and scoped for sandbox. Next inspect one other
+concrete generated-search caller contract; no AUX work should be inferred from
+this mainline report. Full methods and limits:
+`docs/research/SEARCH_CHILD_DECLARATION_DECISIONS_20261020.md`.
+
+## PRIMARY_SANDBOX — generated-search caller and record/benchmark corrections — 2026-10-20
+
+PRIMARY completed a bounded generated-search caller review and several related
+correctness checks in its own sandbox checkout. The benchmark now classifies
+fallback eligibility from the retained result source, separate from stop cause;
+paired-game and Native-readiness regressions cover the interrupted root-scan
+fallback, while a completed root proof remains eligible after a later node-limit
+stop. The AlphaBeta CLI prints result source beside termination reason. Existing
+committed benchmark summaries were checked and contain no zero-depth abort rows,
+so historical totals were not rewritten.
+
+A child-node generic declaration regression confirms that WIN and neutral
+RESTART/NO_CONTEST options can change the parent action while matching bounded
+reference minimax and preserving the submitted root. Separately, a valid
+NO_CONTEST declaration record was reproduced as unreadable: the serializer
+accepted the schema outcome but the reader rejected it. The reader now uses the
+shared declaration outcome set; round-trip/replay covers all four outcomes.
+A saved-data Shogi symmetry probe and two evaluator side-frame fixtures show
+profile/evaluator invariance on their stated scope, not utility or global prices.
+A saved qsearch fixture showed no public root choice change; qsearch policy stays
+unchanged. The captured SearchSnapshot remains a shallow session envelope with
+existing stale-result guards; no present state mismatch was found.
+
+The production call-site map also corrected a false `SearchBackend` module
+claim: MainWindow's worker and benchmark game loop call `Player.choose_action`;
+the controller runner helper is used only in product tests, and Native-readiness
+instrumentation uses a separate direct AlphaBeta/AuditRecorder path. The adapter
+is not a production replacement seam and lacks UI progress forwarding. Its docs
+now state that accurately; no extra API or backend integration was justified.
+This affects future integration planning, not search correctness.
+
+Verification: the affected 13-module declaration/benchmark/evaluation/shogi/
+search suite passed; the additional adapter/UI caller modules passed43 tests.
+A final 17-module targeted product/development rerun also exited0. Its first
+attempt had8 fixture-setup errors because Windows denied enumeration of the
+system pytest temp directory; no test body failed. After adding pre-cancelled
+`legal_fallback` cases to both consumers, the complete 17-module set was rerun
+with pytest cache disabled and a verified ignored project-local basetemp and
+exited0. The failure diagnosis is retained under
+`.local_agent/pytest/final-20261020/` and is not staged. The
+five focused benchmark/readiness/provenance modules passed116 tests, including
+all45 benchmark-module tests. Probe JSON parsed and its Python sources compiled
+without execution.
+The exact26 outgoing paths passed privacy-pattern review and JSON validation;
+new CRLF artifacts were normalized to repository-style LF and the staged diff
+passes `git diff --check`. No new game panel, training, AUX computation, source
+or unpublished result was used; no AUX checkout was modified or integrated. The
+once-per-heartbeat DeepSeek sample was `notLoaded` with historical visible turns,
+so it supports neither a current fault finding nor a health certification. No
+Slack scientific request or AUX coordination dependency arose. Scientific
+inference remains limited to the stated fixtures, caller paths and saved data;
+no strength, all-domain, price-default or backend-interchange claim follows.
+
+## PRIMARY_SANDBOX — retain last complete iterative result — 2026-10-20
+
+A bounded generated 4x4 seed43 search was interrupted deterministically at the
+depth2 boundary after completing depth1. Its action, score2814 and PV matched a
+fresh depth1 control, while its stop cause remained `cancelled`. The
+implementation already retained the last completed result. PRIMARY added a
+focused product regression for this anytime contract and confirmed it alongside
+the existing result-provenance and completed-root-win modules; no production
+search change or backend API expansion was needed. No AUX source, checkout or
+computation was read, modified or integrated. The sample is a single generated
+ruleset and a controlled iteration boundary, not a wall-clock or all-domain
+claim. Details: `docs/research/SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`.
+
+## PRIMARY_SANDBOX — retain last complete iterative result — 2026-10-20
+
+A bounded generated 4x4 seed43 search was interrupted deterministically at the
+depth2 boundary after completing depth1. Its action, score2814 and PV matched a
+fresh depth1 control, while its stop cause remained `cancelled`. The
+implementation already retained the last completed result. PRIMARY added a
+focused product regression for this anytime contract and confirmed it alongside
+the existing result-provenance and completed-root-win modules; no production
+search change or backend API expansion was needed. No AUX source, checkout or
+computation was read, modified or integrated. The sample is a single generated
+ruleset and a controlled iteration boundary, not a wall-clock or all-domain
+claim. Details: `docs/research/SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`.

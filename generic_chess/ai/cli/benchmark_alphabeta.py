@@ -102,7 +102,8 @@ def main(argv: list[str] | None = None) -> int:
             f"depth={decision.completed_depth} nodes={decision.nodes} "
             f"qnodes={decision.qnodes} elapsed={elapsed:.3f}s nps={nps:,.0f} "
             f"tt={decision.tt_probes}/{decision.tt_hits}/{decision.tt_cutoffs} "
-            f"cutoffs={decision.beta_cutoffs} reason={decision.termination_reason}"
+            f"cutoffs={decision.beta_cutoffs} result_source={decision.result_source} "
+            f"reason={decision.termination_reason}"
         )
         print(f"  PV: {' '.join(str(a) for a in decision.principal_variation) or '-'}")
         if best is None or decision.nodes > best.nodes:

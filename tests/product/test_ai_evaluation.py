@@ -530,3 +530,54 @@ def test_mate_score_beats_static():
     assert mate == MATE_SCORE
     later = terminal_score(TerminalResult(TerminalStatus.CHECKMATE, 0), 0, 3)
     assert later == MATE_SCORE - 3  # faster win scores higher
+
+@pytest.mark.parametrize('sfen', [
+    '8k/9/4+p4/4P4/9/9/9/9/K8 b 2P1g 1',
+    '8k/9/3+P5/9/5B3/9/9/9/K8 w 2rP 7',
+])
+def test_standard_shogi_evaluation_is_owner_rotation_symmetric_with_hands_and_promotion(sfen):
+    from dataclasses import replace
+
+    from generic_chess.ai.evaluation.evaluator import Evaluator
+    from generic_chess.ai.evaluation.profile import build_ruleset_profile
+    from generic_chess.core.pieces import Piece
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    config = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+    state = sfen_to_gc_state(compiled, sfen)
+    assert any(piece is not None and piece.promoted for piece in state.position.board)
+    assert any(hand.total() for hand in state.position.hands)
+    base_score = evaluator.evaluate(state)
+    assert base_score != 0
+
+    def rotate_swap_position(position, *, flip_turn):
+        n = compiled.board_size
+        board = [None] * (n * n)
+        for index, piece in enumerate(position.board):
+            if piece is None:
+                continue
+            rank, file = divmod(index, n)
+            target = (n - 1 - rank) * n + (n - 1 - file)
+            board[target] = Piece(
+                1 - piece.owner, piece.base_type_id, piece.current_type_id,
+                piece.promoted,
+            )
+        return replace(
+            position,
+            board=tuple(board),
+            hands=(position.hands[1], position.hands[0]),
+            side_to_move=(1 - position.side_to_move if flip_turn else position.side_to_move),
+        )
+
+    owner_swapped = replace(
+        state, position=rotate_swap_position(state.position, flip_turn=False)
+    )
+    same_actor_to_move = replace(
+        state, position=rotate_swap_position(state.position, flip_turn=True)
+    )
+    assert evaluator.evaluate(owner_swapped) == -base_score
+    assert evaluator.evaluate(same_actor_to_move) == base_score

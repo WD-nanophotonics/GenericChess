@@ -70,6 +70,33 @@ def test_opponent_no_contest_prevents_false_completed_root_win(qdepth, nodes):
     assert result.winner is None and result.declaration_outcome == "NO_CONTEST"
 
 
+@pytest.mark.parametrize("outcome", ("WIN", "RESTART", "NO_CONTEST", "LOSS"))
+def test_declaration_outcomes_roundtrip_game_record_and_session(outcome):
+    from generic_chess.session.serialization import (
+        deserialize_game_record,
+        serialize_game_record,
+    )
+
+    rules = make_ruleset(4, [king_type()], lines=["...k", "....", "....", "K..."])
+    session = compile_session(
+        replace(rules, declarations=(neutral(0, outcome=outcome),))
+    )
+    original_state = session.state
+    result = session.declare("neutral")
+
+    encoded = serialize_game_record(session.to_record())
+    restored_record = deserialize_game_record(encoded)
+    replayed = GameSession.replay(session.compiled, restored_record)
+
+    assert result.status.value == "declaration"
+    assert result.declaration_outcome == outcome
+    expected_winner = 0 if outcome == "WIN" else 1 if outcome == "LOSS" else None
+    assert result.winner == expected_winner
+    assert replayed.result == result
+    assert replayed.state == original_state
+    assert replayed.to_record() == restored_record
+
+
 class Constant:
     def __init__(self, value):
         self.value = value

@@ -1,0 +1,32 @@
+{
+  "mixed_promoted_hand_side1": {
+    "expected_antisymmetry_same_turn": true,
+    "expected_same_actor_advantage_after_turn_swap": true,
+    "material": {
+      "board": 4,
+      "hands": [
+        1,
+        2
+      ]
+    },
+    "owner_swap_and_turn_score": 1138,
+    "owner_swap_same_turn_score": -1138,
+    "score": 1138,
+    "sfen": "8k/9/3+P5/9/5B3/9/9/9/K8 w 2rP 7"
+  },
+  "promoted_and_asymmetric_hands": {
+    "expected_antisymmetry_same_turn": true,
+    "expected_same_actor_advantage_after_turn_swap": true,
+    "material": {
+      "board": 4,
+      "hands": [
+        2,
+        1
+      ]
+    },
+    "owner_swap_and_turn_score": -1381,
+    "owner_swap_same_turn_score": 1381,
+    "score": -1381,
+    "sfen": "8k/9/4+p4/4P4/9/9/9/9/K8 b 2P1g 1"
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "all_fields_equal": true,
+  "board_size": 9,
+  "drop_mask_counts": {
+    "B": [
+      81,
+      81
+    ],
+    "G": [
+      81,
+      81
+    ],
+    "L": [
+      72,
+      72
+    ],
+    "N": [
+      63,
+      63
+    ],
+    "P": [
+      72,
+      72
+    ],
+    "R": [
+      81,
+      81
+    ],
+    "S": [
+      81,
+      81
+    ]
+  },
+  "forced_promotion_counts": {
+    "B": [
+      0,
+      0
+    ],
+    "L": [
+      9,
+      9
+    ],
+    "N": [
+      18,
+      18
+    ],
+    "P": [
+      9,
+      9
+    ],
+    "R": [
+      0,
+      0
+    ],
+    "S": [
+      0,
+      0
+    ]
+  },
+  "per_type": {
+    "B": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 1.0,
+        "rotated": 1.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 10.074074074074074,
+        "rotated": 10.074074074074074
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+        "rotated": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1468,
+        "rotated": 1468
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 1321,
+        "rotated": 1321
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 674,
+        "rotated": 674
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 6.9144141295134265,
+        "rotated": 6.9144141295134265
+      }
+    },
+    "G": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 1.0,
+        "rotated": 1.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 5.135802469135802,
+        "rotated": 5.135802469135802
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1000,
+        "rotated": 1000
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 900,
+        "rotated": 900
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 4.709791718138191,
+        "rotated": 4.709791718138191
+      }
+    },
+    "K": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 6.111686833613917,
+        "rotated": 6.111686833613917
+      }
+    },
+    "L": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.8888888888888888,
+        "rotated": 0.8888888888888888
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 4.5,
+        "rotated": 4.5
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"R\",0,1,-1]]",
+        "rotated": "[[\"R\",0,1,-1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 546,
+        "rotated": 546
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 491,
+        "rotated": 491
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 454,
+        "rotated": 454
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 2.570751202570068,
+        "rotated": 2.570751202570068
+      }
+    },
+    "N": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.7777777777777778,
+        "rotated": 0.7777777777777778
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 1.7777777777777777,
+        "rotated": 1.7777777777777777
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,2],[\"L\",1,2]]",
+        "rotated": "[[\"L\",-1,2],[\"L\",1,2]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 281,
+        "rotated": 281
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 253,
+        "rotated": 253
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 719,
+        "rotated": 719
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 1.3219389638860044,
+        "rotated": 1.3219389638860044
+      }
+    },
+    "P": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.8888888888888888,
+        "rotated": 0.8888888888888888
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 1.0,
+        "rotated": 1.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",0,1]]",
+        "rotated": "[[\"L\",0,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 189,
+        "rotated": 189
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 170,
+        "rotated": 170
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 811,
+        "rotated": 811
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 0.8907051282051281,
+        "rotated": 0.8907051282051281
+      }
+    },
+    "R": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 1.0,
+        "rotated": 1.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 16.0,
+        "rotated": 16.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+        "rotated": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 2120,
+        "rotated": 2120
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 1908,
+        "rotated": 1908
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 595,
+        "rotated": 595
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 9.985306397581859,
+        "rotated": 9.985306397581859
+      }
+    },
+    "S": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 1.0,
+        "rotated": 1.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 4.049382716049383,
+        "rotated": 4.049382716049383
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": true,
+        "rotated": true
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 796,
+        "rotated": 796
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 716,
+        "rotated": 716
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 204,
+        "rotated": 204
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 3.7475051817750713,
+        "rotated": 3.7475051817750713
+      }
+    },
+    "TB": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 2142,
+        "rotated": 2142
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 1928,
+        "rotated": 1928
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 10.088831916728425,
+        "rotated": 10.088831916728425
+      }
+    },
+    "TL": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1000,
+        "rotated": 1000
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 900,
+        "rotated": 900
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 4.709791718138191,
+        "rotated": 4.709791718138191
+      }
+    },
+    "TN": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1000,
+        "rotated": 1000
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 900,
+        "rotated": 900
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 4.709791718138191,
+        "rotated": 4.709791718138191
+      }
+    },
+    "TP": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1000,
+        "rotated": 1000
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 900,
+        "rotated": 900
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 4.709791718138191,
+        "rotated": 4.709791718138191
+      }
+    },
+    "TR": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",1,-1],[\"L\",1,1],[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+        "rotated": "[[\"L\",-1,-1],[\"L\",-1,1],[\"L\",1,-1],[\"L\",1,1],[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 2715,
+        "rotated": 2715
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 2444,
+        "rotated": 2444
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 12.786549610297937,
+        "rotated": 12.786549610297937
+      }
+    },
+    "TS": {
+      "drop_freedom_ratio": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "drop_mobility": {
+        "equal": true,
+        "original": 0.0,
+        "rotated": 0.0
+      },
+      "is_anchor": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "is_promotable": {
+        "equal": true,
+        "original": false,
+        "rotated": false
+      },
+      "movement_signature": {
+        "equal": true,
+        "original": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]",
+        "rotated": "[[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,0],[\"L\",1,1]]"
+      },
+      "normalized_board_value": {
+        "equal": true,
+        "original": 1000,
+        "rotated": 1000
+      },
+      "normalized_hand_value": {
+        "equal": true,
+        "original": 900,
+        "rotated": 900
+      },
+      "promotion_option_value": {
+        "equal": true,
+        "original": 0,
+        "rotated": 0
+      },
+      "raw_capability_score": {
+        "equal": true,
+        "original": 4.709791718138191,
+        "rotated": 4.709791718138191
+      }
+    }
+  },
+  "profile_median_equal": true,
+  "profile_median_original": 1000,
+  "profile_median_rotated": 1000,
+  "promotion_pair_counts": {
+    "B": [
+      416,
+      416
+    ],
+    "L": [
+      189,
+      189
+    ],
+    "N": [
+      48,
+      48
+    ],
+    "P": [
+      27,
+      27
+    ],
+    "R": [
+      594,
+      594
+    ],
+    "S": [
+      123,
+      123
+    ]
+  }
+}

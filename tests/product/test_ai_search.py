@@ -148,6 +148,38 @@ def test_depth_limit_and_node_limit():
     assert limited.termination_reason in ("node_limit", "completed_depth")
 
 
+def test_interrupted_later_iteration_retains_last_complete_result(monkeypatch):
+    compiled = build_4x4_rooks()
+    session = GameSession(compiled)
+    tuning = SearchTuning(use_root_tactical=False, use_aspiration=False)
+    options = dict(use_tt=False, use_ordering=False, tuning=tuning)
+    complete = _player(compiled, **options).choose_action(
+        session, SearchLimits(max_depth=1, quiescence_max_depth=0)
+    )
+
+    original = _Budget.check_iteration
+
+    def cancel_before_next_depth(budget, stats):
+        if stats.completed_depth >= 1:
+            raise SearchAborted("cancelled")
+        original(budget, stats)
+
+    monkeypatch.setattr(_Budget, "check_iteration", cancel_before_next_depth)
+    interrupted = _player(compiled, **options).choose_action(
+        session, SearchLimits(max_depth=4, quiescence_max_depth=0)
+    )
+
+    assert interrupted.termination_reason == "cancelled"
+    assert interrupted.completed_depth == complete.completed_depth == 1
+    assert interrupted.result_source == complete.result_source == "main_iteration"
+    assert (
+        interrupted.action,
+        interrupted.score,
+        interrupted.principal_variation,
+    ) == (complete.action, complete.score, complete.principal_variation)
+    assert session.state == GameSession(compiled).state
+
+
 def test_node_budget_reproducible():
     compiled = build_4x4_rooks()
     limits = SearchLimits(max_depth=64, max_nodes=3000, quiescence_max_depth=0)

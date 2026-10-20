@@ -93,7 +93,8 @@ def test_benchmark_executes_and_scores_root_declaration(candidate_color, expecte
     assert events[0].termination_reason == "root_declaration_win"
 
 
-def test_benchmark_does_not_score_restart_declaration_as_draw_or_failure():
+@pytest.mark.parametrize("outcome_name", ("RESTART", "NO_CONTEST"))
+def test_benchmark_does_not_score_neutral_declaration_as_draw_or_failure(outcome_name):
     from dataclasses import replace
 
     from generic_chess import compile_ruleset_for_execution
@@ -104,7 +105,7 @@ def test_benchmark_does_not_score_restart_declaration_as_draw_or_failure():
     ruleset = _claim_ruleset()
     declaration = replace(
         ruleset.declarations[0],
-        outcome_bands=(RuleDeclarationOutcomeBand(7, "RESTART"),),
+        outcome_bands=(RuleDeclarationOutcomeBand(7, outcome_name),),
     )
     compiled = compile_ruleset_for_execution(
         replace(ruleset, declarations=(declaration,))
@@ -126,14 +127,14 @@ def test_benchmark_does_not_score_restart_declaration_as_draw_or_failure():
         use_disk_cache=False,
     )
     outcome, events = play_game(
-        compiled, (), "declaration-root", "declaration-restart", 0,
+        compiled, (), "declaration-root", f"declaration-{outcome_name.lower()}", 0,
         player, player, _tiny_config(),
     )
 
     assert outcome.result == "unresolved"
     assert outcome.plies == 0
     assert len(events) == 1
-    assert events[0].action == "<declaration:opaque_claim:RESTART>"
+    assert events[0].action == f"<declaration:opaque_claim:{outcome_name}>"
 
 
 def test_benchmark_scores_a_full_history_no_progress_cycle_as_rule_draw():
@@ -249,6 +250,95 @@ def test_benchmark_smoke_writes_artifacts(bench_tmp_dir):
     assert all("game_key" in e and "nodes" in e for e in events)
 
 
+@pytest.mark.parametrize(
+    ("candidate_color", "candidate_fallback", "control_fallback"),
+    ((0, True, False), (1, False, True)),
+)
+def test_benchmark_censors_an_interrupted_root_scan_fallback(
+    candidate_color, candidate_fallback, control_fallback
+):
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+
+    position = SuitePosition(
+        "fallback-root",
+        GeneratorConfig(seed=5, board_size=4, setup_preset="classic_like"),
+        0,
+    )
+    compiled, opening = build_position(position)
+    player = AlphaBetaPlayer(
+        compiled, use_native_semantic_legality=False, use_disk_cache=False
+    )
+    config = RunConfig(
+        control=profile_by_name("baseline"),
+        candidate=profile_by_name("baseline"),
+        suite=(position,),
+        seconds=None,
+        nodes=1,
+        max_plies=1,
+    )
+
+    outcome, events = play_game(
+        compiled, opening, position.key, "fallback-game", candidate_color,
+        player, player, config,
+    )
+
+    assert len(events) == 1
+    assert events[0].termination_reason == "node_limit"
+    assert events[0].fallback
+    assert events[0].candidate == (candidate_color == 0)
+    assert outcome.candidate_fallback is candidate_fallback
+    assert outcome.control_fallback is control_fallback
+    assert not outcome.eligible
+    summary = summarize([outcome])
+    assert summary["fallback_games"] == 1
+    assert summary["eligible_games"] == 0
+
+
+def test_benchmark_censors_a_pre_cancelled_legal_fallback():
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.cancellation import CancellationToken
+
+    position = SuitePosition(
+        "cancelled-root",
+        GeneratorConfig(seed=5, board_size=4, setup_preset="classic_like"),
+        0,
+    )
+    compiled, opening = build_position(position)
+
+    class PreCancelledPlayer(AlphaBetaPlayer):
+        def choose_action(self, current, limits, **kwargs):
+            token = CancellationToken()
+            token.cancel()
+            return super().choose_action(
+                current, limits, cancel_token=token, **kwargs
+            )
+
+    player = PreCancelledPlayer(
+        compiled, use_native_semantic_legality=False, use_disk_cache=False
+    )
+    config = RunConfig(
+        control=profile_by_name("baseline"),
+        candidate=profile_by_name("baseline"),
+        suite=(position,),
+        seconds=None,
+        nodes=None,
+        max_plies=1,
+    )
+
+    outcome, events = play_game(
+        compiled, opening, position.key, "cancelled-game", 0,
+        player, player, config,
+    )
+
+    assert len(events) == 1
+    assert events[0].termination_reason == "cancelled"
+    assert events[0].completed_depth == 0
+    assert events[0].fallback
+    assert outcome.candidate_fallback
+    assert not outcome.eligible
+    assert summarize([outcome])["fallback_games"] == 1
+
+
 def test_benchmark_resume_skips_completed(bench_tmp_dir):
     run_benchmark(_tiny_config(), bench_tmp_dir)
     before = sum(1 for _ in (bench_tmp_dir / "games.jsonl").read_text(encoding="utf-8").splitlines())
@@ -311,6 +401,27 @@ def test_alpha_beta_cli_search_report_names_a_root_declaration(monkeypatch, caps
         ["--nodes", "80", "--repeat", "1", "--no-disk"]
     ) == 0
     assert "action=<declaration:opaque_claim:WIN>" in capsys.readouterr().out
+
+
+def test_alpha_beta_cli_reports_result_source_separately_from_stop_reason(
+    monkeypatch, capsys
+):
+    from generic_chess import compile_ruleset_for_execution
+    from generic_chess.ai.cli import benchmark_alphabeta
+    from generic_chess.generation.config import GeneratorConfig
+    from generic_chess.generation.generator import generate_game
+
+    compiled = generate_game(
+        GeneratorConfig(seed=5, board_size=4, setup_preset="classic_like")
+    ).compiled_ruleset
+    monkeypatch.setattr(benchmark_alphabeta, "_load_compiled", lambda _args: compiled)
+
+    assert benchmark_alphabeta.main(
+        ["--nodes", "1", "--repeat", "1", "--no-disk"]
+    ) == 0
+    output = capsys.readouterr().out
+    assert "result_source=root_scan_fallback" in output
+    assert "reason=node_limit" in output
 
 
 @pytest.mark.parametrize(

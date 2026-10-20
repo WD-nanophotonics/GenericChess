@@ -135,7 +135,15 @@ def play_game(
         started = time.monotonic()
         decision = player.choose_action(session, limits)
         elapsed = time.monotonic() - started
-        fallback = decision.termination_reason == "fallback"
+        # The search result records *why it stopped* separately from *which
+        # result was retained*. An interrupted first iteration can therefore
+        # have termination_reason="node_limit" while its action is only a
+        # legal/root-scan fallback. Exclude those games from benchmark utility.
+        fallback = decision.result_source in {
+            "fallback",
+            "legal_fallback",
+            "root_scan_fallback",
+        } or decision.termination_reason == "fallback"
         timing_invalid = _timing_invalid(elapsed, config.seconds)
         is_declaration = decision.choice_kind == "DECLARATION"
         declaration = decision.declaration if is_declaration else None
