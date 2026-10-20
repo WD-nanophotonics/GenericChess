@@ -1,0 +1,134 @@
+{
+  "actual_terminal": 859,
+  "by_cap_endpoint": {
+    "20000/TD": {
+      "learner_L_D_W": [
+        9,
+        5,
+        70
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        41,
+        5,
+        38
+      ],
+      "unknown_censored": 44
+    },
+    "20000/TreeStrap": {
+      "learner_L_D_W": [
+        21,
+        15,
+        55
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        40,
+        15,
+        36
+      ],
+      "unknown_censored": 37
+    },
+    "20000/WDL": {
+      "learner_L_D_W": [
+        19,
+        12,
+        63
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        40,
+        12,
+        42
+      ],
+      "unknown_censored": 34
+    },
+    "20000/initial": {
+      "learner_L_D_W": [
+        36,
+        13,
+        35
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        33,
+        13,
+        38
+      ],
+      "unknown_censored": 44
+    },
+    "40000/TD": {
+      "learner_L_D_W": [
+        17,
+        14,
+        93
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        49,
+        14,
+        61
+      ],
+      "unknown_censored": 4
+    },
+    "40000/TreeStrap": {
+      "learner_L_D_W": [
+        38,
+        14,
+        75
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        58,
+        14,
+        55
+      ],
+      "unknown_censored": 1
+    },
+    "40000/WDL": {
+      "learner_L_D_W": [
+        27,
+        16,
+        85
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        54,
+        16,
+        58
+      ],
+      "unknown_censored": 0
+    },
+    "40000/initial": {
+      "learner_L_D_W": [
+        35,
+        23,
+        69
+      ],
+      "n": 128,
+      "player0_L_D_W": [
+        57,
+        23,
+        47
+      ],
+      "unknown_censored": 1
+    }
+  },
+  "interpretation": "The registered analyzer's reward bounds and endpoint-minus-initial bounds are already learner-perspective and unchanged. Its displayed Actual L/D/W counts are counts of the raw player-0 outcome, not learner-perspective counts; this supplement supplies both labels.",
+  "perspectives": {
+    "learner_wdl": "Outcome flipped for color=1 (Black learner); matches the registered reward field.",
+    "player0_wdl": "Unflipped outcome; for this Chess task player 0 is White."
+  },
+  "registered_slots": 1024,
+  "scope": "descriptive counts for the frozen randomized 32-family finite panel; no confidence interval or population claim",
+  "source_run": "run-002",
+  "source_sha256": {
+    "analysis.json": "3b95a4c6d3179db40ae0f6a570643b2a7d5aea91a0db20d159bd555ba144510d",
+    "eval-games.jsonl": "b3b2b9a7eae8020b9e56cbc8bf85937d088541fb73f07b38cc06ae1811169996",
+    "eval-result.json": "4c8479a405f0d51992384480419361b42190e30bcb300d12558ad91821f16db0",
+    "plan.json": "e59ea23d64096838d8225c821cb0a305b53ad754213ed899827f9070c5b5c0dd"
+  },
+  "status": "POST_RUN_ORIENTATION_AUDIT",
+  "task": "DEV_AUX2617",
+  "unknown_censored": 165
+}

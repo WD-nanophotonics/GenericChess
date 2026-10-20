@@ -2997,3 +2997,23 @@ network path works; no machine DNS/proxy/security settings were changed.
 For future authorized sidemission delivery, use that reviewed path and verify
 the complete remote SHA. No PRIMARY/DeepSeek checkout, state, or code was read
 or modified for this checkpoint.
+
+DEV_AUX task2617 run-002 closed the preregistered cap-sensitivity evaluation:
+1,024/1,024 slots, 16,443,208 paid nodes, 148,208 queries, 859 terminals,
+165 UNKNOWN and 2,225.822s under the unchanged 5,400s cap. Run-001's pre-search
+startup failure remains separately preserved. The randomized 40k finite
+subpanel has positive endpoint-minus-initial UNKNOWN-completion bounds for TD,
+WDL and TreeStrap; the 20k counterparts cross zero. All cap-effect contrasts
+cross zero, so there is no evidence here that raising the cap improves strength
+in a broader population. The higher cap reduced UNKNOWN from 159/512 to 6/512
+on these assigned slots. A post-run orientation audit found the original
+analyzer's reward bounds were correctly learner-oriented, but its displayed
+actual-W/D/L counts were raw player-0/White counts. A separate hash-bound
+supplement gives both perspectives; no frozen source/output was rewritten.
+Ten task2617 tests pass. Raw JSONL remains local; deterministic gzip traces
+(decompression/hash/row and credential-pattern checks PASS) and a result
+summary are publication copies. Dot received the finite-panel result and
+count-perspective correction in the existing task thread; delivery is verified,
+reading/adoption/execution are not claimed. Next route remains the whole-learner
+TreeStrap-vs-TDLeaf standard-Chess W/L comparison, pending fresh cost/root/source
+binding. No primary or DeepSeek state/code was read or changed.

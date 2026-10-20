@@ -1462,3 +1462,31 @@ UNKNOWN/missing censoring, and paid-node/run-summary audits. Existing result
 files remain untouched; pre-run registration is the next step. UNKNOWN is never
 assigned a draw or quantity reward. Full evidence is
 `results/dev_aux/task2617/FEASIBILITY.md` and its source-bound artifacts.
+
+DEV_AUX task2617 run-002 completed its separately registered randomized
+cap-sensitivity panel: 1,024/1,024 slots, 16,443,208 paid nodes, 148,208
+queries, 859 actual terminals, and 165 censored UNKNOWN slots in 2,225.822s
+under the unchanged 5,400s cap. The initial run-001 startup failure is retained
+and was not retried in place; run-002 inherits only task2616's frozen ordering
+offset and leaves roots, models, foe, caps and estimand unchanged. On the 40k
+finite subpanel, all three endpoint-minus-initial completion bounds are positive
+(TD [.2891,.3672], WDL [.1797,.1953], TreeStrap [.0078,.0391]); every 20k
+counterpart crosses zero. This is not a confidence/population result. All
+40k-minus-20k endpoint and endpoint-minus-initial bounds cross zero, so no cap
+effect on strength is established. UNKNOWN falls from 159/512 at 20k to 6/512
+at 40k. A post-run audit found that `analysis.json`'s `actual_wdl` fields are
+raw player-0/White counts while the table header is unqualified; learner-
+perspective reward bounds were already correct. A separate immutable-source
+orientation supplement now reproduces both count perspectives; the original
+analyzer and outputs are preserved. Raw JSONL stays local; checked deterministic
+gzip copies and hashes are published. See `results/dev_aux/task2617/RUN-002-REPORT.md`.
+
+Next useful route remains the standard-Chess whole-learner TreeStrap-vs-episode-
+TDLeaf(.95) W/L comparison under matched total candidate+foe nodes, with the
+registered WDL control and true terminal W/L evaluation. Before any new run,
+resolve exact-history disjointness and source/cost binding from the draft and
+task2612 observations; freeze all arms, seeds, foe, roots and cost caps once.
+The task2617 cap panel does not substitute for this learner-method question or
+justify changing a learner/default. If the all-in run estimate reaches 120min,
+send its necessity question to Dot before launch; otherwise preserve the
+existing cap policy. The scientific state remains OPEN.

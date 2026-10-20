@@ -1,0 +1,31 @@
+{
+  "artifacts": [
+    {
+      "archive": "results/dev_aux/task2617/run-002/published-traces/eval-games.jsonl.gz",
+      "archive_bytes": 391048,
+      "archive_sha256": "1fb99a59c130f303ea13767fde04a8a0ae32a711b8267a27b7e61df389b1667e",
+      "compression": "gzip level 9, mtime=0, empty filename",
+      "credential_pattern_scan": "PASS",
+      "decompressed_exactly": true,
+      "original": "eval-games.jsonl",
+      "original_bytes": 1732869,
+      "original_sha256": "b3b2b9a7eae8020b9e56cbc8bf85937d088541fb73f07b38cc06ae1811169996",
+      "rows": 1024
+    },
+    {
+      "archive": "results/dev_aux/task2617/run-002/published-traces/eval-queries.jsonl.gz",
+      "archive_bytes": 9288211,
+      "archive_sha256": "f18a2006fb96fdcea056172fe47a4623f793f4940430c0d7ede100fbba269657",
+      "compression": "gzip level 9, mtime=0, empty filename",
+      "credential_pattern_scan": "PASS",
+      "decompressed_exactly": true,
+      "original": "eval-queries.jsonl",
+      "original_bytes": 326919593,
+      "original_sha256": "d5abeac5d161ebc4a35d7651de5d3342c202d3bb01df03b42f937e3cecad651e",
+      "rows": 148208
+    }
+  ],
+  "raw_sources_preserved_locally": true,
+  "run": "run-002",
+  "task": "DEV_AUX2617"
+}

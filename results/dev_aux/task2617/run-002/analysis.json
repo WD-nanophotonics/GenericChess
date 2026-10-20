@@ -1,0 +1,235 @@
+{
+  "all_observed_slots_respect_family_both_actor_caps": true,
+  "by_cap": {
+    "20000": {
+      "endpoint_minus_initial": {
+        "TD": {
+          "censored": 67,
+          "censored_fraction": 0.5234375,
+          "censored_pairs": 67,
+          "lower": -0.203125,
+          "n": 128,
+          "upper": 1.171875
+        },
+        "TreeStrap": {
+          "censored": 62,
+          "censored_fraction": 0.484375,
+          "censored_pairs": 62,
+          "lower": -0.359375,
+          "n": 128,
+          "upper": 0.90625
+        },
+        "WDL": {
+          "censored": 50,
+          "censored_fraction": 0.390625,
+          "censored_pairs": 50,
+          "lower": -0.2578125,
+          "n": 128,
+          "upper": 0.9609375
+        }
+      },
+      "endpoints": {
+        "TD": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 44,
+            "draw": 5,
+            "loss": 41,
+            "win": 38
+          },
+          "censored": 44,
+          "censored_fraction": 0.34375,
+          "lower": 0.1328125,
+          "n": 128,
+          "upper": 0.8203125
+        },
+        "TreeStrap": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 37,
+            "draw": 15,
+            "loss": 40,
+            "win": 36
+          },
+          "censored": 37,
+          "censored_fraction": 0.2890625,
+          "lower": -0.0234375,
+          "n": 128,
+          "upper": 0.5546875
+        },
+        "WDL": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 34,
+            "draw": 12,
+            "loss": 40,
+            "win": 42
+          },
+          "censored": 34,
+          "censored_fraction": 0.265625,
+          "lower": 0.078125,
+          "n": 128,
+          "upper": 0.609375
+        },
+        "initial": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 44,
+            "draw": 13,
+            "loss": 33,
+            "win": 38
+          },
+          "censored": 44,
+          "censored_fraction": 0.34375,
+          "lower": -0.3515625,
+          "n": 128,
+          "upper": 0.3359375
+        }
+      }
+    },
+    "40000": {
+      "endpoint_minus_initial": {
+        "TD": {
+          "censored": 5,
+          "censored_fraction": 0.0390625,
+          "censored_pairs": 5,
+          "lower": 0.2890625,
+          "n": 128,
+          "upper": 0.3671875
+        },
+        "TreeStrap": {
+          "censored": 2,
+          "censored_fraction": 0.015625,
+          "censored_pairs": 2,
+          "lower": 0.0078125,
+          "n": 128,
+          "upper": 0.0390625
+        },
+        "WDL": {
+          "censored": 1,
+          "censored_fraction": 0.0078125,
+          "censored_pairs": 1,
+          "lower": 0.1796875,
+          "n": 128,
+          "upper": 0.1953125
+        }
+      },
+      "endpoints": {
+        "TD": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 4,
+            "draw": 14,
+            "loss": 49,
+            "win": 61
+          },
+          "censored": 4,
+          "censored_fraction": 0.03125,
+          "lower": 0.5625,
+          "n": 128,
+          "upper": 0.625
+        },
+        "TreeStrap": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 1,
+            "draw": 14,
+            "loss": 58,
+            "win": 55
+          },
+          "censored": 1,
+          "censored_fraction": 0.0078125,
+          "lower": 0.28125,
+          "n": 128,
+          "upper": 0.296875
+        },
+        "WDL": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 0,
+            "draw": 16,
+            "loss": 54,
+            "win": 58
+          },
+          "censored": 0,
+          "censored_fraction": 0.0,
+          "lower": 0.453125,
+          "n": 128,
+          "upper": 0.453125
+        },
+        "initial": {
+          "actual_wdl": {
+            "censored_unknown_or_missing": 1,
+            "draw": 23,
+            "loss": 57,
+            "win": 47
+          },
+          "censored": 1,
+          "censored_fraction": 0.0078125,
+          "lower": 0.2578125,
+          "n": 128,
+          "upper": 0.2734375
+        }
+      }
+    }
+  },
+  "cap_40000_minus_20000_endpoint_reward_bounds": {
+    "TD": {
+      "lower": -0.2578125,
+      "n": 128,
+      "upper": 0.4921875
+    },
+    "TreeStrap": {
+      "lower": -0.2734375,
+      "n": 128,
+      "upper": 0.3203125
+    },
+    "WDL": {
+      "lower": -0.15625,
+      "n": 128,
+      "upper": 0.375
+    },
+    "initial": {
+      "lower": -0.078125,
+      "n": 128,
+      "upper": 0.625
+    }
+  },
+  "cap_effect_on_endpoint_minus_initial_bounds": {
+    "TD": {
+      "lower": -0.8828125,
+      "n": 128,
+      "upper": 0.5703125
+    },
+    "TreeStrap": {
+      "lower": -0.8984375,
+      "n": 128,
+      "upper": 0.3984375
+    },
+    "WDL": {
+      "lower": -0.78125,
+      "n": 128,
+      "upper": 0.453125
+    }
+  },
+  "missing_game_rows": 0,
+  "observed_game_rows": 1024,
+  "observed_query_rows": 148208,
+  "paid_nodes_from_query_receipts": 16443208,
+  "registered_slots": 1024,
+  "run_summary": {
+    "actual": 1024,
+    "actual_terminal": 859,
+    "all_slots_recorded_or_explicitly_missing": true,
+    "expected": 1024,
+    "missing": 0,
+    "missing_slots": [],
+    "nodes": 16443208,
+    "queries": 148208,
+    "seconds": 2225.821737600025,
+    "slots_20000": 512,
+    "slots_40000": 512,
+    "status": "COMPLETE",
+    "task": "DEV_AUX2617",
+    "unknown": 165,
+    "unknown_is_draw": false
+  },
+  "run_summary_present": true,
+  "scope": "finite randomized 32-family panel; bounds vary only actual UNKNOWN/missing outcomes over [-1,+1]; no confidence interval or population claim",
+  "status": "FINITE_PANEL_BOUNDS",
+  "task": "DEV_AUX2617",
+  "unknown_is_draw": false
+}
