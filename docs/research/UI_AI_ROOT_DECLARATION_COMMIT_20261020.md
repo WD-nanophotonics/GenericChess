@@ -46,7 +46,9 @@ AI turn, and pauses the clock. Assessor-derived `LOSS`, `RESTART`, and
 `NO_CONTEST` decisions also pass through the controller and preserve the
 authoritative winner/status; the normal AI's actual root choice remains the
 WIN case. A separate caller input with an unavailable declaration ID checks
-fail-closed behavior plus retry suppression. The selected product modules
+fail-closed behavior plus retry suppression. Both `GameSession.replay()` and
+the controller's public save/open record path preserve the terminal
+declaration and unchanged board. The selected product modules
 `test_ai_match.py`, `test_ui_controller.py`, `test_ui_lifecycle.py`,
 `test_ui_app.py`, and `test_generic_declaration_semantics.py` passed together.
 

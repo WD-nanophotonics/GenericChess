@@ -2124,7 +2124,9 @@ preserves ordinary action/cancellation/stale guards. An invalid declaration
 fails closed and suppresses an automatic retry until the user resumes the AI.
 Focused regressions exercise the actual AlphaBeta root WIN plus
 assessor-derived LOSS/RESTART/NO_CONTEST caller decisions and an unavailable
-ID; the relevant five UI/match/declaration product modules pass.
+ID; the relevant five UI/match/declaration product modules pass. The new
+controller-level save/open regression also confirms the session-owned terminal
+declaration round-trips without a UI sidecar field.
 This is a concrete UIController consumer correctness repair, not a search,
 backend API, benchmark, or UI Test change. Scope and limits:
 `UI_AI_ROOT_DECLARATION_COMMIT_20261020.md`.

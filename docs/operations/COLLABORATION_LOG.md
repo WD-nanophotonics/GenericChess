@@ -5649,7 +5649,9 @@ authoritative `GameSession.declare()` path, retained normal stale/cancel guards,
 closed the match clock and prevented repeated retries after an invalid result.
 Regression coverage runs the actual AlphaBeta WIN choice, assessor-derived
 LOSS/RESTART/NO_CONTEST decisions and an unavailable ID; the five affected
-product modules all passed. No benchmark or search semantics
+product modules all passed. An additional controller save/open round-trip
+preserves the declaration through the session record without a UI sidecar.
+No benchmark or search semantics
 changed, and no UI Test branch/app was touched. This is one custom declaration
 fixture, not all-outcome or all-rules UI proof; see
 `docs/research/UI_AI_ROOT_DECLARATION_COMMIT_20261020.md`.

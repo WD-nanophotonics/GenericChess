@@ -98,7 +98,7 @@ def test_ai_plays_first_when_ai_is_side_0():
     assert ctrl.session.state.position.side_to_move == 1
 
 
-def test_ai_root_declaration_finishes_match_through_session_and_stops_clock():
+def test_ai_root_declaration_finishes_match_through_session_and_stops_clock(tmp_path):
     from test_generic_declaration_semantics import _claim_ruleset
     from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
     from generic_chess.ai.limits import SearchLimits
@@ -162,6 +162,14 @@ def test_ai_root_declaration_finishes_match_through_session_and_stops_clock():
 
     replayed = GameSession.replay(ctrl.compiled, record)
     assert replayed.result == ctrl.session.result
+
+    record_path = tmp_path / "ai-root-declaration.json"
+    assert ctrl.save_record(str(record_path))
+    restored = _controller()
+    assert restored.new_game_from_ruleset(_claim_ruleset())
+    assert restored.open_record(str(record_path))
+    assert restored.session.result == ctrl.session.result
+    assert restored.session.state == before_state
 
 
 @pytest.mark.parametrize(
