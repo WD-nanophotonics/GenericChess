@@ -51,6 +51,9 @@ internally for proposal acceptance, but must not emit a strength conclusion or
 reuse those roots for final training/evaluation. Recompute the final expected
 all-in cost from all three methods and evaluation after pinning the exact runner.
 
-The task2618 93.47m estimate currently uses task2568's WDL runtime and is
-therefore provisional. Keep the proposed 110m all-in cap; if the revised
-expected run reaches 120m, consult Dot before launching the full comparison.
+The earlier 93.47m estimate used task2568's WDL runtime and is superseded.
+The later common-path cost-only estimate is 95.768m, with the same 110m cap;
+it scales 400k-node shared AlphaBeta/Receipt scans for all three methods and
+uses the slower complete evaluation panel. It remains a planning estimate, not
+a guarantee. If the final bundled estimate reaches 120m, consult Dot before
+launching the full comparison.

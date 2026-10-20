@@ -1491,22 +1491,12 @@ justify changing a learner/default. If the all-in run estimate reaches 120min,
 send its necessity question to Dot before launch; otherwise preserve the
 existing cap policy. The scientific state remains OPEN.
 
-DEV_AUX2618 completed an outcome-blind, source-hash-bound cost feasibility
-audit for that whole-learner comparison. Using 4M-node TreeStrap (532.797s),
-the slower historical 4M-node TDLeaf measurement (513.875s), 4M-node WDL
-control (494.221s), and the slower complete 1,024-slot four-endpoint
-evaluation (2,225.822s), plus 25% runtime margin and a 900s setup/audit reserve,
-the projection is 93.47m. Proposed phase caps sum to 110m (35m training, 60m
-evaluation, 15m reserve), below the 120m Dot-assessment threshold. The script
-reads aggregate timing receipts only; no task2618 roots, seeds, outcomes or
-weights were selected. Historical result rows were inspected during
-source-shape review, as clarified below. This replaces the older rough 53–67m estimate, not
-the protocol draft or its unregistered status. Before registration, generate
-fresh exact-history-disjoint training/evaluation roots and recompute cost after
-pinning the complete runner/source bundle. If that revised estimate reaches
-120m, consult Dot before start; preserve all missing/UNKNOWN slots at caps.
-Evidence: `results/dev_aux/task2618/FEASIBILITY.md`, `feasibility.py`,
-`feasibility.json`, and `test_feasibility.py`. Research remains OPEN.
+DEV_AUX2618 first completed a cost feasibility estimate (93.47m) using
+historical training timings; that estimate is superseded by the common-path
+audit below. The original estimate was outcome-blind but was not source-matched
+to the later shared AlphaBeta/Receipt WDL adapter. The protocol remained
+unregistered. Evidence and the source-shape exposure correction are retained
+below; science remains OPEN.
 
 Correction to the task2618 feasibility claim: its calculator reads only
 aggregate cost fields, but manual inspection of task2594/task2568 historical
@@ -1529,19 +1519,30 @@ every historical runner. Roots are prospective and not registered. Evidence:
 `results/dev_aux/task2619/ROOT-FEASIBILITY.md`, `root_feasibility.py`, and its
 root manifests/result JSON.
 
-The task2618 93.47m estimate is not the final runner estimate: WDL's 4M timing
-comes from task2568 `TrainingSearch`, whereas the proposed learner comparison
-uses task2612's shared `AlphaBeta`/`Receipt` path. A pure WDL receipt adapter now
-implements the frozen proposal seed/formula, exact four-game order, White-to-
-learner reward orientation, full `[-1,+1]` UNKNOWN intervals, strict-positive
-paired acceptance and combined candidate/foe node-cap accounting. Seven focused
-adapter tests and the source-bound feasibility test pass with the bundled Python
-standard library runner. This verifies the arithmetic/contract only; the adapter
-is not yet wired into a gameplay loop and no shared-path WDL cost scan has run.
-Next integrate it with task2612's `AlphaBeta`/`Receipt` runner, test actual
-terminal replay and partial-block handling, then run a bounded outcome-blind
-cost scan on the 512 prospective training roots only (never the 32 evaluation
-roots). Count candidate+foe nodes and partial work. Recompute the final all-in
-estimate; keep the cap at 110m and obtain Dot assessment before launch only if
-that revised expected duration reaches 120m. No task2618 training or evaluation
-has been registered or launched; science remains OPEN.
+The task2618 shared-path WDL follow-through is complete as a bounded cost scan,
+not a fitness run. The pure receipt adapter was wired to the task2612
+`AlphaBeta`/`Receipt` search and fixed-foe route. A write-once plan bound four
+seeds, the first 32 exact eight-ply task2619 training roots (never evaluation
+roots), all relevant source hashes, a combined candidate+foe cap of 100k nodes
+per seed, and a 900s wall cap. Preflight replay passed for every selected root.
+The scan spent 400k nodes in 53.134s; each seed completed one paired block,
+with remaining games censored as UNKNOWN/partial. It persisted no W/L/D labels,
+acceptance decisions, proposal values or coefficients. Three post-run audit
+tests plus the seven adapter tests and source-bound feasibility test pass.
+Task2612 attempt-4 separately spent 400k shared-path nodes on each of
+TreeStrap and TDLeaf in 56.527s and 55.445s, without persisting labels or
+weights. Scaling all three methods' 400k-node cost-only receipts linearly to
+4M paid nodes gives training projections of 565.267s TreeStrap, 554.453s
+TDLeaf and 531.339s WDL. With the slower complete evaluation, 25% margin and
+900s reserve, the current estimate is 95.768m, below the unchanged 110m cap and
+the 120m Dot-assessment threshold. This is a planning estimate, not a runtime
+guarantee or learning result. The common learner, evaluation, and finite-panel
+analysis runners now have focused unit coverage; the full comparison remains
+unregistered. Before
+launch freeze and hash all roots, arms, foes, endpoints, cost accounting,
+evaluators, audits and cap semantics. Do not resume/top up either cost scan.
+Evidence:
+`results/dev_aux/task2618/SHARED_WDL_COST_REPORT.md` and
+`results/dev_aux/task2618/wdl-shared-cost/`,
+`results/dev_aux/task2618/feasibility.py`, and
+`results/dev_aux/task2618/feasibility.json`. Science remains OPEN.
