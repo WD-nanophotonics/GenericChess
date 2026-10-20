@@ -138,7 +138,7 @@ def test_default_curve_does_not_sample_equivalent_encodings(monkeypatch):
 
 
 def test_default_profile_version_is_exact_generation():
-    assert EvaluationConfig().evaluator_version == 'generic-v3'
+    assert EvaluationConfig().evaluator_version == 'generic-v4'
 
 
 @pytest.mark.parametrize('shape', [5, BoardShape(5, 3)])

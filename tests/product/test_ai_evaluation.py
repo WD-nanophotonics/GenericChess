@@ -65,6 +65,57 @@ def test_anchor_not_in_material():
     assert profile.piece_profiles["K"].normalized_hand_value == 0
 
 
+def test_unreachable_declaration_does_not_rescale_reachable_static_values():
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.rules.compiler import compile_ruleset
+
+    rows = ["...k", "....", "R...", "K..."]
+    reachable_rules = make_ruleset(
+        4, [king_type(), T("R", RayAtom((1, 0)))], rows,
+    )
+    decorated_rules = make_ruleset(
+        4, [king_type(), T("R", RayAtom((1, 0))), T("X", LeapAtom((1, 1)))], rows,
+    )
+    reachable = compile_ruleset(reachable_rules)
+    decorated = compile_ruleset(decorated_rules)
+    config = _config()
+    base_profile = build_ruleset_profile(reachable, config)
+    decorated_profile = build_ruleset_profile(decorated, config)
+
+    assert base_profile.board_value_by_type["R"] == 1000
+    assert decorated_profile.board_value_by_type["R"] == 1000
+    assert decorated_profile.median_non_anchor_value == base_profile.median_non_anchor_value
+    assert "X" in decorated_profile.board_value_by_type  # diagnostic remains available
+
+    base_state = make_state(reachable, rows)
+    decorated_state = make_state(decorated, rows)
+    assert legal_actions(base_state, reachable) == legal_actions(decorated_state, decorated)
+    assert Evaluator(reachable, base_profile, config).evaluate(base_state) == Evaluator(
+        decorated, decorated_profile, config
+    ).evaluate(decorated_state)
+
+
+def test_profile_reachability_includes_enabled_promotion_targets():
+    from generic_chess.ai.evaluation.profile import _initially_reachable_type_ids
+    from generic_chess.rules.compiler import compile_ruleset
+
+    rules = make_ruleset(
+        4,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G",)),
+            T("G", RayAtom((1, 0))),
+            T("X", LeapAtom((1, 0))),
+        ],
+        ["...k", "....", "P...", "K..."],
+        auto_promotion=True,
+    )
+    compiled = compile_ruleset(rules)
+    reachable = _initially_reachable_type_ids(compiled)
+    assert {"K", "P", "G"} <= reachable
+    assert "X" not in reachable
+
+
 @pytest.mark.parametrize('atoms', [
     (LeapAtom((0, 1)),),
     (LeapAtom((0, 1)),) * 2,

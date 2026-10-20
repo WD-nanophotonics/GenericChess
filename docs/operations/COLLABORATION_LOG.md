@@ -5737,3 +5737,21 @@ DeepSeek executor/monitoring is part of this patrol, no Dot contact is used, and
 the existing hourly recurrence remains unchanged. Exact private Chat evidence is
 in ignored `.local_agent`; the project copy is publication-checked. No new
 cross-role coordination, science review or routing was initiated.
+
+## PRIMARY_SANDBOX — unreachable-type normalization consistency — 2026-10-20
+
+PRIMARY found and repaired a legacy static-profile scale inconsistency caused by
+unreachable generated type declarations. The repair uses reachable starting,
+hand and enabled-promotion types for normalization, preserves diagnostic rows
+for all declarations, falls back conservatively for semantic executables, and
+bumps the evaluator version for cache invalidation. A deterministic 320-rule
+profile/action comparison and 190 active AI evaluation/cache/search/match/budget,
+semantic and rectangular tests passed. The version bump exposed one stale exact
+generic-v3 assertion, corrected to generic-v4 after preserving the failure;
+the evidence does not establish search-strength benefit or full semantic-domain
+valuation. No DEV_AUX checkout, source, state or computation was read, modified
+or integrated; no cross-role dependency or coordination was needed. The hourly
+project-Chat read was attempted once but its response could not be serialized by
+the capture wrapper, so this patrol makes no claim about new Chat comments; the
+failure is retained privately and the read will be retried on a later patrol.
+Evidence and limits: `docs/research/UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.

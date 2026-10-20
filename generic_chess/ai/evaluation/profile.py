@@ -93,6 +93,51 @@ def require_default_profile_metadata(compiled):
         )
 
 
+def _initially_reachable_type_ids(compiled: CompiledRuleSet) -> set[str]:
+    """Conservatively close piece types over known legacy transitions.
+
+    Captures to hand preserve a reachable piece's base type, and drops restore
+    that same type. The legacy ruleset can introduce a new current type only
+    through an enabled promotion edge. Square-level promotion feasibility is
+    intentionally over-approximated: including an impossible target is safer
+    than allowing an actually reachable type to alter the normalization law.
+
+    Semantic executables may change current types through arbitrary effects;
+    until that transition graph is explicitly analyzed, keep every declared
+    type in their normalization set.
+    """
+    if hasattr(compiled, "ir"):
+        return set(compiled.types_by_id)
+
+    reachable: set[str] = set()
+    positions = (compiled.initial_position, *compiled.initial_setup_positions.values())
+    for position in positions:
+        for piece in position.board:
+            if piece is not None:
+                reachable.add(piece.base_type_id)
+                reachable.add(piece.current_type_id)
+        for owner in (0, 1):
+            reachable.update(
+                type_id for type_id, count in position.hands[owner].counts if count > 0
+            )
+
+    changed = True
+    while changed:
+        changed = False
+        for type_id in tuple(reachable):
+            piece_type = compiled.types_by_id.get(type_id)
+            if piece_type is None or not piece_type.is_promotable:
+                continue
+            allowed = compiled.promotion_allowed.get(type_id, ())
+            if not any(owner_pairs for owner_pairs in allowed):
+                continue
+            for target_id in piece_type.promotion_target_ids:
+                if target_id in compiled.types_by_id and target_id not in reachable:
+                    reachable.add(target_id)
+                    changed = True
+    return reachable
+
+
 def build_ruleset_profile(
     compiled: CompiledRuleSet,
     config: EvaluationConfig,
@@ -122,7 +167,16 @@ def build_ruleset_profile(
         if not pt.is_anchor:
             ordinary.append(pt)
 
-    median_raw = _median([raw[pt.type_id] for pt in ordinary]) if ordinary else 0.0
+    reachable_type_ids = _initially_reachable_type_ids(compiled)
+    normalization_types = [pt for pt in ordinary if pt.type_id in reachable_type_ids]
+    # A ruleset with no reachable ordinary type still needs finite diagnostics;
+    # in that degenerate case retain the historical all-declared fallback.
+    if not normalization_types:
+        normalization_types = ordinary
+    median_raw = (
+        _median([raw[pt.type_id] for pt in normalization_types])
+        if normalization_types else 0.0
+    )
     scale = config.normal_piece_median_value
 
     def normalized_board(type_id: str, is_anchor: bool) -> int:
@@ -170,7 +224,10 @@ def build_ruleset_profile(
             is_promotable=pt.is_promotable,
         )
 
-    median_value = _median([board_value[pt.type_id] for pt in ordinary]) if ordinary else 0
+    median_value = (
+        _median([board_value[pt.type_id] for pt in normalization_types])
+        if normalization_types else 0
+    )
     return RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint,
         schema_version=1,

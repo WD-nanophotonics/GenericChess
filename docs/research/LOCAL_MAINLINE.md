@@ -2340,3 +2340,28 @@ feasibility. Treat this as a bounded screen, not a population estimate; defer
 prefix cursors and retain atomic complete actions. The source report records
 two pre-search harness setup failures and the corrected successful single run;
 no search nodes were spent in either failed attempt.
+
+## PRIMARY_SANDBOX — exclude unreachable legacy types from price normalization — 2026-10-20
+
+A generated 6x6 ruleset contained an ordinary declared type outside the initial
+type closure and reachable promotion graph. Removing only that declaration
+preserved the reachable state and legal actions, but the previous all-declared
+median rescaled every reachable static price and changed the same state's
+material/full score by 108 points while dynamic terms stayed fixed. PRIMARY
+now normalizes legacy profiles over types reachable from all compiled initial
+setups and enabled promotions, while retaining diagnostic values for every
+declared type. Semantic executables conservatively retain all declarations
+because semantic effects can introduce types outside legacy promotion data.
+The profile version is `generic-v4` to invalidate old cached profiles.
+
+A fresh 320-rule, four-size/two-preset sample contained 65 rules with
+unreachable ordinary declarations; after the repair, all reachable prices and
+initial legal-action sets matched their declaration-removed equivalents in all
+65. The focused evaluator/cache/semantic/rectangular suite passed 109 tests,
+including the updated exact `generic-v4` default-version assertion; the broader
+active AI evaluation/cache/search/match/budget plus semantic and rectangular set
+passed 190 tests. This restores a scoped equivalent-rule normalization
+invariant; it does not show better search utility, all-domain semantic pricing, or action/outcome
+equivalence. Details and limits: `UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
+Keep the current mainline candidates unchanged; the new evidence warrants this
+consistency repair, not a broader price-transfer or search-default claim.
