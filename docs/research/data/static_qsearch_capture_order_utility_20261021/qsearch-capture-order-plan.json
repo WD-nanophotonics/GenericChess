@@ -1,0 +1,98 @@
+{
+  "arms": {
+    "candidate": [
+      "unit_q_order",
+      "static_v2_q_order"
+    ],
+    "candidate_only_change": "Both candidate arms use Unit leaf evaluation, Unit normal capture ordering, Unit promotion ordering, same legal actions and qsearch settings. Only inside the existing _order_qactions call, candidate capture_order_value is Unit versus static-v2. This test-only proxy is not a product API and does not change production code.",
+    "fixed_foe": "Unit leaf, Unit normal move ordering and Unit qsearch ordering in both arms.",
+    "physical_games": "8 rules x 2 roots x 2 candidate owners x 2 candidate arms = 64"
+  },
+  "changed_premise": "Existing default and staged capture/promotion price panels used qdepth=0. The actual optional qsearch path calls _order_qactions -> MoveOrderer.order -> Evaluator.capture_order_value. A one-root outcome-free probe verified the qsearch-only proxy reaches this hook while normal capture-order calls remain Unit in both arms. This does not establish utility.",
+  "cost": {
+    "basis": "Prior matched 64-game q0 panels completed in roughly 223-247 seconds; qdepth2 adds capped qsearch work. Per-search cap is 0.5s and 128 qnodes, one fixed 64-slot panel, plus replay/audit. Estimate is below 120 minutes.",
+    "cheaper_alternative": "Stop after outcome-free preflight and close as untested if fewer than 8 of 16 roots trigger qsearch capture ordering or estimated full-panel runtime exceeds 3600 seconds.",
+    "expected_seconds": 900,
+    "hard_cap_seconds": 3600
+  },
+  "integrity": [
+    "Freeze plan before outcomes. Record all 64 slots once; no outcome-based root filtering, seed replacement, cap extension or rerun.",
+    "Preserve promotion, drops, hands, auxiliary state, repetition, and full histories; validate action legality and replay each full record.",
+    "Keep UNKNOWN, cancellation, terminal, incomplete and cap outcomes distinct.",
+    "No training, no solver, no product/default source changes and no other role checkout/state access."
+  ],
+  "pre_outcome_execution_amendment": {
+    "execution_only": true,
+    "max_candidate_plies": 48,
+    "prior_plan_sha256": "a748263a3570365216921808182d6d1114f74dcfc5610d861d168ab5b67fdf26",
+    "qsearch_intervention": "A test-only wrapper around the production _order_qactions call temporarily substitutes the candidate q-order evaluator, then restores the Unit main evaluator before recursion; the wrapper never changes main-search MoveOrderer calls or leaf evaluation.",
+    "reason": "The frozen matched-game runner requires an explicit candidate-ply horizon; omitted from the initial pre-outcome plan. No outcomes existed when amended."
+  },
+  "question": "On fresh generated 5x5 roots, does changing only the candidate's qsearch capture ordering from Unit to static-v2 alter conservative finite-budget utility or robust node cost, with normal ordering and Unit leaf values fixed?",
+  "retention": {
+    "retain_sampled_route_if": "Either conservative reward lower bounds are strictly positive in every listed view, or median paired candidate-node reduction is at least 10% overall and in both owners and both parities while no corresponding conservative reward lower bound is negative. Otherwise close this sampled qsearch candidate.",
+    "reward": "Compare candidate qsearch price against Unit qsearch price on exact matched root/owner with the same fixed Unit foe. Every unresolved/UNKNOWN pair contributes independently [-1,+1] before conservative subtraction; never impute.",
+    "robustness_views": [
+      "overall",
+      "candidate_owner",
+      "3/4-ply root parity",
+      "leave-one-rule-seed-out"
+    ],
+    "scope": "No product/default/global price change, no population/strength claim, no rerun/top-up or favorable subgroup selection."
+  },
+  "roots": {
+    "candidate_owners": [
+      0,
+      1
+    ],
+    "opening_seed_formula": "rule_seed*1000000+family_index",
+    "prefix_plies": [
+      3,
+      4
+    ],
+    "selection": "Use every generated rule and both prescribed roots. Do not select/filter/replace based on action exposure, qsearch calls, profile, outcomes, cap use or cost. Preserve terminal-before-search or no-hook roots as such; no top-up."
+  },
+  "rules": {
+    "allow_hybrid": true,
+    "board_size": 5,
+    "max_generation_attempts": 16,
+    "require_nonpromotable_type": true,
+    "require_promotable_type": true,
+    "seeds": [
+      622101,
+      622102,
+      622103,
+      622104,
+      622105,
+      622106,
+      622107,
+      622108
+    ],
+    "setup_schedule": [
+      "classic_like",
+      "bilateral_random",
+      "free_random"
+    ],
+    "symmetry_schedule": [
+      "bilateral",
+      "none"
+    ]
+  },
+  "schema": "primary-static-qsearch-capture-order-utility-v1",
+  "search": {
+    "max_candidate_plies": 48,
+    "max_depth": 3,
+    "max_nodes": 8192,
+    "max_time_seconds": 0.5,
+    "quiescence_hard_max_depth": 2,
+    "quiescence_max_depth": 2,
+    "quiescence_max_nodes": 128,
+    "use_ordered_qsearch": true,
+    "use_ordered_qsearch_in_check": true,
+    "use_ordering": true,
+    "use_staged_move_picker": false,
+    "use_tt": false
+  },
+  "session_id": "d427542d-8462-4080-ab3d-28923b2f3472",
+  "source_head": "e009c4a531aebd21bf8d07cb2115b43786cc3d94"
+}

@@ -1,0 +1,20 @@
+{
+  "execution_start_note": "The preserved execution-start.json is an immutable start receipt; its status remains ACTIVE because the original producer never rewrites it on completion. The separate result.json is COMPLETE and records all 64 slots; no work remains active.",
+  "expected_slots": 64,
+  "file_sha256": {
+    "analysis.json": "550AC56251B84E6F1ED7758B97CF9D6ED3E592CE2CAC959213E8B664D9ADF019",
+    "execution-start.json": "A4A4169A6911FF0D633E5A5ED2E7F5C4E1D2D1B1D68F26F2A76D0FC8208D5DF8",
+    "games.jsonl": "2ABEE825CD331ED51D0F9F86370759685155DB0CA9C774064A1F5A5DEEB65611",
+    "result.json": "D45A4820E7F5E1B261BEC1A71EC30230E7D12CE24419843A6044F57F7842A684",
+    "roots.json": "5C5722E0DC0B77B49E2A496100DE1D806333FAD498C462AAA525AEF23B0B3415"
+  },
+  "invalid_actions": 0,
+  "plan_sha256": "0B9D5E434BFF4E2B11B089EDC65D515D46FC64CB4FA3982B558DA2D5C178CEEF",
+  "replay_mismatches": 0,
+  "result_authority": "promotion-utility-run/result.json",
+  "returned_slots": 64,
+  "schema": "primary-static-staged-promotion-order-closure-v1",
+  "source_head": "d76174241b534ecda62c94a1185a47b765a39813",
+  "status": "COMPLETE",
+  "unstarted_slots": 0
+}

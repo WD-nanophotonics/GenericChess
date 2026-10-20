@@ -1,0 +1,88 @@
+{
+  "arms": {
+    "candidate_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "candidates": [
+      "unit_leaf__unit_order",
+      "static_v2_leaf__unit_order"
+    ],
+    "color_swap": "Both candidate owners on each of 16 exact roots versus unchanged Unit-board/Unit-hand, no-dynamic Unit-order foe; candidate and foe budgets are identical.",
+    "fixed_foes": [
+      "unit"
+    ],
+    "foe_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "physical_games": 64,
+    "root_window_pruning": false,
+    "tt_megabytes": 0
+  },
+  "changed_premise": "The preceding board-only 530201-530208 panel used only four-ply roots, so candidate owner 0 was always first to move and owner was confounded with first/reply role. This fresh cohort alternates three- and four-ply roots within every rule; each color is candidate-first on one parity and replying on the other. No outcome pooling. Seed feasibility is screened before outcomes: only exact ongoing 3/4-ply roots are accepted, so this cohort is conditional on that limited playability filter.",
+  "contrasts": {
+    "static_board_minus_unit_board": {
+      "static_v2_leaf__unit_order": 1,
+      "unit_leaf__unit_order": -1
+    },
+    "unknowns": "Independently bound every UNKNOWN reward in each paired contrast by [-1,+1]; report pooled, owner, first/reply, owner-by-role and seed strata. Keep paired roots and full histories.",
+    "role": "Derive first/reply from the candidate owner and the exact root side-to-move, not from color labels."
+  },
+  "cost": {
+    "expected": "Under four minutes based on the completed 64-game single-process D3 panel (225.453 seconds); hard cap 2400 seconds.",
+    "hard_cap_seconds": 2400,
+    "cheaper_alternative": "A replay-only role-label calculation cannot identify outcome sensitivity; this is the smallest 64-slot design that balances the two colors across both root-side-to-move roles."
+  },
+  "decision": "Compare treatment bounds by owner and by candidate-first/reply strata. A pattern that changes by role rather than color is only descriptive finite-sample role association because three- and four-ply roots also differ in state. Do not retain the board-only candidate as owner-robust unless all-owner and all first/reply conservative lower bounds are strictly positive and the paired median-node cost gate passes. No population, causal role, price law, global default or strength claim.",
+  "integrity": [
+    "No training, solver, auxiliary checkout, outcome pooling or product/default changes.",
+    "Both arms and fixed foe use Unit hand values, no optional dynamic/spatial/compact terms, and Unit ordering.",
+    "Use fresh seeds, three/four-ply roots, D3/8192-node/0.5-second/q0/TT0/root-window-off budgets; preserve outcomes, UNKNOWNs, promotions, drops, full histories, work counts and wall costs."
+  ],
+  "question": "In a fresh 5x5 D3 sample with three- and four-ply roots balanced across candidate colors, does the board-only treatment pattern align more with candidate-first/reply role or with color owner?",
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies_by_family": [
+      3,
+      4
+    ],
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "terminal_prefixes": "For this panel require every planned 3/4-ply root to remain ongoing after exactly the requested prefix; if any selected root fails, abort before games and revise the plan. No terminal or short roots are silently included.",
+    "selection": "Each rule has one three-ply family root (side 1 moves first when the full prefix is legal) and one four-ply family root (side 0 moves first). Both candidate colors are played on each exact root."
+  },
+  "rules": {
+    "allow_hybrid": true,
+    "board_size": 5,
+    "generation_attempts": 16,
+    "movement_symmetry_by_seed_order": [
+      "bilateral",
+      "none"
+    ],
+    "opening_win_filter": false,
+    "require_nonpromotable_type": true,
+    "require_promotable_type": true,
+    "seeds": [
+      530301,
+      530302,
+      530303,
+      530304,
+      530305,
+      530306,
+      530308,
+      530310
+    ],
+    "selection": "Candidate seeds were scanned in ascending order before any outcome run. Reject only a seed whose deterministic 3- or 4-ply prefix is already terminal before the exact planned root; assign setup/movement configs by accepted slot index. Rejected 530307 at slot6 and 530309 at slot7; accept 530308 and 530310. Then rebuild and replay every outcome. This feasibility filter is not an outcome-based replacement.",
+    "setups_by_seed_order": [
+      "classic_like",
+      "bilateral_random",
+      "free_random"
+    ]
+  },
+  "schema": "primary-static-5x5-d3-board-leaf-role-balance-v1",
+  "source_head": "e009c4a531aebd21bf8d07cb2115b43786cc3d94"
+}

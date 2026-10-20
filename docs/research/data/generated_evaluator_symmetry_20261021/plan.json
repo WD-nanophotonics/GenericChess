@@ -1,0 +1,21 @@
+{
+  "question": "On fresh generated rules whose movement and opening setup are 180-degree owner-symmetric, does the production rule-derived evaluator return equal side-to-move scores for states related by a legal mirrored history?",
+  "changed_premise": "Current symmetry coverage checks generated legal-action mirroring, while evaluator symmetry tests cover fixed legacy rooks and standard Shogi. No existing test measures the default evaluator on varied generated-rule profiles and legal histories.",
+  "scope": "Eight prospective 6x6 classic-like rules generated with bilateral movement; one deterministic legal history per rule, audited through at most 20 plies. Compare the exact mirrored action sets and default Evaluator scores at each reached state. No search, WDL, training or outcome selection.",
+  "rule_seeds": [863201, 863202, 863203, 863204, 863205, 863206, 863207, 863208],
+  "controls": {
+    "board_size": 6,
+    "setup_preset": "classic_like",
+    "movement_symmetry": "bilateral",
+    "allow_hybrid": true,
+    "history_seed": "rule_seed XOR 0x5A17",
+    "history_selection": "uniform index from sorted exact legal-action strings; mirrored counterpart must be legal",
+    "sample_every_ply": 1,
+    "max_plies_per_rule": 20,
+    "max_total_runtime_seconds": 1200
+  },
+  "decision_rule": "First verify opening positions and every sampled transition are exact 180-degree owner-swap isomorphs by comparing transformed legal-action sets. For every valid mirrored state pair, default Evaluator scores should be equal because scores are side-to-move-relative. If any mismatch appears, preserve the witness and diagnose rule/setup/auxiliary transform and evaluator terms before considering a product change; do not alter an expected value to match output. If all pairs match, close only this finite profile/history screen and do not claim search symmetry or population coverage.",
+  "expected_duration_seconds": 600,
+  "hard_cap_seconds": 1200,
+  "artifacts": ["audit.py", "result.json"]
+}

@@ -1,0 +1,1196 @@
+{
+  "delta_histogram_all_plies": {
+    "-1": 419,
+    "-2": 291,
+    "-3": 21,
+    "-4": 3,
+    "0": 784,
+    "1": 403,
+    "2": 197,
+    "3": 24
+  },
+  "full_games": 64,
+  "games_sha256": "BE89BE5DE696E8D12FD095FB8F06720822E08B95AACCF58B029FFEC484576D88",
+  "method": "Regenerate the eight sealed rules; replay every recorded move through GameSession.submit; at each pre-move state compare the production Evaluator with promotion_potential_weight 0 and 3, holding the exact same default profile and all other EvaluationConfig fields fixed.",
+  "paired_candidate_decisions": {
+    "different_actions_at_same_state": 3,
+    "pairs": [
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 4,
+        "on_candidate_decisions": 4,
+        "root_id": "622099-0",
+        "same_full_history_candidate_states": 4
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 5,
+        "on_candidate_decisions": 5,
+        "root_id": "622099-0",
+        "same_full_history_candidate_states": 5
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 1,
+        "on_candidate_decisions": 1,
+        "root_id": "622099-1",
+        "same_full_history_candidate_states": 1
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622099-1",
+        "same_full_history_candidate_states": 0
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 47,
+        "on_candidate_decisions": 47,
+        "root_id": "622100-0",
+        "same_full_history_candidate_states": 47
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 47,
+        "on_candidate_decisions": 47,
+        "root_id": "622100-0",
+        "same_full_history_candidate_states": 47
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622100-1",
+        "same_full_history_candidate_states": 48
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622100-1",
+        "same_full_history_candidate_states": 48
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 24,
+        "on_candidate_decisions": 24,
+        "root_id": "622101-0",
+        "same_full_history_candidate_states": 24
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 24,
+        "on_candidate_decisions": 24,
+        "root_id": "622101-0",
+        "same_full_history_candidate_states": 24
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622101-1",
+        "same_full_history_candidate_states": 0
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622101-1",
+        "same_full_history_candidate_states": 0
+      },
+      {
+        "actions_differing_at_same_state": 1,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": "9912C207F752606C9C55C449A7357EA19D7A98CD0855A16DB262BCF9DE527AA5",
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622102-0",
+        "same_full_history_candidate_states": 39
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622102-0",
+        "same_full_history_candidate_states": 48
+      },
+      {
+        "actions_differing_at_same_state": 1,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": "996B05C869BF3403E9EEE4FF30CBD4FCD6B28AD6478C09B06083C2BF5F6599FF",
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622102-1",
+        "same_full_history_candidate_states": 19
+      },
+      {
+        "actions_differing_at_same_state": 1,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": "AA457D972B4E1304E6675E65D45FF18AC8439DDE0BBCD9FF86F85DB3B1707074",
+        "off_candidate_decisions": 48,
+        "on_candidate_decisions": 48,
+        "root_id": "622102-1",
+        "same_full_history_candidate_states": 4
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622103-0",
+        "same_full_history_candidate_states": 0
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 1,
+        "on_candidate_decisions": 1,
+        "root_id": "622103-0",
+        "same_full_history_candidate_states": 1
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 3,
+        "on_candidate_decisions": 3,
+        "root_id": "622103-1",
+        "same_full_history_candidate_states": 3
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 3,
+        "on_candidate_decisions": 3,
+        "root_id": "622103-1",
+        "same_full_history_candidate_states": 3
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 27,
+        "on_candidate_decisions": 27,
+        "root_id": "622104-0",
+        "same_full_history_candidate_states": 27
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 27,
+        "on_candidate_decisions": 27,
+        "root_id": "622104-0",
+        "same_full_history_candidate_states": 27
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 7,
+        "on_candidate_decisions": 7,
+        "root_id": "622104-1",
+        "same_full_history_candidate_states": 7
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 6,
+        "on_candidate_decisions": 6,
+        "root_id": "622104-1",
+        "same_full_history_candidate_states": 6
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 3,
+        "on_candidate_decisions": 3,
+        "root_id": "622105-0",
+        "same_full_history_candidate_states": 3
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 4,
+        "on_candidate_decisions": 4,
+        "root_id": "622105-0",
+        "same_full_history_candidate_states": 4
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 7,
+        "on_candidate_decisions": 7,
+        "root_id": "622105-1",
+        "same_full_history_candidate_states": 7
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 7,
+        "on_candidate_decisions": 7,
+        "root_id": "622105-1",
+        "same_full_history_candidate_states": 7
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622106-0",
+        "same_full_history_candidate_states": 0
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 1,
+        "on_candidate_decisions": 1,
+        "root_id": "622106-0",
+        "same_full_history_candidate_states": 1
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 0,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 1,
+        "on_candidate_decisions": 1,
+        "root_id": "622106-1",
+        "same_full_history_candidate_states": 1
+      },
+      {
+        "actions_differing_at_same_state": 0,
+        "candidate_owner": 1,
+        "example_differing_state_sha256": null,
+        "off_candidate_decisions": 0,
+        "on_candidate_decisions": 0,
+        "root_id": "622106-1",
+        "same_full_history_candidate_states": 0
+      }
+    ],
+    "root_owner_pairs": 32,
+    "same_full_history_candidate_states": 455
+  },
+  "per_game": [
+    {
+      "candidate_decisions": 4,
+      "candidate_delta_histogram": {
+        "1": 4
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 0,
+      "game_id": "622099-0-o0-promotion_gain_off",
+      "root_id": "622099-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 4,
+      "candidate_delta_histogram": {
+        "1": 4
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 0,
+      "game_id": "622099-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622099-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 5,
+      "candidate_delta_histogram": {
+        "-1": 3,
+        "-2": 2
+      },
+      "candidate_nonzero_decisions": 5,
+      "candidate_owner": 1,
+      "game_id": "622099-0-o1-promotion_gain_off",
+      "root_id": "622099-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 5,
+      "candidate_delta_histogram": {
+        "-1": 3,
+        "-2": 2
+      },
+      "candidate_nonzero_decisions": 5,
+      "candidate_owner": 1,
+      "game_id": "622099-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622099-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "-1": 1
+      },
+      "candidate_nonzero_decisions": 1,
+      "candidate_owner": 0,
+      "game_id": "622099-1-o0-promotion_gain_off",
+      "root_id": "622099-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "-1": 1
+      },
+      "candidate_nonzero_decisions": 1,
+      "candidate_owner": 0,
+      "game_id": "622099-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622099-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622099-1-o1-promotion_gain_off",
+      "root_id": "622099-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622099-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622099-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 47,
+      "candidate_delta_histogram": {
+        "0": 19,
+        "1": 14,
+        "2": 13,
+        "3": 1
+      },
+      "candidate_nonzero_decisions": 28,
+      "candidate_owner": 0,
+      "game_id": "622100-0-o0-promotion_gain_off",
+      "root_id": "622100-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 47,
+      "candidate_delta_histogram": {
+        "0": 19,
+        "1": 14,
+        "2": 13,
+        "3": 1
+      },
+      "candidate_nonzero_decisions": 28,
+      "candidate_owner": 0,
+      "game_id": "622100-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622100-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 47,
+      "candidate_delta_histogram": {
+        "-1": 16,
+        "-2": 14,
+        "-3": 2,
+        "0": 15
+      },
+      "candidate_nonzero_decisions": 32,
+      "candidate_owner": 1,
+      "game_id": "622100-0-o1-promotion_gain_off",
+      "root_id": "622100-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 47,
+      "candidate_delta_histogram": {
+        "-1": 16,
+        "-2": 14,
+        "-3": 2,
+        "0": 15
+      },
+      "candidate_nonzero_decisions": 32,
+      "candidate_owner": 1,
+      "game_id": "622100-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622100-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 20,
+        "-2": 20,
+        "0": 8
+      },
+      "candidate_nonzero_decisions": 40,
+      "candidate_owner": 0,
+      "game_id": "622100-1-o0-promotion_gain_off",
+      "root_id": "622100-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 20,
+        "-2": 20,
+        "0": 8
+      },
+      "candidate_nonzero_decisions": 40,
+      "candidate_owner": 0,
+      "game_id": "622100-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622100-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "0": 19,
+        "1": 19,
+        "2": 10
+      },
+      "candidate_nonzero_decisions": 29,
+      "candidate_owner": 1,
+      "game_id": "622100-1-o1-promotion_gain_off",
+      "root_id": "622100-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "0": 19,
+        "1": 19,
+        "2": 10
+      },
+      "candidate_nonzero_decisions": 29,
+      "candidate_owner": 1,
+      "game_id": "622100-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622100-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 24,
+      "candidate_delta_histogram": {
+        "0": 24
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622101-0-o0-promotion_gain_off",
+      "root_id": "622101-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 24,
+      "candidate_delta_histogram": {
+        "0": 24
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622101-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622101-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 24,
+      "candidate_delta_histogram": {
+        "0": 24
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622101-0-o1-promotion_gain_off",
+      "root_id": "622101-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 24,
+      "candidate_delta_histogram": {
+        "0": 24
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622101-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622101-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622101-1-o0-promotion_gain_off",
+      "root_id": "622101-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622101-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622101-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622101-1-o1-promotion_gain_off",
+      "root_id": "622101-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622101-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622101-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 19,
+        "-2": 18,
+        "-3": 2,
+        "-4": 1,
+        "0": 5,
+        "1": 3
+      },
+      "candidate_nonzero_decisions": 43,
+      "candidate_owner": 0,
+      "game_id": "622102-0-o0-promotion_gain_off",
+      "root_id": "622102-0",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 20,
+        "-2": 17,
+        "-3": 3,
+        "0": 5,
+        "1": 3
+      },
+      "candidate_nonzero_decisions": 43,
+      "candidate_owner": 0,
+      "game_id": "622102-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622102-0",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 3,
+        "0": 5,
+        "1": 23,
+        "2": 14,
+        "3": 3
+      },
+      "candidate_nonzero_decisions": 43,
+      "candidate_owner": 1,
+      "game_id": "622102-0-o1-promotion_gain_off",
+      "root_id": "622102-0",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 3,
+        "0": 5,
+        "1": 23,
+        "2": 14,
+        "3": 3
+      },
+      "candidate_nonzero_decisions": 43,
+      "candidate_owner": 1,
+      "game_id": "622102-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622102-0",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 10,
+        "-2": 5,
+        "0": 15,
+        "1": 15,
+        "2": 3
+      },
+      "candidate_nonzero_decisions": 33,
+      "candidate_owner": 0,
+      "game_id": "622102-1-o0-promotion_gain_off",
+      "root_id": "622102-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 5,
+        "0": 20,
+        "1": 19,
+        "2": 4
+      },
+      "candidate_nonzero_decisions": 28,
+      "candidate_owner": 0,
+      "game_id": "622102-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622102-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 16,
+        "-2": 4,
+        "0": 14,
+        "1": 11,
+        "2": 3
+      },
+      "candidate_nonzero_decisions": 34,
+      "candidate_owner": 1,
+      "game_id": "622102-1-o1-promotion_gain_off",
+      "root_id": "622102-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 48,
+      "candidate_delta_histogram": {
+        "-1": 18,
+        "-2": 4,
+        "0": 22,
+        "1": 3,
+        "2": 1
+      },
+      "candidate_nonzero_decisions": 26,
+      "candidate_owner": 1,
+      "game_id": "622102-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622102-1",
+      "terminal_reason": "HORIZON_48_CANDIDATE_UNKNOWN",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622103-0-o0-promotion_gain_off",
+      "root_id": "622103-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622103-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622103-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622103-0-o1-promotion_gain_off",
+      "root_id": "622103-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622103-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622103-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622103-1-o0-promotion_gain_off",
+      "root_id": "622103-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622103-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622103-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622103-1-o1-promotion_gain_off",
+      "root_id": "622103-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622103-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622103-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 27,
+      "candidate_delta_histogram": {
+        "-1": 4,
+        "-2": 4,
+        "0": 10,
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "candidate_nonzero_decisions": 17,
+      "candidate_owner": 0,
+      "game_id": "622104-0-o0-promotion_gain_off",
+      "root_id": "622104-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 27,
+      "candidate_delta_histogram": {
+        "-1": 4,
+        "-2": 4,
+        "0": 10,
+        "1": 4,
+        "2": 3,
+        "3": 2
+      },
+      "candidate_nonzero_decisions": 17,
+      "candidate_owner": 0,
+      "game_id": "622104-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622104-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 27,
+      "candidate_delta_histogram": {
+        "-1": 4,
+        "-2": 5,
+        "-3": 1,
+        "0": 11,
+        "1": 4,
+        "2": 2
+      },
+      "candidate_nonzero_decisions": 16,
+      "candidate_owner": 1,
+      "game_id": "622104-0-o1-promotion_gain_off",
+      "root_id": "622104-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 27,
+      "candidate_delta_histogram": {
+        "-1": 4,
+        "-2": 5,
+        "-3": 1,
+        "0": 11,
+        "1": 4,
+        "2": 2
+      },
+      "candidate_nonzero_decisions": 16,
+      "candidate_owner": 1,
+      "game_id": "622104-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622104-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "0": 3,
+        "1": 3,
+        "2": 1
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 0,
+      "game_id": "622104-1-o0-promotion_gain_off",
+      "root_id": "622104-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "0": 3,
+        "1": 3,
+        "2": 1
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 0,
+      "game_id": "622104-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622104-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 6,
+      "candidate_delta_histogram": {
+        "-1": 2,
+        "-2": 1,
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 3,
+      "candidate_owner": 1,
+      "game_id": "622104-1-o1-promotion_gain_off",
+      "root_id": "622104-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 6,
+      "candidate_delta_histogram": {
+        "-1": 2,
+        "-2": 1,
+        "0": 3
+      },
+      "candidate_nonzero_decisions": 3,
+      "candidate_owner": 1,
+      "game_id": "622104-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622104-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 1,
+        "1": 1,
+        "2": 1
+      },
+      "candidate_nonzero_decisions": 2,
+      "candidate_owner": 0,
+      "game_id": "622105-0-o0-promotion_gain_off",
+      "root_id": "622105-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 3,
+      "candidate_delta_histogram": {
+        "0": 1,
+        "1": 1,
+        "2": 1
+      },
+      "candidate_nonzero_decisions": 2,
+      "candidate_owner": 0,
+      "game_id": "622105-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622105-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 4,
+      "candidate_delta_histogram": {
+        "-1": 2,
+        "-2": 2
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 1,
+      "game_id": "622105-0-o1-promotion_gain_off",
+      "root_id": "622105-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 4,
+      "candidate_delta_histogram": {
+        "-1": 2,
+        "-2": 2
+      },
+      "candidate_nonzero_decisions": 4,
+      "candidate_owner": 1,
+      "game_id": "622105-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622105-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "0": 4,
+        "1": 3
+      },
+      "candidate_nonzero_decisions": 3,
+      "candidate_owner": 0,
+      "game_id": "622105-1-o0-promotion_gain_off",
+      "root_id": "622105-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "0": 4,
+        "1": 3
+      },
+      "candidate_nonzero_decisions": 3,
+      "candidate_owner": 0,
+      "game_id": "622105-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622105-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "-1": 6,
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 6,
+      "candidate_owner": 1,
+      "game_id": "622105-1-o1-promotion_gain_off",
+      "root_id": "622105-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 7,
+      "candidate_delta_histogram": {
+        "-1": 6,
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 6,
+      "candidate_owner": 1,
+      "game_id": "622105-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622105-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622106-0-o0-promotion_gain_off",
+      "root_id": "622106-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622106-0-o0-rule_derived_promotion_gain_on",
+      "root_id": "622106-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622106-0-o1-promotion_gain_off",
+      "root_id": "622106-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622106-0-o1-rule_derived_promotion_gain_on",
+      "root_id": "622106-0",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622106-1-o0-promotion_gain_off",
+      "root_id": "622106-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 1,
+      "candidate_delta_histogram": {
+        "0": 1
+      },
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 0,
+      "game_id": "622106-1-o0-rule_derived_promotion_gain_on",
+      "root_id": "622106-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622106-1-o1-promotion_gain_off",
+      "root_id": "622106-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "promotion_gain_off"
+    },
+    {
+      "candidate_decisions": 0,
+      "candidate_delta_histogram": {},
+      "candidate_nonzero_decisions": 0,
+      "candidate_owner": 1,
+      "game_id": "622106-1-o1-rule_derived_promotion_gain_on",
+      "root_id": "622106-1",
+      "terminal_reason": "ACTUAL_TERMINAL",
+      "variant": "rule_derived_promotion_gain_on"
+    }
+  ],
+  "played_state_count": 2142,
+  "question": "How often did the static-v2 promotion-potential term actually change the production Evaluator score on the already-recorded played trajectories?",
+  "regenerated_rules": 8,
+  "scope_limit": "Observed played states only. This is not search-leaf exposure, a causal outcome estimate, WDL, or a new game/search run.",
+  "source_head": "e009c4a531aebd21bf8d07cb2115b43786cc3d94",
+  "status": "COMPLETE",
+  "strata": {
+    "promotion_gain_off/candidate": {
+      "candidate_decision_absolute_bonus_sum": 497,
+      "candidate_decision_nonzero_rate": 0.6461824953445066,
+      "candidate_decisions": 537,
+      "candidate_decisions_with_nonzero_bonus": 347,
+      "played_state_absolute_bonus_sum": 497,
+      "played_state_nonzero_rate": 0.6461824953445066,
+      "played_states": 537,
+      "played_states_with_nonzero_bonus": 347
+    },
+    "promotion_gain_off/foe": {
+      "candidate_decision_absolute_bonus_sum": 0,
+      "candidate_decision_nonzero_rate": null,
+      "candidate_decisions": 0,
+      "candidate_decisions_with_nonzero_bonus": 0,
+      "played_state_absolute_bonus_sum": 496,
+      "played_state_nonzero_rate": 0.6479400749063671,
+      "played_states": 534,
+      "played_states_with_nonzero_bonus": 346
+    },
+    "rule_derived_promotion_gain_on/candidate": {
+      "candidate_decision_absolute_bonus_sum": 476,
+      "candidate_decision_nonzero_rate": 0.6219739292364991,
+      "candidate_decisions": 537,
+      "candidate_decisions_with_nonzero_bonus": 334,
+      "played_state_absolute_bonus_sum": 476,
+      "played_state_nonzero_rate": 0.6219739292364991,
+      "played_states": 537,
+      "played_states_with_nonzero_bonus": 334
+    },
+    "rule_derived_promotion_gain_on/foe": {
+      "candidate_decision_absolute_bonus_sum": 0,
+      "candidate_decision_nonzero_rate": null,
+      "candidate_decisions": 0,
+      "candidate_decisions_with_nonzero_bonus": 0,
+      "played_state_absolute_bonus_sum": 476,
+      "played_state_nonzero_rate": 0.6198501872659176,
+      "played_states": 534,
+      "played_states_with_nonzero_bonus": 331
+    }
+  }
+}

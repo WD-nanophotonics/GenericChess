@@ -1,0 +1,75 @@
+{
+  "accepted_seeds": [
+    530301,
+    530302,
+    530303,
+    530304,
+    530305,
+    530306,
+    530308,
+    530310
+  ],
+  "criterion": "Each accepted seed must produce ongoing roots at exactly three and four plies under the config assigned by accepted slot index. No game/search result inspected.",
+  "interpretation_limit": "This pre-outcome playability filter narrows the sample; describe results only for generated rules that survive the frozen root-feasibility criterion.",
+  "performed_before_outcomes": true,
+  "rejected_candidates": [
+    {
+      "movement_symmetry": "bilateral",
+      "observed_prefixes": [
+        {
+          "actual": 1,
+          "ongoing": false,
+          "planned": 3
+        },
+        {
+          "actual": 1,
+          "ongoing": false,
+          "planned": 4
+        }
+      ],
+      "reason": "Terminal after first opening action; cannot form required parity roots.",
+      "seed": 530307,
+      "setup_preset": "free_random",
+      "slot_index": 6
+    },
+    {
+      "movement_symmetry": "none",
+      "observed_prefixes": [
+        {
+          "actual": 3,
+          "ongoing": true,
+          "planned": 3
+        },
+        {
+          "actual": 4,
+          "ongoing": false,
+          "planned": 4
+        }
+      ],
+      "reason": "Four-ply root already terminal.",
+      "seed": 530309,
+      "setup_preset": "bilateral_random",
+      "slot_index": 7
+    },
+    {
+      "movement_symmetry": "none",
+      "observed_prefixes": [
+        {
+          "actual": 3,
+          "ongoing": true,
+          "planned": 3
+        },
+        {
+          "actual": 4,
+          "ongoing": true,
+          "planned": 4
+        }
+      ],
+      "reason": "First ascending unused candidate passing both exact-root checks.",
+      "seed": 530310,
+      "setup_preset": "bilateral_random",
+      "slot_index": 7
+    }
+  ],
+  "schema": "primary-static-role-root-feasibility-scan-v1"
+}

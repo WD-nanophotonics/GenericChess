@@ -1,0 +1,58 @@
+{
+  "schema": "primary-promotion-potential-utility-v1",
+  "session_id": "03505122-b02c-4b92-9b40-d524f8ad4835",
+  "source_head": "d76174241b534ecda62c94a1185a47b765a39813",
+  "question": "Does the rule-derived promotion-gain term in the default static evaluator improve finite-budget outcomes over Unit board/hand evaluation on fresh generated rules?",
+  "changed_premise": "The isolated board-leaf and promotion-order contrasts do not test Evaluator._promotion_bonus. EvaluationConfig defaults promotion_potential_weight=3; the current profile derives promotion_gain_by_type from rule-based board-price gaps. Earlier leaf-only runs explicitly disabled this channel. This is a distinct live consumer and a decision-changing remaining price-derived interaction.",
+  "rules": {
+    "seeds": [622067, 622068, 622069, 622070, 622071, 622072, 622073, 622074],
+    "board_size": 5,
+    "setup_schedule": ["classic_like", "bilateral_random", "free_random"],
+    "symmetry_schedule": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "max_generation_attempts": 16,
+    "require_no_opening_win_in_one": false
+  },
+  "roots": {
+    "prefix_plies": [9, 12],
+    "seed_formula": "rule_seed*1000000+family_index",
+    "selection": "Retain all 16 deterministic legal-random roots; do not filter on promotion exposure, outcomes or action differences; no replacement."
+  },
+  "arms": {
+    "candidate_arms": ["promotion_gain_off", "rule_derived_promotion_gain_on"],
+    "candidate_owners": [0, 1],
+    "fixed_foe": "Same Unit board/hand values, same rule-derived gain profile and other dynamic terms; promotion-potential weight zero in both arms.",
+    "candidate_only_change": "Unit board and hand values, capture ordering, type_value ordering, legal actions, dynamic mobility and anchor escape remain identical. Candidate differs only by enabling the existing rule-derived promotion bonus at the default weight 3; control weight is 0. Profile promotion_gain_by_type is derived once from the compiled rule price gaps and shared between candidate settings.",
+    "search": "Existing public Python AlphaBeta; default MoveOrderer, no TT; root tactical fallback disabled identically in both arms."
+  },
+  "physical_games": 64,
+  "limits": {
+    "max_depth": 3,
+    "max_nodes": 8192,
+    "max_time_seconds": 0.5,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 8,
+    "max_candidate_plies": 48
+  },
+  "analysis": {
+    "primary": "Pair bonus-on minus bonus-off rewards at each exact root and owner; UNKNOWN contributes conservative [-1,+1] bounds before subtraction.",
+    "robustness": "Report overall, owner, odd/even root parity and leave-one-seed-out bounds with each terminal/UNKNOWN retained.",
+    "cost": "Compare candidate nodes, completed depth, fallback and elapsed caller costs separately; no standalone wall-time utility claim.",
+    "retain_rule": "Keep the channel as a scoped evidence-supported candidate only if utility lower bounds are strictly positive overall, both owners, both parities and every leave-one-seed-out view, or median candidate-node reduction is at least10% overall and in both owner/parity strata while no corresponding utility lower bound is negative. Otherwise make no code/default change and close this sample."
+  },
+  "integrity": [
+    "Fresh generated rules only; full promotion/drop/auxiliary/history semantics and complete game-record replay retained.",
+    "Every action legal; preserve UNKNOWN, timeouts, failure and unstarted slots; no top-up, refit, solver or default change.",
+    "Assert board and hand leaf values, capture_order_value and type_value match between arms; promotion potential is the sole intended candidate change.",
+    "Poll PRIMARY stop flags before each game; frozen 3600-second cap."
+  ],
+  "cost": {
+    "expected_seconds": 600,
+    "hard_cap_seconds": 3600,
+    "threshold": "Expected and capped runtime <120 minutes.",
+    "basis": "Recent matched 64-game generated 5x5 D3 panel completed in246.656 seconds including full replay."
+  },
+  "decision_after": "This answers only whether this rule-derived bonus merits a scoped candidate; a positive result does not establish globally useful prices or authorize a default change."
+}

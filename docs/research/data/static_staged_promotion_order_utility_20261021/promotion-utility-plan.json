@@ -1,0 +1,63 @@
+{
+  "schema": "primary-staged-promotion-order-utility-v1",
+  "session_id": "03505122-b02c-4b92-9b40-d524f8ad4835",
+  "source_head": "d76174241b534ecda62c94a1185a47b765a39813",
+  "question": "Does rule-derived static board pricing used only by the existing StagedMovePicker promotion-target ordering improve fixed-budget outcomes over Unit ordering on fresh generated rules?",
+  "changed_premise": "The prior default capture-order route was closed. A separate replay audit on retained exposed records established that the opt-in StagedMovePicker reaches promotion-target sorting: 531 states had multiple legal promotions, with 274 order changes across eight rules, both candidate owners and both ply parities. That is mechanism reachability, not utility, and warrants one fresh bounded contrast.",
+  "rules": {
+    "seeds": [622059, 622060, 622061, 622062, 622063, 622064, 622065, 622066],
+    "board_size": 5,
+    "setup_schedule": ["classic_like", "bilateral_random", "free_random"],
+    "symmetry_schedule": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "max_generation_attempts": 16,
+    "require_no_opening_win_in_one": false
+  },
+  "roots": {
+    "prefix_plies": [9, 12],
+    "seed_formula": "rule_seed*1000000+family_index",
+    "selection": "Retain all 16 deterministic legal-random roots; no outcome, promotion-count, action or exposure filtering; no replacement."
+  },
+  "arms": {
+    "candidate_arms": ["unit_promotion_order", "static_promotion_order"],
+    "candidate_owners": [0, 1],
+    "fixed_foe": "Unit profile, staged picker enabled in both arms.",
+    "candidate_only_change": "Both candidate evaluators use the identical Unit leaf evaluator, Unit capture_order_value, disabled promotion-potential evaluation and identical dynamic terms. Unit ordering returns Unit type_value for every non-anchor; static ordering substitutes only the compiled rule-derived board type_value for promotion target sorting. No leaf, capture, legality, action, history or search setting changes.",
+    "orderer": "Existing opt-in StagedMovePicker only; ordinary MoveOrderer remains the existing default and is not changed."
+  },
+  "physical_games": 64,
+  "search": {
+    "max_depth": 3,
+    "max_nodes": 8192,
+    "max_time_seconds": 0.5,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 8,
+    "use_tt": false,
+    "use_ordering": true,
+    "use_native_semantic_legality": true,
+    "use_root_tactical": false,
+    "max_candidate_plies": 48
+  },
+  "analysis": {
+    "primary": "Pair static_promotion_order minus unit_promotion_order reward by exact root, candidate owner and fixed Unit foe. Independently UNKNOWN candidates contribute [-1,+1] before conservative subtraction.",
+    "robustness": "All-slot bounds overall, by owner, odd/even root parity and leave-one-rule-seed-out; preserve each seed, terminal and UNKNOWN separately.",
+    "cost": "Candidate node/time/depth/fallback and paired node deltas; no wall-time utility inference.",
+    "retain_rule": "Retain only as a scoped candidate if reward lower bounds are strictly positive overall, by owner, both parity strata and every leave-one-seed-out view, or median candidate nodes fall at least 10% overall and in both owner/parity strata while no corresponding utility lower bound is negative. Otherwise close this comparison; no default change."
+  },
+  "integrity": [
+    "Preserve promotion, drops, auxiliary state, repetition and complete GameSession history/replay.",
+    "Every selected action must be legal; exact final state/history/witness/result replay required.",
+    "Assert the two candidate leaf and capture values match at each tested root; the only intended difference is promotion target type_value.",
+    "Preserve UNKNOWN, timeouts, failures and unstarted slots; no top-up, seed replacement, training, solver or product/default change.",
+    "Poll current PRIMARY stop flags before every game; frozen 3600-second hard cap."
+  ],
+  "cost": {
+    "expected_seconds": 600,
+    "hard_cap_seconds": 3600,
+    "threshold": "Single run expected and hard capped below 120 minutes.",
+    "basis": "The directly comparable 64-game 5x5 D3/8192 panel completed in 214.063 seconds; this panel has the same game/limits count."
+  },
+  "decision_after": "This panel tests only promotion-target ordering in the existing opt-in caller. Even a positive result keeps it opt-in and scoped; making any default change requires separate user-directed implementation work and compatible evidence."
+}

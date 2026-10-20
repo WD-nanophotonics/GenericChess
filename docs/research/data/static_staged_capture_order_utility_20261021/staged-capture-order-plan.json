@@ -1,0 +1,101 @@
+{
+  "analysis": {
+    "cost": "Report actual completed depth, candidate and foe nodes/qnodes/caller seconds, fallback/source, and paired candidate node deltas. Treat wall-clock as descriptive only under concurrent load.",
+    "primary": "Pair static-minus-Unit candidate reward by exact generated root and candidate owner against the same fixed Unit foe. Each UNKNOWN independently contributes [-1,+1] before conservative subtraction.",
+    "retain_rule": "Retain this sampled-scope ordering candidate only if either (a) conservative utility lower bounds are strictly positive overall, by owner, by root parity and for every leave-one-seed-out view, or (b) median paired candidate-node use falls by at least 10% overall and in both owner and parity strata, while no corresponding stratum has a negative conservative utility lower bound. Otherwise close this capture-order route for this sample. Neither outcome changes a default/global value or strength claim.",
+    "robustness": "Report all-slot bounds overall, by candidate owner, 3/4-ply root parity and leave-one-rule-seed-out; preserve candidate-first/reply and each seed. No winner/draw imputation."
+  },
+  "arms": {
+    "candidate_arms": [
+      "unit_capture_order",
+      "static_v2_capture_order"
+    ],
+    "candidate_only_change": "Both candidate arms set use_staged_move_picker=True. The controlled evaluator preserves identical Unit board/hand leaf values and identical Unit type_value promotion ordering; only capture_order_value changes from the Unit board table to the current rule-derived static-v2 profile. The candidate path is explicitly experimental and is not the SearchTuning default.",
+    "fixed_foe": "Unit leaf, Unit capture-order and Unit type-order values in both arms; same public AlphaBeta path, optional staged picker and limits.",
+    "physical_games": "8 generated rules x 2 roots x 2 candidate owners x 2 candidate arms = 64",
+    "search": {
+      "max_candidate_plies": 48,
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_hard_max_depth": 8,
+      "quiescence_max_depth": 0,
+      "use_ordering": true,
+      "use_staged_move_picker": true,
+      "use_tt": false
+    }
+  },
+  "changed_premise": "The preceding default MoveOrderer capture-order panel is closed and does not exercise StagedMovePicker. A new outcome-free preflight on eight disjoint generated-rule seeds and 16 fixed legal roots exercised the staged picker: 146 root capture-hook calls, 11 changed root orders, seven changed root search actions, and 7,472 Unit versus 8,148 static candidate-search hook calls. This exposure result is not utility evidence.",
+  "cost": {
+    "basis": "Prior 64-game D3/8192/0.5-second game generation took 171.657 seconds including full records/replay. Estimate 600 seconds for staged ordering plus validation, capped at 3600 seconds; the run stays under 120 minutes.",
+    "cheaper_alternative": "Close staged capture-order utility as unresolved after the outcome-free preflight and retain the optional path unchanged.",
+    "expected_seconds": 600,
+    "hard_cap_seconds": 3600
+  },
+  "integrity": [
+    "Run all 64 slots once; no outcome-based filtering, top-up, replacement, cap extension or rerun of an observed slot.",
+    "Preserve promotion, drops, hands, auxiliary state, repetition and complete Core history; validate action legality and replay every full history.",
+    "Retain UNKNOWN for horizon or unresolved search; distinguish actual terminals, cancellations, fallbacks and incomplete slots.",
+    "No training, solver, production source/default changes or other-role checkout access.",
+    "Expected run 600 seconds based on a prior same-scale 64-game D3/8192/0.5-second public AlphaBeta panel completing in 171.657 seconds; allow 3x for staged-picker and replay overhead. Frozen hard cap 3600 seconds, below 120-minute assessment threshold."
+  ],
+  "preflight": {
+    "changed_root_choices": 7,
+    "changed_root_orders": 11,
+    "outcomes_collected": 0,
+    "path": "docs/research/data/static_staged_capture_order_utility_20261021/staged-capture-order-preflight.json",
+    "root_capture_calls": 146,
+    "roots": 16,
+    "rules": 8,
+    "script_path": "docs/research/data/static_staged_capture_order_utility_20261021/staged-capture-order-preflight.py",
+    "script_sha256": "d238bac9bdc01db00028672bae5313295ffbcbbbb62884474af19074221a3dd4",
+    "search_hook_calls": {
+      "static": 8148,
+      "unit": 7472
+    },
+    "sha256": "b8e253314db2019d743a67cb83f85636f6a52654d7136a2700c65f697728495f",
+    "type_value_calls_fixed_across_arms": true
+  },
+  "question": "On fresh generated 5x5 legal roots, does static-v2 capture_order_value improve finite-budget candidate outcomes or robust candidate-node cost when the actual optional StagedMovePicker path is enabled for both arms, leaf values and Unit foe are fixed?",
+  "roots": {
+    "candidate_owners": [
+      0,
+      1
+    ],
+    "prefix_plies": [
+      3,
+      4
+    ],
+    "prefix_seed_formula": "rule_seed*1000000+family_index",
+    "selection": "Use all 16 roots exactly as fixed by the hash-bound outcome-free preflight; never filter or replace by actions, captures, exposure, outcome, profile, cost or terminality. If an unexpected terminal/root mismatch occurs, preserve it and stop the panel without replacement."
+  },
+  "rules": {
+    "allow_hybrid": true,
+    "board_size": 5,
+    "max_generation_attempts": 16,
+    "require_nonpromotable_type": true,
+    "require_promotable_type": true,
+    "seeds": [
+      622091,
+      622092,
+      622093,
+      622094,
+      622095,
+      622096,
+      622097,
+      622098
+    ],
+    "setup_schedule": [
+      "classic_like",
+      "bilateral_random",
+      "free_random"
+    ],
+    "symmetry_schedule": [
+      "bilateral",
+      "none"
+    ]
+  },
+  "schema": "primary-static-v2-staged-capture-order-utility-v1",
+  "session_id": "d427542d-8462-4080-ab3d-28923b2f3472",
+  "source_head": "e009c4a531aebd21bf8d07cb2115b43786cc3d94"
+}

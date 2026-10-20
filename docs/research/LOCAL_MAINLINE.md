@@ -2554,3 +2554,84 @@ supported.
 [`STATIC_HAND_PRICE_UTILITY_20261021.md`](STATIC_HAND_PRICE_UTILITY_20261021.md) closes the fresh 64-game, eight-seed D3 generated-5x5 hand-only contrast. With board, promotion, ordering, dynamic terms and Unit foe fixed, conservative utility was negative overall `[-0.3125,-0.25]`; both owner and parity gates failed, as did the 10% median-node-reduction gate (overall median 0%). Keep hand values out of defaults and do not rerun this panel or select a favorable drop/seed subset. One UNKNOWN and every planned slot are preserved. The integrated default package also failed its robustness gates; these results do not change the existing scoped static-v2 candidate status or establish a general hand-price law. Exact sources/plan/records/results: `data/static_hand_price_utility_20261021/`.
 
 The new cross-route audit found that semantic auxiliary values are part of `position_identity`, and action-history adjudications are included in `SearchStateIdentity`; existing unit and warm-search tests cover those dimensions separately. A narrow remaining check is whether a public AlphaBeta shared warm TT can reuse across same-board/same-ply legal histories with distinct auxiliary-slot values. The current castling fixture cannot form the pair: every moving piece owned by the rights holder clears its auxiliary right. First find a source-backed legal fixture with an auxiliary-changing action plus an independent reversible move; compare warm/cold public search only if both full histories are replayable. If no such pair exists without fabricating state, close this route without code changes; no broad TT/timing campaign.
+
+## Close the frozen promotion-gain scaling candidate — 2026-10-21
+
+`STATIC_PROMOTION_GAIN_SCALED_UTILITY_20261021.md` and its fixed data close
+the specific `(3*gain+500)//1000` alternative to the current integer-unit
+mapping. The independent 64-record outcome audit regenerated eight 5x5 rules
+and replayed every full history with zero invalid actions or mismatch. The
+strictly-positive conservative reward requirement failed overall and for both
+candidate owners (all bounds `[0,0]`), while the cost guard passed: median paired
+node reduction was 0.0%, with 148 fewer aggregate candidate nodes but slightly
+higher descriptive candidate/caller time. Thus the candidate is rejected for
+lack of demonstrated utility, not excess cost. A separate replay-only audit
+found nonzero score changes on 34/198 shared candidate states (`-2:6,-1:9,0:164,
++1:15,+2:4`); it confirms exposure, not search-leaf frequency or utility. Do not
+repeat or widen this mapping panel absent a changed premise.
+
+## Close the matched auxiliary-history TT question and finite evaluator symmetry screen — 2026-10-21
+
+The legal replayable auxiliary-history caller check now has both complementary
+witnesses. `tests/product/test_search_aux_history_tt.py` uses a persistent bool
+slot: two four-ply serialized histories reach the same board, side and ply with
+distinct aux values; public warm-TT and cold searches agree on action, score
+and PV. A separate supported castling-right diagnostic confirms that a legal
+auxiliary right can change the legal-action set (one castling action versus
+none) while the default evaluator returns score 0 for both matched boards; a
+depth-2 search agrees on action/score, with 89 versus 83 nodes. This is one
+hand-authored rule and shallow fixture, not a general evaluator-utility claim.
+Together with the source identity contract and existing identity tests, it
+closes the narrow missing caller check without a product/API change or broad
+TT campaign.
+
+The preregistered check is complete; see
+[`GENERATED_EVALUATOR_SYMMETRY_20261021.md`](GENERATED_EVALUATOR_SYMMETRY_20261021.md).
+Eight generated 6x6 classic-like bilateral profiles yielded 138 mirrored legal
+state pairs, with zero structural mismatch and zero default-evaluator score
+mismatch. This closes only that finite static-score screen. Replay exposure
+contained legacy promotions and drops and occupied hands, but no semantic board
+or drop actions and no nonempty auxiliary states. Do not describe it as coverage
+of the complete generated semantic domain or expand it into search/outcomes
+without a separately decision-changing premise.
+
+The same audit exposed a distinct feasibility boundary: the default profile
+builder rejects a semantic-only compiled ruleset with
+`default evaluation requires legacy movement metadata; supply evaluator_override
+for semantic-only search`. `AlphaBetaPlayer` intentionally bypasses that check
+when a caller supplies an evaluator; focused existing semantic-search tests pass.
+This is an explicit scope boundary, not a failed expected value or confirmed
+product defect. The generator's current `GeneratorConfig` does not emit semantic
+actions or auxiliary slots, so simply widening its seed sample cannot resolve
+the gap.
+
+The bounded geometry feasibility comparison is complete; its exact result is recorded in `GENERATED_EVALUATOR_SYMMETRY_20261021.md`. It establishes one simple input path and leaves the semantic-only default profile gate unchanged. Do not widen semantic pricing or reopen the finite symmetry screen based on this result.
+
+## 2026-10-21 board-only price route closed at the owner/role robustness gate
+
+`STATIC_BOARD_LEAF_ROLE_BALANCE_20261021.md` and its two frozen data sets
+separate static-v2 board values from hand values and Unit ordering. The fresh
+four-ply panel found a positive pooled bound `[+0.375,+0.500]`, but owner 0 was
+`[+1.000,+1.125]` while owner 1 was `[-0.250,-0.125]`; every root had side 0
+moving first, so owner and first/reply role were confounded. The second fresh
+panel balanced one three-ply and one four-ply root per generated rule. Its pooled
+contrast was `+0.09375`, owner 0 `0`, owner 1 `+0.1875`, candidate-first
+`+0.3125`, candidate-reply `-0.125`; owner-by-role cells were `+0.25/-0.25`
+for owner 0 and `+0.375/0` for owner 1. The worst leave-one-seed-out lower bound
+was `-0.0357`. Paired median candidate nodes improved 35.36% in the first panel
+and 1.68% in the second, but the predeclared owner/role outcome gate failed in
+both. The second sample also uses a pre-outcome exact-root feasibility filter;
+its interpretation is limited to rules passing that screen. These are finite
+search-usefulness results, not a general role law or global value claim.
+
+Do not retain the board-only candidate as owner/role-robust, repeat these 5x5
+D3 roots, widen the same size sweep, or change the global price/default. This
+does not refute the distinct complete static-v2 candidate evidence. Next select
+a different rule-price transfer consumer from existing evidence; require a
+changed premise and a decision-changing contrast before running another panel.
+
+## 2026-10-21 qsearch capture-order result; qsearch leaf-value question selected
+
+The fixed 64-game qsearch capture-order panel is closed: static-v2 capture-order values were exercised, but only 2/692 common candidate states changed action, the conservative utility bounds crossed zero for pooled and both-owner views, and median paired candidate-node reduction was zero. Both predeclared retention gates failed. No defaults or product code changed. Full frozen inputs and outcomes are in STATIC_QSEARCH_CAPTURE_ORDER_UTILITY_20261021.md and data/static_qsearch_capture_order_utility_20261021/; do not rerun this consumer.
+
+A distinct one-root feasibility probe found that changing only qsearch stand-pat leaf prices can change the selected root action while preserving Unit main-search leaf evaluation and ordering. This has no outcome evidence. Next, pre-register a separate under-120-minute paired panel on disjoint generated rules, fixing the opponent, normal ordering, main-search leaf values and all search limits; vary only qsearch leaf prices (Unit versus static-v2). Preserve UNKNOWN and full histories. Run only after the frozen plan, producer isolation and replay checks are bound by a preflight; adopt no price/default from the feasibility probe alone.
