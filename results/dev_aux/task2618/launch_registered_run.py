@@ -12,7 +12,7 @@ import time
 
 
 ROOT = Path(__file__).resolve().parents[3]
-RUN_NAMES = {"learner-comparison-v1", "learner-comparison-v2", "learner-comparison-v3"}
+RUN_NAMES = {"learner-comparison-v1", "learner-comparison-v2", "learner-comparison-v3", "learner-comparison-v4"}
 
 
 def sha(data: bytes) -> str:

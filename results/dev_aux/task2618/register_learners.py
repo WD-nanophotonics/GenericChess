@@ -26,10 +26,12 @@ RUNS = {
     1: RUN_ROOT / "learner-comparison-v1",
     2: RUN_ROOT / "learner-comparison-v2",
     3: RUN_ROOT / "learner-comparison-v3",
+    4: RUN_ROOT / "learner-comparison-v4",
 }
 RUN = RUNS[1]
 V2_ROOT_SELECTION = RUN_ROOT / "learner-comparison-v2-prep-verified/root-selection.json"
 V3_ROOT_SELECTION = RUN_ROOT / "learner-comparison-v3-prep/root-selection.json"
+V4_ROOT_SELECTION = RUN_ROOT / "learner-comparison-v4-prep-verified/root-selection.json"
 AUDIT_PATH = ROOT / "results/dev_aux/task2618/learning-input-audit-v2.json"
 TRAIN_PATH = ROOT / "results/dev_aux/task2619/prospective-training-roots.json"
 EVAL_PATH = ROOT / "results/dev_aux/task2619/prospective-evaluation-roots.json"
@@ -47,6 +49,8 @@ SOURCE_PATHS = (
     "results/dev_aux/task2618/audit_learning_protocol_inputs.py",
     "results/dev_aux/task2618/reselect_training_roots.py",
     "results/dev_aux/task2618/reselect_training_roots_v3.py",
+    "results/dev_aux/task2618/project_v1_exposure.py",
+    "results/dev_aux/task2618/reselect_training_roots_v4.py",
     "results/dev_aux/task2619/root_feasibility.py",
     "results/dev_aux/task2392/reader.py",
     "results/dev_aux/task2153/stop_evidence.py",
@@ -79,7 +83,7 @@ def record_set_digest(rows: list[dict]) -> str:
 
 def training_source_index(revision: int, seed_index: int, root_index: int,
                          selected_indices: list[int]) -> int:
-    if revision in (2, 3):
+    if revision in (2, 3, 4):
         offset = root_index
     elif revision == 1:
         offset = seed_index * 120 + root_index
@@ -286,6 +290,61 @@ def build_registration(session: dict, revision: int = 1) -> tuple[dict, dict, di
             "shared_across_seeds": True,
         }
         selected_indices = list(range(len(training_rows)))
+    elif revision == 4:
+        selection_raw = V4_ROOT_SELECTION.read_bytes()
+        panel = json.loads(selection_raw)
+        if panel.get("task") != "DEV_AUX2618_CHESS_LEARNER_COMPARISON_V4_ROOT_PANEL" or panel.get("status") != "PREPARATION_ONLY_NOT_REGISTERED":
+            raise ValueError("v4 root panel is not the expected preparation artifact")
+        if panel.get("search_started") is not False or panel.get("outcome_fields_used_for_selection"):
+            raise ValueError("v4 root panel accessed outcomes or search")
+        source_paths = {
+            "training_roots_sha256": TRAIN_PATH,
+            "evaluation_roots_sha256": EVAL_PATH,
+            "input_audit_sha256": AUDIT_PATH,
+            "v1_exposure_projection_file_sha256": RUN_ROOT / "learner-comparison-v4-prep/v1-exposure-projection.json",
+            "v2_registered_plan_sha256": RUNS[2] / "plan.json",
+            "v3_registered_plan_sha256": RUNS[3] / "plan.json",
+            "root_selector_source_sha256": ROOT / "results/dev_aux/task2618/reselect_training_roots_v4.py",
+        }
+        for key, path in source_paths.items():
+            if sha(path.read_bytes()) != panel.get("sources", {}).get(key):
+                raise ValueError(f"v4 panel source changed: {key}")
+        if panel.get("eligible_remaining_count") != 207 or panel.get("panel_size") != 120:
+            raise ValueError("v4 eligible/panel counts differ from the audited exposure union")
+        training_rows = panel.get("roots", [])
+        if len(training_rows) != 120:
+            raise ValueError("v4 root panel must contain exactly 120 roots")
+        expected_excluded = {
+            "v1_started_families_excluded": set(panel.get("v1_started_families_excluded", [])),
+            "v2_registered_families_excluded": set(panel.get("v2_registered_families_excluded", [])),
+            "v3_registered_families_excluded": set(panel.get("v3_registered_families_excluded", [])),
+        }
+        expected_exclusion_counts = {
+            "v1_started_families_excluded": 51,
+            "v2_registered_families_excluded": 120,
+            "v3_registered_families_excluded": 120,
+        }
+        if any(len(expected_excluded[name]) != count
+               for name, count in expected_exclusion_counts.items()):
+            raise ValueError("v4 exclusion evidence has unexpected family counts")
+        selected_families = {row.get("family") for row in training_rows}
+        if any(selected_families & values for values in expected_excluded.values()):
+            raise ValueError("v4 root panel intersects a previously exposed/registered family")
+        if record_set_digest(training_rows) != panel.get("selected_exact_record_set_sha256"):
+            raise ValueError("v4 selected record-set hash mismatch")
+        _verify_roots(training_rows, expected_count=120, label="v4 training")
+        training_source = {
+            "path": V4_ROOT_SELECTION.relative_to(ROOT).as_posix(),
+            "sha256": sha(selection_raw),
+            "selected_exact_record_set_sha256": panel["selected_exact_record_set_sha256"],
+            "selection_seed": panel["selection_seed"],
+            "selection_seed_namespace": panel["selection_seed_namespace"],
+            "eligible_remaining_count": panel["eligible_remaining_count"],
+            "excluded_union_count": panel["excluded_union_count"],
+            "registered_panel_pairwise_overlap_counts": panel["registered_panel_pairwise_overlap_counts"],
+            "shared_across_seeds": True,
+        }
+        selected_indices = list(range(len(training_rows)))
     else:
         raise ValueError("unsupported task2618 registration revision")
     if len(seeds) != 4 or len(evaluation_rows) != 32:
@@ -398,11 +457,11 @@ def build_registration(session: dict, revision: int = 1) -> tuple[dict, dict, di
         "source_path": training_source["path"],
         "source_sha256": training_source["sha256"],
         "selected_indices": selected_indices,
-        "shared_panel_across_seeds": revision in (2, 3),
+        "shared_panel_across_seeds": revision in (2, 3, 4),
         "seed_blocks": [
             {"seed_index": index, "seed": seed,
              "families": [row["family"] for row in (
-                 training_rows if revision in (2, 3) else training_rows[index * 120:(index + 1) * 120]
+                 training_rows if revision in (2, 3, 4) else training_rows[index * 120:(index + 1) * 120]
              )]}
             for index, seed in enumerate(seeds)
         ],
@@ -411,7 +470,7 @@ def build_registration(session: dict, revision: int = 1) -> tuple[dict, dict, di
              "source_index": training_source_index(revision, seed_index, index, selected_indices), **row}
             for seed_index, seed in enumerate(seeds)
             for index, row in enumerate(
-                training_rows if revision in (2, 3) else training_rows[seed_index * 120:(seed_index + 1) * 120]
+                training_rows if revision in (2, 3, 4) else training_rows[seed_index * 120:(seed_index + 1) * 120]
             )
         ],
     }

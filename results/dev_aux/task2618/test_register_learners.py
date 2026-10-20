@@ -45,7 +45,7 @@ class RegisterLearnersTests(unittest.TestCase):
 
     def test_v2_training_manifest_reuses_the_same_panel_for_every_seed(self):
         panel_indices = list(range(120))
-        for revision in (2, 3):
+        for revision in (2, 3, 4):
             for seed_index in range(4):
                 self.assertEqual(
                     [training_source_index(revision, seed_index, root_index, panel_indices)
@@ -64,7 +64,7 @@ class RegisterLearnersTests(unittest.TestCase):
 
     def test_training_manifest_rejects_invalid_revision_or_index(self):
         with self.assertRaisesRegex(ValueError, "unsupported"):
-            training_source_index(4, 0, 0, [0])
+            training_source_index(5, 0, 0, [0])
         with self.assertRaisesRegex(ValueError, "out of range"):
             training_source_index(2, 0, 1, [0])
 

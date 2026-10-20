@@ -90,6 +90,19 @@ class RegisterEvaluationTests(unittest.TestCase):
             self.assertEqual(result["status"], "PRE_EVALUATION_PREFLIGHT_PASS")
             self.assertFalse(result["evaluation_search_started"])
 
+    def test_revision4_evaluation_gate_is_supported_after_complete_training(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            run_dir, _plan, _training_raw = self._prepare(root, revision=4)
+            with patch.object(gate, "ROOT", root), patch.object(
+                gate, "SharedDeleteStopReader", lambda _root: (lambda: None)
+            ), patch.object(gate, "verify_training_result", return_value={(0, "TreeStrap"): {}}):
+                result = gate.register("learner-comparison-v4")
+            registration = json.loads((run_dir / "evaluation-registration.json").read_text())
+            self.assertEqual(registration["kind"], "BOUND_AFTER_COMPLETE_TRAINING_BEFORE_EVALUATION")
+            self.assertEqual(result["status"], "PRE_EVALUATION_PREFLIGHT_PASS")
+            self.assertFalse(result["evaluation_search_started"])
+
 
 if __name__ == "__main__":
     unittest.main()
