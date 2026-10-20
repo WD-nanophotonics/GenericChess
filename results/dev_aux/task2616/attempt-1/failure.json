@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "status": "FAILED_BEFORE_REGISTRATION",
+  "command": "python results/dev_aux/task2616/prepare.py",
+  "error": "ModuleNotFoundError: No module named 'results'",
+  "diagnosis": "Direct script execution did not put the repository root on sys.path. No plan, root manifest, registration or experiment output was written.",
+  "next": "Add an explicit repository-root import path and rerun the same outcome-blind preparation once."
+}

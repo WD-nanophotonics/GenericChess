@@ -1,0 +1,620 @@
+{
+  "candidate_families_examined": [
+    700001,
+    700002,
+    700003,
+    700004,
+    700005,
+    700006,
+    700007,
+    700008,
+    700009,
+    700010,
+    700011,
+    700012,
+    700013,
+    700014,
+    700015,
+    700016,
+    700017,
+    700018,
+    700019,
+    700020,
+    700021,
+    700022,
+    700023,
+    700024,
+    700025,
+    700026,
+    700027,
+    700028,
+    700029,
+    700030,
+    700031,
+    700032
+  ],
+  "count": 32,
+  "possible_train_unique_records": 5000,
+  "prefix_plies": 8,
+  "prior_eval_unique_records": 186,
+  "roots": [
+    {
+      "family": 700001,
+      "record": {
+        "fen": "rnbqkbnr/p2pp2p/2p2p2/1p4p1/3P2P1/5P2/PPP1P2P/RNBQKBNR w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f3",
+          "g7g5",
+          "d2d3",
+          "b7b5",
+          "d3d4",
+          "f7f6",
+          "g2g4",
+          "c7c6"
+        ]
+      },
+      "record_sha256": "6e0583070fbef0b084bb546951b2a373ddfb0a79876c5ad113560088c4a40168"
+    },
+    {
+      "family": 700002,
+      "record": {
+        "fen": "r1bqk1nr/pppppp1p/7b/6p1/3n1PP1/P7/1PP1P2P/RNBQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d4",
+          "b8c6",
+          "f2f4",
+          "c6d4",
+          "g2g4",
+          "g7g5",
+          "a2a3",
+          "f8h6"
+        ]
+      },
+      "record_sha256": "d4cbb3c6fd44c362b56a3b8b4810a6ca60082dc683a4fc06b6355c29c4c426c1"
+    },
+    {
+      "family": 700003,
+      "record": {
+        "fen": "rnb1kbnr/ppq1p1pp/3p4/2p2p2/7P/P1P2N2/1P1PPPP1/RNBQKB1R w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a3",
+          "d7d6",
+          "g1f3",
+          "c7c5",
+          "h2h4",
+          "d8c7",
+          "c2c3",
+          "f7f5"
+        ]
+      },
+      "record_sha256": "e5ee7a9546e2730834327b3f790997b8fd541d40be7129991e5f27f9a146a270"
+    },
+    {
+      "family": 700004,
+      "record": {
+        "fen": "rnb1kbnr/1p1pp1pp/1qp5/p4p2/1P6/3N4/P1PPPPPP/RNBQKB1R w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "c7c6",
+          "g1h3",
+          "d8b6",
+          "h3f4",
+          "f7f5",
+          "f4d3",
+          "a7a5"
+        ]
+      },
+      "record_sha256": "d370ea78b4786ba7ed9f75f64dcdfcf3e529ff84a7b8ec8c3748024197ffdc6b"
+    },
+    {
+      "family": 700005,
+      "record": {
+        "fen": "rnbqkbnr/p2ppppp/1p6/P1p5/8/1P6/R1PPPPPP/1NBQKBNR w Kkq - 2 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a4",
+          "b7b6",
+          "a4a5",
+          "g8f6",
+          "b2b3",
+          "c7c5",
+          "a1a2",
+          "f6g8"
+        ]
+      },
+      "record_sha256": "188a6d5ee2cdc788aac413acfcb88df9c4c260ed01985c248c8c4e57f8f6bd8f"
+    },
+    {
+      "family": 700006,
+      "record": {
+        "fen": "r1bqkbnr/p1ppp2p/n5p1/1p3p2/2P2PP1/N7/PP1PP2P/R1BQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1a3",
+          "g7g6",
+          "f2f4",
+          "f7f5",
+          "g2g4",
+          "b7b5",
+          "c2c4",
+          "b8a6"
+        ]
+      },
+      "record_sha256": "a1417a02c77d109113064dd676567fb91f2c53b16280913f600d61985282a457"
+    },
+    {
+      "family": 700007,
+      "record": {
+        "fen": "r1bqk1nr/ppp1bppp/2n1p3/3p4/2P5/5NPB/PP1PPP1P/RNBQK2R w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "g2g3",
+          "d7d5",
+          "g1f3",
+          "b8c6",
+          "f1h3",
+          "e7e6",
+          "c2c4",
+          "f8e7"
+        ]
+      },
+      "record_sha256": "c277849e0d7408a08f81f3e86df07aa4237e49f63a883ed3f5e7ef49f4450b10"
+    },
+    {
+      "family": 700008,
+      "record": {
+        "fen": "r1bqkb1r/p1pppppp/1p5n/8/1n2P3/2NP2P1/PPP2P1P/R1BQKBNR w KQkq - 3 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d3",
+          "b8a6",
+          "g2g3",
+          "b7b6",
+          "e2e4",
+          "g8h6",
+          "b1c3",
+          "a6b4"
+        ]
+      },
+      "record_sha256": "62a4dfebcf508f3b07afef484b50f2214be19b9bca8dac8376a5ead143744f51"
+    },
+    {
+      "family": 700009,
+      "record": {
+        "fen": "rnbq1b1r/1pppkppp/p4n2/4p3/2N2P2/7N/PPPPP1PP/R1BQKB1R w KQ - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1a3",
+          "g8f6",
+          "a3c4",
+          "e7e5",
+          "g1h3",
+          "e8e7",
+          "f2f4",
+          "a7a6"
+        ]
+      },
+      "record_sha256": "520057a1e133c4ad635bb3369c937866ad4d758b19eb1bc9b062b7df4630be59"
+    },
+    {
+      "family": 700010,
+      "record": {
+        "fen": "rnb1kbnr/p2ppppp/1p6/q1p5/5P1P/8/PPPPP1P1/RNBQKBNR w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1a3",
+          "c7c5",
+          "f2f4",
+          "d8c7",
+          "a3b1",
+          "c7a5",
+          "h2h4",
+          "b7b6"
+        ]
+      },
+      "record_sha256": "659c79140310f87242575f2d46f6d775fb5b4bb8f1a514d6fd5c8d1e6131ae1e"
+    },
+    {
+      "family": 700011,
+      "record": {
+        "fen": "r1bqkbnr/p2pppp1/n6p/1pp5/1P2P3/8/P1PP1PPP/RNBQKBNR w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "b8a6",
+          "e2e4",
+          "b7b5",
+          "d1h5",
+          "c7c5",
+          "h5d1",
+          "h7h6"
+        ]
+      },
+      "record_sha256": "0d1655644de390baf7922c830cd19de2e6987a04c2f8d83f88be2e6a0afb167e"
+    },
+    {
+      "family": 700012,
+      "record": {
+        "fen": "rnbqkbnr/1ppp1ppp/p3p3/8/7P/2P4N/PPQPPPP1/RNB1KB1R w KQkq - 4 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "c2c3",
+          "a7a6",
+          "h2h4",
+          "e7e6",
+          "g1h3",
+          "b8c6",
+          "d1c2",
+          "c6b8"
+        ]
+      },
+      "record_sha256": "caa751445b15fc90dab4ca0773d3bfcf41df97272d70b35d30af8a810e0eeb4c"
+    },
+    {
+      "family": 700013,
+      "record": {
+        "fen": "rnbqkbr1/pp1pppp1/2p2n1p/8/5PP1/BP6/P1PPP2P/RN1QKBNR w KQq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b3",
+          "h7h6",
+          "g2g4",
+          "c7c6",
+          "c1a3",
+          "g8f6",
+          "f2f4",
+          "h8g8"
+        ]
+      },
+      "record_sha256": "3f3f0d3fd35c2bb47a0631e91ee3bfb4e9924adeb68038f8225f0328495ae41a"
+    },
+    {
+      "family": 700014,
+      "record": {
+        "fen": "rn1qkbnr/pb1pppp1/1pp4p/8/P2P3P/8/1PPNPPP1/R1BQKBNR w KQkq - 2 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "h2h4",
+          "c7c6",
+          "a2a4",
+          "h7h6",
+          "d2d4",
+          "b7b6",
+          "b1d2",
+          "c8b7"
+        ]
+      },
+      "record_sha256": "a39eaf87360554a9079202a9f7275f970d65d2b6303b9188b0d36d8e90ab698e"
+    },
+    {
+      "family": 700015,
+      "record": {
+        "fen": "r1bqkbnr/1pp1pppp/p7/3pn3/5P1P/4P3/PPPP2P1/RNBQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e3",
+          "a7a6",
+          "h2h3",
+          "b8c6",
+          "f2f4",
+          "d7d5",
+          "h3h4",
+          "c6e5"
+        ]
+      },
+      "record_sha256": "613a5cfd5a4471898d60e430a077e65906e92d1ddb75ef2cd47954de9f91cf56"
+    },
+    {
+      "family": 700016,
+      "record": {
+        "fen": "r2qkbnr/p1p1pppp/b1np4/1p6/4P2N/8/PPPP1PPP/RNBQKBR1 w Qkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "g1f3",
+          "b7b5",
+          "f3h4",
+          "c8a6",
+          "h1g1",
+          "b8c6",
+          "e2e4",
+          "d7d6"
+        ]
+      },
+      "record_sha256": "4f386a4d175c4146ca88e975028b1184a00b3476c5bbce09c14c1d13a280d9e4"
+    },
+    {
+      "family": 700017,
+      "record": {
+        "fen": "rn1qk1nr/p1pp1ppp/bp6/4p3/1b6/PP3P1P/2PPP1P1/RNBQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b3",
+          "b7b6",
+          "a2a3",
+          "e7e5",
+          "h2h3",
+          "f8b4",
+          "f2f3",
+          "c8a6"
+        ]
+      },
+      "record_sha256": "1fda1f05b7570c7042bc14f682528f204187f2e2cfef70c71d2ee4314838ae5d"
+    },
+    {
+      "family": 700018,
+      "record": {
+        "fen": "rnb1kbnr/pp1p1p1p/1q6/2pNp1p1/6P1/5N2/PPPPPP1P/R1BQKB1R w KQkq - 2 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1c3",
+          "g7g5",
+          "g1f3",
+          "e7e5",
+          "g2g4",
+          "c7c5",
+          "c3d5",
+          "d8b6"
+        ]
+      },
+      "record_sha256": "05e99ccebda4319628f842d4db6621cdfdf4435a4ae365a0b9d4e5b11dce1a28"
+    },
+    {
+      "family": 700019,
+      "record": {
+        "fen": "r1b1kbnr/pp1p1ppp/n7/2P1p1q1/8/8/P1PPPPPP/RNBQKBNR w KQkq - 2 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "c7c5",
+          "g1h3",
+          "b8a6",
+          "b4c5",
+          "e7e5",
+          "h3g1",
+          "d8g5"
+        ]
+      },
+      "record_sha256": "9d8fddcf88c98f8cb392e38fd1dcdfabe19316f11b1708bc07c0a766d6d26fdf"
+    },
+    {
+      "family": 700020,
+      "record": {
+        "fen": "r1bqkbnr/1ppnpp1p/p2p4/6p1/7P/P1P3P1/1P1PPP2/RNBQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "h2h4",
+          "g7g5",
+          "c2c3",
+          "a7a6",
+          "g2g3",
+          "d7d6",
+          "a2a3",
+          "b8d7"
+        ]
+      },
+      "record_sha256": "664bbad4d840480d32f09881b8157201ab859052c808d8caf0342569fc1c8c98"
+    },
+    {
+      "family": 700021,
+      "record": {
+        "fen": "rnb1kb1r/1ppp1ppp/p4q1n/4p3/P6P/8/1PPPPPP1/RNBQKBNR w KQkq - 1 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "h2h3",
+          "a7a6",
+          "a2a3",
+          "g8h6",
+          "h3h4",
+          "e7e5",
+          "a3a4",
+          "d8f6"
+        ]
+      },
+      "record_sha256": "7d02b59e16cbc8aa8582a172c77c5b8887c152fb11de14f8c928a51b0dc5a07f"
+    },
+    {
+      "family": 700022,
+      "record": {
+        "fen": "rn1qkbnr/pp2ppp1/2p4p/1P1p4/6b1/7N/P1PPPPPP/RNBQKBR1 w Qkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "d7d5",
+          "b4b5",
+          "h7h6",
+          "g1h3",
+          "c8g4",
+          "h1g1",
+          "c7c6"
+        ]
+      },
+      "record_sha256": "142726bc13f84834eb593f0bc5ba3442581502138f7f7f7081910facb8471b2e"
+    },
+    {
+      "family": 700023,
+      "record": {
+        "fen": "r1bqkb1r/p1ppp1pp/np3n2/5p2/P7/1P5N/2PPPPPP/RNBQKB1R w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b3",
+          "b8a6",
+          "a2a3",
+          "f7f5",
+          "a3a4",
+          "g8f6",
+          "g1h3",
+          "b7b6"
+        ]
+      },
+      "record_sha256": "c7e6695fff00a64a056bbf3a750943ed9bce5a3a9c2141863cd00cf4d5aaa29e"
+    },
+    {
+      "family": 700024,
+      "record": {
+        "fen": "rnbqkb1r/pp1ppp2/2p2np1/7p/P7/5N2/1PPPPPPP/RNBQKB1R w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b1c3",
+          "h7h5",
+          "a2a4",
+          "g8f6",
+          "c3b1",
+          "c7c6",
+          "g1f3",
+          "g7g6"
+        ]
+      },
+      "record_sha256": "7cf41fc74623818c26d09a3b8816ce015ec59f67dd1a7ad44329c22d0648cc4d"
+    },
+    {
+      "family": 700025,
+      "record": {
+        "fen": "r1bqk1nr/ppppbp1p/n3p3/6p1/8/P1P2N2/1PQPPPPP/RNB1KB1R w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "a2a3",
+          "e7e6",
+          "c2c3",
+          "f8e7",
+          "g1f3",
+          "b8a6",
+          "d1c2",
+          "g7g5"
+        ]
+      },
+      "record_sha256": "7040a137fb8fcd97321c5c528789b1b3491512f2b1136cfb9bbdc6befbdb293f"
+    },
+    {
+      "family": 700026,
+      "record": {
+        "fen": "rnb1kbnr/ppppqppp/8/4p3/6P1/N2P3N/PPP1PP1P/R1BQKB1R w KQkq - 3 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d3",
+          "e7e6",
+          "b1a3",
+          "e6e5",
+          "g2g4",
+          "d8f6",
+          "g1h3",
+          "f6e7"
+        ]
+      },
+      "record_sha256": "39cf74cad01f990b7ea2e140c392c8893e043986bbc35a26bb99f3f625bb0597"
+    },
+    {
+      "family": 700027,
+      "record": {
+        "fen": "rnbqkbnr/2pppppp/1p6/p7/1P3P2/3P4/P1P1PKPP/RNBQ1BNR w kq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "b2b4",
+          "g8h6",
+          "d2d3",
+          "b7b6",
+          "f2f4",
+          "h6g8",
+          "e1f2",
+          "a7a5"
+        ]
+      },
+      "record_sha256": "712c88d70c6b7f31d6bab47032a039fb5bbf68419aa460b09ad2544af430d3bd"
+    },
+    {
+      "family": 700028,
+      "record": {
+        "fen": "r1bqkbnr/ppp1p1p1/2np1p1p/8/3P1P1P/8/PPP1PKP1/RNBQ1BNR w kq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "f2f4",
+          "f7f6",
+          "e1f2",
+          "b8c6",
+          "h2h4",
+          "h7h6",
+          "d2d4",
+          "d7d6"
+        ]
+      },
+      "record_sha256": "946755e1c202426720cc5995ee6024de3269e049470fc43c6755276e33771de3"
+    },
+    {
+      "family": 700029,
+      "record": {
+        "fen": "rnb1kbnr/ppppqp2/7p/4p1p1/2P5/7P/PP1PPPPR/RNBQKBN1 w Qkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "h2h3",
+          "e7e5",
+          "c2c3",
+          "g7g5",
+          "c3c4",
+          "d8e7",
+          "h1h2",
+          "h7h6"
+        ]
+      },
+      "record_sha256": "346e5fded5fc92e080d1da1d11a6f347fb28d68c4c802a1893036ffe07fa9938"
+    },
+    {
+      "family": 700030,
+      "record": {
+        "fen": "rnbqkbnr/1ppp2p1/4p2p/p2P1p2/8/8/PPP1PPPP/RNBQKBNR w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d4",
+          "h7h6",
+          "c1d2",
+          "f7f5",
+          "d4d5",
+          "e7e6",
+          "d2c1",
+          "a7a5"
+        ]
+      },
+      "record_sha256": "647ecd93217abf193af32d2e14700121b255add9e09d3122403f07484c5ad335"
+    },
+    {
+      "family": 700031,
+      "record": {
+        "fen": "rnb1kbnr/pppp1ppp/3qp3/8/1P6/2N1PQ2/P1PP1PPP/R1B1KBNR w KQkq - 3 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "e2e3",
+          "e7e6",
+          "b1c3",
+          "d8f6",
+          "b2b4",
+          "f6f4",
+          "d1f3",
+          "f4d6"
+        ]
+      },
+      "record_sha256": "c4cd3cb52a25937c849a20edb610c9c41ea368db8a0c77cb153f39c98fe63051"
+    },
+    {
+      "family": 700032,
+      "record": {
+        "fen": "rnbqkb1r/ppp1npp1/8/3pp2p/7P/2NP4/PPPQPPP1/R1B1KBNR w KQkq - 0 5",
+        "initial": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "d2d3",
+          "e7e5",
+          "b1c3",
+          "h7h5",
+          "h2h4",
+          "g8e7",
+          "d1d2",
+          "d7d5"
+        ]
+      },
+      "record_sha256": "0d1f2245349e0a2636dd81f4f8fde2d7d2b31b9e99b8db5bb5b2e2185cfcde4a"
+    }
+  ],
+  "status": "FROZEN_OUTCOME_BLIND_CHESS_ROOTS",
+  "unit": "exact complete ChessEnv record (initial FEN plus ordered UCI history)"
+}

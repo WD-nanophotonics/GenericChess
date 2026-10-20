@@ -1426,3 +1426,16 @@ DEV_AUX2614 closed an outcome-blind 32-slot fixed-foe evaluation cost sample in 
 
 
 DEV_AUX task2615 corrected the finite-panel UNKNOWN interval arithmetic without rerunning games or changing prior outputs. The earlier blanket rule used [-2,+2] whenever either paired endpoint was UNKNOWN, even when the other endpoint's reward was known. Reaggregation of frozen task2606/2609/2610 slots preserves known rewards and varies only each UNKNOWN endpoint over [-1,+1]; 8 earlier machine-summary intervals, all three exact slot manifests/paired foes, and all 9 aggregate formulas independently audit PASS. The material change is task2609 TD95−initial: its exact finite-panel completion interval tightens from [-0.0488,+0.3809] to [+0.0371,+0.2793]; task2606 and task2610 TD95−initial are positive as well. This is a finite-panel bound, not a confidence interval or population estimate. LocalLambda−TD95 still spans zero on every panel, so method ranking remains open. Preserve the old summaries and use the endpoint-specific bound in future paired W/L reports. Current route remains a source-pinned, equal-total-node Chess TreeStrap-vs-TDLeaf comparison with actual W/L as the strength outcome; the corrected baselines make the method-contrast question clearer but do not establish either learner's population advantage.
+
+DEV_AUX2616 completed its preregistered Chess TreeStrap training and fixed-foe
+finite-panel evaluation. Four seeds reached 1M combined candidate+foe nodes each;
+replay audit passed 36,992 training queries and 242 full histories. Evaluation
+completed 1,024/1,024 slots (0 missing), with 312 UNKNOWN and 712 actual
+terminals. Endpoint-specific UNKNOWN completion intervals for TreeStrap−initial,
+TreeStrap−TD, and TreeStrap−WDL all cross zero; no method advantage is established.
+The run used 14,648,460 evaluation nodes/1,883.679s; training used 4M nodes/
+532.797s. Exact reports and deterministic compressed traces are under
+results/dev_aux/task2616; raw JSONL stays local. A fresh-root cap-sensitivity
+design may be considered to reduce UNKNOWN, but must randomize 20k/40k budgets by
+family, keep endpoints/foe/seeds/colors matched within family, use disjoint roots,
+and remain a separately registered study. Do not extend task2616 caps.

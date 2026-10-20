@@ -1435,3 +1435,6 @@ results/dev_aux/task1531/*.py whitespace=-blank-at-eof
 results/dev_aux/task1552/*.py whitespace=-blank-at-eof
 results/dev_aux/task1560/*.py whitespace=-blank-at-eof
 results/dev_aux/task1567/*.py whitespace=-blank-at-eof
+# Preserve exact task2616 executed source and evidence bytes.
+results/dev_aux/task2616/** -text whitespace=cr-at-eol
+results/dev_aux/task2616/*.py whitespace=cr-at-eol,-blank-at-eof

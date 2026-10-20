@@ -2948,3 +2948,18 @@ DEV_AUX2614 (2026-10-20): after the shared-receipt cost path, registered a 32-sl
 
 
 DEV_AUX task2615 CHAT_Comments follow-through (2026-10-20): independently checked the suggestion that earlier task2606/2609/2610 paired bounds widened every pair to [-2,+2] whenever either reward was UNKNOWN. The saved ledgers have exact frozen slot-manifest matches and same-foe endpoint triples. Reaggregation retains known rewards and ranges only UNKNOWN endpoints over [-1,+1]. All 8 previously reported machine intervals reproduce; all 9 tighter intervals match the aggregate identity. The corrected task2609 TD95−initial finite-panel lower bound is +0.0371 (previously −0.0488); task2606 and task2610 TD95−initial bounds are also positive. All LocalLambda−TD95 intervals still include zero. This is a deterministic completion bound on the saved finite panels, not a confidence interval/population claim or new game execution. Old output is unchanged. CHAT_Comments source is shared-account advice, not authenticated Dot review; no Dot adoption/reading is claimed. Evidence: results/dev_aux/task2615/REPORT.md, audit.json, reaggregate.py, audit.py. No research route change beyond using endpoint-specific UNKNOWN bounds in future reports; the frozen standard-Chess whole-learner W/L comparison remains the next learning-method question.
+
+DEV_AUX task2616 (2026-10-20): completed the source-pinned standard-Chess
+TreeStrap run and equal-policy fixed-foe W/L panel. Training reached all four
+1M combined-node budgets (4M total; 36,992 search records; 18,491 complete
+candidate receipts updated) in 532.797s. Evaluation finished all 1,024 frozen
+slots (14,648,460 nodes; 1,883.679s; 712 terminals, 312 UNKNOWN, no missing).
+Independent replay passed all training updates/full histories and evaluation
+slots/rewards/caps. The frozen v1 audit script's missing `weights_after` field
+assumption was preserved; retrospective v2 validates pre-query weights and
+sequential per-game/final-arm snapshots. Every TreeStrap−initial, TreeStrap−TD,
+and TreeStrap−WDL finite-panel completion bound crosses zero, so no strength
+advantage is established; training losses are diagnostic only and per-seed final
+weights differ. Published deterministic compressed traces with row/byte/SHA
+manifest; raw JSONL remains local. No model selection, cap changes or generic
+transfer claim. The prior task2613–2615 push SHA is a06dd1331523e06f2ab6526ca799d7ae7d48c04f; task2616 publication follows separately. Slack review/reading/execution by Dot is not yet asserted.
