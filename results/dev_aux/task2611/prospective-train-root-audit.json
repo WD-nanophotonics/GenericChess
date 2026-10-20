@@ -1,0 +1,475 @@
+{
+  "eval_vs_all_planned_train_root_overlaps": 0,
+  "eval_vs_within_panel_identity_duplicates": 0,
+  "must_reaudit_if": [
+    "training_family_offset",
+    "prefix_plies",
+    "max_games",
+    "rules",
+    "root-generation source or RNG recipe changes"
+  ],
+  "proposed_eval_records_replayed": 64,
+  "root_generator_independent_of_learner_seed": true,
+  "scope": "pre-registration; outcome-blind; validates only if task2611 retains task2606 training-family offset, prefix length, max-games range, rules and root generator",
+  "selected_eval_root_identities": [
+    {
+      "family": 991145,
+      "identity_sha256": "f6e4cdd0e4779b829077526306b3df42913fba8a2896f58205ab5831e94cc84d",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991151,
+      "identity_sha256": "e23275399981dd82a7ae49fc0bf122cf21311387367f6c428c03c28c1214e87d",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991154,
+      "identity_sha256": "5a9c8c63a5a54665e2639b4485a092a077199c048049db28e818e8735fac61b9",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991155,
+      "identity_sha256": "ce93da33821722c2e615c8dfba1fdecd1e060fb07458cb38a6e73bc007099dd7",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991165,
+      "identity_sha256": "dd8ccb76fe1e70c84cb009317e27b40ac7f56b2396af11af0c3f8126b092d053",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991168,
+      "identity_sha256": "272b22a78084d3ae4d741505f4dbad87232a31297867e001e45ed1435d849c0d",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991173,
+      "identity_sha256": "2cffbe3013ce0b32a2f3e975ed9396aa8442b870ae6988948a4748624857126c",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991177,
+      "identity_sha256": "d1dfeb920501b00d5461a3b0ff444da73eb99982fe89984ef8f332cf16ca6146",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991178,
+      "identity_sha256": "5edda4d511d610013e5eb4c20e5d60f717ad77504d8ead804707e9475202dbc0",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991187,
+      "identity_sha256": "ea40a4408820db281047a7a856b37b929d830978dc0ced24c83250fbb9c39175",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991190,
+      "identity_sha256": "626ec8f39d0ee12d68dcd972f480af2d9da8d5d04c2725b10dcf839995b5b9e7",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991210,
+      "identity_sha256": "7aaa1b469a4f997cdd1d237e695e165085a819047c4b80a19f1aa5b4f8ef1d33",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991211,
+      "identity_sha256": "51c97758966b275b5151e0628266b6381be96b992c470a1a48cf8f7e4ac26ae0",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991213,
+      "identity_sha256": "21287b82f7acf781d9d5404317b0c4b894becb9b5590cf7f57cd1197f95b5082",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991217,
+      "identity_sha256": "52354ac4247c63e5ea3a7a3956265b2ff55c886006f6917adbb5239d89ff78ad",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991219,
+      "identity_sha256": "51c6f088917474e48c514d1c2cce9dc76a74faf4f403330dd11efb9113e22cd8",
+      "replay": "PASS",
+      "rule": 271001,
+      "train_overlap": false
+    },
+    {
+      "family": 991067,
+      "identity_sha256": "d816ff6b2bced4fc69ecf7e707846691774630d88edf7b637d18e082e99a2668",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991071,
+      "identity_sha256": "639d585c0e5680782b4ad9ed1efbc290b984e517e1013b2ed7861c8d117c02d2",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991075,
+      "identity_sha256": "95fb6ea8c218f3f3a4480159672271e8e170773333ec4f8da7561632baba2fdb",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991077,
+      "identity_sha256": "d4876c8b6f94f2b2fbe99f58b5892f3e2114586a6035c4fed045c49960b4b50e",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991080,
+      "identity_sha256": "a6642a5351265ba6a6c7e392ba21a4ffd010bad3500bea2432552740f2cfcbde",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991081,
+      "identity_sha256": "c14cc75c064d7507960ae202310cf5fb3cb2ed893fd9ab5bd72bef8ba4bc021f",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991085,
+      "identity_sha256": "b6be9681562c8ed609ef7585f543635cda13b639c6414ac08da661cc5efd4d30",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991086,
+      "identity_sha256": "cae14003c0aa5b8866d7ded128fbe5f5d7a8463516cebb5e169bd32f5d4532e4",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991087,
+      "identity_sha256": "c6600dcdcb834cfa80f040b71437c2422df6c3b76f72a3a79b1d7df97f982207",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991088,
+      "identity_sha256": "eff14b81ac4c58db8fd8da5139987e4a1f1386c741f480b8c5a87cb027b929a7",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991090,
+      "identity_sha256": "b30447d238b3f73bef4d16d21579e4a5fb39a71add3b79b086440a6918186968",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991091,
+      "identity_sha256": "11de533fb81c4fa0d31e93983aee5a3487d6492df24cf4670aeccc5f00048f7f",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991092,
+      "identity_sha256": "74dd4bbbcc6e33ee02d89e66beb467cfc47a312e27db2b8fc7aa1587f96971d2",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991094,
+      "identity_sha256": "0b589171328f3850694153b46ad0740c771dfdf56c58278beeee5cef2f46da56",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991102,
+      "identity_sha256": "9670892ade0fff3b945288d27bd279d68a5084404d9cab0ebb5386fce7adfd44",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991105,
+      "identity_sha256": "3ef42879def7d981cc4284daeacabba301d2c043538b9774052a5d21838d129d",
+      "replay": "PASS",
+      "rule": 271002,
+      "train_overlap": false
+    },
+    {
+      "family": 991066,
+      "identity_sha256": "d58cba9552b702253e0a4f381c782dcef06243177ecfb72eb545d3c2ac94cbcd",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991074,
+      "identity_sha256": "bdeb858316a2eefca1f7833c0836210b5e6c8d904397ee75bcd2ba9401b6ea9d",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991075,
+      "identity_sha256": "880db12a684db5ce9e85a3786f8e3cba508d2a1deebdf06636c0dcce6df08bc7",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991081,
+      "identity_sha256": "72e2a32773e6177c627c31ea684336fa085c665d6ae009f9af12633c6a137f49",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991085,
+      "identity_sha256": "bfc007663013681ae594eea0ac0f7b1d9bc25e1e5a4d10eb952c73cdd8a5b93c",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991088,
+      "identity_sha256": "469e2332fb94dbd02b8e08954a725da874c55be4bc53dde733521073c41c2b1f",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991092,
+      "identity_sha256": "1bb701fef52a194e0df008fc013699f72d74e5f69d20aedf0fdd80c4663aabb5",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991093,
+      "identity_sha256": "9f8bd08f216f2de31a4bda12479aebd114a03f75f885c40c8583db7590e977b9",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991095,
+      "identity_sha256": "8e5f4995b497a747c42c51dce34cbdd4191d95eecf3ec58cc0febc239fbde560",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991099,
+      "identity_sha256": "f61452a995825ccaa02a51abc4fc1b7f39c5d5b9c4b55213ada0f0bae86fbaba",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991100,
+      "identity_sha256": "ea68e391df8145c2e3e03cb76e3181fa46b6892c1d8bbb7688208940e92f3865",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991102,
+      "identity_sha256": "0ab8f3207a040da965bdcc056ddc856eec8d7bc18f44a874293c20db6fa66e49",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991103,
+      "identity_sha256": "26ab17d18f2c11c5bb7fe32384b723b8f18a4e3164d8b457df259292efbf6a1f",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991107,
+      "identity_sha256": "52b195f9513c376d544254d58bddc8bb66bd0c7a8176ff25aef6d9f926b78dd9",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991109,
+      "identity_sha256": "34520e0fdaf682fe805ff3fe2d629153c1ae5f34d40a89cd6df832dc3d7e6d68",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991111,
+      "identity_sha256": "bf3986c27e786323f169c6e4d7d7a7f4f4b668ab87dd1366245bb6dfdceb6a3e",
+      "replay": "PASS",
+      "rule": 271003,
+      "train_overlap": false
+    },
+    {
+      "family": 991074,
+      "identity_sha256": "0116eae8c4efe0cd16303d8f99f05dd2ab142a03ddc6847743cd9a09b61e2ec5",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991080,
+      "identity_sha256": "27ef92504b001fb069add4ef676721f7c72a0844fe163dc45c1f654315f90112",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991084,
+      "identity_sha256": "e53f9cb3ec43967bebc523ea4e952348f090369df617e8819f1a5c5ef42f0e2d",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991086,
+      "identity_sha256": "027a4bc088379a7e2af8b14848067a7989dd0957f9f85691389760626ccdf1fe",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991087,
+      "identity_sha256": "d258acfa4c264a75b3d12c37af1b814d5c517306ed8ee0ea2ef5374c37030757",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991088,
+      "identity_sha256": "9240faac299953ba3bb9d2398136546ad006f15e1362f0bf0d5b42e4d32ccf44",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991092,
+      "identity_sha256": "435a4ea0e660d76ecd4c8d61f798bf052bf1f32ec16a5e1198c3867cb340c33b",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991093,
+      "identity_sha256": "fc67736a4c119b9ee350fe11079c021ff641f7c6389dabde138bdc121f7dfc7a",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991100,
+      "identity_sha256": "7350e11bd023c08925c7e80c2171e376189c47a4747a4787264862deb97c727c",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991101,
+      "identity_sha256": "ad0b58b9d5a684c7158c2eaf855b52f9404a1cc2b2b3b4043edf2fc3ccfd9f4f",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991105,
+      "identity_sha256": "cdcd6a495faa5fe47bf7dd869a6f1c66dd9b4d4cc7cc20cd45950ea773983506",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991106,
+      "identity_sha256": "c6b16f53029a7cdc1f699260c1a4cf67c5955ba6b4ef176f4bdeebb974b81a75",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991107,
+      "identity_sha256": "4559e7821ebbd9802c656828a13d1f3ad4326ce985fe1e94ffb8219363618a14",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991108,
+      "identity_sha256": "bbfabe8b44870a366c0bd22d1c7dac1363d2a091a05751ac9ae12542277619e1",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991110,
+      "identity_sha256": "f69cdbf6ffc320eb73a9f1c498c623efeee3aa6a39a1bcb3bddb0488482dd2d4",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    },
+    {
+      "family": 991111,
+      "identity_sha256": "16cd3d2f7a8ada6efdc1aa342a471bccd95b4f45e3d76a3dea928dcff0560b18",
+      "replay": "PASS",
+      "rule": 271004,
+      "train_overlap": false
+    }
+  ],
+  "source_sha256": {
+    "results/dev_aux/task2606/plan.json": "bd3d83eb2de63ae30138e9d550c6a64bd3bb16314532298194bbf35d508442a7",
+    "results/dev_aux/task2606/train.py": "7809a50ac912baa5c26164d8bea1821dc9d76f840a4bad91c474fd18bc924738",
+    "results/dev_aux/task2607/root-candidates.json": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
+    "results/dev_aux/task2611/feasibility.json": "61ee204b58f6e7eeb611c3cf3870648a8b7ca2ddf5d8b6b298d6caca4bd7a1e4"
+  },
+  "status": "PASS",
+  "task": "DEV_AUX2611_PROSPECTIVE_TRAIN_ROOT_OVERLAP_AUDIT",
+  "training_family_records_replayed": 2048,
+  "training_root_rng_formula": "generator_seed * 1_000_000 + family_id",
+  "unique_training_rule_history_records": 1304
+}

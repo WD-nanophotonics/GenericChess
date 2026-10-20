@@ -8,17 +8,30 @@ User-authorized bounded project work is permitted.
 
 ## Current decisions and reasons — user2026-10-15
 
-User2026-10-19 explicitly pauses DEV_AUX90-minute heartbeat but continues
-current manual research/consultation. Official dev-aux schedule is PAUSED;
-do not auto-resume it or set work/consultation stops for this schedule-only request.
-The2026-10-18 restoration and2026-10-17 pause remain historical;
-new user stops still apply. Recover this role's committed task and next research
-point, not overall engineering supervision or DeepSeek status polling. User will
-not activate both auxiliaries together; DeepSeek may have done some work without
-transferring identity, writing authority or mainline ownership. PRIMARY remains
-independent. Only own state/sidemission files change. Do not revive historical
-pause text into a new stop or reset the ended93 clock. New research uses its own
-session start; this bounded configuration/recovery is not a research sample.
+User correction2026-10-19: a one-time request to pause/stop the current
+inspection applies to that inspection only; it does not disable the user's
+recurring DEV_AUX heartbeat. Keep the existing schedule as configured and never
+change it unless the user explicitly asks to change the recurring schedule. The
+previous interpretation that the one-time pause set the official schedule to
+PAUSED was mistaken and is superseded. This clarification does not clear any
+role stop flags; a new explicit role stop still applies. Recover this role's
+committed task and next research point, not overall engineering supervision or
+DeepSeek status polling. User will not activate both auxiliaries together;
+DeepSeek may have done some work without transferring identity, writing authority
+or mainline ownership. PRIMARY remains independent. Only own state/sidemission
+files change. Do not revive historical pause text into a new stop or reset the
+ended93 clock. New research uses its own session start; this bounded correction
+is not a research-duration sample.
+
+User correction2026-10-20: this existing gc辅助 chat is DEV_AUX. Its
+heartbeat target is the same chat ID recorded below. The app's initial project
+cwd may be GenericChess 2; that field alone does not select a role or prove
+heartbeat misrouting. Recover from explicit user assignment plus this independent
+checkout's role.json and verified sidemission branch. Do not reinterpret a
+default cwd or an ordinary sandbox denial as PRIMARY ownership, corrupt metadata
+or a broken timer. Use explicit own-checkout workdir and supported escalation
+when ordinary sandbox access fails. Verify actual target ID/status/interval before
+reporting any schedule defect; do not create/rebind/pause a correct heartbeat.
 
 PUBLIC repository enables anonymous Dot/Chat evidence access; failed PRIVATE
 access experiment is superseded, never a retry task. Change visibility only

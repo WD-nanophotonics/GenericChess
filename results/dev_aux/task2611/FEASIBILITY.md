@@ -2,6 +2,8 @@
 
 This is a design-only feasibility check. No training or evaluation was launched.
 
+**Learning-signal scope:** task2611 would replicate the task2606 TD-leaf arms. The trainer admits `Receipt.value` only for complete searches and does not consume the `Sample(lower, upper)` internal-node bounds in `Receipt.samples`; resource-cut searches return no admitted samples and remain censored. Thus this experiment can assess fresh-seed/root stability of that TD-leaf comparison, but it cannot validate TreeStrap or the value of one-sided internal-node targets. The existing task2492 TreeStrap path has 13 focused unit tests passing, but its recorded Chess run is a smoke/learning-signal feasibility check, not a strength comparison.
+
 {
   "task": "DEV_AUX2611_FEASIBILITY_ONLY",
   "candidate_source_sha256": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
@@ -220,19 +222,32 @@ This is a design-only feasibility check. No training or evaluation was launched.
   "training_arms": 32,
   "nodes_per_arm": 312500,
   "total_training_nodes": 10000000,
-  "observed_training_wall_seconds_task2606": 3469.31793010002,
+  "observed_training_wall_seconds_task2606": 3469.424206900003,
+  "training_cap_seconds": 5400,
   "evaluation_slots": 1536,
   "expected_evaluation_seconds_task2609_2610": [
-    691.419,
-    702.419
+    691.4194885999896,
+    702.4194919000147
   ],
-  "estimated_combined_seconds": 4171.73693010002,
+  "cost_source_sha256": {
+    "results\\dev_aux\\task2606\\result.json": "a7cc4083fcc3d8428ee65c54fe6dcd54e943fbd13cfd9f1c750bd872400c8df5",
+    "results\\dev_aux\\task2606\\plan.json": "bd3d83eb2de63ae30138e9d550c6a64bd3bb16314532298194bbf35d508442a7",
+    "results\\dev_aux\\task2610\\attempt-2\\eval-plan.json": "5c21875097d4107d900591d0e2544e42f8fe88c00a78ce9f689fdd112b3e5484",
+    "results\\dev_aux\\task2609\\eval-result.json": "e75622b827e7c44fa942398b6d96e72fbd2d200a55d081f3aa0909e4e6985caf",
+    "results\\dev_aux\\task2610\\attempt-2\\eval-result.json": "14c7f2e884895ca4405d3a0fb6c3568279f380a46906cfe400778178bdbc05c3"
+  },
+  "evaluation_cap_seconds": 1200,
+  "configured_training_plus_evaluation_cap_seconds": 6600,
+  "configured_cap_minutes": 110.0,
+  "remaining_cap_headroom_to_120min_seconds": 600,
+  "estimated_combined_seconds": 4171.843698800018,
+  "estimated_combined_minutes": 69.53072831333363,
   "purpose": "If pursued, train all four rules \u00d7 four new deterministic seeds \u00d7 both fixed learner arms from scratch at the same nodes-per-arm, then evaluate on the next 16 eligible roots/rule, same uniform foe, endpoint/color/depth/node/H conditions. Distinguishes learner-seed replication using a new root panel; no model or root selection from 2609/2610 outcomes.",
   "preflight_replayed_roots": 64,
   "status": "FEASIBLE DESIGN ONLY; NOT REGISTERED OR RUN",
   "limits": [
     "One four-seed batch remains small and cannot establish population effects.",
     "Evaluation-root selection is deterministic from the existing pre-outcome candidate stream, not a random sample.",
-    "Combined estimated run is ~70 minutes using observed task2606 training and task2610 evaluation times; actual must be reported."
+    "Combined observed-stage estimate is ~69.5 minutes; the 110-minute sum of configured training/evaluation caps leaves only 10 minutes for setup/audit before the 120-minute assessment boundary. Include actual preparation and audit time in the estimate; actual must be reported."
   ]
 }

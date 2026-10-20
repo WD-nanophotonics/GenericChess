@@ -1,0 +1,49 @@
+{
+  "accounting": "Count all candidate and fixed-foe nodes, completed and incomplete. TreeStrap updates on complete candidate receipts only. TDLeafEpisode observes complete candidate receipts and finishes with censored None; no terminal W/L is supplied or recorded. No W/L, learned weights, fitness, or candidate ranking is output.",
+  "candidate_color_by_seed_index": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "candidate_initialization": "same random.Random(seed) vector per paired learner, [1.0]+four Uniform(0.5,1.5) coefficients; cost-only, no endpoint comparison.",
+  "execution_scope": "The failed attempt created only a top-level started receipt then stopped before the first search. This corrected attempt gets its own start/result files, uses the same inputs and 900s cap, and is not an extension of any training cap. No W/L evaluation or outcome/weight output.",
+  "global_hard_cap_seconds": 900,
+  "max_nodes_per_search": 8192,
+  "max_plies": 64,
+  "methods": [
+    "TreeStrap(eta=.05)",
+    "TDLeafEpisode(eta=.05,lambda=.95)"
+  ],
+  "node_budget_per_arm": 100000,
+  "opening_plies": 8,
+  "opening_seed_formula": "70000 + seed; sorted legal UCI actions then uniform choice; paired identical root by seed.",
+  "opponent_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "parent_plan_sha256": "c17c1aa11c6bb5c84c73690daad541688a572189e68d73eb1b30655e3d70a26f",
+  "parent_task": "DEV_AUX2612_COST_ONLY",
+  "root_failed_attempt_preserved": true,
+  "search_source": "task2492.learning.AlphaBeta with task2492.adapters.ChessEnv; identical full-width D2/q0 search, randomized legal action order.",
+  "seconds_per_search_cap": 2.0,
+  "seeds": [
+    5670,
+    181982,
+    449984,
+    714589
+  ],
+  "source_sha256": {
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/plan.json": "e5485b0d88661bb22a30095f2ddf129d4512f5819ee25df510ad56defe08efc8",
+    "results/dev_aux/task2612/attempt-2/cost_scan.py": "a9773f24210a74f3ab33711990a6c2a581e29fb653d000c36fe9e7af69d1c762",
+    "results/dev_aux/task2612/plan.json": "c17c1aa11c6bb5c84c73690daad541688a572189e68d73eb1b30655e3d70a26f"
+  },
+  "status": "REGISTERED_COST_SCAN_NO_FITNESS_OR_EVALUATION",
+  "task": "DEV_AUX2612_COST_ONLY_ATTEMPT_2"
+}

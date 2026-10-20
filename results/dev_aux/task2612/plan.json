@@ -1,0 +1,48 @@
+{
+  "accounting": "Count all candidate and fixed-foe nodes, completed and incomplete. TreeStrap updates on complete candidate receipts only. TDLeafEpisode observes complete candidate receipts and finishes with censored None; no terminal W/L is supplied or recorded. No W/L, learned weights, fitness, or candidate ranking is output.",
+  "candidate_color_by_seed_index": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "candidate_initialization": "same random.Random(seed) vector per paired learner, [1.0]+four Uniform(0.5,1.5) coefficients; cost-only, no endpoint comparison.",
+  "created_from_session": "de08fba8-db86-4566-a4a9-e16f3fcbb4d0",
+  "global_hard_cap_seconds": 900,
+  "max_nodes_per_search": 8192,
+  "max_plies": 64,
+  "methods": [
+    "TreeStrap(eta=.05)",
+    "TDLeafEpisode(eta=.05,lambda=.95)"
+  ],
+  "node_budget_per_arm": 100000,
+  "opening_plies": 8,
+  "opening_seed_formula": "70000 + seed; sorted legal UCI actions then uniform choice; paired identical root by seed.",
+  "opponent_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "question": "What are observed search-node throughput and learner-update overhead for TreeStrap and TDLeafEpisode on the exact shared task2492 AlphaBeta/Receipt path with fixed-foe actor routing?",
+  "search_source": "task2492.learning.AlphaBeta with task2492.adapters.ChessEnv; identical full-width D2/q0 search, randomized legal action order.",
+  "seconds_per_search_cap": 2.0,
+  "seed_source": "sorted(random.Random(2612).sample(range(1,1000000),4)); identifiers checked against task2492/task2568/task2594/task2606 registered Chess seed identifiers; no outcome/weight data accessed.",
+  "seeds": [
+    5670,
+    181982,
+    449984,
+    714589
+  ],
+  "source_sha256": {
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2492/plan.json": "e5485b0d88661bb22a30095f2ddf129d4512f5819ee25df510ad56defe08efc8"
+  },
+  "status": "REGISTERED_COST_SCAN_NO_FITNESS_OR_EVALUATION",
+  "task": "DEV_AUX2612_COST_ONLY",
+  "threshold_assessment": "expected <15 minutes from prior 120k-node/arm smoke; 900s hard cap, therefore below 120min Dot-assessment threshold.",
+  "training_or_evaluation": "This is a bounded implementation/cost scan only: no held-out evaluation, no actual-outcome analysis, no parameter selection, no WDL grid, no old cap reuse."
+}

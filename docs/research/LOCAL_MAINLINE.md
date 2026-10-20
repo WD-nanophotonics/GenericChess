@@ -78,13 +78,24 @@ seed replication is worth the cost: use deterministic new seeds
 [296135, 436664, 665887, 920190], the next 16 unused eligible roots per rule
 from task2607, and the same two learners, uniform foe and frozen per-arm budget.
 The deterministic seeds [296135, 436664, 665887, 920190] do not collide with the task2594/task2606 seeds. All 64 proposed four-ply full records replay as nonterminal and are exact-history
-disjoint from both prior panels. The observed task2606 training time (3469.318s)
-plus task2610-sized evaluation (702.419s) estimates 4171.737s (~69.5min), below
-the 120min consultation threshold. This is feasibility only, not a registered
-or launched task; task2611 must bind a fresh session UUID, freeze source/seed/
-root manifests and retain its own caps before execution. A four-seed batch is
-still small and cannot establish population effects. See
-results/dev_aux/task2611/FEASIBILITY.md.
+disjoint from both prior panels. The original cost estimate used truncated arm times and hard-coded evaluation seconds. The corrected feasibility script reads task2606 whole-run wall time, both prior evaluation result files, and SHA-binds all five runtime/cap sources: 4,171.844s (69.53min) observed-stage estimate, with unchanged training/evaluation caps totaling 6,600s (110min), leaving 600s below the 120min threshold. This remains feasibility only, not a registered or launched task; include setup/audit time in any future estimate. A learning-signal source audit shows task2611 is specifically a fresh-seed/root replication of task2606 TD-leaf: complete searches train from root `Receipt.value`; the runner does not pass recorded internal `Sample(lower, upper)` bounds to TreeStrap, while resource-cut searches contribute no exact target and remain censored. Therefore task2611 cannot establish the value of one-sided internal-node supervision. Existing task2492 TreeStrap tests pass 13/13 across its learning and episode suites, but its Chess run is smoke-only and not a strength comparison. Keep that distinction in any claim or next-task choice. A further outcome-blind replay generated all 2,048 possible task2606 training
+root-family starts (1,304 unique exact rule-history records); the proposed 64
+third-panel roots have zero exact intersections, conditional on preserving the
+frozen family/prefix/RNG recipe. Any change requires rerunning this check before
+registration. This does not establish descendant-state disjointness. A
+prospective initialization manifest records the deterministic four seed vectors
+without training or outcome selection; the next session must bind it with a new
+UUID and final registration. A four-seed batch is still small and cannot
+establish population effects. See results/dev_aux/task2611/FEASIBILITY.md,
+prospective-train-root-audit.json, and prospective-initialization-manifest.json.
+Before registration, route review deferred task2611: it would only repeat the existing Generic TD-leaf contrast on fresh seeds/roots; it does not consume internal alpha-beta bounds and therefore cannot test TreeStrap. task2492 remains a Chess smoke-only run (no held-out W/L strength comparison); task2594 evaluates a TD-leaf variant, not TreeStrap. The direct user priority is better served by a preregistered standard-Chess actual-W/L comparison of TreeStrap and TD-leaf at matched total search-node cost, retaining the one-coordinate finite-WDL proposal-selection control if feasible. Task2611 artifacts remain intact and optional; revisit only if seed/root sensitivity becomes the next decision bottleneck. Details: results/dev_aux/task2611/ROUTE_REVIEW.md.
+A task2492 smoke re-account shows 44,457 TreeStrap internal-bound samples versus 1,881 TD update samples across paired seed arms at similar nodes; TreeStrap took 14.51/14.16s versus TD 14.23/13.86s. This supports only denser signal with little tiny-run overhead, not a strength or efficiency win. The registered Chess comparison must report training loss and actual W/L under matched total compute.
+The immutable86 archive SHA and four extracted task2492 source pins were independently verified against the manifest and started.json; the checked-in text companions are not substituted for those exact sources. The protocol draft also records a comparability limit: TreeStrap currently receives one-sided internal bounds, while TDLeaf receives terminal returns, so a two-arm test compares full learner packages, not an isolated marginal effect of internal targets.
+A nonregistered protocol draft now fixes the decision question and fairness requirements while leaving seeds/roots/caps unselected until cost scan; it uses task2594 timing only as a baseline, not a predicted TreeStrap run time. See results/dev_aux/TREESTRAP_CHESS_PROTOCOL_DRAFT.md.
+The task2492 smoke runner itself cannot be reused unchanged: its `run.py` passes the learner model for every actor, so all methods self-play. The next frozen W/L runner must route a fixed foe model on the opponent turn, share the same `AlphaBeta` receipt implementation, and charge opponent nodes to the candidate arm.
+
+Task2612 then exercised that fixed-foe shared-receipt path in a cost-only scan: four paired seeds, two methods, 100k candidate-plus-foe nodes per arm, 8 arms in 111.982s. TreeStrap processed 36,903 internal-bound samples; TDLeafEpisode saw 2,208 complete candidate receipts; each arm had one incomplete final budget-limited query and retained it as censored. No W/L labels or weights were emitted. This small scan only shows path feasibility; its 2% timing difference is order-confounded (TreeStrap ran first), with four seeds and no held-out evaluation or WDL arm. A shared-receipt evaluator/WDL cost scan remains before final registration. Full evidence: results/dev_aux/task2612/REPORT.md.
+
 DEV_AUX's sidemission can be read, written, tested, and pushed through the
 supported reviewed-escalation path. The live ordinary sandbox still does not
 list this checkout as writable; this segment does not claim its setting was

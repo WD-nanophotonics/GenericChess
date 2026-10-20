@@ -7,12 +7,23 @@ the historical single-heartbeat rule is overridden only to this extent.
 
 ## Recovery and research segments
 
-Current user direction2026-10-19 pauses ONLY future dev-aux90-minute heartbeat;
-official automation status PAUSED was read back. Current manual research and
-consultation continue. Do not set rollout/advisor/slack work stops for this
-schedule-only request or automatically restore the timer. Earlier ACTIVE setup
-and2026-10-18 restoration below remain historical; a new explicit full-work stop
-still suspends this role through its own paths.
+User correction2026-10-19: a one-time “pause inspection” request pauses only
+that current inspection and does not change the recurring DEV_AUX heartbeat.
+Keep the existing user-configured schedule unchanged; do not update it unless
+the user explicitly asks to change or disable the recurring schedule. The earlier
+interpretation that this one-time request set the official schedule to PAUSED was
+mistaken and is superseded. Current manual work continues on an explicit continue;
+new role-specific or whole-project stops still apply through their own paths.
+
+User correction2026-10-20: this existing gc辅助 chat is DEV_AUX. Its
+heartbeat target is the same chat ID recorded below. The app's initial project
+cwd may be GenericChess 2; that field alone does not select a role or prove
+heartbeat misrouting. Recover from explicit user assignment plus this independent
+checkout's role.json and verified sidemission branch. Do not reinterpret a
+default cwd or an ordinary sandbox denial as PRIMARY ownership, corrupt metadata
+or a broken timer. Use explicit own-checkout workdir and supported escalation
+when ordinary sandbox access fails. Verify actual target ID/status/interval before
+reporting any schedule defect; do not create/rebind/pause a correct heartbeat.
 
 Use only the user-established GenericChess-DEV_AUX independent clone (absolute path in private local configuration), sidemission.
 The native heartbeat dev-aux targets chat 01a128cf-ae2d-7352-a456-06bd38367221.
