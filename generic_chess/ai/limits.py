@@ -4,11 +4,20 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from numbers import Integral
 
 
 @dataclass(frozen=True, slots=True)
 class SearchLimits:
-    """Search budgets; ``None`` means unlimited for that dimension.
+    """Search budgets with field-specific ``None`` behavior.
+
+    ``max_depth=None`` selects AlphaBeta's default maximum depth (64); the
+    Native engine requires an explicit supported depth. ``None`` means no
+    limit for ``max_nodes``, ``max_time_seconds`` and
+    ``quiescence_max_nodes``.
+
+    ``deterministic`` is retained as compatibility metadata; current search
+    backends do not consume it.
 
     ``max_nodes`` is a **total-node budget**: it counts main nodes plus
     quiescence nodes (``stats.nodes + stats.qnodes``). Node limits are checked
@@ -33,6 +42,26 @@ class SearchLimits:
     deterministic: bool = True
 
     def __post_init__(self) -> None:
+        integer_fields = (
+            ("max_depth", self.max_depth, True),
+            ("max_nodes", self.max_nodes, True),
+            ("quiescence_max_depth", self.quiescence_max_depth, False),
+            ("quiescence_hard_max_depth", self.quiescence_hard_max_depth, False),
+            ("quiescence_max_nodes", self.quiescence_max_nodes, True),
+        )
+        for name, value, optional in integer_fields:
+            if optional and value is None:
+                continue
+            if isinstance(value, bool) or not isinstance(value, Integral):
+                raise ValueError(f"{name} must be an integer")
+        if self.max_depth is not None and self.max_depth < 0:
+            raise ValueError("max_depth must be >= 0; use None for the default depth")
+        if self.max_nodes is not None and self.max_nodes < 0:
+            raise ValueError("max_nodes must be >= 0; use None for no node limit")
+        if self.quiescence_max_depth < 0:
+            raise ValueError(
+                "quiescence_max_depth must be >= 0; use 0 to disable ordinary qsearch"
+            )
         if self.max_time_seconds is not None:
             try:
                 valid_time_limit = (
@@ -50,4 +79,8 @@ class SearchLimits:
             raise ValueError(
                 "quiescence_hard_max_depth must be >= quiescence_max_depth "
                 f"(got {self.quiescence_hard_max_depth} < {self.quiescence_max_depth})"
+            )
+        if self.quiescence_max_nodes is not None and self.quiescence_max_nodes < 0:
+            raise ValueError(
+                "quiescence_max_nodes must be >= 0; use None for no qsearch node limit"
             )

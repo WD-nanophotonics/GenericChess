@@ -1644,11 +1644,191 @@ the selected action/declaration contracts. This caller adds no uncovered
 invariant or reproduced defect; no API, runner or search change follows. The
 separate UI declaration limitation and UI Test ownership remain unchanged.
 
-Next test whether the rule-only static profile is equivariant under a bijective
-piece-type-ID rename on one schema-valid fixture: map all declarations and
-promotion targets, then compare raw capability scores and board/hand/promotion
-values after applying the same ID map. Existing coverage checks piece-type
-declaration order but no ID-renaming property was found. A mismatch would expose
-an identifier-dependent price defect; exact mapped equality closes this narrow
-invariant only. Use no games/training and do not claim broader utility or
-semantic-IR coverage from a legacy fixture.
+The rule-only static-profile ID-renaming invariant is now closed by
+`STATIC_PROFILE_ID_RENAME_EQUIVARIANCE_20261020.md` and a regression in
+`tests/product/test_ai_evaluation.py`. One schema-valid legacy fixture remaps
+type declarations, initial-position IDs, drop/promotion mask keys and promotion
+targets; every raw and normalized per-type field matches after inverse mapping.
+This is identifier equivariance for that legacy profile route only, not
+semantic-IR coverage, cross-rule transfer, utility or a price/default result.
+
+The next unfamiliar-search check found concrete shared-limit inconsistencies,
+closed in `SEARCH_LIMIT_INPUT_VALIDATION_20261020.md`: negative total nodes were
+silently converted by AlphaBeta to a legal `node_limit` fallback while Native
+already rejected them; negative maximum depth likewise became an AlphaBeta
+fallback after a seven-node root scan while Native rejected it. Shared
+`SearchLimits` now rejects only those demonstrated negative fields and retains
+zero/default behavior. The AlphaBeta and Native-budget modules pass 36 tests.
+This aligns two input contracts without changing search, fallback or timing
+policy; no claim follows for non-integer limits or other fields.
+
+A bounded continuation found the same mismatch in the two shared qsearch
+integer caps: negative `quiescence_max_depth` silently behaved like zero and
+disabled ordinary qsearch, while negative `quiescence_max_nodes` acted like an
+immediate zero cap. Native rejects these negative settings because its qsearch
+support is limited to depth zero and node cap `None`/zero. The constructor now
+rejects both negative qsearch fields while retaining zero/`None`; the two
+focused AlphaBeta/Native budget modules pass 37 tests. This is input-contract
+correctness only. Next select a different unfamiliar-rule public contract
+with an observed caller consequence; do not generalize to malformed types or
+unrelated fields without a concrete failure.
+
+The same source audit corrected a misleading `SearchLimits` class docstring:
+`max_depth=None` is AlphaBeta's finite default maximum depth 64, whereas Native
+requires an explicit supported depth; only node/time/qnode fields use `None`
+for no cap. Runtime semantics are unchanged. Do not infer backend interchange-
+ability from sharing the limits object.
+
+The exposed `SearchLimits.deterministic` flag has no reader in current search
+code; project callers only pass `True`. A fixed public AlphaBeta comparison
+with `True`/`False` produced identical result metadata. Document it as inert
+compatibility metadata rather than adding unrequested randomness or removing a
+public constructor field. Continue searching for a concrete unfamiliar-rule
+caller gap; do not turn option-name ambiguity into a broad API redesign.
+
+A concrete typed-budget failure justifies narrow shared validation: the public
+AlphaBeta path accepted `max_nodes=1.5` and consumed2 nodes before its limit
+check. Fractional0.5/2.5 likewise stopped at1/3; integer0/1/2 stayed within
+cap. `max_depth=1.5` raised `TypeError` before a result. Shared construction
+now accepts only integral non-bool values for its five depth/count fields,
+preserving zero/`None`; the two focused backend modules pass47 tests. This
+closes the observed cap overrun, not arbitrary malformed input across unrelated
+options.
+
+A bounded generated-rule `max_depth=0` probe found different but deliberate
+result shapes: AlphaBeta returns a legal root-scan fallback, while Native's
+kernel explicitly returns the static root score with no action/PV and one root
+visit. Native accepts depth zero, its result action is optional, and its
+canonical fallback is specified for failure to finish depth one. Therefore
+zero is a score-only Native request, not a broken move-selection result. The
+Native iterative docs and regression state that contract and check its static
+score plus unchanged full session record. A control matrix then found the
+Native zero-depth C branch skipped zero-node, zero-time and pre-cancel checks,
+unlike the positive-depth immediate-abort contract. The ongoing-root branch now
+polls existing controls after terminal detection and before static evaluation;
+an abort reports the actual cause with no score-only completion or move
+fallback. Terminal priority, the one mandatory root visit, and unbudgeted
+zero-depth static-score behavior remain intact. After rebuilding the Native
+extension, the four affected product modules pass87 tests. This is a bounded
+stop-control correction, not a strict deadline or search-quality claim. See
+`SEARCH_LIMIT_INPUT_VALIDATION_20261020.md`.
+
+The Native iterative time-scope source audit found no hidden end-to-end timer:
+full GameSession history packing occurs before the C call, while both
+`max_time_seconds` and `elapsed_seconds` apply only to the C iterative phase;
+Python result validation is also outside it. Cancellation registration begins
+after packing. Existing Arena consumers correctly retain a separate wall timer
+around `engine.search`. Native engine and Phase2C docs now state this boundary;
+no runtime/API expansion is justified for the experimental backend. This does
+not claim a strict wall deadline. Future consumers requiring end-to-end caps
+must enforce them at their caller boundary.
+
+Continue with one distinct unfamiliar-rule caller contract; do not generalize
+these boundary checks to unrelated inputs or infer backend interchangeability.
+
+A pass-enabled semantic caller audit found the optional Native legality path
+cannot encode coordinate-free `PassAction`, but the default AlphaBeta player
+declines that provider and retains Core action generation. The existing public
+generated-semantic test already covered selecting, submitting and replaying a
+pass; it now also asserts that this exact case truly took the Core fallback.
+The `PythonSearchBackend`/`SearchSnapshot` adapter also returns the pass action
+and PV while preserving the input session. UI completion passes the typed
+`Action` directly through `submit_action` to `GameSession.submit`. The pass
+module plus adapter tests pass 23. No backend or runtime change is needed. See
+`PASS_ACTION_CORE_FALLBACK_CONTRACT_20261020.md`; this is one pass-enabled
+caller contract, not a claim that the experimental Native search supports pass
+actions or every generated rule.
+
+The promotion caller test previously asserted only that AlphaBeta returned a
+legal action. A fixed child evaluator now forces the sole `G` promotion in the
+fixture and verifies action/PV identity, transformed child state, submission,
+and serialized replay (`test_ai_search.py` + `test_promotion.py`: 49 passed).
+See `ALPHABETA_PROMOTION_RESULT_CONTRACT_20261020.md`. This closes one legacy
+fixture's promoted-result path, not all generated promotion rules.
+
+The next action-class audit found no AlphaBeta caller test that selected a
+`DropMove`, despite Core drop generation coverage. A reachable legacy scenario
+(capture to hand, opponent king move, then search) now forces and replays a
+legal drop. The mixed-mechanic semantic test also now has AlphaBeta select a
+generated `SemanticDropMove` while its optional Native legality provider is
+active; typed piece identity, PV, hand consumption and full record replay agree.
+The three legacy AI/promotion/drop modules pass 58 tests and the focused
+semantic result test passes. See `ALPHABETA_DROP_RESULT_CONTRACT_20261020.md`.
+This verifies two bounded result routes, not Native iterative drop support or
+all generated hand rules. Next inspect the immediate submit/replay of a
+semantic promotion selected by search; existing tests may already cover it,
+so change only a demonstrated caller gap.
+
+The many-target semantic promotion tests previously checked only legal
+closure and child snapshots. A new nine-target AlphaBeta case forces target
+`T08`, beyond the legacy eight-entry boundary, and validates the exact returned
+`SemanticBoardMove`, PV head, session submission and replay; the default
+Native semantic legality provider is active. Its module passes 5 tests. The
+mixed semantic capture/promotion/drop caller now also selects its opaque
+`A0→A1` promotion by search. See
+`SEMANTIC_PROMOTION_SEARCH_RESULT_20261020.md`. This verifies one ninth target,
+not all 62 target search results. Next test whether AlphaBeta preserves the
+semantic capture-to-hand action and hand-owner identity through its result/PV;
+keep the already verified drop sequence and replay as the downstream control.
+
+That capture-to-hand contract now also uses a search-selected generated
+`SemanticBoardMove`, not a fixture-inserted transition. In the same F24C
+promotion→capture→drop sequence, Native-legality and Core-only AlphaBeta
+decisions agree for capture and drop on action, scalar score, depth, PV and
+nodes; the Native route reports actual legality calls with no fallback or
+operational failure, while Core-only reports zero Native calls. Typed B0/A0
+identity, hand transfer, PV head, session immutability during search, submit,
+and full serialized replay pass. Five focused semantic/legacy caller modules
+pass. See `ALPHABETA_GENERATED_ACTION_RESULT_CONTRACT_20261020.md`. This is one
+generated mixed-mechanic result path, not all action families or backend
+equivalence.
+
+The current per-root-action-score diagnostic is unsupported by the existing
+public AlphaBeta result: `PlayerDecision` exposes only one chosen action and
+score, and `run_root_search` returns one action/score/PV/reason tuple. The saved
+promotion/king qfrontier artifact's same-score/different-action result therefore
+cannot be disambiguated through an existing supported field; no diagnostics
+API is warranted. As a separate reuse check, the saved candidate96
+static_v2-versus-Unit checker reproduces 22 changed and 34 unchanged first
+actions among 56 same-state shared-action pairs (eight pairs have no candidate
+action in either arm; two outcomes remain UNKNOWN). This is an existing
+post-hoc association, not a causal price effect or reason to add another panel.
+
+The adjacent terminal/history caller audit found no missing result contract:
+existing public tests cover a history-dependent continuous-check root win,
+terminal-source provenance even under cancellation, complete-history runtime
+parity and TT separation. Three targeted history/provenance modules pass 67
+tests. No duplicate regression or runtime change follows. Next inspect one
+distinct current unfamiliar-rule caller contract from source/evidence; add no
+new result instrumentation unless an existing caller has a concrete unmet
+decision need.
+
+The complete public `Action` union/result caller map found no missing selected
+action class after the mixed semantic capture test: legacy BoardMove/DropMove,
+semantic board/drop actions, PassAction, and compound castling represented as a
+board action all have relevant AlphaBeta result and commit/replay regressions.
+The remaining concrete gap was in evidence, not search: `record_value` applied
+`dataclasses.asdict` recursively, so a searched PassAction inside PlayerDecision
+and its PV became `{}`. It now traverses dataclass fields recursively and uses
+the canonical `{"kind":"pass"}` encoding for PassAction; ordinary BoardMove
+record shape is explicitly unchanged. The research-record plus four product
+pass/semantic action modules pass. See `SEARCH_ACTION_RECORD_PASS_20261020.md`.
+No search/API/price/training change follows. Next select one distinct
+decision-changing route from current mainline evidence; do not reopen the
+unsupported per-root-score diagnostic or expand the closed static panel.
+
+The record-shape audit exercised all nine test modules that directly consume
+`record_value`; the suite exited successfully with the ignored project-local
+pytest basetemp. Ordinary dataclass/list/tuple/enum/Fraction records retained
+their existing tested shapes, while nested PassAction now retains its canonical
+identity. No unrelated persisted-consumer break was found.
+
+A distinct generated-history caller gap was then closed:
+`SEARCH_REPEATED_CYCLE_WIN_RESULT_20261020.md` and a product regression replay
+the 10x9 actor-specific repeated-cycle fixture to the ongoing ply-7 parent.
+Among19 legal actions, AlphaBeta selects the exact semantic action whose Core
+child adjudicates actor0's repeated-cycle loss, returning `root_immediate_win`;
+search leaves the parent record unchanged. The focused test and five adjacent
+cycle/history/root-terminal modules pass. This confirms one semantic caller
+integration, not all cycle histories or Native equivalence; no search code
+change follows. Continue only on a distinct unfamiliar-rule contract.

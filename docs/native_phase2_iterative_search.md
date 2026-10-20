@@ -58,8 +58,19 @@ early aborts return the last complete depth with the real
 `node_limit`/`time_limit`/`cancelled` reason, and a depth-1 failure returns a
 deterministic canonical fallback (`used_fallback=True`).
 
-* Node budget is exact (checked before visiting each node; `nodes <=
-  max_nodes`).
+* The root is always visited and counted once before iterative work; the node
+  cap is checked before additional visits. Thus `max_nodes=0` still reports
+  one mandatory root node and performs no child expansion. For positive caps,
+  `nodes <= max_nodes`.
+* A requested `max_depth=0` is a score-only root evaluation, not a move-
+  selection request. On an ongoing position the root control check still runs
+  before static evaluation: a zero node/time budget or a pending cancellation
+  reports its real abort reason with no action/PV and no move fallback (the
+  mandatory root visit is counted once). Otherwise it returns the static
+  material score with no action/PV at completed depth 0. Terminal roots are
+  classified before this control check. Callers that need an executable action
+  must request at least depth 1; an abort before completing depth 1 then returns
+  the documented canonical legal fallback when the root has legal actions.
 * Time uses `QueryPerformanceCounter` / `CLOCK_MONOTONIC` (never wall or CPU
   clocks) with saturating deadlines, checked at search start, iteration
   boundaries, root child boundaries and every 128 nodes.
@@ -68,6 +79,12 @@ deterministic canonical fallback (`used_fallback=True`).
   recursion — no per-node Python callbacks. Aborts always unwind make/unmake,
   and the root position (board/hands/side/ply/history/hash/context) is
   verified restored before returning.
+* The Native time budget and result `elapsed_seconds` cover only the C iterative
+  search call. Python full-history packing/replay and result legality/PV checks
+  happen outside it; cancellation is registered with C after packing and does
+  not interrupt that preparation. Callers needing an end-to-end call or game
+  cap must measure and enforce an outer wall clock. The current Arena records
+  that separate `search_wall_seconds` measurement.
 
 ## Differential evidence
 

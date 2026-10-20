@@ -57,6 +57,68 @@ def test_iterative_equals_fixed_depth_without_budget():
 
 
 @requires_native
+def test_iterative_depth_zero_is_score_only_not_move_selection():
+    from generic_chess.native.search import native_fixed_depth_search
+
+    compiled = generated_compiled(size=4)
+    engine = _engine(compiled, tt_mb=0)
+    session = GameSession(compiled)
+    before = session.to_record()
+    static = native_fixed_depth_search(
+        compiled, engine._native_rules, engine._evaluation, session, depth=0
+    )
+
+    result = engine.search(
+        session, SearchLimits(max_depth=0, quiescence_max_depth=0)
+    )
+
+    assert result.action is None
+    assert result.score == static.score
+    assert result.principal_variation == ()
+    assert result.completed_depth == 0
+    assert result.termination_reason == "completed_depth"
+    assert result.used_fallback is False
+    assert result.nodes == 1
+    assert result.qnodes == 0
+    assert session.to_record() == before
+
+
+@requires_native
+@pytest.mark.parametrize(
+    "control, expected_reason",
+    [("nodes", "node_limit"), ("time", "time_limit"), ("cancel", "cancelled")],
+)
+def test_iterative_depth_zero_honors_abort_controls(control, expected_reason):
+    from generic_chess.ai.cancellation import CancellationToken
+
+    compiled = generated_compiled(size=4)
+    engine = _engine(compiled, tt_mb=0)
+    session = GameSession(compiled)
+    token = None
+    if control == "nodes":
+        limits = SearchLimits(
+            max_depth=0, max_nodes=0, quiescence_max_depth=0
+        )
+    elif control == "time":
+        limits = SearchLimits(
+            max_depth=0, max_time_seconds=0.0, quiescence_max_depth=0
+        )
+    else:
+        limits = SearchLimits(max_depth=0, quiescence_max_depth=0)
+        token = CancellationToken()
+        token.cancel()
+
+    result = engine.search(session, limits, cancel_token=token)
+
+    assert result.action is None
+    assert result.principal_variation == ()
+    assert result.completed_depth == 0
+    assert result.termination_reason == expected_reason
+    assert result.used_fallback is False
+    assert result.nodes == 1  # mandatory root visit precedes abort polling
+
+
+@requires_native
 def test_iterative_terminal_root():
     from generic_chess.core.actions import BoardMove
     from generic_chess.core.coordinates import Square
@@ -75,6 +137,23 @@ def test_iterative_terminal_root():
     assert result.completed_depth == 0
     assert result.termination_reason == "terminal_position"
     assert result.nodes == 1
+
+    zero_depth = engine.search(
+        session,
+        SearchLimits(
+            max_depth=0,
+            max_nodes=0,
+            max_time_seconds=0.0,
+            quiescence_max_depth=0,
+        ),
+    )
+    assert zero_depth.action is None
+    assert zero_depth.principal_variation == ()
+    assert zero_depth.score == result.score
+    assert zero_depth.completed_depth == 0
+    assert zero_depth.termination_reason == "terminal_position"
+    assert zero_depth.used_fallback is False
+    assert zero_depth.nodes == 1
 
 
 @requires_native

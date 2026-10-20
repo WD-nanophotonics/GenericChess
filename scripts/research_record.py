@@ -1,5 +1,5 @@
 """Lossless JSON for observed research records, including terminal enums."""
-from dataclasses import asdict,is_dataclass
+from dataclasses import fields,is_dataclass
 from enum import Enum
 from fractions import Fraction
 import json
@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 import tempfile
 import time
+from generic_chess.core.actions import PassAction, action_to_dict
 
 def record_value(value):
     # Research producers already load numpy. Convert scalar metadata without
@@ -16,7 +17,12 @@ def record_value(value):
     numpy = sys.modules.get('numpy')
     if numpy is not None and isinstance(value, numpy.generic):
         return record_value(value.item())
-    if is_dataclass(value) and not isinstance(value,type):return record_value(asdict(value))
+    # PassAction has no dataclass fields. Generic dataclass conversion used to
+    # turn it into {}, losing its identity in a recorded decision/PV.
+    if isinstance(value, PassAction):return action_to_dict(value)
+    if is_dataclass(value) and not isinstance(value,type):
+        return {item.name: record_value(getattr(value, item.name))
+                for item in fields(value)}
     if isinstance(value,Enum):return record_value(value.value)
     if isinstance(value,Fraction):return str(value)
     if isinstance(value,dict):

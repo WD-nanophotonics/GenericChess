@@ -1,6 +1,9 @@
 """Semantic promotion closure must not inherit the legacy eight-target array."""
 from dataclasses import replace
 import pytest
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
+from generic_chess.core.actions import SemanticBoardMove
 from generic_chess.core.coordinates import Square
 from generic_chess.core.identity import position_identity_key
 from generic_chess.core.movement import LeapAtom
@@ -14,6 +17,7 @@ from generic_chess.native.semantic import guarded_actions, make_checked, public_
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import RuleSemanticAction, RuleGeometrySpec, RuleActionEffect, RuleSquareRef, RuleInvariant
 from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
 from rule_semantics_ir_fixtures import _semantic_ruleset, _king_type
 
 pytestmark = pytest.mark.skipif(not native_available(), reason='Native extension unavailable')
@@ -60,3 +64,42 @@ def test_full_semantic_promotion_target_closure(target_count, forced):
         assert snapshot_matches(snapshot(rules, child), reference.position, rules, compiled)
         assert position_key(rules, child) == str(position_identity_key(reference.position, compiled))
     assert position_key(rules, root) == str(position_identity_key(session.state.position, compiled))
+
+
+def test_alphabeta_selects_and_replays_ninth_semantic_promotion_target():
+    compiled = compile_ruleset_for_execution(many_target_rules(9, False))
+    session = GameSession(compiled)
+
+    class PreferNinthTarget:
+        def evaluate(self, state):
+            selected = any(
+                piece is not None and piece.owner == 0
+                and piece.current_type_id == "T08" and piece.promoted
+                for piece in state.position.board
+            )
+            return -10_000 if selected else 10_000
+
+    player = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferNinthTarget(), use_disk_cache=False
+    )
+    assert player.native_legality_provider is not None
+    decision = player.choose_action(
+        session,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=2_000,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+    assert isinstance(decision.action, SemanticBoardMove)
+    assert decision.action.promotion_target_id == "T08"
+    assert decision.principal_variation[0] == decision.action
+    session.submit(decision.action)
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.state == session.state
+    assert replayed.state.position.board[
+        decision.action.to_square.rank * 8 + decision.action.to_square.file
+    ].current_type_id == "T08"
+    assert replayed.result == session.result

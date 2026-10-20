@@ -212,6 +212,164 @@ def test_promotion_gain_order_invariant():
     assert pa.promotion_gain_by_type["P"] > 0  # gain is not dropped when G is later
 
 
+def test_static_profile_equivariant_under_bijective_type_id_rename():
+    from dataclasses import replace
+
+    from generic_chess.rules.compiler import compile_ruleset
+
+    config = _config()
+    types = [
+        king_type(),
+        T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G", "R")),
+        T("G", LeapAtom((0, 1)), LeapAtom((1, 0))),
+        T("R", RayAtom((1, 0)), RayAtom((0, 1))),
+    ]
+    original_rules = make_ruleset(
+        6,
+        types,
+        [".....k", "......", "......", "......", "......", "K....P"],
+        auto_drop=True,
+        auto_promotion=True,
+    )
+    rename = {"K": "anchor_z", "P": "source_q", "G": "target_x", "R": "ray_n"}
+    renamed_types = tuple(
+        replace(
+            piece_type,
+            type_id=rename[piece_type.type_id],
+            promotion_target_ids=tuple(
+                rename[target] for target in piece_type.promotion_target_ids
+            ),
+        )
+        for piece_type in original_rules.piece_types
+    )
+    renamed_position = tuple(
+        tuple(
+            None
+            if piece is None
+            else replace(
+                piece,
+                base_type_id=rename[piece.base_type_id],
+                current_type_id=rename[piece.current_type_id],
+            )
+            for piece in row
+        )
+        for row in original_rules.initial_position
+    )
+    renamed_rules = replace(
+        original_rules,
+        piece_types=renamed_types,
+        initial_position=renamed_position,
+        drop_allowed={rename[key]: value for key, value in original_rules.drop_allowed.items()},
+        promotion_allowed={
+            rename[key]: value for key, value in original_rules.promotion_allowed.items()
+        },
+        promotion_forced={
+            rename[key]: value for key, value in original_rules.promotion_forced.items()
+        },
+    )
+
+    original = build_ruleset_profile(compile_ruleset(original_rules), config)
+    renamed = build_ruleset_profile(compile_ruleset(renamed_rules), config)
+
+    assert renamed.median_non_anchor_value == original.median_non_anchor_value
+    assert renamed.board_value_by_type == {
+        rename[type_id]: value for type_id, value in original.board_value_by_type.items()
+    }
+    assert renamed.hand_value_by_base_type == {
+        rename[type_id]: value for type_id, value in original.hand_value_by_base_type.items()
+    }
+    assert renamed.promotion_gain_by_type == {
+        rename[type_id]: value for type_id, value in original.promotion_gain_by_type.items()
+    }
+    for type_id, profile in original.piece_profiles.items():
+        mapped_profile = replace(renamed.piece_profiles[rename[type_id]], type_id=type_id)
+        assert mapped_profile == profile
+
+
+def test_semantic_profile_equivariant_under_bijective_type_id_rename():
+    from collections.abc import Mapping
+    from dataclasses import fields, is_dataclass, replace
+
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.western_chess import build_western_chess_ruleset
+
+    rename = {
+        "K": "king_z", "P": "pawn_q", "N": "knight_x",
+        "B": "bishop_m", "R": "rook_v", "Q": "queen_a",
+    }
+    id_keyed_fields = {
+        "drop_allowed", "promotion_allowed", "promotion_forced",
+        "initial_setup_positions", "weights",
+    }
+
+    def remap(value, field_name=""):
+        if is_dataclass(value):
+            changes = {}
+            for item in fields(value):
+                old = getattr(value, item.name)
+                new = remap(old, item.name)
+                if new is not old and new != old:
+                    changes[item.name] = new
+            return replace(value, **changes) if changes else value
+        if isinstance(value, Mapping):
+            if field_name in id_keyed_fields:
+                return {
+                    rename.get(key, key): remap(item)
+                    for key, item in value.items()
+                }
+            return {key: remap(item) for key, item in value.items()}
+        if isinstance(value, tuple):
+            if (
+                field_name.endswith("_type_ids")
+                or field_name in {"type_ids", "promotion_target_ids"}
+            ):
+                return tuple(rename.get(item, item) for item in value)
+            return tuple(remap(item) for item in value)
+        if isinstance(value, list):
+            return [remap(item) for item in value]
+        if isinstance(value, str) and field_name.endswith("_type_id"):
+            return rename.get(value, value)
+        if isinstance(value, str) and field_name in {
+            "type_id", "explicit_promotion_type",
+        }:
+            return rename.get(value, value)
+        return value
+
+    rules = build_western_chess_ruleset()
+    renamed_rules = remap(rules)
+    assert len(rules.semantic_actions) == 20
+    assert {
+        type_id for action in renamed_rules.semantic_actions
+        for type_id in action.type_ids
+    } == set(rename.values())
+
+    config = _config()
+    original = build_ruleset_profile(
+        compile_ruleset_for_execution(rules), config
+    )
+    renamed = build_ruleset_profile(
+        compile_ruleset_for_execution(renamed_rules), config
+    )
+
+    assert renamed.median_non_anchor_value == original.median_non_anchor_value
+    assert renamed.board_value_by_type == {
+        rename[type_id]: value for type_id, value in original.board_value_by_type.items()
+    }
+    assert renamed.hand_value_by_base_type == {
+        rename[type_id]: value
+        for type_id, value in original.hand_value_by_base_type.items()
+    }
+    assert renamed.promotion_gain_by_type == {
+        rename[type_id]: value
+        for type_id, value in original.promotion_gain_by_type.items()
+    }
+    for type_id, profile in original.piece_profiles.items():
+        mapped_profile = replace(
+            renamed.piece_profiles[rename[type_id]], type_id=type_id
+        )
+        assert mapped_profile == profile
+
+
 def test_mirrored_position_evaluation_negates():
     compiled = build_4x4_rooks()
     profile = build_ruleset_profile(compiled, _config())

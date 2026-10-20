@@ -2,8 +2,10 @@
 
 The engine is persistent and reusable: compile rules and evaluation once,
 create the engine once, then call :meth:`NativeSearchEngine.search` per move
-(full GameSession history replay + one native iterative call).  It is *not*
-the production SearchBackend and is not wired into the UI.
+(full GameSession history replay + one native iterative call). Its time limit
+and ``elapsed_seconds`` cover only the native iterative call; history packing,
+context setup and Python result validation are outside that interval. It is
+*not* the production SearchBackend and is not wired into the UI.
 """
 
 from __future__ import annotations

@@ -11,6 +11,7 @@ from dataclasses import replace
 
 import pytest
 
+from generic_chess.core.actions import SemanticBoardMove, SemanticDropMove
 from generic_chess.core.coordinates import Square
 from generic_chess.core.keys import position_key
 from generic_chess.core.movement import LeapAtom, RayAtom
@@ -24,9 +25,11 @@ from generic_chess.ai.alphabeta.quiescence import classify_noisy
 from generic_chess.ai.alphabeta.statistics import SearchStatistics
 from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.core.transition import legal_successors
+from generic_chess.core.transition import apply_action
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.session.session import GameSession
+from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import (
     RuleActionEffect,
@@ -458,24 +461,156 @@ def test_public_search_preserves_promotion_capture_to_hand_then_drop():
         session.submit(candidates[0])
         return candidates[0]
 
-    promotion = submit_one(lambda action: action.promotion_target_id == A1)
+    class PreferPromotedA1:
+        def evaluate(self, state):
+            promoted = any(
+                piece is not None and piece.owner == 0
+                and piece.current_type_id == A1 and piece.promoted
+                for piece in state.position.board
+            )
+            return -10_000 if promoted else 10_000
+
+    promotion_decision = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferPromotedA1(), use_disk_cache=False
+    ).choose_action(
+        session,
+        SearchLimits(
+            max_depth=1, max_nodes=4096,
+            quiescence_max_depth=0, quiescence_hard_max_depth=0,
+        ),
+    )
+    assert isinstance(promotion_decision.action, SemanticBoardMove)
+    assert promotion_decision.action.promotion_target_id == A1
+    assert promotion_decision.principal_variation[0] == promotion_decision.action
+    promotion = promotion_decision.action
+    expected_promotion = apply_action(session.state, promotion, compiled)
+    session.submit(promotion)
+    assert session.state == expected_promotion
     promoted = session.state.position.board[target_index(promotion)]
     assert (promoted.base_type_id, promoted.current_type_id, promoted.promoted) == (
         A0, A1, True
     )
 
-    submit_one(
-        lambda action: "capture_B0_A0" in getattr(action, "pattern_id", "")
-        and target_index(action) == target_index(promotion)
+    before_capture = session.state
+    class PreferCapturedA0:
+        def evaluate(self, state):
+            captured = state.position.hands[1].count(A0) > 0
+            return -10_000 if captured else 10_000
+
+        def capture_order_value(self, _mover, _victim):
+            return 0
+
+    capture_player = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferCapturedA0(), use_disk_cache=False
     )
+    assert capture_player.native_legality_provider is not None
+    capture_limits = SearchLimits(
+        max_depth=1, max_nodes=4096,
+        quiescence_max_depth=0, quiescence_hard_max_depth=0,
+    )
+    capture_decision = capture_player.choose_action(session, capture_limits)
+    core_capture_decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferCapturedA0(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    ).choose_action(session, capture_limits)
+    assert session.state is before_capture
+    assert (
+        capture_decision.action,
+        capture_decision.score,
+        capture_decision.completed_depth,
+        capture_decision.principal_variation,
+        capture_decision.nodes,
+    ) == (
+        core_capture_decision.action,
+        core_capture_decision.score,
+        core_capture_decision.completed_depth,
+        core_capture_decision.principal_variation,
+        core_capture_decision.nodes,
+    )
+    assert capture_decision.native_legality_calls > 0
+    assert capture_decision.native_legality_fallbacks == 0
+    assert capture_decision.native_legality_operational_failures == 0
+    assert core_capture_decision.native_legality_calls == 0
+    assert isinstance(capture_decision.action, SemanticBoardMove)
+    assert capture_decision.action.pattern_id.endswith("_capture_B0_A0_leap")
+    assert capture_decision.action.actor_type_id == B0
+    assert target_index(capture_decision.action) == target_index(promotion)
+    assert capture_decision.principal_variation[0] == capture_decision.action
+    expected_capture = apply_action(before_capture, capture_decision.action, compiled)
+    assert expected_capture.position.hands[1].count(A0) == 1
+    session.submit(capture_decision.action)
+    assert session.state == expected_capture
     assert session.state.position.hands[1].count(A0) == 1
 
     submit_one(lambda action: "advance_C0" in getattr(action, "pattern_id", ""))
-    dropped = submit_one(
-        lambda action: "drop_A0" in getattr(action, "pattern_id", "")
-        and target_index(action) == promotion.from_square.rank * N + promotion.from_square.file
+    before_drop = session.state
+    class PreferDroppedA0:
+        def evaluate(self, state):
+            dropped = any(
+                piece is not None and piece.owner == 1
+                and piece.base_type_id == A0 and piece.current_type_id == A0
+                for piece in state.position.board
+            )
+            return -10_000 if dropped else 10_000
+
+    drop_player = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferDroppedA0(), use_disk_cache=False
     )
-    assert session.state.position.board[target_index(dropped)].base_type_id == A0
+    assert drop_player.native_legality_provider is not None
+    drop_decision = drop_player.choose_action(
+        session,
+        SearchLimits(
+            max_depth=1, max_nodes=4096,
+            quiescence_max_depth=0, quiescence_hard_max_depth=0,
+        ),
+    )
+    core_drop_decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferDroppedA0(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    ).choose_action(
+        session,
+        SearchLimits(
+            max_depth=1, max_nodes=4096,
+            quiescence_max_depth=0, quiescence_hard_max_depth=0,
+        ),
+    )
+    assert session.state is before_drop
+    assert (
+        drop_decision.action,
+        drop_decision.score,
+        drop_decision.completed_depth,
+        drop_decision.principal_variation,
+        drop_decision.nodes,
+    ) == (
+        core_drop_decision.action,
+        core_drop_decision.score,
+        core_drop_decision.completed_depth,
+        core_drop_decision.principal_variation,
+        core_drop_decision.nodes,
+    )
+    assert drop_decision.native_legality_calls > 0
+    assert drop_decision.native_legality_fallbacks == 0
+    assert drop_decision.native_legality_operational_failures == 0
+    assert core_drop_decision.native_legality_calls == 0
+    assert isinstance(drop_decision.action, SemanticDropMove)
+    assert drop_decision.action.base_type_id == A0
+    assert drop_decision.action.pattern_id.endswith("_drop_A0")
+    assert drop_decision.principal_variation[0] == drop_decision.action
+    expected_drop = apply_action(before_drop, drop_decision.action, compiled)
+    assert expected_drop.position.hands[1].count(A0) == 0
+    assert expected_drop.position.board[target_index(drop_decision.action)].base_type_id == A0
+    session.submit(drop_decision.action)
+    replayed = GameSession.replay(
+        compiled,
+        deserialize_game_record(serialize_game_record(session.to_record())),
+    )
+    assert replayed.state == session.state == expected_drop
+    assert replayed.result == session.result
+
     assert session.state.position.hands[1].count(A0) == 0
     assert session.state.ply_count == 4
     assert len(session._search_witnesses) == 5

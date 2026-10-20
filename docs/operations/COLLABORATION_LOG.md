@@ -5381,3 +5381,29 @@ provenance, root-terminal, no-contest and finished-session suites. No duplicate
 probe or API change was warranted. The next step is a different production
 caller with an actually uncovered unfamiliar-rule invariant, starting from its
 consumed fields and present regression map.
+
+## PRIMARY_SANDBOX — generated-cycle search result and record preservation — 2026-10-20
+
+PRIMARY continued the unfamiliar-rule search caller audit. It fixed the
+research-only JSON serializer's loss of nested `PassAction` identity in a
+`PlayerDecision` and PV, preserving the ordinary `BoardMove` record shape. The
+focused regression plus all nine direct `record_value` consumer modules passed
+with ignored project-local pytest temp storage. A separate caller probe found
+that Core/runtime cycle tests did not assert the public AlphaBeta result for a
+one-move generated-rule repeated-cycle win. The existing 10x9 semantic Xiangqi
+fixture now has a regression that replays the seven-ply ongoing root, verifies
+the closing action's Core `RULE_LOSS` child and winner, then checks AlphaBeta
+selects that exact action as `root_immediate_win` without changing the parent.
+That test and five adjacent cycle/history/root-terminal modules pass. No
+search-engine change, game panel, training, or static-price expansion occurred.
+
+The implementation and evidence are PRIMARY-owned; no DEV_AUX or DEEPSEEK_AUX
+checkout, state, computation, or unpublished work was edited or integrated.
+The required single DeepSeek chat patrol found `notLoaded` status and only an
+older visible turn; it does not establish current health and showed no verified
+current recurrence. No message or control action was taken. No Slack scientific
+question was needed, and no Dot review was a gate. The bounded pytest temp
+directory was initially denied by the normal sandbox; the documented
+project-authorized escalation succeeded. Next choose a distinct search caller
+contract from current evidence; keep history/role boundaries and do not reopen
+closed static panels or add diagnostics API without a new premise.

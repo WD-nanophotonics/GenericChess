@@ -25,12 +25,16 @@ from generic_chess.ai.evaluation.config import EvaluationConfig, MATE_SCORE
 from generic_chess.ai.evaluation.evaluator import Evaluator
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.ai.limits import SearchLimits
-from generic_chess.core.actions import BoardMove
+from generic_chess.core.actions import BoardMove, DropMove
+from generic_chess.core.coordinates import Square
 from generic_chess.core.movegen import legal_actions
+from generic_chess.core.movement import LeapAtom
+from generic_chess.core.transition import apply_action
+from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
 from generic_chess.session.session import GameSession
 
 from ai_fixtures import build_4x4_rooks, build_mate, build_promotion
-from conftest import make_state
+from conftest import king_type, make_compiled, make_state, T
 
 
 def _player(compiled, **kw):
@@ -192,11 +196,116 @@ def test_mate_score_tt_normalization_roundtrip():
 
 def test_promotion_ruleset_searches():
     compiled = build_promotion()
-    player = _player(compiled)
-    decision = player.choose_action(
-        GameSession(compiled), SearchLimits(max_depth=2, quiescence_max_depth=0)
+    session = GameSession(compiled)
+    before = session.state
+
+    class PreferPromotedChild:
+        def evaluate(self, state):
+            # AlphaBeta receives the child-side score: a promoted leaf is made
+            # intentionally preferable for the root without fitting a value.
+            has_gold = any(
+                piece is not None and piece.current_type_id == "G"
+                for piece in state.position.board
+            )
+            return -10_000 if has_gold else 10_000
+
+    decision = _player(
+        compiled, evaluator_override=PreferPromotedChild()
+    ).choose_action(
+        session,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=1_000,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
     )
-    assert decision.action in legal_actions(GameSession(compiled).state, compiled)
+    assert isinstance(decision.action, BoardMove)
+    assert decision.action.promotion_target_id == "G"
+    assert decision.principal_variation[0] == decision.action
+    expected = apply_action(before, decision.action, compiled)
+    assert any(
+        piece is not None and piece.current_type_id == "G"
+        for piece in expected.position.board
+    )
+
+    session.submit(decision.action)
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.state == session.state == expected
+    assert replayed.result == session.result
+
+
+def test_search_preserves_captured_piece_drop_through_replay():
+    compiled = make_compiled(
+        8,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1))),
+            T("N", LeapAtom((1, 2)), LeapAtom((-1, 2))),
+        ],
+        auto_drop=True,
+        lines=[
+            ".......k",
+            "........",
+            "........",
+            "........",
+            "..p.....",
+            "........",
+            ".N......",
+            "K.......",
+        ],
+    )
+    session = GameSession(compiled)
+    capture = BoardMove(Square(1, 1), Square(2, 3))
+    assert capture in session.legal_actions()
+    session.submit(capture)
+    black_king_move = next(
+        action for action in session.legal_actions()
+        if getattr(action, "from_square", None) == Square(7, 7)
+    )
+    session.submit(black_king_move)
+    assert dict(session.state.position.hands[0].counts)["P"] == 1
+    before = session.state
+
+    class PreferDroppedPawn:
+        def evaluate(self, state):
+            white_pawn_is_on_board = any(
+                piece is not None
+                and piece.owner == 0
+                and piece.current_type_id == "P"
+                for piece in state.position.board
+            )
+            return -10_000 if white_pawn_is_on_board else 10_000
+
+    decision = _player(
+        compiled, evaluator_override=PreferDroppedPawn()
+    ).choose_action(
+        session,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=5_000,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+    assert isinstance(decision.action, DropMove)
+    assert decision.action.base_type_id == "P"
+    assert decision.principal_variation[0] == decision.action
+    assert decision.action in legal_actions(before, compiled)
+    expected = apply_action(before, decision.action, compiled)
+    assert dict(expected.position.hands[0].counts).get("P", 0) == 0
+    width = expected.position.board_shape.width
+    dropped = expected.position.board[
+        decision.action.to_square.rank * width + decision.action.to_square.file
+    ]
+    assert dropped is not None and dropped.owner == 0 and dropped.current_type_id == "P"
+
+    session.submit(decision.action)
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.state == session.state == expected
+    assert replayed.result == session.result
 
 
 def test_tiny_time_budget_aborts_before_clock_expiry():
@@ -285,6 +394,46 @@ def test_search_limits_reject_invalid_time_budgets(seconds):
 
 def test_search_limits_allow_zero_time_as_immediate_budget():
     assert SearchLimits(max_time_seconds=0.0).max_time_seconds == 0.0
+
+
+def test_search_limits_reject_negative_depth_but_allow_zero_and_default():
+    with pytest.raises(ValueError, match="max_depth must be >= 0"):
+        SearchLimits(max_depth=-1)
+    assert SearchLimits(max_depth=0).max_depth == 0
+    assert SearchLimits(max_depth=None).max_depth is None
+
+
+def test_negative_total_node_budget_rejected_at_shared_limits_boundary():
+    with pytest.raises(ValueError, match="max_nodes must be >= 0"):
+        SearchLimits(max_nodes=-1)
+    assert SearchLimits(max_nodes=0).max_nodes == 0
+
+
+def test_negative_quiescence_limits_rejected_at_shared_limits_boundary():
+    with pytest.raises(ValueError, match="quiescence_max_depth must be >= 0"):
+        SearchLimits(quiescence_max_depth=-1)
+    with pytest.raises(ValueError, match="quiescence_max_nodes must be >= 0"):
+        SearchLimits(quiescence_max_nodes=-1)
+
+    zero = SearchLimits(quiescence_max_depth=0, quiescence_max_nodes=0)
+    assert zero.quiescence_max_depth == 0
+    assert zero.quiescence_max_nodes == 0
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "max_depth",
+        "max_nodes",
+        "quiescence_max_depth",
+        "quiescence_hard_max_depth",
+        "quiescence_max_nodes",
+    ],
+)
+@pytest.mark.parametrize("value", [1.5, True])
+def test_search_limits_reject_noninteger_integer_fields(field, value):
+    with pytest.raises(ValueError, match=f"{field} must be an integer"):
+        SearchLimits(**{field: value})
 
 
 def test_quiescence_searches_evasions_when_in_check():

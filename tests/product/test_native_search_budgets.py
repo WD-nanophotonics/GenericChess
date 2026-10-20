@@ -39,7 +39,7 @@ def test_max_nodes_zero_is_fallback():
     assert result.termination_reason == "node_limit"
     assert result.completed_depth == 0
     assert result.used_fallback is True
-    assert result.nodes <= 1
+    assert result.nodes == 1  # mandatory root visit precedes node-cap polling
 
 
 @requires_native

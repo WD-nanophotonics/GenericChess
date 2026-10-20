@@ -5,6 +5,8 @@ import json
 
 import pytest
 
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.actions import PassAction, SemanticBoardMove, action_from_dict
 from history_candidate_test_support import (
     extract_repeated_cycle_capture_candidate,
@@ -53,6 +55,7 @@ from generic_chess.rules.schema import (
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.xiangqi_diagnostic import build_xiangqi_diagnostic_ruleset
+from generic_chess.session.session import GameSession
 
 
 def _paired_trace(advisor_response):
@@ -613,6 +616,70 @@ def test_repeated_cycle_actor_loss_waits_for_ruleset_repetition_limit(
         terminal_from_search_runtime(runtime),
     )
     assert results == (expected,) * 4
+
+
+def test_search_selects_generated_move_that_triggers_repeated_cycle_actor_loss():
+    condition = RuleRepeatedCycleTargetCondition(actor=0)
+    _trace, terminal_state, compiled, _ruleset = _target_summary_trace(
+        switch_targets=False,
+        repeated_cycle_target_conditions=(condition,),
+        repetition_limit=3,
+        cycle_repetitions=2,
+    )
+    actions = tuple(
+        action_from_dict(json.loads(record.action_signature))
+        for record in terminal_state.history[1:]
+    )
+    parent = GameSession(compiled)
+    for action in actions[:-1]:
+        parent.submit(action)
+    closing_action = actions[-1]
+
+    assert parent.state.ply_count == 7
+    assert parent.result.status is SessionStatus.ONGOING
+    assert closing_action in parent.legal_actions()
+    expected_terminal = GameSession(compiled)
+    for action in actions:
+        expected_terminal.submit(action)
+    assert expected_terminal.result.status is SessionStatus.RULE_LOSS
+    assert expected_terminal.result.winner == 1
+
+    before = parent.to_record()
+
+    class Constant:
+        def evaluate(self, _state):
+            return 77
+
+        def type_value(self, type_id):
+            return 0 if type_id == "G" else 100
+
+        def capture_order_value(self, moving, captured):
+            return 10 * self.type_value(captured.current_type_id) - self.type_value(
+                moving.current_type_id
+            )
+
+    decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=Constant(),
+        use_disk_cache=False,
+        use_tt=False,
+        use_ordering=False,
+        use_native_semantic_legality=False,
+    ).choose_action(
+        parent,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=5000,
+            max_time_seconds=10,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+
+    assert decision.action == closing_action
+    assert decision.result_source == "root_immediate_win"
+    assert decision.score > 0
+    assert parent.to_record() == before
 
 
 def test_repeated_cycle_actor_loss_requires_one_shared_mover_target_at_limit():

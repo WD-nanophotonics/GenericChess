@@ -1,8 +1,32 @@
 from fractions import Fraction as F
 import json
 import pytest
+from generic_chess.core.actions import BoardMove, PassAction
+from generic_chess.core.coordinates import Square
+from generic_chess.ai.decision import PlayerDecision
 from generic_chess.core.terminal import TerminalResult,TerminalStatus as T
 from scripts.research_record import record_value,write_record
+
+def test_pass_action_identity_survives_nested_research_decision_record(tmp_path):
+    decision = PlayerDecision(
+        action=PassAction(), score=0, principal_variation=(PassAction(),),
+        completed_depth=1, selective_depth=1, nodes=1, qnodes=0,
+        elapsed_seconds=0.01, tt_probes=0, tt_hits=0, tt_cutoffs=0,
+        beta_cutoffs=0, evaluation_profile_cache_hit=False,
+        termination_reason='completed_depth',
+    )
+    encoded = record_value(decision)
+    assert encoded['action'] == {'kind': 'pass'}
+    assert encoded['principal_variation'] == [{'kind': 'pass'}]
+    output = tmp_path / 'pass-decision.json'
+    write_record(output, decision)
+    assert json.loads(output.read_text()) == encoded
+    # Keep pre-existing records for ordinary actions unchanged.
+    assert record_value(BoardMove(Square(0, 1), Square(0, 2))) == {
+        'from_square': {'file': 0, 'rank': 1},
+        'to_square': {'file': 0, 'rank': 2},
+        'promotion_target_id': None,
+    }
 
 def test_exact_terminal_dataclass_and_rational_record(tmp_path):
     p=tmp_path/'evidence.json'
