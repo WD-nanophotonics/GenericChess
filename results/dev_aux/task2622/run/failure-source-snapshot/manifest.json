@@ -1,0 +1,22 @@
+{
+  "files": {
+    "audit_training.py": {
+      "bytes": 9061,
+      "registered_source_sha256": "b1d18b369fba66846abae49ec122c3fb71ca754f237ad2e42cf967bf470107ac",
+      "snapshot_sha256": "b1d18b369fba66846abae49ec122c3fb71ca754f237ad2e42cf967bf470107ac"
+    },
+    "evaluate.py": {
+      "bytes": 10807,
+      "registered_source_sha256": "8d718205774e54add13a727b933b772f78673a2ea10a37f70ac5b84615edc3a0",
+      "snapshot_sha256": "8d718205774e54add13a727b933b772f78673a2ea10a37f70ac5b84615edc3a0"
+    },
+    "train.py": {
+      "bytes": 13671,
+      "registered_source_sha256": "7d27dbf7f3222746c4bc595b67a255785000d2b526f59e636f10f45e263fddaa",
+      "snapshot_sha256": "7d27dbf7f3222746c4bc595b67a255785000d2b526f59e636f10f45e263fddaa"
+    }
+  },
+  "note": "These copies preserve the exact consumer bytes referenced by the failed write-once registration; they are not execution inputs for a retry.",
+  "registration_sha256": "57d97daf25b3141109394f8a3a278761e082459fbbd2dcebb2965760747ccb7d",
+  "state": "EXACT_PRE_CORRECTION_SOURCE_SNAPSHOT"
+}

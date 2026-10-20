@@ -1,0 +1,70 @@
+{
+  "by_rule": {
+    "271001": {
+      "actual_outcomes": {
+        "-1": 99,
+        "0": 1,
+        "1": 151,
+        "None": 5
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 251,
+        "HORIZON_UNKNOWN": 5
+      },
+      "node_cap_hits": 0,
+      "slots": 256,
+      "unknown_endings": {
+        "HORIZON_UNKNOWN": 5
+      },
+      "unknown_fraction": 0.01953125
+    },
+    "271002": {
+      "actual_outcomes": {
+        "-1": 98,
+        "1": 158
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 256
+      },
+      "node_cap_hits": 0,
+      "slots": 256,
+      "unknown_endings": {},
+      "unknown_fraction": 0.0
+    },
+    "271003": {
+      "actual_outcomes": {
+        "-1": 83,
+        "0": 2,
+        "1": 132,
+        "None": 39
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 217,
+        "HORIZON_UNKNOWN": 39
+      },
+      "node_cap_hits": 0,
+      "slots": 256,
+      "unknown_endings": {
+        "HORIZON_UNKNOWN": 39
+      },
+      "unknown_fraction": 0.15234375
+    },
+    "271004": {
+      "actual_outcomes": {
+        "-1": 92,
+        "1": 164
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 256
+      },
+      "node_cap_hits": 0,
+      "slots": 256,
+      "unknown_endings": {},
+      "unknown_fraction": 0.0
+    }
+  },
+  "evaluation_audit_sha256": "84114fc0910e8cc1492f7b8624d722b2849d45b69ba15905195e44b13731d62c",
+  "evaluation_games_sha256": "7426c7f8c1d5834a59dbd5992fcae1b19a4e05e6601e8412ccae9de0bc9123e8",
+  "interpretation": "All UNKNOWN slots in this panel are nonterminal H=128 horizon censoring; no rule family hit its node cap. UNKNOWN remains censored, never a draw.",
+  "status": "PASS_UNKNOWN_CENSORING_REASON_AUDIT"
+}

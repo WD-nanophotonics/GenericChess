@@ -1,0 +1,261 @@
+{
+  "evaluation_roots_by_rule": {
+    "271001": 16,
+    "271002": 16,
+    "271003": 16,
+    "271004": 16
+  },
+  "exact_train_eval_overlap_by_rule": {
+    "271001": 0,
+    "271002": 0,
+    "271003": 0,
+    "271004": 0
+  },
+  "prior_sources_verified": 38,
+  "prior_unique_full_histories_by_rule": {
+    "271001": 61763,
+    "271002": 42160,
+    "271003": 118421,
+    "271004": 29583
+  },
+  "replayed_roots": 544,
+  "root_pools_sha256": "ea72cee3e265cdc7d6ffcb59e62caccadc7588cd9b43f3719285d45f0c8b0d06",
+  "scope": "Exact records in enumerated prior evidence only; no descendant, semantic/transposition, or distributional independence claim.",
+  "source_audit": [
+    {
+      "path": "results/dev_aux/task2525/queries.jsonl",
+      "sha256": "4a68a6d3f524bc233845c61fff7fabbc65ca2f93087188051422e574ac70c9dd",
+      "status": "READ",
+      "target_record_occurrences": 1314
+    },
+    {
+      "path": "results/dev_aux/task2525/episodes.jsonl",
+      "sha256": "e76c9d77577d84af5710d0031a178d1b5ee61953e2eb2c2ab15ec0f84a5ee541",
+      "status": "READ",
+      "target_record_occurrences": 64
+    },
+    {
+      "path": "results/dev_aux/task2565/generic/queries.jsonl",
+      "sha256": "981a5ebc0b76981af286053bac922bd8831d974690069cbe7204ab3c4623901a",
+      "status": "READ",
+      "target_record_occurrences": 220526
+    },
+    {
+      "path": "results/dev_aux/task2565/generic/games.jsonl",
+      "sha256": "4623d025b15aa3b68e5cefd72df50aa9058f14f2d838c596d687cb79e851804f",
+      "status": "READ",
+      "target_record_occurrences": 14694
+    },
+    {
+      "path": "results/dev_aux/task2565/generic/eval-queries.jsonl",
+      "sha256": "868cadf4fd82788a4fcfd9ee5491fe4724a25ff1202a7c842d49abd37a884a3f",
+      "status": "READ",
+      "target_record_occurrences": 22572
+    },
+    {
+      "path": "results/dev_aux/task2565/generic/eval-games.jsonl",
+      "sha256": "b10bfe490189a2a7bce4f95f2b591e72531227108ce3f3b53cd437f5327043bf",
+      "status": "READ",
+      "target_record_occurrences": 1024
+    },
+    {
+      "path": "results/dev_aux/task2606/queries.jsonl",
+      "sha256": "461650b420d581421b1bc016f4f4883ba92044325e3d9e640e308d8da57d3de5",
+      "status": "READ",
+      "target_record_occurrences": 356840
+    },
+    {
+      "path": "results/dev_aux/task2606/games.jsonl",
+      "sha256": "6c0e3bba475e3188e9bf8a91984480d63b8c687a571d93b0f4a1334cdf083d95",
+      "status": "READ",
+      "target_record_occurrences": 23834
+    },
+    {
+      "path": "results/dev_aux/task2606/eval-queries.jsonl",
+      "sha256": "ecfe2be3708d1e357502eb6a6e03629f42e305898aca0bd5f94a8f71569fbd7a",
+      "status": "READ",
+      "target_record_occurrences": 34746
+    },
+    {
+      "path": "results/dev_aux/task2606/eval-games.jsonl",
+      "sha256": "6efba337f3594ce3357649148c9f8d9d7bb313f2aa3285ba3ddbdd515936f123",
+      "status": "READ",
+      "target_record_occurrences": 1536
+    },
+    {
+      "path": "results/dev_aux/task2608/eval-queries.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "READ",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2608/eval-games.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "READ",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2609/eval-queries.jsonl",
+      "sha256": "765b25c6562e87d87ef885859abd561d61f61cfa93b07a9b49fea415ec29dc15",
+      "status": "READ",
+      "target_record_occurrences": 77880
+    },
+    {
+      "path": "results/dev_aux/task2609/eval-games.jsonl",
+      "sha256": "3529e31a9ae6e65ae3c16d8d994cc967740d7bd692723e3758b0d47be66f50e5",
+      "status": "READ",
+      "target_record_occurrences": 3072
+    },
+    {
+      "path": "results/dev_aux/task2610/attempt-2/eval-queries.jsonl",
+      "sha256": "f5fbe3b0f64964e405b331193016184da62079bca91f688bf58ecdb6bb7fb7ca",
+      "status": "READ",
+      "target_record_occurrences": 79916
+    },
+    {
+      "path": "results/dev_aux/task2610/attempt-2/eval-games.jsonl",
+      "sha256": "43cb869c93927fdcb83c3b5219cc5640d689796b556a4dd6f4dacd93e0e22291",
+      "status": "READ",
+      "target_record_occurrences": 3072
+    },
+    {
+      "path": "results/dev_aux/task2621/active-feature-probe/queries.jsonl",
+      "sha256": "0cddb434f45712e1fda1805630441ca898b5d99f7c27c53cb8674571acaec334",
+      "status": "READ",
+      "target_record_occurrences": 58
+    },
+    {
+      "path": "results/dev_aux/task2621/cost-scan/queries.jsonl",
+      "sha256": "3786de2697f54e6ce64b54081e77406ff7d6460a4a3f3204ff89d298af6256b1",
+      "status": "READ",
+      "target_record_occurrences": 11414
+    },
+    {
+      "path": "results/dev_aux/task2621/cost-scan/episodes.jsonl",
+      "sha256": "4e6ae8d363d37feb5e0d79c4ac6841ce92a44183ae46ad8cc76005c156177346",
+      "status": "READ",
+      "target_record_occurrences": 258
+    },
+    {
+      "path": "results/dev_aux/task2594/root-manifest.json",
+      "sha256": "c51d8ce10977873133926e950f299da28539ddd5bb0d2c1ef1ceaa8bb4ab59c6",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2595/root-manifest.json",
+      "sha256": "ca15e77503348c2ae6054627a7051422b47c8359086a0dc896fbb88a8a0373f9",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2606/root-manifest.json",
+      "sha256": "87fb9947f28fc95fdf541b8474d50a755da10705b1f110cab98cd752287036ee",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 32
+    },
+    {
+      "path": "results/dev_aux/task2607/root-candidates.json",
+      "sha256": "5fcf16399651b67725775f9614f527a4e566a0be67d8c0320bc1672c777d9ca6",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 4096
+    },
+    {
+      "path": "results/dev_aux/task2608/root-manifest.json",
+      "sha256": "fa13446ffcedd397107783a69274fff1b456f983efd8531db3d3a673f786ef95",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 64
+    },
+    {
+      "path": "results/dev_aux/task2609/root-manifest.json",
+      "sha256": "6c62717a45a1384240e0e5862f8173f2e7171679521ed37fccca237b9b028c37",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 64
+    },
+    {
+      "path": "results/dev_aux/task2610/attempt-2/root-manifest.json",
+      "sha256": "042ef4ad447f63837c4a502ae05c7f640234e5c2906ac48ccb8b8540e9f08ca3",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 64
+    },
+    {
+      "path": "results/dev_aux/task2610/root-manifest.json",
+      "sha256": "042ef4ad447f63837c4a502ae05c7f640234e5c2906ac48ccb8b8540e9f08ca3",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 64
+    },
+    {
+      "path": "results/dev_aux/task2616/attempt-2/root-manifest.json",
+      "sha256": "86d1ae09ed9c440d36a88aac3b0f87cd30df7c99f4b13744c6a79e700475d2ad",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2616/attempt-3/root-manifest.json",
+      "sha256": "f6ba33de5005b1b892797fb618dd07af3d10266f57cc2dc8257f8d4a75e76e56",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2616/root-manifest.json",
+      "sha256": "f6ba33de5005b1b892797fb618dd07af3d10266f57cc2dc8257f8d4a75e76e56",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2617/run-001/root-manifest.json",
+      "sha256": "ab52c926a056eb4064d043c7ead36618ab1d9f5c899503e50de5bbf42218456c",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2617/run-002/root-manifest.json",
+      "sha256": "ab52c926a056eb4064d043c7ead36618ab1d9f5c899503e50de5bbf42218456c",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2618/learner-comparison-v1/root-manifest.json",
+      "sha256": "3bdf389c425144d3bf37e8b762fcbe61b1ab438dad1982f256966f3c524008e4",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2618/learner-comparison-v2/root-manifest.json",
+      "sha256": "38e7b853eb36c31c3d594f2df073b5f0efafd3cb9f09a1be6eb8c1ccb878bc3f",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2618/learner-comparison-v3/root-manifest.json",
+      "sha256": "9f5426c60a02c455aaf5c998a410f09f4dae9903e96966c06597025f6a30828d",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2618/learner-comparison-v4/root-manifest.json",
+      "sha256": "2222300508d319296708b31bcc127837b61daa61197d48aade6dcffe26a8eda0",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 0
+    },
+    {
+      "path": "results/dev_aux/task2621/active-feature-probe/root-manifest.json",
+      "sha256": "644352b6029a945f9379e50cee896cf6e0ca2a4b8e20f9e2a93bd25f929d37dc",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 8
+    },
+    {
+      "path": "results/dev_aux/task2622/root-pools.json",
+      "sha256": "0efc0601f0916d3840c481cb6cd8cf1292f2ef8b1957e5ca309fa27211b3e8a3",
+      "status": "READ_JSON_RECORDS_ONLY",
+      "target_record_occurrences": 544
+    }
+  ],
+  "status": "PASS_EXACT_HISTORY_SOURCE_HASH_REPLAY_FEATURE_AND_DISJOINTNESS_AUDIT",
+  "training_roots_by_rule": {
+    "271001": 120,
+    "271002": 120,
+    "271003": 120,
+    "271004": 120
+  }
+}

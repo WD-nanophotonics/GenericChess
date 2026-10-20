@@ -1,0 +1,7209 @@
+{
+  "TDLeaf_minus_initial": {
+    "difference_mean_bounds": [
+      0.119140625,
+      0.291015625
+    ],
+    "difference_mean_bounds_exact": [
+      "61/512",
+      "149/512"
+    ],
+    "difference_sum_bounds": [
+      61,
+      149
+    ],
+    "exact_pairs": 472,
+    "strata": 512,
+    "unknown_pairs": 40
+  },
+  "WDL_by_endpoint": {
+    "TDLeaf": {
+      "DRAW": 2,
+      "LOSS": 188,
+      "UNKNOWN": 27,
+      "WIN": 295
+    },
+    "initial": {
+      "DRAW": 1,
+      "LOSS": 246,
+      "UNKNOWN": 17,
+      "WIN": 248
+    }
+  },
+  "claim_scope": "Exact finite panel only; bounds are completion bounds, not confidence intervals or population effects.",
+  "evaluation_result_sha256": "e4ac648f12a4609d19e6176cb1a0c7406c24b6ed0e34f7f51f28f332481dd1f9",
+  "pairs": [
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000059,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000059,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000064,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000064,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271001,
+        1977,
+        4000066,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        1977,
+        4000066,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271001,
+        1977,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        1977,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271001,
+        8173,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271001,
+        8173,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000059,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000059,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        8173,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000064,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000064,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000066,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000066,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        8173,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000059,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000059,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000064,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000064,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000066,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000066,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        27182,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        27182,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271001,
+        31415,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000059,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000059,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271001,
+        31415,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        1,
+        1
+      ],
+      "initial_reward": 0,
+      "pair": [
+        271001,
+        31415,
+        4000064,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000064,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000066,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000066,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271001,
+        31415,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000050,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000050,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000056,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000056,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        1977,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        1977,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000050,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000050,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000056,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000056,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        8173,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        8173,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000050,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000050,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000056,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000056,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        27182,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        27182,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000050,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000050,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000051,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000051,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000055,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000055,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000056,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000056,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000058,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000058,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271002,
+        31415,
+        4000067,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271002,
+        31415,
+        4000067,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000033,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000033,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000034,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000034,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000035,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000035,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        1977,
+        4000036,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000036,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000037,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        1977,
+        4000037,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000039,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000039,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 0,
+      "difference_bounds": [
+        -1,
+        -1
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000043,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000043,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000046,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000046,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        1977,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        1977,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        8173,
+        4000033,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000033,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000034,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        8173,
+        4000034,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000035,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000035,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000036,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000036,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000037,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000037,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000039,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000039,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        8173,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 0,
+      "difference_bounds": [
+        1,
+        1
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        8173,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000043,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000043,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000046,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000046,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        8173,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        8173,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        8173,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000033,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000033,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000034,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000034,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000035,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000035,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000036,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000036,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000037,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000037,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000039,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000039,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        27182,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000043,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000043,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000046,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000046,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        27182,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        27182,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000033,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000033,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000034,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        31415,
+        4000034,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000035,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000035,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        31415,
+        4000036,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000036,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000037,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000037,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000039,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000039,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        0,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        31415,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": null,
+      "pair": [
+        271003,
+        31415,
+        4000043,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000043,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000044,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000044,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000046,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000046,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271003,
+        31415,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": null,
+      "difference_bounds": [
+        -2,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271003,
+        31415,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        1977,
+        4000063,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        1977,
+        4000063,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        8173,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000063,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        8173,
+        4000063,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        27182,
+        4000063,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        27182,
+        4000063,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000038,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000038,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000040,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000040,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000041,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000041,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000042,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000042,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000045,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000045,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000047,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000047,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000048,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000048,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000049,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000049,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000052,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000052,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000053,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000053,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000054,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000054,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000057,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000057,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000060,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000060,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000061,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000061,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000062,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": -1,
+      "difference_bounds": [
+        -2,
+        -2
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000062,
+        1
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        0,
+        0
+      ],
+      "initial_reward": 1,
+      "pair": [
+        271004,
+        31415,
+        4000063,
+        0
+      ]
+    },
+    {
+      "TDLeaf_reward": 1,
+      "difference_bounds": [
+        2,
+        2
+      ],
+      "initial_reward": -1,
+      "pair": [
+        271004,
+        31415,
+        4000063,
+        1
+      ]
+    }
+  ],
+  "plan_sha256": "9cca31fae284f8f88120a58c8128294455346f1a1bc4c813a30c12cf111e0b3f",
+  "slots": 1024,
+  "status": "PASS_FINITE_ACTUAL_TERMINAL_COMPLETION_BOUNDS",
+  "unknown_policy": "Every nonactual/censored endpoint remains UNKNOWN and ranges independently over [-1,+1]; missing slots remain in the 512-stratum denominator."
+}

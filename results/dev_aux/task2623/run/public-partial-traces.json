@@ -1,0 +1,26 @@
+{
+  "interpretation": "Exact interrupted task2623 traces; preserve partial/open/missing status, no top-up.",
+  "members": [
+    {
+      "archive": "queries.jsonl.gz",
+      "archive_bytes": 1810522,
+      "archive_sha256": "5dd44ae2054a6c8932fe2f1ad1c0579ebcfe5c3750490b889a0ac3fdabb0cef7",
+      "nonblank_lines": 26176,
+      "roundtrip": "BYTE_EXACT",
+      "source": "queries.jsonl",
+      "source_bytes": 112153431,
+      "source_sha256": "e1f093dac0f16532535ae9ea576d7a30500751c80df218c6f2ae99ec76369e16"
+    },
+    {
+      "archive": "episodes.jsonl.gz",
+      "archive_bytes": 223299,
+      "archive_sha256": "40bfc20be381a6db12ae922cdf485ffe835b2a65b18ecbe276c71d51cde7dbe8",
+      "nonblank_lines": 1862,
+      "roundtrip": "BYTE_EXACT",
+      "source": "episodes.jsonl",
+      "source_bytes": 5057729,
+      "source_sha256": "344c5548b9cb4208bce49dfeabc889d601ca2b5826ca114bc68ed4fb762a8011"
+    }
+  ],
+  "status": "PASS_PARTIAL_TRACE_ROUNDTRIP"
+}

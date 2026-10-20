@@ -1,0 +1,21 @@
+{
+  "cause": "Frozen plan declares nodes_per_arm_candidate_plus_foe but omits the exact nodes_per_arm key consumed by the runner.",
+  "decision": "Preserve this registered one-shot as a failed runner contract check; no retry or top-up.",
+  "episode_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "episode_rows": 0,
+  "evaluation_started": false,
+  "exception": "KeyError: nodes_per_arm",
+  "exit_code": 1,
+  "failure_observed_at_utc": "2026-10-20T10:22:35.026063+00:00",
+  "location": "train.py:112; first arm loop guard reads plan[\"training\"][\"nodes_per_arm\"]",
+  "plan_sha256": "5f0fda6a29adf9704faa641ec559fe850e3d6bfb967cd5b8401ab288108f0674",
+  "query_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "query_rows": 0,
+  "registration_sha256": "57d97daf25b3141109394f8a3a278761e082459fbbd2dcebb2965760747ccb7d",
+  "runner": "results/dev_aux/task2622/train.py",
+  "scope": "Failure happened before any root episode or search query; no learner/evaluation result exists.",
+  "session_id": "bb4c14c1-d8ef-4511-849f-ac95444f6a30",
+  "started_receipt_sha256": "add665a8dd9a82aa548eddef083c189d8ce0b7ca54c9b6a85b1b71810f980acc",
+  "state": "FAILED_BEFORE_FIRST_SEARCH_QUERY",
+  "training_result_exists": false
+}

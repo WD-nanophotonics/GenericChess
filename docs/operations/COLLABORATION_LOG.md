@@ -1,3 +1,37 @@
+# DEV_AUX task2625 segment — 2026-10-20
+
+DEV_AUX resumed the existing research segment and task2625 in the sole
+DEV_AUX/sidemission checkout. Role doctor matched the repository, branch and
+DEV_AUX role; the dev-aux heartbeat doctor matched ACTIVE and target
+01a15880-7263-7e12-a0e0-e42959c0bfb9. The preserved official before/after
+automation snapshots confirm ACTIVE hourly cadence (60 minutes). Historical
+binding records were retained; the current memo/binding receipt was synchronized.
+
+DEV_AUX ran the registered task2625 training once, independently replayed all
+16 arms and their full histories/outcomes/node caps/TD updates, bound evaluation
+only after the training audit, and completed all 1,024 frozen slots. Actual
+terminal W/L/D alone supplies strength rewards; UNKNOWN and missing stay
+censored. Exact finite completion bounds are positive overall, with one
+rule-specific slice unresolved due to H=128 UNKNOWN. A follow-up diagnostic
+confirmed no UNKNOWN was a rule terminal or node-cap hit. Full evidence is in
+`results/dev_aux/task2625/REPORT.md`.
+
+The research route adopted the finite result only for this four-rule panel; no
+population or full-domain transfer is claimed. The 271003 horizon uncertainty
+and incomplete generic rule coverage remain open. task2622's pre-query schema
+failure and task2623's partial interruption were retained and not retried or
+topped up. The next decision is to review existing generated-rule capability
+coverage against task2625 and select a separate outcome-blind next rule panel;
+no new registration was made here.
+
+No second Agent, worker, PRIMARY/DEEPSEEK checkout, or cross-role contribution
+was used or claimed. This follows the no-automatic-delegation rule; routine
+Chat/mailbox comments were not needed to execute the already authorized
+under-120-minute batch. No Chat acceptance or independent execution is claimed.
+Research segment confirmed 4,999.428 seconds across nine evidence-bearing
+intervals; configuration, report, tests, Git and transport time are excluded.
+Publication details are recorded in the report/commit receipt after push.
+
 # DEV_AUX chat handoff / tasks2620–2621 —2026-10-20 JST
 
 User-authorized transfer of the existing role and dev-aux heartbeat to the new

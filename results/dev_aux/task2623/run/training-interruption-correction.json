@@ -1,0 +1,66 @@
+{
+  "UNKNOWN_episodes": 17,
+  "WDL_actual_outcome_counts": {
+    "-1": 612,
+    "0": 8,
+    "1": 1225,
+    "None": 17
+  },
+  "actual_terminal_episodes": 1845,
+  "candidate_nodes": 828758,
+  "closed_episodes_by_arm": {
+    "271001:1977": 405,
+    "271001:27182": 380,
+    "271001:31415": 432,
+    "271001:8173": 272,
+    "271002:1977": 218,
+    "271002:8173": 155
+  },
+  "completed_arm_nodes": {
+    "271001:1977": 250000,
+    "271001:27182": 250000,
+    "271001:31415": 250000,
+    "271001:8173": 250000,
+    "271002:1977": 250000,
+    "271002:8173": 220789
+  },
+  "correction": "The initial interruption receipt correctly pins the post-interruption file hashes but its query_rows=0 and episode_rows=0 counts came from stale file-size observations while the producer was open. After the process closed, the files contained complete persisted rows; do not treat the old zero counts as accurate.",
+  "episode_bytes": 5057729,
+  "episode_file_ends_with_newline": true,
+  "episode_parse_errors": 0,
+  "episode_sha256": "344c5548b9cb4208bce49dfeabc889d601ca2b5826ca114bc68ed4fb762a8011",
+  "episodes": 1862,
+  "evaluation_started": false,
+  "foe_nodes": 642031,
+  "interpretation": "Five 271001 arms and 271002:1977 closed at 250,000 nodes each; 271002:8173 reached 220,789 logged nodes with one open 13-query episode at interruption. The other ten arms are absent. This is a partial training run, not a completed registered comparison; no evaluation is permitted.",
+  "nonzero_updates": 1211,
+  "plan_sha256": "a9898ce03abf2f23265a211843cde1d13742add17beec893b99e5687c4118c52",
+  "queries": 26176,
+  "queries_by_arm": {
+    "271001:1977": 5114,
+    "271001:27182": 4974,
+    "271001:31415": 4989,
+    "271001:8173": 5282,
+    "271002:1977": 3186,
+    "271002:8173": 2631
+  },
+  "query_bytes": 112153431,
+  "query_file_ends_with_newline": true,
+  "query_parse_errors": 0,
+  "query_sha256": "e1f093dac0f16532535ae9ea576d7a30500751c80df218c6f2ae99ec76369e16",
+  "recorded_at_utc": "2026-10-20T10:40:11.159048+00:00",
+  "registration_sha256": "d985943ad87b38cd01084c8e1054382e845c198b790fdad573987df5e4ce7dfa",
+  "started_receipt_sha256": "85d560b25ccf9fcd9d9ec0641046f4c07a292c2e4afbcb722d08a51028b03a96",
+  "state": "CORRECTION_TO_TRAINING_INTERRUPTION_COUNTS",
+  "supersedes_fields_in": "results/dev_aux/task2623/run/training-interruption.json",
+  "total_nodes": 1470789,
+  "training_result_exists": false,
+  "unclosed_query_episode_keys": [
+    {
+      "episode": 155,
+      "queries": 13,
+      "rule": 271002,
+      "seed": 8173
+    }
+  ]
+}

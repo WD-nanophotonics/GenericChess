@@ -1,0 +1,322 @@
+{
+  "all_in_hard_cap_seconds": 6600,
+  "cost_estimate": {
+    "assessment_required_before_launch": false,
+    "evaluation_projection_seconds": 691.4194885999896,
+    "expected_minutes": 66.69979176832422,
+    "expected_seconds": 4001.9875060994527,
+    "full_source_audit_observed_seconds": 36.0,
+    "limitation": "Training throughput projection conservatively scales the slowest task2621 80k arm with a 1.5x margin; evaluation projection is the full 1536-slot task2609 runtime and is conservative for 1024 slots but uses different models. Not a runtime guarantee.",
+    "preparation_and_audit_hard_reserve_seconds": 1200,
+    "root_pool_preparation_observed_seconds": 36.17164439999033,
+    "status": "REFRESHED_SOURCE_BOUND_ESTIMATE_BELOW_120_MINUTES",
+    "threshold_minutes": 120,
+    "training_projection_seconds": 2110.568017499463
+  },
+  "domain": {
+    "evaluator": "Exact task2492 Model and TDLeafEpisode; dynamic board-CURRENT/hand-BASE channels from task2621; coordinate0=1, scale10; no human material priors.",
+    "history_authority": "Full GameSession record/replay; promotion, drops, auxiliary state and declaration semantics retained.",
+    "rules": [
+      271001,
+      271002,
+      271003,
+      271004
+    ]
+  },
+  "evaluation": {
+    "H": 128,
+    "comparison": "512 paired TDLeaf-minus-initial strata, paired on rule, seed, root family and learner color; retain all missing slots. Exact known differences use observed rewards; each UNKNOWN endpoint independently ranges [-1,+1]. Finite completion bounds, not confidence intervals.",
+    "construction": "4 rules x 4 seeds x 16 exact-disjoint roots x 2 learner colors x 2 endpoints",
+    "endpoints": [
+      "initial",
+      "TDLeaf"
+    ],
+    "foe": "uniform all-ones fixed Model at scale10",
+    "hard_seconds": 3600,
+    "node_cap_by_rule_family": {
+      "271001:4000028": 20000,
+      "271001:4000029": 20000,
+      "271001:4000030": 40000,
+      "271001:4000031": 40000,
+      "271001:4000032": 40000,
+      "271001:4000033": 20000,
+      "271001:4000034": 40000,
+      "271001:4000035": 20000,
+      "271001:4000036": 40000,
+      "271001:4000038": 40000,
+      "271001:4000040": 20000,
+      "271001:4000041": 40000,
+      "271001:4000043": 20000,
+      "271001:4000044": 40000,
+      "271001:4000045": 20000,
+      "271001:4000046": 20000,
+      "271002:4000026": 20000,
+      "271002:4000027": 20000,
+      "271002:4000029": 20000,
+      "271002:4000030": 40000,
+      "271002:4000032": 40000,
+      "271002:4000033": 40000,
+      "271002:4000034": 20000,
+      "271002:4000035": 20000,
+      "271002:4000036": 20000,
+      "271002:4000037": 40000,
+      "271002:4000038": 20000,
+      "271002:4000039": 40000,
+      "271002:4000040": 40000,
+      "271002:4000041": 40000,
+      "271002:4000042": 40000,
+      "271002:4000043": 20000,
+      "271003:4000016": 40000,
+      "271003:4000017": 20000,
+      "271003:4000018": 40000,
+      "271003:4000019": 40000,
+      "271003:4000020": 20000,
+      "271003:4000021": 40000,
+      "271003:4000022": 40000,
+      "271003:4000023": 40000,
+      "271003:4000024": 40000,
+      "271003:4000025": 20000,
+      "271003:4000026": 20000,
+      "271003:4000027": 20000,
+      "271003:4000028": 40000,
+      "271003:4000029": 20000,
+      "271003:4000031": 20000,
+      "271003:4000032": 20000,
+      "271004:4000017": 40000,
+      "271004:4000021": 20000,
+      "271004:4000022": 20000,
+      "271004:4000023": 20000,
+      "271004:4000024": 40000,
+      "271004:4000025": 40000,
+      "271004:4000026": 40000,
+      "271004:4000027": 20000,
+      "271004:4000028": 40000,
+      "271004:4000029": 20000,
+      "271004:4000031": 20000,
+      "271004:4000032": 40000,
+      "271004:4000033": 40000,
+      "271004:4000035": 20000,
+      "271004:4000036": 20000,
+      "271004:4000037": 40000
+    },
+    "nodes_per_query": 8192,
+    "outcome": "Actual rule-terminal W/L/D only; RESTART/NO_CONTEST/search cutoff/horizon remain UNKNOWN; never impute draws.",
+    "paired_cap_assignment": "Per rule exactly eight roots at 20k and eight at 40k combined two-side nodes; fixed seed per rule 977422+rule.",
+    "slots": 1024
+  },
+  "initialization": {
+    "recipe": "random.Random(seed); [1.0] + uniform(0.5,1.5) per dynamic channel",
+    "same_vector_within_seed_across_rules": true,
+    "weights_by_rule_seed": {
+      "271001:1977": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "271001:27182": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "271001:31415": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "271001:8173": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "271002:1977": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "271002:27182": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "271002:31415": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "271002:8173": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "271003:1977": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "271003:27182": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "271003:31415": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "271003:8173": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ],
+      "271004:1977": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "271004:27182": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "271004:31415": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "271004:8173": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ]
+    }
+  },
+  "no_old_caps_changed": true,
+  "no_training_or_evaluation_started_at_freeze": true,
+  "pool": {
+    "audit_path": "results/dev_aux/task2622/root-pools-audit.json",
+    "audit_sha256": "6625e121626ebc74769ecb3d889460b7f4f378fd74fa44145913c053b91aae2a",
+    "evaluation_roots_per_rule": 16,
+    "path": "results/dev_aux/task2622/root-pools-v2.json",
+    "selection": "Outcome-blind fixed family scan; exact full-history exclusion; eight-ply nonterminal records; require one non-unit material feature; preserve all roots and seeds.",
+    "sha256": "ea72cee3e265cdc7d6ffcb59e62caccadc7588cd9b43f3719285d45f0c8b0d06",
+    "training_families_shared_across_seeds": true,
+    "training_roots_per_rule": 120
+  },
+  "question": "On the same four existing development Generic rules and fixed material scale, does TDLeaf search bootstrapping improve actual terminal W/L/D against the exact random initialization on this fixed history-disjoint finite panel?",
+  "repair_provenance": {
+    "failed_prior_task": "DEV_AUX2622",
+    "failure_receipt": "results/dev_aux/task2622/run/launch-failure.json",
+    "premise_change": "Consumer schema paths are corrected and fail-closed preflight checks exist; prior task2622 exited before any root/query and exposed no training or evaluation labels. This is a separate registration, not a continuation/top-up.",
+    "registration_sha256": "57d97daf25b3141109394f8a3a278761e082459fbbd2dcebb2965760747ccb7d"
+  },
+  "scope": "Four existing generated rules only; exact full-history start disjointness from enumerated prior records; no full-domain, population, transposition, or distributional independence claim.",
+  "search": {
+    "algorithm": "task2492.learning.AlphaBeta",
+    "cost_accounting": "Charge candidate and foe nodes; preserve incomplete queries and cap-ended episodes.",
+    "depth": 2,
+    "nodes_per_query": 2048,
+    "ordering_seed_base": 2622000000,
+    "quiescence": 0,
+    "seconds_per_query": 2.0
+  },
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "source_pins": {
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/rules/schema.py": "3933bd2ae6289a60fe58e6b349f53733c7bbe11e3766b99485a6c32e91c6c799",
+    "generic_chess/session/serialization.py": "159c5e39861d0faba9420ad61c002a3be10c0326bb11aff4a9576825da7c5c50",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2525/rules-271001.json": "b05c8135dabd6abff28400c6840e640eaac847b2ca7cda5f0b7098e1636b77ff",
+    "results/dev_aux/task2525/rules-271002.json": "cebe9e3d3bdb42326fa4ed4130355809c017f1df3bcbc1ed0f87e7debb3008f4",
+    "results/dev_aux/task2525/rules-271003.json": "d058c1be18c97a2ca5069e857a1efe730b028eea1ecfece40fe2615f61b95792",
+    "results/dev_aux/task2525/rules-271004.json": "322062ff7dce408256e6fdc5927b1fc232601b17519b7547148f004aa1592400",
+    "results/dev_aux/task2606/train.py": "7809a50ac912baa5c26164d8bea1821dc9d76f840a4bad91c474fd18bc924738",
+    "results/dev_aux/task2609/eval-plan.json": "43292987a3e18fa2b342ec78f154c273fc676206c8bae174dc87b669033e388f",
+    "results/dev_aux/task2609/run_eval.py": "ec286de55a52612b2647123db4c8cf46005540850df909dd08f18b48097a0d99",
+    "results/dev_aux/task2621/audit_cost_scan.py": "460c77416428fc7d4c5c539d328df11935127dd486b9475f1a1cdc522b57db31",
+    "results/dev_aux/task2621/cost-feasibility.json": "66ac003972f7c785bb180c4dcf4e6a9224ce5b94d5f4a8567893eb40959a302f",
+    "results/dev_aux/task2621/cost_scan.py": "d9cfae73064192f7c272d205fecbc6d7611a32bfc0fab8714b63329255a7d451",
+    "results/dev_aux/task2621/fixed_scale.py": "c50d5f7fa2e0db755a33ef5c9e4c480ecfb6a99fac3009b13e443800ac251571",
+    "results/dev_aux/task2622/audit_root_pools.py": "c5705dd078ef7a909e4d94318fb053a52f8698c51e492cd817f994ac0faa4d5d",
+    "results/dev_aux/task2622/prepare_roots.py": "4a2a2b1dcd09882e363fe44aa6b4670e16692d5b4a42e99e1fc6e2eb3e0cf15b",
+    "results/dev_aux/task2623/analyze.py": "5a5dda3c21e116d2d7edb823ad8d78cd79f2f8df3e2d47f56fc06c199eb87d4d",
+    "results/dev_aux/task2623/audit_evaluation.py": "bfb19fe686c08d9af3cc8f6d56eec358c28567d45d4fcc3587e3459eab7cd591",
+    "results/dev_aux/task2623/audit_training.py": "3aba643923e3e6349063b986a32925571364b709e4cd4d9313ea106a1ebd32a9",
+    "results/dev_aux/task2623/bind_evaluation.py": "274f412de7bee0f98dbdfb4f54b5eb73a0d1b2d1937096b803a63cd113d0b387",
+    "results/dev_aux/task2623/evaluate.py": "aacff2872e72bbcf2880741f00e184b689001d9164cca941e0c29dac7ddcfce4",
+    "results/dev_aux/task2623/freeze_study.py": "93a211e4ad243b6f93c1f3c29a9d910bba6cdb5345c8a6e8e1c8a2aeb74cb176",
+    "results/dev_aux/task2623/test_design.py": "6cf276f63df580b4061a12786f60666b525f5b35988caa8c0f73d6a982736a1f",
+    "results/dev_aux/task2623/test_runner_contract.py": "08d715636ff144aef2855b7db82e0a49b06a9792c31f53fe09fce2dfa9420173",
+    "results/dev_aux/task2623/train.py": "c6874b9935ecf6fdd0693d59ab0c0d2673dc320a8a91f579f1ee21f16ac73373"
+  },
+  "state": "FROZEN_BEFORE_TRAINING_OR_EVALUATION",
+  "task": "DEV_AUX2623_GENERIC_SAME_FIXED_SCALE_TDLEAF_VS_INITIAL",
+  "training": {
+    "H": 128,
+    "arms": 16,
+    "foe": "uniform all-ones fixed Model at scale10",
+    "hard_seconds": 2400,
+    "max_episodes_per_arm": 512,
+    "method": "TDLeaf",
+    "nodes_per_arm_candidate_plus_foe": 250000,
+    "observation": "Only complete candidate-color AlphaBeta D2 search receipts update TDLeaf; only actual scoring rule terminals provide W/L/D; UNKNOWN receives no terminal reward.",
+    "root_order": "Registered 120 roots in order, cycle; learner color alternates by episode index.",
+    "roots_per_rule": 120,
+    "total_paid_node_target": 4000000
+  }
+}

@@ -1,4 +1,4 @@
-## Current checkpoint — DEV_AUX handoff / tasks2620–2621 (2026-10-20)
+## Current checkpoint — DEV_AUX handoff / tasks2620–2625 (2026-10-20)
 
 The user transferred this existing DEV_AUX role to the new chat; the existing
 dev-aux heartbeat remains ACTIVE every60minutes and now targets
@@ -39,11 +39,65 @@ all record/TD update accounting passed. These are development interface/cost
 checks, not Generic strength or complete-domain validation. An actual legal
 NO_CONTEST record roundtrip defect was fixed in this own branch by sharing the
 rule authority's outcome set;69 record/declaration/interface checks pass.
-Prospective 4M-node/1024-slot H128 cost estimate is66.700minutes with explicit
-margins/reserve, not a registration or guarantee. Next freeze a controlled
-SAME fixed-scale comparison and full-history training/evaluation pools, refresh
-actual preparation cost, and use Chat mailbox assessment if expected>=120min.
-No new strength batch or product default was enabled. See task2621/REPORT.md.
+Prospective 4M-node/1024-slot H128 cost estimate was66.700minutes with explicit
+margins/reserve, not a runtime guarantee. Task2622 prepared and independently
+audited the full-history pools:38 source hashes verified,544 roots replayed,
+and zero exact train/evaluation intersections across four rules. Its write-once
+plan fixed16 initialization vectors,16 training arms/4M combined
+candidate-plus-foe nodes, and1024 evaluation slots. The sole registered
+training invocation failed before its first root/query because the frozen plan
+and runner disagreed on `nodes_per_arm`; a static audit also found both runners
+read top-level `H` while the plan stores phase-specific horizons. Query/episode
+files are empty and no model or strength result exists. Original pinned consumer
+sources and exact failure receipts are retained. Corrected working consumers and
+preflight regressions now pass, but their hashes no longer match the failed
+registration; no retry, top-up, evaluation or cap extension occurred. This
+runner-contract failure does not change the TD/TD-Leaf learning route. See
+results/dev_aux/task2622/REPORT.md and `run/launch-failure.json`. Any later
+experiment must be separately registered and reported as a new run.
+
+Task2623 separately registered the corrected plan/runner contract, with the
+same frozen pools/caps and no task2622 result reuse. It was interrupted after
+about10minutes when live file-size observations appeared unchanged. Closing
+the writer revealed 26,176 query rows and 1,862 episode rows; the earlier
+zero-row interruption counts were mistaken and are explicitly corrected.
+Independent replay passed for all persisted rows:1,470,789 nodes, five arms at
+250k, a sixth at220,789, 1,845 actual terminal episodes,17 UNKNOWN, and one
+open 13-query episode. Ten arms were never started. All120 training root
+families were exposed for rules271001/271002; the exact-record intersection
+with all64 evaluation roots is0, though unlogged search states are outside this
+check. No training result or evaluation binding exists, so there is no strength
+comparison. Preserve this partial run and do not retry/top-up. See
+results/dev_aux/task2623/REPORT.md, `run/partial-training-audit.json`, and
+`run/training-interruption-correction.json`.
+
+Task2624 then prepared a separate outcome-blind replacement pool, excluding
+prior full records plus task2622/2623 outputs. It contains120 training and16
+evaluation roots for each rule; its independent audit verified43 source hashes,
+replayed544 exact histories and found zero train/evaluation start intersections.
+Task2625 is a new separately registered run bound to that pool, not a retry or
+top-up of earlier work. Its one-shot training reached all16 registered arms
+(4M candidate-plus-foe nodes,66,797 queries,3,693 episodes:3,579 actual
+terminals and114 UNKNOWN); independent full-history, outcome, node-cap and
+logged-receipt TD-update replay passed. Training used1,750.237s under its
+2,400s cap. After this audit, the frozen1,024-slot evaluation completed in
+555.656s with1,254,951 nodes,22,305 queries,980 actual terminal games,44
+UNKNOWN and0 missing. The independent evaluation replay/cap/legality audit
+passed. No slot reached its node cap.
+
+The registered512-pair finite-panel TDLeaf-minus-initial reward bounds are
+[61/512,149/512] = [0.1191,0.2910], strictly positive even when every UNKNOWN
+endpoint ranges independently over[-1,+1]. Rule slices are271001
+[0.2578,0.3359],271002 [0.4688,0.4688],271003 [-0.3438,0.2656],271004
+[0.0938,0.0938]; only271003 is unresolved, with35/128 pairs containing
+UNKNOWN. All44 UNKNOWN endpoint slots are correctly censored H=128 outcomes,
+not draws, and no node cap caused censoring. Each of the four descriptive seed
+slices also has a positive lower bound. These are crossed finite strata, not
+confidence intervals or population effects. Task2625 covers four existing
+generated4x4 rules only; full-domain, descendant-state, transposition and
+population generalization remain open. Preserve all frozen caps and prior
+failures; no rerun, top-up or result-driven test extension. See
+results/dev_aux/task2625/REPORT.md and its source-bound audit/analysis JSON.
 
 Earlier same-day registration/running checkpoints below are retained history;
 the closed status above supersedes their operational pending statements.

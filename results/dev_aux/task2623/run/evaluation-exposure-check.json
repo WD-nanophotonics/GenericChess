@@ -1,0 +1,14 @@
+{
+  "distinct_training_root_families_observed_by_rule": {
+    "271001": 120,
+    "271002": 120,
+    "271003": 0,
+    "271004": 0
+  },
+  "evaluation_roots": 64,
+  "evaluation_roots_started": false,
+  "exact_root_overlaps": [],
+  "limitation": "Compares only complete records explicitly logged before/after queries and episode start/final records; unlogged interior search states and semantic/transposition equivalence are not checked.",
+  "status": "PASS_EXACT_EVALUATION_ROOT_VS_PARTIAL_TRAINING_RECORD_CHECK",
+  "unique_logged_training_full_records": 21918
+}

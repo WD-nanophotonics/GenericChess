@@ -1,0 +1,113 @@
+{
+  "analysis_sha256": "098d5686e03dea2583f15e7fa366549c1414819462ed768e1c64aebc58aaf764",
+  "interpretation": "Descriptive finite-panel completion bounds only; crossed seeds and reused roots are dependent strata, not confidence intervals or population estimates.",
+  "rules": {
+    "271001": {
+      "difference_mean_bounds": [
+        0.2578125,
+        0.3359375
+      ],
+      "difference_sum_bounds": [
+        33,
+        43
+      ],
+      "exact_pairs": 123,
+      "pairs": 128,
+      "unknown_pairs": 5
+    },
+    "271002": {
+      "difference_mean_bounds": [
+        0.46875,
+        0.46875
+      ],
+      "difference_sum_bounds": [
+        60,
+        60
+      ],
+      "exact_pairs": 128,
+      "pairs": 128,
+      "unknown_pairs": 0
+    },
+    "271003": {
+      "difference_mean_bounds": [
+        -0.34375,
+        0.265625
+      ],
+      "difference_sum_bounds": [
+        -44,
+        34
+      ],
+      "exact_pairs": 93,
+      "pairs": 128,
+      "unknown_pairs": 35
+    },
+    "271004": {
+      "difference_mean_bounds": [
+        0.09375,
+        0.09375
+      ],
+      "difference_sum_bounds": [
+        12,
+        12
+      ],
+      "exact_pairs": 128,
+      "pairs": 128,
+      "unknown_pairs": 0
+    }
+  },
+  "seeds": {
+    "1977": {
+      "difference_mean_bounds": [
+        0.0234375,
+        0.2265625
+      ],
+      "difference_sum_bounds": [
+        3,
+        29
+      ],
+      "exact_pairs": 116,
+      "pairs": 128,
+      "unknown_pairs": 12
+    },
+    "27182": {
+      "difference_mean_bounds": [
+        0.203125,
+        0.328125
+      ],
+      "difference_sum_bounds": [
+        26,
+        42
+      ],
+      "exact_pairs": 121,
+      "pairs": 128,
+      "unknown_pairs": 7
+    },
+    "31415": {
+      "difference_mean_bounds": [
+        0.0078125,
+        0.1640625
+      ],
+      "difference_sum_bounds": [
+        1,
+        21
+      ],
+      "exact_pairs": 119,
+      "pairs": 128,
+      "unknown_pairs": 9
+    },
+    "8173": {
+      "difference_mean_bounds": [
+        0.2421875,
+        0.4453125
+      ],
+      "difference_sum_bounds": [
+        31,
+        57
+      ],
+      "exact_pairs": 116,
+      "pairs": 128,
+      "unknown_pairs": 12
+    }
+  },
+  "status": "PASS_DESCRIPTIVE_STRATA_RECONCILE"
+}

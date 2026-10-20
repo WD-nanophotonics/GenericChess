@@ -1,0 +1,19 @@
+{
+  "decision": "Preserve this separate task2623 run as interrupted before any search sample; no retry, top-up, or cap extension under this registration.",
+  "episode_file_sha256": "344c5548b9cb4208bce49dfeabc889d601ca2b5826ca114bc68ed4fb762a8011",
+  "episode_rows": 0,
+  "evaluation_started": false,
+  "exit_code": 1,
+  "interrupt": "Ctrl-C sent through the original unified exec session after ~10 minutes with no query output.",
+  "interrupted_at_utc": "2026-10-20T10:38:54.422607+00:00",
+  "launcher_session_id": 87705,
+  "plan_sha256": "a9898ce03abf2f23265a211843cde1d13742add17beec893b99e5687c4118c52",
+  "query_file_sha256": "e1f093dac0f16532535ae9ea576d7a30500751c80df218c6f2ae99ec76369e16",
+  "query_rows": 0,
+  "reason": "No query/episode row had been written after about10 minutes, far exceeding the task2621 80k-node arm cost of22\u201328 seconds; no process inspection interface was available. Stop at an evidence-based cost checkpoint rather than allowing a silent unbounded first operation.",
+  "registration_sha256": "d985943ad87b38cd01084c8e1054382e845c198b790fdad573987df5e4ce7dfa",
+  "session_id": "bb4c14c1-d8ef-4511-849f-ac95444f6a30",
+  "started_receipt_sha256": "85d560b25ccf9fcd9d9ec0641046f4c07a292c2e4afbcb722d08a51028b03a96",
+  "state": "INTERRUPTED_BEFORE_FIRST_QUERY_ON_COST_CHECKPOINT",
+  "training_result_exists": false
+}
