@@ -1,0 +1,119 @@
+{
+  "audit_script_sha256": "0c740bbda55b4ba55792543eebefec4c69889a088764987b9f283135dacd53d6",
+  "candidate_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+  "candidate_rule_sha256": "28736c100941698a4218fb0532b0cc65017a4c9b820070faf1951f7bf523c284",
+  "evaluation_roots": 16,
+  "exact_prior_intersections": 0,
+  "exact_training_evaluation_intersections": 0,
+  "full_history_replayed_roots": 136,
+  "inventory_occurrences": 118884,
+  "inventory_sha256": "2bcc436be65dd2001df93295bb95ae3d788755b5fd83a653bdeb9ba7c4af528f",
+  "inventory_unique_prior_histories": 55385,
+  "legal_unlock_action_availability": {
+    "evaluation": {
+      "roots_with_legal_unlock_action": 16,
+      "sample_families": [
+        280007,
+        280010,
+        280020,
+        280066,
+        280075,
+        280098,
+        280104,
+        280117
+      ]
+    },
+    "training": {
+      "roots_with_legal_unlock_action": 120,
+      "sample_families": [
+        140007,
+        140013,
+        140019,
+        140057,
+        140084,
+        140097,
+        140108,
+        140114
+      ]
+    }
+  },
+  "mechanism_feature_totals": {
+    "R_board_pieces": 136,
+    "R_board_roots": 136,
+    "R_hand_pieces": 136,
+    "R_hand_roots": 136,
+    "promoted_P_pieces": 136,
+    "promoted_P_roots": 136
+  },
+  "pool_sha256": "03f7184d843bcd7c2f90ff84204516a739125ff26a538f2655078841bd98c17c",
+  "prefit_candidate_histories": 1,
+  "preparation_script_sha256": "1831472761bc53a5e9717da1bb19ca7f9d8fa8b62cf77c17e905b5d14bc88aaf",
+  "preparation_seconds": 31.224545300006866,
+  "prior_unique_with_prefit_and_witness": 55385,
+  "registration_training_evaluation_started": false,
+  "scope": "Exact canonical full-record exclusions and deterministic full-history replay only; no descendant, transposition, distributional-independence, learning or strength claim.",
+  "status": "PASS_SOURCE_HASH_FULL_HISTORY_REPLAY_MECHANISM_FEATURE_AND_SPLIT_AUDIT",
+  "training_roots": 120,
+  "verified_history_sources": [
+    {
+      "occurrences": 1,
+      "path": "results/dev_aux/task2433/inputs.json",
+      "sha256": "6dd5a7d205e8718abb3cc581c57e8d00e652d7f404f4e622deed853116925604",
+      "unique_records": 1
+    },
+    {
+      "occurrences": 0,
+      "path": "results/dev_aux/task2475/result.json",
+      "sha256": "394a82277ec918f91fd1cf20b2232c110d02981c6b1b645c9ffce8acd03e754d",
+      "unique_records": 0
+    },
+    {
+      "occurrences": 0,
+      "path": "results/dev_aux/task2626/rule15-panel-feasibility-design.json",
+      "sha256": "b5a141248b6e9401ad12745c77fb57d265d371e5bb3e69874e934c3d261df07c",
+      "unique_records": 0
+    },
+    {
+      "occurrences": 0,
+      "path": "results/dev_aux/task2626/rule15-root-pools-audit.json",
+      "sha256": "8fd0aa6ea4b74034eb3f34c41de87c4a62ed7faa03e234c617d25ebb6d93688e",
+      "unique_records": 0
+    },
+    {
+      "occurrences": 136,
+      "path": "results/dev_aux/task2626/rule15-root-pools.json",
+      "sha256": "e2bc9c829f8004736766be99dbfd12c359c7e1be8456385edd091bc0c4d7a61b",
+      "unique_records": 136
+    },
+    {
+      "occurrences": 2732,
+      "path": "results/dev_aux/task2626/rule15-training/episodes.jsonl",
+      "sha256": "274a42210e351ead5e43dfe2800cf6eb2e0484be6cfff6d9bd05e9e98f0141b2",
+      "unique_records": 1405
+    },
+    {
+      "occurrences": 106576,
+      "path": "results/dev_aux/task2626/rule15-training/queries.jsonl",
+      "sha256": "381c35ecb1040eb19694e5b7316d4f9329dee42883fe14042fb037355a888a48",
+      "unique_records": 51010
+    },
+    {
+      "occurrences": 9438,
+      "path": "results/dev_aux/task2626/rule15-trajectory-feasibility/queries.jsonl",
+      "sha256": "fcdd19c43f4f2f53f4bd60ea09c2a880f79c56668f1585fcdd239a090540ee54",
+      "unique_records": 4658
+    },
+    {
+      "occurrences": 1,
+      "path": "results/dev_aux/task2626/task2433-unvisited-variant-screen.json",
+      "sha256": "43e684c1dc0bb80e02702d582823d8ed560c0e634919ec92e07e072c25b3350f",
+      "unique_records": 1
+    },
+    {
+      "occurrences": 0,
+      "path": "results/dev_aux/task2627/source-inventory.json",
+      "sha256": "9cdc9e32125b710c76627012335d8fc8638f72e890374dc354fa0a20200c83ca",
+      "unique_records": 0
+    }
+  ]
+}

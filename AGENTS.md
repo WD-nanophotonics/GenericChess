@@ -148,6 +148,11 @@ At every start, restart, heartbeat and after compaction, FIRST read
 .local_agent/NEXT_WORK.md in full, then this file, LOCAL_MAINLINE.md and
 rollout/advisor/slack stop flags. Never clear a user stop. A missing/stale memo
 is rebuilt from evidence before research; checking flags never permits clearing them.
+At each new or resumed research segment, before substantive research, run one
+role-local Chat mailbox probe and read/save/review newly available Chat comments.
+Record an adopt/defer/reject decision for each new or edited comment; if there is
+no new comment, continue without waiting. This is an asynchronous read, not a
+request that Chat reply or a realtime consultation.
 Memo has at most20 lines/2KiB UTF-8, with State, Segment, Main, Backup1, Backup2,
 Evidence fields. Each task is question | immediate first action | expected
 evidence | done condition. Overwrite completed/stale tasks; no memo diary/archive.
@@ -260,6 +265,10 @@ docs/operations/SLACK_WORKFLOW.md. Read/save/review historical Chat comments,
 then write one checked progress report per existing probe. No realtime Dot
 consultation or reply requirement. Preserve raw originals privately and exclude
 personal information/passwords/credentials from outgoing Git/Slack copies.
+Before every Slack message, commit and push the reviewed work to this role's
+authorized branch, verify the complete remote SHA, and include that exact SHA
+in the message. If push or SHA verification fails, do not send; preserve the
+failure and continue independent work.
 Keep exact revision/hash receipts and distinguish delivery, reading, adoption
 and execution. No automatic retries, self-reply loops or additional workers.
 Explicit role/project stops suspend communication in their existing scope;

@@ -22,6 +22,13 @@ and reconciliation remain available for historical evidence, not new sends.
 
 ## One logical read, then one report
 
+At each new or resumed research segment, perform one role-bound mailbox probe
+before substantive research. Read back to the saved coverage boundary, save raw
+tool evidence privately, and adopt/defer/reject each new or edited Chat comment
+before choosing the next action. If there is no new advice, continue research
+without waiting for a reply. Resume/heartbeat checks do not create realtime
+consultation or a reply requirement.
+
 Use the role-bound local CLI (DEV_AUX: dev-aux-local.cmd):
 1. mailbox start: create/resume one probe and obtain previous coverage plus
    relevant tracked thread roots. Pending Chat advice or old Dot requests do
@@ -41,11 +48,16 @@ Use the role-bound local CLI (DEV_AUX: dev-aux-local.cmd):
    adopt|defer|reject --reason REASON. Decisions bind exact message revisions;
    deferred items remain in the next probe's backlog. Adoption is not execution.
    Other roles' advice can be deferred as outside this role's assignment.
-5. Save substantive progress and a checked report file. mailbox prepare
-   --probe-id ID --file REPORT prepares one AGENT_MAILBOX_REPORT addressed
-   RECIPIENT=CHAT with role, probe ID, reviewed comments and committed SHA.
-   Include new results, failures/limits, next action, and fixed-SHA public
-   evidence links. Do not include personal information or credentials.
+5. Before any message is sent, commit and push the reviewed work to the owning
+   role's authorized branch and verify the full remote SHA in that checkout.
+   For DEV_AUX this is origin/sidemission. If push or verification fails, do not
+   send; preserve the failure and continue independent work. Then save a checked
+   report file whose evidence links and committed SHA refer to that verified
+   revision. mailbox prepare --probe-id ID --file REPORT prepares one
+   AGENT_MAILBOX_REPORT addressed RECIPIENT=CHAT with role, probe ID, reviewed
+   comments, results, failures/limits, next action, fixed-SHA public evidence
+   links, and the verified full remote SHA. Do not include personal information
+   or credentials.
 6. mailbox begin-send --probe-id ID durably records SEND_UNCERTAIN before the
    installed Slack send tool is called exactly once. Save its exact result
    privately; mailbox bind --probe-id ID --message-ts TS --file RECEIPT records

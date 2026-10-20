@@ -3210,3 +3210,46 @@ DEV_AUX duration/schedule repair (2026-10-20, explicit bounded user task): repla
 DEV_AUX identity/environment repair (2026-10-20, bounded configuration): added role-local doctor and mandatory session-start identity check; default cwd and permission denial cannot assign PRIMARY ownership. Corrected status from hard-coded origin/sandbox/legacy consultation to origin/sidemission/current mailbox; inherited publisher rejection now explains the own route. All131 workflow tests pass; live identity, target and remote checks MATCH. No PRIMARY files/state, schedule rebinding or security changes. This repair is not research time; the next real segment must use the effective-work ledger. Details: docs/operations/ROLE_ENVIRONMENT_RECOVERY.md.
 
 DEV_AUX task2626 rules2–15 mechanism screen (2026-10-20): one bounded 152.759s outcome-blind pass found P-base→R-current witnesses in four of fourteen fixed variants; nine position graphs exhausted within depth24 and rule3 hit its declared cap. Independent source/input hash checks and full-record replays passed for every positive witness. A follow-up over only those saved histories verified board-R/hand-R coexistence and found at least one legal opposing reply after which the hand-R unlock action is available in all four variants; this is existential mechanism evidence, not action frequency, learner performance or strength. The shortest candidate is rule15 (one ply to P→R; both legal replies expose an unlock); its recorded history remains exposed and must be excluded from future roots. Chat comments were not consulted for this sub-120-minute mechanism check, no other Agent/worker participated, and no PRIMARY/DEEPSEEK state or contribution was read or changed. Next: source/exposure inventory and measured all-in feasibility for a separate rule15 panel before any pool creation or registration. Evidence: `results/dev_aux/task2626/task2433-unvisited-variant-audit.json`, `task2433-variant-unlock-endpoints.json`, and `task2433-variant-unlock-one-reply.json`; screening limits and status are in `docs/research/LOCAL_MAINLINE.md`.
+
+DEV_AUX task2626 rules15 partial-cost review (2026-10-20): this DEV_AUX chat
+resumed session `bc50f70b-5379-49c7-ac34-5dd8fb6c3379` with its original
+UTC start and 2381.7 confirmed effective seconds; the same interval remained
+open. Role doctor matched DEV_AUX, the independent checkout and sidemission;
+no stop flag was cleared. The partial 1200s rules15 training receipt and its
+independent audit show 935,796 paid candidate+foe nodes, 53,288 queries,
+1,366 complete episodes (1266 actual terminals,100 UNKNOWN), three complete
+arms and one time-partial arm; no evaluation ran. A start receipt exists but no
+PID/exit receipt; no Python producer is visible now, though historical exit code
+remains unknown. Recalculation against task2625
+found 779.8 vs 2285.4 nodes/s, but 17.56 vs 59.88 nodes/query and similar
+22.52 vs 26.20ms/query. The earlier same-rule80k scan projected1298.62s/M,
+within1.3% of the observed1282.34s; the old cross-rule 715.55s estimate had
+not used this closer cost reference. Audited action-only exposure found 1335/53285 hand-R-unlock
+selections (2.51%); no W/L/D was read by that audit. This is useful mechanism
+exposure evidence, not strength. We retain the existing run and UNKNOWN slots;
+no top-up, evaluation, worker or new registration occurred. A future fresh
+panel estimate takes the larger same-rule cost (1298.62s/M) plus 25% =
+1623.28s; the proposed 1800s training cap leaves 176.72s. Replacing the prior
+training estimate gives 62.02m all-in; omitting repeat scan and audit gives
+59.15m while retaining the 1200s reserve. Replacing both train/eval projections
+with their full 1800s caps gives91.49m with scan or88.62m without if prior
+setup costs hold, below the6600s cap but not a bound on new-root preparation.
+These are planning sensitivities only; all current roots are exposed and a new
+exact pool/cost bind is required.
+Since this remains
+under 120m, no Chat assessment is required; this segment made no mailbox probe
+and claims no advisor reading/adoption. No other Agent contribution was
+requested or inspected, so none is attributed. Outcome/report evidence:
+`results/dev_aux/task2626/RULE15-PARTIAL-COST-INTERPRETATION.md`; partial-cost
+postmortem, training audit, action-exposure audit and task2625 comparison retain
+the calculations and limits. Efficiency limit: action exposure was measured on
+the already exposed run and cannot replace a fresh outcome evaluation. The
+existing write-once rule15 pool preparer stops its source-history inventory at
+task2625; a successor must add task2626 training queries/episodes, feasibility
+queries and the current pool's full records, then independently inventory new
+family ranges before claiming exact-record freshness. A JSON/JSONL fingerprint
+scan across DEV_AUX found nine candidate files; task2475 held only compiled-rule
+metadata with no full record and is documented as such. Open: fresh-root
+selection, deployment/generalization and actual strength remain
+unresolved; science stays OPEN. No PRIMARY/DEEPSEEK state or code was read or
+changed.
