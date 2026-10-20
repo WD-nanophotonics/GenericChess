@@ -67,7 +67,7 @@ AlphaBeta/Receipt 400k-node cost-only scan to 4M paid nodes per method, then
 using the slower complete 1,024-slot Chess evaluation, 25% margin, and 900s
 reserve. The all-in cap remains 6,600s (110m):
 2,100s training, 3,600s evaluation, 900s setup/audit. This is below the 120m
-Dot-assessment threshold, but the projection is not a guarantee. Do not split
+Chat-assessment threshold, but the projection is not a guarantee. Do not split
 the run or extend caps. Keep all uncompleted method arms and evaluation slots
 as partial/UNKNOWN if any cap binds.
 
@@ -75,8 +75,9 @@ Before registration, audit and hash the common runner, finite-panel analyzer, ex
 fresh randomized family cap map, evaluation binding, decision analyzer, and
 invariant tests as one end-to-end bundle. Recompute cost from the exact final
 artifacts. Registration must be write-once and pre-search. If the final
-expected cost reaches 120m, request Dot's necessity assessment before launch;
-otherwise no assessment is required. This audit does not authorize search or
+expected cost reaches 120m, wait for the user's scoped assessment in an incoming
+project Chat message or direct confirmation before launch; otherwise no
+assessment is required. This audit does not authorize search or
 make any strength claim.
 
 ## Evidence and limits

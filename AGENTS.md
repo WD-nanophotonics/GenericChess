@@ -40,6 +40,11 @@ files change. Do not revive historical pause text into a new stop or reset the
 ended93 clock. New research uses its own session start; this bounded correction
 is not a research-duration sample.
 
+User correction2026-10-20: the user explicitly changed the existing DEV_AUX
+heartbeat to run hourly. Its saved recurrence was already hourly; update the
+stale prompt wording to hourly while preserving ACTIVE status and the same chat
+target. Do not create a replacement or modify another role's schedule.
+
 User correction2026-10-20: this existing gc辅助 chat is DEV_AUX. Its
 heartbeat target is the same chat ID recorded below. The app's initial project
 cwd may be GenericChess 2; that field alone does not select a role or prove

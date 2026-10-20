@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from collections import Counter
+import argparse
 import datetime
 import hashlib
 import json
@@ -18,6 +19,7 @@ from results.dev_aux.task2565.train import restore
 
 ROOT = Path(__file__).resolve().parents[3]
 RUN = ROOT / "results/dev_aux/task2618/learner-comparison-v1"
+RUN_NAMES = ("learner-comparison-v1", "learner-comparison-v2")
 ENDPOINTS = ("initial", "TreeStrap", "TDLeaf", "WDL")
 
 
@@ -274,4 +276,8 @@ def evaluate() -> dict:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run-name", choices=RUN_NAMES, default=RUN_NAMES[0])
+    args = parser.parse_args()
+    RUN = ROOT / "results/dev_aux/task2618" / args.run_name
     print(json.dumps(evaluate(), indent=2, sort_keys=True, allow_nan=False))

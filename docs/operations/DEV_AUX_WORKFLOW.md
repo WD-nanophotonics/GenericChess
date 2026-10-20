@@ -2,7 +2,7 @@
 
 User instruction 2026-10-11: DEV_AUX inherits primary research cadence and
 periodic Chat mailbox exchange, while keeping its checkout, branch and tasks independent.
-This expressly permits a separate native 90-minute heartbeat for this chat;
+This expressly permits a separate native hourly heartbeat for this chat;
 the historical single-heartbeat rule is overridden only to this extent.
 
 ## Recovery and research segments
@@ -24,6 +24,10 @@ default cwd or an ordinary sandbox denial as PRIMARY ownership, corrupt metadata
 or a broken timer. Use explicit own-checkout workdir and supported escalation
 when ordinary sandbox access fails. Verify actual target ID/status/interval before
 reporting any schedule defect; do not create/rebind/pause a correct heartbeat.
+
+User correction2026-10-20: the DEV_AUX heartbeat cadence is hourly. The saved
+recurrence was already hourly; its stale 90-minute prompt wording was corrected
+through the automation tool, preserving the same target and ACTIVE status.
 
 Use only the user-established GenericChess-DEV_AUX independent clone (absolute path in private local configuration), sidemission.
 The native heartbeat dev-aux targets chat 01a128cf-ae2d-7352-a456-06bd38367221.

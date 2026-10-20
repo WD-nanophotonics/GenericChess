@@ -1,12 +1,14 @@
 # DEV_AUX task2618 — TreeStrap/TDLeaf Chess comparison feasibility
 
-**Status: feasibility audit only.** No learner-comparison protocol is
-registered and no training or evaluation search has started.
+**Status: historical feasibility audit.** The separate v2 learner-comparison
+protocol has since been registered write-once and training has started; see the
+current status appended to `docs/research/LOCAL_MAINLINE.md`. No v1 top-up or
+evaluation search has started.
 
 ## Decision and estimate
 
 The four-endpoint standard-Chess comparison projects to **95.77 minutes**,
-below the 120-minute Dot-assessment threshold and the frozen 110-minute
+below the 120-minute Chat-assessment threshold and the frozen 110-minute
 all-in cap. `feasibility.py` now estimates each 4M-node training arm by scaling
 the observed 400k-node cost-only receipts from the shared AlphaBeta/Receipt
 path: 565.267s TreeStrap, 554.453s TDLeaf, and 531.339s finite WDL. It adds the
@@ -39,6 +41,7 @@ Before registering or launching, freeze and hash the precise arm and episode
 order, training runner, evaluator, capped family map, analysis, source/runtime
 pins, and write-once output paths. Complete end-to-end replay and invariants;
 then recompute the projection from the final sources. If expected duration
-reaches 120 minutes, request Dot's necessity assessment before registration or
-launch. Otherwise proceed only within the existing 110-minute cap. This audit
-does not authorize search or establish learning efficacy.
+reaches 120 minutes, wait for the user's scoped assessment in an incoming Chat
+message or direct confirmation before starting. Otherwise proceed only within
+the existing 110-minute cap. This audit does not authorize search or establish
+learning efficacy.

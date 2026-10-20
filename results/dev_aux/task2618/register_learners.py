@@ -6,6 +6,7 @@ pins and caps. It performs rule-history replay only; it never runs a search.
 from __future__ import annotations
 
 import datetime
+import argparse
 import hashlib
 import json
 import random
@@ -20,7 +21,13 @@ from results.dev_aux.task2618.wdl_receipt_adapter import EPISODE_ORDER, initial_
 
 
 ROOT = Path(__file__).resolve().parents[3]
-RUN = ROOT / "results/dev_aux/task2618/learner-comparison-v1"
+RUN_ROOT = ROOT / "results/dev_aux/task2618"
+RUNS = {
+    1: RUN_ROOT / "learner-comparison-v1",
+    2: RUN_ROOT / "learner-comparison-v2",
+}
+RUN = RUNS[1]
+V2_ROOT_SELECTION = RUN_ROOT / "learner-comparison-v2-prep-verified/root-selection.json"
 AUDIT_PATH = ROOT / "results/dev_aux/task2618/learning-input-audit-v2.json"
 TRAIN_PATH = ROOT / "results/dev_aux/task2619/prospective-training-roots.json"
 EVAL_PATH = ROOT / "results/dev_aux/task2619/prospective-evaluation-roots.json"
@@ -36,6 +43,7 @@ SOURCE_PATHS = (
     "results/dev_aux/task2618/wdl_receipt_adapter.py",
     "results/dev_aux/task2618/feasibility.py",
     "results/dev_aux/task2618/audit_learning_protocol_inputs.py",
+    "results/dev_aux/task2618/reselect_training_roots.py",
     "results/dev_aux/task2619/root_feasibility.py",
     "results/dev_aux/task2392/reader.py",
     "results/dev_aux/task2153/stop_evidence.py",
@@ -64,6 +72,19 @@ def canonical(value: object) -> bytes:
 
 def record_set_digest(rows: list[dict]) -> str:
     return sha(b"\n".join(canonical(row["record"]) for row in rows))
+
+
+def training_source_index(revision: int, seed_index: int, root_index: int,
+                         selected_indices: list[int]) -> int:
+    if revision == 2:
+        offset = root_index
+    elif revision == 1:
+        offset = seed_index * 120 + root_index
+    else:
+        raise ValueError("unsupported task2618 registration revision")
+    if not 0 <= offset < len(selected_indices):
+        raise ValueError("training manifest source index is out of range")
+    return selected_indices[offset]
 
 
 def derived_seed(namespace: str) -> int:
@@ -158,22 +179,75 @@ def _load_inputs() -> tuple[dict, dict, dict, dict, dict]:
     }
 
 
-def build_registration(session: dict) -> tuple[dict, dict, dict, dict]:
+def build_registration(session: dict, revision: int = 1) -> tuple[dict, dict, dict, dict]:
     audit, train_doc, eval_doc, feasibility, input_raw = _load_inputs()
     selection = audit["selection"]
     seeds = audit["seed_schedule"]["seeds"]
     train_source_rows = train_doc["roots"]
     eval_source_rows = eval_doc["roots"]
-    train_start, train_end = selection["training_root_indices_remaining"]
-    training_rows = train_source_rows[train_start:train_end]
     evaluation_rows = eval_source_rows
-    if len(seeds) != 4 or len(training_rows) != 480 or len(evaluation_rows) != 32:
-        raise ValueError("audited seed/root counts differ from the frozen design")
-    if train_end - train_start != selection["training_root_count_remaining"]:
-        raise ValueError("training root index range disagrees with the outcome-blind audit")
-    if len(seeds) * selection["training_roots_per_seed_if_four_seed_design"] != len(training_rows):
-        raise ValueError("training roots do not divide evenly across seeds")
-    _verify_roots(training_rows, expected_count=480, label="training")
+    if revision == 1:
+        train_start, train_end = selection["training_root_indices_remaining"]
+        training_rows = train_source_rows[train_start:train_end]
+        if len(training_rows) != 480:
+            raise ValueError("audited v1 seed/root count differs from the frozen design")
+        if train_end - train_start != selection["training_root_count_remaining"]:
+            raise ValueError("training root index range disagrees with the outcome-blind audit")
+        if len(seeds) * selection["training_roots_per_seed_if_four_seed_design"] != len(training_rows):
+            raise ValueError("training roots do not divide evenly across seeds")
+        training_source = {
+            "path": TRAIN_PATH.relative_to(ROOT).as_posix(),
+            "sha256": input_raw["training_roots"],
+            "indices": [train_start, train_end],
+            "exact_selected_records_sha256": record_set_digest(training_rows),
+            "excluded_cost_only_indices": selection["cost_only_training_root_indices_excluded"],
+            "family_range": selection["training_family_range"],
+            "shared_across_seeds": False,
+        }
+        selected_indices = list(range(train_start, train_end))
+    elif revision == 2:
+        selection_raw = V2_ROOT_SELECTION.read_bytes()
+        panel = json.loads(selection_raw)
+        if panel.get("task") != "DEV_AUX2618_CHESS_LEARNER_COMPARISON_V2_ROOT_PANEL" or panel.get("status") != "PREPARATION_ONLY_NOT_REGISTERED":
+            raise ValueError("v2 root panel is not the expected preparation artifact")
+        if panel.get("search_started") is not False or panel.get("outcome_fields_used_for_selection"):
+            raise ValueError("v2 root panel accessed outcomes or search")
+        source_paths = {
+            "training_roots_sha256": TRAIN_PATH,
+            "evaluation_roots_sha256": EVAL_PATH,
+            "input_audit_sha256": AUDIT_PATH,
+            "root_selector_source_sha256": ROOT / "results/dev_aux/task2618/reselect_training_roots.py",
+            "v1_games_exposure_file_sha256": RUN / "games.jsonl",
+        }
+        for key, path in source_paths.items():
+            if sha(path.read_bytes()) != panel.get("sources", {}).get(key):
+                raise ValueError(f"v2 panel source changed: {key}")
+        if panel.get("eligible_unexposed_count") != 429 or panel.get("panel_size") != 120:
+            raise ValueError("v2 selected panel counts changed")
+        training_rows = panel.get("roots", [])
+        if len(training_rows) != 120:
+            raise ValueError("v2 root panel must contain exactly 120 roots")
+        exposed = set(panel.get("exposed_family_ids_excluded", []))
+        if any(row.get("family") in exposed for row in training_rows):
+            raise ValueError("v2 root panel includes a v1-exposed family")
+        if record_set_digest(training_rows) != panel.get("selected_exact_record_set_sha256"):
+            raise ValueError("v2 selected record-set hash mismatch")
+        _verify_roots(training_rows, expected_count=120, label="v2 training")
+        training_source = {
+            "path": V2_ROOT_SELECTION.relative_to(ROOT).as_posix(),
+            "sha256": sha(selection_raw),
+            "selected_exact_record_set_sha256": panel["selected_exact_record_set_sha256"],
+            "selection_seed": panel["selection_seed"],
+            "selection_seed_namespace": panel["selection_seed_namespace"],
+            "eligible_unexposed_count": panel["eligible_unexposed_count"],
+            "exposed_family_ids_excluded": panel["exposed_family_ids_excluded"],
+            "shared_across_seeds": True,
+        }
+        selected_indices = list(range(len(training_rows)))
+    else:
+        raise ValueError("unsupported task2618 registration revision")
+    if len(seeds) != 4 or len(evaluation_rows) != 32:
+        raise ValueError("seed/evaluation root counts differ from the frozen design")
     _verify_roots(evaluation_rows, expected_count=32, label="evaluation")
     train_keys = {canonical(row["record"]) for row in training_rows}
     eval_keys = {canonical(row["record"]) for row in evaluation_rows}
@@ -181,7 +255,7 @@ def build_registration(session: dict) -> tuple[dict, dict, dict, dict]:
         raise ValueError("exact full-history training/evaluation root overlap")
     train_hash = record_set_digest(training_rows)
     eval_hash = record_set_digest(evaluation_rows)
-    if train_hash != selection["training_root_records_sha256"]:
+    if revision == 1 and train_hash != selection["training_root_records_sha256"]:
         raise ValueError("selected training-root records differ from the audited exact set")
     if eval_hash != selection["evaluation_root_records_sha256"]:
         raise ValueError("selected evaluation-root records differ from the audited exact set")
@@ -204,6 +278,7 @@ def build_registration(session: dict) -> tuple[dict, dict, dict, dict]:
     source_hashes = {path: sha((ROOT / path).read_bytes()) for path in SOURCE_PATHS}
     plan = {
         "task": "DEV_AUX2618_CHESS_LEARNER_COMPARISON",
+        "design_revision": revision,
         "status": "FROZEN_BEFORE_SEARCH",
         "registered_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "session_id": session["id"],
@@ -211,15 +286,9 @@ def build_registration(session: dict) -> tuple[dict, dict, dict, dict]:
         "methods": methods,
         "seeds": seeds,
         "seed_count": len(seeds),
-        "roots_per_seed": 120,
-        "training_root_selection": {
-            "path": TRAIN_PATH.relative_to(ROOT).as_posix(),
-            "sha256": sha(input_raw["training_roots"]),
-            "indices": [train_start, train_end],
-            "exact_selected_records_sha256": train_hash,
-            "excluded_cost_only_indices": selection["cost_only_training_root_indices_excluded"],
-            "family_range": selection["training_family_range"],
-        },
+        "roots_per_seed": len(training_rows) if revision == 1 else 120,
+        "training_root_selection": training_source,
+        "training_families": [row["family"] for row in training_rows],
         "evaluation_root_selection": {
             "path": EVAL_PATH.relative_to(ROOT).as_posix(),
             "sha256": sha(input_raw["evaluation_roots"]),
@@ -284,18 +353,24 @@ def build_registration(session: dict) -> tuple[dict, dict, dict, dict]:
     }
     training_manifest = {
         "status": "FROZEN_BEFORE_TRAINING",
-        "source_path": TRAIN_PATH.relative_to(ROOT).as_posix(),
-        "source_sha256": sha(input_raw["training_roots"]),
-        "selected_indices": list(range(train_start, train_end)),
+        "source_path": training_source["path"],
+        "source_sha256": training_source["sha256"],
+        "selected_indices": selected_indices,
+        "shared_panel_across_seeds": revision == 2,
         "seed_blocks": [
             {"seed_index": index, "seed": seed,
-             "families": [row["family"] for row in training_rows[index * 120:(index + 1) * 120]]}
+             "families": [row["family"] for row in (
+                 training_rows if revision == 2 else training_rows[index * 120:(index + 1) * 120]
+             )]}
             for index, seed in enumerate(seeds)
         ],
         "roots": [
-            {"seed_index": index // 120, "seed": seeds[index // 120],
-             "source_index": train_start + index, **row}
-            for index, row in enumerate(training_rows)
+            {"seed_index": seed_index, "seed": seed,
+             "source_index": training_source_index(revision, seed_index, index, selected_indices), **row}
+            for seed_index, seed in enumerate(seeds)
+            for index, row in enumerate(
+                training_rows if revision == 2 else training_rows[seed_index * 120:(seed_index + 1) * 120]
+            )
         ],
     }
     eval_manifest = {
@@ -311,7 +386,8 @@ def _json_bytes(value: dict) -> bytes:
     return (json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n").encode("utf-8")
 
 
-def preflight(run_dir: Path = RUN) -> dict:
+def preflight(run_dir: Path | None = None) -> dict:
+    run_dir = RUN if run_dir is None else run_dir
     required = ("plan.json", "registration.json", "root-manifest.json", "evaluation-root-manifest.json")
     if any(not (run_dir / name).is_file() for name in required):
         raise FileNotFoundError("learner comparison registration is incomplete")
@@ -348,20 +424,23 @@ def preflight(run_dir: Path = RUN) -> dict:
             "search_started": False}
 
 
-def register() -> dict:
+def register(revision: int = 1, run_dir: Path | None = None) -> dict:
+    if revision not in RUNS:
+        raise ValueError("unsupported task2618 registration revision")
+    run_dir = RUNS[revision] if run_dir is None else run_dir
     stop = SharedDeleteStopReader(ROOT)
     stop()
     session, _ = _check_role_session()
-    if RUN.exists():
-        raise FileExistsError(f"write-once learner run directory already exists: {RUN}")
-    plan, train_manifest, eval_manifest, source_hashes = build_registration(session)
-    RUN.mkdir()
+    if run_dir.exists():
+        raise FileExistsError(f"write-once learner run directory already exists: {run_dir}")
+    plan, train_manifest, eval_manifest, source_hashes = build_registration(session, revision)
+    run_dir.mkdir()
     plan_raw = _json_bytes(plan)
     train_raw = _json_bytes(train_manifest)
     eval_raw = _json_bytes(eval_manifest)
-    _write_once(RUN / "plan.json", plan_raw)
-    _write_once(RUN / "root-manifest.json", train_raw)
-    _write_once(RUN / "evaluation-root-manifest.json", eval_raw)
+    _write_once(run_dir / "plan.json", plan_raw)
+    _write_once(run_dir / "root-manifest.json", train_raw)
+    _write_once(run_dir / "evaluation-root-manifest.json", eval_raw)
     registration = {
         "status": "REGISTERED_PRE_TRAINING",
         "registered_at": plan["registered_at"],
@@ -374,9 +453,12 @@ def register() -> dict:
         "training_search_authorized_by_registration": True,
         "evaluation_search_requires_complete_training_and_later_bound_evaluation_registration": True,
     }
-    _write_once(RUN / "registration.json", _json_bytes(registration))
-    return preflight()
+    _write_once(run_dir / "registration.json", _json_bytes(registration))
+    return preflight(run_dir)
 
 
 if __name__ == "__main__":
-    print(json.dumps(register(), indent=2, sort_keys=True))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--revision", type=int, choices=sorted(RUNS), default=1)
+    args = parser.parse_args()
+    print(json.dumps(register(args.revision), indent=2, sort_keys=True))

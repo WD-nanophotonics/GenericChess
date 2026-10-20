@@ -23,6 +23,8 @@ class FeasibilityTest(unittest.TestCase):
         self.assertLess(data["estimate_minutes"], data["all_in_cap_minutes"])
         self.assertLess(data["all_in_cap_minutes"], 120)
         self.assertEqual(data["threshold_assessment"], "BELOW_120_MINUTES")
+        self.assertEqual(data["assumptions"]["chat_assessment_threshold_seconds"], 7200)
+        self.assertNotIn("dot_threshold_seconds", data["assumptions"])
         self.assertEqual(len(data["source_pins"]), 4)
         self.assertTrue(all(len(pin["sha256"]) == 64 for pin in data["source_pins"].values()))
         self.assertEqual(set(data["cost_scan_runner_source_pins"]), {

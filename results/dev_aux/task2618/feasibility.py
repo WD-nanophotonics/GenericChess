@@ -25,7 +25,7 @@ SETUP_AUDIT_RESERVE_SECONDS = 900
 TRAIN_PHASE_CAP_SECONDS = 2_100
 EVAL_PHASE_CAP_SECONDS = 3_600
 ALL_IN_CAP_SECONDS = 6_600
-DOT_THRESHOLD_SECONDS = 7_200
+CHAT_ASSESSMENT_THRESHOLD_SECONDS = 7_200
 
 
 def read_source(name: str) -> tuple[dict, dict]:
@@ -105,7 +105,7 @@ def main() -> None:
                 "evaluation_all_endpoints": EVAL_PHASE_CAP_SECONDS,
             },
             "all_in_cap_seconds": all_in_cap,
-            "dot_threshold_seconds": DOT_THRESHOLD_SECONDS,
+            "chat_assessment_threshold_seconds": CHAT_ASSESSMENT_THRESHOLD_SECONDS,
         },
         "training_seconds_by_method": train_seconds,
         "evaluation_source": {
@@ -118,7 +118,7 @@ def main() -> None:
         "estimate_with_margin_and_reserve_seconds": estimated,
         "estimate_minutes": estimated / 60,
         "all_in_cap_minutes": all_in_cap / 60,
-        "threshold_assessment": "BELOW_120_MINUTES" if estimated < DOT_THRESHOLD_SECONDS else "DOT_ASSESSMENT_REQUIRED",
+        "threshold_assessment": "BELOW_120_MINUTES" if estimated < CHAT_ASSESSMENT_THRESHOLD_SECONDS else "CHAT_ASSESSMENT_REQUIRED",
         "interpretation": (
             "Historical measurements are not guarantees: runner/search versions and node mix differ. "
             "Training cost scales each observed 400k-node shared AlphaBeta/Receipt cost-only scan "
@@ -126,7 +126,7 @@ def main() -> None:
             "Evaluation uses the slower complete 1,024-slot panel; the estimate adds a 25% runtime "
             "margin plus 15 minutes for setup/audit and bounds the hard all-in cap at 110 minutes. "
             "No outcomes, roots, seeds, arms or learner parameters are selected or executed here. "
-            "Any later estimate reaching 120 minutes requires Dot assessment before registration/start."
+            "Any later estimate reaching 120 minutes requires a scoped incoming Chat assessment before start."
         ),
     }
     print(json.dumps(result, indent=2, sort_keys=True))
