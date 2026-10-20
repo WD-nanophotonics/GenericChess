@@ -32,6 +32,32 @@ Research segment confirmed 4,999.428 seconds across nine evidence-bearing
 intervals; configuration, report, tests, Git and transport time are excluded.
 Publication details are recorded in the report/commit receipt after push.
 
+Follow-up continuation of the same segment (2026-10-20): DEV_AUX completed an
+outcome-blind rule-coverage audit and recorded
+`results/dev_aux/task2625/NEXT_RULE_COVERAGE.md`. A schema scan found 477 saved
+rule JSON artifacts with 14 coarse structural signatures (not unique rules or
+a population frame). It selected task2433/rules-0 as the next limited generated
+candidate because it preserves 4x4 size while adding capture-to-hand, promotion
+and hand-R-conditioned quiet ray movement. The candidate also writes and
+expires `temp_right`, but the saved DSL has no reader guard; no decision-relevant
+auxiliary-state effect is claimed. Its old 16 legal-prefix roots are treated as
+exposed despite zero fitness queries. The task2411 drop-zone/harvest fixture,
+3x3/5x5 rules and further promotion/drop permutations were compared and
+deferred for this next learner question. No root pool, sample, registration or
+learner update was created.
+
+Only DEV_AUX contributed execution and analysis; no second Agent was activated
+or claimed, and there was no cross-role coordination or disagreement. The human
+user's direct route/boundary instructions remained authoritative. This is a
+decision based on rule-definition and exposure artifacts, not an independent
+replication or evidence of transfer. Effective work for the continued session
+is now 5,405.569 seconds across ten closed intervals; configuration, Git,
+testing and mailbox transport do not count. The earlier one-report mailbox
+send remains `SEND_UNCERTAIN` pending its next periodic reconciliation; this
+update does not trigger a second report or immediate read. At that next probe,
+include this fixed-revision note and the resulting commit SHA, then reconcile
+the saved delivery receipt without resending.
+
 # DEV_AUX chat handoff / tasks2620–2621 —2026-10-20 JST
 
 User-authorized transfer of the existing role and dev-aux heartbeat to the new

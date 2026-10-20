@@ -99,6 +99,38 @@ population generalization remain open. Preserve all frozen caps and prior
 failures; no rerun, top-up or result-driven test extension. See
 results/dev_aux/task2625/REPORT.md and its source-bound audit/analysis JSON.
 
+## Next rule-coverage decision — 2026-10-20
+
+An outcome-blind inventory of the saved 477 `results/dev_aux/rules-*.json`
+artifacts found 14 coarse structural signatures; this is not a unique-rule
+count or a representative population. Task2625's four measured 4x4 rules
+already vary leap/ray geometry and promotion/drop mappings, but none carries
+semantic actions or explicit auxiliary state. The next most informative
+existing generated candidate is task2433 `rules-0.json` (SHA256
+`33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0`): same
+4x4 board and four pieces, with capture-to-hand, promotion, and a hand-R action
+that unlocks a quiet rook ray move. Its `temp_right` bit is written and expires
+but no saved guard reads it; it is not evidence for decision-relevant
+aux-conditioned play. Task2411's drop-zone guard/harvest fixture is a more
+coupled authored alternative; 3x3/5x5 candidates add less mechanism coverage
+for this learner question.
+
+Task2433 has 16 generated rules sharing the same semantic DSL and movement
+profile, with one saved legal-prefix root per rule (8 train/8 reserve overall),
+112 generation attempts and zero fitness queries. Treat those histories as
+exposed despite the absence of fitness/search queries. Next: make an independent
+outcome-blind root pool for the fixed-order rules-0 candidate, auditing complete
+history against task2433 and task2411 records and requiring R-hand/promotion
+feature excitation. Preserve task2625's per-rule resource condition (four
+seeds,120 training roots per seed,250k combined nodes per arm,16 eval roots per
+seed and learner endpoint), then bind a source-matched cost estimate before
+registration. The linear 16.7-minute scale-down from task2625's 66.70-minute
+four-rule estimate is only a planning reference; semantic-rule cost is unknown.
+No sample is registered or launched, and this one-rule panel cannot establish
+complete Generic-domain transfer. If any revised experiment estimate reaches
+120 minutes, obtain the required Chat mailbox assessment before launch. Full
+coverage reasoning and caveats: `results/dev_aux/task2625/NEXT_RULE_COVERAGE.md`.
+
 Earlier same-day registration/running checkpoints below are retained history;
 the closed status above supersedes their operational pending statements.
 
