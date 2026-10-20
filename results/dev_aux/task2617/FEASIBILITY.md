@@ -2,6 +2,9 @@
 
 **Status: feasibility only.** No experiment is registered or started; no games,
 search queries, or model updates were run for this task. Science remains OPEN.
+This status describes the feasibility checkpoint sealed before evaluator
+implementation; any later pre-run registration and execution state is recorded
+separately in the immutable `run-001/registration.json` receipt.
 
 ## Question and frozen proposal
 
@@ -65,3 +68,16 @@ From the DEV_AUX checkout, run:
 The script deterministically rewrites `feasibility.json`,
 `prospective-roots.json`, and `execution-order.json`; it does not execute the
 proposed experiment.
+
+## Evaluator implementation checkpoint
+
+The separate `evaluate.py` enforces the frozen family-level combined-both-side
+node cap, shuffled slot order, a 90-minute global cap, full-history replay, and
+source/model/runtime pins. `analyze.py` verifies receipts and paid-node totals,
+keeps missing or UNKNOWN outcomes censored, and reports endpoint-specific
+finite-panel reward and paired-contrast bounds. `register_run.py` writes a
+pre-run bundle exclusively; the evaluator refuses unregistered or changed plans.
+Nine focused standard-library tests pass with no real games or searches started;
+one synthetic all-terminal fixture exercises the complete report path.
+This implementation checkpoint remains unregistered until all code and tests
+are frozen and their hashes are recorded.

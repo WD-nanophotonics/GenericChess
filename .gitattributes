@@ -1438,3 +1438,6 @@ results/dev_aux/task1567/*.py whitespace=-blank-at-eof
 # Preserve exact task2616 executed source and evidence bytes.
 results/dev_aux/task2616/** -text whitespace=cr-at-eol
 results/dev_aux/task2616/*.py whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve exact source and registered plan hashes for task2617.
+results/dev_aux/task2617/** -text whitespace=cr-at-eol

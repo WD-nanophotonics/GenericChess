@@ -1452,9 +1452,13 @@ Maximum paid
 nodes are 30.72M. Scaling from task2616's 14,648,460-node/1,883.679s evaluation,
 adding 25% runtime margin and 900s setup/audit gives 97.3m projected; a 90m
 evaluation cap plus reserve is 105m, below the 120m Dot-assessment threshold.
-This is feasibility, not registration or execution. Before any run, implement
-and test a separate evaluator and freeze its exact source/assignment hashes;
-retain UNKNOWN and the endpoint-specific finite-panel bounds. Evidence:
-`results/dev_aux/task2617/FEASIBILITY.md`, `feasibility.py`, `feasibility.json`,
-`prospective-roots.json`, and `execution-order.json`. No task2616 cap or output
-changed.
+This was feasibility only at the initial checkpoint: no games or searches had
+run and nothing was registered. The separate family-aware evaluator,
+finite-panel censoring analyzer, deterministic write-once preregisterer, and
+nine focused no-search tests are now implemented. Tests cover the exact
+1,024-slot cross product, balanced family caps, deterministic registration and
+hashes, rejection of changed/unregistered inputs, W/D/L reward orientation,
+UNKNOWN/missing censoring, and paid-node/run-summary audits. Existing result
+files remain untouched; pre-run registration is the next step. UNKNOWN is never
+assigned a draw or quantity reward. Full evidence is
+`results/dev_aux/task2617/FEASIBILITY.md` and its source-bound artifacts.
