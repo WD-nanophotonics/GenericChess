@@ -270,4 +270,3 @@ def bind(probe_id, message_ts, receipt_file):
     state["required_threads"] = sorted(set(state.get("required_threads", [])) | {message_ts})
     write_json(HOME / "state.json", state)
     return save(r)
-
