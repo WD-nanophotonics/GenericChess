@@ -1,0 +1,21 @@
+{
+  "task": "DEV_AUX2615",
+  "question": "Do the task2606/2609/2610 pairwise UNKNOWN reward-difference bounds discard known endpoint rewards, and what are the exact finite-panel bounds when only unknown endpoints vary over [-1,+1]?",
+  "status": "REGISTERED_READ_ONLY_REAGGREGATION",
+  "inputs": [
+    "results/dev_aux/task2606/eval-games.jsonl",
+    "results/dev_aux/task2609/eval-games.jsonl",
+    "results/dev_aux/task2610/attempt-2/eval-games.jsonl",
+    "results/dev_aux/task2606/analyze.py",
+    "results/dev_aux/task2609/audit_eval.py",
+    "results/dev_aux/task2610/compare_panels.py"
+  ],
+  "frozen_comparisons": [
+    "TD95 - initial",
+    "LocalLambda - initial",
+    "LocalLambda - TD95"
+  ],
+  "method": "For reward a-b, keep a exactly when known and otherwise use [-1,+1]; keep b exactly when known and otherwise use [-1,+1]. Sum lower/upper pair bounds over the original predeclared strata and divide by the original denominator. Also recompute the prior blanket UNKNOWN policy and assert it matches each old report.",
+  "scope": "No experiments, training, searches, or old files are modified. This is exact finite-panel arithmetic only, not an independent-sample confidence interval or population claim.",
+  "budget": {"expected_seconds": 10, "hard_cap_seconds": 300, "workers": 1}
+}

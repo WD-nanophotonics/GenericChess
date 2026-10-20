@@ -1,0 +1,16 @@
+{
+  "task": "DEV_AUX2613",
+  "question": "Does TDLeafEpisode with an unknown actual terminal outcome discard only the final unknown residual while retaining earlier complete-receipt bootstrap residuals, and does an incomplete receipt contribute no target?",
+  "scope": "Deterministic software-contract test only; no game training, evaluation, W/L labels, model selection, or product changes.",
+  "frozen_checks": [
+    "Two complete synthetic receipts followed by finish(None): exactly one known inter-receipt TD residual updates; no final residual is formed.",
+    "A resource-incomplete receipt contributes no sample; finish(None) adds no terminal residual.",
+    "Fixed pawn coefficient remains unchanged."
+  ],
+  "budget": {
+    "expected_duration_seconds": 5,
+    "hard_cap_seconds": 120,
+    "workers": 1
+  },
+  "interpretation_limit": "Checks current implementation semantics on synthetic receipts only. Not a strength result, historical-paper reproduction, or proof of outcome calibration."
+}

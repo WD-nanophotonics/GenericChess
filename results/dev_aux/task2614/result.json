@@ -1,0 +1,22 @@
+{
+  "task": "DEV_AUX2614",
+  "status": "COMPLETE_COST_ONLY",
+  "slots_planned": 32,
+  "slots_completed": 32,
+  "wall_seconds": 48.0057106000022,
+  "nodes_total": 413628,
+  "candidate_nodes_total": 201293,
+  "fixed_foe_nodes_total": 212335,
+  "queries_total": 3352,
+  "incomplete_queries_total": 0,
+  "terminal_slots": 14,
+  "outcomes_or_weights_emitted": false,
+  "plan_sha256": "0bab3796870065955c664e3bb7bc98a3970a3d7bf858a3f79d38622216bad4d9",
+  "started_sha256": "2e86ac9060a368101d8ceaeaf4be2ecbc1ba8a7715ede2b294df1707630ea92a",
+  "source_sha256": {
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2614/cost_scan.py": "8e4f284dd72800a70245ee2f20cb55bfabc917cf949af036f1119db603814f38"
+  },
+  "interpretation": "Execution-cost evidence only; terminal winner/draw values, W/L labels and model weights were never emitted."
+}

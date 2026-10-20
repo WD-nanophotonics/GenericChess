@@ -1,0 +1,29 @@
+{
+  "task": "DEV_AUX2614",
+  "question": "What is the observed shared AlphaBeta evaluation-path cost for fixed-foe standard-Chess games at a 20k combined-node cap, without observing or retaining W/L labels?",
+  "status": "REGISTERED_COST_ONLY",
+  "scope": "32 deterministic evaluation-cost slots from 16 fresh seeded 8-ply roots, each played in both candidate colors. Uniform material model on both sides; no training, endpoint selection, outcome labels, or learned weights.",
+  "search": {
+    "source": "results/dev_aux/task2492/learning.py AlphaBeta and Receipt",
+    "depth": 2,
+    "qdepth": 0,
+    "max_nodes_per_search": 8192,
+    "seconds_per_search": 2.0,
+    "node_budget_per_slot_both_actors": 20000,
+    "max_plies_per_slot": 128,
+    "global_hard_cap_seconds": 600
+  },
+  "roots": {
+    "opening_plies": 8,
+    "seed_formula": "2614001 + root_index for root_index 0..15",
+    "actions": "sorted legal UCI actions; uniform random choice; no material-dependent action choice",
+    "reuse": "Cost-only roots are excluded from any later actual-strength evaluation."
+  },
+  "accounting": "Candidate and fixed-foe nodes both charged to each slot. Incomplete searches contribute their actual node count and no action. Rule terminal is recorded only as a boolean stopping reason; winner/draw values are never read into outputs.",
+  "budget": {
+    "expected_duration_seconds": 120,
+    "hard_cap_seconds": 600,
+    "workers": 1
+  },
+  "interpretation_limit": "Uniform-policy execution-cost sample only; not learner-specific strength, an evaluation of trained endpoints, or a W/L result."
+}
