@@ -139,6 +139,15 @@ configuration/review/repair requests are not duration samples. Execute Main;
 at each milestone validate, assess mainline impact, checkpoint, select AND BEGIN
 the next useful step. Tests/docs/consultation/commits/publish are checkpoints.
 
+User correction2026-10-20 after the Luna patrol: an open session is NOT evidence
+of continued work. Record actual work intervals with `session work`, including
+timestamps, activity and concrete evidence. Only research/analysis/necessary
+validation counts; offline gaps, waiting, documentation, transport and this
+bounded workflow repair do not. Never derive effective minutes from the UTC
+start, heartbeat spacing, checkpoint count or an active flag. Missing legacy
+work records are unverified, not automatically credited. Model switches and
+compaction preserve UUID/start and recorded intervals, never credit the gap.
+
 Before60 minutes no normal/no-next-action finish. Early reasons: explicit stop,
 actual tool/quota/runtime limit, genuinely necessary user decision, or supported
 completion of the whole scientific objective. A missing hypothesis is not a
@@ -147,7 +156,16 @@ No idle padding, irrelevant proofs, old conclusions or infrastructure filler.
 Before final RESEARCH reply use session finish with evidence; refusal means
 continue, not bypass. no_viable_action after60 needs fresh substantive examination
 of two alternatives. Refill executable memo; record actual time and ending cause.
-Validator checks structure/time, not scientific truth or guaranteed App uptime.
+Normal finish requires>=60 RECORDED effective minutes AND a matching current
+quality-review file, then `session final-check`. Do not issue a final reply early
+and leave active with a promise to continue next heartbeat. Progress belongs in
+commentary; a real platform interruption remains incomplete. A direct user
+redirect to a bounded repair/review/configuration may use `session interrupt`
+with that instruction's evidence; this is interrupted, never successful research
+completion. Bounded tasks use `session final-check --mode bounded` and add no
+research time. Do not use this exception for a normal research patrol.
+Validator checks records, not the truth of self-reported activity, and cannot
+force a model to invoke it. Calling it and inspecting success are mandatory.
 Operational CLI and actual hard-limit evidence: docs/operations/LOCAL_AGENT.md.
 
 ## Research integrity and resource boundaries
@@ -194,6 +212,11 @@ only when the intended claim needs them. Soft blocks prompt useful backup work,
 new primary literature or bounded feasibility, not early exit. Revisit a failed
 route only with a changed premise and a specific decision-changing test. Add
 engineering/proofs/tests only for observed defects or serious concrete uses.
+An old report reread is not a new research checkpoint. Lack of new Chat comments
+does not make independent work unavailable. When a test fails, diagnose the
+contract and causal code/history before changing an expected value; the current
+output alone, or an old git-blame date, does not establish the correct answer.
+Do not replace that diagnosis with another request for already-granted authority.
 For static values preserve equivalent-rule consistency, finite-board saturation
 and supported scope; distinguish raw/normalized/rounded/clipped results. Quantity/
 actor-splitting are empirical, not assumed linear conservation. Fix attack/search

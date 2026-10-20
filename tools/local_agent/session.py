@@ -9,6 +9,8 @@ from .common import STATE, LocalFlowError, read_json, write_json
 HARD_REASONS = {'user_stop', 'user_decision', 'tool_limit', 'quota_limit',
                 'runtime_limit', 'scientific_complete'}
 MAINLINE = STATE.parent / 'docs/research/LOCAL_MAINLINE.md'
+EFFECTIVE_ACTIVITIES = {'research', 'analysis', 'validation'}
+ACTIVITIES = EFFECTIVE_ACTIVITIES | {'documentation', 'transport', 'administration'}
 
 
 def now():
@@ -49,10 +51,86 @@ def memo():
 
 def status():
     data = read_json(STATE/'session.json')
-    if data.get('state') == 'active':
-        data = dict(data, elapsed_minutes=round(
-            (now()-datetime.fromisoformat(data['started_at'])).total_seconds()/60, 3))
+    if data.get('started_at'):
+        data = dict(data, **_metrics(data))
     return data
+
+
+def _metrics(current):
+    work = current.get('work_intervals', [])
+    if not isinstance(work, list):
+        raise LocalFlowError('invalid work ledger')
+    spans = []
+    seconds = 0.0
+    for item in work:
+        try:
+            first, last = _timestamp(item['started_at']), _timestamp(item['ended_at'])
+            recorded = _timestamp(item['recorded_at'])
+            duration = (last-first).total_seconds()
+            valid = (item['activity'] in ACTIVITIES and duration > 0
+                     and item['seconds'] == duration
+                     and _timestamp(current['started_at']) <= first < last <= recorded <= now()
+                     and isinstance(item['evidence'], str) and item['evidence'].strip())
+        except (KeyError, TypeError) as exc:
+            raise LocalFlowError('invalid work ledger entry') from exc
+        if not valid:
+            raise LocalFlowError('invalid work ledger duration/activity/evidence')
+        spans.append((first, last))
+        if item['activity'] in EFFECTIVE_ACTIVITIES:
+            seconds += duration
+    spans.sort()
+    if any(left[1] > right[0] for left, right in zip(spans, spans[1:])):
+        raise LocalFlowError('overlapping work ledger entries')
+    end = current.get('ended_at') or current.get('interrupted_at')
+    wall_end = datetime.fromisoformat(end) if end else now()
+    return dict(wall_minutes=round((wall_end-datetime.fromisoformat(
+        current['started_at'])).total_seconds()/60, 3),
+        effective_seconds=seconds, effective_minutes=round(seconds/60, 3),
+        recorded_work_intervals=len(work))
+
+
+def _owned():
+    current = read_json(STATE/'session.json')
+    thread = read_json(STATE/'rollout.json').get('thread_id')
+    if not thread or current.get('thread_id') != thread:
+        raise LocalFlowError('segment belongs to another chat or identity is missing')
+    return current
+
+
+def _timestamp(value):
+    try:
+        parsed = datetime.fromisoformat(value)
+        if parsed.tzinfo is None or parsed.utcoffset() is None:
+            raise ValueError('timezone missing')
+        return parsed
+    except (TypeError, ValueError) as exc:
+        raise LocalFlowError('timezone-aware ISO work timestamps required') from exc
+
+
+def record_work(started_at, ended_at, activity, evidence):
+    """Record evidenced work, never infer effective time from an open clock."""
+    if stopped():
+        raise LocalFlowError('user stop persists; do not continue research')
+    current = _owned()
+    if current.get('state') != 'active':
+        raise LocalFlowError('start/resume a segment first')
+    if activity not in ACTIVITIES or not evidence.strip():
+        raise LocalFlowError('known activity and concrete work evidence required')
+    first, last = _timestamp(started_at), _timestamp(ended_at)
+    window = _timestamp(current.get('resumed_at', current['started_at']))
+    if not window <= first < last <= now():
+        raise LocalFlowError('work must be within this resumed window, not offline/future time')
+    work = current.get('work_intervals', [])
+    if any(first < _timestamp(item['ended_at']) and
+           last > _timestamp(item['started_at']) for item in work):
+        raise LocalFlowError('overlapping or duplicate work interval')
+    item = dict(started_at=first.isoformat(), ended_at=last.isoformat(),
+                seconds=(last-first).total_seconds(), activity=activity,
+                evidence=evidence, recorded_at=now().isoformat())
+    current['work_intervals'] = work+[item]
+    metrics = _metrics(current)
+    write_json(STATE/'session.json', current)
+    return dict(item, **metrics)
 
 
 def start():
@@ -63,23 +141,29 @@ def start():
     thread = read_json(STATE/'rollout.json').get('thread_id')
     if not thread:
         raise LocalFlowError('calling chat identity missing from rollout')
-    if current.get('state') == 'active':
+    if current.get('state') in {'active', 'interrupted'}:
         if current['thread_id'] != thread:
             raise LocalFlowError('active segment belongs to another chat')
         current['resumed_at'] = now().isoformat()
+        current['state'] = 'active'
+        current.pop('interrupted_at', None)
+        # Legacy wall-clock-only receipts provide no verified effective credit.
+        if 'work_intervals' not in current:
+            current['legacy_effective_time_unverified'] = True
+            current['work_intervals'] = []
         write_json(STATE/'session.json', current)
         return dict(status(), resumed=True)
     value = {'id': str(uuid4()), 'state': 'active', 'thread_id': thread,
              'started_at': now().isoformat(), 'checkpoints': [],
-             'research_stage_count': 0}
+             'research_stage_count': 0, 'work_intervals': []}
     write_json(STATE/'session.json', value)
-    return value
+    return dict(value, **_metrics(value))
 
 
 def checkpoint(question, observation, evidence, next_action, kind='research'):
     if stopped():
         raise LocalFlowError('user stop persists; do not continue research')
-    current = read_json(STATE/'session.json')
+    current = _owned()
     if current.get('state') != 'active':
         raise LocalFlowError('start/resume a segment first')
     if kind not in {'research', 'documentation', 'transport'}:
@@ -92,14 +176,14 @@ def checkpoint(question, observation, evidence, next_action, kind='research'):
     if any(all(old[key] == item[key] for key in ('question', 'observation', 'evidence'))
            for old in current['checkpoints']):
         raise LocalFlowError('duplicate observation is not a new stage')
-    current['checkpoints'] = (current['checkpoints']+[item])[-6:]
+    current['checkpoints'] = current['checkpoints']+[item]
     current['research_stage_count'] += kind == 'research'
     write_json(STATE/'session.json', current)
     return item
 
 
 def finish(reason, evidence, alternatives=()):
-    current = read_json(STATE/'session.json')
+    current = _owned()
     if current.get('state') != 'active':
         raise LocalFlowError('no active segment to finish')
     if reason not in HARD_REASONS | {'safe_checkpoint', 'no_viable_action'}:
@@ -113,12 +197,12 @@ def finish(reason, evidence, alternatives=()):
     if reason == 'scientific_complete':
         _validate_scientific_completion(evidence, current)
     ended = now()
-    elapsed = (ended-datetime.fromisoformat(current['started_at'])).total_seconds()/60
-    if elapsed < 0:
+    metrics = _metrics(current)
+    if metrics['wall_minutes'] < 0:
         raise LocalFlowError('clock moved backwards; elapsed duration unverified')
     if reason not in HARD_REASONS:
-        if elapsed < 60:
-            raise LocalFlowError('before60 minutes switch tasks/explore; normal finish forbidden')
+        if metrics['effective_seconds'] < 3600:
+            raise LocalFlowError('before60 effective minutes; wall/active/idle time cannot pass finish')
         if not current['research_stage_count']:
             raise LocalFlowError('elapsed time alone is not research')
         fresh = [cp for cp in current['checkpoints'] if cp['kind'] == 'research'
@@ -129,18 +213,100 @@ def finish(reason, evidence, alternatives=()):
             if len(set(alternatives)) < 2 or not set(alternatives) <= {cp['question'] for cp in fresh}:
                 raise LocalFlowError('two distinct fresh alternative research questions required')
         memo()
+        _validate_quality_review(reason, evidence, current, metrics, fresh)
     value = dict(current, state='ended', ended_at=ended.isoformat(),
-                 elapsed_minutes=round(elapsed, 3), reason=reason, ending_evidence=evidence,
-                 duration_gate_passed=elapsed >= 60 and bool(current['research_stage_count']),
-                 quality_review_required=True)
+                 **metrics, reason=reason, ending_evidence=evidence,
+                 duration_gate_passed=metrics['effective_seconds'] >= 3600
+                    and bool(current['research_stage_count']),
+                 quality_review_required=reason in HARD_REASONS,
+                 quality_review_passed=reason not in HARD_REASONS)
     # A receipt cannot establish actual effective research or semantic quality.
     receipts = read_json(STATE/'session_receipts.json').get('receipts', [])
     summary = {key: value[key] for key in ('id', 'started_at', 'ended_at',
-               'elapsed_minutes', 'reason', 'ending_evidence', 'research_stage_count',
-               'duration_gate_passed', 'quality_review_required')}
+               'wall_minutes', 'effective_seconds', 'effective_minutes', 'reason',
+               'ending_evidence', 'research_stage_count', 'duration_gate_passed',
+               'quality_review_required', 'quality_review_passed')}
     write_json(STATE/'session_receipts.json', {'receipts': (receipts+[summary])[-3:]})
     write_json(STATE/'session.json', value)
     return value
+
+
+def _report(evidence):
+    path = Path(evidence)
+    if not path.is_absolute():
+        path = STATE.parent/path
+    try:
+        return read_json(path)
+    except (OSError, ValueError) as exc:
+        raise LocalFlowError('structured current review report required') from exc
+
+
+def _validate_quality_review(reason, evidence, current, metrics, fresh):
+    report = _report(evidence)
+    questions = report.get('research_questions')
+    if (report.get('session_id') != current['id']
+            or report.get('ending_reason') != reason
+            or report.get('reviewed_work_intervals') != metrics['recorded_work_intervals']
+            or report.get('effective_seconds') != metrics['effective_seconds']
+            or report.get('old_conclusions_excluded') is not True
+            or not isinstance(questions, list) or not questions
+            or not all(isinstance(q, str) and q.strip() for q in questions)
+            or not set(questions) <= {cp['question'] for cp in fresh}
+            or not isinstance(report.get('limitations'), str) or not report['limitations'].strip()
+            or not isinstance(report.get('unresolved_issues'), list)):
+        raise LocalFlowError('matching work ledger and substantive quality review required')
+    reviewed = _timestamp(report.get('reviewed_at'))
+    latest = max([_timestamp(current.get('resumed_at', current['started_at']))]
+                 + [_timestamp(cp['at']) for cp in fresh]
+                 + [_timestamp(item['ended_at']) for item in current.get('work_intervals', [])])
+    if not latest <= reviewed <= now():
+        raise LocalFlowError('quality review must follow the current work and findings')
+
+
+def interrupt(evidence):
+    """An explicit user redirect suspends a segment; it never passes finish."""
+    current = _owned()
+    if current.get('state') != 'active':
+        raise LocalFlowError('no active segment to interrupt')
+    report = _report(evidence)
+    if (report.get('session_id') != current['id']
+            or report.get('reason') != 'user_redirect'
+            or report.get('requested_task') not in {'repair', 'review', 'configuration'}
+            or not all(isinstance(report.get(key), str) and report[key].strip()
+                       for key in ('user_instruction', 'instruction_reference'))):
+        raise LocalFlowError('explicit user bounded-task redirect evidence required')
+    observed = _timestamp(report.get('observed_at'))
+    if not _timestamp(current['started_at']) <= observed <= now():
+        raise LocalFlowError('current user redirect required')
+    if 'work_intervals' not in current:
+        current['legacy_effective_time_unverified'] = True
+        current['work_intervals'] = []
+    current.update(state='interrupted', interrupted_at=now().isoformat(),
+                   duration_gate_passed=False, quality_review_passed=False)
+    current.setdefault('interruptions', []).append(dict(
+        at=current['interrupted_at'], reason='user_redirect', evidence=evidence))
+    write_json(STATE/'session.json', current)
+    return dict(current, **_metrics(current), research_completed=False)
+
+
+def final_check(mode='research'):
+    current = _owned()
+    if current.get('state') == 'active':
+        raise LocalFlowError('active is not continuing work; finish acceptance required before final')
+    if current.get('state') not in {'ended', 'interrupted'}:
+        raise LocalFlowError('no accepted finish or explicit bounded-task interruption')
+    if mode == 'research' and current.get('state') != 'ended':
+        raise LocalFlowError('interrupted is not a completed research segment')
+    if mode not in {'research', 'bounded'}:
+        raise LocalFlowError('unknown final mode')
+    if (mode == 'research' and current.get('reason') not in HARD_REASONS
+            and not (current.get('duration_gate_passed')
+                     and current.get('quality_review_passed'))):
+        raise LocalFlowError('normal research finish acceptance missing')
+    return dict(state=current.get('state'), session_id=current['id'],
+                research_completed=current.get('state') == 'ended'
+                    and current.get('quality_review_passed', False),
+                mode=mode, **_metrics(current))
 
 
 def _validate_block_report(reason, evidence, current):

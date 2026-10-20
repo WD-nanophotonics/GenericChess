@@ -41,6 +41,10 @@ timer.
    is not a60–90minute duration sample and must not reset a research clock.
 3. Execute Main, validate and assess the result, checkpoint and begin the next
    decision-changing step. No extra writer, Goal, scheduler or restart loop.
+   A model switch uses the same session protocol. An active record left by a
+   previous final reply is an incomplete handoff, not proof of continuous work.
+   Never count its offline span. This user-requested workflow repair is bounded
+   administrative work; it does not do or accrue the unfinished research.
 
 NEXT_WORK.md <=20lines/2048 UTF-8 bytes, one each State/Segment/Main/Backup1/
 Backup2/Evidence. Each task has four nonempty fields separated by |:
@@ -49,6 +53,7 @@ Keep distinct executable tasks and the critical current decision/reason
 (PUBLIC for Chat access; PRIVATE abandoned). Other current decisions live in
 AGENTS.md. Replace stale tasks/evidence; shorten detail rather than losing the
 causal relationship. Missing memo is rebuilt from evidence before research.
+Update the memo in place; do not delete it before creating its replacement.
 
 ## Shared configuration writes
 
@@ -73,10 +78,30 @@ Regression controls cover a concurrent pre-commit reader and failed replacement.
 session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION
 Use --kind research|documentation|transport honestly. Only actual research is a
 research stage; old conclusions, Slack receipts and document saves are not new
-science. The helper retains recent details; purpose reports retain full evidence.
+science. The current segment retains all checkpoints; purpose reports retain
+full evidence. Do not print its full history
+or a broad tool catalog into context when a small relevant selection suffices.
 Do not reset active clocks, fabricate stages or reinterpret elapsed App time as
 effective work. A soft block triggers a useful backup, new source or bounded
 hypothesis check, not an unchanged rerun or early exit.
+
+Record actual intervals promptly (before a checkpoint, compaction or handoff):
+`session work --started-at <UTC ISO> --ended-at <UTC ISO>
+--activity research|analysis|validation|documentation|transport|administration
+--evidence <concrete command/result/artifact reference>`.
+Only the first three categories accrue effective research time. Validation must
+serve substantive research, not repeatedly rerun an unchanged passing test.
+Record only observed active work; split around idle/waiting/admin periods. An
+evidence string is not permission to label an entire open clock as work.
+Overlaps, future timestamps, naive timestamps and intervals before this resume
+window are rejected. `session start` preserves UUID/start and prior intervals,
+opens a new recording window, and credits no time automatically. Flush known
+work before an intentional recovery boundary. Unrecorded legacy work stays
+unverified; do not retrospectively assume 28 minutes of UI uptime was all research.
+`session status` reports `wall_minutes` separately from `effective_minutes`.
+The 60-minute gate uses exact recorded seconds, not rounded display minutes.
+CLI start/status/interrupt/finish outputs omit full checkpoint/work histories by
+default; `session status --full` is available for a deliberate bounded audit.
 
 Before a bounded batch record the unknown, decision-changing possible outcomes,
 resource estimate and cheaper alternatives. Include preparation, recording and
@@ -117,6 +142,10 @@ qualification harness. Record multi-phase qualification and actual costs honestl
 
 ## Chat messages and collaboration
 
+For tool discovery, list matching tool NAMES first, then inspect only the chosen
+tool's schema. Do not dump broad matching descriptions/embedded full logs into
+context. Follow SLACK_WORKFLOW's raw-response preservation before processing.
+
 Use `docs/operations/SLACK_WORKFLOW.md` for the active read path and raw-read
 handling. Read new project Chat messages/comments and relevant complete threads
 once per hourly patrol; preserve the exact project-only output privately before
@@ -133,6 +162,17 @@ and results at a fixed revision; distinguish publication from someone reading or
 independently executing the work. Keep the repository PUBLIC for Chat readers.
 
 ## Publication
+
+Do not change a test's expected number to the observed number without locating
+the intended contract and causal implementation/history change. A file being
+outside the current diff, or an old git-blame date, proves neither that the
+assertion is stale nor that the new output is correct. Preserve the original
+failure and give the next worker an executable diagnosis task; do not silently
+weaken tests or ask the user to reauthorize ordinary diagnosis. Respect a real
+tool rejection, describe its precise scope, and continue permitted investigation.
+Repeat passing tests only after meaningful changes, a new unresolved concern,
+or the required publication gate; documentation formatting is not a reason to
+repeat the same large suite.
 
 Continuing authority covers ANY project content without personal information,
 passwords or credentials. Record origin is not a prohibition. Preserve exact
@@ -177,17 +217,44 @@ must not be restored/retried. No force/history rewrite without NEWuser authority
 
 Before final RESEARCH reply:
 session finish --reason REASON --evidence REF
-Normal safe_checkpoint/no_viable_action requires>=60minutes, actual research and
-valid memo reserve. Continue useful work toward90 then stop safely, no idle
+session final-check
+Inspect both exit codes/results. An active session always fails final-check;
+leaving it active and promising the next heartbeat is not a valid final reply.
+Normal safe_checkpoint/no_viable_action requires>=60 recorded effective minutes,
+fresh research, a valid memo reserve and a matching quality review JSON. Continue
+useful work toward90 then stop safely, no idle
 padding. no_viable_action requires two fresh substantive alternatives, supplied
 with --alternative Q twice and matching recent checkpoint questions.
 Refusal means continue, not bypass. Tests/docs/publish alone are not ending reasons.
 Explicit bounded user repair/configuration requests retain their bounded scope.
 
+For normal finish REF is a JSON file with `session_id`, `ending_reason`,
+`reviewed_at` (timezone-aware ISO after the latest work/finding),
+`reviewed_work_intervals` (all recorded intervals including non-counting ones),
+`effective_seconds` (exact ledger total), `old_conclusions_excluded: true`,
+`research_questions` (nonempty list matching current fresh research checkpoints),
+`limitations` (nonempty text) and `unresolved_issues` (list). Review the substance,
+not just the fields. A stale/mismatched review or a bare 'tests passed/published'
+cannot pass. Do not label old findings as research to satisfy this structure.
+
+Only when a direct user message redirects to bounded repair/review/configuration:
+save a JSON with `session_id`, `reason: user_redirect`, `requested_task`
+(`repair`, `review` or `configuration`), `user_instruction`,
+`instruction_reference`, and `observed_at`; invoke `session interrupt --evidence
+<file>`. It records an INCOMPLETE interruption, not a normal finish or a new
+60-minute research segment. Complete the bounded request, then run
+`session final-check --mode bounded`. Next research `session start` resumes the
+same UUID/start and recorded effective work, excluding the interruption gap.
+Do not invoke interrupt merely because an ordinary patrol reached a milestone,
+had no Chat comment or ran out of ideas. Actual runtime interruption must be
+reported honestly; no helper can force a model/tool to remain available.
+
 Early reasons: user_stop, user_decision, tool_limit, quota_limit, runtime_limit,
 scientific_complete. Stop wins immediately. A missing idea/formula or old launch
-failure is not a necessary user decision or runtime exhaustion. Preserve active
-session on interruption; after a normal finish update memo status/start/reason.
+failure is not a necessary user decision or runtime exhaustion. A sudden platform
+interruption may leave an incomplete active record; recovery must exclude the
+unobserved gap. It is not an authorized early final. After an accepted finish
+update memo status/start/reason; explicit bounded redirects use interrupt above.
 
 For user_decision/runtime_limit the helper requires a JSON evidence file bound
 to active session_id and observed_at, containing failure, diagnosis, impact,

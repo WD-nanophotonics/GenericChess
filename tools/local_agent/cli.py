@@ -90,7 +90,15 @@ def parser() -> argparse.ArgumentParser:
     session_parser = sub.add_parser('session', help='work-segment receipts, not a runner')
     actions = session_parser.add_subparsers(dest='session_action', required=True)
     actions.add_parser('start')
-    actions.add_parser('status')
+    session_status = actions.add_parser('status')
+    session_status.add_argument('--full', action='store_true', help='include checkpoint/work history')
+    work = actions.add_parser('work', help='record actual evidenced work; never wall-clock credit')
+    for field in ('started-at', 'ended-at', 'activity', 'evidence'):
+        work.add_argument('--'+field, required=True)
+    pause = actions.add_parser('interrupt', help='explicit user bounded-task redirect; not completion')
+    pause.add_argument('--evidence', required=True)
+    final = actions.add_parser('final-check', help='required before final; active always fails')
+    final.add_argument('--mode', choices=('research', 'bounded'), default='research')
     cp = actions.add_parser('checkpoint')
     for field in ('question', 'observation', 'evidence', 'next-action'):
         cp.add_argument('--'+field, required=True)
@@ -149,8 +157,21 @@ def main(argv: list[str] | None = None) -> int:
             elif args.session_action == 'checkpoint':
                 result = session.checkpoint(args.question, args.observation,
                     args.evidence, args.next_action, args.kind)
+            elif args.session_action == 'work':
+                result = session.record_work(args.started_at, args.ended_at,
+                    args.activity, args.evidence)
+            elif args.session_action == 'interrupt':
+                result = session.interrupt(args.evidence)
+            elif args.session_action == 'final-check':
+                result = session.final_check(args.mode)
             else:
                 result = session.finish(args.reason, args.evidence, args.alternative)
+            if (args.session_action in {'start', 'status', 'interrupt', 'finish'}
+                    and not getattr(args, 'full', False)):
+                result = dict(result)
+                if 'checkpoints' in result:
+                    result['checkpoint_count'] = len(result.pop('checkpoints'))
+                result.pop('work_intervals', None)
         elif args.command == 'stop':
             from .slack_transport import stop
             result = stop()

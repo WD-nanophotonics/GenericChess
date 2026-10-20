@@ -5784,3 +5784,38 @@ modified, and no coordination dependency existed. The hourly Chat capture
 failed before producing an inspectable message body; the failure is private,
 so no new-message review or adoption claim is made. Scope/evidence:
 `docs/research/GENERIC_CLI_ACTION_INPUT_20261020.md`.
+
+## PRIMARY_SANDBOX — user-requested Luna workflow repair — 2026-10-20
+
+This is bounded operational remediation, not mainline research or replacement
+of Luna's unfinished work. No static-price implementation/assertion, search
+code, experiment or AUX checkout is changed. The existing CLI repair remains
+published. The failed static-opportunity test is left for causal diagnosis in
+the next worker's memo; its expected value is not replaced with the observed one.
+
+The old helper gated normal finish on wall-clock elapsed time. It now sums only
+explicit, evidenced research/analysis/validation intervals, checks timestamp and
+duration consistency and overlap, excludes administrative categories and resume
+gaps, and gives unrecorded legacy time no automatic credit. Normal finish also
+requires a current matching quality-review JSON. A separate final-check rejects
+active records, so a promise to continue on the next heartbeat is not acceptance.
+All checkpoints remain available for audit; CLI output is compact by default.
+Tests cover short/idle/admin/offline spans, legacy migration, exact-second gates,
+duplicate/tampered intervals, stale reviews, incomplete user redirects, ownership
+and final-check refusal, as well as successful evidence-backed completion.
+
+The prior session UUID/start and exact original state are privately preserved.
+The direct user redirect marks that segment interrupted/INCOMPLETE, not passed;
+its reported UI28:05 is an unverified upper bound, not effective-work credit.
+This repair adds zero research time and changes no stop flag. AGENTS/manual,
+Chat raw-capture instructions and the existing hourly heartbeat prompt now carry
+the same requirements across model switches. Recurrence/status/chat are verified
+unchanged; no new task, worker, timer or outbound Chat message is created.
+
+Full workflow regression passes120 tests. An initial restricted run passed115
+and failed two existing temporary-local-Git transport fixtures; normal supported
+host execution passes those two, and the final120-test run passes. No global
+security setting or test expectation was changed to fix those access errors.
+The recording/quality validator cannot authenticate a model's claimed activity
+or force it to call a tool; honest interval evidence and invocation remain
+mandatory instructions, not a claimed automatic model-level guarantee.
