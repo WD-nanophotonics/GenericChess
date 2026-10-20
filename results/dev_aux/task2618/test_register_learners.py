@@ -45,23 +45,26 @@ class RegisterLearnersTests(unittest.TestCase):
 
     def test_v2_training_manifest_reuses_the_same_panel_for_every_seed(self):
         panel_indices = list(range(120))
-        for seed_index in range(4):
-            self.assertEqual(
-                [training_source_index(2, seed_index, root_index, panel_indices)
-                 for root_index in range(120)],
-                panel_indices,
-            )
+        for revision in (2, 3):
+            for seed_index in range(4):
+                self.assertEqual(
+                    [training_source_index(revision, seed_index, root_index, panel_indices)
+                     for root_index in range(120)],
+                    panel_indices,
+                )
 
     def test_v1_training_manifest_maps_each_seed_to_its_disjoint_block(self):
         audited_indices = list(range(37, 517))
         for seed_index in range(4):
-            mapped = [training_source_index(1, seed_index, root_index, audited_indices)
-                      for root_index in range(120)]
-            self.assertEqual(mapped, audited_indices[seed_index * 120:(seed_index + 1) * 120])
+            self.assertEqual(
+                [training_source_index(1, seed_index, root_index, audited_indices)
+                 for root_index in range(120)],
+                audited_indices[seed_index * 120:(seed_index + 1) * 120],
+            )
 
     def test_training_manifest_rejects_invalid_revision_or_index(self):
         with self.assertRaisesRegex(ValueError, "unsupported"):
-            training_source_index(3, 0, 0, [0])
+            training_source_index(4, 0, 0, [0])
         with self.assertRaisesRegex(ValueError, "out of range"):
             training_source_index(2, 0, 1, [0])
 

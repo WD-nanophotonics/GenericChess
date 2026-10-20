@@ -19,7 +19,7 @@ from results.dev_aux.task2565.train import restore
 
 ROOT = Path(__file__).resolve().parents[3]
 RUN = ROOT / "results/dev_aux/task2618/learner-comparison-v1"
-RUN_NAMES = ("learner-comparison-v1", "learner-comparison-v2")
+RUN_NAMES = ("learner-comparison-v1", "learner-comparison-v2", "learner-comparison-v3")
 ENDPOINTS = ("initial", "TreeStrap", "TDLeaf", "WDL")
 
 

@@ -55,6 +55,22 @@ def plan_seed_values(value: object) -> set[int]:
     return found
 
 
+def seed_source_plans() -> list[tuple[Path, dict]]:
+    """Return independent source plans, excluding this comparison's own descendants.
+
+    The prospective seed schedule is intentionally reused across v1/v2/v3 to
+    pair learner initializations. Including one of those descendant plans in
+    the schedule's own freshness audit would create a false self-collision.
+    """
+    plans = []
+    for path in sorted((ROOT / "results/dev_aux").rglob("plan.json")):
+        value = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(value, dict) and value.get("task") == "DEV_AUX2618_CHESS_LEARNER_COMPARISON":
+            continue
+        plans.append((path, value))
+    return plans
+
+
 def audit() -> dict:
     if OUT.exists():
         raise FileExistsError(f"write-once audit already exists: {OUT}")
@@ -115,8 +131,7 @@ def audit() -> dict:
 
     source_seed_values: set[int] = set()
     seed_source_count = 0
-    for path in sorted((ROOT / "results/dev_aux").rglob("plan.json")):
-        value = json.loads(path.read_text(encoding="utf-8"))
+    for path, value in seed_source_plans():
         source_seed_values.update(plan_seed_values(value))
         seed_source_count += 1
     seeds = derive_seeds()

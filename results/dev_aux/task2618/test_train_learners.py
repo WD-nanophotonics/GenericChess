@@ -229,6 +229,40 @@ class TrainLearnerRunnerTests(unittest.TestCase):
         self.assertEqual(game["ending"], "ACTUAL_TERMINAL")
         self.assertEqual(len(queries), 2)
 
+    def test_td_queries_record_zero_tree_active_samples_without_tree_stats(self):
+        TinySearch.calls = []
+        plan = {
+            "max_plies_per_game": 8,
+            "training_hard_cap_seconds": 10,
+            "nodes_per_seed_method_arm": 100,
+            "max_nodes_per_search": 10,
+            "seconds_per_search_cap": 1,
+            "ordering_seed_base": 1000,
+            "search": {"depth": 2, "qdepth": 0},
+        }
+        candidate = Model([1, 0.8, 0.9, 1.1, 1.2])
+        foe = Model([1, 1, 1, 1, 1])
+        td = SimpleNamespace(
+            reset=lambda: None,
+            observe=lambda _model, _receipt: {"samples": 1, "loss": 0.25, "changed": False},
+            finish=lambda _model, _outcome: {"samples": 0, "loss": None, "changed": False},
+        )
+        counts = {"candidate_nodes": 0, "foe_nodes": 0, "searches": 0,
+                  "complete_searches": 0, "incomplete_searches": 0,
+                  "actual_terminal_games": 0, "unknown_games": 0,
+                  "update_steps": 0, "td_observations": 0}
+        with patch.object(runner, "restore", side_effect=lambda _g, _cc, record: TinyEnv(record["plies"])), \
+             patch.object(runner, "AlphaBeta", TinySearch):
+            _game, queries, _end = runner.play_episode(
+                plan=plan, method="TDLeaf", seed=19, game_index=0, family=33,
+                record={"plies": 0}, learner_color=0, candidate=candidate, foe=foe,
+                variant="TDLeaf", tree=None, td=td, arm_counts=counts,
+                started=0.0, global_started=time.perf_counter(), stop=lambda: None,
+            )
+        self.assertEqual(len(queries), 2)
+        self.assertEqual(queries[0]["tree_samples"], 1)
+        self.assertEqual(queries[0]["tree_active_samples"], 0)
+        self.assertEqual(queries[1]["tree_active_samples"], 0)
     def test_nonfinite_search_bounds_are_serialized_as_strings(self):
         self.assertEqual(runner.json_number(float("inf")), "inf")
         self.assertEqual(runner.json_number(float("-inf")), "-inf")

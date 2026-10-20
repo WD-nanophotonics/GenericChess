@@ -32,7 +32,7 @@ from results.dev_aux.task2618.wdl_receipt_adapter import (
 
 ROOT = Path(__file__).resolve().parents[3]
 RUN = ROOT / "results/dev_aux/task2618/learner-comparison-v1"
-RUN_NAMES = ("learner-comparison-v1", "learner-comparison-v2")
+RUN_NAMES = ("learner-comparison-v1", "learner-comparison-v2", "learner-comparison-v3")
 METHODS = ("TreeStrap", "TDLeaf", "WDL")
 
 
@@ -281,7 +281,7 @@ def play_episode(
             "pv_phi": receipt.pv_phi,
             "pv_terminal": receipt.pv_terminal,
             "tree_samples": stats["samples"],
-            "tree_active_samples": stats["active"],
+            "tree_active_samples": stats.get("active", 0),
             "search_bound_sample_counts": bound_counts(receipt),
             "training_loss": stats["loss"],
             "nodes": receipt.nodes,

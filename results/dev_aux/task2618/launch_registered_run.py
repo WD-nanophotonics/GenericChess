@@ -12,7 +12,7 @@ import time
 
 
 ROOT = Path(__file__).resolve().parents[3]
-RUN_NAMES = {"learner-comparison-v1", "learner-comparison-v2"}
+RUN_NAMES = {"learner-comparison-v1", "learner-comparison-v2", "learner-comparison-v3"}
 
 
 def sha(data: bytes) -> str:
@@ -38,7 +38,7 @@ def launch(run_name: str) -> dict:
         raise ValueError("launcher requires a pre-search registration")
     if registration.get("plan_sha256") != sha(plan_raw):
         raise ValueError("registered plan hash mismatch")
-    if plan.get("design_revision") != (2 if run_name.endswith("-v2") else 1):
+    if plan.get("design_revision") != int(run_name.rsplit("-v", 1)[1]):
         raise ValueError("run name and frozen design revision disagree")
     for relative, digest in plan.get("source_sha256", {}).items():
         if sha((ROOT / relative).read_bytes()) != digest:

@@ -14,10 +14,8 @@ class LearningProtocolInputAuditTests(unittest.TestCase):
         self.assertEqual(seeds, [1407393461, 285297431, 1428194790, 1534967704])
         self.assertEqual(len(set(seeds)), 4)
         recorded: set[int] = set()
-        for path in sorted((audit.ROOT / "results/dev_aux").rglob("plan.json")):
-            import json
-
-            recorded.update(audit.plan_seed_values(json.loads(path.read_text(encoding="utf-8"))))
+        for _path, value in audit.seed_source_plans():
+            recorded.update(audit.plan_seed_values(value))
         self.assertTrue(set(seeds).isdisjoint(recorded))
 
     def test_remaining_training_pool_excludes_cost_roots_and_eval(self):
