@@ -2372,8 +2372,8 @@ including the prior exact `generic-v4` assertion. Because disk profiles are
 keyed by evaluator version, the follow-up also bumps the default to `generic-v5`
 to reject profiles produced by the published recursive helper. The broader
 active AI evaluation/cache/search/match/budget plus semantic and rectangular set
-passed 190 tests before the chain correction; the same broader set passed 192
-after it. This restores a scoped equivalent-rule normalization
+passed 190 tests before the chain correction, 192 after it and 193 after adding
+an explicit persisted `generic-v4` to `generic-v5` disk-cache rebuild test. This restores a scoped equivalent-rule normalization
 invariant; it does not show better search utility, all-domain semantic pricing, or action/outcome
 equivalence. The initial implementation was published as
 `fa46c3e339fd7b0bbaba8e0a2f148a3953fb30db`; the follow-up fixes this newly

@@ -5757,9 +5757,10 @@ The original 320-rule sample (65 affected) and a second seed-stratified sample
 (56 affected) each preserve reachable profile values and initial legal actions
 for every affected generated rule; the current generator targets only
 nonpromotable types, so those samples do not cover chained hand-authored
-metadata. The expanded 192 active AI evaluation/cache/search/match/budget,
+metadata. The expanded 193 active AI evaluation/cache/search/match/budget,
 semantic and rectangular tests pass after adding chain-negative and independent
-source-positive controls. The initial generic-v3 assertion failure was retained
+source-positive controls plus a persisted generic-v4-to-v5 cache rebuild check.
+The initial generic-v3 assertion failure was retained
 and corrected to generic-v4. No strength or full semantic-domain claim follows.
 No DEV_AUX checkout, source, state or computation was read, modified or
 integrated; no cross-role dependency or coordination was needed. The hourly

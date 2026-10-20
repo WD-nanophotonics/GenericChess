@@ -87,7 +87,9 @@ The focused evaluator/cache/semantic-profile/rectangular suite passed 109 tests,
 including the exact default-profile-version assertion. That assertion still
 expected `generic-v3` and was updated after the cache-version bump. The broader
 active AI evaluation/cache/search/match/budget plus semantic and rectangular
-regression set passed 190 tests before the chain correction and 192 after it.
+regression set passed 190 tests before the chain correction, 192 after the
+nonrecursive closure fix, and 193 after adding an explicit persisted-v4-to-v5
+cache invalidation regression.
 The initial failed assertion and exact
 successful outputs are retained privately in ignored
 `.local_agent/unreachable-scale-20261020/`.

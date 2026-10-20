@@ -72,6 +72,22 @@ def test_disk_cache_invalidations(ai_tmp_dir):
     assert not hit  # fingerprint changed -> miss
 
 
+def test_generic_v5_rebuilds_persisted_generic_v4_profile(ai_tmp_dir):
+    compiled = build_4x4_rooks()
+    old = EvaluationConfig(evaluator_version="generic-v4")
+    old_cache = EvaluationProfileCache(disk_dir=ai_tmp_dir, use_disk=True)
+    old_profile, old_hit = old_cache.get_or_build(compiled, old)
+    assert not old_hit
+    assert old_profile.evaluator_version == "generic-v4"
+    assert list(ai_tmp_dir.glob("profile-*.json"))
+
+    current = EvaluationConfig()
+    new_cache = EvaluationProfileCache(disk_dir=ai_tmp_dir, use_disk=True)
+    rebuilt, new_hit = new_cache.get_or_build(compiled, current)
+    assert not new_hit
+    assert rebuilt.evaluator_version == "generic-v5"
+
+
 def test_profile_algorithm_version_ignores_pre_semantic_projection_disk_cache(ai_tmp_dir):
     from generic_chess.ai.evaluation.cache import _profile_to_dict
     from generic_chess.rules.compiler import compile_ruleset_for_execution
