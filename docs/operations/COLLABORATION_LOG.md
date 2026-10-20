@@ -5673,7 +5673,10 @@ non-cancelled decision that does not commit while the session remains ongoing;
 the existing error is displayed, and the existing menu action becomes a
 localized Retry AI entry after the worker finishes. The Qt check verifies that
 the user can retry through that action and that its refresh path triggers one
-start. Five affected product modules passed after the change. This corrects
+start. Source review shows the built-in AlphaBeta terminal/no-action result is
+normally excluded by Core/GameSession adjudication; a defensive test ensures a
+contradictory actionless terminal result on an ongoing session also fails
+closed. Five affected product modules passed after the change. This corrects
 runtime behavior at the existing caller and does not alter search or backend
 interfaces. Neither AUX checkout, source nor computation was used; no
 scientific coordination or adoption was needed. Evidence and limits are in

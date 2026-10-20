@@ -2150,7 +2150,11 @@ after the fail-closed result and the controller error was absent from the
 status bar. The same action now offers a localized Retry AI state after the
 worker ends, shows the rejection reason, and uses the existing refresh path
 without a duplicate start call. The focused five-module UI/match/declaration
-product set passes. This is a bounded caller-control repair, not a
-backend/search change or proof for every generated ruleset. See
+product set passes. Source tracing shows normal Core terminal roots are
+adjudicated before an AI turn; a separate defensive regression confirms an
+actionless TERMINAL result arriving in an ongoing session fails closed without
+inventing a result or retrying. No such built-in AlphaBeta mismatch was
+observed. This is a bounded caller-control repair, not a backend/search change
+or proof for every generated ruleset. See
 `UI_AI_FAILED_ACTION_RETRY_20261020.md`. No additional retry framework or
 alternate backend adapter follows from this one reproducible path.

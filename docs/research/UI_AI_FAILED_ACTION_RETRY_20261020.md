@@ -44,6 +44,15 @@ existing start path once. The controller-only retry test failed before its
 code change at the stop-request assertion; the UI test exposed and then covered
 the initially missing retry affordance.
 
+Source tracing confirms the built-in AlphaBeta terminal/no-action outcome is
+normally excluded from an active AI turn: `initial_state()` records Core
+terminal status and `UIController.ai_move_needed()` requires an ongoing
+session. A separate controller regression covers the defensive boundary if an
+actionless `TERMINAL` result nevertheless reaches an ongoing match: it leaves
+the session unchanged, surfaces a no-action error and stops automatic retry.
+This is a mismatch guard, not evidence that the built-in backend currently
+emits that contradictory result.
+
 ## Limits and adoption
 
 This closes a reproducible retry-control defect at the existing Python UI

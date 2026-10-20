@@ -269,6 +269,28 @@ def test_ai_rejects_invalid_action_without_automatic_retry():
     assert not ctrl.ai_move_needed()
 
 
+def test_actionless_terminal_decision_on_ongoing_session_fails_closed():
+    from types import SimpleNamespace
+
+    ctrl = _controller()
+    assert ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(1))
+    snapshot = ctrl.capture_ai_search(CancellationToken())
+    assert snapshot is not None
+    before = ctrl.session.state
+
+    # Core/GameSession normally adjudicate terminal roots before an AI turn;
+    # this result therefore represents a producer/session disagreement.
+    decision = SimpleNamespace(action=None, choice_kind="TERMINAL")
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.result.status.value == "ongoing"
+    assert ctrl.session.state == before
+    assert ctrl.last_error == "AI returned no committable action"
+    assert ctrl.ai_stop_requested
+    assert not ctrl.ai_move_needed()
+
+
 def test_ai_turn_blocks_human_input():
     ctrl = _controller()
     ctrl.new_game(seed=42)
