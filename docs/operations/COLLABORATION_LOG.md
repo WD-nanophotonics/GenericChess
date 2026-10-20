@@ -5638,6 +5638,29 @@ computation was read, modified or integrated. The sample is a single generated
 ruleset and a controlled iteration boundary, not a wall-clock or all-domain
 claim. Details: `docs/research/SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`.
 
+## PRIMARY_SANDBOX — commit AI root declarations at the live caller — 2026-10-20
+
+A distinct production consumer audit found that the Python UI worker can receive
+an AlphaBeta `DECLARATION` decision with `action=None`, but
+`UIController.finish_ai_move()` ignored it. The live caller left a valid
+rule-derived root WIN ongoing and requested the same AI turn again. PRIMARY
+reproduced this without Qt, then routed a selected declaration through the
+authoritative `GameSession.declare()` path, retained normal stale/cancel guards,
+closed the match clock and prevented repeated retries after an invalid result.
+Regression coverage runs the actual AlphaBeta WIN choice, assessor-derived
+LOSS/RESTART/NO_CONTEST decisions and an unavailable ID; the five affected
+product modules all passed. No benchmark or search semantics
+changed, and no UI Test branch/app was touched. This is one custom declaration
+fixture, not all-outcome or all-rules UI proof; see
+`docs/research/UI_AI_ROOT_DECLARATION_COMMIT_20261020.md`.
+
+No DEV_AUX or DEEPSEEK_AUX source, checkout, unpublished result or computation
+was used, modified or integrated; no dependency or scientific disagreement
+required coordination. The new caller defect changes the immediate next action
+from a source-only audit to a narrowly tested controller correction. Other
+generic-search contracts remain open; no broader UI adapter or policy work is
+implied.
+
 ## PRIMARY_SANDBOX — retain last complete iterative result — 2026-10-20
 
 A bounded generated 4x4 seed43 search was interrupted deterministically at the

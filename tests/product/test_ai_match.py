@@ -98,6 +98,144 @@ def test_ai_plays_first_when_ai_is_side_0():
     assert ctrl.session.state.position.side_to_move == 1
 
 
+def test_ai_root_declaration_finishes_match_through_session_and_stops_clock():
+    from test_generic_declaration_semantics import _claim_ruleset
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.limits import SearchLimits
+
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    assert ctrl.new_game_from_ruleset(_claim_ruleset())
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(60, 10),
+                owner1=SideTimeConfig(60, 10),
+            ),
+            ThinkingConfig(),
+        )
+    )
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    before_state = ctrl.session.state
+    now.t += 2.0
+    decision = AlphaBetaPlayer(
+        ctrl.compiled, use_disk_cache=False
+    ).choose_action(
+        snapshot.session,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=10_000,
+            max_time_seconds=5,
+            quiescence_max_depth=0,
+        ),
+        cancel_token=token,
+    )
+    assert decision.choice_kind == "DECLARATION"
+    assert decision.action is None
+    assert decision.declaration.outcome == "WIN"
+
+    assert ctrl.finish_ai_move(decision, snapshot)
+
+    assert ctrl.session.state == before_state
+    # Declarations end the session without synthesizing a board-action ply.
+    assert ctrl.session.result.status.value == "declaration"
+    assert ctrl.session.result.winner == 0
+    assert ctrl.session.result.declaration_id == decision.declaration.declaration_id
+    assert not ctrl.ai_move_needed()
+    assert not ctrl.ai_thinking
+    assert not ctrl.clock_state().running
+    record = ctrl.session.to_record()
+    assert record.declaration.declaration_id == "opaque_claim"
+    assert not ctrl.can_undo  # a root declaration adds no synthetic action
+    from generic_chess.session.session import GameSession
+
+    replayed = GameSession.replay(ctrl.compiled, record)
+    assert replayed.result == ctrl.session.result
+
+
+@pytest.mark.parametrize(
+    ("outcome", "winner"),
+    (("LOSS", 1), ("RESTART", None), ("NO_CONTEST", None)),
+)
+def test_ai_selected_declaration_preserves_authoritative_outcome(outcome, winner):
+    from dataclasses import replace
+    from types import SimpleNamespace
+    from test_generic_declaration_semantics import _claim_ruleset
+    from generic_chess.core.declarations import assess_declaration
+    from generic_chess.rules.schema import RuleDeclarationOutcomeBand
+
+    ruleset = _claim_ruleset()
+    bands = (
+        (RuleDeclarationOutcomeBand(100, "WIN"),)
+        if outcome == "LOSS"
+        else (RuleDeclarationOutcomeBand(0, outcome),)
+    )
+    declaration = replace(
+        ruleset.declarations[0],
+        outcome_bands=bands,
+    )
+    ctrl = _controller()
+    assert ctrl.new_game_from_ruleset(
+        replace(ruleset, declarations=(declaration,))
+    )
+    ctrl.start_match(_match_config(1))
+    assessment = assess_declaration(
+        ctrl.session.state, ctrl.compiled, "opaque_claim"
+    )
+    assert assessment.outcome == outcome
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    decision = SimpleNamespace(
+        action=None,
+        choice_kind="DECLARATION",
+        declaration=assessment,
+    )
+
+    assert ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.result.status.value == "declaration"
+    assert ctrl.session.result.winner == winner
+    assert ctrl.session.result.declaration_outcome == outcome
+    assert not ctrl.ai_move_needed()
+
+
+def test_ai_rejects_unavailable_root_declaration_without_ending_session():
+    from types import SimpleNamespace
+    from test_generic_declaration_semantics import _claim_ruleset
+
+    ctrl = _controller()
+    assert ctrl.new_game_from_ruleset(_claim_ruleset())
+    ctrl.start_match(_match_config(1))
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    decision = SimpleNamespace(
+        action=None,
+        choice_kind="DECLARATION",
+        declaration=SimpleNamespace(declaration_id="not_available"),
+    )
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.result.status.value == "ongoing"
+    assert ctrl.session.state.ply_count == 0
+    assert ctrl.last_error and "cannot submit declaration" in ctrl.last_error
+    assert not ctrl.ai_thinking
+    assert ctrl.session.state.position.side_to_move == 0
+    assert ctrl.ai_stop_requested
+    assert not ctrl.ai_move_needed()
+
+
 def test_ai_turn_blocks_human_input():
     ctrl = _controller()
     ctrl.new_game(seed=42)

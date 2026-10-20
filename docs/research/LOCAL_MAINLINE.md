@@ -2109,3 +2109,27 @@ not an observed search defect or backend-interchange claim. Focused
 `SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`. Continue the caller map at
 a distinct uncovered generated-rule contract; do not reopen cancellation,
 fallback or result-provenance cases without new evidence.
+
+## Fix AI root-declaration handling at the live UI caller — 2026-10-20
+
+A direct production-caller reproduction found that `AlphaBetaPlayer` can select
+a valid root `WIN` declaration (`choice_kind="DECLARATION"`, no action), while
+`UIController.finish_ai_move()` only committed non-null actions. The session
+therefore stayed ongoing and still requested an AI move; `MainWindow` would
+schedule another search, creating a repeat loop for the same selected
+declaration. The rules-aware `GameSession.declare()` already validates and
+records the terminal result without altering the board/action history, so the
+caller now uses that public authority, completes/pauses the match clock and
+preserves ordinary action/cancellation/stale guards. An invalid declaration
+fails closed and suppresses an automatic retry until the user resumes the AI.
+Focused regressions exercise the actual AlphaBeta root WIN plus
+assessor-derived LOSS/RESTART/NO_CONTEST caller decisions and an unavailable
+ID; the relevant five UI/match/declaration product modules pass.
+This is a concrete UIController consumer correctness repair, not a search,
+backend API, benchmark, or UI Test change. Scope and limits:
+`UI_AI_ROOT_DECLARATION_COMMIT_20261020.md`.
+
+Continue the distinct caller scan only when a reachable transition can change
+the generic-search interface or implementation; otherwise resume the active
+rule-price route only for a new same-rule outcome contrast. The separately
+user-maintained UI Test remains outside PRIMARY changes.
