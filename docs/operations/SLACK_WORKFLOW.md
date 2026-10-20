@@ -9,9 +9,12 @@ advisor exchange or inspect auxiliary chats from this patrol.
 ## Hourly inbound read
 
 At most once per existing hourly PRIMARY heartbeat, read newly available project
-Chat messages and the complete relevant threads. Use the connected read path for
-the channel and individual threads; do not create a new channel, conversation,
-worker or polling loop. Keep the last completely covered boundary and any gaps.
+Chat messages and the complete relevant threads. Also perform this incoming read
+before Main at each explicit manual work start/resume unless the current hourly
+patrol already completed it; never reread within the same hourly patrol. Use the
+connected read path for the channel and individual threads; do not create a new
+channel, conversation, worker or polling loop. Keep the last completely covered
+boundary and any gaps.
 A channel-root read does not substitute for reading relevant reply pages.
 
 Save the exact raw, project-related read in Git-ignored `.local_agent` BEFORE
@@ -61,7 +64,11 @@ reads, receipts, diagnostics and partial/failed results under Git-ignored
 history, archives or a project Chat message, inspect actual outgoing content and
 exclude personal information, passwords and credentials; sanitize only the
 publication copy when needed. Project technical data is not excluded by its
-source. Fixed project/channel identifiers are permitted.
+source. Fixed project/channel identifiers are permitted. If a separately
+authorized outbound project Chat message/comment is ever permitted, first
+publish the referenced project changes through the established Git workflow and
+verify the full remote SHA; do not send if publication fails. This sequencing
+does not enable sending and does not change the current read-only rule.
 
 The repository remains PUBLIC for Chat readers. PRIMARY publishes reviewed
 mainline work to `origin/sandbox` with

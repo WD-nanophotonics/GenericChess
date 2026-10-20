@@ -2533,3 +2533,18 @@ bounded run; if the exact production path cannot be isolated or the outcome
 would not alter candidate status, close this branch without a panel. No size
 sweep, repeated 6x6 games, or global/default change follows from the current
 evidence.
+
+## Default AlphaBeta capture-order candidate closed —2026-10-21
+
+[STATIC_CAPTURE_ORDER_UTILITY_20261021.md](STATIC_CAPTURE_ORDER_UTILITY_20261021.md)
+records the complete finite-sample result. Static-v2 capture order changed
+11/32 candidate choices at identical states and reduced aggregate candidate
+nodes, but the predeclared robust reward and per-pair cost retention gates both
+failed. Keep it out of defaults and do not repeat the panel. The tested
+`SearchTuning()` default used the ordinary `MoveOrderer`, not the optional
+`StagedMovePicker`; `type_value` was never called, so promotion ordering is
+unanswered. PRIMARY adopts the Chat advice to separate mechanism from utility
+and to hold leaf values/opponent fixed; other recent comments concern DEV_AUX
+and are not duplicated. Next select a distinct decision-changing rule-price
+consumer from current evidence, with no new panel until that selection is
+supported.

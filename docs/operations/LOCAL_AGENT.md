@@ -19,9 +19,12 @@ recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
 At each hourly PRIMARY patrol, read incoming messages/comments in the existing
-GenericChess Chat and the relevant complete threads once. Preserve the exact
-project-related read in ignored `.local_agent` before evaluating it. Treat Chat
-comments as suggestions unless the user directly confirms a decision. Do not @Dot,
+GenericChess Chat and the relevant complete threads once. At every explicit
+manual work start/resume, check for new incoming messages/comments before Main
+unless this hourly patrol has already completed that read; never reread more than
+once in the same hourly patrol. Preserve the exact project-related read in
+ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
+unless the user directly confirms a decision. Do not @Dot,
 contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
 All coordination is read-only: do not send consultation messages, @mention anyone
 or solicit a reply. A >=120-minute run still needs its necessity assessment; wait
@@ -191,6 +194,10 @@ local diagnostic privately and verify the new outgoing commit metadata.
 
 Review diffs/history and relevant tests, commit only the intended delivery, then:
 generic-chess-local.cmd publish --tests <relevant pytest targets>
+Before any separately authorized outbound project Chat message/comment, publish
+the referenced project changes first and verify the full remote SHA; if publish
+fails, do not send. This is sequencing only and does not override the current
+read-only communication rule or create send authorization.
 The tested entry fetches, checks ancestry, tests, pushes and verifies the full
 origin/sandbox SHA. Direct pushes are rejected by the existing hook; do not
 bypass it. Verify independently with git ls-remote origin refs/heads/sandbox.

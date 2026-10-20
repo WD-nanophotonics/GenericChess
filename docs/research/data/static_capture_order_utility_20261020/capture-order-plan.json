@@ -1,0 +1,74 @@
+{
+  "schema": "primary-static-v2-capture-order-utility-v1",
+  "session_id": "b629c9df-bc5c-440a-9fac-df362bc69aa7",
+  "source_head": "6c7b2d67eeb2e3e5807aa2e358ee7154aecfc52f",
+  "preflight": {
+    "path": ".local_agent/primary_staged_promo_utility_20261020/capture-order-preflight.json",
+    "sha256": "349ec86c67670b3db060226034c1c6514385779fed144d137084ecbb8b359eea",
+    "outcomes_collected": 0,
+    "rules": 8,
+    "roots": 16,
+    "root_capture_calls": 84,
+    "changed_root_orders": 12,
+    "search_hook_calls": {
+      "unit": 4209,
+      "static": 4243
+    },
+    "changed_root_choices": 5,
+    "type_value_calls": 0
+  },
+  "question": "Does static-v2 capture_order_value, isolated from leaf value and the fixed foe, improve finite-budget outcomes or reduce actual node cost on fresh generated 5x5 roots?",
+  "changed_premise": "A complete no-outcome preflight on eight newly generated rules and 16 prescheduled 3/4-ply roots observed the public default MoveOrderer capture hook 84 times on roots, changed production order in 12 roots, and changed five root search choices; the actual search made 4,209 Unit and 4,243 static capture-order calls with no type_value calls. This is exposure evidence only, not a utility claim.",
+  "rules": {
+    "seeds": [621021, 621022, 621023, 621024, 621025, 621026, 621027, 621028],
+    "board_size": 5,
+    "setup_schedule": ["classic_like", "bilateral_random", "free_random"],
+    "symmetry_schedule": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "max_generation_attempts": 16
+  },
+  "roots": {
+    "prefix_plies": [3, 4],
+    "prefix_seed_formula": "rule_seed*1000000+family_index",
+    "selection": "Use every root in the hash-bound outcome-free preflight; no action, outcome, hook-count, or profile-based filtering or replacement.",
+    "candidate_owners": [0, 1]
+  },
+  "arms": {
+    "physical_games": "8 rules x 2 roots x 2 candidate owners x 2 candidate arms = 64",
+    "candidate_arms": ["unit_capture_order", "static_v2_capture_order"],
+    "fixed_foe": "Unit leaf and Unit capture-order values in both arms; same public AlphaBeta path and limits.",
+    "candidate_only_change": "Controlled evaluator has identical Unit board/hand leaf and type_value behavior in both candidate arms; only capture_order_value changes from Unit board table to current rule-derived static profile board table. Production MoveOrderer remains default; staged picker remains off.",
+    "search": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0,
+      "quiescence_hard_max_depth": 8,
+      "use_tt": false,
+      "use_ordering": true,
+      "use_staged_move_picker": false,
+      "max_candidate_plies": 48
+    }
+  },
+  "analysis": {
+    "primary": "Pair static-minus-Unit candidate reward by exact generated root and candidate owner against the same fixed Unit foe. Each UNKNOWN independently contributes [-1,+1] before conservative subtraction.",
+    "robustness": "Report all-slot bounds overall, by candidate owner, 3/4-ply root parity and leave-one-rule-seed-out; preserve candidate-first/reply and each seed. No winner/draw imputation.",
+    "cost": "Report actual completed depth, candidate and foe nodes/qnodes/caller seconds, fallback/source, and paired candidate node deltas. Treat wall-clock as descriptive only under concurrent load.",
+    "retain_rule": "Retain this sampled-scope ordering candidate only if either (a) conservative utility lower bounds are strictly positive overall, by owner, by root parity and for every leave-one-seed-out view, or (b) median paired candidate-node use falls by at least 10% overall and in both owner and parity strata, while no corresponding stratum has a negative conservative utility lower bound. Otherwise close this capture-order route for this sample. Neither outcome changes a default/global value or strength claim."
+  },
+  "integrity": [
+    "Use all 64 slots; no outcome-based filtering, top-up, replacement, cap extension or rerun of an observed slot.",
+    "Preserve promotions, drops, hands, auxiliary state, repetition and complete Core history; validate action legality and full replay.",
+    "Retain UNKNOWN for horizon or unresolved search; report actual terminals, cancellations, fallbacks and incomplete slots distinctly.",
+    "No training, solver, production-source changes or other-role checkout access.",
+    "The expected run is under 10 minutes based on prior same-scale 64-game public-AlphaBeta work; conservative estimate 10 minutes, hard cap 60 minutes. It is <120 minutes and does not require a necessity assessment."
+  ],
+  "cost": {
+    "expected_seconds": 600,
+    "hard_cap_seconds": 3600,
+    "cheaper_alternative": "Stop after the no-outcome exposure audit and leave capture-order utility unresolved.",
+    "basis": "Previous 64-game D3/4096 panel took 282.66 seconds; current D3/8192 and full replay estimated conservatively at 600 seconds; 3600-second frozen cap."
+  }
+}

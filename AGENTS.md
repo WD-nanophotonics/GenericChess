@@ -233,9 +233,11 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing project's asynchronous
-Chat-message read path. Once per hourly patrol, read newly available project
-Chat messages/comments and relevant complete threads. Save the exact project-
-related read in Git-ignored .local_agent before evaluation. Adopt, defer or reject
+Chat-message read path. Once per hourly patrol and at each explicit manual
+work start/resume unless that patrol already completed its read, read newly
+available project Chat messages/comments and relevant complete threads. Save the
+exact project-related read in Git-ignored .local_agent before evaluation. Adopt,
+defer or reject
 advice using current user direction and evidence; Chat comments alone are
 suggestions, not new user authorization. Do not @Dot, initiate real-time contact,
 wait/poll for a response, or send direct Dot consultations. For a >=120-minute
@@ -254,7 +256,11 @@ platform enforcement.
 Git is version control/final delivery. Each completed segment commits/syncs
 reviewed work to origin/sandbox using generic-chess-local.cmd publish --tests
 <relevant pytest targets>; inspect outgoing diffs/history/archives and verify the
-FULL remote SHA. Do not claim a local commit was published or force-push. Master
+FULL remote SHA. Before any separately authorized outbound project Chat
+message/comment, publish its referenced project changes first and verify the full
+remote SHA; if that publish fails, do not send. This sequencing rule does not
+authorize outbound messages: communication remains read-only under the current
+user direction. Do not claim a local commit was published or force-push. Master
 promotion is a tested fast-forward only. Preserve notification intent and report
 useful results, failures or required decisions without unchanged routine pings.
 Existing repository layers/recovery: docs/operations/REPOSITORY_LAYOUT.md and
