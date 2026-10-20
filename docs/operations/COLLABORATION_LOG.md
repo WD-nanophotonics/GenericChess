@@ -2962,4 +2962,4 @@ and TreeStrap−WDL finite-panel completion bound crosses zero, so no strength
 advantage is established; training losses are diagnostic only and per-seed final
 weights differ. Published deterministic compressed traces with row/byte/SHA
 manifest; raw JSONL remains local. No model selection, cap changes or generic
-transfer claim. The prior task2613–2615 push SHA is a06dd1331523e06f2ab6526ca799d7ae7d48c04f; task2616 publication follows separately. Slack review/reading/execution by Dot is not yet asserted.
+transfer claim. Task2616 evidence/source commit e60b833c (full SHA in Git); prior task2613–2615 evidence commit a06dd1331523e06f2ab6526ca799d7ae7d48c04f. Dot reading/adoption/execution remains unconfirmed. Slack review/reading/execution by Dot is not yet asserted.
