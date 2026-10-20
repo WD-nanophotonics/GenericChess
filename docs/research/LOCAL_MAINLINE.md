@@ -2548,3 +2548,9 @@ and to hold leaf values/opponent fixed; other recent comments concern DEV_AUX
 and are not duplicated. Next select a distinct decision-changing rule-price
 consumer from current evidence, with no new panel until that selection is
 supported.
+
+## Generated-rule hand-only price channel closed; search stability next —2026-10-21
+
+[`STATIC_HAND_PRICE_UTILITY_20261021.md`](STATIC_HAND_PRICE_UTILITY_20261021.md) closes the fresh 64-game, eight-seed D3 generated-5x5 hand-only contrast. With board, promotion, ordering, dynamic terms and Unit foe fixed, conservative utility was negative overall `[-0.3125,-0.25]`; both owner and parity gates failed, as did the 10% median-node-reduction gate (overall median 0%). Keep hand values out of defaults and do not rerun this panel or select a favorable drop/seed subset. One UNKNOWN and every planned slot are preserved. The integrated default package also failed its robustness gates; these results do not change the existing scoped static-v2 candidate status or establish a general hand-price law. Exact sources/plan/records/results: `data/static_hand_price_utility_20261021/`.
+
+The new cross-route audit found that semantic auxiliary values are part of `position_identity`, and action-history adjudications are included in `SearchStateIdentity`; existing unit and warm-search tests cover those dimensions separately. A narrow remaining check is whether a public AlphaBeta shared warm TT can reuse across same-board/same-ply legal histories with distinct auxiliary-slot values. The current castling fixture cannot form the pair: every moving piece owned by the rights holder clears its auxiliary right. First find a source-backed legal fixture with an auxiliary-changing action plus an independent reversible move; compare warm/cold public search only if both full histories are replayable. If no such pair exists without fabricating state, close this route without code changes; no broad TT/timing campaign.
