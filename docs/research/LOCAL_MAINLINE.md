@@ -18,6 +18,11 @@ unless the user directly confirms them. No real-time Dot contact or @mention is
 part of this workflow. Prior role/configuration notes remain in earlier Git
 revisions as history, not current patrol instructions.
 
+An older note below records one former auxiliary-chat health check. The user has
+since removed auxiliary-worker monitoring from the PRIMARY patrol; preserve that
+note as historical evidence, but do not inspect auxiliary chats or repeat its
+health check. The only remote read in this patrol is the existing project Chat.
+
 ## Current incremental choice and evidence —2026-10-18
 
 Explicit resume returns PRIMARY to independent mainline research; role setup is
@@ -1383,9 +1388,13 @@ winnerless RESTART/no-contest unresolved. The existing declaration fixture
 reproduces both candidate-color results; a complete four-ply semantic
 no-progress cycle reaches `rule_draw`. The focused benchmark/declaration/
 no-progress suite passes 63. This changes measurement correctness only; no price,
-search or evaluator conclusion/default changes. Source review found a distinct
-UI consumer limitation for declaration-capable imported rules; it is not fixed
-or covered by this backend change, so UI declaration support remains unclaimed.
+search or evaluator conclusion/default changes. A later production-UI review
+found the controller already committed actionless declaration choices, but the
+overlay and moves panel omitted their result and five other current generic
+terminal statuses. Both result presenters now cover every current terminal
+`SessionStatus` with localized winner/reason text. The bounded presentation fix
+is covered by `SEARCH_UI_DECLARATION_RESULT_DISPLAY_20261020.md`; search and
+adjudication are unchanged.
 
 The next research question returns to the open goal: choose one rule-price or
 unfamiliar-search premise whose opposite outcomes alter the next implementation
@@ -2209,3 +2218,125 @@ an action/outcome contrast that could change a scoped price choice. Otherwise
 continue the generic-search interface map only for a specific uncovered caller
 with a decision-changing consequence; do not manufacture another regression or
 reopen closed routes.
+
+## Bounded primary-source check: rule-derived generic evaluation —2026-10-20
+
+Pell's METAGAMER abstract describes analyzing each symmetric chess-like game's
+rules to derive relative piece values for a generic search engine; Clune's AAAI
+paper builds rule-derived stable-feature heuristics with payoff, control and
+termination separated, and reports different selected features for chess and
+Othello. This supports the current direction of rule-conditioned evaluation
+inside generic search, but supplies no transferable numeric ratio result for
+our complete generated domain and no decision-changing evidence against the
+current alternatives. No API/default/training change follows. Keep the existing
+same-rule action/outcome witness gate before any price-panel expansion. Scope
+and source-access limits: `GENERAL_GAME_RULE_DERIVED_EVALUATION_LITERATURE_20261020.md`.
+
+## Close actionless-declaration repeat-summary gap —2026-10-20
+
+The distinct `scripts/unfamiliar_search.run_rule` caller accepts supported
+declaration-bearing rules. A real `opaque_claim` probe produced a root
+`PlayerDecision` with `choice_kind=DECLARATION`, `action=None`, and a full
+`DeclarationAssessment`, but `repeat_equal` compared only action, score and
+completed depth. That summary could report equality for distinct declarations,
+even though each raw per-run decision was retained. The signature now includes
+choice kind and the complete serialized declaration. An alternating-declaration
+aggregation regression exercises the false-equality case; all 11 focused
+development tests pass. This repairs diagnostic repeat evidence only: no search
+behavior, historical outcomes, prices, API/default or prior scientific result
+changed. The actual probe chose the same declaration across controls, so no
+real engine instability was observed. The probe used a supplied semantic
+ruleset; the current generator does not emit declarations, and all four calls
+selected the same declaration before action search, so it supplies no qualifying
+same-rule price witness. Details and limits:
+`UNFAMILIAR_SEARCH_DECLARATION_REPEAT_SIGNATURE_20261020.md`.
+
+The separate `benchmark_alphabeta --vs-random` path is also source-closed:
+root declarations use `GameSession.declare`, result classes retain
+win/draw/unresolved distinctions, and legal actions alternate the
+side-to-move. Seventeen focused CLI tests pass. It revealed no interface or
+price consequence. Resume the same-rule price route only on a new reachable
+action/outcome witness; otherwise inspect a distinct uncovered caller only if
+its result could change an implementation choice.
+
+## Rule-description heuristic selection literature — 2026-10-20
+
+Stephenson et al.'s Ludii study estimates twelve heuristic variants over 695
+fully observable alternating games, then predicts per-game heuristic win rate
+from rule-description features with leave-one-game-out regression. The best
+reported Random Forest selection has 7.48 MAE and 7.68 regret, against 10.07
+and 16.62 for the mean-label baseline. This supports conditioning evaluation
+choice on rules, but predicts among heuristic families; it does not transfer
+numeric piece-price ratios between our generated chess-like rules. The paper's
+depth-2 win-rate/opponent setup is not comparable to our matched-budget utility
+claims. See
+`GENERAL_GAME_RULE_DERIVED_EVALUATION_LITERATURE_20261020.md` and the primary
+paper at https://ludii.games/publications/COG2021-1.pdf. No API/default/training
+change or price-panel reopening follows; retain the same-rule action/outcome
+witness gate.
+
+## Keep generic tree-edge identity below learned action abstractions —2026-10-20
+
+Soemers et al.'s Ludii–Polygames bridge shows that an automatically constructed
+fixed action tensor can alias distinct legal moves: the neural prior then gives
+them the same preference, while Polygames still keeps separate tree branches
+and may back up different values. Its 20-hour, eight-GPU training results and
+Lasca stacking failure do not establish a useful GenericChess learner or budget.
+Our public `Action` union and tagged serialization already preserve distinct
+board, drop, semantic and pass choices, including in recorded `PlayerDecision`s.
+Keep those exact legal actions authoritative; if a learned prior is later added,
+measure and document its aliasing without merging tree edges or losing the chosen
+action. No API, backend, training or product change follows. Evidence and limits:
+`GENERAL_GAME_ACTION_REPRESENTATION_20261020.md` and the
+[primary paper](https://arxiv.org/abs/2101.09562).
+
+## Spatial state-action features: efficiency is not full-domain utility —2026-10-20
+
+Soemers et al.'s SPatterNet paper compares efficient local feature matching on
+33 Ludii games; it does not itself supply the previously reported learned-policy
+utility or evaluated cross-game transfer. Its features cover the primary board
+and orthogonal relations, explicitly excluding hand containers. This makes
+efficient matching a possible technique only after a concrete feature candidate
+preserves this project's full target (promotion, drops, auxiliary state and
+history); it is not a drop-in generic evaluator or evidence for price transfer.
+No feature code, training or API/default change follows. See
+`GENERAL_GAME_SPATIAL_FEATURES_20261020.md` and the
+[primary paper](https://ludii.games/publications/ARXIV2022-1.pdf).
+
+## Outcome-derived value estimates do not transfer as generic targets —2026-10-20
+
+The recent [piece-value study](GENERAL_GAME_PIECE_VALUE_FROM_OUTCOMES_20261020.md)
+combines Lichess observational games and a separate Stockfish self-play arm; its
+authors report unresolved differences between those estimates. Human records
+and values are excluded from this project. The rule-specific, opening-distribution
+and fixed-engine results provide no target for our complete generated domain.
+Its methodological lesson is consistent with existing PRIMARY paired
+full-history games against fixed foes. No new labels, regression, learner,
+price target or panel follows; retain the same-rule action/outcome witness gate.
+
+## Defer split-action search states pending measured generation bottleneck — 2026-10-20
+
+Kowalski et al.'s RBG/MCTS split-move study shows a possible branching
+technique but also its key boundary: partial choices can be dead, and checking
+prefix completion can cost as much as full legal generation. GenericChess
+already streams complete typed actions from Core; semantic search requires
+complete action/binding legality and full auxiliary transitions, while
+AlphaBeta runtime caches the legal action tuple. The latest measured online
+bottleneck was repeated checked-submit validation, now optimized without
+changing action semantics. There is no evidence yet that full legal-action
+materialization dominates cost. Keep atomic typed actions and make no partial
+turn states/API change. Reconsider only after a new measured workload proves
+generation dominates and a bounded cursor can reduce end-to-end cost while
+returning complete legal actions with full history/transition semantics.
+Source and scope: `GENERAL_SEARCH_SPLIT_ACTIONS_20261020.md` and the [primary
+paper](https://arxiv.org/abs/2112.07761).
+
+The preregistered eight-root screen is now complete: legal generation consumed
+0.0%, 25.9%, 6.2%, 4.4%, 19.2%, 17.5%, 17.7% and 12.4% of decision wall time
+on the eight saved candidate96 rules (mean 12.9%, median 14.9%; one root over
+20%, three under 10%; 1.93s total). The spread is heterogeneous and does not
+meet the preregistered “over 20% on multiple rules” trigger for cursor
+feasibility. Treat this as a bounded screen, not a population estimate; defer
+prefix cursors and retain atomic complete actions. The source report records
+two pre-search harness setup failures and the corrected successful single run;
+no search nodes were spent in either failed attempt.

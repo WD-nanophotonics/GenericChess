@@ -751,6 +751,141 @@ def test_game_over_overlay_resignation_dismiss_keeps_terminal(qapp):
     assert ctrl.session.result.status.value == "resignation"
 
 
+def test_game_over_overlay_and_moves_panel_show_ai_declaration(qapp):
+    from test_generic_declaration_semantics import _claim_ruleset
+
+    ctrl, win = _window_with_ruleset(qapp, _claim_ruleset())
+    assert ctrl.session.declare("opaque_claim").winner == 0
+    win._refresh()
+
+    assert win._overlay.isVisible()
+    assert "White wins" in win._overlay._winner.text()
+    assert "opaque_claim" in win._overlay._reason.text()
+    assert "claim accepted" in win._overlay._reason.text()
+    assert "opaque_claim" in win._moves_panel._secondary.text()
+    result_line = win._moves_panel._result_line(ctrl.session.result)
+    assert "White wins" in result_line
+    assert "opaque_claim" in result_line
+
+
+@pytest.mark.parametrize(
+    ("outcome", "winner", "expected"),
+    (
+        ("WIN", 0, "claim accepted"),
+        ("LOSS", 1, "claim failed"),
+        ("RESTART", None, "restart / no contest"),
+        ("NO_CONTEST", None, "No contest"),
+    ),
+)
+def test_declaration_result_text_covers_all_outcomes(qapp, outcome, winner, expected):
+    from types import SimpleNamespace
+    from generic_chess.session.result import SessionResult, SessionStatus
+
+    _, win = _window(qapp)
+    result = SessionResult(
+        status=SessionStatus.DECLARATION,
+        winner=winner,
+        declaration_id="claim_example",
+        declared_by=0,
+        declaration_outcome=outcome,
+    )
+    winner_text, reason_text = win._overlay_lines(SimpleNamespace(result=result))
+    assert expected in reason_text
+    assert "claim_example" in reason_text
+    assert expected in win._moves_panel._result_line(result)
+    if winner is None:
+        assert "No contest" in winner_text
+    else:
+        assert "wins" in winner_text
+
+
+@pytest.mark.parametrize(
+    ("status", "winner", "expected"),
+    (
+        ("PERPETUAL_CHECK", 1, "Perpetual check"),
+        ("NO_CONTEST", None, "No contest"),
+        ("ACTION_CLASS_DRAW", None, "Action-class draw"),
+        ("NO_PROGRESS_DRAW", None, "No-progress draw"),
+        ("RULE_LOSS", 0, "Rule-defined loss"),
+    ),
+)
+def test_generic_terminal_result_text_is_visible(qapp, status, winner, expected):
+    from types import SimpleNamespace
+    from generic_chess.session.result import SessionResult, SessionStatus
+
+    _, win = _window(qapp)
+    result = SessionResult(status=SessionStatus[status], winner=winner)
+    winner_text, reason_text = win._overlay_lines(SimpleNamespace(result=result))
+    if status == "NO_CONTEST":
+        assert expected in winner_text
+        assert not reason_text
+    else:
+        assert expected in reason_text
+    assert expected in win._moves_panel._result_line(result)
+    if winner is None:
+        assert "No contest" in winner_text or "Draw" in winner_text
+    else:
+        assert "wins" in winner_text
+
+
+def test_presenters_cover_every_terminal_session_status(qapp):
+    from types import SimpleNamespace
+    from generic_chess.session.result import SessionResult, SessionStatus
+
+    samples = {
+        SessionStatus.CHECKMATE: SessionResult(SessionStatus.CHECKMATE, winner=0),
+        SessionStatus.STALEMATE: SessionResult(SessionStatus.STALEMATE, winner=None),
+        SessionStatus.REPETITION: SessionResult(SessionStatus.REPETITION, winner=None),
+        SessionStatus.PERPETUAL_CHECK: SessionResult(
+            SessionStatus.PERPETUAL_CHECK, winner=0
+        ),
+        SessionStatus.MAX_PLY: SessionResult(SessionStatus.MAX_PLY, winner=None),
+        SessionStatus.NO_CONTEST: SessionResult(SessionStatus.NO_CONTEST, winner=None),
+        SessionStatus.ACTION_CLASS_DRAW: SessionResult(
+            SessionStatus.ACTION_CLASS_DRAW, winner=None
+        ),
+        SessionStatus.NO_PROGRESS_DRAW: SessionResult(
+            SessionStatus.NO_PROGRESS_DRAW, winner=None
+        ),
+        SessionStatus.RULE_LOSS: SessionResult(SessionStatus.RULE_LOSS, winner=0),
+        SessionStatus.RESIGNATION: SessionResult(
+            SessionStatus.RESIGNATION, winner=0, resigned_by=1
+        ),
+        SessionStatus.DECLARATION: SessionResult(
+            SessionStatus.DECLARATION,
+            winner=0,
+            declaration_id="claim_example",
+            declared_by=0,
+            declaration_outcome="WIN",
+        ),
+    }
+    assert set(samples) == set(SessionStatus) - {SessionStatus.ONGOING}
+
+    _, win = _window(qapp)
+    for result in samples.values():
+        winner_text, reason_text = win._overlay_lines(SimpleNamespace(result=result))
+        assert winner_text or reason_text
+        assert win._moves_panel._result_line(result)
+
+
+@pytest.mark.parametrize(
+    ("language", "expected"),
+    (
+        ("en", "claim accepted"),
+        ("zh_CN", "声明成立"),
+        ("ja_JP", "宣言成立"),
+    ),
+)
+def test_declaration_result_display_is_localized(qapp, language, expected):
+    from test_generic_declaration_semantics import _claim_ruleset
+
+    ctrl, win = _window_with_ruleset(qapp, _claim_ruleset(), language)
+    assert ctrl.session.declare("opaque_claim").winner == 0
+    win._refresh()
+    assert expected in win._overlay._reason.text()
+    assert expected in win._moves_panel._secondary.text()
+
+
 def test_overlay_hides_on_history_preview_and_restores(qapp):
     ctrl, win = _mate_setup(qapp)
     ctrl.submit_action(BoardMove(Square(1, 4), Square(0, 4)))

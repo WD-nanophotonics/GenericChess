@@ -5718,3 +5718,22 @@ search change or backend API expansion was needed. No AUX source, checkout or
 computation was read, modified or integrated. The sample is a single generated
 ruleset and a controlled iteration boundary, not a wall-clock or all-domain
 claim. Details: `docs/research/SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`.
+
+## PRIMARY_SANDBOX — terminal-result coverage and patrol confirmation — 2026-10-20
+
+The existing project Chat contained two DEV_AUX mailbox reports and one prior
+PRIMARY research update. The reports are delivery records only; PRIMARY did not
+inspect the AUX chat, checkout, state or execution, adopt its scientific claims,
+or coordinate a dependency. No cross-role action was needed. The incoming
+channel read had no replies on its three new roots.
+
+PRIMARY completed a bounded generated-search repeat-summary correction for full
+actionless declarations and a UI display fix covering every current terminal
+`SessionStatus` in both result presenters, with localized declaration outcomes.
+The focused development and product tests passed (11 and 60 respectively). This
+fixes diagnostic/presentation contracts only; no search or price conclusion
+follows. The user-confirmed hourly read-only Chat workflow was rechecked; no
+DeepSeek executor/monitoring is part of this patrol, no Dot contact is used, and
+the existing hourly recurrence remains unchanged. Exact private Chat evidence is
+in ignored `.local_agent`; the project copy is publication-checked. No new
+cross-role coordination, science review or routing was initiated.

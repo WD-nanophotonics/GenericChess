@@ -436,6 +436,18 @@ class MainWindow(QMainWindow):
             return tr.text("result.draw"), tr.text("result.repetition")
         if status == "max_ply":
             return tr.text("result.draw"), tr.text("result.max_ply")
+        if status == "perpetual_check":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.wins", player=winner), tr.text("result.perpetual_check")
+        if status == "no_contest":
+            return tr.text("result.no_contest"), ""
+        if status == "action_class_draw":
+            return tr.text("result.draw"), tr.text("result.action_class_draw")
+        if status == "no_progress_draw":
+            return tr.text("result.draw"), tr.text("result.no_progress_draw")
+        if status == "rule_loss":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.wins", player=winner), tr.text("result.rule_loss")
         if status == "resignation":
             loser = result.resigned_by
             winner = 1 - loser
@@ -444,6 +456,30 @@ class MainWindow(QMainWindow):
             return (
                 tr.text("result.wins", player=winner_name),
                 tr.text("result.resigned", player=loser_name),
+            )
+        if status == "declaration":
+            if result.winner is None:
+                winner_line = tr.text("result.no_contest")
+            else:
+                winner_name = tr.text(
+                    "player.white" if result.winner == 0 else "player.black"
+                )
+                winner_line = tr.text("result.wins", player=winner_name)
+            outcome_keys = {
+                "WIN": "result.declaration_win",
+                "LOSS": "result.declaration_loss",
+                "RESTART": "result.declaration_restart",
+                "NO_CONTEST": "result.no_contest",
+            }
+            outcome_key = outcome_keys.get(result.declaration_outcome)
+            outcome = (
+                tr.text(outcome_key)
+                if outcome_key else str(result.declaration_outcome)
+            )
+            return winner_line, tr.text(
+                "result.declaration",
+                declaration=result.declaration_id,
+                outcome=outcome,
             )
         return "", ""
 

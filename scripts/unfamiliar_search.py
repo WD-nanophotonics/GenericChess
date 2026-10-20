@@ -128,8 +128,13 @@ def _compare_searches(session, evaluator, cache, reference, depth, case, save):
                 quiescence_hard_max_depth=0))
             observed = time.perf_counter()-start
             validate_pv(session, decision)
-            signatures.append((record_value(decision.action), decision.score,
-                               decision.completed_depth))
+            signatures.append((
+                decision.choice_kind,
+                record_value(decision.action),
+                record_value(decision.declaration),
+                decision.score,
+                decision.completed_depth,
+            ))
             complete = decision.completed_depth == depth
             case['searches'].append(dict(
                 control='public_bundle' if optimized else 'python_plain',

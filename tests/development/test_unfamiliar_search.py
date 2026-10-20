@@ -30,6 +30,54 @@ def test_reference_fuse_cannot_supply_a_partial_score():
         counted.evaluate(None)
 
 
+def test_repeat_signature_distinguishes_actionless_declaration_choices(monkeypatch):
+    from types import SimpleNamespace
+    from generic_chess.core.declarations import DeclarationAssessment
+    from generic_chess.ai.decision import PlayerDecision
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class AlternatingDeclarationPlayer:
+        calls = 0
+
+        def __init__(self, *_args, **_kwargs):
+            self.native_legality_provider = None
+
+        def choose_action(self, _session, _limits):
+            type(self).calls += 1
+            return PlayerDecision(
+                action=None,
+                score=1_000_000,
+                principal_variation=(),
+                completed_depth=0,
+                selective_depth=0,
+                nodes=0,
+                qnodes=0,
+                elapsed_seconds=0.0,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="root_declaration_win",
+                choice_kind="DECLARATION",
+                declaration=DeclarationAssessment(
+                    declaration_id=f"claim-{type(self).calls}", actor=0,
+                    outcome="WIN", weighted_score=7,
+                ),
+            )
+
+    monkeypatch.setattr(unfamiliar_search, "AlphaBetaPlayer", AlternatingDeclarationPlayer)
+    monkeypatch.setattr(unfamiliar_search, "validate_pv", lambda *_args: None)
+    case = {"searches": []}
+
+    unfamiliar_search._compare_searches(
+        session=SimpleNamespace(compiled=object()), evaluator=object(), cache=None, reference={},
+        depth=1, case=case, save=lambda: None,
+    )
+
+    assert case["repeat_equal"] == {"python_plain": False, "public_bundle": False}
+
+
 def test_supplied_semantic_rule_uses_product_boundary_and_core_reference(tmp_path):
     # Actual non-legacy capture mechanics, not an anchor-only no-op fixture.
     output = tmp_path / 'semantic.json'
