@@ -5407,3 +5407,20 @@ directory was initially denied by the normal sandbox; the documented
 project-authorized escalation succeeded. Next choose a distinct search caller
 contract from current evidence; keep history/role boundaries and do not reopen
 closed static panels or add diagnostics API without a new premise.
+
+## PRIMARY_SANDBOX — generated semantic max-ply search result — 2026-10-20
+
+After the repeated-cycle result regression, PRIMARY checked whether the
+generated semantic max-ply boundary also reached the public AlphaBeta child
+result. The existing Core boundary suite had no search caller. In its existing
+generated semantic fixture with `max_ply=1`, all three legal root actions
+adjudicate to `MAX_PLY` when submitted through Core. AlphaBeta now has a
+regression requiring depth-1 draw score0 despite a side-preferring leaf
+evaluator, a legal action and unchanged input record. The focused test and the
+whole max-ply module plus adjacent search/terminal/provenance modules pass. No
+search code, price panel, training, or AUX integration changed. DEV_AUX and
+DEEPSEEK_AUX checkouts/state/computation remain untouched; no scientific Slack
+question was needed. The DeepSeek patrol is the same bounded `notLoaded` /
+historical-only observation recorded above; current health remains unknown.
+Next choose a distinct unfamiliar-rule contract; no repeated max-ply or closed
+cycle panel without a changed premise.

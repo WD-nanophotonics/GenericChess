@@ -1832,3 +1832,15 @@ search leaves the parent record unchanged. The focused test and five adjacent
 cycle/history/root-terminal modules pass. This confirms one semantic caller
 integration, not all cycle histories or Native equivalence; no search code
 change follows. Continue only on a distinct unfamiliar-rule contract.
+
+A further bounded public-caller check found that `test_generic_ply_adjudication`
+covered Core max-ply boundaries but not AlphaBeta child scoring. With the
+existing generated semantic fixture at `max_ply=1`, every one of the three
+legal first actions reaches Core `MAX_PLY`; AlphaBeta completes depth1 with
+draw score0 despite a side-preferring evaluator, selects a legal action, and
+preserves the parent record. `SEARCH_SEMANTIC_MAX_PLY_RESULT_20261020.md` and a
+product regression record this exact child-result contract. The focused test,
+full max-ply module and adjacent search/terminal/provenance modules pass. This
+closes one semantic caller integration without an engine change; it is not a
+whole-domain or Native-equivalence claim. Continue with a distinct contract,
+not another max-ply variant without new evidence.
