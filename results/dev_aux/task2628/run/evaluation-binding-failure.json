@@ -1,0 +1,19 @@
+{
+  "command": "python -m results.dev_aux.task2628.bind_evaluation",
+  "error": "NameError: name 'RULES' is not defined",
+  "evaluation_artifacts_present": {
+    "eval-games.jsonl": false,
+    "eval-queries.jsonl": false,
+    "eval-result.json": false,
+    "eval-started.json": false,
+    "evaluation-registration.json": false
+  },
+  "interpretation": "The frozen binder failed before writing an evaluation binding or starting a slot. It is preserved and will not be invoked again.",
+  "plan_sha256": "beeb7aa73a1c184ff9e34451c81ec524d02f596bdc663976a187132756a46187",
+  "registered_source_sha256": "d699c802f47da8ba72b603e7257f1e272b3e97836e5c65fd1a7fdba021b589c9",
+  "source_line": 34,
+  "source_sha256": "d699c802f47da8ba72b603e7257f1e272b3e97836e5c65fd1a7fdba021b589c9",
+  "status": "PRESERVED_PREWRITE_BINDER_FAILURE",
+  "training_audit_sha256": "52f57a0a544eb98e45cc3b6d91e4e3a054511191973413a00643e018498cfad9",
+  "training_result_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e"
+}

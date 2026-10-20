@@ -3253,3 +3253,76 @@ metadata with no full record and is documented as such. Open: fresh-root
 selection, deployment/generalization and actual strength remain
 unresolved; science stays OPEN. No PRIMARY/DEEPSEEK state or code was read or
 changed.
+
+DEV_AUX task2628 completion checkpoint (2026-10-20): The DEV_AUX owner resumed
+session `bc50f70b-5379-49c7-ac34-5dd8fb6c3379` on its existing start/branch
+and mailbox evidence; no other Agent or checkout was used. Chat's latest
+sampleability/cost advice was reasonable and already satisfied by task2627's
+fresh 120/16 pool and independent exact-history/unlock/cost audit, so we adopted
+it without rescanning or expanding roots. Optional task2625 censor analysis was
+deferred, PRIMARY-owned ordering/product suggestions were deferred as out of
+scope, and the transport diagnostic was rejected as non-actionable. The exact
+review and raw snapshot remain at `results/dev_aux/task2627/CHAT_REVIEW_20261021.md`
+and the ignored mailbox evidence path.
+
+Research contribution: audited the recovered task2628 training summary against
+full record, actual terminal, node-cap and logged TD-update evidence; preserved
+the original trainer failure and the source-pinned binder failure. Bound and ran
+the single registered evaluation only after audits passed. Full evaluation
+replay audited all 256 slots, 10,399 queries, 191,464 nodes, 239 actual terminal
+outcomes and 17 UNKNOWN endpoints. The 113 fully known pairs plus 15 UNKNOWN
+pairs yield finite completion bounds [-0.15625, 0.109375]; this does not
+establish a gain, loss, confidence interval or broader transfer. Descriptive
+feature/action exposure confirms parameter movement and the registered unlock
+action, not causality. The pinned analyzer's stale 512-stratum assertion was
+kept unchanged; the plan-derived supplemental analyzer passed. Its companion
+exposure script initially lacked repository-root import setup; this entrypoint
+was corrected and all 12 focused tests passed. The exact result and remaining
+scope limits are in `results/dev_aux/task2628/REPORT.md`.
+
+Efficiency evidence: training finished in 1,277.23s under its 1,800s cap;
+evaluation took 243.78s under its 1,800s cap. Deterministic gzip publication
+copies and a SHA/size manifest were created for the large raw JSONL; original
+uncompressed files remain local. No new roots, training, top-up, frozen-cap
+extension, worker or PRIMARY/DEEPSEEK state change occurred. No disagreement
+required escalation; Chat advice was treated as advisory and direct user policy
+remained controlling. Unresolved: finite-panel sign, sample/population
+independence, full-Generic learner transfer and whether a new exact-record-
+disjoint evaluation can change a concrete decision. Science remains OPEN.
+
+DEV_AUX task2629 fresh-root H=256 follow-up (2026-10-20): The DEV_AUX owner
+followed the task2628 audit with one separate, evaluation-only registration.
+This was justified by all17 task2628 UNKNOWN endpoints being HORIZON_UNKNOWN
+with at least17,486 unused per-root nodes; no frozen cap or sample was
+extended. A new outcome-blind [300000,350000) root panel passed an independent
+source/full-record/action audit:16 roots, zero exact intersections against the
+pinned55,385-history inventory, all136 task2627 roots, and task2628 train/eval
+query/episode records; all16 retained the legal unlock action. Preparation and
+audit took39.341s and37.655s.
+
+The frozen task2629 plan reused task2628's audited initial/TDLeaf weights
+unchanged, retained each family's existing20k/40k combined two-side node cap,
+and doubled only H to256. Its all-in conservative bound was3,540s (<120min),
+so no Chat assessment was required. An initial launcher entry attempt failed
+before any claim/start receipt because direct-script invocation omitted the
+repository import path; the exact sanitized failure is preserved and the
+unchanged launcher succeeded as a repository module. The single evaluation
+exited0 in228.461s. The independent full-history audit passed all256 slots,
+8,850 queries and154,053 nodes:251 actual terminal outcomes and5 horizon-
+UNKNOWN. WDL is initial59/7/59/3 UNKNOWN, TDLeaf60/4/62/2 UNKNOWN. Of128 pairs,
+123 are fully known, five retain UNKNOWN; finite completion mean bounds are
+[-7/128,3/128], not a confidence interval and not pooled with task2628.
+Each remaining UNKNOWN still had >=16,717 nodes of headroom. Both rule15
+panels therefore still establish neither a strength gain nor broader transfer.
+Exact report/design and source hashes are in `results/dev_aux/task2629/`.
+
+Chat sampleability/cost advice was already satisfied by task2627 and was not a
+request to replay its scan; optional task2625 censor analysis stayed deferred,
+and PRIMARY-owned ideas remained outside DEV_AUX scope. No other Agent/worker
+participated; no PRIMARY or DEEPSEEK code/state was read or changed. Tests:
+3 task2629 design checks and all12 focused task2628 tests pass; plan/source pins,
+root audit, evaluator audit and completion-bounds analysis pass. The large
+query logs were deterministically gzip-packaged with hash manifests; raw files
+remain local. Unresolved: whether a new rule/mechanic with the same fixed-scale
+TDLeaf route changes the finite-panel conclusion. No further rules15 expansion
+is proposed; science remains OPEN.

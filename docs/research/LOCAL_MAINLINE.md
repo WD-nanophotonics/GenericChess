@@ -1,4 +1,4 @@
-## Current checkpoint — DEV_AUX handoff / tasks2620–2626 (2026-10-20)
+## Current checkpoint — DEV_AUX handoff / tasks2620–2629 (2026-10-20)
 
 The user transferred this existing DEV_AUX role to the new chat; the existing
 dev-aux heartbeat remains ACTIVE every60minutes and now targets
@@ -1819,3 +1819,56 @@ are exposed, so no evaluation/top-up is allowed; any future comparison needs
 fresh unexposed roots and a new registration. A repeated80k mechanism scan is
 questionable value; rebind its necessity and the full cost against the new
 pool before registering. This is one generated4x4 rule, not full Generic coverage. Conservative max same-rule rate (1298.62s/M plus25%) gives a62.02m old all-in estimate; omitting repeat scan and its audit yields59.15m, both retaining1200s reserve. Using both 1800s train/eval caps gives91.49m with scan or88.62m without if old setup components hold; not a guarantee for new-root prep. Rebind new-pool preparation/audit before registration. The existing write-once preparer predates task2626 training; a successor must add task2626 training queries/episodes, feasibility queries and current pool records. Workspace fingerprint inventory found nine files and55,385 unique full records; task2475 contributes compiled-rule metadata only. Record that zero-record finding, exclude every history-bearing record and inventory unused ranges. Details: `results/dev_aux/task2626/RULE15-PARTIAL-COST-INTERPRETATION.md`. No PRIMARY/DEEPSEEK state or contribution was inspected or changed; science remains OPEN.
+
+DEV_AUX task2628 rules15 TDLeaf evaluation (2026-10-20): four seeds reached
+frozen 250k-node training caps; the reconstructed result passed full-history,
+actual-terminal, node-cap and TD-update replay (56,061 queries, 1,471 episodes,
+1,377 actual terminals, 94 UNKNOWN; 1M nodes; 1,277.23s). The original trainer
+exited 1 on a final-summary `rule_index`/`rule` key bug; that failure is
+preserved, and its log-reconstructed result was audited without changing the
+run. The source-pinned evaluation binder separately failed before write on
+undefined RULES/SEEDS; a plan-derived recovery binder passed before the only
+evaluation launch. Evaluation completed all 256 slots in 243.78s (10,399
+queries, 191,464 nodes): 239 actual terminals and 17 UNKNOWN. Independent
+full-history/legal-action/actor/terminal/reward/node-cap audit passed. Endpoint
+WDL is initial 60/1/57/10 UNKNOWN and TDLeaf 60/1/60/7 UNKNOWN. The 113 fully
+known paired strata plus 15 UNKNOWN pairs give finite completion bounds
+[-20,14] in the paired sum, or [-0.15625,0.109375] in mean; these are not
+confidence intervals, and include both signs. No strength gain/loss or
+population result is established. Descriptive exposure confirms all five
+learnable channels appeared for each seed and the hand-R unlock action ran 124
+times under TDLeaf /126 times under initialization; these do not establish
+feature causality. The fixed board-P anchor remains unchanged. The scope is one
+generated 4x4 ruleset and exact-record exclusions from the enumerated history
+inventory only, not descendant/transposition/distributional independence or
+full-Generic transfer. Pinned analyzer source remains unchanged despite its
+stale 512-stratum assertion; the plan-derived supplemental analysis passed.
+Five task2628 test modules pass 12 tests. Feature exposure entrypoint's missing
+repository-root path was fixed and verified. Full result and failure history:
+`results/dev_aux/task2628/REPORT.md`; large raw JSONL remains local with
+deterministic compressed publication copies. The 2026-10-21 mailbox review
+supports the already-satisfied outcome-blind fresh-panel/cost gate, defers
+optional task2625 censor analysis and PRIMARY-owned advice, and rejects the
+transport-only note; no new roots, top-up or cap extension were made.
+
+DEV_AUX task2629 fresh-root H=256 evaluation (2026-10-20): after task2628's
+17/256 horizon-UNKNOWN endpoints left 17,486–38,041 nodes of headroom, a new
+outcome-blind pool was selected from family range [300000,350000). Exact
+records were excluded against the pinned 55,385-history inventory, all136
+task2627 roots, and task2628's train/eval query and episode histories. The
+independent full-history/action audit passed 16 roots, zero exact intersections
+and legal hand-R unlocks in16/16; prep/audit cost39.341/37.655s. A distinct
+evaluation-only plan reused frozen task2628 weights unchanged, kept the same
+20k/40k per-root node caps, doubled H to256 and registered 256 slots under a
+3540s all-in bound (<120m). Its one execution exited0 in228.461s. The full
+history/legality/actor/terminal/reward/node-cap audit passed: 251 actual
+terminal slots, five HORIZON_UNKNOWN, 8,850 queries and154,053 nodes. Endpoint
+WDL is initial59/7/59/3 UNKNOWN and TDLeaf60/4/62/2 UNKNOWN. Of128 paired
+strata,123 were fully known and five retained UNKNOWN; completion bounds are
+[-7,3] in sum and [-7/128,3/128] in mean. This remains a separate finite panel,
+not a confidence interval, and its result is not pooled with task2628. All
+five UNKNOWN endpoints still had node-cap headroom; no cap changed. Full
+details: `results/dev_aux/task2629/REPORT.md` and `DESIGN.md`. The two rule15
+panels do not establish a strength gain or broad Generic transfer. Next:
+compare new rule/mechanic candidates for a fresh fixed-scale TDLeaf test;
+do not keep expanding exposed rules15 panels. Science remains OPEN.

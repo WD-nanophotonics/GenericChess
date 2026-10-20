@@ -1,0 +1,9 @@
+{
+  "attempt": "Direct script invocation of the frozen launcher",
+  "error": "ModuleNotFoundError importing tools.local_agent.environment because this invocation did not place the repository root on sys.path.",
+  "evaluation_process_started": false,
+  "evaluation_outputs_created": false,
+  "frozen_plan_modified": false,
+  "state": "ENTRY_FAILURE_BEFORE_LAUNCH_CLAIM",
+  "recovery": "Invoke the unchanged launcher as a repository module so the root is on sys.path."
+}

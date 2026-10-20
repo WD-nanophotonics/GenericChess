@@ -1,0 +1,2874 @@
+{
+  "candidate": {
+    "index": 15,
+    "path": "results/dev_aux/task2433/rules-15.json",
+    "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+    "sha256": "28736c100941698a4218fb0532b0cc65017a4c9b820070faf1951f7bf523c284"
+  },
+  "evaluation_roots": [
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300021,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "e03ec0fbdae742ff169ce828ccb29d2e57e25180c86038fe1fb398d872fcfeb6",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300027,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              3
+            ],
+            "geometry_id": "g2",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_024",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "1918809534af3e02f839d5dd32140801d4062bb845b8fae94083ea6f62e4b5ad",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300044,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "698ec2e59c171759083800678287432a1d0735f2363bdcdc2e5d83e6b3d988cd",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300060,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "87fa410020ed41050c4f27f6c29c037f694f69ddba94a9ab86ca0a2e98971280",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300067,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "56fed23f81b9b48ad3dd4e2cea73f2c237f47b935a494feee879a5c31c3a2323",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300068,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "966312793990c0823f4eab6e63ef17cf128cda8a2ce98dde67935e8c315bf4e1",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300077,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "3ad079ed95ab607161c2800caac6a91586d12c4993c17d2016d445b5a206c9cc",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300088,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              1,
+              3
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "6293de98b5158e7701b3a6839598c17672737adbd459ffb7f73210d9a018f6d8",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300104,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g5",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_032",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "990b85e082176e6106aeebfa1c6b64f88f8f23db701f31675786926b976dc992",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300127,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "f97121fb8771b7549e82d46cc8243cb68b1599d5e6f29a3dc84b62581e317269",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300167,
+      "features": [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g14",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "0a7ea7d8cad3b85f51a05b264dcf22e4d6613f601ae9454224db6f3d755af11b",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300215,
+      "features": [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              0,
+              2
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_029",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "d066bff7fe5e7eac30d85a69bcbdcd7ee2826c177abfe079c19ad01908c1c8f6",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300253,
+      "features": [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g8",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_038",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g12",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_035",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "286e8318a46a916488020fbd17aef4938519cbe67ceea668c6e2827b83888ba2",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300268,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              2
+            ],
+            "geometry_id": "g0",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_000",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "500b47371ecc07e1b300f6617e5b740e544b43114a19771120449e7e53396730",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300276,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g9",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_040",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g7",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_036",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "bfe1eabc17b42a8d0dd4e638ef6eb194ebb18a4bba123f216cc50352910135cf",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    },
+    {
+      "R_board_count": 1,
+      "R_hand_count": 1,
+      "channels": [
+        [
+          "board",
+          "P"
+        ],
+        [
+          "board",
+          "N"
+        ],
+        [
+          "board",
+          "R"
+        ],
+        [
+          "hand",
+          "N"
+        ],
+        [
+          "hand",
+          "P"
+        ],
+        [
+          "hand",
+          "R"
+        ]
+      ],
+      "family": 300290,
+      "features": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "generator_seed": 2433017,
+      "promoted_P_count": 1,
+      "record": {
+        "actions": [
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g13",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g10",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_004",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              2,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "dfc95a6d4fc8bb14730a3163c71670822b88ee2f20ef6eaf1ea44b5b1c292020",
+        "schema_version": 1
+      },
+      "record_sha256": "934c974cd38813f8d42364ff028c64e4b8f59295d75567479f29fbdcd01981cb",
+      "rule_index": 15,
+      "same_owner": 0,
+      "unlock_legal_at_root": true
+    }
+  ],
+  "evaluation_started": false,
+  "prefix_plies": 8,
+  "preparation_seconds": 39.340895999921486,
+  "registration": null,
+  "scope": "Outcome-blind exact canonical full-record exclusions and feature-conditioned roots only; no descendant/transposition/distributional independence or strength claim.",
+  "selection": {
+    "additional_history_sources": [
+      {
+        "occurrences": 1,
+        "path": "results/dev_aux/task2433/inputs.json",
+        "sha256": "6dd5a7d205e8718abb3cc581c57e8d00e652d7f404f4e622deed853116925604",
+        "unique": 1
+      },
+      {
+        "occurrences": 0,
+        "path": "results/dev_aux/task2475/result.json",
+        "sha256": "394a82277ec918f91fd1cf20b2232c110d02981c6b1b645c9ffce8acd03e754d",
+        "unique": 0
+      },
+      {
+        "occurrences": 0,
+        "path": "results/dev_aux/task2626/rule15-panel-feasibility-design.json",
+        "sha256": "b5a141248b6e9401ad12745c77fb57d265d371e5bb3e69874e934c3d261df07c",
+        "unique": 0
+      },
+      {
+        "occurrences": 0,
+        "path": "results/dev_aux/task2626/rule15-root-pools-audit.json",
+        "sha256": "8fd0aa6ea4b74034eb3f34c41de87c4a62ed7faa03e234c617d25ebb6d93688e",
+        "unique": 0
+      },
+      {
+        "occurrences": 136,
+        "path": "results/dev_aux/task2626/rule15-root-pools.json",
+        "sha256": "e2bc9c829f8004736766be99dbfd12c359c7e1be8456385edd091bc0c4d7a61b",
+        "unique": 136
+      },
+      {
+        "occurrences": 2732,
+        "path": "results/dev_aux/task2626/rule15-training/episodes.jsonl",
+        "sha256": "274a42210e351ead5e43dfe2800cf6eb2e0484be6cfff6d9bd05e9e98f0141b2",
+        "unique": 1405
+      },
+      {
+        "occurrences": 106576,
+        "path": "results/dev_aux/task2626/rule15-training/queries.jsonl",
+        "sha256": "381c35ecb1040eb19694e5b7316d4f9329dee42883fe14042fb037355a888a48",
+        "unique": 51010
+      },
+      {
+        "occurrences": 9438,
+        "path": "results/dev_aux/task2626/rule15-trajectory-feasibility/queries.jsonl",
+        "sha256": "fcdd19c43f4f2f53f4bd60ea09c2a880f79c56668f1585fcdd239a090540ee54",
+        "unique": 4658
+      },
+      {
+        "occurrences": 1,
+        "path": "results/dev_aux/task2626/task2433-unvisited-variant-screen.json",
+        "sha256": "43e684c1dc0bb80e02702d582823d8ed560c0e634919ec92e07e072c25b3350f",
+        "unique": 1
+      },
+      {
+        "occurrences": 0,
+        "path": "results/dev_aux/task2627/source-inventory.json",
+        "sha256": "9cdc9e32125b710c76627012335d8fc8638f72e890374dc354fa0a20200c83ca",
+        "unique": 0
+      },
+      {
+        "mode": "ALL_OLD_TRAIN_AND_EVALUATION_ROOTS",
+        "path": "results/dev_aux/task2627/rule15-successor-root-pools.json",
+        "sha256": "03f7184d843bcd7c2f90ff84204516a739125ff26a538f2655078841bd98c17c",
+        "unique": 136
+      },
+      {
+        "mode": "ALL_TASK2628_QUERY_EPISODE_AND_EVALUATION_HISTORIES",
+        "path": "results/dev_aux/task2628/run/queries.jsonl",
+        "sha256": "3a5df3f12a2082c0e89081c207139374f5b4da44f50c90ebcabf4b69426aec9e",
+        "unique": 53543
+      },
+      {
+        "mode": "ALL_TASK2628_QUERY_EPISODE_AND_EVALUATION_HISTORIES",
+        "path": "results/dev_aux/task2628/run/episodes.jsonl",
+        "sha256": "bcabbe6d10a6074bf68e877851ad0068da31f572ac0613c86564c437f3dd534c",
+        "unique": 1543
+      },
+      {
+        "mode": "ALL_TASK2628_QUERY_EPISODE_AND_EVALUATION_HISTORIES",
+        "path": "results/dev_aux/task2628/run/eval-queries.jsonl",
+        "sha256": "a95a6cbcc636259c9f0400514c4f9a0b1748ef320b4f258f786ac4d3be162b83",
+        "unique": 10056
+      },
+      {
+        "mode": "ALL_TASK2628_QUERY_EPISODE_AND_EVALUATION_HISTORIES",
+        "path": "results/dev_aux/task2628/run/eval-games.jsonl",
+        "sha256": "a9391ec89861a1c902e45ad523992f9b4920bd3aea22e2db748fd539de2c945a",
+        "unique": 261
+      }
+    ],
+    "family_range": [
+      300000,
+      350000
+    ],
+    "generator_seed": 2433017,
+    "invalid_terminal_or_unexcited": 274,
+    "old_pool_sha256": "03f7184d843bcd7c2f90ff84204516a739125ff26a538f2655078841bd98c17c",
+    "prior_exact_history_rejections": 1,
+    "prior_inventory_sha256": "2bcc436be65dd2001df93295bb95ae3d788755b5fd83a653bdeb9ba7c4af528f",
+    "selected": 16,
+    "tested_families": 291,
+    "within_pool_duplicates": 0
+  },
+  "status": "FRESH_OUTCOME_BLIND_EVALUATION_ROOTS_PREPARED_NOT_REGISTERED"
+}

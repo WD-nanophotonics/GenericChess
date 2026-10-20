@@ -1,0 +1,14 @@
+{
+  "canonical_path": "training-result.json",
+  "canonical_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e",
+  "explanation": "On Windows, text-mode writing translated LF to CRLF. The recovery report hash binds normalized LF serialization; this binding records actual on-disk bytes. Contents parse identically and recovered/canonical copies are byte-identical.",
+  "normalized_utf8_lf_sha256": "94bf385ab147e15c8c40a5aa33e1396487e6f3e5e7de43ed52a96e41b251f429",
+  "original_training_launch_return_code": 1,
+  "recovered_path": "training-result-recovered.json",
+  "recovered_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e",
+  "recovery_report_normalized_sha256": "94bf385ab147e15c8c40a5aa33e1396487e6f3e5e7de43ed52a96e41b251f429",
+  "recovery_report_sha256": "69d532c4d8a3315587df54a77a1b3f7de4f7c13e464ec5a57ecf7452e43fe85c",
+  "status": "PASS_RECOVERED_RESULT_BYTES_RECONCILED_AFTER_TEXT_NEWLINE_TRANSLATION",
+  "stored_newline_style": "CRLF",
+  "training_audit_sha256": "52f57a0a544eb98e45cc3b6d91e4e3a054511191973413a00643e018498cfad9"
+}

@@ -1,0 +1,135 @@
+{
+  "candidate_query_counts_by_seed": {
+    "1977": {
+      "candidate_queries": 6993,
+      "complete_candidate_queries": 6993,
+      "terminal_pv_zero_gradient": 348
+    },
+    "27182": {
+      "candidate_queries": 7012,
+      "complete_candidate_queries": 7011,
+      "incomplete_candidate_queries": 1,
+      "terminal_pv_zero_gradient": 363
+    },
+    "31415": {
+      "candidate_queries": 7044,
+      "complete_candidate_queries": 7043,
+      "incomplete_candidate_queries": 1,
+      "terminal_pv_zero_gradient": 327
+    },
+    "8173": {
+      "candidate_queries": 6975,
+      "complete_candidate_queries": 6975,
+      "terminal_pv_zero_gradient": 328
+    }
+  },
+  "evaluation_action_patterns_by_endpoint": {
+    "TDLeaf:legacy_000": 200,
+    "TDLeaf:legacy_002": 773,
+    "TDLeaf:legacy_003": 1,
+    "TDLeaf:legacy_004": 124,
+    "TDLeaf:legacy_006": 165,
+    "TDLeaf:legacy_008": 194,
+    "TDLeaf:legacy_010": 129,
+    "TDLeaf:legacy_012": 138,
+    "TDLeaf:legacy_014": 109,
+    "TDLeaf:legacy_024": 225,
+    "TDLeaf:legacy_028": 591,
+    "TDLeaf:legacy_030": 662,
+    "TDLeaf:legacy_032": 240,
+    "TDLeaf:legacy_034": 843,
+    "TDLeaf:legacy_036": 258,
+    "TDLeaf:legacy_037": 2,
+    "TDLeaf:legacy_038": 118,
+    "TDLeaf:legacy_040": 153,
+    "TDLeaf:sem_01_hand_R_unlocks_rook_quiet": 124,
+    "initial:legacy_000": 183,
+    "initial:legacy_001": 1,
+    "initial:legacy_002": 834,
+    "initial:legacy_004": 125,
+    "initial:legacy_006": 188,
+    "initial:legacy_008": 201,
+    "initial:legacy_010": 118,
+    "initial:legacy_012": 153,
+    "initial:legacy_014": 130,
+    "initial:legacy_024": 226,
+    "initial:legacy_028": 644,
+    "initial:legacy_030": 710,
+    "initial:legacy_032": 273,
+    "initial:legacy_034": 869,
+    "initial:legacy_036": 276,
+    "initial:legacy_037": 3,
+    "initial:legacy_038": 133,
+    "initial:legacy_040": 157,
+    "initial:sem_01_hand_R_unlocks_rook_quiet": 126
+  },
+  "evaluation_audit_sha256": "9f8c9628f6156b6795f194794bd7ce00d19f03d0dc5949577be30510c7da7c0b",
+  "executed_action_patterns_after_training_roots": {
+    "legacy_000": 2292,
+    "legacy_001": 1,
+    "legacy_002": 8812,
+    "legacy_003": 7,
+    "legacy_004": 1229,
+    "legacy_006": 1521,
+    "legacy_008": 1723,
+    "legacy_010": 1094,
+    "legacy_012": 1332,
+    "legacy_014": 1209,
+    "legacy_024": 2434,
+    "legacy_025": 6,
+    "legacy_028": 7078,
+    "legacy_029": 5,
+    "legacy_030": 7807,
+    "legacy_031": 5,
+    "legacy_032": 2770,
+    "legacy_033": 12,
+    "legacy_034": 9388,
+    "legacy_035": 5,
+    "legacy_036": 3101,
+    "legacy_037": 17,
+    "legacy_038": 1327,
+    "legacy_040": 1442,
+    "sem_01_hand_R_unlocks_rook_quiet": 1441
+  },
+  "feature_exposures_by_seed": {
+    "1977": {
+      "board:N": 5689,
+      "board:R": 6452,
+      "hand:N": 956,
+      "hand:P": 193,
+      "hand:R": 5760
+    },
+    "27182": {
+      "board:N": 5844,
+      "board:R": 6442,
+      "hand:N": 804,
+      "hand:P": 206,
+      "hand:R": 5625
+    },
+    "31415": {
+      "board:N": 5824,
+      "board:R": 6322,
+      "hand:N": 892,
+      "hand:P": 394,
+      "hand:R": 5510
+    },
+    "8173": {
+      "board:N": 5635,
+      "board:R": 6314,
+      "hand:N": 1012,
+      "hand:P": 333,
+      "hand:R": 5781
+    }
+  },
+  "plan_sha256": "beeb7aa73a1c184ff9e34451c81ec524d02f596bdc663976a187132756a46187",
+  "registration_sha256": "9f8c693c4c81dab35eb372559cfdad42fa16d3ce2eb0a3b958d278ef46c88e1c",
+  "scope": "Descriptive exposure only; nonzero PV features and executed action patterns do not establish causal feature value or broad Generic transfer.",
+  "source_note": "Supplemental post-audit diagnostic; does not change or re-execute the registered learner/evaluator.",
+  "started_receipt_sha256": "0cbb9696756e476125a26bcfc3c786eb01553320f880debc57864012454971c3",
+  "status": "PASS_DESCRIPTIVE_FEATURE_AND_ACTION_EXPOSURE",
+  "training_audit_sha256": "52f57a0a544eb98e45cc3b6d91e4e3a054511191973413a00643e018498cfad9",
+  "training_episodes": 1471,
+  "training_episodes_sha256": "bcabbe6d10a6074bf68e877851ad0068da31f572ac0613c86564c437f3dd534c",
+  "training_queries_sha256": "3a5df3f12a2082c0e89081c207139374f5b4da44f50c90ebcabf4b69426aec9e",
+  "training_result_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e"
+}

@@ -1,0 +1,17 @@
+{
+  "attempted_command": "python results/dev_aux/task2628/bind_evaluation_recovered.py",
+  "cause": "The first supplemental binder compared the recovery report LF-normalized serialization SHA to the Windows CRLF file-byte SHA. The explicit byte-reconciliation receipt now distinguishes both hashes.",
+  "corrective_evidence": "training-result-recovery-binding.json",
+  "error": "ValueError: recovery receipt binds a different training summary",
+  "evaluation_artifacts_present": {
+    "eval-games.jsonl": false,
+    "eval-queries.jsonl": false,
+    "eval-result.json": false,
+    "eval-started.json": false,
+    "evaluation-registration.json": false
+  },
+  "no_evaluation_started": true,
+  "normalized_sha256": "94bf385ab147e15c8c40a5aa33e1396487e6f3e5e7de43ed52a96e41b251f429",
+  "on_disk_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e",
+  "status": "PRESERVED_PREWRITE_SUPPLEMENTAL_BINDER_HASH_MISMATCH"
+}

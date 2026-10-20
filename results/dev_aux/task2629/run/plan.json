@@ -1,0 +1,162 @@
+{
+  "analysis_rule": "Report task2629 independently; do not combine with task2628 after observing task2628 results.",
+  "cost": {
+    "all_in_hard_cap_seconds": 6600,
+    "assessment_required_before_launch": false,
+    "basis": "Task2627 measured prep/audit 31.225/23.008s; task2628 evaluation 243.784s at H128. This plan budgets hard caps plus a 1200s reserve; H256 actual runtime is not guaranteed.",
+    "chat_assessment_threshold_seconds": 7200,
+    "conservative_all_in_bound_seconds": 3540,
+    "evaluation_audit_hard_seconds": 180,
+    "evaluation_hard_seconds": 1800,
+    "root_audit_hard_seconds": 180,
+    "root_preparation_hard_seconds": 180,
+    "variance_reserve_seconds": 1200
+  },
+  "domain": {
+    "evaluator": "Exact task2492 Model and task2621 fixed-scale channels; coordinate0=1, scale10; no human priors.",
+    "history_authority": "Complete GameSession; promotions, drops, auxiliary state and declaration semantics retained.",
+    "rules": [
+      15
+    ]
+  },
+  "evaluation": {
+    "H": 256,
+    "comparison": "128 paired fresh-root strata; UNKNOWN endpoints independently range over [-1,+1]. Finite completion bounds, not confidence intervals.",
+    "construction": "1 rule x 4 frozen model seeds x 16 fresh roots x 2 learner colors x 2 frozen endpoints",
+    "endpoints": [
+      "initial",
+      "TDLeaf"
+    ],
+    "foe": "uniform all-ones fixed Model at scale10",
+    "hard_seconds": 1800,
+    "node_cap_by_rule_family": {
+      "15:300021": 40000,
+      "15:300027": 40000,
+      "15:300044": 40000,
+      "15:300060": 40000,
+      "15:300067": 20000,
+      "15:300068": 40000,
+      "15:300077": 20000,
+      "15:300088": 20000,
+      "15:300104": 40000,
+      "15:300127": 20000,
+      "15:300167": 40000,
+      "15:300215": 20000,
+      "15:300253": 20000,
+      "15:300268": 20000,
+      "15:300276": 20000,
+      "15:300290": 40000
+    },
+    "outcome": "Actual rule-terminal W/L/D only. Horizon, resource and non-scoring endpoints remain UNKNOWN; no draw imputation.",
+    "paired_cap_assignment": "Eight roots at 20k and eight at 40k combined two-side nodes; fixed seed 977437.",
+    "slots": 256
+  },
+  "initialization": {
+    "weights_by_rule_seed": {
+      "15:1977": [
+        1.0,
+        0.9604344534597493,
+        1.0514707300180781,
+        1.0794922028994416,
+        0.9741150702869562,
+        0.6298037935571559
+      ],
+      "15:27182": [
+        1.0,
+        1.174822933881516,
+        1.1402175549090674,
+        0.7860686782820425,
+        1.375025811841296,
+        1.0703860941874797
+      ],
+      "15:31415": [
+        1.0,
+        1.0899870529110256,
+        0.7814307206856481,
+        1.3839294496616317,
+        0.5425822030439713,
+        1.0258035876152212
+      ],
+      "15:8173": [
+        1.0,
+        0.5805624412612915,
+        0.5585141092367637,
+        0.9971011348572694,
+        1.2534673656875663,
+        0.9413298823386276
+      ]
+    }
+  },
+  "model_reuse": {
+    "original_plan_sha256": "beeb7aa73a1c184ff9e34451c81ec524d02f596bdc663976a187132756a46187",
+    "retrain": false,
+    "training_audit_sha256": "52f57a0a544eb98e45cc3b6d91e4e3a054511191973413a00643e018498cfad9",
+    "training_result_path": "results/dev_aux/task2628/run/training-result.json",
+    "training_result_sha256": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e",
+    "weights_mutated": false
+  },
+  "no_frozen_caps_changed": true,
+  "pool": {
+    "audit_path": "results/dev_aux/task2629/fresh-evaluation-root-audit.json",
+    "audit_sha256": "e5f46cd7842e1ed889a333ab093a29e658bd414709850646e312b53eb4f6c9c4",
+    "evaluation_roots": 16,
+    "family_range": [
+      300000,
+      350000
+    ],
+    "generator_seed": 2433017,
+    "path": "results/dev_aux/task2629/fresh-evaluation-roots.json",
+    "selection": "Outcome-blind eight-ply full histories; exact-record exclusions cover the prior inventory, task2627 pool, and every task2628 train/eval query/episode history; require same-owner R hand+board and promoted P-base/R-current.",
+    "sha256": "d8f1a1c7bea4b98caa5bd9fdc439a0169b21409abb05010ceadf9e8e335de5c1"
+  },
+  "question": "On a new exact-record-disjoint outcome-blind rules15 panel, does the already-frozen task2628 TDLeaf model differ from its exact initialization under actual terminal W/L/D when horizon is doubled without changing per-family node caps?",
+  "scope": "Evaluation-only replication on one generated 4x4 semantic-action ruleset. Exact full-record exclusion from the pinned history inventory, prior task2627 roots and all task2628 trajectories only; no descendant/transposition/distributional/population/full-Generic claim.",
+  "search": {
+    "algorithm": "task2492.learning.AlphaBeta",
+    "depth": 2,
+    "nodes_per_query": 8192,
+    "ordering_seed_base": 2622000000,
+    "quiescence": 0,
+    "seconds_per_query": 2.0
+  },
+  "seeds": [
+    1977,
+    8173,
+    27182,
+    31415
+  ],
+  "separate_registration_not_top_up": true,
+  "source_pins": {
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/rules/schema.py": "3933bd2ae6289a60fe58e6b349f53733c7bbe11e3766b99485a6c32e91c6c799",
+    "generic_chess/session/serialization.py": "159c5e39861d0faba9420ad61c002a3be10c0326bb11aff4a9576825da7c5c50",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "results/dev_aux/task2392/reader.py": "3e0dde0cabbb3423a2a3930e93d27da7c89068cbc9f1dc27d78e2a54bdcafc52",
+    "results/dev_aux/task2433/rules-15.json": "28736c100941698a4218fb0532b0cc65017a4c9b820070faf1951f7bf523c284",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2511/generic.py": "ab5f0e58d50bc2c6adb55af438639396dcd3dbf3ad082959852cca89c2389d7e",
+    "results/dev_aux/task2621/fixed_scale.py": "c50d5f7fa2e0db755a33ef5c9e4c480ecfb6a99fac3009b13e443800ac251571",
+    "results/dev_aux/task2627/rule15-successor-root-pools.json": "03f7184d843bcd7c2f90ff84204516a739125ff26a538f2655078841bd98c17c",
+    "results/dev_aux/task2627/source-inventory-v2.json": "2bcc436be65dd2001df93295bb95ae3d788755b5fd83a653bdeb9ba7c4af528f",
+    "results/dev_aux/task2628/feature_exposure.py": "b3a43192d5638dc73bfab8045666a7e5aabf4028d87cd52d739c6e12b5d597c4",
+    "results/dev_aux/task2628/run/corrected-analysis.json": "69cd15e90c75abab6dc395673a87b2adefa0b485e365c550238ba8c3a0faf047",
+    "results/dev_aux/task2628/run/evaluation-audit.json": "9f8c9628f6156b6795f194794bd7ce00d19f03d0dc5949577be30510c7da7c0b",
+    "results/dev_aux/task2628/run/plan.json": "beeb7aa73a1c184ff9e34451c81ec524d02f596bdc663976a187132756a46187",
+    "results/dev_aux/task2628/run/training-audit.json": "52f57a0a544eb98e45cc3b6d91e4e3a054511191973413a00643e018498cfad9",
+    "results/dev_aux/task2628/run/training-result.json": "acf9fce22d45128477a0b599ead0bb64dd86824275c62f685a5067fe3e812a0e",
+    "results/dev_aux/task2629/analyze.py": "4a8f37d7c3d68765aaa666c464fe7b1fd21f84f528d9a48e21332d178c96b79f",
+    "results/dev_aux/task2629/analyze_corrected.py": "e0c807ff325b9ee72fb2526eb7e6ca7fbb2be16d2aac9bb8e5d582fa73eb37e6",
+    "results/dev_aux/task2629/audit_evaluation.py": "71b9715425a56e57ec7202c80e327d9a5f1d37cb25b0ff5947b8446e892af16a",
+    "results/dev_aux/task2629/audit_fresh_eval_roots.py": "a13d72b300c1bed42cf0f5ca8ffe9f3ddd97c2750dc8eda35e81ec65a6b97a6d",
+    "results/dev_aux/task2629/evaluate.py": "3f78312be7f4de3244e779e8dfa8d98268b37e00452655545e1ecb2c7505c757",
+    "results/dev_aux/task2629/freeze_study.py": "bf82f699ed067736fde610dc81ce6f3f6da630e8e89df5073cc5f068c6eae734",
+    "results/dev_aux/task2629/fresh-evaluation-root-audit.json": "e5f46cd7842e1ed889a333ab093a29e658bd414709850646e312b53eb4f6c9c4",
+    "results/dev_aux/task2629/fresh-evaluation-roots.json": "d8f1a1c7bea4b98caa5bd9fdc439a0169b21409abb05010ceadf9e8e335de5c1",
+    "results/dev_aux/task2629/launch_evaluation.py": "27f24119ef36bcfb3121a7042612adb38b86469c15bc22170477d12289ddd6b6",
+    "results/dev_aux/task2629/prepare_fresh_eval_roots.py": "ee84e81c48be37c37e8f457f692dc701c070153d84d80dddf2b2ea93ebef0178",
+    "results/dev_aux/task2629/test_design.py": "f542b7d91bea7fe488cbb9314c85023fcab1ac4bf8faf5f51f60756c4974c368"
+  },
+  "state": "FROZEN_BEFORE_EVALUATION",
+  "task": "DEV_AUX2629_RULE15_FRESH_ROOT_EVALUATION_H256"
+}

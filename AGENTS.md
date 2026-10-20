@@ -153,6 +153,13 @@ role-local Chat mailbox probe and read/save/review newly available Chat comments
 Record an adopt/defer/reject decision for each new or edited comment; if there is
 no new comment, continue without waiting. This is an asynchronous read, not a
 request that Chat reply or a realtime consultation.
+Before every Slack message, first review the exact outgoing text and own-branch
+working tree, commit and push the relevant checked project state to
+origin/sidemission, and verify the complete remote SHA. If there is no new
+relevant commit, run the normal push and verify the branch is already current.
+Include that verified SHA in the message when reporting the published work. Do
+not send before push verification; uncertain delivery is reconciled at the next
+scheduled probe.
 Memo has at most20 lines/2KiB UTF-8, with State, Segment, Main, Backup1, Backup2,
 Evidence fields. Each task is question | immediate first action | expected
 evidence | done condition. Overwrite completed/stale tasks; no memo diary/archive.
