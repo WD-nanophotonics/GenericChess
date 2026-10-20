@@ -1439,3 +1439,22 @@ results/dev_aux/task2616; raw JSONL stays local. A fresh-root cap-sensitivity
 design may be considered to reduce UNKNOWN, but must randomize 20k/40k budgets by
 family, keep endpoints/foe/seeds/colors matched within family, use disjoint roots,
 and remain a separately registered study. Do not extend task2616 caps.
+
+DEV_AUX task2617 feasibility-only follow-through: deterministic, outcome-blind
+root generation found 32 new eight-ply full Chess histories at family IDs
+710001–710032. They have zero exact-record overlap with 218 prior registered
+Chess eval starts, all 5,000 possible task2616 training roots, and task2616's
+32 eval roots. A prospective balanced family-level assignment gives 16 roots
+each to 20k/40k both-side per-slot caps, keeping all four frozen endpoints,
+four seeds and both colors matched within family (1,024 slots); a second fixed
+seed also freezes a randomized slot execution order to avoid cap-ordered blocks.
+Maximum paid
+nodes are 30.72M. Scaling from task2616's 14,648,460-node/1,883.679s evaluation,
+adding 25% runtime margin and 900s setup/audit gives 97.3m projected; a 90m
+evaluation cap plus reserve is 105m, below the 120m Dot-assessment threshold.
+This is feasibility, not registration or execution. Before any run, implement
+and test a separate evaluator and freeze its exact source/assignment hashes;
+retain UNKNOWN and the endpoint-specific finite-panel bounds. Evidence:
+`results/dev_aux/task2617/FEASIBILITY.md`, `feasibility.py`, `feasibility.json`,
+`prospective-roots.json`, and `execution-order.json`. No task2616 cap or output
+changed.

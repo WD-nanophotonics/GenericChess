@@ -2963,3 +2963,37 @@ advantage is established; training losses are diagnostic only and per-seed final
 weights differ. Published deterministic compressed traces with row/byte/SHA
 manifest; raw JSONL remains local. No model selection, cap changes or generic
 transfer claim. Task2616 evidence/source commit e60b833c (full SHA in Git); prior task2613–2615 evidence commit a06dd1331523e06f2ab6526ca799d7ae7d48c04f. Dot reading/adoption/execution remains unconfirmed. Slack review/reading/execution by Dot is not yet asserted.
+
+## DEV_AUX task2617 — cap-sensitivity feasibility (2026-10-20)
+
+After task2616, a deterministic outcome-blind scan created 32 prospective
+eight-ply Chess root records (family IDs 710001–710032). Full-record replay
+confirmed zero overlap with 218 registered Chess evaluation starts, all 5,000
+possible task2616 training roots, and its 32 evaluation roots. The proposed
+1,024-slot panel retains task2616's four endpoints, seeds, uniform foe and both
+colors; a seeded balanced family-level assignment randomizes 16 whole families
+to each of 20k/40k both-side node caps. A second fixed seed shuffles execution
+order across all 1,024 slots so the global time cap does not serialize cap
+groups. Same-family endpoint/seed/color matches remain intact. The 30.72M-node
+maximum, 25% rate margin and 15m setup/audit reserve
+yield a 97.3m projection; a 90m evaluation cap plus reserve is 105m, below the
+120m consultation threshold. This is feasibility only: no slots, games or
+searches were run and nothing is registered. Before any run a separate
+family-aware evaluator and exact pre-run source binding are required. UNKNOWN
+remains censored. Full evidence is `results/dev_aux/task2617/FEASIBILITY.md`
+and its deterministic feasibility/root/order files.
+
+Slack context: the complete existing task2616 research thread was read; there
+were no new channel roots after its last fixed-SHA follow-up. Its prior Dot
+advice supports treating whole-learner comparisons as finite engineering
+checks, not mechanism attribution. The current cap feasibility does not change
+that scope; no new question or Dot response/adoption/execution is claimed.
+
+Delivery-path diagnosis: ordinary sandbox `git ls-remote` could not resolve
+GitHub, while the same read-only check through reviewed network escalation
+returned the existing full sidemission SHA `869f2e3a2c4b025512f293f5241c1801ccef9cfa`.
+This verifies the repo/remote/branch are intact and the supported escalated
+network path works; no machine DNS/proxy/security settings were changed.
+For future authorized sidemission delivery, use that reviewed path and verify
+the complete remote SHA. No PRIMARY/DeepSeek checkout, state, or code was read
+or modified for this checkpoint.
