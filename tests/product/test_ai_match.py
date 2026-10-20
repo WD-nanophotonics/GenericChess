@@ -244,6 +244,31 @@ def test_ai_rejects_unavailable_root_declaration_without_ending_session():
     assert not ctrl.ai_move_needed()
 
 
+def test_ai_rejects_invalid_action_without_automatic_retry():
+    from types import SimpleNamespace
+    from generic_chess.core.actions import BoardMove
+
+    ctrl = _controller()
+    assert ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(1))
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    before = ctrl.session.state
+
+    decision = SimpleNamespace(
+        action=BoardMove(Square(1, 0), Square(1, 0)),
+        choice_kind="ACTION",
+    )
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.state == before
+    assert ctrl.session.state.ply_count == 0
+    assert ctrl.last_error and "cannot submit action" in ctrl.last_error
+    assert ctrl.ai_stop_requested
+    assert not ctrl.ai_move_needed()
+
+
 def test_ai_turn_blocks_human_input():
     ctrl = _controller()
     ctrl.new_game(seed=42)

@@ -305,17 +305,19 @@ class UIController:
                     committed = self._submit_declaration(declaration_id)
                 else:
                     self._last_error = "AI returned an invalid declaration decision"
-                if (
-                    not committed
-                    and self._session is not None
-                    and self._session.result.status is SessionStatus.ONGOING
-                ):
-                    # A repeated invalid declaration must not trigger an AI retry loop.
-                    self._ai_stop_requested = True
             elif decision.action is not None:
                 committed = self.submit_action(decision.action)
             if committed:
                 self._ai_stop_requested = False
+            elif (
+                self._session is not None
+                and self._session.result.status is SessionStatus.ONGOING
+            ):
+                # A failed live result must not immediately restart the same AI
+                # turn; leave the error visible for explicit user recovery.
+                self._ai_stop_requested = True
+                if self._last_error is None:
+                    self._last_error = "AI returned no committable action"
         self._ai_thinking = False
         self._ai_cancel = None
         self._notify()

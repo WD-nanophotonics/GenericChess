@@ -5663,6 +5663,20 @@ from a source-only audit to a narrowly tested controller correction. Other
 generic-search contracts remain open; no broader UI adapter or policy work is
 implied.
 
+## PRIMARY_SANDBOX — stop retrying after a rejected AI action — 2026-10-20
+
+The primary line reproduced a second UI consumer failure: the session rejected
+an invalid AI move correctly, but the controller left the same AI turn eligible
+for immediate restart. A test failed before the fix on the missing stop
+request. The controller now halts automatic retries for any non-stale,
+non-cancelled decision that does not commit while the session remains ongoing;
+the existing error remains visible and the user may resume. Five affected
+product modules passed after the change. This corrects runtime behavior at the
+existing caller and does not alter search or backend interfaces. Neither AUX
+checkout, source nor computation was used; no scientific coordination or
+adoption was needed. Evidence and limits are in
+`docs/research/UI_AI_FAILED_ACTION_RETRY_20261020.md`.
+
 ## PRIMARY_SANDBOX — retain last complete iterative result — 2026-10-20
 
 A bounded generated 4x4 seed43 search was interrupted deterministically at the

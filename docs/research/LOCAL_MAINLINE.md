@@ -2135,3 +2135,18 @@ Continue the distinct caller scan only when a reachable transition can change
 the generic-search interface or implementation; otherwise resume the active
 rule-price route only for a new same-rule outcome contrast. The separately
 user-maintained UI Test remains outside PRIMARY changes.
+
+## Stop repeated AI retries after a failed UI commit — 2026-10-20
+
+A second Qt-free production-caller check found that a rejected AI-selected
+action left the session and history unchanged but did not set the controller's
+AI stop request. `MainWindow._on_ai_finished()` could therefore start the same
+ongoing AI turn again. A new regression failed on that exact condition before
+the fix. `finish_ai_move()` now stops retries after any non-cancelled,
+non-stale decision that fails to commit while the session is ongoing, retaining
+the validation error and leaving successful, stale and cancelled behavior
+intact. The focused five-module UI/match/declaration product set passes. This
+is a bounded caller-control repair, not a backend/search change or proof for
+every generated ruleset. See
+`UI_AI_FAILED_ACTION_RETRY_20261020.md`. No additional retry framework or
+alternate backend adapter follows from this one reproducible path.
