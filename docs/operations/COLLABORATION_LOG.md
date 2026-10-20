@@ -5451,3 +5451,30 @@ module pass; the combined 10-module history/action/qsearch/search suite also
 passes. See `SEARCH_SIDE1_SEMANTIC_RESULT_20261020.md`. No engine code, Native
 equivalence claim, auxiliary checkout, experiment or training changed. This is
 one side-to-move contract only; no all-ruleset or strength claim follows.
+
+## PRIMARY_SANDBOX — TT lifecycle and path-history memory probes — 2026-10-20
+
+PRIMARY measured one persistent AlphaBetaPlayer on a fixed generated 8x8
+hybrid rule. The Balanced50k/qdepth4 prefix closed 14 legal plies at 8,712 of
+the 250,000-entry cap, with 14.824MB traced memory above baseline and
+14.884MB traced current memory; its planned
+20-ply/45-minute run has no final marker, and the cessation cause is unknown.
+A separate actual no-progress-history variant completed 100 plies at 256
+nodes/search, ending at 2,539 entries and 7.120MB above baseline. Synthetic
+SearchStateIdentity layout measurements show variable per-entry costs as path
+history grows, but are not actual search memory and are not extrapolated to the
+cap. No TT default or eviction change is warranted from these bounded samples.
+See `SEARCH_TT_LIFECYCLE_MEMORY_20261020.md` for exact conditions and limits.
+
+The latest full NanoMelon request thread was read and its original outputs saved
+privately before reconciliation. Dot's advice and DEV_AUX's later evidence in
+that thread concern the AUX TreeStrap/TDLeaf comparison; they do not change this
+PRIMARY TT question. AUX results were not independently rerun or adopted here.
+The single scheduled DeepSeek patrol for this heartbeat showed `notLoaded` with
+only historical visible turns; current health remains unknown, not certified.
+No message, stop/start action, or AUX checkout/state edit was made. PRIMARY
+alone performed the TT probes; no auxiliary computation or change was merged.
+
+Next: leave the cap/default unchanged and return to the current search/caller
+mainline. Reopen byte-budget work only after a representative workload or an
+actual memory limit makes the decision consequential.
