@@ -64,6 +64,8 @@ def get(db, rid=None):
 def consult(question_file, daily=False, code_files=()):
     from .advice import ADVISORY, now
     c = config()
+    if c.get("communication_mode", "chat_mailbox") != "dot_legacy":
+        raise LocalFlowError("Dot consultation is paused; use mailbox for periodic Chat exchange")
     if c.get('stopped'):
         raise LocalFlowError('consultation is stopped')
     if question_file.stat().st_size > 12000:
@@ -125,6 +127,8 @@ def status(rid=None):
 
 def begin_send(rid):
     c = config()
+    if c.get("communication_mode", "chat_mailbox") != "dot_legacy":
+        raise LocalFlowError("Dot dispatch is paused; historical ledger remains readable")
     with database() as db:
         db.execute('BEGIN IMMEDIATE')
         r = get(db, rid)

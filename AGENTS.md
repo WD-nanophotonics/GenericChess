@@ -1,5 +1,22 @@
 # GenericChess local research policy
 
+
+## Current communication decision — 2026-10-20
+
+All project roles use periodic Chat mailbox exchange. Dot calls, mentions,
+realtime waits/followups/monitoring, daily10:00 gates and DOT_REPLY requirements
+are paused. Each existing Slack probe performs one logical paginated read,
+privately saves raw evidence, records adopt/defer/reject for historical Chat
+comments, then writes at most one progress report to RECIPIENT=CHAT. No response
+is required for ordinary research; uncertain sends reconcile at the next probe,
+never by immediate resend. Old Dot pending requests do not block new reports.
+Keep old ledgers/stops, role boundaries and recurring targets/cadence. Each role
+migrates only its own configuration via mailbox migrate; shared protocol:
+docs/operations/SLACK_WORKFLOW.md. Runs expected >=120minutes await explicit
+Chat mailbox assessment of scope/budget; shorter independent work continues.
+This supersedes live Dot/daily-window instructions below; historical closure
+records remain evidence and must not revive realtime consultation.
+
 This is the sole active policy; user instructions take precedence. DEV_AUX is the original auxiliary on sidemission in this independent checkout;
 PRIMARY_SANDBOX owns sandbox and DEEPSEEK_AUX owns codex/deepseek-aux elsewhere.
 These three existing roles keep separate identity/state; no additional workers. Never touch alphasho, its audits,
@@ -68,7 +85,7 @@ User2026-10-11 also requires a remotely readable collaboration record. At each
 completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
 contributions, coordination, disagreements/corrections, adoption reasoning,
 efficiency evidence/limits and unresolved issues; publish checked project collaboration
-summaries to sidemission and give Dot a fixed-revision link; PRIMARY owns
+summaries to sidemission and give Chat a fixed-revision mailbox link; PRIMARY owns
 its own sandbox log. Exclude actual personal information/passwords/credentials
 from publication; preserve sensitive originals in the ignored private layer. This is a short evidence summary, not extra approval,
 identity challenges or a requirement to wake the auxiliary for routine replies.
@@ -133,7 +150,7 @@ interaction evaluators may receive literature and low-cost feasibility review.
 User2026-10-09 authorizes appropriate small local training without per-run user
 approval. User decision2026-10-15 20:31 JST, directly confirmed2026-10-17,
 supersedes the old one-hour gate: estimated runs UNDER TWO HOURS need no prior
-review; a run expected to reach TWO HOURS (>=120minutes) first goes to Dot for
+review; a run expected to reach TWO HOURS (>=120minutes) first goes to Chat by mailbox for
 necessity assessment before launch. Record the
 decision question, estimated cost and cheaper alternatives. This applies to
 training and other project runs, not the60-90minute Agent research segment.
@@ -184,54 +201,16 @@ executable tasks before normal finish. Record actual time and ending cause.
 The validator checks structure/time only; bypass or rejected-finish exit is a
 workflow failure, not a compliant inspection. App uptime is not guaranteed.
 
-Agent and dot are near-peer research partners; user instructions win. Record
-adopt/defer/reject reasoning. Dot is not a work issuer or publication gate.
-Slack NanoMelon #generic-chess C0C6L21UU20 is the sole consultation channel.
-Standing user authorization permits connected-account sends to that channel
-and its threads across turns/restarts until revoked; explicit stop suspends
-sending. Send only concrete useful questions/evidence, not routine acknowledgements.
-Use consult/consult-status/reconcile; immutable IDs/hashes/root ts bind requests.
-Verified account identity, not TYPE/ID, authenticates the sender. Dot shares
-the current account. Paths do not give dot local access; attach bounded evidence.
-At every recovery and useful consultation checkpoint read channel new roots
-as well as relevant threads, with pagination/coverage recorded; do not inspect
-only pending requests. User2026-10-10 explicitly requires: whenever the user
-asks to ask Slack, obtain new requirements or inquire about direction, open a
-NEW THREAD with TYPE=AGENT_REQUEST and a fresh REQUEST_ID. Never send that
-inquiry as a follow-up, reuse an old thread, or use AGENT_FOLLOWUP. This overrides
-the earlier compatible same-thread renewal convention for these user requests.
-Agent-initiated evidence-based review of an existing technical question may
-use AGENT_REQUEST plus original ID/unique FOLLOWUP_ID in its existing thread;
-it is not a template for explicit user-directed Slack inquiries.
-EVIDENCE/RESULT are informational. Advisor-origin new threads
-are explicitly associated as supplements, never rebound as the original root.
-Keep per-followup pending/received/evaluated/applied/deferred records and exact
-message versions. Delivery is not response or adoption; missed events and
-latency are observable limitations, not guaranteed wake/reply promises.
-Read all posts/pages and preserve raw output before reconcile/adoption; completed
-requests can get supplements. Standing authorization also covers Agent judgment
-about resend/recontact, reaffirmed2026-10-05; no per-attempt user approval is
-needed. User2026-10-08 explicitly authorizes sends and repeated content to this
-channel at Agent discretion; local retry flags are not permission denials.
-Reconcile first and record the delivery evidence, purpose and duplicate
-risk before any deliberate retry. Missing search matches alone are not proof
-of nondelivery. For a known root use its thread, never another channel; a mere
-silent dot is not a reason for routine repeats. Preserve IDs/hashes/receipts,
-never reset the ledger or run automatic retry loops. See SLACK_WORKFLOW.md.
-No self-reply loops, automatic re-execution or additional workers.
-
-Daily10:00 Asia/Tokyo is the main substantive dot window; skip empty/duplicate
-questions and missed-day catchup. Work independently otherwise; consult as needed.
-Read/wait briefly at useful checkpoints and continue independent work. The sole
-native90-minute heartbeat resumes this chat without overlap or a second writer.
-Daily10:00 Asia/Tokyo stays the main consultation window; if no turn is active,
-the first heartbeat after10:00 handles that day once, without missed-day catchup
-or another task. Existing active research never starts a second writer.
-No Windows scheduler, Goal, ownership/Supervisor policy, Chat approval, Courier,
-native Chat send or Socket Mode prerequisite. Historical snapshots are evidence.
-Explicit user stop suspends consultation/heartbeat and cancels dot monitoring;
-restart never clears stopped state. Local Agent/heartbeat use normal allowance;
-dot/transport must not delegate workers. Quota evidence is in advisor.json.
+Chat and Agent are research partners; explicit user instructions take precedence.
+Use the sole project Slack route and the asynchronous protocol in
+docs/operations/SLACK_WORKFLOW.md. Read/save/review historical Chat comments,
+then write one checked progress report per existing probe. No realtime Dot
+consultation or reply requirement. Preserve raw originals privately and exclude
+personal information/passwords/credentials from outgoing Git/Slack copies.
+Keep exact revision/hash receipts and distinguish delivery, reading, adoption
+and execution. No automatic retries, self-reply loops or additional workers.
+Explicit role/project stops suspend communication in their existing scope;
+one-time pause of a current inspection does not disable the recurring schedule.
 
 Git is version control/final delivery, not mandatory communication. Inspect
 outgoing diffs and relevant tests before publish; verify full origin/sidemission SHA in this checkout.
@@ -349,7 +328,7 @@ visibility-change command; this does not identify a historical settings actor.
 
 The user confirms their2026-10-15 20:31 JST decision relayed by Dot at
 root1792063970.985749: estimated runs under two hours need no prior review;
-expected runs of two hours or more first receive Dot's necessity assessment.
+expected runs of two hours or more first receive Chat's explicit mailbox necessity assessment.
 This replaces the one-hour threshold in policy, manuals, memo and own heartbeat.
 Closing59 had retained the stricter threshold because the relay was treated as
 advisor-origin rather than user authority. That interpretation is superseded;

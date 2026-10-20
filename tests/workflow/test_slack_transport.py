@@ -10,7 +10,7 @@ def env(tmp_path, monkeypatch):
                             CONFIG=tmp_path / 'slack.json', DB=tmp_path / 'inbox.sqlite3').items():
         monkeypatch.setattr(s, name, value)
     monkeypatch.setattr(s, 'git', lambda *_: 'a' * 40)
-    c = dict(team_id='T1', channel_id='C1', sender_id='U1', advisor_user_id='U2',
+    c = dict(communication_mode='dot_legacy', team_id='T1', channel_id='C1', sender_id='U1', advisor_user_id='U2',
              advisor_bot_id='B2', advisor_app_id='A2', stopped=False,
              dispatch_enabled=True, accepted=True, quota_status='verified_no_extra_worker')
     write_json(s.CONFIG, c)

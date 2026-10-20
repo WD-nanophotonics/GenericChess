@@ -112,6 +112,14 @@ def parser() -> argparse.ArgumentParser:
     c.add_argument("--daily", action="store_true")
     c.add_argument("--code-file", type=Path, action="append", default=[])
     c.add_argument("--begin-send", metavar="REQUEST_ID")
+    mb = sub.add_parser("mailbox", help="one periodic Chat read/save/report; no realtime wait")
+    mb.add_argument("action", choices=["migrate", "start", "ingest", "decide", "prepare", "begin-send", "bind", "status"])
+    mb.add_argument("--probe-id")
+    mb.add_argument("--file", type=Path)
+    mb.add_argument("--message-ts")
+    mb.add_argument("--sha256")
+    mb.add_argument("--decision", choices=["adopt", "defer", "reject"])
+    mb.add_argument("--reason")
     cs = sub.add_parser("consult-status")
     cs.add_argument("--request-id")
     cs.add_argument("--full", action="store_true", help="include full request/reply evidence")
@@ -160,6 +168,32 @@ def main(argv: list[str] | None = None) -> int:
             result = patrol(args.record)
         elif args.command == "note":
             result = note(args.summary)
+        elif args.command == "mailbox":
+            from . import slack_mailbox as mailbox
+            if args.action in {"ingest", "prepare", "bind"} and not args.file:
+                raise LocalFlowError("--file is required for this mailbox action")
+            if args.action in {"decide", "bind"} and not args.message_ts:
+                raise LocalFlowError("--message-ts is required for this mailbox action")
+            if args.action == "decide" and not all((args.sha256, args.decision, args.reason)):
+                raise LocalFlowError("--sha256, --decision and --reason are required")
+            if args.action == "migrate":
+                result = mailbox.migrate()
+            elif args.action == "start":
+                result = mailbox.start()
+            elif not args.probe_id:
+                raise LocalFlowError("--probe-id is required")
+            elif args.action == "status":
+                result = mailbox.load(args.probe_id)
+            elif args.action == "ingest":
+                result = mailbox.ingest(args.probe_id, args.file)
+            elif args.action == "decide":
+                result = mailbox.decide(args.probe_id, args.message_ts, args.sha256, args.decision, args.reason or "")
+            elif args.action == "prepare":
+                result = mailbox.prepare(args.probe_id, args.file)
+            elif args.action == "begin-send":
+                result = mailbox.begin_send(args.probe_id)
+            else:
+                result = mailbox.bind(args.probe_id, args.message_ts, args.file)
         elif args.command == "consult":
             if args.begin_send:
                 if args.question_file or args.code_file or args.daily:

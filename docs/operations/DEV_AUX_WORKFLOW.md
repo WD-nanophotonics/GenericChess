@@ -1,7 +1,7 @@
 # DEV_AUX working mode
 
 User instruction 2026-10-11: DEV_AUX inherits primary research cadence and
-Dot consultation, while keeping its checkout, branch and tasks independent.
+periodic Chat mailbox exchange, while keeping its checkout, branch and tasks independent.
 This expressly permits a separate native 90-minute heartbeat for this chat;
 the historical single-heartbeat rule is overridden only to this extent.
 
@@ -29,8 +29,8 @@ Use only the user-established GenericChess-DEV_AUX independent clone (absolute p
 The native heartbeat dev-aux targets chat 01a128cf-ae2d-7352-a456-06bd38367221.
 Read own NEXT_WORK first, AGENTS, mainline, this file, assignment and own stops.
 Read primary rollout/advisor/slack stop flags without changing primary files.
-Any user stop takes precedence; pause this heartbeat and consultation, never
-clear flags. Missing or unreadable primary stop evidence is a runtime gap:
+User stops take precedence within their scope; suspend scoped work/mailbox and
+never clear flags. A one-time inspection pause does not disable the recurring schedule. Missing or unreadable primary stop evidence is a runtime gap:
 resolve it before starting research or sending, never assume permission.
 
 Use dev-aux-local.cmd session start/status/checkpoint/finish. It selects this
@@ -48,35 +48,21 @@ A completed assigned validation is followed by another nonduplicative useful
 independent audit/counterexample within the user's inherited research scope;
 never take over primary product work or change defaults/UI.
 
-## Dot consultation
+## Periodic Chat mailbox
 
-Use only NanoMelon #generic-chess C0C6L21UU20. Existing verified shared account
-U0C6G6AU6MQ provides account identity; DEV_AUX/PRIMARY_SANDBOX are routing labels.
-No new challenge or approval gate. Use own consult/consult-status/reconcile;
-question files carry AGENT_ID=DEV_AUX and RECIPIENT=DOT. User-directed inquiries
-create fresh root AGENT_REQUEST/new REQUEST_ID. Keep immutable arguments,
-hashes, receipts, complete raw channel/thread reads and adoption decisions in
-ignored own .local_agent/slack. Never copy primary ledgers or credentials.
-Recovery reads roots for relevant-day scope and relevant threads, all pages.
-Save raw output before evaluation. Missing answers do not block independent
-short work; no automatic resend or self-reply. Ask substantive unclear issues,
-not routine acknowledgments. Main substantive window is 10:00 Asia/Tokyo;
-first later heartbeat handles that day once, no missed-day catchup.
+User2026-10-20 suspends Dot for every project role. Follow SLACK_WORKFLOW.md:
+one logical channel/relevant-thread read per existing probe; preserve exact raw
+output privately, review new/edited historical Chat comments, save progress,
+then write one RECIPIENT=CHAT report. No mention, realtime wait, followup loop,
+daily10:00 window or response requirement. Old pending requests are historical,
+not blockers. DEV_AUX migrates only its own ignored config with mailbox migrate;
+preserve existing stops and heartbeat target/cadence.
 
-## Resources and delivery
-
-Ordinary concurrent project computation is allowed under the latest user update.
-Keep checkout and computation-state boundaries; document measurement conditions
-without requesting a quiet window. Under the user decision2026-10-15 20:31 JST,
-directly confirmed2026-10-17, runs estimated under two hours need no prior review.
-A single run expected to reach two hours (>=120minutes) first receives Dot's
-necessity assessment, with cheaper alternatives and cost recorded. This replaces
-the one-hour gate; research segments remain60-90minutes and old frozen caps stand.
-Do not split to avoid consultation; no extra workers, fees or security bypass.
-Review/test own results, commit and push only sidemission and verify full remote
-SHA. Do not use inherited sandbox-only publish/promote. Exclude private inputs,
-raw Slack/account records and credentials. Primary integrates deliberately.
-Only meaningful results/failures/required decisions notify the user.
+For expected runs >=120minutes, await an explicit Chat mailbox assessment of
+the exact scope and budget; work on shorter independent tasks while waiting.
+Under120minutes needs no prior review. Never extend old caps or split runs.
+Commit/push checked auxiliary work only to origin/sidemission, verify full SHA,
+exclude credentials/personal information, and distinguish delivered/read/executed.
 
 ## Setup status
 
