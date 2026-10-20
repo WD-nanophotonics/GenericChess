@@ -10,6 +10,7 @@ import datetime
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import time
 
@@ -104,13 +105,16 @@ def make_learner(method: str, plan: dict):
 
 
 def validate_registration() -> tuple[dict, dict, dict]:
-    required = (RUN / "plan.json", RUN / "registration.json", RUN / "root-manifest.json")
+    required = (RUN / "plan.json", RUN / "registration.json", RUN / "root-manifest.json",
+                RUN / "evaluation-root-manifest.json")
     if not all(path.is_file() for path in required):
         raise FileNotFoundError("learner-comparison-v1 is not fully registered")
     plan_raw = (RUN / "plan.json").read_bytes()
     plan = json.loads(plan_raw)
     registration = json.loads((RUN / "registration.json").read_text(encoding="utf-8"))
     root_manifest = json.loads((RUN / "root-manifest.json").read_text(encoding="utf-8"))
+    eval_manifest_raw = (RUN / "evaluation-root-manifest.json").read_bytes()
+    eval_manifest = json.loads(eval_manifest_raw)
     if registration.get("status") != "REGISTERED_PRE_TRAINING":
         raise ValueError("registration is not eligible for training")
     if registration.get("plan_sha256") != sha(plan_raw):
@@ -123,6 +127,8 @@ def validate_registration() -> tuple[dict, dict, dict]:
         raise ValueError("unexpected registered learner order")
     if registration.get("root_manifest_sha256") != sha((RUN / "root-manifest.json").read_bytes()):
         raise ValueError("root manifest hash mismatch")
+    if registration.get("evaluation_root_manifest_sha256") != sha(eval_manifest_raw):
+        raise ValueError("evaluation root manifest hash mismatch")
     if plan.get("source_sha256") != registration.get("source_sha256"):
         raise ValueError("source hash map mismatch")
     for relative, digest in plan["source_sha256"].items():
@@ -132,6 +138,7 @@ def validate_registration() -> tuple[dict, dict, dict]:
         raise ValueError("python-chess version differs from registration")
     output_names = (
         "started.json", "queries.jsonl", "games.jsonl", "proposal-blocks.jsonl",
+        "arm-progress.jsonl",
         "training-result.json", "evaluation-started.json", "evaluation-games.jsonl",
         "evaluation-queries.jsonl", "evaluation-result.json",
     )
@@ -147,6 +154,10 @@ def validate_registration() -> tuple[dict, dict, dict]:
         raise ValueError("training root manifest is not frozen")
     if len(root_manifest.get("roots", [])) != plan["roots_per_seed"] * len(plan["seeds"]):
         raise ValueError("training root manifest does not match the frozen seed blocks")
+    if eval_manifest.get("status") != "FROZEN_BEFORE_TRAINING":
+        raise ValueError("evaluation root manifest is not frozen")
+    if len(eval_manifest.get("roots", [])) != plan["evaluation"]["root_count"]:
+        raise ValueError("evaluation root manifest does not match the frozen panel")
     return plan, registration, root_manifest
 
 
@@ -577,14 +588,16 @@ def run() -> dict:
     arms = []
     started_arm_count = 0
     status = "COMPLETE_TRAINING"
-    with (RUN / "queries.jsonl").open("x", encoding="utf-8") as queries_out, (RUN / "games.jsonl").open("x", encoding="utf-8") as games_out, (RUN / "proposal-blocks.jsonl").open("x", encoding="utf-8") as blocks_out:
+    with (RUN / "queries.jsonl").open("x", encoding="utf-8") as queries_out, (RUN / "games.jsonl").open("x", encoding="utf-8") as games_out, (RUN / "proposal-blocks.jsonl").open("x", encoding="utf-8") as blocks_out, (RUN / "arm-progress.jsonl").open("x", encoding="utf-8") as arm_progress:
         for arm_index, (seed_index, method) in enumerate(plan["arm_order"]):
             seed = plan["seeds"][seed_index]
             stop()
             arm = _run_arm(plan, root_rows, seed_index, seed, method, started, stop, queries_out, games_out, blocks_out)
             arms.append(arm)
             started_arm_count += 1
-            print(json.dumps(arm, sort_keys=True), flush=True)
+            arm_progress.write(json.dumps(arm, sort_keys=True, allow_nan=False) + "\n")
+            arm_progress.flush()
+            os.fsync(arm_progress.fileno())
             if arm["status"] == "GLOBAL_TRAINING_CAP_PARTIAL":
                 status = "PARTIAL_TRAINING_CAP"
                 for missing_seed_index, missing_method in plan["arm_order"][arm_index + 1:]:
@@ -639,4 +652,4 @@ def run() -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(run(), indent=2, sort_keys=True, allow_nan=False))
+    run()

@@ -1546,3 +1546,21 @@ Evidence:
 `results/dev_aux/task2618/wdl-shared-cost/`,
 `results/dev_aux/task2618/feasibility.py`, and
 `results/dev_aux/task2618/feasibility.json`. Science remains OPEN.
+
+DEV_AUX task2618 training attempt v1 (2026-10-20) was registered and then
+interrupted after only TreeStrap seed 0 reached its 1M combined-node arm cap:
+51 started root slots (47 actual terminal, 3 horizon UNKNOWN, 1 resource
+UNKNOWN), with the remaining 11 learner arms unstarted. No final training
+summary or process exit receipt was retained, so the exit cause is unknown; no
+evaluation or strength conclusion is supported. Preserve the run's local raw
+JSONL and do not top up or replay its registration. A runner durability fix now
+fsyncs one arm summary before advancing and preflight rejects that artifact as
+an existing output; focused regression coverage passes. Next, if continuing the
+learner comparison, separately register a new outcome-blind training-root panel
+that excludes all exposed roots, keep the existing node/evaluation/all-in caps,
+and retain the execution session handle and exit receipt. Recompute cost before
+launch; the original 95.768m projection is not automatically transferable to
+the revised panel. Evaluation remains closed until all new registered arms
+complete. Detailed interruption audit: `results/dev_aux/task2618/TRAINING-INTERRUPTION-20261020.md`.
+
+DEV_AUX task2618 v2 training-root preparation (2026-10-20): the source-pinned artifact `results/dev_aux/task2618/learner-comparison-v2-prep-verified/root-selection.json` (SHA256 `104305733f6db35e0eec51a072bef6a159ce79f989685e385c0686f48d8fbbce`) excludes all 51 v1-started families from the 480-root audited pool, then uses a fixed seed to select 120 roots. The same roots are intended to be paired across learner seeds/methods. There are 429 unexposed roots available; exact record overlap with the 32 frozen evaluation roots is zero. The selector filters on only `unstarted` and `family`; a regression flips stored outcomes and confirms selected roots are unchanged. This remains preparation only, not registration or a clean independent replication after v1's partial training exposure. No search started; existing caps are unchanged. Focused task2618 suite: 17 passed; compileall and diff-check passed. Next: implement a separate write-once v2 registration that consumes this exact artifact, recomputes source-bound cost and captures launch session/exit evidence before starting any run. Full run will remain below the 120-minute threshold only if the revised estimate confirms it; no v1 top-up. Science remains OPEN.

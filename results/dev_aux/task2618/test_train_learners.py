@@ -75,15 +75,19 @@ class TrainLearnerRunnerTests(unittest.TestCase):
             "source_sha256": {source: source_hash},
             "roots_per_seed": 1,
             "seeds": [17],
+            "evaluation": {"root_count": 1},
         }
         plan_raw = json.dumps(plan, sort_keys=True).encode()
         roots = {"status": "FROZEN_BEFORE_TRAINING", "roots": [{"family": 1, "record": {"moves": []}}]}
         root_raw = json.dumps(roots, sort_keys=True).encode()
+        eval_roots = {"status": "FROZEN_BEFORE_TRAINING", "roots": [{"family": 2, "record": {"moves": []}}]}
+        eval_root_raw = json.dumps(eval_roots, sort_keys=True).encode()
         registration = {
             "status": "REGISTERED_PRE_TRAINING",
             "session_id": session["id"],
             "plan_sha256": hashlib.sha256(plan_raw).hexdigest(),
             "root_manifest_sha256": hashlib.sha256(root_raw).hexdigest(),
+            "evaluation_root_manifest_sha256": hashlib.sha256(eval_root_raw).hexdigest(),
             "source_sha256": plan["source_sha256"],
         }
         with tempfile.TemporaryDirectory(dir=runner.ROOT / "results/dev_aux/task2618") as temp:
@@ -91,6 +95,7 @@ class TrainLearnerRunnerTests(unittest.TestCase):
             (run_dir / "plan.json").write_bytes(plan_raw)
             (run_dir / "registration.json").write_text(json.dumps(registration), encoding="utf-8")
             (run_dir / "root-manifest.json").write_bytes(root_raw)
+            (run_dir / "evaluation-root-manifest.json").write_bytes(eval_root_raw)
             with patch.object(runner, "RUN", run_dir):
                 loaded, loaded_registration, loaded_roots = runner.validate_registration()
             self.assertEqual(loaded["session_id"], session["id"])
@@ -110,13 +115,16 @@ class TrainLearnerRunnerTests(unittest.TestCase):
             "source_sha256": {source: hashlib.sha256((runner.ROOT / source).read_bytes()).hexdigest()},
             "roots_per_seed": 1,
             "seeds": [17],
+            "evaluation": {"root_count": 1},
         }
         plan_raw = json.dumps(plan, sort_keys=True).encode()
         roots_raw = json.dumps({"status": "FROZEN_BEFORE_TRAINING", "roots": [{"family": 1}]}).encode()
+        eval_roots_raw = json.dumps({"status": "FROZEN_BEFORE_TRAINING", "roots": [{"family": 2}]}).encode()
         registration = {
             "status": "REGISTERED_PRE_TRAINING", "session_id": session["id"],
             "plan_sha256": hashlib.sha256(plan_raw).hexdigest(),
             "root_manifest_sha256": hashlib.sha256(roots_raw).hexdigest(),
+            "evaluation_root_manifest_sha256": hashlib.sha256(eval_roots_raw).hexdigest(),
             "source_sha256": plan["source_sha256"],
         }
         with tempfile.TemporaryDirectory(dir=runner.ROOT / "results/dev_aux/task2618") as temp:
@@ -124,11 +132,16 @@ class TrainLearnerRunnerTests(unittest.TestCase):
             (run_dir / "plan.json").write_bytes(plan_raw)
             (run_dir / "registration.json").write_text(json.dumps(registration), encoding="utf-8")
             (run_dir / "root-manifest.json").write_bytes(roots_raw)
+            (run_dir / "evaluation-root-manifest.json").write_bytes(eval_roots_raw)
             with patch.object(runner, "RUN", run_dir):
                 (run_dir / "started.json").write_text("{}", encoding="utf-8")
                 with self.assertRaisesRegex(FileExistsError, "refusing rerun/top-up"):
                     runner.validate_registration()
                 (run_dir / "started.json").unlink()
+                (run_dir / "arm-progress.jsonl").write_text("{}\n", encoding="utf-8")
+                with self.assertRaisesRegex(FileExistsError, "refusing rerun/top-up"):
+                    runner.validate_registration()
+                (run_dir / "arm-progress.jsonl").unlink()
                 plan["source_sha256"][source] = "0" * 64
                 plan_raw = json.dumps(plan, sort_keys=True).encode()
                 registration["plan_sha256"] = hashlib.sha256(plan_raw).hexdigest()
@@ -149,6 +162,39 @@ class TrainLearnerRunnerTests(unittest.TestCase):
         self.assertIsNone(slot["outcome_white_relative"])
         self.assertTrue(slot["unstarted"])
         self.assertEqual(slot["ending"], "UNSTARTED_AFTER_CAP")
+
+    def test_completed_arm_is_fsynced_before_a_later_arm_failure(self):
+        session = json.loads((runner.ROOT / ".local_agent/session.json").read_text(encoding="utf-8"))
+        plan = {
+            "task": "DEV_AUX2618_CHESS_LEARNER_COMPARISON",
+            "session_id": session["id"],
+            "python_chess_version": chess.__version__,
+            "source_sha256": {},
+            "arm_order": [[0, "TreeStrap"], [0, "TDLeaf"]],
+            "seeds": [17],
+            "roots_per_seed": 1,
+            "training_hard_cap_seconds": 30,
+        }
+        registration = {}
+        roots = {"roots": [{"family": 1, "record": {"moves": []}}]}
+        with tempfile.TemporaryDirectory(dir=runner.ROOT / "results/dev_aux/task2618") as temp:
+            run_dir = Path(temp)
+            (run_dir / "plan.json").write_text(json.dumps(plan), encoding="utf-8")
+            (run_dir / "registration.json").write_text(json.dumps(registration), encoding="utf-8")
+            (run_dir / "root-manifest.json").write_text(json.dumps(roots), encoding="utf-8")
+            first_arm = {
+                "seed_index": 0, "seed": 17, "method": "TreeStrap",
+                "status": "NODE_BUDGET_REACHED", "nodes_total": 100,
+            }
+            with patch.object(runner, "RUN", run_dir), \
+                 patch.object(runner, "validate_registration", return_value=(plan, registration, roots)), \
+                 patch.object(runner, "SharedDeleteStopReader", return_value=lambda: None), \
+                 patch.object(runner, "_run_arm", side_effect=[first_arm, RuntimeError("later arm fault")]):
+                with self.assertRaisesRegex(RuntimeError, "later arm fault"):
+                    runner.run()
+            progress = [json.loads(line) for line in (run_dir / "arm-progress.jsonl").read_text(encoding="utf-8").splitlines()]
+            self.assertEqual(progress, [first_arm])
+            self.assertFalse((run_dir / "training-result.json").exists())
 
     def test_candidate_and_fixed_foe_route_on_opposite_turns_and_draw_is_actual(self):
         TinySearch.calls = []
