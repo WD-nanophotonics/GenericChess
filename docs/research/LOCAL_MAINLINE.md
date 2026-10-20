@@ -2352,16 +2352,33 @@ now normalizes legacy profiles over types reachable from all compiled initial
 setups and enabled promotions, while retaining diagnostic values for every
 declared type. Semantic executables conservatively retain all declarations
 because semantic effects can introduce types outside legacy promotion data.
-The profile version is `generic-v4` to invalidate old cached profiles.
+The first implementation used `generic-v4` to invalidate older profiles; the
+follow-up uses `generic-v5` to invalidate profiles built by the now-superseded
+recursive closure.
 
 A fresh 320-rule, four-size/two-preset sample contained 65 rules with
 unreachable ordinary declarations; after the repair, all reachable prices and
 initial legal-action sets matched their declaration-removed equivalents in all
-65. The focused evaluator/cache/semantic/rectangular suite passed 109 tests,
-including the updated exact `generic-v4` default-version assertion; the broader
+65. A second seed-stratified 320-rule sample found 56 such rules and again
+matched 56/56. The generator targets only nonpromotable types, so neither
+sample covered hand-authored chained-promotion metadata. A separate valid
+P→Q→R rule exposed that the first helper revision recursively treated promoted
+Q as a promotion source, contrary to Core's promoted-piece guard. The follow-up
+now adds targets only from independently reachable unpromoted base types;
+promoted initial pieces qualify only when capture-to-hand and an allowed drop
+can restore their base. Regression tests cover both the unreachable chain and
+an independently reachable Q positive control. The focused evaluator/cache/semantic/rectangular suite passed 109 tests,
+including the prior exact `generic-v4` assertion. Because disk profiles are
+keyed by evaluator version, the follow-up also bumps the default to `generic-v5`
+to reject profiles produced by the published recursive helper. The broader
 active AI evaluation/cache/search/match/budget plus semantic and rectangular set
-passed 190 tests. This restores a scoped equivalent-rule normalization
+passed 190 tests before the chain correction; the same broader set passed 192
+after it. This restores a scoped equivalent-rule normalization
 invariant; it does not show better search utility, all-domain semantic pricing, or action/outcome
-equivalence. Details and limits: `UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
+equivalence. The initial implementation was published as
+`fa46c3e339fd7b0bbaba8e0a2f148a3953fb30db`; the follow-up fixes this newly
+observed edge case and invalidates its disk cache without rewriting history.
+Details and limits:
+`UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
 Keep the current mainline candidates unchanged; the new evidence warrants this
 consistency repair, not a broader price-transfer or search-default claim.

@@ -5741,17 +5741,29 @@ cross-role coordination, science review or routing was initiated.
 ## PRIMARY_SANDBOX — unreachable-type normalization consistency — 2026-10-20
 
 PRIMARY found and repaired a legacy static-profile scale inconsistency caused by
-unreachable generated type declarations. The repair uses reachable starting,
-hand and enabled-promotion types for normalization, preserves diagnostic rows
-for all declarations, falls back conservatively for semantic executables, and
-bumps the evaluator version for cache invalidation. A deterministic 320-rule
-profile/action comparison and 190 active AI evaluation/cache/search/match/budget,
-semantic and rectangular tests passed. The version bump exposed one stale exact
-generic-v3 assertion, corrected to generic-v4 after preserving the failure;
-the evidence does not establish search-strength benefit or full semantic-domain
-valuation. No DEV_AUX checkout, source, state or computation was read, modified
-or integrated; no cross-role dependency or coordination was needed. The hourly
+unreachable generated type declarations. The first published helper used
+reachable starting, hand and recursively closed promotion types, preserved
+diagnostic rows for all declarations, fell back conservatively for semantic
+executables, and bumped the evaluator version for cache invalidation. A later
+valid hand-authored P→Q→R ruleset exposed that its recursive closure could treat
+promoted Q as a second promotion source, contrary to Core's promoted-piece
+guard. PRIMARY corrected this in a follow-up: targets are added only from
+independently reachable unpromoted base types, with promoted initial pieces
+qualifying only if capture-to-hand and an allowed drop can restore their base.
+Because the profile disk cache is keyed by evaluator version, the follow-up
+also advances from the published `generic-v4` to `generic-v5` so corrected
+profiles cannot reuse results cached under the recursive helper.
+The original 320-rule sample (65 affected) and a second seed-stratified sample
+(56 affected) each preserve reachable profile values and initial legal actions
+for every affected generated rule; the current generator targets only
+nonpromotable types, so those samples do not cover chained hand-authored
+metadata. The expanded 192 active AI evaluation/cache/search/match/budget,
+semantic and rectangular tests pass after adding chain-negative and independent
+source-positive controls. The initial generic-v3 assertion failure was retained
+and corrected to generic-v4. No strength or full semantic-domain claim follows.
+No DEV_AUX checkout, source, state or computation was read, modified or
+integrated; no cross-role dependency or coordination was needed. The hourly
 project-Chat read was attempted once but its response could not be serialized by
 the capture wrapper, so this patrol makes no claim about new Chat comments; the
-failure is retained privately and the read will be retried on a later patrol.
-Evidence and limits: `docs/research/UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
+failure is retained privately. Evidence and limits:
+`docs/research/UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.

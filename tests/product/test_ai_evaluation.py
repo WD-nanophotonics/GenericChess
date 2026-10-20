@@ -116,6 +116,69 @@ def test_profile_reachability_includes_enabled_promotion_targets():
     assert "X" not in reachable
 
 
+def test_profile_reachability_does_not_chain_through_promoted_targets():
+    from generic_chess.ai.evaluation.profile import _initially_reachable_type_ids
+    from generic_chess.rules.compiler import compile_ruleset
+
+    rules = make_ruleset(
+        4,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1)), is_promotable=True, targets=("Q",)),
+            T("Q", LeapAtom((0, 1)), is_promotable=True, targets=("R",)),
+            T("R", RayAtom((1, 0))),
+        ],
+        ["...k", "....", "P...", "K..."],
+        auto_promotion=True,
+    )
+    compiled = compile_ruleset(rules)
+    reachable = _initially_reachable_type_ids(compiled)
+
+    # Q can appear only as P's promoted current type in this inventory.
+    # Promoted pieces cannot promote again, and capture/drop preserves base P.
+    assert {"K", "P", "Q"} <= reachable
+    assert "R" not in reachable
+
+    without_r = make_ruleset(
+        4,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1)), is_promotable=True, targets=("Q",)),
+            T("Q", LeapAtom((0, 1))),
+        ],
+        ["...k", "....", "P...", "K..."],
+        auto_promotion=True,
+    )
+    reduced = compile_ruleset(without_r)
+    full_profile = build_ruleset_profile(compiled, _config())
+    reduced_profile = build_ruleset_profile(reduced, _config())
+    assert full_profile.median_non_anchor_value == reduced_profile.median_non_anchor_value
+    assert full_profile.board_value_by_type["P"] == reduced_profile.board_value_by_type["P"]
+    assert full_profile.board_value_by_type["Q"] == reduced_profile.board_value_by_type["Q"]
+
+
+def test_profile_reachability_can_promote_an_independently_reachable_target_type():
+    from generic_chess.ai.evaluation.profile import _initially_reachable_type_ids
+    from generic_chess.rules.compiler import compile_ruleset
+
+    rules = make_ruleset(
+        4,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1)), is_promotable=True, targets=("Q",)),
+            T("Q", LeapAtom((0, 1)), is_promotable=True, targets=("R",)),
+            T("R", RayAtom((1, 0))),
+        ],
+        ["...k", "....", "P...", "KQ.."],
+        auto_promotion=True,
+    )
+    compiled = compile_ruleset(rules)
+    reachable = _initially_reachable_type_ids(compiled)
+
+    # Q is independently present as an unpromoted base type, so Q→R is usable.
+    assert {"K", "P", "Q", "R"} <= reachable
+
+
 @pytest.mark.parametrize('atoms', [
     (LeapAtom((0, 1)),),
     (LeapAtom((0, 1)),) * 2,
