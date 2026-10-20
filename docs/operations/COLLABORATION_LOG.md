@@ -3017,3 +3017,65 @@ count-perspective correction in the existing task thread; delivery is verified,
 reading/adoption/execution are not claimed. Next route remains the whole-learner
 TreeStrap-vs-TDLeaf standard-Chess W/L comparison, pending fresh cost/root/source
 binding. No primary or DeepSeek state/code was read or changed.
+
+DEV_AUX task2618 (2026-10-20): source-bound, outcome-blind feasibility audit
+replaced the earlier 53–67m rough cost estimate for the standard-Chess
+TreeStrap/TDLeaf/WDL whole-learner comparison. The slow observed 4M-node
+training receipts (532.797s, 513.875s, 494.221s) plus the slower complete
+1,024-slot four-endpoint evaluation (2,225.822s), 25% margin and 900s reserve
+produce 93.47m; proposed 35m training + 60m evaluation + 15m setup/audit caps
+total 110m. This is below the user's 120m Dot-assessment threshold but remains
+a feasibility projection, not a run guarantee or registration. The calculator
+reads only aggregate cost fields and hashes. During manual source-shape
+inspection, historical task2594/2568 training/evaluation rows (including some
+weight snapshots and terminal outcomes) were displayed; they were not used for
+cost calculation or root/parameter selection, and task2618 has no selected or
+exposed roots/outcomes. Fresh training/evaluation root disjointness and final
+source pins remain open. The one focused test passes; no Dot consultation was needed for this <120m feasibility audit, and
+the post-task2617 channel read found no new roots/replies. No advice was
+adopted; no Dot reading/execution claim. Prior task2617 Slack follow-up remains
+the latest verified evidence-delivery thread. Current local GitHub DNS denial
+was isolated to ordinary sandbox access; reviewed read-only escalation resolved
+github.com and returned origin/sidemission at 8571b2eba808f687c515086abae47581e881ace2.
+No machine network/security settings were changed. Work remains on DEV_AUX's
+own sidemission checkout; PRIMARY and DeepSeek state/code remain untouched.
+
+DEV_AUX task2619 (2026-10-20): generated prospective Chess roots using the
+existing source-pinned eight-ply `ChessEnv` recipe. Outcome-blind audit selected
+512 training and 32 evaluation starts, with zero exact full-record overlap
+between the pools or against 250 unique registered Chess evaluation roots,
+292 unique observed training starts, and all 5,000 possible task2616 training
+roots reconstructed from its registered family recipe. All starts are eight
+plies; this does not prove descendant/transposition or distributional
+independence, nor reconstruct every unobserved possible root of older runners.
+Roots remain prospective and unregistered. The feasibility scan read complete
+JSONL row objects to extract initial records; outcome fields were not referenced
+by its selection logic. During the separate task2618 source-shape check,
+historical task2594/task2568 result rows exposed some prior weight snapshots and
+terminal outcomes in console output; these were not used for cost/root/parameter
+selection, and no task2618 outcomes exist. This exposure correction is retained
+explicitly. Tests: feasibility/root suite 2/2 PASS and py_compile/diff checks
+PASS. No Slack replies arrived after the last task2617 follow-up; channel
+readback is privately preserved. The 93.47m task2618 projection remains
+provisional because its WDL timing uses task2568 `TrainingSearch`, not the
+planned shared AlphaBeta/Receipt runner. Next implement/test the WDL adapter
+against that shared path, then measure its bounded cost on training-only roots
+before binding final source pins. Science remains OPEN; no registration, learner
+training, new evaluation or Dot-reading/execution claim.
+
+DEV_AUX task2618 shared-receipt WDL contract checkpoint (2026-10-20): added a
+pure proposal/paired-terminal-interval adapter and focused tests for the seeded
+one-coordinate proposal, frozen four-game order, candidate-color orientation,
+UNKNOWN bounds, incomplete/unpaired blocks, strict-positive acceptance, and
+combined candidate-plus-foe node accounting. Seven adapter tests plus the
+source-bound feasibility test passed with the bundled Python `unittest` runner;
+`py_compile` and `git diff --check` passed. This is not yet a gameplay-loop
+integration or shared-path timing scan. The old WDL estimate remains provisional
+because its runtime source used `TrainingSearch`; task2618 is still unregistered.
+The channel read after the prior evidence boundary returned no newer messages
+and its exact result is saved privately. No Dot question, response, reading or
+execution is claimed. Next integrate this adapter into the task2612
+AlphaBeta/Receipt episode path, audit terminal replay and censored partial
+blocks, then cost-scan only reserved training roots before recomputing the
+all-in estimate. Branch remains DEV_AUX/sidemission; no primary or DeepSeek
+state/code was read or changed.

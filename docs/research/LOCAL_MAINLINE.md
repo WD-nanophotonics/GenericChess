@@ -1490,3 +1490,58 @@ The task2617 cap panel does not substitute for this learner-method question or
 justify changing a learner/default. If the all-in run estimate reaches 120min,
 send its necessity question to Dot before launch; otherwise preserve the
 existing cap policy. The scientific state remains OPEN.
+
+DEV_AUX2618 completed an outcome-blind, source-hash-bound cost feasibility
+audit for that whole-learner comparison. Using 4M-node TreeStrap (532.797s),
+the slower historical 4M-node TDLeaf measurement (513.875s), 4M-node WDL
+control (494.221s), and the slower complete 1,024-slot four-endpoint
+evaluation (2,225.822s), plus 25% runtime margin and a 900s setup/audit reserve,
+the projection is 93.47m. Proposed phase caps sum to 110m (35m training, 60m
+evaluation, 15m reserve), below the 120m Dot-assessment threshold. The script
+reads aggregate timing receipts only; no task2618 roots, seeds, outcomes or
+weights were selected. Historical result rows were inspected during
+source-shape review, as clarified below. This replaces the older rough 53–67m estimate, not
+the protocol draft or its unregistered status. Before registration, generate
+fresh exact-history-disjoint training/evaluation roots and recompute cost after
+pinning the complete runner/source bundle. If that revised estimate reaches
+120m, consult Dot before start; preserve all missing/UNKNOWN slots at caps.
+Evidence: `results/dev_aux/task2618/FEASIBILITY.md`, `feasibility.py`,
+`feasibility.json`, and `test_feasibility.py`. Research remains OPEN.
+
+Correction to the task2618 feasibility claim: its calculator reads only
+aggregate cost fields, but manual inspection of task2594/task2568 historical
+training/evaluation rows also exposed some weight snapshots and terminal
+outcomes. Those values were not used for the cost estimate, root choice or
+parameter selection; no task2618 outcome exists, and all preselected root pools
+remain outcome-blind. Future source inspections should select only the minimum
+fields needed rather than printing complete training rows.
+
+DEV_AUX2619 completed an outcome-blind prospective standard-Chess start-root
+scan: 512 training starts (seed-0 family IDs 810001–810512) and 32 evaluation
+starts (seed-0 family IDs 910001–910032). Every selected start is a valid
+eight-ply full history; the two prospective pools have zero exact overlap.
+They also have zero exact overlap with 7,451 rows/250 unique registered Chess
+evaluation roots, 4,040 rows/292 unique observed training starts, and the
+5,000 possible task2616 training roots reconstructed from the task2568 recipe.
+This is start-record disjointness only, not descendant/transposition or
+distributional independence, and not a reconstruction of unobserved roots for
+every historical runner. Roots are prospective and not registered. Evidence:
+`results/dev_aux/task2619/ROOT-FEASIBILITY.md`, `root_feasibility.py`, and its
+root manifests/result JSON.
+
+The task2618 93.47m estimate is not the final runner estimate: WDL's 4M timing
+comes from task2568 `TrainingSearch`, whereas the proposed learner comparison
+uses task2612's shared `AlphaBeta`/`Receipt` path. A pure WDL receipt adapter now
+implements the frozen proposal seed/formula, exact four-game order, White-to-
+learner reward orientation, full `[-1,+1]` UNKNOWN intervals, strict-positive
+paired acceptance and combined candidate/foe node-cap accounting. Seven focused
+adapter tests and the source-bound feasibility test pass with the bundled Python
+standard library runner. This verifies the arithmetic/contract only; the adapter
+is not yet wired into a gameplay loop and no shared-path WDL cost scan has run.
+Next integrate it with task2612's `AlphaBeta`/`Receipt` runner, test actual
+terminal replay and partial-block handling, then run a bounded outcome-blind
+cost scan on the 512 prospective training roots only (never the 32 evaluation
+roots). Count candidate+foe nodes and partial work. Recompute the final all-in
+estimate; keep the cap at 110m and obtain Dot assessment before launch only if
+that revised expected duration reaches 120m. No task2618 training or evaluation
+has been registered or launched; science remains OPEN.
