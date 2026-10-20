@@ -1844,3 +1844,26 @@ full max-ply module and adjacent search/terminal/provenance modules pass. This
 closes one semantic caller integration without an engine change; it is not a
 whole-domain or Native-equivalence claim. Continue with a distinct contract,
 not another max-ply variant without new evidence.
+
+The next distinct candidate was the generated no-progress history search
+consumer. Existing Core/runtime tests already established that two semantic
+sessions with identical boards and repetition counts can have different future
+no-progress terminal outcomes; the warm AlphaBeta caller test only asserted
+warm/fresh parity. `SEARCH_NO_PROGRESS_HISTORY_RESULT_20261020.md` records the
+new explicit assertion: in the paired contexts, the selected child is
+`NO_PROGRESS_DRAW`/score0 versus ongoing/score-77, even with forced history
+digest collisions, and the root remains unchanged. The no-progress fact/draw,
+SearchPathRuntime and AlphaBeta modules pass. This demonstrates one
+history-dependent search result contract, not a search defect or all-history
+equivalence; no engine change was needed. Continue on another concrete,
+nonduplicate caller decision.
+
+A bounded cross-side caller audit found existing side-1 qsearch/check and
+terminal coverage, but no ongoing generated-semantic public AlphaBeta result
+compared against reference minimax after a real submitted move. The new 7x5
+semantic cannon regression applies one legal transition, then confirms depth-2
+score `-100`, a reference-optimal action, a valid PV and unchanged root. See
+`SEARCH_SIDE1_SEMANTIC_RESULT_20261020.md`. This closes one caller-perspective
+contract with no observed defect; it does not establish all-rule or Native
+equivalence. Continue to a distinct search contract only if the caller map
+shows a concrete gap.

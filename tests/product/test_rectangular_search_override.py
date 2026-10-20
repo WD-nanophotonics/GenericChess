@@ -80,6 +80,47 @@ def test_rectangular_public_search_with_supplied_evaluator(shape, native, orderi
     assert session.state == initial
 
 
+def test_rectangular_semantic_search_side_one_matches_reference_after_submit():
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.transition import apply_action
+
+    compiled = compile_ruleset_for_execution(rectangular_cannon(7, 5))
+    session = GameSession(compiled)
+    session.submit(session.legal_actions()[0])
+    root = session.state
+    assert root.position.side_to_move == 1
+    assert not root.terminal_status.is_terminal
+
+    evaluator = UnitEvaluator()
+    expected_score, _ = reference_minimax(root, 2, evaluator, compiled)
+    optimal_actions = {
+        action
+        for action in legal_actions(root, compiled)
+        if -reference_minimax(
+            apply_action(root, action, compiled), 1, evaluator, compiled, ply=1
+        )[0]
+        == expected_score
+    }
+    decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=evaluator,
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    ).choose_action(session, SearchLimits(
+        max_depth=2,
+        max_nodes=4096,
+        max_time_seconds=5,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    ))
+
+    assert decision.completed_depth == 2
+    assert decision.score == expected_score
+    assert decision.action in optimal_actions
+    validate_pv(session, decision)
+    assert session.state == root
+
+
 def test_default_evaluator_still_builds_and_reuses_default_profile():
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
     cache = EvaluationProfileCache(use_disk=False)

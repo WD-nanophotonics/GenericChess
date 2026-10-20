@@ -5424,3 +5424,30 @@ question was needed. The DeepSeek patrol is the same bounded `notLoaded` /
 historical-only observation recorded above; current health remains unknown.
 Next choose a distinct unfamiliar-rule contract; no repeated max-ply or closed
 cycle panel without a changed premise.
+
+## PRIMARY_SANDBOX — generated no-progress history in AlphaBeta — 2026-10-20
+
+PRIMARY extended the history-caller audit to the distinct generated no-progress
+mechanism. Existing paired-history tests had the same board and repetition
+counts but different future no-progress outcomes; AlphaBeta warm/fresh parity
+was covered, while the expected action outcome/score was implicit. The existing
+caller test now asserts that the first context's selected child is
+`NO_PROGRESS_DRAW` at score0, while the second context selects an ongoing child
+at score-77, including forced history-digest collision runs and unchanged root
+state. The no-progress context/fact, SearchPathRuntime and AlphaBeta modules
+pass. No product search code, new API, training, or price panel was changed.
+Auxiliary checkouts/state/work remain untouched; no scientific Slack question
+or coordination dependency arose. Next choose a distinct contract from current
+evidence and avoid duplicate history/terminal probes without a changed premise.
+
+## PRIMARY_SANDBOX — side-1 generated-semantic caller score — 2026-10-20
+
+After checking existing opposite-side qsearch and terminal tests, PRIMARY found
+no ongoing generated-semantic AlphaBeta result assertion against reference
+minimax after a real transition. A bounded probe on the existing 7x5 semantic
+cannon fixture matched at score -100, selected the unique reference-optimal
+legal action and preserved the root. The new regression and rectangular search
+module pass; the combined 10-module history/action/qsearch/search suite also
+passes. See `SEARCH_SIDE1_SEMANTIC_RESULT_20261020.md`. No engine code, Native
+equivalence claim, auxiliary checkout, experiment or training changed. This is
+one side-to-move contract only; no all-ruleset or strength claim follows.

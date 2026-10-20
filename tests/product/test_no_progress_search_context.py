@@ -91,6 +91,16 @@ def test_warm_caller_keeps_exact_history_even_when_history_digests_collide(monke
     for s in sessions+sessions[::-1]:
         before=s.state;a=shared.choose_action(s,limits);b=player().choose_action(s,limits)
         assert (a.action,a.score,a.principal_variation)==(b.action,b.score,b.principal_variation)
+        expected_status = (
+            TerminalStatus.NO_PROGRESS_DRAW
+            if s is sessions[0]
+            else TerminalStatus.ONGOING
+        )
+        expected_score = 0 if expected_status is TerminalStatus.NO_PROGRESS_DRAW else -77
+        child = copy(s)
+        child.submit(a.action)
+        assert child.state.terminal_status.status is expected_status
+        assert a.score == expected_score
         assert s.state is before
 
 
