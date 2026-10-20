@@ -58,6 +58,13 @@ update does not trigger a second report or immediate read. At that next probe,
 include this fixed-revision note and the resulting commit SHA, then reconcile
 the saved delivery receipt without resending.
 
+The reviewed three-file follow-up was committed and pushed on
+`origin/sidemission`; its fixed content revision is
+`eddb3efb4b4313fe1e271b4382de8e3fa02016a5`. `git ls-remote` returned that exact
+full SHA after the push. This revision is the link target for the next permitted
+mailbox progress report; no read or second send occurred after the existing
+uncertain report.
+
 # DEV_AUX chat handoff / tasks2620–2621 —2026-10-20 JST
 
 User-authorized transfer of the existing role and dev-aux heartbeat to the new
