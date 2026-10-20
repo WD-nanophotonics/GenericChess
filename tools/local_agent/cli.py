@@ -91,6 +91,8 @@ def parser() -> argparse.ArgumentParser:
     actions = session_parser.add_subparsers(dest='session_action', required=True)
     actions.add_parser('start')
     actions.add_parser('status')
+    actions.add_parser('work-start').add_argument('--question', required=True)
+    actions.add_parser('work-stop').add_argument('--evidence', required=True)
     cp = actions.add_parser('checkpoint')
     for field in ('question', 'observation', 'evidence', 'next-action'):
         cp.add_argument('--'+field, required=True)
@@ -153,6 +155,10 @@ def main(argv: list[str] | None = None) -> int:
                 result = session.start()
             elif args.session_action == 'status':
                 result = session.status()
+            elif args.session_action == 'work-start':
+                result = session.work_start(args.question)
+            elif args.session_action == 'work-stop':
+                result = session.work_stop(args.evidence)
             elif args.session_action == 'checkpoint':
                 result = session.checkpoint(args.question, args.observation,
                     args.evidence, args.next_action, args.kind)

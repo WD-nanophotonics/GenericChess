@@ -37,17 +37,23 @@ User stops take precedence within their scope; suspend scoped work/mailbox and
 never clear flags. A one-time inspection pause does not disable the recurring schedule. Missing or unreadable primary stop evidence is a runtime gap:
 resolve it before starting research or sending, never assume permission.
 
-Use dev-aux-local.cmd session start/status/checkpoint/finish. It selects this
+Use dev-aux-local.cmd session start/status/work-start/work-stop/checkpoint/finish. It selects this
 clone's tools and state, requires sidemission, and rejects publish/promote.
 The inherited session helper retains an active ID/start across interruptions.
-Normal research targets 60-90 minutes effective work: ordinary finish before
-60 is rejected, fresh substantive stages and an executable memo are required.
+Normal research targets 60-90 cumulative effective minutes. Open actual research
+with session work-start --question and close with work-stop --evidence at each
+milestone and before administrative work. Normal finish requires3600 confirmed
+seconds, fresh substantive stages and an executable memo. Resume keeps closed
+intervals and excludes unfinished intervals; it does not count offline gaps.
 At stages validate, assess, checkpoint, select and begin the next useful step.
 Soft blocks switch to another useful task, no idle time padding. Early endings
 require the inherited hard reason plus actual evidence. Configuration and
 explanation are bounded work, never retroactively counted as research.
-Finish checks elapsed/structure only; they do not prove research quality or
-ensure app uptime. Keep independent receipts and review actual stage evidence.
+Finish checks evidence-backed declared intervals and structure; it cannot prove
+continuous human/model activity, research quality or app uptime. Keep independent
+receipts and review actual stage evidence. Accounting contract:
+docs/operations/EFFECTIVE_WORK_ACCOUNTING.md. Legacy elapsed receipts are not
+effective-work evidence and are never backfilled.
 A completed assigned validation is followed by another nonduplicative useful
 independent audit/counterexample within the user's inherited research scope;
 never take over primary product work or change defaults/UI.

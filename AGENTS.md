@@ -1,5 +1,27 @@
 # GenericChess local research policy
 
+## Effective research time and durable patrol prompts
+
+The user's confirmed timing unit is one research segment accumulating at least
+60 minutes of effective work, proceeding toward90. Confirmed work survives
+interruptions without resetting the segment ID/UTC origin; offline gaps, idle
+waiting and administrative configuration/transport are not research credit.
+This replaces wall-clock-only finish acceptance: session work-start --question
+opens one interval and work-stop --evidence closes it with concrete research
+receipts. Close before admin work and at milestones, then begin the next useful
+research interval. Resume discards unconfirmed open intervals from credit while
+preserving them as interruption evidence; it never retroactively fills gaps.
+Normal finish requires3600 confirmed seconds plus existing fresh-stage/memo
+checks. Stop/limit exceptions retain their evidence rules. After finish the
+helper synchronizes the memo Segment to ENDED. Full accounting contract and
+limitations: docs/operations/EFFECTIVE_WORK_ACCOUNTING.md.
+
+The two user-authorized hourly patrol prompts are durable role/bootstrap rules,
+not copies of temporary experiment choices or historical decisions. Recover
+current tasks, scope, communication and budgets from this checkout's current
+records. Only explicit user schedule changes authorize modifying recurrence or
+binding. This configuration repair itself is not a research-duration sample.
+
 
 ## Current communication decision — 2026-10-20
 
@@ -193,17 +215,17 @@ Separate semantic correctness, price sensitivity and search execution cost.
 Price comparisons fix attack authority/search conditions and distinguish leaf
 prices from ordering prices. Changed choices or broken ties alone are not gains.
 
-Before60 minutes, a normal/no-next-action finish is forbidden. Early finish
+Before60 confirmed effective minutes, a normal/no-next-action finish is forbidden. Early finish
 requires explicit user stop, actual tool/quota/runtime limit, a genuinely
 necessary user decision, or evidence-supported scientific completion. A missing
-research hypothesis is not a user-decision blocker. After60 minutes continue
+research hypothesis is not a user-decision blocker. After60 effective minutes continue
 an effective line toward90, then end at a safe checkpoint. Do not pad time
 with idle waiting, old conclusions, irrelevant proofs or infrastructure.
 Before final research reply call session finish with evidence; rejection means
 continue, not bypass. No-next-action after60 requires fresh examination of at
 least two alternatives, not reuse of an old no-work note. Refill memo with
 executable tasks before normal finish. Record actual time and ending cause.
-The validator checks structure/time only; bypass or rejected-finish exit is a
+The validator checks declared closed work intervals and structure; bypass or rejected-finish exit is a
 workflow failure, not a compliant inspection. App uptime is not guaranteed.
 
 Chat and Agent are research partners; explicit user instructions take precedence.

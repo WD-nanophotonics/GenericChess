@@ -206,7 +206,7 @@ old report and continue untouched declared cells, without silently rerunning it.
 ## Finish and limits
 
 Before a final research reply use `session finish --reason REASON --evidence REF`.
-Normal reasons: safe_checkpoint, no_viable_action; refused before60 minutes,
+Normal reasons: safe_checkpoint, no_viable_action; refused before3600 confirmed work seconds,
 without a research stage, or without a valid memo reserve. After60 minutes
 continue effective work toward90 and use a safe checkpoint. no_viable_action
 needs fresh substantive review of two alternatives; supply `--alternative Q`
@@ -223,8 +223,14 @@ Rejected finish or bypass followed by a final reply is a workflow failure.
 The helper is receipts/structural validation, not a model, task runner, Goal,
 scheduler, lease manager or auto-restart loop. It cannot prevent an App/model
 exit, prove checkpoint truth/usefulness or verify effective research duration.
-Elapsed time plus one stage passes only the mechanical duration gate, not the
-acceptance test. No waiting or fabrication to achieve60 minutes.
+Wall-clock elapsed time plus one stage no longer passes the normal duration
+gate. Use session work-start --question and work-stop --evidence to record actual
+research intervals. Resume preserves closed credit but excludes unfinished
+intervals. Normal finish requires3600 confirmed seconds and synchronizes the
+memo Segment to ENDED. Legacy receipts remain wall-clock history; do not backfill
+effective time. Declared intervals still need honest independent evidence and
+quality review. No waiting or fabrication to achieve60 minutes. Full contract:
+docs/operations/EFFECTIVE_WORK_ACCOUNTING.md.
 
 ## Acceptance and delivery
 
