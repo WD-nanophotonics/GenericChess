@@ -1,0 +1,30 @@
+{
+  "question": "Among frozen ray/type pairs with no root action, how many expose a matching legal ray action for the reply side after one legal root action?",
+  "summary": {
+    "roots": 8,
+    "pairs": 127,
+    "root_exposed_pairs": 51,
+    "no_root_pairs": 76,
+    "initial_candidate_counts_match_prior_127_pair_capture": true,
+    "all_127_repeated_run_identical": true,
+    "all_pair_first_action_transitions": 2186,
+    "all_pair_reply_terminal_states": 159,
+    "all_pair_reply_states_with_ray_action": 791,
+    "no_root_first_action_transitions": 1266,
+    "no_root_terminal_reply_states": 100,
+    "no_root_live_reply_states": 1166,
+    "no_root_pairs_recovered_at_one_ply": 0,
+    "no_root_live_states_with_ray_action": 0
+  },
+  "interpretation": "On this exact 6x6 classic-like sample, an initial-root action screen and a one-ply reply-action screen admit the same 51/127 absent-ray pairs: none of the 76 root-unexposed pairs became legal in any of 1,166 nonterminal reply states. The outcome does not establish that these pairs remain unavailable at later plies or in other setups.",
+  "limitations": [
+    "One transition only; the reply side's legal action existence is not probability, use, strength or utility.",
+    "No search, outcomes, training or deeper continuations.",
+    "Finite fixed seeds, 6x6 classic-like setups and this direct-ray template only."
+  ],
+  "private_raw_capture": {
+    "path": ".local_agent/research_raw/ray_one_ply_exposure_20261021.json",
+    "sha256": "6124C8D167D1169216DBB91D648FD36A264ACE1930F6922B7C84FD02CE655CE6",
+    "identical_repeat": ".local_agent/research_raw/ray_one_ply_exposure_20261021_repeat.json"
+  }
+}

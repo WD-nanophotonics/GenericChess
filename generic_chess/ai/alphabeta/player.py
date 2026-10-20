@@ -23,11 +23,15 @@ from .tuning import SearchTuning
 
 
 class AlphaBetaPlayer:
-    """Deterministic, rule-derived alpha-beta player for any GenericChess RuleSet.
+    """Deterministic alpha-beta player for supported GenericChess RuleSets.
 
-    The evaluation profile is built once per RuleSet (cached); the
-    transposition table is kept across moves for the same RuleSet and cleared
-    when a different RuleSet is loaded or the caller changes q depth semantics.
+    The built-in rule-derived profile is cached per RuleSet and currently
+    requires square-board legacy movement metadata. Semantic-only or
+    rectangular rulesets use the same search interface with a compatible
+    caller-supplied ``evaluator_override``; the caller then owns evaluation
+    semantics. The transposition table is kept across moves for the same
+    RuleSet and cleared when a different RuleSet is loaded or the caller
+    changes q-depth semantics.
     """
 
     def __init__(

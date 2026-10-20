@@ -14,7 +14,10 @@ from generic_chess import (
     build_western_chess_ruleset,
     compile_ruleset_for_execution,
 )
-from generic_chess.core.declarations import InvalidDeclarationError
+from generic_chess.core.declarations import (
+    InvalidDeclarationError,
+    _available_declarations_position,
+)
 from generic_chess.core.terminal import TerminalResult, TerminalStatus
 from generic_chess.rules.schema import (
     RuleDeclaration,
@@ -129,6 +132,31 @@ def test_assessment_scores_zone_and_hands_without_mutating_position():
     assert position == before
     assert [item.declaration_id for item in available_declarations(_state(compiled, position), compiled)] == ["opaque_claim"]
     assert compiled.ir.capabilities.native_executable is False
+
+
+def test_many_compiled_declarations_keep_order_and_outcomes_for_core_and_search():
+    base = _claim_ruleset()
+    template = base.declarations[0]
+    rules = replace(
+        base,
+        declarations=tuple(
+            replace(template, declaration_id=f"claim_{index}")
+            for index in range(128)
+        ),
+    )
+    compiled = compile_ruleset_for_execution(rules)
+    position = _claim_position(compiled)
+    state = _state(compiled, position)
+
+    public = available_declarations(state, compiled)
+    search = _available_declarations_position(position, state.ply_count, compiled)
+    assert public == search
+    assert [item.declaration_id for item in public] == [
+        f"claim_{index}" for index in range(128)
+    ]
+    assert {(item.actor, item.outcome, item.weighted_score) for item in public} == {
+        (0, "WIN", 7)
+    }
 
 
 def test_threshold_owner_and_failed_declaration_controls():

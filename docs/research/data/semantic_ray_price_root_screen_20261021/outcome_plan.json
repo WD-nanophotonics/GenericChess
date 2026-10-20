@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "question": "On eight fixed synthetic semantic-ray RuleSets where the prior root screen showed 5/8 D1 action changes, does static-v2 candidate-vs-Unit play show a directional outcome signal?",
+  "changed_premise": "Exact privately retained root screen: 8/8 accepted and legal; static-v2 board-only changes the D1 root action in five fixed rules; no outcomes have been measured.",
+  "expected_runtime_minutes": 10,
+  "slots": {"seeds":[202610501,202610502,202610503,202610504,202610505,202610506,202610507,202610508],"games_per_ruleset":2,"candidate_colors":[0,1],"total_games":16,"start":"same fresh initial state and deterministic exposed-ray RuleSet as prior root screen"},
+  "candidate": "static-v2 rule-derived board values only; hand 900/non-anchor; promotion gains 0",
+  "opponent": "Unit board 1000/non-anchor, 0 anchor; hand 900/non-anchor; promotion gains 0",
+  "fixed": {"evaluation":"same default EvaluationConfig","search":"AlphaBetaPlayer; D2; max_nodes=20000 per move; no wall-clock; qdepth/hard/qnodes=0; TT/order/native semantic legality/root tactical all off"},
+  "censoring": {"ply_cap":48,"incomplete_depth":"UNKNOWN, stop game, retain partial event, no fallback submission","fallback_or_illegal":"FAILED, retain event, no retry","ply_cap":"UNKNOWN, never draw","no_contest":"UNRESOLVED/UNKNOWN per existing benchmark adjudication"},
+  "measurements":["per-game outcome/color/plies/terminal/censor","per-move action/depth/nodes/qnodes/stop reason/actor","resolved score overall and by color/ruleset","candidate vs opponent per-move median and total nodes"],
+  "decision_rule":"Exploratory only. A follow-up is justified only if all 16 slots resolve without failure, candidate score >0.5, no ruleset loses both color-swapped games, and candidate median move nodes <= opponent median. Otherwise close this candidate screen. No outcome changes product defaults.",
+  "exclusions":["no training","no resampling","no extra slots","no product/default changes","no claim of general strength or population effect"],
+  "scope":"Fixed 8-rule/16-game bounded follow-up; expected under 120 minutes."
+}

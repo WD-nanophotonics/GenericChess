@@ -1,0 +1,10 @@
+{
+  "question": "For the exact raw-price plateau roots, does bounded-ray extension add any new owner-relative movement edges beyond the legacy atom union?",
+  "changed_premise": "The same selected type showed equal raw capability for max_steps 1 and 2 on seed 202610432, and equal raw capability at 1/2/3 on seed 202610435.",
+  "seeds": [202610432, 202610435],
+  "arms": "Recreate the frozen base and deterministic selected type; compare the owner-relative empty-board source-target edge set from legacy atoms with unioned direct ray max_steps 1, 2, and 3 on the same 6x6 board.",
+  "measurements": ["legacy edge count", "novel edges by max_steps", "marginal newly added edges at each length", "whether newly added edges equal zero on raw-profile plateaus"],
+  "excluded": ["new seeds/types/directions", "occupancy or games", "outcomes/search/training", "value utility/calibration", "default changes"],
+  "interpretation": "Empty-board geometry overlap diagnosis only; no claim about reachable positions or generated distributions.",
+  "expected_duration": "under 2 minutes"
+}

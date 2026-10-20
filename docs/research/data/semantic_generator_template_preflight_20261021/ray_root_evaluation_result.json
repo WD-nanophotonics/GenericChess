@@ -1,0 +1,20 @@
+{
+  "question": "Does a blocked direct ray alter live initial evaluation and through which terms?",
+  "roots": [
+    {"seed": 202610431, "chosen_type": "X", "raw_capability_delta": 1.4986501444436868, "raw_median_delta": 0.320590360510029, "board_value_deltas": {"K": 0, "P": -61, "X": 370, "A": -178, "B": -73}, "material_delta_by_owner": {"0": -498, "1": -498}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610432, "chosen_type": "X", "raw_capability_delta": 1.0320233647678245, "raw_median_delta": 0.0228131254539092, "board_value_deltas": {"K": 0, "P": -7, "X": 611, "A": -7, "B": -21}, "material_delta_by_owner": {"0": 513, "1": 513}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610433, "chosen_type": "B", "raw_capability_delta": 1.4973790629478057, "raw_median_delta": 0.748689531473903, "board_value_deltas": {"K": 0, "P": -21, "X": -138, "A": -121, "B": 121}, "material_delta_by_owner": {"0": -264, "1": -264}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610434, "chosen_type": "B", "raw_capability_delta": 1.497803816868848, "raw_median_delta": 0.748901908434424, "board_value_deltas": {"K": 0, "P": -46, "X": -168, "A": -246, "B": 168}, "material_delta_by_owner": {"0": -600, "1": -600}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610435, "chosen_type": "X", "raw_capability_delta": 0.7389249985719166, "raw_median_delta": 0.369462499285958, "board_value_deltas": {"K": 0, "P": -11, "X": 81, "A": -81, "B": -108}, "material_delta_by_owner": {"0": -363, "1": -363}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610436, "chosen_type": "X", "raw_capability_delta": 1.5072526464420988, "raw_median_delta": 0.753626323221049, "board_value_deltas": {"K": 0, "P": -115, "X": 215, "A": -215, "B": -652}, "material_delta_by_owner": {"0": -2209, "1": -2209}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610437, "chosen_type": "B", "raw_capability_delta": 1.4968401997993261, "raw_median_delta": 0.748420099899663, "board_value_deltas": {"K": 0, "P": -50, "X": -218, "A": -113, "B": 113}, "material_delta_by_owner": {"0": -518, "1": -518}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0},
+    {"seed": 202610438, "chosen_type": "X", "raw_capability_delta": 1.5002341815038687, "raw_median_delta": 0.453768515244382, "board_value_deltas": {"K": 0, "P": -166, "X": 341, "A": -156, "B": -121}, "material_delta_by_owner": {"0": -1209, "1": -1209}, "dynamic_mobility_delta_by_owner": {"0": 0, "1": 0}, "other_dynamic_delta_by_owner": {"0": 0, "1": 0}, "production_score_delta": 0}
+  ],
+  "aggregate_profile_board_value_delta_by_type": {"K": 0, "P": -477, "X": 1094, "A": -1117, "B": -573},
+  "aggregate_material_delta_by_owner": {"0": -5148, "1": -5148},
+  "aggregate_dynamic_mobility_delta_by_owner": {"0": 0, "1": 0},
+  "aggregate_production_score_delta": 0,
+  "validation": "Each decomposed base/ray component sum equaled the production Evaluator return; two executions were byte-identical.",
+  "interpretation": "The profile change altered both the selected type and other normalized type prices, but symmetric initial boards canceled the net side-to-move score. Dynamic mobility did not change on these blocked-ray roots. This is a score-component diagnostic, not utility/calibration evidence.",
+  "limitations": "Default production Evaluator at eight symmetric initial roots only; no move submission, search, outcomes, training or utility claim."
+}

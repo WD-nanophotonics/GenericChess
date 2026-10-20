@@ -1,0 +1,10 @@
+{
+  "question": "When the frozen direct ray has no legal initial action, does its static geometry price still change the production evaluator's initial-root score, and which terms account for the delta?",
+  "changed_premise": "Source tracing shows `Evaluator.evaluate` always adds `board_value_by_type`; dynamic mobility separately uses current-state attack maps. The ray screen had zero legal candidates but changed profile values on all roots.",
+  "seeds": [202610431, 202610432, 202610433, 202610434, 202610435, 202610436, 202610437, 202610438],
+  "arms": "For each frozen base and exact preregistered owner-relative ray (1,0), 1..3, compile through existing execution boundary; compare initial GameSession states using each arm's default EvaluationConfig/profile. Decompose per-owner material, dynamic mobility, anchor escape/check and promotion-potential terms using the same production formulas.",
+  "measurements": ["base and ray-arm initial evaluation", "board-material contribution difference", "dynamic mobility term difference", "anchor-escape/check term difference", "promotion-potential term difference", "arithmetic reconciliation to total score delta"],
+  "excluded": ["submitting moves", "games/outcomes", "search", "training", "utility claim", "default changes", "resampling"],
+  "interpretation": "One fixed setup family and initial state. Quantifies scorer coupling only; a score change does not establish better play or calibrated prices.",
+  "expected_duration": "under 2 minutes"
+}

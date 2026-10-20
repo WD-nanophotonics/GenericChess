@@ -1,0 +1,20 @@
+{
+  "question": "Why did the eight frozen direct-ray roots have zero semantic candidates while the soft filters passed?",
+  "roots": [
+    {"seed": 202610431, "type": "X", "sources": 2, "first_blockers": ["e6:owner0:B", "b1:owner1:B"], "semantic_candidates": 0, "opening_filter": "15 legal moves; pass"},
+    {"seed": 202610432, "type": "X", "sources": 2, "first_blockers": ["e6:owner0:B", "b1:owner1:B"], "semantic_candidates": 0, "opening_filter": "12 legal moves; pass"},
+    {"seed": 202610433, "type": "B", "sources": 4, "first_blockers": ["c6:owner0:K", "f6:owner0:A", "a1:owner1:A", "d1:owner1:K"], "semantic_candidates": 0, "opening_filter": "8 legal moves; pass"},
+    {"seed": 202610434, "type": "B", "sources": 4, "first_blockers": ["c6:owner0:K", "f6:owner0:A", "a1:owner1:A", "d1:owner1:K"], "semantic_candidates": 0, "opening_filter": "10 legal moves; pass"},
+    {"seed": 202610435, "type": "X", "sources": 2, "first_blockers": ["e6:owner0:B", "b1:owner1:B"], "semantic_candidates": 0, "opening_filter": "8 legal moves; pass"},
+    {"seed": 202610436, "type": "X", "sources": 2, "first_blockers": ["e6:owner0:B", "b1:owner1:B"], "semantic_candidates": 0, "opening_filter": "22 legal moves; pass"},
+    {"seed": 202610437, "type": "B", "sources": 4, "first_blockers": ["c6:owner0:K", "f6:owner0:A", "a1:owner1:A", "d1:owner1:K"], "semantic_candidates": 0, "opening_filter": "16 legal moves; pass"},
+    {"seed": 202610438, "type": "X", "sources": 2, "first_blockers": ["e6:owner0:B", "b1:owner1:B"], "semantic_candidates": 0, "opening_filter": "25 legal moves; pass"}
+  ],
+  "summary": {
+    "all_selected_sources_blocked_at_first_step": true,
+    "roots_with_semantic_candidates": 0,
+    "opening_move_filter_passes": 8,
+    "explanation": "The default filter checks aggregate opening legal-action count (1..256), not a semantic action's contribution. It passes on other legacy opening moves."
+  },
+  "limitations": "Root-specific occupancy explanation only; it does not test post-move reachability or characterize other setup families."
+}

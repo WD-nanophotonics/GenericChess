@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-10-20T20:50:22.010817+00:00",
+  "seeds": [
+    202610401,
+    202610402,
+    202610403,
+    202610404,
+    202610405,
+    202610406,
+    202610407,
+    202610408
+  ],
+  "results": [
+    {
+      "seed": 202610401,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610402,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610403,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610404,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610405,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610406,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610407,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    },
+    {
+      "seed": 202610408,
+      "exception": "AttributeError",
+      "message": "'CompiledSemanticRuleset' object has no attribute 'piece_types'"
+    }
+  ],
+  "summary": {
+    "roots_with_candidate": 0,
+    "successful_aux_transitions": 0,
+    "exceptions": 8,
+    "games_run": 0,
+    "searches_run": 0,
+    "training_updates": 0
+  }
+}

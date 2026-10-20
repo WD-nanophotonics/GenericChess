@@ -1,0 +1,10 @@
+{
+  "question": "For the frozen 127 ray pairs, how much of the selected type's normalized price delta is attributable to raw capability change versus the roster-median shift?",
+  "changed_premise": "All 127 pairs raised selected normalized price, while normalization lowered many non-selected type prices; profile.py normalizes raw capability by the median of ordinary types.",
+  "roots_and_pairs": "Reuse the exact fixed 8 roots and 127 eligible type-direction pairs from ray_pair_novelty_price_plan.json; no resampling.",
+  "counterfactual": "Compute the new selected type's normalized board value using its ray-arm raw capability but holding the base arm's normalization median fixed. Compare that delta with actual profile delta; their difference is the median-shift contribution under this decomposition.",
+  "measurements": ["base/ray selected raw capability", "base/ray roster median", "actual normalized selected price delta", "held-base-median counterfactual delta", "median-shift contribution", "other-type normalized delta signs"],
+  "excluded": ["new seeds/templates", "outcomes/search/training", "utility claim", "default changes"],
+  "interpretation": "Algebraic attribution for this finite profile and roster; the counterfactual is not an alternative calibrated evaluator.",
+  "expected_duration": "under 2 minutes"
+}

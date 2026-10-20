@@ -1,0 +1,10 @@
+{
+  "question": "Do movement-edge plateaus explain the fixed roots' raw-capability plateaus?",
+  "roots": [
+    {"seed": 202610432, "selected_type": "X", "legacy_edges": 180, "ranges": [{"max_steps": 1, "novel_edges": 60, "marginal_edges": 60, "raw_delta": 0.7406845238095237}, {"max_steps": 2, "novel_edges": 60, "marginal_edges": 0, "raw_delta": 0.7406845238095237}, {"max_steps": 3, "novel_edges": 96, "marginal_edges": 36, "raw_delta": 1.0320233647678245}]},
+    {"seed": 202610435, "selected_type": "X", "legacy_edges": 324, "ranges": [{"max_steps": 1, "novel_edges": 60, "marginal_edges": 60, "raw_delta": 0.7389249985719166}, {"max_steps": 2, "novel_edges": 60, "marginal_edges": 0, "raw_delta": 0.7389249985719166}, {"max_steps": 3, "novel_edges": 60, "marginal_edges": 0, "raw_delta": 0.7389249985719166}]}
+  ],
+  "conclusion": "Every exact raw plateau from range 1->2 or 2->3 had zero marginal owner-relative source-target edges. Seed 202610432 range 3 adds 36 edges; seed 202610435 adds no new edges beyond range 1 because the base atom union already overlaps all additional range-2/3 destinations.",
+  "validation": "Two runs byte-identical; computed via empty_mobility for both owners on all 36 source squares.",
+  "limitations": "Only two fixed raw-plateau roots and their selected type; geometry edge overlap is not position reachability, profile utility or a generic law."
+}

@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed_before_measurement",
+      "failure": "TypeError: EvaluationProfileCache.get_or_build() takes 3 positional arguments but 4 were given",
+      "cause": "The exploratory harness passed EvaluationProfileCache where build_ruleset_profile expects the distinct MovementCapabilityCache protocol.",
+      "impact": "No seed result was emitted; this is a harness API mismatch, not a scientific negative.",
+      "correction": "Call build_ruleset_profile with its required compiled ruleset and EvaluationConfig only; fixed seeds, selection, semantic template and registered measurements stayed unchanged.",
+      "rerun": "direct_geometry_profile_probe.py"
+    },
+    {
+      "attempt": 2,
+      "status": "scientific_rows_completed_artifact_comparison_failed",
+      "failure": "exact JSON comparison failed because the hand-authored result artifact had a top-level limitations field that the probe output did not yet emit; all seed rows and summary matched",
+      "impact": "No scientific measurement changed; producer, seeds, selection and template were unchanged.",
+      "correction": "Make the probe emit the same limitations field, rerun twice and compare against the saved JSON.",
+      "rerun": "direct_geometry_profile_probe.py"
+    },
+    {
+      "attempt": 3,
+      "status": "completed_and_exactly_matched",
+      "result": "direct_geometry_profile_result.json"
+    }
+  ]
+}

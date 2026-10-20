@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "operation": "Initial compile/run of direct_ray_profile_probe.py",
+      "result": "SyntaxError: missing closing parenthesis in eligible-type comprehension.",
+      "resolution": "Fixed only syntax; seed list, deterministic selector, action template and measurements unchanged."
+    },
+    {
+      "attempt": 2,
+      "operation": "Ad-hoc initial-board blocker diagnosis",
+      "result": "SyntaxError: missing closing parenthesis in diagnostic eligible-type comprehension.",
+      "resolution": "Rewrote the bounded read-only diagnostic with a multiline condition and then checked compiled owner-relative geometry paths against board occupancy."
+    },
+    {
+      "attempt": 3,
+      "operation": "Determinism check of ray_direction_exhaustion.py",
+      "result": "Two executions produced identical output; 127 eligible type-direction pairs, 51 with initial semantic candidates, 8/8 roots with at least one candidate pair, no opening-filter failures.",
+      "resolution": "None required. Compact result stored in ray_direction_exhaustion_result.json."
+    }
+  ]
+}

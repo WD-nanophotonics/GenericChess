@@ -1,0 +1,16 @@
+{
+  "question": "How do ray max_steps 1/2/3 affect static raw capability, normalized price and initial candidate exposure?",
+  "roots": [
+    {"seed": 202610431, "type": "X", "ranges": [{"max_steps": 1, "raw_delta": 0.7399, "type_value_delta": 107, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2077, "type_value_delta": 269, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.4987, "type_value_delta": 370, "candidate_actions": 0}]},
+    {"seed": 202610432, "type": "X", "ranges": [{"max_steps": 1, "raw_delta": 0.7407, "type_value_delta": 432, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 0.7407, "type_value_delta": 432, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.032, "type_value_delta": 611, "candidate_actions": 0}]},
+    {"seed": 202610433, "type": "B", "ranges": [{"max_steps": 1, "raw_delta": 0.739, "type_value_delta": 64, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2065, "type_value_delta": 100, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.4974, "type_value_delta": 121, "candidate_actions": 0}]},
+    {"seed": 202610434, "type": "B", "ranges": [{"max_steps": 1, "raw_delta": 0.7392, "type_value_delta": 90, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2068, "type_value_delta": 139, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.4978, "type_value_delta": 168, "candidate_actions": 0}]},
+    {"seed": 202610435, "type": "X", "ranges": [{"max_steps": 1, "raw_delta": 0.7389, "type_value_delta": 81, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 0.7389, "type_value_delta": 81, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 0.7389, "type_value_delta": 81, "candidate_actions": 0}]},
+    {"seed": 202610436, "type": "X", "ranges": [{"max_steps": 1, "raw_delta": 0.7487, "type_value_delta": 120, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2162, "type_value_delta": 181, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.5073, "type_value_delta": 215, "candidate_actions": 0}]},
+    {"seed": 202610437, "type": "B", "ranges": [{"max_steps": 1, "raw_delta": 0.7388, "type_value_delta": 60, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2062, "type_value_delta": 94, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.4968, "type_value_delta": 113, "candidate_actions": 0}]},
+    {"seed": 202610438, "type": "X", "ranges": [{"max_steps": 1, "raw_delta": 0.7419, "type_value_delta": 150, "candidate_actions": 0}, {"max_steps": 2, "raw_delta": 1.2094, "type_value_delta": 252, "candidate_actions": 0}, {"max_steps": 3, "raw_delta": 1.5002, "type_value_delta": 341, "candidate_actions": 0}]}
+  ],
+  "summary": {"roots": 8, "raw_delta_non_decreasing_with_range": 8, "selected_type_value_delta_non_decreasing": 8, "roots_with_any_opening_ray_candidate_for_ranges_1_2_3": 0},
+  "interpretation": "On this fixed setup, longer bounded rays generally add more empty-board capability and selected-type price, with plateaus when their destinations add no new capability. The blocked horizontal ray stays absent from the initial legal actions for all three lengths.",
+  "limitations": "Same 8 roots, deterministic type selector and horizontal owner-relative ray; no post-move play, outcomes, search, calibration or utility evidence. Rounded summaries; full-precision values are reproducible from the probe."
+}

@@ -2630,8 +2630,258 @@ does not refute the distinct complete static-v2 candidate evidence. Next select
 a different rule-price transfer consumer from existing evidence; require a
 changed premise and a decision-changing contrast before running another panel.
 
-## 2026-10-21 qsearch capture-order result; qsearch leaf-value question selected
+## 2026-10-21 qsearch capture-order and q-leaf panels closed
 
 The fixed 64-game qsearch capture-order panel is closed: static-v2 capture-order values were exercised, but only 2/692 common candidate states changed action, the conservative utility bounds crossed zero for pooled and both-owner views, and median paired candidate-node reduction was zero. Both predeclared retention gates failed. No defaults or product code changed. Full frozen inputs and outcomes are in STATIC_QSEARCH_CAPTURE_ORDER_UTILITY_20261021.md and data/static_qsearch_capture_order_utility_20261021/; do not rerun this consumer.
 
-A distinct one-root feasibility probe found that changing only qsearch stand-pat leaf prices can change the selected root action while preserving Unit main-search leaf evaluation and ordering. This has no outcome evidence. Next, pre-register a separate under-120-minute paired panel on disjoint generated rules, fixing the opponent, normal ordering, main-search leaf values and all search limits; vary only qsearch leaf prices (Unit versus static-v2). Preserve UNKNOWN and full histories. Run only after the frozen plan, producer isolation and replay checks are bound by a preflight; adopt no price/default from the feasibility probe alone.
+A distinct qsearch stand-pat leaf-only panel is now complete; its evidence is in [STATIC_QSEARCH_LEAF_PRICE_UTILITY_20261021.md](STATIC_QSEARCH_LEAF_PRICE_UTILITY_20261021.md) and `data/static_qsearch_leaf_price_utility_20261021/`. Static-v2 reduced median candidate nodes by 68.65% and candidate caller time from 13.068s to 6.119s, but the conservative utility interval crossed zero overall and several owner/role/seed views had negative lower bounds. Both preregistered retention gates failed. Keep this consumer out of defaults; do not repeat or top up these seeds.
+
+The optional Python `StagedMovePicker` ordering route is closed. The existing
+`STATIC_STAGED_CAPTURE_ORDER_UTILITY_20261021.md` panel exercised capture-order
+changes on 8 fresh rules and failed both utility and cost gates; the existing
+`STATIC_STAGED_PROMOTION_ORDER_UTILITY_20261021.md` panel changed 12 promotion
+target orders but changed 0/27 comparable candidate actions and failed both
+gates. These reports already answered the earlier claim that promotion ordering
+was untested. A later outcome-free preflight on disjoint seeds 622123–622130
+found zero visited value-hook, root-order, or candidate-action changes among 24
+searchable owner contexts; 8/32 contexts were checkmate before search, and four
+arm calls returned immediate root wins before ordering. This supplemental screen
+does not reopen the consumer or support another panel. Its exact records are in
+`STATIC_STAGED_ORDER_FEASIBILITY_20261021.md` and
+`data/staged_move_picker_order_feasibility_20261021/`. Keep the staged picker
+opt-in and make no price/default change.
+
+This corrects the stale next-action selection: prior staged capture and
+promotion utility reports were present but not reconciled before the new
+preflight was selected. Do not repeat default or staged capture/promotion
+ordering, or any closed qsearch/hand/5x5 role panel. Resume the unfamiliar-rule
+search caller map from one concrete uncovered contract; if a price-transfer
+route is reconsidered, first require a reachable same-rule action/outcome
+contrast that changes a specific selection. No such contrast is currently
+identified.
+
+## Semantic-only AlphaBeta default-profile caller boundary — 2026-10-21
+
+The caller audit confirms that semantic-only compiled rulesets are searchable
+through the public AlphaBeta interface when a compatible `evaluator_override`
+is supplied. The built-in profile guard deliberately rejects them before cache
+access because the semantic opportunity projection is not an adopted default
+price model. Existing product tests cover both the actionable rejection and
+the override search path. The class docstring's old “any GenericChess RuleSet”
+phrase overstated this boundary and has been corrected; focused contract tests
+pass. See `ALPHABETA_SEMANTIC_ONLY_PROFILE_CONTRACT_20261021.md`. No search,
+evaluation, API, or default change follows. This establishes the current caller
+contract, not default-price coverage of the complete generated domain. Continue
+the caller map only for a distinct concrete unmet contract; generator coverage
+of semantic actions/auxiliary slots is separate and cannot be repaired by
+repeating the legacy generator sample.
+
+## Native generated semantic-action coverage — 2026-10-21
+
+Source audit in
+[`GENERATED_SEMANTIC_ACTION_GENERATOR_COVERAGE_20261021.md`](GENERATED_SEMANTIC_ACTION_GENERATOR_COVERAGE_20261021.md)
+confirms the current stochastic `GeneratorConfig` / `generate_game` producer
+cannot emit semantic actions or auxiliary slots: it builds the legacy
+movement/promotion/drop substrate and uses the legacy compiler. The semantic
+opening filter and authored/manual-composition examples do not supply a random
+generation path. This is a support-scope limitation, not a demonstrated search
+or evaluation defect; legacy generated measurements remain scoped and seed
+expansion cannot repair absent operators.
+
+A one-template feasibility screen now reuses each fresh generated non-promotable
+type's emitted leap/ray family and adds a guarded persistent bool write. All
+eight 6x6 roots (202610401–408) exposed 1–6 such semantic actions; one legal
+submission per root changed aux state and recorded one history action. No games,
+search, price or training ran. The first harness attempt incorrectly passed the
+lower-level `CompiledSemanticRuleset` to the filter; source tracing corrected
+the harness to use `compile_ruleset_for_execution`, preserving the failed
+attempt. This supports one scoped template's feasibility, not utility or
+complete grammar coverage.
+
+Carry an **opt-in typed semantic-template profile** over generated legacy
+substrates as the smallest feasible extension. The first movement-plus-persistent-
+bool template is technically feasible. Define and report supported template
+families and sampling weights before implementation; preserve default seed
+outputs and compile through `compile_ruleset_for_execution` only when opted in.
+Do not claim complete-DSL coverage from a finite template catalogue. Next
+resolve the concrete rule-mechanism families needed by a decision-changing
+unfamiliar-rule search or price contrast, then select minimum versioned support;
+no broad grammar or default change is justified by this audit alone. Keep the
+legacy `GeneratedGame.compiled_ruleset` contract intact: semantic compilation
+returns a distinct type and existing session/search consumer annotations are
+legacy-shaped. Any prototype should use an explicit semantic-result path and
+qualify one intended consumer before widening shared APIs.
+
+The first history-aware follow-up keeps action-template coverage, ruleset history,
+and executor capability as separate axes. An AST/dataclass comparison found all
+nine history/terminal fields absent from `GeneratorConfig`; the producer fixes
+repetition limit 4, max ply 512 and draw stalemate, while other policies inherit
+schema defaults. A fixed-seed mixed-action probe compiled six one-at-a-time
+history variants: repetition policy/limit and max-ply stayed Native-capable;
+automatic adjudication, pass adjudication, repeated-cycle targeting and
+no-progress draw were Core-executable but Native-incompatible. A first-ply
+automatic policy also executed with the semantic action through `GameSession`,
+mutating aux and appending history before its NO_CONTEST result. Evidence and
+limits are in the generator-coverage report and its `history_profile_probe.py` /
+`.json` data. This does not test every policy's behavior, utility or all-rule
+combinations. Any first opt-in profile must explicitly pin/sample a history
+stratum and label its backend; do not let the eight-root action construction
+screen stand in for full generated-domain support.
+
+The same fixed-seed mixed result is accepted by the existing public AlphaBeta
+consumer without API changes: the default profile builds and a depth-1 search
+returns a legal action with the three semantic root candidates present. But its
+static profile values for pieces/board/hand/promotion equal the legacy base even
+though fingerprints differ. This sample's slot-guarded `set_bool` action is
+excluded by `profile_movement_atoms`, which falls back to legacy atoms; default
+search acceptance therefore does not establish semantic price/utility coverage.
+Dynamic Core attack-map terms were not compared for full-score equivalence.
+Treat this as a legal search-integration smoke, not a price result or product
+defect. A future value comparison must declare an evaluator that represents the
+relevant state/effect, or narrow its claim to search execution/cost.
+
+Two additional direct-geometry screens separate static priceability from
+realized opening actions. A fresh direct leap was legal on 8/8 roots and changed
+the static board value on 6/8; a fresh owner-relative direct ray changed the
+static value on 8/8 but produced 0/8 opening candidates. Compiled-path tracing
+found the first ray step blocked by a friendly unit at every selected source;
+the aggregate opening-move filter correctly passed on other legal moves. An
+exhaustive absent-ray-direction census on those same roots found 51/127
+type-direction pairs with an initial candidate, all roots represented, but
+only for the opener's forward-relative directions. This shows the existing
+static profile is potential-geometry projection, not realized occupancy,
+frequency, or action-utility pricing. Do not alter filters or defaults. Any
+future opt-in semantic generator claiming opening exposure must jointly screen
+template and setup candidates. Exact plans/results and scope are appended to
+the generator-coverage report; no games, outcome, search, training, or utility
+measurement was performed.
+
+The follow-up default-Evaluator component check found the static profile price
+is consumed as board material, while dynamic mobility is computed separately
+from current attack maps. Adding the blocked ray changed the selected type's
+raw capability and normalized value on every root; median normalization also
+shifted other types' values. The symmetric roots therefore had identical
+material changes for both owners, unchanged dynamic terms, and zero net
+side-to-move score delta on all 8. This validates the scoring path and explains
+the cancellation; it says nothing about utility or an asymmetric material
+position. Keep potential-geometry pricing, realized opening action exposure,
+and outcome utility as distinct claims. No product, evaluator or default
+change follows. Component scripts and exact results are alongside the ray
+screen evidence.
+
+Finally, direct capability attribution reconciled the raw-price increase on
+8/8 roots. The weighted empty-board expected-mobility curve contributed
+10.7437/10.7691 summed raw-score units; coverage was unchanged, reachability
+added 0.0129 on one root, and path-efficiency contributed 0.0126 total. This
+confirms the static price change mostly measures potential density rather than
+new covered squares or opening mobility. Keep that interpretation explicit;
+there is no calibration or utility evidence and no product/default change.
+
+A frozen range sensitivity on the same roots varied only bounded-ray length
+1/2/3. The initial action count remained zero at every length on all roots;
+raw capability and selected-type normalized price were non-decreasing 8/8,
+with plateaus where geometry added no new capability beyond existing atoms.
+This supports keeping range as an explicit template dimension in scoped price
+experiments, not assuming proportional value. It adds no evidence for utility
+or defaults.
+
+An exact owner-relative edge-union trace on the two plateau roots verified the
+cause: every range interval with a raw-score plateau added zero new source-target
+edges. One root gained 60 edges at range 1, zero at range 2, then 36 at range 3;
+the other gained 60 at range 1 and none at ranges 2/3 because its legacy atoms
+already covered those destinations. Thus semantic geometry names/range values
+may differ while the finite-board movement graph is unchanged; any future
+candidate comparison should identify graph novelty rather than count schema
+variants as distinct capability.
+
+The whole frozen 127-pair ray universe aligns graph novelty with static model
+response but not with opening exposure: 127/127 added empty-board edges and
+increased raw and normalized selected-type price, while only 51/127 produced an
+initial semantic action. All 76 non-exposed pairs still raised the potential
+geometry price. Across 508 non-selected type-price entries, normalization
+lowered 303 and left 205 unchanged. Keep potential price, current legal
+exposure and calibrated utility as distinct quantities. This bounded result
+supports a requirement for any future semantic generator: record both
+movement-graph novelty and actual initial-position action exposure; do not use
+one as a proxy for the other. No price/evaluator/default change follows.
+
+The selected-price response has now been decomposed on those same 127 pairs:
+fixed-base-median raw contribution +49,864, roster-median shift −16,444,
+actual selected-value change +33,420. The roster median attenuated 101 pairs,
+left 26 unchanged and amplified none; the normalization membership set stayed
+`{A,B,P,X}` on every root. All 303 non-selected decreases coincided with a
+negative median-shift component. This explains relative-price coupling but is
+not calibration or utility evidence. Exact details are in the generated
+semantic-action coverage report and `ray_median_attribution_result.json`.
+
+A one-ply legal-action census recovered none of the 76 initially unexposed
+pairs in 1,166 live reply states. Replacing only the layout among the three
+existing setup presets preserved the same three-direction root support; these
+presets all keep each owner within two outer ranks. A separate synthetic,
+accepted three-rank fixture exposed 88/127 pairs in all eight directions, but
+the exact paired transition was mixed: 47 pairs gained exposure and 10 lost
+it. Thus setup placement is a distinct coverage axis, not a monotone add-on or
+utility surrogate. Preserve template, type-presence, root exposure and setup
+family as separate fields in any future opt-in generator study. Keep the
+current no-default-change decision.
+
+The concrete consumer check is now complete: a fixed spread-layout RuleSet
+with one added horizontal semantic ray round-trips and completes depth-1 search
+through both the public player and `benchmark_alphabeta --ruleset`; its two ray
+actions each receive a child node in the q0 no-root-scan path. The searched
+result chooses a legacy move, so this establishes interface reachability only,
+not action value. `GeneratorConfig` remains the narrower three-preset legacy
+producer; full serialized RuleSet input already supplies an opt-in authored
+setup/mechanism path. The bounded current-entrypoint map (`cli.play`, `cli.replay`,
+`ai.cli.analyze_ruleset`, `ai.cli.benchmark_alphabeta` and
+`scripts/unfamiliar_search.py`) found authored/imported RuleSet paths and no
+current caller requiring generated semantic synthesis. Its separate generated
+cohort uses four 4x4/6x6 bilateral-random legacy movement configs. Do not widen
+the producer without a named consumer requiring automatic sampling or a
+measured search defect. This answers the caller question; next select a
+different falsifiable search contract with an actual current caller and a
+decision-changing result, outside the closed root-scan/PV/cancellation and ray
+availability panels. Do not repeat those panels or infer utility from
+availability. Evidence: `GENERATED_SEMANTIC_ACTION_GENERATOR_COVERAGE_20261021.md`
+and its serialized search probe result.
+Evidence and limitations: `GENERATED_SEMANTIC_ACTION_GENERATOR_COVERAGE_20261021.md`
+and `data/semantic_generator_template_preflight_20261021/ray_imported_search_probe_result.json`.
+
+## Close semantic-ray board-price outcome screen — 2026-10-21
+
+The fixed 8-root D1/q0 screen found legal static-v2-vs-Unit board-price action
+changes on 5/8 rules, but none selected the semantic ray; every changed root move
+was legacy. Its separately preregistered 16-game color-swapped follow-up resolved
+14/16 games (9 wins, 5 losses) and retained two UNKNOWN at the 48-ply cap. All
+371 searched moves completed D2, but resolved results were highly color
+asymmetric (7–1 candidate record as color 0; 2–4 as color 1, plus two UNKNOWN).
+Only one candidate move and three fixed-opponent moves used the new ray, and the
+static candidate changed board prices for the whole roster. The all-slots-
+resolved gate failed. Close this sampled utility screen: no repeat/top-up,
+ray-price claim, evaluator/default change, or population-strength conclusion.
+Exact per-move outputs, limits and censoring are documented in
+SEMANTIC_RAY_STATIC_PRICE_OUTCOME_20261021.md and the adjacent result JSONs.
+Next return to a distinct finite search-contract/budget question with a named
+current caller; do not reopen ray availability or infer utility from action
+sensitivity.
+
+## Semantic declaration root-cost boundary — 2026-10-21
+
+An accepted 1,024-declaration stress RuleSet exposed a redundant full-list ID
+resolution inside the loop that already held each compiled declaration. Direct
+assessment preserved the exact ordered outcome tuple and reduced isolated
+seven-run median cost from 30.450 to 14.463 ms; at 256 declarations it fell from
+4.734 to 3.629 ms. A 128-valid-WIN regression confirms Core/search parity, and
+five fixed-node old/new search pairs at 2/32 declarations plus a fixed-eight-node
+1,024-declaration stress case produced identical actions, scores and node stats.
+The normal Standard Shogi caller has only two
+declarations and returned legal depth-1 actions in a seven-run 20 ms probe
+(19.783 ms median). Thus this is a concrete
+high-cardinality cost improvement, not evidence of routine Shogi failure,
+strict-deadline enforcement or game-strength gain. The 1 ms full-search result
+was scheduling-sensitive and is excluded from semantic conclusions. Keep the
+direct-assessment optimization; no rule, product default, evaluator or caller
+behavior changes. Defer cancellation inside a complete declaration sweep or a
+schema count cap until a named caller demonstrates a need, because aborting
+before checking later declarations could miss a valid root WIN. Details and
+limits: `SEMANTIC_DECLARATION_ROOT_COST_20261021.md` and its paired probe data.

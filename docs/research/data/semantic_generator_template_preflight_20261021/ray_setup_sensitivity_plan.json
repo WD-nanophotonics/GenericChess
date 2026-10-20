@@ -1,0 +1,10 @@
+{
+  "question": "With the same eight generated rule genomes and exact 127 ray templates, does initial legal exposure change when only the classic-like setup layout is replaced?",
+  "changed_premise": "On the fixed classic-like layouts, only three forward-relative directions were exposed at root and one-ply continuation recovered none of the other directions.",
+  "fixed": ["rule genome per seed", "8 seeds 202610431-202610438", "127 eligible present-type/direction templates from those source genomes", "6x6 board", "ray steps 1..3", "target empty", "augment composition", "own_anchor_safe invariant"],
+  "layout_variants": ["bilateral_random", "free_random"],
+  "layout_selection": "For each root/preset try setup RNG seeds derived deterministically from (source seed, preset, attempt=0..63); accept first layout passing existing generator legacy anchor-safety and opening-legal-move bounds. Do not condition acceptance on ray candidate counts.",
+  "measurements": ["type present in layout", "matching semantic ray legal actions at root", "aggregate direction/type strata", "layout attempts/rejection reasons"],
+  "budget": {"expected_duration": "under 2 minutes", "games": 0, "search": false, "outcomes": 0},
+  "limitations": "A fixed-genome setup sensitivity screen, not samples from the full joint generator distribution or utility. A newly added semantic ray's effect on all other rule acceptance gates is not evaluated."
+}

@@ -1,0 +1,9 @@
+{
+  "attempt_01": {
+    "result": "result-attempt-01-harness-failure.json",
+    "failure": "The producer called compile_semantic_ruleset directly, then passed its lower-level CompiledSemanticRuleset into run_soft_filters. The filter accesses legacy-compatible geometry metadata such as piece_types and empty_mobility, so all eight seeds stopped before action counting with AttributeError: CompiledSemanticRuleset has no attribute piece_types.",
+    "diagnosis": "The product execution boundary is compile_ruleset_for_execution. It wraps CompiledSemanticRuleset as ExecutableSemanticRuleset while retaining the semantic executor and read-only legacy metadata. Existing semantic opening-filter tests use that boundary.",
+    "correction": "Change only the harness compilation call to compile_ruleset_for_execution; keep the seed set, template, outcome fields and decision rule unchanged. Preserve this failure and rerun the same fixed preflight once.",
+    "expectations_changed": false
+  }
+}

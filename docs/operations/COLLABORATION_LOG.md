@@ -5851,3 +5851,22 @@ PRIMARY compared semantic IR geometry projection and its support payload against
 ## 2026-10-21 PRIMARY qsearch capture-order panel
 
 PRIMARY completed a fresh frozen 64-game comparison of static-v2 versus Unit capture-order values in Python AlphaBeta qsearch, holding Unit opponent, main-search leaves and normal ordering fixed. All slots returned (48 terminal, 16 UNKNOWN), with no invalid actions or history mismatches. The utility interval crossed zero overall and for both owners; median paired node reduction was zero; both declared retention gates failed. Static values were exercised broadly but changed only 2/692 same-state candidate actions. The candidate is closed for this finite scope, with no product/default change. A separate one-root feasibility screen showed that isolated qsearch stand-pat leaf values can change a root action, so the next distinct question is a preregistered q-leaf utility comparison, not another q-order panel. Incoming project Chat suggestions about separating ordering exposure from leaf utility were assessed against these controls; no outbound message was sent. DEV_AUX files, state and computation were untouched.
+
+## 2026-10-21 PRIMARY semantic declaration root-cost audit
+
+PRIMARY found and removed a redundant per-declaration identifier rescan in the
+Core/search availability paths. On accepted synthetic RuleSets with 1,024
+distinctly named copies of one Standard Shogi claim, the seven-run isolated
+assessment median fell 30.450→14.463 ms with exact ordered option equality; a
+128-valid-WIN regression covers nonempty outputs. The normal two-claim Shogi
+caller completed depth 1 with legal results in a seven-run 20 ms probe. A
+one-millisecond full-search probe was too short to support output parity or
+strength claims; cooperative budget semantics remain unchanged. Focused tests
+passed 68. No AUX checkout/state or unpublished contribution was accessed,
+changed, duplicated, or integrated; no cross-role coordination was needed.
+Fixed-node search results matched in all five pairs at 2/32/1,024 declarations;
+the 1,024-declaration root stress median was 34.256→16.856 ms. The broader
+static ray-price game gate also failed and remains closed without any
+evaluator/default change. Exact report and data are in
+`docs/research/SEMANTIC_DECLARATION_ROOT_COST_20261021.md` and
+`docs/research/data/semantic_declaration_root_cost_20261021/`.

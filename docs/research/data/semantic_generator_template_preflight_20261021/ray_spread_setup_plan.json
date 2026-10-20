@@ -1,0 +1,8 @@
+{
+  "question": "Does widening the starting placement by one rank unlock root legal ray actions outside the directions exposed by every current preset?",
+  "changed_premise": "The same 127 ray templates exposed only forward-relative directions across classic_like, bilateral_random and free_random; all current presets occupy only the outer two ranks for each owner.",
+  "fixed": ["same eight classic-like generated rule genomes", "same 127 absent ray/type templates", "6x6 board", "two owners with 12 pieces each", "existing legacy promotion/drop rules", "ray range 1..3 and own-anchor-safe invariant"],
+  "layout": "Construct a deterministic symmetric setup selecting 12 of the 18 rotation-orbit representatives in ranks 0..2, mirrored 180 degrees for owner 1; include one anchor and all four ordinary types. Accept only existing legacy anchor-safety and 1..256 opening-action bounds. Layout selection never conditions on ray exposure.",
+  "budget": {"expected_duration": "under 2 minutes", "games": 0, "search": false, "outcomes": 0},
+  "limitations": "Synthetic three-rank setup fixture, not a supported generator preset or population sample. Root legality only; no utility/default claim."
+}

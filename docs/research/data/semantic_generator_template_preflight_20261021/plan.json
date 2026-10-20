@@ -1,0 +1,10 @@
+{
+  "question": "Can a typed semantic action that reuses an emitted legacy movement family and adds one guarded persistent boolean effect expose a legal auxiliary-bearing action on a fresh generated legacy substrate?",
+  "changed_premise": "The earlier four-rule preflight used a fixed (1,2) compound-action geometry and found no legal compound action. This check instead binds semantic geometry to the generated piece's own leap/ray family and adds a persistent slot guard/write.",
+  "scope": "Eight fresh 6x6 classic-like generated substrates, seeds 202610401 through 202610408. For each, deterministically select one non-anchor, non-promotable generated piece type and one of its emitted leap/ray families; add one augment action with move + set_bool. Compile, count root semantic actions, and submit the first one if present. No search, game outcome, price, training, or seed filtering.",
+  "expected_duration_seconds": 60,
+  "hard_cap_seconds": 1200,
+  "decision_rule": "If no candidate action appears in any of eight roots, do not use this template as a first generator profile. If any appear and one legal submission changes auxiliary state while recording history, the template is feasible as a narrow opt-in prototype only; it does not establish full DSL/domain coverage or utility. Preserve every seed and exception.",
+  "record": ["generator attempts", "selected type/family", "legacy root count", "semantic root count", "filter results", "submitted-action result", "aux-state change", "history length", "exception"],
+  "artifacts": ["producer.py", "result.json"]
+}

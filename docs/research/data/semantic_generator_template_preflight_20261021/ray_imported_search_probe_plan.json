@@ -1,0 +1,13 @@
+{
+  "question": "Does a concrete serialized three-rank unfamiliar-rule fixture with a horizontal semantic ray reach the existing public AlphaBeta consumer without losing legal-action or state/history contracts?",
+  "decision": "If round-trip/import or search fails, identify a concrete integration boundary; if it passes, treat the synthetic spread layout as an opt-in authored ruleset fixture only, not evidence for expanding GeneratorConfig or changing defaults.",
+  "fixed_input": {
+    "generated_base_seed": 202610431,
+    "board_size": 6,
+    "setup": "same deterministic accepted three-rank fixture as ray_spread_setup.py, attempt 0",
+    "semantic_ray": {"type_id": "X", "direction": [1, 0], "min_steps": 1, "max_steps": 3},
+    "search": {"max_depth": 1, "quiescence_max_depth": 0, "root_tactical": false, "native_legality": false}
+  },
+  "measurements": ["serialized RuleSet round-trip equality", "compiled ruleset identity", "root ray-action list", "public AlphaBeta action/PV legality", "caller GameSession state/history unchanged"],
+  "stopping_rule": "One fixture; no game/outcome panel, no timing sweep, no defaults or product changes."
+}

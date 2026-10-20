@@ -1,0 +1,16 @@
+{
+  "seeds": [202610431, 202610432, 202610433, 202610434, 202610435, 202610436, 202610437, 202610438],
+  "template": "unguarded direct ray (1,0), steps 1..3, empty target, move effect, own_anchor_safe",
+  "limitations": "Construction and static-profile sensitivity only; not calibrated value, utility, full-domain support or outcome evidence.",
+  "results": [
+    {"seed": 202610431, "selected_type": "X", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 1351, "semantic_board_value": 1721, "board_value_delta": 370, "native_executable": true, "core_executable": true},
+    {"seed": 202610432, "selected_type": "X", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 1456, "semantic_board_value": 2067, "board_value_delta": 611, "native_executable": true, "core_executable": true},
+    {"seed": 202610433, "selected_type": "B", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 927, "semantic_board_value": 1048, "board_value_delta": 121, "native_executable": true, "core_executable": true},
+    {"seed": 202610434, "selected_type": "B", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 864, "semantic_board_value": 1032, "board_value_delta": 168, "native_executable": true, "core_executable": true},
+    {"seed": 202610435, "selected_type": "X", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 1058, "semantic_board_value": 1139, "board_value_delta": 81, "native_executable": true, "core_executable": true},
+    {"seed": 202610436, "selected_type": "X", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 1047, "semantic_board_value": 1262, "board_value_delta": 215, "native_executable": true, "core_executable": true},
+    {"seed": 202610437, "selected_type": "B", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 1187, "semantic_board_value": 1300, "board_value_delta": 113, "native_executable": true, "core_executable": true},
+    {"seed": 202610438, "selected_type": "X", "type_present_at_root": true, "filter_pass": true, "failed_filters": [], "candidate_actions": 0, "profile_contains_novel_ray": true, "legacy_board_value": 841, "semantic_board_value": 1182, "board_value_delta": 341, "native_executable": true, "core_executable": true}
+  ],
+  "summary": {"eligible_roots": 8, "filter_pass_roots": 8, "roots_with_candidate": 0, "profile_contains_novel_ray": 8, "nonzero_board_value_delta": 8, "games": 0, "searches": 0, "training_updates": 0}
+}

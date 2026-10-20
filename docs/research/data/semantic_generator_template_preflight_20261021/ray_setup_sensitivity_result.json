@@ -1,0 +1,29 @@
+{
+  "question": "With the same eight generated rule genomes and exact 127 ray templates, does root legal exposure change when only the setup layout is replaced?",
+  "summary": {
+    "source_rule_genomes": 8,
+    "fixed_type_direction_templates_per_setup_family": 127,
+    "setup_families": 3,
+    "accepted_layouts": {"classic_like": 8, "bilateral_random": 8, "free_random": 8},
+    "layout_rejections": {"anchor_attacked": 9, "opening_move_count": 0},
+    "prior_classic_like_root_capture_mismatches": 0,
+    "repeat_identical": true,
+    "by_setup": {
+      "classic_like": {"present_type_rows": 127, "root_exposed_pairs": 51, "root_unexposed_pairs": 76, "conditional_exposure_given_type_present": 0.4015748031496063},
+      "bilateral_random": {"present_type_rows": 103, "root_exposed_pairs": 42, "root_unexposed_pairs": 85, "absent_type_rows": 24, "absent_type_counts": {"A": 8, "B": 0, "X": 16}, "conditional_exposure_given_type_present": 0.4077669902912621},
+      "free_random": {"present_type_rows": 127, "root_exposed_pairs": 51, "root_unexposed_pairs": 76, "conditional_exposure_given_type_present": 0.4015748031496063}
+    },
+    "direction_pattern": "In every setup family, candidates occur only in the same three owner-relative forward directions (0,1), (1,1), (-1,1); no horizontal/backward direction is exposed. Bilateral's 24 absent-type rows occur among those forward-direction pairs and account for its lower total, without changing the direction support."
+  },
+  "interpretation": "Changing only among these current 6x6 setup presets did not broaden the direction support of root ray actions. The bilateral type-absence stratum lowers total exposure, while conditional exposure among present type rows is similar across presets. Since all three presets still place both owners in the outer two ranks, this is a limited same-genome setup sensitivity result, not evidence about arbitrary setup domains or utility.",
+  "limitations": [
+    "The setup layouts are generated with fixed movement genomes, rather than sampled from the full joint generator including its retry/acceptance process.",
+    "The panel tests root legality only; no games, outcomes, search, training, calibration or utility.",
+    "All current setup presets retain the two-rank placement structure; wider placement distributions remain untested."
+  ],
+  "private_raw_capture": {
+    "path": ".local_agent/research_raw/ray_setup_sensitivity_20261021.json",
+    "sha256": "FAE7B4D821BCD681DED0523E174F27B0DDEF2758CED0C55692FEEC6C6AA43DB9",
+    "identical_repeat": ".local_agent/research_raw/ray_setup_sensitivity_20261021_repeat.json"
+  }
+}

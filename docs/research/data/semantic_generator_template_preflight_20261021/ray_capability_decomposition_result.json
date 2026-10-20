@@ -1,0 +1,17 @@
+{
+  "question": "Which geometry-only capability features drive the bounded raw-price change when adding the blocked direct ray?",
+  "roots": [
+    {"seed": 202610431, "type": "X", "raw_delta": 1.4986501444436868, "weighted_mobility": 1.4960188802083332, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.002631264235354232},
+    {"seed": 202610432, "type": "X", "raw_delta": 1.0320233647678245, "weighted_mobility": 1.0290397135416667, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.002983651226158038},
+    {"seed": 202610433, "type": "B", "raw_delta": 1.4973790629478057, "weighted_mobility": 1.4960188802083332, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.0013601827394715356},
+    {"seed": 202610434, "type": "B", "raw_delta": 1.497803816868848, "weighted_mobility": 1.4960188802083334, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.0017849366605153572},
+    {"seed": 202610435, "type": "X", "raw_delta": 0.7389249985719166, "weighted_mobility": 0.7385416666666667, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.00038333190525041976},
+    {"seed": 202610436, "type": "X", "raw_delta": 1.5072526464420988, "weighted_mobility": 1.4960188802083334, "weighted_coverage": 0, "weighted_reachable_pairs": 0.012857142857142857, "weighted_path_efficiency": -0.001623376623376624},
+    {"seed": 202610437, "type": "B", "raw_delta": 1.4968401997993261, "weighted_mobility": 1.4960188802083332, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.0008213195909924642},
+    {"seed": 202610438, "type": "X", "raw_delta": 1.5002341815038687, "weighted_mobility": 1.4960188802083334, "weighted_coverage": 0, "weighted_reachable_pairs": 0, "weighted_path_efficiency": 0.00421530129553535}
+  ],
+  "aggregate": {"raw_delta": 10.769108415345375, "weighted_mobility": 10.743694661458333, "weighted_coverage": 0, "weighted_reachable_pairs": 0.012857142857142857, "weighted_path_efficiency": 0.012556611029900773},
+  "validation": "Raw-capability formula reconciled to profile raw values on 8/8 roots; duplicate execution byte-identical.",
+  "interpretation": "The empty-board expected-mobility curve accounts for nearly all raw increase; coverage contributes zero, reachability contributes only on one root, and path-efficiency is small. This is feature attribution, not board-position mobility or utility.",
+  "limitations": "Fixed 6x6 classic-like initial-root type selections and one bounded ray geometry; no realized-position or outcome inference."
+}
