@@ -6,61 +6,28 @@ LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current
 policy from dated consultation history. Full pre-cleanup manuals remain at
 Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks.
 
-## Independent mainline and auxiliary controls —2026-10-18
+## PRIMARY patrol, roles and communication —2026-10-20
 
-PRIMARY GPT owns mainline research on sandbox in the original chat. DEV_AUX
-owns sidemission elsewhere. The single DEEPSEEK_AUX uses its isolated worktree
-on codex/deepseek-aux; its existing control chat provides GPT supervision.
-This corrects the mistaken DeepSeekPRIMARY replacement. Mainline remains able
-to implement and publish independently while either auxiliary works.
+PRIMARY_SANDBOX owns the mainline checkout, research clock, sandbox branch and
+publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
+write its files, state, session, memo or unpublished work. This patrol covers
+only PRIMARY mainline research and the existing project Chat.
 
-DeepSeek control source, encrypted key, unique lock and private cycle receipts
-stay in ignored .local_agent/deepseek-runtime in the main checkout. paths.json
-binds the execution worktree; its local role.json binds DEEPSEEK_AUX and its
-publication branch. DeepSeek commands execute only in that bound worktree.
-Start/Stop cannot rewrite mainline rollout/session/memo/consultation flags.
-Separate default auxiliary scheduling from the one-DeepSeek hard process lock:
-never auto-start the other auxiliary; explicit parallel auxiliary work needs
-nonoverlapping task/file claims. No monitoring unrelated processes or AUX writes.
+The existing `genericchess` heartbeat is hourly and stays active at its existing
+frequency. A one-time pause applies only to that inspection and never edits the
+recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
+heartbeat or role resume.
 
-Existing deepseek-control.cmd Start/Stop/Status retains compatibility. Start
-resumes only DeepSeek using its existing private key; Stop cancels only its
-owned process tree. Keep the tracked foreground tool session while running;
-record dead PID/missing receipt as interrupted, never as successful completion.
-An isolated worker uses its own session UUID/start/memo; no clock reset on resume.
-No fourth worker, global provider/security edits, key duplication or new daemon.
-
-The mainline genericchess heartbeat and auxiliary genericchess-deepseek-gpt
-heartbeat are independent and bound to their respective existing control chats.
-Scoped stops pause only the targeted role; whole-project stop must explicitly
-address all roles. Existing DEV_AUX controls remain its own.
-A one-time request to pause the current inspection, including
-"暂停巡检，继续工作", applies to that patrol and does NOT disable or modify the
-recurring heartbeat. Leave its status and settings untouched unless the user
-explicitly asks to pause or turn off the recurring schedule. Keep the research
-segment UUID/UTC clock and role stop flags unchanged; a patrol pause is not a
-role stop. Do not change auxiliary timers or work. The2026-10-19 correction
-reversed the earlier mistake of treating a one-time pause as a schedule change.
-
-At each PRIMARY heartbeat, inspect the existing gc deepseek辅助 chat once:
-threadId 01a14ade-739d-7172-97a4-183ace749529, host local. Use bounded recent
-read_thread turns/tools; expand only for a concrete runtime anomaly. Check loops,
-repeated compaction without progress, approval/tool errors and unrelated framework
-or role drift. Do not dump whole histories into mainline context. Distinguish
-owner-reported repair from verified activation/recurrence; unavailable reads are
-a visibility limit. This replaces optional supervision with a once-per-patrol
-workflow check, not scientific approval. No routine dialogue, auto-restart/stop,
-configuration/state writes or extra executor. Notify only material faults and
-continue mainline work; scientific assessment stays with Slack partners.
-Extract bounded status/summaries and relevant tool snippets before displaying
-the result to mainline context: nested command/event logs can exceed the tool's
-nominal per-item truncation. Never dump an embedded full rollout merely to watch
-another chat; the check itself must not provoke context churn.
-
-Publish keeps its sandbox default; --branch codex/deepseek-aux is accepted ONLY
-from that role-bound checkout. Both routes require clean reviewed commits,
-relevant tests, fast-forward ancestry and complete remote SHA verification.
-Auxiliary review never creates a new mainline consent queue.
+At each hourly PRIMARY patrol, read incoming messages/comments in the existing
+GenericChess Chat and the relevant complete threads once. Preserve the exact
+project-related read in ignored `.local_agent` before evaluating it. Treat Chat
+comments as suggestions unless the user directly confirms a decision. Do not @Dot,
+contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
+All coordination is read-only: do not send consultation messages, @mention anyone
+or solicit a reply. A >=120-minute run still needs its necessity assessment; wait
+for an incoming user Chat message or direct user confirmation before starting it,
+and perform shorter independent work meanwhile. No new channel, sender, worker or
+timer.
 
 ## Start, recovery and memo
 
@@ -79,7 +46,7 @@ NEXT_WORK.md <=20lines/2048 UTF-8 bytes, one each State/Segment/Main/Backup1/
 Backup2/Evidence. Each task has four nonempty fields separated by |:
 question | immediate action | expected evidence | done condition.
 Keep distinct executable tasks and the critical current decision/reason
-(PUBLIC for Dot/Chat access; PRIVATE abandoned). Other current decisions live in
+(PUBLIC for Chat access; PRIVATE abandoned). Other current decisions live in
 AGENTS.md. Replace stale tasks/evidence; shorten detail rather than losing the
 causal relationship. Missing memo is rebuilt from evidence before research.
 
@@ -118,12 +85,11 @@ machine safety and frozen fair-comparison caps remain hard boundaries. Do not
 extend a frozen experiment or erase its failure by renaming seeds/phases.
 Use existing recorders/atomic writes; no new framework merely for receipts.
 Small training is authorized. Estimate the single experiment/run BEFORE starting:
-expected duration <120 minutes needs no prior Dot assessment; >=120 minutes
-(including exactly two hours) first obtains Dot's necessity assessment with the
-question, cost and cheaper alternatives. Continue shorter independent work while
-pending. Do not split a run to evade this rule or confuse it with segment duration.
-This implements the user's2026-10-15 20:31 JST change relayed through Dot and
-subsequently confirmed directly here; the former >1hour rule is superseded.
+expected duration <120 minutes needs no prior assessment; >=120 minutes (including
+exactly two hours) requires the user's necessity assessment before starting. Do not
+send a request or follow-up; read only an incoming user Chat message or direct
+confirmation, and continue shorter independent work meanwhile. Do not split a run to evade this rule or confuse it
+with segment duration. The user's 2026-10-20 direction replaces the former live-review route; the older >1hour threshold is superseded.
 
 Inspect completed result files, not a large report being atomically replaced by
 its producer. A Windows read can block replacement. Monitor producer stdout or
@@ -149,44 +115,22 @@ runtime layout; resume only affected stages when source/data hashes remain
 unchanged. Do not extend experimental caps or rerun frozen fitness to fix a
 qualification harness. Record multi-phase qualification and actual costs honestly.
 
-## Slack consultation and collaboration
+## Chat messages and collaboration
 
-Use docs/operations/SLACK_WORKFLOW.md for exact request/receipt/reconcile commands,
-identity and pagination. Sole channel C0C6L21UU20; PRIMARY_SANDBOX and DEV_AUX
-share the verified account. Labels route messages, not process authentication.
-No per-message challenges. Read new roots plus full relevant/completed threads,
-with pagination coverage. Save exact originals in Git-ignored .local_agent BEFORE
-parsing/reconcile; numeric-looking Slack timestamps are opaque STRINGS. In
-PowerShell quote every --message-ts/--thread-ts argument (for example
-'1234567890.123456'), or pass the exact saved receipt string through structured
-arguments. A bare numeric token can round to five decimals before Python sees
-it, causing a real binding refusal. Never round/repair/rebind the ledger to that
-number or resend; use the exact original receipt/readback. This was reproduced
-on2026-10-17 and resolved with the existing bind_sent helper, without a source
-regex/identity change. The normal SQLite status helper writes WAL and therefore
-needs the same supported project permission as other local-state operations.
-Local raw storage is expressly authorized. Long threads use limit20
-with server cursors: a large response falsely claimed complete while omitting
-replies. Validate actual counts with the existing strict parser before coverage
-claims; preserve refused output and reread exact small pages, never reset/rebind.
+Use `docs/operations/SLACK_WORKFLOW.md` for the active read path and raw-read
+handling. Read new project Chat messages/comments and relevant complete threads
+once per hourly patrol; preserve the exact project-only output privately before
+reconcile or adoption. A suggestion does not override current user policy or
+become user authorization by itself. No @Dot, live exchange, response polling or
+routine acknowledgment. For a >=120-minute run, do not send a question. Wait for an incoming user Chat
+message or direct confirmation before starting; continue shorter independent work.
 
-User-directed inquiries use NEW AGENT_REQUEST/new REQUEST_ID/new thread.
-Evidence-based Agent followups may retain the root with a unique FOLLOWUP_ID.
-Information-only EVIDENCE/RESULT are not new consultation requests. No routine
-acknowledgements or automatic retry/self-reply loops. Reconcile uncertain sends;
-record actual receipt, purpose and duplicate risk before a reasoned recontact.
-Dot silence is not a stop/publication gate. Daily10:00 Tokyo is the main window;
-if no turn is active use its first later continuation, no missed-day catchup.
-One native90-minute same-chat heartbeat resumes without a second writer.
-
-Communicate with existing DEV_AUX only for dependencies, blockers or useful
-results. Do not edit its checkout/state or reproduce its solver/learning lane.
-At completed segments update COLLABORATION_LOG.md with contributions, actual
-coordination, corrections, adoption and limits. Read source/results at a fixed
-revision. Do not call delivery, source review or another Agent's tests independent
-execution. Public repository access enables review; Slack attachments alone do
-not prove whole-repository access. Keep PUBLIC unless a NEW user direction says
-otherwise; PRIVATE rollback history is not a retry procedure.
+Coordinate with the existing DEV_AUX only for concrete dependencies, blockers or
+useful findings. Do not edit its checkout/state or duplicate its solver/learning
+lane. At completed segments update `COLLABORATION_LOG.md` with observed
+contributions, actual coordination, corrections, adoption and limits. Read source
+and results at a fixed revision; distinguish publication from someone reading or
+independently executing the work. Keep the repository PUBLIC for Chat readers.
 
 ## Publication
 

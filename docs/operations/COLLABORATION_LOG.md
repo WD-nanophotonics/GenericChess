@@ -5638,6 +5638,30 @@ computation was read, modified or integrated. The sample is a single generated
 ruleset and a controlled iteration boundary, not a wall-clock or all-domain
 claim. Details: `docs/research/SEARCH_RETAIN_LAST_COMPLETE_ITERATION_20261020.md`.
 
+## PRIMARY_SANDBOX — patrol workflow and action-consumer checks — 2026-10-20
+
+Following the user's current workflow correction, the active policy/manual now
+describe the existing hourly PRIMARY patrol as read-only project Chat intake:
+incoming messages/comments and relevant full threads are read once, raw project
+output is privately preserved, and comments remain advice unless the user
+confirms them. The recurrence was left unchanged; active DeepSeek supervision,
+Dot contact, consultation sends and response polling were removed from the
+PRIMARY patrol. Historical research provenance was retained. This supersedes
+the prior direct-contact and auxiliary-chat-monitoring procedures.
+
+In the independent mainline, two reproduced UI lifecycle omissions are repaired:
+Undo and Redo now cancel the owned in-flight AI token and clear its thinking
+reference while stale-generation checks remain. The five affected controller,
+Qt, declaration, benchmark and search product modules pass from a fresh ignored
+basetemp. A short real Qt action probe confirmed cancellation and exactly one
+replacement worker. A separate test-only AlphaBeta-generated `PassAction`
+consumer regression passes in the benchmark module; the adjacent semantic
+action path was source-closed against the generic `GameSession.submit` contract
+and existing mixed-mechanic replay test. Neither result establishes search
+strength or changes price choices. No DEV_AUX source, checkout, state or
+computation was used; there was no cross-role dependency, disagreement or
+coordination requirement. Evidence and limits: `docs/research/AI_UNDO_REDO_CANCELLATION_20261020.md`.
+
 ## PRIMARY_SANDBOX — commit AI root declarations at the live caller — 2026-10-20
 
 A distinct production consumer audit found that the Python UI worker can receive

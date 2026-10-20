@@ -658,6 +658,8 @@ class UIController:
             self._clock_snapshots.pop()
             if self._clock_snapshots:
                 self._clock.restore(self._clock_snapshots[-1])
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
         self._ai_thinking = False
         self._ai_cancel = None
         self._interaction = BoardInteractionState(
@@ -677,6 +679,10 @@ class UIController:
             mover = (len(self._actions) - 1) % 2
             self._clock.complete_turn(mover)
             self._clock_snapshots.append(self._clock.state())
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
+        self._ai_cancel = None
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )

@@ -7,26 +7,22 @@ operations. Full preceding mainline is preserved at PUBLIC
 with earlier links retaining the causal chain. Historical dated next actions are
 not a backlog. Current tasks/clock are in .local_agent/NEXT_WORK.md.
 
-## Role correction and current ownership —2026-10-18
+## Patrol workflow correction and current ownership —2026-10-20
 
-PRIMARY_SANDBOX is this original GPT mainline again; DeepSeek does not replace it.
-DEV_AUX and DEEPSEEK_AUX are independent auxiliaries on separate branches and
-state. PRIMARY may supervise without surrendering its research/implementation
-role. Auxiliaries normally alternate; explicit nonconflicting parallel work is
-allowed. DeepSeek API execution remains single-instance.
-The mistaken DeepSeekPRIMARY configuration and outputs are preserved privately
-with provenance; its asymmetric-static study belongs to DEEPSEEK_AUX and is
-not a new mainline experiment. Do not rerun its frozen1344games/AUX92/93.
-This mainline resumed explicitly and reassessed the provisional nearest-source
-plan before freezing the distinct complete3328-cell panel described below.
-The separate DeepSeek controller now reports an artificial hand-weight sensitivity
-study; this is owner-reported, not independently executed or adopted here.
+PRIMARY_SANDBOX remains the independent GPT mainline on sandbox. DEV_AUX owns its
+separate sidemission checkout; PRIMARY reads pinned evidence when useful and
+never writes its unpublished work/state. The current PRIMARY patrol is hourly and
+its existing recurrence stays unchanged. Each patrol reads incoming project Chat
+messages/comments and relevant complete threads once. Chat comments are suggestions
+unless the user directly confirms them. No real-time Dot contact or @mention is
+part of this workflow. Prior role/configuration notes remain in earlier Git
+revisions as history, not current patrol instructions.
 
 ## Current incremental choice and evidence —2026-10-18
 
 Explicit resume returns PRIMARY to independent mainline research; role setup is
 complete. Three distinct prospective panels are now CLOSED, with later bounded
-mechanism/input diagnostics. They do not refill old AUX92/93 or DeepSeek work.
+mechanism/input diagnostics. They do not revive archived auxiliary tasks.
 Those three panels changed no product code, generator default, evaluator, optimizer or model. The later checked-submit optimization below changes only Core submission.
 
 [NEW_RULE_PRICE_TRANSFER_20261018.md](NEW_RULE_PRICE_TRANSFER_20261018.md): eight
@@ -592,7 +588,7 @@ PRIMARY supports complete-state backend consumers/transfer comparisons; existing
 DEV_AUX owns learning/solver work in its separate sidemission checkout. No automatic
 merge, duplicate learner or model/default activation. The user's Slack-first
 specific defect plan is CLOSED (SLACK_REVIEW_FIXES_20261015.md), not a halt on
-research. Dot is a partner, not an approval/receipt gate.
+research. Earlier external assessments in this report are historical evidence, not an active contact route.
 
 New fixed AUX92 source3792d83068d5d0e61a0a33ebbf6850b414202c6f was actually
 restored here:205payload hashes,38 owner controls,11 parked/regenerated audits,
@@ -724,11 +720,11 @@ states. Dot's frozen-trajectory credit-conflict diagnostic is advisory and stays
 in AUX's learning lane; no role feature/selfplay rewrite is inferred. Do not redo
 old87-91 reproductions or closed q campaigns without a changed premise.
 
-PUBLIC exists so Dot/Chat can read source and evidence; PRIVATE404 was abandoned.
+PUBLIC exists so project Chat readers can read source and evidence; PRIVATE404 was abandoned.
 Old permission exclusions and visibility plans never revive after compaction.
 Known old publication copies were corrected, not all Git history globally purged.
 All project content sans personalinfo/passwords/credentials remains authorized.
-The <120min autonomous / >=120min Dot assessment threshold supersedes old1hour
+The <120min autonomous / >=120min user-assessment threshold supersedes old1hour
 interpretation; frozen caps, machine safety and separate60-90min work segments
 remain. Preserve current decision/reason/abandoned alternative and executable memo.
 
@@ -794,7 +790,7 @@ color-swapped games with the same node/ply caps. Both arms use the corrected
 dynamic geometry; only profile prices and their derived promotion gain differ.
 The frozen 3,000 s elapsed check is between games: it starts no new game after
 the threshold but does not kill an in-flight game. Expected cost was about
-20 minutes including recording, below the 120-minute Dot-assessment threshold.
+20 minutes including recording, below the 120-minute necessity-assessment threshold.
 The corrected panel completed all 16 paired slots in 985.625 s: 1 win, 4
 losses, 0 draws and 11 UNKNOWN. Independently checked 1,670 move events and
 4,918,610 nodes; no failed games, fallbacks, invalid timings or over-cap nodes.
@@ -2158,3 +2154,58 @@ observed. This is a bounded caller-control repair, not a backend/search change
 or proof for every generated ruleset. See
 `UI_AI_FAILED_ACTION_RETRY_20261020.md`. No additional retry framework or
 alternate backend adapter follows from this one reproducible path.
+
+## Close active UI Undo/Redo search cancellation — 2026-10-20
+
+The menu and Ctrl+Z/Ctrl+Y actions are enabled during an AI turn. Before this
+change, `UIController.undo()`/`redo()` invalidated the worker snapshot generation
+but did not cancel its `CancellationToken`; a late decision was rejected, yet a
+bounded search continued and controller thinking state could disagree with the
+restored turn. A pre-fix controller regression reproduced both omissions.
+Both mutations now cancel any owned token and clear the controller's active
+thinking reference before rebuilding. Generation/root guards still reject late
+results. The five affected controller/UI/declaration/benchmark/search modules
+pass. A short offscreen Qt probe exercised the actual menu actions: after a
+human move, Undo then Redo canceled the old token, discarded its result and
+started exactly one replacement worker; closing canceled that worker. The
+probe used a cooperative test player, so it does not establish AlphaBeta
+cancellation latency or arbitrary backend behavior. No state corruption,
+search-quality or price effect was observed. Details:
+`AI_UNDO_REDO_CANCELLATION_20261020.md`.
+
+The remaining session-replacement calls (`restart`, ruleset load, record load,
+new match) are reached from the GUI only after the window's existing
+cancel-and-bounded-wait path; `_AiThread` always reports completion/error and
+the handler clears its owned thread before retrying the current AI turn. Direct
+controller calls outside these production UI routes are not a promised
+concurrent-worker API. This closes the identified supported mutation paths;
+do not add a general cancellation framework. The searched `DropMove` benchmark
+regression also now reaches the paired-game consumer at its actual third ply,
+with no fallback and the fixed external cap correctly unresolved. These are
+caller/lifecycle contracts, not scientific price or playing-strength evidence.
+
+A separate bounded AlphaBeta root search returns a real, nonfallback
+`PassAction`; a test-only captured-decision adapter then sends it through
+`play_game` and `GameSession.submit`, where the paired-game row records one
+`pass` at ply1 and remains unresolved/eligible at the fixed cap. The first
+runner-self-search attempt selected `b1-b4` under its different iterative
+node-budget policy, so it did not isolate the consumer contract; the corrected
+test reuses the genuine depth-1 search result. All 48 benchmark product tests
+pass. This closes only PassAction consumer coverage: no product defect, search
+policy guarantee under benchmark budgets, strength result or price consequence
+was found. Details are in `AI_UNDO_REDO_CANCELLATION_20261020.md`.
+
+The remaining `SemanticBoardMove`/`SemanticDropMove` variants do not expose a
+separate benchmark dispatch path: `play_game` records `str(action)` and submits
+the `Action` object directly through `GameSession`. Existing mixed-mechanic
+coverage confirms AlphaBeta-generated `SemanticDropMove` application, hand
+transfer and record replay (`test_public_search_preserves_promotion_capture_to_hand_then_drop`;
+focused run passed). An additional semantic-action-only benchmark test would
+repeat the same generic caller transition without distinguishing a backend or
+search-interface choice, so this caller scan is source-closed at that boundary.
+
+Return to the rule-price route only when new reachable same-rule data contains
+an action/outcome contrast that could change a scoped price choice. Otherwise
+continue the generic-search interface map only for a specific uncovered caller
+with a decision-changing consequence; do not manufacture another regression or
+reopen closed routes.

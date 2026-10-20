@@ -450,3 +450,162 @@ def test_alpha_beta_cli_result_buckets_respect_generic_session_outcomes(
 
     result = SessionResult(status, winner=winner)
     assert _result_bucket(result, ai_color=0) == expected
+
+
+def test_benchmark_accepts_search_generated_drop_move_through_game_loop():
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.actions import BoardMove, DropMove
+    from generic_chess.core.coordinates import Square
+    from generic_chess.core.movement import LeapAtom
+    from generic_chess.session.session import GameSession
+    from conftest import king_type, make_compiled, T
+
+    compiled = make_compiled(
+        8,
+        [
+            king_type(),
+            T("P", LeapAtom((0, 1))),
+            T("N", LeapAtom((1, 2)), LeapAtom((-1, 2))),
+        ],
+        auto_drop=True,
+        lines=[
+            ".......k",
+            "........",
+            "........",
+            "........",
+            "..p.....",
+            "........",
+            ".N......",
+            "K.......",
+        ],
+    )
+    setup = GameSession(compiled)
+    opening = [BoardMove(Square(1, 1), Square(2, 3))]
+    setup.submit(opening[0])
+    black_king_move = next(
+        action for action in setup.legal_actions()
+        if getattr(action, "from_square", None) == Square(7, 7)
+    )
+    opening.append(black_king_move)
+    setup.submit(black_king_move)
+    assert dict(setup.state.position.hands[0].counts)["P"] == 1
+
+    class PreferDroppedPawn:
+        def evaluate(self, state):
+            pawn_on_board = any(
+                piece is not None
+                and piece.owner == 0
+                and piece.current_type_id == "P"
+                for piece in state.position.board
+            )
+            return -10_000 if pawn_on_board else 10_000
+
+    decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferDroppedPawn(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    ).choose_action(
+        setup,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=5_000,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+    assert isinstance(decision.action, DropMove)
+    assert decision.action in setup.legal_actions()
+
+    class CapturedSearchDecision:
+        def choose_action(self, _session, _limits):
+            return decision
+
+    candidate = CapturedSearchDecision()
+    control = AlphaBetaPlayer(
+        compiled, use_native_semantic_legality=False, use_disk_cache=False
+    )
+    config = RunConfig(
+        control=profile_by_name("baseline"),
+        candidate=profile_by_name("baseline"),
+        suite=(),
+        seconds=None,
+        nodes=None,
+        max_plies=3,
+    )
+    outcome, events = play_game(
+        compiled, tuple(opening), "captured-hand", "drop-contract", 0,
+        candidate, control, config,
+    )
+
+    assert outcome.result == "unresolved"
+    assert outcome.plies == 3
+    assert not outcome.candidate_fallback
+    assert len(events) == 1
+    assert events[0].action == str(decision.action)
+    assert events[0].ply == 3
+    assert events[0].candidate
+
+
+def test_benchmark_accepts_search_generated_pass_as_one_generic_ply():
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.actions import PassAction
+    from generic_chess.session.session import GameSession
+    from test_generic_pass_action import _compiled
+
+    _, compiled = _compiled(semantic=False, enabled=True)
+    root = GameSession(compiled)
+
+    class PreferPass:
+        def evaluate(self, state):
+            return -10_000 if state.position.board == root.state.position.board else 10_000
+
+        def capture_order_value(self, _moving_piece, _captured_piece):
+            return 0
+
+    searcher = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferPass(),
+        use_disk_cache=False,
+    )
+    control = AlphaBetaPlayer(compiled, use_disk_cache=False)
+    limits = SearchLimits(
+        max_depth=1,
+        max_nodes=10_000,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+    decision = searcher.choose_action(root, limits)
+    assert decision.action == PassAction()
+    assert decision.result_source not in {
+        "fallback", "legal_fallback", "root_scan_fallback"
+    }
+
+    class CapturedSearchDecision:
+        def choose_action(self, _session, _limits):
+            return decision
+
+    candidate = CapturedSearchDecision()
+
+    config = RunConfig(
+        control=profile_by_name("baseline"),
+        candidate=profile_by_name("baseline"),
+        suite=(),
+        seconds=None,
+        nodes=10_000,
+        max_plies=1,
+    )
+    outcome, events = play_game(
+        compiled, (), "pass-root", "pass-contract", 0, candidate, control, config
+    )
+
+    assert outcome.result == "unresolved"
+    assert outcome.plies == 1
+    assert outcome.eligible
+    assert not outcome.candidate_fallback
+    assert len(events) == 1
+    assert events[0].action == "pass"
+    assert events[0].ply == 1
+    assert events[0].candidate

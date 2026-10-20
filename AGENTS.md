@@ -4,72 +4,37 @@ This is the sole active policy. Latest explicit user directions take precedence.
 PRIMARY_SANDBOX is the sole writer/publisher of sandbox in this checkout.
 Never touch alphasho, its audits/tasks, or other projects. Do not spawn/delegate
 Agents, create extra Work/Codex workers, add fees, or run uncontrolled jobs.
-The existing user-established DEV_AUX and single DEEPSEEK_AUX are scoped
-exceptions, not permission to start duplicates. Their separate checkouts and
-branches remain their own. No additional workers may be created.
+DEV_AUX remains an independent, user-established role in its own checkout; do not
+write its files/state or duplicate its assigned work. This PRIMARY patrol covers
+only its own mainline research and the existing project Chat. No additional
+workers may be created.
 
-## Current decisions and their reasons —2026-10-15
+## Current decisions and their reasons —2026-10-20
 
-- User correction2026-10-19: a one-time request to pause/stop the current
-  inspection applies to that inspection only; it does not disable the user's
-  recurring heartbeat. Keep the existing `genericchess` automation active unless
-  the user explicitly asks to pause or turn off the recurring schedule. This
-  supersedes the mistaken interpretation that “pause inspection” requires an
-  automation update. Preserve all role/project stop flags; this clarification
-  changes schedule handling, not the scope or clearing of research stops.
-
-- User correction2026-10-18: THREE existing independent roles. PRIMARY_SANDBOX
-  is the GPT mainline executor in the original mainline chat/checkout on sandbox.
-  DEV_AUX is the original auxiliary in its existing checkout on sidemission.
-  DEEPSEEK_AUX is the sole DeepSeek API executor, controlled/viewed from its
-  existing DeepSeek chat, in its own worktree on codex/deepseek-aux. DeepSeek
-  does NOT replace PRIMARY, and GPT is NOT restricted to supervision. PRIMARY
-  independently researches/implements/tests/publishes mainline work and may
-  supervise either auxiliary when useful. Auxiliaries normally do auxiliary
-  work; a specific mainline exception needs an explicit task/file assignment.
-  This replaces the mistaken DeepSeekPRIMARY/GPT-supervisor-only arrangement.
-- Mainline may run concurrently with either auxiliary. The two auxiliaries
-  normally alternate; explicit user direction permits both only on distinct
-  tasks/inputs/files. This is a default scheduling choice, not a global mutex
-  blocking mainline. At most ONE DeepSeek API execution process is permitted
-  across all worktrees; changing a directory cannot create another executor.
-  No fourth worker, replacement AUX, extra fee scheme or model discussion chain.
-- Each role owns its checkout, branch/index, memo, session clock, stop flags,
-  research outputs and consultation ledger. DeepSeek Start/Stop changes ONLY
-  DeepSeek state. A role-specific stop never stops another role; explicit whole-
-  project stop suspends all roles through their authorized control paths.
-  No automatic clearing of stops. Shared Git objects/account do not share
-  writing authority. Check both relative file claims and duplicate experiments
-  before concurrent work; separate worktrees alone do not prevent merge conflicts.
-- Restore the original genericchess90-minute mainline heartbeat in the original
-  mainline chat. genericchess-deepseek-gpt supervises/continues ONLY DEEPSEEK_AUX
-  from the existing DeepSeek control chat. Existing DEV_AUX automation/state
-  stays untouched. No timer may launch another role or transfer its identity.
-  DeepSeek-related periodic supervision reports actual work/evidence/problems/
-  corrections/next action; no extra progress-writing burden on DeepSeek.
-- User direction2026-10-18: once per PRIMARY heartbeat inspect the existing
-  gc deepseek辅助 chat's recent status/turns/tools for workflow faults: loops,
-  repeated compaction without progress, approval/tool failures, unrelated
-  framework work, duplicate execution or role drift. Prefer bounded read_thread;
-  investigate further only on evidence, without routine dialogue or polling.
-  Distinguish repaired history, pending activation and actual recurrence; an
-  unreadable chat is a visibility limit, not evidence of health. This adds a
-  runtime check to independent mainline work, not scientific review: scientific
-  questions remain Slack discussion. Report material anomalies with evidence and
-  minimal correction advice; do not auto-control DS, edit its state/configuration,
-  or message it. Otherwise remain quiet and continue PRIMARY research.
-- Publish reviewed mainline work to sandbox, original AUX to sidemission, and
-  DeepSeek auxiliary work to codex/deepseek-aux through tested, role-bound
-  publication. PRIMARY integrates selected auxiliary changes deliberately,
-  never automatically. GPT supervision of an auxiliary is not a gate on
-  PRIMARY's own work/publication. PUBLIC, standing upload authority, full
-  semantics, frozen caps and the <120min/>=120min run threshold remain.
-- Keep the existing direct DeepSeek API/Codex runtime and saved private key;
-  no native UI/provider migration or global provider edits in this repair.
-  Old DeepSeekPRIMARY outputs retain original provenance as historical evidence,
-  not instructions to replace mainline again after compaction.
-
-- Keep WD-nanophotonics/GenericChess PUBLIC: Dot/Chat must directly read source
+- User correction2026-10-20: this PRIMARY patrol is hourly. Keep the existing
+  `genericchess` heartbeat and current recurrence unchanged; an hourly interval is
+  intentional. A one-time pause stops only that inspection, not the recurrence.
+  Never edit stop flags unless the user explicitly resumes or stops the scoped
+  work; do not confuse a patrol pause with a research stop.
+- User correction2026-10-20: Dot is no longer an active contact. Do not @Dot,
+  initiate real-time conversations, wait/poll for Dot, or send direct Dot
+  consultations. Read the existing project Chat's incoming messages/comments
+  once per hourly heartbeat, privately save exact project-related reads before
+  assessment, and evaluate suggestions against current user decisions/evidence.
+  For a >=120-minute run requiring the existing necessity review, do not start
+  it until the user supplies the assessment in an incoming project Chat message
+  or confirms directly here. Do not solicit, send or chase a reply; continue
+  shorter independent work meanwhile. Chat comments are advice unless the user
+  directly confirms a decision.
+- User correction2026-10-20: current project communication uses asynchronous Chat
+  messages/comments only. No Dot @mention or real-time exchange. Authorized
+  project-content Git publication to the assigned branch remains distinct from
+  consultation messages.
+- PRIMARY_SANDBOX independently researches, implements, tests and publishes its
+  mainline work; DEV_AUX owns its own sidemission checkout. Each role owns its
+  checkout, branch/index, memo, session clock, stop flags and outputs. Never write
+  another role's files/state or duplicate its unpublished work.
+- Keep WD-nanophotonics/GenericChess PUBLIC: project Chat readers must directly read source
   and evidence. PRIVATE failed connected access with404 and was abandoned. A
   later Agent wrongly reused old permission; PUBLIC was restored and anonymous
   API access verified. Only a NEW explicit user direction can change visibility.
@@ -130,11 +95,9 @@ content boundary and is not an alternative to the current PUBLIC decision.
 
 ## Agent and branch ownership
 
-The checkout-local ignored .local_agent/role.json selects the active role and
-branch. In the isolated DeepSeek worktree, all recovery/session/stop/memo and
-publication commands refer to DEEPSEEK_AUX's own checkout and branch, never the
-parent PRIMARY state. Descriptions of this original mainline do not transfer
-its identity to a copied worktree. Stop any mismatched role/branch operation.
+The checkout-local ignored `.local_agent/role.json` selects the active role and
+branch. This policy applies only to this PRIMARY checkout and branch; stop any
+mismatched role/branch operation.
 
 PRIMARY delivers tested backend changes on sandbox. DEV_AUX independently owns
 its solver/verifier/cursor/runtime/learning work on sidemission; read pinned
@@ -143,14 +106,13 @@ memo, computation or unpublished work. No automatic merge or competing solver.
 Neither Agent maintains/publishes UI Test; the user maintains it elsewhere.
 Backend activation/compatibility: docs/operations/BACKEND_HANDOFF.md.
 
-Use fixed AGENT_ID=PRIMARY_SANDBOX / DEV_AUX / DEEPSEEK_AUX and RECIPIENT labels. The
-shared Slack account does not cryptographically authenticate separate processes;
-do not invent per-message identity challenges. Coordinate for actual dependencies,
-blockers or decision-changing evidence, not routine acknowledgements. At completed
-segments update docs/operations/COLLABORATION_LOG.md with both contributions,
-coordination, disagreements/corrections, adoption reasoning, efficiency evidence/
-limits and unresolved issues. Publish checked summaries and send Dot a fixed-SHA
-link. Do not claim another Agent's work was independently rerun without doing so.
+Use only the existing PRIMARY_SANDBOX and DEV_AUX role labels. Coordinate across
+the Chat only for actual dependencies, blockers or decision-changing evidence,
+not routine acknowledgements. At completed segments update
+`docs/operations/COLLABORATION_LOG.md` with observed contributions, coordination,
+disagreements/corrections, adoption reasoning, efficiency evidence/limits and
+unresolved issues. Do not claim another Agent's work was independently rerun
+without doing so.
 
 ## Recovery, stops and effective work
 
@@ -208,16 +170,14 @@ Use information per total cost (including engineering/recording overhead), not
 universal development caps. Choose a falsifiable decision-changing question;
 record changed premise, potential outcomes, incremental cost and scope. Small
 local training is authorized. A single project experiment/run expected to take
-LESS THAN TWO HOURS needs no prior Dot assessment. If expected duration is
-TWO HOURS OR MORE (>=120 minutes, including exactly120), submit it to Dot for
-necessity assessment BEFORE starting, with question/cost/cheaper alternatives.
-Pending that assessment, do shorter independent work; do not split to evade it.
-The user changed this threshold on2026-10-15 at20:31 JST through Dot, then
-directly confirmed that change in this chat. This supersedes the old >1hour
-threshold and the mistaken decision to retain it as a stricter local instruction.
-A relayed user decision is distinct from ordinary CHAT_Comments advice; current
-direct confirmation resolves this case. This is separate from Agent segment
-duration and grants no uncontrolled jobs; safety and frozen caps still apply.
+LESS THAN TWO HOURS needs no prior assessment. If expected duration is TWO HOURS
+OR MORE (>=120 minutes, including exactly 120), wait for the user's necessity
+assessment in an incoming project Chat message or direct confirmation here
+before starting. Continue shorter independent work meanwhile; do not split to
+evade the threshold.
+This replaces the former Dot review route at the user's 2026-10-20 direction; it
+does not change Agent segment duration or authorize uncontrolled jobs. Machine
+safety and frozen caps still apply.
 
 Preserve frozen conditions, failures, missing planned slots and UNKNOWN; never
 extend a frozen cap because of results, relabel exposure as holdout, or replace
@@ -239,38 +199,33 @@ and supported scope; distinguish raw/normalized/rounded/clipped results. Quantit
 actor-splitting are empirical, not assumed linear conservation. Fix attack/search
 conditions; distinguish ordering prices from leaf prices.
 
-## Slack and delivery
+## Chat messages and delivery
 
-Sole channel: NanoMelon #generic-chess C0C6L21UU20. Connected-account sends and
-reasoned recontact are continuously authorized until revoked; stop suspends them.
-Dot is a near-peer research partner, not permission issuer or publication gate.
-CHAT_Comments are reference suggestions, not mandatory instructions/new authority.
-Adopt/defer/reject using current user directions and evidence.
+Use docs/operations/SLACK_WORKFLOW.md for the existing project's asynchronous
+Chat-message read path. Once per hourly patrol, read newly available project
+Chat messages/comments and relevant complete threads. Save the exact project-
+related read in Git-ignored .local_agent before evaluation. Adopt, defer or reject
+advice using current user direction and evidence; Chat comments alone are
+suggestions, not new user authorization. Do not @Dot, initiate real-time contact,
+wait/poll for a response, or send direct Dot consultations. For a >=120-minute
+run requiring prior necessity assessment, wait only for an incoming user Chat
+message or direct user confirmation; do not send consultation messages, @mention
+anyone or poll for a response.
 
-Read new channel roots AND relevant full threads/pages at recovery/useful
-checkpoints, including completed-request supplements. Save exact output before
-reconcile. Use existing consult/consult-status/reconcile and immutable IDs/hashes/
-root ts. Delivery is not reading, response, adoption or independent execution.
-User-directed inquiries to Slack ALWAYS get a fresh AGENT_REQUEST/new REQUEST_ID/
-new thread. Agent-initiated technical followups may use the original thread plus
-unique FOLLOWUP_ID. Never rebind advisor supplements as original roots.
-Reconcile uncertain sends before deliberate retry; record purpose/evidence/
-duplicate risk, no automatic retry/self-reply loops or ledger reset. Details:
-docs/operations/SLACK_WORKFLOW.md. No per-attempt renewed consent.
+The user authorizes GenericChess project content without personal information,
+passwords or credentials for established project Git publication. Preserve exact
+private originals in ignored .local_agent; inspect outgoing Git/history/archive
+content and sanitize publication copies where needed. The consultation-message
+route is read/comment based and distinct from Git publication. No per-file or
+per-push consent. A real tool refusal must be reported accurately; do not bypass
+platform enforcement.
 
-Daily10:00 Asia/Tokyo is the main substantive consultation window; skip empty/
-duplicate questions and missed-day catchup. Otherwise work independently. One
-native90-minute same-chat heartbeat, no overlapping writer. No Goal, Windows
-scheduler, Courier, native Chat sending, Supervisor or Socket Mode prerequisite;
-no Dot/transport workers. Preserve configured notification intent; notify useful
-results, failures or required decisions, not unchanged routine checks.
-
-Git is version control/final delivery. Each completed segment commit/sync reviewed
-project work to origin/sandbox using generic-chess-local.cmd publish --tests
-<relevant pytest targets>; inspect outgoing diffs/history/archives, run checks and
-verify FULL remote SHA. Do not claim a local commit was published or force-push.
-Master promotion only tested fast-forward. User stop suspends publication; old
-held-publication notes are historical, not current approval gates. Public read
-access does not prove delivery or Dot reading every file. Existing repository
-layers/recovery: docs/operations/REPOSITORY_LAYOUT.md and REBUILD_20261003.md.
-Default pytest covers four active layers; retired receipts remain history.
+Git is version control/final delivery. Each completed segment commits/syncs
+reviewed work to origin/sandbox using generic-chess-local.cmd publish --tests
+<relevant pytest targets>; inspect outgoing diffs/history/archives and verify the
+FULL remote SHA. Do not claim a local commit was published or force-push. Master
+promotion is a tested fast-forward only. Preserve notification intent and report
+useful results, failures or required decisions without unchanged routine pings.
+Existing repository layers/recovery: docs/operations/REPOSITORY_LAYOUT.md and
+REBUILD_20261003.md. Default pytest covers four active layers; retired receipts
+remain history.

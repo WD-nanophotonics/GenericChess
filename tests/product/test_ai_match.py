@@ -313,6 +313,57 @@ def test_undo_restores_clock_snapshot():
     assert ctrl.clock_state().active_owner == 1  # snapshot after the first move
 
 
+def test_undo_during_ai_search_cancels_worker_and_discards_late_result():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(0))
+    _human_move(ctrl)
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    assert ctrl.can_undo
+    assert ctrl.ai_thinking
+
+    assert ctrl.undo()
+    restored = ctrl.session.state
+    assert token.is_cancelled()
+    assert not ctrl.ai_thinking
+    assert not ctrl.ai_move_needed()
+
+    late_decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+    assert not ctrl.finish_ai_move(late_decision, snapshot)
+    assert ctrl.session.state == restored
+    assert ctrl.session.state.ply_count == 0
+
+
+def test_redo_during_ai_search_cancels_worker_and_discards_late_result():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(0))
+    _human_move(ctrl)
+    ctrl.make_ai_move(_stub_runner())
+    assert ctrl.session.state.ply_count == 2
+    assert ctrl.undo()
+    assert ctrl.session.state.ply_count == 1
+
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    assert ctrl.can_redo
+    assert ctrl.ai_thinking
+
+    assert ctrl.redo()
+    restored = ctrl.session.state
+    assert token.is_cancelled()
+    assert not ctrl.ai_thinking
+    assert not ctrl.ai_move_needed()
+
+    late_decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+    assert not ctrl.finish_ai_move(late_decision, snapshot)
+    assert ctrl.session.state == restored
+    assert ctrl.session.state.ply_count == 2
+
+
 def test_restart_resets_clock():
     ctrl = _controller()
     ctrl.new_game(seed=42)
@@ -461,6 +512,151 @@ def test_ai_timeout_adjudicates_loss():
     assert ctrl.session.to_record().resigned_by == 1
     assert ctrl.timeout_owner == 1
     assert not ctrl.ai_move_needed()
+
+
+def test_ai_result_returned_after_timeout_is_not_committed_without_ui_tick():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    _human_move(ctrl)
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+
+    now.t += 2.0  # Exactly zero expires; the UI timer has not ticked.
+    assert ctrl.session.state.ply_count == 1
+    assert ctrl.session.result.status.value == "ongoing"
+    assert not token.is_cancelled()
+    assert ctrl.clock_state().expired_owner == 1
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+
+    assert ctrl.session.state.ply_count == 1
+    assert ctrl.session.to_record().resigned_by == 1
+    assert ctrl.timeout_owner == 1
+    assert token.is_cancelled()
+    assert not ctrl.ai_move_needed()
+    assert not ctrl.ai_thinking
+    assert not ctrl.clock_state().running
+
+
+def test_ai_declaration_returned_after_timeout_is_not_committed_without_ui_tick():
+    from test_generic_declaration_semantics import _claim_ruleset
+    from generic_chess.core.declarations import assess_declaration
+
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    assert ctrl.new_game_from_ruleset(_claim_ruleset())
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    declaration = assess_declaration(
+        snapshot.session.state, snapshot.session.compiled, "opaque_claim"
+    )
+    assert declaration.outcome == "WIN"
+    decision = SimpleNamespace(
+        action=None,
+        choice_kind="DECLARATION",
+        declaration=declaration,
+    )
+
+    now.t += 2.0  # Exactly zero expires; the UI timer has not ticked.
+    assert ctrl.session.result.status.value == "ongoing"
+    assert ctrl.clock_state().expired_owner == 0
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+
+    assert ctrl.session.state.ply_count == 0
+    assert ctrl.session.to_record().resigned_by == 0
+    assert ctrl.timeout_owner == 0
+    assert token.is_cancelled()
+    assert not ctrl.ai_move_needed()
+    assert not ctrl.ai_thinking
+    assert not ctrl.clock_state().running
+
+
+def test_ai_result_returned_at_byoyomi_expiry_is_not_committed_without_ui_tick():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.BYOYOMI,
+                owner0=SideTimeConfig(2, 1),
+                owner1=SideTimeConfig(2, 1),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    _human_move(ctrl)
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+
+    now.t += 2.0  # Main time is zero, but the AI still has one overtime second.
+    assert ctrl.clock_state().remaining_for(1) == 0
+    assert ctrl.clock_state().overtime_for(1) == 1000
+    assert ctrl.clock_state().expired_owner is None
+    assert ctrl.session.result.status.value == "ongoing"
+
+    now.t += 1.0  # Exactly zero overtime is the inclusive expiration boundary.
+    assert ctrl.clock_state().expired_owner == 1
+    assert not ctrl.finish_ai_move(decision, snapshot)
+
+    assert ctrl.session.state.ply_count == 1
+    assert ctrl.session.to_record().resigned_by == 1
+    assert ctrl.timeout_owner == 1
+    assert token.is_cancelled()
+    assert not ctrl.ai_move_needed()
+    assert not ctrl.ai_thinking
+    assert not ctrl.clock_state().running
 
 
 def test_ai_thinking_clock_ticks():
