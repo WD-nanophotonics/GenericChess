@@ -65,7 +65,8 @@ class SearchLimits:
         if self.max_time_seconds is not None:
             try:
                 valid_time_limit = (
-                    math.isfinite(self.max_time_seconds)
+                    not isinstance(self.max_time_seconds, bool)
+                    and math.isfinite(self.max_time_seconds)
                     and self.max_time_seconds >= 0
                 )
             except (OverflowError, TypeError, ValueError):

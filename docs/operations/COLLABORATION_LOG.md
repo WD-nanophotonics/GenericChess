@@ -5870,3 +5870,18 @@ static ray-price game gate also failed and remains closed without any
 evaluator/default change. Exact report and data are in
 `docs/research/SEMANTIC_DECLARATION_ROOT_COST_20261021.md` and
 `docs/research/data/semantic_declaration_root_cost_20261021/`.
+
+## 2026-10-21 PRIMARY search input and live budget boundary repairs
+
+PRIMARY repaired the benchmark AlphaBeta CLI's invalid-bound handling, explicit
+budget reporting and generated-only option validation; extracted the existing
+stale-search predicate for Qt progress/error callbacks; and fixed shared
+`ThinkingConfig` dispatch for plain enum-value strings plus preservation of an
+explicit zero-node cap. Root-search zero-node semantics remain the existing
+legal fallback (`node_limit`, zero searched nodes). Seven relevant product test
+modules and the added `UIController.ai_limits` end-to-end zero-cap regression
+passed; a preliminary pytest run using the global temp directory hit two
+WinError 5 setup errors, and the same modules passed with an ignored project-local
+basetemp. No price/strength experiment was run or claim changed. No DEV_AUX
+checkout, state, computation or unpublished output was accessed or changed; no
+cross-role coordination was needed.

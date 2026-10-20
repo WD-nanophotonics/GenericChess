@@ -263,13 +263,8 @@ class UIController:
             clock_state, time_control, side, move_number, self._match.ai_config
         )
 
-    def finish_ai_move(
-        self,
-        decision: PlayerDecision | None,
-        snapshot: SearchSnapshot | None = None,
-    ) -> bool:
-        """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
-        cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+    def is_ai_search_stale(self, snapshot: SearchSnapshot | None = None) -> bool:
+        """Whether an in-flight AI result/error belongs to an obsolete state."""
         snapshot_stale = snapshot is not None and (
             snapshot.generation != self._ai_generation
             or snapshot.root_key != self._ai_root_key
@@ -288,11 +283,20 @@ class UIController:
             and self._ai_root_key
             == position_identity_key(self._session.state.position, self._compiled)
         )
-        stale = (
+        return (
             self._ai_search_generation != self._ai_generation
             or not root_same
             or snapshot_stale
         )
+
+    def finish_ai_move(
+        self,
+        decision: PlayerDecision | None,
+        snapshot: SearchSnapshot | None = None,
+    ) -> bool:
+        """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
+        cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+        stale = self.is_ai_search_stale(snapshot)
         committed = False
         if (
             not cancelled

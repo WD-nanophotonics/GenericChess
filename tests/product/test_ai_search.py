@@ -27,6 +27,7 @@ from generic_chess.ai.evaluation.profile import build_ruleset_profile
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.actions import BoardMove, DropMove
 from generic_chess.core.coordinates import Square
+from generic_chess.core.errors import RuleSetMismatchError
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.movement import LeapAtom
 from generic_chess.core.transition import apply_action
@@ -103,6 +104,29 @@ def test_returns_legal_action_and_terminal_none():
     )
     assert terminal_decision.action is None
     assert terminal_decision.termination_reason == "terminal_position"
+
+
+def test_zero_node_budget_returns_legal_fallback_without_search():
+    compiled = build_4x4_rooks()
+    session = GameSession(compiled)
+    decision = _player(compiled).choose_action(
+        session, SearchLimits(max_nodes=0, quiescence_max_depth=0)
+    )
+    assert decision.action in legal_actions(session.state, compiled)
+    assert decision.nodes == decision.qnodes == 0
+    assert decision.termination_reason == "node_limit"
+
+
+def test_player_rejects_ongoing_session_from_another_ruleset():
+    """The public player boundary enforces ruleset ownership on every path."""
+    session_rules = build_4x4_rooks()
+    player_rules = build_mate(2)
+    session = GameSession(session_rules)
+
+    with pytest.raises(RuleSetMismatchError, match="fingerprint"):
+        _player(player_rules).choose_action(
+            session, SearchLimits(max_depth=1, quiescence_max_depth=0)
+        )
 
 
 def test_mate_distance_prefers_faster_win():
@@ -414,7 +438,7 @@ def test_budget_deadline_and_cancel_checked_during_qsearch():
 
 @pytest.mark.parametrize(
     "seconds",
-    [-1.0, float("nan"), float("inf"), -float("inf"), 10**400, "1"],
+    [-1.0, float("nan"), float("inf"), -float("inf"), 10**400, "1", True, False],
 )
 def test_search_limits_reject_invalid_time_budgets(seconds):
     with pytest.raises(

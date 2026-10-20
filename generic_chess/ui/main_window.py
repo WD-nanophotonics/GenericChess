@@ -660,8 +660,18 @@ class MainWindow(QMainWindow):
         self._update_action_enabled()
 
     def _on_ai_progress(self, depth: int, nodes: int, qnodes: int) -> None:
+        thread = self.sender()
+        if thread is not self._ai_thread:
+            return
+        token = getattr(thread, "_token", None)
+        if token is not None and token.is_cancelled():
+            return
+        snapshot = getattr(thread, "_snapshot", None)
+        if self._controller.is_ai_search_stale(snapshot):
+            return
+        total_nodes = nodes + qnodes
         self._status_main.setText(
-            f"{self._tr.text('status.ai_thinking')} · depth {depth} · {nodes:,} nodes"
+            f"{self._tr.text('status.ai_thinking')} · depth {depth} · {total_nodes:,} nodes"
         )
 
     def _on_ai_finished(self, _decision) -> None:
@@ -683,6 +693,13 @@ class MainWindow(QMainWindow):
             self._maybe_start_ai()
 
     def _on_ai_error(self, message: str) -> None:
+        thread = self.sender()
+        if thread is not self._ai_thread:
+            return
+        snapshot = getattr(thread, "_snapshot", None)
+        # A delayed error from an old worker must not cancel a replacement match.
+        if self._controller.is_ai_search_stale(snapshot):
+            return
         self._controller.cancel_ai()
         self._ai_error = message
         self._refresh()

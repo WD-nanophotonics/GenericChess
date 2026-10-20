@@ -24,6 +24,16 @@ from ..alphabeta.player import AlphaBetaPlayer
 from ..limits import SearchLimits
 
 
+def _int_at_least(value: str, minimum: int) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be an integer") from exc
+    if parsed < minimum:
+        raise argparse.ArgumentTypeError(f"must be >= {minimum}")
+    return parsed
+
+
 def _result_bucket(result: SessionResult, ai_color: int) -> str:
     if result.winner is not None:
         return "ab" if result.winner == ai_color else "random"
@@ -71,13 +81,28 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--board-size", type=int, default=8)
     parser.add_argument("--preset", default="classic_like")
     parser.add_argument("--hybrid", action="store_true")
-    parser.add_argument("--nodes", type=int, default=100_000)
-    parser.add_argument("--max-depth", type=int, default=None)
-    parser.add_argument("--repeat", type=int, default=3)
+    parser.add_argument(
+        "--nodes", type=lambda value: _int_at_least(value, 0), default=100_000
+    )
+    parser.add_argument(
+        "--max-depth", type=lambda value: _int_at_least(value, 0), default=None
+    )
+    parser.add_argument(
+        "--repeat", type=lambda value: _int_at_least(value, 1), default=3
+    )
     parser.add_argument("--fresh-tt", action="store_true", help="reset the TT before every run")
-    parser.add_argument("--vs-random", type=int, default=0)
+    parser.add_argument(
+        "--vs-random", type=lambda value: _int_at_least(value, 0), default=0
+    )
     parser.add_argument("--no-disk", action="store_true")
     args = parser.parse_args(argv)
+    if args.ruleset is None:
+        if args.board_size < 4:
+            parser.error("--board-size must be >= 4 when generating a ruleset")
+        if args.preset not in ("classic_like", "bilateral_random", "free_random"):
+            parser.error(
+                "--preset must be one of: classic_like, bilateral_random, free_random"
+            )
 
     compiled = _load_compiled(args)
     limits = SearchLimits(max_nodes=args.nodes, max_depth=args.max_depth, quiescence_max_depth=4)
@@ -96,11 +121,17 @@ def main(argv: list[str] | None = None) -> int:
         started = time.monotonic()
         decision = player.choose_action(session, limits)
         elapsed = time.monotonic() - started
-        nps = decision.nodes / elapsed if elapsed > 0 else 0.0
+        total_nodes = decision.nodes + decision.qnodes
+        main_nps = decision.nodes / elapsed if elapsed > 0 else 0.0
+        q_nps = decision.qnodes / elapsed if elapsed > 0 else 0.0
+        total_nps = (
+            total_nodes / elapsed if elapsed > 0 else 0.0
+        )
         print(
             f"run {i + 1}: action={_decision_action_label(decision)} score={decision.score} "
-            f"depth={decision.completed_depth} nodes={decision.nodes} "
-            f"qnodes={decision.qnodes} elapsed={elapsed:.3f}s nps={nps:,.0f} "
+            f"depth={decision.completed_depth} nodes={decision.nodes} qnodes={decision.qnodes} "
+            f"total_nodes={total_nodes} elapsed={elapsed:.3f}s "
+            f"main_nps={main_nps:,.0f} q_nps={q_nps:,.0f} total_nps={total_nps:,.0f} "
             f"tt={decision.tt_probes}/{decision.tt_hits}/{decision.tt_cutoffs} "
             f"cutoffs={decision.beta_cutoffs} result_source={decision.result_source} "
             f"reason={decision.termination_reason}"

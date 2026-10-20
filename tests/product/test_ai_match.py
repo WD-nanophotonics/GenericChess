@@ -98,6 +98,21 @@ def test_ai_plays_first_when_ai_is_side_0():
     assert ctrl.session.state.position.side_to_move == 1
 
 
+def test_controller_ai_limits_preserve_zero_fixed_node_budget():
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            participants=(ParticipantKind.AI, ParticipantKind.AI),
+            time_control=TimeControl(mode=TimeControlMode.NONE),
+            ai_config=ThinkingConfig(strategy="fixed_nodes", max_nodes=0),
+        )
+    )
+    limits = ctrl.ai_limits()
+    assert limits.max_nodes == 0
+    assert limits.max_time_seconds is None
+
+
 def test_ai_root_declaration_finishes_match_through_session_and_stops_clock(tmp_path):
     from test_generic_declaration_semantics import _claim_ruleset
     from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
@@ -431,12 +446,21 @@ def test_progress_callback_reports_iterations():
     ctrl.new_game(seed=42)
     player = AlphaBetaPlayer(ctrl.compiled, use_disk_cache=False)
     reports = []
-    player.choose_action(
+    decision = player.choose_action(
         GameSession(ctrl.compiled),
-        SearchLimits(max_depth=2, quiescence_max_depth=0),
-        progress_callback=lambda d, n, q: reports.append((d, n)),
+        SearchLimits(max_depth=3, quiescence_max_depth=2),
+        progress_callback=lambda d, n, q: reports.append((d, n, q)),
     )
-    assert reports and reports[-1][0] == 2
+    assert reports and reports[-1][0] == 3
+    assert reports[-1][1:] == (decision.nodes, decision.qnodes)
+    assert all(
+        main + q > 0
+        for _, main, q in reports
+    )
+    assert all(
+        (left_main + left_q) < (right_main + right_q)
+        for (_, left_main, left_q), (_, right_main, right_q) in zip(reports, reports[1:])
+    )
 
 
 def _mate_ruleset():
@@ -557,6 +581,95 @@ def test_ai_result_returned_after_timeout_is_not_committed_without_ui_tick():
     assert not ctrl.ai_move_needed()
     assert not ctrl.ai_thinking
     assert not ctrl.clock_state().running
+
+
+def test_timeout_can_resign_shared_session_during_search_and_cancel_without_mutation():
+    """The live UI timeout may cancel a worker while it reads the same session."""
+    import threading
+
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.limits import SearchLimits
+
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    class BlockingEvaluator:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.release = threading.Event()
+
+        def evaluate(self, state):
+            self.entered.set()
+            if not self.release.wait(5):
+                raise TimeoutError("test barrier expired")
+            return 0
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(_match_config(0, mode=TimeControlMode.FISCHER))
+    _human_move(ctrl)
+
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    before = (
+        snapshot.session.state,
+        snapshot.session.history,
+        snapshot.session._search_witnesses,
+    )
+    evaluator = BlockingEvaluator()
+    player = AlphaBetaPlayer(
+        ctrl.compiled,
+        evaluator_override=evaluator,
+        use_disk_cache=False,
+        use_native_semantic_legality=False,
+    )
+    results = {}
+
+    def search():
+        try:
+            results["decision"] = player.choose_action(
+                snapshot.session,
+                SearchLimits(
+                    max_depth=3,
+                    max_nodes=10_000,
+                    max_time_seconds=10,
+                    quiescence_max_depth=0,
+                ),
+                cancel_token=token,
+            )
+        except BaseException as exc:
+            results["error"] = exc
+
+    worker = threading.Thread(target=search, daemon=True)
+    worker.start()
+    try:
+        assert evaluator.entered.wait(3), "search did not reach the barrier"
+        now.t += 60.0
+        ctrl.clock_tick()
+        assert snapshot.session.result.status.value == "resignation"
+        assert token.is_cancelled()
+        assert snapshot.session.state == before[0]
+        assert snapshot.session.history == before[1]
+        assert snapshot.session._search_witnesses == before[2]
+    finally:
+        evaluator.release.set()
+        worker.join(3)
+
+    assert not worker.is_alive(), "cancelled search failed to return"
+    assert "error" not in results
+    decision = results["decision"]
+    assert decision.termination_reason == "cancelled"
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert snapshot.session.state == before[0]
+    assert snapshot.session.history == before[1]
+    assert snapshot.session._search_witnesses == before[2]
+    assert snapshot.session.result.status.value == "resignation"
 
 
 def test_ai_declaration_returned_after_timeout_is_not_committed_without_ui_tick():
@@ -867,6 +980,63 @@ def test_finish_ai_move_rejects_stale_snapshot():
     decision = _stub_runner()(ctrl.session, ctrl.ai_limits(), token)
     assert not ctrl.finish_ai_move(decision, snapshot)
     assert ctrl.session.state.ply_count == 0
+
+
+def test_same_position_history_mutation_invalidates_inflight_ai_result():
+    """Generation guards the path context that the position key omits."""
+    from generic_chess.core.actions import action_is_board, action_source_square, action_target_square
+    from generic_chess.core.identity import (
+        position_identity_key,
+        search_state_identity,
+    )
+
+    ctrl = _controller()
+    assert ctrl.new_game_from_builtin("western_chess")
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    token = CancellationToken()
+    snapshot = ctrl.capture_ai_search(token)
+    assert snapshot is not None
+    decision = _stub_runner()(snapshot.session, snapshot.limits, token)
+    root_key = snapshot.root_key
+    root_search_identity = search_state_identity(ctrl.session.state, ctrl.compiled)
+    live_session = ctrl.session
+
+    cycle = (
+        (Square(1, 0), Square(2, 2)),  # b1-c3
+        (Square(1, 7), Square(2, 5)),  # b8-c6
+        (Square(2, 2), Square(1, 0)),  # c3-b1
+        (Square(2, 5), Square(1, 7)),  # c6-b8
+    )
+    for source, target in cycle:
+        action = next(
+            candidate
+            for candidate in ctrl.session.legal_actions()
+            if action_is_board(candidate)
+            and action_source_square(candidate) == source
+            and action_target_square(candidate) == target
+        )
+        assert ctrl.submit_action(action)
+
+    # Position identity alone cannot tell this four-ply path from the root;
+    # the controller's generation must reject the old worker decision.
+    assert ctrl.session is live_session is snapshot.session
+    assert len(ctrl.session.history) == 4
+    assert str(
+        position_identity_key(ctrl.session.state.position, ctrl.compiled)
+    ) == root_key
+    assert decision.action in ctrl.session.legal_actions()
+    assert search_state_identity(ctrl.session.state, ctrl.compiled) != root_search_identity
+    assert snapshot.generation != ctrl._ai_generation
+    assert not token.is_cancelled()
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert ctrl.session.state.ply_count == 4
+    assert len(ctrl.session.history) == 4
 
 
 def test_resign_cancels_inflight_ai_search_and_discards_its_result():

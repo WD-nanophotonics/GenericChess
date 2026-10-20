@@ -425,6 +425,136 @@ def test_alpha_beta_cli_reports_result_source_separately_from_stop_reason(
 
 
 @pytest.mark.parametrize(
+    ("option", "invalid_value", "diagnostic"),
+    (
+        ("--nodes", "-1", "must be >= 0"),
+        ("--max-depth", "-1", "must be >= 0"),
+        ("--repeat", "0", "must be >= 1"),
+        ("--repeat", "-1", "must be >= 1"),
+        ("--vs-random", "-1", "must be >= 0"),
+    ),
+)
+def test_alpha_beta_cli_rejects_invalid_benchmark_bounds_as_argument_error(
+    capsys, option, invalid_value, diagnostic
+):
+    import pytest
+
+    from generic_chess.ai.cli import benchmark_alphabeta
+
+    assert benchmark_alphabeta._int_at_least("0", 0) == 0
+    assert benchmark_alphabeta._int_at_least("1", 1) == 1
+    assert benchmark_alphabeta._int_at_least("4", 4) == 4
+    with pytest.raises(SystemExit) as exc_info:
+        benchmark_alphabeta.main([option, invalid_value])
+
+    assert exc_info.value.code == 2
+    stderr = capsys.readouterr().err
+    assert f"argument {option}: {diagnostic}" in stderr
+    assert "Traceback" not in stderr
+
+
+def test_alpha_beta_cli_rejects_unknown_generated_preset_cleanly(capsys):
+    import pytest
+
+    from generic_chess.ai.cli import benchmark_alphabeta
+
+    with pytest.raises(SystemExit) as exc_info:
+        benchmark_alphabeta.main(["--preset", "typo"])
+    assert exc_info.value.code == 2
+    stderr = capsys.readouterr().err
+    assert (
+        "--preset must be one of: classic_like, bilateral_random, free_random"
+        in stderr
+    )
+    assert "Traceback" not in stderr
+
+
+def test_alpha_beta_cli_generated_options_are_scoped_to_generated_rulesets(
+    monkeypatch, capsys
+):
+    import pytest
+
+    from generic_chess.ai.cli import benchmark_alphabeta
+    from generic_chess.generation.config import GeneratorConfig
+    from generic_chess.generation.generator import generate_game
+
+    with pytest.raises(SystemExit) as exc_info:
+        benchmark_alphabeta.main(["--board-size", "3"])
+    assert exc_info.value.code == 2
+    error = capsys.readouterr().err
+    assert "--board-size must be >= 4 when generating a ruleset" in error
+
+    compiled = generate_game(
+        GeneratorConfig(seed=42, board_size=4, setup_preset="classic_like")
+    ).compiled_ruleset
+    def load_imported(args):
+        assert args.ruleset == "imported-ruleset.json"
+        return compiled
+
+    monkeypatch.setattr(benchmark_alphabeta, "_load_compiled", load_imported)
+    assert benchmark_alphabeta.main(
+        [
+            "--ruleset",
+            "imported-ruleset.json",
+            "--board-size",
+            "3",
+            "--preset",
+            "ignored-when-importing",
+            "--nodes",
+            "1",
+            "--repeat",
+            "1",
+            "--no-disk",
+        ]
+    ) == 0
+    assert compiled.ruleset_fingerprint in capsys.readouterr().out
+
+
+def test_alpha_beta_cli_labels_main_q_and_total_throughput(monkeypatch, capsys):
+    from types import SimpleNamespace
+
+    from generic_chess.ai.cli import benchmark_alphabeta
+    from ai_fixtures import build_4x4_rooks
+
+    compiled = build_4x4_rooks()
+
+    class Player:
+        evaluation_profile_cache_hit = False
+
+        def __init__(self, *_args, **_kwargs):
+            pass
+
+        def choose_action(self, _session, _limits):
+            return SimpleNamespace(
+                choice_kind="ACTION",
+                action=None,
+                declaration=None,
+                score=17,
+                completed_depth=3,
+                nodes=300,
+                qnodes=900,
+                tt_probes=8,
+                tt_hits=2,
+                tt_cutoffs=1,
+                beta_cutoffs=4,
+                result_source="main_iteration",
+                termination_reason="node_limit",
+                principal_variation=(),
+            )
+
+    monkeypatch.setattr(benchmark_alphabeta, "_load_compiled", lambda _args: compiled)
+    monkeypatch.setattr(benchmark_alphabeta, "AlphaBetaPlayer", Player)
+    ticks = iter((10.0, 14.0))
+    monkeypatch.setattr(benchmark_alphabeta.time, "monotonic", lambda: next(ticks))
+
+    assert benchmark_alphabeta.main(["--nodes", "1200", "--repeat", "1", "--no-disk"]) == 0
+    output = capsys.readouterr().out
+    assert "nodes=300 qnodes=900 total_nodes=1200" in output
+    assert "main_nps=75 q_nps=225 total_nps=300" in output
+    assert " nps=" not in output
+
+
+@pytest.mark.parametrize(
     "status,winner,expected",
     (
         (SessionStatus.CHECKMATE, 0, "ab"),

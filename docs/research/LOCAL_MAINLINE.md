@@ -2885,3 +2885,29 @@ behavior changes. Defer cancellation inside a complete declaration sweep or a
 schema count cap until a named caller demonstrates a need, because aborting
 before checking later declarations could miss a valid root WIN. Details and
 limits: `SEMANTIC_DECLARATION_ROOT_COST_20261021.md` and its paired probe data.
+
+## 2026-10-21 PRIMARY search-budget and live progress boundaries
+
+A bounded source/caller audit found three finite-search interface defects.
+`ThinkingConfig` callers already pass both `StrEnum` members and their plain
+string values, but identity dispatch treated a valid string strategy as
+`AUTO_TIME`; normalize accepted strategy/preset values at construction and
+reject unknown strings. The shared fixed-node allocator also used truthiness
+fallback, converting explicit `max_nodes=0` to the 50,000-node preset. Preserve
+zero because the shared `SearchLimits` contract accepts it and AlphaBeta returns
+a legal root fallback with zero searched nodes and `node_limit`. Reject boolean
+or non-finite durations and negative safety margins at the configuration edge;
+leave the existing minimum-time and clock-policy semantics unchanged.
+
+The same review closes the checked benchmark CLI input path: negative caps,
+zero repeats and unknown generated presets now produce argparse errors rather
+than Python tracebacks, generation-only arguments remain scoped to generated
+rulesets, and throughput labels count main/q/total nodes explicitly. Delayed
+progress/errors from stale or cancelled Qt workers no longer overwrite current
+match status or cancel its replacement worker; displayed progress counts both
+main and q nodes. Seven affected product modules and an additional live
+controller zero-cap regression pass. These are shared interface/measurement
+correctness repairs, not an engine-strength or value-model result; no closed
+price/ray panel was reopened and no AUX work was touched. Next choose a distinct
+finite-budget contract with a named current caller; do not infer utility from
+these repairs.

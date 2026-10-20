@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 from enum import StrEnum
 
@@ -30,6 +31,8 @@ PRESET_NODES = {
 
 @dataclass(frozen=True, slots=True)
 class ThinkingConfig:
+    """Per-move budget settings; enum values may also be supplied as strings."""
+
     strategy: ThinkingStrategy = ThinkingStrategy.FIXED_NODES
     preset: ThinkingPreset = ThinkingPreset.BALANCED
     move_time_seconds: float = 1.0
@@ -37,6 +40,32 @@ class ThinkingConfig:
     max_depth: int | None = None
     safety_margin_seconds: float = 0.3
     quiescence_max_depth: int = 4
+
+    def __post_init__(self) -> None:
+        for name, enum_type in (
+            ("strategy", ThinkingStrategy),
+            ("preset", ThinkingPreset),
+        ):
+            try:
+                normalized = enum_type(getattr(self, name))
+            except (TypeError, ValueError) as exc:
+                choices = ", ".join(member.value for member in enum_type)
+                raise ValueError(f"{name} must be one of: {choices}") from exc
+            object.__setattr__(self, name, normalized)
+
+        # bool is an int in Python; do not let it silently become a duration.
+        for name in ("move_time_seconds", "safety_margin_seconds"):
+            value = getattr(self, name)
+            if isinstance(value, bool):
+                raise ValueError(f"{name} must be a numeric duration, not a boolean")
+            try:
+                finite = math.isfinite(value)
+            except (OverflowError, TypeError, ValueError):
+                finite = False
+            if not finite:
+                raise ValueError(f"{name} must be a finite numeric duration")
+        if self.safety_margin_seconds < 0:
+            raise ValueError("safety_margin_seconds must be >= 0")
 
 
 def allocate_search_limits(
@@ -51,7 +80,11 @@ def allocate_search_limits(
     seconds: float | None = None
 
     if config.strategy is ThinkingStrategy.FIXED_NODES:
-        nodes = config.max_nodes or PRESET_NODES[config.preset]
+        nodes = (
+            config.max_nodes
+            if config.max_nodes is not None
+            else PRESET_NODES[config.preset]
+        )
         if (
             time_control.mode is not TimeControlMode.NONE
             and time_control.time_forfeit
