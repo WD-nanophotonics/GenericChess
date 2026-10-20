@@ -1,0 +1,84 @@
+{
+  "arms": {
+    "candidate_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "candidates": [
+      "unit_leaf__unit_order",
+      "static_v2_leaf__unit_order"
+    ],
+    "color_swap": "Both candidate owners on each of 16 exact fresh roots versus unchanged Unit-leaf/Unit-order foe; candidate and foe ordering are Unit.",
+    "fixed_foes": [
+      "unit"
+    ],
+    "foe_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "physical_games": 64,
+    "root_window_pruning": false,
+    "tt_megabytes": 0
+  },
+  "changed_premise": "The prior same-root factorial attributed its finite D3 utility gain to leaf values: static_v2 leaf-only exactly matched the complete-checkpoint contrast, while the order-only contrast at Unit leaves was zero. This panel uses eight disjoint seeds and two fresh roots per rule to test transfer of that isolated treatment; no outcomes are pooled.",
+  "contrasts": {
+    "static_leaf_minus_unit_leaf": {
+      "static_v2_leaf__unit_order": 1,
+      "unit_leaf__unit_order": -1
+    },
+    "unknowns": "For every paired root/owner slot, UNKNOWN arm reward is independently bounded [-1,+1]; report all-slot bounds, finite-only means, owner strata, seed strata and leave-one-seed-out envelope."
+  },
+  "cost": {
+    "cheaper_alternative": "A replay-only analysis cannot measure fresh outcomes; the isolated 64-slot panel is the smallest balanced eight-rule/two-root/two-owner replication with independent UNKNOWN bounds.",
+    "expected": "Under four minutes: the 64 slots are half of the preceding 128-game single-process D3 panel, which took 236.687 seconds. Hard cap 2400 seconds.",
+    "hard_cap_seconds": 2400
+  },
+  "decision": "This tests only whether the leaf-only gain transfers to these eight new 5x5 generated seeds against a fixed Unit opponent under equal D3/node/time/q/TT/root-window settings. Require strictly positive all-slot bounds by owner and positive leave-one-seed-out lower bounds before calling it directionally replicated in this sample. Any sign crossing or adverse seed keeps transfer unresolved. No population, global price, default or strength claim.",
+  "integrity": [
+    "No training, solver, auxiliary checkout, reused rules/roots, root pooling or price/default change.",
+    "Both candidate arms use Unit ordering; opponent is fixed Unit leaf and Unit ordering. Keep Core, histories and equal D3/8192-node/0.5-second/q0/TT0/root-window-off caps.",
+    "Preserve actual terminals, UNKNOWNs, all histories, promotions, drops, costs and budget causes."
+  ],
+  "question": "On eight unseen generated 5x5 rule seeds, does the isolated static_v2 leaf-value gain replicate against fixed Unit leaves/order when candidate move ordering remains Unit?",
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies": 4,
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "selection": "Fresh roots generated only from the listed new rules and prefix-seed formula; candidate arm shares each exact root and color.",
+    "terminal_prefixes": "Retain zero-search terminal slots unchanged."
+  },
+  "rules": {
+    "allow_hybrid": true,
+    "board_size": 5,
+    "generation_attempts": 16,
+    "movement_symmetry_by_seed_order": [
+      "bilateral",
+      "none"
+    ],
+    "opening_win_filter": false,
+    "require_nonpromotable_type": true,
+    "require_promotable_type": true,
+    "seeds": [
+      529101,
+      529102,
+      529103,
+      529104,
+      529105,
+      529106,
+      529107,
+      529108
+    ],
+    "selection": "Eight new rule seeds, checked against existing research data plan seed lists before run. Two deterministic four-ply prefixes per rule. Rebuild every rule/profile/root and replay every result; no root reuse.",
+    "setups_by_seed_order": [
+      "classic_like",
+      "bilateral_random",
+      "free_random"
+    ]
+  },
+  "schema": "primary-static-5x5-d3-leaf-only-replication-v1",
+  "source_head": "35e3a961679300116373da83107aa575b1393594"
+}

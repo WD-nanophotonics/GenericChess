@@ -1,0 +1,54 @@
+{
+  "schema": "primary-static-5x5-d3-price-order-factorial-v1",
+  "source_head": "35e3a961679300116373da83107aa575b1393594",
+  "question": "On the already frozen 16 generated 5x5 roots, is the symmetric-D3 static_v2-versus-Unit finite utility contrast attributable to leaf material values, capture-ordering values, or their interaction?",
+  "changed_premise": "The preceding same-root panel varied one complete checkpoint in both leaves and ordering. Native SemanticSearchEngine has an existing separate ordering_checkpoint, enabling a matched 2x2 mechanism test without another rule sample. This reuses exact roots only for mechanism attribution; its outcomes are not an independent population panel and will not be pooled with the preceding panel.",
+  "rules": {
+    "board_size": 5,
+    "seeds": [523001, 523002, 523003, 523004, 523005, 523006, 523007, 523008],
+    "setups_by_seed_order": ["classic_like", "bilateral_random", "free_random"],
+    "movement_symmetry_by_seed_order": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "opening_win_filter": false,
+    "generation_attempts": 16,
+    "selection": "Reuse only exact rule and opening roots from static_5x5_equal_d3_20261020. Analyzer must regenerate and compare every root file/hash before replay. No new seeds or roots."
+  },
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies": 4,
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "terminal_prefixes": "Retain zero-search terminal slots unchanged."
+  },
+  "arms": {
+    "candidates": ["unit_leaf__unit_order", "static_v2_leaf__unit_order", "unit_leaf__static_v2_order", "static_v2_leaf__static_v2_order"],
+    "fixed_foes": ["unit"],
+    "candidate_budget": {"max_depth": 3, "max_nodes": 8192, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "foe_budget": {"max_depth": 3, "max_nodes": 8192, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "root_window_pruning": false,
+    "tt_megabytes": 0,
+    "physical_games": 128,
+    "color_swap": "Both candidate owners on each of 16 exact shared roots against an unchanged Unit-leaf/Unit-order foe."
+  },
+  "contrasts": {
+    "leaf_at_unit_order": {"static_v2_leaf__unit_order": 1, "unit_leaf__unit_order": -1},
+    "leaf_at_static_v2_order": {"static_v2_leaf__static_v2_order": 1, "unit_leaf__static_v2_order": -1},
+    "order_at_unit_leaf": {"unit_leaf__static_v2_order": 1, "unit_leaf__unit_order": -1},
+    "order_at_static_v2_leaf": {"static_v2_leaf__static_v2_order": 1, "static_v2_leaf__unit_order": -1},
+    "interaction": {"static_v2_leaf__static_v2_order": 1, "static_v2_leaf__unit_order": -1, "unit_leaf__static_v2_order": -1, "unit_leaf__unit_order": 1},
+    "complete_checkpoint": {"static_v2_leaf__static_v2_order": 1, "unit_leaf__unit_order": -1},
+    "unknowns": "For every contrast, each UNKNOWN game reward is independently bounded [-1,+1] before applying signed contrast coefficients; retain all-slot bounds and finite-only descriptive means."
+  },
+  "decision": "For each signed contrast, use the coefficient map and independent [-1,+1] bounds for every UNKNOWN reward. If only leaf contrasts have strictly positive all-slot bounds, finite utility difference is leaf-mediated in this sample; if only ordering contrasts do, it is order-mediated; if both or interaction matter, do not attribute the preceding gain to one component. If intervals overlap zero or are adversarial/seed-sensitive, leave mechanism unresolved. This does not choose a global price/default.",
+  "cost": {
+    "expected": "Below 4 minutes: 128 games on the exact roots completed in 72.454 seconds at the same symmetric D3 budgets in the preceding single-process panel. This run has the same slot count and fixed foe; its four candidate arms replace the previous two-candidate/two-foe combination.",
+    "hard_cap_seconds": 2400,
+    "cheaper_alternative": "A fixed-root action-only factorial is cheaper but cannot determine whether the mechanism carries game outcomes; the existing profiles and prior panel do not separate leaf from ordering checkpoints."
+  },
+  "integrity": [
+    "No training, solver, auxiliary checkout, new rules, roots or populations; no outcome pooling with the preceding panel.",
+    "Use the existing explicit ordering_checkpoint API; same Core, histories, D3/node/time/q/TT/root-window settings and unchanged Unit/Unit foe in every arm.",
+    "Preserve all outcomes, full histories, promotions, drops, actual terminals, UNKNOWNs and game/query costs."
+  ]
+}

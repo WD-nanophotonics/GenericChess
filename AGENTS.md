@@ -166,6 +166,14 @@ completion. Bounded tasks use `session final-check --mode bounded` and add no
 research time. Do not use this exception for a normal research patrol.
 Validator checks records, not the truth of self-reported activity, and cannot
 force a model to invoke it. Calling it and inspecting success are mandatory.
+After each session transition (`start`, `interrupt`, `finish`, or final-check),
+compare
+NEXT_WORK.md with `session status`; `session.json` is authoritative for state, UUID,
+UTC start/resume, exact recorded effective seconds, interval count and unverified-
+legacy flag. Correct the memo before any final reply or handoff. Never label an
+interrupted/active session as completed or continuous work, and never write zero
+effective time when the ledger contains recorded intervals. Distinguish preserved
+prior intervals from work added during a bounded repair.
 Operational CLI and actual hard-limit evidence: docs/operations/LOCAL_AGENT.md.
 
 ## Research integrity and resource boundaries

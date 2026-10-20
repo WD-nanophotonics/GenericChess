@@ -1,0 +1,50 @@
+{
+  "schema": "primary-static-5x5-equal-d3-utility-v1",
+  "source_head": "35e3a961679300116373da83107aa575b1393594",
+  "question": "Does the already-tested rule-only static_v2 candidate retain any finite utility advantage over Unit on fresh generated 5x5 rules when candidate and fixed foe receive the same D3/8192-node/0.5-second budget?",
+  "changed_premise": "The corrected candidate96 panel used candidate D8/8192/0.5s against foe D2/32768/0.5s. Earlier work curves used D3 and D8 against D2 on other generated rules but did not include a dedicated fresh 5x5 D3-versus-D3 panel. This changes the resource regime and uses disjoint rules and prefixes; it is not a refill or repooling of existing panels.",
+  "rules": {
+    "board_size": 5,
+    "seeds": [523001, 523002, 523003, 523004, 523005, 523006, 523007, 523008],
+    "setups_by_seed_order": ["classic_like", "bilateral_random", "free_random"],
+    "movement_symmetry_by_seed_order": ["bilateral", "none"],
+    "allow_hybrid": true,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "opening_win_filter": false,
+    "generation_attempts": 16,
+    "selection": "All eight deterministic generated rules and all prespecified prefixes are retained without outcome/feature filtering. Seeds differ from the 521001..521008 and 522001..522008 5x5 panels."
+  },
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies": 4,
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "terminal_prefixes": "Retain as zero-search terminal slots; do not replace."
+  },
+  "arms": {
+    "candidates": ["unit", "static_v2"],
+    "fixed_foes": ["unit", "static_v2"],
+    "candidate_budget": {"max_depth": 3, "max_nodes": 8192, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "foe_budget": {"max_depth": 3, "max_nodes": 8192, "max_time_seconds": 0.5, "quiescence_max_depth": 0},
+    "root_window_pruning": false,
+    "tt_megabytes": 0,
+    "physical_games": 128,
+    "color_swap": "Both candidate colors on each identical rule/root/foe pair. Candidate and foe checkpoints are fixed before play."
+  },
+  "outcomes": {
+    "horizon": "Stop after 96 legal candidate plies unless a true Core terminal occurs first. Ongoing at the horizon is UNKNOWN; retain it as [-1,1], never impute draw or extend.",
+    "actual_terminal": "Score the actual Core Session result, including repetition and rule max-ply terminals.",
+    "contrast": "Within each rule/root/foe/color-swapped pair, static_v2 candidate reward minus Unit candidate reward; report each foe, candidate owner, seed, all-slot bounds and actual cost separately.",
+    "decision": "Strictly positive all-slot bounds against both fixed foes retain static_v2 as a viable candidate for this sampled 5x5 symmetric-D3 regime; nonpositive upper bounds against both de-prioritize it only for this regime. Otherwise unresolved. No global/default/strength claim."
+  },
+  "cost": {
+    "expected": "Below 4 minutes: the prior corrected 128-game 5x5 panel closed in 74.688 seconds with a deeper candidate D8/8192 budget and shallower D2/32768 foe; this D3/8192 symmetric arm should use no more search nodes per call and the same slots/horizon. Hard cap is 2400 seconds, so expected run is below 120 minutes.",
+    "hard_cap_seconds": 2400,
+    "cheaper_alternative": "The existing D8-vs-D2 panel and multi-size D3-vs-D8 curves do not test a dedicated symmetric D3-vs-D3 5x5 regime. The cheaper alternative is to defer, but it leaves the specified deployment-regime comparison unanswered."
+  },
+  "integrity": [
+    "No training, solver, auxiliary checkout or prior panel refill.",
+    "Preserve complete rules, promotion, drops, auxiliary state, GameSession history and true terminal results.",
+    "Keep each seed/root/failure/UNKNOWN; no seed replacement, outcome imputation, cross-panel pooling or population claim."
+  ]
+}

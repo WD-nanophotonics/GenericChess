@@ -1,6 +1,9 @@
 """Mechanism tests for the opt-in projection; no material-quality assertion."""
 from dataclasses import replace
+from unittest.mock import patch
 import itertools
+
+import generic_chess.ai.evaluation.profile as profile_module
 
 import pytest
 
@@ -33,19 +36,27 @@ def test_occupancy_condition_distinguishes_capture_only_and_empty_targets():
 def test_projection_is_not_legacy_atoms_or_full_semantic_mobility():
     compiled = compile_variant()
     config = EvaluationConfig()
-    base = build_ruleset_profile(compiled, config)
+    default_before = build_ruleset_profile(compiled, config)
+    # This comparison predates the semantic profile default. Keep its legacy
+    # control explicit instead of treating today's default as legacy atoms.
+    with patch.object(
+        profile_module,
+        'profile_movement_atoms',
+        side_effect=lambda c, tid: tuple(c._legacy_compiled.types_by_id[tid].movement_atoms),
+    ):
+        legacy_control = build_ruleset_profile(compiled, config)
     candidate, scope = build_semantic_opportunity_profile(compiled, config)
-    assert base.board_value_by_type['P'] == 1
+    assert legacy_control.board_value_by_type['P'] == 1
     assert candidate.board_value_by_type['P'] > 1
     assert candidate.board_value_by_type['K'] == 0
     assert candidate.piece_profiles['P'].raw_capability_score == pytest.approx(.8501171875)
-    assert candidate.evaluator_version != base.evaluator_version
+    assert candidate.evaluator_version != default_before.evaluator_version
     assert not scope['complete_legal_mobility']
     assert any('state/zone/postcondition' in e['reasons'] for e in scope['types']['P']['excluded'])
     assert scope['types']['P']['quiet_endpoints'] == 56
     assert len(candidate.piece_profiles['P'].movement_signature) == 64
     # Building the explicit candidate must not mutate default/cache tables.
-    assert build_ruleset_profile(compiled, config) == base
+    assert build_ruleset_profile(compiled, config) == default_before
 
 
 def test_type_rename_preserves_geometry_and_all_normalized_values():

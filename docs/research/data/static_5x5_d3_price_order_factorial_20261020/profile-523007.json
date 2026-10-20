@@ -1,0 +1,65 @@
+{
+  "board": {
+    "A": 1000,
+    "B": 1130,
+    "K": 0,
+    "P": 332
+  },
+  "fingerprint": "c51cbed319df20879c54ae6c98f93ff36e74f6aaa1460598badcfe4a78b781f7",
+  "hand": {
+    "A": 900,
+    "B": 1017,
+    "K": 0,
+    "P": 299
+  },
+  "piece_profiles": {
+    "A": {
+      "drop_freedom_ratio": 0.96,
+      "drop_mobility": 4.166666666666667,
+      "is_anchor": false,
+      "is_promotable": true,
+      "movement_signature": "[[\"L\",-3,0],[\"L\",3,0],[\"R\",-2,1,-1],[\"R\",0,1,-1],[\"R\",2,1,-1]]",
+      "normalized_board_value": 1000,
+      "normalized_hand_value": 900,
+      "promotion_option_value": 130,
+      "raw_capability_score": 3.3262130053775696,
+      "type_id": "A"
+    },
+    "B": {
+      "drop_freedom_ratio": 1.0,
+      "drop_mobility": 4.4,
+      "is_anchor": false,
+      "is_promotable": false,
+      "movement_signature": "[[\"L\",-2,1],[\"L\",0,-1],[\"L\",2,1],[\"R\",-2,1,-1],[\"R\",-1,-1,-1],[\"R\",1,-1,-1],[\"R\",2,1,-1]]",
+      "normalized_board_value": 1130,
+      "normalized_hand_value": 1017,
+      "promotion_option_value": 0,
+      "raw_capability_score": 3.757339561249541,
+      "type_id": "B"
+    },
+    "K": {
+      "drop_freedom_ratio": 0.0,
+      "drop_mobility": 0.0,
+      "is_anchor": true,
+      "is_promotable": false,
+      "movement_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+      "normalized_board_value": 0,
+      "normalized_hand_value": 0,
+      "promotion_option_value": 0,
+      "raw_capability_score": 5.269680952380952,
+      "type_id": "K"
+    },
+    "P": {
+      "drop_freedom_ratio": 0.6,
+      "drop_mobility": 2.0,
+      "is_anchor": false,
+      "is_promotable": true,
+      "movement_signature": "[[\"R\",-1,2,-1],[\"R\",1,2,-1]]",
+      "normalized_board_value": 332,
+      "normalized_hand_value": 299,
+      "promotion_option_value": 798,
+      "raw_capability_score": 1.1051625000000003,
+      "type_id": "P"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "arms": {
+    "candidate_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "candidates": [
+      "unit_leaf__unit_order",
+      "static_v2_leaf__unit_order"
+    ],
+    "color_swap": "Both candidate owners on each of 16 fresh 6x6 roots versus unchanged Unit-leaf/Unit-order foe; candidate and foe ordering are Unit.",
+    "fixed_foes": [
+      "unit"
+    ],
+    "foe_budget": {
+      "max_depth": 3,
+      "max_nodes": 8192,
+      "max_time_seconds": 0.5,
+      "quiescence_max_depth": 0
+    },
+    "physical_games": 64,
+    "root_window_pruning": false,
+    "tt_megabytes": 0
+  },
+  "changed_premise": "Two disjoint generated 5x5 cohorts had positive aggregate effects but the owner/turn contrast moved from [+0.125,+0.375] to [-0.625,-0.500]. This cohort heterogeneity motivates one distinct-size replication; it does not identify a cause or justify global promotion.",
+  "contrasts": {
+    "static_leaf_minus_unit_leaf": {
+      "static_v2_leaf__unit_order": 1,
+      "unit_leaf__unit_order": -1
+    },
+    "unknowns": "For every paired root/owner slot, UNKNOWN arm reward is independently bounded [-1,+1]; report all-slot bounds, finite-only means, owner strata, seed strata and leave-one-seed-out envelope."
+  },
+  "cost": {
+    "cheaper_alternative": "Source-only review cannot determine whether static-leaf choices transfer to 6x6 generated games; a half-size cohort would leave only four rules and two prefixes, too sparse for the owner/seed bounds. This one balanced 64-slot cohort is the smallest matched design retained.",
+    "expected": "Under twenty minutes for the single 64-game run, using the observed 233-second 5x5 64-game run as a baseline and conservatively allowing several-fold board-size overhead; producer enforces a frozen 2400-second cap. No splitting or extension.",
+    "hard_cap_seconds": 2400
+  },
+  "decision": "Widen static_v2 candidate scope to include this finite 6x6 regime only if aggregate and both owner all-slot lower bounds are strictly positive and every leave-one-seed-out lower bound is positive. Otherwise retain it as 5x5-only candidate. In either case no global price/default claim; report owner interaction and UNKNOWN bounds.",
+  "integrity": [
+    "No training, solver, auxiliary checkout, reused rules/roots or price/default change.",
+    "Candidate arms differ only in leaf checkpoint; both use Unit ordering and the opponent is fixed Unit leaf/Unit ordering. Equal D3/8192-node/0.5-second/q0/TT0/root-window-off caps.",
+    "Preserve actual terminals, UNKNOWNs, complete histories, promotions, drops, costs and budget causes."
+  ],
+  "question": "On eight disjoint unseen generated 6x6 rules, does the isolated static_v2 leaf-value effect remain positive across both candidate-owner/turn strata under the same D3 budget and fixed Unit opponent?",
+  "roots": {
+    "prefix_families_per_rule": 2,
+    "prefix_plies": 4,
+    "prefix_seed_formula": "rule_seed * 1000000 + family_index",
+    "selection": "Fresh roots generated only from the listed new 6x6 rules and prefix-seed formula; candidate arms share each exact root and owner.",
+    "terminal_prefixes": "Retain zero-search terminal slots unchanged."
+  },
+  "rules": {
+    "allow_hybrid": true,
+    "board_size": 6,
+    "generation_attempts": 16,
+    "movement_symmetry_by_seed_order": [
+      "bilateral",
+      "none"
+    ],
+    "opening_win_filter": false,
+    "require_nonpromotable_type": true,
+    "require_promotable_type": true,
+    "seeds": [
+      539101,
+      539102,
+      539103,
+      539104,
+      539105,
+      539106,
+      539107,
+      539108
+    ],
+    "selection": "Eight previously unused 6x6 rule seeds. Pre-run scan across all 24 existing research plan.json files found no overlap. Two deterministic four-ply prefixes per rule. Rebuild every rule/profile/root and replay every result; no seed/root reuse.",
+    "setups_by_seed_order": [
+      "classic_like",
+      "bilateral_random",
+      "free_random"
+    ]
+  },
+  "schema": "primary-static-6x6-d3-leaf-only-role-replication-v1",
+  "source_head": "35e3a961679300116373da83107aa575b1393594"
+}

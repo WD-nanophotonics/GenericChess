@@ -567,7 +567,7 @@ def test_promoted_uses_current_type_and_hand_uses_base():
     assert delta == profile.hand_value_by_base_type["P"]
 
 
-def test_semantic_western_pawn_promotion_zone_uses_profile_geometry():
+def test_semantic_western_pawn_promotion_zone_uses_compiled_masks():
     from types import SimpleNamespace
 
     from generic_chess.core.coordinates import Square, square_to_index
@@ -580,14 +580,14 @@ def test_semantic_western_pawn_promotion_zone_uses_profile_geometry():
     evaluator = Evaluator(compiled, profile, config)
 
     # The legacy P atom table is empty although semantic P has direct moves.
-    # The projected single-step/capture geometry places only the terminal rank
-    # in the no-forward-move promotion zone, mirrored for the other owner.
-    assert evaluator._zones[("P", 0)] == frozenset(
-        square_to_index(Square(file, 7), 8) for file in range(8)
-    )
-    assert evaluator._zones[("P", 1)] == frozenset(
-        square_to_index(Square(file, 0), 8) for file in range(8)
-    )
+    # Semantic execution carries the generated promotion masks, which define
+    # destinations independently of the projected empty-board geometry.
+    for owner in (0, 1):
+        expected = frozenset(
+            square_to_index(to, 8)
+            for _, to in compiled.promotion_allowed["P"][owner]
+        )
+        assert evaluator._zones[("P", owner)] == expected
     pawn = SimpleNamespace(promoted=False, base_type_id="P", owner=0)
     unit = max(1, profile.promotion_gain_by_type["P"] // 1000)
     assert evaluator._promotion_bonus(pawn, square_to_index(Square(3, 7), 8)) == 3 * unit
@@ -614,7 +614,13 @@ def test_legacy_promotion_zone_matches_compiled_forward_table():
             )
             assert evaluator._promotion_forward[(pt.type_id, owner)] == expected_forward
             expected_zone = frozenset(
-                idx for idx, targets in enumerate(expected_forward) if not targets
+                target_idx
+                for _, to in compiled.promotion_allowed[pt.type_id][owner]
+                for target_idx in (square_to_index(to, compiled.board_size),)
+                if any(
+                    compiled.empty_mobility[target][owner][target_idx]
+                    for target in pt.promotion_target_ids
+                )
             )
             assert evaluator._zones[(pt.type_id, owner)] == expected_zone
 
@@ -625,6 +631,102 @@ def test_legacy_promotion_zone_matches_compiled_forward_table():
     assert evaluator._promotion_bonus(
         pawn, square_to_index(Square(3, 6), 8)
     ) == config.promotion_potential_weight * unit // 2
+
+
+def test_promotion_potential_tracks_compiled_allowed_destinations():
+    from types import SimpleNamespace
+
+    from generic_chess.core.coordinates import Square, square_to_index
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.rules.compiler import compile_ruleset
+
+    pawn = T("P", LeapAtom((0, 1)), is_promotable=True, targets=("G",))
+    gold = T("G", RayAtom((1, 0)))
+    ruleset = make_ruleset(
+        8,
+        [king_type(), pawn, gold],
+        lines=[
+            ".......k", "........", "........", "........",
+            "........", "........", "........", "K.......",
+        ],
+        promotion={"P": ([(Square(4, 1), Square(4, 2))], [])},
+    )
+    compiled = compile_ruleset(ruleset)
+    config = EvaluationConfig()
+    profile = build_ruleset_profile(compiled, config)
+    evaluator = Evaluator(compiled, profile, config)
+
+    # Only this custom destination is promotion-enabled. The evaluator should
+    # not substitute every geometric no-forward square for the rule's mask.
+    target = square_to_index(Square(4, 2), 8)
+    geometric_edge = square_to_index(Square(4, 7), 8)
+    assert evaluator._zones[("P", 0)] == frozenset({target})
+    assert evaluator._promotion_bonus(
+        SimpleNamespace(promoted=False, base_type_id="P", owner=0), target
+    ) > 0
+    unit = max(1, profile.promotion_gain_by_type["P"] // 1000)
+    assert evaluator._promotion_bonus(
+        SimpleNamespace(promoted=False, base_type_id="P", owner=0),
+        square_to_index(Square(4, 1), 8),
+    ) == config.promotion_potential_weight * unit // 2
+    assert evaluator._promotion_bonus(
+        SimpleNamespace(promoted=False, base_type_id="P", owner=0), geometric_edge
+    ) == 0
+
+    state = make_state(compiled, [
+        ".......k", "........", "........", "........",
+        "........", "........", "....P...", "K.......",
+    ])
+    moves = [a for a in legal_actions(state, compiled)
+             if a.from_square == Square(4, 1) and a.to_square == Square(4, 2)]
+    assert any(a.promotion_target_id == "G" for a in moves)
+
+
+@pytest.mark.parametrize(
+    'semantic_execution', [False, True], ids=['legacy', 'inherited-semantic']
+)
+def test_promotion_potential_ignores_structurally_dead_targets(semantic_execution):
+    from types import SimpleNamespace
+
+    from generic_chess.core.coordinates import Square, square_to_index
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.rules.compiler import (
+        compile_legacy_ruleset_for_semantic_execution, compile_ruleset,
+    )
+
+    pawn = T('P', LeapAtom((1, 1)), is_promotable=True, targets=('G',))
+    # At the only promotion destination, G has no empty-board move. Core
+    # therefore suppresses that structurally dead promotion variant.
+    gold = T('G', RayAtom((1, 0)), RayAtom((0, 1)))
+    rows = [
+        '........', '......P.', '........', '........',
+        '........', '........', '........', 'K......k',
+    ]
+    ruleset = make_ruleset(
+        8, [king_type(), pawn, gold], lines=rows,
+        promotion={'P': ([(Square(6, 6), Square(7, 7))], [])},
+    )
+    compiled = (
+        compile_legacy_ruleset_for_semantic_execution(ruleset)
+        if semantic_execution else compile_ruleset(ruleset)
+    )
+    config = EvaluationConfig()
+    profile = build_ruleset_profile(compiled, config)
+    evaluator = Evaluator(compiled, profile, config)
+    target = square_to_index(Square(7, 7), 8)
+
+    assert profile.promotion_gain_by_type['P'] > 0
+    assert not compiled.empty_mobility['G'][0][target]
+    assert target not in evaluator._zones[('P', 0)]
+    assert evaluator._promotion_bonus(
+        SimpleNamespace(promoted=False, base_type_id='P', owner=0), target
+    ) == 0
+
+    state = make_state(compiled, rows)
+    moves = [a for a in legal_actions(state, compiled)
+             if a.from_square == Square(6, 6) and a.to_square == Square(7, 7)]
+    assert len(moves) == 1
+    assert moves[0].promotion_target_id is None
 
 
 def test_mate_score_beats_static():

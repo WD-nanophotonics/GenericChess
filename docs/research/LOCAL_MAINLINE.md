@@ -2219,18 +2219,45 @@ continue the generic-search interface map only for a specific uncovered caller
 with a decision-changing consequence; do not manufacture another regression or
 reopen closed routes.
 
-## Bounded primary-source check: rule-derived generic evaluation —2026-10-20
+## Bounded primary-source check and promotion-mask evaluator correction —2026-10-20
 
-Pell's METAGAMER abstract describes analyzing each symmetric chess-like game's
-rules to derive relative piece values for a generic search engine; Clune's AAAI
-paper builds rule-derived stable-feature heuristics with payoff, control and
-termination separated, and reports different selected features for chess and
-Othello. This supports the current direction of rule-conditioned evaluation
-inside generic search, but supplies no transferable numeric ratio result for
-our complete generated domain and no decision-changing evidence against the
-current alternatives. No API/default/training change follows. Keep the existing
-same-rule action/outcome witness gate before any price-panel expansion. Scope
-and source-access limits: `GENERAL_GAME_RULE_DERIVED_EVALUATION_LITERATURE_20261020.md`.
+Pell's AAAI-94 paper describes deriving static material values from symmetric
+chess-like rules while treating promotion distance as a separate dynamic
+evaluation term. It explicitly says its static promotion-value advisor was
+unfinished and not used in the reported experiments; its checkers pawn static
+value is acknowledged as too low without promotion, despite dynamic promotion
+distance being used in play. This cautions against treating a static table as
+the complete evaluator. The current architecture separates profile board/hand prices and promotion
+gains from `Evaluator`'s position-dependent promotion bonus, with tests for
+promotion-zone and forward-distance bands. A bounded integration check found
+that all 9,776 allowed source/destination pairs across 48 generated classic-like
+rules (6x6/8x8; 192 owner/type cases) had at least one promotion target with
+nonempty empty-board mobility. A valid custom legacy ruleset enabled promotion
+only at a non-geometric interior destination: Core generated that legal
+promotion, while the old geometry-only evaluator missed the target and rewarded
+an unrelated terminal-rank square. A second custom rule allowed P->G at a corner
+where G has no empty-board mobility. Core therefore emitted only the
+unpromoted action, while the first mask-based evaluator still assigned +3
+promotion potential. PRIMARY now builds promotion zones from compiled allowed
+destinations only when at least one promotion target has empty-board mobility at
+that exact destination, matching Core's structural target filter; projected
+movement still supplies the one-move proximity band. The original `build_promotion`
+static assertion then surfaced two forced mask pairs with no viable target. Their
+causal contract was traced to Core `_promotion_variants`, and the expected zone
+was aligned to that viable-target set, not loosened to the observed output. The
+48-rule generated control remains unchanged: 192 owner/type cases, 9,776 pairs,
+zero dead targets and zero zone mismatches. The focused evaluator, semantic
+profile/opportunity, Native inherited-promotion and legacy-promotion suites pass
+68 tests. This repairs a scoped legacy/inherited-mask evaluator contract; it does
+not establish price utility, universal explicit-semantic promotion handling, or
+transfer. Pell's brief report does not give a directly comparable matched-budget
+causal result. Clune's AAAI paper likewise
+supports game-conditioned features, not a universal numeric table. Neither
+source supplies transferable numeric ratios for our complete generated domain
+or a new same-rule action/outcome witness. No static price/default/training
+change or price-panel reopening follows; retain the existing witness gate.
+Evidence and access limits: `GENERAL_GAME_RULE_DERIVED_EVALUATION_LITERATURE_20261020.md`,
+including the [AAAI-94 paper](https://cdn.aaai.org/AAAI/1994/AAAI94-212.pdf).
 
 ## Close actionless-declaration repeat-summary gap —2026-10-20
 
@@ -2394,8 +2421,115 @@ replay. A bounded 66-state/1605-action audit plus real Shogi drop/promotion
 probes, now persisted as a Shogi CLI regression, preserved exact resolution or
 explicit ambiguity for observed action forms. This closes only the demonstrated
 input-projection defect; it does not change the live price/search candidate
-choice or establish all-domain CLI
-equivalence. Focused related suites pass43. Full default pytest has one isolated
-pre-existing static-opportunity assertion failure (expected pawn base value1,
-observed361); keep it visible and do not broaden this fix into the price model.
-Evidence and limitations: `GENERIC_CLI_ACTION_INPUT_20261020.md`.
+choice or establish all-domain CLI equivalence. Focused related suites pass43.
+The then-isolated static-opportunity assertion was later traced: commit `3d8808d`
+changed the default semantic profile's movement inputs, while the test still
+treated that default as the legacy atom-table control. The test now constructs
+the legacy control explicitly; it does not change the static price expectation.
+The corrected test passes, and the full suite later exited 0 in a run with valid
+runtime/helper access. See the follow-up diagnosis in
+`GENERIC_CLI_ACTION_INPUT_20261020.md`; preserve the original failure log as
+historical evidence, not a live failure or a reason to reopen prices.
+
+## Public AlphaBeta repetition-terminal caller —2026-10-20
+
+A fresh public-caller regression now connects Core's generic repetition-boundary
+transition to the reported depth-one AlphaBeta result. In the deterministic
+four-cycle, same-board roots at plies3/count1 and11/count3 are both ongoing; the
+single child is ongoing/-77 for the first and a repetition draw/0 for the
+second. A shared warm TT matches fresh no-TT controls in both input orders while
+both history-record and repetition-count digests are forced to collide; selected
+actions remain legal. The roots have different `ply_count`, which is also part
+of `SearchStateIdentity`, so this does not isolate repetition-history TT keying.
+The same-ply exact-history/warm-TT caller is separately exercised by
+`test_no_progress_search_context.py`. No engine change or broader TT-safety claim
+follows; this closes only public result-propagation coverage for generic
+repetition. Details: `GENERIC_REPETITION_SEARCH_CALLER_20261020.md`.
+
+## Close the real AlphaBeta cancellation-latency question —2026-10-20
+
+The earlier Qt Undo/Redo probe used a cooperative fake player and left real
+AlphaBeta cancel latency unmeasured. A bounded screen now calls public
+`AlphaBetaPlayer.choose_action` on six new generated 6x6/8x8 rules (three setup
+families; opening one-move wins filtered), with cancellation at50ms and100ms.
+All12 searched calls returned with `cancelled`; cancel-to-return median was
+0.4615ms, maximum2.330ms, every action remained legal and every root unchanged.
+The first unfiltered eight-rule attempt had six root-immediate-win completions;
+those were excluded from latency estimates. This supports keeping per-node
+polling and existing UI cancel semantics in this small initial-position sample,
+not a general responsiveness bound or native/fallback comparison (backend
+counters were not retained). Do not expand into a stress campaign absent a real
+slow-cancel trace. Full scope and ignored raw rows:
+`GENERIC_ALPHABETA_CANCELLATION_LATENCY_20261020.md`.
+
+## Fresh symmetric D3 utility check on generated 5x5 rules —2026-10-20
+
+The corrected static 5x5 candidate96 panel compared a D8 candidate against D2
+foes; the earlier multi-size D3/D8 work curve also used D2 fixed foes and did
+not include a dedicated symmetric D3 5x5 panel. This separate fixed plan uses
+eight disjoint rule seeds, two four-ply prefixes per rule, both candidate
+owners, static_v2 and Unit candidates, and each as a fixed foe, with
+D3/8192/0.5s/q0 for both sides. All128 games returned:122 true terminals,6
+UNKNOWN, no unstarted slots or history-replay mismatches. Independent analysis
+regenerated every rule and prefix, recomputed profiles, replayed all records,
+and found zero fallback queries or budget overruns. Static-minus-Unit all-slot
+bounds were positive against Unit[+0.375,+0.500] and static[+0.3125,+0.5625];
+every color stratum and leave-one-rule-seed-out lower bound remained positive.
+Seed523002 remains adverse/tied against both foes, with other zero cells; this
+is finite linked-seed evidence, not a population guarantee. It shows that the
+previous 5x5 static result was not observed only under a deeper candidate than
+foe, but does not settle the D3/D8 reversal against Unit in the multi-size work
+curve. Keep static_v2 as a viable scoped candidate and cheap baseline, with no
+global default or price-vector change; do not enlarge the 5x5 panel absent a
+changed consumer/premise. Full plan, rows, cost, replay and limits:
+`STATIC_5X5_SYMMETRIC_D3_UTILITY_20261020.md` and
+`data/static_5x5_equal_d3_20261020/`.
+
+The leaf/order factorial followed by the disjoint 8-seed leaf-only replication
+now closes the attribution question. The new cohort kept a positive aggregate
+all-slot bound `[+0.3125,+0.375]`, but static-leaf effect by candidate owner was
+`[0,+0.125]` for owner0 versus `[+0.625,+0.625]` for owner1; the prior cohort's
+owner0-minus-owner1 interval was `[+0.125,+0.375]`, while the fresh cohort's was
+`[-0.625,-0.500]`. Their conservative difference interval `[-1.000,-0.625]`
+shows strong cohort-dependent role interaction in this finite generated 5x5
+sample. Retain static_v2 only as a cheap candidate; no global price/default
+change. Full provenance, limitations, source closure, and regression evidence:
+`STATIC_5X5_D3_ROLE_INTERACTION_20261020.md`.
+
+The distinct caller audit also found no current API/state gap in the two
+remaining plausible routes: session/Core terminal handling (including
+NO_CONTEST/neutral declarations) and the shallow `SearchSnapshot`/experimental
+`SearchBackend` seam. Relevant existing product tests pass. Do not add a
+per-root-score API without a real caller, or deepen the closed 5x5 panel.
+
+The preregistered fresh-size check is now closed:
+[`STATIC_6X6_D3_ROLE_REPLICATION_20261020.md`](STATIC_6X6_D3_ROLE_REPLICATION_20261020.md).
+On eight disjoint generated 6x6 seeds, the 64-game D3 leaf-only panel returned
+60 actual terminals and four retained UNKNOWNs. Static-v2 minus Unit remained
+positive in aggregate `[+0.25,+0.50]` and in all leave-one-seed-out lower bounds
+(minimum `+0.2143`), but not for both candidate owners: owner0
+`[-0.0625,+0.1875]`, owner1 `[+0.5625,+0.8125]`. The predeclared scope-widening
+condition therefore failed. Candidate-first versus foe-first strata also
+diverged, and the two 5x5 cohorts differed from one another; this finite design
+does not identify board-size causality or a population effect. Keep static-v2
+only as the existing 5x5-scoped candidate, with no global price/default change.
+The size-transfer question is closed for this evidence; do not launch another
+size sweep or repeat these roots. Resume the generic price-transfer mainline at
+a distinct reachable consumer and require a decision-changing, prespecified
+contrast before running another panel.
+
+The first distinct-consumer audit now identifies the public Python AlphaBeta
+route: `Evaluator.capture_order_value` ranks good/bad captures from current board
+prices, and `Evaluator.type_value` orders promotion targets. `StagedMovePicker`
+uses these at actual search nodes; TT priority remains structural, while quiet
+and drop moves use history buckets. Existing tests cover picker completeness,
+exact-search equivalence and TT precedence, not price-derived ordering utility.
+This is separate from the Native ordering-checkpoint path already tested. The
+next candidate question is whether static-v2 ordering changes finite-budget
+results or paid work on a prospectively selected, turn-parity-balanced generated
+sample while leaf values and the Unit foe stay fixed. First verify a minimal
+evaluator adapter reaches only the intended ordering hooks and estimate one
+bounded run; if the exact production path cannot be isolated or the outcome
+would not alter candidate status, close this branch without a panel. No size
+sweep, repeated 6x6 games, or global/default change follows from the current
+evidence.

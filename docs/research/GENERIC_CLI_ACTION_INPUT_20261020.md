@@ -53,3 +53,19 @@ The demonstrated conclusion is only that the CLI now handles the observed
 coordinate-free pass action without corrupting action identity. It is not a
 claim of all-domain CLI equivalence or a change to the scientific price/search
 choice.
+
+## Follow-up diagnosis —2026-10-20
+
+The earlier full-suite assertion failure was later traced rather than treated as
+an expected-value change. Commit `3d8808d` changed default semantic profile
+movement inputs to eligible semantic direct-move atoms, so the default pawn
+profile no longer represented the legacy atom-table baseline. The old test had
+compared today's default profile to the historical legacy value `1`; that was a
+stale control, not evidence that the current price should be reset. The test now
+builds its legacy comparator explicitly from `_legacy_compiled` movement atoms,
+while keeping the current default and candidate assertions separate. The focused
+test passes, and a later full pytest run under a valid runtime/helper-access
+environment exited 0. Exact private logs and exit status are retained in
+`.local_agent/primary-mainline-20261020/full-pytest-final.log` and
+`full-pytest-final-status.json`. No expected value was weakened to match observed
+output; the old isolated failure is resolved.

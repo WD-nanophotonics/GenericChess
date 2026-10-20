@@ -1,0 +1,640 @@
+{
+  "actual_action_kinds": {
+    "board": 3160,
+    "drop": 1191,
+    "promotion": 270
+  },
+  "candidate_rewards": {
+    "-1": 61,
+    "1": 61,
+    "UNKNOWN": 6
+  },
+  "cost_by_fixed_foe_and_candidate": {
+    "static_v2": {
+      "static_v2": {
+        "actual_terminal_games": 30,
+        "candidate_caller_seconds": 8.549937598058023,
+        "candidate_nodes": 2559441,
+        "candidate_queries": 542,
+        "fixed_foe_caller_seconds": 8.479339100420475,
+        "fixed_foe_nodes": 2553264,
+        "fixed_foe_queries": 541,
+        "games": 32,
+        "unknown_games": 2
+      },
+      "unit": {
+        "actual_terminal_games": 30,
+        "candidate_caller_seconds": 8.734970501624048,
+        "candidate_nodes": 2566656,
+        "candidate_queries": 660,
+        "fixed_foe_caller_seconds": 8.254516800050624,
+        "fixed_foe_nodes": 2384735,
+        "fixed_foe_queries": 666,
+        "games": 32,
+        "unknown_games": 2
+      }
+    },
+    "unit": {
+      "static_v2": {
+        "actual_terminal_games": 30,
+        "candidate_caller_seconds": 8.301004202337936,
+        "candidate_nodes": 2384946,
+        "candidate_queries": 667,
+        "fixed_foe_caller_seconds": 8.754714698763564,
+        "fixed_foe_nodes": 2566509,
+        "fixed_foe_queries": 659,
+        "games": 32,
+        "unknown_games": 2
+      },
+      "unit": {
+        "actual_terminal_games": 32,
+        "candidate_caller_seconds": 5.0391507998574525,
+        "candidate_nodes": 1506585,
+        "candidate_queries": 308,
+        "fixed_foe_caller_seconds": 5.049197799758986,
+        "fixed_foe_nodes": 1506585,
+        "fixed_foe_queries": 308,
+        "games": 32,
+        "unknown_games": 0
+      }
+    }
+  },
+  "exact_movement_signature_census": {
+    "exact_classes": 24,
+    "nonanchor_entries": 32,
+    "profiles": 8,
+    "repeated_exact_classes": [
+      {
+        "members": [
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523001,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523002,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523003,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523004,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523005,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523006,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523007,
+            "type_id": "K"
+          },
+          {
+            "is_promotable": false,
+            "normalized_board_value": 0,
+            "normalized_hand_value": 0,
+            "raw_capability_score": 5.269680952380952,
+            "seed": 523008,
+            "type_id": "K"
+          }
+        ],
+        "movement_signature_sha256": "f5ccf14799748589d6498f27dde96a54f5b340f06658f6d27ef026d0a5793090"
+      },
+      {
+        "members": [
+          {
+            "is_promotable": true,
+            "normalized_board_value": 1000,
+            "normalized_hand_value": 900,
+            "raw_capability_score": 1.9739744807545732,
+            "seed": 523001,
+            "type_id": "P"
+          },
+          {
+            "is_promotable": true,
+            "normalized_board_value": 1000,
+            "normalized_hand_value": 900,
+            "raw_capability_score": 1.9739744807545732,
+            "seed": 523005,
+            "type_id": "B"
+          }
+        ],
+        "movement_signature_sha256": "08f57bed5957a6bb14694974d176befea1a15a8843256404159460aed8059fd9"
+      }
+    ],
+    "scope": "Exact serialized movement-signature equality only; no reflection or promotion equivalence inferred."
+  },
+  "first_candidate_action_diagnostic": {
+    "static_v2": {
+      "0": {
+        "first_actions_differ": 8,
+        "first_actions_equal": 8,
+        "interpretation": "Post hoc policy-operation diagnostic only; a changed first action is not itself a utility gain.",
+        "root_pairs_with_candidate_query": 16,
+        "same_first_candidate_state": 16
+      },
+      "1": {
+        "first_actions_differ": 5,
+        "first_actions_equal": 9,
+        "interpretation": "Post hoc policy-operation diagnostic only; a changed first action is not itself a utility gain.",
+        "root_pairs_with_candidate_query": 14,
+        "same_first_candidate_state": 14
+      }
+    },
+    "unit": {
+      "0": {
+        "first_actions_differ": 8,
+        "first_actions_equal": 8,
+        "interpretation": "Post hoc policy-operation diagnostic only; a changed first action is not itself a utility gain.",
+        "root_pairs_with_candidate_query": 16,
+        "same_first_candidate_state": 16
+      },
+      "1": {
+        "first_actions_differ": 7,
+        "first_actions_equal": 7,
+        "interpretation": "Post hoc policy-operation diagnostic only; a changed first action is not itself a utility gain.",
+        "root_pairs_with_candidate_query": 14,
+        "same_first_candidate_state": 14
+      }
+    }
+  },
+  "fixed_foe_by_candidate_owner": {
+    "static_v2": {
+      "0": {
+        "all_slot_lower": 0.25,
+        "all_slot_upper": 0.5,
+        "finite_mean": 0.42857142857142855,
+        "finite_pairs": 14,
+        "pairs": 16,
+        "unknown_pairs": 2
+      },
+      "1": {
+        "all_slot_lower": 0.375,
+        "all_slot_upper": 0.625,
+        "finite_mean": 0.42857142857142855,
+        "finite_pairs": 14,
+        "pairs": 16,
+        "unknown_pairs": 2
+      }
+    },
+    "unit": {
+      "0": {
+        "all_slot_lower": 0.5,
+        "all_slot_upper": 0.625,
+        "finite_mean": 0.6666666666666666,
+        "finite_pairs": 15,
+        "pairs": 16,
+        "unknown_pairs": 1
+      },
+      "1": {
+        "all_slot_lower": 0.25,
+        "all_slot_upper": 0.375,
+        "finite_mean": 0.4,
+        "finite_pairs": 15,
+        "pairs": 16,
+        "unknown_pairs": 1
+      }
+    }
+  },
+  "fixed_foe_static_minus_unit": {
+    "static_v2": {
+      "all_slot_lower": 0.3125,
+      "all_slot_upper": 0.5625,
+      "finite_mean": 0.42857142857142855,
+      "finite_pairs": 28,
+      "pairs": 32,
+      "unknown_pairs": 4
+    },
+    "unit": {
+      "all_slot_lower": 0.375,
+      "all_slot_upper": 0.5,
+      "finite_mean": 0.5333333333333333,
+      "finite_pairs": 30,
+      "pairs": 32,
+      "unknown_pairs": 2
+    }
+  },
+  "implemented_candidate_horizon": 96,
+  "interpretation": "Finite paired evidence only for these 8 generated 5x5 rules and symmetric D3 fixed budgets; unknown slots retain [-1,1] per candidate outcome. Linked seed rows are descriptive, not population confidence.",
+  "leave_one_seed_out": {
+    "static_v2": {
+      "excluded_seed_summaries": {
+        "523001": {
+          "all_slot_lower": 0.2857142857142857,
+          "all_slot_upper": 0.5714285714285714,
+          "finite_mean": 0.4166666666666667,
+          "finite_pairs": 24,
+          "pairs": 28,
+          "unknown_pairs": 4
+        },
+        "523002": {
+          "all_slot_lower": 0.42857142857142855,
+          "all_slot_upper": 0.6428571428571429,
+          "finite_mean": 0.56,
+          "finite_pairs": 25,
+          "pairs": 28,
+          "unknown_pairs": 3
+        },
+        "523003": {
+          "all_slot_lower": 0.21428571428571427,
+          "all_slot_upper": 0.5,
+          "finite_mean": 0.3333333333333333,
+          "finite_pairs": 24,
+          "pairs": 28,
+          "unknown_pairs": 4
+        },
+        "523004": {
+          "all_slot_lower": 0.35714285714285715,
+          "all_slot_upper": 0.6428571428571429,
+          "finite_mean": 0.5,
+          "finite_pairs": 24,
+          "pairs": 28,
+          "unknown_pairs": 4
+        },
+        "523005": {
+          "all_slot_lower": 0.21428571428571427,
+          "all_slot_upper": 0.5,
+          "finite_mean": 0.3333333333333333,
+          "finite_pairs": 24,
+          "pairs": 28,
+          "unknown_pairs": 4
+        },
+        "523006": {
+          "all_slot_lower": 0.2857142857142857,
+          "all_slot_upper": 0.42857142857142855,
+          "finite_mean": 0.38461538461538464,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523007": {
+          "all_slot_lower": 0.35714285714285715,
+          "all_slot_upper": 0.6428571428571429,
+          "finite_mean": 0.5,
+          "finite_pairs": 24,
+          "pairs": 28,
+          "unknown_pairs": 4
+        },
+        "523008": {
+          "all_slot_lower": 0.35714285714285715,
+          "all_slot_upper": 0.5714285714285714,
+          "finite_mean": 0.4,
+          "finite_pairs": 25,
+          "pairs": 28,
+          "unknown_pairs": 3
+        }
+      },
+      "maximum_upper_after_one_seed_exclusion": 0.6428571428571429,
+      "minimum_lower_after_one_seed_exclusion": 0.21428571428571427,
+      "purpose": "Post hoc descriptive robustness check; not a confidence interval or population estimate."
+    },
+    "unit": {
+      "excluded_seed_summaries": {
+        "523001": {
+          "all_slot_lower": 0.35714285714285715,
+          "all_slot_upper": 0.5,
+          "finite_mean": 0.5384615384615384,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523002": {
+          "all_slot_lower": 0.5,
+          "all_slot_upper": 0.5714285714285714,
+          "finite_mean": 0.5925925925925926,
+          "finite_pairs": 27,
+          "pairs": 28,
+          "unknown_pairs": 1
+        },
+        "523003": {
+          "all_slot_lower": 0.2857142857142857,
+          "all_slot_upper": 0.42857142857142855,
+          "finite_mean": 0.46153846153846156,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523004": {
+          "all_slot_lower": 0.42857142857142855,
+          "all_slot_upper": 0.5714285714285714,
+          "finite_mean": 0.6153846153846154,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523005": {
+          "all_slot_lower": 0.2857142857142857,
+          "all_slot_upper": 0.42857142857142855,
+          "finite_mean": 0.46153846153846156,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523006": {
+          "all_slot_lower": 0.2857142857142857,
+          "all_slot_upper": 0.42857142857142855,
+          "finite_mean": 0.46153846153846156,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523007": {
+          "all_slot_lower": 0.42857142857142855,
+          "all_slot_upper": 0.5714285714285714,
+          "finite_mean": 0.6153846153846154,
+          "finite_pairs": 26,
+          "pairs": 28,
+          "unknown_pairs": 2
+        },
+        "523008": {
+          "all_slot_lower": 0.42857142857142855,
+          "all_slot_upper": 0.5,
+          "finite_mean": 0.5185185185185185,
+          "finite_pairs": 27,
+          "pairs": 28,
+          "unknown_pairs": 1
+        }
+      },
+      "maximum_upper_after_one_seed_exclusion": 0.5714285714285714,
+      "minimum_lower_after_one_seed_exclusion": 0.2857142857142857,
+      "purpose": "Post hoc descriptive robustness check; not a confidence interval or population estimate."
+    }
+  },
+  "linked_seed_families": {
+    "foe=static_v2|seed=523001": {
+      "all_slot_lower": 0.5,
+      "all_slot_upper": 0.5,
+      "finite_mean": 0.5,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=static_v2|seed=523002": {
+      "all_slot_lower": -0.5,
+      "all_slot_upper": 0.0,
+      "finite_mean": -0.6666666666666666,
+      "finite_pairs": 3,
+      "pairs": 4,
+      "unknown_pairs": 1
+    },
+    "foe=static_v2|seed=523003": {
+      "all_slot_lower": 1.0,
+      "all_slot_upper": 1.0,
+      "finite_mean": 1.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=static_v2|seed=523004": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.0,
+      "finite_mean": 0.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=static_v2|seed=523005": {
+      "all_slot_lower": 1.0,
+      "all_slot_upper": 1.0,
+      "finite_mean": 1.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=static_v2|seed=523006": {
+      "all_slot_lower": 0.5,
+      "all_slot_upper": 1.5,
+      "finite_mean": 1.0,
+      "finite_pairs": 2,
+      "pairs": 4,
+      "unknown_pairs": 2
+    },
+    "foe=static_v2|seed=523007": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.0,
+      "finite_mean": 0.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=static_v2|seed=523008": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.5,
+      "finite_mean": 0.6666666666666666,
+      "finite_pairs": 3,
+      "pairs": 4,
+      "unknown_pairs": 1
+    },
+    "foe=unit|seed=523001": {
+      "all_slot_lower": 0.5,
+      "all_slot_upper": 0.5,
+      "finite_mean": 0.5,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523002": {
+      "all_slot_lower": -0.5,
+      "all_slot_upper": 0.0,
+      "finite_mean": 0.0,
+      "finite_pairs": 3,
+      "pairs": 4,
+      "unknown_pairs": 1
+    },
+    "foe=unit|seed=523003": {
+      "all_slot_lower": 1.0,
+      "all_slot_upper": 1.0,
+      "finite_mean": 1.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523004": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.0,
+      "finite_mean": 0.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523005": {
+      "all_slot_lower": 1.0,
+      "all_slot_upper": 1.0,
+      "finite_mean": 1.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523006": {
+      "all_slot_lower": 1.0,
+      "all_slot_upper": 1.0,
+      "finite_mean": 1.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523007": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.0,
+      "finite_mean": 0.0,
+      "finite_pairs": 4,
+      "pairs": 4,
+      "unknown_pairs": 0
+    },
+    "foe=unit|seed=523008": {
+      "all_slot_lower": 0.0,
+      "all_slot_upper": 0.5,
+      "finite_mean": 0.6666666666666666,
+      "finite_pairs": 3,
+      "pairs": 4,
+      "unknown_pairs": 1
+    }
+  },
+  "maximum_observed_candidate_plies": 96,
+  "plan_sha256": "ccfb21b55b6fc4c673295717175f8bc4a38d3b546e221890f3de10a0ea6c0c52",
+  "planned_horizon_candidate_plies": 96,
+  "planned_slots": 128,
+  "producer_sha256": "d1ef0fcb14277f80bb6629f2a798c9e0ddd4b24d0f9ecdce0c99cff76b0eeb12",
+  "profile_file_sha256_by_seed": {
+    "523001": "edf25d2521dfd11cb4a8772bee2536ee90efe09c106d83ec36df083fef184e44",
+    "523002": "ff2d7be060f26c6c32a7d2c459ca15a30aea15efe9eab09268cceb68aa39366d",
+    "523003": "c5926face3247b4d94557bc28090f8a57a24b285a49463bcdac4945b24fe0b0f",
+    "523004": "c007f32c8e24beaa2555457595bd48744108edc675c842b62169ea3476101d5f",
+    "523005": "fdac348ef0dea708cee9d23d5b83a9e54767bfecb77261dbc09852a91852ee6f",
+    "523006": "221020912f7f09e39e7ae10d80ecc8730ed3dcf820e76e45594a518a91d8eb5f",
+    "523007": "08b9c6d48fbdda4bde58dbde4998bac942647ac0d6caae07efea76f1044b5ec5",
+    "523008": "ce4bf980fa23e4116151034279be62602dcdde0cf25d040e5e3891f0ff5cac4b"
+  },
+  "protocol_deviation": null,
+  "queries_using_fallback": 0,
+  "query_budget_audit": {
+    "role=candidate|candidate=static_v2": {
+      "configured_limits": {
+        "max_depth": 3,
+        "max_nodes": 8192,
+        "max_time_seconds": 0.5,
+        "quiescence_max_depth": 0
+      },
+      "max_caller_seconds": 0.038949099951423705,
+      "max_depth": 3,
+      "max_kernel_seconds": 0.0383537,
+      "max_nodes": 8192,
+      "max_qnodes": 0,
+      "over_depth_cap": 0,
+      "over_node_cap": 0,
+      "over_time_cap": 0,
+      "queries": 1209
+    },
+    "role=candidate|candidate=unit": {
+      "configured_limits": {
+        "max_depth": 3,
+        "max_nodes": 8192,
+        "max_time_seconds": 0.5,
+        "quiescence_max_depth": 0
+      },
+      "max_caller_seconds": 0.03350820008199662,
+      "max_depth": 3,
+      "max_kernel_seconds": 0.0329961,
+      "max_nodes": 8192,
+      "max_qnodes": 0,
+      "over_depth_cap": 0,
+      "over_node_cap": 0,
+      "over_time_cap": 0,
+      "queries": 968
+    },
+    "role=foe|candidate=static_v2": {
+      "configured_limits": {
+        "max_depth": 3,
+        "max_nodes": 8192,
+        "max_time_seconds": 0.5,
+        "quiescence_max_depth": 0
+      },
+      "max_caller_seconds": 0.03911120002157986,
+      "max_depth": 3,
+      "max_kernel_seconds": 0.0335871,
+      "max_nodes": 8192,
+      "max_qnodes": 0,
+      "over_depth_cap": 0,
+      "over_node_cap": 0,
+      "over_time_cap": 0,
+      "queries": 1200
+    },
+    "role=foe|candidate=unit": {
+      "configured_limits": {
+        "max_depth": 3,
+        "max_nodes": 8192,
+        "max_time_seconds": 0.5,
+        "quiescence_max_depth": 0
+      },
+      "max_caller_seconds": 0.03707159997429699,
+      "max_depth": 3,
+      "max_kernel_seconds": 0.0365328,
+      "max_nodes": 8192,
+      "max_qnodes": 0,
+      "over_depth_cap": 0,
+      "over_node_cap": 0,
+      "over_time_cap": 0,
+      "queries": 974
+    }
+  },
+  "query_records": 4351,
+  "query_termination_causes": {
+    "completed": 3023,
+    "node_budget": 1328
+  },
+  "replayed_full_records": 128,
+  "result_summary": {
+    "actual_terminals": 122,
+    "caller_seconds": 61.16283150087111,
+    "elapsed_seconds": 72.45400000002701,
+    "full_history_replay_mismatches": 0,
+    "nodes": 18028721,
+    "planned_physical_games": 128,
+    "queries": 4351,
+    "returned_physical_games": 128,
+    "scope": "Finite new 5x5 fixed-budget comparison only; no training, population claim, global price winner or default activation.",
+    "status": "COMPLETE",
+    "stop_reason": null,
+    "unknown": 6,
+    "unstarted_slots": 0
+  },
+  "returned_slots": 128,
+  "schema": "primary-static-5x5-equal-d3-analysis-v1",
+  "terminal_reasons": {
+    "ACTUAL_TERMINAL": 122,
+    "HORIZON_96_CANDIDATE_UNKNOWN": 6
+  }
+}

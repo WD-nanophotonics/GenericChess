@@ -245,6 +245,12 @@ save a JSON with `session_id`, `reason: user_redirect`, `requested_task`
 60-minute research segment. Complete the bounded request, then run
 `session final-check --mode bounded`. Next research `session start` resumes the
 same UUID/start and recorded effective work, excluding the interruption gap.
+Immediately after every state transition, run `session status` and reconcile
+NEXT_WORK.md: copy the actual state, same UUID and UTC start/resume, exact
+effective seconds/minutes, interval count, and legacy-unverified status. The JSON
+ledger is authoritative; the memo is a handoff and must never contradict it. An
+interruption preserves earlier verified intervals but adds no repair time. Before
+final reply/handoff, verify the memo and final-check refer to that same state.
 Do not invoke interrupt merely because an ordinary patrol reached a milestone,
 had no Chat comment or ran out of ideas. Actual runtime interruption must be
 reported honestly; no helper can force a model/tool to remain available.

@@ -54,6 +54,7 @@ class Evaluator:
                 # every square look like a promotion zone.
                 atoms = profile_movement_atoms(compiled, pt.type_id)
                 for owner in (0, 1):
+                    allowed = compiled.promotion_allowed.get(pt.type_id, ((), ()))
                     forward = tuple(
                         tuple(
                             square_to_index(target, compiled.board_size)
@@ -66,7 +67,17 @@ class Evaluator:
                         )
                         for idx in range(compiled.board_size * compiled.board_size)
                     )
-                    zone = frozenset(idx for idx, targets in enumerate(forward) if not targets)
+                    # Match Core's structural target filter; mask entries with
+                    # no mobile promotion result are not executable variants.
+                    zone = frozenset(
+                        target_idx
+                        for _, to in allowed[owner]
+                        for target_idx in (square_to_index(to, compiled.board_size),)
+                        if any(
+                            compiled.empty_mobility[target][owner][target_idx]
+                            for target in pt.promotion_target_ids
+                        )
+                    )
                     self._zones[(pt.type_id, owner)] = zone
                     self._promotion_forward[(pt.type_id, owner)] = forward
 
