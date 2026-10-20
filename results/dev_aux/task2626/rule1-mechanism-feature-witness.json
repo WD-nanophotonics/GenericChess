@@ -1,0 +1,67 @@
+{
+  "R_hand_counts_after_by_owner": [
+    1,
+    0
+  ],
+  "actual_outcome_read": false,
+  "candidate_rule_sha256": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+  "feature_delta": [
+    -1,
+    0,
+    2,
+    0,
+    0,
+    1
+  ],
+  "feature_names": [
+    "('board', 'P')",
+    "('board', 'N')",
+    "('board', 'R')",
+    "('hand', 'N')",
+    "('hand', 'P')",
+    "('hand', 'R')"
+  ],
+  "features_after_last_action": [
+    0,
+    0,
+    1,
+    -1,
+    0,
+    1
+  ],
+  "features_before_last_action": [
+    1,
+    0,
+    -1,
+    -1,
+    0,
+    0
+  ],
+  "last_action": {
+    "actor_type_id": "P",
+    "from": [
+      1,
+      2
+    ],
+    "geometry_id": "g22",
+    "kind": "semantic_board",
+    "pattern_id": "sem_00_capture_promote_expiring_right",
+    "promotion_target_id": null,
+    "to": [
+      1,
+      3
+    ]
+  },
+  "limits": [
+    "Single existing witness only; not an empirical frequency or learner strength result.",
+    "The expiring temp_right value is not asserted to gate any action.",
+    "No hand-R unlock action is included in this 7-ply witness; that needs separate trajectory evidence."
+  ],
+  "plies": 7,
+  "pre_last_action_record_sha256": "3573a262f483e1d2b5b2c451d4e6b5e0e348f2c010f4b58d2cbe75220ca76401",
+  "promoted_P_current_R_after": 1,
+  "promoted_P_current_R_before": 0,
+  "status": "PASS_LEGAL_FULL_HISTORY_PROMOTION_FEATURE_WITNESS",
+  "variant_screen_sha256": "19868c47d8d811a67282118ec74ef5d3ba837be11510716239ff113f858ee23c",
+  "witness_record_sha256": "931e52b5c9d88ae56a77c3b1c3c7fab1a573d0bc39b6ea008d1f09a6018c742a"
+}

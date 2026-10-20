@@ -1,0 +1,306 @@
+{
+  "candidate_sha256": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+  "limits": {
+    "depth_cap": 24,
+    "per_rule_node_cap": 20000,
+    "per_rule_time_cap_seconds": 30.0
+  },
+  "negative_scope": "Position-only dedup retains shortest paths; absent a positive witness this is not a complete repetition-history proof. Positive witness is a complete actual GameSession record.",
+  "records": [
+    {
+      "expanded_by_depth": {
+        "0": 1,
+        "1": 6,
+        "2": 9,
+        "3": 31,
+        "4": 73,
+        "5": 194,
+        "6": 327,
+        "7": 693,
+        "8": 747,
+        "9": 1265,
+        "10": 1122,
+        "11": 1359,
+        "12": 1151,
+        "13": 1190,
+        "14": 908,
+        "15": 715,
+        "16": 505,
+        "17": 292,
+        "18": 195,
+        "19": 96,
+        "20": 68,
+        "21": 60,
+        "22": 55,
+        "23": 5,
+        "24": 3
+      },
+      "expanded_positions": 11067,
+      "frontier_remaining": 0,
+      "generated_transitions": 44125,
+      "index": 0,
+      "legal_P_capture_actions": 0,
+      "legal_P_moves": 1883,
+      "max_expanded_depth": 24,
+      "prefit_full_record_sha256": "b6f32731dc90b14528d0833a84843c954f8d3c77563cff41b2c05e53f0d2e9e3",
+      "prefit_input_index": 0,
+      "rule_path": "results/dev_aux/task2433/rules-0.json",
+      "rule_sha256": "33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0",
+      "seconds": 13.468755900044926,
+      "status": "EXHAUSTED_POSITION_GRAPH",
+      "unique_positions": 11070,
+      "witness": null
+    },
+    {
+      "expanded_by_depth": {
+        "0": 1,
+        "1": 3,
+        "2": 3,
+        "3": 7,
+        "4": 13,
+        "5": 41,
+        "6": 23
+      },
+      "expanded_positions": 91,
+      "frontier_remaining": 105,
+      "generated_transitions": 298,
+      "index": 1,
+      "legal_P_capture_actions": 2,
+      "legal_P_moves": 26,
+      "max_expanded_depth": 6,
+      "prefit_full_record_sha256": "62a41f761b00c03cb4ac46be43f2359309ccd4c9b3a96a3e71f66666edb32008",
+      "prefit_input_index": 1,
+      "rule_path": "results/dev_aux/task2433/rules-1.json",
+      "rule_sha256": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+      "seconds": 0.09954319999087602,
+      "status": "WITNESS_FOUND",
+      "unique_positions": 196,
+      "witness": {
+        "actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_028",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              3
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_030",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g15",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_014",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              2
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "actor_type_id": "N",
+            "from": [
+              2,
+              1
+            ],
+            "geometry_id": "g11",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "R",
+            "from": [
+              2,
+              3
+            ],
+            "geometry_id": "g17",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_019",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "P",
+            "from": [
+              1,
+              2
+            ],
+            "geometry_id": "g22",
+            "kind": "semantic_board",
+            "pattern_id": "sem_00_capture_promote_expiring_right",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              3
+            ]
+          }
+        ],
+        "plies": 7,
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                1
+              ],
+              "geometry_id": "g3",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_028",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                3
+              ],
+              "geometry_id": "g4",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_030",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "N",
+              "from": [
+                0,
+                0
+              ],
+              "geometry_id": "g15",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_014",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                2
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_034",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                2
+              ]
+            },
+            {
+              "actor_type_id": "N",
+              "from": [
+                2,
+                1
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_006",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "R",
+              "from": [
+                2,
+                3
+              ],
+              "geometry_id": "g17",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_019",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            },
+            {
+              "actor_type_id": "P",
+              "from": [
+                1,
+                2
+              ],
+              "geometry_id": "g22",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_capture_promote_expiring_right",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                3
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "a0100bca5aaa44a4036bd745b4c19c082bb637a14d927ea7a0eca869c5fcda7c",
+          "schema_version": 1
+        }
+      }
+    }
+  ],
+  "seconds": 13.644305999972858,
+  "selected_index": 1,
+  "selection_rule": "First task2433 file index with a fully legal P base-to-R current transition under a complete GameSession history; no W/L, search targets, fitness, or model values.",
+  "status": "FIXED_ORDER_OUTCOME_BLIND_MECHANISM_SCREEN_COMPLETE"
+}

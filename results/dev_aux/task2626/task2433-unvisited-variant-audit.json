@@ -1,0 +1,35 @@
+{
+  "input_sha256": "6dd5a7d205e8718abb3cc581c57e8d00e652d7f404f4e622deed853116925604",
+  "negative_limit": "CAP_REACHED is unresolved; only reported exhausted finite graphs are exhausted within depth24.",
+  "outcomes_read": false,
+  "record_count": 14,
+  "screen_sha256": "43e684c1dc0bb80e02702d582823d8ed560c0e634919ec92e07e072c25b3350f",
+  "status": "PASS_SOURCE_PINS_AND_POSITIVE_WITNESS_REPLAY",
+  "status_counts": {
+    "CAP_REACHED": 1,
+    "EXHAUSTED_POSITION_GRAPH": 9,
+    "WITNESS_FOUND": 4
+  },
+  "verified_witnesses": [
+    {
+      "index": 6,
+      "plies": 3,
+      "record_sha256": "0fa395a4b091ed490e16b9b6b39b1bc724acc933748390373d8ca2a0c5a452c6"
+    },
+    {
+      "index": 10,
+      "plies": 5,
+      "record_sha256": "2f25cdff9b93753087adb9a96fdcc185509bdebb6450e611c371f01498f8fe61"
+    },
+    {
+      "index": 11,
+      "plies": 9,
+      "record_sha256": "ec4a1df6e9c0c45d5e121ba00cbf70f0012dd161e79ab486e697ca14b5a4afdd"
+    },
+    {
+      "index": 15,
+      "plies": 1,
+      "record_sha256": "8b9e48b7ff26075205f58eea0334a4d5dc9f327543f2523bef322b8b90be0057"
+    }
+  ]
+}

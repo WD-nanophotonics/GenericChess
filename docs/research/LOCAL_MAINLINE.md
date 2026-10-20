@@ -1,4 +1,4 @@
-## Current checkpoint — DEV_AUX handoff / tasks2620–2625 (2026-10-20)
+## Current checkpoint — DEV_AUX handoff / tasks2620–2626 (2026-10-20)
 
 The user transferred this existing DEV_AUX role to the new chat; the existing
 dev-aux heartbeat remains ACTIVE every60minutes and now targets
@@ -105,31 +105,104 @@ An outcome-blind inventory of the saved 477 `results/dev_aux/rules-*.json`
 artifacts found 14 coarse structural signatures; this is not a unique-rule
 count or a representative population. Task2625's four measured 4x4 rules
 already vary leap/ray geometry and promotion/drop mappings, but none carries
-semantic actions or explicit auxiliary state. The next most informative
-existing generated candidate is task2433 `rules-0.json` (SHA256
-`33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0`): same
-4x4 board and four pieces, with capture-to-hand, promotion, and a hand-R action
-that unlocks a quiet rook ray move. Its `temp_right` bit is written and expires
-but no saved guard reads it; it is not evidence for decision-relevant
-aux-conditioned play. Task2411's drop-zone guard/harvest fixture is a more
-coupled authored alternative; 3x3/5x5 candidates add less mechanism coverage
-for this learner question.
+semantic actions or explicit auxiliary state. Task2433 `rules-0.json` (SHA256
+`33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0`) was the
+first generated candidate, with capture-to-hand, promotion, and a hand-R move
+that unlocks a quiet rook ray move. Task2626's audited 136-root pool and
+80,000-node/180-second outcome-blind feasibility scan completed in160.801s with
+zero promotion-feature events, and no pool root exposed the same-owner hand-R
+unlock channel. This is a feature/entry limitation, not a learner-strength
+result; no training was registered. Its 120,710,968-byte raw query log remains
+local; the published deterministic gzip copy and raw/compressed SHA-256 values
+are recorded in
+`results/dev_aux/task2626/trajectory-feasibility/queries-publication-manifest.json`.
+Its `temp_right` bit is written and
+expires but no saved guard reads it; it is not evidence for decision-relevant
+aux-conditioned play.
+Task2411's drop-zone guard/harvest fixture remains a more coupled authored
+alternative; 3x3/5x5 candidates add less mechanism coverage for this question.
 
 Task2433 has 16 generated rules sharing the same semantic DSL and movement
 profile, with one saved legal-prefix root per rule (8 train/8 reserve overall),
 112 generation attempts and zero fitness queries. Treat those histories as
-exposed despite the absence of fitness/search queries. Next: make an independent
-outcome-blind root pool for the fixed-order rules-0 candidate, auditing complete
-history against task2433 and task2411 records and requiring R-hand/promotion
-feature excitation. Preserve task2625's per-rule resource condition (four
-seeds,120 training roots per seed,250k combined nodes per arm,16 eval roots per
-seed and learner endpoint), then bind a source-matched cost estimate before
-registration. The linear 16.7-minute scale-down from task2625's 66.70-minute
-four-rule estimate is only a planning reference; semantic-rule cost is unknown.
-No sample is registered or launched, and this one-rule panel cannot establish
-complete Generic-domain transfer. If any revised experiment estimate reaches
-120 minutes, obtain the required Chat mailbox assessment before launch. Full
-coverage reasoning and caveats: `results/dev_aux/task2625/NEXT_RULE_COVERAGE.md`.
+exposed despite the absence of fitness/search queries. After the rules-0
+negative entry result, task2626 selected the fixed-order rules-1 candidate
+(SHA256 `808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb`).
+A saved legal 7-ply witness moves P-base/R-current count 0→1 with signed
+fixed-scale feature delta `[-1,0,2,0,0,1]`. The first outcome-blind 10,000-family
+screen found 7 eligible same-owner R-hand/R-board/promoted-P roots among 9,069
+ongoing roots; all first10,000 family IDs are excluded from the prospective
+pool. A constructed, non-sampled 9-ply continuation verifies that one legal
+`hand_R_unlocks_rook_quiet` move consumes one hand R and changes only the
+hand-R feature by−1. It is a mechanism witness, not an action-frequency,
+learner or strength result. The `temp_right` bit still has no rule guard; no
+aux-conditioned claim is made.
+
+The sole outcome-blind rules-1 root-preparation session77036 exited1 at
+2026-10-20T13:21:36Z after testing the complete training range
+[5,200,000,5,700,000), selecting6/120 roots and raising `training pool short`.
+It observed exit after at most2,944s of its6,600-second cap; no pool/temp file
+was written, and the evaluation range[6,200,000,6,350,000) was not started.
+The final error omits invalid/overlap/duplicate counters, so the shortfall cannot
+be attributed to feature rarity versus exposure filtering. The probe and
+preparation use the same feature predicate; the additional full-history replay
+is a consistency check. Preserve this failed preparation without retrying,
+extending ranges or adding samples; sanitized terminal evidence is
+`results/dev_aux/task2626/rule1-root-preparation-attempt-004.json`, with the
+exact raw tool traceback retained privately under `.local_agent/`.
+
+The producer source is now hardened for a future authorized pool attempt: it
+persists tested/invalid/overlap/duplicate/selected counts every25,000 families
+even when a family is rejected, and saves explicit pool-short or hard-cap
+receipts. These edits occurred after attempt004 exited and do not alter its
+failed result. The independent pool auditor binds launch-source
+provenance, verifies exact-history/source/range/split constraints, rejects
+duplicate family IDs and reports legal root unlock-action availability. The
+capped cost harness logs only executed unlock actions and separates
+candidate/foe counts. Five scripts compile; the constructed witness audit
+passes. There is no rules-1 pool, feasibility result, training registration or
+strength conclusion. Any later training still requires a fresh all-in estimate
+and Chat assessment first if it reaches120 minutes.
+
+A source-only comparison of the16 task2433 rules found one shared
+`semantic_actions` definition (SHA256
+`236f4eaf01121afdbf5307fe3b14ea40063aa6d8035d7b58feba0bb68b38f7d7`) and16
+distinct initial positions. The separately capped outcome-blind screen of
+rules2–15 completed in152.759s under20,000-position/24-ply/30s-per-rule caps.
+It found legal P-base→R-current witnesses in rules6 (3 plies),10 (5),11 (9)
+and15 (1); nine finite position graphs were exhausted and rule3 reached its
+cap with frontier remaining. Independent audit
+`results/dev_aux/task2626/task2433-unvisited-variant-audit.json` passed all14
+rule/input hashes and replayed all four witnesses. Follow-up inspection found
+owner0 board-R plus hand-R in all four witness endpoints. Each endpoint leaves
+owner1 to move; at least one legal reply in each case makes a hand-R unlock
+rook-quiet action legal for owner0 (rules6/10/11: one reply; rule15: both of
+its two legal replies). This is finite existential mechanism evidence only:
+no action frequency, opponent policy, root-pool sufficiency, learning, strength
+or complete-domain transfer is established. Full records were already exposed
+as task2433 histories and remain excluded from prospective selection.
+
+The shortest currently verified candidate is rules15, with a 1-ply P→R
+witness and a legal one-reply unlock continuation. The next useful step is a
+separate outcome-blind root-panel feasibility design for rules15, first
+inspecting its exact source, initial history and all prior exposure ranges,
+then measuring preparation/audit/feasibility plus the existing task2625
+training/evaluation/reserve costs. Do not create or register a pool until that
+all-in estimate is bound; if it reaches120 minutes, obtain Chat mailbox
+assessment first. The old rules1 shortfall and caps remain unchanged. No
+training registration, W/L/D measurement or strength claim follows from this
+mechanism screen.
+
+Preserve task2625's per-rule resource condition (four seeds,120 training roots,
+250k combined nodes per arm,16 evaluation roots per seed and learner endpoint),
+then bind a source-matched all-in cost estimate before registration. The
+42,965-of-80,000 node threshold and76.082-minute preparation break-even in
+`results/dev_aux/task2626/rule1-cost-decision-threshold.json` are preliminary;
+the final estimate must include actual preparation, audit, feasibility,
+training/evaluation and reserve. If the revised estimate reaches120 minutes,
+obtain Chat mailbox assessment before registration. No rules-1 sample is
+registered or launched. This one-rule panel cannot establish complete
+Generic-domain transfer. Full coverage reasoning: `results/dev_aux/task2625/NEXT_RULE_COVERAGE.md`.
 
 Earlier same-day registration/running checkpoints below are retained history;
 the closed status above supersedes their operational pending statements.

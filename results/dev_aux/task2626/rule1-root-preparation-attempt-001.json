@@ -1,0 +1,16 @@
+{
+  "status": "INTERRUPTED_BEFORE_COMPLETE_POOL_OUTPUT",
+  "purpose": "Outcome-blind preparation of a separate mechanism-active root pool for task2433 rules-1.",
+  "candidate_rule_sha256": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+  "initial_train_family_range": [5200000, 5450000],
+  "initial_evaluation_family_range": [6200000, 6300000],
+  "initial_pool_targets": {"training": 120, "evaluation": 16},
+  "root_pool_written": false,
+  "progress_count_available": false,
+  "interruption_reason": "The prior 10,000-family outcome-blind probe found only 7 eligible roots among 9,069 ongoing eight-ply histories. The original family bounds did not provide adequate margin; execution was interrupted before any root manifest was written and the fixed bounds were enlarged.",
+  "replacement_ranges": {
+    "training": [5200000, 5700000],
+    "evaluation": [6200000, 6350000]
+  },
+  "scope_note": "This preserved attempt has no selected records, outcomes, query labels, or partial training. It is not an experiment registration and does not authorize launch."
+}

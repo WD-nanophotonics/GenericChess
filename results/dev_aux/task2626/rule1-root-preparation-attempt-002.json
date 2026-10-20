@@ -1,0 +1,12 @@
+{
+  "status": "INTERRUPTED_DURING_PRIOR_JSONL_ENUMERATION",
+  "purpose": "Outcome-blind preparation of a separate mechanism-active root pool for task2433 rules-1.",
+  "candidate_rule_sha256": "808ad86d095f38f1cf2ce3efea373d17698f7ab732b7a23cf47aa74c59eac6cb",
+  "train_family_range": [5200000, 5700000],
+  "evaluation_family_range": [6200000, 6350000],
+  "root_pool_written": false,
+  "root_records_selected": false,
+  "interruption_reason": "The Python per-line JSON parse enumerated 31 prior streams totaling 2,778,305,577 bytes before reaching root selection. The scan was stopped to replace it with an exact fixed-fingerprint ripgrep search, parsing only matching files.",
+  "replacement": "prepare_rule1_roots.py version 2 persists progress and uses an exact ruleset-fingerprint search over the same explicit prior-stream path list. It does not change root ranges, feature criteria, or outcome-blind selection.",
+  "scope_note": "No root-pool output, training, fitness query, or W/L/D result was produced in this attempt."
+}

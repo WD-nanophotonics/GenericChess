@@ -1,0 +1,68 @@
+{
+  "baseline": {
+    "retained_estimate_minus_producer_reserve_seconds": 1696.107,
+    "source_sha256": {
+      "results/dev_aux/task2621/cost-feasibility.json": "66ac003972f7c785bb180c4dcf4e6a9224ce5b94d5f4a8567893eb40959a302f",
+      "results/dev_aux/task2621/cost-scan/result.json": "a7f3589404a80bdc9c0675d7b6c473280e1136661b52c2f6c881ff8ef166d4c4",
+      "results/dev_aux/task2625/REPORT.md": "722f60ef859084aa38212c62a8cf133c66cd3175fac9b55cc3b0a7caa53fe1ec",
+      "results/dev_aux/task2625/run/eval-result.json": "e4ac648f12a4609d19e6176cb1a0c7406c24b6ed0e34f7f51f28f332481dd1f9",
+      "results/dev_aux/task2625/run/training-result.json": "760bb829c2f0424b6e780f1541a6fe70fe7b824c998b0671e5c9794108b84304",
+      "results/dev_aux/task2626/trajectory_feasibility.py": "821f2204f40ceb73797820bd45d04f48ed4ee23614dde36422079291c7987a96"
+    },
+    "task2625_estimate_scope_caveat": "task2625/freeze_study.py records root_pool_preparation_observed_seconds and full_source_audit_observed_seconds but expected_seconds sums only training_projection_seconds + evaluation_projection_seconds + preparation_and_audit_hard_reserve_seconds; this planning note does not copy that omission into the final rule1 estimate.",
+    "task2625_evaluation_nodes": 1254951,
+    "task2625_evaluation_seconds": 555.656,
+    "task2625_producer_seconds": 2305.893,
+    "task2625_training_nodes": 4000000,
+    "task2625_training_seconds": 1750.237,
+    "task2625_whole_task_estimate_seconds": 4002.0
+  },
+  "break_even": {
+    "equivalent_minimum_nodes_within_probe_hard_cap": 42964.642481240095,
+    "final_gate": "Use the full measured/projected total before registration. If it is >=7200 seconds, request explicit Chat mailbox necessity assessment before registration/launch.",
+    "final_total_seconds_formula": "root_preparation_actual_seconds + independent_root_audit_actual_seconds + feasibility_actual_seconds + training_projection_seconds + evaluation_projection_seconds + explicit_setup_audit_variance_reserve_seconds",
+    "interpretation": "If the cost probe reaches less than the break-even node count by 180s, conservatively project >=120 minutes and request Chat mailbox necessity assessment before any registration. If at/above, compute a source-matched full estimate including measured prep, audit, training and evaluation; this screening threshold alone does not authorize registration.",
+    "mailbox_threshold_seconds": 7200,
+    "minimum_candidate_nodes_per_second_to_remain_below_threshold": 238.69245822911165,
+    "preparation_and_audit_cost_included_seconds": 0,
+    "reserved_setup_audit_and_variance_seconds": 1696.107,
+    "threshold_scope": "Preliminary lower-bound screen only. The 42,965-node / 239 nodes/s figure assumes zero measured rule1 preparation, root audit and feasibility cost, so it is not the final budget gate."
+  },
+  "cost_probe": {
+    "hard_seconds": 180.0,
+    "node_cap": 80000,
+    "seeds": 4,
+    "uses_WLD_for_selection": false,
+    "uses_actual_terminal_values": false
+  },
+  "limitations": [
+    "The task2625 reserve is reused as a conservative fixed allowance, not a calibrated rule1 overhead distribution.",
+    "The one-rule eval size is a quarter-scale planning assumption; use the exact frozen per-rule/seed/endpoint slot matrix before registration.",
+    "Rules-1 search speed may vary by trajectory; an 80k scan is a cost feasibility signal, not a runtime guarantee.",
+    "No training, outcomes, model comparison or registration is created by this note.",
+    "The preliminary break-even omits actual root preparation/audit/feasibility time; it must be recomputed using their receipts before any registration or launch."
+  ],
+  "prospective_scale_assumption": {
+    "evaluation_nodes": 313737.75,
+    "evaluation_scale": "one quarter of task2625 total slots/nodes; candidate-specific cost scan replaces the same-rate assumption",
+    "evaluation_slot_count": 256,
+    "per_arm_training_node_cap": 250000,
+    "seeds": 4,
+    "total_nodes": 1313737.75,
+    "training_nodes": 1000000.0
+  },
+  "question": "What outcome-blind 80k-node rule1 feasibility rate would make the one-rule four-seed 1M-train-node plus quarter-scale evaluation projection reach the 120-minute mailbox threshold under a conservative fixed task2625 planning reserve?",
+  "source_projection_crosscheck": {
+    "audit_time_reference_seconds": 36.0,
+    "basis": "task2621 source-bound training projection scaled to one of four rules; retain its full 1536-slot evaluation projection as conservative upper reference; add the 1200s reserve, 180s feasibility cap, and 36s task2625 audit-time reference.",
+    "conservative_evaluation_projection_seconds_full1536_slots": 691.4194885999896,
+    "feasibility_hard_cap_seconds": 180.0,
+    "one_rule_training_projection_seconds": 527.6420043748658,
+    "preparation_audit_reserve_seconds": 1200,
+    "root_preparation_break_even_minutes": 76.08230845041908,
+    "root_preparation_break_even_seconds": 4564.938507025145,
+    "scope": "Preliminary threshold only. Replace the full evaluation projection with a candidate-specific justified estimate and substitute actual root-preparation/audit/feasibility receipts before deciding on registration.",
+    "source_sha256": "66ac003972f7c785bb180c4dcf4e6a9224ce5b94d5f4a8567893eb40959a302f"
+  },
+  "status": "PRE_OUTCOME_LOWER_BOUND_ONLY_PREPARATION_EXCLUDED"
+}

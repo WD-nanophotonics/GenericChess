@@ -1,0 +1,28 @@
+{
+  "candidate_rule": "results/dev_aux/task2433/rules-0.json",
+  "candidate_sha256": "33020d8bb1bb06115f7314aed32db28218033bbc7d7ce47203cd832979fa90a0",
+  "dedup_key": "complete Position including auxiliary/hands/side and full repetition-count map; ply count omitted because depth cap24 is below rules max_ply512.",
+  "depth_cap": 24,
+  "expanded_by_depth": {
+    "0": 1,
+    "1": 6,
+    "2": 15,
+    "3": 70,
+    "4": 211,
+    "5": 1006,
+    "6": 3513,
+    "7": 15564,
+    "8": 54631,
+    "9": 7094
+  },
+  "expanded_states": 82111,
+  "generated_transitions": 343276,
+  "maximum_expanded_depth": 9,
+  "node_cap": 100000,
+  "search_result": null,
+  "seconds": 120.00143969990313,
+  "selection_inputs": "Legal GameSession transitions, current/base piece types and promotion marker only. No outcomes, search scores, weights, or fitness queries.",
+  "status": "NOT_FOUND_WITHIN_CAP",
+  "time_cap_seconds": 120.0,
+  "unique_position_repetition_states": 342782
+}
