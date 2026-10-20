@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-20T09:31:46.253326+00:00",
+  "eta": 0.05,
+  "exclusions": "Only four legacy generated rules and one short trajectory each; no proof of full generated-domain capability or learned strength",
+  "fixed_scale": 10.0,
+  "initial_seed": 1407393461,
+  "initialization": "Uniform[0.5,1.5], fixed coordinate0=1, exactly the Chess recipe",
+  "lam": 0.95,
+  "max_queries": 16,
+  "max_total_nodes": 8192,
+  "new_training_comparison": false,
+  "nodes_per_query": 512,
+  "question": "Can the exact fixed-coordinate Chess Model and TDLeafEpisode execute bounded Generic typed-history searches without FreeModel or hard-coded feature width?",
+  "rule_selection": "All four existing task2525 rules271001-271004, development fixtures; not new or held-out rules",
+  "rule_sha256": {
+    "results/dev_aux/task2525/rules-271001.json": "b05c8135dabd6abff28400c6840e640eaac847b2ca7cda5f0b7098e1636b77ff",
+    "results/dev_aux/task2525/rules-271002.json": "cebe9e3d3bdb42326fa4ed4130355809c017f1df3bcbc1ed0f87e7debb3008f4",
+    "results/dev_aux/task2525/rules-271003.json": "d058c1be18c97a2ca5069e857a1efe730b028eea1ecfece40fe2615f61b95792",
+    "results/dev_aux/task2525/rules-271004.json": "322062ff7dce408256e6fdc5927b1fc232601b17519b7547148f004aa1592400"
+  },
+  "same_learner_class": "task2492.episode.TDLeafEpisode",
+  "same_model_class": "task2492.learning.Model",
+  "seconds_per_query": 2.0,
+  "source_sha256": {
+    "generic_chess/session/serialization.py": "159c5e39861d0faba9420ad61c002a3be10c0326bb11aff4a9576825da7c5c50",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "results/dev_aux/task2492/adapters.py": "9d91ecd69308d79ff2a257a4addb79c7c6b91f67ec72e5e4173bbf02b4c7955f",
+    "results/dev_aux/task2492/episode.py": "c1798654adbad62dbd8ddbcba836ac05469b0c7f99ee7db1b9f9f34303daa0e0",
+    "results/dev_aux/task2492/learning.py": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+    "results/dev_aux/task2511/generic.py": "ab5f0e58d50bc2c6adb55af438639396dcd3dbf3ad082959852cca89c2389d7e",
+    "results/dev_aux/task2621/feasibility.py": "659805023f4a2e2bb9b17eff23281bca03c7ee97cfc719e964a4f8c60d60975f",
+    "results/dev_aux/task2621/fixed_scale.py": "c50d5f7fa2e0db755a33ef5c9e4c480ecfb6a99fac3009b13e443800ac251571"
+  },
+  "strength_evaluation": false,
+  "unit": "board P; generator-native type name, no assumed movement/material prior",
+  "whole_run_hard_seconds": 90
+}

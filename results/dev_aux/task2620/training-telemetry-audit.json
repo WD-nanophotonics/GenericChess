@@ -1,0 +1,131 @@
+{
+  "consequence": "Do not use that field as actual pre-search weights. This diagnostic validates four first-change cases, not all training updates or endpoint provenance.",
+  "evaluation_labels_added": 0,
+  "finding": "TreeStrap weights_before_search is serialized after TreeStrap.update, so it contains post-update weights on changed candidate queries.",
+  "frozen_training_or_endpoint_changed": false,
+  "future_fix": "In a separately registered future trainer, snapshot actor weights before search/update; retain historical raw logs and this interpretation correction.",
+  "observations": [
+    {
+      "action_value_nodes_and_post_update_match": true,
+      "actual_before": [
+        1.0,
+        1.3615194546233518,
+        0.982238127121747,
+        1.1522266243658665,
+        0.8620599756515601
+      ],
+      "game_index": 0,
+      "logged_field": [
+        1.0,
+        1.3614936033189384,
+        0.9822088968604712,
+        1.1522266243658665,
+        0.8620599756515601
+      ],
+      "nodes": 371,
+      "ply": 10,
+      "reproduced_after": [
+        1.0,
+        1.3614936033189384,
+        0.9822088968604712,
+        1.1522266243658665,
+        0.8620599756515601
+      ],
+      "seed": 1407393461,
+      "source_line": 11
+    },
+    {
+      "action_value_nodes_and_post_update_match": true,
+      "actual_before": [
+        1.0,
+        0.8411820227614749,
+        1.21596175317377,
+        0.5017810858649439,
+        1.3051416296961622
+      ],
+      "game_index": 0,
+      "logged_field": [
+        1.0,
+        0.8409421987492173,
+        1.21596175317377,
+        0.5017810858649439,
+        1.3051416296961622
+      ],
+      "nodes": 87,
+      "ply": 8,
+      "reproduced_after": [
+        1.0,
+        0.8409421987492173,
+        1.21596175317377,
+        0.5017810858649439,
+        1.3051416296961622
+      ],
+      "seed": 285297431,
+      "source_line": 31152
+    },
+    {
+      "action_value_nodes_and_post_update_match": true,
+      "actual_before": [
+        1.0,
+        1.1570137515540515,
+        0.9811027971902158,
+        1.3660356048207436,
+        1.2846667751890446
+      ],
+      "game_index": 0,
+      "logged_field": [
+        1.0,
+        1.1570137515540515,
+        0.9810705820725782,
+        1.3660356048207436,
+        1.2846667751890446
+      ],
+      "nodes": 164,
+      "ply": 16,
+      "reproduced_after": [
+        1.0,
+        1.1570137515540515,
+        0.9810705820725782,
+        1.3660356048207436,
+        1.2846667751890446
+      ],
+      "seed": 1428194790,
+      "source_line": 59157
+    },
+    {
+      "action_value_nodes_and_post_update_match": true,
+      "actual_before": [
+        1.0,
+        0.7181470566212058,
+        0.9915986761977128,
+        0.5505894451108723,
+        1.0057252573082365
+      ],
+      "game_index": 0,
+      "logged_field": [
+        1.0,
+        0.7181333731671553,
+        0.9915986761977128,
+        0.5505894451108723,
+        1.0057252573082365
+      ],
+      "nodes": 144,
+      "ply": 18,
+      "reproduced_after": [
+        1.0,
+        0.7181333731671553,
+        0.9915986761977128,
+        0.5505894451108723,
+        1.0057252573082365
+      ],
+      "seed": 1534967704,
+      "source_line": 85835
+    }
+  ],
+  "rows_scanned": 113666,
+  "selected_rule": "First TreeStrap candidate query with changed logged weights per seed; no outcome selection",
+  "source_plan_sha256": "5ddc6b6bcbaec3cea17254dbf0b563bf3ea481b2a292f8fa6092ab31c38aeeda",
+  "status": "CONFIRMED_TELEMETRY_NAME_DEFECT",
+  "verifier_paid_nodes": 766,
+  "verifier_seconds": 0.08600840001599863
+}

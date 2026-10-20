@@ -1,3 +1,44 @@
+# DEV_AUX chat handoff / tasks2620–2621 —2026-10-20 JST
+
+User-authorized transfer of the existing role and dev-aux heartbeat to the new
+chat; same ACTIVE/hourly identity, own sidemission checkout and active session
+UUID/origin/confirmed work preserved. Administrative time excluded. No new
+worker, PRIMARY/DeepSeek state write, supervision, independent execution or
+adoption claim. Existing shared project fixtures/code were reused in this own
+checkout; other roles' research remains independently owned.
+
+Own task2620 original evaluator completed1536slots/1267terminal/269UNKNOWN,
+24728530nodes/222704queries; full replay/cost audit and independent six-contrast
+arithmetic PASS. TDLeaf beats initialization under finite worst-case bounds;
+no full-panel ranking of learning methods. Exact start disjointness is not
+population/descendant independence;20k/40k root strata do not identify a causal
+budget effect.12 frozen training endpoints separately reconstructed from12M
+verification nodes; this cost is disclosed, not additional strength evidence.
+
+Corrections: ordinary sandbox invisibility was not a dead process; original
+exit0 resolved it. Auditor import defect fixed with actual-search/adversarial
+controls. TreeStrap historical pre-search field is post-update; frozen evidence
+unchanged.32 unpruned witnesses agree on optimal sets despite22 different ties.
+Own Generic candidate fixes stale NO_CONTEST JSON outcome admission using the
+existing rule authority, with no reward translation or PRIMARY rollout.
+
+Same fixed-scale Model/TDLeafEpisode Generic interface/cost work begins next:
+full-state promotion/drop/aux/history witnesses; zero-update opening control
+preserved;8 active-feature development roots and320k-node cost-only scan;
+5707queries/258episodes audited. No held-out strength/general-domain claim.
+Next comparison estimate66.700min is prospective only, subject to final source,
+root-pool, scope and actual-cost freeze. Actual terminal W/L/D still evaluates
+strength; static grids/provers remain optional controls, not learning gates.
+
+Resumed the already-read Chat mailbox probe and verified its saved raw snapshot;
+three prior comments remain defer as outside this own frozen task/role. No Dot
+mention/wait/follow-up or new read to solicit a response. One checked fixed-SHA
+report follows publication; delivery, Chat reading/adoption and independent
+execution remain separate. Reports: results/dev_aux/task2620/REPORT.md and
+results/dev_aux/task2621/REPORT.md. Science OPEN.
+
+## Historical completed100
+
 # DEV_AUX100 collaboration checkpoint —2026-10-19 JST
 
 Own SAME TD/Chess/search/history implementation reused, no PRIMARY/DS writes,

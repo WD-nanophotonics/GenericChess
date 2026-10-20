@@ -1,0 +1,138 @@
+{
+  "arms": [
+    {
+      "counts": {
+        "UNKNOWN": 1,
+        "actual_terminal": 51,
+        "candidate_nodes": 44992,
+        "episodes": 52,
+        "foe_nodes": 35008,
+        "incomplete_searches": 1,
+        "nodes": 80000,
+        "nonzero_updates": 52,
+        "queries": 1657
+      },
+      "final_weights": [
+        1.0,
+        1.8339842133293467,
+        1.4186328202168728,
+        1.4732796986436691,
+        -0.6742847859676327,
+        1.0514532419931064
+      ],
+      "initial_weights": [
+        1.0,
+        1.3615194546233518,
+        0.982238127121747,
+        1.1522266243658665,
+        0.8620599756515601,
+        1.0530622890025891
+      ],
+      "rule": 271001,
+      "seconds": 22.422559699974954,
+      "status": "NODE_CAP"
+    },
+    {
+      "counts": {
+        "UNKNOWN": 1,
+        "actual_terminal": 65,
+        "candidate_nodes": 45282,
+        "episodes": 66,
+        "foe_nodes": 34718,
+        "nodes": 80000,
+        "nonzero_updates": 33,
+        "queries": 930
+      },
+      "final_weights": [
+        1.0,
+        1.6216254485267392,
+        1.1996771130449537,
+        1.1731950672912785,
+        1.09134249436224,
+        1.1899662761595402
+      ],
+      "initial_weights": [
+        1.0,
+        1.3615194546233518,
+        0.982238127121747,
+        1.1522266243658665,
+        0.8620599756515601,
+        1.0530622890025891
+      ],
+      "rule": 271002,
+      "seconds": 28.140906899992842,
+      "status": "NODE_CAP"
+    },
+    {
+      "counts": {
+        "UNKNOWN": 1,
+        "actual_terminal": 21,
+        "candidate_nodes": 43326,
+        "episodes": 22,
+        "foe_nodes": 36674,
+        "incomplete_searches": 1,
+        "nodes": 80000,
+        "nonzero_updates": 22,
+        "queries": 1767
+      },
+      "final_weights": [
+        1.0,
+        0.08694457662013082,
+        0.6363234312801702,
+        1.9637253728059434,
+        0.14860292730738128,
+        1.3092885869743698
+      ],
+      "initial_weights": [
+        1.0,
+        1.3615194546233518,
+        0.982238127121747,
+        1.1522266243658665,
+        0.8620599756515601,
+        1.0530622890025891
+      ],
+      "rule": 271003,
+      "seconds": 21.818725700024515,
+      "status": "NODE_CAP"
+    },
+    {
+      "counts": {
+        "UNKNOWN": 1,
+        "actual_terminal": 117,
+        "candidate_nodes": 44682,
+        "episodes": 118,
+        "foe_nodes": 35318,
+        "incomplete_searches": 1,
+        "nodes": 80000,
+        "nonzero_updates": 103,
+        "queries": 1353
+      },
+      "final_weights": [
+        1.0,
+        1.4582069739130559,
+        1.325188313931964,
+        1.4876506919252244,
+        0.25003970413527343,
+        1.2230814709977578
+      ],
+      "initial_weights": [
+        1.0,
+        1.3615194546233518,
+        0.982238127121747,
+        1.1522266243658665,
+        0.8620599756515601,
+        1.0530622890025891
+      ],
+      "rule": 271004,
+      "seconds": 27.46728629997233,
+      "status": "NODE_CAP"
+    }
+  ],
+  "expected_arms": 4,
+  "limitation": "Small cost-only repeated development-root workload; not a long-run runtime guarantee, learning benefit, or full-domain validation",
+  "no_heldout_claim": true,
+  "nodes": 320000,
+  "seconds": 99.86766759998864,
+  "status": "COST_ONLY_COMPLETE",
+  "strength_comparison": false
+}

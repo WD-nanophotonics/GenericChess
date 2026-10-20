@@ -14,6 +14,7 @@ from ..core.actions import (
     SemanticDropMove,
 )
 from ..core.coordinates import Square
+from ..rules.schema import DECLARATION_OUTCOMES
 from .record import DeclarationRecord, GameRecord
 from .session import SessionRecordError
 
@@ -258,8 +259,8 @@ def deserialize_game_record(text: str) -> GameRecord:
         )
         if declaration.declared_by not in (0, 1):
             raise _err("INVALID_PLAYER", f"{path}.declaration.declared_by", "declared_by must be 0 or 1")
-        if declaration.outcome not in ("WIN", "RESTART", "LOSS"):
-            raise _err("INVALID_OUTCOME", f"{path}.declaration.outcome", "outcome must be WIN, RESTART or LOSS")
+        if declaration.outcome not in DECLARATION_OUTCOMES:
+            raise _err("INVALID_OUTCOME", f"{path}.declaration.outcome", "outcome must be WIN, RESTART, NO_CONTEST or LOSS")
         if resigned is not None:
             raise _err("INVALID_SCHEMA", f"{path}.resigned_by", "resignation and declaration are mutually exclusive")
 

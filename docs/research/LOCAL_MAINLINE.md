@@ -1,4 +1,54 @@
-## Current direction — DEV_AUX111 (2026-10-20)
+## Current checkpoint — DEV_AUX handoff / tasks2620–2621 (2026-10-20)
+
+The user transferred this existing DEV_AUX role to the new chat; the existing
+dev-aux heartbeat remains ACTIVE every60minutes and now targets
+01a15880-7263-7e12-a0e0-e42959c0bfb9. Own checkout/sidemission, session UUID,
+UTC origin, confirmed effective time, stops and frozen caps were preserved.
+Handoff/configuration/transport time is not research credit. PRIMARY and
+DEEPSEEK remain independent; no new Agent/worker/scheduler was created.
+
+Task2618 v4 training is COMPLETE (12M nodes,693 terminal episodes,16 UNKNOWN);
+its original session-bound evaluation remains unstarted. Separate task2620
+completed all1536 frozen slots, exit0 in3199.534s,24728530 nodes and222704queries:
+1267 actual terminal,269 UNKNOWN,0 missing. Full independent action/history,
+actor/model, terminal, node/time and cap accounting PASS. Independent rational
+six-contrast arithmetic agrees with the pinned analysis. TDLeaf-minus-initial
+is[29/384,111/128], positive for this finite panel; the other five full-panel
+contrasts span0. No learner-method winner, population effect, stable price law
+or broad Generic transfer is established. Both budget strata, all seeds/roots
+and every UNKNOWN remain reported. Different roots in20k/40k strata prevent a
+causal extra-budget interpretation. See results/dev_aux/task2620/REPORT.md.
+
+All12 frozen learner endpoints were independently source-reconstructed from
+113666 queries/709 started episodes/12M separately paid verification nodes.
+Historical TreeStrap weights_before_search actually stores post-update weights;
+that field interpretation is corrected without editing frozen source/logs or
+models. The original evaluator was alive despite ordinary sandbox invisibility;
+supported process inspection and its original exit receipt resolved the issue.
+Training/deployment ordering differs;32 finite unpruned D2 witnesses match
+values/optimal sets but22 choose different ties, not evidence of improvement.
+
+Next direct-route choice is strict SAME fixed-scale Generic TDLeaf feasibility,
+not another Chess ranking campaign or a proof prerequisite. Task2621 uses exact
+Model/TDLeafEpisode with dynamic full board-current/hand-base channels, fixed
+coordinate0/scale10 and full GameSession history. Old task2606 used FreeModel
+and is not strict fixed-scale reuse. The preserved opening smoke had zero
+updates; a new outcome-blind8-root active-feature probe produced6/8 updates.
+A separately capped320k-node cost scan took99.868s;5707 queries/258 episodes and
+all record/TD update accounting passed. These are development interface/cost
+checks, not Generic strength or complete-domain validation. An actual legal
+NO_CONTEST record roundtrip defect was fixed in this own branch by sharing the
+rule authority's outcome set;69 record/declaration/interface checks pass.
+Prospective 4M-node/1024-slot H128 cost estimate is66.700minutes with explicit
+margins/reserve, not a registration or guarantee. Next freeze a controlled
+SAME fixed-scale comparison and full-history training/evaluation pools, refresh
+actual preparation cost, and use Chat mailbox assessment if expected>=120min.
+No new strength batch or product default was enabled. See task2621/REPORT.md.
+
+Earlier same-day registration/running checkpoints below are retained history;
+the closed status above supersedes their operational pending statements.
+
+## Prior current direction — DEV_AUX111 (2026-10-20)
 
 The user's 2026-10-17 route decision remains active: make TD/TD-Leaf/search
 bootstrapping the primary learning method, first validate on standard Chess,

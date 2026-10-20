@@ -1441,3 +1441,10 @@ results/dev_aux/task2616/*.py whitespace=cr-at-eol,-blank-at-eof
 
 # Preserve exact source and registered plan hashes for task2617.
 results/dev_aux/task2617/** -text whitespace=cr-at-eol
+
+# Preserve the exact source-bound data and audit/Generic contract evidence.
+results/dev_aux/task2618/** -text whitespace=cr-at-eol
+results/dev_aux/task2620/** -text whitespace=cr-at-eol
+results/dev_aux/task2621/** -text whitespace=cr-at-eol
+generic_chess/session/serialization.py text eol=crlf
+results/dev_aux/task2620/run-001/frozen-sources/** whitespace=cr-at-eol,-blank-at-eof

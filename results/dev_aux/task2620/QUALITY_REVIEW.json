@@ -1,0 +1,28 @@
+{
+  "branch": "sidemission",
+  "checks": {
+    "all12_frozen_training_endpoints_reconstructed": true,
+    "all1536_slots_accounted": true,
+    "all222704_query_actions_replayed": true,
+    "all6_full_panel_bounds_preserved": true,
+    "all_old_caps_and_failures_preserved": true,
+    "heartbeat_migrated_existing_id": true,
+    "no_human_price_fit_or_holdout_read": true,
+    "no_new_worker_or_other_role_write": true,
+    "public_archive_126_member_hashes_verified": true,
+    "public_closed_audit_byte_identical": true,
+    "role_root_branch_match": true,
+    "source_pins_24_match": true,
+    "unknown_not_draw": true
+  },
+  "limitations": [
+    "One fixed foe/48-start finite Chess panel; no population or descendant/transposition independence.",
+    "Only TDLeaf versus initialization is sign-resolved across the complete panel; no method winner.",
+    "Generic tests/cost scan use development fixtures, not a strength/general-domain validation.",
+    "Record reader change is own-branch additive NO_CONTEST admission, not PRIMARY adoption.",
+    "Structure/time validator is not independent scientific review."
+  ],
+  "role": "DEV_AUX",
+  "science": "OPEN",
+  "status": "REVIEWED_SAFE_CHECKPOINT"
+}

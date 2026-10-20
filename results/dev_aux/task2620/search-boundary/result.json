@@ -1,0 +1,617 @@
+{
+  "completed": 32,
+  "different_tied_choices": 22,
+  "exhaustive_nodes": 22990,
+  "failure": null,
+  "limitation": "Finite complete-query semantic witnesses only. Training/deployment ordering policies differ; no all-state equivalence or strength claim.",
+  "new_evaluation_labels": 0,
+  "seconds": 12.92793070001062,
+  "status": "PASS",
+  "training_search_verifier_nodes": 4170,
+  "witnesses": [
+    {
+      "actor": 0,
+      "deployment_action": "f3h5",
+      "different_tied_choices": true,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "f3c6",
+        "f3f6",
+        "f3h5"
+      ],
+      "seed_index": 2,
+      "source_line": 1,
+      "training_action": "f3c6",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "e8d7",
+      "different_tied_choices": true,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "e8d7",
+        "e8d8",
+        "g7g6"
+      ],
+      "seed_index": 2,
+      "source_line": 2,
+      "training_action": "e8d8",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "f3h5",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "f3c6",
+        "f3f6",
+        "f3h5"
+      ],
+      "seed_index": 2,
+      "source_line": 53,
+      "training_action": "f3c6",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "e8d7",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "e8d7",
+        "e8d8",
+        "g7g6"
+      ],
+      "seed_index": 2,
+      "source_line": 54,
+      "training_action": "e8d8",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "f3h5",
+      "different_tied_choices": true,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "f3c6",
+        "f3f6",
+        "f3h5"
+      ],
+      "seed_index": 2,
+      "source_line": 239,
+      "training_action": "f3c6",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "e8d7",
+      "different_tied_choices": true,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "e8d7",
+        "e8d8",
+        "g7g6"
+      ],
+      "seed_index": 2,
+      "source_line": 240,
+      "training_action": "e8d8",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "f3h5",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "f3c6",
+        "f3f6",
+        "f3h5"
+      ],
+      "seed_index": 2,
+      "source_line": 293,
+      "training_action": "f3c6",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "e8d7",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "e8d7",
+        "e8d8",
+        "g7g6"
+      ],
+      "seed_index": 2,
+      "source_line": 294,
+      "training_action": "e8d8",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "g1f3",
+      "different_tied_choices": true,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "a1a2",
+        "a3a4",
+        "b1c3",
+        "c1b2",
+        "c2c3",
+        "c2c4",
+        "d1e1",
+        "d2d3",
+        "d2d4",
+        "e2e3",
+        "f2e1",
+        "f2e3",
+        "f2f3",
+        "f2g3",
+        "g1f3",
+        "g1h3",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "seed_index": 0,
+      "source_line": 347,
+      "training_action": "e2e3",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "g8h6",
+      "different_tied_choices": true,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "a6b8",
+        "a6c5",
+        "a8b8",
+        "b6b5",
+        "c7c5",
+        "c7c6",
+        "c8b7",
+        "d7d5",
+        "d7d6",
+        "d8e8",
+        "e7e6",
+        "f7e6",
+        "f7e8",
+        "f7f6",
+        "f7g6",
+        "g7g6",
+        "g8f6",
+        "g8h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "seed_index": 0,
+      "source_line": 348,
+      "training_action": "h7h6",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "g1f3",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "a1a2",
+        "a3a4",
+        "b1c3",
+        "c1b2",
+        "c2c3",
+        "c2c4",
+        "d1e1",
+        "d2d3",
+        "d2d4",
+        "e2e3",
+        "f2e1",
+        "f2e3",
+        "f2f3",
+        "f2g3",
+        "g1f3",
+        "g1h3",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "seed_index": 0,
+      "source_line": 631,
+      "training_action": "e2e3",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "g8h6",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "a6b8",
+        "a6c5",
+        "a8b8",
+        "b6b5",
+        "c7c5",
+        "c7c6",
+        "c8b7",
+        "d7d5",
+        "d7d6",
+        "d8e8",
+        "e7e6",
+        "f7e6",
+        "f7e8",
+        "f7f6",
+        "f7g6",
+        "g7g6",
+        "g8f6",
+        "g8h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "seed_index": 0,
+      "source_line": 632,
+      "training_action": "h7h6",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "g1f3",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "a1a2",
+        "a3a4",
+        "b1c3",
+        "c1b2",
+        "c2c3",
+        "c2c4",
+        "d1e1",
+        "d2d3",
+        "d2d4",
+        "e2e3",
+        "f2e1",
+        "f2e3",
+        "f2f3",
+        "f2g3",
+        "g1f3",
+        "g1h3",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "seed_index": 0,
+      "source_line": 823,
+      "training_action": "e2e3",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "g8h6",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "a6b8",
+        "a6c5",
+        "a8b8",
+        "b6b5",
+        "c7c5",
+        "c7c6",
+        "c8b7",
+        "d7d5",
+        "d7d6",
+        "d8e8",
+        "e7e6",
+        "f7e6",
+        "f7e8",
+        "f7f6",
+        "f7g6",
+        "g7g6",
+        "g8f6",
+        "g8h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "seed_index": 0,
+      "source_line": 824,
+      "training_action": "h7h6",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "g1f3",
+      "different_tied_choices": true,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "a1a2",
+        "a3a4",
+        "b1c3",
+        "c1b2",
+        "c2c3",
+        "c2c4",
+        "d1e1",
+        "d2d3",
+        "d2d4",
+        "e2e3",
+        "f2e1",
+        "f2e3",
+        "f2f3",
+        "f2g3",
+        "g1f3",
+        "g1h3",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "seed_index": 0,
+      "source_line": 997,
+      "training_action": "e2e3",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "g8h6",
+      "different_tied_choices": true,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "a6b8",
+        "a6c5",
+        "a8b8",
+        "b6b5",
+        "c7c5",
+        "c7c6",
+        "c8b7",
+        "d7d5",
+        "d7d6",
+        "d8e8",
+        "e7e6",
+        "f7e6",
+        "f7e8",
+        "f7f6",
+        "f7g6",
+        "g7g6",
+        "g8f6",
+        "g8h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "seed_index": 0,
+      "source_line": 998,
+      "training_action": "h7h6",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "c4d5",
+      "different_tied_choices": false,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "c4d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2042,
+      "training_action": "c4d5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a5d5",
+      "different_tied_choices": false,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "a5d5",
+        "c6d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2043,
+      "training_action": "a5d5",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "c4d5",
+      "different_tied_choices": false,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "c4d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2262,
+      "training_action": "c4d5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a5d5",
+      "different_tied_choices": false,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "a5d5",
+        "c6d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2263,
+      "training_action": "a5d5",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "c4d5",
+      "different_tied_choices": false,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "c4d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2448,
+      "training_action": "c4d5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a5d5",
+      "different_tied_choices": false,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "a5d5",
+        "c6d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2449,
+      "training_action": "a5d5",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "c4d5",
+      "different_tied_choices": false,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "c4d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2634,
+      "training_action": "c4d5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a5d5",
+      "different_tied_choices": false,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "a5d5",
+        "c6d5"
+      ],
+      "seed_index": 3,
+      "source_line": 2635,
+      "training_action": "a5d5",
+      "value": 0.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "d4c5",
+      "different_tied_choices": false,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "d4c5"
+      ],
+      "seed_index": 1,
+      "source_line": 2694,
+      "training_action": "d4c5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "b6a5",
+      "different_tied_choices": true,
+      "endpoint": "initial",
+      "optimal_actions": [
+        "b6a5",
+        "b6b2",
+        "b6b4",
+        "b6c5",
+        "f6g4"
+      ],
+      "seed_index": 1,
+      "source_line": 2695,
+      "training_action": "b6c5",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "e5b8",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "e5b8",
+        "e5f6"
+      ],
+      "seed_index": 1,
+      "source_line": 2815,
+      "training_action": "e5f6",
+      "value": 0.28520445347360135
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a8b8",
+      "different_tied_choices": true,
+      "endpoint": "WDL",
+      "optimal_actions": [
+        "a8b8",
+        "b6a5",
+        "b6b2",
+        "b6b4",
+        "c5d4",
+        "f6g4"
+      ],
+      "seed_index": 1,
+      "source_line": 2816,
+      "training_action": "b6b2",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "d4c5",
+      "different_tied_choices": false,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "d4c5"
+      ],
+      "seed_index": 1,
+      "source_line": 2999,
+      "training_action": "d4c5",
+      "value": 0.0
+    },
+    {
+      "actor": 1,
+      "deployment_action": "b6a5",
+      "different_tied_choices": true,
+      "endpoint": "TreeStrap",
+      "optimal_actions": [
+        "b6a5",
+        "b6b2",
+        "b6b4",
+        "b6c5",
+        "f6g4"
+      ],
+      "seed_index": 1,
+      "source_line": 3000,
+      "training_action": "b6c5",
+      "value": 1.0
+    },
+    {
+      "actor": 0,
+      "deployment_action": "e5b8",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "e5b8",
+        "e5f6"
+      ],
+      "seed_index": 1,
+      "source_line": 3058,
+      "training_action": "e5f6",
+      "value": 0.1051593553017629
+    },
+    {
+      "actor": 1,
+      "deployment_action": "a8b8",
+      "different_tied_choices": true,
+      "endpoint": "TDLeaf",
+      "optimal_actions": [
+        "a8b8",
+        "b6a5",
+        "b6b2",
+        "b6b4",
+        "c5d4",
+        "f6g4"
+      ],
+      "seed_index": 1,
+      "source_line": 3059,
+      "training_action": "b6b2",
+      "value": 1.0
+    }
+  ]
+}

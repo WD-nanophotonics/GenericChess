@@ -1,0 +1,1421 @@
+{
+  "evaluation_labels_added": 0,
+  "limitation": "This bounded first-query sample is not a full independent rerun or population test.",
+  "matches": 64,
+  "no_retry_or_top_up": true,
+  "rows": [
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "reason": "complete",
+        "seconds": 0.016530000022612512,
+        "value": 0.0
+      },
+      "seed_index": 2,
+      "slot_index": 0,
+      "source_line": 1,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "reason": "complete",
+        "seconds": 0.009941999975126237,
+        "value": 1.0
+      },
+      "seed_index": 2,
+      "slot_index": 0,
+      "source_line": 2,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "reason": "complete",
+        "seconds": 0.014200899982824922,
+        "value": 0.0
+      },
+      "seed_index": 2,
+      "slot_index": 1,
+      "source_line": 53,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "reason": "complete",
+        "seconds": 0.009883399994578212,
+        "value": 1.0
+      },
+      "seed_index": 2,
+      "slot_index": 1,
+      "source_line": 54,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 17,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 17,
+        "reason": "resource limit",
+        "seconds": 0.0041467000264674425,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 1,
+      "source_line": 238,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "reason": "complete",
+        "seconds": 0.014127700007520616,
+        "value": 0.0
+      },
+      "seed_index": 2,
+      "slot_index": 2,
+      "source_line": 239,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "reason": "complete",
+        "seconds": 0.009944199991878122,
+        "value": 1.0
+      },
+      "seed_index": 2,
+      "slot_index": 2,
+      "source_line": 240,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "f3h5",
+        "complete": true,
+        "nodes": 105,
+        "reason": "complete",
+        "seconds": 0.013974499946925789,
+        "value": 0.0
+      },
+      "seed_index": 2,
+      "slot_index": 3,
+      "source_line": 293,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "e8d7",
+        "complete": true,
+        "nodes": 88,
+        "reason": "complete",
+        "seconds": 0.009986800025217235,
+        "value": 1.0
+      },
+      "seed_index": 2,
+      "slot_index": 3,
+      "source_line": 294,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "reason": "complete",
+        "seconds": 0.007799600018188357,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 4,
+      "source_line": 347,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "reason": "complete",
+        "seconds": 0.008655100013129413,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 4,
+      "source_line": 348,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "reason": "complete",
+        "seconds": 0.0077939999755471945,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 5,
+      "source_line": 631,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "reason": "complete",
+        "seconds": 0.010589200013782829,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 5,
+      "source_line": 632,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "reason": "complete",
+        "seconds": 0.008026299998164177,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 6,
+      "source_line": 823,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "reason": "complete",
+        "seconds": 0.008690899994689971,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 6,
+      "source_line": 824,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g1f3",
+        "complete": true,
+        "nodes": 67,
+        "reason": "complete",
+        "seconds": 0.007898499956354499,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 7,
+      "source_line": 997,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "g8h6",
+        "complete": true,
+        "nodes": 73,
+        "reason": "complete",
+        "seconds": 0.008574299979954958,
+        "value": 0.0
+      },
+      "seed_index": 0,
+      "slot_index": 7,
+      "source_line": 998,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "reason": "complete",
+        "seconds": 0.019654200004879385,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 16,
+      "source_line": 2042,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "reason": "complete",
+        "seconds": 0.01575250003952533,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 16,
+      "source_line": 2043,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "reason": "complete",
+        "seconds": 0.018546100007370114,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 17,
+      "source_line": 2262,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "reason": "complete",
+        "seconds": 0.015814899990800768,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 17,
+      "source_line": 2263,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "reason": "complete",
+        "seconds": 0.01887259999057278,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 18,
+      "source_line": 2448,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "reason": "complete",
+        "seconds": 0.015555799996946007,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 18,
+      "source_line": 2449,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "c4d5",
+        "complete": true,
+        "nodes": 178,
+        "reason": "complete",
+        "seconds": 0.018828900007065386,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 19,
+      "source_line": 2634,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "a5d5",
+        "complete": true,
+        "nodes": 120,
+        "reason": "complete",
+        "seconds": 0.016078000015113503,
+        "value": 0.0
+      },
+      "seed_index": 3,
+      "slot_index": 19,
+      "source_line": 2635,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": "d4c5",
+        "complete": true,
+        "nodes": 142,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "d4c5",
+        "complete": true,
+        "nodes": 142,
+        "reason": "complete",
+        "seconds": 0.018766499997582287,
+        "value": 0.0
+      },
+      "seed_index": 1,
+      "slot_index": 20,
+      "source_line": 2694,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": "b6a5",
+        "complete": true,
+        "nodes": 129,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "b6a5",
+        "complete": true,
+        "nodes": 129,
+        "reason": "complete",
+        "seconds": 0.01729920000070706,
+        "value": 1.0
+      },
+      "seed_index": 1,
+      "slot_index": 20,
+      "source_line": 2695,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 8,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 8,
+        "reason": "resource limit",
+        "seconds": 0.0015722999814897776,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 20,
+      "source_line": 2814,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "e5b8",
+        "complete": true,
+        "nodes": 172,
+        "value": 0.28520445347360135
+      },
+      "reproduced": {
+        "action": "e5b8",
+        "complete": true,
+        "nodes": 172,
+        "reason": "complete",
+        "seconds": 0.022533299983479083,
+        "value": 0.28520445347360135
+      },
+      "seed_index": 1,
+      "slot_index": 21,
+      "source_line": 2815,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": "a8b8",
+        "complete": true,
+        "nodes": 261,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "a8b8",
+        "complete": true,
+        "nodes": 261,
+        "reason": "complete",
+        "seconds": 0.033414000004995614,
+        "value": 1.0
+      },
+      "seed_index": 1,
+      "slot_index": 21,
+      "source_line": 2816,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 49,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 49,
+        "reason": "resource limit",
+        "seconds": 0.00783909996971488,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 21,
+      "source_line": 2998,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "d4c5",
+        "complete": true,
+        "nodes": 152,
+        "value": 0.0
+      },
+      "reproduced": {
+        "action": "d4c5",
+        "complete": true,
+        "nodes": 152,
+        "reason": "complete",
+        "seconds": 0.02019409998320043,
+        "value": 0.0
+      },
+      "seed_index": 1,
+      "slot_index": 22,
+      "source_line": 2999,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": "b6a5",
+        "complete": true,
+        "nodes": 129,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "b6a5",
+        "complete": true,
+        "nodes": 129,
+        "reason": "complete",
+        "seconds": 0.017690800013951957,
+        "value": 1.0
+      },
+      "seed_index": 1,
+      "slot_index": 22,
+      "source_line": 3000,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "e5b8",
+        "complete": true,
+        "nodes": 182,
+        "value": 0.1051593553017629
+      },
+      "reproduced": {
+        "action": "e5b8",
+        "complete": true,
+        "nodes": 182,
+        "reason": "complete",
+        "seconds": 0.023760200012475252,
+        "value": 0.1051593553017629
+      },
+      "seed_index": 1,
+      "slot_index": 23,
+      "source_line": 3058,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": "a8b8",
+        "complete": true,
+        "nodes": 261,
+        "value": 1.0
+      },
+      "reproduced": {
+        "action": "a8b8",
+        "complete": true,
+        "nodes": 261,
+        "reason": "complete",
+        "seconds": 0.03492469998309389,
+        "value": 1.0
+      },
+      "seed_index": 1,
+      "slot_index": 23,
+      "source_line": 3059,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 36,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 36,
+        "reason": "resource limit",
+        "seconds": 0.0038500999798998237,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 29,
+      "source_line": 3759,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "reason": "resource limit",
+        "seconds": 0.009408000041730702,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 32,
+      "source_line": 4070,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 33,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 33,
+        "reason": "resource limit",
+        "seconds": 0.004778999951668084,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 34,
+      "source_line": 4514,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 11,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 11,
+        "reason": "resource limit",
+        "seconds": 0.0019466000376269221,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 35,
+      "source_line": 4788,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 5,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 5,
+        "reason": "resource limit",
+        "seconds": 0.0019656000076793134,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 36,
+      "source_line": 4960,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 89,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 89,
+        "reason": "resource limit",
+        "seconds": 0.027571799990255386,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 39,
+      "source_line": 5278,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 61,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 61,
+        "reason": "resource limit",
+        "seconds": 0.012171700014732778,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 54,
+      "source_line": 7169,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 16,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 16,
+        "reason": "resource limit",
+        "seconds": 0.003494700009468943,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 58,
+      "source_line": 7562,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 16,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 16,
+        "reason": "resource limit",
+        "seconds": 0.0038179000257514417,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 68,
+      "source_line": 9140,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "reason": "resource limit",
+        "seconds": 0.0014546000165864825,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 75,
+      "source_line": 9918,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 92,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 92,
+        "reason": "resource limit",
+        "seconds": 0.008536599983926862,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 88,
+      "source_line": 12001,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 25,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 25,
+        "reason": "resource limit",
+        "seconds": 0.0052983000059612095,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 90,
+      "source_line": 12364,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 17,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 17,
+        "reason": "resource limit",
+        "seconds": 0.002642699982970953,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 118,
+      "source_line": 15326,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "reason": "resource limit",
+        "seconds": 0.001150399970356375,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 125,
+      "source_line": 16228,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 36,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 36,
+        "reason": "resource limit",
+        "seconds": 0.004241699993144721,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 142,
+      "source_line": 18597,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 35,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 35,
+        "reason": "resource limit",
+        "seconds": 0.00778590003028512,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 152,
+      "source_line": 19627,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 50,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 50,
+        "reason": "resource limit",
+        "seconds": 0.010755499999504536,
+        "value": null
+      },
+      "seed_index": 0,
+      "slot_index": 155,
+      "source_line": 20087,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 79,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 79,
+        "reason": "resource limit",
+        "seconds": 0.015187399985734373,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 157,
+      "source_line": 20420,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 70,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 70,
+        "reason": "resource limit",
+        "seconds": 0.008730800007469952,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 172,
+      "source_line": 22733,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 70,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 70,
+        "reason": "resource limit",
+        "seconds": 0.009368000028189272,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 174,
+      "source_line": 23177,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 51,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 51,
+        "reason": "resource limit",
+        "seconds": 0.006798700022045523,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 196,
+      "source_line": 26185,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 53,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 53,
+        "reason": "resource limit",
+        "seconds": 0.004608599992934614,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 203,
+      "source_line": 27255,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "initial",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 28,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 28,
+        "reason": "resource limit",
+        "seconds": 0.0038237000117078424,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 220,
+      "source_line": 29618,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 28,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 28,
+        "reason": "resource limit",
+        "seconds": 0.003824399958830327,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 223,
+      "source_line": 29994,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 25,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 25,
+        "reason": "resource limit",
+        "seconds": 0.0033708999981172383,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 240,
+      "source_line": 33217,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "WDL",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 50,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 50,
+        "reason": "resource limit",
+        "seconds": 0.007982100010849535,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 242,
+      "source_line": 33704,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 0,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 2,
+        "reason": "resource limit",
+        "seconds": 0.0012026999611407518,
+        "value": null
+      },
+      "seed_index": 2,
+      "slot_index": 362,
+      "source_line": 49735,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TDLeaf",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "reason": "resource limit",
+        "seconds": 0.00434109999332577,
+        "value": null
+      },
+      "seed_index": 1,
+      "slot_index": 377,
+      "source_line": 51571,
+      "verdict": "MATCH"
+    },
+    {
+      "actor": 1,
+      "endpoint": "TreeStrap",
+      "expected": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "value": null
+      },
+      "reproduced": {
+        "action": null,
+        "complete": false,
+        "nodes": 23,
+        "reason": "resource limit",
+        "seconds": 0.005754199984949082,
+        "value": null
+      },
+      "seed_index": 3,
+      "slot_index": 626,
+      "source_line": 88190,
+      "verdict": "MATCH"
+    }
+  ],
+  "samples_executed": 64,
+  "samples_selected": 64,
+  "seconds": 0.7909314999706112,
+  "status": "PASS",
+  "verifier_paid_nodes": 5077
+}

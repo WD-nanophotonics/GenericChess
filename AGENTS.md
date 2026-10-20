@@ -1,5 +1,18 @@
 # GenericChess local research policy
 
+## User-authorized DEV_AUX chat handoff — 2026-10-20
+
+The user transferred the existing gc辅助 DEV_AUX work and hourly checks to
+chat 01a15880-7263-7e12-a0e0-e42959c0bfb9. The existing dev-aux heartbeat now
+targets that chat; former chat 01a128cf-ae2d-7352-a456-06bd38367221 no longer
+owns this role's continuation. Preserve the independent checkout/sidemission,
+ACTIVE hourly cadence, existing session UUID/origin/confirmed work, all stops
+and experiment caps. This explicit transfer supersedes the earlier same-chat
+binding restriction only for this handoff; it creates no worker or scheduler
+and grants no ownership of PRIMARY_SANDBOX or DEEPSEEK_AUX. Exact before/after
+configuration and receipts are retained in ignored own state. Administrative
+handoff time is not research credit.
+
 ## Verified role-local recovery
 
 Run the own dev-aux-local.cmd doctor entry on recovery. Session start enforces

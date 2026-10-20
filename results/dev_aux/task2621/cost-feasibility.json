@@ -1,0 +1,28 @@
+{
+  "estimate_minutes": 66.69979176832422,
+  "estimate_seconds": 4001.9875060994527,
+  "evaluation_projection_seconds": 691.4194885999896,
+  "evaluation_source": {
+    "H": 128,
+    "path": "results/dev_aux/task2609/eval-result.json",
+    "seconds": 691.4194885999896,
+    "sha256": "e75622b827e7c44fa942398b6d96e72fbd2d200a55d081f3aa0909e4e6985caf",
+    "slots": 1536
+  },
+  "launch_authorized_by_this_artifact": false,
+  "limitations": [
+    "Cost workload uses repeated development roots and one initialization, not future training/evaluation histories.",
+    "Evaluation source used different models and ordering; H128 projection cannot price a changed horizon.",
+    "Refresh actual preparation/scope before registration; >=120minute expected runs require explicit Chat mailbox assessment."
+  ],
+  "preparation_and_audit_reserve_seconds": 1200,
+  "prospective_evaluation_slots": 1024,
+  "prospective_training_nodes": 4000000,
+  "runtime_margin": 1.5,
+  "status": "FEASIBILITY_ONLY_NOT_REGISTRATION",
+  "training_projection_seconds": 2110.568017499463,
+  "training_source": {
+    "path": "results/dev_aux/task2621/cost-scan/result.json",
+    "sha256": "a7f3589404a80bdc9c0675d7b6c473280e1136661b52c2f6c881ff8ef166d4c4"
+  }
+}

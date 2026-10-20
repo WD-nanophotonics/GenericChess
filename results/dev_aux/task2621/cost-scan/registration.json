@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-20T09:37:58.434560+00:00",
+  "cost_decision": "Source-bound feasibility for a future preregistered SAME fixed-scale learner comparison; do not select weights or infer learning benefit",
+  "exact_learner": "TDLeafEpisode eta.05 lambda.95",
+  "exact_model": "task2492.learning.Model fixed0 scale10",
+  "expected_arms": 4,
+  "hard_nodes": 320000,
+  "hard_seconds": 300,
+  "initial_seed": 1407393461,
+  "max_episodes_per_arm": 256,
+  "max_nodes_per_query": 2048,
+  "max_plies_per_episode": 512,
+  "no_heldout_claim": true,
+  "nodes_per_arm_candidate_plus_foe": 80000,
+  "question": "What are actual full-history search/update/record costs beyond the tiny active-feature smoke?",
+  "root_manifest_sha256": "644352b6029a945f9379e50cee896cf6e0ca2a4b8e20f9e2a93bd25f929d37dc",
+  "roots": "All eight already exposed development roots; cycle the two per rule without outcome selection",
+  "rule_ids": [
+    271001,
+    271002,
+    271003,
+    271004
+  ],
+  "seconds_per_query": 2.0,
+  "strength_comparison": false
+}
