@@ -66,12 +66,23 @@ def _position(support, entries, side=0, hands=None, aux_state=()):
     )
 
 
-def test_public_semantic_actions_preserve_pattern_and_geometry_identity():
+def test_public_semantic_actions_preserve_pattern_and_geometry_identity(tmp_path):
+    from io import StringIO
+
     from generic_chess.core.actions import action_from_dict, action_to_dict
+    from generic_chess.cli.play import (
+        _resolve_action_input,
+        main,
+        visible_action_alias,
+    )
     from generic_chess.core.keys import semantic_position_key
     from generic_chess.core.movegen import legal_actions
     from generic_chess.core.movement import LeapAtom
     from generic_chess.core.transition import apply_action, initial_state
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.serialization import serialize_ruleset
+    from generic_chess.session.serialization import deserialize_game_record
+    from generic_chess.session.session import GameSession
 
     n = 5
     a = PieceType("A", "A", (LeapAtom((1, 0)),))
@@ -104,14 +115,13 @@ def test_public_semantic_actions_preserve_pattern_and_geometry_identity():
             (4, 4, Piece(1, "K", "K")),
         ],
     )
-    compiled = _compile(
-        _semantic_ruleset(
-            (_king_type(), a),
-            (semantic("same_intent_zero", 0), semantic("same_intent_one", 1)),
-            n=n,
-            rows=rows,
-        )
+    ruleset = _semantic_ruleset(
+        (_king_type(), a),
+        (semantic("same_intent_zero", 0), semantic("same_intent_one", 1)),
+        n=n,
+        rows=rows,
     )
+    compiled = _compile(ruleset)
     state = initial_state(compiled)
     public = legal_actions(state, compiled)
 
@@ -129,6 +139,35 @@ def test_public_semantic_actions_preserve_pattern_and_geometry_identity():
     }
     assert all(getattr(a, "geometry_id", None) for a in semantic_actions)
     assert len(set(semantic_actions)) == 2
+
+    # The CLI's visible coordinate alias is shared, but the exact public
+    # semantic action strings must still select each distinct legal action.
+    for action in semantic_actions:
+        assert _resolve_action_input(str(action), tuple(semantic_actions)) == (
+            action,
+            None,
+        )
+    alias_action, alias_error = _resolve_action_input(
+        visible_action_alias(semantic_actions[0]), tuple(semantic_actions)
+    )
+    assert alias_action is None
+    assert alias_error and alias_error.startswith("ambiguous action alias:")
+
+    # Exercise the actual --ruleset/--record-out caller, not only its resolver.
+    rules_path = tmp_path / "same-coordinate-semantic-rules.json"
+    record_path = tmp_path / "same-coordinate-semantic-record.json"
+    rules_path.write_text(serialize_ruleset(ruleset), encoding="utf-8")
+    chosen = semantic_actions[1]
+    output = StringIO()
+    assert main(
+        ["--ruleset", str(rules_path), "--record-out", str(record_path)],
+        stdin=StringIO(f"{chosen}\nquit\n"),
+        stdout=output,
+    ) == 0, output.getvalue()
+    record = deserialize_game_record(record_path.read_text(encoding="utf-8"))
+    assert record.actions == (chosen,)
+    replayed = GameSession.replay(compile_ruleset_for_execution(ruleset), record)
+    assert any(value == 1 for _, value in replayed.state.position.aux_state)
 
     for action in semantic_actions:
         assert action_from_dict(action_to_dict(action)) == action

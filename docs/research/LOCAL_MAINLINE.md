@@ -2382,3 +2382,20 @@ Details and limits:
 `UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
 Keep the current mainline candidates unchanged; the new evidence warrants this
 consistency repair, not a broader price-transfer or search-default claim.
+
+## CLI pass-action input correction —2026-10-20
+
+The unfamiliar-rule CLI caller audit found a distinct defect: after an exact
+action-string miss, visible-alias fallback crashed when a legal set contained
+coordinate-free `PassAction`. PRIMARY now gives pass its exact token before
+drop-coordinate formatting. The public CLI regression retains ambiguous-alias
+diagnostics, invalid-input handling, exact action identity and saved-history
+replay. A bounded 66-state/1605-action audit plus real Shogi drop/promotion
+probes, now persisted as a Shogi CLI regression, preserved exact resolution or
+explicit ambiguity for observed action forms. This closes only the demonstrated
+input-projection defect; it does not change the live price/search candidate
+choice or establish all-domain CLI
+equivalence. Focused related suites pass43. Full default pytest has one isolated
+pre-existing static-opportunity assertion failure (expected pawn base value1,
+observed361); keep it visible and do not broaden this fix into the price model.
+Evidence and limitations: `GENERIC_CLI_ACTION_INPUT_20261020.md`.

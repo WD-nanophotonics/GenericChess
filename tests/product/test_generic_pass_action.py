@@ -23,6 +23,7 @@ from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.alphabeta.backend import PythonSearchBackend
 from generic_chess.ai.alphabeta.snapshot import SearchSnapshot
 from generic_chess.ai.limits import SearchLimits
+from generic_chess.cli.play import _resolve_action_input, visible_action_alias
 from generic_chess.rules.compiler import compile_ruleset, compile_ruleset_for_execution
 from generic_chess.rules.schema import (
     RuleActionEffect,
@@ -290,6 +291,48 @@ def test_semantic_pass_expires_aux_and_replays_history() -> None:
 def _compiled_semantic_temp():
     ruleset = _semantic_temp_ruleset()
     return ruleset, compile_ruleset_for_execution(ruleset)
+
+
+def test_cli_input_resolution_handles_pass_in_mixed_semantic_actions(tmp_path):
+    from io import StringIO
+
+    from generic_chess.cli.play import main
+    from generic_chess.rules.serialization import serialize_ruleset
+    from generic_chess.session.serialization import deserialize_game_record
+
+    ruleset, compiled = _compiled_semantic_temp()
+    actions = tuple(legal_actions(initial_state(compiled), compiled))
+    pass_action = PassAction()
+    board_action = next(
+        action for action in actions if isinstance(action, SemanticBoardMove)
+    )
+
+    assert pass_action in actions
+    assert visible_action_alias(pass_action) == "pass"
+    assert _resolve_action_input("pass", actions) == (pass_action, None)
+    assert _resolve_action_input(str(board_action), actions) == (board_action, None)
+    alias = visible_action_alias(board_action)
+    assert _resolve_action_input(alias, actions) == (
+        None,
+        f"ambiguous action alias: {alias!r} (use a number or exact action string)",
+    )
+    assert _resolve_action_input("not-a-move", actions) == (None, None)
+
+    rules_path = tmp_path / "pass-enabled-semantic-rules.json"
+    record_path = tmp_path / "pass-enabled-semantic-record.json"
+    rules_path.write_text(serialize_ruleset(ruleset), encoding="utf-8")
+    output = StringIO()
+    assert main(
+        ["--ruleset", str(rules_path), "--record-out", str(record_path)],
+        stdin=StringIO(
+            f"{alias}\nnot-a-move\npass\nquit\n"
+        ),
+        stdout=output,
+    ) == 0, output.getvalue()
+    assert f"ambiguous action alias: {alias!r}" in output.getvalue()
+    assert "unknown input: 'not-a-move'" in output.getvalue()
+    record = deserialize_game_record(record_path.read_text(encoding="utf-8"))
+    assert record.actions == (pass_action,)
 
 
 def test_public_alphabeta_root_selects_pass_and_generated_semantic_action() -> None:

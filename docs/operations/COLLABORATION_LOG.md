@@ -5768,3 +5768,19 @@ project-Chat read was attempted once but its response could not be serialized by
 the capture wrapper, so this patrol makes no claim about new Chat comments; the
 failure is retained privately. Evidence and limits:
 `docs/research/UNREACHABLE_TYPE_NORMALIZATION_20261020.md`.
+
+## PRIMARY_SANDBOX — generic CLI pass-action input — 2026-10-20
+
+PRIMARY independently found and fixed an observed CLI resolver crash for
+coordinate-free `PassAction` during visible-alias fallback. Exact action
+selection and record replay are covered for pass and duplicate-coordinate
+semantic actions; focused pass/semantic/Shogi tests pass43. A bounded
+66-state/1605-action audit and a persistent Shogi drop/promotion CLI regression
+retained exact identity or explicit ambiguity for the observed forms. The full
+default suite has one independently reproduced, unchanged static-opportunity assertion
+failure (P expected1, observed361), excluded from this CLI scope and recorded in
+the purpose report. No DEV_AUX checkout, source or computation was accessed or
+modified, and no coordination dependency existed. The hourly Chat capture
+failed before producing an inspectable message body; the failure is private,
+so no new-message review or adoption claim is made. Scope/evidence:
+`docs/research/GENERIC_CLI_ACTION_INPUT_20261020.md`.
