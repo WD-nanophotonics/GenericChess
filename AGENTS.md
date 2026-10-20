@@ -1,5 +1,18 @@
 # GenericChess local research policy
 
+## Verified role-local recovery
+
+Run the own dev-aux-local.cmd doctor entry on recovery. Session start enforces
+DEV_AUX/role.json plus the actual repository root and sidemission branch before
+writing session state. The caller's default cwd is informational, not identity.
+Use doctor --check-heartbeat only when investigating a binding allegation, and
+--check-remote for an actual transport question; unknown/unreadable is not a
+mismatch. Permission failures use supported escalation and never imply PRIMARY
+ownership or a wrong heartbeat. Publication status uses origin/sidemission;
+the inherited sandbox/master publisher is explicitly rejected with the own
+route. Do not replay repaired errors as current blockers. Evidence/reporting
+contract: docs/operations/ROLE_ENVIRONMENT_RECOVERY.md.
+
 ## Effective research time and durable patrol prompts
 
 The user's confirmed timing unit is one research segment accumulating at least

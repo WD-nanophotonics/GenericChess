@@ -5,6 +5,7 @@ from pathlib import Path
 import os
 
 from .common import STATE, LocalFlowError, read_json, write_json
+from .environment import require_identity
 
 
 HARD_REASONS = {'user_stop', 'user_decision', 'tool_limit', 'quota_limit',
@@ -154,6 +155,7 @@ def status():
 def start():
     if stopped():
         raise LocalFlowError('user stop persists; research start forbidden')
+    require_identity()
     memo()
     current = read_json(STATE/'session.json')
     thread = read_json(STATE/'rollout.json').get('thread_id')

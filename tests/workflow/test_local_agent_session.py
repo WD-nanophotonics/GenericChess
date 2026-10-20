@@ -19,6 +19,9 @@ Evidence: docs/research/LOCAL_MAINLINE.md
 @pytest.fixture
 def workspace(tmp_path, monkeypatch):
     monkeypatch.setattr(session, 'STATE', tmp_path)
+    monkeypatch.setattr(session, 'require_identity', lambda: {'identity':'MATCH'})
+    from tools.local_agent import environment
+    monkeypatch.setattr(environment, 'require_identity', lambda: {'identity':'MATCH'})
     (tmp_path/'NEXT_WORK.md').write_text(MEMO, encoding='utf-8')
     (tmp_path/'rollout.json').write_text(json.dumps({'thread_id': 'same-chat'}))
     moment = [datetime(2026, 10, 4, tzinfo=timezone.utc)]
@@ -430,3 +433,13 @@ def test_explicit_stop_retains_invalid_accounting_without_inventing_credit(works
     assert result['effective_work_seconds'] == 0
     assert 'work_accounting_error' in result
     assert result['work_intervals'] == current['work_intervals']
+
+
+def test_session_start_requires_verified_own_role_before_writing(workspace, monkeypatch):
+    path, _ = workspace
+    def reject():
+        raise LocalFlowError('ROLE_MISMATCH')
+    monkeypatch.setattr(session, 'require_identity', reject)
+    with pytest.raises(LocalFlowError, match='ROLE_MISMATCH'):
+        session.start()
+    assert not (path/'session.json').exists()

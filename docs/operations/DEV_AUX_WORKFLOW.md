@@ -37,6 +37,11 @@ User stops take precedence within their scope; suspend scoped work/mailbox and
 never clear flags. A one-time inspection pause does not disable the recurring schedule. Missing or unreadable primary stop evidence is a runtime gap:
 resolve it before starting research or sending, never assume permission.
 
+Run dev-aux-local.cmd doctor on recovery; session start enforces the own role,
+repository root and branch. Default caller cwd is informational. Use optional
+--check-remote/--check-heartbeat only for the corresponding actual question.
+Read failures are UNKNOWN, not role or target mismatches. See
+docs/operations/ROLE_ENVIRONMENT_RECOVERY.md.
 Use dev-aux-local.cmd session start/status/work-start/work-stop/checkpoint/finish. It selects this
 clone's tools and state, requires sidemission, and rejects publish/promote.
 The inherited session helper retains an active ID/start across interruptions.

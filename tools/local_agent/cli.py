@@ -25,15 +25,21 @@ def consultation_summary(result: dict) -> dict:
 
 
 def status() -> dict:
-    return {
-        "mode": "local-agent",
-        "branch": git("branch", "--show-current"),
-        "head": git("rev-parse", "HEAD"),
-        "dirty": bool(git("status", "--porcelain")),
-        "origin_sandbox": git("rev-parse", "origin/sandbox"),
-        "last_activity": read_json(ACTIVITY),
-        "last_consultation": consultation_summary(consult_status()),
-    }
+    from .environment import identity
+    binding = identity()
+    if binding['identity'] != 'MATCH':
+        return binding
+    ref = 'origin/' + binding['observed_branch']
+    try:
+        origin_head = git('rev-parse', ref)
+    except LocalFlowError:
+        origin_head = None
+    return dict(mode='local-agent', identity=binding,
+        branch=binding['observed_branch'], head=git('rev-parse', 'HEAD'),
+        dirty=bool(git('status', '--porcelain')), origin_ref=ref, origin_head=origin_head,
+        last_activity=read_json(ACTIVITY),
+        communication_mode=read_json(STATE/'slack.json').get('communication_mode'),
+        mailbox=read_json(STATE/'slack'/'mailbox'/'state.json').get('active'))
 
 
 def note(summary: str) -> dict:
@@ -86,6 +92,9 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="generic-chess-local")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("status")
+    doc = sub.add_parser('doctor', help='read-only role-local identity/environment diagnosis')
+    doc.add_argument('--check-remote', action='store_true')
+    doc.add_argument('--check-heartbeat', action='store_true')
     sub.add_parser("stop")
     session_parser = sub.add_parser('session', help='work-segment receipts, not a runner')
     actions = session_parser.add_subparsers(dest='session_action', required=True)
@@ -147,7 +156,16 @@ def main(argv: list[str] | None = None) -> int:
             stream.reconfigure(encoding="utf-8")
     args = parser().parse_args(argv)
     try:
-        if args.command == "status":
+        if args.command in {'publish', 'promote'} and read_json(STATE/'role.json').get('role') == 'DEV_AUX':
+            raise LocalFlowError('DEV_AUX_ROUTE_ERROR: inherited publish/promote target sandbox/master; review/tests then git push origin sidemission')
+        explicit_stop = args.command == 'session' and args.session_action == 'finish' and args.reason == 'user_stop'
+        if args.command not in {'doctor', 'status'} and not explicit_stop:
+            from .environment import require_identity
+            require_identity()
+        if args.command == 'doctor':
+            from .environment import doctor
+            result = doctor(args.check_remote, args.check_heartbeat)
+        elif args.command == "status":
             result = status()
         elif args.command == 'session':
             from . import session
