@@ -1,0 +1,44 @@
+{
+  "finding": "The frozen reference consumers poll the persistent stop reader both inside AlphaBeta via cancel=stop and directly outside search: before the training arm, before training episode/game, before each training ply, before evaluation, and before each evaluation slot. A future adapter that translates PersistentStop only at the AlphaBeta callback can still raise out of these outer polls without writing a final STOPPED_USER receipt or closing partial records.",
+  "required_contract": "Use a single stop/deadline latch at every poll site or catch PersistentStop at the run boundary. If stop is observed before a query starts, close the current arm/phase/slot state without inventing a query outcome; if observed within search, translate to BudgetEnd, record the incomplete query and UNKNOWN episode/slot, flush/fsync, write final STOPPED_USER, and start no subsequent sample. Keep hard-kill NO_FINAL_RECEIPT behavior separate.",
+  "scope_limit": "Static adapter-contract finding only; task2625 files and frozen task2636 plan were not edited. No registration, learner, evaluation, or game was started.",
+  "source_bound_to_plan": true,
+  "sources": {
+    "results/dev_aux/task2625/evaluate.py": {
+      "poll_sites": [
+        {
+          "line": 106,
+          "text": "stop()"
+        },
+        {
+          "line": 137,
+          "text": "stop()"
+        },
+        {
+          "line": 158,
+          "text": "cancel=stop)"
+        }
+      ],
+      "sha256": "37da34de1cb2b00778510d384196d66efa307c23473b87a1d3f1a1dd69bdbcc6"
+    },
+    "results/dev_aux/task2625/train.py": {
+      "poll_sites": [
+        {
+          "line": 118,
+          "text": "stop()"
+        },
+        {
+          "line": 146,
+          "text": "stop()"
+        },
+        {
+          "line": 175,
+          "text": "cancel=stop)"
+        }
+      ],
+      "sha256": "12d864caf62f5be604b49a3a6d340defd91c13e43804ecae179a7e56f3c98ea1"
+    }
+  },
+  "status": "CONTRACT_GAP_FOUND_STATIC_SOURCE_REPLAY",
+  "task": "2636"
+}

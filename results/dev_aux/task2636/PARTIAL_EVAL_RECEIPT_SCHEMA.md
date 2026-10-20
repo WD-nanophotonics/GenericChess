@@ -1,0 +1,9 @@
+# task2636 partial evaluation receipt schema
+
+The structural prototype now validates a finalized full or graceful-partial receipt against closed slot rows and query rows. It accepts final statuses `COMPLETE`, `STOPPED_USER`, or `TIME_CAP`; `NO_FINAL_RECEIPT` is a recovery finding, never a fabricated final result. A final receipt binds lowercase SHA-256 values for the plan, registration, audited training result and root pool, and carries expected/completed/missing slot counts, exact missing keys, terminal/UNKNOWN counts, paid nodes and queries.
+
+The validator requires the missing-key list to equal the complement of the frozen 1,024-slot universe; a COMPLETE result must close all slots. Terminal and UNKNOWN totals must match closed rows. Node/query totals must equal slot closures and query rows. Query rows may belong only to a durably closed slot; per-slot ply indices must form a zero-based contiguous prefix, and query node counts cannot exceed positive requested budgets. Per-slot node/query sums must match the closure. Queries without a closure are rejected for graceful partial results. This supports pre-query stop slots with zero queries/nodes when the runner writes a durable UNKNOWN closure; absent slots remain MISSING.
+
+Seven structural test cases pass, including a terminal-versus-UNKNOWN pair with 1,022 missing slots, receipt/count mismatch, orphan query, duplicate/foreign slot, invalid UNKNOWN label, learner-perspective reward and node-cap overflow. This validator still checks hash formatting rather than referenced source bytes and does not itself replay full histories/searches or prove terminal authority. A separate frozen-root replay context is now tested, but it is not integrated with training/registration receipts or a complete partial result; neither prototype supports a result claim.
+
+No task2636 registration, run directory, evaluation row, game, or result receipt was created.

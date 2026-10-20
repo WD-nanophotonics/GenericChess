@@ -1,0 +1,34 @@
+{
+  "task": "DEV_AUX2636_CANDIDATE16_EXACT_HISTORY_INVENTORY",
+  "question": "What complete-record histories for the 16 task2633 generated rules are already present in DEV_AUX results, and can they all be excluded before preparing a bounded one-init learner panel?",
+  "status": "OUTCOME_BLIND_SOURCE_INVENTORY_ONLY_NO_ROOTS_OR_LEARNER_RUN",
+  "scope": {
+    "files": "Enumerate current results/dev_aux JSON, JSONL, JSON.GZ and JSONL.GZ files; record path-manifest hash and inspect full records matching one of the 16 compiled candidate ruleset fingerprints.",
+    "matching": "Canonical full-record equality keyed by ruleset_fingerprint and actions; preserve exact-record hashes and matched source hashes.",
+    "exclusions": "Every matching record, including task2633 prefit/start records and task2635 emitted histories, is exposed and must be excluded from future roots.",
+    "not_used": ["WDL/outcomes", "search values", "feature values", "fitness", "candidate ranking"]
+  },
+  "candidate_index": "results/dev_aux/task2633/generated/candidate-index.json",
+  "candidate_index_sha256": "1b7d11d7f79040a3641f589a6eaa8ae593cc5ffe0077678f1bc12bc856e05f5e",
+  "source_sha256": {
+    "results/dev_aux/task2633/plan.json": "d8f7702cf7ba30d3d2f3a518d510c8e599d470982b085f3ec8cf2da1fb6c5de9",
+    "results/dev_aux/task2634/static-initial-features.json": "66c26723444944b2f65ea7ea13a2a303ce9baf221ccc9f303f96542f59289902",
+    "results/dev_aux/task2635/plan-v2.json": "8218db1425f2ba379963afcb607db9904443ee58205cc25241ff3518301847cc",
+    "results/dev_aux/task2635/run-v2/episodes.jsonl": "6ed7bee558d1077de78905d98aa3133bf6b43bccb59150cb11e96a602c032254",
+    "results/dev_aux/task2635/run-v2/reconciled-result.json": "d271422363d3527c84a3edb41c0f3d65d72e773a3d8ee91890d7e5d53087ce91",
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/rules/schema.py": "3933bd2ae6289a60fe58e6b349f53733c7bbe11e3766b99485a6c32e91c6c799",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "generic_chess/session/serialization.py": "159c5e39861d0faba9420ad61c002a3be10c0326bb11aff4a9576825da7c5c50"
+  },
+  "hard_wall_cap_seconds": 600,
+  "outputs": {
+    "inventory": "results/dev_aux/task2636/candidate-history-inventory.json",
+    "status": "results/dev_aux/task2636/status.json"
+  },
+  "limits": [
+    "This inventory establishes exact serialized-record exposure only; it does not establish descendant-state, transposition, or distributional independence.",
+    "This is not a root pool, experiment registration, training run, evaluation, or strength claim.",
+    "A later root panel requires a separate fixed source-bound plan and measured all-in budget; the one-init panel remains finite and seed-specific."
+  ]
+}

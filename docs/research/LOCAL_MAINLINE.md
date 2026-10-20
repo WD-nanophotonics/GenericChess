@@ -2046,3 +2046,295 @@ slots, with the same source-bound66.7-minute baseline as task2625, but no seed
 replication or population inference. It remains a proposal pending new
 exact-history-disjoint roots and a write-once plan. Cost reasoning:
 `results/dev_aux/task2635/NEXT-LEARNER-PANEL-BUDGET.md`. Science remains OPEN.
+
+## Task2636 one-init panel design checkpoint — 2026-10-21
+
+The complete-history scan found64 task2635 trajectories in10,137 files
+(43,791,328,876 bytes). All64 replayed; the resulting504 prefixes of lengths
+1–8 produce499 unique rule-bound exclusions. The fixed outcome-blind family
+scan then prepared120 training and16 evaluation roots for each of the16
+frozen task2633 candidates. Independent root replay, source/fingerprint,
+active-feature, exact-prefix, and train/evaluation-disjointness audits passed;
+the direct action-list check compared68,544 prefixes with zero collisions.
+The pool remains unregistered, and no learner or evaluation process has run.
+Receipts: `results/dev_aux/task2636/candidate-history-inventory.json`,
+`prefix-audit-status.json`, `one-init-root-audit.json`, and
+`one-init-root-direct-prefix-check.json`.
+
+The source-bound one-init design keeps task2625's fixed scale, TDLeaf/search
+bootstrap and per-rule resource condition across16 rules: seed1977 provides a
+shared ten-coordinate initialization, training allows250,000 combined
+candidate/foe nodes per rule (4M total), and evaluation has1,024 slots/512
+paired root-color contrasts. Only actual scoring rule terminals produce W/L/D;
+resource/horizon/non-scoring endings remain UNKNOWN and absent slots remain
+missing. An independent plan audit passed all current source hashes and
+arithmetic. Root-start channel coverage is incomplete on6 training rules and
+15 evaluation rules (minimum3/10); the frozen roots are retained unchanged,
+and any conclusion stays finite to this generated panel.
+
+The budget review found that copying the old2,400s training plus3,600s
+evaluation caps and adding the1,200s preparation/audit reserve would permit
+7,200s. The new design lowers only its future evaluation cap to3,000s. Its
+lifetime allocation is6,600s:1,200s for preparation/audit/reporting,2,400s
+training, and3,000s evaluation. Of the reserve,542.632s is conservatively
+budgeted for task2636 preparation/audit already represented by the root-plan
+projection, leaving657.368s for future replay, analysis and reporting; the
+remaining future allowance is6,057.368s. The66.70-minute expected duration
+is not a runtime guarantee. A future run needs a single cumulative deadline
+and partial-result receipts; no task2625 frozen file or cap was changed.
+
+The unchanged task2625 executables cannot consume this pool directly: they
+hard-code four rule IDs, four seeds, the task2624 `rule`-keyed pool and their
+own run path; task2636 uses16 candidate-index records with ten channels. A
+separate source-pinned runner and write-once registration are required. The
+runner-contract review and machine audit are
+`results/dev_aux/task2636/RUNNER_CONTRACT_REVIEW.md` and
+`one-init-study-plan-audit.json`. They intentionally stop before registration,
+training or evaluation.
+
+Mailbox probe `GC-MAIL-c8b6e4526c844fd79a912a6be946526a` was already read and
+saved through the prior report boundary; its five included Chat comments all
+have exact-revision decisions. The optional task2625 rule271003 censoring
+profile is already captured in `results/dev_aux/task2625/CHAT_CENSORING_*`;
+it is a frozen-log descriptive analysis, not a reason to change roots. Other
+advice either belongs to PRIMARY or remains completed/unchanged backlog and
+is deferred under the mailbox ledger. No new advice blocks the current
+DEV_AUX design. Per-comment task2636 relevance decisions:
+`results/dev_aux/task2636/CHAT_SCOPE_REVIEW_20261021.md`. Science remains OPEN.
+
+Additional task2636 contract review: task2625's pinned training/evaluation
+auditors require complete runs, and its analyzer refuses partial evaluation.
+They cannot qualify a budget-stopped task2636 run. Any future runner must add
+independent partial replay, preserve query/episode and slot evidence, and keep
+all512 predeclared pairs in completion bounds. Completed UNKNOWN endpoints and
+missing slots must have distinct counts, though both conservatively range over
+[-1,+1]. If training is incomplete, evaluation is not started and its1024
+slots remain missing. The absent `results/dev_aux/task2636/run-v1` directory
+is verified; no registration exists.
+
+The frozen-root channel review independently replayed all1,920 training and256
+evaluation feature vectors against the pinned pool; per-channel nonzero-root
+counts exactly match `root-channel-coverage.json`, and feature order is identical
+across all16 candidates/phases. Six training candidates omit at least one channel
+at every selected root (minimum7/10); fifteen evaluation candidates do so
+(minimum3/10). Exact rational root-vector row rank is10 when pooled across
+candidates, but candidate-specific training ranks range6–10 and evaluation
+ranks3–10. This is only selected-root support/span: it neither proves nor
+disproves descendant TD exposure, gradients, identifiability under the learner,
+or strength contribution. The fixed roots and ten coordinates remain unchanged;
+no root filtering/resampling, learner, or evaluation was performed. Full
+candidate table and interpretation limits:
+`results/dev_aux/task2636/ROOT_CHANNEL_COVERAGE_REVIEW.md`.
+
+Cost comparison is now source-bound to task2625's completed receipts:
+4,000,000 training nodes took1,750.237s over3,693 episodes, and1,024
+evaluation slots took555.656s (1,254,951 nodes,44 UNKNOWN,0 missing). The
+task2636 projections of2,110.568s and691.419s leave289.432s of training
+stage headroom and2,308.581s of evaluation headroom. These old four-rule
+results do not guarantee the speed of the16 new rules. The lifetime cap
+remains6,600s, with542.632s conservatively allocated to prior preparation and
+audit,657.368s left for later replay/analysis/reporting, and6,057.368s for all
+future stages. The input/budget contract audit is
+`results/dev_aux/task2636/one-init-study-plan-audit.json`; no learner or
+evaluation process has started.
+
+The finite completion-bound semantics were independently checked without
+games. `results/dev_aux/task2636/partial-bound-semantics.json` matches
+task2625's paired bound arithmetic: a known W/D/L is exact; a completed
+UNKNOWN and a missing endpoint each range over [-1,+1] but remain separately
+counted. All512 registered pairs stay in the denominator. If both endpoints
+are missing in every pair, the mean difference is bounded by [-2,+2]; no draw
+is imputed and no missing pair is dropped. Science remains OPEN.
+
+The optional Chat task2625 rule271003 censoring suggestion is already
+fulfilled by its local frozen-log profile. It found44/1,024 UNKNOWN endpoints,
+all H=128 horizon endings (39 on rule271003), with rule-specific bounds still
+crossing zero. Task2629's H=256 observations use different roots and do not
+estimate a causal horizon effect. Because task2636 covers different generated
+rules and histories, this old rate does not predict its censoring and does not
+justify changing H, caps, or roots. Adopt only the useful reporting rule:
+preserve actual-terminal W/L/D, completed UNKNOWN and missing separately, keep
+all512 pairs in bounds, and do not extend or resample after observing outcomes.
+Evidence: `results/dev_aux/task2636/CENSORING_RELEVANCE_REVIEW.md`. No new game
+or search was run.
+
+The runner stop-path review found that the pinned AlphaBeta search polls its
+cancel callback every128 nodes and returns an incomplete node-counted receipt
+when the callback raises `BudgetEnd`. The existing role stop reader raises
+`PersistentStop`, which otherwise escapes and can leave a started run without
+a final status. A future task2636 runner must translate stop/deadline at the
+search poll to an incomplete receipt, close the current UNKNOWN row, write a
+`STOPPED_USER` or time-cap result, and start no next sample. On hard process
+interruption, recovery preserves the start receipt and raw JSONL bytes,
+analyzes only newline-terminated rows, marks a missing final receipt, and does
+not resume/retry. Flush query rows and fsync episode/slot and phase/final
+receipts within the existing reserve. Source-bound details are in
+`results/dev_aux/task2636/RUNNER_CONTRACT_REVIEW.md`; no execution or
+registration has begun.
+
+A pinned-source poll-site replay tightened that stop contract: the reference
+trainer polls outside search before each arm and episode as well as before each
+ply; the evaluator polls before the run and each slot, in addition to search's
+`cancel` callback. Catching `PersistentStop` only inside AlphaBeta is not
+sufficient to guarantee a final receipt. Future adapters must latch/translate
+at every stop/deadline poll or catch at the run boundary; pre-query stops must
+not invent a query, an already-started unscored slot remains UNKNOWN, and an
+unstarted slot remains missing. Hard-kill `NO_FINAL_RECEIPT` stays distinct.
+Exact source hashes, line sites and required states:
+`results/dev_aux/task2636/stop-poll-site-audit.json`. Frozen inputs are
+unchanged; future registration must include this addendum and its independent
+audit.
+
+The pinned TDLeaf source confirms that complete search receipts supply
+intermediate training targets; incomplete searches reset the pending trace and
+do not move, while only actual scoring terminals supply final W/L/D to
+`finish`. `finish(None)` adds no terminal reward, so earlier valid search-target
+updates may remain in an UNKNOWN episode without turning UNKNOWN into a draw.
+The task2625 auditor requires complete episode closures and capped arms, so it
+cannot audit partial task2636 output unchanged. Future partial replay must
+separate gracefully closed UNKNOWN episodes/slots from unstarted missing slots;
+hard kills with no closure remain `NO_FINAL_RECEIPT`, with no invented model
+state or recovery run. Source-bound details:
+`results/dev_aux/task2636/TD_UNKNOWN_REPLAY_REVIEW.md`.
+
+The current byte-pin replay passed37 comparisons: the study plan, root plan,
+pool/audit, candidate index, task2625 reference plan/results and method sources,
+plus all16 candidate rule files. The proposed `run-v1` directory remains absent;
+the root pool remains unregistered and neither learner nor evaluation started.
+Receipt: `results/dev_aux/task2636/current-pin-replay.json`.
+
+The lifecycle review maps the write-once registration, monotonic budget origin,
+complete-versus-partial training, audit-gated evaluation binding, partial
+evaluation and hard-kill recovery states. Task2625's binder already refuses
+evaluation unless every training arm is complete and independently audited;
+task2636 needs the same gate over candidate-index arms. The current design has
+not implemented registration, runner, partial auditors or analyzer. No run
+started. Review checklist: `results/dev_aux/task2636/PREFLIGHT_LIFECYCLE_REVIEW.md`.
+The consolidated pre-registration matrix classifies the source/root/budget
+evidence as reviewed while candidate-index runners, partial auditors, stop
+handling implementation, hard-kill recovery and adapter tests remain open:
+`results/dev_aux/task2636/PRE_REGISTRATION_GAP_MATRIX.md`. Design PASS is not
+an execution gate.
+An outcome-blind partial-evaluation slot audit now derives the frozen planned
+universe:1,024 unique slots,512 endpoint pairs, and exactly eight20k/eight40k
+family caps per candidate, shared across endpoints and colors. This closes only
+the planned denominator/key contract; it does not implement result-row replay
+or partial analysis. Evidence and source pins:
+`results/dev_aux/task2636/PARTIAL_EVAL_SLOT_AUDIT.md` and
+`partial-eval-slot-universe-audit.json`.
+The new `partial_evaluation_audit.py` prototype checks slot-key membership and
+duplicates, exact missing complement, completed UNKNOWN without labels,
+learner-perspective W/L/D, frozen node caps and completion bounds over all512
+pairs and ties final partial receipts to slot/query/count totals. Seven targeted
+structural cases pass, including rejection of explicit-MISSING, unrecognized-
+ending, inconsistent receipt and orphan-query rows. It does not replay query/game
+history or actual terminal authority, so the independent result auditor and
+runner remain open; this is schema evidence, not run evidence. See
+`results/dev_aux/task2636/test_partial_evaluation_audit.py` and the updated
+pre-registration gap matrix.
+Final receipt consistency now binds exact missing keys, closed slot/query counts,
+node totals, UNKNOWN/terminal totals, final status and source-hash fields. Seven
+structural tests pass; the scope and hash-format/source-bytes distinction are in
+`results/dev_aux/task2636/PARTIAL_EVAL_RECEIPT_SCHEMA.md`.
+The source-pinned replay contract now records the remaining checks for every
+query and closure: full-history replay, actor/ply order, legal action append,
+incomplete-search no-move, node/request sums, model/foe binding, actual terminal
+recomputation and graceful-closure versus hard-kill distinction. It is adapted
+from the plan-pinned task2625 sources; no task2636 result rows exist. Details:
+`results/dev_aux/task2636/PARTIAL_EVAL_REPLAY_CONTRACT.md`.
+
+The replay primitive exposed a type-confusion hole: JSON `true` compared equal
+to integer player1 and was accepted as the actor. The query validator now
+requires exact integer actor/ply fields and finite, non-boolean numeric weights.
+The reusable `FrozenSlotReplayContext` verifies the audited study-plan hash,
+frozen root-pool/candidate-index hashes, used candidate rule bytes, seed, unique
+family root and assigned cap; it pins14 runtime sources, binds the initial
+endpoint to the plan-pinned seed-1977 vector and checks the all-ones foe. It
+reads the7MB root pool once and compiles each used rule once. Ten focused tests
+pass, including positive one-action history replay, incomplete UNKNOWN with no
+move, invalid actor/ply/weights, stale pre-state, missing legal append,
+mismatched closure, fabricated draw and frozen-source drift. This remains
+preparation evidence: no task2636 rows or actual scoring-terminal history
+exists, and trained-model receipts, all-slot integration, stop-safe writes and
+the runner remain unverified. The plan/pool, caps and inputs are unchanged;
+`run-v1` remains absent.
+See `results/dev_aux/task2636/PARTIAL_EVAL_REPLAY_CONTRACT.md` and
+`PRE_REGISTRATION_GAP_MATRIX.md`.
+
+Route reassessment: task2594 is the completed finite standard-Chess TD
+validation and task2606 records the subsequent learner transfer comparison;
+task2636 applies the same TDLeaf/search-bootstrap learner to the generated
+Generic panel, so it continues the user's Chess-first transfer route. The
+TreeStrap-vs-TDLeaf matched-cost comparison remains a separate open method
+question, not resolved or required by this finite Generic panel. Keep task2636
+as Main for this segment, but do not register until runner, full partial replay,
+stop/deadline closure tests and a revised all-in estimate are ready. Details:
+`results/dev_aux/task2636/ROUTE_REASSESSMENT_20261021.md`.
+The frozen 66.70-minute projection uses task2625's different four-rule runtime
+and does not include measured development/validation for the missing task2636
+adapters. Its657.368s preparation/audit/reporting reserve is already allocated
+to remaining replay/report work; do not assume it covers unknown runner/auditor
+engineering. Keep the6,600s cap and120-minute threshold unchanged, but withhold
+registration until missing implementation cost is bounded and the revised
+all-in estimate is closed. See
+`results/dev_aux/task2636/ALL_IN_COST_COMPLETENESS.md`.
+The source-context smoke was31.7ms for the6,962,023-byte pool/index and24.0ms
+median for a cached one-query replay; it is not a multi-query or full-panel cost
+estimate. See `results/dev_aux/task2636/replay-context-cost-smoke.json`.
+The concrete model/receipt interface and why the task2625 pattern cannot be
+reused unchanged are recorded in
+`results/dev_aux/task2636/WHOLE_RESULT_AUDITOR_INTERFACE_REVIEW.md`.
+
+The fixed-root coverage audit also closes an important scope boundary for this
+panel: candidate files contain promotion masks, but none of the 1,920 frozen
+training roots or 256 evaluation roots has a legal promotion action. All 16
+candidate files omit semantic actions, declarations, automatic/consecutive
+adjudications, alternate setup choices, repeated-cycle target conditions,
+no-progress draws and pass actions. The omitted `repetition_policy` and
+`capture_disposition` fields resolve to schema defaults `draw` and
+`capture_to_hand`; all candidates also fix repetition limit 4, max ply 512 and
+stalemate draw. Thus the panel exercises only a finite generated
+movement/drop feasibility slice; promotion capability in rule data is not
+root action support, and these results cannot establish learner coverage of
+auxiliary, declaration or broader Generic rule semantics. See
+`results/dev_aux/task2636/FROZEN_ROOT_DROP_AVAILABILITY_REVIEW.md` and
+`frozen-root-drop-availability.json`. No roots, outcomes, search or frozen
+inputs were changed.
+
+An independent inventory of all 16 byte-pinned candidate JSONs found only these
+serialized top-level fields: `schema_version`, `board_size`, `piece_types`,
+`initial_position`, `drop_allowed`, `promotion_allowed`, `promotion_forced`,
+`repetition_limit`, `max_ply`, `stalemate_result` and `metadata`. `metadata` is
+defined as non-semantic; omitted rule fields use the current schema defaults.
+This ruleset-field inventory corroborates the absent extension mechanisms, but
+does not imply that movement, drop, or history behavior was exercised beyond
+the audited frozen-root legality checks.
+The candidates do contain finite-board movement diversity: the source-bound
+task2633 path audit found79 distinct behaviors across96 piece-type instances
+on 8x8 boards, including78 non-anchor behaviors, relative to its saved rule
+corpus. That comparison is not a Generic population sample and does not demonstrate
+reachability or learning. See
+`results/dev_aux/task2633/FINITE-BOARD-MOVEMENT-AUDIT.md`.
+
+Outcome-blind frozen-root action availability audit: 1,108/1,920 training
+roots and140/256 evaluation roots contain a nonzero hand feature; current legal
+drop actions are available at588 training roots and83 evaluation roots, with
+all16 candidates represented in both phases. This establishes finite selected
+root drop availability and hand-feature support only, not a drop chosen by
+search, TD update exposure, strength, or full Generic coverage. Sources and
+per-candidate table: `results/dev_aux/task2636/FROZEN_ROOT_DROP_AVAILABILITY_REVIEW.md`
+and `frozen-root-drop-availability.json`. Availability is heterogeneous:
+candidate9 has legal drops at1/120 training and1/16 evaluation roots, while
+candidate4 has68/120 and11/16. Equal planned root counts do not equalize
+root-level drop opportunity.
+
+Continuation cost checkpoint: this same DEV_AUX session added640.816374s of
+confirmed effective engineering/research while implementing and validating the
+per-slot replay prototype. If conservatively charged against the study's
+657.367934s remaining prep/audit/report reserve, only16.551560s remains, before
+whole-result integration, actual-terminal fixtures, stop-safe writes or final
+reporting. This is work overhead, not elapsed runtime of a registered run; no
+registration or experiment timer exists. The under-120-minute run projection
+does not cover the added engineering. Keep task2636 unregistered and report the
+budget gap; the exact accounting is in
+`results/dev_aux/task2636/ALL_IN_COST_COMPLETENESS.md`.
