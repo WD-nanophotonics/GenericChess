@@ -222,6 +222,7 @@ class UIController:
         if not self.ai_move_needed():
             return False
         self._ai_stop_requested = False
+        self._last_error = None
         self._ai_thinking = True
         self._ai_cancel = cancel_token
         self._ai_generation += 1

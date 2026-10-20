@@ -2145,8 +2145,12 @@ ongoing AI turn again. A new regression failed on that exact condition before
 the fix. `finish_ai_move()` now stops retries after any non-cancelled,
 non-stale decision that fails to commit while the session is ongoing, retaining
 the validation error and leaving successful, stale and cancelled behavior
-intact. The focused five-module UI/match/declaration product set passes. This
-is a bounded caller-control repair, not a backend/search change or proof for
-every generated ruleset. See
+intact. A Qt UI regression then found the existing Stop AI action was disabled
+after the fail-closed result and the controller error was absent from the
+status bar. The same action now offers a localized Retry AI state after the
+worker ends, shows the rejection reason, and uses the existing refresh path
+without a duplicate start call. The focused five-module UI/match/declaration
+product set passes. This is a bounded caller-control repair, not a
+backend/search change or proof for every generated ruleset. See
 `UI_AI_FAILED_ACTION_RETRY_20261020.md`. No additional retry framework or
 alternate backend adapter follows from this one reproducible path.

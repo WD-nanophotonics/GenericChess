@@ -481,8 +481,11 @@ class MainWindow(QMainWindow):
             )
         if self._controller.ai_thinking:
             base += " · " + tr.text("status.ai_thinking")
-        if self._ai_error is not None:
-            base += f" · {tr.text('status.ai_error')}: {self._ai_error}"
+        ai_error = self._ai_error
+        if ai_error is None and self._controller.ai_stop_requested:
+            ai_error = self._controller.last_error
+        if ai_error is not None:
+            base += f" · {tr.text('status.ai_error')}: {ai_error}"
         if info.record_path:
             base += " · " + tr.text("status.saved")
         if self._settings.get(KEY_SHOW_DEV_STATUS, False):
@@ -494,7 +497,17 @@ class MainWindow(QMainWindow):
         self._act_undo.setEnabled(has_game and self._controller.can_undo)
         self._act_redo.setEnabled(has_game and self._controller.can_redo)
         self._act_resign.setEnabled(has_game)
-        self._act_stop_ai.setEnabled(self._controller.ai_thinking)
+        retrying = (
+            self._controller.ai_stop_requested
+            and not self._controller.ai_thinking
+            and (self._ai_thread is None or not self._ai_thread.isRunning())
+        )
+        self._act_stop_ai.setText(
+            self._tr.text("menu.retry_ai" if retrying else "menu.stop_ai")
+        )
+        self._act_stop_ai.setEnabled(
+            self._controller.ai_thinking or retrying
+        )
         self._act_return.setEnabled(
             self._controller.interaction.displayed_ply is not None
         )
@@ -643,7 +656,6 @@ class MainWindow(QMainWindow):
             self._controller.cancel_ai()
         else:
             self._controller.clear_stop_request()
-            self._maybe_start_ai()
 
     def _cancel_ai_state(self) -> bool:
         """Request AI cancellation, wait briefly, and clear owned references

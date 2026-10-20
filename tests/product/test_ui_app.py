@@ -649,6 +649,46 @@ def test_main_window_ai_match_smoke(qapp):
     assert not win._act_stop_ai.isEnabled()
 
 
+def test_failed_ai_action_is_visible_and_can_be_retried(qapp, monkeypatch):
+    from types import SimpleNamespace
+
+    from generic_chess.ai.budget import ThinkingConfig
+    from generic_chess.ai.cancellation import CancellationToken
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    ctrl = UIController(settings=settings)
+    assert ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick"),
+        )
+    )
+    snapshot = ctrl.capture_ai_search(CancellationToken())
+    assert snapshot is not None
+    decision = SimpleNamespace(
+        action=BoardMove(Square(1, 0), Square(1, 0)),
+        choice_kind="ACTION",
+    )
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert win._act_stop_ai.isEnabled()
+    assert win._act_stop_ai.text() == "Retry AI"
+    assert "AI error" in win._status_text()
+    assert "cannot submit action" in win._status_text()
+
+    restarted = []
+    monkeypatch.setattr(win, "_maybe_start_ai", lambda: restarted.append(True))
+    win._act_stop_ai.trigger()
+    assert not ctrl.ai_stop_requested
+    assert restarted == [True]
+
+
 def test_clock_label_updates_on_tick(qapp):
     from generic_chess.ai.budget import ThinkingConfig
     from generic_chess.clock import TimeControl, TimeControlMode

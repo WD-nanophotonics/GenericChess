@@ -24,8 +24,12 @@ source.
 non-cancelled, non-stale decision fails to commit while the session remains
 ongoing. Existing action/declaration validation supplies the specific error;
 when a decision contains no committable action and no prior error, the
-controller supplies a generic visible error. The user can explicitly resume
-the AI. Stale and cancelled results retain their existing discard behavior;
+controller supplies a generic error. The MainWindow now exposes a localized
+`Retry AI` state on the existing action after the worker is no longer running,
+displays the controller's rejection reason in the status bar, and clears the
+previous AI error when a retry starts. The retry click follows the existing
+controller notification/refresh path once; it does not launch a duplicate
+worker. Stale and cancelled results retain their existing discard behavior;
 successful actions and declarations clear the stop request.
 
 The new regression confirms a rejected same-square move leaves the root state
@@ -33,8 +37,12 @@ and history unchanged, preserves the validation error, sets the stop request,
 and makes `ai_move_needed()` false. The focused five-module product suite
 passed after the fix:
 `test_ai_match.py`, `test_ui_controller.py`, `test_ui_lifecycle.py`,
-`test_ui_app.py`, and `test_generic_declaration_semantics.py`. The same new
-test failed before the code change at the stop-request assertion.
+`test_ui_app.py`, and `test_generic_declaration_semantics.py`. A Qt product
+regression also confirms the stopped error is visible, the existing action is
+enabled and labeled for retry, and clicking it clears the stop and invokes the
+existing start path once. The controller-only retry test failed before its
+code change at the stop-request assertion; the UI test exposed and then covered
+the initially missing retry affordance.
 
 ## Limits and adoption
 
