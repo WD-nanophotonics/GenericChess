@@ -10,7 +10,7 @@ import sys
 
 ROOT = Path.cwd()
 TASK = ROOT / "results/dev_aux/task2617"
-DEFAULT_RUN = TASK / "run-001"
+DEFAULT_RUN = TASK / "run-002"
 
 
 def sha(path: Path) -> str:
@@ -51,6 +51,12 @@ def build_registration(directory: Path) -> dict:
     }
     plan = {
         "task": "DEV_AUX2617",
+        "attempt_id": directory.name,
+        "supersedes_attempt": {
+            "id": "run-001",
+            "status": "FAILED_PRE_SEARCH_STARTUP",
+            "startup_failure_sha256": sha(TASK / "run-001/startup-failure.json"),
+        },
         "status": "REGISTERED_PRE_RUN",
         "question": feasibility["question"],
         "domain": "chess",
@@ -63,6 +69,7 @@ def build_registration(directory: Path) -> dict:
         "cap_values_nodes_both_sides": [20000, 40000],
         "budget_randomization_seed": 26170001,
         "execution_order_seed": 26170002,
+        "ordering_seed_offset": json.loads((ROOT / "results/dev_aux/task2616/eval-plan.json").read_text(encoding="utf-8"))["ordering_seed_offset"],
         "slots": len(slots),
         "slot_order": "exact order in execution-order.json; randomization frozen independently of outcomes",
         "max_paid_nodes": 30720000,
@@ -78,6 +85,7 @@ def build_registration(directory: Path) -> dict:
     }
     eval_plan = {
         "task": "DEV_AUX2617",
+        "attempt_id": directory.name,
         "status": "REGISTERED_PRE_RUN",
         "domain": "chess",
         "rules": [0],
@@ -97,6 +105,7 @@ def build_registration(directory: Path) -> dict:
         "seconds_per_query": 2.0,
         "cap_seconds": 5400,
         "global_cap_seconds": 5400,
+        "ordering_seed_offset": plan["ordering_seed_offset"],
         "cap_values_nodes_both_sides": [20000, 40000],
         "unknown_policy": "censored; actual terminal W/D/L only; endpoint-specific [-1,+1] completion bounds",
         "scope": "finite fixed-policy family-randomized comparison only",
@@ -108,6 +117,7 @@ def build_registration(directory: Path) -> dict:
         "results/dev_aux/task2504/search.py",
         "results/dev_aux/task2565/train.py",
         "results/dev_aux/task2616/result.json",
+        "results/dev_aux/task2616/eval-plan.json",
         "results/dev_aux/task2616/tree-training-result.json",
         "results/dev_aux/task2617/FEASIBILITY.md",
         "results/dev_aux/task2617/analyze.py",
@@ -118,6 +128,7 @@ def build_registration(directory: Path) -> dict:
         "results/dev_aux/task2617/execution-order.json",
         "results/dev_aux/task2617/register_run.py",
         "results/dev_aux/task2617/test_task2617.py",
+        "results/dev_aux/task2617/RUN-002-AMENDMENT.md",
     ]
     runtime_pins = {name: sha(ROOT / name) for name in runtime_names}
     runner_registration = {
@@ -148,6 +159,8 @@ def build_registration(directory: Path) -> dict:
     root_bytes = (json.dumps(root_manifest, indent=2, sort_keys=True) + "\n").encode("utf-8")
     reg = {
         "task": "DEV_AUX2617",
+        "attempt_id": directory.name,
+        "supersedes_attempt": "run-001",
         "status": "REGISTERED_PRE_RUN",
         "science": "OPEN",
         "plan_sha256": hashlib.sha256(plan_bytes).hexdigest(),

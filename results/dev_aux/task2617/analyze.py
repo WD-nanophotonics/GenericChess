@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -249,7 +250,7 @@ def render_markdown(report: dict) -> str:
 
 
 def analyze(directory: str | Path | None = None) -> dict:
-    d = TASK / "run-001" if directory is None else Path(directory)
+    d = TASK / "run-002" if directory is None else Path(directory)
     if not d.is_absolute():
         d = ROOT / d
     if not (d / "eval-started.json").exists():
@@ -266,6 +267,8 @@ def analyze(directory: str | Path | None = None) -> dict:
     model_binding = json.loads((d / "model-binding.json").read_text(encoding="utf-8"))
     bindings = json.loads((d / "eval-binding.json").read_text(encoding="utf-8"))
     started = json.loads((d / "eval-started.json").read_text(encoding="utf-8"))
+    if reg.get("attempt_id") != d.name:
+        raise RuntimeError("attempt identifier does not match the selected immutable run directory")
     if started != bindings:
         raise RuntimeError("evaluation-start and binding receipts differ")
     for name, field in (
@@ -311,4 +314,7 @@ def analyze(directory: str | Path | None = None) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(analyze(), indent=2, sort_keys=True))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--directory", type=Path, default=TASK / "run-002")
+    args = parser.parse_args()
+    print(json.dumps(analyze(args.directory), indent=2, sort_keys=True))

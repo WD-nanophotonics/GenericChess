@@ -76,8 +76,8 @@ class Task2617ProtocolTests(unittest.TestCase):
 
     def test_registration_is_deterministic_and_exactly_bound(self):
         with tempfile.TemporaryDirectory(dir=TEST_TMP) as tmp:
-            first = Path(tmp) / "first"
-            second = Path(tmp) / "second"
+            first = Path(tmp) / "first" / "run-test"
+            second = Path(tmp) / "second" / "run-test"
             reg_a = build_registration(first)
             reg_b = build_registration(second)
             self.assertEqual(reg_a, reg_b)
@@ -101,6 +101,12 @@ class Task2617ProtocolTests(unittest.TestCase):
                 plan = json.loads((directory / "plan.json").read_text(encoding="utf-8"))
                 self.assertEqual(plan["max_paid_nodes"], 30_720_000)
                 self.assertEqual(plan["hard_cap_plus_reserve_seconds"], 6300)
+                inherited_offset = json.loads((ROOT / "results/dev_aux/task2616/eval-plan.json").read_text(encoding="utf-8"))["ordering_seed_offset"]
+                self.assertEqual(plan["ordering_seed_offset"], inherited_offset)
+                self.assertEqual(plan["attempt_id"], directory.name)
+                eval_plan = json.loads((directory / "eval-plan.json").read_text(encoding="utf-8"))
+                self.assertEqual(eval_plan["ordering_seed_offset"], inherited_offset)
+                self.assertEqual(eval_plan["attempt_id"], directory.name)
                 self.assertFalse((directory / "eval-started.json").exists())
                 self.assertFalse((directory / "eval-games.jsonl").exists())
             with self.assertRaises(FileExistsError):

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from collections import Counter
 from itertools import product
+import argparse
 import datetime
 import hashlib
 from importlib.metadata import version
@@ -80,7 +81,7 @@ def validate_slots(slots: list, plan: dict, eval_plan: dict) -> None:
 
 
 def run(directory: str | Path | None = None) -> dict:
-    d = TASK / "run-001" if directory is None else Path(directory)
+    d = TASK / "run-002" if directory is None else Path(directory)
     if not d.is_absolute():
         d = ROOT / d
     plan_path = d / "plan.json"
@@ -90,7 +91,7 @@ def run(directory: str | Path | None = None) -> dict:
     model_binding_path = d / "model-binding.json"
     required = (plan_path, eval_path, registration_path, runner_registration_path, model_binding_path)
     if not all(p.exists() for p in required):
-        raise FileNotFoundError("task2617 run-001 is not registered; refusing to search")
+        raise FileNotFoundError("selected task2617 attempt is not registered; refusing to search")
     p = json.loads(plan_path.read_text(encoding="utf-8"))
     ep = json.loads(eval_path.read_text(encoding="utf-8"))
     reg = json.loads(registration_path.read_text(encoding="utf-8"))
@@ -100,6 +101,8 @@ def run(directory: str | Path | None = None) -> dict:
         raise RuntimeError("registered Python/python-chess runtime differs from execution environment")
     if reg.get("status") != "REGISTERED_PRE_RUN" or not reg.get("no_evaluation_yet"):
         raise RuntimeError("registration is not valid pre-run state")
+    if p.get("attempt_id") != d.name or ep.get("attempt_id") != d.name or reg.get("attempt_id") != d.name:
+        raise RuntimeError("attempt identifier does not match the selected immutable run directory")
     if sha(plan_path) != reg["plan_sha256"] or sha(eval_path) != reg["eval_plan_sha256"]:
         raise RuntimeError("registered plan hash mismatch")
     if sha(d / "root-manifest.json") != reg["root_manifest_sha256"]:
@@ -115,6 +118,9 @@ def run(directory: str | Path | None = None) -> dict:
     for name, expected in runreg["runtime_pins"].items():
         if sha(ROOT / name) != expected:
             raise RuntimeError(f"runtime source changed: {name}")
+    inherited_offset = json.loads((ROOT / "results/dev_aux/task2616/eval-plan.json").read_text(encoding="utf-8"))["ordering_seed_offset"]
+    if p.get("ordering_seed_offset") != inherited_offset or ep.get("ordering_seed_offset") != inherited_offset:
+        raise RuntimeError("ordering seed offset must match the frozen task2616 evaluator")
     if ep["slots"] != [
         [0, item[1], item[0], item[2], item[3], "uniform"]
         for item in json.loads((d / "execution-order.json").read_text(encoding="utf-8"))["slots"]
@@ -316,4 +322,7 @@ def run(directory: str | Path | None = None) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(run(), indent=2))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--directory", type=Path, default=TASK / "run-002")
+    args = parser.parse_args()
+    print(json.dumps(run(args.directory), indent=2))
