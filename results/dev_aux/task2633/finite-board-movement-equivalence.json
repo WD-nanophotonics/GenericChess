@@ -1,0 +1,892 @@
+{
+  "candidate_behavior_collisions_within_batch": [
+    {
+      "board_size": 8,
+      "members": [
+        {
+          "seed": 2633001,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633002,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633003,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633004,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633005,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633006,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633007,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633008,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633009,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633010,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633011,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633012,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633013,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633014,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633015,
+          "type_id": "K"
+        },
+        {
+          "seed": 2633016,
+          "type_id": "K"
+        }
+      ],
+      "signature_sha256": "afeb13ae30001888f576aed9ab41b38db8be94de700fbf7979ce871c3d4964a5"
+    },
+    {
+      "board_size": 8,
+      "members": [
+        {
+          "seed": 2633008,
+          "type_id": "A"
+        },
+        {
+          "seed": 2633012,
+          "type_id": "X"
+        }
+      ],
+      "signature_sha256": "61b5fe230ffbba1a72f33c240054924a9013ad87ea7aade19252e22f109c9bff"
+    },
+    {
+      "board_size": 8,
+      "members": [
+        {
+          "seed": 2633010,
+          "type_id": "X"
+        },
+        {
+          "seed": 2633011,
+          "type_id": "B"
+        }
+      ],
+      "signature_sha256": "89752406f1d11bacd64f4a9f46fa2e7da84e99a64f6dadd32ccd60765af99b48"
+    }
+  ],
+  "candidate_count": 16,
+  "candidate_distinct_finite_board_type_behaviors": 79,
+  "candidate_index_sha256": "1b7d11d7f79040a3641f589a6eaa8ae593cc5ffe0077678f1bc12bc856e05f5e",
+  "candidate_nonanchor_distinct_behaviors": 78,
+  "candidate_piece_type_count": 96,
+  "candidate_piece_types_matching_saved_behavior": 16,
+  "candidates": [
+    {
+      "movement_signature_sha256": "670c1789ce8497ded1d134201f43f3511ec575993545deaf784455e94051ae29",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "74386821c2ae01c14476a5621eb1722088cc359ebc607f3d765b7ca961056f0c",
+      "seed": 2633001,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "aac05d3c735c21bf006d7b84b38ddc30d360265909efd5777cbfcb92d3654257",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "b4c2d63b6ef2fc6260f962ce75674287202934d62bf988842ab73a5e3623c470",
+      "seed": 2633002,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "653ab8060ac2b958148a22892db50ae6d591dc1efee4d8c1059237de3ede637d",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "7f3e46f42b22ccd7dadb61e03d82bd82da797bdff7a0abd9d554ddfb812a0cc0",
+      "seed": 2633003,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "12323694ec8fad67da611278c4b88cc5139f832ca8b1485810e892216a548a64",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "40eb1b2627647e56daf3ce6aff0126c1f82e1eaa94775e57fb5fbaa467dd0804",
+      "seed": 2633004,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "42d58227e9ea7275c3899da9accb2a9b96ed84f4e837ce2f319a3f97511cc0d3",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "eda91b1914e3b41c2a3f80020bf1478ec51d0683efca3568ffd1d9c2360ea19e",
+      "seed": 2633005,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "40067dfa5b40eb7759248e4eb51668392139ef1bb1dde4db39a43f1183c23133",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "d4465cc570da7af3ccf9812df032256f461905efbe4274286f0278ac549c0bf3",
+      "seed": 2633006,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "b9e84203823b6fda2786dd3cab8b444ab77da8fbd4360c41b20bc898f694706b",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "513216b15c88148ad3a68e20b4e89bc35bd7ee7cf479532350753533575eefbe",
+      "seed": 2633007,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "fd86c6e6ae03c26171759c37a4b5070bdfb06c23d378d96c4dd66e3968899340",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "86cd176d5eec2bc9ba3fb0a392c5d7e5d5efaffb1cb3dc013f03508d17b16fd6",
+      "seed": 2633008,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "9b03d46327af5ea0a9d81f3e39bc69ab140ae1a17eebeda0f89b6cba0e5dc338",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "2e07d4ea9e5846dba004877edc3f85c658471af7b85c14da956a7ffd60700ebf",
+      "seed": 2633009,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "1fb7ef38e27aaf1954ca48ed69b289525ad8383446608c81355e4aeead3a7ee9",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "d3e81825bc7988669002eeddac15a6630aac9e6aedfee908ae83fe7870ba8d0d",
+      "seed": 2633010,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "93f707981d96e6283aca83d1a1bada57956bca80c065b749f0c4cd245fb25ee3",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "0ee5267efda8f289dea303a0a45b11cd63ba5fdeaa6d1eb3513d9cc5776b1d4b",
+      "seed": 2633011,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "f436be1eae74e963bab28bbf4f6283139354ac1bf4740bb23678daffbd59daf2",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "a93d4883b56a70d85f126fe761dacb6728f9835da8de20f37a1eff15437fdaa4",
+      "seed": 2633012,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "9ad662ba1fef915cc3a63b28c68c244b5d61f1d2f4376af5410c2c231e5d8147",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "99850ff23ef856c583c8c707fc96f435285986c04bfbc84a94ebaca64ff8db58",
+      "seed": 2633013,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "81fc921c926644e531096c251761ce2bd3908dbb664ce7e99fe4b540761ba493",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "7a78219b409303ad4ada53e9acf8532c81553e6cb97e579f2662bdf2112449b0",
+      "seed": 2633014,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "bbffe19e24d17b2b1c4c878811352f63345b8c20e8063c9eda1620606bfb040b",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "5aebd74fcf248cd4049128280863aa39eb6112448c20d91c41bd5a4aca8d1ae5",
+      "seed": 2633015,
+      "setup_owner_swap_180_symmetric": true
+    },
+    {
+      "movement_signature_sha256": "d4bde916082619bf5c218bc15c8f931264667567f1fd63c5de5b1111a7bfbe60",
+      "owner_count_asymmetry": {},
+      "owner_piece_counts": {
+        "0": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        },
+        "1": {
+          "A": 2,
+          "B": 2,
+          "C": 2,
+          "K": 1,
+          "P": 8,
+          "X": 1
+        }
+      },
+      "piece_type_count": 6,
+      "piece_types_with_saved_finite_board_equivalent": [
+        {
+          "matches": [
+            {
+              "file": "results/dev_aux/task2193/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2194/rules.json",
+              "sha256": "4008383dec3d5310a95e462446bbffbdd30c053745c592ed03e131e7d8505415",
+              "type_id": "K"
+            },
+            {
+              "file": "results/dev_aux/task2206/rules.json",
+              "sha256": "ff99b60bc24244e0d2fae40f3706fbdb8933e505a675326891d7d21040f6363b",
+              "type_id": "K"
+            }
+          ],
+          "type_id": "K"
+        }
+      ],
+      "ruleset_sha256": "1d9bf5515c9c669fd342d7458f3622f8f263090a08c609bd785d2c5c82a71d61",
+      "seed": 2633016,
+      "setup_owner_swap_180_symmetric": true
+    }
+  ],
+  "candidates_with_exact_owner_swap_180_symmetric_setup": 16,
+  "candidates_with_owner_count_asymmetry": 0,
+  "limitations": [
+    "The saved corpus is not a population sample and excludes built-in Chess/Western rules.",
+    "Equivalent individual movement behavior does not imply whole-ruleset equivalence.",
+    "The generator rotates player1 setup; this candidate batch does not test arbitrary ownership allocation.",
+    "No full-history exposure audit was performed; candidate roots remain inadmissible to a pool."
+  ],
+  "question": "Do raw-novel generated movement signatures collapse to saved exact finite-board movement/path behavior, and does the setup contain owner-count asymmetry?",
+  "saved_distinct_finite_board_type_behaviors": 86,
+  "saved_input_manifest_sha256": "8ba54cbe0ef88fc9e26191d3f498499e3b54c03c82dccc5140cd2f8f5620e7e3",
+  "saved_rule_files_scanned": 519,
+  "scope": "Movement-only exact finite-board source/target and ray-path behavior; saved result artifacts only. No complete-game equivalence, built-in rules, legal-history exposure, playout, WDL, search, learning or strength claim.",
+  "status": "COMPLETE"
+}

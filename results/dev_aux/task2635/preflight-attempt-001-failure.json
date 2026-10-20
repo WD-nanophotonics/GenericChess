@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "status": "REJECTED_BEFORE_TRAJECTORY_START",
+  "plan": "results/dev_aux/task2635/plan.json",
+  "plan_sha256": "59c7d5699fe46f4617680dc838319c165ac58acc7944fe7f53d7ec3fd0456020",
+  "error": "Pinned tools/local_agent/environment.py digest in plan.json has 63 hex characters; actual source digest has 64. The final hex digit 2 was omitted in the plan value.",
+  "expected_digest": "384916ee86fb654ab962c0524adb04d952465df195e2ff43abab9dd2e63ea7e",
+  "observed_digest": "384916ee86fb654ab962c0524adb04d952465df195e2ff43abab9dd2e63ea7e2",
+  "runner_sha256_at_failure": null,
+  "evidence": "Runner raised ValueError at source pin validation before creating its output directory; no candidate trajectory or episode was started.",
+  "recovery": "Preserve this failed preflight and plan unchanged. A separate versioned plan corrects only the mistyped digest and pins the parameterized runner; no prior data is reused."
+}

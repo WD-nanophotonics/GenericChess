@@ -1,0 +1,6 @@
+{
+  "scope": "Clarification to the frozen plan and runner interpretation; source experiment and logged actions are unchanged.",
+  "finding": "The probe does not call env.terminal(), session.result, winner, declaration outcome or WDL accessors directly. However, env.actions() delegates through SessionEnv to GameSession.legal_actions(), whose public legality guard internally reads SessionResult.status to return no actions after a terminal session.",
+  "interpretation": "The zero outcome-read count means no winner/reward/WDL value was queried or used for action selection/feature analysis. Terminal status is consulted internally by the authoritative legal-action API as a control-flow guard. Seven NO_BOARD_ACTION_UNKNOWN traces remain unclassified; no terminal outcome is inferred.",
+  "consequence": "Do not describe the run as having zero terminal-status checks. Preserve its outcome-blind WDL boundary and all UNKNOWN endings; no rerun is needed."
+}

@@ -1,0 +1,36 @@
+{
+  "question": "Can the existing generic rule generator produce a new movement-atom composition suitable for later outcome-blind fixed-scale coverage review?",
+  "scope": "Generator-only 8x8 candidate discovery; no playout, search, labels, training, evaluation, or root admission.",
+  "seeds": [2633001,2633002,2633003,2633004,2633005,2633006,2633007,2633008,2633009,2633010,2633011,2633012,2633013,2633014,2633015,2633016],
+  "config": {
+    "board_size": 8,
+    "setup_preset": "classic_like",
+    "movement_symmetry": "none",
+    "leap_probability": 0.5,
+    "ray_probability": 0.5,
+    "allow_hybrid": true,
+    "max_leap_delta": 3,
+    "max_ray_component": 2,
+    "min_atoms_before_mirroring": 1,
+    "max_atoms_before_mirroring": 3,
+    "require_promotable_type": true,
+    "require_nonpromotable_type": true,
+    "min_opening_legal_moves": 1,
+    "max_opening_legal_moves": 256,
+    "max_generation_attempts": 40
+  },
+  "selection": "Retain every generated candidate that passes the generator's source-defined compilation and soft-playability filters. Report exact movement-signature matches against saved results/dev_aux rules; do not select by outcomes.",
+  "hard_wall_cap_seconds": 600,
+  "budget_assessment_threshold_seconds": 7200,
+  "limitations": [
+    "The generator constructs player 1 by 180-degree rotation; this batch varies movement/setup but does not sample arbitrary ownership asymmetry.",
+    "Novel movement signature is not a full-history exposure audit or a strength-validation root.",
+    "Any later pool requires complete exact-history exclusion and a separately frozen comparison/budget."
+  ],
+  "source_sha256": {
+    "generic_chess/generation/generator.py": "466f86600a903b9067a0c3995bc914d8f9517e530e6d3bb1be7b494b7fe9d557",
+    "generic_chess/generation/piece_generator.py": "ad366d7e15426401552e8fbdf5c29d19697a10b9a5150163007929d6a8c5acaf",
+    "generic_chess/generation/setup_generator.py": "f1f40b6cb5327f38684880ffe70e45d5f953da157818c455d919bc5d0bfc6d6c",
+    "generic_chess/generation/config.py": "609d9e362d5472272aa4835e8faa68b907bf683323a2aa6917ad7957e45a0e73"
+  }
+}

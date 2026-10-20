@@ -1872,3 +1872,177 @@ details: `results/dev_aux/task2629/REPORT.md` and `DESIGN.md`. The two rule15
 panels do not establish a strength gain or broad Generic transfer. Next:
 compare new rule/mechanic candidates for a fresh fixed-scale TDLeaf test;
 do not keep expanding exposed rules15 panels. Science remains OPEN.
+
+DEV_AUX task2632 registered fixed-scale TDLeaf training on generated
+candidate6 rule (2026-10-20/21)
+ended incomplete. The one launcher receipt records return code1 after
+1,201.794s wall / 1,185.358 trainer seconds, below its frozen1,800s cap. The
+trace is `PersistentStop`, not the known final-summary key defect. This agent
+mistakenly invoked the write-action `stop` command while inspecting stop state;
+the resulting local slack/rollout markers were restored to their immediately
+prior false values after the run had already observed the stop. This was not a
+user stop. Preserve the incident and partial logs; no retry, top-up, model
+recovery, evaluation bind or strength conclusion.
+
+Independent partial replay passed45,885 durable query rows, exact full-history
+pre/post state, legal action application, actor/learner sequence, source pins,
+query/node budgets and TD updates for879 closed episodes. Closed outcomes are
+677 actual terminals and202 UNKNOWN (never draws), with778 nonzero updates.
+Seeds1977 and8173 each reached250,000 nodes; seed27182 has216,749 closed
+episode nodes plus1,497 nodes in an open tail of95 queries; seed31415 was not
+started. Total logged nodes are718,246/1,000,000. No canonical result exists;
+all1,024 frozen evaluation slots remain missing. See
+`results/dev_aux/task2632/INTERRUPTION-REVIEW.md` and
+`run/partial-training-audit.json` for exact limits. This partial result does
+not revive the task2632 registration or its recovery gate.
+
+The current Chat mailbox probe found no comments or replies after its saved
+coverage boundary. Review of its existing advice: the rules15 fresh-pool gate
+is already satisfied by task2627; PRIMARY's order-only work stays outside this
+role; task2625 censor advice is sound and already answered by its frozen
+diagnostic. `results/dev_aux/task2625/CHAT_CENSORING_REVIEW_20261021.md` records
+that the39/256 rule271003 UNKNOWN endpoints are all H=128 horizon censoring,
+not node-cap failures, and that its[-0.34375,0.265625] bound crosses zero.
+task2629's H=256 roots are a different panel, so they are not a causal horizon
+contrast. This backup is closed without new search. Next: continue outcome-blind
+review of a fresh rule/mechanic candidate; do not reuse exposed task2632 or
+rules15 evaluation results as training labels. Science remains OPEN.
+
+Outcome-blind candidate check task2630: task2411/rules-5 has a three-square
+current-R zone capacity guard, while the fixed-scale model has only global
+board-current/hand-base counts. A synthetic direct-state probe confirms an
+exact feature alias: equal `[0,-4,0,1]` vectors yield4 versus0 guarded drops
+across zone counts2 versus3. This is not a legal-history or strength result.
+A predeclared uniform-legal history scan (16 seeds,≤512 plies each,≤180s)
+visited361 positions in0.433s and found no matched pair; all16 playouts ended
+before the cap. No outcome was read and no records were retained. Interpret as
+not observed under this fixed sampler, not unreachable. Do not retry/extend the
+same candidate without a changed premise. See
+`results/dev_aux/task2630/ZONE-GUARD-FEATURE-ALIAS-HYPOTHESIS.md` and the
+paired synthetic/legal-scan receipts. Next: assess a different rule-defined
+mechanic outcome-blindly, with complete-history exclusion before any training
+or evaluation pool. Science remains OPEN.
+
+The changed-premise 8x8 task2193 zone-guard scan also found no matched
+feature/action-set pair: 16 deterministic uniform-legal playouts examined
+5,484 positions in 10.419s; 9 ended and 7 reached 512 plies. It read no
+outcomes and admitted no roots. Task2193's `temp_right` is write-only; only
+its spatial capacity guard affects legal drops. Together with the 4x4 scan,
+this says no pair was observed under either fixed sampler, not that it is
+unreachable. Preserve both bounded negative results; no same-sampler retries
+or range extensions. If pursuing the mechanic, next use a different
+predeclared targeted legal-prefix construction around hand-R and zone
+occupancy, with exact-history exclusion before any strength pool. See
+`results/dev_aux/task2630/ZONE-GUARD-FEATURE-ALIAS-HYPOTHESIS.md`,
+`TEMP_RIGHT_MECHANIC_REVIEW.md`, and the exact-scan receipts. Science remains
+OPEN.
+
+Correction/update (2026-10-20/21): the outcome-blind targeted task2193 legal
+prefix found a reachable fixed-scale feature alias. Both replayed histories
+have actor0, feature vector `[3,0,1,0]`, and one owner-0 hand R; zone-current-R
+counts are3 versus2, with0 versus57 guarded legal R drops. Branch moves come
+from the legal-action list; both complete records replay and preserve their
+feature vectors. This upgrades task2193 from “not observed under the uniform
+sampler” to a legal-mechanics/representation witness only. It establishes no
+learning or strength effect, and neither history is a fresh training/evaluation
+root. No further reachability scan is useful; keep the pair excluded and switch
+the next coverage check to a distinct unrepresented mechanic. Full scope, rules
+hash and records: `results/dev_aux/task2630/TASK2193-TARGETED-ZONE-WITNESS.md`
+and `targeted-rule2193-zone-witness.json`.
+
+Chat's optional task2625 H=128 censoring review was completed using saved logs
+only. Rule271003 has39/256 UNKNOWN endpoints spread across13/16 root families,
+four seeds, both colors and both endpoints (27 TDLeaf,12 initialization); 35/128
+pairs include UNKNOWN and four pairs have both endpoints censored. The existing
+bound width0.609375 equals the worst-case width from39 independent UNKNOWN
+endpoints; its sign remains unresolved. Exact rule-aware positions repeat in
+27/39 censored histories, at most three visits; only1/39 has a final16-ply
+material-static streak. This does not identify a cause or optimal horizon.
+All44 records terminate at the H=128 evaluation boundary after8 root-history
+plies; none hit a node cap. Task2629's H=256 panel has different roots and is
+not a causal comparison. Adopt predeclared horizon-censor reporting for any
+future independent panel; no old-panel extension, imputation or pooling.
+Details and source hashes: `results/dev_aux/task2625/CHAT_CENSORING_PROFILE_20261021.md`
+and `run/unknown-censoring-profile.json`.
+
+Distinct outcome-blind check of task2411-5's previously unreviewed harvest
+actions found both legally available in the actual initial position. Two
+one-action branches each transfer three opponent R pieces to owner0's hand;
+they share actor1 and fixed-scale features `[0,-3,0,3]` but produce legal
+frontiers of11 versus12 actions, with7/8 branch-specific actions. Full records
+replay. This is a reachable semantic/representation witness, not evidence of a
+learning or strength effect. The initial history was already exposed by the
+prior task2411-5 sampler, so exclude it from future panels; only one saved rule
+definition contains these harvest actions. Task2411's `freeze.py` deliberately
+constructs the action pair as a support/schema stress case; this is not evidence
+that random generated rules emit harvest mechanics at any measured rate. Next:
+select a genuinely generator-produced, unexposed rule candidate and establish
+its mechanic frequency/availability outcome-blindly before considering another
+learner panel. Evidence:
+`results/dev_aux/task2630/TASK2411-5-HARVEST-WITNESS.md` and
+`targeted-rule2411-harvest-witness.json`. Science remains OPEN.
+
+The saved semantic-mechanic inventory covers522 rule artifacts /38 normalized
+definitions, zero parse failures. The only active state-guard family is the
+spatial zone drop guard (4 definitions); no slot guards or triggers occur.
+Generated task2433/2435 candidates share the known hand-R unlock family;
+`temp_right` remains write-only. Task2411-5 harvest actions were manually
+constructed, not sampled from the random rule generator. No distinct
+unreviewed active semantic effect remains in this saved inventory. Do not
+repeat these probes; next select a genuinely generator-produced rule with a
+changed movement/ownership composition, then verify exact source and history
+exposure before a feature/action availability check. This count is not a
+population-frequency estimate. Decision record:
+`results/dev_aux/task2630/SAVED-MECHANIC-INVENTORY-DECISION.md`.
+
+The follow-up aux-slot read audit independently rehashed all38 normalized
+definitions in that inventory and checked37 declared auxiliary slots:37 have
+slot-named effect writers and0 have a `slot_guard` or typed
+`aux_slot_square` reader. This supports the write-only interpretation for the
+saved result-rule corpus only, not built-in Chess/Western rules or future
+generated definitions. See `results/dev_aux/task2630/aux-slot-reader-audit.json`;
+the exact input inventory hash is recorded in the decision note.
+
+## task2633-2635 generated-rule coverage checkpoint (2026-10-20/21)
+
+The task2633 outcome-blind 8x8 generator batch produced16/16 compiled rules
+with movement signatures new against519 saved `results/dev_aux` rule files.
+The finite-board exact target/path audit covered96 piece-type instances:78
+distinct non-anchor behaviors; only the shared K anchor matched saved behavior.
+Two within-batch non-anchor pairs share exact finite-board behavior. All16
+initial setups are exactly owner-swap/180-degree symmetric, so arbitrary
+ownership allocation remains untested. This is movement-only evidence, not
+whole-rule equivalence or strength. See
+`results/dev_aux/task2633/FINITE-BOARD-MOVEMENT-AUDIT.md`.
+
+The task2634 static read compiled all16 candidates through the unchanged
+task2621 fixed-scale adapter. All use the same10 material channels and the same
+all-zero initial vector; an independent direct count reconstruction matched all
+components. Movement differences are not directly encoded in this material
+vector at the balanced initial state. See
+`results/dev_aux/task2634/STATIC-INITIAL-FEATURE-REVIEW.md`.
+
+The outcome-blind task2635 trajectory probe attempted64 fixed-seed uniform
+board-action histories (four per candidate), capped at128 plies. Two startup
+issues are preserved: attempt001 rejected a 63-character source digest before
+creating output; attempt002 flushed all64 complete histories/7,553 plies, then
+its final summary writer raised `NameError`. No trajectory was rerun.
+Independent reconciliation replayed all64 histories: every candidate's four
+traces activated a nonzero fixed-scale material feature by ply30 (pooled upper
+median3). Fifty-seven ply-cap and seven no-board-action endpoints remain
+UNKNOWN; no winner/WDL value, search query or learner update was read. The
+public legal-action API consults `SessionResult.status` internally as a guard;
+the probe did not inspect it to assign outcomes. The exact clarification and
+error receipts accompany `results/dev_aux/task2635/FEATURE-ACTIVATION-REVIEW.md`.
+All task2633/2635 candidate starts and emitted histories are exposed and
+excluded from future evaluation pools.
+
+At the task2625 per-rule node/root/evaluation conditions, four initialization
+seeds on all16 candidates would cost about267 minutes by fourfold scaling of
+its conservative all-in estimate; this needs explicit Chat mailbox assessment
+before registration. A different finite feasibility design uses one shared
+initialization across all16 rules, 4M training nodes and1,024 evaluation
+slots, with the same source-bound66.7-minute baseline as task2625, but no seed
+replication or population inference. It remains a proposal pending new
+exact-history-disjoint roots and a write-once plan. Cost reasoning:
+`results/dev_aux/task2635/NEXT-LEARNER-PANEL-BUDGET.md`. Science remains OPEN.

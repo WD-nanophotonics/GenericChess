@@ -3326,3 +3326,38 @@ query logs were deterministically gzip-packaged with hash manifests; raw files
 remain local. Unresolved: whether a new rule/mechanic with the same fixed-scale
 TDLeaf route changes the finite-panel conclusion. No further rules15 expansion
 is proposed; science remains OPEN.
+
+DEV_AUX task2633-2635 generated-rule coverage segment (2026-10-20/21): DEV_AUX
+generated16 outcome-blind movement candidates, audited finite-board behavior
+against519 saved result-rule files, checked exact fixed-scale initial inputs,
+and ran64 bounded uniform-legal board-action trajectories. The movement audit
+found78 distinct non-anchor behaviors, no saved non-anchor type matches, two
+within-batch behavior collisions, and symmetric owner-swapped starts. The
+adapter audit found one identical10-channel order and all-zero initial features
+for all16 candidates. Every trajectory activated a nonzero material channel by
+ply30; all64 complete histories independently replayed. The censored/no-action
+endings remain UNKNOWN. No WDL, search, training update or strength evaluation
+was used. Exact limits and durable receipts are in the task2633/2634/2635 reports.
+
+Coordination and advice: one existing asynchronous Chat mailbox probe was read
+and saved. The task2625 censoring comment was assessed as a sound optional
+diagnostic already covered by its saved profile; PRIMARY-owned ordering advice
+was deferred outside DEV_AUX scope; task2627 rules15 pool advice was already
+satisfied by its audited120/16 exact-history-disjoint pool. These decisions
+remain bound to the precise message hashes in ignored local mailbox state; no
+message was resent and no realtime wait or extra Agent was used. No PRIMARY or
+DEEPSEEK code/state contribution occurred in this segment, and their checkouts
+were not touched. Direct user policy and this role's boundary controlled the
+choice to keep researching new generated rules.
+
+Efficiency and limits: generation itself took0.243s; the64 trajectory run
+finished in19.3s, with7,553 plies, and read-only reconciliation independently
+replayed all64 durable records. The producer's source-pin typo and final-summary
+NameError were preserved; no trajectory was repeated. The sampled traces are
+feasibility observations, not action/population frequencies. A four-init
+16-rule panel scales to about266.8min and remains unregistered pending explicit
+Chat mailbox assessment. A proposed one-init finite panel uses4M nodes and1,024
+evaluation slots (about66.7min estimated) but has only32 paired contrasts per
+rule versus128 in task2625; it is not yet registered. Unresolved: exact-history
+root-pool coverage and whether one-init TDLeaf changes finite-panel actual W/L/D
+bounds across these candidate rules. Science remains OPEN.

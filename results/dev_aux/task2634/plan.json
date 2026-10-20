@@ -1,0 +1,18 @@
+{
+  "question": "Do the 16 task2633 movement-novel candidate rules produce distinct initial material feature vectors through the exact unchanged task2621 fixed-scale Generic adapter?",
+  "scope": "Static initialization only: compile each pinned candidate and read adapter channel names and initial material features. No legal actions, playout, terminal/outcome access, search, learner/model construction or update, training, evaluation, or root admission.",
+  "candidate_index": "results/dev_aux/task2633/generated/candidate-index.json",
+  "candidate_index_sha256": "1b7d11d7f79040a3641f589a6eaa8ae593cc5ffe0077678f1bc12bc856e05f5e",
+  "candidate_count": 16,
+  "unit_type": "P",
+  "expected_dynamic_channel_policy": "task2621 compile_channels: board-P unit, then sorted non-anchor current-board channels and sorted base-hand channels; no fixed-width padding or inferred human values.",
+  "source_sha256": {
+    "results/dev_aux/task2621/fixed_scale.py": "c50d5f7fa2e0db755a33ef5c9e4c480ecfb6a99fac3009b13e443800ac251571",
+    "results/dev_aux/task2511/generic.py": "ab5f0e58d50bc2c6adb55af438639396dcd3dbf3ad082959852cca89c2389d7e",
+    "results/dev_aux/task2397/material.py": "a44d72a56d6c0f6d23d974586d902f9f04898efc4aeed392f88223ebfe4b13bf",
+    "generic_chess/rules/serialization.py": "aa0d105a2de55e0f40cf3a3562521033f0056df72904246cc0c94718d76bc04f",
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b"
+  },
+  "stop_rule": "Stop after all candidate compilation and initial feature reads pass; any mismatch is reported, not repaired by changing candidates or learner source."
+}

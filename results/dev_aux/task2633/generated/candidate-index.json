@@ -1,0 +1,954 @@
+{
+  "candidate_count": 16,
+  "candidate_status_counts": {
+    "GENERATED_AND_COMPILED": 16
+  },
+  "movement_novelty_counts": {
+    "novel": 16
+  },
+  "ownership_limit": "The existing generator rotates player1's setup 180 degrees; this batch does not vary arbitrary owner allocation.",
+  "plan_sha256": "d8f7702cf7ba30d3d2f3a518d510c8e599d470982b085f3ec8cf2da1fb6c5de9",
+  "rows": [
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "670c1789ce8497ded1d134201f43f3511ec575993545deaf784455e94051ae29",
+      "opening_legal_move_count": 55,
+      "piece_types": [
+        {
+          "average_mobility": 8.1875,
+          "movement_atoms": [
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "RayAtom(direction=(0, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 4.265625,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, -1))",
+            "RayAtom(direction=(0, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 1.9375,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, -1))",
+            "LeapAtom(offset=(0, 3))",
+            "LeapAtom(offset=(-2, -1))"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.375,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, -2), max_steps=None)",
+            "RayAtom(direction=(-2, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 4.921875,
+          "movement_atoms": [
+            "LeapAtom(offset=(-1, -1))",
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "LeapAtom(offset=(1, 2))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "74386821c2ae01c14476a5621eb1722088cc359ebc607f3d765b7ca961056f0c",
+      "seed": 2633001,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633001.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "aac05d3c735c21bf006d7b84b38ddc30d360265909efd5777cbfcb92d3654257",
+      "opening_legal_move_count": 34,
+      "piece_types": [
+        {
+          "average_mobility": 3.03125,
+          "movement_atoms": [
+            "RayAtom(direction=(2, 1), max_steps=None)",
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "LeapAtom(offset=(-1, 2))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.734375,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 1))",
+            "RayAtom(direction=(-1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 1.3125,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, 1))",
+            "LeapAtom(offset=(-1, 3))"
+          ],
+          "promotable": true,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 1.703125,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, -1))",
+            "LeapAtom(offset=(-3, -3))",
+            "LeapAtom(offset=(-2, 1))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 1.21875,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, 1))",
+            "LeapAtom(offset=(-2, 2))"
+          ],
+          "promotable": true,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "b4c2d63b6ef2fc6260f962ce75674287202934d62bf988842ab73a5e3623c470",
+      "seed": 2633002,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633002.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "653ab8060ac2b958148a22892db50ae6d591dc1efee4d8c1059237de3ede637d",
+      "opening_legal_move_count": 21,
+      "piece_types": [
+        {
+          "average_mobility": 0.390625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-3, 3))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.109375,
+          "movement_atoms": [
+            "LeapAtom(offset=(-3, -1))",
+            "LeapAtom(offset=(2, 2))"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.21875,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, 2))",
+            "LeapAtom(offset=(2, -3))",
+            "RayAtom(direction=(2, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 1.125,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, 1))",
+            "LeapAtom(offset=(3, -2))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 1.953125,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, -1))",
+            "RayAtom(direction=(1, 2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "7f3e46f42b22ccd7dadb61e03d82bd82da797bdff7a0abd9d554ddfb812a0cc0",
+      "seed": 2633003,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633003.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 3,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "12323694ec8fad67da611278c4b88cc5139f832ca8b1485810e892216a548a64",
+      "opening_legal_move_count": 22,
+      "piece_types": [
+        {
+          "average_mobility": 1.859375,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, 0))",
+            "LeapAtom(offset=(-1, 3))",
+            "LeapAtom(offset=(-2, 2))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.234375,
+          "movement_atoms": [
+            "LeapAtom(offset=(-1, -1))",
+            "LeapAtom(offset=(2, 3))"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 0.390625,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 3))"
+          ],
+          "promotable": true,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 1.75,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 2))",
+            "RayAtom(direction=(-2, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 1.203125,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, 3))",
+            "LeapAtom(offset=(-2, -1))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "40eb1b2627647e56daf3ce6aff0126c1f82e1eaa94775e57fb5fbaa467dd0804",
+      "seed": 2633004,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633004.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "42d58227e9ea7275c3899da9accb2a9b96ed84f4e837ce2f319a3f97511cc0d3",
+      "opening_legal_move_count": 42,
+      "piece_types": [
+        {
+          "average_mobility": 7.0,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 0), max_steps=None)",
+            "RayAtom(direction=(0, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.21875,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, -2))",
+            "LeapAtom(offset=(0, 2))"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 3.296875,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, -1))",
+            "LeapAtom(offset=(2, -2))",
+            "RayAtom(direction=(1, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.65625,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, -1), max_steps=None)",
+            "LeapAtom(offset=(2, 3))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 5.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(0, -1), max_steps=None)",
+            "RayAtom(direction=(-1, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "eda91b1914e3b41c2a3f80020bf1478ec51d0683efca3568ffd1d9c2360ea19e",
+      "seed": 2633005,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633005.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "40067dfa5b40eb7759248e4eb51668392139ef1bb1dde4db39a43f1183c23133",
+      "opening_legal_move_count": 17,
+      "piece_types": [
+        {
+          "average_mobility": 1.015625,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 0))",
+            "LeapAtom(offset=(-3, 3))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.734375,
+          "movement_atoms": [
+            "RayAtom(direction=(2, -1), max_steps=None)",
+            "LeapAtom(offset=(3, 1))"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.609375,
+          "movement_atoms": [
+            "LeapAtom(offset=(-1, 2))",
+            "LeapAtom(offset=(-1, -1))",
+            "RayAtom(direction=(1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 0.765625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-1, 1))"
+          ],
+          "promotable": true,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 2.5,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, -1))",
+            "RayAtom(direction=(1, -2), max_steps=None)",
+            "LeapAtom(offset=(1, 3))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "d4465cc570da7af3ccf9812df032256f461905efbe4274286f0278ac549c0bf3",
+      "seed": 2633006,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633006.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "b9e84203823b6fda2786dd3cab8b444ab77da8fbd4360c41b20bc898f694706b",
+      "opening_legal_move_count": 56,
+      "piece_types": [
+        {
+          "average_mobility": 4.375,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 1), max_steps=None)",
+            "RayAtom(direction=(1, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 0.546875,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 1))"
+          ],
+          "promotable": true,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.921875,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, -2), max_steps=None)",
+            "RayAtom(direction=(-2, -1), max_steps=None)",
+            "LeapAtom(offset=(1, 3))"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.484375,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, -2), max_steps=None)",
+            "LeapAtom(offset=(0, -2))",
+            "LeapAtom(offset=(3, 1))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 3.0,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 0))",
+            "RayAtom(direction=(2, -1), max_steps=None)",
+            "RayAtom(direction=(1, 2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "513216b15c88148ad3a68e20b4e89bc35bd7ee7cf479532350753533575eefbe",
+      "seed": 2633007,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633007.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 2,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "fd86c6e6ae03c26171759c37a4b5070bdfb06c23d378d96c4dd66e3968899340",
+      "opening_legal_move_count": 48,
+      "piece_types": [
+        {
+          "average_mobility": 7.765625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-1, 1))",
+            "RayAtom(direction=(0, 1), max_steps=None)",
+            "RayAtom(direction=(-1, 0), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.84375,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 1))",
+            "RayAtom(direction=(-1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 0.65625,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 1))"
+          ],
+          "promotable": true,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 4.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "RayAtom(direction=(0, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 3.40625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, 2))",
+            "RayAtom(direction=(1, 1), max_steps=None)",
+            "LeapAtom(offset=(2, -1))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "86cd176d5eec2bc9ba3fb0a392c5d7e5d5efaffb1cb3dc013f03508d17b16fd6",
+      "seed": 2633008,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633008.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 2,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "9b03d46327af5ea0a9d81f3e39bc69ab140ae1a17eebeda0f89b6cba0e5dc338",
+      "opening_legal_move_count": 32,
+      "piece_types": [
+        {
+          "average_mobility": 2.390625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-3, 1))",
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "LeapAtom(offset=(2, 1))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 2.765625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-3, 3))",
+            "RayAtom(direction=(-1, -2), max_steps=None)",
+            "RayAtom(direction=(-1, 2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.84375,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 1))",
+            "RayAtom(direction=(1, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.125,
+          "movement_atoms": [
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "LeapAtom(offset=(-3, -3))",
+            "LeapAtom(offset=(-3, 1))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 3.375,
+          "movement_atoms": [
+            "RayAtom(direction=(1, 2), max_steps=None)",
+            "RayAtom(direction=(1, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "2e07d4ea9e5846dba004877edc3f85c658471af7b85c14da956a7ffd60700ebf",
+      "seed": 2633009,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633009.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 2,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "1fb7ef38e27aaf1954ca48ed69b289525ad8383446608c81355e4aeead3a7ee9",
+      "opening_legal_move_count": 20,
+      "piece_types": [
+        {
+          "average_mobility": 4.046875,
+          "movement_atoms": [
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "LeapAtom(offset=(-3, 1))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 0.46875,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 2))"
+          ],
+          "promotable": true,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.203125,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 1))",
+            "LeapAtom(offset=(-2, -3))",
+            "RayAtom(direction=(-2, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.359375,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 0))",
+            "RayAtom(direction=(1, -2), max_steps=None)",
+            "LeapAtom(offset=(1, 3))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 1.734375,
+          "movement_atoms": [
+            "RayAtom(direction=(2, -1), max_steps=None)",
+            "LeapAtom(offset=(-1, 3))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "d3e81825bc7988669002eeddac15a6630aac9e6aedfee908ae83fe7870ba8d0d",
+      "seed": 2633010,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633010.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "93f707981d96e6283aca83d1a1bada57956bca80c065b749f0c4cd245fb25ee3",
+      "opening_legal_move_count": 45,
+      "piece_types": [
+        {
+          "average_mobility": 3.375,
+          "movement_atoms": [
+            "RayAtom(direction=(-2, 1), max_steps=None)",
+            "LeapAtom(offset=(1, 1))",
+            "RayAtom(direction=(1, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.75,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 2))",
+            "RayAtom(direction=(2, -1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 1.65625,
+          "movement_atoms": [
+            "RayAtom(direction=(2, -1), max_steps=None)",
+            "LeapAtom(offset=(-3, 2))"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 0.46875,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 2))"
+          ],
+          "promotable": true,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 4.125,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 1), max_steps=None)",
+            "RayAtom(direction=(-1, 2), max_steps=None)",
+            "LeapAtom(offset=(0, -2))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "0ee5267efda8f289dea303a0a45b11cd63ba5fdeaa6d1eb3513d9cc5776b1d4b",
+      "seed": 2633011,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633011.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "f436be1eae74e963bab28bbf4f6283139354ac1bf4740bb23678daffbd59daf2",
+      "opening_legal_move_count": 17,
+      "piece_types": [
+        {
+          "average_mobility": 1.640625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-3, 2))",
+            "LeapAtom(offset=(3, 1))",
+            "LeapAtom(offset=(-3, 0))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 0.65625,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 1))"
+          ],
+          "promotable": true,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 5.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "RayAtom(direction=(1, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 1.65625,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 2))",
+            "RayAtom(direction=(1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 4.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 0), max_steps=None)",
+            "RayAtom(direction=(-1, 2), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "a93d4883b56a70d85f126fe761dacb6728f9835da8de20f37a1eff15437fdaa4",
+      "seed": 2633012,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633012.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "9ad662ba1fef915cc3a63b28c68c244b5d61f1d2f4376af5410c2c231e5d8147",
+      "opening_legal_move_count": 20,
+      "piece_types": [
+        {
+          "average_mobility": 1.734375,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, 3))",
+            "RayAtom(direction=(-2, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 1.65625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, -3))",
+            "RayAtom(direction=(-2, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 4.71875,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 0), max_steps=None)",
+            "LeapAtom(offset=(2, -2))",
+            "LeapAtom(offset=(1, 2))"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 8.75,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 0), max_steps=None)",
+            "RayAtom(direction=(0, -1), max_steps=None)",
+            "LeapAtom(offset=(2, -2))",
+            "RayAtom(direction=(2, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 3.5,
+          "movement_atoms": [
+            "RayAtom(direction=(0, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "99850ff23ef856c583c8c707fc96f435285986c04bfbc84a94ebaca64ff8db58",
+      "seed": 2633013,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633013.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "81fc921c926644e531096c251761ce2bd3908dbb664ce7e99fe4b540761ba493",
+      "opening_legal_move_count": 39,
+      "piece_types": [
+        {
+          "average_mobility": 5.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 1), max_steps=None)",
+            "RayAtom(direction=(-1, 0), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 3.765625,
+          "movement_atoms": [
+            "RayAtom(direction=(1, -1), max_steps=None)",
+            "LeapAtom(offset=(-3, 3))",
+            "RayAtom(direction=(-1, 2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 3.375,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, -1), max_steps=None)",
+            "RayAtom(direction=(-2, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 4.0625,
+          "movement_atoms": [
+            "LeapAtom(offset=(-2, -2))",
+            "RayAtom(direction=(0, 1), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 4.0,
+          "movement_atoms": [
+            "LeapAtom(offset=(3, 0))",
+            "RayAtom(direction=(-1, 1), max_steps=None)",
+            "RayAtom(direction=(-1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "7a78219b409303ad4ada53e9acf8532c81553e6cb97e579f2662bdf2112449b0",
+      "seed": 2633014,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633014.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 1,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "bbffe19e24d17b2b1c4c878811352f63345b8c20e8063c9eda1620606bfb040b",
+      "opening_legal_move_count": 28,
+      "piece_types": [
+        {
+          "average_mobility": 1.1875,
+          "movement_atoms": [
+            "RayAtom(direction=(2, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 0.46875,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 3))"
+          ],
+          "promotable": true,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 2.65625,
+          "movement_atoms": [
+            "RayAtom(direction=(-1, 1), max_steps=None)",
+            "LeapAtom(offset=(-2, -3))"
+          ],
+          "promotable": false,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.203125,
+          "movement_atoms": [
+            "LeapAtom(offset=(1, -3))",
+            "RayAtom(direction=(-2, -1), max_steps=None)",
+            "LeapAtom(offset=(-2, 3))"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 1.734375,
+          "movement_atoms": [
+            "RayAtom(direction=(1, -2), max_steps=None)",
+            "LeapAtom(offset=(-3, 1))"
+          ],
+          "promotable": false,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "5aebd74fcf248cd4049128280863aa39eb6112448c20d91c41bd5a4aca8d1ae5",
+      "seed": 2633015,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633015.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    },
+    {
+      "generation_attempts": 2,
+      "movement_signature_novel_vs_saved_rule_files": true,
+      "movement_signature_sha256": "d4bde916082619bf5c218bc15c8f931264667567f1fd63c5de5b1111a7bfbe60",
+      "opening_legal_move_count": 9,
+      "piece_types": [
+        {
+          "average_mobility": 0.75,
+          "movement_atoms": [
+            "LeapAtom(offset=(0, 2))"
+          ],
+          "promotable": true,
+          "type_id": "P"
+        },
+        {
+          "average_mobility": 4.6875,
+          "movement_atoms": [
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "RayAtom(direction=(2, 1), max_steps=None)"
+          ],
+          "promotable": true,
+          "type_id": "X"
+        },
+        {
+          "average_mobility": 0.5625,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 2))"
+          ],
+          "promotable": true,
+          "type_id": "A"
+        },
+        {
+          "average_mobility": 2.0625,
+          "movement_atoms": [
+            "LeapAtom(offset=(0, 1))",
+            "RayAtom(direction=(1, -2), max_steps=None)"
+          ],
+          "promotable": false,
+          "type_id": "B"
+        },
+        {
+          "average_mobility": 4.046875,
+          "movement_atoms": [
+            "LeapAtom(offset=(2, 0))",
+            "RayAtom(direction=(1, 0), max_steps=None)",
+            "LeapAtom(offset=(-3, 1))"
+          ],
+          "promotable": true,
+          "type_id": "C"
+        }
+      ],
+      "ruleset_sha256": "1d9bf5515c9c669fd342d7458f3622f8f263090a08c609bd785d2c5c82a71d61",
+      "seed": 2633016,
+      "source_file": "results/dev_aux/task2633/generated/seed-2633016.rules.json",
+      "status": "GENERATED_AND_COMPILED"
+    }
+  ],
+  "runner_sha256": "b44db987d9c546f839ecc5d174b08305695e51e4926bcac46ff895df1fce47cb",
+  "saved_distinct_movement_signatures": 36,
+  "saved_rule_files_scanned": 519,
+  "scope": "Generation, rule compilation and generator soft-playability checks only. No legal playout, WDL, search, training, evaluation, or full-history exposure admission.",
+  "source_sha256": {
+    "generic_chess/generation/config.py": "609d9e362d5472272aa4835e8faa68b907bf683323a2aa6917ad7957e45a0e73",
+    "generic_chess/generation/generator.py": "466f86600a903b9067a0c3995bc914d8f9517e530e6d3bb1be7b494b7fe9d557",
+    "generic_chess/generation/piece_generator.py": "ad366d7e15426401552e8fbdf5c29d19697a10b9a5150163007929d6a8c5acaf",
+    "generic_chess/generation/setup_generator.py": "f1f40b6cb5327f38684880ffe70e45d5f953da157818c455d919bc5d0bfc6d6c"
+  },
+  "status": "COMPLETE",
+  "wall_seconds": 0.24295400001574308
+}

@@ -1,0 +1,13 @@
+{
+  "attempt": 2,
+  "status": "DATA_COMPLETE_SUMMARY_WRITE_FAILED",
+  "plan": "results/dev_aux/task2635/plan-v2.json",
+  "plan_sha256": "8218db1425f2ba379963afcb607db9904443ee58205cc25241ff3518301847cc",
+  "runner_sha256": "4aa48f9145e7478105b614be0753939075dd7c70a28003944f5df67914c50b7a",
+  "error": "NameError: name 'PLAN' is not defined while constructing the result summary; the parameterized runner uses local variable plan.",
+  "durable_rows": 64,
+  "episodes_expected": 64,
+  "actions_logged": 7553,
+  "result_json_written_by_producer": false,
+  "recovery": "Preserved run-v2/episodes.jsonl unchanged and reconciled it with summarize_durable_episodes.py; did not rerun any trajectory."
+}
