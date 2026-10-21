@@ -82,3 +82,49 @@ plus one query replay, and 24.0 ms median for ten cached one-query replays.
 These timings cover one root and one legal action only; they cannot be scaled to
 multi-query slots or used to close the all-in estimate. Receipt:
 `results/dev_aux/task2636/replay-context-cost-smoke.json`.
+
+## Later actual-terminal fixture update — 2026-10-21
+
+The earlier statement that terminal replay still required a fixture is
+superseded. A bounded screen found a two-ply legal terminal continuation from
+the frozen task2636 root for candidate 3 / seed 2,633,004 / family 6,000,000;
+the current replay test confirms actual outcome -1 under that candidate's real
+ruleset. The saved path is a test fixture, not a played evaluation slot or
+search receipt. It closes the per-slot terminal-authority test gap but does not
+provide the whole-result orchestration, trained-model receipt binding,
+durable-write protocol, or full 1,024-slot audit described above. The no-run
+decision and cost gate remain unchanged.
+
+## Candidate snapshot helper update — 2026-10-21
+
+`validate_candidate_model_snapshots` now checks the frozen plan, candidate
+index and each candidate rule's bytes, recomputes the ten-weight initial vector
+from its plan-pinned source, and validates all sixteen final vectors (seed,
+rule hash and finite weights). `verify_candidate_training_receipt_links`
+checks the plan/root/index pins and exact registration→training-result→audit
+hash chain for supplied JSON bytes. These close reusable interface pieces
+only: the second helper does not establish that an audit is semantically valid,
+replay training episodes, or prove training completion. The no-run decision
+and whole-result auditor requirement remain unchanged; the focused suite passes
+20 cases.
+
+## Candidate arm-prefix audit update — 2026-10-21
+
+`candidate_training.py` now has a read-only per-arm journal auditor. It hashes
+the exact start/query/episode/final byte snapshots it parses, strictly parses
+complete newline-terminated JSON rows, replays all closed episodes, and can
+replay a contiguous open query suffix without assigning it a terminal reward
+or episode closure. It distinguishes a missing final receipt from a torn or
+invalid existing file and never repairs either. Synthetic regressions cover
+the open-prefix model trajectory, duplicate-key rejection, byte preservation,
+and a bound zero-episode stop result; 92 task2636-focused tests pass.
+
+This narrows one partial-audit primitive but does not create the 16-arm
+candidate-index `training-result.json`, a COMPLETE independent training audit,
+or the registration→result→audit byte chain required by the existing
+evaluation-binding helper. The per-arm exact-byte digests are not yet bound to
+the frozen plan or an authorization receipt. Therefore the registration
+decision does not change: keep task2636 unregistered, do not create `run-v1`,
+and do not treat the prior runtime projection as all-in. The smallest
+decision-changing integration still needs a source-bound multi-arm aggregator
+and training-audit contract with a defensible implementation cost.

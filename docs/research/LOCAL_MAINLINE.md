@@ -2469,3 +2469,227 @@ groups still require unpriced candidate-index, whole-bundle, terminal-fixture,
 and stop/durability work. Details:
 `results/dev_aux/task2636/PREPARATION_CHARGE_COMPONENT_CHECK_20261021.md` and
 `results/dev_aux/task2636/RECEIPT_BINDING_CROSSWALK_20261021.md`.
+
+Task2636 terminal-fixture update (2026-10-21): the later bounded incremental
+legal-transition screen found a two-ply candidate-bound actual terminal at
+candidate3 / seed2,633,004 / family6,000,000, outcome -1. Its exact saved screen
+and script hashes, and the focused replay test, are recorded in
+`results/dev_aux/task2636/INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md`;
+the focused suite now passes12 tests. This supersedes earlier statements in
+this checkpoint and linked reviews that terminal-fixture coverage remains
+missing. The test uses zero-node query scaffolding, not search receipts or a
+task2636 result slot. Candidate-index training/partial audit, full
+registration/model/result binding, durable stop/hard-interruption behavior,
+integrated fault tests and their all-in cost remain open. No registration,
+search, training, evaluation, cap, or frozen input changed; keep task2636
+unregistered until the remaining gates have a source-bound cost estimate.
+
+Current source-binding/cost follow-up (2026-10-21): the task2636 row and replay primitives cover in-memory partial receipt arithmetic and candidate-bound terminal history, but the receipt validator only shape-checks hash strings and `FrozenSlotReplayContext` still takes model vectors from its caller. No task2636 producer joins registration, complete training audit, model, durable query/slot files and final receipt. The task2625 same-size evaluation comparator had 1,024 slots / 22,305 queries / 555.656s; a naive multiplication by the 24.017ms one-query smoke yields 535.699s, but different root branching and traces make that sensitivity unsuitable as a runtime estimate. No full integration effort estimate is supported; retain the unregistered state and 6,600s/120-minute rules. Detail and the no-run acceptance sequence are in `results/dev_aux/task2636/INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md`.
+
+The saved task2625 outcome-label-blind profile was rehashed against its two evaluation streams and four rule files (six checks pass): its44/1,024 H=128 UNKNOWN endpoints are all horizon-censored with zero node-cap hits. Task2629 H=256 uses a separate root pool. These older-panel rates do not transfer to the 16 generated-rule task2636 design and do not substitute for its candidate-bound terminal fixture or determine its audit cost; see `results/dev_aux/task2636/INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md`.
+
+A narrow receipt guard followed the zero-node probe: `validate_result_receipt` now rejects complete search rows with zero nodes, while incomplete zero-node interruption receipts remain representable. The new regression is in `test_partial_evaluation_audit.py`; the focused task2636 suite passes14 tests, including preservation of incomplete zero-node UNKNOWN. This only blocks replay scaffolding from masquerading as a completed search query; cross-file receipt binding, candidate training and durable stop execution remain open.
+
+Follow-up (2026-10-21): the actual-terminal replay fixture is now composed with
+the structural result-receipt validator in one regression. It still replays the
+candidate-bound two-ply terminal to outcome -1, and its zero-node complete
+search scaffolding is rejected at the receipt boundary. Added
+`validate_candidate_model_snapshots`, which independently checks the frozen
+plan, candidate-index bytes, all16 candidate rule hashes, the plan-pinned
+initial-vector source, and one ten-finite-weight snapshot per candidate index.
+Added synthetic-byte registration→result→audit link validation. The focused
+task2636 suite passes20 cases. These additions close narrow test and
+model-snapshot/hash-link contracts only; no task2636 trainer, independent
+training audit, whole-result replay, or stop-safe writer exists. Source-bound stop review confirms task2625's reference producers still
+let `PersistentStop` escape and flush without fsync; a behavioral no-next-slot
+test must wait for the actual task2636 producer. The task2625 H=128 censoring
+rates/bounds do not transfer to task2636's different generated-rule/root panel;
+only the UNKNOWN-not-draw semantics transfer. Task2636 stays unregistered and
+the frozen caps remain unchanged. Details: `TASK2625_UNKNOWN_TRANSFER_REVIEW_20261021.md`,
+`STOP_LIFECYCLE_SOURCE_AUDIT_20261021.md`, and
+`INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md`.
+
+Receipt-parser follow-up (2026-10-21): strict object-pairs parsing now rejects
+duplicate keys in task2636 registration, training-result and audit JSON, including
+nested model records; Python-only NaN constants also fail closed. Four
+tampered-but-downstream-rehashed fixtures and all nine artifact/pin combinations
+fail closed; an unrepresentably large integer weight now returns a validation
+error rather than leaking `OverflowError`. The 35-case focused suite,
+`py_compile`, and `git diff --check` pass. This does not strengthen the missing
+producer or semantic auditor and does not change the no-registration decision.
+
+Claude's latest Slack review (2026-10-21; message `1792546475.322549`, SHA-256
+`80189921b07109ca54993a05b1df39f0d33e3397fb45e168e5d6ba427ea2cb33`) is
+adopted narrowly as a stop on further one-off audit artifacts unless an open
+decision gate needs them. The four task2636 producer/orchestration/stop gates
+remain unpriced against the 657.368-second prep reserve, so the panel stays
+unregistered. MCTS, Fairy-Stockfish/Elo/SPRT and feature redesign are deferred
+as new scope; initial-position zero differential features alone do not establish
+a representation failure: existing task2635 found nonzero feature activation
+by ply30 in all64/64 outcome-blind trajectories (4/4 per candidate), without
+outcome reads or learner updates. This is feature-excitation feasibility only,
+not rule discrimination or strength. H=128 remains UNKNOWN, never an imputed
+draw/value.
+
+The task2636 question remains narrower than an Elo/amateur benchmark: does one
+fixed ten-channel TDLeaf/search-bootstrap initialization produce a finite
+actual-terminal reward signal versus itself across this 16-candidate 8x8
+movement/drop panel? Each candidate trains a separate arm from the same initial
+vector; this is not one shared model asked to infer rule identity from a
+zero-valued symmetric start. The candidate index is positional, its
+`candidate_seed` is the rule-generation seed, and learner initialization seed
+`1977` is a separate identity; task2625's `(rule, seed)` arm key cannot be
+copied mechanically. Task2625's positive finite four-rule 4x4 result makes that
+cross-panel replication decision-relevant, but neither panel gives a population,
+seed-robustness, or full-Generic claim. Task2627 targets one hand-R unlock
+mechanism instead. Keep task2636 only if the missing work is delivered as
+reusable candidate-index learner infrastructure; its implementation cost is
+still unpriced, so registration remains closed.
+
+Candidate-index source-bound feasibility follow-up (2026-10-21): compared the
+frozen candidate/root schema with task2625's pinned trainer, independent train
+audit, evaluator, eval audit, and evaluation binder (852 reference LOC total).
+The positional candidate index, generator seed, and fixed learner seed 1977 are
+distinct identities; simple `(rule, seed)` substitution is unsafe. The LOC
+comparison is not an engineering-time estimate, and the remaining reusable
+producer, partial training replay, complete byte-bound orchestration, and
+stop/durable closure tests remain unpriced. It provides no evidence that these
+gates fit 657.368s, but does not prove an efficient implementation impossible.
+Keep task2636 unregistered; add no further audit artifact absent a concrete
+decision gate. No input, cap, registration, or run-v1 changed. Full source-bound
+scope and hashes are in
+`results/dev_aux/task2636/INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md`.
+
+Frozen-panel alternative check (2026-10-21): task2628's completed rules15
+hand-R mechanism comparison is narrower and unresolved (128 paired contrasts,
+completion bounds `[-0.15625, 0.109375]`, 17/256 UNKNOWN). It verifies feature
+exposure/updates but does not answer transfer across the broader 16-rule 8x8
+movement/drop set. Keep task2636 as the more route-aligned next research target
+only if reusable candidate-index infrastructure is feasible; do not repeat
+task2628 or interpret it as strength evidence. This does not clear task2636's
+open implementation-cost/registration gate. Comparison and evidence:
+`results/dev_aux/task2636/INTEGRATION_FIXTURE_COST_GATE_REVIEW_20261021.md` and
+`results/dev_aux/task2628/REPORT.md`.
+
+First reusable producer layer added (2026-10-21):
+`results/dev_aux/task2636/candidate_training.py` binds the frozen positional
+candidate order to each rule seed/hash/path and its 120 candidate-bound roots,
+checks the exact ten-channel schema and shared seed-1977 initialization, and
+provides a pure cyclic-root/alternating-color episode schedule matching the
+task2625 producer. The layer now also creates the task2625 fixed-scale model,
+all-ones foe and TDLeafEpisode, replays saved complete histories only under the
+bound candidate rule, and accepts only actual W/L/D or UNKNOWN `None` at episode
+finish. UNKNOWN resets the TD trace without draw credit. Its search-query
+adapter selects learner versus foe, rejects game-history mutation by search,
+updates TD only on learner turns, advances only complete receipts, rejects
+cross-candidate episode/runtime pairs before search, and leaves incomplete
+searches stationary for UNKNOWN closure by the caller. A standalone
+two-ply synthetic-tree smoke now calls the frozen AlphaBeta implementation:
+the actual `PersistentStop` type is translated to `BudgetEnd("STOPPED_USER")`
+both before the first node and at the 128-node inner poll. AlphaBeta returns an
+incomplete receipt and unwinds the synthetic search tree without advancing the
+game; an uncancelled query restores search state before one admitted move. A
+bounded in-memory episode wrapper closes immediate stop, incomplete search,
+horizon and non-scoring terminals as UNKNOWN, while an actual terminal draw
+remains outcome 0. The input constructor also recomputes canonical root-record
+hashes and checks the root/result fingerprint; per-query evidence carries that
+root hash plus candidate/seed/family identity, before/after histories, receipt
+fields, model snapshots and final UNKNOWN/W-L-D status for a future auditor.
+Tests cover zero-node-cap and incomplete resource-query closures without draw
+imputation, plus root mutation checks before episode use. A write-once journal
+primitive now creates a start receipt, flushes query rows, fsyncs query/episode
+prefixes at closure, writes one fsynced final receipt, and reads only complete
+newline-terminated rows while preserving any trailing bytes. Recovery reports
+`NO_FINAL_RECEIPT` without repairing torn files; constructor failures release
+opened handles without retrying or reusing the start marker. Fifty-two
+focused candidate/journal cases pass alongside the 35 partial-evaluation cases.
+The episode loop
+now exposes query/closure sinks; one synthetic episode was written and recovered
+through the journal. These tests use temporary synthetic roots/receipts; no
+task2636 root or registered sample runs. Independent partial-arm replay remains
+absent.
+
+One integration closure check (2026-10-21): the actual frozen AlphaBeta search
+was stopped by the real `PersistentStop` type on its 128-node poll inside a
+synthetic episode, then the incomplete query and `STOPPED_USER` episode were
+closed through the write-once journal and recovered from its final receipt.
+The board/history did not advance, the TD learner did not update, and the
+episode outcome remained UNKNOWN. The focused candidate/journal plus partial-
+evaluation suites pass88 tests. This closes only that synthetic interruption
+path; it is not a full-arm replay, full runner, or task2636 sample.
+Claude's latest advice to stop audit-only expansion is adopted: do not add
+another one-off audit script/report absent a specific decision gate.
+
+Next executable step: compose the episode replayer over complete/partial
+candidate-arm journal prefixes as one integrated gate in the current module,
+then reprice remaining binding/panel work against observed integration cost.
+Reuse current sources/results; do not create another audit-only artifact. Keep task2636 unregistered and do
+not create `run-v1` or a write-once registration until full-arm replay,
+model/result binding, graceful-stop closure, hard-interruption handling, and
+integrated audit tests are complete. Do not change the frozen pool, caps,
+UNKNOWN policy, or one-init design.
+
+Reusable arm-loop increment (2026-10-21): `run_candidate_training_arm` now
+sequences candidate-bound episodes through a caller-supplied exact-history
+factory, counts combined candidate/foe nodes, enforces the per-arm node cap,
+closes on the episode limit, and stops before constructing a successor after
+the user stop or node cap. Synthetic regressions cover stop before environment
+construction, a one-node cap, and actual AlphaBeta cancellation followed by
+UNKNOWN closure and journal recovery. This is only an in-memory arm loop plus
+caller-owned journal: it has not run a frozen task2636 root or sample, and it
+does not supply independent partial-arm replay, a panel orchestrator, or
+registration/result binding.
+
+Episode replay primitive (2026-10-21): `replay_closed_training_episode` now
+checks candidate-bound root identity, query ordering and actor, pre-search
+model snapshots, legal one-action history extension, incomplete-query
+non-advancement, and recomputes task2625 TD updates from logged search receipts
+before comparing final weights, statistics, nodes and history. The caller
+must reconstruct the exact root with `replay_training_root`; the helper does
+not rerun AlphaBeta or verify whole-arm-file grouping, exact source-byte
+binding, or partial-arm completion. Synthetic regressions replay both a
+three-ply horizon-UNKNOWN episode and the stopped 128-node durable prefix; no
+registered root or task2636 sample was run. Focused task2636 suites pass88
+cases.
+
+Stop-adapter feasibility (2026-10-21): task2492 `AlphaBeta.search` catches
+`BudgetEnd` from its `cancel` callback and returns an incomplete receipt with
+the visited-node count; the callback runs before search and every128 nodes. A
+bounded no-environment probe confirmed that translating the role reader's
+`PersistentStop` to `BudgetEnd("STOPPED_USER")` yields an incomplete
+zero-node receipt before work starts, so the frozen engine source need not be
+changed for this adapter. The actual task2636 runner still must latch outer
+polls, close only started episodes/slots as UNKNOWN, fsync closures/final
+receipt, start no following sample, and preserve hard-kill
+`NO_FINAL_RECEIPT`. This is a source-level design check, not an integrated stop
+test or registration approval. Details: `results/dev_aux/task2636/STOP_LIFECYCLE_SOURCE_AUDIT_20261021.md`.
+
+Route check against existing evidence (2026-10-21): task2594 is the required
+standard-Chess result for OutcomeGatedTDLeaf and supports a finite Chess
+comparison. Task2606 carried that update to four Generic rules, but its roots
+overlap training and its LocalLambda-vs-TD95 completion bound crosses zero.
+Task2636 instead tests the task2625 fixed-scale vanilla TDLeaf/search-bootstrap
+baseline on a new 16-rule 8x8 movement/drop panel with a prefix-disjoint pool;
+it is complementary evidence about that learner and root/domain coverage, not
+a repeat of task2594's best candidate and not complete Generic coverage. Keep
+the learner distinction explicit in any future decision; this route check
+does not itself justify the remaining integration cost or clear registration.
+
+Current durable-prefix gate (2026-10-21): `candidate_training.py` now composes
+the existing episode replayer over newline-complete query/episode journal
+prefixes. Closed summaries are replayed in the pinned candidate schedule and
+model trajectory. A trailing next-episode query suffix is independently replayed
+for action history and model snapshots, then classified as open; it earns no
+episode closure or terminal reward. Missing and torn/invalid final receipts
+remain distinct local states and are never completed by recovery. The smoke
+tests exercise one closed UNKNOWN followed by an open query prefix, reject a
+forged open-prefix model snapshot and mismatched final candidate, preserve a
+torn final receipt, and accept a correctly bound zero-episode stop receipt;
+they use synthetic environments, not frozen task2636 samples. This closes a reusable
+prefix replay primitive, not the whole-run audit: start-byte binding, complete
+runner/evaluation bundle and hard-interruption integration remain open. The
+auditor returns SHA-256 values for the exact raw byte snapshots it parsed, but
+strict JSON parsing rejects duplicate keys and non-standard constants, and
+there is no task2636 registration object binding those fingerprints yet. Keep
+the task unregistered and do not add another audit-only artifact absent a
+decision gate.

@@ -3397,3 +3397,38 @@ ACTIVE hourly heartbeat were preserved. Heartbeat doctor still reports MATCH.
 A process-table query was denied, so execution-state claims rely only on the
 frozen no-registration/no-run receipts; no absence-of-process claim is made.
 `git diff --check` and Python compilation passed; gzip fallback was SHA-tested.
+
+DEV_AUX task2636 arm-prefix checkpoint (2026-10-21; session
+`b07dd769-7cef-4f30-a862-cf2404d8c6b9`): DEV_AUX added a reusable
+single-candidate journal auditor and regressions. It replays closed episodes
+and a trailing open query prefix, preserves exact raw-byte digests, rejects
+ambiguous JSON, and distinguishes missing/torn final receipts without repair.
+The focused candidate-training and partial-evaluation suites pass92 tests;
+Python compilation and `git diff --check` pass. No frozen root, registration,
+search, training or evaluation was run. The result is a per-arm primitive, not
+the 16-arm training-result/COMPLETE-audit chain or a change to task2636's
+unregistered decision. Confirmed effective Agent work is5864.650s; this is
+research/engineering effort, not registered-process runtime and cannot be
+charged as runtime evidence. The 657.368s preparation reserve and frozen
+budgets remain unchanged; integration cost is still unpriced.
+
+Coordination and advice: the latest Claude `CHAT_Comments` at TS
+`1792546475.322549` (SHA-256
+`80189921b07109ca54993a05b1df39f0d33e3397fb45e168e5d6ba427ea2cb33`) was read
+and adopted narrowly: stop adding one-off audits without a decision gate,
+preserve task2636's required registration gates, defer MCTS/Fairy-Stockfish/
+SPRT/feature redesign outside the direct TD route, and keep UNKNOWN distinct
+from draws. This per-arm replayer was chosen because it directly tests a
+registration gate; source review confirmed it does not close the whole-result
+binding. No other Agent contributed or was delegated work; PRIMARY and
+DEEPSEEK boundaries were respected. No Slack report was sent: the existing
+mailbox probe is `SEND_UNCERTAIN`, so there was no resend; reconciliation stays
+for the next scheduled probe.
+
+Efficiency and limits:92 synthetic tests validate replay and fail-closed
+receipt handling at low local test cost, but no measurement estimates a full
+16-arm aggregator/audit or the registered experiment runtime. The exact
+arm-file hashes are available for downstream binding, but no registration
+schema or COMPLETE independent training audit consumes them yet. The minimum
+next choice is to price that whole-chain adapter against the frozen plan before
+implementation or registration. Science remains OPEN.

@@ -292,6 +292,8 @@ def validate_result_receipt(result: dict[str, Any], rows: list[dict[str, Any]],
             raise ValueError("query nodes exceed the requested amount")
         if type(query.get("complete")) is not bool:
             raise ValueError("query completion flag must be boolean")
+        if query["complete"] and query["nodes"] == 0:
+            raise ValueError("completed search query must visit at least one node")
         per_slot[key].append(query)
     if result.get("queries") != len(query_rows):
         raise ValueError("final receipt query count differs from query rows")
@@ -306,6 +308,161 @@ def validate_result_receipt(result: dict[str, Any], rows: list[dict[str, Any]],
         incomplete = [index for index, query in enumerate(queries) if not query["complete"]]
         if incomplete and (incomplete[-1] != len(queries) - 1 or row["ending"] == "ACTUAL_TERMINAL"):
             raise ValueError("incomplete search must be the final query of an UNKNOWN slot")
+
+
+def validate_candidate_model_snapshots(
+        rows: list[dict[str, Any]]) -> dict[int, list[float]]:
+    """Validate candidate-index final model snapshots, not training completion.
+
+    Frozen plan/index/rule/initialization bytes are checked here. Callers must
+    still bind registration, training-result and training-audit receipt bytes.
+    This schema check does not replay episodes or prove the weights were learned.
+    """
+    plan_raw = PLAN_PATH.read_bytes()
+    if not isinstance(rows, list):
+        raise ValueError("candidate model snapshots must be a list")
+    if hashlib.sha256(plan_raw).hexdigest() != FROZEN_PLAN_SHA256:
+        raise ValueError("task2636 study plan differs from the audited frozen plan")
+    plan = json.loads(plan_raw)
+    lineage = plan["source_lineage"]
+    index_path = (ROOT / lineage["candidate_index"]).resolve()
+    if not index_path.is_relative_to(ROOT.resolve()):
+        raise ValueError("candidate index path escapes the checkout")
+    index_raw = index_path.read_bytes()
+    if hashlib.sha256(index_raw).hexdigest() != lineage["candidate_index_sha256"]:
+        raise ValueError("frozen candidate index hash mismatch")
+    candidate_index = json.loads(index_raw)
+    candidates = candidate_index.get("rows")
+    if not isinstance(candidates, list) or len(candidates) != 16:
+        raise ValueError("candidate index must contain the frozen sixteen rows")
+    # Candidate indices are the frozen array positions in candidate-index.json.
+    by_index = dict(enumerate(candidates))
+    if any(candidate.get("status") != "GENERATED_AND_COMPILED"
+           or type(candidate.get("seed")) is not int
+           for candidate in candidates):
+        raise ValueError("candidate index contains a non-admitted or malformed rule")
+    for candidate in candidates:
+        rule_path = (ROOT / candidate["source_file"]).resolve()
+        if not rule_path.is_relative_to(ROOT.resolve()):
+            raise ValueError("candidate rule path escapes the checkout")
+        if hashlib.sha256(rule_path.read_bytes()).hexdigest() != candidate.get("ruleset_sha256"):
+            raise ValueError("frozen candidate rule hash mismatch")
+
+    init_source = ROOT / "results/dev_aux/task2625/freeze_study.py"
+    if hashlib.sha256(init_source.read_bytes()).hexdigest() != lineage["task2625_initial_vector_source_sha256"]:
+        raise ValueError("frozen initial-vector source hash mismatch")
+    from results.dev_aux.task2625.freeze_study import initial_vector
+    initial_weights = initial_vector(1977, 10)
+
+    def finite_weight(value: Any) -> bool:
+        if type(value) not in (int, float):
+            return False
+        try:
+            return math.isfinite(value)
+        except OverflowError:
+            return False
+
+    snapshots = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("candidate model snapshot must be an object")
+        index = row.get("candidate_index")
+        if type(index) is not int or index not in by_index or index in snapshots:
+            raise ValueError("candidate model snapshot index is invalid or duplicated")
+        candidate = by_index[index]
+        if (type(row.get("candidate_seed")) is not int
+                or row["candidate_seed"] != candidate.get("seed")):
+            raise ValueError("candidate model seed differs from frozen candidate index")
+        rule_sha = row.get("candidate_ruleset_sha256")
+        if (not isinstance(rule_sha, str)
+                or re.fullmatch(r"[0-9a-f]{64}", rule_sha) is None
+                or rule_sha != candidate.get("ruleset_sha256")):
+            raise ValueError("candidate model rule hash differs from frozen candidate index")
+        initial = row.get("initial_weights")
+        final = row.get("final_weights")
+        for name, weights in (("initial", initial), ("final", final)):
+            if (not isinstance(weights, list) or len(weights) != 10
+                    or any(not finite_weight(value) for value in weights)):
+                raise ValueError(f"candidate {name} model must have ten finite numeric weights")
+        if initial != initial_weights:
+            raise ValueError("candidate model initialization differs from pinned vector")
+        snapshots[index] = list(final)
+    if set(snapshots) != set(range(16)):
+        raise ValueError("candidate model snapshots must cover all sixteen candidates")
+    return snapshots
+
+
+def verify_candidate_training_receipt_links(
+        registration_raw: bytes, training_result_raw: bytes,
+        training_audit_raw: bytes) -> dict[str, Any]:
+    """Verify plan/root/index and exact registration→result→audit byte links.
+
+    This does not establish that the referenced registration was authorized,
+    that the training result is complete, or that the independent audit is
+    semantically sound. The caller must apply those state/source checks before
+    an evaluation binding can be admitted.
+    """
+    plan_raw = PLAN_PATH.read_bytes()
+    if hashlib.sha256(plan_raw).hexdigest() != FROZEN_PLAN_SHA256:
+        raise ValueError("task2636 study plan differs from the audited frozen plan")
+    plan = json.loads(plan_raw)
+    lineage = plan["source_lineage"]
+    root_path = (ROOT / lineage["root_pool"]).resolve()
+    if not root_path.is_relative_to(ROOT.resolve()):
+        raise ValueError("root pool path escapes the checkout")
+    if hashlib.sha256(root_path.read_bytes()).hexdigest() != lineage["root_pool_sha256"]:
+        raise ValueError("frozen root pool hash mismatch")
+    index_path = (ROOT / lineage["candidate_index"]).resolve()
+    if not index_path.is_relative_to(ROOT.resolve()):
+        raise ValueError("candidate index path escapes the checkout")
+    if hashlib.sha256(index_path.read_bytes()).hexdigest() != lineage["candidate_index_sha256"]:
+        raise ValueError("frozen candidate index hash mismatch")
+
+    def parse(raw: bytes, name: str) -> dict[str, Any]:
+        def reject_duplicate_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+            value: dict[str, Any] = {}
+            for key, item in pairs:
+                if key in value:
+                    raise ValueError(f"{name} contains duplicate JSON object keys")
+                value[key] = item
+            return value
+
+        def reject_nonstandard_constant(constant: str) -> None:
+            raise ValueError(f"{name} contains non-standard JSON constant {constant}")
+
+        try:
+            value = json.loads(raw.decode("utf-8"),
+                               object_pairs_hook=reject_duplicate_keys,
+                               parse_constant=reject_nonstandard_constant)
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise ValueError(f"{name} is not valid UTF-8 JSON") from exc
+        if not isinstance(value, dict):
+            raise ValueError(f"{name} must be a JSON object")
+        return value
+
+    registration = parse(registration_raw, "training registration")
+    result = parse(training_result_raw, "training result")
+    audit = parse(training_audit_raw, "training audit")
+    registration_sha = hashlib.sha256(registration_raw).hexdigest()
+    result_sha = hashlib.sha256(training_result_raw).hexdigest()
+    expected = {"plan_sha256": hashlib.sha256(plan_raw).hexdigest(),
+                "root_pool_sha256": lineage["root_pool_sha256"],
+                "candidate_index_sha256": lineage["candidate_index_sha256"]}
+    for name, artifact in (("registration", registration), ("training result", result),
+                           ("training audit", audit)):
+        for field, value in expected.items():
+            if artifact.get(field) != value:
+                raise ValueError(f"{name} {field} differs from frozen task2636 inputs")
+    if result.get("registration_sha256") != registration_sha:
+        raise ValueError("training result does not bind exact registration bytes")
+    if (audit.get("registration_sha256") != registration_sha
+            or audit.get("training_result_sha256") != result_sha):
+        raise ValueError("training audit does not bind exact registration/result bytes")
+    models = validate_candidate_model_snapshots(result.get("candidate_models"))
+    return {"registration_sha256": registration_sha,
+            "training_result_sha256": result_sha,
+            "training_audit_sha256": hashlib.sha256(training_audit_raw).hexdigest(),
+            "candidate_models": models}
 
 
 def replay_slot_history(root_record: dict[str, Any], slot_row: dict[str, Any],
