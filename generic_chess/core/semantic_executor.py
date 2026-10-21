@@ -111,8 +111,6 @@ def _sources_by_owner_type(position: Position) -> dict[tuple[int, str], tuple[tu
 
 
 def is_semantic_compiled(compiled) -> bool:
-    from ..rules.ir import CompiledSemanticRuleset
-
     return isinstance(compiled, CompiledSemanticRuleset)
 
 
@@ -295,6 +293,8 @@ def _resolve_square_ref(ref, support, aux_slots, position, side, binding):
         return r * shape.width + f
     if kind in ("offset_from_source", "offset_from_target"):
         base = source if kind == "offset_from_source" else target
+        if base is None:
+            return None  # A drop has no source to offset from.
         df, dr = ref.offset
         if ref.owner_relative and side == 1:
             df, dr = -df, -dr
@@ -336,6 +336,35 @@ def _resolve_type_id(ref, binding) -> str | None:
     return None
 
 
+@dataclass(frozen=True, slots=True)
+class _OwnAnchorSafety:
+    """A single frontier's optional observation, never stored on the engine."""
+    parent: Position
+    side: int
+    anchor: int
+    influence: frozenset[int]
+    checked: bool
+
+    def unchanged(self, child, written, support) -> bool:
+        for square in written:
+            old = self.parent.board[square]
+            new = child.board[square]
+            if old == new:
+                continue
+            if square in self.influence:
+                return False
+            if new is not None and (
+                new.owner != self.side
+                or getattr(support.type_metadata.get(new.current_type_id), "is_anchor", False)
+            ):
+                return False
+            if old is not None and old.owner == self.side and (
+                getattr(support.type_metadata.get(old.current_type_id), "is_anchor", False)
+            ):
+                return False
+        return True
+
+
 class _WorkingPosition:
     """Mutable working copy for trial transitions."""
 
@@ -372,6 +401,18 @@ class _WorkingPosition:
                 self.shape.height if self.shape.width != self.shape.height else None
             ),
         )
+
+
+class _TrackedWorkingPosition(_WorkingPosition):
+    """Observe every board write in an optional S3 transaction only."""
+
+    def __init__(self, position, support, written) -> None:
+        super().__init__(position, support)
+        self.written = written
+
+    def set_piece(self, idx, piece) -> None:
+        super().set_piece(idx, piece)
+        self.written.add(idx)
 
 
 def _apply_effect(effect, work, support, aux_slots, pre_position, binding) -> None:
@@ -638,6 +679,33 @@ class SemanticEngine:
                 piece = position.board[source]
                 if piece is None or piece.owner != by_owner or piece.current_type_id != tid:
                     continue
+                binding = self._make_binding(
+                    pattern, gid, tid, piece, source, square, None, path, position)
+                if self._path_holds(
+                    pattern.path, position, binding, by_owner, checkpoint=checkpoint,
+                ) and self._guards_hold(
+                    pattern, position, binding, by_owner, checkpoint=checkpoint,
+                ):
+                    return True
+            return False
+        endpoints = self.semantic._incoming_attack_endpoints
+        if endpoints is not None:
+            _checkpoint(checkpoint)
+            owner_key = str(by_owner)
+            selected = []
+            for source, typed in endpoints.get((owner_key, square), {}).items():
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                if piece is not None and piece.owner == by_owner:
+                    selected.extend((rank, pattern, source, piece.current_type_id, gid, endpoint)
+                        for rank, pattern, gid, endpoint in typed.get(piece.current_type_id, ()))
+            selected.sort(key=lambda row: row[0])
+            for rank, pattern, source, tid, gid, endpoint in selected:
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                geometry = self.ir.geometry[gid]
+                path = (() if geometry.kind == "leap"
+                    else tuple(geometry.paths[owner_key][source][:endpoint]))
                 binding = self._make_binding(
                     pattern, gid, tid, piece, source, square, None, path, position)
                 if self._path_holds(
@@ -1321,18 +1389,88 @@ class SemanticEngine:
                 return False
         return True
 
+    def _capture_reads_local_board(self):
+        local_paths = {
+            "path_clear", "path_count_eq", "path_count_range",
+            "path_first_blocker_owner", "path_last_blocker_owner",
+        }
+        return all(
+            not (p.guards or p.slot_guards or p.square_zone_guards)
+            and all(predicate.kind in local_paths for predicate in p.path)
+            for p in self._patterns if p.target.kind == "target_enemy"
+        )
+
+    def _own_anchor_safety(self, position, sources, checkpoint):
+        """Prepare only for an explicit full-frontier consumer.
+
+        Include blocked paths and all actual enemy actors. Capture guards
+        with nonlocal inputs decline this optimization, retaining full rules.
+        """
+        side = position.side_to_move
+        anchor = _own_anchor(position, self.support, side)
+        if anchor is None:
+            return None
+        influence = {anchor}
+        for pattern in self._patterns:
+            _checkpoint(checkpoint)
+            if pattern.target.kind != "target_enemy":
+                continue
+            for tid in pattern.type_ids:
+                for source, _piece in sources.get((1 - side, tid), ()):
+                    for gid in pattern.geometry_ids:
+                        _checkpoint(checkpoint)
+                        geometry = self.ir.geometry.get(gid)
+                        if geometry is None or geometry.kind == "drop":
+                            continue
+                        if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                            continue
+                        for path in geometry_paths_to(
+                            geometry, str(1 - side), source, anchor
+                        ):
+                            influence.add(source)
+                            influence.update(path)
+        checkpoint_failed = False
+
+        def observed_checkpoint():
+            nonlocal checkpoint_failed
+            try:
+                checkpoint()
+            except BaseException:
+                checkpoint_failed = True
+                raise
+
+        try:
+            checked = self.in_check(
+                position, side,
+                checkpoint=observed_checkpoint if checkpoint is not None else None,
+            )
+        except RuntimeError:
+            # Only this optional observation may decline. Required child checks
+            # and caller-owned cancellation/errors keep their original boundary.
+            if checkpoint_failed:
+                raise
+            return None
+        return _OwnAnchorSafety(position, side, anchor, frozenset(influence), checked)
+
     def _trial_child_if_s3_legal(
         self, pattern, position: Position, action, binding,
         checkpoint: Checkpoint | None = None,
+        *, safety: _OwnAnchorSafety | None = None,
     ) -> Position | None:
         """One S3 trial transition per candidate; returns the exact child
         Position or ``None`` when S3-illegal.  The same child is handed to
         the S4 postconditions in normal mode, so a candidate never gets a
         second, theoretically-equivalent transition (ADR-016 section 9)."""
+        written = set() if safety is not None else None
         checkpoint_failed = False
         try:
             if checkpoint is None:
-                child = self._transition(position, action, binding)
+                child = (
+                    self._transition(position, action, binding)
+                    if written is None else self._transition(
+                        position, action, binding, written_squares=written
+                    )
+                )
             else:
                 def trial_checkpoint():
                     nonlocal checkpoint_failed
@@ -1342,8 +1480,12 @@ class SemanticEngine:
                         checkpoint_failed = True
                         raise
 
-                child = self._transition(
-                    position, action, binding, checkpoint=trial_checkpoint
+                child = (
+                    self._transition(position, action, binding, checkpoint=trial_checkpoint)
+                    if written is None else self._transition(
+                        position, action, binding, checkpoint=trial_checkpoint,
+                        written_squares=written,
+                    )
                 )
         except RuntimeError:
             if checkpoint_failed:
@@ -1352,9 +1494,12 @@ class SemanticEngine:
         for invariant in pattern.invariants:
             _checkpoint(checkpoint)
             if invariant.kind == "own_anchor_safe":
-                if self.in_check(
-                    child, position.side_to_move, checkpoint=checkpoint
-                ):
+                checked = (
+                    safety.checked
+                    if safety is not None and safety.unchanged(child, written, self.support)
+                    else self.in_check(child, position.side_to_move, checkpoint=checkpoint)
+                )
+                if checked:
                     return None
             elif invariant.kind == "squares_not_attacked":
                 for ref in invariant.square_refs:
@@ -1506,12 +1651,16 @@ class SemanticEngine:
         *,
         source: int | None = None,
         target: int | None = None,
+        full_frontier: bool = False,
     ) -> Iterator[tuple[SemanticAction, _ActionBinding]]:
         """Stream S0-S4 legal bindings, optionally for one source/target.
 
         Filters narrow candidate generation; they do not replace S3 trials or
         S4 postconditions. Unfiltered calls retain the full public action set.
         A source filter selects a board actor, so it excludes drops.
+        full_frontier is an internal consumer intent: prepare an optional
+        position-local S3 observation only for full, unfiltered materialization.
+        Existence queries leave it False; no state is installed on the engine.
         """
         self._ensure_match(position)
         for square in (source, target):
@@ -1519,7 +1668,11 @@ class SemanticEngine:
                 type(square) is not int or not 0 <= square < len(position.board)
             ):
                 raise ValueError("binding filter square is outside the board")
+        safety = None
         sources_by_owner_type = None
+        if full_frontier and source is None and target is None and self._capture_reads_local_board():
+            sources_by_owner_type = _sources_by_owner_type(position)
+            safety = self._own_anchor_safety(position, sources_by_owner_type, checkpoint)
         if source is not None:
             piece = position.board[source]
             sources_by_owner_type = (
@@ -1543,7 +1696,12 @@ class SemanticEngine:
                     continue
                 if target is not None and action.target != target:
                     continue
-                if checkpoint is None:
+                if safety is not None:
+                    child = self._trial_child_if_s3_legal(
+                        pattern, position, action, binding,
+                        checkpoint=checkpoint, safety=safety,
+                    )
+                elif checkpoint is None:
                     child = self._trial_child_if_s3_legal(
                         pattern, position, action, binding
                     )
@@ -1589,12 +1747,17 @@ class SemanticEngine:
     def _transition(
         self, position: Position, action: SemanticAction, binding,
         checkpoint: Checkpoint | None = None,
+        *, written_squares: set[int] | None = None,
     ) -> Position:
         """Apply one semantic action with the full aux lifecycle and
         transition-trigger semantics (pre-audit contract E / ADR-015 §6)."""
         pattern = binding.pattern
         side = position.side_to_move
-        work = _WorkingPosition(position, self.support)
+        work = (
+            _WorkingPosition(position, self.support)
+            if written_squares is None else
+            _TrackedWorkingPosition(position, self.support, written_squares)
+        )
         # 2) copy parent aux (operands were bound pre-action by the caller).
         aux = dict(position.aux_state)
         # 3) expire every logical instance of every expire_next_turn slot.

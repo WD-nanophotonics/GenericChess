@@ -149,7 +149,8 @@ class SemanticGumbelMCTSV0:
         status = terminal_status(self.native_rules, position)
         if status["status"] == "ongoing":
             return None, None
-        if status["status"] == "checkmate":
+        # Rule-authoritative wins include stalemate losses and history outcomes.
+        if status["winner"] is not None:
             return (1.0 if status["winner"] == self._side(position) else -1.0), None
         return 0.0, None
 
@@ -226,7 +227,8 @@ class SemanticGumbelMCTSV0:
         status = terminal_status(self.native_rules, node.position)
         if status["status"] == "ongoing":
             return None, None
-        if status["status"] == "checkmate":
+        # Rule-authoritative wins include stalemate losses and history outcomes.
+        if status["winner"] is not None:
             return (1.0 if status["winner"] == node.side_to_move else -1.0), None
         return 0.0, None
 

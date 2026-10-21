@@ -23,6 +23,9 @@ class TrainingPoint:
     leaf_value: float
     completed_depth: int
     leaf_feature_dynamic: tuple[int, ...] = ()
+    leaf_terminal_z: float | None = None
+    leaf_feature_spatial: tuple[tuple[str, tuple[int, ...]], ...] = ()
+    leaf_feature_control: tuple[int, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,7 +51,13 @@ class TrainingTrajectory:
 
     @property
     def terminal_z(self) -> float:
-        """Owner-0 perspective terminal target (+1/-1/0)."""
+        """Owner-0 scoring target, or an explicit nonterminal bootstrap."""
+        # The rule schema's winnerless declarations are RESTART/NO_CONTEST,
+        # not draws. Reject them before the truncated-bootstrap path too.
+        if self.terminal == "no_contest" or (
+            self.terminal == "declaration" and self.winner is None
+        ):
+            raise ValueError("non-scoring terminal cannot be a TDLeaf W/L/D target")
         if self.terminal == "ongoing" or self.truncated:
             if self.bootstrap_value is None:
                 raise ValueError(
@@ -90,6 +99,12 @@ class TrainingTrajectory:
                     "leaf_value": p.leaf_value,
                     "completed_depth": p.completed_depth,
                     "leaf_feature_dynamic": list(p.leaf_feature_dynamic),
+                    **({"leaf_feature_spatial": {k: list(v) for k, v in p.leaf_feature_spatial}}
+                       if p.leaf_feature_spatial else {}),
+                    **({"leaf_feature_control": list(p.leaf_feature_control)}
+                       if p.leaf_feature_control else {}),
+                    **({"leaf_terminal_z": p.leaf_terminal_z}
+                       if p.leaf_terminal_z is not None else {}),
                 }
                 for p in self.points
             ],
@@ -132,6 +147,11 @@ class TrainingTrajectory:
                     leaf_feature_dynamic=tuple(
                         int(v) for v in p.get("leaf_feature_dynamic", ())
                     ),
+                    leaf_feature_spatial=tuple((k, tuple(int(x) for x in v))
+                                               for k, v in sorted(p.get("leaf_feature_spatial", {}).items())),
+                    leaf_feature_control=tuple(int(x) for x in p.get("leaf_feature_control", ())),
+                    leaf_terminal_z=(None if p.get("leaf_terminal_z") is None
+                                     else float(p["leaf_terminal_z"])),
                 )
                 for p in data["points"]
             ),
@@ -150,6 +170,10 @@ class TrainingTrajectory:
                 "board": list(point.leaf_feature_board),
                 "hand": list(point.leaf_feature_hand),
                 "dynamic": list(point.leaf_feature_dynamic),
+                **({"spatial": {k: list(v) for k, v in point.leaf_feature_spatial}}
+                   if point.leaf_feature_spatial else {}),
+                **({"control": list(point.leaf_feature_control)}
+                   if point.leaf_feature_control else {}),
             }
         )
 

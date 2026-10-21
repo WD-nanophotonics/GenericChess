@@ -39,7 +39,25 @@ def test_native_bridge_scores_legally_replayed_continuous_check(checker):
     assert result['move'] is None and result['work']['nodes']==1
 
 
-def test_native_bridge_does_not_hide_v4_stalemate_loss_gap():
+def test_native_bridge_binds_real_stalemate_loss_policy():
+    compiled=compile_ruleset_for_execution(build_builtin_ruleset('standard_shogi'))
+    core=CoreBoard(CASES[5],compiled)
+    native=NativeBoard(core,VALUES['shogi'])
+    assert native.native.semantic_ruleset.support.stalemate_result == 'loss'
+    assert native.native.fingerprint == compiled.ruleset_fingerprint
+    assert [a for a,_ in core.actions()] == [a for a,_ in native.actions()]
+    assert core.terminal(0) == native.terminal(0)
+    assert core.restored() and native.restored()
+
+
+def test_native_bridge_does_not_hide_old_binary_loss_gap(monkeypatch):
+    from scripts import native_backend_bridge as bridge
+    original = bridge.compile_native_semantic_rules
+    def old_binding(compiled):
+        native = original(compiled)
+        native._bound_stalemate_result = None
+        return native
+    monkeypatch.setattr(bridge, 'compile_native_semantic_rules', old_binding)
     compiled=compile_ruleset_for_execution(build_builtin_ruleset('standard_shogi'))
     core=CoreBoard(CASES[5],compiled)
     with pytest.raises(NativeUnsupportedRuleError,match='stalemate loss'):

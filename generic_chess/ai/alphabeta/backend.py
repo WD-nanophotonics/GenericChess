@@ -1,4 +1,8 @@
-"""Search backend boundary (future native backends plug in here)."""
+"""Experimental adapter boundary for search implementations.
+
+Current UI and benchmark production callers still use the public ``Player``
+protocol directly; this module is not yet their replacement seam.
+"""
 
 from __future__ import annotations
 
@@ -11,11 +15,12 @@ from .snapshot import SearchSnapshot
 
 
 class SearchBackend(Protocol):
-    """Protocol implemented by every search backend.
+    """Experimental protocol for adapters over a captured search snapshot.
 
-    UI and benchmark code depend only on this boundary, so a future native
-    (Cython/Rust/PyO3) implementation can replace the Python one without
-    rewriting callers.
+    Production UI and benchmark callers currently depend on ``Player`` and call
+    ``choose_action`` directly. A future native implementation can use this
+    protocol only after a real caller is routed through it and its progress,
+    cancellation, and result contracts are matched.
     """
 
     def search(

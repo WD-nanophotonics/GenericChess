@@ -82,6 +82,10 @@ def test_cache_enabled_and_disabled_are_search_exact_and_warm_hits_are_reported(
         enabled_result.ordering_cache_hits /
         (enabled_result.ordering_cache_hits + enabled_result.ordering_cache_misses)
     )
+    # The old False flag disabled lookups but still allocated the whole table.
+    assert enabled_result.ordering_cache_allocated_bytes >= (
+        enabled_result.ordering_cache_capacity * enabled_result.ordering_cache_entry_bytes)
+    assert disabled_result.ordering_cache_allocated_bytes == 0
     assert disabled_result.ordering_cache_capacity == 0
     assert disabled_result.ordering_cache_hits == 0
     assert disabled_result.ordering_cache_misses == 0
@@ -145,3 +149,29 @@ def test_frozen_reachable_position_parity_and_leaf_bindings():
         action = legal[(index * 17 + 3) % len(legal)]
         reference_session.submit(action)
         optimized_session.submit(action)
+
+
+def test_disabled_cache_stays_unallocated_after_rebind_clear_cancel_and_retry():
+    from generic_chess.ai.cancellation import CancellationToken
+    compiled, native, parent, ordering = _fixture()
+    engine = SemanticSearchEngine(compiled, native, checkpoint=parent,
+        ordering_checkpoint=ordering, tt_megabytes=1, ordering_cache_enabled=False)
+    session = GameSession(compiled)
+    before, witnesses = session.state, session._search_witnesses
+    limits = _limits(max_depth=2, max_nodes=10000)
+    first = engine.search(session, limits, root_window_pruning=True)
+    assert first.ordering_cache_allocated_bytes == 0
+    engine.bind_checkpoint(ordering)
+    engine.clear_tt()
+    token = CancellationToken(); token.cancel()
+    cancelled = engine.search(session, limits, cancel_token=token, root_window_pruning=True)
+    assert cancelled.termination_reason == "cancelled"
+    assert cancelled.ordering_cache_allocated_bytes == 0
+    retry = engine.search(session, limits, root_window_pruning=True)
+    cold = SemanticSearchEngine(compiled, native, checkpoint=ordering,
+        ordering_checkpoint=ordering, tt_megabytes=1, ordering_cache_enabled=False).search(
+            session, limits, root_window_pruning=True)
+    assert retry.ordering_cache_allocated_bytes == cold.ordering_cache_allocated_bytes == 0
+    assert (retry.action, retry.score, retry.principal_variation, retry.completed_depth) == (
+        cold.action, cold.score, cold.principal_variation, cold.completed_depth)
+    assert session.state is before and session._search_witnesses is witnesses

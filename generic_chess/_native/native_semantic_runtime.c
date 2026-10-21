@@ -2,6 +2,36 @@
 
 #include <string.h>
 
+/* Return 0 for no automatic result, 1 for pending continuation, 2 for the
+ * configured terminal outcome, and -1 when the authoritative history is
+ * incomplete or the record cannot be interpreted safely. */
+int gc_semantic_runtime_automatic_status(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position) {
+    for (uint8_t a = 0; a < rules->automatic_adjudication_count; a++) {
+        const GCSemAutomaticAdjudication *record =
+            &rules->automatic_adjudications[a];
+        if (position->ply < record->trigger_ply) continue;
+        if (!position->history_events_exact ||
+            position->history_len != position->ply + 1 ||
+            position->history_len == 0 || position->history_actor[0] != 255)
+            return -1;
+        for (uint16_t i = 1; i < position->history_len; i++)
+            if (position->history_actor[i] > 1) return -1;
+        if (record->trigger_ply >= position->history_len) return -1;
+        if (record->continuation_policy != 0) return -1;
+        uint8_t checker = position->history_actor[record->trigger_ply];
+        if (!position->history_gave_check[record->trigger_ply]) return 2;
+        for (uint16_t i = record->trigger_ply + 1;
+             i < position->history_len; i++) {
+            if (position->history_actor[i] == checker &&
+                !position->history_gave_check[i]) return 2;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+
 static GCSemanticRuntimeAudit *gc_runtime_audit = NULL;
 static int gc_runtime_transient = 0;
 
@@ -9,7 +39,7 @@ static int gc_runtime_transient = 0;
  * only observes entries below history_len, so copying that unused tail for
  * every edge is pure memory-bandwidth cost.  Keep the public ABI unchanged,
  * but copy exactly the live state and the append-only history prefix. */
-static void copy_live_position(GCSemanticPosition *dst,
+void gc_semantic_runtime_copy_live_position(GCSemanticPosition *dst,
                                const GCSemanticPosition *src) {
     size_t fixed_bytes = offsetof(GCSemanticPosition, history_lo);
     size_t history_bytes = (size_t)src->history_len;
@@ -45,7 +75,8 @@ static int gc_semantic_runtime_make_mode(GCSemanticPosition *child,
                                          const GCSemanticRules *rules,
                                          const GCSemanticPosition *parent,
                                          uint64_t action,
-                                         int include_postconditions);
+                                         int include_postconditions,
+                                         int record_history);
 
 static uint16_t action_to(uint64_t a) { return (uint16_t)(a & 0xffu); }
 static uint16_t action_from(uint64_t a) { return (uint16_t)((a >> 8) & 0xffu); }
@@ -72,9 +103,29 @@ static void reset_aux_value(const GCSemAuxSlot *slot, GCSemAuxValue *value, uint
 }
 static int path_entry(const GCSemGeometry *g, uint8_t owner, uint16_t source, const GCSemPathEntry **out) {
     const GCSemPathOwner *paths = &g->paths[owner];
+    if (paths->sources_sorted) {
+        /* Only the first occurrence has original lower-bound semantics. */
+        if (source < paths->count && paths->entries[source].source == source &&
+            (source == 0 || paths->entries[source-1].source < source)) {
+            *out = &paths->entries[source];
+            return 1;
+        }
+        uint32_t lo = 0, hi = paths->count;
+        while (lo < hi) {
+            uint32_t mid = lo + (hi - lo) / 2;
+            if (paths->entries[mid].source < source) lo = mid + 1;
+            else hi = mid;
+        }
+        if (lo < paths->count && paths->entries[lo].source == source) {
+            *out = &paths->entries[lo];
+            return 1;
+        }
+        return 0;
+    }
     for (uint16_t i = 0; i < paths->count; i++) if (paths->entries[i].source == source) { *out = &paths->entries[i]; return 1; }
     return 0;
 }
+
 static int target_ok(uint8_t target, const GCPiece *cell, uint8_t side) {
     if (target == 0) return !cell->occupied;
     if (target == 1) return cell->occupied && cell->owner != side;
@@ -164,7 +215,7 @@ static uint8_t promotion_choices(const GCSemanticRules *r, const GCSemPattern *p
     for (uint16_t i = 0; i < forced_squares->count; i++) if (forced_squares->squares[i] == target) { forced = 1; break; }
     uint64_t alive = r->alive_promo[base][side][target]; uint8_t count = 0;
     if (!forced) out[count++] = 255;
-    for (uint8_t i = 0; i < r->types[base].promo_target_count && count < GC_MAX_PROMO_TARGETS + 1; i++)
+    for (uint8_t i = 0; i < r->types[base].promo_target_count && count < GC_SEM_MAX_PROMO_TARGETS + 1; i++)
         if ((alive & (1ull << i)) != 0) out[count++] = r->types[base].promo_targets[i];
     return count;
 }
@@ -215,11 +266,20 @@ static int state_guards_hold(const GCSemanticRules *r, const GCSemanticPosition 
         const GCSemStateGuard *g=&pattern->guards[gi]; if (g->location != 0) return 0;
         int count=0;
         uint16_t subject = 0;
-        if (g->has_subject_ref && !resolve_square(&g->subject_ref, r, NULL, pos, side, source, target, &subject)) return 0;
-        uint16_t first = g->has_subject_ref ? subject : 0;
-        uint16_t last = g->has_subject_ref ? (uint16_t)(subject + 1) : (uint16_t)(r->board_size*r->board_size);
+        uint16_t first = 0, last = (uint16_t)(r->board_size*r->board_size);
+        if (g->has_subject_ref) {
+            /* Core treats an unresolved subject as an empty candidate set.
+             * Its zero count still participates in the declared comparison. */
+            if (resolve_square(&g->subject_ref, r, NULL, pos, side, source, target, &subject)) {
+                first = subject;
+                last = (uint16_t)(subject + 1);
+            } else {
+                first = last = 0;
+            }
+        }
         for (uint16_t sq=first;sq<last;sq++) { const GCPiece *piece=&pos->board[sq]; if(!piece->occupied || !owner_ok(g->owner,piece->owner,side))continue; uint16_t want=0; if(g->type_ref.kind==0)want=action_base_type; else if(g->type_ref.kind==1)want=action_current_type; else if(g->type_ref.kind==2&&g->type_ref.has_type)want=g->type_ref.type_index; else if(g->type_ref.kind==3)want=piece->current_type; else return 0; uint16_t actual=g->compare_field==0?piece->base_type:piece->current_type; if(g->type_ref.kind!=3 && actual!=want)continue; if(g->promoted==0 && !piece->promoted)continue; if(g->promoted==1 && piece->promoted)continue; if(g->promoted>2)return 0; if(!spatial_holds(&g->spatial,r,pos,side,source,target,sq))continue; count++; }
-        int predicate = g->aggregation == 0 ? count > 0 : compare_value(g->comparison,count,g->value); if (!predicate) return 0;
+        int value = g->aggregation == 0 ? (count > 0) : count;
+        if (!compare_value(g->comparison, value, g->value)) return 0;
     }
     return 1;
 }
@@ -345,18 +405,24 @@ static int slot_guards_hold(const GCSemanticRules *r, const GCSemanticPosition *
 static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPosition *pos, uint16_t target_square, uint8_t attacker) {
     if (gc_runtime_audit) gc_runtime_audit->attack_check_calls++;
     if (target_square >= r->board_size * r->board_size) return 0;
-    for (uint16_t pi=0; pi<r->pattern_count; pi++) {
-        const GCSemPattern *pattern=&r->patterns[pi];
-        /* Semantic pseudo-attack is capture eligibility only.  Keep this
-         * identical to SemanticEngine.is_square_attacked: target_any and
-         * target_empty patterns never contribute attack truth. */
-        if (pattern->target != 1) continue;
-        for (uint8_t gi=0; gi<pattern->geometry_count; gi++) {
-            uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
-            const GCSemGeometry *geo=&r->geometries[gid]; if(geo->kind==2)continue;
-            const GCSemPathOwner *paths=&geo->paths[attacker];
-            for (uint16_t si=0; si<r->board_size*r->board_size; si++) {
-                const GCPiece *actor=&pos->board[si]; if(!actor->occupied||actor->owner!=attacker||!pattern_has_type(pattern,actor->current_type))continue;
+    /* Capture eligibility is unchanged; visit occupied attacker sources once. */
+    for (uint16_t si=0; si<r->board_size*r->board_size; si++) {
+        const GCPiece *actor=&pos->board[si];
+        if (!actor->occupied || actor->owner!=attacker) continue;
+        if (actor->current_type >= r->type_count) continue;
+        if(r->attack_membership){
+            size_t cells=(size_t)r->board_size*r->board_size,stride=(cells+7)/8;
+            size_t key=(((size_t)actor->current_type*2+attacker)*cells+si)*stride+target_square/8;
+            if(!(r->attack_membership[key]&(1u<<(target_square%8)))){
+                continue;
+            }
+        }
+        for (uint16_t ci=0; ci<r->capture_pattern_count[actor->current_type]; ci++) {
+            uint16_t pi=r->capture_pattern_indices[actor->current_type][ci];
+            const GCSemPattern *pattern=&r->patterns[pi];
+            for (uint8_t gi=0; gi<pattern->geometry_count; gi++) {
+                uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
+                const GCSemGeometry *geo=&r->geometries[gid]; if(geo->kind==2)continue;
                 if(geo->has_atom_source&&geo->atom_source_type!=actor->current_type)continue;
                 const GCSemPathEntry *entry=NULL;if(!path_entry(geo,attacker,si,&entry))continue;
                 for(uint16_t ti=0;ti<entry->count;ti++)if(entry->squares[ti]==target_square){uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;if(ti<start)continue;if(!path_ok(pattern,entry,ti,pos,attacker))continue;if(!state_guards_hold(r,pos,pattern,attacker,si,target_square,actor->base_type,actor->current_type))continue;if(!slot_guards_hold(r,pos,pattern,attacker,si,target_square))continue;return 1;}
@@ -469,11 +535,11 @@ static int validate_action(const GCSemanticRules *r, const GCSemanticPosition *p
 
 static int apply_effect(const GCSemanticRules *r, GCSemanticPosition *work, const GCSemanticPosition *pre, const GCSemPattern *unused_pattern, const GCSemEffect *effect, uint8_t side, uint16_t source, uint16_t target, uint16_t action_base_type, uint16_t action_current_type) {
     uint16_t from=0,to=0,square=0,tid=0; GCPiece piece;
-    if(effect->kind==0 || effect->kind==9) { if(!resolve_square(&effect->from_ref,r,NULL,pre,side,source,target,&from)||!resolve_square(&effect->to_ref,r,NULL,pre,side,source,target,&to)||!work->board[from].occupied||work->board[to].occupied)return 0; piece=work->board[from]; if(effect->has_piece_type_ref&&!resolve_type(&effect->piece_type_ref,piece.base_type,piece.current_type,&tid))return 0; if(effect->has_piece_type_ref&&piece.base_type!=tid&&piece.current_type!=tid)return 0; if(!owner_ok(effect->piece_owner,piece.owner,side))return 0; work->board[from].occupied=0; work->board[to]=piece; return 1; }
-    if(effect->kind==1) { if(!resolve_square(&effect->square_ref,r,NULL,pre,side,source,target,&square)||!work->board[square].occupied)return 0; piece=work->board[square]; if(r->types[piece.current_type].is_anchor)return 0; if(effect->has_piece_type_ref&&!resolve_type(&effect->piece_type_ref,piece.base_type,piece.current_type,&tid))return 0; if(effect->has_piece_type_ref&&piece.base_type!=tid&&piece.current_type!=tid)return 0; if(!owner_ok(effect->piece_owner,piece.owner,side))return 0; if(effect->has_disposition&&effect->disposition==0){if(work->hand_counts[side][piece.base_type]>=GC_MAX_HAND)return 0;work->hand_counts[side][piece.base_type]++;} work->board[square].occupied=0; return 1; }
+    if(effect->kind==0 || effect->kind==9) { if(!resolve_square(&effect->from_ref,r,NULL,pre,side,source,target,&from)||!resolve_square(&effect->to_ref,r,NULL,pre,side,source,target,&to)||!work->board[from].occupied||work->board[to].occupied)return 0; piece=work->board[from]; if(effect->has_piece_type_ref&&!resolve_type(&effect->piece_type_ref,action_base_type,action_current_type,&tid))return 0; if(effect->has_piece_type_ref&&piece.base_type!=tid&&piece.current_type!=tid)return 0; if(!owner_ok(effect->piece_owner,piece.owner,side))return 0; work->board[from].occupied=0; work->board[to]=piece; return 1; }
+    if(effect->kind==1) { if(!resolve_square(&effect->square_ref,r,NULL,pre,side,source,target,&square)||!work->board[square].occupied)return 0; piece=work->board[square]; if(r->types[piece.current_type].is_anchor)return 0; if(effect->has_piece_type_ref&&!resolve_type(&effect->piece_type_ref,action_base_type,action_current_type,&tid))return 0; if(effect->has_piece_type_ref&&piece.base_type!=tid&&piece.current_type!=tid)return 0; if(!owner_ok(effect->piece_owner,piece.owner,side))return 0; if(effect->has_disposition&&effect->disposition==0){if(work->hand_counts[side][piece.base_type]>=GC_MAX_HAND)return 0;work->hand_counts[side][piece.base_type]++;} work->board[square].occupied=0; return 1; }
     if(effect->kind==2) { if(!effect->has_piece_type_ref||!resolve_type(&effect->piece_type_ref,action_base_type,action_current_type,&tid)||work->hand_counts[side][tid]<effect->count)return 0; work->hand_counts[side][tid]-=effect->count; return 1; }
     if(effect->kind==3) { if(!resolve_square(&effect->to_ref,r,NULL,pre,side,source,target,&to)||work->board[to].occupied||!effect->has_piece_type_ref)return 0; if(!resolve_type(&effect->piece_type_ref,action_base_type,action_current_type,&tid)||tid>=r->type_count)return 0; memset(&work->board[to],0,sizeof(GCPiece));work->board[to].occupied=1;work->board[to].owner=side;work->board[to].base_type=tid;work->board[to].current_type=tid;return 1; }
-    if(effect->kind==4) { if(!resolve_square(&effect->square_ref,r,NULL,pre,side,source,target,&square)||!work->board[square].occupied||!effect->has_type_ref||!resolve_type(&effect->type_ref,work->board[square].base_type,work->board[square].current_type,&tid)||tid>=r->type_count)return 0;work->board[square].current_type=tid;work->board[square].promoted=tid!=work->board[square].base_type;return 1; }
+    if(effect->kind==4) { if(!resolve_square(&effect->square_ref,r,NULL,pre,side,source,target,&square)||!work->board[square].occupied||!effect->has_type_ref||!resolve_type(&effect->type_ref,action_base_type,action_current_type,&tid)||tid>=r->type_count)return 0;work->board[square].current_type=tid;work->board[square].promoted=tid!=work->board[square].base_type;return 1; }
     return effect->kind>=5 && effect->kind<=8;
 }
 
@@ -492,10 +558,10 @@ static int semantic_has_s3_reply(const GCSemanticRules *r, const GCSemanticPosit
             uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
             const GCSemGeometry *geo=&r->geometries[gid];
             if (geo->kind == 2) {
-                for (uint8_t ti=0; ti<pattern->type_count; ti++) { uint16_t base=pattern->type_indices[ti]; if(base>=r->type_count||position->hand_counts[side][base]==0)continue; const GCSemSquareList *mask=&r->drop_mask[base][side]; for(uint16_t mi=0;mi<mask->count;mi++){uint16_t to=mask->squares[mi];if(position->board[to].occupied)continue;uint64_t action=pack_semantic_action(to,255,255,base,base,GC_ACTION_KIND_SEMANTIC_DROP,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;} }
+                for (uint8_t ti=0; ti<pattern->type_count; ti++) { uint16_t base=pattern->type_indices[ti]; if(base>=r->type_count||position->hand_counts[side][base]==0)continue; const GCSemSquareList *mask=&r->drop_mask[base][side]; for(uint16_t mi=0;mi<mask->count;mi++){uint16_t to=mask->squares[mi];if(position->board[to].occupied)continue;uint64_t action=pack_semantic_action(to,255,255,base,base,GC_ACTION_KIND_SEMANTIC_DROP,pi,gid);GCSemanticPosition child;int reply_status=gc_semantic_runtime_make_mode(&child,r,position,action,0,!gc_runtime_transient);if(reply_status!=0)return reply_status;} }
             } else {
                 const GCSemPathOwner *paths=&geo->paths[side];
-        for(uint16_t source=0;source<r->board_size*r->board_size;source++){const GCPiece *piece=&position->board[source];if(!piece->occupied||piece->owner!=side||!pattern_has_type(pattern,piece->current_type))continue;if(geo->has_atom_source&&geo->atom_source_type!=piece->current_type)continue;const GCSemPathEntry *entry=NULL;if(!path_entry(geo,side,source,&entry))continue;uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;for(uint16_t ti=start;ti<entry->count;ti++){uint16_t to=entry->squares[ti];if(!target_ok(pattern->target,&position->board[to],side)||!path_ok(pattern,entry,ti,position,side))continue;if(!state_guards_hold(r,position,pattern,side,source,to,piece->base_type,piece->current_type)||!slot_guards_hold(r,position,pattern,side,source,to))continue;uint16_t promos[GC_MAX_PROMO_TARGETS+1];uint8_t promo_count=promotion_choices(r,pattern,side,piece->base_type,piece->promoted,source,to,promos);for(uint8_t promo_i=0;promo_i<promo_count;promo_i++){uint64_t action=pack_semantic_action(to,source,promos[promo_i],piece->base_type,piece->current_type,GC_ACTION_KIND_SEMANTIC_BOARD,pi,gid);GCSemanticPosition child;if(gc_semantic_runtime_make_mode(&child,r,position,action,0))return 1;}}}
+        for(uint16_t source=0;source<r->board_size*r->board_size;source++){const GCPiece *piece=&position->board[source];if(!piece->occupied||piece->owner!=side||!pattern_has_type(pattern,piece->current_type))continue;if(geo->has_atom_source&&geo->atom_source_type!=piece->current_type)continue;const GCSemPathEntry *entry=NULL;if(!path_entry(geo,side,source,&entry))continue;uint16_t start=geo->min_steps>0?(uint16_t)(geo->min_steps-1):0;for(uint16_t ti=start;ti<entry->count;ti++){uint16_t to=entry->squares[ti];if(!target_ok(pattern->target,&position->board[to],side)||!path_ok(pattern,entry,ti,position,side))continue;if(!state_guards_hold(r,position,pattern,side,source,to,piece->base_type,piece->current_type)||!slot_guards_hold(r,position,pattern,side,source,to))continue;uint16_t promos[GC_SEM_MAX_PROMO_TARGETS+1];uint8_t promo_count=promotion_choices(r,pattern,side,piece->base_type,piece->promoted,source,to,promos);for(uint8_t promo_i=0;promo_i<promo_count;promo_i++){uint64_t action=pack_semantic_action(to,source,promos[promo_i],piece->base_type,piece->current_type,GC_ACTION_KIND_SEMANTIC_BOARD,pi,gid);GCSemanticPosition child;int reply_status=gc_semantic_runtime_make_mode(&child,r,position,action,0,!gc_runtime_transient);if(reply_status!=0)return reply_status;}}}
             }
         }
     }
@@ -518,16 +584,23 @@ static int postconditions_hold(const GCSemanticRules *r, const GCSemanticPositio
     if(has_checked&&!opponent_checked)return 1;
     if(has_no_reply) {
         if (gc_runtime_audit) gc_runtime_audit->nested_reply_count++;
-        if (semantic_has_s3_reply(r,child)) return 1;
+        int reply_status = semantic_has_s3_reply(r,child);
+        if (reply_status != 0) return reply_status;
     }
     return 0;
 }
 
-static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action, int include_postconditions) {
+static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action, int include_postconditions, int record_history) {
     if (gc_runtime_audit) gc_runtime_audit->s3_trial_count++;
-    if(!child||!r||!parent||parent->ply>=r->max_ply)return 0; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
+    if(!child||!r||!parent)return 0;
+    if (parent->ply >= r->max_ply) {
+        int automatic = gc_semantic_runtime_automatic_status(r, parent);
+        if (automatic < 0) return -1;
+        if (automatic != 1) return 0;
+    }
+    if (record_history && parent->history_len >= GC_SEM_MAX_PLY + 1) return -1; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
     GCSemanticPosition work;
-    copy_live_position(&work, parent);
+    gc_semantic_runtime_copy_live_position(&work, parent);
     uint8_t side=parent->side_to_move;
     for (uint8_t i = 0; i < r->aux_slot_count; i++) if (r->aux_slots[i].lifetime == 1) {
         reset_aux_value(&r->aux_slots[i], &work.aux[i][0], r->board_size);
@@ -554,18 +627,48 @@ static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSema
         }
     }
     for(uint8_t i=0;i<pattern->effect_count;i++){const GCSemEffect *e=&pattern->effects[i];if(e->kind<5||e->kind>8)continue;uint8_t slot_index=0;const GCSemAuxSlot *slot=slot_meta(r,e->slot_id,&slot_index);if(!slot)return 0;uint8_t owner_index=slot->scope==1?(uint8_t)(side+1):0;GCSemAuxValue *v=&work.aux[slot_index][owner_index];v->kind=slot->value_kind;v->has_value=1;v->supplied=1;if(e->kind==5)v->bool_value=e->has_value?e->value:0;else if(e->kind==6)v->bool_value=0;else if(e->kind==7){uint16_t sq;if(!resolve_square(&e->square_ref,r,NULL,parent,side,source,target,&sq))return 0;v->square=sq;}else v->has_value=0;}
-    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions&&!postconditions_hold(r,&work,pattern,side,target))return 0;if(gc_runtime_transient){copy_live_position(child,&work);return 1;}if(work.history_len>=GC_SEM_MAX_PLY+1)return 0;if(gc_runtime_audit)gc_runtime_audit->child_canonical_key_computations++;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return 0;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_actor[work.history_len]=side;work.history_gave_check[work.history_len]=(uint8_t)gc_semantic_runtime_in_check(r,&work,1-side);work.history_exact=parent->history_exact;if(gc_runtime_audit)gc_runtime_audit->history_appends++;work.history_len++;copy_live_position(child,&work);return 1;
+    work.side_to_move=1-side;work.ply=parent->ply+1;if(include_postconditions){int status=postconditions_hold(r,&work,pattern,side,target);if(status<=0)return status;}if(!record_history){gc_semantic_runtime_copy_live_position(child,&work);return 1;}if(work.history_len>=GC_SEM_MAX_PLY+1)return 0;if(gc_runtime_audit)gc_runtime_audit->child_canonical_key_computations++;char digest[65];if(!gc_semantic_position_key_digest(r,&work,digest))return -1;uint64_t words[4]={0,0,0,0};for(int w=0;w<4;w++){for(int i=0;i<16;i++){char c=digest[w*16+i];uint8_t n=(uint8_t)(c>='0'&&c<='9'?c-'0':c-'a'+10);words[w]=(words[w]<<4)|n;}}work.history_lo[work.history_len]=words[0];work.history_hi[work.history_len]=words[1];memcpy(work.history_digest[work.history_len],words,sizeof(words));work.history_actor[work.history_len]=side;work.history_gave_check[work.history_len]=(uint8_t)gc_semantic_runtime_in_check(r,&work,1-side);work.history_exact=parent->history_exact;if(gc_runtime_audit)gc_runtime_audit->history_appends++;work.history_len++;gc_semantic_runtime_copy_live_position(child,&work);return 1;
 }
 
-int gc_semantic_runtime_make_checked(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {
-    return gc_semantic_runtime_make_mode(child, r, parent, action, 1);
+int gc_semantic_runtime_make_checked_status(GCSemanticPosition *child,
+    const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {
+    return gc_semantic_runtime_make_mode(child, r, parent, action, 1, !gc_runtime_transient);
+}
+
+int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
+    const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {
+    return gc_semantic_runtime_make_checked_status(child, r, parent, action) > 0;
+}
+
+/* Discarded material-ordering state only: never a search/TT/cache/trace node.
+ * Parent history and postconditions remain authoritative. Omitting unused
+ * identity construction removes its allocation-failure opportunity; actual
+ * nested reply failures still propagate. Preserve capacity refusal. */
+int gc_semantic_runtime_make_material_view_status(GCSemanticPosition *child,
+    const GCSemanticRules *rules, const GCSemanticPosition *parent, uint64_t action) {
+    if (parent->history_len >= GC_SEM_MAX_PLY + 1) return 0;
+    return gc_semantic_runtime_make_mode(child, rules, parent, action, 1, 0);
+}
+
+/* Availability never consumes the successful child's digest or history.
+ * Explicit per-call mode avoids changing the existing transient global flag. */
+int gc_semantic_runtime_probe_action_status(const GCSemanticRules *rules,
+    const GCSemanticPosition *parent, uint64_t action) {
+    GCSemanticPosition child;
+    return gc_semantic_runtime_make_mode(&child, rules, parent, action, 1, 0);
+}
+
+int gc_semantic_runtime_probe_action(const GCSemanticRules *rules,
+                                    const GCSemanticPosition *parent,
+                                    uint64_t action) {
+    return gc_semantic_runtime_probe_action_status(rules, parent, action) > 0;
 }
 
 int gc_semantic_runtime_action_delivers_check_debug(
     const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action) {
     if (!r || !parent) return 0;
     GCSemanticPosition child;
-    if (!gc_semantic_runtime_make_mode(&child, r, parent, action, 0)) return 0;
+    if (gc_semantic_runtime_make_mode(&child, r, parent, action, 0, !gc_runtime_transient) <= 0) return 0;
     return semantic_action_delivers_check(r, &child, action_to(action), parent->side_to_move);
 }
 

@@ -14,7 +14,14 @@ from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.search_runtime import SearchPathRuntime
 from generic_chess.core.terminal import TerminalStatus, terminal_result
 from generic_chess.core.transition import apply_action, initial_state, legal_successors
-from generic_chess.rules.compiler import compile_ruleset, compile_ruleset_for_execution
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.cancellation import CancellationToken
+from generic_chess.ai.limits import SearchLimits
+from generic_chess.rules.compiler import (
+    compile_ruleset,
+    compile_ruleset_for_execution,
+    compile_semantic_ruleset,
+)
 from generic_chess.rules.schema import (
     RuleConsecutiveActionAdjudication,
     RuleActionEffect,
@@ -94,6 +101,34 @@ def _compiled(semantic=False, *, pass_enabled=True, policy=True):
         return ruleset, compile_ruleset_for_execution(ruleset)
     ruleset = _legacy_ruleset(pass_enabled=pass_enabled, policy=policy)
     return ruleset, compile_ruleset(ruleset)
+
+
+def _blocked_pass_only_ruleset(*, repetition_limit=20, pass_threshold=None):
+    base = _legacy_ruleset(pass_enabled=True, policy=False)
+    n = base.board_size
+    board = [[None] * n for _ in range(n)]
+    board[0][0] = Piece(0, "K", "K")
+    board[0][1] = Piece(0, "I", "I")
+    board[1][0] = Piece(0, "I", "I")
+    board[1][1] = Piece(0, "I", "I")
+    board[n - 1][n - 1] = Piece(1, "K", "K")
+    board[n - 2][n - 1] = Piece(1, "I", "I")
+    board[n - 1][n - 2] = Piece(1, "I", "I")
+    board[n - 2][n - 2] = Piece(1, "I", "I")
+    mask = (False,) * (n * n)
+    policies = (
+        (RuleConsecutiveActionAdjudication("pass", pass_threshold, "DRAW"),)
+        if pass_threshold is not None
+        else ()
+    )
+    return replace(
+        base,
+        piece_types=(base.piece_types[0], PieceType("I", "Immobile", ())),
+        initial_position=tuple(tuple(row) for row in board),
+        drop_allowed={"I": (mask, mask)},
+        repetition_limit=repetition_limit,
+        consecutive_action_adjudications=policies,
+    )
 
 
 def _pass_mate_ruleset(threshold):
@@ -187,6 +222,31 @@ def _pass_mate_ruleset(threshold):
     )
 
 
+def _blocked_pass_only_semantic_ruleset(*, repetition_limit=20, pass_threshold=3):
+    base = _pass_mate_ruleset(threshold=pass_threshold or 3)
+    n = base.board_size
+    board = [[None] * n for _ in range(n)]
+    board[0][0] = Piece(0, "K", "K")
+    board[0][1] = Piece(0, "I", "I")
+    board[1][0] = Piece(0, "I", "I")
+    board[1][1] = Piece(0, "I", "I")
+    board[n - 1][n - 1] = Piece(1, "K", "K")
+    board[n - 2][n - 1] = Piece(1, "I", "I")
+    board[n - 1][n - 2] = Piece(1, "I", "I")
+    board[n - 2][n - 2] = Piece(1, "I", "I")
+    policies = (
+        base.consecutive_action_adjudications
+        if pass_threshold is not None
+        else ()
+    )
+    return replace(
+        base,
+        initial_position=tuple(tuple(row) for row in board),
+        repetition_limit=repetition_limit,
+        consecutive_action_adjudications=policies,
+    )
+
+
 def _start_with_side(state, compiled, side):
     position = replace(state.position, side_to_move=side)
     key = repetition_identity_key(position, compiled)
@@ -219,6 +279,318 @@ def test_two_consecutive_passes_draw_and_trial_matches_commit(semantic, side):
     assert committed.terminal_status.winner is None
     assert terminal_result(committed, compiled).status is TerminalStatus.ACTION_CLASS_DRAW
     assert not legal_actions(committed, compiled)
+
+
+def test_public_alphabeta_pass_pv_submits_and_replays_consecutive_pass_draw():
+    _, compiled = _compiled(semantic=False, pass_enabled=True, policy=True)
+    session = GameSession(compiled)
+    initial = session.state
+
+    class PreferPassEvaluator:
+        def evaluate(self, state):
+            # The mutable search view and public GameState share this position
+            # field. Pass preserves the board; every ordinary action changes it.
+            return -10_000 if state.position.board == initial.position.board else 10_000
+
+    player = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferPassEvaluator(),
+        use_disk_cache=False,
+    )
+    limits = SearchLimits(
+        max_depth=1,
+        max_nodes=10_000,
+        max_time_seconds=5,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+
+    for expected_status in (SessionStatus.ONGOING, SessionStatus.ACTION_CLASS_DRAW):
+        before = session.state
+        decision = player.choose_action(session, limits)
+        assert decision.completed_depth == 1
+        assert isinstance(decision.action, PassAction)
+        assert decision.principal_variation
+        assert decision.principal_variation[0] == decision.action
+
+        pv_state = before
+        for action in decision.principal_variation:
+            pv_state = apply_action(pv_state, action, compiled)
+        committed_state = apply_action(before, decision.action, compiled)
+        assert pv_state == committed_state
+
+        session.submit(decision.action)
+        assert session.state == committed_state
+        assert session.state.terminal_status.status.value == expected_status.value
+
+    assert session.result.status is SessionStatus.ACTION_CLASS_DRAW
+    terminal_decision = player.choose_action(session, limits)
+    assert terminal_decision.action is None
+    assert terminal_decision.choice_kind == "TERMINAL"
+    assert terminal_decision.termination_reason == "terminal_position"
+    pass_signatures = [
+        json.loads(record.action_signature)
+        for record in session.state.history
+        if record.action_signature
+    ]
+    assert pass_signatures == [{"kind": "pass"}, {"kind": "pass"}]
+
+    record = deserialize_game_record(serialize_game_record(session.to_record()))
+    replayed = GameSession.replay(compiled, record)
+    assert replayed.state == session.state
+    assert replayed.result == session.result
+    assert replayed.state.position.board == initial.position.board
+    assert replayed.state.position.hands == initial.position.hands
+
+
+@pytest.mark.parametrize(
+    "threshold, expected_qscore",
+    [(3, 0), (4, -1_000)],
+    ids=["include-terminal-pass", "exclude-quiet-pass"],
+)
+def test_public_qsearch_pass_child_policy(threshold, expected_qscore):
+    ruleset = _blocked_pass_only_ruleset(pass_threshold=threshold)
+    compiled = compile_ruleset(ruleset)
+    initial = GameSession(compiled).state
+    first_pass = dict(legal_successors(initial, compiled))[PassAction()]
+    second_pass = dict(legal_successors(first_pass, compiled))[PassAction()]
+    assert legal_actions(initial, compiled) == [PassAction()]
+    assert legal_actions(first_pass, compiled) == [PassAction()]
+    assert second_pass.terminal_status.status is TerminalStatus.ONGOING
+    third_pass = dict(legal_successors(second_pass, compiled))[PassAction()]
+    assert third_pass.terminal_status.status is (
+        TerminalStatus.ACTION_CLASS_DRAW
+        if threshold == 3
+        else TerminalStatus.ONGOING
+    )
+    if threshold == 4:
+        fourth_pass = dict(legal_successors(third_pass, compiled))[PassAction()]
+        assert fourth_pass.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+    class PreferDrawOverStaticLeaf:
+        def evaluate(self, state):
+            return -1_000 if state.position.side_to_move == 0 else 1_000
+
+    def search(qdepth):
+        return AlphaBetaPlayer(
+            compiled,
+            evaluator_override=PreferDrawOverStaticLeaf(),
+            use_disk_cache=False,
+        ).choose_action(
+            GameSession(compiled),
+            SearchLimits(
+                max_depth=2,
+                max_nodes=1_000,
+                max_time_seconds=5,
+                quiescence_max_depth=qdepth,
+                quiescence_hard_max_depth=2,
+            ),
+        )
+
+    without_qsearch = search(0)
+    with_qsearch = search(1)
+    assert without_qsearch.completed_depth == with_qsearch.completed_depth == 2
+    assert without_qsearch.score == -1_000
+    assert with_qsearch.score == expected_qscore
+    assert with_qsearch.qnodes > 0
+    assert isinstance(with_qsearch.action, PassAction)
+
+
+def test_public_semantic_qsearch_includes_terminal_pass_child():
+    ruleset = _blocked_pass_only_semantic_ruleset()
+    compiled = compile_ruleset_for_execution(
+        ruleset
+    )
+    initial = GameSession(compiled).state
+    first_pass = dict(legal_successors(initial, compiled))[PassAction()]
+    second_pass = dict(legal_successors(first_pass, compiled))[PassAction()]
+    third_pass = dict(legal_successors(second_pass, compiled))[PassAction()]
+    assert type(compiled).__name__ == "ExecutableSemanticRuleset"
+    assert len(ruleset.semantic_actions) == 2
+    assert legal_actions(initial, compiled) == [PassAction()]
+    assert legal_actions(first_pass, compiled) == [PassAction()]
+    assert second_pass.terminal_status.status is TerminalStatus.ONGOING
+    assert third_pass.terminal_status.status is TerminalStatus.ACTION_CLASS_DRAW
+
+    class PreferDrawOverStaticLeaf:
+        def evaluate(self, state):
+            return -1_000 if state.position.side_to_move == 0 else 1_000
+
+    def search(qdepth):
+        return AlphaBetaPlayer(
+            compiled,
+            evaluator_override=PreferDrawOverStaticLeaf(),
+            use_disk_cache=False,
+        ).choose_action(
+            GameSession(compiled),
+            SearchLimits(
+                max_depth=2,
+                max_nodes=1_000,
+                max_time_seconds=5,
+                quiescence_max_depth=qdepth,
+                quiescence_hard_max_depth=2,
+            ),
+        )
+
+    without_qsearch = search(0)
+    with_qsearch = search(1)
+    assert without_qsearch.completed_depth == with_qsearch.completed_depth == 2
+    assert without_qsearch.score == -1_000
+    assert with_qsearch.score == 0
+    assert with_qsearch.qnodes > 0
+    assert isinstance(with_qsearch.action, PassAction)
+
+
+def test_public_qsearch_includes_repetition_pass_child():
+    compiled = compile_ruleset(
+        _blocked_pass_only_ruleset(repetition_limit=3)
+    )
+    states = [GameSession(compiled).state]
+    for _ in range(4):
+        states.append(dict(legal_successors(states[-1], compiled))[PassAction()])
+    assert legal_actions(states[0], compiled) == [PassAction()]
+    assert legal_actions(states[2], compiled) == [PassAction()]
+    assert states[3].terminal_status.status is TerminalStatus.ONGOING
+    assert states[4].terminal_status.status is TerminalStatus.REPETITION
+
+    class PreferDrawOverStaticLeaf:
+        def evaluate(self, state):
+            return -1_000 if state.position.side_to_move == 1 else 1_000
+
+    def search(qdepth):
+        return AlphaBetaPlayer(
+            compiled,
+            evaluator_override=PreferDrawOverStaticLeaf(),
+            use_disk_cache=False,
+        ).choose_action(
+            GameSession(compiled),
+            SearchLimits(
+                max_depth=3,
+                max_nodes=1_000,
+                max_time_seconds=5,
+                quiescence_max_depth=qdepth,
+                quiescence_hard_max_depth=2,
+            ),
+        )
+
+    without_qsearch = search(0)
+    with_qsearch = search(1)
+    assert without_qsearch.completed_depth == with_qsearch.completed_depth == 3
+    assert without_qsearch.score == 1_000
+    assert with_qsearch.score == 0
+    assert with_qsearch.qnodes > 0
+    assert isinstance(with_qsearch.action, PassAction)
+
+
+def test_public_semantic_qsearch_includes_repetition_pass_child():
+    ruleset = _blocked_pass_only_semantic_ruleset(
+        repetition_limit=3,
+        pass_threshold=None,
+    )
+    compiled = compile_ruleset_for_execution(ruleset)
+    states = [GameSession(compiled).state]
+    for _ in range(4):
+        states.append(dict(legal_successors(states[-1], compiled))[PassAction()])
+    assert type(compiled).__name__ == "ExecutableSemanticRuleset"
+    assert len(ruleset.semantic_actions) == 2
+    assert legal_actions(states[0], compiled) == [PassAction()]
+    assert states[3].terminal_status.status is TerminalStatus.ONGOING
+    assert states[4].terminal_status.status is TerminalStatus.REPETITION
+
+    class PreferDrawOverStaticLeaf:
+        def evaluate(self, state):
+            return -1_000 if state.position.side_to_move == 1 else 1_000
+
+    def search(qdepth):
+        return AlphaBetaPlayer(
+            compiled,
+            evaluator_override=PreferDrawOverStaticLeaf(),
+            use_disk_cache=False,
+        ).choose_action(
+            GameSession(compiled),
+            SearchLimits(
+                max_depth=3,
+                max_nodes=1_000,
+                max_time_seconds=5,
+                quiescence_max_depth=qdepth,
+                quiescence_hard_max_depth=2,
+            ),
+        )
+
+    without_qsearch = search(0)
+    with_qsearch = search(1)
+    assert without_qsearch.completed_depth == with_qsearch.completed_depth == 3
+    assert without_qsearch.score == 1_000
+    assert with_qsearch.score == 0
+    assert with_qsearch.qnodes > 0
+    assert isinstance(with_qsearch.action, PassAction)
+
+
+def test_compiled_semantic_pass_rules_decline_native_and_keep_core_qsearch():
+    ruleset = _blocked_pass_only_semantic_ruleset(
+        repetition_limit=3,
+        pass_threshold=None,
+    )
+    compiled = compile_semantic_ruleset(ruleset)
+    session = GameSession(compiled)
+
+    class PreferDrawOverStaticLeaf:
+        def evaluate(self, state):
+            return -1_000 if state.position.side_to_move == 1 else 1_000
+
+    player = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferDrawOverStaticLeaf(),
+        use_disk_cache=False,
+    )
+    assert type(compiled).__name__ == "CompiledSemanticRuleset"
+    assert player.native_legality_provider is None
+    decision = player.choose_action(
+        session,
+        SearchLimits(
+            max_depth=3,
+            max_nodes=1_000,
+            max_time_seconds=5,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+        ),
+    )
+
+    assert isinstance(decision.action, PassAction)
+    assert decision.score == 0
+    assert decision.completed_depth == 3
+    assert decision.qnodes == 4
+    assert decision.native_legality_calls == 0
+    assert decision.native_legality_fallbacks == 0
+    assert decision.native_legality_operational_failures == 0
+    assert len(session.state.history) == 1
+
+
+def test_pre_cancelled_public_alphabeta_returns_legal_fallback_with_pass_available():
+    _, compiled = _compiled(semantic=False, pass_enabled=True, policy=True)
+    session = GameSession(compiled)
+    before = session.state
+    legal = legal_actions(before, compiled)
+    assert PassAction() in legal
+
+    token = CancellationToken()
+    token.cancel()
+    decision = AlphaBetaPlayer(compiled, use_disk_cache=False).choose_action(
+        session,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=1_000,
+            max_time_seconds=5,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+        cancel_token=token,
+    )
+
+    assert decision.termination_reason == "cancelled"
+    assert decision.completed_depth == 0
+    assert decision.action in legal
+    assert session.state is before
 
 
 def test_nonpass_action_resets_consecutive_pass_count():

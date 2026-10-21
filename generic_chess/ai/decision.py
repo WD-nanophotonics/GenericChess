@@ -11,8 +11,13 @@ from ..core.actions import Action
 class PlayerDecision:
     """Result of one ``Player.choose_action`` call.
 
-    ``action`` is ``None`` only for terminal positions.  Scores are always in
-    the side-to-move perspective of the root position.
+    ``action`` is ``None`` for terminal positions or already finished sessions.
+    A selected declaration is represented separately. Scores are always in
+    the side-to-move perspective of the root position. If a bounded search is
+    interrupted before a full iteration completes, ``action`` can still hold a
+    legal root fallback while ``principal_variation`` is empty. Otherwise the
+    variation is the line from the last completed iteration (or a separately
+    completed root proof).
     """
 
     action: Action | None
@@ -89,3 +94,12 @@ class PlayerDecision:
     result_source: str = "unknown"
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+
+    # Completed Core search-runtime pushes include q-action classification and
+    # root probes as well as searched successors. They exclude failed pushes
+    # and S3 candidate trials; nodes/qnodes keep their existing budget meaning.
+    # None means this player/result did not report a Core runtime observation.
+    # Append optional fields to preserve existing positional constructors.
+    runtime_pushes: int | None = None
+    runtime_pops: int | None = None
+    runtime_depth_balanced: bool | None = None

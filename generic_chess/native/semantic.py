@@ -15,6 +15,14 @@ from ..core.declarations import DeclarationAssessment
 from . import _module, native_available
 
 
+def _backend(native_rules=None):
+    if native_rules is not None:
+        return native_rules.backend_module
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    return _module()
+
+
 def _require_executable(native_rules):
     if not getattr(native_rules, "native_executable", False):
         raise ValueError("Native semantic attack/check requires an executable rules capsule")
@@ -34,8 +42,6 @@ def pack_position(native_rules, payload):
     Continuous-check adjudication at repetition also requires actor/check events
     (six-word history records); digest-only imports cannot decide that result.
     """
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     normalized = dict(payload)
     # Keep aux transport explicit and numeric at the C boundary.
     normalized["aux"] = [
@@ -46,7 +52,7 @@ def pack_position(native_rules, payload):
         normalized["history"] = [
             [int(word) for word in words] for words in payload["history"]
         ]
-    return _module().semantic_pack_position(native_rules.capsule, normalized)
+    return _backend(native_rules).semantic_pack_position(native_rules.capsule, normalized)
 
 
 def pack_current_position(native_rules, position, *, ply_count: int):
@@ -75,44 +81,36 @@ def pack_current_position(native_rules, position, *, ply_count: int):
 
 def is_square_attacked(native_rules, position, square: int, by_owner: int) -> bool:
     """Query semantic pseudo-attack on an already-packed Native position."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     _require_executable(native_rules)
     if not isinstance(square, int) or isinstance(square, bool):
         raise TypeError("square must be an integer board index")
     if not isinstance(by_owner, int) or isinstance(by_owner, bool) or by_owner not in (0, 1):
         raise ValueError("by_owner must be 0 or 1")
-    return bool(_module().semantic_is_square_attacked(
+    return bool(_backend(native_rules).semantic_is_square_attacked(
         native_rules.capsule, position, int(square), int(by_owner)
     ))
 
 
 def attacked_squares(native_rules, position, by_owner: int) -> frozenset[int]:
     """Collect scalar-authority pseudo-attacks, not legal-action counts."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     _require_executable(native_rules)
     if not isinstance(by_owner, int) or isinstance(by_owner, bool) or by_owner not in (0, 1):
         raise ValueError("by_owner must be 0 or 1")
-    return frozenset(_module().semantic_attacked_squares(
+    return frozenset(_backend(native_rules).semantic_attacked_squares(
         native_rules.capsule, position, by_owner
     ))
 
 
 def in_check(native_rules, position, side: int) -> bool:
     """Query semantic check on an already-packed Native position."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     _require_executable(native_rules)
     if not isinstance(side, int) or isinstance(side, bool) or side not in (0, 1):
         raise ValueError("side must be 0 or 1")
-    return bool(_module().semantic_in_check(native_rules.capsule, position, int(side)))
+    return bool(_backend(native_rules).semantic_in_check(native_rules.capsule, position, int(side)))
 
 
 def snapshot(native_rules, position):
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    out = dict(_module().semantic_position_snapshot(native_rules.capsule, position))
+    out = dict(_backend(native_rules).semantic_position_snapshot(native_rules.capsule, position))
     out["aux_state"] = tuple(
         ((int(entry[0]), int(entry[1])),
          tuple(entry[2]) if isinstance(entry[2], (list, tuple)) else entry[2])
@@ -130,23 +128,17 @@ def snapshot(native_rules, position):
 
 def position_key(native_rules, position) -> str:
     """Canonical semantic position identity computed by the Native kernel."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return str(_module().semantic_position_key(native_rules.capsule, position))
+    return str(_backend(native_rules).semantic_position_key(native_rules.capsule, position))
 
 
-def pack_action(fields: dict) -> int:
+def pack_action(fields: dict, *, native_rules=None) -> int:
     """Pack an exact semantic action using the frozen Native bit layout."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return int(_module().semantic_action_pack(dict(fields)))
+    return int(_backend(native_rules).semantic_action_pack(dict(fields)))
 
 
-def unpack_action(action: int) -> dict:
+def unpack_action(action: int, *, native_rules=None) -> dict:
     """Unpack and validate an exact semantic action."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return {key: int(value) for key, value in _module().semantic_action_unpack(int(action)).items()}
+    return {key: int(value) for key, value in _backend(native_rules).semantic_action_unpack(int(action)).items()}
 
 
 def public_action(native_rules, action: int):
@@ -155,7 +147,7 @@ def public_action(native_rules, action: int):
     The returned object retains pattern, geometry, actor type, coordinates,
     and promotion identity, so packing it again is lossless.
     """
-    fields = unpack_action(action)
+    fields = unpack_action(action, native_rules=native_rules)
     n = int(native_rules.report.board_squares ** 0.5)
     pattern = int(fields["pattern"])
     geometry = int(fields["geometry"])
@@ -192,9 +184,7 @@ def public_action(native_rules, action: int):
 
 def assess_declaration(native_rules, position, declaration_id: str):
     """Assess one generic declaration against the exact Native position."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    raw = dict(_module().semantic_assess_declaration(
+    raw = dict(_backend(native_rules).semantic_assess_declaration(
         native_rules.capsule, position, str(declaration_id)
     ))
     return DeclarationAssessment(
@@ -205,14 +195,12 @@ def assess_declaration(native_rules, position, declaration_id: str):
 
 def available_declarations(native_rules, position):
     """Return non-losing declaration assessments for the side to move."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     return tuple(
         DeclarationAssessment(
             str(raw["declaration_id"]), int(raw["actor"]), str(raw["outcome"]),
             None if raw.get("weighted_score") is None else int(raw["weighted_score"]),
         )
-        for raw in _module().semantic_available_declarations(
+        for raw in _backend(native_rules).semantic_available_declarations(
             native_rules.capsule, position
         )
     )
@@ -220,23 +208,17 @@ def available_declarations(native_rules, position):
 
 def candidate_actions(native_rules, position) -> tuple[int, ...]:
     """Enumerate deterministic S0 geometry candidates (not yet S1-S4 legal)."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return tuple(int(action) for action in _module().semantic_candidate_actions(native_rules.capsule, position))
+    return tuple(int(action) for action in _backend(native_rules).semantic_candidate_actions(native_rules.capsule, position))
 
 
 def guarded_actions(native_rules, position) -> tuple[int, ...]:
     """Return exact actions surviving Native S0-S4 checks currently implemented."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return tuple(int(action) for action in _module().semantic_guarded_actions(native_rules.capsule, position))
+    return tuple(int(action) for action in _backend(native_rules).semantic_guarded_actions(native_rules.capsule, position))
 
 
 def guarded_actions_audit(native_rules, position) -> dict:
     """Test-only baseline counters for the exact guarded-action path."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    raw = dict(_module().semantic_guarded_actions_audit(native_rules.capsule, position))
+    raw = dict(_backend(native_rules).semantic_guarded_actions_audit(native_rules.capsule, position))
     raw["actions"] = tuple(int(action) for action in raw.get("actions", ()))
     for key in (
         "candidate_count", "s3_trial_count", "s4_count", "nested_reply_count",
@@ -246,20 +228,41 @@ def guarded_actions_audit(native_rules, position) -> dict:
     return raw
 
 
+def material_summary(native_rules, position):
+    """Read actual side/ply, owner board totals and board-current/hand-base counts.
+
+    Inventory is owner-major in native_rules.type_ids order. This read-only
+    projection is neither evaluation, terminal adjudication nor TT identity.
+    Older extensions report the missing entry instead of changing semantics.
+    """
+    entry = getattr(_backend(native_rules), "semantic_material_summary", None)
+    if entry is None:
+        raise RuntimeError("native extension lacks semantic material summary; rebuild required")
+    return entry(native_rules.capsule, position)
+
+
 def transient_legal_actions(native_rules, position) -> tuple[int, ...]:
     """Return ordered S0-S4 actions without child key/history authority."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return tuple(int(action) for action in _module().semantic_transient_legal_actions(
+    return tuple(int(action) for action in _backend(native_rules).semantic_transient_legal_actions(
         native_rules.capsule, position
     ))
 
 
+def transient_legal_subset(native_rules, position, candidates) -> tuple[int, ...]:
+    """Readonly exact legality for a caller-ordered candidate chunk.
+
+    Does not infer a complete action set or terminal result. Core retains state,
+    history and adjudication authority; consumers must preserve full coverage.
+    """
+    operation = getattr(_backend(native_rules), "semantic_transient_legal_subset", None)
+    if operation is None:
+        raise RuntimeError("installed Native extension lacks candidate chunk legality")
+    return tuple(operation(native_rules.capsule, position, candidates))
+
+
 def transient_legal_actions_audit(native_rules, position) -> dict:
     """Test-only transient legality counters and ordered action set."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    raw = dict(_module().semantic_transient_legal_actions_audit(
+    raw = dict(_backend(native_rules).semantic_transient_legal_actions_audit(
         native_rules.capsule, position
     ))
     raw["actions"] = tuple(int(action) for action in raw.get("actions", ()))
@@ -273,10 +276,8 @@ def transient_legal_actions_audit(native_rules, position) -> dict:
 
 def policy_logits(native_rules, position, policy) -> dict:
     """Return checked semantic actions and frozen Policy-v1 logits."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     payload = policy.native_payload() if hasattr(policy, "native_payload") else dict(policy)
-    raw = dict(_module().semantic_policy_logits(
+    raw = dict(_backend(native_rules).semantic_policy_logits(
         native_rules.capsule, position, payload
     ))
     return {
@@ -285,37 +286,42 @@ def policy_logits(native_rules, position, policy) -> dict:
     }
 
 
-def history_occurrences(position, lo: int, hi: int) -> int:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return int(_module().semantic_history_occurrences(position, int(lo), int(hi)))
+def history_occurrences(position, lo: int, hi: int, *, native_rules=None) -> int:
+    return int(_backend(native_rules).semantic_history_occurrences(position, int(lo), int(hi)))
 
 
 def make_checked(native_rules, position, action: int):
     """Apply an exact semantic candidate in Native and return its child capsule."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return _module().semantic_make_checked(native_rules.capsule, position, int(action))
+    if native_rules.automatic_adjudications:
+        native_rules.require_terminal_policy_support()
+    return _backend(native_rules).semantic_make_checked(native_rules.capsule, position, int(action))
 
 
 def make_unmake_roundtrip(native_rules, position, action: int) -> dict:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return dict(_module().semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))
+    return dict(_backend(native_rules).semantic_make_unmake_roundtrip(native_rules.capsule, position, int(action)))
 
 
 def candidate_perft(native_rules, position, depth: int) -> int:
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))
+    return int(_backend(native_rules).semantic_candidate_perft(native_rules.capsule, position, int(depth)))
+
+
+def has_legal_action(native_rules, position) -> bool:
+    """Read S0-S4 availability independently of terminal history/adjudication.
+
+    Uses the existing terminal availability probe's zero-ply, empty-history
+    semantics. This boolean is not a full legal set or terminal verdict.
+    """
+    _require_executable(native_rules)
+    entry = getattr(_backend(native_rules), "semantic_has_legal_action", None)
+    if entry is None:
+        raise RuntimeError("native extension lacks semantic availability; rebuild required")
+    return bool(entry(native_rules.capsule, position))
 
 
 def terminal_status(native_rules, position) -> dict:
     """Return the exact Native semantic terminal status and winner."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     native_rules.require_terminal_policy_support()
-    raw = dict(_module().semantic_terminal(native_rules.capsule, position))
+    raw = dict(_backend(native_rules).semantic_terminal(native_rules.capsule, position))
     raw["status"] = str(raw["status"])
     raw["winner"] = None if raw.get("winner") is None else int(raw["winner"])
     return raw
@@ -323,10 +329,8 @@ def terminal_status(native_rules, position) -> dict:
 
 def dynamic_features(native_rules, position) -> tuple[int, int, int]:
     """Return the Native semantic evaluator's generic dynamic feature vector."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     return tuple(
-        int(value) for value in _module().semantic_dynamic_features(
+        int(value) for value in _backend(native_rules).semantic_dynamic_features(
             native_rules.capsule, position
         )
     )
@@ -334,9 +338,7 @@ def dynamic_features(native_rules, position) -> tuple[int, int, int]:
 
 def spatial_features(native_rules, position) -> dict:
     """Return Native 3x3 occupancy and localized-control feature vectors."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
-    raw = dict(_module().semantic_spatial_features(native_rules.capsule, position))
+    raw = dict(_backend(native_rules).semantic_spatial_features(native_rules.capsule, position))
     return {
         "occupancy": tuple(int(value) for value in raw["occupancy"]),
         "localized_control": tuple(int(value) for value in raw["localized_control"]),
@@ -356,7 +358,7 @@ def evaluate(
     evaluator_scale: int = 1,
 ) -> int:
     """Evaluate one packed leaf with the exact Native fixed-point profile."""
-    return int(_module().semantic_evaluate(
+    return int(_backend(native_rules).semantic_evaluate(
         native_rules.capsule,
         position,
         board_values,
@@ -369,23 +371,32 @@ def evaluate(
     ))
 
 
-def search_runtime_sizes() -> dict:
+def search_runtime_sizes(*, native_rules=None) -> dict:
     """Return Native semantic search-state byte sizes for performance planning."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     return {
         key: int(value)
-        for key, value in _module().semantic_search_runtime_sizes().items()
+        for key, value in _backend(native_rules).semantic_search_runtime_sizes().items()
     }
 
 
 def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
     native_rules.require_terminal_policy_support()
-    if (native_rules.report.semantic_payload_version < 5
-            and native_rules.repetition_policy == "continuous_check_loss"):
+    # The executor now shares the exact terminal/winner authority. Payload
+    # version describes rule encoding, not this installed search capability.
+    # Older kernels retain the explicit rejection until rebuilt.
+    if (native_rules.repetition_policy == "continuous_check_loss"
+            and not _backend(native_rules).native_capabilities().get(
+                "semantic_fixed_depth_terminal_winners", False)):
         from .compiler import NativeUnsupportedRuleError
         raise NativeUnsupportedRuleError(
             "Native fixed/probe search does not score continuous-check winners; "
+            "use semantic iterative search or Core"
+        )
+    if not _backend(native_rules).native_capabilities().get(
+            "semantic_fixed_depth_terminal_dominance", False):
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native fixed/probe terminal score band requires a rebuilt kernel; "
             "use semantic iterative search or Core"
         )
     args = (native_rules.capsule, position, int(depth))
@@ -401,7 +412,7 @@ def _run_search(native_rules, position, depth: int, *, board_values=None, hand_v
         hand_values = tuple(int(hand_values[type_id]) for type_id in expected)
     if board_values is not None:
         args += (tuple(int(value) for value in board_values), tuple(int(value) for value in hand_values))
-    raw = dict(getattr(_module(), entrypoint)(*args))
+    raw = dict(getattr(_backend(native_rules), entrypoint)(*args))
     raw["best_action"] = None if raw.get("best_action") is None else int(raw["best_action"])
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
     raw["score"] = int(raw["score"])
@@ -410,7 +421,10 @@ def _run_search(native_rules, position, depth: int, *, board_values=None, hand_v
 
 
 def fixed_depth_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
-    """Run production fixed-depth semantic AlphaBeta over guarded actions.
+    """Run fixed-depth semantic AlphaBeta over guarded board/drop actions.
+
+    This finite board-action reference retains terminal winner/history rules.
+    Optional declarations are not searched; use persistent search for them.
 
     ``board_values`` and ``hand_values`` are optional evaluator profiles; when
     supplied they must be paired.  A
@@ -419,25 +433,38 @@ def fixed_depth_search(native_rules, position, depth: int, *, board_values=None,
     applied to each piece's current type and hand values to held base types,
     with the side-to-move perspective determining the sign.  Omitting both
     profiles retains the deterministic ``type_index + 1`` fallback.
+    Ordinary scores retain the existing +/-90,000,000 saturation. Rule wins
+    and losses score +/-100,000,000, strictly beyond that band; this corrects
+    older kernels whose +/-1,000,000 terminals could lose to accepted profiles.
+    These compatibility scores have no mate-distance adjustment. Iterative
+    and persistent search keep their existing root-relative mate scores.
     """
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_fixed_depth_search")
 
 
 def probe_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
     """Run the lower-level compatibility AlphaBeta probe."""
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_probe_search")
 
 
-def _require_root_window_support(enabled: bool) -> None:
-    if enabled:
+def _require_root_window_support(enabled: bool, native_rules=None) -> None:
+    if enabled and not _backend(native_rules).native_capabilities().get("semantic_exact_root_windows", False):
         from .compiler import NativeUnsupportedRuleError
         raise NativeUnsupportedRuleError(
             "Native root-window pruning can select an inexact tied bound; "
             "use full-root windows until exact tie selection is verified"
+        )
+
+
+def _require_immediate_win_support(enabled: bool, native_rules) -> None:
+    if not isinstance(enabled, bool):
+        raise TypeError("stop_on_immediate_win must be a bool")
+    if enabled and not _backend(native_rules).native_capabilities().get(
+        "semantic_immediate_win_goal", False
+    ):
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native immediate-win decision goal requires a rebuilt kernel"
         )
 
 
@@ -458,6 +485,7 @@ def semantic_iterative_search(
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
     root_window_pruning: bool = False,
+    stop_on_immediate_win: bool = False,
 ) -> dict:
     """Run deterministic iterative search on a semantic position.
 
@@ -465,9 +493,12 @@ def semantic_iterative_search(
     node, monotonic-time, and cooperative-cancellation budgets.  Evaluator
     tables are an immutable call binding; they are not part of the RuleSet
     fingerprint and may be changed between searches.
+
+    stop_on_immediate_win opts into a verified physical root-child decision.
+    A prefix win reports completed_depth0, no completed q policy and source
+    verified_root_child. Its checked edge is included in search-loop counters.
+    False preserves finite analysis and old-kernel call compatibility.
     """
-    if not native_available():
-        raise RuntimeError("native extension is not built")
     native_rules.require_terminal_policy_support()
     if _root_ply_offset not in (0, 1):
         raise ValueError("_root_ply_offset must be 0 or 1")
@@ -475,7 +506,8 @@ def semantic_iterative_search(
         raise ValueError("tt_megabytes must be an integer in [0, 1024]")
     if not isinstance(root_window_pruning, bool):
         raise TypeError("root_window_pruning must be a bool")
-    _require_root_window_support(root_window_pruning)
+    _require_root_window_support(root_window_pruning, native_rules)
+    _require_immediate_win_support(stop_on_immediate_win, native_rules)
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
@@ -507,29 +539,30 @@ def semantic_iterative_search(
             }
             if set(spatial_occupancy_values) != spatial_keys:
                 raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
-            spatial_occupancy_values = tuple(
-                int(value)
-                for owner in (0, 1)
-                for type_id in expected
-                for value in spatial_occupancy_values[f"{owner}:{type_id}"]
-            )
+            rows = [tuple(spatial_occupancy_values[f"{owner}:{type_id}"])
+                    for owner in (0, 1) for type_id in expected]
+            if any(len(row) != 9 for row in rows):
+                raise ValueError("each spatial owner/type mapping row must contain nine values")
+            spatial_occupancy_values = tuple(int(value) for row in rows for value in row)
         else:
             spatial_occupancy_values = tuple(int(value) for value in spatial_occupancy_values)
-        if len(spatial_occupancy_values) != len(expected) * 9:
-            raise ValueError("semantic spatial evaluator profile length must match type_count * 9")
+        if len(spatial_occupancy_values) != 2 * len(expected) * 9:
+            raise ValueError("semantic spatial evaluator profile length must match 2 * type_count * 9")
         if any(sum(spatial_occupancy_values[i:i + 9]) != 0 for i in range(0, len(spatial_occupancy_values), 9)):
             raise ValueError("semantic spatial evaluator rows must have zero sum")
     if localized_control_values is not None:
         localized_control_values = tuple(int(value) for value in localized_control_values)
         if len(localized_control_values) != 9 or sum(localized_control_values) != 0:
             raise ValueError("semantic localized control profile must contain nine values with zero sum")
+    goal_args = ((None,) * 6 + (1, -1, 1, None, False, 0, 0, None, True)
+                 if stop_on_immediate_win else ())
     flag = None
     unregister = None
     if cancel_token is not None:
-        flag = _module().create_cancel_flag()
-        unregister = cancel_token.register_callback(lambda: _module().request_cancel(flag))
+        flag = _backend(native_rules).create_cancel_flag()
+        unregister = cancel_token.register_callback(lambda: _backend(native_rules).request_cancel(flag))
     try:
-        raw = dict(_module().semantic_iterative_search(
+        raw = dict(_backend(native_rules).semantic_iterative_search(
             native_rules.capsule,
             position,
             int(max_depth),
@@ -548,6 +581,7 @@ def semantic_iterative_search(
             1,
             None,
             root_window_pruning,
+            *goal_args,
         ))
     finally:
         if unregister is not None:
@@ -556,6 +590,9 @@ def semantic_iterative_search(
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
     for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_exact_hits", "tt_stores", "tt_replacements", "tt_collisions", "tt_cutoffs", "tt_previous_iteration_hits", "tt_current_iteration_hits", "tt_allocated_bytes", "tt_occupied_entries", "tt_entry_bytes"):
         raw[key] = int(raw.get(key, 0))
+    raw["immediate_win"] = bool(raw.get("immediate_win", False))
+    raw["result_source"] = str(raw.get("result_source",
+        "fallback" if raw.get("used_fallback", False) else "main_iteration"))
     raw["used_fallback"] = bool(raw.get("used_fallback", False))
     raw["declaration_id"] = (
         None if raw.get("declaration_id") is None else str(raw["declaration_id"])
@@ -567,6 +604,11 @@ def semantic_iterative_search(
         "ruleset_fingerprint": native_rules.fingerprint,
         "board_values": board_values,
         "hand_values": hand_values,
+        "dynamic_values": dynamic_values,
+        "spatial_occupancy_values": spatial_occupancy_values,
+        "localized_control_values": localized_control_values,
+        "compact_values": compact_values,
+        "evaluator_scale": 1,
     }, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
     return raw
 

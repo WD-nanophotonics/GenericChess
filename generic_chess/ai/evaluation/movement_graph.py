@@ -54,6 +54,29 @@ def _bfs(adj: list[list[int]], source: int, node_count: int) -> tuple[int, int, 
     return reachable, path_sum, max_dist
 
 
+def _bfs_bitset(neighbors: list[int], source: int, node_count: int) -> tuple[int, int, int]:
+    """Exact shortest-distance layers on a bounded, directed movement graph."""
+    seen = frontier = 1 << source
+    reachable = path_sum = depth = 0
+    while frontier:
+        targets = 0
+        while frontier:
+            bit = frontier & -frontier
+            targets |= neighbors[bit.bit_length() - 1]
+            frontier ^= bit
+        frontier = targets & ~seen
+        if not frontier:
+            break
+        depth += 1
+        count = frontier.bit_count()
+        reachable += count
+        path_sum += depth * count
+        seen |= frontier
+        if reachable == node_count - 1:
+            break
+    return reachable, path_sum, depth
+
+
 def graph_metrics(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> MovementGraphMetrics:
     adj, node_count = build_movement_graph(n, atoms)
     total_edges = sum(len(neighbors) for neighbors in adj)
@@ -69,8 +92,15 @@ def graph_metrics(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> Movem
     path_sum_total = 0
     pair_count = 0
     diameter = 0
+    # Graph construction deduplicates each adjacency list. Limit the extra
+    # bitset storage to the existing exact-analysis bound (at most128KiB bits).
+    # Larger graphs retain the original sampled-source/list traversal.
+    bitsets = [sum(1 << target for target in row) for row in adj] if exact else None
     for source in sources:
-        reachable, path_sum, max_dist = _bfs(adj, source, node_count)
+        reachable, path_sum, max_dist = (
+            _bfs_bitset(bitsets, source, node_count) if bitsets is not None
+            else _bfs(adj, source, node_count)
+        )
         reachable_sum += reachable
         pair_count += reachable
         path_sum_total += path_sum
@@ -97,30 +127,41 @@ def _largest_scc_ratio(adj: list[list[int]], node_count: int) -> float:
     lowlink = [0] * node_count
     largest = 0
 
-    def strongconnect(v: int) -> None:
-        nonlocal index, largest
-        indices[v] = index
-        lowlink[v] = index
+    # Explicit DFS frames preserve Tarjan's traversal without consuming one
+    # Python call frame per square (a supported32x32 graph can exceed1000).
+    for root in range(node_count):
+        if indices[root] != -1:
+            continue
+        indices[root] = lowlink[root] = index
         index += 1
-        stack.append(v)
-        on_stack[v] = True
-        for w in adj[v]:
+        stack.append(root)
+        on_stack[root] = True
+        frames = [(root, iter(adj[root]))]
+        while frames:
+            v, neighbors = frames[-1]
+            try:
+                w = next(neighbors)
+            except StopIteration:
+                if lowlink[v] == indices[v]:
+                    size = 0
+                    while True:
+                        w = stack.pop()
+                        on_stack[w] = False
+                        size += 1
+                        if w == v:
+                            break
+                    largest = max(largest, size)
+                frames.pop()
+                if frames:
+                    parent = frames[-1][0]
+                    lowlink[parent] = min(lowlink[parent], lowlink[v])
+                continue
             if indices[w] == -1:
-                strongconnect(w)
-                lowlink[v] = min(lowlink[v], lowlink[w])
+                indices[w] = lowlink[w] = index
+                index += 1
+                stack.append(w)
+                on_stack[w] = True
+                frames.append((w, iter(adj[w])))
             elif on_stack[w]:
                 lowlink[v] = min(lowlink[v], indices[w])
-        if lowlink[v] == indices[v]:
-            component = []
-            while True:
-                w = stack.pop()
-                on_stack[w] = False
-                component.append(w)
-                if w == v:
-                    break
-            largest = max(largest, len(component))
-
-    for v in range(node_count):
-        if indices[v] == -1:
-            strongconnect(v)
     return largest / node_count if node_count else 0.0

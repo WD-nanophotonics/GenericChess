@@ -8,24 +8,76 @@ every move.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from copy import deepcopy
 from collections.abc import Mapping
 
 from ..ai.cancellation import CancellationToken
 from ..ai.limits import SearchLimits
 from ..core.actions import Action
-from ..core.transition import apply_action
-from . import _module, native_available
+from ..core.errors import IllegalActionError
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
-from .semantic import public_action, _require_root_window_support
+from .semantic import (public_action, _require_root_window_support,
+                       _require_immediate_win_support)
 
 DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
 SPATIAL_CELL_COUNT = 9
 
 
 DECLARATION_ACTION_TAG = 1 << 63
+
+
+def _core_pv_leaf_dynamic_features(session, pv):
+    """Preserve the existing three result fields at Native's history boundary.
+
+    The search/checked PV can end at the last representable ply even though
+    Native's feature extractor needs an additional trial child. Replaying only
+    this rare boundary through Core retains the supplied complete history; it
+    does not change search authority, truncate history or suppress Native errors.
+    Preserve Native's rule-ply trial gate as well as Position-level S0-S4
+    actions. GameState's blanket terminal action gate is a different contract.
+    """
+    from ..core.semantic_executor import SemanticEngine
+    from ..core.transition import apply_action
+
+    compiled = session.compiled
+    state = session.state
+    for action in pv:
+        state = apply_action(state, action, compiled)
+    # Native trials at/past a plain rule limit have no actions, even though
+    # Position-level Core actions can exist. Automatic/S4 continuation at the
+    # last storage slot is not qualified by this narrow terminal-result repair.
+    if state.ply_count == GC_SEM_MAX_PLY and (
+        compiled.support.automatic_adjudications
+        or state.ply_count < compiled.support.max_ply
+    ):
+        raise NotImplementedError(
+            "semantic history capacity exceeded for result features; use Core evaluation"
+        )
+    allow_trials = state.ply_count < compiled.support.max_ply
+    if not allow_trials and compiled.support.automatic_adjudications:
+        from ..core.adjudication import automatic_adjudication_status
+        allow_trials = automatic_adjudication_status(
+            compiled.support.automatic_adjudications, state.ply_count, state.history
+        ) == "PENDING"
+    engine = SemanticEngine(compiled)
+    counts = []
+    for owner in (0, 1):
+        view = replace(state.position, side_to_move=owner)
+        actions = engine.legal_actions(view) if allow_trials else ()
+        promotions = sum(action.promotion_target_id is not None for action in actions)
+        anchor_moves = sum(
+            action.source is not None
+            and compiled.support.type_metadata[
+                view.board[action.source].current_type_id
+            ].is_anchor
+            for action in actions
+        )
+        counts.append((len(actions), promotions,
+                       anchor_moves - 10 * int(engine.in_check(view, owner))))
+    return tuple(a - b for a, b in zip(*counts))
 
 
 @dataclass(frozen=True, slots=True)
@@ -106,6 +158,11 @@ class SemanticIterativeSearchResult:
     policy_state_inferences_by_ply: tuple[int, ...] = ()
     policy_actions_scored_by_ply: tuple[int, ...] = ()
     policy_elapsed_nanoseconds_by_ply: tuple[int, ...] = ()
+    # Diagnostic, deduplicated bounds from this query, not all visited paths.
+    # position_identity excludes relevant history; even equal search_ply and
+    # remaining_depth can have different valid targets after real repetitions.
+    # Rows do not identify which full history produced a retained bound. Keep
+    # query provenance; do not infer history-safe target reuse or learner credit.
     training_trace: tuple[dict, ...] = ()
     training_trace_enabled: bool = False
     training_trace_count: int = 0
@@ -115,6 +172,20 @@ class SemanticIterativeSearchResult:
     # or all checked attempts: canonical selected-PV replays are separate work.
     legal_generation_count: int | None = None
     transition_count: int | None = None
+    # None means an older kernel or a search that did not start; never infer RSS.
+    ordering_cache_allocated_bytes: int | None = None
+    # Actual discarded static-ordering transitions; None for older/not-started kernels.
+    ordering_material_view_trials: int | None = None
+    # Retained iteration policy, not merely requested q depth. None means
+    # no complete iteration (or an older kernel without provenance).
+    result_ordinary_qdepth: int | None = None
+    result_check_hard_qdepth: int | None = None
+    # Main-frontier ordering attempts, including interrupted allocation/budget.
+    # None denotes an older kernel or a search that did not start.
+    main_binary_order_calls: int | None = None
+    # A verified physical root child may precede any complete main iteration.
+    immediate_win: bool = False
+    result_source: str = "main_iteration"
 
 
 def _profile_tuple(native_rules, values):
@@ -152,7 +223,10 @@ def _spatial_tuple(native_rules, values):
         expected = {f"{owner}:{type_id}" for owner in (0, 1) for type_id in type_ids}
         if set(values) != expected:
             raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
-        rows = [values[f"{owner}:{type_id}"] for owner in (0, 1) for type_id in type_ids]
+        rows = [tuple(values[f"{owner}:{type_id}"])
+                for owner in (0, 1) for type_id in type_ids]
+        if any(len(row) != SPATIAL_CELL_COUNT for row in rows):
+            raise ValueError("each spatial owner/type mapping row must contain nine values")
         result = tuple(int(value) for row in rows for value in row)
     else:
         result = tuple(int(value) for value in values)
@@ -208,8 +282,7 @@ class SemanticSearchEngine:
             raise NativeUnsupportedRuleError(
                 "native search does not support no-progress draw rules"
             )
-        if not native_available():
-            raise RuntimeError("native extension is not built")
+        self._backend = native_rules.backend_module
         if compiled.ruleset_fingerprint != native_rules.fingerprint:
             raise ValueError("ruleset fingerprint mismatch for semantic engine")
         if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
@@ -233,7 +306,7 @@ class SemanticSearchEngine:
         self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._spatial_values = _spatial_tuple(native_rules, spatial_occupancy_values)
         self._localized_control_values = _localized_control_tuple(localized_control_values)
-        self._compact_values = None if compact_values is None else dict(compact_values)
+        self._compact_values = None if compact_values is None else deepcopy(dict(compact_values))
         self._ordering_board_values = None
         self._ordering_hand_values = None
         self._ordering_dynamic_values = None
@@ -284,7 +357,7 @@ class SemanticSearchEngine:
         self._spatial_values = None if spatial is None else tuple(spatial)
         control = checkpoint.semantic_quantized_localized_control()
         self._localized_control_values = None if control is None else tuple(control)
-        self._compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
+        self._compact_values = deepcopy(dict(checkpoint.compact_nonlinear)) if checkpoint.compact_nonlinear else None
         self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
@@ -299,7 +372,7 @@ class SemanticSearchEngine:
         self._ordering_spatial_values = None if spatial is None else tuple(spatial)
         control = checkpoint.semantic_quantized_localized_control()
         self._ordering_localized_control_values = None if control is None else tuple(control)
-        self._ordering_compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
+        self._ordering_compact_values = deepcopy(dict(checkpoint.compact_nonlinear)) if checkpoint.compact_nonlinear else None
         self._ordering_evaluator_scale = checkpoint.semantic_native_scale
         self._ordering_checkpoint_id = checkpoint.checkpoint_id
 
@@ -308,7 +381,7 @@ class SemanticSearchEngine:
         if self._policy_deferred_legality:
             policy_payload = dict(policy_payload)
             policy_payload["_defer_legality"] = True
-        return _module().create_semantic_search_engine(
+        return self._backend.create_semantic_search_engine(
             self._native_rules.capsule,
             self._board_values,
             self._hand_values,
@@ -357,8 +430,11 @@ class SemanticSearchEngine:
         checkpoint.validate_ruleset(self._compiled)
         if checkpoint.checkpoint_id == self._checkpoint_id:
             return
-        self._set_checkpoint_values(checkpoint)
-        self._capsule = self._new_capsule()
+        staged = object.__new__(type(self))
+        staged.__dict__ = self.__dict__.copy()
+        staged._set_checkpoint_values(checkpoint)
+        staged._capsule = staged._new_capsule()
+        self.__dict__.update(staged.__dict__)
 
     def bind_evaluator(
         self, board_values, hand_values, dynamic_values=None,
@@ -370,16 +446,21 @@ class SemanticSearchEngine:
         hand = _profile_tuple(self._native_rules, hand_values)
         if (board is None) != (hand is None):
             raise ValueError("board_values and hand_values must be supplied together")
-        self._board_values, self._hand_values = board, hand
-        self._dynamic_values = _dynamic_tuple(dynamic_values)
-        self._spatial_values = _spatial_tuple(self._native_rules, spatial_occupancy_values)
-        self._localized_control_values = _localized_control_tuple(localized_control_values)
-        self._compact_values = None if compact_values is None else dict(compact_values)
+        # Prepare and validate an independent binding before replacing any live
+        # metadata or the capsule/TT. This engine has a single-thread contract.
+        staged = object.__new__(type(self))
+        staged.__dict__ = self.__dict__.copy()
+        staged._board_values, staged._hand_values = board, hand
+        staged._dynamic_values = _dynamic_tuple(dynamic_values)
+        staged._spatial_values = _spatial_tuple(staged._native_rules, spatial_occupancy_values)
+        staged._localized_control_values = _localized_control_tuple(localized_control_values)
+        staged._compact_values = None if compact_values is None else deepcopy(dict(compact_values))
         if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
             raise ValueError("evaluator_scale must be an integer in [1, 1024]")
-        self._evaluator_scale = evaluator_scale
-        self._checkpoint_id = None
-        self._capsule = self._new_capsule()
+        staged._evaluator_scale = evaluator_scale
+        staged._checkpoint_id = None
+        staged._capsule = staged._new_capsule()
+        self.__dict__.update(staged.__dict__)
 
     @property
     def native_evaluator_values(self) -> dict:
@@ -391,16 +472,16 @@ class SemanticSearchEngine:
             "dynamic": tuple(self._dynamic_values or ()),
             "spatial_occupancy": tuple(self._spatial_values or ()),
             "localized_control": tuple(self._localized_control_values or ()),
-            "compact_nonlinear": self._compact_values,
+            "compact_nonlinear": deepcopy(self._compact_values),
         }
 
     def clear_tt(self) -> None:
-        _module().semantic_engine_clear_tt(self._capsule)
+        self._backend.semantic_engine_clear_tt(self._capsule)
 
     def tt_info(self) -> dict:
         return {
             key: int(value)
-            for key, value in dict(_module().semantic_engine_tt_info(self._capsule)).items()
+            for key, value in dict(self._backend.semantic_engine_tt_info(self._capsule)).items()
         }
 
     def search(
@@ -412,7 +493,24 @@ class SemanticSearchEngine:
         root_order_hint: Action | None = None,
         root_window_pruning: bool = False,
         trace_enabled: bool = False,
+        stop_on_immediate_win: bool = False,
     ) -> SemanticIterativeSearchResult:
+        """Search with the requested finite main/q policy and cooperative budgets.
+
+        Nonzero q depth requires SEMANTIC_QSEARCH_VERSION=1. The first
+        complete main iteration reserves ordinary q depth zero, while checks
+        still require evasions up to the hard limit. Later iterations use
+        the requested ordinary depth. Retained policy is reported separately
+        from requested limits; a hard/q-node abort keeps the last full result.
+
+        stop_on_immediate_win explicitly opts into a decision goal: a fully checked
+        root child that actually wins may end the first iteration early. It
+        reports completed_depth=0, no completed q policy, a one-action PV, and
+        result_source="verified_root_child"; this is not a completed D1 claim.
+        A coincident budget/cancel reason is preserved alongside immediate_win.
+        False retains finite-analysis behavior;
+        a score or declaration alone never certifies a physical winning child.
+        """
         if root_order_hint is not None and (
             self._ordering_checkpoint_id is not None or self._policy_model is not None
         ):
@@ -431,17 +529,40 @@ class SemanticSearchEngine:
             and abs(limits.max_time_seconds) != float("inf")
         ):
             raise ValueError("max_time_seconds must be a finite non-negative value")
-        if limits.quiescence_max_depth != 0 or limits.quiescence_max_nodes not in (None, 0):
-            raise ValueError("SemanticSearchEngine does not implement qsearch")
+        for name in ("quiescence_max_depth", "quiescence_hard_max_depth"):
+            value = getattr(limits, name)
+            if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+                raise ValueError(f"{name} must be a non-negative integer")
+        if limits.quiescence_max_nodes is not None and (
+            isinstance(limits.quiescence_max_nodes, bool)
+            or not isinstance(limits.quiescence_max_nodes, int)
+            or limits.quiescence_max_nodes < 0
+        ):
+            raise ValueError("quiescence_max_nodes must be a non-negative integer")
+        q_args = ()
+        if limits.quiescence_max_depth > 0:
+            if getattr(self._backend, "SEMANTIC_QSEARCH_VERSION", 0) < 1:
+                raise ValueError("SemanticSearchEngine qsearch requires a rebuilt Native kernel")
+            if limits.max_depth + limits.quiescence_hard_max_depth > GC_SEM_MAX_PLY:
+                raise ValueError("main and hard q depth exceed the bounded Native stack")
+            q_args = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth,
+                      limits.quiescence_max_nodes)
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
-        _require_root_window_support(root_window_pruning)
+        _require_root_window_support(root_window_pruning, self._native_rules)
+        _require_immediate_win_support(stop_on_immediate_win, self._native_rules)
+        goal_args = ()
+        if stop_on_immediate_win:
+            # Supply existing optional q slots before the appended goal flag.
+            q_args = q_args or (0, 0, None)
+            goal_args = (True,)
         if not isinstance(trace_enabled, bool):
             raise TypeError("trace_enabled must be a bool")
         if session.result.status.value != "ongoing":
             return SemanticIterativeSearchResult(
                 0, None, None, (), (), 0, 0, 0, 0, 0.0,
                 "terminal_position", False, "NOT_STARTED", 0, 0, 0, 0, 0, 0, 0,
+                result_source="terminal_position",
             )
 
         position = pack_semantic_search_position(self._compiled, self._native_rules, session)
@@ -451,12 +572,12 @@ class SemanticSearchEngine:
         flag = None
         unregister = None
         if cancel_token is not None:
-            flag = _module().create_cancel_flag()
+            flag = self._backend.create_cancel_flag()
             unregister = cancel_token.register_callback(
-                lambda: _module().request_cancel(flag)
+                lambda: self._backend.request_cancel(flag)
             )
         try:
-            raw = dict(_module().semantic_engine_search(
+            raw = dict(self._backend.semantic_engine_search(
                 self._capsule,
                 position,
                 int(limits.max_depth),
@@ -466,6 +587,8 @@ class SemanticSearchEngine:
                 packed_root_hint,
                 root_window_pruning,
                 trace_enabled,
+                *q_args,
+                *goal_args,
             ))
         finally:
             if unregister is not None:
@@ -477,35 +600,42 @@ class SemanticSearchEngine:
         action = None if packed_best is None else public_action(
             self._native_rules, int(packed_best)
         )
+        raw_pv = tuple(int(value) for value in raw.get("principal_variation", ()))
         decision_line = []
-        for packed in raw.get("principal_variation", ()):
-            packed = int(packed)
+        leaf_position = position
+        for index, packed in enumerate(raw_pv):
+            # A checked transition validates an edge, not permission to continue a
+            # game already ended by repetition or another automatic adjudication.
+            if index and self._backend.semantic_terminal(
+                self._native_rules.capsule, leaf_position
+            )["status"] != "ongoing":
+                raise IllegalActionError("semantic PV continues after a terminal position")
             if packed & DECLARATION_ACTION_TAG:
-                index = packed & 0xFF
-                if index >= len(self._native_rules.declarations):
+                declaration_index = packed & 0xFF
+                if (packed != (DECLARATION_ACTION_TAG | declaration_index)
+                        or declaration_index >= len(self._native_rules.declarations)):
                     raise ValueError("semantic search returned invalid declaration decision")
-                decision_line.append(self._native_rules.declarations[index].declaration_id)
+                if index != len(raw_pv) - 1:
+                    raise ValueError("semantic PV continues after a declaration")
+                decision_line.append(self._native_rules.declarations[declaration_index].declaration_id)
             else:
                 decision_line.append(public_action(self._native_rules, packed))
+                try:
+                    leaf_position = self._backend.semantic_make_checked(
+                        self._native_rules.capsule, leaf_position, packed
+                    )
+                except ValueError as exc:
+                    raise IllegalActionError(str(exc)) from exc
         if declaration_id is not None and not decision_line:
             decision_line.append(declaration_id)
         pv = tuple(item for item in decision_line if not isinstance(item, str))
-        state = session.state
-        for pv_action in pv:
-            state = apply_action(state, pv_action, self._compiled)
-
         leaf_dynamic: tuple[int, int, int] = ()
         if pv:
-            leaf_position = position
-            for packed in raw.get("principal_variation", ()):
-                packed = int(packed)
-                if packed & DECLARATION_ACTION_TAG:
-                    break
-                leaf_position = _module().semantic_make_checked(
-                    self._native_rules.capsule, leaf_position, packed
-                )
-            from .semantic import dynamic_features as native_dynamic_features
-            leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
+            if session.state.ply_count + len(pv) == GC_SEM_MAX_PLY:
+                leaf_dynamic = _core_pv_leaf_dynamic_features(session, pv)
+            else:
+                from .semantic import dynamic_features as native_dynamic_features
+                leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
 
         root_first_actions = []
         for packed in raw.get("root_iteration_first_actions", ()):
@@ -542,6 +672,9 @@ class SemanticSearchEngine:
             root_iterations_attempted=int(raw.get("root_iterations_attempted", 0)),
             root_iteration_first_actions=tuple(root_first_actions),
             root_window_pruning=bool(raw.get("root_window_pruning", False)),
+            immediate_win=bool(raw.get("immediate_win", False)),
+            result_source=str(raw.get("result_source",
+                "fallback" if raw.get("used_fallback", False) else "main_iteration")),
             beta_cutoffs=int(raw.get("beta_cutoffs", 0)),
             legal_generation_count=(int(raw["legal_generation_count"])
                                     if "legal_generation_count" in raw else None),
@@ -559,16 +692,20 @@ class SemanticSearchEngine:
             ordering_cache_hit_rate=float(raw.get("ordering_cache_hit_rate", 0.0)),
             ordering_cache_capacity=int(raw.get("ordering_cache_capacity", 0)),
             ordering_cache_entry_bytes=int(raw.get("ordering_cache_entry_bytes", 0)),
+            ordering_cache_allocated_bytes=(int(raw["ordering_cache_allocated_bytes"])
+                                            if "ordering_cache_allocated_bytes" in raw else None),
+            ordering_material_view_trials=(int(raw["ordering_material_view_trials"])
+                                           if "ordering_material_view_trials" in raw else None),
             ordering_max_ply=int(raw.get("ordering_max_ply", -1)),
             ordering_min_depth=int(raw.get("ordering_min_depth", 1)),
-            ordering_evaluations_by_ply=tuple(int(value) for value in raw.get("ordering_evaluations_by_ply", ())),
-            ordering_nodes_by_ply=tuple(int(value) for value in raw.get("ordering_nodes_by_ply", ())),
-            ordering_actions_by_ply=tuple(int(value) for value in raw.get("ordering_actions_by_ply", ())),
-            ordering_elapsed_nanoseconds_by_ply=tuple(int(value) for value in raw.get("ordering_elapsed_nanoseconds_by_ply", ())),
-            ordering_cache_hits_by_ply=tuple(int(value) for value in raw.get("ordering_cache_hits_by_ply", ())),
-            ordering_cache_misses_by_ply=tuple(int(value) for value in raw.get("ordering_cache_misses_by_ply", ())),
-            ordering_cache_collisions_by_ply=tuple(int(value) for value in raw.get("ordering_cache_collisions_by_ply", ())),
-            ordering_skipped_by_remaining_depth=tuple(int(value) for value in raw.get("ordering_skipped_by_remaining_depth", ())),
+            ordering_evaluations_by_ply=tuple(map(int, raw.get("ordering_evaluations_by_ply", ()))),
+            ordering_nodes_by_ply=tuple(map(int, raw.get("ordering_nodes_by_ply", ()))),
+            ordering_actions_by_ply=tuple(map(int, raw.get("ordering_actions_by_ply", ()))),
+            ordering_elapsed_nanoseconds_by_ply=tuple(map(int, raw.get("ordering_elapsed_nanoseconds_by_ply", ()))),
+            ordering_cache_hits_by_ply=tuple(map(int, raw.get("ordering_cache_hits_by_ply", ()))),
+            ordering_cache_misses_by_ply=tuple(map(int, raw.get("ordering_cache_misses_by_ply", ()))),
+            ordering_cache_collisions_by_ply=tuple(map(int, raw.get("ordering_cache_collisions_by_ply", ()))),
+            ordering_skipped_by_remaining_depth=tuple(map(int, raw.get("ordering_skipped_by_remaining_depth", ()))),
             policy_ordering=bool(raw.get("policy_ordering", False)),
             policy_nodes=int(raw.get("policy_nodes", 0)),
             policy_state_inferences=int(raw.get("policy_state_inferences", 0)),
@@ -581,10 +718,16 @@ class SemanticSearchEngine:
             policy_traversal_checked_attempts=int(raw.get("policy_traversal_checked_attempts", 0)),
             policy_traversal_illegal_skips=int(raw.get("policy_traversal_illegal_skips", 0)),
             policy_min_depth=int(raw.get("policy_min_depth", 2)),
-            policy_nodes_by_ply=tuple(int(value) for value in raw.get("policy_nodes_by_ply", ())),
-            policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
-            policy_actions_scored_by_ply=tuple(int(value) for value in raw.get("policy_actions_scored_by_ply", ())),
-            policy_elapsed_nanoseconds_by_ply=tuple(int(value) for value in raw.get("policy_elapsed_nanoseconds_by_ply", ())),
+            policy_nodes_by_ply=tuple(map(int, raw.get("policy_nodes_by_ply", ()))),
+            policy_state_inferences_by_ply=tuple(map(int, raw.get("policy_state_inferences_by_ply", ()))),
+            policy_actions_scored_by_ply=tuple(map(int, raw.get("policy_actions_scored_by_ply", ()))),
+            policy_elapsed_nanoseconds_by_ply=tuple(map(int, raw.get("policy_elapsed_nanoseconds_by_ply", ()))),
+            result_ordinary_qdepth=(None if raw.get("result_ordinary_qdepth") is None
+                                    else int(raw["result_ordinary_qdepth"])),
+            result_check_hard_qdepth=(None if raw.get("result_check_hard_qdepth") is None
+                                      else int(raw["result_check_hard_qdepth"])),
+            main_binary_order_calls=(None if raw.get("main_binary_order_calls") is None
+                                     else int(raw["main_binary_order_calls"])),
             training_trace=tuple(dict(row) for row in raw.get("training_trace", ())),
             training_trace_enabled=bool(raw.get("training_trace_enabled", False)),
             training_trace_count=int(raw.get("training_trace_count", 0)),

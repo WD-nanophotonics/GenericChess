@@ -8,6 +8,7 @@ import math
 from time import perf_counter
 
 from generic_chess.core.search_runtime import SearchPathRuntime
+from generic_chess.core.adjudication import IncompleteAdjudicationHistoryError
 from generic_chess.core.movegen import legal_actions as public_legal_actions
 from generic_chess.core.terminal import TerminalStatus, terminal_result
 from scripts.generic_win_proof import (
@@ -124,7 +125,7 @@ class ProofMaterialPlayer:
             total.poll()
             try:
                 rt = SearchPathRuntime.from_state(state, self.compiled)
-            except NotImplementedError:
+            except (NotImplementedError, IncompleteAdjudicationHistoryError):
                 # Proof/runtime scope must not disable a caller-supplied normal
                 # player. Public legality still binds the complete GameState.
                 # This atomic generation is charged to the caller's time.

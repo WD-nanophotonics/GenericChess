@@ -202,13 +202,14 @@ def test_absent_policy_preserves_legacy_serialization_and_fingerprint():
     assert compute_fingerprint(restored) != compute_fingerprint(rules)
 
 
-def test_opted_in_ruleset_fails_closed_before_search_and_native_execution():
+def test_opted_in_ruleset_has_core_search_context_but_native_still_refuses():
     compiled = _compiled(
         ((0, "K", Square(0, 0)), (1, "K", Square(7, 7))), semantic=True
     )
     state = initial_state(compiled)
-    with pytest.raises(NotImplementedError, match="path-state identity"):
-        SearchPathRuntime(state, compiled)
+    runtime = SearchPathRuntime(state, compiled)
+    assert runtime.position == state.position
+    assert runtime.terminal_status == state.terminal_status
     with pytest.raises(NativeUnsupportedRuleError, match="no-progress draw"):
         compile_native_semantic_rules(compiled)
     assert not compiled.ir.capabilities.native_executable

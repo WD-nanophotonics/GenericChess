@@ -20,6 +20,7 @@ NATIVE_SCHEMA_VERSION = "native-0.5.0"
 
 GC_MAX_PLY = 512
 GC_SEM_MAX_PLY = 1024
+GC_SEM_MAX_RULE_PLY = 65535
 GC_MAX_HAND = 256
 
 SEMANTIC_PAYLOAD_VERSION = 4
@@ -238,6 +239,13 @@ def _sem_slot_guard(sg, n, fingerprint):
 
 
 def _sem_effect(e, n, type_map, fingerprint):
+    # On move/shift/remove this is a filter, not a concrete type operand.
+    # Core treats "any" as no constraint. Lower it to the equivalent absent
+    # filter so existing Native binaries need not resolve a wildcard as a type.
+    piece_type_ref = e.piece_type_ref
+    if (e.kind in ("move", "shift", "remove")
+            and piece_type_ref is not None and piece_type_ref.kind == "any"):
+        piece_type_ref = None
     return {
         "kind": _sem_enum(_SEM_EFFECT_CODES, e.kind, "effect kind", fingerprint),
         "from_ref": (
@@ -257,8 +265,8 @@ def _sem_effect(e, n, type_map, fingerprint):
         ),
         "piece_owner": _sem_enum(_SEM_OWNER_CODES, e.piece_owner, "piece_owner", fingerprint),
         "piece_type_ref": (
-            _sem_type_ref(e.piece_type_ref, type_map, fingerprint)
-            if e.piece_type_ref is not None
+            _sem_type_ref(piece_type_ref, type_map, fingerprint)
+            if piece_type_ref is not None
             else None
         ),
         "disposition": (
@@ -670,7 +678,11 @@ def compile_native_evaluation(
 
 @dataclass(frozen=True)
 class NativeSemanticCompilationReport:
-    """Compile-time report for the native semantic payload (Phase 1.9C-1)."""
+    """Compile-time report for the native semantic payload (Phase 1.9C-1).
+
+    estimated_bytes approximates numeric payload storage; it is not a measured
+    C allocation or a memory-safety upper bound (pointer/padding costs differ).
+    """
 
     ruleset_fingerprint: str
     ir_version: int
@@ -702,7 +714,11 @@ class NativeSemanticCompiledRules:
         declarations=(),
         repetition_policy="draw",
         semantic=None,
+        bound_stalemate_result=None,
+        *,
+        backend_module=None,
     ) -> None:
+        self._backend_module = _module() if backend_module is None else backend_module
         self._capsule = capsule
         self._report = report
         self._type_ids = tuple(type_ids)
@@ -712,6 +728,16 @@ class NativeSemanticCompiledRules:
         self._declarations = tuple(declarations)
         self._repetition_policy = str(repetition_policy)
         self._semantic = semantic
+        self._bound_stalemate_result = bound_stalemate_result
+
+    @property
+    def backend_module(self):
+        """Kernel owning this rules capsule and its dependent objects.
+
+        Existing objects never follow later changes to the default loader.
+        This binding does not expand the compiler capability/codec contract.
+        """
+        return self._backend_module
 
     @property
     def capsule(self):
@@ -763,7 +789,19 @@ class NativeSemanticCompiledRules:
     def require_terminal_policy_support(self) -> None:
         """Legality support does not imply Native terminal/search support."""
         support = getattr(self._semantic, "support", None)
-        if support is not None and support.stalemate_result != "draw":
+        if self.automatic_adjudications and not self._backend_module.native_capabilities().get(
+            "semantic_pending_continuation", False
+        ):
+            raise NativeUnsupportedRuleError(
+                "Native automatic PENDING continuation requires a rebuilt kernel; "
+                "use Core terminal/search"
+            )
+        expected = 1 if support is not None and support.stalemate_result == "loss" else 0
+        # Check C-owned metadata: an older installed binary may ignore the
+        # new optional field. Legality remains usable, but never certify loss.
+        if (expected == 1 and self._bound_stalemate_result != 1) or (
+            expected == 0 and self._bound_stalemate_result not in (None, 0)
+        ):
             raise NativeUnsupportedRuleError(
                 "Native semantic terminal/search does not support stalemate "
                 "loss policy; use Core terminal/search"
@@ -774,7 +812,9 @@ class NativeSemanticCompiledRules:
         return tuple(self._semantic.automatic_adjudications) if self._semantic else ()
 
 
-def _native_payload_is_executable(payload, report: NativeSemanticCompilationReport) -> bool:
+def _native_payload_is_executable(payload, report: NativeSemanticCompilationReport, *,
+                                  payload_version=SEMANTIC_PAYLOAD_VERSION,
+                                  max_squares=256) -> bool:
     """Validate the complete lowered payload shape for the runtime gate.
 
     The lowering function has already rejected unknown enums and unsupported
@@ -783,7 +823,7 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
     """
     required = {
         "semantic_payload_version", "fingerprint", "board_size",
-        "repetition_limit", "repetition_policy", "automatic_adjudication_ply",
+        "repetition_limit", "repetition_policy", "stalemate_result", "automatic_adjudication_ply",
         "automatic_adjudications",
         "max_ply", "type_ids", "types",
         "promo_allowed", "promo_forced", "alive_promo", "drop_mask",
@@ -824,7 +864,7 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
     ):
         return False
     return (
-        payload["semantic_payload_version"] == SEMANTIC_PAYLOAD_VERSION
+        payload["semantic_payload_version"] == payload_version
         and report.ir_version == 2
         and report.native_schema_version == NATIVE_SCHEMA_VERSION
         and report.type_count <= GC_SEM_MAX_TYPES
@@ -836,11 +876,14 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
         and report.aux_slot_count <= GC_SEM_MAX_AUX_SLOTS
         and len(payload["aux_slots"]) == report.aux_slot_count
         and len(payload["triggers"]) == report.trigger_count
-        and report.board_squares <= 256
+        and report.board_squares <= max_squares
     )
 
 
-def build_semantic_compile_payload(semantic):
+def build_semantic_compile_payload(semantic, *,
+                                   _payload_version=SEMANTIC_PAYLOAD_VERSION,
+                                   _max_squares=256,
+                                   _max_rule_ply=GC_SEM_MAX_PLY):
     """Lower ``CompiledSemanticRuleset.ir + .support`` into a deterministic
     numeric native payload (ADR-017).
 
@@ -856,6 +899,10 @@ def build_semantic_compile_payload(semantic):
     ir = semantic.ir
     support = semantic.support
     fingerprint = support.ruleset_fingerprint
+    if (_payload_version, _max_squares) not in ((4, 256), (5, 1024)):
+        raise NativeUnsupportedRuleError("unknown semantic payload/capacity contract")
+    if _max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):
+        raise NativeUnsupportedRuleError("unknown semantic rule-ply contract")
     n = support.board_size
 
     _validate(
@@ -871,14 +918,28 @@ def build_semantic_compile_payload(semantic):
     )
 
     _validate(
-        isinstance(n, int) and 1 <= n <= 16 and n * n <= 256,
+        isinstance(n, int) and 1 <= n and n * n <= _max_squares,
         "semantic board size out of native range",
         fingerprint,
     )
+    # Packed drop actions reserve source=0xFF. On wide boards that number
+    # is a real square, while Core has no drop source. Until the binding is
+    # represented separately, decline source-dependent drop state guards.
+    if n >= 16:
+        for pattern in ir.patterns:
+            if not any(ir.geometry[gid].kind == "drop" for gid in pattern.geometry_ids):
+                continue
+            for guard in pattern.guards:
+                refs = guard.spatial.refs + ((guard.subject_ref,) if guard.subject_ref is not None else ())
+                _validate(
+                    not any(ref.kind in ("source", "offset_from_source", "path_step") for ref in refs),
+                    "wide drop state guards with source references require Core execution",
+                    fingerprint,
+                )
     _validate(ir.ir_version == 2, "unsupported semantic IR version", fingerprint)
     _validate(
-        support.max_ply <= GC_SEM_MAX_PLY,
-        f"max_ply {support.max_ply} exceeds native semantic limit {GC_SEM_MAX_PLY}",
+        1 <= support.max_ply <= _max_rule_ply,
+        f"max_ply {support.max_ply} exceeds native semantic limit {_max_rule_ply}",
         fingerprint,
     )
     _validate(
@@ -1127,10 +1188,11 @@ def build_semantic_compile_payload(semantic):
         )
 
     payload = {
-        "semantic_payload_version": SEMANTIC_PAYLOAD_VERSION,
+        "semantic_payload_version": _payload_version,
         "fingerprint": fingerprint,
         "board_size": n,
         "repetition_limit": support.repetition_limit,
+        "stalemate_result": _sem_enum({"draw": 0, "loss": 1}, support.stalemate_result, "stalemate result", fingerprint),
         "repetition_policy": _sem_enum(
             _SEM_REPETITION_POLICY_CODES,
             support.repetition_policy,
@@ -1162,7 +1224,9 @@ def build_semantic_compile_payload(semantic):
     }
 
     estimated = (
-        65
+        # C-owned uint16 capture counts and per-type pattern subsequences.
+        GC_SEM_MAX_TYPES * (1 + GC_SEM_MAX_PATTERNS) * 2
+        + 65
         + len(types) * 16
         + sum(
             (len(pairs[0]) + len(pairs[1])) * 4
@@ -1171,10 +1235,13 @@ def build_semantic_compile_payload(semantic):
             for pairs, forced, drop in zip(promo_allowed, promo_forced, drop_mask)
         )
         + len(type_ids) * 2 * n * n * 8
+        # Logical uint16 source/count plus uint16 targets, once per path.
+        # This is a payload estimate, not a C allocation/peak-memory bound.
         + sum(
-            (len(o0) + len(o1)) * (4 + 2 * sum(len(e) for e in o0 + o1))
-            for g in geometries
-            for o0, o1 in [tuple(g["paths"])]
+            4 + 2 * len(squares)
+            for geometry in geometries
+            for owner_paths in geometry["paths"]
+            for _source, squares in owner_paths
         )
         + sum(len(z["squares"]) * 2 for z in zones)
         + len(aux_slots) * 24
@@ -1185,7 +1252,7 @@ def build_semantic_compile_payload(semantic):
     report = NativeSemanticCompilationReport(
         ruleset_fingerprint=fingerprint,
         ir_version=ir.ir_version,
-        semantic_payload_version=SEMANTIC_PAYLOAD_VERSION,
+        semantic_payload_version=_payload_version,
         native_schema_version=NATIVE_SCHEMA_VERSION,
         board_squares=n * n,
         type_count=len(type_ids),
@@ -1198,23 +1265,102 @@ def build_semantic_compile_payload(semantic):
         estimated_bytes=estimated,
         native_executable=False,
     )
-    report = replace(report, native_executable=_native_payload_is_executable(payload, report))
+    report = replace(report, native_executable=_native_payload_is_executable(payload, report,
+        payload_version=_payload_version, max_squares=_max_squares))
     return payload, report
 
 
-def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
+def _semantic_backend_contract(backend, *, explicit: bool):
+    """Select a known transport contract, separately from legacy capacities."""
+    capabilities = getattr(backend, "native_capabilities", None)
+    if not callable(capabilities):
+        if not explicit:
+            return SEMANTIC_PAYLOAD_VERSION, 256  # Existing default facades.
+        raise NativeUnsupportedRuleError("explicit semantic backend lacks capabilities")
+    caps = capabilities()
+    version = caps.get("semantic_payload_version", SEMANTIC_PAYLOAD_VERSION
+                       if not explicit else None)
+    if version == 4:
+        return 4, 256
+    if (version == 5 and caps.get("semantic_max_squares") == 1024
+            and caps.get("semantic_action_encoding_version") == 2
+            and caps.get("semantic_public_action_fields_version") == 1):
+        return 5, 1024
+    raise NativeUnsupportedRuleError(
+        "semantic backend has an unsupported payload/action dictionary contract")
+
+
+def _requires_actor_relative_effect_binding(semantic):
+    # Core binds these references to the original action actor. Older kernels
+    # resolved them against the affected (possibly already transformed) piece.
+    for pattern in semantic.ir.patterns:
+        for effect in pattern.effects:
+            ref = (effect.piece_type_ref
+                   if effect.kind in ("move", "shift", "remove") else
+                   effect.type_ref if effect.kind == "set_current_type" else None)
+            if ref is not None and ref.kind in ("action_base", "action_current"):
+                return True
+    return False
+
+
+
+def _requires_state_guard_comparisons(semantic):
+    # Older kernels failed unresolved subjects before comparing zero, and
+    # treated exists as a truth test regardless of its comparison/value.
+    # Conservatively decline all subject-bound guards on those kernels.
+    return any(
+        guard.subject_ref is not None
+        or (guard.aggregation == "exists"
+            and (guard.comparison, guard.value) != ("eq", 1))
+        for pattern in semantic.ir.patterns
+        for guard in pattern.guards
+    )
+
+
+def compile_native_semantic_rules(semantic, *, backend_module=None) -> NativeSemanticCompiledRules:
     """Compile a CompiledSemanticRuleset into the C-owned semantic rules
-    capsule (compile-only contract; no semantic execution)."""
+    capsule (compile-only contract; no semantic execution).
+
+    An explicit separately built backend owns its capsules. Only known payload
+    and public-action dictionary contracts are accepted; the global/default
+    module and its fallback routing are unchanged.
+    """
     if getattr(semantic, "no_progress_draw", None) is not None:
         raise NativeUnsupportedRuleError(
             "native execution does not support no-progress draw rules"
         )
-    if not native_available():
+    if backend_module is None and not native_available():
         raise NativeUnsupportedRuleError(
             "native extension is not built; run scripts/build_native_zig.py"
         )
-    payload, report = build_semantic_compile_payload(semantic)
-    capsule = _module().compile_semantic_rules(payload)
+    backend = _module() if backend_module is None else backend_module
+    version, max_squares = _semantic_backend_contract(backend, explicit=backend_module is not None)
+    capability_query = getattr(backend, "native_capabilities", None)
+    capabilities = capability_query() if callable(capability_query) else {}
+    if (_requires_actor_relative_effect_binding(semantic)
+            and not capabilities.get("semantic_actor_relative_effect_binding", False)):
+        raise NativeUnsupportedRuleError(
+            "Native actor-relative type effects require a rebuilt kernel; "
+            "use Core execution")
+    if (_requires_state_guard_comparisons(semantic)
+            and not capabilities.get("semantic_state_guard_comparisons", False)):
+        raise NativeUnsupportedRuleError(
+            "Native state-guard comparisons require a rebuilt kernel; "
+            "use Core execution")
+    max_rule_ply = capabilities.get("semantic_max_rule_ply", GC_SEM_MAX_PLY)
+    if type(max_rule_ply) is not int or max_rule_ply not in (GC_SEM_MAX_PLY, GC_SEM_MAX_RULE_PLY):
+        raise NativeUnsupportedRuleError("unsupported semantic rule-ply capability")
+    if ((version, max_squares) == (SEMANTIC_PAYLOAD_VERSION, 256)
+            and semantic.support.max_ply <= GC_SEM_MAX_PLY):
+        # Preserve the existing default builder path for ordinary rules and
+        # facades; only a long rule needs the newly advertised admission bound.
+        payload, report = build_semantic_compile_payload(semantic)
+    else:
+        payload, report = build_semantic_compile_payload(semantic,
+            _payload_version=version, _max_squares=max_squares,
+            _max_rule_ply=max_rule_ply)
+    capsule = backend.compile_semantic_rules(payload)
+    bound_stalemate_result = backend.semantic_rules_info(capsule).get("stalemate_result")
     type_ids = tuple(sorted(semantic.support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in semantic.ir.patterns)
     geometry_ids = tuple(sorted(semantic.ir.geometry))
@@ -1235,4 +1381,6 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         declarations=semantic.ir.declarations,
         repetition_policy=semantic.support.repetition_policy,
         semantic=semantic,
+        bound_stalemate_result=bound_stalemate_result,
+        backend_module=backend,
     )

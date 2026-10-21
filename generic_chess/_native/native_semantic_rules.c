@@ -1064,6 +1064,61 @@ static int sem_alloc_uint32_list(PyObject *list, uint32_t **out,
     return 1;
 }
 
+/* Compile a conservative union over the SAME first source entry used below.
+ * A zero bit only proves geometric impossibility. Positive bits still visit
+ * every matching target occurrence and all path/state/slot guards.
+ * Failure or bounded construction exhaustion leaves the ordinary scanner active;
+ * no position, auxiliary state, history or attack result is cached. */
+static void sem_build_attack_membership(GCSemanticRules *r) {
+    size_t cells = (size_t)r->board_size * r->board_size;
+    size_t stride = (cells + 7) / 8;
+    size_t bytes = (size_t)r->type_count * 2 * cells * stride;
+    if (bytes == 0 || bytes > 2097152) return;
+    unsigned char *bits = (unsigned char *)calloc(bytes, 1);
+    if (bits == NULL) return;
+    size_t work = 0;
+    for (uint16_t type = 0; type < r->type_count; type++) {
+        for (uint8_t owner = 0; owner < 2; owner++) {
+            for (uint16_t ci = 0; ci < r->capture_pattern_count[type]; ci++) {
+                const GCSemPattern *pattern =
+                    &r->patterns[r->capture_pattern_indices[type][ci]];
+                for (uint8_t gi = 0; gi < pattern->geometry_count; gi++) {
+                    if (++work > 2000000) goto fallback;
+                    uint16_t gid = pattern->geometry_indices[gi];
+                    if (gid >= r->geometry_count) continue;
+                    const GCSemGeometry *geo = &r->geometries[gid];
+                    if (geo->kind == 2 ||
+                        (geo->has_atom_source && geo->atom_source_type != type))
+                        continue;
+                    /* First array occurrence equals path_entry's direct,
+                     * lower-bound AND unsorted-fallback contracts. Count the
+                     * entry traversal itself, including ignored duplicates. */
+                    unsigned char seen[GC_MAX_SQUARES] = {0};
+                    const GCSemPathOwner *paths = &geo->paths[owner];
+                    for (uint32_t ei = 0; ei < paths->count; ei++) {
+                        if (++work > 2000000) goto fallback;
+                        const GCSemPathEntry *entry = &paths->entries[ei];
+                        uint16_t source = entry->source;
+                        if (source >= cells || seen[source]) continue;
+                        seen[source] = 1;
+                        for (uint16_t ti = 0; ti < entry->count; ti++) {
+                            if (++work > 2000000) goto fallback;
+                            uint16_t target = entry->squares[ti];
+                            if (target >= cells) continue;
+                            size_t key = (((size_t)type * 2 + owner) * cells +
+                                          source) * stride + target / 8;
+                            bits[key] |= (unsigned char)(1u << (target % 8));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    r->attack_membership = bits;
+    return;
+fallback:
+    free(bits);
+}
 GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     if (!PyDict_Check(payload)) {
         PyErr_SetString(PyExc_TypeError,
@@ -1132,6 +1187,19 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
     rules->repetition_policy = repetition_policy;
+
+    uint8_t stalemate_result = 0; /* Older payloads retain draw semantics. */
+    PyObject *stalemate_obj = PyDict_GetItemString(payload, "stalemate_result");
+    if (stalemate_obj != NULL && !sem_u8(stalemate_obj, &stalemate_result)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (stalemate_result > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic stalemate_result out of range");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->stalemate_result = stalemate_result;
 
     uint16_t automatic_ply = 0;
     PyObject *automatic_obj = PyDict_GetItemString(payload, "automatic_adjudication_ply");
@@ -1208,7 +1276,9 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         gc_semantic_rules_free(rules);
         return NULL;
     }
-    if (max_ply < 1 || max_ply > GC_SEM_MAX_PLY) {
+    /* Rule adjudication is distinct from the fixed per-position history store.
+     * sem_u16 already checks the upper bound; search admission checks storage. */
+    if (max_ply < 1) {
         PyErr_SetString(PyExc_ValueError, "semantic max_ply out of range");
         gc_semantic_rules_free(rules);
         return NULL;
@@ -1324,7 +1394,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         uint64_t tc64;
-        if (!sem_list_len(targets, GC_MAX_PROMO_TARGETS, &tc64)) {
+        if (!sem_list_len(targets, GC_SEM_MAX_PROMO_TARGETS, &tc64)) {
             PyErr_SetString(PyExc_ValueError, "too many promotion targets");
             gc_semantic_rules_free(rules);
             return NULL;
@@ -1587,6 +1657,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 }
                 rules->geometries[g].paths[o].count = n;
             }
+            rules->geometries[g].paths[o].sources_sorted = 1;
             for (uint16_t i = 0; i < n; i++) {
                 PyObject *entry = PyList_GetItem(owner_entries, i);
                 if (!PyList_Check(entry) || PyList_Size(entry) != 2) {
@@ -1608,6 +1679,8 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 }
                 GCSemPathEntry *pe = &rules->geometries[g].paths[o].entries[i];
                 pe->source = source;
+                if (i && rules->geometries[g].paths[o].entries[i-1].source > source)
+                    rules->geometries[g].paths[o].sources_sorted = 0;
                 PyObject *sqs = PyList_GetItem(entry, 1);
                 if (!sem_alloc_uint16_list(sqs, &pe->squares, &pe->count, 0xFFFF)) {
                     gc_semantic_rules_free(rules);
@@ -2157,12 +2230,29 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
 
+    /* Stable, deduplicated capture-pattern subsequences for each current type. */
+    for (uint16_t type = 0; type < rules->type_count; type++) {
+        for (uint16_t pi = 0; pi < rules->pattern_count; pi++) {
+            const GCSemPattern *pattern = &rules->patterns[pi];
+            if (pattern->target != 1) continue;
+            for (uint8_t ti = 0; ti < pattern->type_count; ti++) {
+                if (pattern->type_indices[ti] == type) {
+                    uint16_t count = rules->capture_pattern_count[type]++;
+                    rules->capture_pattern_indices[type][count] = pi;
+                    break;
+                }
+            }
+        }
+    }
+    sem_build_attack_membership(rules);
     return rules;
 }
 
 /* ------------------------------------------------------------------ free */
 
 void gc_semantic_rules_free(GCSemanticRules *rules) {
+    if (rules != NULL) free(rules->attack_membership);
+
     if (rules == NULL) {
         return;
     }
@@ -2890,6 +2980,7 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
     SEM_INFO_SET("board_size", PyLong_FromUnsignedLong(rules->board_size));
     SEM_INFO_SET("repetition_limit", PyLong_FromUnsignedLong(rules->repetition_limit));
     SEM_INFO_SET("repetition_policy", PyLong_FromUnsignedLong(rules->repetition_policy));
+    SEM_INFO_SET("stalemate_result", PyLong_FromUnsignedLong(rules->stalemate_result));
     SEM_INFO_SET("automatic_adjudication_ply",
                  rules->automatic_adjudication_ply
                      ? PyLong_FromUnsignedLong(rules->automatic_adjudication_ply)

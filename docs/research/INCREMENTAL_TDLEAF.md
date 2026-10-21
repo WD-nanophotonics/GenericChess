@@ -510,3 +510,58 @@ the previous late-query failure shows why an initial root cannot establish
 episode throughput. Next run one fresh bounded episode with the same learner,
 not transferred learned weights, before choosing another training run. Stronger
 foe calibration remains a separate future question; no MCTS/Elo framework follows.
+
+## Reuse committed mainline infrastructure, 2026-10-21
+
+Direct user correction makes published sandbox infrastructure the default
+sidemission baseline. Imported source is sandbox
+`6a4f8868d767b41ffc07ff5ddbb7bce448417aaa`, including Core no-progress context,
+history identity/terminal precedence, rule execution, Python/Native search,
+evaluation and their product/development/specification tests. Native rebuilt
+locally. DEV_AUX's episode learner and role-local records remain independent;
+no PRIMARY uncommitted work, results/producers or operational state is adopted.
+
+The learner now creates the shared Core SearchPathRuntime for hypothetical
+search children. Full root admission, including no-progress replay, is paid
+inside the existing query time allowance. Actual episode moves and saved
+records remain GameSession operations. `use_runtime=False` selects the public
+session reference for validation; it implements no separate rules or adjudicator.
+Material channels now read typed semantic support without requiring an
+inspection-only legacy handle. No TD arithmetic, material priors, q0 admission,
+last-completed-depth rule, UNKNOWN handling or frozen old results were changed.
+
+One bounded local D2 comparison uses identical seed67183, unit weights,
+100000nodes/30s per query and all paid root work. On two actual8-ply no-progress
+histories, reference/runtime agree exactly on17/23nodes, action, value, PV
+features/terminal flag and every interval sample. Public transition replay calls
+fall150→8 and210→8; the8 calls are the once-per-query root admission. In one
+measurement elapsed time is.0586→.00724s and.0770→.00694s. On the second natural
+rule at its real ply8 history, both complete552nodes with identical results;
+elapsed time1.039→.215s (about531→2564nodes/s). These are single local timing
+observations under ordinary concurrency, not portable speedup estimates or
+playing-strength effects. Search-node visits are not primitive transition counts.
+
+All238 shared package source files match the fixed sandbox commit after normal
+Git line-ending normalization; `learning/incremental.py` is the only AUX-only
+package file. Final integration regression:3953passed,1skipped in325.35s.
+The first attempt's3 failures and74 errors remain private: two retained proof
+prototype tests encountered stricter root admission, one temporary local Git
+transport test lacked sandbox permission, and Native fault-build fixtures lacked
+access to the existing Zig library. The optional prototype now explicitly uses
+its public legal fallback when Core rejects incomplete adjudication history;
+Core admission is unchanged. The permitted rerun fixes the test environment;
+no checks were removed or skipped to obtain the passing result.
+
+The second natural rule's original fresh feasibility episode (before enabling
+the shared search path) used seed27187, random[.5,1.5] nonfixed coordinates,
+uniform fixedD1 foe, iterativeD2 candidate,H64,8192/query,60000/game and120s.
+It ends actual player0 checkmate after11plies/11queries/6686nodes in10.775836s.
+All history replays and one nonzero frozen-episode TD update complete; terminal
+credit is0 because its final search prediction is already terminal. This is one
+feasibility episode, not strength, transfer of weights or evidence of a second
+rule's learning gain. Its old cap/output is closed.
+
+Next use the previously frozen first-rule trained and initial weights in direct
+iterativeD2 games with paired colors/openings and a small fixedD3-foe calibration.
+The old D1-foe study stays unchanged. Different studies' bounds[3/8,1] and
+[1/16,3/16] cannot establish a causal ranking of depth versus learning gains.

@@ -83,6 +83,10 @@ def add_offset(sq: Square, offset: Offset, n: int | BoardShape) -> Square | None
 
 def square_to_index(sq: Square, n: int | BoardShape) -> int:
     """Row-major index: ``rank * width + file`` (rank 0 is the first row)."""
+    # Valid builtin square extents need no temporary BoardShape allocation.
+    # Keep shape, subclass and invalid-input handling on the original path.
+    if type(n) is int and n > 0:
+        return sq.rank * n + sq.file
     return sq.rank * _shape(n).width + sq.file
 
 

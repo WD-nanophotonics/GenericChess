@@ -436,6 +436,18 @@ class MainWindow(QMainWindow):
             return tr.text("result.draw"), tr.text("result.repetition")
         if status == "max_ply":
             return tr.text("result.draw"), tr.text("result.max_ply")
+        if status == "perpetual_check":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.wins", player=winner), tr.text("result.perpetual_check")
+        if status == "no_contest":
+            return tr.text("result.no_contest"), ""
+        if status == "action_class_draw":
+            return tr.text("result.draw"), tr.text("result.action_class_draw")
+        if status == "no_progress_draw":
+            return tr.text("result.draw"), tr.text("result.no_progress_draw")
+        if status == "rule_loss":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.wins", player=winner), tr.text("result.rule_loss")
         if status == "resignation":
             loser = result.resigned_by
             winner = 1 - loser
@@ -444,6 +456,30 @@ class MainWindow(QMainWindow):
             return (
                 tr.text("result.wins", player=winner_name),
                 tr.text("result.resigned", player=loser_name),
+            )
+        if status == "declaration":
+            if result.winner is None:
+                winner_line = tr.text("result.no_contest")
+            else:
+                winner_name = tr.text(
+                    "player.white" if result.winner == 0 else "player.black"
+                )
+                winner_line = tr.text("result.wins", player=winner_name)
+            outcome_keys = {
+                "WIN": "result.declaration_win",
+                "LOSS": "result.declaration_loss",
+                "RESTART": "result.declaration_restart",
+                "NO_CONTEST": "result.no_contest",
+            }
+            outcome_key = outcome_keys.get(result.declaration_outcome)
+            outcome = (
+                tr.text(outcome_key)
+                if outcome_key else str(result.declaration_outcome)
+            )
+            return winner_line, tr.text(
+                "result.declaration",
+                declaration=result.declaration_id,
+                outcome=outcome,
             )
         return "", ""
 
@@ -481,8 +517,11 @@ class MainWindow(QMainWindow):
             )
         if self._controller.ai_thinking:
             base += " · " + tr.text("status.ai_thinking")
-        if self._ai_error is not None:
-            base += f" · {tr.text('status.ai_error')}: {self._ai_error}"
+        ai_error = self._ai_error
+        if ai_error is None and self._controller.ai_stop_requested:
+            ai_error = self._controller.last_error
+        if ai_error is not None:
+            base += f" · {tr.text('status.ai_error')}: {ai_error}"
         if info.record_path:
             base += " · " + tr.text("status.saved")
         if self._settings.get(KEY_SHOW_DEV_STATUS, False):
@@ -494,7 +533,17 @@ class MainWindow(QMainWindow):
         self._act_undo.setEnabled(has_game and self._controller.can_undo)
         self._act_redo.setEnabled(has_game and self._controller.can_redo)
         self._act_resign.setEnabled(has_game)
-        self._act_stop_ai.setEnabled(self._controller.ai_thinking)
+        retrying = (
+            self._controller.ai_stop_requested
+            and not self._controller.ai_thinking
+            and (self._ai_thread is None or not self._ai_thread.isRunning())
+        )
+        self._act_stop_ai.setText(
+            self._tr.text("menu.retry_ai" if retrying else "menu.stop_ai")
+        )
+        self._act_stop_ai.setEnabled(
+            self._controller.ai_thinking or retrying
+        )
         self._act_return.setEnabled(
             self._controller.interaction.displayed_ply is not None
         )
@@ -611,8 +660,18 @@ class MainWindow(QMainWindow):
         self._update_action_enabled()
 
     def _on_ai_progress(self, depth: int, nodes: int, qnodes: int) -> None:
+        thread = self.sender()
+        if thread is not self._ai_thread:
+            return
+        token = getattr(thread, "_token", None)
+        if token is not None and token.is_cancelled():
+            return
+        snapshot = getattr(thread, "_snapshot", None)
+        if self._controller.is_ai_search_stale(snapshot):
+            return
+        total_nodes = nodes + qnodes
         self._status_main.setText(
-            f"{self._tr.text('status.ai_thinking')} · depth {depth} · {nodes:,} nodes"
+            f"{self._tr.text('status.ai_thinking')} · depth {depth} · {total_nodes:,} nodes"
         )
 
     def _on_ai_finished(self, _decision) -> None:
@@ -634,6 +693,13 @@ class MainWindow(QMainWindow):
             self._maybe_start_ai()
 
     def _on_ai_error(self, message: str) -> None:
+        thread = self.sender()
+        if thread is not self._ai_thread:
+            return
+        snapshot = getattr(thread, "_snapshot", None)
+        # A delayed error from an old worker must not cancel a replacement match.
+        if self._controller.is_ai_search_stale(snapshot):
+            return
         self._controller.cancel_ai()
         self._ai_error = message
         self._refresh()
@@ -643,7 +709,6 @@ class MainWindow(QMainWindow):
             self._controller.cancel_ai()
         else:
             self._controller.clear_stop_request()
-            self._maybe_start_ai()
 
     def _cancel_ai_state(self) -> bool:
         """Request AI cancellation, wait briefly, and clear owned references

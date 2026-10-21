@@ -14,7 +14,10 @@ from generic_chess import (
     build_western_chess_ruleset,
     compile_ruleset_for_execution,
 )
-from generic_chess.core.declarations import InvalidDeclarationError
+from generic_chess.core.declarations import (
+    InvalidDeclarationError,
+    _available_declarations_position,
+)
 from generic_chess.core.terminal import TerminalResult, TerminalStatus
 from generic_chess.rules.schema import (
     RuleDeclaration,
@@ -129,6 +132,31 @@ def test_assessment_scores_zone_and_hands_without_mutating_position():
     assert position == before
     assert [item.declaration_id for item in available_declarations(_state(compiled, position), compiled)] == ["opaque_claim"]
     assert compiled.ir.capabilities.native_executable is False
+
+
+def test_many_compiled_declarations_keep_order_and_outcomes_for_core_and_search():
+    base = _claim_ruleset()
+    template = base.declarations[0]
+    rules = replace(
+        base,
+        declarations=tuple(
+            replace(template, declaration_id=f"claim_{index}")
+            for index in range(128)
+        ),
+    )
+    compiled = compile_ruleset_for_execution(rules)
+    position = _claim_position(compiled)
+    state = _state(compiled, position)
+
+    public = available_declarations(state, compiled)
+    search = _available_declarations_position(position, state.ply_count, compiled)
+    assert public == search
+    assert [item.declaration_id for item in public] == [
+        f"claim_{index}" for index in range(128)
+    ]
+    assert {(item.actor, item.outcome, item.weighted_score) for item in public} == {
+        (0, "WIN", 7)
+    }
 
 
 def test_threshold_owner_and_failed_declaration_controls():
@@ -510,3 +538,164 @@ def test_product_shogi_continuous_check_repetition_and_ordinary_control():
     assert ordinary_child.terminal_status.status is TerminalStatus.REPETITION
     assert ordinary_child.terminal_status.winner is None
     assert not any(record.gave_check for record in ordinary_child.history[-12:])
+
+
+def test_alphabeta_avoids_a_child_win_declaration_when_a_capture_removes_it():
+    """One-ply search must account for declarations available only after a move."""
+    from generic_chess import Piece
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.alphabeta.search import reference_minimax
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.transition import legal_successors
+    from generic_chess.session.session import GameSession
+
+    compiled = compile_ruleset_for_execution(_claim_ruleset())
+    position = _claim_position(compiled)
+    board = list(position.board)
+    board[57] = Piece(1, "R", "R")  # rook on b8 can capture the claim's rook on b1
+    state = _state(compiled, replace(position, board=tuple(board), side_to_move=1))
+
+    class ZeroEvaluator:
+        def evaluate(self, _state):
+            return 0
+
+        def capture_order_value(self, _mover, _occupant):
+            return 0
+
+    session = GameSession(compiled)
+    session._state = state
+    evaluator = ZeroEvaluator()
+    player = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=evaluator,
+        use_disk_cache=False,
+        use_tt=True,
+        use_ordering=True,
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=False),
+    )
+    decision = player.choose_action(
+        session, SearchLimits(max_depth=1, quiescence_max_depth=0)
+    )
+    reference_score, reference_action = reference_minimax(
+        state, 1, evaluator, compiled
+    )
+
+    successors = legal_successors(state, compiled)
+    capture = next(
+        action
+        for action, child in successors
+        if child.position.board[1] == Piece(1, "R", "R")
+    )
+    child_win_actions = {
+        action
+        for action, child in successors
+        if any(
+            declaration.outcome == "WIN"
+            for declaration in available_declarations(child, compiled)
+        )
+    }
+
+    assert capture not in child_win_actions
+    assert child_win_actions  # the alternative moves leave the owner's claim live
+    assert decision.action == capture == reference_action
+    assert decision.score == reference_score == 0
+    assert decision.completed_depth == 1
+    assert decision.declaration_win_options > 0
+    assert session.state == state  # search must not commit any candidate transition
+
+
+@pytest.mark.parametrize("neutral_outcome", ("RESTART", "NO_CONTEST"))
+def test_alphabeta_applies_a_child_neutral_declaration_floor(neutral_outcome):
+    """A child neutral declaration floors its value and can change its parent."""
+    from generic_chess import Piece
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.alphabeta.search import reference_minimax
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    from generic_chess.ai.limits import SearchLimits
+    from generic_chess.core.transition import legal_successors
+    from generic_chess.session.session import GameSession
+
+    class ClaimFloorEvaluator:
+        def evaluate(self, state):
+            # Test-only values separate the claim-preserving and claim-removing
+            # branches; they are not a utility or strength estimate.
+            return -5 if state.position.board[1] == Piece(0, "R", "R") else -1
+
+        def capture_order_value(self, _mover, _occupant):
+            return 0
+
+    def decide(declarations_enabled):
+        ruleset = _claim_ruleset()
+        if declarations_enabled:
+            claim = replace(
+                ruleset.declarations[0],
+                outcome_bands=(
+                    RuleDeclarationOutcomeBand(7, "WIN"),
+                    RuleDeclarationOutcomeBand(4, neutral_outcome),
+                ),
+            )
+            ruleset = replace(ruleset, declarations=(claim,))
+        else:
+            ruleset = replace(ruleset, declarations=())
+        compiled = compile_ruleset_for_execution(ruleset)
+        position = _claim_position(compiled, score_state="restart")
+        board = list(position.board)
+        board[57] = Piece(1, "R", "R")
+        state = _state(compiled, replace(position, board=tuple(board), side_to_move=1))
+        session = GameSession(compiled)
+        session._state = state
+        evaluator = ClaimFloorEvaluator()
+        player = AlphaBetaPlayer(
+            compiled,
+            evaluator_override=evaluator,
+            use_disk_cache=False,
+            use_tt=True,
+            use_ordering=True,
+            use_native_semantic_legality=False,
+            tuning=SearchTuning(use_root_tactical=False),
+        )
+        decision = player.choose_action(
+            session, SearchLimits(max_depth=1, quiescence_max_depth=0)
+        )
+        reference_score, reference_action = reference_minimax(
+            state, 1, evaluator, compiled
+        )
+        successors = legal_successors(state, compiled)
+        capture = next(
+            action
+            for action, child in successors
+            if child.position.board[1] == Piece(1, "R", "R")
+        )
+        claim_actions = {
+            action
+            for action, child in successors
+            if any(
+                declaration.outcome == neutral_outcome
+                for declaration in available_declarations(child, compiled)
+            )
+        }
+        return (
+            session,
+            state,
+            decision,
+            reference_score,
+            reference_action,
+            capture,
+            claim_actions,
+        )
+
+    with_claim = decide(True)
+    without_claim = decide(False)
+    session, state, decision, ref_score, ref_action, capture, claim_actions = with_claim
+    plain_decision = without_claim[2]
+    plain_ref_score, plain_ref_action = without_claim[3:5]
+
+    assert decision.action == capture == ref_action
+    assert decision.score == ref_score == 1
+    assert capture not in claim_actions and claim_actions
+    assert plain_decision.action == plain_ref_action
+    assert plain_decision.score == plain_ref_score == 5
+    assert plain_decision.action != decision.action
+    assert session.state == state

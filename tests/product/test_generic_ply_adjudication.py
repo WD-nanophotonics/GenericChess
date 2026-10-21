@@ -2,6 +2,8 @@ from dataclasses import replace
 
 import pytest
 
+from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+from generic_chess.ai.limits import SearchLimits
 from generic_chess import (
     GameState,
     RuleAutomaticAdjudication,
@@ -27,6 +29,8 @@ from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import compute_fingerprint, ruleset_from_dict, ruleset_to_dict
 from generic_chess.rules.serialization import deserialize_ruleset, serialize_ruleset
 from generic_chess.session.result import SessionStatus, session_result_from_terminal
+from generic_chess.session.session import GameSession
+from rule_semantics_ir_fixtures import weird_rulesets
 
 
 def _ruleset(trigger=4, *, max_ply=512, owner=0):
@@ -135,6 +139,54 @@ def test_repetition_precedes_automatic_and_no_contest_is_session_draw_style():
     assert session.status is SessionStatus.NO_CONTEST
     assert str(session) == "no-contest/restart"
     assert terminal_score(no_contest, 0, 500) == 0
+
+
+def test_semantic_search_scores_max_ply_child_as_rule_draw():
+    ruleset = replace(weird_rulesets()[2], max_ply=1)
+    compiled = compile_semantic_ruleset(ruleset)
+    session = GameSession(compiled)
+    actions = tuple(session.legal_actions())
+    assert actions
+    before = session.to_record()
+
+    for action in actions:
+        child = GameSession(compiled)
+        child.submit(action)
+        assert child.result.status is SessionStatus.MAX_PLY
+
+    class PreferSideToMove:
+        def evaluate(self, state):
+            return 1_234 if state.position.side_to_move == 0 else -1_234
+
+        def type_value(self, _type_id):
+            return 0
+
+        def capture_order_value(self, _moving, _captured):
+            return 0
+
+    decision = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferSideToMove(),
+        use_disk_cache=False,
+        use_tt=False,
+        use_ordering=False,
+        use_native_semantic_legality=False,
+    ).choose_action(
+        session,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=5_000,
+            max_time_seconds=10,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+
+    assert decision.action in actions
+    assert decision.score == 0
+    assert decision.completed_depth == 1
+    assert decision.result_source == "main_iteration"
+    assert session.to_record() == before
 
 
 def test_checkmate_precedes_automatic(monkeypatch):

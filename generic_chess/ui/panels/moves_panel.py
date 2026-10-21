@@ -132,10 +132,46 @@ class MovesPanel(QWidget):
             return tr.text("result.repetition") + " · " + tr.text("result.draw")
         if status == "max_ply":
             return tr.text("result.max_ply") + " · " + tr.text("result.draw")
+        if status == "perpetual_check":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.perpetual_check") + " · " + tr.text("result.wins", player=winner)
+        if status == "no_contest":
+            return tr.text("result.no_contest")
+        if status == "action_class_draw":
+            return tr.text("result.action_class_draw") + " · " + tr.text("result.draw")
+        if status == "no_progress_draw":
+            return tr.text("result.no_progress_draw") + " · " + tr.text("result.draw")
+        if status == "rule_loss":
+            winner = tr.text("player.white" if result.winner == 0 else "player.black")
+            return tr.text("result.rule_loss") + " · " + tr.text("result.wins", player=winner)
         if status == "resignation":
             loser = result.resigned_by
             loser_name = tr.text("player.white" if loser == 0 else "player.black")
             return tr.text("result.resigned", player=loser_name)
+        if status == "declaration":
+            if result.winner is None:
+                winner_line = tr.text("result.no_contest")
+            else:
+                winner_name = tr.text(
+                    "player.white" if result.winner == 0 else "player.black"
+                )
+                winner_line = tr.text("result.wins", player=winner_name)
+            outcome_keys = {
+                "WIN": "result.declaration_win",
+                "LOSS": "result.declaration_loss",
+                "RESTART": "result.declaration_restart",
+                "NO_CONTEST": "result.no_contest",
+            }
+            outcome_key = outcome_keys.get(result.declaration_outcome)
+            outcome = (
+                tr.text(outcome_key)
+                if outcome_key else str(result.declaration_outcome)
+            )
+            return winner_line + " · " + tr.text(
+                "result.declaration",
+                declaration=result.declaration_id,
+                outcome=outcome,
+            )
         return ""
 
     def _render_moves(self, displayed) -> None:

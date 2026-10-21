@@ -16,7 +16,7 @@ from generic_chess import (
 )
 from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.limits import SearchLimits
-from generic_chess.cli.play import _resolve_action_input
+from generic_chess.cli.play import _resolve_action_input, visible_action_alias
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.schema import compute_fingerprint, ruleset_to_dict
 from generic_chess.rules.serialization import deserialize_ruleset, serialize_ruleset
@@ -86,6 +86,34 @@ def test_product_curated_contracts_match_historical_semantic_authority():
         assert {str(a) for a in legal_actions(product_state, product)} == {
             str(a) for a in legal_actions(historical_state, historical)
         }, case["id"]
+
+
+def test_cli_alias_resolution_preserves_shogi_drop_and_promotion_identity():
+    from generic_chess.core.actions import SemanticBoardMove, SemanticDropMove
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.learning.shogi_rules import sfen_to_gc_state
+
+    compiled = compile_ruleset_for_execution(build_standard_shogi_ruleset())
+    drop_state = sfen_to_gc_state(compiled, "8k/9/9/9/9/9/9/9/K8 b P 1")
+    drop_actions = tuple(legal_actions(drop_state, compiled))
+    drop = next(action for action in drop_actions if isinstance(action, SemanticDropMove))
+    assert _resolve_action_input(str(drop), drop_actions) == (drop, None)
+    assert _resolve_action_input(visible_action_alias(drop), drop_actions) == (drop, None)
+
+    promotion_state = sfen_to_gc_state(
+        compiled, "8k/9/4+p4/4P4/9/9/9/9/K8 b - 1"
+    )
+    promotion_actions = tuple(legal_actions(promotion_state, compiled))
+    promotion = next(
+        action
+        for action in promotion_actions
+        if isinstance(action, SemanticBoardMove)
+        and action.promotion_target_id is not None
+    )
+    assert _resolve_action_input(str(promotion), promotion_actions) == (promotion, None)
+    assert _resolve_action_input(
+        visible_action_alias(promotion), promotion_actions
+    ) == (promotion, None)
 
 
 def test_capturing_promoted_piece_demotes_to_base_hand_and_can_be_dropped():

@@ -471,6 +471,83 @@ def test_generic_repetition_threshold_transition_push_pop_roundtrip():
     assert after == before
 
 
+def test_public_alphabeta_scores_generic_repetition_terminal_with_warm_tt(monkeypatch):
+    """The repeated-cycle terminal must reach the public depth-one score.
+
+    The roots intentionally have different ply counts, so this checks search
+    transition/result propagation rather than isolating repetition-only TT
+    identity. Same-ply, different-history TT behavior is covered separately by
+    test_no_progress_search_context.
+    """
+    from copy import copy
+    from test_native_history import _cycle_ruleset, _session_at_ply
+    from generic_chess.core.search_runtime import RuntimeCountsSnapshot
+
+    monkeypatch.setattr(
+        RuntimeHistoryContext,
+        "_record_digest",
+        staticmethod(lambda *_: bytes(16)),
+    )
+    monkeypatch.setattr(
+        RuntimeCountsSnapshot,
+        "_entry_digest",
+        staticmethod(lambda *_: bytes(16)),
+    )
+
+    compiled = _cycle_ruleset()
+    short = _session_at_ply(compiled, 3)  # D once; next A remains ongoing.
+    near_limit = _session_at_ply(compiled, 11)  # D three times; next A draws.
+    assert short.state.position == near_limit.state.position
+    assert short.state.ply_count != near_limit.state.ply_count
+    assert short.state.terminal_status.status.name == "ONGOING"
+    assert near_limit.state.terminal_status.status.name == "ONGOING"
+
+    class Constant:
+        def evaluate(self, state):
+            return 77
+
+        def type_value(self, piece_type):
+            return 0
+
+        def capture_order_value(self, moving, captured):
+            return 0
+
+    tuning = SearchTuning(use_root_tactical=False, require_full_pv=True)
+    limits = SearchLimits(
+        max_depth=1, quiescence_max_depth=0, quiescence_hard_max_depth=0
+    )
+
+    def player(*, use_tt=True):
+        return AlphaBetaPlayer(
+            compiled,
+            evaluator_override=Constant(),
+            use_disk_cache=False,
+            use_tt=use_tt,
+            use_ordering=False,
+            use_native_semantic_legality=False,
+            tuning=tuning,
+        )
+
+    shared = player()
+    for session in (short, near_limit, near_limit, short):
+        decision = shared.choose_action(session, limits)
+        fresh = player(use_tt=False).choose_action(session, limits)
+        assert (decision.action, decision.score, decision.principal_variation) == (
+            fresh.action,
+            fresh.score,
+            fresh.principal_variation,
+        )
+        assert decision.action in session.legal_actions()
+        child = copy(session)
+        child.submit(decision.action)
+        expected_terminal = (
+            "ONGOING" if session is short else "REPETITION"
+        )
+        expected_score = -77 if session is short else 0
+        assert child.state.terminal_status.status.name == expected_terminal
+        assert decision.score == expected_score
+
+
 def test_pre_root_bridge_preserves_exactness_under_forced_runtime_hash_collision():
     from test_native_history import _cycle_ruleset, _session_at_ply
 

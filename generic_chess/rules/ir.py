@@ -625,6 +625,45 @@ def _incoming_attack_sources(incoming):
     return result
 
 
+def _incoming_attack_endpoints(ir, squares: int, *, max_paths: int = 262144):
+    """Bounded fallback schedule borrowing complete IR geometry paths.
+
+    Only endpoint indices are retained, avoiding a copy of every ray prefix.
+    Ranks preserve original capture traversal, including repeated geometry
+    references. Exceeding the bound leaves the complete reference executor.
+    """
+    groups = {}
+    rank = 0
+    for owner in (0, 1):
+        owner_key = str(owner)
+        for pattern in ir.patterns:
+            if pattern.target.kind != "target_enemy":
+                continue
+            for tid in pattern.type_ids:
+                for source in range(squares):
+                    for gid in pattern.geometry_ids:
+                        geometry = ir.geometry.get(gid)
+                        if geometry is None or geometry.kind == "drop":
+                            continue
+                        if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                            continue
+                        path = geometry.paths.get(owner_key, {}).get(source, ())
+                        endpoints = (range(min(1, len(path))) if geometry.kind == "leap"
+                            else range(max(0, (geometry.min_steps or 1) - 1), len(path)))
+                        for endpoint in endpoints:
+                            rank += 1
+                            if rank > max_paths:
+                                return None
+                            groups.setdefault((owner_key, path[endpoint]), {}).setdefault(
+                                source, {}).setdefault(tid, []).append(
+                                    (rank, pattern, gid, endpoint))
+    for sources in groups.values():
+        for typed in sources.values():
+            for tid, rows in typed.items():
+                typed[tid] = tuple(rows)
+    return groups
+
+
 def _fixed_transition_triggers(ir, support):
     """Index static event squares once per compiled ruleset.
 
@@ -683,6 +722,7 @@ class CompiledSemanticRuleset:
     support: "CompiledSemanticSupport | None" = None
     _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
     _incoming_attack_sources: Any = field(init=False, repr=False, compare=False, default=None)
+    _incoming_attack_endpoints: Any = field(init=False, repr=False, compare=False, default=None)
     _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
     _actor_capture_patterns: Any = field(init=False, repr=False, compare=False, default=None)
     _pattern_drop_kinds: Any = field(init=False, repr=False, compare=False, default=None)
@@ -704,6 +744,9 @@ class CompiledSemanticRuleset:
                 _incoming_attack_paths(self.ir, self.support.board_shape.area))
             object.__setattr__(self, "_incoming_attack_sources",
                 _incoming_attack_sources(self._incoming_attack_paths))
+            if self._incoming_attack_paths is None:
+                object.__setattr__(self, "_incoming_attack_endpoints",
+                    _incoming_attack_endpoints(self.ir, self.support.board_shape.area))
             if self.ir.triggers:
                 object.__setattr__(self, "_fixed_transition_triggers",
                     _fixed_transition_triggers(self.ir, self.support))

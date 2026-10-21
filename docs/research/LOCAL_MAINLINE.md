@@ -8,6 +8,18 @@ on generated Generic rules? Preserve complete executable rules and GameSession
 history. Actual terminal W/L/D evaluates strength; search values train.
 UNKNOWN remains unknown, including horizon/cancellation/missing results.
 
+User correction later on2026-10-21: use the latest committed sandbox
+infrastructure as this branch's baseline; retain only DEV_AUX learner/research
+differences, not parallel Core/search implementations. Current import is
+`6a4f8868d767b41ffc07ff5ddbb7bce448417aaa`: all published generic_chess
+source plus product/development/specification tests and their dependencies.
+Own incremental learner, historical references and role-local state are retained.
+Uncommitted PRIMARY work, its results/producers and operational state are not
+imported. Each hourly recovery checks for newer committed infrastructure.
+The learner's hypothetical searches now use that shared SearchPathRuntime;
+played moves/records still go through GameSession. Public-session search remains
+an explicit reference control, not a second rule implementation.
+
 Stop task2636 audit/receipt expansion. Its unregistered 16-rule panel is retired
 from the active backlog. Frozen plans and root pool remain unchanged for context;
 they are not a runnable or approved experiment. There is no registration,
@@ -57,11 +69,14 @@ evidence. Cleanup does not make their inputs unexposed or reset their budgets.
    measured training phase; its intended1800s guard's small overrun is retained.
    All caps/results are closed. The next label-blind default rule, generator
    seed2026102102, is accepted on existing-filter attempt3 with56 opening moves;
-   one uniform D1→D2 query completes443nodes/.527s. Next execute one FRESH
-   bounded episode on it using the same learner and fresh initialization,
-   preserve full history/depth/cost/UNKNOWN, then decide whether further training
-   is informative. Do not transfer the first rule's weights or infer later-query
-   throughput from this initial root. No new matrix, audit gate or old cap reset.
+   one uniform D1→D2 query completes443nodes/.527s. Its fresh episode with
+   seed27187/random initialization completes11plies to actual mate,6686nodes,
+   10.776s and one nonzero TD update. No first-rule weights were transferred.
+   This establishes episode feasibility, not a learning gain or rule-population
+   result. Next test the existing first-rule frozen trained and initial models
+   directly under the same iterativeD2 path, then small fixedD3-foe calibration.
+   D3 is not presumed to produce50percent wins. No new matrix/audit gate,
+   training extension, default weight adoption or old cap reset.
 2. The no-progress variant gives genuine rule draws but not identified learning
    gain. A same6-node D1 control requires5 versus170 underlying transitions
    because the reference replays history. Keep this cost explicit; do not bypass

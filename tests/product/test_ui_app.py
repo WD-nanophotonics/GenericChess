@@ -111,6 +111,488 @@ def _window(qapp, seed=42, board_size=8):
     return ctrl, win
 
 
+@pytest.mark.parametrize("transition", ("timeout", "undo"))
+def test_qthread_session_transition_rejects_late_search_result(qapp, transition):
+    """The production worker rejects results after timeout or live-session replacement."""
+    import threading
+    import time
+
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import (
+        SideTimeConfig,
+        TimeControl,
+        TimeControlMode,
+    )
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    now = [0.0]
+
+    class BlockingEvaluator:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.release = threading.Event()
+
+        def evaluate(self, state):
+            self.entered.set()
+            if not self.release.wait(5):
+                raise TimeoutError("Qt worker barrier expired")
+            return 0
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings, clock_now=lambda: now[0])
+    assert controller.new_game_from_builtin("western_chess")
+    for _ in range(2):
+        assert controller.submit_action(controller.session.legal_actions()[0])
+    assert controller.session.state.ply_count == 2
+
+    window = MainWindow(controller, settings)
+    window.show()
+    controller.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(60, 10),
+                owner1=SideTimeConfig(60, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    evaluator = BlockingEvaluator()
+    window._ai_player = AlphaBetaPlayer(
+        controller.compiled,
+        evaluator_override=evaluator,
+        use_disk_cache=False,
+        use_native_semantic_legality=False,
+    )
+    before = (controller.session.state, controller.session.history)
+    window._maybe_start_ai()
+    thread = window._ai_thread
+    assert thread is not None
+    token = thread._token
+    old_session = controller.session
+    try:
+        assert evaluator.entered.wait(3), "QThread search did not reach evaluator barrier"
+        if transition == "timeout":
+            now[0] += 60.0
+            controller.clock_tick()
+            assert controller.session.result.status.value == "resignation"
+            assert controller.session.state == before[0]
+            assert controller.session.history == before[1]
+        else:
+            assert controller.undo()
+            assert controller.session is not old_session
+            assert controller.session.state.ply_count == 1
+        assert token.is_cancelled()
+    finally:
+        evaluator.release.set()
+
+    deadline = time.monotonic() + 5
+    while window._ai_thread is not None and time.monotonic() < deadline:
+        qapp.processEvents()
+        time.sleep(0.01)
+    qapp.processEvents()
+    assert window._ai_thread is None
+    assert not controller.ai_thinking
+    if transition == "timeout":
+        assert controller.session.result.status.value == "resignation"
+        assert controller.session.state == before[0]
+        assert controller.session.history == before[1]
+    else:
+        assert controller.session.state.ply_count == 1
+        assert len(controller.session.history) == 1
+        assert controller.session.state.position.side_to_move == 1
+
+
+@pytest.mark.parametrize("retire_before_signal_delivery", (False, True))
+def test_stale_qthread_error_does_not_cancel_new_match(qapp, retire_before_signal_delivery):
+    """A delayed error from an old worker must not stop the replacement match."""
+    import threading
+    import time
+    from types import SimpleNamespace
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    class OldPlayer:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.release = threading.Event()
+
+        def choose_action(self, session, limits, cancel_token=None, **kwargs):
+            self.entered.set()
+            if not self.release.wait(8):
+                raise TimeoutError("old-worker error barrier expired")
+            raise RuntimeError("delayed old search error")
+
+    class NewPlayer:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.release = threading.Event()
+
+        def choose_action(self, session, limits, cancel_token=None, **kwargs):
+            self.entered.set()
+            if not self.release.wait(5):
+                raise TimeoutError("replacement-worker barrier expired")
+            return SimpleNamespace(action=legal_actions(session.state, session.compiled)[0])
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings)
+    assert controller.new_game(seed=42)
+    window = MainWindow(controller, settings)
+    window.show()
+    config = MatchConfig(
+        (ParticipantKind.AI, ParticipantKind.HUMAN),
+        TimeControl(mode=TimeControlMode.NONE),
+        ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+    )
+    controller.start_match(config)
+    old_player = OldPlayer()
+    window._ai_player = old_player
+    window._maybe_start_ai()
+    old_thread = window._ai_thread
+    assert old_thread is not None
+    assert old_player.entered.wait(3), "old QThread did not start"
+
+    try:
+        if retire_before_signal_delivery:
+            # Block the GUI event loop until the worker has queued its error and
+            # completion signals and exited; then transfer thread ownership.
+            old_player.release.set()
+            assert old_thread.wait(3000), "old QThread did not exit"
+            assert window._cancel_ai_state()
+        else:
+            # Preserve the running QThread across the bounded cancellation wait.
+            assert not window._cancel_ai_state()
+            assert window._ai_thread is old_thread
+            old_player.release.set()
+
+        assert controller.new_game_from_builtin("western_chess")
+        controller.start_match(config)
+        new_player = NewPlayer()
+        window._ai_player = new_player
+        window._refresh()
+
+        deadline = time.monotonic() + 7
+        while not new_player.entered.is_set() and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        assert new_player.entered.is_set(), (
+            "stale old-worker error stopped or stranded the replacement AI turn"
+        )
+    finally:
+        old_player.release.set()
+        if "new_player" in locals():
+            new_player.release.set()
+        deadline = time.monotonic() + 5
+        while window._ai_thread is not None and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+
+    assert not controller.ai_stop_requested
+    assert window._ai_thread is None
+    assert controller.session.state.ply_count == 1
+
+
+def test_stale_qthread_progress_does_not_overwrite_replacement_status(qapp):
+    """A stale worker's delayed progress is not current-match status."""
+    import threading
+    import time
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    class OldPlayer:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.release = threading.Event()
+            self.progress_sent = threading.Event()
+            self.finish = threading.Event()
+
+        def choose_action(self, _session, _limits, *, progress_callback=None, **_kwargs):
+            self.entered.set()
+            if not self.release.wait(8):
+                raise TimeoutError("old-worker progress barrier expired")
+            progress_callback(7, 123, 45)
+            self.progress_sent.set()
+            if not self.finish.wait(8):
+                raise TimeoutError("old-worker finish barrier expired")
+            raise RuntimeError("delayed old search error")
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings)
+    assert controller.new_game(seed=42)
+    window = MainWindow(controller, settings)
+    window.show()
+    config = MatchConfig(
+        (ParticipantKind.AI, ParticipantKind.HUMAN),
+        TimeControl(mode=TimeControlMode.NONE),
+        ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+    )
+    controller.start_match(config)
+    old_player = OldPlayer()
+    window._ai_player = old_player
+    window._maybe_start_ai()
+    old_thread = window._ai_thread
+    assert old_thread is not None
+    assert old_player.entered.wait(3), "old QThread did not start"
+
+    try:
+        assert not window._cancel_ai_state()
+        assert window._ai_thread is old_thread
+        assert controller.new_game_from_builtin("western_chess")
+        controller.start_match(config)
+        window._status_main.setText("replacement status sentinel")
+        old_player.release.set()
+        assert old_player.progress_sent.wait(3), "old worker did not emit progress"
+        deadline = time.monotonic() + 1
+        while "depth 7" not in window._status_main.text() and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        assert "depth 7" not in window._status_main.text(), (
+            "stale worker progress overwrote replacement match status"
+        )
+    finally:
+        old_player.release.set()
+        old_player.finish.set()
+        deadline = time.monotonic() + 5
+        while window._ai_thread is not None and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+
+
+def test_live_qthread_progress_status_reports_total_search_nodes(qapp):
+    """The live node count matches the main-plus-quiescence budget contract."""
+    import threading
+    import time
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.ai.decision import PlayerDecision
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings)
+    assert controller.new_game(seed=42)
+    window = MainWindow(controller, settings)
+    window.show()
+    config = MatchConfig(
+        (ParticipantKind.AI, ParticipantKind.HUMAN),
+        TimeControl(mode=TimeControlMode.NONE),
+        ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+    )
+    controller.start_match(config)
+
+    class ProgressPlayer:
+        def __init__(self):
+            self.progress_sent = threading.Event()
+            self.release = threading.Event()
+
+        def choose_action(self, session, _limits, *, progress_callback=None, **_kwargs):
+            if progress_callback is not None:
+                progress_callback(2, 100, 300)
+            self.progress_sent.set()
+            if not self.release.wait(5):
+                raise TimeoutError("progress status barrier expired")
+            return PlayerDecision(
+                action=legal_actions(session.state, session.compiled)[0],
+                score=0,
+                principal_variation=(),
+                completed_depth=2,
+                selective_depth=2,
+                nodes=100,
+                qnodes=300,
+                elapsed_seconds=0.1,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="completed_depth",
+            )
+
+    player = ProgressPlayer()
+    window._ai_player = player
+    window._maybe_start_ai()
+    try:
+        assert player.progress_sent.wait(3), "AI worker did not emit progress"
+        deadline = time.monotonic() + 3
+        while "depth 2" not in window._status_main.text() and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+        assert "depth 2 · 400 nodes" in window._status_main.text()
+    finally:
+        player.release.set()
+        deadline = time.monotonic() + 5
+        while window._ai_thread is not None and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+
+    assert window._ai_thread is None
+    assert controller.session.state.ply_count == 1
+
+
+def test_cancelled_current_qthread_progress_does_not_restore_thinking_status(qapp):
+    """Cancellation invalidates queued progress even if board identity is unchanged."""
+    import threading
+    import time
+
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.ai.decision import PlayerDecision
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings)
+    assert controller.new_game(seed=42)
+    window = MainWindow(controller, settings)
+    window.show()
+    controller.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+
+    class CancelledPlayer:
+        def __init__(self):
+            self.entered = threading.Event()
+            self.emit_progress = threading.Event()
+            self.progress_sent = threading.Event()
+            self.finish = threading.Event()
+
+        def choose_action(self, session, _limits, *, progress_callback=None, **_kwargs):
+            self.entered.set()
+            if not self.emit_progress.wait(5):
+                raise TimeoutError("cancelled-progress barrier expired")
+            progress_callback(7, 123, 45)
+            self.progress_sent.set()
+            if not self.finish.wait(5):
+                raise TimeoutError("cancelled-finish barrier expired")
+            return PlayerDecision(
+                action=legal_actions(session.state, session.compiled)[0],
+                score=0,
+                principal_variation=(),
+                completed_depth=7,
+                selective_depth=7,
+                nodes=123,
+                qnodes=45,
+                elapsed_seconds=0.1,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="cancelled",
+            )
+
+    player = CancelledPlayer()
+    window._ai_player = player
+    window._maybe_start_ai()
+    assert player.entered.wait(3), "AI worker did not start"
+    controller.cancel_ai()
+    window._status_main.setText("stopped status sentinel")
+    try:
+        player.emit_progress.set()
+        assert player.progress_sent.wait(3), "cancelled worker did not emit progress"
+        deadline = time.monotonic() + 1
+        while "depth 7" not in window._status_main.text() and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+        assert window._status_main.text() == "stopped status sentinel"
+    finally:
+        player.finish.set()
+        deadline = time.monotonic() + 5
+        while window._ai_thread is not None and time.monotonic() < deadline:
+            qapp.processEvents()
+            time.sleep(0.01)
+        qapp.processEvents()
+
+    assert window._ai_thread is None
+    assert controller.session.state.ply_count == 0
+
+
+def test_current_qthread_error_stays_visible_and_can_be_retried(qapp):
+    """Fresh worker errors still surface; the retry action can start a new search."""
+    import time
+    from types import SimpleNamespace
+
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    controller = UIController(settings=settings)
+    assert controller.new_game(seed=42)
+    window = MainWindow(controller, settings)
+    window.show()
+    config = MatchConfig(
+        (ParticipantKind.AI, ParticipantKind.HUMAN),
+        TimeControl(mode=TimeControlMode.NONE),
+        ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+    )
+    controller.start_match(config)
+
+    class FlakyPlayer:
+        calls = 0
+
+        def choose_action(self, session, _limits, **_kwargs):
+            self.calls += 1
+            if self.calls == 1:
+                raise RuntimeError("transient live worker failure")
+            return SimpleNamespace(
+                action=legal_actions(session.state, session.compiled)[0],
+                choice_kind="ACTION",
+            )
+
+    player = FlakyPlayer()
+    window._ai_player = player
+    window._maybe_start_ai()
+    deadline = time.monotonic() + 3
+    while window._ai_thread is not None and time.monotonic() < deadline:
+        qapp.processEvents()
+        time.sleep(0.01)
+    qapp.processEvents()
+
+    assert player.calls == 1
+    assert window._ai_thread is None
+    assert controller.ai_stop_requested
+    assert window._ai_error == "RuntimeError: transient live worker failure"
+    assert "transient live worker failure" in window._status_text()
+    assert window._act_stop_ai.text() == "Retry AI"
+
+    window._act_stop_ai.trigger()
+    deadline = time.monotonic() + 3
+    while controller.session.state.ply_count == 0 and time.monotonic() < deadline:
+        qapp.processEvents()
+        time.sleep(0.01)
+    qapp.processEvents()
+
+    assert player.calls == 2
+    assert controller.session.state.ply_count == 1
+    assert not controller.ai_stop_requested
+    assert window._ai_thread is None
+
+
 def test_main_window_initializes_with_sample_game(qapp):
     ctrl, win = _window(qapp)
     assert "GenericChess" in win.windowTitle()
@@ -649,6 +1131,46 @@ def test_main_window_ai_match_smoke(qapp):
     assert not win._act_stop_ai.isEnabled()
 
 
+def test_failed_ai_action_is_visible_and_can_be_retried(qapp, monkeypatch):
+    from types import SimpleNamespace
+
+    from generic_chess.ai.cancellation import CancellationToken
+    from generic_chess.ai.budget import ThinkingConfig
+    from generic_chess.clock import TimeControl, TimeControlMode
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    ctrl = UIController(settings=settings)
+    assert ctrl.new_game(seed=42)
+    win = MainWindow(ctrl, settings)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.AI, ParticipantKind.HUMAN),
+            TimeControl(mode=TimeControlMode.NONE),
+            ThinkingConfig(strategy="fixed_nodes", preset="quick"),
+        )
+    )
+    snapshot = ctrl.capture_ai_search(CancellationToken())
+    assert snapshot is not None
+    decision = SimpleNamespace(
+        action=BoardMove(Square(1, 0), Square(1, 0)),
+        choice_kind="ACTION",
+    )
+
+    assert not ctrl.finish_ai_move(decision, snapshot)
+    assert win._act_stop_ai.isEnabled()
+    assert win._act_stop_ai.text() == "Retry AI"
+    assert "AI error" in win._status_text()
+    assert "cannot submit action" in win._status_text()
+
+    restarted = []
+    monkeypatch.setattr(win, "_maybe_start_ai", lambda: restarted.append(True))
+    win._act_stop_ai.trigger()
+    assert not ctrl.ai_stop_requested
+    assert restarted == [True]
+
+
 def test_clock_label_updates_on_tick(qapp):
     from generic_chess.ai.budget import ThinkingConfig
     from generic_chess.clock import TimeControl, TimeControlMode
@@ -669,6 +1191,45 @@ def test_clock_label_updates_on_tick(qapp):
     win._clock_tick()
     assert "White" in win._clock_label.text()
     assert "Black" in win._clock_label.text()
+
+
+def test_expired_ai_clock_before_ui_tick_does_not_create_worker(qapp):
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import (
+        SideTimeConfig,
+        TimeControl,
+        TimeControlMode,
+    )
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    now = [0.0]
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    ctrl = UIController(settings=settings, clock_now=lambda: now[0])
+    assert ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    assert ctrl.submit_action(ctrl.session.legal_actions()[0])
+    now[0] = 2.0  # AI clock expires before the next GUI timer tick.
+
+    win = MainWindow(ctrl, settings)
+    win._ai_player = AlphaBetaPlayer(ctrl.compiled, use_disk_cache=False)
+    win._maybe_start_ai()
+
+    assert win._ai_thread is None
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.timeout_owner == 1
+    assert not ctrl.ai_thinking
 
 
 def test_preferences_no_nameerror(qapp, monkeypatch):

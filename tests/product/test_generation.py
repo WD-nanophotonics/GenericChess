@@ -101,3 +101,37 @@ def test_require_nonpromotable_type_filter():
     game = generate_game(GeneratorConfig(seed=21, require_nonpromotable_type=True))
     filters = {f.name: f for f in game.generation_report.filter_results}
     assert filters["promotion_target_present"].passed
+
+@pytest.mark.parametrize("size", range(4, 23))
+def test_ordinary_ids_keep_existing_small_board_seed_namespace(size):
+    from generic_chess.generation.piece_generator import ordinary_type_ids
+    # These are the original valid namespaces; no previous seed is renamed.
+    pairs = (size - 1) // 2 if size % 2 else (size - 2) // 2
+    expected = ("P",) + (() if size % 2 else ("X",)) + tuple(
+        chr(ord("A") + i) for i in range(pairs))
+    assert ordinary_type_ids(size) == expected
+
+
+@pytest.mark.parametrize("size", [23, 24, 28, 34, 50, 60, 256])
+def test_large_board_ordinary_ids_do_not_alias_anchor_pawn_or_companion(size):
+    from generic_chess.generation.piece_generator import ordinary_type_ids
+    ids = ordinary_type_ids(size)
+    expected_count = (size + 1) // 2 if size % 2 else size // 2 + 1
+    assert len(ids) == expected_count
+    assert len(ids) == len(set(ids))
+    assert "K" not in ids
+    assert ids.count("P") == 1
+    assert ids.count("X") == (0 if size % 2 else 1)
+    assert all(tid.isascii() and tid.isalnum() for tid in ids)
+
+
+
+def test_24_board_generation_no_longer_retries_deterministic_anchor_id_collision():
+    game = generate_game(GeneratorConfig(seed=2026101965, board_size=24,
+        setup_preset="bilateral_random", allow_hybrid=True, max_generation_attempts=4))
+    assert all(f.passed for f in game.generation_report.filter_results)
+    ids = [piece.type_id for piece in game.ruleset.piece_types]
+    assert len(ids) == len(set(ids))
+    assert sum(piece.is_anchor for piece in game.ruleset.piece_types) == 1
+    assert game.compiled_ruleset.initial_entity_count == 96
+    assert game.generation_report.opening_legal_move_count > 0

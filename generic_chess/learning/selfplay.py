@@ -3,12 +3,14 @@
 from __future__ import annotations
 
 import random
+from copy import copy
 from dataclasses import dataclass
 
 from ..ai.limits import SearchLimits
 from ..ai.evaluation.config import EvaluationConfig
 from ..core.identity import position_identity_key
 from ..core.transition import apply_action
+from ..core.terminal import TerminalStatus
 from ..native.compiler import compile_native_evaluation
 from ..native.engine import NativeSearchEngine
 from ..native.semantic_engine import SemanticSearchEngine
@@ -46,10 +48,14 @@ def collect_self_play(
 ) -> list[TrainingTrajectory]:
     """Play ``config.games`` games of Gen-N vs Gen-N with one frozen
     evaluator, recording a TDLeaf trajectory per game."""
+    if checkpoint.compact_nonlinear:
+        raise NotImplementedError("TDLeaf collection does not support compact nonlinear checkpoints")
     checkpoint.validate_ruleset(compiled)
     from ..rules.ir import CompiledSemanticRuleset
 
     semantic_path = isinstance(compiled, CompiledSemanticRuleset)
+    if not semantic_path and (checkpoint.spatial_occupancy_weights or checkpoint.localized_control_weights):
+        raise NotImplementedError("spatial TDLeaf collection requires semantic Native evaluation")
     eval_tables = None if semantic_path else compile_native_evaluation(
         native_rules,
         _dummy_profile(compiled, checkpoint),
@@ -87,9 +93,25 @@ def collect_self_play(
             )
             pv = result.principal_variation
             if result.completed_depth >= 1 and pv:
+                if semantic_path and any(isinstance(step, str) for step in
+                                         getattr(result, "decision_line", ())):
+                    raise NotImplementedError(
+                        "TDLeaf declaration-ended PV requires a complete declaration leaf record"
+                    )
                 leaf_state = session.state
                 for action in pv:
                     leaf_state = apply_action(leaf_state, action, compiled)
+                if (semantic_path and compiled.ir.declarations
+                        and not leaf_state.terminal_status.is_terminal):
+                    from ..core.declarations import available_declarations
+                    if any(claim.outcome in ("RESTART", "NO_CONTEST") for claim in
+                           available_declarations(leaf_state, compiled)):
+                        # Native neutral floors can omit the claim from the line.
+                        # Refuse this unsupported target rather than fabricate W/L/D
+                        # or train on a physical leaf that omits the declaration.
+                        raise NotImplementedError(
+                            "TDLeaf PV leaf with a non-scoring declaration is unsupported"
+                        )
                 leaf_key = position_identity_key(leaf_state.position, compiled)
                 features = material_features(
                     leaf_state.position, type_ids, perspective=0
@@ -99,6 +121,9 @@ def collect_self_play(
                     if semantic_path
                     else dynamic_features(leaf_state.position, compiled).as_tuple()
                 )
+                spatial, control = _spatial_snapshot(
+                    compiled, native_rules, session, pv, checkpoint, leaf_state
+                )
                 u = _normalized_value(
                     features,
                     checkpoint.board_weights,
@@ -106,7 +131,16 @@ def collect_self_play(
                     checkpoint.value_scale,
                     dynamic,
                     checkpoint.dynamic_weights,
+                    dict(spatial), checkpoint.spatial_occupancy_weights,
+                    control, checkpoint.localized_control_weights,
                 )
+                leaf_terminal_z = None
+                if leaf_state.terminal_status.is_terminal:
+                    if leaf_state.terminal_status.status is TerminalStatus.NO_CONTEST:
+                        raise ValueError("non-scoring PV leaf cannot be a TDLeaf W/L/D target")
+                    winner = leaf_state.terminal_status.winner
+                    leaf_terminal_z = 0.0 if winner is None else 1.0 if winner == 0 else -1.0
+                    u = leaf_terminal_z
                 points.append(
                     TrainingPoint(
                         ply=ply,
@@ -122,6 +156,9 @@ def collect_self_play(
                         leaf_value=u,
                         completed_depth=result.completed_depth,
                         leaf_feature_dynamic=tuple(dynamic),
+                        leaf_terminal_z=leaf_terminal_z,
+                        leaf_feature_spatial=spatial,
+                        leaf_feature_control=control,
                     )
                 )
             if getattr(result, "declaration_id", None) is not None:
@@ -149,6 +186,9 @@ def collect_self_play(
                     leaf_value=old.leaf_value,
                     completed_depth=old.completed_depth,
                     leaf_feature_dynamic=old.leaf_feature_dynamic,
+                    leaf_terminal_z=old.leaf_terminal_z,
+                    leaf_feature_spatial=old.leaf_feature_spatial,
+                    leaf_feature_control=old.leaf_feature_control,
                 )
             session.submit(action)
             ply += 1
@@ -180,6 +220,9 @@ def collect_self_play(
                 current_dynamic = dynamic_features(
                     session.state.position, compiled
                 ).as_tuple()
+            spatial, control = _spatial_snapshot(
+                compiled, native_rules, session, (), checkpoint, session.state
+            )
             bootstrap_value = _normalized_value(
                 current_features,
                 checkpoint.board_weights,
@@ -187,6 +230,8 @@ def collect_self_play(
                 checkpoint.value_scale,
                 current_dynamic,
                 checkpoint.dynamic_weights,
+                dict(spatial), checkpoint.spatial_occupancy_weights,
+                control, checkpoint.localized_control_weights,
             )
         else:
             termination_reason = result.status.value
@@ -227,3 +272,32 @@ def _dummy_profile(compiled, checkpoint):
         },
         evaluator_version=checkpoint.evaluator_version,
     )
+
+
+def _spatial_snapshot(compiled, native_rules, session, pv, checkpoint, leaf_state):
+    """Frozen v3 offsets, with exact Native control semantics and full history.
+
+    The private session copy retains immutable state, records and every history
+    witness; submitting its PV cannot mutate the live parent. Occupancy is a
+    position-only feature. Scoring terminal constants need neither offset.
+    """
+    if leaf_state.terminal_status.is_terminal:
+        return (), ()
+    spatial = ()
+    if checkpoint.spatial_occupancy_weights:
+        from .features import spatial_occupancy_features
+        spatial = tuple(sorted(spatial_occupancy_features(
+            leaf_state.position, tuple(native_rules.type_ids)
+        ).items()))
+    control = ()
+    if checkpoint.localized_control_weights:
+        from ..native.adapter import pack_semantic_search_position
+        from ..native.semantic import spatial_features
+        leaf_session = session
+        if pv:
+            leaf_session = copy(session)
+            for action in pv:
+                leaf_session.submit(action)
+        packed = pack_semantic_search_position(compiled, native_rules, leaf_session)
+        control = spatial_features(native_rules, packed)["localized_control"]
+    return spatial, control

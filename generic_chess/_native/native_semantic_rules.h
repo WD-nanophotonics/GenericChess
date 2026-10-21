@@ -12,6 +12,7 @@
 #include <Python.h>
 #include <stdint.h>
 
+#define GC_SEM_MAX_PROMO_TARGETS GC_MAX_TYPES
 #define GC_SEM_MAX_GEOMETRIES 4096
 #define GC_SEM_MAX_PATTERNS 256
 #define GC_SEM_MAX_AUX_SLOTS 8
@@ -153,6 +154,7 @@ typedef struct {
 typedef struct {
     GCSemPathEntry *entries;
     uint16_t count;
+    uint8_t sources_sorted;
 } GCSemPathOwner;
 
 typedef struct {
@@ -230,7 +232,7 @@ typedef struct {
     uint8_t is_anchor;
     uint8_t is_promotable;
     uint8_t promo_target_count;
-    GCTypeIndex promo_targets[GC_MAX_PROMO_TARGETS];
+    GCTypeIndex promo_targets[GC_SEM_MAX_PROMO_TARGETS];
 } GCSemType;
 
 typedef struct {
@@ -249,6 +251,7 @@ typedef struct {
     uint8_t board_size;
     uint32_t repetition_limit;
     uint8_t repetition_policy;
+    uint8_t stalemate_result; /* 0 draw, 1 side-to-move loss */
     uint16_t automatic_adjudication_ply;
     GCSemAutomaticAdjudication automatic_adjudications[
         GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS];
@@ -273,8 +276,12 @@ typedef struct {
     uint16_t trigger_count;
     GCSemPattern *patterns;
     uint16_t pattern_count;
+    uint16_t capture_pattern_count[GC_MAX_TYPES];
+    uint16_t capture_pattern_indices[GC_MAX_TYPES][GC_SEM_MAX_PATTERNS];
     GCSemDeclaration *declarations;
     uint8_t declaration_count;
+    /* Optional immutable geometric overapproximation. NULL retains the scanner. */
+    unsigned char *attack_membership;
 } GCSemanticRules;
 
 /* Parse a Python payload dict into an owned GCSemanticRules.

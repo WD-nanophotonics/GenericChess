@@ -181,6 +181,13 @@ class AlphaBeta:
             return (best, best_phi, best_terminal, chosen)
         try:
             cancel()
+            # Reuse Core's current mutable path rather than replaying a public
+            # GameSession at every hypothetical child. Root admission is timed
+            # inside this same query; actual played moves still use GameSession.
+            factory = getattr(env, 'search_view', None)
+            if factory is not None:
+                env = factory()
+            cancel()
             v, pv, pvt, action = walk(self.depth, self.qdepth, -inf, inf)
             return Receipt(action, v, pv, pvt, tuple(samples), count, True, caps, time.perf_counter() - start, 'complete', self.depth, self.depth)
         except (BudgetEnd, NonScoringTerminal) as e:
@@ -331,7 +338,7 @@ class NonScoringTerminal(RuntimeError):
 
 def compile_channels(compiled, *, unit_type='P'):
     """Board CURRENT types and hand BASE types; one declared fixed board unit."""
-    eligible = sorted(p.type_id for p in compiled.piece_types if not p.is_anchor)
+    eligible = sorted(p.type_id for p in _type_metadata(compiled).values() if not p.is_anchor)
     if unit_type not in eligible:
         raise ValueError('declare an existing non-anchor unit type before transfer')
     unit = ('board', unit_type)
@@ -349,8 +356,9 @@ class FixedScaleSessionEnv:
 
     supports_qsearch = False
 
-    def __init__(self, session, *, unit_type='P'):
+    def __init__(self, session, *, unit_type='P', use_runtime=True):
         self.unit_type = unit_type
+        self.use_runtime = use_runtime
         self.session = copy(session)
         self.stack = []
         self.names = compile_channels(session.compiled, unit_type=unit_type)
@@ -359,20 +367,14 @@ class FixedScaleSessionEnv:
         return self.session.state.position.side_to_move
 
     def features(self):
-        position = self.session.state.position
-        known = self.session.compiled.types_by_id
-        observed = {p.current_type_id for p in position.board if p is not None}
-        observed.update(base for hand in position.hands for base, n in hand.counts if n)
-        if not observed <= set(known):
-            raise ValueError('material observation contains an unknown executable type')
-        board, hand = Counter(), Counter()
-        for piece in position.board:
-            if piece is not None:
-                board[piece.current_type_id] += 1 if piece.owner == 0 else -1
-        for owner, holding in enumerate(position.hands):
-            for base, count in holding.counts:
-                hand[base] += (1 if owner == 0 else -1) * count
-        return tuple((board if kind == 'board' else hand)[name] for kind, name in self.names)
+        return _material_features(self.session.state.position,
+                                  self.session.compiled, self.names)
+
+    def search_view(self):
+        from generic_chess.session.result import SessionStatus
+        if not self.use_runtime or self.session.result.status is not SessionStatus.ONGOING:
+            return self
+        return _RuntimeSearchEnv(self)
 
     def terminal(self):
         from generic_chess.session.result import SessionStatus
@@ -384,18 +386,11 @@ class FixedScaleSessionEnv:
         return 0 if result.winner is None else 1 if result.winner == 0 else -1
 
     def actions(self):
-        from generic_chess.core.actions import action_to_dict
         from generic_chess.session.result import SessionStatus
         if self.session.result.status is not SessionStatus.ONGOING:
             return ()
-        # Include owned LOSS declarations too: available_declarations filters
-        # them out, whereas the full old learner/search domain included them.
-        declarations = [SessionChoice('DECLARATION', declaration_id=d.declaration_id)
-                        for d in sorted(self.session.compiled.declarations, key=lambda d: d.declaration_id)
-                        if d.owner == self.player()]
-        actions = sorted(self.session.legal_actions(),
-                         key=lambda a: json.dumps(action_to_dict(a), sort_keys=True))
-        return tuple(declarations) + tuple(SessionChoice('ACTION', action=a) for a in actions)
+        return _session_choices(self.session.legal_actions(), self.session.compiled,
+                                self.player())
 
     def winning_declaration(self):
         """A current rule-authoritative win; assigns no value to other outcomes."""
@@ -438,7 +433,104 @@ class FixedScaleSessionEnv:
                                   deserialize_game_record(json.dumps(self.record())))
         if other.state != self.session.state or other.result != self.session.result or other.to_record() != self.session.to_record():
             raise ValueError('full Generic state/result/history did not survive replay')
-        return type(self)(other, unit_type=self.unit_type)
+        return type(self)(other, unit_type=self.unit_type, use_runtime=self.use_runtime)
+
+
+def _type_metadata(compiled):
+    support = getattr(compiled, 'support', None)
+    return support.type_metadata if support is not None else compiled.types_by_id
+
+
+def _material_features(position, compiled, names):
+    known = _type_metadata(compiled)
+    observed = {p.current_type_id for p in position.board if p is not None}
+    observed.update(base for hand in position.hands for base, n in hand.counts if n)
+    if not observed <= set(known):
+        raise ValueError('material observation contains an unknown executable type')
+    board, hand = Counter(), Counter()
+    for piece in position.board:
+        if piece is not None:
+            board[piece.current_type_id] += 1 if piece.owner == 0 else -1
+    for owner, holding in enumerate(position.hands):
+        for base, count in holding.counts:
+            hand[base] += (1 if owner == 0 else -1) * count
+    return tuple((board if kind == 'board' else hand)[name] for kind, name in names)
+
+
+def _session_choices(actions, compiled, player):
+    from generic_chess.core.actions import action_to_dict
+    # Include owned LOSS declarations too: available_declarations filters
+    # them out, whereas the full old learner/search domain included them.
+    declarations = [SessionChoice('DECLARATION', declaration_id=d.declaration_id)
+                    for d in sorted(compiled.declarations, key=lambda d: d.declaration_id)
+                    if d.owner == player]
+    actions = sorted(actions,
+                     key=lambda a: json.dumps(action_to_dict(a), sort_keys=True))
+    return tuple(declarations) + tuple(SessionChoice('ACTION', action=a) for a in actions)
+
+
+class _RuntimeSearchEnv:
+    """Thin learner view of the shared Core path; no rule/terminal reimplementation."""
+
+    supports_qsearch = False
+    in_check = FixedScaleSessionEnv.in_check
+    tactical = FixedScaleSessionEnv.tactical
+
+    def __init__(self, source):
+        from generic_chess.core.search_runtime import SearchPathRuntime
+        self.runtime = SearchPathRuntime(source.session.state, source.session.compiled,
+                                         history_witnesses=source.session._search_witnesses)
+        self.names = source.names
+        self.stack = []
+        self.declaration = None
+
+    def player(self):
+        return self.runtime.position.side_to_move
+
+    def features(self):
+        return _material_features(self.runtime.position, self.runtime.compiled, self.names)
+
+    def terminal(self):
+        from generic_chess.session.result import session_result_from_terminal, SessionStatus
+        if self.declaration is not None:
+            d = self.declaration
+            if d.outcome in ('RESTART', 'NO_CONTEST'):
+                raise NonScoringTerminal(d)
+            winner = d.actor if d.outcome == 'WIN' else 1 - d.actor if d.outcome == 'LOSS' else None
+            return 0 if winner is None else 1 if winner == 0 else -1
+        result = session_result_from_terminal(self.runtime.terminal_status)
+        if result.status is SessionStatus.NO_CONTEST:
+            raise NonScoringTerminal(result)
+        if result.status is SessionStatus.ONGOING:
+            return None
+        return 0 if result.winner is None else 1 if result.winner == 0 else -1
+
+    def actions(self):
+        from generic_chess.core.terminal import TerminalStatus
+        if self.declaration is not None or self.runtime.terminal_status.status is not TerminalStatus.ONGOING:
+            return ()
+        return _session_choices(self.runtime.legal_actions(), self.runtime.compiled, self.player())
+
+    def push(self, choice):
+        if not isinstance(choice, SessionChoice):
+            raise ValueError('typed session choice required')
+        if self.terminal() is not None:
+            raise ValueError('cannot push a finished search session')
+        if choice.kind == 'ACTION' and choice.action is not None and choice.declaration_id is None:
+            self.runtime.push(choice.action)
+        elif choice.kind == 'DECLARATION' and choice.action is None and isinstance(choice.declaration_id, str):
+            from generic_chess.core.declarations import _assess_declaration_position
+            self.declaration = _assess_declaration_position(self.runtime.position,
+                self.runtime.ply_count, self.runtime.compiled, choice.declaration_id)
+        else:
+            raise ValueError('invalid or mixed session choice')
+        self.stack.append(choice.kind)
+
+    def pop(self):
+        if self.stack.pop() == 'DECLARATION':
+            self.declaration = None
+        else:
+            self.runtime.pop()
 
 
 class ChessEnv:

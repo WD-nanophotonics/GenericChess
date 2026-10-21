@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import time
 import threading
+import sys
 
 from ...core.coordinates import index_to_square
 from ...core.semantic_executor import (
@@ -20,6 +21,12 @@ from ...core.semantic_executor import (
 )
 from ...rules.ir import CompiledSemanticRuleset
 
+
+# Python owns these references; the C helper borrows them only for one call.
+_PAYLOAD_NAMES = tuple(map(sys.intern, (
+    "owner", "base_type_id", "current_type_id", "promoted", "board", "hands",
+    "counts", "aux_state", "side_to_move",
+)))
 
 _U8 = 0xFF
 _GEOMETRY_MASK = 0xFFF
@@ -51,18 +58,106 @@ class NativeSemanticLegalityProvider:
             condition.kind == "no_legal_reply"
             for pattern in engine._patterns for condition in pattern.postconditions
         )
+        # Both bounds belong to immutable compiled rules. Resolve once rather
+        # than importing and taking a minimum at every search frontier.
+        from ...native.compiler import GC_SEM_MAX_PLY
+        self._max_supported_ply = min(
+            compiled.support.max_ply, GC_SEM_MAX_PLY
+        ) - int(self._requires_reply_probe)
         self._metrics_local = threading.local()
+        # Older installed kernels remain fully usable through the Python builder.
+        self._payload_builder = getattr(native_rules.backend_module, "semantic_core_payload", None)
         self.compile_seconds = 0.0
 
     @property
     def last_call_metrics(self):
         return getattr(self._metrics_local, "last", {})
 
+    @property
+    def availability_metrics(self):
+        """Current thread's actual readonly availability calls, independent of legality."""
+        return dict(getattr(self._metrics_local, "availability", {}))
+
+    @property
+    def check_metrics(self):
+        """Actual readonly child-check imports/queries in the current thread."""
+        return dict(getattr(self._metrics_local, "check", {}))
+
+    def in_check(self, position, side, checkpoint=None):
+        """Readonly check with one-use input handoff to availability.
+
+        Only the complete immutable position object is associated. No check,
+        availability, history, terminal result or score is cached. Frontiers
+        retain their separate actual-ply import.
+        """
+        from ...native.semantic import pack_position, in_check
+
+        self._metrics_local.check_handoff = None
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native check compiled source mismatch")
+        if isinstance(side, bool) or not isinstance(side, int) or side not in (0, 1):
+            raise ValueError("side must be 0 or 1")
+        metrics = getattr(self._metrics_local, "check", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0)
+            self._metrics_local.check = metrics
+        metrics["calls"] += 1
+        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+        metrics["imports"] += 1
+        value = in_check(self.native_rules, packed, side)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        self._metrics_local.check_handoff = (position, packed)
+        return value
+
+    def has_legal_action(self, position, checkpoint=None):
+        """Core pre-adjudication availability: readonly bool, or None to decline.
+
+        This predicate deliberately uses ply0 and no imported history. Core
+        retains actual-ply, repetition, declarations and terminal precedence.
+        A one-ply ruleset with S4 reply guards needs Core's existing fallback;
+        Native's nested reply cutoff cannot implement that predicate.
+        """
+        from ...native.semantic import pack_position, has_legal_action
+
+        # Consume the one-use input before any poll/eligibility failure.
+        handoff = getattr(self._metrics_local, "check_handoff", None)
+        self._metrics_local.check_handoff = None
+
+        metrics = getattr(self._metrics_local, "availability", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0, declines=0)
+            self._metrics_local.availability = metrics
+        metrics["calls"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native availability compiled source mismatch")
+        if self._requires_reply_probe and self.compiled.support.max_ply <= 1:
+            metrics["declines"] += 1
+            return None
+        if handoff is not None and handoff[0] is position:
+            packed = handoff[1]
+            metrics["reused_imports"] = metrics.get("reused_imports", 0) + 1
+        else:
+            packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+            metrics["imports"] += 1
+        value = has_legal_action(self.native_rules, packed)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        return value
+
     def supports_position(self, position, ply_count):
         """Native's state-local cutoff cannot implement Core continuation."""
         # S4 no-reply conditions test a child through S3. Native also filters
         # that reply parent at max_ply, one ply before the outer cutoff.
-        return ply_count < self.compiled.max_ply - int(self._requires_reply_probe)
+        # Pure semantic IR products expose this on the typed support payload;
+        # a legacy compatibility attribute is not required for execution.
+        return ply_count < self._max_supported_ply
 
     @classmethod
     def try_create(cls, compiled, *, strict: bool = False):
@@ -71,6 +166,15 @@ class NativeSemanticLegalityProvider:
             return None
         engine = semantic_engine_for(compiled)
         if engine is None:
+            return None
+        # Installed kernels bind these filters to the affected piece instead
+        # of the action actor. Preserve Core legality for these rules.
+        if any(
+            effect.kind in ("move", "shift", "remove")
+            and effect.piece_type_ref is not None
+            and effect.piece_type_ref.kind in ("action_base", "action_current")
+            for pattern in engine._patterns for effect in pattern.effects
+        ):
             return None
         started = time.perf_counter()
         try:
@@ -89,6 +193,15 @@ class NativeSemanticLegalityProvider:
 
     def _state_only_payload(self, position, ply_count):
         """Build exactly the F20 state-only payload; never read history/SHA."""
+        if self._payload_builder is not None:
+            return self._payload_builder(
+                position, self.type_map, len(self.type_ids), ply_count, _PAYLOAD_NAMES
+            )
+        return self._python_state_only_payload(position, ply_count)
+
+    def _python_state_only_payload(self, position, ply_count):
+        """Compatibility path for an older optional Native binary."""
+        type_map = self.type_map
         board = []
         for piece in position.board:
             if piece is None:
@@ -97,21 +210,21 @@ class NativeSemanticLegalityProvider:
             if piece.owner not in (0, 1):
                 raise ValueError("Native legality payload has an invalid owner")
             try:
-                base = self.type_map[piece.base_type_id]
-                current = self.type_map[piece.current_type_id]
+                base = type_map[piece.base_type_id]
+                current = type_map[piece.current_type_id]
             except KeyError as exc:
                 raise ValueError("Native legality payload has an unknown piece type") from exc
-            board.append([base, current, int(piece.owner), int(bool(piece.promoted))])
+            board.append([base, current, int(piece.owner), 1 if piece.promoted else 0])
 
         hands = []
         for hand in position.hands:
             counts = [0] * len(self.type_ids)
             for type_id, count in hand.counts:
-                if type_id not in self.type_map:
+                if type_id not in type_map:
                     raise ValueError("Native legality payload has an unknown hand type")
                 if int(count) < 0:
                     raise ValueError("Native legality payload has a negative hand count")
-                counts[self.type_map[type_id]] = int(count)
+                counts[type_map[type_id]] = int(count)
             hands.append(counts)
         return {
             "side": int(position.side_to_move),

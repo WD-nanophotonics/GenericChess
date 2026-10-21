@@ -135,19 +135,14 @@ def _score(position: Position, declaration, actor: int) -> int:
     return score
 
 
-def _assess_declaration_position(
-    position: Position, ply: int, compiled, declaration_id: str
+def _assess_compiled_declaration_position(
+    position: Position, ply: int, compiled, declaration
 ) -> DeclarationAssessment:
-    """Assess an authoritative position/ply pair for Core and search callers."""
-    ensure_ruleset_match(position, compiled)
-    matches = [d for d in _declarations(compiled) if d.declaration_id == declaration_id]
-    if not matches:
-        raise InvalidDeclarationError(f"unknown declaration ID {declaration_id!r}")
-    declaration = matches[0]
+    """Assess one already-resolved declaration against an authoritative position."""
     actor = position.side_to_move
     if declaration.owner != actor:
         raise InvalidDeclarationError(
-            f"declaration {declaration_id!r} belongs to player {declaration.owner}, not player {actor}"
+            f"declaration {declaration.declaration_id!r} belongs to player {declaration.owner}, not player {actor}"
         )
     score = _score(position, declaration, actor) if declaration.weighted_metric else None
     valid = all(_guard_holds(g, position, declaration, actor) for g in declaration.state_guards)
@@ -166,6 +161,20 @@ def _assess_declaration_position(
     return DeclarationAssessment(declaration.declaration_id, actor, outcome, score)
 
 
+def _assess_declaration_position(
+    position: Position, ply: int, compiled, declaration_id: str
+) -> DeclarationAssessment:
+    """Assess an authoritative position/ply pair for Core and search callers."""
+    ensure_ruleset_match(position, compiled)
+    declaration = next(
+        (d for d in _declarations(compiled) if d.declaration_id == declaration_id),
+        None,
+    )
+    if declaration is None:
+        raise InvalidDeclarationError(f"unknown declaration ID {declaration_id!r}")
+    return _assess_compiled_declaration_position(position, ply, compiled, declaration)
+
+
 def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAssessment:
     """Assess one explicitly selected declaration without changing state."""
     position, ply = _state_parts(state)
@@ -174,14 +183,14 @@ def assess_declaration(state, compiled, declaration_id: str) -> DeclarationAsses
 
 def available_declarations(state, compiled) -> tuple[DeclarationAssessment, ...]:
     """Return only non-losing declarations belonging to the side to move."""
-    position, _ = _state_parts(state)
+    position, ply = _state_parts(state)
     ensure_ruleset_match(position, compiled)
     out = []
     for declaration in _declarations(compiled):
         if declaration.owner != position.side_to_move:
             continue
-        assessment = _assess_declaration_position(
-            position, state.ply_count, compiled, declaration.declaration_id
+        assessment = _assess_compiled_declaration_position(
+            position, ply, compiled, declaration
         )
         if assessment.outcome != "LOSS":
             out.append(assessment)
@@ -189,15 +198,15 @@ def available_declarations(state, compiled) -> tuple[DeclarationAssessment, ...]
 
 
 def _available_declarations_position(position: Position, ply: int, compiled):
-    """Private search bridge using an explicit authoritative runtime pair."""
+    """Assess the already-iterated declarations without repeating ID resolution."""
     ensure_ruleset_match(position, compiled)
     return tuple(
         assessment
         for declaration in _declarations(compiled)
         if declaration.owner == position.side_to_move
         for assessment in (
-            _assess_declaration_position(
-                position, ply, compiled, declaration.declaration_id
+            _assess_compiled_declaration_position(
+                position, ply, compiled, declaration
             ),
         )
         if assessment.outcome != "LOSS"

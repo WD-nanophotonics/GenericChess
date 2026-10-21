@@ -313,3 +313,22 @@ def test_f58_checkpoint_roundtrip_binds_compact_model_and_rebinds_tt():
     engine.bind_checkpoint(changed)
     assert engine.checkpoint_id == changed.checkpoint_id
     assert engine.tt_info()["occupied_entries"] == 0
+
+@pytest.mark.parametrize("moved", (False, True))
+def test_f58_combined_linear_and_compact_terms_keep_both_contributions(moved):
+    compiled = compile_semantic_ruleset(build_western_chess_ruleset())
+    session = GameSession(compiled)
+    if moved:
+        session.submit(session.legal_actions()[0])
+    native = compile_native_semantic_rules(compiled)
+    packed = pack_semantic_search_position(compiled, native, session)
+    before = native_snapshot(native, packed)
+    model = _native_constant_compact_model(compiled, session)
+    linear = native_evaluate(native, packed, dynamic_values=(2, 3, 5))
+    combined = native_evaluate(
+        native, packed, dynamic_values=(2, 3, 5), compact_values=model,
+        evaluator_scale=256,
+    )
+    sign = 1 if session.state.position.side_to_move == 0 else -1
+    assert combined == linear + sign * 512
+    assert native_snapshot(native, packed) == before

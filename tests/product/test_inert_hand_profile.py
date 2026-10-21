@@ -30,7 +30,7 @@ def test_known_no_drop_no_declaration_legacy_stock_has_zero_leaf_coefficient(dis
     assert profile.hand_value_by_base_type['P'] == 0
     assert profile.piece_profiles['P'].normalized_hand_value == 0
     assert scope['hand_policy'] == 'zero_proved_inert'
-    assert profile.evaluator_version == 'semantic-opportunity-v3-inert-hand'
+    assert profile.evaluator_version == 'semantic-opportunity-v4-inert-hand'
     with_stock = replace(before, hands=(Hands((('P', 1),)), Hands.empty()))
     assert repetition_identity_key(before, compiled) != repetition_identity_key(with_stock, compiled)
     assert compiled.initial_position == before

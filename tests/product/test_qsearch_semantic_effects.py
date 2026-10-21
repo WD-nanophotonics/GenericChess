@@ -67,6 +67,22 @@ def transform_rules(kind="transform", *, encoding="combined", max_ply=None):
     return rules if max_ply is None else replace(rules, max_ply=max_ply)
 
 
+def test_static_profile_reachability_falls_back_for_semantic_type_transforms():
+    from generic_chess.ai.evaluation.profile import _initially_reachable_type_ids
+
+    compiled = compile_ruleset_for_execution(transform_rules("transform"))
+    legacy = compiled._legacy_compiled
+    assert "B" not in {
+        piece.current_type_id
+        for piece in legacy.initial_position.board
+        if piece is not None
+    }
+    # The semantic move effect can introduce B even though legacy promotion
+    # metadata cannot express that transition. Keep all declarations in scope.
+    assert _initially_reachable_type_ids(legacy) == {"K", "A"}
+    assert _initially_reachable_type_ids(compiled) == set(compiled.types_by_id)
+
+
 def assert_classification_parity(compiled, state, pairs, *, capture_only=False):
     expected = classify_noisy(state, pairs, compiled, capture_only=capture_only)
     runtime = SearchPathRuntime(state, compiled)

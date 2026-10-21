@@ -161,6 +161,37 @@ evidence. The memo was corrected to ACTIVE.
 
 ## Historical coordination
 
+## Committed infrastructure reuse — 2026-10-21
+
+The user corrected DEV_AUX to use committed sandbox infrastructure by default,
+not maintain parallel rule/search versions. Claude's latest Slack branch
+diagnosis was correct: sandbox had NoProgressContext while sidemission did not.
+PRIMARY's published contribution is the shared Core/history/terminal and
+Python/Native infrastructure at6a4f8868d767b41ffc07ff5ddbb7bce448417aaa.
+DEV_AUX imported that committed package and associated tests/dependencies in its
+own checkout, rebuilt Native, and connected its independent episode learner to
+the shared SearchPathRuntime. All238 shared package files match that source;
+the learner is the only AUX-only package file. No PRIMARY uncommitted work,
+operational state, producers or results were imported or edited.
+
+Actual learner-path comparisons preserve full D2 actions/targets/samples/nodes
+on three histories. One natural552node query changes1.039→.215s; two actual
+no-progress histories reduce per-query public replay calls150/210→8 root
+admission calls. These are local cost observations, not portable speed or
+strength claims. The complete integration suite passes3953tests with1skip;
+the initial environment failures and obsolete prototype admission expectation
+are retained privately and corrected without weakening Core history checks.
+
+Adopt direct frozen trained-initial play and stronger-opponent calibration;
+do not assume D3 gives50percent wins or compare different studies' bounds as
+causal effect sizes. The new check is bounded at24games/1800s/1.44Mnodes with
+all missing/UNKNOWN retained; it does not train or extend a closed study.
+The second natural rule's single fresh episode supplies an actual11ply mate
+and one TD update, a feasibility result only. Existing uncertain Slack delivery
+was read back but not established; no resend or realtime consultation occurred.
+Hourly ACTIVE target/cadence and role boundaries remain unchanged, with the
+user's committed-mainline reuse requirement now in both policy and prompt.
+
 The former3434-line collaboration diary is retained in Git at
 7fe1a9d6e3ab2772e520afc0784627ebd7e7d9c4. Unique uncommitted snapshots
 remain in the verified ignored cleanup backup. Past failed/partial studies,

@@ -41,6 +41,89 @@ def movement_signature(atoms: tuple[MovementAtom, ...]) -> str:
     return canonical_json(sorted(entries))
 
 
+def profile_movement_atoms(compiled, type_id: str) -> tuple[MovementAtom, ...]:
+    """Return the geometry-only movement projection used by static profiles.
+
+    Legacy compiled rules use their declared atoms unchanged. Semantic IR rules
+    instead union direct board ``move(source,target)`` leap/ray geometries.
+    This is a potential-geometry feature: it deliberately does not model target
+    occupancy, invariants, compound effects, non-clear path constraints, or their
+    frequencies. Guarded, slot-guarded and auxiliary-effect patterns are
+    excluded. If no simple semantic pattern is eligible, existing legacy atoms
+    remain the fallback. Unsupported eligible geometry fails visibly instead
+    of silently pricing a semantic-only type as immobile.
+    """
+    ir = getattr(compiled, "ir", None)
+    legacy_compiled = getattr(compiled, "_legacy_compiled", None) or compiled
+    legacy_types = getattr(legacy_compiled, "types_by_id", {})
+    if ir is None:
+        legacy = legacy_types.get(type_id)
+        return tuple(legacy.movement_atoms) if legacy is not None else ()
+
+    atoms: set[MovementAtom] = set()
+    has_direct_move = False
+    for pattern in ir.patterns:
+        if type_id not in pattern.type_ids:
+            continue
+        move_effects = [effect for effect in pattern.effects if effect.kind == "move"]
+        if len(move_effects) != 1:
+            continue
+        direct = any(
+            effect.from_ref is not None
+            and effect.to_ref is not None
+            and effect.from_ref.kind == "source"
+            and effect.to_ref.kind == "target"
+            for effect in move_effects
+        )
+        if not direct:
+            continue
+        has_direct_move = True
+        if pattern.guards or pattern.slot_guards:
+            continue
+        # An ordinary ray's path-clear semantics are exactly what RayAtom's
+        # occupancy model already expresses. Other path predicates are not.
+        if any(predicate.kind != "path_clear" for predicate in pattern.path):
+            continue
+        if any(effect.kind in ("set_token", "clear_token", "set_bool", "clear_right")
+               for effect in pattern.effects):
+            continue
+        for geometry_id in pattern.geometry_ids:
+            geometry = ir.geometry[geometry_id]
+            if geometry.kind == "drop":
+                continue
+            if not geometry.owner_relative:
+                raise ValueError(
+                    f"default static profile cannot collapse owner-asymmetric "
+                    f"semantic geometry for {type_id}; supply evaluator_override"
+                )
+            if geometry.kind == "leap":
+                if geometry.offset is None:
+                    raise ValueError(f"semantic leap for {type_id} has no offset")
+                atoms.add(LeapAtom(tuple(geometry.offset)))
+            elif geometry.kind == "ray":
+                if geometry.direction is None or geometry.min_steps not in (None, 1):
+                    raise ValueError(
+                        f"default static profile cannot represent semantic ray "
+                        f"for {type_id}; supply evaluator_override"
+                    )
+                atoms.add(RayAtom(tuple(geometry.direction), geometry.max_steps))
+            else:
+                raise ValueError(
+                    f"default static profile cannot represent semantic geometry "
+                    f"{geometry.kind!r} for {type_id}; supply evaluator_override"
+                )
+    if not atoms:
+        legacy = legacy_types.get(type_id)
+        if legacy is not None and legacy.movement_atoms:
+            return tuple(legacy.movement_atoms)
+        if has_direct_move:
+            raise ValueError(
+                f"static profile has no simple geometry for semantic-only "
+                f"movement {type_id}; supply evaluator_override"
+            )
+    return tuple(sorted(atoms, key=repr))
+
+
 def _directional_asymmetry(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> float:
     shape = _shape(n)
     forward = backward = 0

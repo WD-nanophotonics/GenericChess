@@ -6,11 +6,14 @@ import time
 
 from ...rules.compiled import CompiledRuleSet
 from ...session.session import GameSession
+from ...session.result import SessionStatus
+from ...core.errors import ensure_ruleset_match
 from ..cancellation import CancellationToken
 from ..decision import PlayerDecision
 from ..evaluation.cache import EvaluationProfileCache
-from ..evaluation.config import EvaluationConfig
+from ..evaluation.config import EvaluationConfig, MATE_SCORE
 from ..evaluation.evaluator import Evaluator
+from ..evaluation.profile import require_default_profile_metadata
 from ..limits import SearchLimits
 from .search import run_root_search
 from .native_legality import NativeSemanticLegalityProvider
@@ -20,11 +23,15 @@ from .tuning import SearchTuning
 
 
 class AlphaBetaPlayer:
-    """Deterministic, rule-derived alpha-beta player for any GenericChess RuleSet.
+    """Deterministic alpha-beta player for supported GenericChess RuleSets.
 
-    The evaluation profile is built once per RuleSet (cached); the
-    transposition table is kept across moves for the same RuleSet and cleared
-    when a different RuleSet is loaded or the caller changes q depth semantics.
+    The built-in rule-derived profile is cached per RuleSet and currently
+    requires square-board legacy movement metadata. Semantic-only or
+    rectangular rulesets use the same search interface with a compatible
+    caller-supplied ``evaluator_override``; the caller then owns evaluation
+    semantics. The transposition table is kept across moves for the same
+    RuleSet and cleared when a different RuleSet is loaded or the caller
+    changes q-depth semantics.
     """
 
     def __init__(
@@ -43,6 +50,15 @@ class AlphaBetaPlayer:
         use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
         evaluator_override=None,
+        # Readonly (position, checkpoint=...) -> bool or None to decline.
+        # Caller supplies matching rule semantics; exceptions propagate.
+        availability_provider=None,
+        # Opt-in Core-owned terminal probe; default and UI policy stay unchanged.
+        use_native_semantic_availability: bool = False,
+        # Optional child-check query; pair with Native availability to share
+        # one readonly state import. Defaults and UI policy stay unchanged.
+        use_native_semantic_check: bool = False,
+        check_provider=None,
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -50,6 +66,7 @@ class AlphaBetaPlayer:
         self._profile_cache_hit = False
         self._profile_cache = profile_cache
         if evaluator_override is None:
+            require_default_profile_metadata(compiled)
             self._profile_cache = profile_cache or EvaluationProfileCache(
                 use_disk=use_disk_cache, disk_dir=disk_cache_dir
             )
@@ -66,11 +83,24 @@ class AlphaBetaPlayer:
         self._use_tt = use_tt
         self._use_ordering = use_ordering
         self._use_native_semantic_legality = bool(use_native_semantic_legality)
+        self._use_native_semantic_availability = bool(use_native_semantic_availability)
+        self._use_native_semantic_check = bool(use_native_semantic_check)
         self._native_legality_provider = (
             NativeSemanticLegalityProvider.try_create(compiled)
-            if self._use_native_semantic_legality
+            if (self._use_native_semantic_legality or self._use_native_semantic_availability
+                or self._use_native_semantic_check)
             else None
         )
+        # Optional state-local boolean only; Core keeps adjudication/history.
+        self._availability_provider = availability_provider
+        if (self._availability_provider is None
+                and self._use_native_semantic_availability
+                and self._native_legality_provider is not None):
+            self._availability_provider = self._native_legality_provider.has_legal_action
+        self._check_provider = check_provider
+        if (self._check_provider is None and self._use_native_semantic_check
+                and self._native_legality_provider is not None):
+            self._check_provider = self._native_legality_provider.in_check
         self._tuning = tuning
 
     @property
@@ -91,6 +121,16 @@ class AlphaBetaPlayer:
         return self._use_native_semantic_legality
 
     @property
+    def use_native_semantic_availability(self) -> bool:
+        """Requested opt-in; unsupported providers still use Core's fallback."""
+        return self._use_native_semantic_availability
+
+    @property
+    def use_native_semantic_check(self) -> bool:
+        """Requested optional query; unsupported providers retain Core check."""
+        return self._use_native_semantic_check
+
+    @property
     def native_legality_provider(self):
         return self._native_legality_provider
 
@@ -109,7 +149,25 @@ class AlphaBetaPlayer:
         recorder=None,
     ) -> PlayerDecision:
         state = session.state
-        started = time.monotonic()
+        started = time.perf_counter()
+        result = getattr(session, "result", None)
+        if result is not None and result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
+            # These session terminals deliberately leave the Core state/history
+            # ongoing. Searching that state would return an unexecutable action
+            # or reselect a declaration which has already ended the session.
+            ensure_ruleset_match(state.position, self._compiled)
+            score = (0 if result.winner is None else
+                     MATE_SCORE if result.winner == state.position.side_to_move
+                     else -MATE_SCORE)
+            return PlayerDecision(
+                action=None, score=score, principal_variation=(),
+                completed_depth=0, selective_depth=0, nodes=0, qnodes=0,
+                elapsed_seconds=time.perf_counter() - started,
+                tt_probes=0, tt_hits=0, tt_cutoffs=0, beta_cutoffs=0,
+                evaluation_profile_cache_hit=self._profile_cache_hit,
+                termination_reason="terminal_position", choice_kind="TERMINAL",
+                result_source="terminal",
+            )
         stats = SearchStatistics()
         q_depths = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth)
         if self._tt_q_depths != q_depths:
@@ -134,10 +192,12 @@ class AlphaBetaPlayer:
                 if self._use_native_semantic_legality
                 else None
             ),
+            availability_provider=self._availability_provider,
+            check_provider=self._check_provider,
             recorder=recorder,
             progress_callback=progress_callback,
         )
-        elapsed = time.monotonic() - started
+        elapsed = time.perf_counter() - started
         return PlayerDecision(
             action=action,
             score=score,
@@ -209,4 +269,9 @@ class AlphaBetaPlayer:
             result_source=stats.result_source,
             result_ordinary_qdepth=stats.result_ordinary_qdepth,
             result_check_hard_qdepth=stats.result_check_hard_qdepth,
+            runtime_pushes=stats.runtime_pushes if stats.runtime_root_imports else None,
+            runtime_pops=stats.runtime_pops if stats.runtime_root_imports else None,
+            runtime_depth_balanced=(
+                stats.runtime_depth_balanced if stats.runtime_root_imports else None
+            ),
         )

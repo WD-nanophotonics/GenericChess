@@ -22,7 +22,7 @@ def test_first_completion_latency_is_not_overwritten_by_later_depth(monkeypatch)
     stats = SearchStatistics()
     ticks = count(100)
     # Deterministic increasing clock; no wall deadline is used in this test.
-    monkeypatch.setattr(search_module.time, 'monotonic', lambda: next(ticks))
+    monkeypatch.setattr(search_module.time, 'perf_counter', lambda: next(ticks))
     monkeypatch.setattr(player_module, 'SearchStatistics', lambda: stats)
     reports = []
     decision = player.choose_action(session, SearchLimits(
@@ -50,3 +50,26 @@ def test_public_first_iteration_node_abort_retains_cause_and_legal_fallback(root
     assert decision.time_to_first_completed_iteration is None
     assert decision.action in session.legal_actions()
     assert session.state == before
+
+
+def test_terminal_decision_elapsed_uses_high_resolution_clock(monkeypatch):
+    compiled = build_4x4_rooks()
+    session = GameSession(compiled)
+    session.resign()
+    player = AlphaBetaPlayer(compiled, use_disk_cache=False)
+    ticks = iter((12.0, 12.0025))
+    # The coarse monotonic clock must not be used for sub-millisecond caller
+    # telemetry; perf_counter is monotonic and high resolution on Windows.
+    monkeypatch.setattr(player_module.time, 'monotonic', lambda: 900.0)
+    monkeypatch.setattr(player_module.time, 'perf_counter', lambda: next(ticks))
+    decision = player.choose_action(session, SearchLimits())
+    assert decision.elapsed_seconds == pytest.approx(0.0025)
+
+
+def test_search_deadline_uses_high_resolution_monotonic_clock(monkeypatch):
+    ticks = iter((5.0, 5.004))
+    monkeypatch.setattr(search_module.time, 'monotonic', lambda: 0.0)
+    monkeypatch.setattr(search_module.time, 'perf_counter', lambda: next(ticks))
+    budget = search_module._Budget(SearchLimits(max_time_seconds=0.003), None)
+    with pytest.raises(search_module.SearchAborted, match='time_limit'):
+        budget.check_iteration(SearchStatistics())

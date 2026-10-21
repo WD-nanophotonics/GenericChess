@@ -18,6 +18,11 @@ void gc_semantic_runtime_audit_stop(void);
 void gc_semantic_runtime_history_mode_start(void);
 void gc_semantic_runtime_history_mode_stop(void);
 
+/* Shared automatic adjudication authority: 0 inactive, 1 PENDING,
+ * 2 configured outcome, -1 incomplete/unsupported authoritative history. */
+int gc_semantic_runtime_automatic_status(const GCSemanticRules *,
+    const GCSemanticPosition *);
+
 /* Apply one exact semantic action to a copied position.  This first validates
  * the action's pattern/geometry/target binding, then executes the declared
  * board, hand, type and auxiliary effects in order.  Returns 1 on success;
@@ -26,6 +31,25 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
                                       const GCSemanticRules *rules,
                                       const GCSemanticPosition *parent,
                                       uint64_t action);
+
+/* Internal status: 1 success, 0 rule/input/capacity rejection, -1 child
+ * identity failure (including nested reply). Boolean callers stay 0/1. */
+int gc_semantic_runtime_make_checked_status(GCSemanticPosition *,
+    const GCSemanticRules *, const GCSemanticPosition *, uint64_t);
+
+/* Discarded scoring/feature legality only; preserves postconditions and parent history.
+ * Returns 1/0/-1. Never use this child for search, TT, cache or terminal checks. */
+int gc_semantic_runtime_make_material_view_status(GCSemanticPosition *,
+    const GCSemanticRules *, const GCSemanticPosition *, uint64_t);
+
+/* Internal availability keeps nested execution failures distinct from no move. */
+int gc_semantic_runtime_probe_action_status(const GCSemanticRules *,
+    const GCSemanticPosition *, uint64_t);
+
+/* Readonly S0-S4 action existence probe; no child identity/history output. */
+int gc_semantic_runtime_probe_action(const GCSemanticRules *rules,
+                                    const GCSemanticPosition *parent,
+                                    uint64_t action);
 
 /* Test-only witness inspection; not exposed through generic_chess.native.semantic. */
 int gc_semantic_runtime_action_delivers_check_debug(
@@ -73,5 +97,8 @@ int gc_semantic_runtime_make_trusted(GCSemanticPosition *position,
                                      GCSemanticUndo *undo);
 void gc_semantic_runtime_unmake(GCSemanticPosition *position,
                                 const GCSemanticUndo *undo);
+
+/* Copy all fixed fields and the complete live history, without unused tail. */
+void gc_semantic_runtime_copy_live_position(GCSemanticPosition *,const GCSemanticPosition *);
 
 #endif

@@ -301,7 +301,7 @@ def test_native_semantic_probe_detects_checkmate_terminal_state():
     result = probe_search(native_rules, native_position, 2)
     assert terminal_status(native_rules, native_position) == {"status": "checkmate", "winner": 1}
     assert result["has_best"] == 0
-    assert result["score"] == -1000000
+    assert result["score"] == -100000000
     assert result["nodes"] == 1
 
 

@@ -28,6 +28,198 @@ def test_reference_fuse_cannot_supply_a_partial_score():
     assert counted.evaluate(None) == 7
     with pytest.raises(ReferenceLimit):
         counted.evaluate(None)
+    assert counted.calls == 1  # rejected work is not an actual leaf evaluation
+
+
+def test_reference_deadline_fuse_does_not_count_rejected_leaf(monkeypatch):
+    class Leaf:
+        def __init__(self):
+            self.calls = 0
+
+        def evaluate(self, state):
+            self.calls += 1
+            return 7
+
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    clock_values = iter((0.0, 0.5, 1.1))
+    monkeypatch.setattr(
+        unfamiliar_search.time, "perf_counter", lambda: next(clock_values)
+    )
+    leaf = Leaf()
+    counted = CountedEvaluator(leaf, seconds=1, evaluations=10)
+    assert counted.evaluate(None) == 7
+    with pytest.raises(ReferenceLimit):
+        counted.evaluate(None)
+    assert leaf.calls == counted.calls == 1
+
+
+def test_reference_deadline_fuse_expires_at_exact_deadline(monkeypatch):
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class Leaf:
+        def evaluate(self, _state):
+            return 7
+
+    clock_values = iter((0.0, 0.5, 1.0))
+    monkeypatch.setattr(
+        unfamiliar_search.time, "perf_counter", lambda: next(clock_values)
+    )
+    counted = CountedEvaluator(Leaf(), seconds=1, evaluations=10)
+    assert counted.evaluate(None) == 7
+    with pytest.raises(ReferenceLimit):
+        counted.evaluate(None)
+    assert counted.calls == 1
+
+
+def test_repeat_signature_distinguishes_actionless_declaration_choices(monkeypatch):
+    from types import SimpleNamespace
+    from generic_chess.core.declarations import DeclarationAssessment
+    from generic_chess.ai.decision import PlayerDecision
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class AlternatingDeclarationPlayer:
+        calls = 0
+
+        def __init__(self, *_args, **_kwargs):
+            self.native_legality_provider = None
+
+        def choose_action(self, _session, _limits):
+            type(self).calls += 1
+            return PlayerDecision(
+                action=None,
+                score=1_000_000,
+                principal_variation=(),
+                completed_depth=0,
+                selective_depth=0,
+                nodes=0,
+                qnodes=0,
+                elapsed_seconds=0.0,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="root_declaration_win",
+                choice_kind="DECLARATION",
+                declaration=DeclarationAssessment(
+                    declaration_id=f"claim-{type(self).calls}", actor=0,
+                    outcome="WIN", weighted_score=7,
+                ),
+            )
+
+    monkeypatch.setattr(unfamiliar_search, "AlphaBetaPlayer", AlternatingDeclarationPlayer)
+    monkeypatch.setattr(unfamiliar_search, "validate_pv", lambda *_args: None)
+    case = {"searches": []}
+
+    unfamiliar_search._compare_searches(
+        session=SimpleNamespace(compiled=object()), evaluator=object(), cache=None, reference={},
+        depth=1, case=case, save=lambda: None,
+    )
+
+    assert case["repeat_equal"] == {"python_plain": False, "public_bundle": False}
+
+
+def test_complete_candidate_keeps_incomplete_reference_unknown(monkeypatch):
+    """A cost-fused reference cannot become a score mismatch certificate."""
+    from types import SimpleNamespace
+    from generic_chess.ai.decision import PlayerDecision
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class CompletedCandidate:
+        def __init__(self, *_args, **_kwargs):
+            self.native_legality_provider = None
+
+        def choose_action(self, _session, _limits):
+            return PlayerDecision(
+                action=None,
+                score=17,
+                principal_variation=(),
+                completed_depth=1,
+                selective_depth=1,
+                nodes=1,
+                qnodes=0,
+                elapsed_seconds=0.0,
+                tt_probes=0,
+                tt_hits=0,
+                tt_cutoffs=0,
+                beta_cutoffs=0,
+                evaluation_profile_cache_hit=False,
+                termination_reason="completed_depth",
+            )
+
+    monkeypatch.setattr(unfamiliar_search, "AlphaBetaPlayer", CompletedCandidate)
+    monkeypatch.setattr(unfamiliar_search, "validate_pv", lambda *_args: None)
+    case = {"searches": []}
+    unfamiliar_search._compare_searches(
+        session=SimpleNamespace(compiled=object()),
+        evaluator=object(),
+        cache=None,
+        reference={"complete": False, "score": None},
+        depth=1,
+        case=case,
+        save=lambda: None,
+    )
+
+    assert all(search["complete"] for search in case["searches"])
+    assert all(search["reference_score_equal"] is None for search in case["searches"])
+
+
+def test_run_rule_persists_incomplete_reference_as_unknown(tmp_path, monkeypatch):
+    import json
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class AlwaysFusedReference:
+        def __init__(self, _evaluator):
+            self.calls = 0
+
+        def evaluate(self, _state):
+            raise ReferenceLimit("forced test fuse")
+
+    monkeypatch.setattr(unfamiliar_search, "CountedEvaluator", AlwaysFusedReference)
+    output = tmp_path / "partial-reference.json"
+    report = run_rule(output, ruleset_to_dict(cannon_ruleset()), depth=1)
+    persisted = json.loads(output.read_text(encoding="utf-8"))
+
+    assert report["complete"] is True  # the diagnostic run/file completed
+    assert persisted["complete"] is True
+    assert persisted["reference"] == {
+        "complete": False,
+        "score": None,
+        "action": None,
+        "wall_seconds": persisted["reference"]["wall_seconds"],
+        "leaf_evaluations": 0,
+    }
+    assert all(search["complete"] for search in persisted["searches"])
+    assert all(search["reference_score_equal"] is None for search in persisted["searches"])
+
+
+def test_generated_run_persists_incomplete_references_as_unknown(tmp_path, monkeypatch):
+    import json
+    import scripts.unfamiliar_search as unfamiliar_search
+
+    class AlwaysFusedReference:
+        def __init__(self, _evaluator):
+            self.calls = 0
+
+        def evaluate(self, _state):
+            raise ReferenceLimit("forced test fuse")
+
+    monkeypatch.setattr(unfamiliar_search, "CountedEvaluator", AlwaysFusedReference)
+    output = tmp_path / "generated-partial-reference.json"
+    report = run(output, depth=1)
+    persisted = json.loads(output.read_text(encoding="utf-8"))
+
+    assert report["complete"] is True
+    assert persisted["complete"] is True
+    assert len(persisted["cases"]) == 4
+    for case in persisted["cases"]:
+        assert case["reference"]["complete"] is False
+        assert case["reference"]["score"] is None
+        assert case["reference"]["action"] is None
+        assert case["reference"]["leaf_evaluations"] == 0
+        assert all(search["complete"] for search in case["searches"])
+        assert all(search["reference_score_equal"] is None for search in case["searches"])
 
 
 def test_supplied_semantic_rule_uses_product_boundary_and_core_reference(tmp_path):
@@ -44,15 +236,19 @@ def test_supplied_semantic_rule_uses_product_boundary_and_core_reference(tmp_pat
         run_rule(output, ruleset_to_dict(cannon_ruleset()), depth=1)
 
 
-def test_semantic_only_movement_is_not_claimed_as_static_capability():
+def test_semantic_only_movement_contributes_to_static_capability():
     from generic_chess.rules.western_chess import build_western_chess_ruleset
     from generic_chess.rules.compiler import compile_ruleset_for_execution
     from generic_chess.ai.evaluation.profile import build_ruleset_profile
     from generic_chess.ai.evaluation.config import EvaluationConfig
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
     scope = profile_input_scope(compiled)
-    assert scope['semantic_moving_types_without_atoms'] == ['P']
-    assert build_ruleset_profile(compiled, EvaluationConfig()).piece_profiles['P'].raw_capability_score == 0
+    assert scope['semantic_moving_types_without_legacy_atoms'] == ['P']
+    assert scope['semantic_geometry_profile_types'] == ['P']
+    assert scope['semantic_patterns_used_for_static_capability']
+    profile = build_ruleset_profile(compiled, EvaluationConfig())
+    assert profile.piece_profiles['P'].raw_capability_score > 0
+    assert profile.board_value_by_type['P'] > 1
 
 
 def test_existing_benchmark_ruleset_option_executes_semantics(tmp_path, capsys):
@@ -91,7 +287,7 @@ def test_supplied_semantic_rule_can_fix_attack_authority_separately(tmp_path, au
     report = run_rule(tmp_path / 'semantic-attacks.json', ruleset_to_dict(cannon_ruleset()),
                       semantic_candidate=True, attack_authority=authority)
     assert report['declaration']['attack_authority'] == authority
-    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v3-inert-hand'
+    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v4-inert-hand'
     assert report['candidate_scope']['hand_policy'] == 'zero_proved_inert'
     assert report['evaluator_version'] == report['candidate_scope']['candidate']
     assert report['reference']['complete']
@@ -107,7 +303,7 @@ def test_explicit_candidate_does_not_build_unused_default_profile(tmp_path, monk
     report = run_rule(tmp_path / 'candidate-only.json', ruleset_to_dict(cannon_ruleset()),
                       depth=1, semantic_candidate=True, attack_authority='core')
     assert report['complete'] and report['reference']['complete']
-    assert report['evaluator_version'] == 'semantic-opportunity-v3-inert-hand'
+    assert report['evaluator_version'] == 'semantic-opportunity-v4-inert-hand'
     assert report['evaluator_version'] in report['declaration']['evaluator']
 
 
@@ -120,7 +316,7 @@ def test_rectangular_opt_in_candidate_crosses_supported_core_boundary(tmp_path):
         ruleset_to_dict(rectangular_cannon(7, 5)), semantic_candidate=True,
         evaluation_config=config, attack_authority='core')
     assert report['complete'] and report['reference']['complete']
-    assert report['evaluator_version'] == 'semantic-opportunity-v3-inert-hand'
+    assert report['evaluator_version'] == 'semantic-opportunity-v4-inert-hand'
     assert all(cell['complete'] and cell['reference_score_equal'] for cell in report['searches'])
     with pytest.raises(ValueError, match='disabled anchor escape and promotion'):
         run_rule(tmp_path / 'unsupported-dynamics.json',

@@ -4,12 +4,13 @@ import json
 import os
 import shutil
 import uuid
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
 
 from generic_chess.ai.evaluation.cache import EvaluationProfileCache, MovementCapabilityCache
-from generic_chess.ai.evaluation.config import EvaluationConfig
+from generic_chess.ai.evaluation.config import EvaluationConfig, config_hash
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
 
 from ai_fixtures import build_4x4_rooks, build_mate, king, rook
@@ -69,6 +70,51 @@ def test_disk_cache_invalidations(ai_tmp_dir):
     other_ruleset = build_mate(2)
     _, hit = EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(other_ruleset, config)
     assert not hit  # fingerprint changed -> miss
+
+
+def test_generic_v5_rebuilds_persisted_generic_v4_profile(ai_tmp_dir):
+    compiled = build_4x4_rooks()
+    old = EvaluationConfig(evaluator_version="generic-v4")
+    old_cache = EvaluationProfileCache(disk_dir=ai_tmp_dir, use_disk=True)
+    old_profile, old_hit = old_cache.get_or_build(compiled, old)
+    assert not old_hit
+    assert old_profile.evaluator_version == "generic-v4"
+    assert list(ai_tmp_dir.glob("profile-*.json"))
+
+    current = EvaluationConfig()
+    new_cache = EvaluationProfileCache(disk_dir=ai_tmp_dir, use_disk=True)
+    rebuilt, new_hit = new_cache.get_or_build(compiled, current)
+    assert not new_hit
+    assert rebuilt.evaluator_version == "generic-v5"
+
+
+def test_profile_algorithm_version_ignores_pre_semantic_projection_disk_cache(ai_tmp_dir):
+    from generic_chess.ai.evaluation.cache import _profile_to_dict
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.western_chess import build_western_chess_ruleset
+
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    old_config = EvaluationConfig(evaluator_version="generic-v2")
+    new_config = EvaluationConfig()
+    current = build_ruleset_profile(compiled, new_config)
+    assert current.board_value_by_type["P"] > 1
+
+    stale = _profile_to_dict(current)
+    stale["evaluator_version"] = old_config.evaluator_version
+    stale["config_hash"] = config_hash(old_config)
+    stale["board_value_by_type"]["P"] = 1
+    stale["hand_value_by_base_type"]["P"] = 1
+    legacy_path = ai_tmp_dir / (
+        f"profile-{compiled.ruleset_fingerprint[:16]}-"
+        f"{config_hash(old_config)[:12]}.json"
+    )
+    legacy_path.write_text(json.dumps(stale), encoding="utf-8")
+
+    cache = EvaluationProfileCache(disk_dir=ai_tmp_dir, use_disk=True)
+    rebuilt, hit = cache.get_or_build(compiled, new_config)
+    assert not hit
+    assert rebuilt.board_value_by_type["P"] == current.board_value_by_type["P"]
+    assert rebuilt.hand_value_by_base_type["P"] == current.hand_value_by_base_type["P"]
 
 
 def test_corrupt_disk_cache_rebuilds(ai_tmp_dir):

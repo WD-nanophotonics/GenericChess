@@ -106,11 +106,17 @@ def test_terminal_has_terminal_source_even_when_already_cancelled():
 def test_old_positional_decision_constructor_retains_unknown_provenance():
     session, evaluator = position()
     decision = player(session, evaluator).choose_action(session, SearchLimits(max_depth=1))
-    legacy_fields = fields(PlayerDecision)[:-3]
+    # Reproduce the constructor before provenance was appended; subsequent
+    # runtime fields mean dropping today's final three is a different version.
+    decision_fields = fields(PlayerDecision)
+    boundary = next(i for i, field in enumerate(decision_fields)
+                    if field.name == "result_source")
+    legacy_fields = decision_fields[:boundary]
     legacy = PlayerDecision(*(getattr(decision, field.name) for field in legacy_fields))
     assert legacy.action == decision.action and legacy.score == decision.score
     assert legacy.result_source == 'unknown'
     assert legacy.result_ordinary_qdepth is legacy.result_check_hard_qdepth is None
+    assert legacy.runtime_pushes is legacy.runtime_pops is legacy.runtime_depth_balanced is None
 
 
 def test_warm_exact_return_policy_does_not_claim_cached_value_horizon():

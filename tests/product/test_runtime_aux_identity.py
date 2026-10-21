@@ -78,6 +78,41 @@ def test_actual_imported_bool_write_matches_full_hash_and_undo(initial, value):
     assert runtime.search_key() == before_key
 
 
+@pytest.mark.parametrize("strict", (False, True))
+def test_pure_semantic_support_keeps_native_provider_active(strict):
+    from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
+    from generic_chess.native import native_available
+
+    if not native_available():
+        pytest.skip("native unavailable")
+    compiled = _compiled()
+    assert not hasattr(compiled, "max_ply")
+    provider = NativeSemanticLegalityProvider.try_create(compiled, strict=strict)
+    assert provider is not None
+    state = _imported(compiled, (((0, -1), False),))
+    assert provider.supports_position(state.position, 0)
+    assert not provider.supports_position(state.position, compiled.support.max_ply)
+    runtime = SearchPathRuntime.from_state(
+        state, compiled, history_witnesses=(state.position,),
+        legal_binding_provider=provider,
+    )
+    actions = runtime.legal_actions()
+    from generic_chess.core.transition import legal_actions
+    assert set(actions) == set(legal_actions(state, compiled))
+    assert runtime.legal_provider_calls == 1
+    assert runtime.legal_provider_fallbacks == 0
+    action = next(a for a in actions if a.pattern_id.startswith("sem_"))
+    expected = apply_action(state, action, compiled)
+    with runtime.pushed(action):
+        assert runtime.position == expected.position
+        assert runtime.terminal_status == expected.terminal_status
+        assert set(runtime.legal_actions()) == set(legal_actions(expected, compiled))
+        assert runtime.legal_provider_calls == 2
+        assert runtime.legal_provider_operational_failures == 0
+    runtime.assert_balanced()
+    assert runtime.position is state.position
+
+
 @pytest.mark.parametrize("left,right", ((1, True), (0, False), ((1, 2), (True, 2))))
 def test_foreign_scalar_types_survive_forced_runtime_tt_collision(left, right):
     compiled = _compiled()

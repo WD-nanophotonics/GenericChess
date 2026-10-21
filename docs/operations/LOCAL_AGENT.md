@@ -19,6 +19,18 @@ confirmed effective work. Resume preserves unconfirmed intervals as interruption
 evidence without granting credit. An ended session starts a new research segment.
 No second writer, Agent, worker, Goal or replacement timer.
 
+At every recovery/heartbeat, check the latest committed sandbox infrastructure
+and reuse it as the default rules/search/history/runtime baseline in sidemission.
+Keep the independent learner/research changes, not a second infrastructure fork.
+Import committed source/tests with their dependencies, record the source SHA,
+and resolve compatibility locally. Uncommitted mainline work stays untouched.
+Verify actual learner callers before claiming performance gains. Only this
+checkout is writable; old experimental results and caps remain frozen.
+Fetch the explicit tracking ref with
+`git fetch origin refs/heads/sandbox:refs/remotes/origin/sandbox`; the own-branch
+fetch configuration may otherwise update only FETCH_HEAD and leave a stale
+origin/sandbox. Inspect the fixed fetched commit before importing its files.
+
 ## Research and timing
 
 Read LOCAL_MAINLINE.md for the current question. Reuse the selected fixed-scale

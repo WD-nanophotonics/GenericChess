@@ -33,6 +33,8 @@ class GeneratorConfig:
     min_opening_legal_moves: int = 1
     max_opening_legal_moves: int = 256
     max_generation_attempts: int = 1000
+    # Optional shallow preference, not a claim of balanced or long games.
+    require_no_opening_win_in_one: bool = False
 
     def __post_init__(self) -> None:
         if self.board_size < 4:

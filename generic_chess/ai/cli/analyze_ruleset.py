@@ -55,9 +55,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     config = EvaluationConfig()
     cache = EvaluationProfileCache(use_disk=not args.no_disk)
-    started = time.monotonic()
+    started = time.perf_counter()
     profile, hit = cache.get_or_build(compiled, config)
-    elapsed = time.monotonic() - started
+    elapsed = time.perf_counter() - started
     report = profile_report(profile, hit, elapsed)
     if args.json_out:
         with open(args.json_out, "w", encoding="utf-8") as fh:

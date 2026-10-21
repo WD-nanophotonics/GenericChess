@@ -57,7 +57,7 @@ def _python_probe(semantic, position, native_rules, depth, board_values=None, ha
         nonlocal nodes
         terminal = engine.terminal_result(state, ply, ())
         if terminal.status is TerminalStatus.CHECKMATE:
-            return -1_000_000, ()
+            return -100_000_000, ()
         if terminal.status is not TerminalStatus.ONGOING:
             return 0, ()
         if remaining == 0:
@@ -265,3 +265,25 @@ def test_native_probe_search_matches_python_on_promotion_position():
     observed_profile = probe_search(native_rules, transformed_native, 0, board_values=board_values, hand_values=hand_values)
     assert observed_profile == expected_profile
     assert observed_profile["score"] == 97
+
+
+@pytest.mark.skipif(not native_available(), reason="native extension unavailable")
+@pytest.mark.parametrize("case_id", ["chess-tactic", "chess-ep"])
+def test_fixed_probe_selected_action_has_exact_root_value(case_id):
+    from scripts.search_backend_comparison import CASES, VALUES, CoreBoard
+    from scripts.native_backend_bridge import NativeBoard
+    from generic_chess import build_builtin_ruleset, compile_ruleset_for_execution
+    case=next(c for c in CASES if c['id']==case_id)
+    core=CoreBoard(case,compile_ruleset_for_execution(build_builtin_ruleset('western_chess')))
+    board=NativeBoard(core,VALUES['chess'])
+    values=board.values
+    result=fixed_depth_search(board.native,board.position,3,
+                             board_values=values,hand_values=values)
+    exact={raw:-fixed_depth_search(board.native,make_checked(board.native,board.position,raw),2,
+                                  board_values=values,hand_values=values)['score']
+           for _,raw in board.actions()}
+    best=max(exact.values())
+    assert result['score']==best
+    assert exact[result['best_action']]==best
+    assert result['best_action']==min(raw for raw,value in exact.items() if value==best)
+    assert board.restored()

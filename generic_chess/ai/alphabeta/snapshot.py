@@ -1,4 +1,4 @@
-"""Frozen search-input snapshot (Qt-free)."""
+"""Frozen search-input envelope (Qt-free; the contained session is not copied)."""
 
 from __future__ import annotations
 
@@ -10,11 +10,14 @@ from ..limits import SearchLimits
 
 @dataclass(frozen=True, slots=True)
 class SearchSnapshot:
-    """Everything a worker needs to run one search, frozen on the GUI thread.
+    """Search inputs and stale-result identity captured on the GUI thread.
 
-    The worker only reads this snapshot and never touches the mutable
-    controller; stale results are rejected by comparing ``generation`` /
-    ``root_key`` / ``ruleset_fingerprint`` when the decision is committed.
+    This is a frozen envelope, not a deep immutable state copy: ``session`` is
+    the captured GameSession object and backends must treat it as read-only.
+    The worker never touches the mutable controller; stale results are rejected
+    by comparing ``generation`` / ``root_key`` / ``ruleset_fingerprint`` when
+    the decision is committed. A backend that needs an isolated value snapshot
+    must define that contract explicitly rather than mutating this session.
     """
 
     session: GameSession

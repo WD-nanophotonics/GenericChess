@@ -29,7 +29,7 @@ from ...core.declarations import (
     _available_declarations_position,
 )
 from ..cancellation import CancellationToken
-from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
+from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD, MAX_STATIC_EVAL
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
@@ -68,7 +68,7 @@ class _Budget:
         self._max_time = limits.max_time_seconds
         self._cancel = cancel_token
         self._deadline = (
-            time.monotonic() + limits.max_time_seconds
+            time.perf_counter() + limits.max_time_seconds
             if limits.max_time_seconds is not None
             else None
         )
@@ -90,7 +90,7 @@ class _Budget:
             return
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
-        if self._deadline is not None and time.monotonic() >= self._deadline:
+        if self._deadline is not None and time.perf_counter() >= self._deadline:
             raise SearchAborted("time_limit")
 
     def check_iteration(self, stats: SearchStatistics) -> None:
@@ -99,7 +99,7 @@ class _Budget:
         total = stats.nodes + stats.qnodes
         if self._max_nodes is not None and total >= self._max_nodes:
             raise SearchAborted("node_limit")
-        if self._deadline is not None and time.monotonic() >= self._deadline:
+        if self._deadline is not None and time.perf_counter() >= self._deadline:
             raise SearchAborted("time_limit")
 
 
@@ -121,6 +121,7 @@ class _Context:
         "runtime",
         "first_main_iteration_complete",
         "root_scan_best_action",
+        "root_completed_win",
     )
 
     def __init__(
@@ -159,6 +160,7 @@ class _Context:
         # it only after a complete main iteration succeeds.
         self.first_main_iteration_complete = first_main_iteration_complete
         self.root_scan_best_action: Action | None = None
+        self.root_completed_win: tuple[SearchResult, int] | None = None
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -174,8 +176,17 @@ class _Context:
         if budget._interactive:
             if budget._cancel is not None and budget._cancel.is_cancelled():
                 raise SearchAborted("cancelled")
-            if budget._deadline is not None and time.monotonic() >= budget._deadline:
+            if budget._deadline is not None and time.perf_counter() >= budget._deadline:
                 raise SearchAborted("time_limit")
+
+
+def _bounded_static_score(score: int) -> int:
+    """Reserve terminal/TT distance bands even for oversized total utilities.
+
+    Per-piece profile limits do not bound inventories plus dynamic terms.
+    Raw evaluator output remains available outside the search boundary.
+    """
+    return max(-MAX_STATIC_EVAL, min(MAX_STATIC_EVAL, score))
 
 
 def _evaluate(state, evaluator, ctx: _Context) -> int:
@@ -183,7 +194,7 @@ def _evaluate(state, evaluator, ctx: _Context) -> int:
     started = time.perf_counter()
     try:
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
-            return evaluator.evaluate(state)
+            return _bounded_static_score(evaluator.evaluate(state))
     finally:
         ctx.stats.evaluation_calls += 1
         ctx.stats.evaluation_seconds += time.perf_counter() - started
@@ -213,6 +224,14 @@ def _declaration_options(state, compiled, stats):
     stats.declaration_win_options += sum(a.outcome == "WIN" for a in options)
     stats.declaration_restart_options += sum(a.outcome == "RESTART" for a in options)
     return options
+
+
+def _neutral_declaration(options):
+    """Both neutral outcomes prevent a forced loss; retain RESTART preference."""
+    return (
+        next((option for option in options if option.outcome == "RESTART"), None)
+        or next((option for option in options if option.outcome == "NO_CONTEST"), None)
+    )
 
 
 def _ordinary_qdepth_limit(ctx: _Context) -> int:
@@ -314,7 +333,7 @@ def negamax(
         )
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return SearchResult(MATE_SCORE - ply, None, (), winning)
     if depth <= 0:
@@ -328,7 +347,7 @@ def negamax(
         else:
             score = _evaluate(state, ctx.evaluator, ctx)
         ctx.budget.check(ctx.stats, force=True)
-        return SearchResult(max(score, 0) if restart is not None else score, None, ())
+        return SearchResult(max(score, 0) if neutral is not None else score, None, ())
 
     if ctx.tuning.use_mate_distance_pruning:
         alpha = max(alpha, -MATE_SCORE + ply)
@@ -347,7 +366,8 @@ def negamax(
     tt_compatible = bool(ctx.use_tt)
     # These terminal rules depend on verified move history beyond the
     # identity/actor/check facts represented by RuntimeHistoryContext.
-    if continuous_check_policy or repeated_cycle_target_policy:
+    action_history_policy = bool(getattr(ctx.compiled, "consecutive_action_adjudications", ()))
+    if continuous_check_policy or repeated_cycle_target_policy or action_history_policy:
         tt_compatible = bool(ctx.use_tt and ctx.runtime is not None and ctx.runtime.tt_eligible)
         if ctx.use_tt:
             if tt_compatible:
@@ -386,15 +406,15 @@ def negamax(
                 with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
                     score = score_from_tt(entry.score, ply)
                     if entry.bound is BoundType.EXACT:
-                        # A RESTART floor is intentionally not encoded in the
+                        # A neutral declaration floor is intentionally not encoded in the
                         # TT's Action slot.  Reconstruct its out-of-band
                         # identity from the already-assessed current node,
-                        # but only for a live qualifying RESTART option.
+                        # but only for a live qualifying neutral option.
                         cached_declaration = (
-                            restart
+                            neutral
                             if score == 0
                             and entry.best_action is None
-                            and restart is not None
+                            and neutral is not None
                             else None
                         )
                         return SearchResult(
@@ -407,10 +427,10 @@ def negamax(
                     if alpha >= beta:
                         ctx.stats.tt_cutoffs += 1
                         cached_declaration = (
-                            restart
+                            neutral
                             if score == 0
                             and entry.best_action is None
-                            and restart is not None
+                            and neutral is not None
                             else None
                         )
                         return SearchResult(
@@ -456,7 +476,7 @@ def negamax(
         # Core should have flagged the position terminal; fall back to eval.
         return SearchResult(_evaluate(state, ctx.evaluator, ctx), None, ())
     if ctx.use_ordering:
-        started = time.monotonic()
+        started = time.perf_counter()
         with ctx.recorder.time_block(AuditMetric.ORDERING):
             if ctx.tuning.use_staged_move_picker:
                 ordered_actions = StagedMovePicker(
@@ -483,7 +503,7 @@ def negamax(
         ctx.budget.check(ctx.stats, force=True)
         ctx.stats.ordering_calls += 1
         ctx.stats.ordered_moves += len(actions)
-        ctx.stats.ordering_seconds += time.monotonic() - started
+        ctx.stats.ordering_seconds += time.perf_counter() - started
     else:
         ordered_actions = sorted(actions, key=str)
 
@@ -540,6 +560,16 @@ def negamax(
         else:
             child_result = child_search(-beta, -alpha, pv_node)
             score = -child_result.score
+        # A completed root child can already prove a win even if a later
+        # sibling aborts the iteration. Static totals cannot enter this band.
+        if (ply == 0 and score >= MATE_THRESHOLD and score > alpha
+                and ctx.first_main_iteration_complete is not None
+                and (ctx.root_completed_win is None
+                     or score > ctx.root_completed_win[0].score)):
+            ctx.root_completed_win = (
+                SearchResult(score, action, (action,) + child_result.pv),
+                _ordinary_qdepth_limit(ctx),
+            )
         if score > best:
             best = score
             best_action = action
@@ -557,11 +587,11 @@ def negamax(
                     ctx.orderer.record_countermove(prev_action, action)
             break
 
-    if restart is not None and best < 0:
+    if neutral is not None and best < 0:
         best = 0
         best_action = None
         best_pv = ()
-        best_declaration = restart
+        best_declaration = neutral
     else:
         best_declaration = None
 
@@ -578,17 +608,18 @@ def negamax(
     return SearchResult(best, best_action, best_pv, best_declaration)
 
 
-def _order_qactions(state, actions, ply, ctx: _Context):
+def _order_qactions(state, actions, ply, ctx: _Context, *, in_check: bool = False):
     """Order the same q action set; preserve the default lexical traversal."""
-    if not ctx.tuning.use_ordered_qsearch or not ctx.use_ordering:
+    if (not ctx.tuning.use_ordered_qsearch or not ctx.use_ordering
+            or (in_check and not ctx.tuning.use_ordered_qsearch_in_check)):
         return sorted(actions, key=str)
     actions = list(actions)
-    started = time.monotonic()
+    started = time.perf_counter()
     ordered = ctx.orderer.order(state, actions, ctx.evaluator, -ply - 1,
                                 None, None, ctx.tuning)
     ctx.stats.ordering_calls += 1
     ctx.stats.ordered_moves += len(actions)
-    ctx.stats.ordering_seconds += time.monotonic() - started
+    ctx.stats.ordering_seconds += time.perf_counter() - started
     return ordered
 
 
@@ -632,10 +663,10 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         return terminal_score(terminal, state.position.side_to_move, ply)
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply
-    if restart is not None:
+    if neutral is not None:
         alpha = max(alpha, 0)
     side = state.position.side_to_move
     in_check = runtime.in_check(side, checkpoint=ctx.checkpoint)
@@ -651,7 +682,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
             raise SearchAborted("qsearch_budget")
         if not actions:
             raise SearchAborted("qsearch_check_no_evasions")
-        for action in _order_qactions(state, actions, ply, ctx):
+        for action in _order_qactions(state, actions, ply, ctx, in_check=True):
             with runtime.pushed(action, checkpoint=ctx.checkpoint):
                 score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
             if score >= beta:
@@ -664,7 +695,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return max(stand_pat, 0) if restart is not None else stand_pat
+        return max(stand_pat, 0) if neutral is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= _ordinary_qdepth_limit(ctx):
@@ -679,7 +710,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     ctx.budget.check(ctx.stats, force=True)
     # Classify on demand in the chosen order; reuse the child for recursion.
     # The default stays lexical. A cutoff need not classify unvisited actions.
-    ordered = _order_qactions(state, actions, ply, ctx)
+    ordered = _order_qactions(state, actions, ply, ctx, in_check=False)
     semantic = semantic_engine_for(ctx.compiled) is not None
     parent_enemies = enemy_board_count(state.position, side)
     parent_inventory = material_inventory(state.position) if semantic else None
@@ -721,10 +752,10 @@ def quiescence(
         return terminal_score(terminal, state.position.side_to_move, ply)
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply
-    if restart is not None:
+    if neutral is not None:
         alpha = max(alpha, 0)
 
     side = state.position.side_to_move
@@ -753,7 +784,7 @@ def quiescence(
             ):
                 handle_by_action[handle.action] = handle
                 ctx.checkpoint()
-            ordered_actions = _order_qactions(state, handle_by_action, ply, ctx)
+            ordered_actions = _order_qactions(state, handle_by_action, ply, ctx, in_check=in_check)
             successors = None
         else:
             successors = legal_successors(state, ctx.compiled)
@@ -774,7 +805,7 @@ def quiescence(
             ((action, handle_by_action[action]) for action in ordered_actions)
             if semantic_engine is not None
             else ((action, child_by_action[action]) for action in
-                  _order_qactions(state, child_by_action, ply, ctx))
+                  _order_qactions(state, child_by_action, ply, ctx, in_check=in_check))
         )
         for action, child_or_handle in ordered:
             child = (
@@ -796,7 +827,7 @@ def quiescence(
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return max(stand_pat, 0) if restart is not None else stand_pat
+        return max(stand_pat, 0) if neutral is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= _ordinary_qdepth_limit(ctx):
@@ -823,7 +854,7 @@ def quiescence(
     if semantic_engine is not None:
         ordered = (
             (action, handle_by_action[action])
-            for action in _order_qactions(state, handle_by_action, ply, ctx)
+            for action in _order_qactions(state, handle_by_action, ply, ctx, in_check=in_check)
         )
     else:
         noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats,
@@ -831,7 +862,7 @@ def quiescence(
         ctx.budget.check(ctx.stats, force=True)
         child_by_action = {action: child for action, child in successors if action in noisy}
         ordered = [(action, child_by_action[action]) for action in
-                   _order_qactions(state, child_by_action, ply, ctx)]
+                   _order_qactions(state, child_by_action, ply, ctx, in_check=in_check)]
     for action, child_or_handle in ordered:
         child = (
             materialize_legal_successor(
@@ -872,12 +903,12 @@ def reference_minimax(
         state.position, state.ply_count, compiled
     )
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply, None
     if depth <= 0:
-        score = evaluator.evaluate(state)
-        return max(score, 0) if restart is not None else score, None
+        score = _bounded_static_score(evaluator.evaluate(state))
+        return max(score, 0) if neutral is not None else score, None
     successors = sorted(legal_successors(state, compiled), key=lambda pair: str(pair[0]))
     best = -INF
     best_action: Action | None = None
@@ -887,7 +918,7 @@ def reference_minimax(
         if score > best:
             best = score
             best_action = action
-    if restart is not None and best < 0:
+    if neutral is not None and best < 0:
         return 0, None
     return best, best_action
 
@@ -899,7 +930,7 @@ def root_tactical_scan(
     ctx: _Context,
     handles=None,
 ) -> tuple[Action | None, Action | None]:
-    """Cheap root scan: immediate mate first, else best fast-eval root action.
+    """Cheap root scan: immediate winning terminal first, else best fast-eval action.
 
     Returns ``(immediate_win_action, best_action_by_eval)``.  Every root
     successor is examined until the budget ends. Completed child evaluations
@@ -907,7 +938,7 @@ def root_tactical_scan(
     """
     best_action: Action | None = None
     best_score = -INF
-    started = time.monotonic()
+    started = time.perf_counter()
     if ctx.runtime is not None:
         stream = _runtime_legal_actions(ctx, ctx.checkpoint)
         for action in stream:
@@ -917,10 +948,10 @@ def root_tactical_scan(
                 ctx.stats.nodes += 1
                 ctx.stats.root_scan_nodes += 1
                 if (
-                    child.terminal_status.status is TerminalStatus.CHECKMATE
+                    child.terminal_status.is_terminal
                     and child.terminal_status.winner == state.position.side_to_move
                 ):
-                    ctx.stats.root_scan_seconds += time.monotonic() - started
+                    ctx.stats.root_scan_seconds += time.perf_counter() - started
                     return action, best_action
                 if child.terminal_status.is_terminal:
                     score = -terminal_score(
@@ -939,7 +970,7 @@ def root_tactical_scan(
                     best_action = action
                     ctx.root_scan_best_action = action
                 ctx.budget.check(ctx.stats, force=True)
-        ctx.stats.root_scan_seconds += time.monotonic() - started
+        ctx.stats.root_scan_seconds += time.perf_counter() - started
         return None, best_action
     if handles is None:
         with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
@@ -960,10 +991,10 @@ def root_tactical_scan(
         ctx.stats.nodes += 1
         ctx.stats.root_scan_nodes += 1
         if (
-            child.terminal_status.status is TerminalStatus.CHECKMATE
+            child.terminal_status.is_terminal
             and child.terminal_status.winner == state.position.side_to_move
         ):
-            ctx.stats.root_scan_seconds += time.monotonic() - started
+            ctx.stats.root_scan_seconds += time.perf_counter() - started
             return action, best_action
         if child.terminal_status.is_terminal:
             score = -terminal_score(
@@ -983,7 +1014,7 @@ def root_tactical_scan(
             ctx.root_scan_best_action = action
         ctx.budget.check(ctx.stats, force=True)
         ctx.budget.check(ctx.stats)
-    ctx.stats.root_scan_seconds += time.monotonic() - started
+    ctx.stats.root_scan_seconds += time.perf_counter() - started
     return None, best_action
 
 
@@ -1050,11 +1081,13 @@ def run_root_search(
     tuning: SearchTuning = SearchTuning(),
     _history_witnesses=None,
     legal_binding_provider=None,
+    availability_provider=None,
+    check_provider=None,
     recorder: AuditRecorder | None = None,
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
-    started = time.monotonic()
+    started = time.perf_counter()
     # Importing complete history consumes this search call's time allowance.
     # Legality/terminal authority and the mandatory fallback still run below.
     budget = _Budget(limits, cancel_token)
@@ -1063,6 +1096,8 @@ def run_root_search(
         compiled,
         history_witnesses=_history_witnesses,
         legal_binding_provider=legal_binding_provider,
+        availability_provider=availability_provider,
+        check_provider=check_provider,
     )
     terminal = runtime.terminal_status
     if terminal.is_terminal:
@@ -1104,6 +1139,21 @@ def run_root_search(
         _set_result_provenance(stats, 'root_declaration')
         return None, MATE_SCORE, (), stats.termination_reason
 
+    root_neutral = _neutral_declaration(root_declarations)
+
+    def root_fallback(action, source):
+        # An unfinished iteration supplies no value for an arbitrary action.
+        # A currently executable neutral declaration is already a real floor.
+        # Retain the actual abort reason and zero completed depth; cancellation
+        # returns a choice to the caller, it never executes a declaration here.
+        if root_neutral is not None:
+            stats.declaration_root_selected = True
+            stats.root_declaration = root_neutral
+            _set_result_provenance(stats, 'root_declaration')
+            return None, 0, (), stats.termination_reason
+        _set_result_provenance(stats, source)
+        return action, 0, (), stats.termination_reason
+
     root_first_action: Action | None = None
     root_handles = None
     actions: list[Action] | None = None
@@ -1111,6 +1161,10 @@ def run_root_search(
         try:
             actions = _runtime_legal_actions(ctx, ctx.checkpoint)
         except SearchAborted as exc:
+            if root_neutral is not None:
+                stats.root_scan_used_fallback = True
+                stats.termination_reason = str(exc)
+                return root_fallback(None, 'legal_fallback')
             # A cancelled search still owes the caller one legal fallback,
             # matching the historical root contract.  The fallback generation
             # is outside search and does not recurse or mutate the runtime.
@@ -1119,24 +1173,22 @@ def run_root_search(
                 stats.termination_reason = str(exc)
                 _set_result_provenance(stats, 'terminal' if stats.termination_reason == 'terminal_position' else 'no_legal_fallback')
                 return None, 0, (), stats.termination_reason
-            stats.time_to_first_legal_action = time.monotonic() - started
+            stats.time_to_first_legal_action = time.perf_counter() - started
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+            return root_fallback(sorted(actions, key=str)[0], 'legal_fallback')
         if not actions:
             stats.termination_reason = "terminal_position"
             _set_result_provenance(stats, 'terminal')
             return None, 0, (), stats.termination_reason
         root_first_action = sorted(actions, key=str)[0]
-        stats.time_to_first_legal_action = time.monotonic() - started
+        stats.time_to_first_legal_action = time.perf_counter() - started
         try:
             budget.check(stats, force=True)
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return root_first_action, 0, (), stats.termination_reason
+            return root_fallback(root_first_action, 'legal_fallback')
     elif semantic_engine_for(compiled) is not None:
         root_stream = iter_legal_successor_handles(
             state, compiled, checkpoint=ctx.checkpoint
@@ -1152,15 +1204,14 @@ def run_root_search(
             _set_result_provenance(stats, 'no_legal_fallback')
             return None, 0, (), stats.termination_reason
         root_first_action = first_handle.action
-        stats.time_to_first_legal_action = time.monotonic() - started
+        stats.time_to_first_legal_action = time.perf_counter() - started
         root_handles = chain((first_handle,), root_stream)
         try:
             budget.check(stats, force=True)
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return root_first_action, 0, (), stats.termination_reason
+            return root_fallback(root_first_action, 'legal_fallback')
     else:
         actions = legal_actions(state, compiled)
         if not actions:
@@ -1172,8 +1223,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+            return root_fallback(sorted(actions, key=str)[0], 'legal_fallback')
 
     immediate_win: Action | None = None
     scan_best: Action | None = None
@@ -1188,8 +1238,7 @@ def run_root_search(
             fallback = ctx.root_scan_best_action or root_first_action
             if fallback is None:
                 fallback = sorted(actions, key=str)[0]
-            _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
-            return fallback, 0, (), stats.termination_reason
+            return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
     if immediate_win is not None:
         stats.termination_reason = "root_immediate_win"
         _set_result_provenance(stats, 'root_immediate_win')
@@ -1223,9 +1272,19 @@ def run_root_search(
         stats.selective_depth = depth
         ctx.first_main_iteration_complete = True
         if stats.time_to_first_completed_iteration is None:
-            stats.time_to_first_completed_iteration = time.monotonic() - started
+            stats.time_to_first_completed_iteration = time.perf_counter() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
+
+    if (abort_reason is not None and ctx.root_completed_win is not None
+            and (best is None or ctx.root_completed_win[0].score > best.score)):
+        proof, ordinary_qdepth = ctx.root_completed_win
+        stats.termination_reason = abort_reason
+        _set_result_provenance(stats, 'completed_root_win', ctx)
+        stats.result_ordinary_qdepth = ordinary_qdepth
+        # completed_depth remains the last complete uniform main iteration,
+        # not the depth of this child from an interrupted iteration.
+        return proof.best_action, proof.score, proof.pv, abort_reason
 
     if best is not None:
         stats.termination_reason = "completed_depth" if abort_reason is None else abort_reason
@@ -1240,10 +1299,8 @@ def run_root_search(
     stats.root_scan_used_fallback = True
     stats.termination_reason = abort_reason or "fallback"
     if tuning.use_root_tactical and scan_best is not None:
-        _set_result_provenance(stats, 'root_scan_fallback')
-        return scan_best, 0, (), stats.termination_reason
+        return root_fallback(scan_best, 'root_scan_fallback')
     fallback = root_first_action
     if fallback is None:
         fallback = sorted(actions, key=str)[0]
-    _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
-    return fallback, 0, (), stats.termination_reason
+    return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')

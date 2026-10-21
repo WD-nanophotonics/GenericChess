@@ -27,6 +27,8 @@ class SemanticAttackEvaluator(Evaluator):
         self._attack_engine = semantic_engine_for(compiled)
         if self._attack_engine is None:
             raise ValueError("semantic attack evaluator requires compiled semantic rules")
+        shape = compiled.board_shape
+        self._attack_squares = tuple(index_to_square(i, shape) for i in range(shape.area))
         self._attack_native_rules = None
         if backend == "native":
             from ...native.compiler import compile_native_semantic_rules
@@ -42,5 +44,5 @@ class SemanticAttackEvaluator(Evaluator):
         else:
             maps = tuple(self._attack_engine.attacked_squares(state.position, owner)
                          for owner in (0, 1))
-        return tuple(frozenset(index_to_square(i, state.position.board_shape) for i in indices)
+        return tuple(frozenset(self._attack_squares[i] for i in indices)
                      for indices in maps)

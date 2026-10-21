@@ -66,7 +66,7 @@ class UIController:
         clock_now: Callable[[], float] | None = None,
     ) -> None:
         self._settings = settings
-        self._clock_now = clock_now or time.monotonic
+        self._clock_now = time.perf_counter if clock_now is None else clock_now
         self._compiled = None
         self._ruleset: RuleSet | None = None
         self._session: GameSession | None = None
@@ -219,9 +219,12 @@ class UIController:
 
     def begin_ai_move(self, cancel_token: CancellationToken | None = None) -> bool:
         """Start an AI turn on the calling thread (View calls this on the GUI thread)."""
+        if self._check_timeout():
+            return False
         if not self.ai_move_needed():
             return False
         self._ai_stop_requested = False
+        self._last_error = None
         self._ai_thinking = True
         self._ai_cancel = cancel_token
         self._ai_generation += 1
@@ -262,13 +265,8 @@ class UIController:
             clock_state, time_control, side, move_number, self._match.ai_config
         )
 
-    def finish_ai_move(
-        self,
-        decision: PlayerDecision | None,
-        snapshot: SearchSnapshot | None = None,
-    ) -> bool:
-        """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
-        cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+    def is_ai_search_stale(self, snapshot: SearchSnapshot | None = None) -> bool:
+        """Whether an in-flight AI result/error belongs to an obsolete state."""
         snapshot_stale = snapshot is not None and (
             snapshot.generation != self._ai_generation
             or snapshot.root_key != self._ai_root_key
@@ -287,25 +285,75 @@ class UIController:
             and self._ai_root_key
             == position_identity_key(self._session.state.position, self._compiled)
         )
-        stale = (
+        return (
             self._ai_search_generation != self._ai_generation
             or not root_same
             or snapshot_stale
         )
+
+    def finish_ai_move(
+        self,
+        decision: PlayerDecision | None,
+        snapshot: SearchSnapshot | None = None,
+    ) -> bool:
+        """Commit the worker's decision on the GUI thread; skips cancelled/stale runs."""
+        cancelled = self._ai_cancel is not None and self._ai_cancel.is_cancelled()
+        stale = self.is_ai_search_stale(snapshot)
         committed = False
         if (
             not cancelled
             and not stale
             and decision is not None
-            and decision.action is not None
         ):
-            committed = self.submit_action(decision.action)
+            if getattr(decision, "choice_kind", "ACTION") == "DECLARATION":
+                declaration = getattr(decision, "declaration", None)
+                declaration_id = getattr(declaration, "declaration_id", None)
+                if decision.action is None and isinstance(declaration_id, str):
+                    committed = self._submit_declaration(declaration_id)
+                else:
+                    self._last_error = "AI returned an invalid declaration decision"
+            elif decision.action is not None:
+                committed = self.submit_action(decision.action)
             if committed:
                 self._ai_stop_requested = False
+            elif (
+                self._session is not None
+                and self._session.result.status is SessionStatus.ONGOING
+            ):
+                # A failed live result must not immediately restart the same AI
+                # turn; leave the error visible for explicit user recovery.
+                self._ai_stop_requested = True
+                if self._last_error is None:
+                    self._last_error = "AI returned no committable action"
         self._ai_thinking = False
         self._ai_cancel = None
         self._notify()
         return committed
+
+    def _submit_declaration(self, declaration_id: str) -> bool:
+        """Apply an AI-selected declaration through the authoritative session."""
+        if self._check_timeout():
+            return False
+        if self._session is None or self._display_session is not None:
+            self._last_error = "cannot declare while viewing history preview"
+            return False
+        mover = self._session.state.position.side_to_move
+        try:
+            result = self._session.declare(declaration_id)
+        except (ValueError, SessionFinishedError) as exc:
+            self._last_error = f"cannot submit declaration: {exc}"
+            return False
+        self._bump_ai_generation()
+        self._redo = []
+        if self._match is not None and self._clock is not None:
+            self._clock.complete_turn(mover)
+            self._clock_snapshots.append(self._clock.state())
+            if result.status is not SessionStatus.ONGOING:
+                self._clock.pause()
+        self._interaction.clear_selection()
+        self._last_error = None
+        self._notify()
+        return True
 
     def _bump_ai_generation(self) -> None:
         self._ai_generation += 1
@@ -574,6 +622,9 @@ class UIController:
             return False
         self._bump_ai_generation()
         self._resigned_by = self._session.to_record().resigned_by
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
         if self._match is not None and self._clock is not None:
             self._clock.pause()
         self._interaction.clear_selection()
@@ -613,6 +664,8 @@ class UIController:
             self._clock_snapshots.pop()
             if self._clock_snapshots:
                 self._clock.restore(self._clock_snapshots[-1])
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
         self._ai_thinking = False
         self._ai_cancel = None
         self._interaction = BoardInteractionState(
@@ -632,6 +685,10 @@ class UIController:
             mover = (len(self._actions) - 1) % 2
             self._clock.complete_turn(mover)
             self._clock_snapshots.append(self._clock.state())
+        if self._ai_cancel is not None:
+            self._ai_cancel.cancel()
+        self._ai_thinking = False
+        self._ai_cancel = None
         self._interaction = BoardInteractionState(
             orientation_owner=self._interaction.orientation_owner
         )

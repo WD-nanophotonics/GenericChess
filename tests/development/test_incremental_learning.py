@@ -275,6 +275,21 @@ def test_promotion_drop_auxiliary_and_history_survive_library_adapter():
              (None, (0, 0), False), ((4, 7), (3, 7), False))
     for ply in range(9):
         assert env.replay().record() == env.record()
+        if ply in (5, 6, 8):
+            # Compare the actual post-promotion/drop/aux histories through the
+            # shared Core search path and the public session reference.
+            model = Model([1.] * len(env.names))
+            before = env.record()
+            env.use_runtime = False
+            reference = AlphaBeta(1, 0).search(env, model, nodes=8192, seconds=10, seed=ply)
+            env.use_runtime = True
+            current = AlphaBeta(1, 0).search(env, model, nodes=8192, seconds=10, seed=ply)
+            assert reference.complete and current.complete
+            assert (reference.action, reference.value, reference.pv_phi,
+                    reference.pv_terminal, reference.samples, reference.nodes) == (
+                    current.action, current.value, current.pv_phi,
+                    current.pv_terminal, current.samples, current.nodes)
+            assert env.record() == before
         quantities = dict(zip(env.names, env.features()))
         if ply == 5:
             assert quantities[('board', 'TP')] == 1

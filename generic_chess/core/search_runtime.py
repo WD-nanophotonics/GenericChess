@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 from contextlib import contextmanager
+from functools import lru_cache
 from dataclasses import dataclass, replace
 from typing import Any, Callable, Iterable, Mapping
 
@@ -25,6 +26,7 @@ from .movegen import (
     iter_legal_actions_from_position,
 )
 from .position import GameState, HistoryRecord, Position
+from .no_progress_context import NoProgressContext
 from .semantic_executor import _semantic_public_action, semantic_engine_for
 from .terminal import TerminalResult, TerminalStatus, terminal_from_search_runtime
 
@@ -295,6 +297,7 @@ class RuntimeHistoryContext:
     gave_check: bool
     length: int
     digest: bytes
+    action_signature: str = ""
 
     @staticmethod
     def _record_digest(
@@ -302,6 +305,7 @@ class RuntimeHistoryContext:
         runtime_hash: RuntimeHash,
         actor: int,
         gave_check: bool,
+        action_signature: str = "",
     ) -> bytes:
         return hashlib.blake2b(
             b"generic-chess-runtime-history-context\0"
@@ -309,12 +313,13 @@ class RuntimeHistoryContext:
             + runtime_hash.lo.to_bytes(8, "little")
             + runtime_hash.hi.to_bytes(8, "little")
             + int(actor).to_bytes(4, "little", signed=True)
-            + bytes((int(bool(gave_check)),)),
+            + bytes((int(bool(gave_check)),))
+            + action_signature.encode("utf-8"),
             digest_size=16,
         ).digest()
 
     @classmethod
-    def from_records(cls, records: Iterable[RuntimeHistoryRecord]):
+    def from_records(cls, records: Iterable[RuntimeHistoryRecord], *, include_actions: bool = False):
         context = None
         for record in records:
             context = cls.append(
@@ -323,6 +328,7 @@ class RuntimeHistoryContext:
                 record.runtime_hash or RuntimeHash(0, 0),
                 record.actor,
                 record.gave_check,
+                record.action_signature if include_actions else "",
             )
         return context
 
@@ -334,6 +340,7 @@ class RuntimeHistoryContext:
         runtime_hash: RuntimeHash,
         actor: int,
         gave_check: bool,
+        action_signature: str = "",
     ) -> "RuntimeHistoryContext":
         parent_digest = parent.digest if parent is not None else bytes(16)
         return cls(
@@ -343,7 +350,8 @@ class RuntimeHistoryContext:
             int(actor),
             bool(gave_check),
             (parent.length if parent is not None else 0) + 1,
-            cls._record_digest(parent_digest, runtime_hash, actor, gave_check),
+            cls._record_digest(parent_digest, runtime_hash, actor, gave_check, action_signature),
+            action_signature,
         )
 
     def _records_reversed(self):
@@ -366,6 +374,7 @@ class RuntimeHistoryContext:
             if (
                 left.actor != right.actor
                 or left.gave_check != right.gave_check
+                or left.action_signature != right.action_signature
                 or not _identity_equal(left.identity, right.identity)
             ):
                 return False
@@ -394,6 +403,7 @@ class _Frame:
     child_occurrence_added: bool = False
     history_context: RuntimeHistoryContext | None = None
     child_in_check: bool | None = None
+    no_progress_context: NoProgressContext | None = None
 
 
 @dataclass(slots=True)
@@ -450,8 +460,39 @@ def _nonboard_component_map(position: Position, compiled) -> dict[tuple, object]
     return values
 
 
-def _component_token(address: tuple, value: object) -> RuntimeHash:
+def _uncached_component_token(address: tuple, value: object) -> RuntimeHash:
     return _token((address, value))
+
+
+@lru_cache(maxsize=4096, typed=True)
+def _board_component_token(index, owner, base, current, promoted) -> RuntimeHash:
+    return _uncached_component_token(("board", index), (owner, base, current, promoted))
+
+
+@lru_cache(maxsize=256, typed=True)
+def _empty_board_component_token(index) -> RuntimeHash:
+    return _uncached_component_token(("board", index), None)
+
+
+@lru_cache(maxsize=4, typed=True)
+def _side_component_token(value) -> RuntimeHash:
+    return _uncached_component_token(("side",), value)
+
+
+def _component_token(address: tuple, value: object) -> RuntimeHash:
+    # Complete immutable fields, with bool/int kept distinct just as JSON does.
+    # Aux/hand/ruleset inputs retain the original serialization and identity.
+    if type(address) is tuple and len(address) == 2 and address[0] == "board" and type(address[1]) is int:
+        if value is None:
+            return _empty_board_component_token(address[1])
+        if (type(value) is tuple and len(value) == 4
+                and type(value[0]) in (int, bool)
+                and type(value[1]) is str and type(value[2]) is str
+                and type(value[3]) is bool):
+            return _board_component_token(address[1], *value)
+    if address == ("side",) and type(value) in (int, bool):
+        return _side_component_token(value)
+    return _uncached_component_token(address, value)
 
 
 def _full_runtime_hash(position: Position, compiled) -> RuntimeHash:
@@ -544,15 +585,15 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
+        check_provider: Callable | None = None,
     ):
-        if getattr(compiled, "no_progress_draw", None) is not None:
-            raise NotImplementedError(
-                "search for no-progress draw rules requires path-state identity support"
-            )
         ensure_ruleset_match(state.position, compiled)
         self.compiled = compiled
         # Opaque Core-neutral callback: Core never imports Native and never
         # stores a Native capsule/rules object.
+        self.availability_provider = availability_provider
+        self._check_provider = check_provider
         self._legal_binding_provider = legal_binding_provider
         self._legal_provider_active = legal_binding_provider is not None
         self.position = state.position
@@ -653,7 +694,15 @@ class SearchPathRuntime:
         if state.history and not self._history_witness_by_key:
             self.history_witness_misses = len(self._opaque_imported_keys)
         self._history_aliases: dict[str, RuntimePositionIdentity] = {}
-        self._history_context = RuntimeHistoryContext.from_records(self._history)
+        # Progress and consecutive-action rules distinguish action paths even
+        # when every position/actor/check fact and repetition count is identical.
+        self._history_action_sensitive = bool(
+            getattr(compiled, "consecutive_action_adjudications", ())
+            or getattr(compiled, "no_progress_draw", None)
+        )
+        self._history_context = RuntimeHistoryContext.from_records(
+            self._history, include_actions=self._history_action_sensitive,
+        )
         self._history_context_updates = 0
         self._history_context_exact_comparisons = 0
         self._occurrences: dict[RuntimeHash, list[_Occurrence]] = {}
@@ -686,6 +735,17 @@ class SearchPathRuntime:
         self.legal_provider_decode_binding_seconds = 0.0
         self.legal_provider_fallbacks = 0
         self.legal_provider_operational_failures = 0
+        from .no_progress_context import prepare
+
+        self._no_progress_context = prepare(state, compiled, self._history)
+        if getattr(compiled, "no_progress_draw", None) is not None:
+            from .terminal import _repeated_cycle_target_history_projection
+            _repeated_cycle_target_history_projection(self)
+            from .adjudication import IncompleteAdjudicationHistoryError
+            if terminal_from_search_runtime(self) != state.terminal_status:
+                raise IncompleteAdjudicationHistoryError(
+                    "no-progress imported terminal does not match exact rule result"
+                )
 
     @staticmethod
     def _coerce_hash(value) -> RuntimeHash:
@@ -718,8 +778,21 @@ class SearchPathRuntime:
         self.history_reconstruction_attempts += 1
         from .transition import apply_action, initial_state
 
+        # This import is only a witness reconstruction. The no-progress root
+        # context below independently verifies exact replay and terminal status.
+        # Re-adjudicating every prefix here would replay it quadratically.
+        no_progress = getattr(self.compiled, "no_progress_draw", None)
+        replay_compiled = self.compiled
+        if no_progress is not None:
+            if hasattr(self.compiled, "support"):
+                replay_compiled = replace(
+                    self.compiled,
+                    support=replace(self.compiled.support, no_progress_draw=None),
+                )
+            else:
+                replay_compiled = replace(self.compiled, no_progress_draw=None)
         try:
-            replayed = initial_state(self.compiled)
+            replayed = initial_state(replay_compiled)
             self.history_reconstruction_key_computations += 1
             if not state.history:
                 raise ValueError("empty history")
@@ -730,14 +803,14 @@ class SearchPathRuntime:
                 # Public GameState has no setup key. A declared alternate start
                 # is still recoverable from its exact initial history record;
                 # custom/imported roots retain the opaque-history fallback.
-                engine = semantic_engine_for(self.compiled)
+                engine = semantic_engine_for(replay_compiled)
                 setups = (
                     engine.support.initial_setup_options
                     if engine is not None
-                    else self.compiled.initial_setup_positions
+                    else replay_compiled.initial_setup_positions
                 )
                 for setup_key in sorted(setups):
-                    candidate = initial_state(self.compiled, setup_key)
+                    candidate = initial_state(replay_compiled, setup_key)
                     self.history_reconstruction_key_computations += 1
                     if candidate.history[0] == first:
                         replayed = candidate
@@ -747,7 +820,7 @@ class SearchPathRuntime:
             witnesses = [replayed.position]
             for record in state.history[1:]:
                 action = action_from_dict(json.loads(record.action_signature))
-                replayed = apply_action(replayed, action, self.compiled)
+                replayed = apply_action(replayed, action, replay_compiled)
                 self.history_reconstruction_key_computations += 1
                 produced = replayed.history[-1]
                 if produced != record:
@@ -759,7 +832,7 @@ class SearchPathRuntime:
                 != _runtime_position_identity(state.position, self.compiled)
                 or replayed.ply_count != state.ply_count
                 or replayed.repetition_counts != tuple(state.repetition_counts)
-                or replayed.terminal_status != state.terminal_status
+                or (no_progress is None and replayed.terminal_status != state.terminal_status)
             ):
                 raise ValueError("replayed history does not match imported state")
 
@@ -827,6 +900,8 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
+        check_provider: Callable | None = None,
     ):
         return cls(
             state,
@@ -834,6 +909,8 @@ class SearchPathRuntime:
             hash_override=hash_override,
             history_witnesses=history_witnesses,
             legal_binding_provider=legal_binding_provider,
+            availability_provider=availability_provider,
+            check_provider=check_provider,
         )
 
     @property
@@ -1033,7 +1110,9 @@ class SearchPathRuntime:
                     return self._legal_cache
             actions = []
             bindings = {}
-            for semantic_action, binding in engine.iter_legal_action_bindings(self.position, checkpoint=checkpoint):
+            for semantic_action, binding in engine.iter_legal_action_bindings(
+                    self.position, checkpoint=checkpoint, full_frontier=True
+                ):
                 public = _semantic_public_action(engine, semantic_action)
                 actions.append(public)
                 bindings[public] = (semantic_action, binding)
@@ -1047,6 +1126,16 @@ class SearchPathRuntime:
         return self._legal_cache
 
     def _gave_check(self, position, checkpoint=None):
+        # Optional readonly state-local query. None declines to Core; required
+        # errors propagate through push's existing exception-safe undo.
+        if self._check_provider is not None:
+            value = self._check_provider(
+                position, position.side_to_move, checkpoint=checkpoint
+            )
+            if value is not None:
+                if not isinstance(value, bool):
+                    raise TypeError("check provider must return bool or None")
+                return value
         engine = semantic_engine_for(self.compiled)
         return engine.in_check(position, position.side_to_move, checkpoint=checkpoint) if engine is not None else is_in_check(position, position.side_to_move, self.compiled)
 
@@ -1115,21 +1204,34 @@ class SearchPathRuntime:
         old_bucket, old_entry = self._find_occurrence(old_identity, old_hash, instrument=False)
         if old_entry is None:
             raise AssertionError("opaque imported occurrence is missing")
+        # Resolve the removal index before target mutation: dataclass equality
+        # in list.remove/index can itself fail while allocating comparison tuples.
+        old_index = old_bucket.index(old_entry)
+        # Prepare target storage before journaling/removing the opaque entry.
+        # A single target-constructor failure leaves the original counts intact.
+        new_bucket = self._occurrences.get(runtime_hash)
+        new_entry = next(
+            (candidate for candidate in new_bucket or ()
+             if _identity_equal(candidate.identity, identity)), None)
+        if new_entry is None:
+            prepared_entry = _Occurrence(identity, old_entry.count)
+            if new_bucket is None:
+                self._occurrences[runtime_hash] = [prepared_entry]
+            else:
+                new_bucket.append(prepared_entry)
+        else:
+            new_entry.count += old_entry.count
+
         frame = self._frames[-1]
         frame.bridge_key = key
         frame.bridge_identity = identity
         frame.bridge_runtime_hash = runtime_hash
         frame.bridge_old_hash = old_hash
         frame.bridge_old_count = old_entry.count
-        old_bucket.remove(old_entry)
+        del old_bucket[old_index]
         if not old_bucket:
             self._occurrences.pop(old_hash, None)
 
-        new_bucket, new_entry = self._find_occurrence(identity, runtime_hash, instrument=False)
-        if new_entry is None:
-            new_bucket.append(_Occurrence(identity, old_entry.count))
-        else:
-            new_entry.count += old_entry.count
         self._opaque_imported_keys.remove(key)
         self._history_aliases[key] = identity
         self._snapshot = self._snapshot_from_occurrences()
@@ -1224,10 +1326,11 @@ class SearchPathRuntime:
                 removed_history += 1
             if (
                 rollback_frame is not None
-                and rollback_frame.bridge_key is not None
                 and rollback_frame.child_occurrence_added
                 and removed_history == 0
             ):
+                # Snapshot construction can fail after adding the child but
+                # before appending history, even without an imported-key bridge.
                 self._occurrence_remove(
                     rollback_frame.child_identity,
                     rollback_frame.child_runtime_hash,
@@ -1243,12 +1346,23 @@ class SearchPathRuntime:
             self._bindings = before_bindings
             if rollback_frame is not None:
                 self._history_context = rollback_frame.history_context
+                self._no_progress_context = rollback_frame.no_progress_context
                 self._restore_bridge(rollback_frame)
             self._sync_stats()
             raise
 
     def _push_impl(self, action: Action, checkpoint=None) -> RuntimeSearchState:
-        if action not in self.legal_actions(checkpoint):
+        legal = self.legal_actions(checkpoint)
+        # Semantic frontiers already own a complete validated binding map.
+        # Keep tuple authority for pass/legacy and unhashable caller inputs.
+        if self._bindings and not isinstance(action, PassAction):
+            try:
+                accepted = action in self._bindings
+            except TypeError:
+                accepted = action in legal
+        else:
+            accepted = action in legal
+        if not accepted:
             raise IllegalActionError(f"action is not legal in the current state: {action}")
         self._frames.append(
             _Frame(
@@ -1261,6 +1375,7 @@ class SearchPathRuntime:
                 self._legal_cache,
                 self._bindings,
                 history_context=self._history_context,
+                no_progress_context=self._no_progress_context,
             )
         )
         parent = self.position
@@ -1324,11 +1439,18 @@ class SearchPathRuntime:
             child_hash,
             parent.side_to_move,
             gave_check,
+            signature if self._history_action_sensitive else "",
         )
         self._history_context_updates += 1
         self.runtime_hash = child_hash
         self._legal_cache = None
         self._bindings = {}
+        if self._no_progress_context is not None:
+            from .no_progress_context import advance
+            self._no_progress_context = advance(
+                self._no_progress_context, parent, child, action,
+                self.compiled.no_progress_draw, self.ply_count,
+            )
         self.terminal_status = terminal_from_search_runtime(self, checkpoint)
         self.hash_updates += 1
         self.pushes += 1
@@ -1351,6 +1473,7 @@ class SearchPathRuntime:
         self._legal_cache = frame.cache
         self._bindings = frame.bindings
         self._history_context = frame.history_context
+        self._no_progress_context = frame.no_progress_context
         self._restore_bridge(frame)
         self.pops += 1
         self._sync_stats()

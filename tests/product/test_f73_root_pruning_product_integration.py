@@ -44,9 +44,12 @@ def test_default_product_result_matches_explicit_full_root_mode():
     )
 
 
-def test_unverified_root_window_mode_rejected_before_native_execution():
+def test_unverified_root_window_mode_rejected_before_native_execution(monkeypatch):
     compiled = compile_semantic_ruleset(build_western_chess_ruleset())
     native = compile_native_semantic_rules(compiled)
+    from generic_chess.native import _module
+    module=_module();caps=dict(module.native_capabilities());caps.pop("semantic_exact_root_windows",None)
+    monkeypatch.setattr(module,"native_capabilities",lambda:caps)
     with pytest.raises(NativeUnsupportedRuleError, match="inexact tied bound"):
         semantic_iterative_search(native, None, 3, root_window_pruning=True)
     engine = SemanticSearchEngine(compiled, native, tt_megabytes=0)

@@ -14,6 +14,7 @@ from generic_chess.ai.evaluation.config import EvaluationConfig
 from generic_chess.ai.evaluation.cache import EvaluationProfileCache
 from generic_chess.ai.evaluation.evaluator import Evaluator
 from generic_chess.ai.evaluation.profile import build_ruleset_profile
+from generic_chess.ai.evaluation.analyzer import movement_signature, profile_movement_atoms
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
@@ -38,9 +39,9 @@ class CountedEvaluator:
         self.calls = 0
 
     def evaluate(self, state):
-        self.calls += 1
-        if self.calls > self.maximum or time.perf_counter() > self.deadline:
+        if self.calls >= self.maximum or time.perf_counter() >= self.deadline:
             raise ReferenceLimit('reference cost fuse')
+        self.calls += 1
         return self.evaluator.evaluate(state)
 
 
@@ -55,21 +56,57 @@ def validate_pv(session, decision):
 
 
 def profile_input_scope(compiled):
-    """Describe the fixed control's inputs; execution support is not valuation."""
+    """Describe the exact movement geometry supplied to the static profile."""
     ir = getattr(compiled, 'ir', None)
     semantic_movers = set()
     if ir is not None:
         for pattern in ir.patterns:
             if any(effect.kind == 'move' and effect.from_ref is not None
-                   and effect.from_ref.kind == 'source' for effect in pattern.effects):
+                   and effect.to_ref is not None
+                   and effect.from_ref.kind == 'source'
+                   and effect.to_ref.kind == 'target' for effect in pattern.effects):
                 semantic_movers.update(pattern.type_ids)
+    legacy_compiled = getattr(compiled, '_legacy_compiled', None) or compiled
+    legacy_types = getattr(legacy_compiled, 'types_by_id', {})
+    profile_types = getattr(compiled, 'piece_types', tuple(legacy_types.values()))
+    projected_types = []
+    projection_errors = []
+    if getattr(compiled, 'board_size', None) is not None:
+        for pt in profile_types:
+            try:
+                projected = profile_movement_atoms(compiled, pt.type_id)
+            except ValueError as exc:
+                projection_errors.append({'type_id': pt.type_id, 'error': str(exc)})
+                continue
+            if movement_signature(projected) != movement_signature(
+                getattr(pt, 'movement_atoms', ())
+            ):
+                projected_types.append(pt.type_id)
+    projected_types.sort()
+    projection_errors.sort(key=lambda item: item['type_id'])
+    static_source = (
+        'legacy_movement_atoms+eligible_semantic_direct_geometry'
+        if projected_types else
+        'unavailable_rectangular_override'
+        if getattr(compiled, 'board_size', None) is None else
+        'legacy_movement_atoms'
+    )
     return dict(
-        static_capability_source='legacy_movement_atoms',
-        semantic_patterns_used_for_static_capability=False,
-        semantic_moving_types_without_atoms=sorted(
-            pt.type_id for pt in compiled.types_by_id.values()
-            if pt.type_id in semantic_movers and not pt.movement_atoms),
-        limitation='This describes default-profile inputs only. Semantic legality is executed, but default static capability does not analyze semantic movement/guards/effects. Even nonempty atoms can differ from replaced or augmented semantics; an empty list here is not completeness evidence.',
+        static_capability_source=static_source,
+        semantic_patterns_used_for_static_capability=bool(projected_types),
+        semantic_geometry_profile_types=projected_types,
+        unsupported_semantic_profile_types=projection_errors,
+        semantic_moving_types_without_legacy_atoms=sorted(
+            type_id for type_id, pt in legacy_types.items()
+            if type_id in semantic_movers and not pt.movement_atoms),
+        limitation=(
+            'Semantic static capability unions only eligible direct source-to-target '
+            'move geometries with one move effect, no state/slot guards, no auxiliary '
+            'mutation, and path_clear-only constraints; non-clear paths, compound/'
+            'non-direct moves, drops and guarded patterns are excluded. If no eligible '
+            'projection exists, legacy atoms remain the fallback. This is potential '
+            'geometry, not complete semantic execution, action frequency or value utility.'
+        ),
     )
 
 
@@ -91,8 +128,13 @@ def _compare_searches(session, evaluator, cache, reference, depth, case, save):
                 quiescence_hard_max_depth=0))
             observed = time.perf_counter()-start
             validate_pv(session, decision)
-            signatures.append((record_value(decision.action), decision.score,
-                               decision.completed_depth))
+            signatures.append((
+                decision.choice_kind,
+                record_value(decision.action),
+                record_value(decision.declaration),
+                decision.score,
+                decision.completed_depth,
+            ))
             complete = decision.completed_depth == depth
             case['searches'].append(dict(
                 control='public_bundle' if optimized else 'python_plain',

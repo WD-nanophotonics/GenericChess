@@ -27,6 +27,31 @@ def test_medians_min_max():
     assert medians_min_max([5, 1, 9])["max"] == 9
 
 
+@pytest.mark.parametrize("budget", (0, 1))
+def test_native_readiness_marks_preiteration_fallback_as_fallback(budget):
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.benchmark.audit_schema import PositionFixtureSpec
+    from generic_chess.ai.benchmark.audit_suite import build_compiled, smoke_ruleset_specs
+    from generic_chess.ai.benchmark.native_readiness import AuditConfig, _run_budget_fixture
+
+    spec = smoke_ruleset_specs()[0]
+    position = PositionFixtureSpec("fallback-root", spec.fixture_id, (), (), 5)
+    compiled = build_compiled(spec)
+    player = AlphaBetaPlayer(
+        compiled, use_native_semantic_legality=False, use_disk_cache=False
+    )
+
+    rows = _run_budget_fixture(
+        compiled, player, spec, position, budget=budget, repeats=1, config=AuditConfig()
+    )
+
+    assert len(rows) == 1
+    assert rows[0]["termination_reason"] == "node_limit"
+    assert rows[0]["fallback"]
+    summary = _aggregate_budget(rows)
+    assert summary["fallback_runs"] == 1
+
+
 def test_markdown_generated_without_optional_blocks():
     summary = {
         "environment": {"os": "test", "python": "3.x", "cpu": "x", "logical_cpus": 2, "commit": "x", "debug_build": False},

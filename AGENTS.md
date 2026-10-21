@@ -1,5 +1,19 @@
 # GenericChess local research policy
 
+## User correction — use committed mainline infrastructure, 2026-10-21
+
+DEV_AUX must use sandbox's latest committed mainline infrastructure rather than
+maintain a second rules/search implementation. Committed work is the default
+current baseline; uncommitted in-development work need not be imported. Every
+recovery/heartbeat first checks the latest published mainline revision and reuses
+its rules, search, terminal/history and public runtime changes plus tests in
+sidemission. Keep DEV_AUX learner/research differences, resolve real compatibility
+issues locally and record the fixed source SHA. Do not use branch divergence as
+a reason to postpone reuse or invent a parallel implementation. No other-role
+state, uncommitted work or research tasks are adopted. Core runtime support and
+measured GameSession-learner acceleration remain distinct claims. Existing
+experiment caps, UNKNOWN, stops, cadence and writer boundaries remain unchanged.
+
 ## User scope correction — 2026-10-21
 
 The user explicitly asked DEV_AUX to reassess its project against Slack, return

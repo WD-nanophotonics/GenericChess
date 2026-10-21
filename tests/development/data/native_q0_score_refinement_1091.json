@@ -1,0 +1,97 @@
+{
+  "source": "Frozen Agent-generated saved q0 consumer turn2, exposed development; complete action history retained by extending existing fixture.",
+  "additional_actions": [
+    {
+      "actor_type_id": "K",
+      "from": [
+        3,
+        0
+      ],
+      "geometry_id": "g19",
+      "kind": "semantic_board",
+      "pattern_id": "legacy_022",
+      "promotion_target_id": null,
+      "to": [
+        2,
+        0
+      ]
+    },
+    {
+      "actor_type_id": "P",
+      "from": [
+        2,
+        7
+      ],
+      "geometry_id": "g26",
+      "kind": "semantic_board",
+      "pattern_id": "legacy_039",
+      "promotion_target_id": null,
+      "to": [
+        5,
+        1
+      ]
+    }
+  ],
+  "expected_pv": [
+    {
+      "pattern_id": "legacy_039",
+      "geometry_id": "g26",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 4,
+        "rank": 2
+      },
+      "to_square": {
+        "file": 2,
+        "rank": 6
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_043",
+      "geometry_id": "g28",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 5,
+        "rank": 1
+      },
+      "to_square": {
+        "file": 4,
+        "rank": 0
+      },
+      "promotion_target_id": "A"
+    },
+    {
+      "pattern_id": "legacy_051",
+      "geometry_id": "g31",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 5,
+        "rank": 0
+      },
+      "to_square": {
+        "file": 4,
+        "rank": 0
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_041",
+      "geometry_id": "g27",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 5,
+        "rank": 7
+      },
+      "to_square": {
+        "file": 2,
+        "rank": 1
+      },
+      "promotion_target_id": null
+    }
+  ],
+  "score": -2619,
+  "requested_depth": 4,
+  "max_nodes": 1000000,
+  "scope": "Observed unnecessary canonical replay prevented previous min2 cold1MiB iteration completion; no wall-time performance assertion."
+}

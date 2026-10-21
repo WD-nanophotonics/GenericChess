@@ -339,7 +339,7 @@ def _repeated_cycle_target_history_projection(runtime):
     from .adjudication import IncompleteAdjudicationHistoryError
     from .identity import position_identity_key
     from .position import HistoryRecord
-    from .search_runtime import RuntimePositionIdentity
+    from .search_runtime import RuntimePositionIdentity, _runtime_position_identity
 
     if (
         not getattr(runtime, "_history_complete", False)
@@ -374,7 +374,11 @@ def _repeated_cycle_target_history_projection(runtime):
         or projected[0].action_signature != ""
         or projected[-1].position_key
         != position_identity_key(runtime.position, compiled)
-        or runtime.history[-1].identity.position != runtime.position
+        # Private identity omits declared auxiliary defaults; the live state
+        # retains the complete physical representation. Compare through the
+        # same exact logical identity authority, including foreign aux values.
+        or runtime.history[-1].identity
+        != _runtime_position_identity(runtime.position, compiled)
     ):
         raise IncompleteAdjudicationHistoryError(
             "repeated-cycle target rule requires an exact search-history boundary"
@@ -446,9 +450,13 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     # materialization is intentionally deferred to the next search node;
     # root tactical scans may inspect many children without recursing into
     # them, and must not pay for every complete child action set.
-    if engine is not None:
+    provider = getattr(runtime, "availability_provider", None)
+    has_legal = None if provider is None else provider(position, checkpoint=checkpoint)
+    if has_legal is not None and type(has_legal) is not bool:
+        raise TypeError("availability provider must return bool or None")
+    if has_legal is None and engine is not None:
         has_legal = engine.has_legal_action(position, checkpoint=checkpoint)
-    else:
+    elif has_legal is None:
         has_legal = has_legal_action(position, compiled)
     if not has_legal:
         # Check only distinguishes mate from stalemate when no action exists.
@@ -487,6 +495,16 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     limit = getattr(compiled, "repetition_limit", compiled.support.repetition_limit if hasattr(compiled, "support") else 4)
     if runtime.occurrence_count() >= limit:
         return TerminalResult(TerminalStatus.REPETITION)
+    policy = getattr(compiled, "no_progress_draw", None)
+    if policy is not None and runtime.ply_count >= policy.threshold_plies:
+        if checkpoint is not None:
+            checkpoint()
+        from .no_progress_context import status
+        no_progress = status(runtime)
+        if checkpoint is not None:
+            checkpoint()
+        if no_progress == "DRAW":
+            return TerminalResult(TerminalStatus.NO_PROGRESS_DRAW)
     automatic = automatic_adjudication_status(
         getattr(compiled, "automatic_adjudications", ()),
         runtime.ply_count,
