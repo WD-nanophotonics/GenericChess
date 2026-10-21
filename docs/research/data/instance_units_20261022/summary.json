@@ -1,0 +1,347 @@
+{
+  "parent": "559aa80dc224250dc30135b3cb4696e389f0d134",
+  "effective_research_seconds": 3756,
+  "effective_intervals": 11,
+  "Science": "OPEN",
+  "production_changes": "No product source/default/API/cache/native binary, no AUX state/checkout or learner changes. Technical source text frozen in evidence.",
+  "cohorts": {
+    "utility": {
+      "planned_configs": 18,
+      "accepted_rules": 18,
+      "planned_slots": 72,
+      "executed_episodes": 13,
+      "unexecuted_slots": 59,
+      "outcomes_by_subject": {
+        "E": {
+          "W": 3,
+          "L": 3,
+          "D": 0,
+          "UNKNOWN": 30
+        },
+        "R": {
+          "W": 1,
+          "L": 5,
+          "D": 0,
+          "UNKNOWN": 30
+        }
+      },
+      "R_minus_baseline_finite_interval": [
+        "-16/9",
+        "14/9"
+      ],
+      "new_queries": 273,
+      "reused_queries": 0,
+      "paid_cost_by_policy": {
+        "S": {
+          "queries": 136,
+          "nodes": 6012497,
+          "query_seconds": 1206.9329578999896,
+          "evaluation_calls": 5048611,
+          "evaluation_seconds": 220.9131795851281,
+          "legal_generation_seconds": 273.2944711847231,
+          "ordering_seconds": 80.22895206382964,
+          "native_calls": 951723,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "E": {
+          "queries": 69,
+          "nodes": 3175937,
+          "query_seconds": 684.8672061996767,
+          "evaluation_calls": 2587859,
+          "evaluation_seconds": 122.48908733972348,
+          "legal_generation_seconds": 174.55804086802527,
+          "ordering_seconds": 51.242246006731875,
+          "native_calls": 581925,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "R": {
+          "queries": 68,
+          "nodes": 2540781,
+          "query_seconds": 512.8981139002135,
+          "evaluation_calls": 2086434,
+          "evaluation_seconds": 96.82562462368514,
+          "legal_generation_seconds": 113.91257188015152,
+          "ordering_seconds": 33.57875542412512,
+          "native_calls": 448784,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        }
+      },
+      "paid_depth_counts": {
+        "5": 140,
+        "4": 117,
+        "3": 16
+      },
+      "batch_wall_s": 2409.5295801999746,
+      "frozen_cap_seconds": 2400,
+      "failures": []
+    },
+    "utility_FR": {
+      "planned_configs": 9,
+      "accepted_rules": 9,
+      "planned_slots": 36,
+      "executed_episodes": 36,
+      "unexecuted_slots": 0,
+      "outcomes_by_subject": {
+        "F": {
+          "W": 9,
+          "L": 8,
+          "D": 0,
+          "UNKNOWN": 1
+        },
+        "R": {
+          "W": 10,
+          "L": 7,
+          "D": 0,
+          "UNKNOWN": 1
+        }
+      },
+      "R_minus_baseline_finite_interval": [
+        "0",
+        "2/9"
+      ],
+      "new_queries": 686,
+      "reused_queries": 9,
+      "paid_cost_by_policy": {
+        "F": {
+          "queries": 185,
+          "nodes": 374370,
+          "query_seconds": 82.01137510046829,
+          "evaluation_calls": 319592,
+          "evaluation_seconds": 19.46454835415352,
+          "legal_generation_seconds": 16.282502402202226,
+          "ordering_seconds": 4.6969109025085345,
+          "native_calls": 53842,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "S": {
+          "queries": 338,
+          "nodes": 784096,
+          "query_seconds": 152.89105389942415,
+          "evaluation_calls": 709031,
+          "evaluation_seconds": 38.254161714576185,
+          "legal_generation_seconds": 24.261664904188365,
+          "ordering_seconds": 6.999803100479767,
+          "native_calls": 73327,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "R": {
+          "queries": 163,
+          "nodes": 369574,
+          "query_seconds": 80.17634959926363,
+          "evaluation_calls": 319023,
+          "evaluation_seconds": 19.767961605801247,
+          "legal_generation_seconds": 15.161475296597928,
+          "ordering_seconds": 4.398382905987091,
+          "native_calls": 49664,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        }
+      },
+      "paid_depth_counts": {
+        "3": 439,
+        "2": 247
+      },
+      "batch_wall_s": 326.22733470005915,
+      "frozen_cap_seconds": 900,
+      "failures": []
+    },
+    "utility_RG": {
+      "planned_configs": 9,
+      "accepted_rules": 9,
+      "planned_slots": 36,
+      "executed_episodes": 36,
+      "unexecuted_slots": 0,
+      "outcomes_by_subject": {
+        "G": {
+          "W": 6,
+          "L": 5,
+          "D": 1,
+          "UNKNOWN": 6
+        },
+        "R": {
+          "W": 5,
+          "L": 5,
+          "D": 2,
+          "UNKNOWN": 6
+        }
+      },
+      "R_minus_baseline_finite_interval": [
+        "-13/18",
+        "11/18"
+      ],
+      "new_queries": 1477,
+      "reused_queries": 9,
+      "paid_cost_by_policy": {
+        "G": {
+          "queries": 377,
+          "nodes": 287032,
+          "query_seconds": 46.897698397981,
+          "evaluation_calls": 241787,
+          "evaluation_seconds": 9.008148781140335,
+          "legal_generation_seconds": 5.392291400698014,
+          "ordering_seconds": 1.5440009974408895,
+          "native_calls": 43998,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "S": {
+          "queries": 734,
+          "nodes": 622722,
+          "query_seconds": 100.26201010029763,
+          "evaluation_calls": 530931,
+          "evaluation_seconds": 19.153929361724295,
+          "legal_generation_seconds": 12.073130795615725,
+          "ordering_seconds": 3.4728700038976967,
+          "native_calls": 89292,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        },
+        "R": {
+          "queries": 366,
+          "nodes": 311571,
+          "query_seconds": 53.66312210063916,
+          "evaluation_calls": 266548,
+          "evaluation_seconds": 11.197386994143017,
+          "legal_generation_seconds": 6.22186231170781,
+          "ordering_seconds": 1.7840874932007864,
+          "native_calls": 43946,
+          "native_fallbacks": 0,
+          "native_failures": 0
+        }
+      },
+      "paid_depth_counts": {
+        "3": 1472,
+        "2": 5
+      },
+      "batch_wall_s": 231.23969330010004,
+      "frozen_cap_seconds": 480,
+      "failures": []
+    }
+  },
+  "new_fitness_episodes": 85,
+  "conditional_common_S_episodes": 2,
+  "selected_Gexact_counterfactual_episodes": 2,
+  "new_paid_game_queries": 2563,
+  "new_public_diagnostic_queries": 148,
+  "exact_first_query_reuses": 18,
+  "forced_action_reuses_from_public_diagnostic": 2,
+  "IR_controls": {
+    "empty_cases_pass": 6,
+    "translated_ray_cases_pass": 6,
+    "full_root_pairs_each": 234,
+    "full_child_pairs_each": 2506,
+    "mapped_public_queries": 72,
+    "token_actual_roots": 4,
+    "token_full_children": 25
+  },
+  "Core_initial_mechanism": {
+    "D2_complete": 17,
+    "D3_complete": 16,
+    "incomplete": 3,
+    "public_checked": 68,
+    "public_unverified": 4
+  },
+  "Core_long_history": {
+    "D2_nonterminal": 95,
+    "D2_terminal": 1,
+    "D2_incomplete": 0,
+    "D3_nonterminal": 48,
+    "D3_terminal": 1,
+    "D3_incomplete": 47
+  },
+  "selected_discard_witness": {
+    "seed": 202610221105,
+    "prefix": 16,
+    "R_action": "legacy_028:g21:b3-d3",
+    "F_G_actions": "legacy_003:g1:d1-b2",
+    "both_common_S_continuations": "natural draw",
+    "not_strength_or_WDL": true
+  },
+  "negative_exact_G_controls": [
+    {
+      "seed": 202610222002,
+      "owner": 0,
+      "R_utility": [
+        0,
+        0
+      ],
+      "Gtable_utility": [
+        1,
+        1
+      ],
+      "Gexact_utility": [
+        1,
+        1
+      ],
+      "Gexact_and_Gtable_full_records_equal": true,
+      "all_Gexact_PVs_Core_checked": true
+    },
+    {
+      "seed": 202610222006,
+      "owner": 0,
+      "R_utility": [
+        -1,
+        -1
+      ],
+      "Gtable_utility": [
+        1,
+        1
+      ],
+      "Gexact_utility": [
+        1,
+        1
+      ],
+      "Gexact_and_Gtable_full_records_equal": true,
+      "all_Gexact_PVs_Core_checked": true
+    }
+  ],
+  "direct_evaluation_cost": {
+    "states_each": 415,
+    "ER_calls": 24900,
+    "FR_calls": 16600,
+    "R_E_paired_median_ratio": 1.081173986020431,
+    "R_F_paired_median_ratio": 0.9974900461432943,
+    "concurrent_load_limit": true
+  },
+  "full_saved_state_audit": {
+    "root_states_replayed": 1082,
+    "replayed_history_entries": 9190,
+    "timing_inputs": [
+      {
+        "source": "matched-eval-cost.json",
+        "full_states_match_initial_and_ordered_complete_successors": 415
+      },
+      {
+        "source": "matched-FR-cost.json",
+        "full_states_match_initial_and_ordered_complete_successors": 415
+      }
+    ],
+    "meaning": "Independent reconstruction/serialization audit via public GameSession/Core, not an independent rule engine, new search, WDL or replayed fitness. All identifiers, repetitions, clock and auxiliary fields compared, not physical board alone."
+  },
+  "limitations": [
+    "All finite intervals retain planned missing/UNKNOWN; not sampling CIs or global price winners.",
+    "Capture mechanisms/models/budgets differ across cohorts, so no cross-cohort causal claim.",
+    "E rawunit fallback loses scaling property at zero-initial future-positive types; F zero convention misses them; potential type closure fails impossible-guard control.",
+    "Root-dependent controllers used TT OFF; no default integration or generic equivalence/admission.",
+    "Next two common4ply/D3 component inputs prepared; component search not executed."
+  ],
+  "next": "Use next-component-inputs with R/Gexact/Gtable/whole-evaluator scale control under60s/100kCoreentries. Do not repeat closed fitness panels, extend censored slots or build a generic reachability framework.",
+  "dictionaries": {
+    "key": 7177,
+    "piece": 37,
+    "position": 1885,
+    "history": 3683,
+    "action": 5595,
+    "record": 444,
+    "state": 1904,
+    "rule": 88
+  },
+  "producer_source_count": 36,
+  "evidence_sha256": "e8abddb204efd93fa69924fa220a7021b9db491dc34397c555de50db178e5d24",
+  "evidence_bytes": 10063008
+}

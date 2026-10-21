@@ -6144,3 +6144,29 @@ games. Three real generation failures remain separate. Originals and executed
 versus future-repaired sources remain explicit. The
 [report](../research/PRICE_TIES_TRANSFER_AND_REFERENCE_UNITS_20261022.md) and technical
 projection preserve decisions, failures and unresolved scope.
+
+
+## PRIMARY — 2026-10-22 instance units and state denominators
+
+Parent559aa80dc224250dc30135b3cb4696e389f0d134; sessionbd28d97a-9d68-44ed-8fd9-b18ec396a78f.
+Read Chat root1792615765.818819 and its complete empty reply thread once; exact
+originals privately saved before assessment. Adopt fresh-rule/finite-bound limits.
+TD/cell/array-enumerator work is deferred to existing AUX ownership; no AUX files,
+state, unpublished results, workers or outbound message were used. Cache enum
+suggestion remains hypothetical; no new collision/caller justifies that API work.
+
+[Study](../research/INSTANCE_UNITS_AND_STATE_DENOMINATORS_20261022.md) records
+full-ID translation and real auxiliary coverage, an inert-hand proof-scope
+counterexample, explicit zero-reference/type-effect limits and complete costs.
+E/R deep pilot had0 complete pairs after13episodes; no strength conclusion or
+unchanged rerun. Two smaller frozen cohorts complete36episodes each; all unknowns
+remain. Root-dependent G uses TT OFF and saved per-query preparation; no default
+activation. An actual strict state-denominator witness does not demonstrate gain;
+two exact-root counterfactuals preserve observed negative R examples. Source
+premise/recording failures and incomplete Core checks remain qualified. Exact
+GameRecord/state reconstruction and publication-copy parsing are distinguished
+from an independent engine, WDL or another Agent's rerun.
+
+Next two full-history component inputs are prepared; component search is not
+executed. No result was sent to a partner or treated as a new user authorization.
+Effective research3756seconds/11intervals; documentation/transport excluded.

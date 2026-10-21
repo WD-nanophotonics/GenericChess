@@ -205,18 +205,47 @@ not utility evidence. Material-only composition works without a legacy handle
 on six typed-IR fixtures and 11 queries. Preserve supplied proved-inert hand zero
 and every excluded-pattern scope. No default admission or AUX learner change.
 
-Next: extend the already-started `IR-instance-pair-preflight.json` study to the
-remaining five fixtures and longer qualified histories. Does the complete,
-scope-preserving instance unit stay invariant under genuinely dormant declarations
-when promotion, drops, auxiliary state and type effects are present? Predeclare
-cheap paired controls, preserve full Core states/history and identifiers, and
-decline rather than strip meaningful effects or IDs. The first castling pair
-passes 15 one-ply maps; this is not a generic isomorphism theorem. A contrary
-result revises the unit candidate before any utility study. Do not change defaults.
+[INSTANCE_UNITS_AND_STATE_DENOMINATORS_20261022.md](INSTANCE_UNITS_AND_STATE_DENOMINATORS_20261022.md)
+completes that continuation. Six empty and six fully translated ray-declaration
+controls retain complete child/history/aux/promotion/drop semantics. Exact old-ID
+replay still fails when compilation renumbers; no identity or admission claim.
+A truly unreachable compound actor also changes the conservative hand proof,
+so complete-evaluator invariance does not follow from reference-unit invariance.
+Actual token creation/off-target capture/expiry is qualified on a declared board,
+not inferred from an empty-pawn fixture label. No product default or API changes.
 
-Backup1: compare a full constant-table baseline and a small state-interaction
-candidate after scope qualification, with explicit costs and frozen conditions;
-do not repeat closed C/D panels or extend UNKNOWN. Backup2: new primary literature
-only when it supplies a decision-changing cheap criterion, without an AUX learner
-or solver port. Originals retain metadata recovery, one missing R return and an
-unretained timing probe. No speed advantage is claimed. Science OPEN.
+New finite policy evidence keeps every planned slot: E/R D5/node65536 executes
+only13/72, no complete matched contexts, bound[-16/9,14/9]; do not repeat that
+coverage-poor panel unchanged. F/R D3/node4096 completes36 games and gives[0,2/9],
+with all16 resolved pairs equal. G/R on nine NEW remove-from-game rules completes
+36 games and gives[-13/18,11/18], with two resolved negative R contrasts. Each G
+query prepares a complete CURRENT-root table with actual cost and TT OFF. These
+are finite censoring bounds, not sampling CIs or cross-envelope causal evidence.
+
+A complete discard D3 witness proves R can differ from both initial-fixed and
+root-fixed tables; its two fixed-S continuations draw. Removing table coefficient
+quantization does not erase the two whole-policy negative examples: exact-root G
+wins with the same full trajectories as Gtable where R draws/loses. Thus neither
+strict preference nor scoped invariance justifies nonlinear utility priority.
+Same415-state timing gives R/E1.08117 and R/F0.99749; simpler F is not measured
+faster. Material-only normalization also changes relative dynamic weights11–55x.
+
+E remains a conditional cheap baseline, not a universal normalization solution:
+zero-initial/future-positive type effects break its fallback scaling property.
+A potential-type reference fixes that example but fails an impossible-guard
+negative control (B1000->620). Keep full fields and limits; do not build a generic
+reachability/guard framework or manufacture new fitness for18 identical E profiles.
+
+Next: use the already-prepared `next-component-inputs.json` from this study.
+Both real first-divergence roots have complete four-ply histories and actual D3
+returns from R/Gexact/Gtable. Does whole-evaluator scaling separate material/
+dynamics balance from the state denominator? Freeze60s/100kCoreentries, retain
+all IDs, future types, hand BASE/current distinctions and actual incomplete
+checks. The component search is NOT executed yet. No new policy cohort is needed
+until this inexpensive question changes the choice.
+
+Backup1: use closed cohort coverage/cost to predeclare pair-block allocation for
+a genuinely NEW question; do not reorder/rerun closed panels or relabel UNKNOWN.
+Backup2: unread primary work only when it gives a decision-changing cheap test;
+no old-Clune reread credit, solver admission gate or AUX learner duplication.
+Science OPEN.
