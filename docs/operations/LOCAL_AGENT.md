@@ -27,7 +27,8 @@ Do not restore retired audit chains merely because an old memo names them.
 
 Before substantive work, do one role-local mailbox probe per SLACK_WORKFLOW.md.
 Review new/edited Chat comments with adopt/defer/reject reasons; advice does not
-replace explicit user direction. Current cleanup is read-only communication.
+replace explicit user direction. The completed cleanup was read-only;
+normal research follows the periodic mailbox protocol.
 No Dot realtime wait, daily gate, resend or reply requirement.
 
 Open a research interval using:
@@ -80,7 +81,8 @@ hooks. Repository remains PUBLIC unless explicitly directed otherwise.
 Before every authorized Slack message first push and verify SHA, including when
 no new commit is needed. Save exact outgoing text and delivery evidence. Existing
 SEND_UNCERTAIN messages are reconciled at a later probe, never automatically
-resent. During the current cleanup, read Slack only and send no report.
+resent. The bounded cleanup's read-only restriction does not disable normal
+research communication or the existing recurrence.
 
 Keep a concise collaboration summary at meaningful research completion.
 REPOSITORY_LAYOUT.md and CLEANUP_20261021.md explain dependency-preserving

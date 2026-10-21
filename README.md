@@ -22,6 +22,8 @@ py -3 -m venv .venv
 
 This checkout owns DEV_AUX / sidemission. The existing hourly patrols keep their current
 recurrence. Git publication remains authorized to the assigned branch. Slack
-is read-only under the current user direction; there is no real-time Dot contact.
+uses the periodic Chat mailbox protocol; there is no real-time Dot contact.
+The bounded cleanup was read-only. Uncertain delivery is reconciled by a later
+read, never by an automatic resend.
 Closed experiment payloads are recovered from pinned Git history rather than
 restored wholesale into the working tree. Current dependencies remain local.

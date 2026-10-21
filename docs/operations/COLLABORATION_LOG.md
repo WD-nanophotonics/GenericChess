@@ -1,5 +1,38 @@
 # Current collaboration record
 
+## 2026-10-21 — reusable learner and actual semantic play
+
+DEV_AUX resumed session19c0e61b-b8d5-4c1c-a5bb-57d74f44569b without resetting
+its origin or previous work. The completed segment confirms4050.907s
+(67.515min) of research, excluding cleanup and publication. The selected Model,
+bounded material-blind search, frozen-episode TDLeaf and full GameSession
+adapter now live in one opt-in library module, with a shared episode loop and
+one exploratory entry. No product default or PRIMARY integration changed.
+
+The fixed one-rule promotion/drop/auxiliary pilot produced119 training
+episodes/106 updates, then95 of128 evaluation slots within its1800s cap.
+52 actual terminal,43 UNKNOWN and33 missing yield the full paired completion
+bound[-83/64,69/64]. No gain, equivalence, weight adoption or cap extension is
+established.23 of47 closed profile pairs change candidate actions; all18
+double-terminal pairs tie. Keep this distinction when selecting the next
+mechanism question, rather than enlarging the same matrix.
+
+24 new regressions,23 retained learner/adapter cases and75 other learning
+product cases pass (122 unique). Initial temporary-directory failures were
+resolved using this checkout's supported temporary path, without changing
+test expectations.60 real receipts and20 episode updates match the legacy
+valid-input arithmetic. Raw experiment data stays ignored; configuration,
+source and compact results are in INCREMENTAL_TDLEAF.md and the common code.
+
+Chat theory posts1792556353.483249/1792556421.498529 were read with their complete
+thread: adopt algorithm-versus-knowledge distinctions and mechanism-first,
+risk-proportional validation; defer the broader theory/solver experiments.
+No new worker, delegation or message to another researcher occurred. The old
+SEND_UNCERTAIN report was not found by the readback, remains uncertain, and was
+not resent. PRIMARY/DEEPSEEK state and all hourly recurrences remain untouched.
+Next: one explicitly post-hoc mechanism diagnosis using existing paired logs;
+only a decision-changing finding warrants a separately validated new study.
+
 ## 2026-10-21 — return to the learning task
 
 The user asked DEV_AUX to reassess its own project against Slack and delete
