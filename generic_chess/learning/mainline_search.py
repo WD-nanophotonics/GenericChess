@@ -6,7 +6,7 @@ without a matching literal leaf is unusable as an exact TDLeaf target.
 """
 from __future__ import annotations
 
-from math import isclose
+from math import isclose, isfinite
 from time import perf_counter
 
 from ..ai.alphabeta.player import AlphaBetaPlayer
@@ -19,7 +19,8 @@ from .incremental import (
 
 
 def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
-           cancel=lambda: None, use_tt=True, use_ordering=True):
+           cancel=lambda: None, use_tt=True, use_ordering=True,
+           pv_reserve_fraction=0.):
     """One mainline iterative q0 call; seed does not alter lexical ordering.
 
     Reuse mainline TT and ordering within this call. All captures have equal
@@ -29,11 +30,16 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     Mainline terminal distance preferences remain. This is a different search
     policy from the historical randomized learner reference, not a speed alias.
     Qsearch is intentionally not exposed: its public PV omits q continuations.
+    An optional fraction of the SAME full-query time allowance is reserved for
+    literal PV replay. Zero preserves the historical allocation; a reserve is
+    a different time-allocation policy, not permission to extend the deadline.
     """
     if not isinstance(env, FixedScaleSessionEnv):
         raise ValueError('mainline learner search requires a full Generic session')
     if depth < 1 or nodes < 1 or seconds <= 0:
         raise ValueError('invalid search budget')
+    if not isfinite(pv_reserve_fraction) or not 0 <= pv_reserve_fraction < 1:
+        raise ValueError('PV reserve fraction must be finite and in [0,1)')
     began = perf_counter()
     attempts = []
     decision = None
@@ -93,7 +99,7 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     player = AlphaBetaPlayer(env.session.compiled, evaluator_override=Material(),
         use_tt=use_tt, use_ordering=use_ordering, use_disk_cache=False,
         tuning=SearchTuning(use_root_tactical=False, require_full_pv=True))
-    remaining = seconds - (perf_counter() - began)
+    remaining = seconds * (1 - pv_reserve_fraction) - (perf_counter() - began)
     if remaining <= 0:
         return receipt('time_limit')
     decision = player.choose_action(env.session, SearchLimits(max_depth=depth,

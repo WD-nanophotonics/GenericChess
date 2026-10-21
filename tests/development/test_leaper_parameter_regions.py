@@ -9,6 +9,29 @@ from scripts.leaper_parameter_regions import action_scores,material_vector,super
 from scripts.leaper_retrograde import solve_world,fresh_state
 
 
+def test_uniform_tie_error_is_an_expectation_not_a_forced_error():
+    from fractions import Fraction
+    from scripts.leaper_parameter_regions import tie_error_counts
+    mixed=tie_error_counts((2,2,1),(1,-1,0))
+    assert mixed==dict(forced=False,unsafe=True,expected_error=Fraction(1,2),choices=2)
+    forced=tie_error_counts((1,2,2),(1,0,-1))
+    assert forced['forced']and not forced['unsafe']and forced['expected_error']==1
+    assert tie_error_counts((2,1),(1,-1))['expected_error']==0
+    with pytest.raises(ValueError):tie_error_counts((2,2),(None,0))
+
+
+def test_uniform_tie_distance_bounds_every_missing_binary_error_assignment():
+    from fractions import Fraction
+    from itertools import product
+    from scripts.leaper_parameter_regions import uniform_tie_distance
+    for a,b in[((2,2,1),(1,2,2)),((2,2,2),(2,1,1)),((2,1,1),(1,2,1)),((2,2,1),(2,2,1))]:
+        left=[i for i,s in enumerate(a)if s==max(a)]
+        right=[i for i,s in enumerate(b)if s==max(b)]
+        differences=[abs(sum(Fraction(e[i],len(left))for i in left)-sum(Fraction(e[i],len(right))for i in right))for e in product((0,1),repeat=3)]
+        assert max(differences)==uniform_tie_distance(a,b)
+    with pytest.raises(ValueError):uniform_tie_distance((),())
+
+
 @pytest.fixture(scope='module')
 def graph():
     return solve_world(kinds=('A','B'),layouts=[(0,1,8,7)])
@@ -35,16 +58,15 @@ def test_cached_D2_action_values_match_Core_with_complete_fresh_history(graph):
                     return material.raw(material_vector(s.position))*sign
                 values=[gold(apply_action(s,a,compiled),depth-1)for a in legal_actions(s,compiled)]
                 return(max if s.position.side_to_move==state.position.side_to_move else min)(values)
-            for depth in(1,2):
+            for depth in(1,2,3,4):
                 actual=action_scores(g,i,leaf,depth)
                 expected=tuple(gold(apply_action(state,a,compiled),depth-1)for a in g['actions'][i])
                 assert actual==expected
-    # Each player moves its own actor: in this no-pass world, a complete board
-    # cannot recur within two plies. Repeat-two still matters to EXACT future
-    # labels, and is covered separately by root-block and actual-history tests.
-    assert selected and repeats==0
-    with pytest.raises(ValueError,match='D1/D2'):
-        action_scores(g,selected[0],leaf,3)
+    # Two-ply recurrence is impossible;four-ply root returns are real Core
+    # terminals and must be scored as draws by the cached observer.
+    assert selected and repeats>0
+    with pytest.raises(ValueError,match='D1-D4'):
+        action_scores(g,selected[0],leaf,5)
 
 
 def test_oracle_fit_retains_boundary_and_nonidentifiable_controls():
@@ -100,3 +122,34 @@ def test_constructed_fresh_observer_matches_independently_compiled_real_fresh_ga
         a,b=receipts
         assert a.complete and b.complete
         assert(a.action,a.value,a.nodes,a.completed_depth)==(b.action,b.value,b.nodes,b.completed_depth)
+
+
+def test_custom_public_models_need_no_supervised_metadata_and_map_AB_channels(graph,tmp_path):
+    import gzip,json,pickle
+    from scripts.leaper_parameter_regions import public_position_study,tie_study
+    from scripts.leaper_retrograde import root_action_labels
+    g=graph;root=g['roots'][0];regions=tmp_path/'regions';regions.mkdir()
+    cache=regions/'graph.pkl.gz'
+    cache.write_bytes(gzip.compress(pickle.dumps({k:v for k,v in g.items()if k!='compiled'})))
+    # The graph has many ongoing Positions but only this root is labelled.
+    # Uniform-tie analysis must retain a bound for the unlabelled remainder.
+    ongoing=sum(bool(e)for e in g['edges'])
+    summary=dict(status='COMPLETE',config=dict(caches={'AB':str(cache)}),worlds={'AB':dict(ongoing=ongoing)})
+    (regions/'summary.json').write_text(json.dumps(summary),encoding='utf-8')
+    values=root_action_labels(g,root)
+    (regions/'AB-labels.jsonl').write_text(json.dumps(dict(index=root,values=[values[a]for a in g['actions'][root]]))+'\n',encoding='utf-8')
+    models={'AB':{'nonuniform':[1.,.7,.9,1.,1.,1.]}}
+    result=tie_study(tmp_path/'ties',regions=regions,models_by_world=models)
+    assert result['status']=='PARTIAL_LABELS'
+    for row in result['rows']:
+        assert row['positions']==1 and row['missing_positions']==ongoing-1
+        lo,hi=row['full_domain_expected_error_bounds']
+        assert hi-lo==pytest.approx(ongoing-1)
+    # A public caller consumes this explicit one-root distribution only. It
+    # maps six A/B/C slots to this AB world's four actual board/hand channels.
+    summary['worlds']['AB']['ongoing']=1
+    (regions/'summary.json').write_text(json.dumps(summary),encoding='utf-8')
+    result=public_position_study(tmp_path/'public',regions=regions,models_by_world=models)
+    assert result['recorded']==2 and result['missing']==0
+    rows=[json.loads(l)for l in(tmp_path/'public'/'AB-queries.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert all(r[2]==r[3]and r[6]is not None for r in rows)

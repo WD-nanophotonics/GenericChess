@@ -15,51 +15,55 @@ PRIMARY state adoption or unmeasured acceleration claim.
 
 ## Current scientific result
 
-See LEAPER_PARAMETER_REGIONS_20261022.md and its compact JSON. Previous reports
-remain history, not a queue of old unlaunched experiments.
+Current controls: LEAPER_LEARNING_CONTROLS_20261022.md. Previous composition/
+parameter results remain in LEAPER_PARAMETER_REGIONS_20261022.md and the same
+compact JSON,not an old experiment queue.
 
-* Identical owner/squares/count/turn can reverse useful low/high B after A/C
-  replacement. Real D1 pair has WIN3/WIN11 certificates; a D2 pair DRAW/WIN5.
-  These are selected mechanism witnesses, not independent rules/populations.
-* 30,985 matched contexts give4,680changedWDL;11,192C-absent controls have equal
-  labels;44,768saved public comparisons have identical actions AND nodes.
-* Neither/own/foe/both C gives W/D/W/W. Two new complete Core graphs total45,103
-  vertices; a missing vertical A move explains the rank3mate. No added actor.
-* Original ABA/ABC ongoing domains:52,456/33,859fresh-history observer Positions.
-  Three models complete517,890publicD1/D2calls;ABC D2errors1799uniform,
-  1754oracle-supervised,1326closedTD;0missing/UNKNOWN. Not terminal-game strength.
-* B-axis curve completes2,244,190slots,172,630reused,0missing/UNKNOWN. Best
-  measured regions depend on composition AND depth;reachability remains scoped.
-* D2-foe learning changes leaf-order chamber only at first update. First/final
-  actions,nodes,WDL agree atall67,718ABC D1/D2queries. Later drift is not another
-  measured strategy gain. RNG expands experience but ends in that same chamber.
-* All12label-blind near-uniform chambers complete812,616publicqueries. Learned
-  representative matches67,718final actions/nodes;adjacent D2errors1324versus1326.
-  RNG episode3's pure bootstrap crossing changes two selected fresh DRAW choices
-  to LOSS;its12experienced learner histories have0qualityimprovements/regressions.
-* 36-row depth curve retains twoD12PV-replay UNKNOWN. D11wins/certificates do
-  not fill them. Task2620's one firstdiv cap mismatch is nonbinding:69/71nodes
-  versus5517/5485requests. Later censoring and all six old bounds stay unchanged.
+* Two color-counterpart bootstrap regressions survive real20/21ply histories:
+  both DRAWtoLOSS,with40/38node actual all-defense certificates. No fresh-label
+  transplant;pure nonterminal update crosses2B-1-C=0.
+* ABC D2uniform-tie expected errors1638.5uniform,1288.533TD,1286.533adjacent.
+  The benefit is not entirely deployed tie selection,but prices are not unique.
+* Antipodal nonuniform starts migrate0to9and6to8;D2errors1883to1326and1522to1324.
+  All135436newfinal public calls complete and match priorsectoractions/nodes.
+  Plus hasone64plyHORIZON_UNKNOWN;allothernewtraininggamesDRAW,no strength claim.
+* Rotate only C:Core graph46446vertices123618edges completes;120saction-labelcap
+  leaves2347missing. No refill. TV bounds still prove full-domain D2expected
+  error contrastTD-uniform[-346.8,-251.2333]andadjacent-TD=-3,without new labels.
+* Full ABC cached-Core D3/D4uniform-tie controls retain parameter effects:
+  D4expected849.867uniform versus519.067TD. Exact observer is freshD1-D4only;
+  four-plyrootrepetition is checked against literal Core,not ignored.
+* 4x4sameinventory960public queries complete. Samechamber320actions/nodes agree;
+  adjacentchamberalsochooses sameactions,but9nodecountschange. No exact4x4WDL.
+* Hash-selected depth study records3071/3072slots;one malformed caller slot
+  remains missing,214PV_REPLAY_TIME_CAP remain UNKNOWN. Fixed-budget nominal
+  depth and usable literal decisions are different. New reservation arm is
+  opt-in,not a default or deadline extension;closed outputs stay frozen.
+* FullD4three-model census258945slots and uniformD6census86315slots close with
+  0missing/UNKNOWN. D4TDerrorsABA499ABC469;D6uniform136/403at~2.95timesnodes,
+  with9/149newerrors versusD4TD,so not per-position dominance.11192C-absent
+  D6controls agree onactions/nodes/WDL.155relatedtests pass.
+* At a24ply actual history,D2draws/D4loses;every0<C<=8prefersLOSS atD4,A=1.
+  Fresh C-present/absent setups bothDRAW,but sharedKingmove isLOSS/DRAW.
+  Occupancy/geometry and root/action contribution remain distinct concepts.
 
 ## Current bounded continuation
 
-Main: Do the two fresh bootstrap-regression cases survive actual played history?
-Prepared legal original-root paths reach indices19468/20954 in20/21plies:
-artifacts/leaper-next-actual-prefixes-20261022/summary.json. Replay both full
-GameSessions,score full-history labels with the cached ABC graph,then frozen
-RNG episode3before/after publicD2 at100knodes/3seconds,whole120seconds.
-Actual-history WDL/quality are NOTCOMPUTED. Do not transplant fresh labels,
-restart closed public studies or recreate the retired full-policy unroll hook.
+Main: Does rotating C alone remove its occupancy liability? | use the fresh
+four-actor board at ABCindex23981(K1 a2,A1 b2,K0 c1,C0 c0),retain actors/turn,
+declare vertical-C only and one Core graph<=10000states/60seconds,whole120seconds;
+reuse horizontal presence/absence records in artifacts/leaper-C-occupancy-control-20261022 |
+exact root/sharedKingmove WDL and a literal mechanism orUNKNOWN | no oldcap reset,
+24plyhistory transplantation,new training or public-query matrix.
 
-Backup1: Does the chamber preference survive only rotating C? | inspect existing
-cache scope,then if needed one bounded vertical-C original ABC Core graph |
-legal declared contexts and frozen-policy exact quality | no extra training or
-automatic heldout claim.
+Backup1: Does deeper search introduce specific regressions? | use closed D2/D4/
+D6 rows and their exact history scope | one literal mechanism,not just aggregate
+errors | no new sampling or retry of a frozen query.
 
-Backup2: Does the same learner reach the good chamber from another initialization?
-First define a small two-antipodal-algebraic-chamber control with the same
-learner/openings/caps,then run bounded experience;oracle remains observer-only.
-This is a changed-premise new study,not a rerun/refill of closed episodes.
+Backup2: Does the observed same-budget PV reservation justify actual learner
+use? | compare completeddepth,usableliteralPVs and exact actionquality,retaining
+oldUNKNOWN | explicit useful tradeoff or rejection | no unmeasured speed/default
+claim or replacement of shared mainline search.
 
 ## Recovery and limits
 

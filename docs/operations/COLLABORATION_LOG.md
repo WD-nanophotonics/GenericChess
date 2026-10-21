@@ -1,5 +1,44 @@
 # Current collaboration record
 
+## 2026-10-22 — actual-history learning controls and depth costs
+
+DEV_AUX read/saved Claude1792608525.770219 and adopted uniform-tie evaluation
+and nonuniform initialization controls. The twelve-chamber baseline had already
+completed after the reviewed29f867b revision. A parallel Leaper engine and a
+5x5cap reset were rejected under direct user instructions. sandbox5442b3c1 was
+fetched;shared infrastructure remains identical,apart from the two AUX additions.
+PRIMARY state/work and its uncommitted contents were untouched.
+
+Two selected bootstrap regressions survive20/21ply real histories;opponent
+wins have40/38node all-defense certificates. They are color counterparts,not
+independent trials. The same episode lowers frozen-PV loss while worsening
+idealD2expectederrors by2. Two nonuniform32episode runs reach different good
+regions;135436frozenfinalqueries confirm policy/node correspondence. One
+HORIZON_UNKNOWN is retained. No uniqueprice/convergence or game-strength claim.
+
+VerticalC completes itsCore graph,but120slabelcap leaves2347missing. TV bounds
+prove useful full-domain contrasts without computing/filling missing labels.
+FullD4 completes258945slots,384reused,0UNKNOWN/missing;all literal action-set
+checks pass. Depth improves aggregate quality but introduces43/63newABCerrors
+foruniform/TD. A24ply actual counterexample proves a local positive-C-price
+obstruction atD4. Its initial clipped-score hypothesis failed and was corrected
+within the original analysis deadline;the failure/source are retained.
+
+An opt-in10percentPVreplay reserve recovers214unusable inputs within the same
+1.5s budget;all768newPVs replay,zero errors,while target-depth completions fall
+554to530. No default/training integration or engine acceleration is claimed.
+UniformD6thencompletes86315slots,128reused,0missing/UNKNOWN;errors136/403at
+~2.95timesD4TDnodes,with9/149newerrors despiteoverallgain.11192C-absentcontrols
+matchactions/nodes/WDL. NewlegalC-present/absentfreshstarts bothDRAW,butthe
+sharedKingmovechangesLOSS/DRAW:rootvalueandconditionalactionvalue differ.
+All155relatedtests pass. New scientific code remains small additions to the
+existing runner/observer/adapter;raw logs/source snapshots remain ignored.
+The old SEND_UNCERTAIN Slack message is not resent. The same ACTIVE90minute
+recurrence is preserved. Current report:LEAPER_LEARNING_CONTROLS_20261022.md.
+The segment records3675.233721effective seconds;publication administration is
+excluded. The next declared control rotates C in the legal occupancy witness,
+not a new default,training sweep or automatic higher-depth census.
+
 ## 2026-10-22 — full parameter regions and matched composition mechanisms
 
 DEV_AUX read the new Claude mailbox comment1792601379.333259 and adopted the

@@ -1,7 +1,7 @@
 """Observer-only algebra on complete Core-generated Leaper graph caches.
 
 This never generates a move or trains the experiential learner. Fresh-position
-D1/D2 action SETS use cached authoritative transitions, with return to the fresh
+D1-D4 action SETS use cached authoritative transitions, with return to the fresh
 root treated as repeat-two draw. Public-search checks remain separate.
 """
 from collections import Counter,defaultdict
@@ -21,13 +21,91 @@ def material_vector(position):
                      if p and p.current_type_id==name)for name in('A','B','C'))
 
 
-def action_scores(graph,root,leaf_scores,depth):
-    """Player-to-move scores at a fresh history, exactly one or two plies.
+def tie_error_counts(scores, labels):
+    """Exact uniform-tie observer error, not the deployed search tie policy.
 
-    Mate distances match public q0 scores. Root-return draws are explicit;
-    no other repetition is possible within two non-pass Leaper plies.
+    WDL labels must already be proved. Return a rational expected error and
+    distinguish unavoidable errors from ties with both safe and unsafe moves.
     """
-    if depth not in(1,2):raise ValueError('Only D1/D2 fresh-position algebra')
+    if not scores or len(scores)!=len(labels)or any(v not in(-1,0,1)for v in labels):
+        raise ValueError('complete scores and proved WDL labels required')
+    top=max(scores);best=max(labels)
+    selected=[v for s,v in zip(scores,labels)if s==top]
+    bad=sum(v<best for v in selected)
+    return dict(forced=bad==len(selected),unsafe=0<bad<len(selected),
+                expected_error=Fraction(bad,len(selected)),choices=len(selected))
+
+
+def uniform_tie_distance(scores, other_scores):
+    """TV bound on error-expectation differences even with missing WDL labels."""
+    if not scores or len(scores)!=len(other_scores):
+        raise ValueError('matching nonempty action score vectors required')
+    top,other_top=max(scores),max(other_scores)
+    a={i for i,s in enumerate(scores)if s==top}
+    b={i for i,s in enumerate(other_scores)if s==other_top}
+    return 1-Fraction(len(a&b),max(len(a),len(b)))
+
+
+def tie_study(output, *, regions, models_by_world, whole_seconds=300,depths=(1,2)):
+    """Compare frozen models under uniform action-set ties on cached graphs.
+
+    This is a post-hoc observer control. It neither reruns public queries nor
+    substitutes an imagined randomized tie policy for actual deployed results.
+    """
+    from generic_chess.learning.incremental import Model
+    if not depths or any(d not in(1,2,3,4)for d in depths):
+        raise ValueError('tie observer depths must be D1-D4')
+    output=Path(output);output.mkdir(parents=True,exist_ok=False)
+    regions=Path(regions);reference=json.loads((regions/'summary.json').read_text(encoding='utf-8'))
+    began=time.perf_counter();rows=[];status='COMPLETE';last=0.
+    config=dict(regions=str(regions),models=models_by_world,whole_seconds=whole_seconds,depths=depths,
+        scope='All ongoing cached reachable Positions reset to fresh history; uniform random tie expectation,not actual search or game strength')
+    (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
+    (output/'executed-source.py').write_bytes(Path(__file__).read_bytes())
+    def guard():
+        nonlocal last
+        now=time.perf_counter()
+        if now-began>=whole_seconds:raise Exhaustion('WHOLE_TIME_UNKNOWN')
+        if now-last>=.2:
+            last=now
+            if role_stop_requested():raise Exhaustion('STOPPED_USER')
+    try:
+      for world,models in models_by_world.items():
+        g=pickle.loads(gzip.decompress(Path(reference['config']['caches'][world]).read_bytes()))
+        labels={r['index']:r['values']for l in(regions/(world+'-labels.jsonl')).read_text(encoding='utf-8').splitlines()for r in(json.loads(l),)}
+        phi=[material_vector(p)for p in g['positions']]
+        for name,weights in models.items():
+            guard();model=Model(weights[:3]);leaf=[model.raw(p)for p in phi]
+            for depth in depths:
+                counts=Counter();hist=Counter();expected=Fraction(0)
+                for i,lab in labels.items():
+                    guard();v=tie_error_counts(action_scores(g,i,leaf,depth),lab)
+                    counts['positions']+=1;counts['forced']+=v['forced'];counts['unsafe']+=v['unsafe']
+                    expected+=v['expected_error'];hist[str(v['expected_error'])]+=1
+                rows.append(dict(world=world,model=name,depth=depth,**counts,
+                    expected_errors=str(expected),expected_errors_float=float(expected),
+                    expected_error_rate=float(expected)/len(labels),error_fraction_histogram=hist,
+                    missing_positions=reference['worlds'][world]['ongoing']-len(labels),
+                    full_domain_expected_error_bounds=[float(expected),float(expected)+reference['worlds'][world]['ongoing']-len(labels)]))
+                (output/'partial.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
+            print(world,name,'tie observer seconds',time.perf_counter()-began,flush=True)
+    except Exhaustion as error:status=str(error)
+    if status=='COMPLETE'and any(r['missing_positions']for r in rows):status='PARTIAL_LABELS'
+    result=dict(config=config,status=status,rows=rows,planned=sum(len(depths)*len(m)for m in models_by_world.values()),
+        recorded=len(rows),seconds=time.perf_counter()-began,new_search_queries=0)
+    (output/'summary.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+    return result
+
+
+def action_scores(graph,root,leaf_scores,depth):
+    """Player-to-move scores at a fresh history, at most four plies.
+
+    Mate distances match public q0 scores. A board cannot recur in two plies:
+    each player moves one of its own actors,with no pass/drop/promotion here.
+    Thus the first possible recurrence is the root at ply4. D5+ could repeat
+    a later vertex and needs a different full-history observer,not this cache.
+    """
+    if depth not in(1,2,3,4):raise ValueError('Only D1-D4 fresh-position algebra')
     sign=1 if graph['positions'][root].side_to_move==0 else -1
     def score(child,ply):
         if child in graph['terminals']:
@@ -35,6 +113,15 @@ def action_scores(graph,root,leaf_scores,depth):
             return graph['terminals'][child]*side*(MATE_SCORE-ply)
         if child==root:return 0
         return leaf_scores[child]
+    if depth>2:
+        from functools import lru_cache
+        @lru_cache(None)
+        def value(index,left,ply):
+            if index in graph['terminals']or index==root or not left:
+                return score(index,ply)*sign
+            choose=max if graph['positions'][index].side_to_move==graph['positions'][root].side_to_move else min
+            return choose(value(c,left-1,ply+1)for c in graph['edges'][index])
+        return tuple(value(c,depth-1,1)for c in graph['edges'][root])
     result=[]
     for child in graph['edges'][root]:
         if depth==1 or child in graph['terminals']:
@@ -133,14 +220,15 @@ def public_position_study(output,*,regions,whole_seconds=3600,
         models={},source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         scope='Constructed fresh observer GameSessions,not original-root legal histories or heldout/strength trials;supervised arm sees oracle aggregate,TD arm unchanged')
     for world,summary in reference['worlds'].items():
-        config['models'][world]={'uniform':[1.,1.,1.,1.,1.,1.],
-            'oracle_supervised':[1.,summary['supervised']['ratio'],1.,1.,1.,1.],
-            'closed_TD':[1.,.9900874213210581,.9659358144086714,1.,1.,1.]}
-        if parameter_curve:
+        if models_by_world is not None:
+            config['models'][world]=models_by_world[world]
+        elif parameter_curve:
             specs=[r['model']for r in summary['rows']if r['depth']==1 and r['model']['kind']in('open','boundary')]
             config['models'][world]={s['name']:[1.,s['ratio'],1.,1.,1.,1.]for s in specs}
-        elif models_by_world is not None:
-            config['models'][world]=models_by_world[world]
+        else:
+            config['models'][world]={'uniform':[1.,1.,1.,1.,1.,1.],
+                'oracle_supervised':[1.,summary['supervised']['ratio'],1.,1.,1.,1.],
+                'closed_TD':[1.,.9900874213210581,.9659358144086714,1.,1.,1.]}
     config['parameter_curve']=parameter_curve
     config['reuse_uniform_from']=None if reuse_uniform_from is None else str(reuse_uniform_from)
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')

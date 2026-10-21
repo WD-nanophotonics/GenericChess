@@ -523,12 +523,13 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 
 
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
-                       random_foe_seed=None):
+                       random_foe_seed=None, initial_weights=None):
     """One symmetric ABC experiential check, with NO reference-label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
     diagnose available signal rather than independent strength or coverage.
-    Literal PV paths are now retained for later mechanism analysis.
+    Literal PV paths are retained for later mechanism analysis. Optional initial
+    weights change only the learner's starting point; the foe stays uniform.
     """
     from dataclasses import asdict
     import random
@@ -540,7 +541,10 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     compiled=compile_ruleset_for_execution(rules)
     paths=sampled_openings(compiled,count=opening_count,seed=opening_seed)if opening_count else[()]
     env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A')
-    model=Model([1.]*len(env.names));foe=Model([1.]*len(env.names))
+    weights=[1.]*len(env.names)if initial_weights is None else list(initial_weights)
+    if len(weights)!=len(env.names)or weights[0]!=1.:
+        raise ValueError('initial weights must match environment names and fixed A=1')
+    model=Model(weights);foe=Model([1.]*len(env.names))
     config=dict(episodes=episodes,candidate_depth=depth,foe_depth=2,initial=model.weights,
         names=env.names,eta=.05,lam=.95,scale=10,root='one symmetric fresh ABC start',
         colors='episode%2',query_nodes=8192,game_nodes=524288,game_horizon=64,

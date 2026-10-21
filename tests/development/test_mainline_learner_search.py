@@ -72,6 +72,40 @@ def test_shared_q0_cancel_after_search_discards_target_and_preserves_paid_nodes(
     assert env.record() == before
 
 
+@pytest.mark.parametrize('fraction,usable',[(0.,False),(.1,True)])
+def test_opt_in_pv_reserve_uses_same_deadline_for_a_literal_last_iteration(monkeypatch,fraction,usable):
+    from generic_chess.learning import mainline_search
+    env=FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(krk_ruleset(4))),unit_type='R')
+    before=env.record();clock=[0.];seen=[]
+    monkeypatch.setattr(mainline_search,'perf_counter',lambda:clock[0])
+    real=mainline_search.AlphaBetaPlayer.choose_action
+    def finish_near_allocated_deadline(player,session,limits,**kwargs):
+        seen.append(limits.max_time_seconds)
+        decision=real(player,session,limits,**kwargs)
+        # Simulate a bounded search returning just after its own time slice.
+        clock[0]=limits.max_time_seconds+.01
+        return decision
+    monkeypatch.setattr(mainline_search.AlphaBetaPlayer,'choose_action',finish_near_allocated_deadline)
+    receipt=search(env,Model([1.,.731]),depth=1,seconds=1.,pv_reserve_fraction=fraction)
+    assert seen==[1-fraction]and receipt.complete==usable
+    assert env.record()==before
+    if usable:
+        assert receipt.seconds<1 and receipt.pv_choices
+        leaf=FixedScaleSessionEnv(env.session,unit_type='R')
+        for step in receipt.pv_choices:leaf.push(step)
+        assert receipt.pv_terminal or leaf.features()==receipt.pv_phi
+    else:
+        assert receipt.reason=='PV_REPLAY_TIME_CAP'
+        assert receipt.action is receipt.value is receipt.pv_phi is None
+
+
+@pytest.mark.parametrize('fraction',[-.1,1.,float('nan')])
+def test_invalid_pv_reserve_is_rejected_before_search(fraction):
+    env=FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(krk_ruleset(4))),unit_type='R')
+    with pytest.raises(ValueError,match='PV reserve'):
+        search(env,Model([1.,.731]),pv_reserve_fraction=fraction)
+
+
 @pytest.mark.parametrize('outcome', ['RESTART', 'NO_CONTEST'])
 def test_neutral_public_search_score_never_becomes_draw_label(outcome):
     rules = replace(krk_ruleset(4), declarations=(RuleDeclaration(

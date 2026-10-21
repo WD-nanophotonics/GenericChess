@@ -279,11 +279,15 @@ def test_random_foe_changes_experience_without_fabricating_searches_or_oracle_la
     from generic_chess.session.serialization import deserialize_game_record
     from generic_chess.rules.schema import ruleset_from_dict
     from generic_chess.rules.compiler import compile_ruleset_for_execution
-    result=experiential_probe(tmp_path/'random',episodes=2,opening_count=8,random_foe_seed=2026102201)
+    initial=[1.,1.03,1.01,1.,1.,1.]
+    result=experiential_probe(tmp_path/'random',episodes=2,opening_count=8,
+        random_foe_seed=2026102201,initial_weights=initial)
     assert result['missing']==0 and result['config']['oracle'].startswith('NONE:')
+    assert result['config']['initial']==initial
     moves=[json.loads(s)for s in(tmp_path/'random'/'opponent-moves.jsonl').read_text(encoding='utf-8').splitlines()]
     queries=[json.loads(s)for s in(tmp_path/'random'/'queries.jsonl').read_text(encoding='utf-8').splitlines()]
     episodes=[json.loads(s)for s in(tmp_path/'random'/'episodes.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert episodes[0]['before_weights']==initial
     assert moves and all(q['actor']==q['color']for q in queries)
     assert sum(e['queries']for e in episodes)==len(queries)
     assert sum(e['plies']for e in episodes)==len(moves)+len(queries)
