@@ -14,6 +14,45 @@ queries use qdepth0. Owned declarations, including LOSS, remain real choices;
 RESTART/NO_CONTEST never become draws. Incomplete queries pay visited nodes,
 produce no root action/training receipt and leave the full session unchanged.
 
+### Optional last-completed-depth decisions
+
+`completed_depth_search` reuses the same q0 AlphaBeta at D1 through a requested
+depth. Attempts share one node allowance and deadline; all shallow searches and
+failed deeper searches are charged. Action, PV, samples and TD target come only
+from the last complete depth, recorded as `completed_depth`; `attempted_depth`
+and the compact attempt costs distinguish it from a completed deeper search.
+An incomplete first depth has no action or label. External cancellation,
+episode/global time limits and a non-scoring terminal reject fallback. The
+episode checks its guard again before observation or committing the action.
+Local query exhaustion can retain a complete shallow result; reaching the
+episode node cap then ends before starting another decision. There is no
+continuation of a previously capped game and no change to fixed-depth defaults.
+
+The episode API accepts explicit opponent depth/iteration settings so a
+candidate-search comparison can keep its foe fixed. Both sides still pay into
+the same game cap. Equal maximum budgets do not mean equal realized work or
+isolate a pure depth effect: deeper work may consume the allowance earlier.
+Full W/L/D/UNKNOWN completion bounds remain necessary.
+
+One fresh natural-rule feasibility episode (generator seed2026102101, search
+seed27184, uniform weights, D1→D2,8192/query,40000/game,H64,120s) made57 plies
+in61.748s and ended NODE_CAP_UNKNOWN. It paid4122 D1 nodes,31418 complete-D2
+nodes and4460 partial-D2 nodes.55 decisions completed D2; two retained D1.
+The two fallback actions/PVs independently match D1 searches at the same
+history and seed.23 captures,13 drops and one promotion were replayed through
+GameSession.29 learner observations yielded28 interior TD errors; the final
+UNKNOWN supplied no outcome target. An independent forward-lambda reconstruction
+matched the weight update exactly. This establishes executable fallback and
+learning arithmetic on this trajectory, not stronger play. The prior capped
+episode remains closed. Raw evidence stays under ignored artifacts/.
+
+Of those28 TD errors,25 are D2→D2, two D2→D1 errors happen to be zero, and
+one D1→D2 error contributes.008062875 of.064611126 total half-squared error.
+Its eligibility-weighted update partly cancels other updates; target-depth
+changes cannot be inferred from the final coefficients alone. Variable-depth
+search targets are the specified approximation, with no convergence or fixed-D2
+claim. This diagnosis does not justify filtering targets after seeing outcomes.
+
 The initial extraction's twenty-four regression cases independently check the forward lambda sum,
 real Chess mate learning, full promotion/drop/auxiliary/history replay, all
 declaration outcomes, cancellation, terminal-on-last-ply, and budget censorship.
@@ -330,7 +369,7 @@ Core/PRIMARY code changed, old cap reset or weight adopted.
 
 ## Next natural-input feasibility
 
-One previously unsampled default `GeneratorConfig(seed=2026102101)` game,
+In the preceding segment, one previously unsampled default `GeneratorConfig(seed=2026102101)` game,
 with max32 existing structural-filter attempts, succeeds on attempt1:8x8,
 32 actors,40 opening legal actions and10 board/hand channels. One uniform-price
 D2/q0 query completes311 nodes in.258 seconds with nonzero PV features despite
@@ -345,8 +384,8 @@ Full history replay and node sums match. The failed last query consumes2360
 nodes and supplies no action/value. The final root has63 legal choices
 (26 board,37 drop), versus40 initially, and both players have hand holdings.
 This identifies a late-query resource problem, not its sole causal mechanism.
-No second episode, retry, validation panel, independent holdout or playing
-strength claim follows. Next examine a last-completed-depth target/choice
+No retry or independent holdout/playing-strength claim followed that episode.
+The next question was a last-completed-depth target/choice
 contract at this preserved root before proposing further natural-input work;
 an incomplete D2 must never be relabeled as an exact D2 target or a draw.
 One separately budgeted D1 query at that preserved late root completes64
@@ -355,4 +394,119 @@ committed and the old episode remains UNKNOWN. Combining this completed D1
 with the earlier failed D2 is only a design example, not an executed iterative
 search: a real policy must pay both searches under one decision budget and
 record the depth actually supplying its training target. This is the next
-specific interface question; no new training panel has been launched.
+specific interface question; that segment launched no further training panel.
+
+## Fixed-foe depth control, 2026-10-21
+
+Source `bc43cf6717076c4662547a6c675c733fc146839f`. The same exposed natural rule
+uses eight new unselected random-opening paths, seed27185, both candidate colors,
+and uniform1 weights everywhere. Candidate modes are fixedD1 and iterativeD2;
+the foe remains fixedD1. Shared per-game maxima are8192/query,60000 nodes,
+90s,H128; total maxima are1.2M nodes/1800s. Mode order alternates by family;
+paired modes use identical starts and search seeds. No training takes place.
+
+All32 slots finish in546.307s with311936 search nodes,1362 queries and no
+missing slots. All histories and actual outcomes independently replay:
+27 checkmates,5 ongoing UNKNOWN. FixedD1 gives6W6L4UNKNOWN; iterativeD2
+gives13W2L1UNKNOWN. Over16 color-paired comparisons the full completion bound
+for iterative-minus-fixed payoff is **[3/8,1]**. This bounds the UNKNOWN
+outcomes on these eight correlated families, not a confidence interval or a
+claim about a rule population. Three families have definite mean gain1,
+two have exact0, and three have unresolved nonnegative ranges.
+
+Realized cost is122464 nodes/216.406 game seconds for fixedD1 versus189472
+nodes/327.119s for iterative. Candidate-only nodes are61232 versus174422;
+foe nodes are61232 versus15050 because actual trajectories differ. Iterative
+attempts include31135 paid incomplete nodes. Equal allowances therefore do
+not establish benefit per equal realized node or isolate fallback itself.
+The control supports retaining iterative play for the next learning check on
+this rule; it does not establish a gain from learning, general strength, or
+convergence to human piece prices.
+
+The next single-rule learning test was specified before its launch: seed27186,
+random uniform[.5,1.5] nonfixed weights, fixed board-P1, same uniform D1 foe,
+iterativeD2 candidate,128 training episodes max,16 evaluation families×2 colors
+×2 profiles,2M nodes per phase,3600s overall with training in the first1800s,
+H128,60000/game and8192/query. The 10–40s typical games plus occasional longer
+histories in the control justify a bounded one-hour ceiling. A single trajectory
+cannot answer the learning-strength question; the preceding control cannot
+substitute for trained-versus-initial play. This exposed-rule study retains
+all UNKNOWN/missing slots and receives no topup. Positive completion bounds
+would support a later fresh-rule check; an unresolved result leaves weights
+unadopted and motivates using saved mechanisms rather than enlarging this panel.
+
+The natural input is reproducible from the existing generator rather than a
+new experiment framework: `generate_game(GeneratorConfig(seed=2026102101,
+max_generation_attempts=32)).ruleset`, serialized with `ruleset_to_dict` to
+`artifacts/natural-rule-20261021.json`. Other generator settings are defaults.
+The learning entry and complete configuration are:
+
+```powershell
+.venv\Scripts\python.exe -m scripts.incremental_learning --rules artifacts/natural-rule-20261021.json --unit P --seed 27186 --train-episodes 128 --eval-pairs 16 --train-nodes 2000000 --eval-nodes 2000000 --seconds 3600 --horizon 128 --depth 2 --iterative --opponent-depth 1 --no-opponent-iterative --query-nodes 8192 --game-nodes 60000 --output artifacts/natural-iterative-learning-20261021
+```
+
+These describe the executed study, not permission to overwrite or rerun its
+closed outputs. Timing-dependent fallback need not reproduce identical paths
+under another machine load. Raw traces remain ignored; the public code,
+generator configuration and finite results supply the compact research record.
+
+### Completed learning result
+
+Producer exit0, PLANNED_EPISODES_COMPLETE:3569.873826s overall. Training phase
+measured1800.061268s against its intended1800s guard; the.061s atomic/final
+bookkeeping overrun is retained. The guard stayed1800s; strict real-time
+compliance is not established.
+
+| Measure | Result |
+|---|---|
+| Training | 70 episodes,65 nonzero updates;1109513 search nodes |
+| Training outcomes | 63W,5L,2UNKNOWN:68 actual checkmates,one H128 cutoff,one TRAIN_TIME_CAP |
+| Evaluation | 64/64 slots;62 actual checkmates,2 node-cap UNKNOWN,0 missing;1021306 nodes |
+| Trained candidate | 29W,1L,2UNKNOWN |
+| Initial candidate | 28W,4L,0UNKNOWN |
+| Full paired reward bound | **[1/16,3/16] = [.0625,.1875]** |
+
+The known reward-difference sum is4; the two unknown payoffs give `(4±2)/32`.
+This is identified finite gain on the16 exposed root families under this fixed
+uniform D1 foe and resource recipe. It is not a sampling CI, an independent
+rule/position holdout, general strength or amateur-level calibration. No weights
+were made a default. All original caps and all incomplete results remain closed.
+
+All134 recorded histories/results and3841 query records were checked against
+their node totals. All70 training updates independently reconstruct within
+4.44e-16; evaluation profiles remain exactly frozen. There are878 material
+target errors,61 terminal-PV target errors and65 actual-final errors. Two actual
+final updates have nonzero terminal credit; early zero final errors did not
+make the actual terminal term universally redundant.929 nonzero-gradient
+nonterminal feature rows span all9 nonfixed coordinates. Feature span is not
+parameter identifiability or proof of convergence. Three training games and
+two evaluation games ended before the candidate made a search query; they
+remain in the complete result, rather than being selected away.
+
+Channels are `board(P,A,B,C,X), hand(A,B,C,P,X)`. Frozen final weights:
+`[1,2.279657581919599,.7073754491890226,.8848782315545707,1.4560110105137922,2.831721226867124,1.013947638639077,.4406555938954061,-.787552454077756,1.2329929442245295]`.
+This includes a negative hand-P approximation; it is neither clamped to a human
+prior nor asserted to be a universal marginal value.
+
+One outcome-selected illustration, index4/color0, first diverges at new ply3.
+Both queries complete D2 on the same history/seed,1455 versus1565 nodes;
+trained moves(2,3)→(3,5), initial moves(7,0)→(4,6), with zero-based coordinates.
+The actual games end trained win44plies versus initial loss33plies. This rules
+out an incomplete-depth explanation at that particular first divergence, not
+ties, later resource effects, or every alternative cause of the final outcome.
+No coefficient ablation, new search or gameplay was performed for this diagnosis.
+
+Evaluation candidate work totals91645 complete-D1,688348 complete-D2 and166807
+partial-D2 nodes, plus74506 foe nodes. Failed D2 attempts consume331.917 of
+1766.121 episode seconds; complete D2 consumes1162.270s. Thus complete deeper
+search, not just failed work, dominates this measured cost. These are local
+elapsed costs under ordinary concurrency, not portable throughput claims.
+
+The next useful step has begun with one label-blind prospective default sample:
+generator seed2026102102, max32 structural-filter attempts, accepted on attempt3,
+56 opening actions. One uniform-price D1→D2 root query completes443 total nodes
+in.527s with no committed action. It establishes initial feasibility only;
+the previous late-query failure shows why an initial root cannot establish
+episode throughput. Next run one fresh bounded episode with the same learner,
+not transferred learned weights, before choosing another training run. Stronger
+foe calibration remains a separate future question; no MCTS/Elo framework follows.

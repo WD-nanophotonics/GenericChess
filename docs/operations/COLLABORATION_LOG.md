@@ -1,5 +1,42 @@
 # Current collaboration record
 
+## 2026-10-21 — completed-depth decisions and natural-rule learning
+
+DEV_AUX reused the same fixed-scale vanilla episode TDLeaf path. An opt-in
+D1→D2 decision shares a query budget, pays partial deeper work and retains only
+the last complete target; cancellation/non-scoring branches reject fallback.
+84 focused/related cases pass, including stop-after-receipt-before-commit.
+The live empty-channel Slack rendering needed one small parser correction.
+
+One fresh natural-rule episode made57 plies/40000 nodes and a real TD update,
+retaining UNKNOWN. Independent D1 target and update reconstruction checks pass.
+A fixed uniform D1-foe control completed32 slots: iterative13W2L1UNKNOWN,
+fixedD1 6W6L4UNKNOWN; full bound[3/8,1],311936 nodes. This is a search-policy
+result under equal allowances, not equal realized work or a learning effect.
+
+The subsequent one-rule learning trial completed70 training episodes/65 updates
+and all64 evaluation slots in3569.874s;134 histories and3841 query records
+were checked, with independent TD error<=4.44e-16. Trained29W1L2UNKNOWN versus
+initial28W4L gives the full finite reward bound[1/16,3/16]. The intended1800s
+training guard measured1800.061s; its overrun and two censored training episodes
+remain recorded. No draw imputation, cap reset or weight-default adoption.
+The source is sidemission@bc43cf6717076c4662547a6c675c733fc146839f.
+
+The segment retained UUID3d8c7739-4872-4f8c-8156-4865946ff013 across the07:52UTC
+heartbeat, without a second producer or reset. Confirmed research work totals
+5396.460759s (89.941 minutes); recovery/publication administration is excluded.
+The completed study supports one next default-rule feasibility episode, rather
+than optimizing to a human price ordering or adding a benchmark framework.
+Prospective generator seed2026102102 has56 opening moves; one443-node query
+establishes initial cost only. No second-rule training/strength claim follows.
+
+Slack's complete logical read found no new advice beyond the previously reviewed
+Claude/Chat comments. Their useful draw/UNKNOWN distinction and mechanism-first
+scope remain adopted; MCTS/Elo proposals remain deferred. Exact originals stay
+private. The old uncertain send was not resent. PRIMARY/DEEPSEEK work, sessions,
+branches and all hourly recurrences remain independent and untouched. Full
+configuration, local cost limits and finite results are in INCREMENTAL_TDLEAF.md.
+
 ## 2026-10-21 — decision regions, real history costs and known winning choices
 
 DEV_AUX completed research in session a2e02c6a-9815-4ba0-82ef-9703818f63e6:

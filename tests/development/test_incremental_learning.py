@@ -127,6 +127,31 @@ def test_episode_keeps_opponent_search_fixed_across_candidate_modes(color):
             assert receipt.completed_depth == 1 and not receipt.attempts
 
 
+@pytest.mark.parametrize('iterative', [False, True])
+def test_stop_after_receipt_before_commit_withholds_action_and_observation(iterative):
+    env = ChessEnv()
+    initial = env.record()
+    stopped = False
+
+    def cancel():
+        if stopped:
+            raise BudgetEnd('STOPPED_USER')
+
+    def callback(ply, actor, receipt):
+        nonlocal stopped
+        assert receipt.complete
+        stopped = True
+
+    model = Model([1.] * 5)
+    result = play_episode(env, model, opponent=Model([1.] * 5),
+                          learner=TDLeafEpisode(), iterative=iterative,
+                          cancel=cancel, on_query=callback)
+    assert result.ending == 'STOPPED_USER' and result.outcome is None
+    assert result.queries == 1 and result.nodes > 0 and result.plies == 0
+    assert result.update['observed_searches'] == 0 and result.update['samples'] == 0
+    assert env.record() == initial
+
+
 def declaration_session(outcome, extra_declarations=()):
     board = [None] * 16
     for square, piece in ((1, Piece(0, 'K', 'K')), (3, Piece(1, 'K', 'K')),

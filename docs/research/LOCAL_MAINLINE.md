@@ -26,6 +26,8 @@ or extend its old caps to justify sunk engineering cost.
 | Reusable semantic pilot, 2026-10-21 | 119 training episodes, 106 updates; 95/128 evaluation slots, 52 actual terminals, 43 UNKNOWN and 33 missing. Full paired completion bound [-83/64,69/64]. | One exposed stress rule; no identified gain or independent rule/position holdout. No weight adoption or cap extension. |
 | Prospective no-progress variant | 48 training episodes/48 updates; 46/128 evaluation slots,30 actual terminals,16 UNKNOWN,82 missing; bound[-3/2,25/16]. | Changed game/seed/budget, not a causal comparison. Full-history replay costs limit throughput; no weight adoption. |
 | One natural8x8 sample | Default generator seed2026102101; initial D2 completes311nodes. One episode makes16 legal plies/one TD update, then a query time limit; UNKNOWN retained. | No strength/holdout claim; initial-root feasibility did not ensure later-query completion. |
+| Last-completed-depth control | Fresh57-ply episode uses55 completeD2 and2 D1 fallback targets; independent TD delta/replay checks pass. Fixed-foe32-slot comparison: iterative13W2L1UNKNOWN versus fixedD1 6W6L4UNKNOWN; full bound[3/8,1]. | Eight exposed opening families; different realized work under equal allowances. Search-policy result, not a learning gain or population claim. |
+| Natural8x8 TDLeaf | 70 training/65 nonzero updates; all64 eval slots,62 actual mates/2UNKNOWN/0missing. Trained29W1L2UNKNOWN versus initial28W4L; full bound[1/16,3/16].134 histories and all updates checked. | One exposed rule,16 opening families, fixed uniform D1 foe. Finite gain, no population/absolute-strength or universal-price claim; no default adoption. |
 
 Historical detailed reports and closed payloads are available in Git history at
 `7fe1a9d6e3ab2772e520afc0784627ebd7e7d9c4` and earlier revisions.
@@ -50,18 +52,23 @@ evidence. Cleanup does not make their inputs unexposed or reset their budgets.
 
 ## Next useful work
 
-1. Natural-input late-query contract: the preserved root has63 legal actions,
-   including37 drops. D2 pays2360 nodes but returns incomplete; a separate D1
-   completes64nodes/.062s. Specify a last-completed-depth decision/TD-target
-   contract with one shared node/time budget before one fresh bounded episode.
-   Pay partial D2 work, record actual target depth, never invent an exact D2
-   label/draw or continue the capped episode. Reuse the common search, no new
-   engine, matrix, worker or registration/audit framework.
+1. The common opt-in D1→D2 path now has finite actual-learning evidence above.
+   Original run ended PLANNED_EPISODES_COMPLETE in3569.874s, with1800.061s
+   measured training phase; its intended1800s guard's small overrun is retained.
+   All caps/results are closed. The next label-blind default rule, generator
+   seed2026102102, is accepted on existing-filter attempt3 with56 opening moves;
+   one uniform D1→D2 query completes443nodes/.527s. Next execute one FRESH
+   bounded episode on it using the same learner and fresh initialization,
+   preserve full history/depth/cost/UNKNOWN, then decide whether further training
+   is informative. Do not transfer the first rule's weights or infer later-query
+   throughput from this initial root. No new matrix, audit gate or old cap reset.
 2. The no-progress variant gives genuine rule draws but not identified learning
    gain. A same6-node D1 control requires5 versus170 underlying transitions
    because the reference replays history. Keep this cost explicit; do not bypass
    correctness or assume higher terminal coverage makes a useful training game.
-3. Prior diagnosis remains useful: the exposed capture preference changes at
+3. A stronger fixed D2 foe would test a different strength/calibration question;
+   defer it behind the next single-rule episode rather than adding Elo/MCTS.
+   Prior diagnosis remains useful: the exposed capture preference changes at
    board-TP + hand-R = 0; about72% of the old TP fall comes from terminal-PV TD
    targets. D8 exhausted800k nodes without a result. No deeper retry, clamping
    negative prices, missing-terminal explanation or old-panel extension follows.
