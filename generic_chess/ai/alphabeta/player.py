@@ -149,7 +149,7 @@ class AlphaBetaPlayer:
         recorder=None,
     ) -> PlayerDecision:
         state = session.state
-        started = time.monotonic()
+        started = time.perf_counter()
         result = getattr(session, "result", None)
         if result is not None and result.status in (SessionStatus.RESIGNATION, SessionStatus.DECLARATION):
             # These session terminals deliberately leave the Core state/history
@@ -162,7 +162,7 @@ class AlphaBetaPlayer:
             return PlayerDecision(
                 action=None, score=score, principal_variation=(),
                 completed_depth=0, selective_depth=0, nodes=0, qnodes=0,
-                elapsed_seconds=time.monotonic() - started,
+                elapsed_seconds=time.perf_counter() - started,
                 tt_probes=0, tt_hits=0, tt_cutoffs=0, beta_cutoffs=0,
                 evaluation_profile_cache_hit=self._profile_cache_hit,
                 termination_reason="terminal_position", choice_kind="TERMINAL",
@@ -197,7 +197,7 @@ class AlphaBetaPlayer:
             recorder=recorder,
             progress_callback=progress_callback,
         )
-        elapsed = time.monotonic() - started
+        elapsed = time.perf_counter() - started
         return PlayerDecision(
             action=action,
             score=score,

@@ -118,9 +118,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.fresh_tt:
             player.reset()
         session = GameSession(compiled)
-        started = time.monotonic()
+        started = time.perf_counter()
         decision = player.choose_action(session, limits)
-        elapsed = time.monotonic() - started
+        elapsed = time.perf_counter() - started
         total_nodes = decision.nodes + decision.qnodes
         main_nps = decision.nodes / elapsed if elapsed > 0 else 0.0
         q_nps = decision.qnodes / elapsed if elapsed > 0 else 0.0

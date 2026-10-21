@@ -132,9 +132,9 @@ def play_game(
             max_time_seconds=config.seconds,
             max_nodes=config.nodes,
         )
-        started = time.monotonic()
+        started = time.perf_counter()
         decision = player.choose_action(session, limits)
-        elapsed = time.monotonic() - started
+        elapsed = time.perf_counter() - started
         # The search result records *why it stopped* separately from *which
         # result was retained*. An interrupted first iteration can therefore
         # have termination_reason="node_limit" while its action is only a

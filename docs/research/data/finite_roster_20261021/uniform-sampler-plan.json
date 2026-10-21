@@ -1,0 +1,9 @@
+{
+  "question": "Can a unique-candidate rejection sampler reduce the current uniform-random caller cost, and would sampling raw hybrid atoms change the intended action distribution?",
+  "consumer": "generic_chess.ai.cli.benchmark_alphabeta._vs_random and future nonfrozen uniform prefix acquisition; no mutation of frozen benchmark openings",
+  "inputs": "Reuse the21ongoing roots in fallback-cost/result.json; all roots and three repeats retained, no generated games or outcome fit",
+  "candidate": "Explicit legacy-only _expanded_pseudo_actions, deduplicate public Actions, uniformly shuffle and accept the first _is_legal; reject semantic rules at entry. Return choice only, normal Session owns execution/history.",
+  "gate": "Only a feasibility lead if at least4/6 rules show>=20percent median reduction in complete generation+shuffle+safety choice cost; not a public API/default activation or claim for semantic/auxiliary rules",
+  "caps": "60seconds total,3repeats per existing ongoing state, exact multiplicity bias arithmetic before timed trials",
+  "distribution": "A uniform permutation of unique pseudo Actions has a uniformly distributed first legal member by symmetry. Raw duplicate multiplicity instead gives probability m_i/sum_j m_j. This changes PRNG tapes and never substitutes frozen opening histories."
+}

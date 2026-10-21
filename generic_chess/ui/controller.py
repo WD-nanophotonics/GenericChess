@@ -66,7 +66,7 @@ class UIController:
         clock_now: Callable[[], float] | None = None,
     ) -> None:
         self._settings = settings
-        self._clock_now = clock_now or time.monotonic
+        self._clock_now = time.perf_counter if clock_now is None else clock_now
         self._compiled = None
         self._ruleset: RuleSet | None = None
         self._session: GameSession | None = None

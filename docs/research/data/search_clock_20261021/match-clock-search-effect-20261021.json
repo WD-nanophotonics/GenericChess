@@ -1,0 +1,94 @@
+{
+  "question": "Does the measured 44ms-vs-60ms UI budget quantization change paid search work on a fixed representative root?",
+  "scope": "Four alternating pairs, same 4x4-rooks authored root, cold player each run, no TT/ordering/root tactical/qsearch, QPC deadlines. This isolates budget effect, not strength or generated-domain coverage.",
+  "runs": [
+    {
+      "rep": 0,
+      "budget_ms": 44.0,
+      "elapsed_ms": 44.10000005736947,
+      "nodes": 543,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 0,
+      "budget_ms": 60.0,
+      "elapsed_ms": 60.10630005039275,
+      "nodes": 764,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 1,
+      "budget_ms": 60.0,
+      "elapsed_ms": 60.06529997102916,
+      "nodes": 771,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 1,
+      "budget_ms": 44.0,
+      "elapsed_ms": 44.07770000398159,
+      "nodes": 563,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 2,
+      "budget_ms": 44.0,
+      "elapsed_ms": 44.118399964645505,
+      "nodes": 532,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 2,
+      "budget_ms": 60.0,
+      "elapsed_ms": 60.102200019173324,
+      "nodes": 755,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 3,
+      "budget_ms": 60.0,
+      "elapsed_ms": 60.07770006544888,
+      "nodes": 718,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    },
+    {
+      "rep": 3,
+      "budget_ms": 44.0,
+      "elapsed_ms": 44.059099978767335,
+      "nodes": 537,
+      "qnodes": 0,
+      "completed_depth": 4,
+      "termination_reason": "time_limit",
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)",
+      "legal": true
+    }
+  ]
+}

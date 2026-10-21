@@ -1,0 +1,1391 @@
+{
+  "question": "On identical standard-chess public-player roots, does replacing the 15.625ms GetTickCount64 deadline clock with the 100ns QPC perf_counter change finite-budget completed work or accuracy of cost telemetry?",
+  "scope": "Three fixed 12-ply seeded legal roots; same Player instance/TT reset; 4 paired repetitions alternating order at 5/10/20ms per-call time caps; no training. This is a local timer-resolution calibration, not engine-strength evidence.",
+  "clock_sources": {
+    "low": {
+      "implementation": "GetTickCount64()",
+      "resolution": 0.015625
+    },
+    "high": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution": 1e-07
+    }
+  },
+  "rows": [
+    {
+      "seed": 101,
+      "budget_seconds": 0.005,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.010954599943943322,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.015000000013969839,
+          "first_iteration_seconds": null,
+          "nodes": 0,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "legal_fallback",
+          "action": "sem_00_k_quiet:g11:e1-f2"
+        },
+        "high": {
+          "wall_seconds": 0.0050601999973878264,
+          "reported_elapsed_seconds": 0.00503010000102222,
+          "first_legal_seconds": 0.0015956000424921513,
+          "first_iteration_seconds": null,
+          "nodes": 19,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_04_b_quiet:g0:f1-g2"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.005,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.005042999982833862,
+          "reported_elapsed_seconds": 0.0050249999621883035,
+          "first_legal_seconds": 0.0015197999309748411,
+          "first_iteration_seconds": null,
+          "nodes": 20,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_04_b_quiet:g0:f1-g2"
+        },
+        "low": {
+          "wall_seconds": 0.014641100075095892,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 84,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.005,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.01699240005109459,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 95,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "high": {
+          "wall_seconds": 0.005070899962447584,
+          "reported_elapsed_seconds": 0.005051600048318505,
+          "first_legal_seconds": 0.0015108000952750444,
+          "first_iteration_seconds": null,
+          "nodes": 22,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_04_b_quiet:g0:f1-g2"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.005,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.005035299924202263,
+          "reported_elapsed_seconds": 0.005019100033678114,
+          "first_legal_seconds": 0.0014214999973773956,
+          "first_iteration_seconds": null,
+          "nodes": 22,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_04_b_quiet:g0:f1-g2"
+        },
+        "low": {
+          "wall_seconds": 0.007176000042818487,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 37,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.023621900007128716,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 142,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "high": {
+          "wall_seconds": 0.010051899938844144,
+          "reported_elapsed_seconds": 0.01003210002090782,
+          "first_legal_seconds": 0.0015299000078812242,
+          "first_iteration_seconds": null,
+          "nodes": 54,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.010042599984444678,
+          "reported_elapsed_seconds": 0.010023399954661727,
+          "first_legal_seconds": 0.001526599982753396,
+          "first_iteration_seconds": null,
+          "nodes": 53,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "low": {
+          "wall_seconds": 0.0161779000191018,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 94,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.01,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.01808300008997321,
+          "reported_elapsed_seconds": 0.01600000006146729,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 104,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "high": {
+          "wall_seconds": 0.010050900047644973,
+          "reported_elapsed_seconds": 0.010028599994257092,
+          "first_legal_seconds": 0.0015293000033125281,
+          "first_iteration_seconds": null,
+          "nodes": 54,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.01,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.01004659989848733,
+          "reported_elapsed_seconds": 0.010026599979028106,
+          "first_legal_seconds": 0.0014542000135406852,
+          "first_iteration_seconds": null,
+          "nodes": 54,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "low": {
+          "wall_seconds": 0.0015161000192165375,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.015999999945051968,
+          "first_iteration_seconds": null,
+          "nodes": 0,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "legal_fallback",
+          "action": "sem_00_k_quiet:g11:e1-f2"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.03370379994157702,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.015000000013969839,
+          "nodes": 179,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "high": {
+          "wall_seconds": 0.020064300042577088,
+          "reported_elapsed_seconds": 0.02003859996329993,
+          "first_legal_seconds": 0.001560600008815527,
+          "first_iteration_seconds": 0.014748799963854253,
+          "nodes": 113,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.0200858999742195,
+          "reported_elapsed_seconds": 0.020061800023540854,
+          "first_legal_seconds": 0.0015384000726044178,
+          "first_iteration_seconds": 0.015198000008240342,
+          "nodes": 114,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "low": {
+          "wall_seconds": 0.026676100096665323,
+          "reported_elapsed_seconds": 0.03100000007543713,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 155,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.02,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.03317309997510165,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 168,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "high": {
+          "wall_seconds": 0.020060200011357665,
+          "reported_elapsed_seconds": 0.020033700042404234,
+          "first_legal_seconds": 0.0014818999916315079,
+          "first_iteration_seconds": 0.014691799995489419,
+          "nodes": 118,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 101,
+      "budget_seconds": 0.02,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.020094400038942695,
+          "reported_elapsed_seconds": 0.020070400089025497,
+          "first_legal_seconds": 0.0015199999324977398,
+          "first_iteration_seconds": 0.0146055999211967,
+          "nodes": 119,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        },
+        "low": {
+          "wall_seconds": 0.026379300048574805,
+          "reported_elapsed_seconds": 0.03200000000651926,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.01600000006146729,
+          "nodes": 153,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_09_q_capture:g24:b3-g8"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.005,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.010456199990585446,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 56,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.005054400069639087,
+          "reported_elapsed_seconds": 0.005033400026150048,
+          "first_legal_seconds": 0.0014769000699743629,
+          "first_iteration_seconds": null,
+          "nodes": 22,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.005,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.00508050003554672,
+          "reported_elapsed_seconds": 0.005061800009571016,
+          "first_legal_seconds": 0.0013704000739380717,
+          "first_iteration_seconds": null,
+          "nodes": 24,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.007709900033660233,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 41,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.005,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.016168000060133636,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 92,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.005072200088761747,
+          "reported_elapsed_seconds": 0.0050376999424770474,
+          "first_legal_seconds": 0.0013937000185251236,
+          "first_iteration_seconds": null,
+          "nodes": 23,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.005,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.005035000038333237,
+          "reported_elapsed_seconds": 0.005018900032155216,
+          "first_legal_seconds": 0.001339399954304099,
+          "first_iteration_seconds": null,
+          "nodes": 24,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.004495800007134676,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 19,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.027029599994421005,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 142,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.01006579992827028,
+          "reported_elapsed_seconds": 0.01003950007725507,
+          "first_legal_seconds": 0.0014076000079512596,
+          "first_iteration_seconds": 0.008524000062607229,
+          "nodes": 48,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.010073099983856082,
+          "reported_elapsed_seconds": 0.010044900001958013,
+          "first_legal_seconds": 0.0014720999170094728,
+          "first_iteration_seconds": 0.008057300001382828,
+          "nodes": 50,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.004368599969893694,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 16,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_00_k_quiet:g11:e1-f2"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.01,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.010269099962897599,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 54,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.010097399936057627,
+          "reported_elapsed_seconds": 0.010073699988424778,
+          "first_legal_seconds": 0.0014693998964503407,
+          "first_iteration_seconds": 0.008479399955831468,
+          "nodes": 50,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.01,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.010070899967104197,
+          "reported_elapsed_seconds": 0.010049200034700334,
+          "first_legal_seconds": 0.0014285999350249767,
+          "first_iteration_seconds": 0.007792499964125454,
+          "nodes": 54,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.01123950001783669,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 63,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.03115080005954951,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 173,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.020066400058567524,
+          "reported_elapsed_seconds": 0.020039800088852644,
+          "first_legal_seconds": 0.0015370999462902546,
+          "first_iteration_seconds": 0.008148099994286895,
+          "nodes": 106,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.020112200058065355,
+          "reported_elapsed_seconds": 0.02008490008302033,
+          "first_legal_seconds": 0.0014195999829098582,
+          "first_iteration_seconds": 0.00779469998087734,
+          "nodes": 105,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.022501399973407388,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.015999999945051968,
+          "nodes": 114,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.02,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.03216139995492995,
+          "reported_elapsed_seconds": 0.03200000000651926,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 174,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.020071599981747568,
+          "reported_elapsed_seconds": 0.020043600001372397,
+          "first_legal_seconds": 0.0014984000008553267,
+          "first_iteration_seconds": 0.007890000008046627,
+          "nodes": 111,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 102,
+      "budget_seconds": 0.02,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.020094200037419796,
+          "reported_elapsed_seconds": 0.020068499958142638,
+          "first_legal_seconds": 0.0013898999895900488,
+          "first_iteration_seconds": 0.007737400010228157,
+          "nodes": 111,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.023313899990171194,
+          "reported_elapsed_seconds": 0.03100000007543713,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.015000000013969839,
+          "nodes": 122,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_13_pawn_capture_left:g36:h3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.005,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.0018486999906599522,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.015999999945051968,
+          "first_iteration_seconds": null,
+          "nodes": 0,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "legal_fallback",
+          "action": "sem_00_k_quiet:g6:e1-d2"
+        },
+        "high": {
+          "wall_seconds": 0.0050749999936670065,
+          "reported_elapsed_seconds": 0.005052800057455897,
+          "first_legal_seconds": 0.001448499970138073,
+          "first_iteration_seconds": null,
+          "nodes": 19,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_05_b_capture:g0:c1-f4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.005,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.005072000087238848,
+          "reported_elapsed_seconds": 0.005049800034612417,
+          "first_legal_seconds": 0.0016123000532388687,
+          "first_iteration_seconds": null,
+          "nodes": 19,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_05_b_capture:g0:c1-f4"
+        },
+        "low": {
+          "wall_seconds": 0.00607320002745837,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 27,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.005,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.013882100000046194,
+          "reported_elapsed_seconds": 0.01600000006146729,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 71,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.005107000004500151,
+          "reported_elapsed_seconds": 0.005081100040115416,
+          "first_legal_seconds": 0.0015062999445945024,
+          "first_iteration_seconds": null,
+          "nodes": 20,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_05_b_capture:g0:c1-f4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.005,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.005049999919719994,
+          "reported_elapsed_seconds": 0.005028999992646277,
+          "first_legal_seconds": 0.0014349000994116068,
+          "first_iteration_seconds": null,
+          "nodes": 22,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_05_b_capture:g0:c1-f4"
+        },
+        "low": {
+          "wall_seconds": 0.00490709999576211,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": null,
+          "nodes": 18,
+          "qnodes": 0,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "result_source": "root_scan_fallback",
+          "action": "sem_05_b_capture:g0:c1-f4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.015803899965249002,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 81,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.010059699998237193,
+          "reported_elapsed_seconds": 0.010037199943326414,
+          "first_legal_seconds": 0.0014306000666692853,
+          "first_iteration_seconds": 0.008648599963635206,
+          "nodes": 55,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.010049100033938885,
+          "reported_elapsed_seconds": 0.01002889999654144,
+          "first_legal_seconds": 0.001366600045002997,
+          "first_iteration_seconds": 0.008453299989923835,
+          "nodes": 56,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.012011799961328506,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 66,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.01,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.015892200055532157,
+          "reported_elapsed_seconds": 0.01600000006146729,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 83,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.010051399935036898,
+          "reported_elapsed_seconds": 0.010030900011770427,
+          "first_legal_seconds": 0.001421299995854497,
+          "first_iteration_seconds": 0.008691700058989227,
+          "nodes": 55,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.01,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.010061000008136034,
+          "reported_elapsed_seconds": 0.010042099980637431,
+          "first_legal_seconds": 0.0013577999779954553,
+          "first_iteration_seconds": 0.00838729995302856,
+          "nodes": 57,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.014319300069473684,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 80,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.02619360003154725,
+          "reported_elapsed_seconds": 0.03200000000651926,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 128,
+          "qnodes": 0,
+          "completed_depth": 2,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.02006530005019158,
+          "reported_elapsed_seconds": 0.020042399992235005,
+          "first_legal_seconds": 0.0013590999878942966,
+          "first_iteration_seconds": 0.008593100006692111,
+          "nodes": 102,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.02009070001076907,
+          "reported_elapsed_seconds": 0.02006529993377626,
+          "first_legal_seconds": 0.0016313999658450484,
+          "first_iteration_seconds": 0.009004599996842444,
+          "nodes": 97,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.022822299972176552,
+          "reported_elapsed_seconds": 0.03100000007543713,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.015000000013969839,
+          "nodes": 113,
+          "qnodes": 0,
+          "completed_depth": 2,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.02,
+      "rep": 2,
+      "order": [
+        "low",
+        "high"
+      ],
+      "arms": {
+        "low": {
+          "wall_seconds": 0.030665699974633753,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.0,
+          "nodes": 146,
+          "qnodes": 0,
+          "completed_depth": 2,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "high": {
+          "wall_seconds": 0.020059900009073317,
+          "reported_elapsed_seconds": 0.020035100053064525,
+          "first_legal_seconds": 0.0013898999895900488,
+          "first_iteration_seconds": 0.008603899972513318,
+          "nodes": 103,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    },
+    {
+      "seed": 103,
+      "budget_seconds": 0.02,
+      "rep": 3,
+      "order": [
+        "high",
+        "low"
+      ],
+      "arms": {
+        "high": {
+          "wall_seconds": 0.02005049993749708,
+          "reported_elapsed_seconds": 0.020027099992148578,
+          "first_legal_seconds": 0.001357399974949658,
+          "first_iteration_seconds": 0.008533100015483797,
+          "nodes": 102,
+          "qnodes": 0,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        },
+        "low": {
+          "wall_seconds": 0.02318559994455427,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "first_legal_seconds": 0.0,
+          "first_iteration_seconds": 0.015000000013969839,
+          "nodes": 114,
+          "qnodes": 0,
+          "completed_depth": 2,
+          "reason": "time_limit",
+          "result_source": "main_iteration",
+          "action": "sem_12_pawn_capture_right:g35:f3-g4"
+        }
+      },
+      "state_unchanged": true
+    }
+  ],
+  "summary": [
+    {
+      "budget_seconds": 0.005,
+      "arm": "low",
+      "n": 12,
+      "actual_wall_median": 0.00908305001212284,
+      "reported_elapsed_median": 0.015999999945051968,
+      "median_nodes": 39.0,
+      "depth_counts": {
+        "0": 8,
+        "1": 4
+      },
+      "exact_action_agreement_with_other_arm": 4
+    },
+    {
+      "budget_seconds": 0.005,
+      "arm": "high",
+      "n": 12,
+      "actual_wall_median": 0.005065549979917705,
+      "reported_elapsed_median": 0.005035549984313548,
+      "median_nodes": 22.0,
+      "depth_counts": {
+        "0": 12
+      },
+      "exact_action_agreement_with_other_arm": 4
+    },
+    {
+      "budget_seconds": 0.01,
+      "arm": "low",
+      "n": 12,
+      "actual_wall_median": 0.015061600017361343,
+      "reported_elapsed_median": 0.015000000013969839,
+      "median_nodes": 80.5,
+      "depth_counts": {
+        "0": 2,
+        "1": 10
+      },
+      "exact_action_agreement_with_other_arm": 10
+    },
+    {
+      "budget_seconds": 0.01,
+      "arm": "high",
+      "n": 12,
+      "actual_wall_median": 0.010055799968540668,
+      "reported_elapsed_median": 0.010034649982117116,
+      "median_nodes": 54.0,
+      "depth_counts": {
+        "0": 4,
+        "1": 8
+      },
+      "exact_action_agreement_with_other_arm": 10
+    },
+    {
+      "budget_seconds": 0.02,
+      "arm": "low",
+      "n": 12,
+      "actual_wall_median": 0.026527700072620064,
+      "reported_elapsed_median": 0.031000000017229468,
+      "median_nodes": 149.5,
+      "depth_counts": {
+        "1": 8,
+        "2": 4
+      },
+      "exact_action_agreement_with_other_arm": 12
+    },
+    {
+      "budget_seconds": 0.02,
+      "arm": "high",
+      "n": 12,
+      "actual_wall_median": 0.020069000020157546,
+      "reported_elapsed_median": 0.0200429999968037,
+      "median_nodes": 108.5,
+      "depth_counts": {
+        "1": 12
+      },
+      "exact_action_agreement_with_other_arm": 12
+    }
+  ],
+  "all_states_unchanged": true
+}

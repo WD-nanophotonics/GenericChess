@@ -1,0 +1,22 @@
+{
+  "question": "Can raw temporal feature stability directly select a cheap evaluation component for these generated games, and how sensitive is it to the caller perspective?",
+  "source": "Clune2007 AAAI07-180 pp1136-1137; fixed-role feature variance divided by adjacent mean squared change. This probe is not his complete payoff/control/termination model.",
+  "data": "Reuse all24 full calibration histories; no new games, outcomes, training, labels, fitted weights or seed selection",
+  "features": [
+    "Unit full material",
+    "board-only count",
+    "hand-only count",
+    "legacy coverage",
+    "semantic coverage",
+    "semantic anchor heuristic",
+    "ply negative control"
+  ],
+  "frames": [
+    "owner0 fixed",
+    "side to move"
+  ],
+  "protocol": "Ongoing states only; per-rule population variance across all observed states, adjacent squared differences only within same trajectory. Zero denominator stays undefined, not infinity. Report per-rule ranks and pairwise rank changes; no cross-rule pooling.",
+  "decision": "Any perspective rank reversal or dominant ply negative-control witness rules out using stability alone as the current component selector. No successor learned-evaluator implementation is authorized or warranted by this descriptive check.",
+  "cap_seconds": 120,
+  "scope": "Six authored cannon recombinations, same exposed calibration histories. Feature variance is not payoff correlation, action utility or WDL. Full generic target and auxiliary role boundary unchanged."
+}

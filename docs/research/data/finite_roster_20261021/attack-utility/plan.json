@@ -1,0 +1,73 @@
+{
+  "question": "Does existing semantic Native attack authority improve bounded search utility versus legacy maps on generated cannon recombinations?",
+  "settings": [
+    [
+      731601,
+      4
+    ],
+    [
+      731602,
+      4
+    ],
+    [
+      731603,
+      5
+    ],
+    [
+      731604,
+      5
+    ],
+    [
+      731605,
+      6
+    ],
+    [
+      731606,
+      6
+    ],
+    [
+      731607,
+      8
+    ],
+    [
+      731608,
+      8
+    ]
+  ],
+  "prefixes": [
+    3,
+    4
+  ],
+  "candidate_owners": [
+    0,
+    1
+  ],
+  "arms": [
+    "legacy",
+    "semantic_native"
+  ],
+  "fixed_foe": "legacy",
+  "profile": "Unit1000 nonanchors/0 anchors on board and hands; zero promotion gain; identical across both arms",
+  "evaluation": "dynamic_mobility_weight2,anchor_escape_weight5,promotion_potential_weight0; only attack authority differs",
+  "search": {
+    "max_depth": 3,
+    "max_nodes": 2048,
+    "max_time_seconds": 0.05,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 0,
+    "TT": false,
+    "ordering": false,
+    "root_tactical": false
+  },
+  "game_additional_ply_cap": 48,
+  "total_wall_cap_seconds": 300,
+  "planned_slots": 64,
+  "construction": "Current bilateral_random/hybrid generator, first sorted initially present nonanchor nonpromotable type replaced by orthogonal-ray quiet and one-screen capture. No root/action/outcome feasibility filter or refill. Full promotion/drop/history retained.",
+  "root_policy": "Random(seed*10+requested_prefix), uniform over repr-sorted complete legal actions; early terminals retained",
+  "resource_claim": "Equal configured per-move limits, not equal actual depth/work; cooperative wall limits and query overshoot reported",
+  "gate": "Paired semantic-minus-legacy candidate reward interval lower>0 overall and lower>=0 for each owner; actual Core W/D/L only, every ongoing/missing/failed slot UNKNOWN[-1,1]. Only selects optional utility lead, never a general default/strength claim.",
+  "scope": "Eight authored recombinations of generated substrates, no human labels or all-domain inference. Semantic Native root maps checked against Core before play; not a proof for every subnode.",
+  "source_head": "62b2a02a7e9c1d867935104f95b3003401c350ad",
+  "source_patch_sha256": "6f18a58a410fb5ee1096153baf737ce1f232ffe7922e3606828d8b9a79cd9123",
+  "started_at": "2026-10-21T04:35:14.574027+00:00"
+}

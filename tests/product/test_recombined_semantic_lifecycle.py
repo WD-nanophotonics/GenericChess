@@ -308,7 +308,7 @@ def test_alphabeta_preserves_compound_action_identity_and_replayable_pv(monkeypa
     clock = [0.0]
     deadline_callbacks = []
     monkeypatch.setattr(
-        "generic_chess.ai.alphabeta.search.time.monotonic",
+        "generic_chess.ai.alphabeta.search.time.perf_counter",
         lambda: clock[0],
     )
 

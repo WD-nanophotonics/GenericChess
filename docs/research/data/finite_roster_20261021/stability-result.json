@@ -1,0 +1,1015 @@
+{
+  "plan": {
+    "question": "Can raw temporal feature stability directly select a cheap evaluation component for these generated games, and how sensitive is it to the caller perspective?",
+    "source": "Clune2007 AAAI07-180 pp1136-1137; fixed-role feature variance divided by adjacent mean squared change. This probe is not his complete payoff/control/termination model.",
+    "data": "Reuse all24 full calibration histories; no new games, outcomes, training, labels, fitted weights or seed selection",
+    "features": [
+      "Unit full material",
+      "board-only count",
+      "hand-only count",
+      "legacy coverage",
+      "semantic coverage",
+      "semantic anchor heuristic",
+      "ply negative control"
+    ],
+    "frames": [
+      "owner0 fixed",
+      "side to move"
+    ],
+    "protocol": "Ongoing states only; per-rule population variance across all observed states, adjacent squared differences only within same trajectory. Zero denominator stays undefined, not infinity. Report per-rule ranks and pairwise rank changes; no cross-rule pooling.",
+    "decision": "Any perspective rank reversal or dominant ply negative-control witness rules out using stability alone as the current component selector. No successor learned-evaluator implementation is authorized or warranted by this descriptive check.",
+    "cap_seconds": 120,
+    "scope": "Six authored cannon recombinations, same exposed calibration histories. Feature variance is not payoff correlation, action utility or WDL. Full generic target and auxiliary role boundary unchanged."
+  },
+  "summary": {
+    "states": 804,
+    "rules": 6,
+    "rules_with_rank_flip": 6,
+    "fixed_largest": {
+      "731501": "ply",
+      "731502": "ply",
+      "731503": "ply",
+      "731504": "ply",
+      "731505": "ply",
+      "731506": "ply"
+    },
+    "elapsed_seconds": 0.9990682000061497,
+    "decision": "NO_STABILITY_ONLY_COMPONENT_SELECTOR"
+  },
+  "by_rule": [
+    {
+      "seed": 731501,
+      "board": 4,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.298676748582231,
+            "adjacent_mse": 2.3157894736842106,
+            "quotient": 0.9926104141605088
+          },
+          "board": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 0.42722117202268434,
+            "adjacent_mse": 0.8947368421052632,
+            "quotient": 0.47748248637829427
+          },
+          "hands": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 1.7353497164461247,
+            "adjacent_mse": 0.8947368421052632,
+            "quotient": 1.939508506616257
+          },
+          "legacy_coverage": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.1928166351606806,
+            "adjacent_mse": 2.736842105263158,
+            "quotient": 0.8012214628471718
+          },
+          "semantic_coverage": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.1436672967863895,
+            "adjacent_mse": 1.9473684210526316,
+            "quotient": 1.1008021253767946
+          },
+          "semantic_anchor": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 5.013232514177694,
+            "adjacent_mse": 13.789473684210526,
+            "quotient": 0.3635550296541076
+          },
+          "ply": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 32.27977315689981,
+            "adjacent_mse": 1,
+            "quotient": 32.27977315689981
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.510396975425331,
+            "adjacent_mse": 9.894736842105264,
+            "quotient": 0.25371033262277276
+          },
+          "board": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 0.24574669187145556,
+            "adjacent_mse": 0.8947368421052632,
+            "quotient": 0.27465806738574444
+          },
+          "hands": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.340264650283554,
+            "adjacent_mse": 9.31578947368421,
+            "quotient": 0.25121484946546624
+          },
+          "legacy_coverage": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 2.0718336483931945,
+            "adjacent_mse": 5.894736842105263,
+            "quotient": 0.35147177963813125
+          },
+          "semantic_coverage": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 3.2930056710775046,
+            "adjacent_mse": 14.157894736842104,
+            "quotient": 0.23259147862629218
+          },
+          "semantic_anchor": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 4.67296786389414,
+            "adjacent_mse": 10.631578947368421,
+            "quotient": 0.4395365812573696
+          },
+          "ply": {
+            "states": 23,
+            "adjacent_pairs": 19,
+            "variance": 77.46691871455576,
+            "adjacent_mse": 344.57894736842104,
+            "quotient": 0.22481616856217496
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "board"
+        ],
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "hands"
+        ],
+        [
+          "board",
+          "semantic_coverage"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "legacy_coverage"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_coverage"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    },
+    {
+      "seed": 731502,
+      "board": 4,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 7.151563118322121,
+            "adjacent_mse": 1.6124031007751938,
+            "quotient": 4.435344433959393
+          },
+          "board": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 2.9306348578212447,
+            "adjacent_mse": 0.6976744186046512,
+            "quotient": 4.200576629543784
+          },
+          "hands": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 2.7992537735315732,
+            "adjacent_mse": 0.6976744186046512,
+            "quotient": 4.012263742061921
+          },
+          "legacy_coverage": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 6.966363276612584,
+            "adjacent_mse": 1.8682170542635659,
+            "quotient": 3.7288832476473996
+          },
+          "semantic_coverage": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 5.171236361580643,
+            "adjacent_mse": 1.8992248062015504,
+            "quotient": 2.7228142475261343
+          },
+          "semantic_anchor": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 13.24879868845045,
+            "adjacent_mse": 29.186046511627907,
+            "quotient": 0.453942903269617
+          },
+          "ply": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 146.7997060319973,
+            "adjacent_mse": 1,
+            "quotient": 146.7997060319973
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 9.193057832551304,
+            "adjacent_mse": 36.093023255813954,
+            "quotient": 0.254704566236924
+          },
+          "board": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 4.351404827859121,
+            "adjacent_mse": 17.37984496124031,
+            "quotient": 0.25037075057708597
+          },
+          "hands": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 2.855107694047148,
+            "adjacent_mse": 10.930232558139535,
+            "quotient": 0.2612119805192072
+          },
+          "legacy_coverage": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 7.731584600599242,
+            "adjacent_mse": 29.155038759689923,
+            "quotient": 0.2651886236312955
+          },
+          "semantic_coverage": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 5.66894680309797,
+            "adjacent_mse": 21.68217054263566,
+            "quotient": 0.2614566097960809
+          },
+          "semantic_anchor": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 11.403584148340776,
+            "adjacent_mse": 25.434108527131784,
+            "quotient": 0.44835792597865287
+          },
+          "ply": {
+            "states": 133,
+            "adjacent_pairs": 129,
+            "variance": 501.3703431511109,
+            "adjacent_mse": 1991.6976744186047,
+            "quotient": 0.25173014438422014
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "hands"
+        ],
+        [
+          "board",
+          "legacy_coverage"
+        ],
+        [
+          "board",
+          "semantic_coverage"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "legacy_coverage"
+        ],
+        [
+          "hands",
+          "semantic_coverage"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    },
+    {
+      "seed": 731503,
+      "board": 6,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.2867340868530635,
+            "adjacent_mse": 1.15,
+            "quotient": 5.466725292915708
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 4.236577929803688,
+            "adjacent_mse": 0.54375,
+            "quotient": 7.791407686995289
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.21337745389649,
+            "adjacent_mse": 0.54375,
+            "quotient": 2.2314987657866485
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 15.082502974419988,
+            "adjacent_mse": 4.79375,
+            "quotient": 3.1462848447290717
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 9.99475758477097,
+            "adjacent_mse": 3.7875,
+            "quotient": 2.638879890368573
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.51279000594884,
+            "adjacent_mse": 8.2375,
+            "quotient": 0.7906270113443205
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 140,
+            "adjacent_mse": 1,
+            "quotient": 140.0
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.353361094586556,
+            "adjacent_mse": 24.95,
+            "quotient": 0.25464373124595413
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 4.315400059488399,
+            "adjacent_mse": 17.21875,
+            "quotient": 0.2506221450156602
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.2124851279000595,
+            "adjacent_mse": 4.31875,
+            "quotient": 0.28074908894936257
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 15.00754759071981,
+            "adjacent_mse": 56.41875,
+            "quotient": 0.26600283754460724
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 10.002193634741225,
+            "adjacent_mse": 37.5125,
+            "quotient": 0.2666362848314888
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.399018441403927,
+            "adjacent_mse": 18.6125,
+            "quotient": 0.3438021996724742
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 539.7620464009518,
+            "adjacent_mse": 2133,
+            "quotient": 0.2530529987815058
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "board"
+        ],
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "hands"
+        ],
+        [
+          "board",
+          "legacy_coverage"
+        ],
+        [
+          "board",
+          "semantic_coverage"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "legacy_coverage"
+        ],
+        [
+          "hands",
+          "semantic_coverage"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_coverage"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    },
+    {
+      "seed": 731504,
+      "board": 6,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.192742415229031,
+            "adjacent_mse": 1.425,
+            "quotient": 4.3457841510379165
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.7193262938726948,
+            "adjacent_mse": 0.6125,
+            "quotient": 2.8070633369350118
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 2.651509518143962,
+            "adjacent_mse": 0.6125,
+            "quotient": 4.328995131663611
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 17.794281677572872,
+            "adjacent_mse": 4.1625,
+            "quotient": 4.274902505122612
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 13.411771267102916,
+            "adjacent_mse": 4.10625,
+            "quotient": 3.2661847834649413
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 14.691701368233195,
+            "adjacent_mse": 30.06875,
+            "quotient": 0.48860366221519663
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 140,
+            "adjacent_mse": 1,
+            "quotient": 140.0
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 6.061273051754908,
+            "adjacent_mse": 23.525,
+            "quotient": 0.25765241452730747
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.8070716835217133,
+            "adjacent_mse": 7.0375,
+            "quotient": 0.25677750387519904
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 2.8674524092801903,
+            "adjacent_mse": 10.9375,
+            "quotient": 0.26216707741990314
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 18.723787923854847,
+            "adjacent_mse": 72.5875,
+            "quotient": 0.2579478274338536
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 13.810046103509816,
+            "adjacent_mse": 52.80625,
+            "quotient": 0.2615229466873678
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 12.94274241522903,
+            "adjacent_mse": 31.41875,
+            "quotient": 0.41194326366354583
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 539.7620464009518,
+            "adjacent_mse": 2133,
+            "quotient": 0.2530529987815058
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_coverage"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    },
+    {
+      "seed": 731505,
+      "board": 8,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 7.294378698224852,
+            "adjacent_mse": 0.8421052631578947,
+            "quotient": 8.662074704142013
+          },
+          "board": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 4.790064102564102,
+            "adjacent_mse": 0.3881578947368421,
+            "quotient": 12.340504128639722
+          },
+          "hands": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 0.9626479289940828,
+            "adjacent_mse": 0.3881578947368421,
+            "quotient": 2.4800421221542472
+          },
+          "legacy_coverage": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 23.42291255752794,
+            "adjacent_mse": 10.236842105263158,
+            "quotient": 2.288099427213526
+          },
+          "semantic_coverage": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 19.085305719921106,
+            "adjacent_mse": 6.098684210526316,
+            "quotient": 3.1294136671283797
+          },
+          "semantic_anchor": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 9.83542899408284,
+            "adjacent_mse": 16.769736842105264,
+            "quotient": 0.5864987081602948
+          },
+          "ply": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 132.232741617357,
+            "adjacent_mse": 1,
+            "quotient": 132.232741617357
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 7.270710059171598,
+            "adjacent_mse": 28.42105263157895,
+            "quotient": 0.2558212798597414
+          },
+          "board": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 4.818006245890861,
+            "adjacent_mse": 18.967105263157894,
+            "quotient": 0.25401905979029166
+          },
+          "hands": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 0.9807281393819856,
+            "adjacent_mse": 3.598684210526316,
+            "quotient": 0.2725240899196742
+          },
+          "legacy_coverage": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 23.87656147271532,
+            "adjacent_mse": 89.10526315789474,
+            "quotient": 0.26795904783319024
+          },
+          "semantic_coverage": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 24.451512163050623,
+            "adjacent_mse": 93.07236842105263,
+            "quotient": 0.2627150525753654
+          },
+          "semantic_anchor": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 9.160215318869165,
+            "adjacent_mse": 23.532894736842106,
+            "quotient": 0.38925153158180403
+          },
+          "ply": {
+            "states": 156,
+            "adjacent_pairs": 152,
+            "variance": 498.86522024983566,
+            "adjacent_mse": 1971.3157894736842,
+            "quotient": 0.25306205272318455
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "board"
+        ],
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "hands"
+        ],
+        [
+          "board",
+          "legacy_coverage"
+        ],
+        [
+          "board",
+          "semantic_coverage"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "semantic_coverage"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_coverage"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    },
+    {
+      "seed": 731506,
+      "board": 8,
+      "statistics": {
+        "fixed": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.9417013682331945,
+            "adjacent_mse": 0.7,
+            "quotient": 2.7738590974759925
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.1170434265318263,
+            "adjacent_mse": 0.325,
+            "quotient": 3.437056697021004
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 0.5429803688280785,
+            "adjacent_mse": 0.325,
+            "quotient": 1.6707088271633186
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 32.989143367043425,
+            "adjacent_mse": 10.40625,
+            "quotient": 3.1701278911272963
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 20.152104402141582,
+            "adjacent_mse": 7.54375,
+            "quotient": 2.6713642952300356
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 7.843359607376562,
+            "adjacent_mse": 15.1875,
+            "quotient": 0.5164352004856996
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 140,
+            "adjacent_mse": 1,
+            "quotient": 140.0
+          }
+        },
+        "stm": {
+          "material": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.9131469363474123,
+            "adjacent_mse": 7.0,
+            "quotient": 0.27330670519248745
+          },
+          "board": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 1.1415823914336705,
+            "adjacent_mse": 4.35,
+            "quotient": 0.26243273366291275
+          },
+          "hands": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 0.5603807257584771,
+            "adjacent_mse": 1.9,
+            "quotient": 0.294937224083409
+          },
+          "legacy_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 38.086109458655564,
+            "adjacent_mse": 145.45625,
+            "quotient": 0.26183893410324793
+          },
+          "semantic_coverage": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 20.08369274241523,
+            "adjacent_mse": 74.34375,
+            "quotient": 0.2701463504654424
+          },
+          "semantic_anchor": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 7.506952706722189,
+            "adjacent_mse": 17.3625,
+            "quotient": 0.4323658866362672
+          },
+          "ply": {
+            "states": 164,
+            "adjacent_pairs": 160,
+            "variance": 539.7620464009518,
+            "adjacent_mse": 2133,
+            "quotient": 0.2530529987815058
+          }
+        }
+      },
+      "perspective_rank_flips": [
+        [
+          "material",
+          "board"
+        ],
+        [
+          "material",
+          "hands"
+        ],
+        [
+          "material",
+          "legacy_coverage"
+        ],
+        [
+          "material",
+          "semantic_anchor"
+        ],
+        [
+          "board",
+          "hands"
+        ],
+        [
+          "board",
+          "semantic_coverage"
+        ],
+        [
+          "board",
+          "semantic_anchor"
+        ],
+        [
+          "hands",
+          "legacy_coverage"
+        ],
+        [
+          "hands",
+          "semantic_coverage"
+        ],
+        [
+          "hands",
+          "semantic_anchor"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_coverage"
+        ],
+        [
+          "legacy_coverage",
+          "semantic_anchor"
+        ],
+        [
+          "semantic_coverage",
+          "semantic_anchor"
+        ]
+      ],
+      "fixed_largest": "ply"
+    }
+  ]
+}

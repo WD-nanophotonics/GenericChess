@@ -1,0 +1,22 @@
+{
+  "question": "Does a fixed64-terminal-simulation budget stabilize the two action-only 6x6 roots beyond the unstable 25s wall-budget result?",
+  "roots": [
+    7,
+    21
+  ],
+  "repetitions": [
+    1,
+    2,
+    3
+  ],
+  "simulations_per_run": 64,
+  "max_rollout_plies": 512,
+  "policy": "same terminal-only UCT selection/backprop as prior source; vary only independent RNG seed",
+  "selected_action": "maximum root visits, repr tie-break",
+  "hard_total_cap_seconds": 900,
+  "analysis_unit": "root; only two roots, no pooling or strength claim",
+  "cheaper_alternative": "stop at25s wall budget; existing results already insufficiently stable",
+  "scope": "generated roots have no declarations, auxiliary/semantic actions, and no initial legal promotion/drop; scoped action-only diagnostic",
+  "independent_rng_seed_rule": "79102621 + rep*1009 + int(fingerprint[:8],16), with the fixed root-specific fingerprint and rep index",
+  "runner_provenance": "Runner was executed inline and was not retained as a standalone script; results and base implementation source SHA are preserved for audit, not direct rerun."
+}

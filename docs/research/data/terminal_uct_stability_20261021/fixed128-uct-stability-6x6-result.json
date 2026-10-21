@@ -1,0 +1,214 @@
+{
+  "complete": true,
+  "protocol": {
+    "question": "Does increasing the same terminal-only UCT roots from64 to128 fixed simulations improve independent-seed action agreement?",
+    "roots": [
+      7,
+      21
+    ],
+    "repetitions": [
+      1,
+      2,
+      3
+    ],
+    "simulations_per_run": 128,
+    "max_rollout_plies": 512,
+    "policy": "same UCT selection/terminal rollout/backprop as source; independent RNG seeds only",
+    "hard_total_cap_seconds": 1200,
+    "scope": "two previously used action-only 6x6 roots; exploratory stability screen, no pooled or strength claim",
+    "cheaper_alternative": "stop after64 simulations, which was 3/3 distinct actions per root",
+    "stop": "complete six runs or preserve partial rows exactly at20min cap"
+  },
+  "source_sha256": "d8a0426239237d29ebbea45b4565b3f85474e2f915d685503f5f4c23c8d83dcc",
+  "roots": [
+    {
+      "seed": 7,
+      "fingerprint": "2d96b5d2ee1798c253ee6a5e4c8b970e41f3bc82d01c2d11bc29bf6d4208a4fb",
+      "legal_actions": 19,
+      "runs": [
+        {
+          "action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=2), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 19,
+          "child_visit_counts": [
+            23,
+            12,
+            10,
+            10,
+            9,
+            8,
+            7,
+            7,
+            6,
+            6,
+            5,
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2
+          ],
+          "selected_visits": 23,
+          "rep": 1,
+          "elapsed_seconds": 152.43109329999425
+        },
+        {
+          "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 19,
+          "child_visit_counts": [
+            16,
+            11,
+            11,
+            10,
+            8,
+            8,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            4,
+            4,
+            4,
+            4,
+            3,
+            3,
+            3
+          ],
+          "selected_visits": 16,
+          "rep": 2,
+          "elapsed_seconds": 150.8622553999303
+        },
+        {
+          "action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=5, rank=4), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 19,
+          "child_visit_counts": [
+            14,
+            12,
+            12,
+            11,
+            10,
+            9,
+            9,
+            8,
+            7,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "selected_visits": 14,
+          "rep": 3,
+          "elapsed_seconds": 137.10053259995766
+        }
+      ]
+    },
+    {
+      "seed": 21,
+      "fingerprint": "6104d1ca1d6016ec1f50a47acde165d668584c70c38d474212fb7fade84c9231",
+      "legal_actions": 17,
+      "runs": [
+        {
+          "action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=4, rank=2), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 17,
+          "child_visit_counts": [
+            14,
+            13,
+            10,
+            10,
+            9,
+            9,
+            8,
+            8,
+            7,
+            7,
+            7,
+            6,
+            5,
+            5,
+            4,
+            3,
+            3
+          ],
+          "selected_visits": 14,
+          "rep": 1,
+          "elapsed_seconds": 79.4040203000186
+        },
+        {
+          "action": "BoardMove(from_square=Square(file=4, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 17,
+          "child_visit_counts": [
+            15,
+            12,
+            12,
+            10,
+            9,
+            9,
+            8,
+            8,
+            8,
+            7,
+            5,
+            5,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "selected_visits": 15,
+          "rep": 2,
+          "elapsed_seconds": 78.59461149992421
+        },
+        {
+          "action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "simulations": 128,
+          "unknown": 0,
+          "root_legal": 17,
+          "child_visit_counts": [
+            16,
+            12,
+            11,
+            10,
+            10,
+            9,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            3,
+            3
+          ],
+          "selected_visits": 16,
+          "rep": 3,
+          "elapsed_seconds": 78.87181000004057
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 677.2932278000517
+}

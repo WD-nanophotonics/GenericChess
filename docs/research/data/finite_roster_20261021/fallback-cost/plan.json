@@ -1,0 +1,40 @@
+{
+  "question": "Does complete mandatory fallback enumeration create material pre-cancelled latency in the live AlphaBeta caller, and is existing first-legal streaming a plausible lower-cost option?",
+  "settings": [
+    [
+      731701,
+      6
+    ],
+    [
+      731702,
+      6
+    ],
+    [
+      731703,
+      8
+    ],
+    [
+      731704,
+      8
+    ],
+    [
+      731705,
+      10
+    ],
+    [
+      731706,
+      10
+    ]
+  ],
+  "roots": "uniform repr-sorted legal trajectory Random(seed), sample actual prefixes0,8,16,24; terminal prefixes retained, no refill",
+  "repeats": 3,
+  "paths": [
+    "public_pre_cancelled_native",
+    "public_pre_cancelled_Core",
+    "runtime_complete_Core",
+    "public_first_legal_Core"
+  ],
+  "caps": "120seconds total; no search expansion because token pre-cancelled; every root retains full history",
+  "decision": "Consider a separately reviewed fallback optimization only if existing public Core cancellation median exceeds5ms on at least half of usable rules and Core first-legal median is below half that public cost on those rules. Native results independently reported. A changed deterministic fallback choice is a compatibility cost, not free equivalence.",
+  "limits": "Cost feasibility only, no product change, utility/strength/incomplete-domain claim. Full-frontier bulk and first-legal are different functions; first-legal alone does not implement the public terminal/declaration contract."
+}

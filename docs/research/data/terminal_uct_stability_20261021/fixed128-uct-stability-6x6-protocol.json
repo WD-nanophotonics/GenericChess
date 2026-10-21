@@ -1,0 +1,21 @@
+{
+  "question": "Does increasing the same terminal-only UCT roots from64 to128 fixed simulations improve independent-seed action agreement?",
+  "roots": [
+    7,
+    21
+  ],
+  "repetitions": [
+    1,
+    2,
+    3
+  ],
+  "simulations_per_run": 128,
+  "max_rollout_plies": 512,
+  "policy": "same UCT selection/terminal rollout/backprop as source; independent RNG seeds only",
+  "hard_total_cap_seconds": 1200,
+  "scope": "two previously used action-only 6x6 roots; exploratory stability screen, no pooled or strength claim",
+  "cheaper_alternative": "stop after64 simulations, which was 3/3 distinct actions per root",
+  "stop": "complete six runs or preserve partial rows exactly at20min cap",
+  "independent_rng_seed_rule": "79102621 + rep*1009 + int(fingerprint[:8],16), with the fixed root-specific fingerprint and rep index",
+  "runner_provenance": "Runner was executed inline and was not retained as a standalone script; results and base implementation source SHA are preserved for audit, not direct rerun."
+}

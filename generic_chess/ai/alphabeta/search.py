@@ -68,7 +68,7 @@ class _Budget:
         self._max_time = limits.max_time_seconds
         self._cancel = cancel_token
         self._deadline = (
-            time.monotonic() + limits.max_time_seconds
+            time.perf_counter() + limits.max_time_seconds
             if limits.max_time_seconds is not None
             else None
         )
@@ -90,7 +90,7 @@ class _Budget:
             return
         if self._cancel is not None and self._cancel.is_cancelled():
             raise SearchAborted("cancelled")
-        if self._deadline is not None and time.monotonic() >= self._deadline:
+        if self._deadline is not None and time.perf_counter() >= self._deadline:
             raise SearchAborted("time_limit")
 
     def check_iteration(self, stats: SearchStatistics) -> None:
@@ -99,7 +99,7 @@ class _Budget:
         total = stats.nodes + stats.qnodes
         if self._max_nodes is not None and total >= self._max_nodes:
             raise SearchAborted("node_limit")
-        if self._deadline is not None and time.monotonic() >= self._deadline:
+        if self._deadline is not None and time.perf_counter() >= self._deadline:
             raise SearchAborted("time_limit")
 
 
@@ -176,7 +176,7 @@ class _Context:
         if budget._interactive:
             if budget._cancel is not None and budget._cancel.is_cancelled():
                 raise SearchAborted("cancelled")
-            if budget._deadline is not None and time.monotonic() >= budget._deadline:
+            if budget._deadline is not None and time.perf_counter() >= budget._deadline:
                 raise SearchAborted("time_limit")
 
 
@@ -476,7 +476,7 @@ def negamax(
         # Core should have flagged the position terminal; fall back to eval.
         return SearchResult(_evaluate(state, ctx.evaluator, ctx), None, ())
     if ctx.use_ordering:
-        started = time.monotonic()
+        started = time.perf_counter()
         with ctx.recorder.time_block(AuditMetric.ORDERING):
             if ctx.tuning.use_staged_move_picker:
                 ordered_actions = StagedMovePicker(
@@ -503,7 +503,7 @@ def negamax(
         ctx.budget.check(ctx.stats, force=True)
         ctx.stats.ordering_calls += 1
         ctx.stats.ordered_moves += len(actions)
-        ctx.stats.ordering_seconds += time.monotonic() - started
+        ctx.stats.ordering_seconds += time.perf_counter() - started
     else:
         ordered_actions = sorted(actions, key=str)
 
@@ -614,12 +614,12 @@ def _order_qactions(state, actions, ply, ctx: _Context, *, in_check: bool = Fals
             or (in_check and not ctx.tuning.use_ordered_qsearch_in_check)):
         return sorted(actions, key=str)
     actions = list(actions)
-    started = time.monotonic()
+    started = time.perf_counter()
     ordered = ctx.orderer.order(state, actions, ctx.evaluator, -ply - 1,
                                 None, None, ctx.tuning)
     ctx.stats.ordering_calls += 1
     ctx.stats.ordered_moves += len(actions)
-    ctx.stats.ordering_seconds += time.monotonic() - started
+    ctx.stats.ordering_seconds += time.perf_counter() - started
     return ordered
 
 
@@ -938,7 +938,7 @@ def root_tactical_scan(
     """
     best_action: Action | None = None
     best_score = -INF
-    started = time.monotonic()
+    started = time.perf_counter()
     if ctx.runtime is not None:
         stream = _runtime_legal_actions(ctx, ctx.checkpoint)
         for action in stream:
@@ -951,7 +951,7 @@ def root_tactical_scan(
                     child.terminal_status.is_terminal
                     and child.terminal_status.winner == state.position.side_to_move
                 ):
-                    ctx.stats.root_scan_seconds += time.monotonic() - started
+                    ctx.stats.root_scan_seconds += time.perf_counter() - started
                     return action, best_action
                 if child.terminal_status.is_terminal:
                     score = -terminal_score(
@@ -970,7 +970,7 @@ def root_tactical_scan(
                     best_action = action
                     ctx.root_scan_best_action = action
                 ctx.budget.check(ctx.stats, force=True)
-        ctx.stats.root_scan_seconds += time.monotonic() - started
+        ctx.stats.root_scan_seconds += time.perf_counter() - started
         return None, best_action
     if handles is None:
         with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
@@ -994,7 +994,7 @@ def root_tactical_scan(
             child.terminal_status.is_terminal
             and child.terminal_status.winner == state.position.side_to_move
         ):
-            ctx.stats.root_scan_seconds += time.monotonic() - started
+            ctx.stats.root_scan_seconds += time.perf_counter() - started
             return action, best_action
         if child.terminal_status.is_terminal:
             score = -terminal_score(
@@ -1014,7 +1014,7 @@ def root_tactical_scan(
             ctx.root_scan_best_action = action
         ctx.budget.check(ctx.stats, force=True)
         ctx.budget.check(ctx.stats)
-    ctx.stats.root_scan_seconds += time.monotonic() - started
+    ctx.stats.root_scan_seconds += time.perf_counter() - started
     return None, best_action
 
 
@@ -1087,7 +1087,7 @@ def run_root_search(
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
-    started = time.monotonic()
+    started = time.perf_counter()
     # Importing complete history consumes this search call's time allowance.
     # Legality/terminal authority and the mandatory fallback still run below.
     budget = _Budget(limits, cancel_token)
@@ -1173,7 +1173,7 @@ def run_root_search(
                 stats.termination_reason = str(exc)
                 _set_result_provenance(stats, 'terminal' if stats.termination_reason == 'terminal_position' else 'no_legal_fallback')
                 return None, 0, (), stats.termination_reason
-            stats.time_to_first_legal_action = time.monotonic() - started
+            stats.time_to_first_legal_action = time.perf_counter() - started
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
             return root_fallback(sorted(actions, key=str)[0], 'legal_fallback')
@@ -1182,7 +1182,7 @@ def run_root_search(
             _set_result_provenance(stats, 'terminal')
             return None, 0, (), stats.termination_reason
         root_first_action = sorted(actions, key=str)[0]
-        stats.time_to_first_legal_action = time.monotonic() - started
+        stats.time_to_first_legal_action = time.perf_counter() - started
         try:
             budget.check(stats, force=True)
         except SearchAborted as exc:
@@ -1204,7 +1204,7 @@ def run_root_search(
             _set_result_provenance(stats, 'no_legal_fallback')
             return None, 0, (), stats.termination_reason
         root_first_action = first_handle.action
-        stats.time_to_first_legal_action = time.monotonic() - started
+        stats.time_to_first_legal_action = time.perf_counter() - started
         root_handles = chain((first_handle,), root_stream)
         try:
             budget.check(stats, force=True)
@@ -1272,7 +1272,7 @@ def run_root_search(
         stats.selective_depth = depth
         ctx.first_main_iteration_complete = True
         if stats.time_to_first_completed_iteration is None:
-            stats.time_to_first_completed_iteration = time.monotonic() - started
+            stats.time_to_first_completed_iteration = time.perf_counter() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
 

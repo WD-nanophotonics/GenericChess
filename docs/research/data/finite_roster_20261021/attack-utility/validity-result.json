@@ -1,0 +1,328 @@
+{
+  "plan": {
+    "question": "Which changed premise causes the four invalid initial setups: orthogonal geometry, one-screen capture, or their interaction?",
+    "data": "Same eight frozen substrates/actor type/initial states as the closed utility panel; posthoc compile-only factorial, no replacement seeds, repaired setup or games",
+    "axes": {
+      "geometry": [
+        "original atoms",
+        "orthogonal rays"
+      ],
+      "capture": [
+        "original clear path",
+        "one screen"
+      ]
+    },
+    "controls": "Unmodified substrate must compile; original-ray/clear-path semantic control preserves leaps. If no original ray exists, that factorial cell stays unsupported rather than invented.",
+    "decision": "Any original-geometry screen failure demonstrates setup validation must follow semantic recomposition even without changed geometry. Invalid cells remain failures; do not call the valid subset full generated coverage.",
+    "cap_seconds": 60
+  },
+  "summary": {
+    "original/clear": {
+      "compiled": 6,
+      "rejected": 0,
+      "unsupported_no_original_ray": 2
+    },
+    "original/screen": {
+      "compiled": 6,
+      "rejected": 0,
+      "unsupported_no_original_ray": 2
+    },
+    "orthogonal/clear": {
+      "compiled": 8,
+      "rejected": 0,
+      "unsupported_no_original_ray": 0
+    },
+    "orthogonal/screen": {
+      "compiled": 4,
+      "rejected": 4,
+      "unsupported_no_original_ray": 0
+    },
+    "elapsed_seconds": 0.38157749990932643
+  },
+  "cells": [
+    {
+      "seed": 731601,
+      "board": 4,
+      "type": "A",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731601,
+      "board": 4,
+      "type": "A",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731601,
+      "board": 4,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731601,
+      "board": 4,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731602,
+      "board": 4,
+      "type": "P",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "unsupported_no_original_ray"
+    },
+    {
+      "seed": 731602,
+      "board": 4,
+      "type": "P",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "unsupported_no_original_ray"
+    },
+    {
+      "seed": 731602,
+      "board": 4,
+      "type": "P",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731602,
+      "board": 4,
+      "type": "P",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "rejected",
+      "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 0's anchor is attacked at the initial position; [INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+    },
+    {
+      "seed": 731603,
+      "board": 5,
+      "type": "A",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731603,
+      "board": 5,
+      "type": "A",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731603,
+      "board": 5,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731603,
+      "board": 5,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "rejected",
+      "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 0's anchor is attacked at the initial position; [INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+    },
+    {
+      "seed": 731604,
+      "board": 5,
+      "type": "A",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731604,
+      "board": 5,
+      "type": "A",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731604,
+      "board": 5,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731604,
+      "board": 5,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731605,
+      "board": 6,
+      "type": "P",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731605,
+      "board": 6,
+      "type": "P",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731605,
+      "board": 6,
+      "type": "P",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731605,
+      "board": 6,
+      "type": "P",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "rejected",
+      "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 0's anchor is attacked at the initial position; [INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+    },
+    {
+      "seed": 731606,
+      "board": 6,
+      "type": "A",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "unsupported_no_original_ray"
+    },
+    {
+      "seed": 731606,
+      "board": 6,
+      "type": "A",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "unsupported_no_original_ray"
+    },
+    {
+      "seed": 731606,
+      "board": 6,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731606,
+      "board": 6,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "rejected",
+      "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 0's anchor is attacked at the initial position; [INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+    },
+    {
+      "seed": 731607,
+      "board": 8,
+      "type": "B",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731607,
+      "board": 8,
+      "type": "B",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731607,
+      "board": 8,
+      "type": "B",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731607,
+      "board": 8,
+      "type": "B",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731608,
+      "board": 8,
+      "type": "A",
+      "geometry": "original",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731608,
+      "board": 8,
+      "type": "A",
+      "geometry": "original",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731608,
+      "board": 8,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "clear",
+      "status": "compiled",
+      "error": null
+    },
+    {
+      "seed": 731608,
+      "board": 8,
+      "type": "A",
+      "geometry": "orthogonal",
+      "capture": "screen",
+      "status": "compiled",
+      "error": null
+    }
+  ]
+}

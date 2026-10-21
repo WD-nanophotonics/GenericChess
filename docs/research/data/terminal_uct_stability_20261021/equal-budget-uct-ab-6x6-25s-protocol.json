@@ -1,0 +1,17 @@
+{
+  "ruleset_roots": [
+    7,
+    21
+  ],
+  "board_size": 6,
+  "preset": "bilateral_random",
+  "allow_hybrid": true,
+  "decision_budget_seconds_each": 25.0,
+  "uct_policy": "terminal-only UCT, uniform legal-action rollout, max root visits",
+  "alpha_beta_policy": "existing public AlphaBetaPlayer, SearchLimits time cap, default evaluator",
+  "paired_continuations_per_arm_root": 20,
+  "continuation_policy": "both sides uniform over legal board actions; use native terminal result; UNKNOWN remains null",
+  "max_rollout_plies": 512,
+  "hard_total_cap_seconds": 180.0,
+  "scope": "two generated action-only 6x6 roots, seeds7/21; no declarations; 25s requested root budget/arm, one opening decision followed by random continuation; exploratory budget sensitivity, not head-to-head engine strength or full generated-domain evidence"
+}

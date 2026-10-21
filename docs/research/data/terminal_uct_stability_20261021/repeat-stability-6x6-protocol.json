@@ -1,0 +1,16 @@
+{
+  "roots": [
+    7,
+    21
+  ],
+  "repetitions": [
+    1,
+    2,
+    3
+  ],
+  "seconds_per_search": 25.0,
+  "independent_uct_seed_offset": 79102621,
+  "reuse_policy": "same prior choose_uct implementation; alter only RNG seed base per repetition",
+  "no_games_or_alpha_beta": true,
+  "hard_cap_seconds": 210.0
+}

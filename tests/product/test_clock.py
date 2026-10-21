@@ -99,3 +99,15 @@ def test_time_forfeit_disabled_never_expires():
     clock, now = _clock(TimeControlMode.BYOYOMI, forfeit=False)
     now.t += 10_000.0
     assert clock.state().expired_owner is None
+
+
+def test_default_clock_uses_performance_counter(monkeypatch):
+    from generic_chess import clock as clock_module
+
+    ticks = iter((10.0, 10.125))
+    perf = lambda: next(ticks)
+    monkeypatch.setattr(clock_module.time, "monotonic", lambda: 10.0)
+    monkeypatch.setattr(clock_module.time, "perf_counter", perf)
+
+    clock = MatchClock(TimeControl(mode=TimeControlMode.FISCHER))
+    assert clock.state().remaining_ms[0] == 599875

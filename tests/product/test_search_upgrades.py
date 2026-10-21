@@ -206,7 +206,7 @@ def test_partial_root_scan_retains_best_completed_child(semantic, interruption, 
     seen = []
     token = CancellationToken() if interruption == "cancelled" else None
     clock = [0.0]
-    monkeypatch.setattr("generic_chess.ai.alphabeta.search.time.monotonic", lambda: clock[0])
+    monkeypatch.setattr("generic_chess.ai.alphabeta.search.time.perf_counter", lambda: clock[0])
 
     class ChildEvaluator:
         def evaluate(self, child):

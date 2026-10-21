@@ -1,0 +1,841 @@
+{
+  "all_planned_keys_unique": true,
+  "replayed_games": 32,
+  "replayed_actions": 654,
+  "failed_slots_preserved": 32,
+  "divergence_counts": {
+    "candidate_first": 11,
+    "identical_trajectory": 5
+  },
+  "candidate_depth_at_divergence": {
+    "[3, 2]": 1,
+    "[2, 2]": 3,
+    "[3, 3]": 1,
+    "[2, 1]": 1,
+    "[1, 1]": 5
+  },
+  "trajectory_pairs": [
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 0,
+      "first_different_ply": 1,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_023', geometry_id='g19', actor_type_id='X', from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_031', geometry_id='g22', actor_type_id='X', from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=3), promotion_target_id=None)"
+        ],
+        "depth": [
+          3,
+          2
+        ],
+        "nodes": [
+          248,
+          328
+        ],
+        "termination": [
+          "completed_depth",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.03536889993119985,
+          0.050069999997504056
+        ]
+      },
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 1,
+      "first_different_ply": 0,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          1,
+          1
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_029', geometry_id='g21', actor_type_id='X', from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=1), promotion_target_id='A')",
+          "SemanticBoardMove(pattern_id='legacy_029', geometry_id='g21', actor_type_id='X', from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+        ],
+        "depth": [
+          2,
+          2
+        ],
+        "nodes": [
+          240,
+          251
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05007340002339333,
+          0.05005560000427067
+        ]
+      },
+      "winners": [
+        0,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 0,
+      "first_different_ply": 6,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_011', geometry_id='g13', actor_type_id='P', from_square=Square(file=0, rank=2), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_039', geometry_id='g6', actor_type_id='K', from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)"
+        ],
+        "depth": [
+          2,
+          2
+        ],
+        "nodes": [
+          415,
+          381
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05005409999284893,
+          0.05006229993887246
+        ]
+      },
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 1,
+      "first_different_ply": 1,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          1,
+          1
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_004', geometry_id='g10', actor_type_id='K', from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_026', geometry_id='g20', actor_type_id='X', from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+        ],
+        "depth": [
+          3,
+          3
+        ],
+        "nodes": [
+          282,
+          333
+        ],
+        "termination": [
+          "completed_depth",
+          "completed_depth"
+        ],
+        "caller_seconds": [
+          0.03701520001050085,
+          0.04403649992309511
+        ]
+      },
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 0,
+      "first_different_ply": 11,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticDropMove(pattern_id='legacy_036', geometry_id='g18', base_type_id='A', to_square=Square(file=0, rank=4))",
+          "SemanticBoardMove(pattern_id='legacy_019', geometry_id='g17', actor_type_id='P', from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+        ],
+        "depth": [
+          2,
+          1
+        ],
+        "nodes": [
+          299,
+          266
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05004979996010661,
+          0.05011440010275692
+        ]
+      },
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 1,
+      "first_different_ply": 16,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          1,
+          1
+        ],
+        "action": [
+          "SemanticDropMove(pattern_id='legacy_036', geometry_id='g18', base_type_id='A', to_square=Square(file=1, rank=3))",
+          "SemanticBoardMove(pattern_id='legacy_019', geometry_id='g17', actor_type_id='P', from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+        ],
+        "depth": [
+          2,
+          2
+        ],
+        "nodes": [
+          330,
+          322
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.050050899968482554,
+          0.05008379998616874
+        ]
+      },
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 0,
+      "first_different_ply": null,
+      "class": "identical_trajectory",
+      "detail": null,
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 1,
+      "first_different_ply": null,
+      "class": "identical_trajectory",
+      "detail": null,
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 0,
+      "first_different_ply": 7,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='sem_01_attack_probe_cannon_capture', geometry_id='g8', actor_type_id='B', from_square=Square(file=5, rank=0), to_square=Square(file=5, rank=3), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_005', geometry_id='g10', actor_type_id='C', from_square=Square(file=6, rank=6), to_square=Square(file=7, rank=7), promotion_target_id='B')"
+        ],
+        "depth": [
+          1,
+          1
+        ],
+        "nodes": [
+          185,
+          195
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.050064200069755316,
+          0.05006860010325909
+        ]
+      },
+      "winners": [
+        null,
+        null
+      ],
+      "statuses": [
+        "ongoing",
+        "ongoing"
+      ]
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 1,
+      "first_different_ply": 0,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          1,
+          1
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='sem_01_attack_probe_cannon_capture', geometry_id='g8', actor_type_id='B', from_square=Square(file=2, rank=7), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_043', geometry_id='g28', actor_type_id='X', from_square=Square(file=4, rank=4), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+        ],
+        "depth": [
+          1,
+          1
+        ],
+        "nodes": [
+          237,
+          244
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05005499999970198,
+          0.05005329998675734
+        ]
+      },
+      "winners": [
+        null,
+        null
+      ],
+      "statuses": [
+        "ongoing",
+        "ongoing"
+      ]
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 0,
+      "first_different_ply": 0,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='sem_01_attack_probe_cannon_capture', geometry_id='g8', actor_type_id='B', from_square=Square(file=5, rank=0), to_square=Square(file=5, rank=7), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_003', geometry_id='g1', actor_type_id='A', from_square=Square(file=4, rank=3), to_square=Square(file=6, rank=7), promotion_target_id='B')"
+        ],
+        "depth": [
+          1,
+          1
+        ],
+        "nodes": [
+          190,
+          196
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.050055200001224875,
+          0.05008099996484816
+        ]
+      },
+      "winners": [
+        0,
+        0
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 1,
+      "first_different_ply": 1,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          1,
+          1
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_011', geometry_id='g13', actor_type_id='K', from_square=Square(file=4, rank=7), to_square=Square(file=5, rank=7), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_003', geometry_id='g1', actor_type_id='A', from_square=Square(file=4, rank=6), to_square=Square(file=1, rank=0), promotion_target_id='B')"
+        ],
+        "depth": [
+          1,
+          1
+        ],
+        "nodes": [
+          257,
+          235
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05005600000731647,
+          0.05005630000960082
+        ]
+      },
+      "winners": [
+        0,
+        null
+      ],
+      "statuses": [
+        "checkmate",
+        "ongoing"
+      ]
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 0,
+      "first_different_ply": null,
+      "class": "identical_trajectory",
+      "detail": null,
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 1,
+      "first_different_ply": null,
+      "class": "identical_trajectory",
+      "detail": null,
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 0,
+      "first_different_ply": 2,
+      "class": "candidate_first",
+      "detail": {
+        "owner": [
+          0,
+          0
+        ],
+        "action": [
+          "SemanticBoardMove(pattern_id='legacy_043', geometry_id='g28', actor_type_id='X', from_square=Square(file=1, rank=1), to_square=Square(file=4, rank=4), promotion_target_id=None)",
+          "SemanticBoardMove(pattern_id='legacy_035', geometry_id='g24', actor_type_id='P', from_square=Square(file=3, rank=1), to_square=Square(file=6, rank=7), promotion_target_id='A')"
+        ],
+        "depth": [
+          1,
+          1
+        ],
+        "nodes": [
+          243,
+          248
+        ],
+        "termination": [
+          "time_limit",
+          "time_limit"
+        ],
+        "caller_seconds": [
+          0.05005449999589473,
+          0.05005590000655502
+        ]
+      },
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 1,
+      "first_different_ply": null,
+      "class": "identical_trajectory",
+      "detail": null,
+      "winners": [
+        1,
+        1
+      ],
+      "statuses": [
+        "checkmate",
+        "checkmate"
+      ]
+    }
+  ],
+  "record_checks": [
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 21,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 11,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 11,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 12,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 17,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 51,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 31,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731601,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 17,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 36,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 16,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 38,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731604,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 36,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 5,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 5,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 5,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731604,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 5,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 51,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 51,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 51,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "seed": 731607,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 51,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 7,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 11,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 52,
+      "status": "ongoing",
+      "winner": null
+    },
+    {
+      "seed": 731607,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 7,
+      "status": "checkmate",
+      "winner": 0
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 4,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 4,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 4,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 3,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 4,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "semantic_native",
+      "full_record_actions": 10,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 0,
+      "arm": "legacy",
+      "full_record_actions": 10,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "legacy",
+      "full_record_actions": 10,
+      "status": "checkmate",
+      "winner": 1
+    },
+    {
+      "seed": 731608,
+      "prefix": 4,
+      "owner": 1,
+      "arm": "semantic_native",
+      "full_record_actions": 10,
+      "status": "checkmate",
+      "winner": 1
+    }
+  ],
+  "limits": "Posthoc audit, no new outcomes. Wall-capped fixed foe can itself diverge; complete-case or equal-depth subsets are descriptive and cannot replace the frozen denominator."
+}

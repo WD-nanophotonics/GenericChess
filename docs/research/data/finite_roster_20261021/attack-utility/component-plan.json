@@ -1,0 +1,7 @@
+{
+  "question": "At actual first-divergence states, is the semantic score difference coverage, anchor heuristics, or both, and does it survive equal completed D1?",
+  "selection": "All eleven candidate-first divergences from the closed 64-slot panel, no replacements, posthoc diagnostic exposure",
+  "arms": "legacy/Core semantic/Native semantic authority x static-only/coverage-only/anchor-only/both; identical Unit profile and zero promotion gain",
+  "limits": "D1/q0/hardq0,100000 total nodes,5s cooperative query cap;120s total; all incomplete retained; no games",
+  "decision": "If authority differences vanish at equal D1, treat original action divergence as deeper/budget-dependent; if they persist, retain actual component witness but no utility/default claim. This diagnoses mechanism, never changes the frozen utility verdict."
+}

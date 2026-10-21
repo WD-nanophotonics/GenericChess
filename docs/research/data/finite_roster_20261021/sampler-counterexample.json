@@ -1,0 +1,18 @@
+{
+  "question": "Can the existing mining category policy be moved before legality and repaired by a blanket rejection?",
+  "consumer": "generic_chess.ai.benchmark.position_mining._choose_action",
+  "controlled_oracle": "One quiet legal action,one legal nonchecking drop,and one illegal pseudo capture; no promotions or checks; classification supplied by controlled oracles in a private process. This is an algorithm-level counterexample, not a Core legality defect or actual position claim.",
+  "exact_enumeration": "20 equally weighted threshold bins x6 choice-index residues (LCM of sizes1,2,3),120 equiprobable tapes, one categorical choice each; repeat-until-legal probability is conditional accepted mass.",
+  "full_legal_counts": {
+    "drop": 96,
+    "quiet": 24
+  },
+  "pseudo_counts": {
+    "illegal_capture": 52,
+    "drop": 52,
+    "quiet": 16
+  },
+  "correct_drop_probability": "4/5",
+  "naive_reject_drop_probability": "13/17",
+  "decision": "Do not apply a blanket pre-legality rejection sampler to this consumer. Fixed-score softmax/uniform conditions from Ludii do not establish this category-with-empty-fallback policy equivalence. Preserve frozen opening RNG sequences and actual legal-action semantics; no new API, sampler or games."
+}

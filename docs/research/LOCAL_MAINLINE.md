@@ -2977,3 +2977,87 @@ search decision, not a full capped match. The relevant combined changed-module
 suite, including F27, passed 138 tests. Do not revisit this boundary absent a
 new failure; the next search task must identify another uncovered current
 caller rather than repeat cap, PV, declaration or reference-fuse checks.
+
+## Incoming MCTS suggestion assessed; terminal-only UCT deferred — 2026-10-21
+
+The incoming project Chat suggestion's evaluation methods are adopted: preserve UNKNOWN, match per-decision budgets, treat independent rulesets as the inference unit, and report per-root results/cost without turning one-step random continuations into strength claims. The existing `SemanticGumbelMCTSV0` is a separate learned-policy/value route, not the proposed terminal-rollout UCT or a current `ai.Player` consumer; F115–F121 remain completed evidence, not work to repeat.
+
+The bounded two-root 6x6 terminal-only UCT stability screen is not decision-ready for integration: independent seeds selected three different actions per root at both64 and128 simulations; the maximum-visit child had14–23 visits at128. This is only an action-only two-root feasibility screen, not a generated-domain strength result. Do not add a Player adapter, train, rerun the frozen Gumbel arenas, or change a default from it. Full protocols/results are in `data/terminal_uct_stability_20261021/`; interpretation and exact scope are in `CLAUDE_MCTS_ADVICE_RECONCILIATION_20261021.md`. Resume the current route: identify a genuinely uncovered finite-budget contract with a named current caller before any new panel.
+
+## 2026-10-21 PRIMARY finite-budget caller scan continuation
+
+A bounded source trace excluded three plausible but non-defect candidates. `ai.cli.analyze_ruleset` constructs and caches a diagnostic evaluation profile synchronously, without a search deadline, and returns a profile report rather than a `PlayerDecision`; it is not a timed player caller. `ai.cli.benchmark_alphabeta` supplies an explicit total-node cap (and optional depth), records monotonic elapsed time and decision work, and keeps repeat/game counts caller-selected; its 400-ply safety stop remains `ONGOING`/unresolved rather than a rule draw. `generic_chess.cli.play` is a human-vs-human command loop, not an AI consumer. This is source inspection, not a performance or all-ruleset claim. The UI AI path is separately wired through `UIController.ai_limits` and `_AiThread`, with prior zero-cap/declaration boundary evidence already recorded; do not reopen those closed checks. Continue the existing caller map only for a distinct, live backend finite-budget invariant with an observable contract; otherwise keep the current no-adapter/no-default-change decision.
+
+## 2026-10-21 PRIMARY AI-caller budget trace
+
+The actual UI route snapshots `SearchLimits` and cancellation token before dispatching `AlphaBetaPlayer.choose_action` to `_AiThread`; `UIController.ai_limits` delegates to the existing clock/config allocator. The paired benchmark runner supplies per-move time/node limits, records work and timing separately, retains fallback flags, and leaves an externally capped/ongoing game unresolved. These source contracts align with the existing zero-cap, cancellation, fallback and outcome accounting; no new defect or API gap was observed in this bounded trace. No UI files or UI-owned tests were changed. The next search step remains a distinct backend finite-budget invariant only if a concrete live caller and a decision-changing uncovered expectation can be named.
+
+## Claude Chat advice and live MatchClock precision — 2026-10-21
+
+The latest incoming Claude review was read in full and its root thread saved privately.
+Its artifact-cost concern is consistent with the separately authorized bounded
+repository cleanup; it does not invalidate the current finite-budget measurement.
+The proposed amateur-level/Fairy-Stockfish/Elo objective is not the current goal.
+The suggested MCTS integration is already screened by the two-root UCT stability
+result cited above and is not reopened. Rule-distinguishing learned features are
+in DEV_AUX's owned lane, not duplicated here. Capped UNKNOWN remains censored;
+SPRT is relevant only to a selected sequential strength test, not this caller
+contract. No outbound reply or new worker.
+
+A live Windows trace corrected the earlier assumption that MatchClock was only
+seconds-scale infrastructure: UIController.ai_limits consumes MatchClock.state
+through allocate_search_limits. At 656ms of a 1s Fischer clock with a 300ms
+reserve, actual QPC remaining was about344ms in four alternating samples; the
+GetTickCount64 path reported 360/359/345/344ms, allocating up to16ms more than
+the high-resolution path. At the 360-vs344ms sampled pair, fixed_nodes and
+fixed_time allocations differ by16ms; auto_time differs by0ms at move1 and
+0.72ms at move89. Four matched 4x4-rooks searches at44/60ms used532–563 versus
+718–771 nodes, all retaining depth4 and the same legal action. This establishes
+budget distortion and paid-work difference on a bounded fixture, not a strength
+or utility gain.
+
+Therefore MatchClock and UIController defaults now use the high-resolution `time.perf_counter` (Windows QueryPerformanceCounter, 100ns resolution); explicit
+clock injection, integer-ms state, allocator minimum and reserve policy are
+unchanged. Focused clock/budget/controller tests pass, including a direct UI
+assertion that344ms remaining allocates44ms. First pytest invocation hit OS temp
+permission during one tmp_path fixture setup, not an assertion; rerunning with
+ignored .local_agent basetemp passed. No broader timing claim.
+
+The earlier backend-only next-search rule is superseded only for this observed
+UI caller defect; return to a distinct finite-budget/search contract after this
+fix, without reopening closed zero-cap or UCT panels.
+
+## Current result and selection —2026-10-21 after cleanup
+
+PRIMARY's static cleanup is published at62b2a02a7e9c1d867935104f95b3003401c350ad:
+2,674 tracked payloads removed from the current sandbox tree, with Git history
+preserved. AUX remote delivery is still separate/incomplete; its active role
+was not interrupted or taken over. This is delivery, not scientific evidence.
+
+[`HIGH_RESOLUTION_SEARCH_CLOCK_20261021.md`](HIGH_RESOLUTION_SEARCH_CLOCK_20261021.md)
+records the live Windows15.625ms clock defect and QPC correction across search,
+telemetry, benchmark and MatchClock-to-AI allocation. It changes no budget
+defaults or rule semantics and does not promise a strict preemptive deadline.
+
+[`FINITE_ROSTER_AND_SEMANTIC_AUTHORITY_20261021.md`](FINITE_ROSTER_AND_SEMANTIC_AUTHORITY_20261021.md)
+closes the new finite-count law and existing semantic-attack authority questions.
+Exact count laws can reverse11 toy opportunity ranks, but6,251 reachable actor
+observations improve MAE by only0.2745%, failing the5% gate. No count correction.
+The distinct64-slot authority panel retains32 invalid-setup slots and5 ongoing
+outcomes as UNKNOWN; bounds[-1.0625,1.25] support no default or unchanged rerun.
+All32 actual records/654 actions replay;8 feasible root maps and500 diagnostic
+child maps agree between Core/Native. Equal-D1 component controls show genuine
+choice changes, not utility. Recomposition safety requires the joint rule/setup.
+
+Primary-paper follow-ups reject a raw stability-only component selector and a
+blanket pre-legality sampler for the existing categorical mining consumer.
+Unique-action legacy uniform sampling is much cheaper in isolation, but only1/6
+rules meets the complete-turn20%/1ms implementation gate; defer it. No new API,
+learner, sampler/default, frozen RNG substitution or auxiliary work follows.
+Instability of the earlier two-root UCT actions likewise does not establish
+negative utility; it supplies no authority to switch the mainline to MCTS/Elo.
+
+Next select a distinct guarded/blocked-leg rule-price consumer only after checking
+existing source/tests and closed evidence for overlap. Keep static/Unit/learned
+candidates and full semantic/history scope; do not widen these closed panels,
+turn geometry prediction into WDL, or make exact solving a development gate.

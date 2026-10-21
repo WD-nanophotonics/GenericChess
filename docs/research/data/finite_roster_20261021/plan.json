@@ -1,0 +1,27 @@
+{
+  "question": "Can fixed rule-roster counts change opportunity ranks, not just scale?",
+  "boards": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    12
+  ],
+  "templates": [
+    "ortho_ray",
+    "diag_ray",
+    "leap21",
+    "step8",
+    "ortho2",
+    "omni_ray",
+    "ortho_screen"
+  ],
+  "rosters": "all equal per-owner counts n=2..floor(area/2); own actor conditioned present",
+  "A": "iid remaining density d=(2n-1)/(area-1), enemy d/2, empty 1-d",
+  "B": "same iid occupancy d, enemy n/(area-1), friend (n-1)/(area-1)",
+  "C": "uniform fixed counts n-1 friend,n enemy,area-2n empty over remaining cells",
+  "decision": "Strict rank reversal means count law is a separate candidate axis; otherwise inspect ratio-only sensitivity. No product/default or utility claim.",
+  "validation": "A vs existing analytic mobility and semantic cannon; C vs independent full 3x3 occupancy enumeration",
+  "scope": "Uniform source, simple quiet/target capture and one-screen orthogonal cannon. Anchor safety, reachable-state law, promotion/drop/auxiliary effects and price calibration excluded explicitly; full generic target unchanged."
+}

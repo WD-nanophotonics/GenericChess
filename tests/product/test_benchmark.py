@@ -4,7 +4,9 @@ import json
 import os
 import shutil
 import uuid
+from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -17,6 +19,7 @@ from generic_chess.ai.benchmark.runner import (
     run_benchmark,
     summarize,
 )
+from generic_chess.ai.benchmark import runner as runner_module
 from generic_chess.ai.benchmark.suite import SuitePosition, build_position
 from generic_chess.generation.config import GeneratorConfig
 from generic_chess.session.result import SessionResult, SessionStatus
@@ -248,6 +251,47 @@ def test_benchmark_smoke_writes_artifacts(bench_tmp_dir):
     ]
     assert events
     assert all("game_key" in e and "nodes" in e for e in events)
+
+
+def test_benchmark_move_timing_uses_high_resolution_clock(monkeypatch):
+    from generic_chess.core.movegen import legal_actions
+
+    config = replace(_tiny_config(), seconds=0.01, max_plies=1)
+    compiled, opening = build_position(config.suite[0])
+
+    class FixedPlayer:
+        def choose_action(self, session, _limits):
+            return SimpleNamespace(
+                action=legal_actions(session.state, compiled)[0],
+                declaration=None,
+                choice_kind="ACTION",
+                result_source="main_iteration",
+                termination_reason="completed_depth",
+                completed_depth=1,
+                nodes=1,
+                qnodes=0,
+            )
+
+    qpc_ticks = iter((10.0, 10.02))
+    coarse_ticks = iter((1.0, 1.08))
+    monkeypatch.setattr(runner_module.time, "perf_counter", lambda: next(qpc_ticks))
+    monkeypatch.setattr(runner_module.time, "monotonic", lambda: next(coarse_ticks))
+
+    outcome, events = play_game(
+        compiled,
+        opening,
+        "clock-test",
+        "clock-test",
+        0,
+        FixedPlayer(),
+        FixedPlayer(),
+        config,
+    )
+
+    assert len(events) == 1
+    assert events[0].elapsed_seconds == pytest.approx(0.02)
+    assert events[0].timing_invalid is False
+    assert outcome.candidate_timing_invalid is False
 
 
 @pytest.mark.parametrize(
@@ -545,7 +589,7 @@ def test_alpha_beta_cli_labels_main_q_and_total_throughput(monkeypatch, capsys):
     monkeypatch.setattr(benchmark_alphabeta, "_load_compiled", lambda _args: compiled)
     monkeypatch.setattr(benchmark_alphabeta, "AlphaBetaPlayer", Player)
     ticks = iter((10.0, 14.0))
-    monkeypatch.setattr(benchmark_alphabeta.time, "monotonic", lambda: next(ticks))
+    monkeypatch.setattr(benchmark_alphabeta.time, "perf_counter", lambda: next(ticks))
 
     assert benchmark_alphabeta.main(["--nodes", "1200", "--repeat", "1", "--no-disk"]) == 0
     output = capsys.readouterr().out

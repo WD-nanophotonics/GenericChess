@@ -1,0 +1,97 @@
+{
+  "complete": true,
+  "protocol": {
+    "roots": [
+      7,
+      21
+    ],
+    "repetitions": [
+      1,
+      2,
+      3
+    ],
+    "seconds_per_search": 25.0,
+    "independent_uct_seed_offset": 79102621,
+    "reuse_policy": "same prior choose_uct implementation; alter only RNG seed base per repetition",
+    "no_games_or_alpha_beta": true,
+    "hard_cap_seconds": 210.0
+  },
+  "roots": [
+    {
+      "seed": 7,
+      "fingerprint": "2d96b5d2ee1798c253ee6a5e4c8b970e41f3bc82d01c2d11bc29bf6d4208a4fb",
+      "legal_actions": 19,
+      "runs": [
+        {
+          "rep": 1,
+          "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=4), promotion_target_id=None)",
+          "elapsed_seconds": 25.002464200020768,
+          "simulations": 24,
+          "unknown": 1,
+          "root_legal": 19,
+          "children": 19,
+          "selected_visits": 2
+        },
+        {
+          "rep": 2,
+          "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=4), promotion_target_id=None)",
+          "elapsed_seconds": 25.0044206000166,
+          "simulations": 23,
+          "unknown": 1,
+          "root_legal": 19,
+          "children": 19,
+          "selected_visits": 2
+        },
+        {
+          "rep": 3,
+          "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=4), promotion_target_id=None)",
+          "elapsed_seconds": 25.002386100008152,
+          "simulations": 26,
+          "unknown": 1,
+          "root_legal": 19,
+          "children": 19,
+          "selected_visits": 2
+        }
+      ]
+    },
+    {
+      "seed": 21,
+      "fingerprint": "6104d1ca1d6016ec1f50a47acde165d668584c70c38d474212fb7fade84c9231",
+      "legal_actions": 17,
+      "runs": [
+        {
+          "rep": 1,
+          "action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=2), promotion_target_id=None)",
+          "elapsed_seconds": 25.001644199946895,
+          "simulations": 46,
+          "unknown": 1,
+          "root_legal": 17,
+          "children": 17,
+          "selected_visits": 8
+        },
+        {
+          "rep": 2,
+          "action": "BoardMove(from_square=Square(file=4, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "elapsed_seconds": 25.00295840005856,
+          "simulations": 44,
+          "unknown": 1,
+          "root_legal": 17,
+          "children": 17,
+          "selected_visits": 8
+        },
+        {
+          "rep": 3,
+          "action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=4, rank=2), promotion_target_id=None)",
+          "elapsed_seconds": 25.004004399990663,
+          "simulations": 49,
+          "unknown": 1,
+          "root_legal": 17,
+          "children": 17,
+          "selected_visits": 6
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 150.04229360003956,
+  "prior_source_sha256": "d8a0426239237d29ebbea45b4565b3f85474e2f915d685503f5f4c23c8d83dcc"
+}

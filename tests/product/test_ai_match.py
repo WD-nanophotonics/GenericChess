@@ -1134,3 +1134,32 @@ def test_resign_cancels_inflight_ai_search_and_discards_its_result():
     assert ctrl.session.result.status.value == "resignation"
     assert not ctrl.finish_ai_move(decision, snapshot)
     assert ctrl.session.state.ply_count == 1
+
+
+def test_controller_default_clock_drives_precise_ai_time_budget(monkeypatch):
+    from generic_chess.ui import controller as controller_module
+
+    now = [10.0]
+    monkeypatch.setattr(controller_module.time, "monotonic", lambda: 10.0)
+    monkeypatch.setattr(controller_module.time, "perf_counter", lambda: now[0])
+    ctrl = _controller()
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            participants=(ParticipantKind.AI, ParticipantKind.AI),
+            time_control=TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(1, 0),
+                owner1=SideTimeConfig(1, 0),
+            ),
+            ai_config=ThinkingConfig(
+                strategy=ThinkingStrategy.FIXED_NODES,
+                max_nodes=50000,
+                safety_margin_seconds=0.3,
+            ),
+        )
+    )
+
+    now[0] += 0.656
+    assert ctrl.clock_state().remaining_ms[0] == 344
+    assert ctrl.ai_limits().max_time_seconds == pytest.approx(0.044)

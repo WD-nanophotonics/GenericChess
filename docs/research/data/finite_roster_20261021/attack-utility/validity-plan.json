@@ -1,0 +1,17 @@
+{
+  "question": "Which changed premise causes the four invalid initial setups: orthogonal geometry, one-screen capture, or their interaction?",
+  "data": "Same eight frozen substrates/actor type/initial states as the closed utility panel; posthoc compile-only factorial, no replacement seeds, repaired setup or games",
+  "axes": {
+    "geometry": [
+      "original atoms",
+      "orthogonal rays"
+    ],
+    "capture": [
+      "original clear path",
+      "one screen"
+    ]
+  },
+  "controls": "Unmodified substrate must compile; original-ray/clear-path semantic control preserves leaps. If no original ray exists, that factorial cell stays unsupported rather than invented.",
+  "decision": "Any original-geometry screen failure demonstrates setup validation must follow semantic recomposition even without changed geometry. Invalid cells remain failures; do not call the valid subset full generated coverage.",
+  "cap_seconds": 60
+}

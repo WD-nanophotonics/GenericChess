@@ -24,7 +24,7 @@ def context(stats, budget):
 
 def test_semantic_checkpoint_keeps_live_deadline_and_abort_precedence(monkeypatch):
     clock = [0.0]
-    monkeypatch.setattr(search.time, 'monotonic', lambda: clock[0])
+    monkeypatch.setattr(search.time, 'perf_counter', lambda: clock[0])
     token = Cancel()
     stats = SearchStatistics(nodes=5, qnodes=5)
     budget = search._Budget(SearchLimits(max_nodes=10, max_time_seconds=5), token)
@@ -80,7 +80,7 @@ def test_root_history_import_is_charged_before_search_and_keeps_legal_fallback(m
         clock[0] += 2.0  # simulated history-import cost, no wall-clock sleep
         return result
 
-    monkeypatch.setattr(search.time, "monotonic", lambda: clock[0])
+    monkeypatch.setattr(search.time, "perf_counter", lambda: clock[0])
     monkeypatch.setattr(SearchPathRuntime, "from_state", costly_import)
     token = Cancel()
     token.cancelled = cancelled

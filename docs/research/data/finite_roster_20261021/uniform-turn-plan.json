@@ -1,0 +1,8 @@
+{
+  "question": "Does choice-only sampler feasibility survive the live random-turn consumer including checked Session.submit at an absolute cost worth implementation?",
+  "consumer": "Uniform random side of benchmark_alphabeta._vs_random; turn cost only, not AlphaBeta turns or whole games",
+  "inputs": "Same21 exposed ongoing roots and6 legacy rules,3repeats,all recorded; separate clones reconstructed before timer. No new game continuations or held-out claim.",
+  "arms": "Current session.legal_actions plus choice plus submit, versus unique pseudo Actions shuffle/first legal plus same public submit. Same RNG seed but different uniform draws; actual one-ply successor cost is part of the method contrast, not an isolated same-action executor estimate.",
+  "gate": "Consider implementation only if>=4of6rules have both>=20percent median complete-turn reduction and>=1ms absolute median reduction; otherwise defer despite choice-only percentage. No new API/default or semantic scope expansion.",
+  "caps": "60seconds total; full successor replay and unchanged parent checked outside timing; common already-held session excludes generation,clone acquisition and replay. This omission precludes whole acquisition/whole game savings claims."
+}

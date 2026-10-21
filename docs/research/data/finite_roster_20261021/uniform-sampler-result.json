@@ -1,0 +1,908 @@
+{
+  "plan": {
+    "question": "Can a unique-candidate rejection sampler reduce the current uniform-random caller cost, and would sampling raw hybrid atoms change the intended action distribution?",
+    "consumer": "generic_chess.ai.cli.benchmark_alphabeta._vs_random and future nonfrozen uniform prefix acquisition; no mutation of frozen benchmark openings",
+    "inputs": "Reuse the21ongoing roots in fallback-cost/result.json; all roots and three repeats retained, no generated games or outcome fit",
+    "candidate": "Explicit legacy-only _expanded_pseudo_actions, deduplicate public Actions, uniformly shuffle and accept the first _is_legal; reject semantic rules at entry. Return choice only, normal Session owns execution/history.",
+    "gate": "Only a feasibility lead if at least4/6 rules show>=20percent median reduction in complete generation+shuffle+safety choice cost; not a public API/default activation or claim for semantic/auxiliary rules",
+    "caps": "60seconds total,3repeats per existing ongoing state, exact multiplicity bias arithmetic before timed trials",
+    "distribution": "A uniform permutation of unique pseudo Actions has a uniformly distributed first legal member by symmetry. Raw duplicate multiplicity instead gives probability m_i/sum_j m_j. This changes PRNG tapes and never substitutes frozen opening histories."
+  },
+  "summary": {
+    "roots": 21,
+    "rules": 6,
+    "choice_calls": 126,
+    "roots_with_raw_distribution_bias": 6,
+    "max_raw_TVD": 0.12352941176470589,
+    "by_rule": [
+      {
+        "seed": 731701,
+        "roots": 4,
+        "bulk_median_seconds": 0.0003136000013910234,
+        "rejection_median_seconds": 5.15999854542315e-05,
+        "fractional_reduction": 0.8354592307865069
+      },
+      {
+        "seed": 731702,
+        "roots": 4,
+        "bulk_median_seconds": 0.0005881000543013215,
+        "rejection_median_seconds": 8.010002784430981e-05,
+        "fractional_reduction": 0.8637986389246797
+      },
+      {
+        "seed": 731703,
+        "roots": 4,
+        "bulk_median_seconds": 0.0005107999895699322,
+        "rejection_median_seconds": 6.114999996498227e-05,
+        "fractional_reduction": 0.8802858237791519
+      },
+      {
+        "seed": 731704,
+        "roots": 1,
+        "bulk_median_seconds": 0.00042019993998110294,
+        "rejection_median_seconds": 6.150000263005495e-05,
+        "fractional_reduction": 0.8536410961105309
+      },
+      {
+        "seed": 731705,
+        "roots": 4,
+        "bulk_median_seconds": 0.0006376499659381807,
+        "rejection_median_seconds": 6.894994294270873e-05,
+        "fractional_reduction": 0.8918686636464224
+      },
+      {
+        "seed": 731706,
+        "roots": 4,
+        "bulk_median_seconds": 0.002552200050558895,
+        "rejection_median_seconds": 0.00014830002328380942,
+        "fractional_reduction": 0.9418932605806767
+      }
+    ],
+    "feasibility_gate": true,
+    "elapsed_seconds": 0.3974439000012353,
+    "product_changes": false,
+    "scope": "Legacy generated states only; no semantic,auxiliary or general sampler equivalence claim."
+  },
+  "roots": [
+    {
+      "seed": 731701,
+      "prefix": 0,
+      "board": 6,
+      "raw_candidates": 8,
+      "unique_candidates": 8,
+      "unique_legal": 8,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.00011959997937083244,
+          "rejection_seconds": 4.499999340623617e-05,
+          "candidate_generation_seconds": 2.4699955247342587e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=2, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.00011869997251778841,
+          "rejection_seconds": 3.569992259144783e-05,
+          "candidate_generation_seconds": 2.1399930119514465e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=0, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.00011359993368387222,
+          "rejection_seconds": 3.630004357546568e-05,
+          "candidate_generation_seconds": 2.180004958063364e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=2, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731701,
+      "prefix": 8,
+      "board": 6,
+      "raw_candidates": 36,
+      "unique_candidates": 33,
+      "unique_legal": 32,
+      "raw_multiplicity_TVD": 0.07767857142857143,
+      "raw_multiplicity_TVD_exact": "87/1120",
+      "expected_safety_trials_without_replacement": 1.0303030303030303,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0004151000175625086,
+          "rejection_seconds": 6.46000262349844e-05,
+          "candidate_generation_seconds": 4.409998655319214e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)",
+          "rejection_action": "DropMove(base_type_id='P', to_square=Square(file=0, rank=2))"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0004149000160396099,
+          "rejection_seconds": 5.979998968541622e-05,
+          "candidate_generation_seconds": 4.2499974370002747e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "rejection_action": "DropMove(base_type_id='P', to_square=Square(file=1, rank=4))"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0004064000677317381,
+          "rejection_seconds": 6.230000872164965e-05,
+          "candidate_generation_seconds": 4.600000102072954e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=5, rank=4), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731701,
+      "prefix": 16,
+      "board": 6,
+      "raw_candidates": 32,
+      "unique_candidates": 29,
+      "unique_legal": 28,
+      "raw_multiplicity_TVD": 0.08640552995391705,
+      "raw_multiplicity_TVD_exact": "75/868",
+      "expected_safety_trials_without_replacement": 1.0344827586206897,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0003664999967440963,
+          "rejection_seconds": 5.809997674077749e-05,
+          "candidate_generation_seconds": 3.830005880445242e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=4, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.00036049995105713606,
+          "rejection_seconds": 5.140004213899374e-05,
+          "candidate_generation_seconds": 3.520003519952297e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=4, rank=1), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0003597000613808632,
+          "rejection_seconds": 5.179992876946926e-05,
+          "candidate_generation_seconds": 3.4800032153725624e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=2), to_square=Square(file=2, rank=5), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731701,
+      "prefix": 24,
+      "board": 6,
+      "raw_candidates": 25,
+      "unique_candidates": 21,
+      "unique_legal": 17,
+      "raw_multiplicity_TVD": 0.12352941176470589,
+      "raw_multiplicity_TVD_exact": "21/170",
+      "expected_safety_trials_without_replacement": 1.2222222222222223,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0002674999414011836,
+          "rejection_seconds": 5.849997978657484e-05,
+          "candidate_generation_seconds": 3.7499936297535896e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=3, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.00025969999842345715,
+          "rejection_seconds": 4.91999089717865e-05,
+          "candidate_generation_seconds": 3.1800009310245514e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=2), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=0), to_square=Square(file=4, rank=0), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0002615000121295452,
+          "rejection_seconds": 5.0200033001601696e-05,
+          "candidate_generation_seconds": 3.320001997053623e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731702,
+      "prefix": 0,
+      "board": 6,
+      "raw_candidates": 48,
+      "unique_candidates": 48,
+      "unique_legal": 48,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0005674000130966306,
+          "rejection_seconds": 6.950006354600191e-05,
+          "candidate_generation_seconds": 5.1200040616095066e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=4, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=4, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0005642999894917011,
+          "rejection_seconds": 6.420002318918705e-05,
+          "candidate_generation_seconds": 4.740001168102026e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=3, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0005444000707939267,
+          "rejection_seconds": 6.390002090483904e-05,
+          "candidate_generation_seconds": 4.710000939667225e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=0, rank=4), promotion_target_id='B')",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=0), to_square=Square(file=3, rank=3), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731702,
+      "prefix": 8,
+      "board": 6,
+      "raw_candidates": 46,
+      "unique_candidates": 46,
+      "unique_legal": 45,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0217391304347827,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0005344999954104424,
+          "rejection_seconds": 9.34000127017498e-05,
+          "candidate_generation_seconds": 6.820005364716053e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='P')"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0005123000591993332,
+          "rejection_seconds": 6.470002699643373e-05,
+          "candidate_generation_seconds": 4.780001472681761e-05,
+          "safety_tests": 1,
+          "bulk_action": "DropMove(base_type_id='A', to_square=Square(file=1, rank=5))",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0005107000470161438,
+          "rejection_seconds": 6.530003156512976e-05,
+          "candidate_generation_seconds": 4.780001472681761e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=3), promotion_target_id='P')",
+          "rejection_action": "DropMove(base_type_id='A', to_square=Square(file=1, rank=5))"
+        }
+      ]
+    },
+    {
+      "seed": 731702,
+      "prefix": 16,
+      "board": 6,
+      "raw_candidates": 65,
+      "unique_candidates": 65,
+      "unique_legal": 64,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0153846153846153,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0006930999225005507,
+          "rejection_seconds": 9.099999442696571e-05,
+          "candidate_generation_seconds": 7.099995855242014e-05,
+          "safety_tests": 1,
+          "bulk_action": "DropMove(base_type_id='A', to_square=Square(file=1, rank=3))",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0007574999472126365,
+          "rejection_seconds": 9.290000889450312e-05,
+          "candidate_generation_seconds": 7.180008105933666e-05,
+          "safety_tests": 1,
+          "bulk_action": "DropMove(base_type_id='X', to_square=Square(file=1, rank=3))",
+          "rejection_action": "DropMove(base_type_id='X', to_square=Square(file=1, rank=5))"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0007110999431461096,
+          "rejection_seconds": 8.429994340986013e-05,
+          "candidate_generation_seconds": 6.529991514980793e-05,
+          "safety_tests": 1,
+          "bulk_action": "DropMove(base_type_id='A', to_square=Square(file=3, rank=2))",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=4), to_square=Square(file=2, rank=5), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731702,
+      "prefix": 24,
+      "board": 6,
+      "raw_candidates": 65,
+      "unique_candidates": 65,
+      "unique_legal": 63,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.03125,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.000610099988989532,
+          "rejection_seconds": 8.500006515532732e-05,
+          "candidate_generation_seconds": 6.560003384947777e-05,
+          "safety_tests": 1,
+          "bulk_action": "DropMove(base_type_id='A', to_square=Square(file=4, rank=1))",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0006088000955060124,
+          "rejection_seconds": 7.800001185387373e-05,
+          "candidate_generation_seconds": 6.150000263005495e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0006152999121695757,
+          "rejection_seconds": 8.220004383474588e-05,
+          "candidate_generation_seconds": 6.530003156512976e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=3, rank=3), promotion_target_id='A')"
+        }
+      ]
+    },
+    {
+      "seed": 731703,
+      "prefix": 0,
+      "board": 8,
+      "raw_candidates": 24,
+      "unique_candidates": 24,
+      "unique_legal": 24,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0003871000371873379,
+          "rejection_seconds": 5.419994704425335e-05,
+          "candidate_generation_seconds": 3.400002606213093e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=6, rank=1), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0003834000090137124,
+          "rejection_seconds": 5.209993105381727e-05,
+          "candidate_generation_seconds": 3.350002225488424e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.00039039994589984417,
+          "rejection_seconds": 5.100003909319639e-05,
+          "candidate_generation_seconds": 3.2400013878941536e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731703,
+      "prefix": 8,
+      "board": 8,
+      "raw_candidates": 32,
+      "unique_candidates": 32,
+      "unique_legal": 32,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0005617999704554677,
+          "rejection_seconds": 7.050007116049528e-05,
+          "candidate_generation_seconds": 4.539999645203352e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=0), to_square=Square(file=5, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0005933999782428145,
+          "rejection_seconds": 6.65000407025218e-05,
+          "candidate_generation_seconds": 4.499999340623617e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=0, rank=1), to_square=Square(file=2, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=6, rank=1), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0005244999192655087,
+          "rejection_seconds": 5.9999991208314896e-05,
+          "candidate_generation_seconds": 3.929995000362396e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731703,
+      "prefix": 16,
+      "board": 8,
+      "raw_candidates": 28,
+      "unique_candidates": 28,
+      "unique_legal": 26,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0740740740740742,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0004787000361829996,
+          "rejection_seconds": 7.240008562803268e-05,
+          "candidate_generation_seconds": 4.780001472681761e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=2, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.000506000011228025,
+          "rejection_seconds": 6.38000201433897e-05,
+          "candidate_generation_seconds": 4.1400082409381866e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=2), to_square=Square(file=4, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=2), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.00045980000868439674,
+          "rejection_seconds": 6.230000872164965e-05,
+          "candidate_generation_seconds": 4.1199964471161366e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=2), to_square=Square(file=4, rank=3), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731703,
+      "prefix": 24,
+      "board": 8,
+      "raw_candidates": 33,
+      "unique_candidates": 33,
+      "unique_legal": 32,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0303030303030303,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0005239000311121345,
+          "rejection_seconds": 6.62999227643013e-05,
+          "candidate_generation_seconds": 4.299997817724943e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=6, rank=1), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=6, rank=4), to_square=Square(file=6, rank=6), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.000516100088134408,
+          "rejection_seconds": 5.91999851167202e-05,
+          "candidate_generation_seconds": 3.979995381087065e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=0, rank=4), to_square=Square(file=2, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=5), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0005155999679118395,
+          "rejection_seconds": 5.9299985878169537e-05,
+          "candidate_generation_seconds": 3.9499951526522636e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=2, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=4), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731704,
+      "prefix": 0,
+      "board": 8,
+      "raw_candidates": 30,
+      "unique_candidates": 30,
+      "unique_legal": 27,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.1071428571428572,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.00042150006629526615,
+          "rejection_seconds": 6.150000263005495e-05,
+          "candidate_generation_seconds": 4.260009154677391e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=5, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=3, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.00042019993998110294,
+          "rejection_seconds": 6.180000491440296e-05,
+          "candidate_generation_seconds": 4.369998350739479e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=4, rank=6), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0004121999954804778,
+          "rejection_seconds": 5.7699973694980145e-05,
+          "candidate_generation_seconds": 3.9499951526522636e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=6, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=4, rank=4), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731705,
+      "prefix": 0,
+      "board": 10,
+      "raw_candidates": 48,
+      "unique_candidates": 48,
+      "unique_legal": 48,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0007053000153973699,
+          "rejection_seconds": 7.539999205619097e-05,
+          "candidate_generation_seconds": 5.330005660653114e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=9, rank=1), to_square=Square(file=9, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=6, rank=1), to_square=Square(file=8, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0007076000329107046,
+          "rejection_seconds": 6.889994256198406e-05,
+          "candidate_generation_seconds": 4.909990821033716e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=6, rank=0), to_square=Square(file=4, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=9, rank=1), to_square=Square(file=9, rank=6), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0006988000823184848,
+          "rejection_seconds": 6.89999433234334e-05,
+          "candidate_generation_seconds": 4.8600020818412304e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=9, rank=1), to_square=Square(file=9, rank=6), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=5, rank=3), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731705,
+      "prefix": 8,
+      "board": 10,
+      "raw_candidates": 43,
+      "unique_candidates": 43,
+      "unique_legal": 43,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.000646200031042099,
+          "rejection_seconds": 7.560010999441147e-05,
+          "candidate_generation_seconds": 5.200004670768976e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=1), to_square=Square(file=6, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=6, rank=1), to_square=Square(file=8, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.000637899967841804,
+          "rejection_seconds": 6.65000407025218e-05,
+          "candidate_generation_seconds": 4.6900007873773575e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=0, rank=5), to_square=Square(file=1, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=1), to_square=Square(file=7, rank=3), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0006379999686032534,
+          "rejection_seconds": 7.100007496774197e-05,
+          "candidate_generation_seconds": 5.110003985464573e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=2, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=0, rank=1), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731705,
+      "prefix": 16,
+      "board": 10,
+      "raw_candidates": 35,
+      "unique_candidates": 35,
+      "unique_legal": 35,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0005327999824658036,
+          "rejection_seconds": 7.099995855242014e-05,
+          "candidate_generation_seconds": 4.910002462565899e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=8, rank=3), to_square=Square(file=8, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=8, rank=3), to_square=Square(file=7, rank=0), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0005344999954104424,
+          "rejection_seconds": 6.280001252889633e-05,
+          "candidate_generation_seconds": 4.3599982745945454e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=8, rank=0), to_square=Square(file=7, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=2), to_square=Square(file=2, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0005321999778971076,
+          "rejection_seconds": 6.220000796020031e-05,
+          "candidate_generation_seconds": 4.279997665435076e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=8, rank=3), to_square=Square(file=8, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=0), to_square=Square(file=6, rank=2), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731705,
+      "prefix": 24,
+      "board": 10,
+      "raw_candidates": 40,
+      "unique_candidates": 40,
+      "unique_legal": 40,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 1.0,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0006373999640345573,
+          "rejection_seconds": 8.160003926604986e-05,
+          "candidate_generation_seconds": 5.840009544044733e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=8, rank=3), to_square=Square(file=8, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=0, rank=5), to_square=Square(file=0, rank=6), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0006096999859437346,
+          "rejection_seconds": 6.560003384947777e-05,
+          "candidate_generation_seconds": 4.579999949783087e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=4, rank=2), to_square=Square(file=2, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=2), to_square=Square(file=3, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.000604800065048039,
+          "rejection_seconds": 6.500002928078175e-05,
+          "candidate_generation_seconds": 4.499999340623617e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=2), to_square=Square(file=6, rank=0), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=0, rank=5), to_square=Square(file=1, rank=2), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731706,
+      "prefix": 0,
+      "board": 10,
+      "raw_candidates": 119,
+      "unique_candidates": 117,
+      "unique_legal": 113,
+      "raw_multiplicity_TVD": 0.017083493651404387,
+      "raw_multiplicity_TVD_exact": "222/12995",
+      "expected_safety_trials_without_replacement": 1.0350877192982457,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0031636999920010567,
+          "rejection_seconds": 0.0001580000389367342,
+          "candidate_generation_seconds": 0.00011530006304383278,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=3, rank=8), promotion_target_id='A')"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.003195199999026954,
+          "rejection_seconds": 0.00016220007091760635,
+          "candidate_generation_seconds": 0.00011959997937083244,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=2, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=8, rank=1), to_square=Square(file=1, rank=8), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0032395999878644943,
+          "rejection_seconds": 0.00015380000695586205,
+          "candidate_generation_seconds": 0.00011140003334730864,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=6, rank=1), to_square=Square(file=3, rank=3), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=8, rank=0), to_square=Square(file=6, rank=2), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731706,
+      "prefix": 8,
+      "board": 10,
+      "raw_candidates": 102,
+      "unique_candidates": 101,
+      "unique_legal": 97,
+      "raw_multiplicity_TVD": 0.010098884914790659,
+      "raw_multiplicity_TVD_exact": "48/4753",
+      "expected_safety_trials_without_replacement": 1.0408163265306123,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.00265039992518723,
+          "rejection_seconds": 0.00016769999638199806,
+          "candidate_generation_seconds": 0.00012229999992996454,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=3, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=0, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0026666000485420227,
+          "rejection_seconds": 0.0001428000396117568,
+          "candidate_generation_seconds": 0.00010369997471570969,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=5, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=5, rank=8), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0026192000368610024,
+          "rejection_seconds": 0.00013729999773204327,
+          "candidate_generation_seconds": 9.850005153566599e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=8, rank=0), to_square=Square(file=6, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=3, rank=8), promotion_target_id='D')"
+        }
+      ]
+    },
+    {
+      "seed": 731706,
+      "prefix": 16,
+      "board": 10,
+      "raw_candidates": 99,
+      "unique_candidates": 98,
+      "unique_legal": 12,
+      "raw_multiplicity_TVD": 0.0,
+      "raw_multiplicity_TVD_exact": "0",
+      "expected_safety_trials_without_replacement": 7.615384615384615,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0008028000593185425,
+          "rejection_seconds": 0.00018159998580813408,
+          "candidate_generation_seconds": 0.00012069998774677515,
+          "safety_tests": 5,
+          "bulk_action": "BoardMove(from_square=Square(file=5, rank=1), to_square=Square(file=5, rank=2), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=9, rank=4), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.0007822000188753009,
+          "rejection_seconds": 0.00013770000077784061,
+          "candidate_generation_seconds": 9.789993055164814e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=0), to_square=Square(file=9, rank=4), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0007847000379115343,
+          "rejection_seconds": 0.00018480001017451286,
+          "candidate_generation_seconds": 9.649991989135742e-05,
+          "safety_tests": 13,
+          "bulk_action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=2, rank=0), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=4, rank=0), promotion_target_id=None)"
+        }
+      ]
+    },
+    {
+      "seed": 731706,
+      "prefix": 24,
+      "board": 10,
+      "raw_candidates": 90,
+      "unique_candidates": 88,
+      "unique_legal": 86,
+      "raw_multiplicity_TVD": 0.022198731501057084,
+      "raw_multiplicity_TVD_exact": "21/946",
+      "expected_safety_trials_without_replacement": 1.0229885057471264,
+      "trials": [
+        {
+          "repeat": 0,
+          "bulk_seconds": 0.0024852000642567873,
+          "rejection_seconds": 0.00013569998554885387,
+          "candidate_generation_seconds": 9.410001803189516e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=3), to_square=Square(file=7, rank=8), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=1, rank=0), to_square=Square(file=3, rank=1), promotion_target_id=None)"
+        },
+        {
+          "repeat": 1,
+          "bulk_seconds": 0.002469700062647462,
+          "rejection_seconds": 0.00012799992691725492,
+          "candidate_generation_seconds": 8.929998148232698e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=1, rank=3), to_square=Square(file=5, rank=5), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=4, rank=4), to_square=Square(file=6, rank=8), promotion_target_id='A')"
+        },
+        {
+          "repeat": 2,
+          "bulk_seconds": 0.0024834999348968267,
+          "rejection_seconds": 0.00012700003571808338,
+          "candidate_generation_seconds": 8.819997310638428e-05,
+          "safety_tests": 1,
+          "bulk_action": "BoardMove(from_square=Square(file=7, rank=3), to_square=Square(file=7, rank=7), promotion_target_id=None)",
+          "rejection_action": "BoardMove(from_square=Square(file=5, rank=0), to_square=Square(file=5, rank=3), promotion_target_id=None)"
+        }
+      ]
+    }
+  ]
+}

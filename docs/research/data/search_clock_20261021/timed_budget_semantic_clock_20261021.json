@@ -1,0 +1,430 @@
+{
+  "question": "Does the measured Windows coarse-clock deadline distortion also appear on a generated semantic ruleset with legal history preserved?",
+  "scope": "One 8x8 semantic cannon ruleset, four explicitly placed cannon pieces, three deterministic legal 4-ply roots, paired coarse GetTickCount64-counterfactual versus QPC calls at 10/20ms, two alternating repeats per root/cap. Evaluator warmed once. No training or strength claim.",
+  "clock_sources": {
+    "coarse": {
+      "implementation": "GetTickCount64()",
+      "resolution": 0.015625
+    },
+    "qpc": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution": 1e-07
+    }
+  },
+  "rows": [
+    {
+      "seed": 17,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.0011332998983561993,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "nodes": 4,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_000:g0:f4-h4",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.01011060003656894,
+          "reported_elapsed_seconds": 0.01009120000526309,
+          "nodes": 85,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 17,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.010072499979287386,
+          "reported_elapsed_seconds": 0.010050199925899506,
+          "nodes": 90,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.012997200014069676,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "nodes": 123,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 17,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.033286600024439394,
+          "reported_elapsed_seconds": 0.03100000007543713,
+          "nodes": 213,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.02007870003581047,
+          "reported_elapsed_seconds": 0.02004940004553646,
+          "nodes": 164,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 17,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.020078200032003224,
+          "reported_elapsed_seconds": 0.020047899917699397,
+          "nodes": 169,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.018631900078617036,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "nodes": 166,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_006:g11:a1-b2",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 29,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.006832099985331297,
+          "reported_elapsed_seconds": 0.01600000006146729,
+          "nodes": 63,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.010049899923615158,
+          "reported_elapsed_seconds": 0.010026799980551004,
+          "nodes": 90,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 29,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.010050799930468202,
+          "reported_elapsed_seconds": 0.010027199983596802,
+          "nodes": 95,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.01319980004336685,
+          "reported_elapsed_seconds": 0.015000000013969839,
+          "nodes": 125,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 29,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.029415199998766184,
+          "reported_elapsed_seconds": 0.03200000000651926,
+          "nodes": 217,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.020290200016461313,
+          "reported_elapsed_seconds": 0.02026549994479865,
+          "nodes": 178,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 29,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.02007679990492761,
+          "reported_elapsed_seconds": 0.02005169994663447,
+          "nodes": 163,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.023306099930778146,
+          "reported_elapsed_seconds": 0.03100000007543713,
+          "nodes": 183,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:c1-c8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 43,
+      "budget_seconds": 0.01,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.011992699932307005,
+          "reported_elapsed_seconds": 0.015999999945051968,
+          "nodes": 106,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.010069599957205355,
+          "reported_elapsed_seconds": 0.010045700008049607,
+          "nodes": 95,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 43,
+      "budget_seconds": 0.01,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.010045500006526709,
+          "reported_elapsed_seconds": 0.010024599963799119,
+          "nodes": 94,
+          "completed_depth": 0,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.013287300011143088,
+          "reported_elapsed_seconds": 0.01600000006146729,
+          "nodes": 125,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 43,
+      "budget_seconds": 0.02,
+      "rep": 0,
+      "order": [
+        "coarse",
+        "qpc"
+      ],
+      "arms": {
+        "coarse": {
+          "external_seconds": 0.03137179999612272,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "nodes": 212,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        },
+        "qpc": {
+          "external_seconds": 0.020054900087416172,
+          "reported_elapsed_seconds": 0.020027899998240173,
+          "nodes": 170,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    },
+    {
+      "seed": 43,
+      "budget_seconds": 0.02,
+      "rep": 1,
+      "order": [
+        "qpc",
+        "coarse"
+      ],
+      "arms": {
+        "qpc": {
+          "external_seconds": 0.020205099950544536,
+          "reported_elapsed_seconds": 0.02018110000062734,
+          "nodes": 174,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        },
+        "coarse": {
+          "external_seconds": 0.031380999949760735,
+          "reported_elapsed_seconds": 0.030999999959021807,
+          "nodes": 222,
+          "completed_depth": 1,
+          "reason": "time_limit",
+          "action": "legacy_008:g2:f3-f8",
+          "action_legal": true
+        }
+      },
+      "state_and_history_unchanged": true
+    }
+  ],
+  "summary": [
+    {
+      "budget_seconds": 0.01,
+      "arm": "coarse",
+      "calls": 6,
+      "external_median": 0.01249494997318834,
+      "reported_median": 0.015999999945051968,
+      "median_nodes": 114.5,
+      "depths": {
+        "0": 3,
+        "1": 3
+      },
+      "all_actions_legal": true
+    },
+    {
+      "budget_seconds": 0.01,
+      "arm": "qpc",
+      "calls": 6,
+      "external_median": 0.010060199943836778,
+      "reported_median": 0.010036449995823205,
+      "median_nodes": 92.0,
+      "depths": {
+        "0": 4,
+        "1": 2
+      },
+      "all_actions_legal": true
+    },
+    {
+      "budget_seconds": 0.02,
+      "arm": "coarse",
+      "calls": 6,
+      "external_median": 0.03039349999744445,
+      "reported_median": 0.031000000017229468,
+      "median_nodes": 212.5,
+      "depths": {
+        "1": 6
+      },
+      "all_actions_legal": true
+    },
+    {
+      "budget_seconds": 0.02,
+      "arm": "qpc",
+      "calls": 6,
+      "external_median": 0.020078450033906847,
+      "reported_median": 0.020050549996085465,
+      "median_nodes": 169.5,
+      "depths": {
+        "1": 6
+      },
+      "all_actions_legal": true
+    }
+  ],
+  "all_states_and_histories_unchanged": true,
+  "all_actions_legal": true
+}

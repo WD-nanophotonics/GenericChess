@@ -1,0 +1,150 @@
+{
+  "question": "On this Windows runtime, does the actual default MatchClock source differ materially from perf_counter at 1s expiry or at 344ms remaining near the UI AI safety margin?",
+  "scope": "Four alternating coarse/QPC repetitions each for 1s Fischer expiry and a QPC-targeted 656ms elapsed budget sample. Busy-loop sampling, no search or training; actual host clock sources, not simulated phases.",
+  "clock_info": {
+    "monotonic_implementation": "GetTickCount64()",
+    "monotonic_resolution": 0.015625,
+    "perf_counter_implementation": "QueryPerformanceCounter()",
+    "perf_counter_resolution": 1e-07
+  },
+  "expiry": [
+    {
+      "rep": 0,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 990.2158000040799,
+      "polls": 918996,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 0,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 1000.0084999483079,
+      "polls": 883007,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 1,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 1000.0056000426412,
+      "polls": 904374,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 1,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 988.7502999044955,
+      "polls": 917336,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 2,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 1002.1241999929771,
+      "polls": 931724,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 2,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 1000.0058000441641,
+      "polls": 910881,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 3,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 1000.0043999170884,
+      "polls": 905006,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    },
+    {
+      "rep": 3,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 995.466300053522,
+      "polls": 923339,
+      "reported_remaining_ms": 0,
+      "expired_owner": 0
+    }
+  ],
+  "budget_samples": [
+    {
+      "rep": 0,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 656.0617999639362,
+      "actual_remaining_ms": 343.9382000360638,
+      "reported_remaining_ms": 360,
+      "allocated_budget_ms": 60.0,
+      "expired_owner": null
+    },
+    {
+      "rep": 0,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 656.0497999889776,
+      "actual_remaining_ms": 343.9502000110224,
+      "reported_remaining_ms": 344,
+      "allocated_budget_ms": 43.999999999999986,
+      "expired_owner": null
+    },
+    {
+      "rep": 1,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 656.0504001099616,
+      "actual_remaining_ms": 343.94959989003837,
+      "reported_remaining_ms": 344,
+      "allocated_budget_ms": 43.999999999999986,
+      "expired_owner": null
+    },
+    {
+      "rep": 1,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 656.0446000657976,
+      "actual_remaining_ms": 343.95539993420243,
+      "reported_remaining_ms": 359,
+      "allocated_budget_ms": 59.0,
+      "expired_owner": null
+    },
+    {
+      "rep": 2,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 656.0481999767944,
+      "actual_remaining_ms": 343.9518000232056,
+      "reported_remaining_ms": 345,
+      "allocated_budget_ms": 44.999999999999986,
+      "expired_owner": null
+    },
+    {
+      "rep": 2,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 656.0461999615654,
+      "actual_remaining_ms": 343.95380003843457,
+      "reported_remaining_ms": 344,
+      "allocated_budget_ms": 43.999999999999986,
+      "expired_owner": null
+    },
+    {
+      "rep": 3,
+      "arm": "qpc",
+      "qpc_elapsed_ms": 656.0407999204472,
+      "actual_remaining_ms": 343.95920007955283,
+      "reported_remaining_ms": 344,
+      "allocated_budget_ms": 43.999999999999986,
+      "expired_owner": null
+    },
+    {
+      "rep": 3,
+      "arm": "coarse",
+      "qpc_elapsed_ms": 656.0478999745101,
+      "actual_remaining_ms": 343.9521000254899,
+      "reported_remaining_ms": 344,
+      "allocated_budget_ms": 43.999999999999986,
+      "expired_owner": null
+    }
+  ]
+}
