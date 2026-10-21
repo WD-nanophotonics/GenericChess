@@ -316,6 +316,14 @@ class FixedScaleSessionEnv:
                          key=lambda a: json.dumps(action_to_dict(a), sort_keys=True))
         return tuple(declarations) + tuple(SessionChoice('ACTION', action=a) for a in actions)
 
+    def winning_declaration(self):
+        """A current rule-authoritative win; assigns no value to other outcomes."""
+        wins = [d for d in self.session.available_declarations() if d.outcome == 'WIN']
+        if not wins:
+            return None
+        return SessionChoice('DECLARATION',
+                             declaration_id=min(wins, key=lambda d: d.declaration_id).declaration_id)
+
     def in_check(self):
         return False  # q0 only; no generic stand-pat/qsearch assertion.
 
@@ -422,6 +430,8 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     Pass learner=None for evaluation. Targets always remain player-0-oriented,
     even when the candidate plays player1. An incomplete query advances no
     action; any observed interior TD transitions may still be learned.
+    An available rule-authoritative WIN declaration can finish without a search
+    query. Its assessment/commit time remains inside the episode deadline.
     """
     if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or seconds <= 0:
         raise ValueError('invalid episode budget or player')
@@ -449,6 +459,17 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
             if remaining <= 0:
                 ending = 'NODE_CAP_UNKNOWN'
                 break
+            # Execute a rule-authoritative win before asking search to compare
+            # it with an unscored outcome. No search score/receipt is fabricated.
+            # Assessment/commit time is paid by the existing episode deadline;
+            # queries/nodes below count AlphaBeta work, not declaration checks.
+            winning = getattr(env, 'winning_declaration', None)
+            choice = winning() if winning is not None else None
+            if choice is not None:
+                guard()
+                env.push(choice)
+                plies += 1
+                continue
             actor = env.player()
             current = model if actor == learner_color else opponent
             receipt = AlphaBeta(depth, 0).search(

@@ -219,7 +219,8 @@ def test_search_non_scoring_terminal_keeps_cost_but_never_creates_a_target():
     assert result.update['samples'] == 0 and env.record() == before
 
 
-def test_perpetual_loss_trains_actual_player0_return_with_full_history():
+@pytest.mark.parametrize('candidate_color', [0, 1])
+def test_perpetual_loss_trains_actual_player0_return_with_full_history(candidate_color):
     # This is a played history, not a state-only repetition-count mock. A
     # dummy fixed P unit leaves R free so the sign of the actual update is visible.
     from generic_chess.core.movement import LeapAtom
@@ -245,16 +246,28 @@ def test_perpetual_loss_trains_actual_player0_return_with_full_history():
     env = FixedScaleSessionEnv(session, unit_type='P')
     before = env.record()
     model = Model([1., .7, 1., 1.])
+    class ObservedTDLeaf(TDLeafEpisode):
+        def finish(self, model, outcome):
+            self.actual_target = outcome
+            return super().finish(model, outcome)
+
+    learner = ObservedTDLeaf()
     result = play_episode(env, model, opponent=Model([1.] * 4),
-        learner=TDLeafEpisode(), learner_color=0, horizon=2, depth=1, seed=0)
+        learner=learner, learner_color=candidate_color, horizon=2, depth=1, seed=0)
     assert result.ending == 'ACTUAL_TERMINAL' and result.outcome == -1
     assert env.session.result.status is SessionStatus.PERPETUAL_CHECK
     assert env.session.result.winner == 1 and result.plies == 2
     assert len(env.record()['actions']) == 8 and len(before['actions']) == 6
     prediction = tanh(.7 / 10.)
     expected = .7 + .05 * (-1 - prediction) * (1 - prediction ** 2) / 10.
+    assert learner.actual_target == -1  # Never invert the target for candidate1.
+    expected = expected if candidate_color == 0 else .7  # Candidate1 already sees terminal PV.
     assert model.weights == pytest.approx([1., expected, 1., 1.], abs=1e-15)
-    assert result.update['terminal_credit_l1'] > 0 and not result.update['censored']
+    assert not result.update['censored']
+    if candidate_color == 0:
+        assert result.update['terminal_credit_l1'] > 0
+    else:
+        assert result.update['terminal_credit_l1'] == 0
     assert env.replay().record() == env.record()
     assert FixedScaleSessionEnv(session, unit_type='P').record() == before
 
@@ -268,6 +281,50 @@ def test_actual_no_progress_draw_is_distinct_from_external_horizon():
                           learner=TDLeafEpisode(), horizon=1, depth=1)
     assert result.outcome == 0 and result.ending == 'ACTUAL_TERMINAL'
     assert env.session.result.status is SessionStatus.NO_PROGRESS_DRAW
+    assert not result.update['censored'] and env.replay().record() == env.record()
+
+
+def test_alternate_initial_setup_survives_search_play_and_full_replay():
+    from generic_chess.rules.schema import RuleInitialSetupOption
+    from generic_chess.session.result import SessionStatus
+
+    rules = krk_ruleset(4)
+    board = [None] * 16
+    for index, piece in ((1, Piece(0, 'K', 'K')), (3, Piece(1, 'K', 'K')),
+                         (8, Piece(0, 'R', 'R'))):
+        board[index] = piece
+    alternate = tuple(tuple(board[i:i + 4]) for i in range(0, 16, 4))
+    rules = replace(rules, initial_setup_options=(RuleInitialSetupOption('mate', alternate),))
+    compiled = compile_ruleset_for_execution(rules)
+    env = FixedScaleSessionEnv(GameSession(compiled, initial_setup_key='mate'), unit_type='R')
+    before = env.record()
+    assert before['schema_version'] == 3 and before['initial_setup_key'] == 'mate'
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          horizon=1, depth=1)
+    assert result.outcome == 1 and env.session.result.status is SessionStatus.CHECKMATE
+    assert env.record()['initial_setup_key'] == 'mate'
+    assert env.replay().record() == env.record()
+    assert FixedScaleSessionEnv(GameSession(compiled), unit_type='R').record() != before
+
+
+def test_real_pass_action_can_end_the_shared_episode_by_rule_draw():
+    from generic_chess.core.actions import PassAction
+    from generic_chess.rules.schema import RuleConsecutiveActionAdjudication
+    from generic_chess.session.result import SessionStatus
+
+    board = [None] * 16
+    for index, piece in ((0, Piece(0, 'K', 'K')), (15, Piece(1, 'K', 'K')),
+                         (14, Piece(1, 'R', 'R'))):
+        board[index] = piece
+    rules = replace(krk_ruleset(4), pass_enabled=True,
+        consecutive_action_adjudications=(RuleConsecutiveActionAdjudication('pass', 1, 'DRAW'),),
+        initial_position=tuple(tuple(board[i:i + 4]) for i in range(0, 16, 4)))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), horizon=1, depth=1)
+    assert result.outcome == 0 and result.ending == 'ACTUAL_TERMINAL'
+    assert env.session.result.status is SessionStatus.ACTION_CLASS_DRAW
+    assert isinstance(env.session.to_record().actions[-1], PassAction)
     assert not result.update['censored'] and env.replay().record() == env.record()
 
 
@@ -286,6 +343,114 @@ def test_neutral_declaration_can_still_hide_a_real_win_without_inventing_utility
     receipt = AlphaBeta(1, 0).search(env, Model([1., 1.]), seed=0)
     assert not receipt.complete and receipt.action is None and receipt.value is None
     assert receipt.nodes > 0 and receipt.samples == () and env.record() == before
+    # The shared player can commit an already authoritative WIN without
+    # needing a scalar comparison or an invented search observation.
+    model = Model([1., 1.])
+    result = play_episode(env, model, opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), horizon=1)
+    assert result.outcome == 1 and result.ending == 'ACTUAL_TERMINAL'
+    assert result.plies == 1 and result.queries == result.nodes == 0
+    assert result.update['observed_searches'] == result.update['samples'] == 0
+    assert model.weights == [1., 1.] and env.replay().record() == env.record()
+
+
+def test_winning_declaration_belongs_to_actor_and_keeps_player0_outcome():
+    rules = replace(krk_ruleset(4), declarations=(
+        RuleDeclaration('win1', 1, require_not_in_check=False, failure_outcome='WIN'),
+        RuleDeclaration('neutral1', 1, require_not_in_check=False, failure_outcome='NO_CONTEST')))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
+    assert env.player() == 0 and env.winning_declaration() is None
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), learner_color=1, horizon=2, depth=1)
+    assert result.outcome == -1 and env.session.result.winner == 1
+    assert result.plies == 2 and result.queries == 1
+    assert result.update['observed_searches'] == 0 and not result.update['censored']
+    assert env.session.to_record().declaration.declaration_id == 'win1'
+    assert env.replay().record() == env.record()
+
+
+def test_winning_declaration_never_bypasses_stop_after_assessment():
+    env = FixedScaleSessionEnv(declaration_session('WIN'), unit_type='R')
+    before = env.record()
+    polls = 0
+
+    def stop():
+        nonlocal polls
+        polls += 1
+        if polls == 2:
+            raise BudgetEnd('STOPPED_USER')
+
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), horizon=1, cancel=stop)
+    assert result.outcome is None and result.ending == 'STOPPED_USER'
+    assert result.nodes == result.queries == result.plies == 0
+    assert env.record() == before and result.update['observed_searches'] == 0
+
+
+def test_winning_declaration_never_bypasses_deadline_after_assessment(monkeypatch):
+    from generic_chess.learning import incremental
+
+    env = FixedScaleSessionEnv(declaration_session('WIN'), unit_type='R')
+    before = env.record()
+    calls = 0
+
+    def clock():
+        nonlocal calls
+        calls += 1
+        return 0. if calls <= 2 else 2.
+
+    monkeypatch.setattr(incremental.time, 'perf_counter', clock)
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), horizon=1, seconds=1.)
+    assert result.outcome is None and result.ending == 'TIME_CAP_UNKNOWN'
+    assert result.nodes == result.queries == result.plies == 0 and env.record() == before
+
+
+def test_known_win_does_not_resume_an_exhausted_episode_node_budget():
+    rules = replace(krk_ruleset(4), declarations=(
+        RuleDeclaration('win1', 1, require_not_in_check=False, failure_outcome='WIN'),))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
+    model = Model([1., 1.])
+    probe = AlphaBeta(1, 0).search(env, model, seed=0)
+    assert probe.complete
+    result = play_episode(env, model, opponent=Model([1., 1.]),
+                          horizon=2, depth=1, max_nodes=probe.nodes, seed=0)
+    assert result.nodes == probe.nodes and result.queries == result.plies == 1
+    assert result.outcome is None and result.ending == 'NODE_CAP_UNKNOWN'
+    assert env.winning_declaration().declaration_id == 'win1'
+    assert env.session.to_record().declaration is None
+
+
+def test_capture_then_known_win_trains_from_actual_outcome_without_neutral_label():
+    from generic_chess.rules.schema import RuleWeightedMaterialMetric, RuleDeclarationOutcomeBand
+
+    board = [None] * 16
+    for index, piece in ((1, Piece(0, 'K', 'K')), (3, Piece(1, 'K', 'K')),
+                         (4, Piece(0, 'R', 'R')), (8, Piece(1, 'R', 'R'))):
+        board[index] = piece
+    declarations = tuple(RuleDeclaration(name, 0, require_not_in_check=False,
+        weighted_metric=RuleWeightedMaterialMetric(weights={'R': 1}, include_hands=True),
+        outcome_bands=(RuleDeclarationOutcomeBand(2, outcome),), failure_outcome='LOSS')
+        for name, outcome in (('win', 'WIN'), ('neutral', 'NO_CONTEST')))
+    rules = replace(krk_ruleset(4), capture_disposition='capture_to_hand',
+        drop_allowed={'R': ((True,) * 16,) * 2}, declarations=declarations,
+        initial_position=tuple(tuple(board[i:i + 4]) for i in range(0, 16, 4)))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
+    assert env.winning_declaration() is None
+    model = Model([1., 1.])
+    receipts = []
+    result = play_episode(env, model, opponent=Model([1., 1.]),
+        learner=TDLeafEpisode(), learner_color=0, horizon=3, depth=1,
+        on_query=lambda ply, actor, receipt: receipts.append((actor, receipt)))
+    assert result.outcome == 1 and result.plies == 3 and result.queries == 2
+    assert len(receipts) == 2 and receipts[0][1].pv_phi == (1, 1)
+    assert not receipts[0][1].pv_terminal
+    assert result.update['observed_searches'] == result.update['samples'] == 1
+    prediction = tanh(2. / 10.)
+    expected = 1. + .05 * (1. - prediction) * (1. - prediction ** 2) / 10.
+    assert model.weights == pytest.approx([1., expected], abs=1e-15)
+    assert env.session.to_record().declaration.declaration_id == 'win'
+    assert env.replay().record() == env.record()
 
 
 @pytest.mark.parametrize('opening_cost', [.25, .75])

@@ -24,6 +24,8 @@ or extend its old caps to justify sunk engineering cost.
 | tasks2628/2629, semantic-action controls | Saved bounds [-0.15625,0.109375] and [-0.05469,0.02344]. | Both cross zero; no basis for extending the same panel merely to obtain significance. |
 | task2636, unregistered design | Sixteen 8x8 movement/drop candidates and prefix-disjoint frozen root pool. | No learning/strength result; lacks complete Generic semantics. Retired before launch. |
 | Reusable semantic pilot, 2026-10-21 | 119 training episodes, 106 updates; 95/128 evaluation slots, 52 actual terminals, 43 UNKNOWN and 33 missing. Full paired completion bound [-83/64,69/64]. | One exposed stress rule; no identified gain or independent rule/position holdout. No weight adoption or cap extension. |
+| Prospective no-progress variant | 48 training episodes/48 updates; 46/128 evaluation slots,30 actual terminals,16 UNKNOWN,82 missing; bound[-3/2,25/16]. | Changed game/seed/budget, not a causal comparison. Full-history replay costs limit throughput; no weight adoption. |
+| One natural8x8 sample | Default generator seed2026102101; initial D2 completes311nodes. One episode makes16 legal plies/one TD update, then a query time limit; UNKNOWN retained. | No strength/holdout claim; initial-root feasibility did not ensure later-query completion. |
 
 Historical detailed reports and closed payloads are available in Git history at
 `7fe1a9d6e3ab2772e520afc0784627ebd7e7d9c4` and earlier revisions.
@@ -48,45 +50,61 @@ evidence. Cleanup does not make their inputs unexposed or reset their budgets.
 
 ## Next useful work
 
-1. Use the completed pilot's logs to explain one of its 23 candidate-action
-   divergences. All 18 double-terminal pairs tie; other pairs are censored or
-   missing. Identify a specific mechanism worth testing, not another larger
-   seed/rule matrix. Treat the diagnosis as post hoc and do not reuse these
-   exposed roots as a future independent holdout.
-2. If that mechanism changes a learning decision, design one bounded test with
-   separate training and natural-distribution validation. Keep the same learner,
-   full rule/history semantics, actual W/L/D and explicit UNKNOWN/missing.
-   Otherwise investigate the existing non-scoring-declaration search limitation
-   with one real rule control; do not build a solver or audit prerequisite.
-3. Complete Generic coverage remains open. History-dependent outcomes and
-   non-scoring terminals need explicit scope; type-count gradients or action
-   changes do not prove knowledge transfer, useful prices or playing strength.
+1. Natural-input late-query contract: the preserved root has63 legal actions,
+   including37 drops. D2 pays2360 nodes but returns incomplete; a separate D1
+   completes64nodes/.062s. Specify a last-completed-depth decision/TD-target
+   contract with one shared node/time budget before one fresh bounded episode.
+   Pay partial D2 work, record actual target depth, never invent an exact D2
+   label/draw or continue the capped episode. Reuse the common search, no new
+   engine, matrix, worker or registration/audit framework.
+2. The no-progress variant gives genuine rule draws but not identified learning
+   gain. A same6-node D1 control requires5 versus170 underlying transitions
+   because the reference replays history. Keep this cost explicit; do not bypass
+   correctness or assume higher terminal coverage makes a useful training game.
+3. Prior diagnosis remains useful: the exposed capture preference changes at
+   board-TP + hand-R = 0; about72% of the old TP fall comes from terminal-PV TD
+   targets. D8 exhausted800k nodes without a result. No deeper retry, clamping
+   negative prices, missing-terminal explanation or old-panel extension follows.
+   Current play executes an already authoritative WIN declaration before search;
+   neutral options without such a win remain UNKNOWN. General coverage is open.
 
-The cleanup is complete. The new bounded semantic pilot used the common code
-and stopped at its original 1800-second deadline; no frozen task was revived.
+The cleanup is complete. The first semantic pilot ended when its original
+1800-second guard triggered (1800.026s measured); no frozen task was revived.
 See INCREMENTAL_TDLEAF.md for configuration, exact result and limits.
 Existing frozen experiments remain frozen. Expected >=120 minutes needs
 explicit Chat mailbox assessment. Do not split runs to evade that threshold.
 
 ## Slack advice and ownership
 
-Claude comment TS `1792546475.322549` was read live in #generic-chess;
-current saved revision SHA-256 is
-`f8a33829444b5b2ed55816fdc592163de49fe41f9036c733540b9b7702bf9866`.
+Claude comments TS `1792546475.322549` and `1792558608.371949` were read live
+in #generic-chess; exact originals and revision decisions stay private.
 Adopt the criticism of audit proliferation and stop its underlying work,
 including the unregistered panel framework. Defer MCTS, Fairy-Stockfish/Elo,
 SPRT and feature redesign: these suggestions do not supersede the user's
 TD/search-bootstrap route. Reject replacing UNKNOWN with adjudicated draws
-or numeric outcomes absent actual rule authority. Initial material features
+or numeric outcomes absent actual rule authority. The later comment clarifies
+that prospective rules may explicitly define repetition/no-progress draws;
+adopt that distinction without modifying frozen games. Initial material features
 being zero on symmetric starts does not establish that the features never
 activate or that the rules are indistinguishable during play.
+The existing Gumbel code was checked locally, without starting an MCTS study:
+`policy=None, checkpoint=None` has uniform priors and zero nonterminal values.
+A real continuous-check-loss history reaches winner1 in both Core and Native,
+but its current Gumbel terminal mapping returns0 for that non-checkmate win.
+Thus the proposed baseline needs semantic repair before use on that domain;
+no Gumbel code/default, other checkout or benchmark scope was changed.
 
 DEV_AUX owns only this checkout / sidemission. PRIMARY owns sandbox integration;
 DEEPSEEK remains independent. No new workers or cross-role state changes.
-The hourly research continuation resumed the existing session and confirmed
-work; cleanup itself earned no research credit. New Chat theory comments at
+The previous continuation preserved its existing session and confirmed work;
+this segment started anew only after that segment ended. Cleanup and publication
+earn no research credit. New Chat theory comments at
 TS1792556353.483249 and1792556421.498529 were read: adopt the distinction between
 algorithm reuse and knowledge transfer, risk-proportional validation, and
 mechanism-first choices. Defer their larger theory/solver experiments as future
 questions. Normal periodic Chat protocol applies; the existing SEND_UNCERTAIN
 report could not be confirmed by the complete read and was not resent.
+The intended900-second training-phase limit had a stale pre-opening time window;
+strict old phase compliance is unmeasured. The runner now guards that deadline
+and grants only post-opening remaining time. The measured1800.026-second total,
+all old results, budgets and missing slots remain unchanged.
