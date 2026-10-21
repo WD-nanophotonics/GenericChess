@@ -1,5 +1,42 @@
 # Current collaboration record
 
+## 2026-10-22 — full parameter regions and matched composition mechanisms
+
+DEV_AUX read the new Claude mailbox comment1792601379.333259 and adopted the
+broader Position-domain/explicit-supervised comparison with limits. Complete
+reachable graphs are still initial-layout-dependent and fresh-history labels
+are not played-history labels. A separate array move generator and an old5x5
+cap extension were not adopted. Reused sandbox5442b3c1's committed admission
+comment;every shared package file matches it,with only two AUX learner additions.
+PRIMARY work/state and its uncommitted changes remain independent.
+
+The study completes517,890three-model public calls plus2,244,190B-axis slots,
+including172,630reused calls,with0missing/UNKNOWN. Best measured coefficients
+depend on composition and depth. Two count-matched real-game witnesses prove
+opposite useful parameter effects;Core certificates and one-side-C controls
+expose the missing vertical mate. These are finite selected mechanisms,not
+intrinsic prices or new whole-game strength estimates. Two D12PV-replay UNKNOWN
+remain;no cap or slot reset. The first-update/final TD models have identical
+67,718ABC public actions AND nodes;RNG increases coverage but not endpoint region.
+
+The analysis-only scalar expression was corrected to actual Model.raw after
+one-ULP tie splitting;public search/learner never had that defect. Filename and
+D2witness-assumption failures remain,with original deadlines. Task2620's32node
+request mismatch is nonbinding at first divergence;old bounds/censoring remain.
+No retired audit framework,extra Agent/worker,training episodes or scheduler.
+Generated traces stay ignored;curated inputs/certificates/aggregates are public.
+Raw learning replay was local,not an independent remote raw-trajectory audit.
+
+All147related tests pass. Six exact near-uniform equality lines give12
+label-blind perturbation chambers;all812,616public calls complete. Learned
+chamber matchesfinal67,718actions/nodes;adjacentD2errors1324versus1326. Closed
+RNG episode3pure-bootstrap crossing causes two selected fresh regressions,
+but0qualitychanges atits12experienced histories. No new default is selected.
+The next check has begun with two legal20/21ply original-root paths;their
+actual-history labels/decisions are NOTCOMPUTED. The old SEND_UNCERTAIN
+Slack report is not resent;this role's same-chat ACTIVE90minute cadence remains.
+Details: docs/research/LEAPER_PARAMETER_REGIONS_20261022.md.
+
 ## 2026-10-22 — layout, conditional contribution and actual learning limits
 
 DEV_AUX reused committed sandbox07b4b4a2,including the semantic caller/test.

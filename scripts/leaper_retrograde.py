@@ -207,6 +207,19 @@ def root_action_labels(graph, root):
     Fresh child labels alone are unsafe when a winning child can revisit the
     parent. One blocked-root attractor scores every first action correctly.
     """
+    if root in graph['terminals']:return {}
+    raw={a:-graph['values'][c]for a,c in zip(graph['actions'][root],graph['edges'][root])}
+    # Only a putative WIN action whose losing child has no smaller rank can
+    # rely on revisiting this winning parent. For every other label, a
+    # rank-decreasing winning strategy or residual-draw strategy avoids it.
+    # Losing parents have ALL winning children at strictly smaller ranks.
+    # Draw/losing alternatives of a winning parent cannot improve by replacing
+    # that parent's win with draw. Fall back to the full attractor for ANY
+    # unprotected winning child, including those not chosen by a searcher.
+    if graph['values'][root]!=1 or all(
+        graph['values'][c]!=-1 or graph['ranks'][c]<graph['ranks'][root]
+        for c in graph['edges'][root]):
+        return raw
     edges=list(graph['edges']);edges[root]=()
     values,_=attractor(edges,dict(graph['terminals'])|{root:0})
     labels={a:-values[c]for a,c in zip(graph['actions'][root],graph['edges'][root])}
@@ -429,6 +442,82 @@ def composition_without_clock(output, *, ratios=(.25,.75,1.,1.25,3.),
             unknown=sum(x['optimal']is None for x in rs),errors=sum(x['optimal']is False for x in rs))
             for w in('ABA','ABC')for r in ratios for d in depths
             for rs in([x for x in rows if x['world']==w and x['ratio']==r and x['depth']==d],)])
+    (output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+    return summary
+
+
+def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
+                         reused=(), whole_seconds=600):
+    """Frozen policies at identical complete legal histories in two rule worlds.
+
+    Caches must be own generated graphs. Labels are observer-only, recomputed
+    with the full prefix. A reused row names the world/index/model/depth and
+    must carry an action, exact label and completed depth; its action is checked
+    against the current graph. No training or missing-slot retry occurs here.
+    """
+    import gzip,pickle
+    from generic_chess.core.actions import action_from_dict
+    from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,BudgetEnd
+    from generic_chess.learning.mainline_search import search
+    from scripts.leaper_microgames import session_at
+    output=Path(output);output.mkdir(parents=True,exist_ok=False)
+    began=time.perf_counter();rows=[];contexts=[];status='COMPLETE'
+    config=dict(caches={k:str(v)for k,v in caches.items()},prefixes=prefixes,
+        models=models,depths=depths,whole_seconds=whole_seconds,query_nodes=100000,
+        query_seconds=3,selection='Previously fixed common legal prefixes; exposed finite diagnostic')
+    (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
+    (output/'executed-source.py').write_bytes(Path(__file__).read_bytes())
+    old={(r['world'],r['index'],r['model'],r['depth']):r for r in reused}
+    def guard():
+        if role_stop_requested():raise BudgetEnd('STOPPED_USER')
+        if time.perf_counter()-began>=whole_seconds:raise BudgetEnd('WHOLE_TIME_UNKNOWN')
+    try:
+        with(output/'queries.jsonl').open('x',encoding='utf-8')as stream:
+            for world,cache in caches.items():
+                guard();g=pickle.loads(gzip.decompress(Path(cache).read_bytes()))
+                g['compiled']=compile_ruleset_for_execution(g['rules'])
+                for index,encoded in enumerate(prefixes):
+                    guard();path=tuple(action_from_dict(a)for a in encoded)
+                    session=session_at(g['compiled'],None,path);state=session.state
+                    assert not state.terminal_status.is_terminal
+                    labels=history_action_labels(g,state);best=history_value(g,state)
+                    assert set(labels)==set(legal_actions(state,g['compiled']))
+                    contexts.append(dict(world=world,index=index,best=best,ply=state.ply_count,
+                        action_values=[dict(action=action_to_dict(a),value=v)for a,v in labels.items()]))
+                    env=FixedScaleSessionEnv(session,unit_type='A')
+                    for name,weights in models.items():
+                        for depth in depths:
+                            guard();key=(world,index,name,depth)
+                            if key in old:
+                                row=dict(old[key]);a=action_from_dict(row['action'])
+                                assert row['completed_depth']==depth and labels[a]==row['chosen_value']
+                                assert row['exact_best']==best
+                                row['reused']=True
+                            else:
+                                remaining=whole_seconds-time.perf_counter()+began
+                                if remaining<=0:raise BudgetEnd('WHOLE_TIME_UNKNOWN')
+                                receipt=search(env,Model(weights),depth=depth,nodes=100000,
+                                    seconds=min(3,remaining),cancel=guard)
+                                a=receipt.action.action if receipt.complete and receipt.action else None
+                                value=None if a is None else labels[a]
+                                row=dict(world=world,index=index,model=name,depth=depth,
+                                    completed_depth=receipt.completed_depth,complete=receipt.complete,
+                                    nodes=receipt.nodes,seconds=receipt.seconds,reason=receipt.reason,
+                                    exact_best=best,chosen_value=value,
+                                    optimal=None if value is None else value==best,
+                                    action=None if a is None else action_to_dict(a),reused=False)
+                            rows.append(row);stream.write(json.dumps(row)+'\n');stream.flush()
+                print('completed',world,'seconds',time.perf_counter()-began,flush=True)
+    except(BudgetEnd,Exhaustion)as error:status=str(error)
+    planned=len(caches)*len(prefixes)*len(models)*len(depths)
+    summary=dict(config=config,status=status,planned=planned,recorded=len(rows),missing=planned-len(rows),
+        reused=sum(r['reused']for r in rows),new_nodes=sum(r['nodes']for r in rows if not r['reused']),
+        seconds=time.perf_counter()-began,contexts=contexts,
+        table=[dict(world=w,model=m,depth=d,queries=len(rs),
+            requested_complete=sum(r['complete']and r['completed_depth']==d for r in rs),
+            unknown=sum(r['optimal']is None for r in rs),errors=sum(r['optimal']is False for r in rs))
+            for w in caches for m in models for d in depths
+            for rs in([r for r in rows if(r['world'],r['model'],r['depth'])==(w,m,d)],)])
     (output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
     return summary
 

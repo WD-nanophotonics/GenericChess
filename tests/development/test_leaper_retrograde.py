@@ -168,6 +168,25 @@ def test_blocked_root_action_labels_match_complete_one_move_histories(graph):
             assert label==-history_value(graph,child)
 
 
+def test_rank_shortcut_agrees_with_independent_root_block_on_cyclic_graphs():
+    import random
+    rng=random.Random(20261022)
+    for _ in range(300):
+        n=12
+        edges=[tuple(j for j in range(n)if j%2!=i%2 and rng.random()<.35)
+               for i in range(n)]
+        terminals={i:rng.choice((-1,0,1))for i,cs in enumerate(edges)if not cs}
+        for i in rng.sample(range(n),3):edges[i]=();terminals[i]=rng.choice((-1,0,1))
+        values,ranks=attractor(edges,terminals)
+        g=dict(edges=edges,actions=[tuple(range(len(e)))for e in edges],
+            values=values,ranks=ranks,terminals=terminals)
+        for root,children in enumerate(edges):
+            if not children:continue
+            blocked=list(edges);blocked[root]=()
+            truth,_=attractor(blocked,terminals|{root:0})
+            assert root_action_labels(g,root)=={a:-truth[c]for a,c in enumerate(children)}
+
+
 def test_one_prefix_attractor_labels_agree_with_each_actual_child_history(graph):
     from scripts.leaper_retrograde import history_action_labels
     from scripts.leaper_microgames import session_at
