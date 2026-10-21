@@ -734,3 +734,27 @@ charge that profile's opening/play/replay work,not wall waiting during another
 profile. Preserve resource differences. One coupled seed can distinguish this condition,not prove
 initialization robustness or population superiority. No hyperparameter grid,
 favorable-checkpoint selection,new framework or repeated old fitness follows.
+
+### Coupled comparison,prospective 2026-10-21
+
+Use fresh seed27192 on the same exposed natural rule2. Both arms start from the
+same random[.5,1.5] vector with fixed unit1,receive the same ordered random-opening
+and search seeds,and use the unchanged library learner atlambda.95/1. Each arm
+has128episode ceiling,2Mnodes/900s. The fixed foe is uniform iterativeD2; candidate
+is iterativeD2,H128,8192/query,60000/game. Then freeze both vectors and evaluate
+16new opening families/both colors against that foe,with ONE shared initial
+profile:96slots. Each profile gets1Mnodes/400s of its own opening/play/replay time,
+not elapsed time during other profiles; the overall fuse is3000s/7Mnodes.
+Node/time exhaustion retains UNKNOWN/missing slots,no extension or replacement.
+This compares entire bounded learning policies: the two training trajectories
+can diverge and reach different numbers of episodes under equal allowances.
+
+The existing entry now has optional `--compare-lambda`,per-arm `--train-seconds`
+and per-profile `--eval-seconds`. The legacy single-arm defaults remain. A real
+six-slot q0 smoke completes with no missing slots; all6outcomes are horizonUNKNOWN.
+50focused tests pass,including shared initialization/root/search seeds,independent
+profile budgets and fixed missing-slot denominators. No engine/rules fork added.
+
+```powershell
+.venv\Scripts\python.exe -m scripts.incremental_learning --rules artifacts/natural-rule-2026102102.json --unit P --seed 27192 --td-lambda .95 --compare-lambda 1 --train-episodes 128 --eval-pairs 16 --train-nodes 2000000 --eval-nodes 1000000 --train-seconds 900 --eval-seconds 400 --seconds 3000 --horizon 128 --depth 2 --iterative --opponent-depth 2 --opponent-iterative --query-nodes 8192 --game-nodes 60000 --output artifacts/coupled-lambda-20261021
+```

@@ -676,3 +676,67 @@ def test_runner_charges_opening_time_and_uses_training_deadline(monkeypatch, tmp
     saved = json.loads((args.output / 'summary.json').read_text())
     assert saved['evaluation_UNKNOWN'] == saved['evaluation_slots']
     assert saved['missing_evaluation_slots'] + saved['evaluation_slots'] == 4
+
+
+def test_coupled_runner_shares_initial_and_seeds_but_not_profile_budgets(monkeypatch, tmp_path):
+    import json
+    from pathlib import Path
+    from types import SimpleNamespace
+    from generic_chess.learning.incremental import EpisodeResult
+    from scripts import incremental_learning as runner
+
+    clock, calls = [0.], []
+
+    class Env:
+        names = ('unit', 'other')
+        def __init__(self, *a, **k): self.moves = []
+        def terminal(self): return None
+        def actions(self): return (0, 1)
+        def push(self, a):
+            self.moves.append(a)
+            clock[0] += .01
+        def replay(self): return self
+        def record(self): return {'actions': list(self.moves)}
+
+    def play(env, model, **kw):
+        learner = kw['learner']
+        calls.append((list(model.weights), kw['seed'], kw['learner_color'],
+                      env.record(), kw['seconds'], learner is not None))
+        kw['on_query'](0, kw['learner_color'], Receipt(None, None, None, False,
+            (), kw['max_nodes'], False, 0, .1, 'NODE_CAP_UNKNOWN'))
+        clock[0] += .1
+        if learner is not None:
+            model.weights[1] += learner.lam
+        return EpisodeResult(None, 'NODE_CAP_UNKNOWN', 0, 1, kw['max_nodes'], .1,
+                             {'changed': True} if learner is not None else None)
+
+    state = tmp_path / '.local_agent'
+    state.mkdir()
+    for name in ('rollout', 'advisor', 'slack'):
+        (state / (name + '.json')).write_text('{}')
+    monkeypatch.setattr(runner, 'ROOT', tmp_path)
+    monkeypatch.setattr(runner, 'perf_counter', lambda: clock[0])
+    monkeypatch.setattr(runner, 'FixedScaleSessionEnv', Env)
+    monkeypatch.setattr(runner, 'play_episode', play)
+    monkeypatch.setattr(runner.subprocess, 'check_output', lambda *a, **k: 'a' * 40)
+    rules = Path(__file__).resolve().parents[2] / 'docs/research/data/incremental_semantic_pilot_20261021.json'
+    args = SimpleNamespace(rules=rules, output=tmp_path / 'run', unit='R', seed=19,
+        seconds=10., train_episodes=2, eval_pairs=1, train_nodes=10, eval_nodes=10,
+        train_seconds=1., eval_seconds=1., compare_lambda=1., td_lambda=.95,
+        horizon=2, depth=1, query_nodes=10, game_nodes=10)
+    result = runner.run(args)
+    # Each arm pays its own10 nodes; each eval profile can play justONE slot.
+    assert result['training_episodes'] == 2 and result['evaluation_slots'] == 3
+    assert result['missing_evaluation_slots'] == 3
+    assert result['status'] == 'PROFILE_CAPS_WITH_MISSING'
+    assert calls[0][:4] == calls[1][:4]  # init, search seed, color and opening
+    assert all(value == 10 for value in result['costs'].values())
+    rows = [json.loads(s) for s in (args.output / 'episodes.jsonl').read_text().splitlines()]
+    evaluation = [r for r in rows if r['phase'] == 'eval']
+    assert [r['profile'] for r in evaluation] == ['lambda_a', 'lambda_b', 'initial']
+    assert evaluation[-1]['weights'] == result['config']['initial_weights']
+    assert evaluation[0]['start_record'] == evaluation[1]['start_record'] == evaluation[2]['start_record']
+    assert calls[2][1:4] == calls[3][1:4] == calls[4][1:4]
+    # Active-time accounting excludes the other profiles' work.
+    assert all(0 < value < .2 for value in result['profile_seconds'].values())
+    assert result['contrasts']['lambda_b-lambda_a'] == [-2., 2.]
