@@ -147,3 +147,30 @@ def test_generic_episode_defaults_to_public_search_and_updates_same_learner(monk
     assert result.nodes==sum(d.nodes+d.qnodes for d in calls)<=2000
     assert result.update['observed_searches']<=result.queries
     assert env.replay().record()==env.record()
+
+
+def test_model_epoch_and_shallower_request_do_not_reuse_a_previous_player():
+    env=FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(krk_ruleset(4))),unit_type='R')
+    before=env.record()
+    old=Model([1.,.731])
+    search(env,old,depth=3,nodes=20000,seconds=10)
+    new=Model([1.,-2.31])
+    fresh=search(env,new,depth=1,nodes=20000,seconds=10)
+    control=search(env,new,depth=1,nodes=20000,seconds=10,use_tt=False,use_ordering=False)
+    assert fresh.complete and control.complete
+    assert fresh.value==pytest.approx(control.value,abs=1e-10)
+    assert fresh.completed_depth==1 and env.record()==before
+    if not fresh.pv_terminal:
+        assert fresh.value==pytest.approx(new.raw(fresh.pv_phi),abs=1e-10)
+
+
+@pytest.mark.parametrize('tt,ordering', [(False,False),(False,True),(True,False),(True,True)])
+def test_existing_search_switches_preserve_full_depth_material_value(tt,ordering):
+    compiled=compile_ruleset_for_execution(weird_rulesets()[0])
+    unit=next(t.type_id for t in compiled.support.type_metadata.values() if not t.is_anchor)
+    env=FixedScaleSessionEnv(GameSession(compiled),unit_type=unit)
+    model=Model([1.]+[.731+.013*i for i in range(len(env.names)-1)])
+    result=search(env,model,depth=3,nodes=20000,seconds=10,use_tt=tt,use_ordering=ordering)
+    reference=AlphaBeta(3,0).search(env,model,nodes=20000,seconds=10,seed=73)
+    assert result.complete and reference.complete and result.completed_depth==3
+    assert result.value==pytest.approx(reference.value,abs=1e-10)

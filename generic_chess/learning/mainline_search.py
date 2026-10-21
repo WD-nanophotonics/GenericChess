@@ -19,10 +19,13 @@ from .incremental import (
 
 
 def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
-           cancel=lambda: None):
+           cancel=lambda: None, use_tt=True, use_ordering=True):
     """One mainline iterative q0 call; seed does not alter lexical ordering.
 
-    TT, price ordering, root tactical scans and optional pruning stay off.
+    Reuse mainline TT and ordering within this call. All captures have equal
+    ordering value: no learned or human material price enters move ordering.
+    Root tactical scans and optional pruning stay off. A new player per call
+    prevents stale model epochs and deeper warm scores on shallower requests.
     Mainline terminal distance preferences remain. This is a different search
     policy from the historical randomized learner reference, not a speed alias.
     Qsearch is intentionally not exposed: its public PV omits q continuations.
@@ -73,6 +76,11 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
                 env.session.compiled, env.names))
             return value if state.position.side_to_move == 0 else -value
 
+        def capture_order_value(self, mover, victim):
+            # Existing orderer supplies TT/capture/promotion/killer/history
+            # stages. Equal capture priority supplies no piece-value prior.
+            return 0
+
     previous_nodes, previous_seconds = 0, 0.
     def progress(completed_depth, main_nodes, qnodes):
         nonlocal previous_nodes, previous_seconds
@@ -83,7 +91,7 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
         previous_nodes, previous_seconds = paid, elapsed
 
     player = AlphaBetaPlayer(env.session.compiled, evaluator_override=Material(),
-        use_tt=False, use_ordering=False,
+        use_tt=use_tt, use_ordering=use_ordering, use_disk_cache=False,
         tuning=SearchTuning(use_root_tactical=False, require_full_pv=True))
     remaining = seconds - (perf_counter() - began)
     if remaining <= 0:
