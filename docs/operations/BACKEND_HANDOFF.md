@@ -732,3 +732,22 @@ unchanged/false. It omits ordinary quiet checking continuations and can miss win
 while retaining actual terminal/material effects. No UI activation, evaluator
 change or Native rebuild. Full generated-drop input/401node qualification and
 limits are in SEARCH_ALLOCATION_AND_ANYWIN_20261021.md and its technical packet.
+
+
+## 2026-10-22 profile cache execution scope
+
+EvaluationProfileCache now separates legacy initial-type closure and semantic
+all-declared normalization in its memory key, disk filename and internal disk
+payload scope. Equal RuleSet/config fingerprints can have different supported
+profile inputs. Old unqualified files are left in place and ignored; the first
+lookup rebuilds the correct scope. Public profile fields, generic-v5, evaluation
+values, override/import paths and defaults are unchanged. No Native rebuild or
+UI/AUX activation is needed. Eight new regressions cover population orders,
+persistence and wrong-scope payloads;3,598active checks pass after supported
+project-temp recovery for242environment setup errors. See the dynamic context
+research report for actual generated-input score effects and retained limitations.
+
+Semantic unused-type normalization sensitivity remains; arbitrary type effects
+still retain all declarations. The private scoped closure probe is research
+only. Do not promote it into a default or reuse a legacy table as though it were
+an unchanged semantic baseline. No new diagnostics API or consumer migration.

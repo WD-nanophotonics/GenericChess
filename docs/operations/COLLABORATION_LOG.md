@@ -6081,3 +6081,30 @@ continuations. This is source/record validation, not independent timing reruns.
 No other role's work is claimed independently reproduced.83 affected regressions
 pass; no static expectation was changed. Next mechanism crosses into explicit
 non-actor/auxiliary semantics using existing fixtures and caller, not AUX solving.
+
+
+## PRIMARY 2026-10-21 17:55Z segment — dynamic context and cache scope
+
+Read one new project Chat root1792601379.333259 and its complete no-reply thread;
+exact originals saved privately before assessment. The Claude comment cites older
+07b4b4a. Adopt avoiding unchanged caller/service studies without a decision.
+Its all-Position leaper fit/enumerator/TD exploration suggestions belong to DEV_AUX;
+no duplicate experiment, checkout/state access, outbound message or live contact.
+
+PRIMARY continued actual price/evaluation research. Dynamics expose a genuine
+D4material tradeoff. A missing known C self-play frame constraint initially
+made the combined bound too loose; the exact linked bound[1/18,1/2] supports a
+finite UnitON edge against fixed C, with a negative family retained.126new
+games retain every UNKNOWN; source/query reuse is counted separately. Semantic
+normalization remains conservative. A real cache collision across supported
+representations is repaired after six red tests, with eight new regressions and
+3,598active checks passing (242system-temp setup errors recovered separately).
+No static expectation, evaluator default, Native code or AUX learner changed.
+
+The research report preserves failed harnesses,14incomplete references, a failed
+override assumption and up to two unretained exploratory partial returns.36fresh
+profiles match frozen source; no blanket rerun is claimed. Typed-support closure
+feasibility has begun, with setup/stock/conversion controls pending. After the
+linked-bound correction, a new third-foeA matchup is prepared with36existing
+C/A baseline frames and zero new D/A queries. Project Chat
+feedback is evaluated advice, not a new authorization or publication gate.

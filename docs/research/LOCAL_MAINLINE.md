@@ -163,15 +163,38 @@ is not policy equality. Signed full-child masses include leaf,ordering and
 interaction effects;20new fixed-continuation trajectories plus1verbatim old
 censored receipt retain9terminals/12UNKNOWN. No price winner or training gate.
 
-Next: freeze the prepared all18root Static/Unit xexisting dynamicOFF/ON diagnostic
-from `.local_agent/price-dynamic-next.json`,using existing evaluator/override and
-common Static ordering. Actual source/consumer feasibility is examined;no queries
-have run. Default price tables match the purematerial control,but dynamic terms
-were disabled. X itself has promotion gain2118 on the disjoint rule; candidate-
-dependent gain/integer division means the old affine boundary cannot be reused
-unchanged. Compare actual full cost,argmax/realized actions and allUNKNOWN before
-considering another state-interaction evaluator. No new model/learner/AUX work.
-Backup1: inspect a concrete contradictory Core outcome only if it changes the
-selection;no old capped-game refill or fullWDL admission gate. Backup2: use the
-existing override contract only for an actually encountered unsupported input.
-Scope is complete rules/history;Science OPEN.
+[DYNAMIC_PRICE_CONTEXT_AND_CACHE_SCOPE_20261022.md](DYNAMIC_PRICE_CONTEXT_AND_CACHE_SCOPE_20261022.md)
+closes that continuation. Existing dynamics increase disjoint Static/Unit D2 sets
+from1 to8 of18; a complete D4 counterexample refutes tie-only refinement. Table
+and whole-evaluator scaling differ there. Unreachable-declaration controls expose
+normalization sensitivity while retaining full histories and the conservative
+semantic boundary. A real representation cache collision is fixed without
+changing profile values/defaults: eight new regressions and3,598 active checks
+pass. Old ambiguous disk files are ignored, not deleted.
+
+126 new fixed-opponent games execute2,763 paid queries.18 C role frames and54
+first moves are exact reuses. The initial combined priceON bound[-1/18,11/18]
+was valid but too loose: reused C self-play has exactly opposite utility across
+roles, even for UNKNOWN. Applying that known constraint gives[1/18,1/2]. This
+supports a finite UnitON leaf-price edge against fixed C on this exposed panel;
+family1646 has a negative effect, so there is no generic winner or activation.
+The earlier no-strict-priority inference is superseded, with unlinked bounds
+retained. All UNKNOWN and14 incomplete deeper Core references remain. One failed
+exploratory override assumption has up to two unretained partial returns, excluded
+from retained counts. No learner, AUX or evaluation-default change.
+
+Next: execute the prepared `artifacts/aux-deadline-20261021/price-third-foe-next.json`.
+Run36 new D/A games against fixed A=StaticOFF. Reuse36 C/A baseline frames from
+existing A/C matches by role transpose and utility negation; their interval is
+[-2/9,1/3]. Zero new D/A queries have run. Keep all18 roots/both subject roles,
+node512/q0/48-ply/180-second caps and common Static ordering. A contrary result
+changes candidate priority; do not extend old UNKNOWN, select favorable families
+or turn this diagnostic into Elo/default/training work.
+
+Backup1: qualify `.local_agent/normalization_subset_probe.py` before any new
+normalization candidate. It matches36 typed-support cases without a legacy
+handle and rejects real type transforms. Initial-setup, stock and hand-conversion
+controls remain pending. Keep every type field and conservative fallback outside
+the proved scope; no current default change. Backup2: inspect new primary general-
+game evaluation literature for one cheap decision-changing criterion, without a
+model port or AUX learning duplication. Science OPEN.
