@@ -31,7 +31,10 @@ class AlphaBetaPlayer:
     caller-supplied ``evaluator_override``; the caller then owns evaluation
     semantics. The transposition table is kept across moves for the same
     RuleSet and cleared when a different RuleSet is loaded or the caller
-    changes q-depth semantics.
+    changes q-depth semantics. SearchTuning.stop_after_root_win is an optional
+    any-win objective: it may retain a completed root child before the whole
+    iteration finishes, or stop on a compatible cached winning root. The result
+    keeps its actual completed depth/source; shortest mate is not promised.
     """
 
     def __init__(

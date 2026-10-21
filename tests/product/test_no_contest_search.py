@@ -53,11 +53,13 @@ def defender_root():
 
 @pytest.mark.parametrize("qdepth", [0, 2])
 @pytest.mark.parametrize("nodes", [99, 100000])
-def test_opponent_no_contest_prevents_false_completed_root_win(qdepth, nodes):
+@pytest.mark.parametrize("early", [False, True])
+def test_opponent_no_contest_prevents_false_completed_root_win(qdepth, nodes, early):
     session = defender_root()
     before = session.state, session.to_record(), session._search_witnesses
     decision = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
-        use_native_semantic_legality=False).choose_action(session,
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(stop_after_root_win=early)).choose_action(session,
         SearchLimits(max_depth=2, max_nodes=nodes, max_time_seconds=5,
                      quiescence_max_depth=qdepth))
     assert before == (session.state, session.to_record(), session._search_witnesses)

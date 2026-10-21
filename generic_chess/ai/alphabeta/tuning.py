@@ -54,3 +54,8 @@ class SearchTuning:
     # ordinary q actions use the existing orderer. Ignored when q ordering is off.
     # True retains the historical all-q behavior; defaults do not enable ordering.
     use_ordered_qsearch_in_check: bool = True
+
+    # Opt-in objective for callers that need any completed root win (e.g. a
+    # shallow playability screen), not the shortest mate or a full iteration.
+    # The result keeps its actual source, last complete depth and stop reason.
+    stop_after_root_win: bool = False

@@ -185,7 +185,8 @@ def test_operational_provider_failure_preserves_completed_win_and_counts():
 
 
 @pytest.mark.parametrize("nodes,winning", [(13, False), (14, True), (10000, True)])
-def test_completed_root_win_can_end_in_zero_action_declaration(nodes, winning):
+@pytest.mark.parametrize("early", [False, True])
+def test_completed_root_win_can_end_in_zero_action_declaration(nodes, winning, early):
     from generic_chess.rules.compiler import compile_ruleset_for_execution
     from generic_chess.rules.schema import (
         RuleDeclaration, RuleDeclarationOutcomeBand, RuleSpatialSelector,
@@ -213,7 +214,7 @@ def test_completed_root_win_can_end_in_zero_action_declaration(nodes, winning):
     before = session.state, session.to_record(), session._search_witnesses
     player = AlphaBetaPlayer(compiled, evaluator_override=Zero(),
         use_ordering=False, use_native_semantic_legality=True,
-        tuning=SearchTuning(use_root_tactical=False))
+        tuning=SearchTuning(use_root_tactical=False, stop_after_root_win=early))
     decision = player.choose_action(session, SearchLimits(
         max_depth=2, max_nodes=nodes, max_time_seconds=5, quiescence_max_depth=0))
     # Unsupported declaration rules stay on Core; request flags are not evidence
@@ -229,11 +230,14 @@ def test_completed_root_win_can_end_in_zero_action_declaration(nodes, winning):
         apply_action(child, action, compiled), compiled)) for action in replies)
     assert proved is winning
     assert decision.score == (MATE_SCORE - 2 if winning else 0)
-    if nodes == 14:
+    if nodes == 14 or (early and winning):
         assert decision.result_source == "completed_root_win"
         assert decision.completed_depth == 1
         assert decision.result_ordinary_qdepth == 0
-        assert decision.termination_reason == "node_limit"
+        # The proof returns at13 paid nodes. With cap14, default search
+        # reaches the next node and aborts; opt-in never starts that work.
+        assert decision.termination_reason == ("root_win_found" if early else "node_limit")
+        assert (decision.nodes + decision.qnodes < nodes) is early
         assert not child.terminal_status.is_terminal  # Claim is out of band.
     else:
         assert decision.result_source == "main_iteration"
@@ -289,3 +293,135 @@ def test_mate_window_equality_is_not_a_new_completed_root_proof(
     assert (ctx.root_completed_win is not None) is improving
     if improving:
         assert proves_root_h3(session, ctx.root_completed_win[0].best_action)
+
+
+@pytest.mark.parametrize("provider_mode", ("Core", "NativeAll"))
+def test_opt_in_stops_after_first_complete_root_win_without_claiming_full_depth(provider_mode):
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    if provider_mode != "Core" and not native_available():
+        pytest.skip("native unavailable")
+    session = prepared()
+    before = session.state, session.to_record(), session._search_witnesses
+    decisions = []
+    progress = []
+    for early in (False, True):
+        player = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
+            use_native_semantic_legality=provider_mode != "Core",
+            use_native_semantic_availability=provider_mode == "NativeAll",
+            use_native_semantic_check=provider_mode == "NativeAll",
+            tuning=SearchTuning(stop_after_root_win=early))
+        decisions.append(player.choose_action(session,
+            SearchLimits(max_depth=2, max_nodes=100000, quiescence_max_depth=2),
+            progress_callback=lambda depth, *_: progress.append((early, depth))))
+    full, early = decisions
+    assert full.completed_depth == 2 and full.termination_reason == "completed_depth"
+    assert early.completed_depth == 1 and early.termination_reason == "root_win_found"
+    assert early.result_source == "completed_root_win"
+    assert early.result_ordinary_qdepth == 2 and early.result_check_hard_qdepth == 8
+    assert early.score == full.score == MATE_SCORE - 3
+    assert early.nodes + early.qnodes < full.nodes + full.qnodes
+    assert proves_root_h3(session, early.action)
+    assert (True, 2) not in progress and (True, 1) in progress
+    assert early.runtime_depth_balanced and early.native_legality_fallbacks == 0
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+
+
+@pytest.mark.parametrize("reason", ("cancelled", "time_limit"))
+def test_opt_in_checks_actual_control_after_completed_proof(monkeypatch, reason):
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    session = prepared()
+    token = CancellationToken()
+    clock = [0.0]
+    original_context = search._Context
+
+    class InterruptAtProof(original_context):
+        __slots__ = ()
+        def __setattr__(self, name, value):
+            super().__setattr__(name, value)
+            if name == "root_completed_win" and value is not None:
+                if reason == "cancelled":
+                    token.cancel()
+                else:
+                    clock[0] = 2.0
+
+    monkeypatch.setattr(search, "_Context", InterruptAtProof)
+    monkeypatch.setattr(search.time, "perf_counter", lambda: clock[0])
+    before = session.state, session.to_record(), session._search_witnesses
+    decision = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(stop_after_root_win=True)).choose_action(session,
+            SearchLimits(max_depth=2, max_time_seconds=1, quiescence_max_depth=2),
+            cancel_token=token)
+    assert decision.termination_reason == reason
+    assert decision.result_source == "completed_root_win" and decision.completed_depth == 1
+    assert decision.score == MATE_SCORE - 3 and proves_root_h3(session, decision.action)
+    assert decision.runtime_depth_balanced
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+
+
+def test_opt_in_warm_exact_win_does_not_start_an_unneeded_deeper_iteration():
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    session = prepared()
+    player = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
+        use_native_semantic_legality=False)
+    completed = player.choose_action(session, SearchLimits(max_depth=2,
+        max_nodes=100000, quiescence_max_depth=2))
+    assert completed.completed_depth == 2 and completed.score == MATE_SCORE - 3
+    player._tuning = replace(player._tuning, stop_after_root_win=True)
+    before = session.state, session.to_record(), session._search_witnesses
+    early = player.choose_action(session, SearchLimits(max_depth=8,
+        max_nodes=100000, quiescence_max_depth=2))
+    assert early.tt_hits > 0 and early.completed_depth == 1
+    assert early.termination_reason == "root_win_found" and early.result_source == "main_iteration"
+    assert early.score == completed.score and proves_root_h3(session, early.action)
+    assert early.runtime_depth_balanced
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+
+
+@pytest.mark.parametrize("reason", ("cancelled", "time_limit"))
+def test_opt_in_warm_win_checks_controls_after_progress_callback(monkeypatch, reason):
+    session = prepared()
+    player = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
+        use_native_semantic_legality=False)
+    warm = player.choose_action(session, SearchLimits(max_depth=2,
+        max_nodes=100000, quiescence_max_depth=2))
+    assert warm.completed_depth == 2 and warm.score == MATE_SCORE - 3
+    player._tuning = replace(player._tuning, stop_after_root_win=True)
+    token = CancellationToken()
+    clock = [0.0]
+    monkeypatch.setattr(search.time, "perf_counter", lambda: clock[0])
+    def interrupt(depth, *_):
+        assert depth == 1
+        if reason == "cancelled":
+            token.cancel()
+        else:
+            clock[0] = 2.0
+    before = session.state, session.to_record(), session._search_witnesses
+    result = player.choose_action(session, SearchLimits(max_depth=8,
+        max_time_seconds=1, quiescence_max_depth=2), cancel_token=token,
+        progress_callback=interrupt)
+    assert result.termination_reason == reason
+    assert result.result_source == "main_iteration" and result.completed_depth == 1
+    assert result.score == MATE_SCORE - 3 and proves_root_h3(session, result.action)
+    assert result.runtime_depth_balanced
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+
+
+@pytest.mark.parametrize("sign", (-1, 1))
+def test_opt_in_does_not_confuse_oversized_static_scores_with_a_root_win(sign):
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    from generic_chess.ai.evaluation.config import MAX_STATIC_EVAL
+    session = prepared()
+    class Oversized:
+        def evaluate(self, state):
+            return sign * MATE_SCORE * 100
+    before = session.state, session.to_record(), session._search_witnesses
+    result = AlphaBetaPlayer(session.compiled, evaluator_override=Oversized(),
+        use_disk_cache=False, use_native_semantic_legality=False,
+        use_ordering=False,  # This mock supplies leaf values only.
+        tuning=SearchTuning(stop_after_root_win=True)).choose_action(session,
+            SearchLimits(max_depth=2, max_nodes=100000, quiescence_max_depth=0))
+    assert abs(result.score) <= MAX_STATIC_EVAL
+    assert result.termination_reason == "completed_depth" and result.completed_depth == 2
+    assert result.result_source == "main_iteration" and result.runtime_depth_balanced
+    assert before == (session.state, session.to_record(), session._search_witnesses)

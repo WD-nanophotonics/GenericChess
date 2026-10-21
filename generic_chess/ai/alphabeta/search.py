@@ -47,7 +47,7 @@ INF = 10**12
 
 
 class SearchAborted(Exception):
-    """Internal control flow for budget/cancellation only."""
+    """Internal control flow for budgets, cancellation and opt-in early goals."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -570,6 +570,11 @@ def negamax(
                 SearchResult(score, action, (action,) + child_result.pv),
                 _ordinary_qdepth_limit(ctx),
             )
+            if ctx.tuning.stop_after_root_win:
+                # A completed child is already retained. Observe live controls
+                # before this new fast exit, preserving their actual reason.
+                ctx.budget.check(ctx.stats, force=True)
+                raise SearchAborted("root_win_found")
         if score > best:
             best = score
             best_action = action
@@ -1275,6 +1280,16 @@ def run_root_search(
             stats.time_to_first_completed_iteration = time.perf_counter() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
+        if tuning.stop_after_root_win and best.score >= MATE_THRESHOLD:
+            # An exact warm root return may bypass the child loop above. Do
+            # not start a deeper iteration merely to rediscover that win.
+            try:
+                budget.check(stats, force=True)
+            except SearchAborted as exc:
+                abort_reason = str(exc)
+            else:
+                abort_reason = "root_win_found"
+            break
 
     if (abort_reason is not None and ctx.root_completed_win is not None
             and (best is None or ctx.root_completed_win[0].score > best.score)):
