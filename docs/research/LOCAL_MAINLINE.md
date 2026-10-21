@@ -77,6 +77,13 @@ evidence. Cleanup does not make their inputs unexposed or reset their budgets.
    directly under the same iterativeD2 path, then small fixedD3-foe calibration.
    D3 is not presumed to produce50percent wins. No new matrix/audit gate,
    training extension, default weight adoption or old cap reset.
+   The direct check is now closed: trained4W9L3UNKNOWN/16slots,0missing,
+   finite payoff[-1/2,-1/8]. Its maxD3 calibration is8/8node-capUNKNOWN,not
+   a strength anchor. Preserve the positive old D1-foe result with its narrower
+   claim. Now run second-rule fresh initialization against uniform iterativeD2:
+   seed27189,128plannedtrain/64evalslots,2Mnodes/phase,1800stotal/900strain,
+   H128,8192/query,60000/game. This is algorithm reuse,not cross-rule knowledge
+   transfer or a causal test of opponent strength; no first-rule weight adoption.
 2. The no-progress variant gives genuine rule draws but not identified learning
    gain. A same6-node D1 control requires5 versus170 underlying transitions
    because the reference replays history. Keep this cost explicit; do not bypass

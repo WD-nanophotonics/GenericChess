@@ -565,3 +565,62 @@ Next use the previously frozen first-rule trained and initial weights in direct
 iterativeD2 games with paired colors/openings and a small fixedD3-foe calibration.
 The old D1-foe study stays unchanged. Different studies' bounds[3/8,1] and
 [1/16,3/16] cannot establish a causal ranking of depth versus learning gains.
+
+### Direct same-depth play and max-D3 calibration
+
+Source4a1d459a9445b0649d2d94941734464259492d25. Frozen first-rule trained and
+initial vectors above play directly, both using iterativeD2/q0. Eight prospective
+random-opening families fromseed27188 are used with both candidate colors;
+none of their starts equals a start in the old134recorded episodes. This is
+not independent rule holdout. A second arm uses initial iterativeD2 against
+uniform iterativeD3 on the first4families/both colors. MaxD3 is a configured
+ceiling, not a guarantee that D3 completes. Both arms haveH128,8192/query,
+60000nodes/90s pergame; declared overall maxima1.44Mnodes/1800s. No training,
+reselection, resampling or closed-run continuation occurs.
+
+All24slots finish,0missing,987027nodes/208.432s. Direct trained-versus-initial
+gives **4W9L3UNKNOWN**,507027nodes/114.626episode seconds. The trained mean
+payoff's finite completion bound is **[-1/2,-1/8]** and its score lies[1/4,7/16];
+all three unknowns are node-cap/ongoing. These are completion bounds, not CIs.
+Thus this16game condition disfavors the trained vector even under favorable
+completion of all unknowns. It does not refute the old D1-foe result or prove a
+population ranking; opponent/search conditions and opening families differ.
+The committed Core baseline also changed; this is not an isolated intervention
+on the old experiment's opponent.
+No learned weights are adopted.
+
+The8calibration games all reach60000nodes and remain UNKNOWN (480000nodes,
+92.389episode seconds). Initial candidate queries complete71D2; foe queries
+complete34D3,38D2fallback and3D1fallback. The foe spends260417nodes on partialD3
+attempts versus105456on completedD3. Consequently this recipe supplies neither
+a fixed-complete-D3 opponent nor a50percent strength anchor. No extra allowance
+or topup follows. All24full histories/results and777query records independently
+replay/check, including both colors, frozen vectors and every paid attempt.
+
+Next is separate second-rule learning against a uniform iterativeD2 foe,
+freshseed27189/random initialization,128planned training episodes/16evaluation
+families (64slots),2Mnodes perphase,1800s overall/900s training,H128,
+8192/query/60000game. This tests the same algorithm on another previously
+selected rule under stronger opposition. Changing both rule and opponent
+does not isolate an opponent-strength treatment effect. No first-rule weights,
+old episode continuation, old cap reset or new infrastructure framework.
+
+### Literature and signal interpretation
+
+Baxter, Tridgell and Weaver's [KnightCap paper](https://arxiv.org/pdf/cs/9901002)
+(sections3–4) permits varying completed search depth and describes opponent
+diversity as important. Its successful run starts with conventional material
+values; a uniform-initialization run learns more slowly. It also filters some
+positive temporal errors caused by unpredicted opponent moves. These conditions
+differ from this material-only, random-initialized vanilla learner, so its rating
+results are not a strength promise or permission to add priors/blunder filtering.
+Keep the selected algorithm; test its actual outcomes under the declared foe.
+
+Own saved first-rule data further qualify "almost no terminal learning signal":
+the final actual-outcome error is usually zero, but61transitions target a
+rule-terminal PV. For hand-P, aggregate observed update contributions are
+material-.71847,terminal-PV-1.27809,actual-final+.23973, summing to-1.75683.
+This arithmetic attributes updates on the observed trajectory, not the cause of
+direct-play losses or a counterfactual training effect. Changing targets would
+also change later weights/actions, so an offline sum cannot stand in for a new
+training/strength test. No labels, weights or completed-run results were changed.

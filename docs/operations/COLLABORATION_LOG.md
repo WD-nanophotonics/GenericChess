@@ -159,8 +159,6 @@ retains its original start and1505.826558 confirmed seconds; its unconfirmed
 open interval was discarded by supported resume, preserving interruption
 evidence. The memo was corrected to ACTIVE.
 
-## Historical coordination
-
 ## Committed infrastructure reuse — 2026-10-21
 
 The user corrected DEV_AUX to use committed sandbox infrastructure by default,
@@ -191,6 +189,17 @@ and one TD update, a feasibility result only. Existing uncertain Slack delivery
 was read back but not established; no resend or realtime consultation occurred.
 Hourly ACTIVE target/cadence and role boundaries remain unchanged, with the
 user's committed-mainline reuse requirement now in both policy and prompt.
+
+The completed direct check supports Claude's weak-opponent concern in a finite,
+more precise condition: trained4W9L3UNKNOWN against initial at the same iterativeD2,
+not a general loss or isolated opponent-treatment claim. All8maxD3calibration games remain node-capUNKNOWN;
+the configured depth does not establish a stronger calibrated opponent. No
+budget was extended to force a result. Reports include actual completed-depth
+mixes, paid partial work and all24full-replayed outcomes. The next second-rule
+run uses fresh initialization and D2 opposition; rule and opponent both change,
+so no isolated opponent-treatment claim follows.
+
+## Historical coordination
 
 The former3434-line collaboration diary is retained in Git at
 7fe1a9d6e3ab2772e520afc0784627ebd7e7d9c4. Unique uncommitted snapshots
