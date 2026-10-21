@@ -5995,3 +5995,19 @@ See NATIVE_SERVICE_COST_AND_HYBRID_ALIAS_20261021.md and its technical packet.
 Next q1 horizon contrast uses the exact frozen hybrid inputs; only its input
 plumbing smoke has run. No default adoption or search-versus-learning dominance
 claim. Literature access limits and failed setup/recording paths remain explicit.
+
+## PRIMARY 2026-10-21 11:10Z segment
+
+Read two new Chat/Claude roots (19:36/19:49JST) and their complete threads once,
+privately preserved exact originals before assessment; no sends or polling.
+Adopt utility/cost separation and compact evidence. NoProgress merge advice is
+stale against sandbox's existing fixed Core dependency; AUX learning reports
+are not independently rerun or promoted into a causal lambda claim. Full PV/
+history/variance learner work remains AUX's lane; no AUX checkout/state access.
+PRIMARY measured q horizons, actual finite/hybrid policies and optional any-win
+screen costs, implementing only a default-off search option. Hybrid utility
+bounds cross zero; finite policy gain is scoped to one game/two encodings.
+Hash, Native-eval default and staged controller proposals lack sufficient cost
+benefit and remain deferred. Recorded3626 effective seconds exclude delivery
+administration. The q-horizon report records test mistakes, one lost diagnostic
+slot and exact evidence limits; no routine contact/receipt gate was introduced.

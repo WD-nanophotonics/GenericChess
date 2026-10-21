@@ -689,3 +689,14 @@ See PAID_TD_AND_SIGNED_PRICE_CONSUMERS_20261017.md. Complete movement-only16vari
 receipt/source qualification is documented in MOVEMENT_RECOMBINATION_PRICE_TRANSFER_20261017.md;
 all promotion/drop/history data retained, no full-domain extrapolation. A-only
 capability-ratio utility is a separate adaptive experimental consumer, no activation.
+
+## 2026-10-21 Python opt-in any-win stopping
+
+SearchTuning.stop_after_root_win defaults False. Explicit callers may stop after
+an existing completed winning root child or compatible exact warm root result.
+Reason root_win_found; completed_depth is actual and may be0; incomplete whole
+iterations retain completed_root_win provenance. No shortest-mate/full-PV promise.
+Live cancellation/time checks precede the fast exit. Existing TT policy caveats
+remain. No Native C rebuild, default, UI or AUX activation. Full3583 regressions
+plus two later static-mock cases passed; see the q-horizon research report for
+actual role1, full-history, declaration, control and mixed-rule qualifications.

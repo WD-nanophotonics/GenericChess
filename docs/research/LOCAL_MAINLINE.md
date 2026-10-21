@@ -117,17 +117,22 @@ GameRecord recording now uses the strict public serializer after5 red regression
 One reusable cost probe and compact full-input/outcome evidence replace new
 ad-hoc script proliferation. Defaults, learners and AUX ownership are unchanged.
 
-Next: use semantic_probe_cost.py --input on that report's summary.json worlds,
-4 frozen hybrid rules/8 full histories, all versus ordered, qdepth1,5000 nodes,
-1.25seconds/query,60seconds total. Input/q1 plumbing was actually smoked on one
-zero-node root; the comparative matrix is NOT run. Changed premise: q4 cost and
-hard-check aborts prevent deeper complete results even with faster services.
-Compare actual returned horizon/reserve/abort and cost, retaining terminal and
-missing slots. This tests an existing horizon choice, not a cap extension,
-new solver, learner or default. Science is OPEN.
+[Q_HORIZON_POLICY_AND_EARLY_WIN_20261021.md](Q_HORIZON_POLICY_AND_EARLY_WIN_20261021.md)
+completes q1 follow-up: hybrid32-game utility remains unidentified across zero;
+finite808 conditional policy runs eliminate q0 errors with q1/q4/D3 on one game
+and equivalent encoding. No horizon/evaluator/learner default is selected.
+Optional any-win stopping reuses completed root children, default OFF, with
+truthful depth/source/control reasons. Six of64 new post-win1 samples have
+independent Core mate3 certificates; two separate extra-budget flags never
+refill that cohort. Hash/native-eval/staged-scheduler alternatives are deferred
+on measured cost, not universal prohibitions. Full semantics/history remain.
 
-Backup1: use the same complete records to inspect a specific check-hard abort
-only if it changes the horizon choice; do not rerun frozen fitness or add broad
-instrumentation. Backup2: seek disjoint optimal sets under existing finite-goal
-aliased inputs before claiming policy-necessary context; no exposed-label fit,
-fullWDL admission gate or broad solver campaign.
+Next: freeze16 new D3q0 slots on the same4rules/8histories/both colors against
+unchanged D2q0,5000nodes/.2s,48additional observation plies,300s/4Mtotal. Eight
+actual preflight queries already yield four changed actions. Ask whether actual
+outcomes/cost change allocation, not whether depth alone rises. This is a new
+arm, never a refill of old UNKNOWN. Science OPEN.
+Backup1: existing all/ordered q1 on11 exposed hard roots at16384nodes/1.25s,
+45s total, no cap expansion. Backup2: bounded public Core terminal intervals on
+changed candidate actions only if contrary evidence changes selection; no broad
+solver/WDL admission gate. Chat remains read-only and AUX ownership unchanged.

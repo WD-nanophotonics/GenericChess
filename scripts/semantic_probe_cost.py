@@ -3,7 +3,9 @@
 Results go to an ignored artifact path. This is not the generator's default
 legacy carrier, a strength test, or a changed product profile. All variants use
 its actual default evaluator/TT/main ordering/root scan; ordered changes q order
-only. Terminal/censored roots and incomplete searches remain in the output.
+only. Attack-backend overrides reuse the exact default price profile, but may
+change evaluation semantics outside qualified cohorts. Terminal/censored roots
+and incomplete searches remain in the output.
 """
 from __future__ import annotations
 import argparse
@@ -38,7 +40,13 @@ def main():
     ap.add_argument('--prefixes', type=int, nargs='+', default=[0, 12])
     ap.add_argument('--variants', choices=['legal', 'availability', 'check', 'all', 'ordered', 'ordered_evasions'],
                     nargs='+', default=['all', 'ordered'])
+    ap.add_argument('--evaluation-backend', choices=['default', 'semantic_core', 'semantic_native'],
+                    default='default', help='Existing attack evaluator with the exact default static profile; may change score semantics')
+    ap.add_argument('--stop-after-root-win', action='store_true',
+                    help='Existing opt-in any-completed-win objective; does not seek shortest mate/full depth')
     ap.add_argument('--allow-hybrid', action='store_true')
+    ap.add_argument('--require-no-opening-win-in-one', action='store_true',
+                    help='Existing optional generator preference; changes the accepted rule distribution')
     ap.add_argument('--rounds', type=int, default=1)
     ap.add_argument('--seconds', type=float, default=1.25)
     ap.add_argument('--nodes', type=int, default=5000)
@@ -78,17 +86,21 @@ def main():
         if time.perf_counter() - started >= args.total_seconds:
             break
         cfg = GeneratorConfig(seed=seed, board_size=8, setup_preset=presets[index % 3],
-                              max_generation_attempts=30, allow_hybrid=args.allow_hybrid)
+                              max_generation_attempts=30, allow_hybrid=args.allow_hybrid,
+                              require_no_opening_win_in_one=args.require_no_opening_win_in_one)
         world = dict(seed=seed, config=frozen[index].get('config', {}) if frozen is not None else asdict(cfg), roots=[])
         report['worlds'].append(world)
+        setup_started = time.perf_counter()
         try:
             rule = (ruleset_from_dict(frozen[index]['rule']) if frozen is not None
                     else generate_game(cfg).ruleset)
             compiled = compile_legacy_ruleset_for_semantic_execution(rule)
         except Exception as exc:
             world['setup_failure'] = type(exc).__name__ + ':' + str(exc)
+            world['rule_setup_seconds'] = time.perf_counter() - setup_started
             write_record(args.output, report)
             continue
+        world['rule_setup_seconds'] = time.perf_counter() - setup_started
         world['rule'] = ruleset_to_dict(rule)
         session = GameSession(compiled)
         walker = random.Random(seed + 1)
@@ -114,27 +126,45 @@ def main():
                     if time.perf_counter() - started >= args.total_seconds:
                         break
                     tick = time.perf_counter()
-                    player = AlphaBetaPlayer(compiled, use_disk_cache=False,
+                    evaluator = None
+                    if args.evaluation_backend != 'default':
+                        from generic_chess.ai.evaluation.cache import EvaluationProfileCache
+                        from generic_chess.ai.evaluation.config import EvaluationConfig
+                        from generic_chess.ai.evaluation.semantic_attacks import SemanticAttackEvaluator
+                        config = EvaluationConfig()
+                        profile, _ = EvaluationProfileCache(use_disk=False).get_or_build(compiled, config)
+                        evaluator = SemanticAttackEvaluator(compiled, profile, config,
+                            backend=args.evaluation_backend.removeprefix('semantic_'))
+                    player = AlphaBetaPlayer(compiled, use_disk_cache=False, evaluator_override=evaluator,
                         use_native_semantic_availability=variant in ('availability', 'all', 'ordered', 'ordered_evasions'),
                         use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
                         tuning=SearchTuning(use_ordered_qsearch=variant in ('ordered', 'ordered_evasions'),
-                            use_ordered_qsearch_in_check=variant == 'ordered_evasions'))
+                            use_ordered_qsearch_in_check=variant == 'ordered_evasions',
+                            stop_after_root_win=args.stop_after_root_win))
                     setup = time.perf_counter() - tick
                     before = session.state
                     tick = time.perf_counter()
                     decision = player.choose_action(session, limits)
                     elapsed = time.perf_counter() - tick
-                    assert session.state == before
-                    record = record_value(session.to_record())
-                    assert GameSession.replay(compiled, deserialize_game_record(json.dumps(record))).state == before
-                    report['rows'].append(dict(seed=seed, prefix=prefix, rep=rep, variant=variant,
+                    row = dict(seed=seed, prefix=prefix, rep=rep, variant=variant,
                         player_setup_seconds=setup, query_seconds=elapsed,
                         provider_available=player.native_legality_provider is not None,
                         check_metrics=(player.native_legality_provider.check_metrics
                             if player.native_legality_provider else {}),
                         availability_metrics=(player.native_legality_provider.availability_metrics
                             if player.native_legality_provider else {}),
-                        decision=record_value(decision)))
+                        decision=record_value(decision))
+                    report['rows'].append(row)
+                    try:
+                        assert session.state == before
+                        record = record_value(session.to_record())
+                        assert GameSession.replay(compiled, deserialize_game_record(json.dumps(record))).state == before
+                    except Exception as exc:
+                        # Retain the executed query even when its qualification
+                        # fails; do not turn a caller error into a lost slot.
+                        row['validation_failure'] = type(exc).__name__ + ':' + str(exc)
+                        write_record(args.output, report)
+                        raise
                     write_record(args.output, report)
                     print(seed, prefix, variant, decision.completed_depth,
                           decision.termination_reason, round(elapsed, 4), flush=True)
