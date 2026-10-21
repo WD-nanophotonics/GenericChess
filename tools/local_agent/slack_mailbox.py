@@ -113,7 +113,7 @@ def messages(raw):
                 for i, m in enumerate(channel)]
     headers = list(re.finditer(r"From: [^\n]*\((U[A-Z0-9]+)\)\nTime: [^\n]*\nMessage TS: (\d+\.\d+)\n", text))
     if not headers:
-        if "no messages" in text.lower():
+        if "no messages" in text.lower() or re.fullmatch(r"Channel: [^\n]+\s*", text):
             return []
         raise LocalFlowError("unrecognized Slack message rendering")
     result = []

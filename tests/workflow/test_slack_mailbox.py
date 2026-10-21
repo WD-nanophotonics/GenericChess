@@ -24,6 +24,14 @@ def snapshot(env, channel=(), threads=None, complete=True):
 def msg(ts="10.1",text="CHAT_Comments: inspect this",user="U2"):
     return {"ts":ts,"text":text,"user":user}
 
+
+def test_empty_live_channel_rendering_is_recognized():
+    page = {'messages': 'Channel: #generic-chess (C0C6L21UU20)\n\n',
+            'pagination_info': 'There are no more messages available.\n'}
+    assert m.messages(page) == []
+    with pytest.raises(LocalFlowError):
+        m.messages({'messages': 'Unexpected data: not an empty channel'})
+
 def review_and_prepare(env,r):
     for item in r["comments"]:
         m.decide(r["probe_id"],item["ts"],item["sha256"],"defer","Independent check scheduled")

@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from collections import Counter
 from copy import copy
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from math import tanh, isfinite, inf
 import json
 import random
@@ -38,6 +38,18 @@ class Receipt:
     complete: bool
     q_caps: int
     seconds: float
+    reason: str
+    completed_depth: int = 0
+    attempted_depth: int = 0
+    attempts: tuple = ()
+
+
+@dataclass(frozen=True)
+class SearchAttempt:
+    depth: int
+    nodes: int
+    seconds: float
+    complete: bool
     reason: str
 
 class BudgetEnd(Exception):
@@ -170,9 +182,78 @@ class AlphaBeta:
         try:
             cancel()
             v, pv, pvt, action = walk(self.depth, self.qdepth, -inf, inf)
-            return Receipt(action, v, pv, pvt, tuple(samples), count, True, caps, time.perf_counter() - start, 'complete')
+            return Receipt(action, v, pv, pvt, tuple(samples), count, True, caps, time.perf_counter() - start, 'complete', self.depth, self.depth)
         except (BudgetEnd, NonScoringTerminal) as e:
-            return Receipt(None, None, None, False, (), count, False, caps, time.perf_counter() - start, str(e))
+            return Receipt(None, None, None, False, (), count, False, caps, time.perf_counter() - start, str(e), 0, self.depth)
+
+
+def completed_depth_search(env, model, *, depth=2, nodes=8192, seconds=5.,
+                           seed=0, cancel=lambda: None):
+    """Opt-in q0 iterative decisions using the existing full-width search.
+
+    Each depth is a fresh search, paid from one shared allowance. Only the
+    last complete depth supplies action, PV and training samples. A local
+    resource cutoff may retain that result; external cancellation and
+    non-scoring semantics discard it. No partial deeper value is exposed.
+    """
+    if depth < 1 or nodes < 1 or seconds <= 0:
+        raise ValueError('invalid decision budget')
+    began = time.perf_counter()
+    total = caps = 0
+    attempts = []
+    last = None
+    cancelled = None
+
+    def poll():
+        nonlocal cancelled
+        try:
+            cancel()
+        except BudgetEnd as error:
+            cancelled = str(error)
+            raise
+
+    reason = 'resource limit'
+    for current_depth in range(1, depth + 1):
+        try:
+            poll()
+        except BudgetEnd:
+            reason = cancelled
+            last = None
+            break
+        remaining = seconds - (time.perf_counter() - began)
+        if total >= nodes or remaining <= 0:
+            break
+        receipt = AlphaBeta(current_depth, 0).search(
+            env, model, nodes=nodes - total, seconds=remaining,
+            seed=seed, cancel=poll)
+        total += receipt.nodes
+        caps += receipt.q_caps
+        attempts.append(SearchAttempt(current_depth, receipt.nodes,
+                                      receipt.seconds, receipt.complete, receipt.reason))
+        if cancelled is not None:
+            reason, last = cancelled, None
+            break
+        if not receipt.complete:
+            reason = receipt.reason
+            if reason != 'resource limit':
+                last = None
+            break
+        last = receipt
+        reason = 'complete'
+    # A stop arriving during the final small search also prevents fallback.
+    try:
+        poll()
+    except BudgetEnd:
+        reason, last = cancelled, None
+    elapsed = time.perf_counter() - began
+    attempted = attempts[-1].depth if attempts else 0
+    if last is None:
+        return Receipt(None, None, None, False, (), total, False, caps,
+                       elapsed, reason, 0, attempted, tuple(attempts))
+    if last.completed_depth < depth:
+        reason = 'last_completed_depth: resource limit'
+    return replace(last, nodes=total, q_caps=caps, seconds=elapsed,
+                   reason=reason, attempted_depth=attempted, attempts=tuple(attempts))
 
 class TDLeafEpisode:
     """Frozen-episode Figure-3-style TD(lambda) sum, gamma=1.
@@ -423,7 +504,8 @@ class EpisodeResult:
 
 def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                  horizon=128, depth=2, query_nodes=4096, max_nodes=250_000,
-                 seconds=60.0, seed=0, cancel=lambda: None, on_query=None):
+                 seconds=60.0, seed=0, cancel=lambda: None, on_query=None,
+                 iterative=False, opponent_depth=None, opponent_iterative=None):
     """One bounded episode; training and evaluation share the same play path.
 
     The caller owns roots, seeds, aggregate budgets, stop flags and output.
@@ -432,6 +514,9 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     action; any observed interior TD transitions may still be learned.
     An available rule-authoritative WIN declaration can finish without a search
     query. Its assessment/commit time remains inside the episode deadline.
+    Iterative play retains only the last complete q0 depth and pays all attempts.
+    Explicit opponent settings permit a fixed foe while comparing candidate
+    search policies; omitted settings use the candidate's search configuration.
     """
     if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or seconds <= 0:
         raise ValueError('invalid episode budget or player')
@@ -472,10 +557,14 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                 continue
             actor = env.player()
             current = model if actor == learner_color else opponent
-            receipt = AlphaBeta(depth, 0).search(
+            current_depth = depth if actor == learner_color or opponent_depth is None else opponent_depth
+            current_iterative = iterative if actor == learner_color or opponent_iterative is None else opponent_iterative
+            search = completed_depth_search if current_iterative else AlphaBeta(current_depth, 0).search
+            search_kwargs = dict(depth=current_depth) if current_iterative else {}
+            receipt = search(
                 env, current, nodes=min(query_nodes, remaining),
                 seconds=min(5., max(1e-9, deadline - time.perf_counter())),
-                seed=seed + ply, cancel=guard)
+                seed=seed + ply, cancel=guard, **search_kwargs)
             nodes += receipt.nodes
             queries += 1
             if on_query is not None:
@@ -483,6 +572,7 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
             if not receipt.complete:
                 ending = receipt.reason
                 break
+            guard()
             if learner is not None and actor == learner_color:
                 learner.observe(model, receipt)
             env.push(receipt.action)

@@ -9,13 +9,122 @@ from generic_chess.core.pieces import Piece
 from generic_chess.learning.incremental import (
     AlphaBeta, BudgetEnd, ChessEnv, FixedScaleSessionEnv, Model,
     NonScoringTerminal, Receipt, SessionChoice, TDLeafEpisode, compile_channels,
-    play_episode,
+    play_episode, completed_depth_search,
 )
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import RuleDeclaration, RuleNoProgressDraw
 from generic_chess.session.session import GameSession
 from scripts.generic_proof_fixtures import krk_ruleset
 from rule_semantics_ir_fixtures import weird_rulesets
+
+
+def test_iterative_retains_only_complete_shallow_target_and_pays_partial_work():
+    env = ChessEnv()
+    model = Model([1.] * 5)
+    before = env.record()
+    shallow = AlphaBeta(1, 0).search(env, model, nodes=100, seed=42)
+    receipt = completed_depth_search(env, model, depth=2, nodes=30, seed=42)
+    assert receipt.complete and receipt.completed_depth == 1
+    assert receipt.attempted_depth == 2
+    assert receipt.nodes == 30 == sum(a.nodes for a in receipt.attempts)
+    assert [(a.depth, a.complete) for a in receipt.attempts] == [(1, True), (2, False)]
+    assert receipt.action == shallow.action and receipt.value == shallow.value
+    assert receipt.pv_phi == shallow.pv_phi and receipt.samples == shallow.samples
+    assert env.record() == before
+    learner = TDLeafEpisode()
+    learner.observe(model, receipt)
+    assert len(learner.rows) == 1
+    assert learner.finish(model, None)['samples'] == 0  # No fabricated final draw.
+
+
+@pytest.mark.parametrize('nodes,complete,depth', [(1, False, 0), (21, True, 1), (1000, True, 2)])
+def test_iterative_node_boundary_and_completed_depth(nodes, complete, depth):
+    env = ChessEnv()
+    receipt = completed_depth_search(env, Model([1.] * 5), nodes=nodes, seconds=10)
+    assert receipt.complete is complete and receipt.completed_depth == depth
+    assert receipt.nodes <= nodes
+    assert receipt.nodes == sum(a.nodes for a in receipt.attempts)
+    if not complete:
+        assert receipt.action is receipt.value is receipt.pv_phi is None
+        assert receipt.samples == ()
+
+
+def test_iterative_stop_after_d1_discards_fallback_and_restores_history():
+    env = ChessEnv()
+    before = env.record()
+    calls = 0
+
+    def stop():
+        nonlocal calls
+        calls += 1
+        if calls >= 5:  # During the second search, after D1 completed.
+            raise BudgetEnd('STOPPED_USER')
+
+    receipt = completed_depth_search(env, Model([1.] * 5), cancel=stop)
+    assert not receipt.complete and receipt.reason == 'STOPPED_USER'
+    assert receipt.completed_depth == 0 and receipt.action is None
+    assert receipt.attempts[0].complete and receipt.nodes >= 21
+    assert env.record() == before
+
+
+def test_iterative_does_not_hide_non_scoring_deeper_branch(monkeypatch):
+    from generic_chess.learning import incremental
+    calls = 0
+
+    def search(self, env, model, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            return Receipt('legal', 1., (1.,), False, (), 3, True, 0, .1,
+                           'complete', 1, 1)
+        assert kwargs['nodes'] == 7
+        return Receipt(None, None, None, False, (), 2, False, 0, .1,
+                       'Non-scoring terminal is not W/L/D: neutral', 0, 2)
+
+    monkeypatch.setattr(incremental.AlphaBeta, 'search', search)
+    receipt = completed_depth_search(None, Model([1.]), nodes=10)
+    assert not receipt.complete and receipt.nodes == 5
+    assert receipt.action is receipt.value is None and not receipt.samples
+
+
+def test_iterative_time_allowance_is_shared_and_partial_cost_paid(monkeypatch):
+    from generic_chess.learning import incremental
+    clock = [0.]
+    allowances = []
+
+    def search(self, env, model, **kwargs):
+        allowances.append(kwargs['seconds'])
+        clock[0] += .6 if self.depth == 1 else .4
+        if self.depth == 1:
+            return Receipt('legal', 1., (1.,), False, (), 3, True, 0, .6,
+                           'complete', 1, 1)
+        return Receipt(None, None, None, False, (), 2, False, 0, .4,
+                       'resource limit', 0, 2)
+
+    monkeypatch.setattr(incremental.time, 'perf_counter', lambda: clock[0])
+    monkeypatch.setattr(incremental.AlphaBeta, 'search', search)
+    receipt = completed_depth_search(None, Model([1.]), seconds=1.)
+    assert allowances == pytest.approx([1., .4])
+    assert receipt.complete and receipt.completed_depth == 1
+    assert receipt.seconds == 1. and receipt.nodes == 5
+
+
+@pytest.mark.parametrize('color', [0, 1])
+def test_episode_keeps_opponent_search_fixed_across_candidate_modes(color):
+    queries = []
+    env = ChessEnv()
+    model = Model([1.] * 5)
+    result = play_episode(env, model, opponent=Model([1.] * 5),
+                          learner_color=color, horizon=2, depth=2, iterative=True,
+                          opponent_depth=1, opponent_iterative=False,
+                          on_query=lambda ply, actor, r: queries.append((actor, r)))
+    assert result.plies == 2
+    for actor, receipt in queries:
+        if actor == color:
+            assert receipt.completed_depth == 2
+            assert [a.depth for a in receipt.attempts] == [1, 2]
+        else:
+            assert receipt.completed_depth == 1 and not receipt.attempts
 
 
 def declaration_session(outcome, extra_declarations=()):

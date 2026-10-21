@@ -93,6 +93,9 @@ def run(args):
             row.update(ply=ply, actor=actor, nodes=receipt.nodes, complete=receipt.complete,
                        value=receipt.value, pv_phi=receipt.pv_phi, pv_terminal=receipt.pv_terminal,
                        reason=receipt.reason)
+            row.update(completed_depth=receipt.completed_depth,
+                       attempted_depth=receipt.attempted_depth,
+                       attempts=[asdict(a) for a in receipt.attempts])
             trace.write(json.dumps(row, allow_nan=False) + '\n')
             trace.flush()
 
@@ -104,7 +107,10 @@ def run(args):
                 learner_color=color, horizon=args.horizon, depth=args.depth,
                 query_nodes=args.query_nodes, max_nodes=min(args.game_nodes, remaining),
                 seconds=seconds, seed=args.seed * 1_000_000 + (0 if phase == 'train' else 1_000_000_000) + index * args.horizon,
-                cancel=guard, on_query=on_query)
+                cancel=guard, on_query=on_query,
+                iterative=getattr(args, 'iterative', False),
+                opponent_depth=getattr(args, 'opponent_depth', None),
+                opponent_iterative=getattr(args, 'opponent_iterative', None))
             env.replay()  # Actual full history/result, not a state-only check.
             row = dict(phase=phase, index=index, color=color, profile=profile,
                        start_record=start_record, final_record=env.record(),
@@ -205,6 +211,11 @@ def main():
     parser.add_argument('--seconds', type=float, default=1200.)
     parser.add_argument('--horizon', type=int, default=128)
     parser.add_argument('--depth', type=int, default=2)
+    parser.add_argument('--iterative', action='store_true',
+                        help='pay D1 through depth under one shared query budget')
+    parser.add_argument('--opponent-depth', type=int)
+    parser.add_argument('--opponent-iterative', action=argparse.BooleanOptionalAction,
+                        default=None)
     parser.add_argument('--query-nodes', type=int, default=8192)
     parser.add_argument('--game-nodes', type=int, default=100_000)
     args = parser.parse_args()
