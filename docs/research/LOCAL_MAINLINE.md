@@ -10,9 +10,10 @@ material approximation is intentionally limited.
 
 User2026-10-21 requires committed sandbox infrastructure as the current baseline.
 All238 shared package source files now match latest published sandbox
-`bffe1e4b5f0a98ca6215eae3b83b329962db37db`. Package infrastructure is unchanged
-since6a4f886; latest common research_record also reuses strict GameRecord
-serialization. AUX-only package files are `learning/incremental.py` and the thin
+`6ea35571272708f7e220fa3868f2ca1a4d0cf7ca`. Its completed-root-win option and
+public probe interface/tests are reused exactly; the option stays defaultfalse.
+The common research_record uses strict GameRecord serialization. AUX-only
+package files are `learning/incremental.py` and the thin
 `learning/mainline_search.py` receipt adapter. Future Generic episodes default
 to public mainline AlphaBetaPlayer with literal q0 PV features; the randomized
 search remains an explicit historical/Chess reference. Actual moves and records
@@ -20,9 +21,9 @@ use GameSession. No parallel Core, no uncommitted
 PRIMARY imports, no other-role state writes. Each hourly recovery checks and
 reuses newer committed infrastructure and relevant results.
 
-Native rebuilt; public-path full suite3969passed/1skipped in330.39s; closing
-bffe1e4b helper/learner targeted80tests pass after local test-fixture binding.
-Defaultlambda.95 remains;98focused caller/history tests pass. Default engine,
+Native rebuilt; historical public-path full suite3969passed/1skipped in330.39s;
+current6ea35571 search/learner/history affected regressions pass167tests.
+Defaultlambda.95 remains. Default engine,
 UI and deployed weights are not independently selected by DEV_AUX. See
 [INCREMENTAL_TDLEAF.md](INCREMENTAL_TDLEAF.md) for exact callers/results/limits.
 
@@ -84,11 +85,47 @@ payoffbound[-1/2,27/32],0missing,460.422s/2919897nodes.42game-node caps and one
 unfinished first layer remain;no strict gain or weight adoption.64histories/
 1157queries checked;1065D2/91D1fallbacks/one incomplete query. No new training.
 
-Next inspect/reuse public TT/full-PV with fixed-model players within an episode,
-resetting between updates,and cost a few saved equal-budget queries before a
-new game comparison. No duplicate TT/search. HigherD3or a larger lambda panel
-is deferred on information/cost grounds,not banned. Backup:one bounded public
-learner episode on a fresh natural rule,complete-history/actual-result checks.
+The bounded TT/full-PV check is complete:24calls0.980s,four saved roots.
+WarmD2reuse pays2nodes,but warmD1retains deeper scores and3of4exported PVleaves
+do not match. Keep fresh per-query players,no persistent cache/model epoch risk.
+The next16coldD3queries18.597s show existing zero-price capture/killer/history
+ordering completes4of4versus3of4,three commonD3values unchanged. TTalone gives
+no cold node reduction here. Source00e39117 reuses existing TT/order perquery;
+82targeted learner/runtime tests pass. No duplicate search or universal speedclaim.
+
+The predeclared three-seed panel is closed atsource
+00e391172f63c7f6259a9e91d1d4f2060be5a3e8/bffe:lambda.95,public orderedD2,
+uniformD2training foe,then frozen own-initial direct games. Original4200s/27M
+caps;actual4200.124380s/8983167nodes,exit0,GLOBAL_TIME_CAP.321train episodes/
+307changed updates;308of384direct slots,201W90L1D16UNKNOWN/76missing.
+
+| Seed | Direct W/L/D/U | Missing of128 | Payoff completion bound |
+|---|---|---:|---|
+|27195|39/46/0/4|39|[-25/64,9/32]|
+|27196|93/16/0/7|12|[29/64,3/4]|
+|27197|69/28/1/5|25|[11/128,71/128]|
+
+Pooled planned-slot payoff[19/384,203/384] is positive for these three finite
+conditions. Seed1/2intervals are disjoint;this is combined initialization,
+training-root and resource-conditioned variation,not populationconfidence,
+lambda superiority or product-weight selection.629full histories/26353queries/
+321TD calculations independently checked,error1.33e-15. Original producer's
+summary stops before its final seed entry;all103last-seed rows are retained and
+independently reconstructed,not rerun or inserted into that original summary.
+
+The selected fresh-rule backup also executed after6ea sync,sourceb83eaab1:
+generator2026102103(firstattempt),episode27199,85plies/85queries/20149nodes/
+8.431s,actualplayer0win,18drops/4promotions.43observations produce a nonzero
+update with independent arithmetic error0;full history replays. One trajectory
+shows common-path feasibility,not strength or full-domain coverage.
+
+Next question:does selfplay training beat fixed-foe training under one coupled
+fresh initialization/root schedule? This control is designed,not run:
+freshseed27200,two300s/800000node arms,then16families/bothcolors direct arm play
+under300s/1.92Mnodes;whole900s/3.52Mnodes. Same learner/publicD2q0,no new search,
+no old missing-slot refill,no assumption of50percent or population power.
+Use existing opponent=model alias with episode-frozen weights for selfplay.
+HigherD3anchor remains a separate bounded alternative,not a prerequisite.
 Q1 remains unconnected because no q continuation is exported for TDLeaf features.
 Expected>=120min needs Chat mailbox scope/budget assessment.
 

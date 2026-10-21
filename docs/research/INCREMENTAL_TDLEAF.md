@@ -14,6 +14,15 @@ Historical commands below refer to their fixed source revisions; on the current
 runner select `--search-backend reference` when inspecting those old policies.
 Never overwrite/restart their closed output directories.
 
+Current adapter source00e39117 also enables the existing mainline TT and move
+orderer within each query. Capture-order values are identically zero; TT moves,
+captures/promotions and killer/history stages introduce no piece-price prior.
+Players are fresh for every query, preventing cached scores from another model
+or a deeper earlier request from becoming shallow training targets. Literal
+q0 PV/model agreement, actual terminal verification and all paid partial work
+checks remain mandatory. No shared search implementation or product default is
+changed. Historical TT-off reports below retain their original policies.
+
 Fixed coordinate 0 stays 1, scale 10, eta .05, lambda .95. Search weights are frozen
 within each episode. Targets use player-0 perspective, including when the
 candidate plays player 1. UNKNOWN retains observed interior search transitions
@@ -923,3 +932,117 @@ not guarantee matched histories across representations. Do not copy its current
 q1probe task or infer our Native speed/q-tail support. Existing warm-TT tests
 also retain deeper cached scores on shallower requests until reset: the next
 learner TT check must validate actual PV/value provenance and model epochs.
+
+### Existing ordering and TT reuse, 2026-10-21
+
+Four saved complete-history roots (first four families of the closed27194
+direct cohort, frozen trained vector) were chosen before new queries. The
+24-call TT probe used coldD2, repeatedD2 and then warmD1, TTon/off,8192nodes/
+1.8seconds each,48seconds overall. It completed in0.980s. ColdD2nodes were
+389/318/212/250 with either TT setting; repeatedD2 withTT used2nodes per root.
+All corresponding D2scores and literal leaves matched. However,three of four
+warmD1calls retained a deeper cached score while exporting a one-ply line whose
+raw material value differed. On the fourth,the accidental scalar match still
+does not establish shallow minimax provenance. The public deeper-cache behavior
+is documented; legal sufficient-length PV is weaker than literal TDLeaf target
+provenance. The learner keeps fresh per-query players, rather than enabling
+persistent caches or modifying the shared search to impose another contract.
+
+A separate16-call factorial compared coldTTon/off and existing orderingon/off
+atmaxD3,16384nodes/2.8s each,48s overall. Capture priorities were equalzero;
+the existing orderer supplied TT/capture/promotion/killer/history stages. It
+completed in18.597s. No-order completedD3atthree roots;order completed allfour.
+On the three jointly completed roots,values were unchanged and nodes fell
+8389→1797,8061→1119,9953→3736 withTT+order. The fourth moved from cappedD2/
+16384nodes to completeD3/6824nodes,which is a completion comparison,not equal
+realized work. TTalone left these cold query counts unchanged. These finite
+same-state measurements support reusing existing ordering,not a general speed,
+strength,Native throughput or changed-policy game comparison claim. Tied leaf
+features may differ when ordering changes. No tree walk,TT or orderer was added.
+
+Source00e39117 enables fresh per-query TT and the existing equal-capture-price
+orderer in the AUX receipt adapter only.82learner/runtime regressions pass,
+including allfour TT/order combinations at fullD3 and sequential model/depth
+changes. Existing cancellation,history,no-progress,declaration,UNKNOWN and
+aborted-node accounting remain tested. The earlier full-suite result is not a
+new whole-suite execution for this change.
+
+One new prospective seed panel is frozen under ignored
+`artifacts/ordered-seed-panel-20261021/config.json`:train seeds27195/27196/27197,
+public orderedD2q0,lambda.95,eta.05,random independent initial vectors,uniform
+publicD2training foe. Each seed gets atmost512episodes/5Mnodes/800s; frozen
+trained then plays its own initial on64common opening families/both colors,
+atmost4Mnodes/600s per seed. H128,8192/query,60000nodes/90s per game; whole
+experiment27Mnodes/4200s (70min,below120min assessment threshold). No seed,
+checkpoint,training-length or result-based selection/topup. All128planned
+evaluation slots per seed remain in the denominator,including missing/UNKNOWN.
+This measures combined initialization/training-opening dispersion on one exposed
+rule,not population confidence,lambda superiority or a causal speed comparison
+with older un-ordered trajectories. No weight adoption follows.
+
+Claude's seed-variance advice is adopted with this qualification. Primary
+sources [Henderson et al.](https://arxiv.org/abs/1709.06560),section Random Seeds
+and Trials,and [Colas et al.](https://arxiv.org/abs/1806.08295),sections1/5,
+support reporting seed variation and avoiding selected best runs. They do not
+provide a universal sufficient seed count; their empirical deep-RL findings
+are not measurements of this linear TDLeaf learner. Three seeds here are a
+bounded exploratory dispersion check,not a powered superiority test. Missing/
+UNKNOWN completion intervals answer unresolved finite outcomes; they are not
+sampling confidence intervals. Common evaluation roots improve comparability
+but do not turn the384planned games into384independent training replicates.
+
+The panel closed atGLOBAL_TIME_CAP,exit0,4200.124380s/8983167nodes. Its exact
+executed source is00e391172f63c7f6259a9e91d1d4f2060be5a3e8 (sharedbffe).
+Training completed106/113/102episodes,with98/109/100changed updates;305actual
+terminals/16UNKNOWN overall. Every seed stopped at its original800s allowance.
+Opening/replay/control time is paid;episode-only time is not the phase total.
+
+| Seed | Direct W | L | D | UNKNOWN | Missing of128 | Mean payoff completion bound |
+|---|---:|---:|---:|---:|---:|---|
+|27195|39|46|0|4|39|[-25/64,9/32]|
+|27196|93|16|0|7|12|[29/64,3/4]|
+|27197|69|28|1|5|25|[11/128,71/128]|
+
+All384planned slots remain in the pooled denominator:201W90L1D16UNKNOWN and
+76missing give[19/384,203/384]. This establishes positive pooled payoff for
+these finite three training conditions,not a population confidence interval.
+Seed1and2intervals are separated by11/64 even under adversarial unresolved
+outcomes;their difference is combined initialization/training-root/resource
+variation,not an isolated initialization coefficient effect. No model or seed
+is chosen as a product default. No lambda-method comparison was performed.
+
+Independent replay/arithmetic checked629full histories,26353queries and321TD
+update calculations;maximum forward-weight error1.33e-15. All14526train and
+11819evalD2queries are paid. Two eval queries retainD1 at a local node limit;
+six other queries report one completed layer but reject the target on a live
+phase/global stop (three train,three eval). Node/phase/global limits and
+unconsumed final queries are preserved. The original summary has only two seed
+entries because the final global guard exits before appending the third. Its
+103durable final-seed evaluation rows and frozen weights independently yield
+the last row above;the original summary is preserved,not patched or rerun.
+These are actual search-node counters;wall time also includes legality,history,
+PV checks,serialization and control. Different played histories preclude a
+causal speed comparison with old policies.
+
+### Latest committed infrastructure and fresh-rule reuse
+
+After that frozen producer exited,the final fetch found sandbox
+6ea35571272708f7e220fa3868f2ca1a4d0cf7ca. Its three AlphaBeta files,maintained
+semantic_probe_cost interface and two regression files are reused exactly;
+all238shared package files match.167affected learner/search/history tests pass.
+Read PRIMARY's Q_HORIZON_POLICY_AND_EARLY_WIN report atthat revision:more
+completed depth is not outcome utility;any-completed-root-win is neither a
+uniform-depth nor literal-PV promise. The new option remains defaultfalse in
+the learner. Q1still lacks an exported q continuation for TDLeaf features.
+PRIMARY's experiments/tasks were not adopted or rerun.
+
+The preselected fresh generator seed2026102103 succeeds on its first attempt
+(maximum32,otherwise default8x8classic_like config). Under exactsource
+b83eaab13124491006a69a2c3b2848014c858568,the SAME publicD2q0 learner plays one
+episode (27199,60000nodes/120s/H128,8192/query,uniform foe). It closes after
+85legal plies/85queries/20149nodes/8.430631s with an actual player0win,18drops
+and4promotions.43candidate observations produce a nonzero TD update;independent
+series reconstruction has error0 and the full record replays. Final terminal
+credit is0 because the last search already predicts that terminal;do not
+misattribute all learning to the final W/L signal. There is no rule reselection,
+held-out strength claim,old-cap reset or new game-specific search.

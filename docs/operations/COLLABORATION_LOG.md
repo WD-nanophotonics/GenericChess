@@ -1,5 +1,41 @@
 # Current collaboration record
 
+## 2026-10-21 — existing ordering and three-seed direct evidence
+
+DEV_AUX adopted Claude1792579793's shared-search,material-independent ordering
+and seed-variation concerns. Its advice targeted an older randomized caller;
+Generic already used public AlphaBeta. We reused that existing orderer/TT rather
+than add PV/history to the old reference search. Warm-shallow cache can retain
+a deeper score without its literal leaf;fresh per-query players preserve model
+epochs. Four saved-root cold controls support ordering cost/completion only,
+not general strength or Native throughput. Primary Henderson/Colas papers were
+read for reporting limits,not treated as empirical results about this learner.
+
+The predeclared27195/6/7panel closes under4200s/27Mnodes:actual4200.124380s/
+8983167nodes,321train episodes/307changed updates,308of384direct slots.
+201W90L1D16UNKNOWN/76missing yield pooled payoff[19/384,203/384]. Seed bounds
+[-25/64,9/32],[29/64,3/4],[11/128,71/128] show finite conditional variation,
+not population confidence or lambda superiority.629histories/26353queries/
+321TDcalculations check to1.33e-15. Last seed's raw rows survive the global
+guard interrupting its summary entry;that omission and all limits remain.
+
+PRIMARY published6ea35571 while this frozen experiment ran. After its exit0,
+DEV_AUX imported the exact committed search/public-probe changes and regressions;
+all238shared package files match,with only two AUX learning modules additional.
+167affected tests pass. Read its q-horizon/early-win utility qualifications;
+no q1task,any-win/default switch,uncommitted files or other-role state adopted.
+One preselected new-rule episode on2026102103 then exercises85legal plies,
+18drops/4promotions and a nonzero same-learner update;this is feasibility only.
+
+No new worker,Goal,timer,search implementation or registry was introduced.
+Large generated payloads/one-off study drivers remain ignored;publication is
+the compact scientific record and maintained source/tests. All producers have
+actual exit0;stops/hourly recurrence are unchanged. New coupled selfplay-versus-
+uniform training design is900s/3.52Mnodes,not launched or an old-slot refill.
+New Slack advice was saved/reviewed;the old SEND_UNCERTAIN probe remains without
+matching readback,so no message was duplicated or claimed delivered. Git is
+the completed evidence delivery;other roles own their own research and logs.
+
 ## 2026-10-21 — public mainline search and coupled lambda control
 
 DEV_AUX fetched sandboxd2da9705 and retained all238shared package files unchanged.
