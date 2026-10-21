@@ -84,6 +84,11 @@ evidence. Cleanup does not make their inputs unexposed or reset their budgets.
    seed27189,128plannedtrain/64evalslots,2Mnodes/phase,1800stotal/900strain,
    H128,8192/query,60000/game. This is algorithm reuse,not cross-rule knowledge
    transfer or a causal test of opponent strength; no first-rule weight adoption.
+   That second-rule lambda.95 run is closed:80train/77updates at2Mnodes,
+   64eval/0missing,trained8W19L5U vsinitial23W6L3U,bound[-9/8,-5/8].No gain
+   or weight adoption. One new fixed lambda1 check uses freshseed27190 with
+   otherwise identical recipe/caps; it tests own-initial gain,not a lambda-method
+   winner because seed/initialization also change. No scan or old topup.
 2. The no-progress variant gives genuine rule draws but not identified learning
    gain. A same6-node D1 control requires5 versus170 underlying transitions
    because the reference replays history. Keep this cost explicit; do not bypass

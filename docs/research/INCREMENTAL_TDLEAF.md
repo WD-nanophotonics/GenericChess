@@ -605,6 +605,34 @@ selected rule under stronger opposition. Changing both rule and opponent
 does not isolate an opponent-strength treatment effect. No first-rule weights,
 old episode continuation, old cap reset or new infrastructure framework.
 
+### Second natural rule, uniform D2 foe
+
+That separate seed27189 run is closed at source4a1d459a. Training reaches the
+original2Mnode cap after80episodes/77nonzero updates (128was a ceiling),
+562.852phase seconds; no topup. Evaluation completes64slots with56actual mates,
+8node-capUNKNOWN and0missing,1476496nodes. Total elapsed972.514826s. Trained
+gives **8W19L5UNKNOWN** versus initial **23W6L3UNKNOWN**; paired known difference
+is-28 with8unknowns over32pairs, giving **[-9/8,-5/8]**. This finite condition
+rejects improvement, not all TDLeaf methods or the rule domain. No weight adoption.
+All144histories/4588queries and80updates check independently within2.22e-16.
+There are1149material,63terminal-PV and63actual-final error terms. Feature
+gradients span9nonfixed coordinates; that does not imply learnability or gain.
+
+The initial vector still wins23of32 against uniform D2, so depth alone does
+not guarantee a balanced opponent. The failure cannot be repaired by filling
+UNKNOWN, choosing a favorable checkpoint or extending the closed cap.
+
+One prospective check now selects classic TDLeaflambda1 on this same rule with
+freshseed27190:eta.05/scale10 unchanged,uniform iterativeD2 foe,H128,
+8192/query/60000game,128training ceiling/64evaluation slots,2Mnodes perphase,
+900s training/1800s overall. The hypothesis is that anchoring completed episodes
+to their actual return can help when early bootstrap predictions are poor,
+following the paper's section4.2 suggestion. Censored episodes still omit the
+final reward and use only observed search transitions. This is one fixed
+alternative,not a hyperparameter scan. New initialization/openings mean it tests
+gain versus its own initial vector,not a causal lambda1-versus-.95 winner.
+No priors,variant target filtering or additional rule panel is introduced.
+
 ### Literature and signal interpretation
 
 Baxter, Tridgell and Weaver's [KnightCap paper](https://arxiv.org/pdf/cs/9901002)

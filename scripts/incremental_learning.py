@@ -22,7 +22,7 @@ if str(ROOT) not in sys.path:
 
 from generic_chess.learning.incremental import (
     BudgetEnd, FixedScaleSessionEnv, NonScoringTerminal,
-    play_episode, unchanged_learner, unchanged_model,
+    play_episode, TDLeafEpisode, unchanged_model,
 )
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.schema import ruleset_from_dict
@@ -103,7 +103,7 @@ def run(args):
             active.update(phase=phase, index=index, color=color, profile=profile, env=env)
             start_record = env.record()
             result = play_episode(env, candidate, opponent=foe,
-                learner=unchanged_learner() if phase == 'train' else None,
+                learner=TDLeafEpisode(eta=.05, lam=getattr(args, 'td_lambda', .95)) if phase == 'train' else None,
                 learner_color=color, horizon=args.horizon, depth=args.depth,
                 query_nodes=args.query_nodes, max_nodes=min(args.game_nodes, remaining),
                 seconds=seconds, seed=args.seed * 1_000_000 + (0 if phase == 'train' else 1_000_000_000) + index * args.horizon,
@@ -211,6 +211,8 @@ def main():
     parser.add_argument('--seconds', type=float, default=1200.)
     parser.add_argument('--horizon', type=int, default=128)
     parser.add_argument('--depth', type=int, default=2)
+    parser.add_argument('--td-lambda', type=float, default=.95,
+                        help='classical frozen-episode TDLeaf trace decay in [0,1]')
     parser.add_argument('--iterative', action='store_true',
                         help='pay D1 through depth under one shared query budget')
     parser.add_argument('--opponent-depth', type=int)
@@ -219,6 +221,8 @@ def main():
     parser.add_argument('--query-nodes', type=int, default=8192)
     parser.add_argument('--game-nodes', type=int, default=100_000)
     args = parser.parse_args()
+    if not 0 <= args.td_lambda <= 1:
+        parser.error('td-lambda must be finite and in [0,1]')
     if min(args.train_episodes, args.eval_pairs, args.train_nodes, args.eval_nodes,
            args.seconds, args.horizon, args.depth, args.query_nodes, args.game_nodes) <= 0:
         parser.error('all counts and budgets must be positive')
