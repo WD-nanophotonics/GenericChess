@@ -1,0 +1,1943 @@
+{
+  "caller_interpretation": {
+    "actual_consumer_source": "generic_chess/ai/benchmark/runner.py play_game retains one GameSession across choose_action/submit. AlphaBetaPlayer passes existing _search_witnesses. SearchSnapshot is an envelope,not a copied or serialized session. Source review only,not execution of user UI.",
+    "decision": "No per-turn replay cache/interface rewrite is justified for the inspected maintained caller. Retain complete histories and existing session ownership;report cold external-record timing separately.",
+    "failed_query_attempts_without_result": 1,
+    "fixed_control": {
+      "all_nodes": [
+        22
+      ],
+      "all_query_results_equal": true,
+      "cold_ratios": [
+        [
+          4,
+          0.8455670374644961
+        ],
+        [
+          16,
+          0.9025047613909023
+        ],
+        [
+          64,
+          0.9455244006077802
+        ],
+        [
+          128,
+          0.9587012426328813
+        ]
+      ],
+      "record_lengths": [
+        5,
+        17,
+        65,
+        129
+      ],
+      "same_full_physical_position": true
+    },
+    "known_returned_but_unretained": 16,
+    "limitations": "Different count maps remain real;the finite D2 trees stay below repeat64. One retained-prefix16 service query is13.069ms versus4.239ms on repeat with same22nodes/50pushes/11Nativecalls;cause not established,no exclusion or favorable rerun. First provider compilation is not itself an outlier,so no attributed DLL explanation.",
+    "model": "Tcore=C+P+Q+S;Tservice=C+P+K+N+S. Increasing common replay C drives ratio toward1 if K+N<Q; it does not imply slower Native execution or justify dropping history.",
+    "question": "Which part of the observed long-history effect is a genuine caller cost rather than changed search/positions?",
+    "retained_query_results": 1240
+  },
+  "causal_corrections": [
+    "Native payload supports square_or_none;provider decline is an explicitly retained admission boundary despite current corrected kernel capability. Do not modify old fallback assertions merely because the kernel was rebuilt.",
+    "Earlier complete-cold label meant player+query only;rule compilation and canonical replay are separately charged in complete-call controls.",
+    "Runtime and Core history records have different representations;qualification projects exact identity,actor,action signature and check facts before comparison.",
+    "Custom evaluator history counterexample failed:RuntimeSearchState has no public history attribute;0completed results,no counterexample claimed.",
+    "Long random histories change physical positions;separate32call fixed-physical-root control isolates replay cost while preserving real count maps."
+  ],
+  "complete_call": {
+    "actual": 96,
+    "all_complete": true,
+    "cases": [
+      {
+        "by_prefix": {
+          "0": 0.8188087793191344,
+          "4": 0.6881689327449422
+        },
+        "caller_ratio": 0.7240928313184759,
+        "case": "4-expiring-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6461489314105595
+      },
+      {
+        "by_prefix": {
+          "0": 0.8785029002729965,
+          "4": 0.792205438245035
+        },
+        "caller_ratio": 0.8332858303115797,
+        "case": "4-expiring-remove",
+        "passes_20percent": false,
+        "query_ratio": 0.6805200368648338
+      },
+      {
+        "by_prefix": {
+          "0": 0.8340219805792811,
+          "4": 0.6258520740321265
+        },
+        "caller_ratio": 0.6770601827254656,
+        "case": "4-persistent-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6286498826829551
+      },
+      {
+        "by_prefix": {
+          "0": 0.7702434308195534,
+          "4": 0.656945146719612
+        },
+        "caller_ratio": 0.6733422487565546,
+        "case": "5-expiring-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6350473131788114
+      },
+      {
+        "by_prefix": {
+          "0": 0.8493194051374388,
+          "4": 0.7337428792355657
+        },
+        "caller_ratio": 0.7742325324459369,
+        "case": "5-expiring-remove",
+        "passes_20percent": true,
+        "query_ratio": 0.6731980954146227
+      },
+      {
+        "by_prefix": {
+          "0": 0.7948744473614219,
+          "4": 0.6998583435121304
+        },
+        "caller_ratio": 0.7129694135218345,
+        "case": "5-persistent-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6705675907660325
+      },
+      {
+        "by_prefix": {
+          "0": 0.7859474967928358,
+          "4": 0.677697829589447
+        },
+        "caller_ratio": 0.7060363818688139,
+        "case": "6-expiring-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6346942802664108
+      },
+      {
+        "by_prefix": {
+          "0": 0.9043308059749955,
+          "4": 0.7752585699076892
+        },
+        "caller_ratio": 0.8339391046392081,
+        "case": "6-expiring-remove",
+        "passes_20percent": false,
+        "query_ratio": 0.6805595010823634
+      },
+      {
+        "by_prefix": {
+          "0": 0.9904351715218961,
+          "4": 0.6963862818500162
+        },
+        "caller_ratio": 0.77593352812368,
+        "case": "6-persistent-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.7328091117234086
+      },
+      {
+        "by_prefix": {
+          "0": 0.8634900751563922,
+          "4": 0.7210454153449208
+        },
+        "caller_ratio": 0.7601965177676606,
+        "case": "8-expiring-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6654276633501983
+      },
+      {
+        "by_prefix": {
+          "0": 0.7633082051097154,
+          "4": 0.7615153029254885
+        },
+        "caller_ratio": 0.7624789832510147,
+        "case": "8-expiring-remove",
+        "passes_20percent": true,
+        "query_ratio": 0.6393090079835125
+      },
+      {
+        "by_prefix": {
+          "0": 0.7792906014187,
+          "4": 0.7448711671932609
+        },
+        "caller_ratio": 0.754810759381821,
+        "case": "8-persistent-hand",
+        "passes_20percent": true,
+        "query_ratio": 0.6750792882702605
+      }
+    ],
+    "cases_pass": 10,
+    "launch_failure": "Initial python -m .local_agent... refused relative module; zero experiment calls before normal runpy entry.",
+    "mismatches": [],
+    "missing": 0,
+    "service_requested_and_executed": 48,
+    "timing_scope": "Fresh rule/player/session per measured call in one warm Python process. Not OS/process startup, UI latency, independent timing samples or a strength experiment."
+  },
+  "cost_probe_source_sha256": "988cb3c650d94ae17eb7f95ca7a41a5bb20d45023cf16cf248e3064f4e0adb19",
+  "encoding_family": {
+    "actual": 384,
+    "cases": [
+      {
+        "case": "4-expiring-hand",
+        "compile_player_query_ratio": 0.8356438249208633,
+        "known_control": false,
+        "passes_20pct_compile_player_query": false,
+        "passes_20pct_player_query": false,
+        "player_query_ratio": 0.809877113527699
+      },
+      {
+        "case": "4-persistent-hand",
+        "compile_player_query_ratio": 0.7396573332931426,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.70220311232165
+      },
+      {
+        "case": "4-expiring-remove",
+        "compile_player_query_ratio": 0.8331156144697783,
+        "known_control": false,
+        "passes_20pct_compile_player_query": false,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7907755214506762
+      },
+      {
+        "case": "5-expiring-hand",
+        "compile_player_query_ratio": 0.6906626448702917,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.6621079643978034
+      },
+      {
+        "case": "5-persistent-hand",
+        "compile_player_query_ratio": 0.7106447200697026,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.68485435231153
+      },
+      {
+        "case": "5-expiring-remove",
+        "compile_player_query_ratio": 0.8172246716912278,
+        "known_control": false,
+        "passes_20pct_compile_player_query": false,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7791090461621459
+      },
+      {
+        "case": "6-expiring-hand",
+        "compile_player_query_ratio": 0.72732274553151,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.6995274664788088
+      },
+      {
+        "case": "6-persistent-hand",
+        "compile_player_query_ratio": 0.7422273421653403,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7163650437587535
+      },
+      {
+        "case": "6-expiring-remove",
+        "compile_player_query_ratio": 0.7938810671400081,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7496099003198409
+      },
+      {
+        "case": "8-expiring-hand",
+        "compile_player_query_ratio": 0.7562418759033791,
+        "known_control": true,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7224545360461809
+      },
+      {
+        "case": "8-persistent-hand",
+        "compile_player_query_ratio": 0.7750443419125829,
+        "known_control": false,
+        "passes_20pct_compile_player_query": true,
+        "passes_20pct_player_query": true,
+        "player_query_ratio": 0.7447055350918147
+      },
+      {
+        "case": "8-expiring-remove",
+        "compile_player_query_ratio": 0.8872167596199027,
+        "known_control": false,
+        "passes_20pct_compile_player_query": false,
+        "passes_20pct_player_query": false,
+        "player_query_ratio": 0.8494244940333029
+      }
+    ],
+    "mismatches": [],
+    "missing": 0,
+    "planned": 384,
+    "scope": "player+query excludes compilation and record import; compile+player+query adds shared rule compilation as hypothetical cold per-query cost, not separately repeated import. Neither is complete turn latency."
+  },
+  "explicit_provider": {
+    "actual": 100,
+    "actual_native_calls": 1238,
+    "cases": [
+      {
+        "case": "4-expiring-hand",
+        "cost_ratio": 0.7402691303295212,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "4-expiring-remove",
+        "cost_ratio": 0.756072488024117,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "4-persistent-hand",
+        "cost_ratio": 0.694216103016877,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "5-expiring-hand",
+        "cost_ratio": 0.7004803204859578,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "5-expiring-remove",
+        "cost_ratio": 0.7433126488919856,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "5-persistent-hand",
+        "cost_ratio": 0.6291380478173679,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "6-expiring-hand",
+        "cost_ratio": 0.6789673799675575,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "6-expiring-remove",
+        "cost_ratio": 0.7515940559938806,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "6-persistent-hand",
+        "cost_ratio": 0.7055357987021889,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "8-expiring-hand",
+        "cost_ratio": 0.7350467076678164,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "8-expiring-remove",
+        "cost_ratio": 0.7852096777634069,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "8-persistent-hand",
+        "cost_ratio": 0.7073294894040761,
+        "passes20percent": true,
+        "prefixes": 4
+      },
+      {
+        "case": "promoted-negative",
+        "cost_ratio": 0.7947320212066131,
+        "passes20percent": true,
+        "prefixes": 1
+      },
+      {
+        "case": "promoted-positive",
+        "cost_ratio": 0.7713039812863521,
+        "passes20percent": true,
+        "prefixes": 1
+      }
+    ],
+    "children": 267,
+    "complete_d2": 100,
+    "cost_scope": "provider compilation+player construction+query estimate;rule compile and canonical record import excluded. Provider was actually compiled once per rule and reused, so added cost is conservative per-query charging, not fresh-caller timing. Single process,one observation/pair,not independent samples.",
+    "decision": "Do not build rule-specialization layer; current capability-gated compiler supports original rule without semantic rewrite. Retain Core fallback and default boundary until larger public consumer activation justified.",
+    "default_boundary": "All50actual roots retain None from try_create, by explicit prior delivery policy. Explicit constructor path is qualified, not default activation.",
+    "failures": [],
+    "fallbacks": 0,
+    "matched_roots": 50,
+    "mismatches": [],
+    "missing": 0,
+    "planned": 100
+  },
+  "failed_callback_query_attempts": 1,
+  "feasibility": {
+    "actual_routes": [
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 70,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 1
+      },
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 128,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 2
+      },
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 45,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 3
+      },
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 49,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 4
+      },
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 371,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 5
+      },
+      {
+        "complete_D2": 8,
+        "mode": "full96-half",
+        "native_calls": 0,
+        "native_operational_fallbacks": 0,
+        "provider_available": 0,
+        "provider_requested_rows": 4,
+        "seed": 6
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 55,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 1
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 75,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 2
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 45,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 3
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 49,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 4
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 194,
+        "native_operational_fallbacks": 0,
+        "provider_available": 4,
+        "provider_requested_rows": 4,
+        "seed": 5
+      },
+      {
+        "complete_D2": 8,
+        "mode": "capture96-half",
+        "native_calls": 0,
+        "native_operational_fallbacks": 0,
+        "provider_available": 0,
+        "provider_requested_rows": 4,
+        "seed": 6
+      }
+    ],
+    "mode_changes": [
+      {
+        "action_changed": false,
+        "capture_paid": 54,
+        "capture_score": 2022,
+        "full_paid": 75,
+        "full_score": 2034,
+        "prefix": 0,
+        "score_changed": true,
+        "seed": 1,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 54,
+        "capture_score": 2022,
+        "full_paid": 75,
+        "full_score": 2034,
+        "prefix": 0,
+        "score_changed": true,
+        "seed": 1,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 41,
+        "capture_score": -534,
+        "full_paid": 41,
+        "full_score": -534,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 1,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 41,
+        "capture_score": -534,
+        "full_paid": 41,
+        "full_score": -534,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 1,
+        "variant": "all"
+      },
+      {
+        "action_changed": true,
+        "capture_paid": 38,
+        "capture_score": 534,
+        "full_paid": 59,
+        "full_score": 545,
+        "prefix": 2,
+        "score_changed": true,
+        "seed": 1,
+        "variant": "all"
+      },
+      {
+        "action_changed": true,
+        "capture_paid": 38,
+        "capture_score": 534,
+        "full_paid": 59,
+        "full_score": 545,
+        "prefix": 2,
+        "score_changed": true,
+        "seed": 1,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 42,
+        "capture_score": 566,
+        "full_paid": 44,
+        "full_score": 566,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 1,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 42,
+        "capture_score": 566,
+        "full_paid": 44,
+        "full_score": 566,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 1,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 52,
+        "capture_score": 2022,
+        "full_paid": 79,
+        "full_score": 2034,
+        "prefix": 0,
+        "score_changed": true,
+        "seed": 2,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 52,
+        "capture_score": 2022,
+        "full_paid": 79,
+        "full_score": 2034,
+        "prefix": 0,
+        "score_changed": true,
+        "seed": 2,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 46,
+        "capture_score": -2002,
+        "full_paid": 46,
+        "full_score": -2002,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 46,
+        "capture_score": -2002,
+        "full_paid": 46,
+        "full_score": -2002,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 58,
+        "capture_score": 2020,
+        "full_paid": 107,
+        "full_score": 2020,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 58,
+        "capture_score": 2020,
+        "full_paid": 107,
+        "full_score": 2020,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 64,
+        "capture_score": 2032,
+        "full_paid": 101,
+        "full_score": 2032,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 64,
+        "capture_score": 2032,
+        "full_paid": 101,
+        "full_score": 2032,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 2,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 28,
+        "capture_score": -995,
+        "full_paid": 28,
+        "full_score": -995,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 28,
+        "capture_score": -995,
+        "full_paid": 28,
+        "full_score": -995,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 44,
+        "capture_score": 995,
+        "full_paid": 44,
+        "full_score": 995,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 44,
+        "capture_score": 995,
+        "full_paid": 44,
+        "full_score": 995,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 3,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 30,
+        "capture_score": -995,
+        "full_paid": 30,
+        "full_score": -995,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 30,
+        "capture_score": -995,
+        "full_paid": 30,
+        "full_score": -995,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 46,
+        "capture_score": 995,
+        "full_paid": 46,
+        "full_score": 995,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 46,
+        "capture_score": 995,
+        "full_paid": 46,
+        "full_score": 995,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 34,
+        "capture_score": 974,
+        "full_paid": 34,
+        "full_score": 974,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 4,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 191,
+        "capture_score": 1922,
+        "full_paid": 268,
+        "full_score": 1922,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 191,
+        "capture_score": 1922,
+        "full_paid": 268,
+        "full_score": 1922,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 204,
+        "capture_score": -6,
+        "full_paid": 498,
+        "full_score": -6,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 204,
+        "capture_score": -6,
+        "full_paid": 498,
+        "full_score": -6,
+        "prefix": 1,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 203,
+        "capture_score": 15,
+        "full_paid": 375,
+        "full_score": 15,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 203,
+        "capture_score": 15,
+        "full_paid": 375,
+        "full_score": 15,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 180,
+        "capture_score": 1922,
+        "full_paid": 251,
+        "full_score": 1922,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 180,
+        "capture_score": 1922,
+        "full_paid": 251,
+        "full_score": 1922,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 5,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 74,
+        "capture_score": 6,
+        "full_paid": 74,
+        "full_score": 6,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 74,
+        "capture_score": 6,
+        "full_paid": 74,
+        "full_score": 6,
+        "prefix": 0,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 54,
+        "capture_score": 1869,
+        "full_paid": 97,
+        "full_score": 1998,
+        "prefix": 1,
+        "score_changed": true,
+        "seed": 6,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 54,
+        "capture_score": 1869,
+        "full_paid": 97,
+        "full_score": 1998,
+        "prefix": 1,
+        "score_changed": true,
+        "seed": 6,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 262,
+        "capture_score": -2008,
+        "full_paid": 262,
+        "full_score": -2008,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 262,
+        "capture_score": -2008,
+        "full_paid": 262,
+        "full_score": -2008,
+        "prefix": 2,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "core"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 502,
+        "capture_score": -2017,
+        "full_paid": 502,
+        "full_score": -2017,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "all"
+      },
+      {
+        "action_changed": false,
+        "capture_paid": 502,
+        "capture_score": -2017,
+        "full_paid": 502,
+        "full_score": -2017,
+        "prefix": 4,
+        "score_changed": false,
+        "seed": 6,
+        "variant": "core"
+      }
+    ],
+    "scope": "Six explicit semantic fixture feasibility,24canonical roots96 actual public queries; not full-domain equivalence or utility. Full/capture runs sequential, Core/services interleaved within each root."
+  },
+  "fixed_physical_root": {
+    "actual": 32,
+    "all_complete_d2": true,
+    "all_query_nodes": [
+      22
+    ],
+    "all_query_results_equal_across_histories": true,
+    "failures": [],
+    "missing": 0,
+    "paired_mismatches": [],
+    "rows": [
+      {
+        "cold_record": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0.0007351500680670142,
+          "core_query_seconds_mean": 0.006009500008076429,
+          "core_seconds_mean": 0.009608699998352677,
+          "history_witness_hits": [
+            5
+          ],
+          "native_core_total_ratio": 0.8455670374644961,
+          "native_query_seconds_mean": 0.004211549996398389,
+          "native_seconds_mean": 0.008124799991492182,
+          "query_nodes": [
+            22
+          ]
+        },
+        "prefix": 4,
+        "retained_session": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0,
+          "core_query_seconds_mean": 0.0062747999909333885,
+          "core_seconds_mean": 0.007182550034485757,
+          "history_witness_hits": [
+            5
+          ],
+          "native_core_total_ratio": 0.7779688232782342,
+          "native_query_seconds_mean": 0.0042276999447494745,
+          "native_seconds_mean": 0.0055877999984659255,
+          "query_nodes": [
+            22
+          ]
+        }
+      },
+      {
+        "cold_record": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0.0024655000306665897,
+          "core_query_seconds_mean": 0.005847599997650832,
+          "core_seconds_mean": 0.011018999968655407,
+          "history_witness_hits": [
+            17
+          ],
+          "native_core_total_ratio": 0.9025047613909023,
+          "native_query_seconds_mean": 0.004265800060238689,
+          "native_seconds_mean": 0.009944699937477708,
+          "query_nodes": [
+            22
+          ]
+        },
+        "prefix": 16,
+        "retained_session": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0,
+          "core_query_seconds_mean": 0.006359450053423643,
+          "core_seconds_mean": 0.00737164996098727,
+          "history_witness_hits": [
+            17
+          ],
+          "native_core_total_ratio": 1.3918457965100939,
+          "native_query_seconds_mean": 0.008653700060676783,
+          "native_seconds_mean": 0.01026020001154393,
+          "query_nodes": [
+            22
+          ]
+        }
+      },
+      {
+        "cold_record": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0.008889349992386997,
+          "core_query_seconds_mean": 0.006043350032996386,
+          "core_seconds_mean": 0.01768589997664094,
+          "history_witness_hits": [
+            65
+          ],
+          "native_core_total_ratio": 0.9455244006077802,
+          "native_query_seconds_mean": 0.004478099988773465,
+          "native_seconds_mean": 0.016722449974622577,
+          "query_nodes": [
+            22
+          ]
+        },
+        "prefix": 64,
+        "retained_session": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0,
+          "core_query_seconds_mean": 0.006614300073124468,
+          "core_seconds_mean": 0.007553250005003065,
+          "history_witness_hits": [
+            65
+          ],
+          "native_core_total_ratio": 0.8007877340442905,
+          "native_query_seconds_mean": 0.004565549956168979,
+          "native_seconds_mean": 0.00604854995617643,
+          "query_nodes": [
+            22
+          ]
+        }
+      },
+      {
+        "cold_record": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0.01715144992340356,
+          "core_query_seconds_mean": 0.0061027000192552805,
+          "core_seconds_mean": 0.026064950041472912,
+          "history_witness_hits": [
+            129
+          ],
+          "native_core_total_ratio": 0.9587012426328813,
+          "native_query_seconds_mean": 0.0044774499838240445,
+          "native_seconds_mean": 0.02498849999392405,
+          "query_nodes": [
+            22
+          ]
+        },
+        "prefix": 128,
+        "retained_session": {
+          "completed_depths": [
+            2
+          ],
+          "core_import_seconds_mean": 0,
+          "core_query_seconds_mean": 0.006305949995294213,
+          "core_seconds_mean": 0.007181450026109815,
+          "history_witness_hits": [
+            129
+          ],
+          "native_core_total_ratio": 0.8349567208865568,
+          "native_query_seconds_mean": 0.004642150073777884,
+          "native_seconds_mean": 0.0059961999650113285,
+          "query_nodes": [
+            22
+          ]
+        }
+      }
+    ],
+    "scope": "One new repetition64 rule,4actual histories with identical complete physical position,distinct genuine count maps;limited depth tree stays below repeat cutoff. No history truncation or old cap extension. Two repeats and one process do not support confidence/wholegame claims."
+  },
+  "history_digest_cost": {
+    "actual": 144,
+    "cases": [
+      {
+        "fixture": "aux_unwritten",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9906845380668126
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 1.0234603813178582
+        }
+      },
+      {
+        "fixture": "aux_written",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9735869569665311
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9999944453003203
+        }
+      },
+      {
+        "fixture": "balanced_transform",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9803476746279819
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 1.0077271953554616
+        }
+      },
+      {
+        "fixture": "castling_right",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9795995254366175
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 1.0047165092660606
+        }
+      },
+      {
+        "fixture": "ep_offtarget",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9935330390235774
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 1.0126472107599298
+        }
+      },
+      {
+        "fixture": "nonactor_transform",
+        "key_and_digest": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9774686342872628
+        },
+        "key_only": {
+          "n": 8,
+          "passes_20percent": false,
+          "ratio": 0.9999962257316107
+        }
+      }
+    ],
+    "complete_mismatches": [],
+    "completed_queries": 144,
+    "decision": "No product history-key change. Complete explicit semantics still execute; larger reuse witness is distribution-specific and general family savings must meet cost gate.",
+    "failures": [],
+    "missing": 0,
+    "paired_complete": 96,
+    "planned": 144,
+    "scope": "Private one-process instrumentation only, fresh player per call, retains full GameSession, runtime records, counts, aux and ply. Single-rule scoped switch, reset in finally."
+  },
+  "history_projection": {
+    "aggregate_nodes_ratio": 1.0033709858655153,
+    "aggregate_time_ratio": 1.0052675330638488,
+    "all_nodes_equal": false,
+    "complete_pairs": 44,
+    "completed_action_differences": [],
+    "completed_score_differences": [],
+    "depth_scope": "The48pairs combine D3 andD4 requests;44complete their requesteddepth,4pairsincomplete. Earlier ledger shorthand fullD4 was imprecise.",
+    "excluded_control": {
+      "eligible": false,
+      "preserves_distinction": true,
+      "repetition_policy": "continuous_check_loss"
+    },
+    "failures": [],
+    "limits": "Single process private gate, full history still constructed/updated; no runtime implementation/adoption, utility or generic proof.",
+    "missing": 0,
+    "queries": 96,
+    "witness": {
+      "default_warm_reuse_nodes": 149,
+      "private_projected_equal": true,
+      "projected_warm_reuse_nodes": 8,
+      "public_identity_equal": true,
+      "runtime_default_equal": false,
+      "score": 995
+    }
+  },
+  "installed_native_capabilities": {
+    "available": true,
+    "binding": "C17 + CPython C API (zig cc x86_64-windows-gnu build)",
+    "checked_public_actions": true,
+    "complete_history_replay": true,
+    "dynamic_move_lists": true,
+    "fixed_depth_alphabeta": true,
+    "hash_includes_base_type": true,
+    "iterative_deepening": true,
+    "legacy_max_actions": 4096,
+    "make_unmake": true,
+    "max_squares": 256,
+    "max_types": 64,
+    "monotonic_time_budget": true,
+    "native_cancellation": true,
+    "native_perft": true,
+    "native_qsearch": false,
+    "native_schema": "native-0.5.0",
+    "node_budget": true,
+    "production_dynamic_evaluator": false,
+    "production_search_backend": false,
+    "repetition_context_hash": true,
+    "semantic_actor_relative_effect_binding": true,
+    "semantic_exact_action_identity": true,
+    "semantic_exact_root_windows": true,
+    "semantic_fixed_depth_search": true,
+    "semantic_fixed_depth_terminal_dominance": true,
+    "semantic_fixed_depth_terminal_winners": true,
+    "semantic_immediate_win_goal": true,
+    "semantic_ir_v2_compile": true,
+    "semantic_material_evaluator": true,
+    "semantic_max_rule_ply": 65535,
+    "semantic_payload_version": 4,
+    "semantic_pending_continuation": true,
+    "semantic_position_state": true,
+    "semantic_s0_s4_executor": true,
+    "semantic_state_guard_comparisons": true,
+    "semantic_terminal": true,
+    "transposition_table": true
+  },
+  "known_returned_unretained_queries": 16,
+  "limitations": [
+    "Timing is one Python process and few correlated repeats,not independent confidence intervals or whole-game/strength evidence.",
+    "Core-first mixed-provider query order can bias timing;the0.698ratio excludes setup.",
+    "Retained-prefix16 timing regression is preserved without attribution to DLL,other agents or an established external cause.",
+    "96history-projection queries contain4incomplete pairs;all retained,not equal-depth value claims.",
+    "No all-domain equivalence;promotion,drop,auxiliary state and relevant history remain the target."
+  ],
+  "long_history": {
+    "actual": 128,
+    "complete_d2": 128,
+    "cost_scope": "One warm Python process; cold includes rule parse+compile,full strict record replay,profile/provider/query/serialization;retained excludes existing rule/session construction,includes fresh profile/provider/query/serialization. No transport/UI/process startup.",
+    "decision": "Reuse actual held GameSession/compiled rule where caller already owns them. Do not add history truncation,serialized-state cache or change generic target from a cold-call denominator effect.",
+    "failures": [],
+    "mismatches": [],
+    "missing_queries": 0,
+    "missing_roots": [],
+    "rows": [
+      {
+        "case": "4-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.00010349997319281101,
+          "core_query_mean": 0.008258750021923333,
+          "core_seconds_mean": 0.011083649995271116,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 26,
+          "native_query_mean": 0.005691700032912195,
+          "native_seconds_mean": 0.008837600063998252,
+          "service_total_ratio": 0.7973546681615578
+        },
+        "prefix": 0,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.008278700057417154,
+          "core_seconds_mean": 0.009020849945954978,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 26,
+          "native_query_mean": 0.010127749992534518,
+          "native_seconds_mean": 0.011622500023804605,
+          "service_total_ratio": 1.2884040964472785
+        }
+      },
+      {
+        "case": "4-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.002975999959744513,
+          "core_query_mean": 0.020929999998770654,
+          "core_seconds_mean": 0.02673784998478368,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 64,
+          "native_query_mean": 0.01460054999915883,
+          "native_seconds_mean": 0.02085125003941357,
+          "service_total_ratio": 0.7798401910131095
+        },
+        "prefix": 16,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.020742200023960322,
+          "core_seconds_mean": 0.021441449993290007,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 64,
+          "native_query_mean": 0.013914949959143996,
+          "native_seconds_mean": 0.01519390003522858,
+          "service_total_ratio": 0.7086227862380312
+        }
+      },
+      {
+        "case": "4-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.011232849967200309,
+          "core_query_mean": 0.008192300039809197,
+          "core_seconds_mean": 0.022057400026824325,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 22,
+          "native_query_mean": 0.005927300022449344,
+          "native_seconds_mean": 0.020468699978664517,
+          "service_total_ratio": 0.9279742831780823
+        },
+        "prefix": 64,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.007956449990160763,
+          "core_seconds_mean": 0.008717600023373961,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 22,
+          "native_query_mean": 0.006094899959862232,
+          "native_seconds_mean": 0.007421150046866387,
+          "service_total_ratio": 0.8512836132615074
+        }
+      },
+      {
+        "case": "4-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.02207599999383092,
+          "core_query_mean": 0.013327949971426278,
+          "core_seconds_mean": 0.03837835002923384,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 28,
+          "native_query_mean": 0.010385849978774786,
+          "native_seconds_mean": 0.035299899929668754,
+          "service_total_ratio": 0.9197868043514078
+        },
+        "prefix": 128,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.013888300047256052,
+          "core_seconds_mean": 0.014673349971417338,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 28,
+          "native_query_mean": 0.010607450094539672,
+          "native_seconds_mean": 0.011842750012874603,
+          "service_total_ratio": 0.8070924523672818
+        }
+      },
+      {
+        "case": "4-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.00011915003415197134,
+          "core_query_mean": 0.007835149997845292,
+          "core_seconds_mean": 0.010682699969038367,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 26,
+          "native_query_mean": 0.005365349992644042,
+          "native_seconds_mean": 0.008817000081762671,
+          "service_total_ratio": 0.8253531511057085
+        },
+        "prefix": 0,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.008183100027963519,
+          "core_seconds_mean": 0.008960350067354739,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 26,
+          "native_query_mean": 0.0055131500121206045,
+          "native_seconds_mean": 0.00868960004299879,
+          "service_total_ratio": 0.9697835439105921
+        }
+      },
+      {
+        "case": "4-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.0026451500016264617,
+          "core_query_mean": 0.015121500007808208,
+          "core_seconds_mean": 0.020629849983379245,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 48,
+          "native_query_mean": 0.010234100045636296,
+          "native_seconds_mean": 0.0164369999547489,
+          "service_total_ratio": 0.7967580941204915
+        },
+        "prefix": 16,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.015363549930043519,
+          "core_seconds_mean": 0.016117949970066547,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 48,
+          "native_query_mean": 0.010657800012268126,
+          "native_seconds_mean": 0.012013199971988797,
+          "service_total_ratio": 0.7453305162442564
+        }
+      },
+      {
+        "case": "4-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.010234550049062818,
+          "core_query_mean": 0.011634749942459166,
+          "core_seconds_mean": 0.024558849981985986,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.006958300014957786,
+          "native_seconds_mean": 0.020717100065667182,
+          "service_total_ratio": 0.8435696329780612
+        },
+        "prefix": 64,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.011871750000864267,
+          "core_seconds_mean": 0.012722849904093891,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.007304950035177171,
+          "native_seconds_mean": 0.00870299997041002,
+          "service_total_ratio": 0.6840448512726393
+        }
+      },
+      {
+        "case": "4-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.02086495002731681,
+          "core_query_mean": 0.006560150010045618,
+          "core_seconds_mean": 0.030155700049363077,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 10,
+          "native_query_mean": 0.005806899978779256,
+          "native_seconds_mean": 0.03011435002554208,
+          "service_total_ratio": 0.9986287824937472
+        },
+        "prefix": 128,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.006707400025334209,
+          "core_seconds_mean": 0.007425899966619909,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 10,
+          "native_query_mean": 0.00601905002258718,
+          "native_seconds_mean": 0.007400150003377348,
+          "service_total_ratio": 0.996532411780618
+        }
+      },
+      {
+        "case": "8-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 9.950000094249845e-05,
+          "core_query_mean": 0.01790069998241961,
+          "core_seconds_mean": 0.026868550048675388,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 44,
+          "native_query_mean": 0.01220014999853447,
+          "native_seconds_mean": 0.020132050092797726,
+          "service_total_ratio": 0.7492793640269483
+        },
+        "prefix": 0,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.01821684994501993,
+          "core_seconds_mean": 0.020775299984961748,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 44,
+          "native_query_mean": 0.012483649945352226,
+          "native_seconds_mean": 0.0160629500169307,
+          "service_total_ratio": 0.7731753586498344
+        }
+      },
+      {
+        "case": "8-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.003153500030748546,
+          "core_query_mean": 0.006615100021008402,
+          "core_seconds_mean": 0.016792749927844852,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 16,
+          "native_query_mean": 0.0051050500478595495,
+          "native_seconds_mean": 0.016447249974589795,
+          "service_total_ratio": 0.9794256476908426
+        },
+        "prefix": 16,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.006989549961872399,
+          "core_seconds_mean": 0.00950215000193566,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 16,
+          "native_query_mean": 0.0052975500002503395,
+          "native_seconds_mean": 0.008813749998807907,
+          "service_total_ratio": 0.9275532376370063
+        }
+      },
+      {
+        "case": "8-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.01172829995630309,
+          "core_query_mean": 0.010988549969624728,
+          "core_seconds_mean": 0.029934699938166887,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 22,
+          "native_query_mean": 0.008927400049287826,
+          "native_seconds_mean": 0.028565050044562668,
+          "service_total_ratio": 0.9542454109634181
+        },
+        "prefix": 64,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.011217500024940819,
+          "core_seconds_mean": 0.01370115001918748,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 22,
+          "native_query_mean": 0.009012099995743483,
+          "native_seconds_mean": 0.012563349970150739,
+          "service_total_ratio": 0.9169558725038895
+        }
+      },
+      {
+        "case": "8-expiring-hand",
+        "cold_record": {
+          "core_import_mean": 0.023717749980278313,
+          "core_query_mean": 0.05117655004141852,
+          "core_seconds_mean": 0.08438459999160841,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 84,
+          "native_query_mean": 0.03511385002639145,
+          "native_seconds_mean": 0.0693009999813512,
+          "service_total_ratio": 0.8212517448473158
+        },
+        "prefix": 128,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.05031854996923357,
+          "core_seconds_mean": 0.05291324999416247,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 84,
+          "native_query_mean": 0.03582480002660304,
+          "native_seconds_mean": 0.03924534993711859,
+          "service_total_ratio": 0.7416922971363172
+        }
+      },
+      {
+        "case": "8-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.00010624993592500687,
+          "core_query_mean": 0.017598950013052672,
+          "core_seconds_mean": 0.025061599968466908,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 44,
+          "native_query_mean": 0.011607099964749068,
+          "native_seconds_mean": 0.02002220001304522,
+          "service_total_ratio": 0.7989194639702821
+        },
+        "prefix": 0,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.01763945003040135,
+          "core_seconds_mean": 0.020223449973855168,
+          "history_witness_hits": [
+            1,
+            1
+          ],
+          "native_calls": 44,
+          "native_query_mean": 0.011532700038515031,
+          "native_seconds_mean": 0.015328850015066564,
+          "service_total_ratio": 0.7579740368178361
+        }
+      },
+      {
+        "case": "8-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.003644299926236272,
+          "core_query_mean": 0.01099145004991442,
+          "core_seconds_mean": 0.022095549968071282,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.007769300020299852,
+          "native_seconds_mean": 0.019544899929314852,
+          "service_total_ratio": 0.8845627267733913
+        },
+        "prefix": 16,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.01092625001911074,
+          "core_seconds_mean": 0.013533699966501445,
+          "history_witness_hits": [
+            17,
+            17
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.008027500007301569,
+          "native_seconds_mean": 0.011523450026288629,
+          "service_total_ratio": 0.8514633880469806
+        }
+      },
+      {
+        "case": "8-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.011806399968918413,
+          "core_query_mean": 0.016113349935039878,
+          "core_seconds_mean": 0.034993199922610074,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 38,
+          "native_query_mean": 0.01206695003202185,
+          "native_seconds_mean": 0.034255500009749085,
+          "service_total_ratio": 0.978918763802897
+        },
+        "prefix": 64,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.01632599998265505,
+          "core_seconds_mean": 0.019116900046356022,
+          "history_witness_hits": [
+            65,
+            65
+          ],
+          "native_calls": 38,
+          "native_query_mean": 0.012357049970887601,
+          "native_seconds_mean": 0.016051999991759658,
+          "service_total_ratio": 0.8396758864060399
+        }
+      },
+      {
+        "case": "8-persistent-hand",
+        "cold_record": {
+          "core_import_mean": 0.023020000022370368,
+          "core_query_mean": 0.01679419999709353,
+          "core_seconds_mean": 0.04710649995831773,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.013554099947214127,
+          "native_seconds_mean": 0.044452000001911074,
+          "service_total_ratio": 0.9436489665172431
+        },
+        "prefix": 128,
+        "retained_session": {
+          "core_import_mean": 0.0,
+          "core_query_mean": 0.017129299987573177,
+          "core_seconds_mean": 0.01972995005780831,
+          "history_witness_hits": [
+            129,
+            129
+          ],
+          "native_calls": 30,
+          "native_query_mean": 0.013719649985432625,
+          "native_seconds_mean": 0.019172450061887503,
+          "service_total_ratio": 0.9717434664412559
+        }
+      }
+    ],
+    "walk": "Random fixed seed,prefer ongoing least-visited Core child positions. This intentionally conditions on continuing paths,not uniform game quality or utility. Preserve early terminals/missing prefixes,do not refill."
+  },
+  "mixed_provider": {
+    "actual": 112,
+    "cases": 28,
+    "completed_d2": 112,
+    "decision": "Explicit native support makes rule-recoding unnecessary in these cases; retain current default exclusions and compiler old-kernel refusal. No generic all-domain claim.",
+    "default_provider_available_roots": 32,
+    "exact_pairs": 56,
+    "failures": [],
+    "fallbacks": 0,
+    "full_children": 208,
+    "missing": 0,
+    "native_calls": 590,
+    "operational_failures": 0,
+    "pair_mismatches": [],
+    "planned": 112,
+    "query_ratio": 0.6979424975167197,
+    "roots": 56,
+    "scope": "Compound effect source adaptation and valid replay;112retained actualcalls,208fullchildren. One process,Core-first query order,compile/setup excluded from ratio. Not independent time samples,wholeturnspeed,utility or defaultadmission."
+  },
+  "phase_counts": [
+    {
+      "additional_witness_queries": 0,
+      "phase": "full96-half",
+      "retained_queries": 48
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "capture96-half",
+      "retained_queries": 48
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "encoding-full",
+      "retained_queries": 16
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "encoding-capture",
+      "retained_queries": 16
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "encoding-family384",
+      "retained_queries": 384
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "complete-call96",
+      "retained_queries": 96
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "castling-context",
+      "retained_queries": 16
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "explicit-provider100",
+      "retained_queries": 100
+    },
+    {
+      "additional_witness_queries": 4,
+      "phase": "history-projection96",
+      "retained_queries": 96
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "history-cost144",
+      "retained_queries": 144
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "mixed-provider112",
+      "retained_queries": 112
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "long-history128",
+      "retained_queries": 128
+    },
+    {
+      "additional_witness_queries": 0,
+      "phase": "fixed-root32",
+      "retained_queries": 32
+    }
+  ],
+  "retained_query_results": 1240,
+  "scope": "PRIMARY explicit semantic effects,auxiliary/history and existing caller feasibility. No new game engine,learner,Native build,default activation or AUX execution.",
+  "source_base_revision": "3ddbf9988e680d473ebe5d90b2a66ec430993df5",
+  "executed_cli_source_sha256": "988cb3c650d94ae17eb7f95ca7a41a5bb20d45023cf16cf248e3064f4e0adb19"
+}

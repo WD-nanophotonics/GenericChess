@@ -1,3 +1,15 @@
+## 2026-10-21 explicit auxiliary consumer qualification
+
+Only scripts/semantic_probe_cost.py changes execution routing: explicit semantic
+rules use the existing product compiler, legacy generation retains IR lowering,
+and `--variants core` disables Native legality/check/availability services. An
+explicit evaluator-backend option remains independent. Defaults and result
+fields remain; the added world compilation_entry reports actual dispatch.
+Current actor-binding kernel support does not widen the deliberately retained
+production provider exclusions. No Native rebuild, API/evaluator/q/UI/default
+change is required.266affected checks pass. Full literal inputs, causal negative
+controls and cost/admission limits: ../research/AUXILIARY_STATE_AND_CALLER_COST_20261021.md.
+
 ## 2026-10-18 checked semantic submission cost
 
 Python Core only: apply_action keeps its complete legality/legacy-ambiguity and

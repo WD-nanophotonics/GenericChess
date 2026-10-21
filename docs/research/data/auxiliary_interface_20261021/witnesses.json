@@ -1,0 +1,4555 @@
+{
+  "scope": "Canonical minimal full-rule/history witnesses;derive complete children through existing Core.",
+  "promoted_negative_control": {
+    "scope": "A legal promoted initial actor breaks the restricted base=current invariant. Distinct explicit game, not a replacement for the positive cohort.",
+    "preparation_failure": "First draft omitted required A drop/promotion masks; compiler correctly rejected it. Added derived masks before any query/experiment; no product change or expected-value adjustment.",
+    "rows": [
+      {
+        "mode": "original",
+        "rule": {
+          "schema_version": 1,
+          "piece_types": [
+            {
+              "type_id": "K",
+              "name": "K",
+              "movement_atoms": [
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    0
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    0,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    1
+                  ]
+                }
+              ],
+              "is_anchor": true,
+              "is_promotable": false,
+              "promotion_target_ids": []
+            },
+            {
+              "type_id": "P",
+              "name": "P",
+              "movement_atoms": [
+                {
+                  "kind": "ray",
+                  "direction": [
+                    0,
+                    1
+                  ],
+                  "max_steps": null
+                }
+              ],
+              "is_anchor": false,
+              "is_promotable": false,
+              "promotion_target_ids": []
+            },
+            {
+              "type_id": "A",
+              "name": "A",
+              "movement_atoms": [
+                {
+                  "kind": "ray",
+                  "direction": [
+                    0,
+                    1
+                  ],
+                  "max_steps": null
+                }
+              ],
+              "is_anchor": false,
+              "is_promotable": true,
+              "promotion_target_ids": [
+                "P"
+              ]
+            }
+          ],
+          "initial_position": [
+            [
+              {
+                "owner": 0,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "A",
+                "current_type_id": "P",
+                "promoted": true
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              }
+            ]
+          ],
+          "drop_allowed": {
+            "P": [
+              [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ]
+            ],
+            "A": [
+              [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            ]
+          },
+          "promotion_allowed": {
+            "A": [
+              [
+                [
+                  0,
+                  0,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  5,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  7
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  2,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  3,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  4,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  5,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  0,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  1,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  4,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6,
+                  2,
+                  7
+                ],
+                [
+                  3,
+                  0,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  1,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  3,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  5,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  6,
+                  3,
+                  7
+                ],
+                [
+                  4,
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  1,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  2,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  3,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  4,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  5,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  6,
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  0,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  1,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  2,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  3,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  4,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  5,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  6,
+                  5,
+                  7
+                ],
+                [
+                  6,
+                  0,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  1,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  2,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  3,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  5,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  6,
+                  6,
+                  7
+                ],
+                [
+                  7,
+                  0,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  1,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  2,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  3,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  4,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  5,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  6,
+                  7,
+                  7
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  7,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  5,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  7,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  1,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  4,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  6,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  7,
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  1,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  2,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  3,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  4,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  5,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  6,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  7,
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  1,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  2,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  3,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  4,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  5,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  6,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  7,
+                  4,
+                  0
+                ],
+                [
+                  5,
+                  1,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  2,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  3,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  4,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  5,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  6,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  7,
+                  5,
+                  0
+                ],
+                [
+                  6,
+                  1,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  2,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  3,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  4,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  5,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  6,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  7,
+                  6,
+                  0
+                ],
+                [
+                  7,
+                  1,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  2,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  3,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  4,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  5,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  7,
+                  7,
+                  0
+                ]
+              ]
+            ]
+          },
+          "promotion_forced": {
+            "A": [
+              [
+                [
+                  0,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  7,
+                  7
+                ]
+              ],
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ]
+            ]
+          },
+          "repetition_limit": 4,
+          "max_ply": 512,
+          "stalemate_result": "draw",
+          "board_size": 8,
+          "semantic_dsl_version": 2,
+          "semantic_actions": [
+            {
+              "name": "double_step_creates_token",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "ray",
+                "atom_kind": null,
+                "offset": null,
+                "direction": [
+                  0,
+                  1
+                ],
+                "min_steps": 2,
+                "max_steps": 2,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [
+                {
+                  "kind": "path_clear",
+                  "count": null,
+                  "lo": null,
+                  "hi": null,
+                  "owner_filter": "any"
+                }
+              ],
+              "state_guards": [],
+              "slot_guards": [],
+              "aux_state": [
+                {
+                  "name": "ep_token",
+                  "value_kind": "square_or_none",
+                  "scope": "global",
+                  "lifetime": "expire_next_turn",
+                  "initial": null
+                }
+              ],
+              "effects": [
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "set_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "path_step",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": 0,
+                    "slot_name": null
+                  },
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            },
+            {
+              "name": "token_adjacent_capture_removes_off_target",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "leap",
+                "atom_kind": null,
+                "offset": [
+                  1,
+                  1
+                ],
+                "direction": null,
+                "min_steps": null,
+                "max_steps": null,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [],
+              "state_guards": [],
+              "slot_guards": [
+                {
+                  "slot_name": "ep_token",
+                  "comparison": "eq",
+                  "value": null,
+                  "square_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  }
+                }
+              ],
+              "aux_state": [],
+              "effects": [
+                {
+                  "kind": "remove",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "offset_from_target",
+                    "square": null,
+                    "offset": [
+                      0,
+                      -1
+                    ],
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "piece_owner": "opponent",
+                  "piece_type_ref": {
+                    "kind": "action_base",
+                    "type_id": null
+                  },
+                  "disposition": "capture_to_hand",
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "clear_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            },
+            {
+              "name": "token_adjacent_capture_left",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "leap",
+                "atom_kind": null,
+                "offset": [
+                  -1,
+                  1
+                ],
+                "direction": null,
+                "min_steps": null,
+                "max_steps": null,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [],
+              "state_guards": [],
+              "slot_guards": [
+                {
+                  "slot_name": "ep_token",
+                  "comparison": "eq",
+                  "value": null,
+                  "square_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  }
+                }
+              ],
+              "aux_state": [],
+              "effects": [
+                {
+                  "kind": "remove",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "offset_from_target",
+                    "square": null,
+                    "offset": [
+                      0,
+                      -1
+                    ],
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "piece_owner": "opponent",
+                  "piece_type_ref": {
+                    "kind": "action_base",
+                    "type_id": null
+                  },
+                  "disposition": "capture_to_hand",
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "clear_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            }
+          ],
+          "metadata": {}
+        },
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                1
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_double_step_creates_token",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                3
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "32bf53bdf3ff97484cc06924dda10e9eb596afcacb2320a7a372f29577549401",
+          "schema_version": 1
+        },
+        "actor": {
+          "owner": 1,
+          "base_type_id": "A",
+          "current_type_id": "P",
+          "promoted": true
+        },
+        "EP_capture_actions": [],
+        "all_legal": 7
+      },
+      {
+        "mode": "blind_explicitP",
+        "rule": {
+          "schema_version": 1,
+          "piece_types": [
+            {
+              "type_id": "K",
+              "name": "K",
+              "movement_atoms": [
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    0
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    -1,
+                    1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    0,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    -1
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    0
+                  ]
+                },
+                {
+                  "kind": "leap",
+                  "offset": [
+                    1,
+                    1
+                  ]
+                }
+              ],
+              "is_anchor": true,
+              "is_promotable": false,
+              "promotion_target_ids": []
+            },
+            {
+              "type_id": "P",
+              "name": "P",
+              "movement_atoms": [
+                {
+                  "kind": "ray",
+                  "direction": [
+                    0,
+                    1
+                  ],
+                  "max_steps": null
+                }
+              ],
+              "is_anchor": false,
+              "is_promotable": false,
+              "promotion_target_ids": []
+            },
+            {
+              "type_id": "A",
+              "name": "A",
+              "movement_atoms": [
+                {
+                  "kind": "ray",
+                  "direction": [
+                    0,
+                    1
+                  ],
+                  "max_steps": null
+                }
+              ],
+              "is_anchor": false,
+              "is_promotable": true,
+              "promotion_target_ids": [
+                "P"
+              ]
+            }
+          ],
+          "initial_position": [
+            [
+              {
+                "owner": 0,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "A",
+                "current_type_id": "P",
+                "promoted": true
+              },
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              }
+            ]
+          ],
+          "drop_allowed": {
+            "P": [
+              [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ]
+            ],
+            "A": [
+              [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            ]
+          },
+          "promotion_allowed": {
+            "A": [
+              [
+                [
+                  0,
+                  0,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  5,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  7
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  2,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  3,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  4,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  5,
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  0,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  1,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  4,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6,
+                  2,
+                  7
+                ],
+                [
+                  3,
+                  0,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  1,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  2,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  3,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  5,
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  6,
+                  3,
+                  7
+                ],
+                [
+                  4,
+                  0,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  1,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  2,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  3,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  4,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  5,
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  6,
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  0,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  1,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  2,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  3,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  4,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  5,
+                  5,
+                  7
+                ],
+                [
+                  5,
+                  6,
+                  5,
+                  7
+                ],
+                [
+                  6,
+                  0,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  1,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  2,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  3,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  4,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  5,
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  6,
+                  6,
+                  7
+                ],
+                [
+                  7,
+                  0,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  1,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  2,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  3,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  4,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  5,
+                  7,
+                  7
+                ],
+                [
+                  7,
+                  6,
+                  7,
+                  7
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  7,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  5,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  7,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  1,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  4,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  6,
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  7,
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  1,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  2,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  3,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  4,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  5,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  6,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  7,
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  1,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  2,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  3,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  4,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  5,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  6,
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  7,
+                  4,
+                  0
+                ],
+                [
+                  5,
+                  1,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  2,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  3,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  4,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  5,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  6,
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  7,
+                  5,
+                  0
+                ],
+                [
+                  6,
+                  1,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  2,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  3,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  4,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  5,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  6,
+                  6,
+                  0
+                ],
+                [
+                  6,
+                  7,
+                  6,
+                  0
+                ],
+                [
+                  7,
+                  1,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  2,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  3,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  4,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  5,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  7,
+                  7,
+                  0
+                ]
+              ]
+            ]
+          },
+          "promotion_forced": {
+            "A": [
+              [
+                [
+                  0,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  7,
+                  7
+                ]
+              ],
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ]
+            ]
+          },
+          "repetition_limit": 4,
+          "max_ply": 512,
+          "stalemate_result": "draw",
+          "board_size": 8,
+          "semantic_dsl_version": 2,
+          "semantic_actions": [
+            {
+              "name": "double_step_creates_token",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "ray",
+                "atom_kind": null,
+                "offset": null,
+                "direction": [
+                  0,
+                  1
+                ],
+                "min_steps": 2,
+                "max_steps": 2,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [
+                {
+                  "kind": "path_clear",
+                  "count": null,
+                  "lo": null,
+                  "hi": null,
+                  "owner_filter": "any"
+                }
+              ],
+              "state_guards": [],
+              "slot_guards": [],
+              "aux_state": [
+                {
+                  "name": "ep_token",
+                  "value_kind": "square_or_none",
+                  "scope": "global",
+                  "lifetime": "expire_next_turn",
+                  "initial": null
+                }
+              ],
+              "effects": [
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "set_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "path_step",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": 0,
+                    "slot_name": null
+                  },
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            },
+            {
+              "name": "token_adjacent_capture_removes_off_target",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "leap",
+                "atom_kind": null,
+                "offset": [
+                  1,
+                  1
+                ],
+                "direction": null,
+                "min_steps": null,
+                "max_steps": null,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [],
+              "state_guards": [],
+              "slot_guards": [
+                {
+                  "slot_name": "ep_token",
+                  "comparison": "eq",
+                  "value": null,
+                  "square_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  }
+                }
+              ],
+              "aux_state": [],
+              "effects": [
+                {
+                  "kind": "remove",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "offset_from_target",
+                    "square": null,
+                    "offset": [
+                      0,
+                      -1
+                    ],
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "piece_owner": "opponent",
+                  "piece_type_ref": {
+                    "kind": "explicit",
+                    "type_id": "P"
+                  },
+                  "disposition": "capture_to_hand",
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "clear_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            },
+            {
+              "name": "token_adjacent_capture_left",
+              "type_ids": [
+                "P"
+              ],
+              "geometry": {
+                "kind": "leap",
+                "atom_kind": null,
+                "offset": [
+                  -1,
+                  1
+                ],
+                "direction": null,
+                "min_steps": null,
+                "max_steps": null,
+                "owner_relative": true
+              },
+              "target_relation": "empty",
+              "composition": "augment",
+              "replace_selector": null,
+              "path_constraints": [],
+              "state_guards": [],
+              "slot_guards": [
+                {
+                  "slot_name": "ep_token",
+                  "comparison": "eq",
+                  "value": null,
+                  "square_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  }
+                }
+              ],
+              "aux_state": [],
+              "effects": [
+                {
+                  "kind": "remove",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": {
+                    "kind": "offset_from_target",
+                    "square": null,
+                    "offset": [
+                      0,
+                      -1
+                    ],
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "piece_owner": "opponent",
+                  "piece_type_ref": {
+                    "kind": "explicit",
+                    "type_id": "P"
+                  },
+                  "disposition": "capture_to_hand",
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "move",
+                  "from_ref": {
+                    "kind": "source",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "to_ref": {
+                    "kind": "target",
+                    "square": null,
+                    "offset": null,
+                    "owner_relative": true,
+                    "step": null,
+                    "slot_name": null
+                  },
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": null,
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                },
+                {
+                  "kind": "clear_token",
+                  "from_ref": null,
+                  "to_ref": null,
+                  "square_ref": null,
+                  "piece_owner": "self",
+                  "piece_type_ref": null,
+                  "disposition": null,
+                  "slot_name": "ep_token",
+                  "type_ref": null,
+                  "count": 1,
+                  "value": null
+                }
+              ],
+              "invariants": [
+                {
+                  "kind": "own_anchor_safe",
+                  "square_refs": []
+                }
+              ],
+              "postconditions": [],
+              "promotion_mode": "none",
+              "explicit_promotion_type": null,
+              "triggers": []
+            }
+          ],
+          "metadata": {}
+        },
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "P",
+              "from": [
+                3,
+                1
+              ],
+              "geometry_id": "g11",
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_double_step_creates_token",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                3
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "605d301e9ffd4ff3800cf79e72d1a4f2498fc7d097931a4bde45948caca07ef8",
+          "schema_version": 1
+        },
+        "actor": {
+          "owner": 1,
+          "base_type_id": "A",
+          "current_type_id": "P",
+          "promoted": true
+        },
+        "EP_capture_actions": [
+          {
+            "pattern_id": "sem_01_token_adjacent_capture_removes_off_target",
+            "geometry_id": "g12",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 4,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          }
+        ],
+        "all_legal": 8
+      }
+    ],
+    "result": "Blind action_base\u2192explicitP rewrite changes legality. No generic guard relaxation/compiler activation justified by positive fixture family."
+  },
+  "swapped_plain_draw_histories": {
+    "rule": {
+      "schema_version": 1,
+      "piece_types": [
+        {
+          "type_id": "K",
+          "name": "K",
+          "movement_atoms": [
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_anchor": true,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        },
+        {
+          "type_id": "A",
+          "name": "A",
+          "movement_atoms": [],
+          "is_anchor": false,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        }
+      ],
+      "initial_position": [
+        [
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "A",
+            "current_type_id": "A",
+            "promoted": false
+          },
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          }
+        ]
+      ],
+      "drop_allowed": {
+        "A": [
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      },
+      "promotion_allowed": {},
+      "promotion_forced": {},
+      "repetition_limit": 4,
+      "max_ply": 512,
+      "stalemate_result": "draw",
+      "board_size": 5,
+      "semantic_dsl_version": 2,
+      "semantic_actions": [
+        {
+          "name": "write_flag",
+          "type_ids": [
+            "A"
+          ],
+          "geometry": {
+            "kind": "leap",
+            "atom_kind": null,
+            "offset": [
+              1,
+              0
+            ],
+            "direction": null,
+            "min_steps": null,
+            "max_steps": null,
+            "owner_relative": true
+          },
+          "target_relation": "empty",
+          "composition": "augment",
+          "replace_selector": null,
+          "path_constraints": [],
+          "state_guards": [],
+          "slot_guards": [],
+          "aux_state": [
+            {
+              "name": "flag",
+              "value_kind": "bool",
+              "scope": "global",
+              "lifetime": "persistent",
+              "initial": 0
+            }
+          ],
+          "effects": [
+            {
+              "kind": "move",
+              "from_ref": {
+                "kind": "source",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "to_ref": {
+                "kind": "target",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": null,
+              "disposition": null,
+              "slot_name": null,
+              "type_ref": null,
+              "count": 1,
+              "value": null
+            },
+            {
+              "kind": "set_bool",
+              "from_ref": null,
+              "to_ref": null,
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": null,
+              "disposition": null,
+              "slot_name": "flag",
+              "type_ref": null,
+              "count": 1,
+              "value": 1
+            }
+          ],
+          "invariants": [
+            {
+              "kind": "own_anchor_safe",
+              "square_refs": []
+            }
+          ],
+          "postconditions": [],
+          "promotion_mode": "none",
+          "explicit_promotion_type": null,
+          "triggers": []
+        },
+        {
+          "name": "return",
+          "type_ids": [
+            "A"
+          ],
+          "geometry": {
+            "kind": "leap",
+            "atom_kind": null,
+            "offset": [
+              -1,
+              0
+            ],
+            "direction": null,
+            "min_steps": null,
+            "max_steps": null,
+            "owner_relative": true
+          },
+          "target_relation": "empty",
+          "composition": "augment",
+          "replace_selector": null,
+          "path_constraints": [],
+          "state_guards": [],
+          "slot_guards": [],
+          "aux_state": [],
+          "effects": [
+            {
+              "kind": "move",
+              "from_ref": {
+                "kind": "source",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "to_ref": {
+                "kind": "target",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": null,
+              "disposition": null,
+              "slot_name": null,
+              "type_ref": null,
+              "count": 1,
+              "value": null
+            }
+          ],
+          "invariants": [
+            {
+              "kind": "own_anchor_safe",
+              "square_refs": []
+            }
+          ],
+          "postconditions": [],
+          "promotion_mode": "none",
+          "explicit_promotion_type": null,
+          "triggers": []
+        }
+      ],
+      "metadata": {}
+    },
+    "records": [
+      {
+        "actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              3
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "358ea644c1db6270071a0fa5023bd9f157867f12e01c189ed8b4b6132f682684",
+        "schema_version": 1
+      },
+      {
+        "actions": [
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              3
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              1,
+              0
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              3
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              0
+            ],
+            "geometry_id": "g4",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_008",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              4,
+              4
+            ],
+            "geometry_id": "g6",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              4
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              0,
+              1
+            ],
+            "geometry_id": "g3",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_006",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "actor_type_id": "K",
+            "from": [
+              3,
+              4
+            ],
+            "geometry_id": "g1",
+            "kind": "semantic_board",
+            "pattern_id": "legacy_002",
+            "promotion_target_id": null,
+            "to": [
+              4,
+              4
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "358ea644c1db6270071a0fa5023bd9f157867f12e01c189ed8b4b6132f682684",
+        "schema_version": 1
+      }
+    ]
+  },
+  "castling_rights": {
+    "rule": {
+      "schema_version": 1,
+      "piece_types": [
+        {
+          "type_id": "K",
+          "name": "K",
+          "movement_atoms": [
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                -1,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                0,
+                1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                -1
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                0
+              ]
+            },
+            {
+              "kind": "leap",
+              "offset": [
+                1,
+                1
+              ]
+            }
+          ],
+          "is_anchor": true,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        },
+        {
+          "type_id": "R",
+          "name": "R",
+          "movement_atoms": [
+            {
+              "kind": "ray",
+              "direction": [
+                1,
+                0
+              ],
+              "max_steps": null
+            },
+            {
+              "kind": "ray",
+              "direction": [
+                -1,
+                0
+              ],
+              "max_steps": null
+            },
+            {
+              "kind": "ray",
+              "direction": [
+                0,
+                1
+              ],
+              "max_steps": null
+            },
+            {
+              "kind": "ray",
+              "direction": [
+                0,
+                -1
+              ],
+              "max_steps": null
+            }
+          ],
+          "is_anchor": false,
+          "is_promotable": false,
+          "promotion_target_ids": []
+        }
+      ],
+      "initial_position": [
+        [
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "drop_allowed": {
+        "R": [
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      },
+      "promotion_allowed": {},
+      "promotion_forced": {},
+      "repetition_limit": 4,
+      "max_ply": 512,
+      "stalemate_result": "draw",
+      "board_size": 8,
+      "semantic_dsl_version": 2,
+      "semantic_actions": [
+        {
+          "name": "king_side_shift",
+          "type_ids": [
+            "K"
+          ],
+          "geometry": {
+            "kind": "ray",
+            "atom_kind": null,
+            "offset": null,
+            "direction": [
+              1,
+              0
+            ],
+            "min_steps": 2,
+            "max_steps": 2,
+            "owner_relative": true
+          },
+          "target_relation": "empty",
+          "composition": "augment",
+          "replace_selector": null,
+          "path_constraints": [
+            {
+              "kind": "path_clear",
+              "count": null,
+              "lo": null,
+              "hi": null,
+              "owner_filter": "any"
+            }
+          ],
+          "state_guards": [],
+          "slot_guards": [
+            {
+              "slot_name": "king_right",
+              "comparison": "eq",
+              "value": 1,
+              "square_ref": null
+            }
+          ],
+          "aux_state": [
+            {
+              "name": "king_right",
+              "value_kind": "bool",
+              "scope": "per_owner",
+              "lifetime": "persistent",
+              "initial": 1
+            }
+          ],
+          "effects": [
+            {
+              "kind": "move",
+              "from_ref": {
+                "kind": "source",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "to_ref": {
+                "kind": "target",
+                "square": null,
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": null,
+              "disposition": null,
+              "slot_name": null,
+              "type_ref": null,
+              "count": 1,
+              "value": null
+            },
+            {
+              "kind": "move",
+              "from_ref": {
+                "kind": "offset_from_source",
+                "square": null,
+                "offset": [
+                  3,
+                  0
+                ],
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "to_ref": {
+                "kind": "offset_from_source",
+                "square": null,
+                "offset": [
+                  1,
+                  0
+                ],
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": {
+                "kind": "explicit",
+                "type_id": "R"
+              },
+              "disposition": null,
+              "slot_name": null,
+              "type_ref": null,
+              "count": 1,
+              "value": null
+            },
+            {
+              "kind": "clear_right",
+              "from_ref": null,
+              "to_ref": null,
+              "square_ref": null,
+              "piece_owner": "self",
+              "piece_type_ref": null,
+              "disposition": null,
+              "slot_name": "king_right",
+              "type_ref": null,
+              "count": 1,
+              "value": null
+            }
+          ],
+          "invariants": [
+            {
+              "kind": "squares_not_attacked",
+              "square_refs": [
+                {
+                  "kind": "source",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                {
+                  "kind": "path_step",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": 0,
+                  "slot_name": null
+                },
+                {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                }
+              ]
+            }
+          ],
+          "postconditions": [],
+          "promotion_mode": "none",
+          "explicit_promotion_type": null,
+          "triggers": [
+            {
+              "slot_name": "king_right",
+              "event": "piece_leaves_square",
+              "square_ref": {
+                "kind": "fixed",
+                "square": [
+                  4,
+                  0
+                ],
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "owner": "self"
+            },
+            {
+              "slot_name": "king_right",
+              "event": "piece_leaves_square",
+              "square_ref": {
+                "kind": "fixed",
+                "square": [
+                  7,
+                  0
+                ],
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "owner": "self"
+            },
+            {
+              "slot_name": "king_right",
+              "event": "piece_removed_from_square",
+              "square_ref": {
+                "kind": "fixed",
+                "square": [
+                  7,
+                  0
+                ],
+                "offset": null,
+                "owner_relative": true,
+                "step": null,
+                "slot_name": null
+              },
+              "owner": "self"
+            }
+          ]
+        }
+      ],
+      "metadata": {},
+      "pass_enabled": true
+    },
+    "states": [
+      {
+        "label": "lost",
+        "record": {
+          "actions": [
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                0
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                5,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                5,
+                0
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                0
+              ]
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                7
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                7
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "7ada3dda93d145a73867fc41069d2d1d2cce142f49662cc4ffa660d9f8e4e18b",
+          "schema_version": 1
+        },
+        "default_eval": 0,
+        "legal_count": 15,
+        "castling": []
+      },
+      {
+        "label": "kept",
+        "record": {
+          "actions": [
+            {
+              "kind": "pass"
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                3,
+                7
+              ],
+              "geometry_id": "g1",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_002",
+              "promotion_target_id": null,
+              "to": [
+                4,
+                7
+              ]
+            },
+            {
+              "kind": "pass"
+            },
+            {
+              "actor_type_id": "K",
+              "from": [
+                4,
+                7
+              ],
+              "geometry_id": "g6",
+              "kind": "semantic_board",
+              "pattern_id": "legacy_016",
+              "promotion_target_id": null,
+              "to": [
+                3,
+                7
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "7ada3dda93d145a73867fc41069d2d1d2cce142f49662cc4ffa660d9f8e4e18b",
+          "schema_version": 1
+        },
+        "default_eval": 0,
+        "legal_count": 16,
+        "castling": [
+          {
+            "action": {
+              "pattern_id": "sem_00_king_side_shift",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 0
+              },
+              "promotion_target_id": null
+            },
+            "full_q": false,
+            "capture_q": false
+          }
+        ]
+      }
+    ]
+  }
+}

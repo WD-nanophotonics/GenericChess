@@ -137,15 +137,27 @@ roots save work;96whole-game utility remains unidentified. Keep default OFF.
 Capture-only is exposed in the maintained cost CLI; its known quiet-check misses
 and full-rule scope remain explicit. No evaluator/learner/default/AUX change.
 
-Next: use an existing explicit non-actor/auxiliary semantic fixture and maintained
-caller for a small paired Core/service feasibility. Ask whether actual child
-classification, controls and bounded choice preserve full state/history under
-selective q. This changes the mechanism domain: the48 new generated worlds were
-movement/drop/promotion rules, not a full explicit-DSL/auxiliary campaign. Keep
-all unsupported/fallback evidence, no parallel solver or label-fitted horizon gate.
-Backup1: compare actual complete-state query cost only if that mechanism exposes
-a concrete bottleneck; source/profile alternatives already measured remain closed.
-Backup2: existing Core bounded intervals on a decision-changing contradiction,
-not a complete-WDL admission requirement or a refill of the unproved q4mate5 slot.
-Reconsider a q default only with independent scope and utility/cost evidence;
-retain all candidates and complete rule semantics. Science OPEN.
+[AUXILIARY_STATE_AND_CALLER_COST_20261021.md](AUXILIARY_STATE_AND_CALLER_COST_20261021.md)
+closes the explicit-effect/auxiliary continuation: the maintained cost CLI now
+accepts complete DSL inputs and a Core service control.1,240retained queries,
+full child/history qualification and promoted negative controls distinguish
+current kernel support from the deliberately unchanged provider admission.
+Blind type recoding changes legality; scoped explicit service is feasible without
+it. Plain-rule history digest savings fail20% across all6fixtures. Long replay
+can erase cold-call gains, but the maintained caller already retains its full
+GameSession. No default, history compression, replay cache or AUX learner change.
+The closed6.8MB allocation packet is a small index into its verified fixed PUBLIC
+Git version; exact originals remain, no history rewrite or withdrawn evidence.
+
+Next: freeze a small equal-deadline explicit-service/Core completion study on
+separately declared mixed states, including retained-session setup and actual
+execution/fallback/control reasons. Changed premise is the existing corrected
+actor-binding capability and observed full-history cost, not an unchanged q or
+price rerun. Existing source/consumer feasibility is examined; no deadline query
+has run. Keep exposed mechanisms labelled exposed, all censored/missing results,
+full promotion/drop/aux/history and independent AUX ownership.
+Backup1: use existing Core bounded evidence only if a concrete contrary outcome
+would change that route selection; never refill old q4mate5 or require fullWDL
+as an admission gate. Backup2: investigate an actual unsupported default-evaluator
+input through its existing override contract if encountered; do not invent a new
+API/learner or widen the generic task definition. Science OPEN.

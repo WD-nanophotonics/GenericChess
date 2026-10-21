@@ -1,3 +1,26 @@
+## Explicit-state/caller follow-up —2026-10-21
+
+PRIMARY read the two new project Chat roots and complete empty-reply threads
+once, privately saving exact originals before assessment. No outbound message,
+Dot contact, AUX execution/write, worker or frozen AUX experiment duplication.
+Adopt Claude's repeated data-economy criticism and distinction between query and
+whole-game budgets: the old6.8MB packet is now a verified fixed-PUBLIC-Git index,
+and the current technical packet contains direct inputs plus compact results.
+AUX's Leaper/learner/graph proposals remain its independent lane. UNKNOWN is
+retained; a proposed suppression threshold or significance conditioned on policy
+divergence is not adopted as causal evidence or user policy.
+
+PRIMARY fixed the existing cost CLI's actual DSL dispatch failure, kept existing
+provider fallback tests after checking their explicit historical reason, and
+qualified the already available explicit constructor on full canonical histories.
+Three own diagnosis errors are explicit in the purpose report: token capability
+versus admission, incomplete cold-cost terminology, and a failed callback-history
+assumption. No claim of an AUX rerun or implemented GHI literature method.
+All1,240retained query results,16unretained returned calls and1failed callback
+attempt are separately accounted.266affected regressions pass. Whole-game utility,
+independent timing and a public admission-widening decision remain unresolved.
+Details: ../research/AUXILIARY_STATE_AND_CALLER_COST_20261021.md.
+
 ## Actual AUX-model inference qualified without auxiliary execution —2026-10-19
 
 PRIMARY reads fixed published sidemission57696f621cda9957bbef8f10d5ff8515f8482616:

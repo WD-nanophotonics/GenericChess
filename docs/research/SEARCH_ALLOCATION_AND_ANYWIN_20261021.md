@@ -6,7 +6,8 @@ option, alongside negative evidence against selecting q depth from deeper
 scores or restored actions. The maintained cost probe now exposes the existing
 `--capture-only-qsearch` option; it does not introduce a new engine policy.
 
-[Technical evidence](data/search_allocation_20261021/summary.json) contains48
+[Technical evidence index](data/search_allocation_20261021/summary.json) links the
+complete fixed PUBLIC packet at3ddbf998, whose contents include48
 complete generated rules,592 new capped game histories,202 finite roots and202
 actual finite continuations, literal proof observations, all missing/failed slots,
 paired costs and exact private-original hashes. It references the preceding
