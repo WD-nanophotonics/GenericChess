@@ -5952,3 +5952,26 @@ AUX result was independently rerun/adopted; no default changed. Candidate-color
 metadata correction is explicit in copies. Next no-drop preflight refuses a real
 historical drop, preserved without truncation. Richer context/fixed-node cost
 remain open questions, not requests to the user or another worker.
+
+
+## 2026-10-21 PRIMARY custody/context/cost follow-up
+
+Two new incoming roots (Chat16:23JST and Claude15:50JST) and their complete
+threads were read once and privately saved before assessment; no replies/pages
+remained. Adopt mechanism/utility/total-cost separation and existing learner
+reuse; reject a blanket Core no-progress absence claim because Core already has
+NoProgressContext. AUX GameSession performance/incremental TDLeaf remains its
+lane: no independent rerun, checkout access, unpublished adoption or learner edit.
+No sends, Dot contact, worker creation or schedule/stop changes.
+
+PRIMARY tested valid no-drop custody, actual promotion, typed sparse mapping,
+clock-value versus policy aliases, inference cost and72new finite outcome slots.
+The faster implementation gives zero paired outcome difference here. Equivalent
+leaf prices change finite search through ordering, confirmed by four-cell
+separation. Existing q refresh recovers a natural boundary but full transition
+cost dominates; capture-only is a scoped next candidate, not a default. Empty
+zone rejection and two pre-query setup errors are retained; no test expectation,
+fitness cap or failed result was silently replaced. Frozen technical copies and
+sources accompany HAND_VALUE_CONTEXT_AND_SEARCH_COST_20261021.md. The mixed-root
+next preflight is done, its new queries pending. No claim of generic learned
+transfer, full-domain sufficiency or independent-family strength.

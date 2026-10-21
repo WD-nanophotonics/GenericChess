@@ -96,18 +96,29 @@ a compact technical evidence copy and source are published for current research.
 Unrelated branch/history/unique private cleanup remains as scoped in
 [the cleanup report](../operations/CLEANUP_20261021.md), not a research stop.
 
-## Next executable question
+## Current follow-up and next executable question
 
-The next hand-reader counterfactual is already begun in the follow-up evidence:
-turn off drop masks only in a NEW731505world. Exact18ply replay REFUSES atply4
-on X@b5; retain the last legal3ply prefix. First inspect all remaining hand readers
-and the existing inert-custody proof's scope, then define a bounded D2contrast from
-that legally preserved prefix. Do not force-import the old root, erase history,
-refill old hand/ordering fitness, or introduce a new solver/learner. A valid
-contrast can use30000nodes/90seconds; unsupported claims remain explicit.
+[HAND_VALUE_CONTEXT_AND_SEARCH_COST_20261021.md](HAND_VALUE_CONTEXT_AND_SEARCH_COST_20261021.md)
+closes the valid3ply no-drop contrast. Custody identities make coefficients
+nonunique even with actual promotion; this does not imply stock has no reader.
+Equivalent leaf values can still alter ordering and capped decisions. An exact
+Position value alias does not yet prove disjoint optimal policies. Existing
+sparse inference reduces overhead but72complete finite slots show zero paired
+utility difference. No default/learner/AUX change is selected.
 
-Backup: examine existing state features on the new clock7inseparable frontier
-before adding anything; a clock-only scalar/coverage ray already fails its stated
-scope. Or predeclare one fixed-node decision-cost comparison from the48controls'
-matched histories if it changes a concrete next-method choice. No unchanged
-fitness rerun or AUX work. Science is OPEN.
+The next existing mixed promotion/drop/auxiliary roots4/5/6 are already fully
+replayed (45/5/92legal actions), with a saved bounded comparison plan. Compare
+D2q0 against existing protected capture-onlyD1q1hard1 and ordinaryD1q1hard4,
+using10000nodes/2048qnodes/1second per query and30seconds total. Changed premise:
+all six natural price-boundary points match, but fewerqnodes still pay D2-like
+transition cost; quiet checks doubled wall time in ordinaryq1. Record actual
+refresh completion/reserve/abort, action regions and full cost; no utility claim
+from action/depth/node differences. Do not mistake publicD1's intentionalq0
+reserve for actualq1, or extend frozen fitness. No new search/learner/API.
+
+Backup1: inspect simple capture gain versus the existing victim-minus-attacker
+ordering on another legitimate mechanism fixture, only if it can change this
+cost/decision choice; keep leaf prices fixed and failure slots. Backup2: use
+existing complete finite-goal tables to seek disjoint optimal sets under aliased
+inputs before claiming context is policy-necessary; no exposed-label fitting,
+fullWDL admission gate or broad solver campaign. Science is OPEN.
