@@ -42,6 +42,8 @@ def main():
                     nargs='+', default=['all', 'ordered'])
     ap.add_argument('--evaluation-backend', choices=['default', 'semantic_core', 'semantic_native'],
                     default='default', help='Existing attack evaluator with the exact default static profile; may change score semantics')
+    ap.add_argument('--capture-only-qsearch', action='store_true',
+                    help='Existing selective q option: omit quiet checking continuations; can miss forced wins')
     ap.add_argument('--stop-after-root-win', action='store_true',
                     help='Existing opt-in any-completed-win objective; does not seek shortest mate/full depth')
     ap.add_argument('--allow-hybrid', action='store_true')
@@ -140,7 +142,8 @@ def main():
                         use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
                         tuning=SearchTuning(use_ordered_qsearch=variant in ('ordered', 'ordered_evasions'),
                             use_ordered_qsearch_in_check=variant == 'ordered_evasions',
-                            stop_after_root_win=args.stop_after_root_win))
+                            stop_after_root_win=args.stop_after_root_win,
+                            use_capture_only_qsearch=args.capture_only_qsearch))
                     setup = time.perf_counter() - tick
                     before = session.state
                     tick = time.perf_counter()

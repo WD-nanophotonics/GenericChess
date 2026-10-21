@@ -1,0 +1,2083 @@
+{
+  "shared_mainline_sha": "6ea35571272708f7e220fa3868f2ca1a4d0cf7ca",
+  "library_base_sha": "2006f9830fa6cdf642b094ae179abca694931f7b",
+  "old_control_close": {
+    "status": "STOPPED_USER",
+    "seconds": 999.2232887999853,
+    "nodes": 2079852,
+    "results": [
+      {
+        "seed": 27200,
+        "eval_slots": 16,
+        "missing": 0,
+        "counts": {
+          "-1": 11,
+          "1": 3,
+          "UNKNOWN": 2
+        },
+        "payoff_bound": [
+          -0.625,
+          -0.375
+        ]
+      },
+      {
+        "seed": 27202,
+        "eval_slots": 0,
+        "missing": 16,
+        "counts": {},
+        "payoff_bound": [
+          -1.0,
+          1.0
+        ]
+      },
+      {
+        "seed": 27203,
+        "eval_slots": 0,
+        "missing": 16,
+        "counts": {},
+        "payoff_bound": [
+          -1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "old_control_verification": {
+    "checked_histories": 132,
+    "checked_queries": 5802,
+    "checked_TD_calculations": 116,
+    "worst_forward_weight_error": 8.881784197001252e-16
+  },
+  "homogeneous_and_matched_h6": [
+    {
+      "kinds": [
+        "M",
+        "M"
+      ],
+      "summary": {
+        "contexts": 91712,
+        "physical_positions": 1768,
+        "contexts_by_ply": {
+          "6": 45376,
+          "5": 23592,
+          "4": 12672,
+          "3": 5824,
+          "2": 2792,
+          "1": 1168,
+          "0": 288
+        },
+        "player0_wdl": {
+          "0": 64976,
+          "-1": 18128,
+          "1": 8608
+        },
+        "terminal_reasons": {
+          "max_ply": 33128,
+          "stalemate": 6560,
+          "checkmate": 12032,
+          "repetition": 4704
+        },
+        "branching": {
+          "0": 56424,
+          "3": 4464,
+          "2": 4304,
+          "1": 14136,
+          "6": 2120,
+          "4": 8752,
+          "5": 1512
+        },
+        "genuine_choice_contexts": 11328,
+        "seconds": 8.363843100029044,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "fresh_root_WDL": {
+        "0": 200,
+        "1": 80,
+        "-1": 8
+      }
+    },
+    {
+      "kinds": [
+        "A",
+        "A"
+      ],
+      "summary": {
+        "contexts": 112192,
+        "physical_positions": 2504,
+        "contexts_by_ply": {
+          "6": 62640,
+          "5": 28640,
+          "4": 12880,
+          "3": 5016,
+          "2": 1896,
+          "1": 832,
+          "0": 288
+        },
+        "player0_wdl": {
+          "0": 110848,
+          "1": 480,
+          "-1": 864
+        },
+        "terminal_reasons": {
+          "max_ply": 53408,
+          "repetition": 7768,
+          "stalemate": 6792,
+          "checkmate": 672
+        },
+        "branching": {
+          "0": 68640,
+          "1": 9088,
+          "2": 16024,
+          "3": 9176,
+          "4": 4032,
+          "5": 4280,
+          "6": 952
+        },
+        "genuine_choice_contexts": 1336,
+        "seconds": 9.69323750003241,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "fresh_root_WDL": {
+        "0": 280,
+        "1": 8
+      }
+    },
+    {
+      "kinds": [
+        "B",
+        "B"
+      ],
+      "summary": {
+        "contexts": 41504,
+        "physical_positions": 2712,
+        "contexts_by_ply": {
+          "6": 20744,
+          "5": 10856,
+          "4": 5528,
+          "3": 2296,
+          "2": 1144,
+          "1": 648,
+          "0": 288
+        },
+        "player0_wdl": {
+          "0": 41168,
+          "1": 112,
+          "-1": 224
+        },
+        "terminal_reasons": {
+          "max_ply": 18280,
+          "repetition": 2672,
+          "stalemate": 1840,
+          "checkmate": 168
+        },
+        "branching": {
+          "0": 22960,
+          "3": 4192,
+          "2": 7064,
+          "1": 5208,
+          "4": 1432,
+          "5": 312,
+          "6": 336
+        },
+        "genuine_choice_contexts": 296,
+        "seconds": 3.462684900034219,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "fresh_root_WDL": {
+        "0": 248,
+        "1": 40
+      }
+    },
+    {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "summary": {
+        "contexts": 79184,
+        "physical_positions": 2680,
+        "contexts_by_ply": {
+          "3": 3960,
+          "6": 41168,
+          "5": 22392,
+          "4": 9040,
+          "2": 1528,
+          "1": 808,
+          "0": 288
+        },
+        "player0_wdl": {
+          "0": 79184
+        },
+        "terminal_reasons": {
+          "stalemate": 3608,
+          "max_ply": 37088,
+          "repetition": 4864
+        },
+        "branching": {
+          "0": 45560,
+          "1": 8080,
+          "3": 7648,
+          "2": 13312,
+          "4": 2312,
+          "5": 1632,
+          "6": 640
+        },
+        "genuine_choice_contexts": 0,
+        "seconds": 6.818197000073269,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "fresh_root_WDL": {
+        "0": 288
+      }
+    },
+    {
+      "kinds": [
+        "B",
+        "A"
+      ],
+      "summary": {
+        "contexts": 81736,
+        "physical_positions": 2648,
+        "contexts_by_ply": {
+          "5": 18664,
+          "6": 47072,
+          "4": 10072,
+          "3": 3416,
+          "2": 1552,
+          "1": 672,
+          "0": 288
+        },
+        "player0_wdl": {
+          "0": 81736
+        },
+        "terminal_reasons": {
+          "stalemate": 5256,
+          "max_ply": 39624,
+          "repetition": 5384
+        },
+        "branching": {
+          "0": 50264,
+          "1": 6448,
+          "2": 10872,
+          "3": 7904,
+          "4": 2656,
+          "5": 2632,
+          "6": 960
+        },
+        "genuine_choice_contexts": 0,
+        "seconds": 6.9872317999834195,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "fresh_root_WDL": {
+        "0": 288
+      }
+    }
+  ],
+  "independent_reference": {
+    "roots": 288,
+    "every_root_action_agrees": true,
+    "reference_states_expanded": 17734,
+    "seconds": 3.661541000008583
+  },
+  "depths": [
+    {
+      "depth": 1,
+      "contexts": 288,
+      "suboptimal": 50,
+      "nodes": 1456
+    },
+    {
+      "depth": 2,
+      "contexts": 288,
+      "suboptimal": 13,
+      "nodes": 4405
+    },
+    {
+      "depth": 3,
+      "contexts": 288,
+      "suboptimal": 1,
+      "nodes": 9316
+    },
+    {
+      "depth": 4,
+      "contexts": 288,
+      "suboptimal": 0,
+      "nodes": 15642
+    },
+    {
+      "depth": 6,
+      "contexts": 288,
+      "suboptimal": 0,
+      "nodes": 33754
+    }
+  ],
+  "depth3_counterexample": [
+    {
+      "setup": "67",
+      "layout": [
+        6,
+        0,
+        8,
+        2
+      ],
+      "depth": 3,
+      "completed_depth": 3,
+      "complete": true,
+      "chosen_value": -1,
+      "exact_best": 0,
+      "optimal": false,
+      "nodes": 48,
+      "seconds": 0.0038765999488532543,
+      "action": {
+        "kind": "board",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "promotion_target_id": null
+      }
+    }
+  ],
+  "diagonal_h10": [
+    {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "horizon": 10,
+      "summary": {
+        "contexts": 36644,
+        "physical_positions": 2091,
+        "contexts_by_ply": {
+          "3": 103,
+          "9": 10773,
+          "10": 16670,
+          "8": 4696,
+          "7": 2536,
+          "6": 1001,
+          "5": 559,
+          "4": 239,
+          "2": 38,
+          "1": 21,
+          "0": 8
+        },
+        "player0_wdl": {
+          "0": 36644
+        },
+        "terminal_reasons": {
+          "stalemate": 1839,
+          "repetition": 3226,
+          "max_ply": 14756
+        },
+        "branching": {
+          "0": 19821,
+          "2": 6424,
+          "1": 5287,
+          "4": 852,
+          "5": 609,
+          "3": 3286,
+          "6": 365
+        },
+        "genuine_choice_contexts": 0,
+        "seconds": 3.0949080999707803,
+        "exact_scope": "Complete listed8freshstarts under ruleply10/repeat2. Original raw scope string erroneously said ply6; retained as history."
+      }
+    },
+    {
+      "kinds": [
+        "B",
+        "A"
+      ],
+      "horizon": 10,
+      "summary": {
+        "contexts": 48846,
+        "physical_positions": 2033,
+        "contexts_by_ply": {
+          "5": 562,
+          "10": 25682,
+          "9": 11151,
+          "8": 6810,
+          "7": 2691,
+          "6": 1459,
+          "4": 304,
+          "3": 111,
+          "2": 48,
+          "1": 20,
+          "0": 8
+        },
+        "player0_wdl": {
+          "0": 48846
+        },
+        "terminal_reasons": {
+          "stalemate": 3586,
+          "max_ply": 21243,
+          "repetition": 4129
+        },
+        "branching": {
+          "0": 28958,
+          "3": 4702,
+          "2": 6287,
+          "1": 5371,
+          "4": 1421,
+          "5": 1539,
+          "6": 568
+        },
+        "genuine_choice_contexts": 0,
+        "seconds": 4.122816300019622,
+        "exact_scope": "Complete listed8freshstarts under ruleply10/repeat2. Original raw scope string erroneously said ply6; retained as history."
+      }
+    }
+  ],
+  "static_census3": [
+    {
+      "kinds": [
+        "M",
+        "M"
+      ],
+      "static_counts": {
+        "ongoing": 1728,
+        "checkmate": 176,
+        "stalemate": 64
+      },
+      "mate_examples": {
+        "0": {
+          "turn": 1,
+          "present": [
+            true,
+            false
+          ],
+          "squares": [
+            0,
+            2,
+            1
+          ]
+        },
+        "1": {
+          "turn": 0,
+          "present": [
+            false,
+            true
+          ],
+          "squares": [
+            0,
+            2,
+            1
+          ]
+        }
+      },
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    },
+    {
+      "kinds": [
+        "A",
+        "A"
+      ],
+      "static_counts": {
+        "ongoing": 2480,
+        "stalemate": 72,
+        "checkmate": 32
+      },
+      "mate_examples": {
+        "0": {
+          "turn": 1,
+          "present": [
+            true,
+            true
+          ],
+          "squares": [
+            0,
+            2,
+            1,
+            5
+          ]
+        },
+        "1": {
+          "turn": 0,
+          "present": [
+            true,
+            true
+          ],
+          "squares": [
+            0,
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    },
+    {
+      "kinds": [
+        "B",
+        "B"
+      ],
+      "static_counts": {
+        "ongoing": 2928,
+        "stalemate": 72,
+        "checkmate": 32
+      },
+      "mate_examples": {
+        "1": {
+          "turn": 0,
+          "present": [
+            true,
+            true
+          ],
+          "squares": [
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        "0": {
+          "turn": 1,
+          "present": [
+            true,
+            true
+          ],
+          "squares": [
+            0,
+            2,
+            4,
+            5
+          ]
+        }
+      },
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    },
+    {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "static_counts": {
+        "ongoing": 2736,
+        "stalemate": 72
+      },
+      "mate_examples": {},
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    },
+    {
+      "kinds": [
+        "B",
+        "A"
+      ],
+      "static_counts": {
+        "ongoing": 2736,
+        "stalemate": 72
+      },
+      "mate_examples": {},
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    }
+  ],
+  "static_census4_5": [
+    {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "width": 4,
+      "enumerated_placements": 101280,
+      "static_counts": {
+        "ongoing": 55004,
+        "stalemate": 76
+      },
+      "mate_examples": {},
+      "seconds": 1.807080400059931,
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    },
+    {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "width": 5,
+      "enumerated_placements": 663600,
+      "static_counts": {
+        "ongoing": 445744,
+        "stalemate": 80
+      },
+      "mate_examples": {},
+      "seconds": 13.879397799959406,
+      "scope": "Constructed static placements including captured ordinary pieces;not all claimed reachable. No opponent-Anchor-in-check predecessor violation admitted."
+    }
+  ],
+  "blockade": [
+    {
+      "label": "AA",
+      "before": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "90eba2d508697f0d1fdcd2fe27c734d33301d0a664c8cff754ba44d434893dbc",
+        "schema_version": 1
+      },
+      "after": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "90eba2d508697f0d1fdcd2fe27c734d33301d0a664c8cff754ba44d434893dbc",
+        "schema_version": 1
+      },
+      "player0_value": 1,
+      "result": "checkmate, player 0 wins",
+      "contexts": 1,
+      "legal_replies": [],
+      "rule_recipe": "blockade_example()[label=AA]"
+    },
+    {
+      "label": "AB",
+      "before": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f68351af0a21c246ce2834978685a20de0a2c8662ff30db6e02c1b71fcd1d330",
+        "schema_version": 1
+      },
+      "after": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "f68351af0a21c246ce2834978685a20de0a2c8662ff30db6e02c1b71fcd1d330",
+        "schema_version": 1
+      },
+      "player0_value": 0,
+      "result": "ongoing",
+      "contexts": 45,
+      "legal_replies": [
+        {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "rule_recipe": "blockade_example()[label=AB]"
+    },
+    {
+      "label": "A_bare",
+      "before": {
+        "actions": [],
+        "resigned_by": null,
+        "ruleset_fingerprint": "3a1c32e298f5539c9d0355d6793ca9797cbd677351f6f19e4cf5c1b4b9019bbb",
+        "schema_version": 1
+      },
+      "after": {
+        "actions": [
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "3a1c32e298f5539c9d0355d6793ca9797cbd677351f6f19e4cf5c1b4b9019bbb",
+        "schema_version": 1
+      },
+      "player0_value": 0,
+      "result": "ongoing",
+      "contexts": 76,
+      "legal_replies": [
+        {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        }
+      ],
+      "rule_recipe": "blockade_example()[label=A_bare]"
+    }
+  ],
+  "parameter_region_diagnostic": {
+    "selection": "First64preorder genuine-WDL-choice contexts with bothordinarytypes present;posthocmechanismdiagnostic,notrepresentativeheldout",
+    "eligible": 70,
+    "selected": 64,
+    "queries": 2304,
+    "nodes": 46913,
+    "errors": {
+      "-2.0": {
+        "1": 21,
+        "2": 7,
+        "3": 3,
+        "6": 0
+      },
+      "-1.0": {
+        "1": 21,
+        "2": 7,
+        "3": 3,
+        "6": 0
+      },
+      "-0.5": {
+        "1": 21,
+        "2": 7,
+        "3": 3,
+        "6": 0
+      },
+      "0.0": {
+        "1": 11,
+        "2": 6,
+        "3": 2,
+        "6": 0
+      },
+      "0.25": {
+        "1": 11,
+        "2": 7,
+        "3": 3,
+        "6": 0
+      },
+      "0.75": {
+        "1": 11,
+        "2": 7,
+        "3": 3,
+        "6": 0
+      },
+      "1.0": {
+        "1": 10,
+        "2": 6,
+        "3": 2,
+        "6": 0
+      },
+      "1.25": {
+        "1": 10,
+        "2": 2,
+        "3": 1,
+        "6": 0
+      },
+      "4.0": {
+        "1": 10,
+        "2": 2,
+        "3": 1,
+        "6": 0
+      }
+    },
+    "rule_recipe": {
+      "function": "make_rules",
+      "kwargs": {
+        "kinds": [
+          "A",
+          "B"
+        ],
+        "b_geometry": "KING constant from same module"
+      }
+    }
+  },
+  "parameter_examples": [
+    {
+      "index": 13,
+      "low": {
+        "index": 13,
+        "ply": 3,
+        "ratio": 0.25,
+        "depth": 2,
+        "completed_depth": 2,
+        "complete": true,
+        "nodes": 16,
+        "exact_best": 1,
+        "chosen_value": 0,
+        "optimal": false,
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "start_record": {
+          "actions": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "030cb5035845eda0dbd3201678daa289c9352f36313bbe42b59fd0b2ff05553c",
+          "schema_version": 1
+        }
+      },
+      "high": {
+        "index": 13,
+        "ply": 3,
+        "ratio": 1.25,
+        "depth": 2,
+        "completed_depth": 2,
+        "complete": true,
+        "nodes": 17,
+        "exact_best": 1,
+        "chosen_value": 1,
+        "optimal": true,
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "start_record": {
+          "actions": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                0,
+                2
+              ]
+            },
+            {
+              "from": [
+                1,
+                1
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                0
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "030cb5035845eda0dbd3201678daa289c9352f36313bbe42b59fd0b2ff05553c",
+          "schema_version": 1
+        }
+      }
+    },
+    {
+      "index": 24,
+      "low": {
+        "index": 24,
+        "ply": 2,
+        "ratio": 0.25,
+        "depth": 2,
+        "completed_depth": 2,
+        "complete": true,
+        "nodes": 22,
+        "exact_best": 0,
+        "chosen_value": -1,
+        "optimal": false,
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "start_record": {
+          "actions": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "030cb5035845eda0dbd3201678daa289c9352f36313bbe42b59fd0b2ff05553c",
+          "schema_version": 1
+        }
+      },
+      "high": {
+        "index": 24,
+        "ply": 2,
+        "ratio": 1.25,
+        "depth": 2,
+        "completed_depth": 2,
+        "complete": true,
+        "nodes": 18,
+        "exact_best": 0,
+        "chosen_value": 0,
+        "optimal": true,
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "start_record": {
+          "actions": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                1,
+                1
+              ]
+            },
+            {
+              "from": [
+                1,
+                2
+              ],
+              "kind": "board",
+              "promotion_target_id": null,
+              "to": [
+                2,
+                1
+              ]
+            }
+          ],
+          "resigned_by": null,
+          "ruleset_fingerprint": "030cb5035845eda0dbd3201678daa289c9352f36313bbe42b59fd0b2ff05553c",
+          "schema_version": 1
+        }
+      }
+    }
+  ],
+  "experiential": {
+    "config": {
+      "question": "Can material parameters change without policy improvement,and does fully terminal TDLeaf search leave a material gradient?",
+      "episodes_per_arm": 32,
+      "depths": [
+        1,
+        6
+      ],
+      "foe_depth": 2,
+      "initial_B": 0.25,
+      "lambda_": 0.95,
+      "eta": 0.05,
+      "scale": 10,
+      "root_order": "i%8;learnercolor=(i//8)%2",
+      "query_nodes": 8192,
+      "game_nodes": 49152,
+      "game_seconds": 3,
+      "whole_seconds": 120,
+      "whole_nodes": 2000000,
+      "oracle": "Research observer only;never search evaluator,ordering,TDtarget or training data.",
+      "source_sha256": "1f0d174680aa105af25137f5108691d03aa5c3e446104aef231984495a16616d"
+    },
+    "summaries": [
+      {
+        "depth": 1,
+        "status": "COMPLETE",
+        "episodes": 32,
+        "missing": 0,
+        "initial": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "final": [
+          1.0,
+          0.32233689626163087,
+          1.0,
+          1.0
+        ],
+        "outcomes": {
+          "-1": 8,
+          "0": 18,
+          "1": 6
+        },
+        "changed_updates": 18,
+        "candidate_queries": 74,
+        "terminal_PV_observations": 16,
+        "suboptimal_candidate_queries": 6
+      },
+      {
+        "depth": 6,
+        "status": "COMPLETE",
+        "episodes": 32,
+        "missing": 0,
+        "initial": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "final": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "outcomes": {
+          "-1": 4,
+          "0": 18,
+          "1": 10
+        },
+        "changed_updates": 0,
+        "candidate_queries": 78,
+        "terminal_PV_observations": 78,
+        "suboptimal_candidate_queries": 0
+      }
+    ],
+    "nodes": 7780,
+    "seconds": 3.0767339000012726,
+    "scope": "Finite mechanism diagnostic;different played states/realized cost,not equal-compute strength or population inference."
+  },
+  "experiential_check": {
+    "histories": 64,
+    "queries": 304,
+    "TD_updates": 64,
+    "worst_forward_error": 5.551115123125783e-17,
+    "checks": {
+      "independent_runtime_action_labels": 304,
+      "D1_unchanged_initial_actions": 74,
+      "D1_counterfactual_queries": 74,
+      "D6_nonzero_TD_errors": 4
+    },
+    "changed_D1_actions_against_initial": [],
+    "final": {
+      "1": [
+        1.0,
+        0.32233689626163087,
+        1.0,
+        1.0
+      ],
+      "6": [
+        1.0,
+        0.25,
+        1.0,
+        1.0
+      ]
+    },
+    "scope": "Oracle labels independently checked through existing Runtime threshold solver;TD reconstruction uses only receipt values/features and actual terminal outcomes."
+  },
+  "recording_clarification": {
+    "field": "queries.weights",
+    "meaning": "Candidate pre-episode snapshot for BOTH actors,not necessarily the searching foe weights. Actual fixedfoe weights are all1byconfig/source. Preserve original rows;future source uses explicit candidate_weights/search_weights.",
+    "source_sha256": "1f0d174680aa105af25137f5108691d03aa5c3e446104aef231984495a16616d"
+  },
+  "six_actor": [
+    {
+      "lineup": [
+        "M",
+        "M"
+      ],
+      "value": 0,
+      "summary": {
+        "contexts": 1651,
+        "physical_positions": 619,
+        "contexts_by_ply": {
+          "5": 438,
+          "4": 178,
+          "6": 950,
+          "3": 58,
+          "2": 20,
+          "1": 6,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 1307,
+          "1": 98,
+          "-1": 246
+        },
+        "terminal_reasons": {
+          "stalemate": 80,
+          "checkmate": 166,
+          "max_ply": 764,
+          "repetition": 40
+        },
+        "branching": {
+          "0": 1050,
+          "1": 194,
+          "2": 152,
+          "4": 120,
+          "3": 40,
+          "7": 18,
+          "6": 29,
+          "5": 44,
+          "8": 4
+        },
+        "genuine_choice_contexts": 113,
+        "seconds": 0.1724376999773085,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": -1
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": -1
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": -1
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "value": -1
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "rule_recipe": "coexistence_rules(['M', 'M'])"
+    },
+    {
+      "lineup": [
+        "A",
+        "A"
+      ],
+      "value": 0,
+      "summary": {
+        "contexts": 2629,
+        "physical_positions": 804,
+        "contexts_by_ply": {
+          "6": 1786,
+          "5": 576,
+          "4": 190,
+          "3": 56,
+          "2": 16,
+          "1": 4,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 2463,
+          "-1": 126,
+          "1": 40
+        },
+        "terminal_reasons": {
+          "max_ply": 1600,
+          "repetition": 64,
+          "stalemate": 84,
+          "checkmate": 92
+        },
+        "branching": {
+          "0": 1840,
+          "2": 238,
+          "5": 96,
+          "3": 128,
+          "4": 179,
+          "1": 74,
+          "6": 38,
+          "8": 18,
+          "7": 18
+        },
+        "genuine_choice_contexts": 142,
+        "seconds": 0.24328249995596707,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "rule_recipe": "coexistence_rules(['A', 'A'])"
+    },
+    {
+      "lineup": [
+        "B",
+        "B"
+      ],
+      "value": 0,
+      "summary": {
+        "contexts": 259,
+        "physical_positions": 108,
+        "contexts_by_ply": {
+          "6": 136,
+          "5": 64,
+          "4": 36,
+          "3": 14,
+          "2": 6,
+          "1": 2,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 259
+        },
+        "terminal_reasons": {
+          "max_ply": 108,
+          "repetition": 16,
+          "stalemate": 20
+        },
+        "branching": {
+          "0": 144,
+          "3": 54,
+          "2": 29,
+          "1": 30,
+          "4": 2
+        },
+        "genuine_choice_contexts": 0,
+        "seconds": 0.02476370008662343,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "rule_recipe": "coexistence_rules(['B', 'B'])"
+    },
+    {
+      "lineup": [
+        "A",
+        "B"
+      ],
+      "value": 0,
+      "summary": {
+        "contexts": 1151,
+        "physical_positions": 579,
+        "contexts_by_ply": {
+          "6": 731,
+          "5": 273,
+          "4": 101,
+          "3": 33,
+          "2": 9,
+          "1": 3,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 1124,
+          "1": 10,
+          "-1": 17
+        },
+        "terminal_reasons": {
+          "max_ply": 655,
+          "repetition": 32,
+          "stalemate": 55,
+          "checkmate": 14
+        },
+        "branching": {
+          "0": 756,
+          "3": 139,
+          "2": 129,
+          "1": 34,
+          "4": 41,
+          "5": 35,
+          "6": 17
+        },
+        "genuine_choice_contexts": 26,
+        "seconds": 0.10373650002293289,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "decision_error_counts": {
+        "0.25": {
+          "1": 2,
+          "2": 0,
+          "3": 0,
+          "6": 0
+        },
+        "0.75": {
+          "1": 2,
+          "2": 0,
+          "3": 0,
+          "6": 0
+        },
+        "1.25": {
+          "1": 2,
+          "2": 0,
+          "3": 0,
+          "6": 0
+        },
+        "3.0": {
+          "1": 2,
+          "2": 0,
+          "3": 0,
+          "6": 0
+        }
+      },
+      "selected_decision_contexts": 26,
+      "rule_recipe": "coexistence_rules(['A', 'B'])"
+    }
+  ],
+  "task2625_reuse": {
+    "scope": "Post-hoc finite paired trajectory analysis;not independent holdout or causal action-optimality test. No new search or games.",
+    "history_revision": "4d0fd6d4279e361927368ee656c9727d266ffb74",
+    "game_sha256": "7426c7f8c1d5834a59dbd5992fcae1b19a4e05e6601e8412ccae9de0bc9123e8",
+    "query_sha256": "3605740790ae67c9c3f60deb44d0e28ea256d315fda05656cb4e4fc7b3d15a78",
+    "games": 1024,
+    "pairs": 512,
+    "queries": 22305,
+    "categories": {
+      "TD=1;initial=-1": 86,
+      "TD=1;initial=1": 202,
+      "TD=-1;initial=-1": 148,
+      "TD=-1;initial=1": 33,
+      "TD=1;initial=None": 6,
+      "TD=-1;initial=None": 7,
+      "TD=1;initial=0": 1,
+      "TD=None;initial=1": 12,
+      "TD=None;initial=-1": 11,
+      "TD=None;initial=None": 4,
+      "TD=0;initial=1": 1,
+      "TD=0;initial=-1": 1
+    },
+    "first_divergence_by_category": {
+      "TD=1;initial=-1": {
+        "candidate": 49,
+        "fixed_foe": 37
+      },
+      "TD=1;initial=1": {
+        "candidate": 94,
+        "identical_actions": 57,
+        "fixed_foe": 51
+      },
+      "TD=-1;initial=-1": {
+        "identical_actions": 52,
+        "candidate": 38,
+        "fixed_foe": 58
+      },
+      "TD=-1;initial=1": {
+        "candidate": 16,
+        "fixed_foe": 17
+      },
+      "TD=1;initial=None": {
+        "candidate": 2,
+        "fixed_foe": 4
+      },
+      "TD=-1;initial=None": {
+        "candidate": 1,
+        "fixed_foe": 6
+      },
+      "TD=1;initial=0": {
+        "fixed_foe": 1
+      },
+      "TD=None;initial=1": {
+        "candidate": 7,
+        "fixed_foe": 5
+      },
+      "TD=None;initial=-1": {
+        "candidate": 3,
+        "fixed_foe": 8
+      },
+      "TD=None;initial=None": {
+        "candidate": 3,
+        "fixed_foe": 1
+      },
+      "TD=0;initial=1": {
+        "fixed_foe": 1
+      },
+      "TD=0;initial=-1": {
+        "fixed_foe": 1
+      }
+    },
+    "fixed_foe_splits": 190,
+    "fixed_foe_equal_value_complete_splits": 190,
+    "ordering_seed_caveat": "Frozen evaluate.py adds (endpoint == TDLeaf) to the ordering seed. Fixed foe and shared history therefore do not imply identical random tie order. Endpoint differences are not isolated weight interventions.",
+    "missing_information": "Logs store selected PV material features/value, not the complete PV action path or all alternative action values. Actual winning rollout does not certify optimality of the split action."
+  },
+  "task2625_selected_replays": {
+    "strict_history_replays": 24,
+    "cases": [
+      {
+        "pair": [
+          271001,
+          1977,
+          4000051,
+          0
+        ],
+        "first_actor": "fixed_foe",
+        "split_ply": 7,
+        "TDLeaf_reward": 1,
+        "initial_reward": -1,
+        "values": [
+          0.0,
+          0.0
+        ],
+        "weights_equal": true,
+        "root_values_equal": true,
+        "TDLeaf_action": {
+          "base_type_id": "X",
+          "kind": "drop",
+          "to": [
+            1,
+            0
+          ]
+        },
+        "initial_action": {
+          "base_type_id": "X",
+          "kind": "drop",
+          "to": [
+            3,
+            0
+          ]
+        }
+      },
+      {
+        "pair": [
+          271001,
+          1977,
+          4000047,
+          0
+        ],
+        "first_actor": "candidate",
+        "split_ply": 0,
+        "TDLeaf_reward": 1,
+        "initial_reward": -1,
+        "values": [
+          1.2588469193037946,
+          2.0931728197266484
+        ],
+        "weights_equal": false,
+        "root_values_equal": false,
+        "TDLeaf_action": {
+          "from": [
+            3,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            3,
+            2
+          ]
+        },
+        "initial_action": {
+          "from": [
+            1,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "pair": [
+          271001,
+          1977,
+          4000054,
+          1
+        ],
+        "first_actor": "fixed_foe",
+        "split_ply": 0,
+        "TDLeaf_reward": -1,
+        "initial_reward": 1,
+        "values": [
+          0.0,
+          0.0
+        ],
+        "weights_equal": true,
+        "root_values_equal": true,
+        "TDLeaf_action": {
+          "from": [
+            2,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            2,
+            2
+          ]
+        },
+        "initial_action": {
+          "from": [
+            0,
+            1
+          ],
+          "kind": "board",
+          "promotion_target_id": null,
+          "to": [
+            0,
+            2
+          ]
+        }
+      },
+      {
+        "pair": [
+          271001,
+          1977,
+          4000049,
+          1
+        ],
+        "first_actor": "candidate",
+        "split_ply": 3,
+        "TDLeaf_reward": -1,
+        "initial_reward": 1,
+        "values": [
+          2.978351807613833,
+          1.8262172027279702
+        ],
+        "weights_equal": false,
+        "root_values_equal": false,
+        "TDLeaf_action": {
+          "base_type_id": "P",
+          "kind": "drop",
+          "to": [
+            1,
+            2
+          ]
+        },
+        "initial_action": {
+          "base_type_id": "A",
+          "kind": "drop",
+          "to": [
+            0,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "task2625_assets": {
+    "revision": "4d0fd6d4279e361927368ee656c9727d266ffb74",
+    "assets": [
+      {
+        "file": "eval-games.jsonl",
+        "local_bytes": 3022370,
+        "sha256": "7426c7f8c1d5834a59dbd5992fcae1b19a4e05e6601e8412ccae9de0bc9123e8",
+        "historical_git_archive_present": true,
+        "archive_byte_equal": true
+      },
+      {
+        "file": "eval-queries.jsonl",
+        "local_bytes": 125750147,
+        "sha256": "3605740790ae67c9c3f60deb44d0e28ea256d315fda05656cb4e4fc7b3d15a78",
+        "historical_git_archive_present": true,
+        "archive_byte_equal": true
+      },
+      {
+        "file": "episodes.jsonl",
+        "local_bytes": 11001717,
+        "sha256": "66b1d35446bc39f94036a4d4eed279e12072b67eddc07bd22d96f9f2d9e71b20",
+        "historical_git_archive_present": true,
+        "archive_byte_equal": true
+      },
+      {
+        "file": "queries.jsonl",
+        "local_bytes": 347717914,
+        "sha256": "961febf884656670f64426a956fffecdcc03edb5034d15d2fb7d90edabac53bb",
+        "historical_git_archive_present": true,
+        "archive_byte_equal": true
+      }
+    ]
+  },
+  "C_matched_feasibility": [
+    {
+      "lineup": [
+        "A",
+        "B",
+        "A"
+      ],
+      "status": "COMPLETE",
+      "value": 0,
+      "summary": {
+        "contexts": 1195,
+        "physical_positions": 721,
+        "contexts_by_ply": {
+          "6": 794,
+          "5": 268,
+          "4": 89,
+          "3": 31,
+          "2": 9,
+          "1": 3,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 1126,
+          "1": 21,
+          "-1": 48
+        },
+        "terminal_reasons": {
+          "max_ply": 726,
+          "stalemate": 32,
+          "repetition": 19,
+          "checkmate": 35
+        },
+        "branching": {
+          "0": 812,
+          "3": 87,
+          "2": 116,
+          "1": 51,
+          "4": 53,
+          "5": 41,
+          "6": 17,
+          "7": 13,
+          "8": 5
+        },
+        "genuine_choice_contexts": 50,
+        "seconds": 0.11753400007728487,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              2,
+              0
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "rule_recipe": "coexistence_rules(['A', 'B', 'A'])"
+    },
+    {
+      "lineup": [
+        "A",
+        "B",
+        "C"
+      ],
+      "status": "COMPLETE",
+      "value": 0,
+      "summary": {
+        "contexts": 685,
+        "physical_positions": 404,
+        "contexts_by_ply": {
+          "6": 461,
+          "5": 146,
+          "4": 51,
+          "3": 18,
+          "2": 6,
+          "1": 2,
+          "0": 1
+        },
+        "player0_wdl": {
+          "0": 675,
+          "-1": 10
+        },
+        "terminal_reasons": {
+          "repetition": 16,
+          "max_ply": 437,
+          "checkmate": 4,
+          "stalemate": 4
+        },
+        "branching": {
+          "0": 461,
+          "4": 40,
+          "2": 69,
+          "3": 44,
+          "1": 35,
+          "6": 21,
+          "5": 6,
+          "7": 9
+        },
+        "genuine_choice_contexts": 6,
+        "seconds": 0.06196349998936057,
+        "exact_scope": "All legal complete-history continuations of the listed fresh starts under declared ply6/repeat2 rules;not infinite-horizon WDL or independent rule samples."
+      },
+      "root_actions": [
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              0,
+              1
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        },
+        {
+          "action": {
+            "kind": "board",
+            "from": [
+              1,
+              0
+            ],
+            "to": [
+              1,
+              1
+            ],
+            "promotion_target_id": null
+          },
+          "value": 0
+        }
+      ],
+      "rule_recipe": "coexistence_rules(['A', 'B', 'C'])"
+    }
+  ],
+  "closing_sync": {
+    "current_synced_mainline_sha": "3ddbf9988e680d473ebe5d90b2a66ec430993df5",
+    "executed_shared_package_sha": "6ea35571272708f7e220fa3868f2ca1a4d0cf7ca",
+    "shared_packages_changed": false,
+    "imported_interface": "scripts/semantic_probe_cost.py existing --capture-only-qsearch forwarding",
+    "schedule_observed": {
+      "status": "ACTIVE",
+      "interval_minutes": 90,
+      "target_unchanged": true,
+      "changed_by_this_turn": false
+    }
+  },
+  "source_receipts": {
+    "all_quiet_executed": {
+      "base_sha": "2006f9830fa6cdf642b094ae179abca694931f7b",
+      "mainline_sha": "6ea35571272708f7e220fa3868f2ca1a4d0cf7ca",
+      "source_sha256": "effa686d2ea3e4ac4deedf6616b2537b692ef598dec63018ec44a21c79b69a1a",
+      "scope": "New exploratory all288 quiet placements;no old trial rerun or cap refill",
+      "per_world_states": 200000,
+      "per_world_seconds": 120,
+      "worlds": 5
+    },
+    "gradient_executed": "1f0d174680aa105af25137f5108691d03aa5c3e446104aef231984495a16616d",
+    "C_executed_and_current_script_sha256": "f55e5031e0d66331f90d50310142f97a488107250da68d3a330df6a5cc2a8808",
+    "original_driver_copies": "Local snapshots;maintained published script includes subsequent extensions/logging correction."
+  },
+  "reconstruction": "Exact rule recipes are the functions in scripts/leaper_microgames.py at this published revision; full raw rule/trace outputs remain local. This curated projection avoids duplicating constructor-generated matrices."
+}

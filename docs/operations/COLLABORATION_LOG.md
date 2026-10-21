@@ -302,6 +302,48 @@ executed experiment or a registration/audit queue. Current results and compact
 next actions are in LOCAL_MAINLINE; raw evidence stays ignored. Publication
 is own sidemission only; Slack's old uncertain delivery is not resent.
 
+## Direct Leaper redirection and first actual results — 2026-10-21
+
+The user supplied the formal Leaper instruction directly. DEV_AUX stopped its
+own opponent-control producer through the existing cooperative flag and saved
+exit0/STOPPED_USER; all132histories/5802queries,models and32missing slots remain.
+Three never-launched depth-control files were parked byte-exactly in ignored
+deferred storage. Their old continuation queue is removed from current memory.
+No PRIMARY/DEEPSEEK state,uncommitted work,worker or engine default was adopted.
+
+PRIMARY's committed6ea infrastructure and published value/order/cost distinctions
+were reused. Closing3ddbf998 changes no shared package;the maintained public
+probe's existing capture-only option was imported exactly,not enabled here.
+New PRIMARY allocation/any-win findings were read for their exact-vs-finite-
+trajectory and selected-root cost limits,not converted into another AUX q panel.
+
+DEV_AUX completed all288quiet3x3homogeneous layouts,root W/D/L80/200/8,and
+all-root public depth errors50/13/1/0/0atD1/2/3/4/6. ExistingRuntime reference
+agrees on every root action. Orthogonal/diagonal one-ordinary A/B worlds have no
+mate;full3/4/5board static censuses and a locality argument expose the scope.
+A legal common first move mates AA but draws after an equal-target B replacement
+or a separate defender-blocker removal. These are rule-bound counterfactuals,
+not a universal piece ranking. Six-actorABcoexistence restores14mates/26choices.
+The matched eight-actorABA/ABCnext case has already executed,rootbothDraw.
+
+The original learner is retained as a mechanism tool:32shallow episodes change
+a coefficient yet all74candidate query actions still matchinitial;32fully
+terminal-search episodes make no material update despite4nonzeroTDerrors.
+All64histories/304labels/64updates independently checked;no oracletraining.
+
+New saved-task2625analysis confirms86positive/33reversepairs,but37/17first
+diverge at the fixed foe. Frozen endpoint+1ordering seeds and190equal-value
+foe-first splits limit weight-only causal attribution. Four selected examples
+give24strict replays. All four original journals match historical Git archives;
+fullPVaction paths/alternative action values were not logged. No old games rerun.
+
+Chat/Claude reads and revision decisions are saved privately;direct user scope
+overrides old recommendations. Old SEND_UNCERTAIN is not resent. App readback
+shows the same existing chat target,ACTIVE/90minutes;PRIMARY records a separate
+user schedule change. This turn preserved it and made no scheduler mutation.
+95unique related tests pass across scoped runs;large raw logs remain ignored.
+Detailed science/limits:LEAPER_FOUNDATION_20261021.md. Science remains OPEN.
+
 ## Historical coordination
 
 The former3434-line collaboration diary is retained in Git at

@@ -33,8 +33,11 @@ origin/sandbox. Inspect the fixed fetched commit before importing its files.
 
 ## Research and timing
 
-Read LOCAL_MAINLINE.md for the current question. Reuse the selected fixed-scale
-vanilla TDLeaf learner; keep full executable rules/history and UNKNOWN semantics.
+Read LOCAL_MAINLINE.md for the current question. The direct2026-10-21 Leaper
+redirection replaces expansion of the old TDLeaf panels. Use exact small-game
+baselines, conditional value/policy comparisons and later learning diagnostics;
+reuse the existing learner when relevant. Keep full executable rules/history
+and UNKNOWN semantics.
 Do not restore retired audit chains merely because an old memo names them.
 
 Before substantive work, do one role-local mailbox probe per SLACK_WORKFLOW.md.

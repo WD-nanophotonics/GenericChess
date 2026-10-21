@@ -1,5 +1,31 @@
 # GenericChess local research policy
 
+## Direct user research redirection — 2026-10-21
+
+The attached formal Leaper instruction supersedes the earlier Chess-first
+TDLeaf-panel priority and its unlaunched opponent/depth/lambda backups. Safely
+close current computation without resetting caps or filling missing slots;
+retain records/models/trajectories and failures. Begin small, symmetric,
+deterministic Leaper-only finite games using committed mainline rules and
+GameSession/Core. First understand homogeneous Anchor-plus-identical-pieces
+worlds and exact WDL/action quality/depth effects, then a minimal A/B geometry
+control and later composition-conditioned A/B/C/D value relationships. Distinguish
+conditional contribution, useful search parameters and exact strategic value;
+do not assume intrinsic prices, additivity, continuity or identifiability.
+Learning follows an exact benchmark; oracle labels stay outside experiential
+training except explicitly labelled supervised controls. Reuse old task2620,
+task2625 and natural-rule evidence through bounded post-hoc analysis, without
+reruns or held-out claims. Full instruction: docs/research/LEAPER_DIRECTION.md.
+All writer/role, stop, existing recurrence, UNKNOWN and >=120-minute assessment
+boundaries remain. Do not rebuild retired audit/registration machinery.
+
+Closing schedule observation: the existing dev-aux automation was read back
+ACTIVE at90minutes on the same chat; sandbox3ddbf998 records a separate user
+cadence adjustment. This turn made no scheduler mutation and preserves the
+existing configuration as the latest direct instruction requires. Earlier
+hourly receipts below are historical, not authority to automatically revert
+the observed schedule. A Git statement alone never authorizes a future change.
+
 ## User correction — use committed mainline infrastructure, 2026-10-21
 
 DEV_AUX must use sandbox's latest committed mainline infrastructure rather than

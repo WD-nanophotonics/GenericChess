@@ -1,5 +1,12 @@
 # Reusable fixed-scale episode TDLeaf
 
+Current research direction changed by direct user instruction2026-10-21 to
+finite Leaper foundations and conditional value/learning mechanisms. This file
+retains the learner and historical results, not an instruction to expand old
+strength/lambda/opponent panels. See LEAPER_DIRECTION.md and
+LEAPER_FOUNDATION_20261021.md. The last opponent panel is STOPPED_USER with
+32missing slots retained; prepared old successors are deferred, not resumed.
+
 `generic_chess.learning.incremental` contains the opt-in Model, bounded
 material-blind AlphaBeta, episode-frozen TDLeaf(.95), Chess and full GameSession
 adapters, and one shared training/evaluation episode loop. It has no runtime
