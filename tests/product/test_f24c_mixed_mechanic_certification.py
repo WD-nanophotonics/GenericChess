@@ -17,6 +17,7 @@ from generic_chess.core.keys import position_key
 from generic_chess.core.movement import LeapAtom, RayAtom
 from generic_chess.core.pieces import Piece, PieceType
 from generic_chess.core.position import GameState, Hands, Position
+from generic_chess.core.movegen import legal_actions
 from generic_chess.core.search_runtime import SearchPathRuntime
 from generic_chess.core.semantic_executor import semantic_engine_for
 from generic_chess.core.terminal import TerminalResult, TerminalStatus
@@ -30,14 +31,17 @@ from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.session.session import GameSession
 from generic_chess.session.serialization import deserialize_game_record, serialize_game_record
-from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.compiler import compile_ruleset_for_execution, compile_semantic_ruleset
+from generic_chess.rules.serialization import deserialize_ruleset, serialize_ruleset
 from generic_chess.rules.schema import (
     RuleActionEffect,
+    RuleAuxState,
     RuleGeometrySpec,
     RuleInvariant,
     RulePathConstraint,
     RuleReplaceSelector,
     RuleSemanticAction,
+    RuleSlotGuard,
     RuleSet,
     RuleSpatialSelector,
     RuleSquareRef,
@@ -658,3 +662,564 @@ def test_public_search_preserves_promotion_capture_to_hand_then_drop():
     )
     assert native_decision.completed_depth == 2
     assert native_decision.principal_variation[0] == native_decision.action
+
+
+@pytest.mark.parametrize(
+    "lifetime, expected_after_reply",
+    (("persistent", 1), ("expire_next_turn", 0)),
+)
+def test_public_search_preserves_semantic_drop_with_aux_write_and_replay(
+    lifetime, expected_after_reply,
+):
+    """Public search composes drop, aux lifetime, slot guard and path state."""
+    rules = _mixed_ruleset()
+    rows = [[None for _ in range(N)] for _ in range(N)]
+    for file, rank, piece in (
+        (0, 0, Piece(0, H0, H0)),
+        (6, 6, Piece(1, H0, H0)),
+        (4, 4, Piece(0, A0, A0)),
+        (6, 4, Piece(1, B0, B0)),
+        (0, 2, Piece(0, C0, C0)),
+    ):
+        rows[rank][file] = piece
+
+    semantic_actions = []
+    for action in rules.semantic_actions:
+        if action.name == "drop_A0":
+            action = replace(
+                action,
+                aux_state=(
+                    RuleAuxState("drop_mark", "bool", "global", lifetime, 0),
+                ),
+                effects=action.effects + (
+                    RuleActionEffect("set_bool", slot_name="drop_mark", value=1),
+                ),
+            )
+        semantic_actions.append(action)
+    semantic_actions.append(RuleSemanticAction(
+        name="after_drop_C0",
+        type_ids=(C0,),
+        geometry=RuleGeometrySpec(kind="leap", offset=(-1, 0)),
+        target_relation="empty",
+        slot_guards=(RuleSlotGuard("drop_mark", comparison="eq", value=1),),
+        aux_state=(RuleAuxState("reply_mark", "bool", "global", "persistent", 0),),
+        effects=(RuleActionEffect(
+            "move", from_ref=_ref("source"), to_ref=_ref("target")
+        ), RuleActionEffect("set_bool", slot_name="reply_mark", value=1)),
+        invariants=(RuleInvariant("own_anchor_safe"),),
+    ))
+    authored_rules = replace(
+        rules,
+        initial_position=tuple(tuple(row) for row in rows),
+        semantic_actions=tuple(semantic_actions),
+    )
+    serialized = serialize_ruleset(authored_rules)
+    restored_rules = deserialize_ruleset(serialized)
+    assert restored_rules == authored_rules
+    assert compute_fingerprint(restored_rules) == compute_fingerprint(authored_rules)
+    # Match benchmark_alphabeta --ruleset's deserialize/compile route.
+    compiled = compile_ruleset_for_execution(restored_rules)
+    engine = semantic_engine_for(compiled)
+    drop_slot = next(
+        item for item in engine.ir.aux_slots if item.slot_id == 0
+    )
+    reply_slot = next(
+        item for item in engine.ir.aux_slots if item.slot_id == 1
+    )
+    session = GameSession(compiled)
+
+    def submit_one(predicate):
+        matches = [action for action in session.legal_actions() if predicate(action)]
+        assert len(matches) == 1, matches
+        session.submit(matches[0])
+        return matches[0]
+
+    promotion = submit_one(
+        lambda action: isinstance(action, SemanticBoardMove)
+        and action.promotion_target_id == A1
+    )
+    capture = submit_one(
+        lambda action: isinstance(action, SemanticBoardMove)
+        and "capture_B0_A0_leap" in action.pattern_id
+    )
+    assert session.state.position.hands[1].count(A0) == 1
+    advance = submit_one(
+        lambda action: isinstance(action, SemanticBoardMove)
+        and "advance_C0" in action.pattern_id
+    )
+    before_drop = session.state
+
+    class PreferMarkedDrop:
+        def evaluate(self, state):
+            marked = dict(state.position.aux_state).get(
+                (drop_slot.slot_id, -1), 0
+            ) == 1
+            placed = any(
+                piece is not None and piece.owner == 1
+                and piece.base_type_id == A0
+                for piece in state.position.board
+            )
+            return -10_000 if marked and placed else 10_000
+
+        def type_value(self, _piece_type):
+            return 0
+
+        def capture_order_value(self, _mover, _victim):
+            return 0
+
+    limits = SearchLimits(
+        max_depth=1,
+        max_nodes=4096,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+    native_player = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferMarkedDrop(), use_disk_cache=False
+    )
+    core_player = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferMarkedDrop(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    )
+    assert native_player.native_legality_provider is not None
+    native = native_player.choose_action(session, limits)
+    core = core_player.choose_action(session, limits)
+    assert session.state is before_drop
+    assert isinstance(native.action, SemanticDropMove)
+    assert native.action.pattern_id.endswith("_drop_A0")
+    assert (
+        native.action,
+        native.score,
+        native.completed_depth,
+        native.principal_variation,
+        native.nodes,
+    ) == (
+        core.action,
+        core.score,
+        core.completed_depth,
+        core.principal_variation,
+        core.nodes,
+    )
+    assert native.native_legality_calls > 0
+    assert native.native_legality_fallbacks == 0
+    assert native.native_legality_operational_failures == 0
+
+    expected = apply_action(before_drop, native.action, compiled)
+    assert expected.position.hands[1].count(A0) == 0
+    assert dict(expected.position.aux_state)[(drop_slot.slot_id, -1)] == 1
+    square = native.action.to_square
+    assert expected.position.board[square.rank * N + square.file].base_type_id == A0
+    after_drop_actions = legal_actions(expected, compiled)
+    without_flag_state = replace(
+        expected, position=replace(expected.position, aux_state=())
+    )
+    without_flag_actions = legal_actions(without_flag_state, compiled)
+    assert any(
+        isinstance(action, SemanticBoardMove)
+        and "after_drop_C0" in action.pattern_id
+        for action in after_drop_actions
+    )
+    assert not any(
+        isinstance(action, SemanticBoardMove)
+        and "after_drop_C0" in action.pattern_id
+        for action in without_flag_actions
+    )
+    session.submit(native.action)
+    replayed = GameSession.replay(
+        compiled,
+        deserialize_game_record(serialize_game_record(session.to_record())),
+    )
+    assert session.state == replayed.state == expected
+    assert session.state.ply_count == 4
+    assert len(session._search_witnesses) == 5
+
+    # Exercise the real product evaluator on the imported post-drop state as
+    # well as the decision-forcing evaluators below. This is a legal-search
+    # integration check only, not evidence about default price utility.
+    default_post_drop = AlphaBetaPlayer(
+        compiled, use_disk_cache=False
+    ).choose_action(replayed, limits)
+    assert default_post_drop.action in replayed.legal_actions()
+    assert default_post_drop.completed_depth == 1
+    assert default_post_drop.native_legality_calls > 0
+    assert default_post_drop.native_legality_fallbacks == 0
+    assert default_post_drop.native_legality_operational_failures == 0
+
+    class PreferGuardedReply:
+        def evaluate(self, state):
+            marked = dict(state.position.aux_state).get(
+                (reply_slot.slot_id, -1), 0
+            ) == 1
+            return -10_000 if marked else 10_000
+
+        def type_value(self, _piece_type):
+            return 0
+
+        def capture_order_value(self, _mover, _victim):
+            return 0
+
+    native_reply_player = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferGuardedReply(), use_disk_cache=False
+    )
+    core_reply_player = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferGuardedReply(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    )
+    native_reply = native_reply_player.choose_action(replayed, limits)
+    core_reply = core_reply_player.choose_action(replayed, limits)
+    assert isinstance(native_reply.action, SemanticBoardMove)
+    assert "after_drop_C0" in native_reply.action.pattern_id
+    assert (
+        native_reply.action,
+        native_reply.score,
+        native_reply.completed_depth,
+        native_reply.principal_variation,
+        native_reply.nodes,
+    ) == (
+        core_reply.action,
+        core_reply.score,
+        core_reply.completed_depth,
+        core_reply.principal_variation,
+        core_reply.nodes,
+    )
+    assert native_reply.principal_variation[0] == native_reply.action
+    assert native_reply.native_legality_calls > 0
+    assert native_reply.native_legality_fallbacks == 0
+    assert native_reply.native_legality_operational_failures == 0
+
+    # The direct Native engine below also exercises this cap, but the public
+    # AlphaBeta caller has two legality backends sharing Python search. Check
+    # that the separate q-node expansion boundary reports the same abort and
+    # leaves the imported session untouched through both public modes.
+    for qnode_cap in (0, 1):
+        public_q_limits = SearchLimits(
+            max_depth=2,
+            max_nodes=10_000,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+            quiescence_max_nodes=qnode_cap,
+        )
+        public_q_decisions = (
+            native_reply_player.choose_action(replayed, public_q_limits),
+            core_reply_player.choose_action(replayed, public_q_limits),
+        )
+        for decision in public_q_decisions:
+            assert decision.action in replayed.legal_actions()
+            assert decision.nodes + decision.qnodes <= 10_000
+            assert decision.qsearch_budget_aborts > 0
+            assert decision.termination_reason == "qsearch_budget"
+            assert decision.completed_depth < public_q_limits.max_depth
+            if decision.completed_depth == 0:
+                assert decision.root_scan_used_fallback
+                assert decision.principal_variation == ()
+            else:
+                assert not decision.root_scan_used_fallback
+                assert decision.result_source == "main_iteration"
+                # Default TT policy promises score/action, not a full PV.
+                if decision.principal_variation:
+                    assert decision.principal_variation[0] == decision.action
+            assert replayed.state == expected
+
+    # A zero deadline is a valid exhausted budget at the public API too. Both
+    # legality backends must return the same kind of legal root fallback rather
+    # than treating deadline exhaustion as terminal or leaking partial state.
+    public_zero_time = SearchLimits(
+        max_depth=2,
+        max_nodes=10_000,
+        max_time_seconds=0.0,
+        quiescence_max_depth=1,
+        quiescence_hard_max_depth=2,
+    )
+    public_time_decisions = (
+        native_reply_player.choose_action(replayed, public_zero_time),
+        core_reply_player.choose_action(replayed, public_zero_time),
+    )
+    for decision in public_time_decisions:
+        assert decision.action in replayed.legal_actions()
+        assert decision.nodes + decision.qnodes <= 10_000
+        assert decision.completed_depth == 0
+        assert decision.termination_reason == "time_limit"
+        assert decision.root_scan_used_fallback
+        assert decision.time_to_first_legal_action is not None
+        assert 0 <= decision.time_to_first_legal_action <= decision.elapsed_seconds
+        assert decision.time_to_first_completed_iteration is None
+        assert replayed.state == expected
+
+    # Distinguish the Core AlphaBeta caller above from the separate full Native
+    # semantic-search API: this imported post-drop root carries the complete
+    # action/aux/history state into the latter as well.
+    from generic_chess.learning.arena import _engine_for
+    from generic_chess.core.identity import position_identity_key
+    from generic_chess.native.adapter import pack_semantic_search_position
+    from generic_chess.native.mirror import snapshot_matches
+    from generic_chess.native.semantic import snapshot as native_semantic_snapshot
+    from generic_chess.native.semantic_engine import SemanticSearchEngine
+
+    native_rules = native_player.native_legality_provider.native_rules
+    assert native_rules.native_executable
+    packed_root = pack_semantic_search_position(compiled, native_rules, replayed)
+    native_root = native_semantic_snapshot(native_rules, packed_root)
+    expected_history = tuple(
+        tuple(
+            int(position_identity_key(witness, compiled)[offset:offset + 16], 16)
+            for offset in range(0, 64, 16)
+        )
+        for witness in replayed._search_witnesses
+    )
+    expected_events = tuple(
+        (255 if record.actor < 0 else record.actor, int(bool(record.gave_check)))
+        for record in replayed.state.history
+    )
+    assert native_root["history"] == expected_history
+    assert native_root["history_events"] == expected_events
+    assert native_root["history_exact"]
+    assert native_root["history_events_exact"]
+    assert snapshot_matches(
+        native_root, replayed.state.position, native_rules, compiled
+    )
+    native_engine = _engine_for(compiled, native_rules, None, 0)
+    assert isinstance(native_engine, SemanticSearchEngine)
+    native_search = native_engine.search(replayed, limits)
+    assert native_search.action in replayed.legal_actions()
+    assert native_search.completed_depth == 1
+    assert native_search.termination_reason == "completed"
+    assert not native_search.used_fallback
+
+    native_input = replayed.state
+    native_qsearch = native_engine.search(
+        replayed,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=10_000,
+            max_time_seconds=5.0,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+        ),
+    )
+    assert native_qsearch.action in replayed.legal_actions()
+    assert native_qsearch.nodes + native_qsearch.qnodes <= 10_000
+    assert native_qsearch.completed_depth == 2
+    assert native_qsearch.result_ordinary_qdepth == 1
+    assert native_qsearch.result_check_hard_qdepth == 2
+    assert native_qsearch.qnodes > 0
+    assert native_qsearch.principal_variation
+    assert native_qsearch.principal_variation[0] == native_qsearch.action
+    q_pv_state = replayed.state
+    for pv_action in native_qsearch.principal_variation:
+        assert pv_action in legal_actions(q_pv_state, compiled)
+        q_pv_state = apply_action(q_pv_state, pv_action, compiled)
+    assert replayed.state == native_input
+
+    # Confirm a retained Native TT can search this exact aux/history root
+    # twice without changing the selected line or mutating its source session.
+    native_tt_engine = _engine_for(compiled, native_rules, None, 1)
+    cold_tt_search = native_tt_engine.search(
+        replayed,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=10_000,
+            max_time_seconds=5.0,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+        ),
+    )
+    warm_tt_search = native_tt_engine.search(
+        replayed,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=10_000,
+            max_time_seconds=5.0,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+        ),
+    )
+    assert cold_tt_search.tt_status == warm_tt_search.tt_status == "ENABLED"
+    assert warm_tt_search.tt_probes > 0
+    assert warm_tt_search.tt_hits > 0
+    assert (warm_tt_search.score, warm_tt_search.action,
+            warm_tt_search.principal_variation) == (
+        cold_tt_search.score, cold_tt_search.action,
+        cold_tt_search.principal_variation,
+    )
+    assert replayed.state == native_input
+
+    # Exercise the same low combined-node caps through both public
+    # AlphaBeta callers with qsearch enabled: Core legality and Native-backed
+    # legality remain distinct from the full semantic Native engine above.
+    for total_cap in (0, 1):
+        public_limits = SearchLimits(
+            max_depth=2,
+            max_nodes=total_cap,
+            quiescence_max_depth=1,
+            quiescence_hard_max_depth=2,
+        )
+        native_public = native_player.choose_action(replayed, public_limits)
+        core_public = core_player.choose_action(replayed, public_limits)
+        for decision in (native_public, core_public):
+            assert decision.action in replayed.legal_actions()
+            assert decision.nodes + decision.qnodes <= total_cap
+            assert decision.termination_reason == "node_limit"
+        assert replayed.state == native_input
+
+    # The separate q-node policy is checked at expansion boundaries rather
+    # than treated as a hard visit ceiling; the total-node cap remains the
+    # hard bound. Exercise that control path on the same imported mixed root.
+    for qnode_cap in (0, 1):
+        qnode_limited = native_engine.search(
+            replayed,
+            SearchLimits(
+                max_depth=2,
+                max_nodes=10_000,
+                max_time_seconds=5.0,
+                quiescence_max_depth=1,
+                quiescence_hard_max_depth=2,
+                quiescence_max_nodes=qnode_cap,
+            ),
+        )
+        assert qnode_limited.action in replayed.legal_actions()
+        assert qnode_limited.nodes + qnode_limited.qnodes <= 10_000
+        assert qnode_limited.termination_reason == "qsearch_budget"
+        assert replayed.state == native_input
+
+    for total_cap in (0, 1):
+        qsearch_node_limited = native_engine.search(
+            replayed,
+            SearchLimits(
+                max_depth=2,
+                max_nodes=total_cap,
+                quiescence_max_depth=1,
+                quiescence_hard_max_depth=2,
+            ),
+        )
+        assert qsearch_node_limited.action in replayed.legal_actions()
+        assert qsearch_node_limited.nodes + qsearch_node_limited.qnodes <= total_cap
+        assert qsearch_node_limited.termination_reason == "node_budget"
+        assert qsearch_node_limited.used_fallback
+        assert replayed.state == native_input
+
+    for node_cap in (0, 1):
+        bounded_native = native_engine.search(
+            replayed,
+            SearchLimits(
+                max_depth=1,
+                max_nodes=node_cap,
+                quiescence_max_depth=0,
+                quiescence_hard_max_depth=0,
+            ),
+        )
+        assert bounded_native.action in replayed.legal_actions()
+        assert bounded_native.nodes <= node_cap
+        assert bounded_native.qnodes == 0
+        assert bounded_native.completed_depth == 0
+        assert bounded_native.termination_reason == "node_budget"
+        assert bounded_native.used_fallback
+        assert replayed.state == native_input
+    zero_time_native = native_engine.search(
+        replayed,
+        SearchLimits(
+            max_depth=1,
+            max_nodes=4096,
+            max_time_seconds=0.0,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+    assert zero_time_native.action in replayed.legal_actions()
+    assert zero_time_native.nodes <= 4096
+    assert zero_time_native.completed_depth == 0
+    assert zero_time_native.termination_reason == "time_budget"
+    assert zero_time_native.used_fallback
+    assert replayed.state == native_input
+
+    from generic_chess.ai.cancellation import CancellationToken
+
+    cancelled_token = CancellationToken()
+    cancelled_token.cancel()
+    cancelled_native = native_engine.search(
+        replayed,
+        SearchLimits(max_depth=1, max_nodes=4096, quiescence_max_depth=0),
+        cancel_token=cancelled_token,
+    )
+    assert cancelled_native.action in replayed.legal_actions()
+    assert cancelled_native.completed_depth == 0
+    assert cancelled_native.termination_reason == "cancelled"
+    assert cancelled_native.used_fallback
+    assert replayed.state == native_input
+
+    # The serialized post-drop state must still yield a legal root fallback
+    # when the public caller supplies an exhausted fixed-node budget. This is
+    # a separate contract from selecting the guarded reply with a completed
+    # search above.
+    zero_node_limits = SearchLimits(
+        max_depth=1,
+        max_nodes=0,
+        quiescence_max_depth=0,
+        quiescence_hard_max_depth=0,
+    )
+    native_zero = AlphaBetaPlayer(
+        compiled, evaluator_override=PreferGuardedReply(), use_disk_cache=False
+    ).choose_action(replayed, zero_node_limits)
+    core_zero = AlphaBetaPlayer(
+        compiled,
+        evaluator_override=PreferGuardedReply(),
+        use_native_semantic_legality=False,
+        use_disk_cache=False,
+    ).choose_action(replayed, zero_node_limits)
+    legal_post_drop = set(replayed.legal_actions())
+    assert native_zero.action in legal_post_drop
+    assert core_zero.action in legal_post_drop
+    assert (
+        native_zero.action,
+        native_zero.score,
+        native_zero.completed_depth,
+        native_zero.principal_variation,
+        native_zero.nodes,
+        native_zero.termination_reason,
+    ) == (
+        core_zero.action,
+        core_zero.score,
+        core_zero.completed_depth,
+        core_zero.principal_variation,
+        core_zero.nodes,
+        core_zero.termination_reason,
+    )
+    assert native_zero.nodes == native_zero.qnodes == 0
+    assert native_zero.termination_reason == "node_limit"
+    assert native_zero.native_legality_calls > 0
+    assert native_zero.native_legality_fallbacks == 0
+    assert native_zero.native_legality_operational_failures == 0
+
+    runtime = SearchPathRuntime.from_state(
+        session.state,
+        compiled,
+        history_witnesses=session._search_witnesses,
+    )
+    runtime_replies = runtime.legal_actions()
+    guarded_reply = next(
+        action for action in runtime_replies
+        if isinstance(action, SemanticBoardMove)
+        and "after_drop_C0" in action.pattern_id
+    )
+    with runtime.pushed(guarded_reply):
+        assert runtime.ply_count == 5
+        assert dict(runtime.position.aux_state).get((drop_slot.slot_id, -1), 0) == expected_after_reply
+        assert runtime.position.board[2 * N].base_type_id == C0
+    runtime.assert_balanced()
+
+    before_reply = session.state
+    expected_reply = apply_action(before_reply, guarded_reply, compiled)
+    session.submit(guarded_reply)
+    assert session.state == expected_reply
+    assert dict(session.state.position.aux_state).get(
+        (drop_slot.slot_id, -1), 0
+    ) == expected_after_reply
+    replayed_reply = GameSession.replay(
+        compiled,
+        deserialize_game_record(serialize_game_record(session.to_record())),
+    )
+    assert replayed_reply.state == session.state
+    assert session.state.ply_count == 5
+    assert len(session._search_witnesses) == 6

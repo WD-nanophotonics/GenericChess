@@ -5885,3 +5885,19 @@ WinError 5 setup errors, and the same modules passed with an ignored project-loc
 basetemp. No price/strength experiment was run or claim changed. No DEV_AUX
 checkout, state, computation or unpublished output was accessed or changed; no
 cross-role coordination was needed.
+
+## 2026-10-21 PRIMARY finite-search caller and declaration budget audit
+
+PRIMARY corrected q-search abort assertions to distinguish a completed
+iteration from a root fallback while respecting the default score/action-only
+TT PV contract. It fixed the unfamiliar-search reference fuse's rejected-leaf
+overcount and added regressions that preserve incomplete references as UNKNOWN;
+the preserved 2026-10-08 records remain unchanged, with score comparisons
+already null. A bounded public F27 probe found an actionless root RESTART floor
+survives 0/1-node limits with root-declaration provenance and no session
+mutation; a focused parameterized regression now covers that missing boundary.
+The post-change combined modules passed 138 tests; no price, strength or search
+utility claim follows. DEV_AUX files/state/computation were not accessed or
+changed. One incoming project Chat suggestion about task2636 was unrelated to
+the selected PRIMARY caller contracts and was not adopted; no cross-role
+coordination or outbound communication was needed.

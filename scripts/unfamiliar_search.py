@@ -39,9 +39,9 @@ class CountedEvaluator:
         self.calls = 0
 
     def evaluate(self, state):
-        self.calls += 1
-        if self.calls > self.maximum or time.perf_counter() > self.deadline:
+        if self.calls >= self.maximum or time.perf_counter() >= self.deadline:
             raise ReferenceLimit('reference cost fuse')
+        self.calls += 1
         return self.evaluator.evaluate(state)
 
 

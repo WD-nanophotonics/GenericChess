@@ -219,6 +219,8 @@ class UIController:
 
     def begin_ai_move(self, cancel_token: CancellationToken | None = None) -> bool:
         """Start an AI turn on the calling thread (View calls this on the GUI thread)."""
+        if self._check_timeout():
+            return False
         if not self.ai_move_needed():
             return False
         self._ai_stop_requested = False

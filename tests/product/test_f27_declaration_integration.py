@@ -135,6 +135,47 @@ def test_restart_is_a_floor_and_actions_win_ties(value, expected_kind, use_tt):
         assert decision.declaration_root_selected is False
 
 
+@pytest.mark.parametrize("node_cap", (0, 1))
+def test_root_restart_declaration_survives_exhausted_node_budget(node_cap):
+    """An executable neutral declaration remains a floor under tiny budgets."""
+    compiled = compile_ruleset_for_execution(_claim_ruleset())
+    session = GameSession(compiled)
+    session._state = _state(
+        compiled, _claim_position(compiled, score_state="restart")
+    )
+    before = (session.state, session.to_record(), session._search_witnesses)
+    player = AlphaBetaPlayer(
+        compiled,
+        use_disk_cache=False,
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=False),
+    )
+
+    decision = player.choose_action(
+        session,
+        SearchLimits(
+            max_depth=2,
+            max_nodes=node_cap,
+            quiescence_max_depth=0,
+            quiescence_hard_max_depth=0,
+        ),
+    )
+
+    assert decision.choice_kind == "DECLARATION"
+    assert decision.action is None
+    assert decision.declaration.declaration_id == "opaque_claim"
+    assert decision.declaration.outcome == "RESTART"
+    assert decision.declaration_root_selected
+    assert decision.result_source == "root_declaration"
+    assert decision.score == 0
+    assert decision.completed_depth == 0
+    assert decision.termination_reason == "node_limit"
+    assert decision.nodes + decision.qnodes <= node_cap
+    assert decision.principal_variation == ()
+    assert decision.runtime_depth_balanced
+    assert (session.state, session.to_record(), session._search_witnesses) == before
+
+
 def test_repeated_tt_root_preserves_restart_declaration_identity():
     from generic_chess import Hands, Piece, Position
 

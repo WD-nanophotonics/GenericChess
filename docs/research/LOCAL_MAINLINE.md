@@ -2911,3 +2911,69 @@ correctness repairs, not an engine-strength or value-model result; no closed
 price/ray panel was reopened and no AUX work was touched. Next choose a distinct
 finite-budget contract with a named current caller; do not infer utility from
 these repairs.
+
+## F24C imported mixed-rule finite-search caller boundary — 2026-10-21
+
+The parameterized F24C product test now follows a serialized/deserialized authored
+RuleSet through the actual arena factory, promotion/capture/drop, guarded aux
+reply, and exact imported Native identity/event history. For both persistent and
+expire-next-turn aux lifetimes, the full Native semantic engine and both public
+AlphaBeta legality modes retain legal, state-preserving results under main-node
+caps 0/1 and q-node caps 0/1. A warm Native TT search hits without changing the
+score/action/PV. At a zero-second deadline both public modes return a legal
+root-scan fallback, report `time_limit`, keep first-legal latency within elapsed
+time, and report no completed iteration. For public q-caps 0/1, the result keeps
+`qsearch_budget` and an incomplete requested depth. If no iteration completed,
+the root fallback is explicit and PV is empty; if an earlier iteration was
+retained, source is `main_iteration` and any present PV begins with its action.
+An empty PV is valid under the default score/action-only TT policy. The focused
+and full F24C checks pass; the integrated changed-module run is recorded with
+this segment.
+
+This closes the mixed imported-root finite-budget/history integration check with
+no observed product defect. It establishes only this authored fixture and these
+caller paths, not complete generated-domain coverage, search utility, price
+quality, or strength. No product/default or route change follows. Continue only
+with a distinct uncovered current caller contract; do not repeat these caps,
+TT/history, or zero-deadline checks or reopen closed price/ray panels.
+
+## Additional finite-budget caller boundaries — 2026-10-21
+
+`scripts/unfamiliar_search.py` checks the reference evaluation/deadline fuse
+before incrementing accepted leaf work; both supplied-rule and generated-rule
+paths preserve an incomplete reference as `complete=false`, null score/action,
+and null candidate/reference equality while retaining the candidate run's own
+completion. Its counter/deadline/UNKNOWN regressions pass. In the preserved
+2026-10-08 generated-search record, all five incomplete references report
+4097/4096 because the old counter included the rejected next attempt; all five
+already keep score/action and comparisons null. This is a one-call overcount in
+historical cost metadata, not a false score certificate; retain frozen evidence
+and do not rerun it.
+
+`UIController.begin_ai_move` adjudicates timeout before marking a search live.
+The regression `test_expired_ai_clock_before_ui_tick_does_not_create_worker`
+covers an AI clock expiring between the last move and the next GUI tick: the
+result is resignation, no worker is created, and `ai_thinking` remains false.
+This closes UI deadline lifecycle correctness only, not search quality, utility
+or engine strength. The integrated changed-module suite passed 117 tests after
+these changes. Do not repeat these caller checks without a new contract failure;
+continue generic search work on a genuinely uncovered, decision-changing
+caller question.
+
+The same finite-budget audit found one additional generic action-type boundary:
+an executable root `RESTART` declaration is a valid neutral floor even when a
+0/1-node budget aborts before a completed iteration. On the existing authored
+declaration fixture, both public AlphaBeta calls return an actionless
+`DECLARATION` for `opaque_claim`, `result_source=root_declaration`, depth 0 and
+`node_limit`, with score 0 and the input state/record/search witnesses intact.
+The new parameterized F27 regression passes. This preserves declaration
+semantics under an exhausted budget; it is not a completed search or strength
+claim and required no production change. The UI controller applies actionless
+declarations via the authoritative session, and existing tests cover
+LOSS/RESTART/NO_CONTEST plus timeout rejection; the benchmark runner records a
+declaration event and its outcome buckets leave a winnerless declaration
+unresolved rather than a draw. The new node-cap regression tests the public
+search decision, not a full capped match. The relevant combined changed-module
+suite, including F27, passed 138 tests. Do not revisit this boundary absent a
+new failure; the next search task must identify another uncovered current
+caller rather than repeat cap, PV, declaration or reference-fuse checks.

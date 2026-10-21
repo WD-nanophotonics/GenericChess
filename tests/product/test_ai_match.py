@@ -538,6 +538,82 @@ def test_ai_timeout_adjudicates_loss():
     assert not ctrl.ai_move_needed()
 
 
+def test_expired_ai_clock_is_adjudicated_before_search_snapshot():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    _human_move(ctrl)
+    assert ctrl.clock_state().active_owner == 1
+
+    now.t += 2.0  # Exactly zero expires; the UI timer has not ticked.
+    token = CancellationToken()
+    assert ctrl.clock_state().expired_owner == 1
+    assert ctrl.capture_ai_search(token) is None
+
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.session.to_record().resigned_by == 1
+    assert ctrl.timeout_owner == 1
+    assert not ctrl.ai_thinking
+    assert not ctrl.clock_state().running
+    assert not ctrl.ai_move_needed()
+
+
+def test_expired_ai_clock_does_not_call_synchronous_ai_runner():
+    class FakeNow:
+        def __init__(self):
+            self.t = 0.0
+
+        def __call__(self):
+            return self.t
+
+    now = FakeNow()
+    ctrl = _controller(clock_now=now)
+    ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    _human_move(ctrl)
+    now.t += 2.0
+    runner_calls = []
+
+    def runner(*args):
+        runner_calls.append(args)
+        return None
+
+    assert ctrl.make_ai_move(runner) is None
+    assert runner_calls == []
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.session.to_record().resigned_by == 1
+    assert ctrl.timeout_owner == 1
+    assert not ctrl.clock_state().running
+
+
 def test_ai_result_returned_after_timeout_is_not_committed_without_ui_tick():
     class FakeNow:
         def __init__(self):

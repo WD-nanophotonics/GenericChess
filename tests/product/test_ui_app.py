@@ -1193,6 +1193,45 @@ def test_clock_label_updates_on_tick(qapp):
     assert "Black" in win._clock_label.text()
 
 
+def test_expired_ai_clock_before_ui_tick_does_not_create_worker(qapp):
+    from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
+    from generic_chess.ai.budget import ThinkingConfig, ThinkingStrategy
+    from generic_chess.clock import (
+        SideTimeConfig,
+        TimeControl,
+        TimeControlMode,
+    )
+    from generic_chess.ui.match import MatchConfig, ParticipantKind
+
+    now = [0.0]
+    settings = DictSettingsStore()
+    settings.set(KEY_LANGUAGE, "en")
+    ctrl = UIController(settings=settings, clock_now=lambda: now[0])
+    assert ctrl.new_game(seed=42)
+    ctrl.start_match(
+        MatchConfig(
+            (ParticipantKind.HUMAN, ParticipantKind.AI),
+            TimeControl(
+                mode=TimeControlMode.FISCHER,
+                owner0=SideTimeConfig(2, 10),
+                owner1=SideTimeConfig(2, 10),
+            ),
+            ThinkingConfig(strategy=ThinkingStrategy.FIXED_NODES, preset="quick"),
+        )
+    )
+    assert ctrl.submit_action(ctrl.session.legal_actions()[0])
+    now[0] = 2.0  # AI clock expires before the next GUI timer tick.
+
+    win = MainWindow(ctrl, settings)
+    win._ai_player = AlphaBetaPlayer(ctrl.compiled, use_disk_cache=False)
+    win._maybe_start_ai()
+
+    assert win._ai_thread is None
+    assert ctrl.session.result.status.value == "resignation"
+    assert ctrl.timeout_owner == 1
+    assert not ctrl.ai_thinking
+
+
 def test_preferences_no_nameerror(qapp, monkeypatch):
     from PySide6.QtWidgets import QDialog
 
