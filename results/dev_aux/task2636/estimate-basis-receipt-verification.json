@@ -1,0 +1,34 @@
+{
+  "evaluation_basis_slots": 1536,
+  "evaluation_projection_reconstructed_seconds": 691.4194885999896,
+  "execution_state": {
+    "learner_or_search_started": false,
+    "root_pool_registered": false,
+    "run_v1_exists": false
+  },
+  "interpretation_limit": "Verifies the historical projection inputs and fixed-root legal-action contrast. It does not predict candidate runtime, descendant branching, or search throughput.",
+  "plan_sha256": "a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40",
+  "root_action_means": {
+    "task2609_evaluation_basis": 8.9375,
+    "task2621_training_basis": 10.125,
+    "task2636_evaluation": 38.62890625,
+    "task2636_to_task2609_ratio": 4.322115384615385,
+    "task2636_to_task2621_ratio": 3.7694958847736624,
+    "task2636_training": 38.16614583333333
+  },
+  "root_census_sha256": "11f1d0285d4812126d7753874178e5c3300ad2bf82a6b76d031bb62287ba8775",
+  "root_pool_sha256": "8854a09a406fd2b0c19b50729c22a03b55bc566ab0b4bb9e5e5325a2e1d98718",
+  "status": "PASS_ESTIMATE_SOURCE_AND_ROOT_BINDING",
+  "task2609_eval_plan_sha256": "43292987a3e18fa2b342ec78f154c273fc676206c8bae174dc87b669033e388f",
+  "task2609_eval_result_sha256": "e75622b827e7c44fa942398b6d96e72fbd2d200a55d081f3aa0909e4e6985caf",
+  "task2609_registration_sha256": "bf084dc56d85379e8c0b812923d6de2ea7768614ad72a0457c5d577b1d8c8efe",
+  "task2609_root_manifest_sha256": "6c62717a45a1384240e0e5862f8173f2e7171679521ed37fccca237b9b028c37",
+  "task2621_cost_feasibility_sha256": "66ac003972f7c785bb180c4dcf4e6a9224ce5b94d5f4a8567893eb40959a302f",
+  "task2621_cost_scan_result_sha256": "a7f3589404a80bdc9c0675d7b6c473280e1136661b52c2f6c881ff8ef166d4c4",
+  "task2621_registration_sha256": "24c091b96bb46bb24c068ecbbd7e9afe727fc65924f0962af65bfaac83e76a73",
+  "task2621_root_manifest_sha256": "644352b6029a945f9379e50cee896cf6e0ca2a4b8e20f9e2a93bd25f929d37dc",
+  "task2625_plan_sha256": "9cca31fae284f8f88120a58c8128294455346f1a1bc4c813a30c12cf111e0b3f",
+  "training_formula": "4,000,000 / 80,000 * 1.5 * max(task2621 arm seconds)",
+  "training_projection_reconstructed_seconds": 2110.568017499463,
+  "training_slowest_80k_arm_seconds": 28.140906899992842
+}

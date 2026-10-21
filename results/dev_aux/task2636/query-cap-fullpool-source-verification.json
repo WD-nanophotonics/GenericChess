@@ -1,0 +1,27 @@
+{
+  "execution_state": {
+    "learner_or_search_started": false,
+    "root_pool_registered": false,
+    "run_v1_exists": false
+  },
+  "frozen_search_contract": {
+    "depth": 2,
+    "nodes_per_query": 2048,
+    "quiescence": 0
+  },
+  "fullpool_audit_sha256": "d2e4434a241e3ed4c920c404794d70505e492579952b755abd8c9bfbf12ee4bb",
+  "fullpool_exceedance": {
+    "above_cap": 549,
+    "fraction": 0.2859375,
+    "reference_roots_above_cap": 0,
+    "roots": 1920
+  },
+  "fullpool_script_sha256": "3f65328b8dccfb96290bb6c02581d85bf5ce980522a787e620b049dc627f3b57",
+  "interpretation_limit": "No-pruning, no-terminal-shortcut D2 full-width walk-call upper bound only. It does not predict AlphaBeta cap hits, UNKNOWN rates or runtime.",
+  "shared_screen_helper_sha256": "4e8573f3a0decaf86b57454beaa09f974f5042845cdbd077ef40eaedfdf9b87c",
+  "status": "PASS_FULLPOOL_SCREEN_AND_ALPHA_BETA_SOURCE_BINDING",
+  "subset_audit_sha256": "8a3f1885ae0b34479ee3a5e33fb22c82be71390475100b8a76bc522f96b2b74d",
+  "task2492_alpha_beta_source_sha256": "88e7f08c0ce2ced7ab7ab9ca53036365bc6c53397db182d173684a194a6c25df",
+  "task2625_reference_plan_sha256": "9cca31fae284f8f88120a58c8128294455346f1a1bc4c813a30c12cf111e0b3f",
+  "task2636_plan_sha256": "a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40"
+}

@@ -2126,7 +2126,7 @@ no root filtering/resampling, learner, or evaluation was performed. Full
 candidate table and interpretation limits:
 `results/dev_aux/task2636/ROOT_CHANNEL_COVERAGE_REVIEW.md`.
 
-Cost comparison is now source-bound to task2625's completed receipts:
+Separate completed-run cost comparator (not the projection formula source):
 4,000,000 training nodes took1,750.237s over3,693 episodes, and1,024
 evaluation slots took555.656s (1,254,951 nodes,44 UNKNOWN,0 missing). The
 task2636 projections of2,110.568s and691.419s leave289.432s of training
@@ -2270,17 +2270,72 @@ question, not resolved or required by this finite Generic panel. Keep task2636
 as Main for this segment, but do not register until runner, full partial replay,
 stop/deadline closure tests and a revised all-in estimate are ready. Details:
 `results/dev_aux/task2636/ROUTE_REASSESSMENT_20261021.md`.
-The frozen 66.70-minute projection uses task2625's different four-rule runtime
-and does not include measured development/validation for the missing task2636
-adapters. Its657.368s preparation/audit/reporting reserve is already allocated
-to remaining replay/report work; do not assume it covers unknown runner/auditor
-engineering. Keep the6,600s cap and120-minute threshold unchanged, but withhold
-registration until missing implementation cost is bounded and the revised
-all-in estimate is closed. See
-`results/dev_aux/task2636/ALL_IN_COST_COMPLETENESS.md`.
+The frozen 66.70-minute projection is inherited from the source-bound task2625
+feasibility plan, but its direct runtime inputs are task2621's slowest80k-node
+arm with a1.5× margin and task2609's measured1,536-slot evaluation; task2625's
+later completed timings are a separate comparator. Candidate-root branching
+and full-width D2 structure are substantially higher in the task2636 samples,
+without supporting a runtime multiplier. The projection also omits measured
+development/validation for the missing task2636 adapters. Its657.368s
+preparation/audit/reporting reserve is already allocated to remaining
+replay/report work; do not assume it covers unknown runner/auditor engineering.
+Keep the6,600s cap and120-minute threshold unchanged, but withhold registration
+until missing implementation cost is bounded and the revised all-in estimate
+is closed. Also, the frozen plan puts the2,048-node/2.0-second search budget
+only under `training.search`; the evaluation replay adapter consumes that same
+object and tests pin2,048, so it acts as a shared execution contract rather
+than a separately declared evaluation cap. The runner must preserve that
+convention pending the explicit bundle review. See
+`results/dev_aux/task2636/ALL_IN_COST_COMPLETENESS.md` and
+`RUNNER_CONTRACT_REVIEW.md`.
+
+Read-only, outcome-blind legal-action censuses found task2636 means of38.17
+training and38.63 evaluation actions. Against the later task2625 runtime
+reference roots, means were10.84/10.94 (3.52×/3.53×); that comparison is
+context, not the projection's direct root basis. A second source-pinned audit
+against the actual estimate root manifests found task2621's eight training
+cost-scan roots averaged10.125 actions and task2609's64 evaluation roots
+averaged8.938, giving task2636/task-basis ratios3.77×/4.32×. The task2621
+training root sample is only two roots per rule. Neither census measures
+descendant branching or node throughput, so neither supports a runtime
+multiplier or revised numeric estimate. The estimate remains unvalidated for
+the candidates. Preserve all frozen roots and the6,600-second cap; keep
+task2636 unregistered. Full distributions, pins and limits:
+`results/dev_aux/task2636/ROOT_BRANCHING_COST_REVIEW_20261021.md`,
+`root-branching-cost-audit.json`, and
+`cost-basis-root-branching-audit.json`. The exact arithmetic is also source
+reconstructed: training is4,000,000/80,000 ×1.5 ×the slowest task2621
+80k-arm (28.1409s) =2,110.568s; evaluation is the task2609 1,536-slot
+691.419s measurement reused for1,024 slots. The completed task2625 run is a
+separate comparator, not the formula source. The plan/result/registration/
+root-manifest bindings and this arithmetic pass in
+`results/dev_aux/task2636/estimate-basis-receipt-verification-v2.json`. No
+search, training, evaluation or outcome read was performed. The training projection has only12.1% throughput margin
+before its2,400-second stage cap (1,895 projected versus1,667 nodes/s minimum);
+this is an arithmetic sensitivity, not a candidate throughput prediction.
 The source-context smoke was31.7ms for the6,962,023-byte pool/index and24.0ms
 median for a cached one-query replay; it is not a multi-query or full-panel cost
 estimate. See `results/dev_aux/task2636/replay-context-cost-smoke.json`.
+An additional fixed-root legal-action census (first8 family IDs per candidate)
+counted no-pruning two-ply edges: candidate means1,643/1,657 versus the task2621
+and2609 roots129.5/85.6 (12.69×/19.35×). This counts all legal replies, not
+AlphaBeta visits; task2636 roots are a predeclared 8/120 subset, task2621 has
+only8 reference roots, and rules differ. It is a complexity warning only and
+does not imply those runtime multipliers. Full source and limits:
+`results/dev_aux/task2636/depth2-legal-action-expansion-audit.json`.
+The pinned D2/q0 AlphaBeta walk has a2,048-node query cap. A no-pruning,
+no-terminal-shortcut full-width walk bound exceeds that cap for34/128 roots in
+the task2636 training subset, versus0/8 task2621 reference roots. This is not
+an actual cap-hit or UNKNOWN rate; actual AlphaBeta pruning and terminal
+short-circuits were not executed. It documents candidate-load mismatch under
+the frozen query budget, with no numerical runtime implication:
+`results/dev_aux/task2636/query-cap-screen.json`.
+The subsequent full-pool census confirms this is not an eight-root selection
+artifact:549/1,920 training roots (28.59%) exceed the unpruned bound; median
+1,118, mean1,625.5, p90 3,574, maximum9,690. Candidate rates range0/120 to
+112/120, showing strong rule heterogeneity. Task2621 remains0/8. These are
+upper-bound roots only, not AlphaBeta cap hits or UNKNOWN outcomes:
+`results/dev_aux/task2636/query-cap-fullpool-audit.json`.
 The concrete model/receipt interface and why the task2625 pattern cannot be
 reused unchanged are recorded in
 `results/dev_aux/task2636/WHOLE_RESULT_AUDITOR_INTERFACE_REVIEW.md`.
@@ -2338,3 +2393,79 @@ registration or experiment timer exists. The under-120-minute run projection
 does not cover the added engineering. Keep task2636 unregistered and report the
 budget gap; the exact accounting is in
 `results/dev_aux/task2636/ALL_IN_COST_COMPLETENESS.md`.
+
+The evaluation query-budget convention is now checked by
+`results/dev_aux/task2636/evaluation-query-budget-contract-audit.json`: the
+frozen plan has no independent evaluation node/time cap, while the tested
+replay adapter consumes `training.search` (D2/q0, 2,048 nodes, 2.0 seconds)
+and focused tests bind 2,048. Treat that as a shared train/evaluation contract
+for any future runner; do not invent a second cap. Compile, the executable
+contract audit and all10 focused evaluation-audit tests pass. No registration,
+search, evaluation or `run-v1` exists, so this does not close the remaining
+whole-result, trained-model, terminal-fixture, stop-safe-write or revised
+all-in-cost gates.
+
+Outcome-blind structural extension of the shared 2,048-node query screen to
+all 256 frozen evaluation roots finds 76/256 (29.69%) above the unpruned,
+no-terminal-shortcut D2 full-width bound; the corresponding 1,920-root
+training rate is 549/1,920 (28.59%). Similar rates reduce concern that the
+training result was subset-specific, while large candidate differences remain
+(candidate0: 15/16 evaluation roots; candidates14/15: 0/16). This is only a
+tree-size upper bound, not an AlphaBeta cap-hit, UNKNOWN rate or runtime
+estimate. The bound compares with the maximum 2,048-node request; queries near
+a slot's remaining combined-node limit may receive less, which this root-only
+census does not model. The evaluation 2.0s/query policy is still unverified. No search or
+outcome read was performed; task2636 remains unregistered. See
+`results/dev_aux/task2636/query-cap-evaluation-fullpool-audit.json`.
+
+Per-candidate exceedance fractions from the fixed training and evaluation
+roots are descriptively aligned (Pearson r=.963, Spearman rho=.971 with tied
+ranks, n=16 candidates). Candidate0 is high in both phases (112/120 train,
+15/16 eval); candidates2,9,14,15 are zero in both. Candidate10 differs
+(56/120 vs12/16). This shows candidate-persistent structural heterogeneity in
+these frozen roots, but is not an independent-sample or causal result and does
+not predict AlphaBeta cap hits or UNKNOWN. See
+`results/dev_aux/task2636/query-cap-phase-alignment-audit.json`.
+
+Budget-contract clarification: task2636's current replay contract and tests
+verify that evaluation query receipts use the shared 2,048-node request from
+`training.search`. They do not verify that an evaluation search would enforce
+the training object's2.0-second per-query value: no task2636 search runner
+exists, and the replay adapter does not accept a time limit. The task2625
+evaluator is only a source precedent. The first contract receipt grouped these
+claims too broadly; the superseding
+`results/dev_aux/task2636/evaluation-query-budget-contract-audit-v2.json`
+separates the verified node limit from the unverified evaluation time policy.
+Keep the frozen plan unchanged and add an explicit time-policy binding/test to
+any later runner before registration; no search was run.
+
+DEV_AUX task2636 continuation rechecked the actual `one-init-study-plan.json`
+and six supporting source/receipt hashes; all matched. An initial manual hash
+comparison selected the distinct history-inventory `plan.json` and the wrong
+estimate script, so its apparent mismatches were path errors, not frozen-source
+drift. Cost-accounting recheck found the earlier640.816s increment is already
+inside the same active segment's cumulative total (it rose from2,074.555s to
+2,715.371s), so do not add it again to the later active total. The plan's
+542.632s prior-preparation allocation itself combines227.998s observed
+inventory,4.762s observed prefix audit,165.872s projected root-pool prep and
+144s projected full-source audit. At the00:06:34Z checkpoint, adding that
+allocation,3,313.414s of confirmed Agent research and2,801.988s projected
+training/evaluation gives6,658.034s (58.034 above6,600), but this mixes Agent
+effort and projections; it is not measured process wall time or an actual cap
+hit. The candidate-index training/audit, receipt-chain orchestration,
+scoring-terminal fixture, stop-safe lifecycle tests and their costs remain
+open, so no all-in estimate is closed and task2636 remains unregistered. A
+read-only writer audit found the existing atomic JSON helper uses replace
+without fsync and task2625 JSONL producers flush without fsync; neither proves
+crash-durable closures, so durability code and interruption tests remain
+unpriced. See
+`results/dev_aux/task2636/PIN_AND_COST_SCOPE_RECHECK_20261021.md`.
+An independent component recomputation confirms the allocation sums exactly;
+only the inventory and prefix-audit components have observed times, while
+root-pool and full-source audit components are projections (the 144s audit has
+no matching completed timing receipt). The mixed-cost comparison is not a
+process-runtime cap hit. Source reuse review also confirms all four integration
+groups still require unpriced candidate-index, whole-bundle, terminal-fixture,
+and stop/durability work. Details:
+`results/dev_aux/task2636/PREPARATION_CHARGE_COMPONENT_CHECK_20261021.md` and
+`results/dev_aux/task2636/RECEIPT_BINDING_CROSSWALK_20261021.md`.

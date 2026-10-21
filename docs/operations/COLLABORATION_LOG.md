@@ -3361,3 +3361,39 @@ evaluation slots (about66.7min estimated) but has only32 paired contrasts per
 rule versus128 in task2625; it is not yet registered. Unresolved: exact-history
 root-pool coverage and whether one-init TDLeaf changes finite-panel actual W/L/D
 bounds across these candidate rules. Science remains OPEN.
+
+DEV_AUX task2636 cost/registration checkpoint (2026-10-21): the existing
+session `9e97f96e-1a97-4cdd-994c-6f2b2cedc337` reached 3,607.589 confirmed
+effective seconds across 23 research checkpoints without resetting its origin.
+The frozen 542.632066s preparation charge was independently decomposed and
+recomputed exactly: 227.998s inventory and 4.762s prefix audit have observed
+timings; 165.872s root-pool preparation and 144s full-source audit are
+projections. The charge is inside the fixed 1,200s reserve, leaving 657.368s;
+the 2,400s training, 3,000s evaluation and 6,600s total caps remain unchanged.
+This mixed-cost scenario is not a process-runtime overrun. Candidate-index
+runner/audit, whole-bundle binding, actual-terminal fixture, and stop/durability
+integration remain unpriced, so task2636 stays unregistered. Twelve named
+lineage/reference hashes matched. Source review confirms task2625's six-weight
+rule/seed interface, flush-only logs and stop rethrow cannot close those gates;
+no model/search/evaluation ran. The result is a finite Generic transfer panel
+after task2594 Chess validation, not full-domain coverage or seed stability.
+
+Coordination and advice: the existing asynchronous Chat mailbox snapshot
+`GC-MAIL-a446c40e848349a2966f5213773beb72` was read and its five saved
+recommendation decisions remain revision-bound. The task2625 censoring profile
+was already completed; PRIMARY-only order advice and optional future panels
+were deferred or retained as backups. A small gzip-fallback fix now lets the
+task2625 profile script read the repository's existing byte-exact compressed
+traces; smoke checks matched both evaluation-game and query SHA values. No
+other role's code/state or checkout was touched, and no Chat send was made in
+this checkpoint pending reviewed push verification.
+
+Workflow correction: DEV_AUX accidentally invoked its mutating `stop` command
+while checking state. Exact post-call snapshots and a local reconciliation
+receipt were saved; only the resulting own `stopped` and `user_paused` switches
+were restored under the user's explicit continuation instruction. Prior stop
+history, stop reason, the accidental timestamp, disabled Dot dispatch and the
+ACTIVE hourly heartbeat were preserved. Heartbeat doctor still reports MATCH.
+A process-table query was denied, so execution-state claims rely only on the
+frozen no-registration/no-run receipts; no absence-of-process claim is made.
+`git diff --check` and Python compilation passed; gzip fallback was SHA-tested.

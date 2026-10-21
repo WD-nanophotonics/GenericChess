@@ -1,0 +1,128 @@
+{
+  "audit_script_sha256": "ae3842a5b2d3a1222118af7e4a5bfd28979cc341da7946a347a336e210e2d809",
+  "candidate_index_sha256": "1b7d11d7f79040a3641f589a6eaa8ae593cc5ffe0077678f1bc12bc856e05f5e",
+  "execution_state": {
+    "learner_or_search_started": false,
+    "root_pool_registered": false,
+    "run_v1_exists": false
+  },
+  "interpretation_limit": "No-pruning, no-terminal-shortcut D2 full-width walk-call upper bound only. This is not an AlphaBeta cap-hit, UNKNOWN-rate or runtime estimate; it counts one root tree per candidate/family, not both endpoints/colors. The verified per-query node cap is 2,048; evaluation seconds_per_query remains unverified.",
+  "plan_sha256": "a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40",
+  "query_cap_contract_sha256": "4ebe74f14004ceb876c5b405ab08116b5a79d7c5a4ad8bb8541ec2161b6831ca",
+  "query_cap_contract_status": "PASS_NODE_LIMIT_SHARED_TIME_LIMIT_UNVERIFIED",
+  "root_pool_sha256": "8854a09a406fd2b0c19b50729c22a03b55bc566ab0b4bb9e5e5325a2e1d98718",
+  "screen": {
+    "by_group": {
+      "0": {
+        "gt_cap": 15,
+        "max_full_width_node_calls": 8659,
+        "mean_full_width_node_calls": 4486.375,
+        "roots": 16
+      },
+      "1": {
+        "gt_cap": 2,
+        "max_full_width_node_calls": 3717,
+        "mean_full_width_node_calls": 1579.0625,
+        "roots": 16
+      },
+      "10": {
+        "gt_cap": 12,
+        "max_full_width_node_calls": 4189,
+        "mean_full_width_node_calls": 2399.625,
+        "roots": 16
+      },
+      "11": {
+        "gt_cap": 0,
+        "max_full_width_node_calls": 1386,
+        "mean_full_width_node_calls": 831.0625,
+        "roots": 16
+      },
+      "12": {
+        "gt_cap": 2,
+        "max_full_width_node_calls": 4632,
+        "mean_full_width_node_calls": 1060.1875,
+        "roots": 16
+      },
+      "13": {
+        "gt_cap": 3,
+        "max_full_width_node_calls": 3591,
+        "mean_full_width_node_calls": 1912.6875,
+        "roots": 16
+      },
+      "14": {
+        "gt_cap": 0,
+        "max_full_width_node_calls": 2033,
+        "mean_full_width_node_calls": 664.875,
+        "roots": 16
+      },
+      "15": {
+        "gt_cap": 0,
+        "max_full_width_node_calls": 588,
+        "mean_full_width_node_calls": 268.6875,
+        "roots": 16
+      },
+      "2": {
+        "gt_cap": 0,
+        "max_full_width_node_calls": 1032,
+        "mean_full_width_node_calls": 502.375,
+        "roots": 16
+      },
+      "3": {
+        "gt_cap": 2,
+        "max_full_width_node_calls": 2477,
+        "mean_full_width_node_calls": 936.625,
+        "roots": 16
+      },
+      "4": {
+        "gt_cap": 12,
+        "max_full_width_node_calls": 7552,
+        "mean_full_width_node_calls": 2997.125,
+        "roots": 16
+      },
+      "5": {
+        "gt_cap": 1,
+        "max_full_width_node_calls": 2468,
+        "mean_full_width_node_calls": 671.8125,
+        "roots": 16
+      },
+      "6": {
+        "gt_cap": 11,
+        "max_full_width_node_calls": 6261,
+        "mean_full_width_node_calls": 2514.875,
+        "roots": 16
+      },
+      "7": {
+        "gt_cap": 14,
+        "max_full_width_node_calls": 5230,
+        "mean_full_width_node_calls": 3089.0625,
+        "roots": 16
+      },
+      "8": {
+        "gt_cap": 2,
+        "max_full_width_node_calls": 5301,
+        "mean_full_width_node_calls": 1760.8125,
+        "roots": 16
+      },
+      "9": {
+        "gt_cap": 0,
+        "max_full_width_node_calls": 847,
+        "mean_full_width_node_calls": 515.125,
+        "roots": 16
+      }
+    },
+    "fraction_gt_cap": 0.296875,
+    "full_width_node_calls": {
+      "max": 8659,
+      "mean": 1636.8984375,
+      "median": 1204.0,
+      "min": 41,
+      "p90_nearest_rank": 3717
+    },
+    "full_width_nodes_gt_cap": 76,
+    "full_width_nodes_le_cap": 180,
+    "query_node_cap": 2048,
+    "selected_roots": 256
+  },
+  "selection": "all 16 frozen evaluation roots in family order for each of the 16 candidates; no outcome-based selection",
+  "status": "PASS_FROZEN_EVALUATION_ROOT_D2_CAP_BOUND_NO_SEARCH_NO_OUTCOME_READ"
+}

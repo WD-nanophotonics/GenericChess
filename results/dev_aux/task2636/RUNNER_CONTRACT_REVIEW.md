@@ -68,12 +68,14 @@ results.
 
 The pinned task2625 receipts measured 1,750.237s for 4M training nodes and
 3,693 episodes, then 555.656s for 1,024 evaluation slots (1,254,951 nodes,
-44 completed UNKNOWN and 0 missing). The task2636 projections are 2,110.568s
-for training and 691.419s for evaluation, leaving 289.432s and 2,308.581s
-respectively below the proposed stage caps. These are projections against a
-different four-rule panel, not a runtime guarantee for the 16 new candidate
-rules. The overall projected 4,001.988s is 2,598.012s below the 6,600-second
-lifetime cap.
+44 completed UNKNOWN and 0 missing). These completed-run figures are useful
+separate runtime comparators. The task2636 projection instead inherits
+task2621's slowest 80k-node cost-scan arm with a1.5× training margin
+(2,110.568s) and task2609's measured 1,536-slot evaluation (691.419s), as
+reconstructed in `estimate-basis-receipt-verification-v2.json`. The projected
+4,001.988s is 2,598.012s below the6,600-second lifetime cap, but is not a
+runtime guarantee for the16 candidate rules and omits unresolved adapter and
+whole-result validation costs.
 
 The projected task2636 preparation/audit allocation is 542.632 seconds of the
 1,200-second lifetime reserve, leaving 657.368 seconds for future replay,
@@ -113,3 +115,130 @@ No new runner, registration, training or evaluation was created in this
 review. The next admissible step is a separately reviewed source-bound
 preflight contract and an all-in estimate that includes the already completed
 task2636 root work; registration remains a later explicit, write-once action.
+
+## Reusable partial-audit surface check (2026-10-21)
+
+The nearest working partial-training precedent is task2623's
+`audit_partial_training.py`: it replays closed episodes and a trailing open
+episode, reconstructs TD updates and checks node accounting, but is coupled to
+four numeric rule IDs, their rule files, a rule/seed arm prefix and a fixed
+interruption correction. It is a source pattern for candidate-index handling,
+not a candidate-index auditor that can be called unchanged. The new arm key
+must also bind the candidate-index row, candidate seed, ten-coordinate model
+snapshot and that candidate's frozen full-history roots.
+
+The task2636 `partial_evaluation_audit.py` already supplies tested
+candidate-index-aware slot enumeration, row/cap validation, partial
+UNKNOWN-versus-missing bounds, one-query full-history replay, and a reused
+source-pinned replay context. Its `audit_files` binds the frozen plan and root
+pool and rejects non-newline-terminated slot rows; its current receipt checker
+explicitly does not validate source hashes or replay. It does not yet compose
+registration, completed training result, independent training audit,
+write-once evaluation binding, slot/query file hashes and the final result
+receipt into the complete artifact chain described in
+`WHOLE_RESULT_AUDITOR_INTERFACE_REVIEW.md`.
+
+The focused existing suite `test_partial_evaluation_audit.py` passed all 10
+tests in the checkout's `.venv`. This verifies the present structural,
+partial-bound and replay primitives; it does not test a producer, durable
+stop closure, whole-bundle binding or any task2636 output. The exact source
+comparison narrows the implementation target to candidate-index training
+production/audit, stop-safe lifecycle integration and an outer receipt-bundle
+orchestrator. It still supplies no measured engineering duration, so it does
+not close the remaining preparation reserve or authorize registration.
+
+## Evaluation query-budget field review (2026-10-21)
+
+The frozen plan has one explicit search object at `training.search`:
+AlphaBeta D2/q0,2,048 nodes and2.0 seconds per query. Its evaluation object
+repeats depth2 and H=128 but has no `nodes_per_query` or `seconds_per_query`
+field. The existing task2636 replay adapter nevertheless reads
+`plan["training"]["search"]["nodes_per_query"]` when auditing evaluation
+queries, and focused tests bind `requested_nodes=2048`; therefore the current
+tested adapter treats the training search object as a shared execution
+contract. This is an implicit cross-phase convention in the frozen document,
+not a separate evaluation cap. Future registration/runner code must follow
+that exact shared contract or expose an audited contract mismatch before any
+run; do not infer a different evaluation query cap. The plan, auditor and test
+hashes are `a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40`,
+`e894da78fd22d06771419fb4003685fff6df5413ea59725d2321ed81399ef8ca`, and
+`f5471b1049d49701b56fbb99ee669af5b71a8e5c642f2a4193bf6677cecf3fa9`.
+No evaluation search or slot was started.
+
+The executable outcome-blind contract check is saved as
+`evaluation-query-budget-contract-audit.json`. It rehashes the frozen plan,
+evaluation adapter, focused tests and full-pool screen; confirms that evaluation
+has no separate per-query node/time fields; confirms the adapter passes the
+shared `training.search.nodes_per_query` value and tests bind 2,048; and verifies
+registration, search and `run-v1` remain absent. The first run exposed a brittle
+source-text check that expected an obsolete argument sequence; after matching
+the current replay call and explicit `requested_nodes` fixture, compile and
+audit passed, followed by 10/10 focused tests. This closes only the budget
+convention question; it does not validate a future runner or infer actual cap
+hits, UNKNOWN frequency or cost.
+
+### Correction: node limit is verified; evaluation time limit is not
+
+The first contract receipt (`evaluation-query-budget-contract-audit.json`)
+overstated the shared convention by listing the training value of2.0 seconds
+alongside the evaluation node limit. The evidence supports only the node limit:
+the replay adapter passes `training.search.nodes_per_query`, and focused tests
+bind `requested_nodes=2048`. The task2636 adapter does not invoke search and
+does not consume `seconds_per_query`; there is no task2636 runner yet. The
+task2625 reference evaluator does pass its own plan's shared search seconds,
+but it is not a task2636 implementation. The corrected write-once receipt is
+`evaluation-query-budget-contract-audit-v2.json`: node cap verified, evaluation
+seconds-per-query binding unverified. Before registration, the new runner and
+tests must explicitly bind the intended evaluation time policy or establish
+that only the cumulative evaluation/lifetime caps apply. The frozen plan was
+not modified, and no search was run.
+
+One additional receipt hazard is a coincidental count match: the completed
+task2625 training result has16 `(rule, seed)` arms, as task2636 has16 candidate
+arms, but the saved task2625 final vectors are all six-dimensional. Task2636
+requires a candidate-index key and ten-dimensional vector per candidate.
+Therefore an arm-count-only check or direct reuse of the reference result is
+invalid; the candidate-index training auditor must bind each row to the
+candidate seed and rule hash and require exactly ten finite weights. See
+`RECEIPT_BINDING_CROSSWALK_20261021.md` for the pinned schema comparison.
+
+The lifecycle budget separately assigns evaluation a3,000-second stage cap
+within the6,600-second global cap. The task2636 partial replay schema checks
+node requests/counts and does not validate per-query elapsed time. By contrast,
+the pinned task2625 reference passes `seconds_per_query` to AlphaBeta and stores
+the returned `receipt.seconds` in each query row; its source hash matches the
+reference hash in task2636's frozen lineage. This supports a concrete future
+acceptance check: the registration-pinned task2636 runner must either use the
+frozen `training.search.seconds_per_query=2.0` as its evaluation search time
+bound and preserve the search receipt, or explicitly declare and test a
+node-only policy under the evaluation/global wall-clock caps. No choice is
+currently implemented or verified, so registration remains closed.
+
+## Frozen evaluation-root node-bound screen
+
+Because the current replay contract verifies the shared 2,048-node query
+request, the matching no-search structural screen was extended to all256
+frozen evaluation roots (16 families for each of16 candidates). The
+unpruned/no-terminal-shortcut D2 call bound exceeds2,048 for76/256 roots
+(29.69%); median1,204, mean1,636.9, p90 3,717, maximum8,659. This is close to
+the training pool's549/1,920 (28.59%), so the earlier warning is not obviously
+an eight-root or training-only sampling artifact. Candidate heterogeneity
+remains substantial: candidate0 has15/16 above the bound; candidates14 and15
+have0/16. These are not actual AlphaBeta cap hits, UNKNOWN outcomes, or runtime
+estimates; pruning, terminal short-circuiting, endpoint models and color do not
+enter this full-width count. The screen compares against the maximum 2,048-node
+query request; the planned runner must reduce a later request to the remaining
+slot nodes when that is smaller, a case this root-only census does not model.
+The evaluation per-query seconds policy remains unverified. Evidence and source pins:
+`query-cap-evaluation-fullpool-audit.json` and
+`audit_eval_query_cap_fullpool.py`.
+
+The per-candidate training/evaluation exceedance fractions are closely aligned
+in this descriptive n=16 comparison (Pearson r=0.963; Spearman rho=0.971 with
+average tied ranks), using 120 training roots and16 evaluation roots per
+candidate. Candidate0 is high in both phases (112/120;15/16), while candidates
+2,9,14,15 are zero in both; candidate10 is a visible phase difference
+(56/120 vs12/16). This supports candidate-persistent structural heterogeneity
+in the fixed roots, not an independent sample, causal estimate or prediction of
+actual search/censoring. Receipt:
+`query-cap-phase-alignment-audit.json`.

@@ -1,0 +1,27 @@
+{
+  "current_adapter_behavior": "FrozenSlotReplayContext passes training.search.nodes_per_query into evaluation query replay; tests bind requested_nodes=2048.",
+  "decision": "Treat training.search as the shared frozen train/eval query-budget convention. Preserve this in any runner/bundle binder; do not invent a separate evaluation cap. No evaluation search was run.",
+  "evaluation_audit_source_sha256": "e894da78fd22d06771419fb4003685fff6df5413ea59725d2321ed81399ef8ca",
+  "evaluation_plan_fields": {
+    "depth": 2,
+    "explicit_nodes_per_query": false,
+    "explicit_seconds_per_query": false,
+    "horizon": 128,
+    "slots": 1024
+  },
+  "evaluation_tests_sha256": "f5471b1049d49701b56fbb99ee669af5b71a8e5c642f2a4193bf6677cecf3fa9",
+  "execution_state": {
+    "learner_or_search_started": false,
+    "root_pool_registered": false,
+    "run_v1_exists": false
+  },
+  "plan_sha256": "a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40",
+  "query_cap_screen_sha256": "d2e4434a241e3ed4c920c404794d70505e492579952b755abd8c9bfbf12ee4bb",
+  "status": "PASS_SHARED_SEARCH_CONVENTION_EVAL_FIELDS_IMPLICIT",
+  "training_search_contract": {
+    "depth": 2,
+    "nodes_per_query": 2048,
+    "quiescence": 0,
+    "seconds_per_query": 2.0
+  }
+}
