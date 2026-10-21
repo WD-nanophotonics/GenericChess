@@ -5909,3 +5909,29 @@ PRIMARY read and privately preserved the incoming Chat comment attributed in its
 PRIMARY follow-up 2026-10-21: the published-copy candidate for the Claude MCTS assessment was corrected after current-tree cleanup removed the historical F115–F121 report files. The report now links the extant cleanup manifest rather than dead paths, records the exact fixed-simulation RNG seed rule and discloses that the 64/128 runner was executed inline rather than retained standalone. Public JSON protocols/results were structurally checked: all 12 fixed-simulation runs are complete, retain zero UNKNOWNs, and show three selected actions per root at each budget. Focused F121 declaration regression passed 4 tests. A bounded trace of profile CLI, benchmark CLI, human play CLI, UI AI dispatch and paired runner found no new finite-budget contract defect or justified integration. Limits: source/fixture scope only; no product code change, no AI-strength claim, no UI test ownership, no cross-role changes.
 
 PRIMARY after cleanup2026-10-21: published sandbox cleanup62b2a02a7e9c1d867935104f95b3003401c350ad and restored all27 unfinished research files by exact hashes. AUX's independently advancing sidemission has no delivered cleanup record; no AUX index/state/file/message was changed. Incoming Claude advice was read privately before assessment; paired budgets, UNKNOWN and cost safeguards were adopted, with no outbound message. Subsequent genuine mainline work tested finite count laws, reachable calibration, existing semantic attack authority, joint recomposition validity and scoped method/sampler feasibility. Count correction, authority default and sampler implementation all fail their stated gates; actual outcomes and limitations remain in FINITE_ROSTER_AND_SEMANTIC_AUTHORITY_20261021.md. A separate live clock defect is corrected and tested, without a strength claim. Earlier UCT action instability is not treated as proof of bad utility. No auxiliary computation, learner or frozen campaign was duplicated. Full regression permission failures were diagnosed rather than hidden or answered by changing expectations;93 normal-escalation retries pass. Administrative cleanup/publication time is excluded from the research ledger.
+
+
+## PRIMARY —2026-10-21 decision-region mechanisms and current Chat corrections
+
+Read and privately saved complete theory root1792556353.483249/reply1792556421.498529
+and Claude root1792558608.371949, no remaining pages. Adopt mechanism-first
+regions/goal quality/cost and four Generic levels; no learner, solver or worker
+created. Claude corrected its absent-MCTS statement; PRIMARY distinguishes
+Gumbel from the old UCT screen and fixes a real winner-propagation defect with
+actual Core/Native history cases. No outbound message or AUX checkout/state write.
+
+PRIMARY's new finite-world and existing-fixture evidence separates nonzero
+features, policy sensitivity and actual terminal quality. Signed coefficients
+escape two positive-price traps; fixed dynamics alter scale regions; cheap D1
+sensitivity cannot filter deeper learning. Six actual depth-control games end
+3draws/3mates; four prior capped exploratory games remainUNKNOWN. No population,
+independent-family, transfer, equal-work strength or learner-run claim. Detailed
+protocols, negative controls and evidence are in PRICE_DECISION_REGIONS_20261021.md.
+
+AUX's independently published b53e0b5 cleanup was verified in public ancestry
+(13,366 deletions), superseding PRIMARY's older incomplete observation. AUX's
+learner/pilot remains its work; no result was independently rerun here. The
+one-time PRIMARY inventory is retired to fixed Git history and the daily
+mainline is compacted. Generated raw outputs stay ignored; a scoped technical
+evidence copy is available publicly. The additional empty-row control is only
+compiled/replayed so far, with actual WDL pending; it is not reported complete.

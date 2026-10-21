@@ -8,7 +8,7 @@ The suggestion was to consider a no-training UCT/MCTS baseline, Fairy-Stockfish 
 
 The repository already contains `SemanticGumbelMCTSV0` in `generic_chess/learning/gumbel_mcts.py`. It uses Native semantic actions, a Gumbel-root / sequential-halving policy, and fixed 16- or 64-simulation budgets with at most eight root candidates. Its intended learning route uses a policy and value checkpoint. `policy=None` is a uniform-prior smoke mode; with no checkpoint, leaf values are zero. It does not perform terminal random rollouts and is not equivalent to the proposed no-training UCT baseline. It returns `GumbelSearchResult`, not the public `ai.Player` `PlayerDecision`, and the current production callers do not consume it.
 
-The prior F115â€“F121 Shogi Gumbel work should not be repeated. Its experiment reports have been removed from the active tree by the authorized 2026-10-21 cleanup; the current [cleanup manifest](../operations/CLEANUP_20261021_FILES.json) records their removal, while their committed versions remain in Git history. The historical sequence was: F115/F116 rejected; the F118 child failed its F119 Arena4; F120 became invalid after a neutral declaration; F121 added the neutral-declaration outside option and passed its four-pair Arena4. That small result did not automatically promote the candidate or establish generic-domain performance.
+The prior F115â€“F121 Shogi Gumbel work should not be repeated. Its experiment reports have been removed from the active tree by the authorized 2026-10-21 cleanup; the current [retired cleanup manifest](https://github.com/WD-nanophotonics/GenericChess/blob/62b2a02a7e9c1d867935104f95b3003401c350ad/docs/operations/CLEANUP_20261021_FILES.json) records their removal, while their committed versions remain in Git history. The historical sequence was: F115/F116 rejected; the F118 child failed its F119 Arena4; F120 became invalid after a neutral declaration; F121 added the neutral-declaration outside option and passed its four-pair Arena4. That small result did not automatically promote the candidate or establish generic-domain performance.
 
 ## Bounded terminal-only UCT stability checks
 
@@ -23,3 +23,15 @@ These are stability screens on two roots, not independent ruleset-level strength
 ## Decision
 
 Adopt the comment's methodological safeguards: explicit UNKNOWN, matched per-decision budgets, independent rulesets as the inference unit, per-root results and cost, and no strength claim from a single selected opening action followed by random play. Defer a no-training UCT Player integration: action stability alone supplies no evidence of utility through 128 simulations, there is no current production caller, and the complete generated-rule domain is not covered. Do not start training, repeat the frozen Gumbel arenas, add a Player adapter, or promote a default from this evidence. Return to the current `LOCAL_MAINLINE.md` requirement for a distinct, decision-changing finite-budget contract with a named live caller.
+
+
+## Later correction —2026-10-21
+
+Claude explicitly corrected the missing-MCTS claim. The two-root UCT screen is
+not a Gumbel comparison or a reason to claim Gumbel lacks utility. The existing
+Gumbel backend had a separate, now reproduced winner-propagation defect; see
+[the actual repair and decision-region study](PRICE_DECISION_REGIONS_20261021.md).
+Its no-checkpoint leaf is zero, and the cited Gumbel policy-improvement argument
+requires action-value conditions; no generic strength or adapter adoption follows.
+Keep UNKNOWN distinct: prospective generator draw rules are new game definitions,
+not instructions to impute old capped outcomes.
