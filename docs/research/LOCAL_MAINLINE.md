@@ -106,19 +106,28 @@ Position value alias does not yet prove disjoint optimal policies. Existing
 sparse inference reduces overhead but72complete finite slots show zero paired
 utility difference. No default/learner/AUX change is selected.
 
-The next existing mixed promotion/drop/auxiliary roots4/5/6 are already fully
-replayed (45/5/92legal actions), with a saved bounded comparison plan. Compare
-D2q0 against existing protected capture-onlyD1q1hard1 and ordinaryD1q1hard4,
-using10000nodes/2048qnodes/1second per query and30seconds total. Changed premise:
-all six natural price-boundary points match, but fewerqnodes still pay D2-like
-transition cost; quiet checks doubled wall time in ordinaryq1. Record actual
-refresh completion/reserve/abort, action regions and full cost; no utility claim
-from action/depth/node differences. Do not mistake publicD1's intentionalq0
-reserve for actualq1, or extend frozen fitness. No new search/learner/API.
+[NATIVE_SERVICE_COST_AND_HYBRID_ALIAS_20261021.md](NATIVE_SERVICE_COST_AND_HYBRID_ALIAS_20261021.md)
+completes that continuation and compares actual consumer cost. Aligned physical
+PVs separate execution speed from ordering work. Native services improve scoped
+throughput;16 fixed-opponent games retain8UNKNOWN and no paired outcome gain.
+Ordered q gives3 additional D2 completions under the common clock on16 exposed
+roots, without a strength claim. Full hybrid aliases can change sampling mass;
+same seeds do not ensure matched states. Existing keys retain auxiliary effects.
+GameRecord recording now uses the strict public serializer after5 red regressions.
+One reusable cost probe and compact full-input/outcome evidence replace new
+ad-hoc script proliferation. Defaults, learners and AUX ownership are unchanged.
 
-Backup1: inspect simple capture gain versus the existing victim-minus-attacker
-ordering on another legitimate mechanism fixture, only if it can change this
-cost/decision choice; keep leaf prices fixed and failure slots. Backup2: use
-existing complete finite-goal tables to seek disjoint optimal sets under aliased
-inputs before claiming context is policy-necessary; no exposed-label fitting,
-fullWDL admission gate or broad solver campaign. Science is OPEN.
+Next: use semantic_probe_cost.py --input on that report's summary.json worlds,
+4 frozen hybrid rules/8 full histories, all versus ordered, qdepth1,5000 nodes,
+1.25seconds/query,60seconds total. Input/q1 plumbing was actually smoked on one
+zero-node root; the comparative matrix is NOT run. Changed premise: q4 cost and
+hard-check aborts prevent deeper complete results even with faster services.
+Compare actual returned horizon/reserve/abort and cost, retaining terminal and
+missing slots. This tests an existing horizon choice, not a cap extension,
+new solver, learner or default. Science is OPEN.
+
+Backup1: use the same complete records to inspect a specific check-hard abort
+only if it changes the horizon choice; do not rerun frozen fitness or add broad
+instrumentation. Backup2: seek disjoint optimal sets under existing finite-goal
+aliased inputs before claiming policy-necessary context; no exposed-label fit,
+fullWDL admission gate or broad solver campaign.

@@ -5975,3 +5975,23 @@ fitness cap or failed result was silently replaced. Frozen technical copies and
 sources accompany HAND_VALUE_CONTEXT_AND_SEARCH_COST_20261021.md. The mixed-root
 next preflight is done, its new queries pending. No claim of generic learned
 transfer, full-domain sufficiency or independent-family strength.
+
+
+## PRIMARY 2026-10-21 — Native service cost and hybrid aliases
+
+New Claude17:48JST advice and its complete thread were privately preserved before
+assessment. Adopt actual throughput/utility separation and compact evidence;
+AUX branch/learning observations remain message-sourced, not independently rerun.
+No AUX writes, learner duplication, outbound message or extra worker.
+
+PRIMARY measured aligned carrier/service costs, actual-default q budgets and16
+fixed-opponent games. More depth did not yield observed paired outcome gain;
+8UNKNOWN remain and one lost cost measurement stays missing. Hybrid typed aliases
+change physical sampling probabilities and same-seed coupling, while existing
+runtime keys preserve auxiliary distinctions. One reusable cost probe and compact
+canonical inputs replace a forest of new tracked producers. A real GameRecord
+serialization failure was fixed after5 red tests;54 focused tests pass.
+See NATIVE_SERVICE_COST_AND_HYBRID_ALIAS_20261021.md and its technical packet.
+Next q1 horizon contrast uses the exact frozen hybrid inputs; only its input
+plumbing smoke has run. No default adoption or search-versus-learning dominance
+claim. Literature access limits and failed setup/recording paths remain explicit.

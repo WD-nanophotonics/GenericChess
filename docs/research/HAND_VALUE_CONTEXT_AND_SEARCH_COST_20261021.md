@@ -193,3 +193,10 @@ Related primary literature agrees only with the narrower methodological point:
 and action channels using rule structure. A typed input mapping is not evidence
 that useful parameters transfer. No CNN/MCTS port, external labels or reported
 training budget was imported here.
+
+
+Recording clarification (2026-10-21): this report's historical generic GameRecord
+dataclass snapshots are diagnostic snapshots, not canonical public replay JSON.
+The follow-up Native service report fixes typed GameRecord serialization and
+validates separately reconstructed canonical inputs; it does not rewrite this
+historical evidence or change standalone diagnostic-action shapes.
