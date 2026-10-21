@@ -9,6 +9,7 @@ from pathlib import Path
 import tempfile
 import time
 from generic_chess.core.actions import PassAction, action_to_dict
+from generic_chess.session.record import GameRecord
 
 def record_value(value):
     # Research producers already load numpy. Convert scalar metadata without
@@ -20,6 +21,12 @@ def record_value(value):
     # PassAction has no dataclass fields. Generic dataclass conversion used to
     # turn it into {}, losing its identity in a recorded decision/PV.
     if isinstance(value, PassAction):return action_to_dict(value)
+    # A GameRecord is a replay boundary, not a generic dataclass dump.
+    # Action kinds and version-specific declaration/setup fields matter.
+    # Standalone action/PlayerDecision diagnostic shapes stay unchanged.
+    if isinstance(value, GameRecord):
+        from generic_chess.session.serialization import serialize_game_record
+        return json.loads(serialize_game_record(value))
     if is_dataclass(value) and not isinstance(value,type):
         return {item.name: record_value(getattr(value, item.name))
                 for item in fields(value)}

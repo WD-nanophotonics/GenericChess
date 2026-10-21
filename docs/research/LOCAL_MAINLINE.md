@@ -10,8 +10,9 @@ material approximation is intentionally limited.
 
 User2026-10-21 requires committed sandbox infrastructure as the current baseline.
 All238 shared package source files now match latest published sandbox
-`d2da9705bb7993e41d7920aad4439e5156059ede` (its changes after6a4f886 are research
-records only). AUX-only package files are `learning/incremental.py` and the thin
+`bffe1e4b5f0a98ca6215eae3b83b329962db37db`. Package infrastructure is unchanged
+since6a4f886; latest common research_record also reuses strict GameRecord
+serialization. AUX-only package files are `learning/incremental.py` and the thin
 `learning/mainline_search.py` receipt adapter. Future Generic episodes default
 to public mainline AlphaBetaPlayer with literal q0 PV features; the randomized
 search remains an explicit historical/Chess reference. Actual moves and records
@@ -19,8 +20,9 @@ use GameSession. No parallel Core, no uncommitted
 PRIMARY imports, no other-role state writes. Each hourly recovery checks and
 reuses newer committed infrastructure and relevant results.
 
-Native rebuilt; full integration suite3953passed/1skipped. The lambda CLI change
-keeps default.95 and has61focused learner/runtime tests passing. Default engine,
+Native rebuilt; public-path full suite3969passed/1skipped in330.39s; closing
+bffe1e4b helper/learner targeted80tests pass after local test-fixture binding.
+Defaultlambda.95 remains;98focused caller/history tests pass. Default engine,
 UI and deployed weights are not independently selected by DEV_AUX. See
 [INCREMENTAL_TDLEAF.md](INCREMENTAL_TDLEAF.md) for exact callers/results/limits.
 
@@ -68,13 +70,32 @@ lambda1-.95=[3/8,17/16],shared initial cancelled exactly. A strict finite-condit
 advantage,not a population or initialization-robust method winner.225histories/
 7657queries/129updates checked within2.22e-16;6492852nodes/1715.759s,exit0.
 
-Next is the already preselected public-mainline-search pilot:lambda1,fresh27193,
-rule2,2Mnodes/900s train and2Mnodes eval/1800s total,16families/64slots,H128,
-8192/query,60000/game. It measures actual common learner/play execution through
-public search,not a cross-study speed or strength ranking.98focused tests pass;
-q1 remains unconnected because no q continuation is exported for TDLeaf features.
-No new framework,weight adoption,old cap reset or favorable-checkpoint selection.
-Expected>=120min needs explicit Chat mailbox scope/budget assessment.
+The preselected public-mainline pilot is closed:source0ac74767,lambda1,27193,
+2Mtrain nodes/57episodes/54updates,35actual/22U;two already-terminal starts kept.
+Eval2Mnode cap ends46of64slots,23actual/23UNKNOWN/18missing; trained6W4L13U,
+initial5W8L10U,9missing each. Bound[-9/8,23/16],no utility claim or topup.
+103histories/2481queries/57updates verified2.22e-16;687.302s,exit0. Actual public
+search execution is established; different policies/histories prevent a speed
+or strength comparison against the reference studies.98focused tests pass;
+full default-path regressions pass3969/1skip before the next producer.
+
+The fixed direct control27194 is also closed:64of64slots,16W5L43UNKNOWN,
+payoffbound[-1/2,27/32],0missing,460.422s/2919897nodes.42game-node caps and one
+unfinished first layer remain;no strict gain or weight adoption.64histories/
+1157queries checked;1065D2/91D1fallbacks/one incomplete query. No new training.
+
+Next inspect/reuse public TT/full-PV with fixed-model players within an episode,
+resetting between updates,and cost a few saved equal-budget queries before a
+new game comparison. No duplicate TT/search. HigherD3or a larger lambda panel
+is deferred on information/cost grounds,not banned. Backup:one bounded public
+learner episode on a fresh natural rule,complete-history/actual-result checks.
+Q1 remains unconnected because no q continuation is exported for TDLeaf features.
+Expected>=120min needs Chat mailbox scope/budget assessment.
+
+Closing bffe1e4b findings were read:Native service throughput required aligned
+physical PV/work; extra D2 completion did not establish W-L benefit. Same RNG
+seed across action representations did not preserve physical histories. Reuse
+these limits,not PRIMARY's probe task. No q tail or Native speed claim is added.
 
 ## Mainline findings to reuse
 

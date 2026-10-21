@@ -143,3 +143,76 @@ def test_windows_permanent_replacement_is_bounded(tmp_path, monkeypatch):
     assert len(calls) == 3
     assert p.read_bytes() == old
     assert not list(tmp_path.glob('*.tmp'))
+
+
+def test_saved_game_record_replays_promotion_drop_aux_and_complete_history(tmp_path):
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from generic_chess.core.actions import SemanticDropMove
+    # Bind the committed mainline fixture to the existing shared test data.
+    # AUX does not restore PRIMARY's price-region experiment drivers merely
+    # to import their eight-actor fixture factory.
+    from dataclasses import replace
+    from generic_chess.core.pieces import Piece
+    from rule_semantics_ir_fixtures import weird_rulesets
+    fixtures = weird_rulesets()
+    board = [[None] * 8 for _ in range(8)]
+    for owner, tid, f, r in ((0, 'K', 4, 0), (1, 'K', 7, 7), (0, 'R', 0, 0),
+                            (0, 'R', 0, 1), (0, 'R', 0, 2), (0, 'R', 1, 1),
+                            (1, 'R', 1, 3), (1, 'R', 1, 4)):
+        board[r][f] = Piece(owner, tid, tid)
+    rules = replace(fixtures[2], initial_position=tuple(map(tuple, board)),
+        semantic_actions=(fixtures[1].semantic_actions[0], fixtures[2].semantic_actions[0]),
+        drop_allowed={'R': ((True,) * 64,) * 2, 'TP': ((False,) * 64,) * 2})
+    compiled = compile_ruleset_for_execution(rules)
+    session = GameSession(compiled)
+    route = (((1, 1), (1, 3), False), ((7, 7), (6, 7), False),
+             ((1, 3), (1, 4), False), ((6, 7), (5, 7), False),
+             ((0, 0), (1, 1), True), ((5, 7), (4, 7), False))
+    for source, target, semantic in route:
+        action, = [a for a in session.legal_actions() if hasattr(a, 'from_square')
+                   and (a.from_square.file, a.from_square.rank) == source
+                   and (a.to_square.file, a.to_square.rank) == target
+                   and a.pattern_id.startswith('sem_') == semantic]
+        session.submit(action)
+    session.submit(next(a for a in session.legal_actions() if isinstance(a, SemanticDropMove)))
+    record = session.to_record()
+    path = tmp_path / 'replay.json'
+    write_record(path, {'input_record': record})
+    payload = json.loads(path.read_bytes())['input_record']
+    parsed = deserialize_game_record(json.dumps(payload))
+    restored = GameSession.replay(compiled, parsed)
+    assert parsed == record
+    assert restored.state == session.state
+    assert restored._search_witnesses == session._search_witnesses
+    assert payload['actions'][-1]['kind'] == 'semantic_drop'
+
+
+@pytest.mark.parametrize('schema', [1, 2, 3])
+def test_nested_game_record_keeps_public_schema_and_typed_actions(schema):
+    from generic_chess.session.record import GameRecord, DeclarationRecord
+    from generic_chess.session.serialization import deserialize_game_record
+    from generic_chess.core.actions import SemanticBoardMove, SemanticDropMove
+    actions = (BoardMove(Square(0, 1), Square(0, 2), 'X'),
+               SemanticBoardMove('p', 'g', 'X', Square(0, 2), Square(1, 2)),
+               SemanticDropMove('drop', 'square', 'P', Square(2, 2)), PassAction())
+    declaration = DeclarationRecord('goal', 1, 'WIN', 42) if schema == 2 else None
+    record = GameRecord(schema, 'test-rule', actions, None, declaration,
+                        'alternate' if schema == 3 else None)
+    payload = record_value({'record': record})['record']
+    assert deserialize_game_record(json.dumps(payload)) == record
+    # An ordinary diagnostic action/PlayerDecision keeps its established shape.
+    assert record_value(actions[0])['from_square'] == {'file': 0, 'rank': 1}
+
+
+def test_invalid_game_record_cannot_replace_existing_evidence(tmp_path):
+    from generic_chess.session.record import GameRecord, DeclarationRecord
+    from generic_chess.session.session import SessionRecordError
+    path = tmp_path / 'evidence.json'
+    old = b'{"preserved":true}\n'
+    path.write_bytes(old)
+    invalid = GameRecord(1, 'test-rule', (), None, DeclarationRecord('goal', 0, 'WIN'))
+    with pytest.raises(SessionRecordError, match='schema v1'):
+        write_record(path, {'record': invalid})
+    assert path.read_bytes() == old

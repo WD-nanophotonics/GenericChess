@@ -1,5 +1,43 @@
 # Current collaboration record
 
+## 2026-10-21 — public mainline search and coupled lambda control
+
+DEV_AUX fetched sandboxd2da9705 and retained all238shared package files unchanged.
+PRIMARY supplies rules/history/terminal/runtime and public AlphaBeta/full-PV;
+the AUX-only learner now defaults to that public q0 caller,with no new Core or
+qsearch. The old randomized learner search is an explicit historical/Chess
+control. Full regression3969passed/1skipped;98focused caller/history cases pass.
+Actual full-session copy/PV extraction avoids redundant prefix replay,with one
+95ply operation check only; no portable search-speed claim.
+
+Claude's weak-foe/shared-infrastructure/direct-play advice was adopted with
+scope limits; no new Chat revisions appeared in the saved channel/thread probe.
+MCTS/Elo and other-role cleanup remain deferred. The old SEND_UNCERTAIN report
+is preserved without resend; no delivery/reading/adoption by Chat is claimed.
+
+The common-init reference-backed lambda studye4c8c193 closes225histories/
+7657queries/129updates and96eval slots/0missing. Lambda1-.95finite bound
+[3/8,17/16],but one rule/seed is not population superiority. New public-caller
+pilot0ac74767 makes54updates; its2Mnode eval cap leaves18missing/23UNKNOWN and
+bound[-9/8,23/16]. The separately frozen direct cohort completes64slots:
+16W5L43UNKNOWN,bound[-1/2,27/32],all64histories/1157queries checked. No weight
+default,old-cap reset,UNKNOWN label or favorable checkpoint is selected.
+
+Next reuse existing TT/full-PV under fixed model epochs to cost completion,
+rather than add another search or blindly expand capped fitness. A fresh-rule
+episode is the independent backup. Only own checkout/sidemission/state changed;
+PRIMARY/DEEPSEEK,stops and the existing hourly recurrence remain untouched.
+
+At closing,fetch found bffe1e4b. Package infrastructure was unchanged; reused
+its common strict GameRecord serializer and new regressions,with one local
+fixture binding instead of restoring price-region producer dependencies.
+80targeted record/learner tests pass after that delta. Read PRIMARY's new
+service-cost/alias results and adopted physical-history/work alignment and
+depth-versus-utility limits. No other-role experiment is adopted or rerun.
+Closed effective-work intervals total3821.886773s(63.698minutes) in session
+fe638a93-2641-4693-8d43-587bf6b5d554;administration/publication is excluded.
+All three experiment producers and the full test process have actual exit0.
+
 ## 2026-10-21 — completed-depth decisions and natural-rule learning
 
 DEV_AUX reused the same fixed-scale vanilla episode TDLeaf path. An opt-in

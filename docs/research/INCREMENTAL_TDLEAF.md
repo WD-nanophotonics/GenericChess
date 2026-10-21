@@ -824,7 +824,7 @@ claim. Each profile stays below1Mnodes/400s; realized eval costs are972926/
 
 All225full histories,7657queries and129TD updates independently check:
 max backward-sum error2.22e-16,independent forward-target error1.39e-16.
-For actual terminal returnz,the frozen-gradient target for observationi is
+For actual terminal returnz,the lambda-weighted TD error for observationi is
 `-v_i +(1-lambda)*sum_{k=i+1}^{T-1} lambda^(k-i-1)*v_k +lambda^(T-i-1)*z`.
 Atlambda1 this telescopes toz-v_i. Censored sequences end with the last
 observed search prediction and no final reward. These are arithmetic checks,
@@ -835,3 +835,91 @@ passing. Four historical seed/path/node assertions explicitly select their
 original reference backend; their old results are not rewritten as mainline
 runs. A real public-caller smoke retains missing/node-cap slots at its small
 budget. The preselected seed27193pilot still uses the unchanged TD update.
+
+### Prospective frozen direct control
+
+Before the public pilot's fitness is known,select one direct trained-versus-own
+initial control,fresh opening seed27194,32families/both colors/64slots. Both sides
+use the same public iterativeD2,q0,H128,8192/query,60000nodes/90s per game;
+total maxima3.84Mnodes/900s. Freeze the completed pilot's final checkpoint without
+selection or further training. All zero-query terminal starts,UNKNOWN and missing
+remain. This can distinguish fixed-uniform-foe gain from actual direct matchup
+payoff; it is not Elo or a cross-rule claim. Expected5-12minutes,below120minutes;
+16families would be cheaper but halve the distinct opening conditions. No
+closed source,roots,budgets or evaluation slots are resumed or topped up.
+
+### Public-mainline pilot,closed without evaluation topup
+
+Source0ac747671bf692a9174c526f712ab9a9cd642dc6,seed27193,exits0 with
+EVALUATION_CAP in687.302251s. The same TDLeaflambda1 update and episode loop
+actually call public mainline iterativeD2q0 for both players. Train2Mnodes,
+354.205583s,57episodes/54nonzero updates:35actual terminals and22UNKNOWN
+(21game-node caps,one unfinished first-layer legal fallback). Two random
+training starts were already terminal; three episodes contain no candidate
+query. These remain in the declared sample,not evidence of successful learning.
+
+Eval reaches its original2Mnode limit after46of64planned slots,not the time
+limit:23actual mates,23UNKNOWN,18missing. Trained=6W4L13UNKNOWN/9missing;
+initial=5W8L10UNKNOWN/9missing. The full32-pair bound is **[-9/8,23/16]**,
+so utility is unresolved. No games/slots are resumed,filled or reclassified.
+All103full histories,2481query records and57TD updates independently check
+within2.22e-16; incomplete/fallback queries have no numeric training label.
+
+This establishes the public-search learner's actual execution,not strength
+or a portable acceleration claim. Its different fresh seed,lexical traversal,
+mate-distance preferences and realized histories prevent causal speed/strength
+comparisons with the reference-backed studies. Public q0 literal-PV/float
+contracts hold on the observed accepted receipts. Actual played moves remain
+authoritative GameSession operations; no Core/search/qsearch source was forked.
+
+After both completed producers exited,the full product/development/workflow/
+specification suite passed **3969tests,1skipped,in330.39s**. It used an own
+artifact temp directory and existing read-only dependencies; no other role's
+checkout/state was changed. The subsequent direct matchup is a separate
+predeclared cohort,not completion of the pilot's18missing evaluation slots.
+
+### Frozen public direct control,closed
+
+Seed27194,32new opening families/both colors:all64slots complete,0missing,
+460.422458s/2919897nodes. Frozen trained versus its own frozen initial gives
+**16W5L43UNKNOWN**,mean trained-payoff bound **[-1/2,27/32]**. This is a direct
+matchup payoff,not a trained-minus-initial fixed-foe gain. It establishes no
+strict benefit. All21scoring results are actual mates;42games hit their60000
+node cap and one has no completed first-layer result. No zero-ply starts,
+training,checkpoint selection,refill or UNKNOWN adjudication occurred.
+
+All64full histories and1157queries independently replay/check,including
+candidate/foe vector identity,player0scores,literal-PV values and paid partial
+work. Queries complete1065D2/91D1fallbacks/one unfinished first layer. Thus this
+condition is mainly game-node-censored rather than universally unable to
+completeD2. No inference of general superiority or product-weight adoption.
+
+Next cost question:reuse the existing public TT/full-PV support with separate
+fixed-model players inside each episode,clearing between model updates. The
+current adapter deliberately starts fresh with TT off. Read existing warm-PV/
+history/reset contracts first,then compare a few saved same-state queries under
+equal caps; verify score/PV/model epoch before claiming a completion benefit.
+Do not write another TT/search implementation. A newD3panel or lambda seed
+replication is less useful while this finite evaluation remains mostly capped;
+neither is permanently barred or a reason to extend closed experiments.
+
+### Closing mainline delta
+
+The final explicit fetch found sandboxbffe1e4b5f0a98ca6215eae3b83b329962db37db.
+Its238shared package files still match; only the two AUX learner modules differ.
+The common research_record GameRecord serializer fix is reused verbatim,with
+its five new regressions. The actual promotion/drop/aux fixture is bound to
+already shared test data locally,avoiding restoration of PRIMARY's price-region
+experiment drivers just for a fixture import. All80record/learner tests pass.
+The earlier3969/1skip whole-suite result remains explicitly the pre-helper run;
+no full-suite rerun or new experiment was necessary for this isolated helper fix.
+Our actual learner records already used the strict public serializer; frozen
+inputs/results and their actual source revisions are unchanged.
+
+PRIMARY's fixed new Native-service/hybrid-alias report was read. Adopt actual
+consumer timing versus paid/ordered work,full physical-history alignment,and
+the difference between additional completed depth and utility. Same seeds do
+not guarantee matched histories across representations. Do not copy its current
+q1probe task or infer our Native speed/q-tail support. Existing warm-TT tests
+also retain deeper cached scores on shallower requests until reset: the next
+learner TT check must validate actual PV/value provenance and model epochs.
