@@ -247,7 +247,7 @@ with unresolved longer tactics,not proof that horizon alone causes every error.
 ### Same full-query budget, explicit replay reserve
 
 The auxiliary adapter now exposes an optional `pv_reserve_fraction`; its
-default remains zero. The new control reserves .15 of the same1.5seconds for
+default remains zero. The new control reserves .15seconds (10%) of the same1.5seconds for
 literal replay, leaving1.35seconds for the public search. Node limits, models
 and inputs are fixed. It is a new allocation arm, not a replacement for any
 closed UNKNOWN result or an engine-speed claim.

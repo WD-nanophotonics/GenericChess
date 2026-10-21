@@ -1,0 +1,2642 @@
+{
+  "source": {
+    "input_revision": "7fcad7c93495f2d8be74b1a141bba8f6ddc4d318",
+    "sandbox": "d1017250c8720113000105b7519f6beffa774d0a",
+    "shared_files_match": 238,
+    "reusable_runner_sha256": "5829a979c7cb96083a0afee9dbc4b0f16531e355f7fa6c39250ab24b96690269",
+    "shared_python_files": 199
+  },
+  "geometry": {
+    "config": {
+      "whole_seconds": 120,
+      "graph_seconds": 60,
+      "max_states": 10000,
+      "source_index": 23981,
+      "decision": "Does rotating only C preserve root and rescue shared King move?",
+      "initial_actors": [
+        [
+          "K",
+          1,
+          0,
+          2
+        ],
+        [
+          "A",
+          1,
+          1,
+          2
+        ],
+        [
+          "K",
+          0,
+          2,
+          1
+        ],
+        [
+          "C",
+          0,
+          2,
+          0
+        ]
+      ],
+      "scope": "New fresh root; no old 24ply history transplant, no old graph or label cap reset"
+    },
+    "status": "COMPLETE",
+    "vertices": 1072,
+    "edges": 2424,
+    "root_wdl": 0,
+    "shared_king_wdl": 0,
+    "seconds": 1.0652919000713155,
+    "escape_line": [
+      {
+        "ply": 0,
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            1
+          ],
+          "to": [
+            1,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 1,
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            2
+          ],
+          "to": [
+            1,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 2,
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            0
+          ],
+          "to": [
+            0,
+            0
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 3,
+        "action": {
+          "kind": "board",
+          "from": [
+            0,
+            2
+          ],
+          "to": [
+            1,
+            2
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 4,
+        "action": {
+          "kind": "board",
+          "from": [
+            2,
+            0
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 5,
+        "action": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "value": 0
+      },
+      {
+        "ply": 6,
+        "status": "ongoing",
+        "options": [
+          {
+            "action": {
+              "kind": "board",
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "promotion_target_id": null
+            },
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "horizontal_fresh_replay": {
+      "plies": 6,
+      "status": "checkmate",
+      "winner": 1,
+      "new_search": 0,
+      "new_graph": 0,
+      "scope": "Literal fresh horizontal Core line,not old24plyhistorytransplant"
+    }
+  },
+  "training_config": {
+    "worlds": {
+      "ABA": {
+        "lineup": [
+          "A",
+          "B",
+          "A"
+        ],
+        "c_axis": "horizontal"
+      },
+      "ABCv": {
+        "lineup": [
+          "A",
+          "B",
+          "C"
+        ],
+        "c_axis": "vertical"
+      }
+    },
+    "initializations": {
+      "uniform": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "plus": [
+        1.0,
+        1.03,
+        1.01
+      ],
+      "minus": [
+        1.0,
+        0.97,
+        0.99
+      ]
+    },
+    "episodes": 32,
+    "depth": 2,
+    "opening_count": 8,
+    "opening_seed": 20261022,
+    "random_foe_seed": 2026102201,
+    "arm_seconds": 120,
+    "arm_nodes": 2000000,
+    "whole_seconds": 780,
+    "decision": "Does the same learner adapt to rule/composition rather than only ABC-horizontal experience?",
+    "scope": "Three fixed starts per world, new independent within-world training; exposed world/control selection; not heldout validation or population inference. No exact labels enter training."
+  },
+  "training": {
+    "ABA-uniform": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        0.9519515530638549,
+        1.0,
+        1.0
+      ],
+      "nodes": 4186,
+      "seconds": 3.192771900095977,
+      "outcomes": {
+        "0": 22,
+        "1": 10
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 20,
+      "candidate_queries": 335,
+      "terminal_pvs": 28,
+      "nonterminal_trainable_features": 36
+    },
+    "ABA-plus": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        1.0085528505127752,
+        1.0,
+        1.0
+      ],
+      "nodes": 4807,
+      "seconds": 3.544250699924305,
+      "outcomes": {
+        "0": 26,
+        "1": 6
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 20,
+      "candidate_queries": 387,
+      "terminal_pvs": 29,
+      "nonterminal_trainable_features": 67
+    },
+    "ABA-minus": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        0.9224780443932158,
+        1.0,
+        1.0
+      ],
+      "nodes": 4186,
+      "seconds": 3.1009470999706537,
+      "outcomes": {
+        "0": 22,
+        "1": 10
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 20,
+      "candidate_queries": 335,
+      "terminal_pvs": 28,
+      "nonterminal_trainable_features": 36
+    },
+    "ABCv-uniform": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        1.015277913312636,
+        0.9383662494913896,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "nodes": 3167,
+      "seconds": 2.515023099957034,
+      "outcomes": {
+        "0": 26,
+        "1": 6
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 27,
+      "candidate_queries": 277,
+      "terminal_pvs": 30,
+      "nonterminal_trainable_features": 123
+    },
+    "ABCv-plus": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        1.04458596932718,
+        0.9618354119258072,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "nodes": 3272,
+      "seconds": 2.6022566999308765,
+      "outcomes": {
+        "0": 25,
+        "1": 7
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 28,
+      "candidate_queries": 287,
+      "terminal_pvs": 30,
+      "nonterminal_trainable_features": 130
+    },
+    "ABCv-minus": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        0.9548882993424618,
+        0.9684086788803684,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "nodes": 3510,
+      "seconds": 2.8034989000298083,
+      "outcomes": {
+        "0": 28,
+        "1": 4
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 32
+      },
+      "changed_updates": 27,
+      "candidate_queries": 309,
+      "terminal_pvs": 29,
+      "nonterminal_trainable_features": 113
+    }
+  },
+  "replay": {
+    "status": "COMPLETE",
+    "counts": {
+      "played_edges": 3844,
+      "PV_edges": 3748,
+      "queries": 1930,
+      "terminal_PVs": 174,
+      "episodes": 192
+    },
+    "seconds": 1.1107790999813005,
+    "whole_seconds": 120,
+    "scope": "Actual full-prefix Core and GameSession replay;stored training PVs independently checked,no new search/training/oracle labels"
+  },
+  "observer": {
+    "config": {
+      "whole_seconds": 900,
+      "depth": 2,
+      "training_source": "leaper-world-adaptation-20261022",
+      "decision": "Do updates adapt to world-specific decision quality, and how often does fixed-target PV residual improvement disagree?",
+      "no_new_labels": true,
+      "no_new_queries": true,
+      "vertical_missing": 2347,
+      "scope": "Exposed finite worlds and fixed starts,posthoc frozen-PV diagnostics,not heldout or strength. Missing vertical labels stay missing."
+    },
+    "seconds": 636.2217331000138,
+    "metadata_correction": "Cached representative weights initially appeared as initial/final. Exact signatures/errors were correct; initial/final now copied from actual saved episodes. Original result preserved privately. No new calculation or cap reset.",
+    "worlds": {
+      "ABC": {
+        "runs": {
+          "uniform": {
+            "initial": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9759343934935392,
+              0.9344513766013359,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "e8fe5b6e3c3610a7c84be79ece986a248dcac65da67423848f6cb41c394ecd4a",
+            "final_cell": "d6c30c235b5420a86870432b2e297cbd9bce7802ccdb9dff748cafe2c7926330",
+            "initial_known_errors": "3277/2",
+            "final_known_errors": "19328/15",
+            "final_minus_initial_bounds": [
+              "-10499/30",
+              "-10499/30"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 27,
+              "loss_sign_-1": 27,
+              "quality_sign_1": 2,
+              "loss_down_error_up": 2,
+              "loss_down_error_down": 2,
+              "both_nonzero_identified": 4,
+              "same_nonzero_sign": 2,
+              "quality_sign_-1": 2,
+              "loss_sign_0": 5,
+              "quality_sign_0": 28
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.9759343934935392,
+              0.9344513766013359
+            ]
+          },
+          "plus": {
+            "initial": [
+              1.0,
+              1.03,
+              1.01,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9948066088336794,
+              0.9555079243310964,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "b961288b46bbf81ab2a0aa29ad98a7f9f771da89317ad8ef2ef715239232bbe7",
+            "final_cell": "d6c30c235b5420a86870432b2e297cbd9bce7802ccdb9dff748cafe2c7926330",
+            "initial_known_errors": "55177/30",
+            "final_known_errors": "19328/15",
+            "final_minus_initial_bounds": [
+              "-5507/10",
+              "-5507/10"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 27,
+              "loss_sign_-1": 27,
+              "quality_sign_0": 29,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 3,
+              "both_nonzero_identified": 3,
+              "same_nonzero_sign": 3,
+              "loss_sign_0": 5,
+              "quality_sign_-1": 3
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.03,
+              1.01
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.9759343934935392,
+              0.9344513766013359
+            ]
+          },
+          "minus": {
+            "initial": [
+              1.0,
+              0.97,
+              0.99,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9476251553590407,
+              0.9235316746663896,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "14eaaad6f4aab06bea25c83e1918eba464b6adad358098ff234324e0a223dcb4",
+            "final_cell": "c99e798deb26407dab8a4edf737d62483eaf19d75a11962b2eca37a22528b65e",
+            "initial_known_errors": "14777/10",
+            "final_known_errors": "19298/15",
+            "final_minus_initial_bounds": [
+              "-1147/6",
+              "-1147/6"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 27,
+              "loss_sign_-1": 27,
+              "quality_sign_0": 30,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 2,
+              "both_nonzero_identified": 2,
+              "same_nonzero_sign": 2,
+              "quality_sign_-1": 2,
+              "loss_sign_0": 5
+            },
+            "initial_cell_representative": [
+              1.0,
+              0.97,
+              0.99
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.998150237891387,
+              0.9977677173051241
+            ]
+          }
+        },
+        "missing_preserved": 0,
+        "ambiguous_missing": 0
+      },
+      "ABA": {
+        "runs": {
+          "uniform": {
+            "initial": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9519515530638549,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "4957d7030128dcdb83978ab3bdf80fc8a7f5566308222369ac69e2fc3c2ed73e",
+            "final_cell": "381fee9fee53b5925e53f1de393ef19a4ff5a1564bc064f277435b93782b9178",
+            "initial_known_errors": "10162/5",
+            "final_known_errors": "18093/10",
+            "final_minus_initial_bounds": [
+              "-2231/10",
+              "-2231/10"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 20,
+              "loss_sign_0": 12,
+              "quality_sign_0": 31,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 1,
+              "both_nonzero_identified": 1,
+              "same_nonzero_sign": 1,
+              "loss_sign_-1": 18,
+              "quality_sign_-1": 1,
+              "loss_sign_1": 2
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.9519515530638549,
+              1.0
+            ]
+          },
+          "plus": {
+            "initial": [
+              1.0,
+              1.03,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              1.0085528505127752,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "accb880568a21ddff355f82f1bb44340d7c85cd821361c9b0df0fcfc0951780d",
+            "final_cell": "accb880568a21ddff355f82f1bb44340d7c85cd821361c9b0df0fcfc0951780d",
+            "initial_known_errors": "13727/6",
+            "final_known_errors": "13727/6",
+            "final_minus_initial_bounds": [
+              "0",
+              "0"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 20,
+              "loss_sign_0": 12,
+              "quality_sign_0": 32,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 0,
+              "both_nonzero_identified": 0,
+              "same_nonzero_sign": 0,
+              "loss_sign_-1": 17,
+              "loss_sign_1": 3
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.03,
+              1.0
+            ],
+            "final_cell_representative": [
+              1.0,
+              1.03,
+              1.0
+            ]
+          },
+          "minus": {
+            "initial": [
+              1.0,
+              0.97,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9224780443932158,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "381fee9fee53b5925e53f1de393ef19a4ff5a1564bc064f277435b93782b9178",
+            "final_cell": "381fee9fee53b5925e53f1de393ef19a4ff5a1564bc064f277435b93782b9178",
+            "initial_known_errors": "18093/10",
+            "final_known_errors": "18093/10",
+            "final_minus_initial_bounds": [
+              "0",
+              "0"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 20,
+              "loss_sign_0": 12,
+              "quality_sign_0": 32,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 0,
+              "both_nonzero_identified": 0,
+              "same_nonzero_sign": 0,
+              "loss_sign_-1": 18,
+              "loss_sign_1": 2
+            },
+            "initial_cell_representative": [
+              1.0,
+              0.9519515530638549,
+              1.0
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.9519515530638549,
+              1.0
+            ]
+          }
+        },
+        "missing_preserved": 0,
+        "ambiguous_missing": 0
+      },
+      "ABCv": {
+        "runs": {
+          "uniform": {
+            "initial": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              1.015277913312636,
+              0.9383662494913896,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "e8fe5b6e3c3610a7c84be79ece986a248dcac65da67423848f6cb41c394ecd4a",
+            "final_cell": "a4dfee02ae1a1e519aca69425dab07a00bd2e93a9540caa19e69dd8c90a206a3",
+            "initial_known_errors": "18797/12",
+            "final_known_errors": "7352/5",
+            "final_minus_initial_bounds": [
+              "-2119/15",
+              "-1523/30"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 27,
+              "loss_sign_-1": 25,
+              "quality_sign_-1": 5,
+              "loss_down_error_up": 4,
+              "loss_down_error_down": 3,
+              "both_nonzero_identified": 9,
+              "same_nonzero_sign": 3,
+              "loss_sign_1": 2,
+              "loss_sign_0": 5,
+              "quality_sign_0": 23,
+              "quality_sign_1": 4
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final_cell_representative": [
+              1.0,
+              1.015277913312636,
+              0.9383662494913896
+            ]
+          },
+          "plus": {
+            "initial": [
+              1.0,
+              1.03,
+              1.01,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              1.04458596932718,
+              0.9618354119258072,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "b961288b46bbf81ab2a0aa29ad98a7f9f771da89317ad8ef2ef715239232bbe7",
+            "final_cell": "4f75c1b786774111eb61f273bac204dc641f65da8b4587b221d829e823f7b77d",
+            "initial_known_errors": "26989/15",
+            "final_known_errors": "7392/5",
+            "final_minus_initial_bounds": [
+              "-11411/30",
+              "-7841/30"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 28,
+              "loss_sign_-1": 26,
+              "quality_sign_0": 31,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 1,
+              "both_nonzero_identified": 1,
+              "same_nonzero_sign": 1,
+              "loss_sign_1": 2,
+              "loss_sign_0": 4,
+              "quality_sign_-1": 1
+            },
+            "initial_cell_representative": [
+              1.0,
+              1.03,
+              1.01
+            ],
+            "final_cell_representative": [
+              1.0,
+              1.04458596932718,
+              0.9618354119258072
+            ]
+          },
+          "minus": {
+            "initial": [
+              1.0,
+              0.97,
+              0.99,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "final": [
+              1.0,
+              0.9548882993424618,
+              0.9684086788803684,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "initial_cell": "14eaaad6f4aab06bea25c83e1918eba464b6adad358098ff234324e0a223dcb4",
+            "final_cell": "7ed9564dc3c4eec885712c0cca27f0336bd8c8c208310746e02e3cdf0417fea4",
+            "initial_known_errors": "27233/20",
+            "final_known_errors": "27233/20",
+            "final_minus_initial_bounds": [
+              "0",
+              "0"
+            ],
+            "counts": {
+              "updates": 32,
+              "changed": 27,
+              "loss_sign_-1": 23,
+              "quality_sign_0": 32,
+              "loss_down_error_up": 0,
+              "loss_down_error_down": 0,
+              "both_nonzero_identified": 0,
+              "same_nonzero_sign": 0,
+              "loss_sign_1": 4,
+              "loss_sign_0": 5
+            },
+            "initial_cell_representative": [
+              1.0,
+              0.9940306130400404,
+              0.9972014086997223
+            ],
+            "final_cell_representative": [
+              1.0,
+              0.9940306130400404,
+              0.9968576362623376
+            ]
+          }
+        },
+        "missing_preserved": 2347,
+        "ambiguous_missing": 696
+      }
+    }
+  },
+  "vertical_final_comparison": {
+    "rows": [
+      {
+        "target": "sector:10",
+        "control": "sector:8",
+        "known_difference": "206",
+        "missing_TV": "49/2",
+        "bounds": [
+          "363/2",
+          "461/2"
+        ],
+        "bounds_float": [
+          181.5,
+          230.5
+        ]
+      },
+      {
+        "target": "sector:10",
+        "control": "sector:9",
+        "known_difference": "203",
+        "missing_TV": "49/2",
+        "bounds": [
+          "357/2",
+          "455/2"
+        ],
+        "bounds_float": [
+          178.5,
+          227.5
+        ]
+      },
+      {
+        "target": "sector:11",
+        "control": "sector:8",
+        "known_difference": "214",
+        "missing_TV": "51/2",
+        "bounds": [
+          "377/2",
+          "479/2"
+        ],
+        "bounds_float": [
+          188.5,
+          239.5
+        ]
+      },
+      {
+        "target": "sector:11",
+        "control": "sector:9",
+        "known_difference": "211",
+        "missing_TV": "51/2",
+        "bounds": [
+          "371/2",
+          "473/2"
+        ],
+        "bounds_float": [
+          185.5,
+          236.5
+        ]
+      },
+      {
+        "target": "sector:7",
+        "control": "sector:8",
+        "known_difference": "389/4",
+        "missing_TV": "15/2",
+        "bounds": [
+          "359/4",
+          "419/4"
+        ],
+        "bounds_float": [
+          89.75,
+          104.75
+        ]
+      },
+      {
+        "target": "sector:7",
+        "control": "sector:9",
+        "known_difference": "377/4",
+        "missing_TV": "15/2",
+        "bounds": [
+          "347/4",
+          "407/4"
+        ],
+        "bounds_float": [
+          86.75,
+          101.75
+        ]
+      }
+    ],
+    "seconds": 0.9550642999820411,
+    "whole_seconds": 120,
+    "missing_labels_unchanged": 2347,
+    "new_labels": 0,
+    "new_queries": 0,
+    "scope": "Posthoc ideal uniform-tie final-policy contrasts,full-domain bounds without filling2347oldmissing labels. No actual deployment or globally optimal price claim."
+  },
+  "update_components": {
+    "ABA-uniform": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.005439093205815517,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          -0.04220748481029913,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.0004018689200303886,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 277,
+        "bootstrap_nonzero": 20,
+        "terminal_PV_terms": 28,
+        "terminal_PV_nonzero": 16,
+        "actual_outcome_terms": 30,
+        "actual_outcome_nonzero": 1
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        -0.04804844693614507,
+        0.0,
+        0.0
+      ]
+    },
+    "ABA-plus": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.004725889306949987,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          -0.016319635087234517,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.00040162509304021905,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 328,
+        "bootstrap_nonzero": 38,
+        "terminal_PV_terms": 29,
+        "terminal_PV_nonzero": 16,
+        "actual_outcome_terms": 30,
+        "actual_outcome_nonzero": 1
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        -0.021447149487224815,
+        0.0,
+        0.0
+      ]
+    },
+    "ABA-minus": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.005219293627438508,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          -0.041900556250354895,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.0004021057289908423,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 277,
+        "bootstrap_nonzero": 20,
+        "terminal_PV_terms": 28,
+        "terminal_PV_nonzero": 16,
+        "actual_outcome_terms": 30,
+        "actual_outcome_nonzero": 1
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        -0.04752195560678418,
+        0.0,
+        0.0
+      ]
+    },
+    "ABCv-uniform": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.0018506414853033414,
+          -0.01663912696378247,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          0.017625917771490307,
+          -0.044078160337368125,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.0004973629735511749,
+          -0.0009164632074598242,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 217,
+        "bootstrap_nonzero": 44,
+        "terminal_PV_terms": 28,
+        "terminal_PV_nonzero": 17,
+        "actual_outcome_terms": 32,
+        "actual_outcome_nonzero": 3
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        0.015277913312635949,
+        -0.06163375050861042,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "ABCv-plus": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.00470635447477428,
+          -0.015739609382680406,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          0.01983320004348703,
+          -0.03151645843832805,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.000540876241532966,
+          -0.0009085202531842704,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 227,
+        "bootstrap_nonzero": 50,
+        "terminal_PV_terms": 28,
+        "terminal_PV_nonzero": 18,
+        "actual_outcome_terms": 32,
+        "actual_outcome_nonzero": 3
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        0.014585969327179926,
+        -0.04816458807419277,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "ABCv-minus": {
+      "parts": {
+        "bootstrap": [
+          0.0,
+          -0.0034402012485414517,
+          -0.01600080030235673,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "terminal_PV": [
+          0.0,
+          -0.01075173599523911,
+          -0.00511102514243099,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_outcome": [
+          0.0,
+          -0.0009197634137574963,
+          -0.00047949567484382804,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "terms": {
+        "bootstrap_terms": 250,
+        "bootstrap_nonzero": 51,
+        "terminal_PV_terms": 27,
+        "terminal_PV_nonzero": 14,
+        "actual_outcome_terms": 32,
+        "actual_outcome_nonzero": 3
+      },
+      "max_update_reconstruction_error": 0.0,
+      "total_delta": [
+        0.0,
+        -0.015111700657538196,
+        -0.02159132111963158,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "frozen_path_ABA_drift": {
+    "rows": {
+      "uniform": [
+        {
+          "B": 0.0,
+          "sum_frozen_TD_delta": -0.030479575947226507,
+          "parts": {
+            "bootstrap": 0.0017464986640691282,
+            "terminal_PV": -0.03182017358856067,
+            "actual_outcome": -0.00040590102273496453
+          }
+        },
+        {
+          "B": 0.25,
+          "sum_frozen_TD_delta": -0.03501816139930664,
+          "parts": {
+            "bootstrap": -9.126628772298791e-05,
+            "terminal_PV": -0.034521247671321934,
+            "actual_outcome": -0.00040564744026172207
+          }
+        },
+        {
+          "B": 0.49,
+          "sum_frozen_TD_delta": -0.039366875369553446,
+          "parts": {
+            "bootstrap": -0.001868333966767567,
+            "terminal_PV": -0.037093613390567194,
+            "actual_outcome": -0.0004049280122186826
+          }
+        },
+        {
+          "B": 0.5,
+          "sum_frozen_TD_delta": -0.03954760562369738,
+          "parts": {
+            "bootstrap": -0.001942532175664493,
+            "terminal_PV": -0.03720018548899332,
+            "actual_outcome": -0.0004048879590395619
+          }
+        },
+        {
+          "B": 0.75,
+          "sum_frozen_TD_delta": -0.0440462080397098,
+          "parts": {
+            "bootstrap": -0.0037983708456378793,
+            "terminal_PV": -0.03984421082982668,
+            "actual_outcome": -0.00040362636424524386
+          }
+        },
+        {
+          "B": 1.0,
+          "sum_frozen_TD_delta": -0.04849229334139188,
+          "parts": {
+            "bootstrap": -0.0056497840187327494,
+            "terminal_PV": -0.04244064040262874,
+            "actual_outcome": -0.0004018689200303886
+          }
+        },
+        {
+          "B": 1.25,
+          "sum_frozen_TD_delta": -0.05286443028504055,
+          "parts": {
+            "bootstrap": -0.007487794907773631,
+            "terminal_PV": -0.044977011073614424,
+            "actual_outcome": -0.0003996243036524942
+          }
+        },
+        {
+          "B": 2.0,
+          "sum_frozen_TD_delta": -0.06533099905681566,
+          "parts": {
+            "bootstrap": -0.012833872750194245,
+            "terminal_PV": -0.052107037976943216,
+            "actual_outcome": -0.00039008832967820777
+          }
+        },
+        {
+          "B": 4.0,
+          "sum_frozen_TD_delta": -0.09079098727799538,
+          "parts": {
+            "bootstrap": -0.02453163751256571,
+            "terminal_PV": -0.06591204510706762,
+            "actual_outcome": -0.0003473046583620536
+          }
+        },
+        {
+          "B": 8.0,
+          "sum_frozen_TD_delta": -0.09715826856237264,
+          "parts": {
+            "bootstrap": -0.031158430773531892,
+            "terminal_PV": -0.06577291672449297,
+            "actual_outcome": -0.00022692106434778499
+          }
+        }
+      ],
+      "plus": [
+        {
+          "B": 0.0,
+          "sum_frozen_TD_delta": 0.008716852915132802,
+          "parts": {
+            "bootstrap": 0.009644555571316578,
+            "terminal_PV": -0.0005218016334488122,
+            "actual_outcome": -0.00040590102273496453
+          }
+        },
+        {
+          "B": 0.25,
+          "sum_frozen_TD_delta": 0.0012896446299826222,
+          "parts": {
+            "bootstrap": 0.006118583443125244,
+            "terminal_PV": -0.0044232913728809,
+            "actual_outcome": -0.00040564744026172207
+          }
+        },
+        {
+          "B": 0.49,
+          "sum_frozen_TD_delta": -0.005861016049814015,
+          "parts": {
+            "bootstrap": 0.0027141300991149375,
+            "terminal_PV": -0.00817021813671027,
+            "actual_outcome": -0.0004049280122186826
+          }
+        },
+        {
+          "B": 0.5,
+          "sum_frozen_TD_delta": -0.006158916573795774,
+          "parts": {
+            "bootstrap": 0.0025720956707211973,
+            "terminal_PV": -0.00832612428547741,
+            "actual_outcome": -0.0004048879590395619
+          }
+        },
+        {
+          "B": 0.75,
+          "sum_frozen_TD_delta": -0.01359279946562521,
+          "parts": {
+            "bootstrap": -0.000977428444995603,
+            "terminal_PV": -0.012211744656384362,
+            "actual_outcome": -0.00040362636424524386
+          }
+        },
+        {
+          "B": 1.0,
+          "sum_frozen_TD_delta": -0.020976099019644426,
+          "parts": {
+            "bootstrap": -0.004512499071062986,
+            "terminal_PV": -0.016061731028551053,
+            "actual_outcome": -0.0004018689200303886
+          }
+        },
+        {
+          "B": 1.25,
+          "sum_frozen_TD_delta": -0.02827340009898568,
+          "parts": {
+            "bootstrap": -0.008015797851498495,
+            "terminal_PV": -0.019857977943834693,
+            "actual_outcome": -0.0003996243036524942
+          }
+        },
+        {
+          "B": 2.0,
+          "sum_frozen_TD_delta": -0.049309865532673074,
+          "parts": {
+            "bootstrap": -0.018168158190715218,
+            "terminal_PV": -0.03075161901227965,
+            "actual_outcome": -0.00039008832967820777
+          }
+        },
+        {
+          "B": 4.0,
+          "sum_frozen_TD_delta": -0.09419217843146362,
+          "parts": {
+            "bootstrap": -0.040161499390925365,
+            "terminal_PV": -0.05368337438217619,
+            "actual_outcome": -0.0003473046583620536
+          }
+        },
+        {
+          "B": 8.0,
+          "sum_frozen_TD_delta": -0.11716345978846106,
+          "parts": {
+            "bootstrap": -0.05265648344817244,
+            "terminal_PV": -0.06428005527594083,
+            "actual_outcome": -0.00022692106434778499
+          }
+        }
+      ],
+      "minus": [
+        {
+          "B": 0.0,
+          "sum_frozen_TD_delta": -0.030479575947226507,
+          "parts": {
+            "bootstrap": 0.0017464986640691282,
+            "terminal_PV": -0.03182017358856067,
+            "actual_outcome": -0.00040590102273496453
+          }
+        },
+        {
+          "B": 0.25,
+          "sum_frozen_TD_delta": -0.03501816139930664,
+          "parts": {
+            "bootstrap": -9.126628772298791e-05,
+            "terminal_PV": -0.034521247671321934,
+            "actual_outcome": -0.00040564744026172207
+          }
+        },
+        {
+          "B": 0.49,
+          "sum_frozen_TD_delta": -0.039366875369553446,
+          "parts": {
+            "bootstrap": -0.001868333966767567,
+            "terminal_PV": -0.037093613390567194,
+            "actual_outcome": -0.0004049280122186826
+          }
+        },
+        {
+          "B": 0.5,
+          "sum_frozen_TD_delta": -0.03954760562369738,
+          "parts": {
+            "bootstrap": -0.001942532175664493,
+            "terminal_PV": -0.03720018548899332,
+            "actual_outcome": -0.0004048879590395619
+          }
+        },
+        {
+          "B": 0.75,
+          "sum_frozen_TD_delta": -0.0440462080397098,
+          "parts": {
+            "bootstrap": -0.0037983708456378793,
+            "terminal_PV": -0.03984421082982668,
+            "actual_outcome": -0.00040362636424524386
+          }
+        },
+        {
+          "B": 1.0,
+          "sum_frozen_TD_delta": -0.04849229334139188,
+          "parts": {
+            "bootstrap": -0.0056497840187327494,
+            "terminal_PV": -0.04244064040262874,
+            "actual_outcome": -0.0004018689200303886
+          }
+        },
+        {
+          "B": 1.25,
+          "sum_frozen_TD_delta": -0.05286443028504055,
+          "parts": {
+            "bootstrap": -0.007487794907773631,
+            "terminal_PV": -0.044977011073614424,
+            "actual_outcome": -0.0003996243036524942
+          }
+        },
+        {
+          "B": 2.0,
+          "sum_frozen_TD_delta": -0.06533099905681566,
+          "parts": {
+            "bootstrap": -0.012833872750194245,
+            "terminal_PV": -0.052107037976943216,
+            "actual_outcome": -0.00039008832967820777
+          }
+        },
+        {
+          "B": 4.0,
+          "sum_frozen_TD_delta": -0.09079098727799538,
+          "parts": {
+            "bootstrap": -0.02453163751256571,
+            "terminal_PV": -0.06591204510706762,
+            "actual_outcome": -0.0003473046583620536
+          }
+        },
+        {
+          "B": 8.0,
+          "sum_frozen_TD_delta": -0.09715826856237264,
+          "parts": {
+            "bootstrap": -0.031158430773531892,
+            "terminal_PV": -0.06577291672449297,
+            "actual_outcome": -0.00022692106434778499
+          }
+        }
+      ]
+    },
+    "new_search": 0,
+    "new_training": 0,
+    "scope": "Counterfactual scalar evaluation of saved PVs and paths at one common B per batch,NOT re-search or a deployed expected update. Same eta/lambda and real targets. Exposed posthoc diagnostic;sampled grid does not prove global sign or long-run convergence."
+  },
+  "closed_cost_curve": {
+    "rows": [
+      {
+        "world": "ABA",
+        "model": "uniform",
+        "depth": 1,
+        "positions": 52456,
+        "nodes": 211802,
+        "errors": 3790,
+        "unknown": 0,
+        "nodes_per_position": 4.037707793198109,
+        "error_rate": 0.07225102943419247,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABA",
+        "model": "uniform",
+        "depth": 2,
+        "positions": 52456,
+        "nodes": 662219,
+        "errors": 2137,
+        "unknown": 0,
+        "nodes_per_position": 12.624275583346042,
+        "error_rate": 0.04073890498703676,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "oracle_supervised",
+        "depth": 1,
+        "positions": 52456,
+        "nodes": 211802,
+        "errors": 3474,
+        "unknown": 0,
+        "nodes_per_position": 4.037707793198109,
+        "error_rate": 0.0662269330486503,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "oracle_supervised",
+        "depth": 2,
+        "positions": 52456,
+        "nodes": 666642,
+        "errors": 1866,
+        "unknown": 0,
+        "nodes_per_position": 12.708593869147476,
+        "error_rate": 0.03557267042854964,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "closed_TD",
+        "depth": 1,
+        "positions": 52456,
+        "nodes": 211802,
+        "errors": 3474,
+        "unknown": 0,
+        "nodes_per_position": 4.037707793198109,
+        "error_rate": 0.0662269330486503,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "closed_TD",
+        "depth": 2,
+        "positions": 52456,
+        "nodes": 665818,
+        "errors": 1930,
+        "unknown": 0,
+        "nodes_per_position": 12.69288546591429,
+        "error_rate": 0.0367927405825835,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "uniform",
+        "depth": 4,
+        "positions": 52456,
+        "nodes": 3169873,
+        "errors": 531,
+        "unknown": 0,
+        "nodes_per_position": 60.429178740277564,
+        "error_rate": 0.010122769559249657,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "oracle_supervised",
+        "depth": 4,
+        "positions": 52456,
+        "nodes": 3211825,
+        "errors": 495,
+        "unknown": 0,
+        "nodes_per_position": 61.228934726246756,
+        "error_rate": 0.009436480097605612,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "closed_TD",
+        "depth": 4,
+        "positions": 52456,
+        "nodes": 3212423,
+        "errors": 499,
+        "unknown": 0,
+        "nodes_per_position": 61.24033475674851,
+        "error_rate": 0.009512734482232728,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABA",
+        "model": "uniform",
+        "depth": 6,
+        "positions": 52456,
+        "nodes": 9472837,
+        "errors": 136,
+        "unknown": 0,
+        "nodes_per_position": 180.58633902699404,
+        "error_rate": 0.002592649077321946,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "uniform",
+        "depth": 1,
+        "positions": 33859,
+        "nodes": 125731,
+        "errors": 2550,
+        "unknown": 0,
+        "nodes_per_position": 3.7133701526920464,
+        "error_rate": 0.07531232464042056,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "uniform",
+        "depth": 2,
+        "positions": 33859,
+        "nodes": 387033,
+        "errors": 1799,
+        "unknown": 0,
+        "nodes_per_position": 11.430727428453292,
+        "error_rate": 0.05313210667769278,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "oracle_supervised",
+        "depth": 1,
+        "positions": 33859,
+        "nodes": 125731,
+        "errors": 2574,
+        "unknown": 0,
+        "nodes_per_position": 3.7133701526920464,
+        "error_rate": 0.07602114651938924,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "oracle_supervised",
+        "depth": 2,
+        "positions": 33859,
+        "nodes": 389039,
+        "errors": 1754,
+        "unknown": 0,
+        "nodes_per_position": 11.489973123837089,
+        "error_rate": 0.05180306565462654,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "closed_TD",
+        "depth": 1,
+        "positions": 33859,
+        "nodes": 125731,
+        "errors": 2271,
+        "unknown": 0,
+        "nodes_per_position": 3.7133701526920464,
+        "error_rate": 0.06707227029740985,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "closed_TD",
+        "depth": 2,
+        "positions": 33859,
+        "nodes": 388636,
+        "errors": 1326,
+        "unknown": 0,
+        "nodes_per_position": 11.478070823119406,
+        "error_rate": 0.0391624088130187,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "uniform",
+        "depth": 4,
+        "positions": 33859,
+        "nodes": 1788400,
+        "errors": 818,
+        "unknown": 0,
+        "nodes_per_position": 52.819043681148294,
+        "error_rate": 0.024159012374848635,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "oracle_supervised",
+        "depth": 4,
+        "positions": 33859,
+        "nodes": 1807173,
+        "errors": 853,
+        "unknown": 0,
+        "nodes_per_position": 53.37349006172657,
+        "error_rate": 0.025192710948344604,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "closed_TD",
+        "depth": 4,
+        "positions": 33859,
+        "nodes": 1809870,
+        "errors": 469,
+        "unknown": 0,
+        "nodes_per_position": 53.45314392037567,
+        "error_rate": 0.013851560884845978,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABC",
+        "model": "uniform",
+        "depth": 6,
+        "positions": 33859,
+        "nodes": 5349781,
+        "errors": 403,
+        "unknown": 0,
+        "nodes_per_position": 158.00174252045247,
+        "error_rate": 0.011902300717682153,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "oracle_supervised",
+        "depth": 6,
+        "positions": 52456,
+        "nodes": 9549952,
+        "errors": 112,
+        "unknown": 0,
+        "nodes_per_position": 182.05642824462407,
+        "error_rate": 0.00213512276955925,
+        "pareto_among_measured_points": true
+      },
+      {
+        "world": "ABA",
+        "model": "closed_TD",
+        "depth": 6,
+        "positions": 52456,
+        "nodes": 9551210,
+        "errors": 120,
+        "unknown": 0,
+        "nodes_per_position": 182.0804102485893,
+        "error_rate": 0.0022876315388134817,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "oracle_supervised",
+        "depth": 6,
+        "positions": 33859,
+        "nodes": 5391350,
+        "errors": 392,
+        "unknown": 0,
+        "nodes_per_position": 159.22945154907114,
+        "error_rate": 0.011577424023154847,
+        "pareto_among_measured_points": false
+      },
+      {
+        "world": "ABC",
+        "model": "closed_TD",
+        "depth": 6,
+        "positions": 33859,
+        "nodes": 5387246,
+        "errors": 258,
+        "unknown": 0,
+        "nodes_per_position": 159.1082430077675,
+        "error_rate": 0.00761983519891314,
+        "pareto_among_measured_points": true
+      }
+    ],
+    "seconds": 0.0006813000654801726,
+    "new_queries": 0,
+    "scope": "Matched complete fresh-position distributions and actual public tie choices;D1/D2/D4/D6 material points,no D3/D5 census,interpolation,equal-node matching,Elo,wall-time equivalence or training amortization."
+  },
+  "D6_material": {
+    "summary": {
+      "config": {
+        "models": {
+          "ABA": {
+            "oracle_supervised": [
+              1.0,
+              0.2742423081538571,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "closed_TD": [
+              1.0,
+              0.9900874213210581,
+              0.9659358144086714,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "ABC": {
+            "oracle_supervised": [
+              1.0,
+              0.6426666589025019,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "closed_TD": [
+              1.0,
+              0.9900874213210581,
+              0.9659358144086714,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "depth": 6,
+        "query_nodes": 20000,
+        "query_seconds": 1.5,
+        "whole_seconds": 4500,
+        "excluded_for_exact_reuse": {
+          "ABA": [
+            51254,
+            4878,
+            5861,
+            51857,
+            16306,
+            4352,
+            51304,
+            31282,
+            57142,
+            18879,
+            40631,
+            48921,
+            17040,
+            44788,
+            56522,
+            25740,
+            31585,
+            14837,
+            6871,
+            18361,
+            29701,
+            48270,
+            25150,
+            2787,
+            2676,
+            20640,
+            33910,
+            5363,
+            43839,
+            38290,
+            4823,
+            14159,
+            10071,
+            27068,
+            17129,
+            14686,
+            22471,
+            38002,
+            16951,
+            52140,
+            31713,
+            57395,
+            13790,
+            3982,
+            40973,
+            43895,
+            1396,
+            29562,
+            37713,
+            35265,
+            8267,
+            4016,
+            38324,
+            45716,
+            56154,
+            50673,
+            54505,
+            48849,
+            33820,
+            56546,
+            16542,
+            9870,
+            48718,
+            12243
+          ],
+          "ABC": [
+            22800,
+            13700,
+            9279,
+            34679,
+            18631,
+            25673,
+            21759,
+            2607,
+            9165,
+            28069,
+            30242,
+            20936,
+            25670,
+            6200,
+            17249,
+            27053,
+            21694,
+            9586,
+            662,
+            31793,
+            21204,
+            11406,
+            25652,
+            15154,
+            5401,
+            11996,
+            5111,
+            17853,
+            16279,
+            8871,
+            24730,
+            14149,
+            8250,
+            20742,
+            11529,
+            27814,
+            12988,
+            22262,
+            1531,
+            270,
+            27557,
+            4873,
+            25853,
+            29554,
+            24323,
+            11326,
+            1478,
+            11928,
+            2622,
+            15340,
+            4090,
+            34316,
+            21500,
+            5752,
+            19082,
+            13450,
+            17700,
+            16486,
+            4574,
+            3196,
+            13829,
+            15970,
+            36063,
+            4893
+          ]
+        },
+        "planned": 172630,
+        "expected_new_queries": 172374,
+        "decision": "Does the finite same-depth D6 material contrast retain learning/fit differences? Existing uniformD6 versus TD-D4 confounds depth with parameters; retain frozen old models and no new training.",
+        "cost": "Old uniformD6 ABA1171s plus ABC647s predicts roughly3636s for two arms. Hard4500s whole cap,under120min. Existing256frozenD6rows reused;cheaper64root/model sample misses rare errors and already exists. No rerun or extension.",
+        "scope": "Same original complete Coregraphs and frozenmodels;allongoingfreshhistoryobserverPositions,notactualhistoricalpaths orindependentrules/strength. AllmissingandPVfailuresretained."
+      },
+      "status": "COMPLETE",
+      "recorded": 172630,
+      "missing": 0,
+      "seconds": 3667.9611787999747,
+      "table": {
+        "ABA:oracle_supervised": {
+          "recorded": 52456,
+          "requested_complete": 52456,
+          "unknown": 0,
+          "errors": 112,
+          "nodes": 9549952,
+          "new_nodes": 9538541,
+          "reused": 64,
+          "seconds": 1176.5462663825601
+        },
+        "ABA:closed_TD": {
+          "recorded": 52456,
+          "requested_complete": 52456,
+          "unknown": 0,
+          "errors": 120,
+          "nodes": 9551210,
+          "new_nodes": 9539770,
+          "reused": 64,
+          "seconds": 1173.7199810137972
+        },
+        "ABC:oracle_supervised": {
+          "recorded": 33859,
+          "requested_complete": 33859,
+          "unknown": 0,
+          "errors": 392,
+          "nodes": 5391350,
+          "new_nodes": 5380709,
+          "reused": 64,
+          "seconds": 652.2167669070186
+        },
+        "ABC:closed_TD": {
+          "recorded": 33859,
+          "requested_complete": 33859,
+          "unknown": 0,
+          "errors": 258,
+          "nodes": 5387246,
+          "new_nodes": 5376737,
+          "reused": 64,
+          "seconds": 651.0630962058203
+        }
+      }
+    },
+    "join": {
+      "status": "COMPLETE",
+      "checked_rows": 172630,
+      "missing": 0,
+      "action_label_mismatches": 0,
+      "tables": {
+        "ABA:oracle_supervised": {
+          "recorded": 52456,
+          "unknown": 0,
+          "nodes": 9549952,
+          "reused": 64,
+          "requested_complete": 52456,
+          "errors": 112
+        },
+        "ABA:closed_TD": {
+          "recorded": 52456,
+          "unknown": 0,
+          "nodes": 9551210,
+          "reused": 64,
+          "requested_complete": 52456,
+          "errors": 120
+        },
+        "ABC:oracle_supervised": {
+          "recorded": 33859,
+          "unknown": 0,
+          "nodes": 5391350,
+          "reused": 64,
+          "requested_complete": 33859,
+          "errors": 392
+        },
+        "ABC:closed_TD": {
+          "recorded": 33859,
+          "unknown": 0,
+          "nodes": 5387246,
+          "reused": 64,
+          "requested_complete": 33859,
+          "errors": 258
+        }
+      },
+      "paired": {
+        "ABA:oracle_supervised:uniformD6": {
+          "pairs": 52456,
+          "new_nodes": 9549952,
+          "old_nodes": 9472837,
+          "usable": 52456,
+          "better_WDL": 24,
+          "worse_WDL": 0,
+          "fixed": 24,
+          "introduced": 0,
+          "changed_actions": 1671
+        },
+        "ABA:oracle_supervised:sameModelD4": {
+          "pairs": 52456,
+          "new_nodes": 9549952,
+          "old_nodes": 3211825,
+          "usable": 52456,
+          "better_WDL": 384,
+          "worse_WDL": 1,
+          "fixed": 384,
+          "introduced": 1,
+          "changed_actions": 2302
+        },
+        "ABA:closed_TD:uniformD6": {
+          "pairs": 52456,
+          "new_nodes": 9551210,
+          "old_nodes": 9472837,
+          "usable": 52456,
+          "better_WDL": 16,
+          "worse_WDL": 0,
+          "fixed": 16,
+          "introduced": 0,
+          "changed_actions": 1450
+        },
+        "ABA:closed_TD:sameModelD4": {
+          "pairs": 52456,
+          "new_nodes": 9551210,
+          "old_nodes": 3212423,
+          "usable": 52456,
+          "better_WDL": 380,
+          "worse_WDL": 1,
+          "fixed": 380,
+          "introduced": 1,
+          "changed_actions": 2436
+        },
+        "ABC:oracle_supervised:uniformD6": {
+          "pairs": 33859,
+          "new_nodes": 5391350,
+          "old_nodes": 5349781,
+          "usable": 33859,
+          "better_WDL": 27,
+          "worse_WDL": 16,
+          "fixed": 27,
+          "introduced": 16,
+          "changed_actions": 754
+        },
+        "ABC:oracle_supervised:sameModelD4": {
+          "pairs": 33859,
+          "new_nodes": 5391350,
+          "old_nodes": 1807173,
+          "usable": 33859,
+          "better_WDL": 487,
+          "worse_WDL": 26,
+          "fixed": 487,
+          "introduced": 26,
+          "changed_actions": 2135
+        },
+        "ABC:closed_TD:uniformD6": {
+          "pairs": 33859,
+          "new_nodes": 5387246,
+          "old_nodes": 5349781,
+          "usable": 33859,
+          "better_WDL": 147,
+          "worse_WDL": 2,
+          "fixed": 147,
+          "introduced": 2,
+          "changed_actions": 1288
+        },
+        "ABC:closed_TD:sameModelD4": {
+          "pairs": 33859,
+          "new_nodes": 5387246,
+          "old_nodes": 1809870,
+          "usable": 33859,
+          "better_WDL": 257,
+          "worse_WDL": 46,
+          "fixed": 257,
+          "introduced": 46,
+          "changed_actions": 1909
+        }
+      },
+      "TD_vs_supervised": {
+        "ABA": {
+          "pairs": 52456,
+          "new_nodes": 9551210,
+          "old_nodes": 9549952,
+          "usable": 52456,
+          "better_WDL": 0,
+          "worse_WDL": 8,
+          "fixed": 0,
+          "introduced": 8,
+          "changed_actions": 249
+        },
+        "ABC": {
+          "pairs": 33859,
+          "new_nodes": 5387246,
+          "old_nodes": 5391350,
+          "usable": 33859,
+          "better_WDL": 136,
+          "worse_WDL": 2,
+          "fixed": 136,
+          "introduced": 2,
+          "changed_actions": 1111
+        }
+      },
+      "C_absent_TD_negative_control": {
+        "pairs": 11192,
+        "usable": 11192,
+        "same_actions": 11192,
+        "same_nodes": 11192,
+        "same_WDL": 11192
+      },
+      "horizon": {
+        "ABC:oracle_supervised": {
+          "1to0": 282,
+          "missed_root_win_rank_9": 98,
+          "visible_win_violation": 0,
+          "0to-1": 110,
+          "losing_child_rank_7": 45,
+          "missed_root_win_rank_11": 52,
+          "missed_root_win_rank_7": 86,
+          "losing_child_rank_11": 7,
+          "missed_root_win_rank_15": 17,
+          "losing_child_rank_15": 8,
+          "missed_root_win_rank_13": 29,
+          "losing_child_rank_13": 22,
+          "losing_child_rank_9": 28
+        },
+        "ABC:closed_TD": {
+          "1to0": 205,
+          "missed_root_win_rank_9": 76,
+          "visible_win_violation": 0,
+          "0to-1": 53,
+          "losing_child_rank_7": 26,
+          "missed_root_win_rank_11": 32,
+          "missed_root_win_rank_7": 72,
+          "losing_child_rank_15": 8,
+          "missed_root_win_rank_13": 12,
+          "missed_root_win_rank_15": 13,
+          "losing_child_rank_9": 11,
+          "losing_child_rank_13": 8
+        },
+        "ABA:oracle_supervised": {
+          "1to0": 88,
+          "missed_root_win_rank_7": 88,
+          "visible_win_violation": 0,
+          "0to-1": 24,
+          "losing_child_rank_7": 24
+        },
+        "ABA:closed_TD": {
+          "1to0": 92,
+          "missed_root_win_rank_7": 92,
+          "visible_win_violation": 0,
+          "0to-1": 28,
+          "losing_child_rank_7": 28
+        }
+      },
+      "seconds": 3.502381299971603,
+      "new_queries": 0,
+      "scope": "Same complete fresh-position distributions and same D6/public q0 budgets; literal PV admission enforced by adapter,not independently re-exported allPVs. Node counts are actual iterative costs,not equal-node or strength validation. Imported cache fix is bypassed by evaluator_override=Material and use_disk_cache=False."
+    }
+  },
+  "limits": [
+    "Finite exposed worlds;not heldout or strength validation",
+    "ABCv2347missinglabels retained;TVcontrastbounds only",
+    "No independent whole-D6PV export;actualadapterliteraladmission",
+    "No old experiment cap reset,unknown imputation,new worker or schedule mutation"
+  ],
+  "actual_vertical_quality": {
+    "config": {
+      "whole_seconds": 300,
+      "source": "leaper-world-adaptation-20261022",
+      "world": "ABCv",
+      "episodes": 96,
+      "decision": "Do actual winning trajectories contain suboptimal learner moves, and what information does their final reward miss?",
+      "scope": "Posthoc complete-prefix WDL,not fresh-label transplantation or strength comparison. No new training/search or old missing-label refill."
+    },
+    "status": "COMPLETE",
+    "recorded": 96,
+    "missing": 0,
+    "seconds": 152.7167005999945,
+    "new_search_queries": 0,
+    "new_training": 0,
+    "old_fresh_labels_written": 0,
+    "runs": {
+      "uniform": {
+        "foe_actions": 276,
+        "foe_opportunities": 27,
+        "foe_regrets": 11,
+        "foe_win_to_draw": 6,
+        "foe_draw_to_loss": 5,
+        "foe_win_to_loss": 0,
+        "learner_actions": 277,
+        "learner_opportunities": 39,
+        "learner_regrets": 5,
+        "learner_win_to_draw": 1,
+        "learner_draw_to_loss": 4,
+        "learner_win_to_loss": 0,
+        "episodes": 32,
+        "wins": 6,
+        "draws": 26,
+        "wins_with_learner_regret": 0,
+        "draws_with_learner_regret": 4
+      },
+      "plus": {
+        "foe_actions": 285,
+        "foe_opportunities": 30,
+        "foe_regrets": 14,
+        "foe_win_to_draw": 7,
+        "foe_draw_to_loss": 7,
+        "foe_win_to_loss": 0,
+        "learner_actions": 287,
+        "learner_opportunities": 40,
+        "learner_regrets": 7,
+        "learner_win_to_draw": 2,
+        "learner_draw_to_loss": 5,
+        "learner_win_to_loss": 0,
+        "episodes": 32,
+        "wins": 7,
+        "draws": 25,
+        "wins_with_learner_regret": 0,
+        "draws_with_learner_regret": 5
+      },
+      "minus": {
+        "foe_actions": 307,
+        "foe_opportunities": 28,
+        "foe_regrets": 12,
+        "foe_win_to_draw": 5,
+        "foe_draw_to_loss": 7,
+        "foe_win_to_loss": 0,
+        "learner_actions": 309,
+        "learner_opportunities": 37,
+        "learner_regrets": 8,
+        "learner_win_to_draw": 5,
+        "learner_draw_to_loss": 3,
+        "learner_win_to_loss": 0,
+        "episodes": 32,
+        "wins": 4,
+        "draws": 28,
+        "wins_with_learner_regret": 0,
+        "draws_with_learner_regret": 7
+      }
+    },
+    "payoff_decomposition": {
+      "per_run": {
+        "uniform": {
+          "games": 32,
+          "initial_value_sum": 0,
+          "outcome_sum": 6,
+          "learner_WDL_gap_sum": 5,
+          "foe_WDL_gap_sum": 11
+        },
+        "plus": {
+          "games": 32,
+          "initial_value_sum": 0,
+          "outcome_sum": 7,
+          "learner_WDL_gap_sum": 7,
+          "foe_WDL_gap_sum": 14
+        },
+        "minus": {
+          "games": 32,
+          "initial_value_sum": 0,
+          "outcome_sum": 4,
+          "learner_WDL_gap_sum": 8,
+          "foe_WDL_gap_sum": 12
+        }
+      },
+      "checked_games": 96,
+      "identity": "learner_outcome - initial_learner_WDL = sum foe_WDL_gaps - sum learner_WDL_gaps",
+      "scope": "Exact full-history telescoping identity,not a new reward rule or causal training effect. Color-paired initial records cancel in each run;currentdata has no2unit WIN-to-LOSS learner/foe gaps."
+    }
+  },
+  "opening_coverage_control": {
+    "config": {
+      "lineup": [
+        "A",
+        "B",
+        "A"
+      ],
+      "initial": "uniform",
+      "episodes": 32,
+      "opening_count": 16,
+      "opening_seed": 20261022,
+      "random_foe_seed": 2026102201,
+      "arm_seconds": 120,
+      "arm_nodes": 2000000,
+      "whole_seconds": 180,
+      "decision": "Does replacing repeated8prefixes with16prefixes improve the same32episode learner?",
+      "scope": "One new changed-sampling arm,not extra oldepisodes;first16episodes coupled,then newprefixes. No label or outcome selection,heldout or independent-strength claim."
+    },
+    "pilot": {
+      "old": {
+        "count": 8,
+        "distinct_positions": 8,
+        "terminal": 0,
+        "lengths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2
+        ],
+        "material_vectors": [
+          [
+            -1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      "new": {
+        "count": 16,
+        "distinct_positions": 15,
+        "terminal": 1,
+        "lengths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4
+        ],
+        "material_vectors": [
+          [
+            -1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            -1,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "training": {
+      "status": "COMPLETE",
+      "episodes": 32,
+      "missing": 0,
+      "final": [
+        1.0,
+        0.9634717723334717,
+        1.0,
+        1.0
+      ],
+      "outcomes": {
+        "0": 19,
+        "1": 12,
+        "UNKNOWN": 1
+      },
+      "endings": {
+        "ACTUAL_TERMINAL": 31,
+        "HORIZON_UNKNOWN": 1
+      },
+      "changed_updates": 18,
+      "nodes": 3584,
+      "seconds": 2.6480397999985144
+    },
+    "coupled_first_half": 16,
+    "replayed": 32,
+    "seconds": 2.7362830999772996,
+    "policy": {
+      "final": [
+        1.0,
+        0.9634717723334717,
+        1.0,
+        1.0
+      ],
+      "leaf_order_matches_old_ABA_uniform_final": true,
+      "leaf_vectors": 15,
+      "fresh_D2_uniform_tie_expected_errors": 1809.3,
+      "expected_error_change_vs_old_final": 0,
+      "new_public_queries": 0,
+      "new_labels": 0,
+      "distinct_initial_histories": {
+        "8": 8,
+        "16": 15
+      },
+      "scope": "All15cachedinventoryvectors preserve scoreorder/zero;idealminimaxuniformtieactionsets transfer,not an unmeasured publictie/nodeclaim. One HORIZON_UNKNOWN remains an unfinished actual game."
+    }
+  },
+  "next_information_inventory": {
+    "runs": {
+      "uniform": {
+        "counts": {
+          "queries": 335,
+          "complete": 335,
+          "terminal_PV": 28,
+          "nonterminal_PV": 307,
+          "nonterminal_B_gradient_support": 36
+        },
+        "episode_records": 32,
+        "full_prefixes_retained": true,
+        "PV_paths_retained": true,
+        "names": [
+          [
+            "board",
+            "A"
+          ],
+          [
+            "board",
+            "B"
+          ],
+          [
+            "hand",
+            "A"
+          ],
+          [
+            "hand",
+            "B"
+          ]
+        ]
+      },
+      "plus": {
+        "counts": {
+          "queries": 387,
+          "complete": 387,
+          "terminal_PV": 29,
+          "nonterminal_PV": 358,
+          "nonterminal_B_gradient_support": 67
+        },
+        "episode_records": 32,
+        "full_prefixes_retained": true,
+        "PV_paths_retained": true,
+        "names": [
+          [
+            "board",
+            "A"
+          ],
+          [
+            "board",
+            "B"
+          ],
+          [
+            "hand",
+            "A"
+          ],
+          [
+            "hand",
+            "B"
+          ]
+        ]
+      },
+      "minus": {
+        "counts": {
+          "queries": 335,
+          "complete": 335,
+          "terminal_PV": 28,
+          "nonterminal_PV": 307,
+          "nonterminal_B_gradient_support": 36
+        },
+        "episode_records": 32,
+        "full_prefixes_retained": true,
+        "PV_paths_retained": true,
+        "names": [
+          [
+            "board",
+            "A"
+          ],
+          [
+            "board",
+            "B"
+          ],
+          [
+            "hand",
+            "A"
+          ],
+          [
+            "hand",
+            "B"
+          ]
+        ]
+      },
+      "coverage16": {
+        "counts": {
+          "queries": 276,
+          "complete": 276,
+          "terminal_PV": 29,
+          "nonterminal_PV": 247,
+          "nonterminal_B_gradient_support": 32
+        },
+        "episode_records": 32,
+        "full_prefixes_retained": true,
+        "PV_paths_retained": true,
+        "names": [
+          [
+            "board",
+            "A"
+          ],
+          [
+            "board",
+            "B"
+          ],
+          [
+            "hand",
+            "A"
+          ],
+          [
+            "hand",
+            "B"
+          ]
+        ]
+      }
+    },
+    "seconds": 0.0494679999537766,
+    "new_queries": 0,
+    "new_training": 0,
+    "next_question": "Which retained actual ABA contexts distinguish B<1/2 from B>1/2 in literal shared-Core D2 branches?",
+    "next_budget": {
+      "seconds": 300,
+      "Core_nodes": 50000,
+      "oracle_training": "NONE",
+      "public_query_reruns": 0
+    },
+    "scope": "Inventory begins the next information-coverage task;chosen PV feature support is not all-branch sensitivity or eligibility carried from earlier observations. No new diagnostic tree launched."
+  }
+}

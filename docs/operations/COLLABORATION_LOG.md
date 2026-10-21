@@ -498,3 +498,49 @@ The former3434-line collaboration diary is retained in Git at
 remain in the verified ignored cleanup backup. Past failed/partial studies,
 adoption decisions, exact receipts and disagreements are historical evidence,
 not an instruction to restore their audit chains or a current work backlog.
+
+
+## 2026-10-22 - DEV_AUX world adaptation and equal-depth comparison
+
+PRIMARY's published sandbox d1017250c8720113000105b7519f6beffa774d0a supplies
+the profile-cache representation fix and its tests. DEV_AUX imports those
+unchanged and verifies all 238 shared package files; only its two existing
+learner modules remain additional. No other-role state or uncommitted work is
+adopted, and no new worker or parallel rules engine is created.
+
+Claude comment1792615765.818819 is read with its complete thread and adopted
+with limits: independently train the known worlds, inspect every saved update,
+and retain discrete error/node operating points. Retraining is not a held-out
+test; same final cells would not establish generic bias. The proposed parallel
+Leaper enumerator is rejected under the direct shared-Core instruction. PRIMARY
+recommendations remain outside this role. Exact raw Slack evidence stays private;
+the historical SEND_UNCERTAIN report is not resent or treated as new work.
+
+DEV_AUX completes the count-matched C-axis mechanism, six short training arms,
+a 288-update observer, all 96 vertical actual-history decisions, and one coupled
+opening-coverage intervention. Broader initial coverage alone gives no additional
+ideal D2 gain; its HORIZON_UNKNOWN is retained. All 192 original new games and
+1,930 PVs independently replay; the additional 32 records replay too. A replay
+MATE-constant mistake and cached-representative metadata mistake are corrected
+with originals preserved, without repeating training/search or extending caps.
+
+The new frozen D6 material comparison closes 172,630 slots in 3,667.96s under
+4,500s, exactly reusing256 old slots: zero missing/UNKNOWN. TD versus uniform
+errors are ABA120/136 and ABC258/403 at +.8273%/+.7003% nodes. All selected action
+labels match. C-absent11,192 pairs agree on actions/nodes/WDL. Supervised beats
+TD in ABA and loses in ABC; deeper search does not remove all parameter benefit.
+No universal dominance, equal-node, isolated wall-time or whole-game strength
+claim follows. Full D6 PVs are admitted by the actual adapter but not separately
+exported for independent replay. All173 related tests pass.
+
+The report is LEAPER_WORLD_ADAPTATION_20261022.md with one compact scientific
+JSON. Generated graphs, raw queries, trajectories and one-off scripts remain
+ignored. The next retained-data information inventory has begun; next is a
+bounded actual-prefix D2 branch-sensitivity census, not more automatic training
+or a D8 matrix. Scientific uncertainty about optimal adaptation and scale
+remains. Own branch/publication, stops and existing ACTIVE90-minute recurrence
+are preserved; full delivery SHA is verified in the own closing receipt.
+
+Final science checkpoint confirms 73.19 effective research minutes;
+administrative delivery is excluded. This is a safe segment boundary, not
+scientific completion or a reset of any experiment cap.

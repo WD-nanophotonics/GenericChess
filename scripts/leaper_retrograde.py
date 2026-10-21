@@ -523,8 +523,9 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 
 
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
-                       random_foe_seed=None, initial_weights=None):
-    """One symmetric ABC experiential check, with NO reference-label interface.
+                       random_foe_seed=None, initial_weights=None,
+                       lineup=('A','B','C'), c_axis='horizontal'):
+    """One declared coexistence experiential check, with NO label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
     diagnose available signal rather than independent strength or coverage.
@@ -537,7 +538,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     from generic_chess.session.session import GameSession
     from scripts.leaper_microgames import sampled_openings,session_at
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
-    rules=coexistence_rules(('A','B','C'),horizon=2*9**9+1)
+    rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis)
     compiled=compile_ruleset_for_execution(rules)
     paths=sampled_openings(compiled,count=opening_count,seed=opening_seed)if opening_count else[()]
     env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A')
@@ -546,7 +547,8 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
         raise ValueError('initial weights must match environment names and fixed A=1')
     model=Model(weights);foe=Model([1.]*len(env.names))
     config=dict(episodes=episodes,candidate_depth=depth,foe_depth=2,initial=model.weights,
-        names=env.names,eta=.05,lam=.95,scale=10,root='one symmetric fresh ABC start',
+        names=env.names,eta=.05,lam=.95,scale=10,root='one symmetric fresh coexistence start',
+        lineup=lineup,c_axis=c_axis,
         colors='episode%2',query_nodes=8192,game_nodes=524288,game_horizon=64,
         game_seconds=10,whole_nodes=2000000,whole_seconds=120,
         oracle='NONE: no reference labels available to the training runner',
@@ -556,7 +558,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
         opening_paths=[[action_to_dict(a)for a in path]for path in paths])
     config.update(foe_policy='uniform D2'if random_foe_seed is None else'uniform legal RNG,zero search nodes',
         random_foe_seed=random_foe_seed)
-    if opening_count:config['root']='ABC actual histories after fixed random legal openings;not fresh Position resets'
+    if opening_count:config['root']='Declared world actual histories after fixed random legal openings;not fresh Position resets'
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
     (output/'rules.json').write_text(json.dumps(ruleset_to_dict(rules),indent=2),encoding='utf-8')
     (output/'executed-source.py').write_bytes(Path(__file__).read_bytes())

@@ -305,3 +305,31 @@ def test_depth_curve_saves_reference_timeout_without_any_numeric_labels(tmp_path
     assert 'UNKNOWN' in result['status']and result['numeric_labels']is None
     assert result['queries']==0 and result['missing']==1
     assert json.loads((tmp_path/'curve'/'summary.json').read_text())==result
+
+
+@pytest.mark.parametrize('lineup,axis,names', [
+    (('A','B','A'),'horizontal',(('board','A'),('board','B'),('hand','A'),('hand','B'))),
+    (('A','B','C'),'vertical',(('board','A'),('board','B'),('board','C'),('hand','A'),('hand','B'),('hand','C'))),
+])
+def test_experience_world_control_replays_its_own_rules(tmp_path,lineup,axis,names):
+    import json
+    from scripts.leaper_retrograde import experiential_probe
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.learning.incremental import FixedScaleSessionEnv
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    folder=tmp_path/'world'
+    result=experiential_probe(folder,episodes=2,opening_count=8,
+        random_foe_seed=2026102201,lineup=lineup,c_axis=axis)
+    compiled=compile_ruleset_for_execution(ruleset_from_dict(json.loads(
+        (folder/'rules.json').read_text(encoding='utf-8'))))
+    env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A')
+    assert env.names==names
+    assert result['config']['lineup']==lineup and result['config']['c_axis']==axis
+    assert result['missing']==0
+    for encoded in (folder/'episodes.jsonl').read_text(encoding='utf-8').splitlines():
+        row=json.loads(encoded)
+        replay=GameSession.replay(compiled,deserialize_game_record(json.dumps(row['record'])))
+        assert replay.state.ply_count==len(row['initial_record']['actions'])+row['plies']
+        assert replay.state.terminal_status.is_terminal==(row['outcome']is not None)

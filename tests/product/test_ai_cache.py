@@ -190,3 +190,100 @@ def test_profile_reuses_capability_across_rulesets():
         p1.piece_profiles["R"].raw_capability_score
         == p2.piece_profiles["R"].raw_capability_score
     )
+
+
+def _same_rule_different_profile_scopes():
+    """Same fingerprint, deliberately different supported normalization scopes."""
+    from generic_chess.core.pieces import Piece, PieceType
+    from generic_chess.rules.compiler import (
+        compile_ruleset, compile_legacy_ruleset_for_semantic_execution,
+    )
+    from generic_chess.rules.schema import RuleSet
+
+    board = [[None] * 4 for _ in range(4)]
+    board[0][0] = Piece(0, "K", "K")
+    board[3][3] = Piece(1, "K", "K")
+    board[1][0] = Piece(0, "R", "R")
+    board[2][3] = Piece(1, "R", "R")
+    unused = tuple(PieceType(f"U{i}", f"U{i}", ()) for i in range(5))
+    rules = RuleSet(
+        board_size=4,
+        piece_types=(king(), rook(), *unused),
+        initial_position=tuple(tuple(row) for row in board),
+        drop_allowed={"R": ((True,) * 16,) * 2,
+                      **{p.type_id: ((False,) * 16,) * 2 for p in unused}},
+    )
+    legacy = compile_ruleset(rules)
+    semantic = compile_legacy_ruleset_for_semantic_execution(rules)
+    assert legacy.ruleset_fingerprint == semantic.ruleset_fingerprint
+    config = EvaluationConfig()
+    expected = tuple(build_ruleset_profile(c, config) for c in (legacy, semantic))
+    # Legacy closes initial types; semantic conservatively includes declarations.
+    # The cache must preserve BOTH existing contracts, not change their values.
+    assert expected[0].board_value_by_type["R"] == 1000
+    assert expected[1].board_value_by_type["R"] == 1
+    return (legacy, semantic), config, expected
+
+
+@pytest.mark.parametrize("first", [0, 1])
+def test_profile_cache_separates_execution_representations(first):
+    compiled, config, expected = _same_rule_different_profile_scopes()
+    cache = EvaluationProfileCache(use_disk=False)
+    for index in (first, 1 - first):
+        profile, hit = cache.get_or_build(compiled[index], config)
+        assert not hit
+        assert profile == expected[index]
+    for index in (0, 1):
+        profile, hit = cache.get_or_build(compiled[index], config)
+        assert hit
+        assert profile == expected[index]
+
+
+@pytest.mark.parametrize("first", [0, 1])
+def test_disk_profile_cache_separates_execution_representations(ai_tmp_dir, first):
+    compiled, config, expected = _same_rule_different_profile_scopes()
+    for index in (first, 1 - first):
+        profile, hit = EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(
+            compiled[index], config)
+        assert not hit
+        assert profile == expected[index]
+    for index in (0, 1):
+        profile, hit = EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(
+            compiled[index], config)
+        assert hit
+        assert profile == expected[index]
+
+
+@pytest.mark.parametrize("index", [0, 1])
+def test_unqualified_old_disk_profile_is_not_adopted(ai_tmp_dir, index):
+    from generic_chess.ai.evaluation.cache import _profile_to_dict
+
+    compiled, config, expected = _same_rule_different_profile_scopes()
+    ambiguous = ai_tmp_dir / (
+        f"profile-{compiled[index].ruleset_fingerprint[:16]}-"
+        f"{config_hash(config)[:12]}.json")
+    ambiguous.write_text(json.dumps(_profile_to_dict(expected[1 - index])),
+                         encoding="utf-8")
+    profile, hit = EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(
+        compiled[index], config)
+    assert not hit
+    assert profile == expected[index]
+    assert ambiguous.exists()  # Old user cache is ignored, not destructively purged.
+
+
+@pytest.mark.parametrize("index", [0, 1])
+def test_scoped_disk_payload_from_other_representation_is_rebuilt(ai_tmp_dir, index):
+    compiled, config, expected = _same_rule_different_profile_scopes()
+    for item in compiled:
+        EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(item, config)
+    paths = list(ai_tmp_dir.glob("profile-*.json"))
+    assert len(paths) == 2
+    target = next(path for path in paths if json.loads(path.read_text(
+        encoding="utf-8"))["board_value_by_type"]["R"]
+        == expected[index].board_value_by_type["R"])
+    other = next(path for path in paths if path != target)
+    target.write_bytes(other.read_bytes())
+    profile, hit = EvaluationProfileCache(disk_dir=ai_tmp_dir).get_or_build(
+        compiled[index], config)
+    assert not hit
+    assert profile == expected[index]
