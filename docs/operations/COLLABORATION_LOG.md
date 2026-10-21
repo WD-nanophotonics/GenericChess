@@ -5935,3 +5935,20 @@ one-time PRIMARY inventory is retired to fixed Git history and the daily
 mainline is compacted. Generated raw outputs stay ignored; a scoped technical
 evidence copy is available publicly. The additional empty-row control is only
 compiled/replayed so far, with actual WDL pending; it is not reported complete.
+
+
+## 2026-10-21 PRIMARY finite goal/context follow-up
+
+PRIMARY read this hourly Chat window once; no new roots were returned. The exact
+return was retained before assessment. A TextEncoder error was repaired by saving
+the SAME retained object, without another channel read. No outbound consultation,
+AUX checkout/state access or extra worker. Previous theory/Claude distinctions
+were examined through full-history regions, goals, equivalent-rule controls and
+total cost, not routine acknowledgments. The follow-up records natural D1/D2
+counterexample, conditional gains versus full policies,48fixed-opponent state/
+scale slots with UNKNOWN bounds and actual rule-clock aliasing. Native checks
+are legality-provider calls, not Native full-search claims. No learned model or
+AUX result was independently rerun/adopted; no default changed. Candidate-color
+metadata correction is explicit in copies. Next no-drop preflight refuses a real
+historical drop, preserved without truncation. Richer context/fixed-node cost
+remain open questions, not requests to the user or another worker.

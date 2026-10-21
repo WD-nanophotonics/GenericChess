@@ -43,6 +43,18 @@ regressions pass. It remains a Native learning backend without a Player adapter;
 zero-valued uniform-prior leaves are not terminal random rollouts. The old UCT
 stability screen supplies neither Gumbel strength evidence nor a refutation.
 
+## Follow-up decision — 2026-10-21
+
+[FINITE_GOAL_CONTEXT_AND_SIGNAL_20261021.md](FINITE_GOAL_CONTEXT_AND_SIGNAL_20261021.md)
+completes the empty-row control. A natural saved full history is D1-price-invariant
+but D2-sensitive, with exact boardP+handP boundary3800. Cheap dynamic terms help
+conditional roots but every tested D2opening policy still draws in the finite
+world; an equivalent DSL rewrite can reverse a tied conditional win. Actual rule
+clocks change WDL under identical shallow feature trees. Nonzero/full-rank PV
+signals are not training gates. Forty-eight new mixed-rule state/scale controls
+retain all16UNKNOWN; D-A and interaction bounds establish no robust gain. Keep
+candidates, semantics and costs separate; no default is selected.
+
 ## Closed findings to preserve
 
 - [FINITE_ROSTER_AND_SEMANTIC_AUTHORITY_20261021.md](FINITE_ROSTER_AND_SEMANTIC_AUTHORITY_20261021.md):
@@ -86,15 +98,16 @@ Unrelated branch/history/unique private cleanup remains as scoped in
 
 ## Next executable question
 
-The empty-row control is already begun: append one row to make the finite world
-3x4, preserving pieces/coordinates/typed rules and actual max_ply6. All four
-source-world event prefixes replay legally; opening actions change4to5 and the
-old terminal prefix is ongoing in the NEW game. WDL/player comparison is pending.
-Use existing reference_minimax, at most150000nodes/90seconds, retaining every
-incomplete result. Compare these matched prefixes explicitly; they are not the
-new game's natural opening distribution. No extra seeds, training or default.
+The next hand-reader counterfactual is already begun in the follow-up evidence:
+turn off drop masks only in a NEW731505world. Exact18ply replay REFUSES atply4
+on X@b5; retain the last legal3ply prefix. First inspect all remaining hand readers
+and the existing inert-custody proof's scope, then define a bounded D2contrast from
+that legally preserved prefix. Do not force-import the old root, erase history,
+refill old hand/ordering fitness, or introduce a new solver/learner. A valid
+contrast can use30000nodes/90seconds; unsupported claims remain explicit.
 
-If blocked, examine a different single rule axis or the actual fixed-node versus
-complete-tree price-region distinction using existing data. Name a concrete
-hypothesis/consumer and decision-changing result before new computation. Do not
-recreate retired audits, fill old missing fitness slots or duplicate AUX work.
+Backup: examine existing state features on the new clock7inseparable frontier
+before adding anything; a clock-only scalar/coverage ray already fails its stated
+scope. Or predeclare one fixed-node decision-cost comparison from the48controls'
+matched histories if it changes a concrete next-method choice. No unchanged
+fitness rerun or AUX work. Science is OPEN.

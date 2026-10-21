@@ -197,9 +197,9 @@ checkmate/draw/loss paths and12/13-ply legal checking cycles, with exact Native
 history transport and back-up checks. The integrated affected run passes71 tests.
 No static assertion expectation, native binary, budget default or rule was changed.
 
-The next single rule-axis control is ALREADY STARTED: append one empty row to the
-finite world, retain the same pieces/coordinates/typed rules/max_ply6, and legally
-replay the same four prefixes. Opening actions change4to5; the old terminal-draw
-prefix is ongoing in the new game. No new WDL or game result has been computed.
-Freeze150000reference nodes/90seconds for the next segment. These are matched
-source-world prefixes, not the new game's natural opening distribution.
+The pending empty-row control is completed in
+[the finite goal/context follow-up](FINITE_GOAL_CONTEXT_AND_SIGNAL_20261021.md).
+Its four matched prefixes remain distinct from a natural-opening distribution.
+The fixed150000node/90second reference cap was respected. See that report for
+actual outcomes, qualified dynamic/representation/clock controls and the next
+legally refused hand-reader preflight; the old pending task must not revive.
