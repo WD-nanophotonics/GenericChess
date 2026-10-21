@@ -1,8 +1,8 @@
 # GenericChess
 
-Deterministic rules, immutable game core, generic search, CLI and desktop UI for
-chess- and shogi-like games. Native C runtime/search is optional. Research remains
-open; development measurements do not establish general amateur strength.
+Deterministic rules, a complete game-state core, generic search and learning,
+CLI and desktop UI for chess- and shogi-like generated games. Native search is
+optional. General playing strength remains an open research question.
 
 ## Run
 
@@ -13,18 +13,15 @@ py -3 -m venv .venv
 .venv\Scripts\python.exe -m generic_chess.ui
 ```
 
-The default tests cover product, current development, workflow and specification;
-old experiment receipts are archived rather than collected as product tests.
+## Project entries
 
-## Entry points
+- [Current research](docs/research/LOCAL_MAINLINE.md)
+- [Code, tests and recovery](docs/operations/REPOSITORY_LAYOUT.md)
+- [Policy](AGENTS.md), [local operations](docs/operations/LOCAL_AGENT.md) and [Slack reads](docs/operations/SLACK_WORKFLOW.md)
+- [Cleanup record](docs/operations/CLEANUP_20261021.md)
 
-- [Repository layout](docs/operations/REPOSITORY_LAYOUT.md): code, tests, evidence and recovery.
-- [Research mainline](docs/research/LOCAL_MAINLINE.md): current objective and evidence.
-- [Chess comparison](docs/research/CHESS_DEVELOPMENT.md): executable development route.
-- [Agent policy](AGENTS.md) and [manual](docs/operations/LOCAL_AGENT.md): canonical workflow.
-- [Slack workflow](docs/operations/SLACK_WORKFLOW.md): dot consultation and delivery records.
-- [Archive index](docs/archive/HISTORY.md): historical material, not a task queue.
-
-One local Agent works on sandbox. A single native90-minute heartbeat resumes the
-same chat. Git is version control and final delivery; current public push is held.
-No Goal, legacy Courier/worker flow or other project access is part of this route.
+This checkout owns PRIMARY_SANDBOX / sandbox. The existing hourly patrols keep their current
+recurrence. Git publication remains authorized to the assigned branch. Slack
+is read-only under the current user direction; there is no real-time Dot contact.
+Closed experiment payloads are recovered from pinned Git history rather than
+restored wholesale into the working tree. Current dependencies remain local.

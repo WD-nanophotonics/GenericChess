@@ -60,7 +60,7 @@ Individual query costs remain separate from this development envelope.
 The preceding three-fixture source gap is also CLOSED: eight remaining root and
 four selected-child Core targets match captured sources in 2.971 seconds
 (574 main + 3631 q visits); the prior one target is reused, not rerun. See
-[the finite source supplement](data/q4_mechanism_consumer_20261019/README.md).
+[the finite source supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/q4_mechanism_consumer_20261019/README.md).
 
 ## Actual finite decisions, with reused controls
 
@@ -166,7 +166,7 @@ retain exact public action identities and assess actual consumers before adding
 representation APIs. The paper is method context, not independent project
 verification or a reason to import a new model.
 
-The [technical capsule](../archive/generated_aux_consumers_20261019/README.md)
+The [technical capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/generated_aux_consumers_20261019/README.md)
 preserves all 67 explicit payloads, including every original Native result field,
 compressed from 271,926,370 bytes to 3,165,332 bytes. It excludes account/Slack
 originals, private state, credentials and personal paths. Reused product Python
@@ -177,7 +177,7 @@ training, Native build or UNKNOWN reference tree is rerun. It does not enlarge
 the earlier 234-payload/seven-output seal or certify Native C source equivalence.
 
 A separate after-seal next step is actually prepared:
-[641001/6 compound consumer](data/generated_aux_next_compound_20261019/prepared.json).
+[641001/6 compound consumer](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/generated_aux_next_compound_20261019/prepared.json).
 Its real trigger moves two actors/four squares, preserves three complete
 Session parents and is Native-admitted. It has zero Native/Core searches so far.
 Next execute the bounded q0 consumer check, not another unchanged fitness panel.

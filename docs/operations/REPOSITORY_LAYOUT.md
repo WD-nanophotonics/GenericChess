@@ -1,47 +1,30 @@
 # Repository layout and recovery
 
-| Location | Purpose | Normal use |
-|---|---|---|
-| generic_chess/ | Product rules/Core/search/CLI/UI/native and supported learning APIs | Imports and product changes |
-| scripts/ | Small retained development entries and tested dependency closure | chess_development.py for auxiliary games; unfamiliar_search.py for generated-rule search; old audit helpers only where a live caller needs them |
-| tools/local_agent/ | Current local execution, session, Slack and Git workflow | generic-chess-local.cmd |
-| tests/product/ | Fresh product semantic/search/API regressions | Default pytest |
-| tests/development/ | Current evaluator/comparison regressions | Default pytest |
-| tests/workflow/ | Session/consultation/stop behavior | Default pytest |
-| tests/specification/ | Explicit native semantic contracts | Default pytest; limitations remain visible |
-| tests/fixtures/ and root test helpers | Shared regression inputs/support | Not historical experiment runners |
-| docs/research/LOCAL_MAINLINE.md | Compact current scientific direction | Read with memo |
-| docs/research/CHESS_DEVELOPMENT.md | Current runnable comparison and scoped results | Execute, compare, then inspect linked raw evidence as needed |
-| docs/research/data/ | Retained current results and actual runtime/regression inputs | Immutable conditions/data; never infer unexposed holdout status |
-| docs/archive/ | History indexes and existing verified source/raw packages | On-demand recovery, not a backlog or executable import route |
-| .local_agent/ | Ignored machine state, stop flags, memo, inbox, binaries and current pilots | Private local continuation; not portable delivery |
+| Location | Retained purpose |
+|---|---|
+| `generic_chess/` | Rules, complete state/history, search, learning, CLI, UI and Native sources |
+| `scripts/` | Supported development entries and their tested imports |
+| `tests/` | Product, development, workflow and semantic contracts plus fixtures |
+| `tools/local_agent/` | Current role, session, Slack and publication operations |
+| `docs/architecture/ADR-*` | Implemented architecture decisions |
+| `docs/research/LOCAL_MAINLINE.md` | Current scientific decisions; active research owns this file |
+| `docs/research/data/` | Inputs required by retained callers and regression tests |
+| `results/dev_aux/` | Auxiliary learner sources, frozen current inputs and their dependencies |
+| `.local_agent/` | Ignored role state, current private work and unique recovery material |
 
-Do not add another workflow policy to README or a historical result. AGENTS.md,
-manual and Slack manual own active rules. Old package features are not deleted
-merely because current research does not use them; their product regressions stay.
-Real semantic/stop/delivery/atomicity guards remain. Unused legacy cleanup approval,
-resource-limit and old flow entry tools were retired, rather than rewritten into a
-new defensive framework. External-checkout learning tests are no longer collected.
+The 2026-10-21 cleanup removes closed experiments and archives from the current
+tree while retaining Git history. See [the cleanup record](CLEANUP_20261021.md)
+and its exact path manifest. Do not regenerate closed audit chains merely to
+restore the former directory layout. A demonstrated current caller or new
+decision-changing question is required before restoring an old tool or dataset.
 
-`scripts/position_features.py` is a tested offline sparse Position research input,
-not a replacement live compact-model schema. Retained experiment runners and
-raw results stay in the purpose-specific state_inputs_20261009 archive; do not
-import that archive into normal product execution.
+Recover a selected file using the full base SHA in the cleanup record, for example
+`git show <base-sha>:<path>`. Inspect it in a private investigation directory;
+do not overwrite current research or its frozen inputs. Uncommitted unique
+payloads removed by this cleanup have a verified ignored recovery ZIP.
 
-```powershell
-.venv/Scripts/python.exe -m pytest -p no:cacheprovider
-.venv/Scripts/python.exe -m scripts.chess_development --help
-```
-
-Historical scripts, tests, notes and generated outputs have exact original paths
-and hashes in [cleanup archive](../archive/repository_cleanup_20261007/README.md).
-Restore only needed files into a separate temporary investigation directory;
-never overlay the live checkout wholesale. Current binary/source pins and active
-pilot paths remain stable while their declared comparison is unfinished.
-
-The installed-Zig Native builder scripts/build_native_zig.py was restored alone
-when a demonstrated semantic import fix required rebuilding. Original source,
-binary/source/compiler pins and recovery controls are isolated in
-../archive/semantic_root_recovery_20261008/. No retired audit/flow entry is active.
-Service/context sensitivity sources and partials have a separate purpose archive,
-../archive/service_context_sensitivity_20261008/; neither archive is a live import.
+The user chose to keep existing researchers running. Their active mainline,
+collaboration log, task2633–2636 files, session state, stops, pilots and recurrence
+are preserved. Some mainline-linked reports consequently remain until their
+owner can compact that file safely. This cleanup does not change search or
+learning algorithms, default budgets, models, or repository visibility.

@@ -158,7 +158,7 @@ re-enumerates only the eight already closed frontiers, never those four roots.
 ## Evidence, failures and remaining work
 
 Technical payloads and pinned-source reproduction are linked from the
-[continuation capsule](../archive/signed_root_cost_20261018/README.md).
+[continuation capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/signed_root_cost_20261018/README.md).
 Exact plans, full inputs/checkpoints, query journals, baseline/candidate source,
 readers, derived results and failures are retained. Actual pinned-source Python-S/no-Native qualification regenerates all eleven
 derived outputs from seventy-eight sealed technical payloads in 887.291 seconds,
@@ -218,7 +218,7 @@ its record does not include the complete action path/history. That is a future
 consumer limitation to test with reachable histories, not a demonstrated current
 engine bug or reason to rewrite a learner automatically.
 
-The [separate supplement](data/native_trace_contract_20261018/README.md) publishes
+The [separate supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/native_trace_contract_20261018/README.md) publishes
 raw queries, fixed inputs, contract inventory, full Core reader and paired target
 analysis. Its one-output pinned-source/no-Native reconstruction passes in1.845s.
 It is after the78-payload/11-output seal, not retroactive evidence in that capsule.

@@ -78,7 +78,7 @@ prefixes were searched by both profiles at depth 2, q0, with TT, move ordering
 and root-tactical scan disabled and a 3000-total-node cap. All 24 searches
 completed depth 2; the selected root action differed on 3/12 pairs. Exact
 per-root output is in
-[`data/semantic_pawn_decision_20261020.json`](data/semantic_pawn_decision_20261020.json).
+[`data/semantic_pawn_decision_20261020.json`](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/semantic_pawn_decision_20261020.json).
 These roots are a small deterministic sample, not a holdout or outcome test.
 The first recorder tried to read a legacy `captured_type_id` from semantic
 actions and reported zero captures. That metadata was not used in search; it
@@ -216,7 +216,7 @@ static movement atom sets and every promotable type's forward-target map on
 every square for both owners matched the original generated declarations
 exactly. Profile construction completed for all eight rules; there were zero
 mismatches. The saved exact output is
-[`data/semantic_generated_profile_audit_20261020.json`](data/semantic_generated_profile_audit_20261020.json).
+[`data/semantic_generated_profile_audit_20261020.json`](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/semantic_generated_profile_audit_20261020.json).
 
 This supports compatibility for the sampled legacy atom-generated rules only.
 It does not exercise arbitrary semantic-only guards, auxiliary mutations,

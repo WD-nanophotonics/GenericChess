@@ -187,13 +187,13 @@ all seed/role/UNKNOWN strata, and avoid repeating frozen panels merely for preci
 
 ## Reproduction and delivery
 
-The [sealed capsule](../archive/broad_type_static_utility_20261018/manifest.json)
+The [sealed capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/broad_type_static_utility_20261018/manifest.json)
 contains explicit technical originals/derived readers/failures; account and raw
-Slack exports stay private. [Reproduce](../archive/broad_type_static_utility_20261018/reproduce.py)
+Slack exports stay private. [Reproduce](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/broad_type_static_utility_20261018/reproduce.py)
 uses pinned parent source plus the already-published exact Core transition,
 Python-S/extracted origins/no Native binary and real PRIMARY stop reads. Original
 fitness/generation/training/Native queries are never rerun. Reader runtimes are
-new; analyses retain original cost fields exactly. [Qualification](../archive/broad_type_static_utility_20261018/qualification.json)
+new; analyses retain original cost fields exactly. [Qualification](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/broad_type_static_utility_20261018/qualification.json)
 actually passes140.770s:109payloads,19derivedoutputs parked/rebuilt,16program
 stages including35225Core edges from ONLY the12completedD2trees. All nonruntime
 fields agree; original producer timing fields in analyses remain exact. No script

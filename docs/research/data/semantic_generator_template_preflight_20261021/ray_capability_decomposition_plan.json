@@ -1,9 +1,0 @@
-{
-  "question": "Which geometry-only capability features drive the bounded raw-price change when adding the blocked direct ray?",
-  "changed_premise": "The default Evaluator component check showed the ray changes per-type raw and normalized prices even when the geometry has no root action; source inspection shows raw price is composed from empty-board capability features.",
-  "seeds": [202610431, 202610432, 202610433, 202610434, 202610435, 202610436, 202610437, 202610438],
-  "measurement": "For the deterministic selected type per frozen root, build base/ray MovementCapabilityProfile under the same default EvaluationConfig and compare expected mobility curve, empty-board out-degree, coverage, reachable-pair ratio, average shortest path and directional asymmetry. Reconcile computed raw-capability delta to the saved evaluator profile raw delta.",
-  "excluded": ["new seeds", "position-conditioned mobility", "games/outcomes/search/training", "utility or calibration claim", "defaults or code behavior changes"],
-  "interpretation": "Geometry-only attribution for this fixed 6x6 preset and ray template, not a general value theorem.",
-  "expected_duration": "under 2 minutes"
-}

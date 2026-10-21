@@ -1,9 +1,0 @@
-{
-  "attempt": 1,
-  "stage": "harness_preflight",
-  "result": "failed_before_measurement",
-  "error": "AttributeError: RuleSet has no attribute fingerprint",
-  "cause": "Harness used a nonexistent convenience property rather than the repository canonical compute_fingerprint(ruleset) function.",
-  "measurements_started": false,
-  "correction": "Use compute_fingerprint(imported) for the identity cross-check; no fixture, candidate, or expected product behavior changed."
-}

@@ -8,7 +8,7 @@ This test changed only the candidate's `capture_order_value`. Both arms used the
 
 ## Frozen panel and integrity
 
-Plan: [capture-order-plan.json](data/static_capture_order_utility_20261020/capture-order-plan.json), SHA-256 `85853ba786ebfb81922e3df38867edfe001425f023fc68624b0cefcc9695ed3b`. Preflight SHA-256: `349ec86c67670b3db060226034c1c6514385779fed144d137084ecbb8b359eea`. The panel used eight generated rules, 16 fixed 3/4-ply roots, both candidate owners and both capture-order arms (64 games, 32 paired root-owner units).
+Plan: [capture-order-plan.json](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/static_capture_order_utility_20261020/capture-order-plan.json), SHA-256 `85853ba786ebfb81922e3df38867edfe001425f023fc68624b0cefcc9695ed3b`. Preflight SHA-256: `349ec86c67670b3db060226034c1c6514385779fed144d137084ecbb8b359eea`. The panel used eight generated rules, 16 fixed 3/4-ply roots, both candidate owners and both capture-order arms (64 games, 32 paired root-owner units).
 
 All 64 slots completed. There were 61 actual terminals and three retained `HORIZON_48_CANDIDATE_UNKNOWN`; the three remain censored. Invalid actions: 0. Complete-history replay mismatches: 0. The generated game-record SHA-256 is `8290f2a888738bae57b02e29291fcada2932fe1346bc40ebadb68872e8408b96`. No game was added for this analysis.
 

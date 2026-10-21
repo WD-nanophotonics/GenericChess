@@ -32,7 +32,7 @@ The following are finite candidate-relative rewards on[-1,1], with UNKNOWN/missi
 
 The Unit-foe static/Unit ordering reverses in this finite regime. This changes the next research decision: do not select a table from one shallow deployment budget. Mapped TD differences remain unresolved by the descriptive envelopes. These are budget curves against deliberately fixed opponents, not universal strength, pure-depth effects, or equal actual cost comparisons.
 
-Independent Core reader reconstructs all15370commits/42089PVedges/full histories with0missing PV/score-leaf differences. A separate contract audit checks every requested budget, actual actor/checkpoint and fixed-foe configuration. Hash-pinned extracted source, Native absent, regenerates all three derived outputs exactly except its own reader clocks; see [work archive](../archive/search_work_curve_20261018/README.md).
+Independent Core reader reconstructs all15370commits/42089PVedges/full histories with0missing PV/score-leaf differences. A separate contract audit checks every requested budget, actual actor/checkpoint and fixed-foe configuration. Hash-pinned extracted source, Native absent, regenerates all three derived outputs exactly except its own reader clocks; see [work archive](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/search_work_curve_20261018/README.md).
 
 ## Cost-gated TT comparison
 
@@ -57,7 +57,7 @@ The existing `SemanticIterativeSearchResult` contract explicitly says score belo
 
 A bounded follow-up performs8 parent queries plus4 cache-seeding queries, preserving full root histories, models and limits; no fitness rerun. Both warm selective cases reproduce with10410/10977hits and2990/3942cutoffs. Cold TT4 yields scores/leaf values-512/-396; cold TT0 agrees with its own leaf (different actual depths). Existing exact-root mode, separately tested with a warm cache, yields matching scores/leaf values-1024/-1308 at completedD6. Different modes/depths are not same-tree value controls. No production fix is justified by these observations. Never use a general cached search score as a terminal WDL or literal-leaf certificate; outcomes here come from actual Core game states.
 
-[TT capsule](../archive/tt_work_transfer_20261018/README.md) preserves both differences, all raw query/game receipts, full replay, outcome/cost analysis, request audit and warm/cold script/results. Source qualification regenerates the three independent readers, not the new Native diagnostic or old fitness. [Summary data](data/tt_work_transfer_20261018/analysis.json) retain adverse cells and UNKNOWN.
+[TT capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/tt_work_transfer_20261018/README.md) preserves both differences, all raw query/game receipts, full replay, outcome/cost analysis, request audit and warm/cold script/results. Source qualification regenerates the three independent readers, not the new Native diagnostic or old fitness. [Summary data](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/tt_work_transfer_20261018/analysis.json) retain adverse cells and UNKNOWN.
 
 ## Next decision
 

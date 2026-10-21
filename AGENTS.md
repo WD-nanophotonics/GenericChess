@@ -1,5 +1,23 @@
 # GenericChess local research policy
 
+## User-authorized two-checkout cleanup — 2026-10-21
+
+The user explicitly approved cleaning both this PRIMARY checkout and the existing
+DEV_AUX checkout, including removal of unrelated current-tree project content.
+For this bounded cleanup only, that approval supersedes the usual cross-checkout
+write prohibition. It does not transfer research ownership or permit worker
+creation, active-file interference, merges, history rewriting or Slack deletion.
+The user then directed: do not message/pause either researcher; clean only files
+confirmed static and mark the remainder incomplete. Preserve active work,
+sessions/stops and hourly recurrence. General rules/search/learning remain the
+mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
+Closed experiment payloads may leave the current tree after checking dependencies;
+keep Git history and a verified private copy of removed uncommitted unique data.
+This supersedes instructions to retain all closed archives in the current tree.
+Do not recreate retired audits without a current caller or new scientific use.
+Details and unresolved delivery: docs/operations/CLEANUP_20261021.md.
+
+
 This is the sole active policy. Latest explicit user directions take precedence.
 PRIMARY_SANDBOX is the sole writer/publisher of sandbox in this checkout.
 Never touch alphasho, its audits/tasks, or other projects. Do not spawn/delegate

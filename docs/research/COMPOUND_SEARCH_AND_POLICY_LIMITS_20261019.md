@@ -174,7 +174,7 @@ playability follows from an opening check.
 
 ## Reproduction and next step
 
-The [67-payload capsule](../archive/compound_search_policy_20261019/README.md)
+The [67-payload capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/compound_search_policy_20261019/README.md)
 retains all original result fields and full diagnostic model parameters,
 compressed from202,628,350 bytes to8,706,169 bytes. Its SHA256 is
 a12954377f0ecec779b4d367b22da0451d280afd4cbc1f04fc5b478b605e20b8.
@@ -183,7 +183,7 @@ credentials. A single explicit already-published filter-source overlay sits on
 the pinned product Python archive; newline-only source differences are not
 treated as new product changes.
 
-[Reproduction](../archive/compound_search_policy_20261019/reproduce.py) uses Python-S,
+[Reproduction](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/compound_search_policy_20261019/reproduce.py) uses Python-S,
 extracted-only GenericChess modules, no Native and real PRIMARY stop flags.
 The final qualification passes in38.813s. Nine outputs cover planned-cell
 arithmetic, full Sessions/PVs,86 originally closed

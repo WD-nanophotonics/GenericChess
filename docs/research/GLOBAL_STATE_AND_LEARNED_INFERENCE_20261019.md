@@ -170,7 +170,7 @@ wrong-rule fingerprint checks refuse. Actual Python `material_features`,
 `linear_value` and `tanh(raw/10)` agree with source-contract algebra on384
 model/root contexts across both panels. This includes the signed coefficient;
 raw evaluation at terminal inputs here is algebra, not a terminal-target change.
-The [loadable artifacts/example](data/learned_native_inference_20261019/README.md)
+The [loadable artifacts/example](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/learned_native_inference_20261019/README.md)
 preserve all models rather than select a champion. Scale1 rounds that negative
 handP coefficient to0, whereas256 rounds it to−122 and1000 to−477.
 
@@ -248,7 +248,7 @@ that one identified mechanism causally explains the failure. Its original
 records, controls, next learning choice and executor handoff remain its own.
 
 Technical originals, models and readers are in
-[`global_state_learned_inference_20261019`](../archive/global_state_learned_inference_20261019/manifest.json).
+[`global_state_learned_inference_20261019`](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/global_state_learned_inference_20261019/manifest.json).
 The76-payload capsule rebuilds12outputs in126.6363s. Captured-source qualification
 uses Python-S, pinned source plus its known overlay,
 checks imported module origins, excludes the Native binary and never refills the

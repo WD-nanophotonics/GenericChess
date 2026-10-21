@@ -1,5 +1,0 @@
---- a/generic_chess/_native/native_module.c
-+++ b/generic_chess/_native/native_module.c
-@@ -6751 +6751 @@
--        ctx.ordinary_qdepth = depth == 1 ? 0 : qdepth;
-+        ctx.ordinary_qdepth = 0; /* PRIVATE CHECK_ONLY objective, entry remains active with hard8. */

@@ -1,8 +1,0 @@
-{
-  "question": "Did the deterministic legal histories from the just-completed generated evaluator symmetry screen expose promotion, capture-to-hand or drop mechanics, which bound how far its symmetry finding transfers?",
-  "changed_premise": "The registered result saves rule fingerprints and sampled states but does not report transition-category or promotion/hand exposure counts.",
-  "method": "Regenerate the exact eight registered rules and deterministically replay the same sorted-action/index histories from the frozen seed schedule. Verify every rule fingerprint against result.json and every mirrored legal-action set. Count board/drop/pass actions, captures, promotions, promoted-piece states, occupied-hand states and nonempty auxiliary states. No new searches, games or outcome access.",
-  "decision_rule": "Report actual observed feature exposure. If promotion/drop/auxiliary exposure is zero, retain the evaluator result only as a legacy generated movement-profile screen; do not claim those mechanisms were covered. Preserve any replay or fingerprint mismatch rather than substituting new seeds.",
-  "expected_duration_seconds": 60,
-  "hard_cap_seconds": 600
-}

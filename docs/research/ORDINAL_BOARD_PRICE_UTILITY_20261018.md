@@ -76,12 +76,12 @@ competing learner. PRIMARY next examines a bounded complete-state/search consume
 issue with a concrete changed premise, rather than automatically launching more
 price-fitness panels or interpreting these results as an Elo target.
 
-The [17-payload capsule](../archive/ordinal_board_utility_20261018/manifest.json)
-seals exact plans/inputs/physical records/costs and readers. [Reproduction](../archive/ordinal_board_utility_20261018/reproduce.py)
+The [17-payload capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/ordinal_board_utility_20261018/manifest.json)
+seals exact plans/inputs/physical records/costs and readers. [Reproduction](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/ordinal_board_utility_20261018/reproduce.py)
 verifies pinned source dependencies and exact published Core transition, uses
 Python-S/extracted source/no Native binary/real PRIMARY stop flags, parks four
 outputs and regenerates complete receipt replay, rule-only profiles and planned
 arithmetic. No original generation/Native queries/games/training are rerun.
-[Qualification](../archive/ordinal_board_utility_20261018/qualification.json)
+[Qualification](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/ordinal_board_utility_20261018/qualification.json)
 passes13.314s, allfourparkedoutputs match onnonruntimefields; original
 analysiscosts remainexact. This is not historicaltiming/binary/WDL reproduction.

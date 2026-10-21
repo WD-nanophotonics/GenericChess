@@ -1,3 +1,0 @@
-# Full-type static objective input comparison
-
-Run `.venv/Scripts/python.exe docs/archive/static_input_objective_20261018/reproduce.py`. The manifest pins complete original records/models/readers and three PUBLIC source/input dependencies. It regenerates coverage/models, all Core input/PV/gradient checks and matched analysis without Native, games, generation or training. A single explicit historical coverage stop-read overlay uses the real PRIMARY stop root; its changed script identity is reported separately, not claimed equal to the original. The sealed archive is unchanged. Post-seal response/convention analyses live in research/data/static_input_objective_20261018 and have separate qualification.

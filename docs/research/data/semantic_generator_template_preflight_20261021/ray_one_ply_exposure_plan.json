@@ -1,9 +1,0 @@
-{
-  "question": "Among the frozen ray/type pairs with no root action, how many expose a legal matching ray action for the reply side after one legal root action?",
-  "changed_premise": "Static profile price and root exposure diverge for 76/127 pairs; a setup filter may be too strict if it screens only the current side-to-move root.",
-  "sample": "Exactly the same generated roots 202610431-202610438 and absent type-direction ray pairs from ray_pair_novelty_price_result.json.",
-  "procedure": "For each pair, enumerate every legal root action, submit it in a fresh GameSession, then count matching semantic-pattern actions in the resulting reply-side state. Record root and reply exposure separately; identify recoveries only where the root count is zero.",
-  "budget": {"expected_duration": "under 2 minutes", "games": 0, "full_search": false, "outcome_queries": 0},
-  "interpretation": "A one-ply action-availability screen only; not a reachable-game probability, strategy, value, playability or utility measure.",
-  "stop_condition": "Finish the fixed 127-pair census; no seed replacement, deeper ply, game continuation, search, training or outcome collection."
-}

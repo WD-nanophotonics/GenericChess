@@ -114,7 +114,7 @@ The replay retains 1046 ordinary PV-leaf / root-score differences. The existing
 API promises a legal continuation, not equality with its literal leaf. Core and
 Native scalar agreement above does not supply a missing q principal-leaf path.
 
-A separate [after-seal consumer supplement](data/q4_leaf_consumer_20261019/README.md)
+A separate [after-seal consumer supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/q4_leaf_consumer_20261019/README.md)
 legally replays all 1046 stored leaf records / 40,896 commits. Raw leaf
 quantization differs by at most .0269375 in human units, while substituting the
 root score for the actual leaf predictor changes tanh outputs by a median
@@ -141,7 +141,7 @@ method context, not independent verification of this project.
 
 ## Delivery and next selection
 
-The [234-payload technical capsule](../archive/root_window_q4_service_20261019/README.md)
+The [234-payload technical capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/root_window_q4_service_20261019/README.md)
 captures current Python sources needed for reconstruction and explicit technical
 files; an unused external-project integration is excluded. A before-seal content
 review caught its private-directory literal, stopped, and removed that unused
@@ -164,7 +164,7 @@ actual admission/errors and full history; it is not a new learner or proof gate.
 
 
 The next mechanism check has now actually run, separately from the sealed
-service and leaf supplements: [three existing IR consumers](data/q4_mechanism_consumer_20261019/README.md),
+service and leaf supplements: [three existing IR consumers](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/q4_mechanism_consumer_20261019/README.md),
 nine real trigger/reply parents, 18 complete cold Native D2/q4 requests match
 all nine Core scalar targets. Four unique different selected actions independently
 tie in Core child searches. Persistent/temporary rights and compound state are

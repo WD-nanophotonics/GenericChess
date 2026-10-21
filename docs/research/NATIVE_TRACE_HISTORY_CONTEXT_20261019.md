@@ -7,13 +7,13 @@ without changing Native search, an AUX learner, or a public API.
 
 ## Actual supported alternative after the Pass refusal
 
-The previous [trace supplement](data/native_trace_contract_20261018/README.md)
+The previous [trace supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/native_trace_contract_20261018/README.md)
 matched all 1506 rows on two exposed signed-source rules, with zero ambiguous
 contexts. That was scoped evidence. Its next-plan first step preserved an
 existing Pass/history fixture and recorded Native's explicit refusal; it did
 not strip Pass or claim a Native collision.
 
-The new [complete technical supplement](data/native_trace_history_20261019/README.md)
+The new [complete technical supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/native_trace_history_20261019/README.md)
 uses ordinary reversible movement and the existing repetition rule. A forced
 4-cycle faithfully follows test_native_history.py. Public Sessions at plies
 3, 7 and 11 share a position, but the next repetition differs. Eighteen cold
@@ -78,7 +78,7 @@ change. The product receives a five-line explanatory comment and two regression
 controls preserving actual histories, correct Core/Native values and immutable
 parents. No algorithm, binary, output field or default changes.
 
-[Source qualification](data/native_trace_history_20261019/qualification.json)
+[Source qualification](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/native_trace_history_20261019/qualification.json)
 regenerates both Core outputs from established hash-pinned public source
 capsules, Python -S, without Native: private 1.987 seconds and public-copy verification 1.928
 seconds. It compares every

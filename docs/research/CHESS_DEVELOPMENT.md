@@ -112,7 +112,7 @@ priced enemy. Therefore the proposed penalty is not justified by this root;
 do not expand or fit it to classical threats after the negative predicate.
 Static classical threats/rook/king/passed terms remain diagnostic clues, not new
 coefficient targets. Exact records/source recovery are in the portable report
-and [verified pack](../archive/development_candidate_allocation_20261007/README.md).
+and [verified pack](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/development_candidate_allocation_20261007/README.md).
 The matched activity/exchange root ablation selects h2h4 for both; preserve the
 earlier e5c6 exchange call as timed-choice variability, not a cherry-picked
 failure certificate. The104native hanging correction is a static contribution,
@@ -165,7 +165,7 @@ and recovery index: ../archive/development_positional_feedback_20261007/.
 ## Historical detail
 
 The full preceding guide, old protocols and failed attempts are preserved in the
-[verified cleanup snapshot](../archive/repository_cleanup_20261007/README.md),
+[verified cleanup snapshot](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/repository_cleanup_20261007/README.md),
 original path docs/research/CHESS_DEVELOPMENT.md. Recover the matching source/data
 there only when a concrete question needs it; historical suggestions are not a
 new branch backlog. [LOCAL_MAINLINE.md](LOCAL_MAINLINE.md) owns current direction.

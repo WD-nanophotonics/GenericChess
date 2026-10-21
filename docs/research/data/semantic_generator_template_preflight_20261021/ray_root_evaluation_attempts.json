@@ -1,8 +1,0 @@
-{
-  "attempts": [
-    {"attempt": 1, "result": "AttributeError: ExecutableSemanticRuleset adapter does not expose .ruleset.", "correction": "Keep the selected type id from the deterministic pre-compile selection; do not recover it from the adapter."},
-    {"attempt": 2, "result": "TypeError while subtracting nested component dictionaries.", "correction": "Added recursive dict-aware component deltas."},
-    {"attempt": 3, "result": "KeyError while using JSON string owner keys against pre-serialization integer keys.", "correction": "Use integer owner keys during calculation; JSON serialization converts them."},
-    {"attempt": 4, "result": "Two corrected executions were byte-identical; every component decomposition reconciled to Evaluator.evaluate on base and ray arms.", "correction": "None required."}
-  ]
-}

@@ -141,7 +141,7 @@ legal sets and checked child identities. Legacy target limit8, Native board16,
 raw actionV1 and defaults are unchanged. Private wideV2 research is not enabled.
 Old installed binaries retain their former rejection until rebuilt. Actual
 production full2563 and focused62 checks pass; evidence:
-[semantic target closure](../research/data/semantic_promotion_targets_20261015.json).
+[semantic target closure](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/semantic_promotion_targets_20261015.json).
 
 | Public entry | Actual execution and activation | Boundary |
 |---|---|---|
@@ -425,7 +425,7 @@ Core adjudication/history, optional Boolean flags/defaults and UI stay unchanged
 Native caps/unsupported fallback remain explicit. Rebuild from source to obtain
 the optional transport gain; no binary/venv is shipped. Current full2526 tests
 and clean tracked-source no-Native/old-kernel/rebuilt-kernel controls pass.
-See [the report](../research/NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md) for versions, prepared-caller
+See [the report](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md) for versions, prepared-caller
 perimeters, retained failures, frozen resource results and unknown proof scope.
 
 
@@ -668,7 +668,7 @@ inference, not original AUX training/EVAL identity (12Core/rules files differ),
 generic precision, strength or a default change. All32 JSON models and actual
 engine rebinding/TT identity/atomic wrong-rule refusal paths qualify. No new API.
 Public data and runnable example:
-[learned_native_inference_20261019](../research/data/learned_native_inference_20261019/README.md).
+[learned_native_inference_20261019](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/learned_native_inference_20261019/README.md).
 
 Do not treat root/PV qualification as AUX subnode-interval sample or optimizer
 equivalence. Actual strict optimal leaf-gradient signatures are unique in288

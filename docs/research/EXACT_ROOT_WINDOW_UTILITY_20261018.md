@@ -244,14 +244,14 @@ pinned-source files against the working source with canonical LF and the exact
 published Core transition overlay. This repairs attribution, not outcomes or
 experimental caps; it is not a binary/timing attestation.
 
-The [technical capsule](../archive/exact_root_windows_20261018/manifest.json)
+The [technical capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/exact_root_windows_20261018/manifest.json)
 contains119explicitly selected payloads, including plans, original failures, full records and readers.
-Raw Slack/account/DS-watch exports are excluded. [Reproduction](../archive/exact_root_windows_20261018/reproduce.py)
+Raw Slack/account/DS-watch exports are excluded. [Reproduction](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/exact_root_windows_20261018/reproduce.py)
 uses pinned source, Python-S, extracted module origins, no Native binary and real
 PRIMARY stop flags. It parks and regenerates26outputs: saved complete D2
 frontiers, cost/stateful receipts, three full-game readers/arithmetic/profiles/
 coverage, observed role symmetry and larger-board inputs/PV. No generation,
-Native search, games or training are rerun. The [qualification record](../archive/exact_root_windows_20261018/qualification.json)
+Native search, games or training are rerun. The [qualification record](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/exact_root_windows_20261018/qualification.json)
 passes all26nonruntime output comparisons in172.789seconds; sealed original timing fields remain receipt
 evidence, not remeasured historical speed. No external rules authority or
 all-domain equivalence is claimed.
@@ -275,7 +275,7 @@ reference is invented. One exact parent/checkpoint is repeated:16published
 inputs cover15distinct contexts, and all32actual calls/costs remain reported.
 These are scoped signed semantic controls, not a signed learning/strength gain.
 
-The [separate technical supplement](data/root_window_signed_20261018/README.md)
+The [separate technical supplement](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/research/data/root_window_signed_20261018/README.md)
 publishes inputs, frozen plan, producer, raw query/reference records, Core reader
 and qualification. Fresh search-disabled Core reconstruction repeats all16trees/
 32PVchecks; pinned-source Python-S/no-Native qualification regenerates its one

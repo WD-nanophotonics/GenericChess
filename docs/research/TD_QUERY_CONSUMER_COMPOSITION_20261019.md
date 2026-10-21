@@ -56,7 +56,7 @@ witnesses despite equal local TD credit fields. This is a replay of saved
 receipts, not new search calls or a trajectory/game evaluation; its denominator
 is distinct from the 288 query triplets above.
 
-The saved [capture-source capsule](../archive/td_query_service_20261019/manifest.json)
+The saved [capture-source capsule](https://github.com/WD-nanophotonics/GenericChess/blob/b942f11e50e20689d4455c5b4dc2d00ea0985b89/docs/archive/td_query_service_20261019/manifest.json)
 contains 60 hashed project payloads. I executed its `reproduce.py` from the
 repository root on this Core revision: all four captured-source outputs match
 on non-time fields in 7.978 seconds. The script uses Python `-S`, verifies
