@@ -1,0 +1,1728 @@
+{
+  "mainline_sha": "3ddbf9988e680d473ebe5d90b2a66ec430993df5",
+  "shared_package_files": 238,
+  "scopes": "One matched composition pair and exposed prefix distribution;no intrinsic prices,independence,heldout or strength claim.",
+  "fresh_graphs": {
+    "MM3": {
+      "kinds": [
+        "M",
+        "M"
+      ],
+      "width": 3,
+      "declared_max_ply": 8209,
+      "positions": 1768,
+      "edges": 4200,
+      "terminal_reasons": {
+        "checkmate": 176,
+        "stalemate": 64
+      },
+      "relative_wdl": {
+        "-1": 368,
+        "1": 720,
+        "0": 680
+      },
+      "max_decisive_rank": 3,
+      "root_player0_wdl": {
+        "0": 200,
+        "1": 80,
+        "-1": 8
+      },
+      "genuine_choice_positions": 824,
+      "graph_seconds": 1.7950118000153452
+    },
+    "ABKing3": {
+      "kinds": [
+        "A",
+        "B"
+      ],
+      "width": 3,
+      "declared_max_ply": 8209,
+      "positions": 2108,
+      "edges": 5152,
+      "terminal_reasons": {
+        "stalemate": 68,
+        "checkmate": 176
+      },
+      "relative_wdl": {
+        "-1": 544,
+        "1": 664,
+        "0": 900
+      },
+      "max_decisive_rank": 8,
+      "root_player0_wdl": {
+        "-1": 184,
+        "0": 104
+      },
+      "genuine_choice_positions": 752,
+      "graph_seconds": 2.4657704000128433
+    },
+    "MM4": {
+      "kinds": [
+        "M",
+        "M"
+      ],
+      "width": 4,
+      "declared_max_ply": 101281,
+      "positions": 41184,
+      "edges": 227280,
+      "terminal_reasons": {
+        "checkmate": 696,
+        "stalemate": 64
+      },
+      "relative_wdl": {
+        "-1": 4256,
+        "1": 18352,
+        "0": 18576
+      },
+      "max_decisive_rank": 15,
+      "root_player0_wdl": {
+        "0": 1
+      },
+      "genuine_choice_positions": 25968,
+      "graph_seconds": 54.71523430000525
+    },
+    "ABA3": {
+      "kinds": null,
+      "lineup": [
+        "A",
+        "B",
+        "A"
+      ],
+      "width": 3,
+      "declared_max_ply": 80707215,
+      "positions": 57437,
+      "edges": 159346,
+      "terminal_reasons": {
+        "checkmate": 3117,
+        "stalemate": 1864
+      },
+      "relative_wdl": {
+        "-1": 5088,
+        "1": 8213,
+        "0": 44136
+      },
+      "max_decisive_rank": 8,
+      "root_player0_wdl": {
+        "0": 1
+      },
+      "genuine_choice_positions": 16139,
+      "graph_seconds": 60.11539499997161
+    },
+    "ABC3": {
+      "kinds": null,
+      "lineup": [
+        "A",
+        "B",
+        "C"
+      ],
+      "width": 3,
+      "declared_max_ply": 774840979,
+      "positions": 36199,
+      "edges": 91872,
+      "terminal_reasons": {
+        "checkmate": 1067,
+        "stalemate": 1273
+      },
+      "relative_wdl": {
+        "-1": 3022,
+        "1": 5017,
+        "0": 28160
+      },
+      "max_decisive_rank": 16,
+      "root_player0_wdl": {
+        "0": 1
+      },
+      "genuine_choice_positions": 8060,
+      "graph_seconds": 36.09519189991988
+    }
+  },
+  "MM5_failure": {
+    "status": "UNKNOWN: graph time allowance exhausted",
+    "numeric_labels": null
+  },
+  "full_history_check": {
+    "status": "COMPLETE",
+    "total_contexts": 91712,
+    "counts": {
+      "verified_contexts": 91712,
+      "long_ongoing": 68416
+    },
+    "ongoing_fresh_to_history_value_changes": {
+      "(-1, 0)": 640,
+      "(1, 0)": 688
+    },
+    "max_history_conditioned_rank": 3,
+    "missing": 0,
+    "seconds": 108.48062139993999,
+    "scope": "Same288MMstarts;sharedCorefull-historyH6unroll versus independently blocked-Position attractor+remaining-clock distance. Not independent rule samples or a general history quotient."
+  },
+  "H6_parameter_cells": {
+    "contexts": 186,
+    "cuts": [
+      "1/2",
+      "1",
+      "3/2",
+      "2",
+      "3",
+      "4"
+    ],
+    "cells": [
+      {
+        "kind": "open",
+        "low": "0",
+        "high": "1/2",
+        "representative": "1/4"
+      },
+      {
+        "kind": "open",
+        "low": "1/2",
+        "high": "1",
+        "representative": "3/4"
+      },
+      {
+        "kind": "open",
+        "low": "1",
+        "high": "3/2",
+        "representative": "5/4"
+      },
+      {
+        "kind": "open",
+        "low": "3/2",
+        "high": "2",
+        "representative": "7/4"
+      },
+      {
+        "kind": "open",
+        "low": "2",
+        "high": "3",
+        "representative": "5/2"
+      },
+      {
+        "kind": "open",
+        "low": "3",
+        "high": "4",
+        "representative": "7/2"
+      },
+      {
+        "kind": "open",
+        "low": "4",
+        "high": "8",
+        "representative": "6"
+      },
+      {
+        "kind": "boundary",
+        "low": "1/2",
+        "high": "1/2",
+        "representative": "1/2"
+      },
+      {
+        "kind": "boundary",
+        "low": "1",
+        "high": "1",
+        "representative": "1"
+      },
+      {
+        "kind": "boundary",
+        "low": "3/2",
+        "high": "3/2",
+        "representative": "3/2"
+      },
+      {
+        "kind": "boundary",
+        "low": "2",
+        "high": "2",
+        "representative": "2"
+      },
+      {
+        "kind": "boundary",
+        "low": "3",
+        "high": "3",
+        "representative": "3"
+      },
+      {
+        "kind": "boundary",
+        "low": "4",
+        "high": "4",
+        "representative": "4"
+      }
+    ],
+    "tables": {
+      "ABA": {
+        "1": [
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            2,
+            6,
+            7
+          ],
+          [
+            2,
+            9,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ],
+          [
+            3,
+            8,
+            9
+          ]
+        ],
+        "2": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "3": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "6": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "ABC": {
+        "1": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "2": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "3": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "6": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "columns": [
+      "forced_errors",
+      "tie_risks",
+      "public_errors"
+    ]
+  },
+  "no_active_clock_composition": {
+    "status": "COMPLETE",
+    "common_contexts": 186,
+    "planned": 7440,
+    "queries": 7440,
+    "missing": 0,
+    "nodes": 511303,
+    "seconds": 295.27775679994375,
+    "table": [
+      {
+        "world": "ABA",
+        "ratio": 0.25,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 11
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.25,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 4
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.25,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 2
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.25,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 0
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.75,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 11
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.75,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 4
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.75,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 2
+      },
+      {
+        "world": "ABA",
+        "ratio": 0.75,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 0
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.0,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 14
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.0,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 6
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.0,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 2
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.0,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 0
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.25,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 14
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.25,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 6
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.25,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 3
+      },
+      {
+        "world": "ABA",
+        "ratio": 1.25,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 0
+      },
+      {
+        "world": "ABA",
+        "ratio": 3.0,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 14
+      },
+      {
+        "world": "ABA",
+        "ratio": 3.0,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 6
+      },
+      {
+        "world": "ABA",
+        "ratio": 3.0,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 4
+      },
+      {
+        "world": "ABA",
+        "ratio": 3.0,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 0
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.25,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 26
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.25,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 19
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.25,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 13
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.25,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 3
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.75,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 26
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.75,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 20
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.75,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 14
+      },
+      {
+        "world": "ABC",
+        "ratio": 0.75,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 4
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.0,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 22
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.0,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 21
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.0,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 16
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.0,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 4
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.25,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 20
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.25,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 18
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.25,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 15
+      },
+      {
+        "world": "ABC",
+        "ratio": 1.25,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 5
+      },
+      {
+        "world": "ABC",
+        "ratio": 3.0,
+        "depth": 1,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 20
+      },
+      {
+        "world": "ABC",
+        "ratio": 3.0,
+        "depth": 2,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 19
+      },
+      {
+        "world": "ABC",
+        "ratio": 3.0,
+        "depth": 3,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 15
+      },
+      {
+        "world": "ABC",
+        "ratio": 3.0,
+        "depth": 6,
+        "queries": 186,
+        "requested_complete": 186,
+        "unknown": 0,
+        "errors": 6
+      }
+    ]
+  },
+  "changed_reference_contexts": {
+    "ABA": 11,
+    "ABC": 49
+  },
+  "D1_effect_pairs": {
+    "(0, 0)": 174,
+    "(0, 1)": 8,
+    "(-2, 0)": 1,
+    "(0, -1)": 1,
+    "(-1, -1)": 1,
+    "(-1, 0)": 1
+  },
+  "defense_control": {
+    "ABA": {
+      "defender_vertical_capture_legal": true,
+      "value_after": 0
+    },
+    "ABC": {
+      "defender_vertical_capture_legal": false,
+      "value_after": null
+    }
+  },
+  "depth_curve": {
+    "status": "COMPLETE",
+    "root_symmetry_classes": 64,
+    "planned": 448,
+    "queries": 448,
+    "missing": 0,
+    "nodes": 974288,
+    "seconds": 199.75807229999918,
+    "by_requested_depth": [
+      {
+        "depth": 1,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 64,
+        "completed_depths": {
+          "1": 64
+        },
+        "errors": 14,
+        "unknown": 0,
+        "nodes": 545,
+        "median_nodes": 8.0,
+        "seconds": 0.2599507005652413
+      },
+      {
+        "depth": 2,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 64,
+        "completed_depths": {
+          "2": 64
+        },
+        "errors": 3,
+        "unknown": 0,
+        "nodes": 1863,
+        "median_nodes": 28.0,
+        "seconds": 0.42447390023153275
+      },
+      {
+        "depth": 3,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 64,
+        "completed_depths": {
+          "3": 64
+        },
+        "errors": 2,
+        "unknown": 0,
+        "nodes": 6387,
+        "median_nodes": 91.5,
+        "seconds": 0.8465783999999985
+      },
+      {
+        "depth": 4,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 64,
+        "completed_depths": {
+          "4": 64
+        },
+        "errors": 1,
+        "unknown": 0,
+        "nodes": 14356,
+        "median_nodes": 224.5,
+        "seconds": 1.7252588999690488
+      },
+      {
+        "depth": 6,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 64,
+        "completed_depths": {
+          "6": 64
+        },
+        "errors": 0,
+        "unknown": 0,
+        "nodes": 81924,
+        "median_nodes": 1170.5,
+        "seconds": 9.770520900376141
+      },
+      {
+        "depth": 8,
+        "queries": 64,
+        "returned": 64,
+        "requested_complete": 46,
+        "completed_depths": {
+          "7": 17,
+          "8": 46,
+          "6": 1
+        },
+        "errors": 0,
+        "unknown": 0,
+        "nodes": 344925,
+        "median_nodes": 5262.5,
+        "seconds": 47.54500679962803
+      },
+      {
+        "depth": 12,
+        "queries": 64,
+        "returned": 59,
+        "requested_complete": 0,
+        "completed_depths": {
+          "7": 17,
+          "9": 14,
+          "8": 29,
+          "10": 2,
+          "11": 1,
+          "6": 1
+        },
+        "errors": 0,
+        "unknown": 5,
+        "nodes": 524288,
+        "median_nodes": 8192.0,
+        "seconds": 78.04322189977393
+      }
+    ]
+  },
+  "no_clock_learning": {
+    "config": {
+      "question": "Can material parameters change without policy improvement,and does fully terminal TDLeaf search leave a material gradient?",
+      "episodes_per_arm": 32,
+      "depths": [
+        1,
+        6
+      ],
+      "foe_depth": 2,
+      "initial_B": 0.25,
+      "lambda_": 0.95,
+      "eta": 0.05,
+      "scale": 10,
+      "root_order": "i%8;learnercolor=(i//8)%2",
+      "query_nodes": 8192,
+      "game_nodes": 524288,
+      "game_seconds": 3,
+      "whole_seconds": 120,
+      "whole_nodes": 2000000,
+      "rule_horizon": 8209,
+      "episode_horizon": 64,
+      "oracle": "Research observer only;never search evaluator,ordering,TDtarget or training data.",
+      "source_sha256": "a7cc9ab523198bad063af2a96b2177e745e34998b192b29b523ab85c9bf5bae5"
+    },
+    "summaries": [
+      {
+        "depth": 1,
+        "status": "COMPLETE",
+        "episodes": 32,
+        "missing": 0,
+        "initial": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "final": [
+          1.0,
+          0.32233689626163087,
+          1.0,
+          1.0
+        ],
+        "outcomes": {
+          "-1": 8,
+          "0": 18,
+          "1": 6
+        },
+        "changed_updates": 18,
+        "candidate_queries": 186,
+        "terminal_PV_observations": 10,
+        "suboptimal_candidate_queries": 4
+      },
+      {
+        "depth": 6,
+        "status": "COMPLETE",
+        "episodes": 32,
+        "missing": 0,
+        "initial": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "final": [
+          1.0,
+          0.25,
+          1.0,
+          1.0
+        ],
+        "outcomes": {
+          "-1": 4,
+          "0": 18,
+          "1": 10
+        },
+        "changed_updates": 0,
+        "candidate_queries": 240,
+        "terminal_PV_observations": 80,
+        "suboptimal_candidate_queries": 0
+      }
+    ],
+    "nodes": 30550,
+    "seconds": 13.238908299943432,
+    "scope": "Finite mechanism diagnostic;different played states/realized cost,not equal-compute strength or population inference."
+  },
+  "no_clock_learning_check": {
+    "counts": {
+      "queries": 856,
+      "episodes": 64,
+      "TD_terms": 426
+    },
+    "max_arithmetic_error": 0.0,
+    "nonterminal_features": {
+      "(1, (1, -1, 0, 0))": 12,
+      "(1, (1, 0, 0, 0))": 122,
+      "(1, (0, 0, 0, 0))": 34,
+      "(1, (0, -1, 0, 0))": 8,
+      "(6, (1, 0, 0, 0))": 156,
+      "(6, (0, 0, 0, 0))": 4
+    },
+    "errors_and_gradients": {
+      "(1, 'nonzero_errors')": 30,
+      "(1, 'nonzero_gradients')": 20,
+      "(6, 'nonzero_errors')": 12,
+      "(6, 'nonzero_gradients')": 0
+    },
+    "final_weights": {
+      "1": [
+        1.0,
+        0.32233689626163087,
+        1.0,
+        1.0
+      ],
+      "6": [
+        1.0,
+        0.25,
+        1.0,
+        1.0
+      ]
+    },
+    "seconds": 2.4486256000818685,
+    "scope": "Post-hoc full actual session replay and restricted history-conditioned graph labels;TD arithmetic recomputed without invoking TDLeafEpisode. No new search/training."
+  },
+  "ABC_learning": {
+    "config": {
+      "episodes": 32,
+      "candidate_depth": 2,
+      "foe_depth": 2,
+      "initial": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "names": [
+        [
+          "board",
+          "A"
+        ],
+        [
+          "board",
+          "B"
+        ],
+        [
+          "board",
+          "C"
+        ],
+        [
+          "hand",
+          "A"
+        ],
+        [
+          "hand",
+          "B"
+        ],
+        [
+          "hand",
+          "C"
+        ]
+      ],
+      "eta": 0.05,
+      "lam": 0.95,
+      "scale": 10,
+      "root": "one symmetric fresh ABC start",
+      "colors": "episode%2",
+      "query_nodes": 8192,
+      "game_nodes": 524288,
+      "game_horizon": 64,
+      "game_seconds": 10,
+      "whole_nodes": 2000000,
+      "whole_seconds": 120,
+      "oracle": "NONE: no reference labels available to the training runner",
+      "source_sha256": "36114b8fc582410c9585dd8ca425cbb91f340da446150bc953bb709ac3d98c77"
+    },
+    "status": "COMPLETE",
+    "episodes": 32,
+    "missing": 0,
+    "final": [
+      1.0,
+      0.9996082781257356,
+      0.9999971295777246,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "nodes": 5566,
+    "queries": 469,
+    "seconds": 3.339948100037873,
+    "outcomes": {
+      "0": 32
+    },
+    "endings": {
+      "ACTUAL_TERMINAL": 32
+    },
+    "changed_updates": 31,
+    "candidate_queries": 227,
+    "terminal_pvs": 32,
+    "nonterminal_trainable_features": 78,
+    "scope": "Single-root deterministic mechanism evidence,not independent games or strength/transfer validation."
+  },
+  "ABC_learning_check": {
+    "counts": {
+      "literal_PV_replays": 469,
+      "episodes": 32,
+      "TD_terms": 227
+    },
+    "quality": {
+      "('candidate', 'suboptimal')": 0,
+      "('candidate', 'queries')": 227,
+      "('foe', 'suboptimal')": 0,
+      "('foe', 'queries')": 242
+    },
+    "pv_exact_labels": {
+      "('candidate', 0)": 227,
+      "('foe', 0)": 242
+    },
+    "local_model_effects": {
+      "identical_weights": 17,
+      "initial_policy_queries": 210,
+      "action_changes": 15,
+      "equal_WDL": 15
+    },
+    "examples": [
+      {
+        "episode": 2,
+        "ply": 4,
+        "weights": [
+          1.0,
+          0.9999750830013437,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "best": 0,
+        "chosen": 0,
+        "control": 0,
+        "category": "equal_WDL",
+        "trained": {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "initial": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      },
+      {
+        "episode": 4,
+        "ply": 4,
+        "weights": [
+          1.0,
+          0.9999502246575525,
+          0.9999999757059264,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "best": 0,
+        "chosen": 0,
+        "control": 0,
+        "category": "equal_WDL",
+        "trained": {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "initial": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      },
+      {
+        "episode": 6,
+        "ply": 4,
+        "weights": [
+          1.0,
+          0.9999254248091857,
+          0.9999999271986542,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "best": 0,
+        "chosen": 0,
+        "control": 0,
+        "category": "equal_WDL",
+        "trained": {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "initial": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      },
+      {
+        "episode": 8,
+        "ply": 4,
+        "weights": [
+          1.0,
+          0.9999006832972495,
+          0.9999998545588245,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "best": 0,
+        "chosen": 0,
+        "control": 0,
+        "category": "equal_WDL",
+        "trained": {
+          "kind": "board",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            0,
+            1
+          ],
+          "promotion_target_id": null
+        },
+        "initial": {
+          "kind": "board",
+          "from": [
+            1,
+            1
+          ],
+          "to": [
+            2,
+            1
+          ],
+          "promotion_target_id": null
+        }
+      }
+    ],
+    "max_arithmetic_error": 0.0,
+    "counterfactual_nodes": 2550,
+    "seconds": 2.2810238000238314,
+    "scope": "Observer-only exact history labels and uniform-weight requery at actual prefixes. One deterministic root;no heldout,independence or terminal strength inference."
+  },
+  "old2625_stratified_signs": {
+    "candidate": {
+      "all_pairs": 213,
+      "outcome_difference_signs": {
+        "positive": 49,
+        "tie": 132,
+        "negative": 16,
+        "UNKNOWN": 16
+      },
+      "hypothetical_iid_sign_p": 5.084767048790177e-05,
+      "extreme_only_counts": [
+        49,
+        16
+      ],
+      "caveat": "Post-treatment selection on first divergence;endpoint changes tie seeds for candidate and foe,including later moves. Exchangeability/independence not established;not clean causal weight effect or calibrated inference."
+    },
+    "fixed_foe": {
+      "all_pairs": 190,
+      "outcome_difference_signs": {
+        "positive": 39,
+        "negative": 18,
+        "tie": 109,
+        "UNKNOWN": 24
+      },
+      "hypothetical_iid_sign_p": 0.007508175534150202,
+      "extreme_only_counts": [
+        37,
+        17
+      ],
+      "caveat": "Post-treatment selection on first divergence;endpoint changes tie seeds for candidate and foe,including later moves. Exchangeability/independence not established;not clean causal weight effect or calibrated inference."
+    }
+  }
+}

@@ -344,6 +344,40 @@ user schedule change. This turn preserved it and made no scheduler mutation.
 95unique related tests pass across scoped runs;large raw logs remain ignored.
 Detailed science/limits:LEAPER_FOUNDATION_20261021.md. Science remains OPEN.
 
+## 2026-10-22 — clock, history and composition boundaries
+
+DEV_AUX read Claude1792594110 and adopted the H6 scope objection. Reusing
+PRIMARY's committed3ddbf998 infrastructure (all238shared files identical),
+it solved fresh repeat-two graphs without an active clock. MM288root labels
+stay unchanged, but A/B-King has a clock-sensitive distance8loss.4x4 reaches
+distance15;5x5 remains a preserved120second UNKNOWN. No mainline fork or other
+role change was made. Fresh labels are not applied blindly to played states:
+91712actual contexts independently agree and1328ongoing fresh W/L labels
+collapse to draw after history. This narrows the advisor's Position-graph claim.
+
+The matched ABA/ABC no-clock comparison completes7440public queries at186
+exposed common legal prefixes. D1 low/high B errors11/14versus26/20 establish
+an aggregate composition-conditioned parameter preference, not an intrinsic
+same-context price reversal. D6ABCpreferslowB3/6. A concrete defender-capture
+control and rank8actual continuation explain a geometry mechanism. Exact H6
+cells separately identify forced errors and unsafe ties.4x4D12has5nonliteral
+completed_root_win outputs;their UNKNOWN records are not refilled or trained on.
+
+Learning checks distinguish coefficient changes, action changes and WDL.32ABC
+episodes give31updates/15changed choices but only32draws/two trajectories and
+no improved exact choice.469literal PVs and227TDterms replay/check. AUX receipts
+now retain actual public PV choices;this is logging,not another search engine.
+127relevant regressions pass. The candidate-first49:16old sign calculation is
+numerically reproducible but not a clean causal estimate: endpoint seeds also
+alter candidate ties and later foe moves. No old games were rerun.
+
+Next is one declared A/B layout swap,with a rule-independent opening sampler
+as backup. This avoids another large grid or more copies of two training
+trajectories. Graph caches,raw journals and executed-source copies stay ignored;
+only maintained code and compact evidence are published. The old uncertain
+Slack message is not resent. Same chat/ACTIVE90minute recurrence is preserved.
+Details:docs/research/LEAPER_CLOCK_COMPOSITION_20261022.md.
+
 ## Historical coordination
 
 The former3434-line collaboration diary is retained in Git at

@@ -30,6 +30,14 @@ def test_shared_q0_float_target_matches_literal_generic_pv_and_reference(which):
     assert env.record() == before
     assert public.nodes == sum(a.nodes for a in public.attempts)
     assert public.completed_depth == 2
+    literal=FixedScaleSessionEnv(env.session,unit_type=unit)
+    for step in public.pv_choices:literal.push(step)
+    assert public.pv_choices[0]==public.action
+    if public.pv_terminal:
+        assert literal.terminal()*1_000_000==public.value
+    else:
+        assert len(public.pv_choices)==2
+        assert literal.features()==public.pv_phi
 
 
 @pytest.mark.parametrize('nodes', [1, 3, 100])
@@ -174,3 +182,21 @@ def test_existing_search_switches_preserve_full_depth_material_value(tt,ordering
     reference=AlphaBeta(3,0).search(env,model,nodes=20000,seconds=10,seed=73)
     assert result.complete and reference.complete and result.completed_depth==3
     assert result.value==pytest.approx(reference.value,abs=1e-10)
+
+
+def test_completed_root_win_from_interrupted_deeper_layer_is_not_a_td_target(monkeypatch):
+    from scripts.leaper_microgames import make_rules
+    from generic_chess.learning import mainline_search
+    compiled=compile_ruleset_for_execution(make_rules(width=4,horizon=101281,layouts=[(7,11,0,15)]))
+    env=FixedScaleSessionEnv(GameSession(compiled),unit_type='M');seen=[]
+    real=mainline_search.AlphaBetaPlayer.choose_action
+    def observed(*args,**kwargs):
+        decision=real(*args,**kwargs);seen.append(decision);return decision
+    monkeypatch.setattr(mainline_search.AlphaBetaPlayer,'choose_action',observed)
+    receipt=search(env,Model([1.,1.]),depth=12,nodes=8192,seconds=10)
+    assert seen[0].result_source=='completed_root_win'
+    assert seen[0].completed_depth>0 and receipt.nodes==8192
+    assert not receipt.complete
+    assert receipt.action is receipt.value is receipt.pv_phi is None
+    assert receipt.reason=='NO_LITERAL_COMPLETED_RESULT:completed_root_win'
+    assert receipt.pv_choices==()

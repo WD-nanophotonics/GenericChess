@@ -38,12 +38,12 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     attempts = []
     decision = None
 
-    def receipt(reason, *, action=None, value=None, phi=None, terminal=False):
+    def receipt(reason, *, action=None, value=None, phi=None, terminal=False, pv_choices=()):
         return Receipt(action, value, phi, terminal, (),
             0 if decision is None else decision.nodes + decision.qnodes,
             action is not None or terminal, 0, perf_counter() - began, reason,
             0 if decision is None else decision.completed_depth,
-            attempts[-1].depth if attempts else 0, tuple(attempts))
+            attempts[-1].depth if attempts else 0, tuple(attempts), tuple(pv_choices))
 
     class Stop:
         reason = None
@@ -124,21 +124,26 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
     if perf_counter() - began >= seconds:
         return receipt('PV_REPLAY_TIME_CAP')
     try:
+        pv_choices=[]
         if choice.kind == 'DECLARATION':
             leaf.push(choice)
+            pv_choices.append(choice)
         else:
             for action in decision.principal_variation:
                 if stop.is_cancelled(force=True):
                     return receipt(stop.reason)
                 if perf_counter() - began >= seconds:
                     return receipt('PV_REPLAY_TIME_CAP')
-                leaf.push(SessionChoice('ACTION', action=action))
+                step=SessionChoice('ACTION', action=action)
+                leaf.push(step)
+                pv_choices.append(step)
         actual = leaf.terminal()
         if actual is None:
             # Public q0 may stop just before a node-local winning declaration.
             win = leaf.winning_declaration()
             if win is not None:
                 leaf.push(win)
+                pv_choices.append(win)
                 actual = leaf.terminal()
         if stop.is_cancelled(force=True):
             return receipt(stop.reason)
@@ -150,7 +155,7 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
             if (actual == 0 and signed != 0) or (actual != 0 and signed * actual < 900_000_000):
                 return receipt('TERMINAL_VALUE_MISMATCH')
             return receipt(decision.termination_reason, action=choice,
-                           value=MATE * actual, terminal=True)
+                           value=MATE * actual, terminal=True,pv_choices=pv_choices)
         if any(d.outcome in ('RESTART', 'NO_CONTEST') for d in leaf.session.available_declarations()):
             return receipt('UNEXPORTED_NEUTRAL_DECLARATION_UNKNOWN')
         phi = leaf.features()
@@ -160,6 +165,6 @@ def search(env, model, *, depth=2, nodes=8192, seconds=5., seed=0,
             return receipt('PV_VALUE_MISMATCH')
         if len(decision.principal_variation) != decision.completed_depth:
             return receipt('TRUNCATED_PV_UNKNOWN')
-        return receipt(decision.termination_reason, action=choice, value=value, phi=phi)
+        return receipt(decision.termination_reason, action=choice, value=value, phi=phi,pv_choices=pv_choices)
     except NonScoringTerminal:
         return receipt('NON_SCORING_UNKNOWN')

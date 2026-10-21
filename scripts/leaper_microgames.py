@@ -75,21 +75,22 @@ def coexistence_rules(lineup=('A','B'), *, horizon=6):
         drop_allowed={n:((False,)*9,)*2 for n in set(lineup)})
 
 
-def quiet_layouts(count=8):
+def quiet_layouts(count=8, *, width=3):
     """Deterministic fresh layouts, filtered by real Core attack authority."""
     if type(count)is not int or count<1:raise ValueError('positive layout count required')
-    compiled=compile_ruleset_for_execution(make_rules())
+    compiled=compile_ruleset_for_execution(make_rules(width=width))
     pos=initial_state(compiled).position
     candidates=[]
-    for indices in permutations(range(9),4):
-        b=[None]*9
+    for indices in permutations(range(width*width),4):
+        b=[None]*(width*width)
         for square,owner,name in zip(indices,(0,0,1,1),('K','M','K','M')):
             b[square]=Piece(owner,name,name)
         p=replace(pos,board=tuple(b))
         if not is_in_check(p,0,compiled)and not is_in_check(p,1,compiled):
             candidates.append(indices)
     candidates.sort(key=lambda x:hashlib.sha256(json.dumps(x).encode()).digest())
-    return [(0,1,8,7)]+[x for x in candidates if x!=(0,1,8,7)][:count-1]
+    default=(0,1,width*width-1,width*width-2)
+    return [default]+[x for x in candidates if x!=default][:count-1]
 
 
 def terminal_census(kinds=('A','B'), *, b_geometry=DIAGONAL,width=3,seconds=60.):
@@ -242,6 +243,94 @@ def decision_study(tree, setup=None, *, limit=32, ratios=(1.,), depths=(1,2,3,4,
     return rows
 
 
+def composition_parameter_cells(output, *, upper=8, depths=(1,2,3,6)):
+    """Exact finite leaf-order partition, not a fitted or arbitrary ratio grid.
+
+    Every nonterminal leaf is a+b*r with integer material differences. Pair
+    intersections partition the parameter range; min/max cannot change optimal
+    action SETS inside an open cell. Public ordering may still change which
+    tied action it selects. Boundary points are therefore checked separately.
+    The reference minimax below reads already-complete Core trees; no rules,
+    move generation, pruning, training or deployed search is implemented here.
+    """
+    from fractions import Fraction
+    from functools import lru_cache
+    from itertools import combinations
+    from generic_chess.ai.evaluation.config import MATE_SCORE
+    output=Path(output);output.mkdir(parents=True,exist_ok=False)
+    began=time.perf_counter();trees=[];maps=[]
+    for lineup in(('A','B','A'),('A','B','C')):
+        tree=ExactTree(compile_ruleset_for_execution(coexistence_rules(lineup)))
+        tree.solve(initial_state(tree.compiled));trees.append(tree)
+        maps.append({p:s for s,p in tree.paths.items()})
+    def line(state):
+        a=b=0
+        for piece in state.position.board:
+            if piece is None or piece.current_type_id=='K':continue
+            sign=1 if piece.owner==0 else -1
+            if piece.current_type_id=='B':b+=sign
+            else:a+=sign
+        return a,b
+    lines={(0,0)}|{line(s)for t in trees for s in t.values if t.edges[s]}
+    cuts=sorted({Fraction(c-a,b-d)for(a,b),(c,d)in combinations(lines,2)
+                 if b!=d and 0<Fraction(c-a,b-d)<upper})
+    ends=[Fraction(0),*cuts,Fraction(upper)]
+    cells=[dict(kind='open',low=str(a),high=str(b),representative=str((a+b)/2))for a,b in zip(ends,ends[1:])]
+    cells += [dict(kind='boundary',low=str(c),high=str(c),representative=str(c))for c in cuts]
+    all_common=set(maps[0])&set(maps[1])
+    common=sorted((p for p in all_common if all(t.edges[m[p]]for t,m in zip(trees,maps))),
+                  key=lambda p:json.dumps([action_to_dict(a)for a in p],sort_keys=True))
+    tables={};exceptions=[]
+    for label,tree,mapping in zip(('ABA','ABC'),trees,maps):
+        @lru_cache(None)
+        def value(state,depth,ratio,root_ply):
+            if not tree.edges[state]:
+                winner=state.terminal_status.winner
+                return 0 if winner is None else (1 if winner==0 else -1)*(MATE_SCORE-state.ply_count+root_ply)
+            if depth==0:
+                a,b=line(state);return a+b*ratio
+            values=[value(s,depth-1,ratio,root_ply)for _,s in tree.edges[state]]
+            return(max if state.position.side_to_move==0 else min)(values)
+        states=[mapping[p]for p in common]
+        ratios=tuple(Fraction(c['representative'])for c in cells)
+        public=decision_study(tree,limit=len(states),ratios=tuple(map(float,ratios)),depths=depths,states=states)
+        (output/(label+'-public.json')).write_text(json.dumps(public),encoding='utf-8')
+        public_index={(r['index'],r['depth'],r['ratio']):r for r in public}
+        rows=[]
+        for ci,(cell,ratio)in enumerate(zip(cells,ratios)):
+            for depth in depths:
+                forced_errors=tie_risks=public_errors=0;histogram=Counter()
+                for index,state in enumerate(states):
+                    sign=1 if state.position.side_to_move==0 else -1
+                    scores=[(a,s,value(s,depth-1,ratio,state.ply_count)*sign)for a,s in tree.edges[state]]
+                    best=max(x[2]for x in scores)
+                    optimal=[(a,s)for a,s,v in scores if v==best]
+                    labels={tree.values[s]*sign for _,s in optimal}
+                    exact=tree.values[state]*sign
+                    forced_errors+=max(labels)<exact;tie_risks+=min(labels)<exact==max(labels)
+                    row=public_index[index,depth,float(ratio)]
+                    assert row['complete']and row['completed_depth']==depth
+                    valid={json.dumps(action_to_dict(a),sort_keys=True)for a,_ in optimal}
+                    assert json.dumps(row['action'],sort_keys=True)in valid
+                    public_errors+=not row['optimal'];histogram[str(sorted(labels))]+=1
+                    if max(labels)<exact or min(labels)<exact==max(labels):
+                        exceptions.append(dict(world=label,index=index,path=row['path'],depth=depth,cell=ci,
+                            exact_best=exact,heuristic_optimal_wdl=sorted(labels),
+                            heuristic_optimal_actions=[action_to_dict(a)for a,_ in optimal],public=row['action']))
+                rows.append(dict(cell=ci,depth=depth,forced_errors=forced_errors,
+                    tie_risks=tie_risks,public_errors=public_errors,optimal_set_wdl=histogram))
+        tables[label]=dict(rows=rows,queries=len(public),nodes=sum(r['nodes']for r in public))
+    result=dict(scope='One fixed matched H6 composition pair,all common ongoing prefixes;exact optimal SETS within open cells,public tie choice at representatives only.',
+        upper=upper,leaf_lines=sorted(lines),cuts=list(map(str,cuts)),cells=cells,
+        contexts=len(common),common_prefixes=len(all_common),
+        changed_exact_context_values=sum(trees[0].values[maps[0][p]]!=trees[1].values[maps[1][p]]for p in all_common),
+        terminal_disagreements=sum(maps[0][p].terminal_status.status!=maps[1][p].terminal_status.status for p in all_common),
+        tables=tables,seconds=time.perf_counter()-began)
+    (output/'summary.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+    (output/'exceptions.json').write_text(json.dumps(exceptions,indent=2),encoding='utf-8')
+    return result
+
+
 def saved_root_decisions(benchmark, output, *, world='M_M', depths=(1,2,3,4,6)):
     """Reuse saved exact root/action labels; only public finite search is new."""
     from generic_chess.rules.schema import ruleset_from_dict
@@ -268,7 +357,8 @@ def saved_root_decisions(benchmark, output, *, world='M_M', depths=(1,2,3,4,6)):
     return rows
 
 
-def learning_diagnostic(output, *, episodes=32):
+def learning_diagnostic(output, *, episodes=32, rule_horizon=6, episode_horizon=6,
+                        observer=None):
     """Small experiential-gradient check; exact labels are observer-only.
 
     Same fresh states, initial weights, learner and fixed D2 foe. Candidate
@@ -279,13 +369,20 @@ def learning_diagnostic(output, *, episodes=32):
     from generic_chess.learning.incremental import Model,TDLeafEpisode,FixedScaleSessionEnv,play_episode,BudgetEnd
     output=Path(output);output.mkdir(parents=True,exist_ok=False)
     began=time.perf_counter();paid=0;active={};rows=[];queries=[]
-    rules=make_rules(kinds=('A','B'),layouts=quiet_layouts(8),b_geometry=KING)
-    compiled=compile_ruleset_for_execution(rules);oracle=ExactTree(compiled,seconds=30)
-    for i in range(8):oracle.solve(initial_state(compiled,str(i)if i else None))
+    rules=make_rules(kinds=('A','B'),layouts=quiet_layouts(8),b_geometry=KING,horizon=rule_horizon)
+    compiled=compile_ruleset_for_execution(rules)
+    if observer is None:
+        oracle=ExactTree(compiled,seconds=30)
+        for i in range(8):oracle.solve(initial_state(compiled,str(i)if i else None))
+        def observer(state,action):
+            child=None if action is None else next(s for a,s in oracle.edges[state]if a==action)
+            return oracle.values[state],None if child is None else oracle.values[child]
+    game_nodes=episode_horizon*8192
     config=dict(question='Can material parameters change without policy improvement,and does fully terminal TDLeaf search leave a material gradient?',
         episodes_per_arm=episodes,depths=[1,6],foe_depth=2,initial_B=.25,lambda_=.95,eta=.05,
         scale=10,root_order='i%8;learnercolor=(i//8)%2',query_nodes=8192,
-        game_nodes=49152,game_seconds=3,whole_seconds=120,whole_nodes=2000000,
+        game_nodes=game_nodes,game_seconds=3,whole_seconds=120,whole_nodes=2000000,
+        rule_horizon=rule_horizon,episode_horizon=episode_horizon,
         oracle='Research observer only;never search evaluator,ordering,TDtarget or training data.',
         source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
@@ -302,24 +399,23 @@ def learning_diagnostic(output, *, episodes=32):
             try:
                 for i in range(episodes):
                     guard()
-                    if 2000000-paid<49152:raise BudgetEnd('FULL_GAME_RESERVE_CAP')
+                    if 2000000-paid<game_nodes:raise BudgetEnd('FULL_GAME_RESERVE_CAP')
                     session=GameSession(compiled,initial_setup_key=str(i%8)if i%8 else None)
                     env=FixedScaleSessionEnv(session,unit_type='A');before=list(model.weights)
                     active.update(depth=depth,episode=i,color=(i//8)%2)
                     def observe(ply,actor,receipt):
                         nonlocal paid
                         paid+=receipt.nodes;assert model.weights==before
-                        state=env.session.state;child=None
-                        if receipt.complete:
-                            child=next(s for a,s in oracle.edges[state]if a==receipt.action.action)
+                        state=env.session.state
+                        best,chosen=observer(state,receipt.action.action if receipt.complete else None)
                         sign=1 if actor==0 else -1
                         q=dict(active,ply=ply,actor=actor,candidate_weights=before,
                             search_weights=list((model if actor==active['color']else foe).weights),
-                            **asdict(receipt),oracle_best=oracle.values[state]*sign,
-                            oracle_chosen=None if child is None else oracle.values[child]*sign)
+                            **asdict(receipt),oracle_best=best*sign,
+                            oracle_chosen=None if chosen is None else chosen*sign)
                         queries.append(q);qout.write(json.dumps(q,default=str)+'\n');qout.flush()
                     result=play_episode(env,model,opponent=foe,learner=TDLeafEpisode(),learner_color=active['color'],
-                        horizon=6,depth=depth,opponent_depth=2,query_nodes=8192,max_nodes=49152,seconds=3,
+                        horizon=episode_horizon,depth=depth,opponent_depth=2,query_nodes=8192,max_nodes=game_nodes,seconds=3,
                         cancel=guard,on_query=observe,search_backend='mainline')
                     row=dict(active,before_weights=before,weights=list(model.weights),record=env.record(),**asdict(result))
                     rows.append(row);eout.write(json.dumps(row)+'\n');eout.flush()

@@ -10,6 +10,7 @@ from scripts.exact_generic_preference_solver_v3 import solve_root_threshold_v3
 from scripts.leaper_microgames import (
     KING, ExactTree, Exhaustion, make_rules, session_at, decision_study,
     blockade_example,terminal_census,learning_diagnostic,coexistence_rules,
+    composition_parameter_cells,quiet_layouts,
 )
 
 
@@ -129,3 +130,21 @@ def test_transpose_is_full_finite_game_isomorphism_including_repetition_history(
         assert {transpose(a)for a in actions}==set(legal_actions(right,compiled))
         pending.extend((apply_action(left,a,compiled),apply_action(right,transpose(a),compiled))for a in actions)
     assert visited==416
+
+
+def test_complete_material_leaf_cells_separate_forced_error_from_tied_action(tmp_path):
+    result=composition_parameter_cells(tmp_path/'cells',upper=2,depths=(1,2))
+    assert result['cuts']==['1/2','1','3/2']
+    # These checks also execute all public/reference action-set comparisons.
+    for row in result['tables']['ABC']['rows']:
+        assert row['forced_errors']==0 and row['tie_risks']==2
+    aba=result['tables']['ABA']['rows']
+    low=next(r for r in aba if r['cell']==0 and r['depth']==1)
+    high=next(r for r in aba if r['cell']==2 and r['depth']==1)
+    assert (low['forced_errors'],high['forced_errors'])==(2,3)
+
+
+def test_larger_board_safe_layout_selection_keeps_declared_count_and_default():
+    layouts=quiet_layouts(4,width=4)
+    assert layouts[0]==(0,1,15,14)and len(set(layouts))==4
+    compile_ruleset_for_execution(make_rules(width=4,layouts=layouts))

@@ -42,6 +42,10 @@ class Receipt:
     completed_depth: int = 0
     attempted_depth: int = 0
     attempts: tuple = ()
+    # Literal mainline PV choices, including a verified leaf declaration.
+    # Historical reference receipts leave this empty; no path is reconstructed
+    # from features or a scalar value. Used only for opt-in research logging.
+    pv_choices: tuple = ()
 
 
 @dataclass(frozen=True)
