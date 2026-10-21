@@ -183,18 +183,40 @@ retained. All UNKNOWN and14 incomplete deeper Core references remain. One failed
 exploratory override assumption has up to two unretained partial returns, excluded
 from retained counts. No learner, AUX or evaluation-default change.
 
-Next: execute the prepared `artifacts/aux-deadline-20261021/price-third-foe-next.json`.
-Run36 new D/A games against fixed A=StaticOFF. Reuse36 C/A baseline frames from
-existing A/C matches by role transpose and utility negation; their interval is
-[-2/9,1/3]. Zero new D/A queries have run. Keep all18 roots/both subject roles,
-node512/q0/48-ply/180-second caps and common Static ordering. A contrary result
-changes candidate priority; do not extend old UNKNOWN, select favorable families
-or turn this diagnostic into Elo/default/training work.
+[PRICE_TIES_TRANSFER_AND_REFERENCE_UNITS_20261022.md](PRICE_TIES_TRANSFER_AND_REFERENCE_UNITS_20261022.md)
+closes the prepared check: 36 new D/A games and 649 paid queries retain five
+UNKNOWN; D-C [-4/9,7/18] does not extend the fixed-C advantage. At 50 actual first
+divergences, 45 full D2 argmax supports are disjoint; promotion removal leaves 45,
+material alone five. Uniform tie diagnostics do not establish WDL or policy utility.
 
-Backup1: qualify `.local_agent/normalization_subset_probe.py` before any new
-normalization candidate. It matches36 typed-support cases without a legacy
-handle and rejects real type transforms. Initial-setup, stock and hand-conversion
-controls remain pending. Keep every type field and conservative fallback outside
-the proved scope; no current default change. Backup2: inspect new primary general-
-game evaluation literature for one cheap decision-changing criterion, without a
-model port or AUX learning duplication. Science OPEN.
+A new prospective cohort fixes 18 configurations before generation: 15 successes,
+three failures, no replacement. Its 105 episodes and 1,819 paid queries retain one
+batch UNKNOWN. On accepted rules, D-C against C is [-1/15,0], against A is 1/6,
+and the opponent interaction is [1/6,7/30]. Do not prioritize a universal Unit
+winner in this envelope. Planned-completion sensitivities include zero; missing
+4x4 free-random coverage is explicit. All full Core replay/PV/history checks pass;
+52 optional actual-depth checks remain budget-incomplete. No default or cap refill.
+
+Complete linear prices using an instance reference are the next cheap candidate;
+nonlinear relative material is not needed solely for declaration invariance.
+A reference based on unique initial types fails a qualified file-locked split;
+the instance reference passes. Invariance and limited search feasibility are
+not utility evidence. Material-only composition works without a legacy handle
+on six typed-IR fixtures and 11 queries. Preserve supplied proved-inert hand zero
+and every excluded-pattern scope. No default admission or AUX learner change.
+
+Next: extend the already-started `IR-instance-pair-preflight.json` study to the
+remaining five fixtures and longer qualified histories. Does the complete,
+scope-preserving instance unit stay invariant under genuinely dormant declarations
+when promotion, drops, auxiliary state and type effects are present? Predeclare
+cheap paired controls, preserve full Core states/history and identifiers, and
+decline rather than strip meaningful effects or IDs. The first castling pair
+passes 15 one-ply maps; this is not a generic isomorphism theorem. A contrary
+result revises the unit candidate before any utility study. Do not change defaults.
+
+Backup1: compare a full constant-table baseline and a small state-interaction
+candidate after scope qualification, with explicit costs and frozen conditions;
+do not repeat closed C/D panels or extend UNKNOWN. Backup2: new primary literature
+only when it supplies a decision-changing cheap criterion, without an AUX learner
+or solver port. Originals retain metadata recovery, one missing R return and an
+unretained timing probe. No speed advantage is claimed. Science OPEN.

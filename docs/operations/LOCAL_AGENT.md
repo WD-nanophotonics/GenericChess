@@ -120,6 +120,14 @@ send a request or follow-up; read only an incoming user Chat message or direct
 confirmation, and continue shorter independent work meanwhile. Do not split a run to evade this rule or confuse it
 with segment duration. The user's 2026-10-20 direction replaces the former live-review route; the older >1hour threshold is superseded.
 
+Persist each newly returned decision or timing batch atomically BEFORE downstream
+validation/assertions; preserve the return even when its interpretation fails.
+Finish and save each immutable scientific input before marking its execution
+context ready. Distinguish generation failure from profile/metadata/capture
+failure; a successful in-memory context is not proof that its input was saved.
+On harness repair reuse preserved completed records, leave irretrievably missing
+returns explicit, and do not replay frozen fitness or timing merely to refill.
+
 Inspect completed result files, not a large report being atomically replaced by
 its producer. A Windows read can block replacement. Monitor producer stdout or
 use a reader sharing delete access; preserve interrupted cases separately from

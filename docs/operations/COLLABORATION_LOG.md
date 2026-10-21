@@ -6108,3 +6108,39 @@ feasibility has begun, with setup/stock/conversion controls pending. After the
 linked-bound correction, a new third-foeA matchup is prepared with36existing
 C/A baseline frames and zero new D/A queries. Project Chat
 feedback is evaluated advice, not a new authorization or publication gate.
+
+
+## PRIMARY 2026-10-22 — ties, prospective utility and reference units
+
+Read-only Chat 1792608525.770219 and its complete thread were saved before
+assessment. Adopt Claude's tie/utility distinction; defer AUX leaper cell fitting,
+enumerator/scaling and prefix choices to AUX. The comment cited older 5442;
+subsequent whole-policy evidence and the new cohort are evaluated explicitly.
+PRIMARY did not review or independently execute AUX source/experiments. No outbound
+reply, mention, extra worker or cross-checkout write occurred.
+
+PRIMARY executes 36 new third-foe games and 105 prospective episodes. The accepted
+15-rule cohort gives D-C against C [-1/15,0], against A 1/6, and opponent interaction
+[1/6,7/30], with one UNKNOWN. Three generator failures leave 21 planned slots
+missing. No universal winner or default. Of 50 old first divergences, 45 have
+disjoint D2 supports; material alone gives five, promotion removal 45. This is a
+diagnostic on selected states, not WDL error or a population rate. All 105 full
+histories/PVs pass Core; 52 optional deep checks remain incomplete.
+
+A complete linear instance-reference candidate passes declaration/split controls.
+Nonlinear relative material has no identified one-step advantage over C at D2.
+Pure typed-IR material-only feasibility passes 11 queries on six fixtures. The
+first auxiliary paired control passes 15 children; remaining cases are next.
+Product APIs, cache/search/defaults, Native code and AUX learning are unchanged.
+
+Efficiency and limits: prospective paid cost is 2,674.466 query seconds and
+15,090,201 nodes; 60 initial queries are reused. C/C controls consume 482.102
+seconds, though their symmetrized baseline is analytically zero; some initial-query
+cost would move elsewhere if full self-play were skipped. One R return and 8,421
+direct timing evaluations were unretained after harness errors: no refill,
+imputation or speed claim. Fifteen metadata capture failures were recovered from
+the same frozen seeds and every actual initial record verified without rerunning
+games. Three real generation failures remain separate. Originals and executed
+versus future-repaired sources remain explicit. The
+[report](../research/PRICE_TIES_TRANSFER_AND_REFERENCE_UNITS_20261022.md) and technical
+projection preserve decisions, failures and unresolved scope.

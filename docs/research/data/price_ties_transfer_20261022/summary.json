@@ -1,0 +1,113 @@
+{
+  "parent": "d1017250c8720113000105b7519f6beffa774d0a",
+  "new_game_episodes": 141,
+  "third_foe": {
+    "interval": [
+      "-4/9",
+      "7/18"
+    ],
+    "new_queries": 649,
+    "D_outcomes": {
+      "[-1, 1]": 5,
+      "[1, 1]": 16,
+      "[-1, -1]": 15
+    },
+    "C_outcomes": {
+      "[-1, 1]": 10,
+      "[1, 1]": 14,
+      "[-1, -1]": 12
+    }
+  },
+  "prospective": {
+    "accepted_rules": 15,
+    "planned_configs": 18,
+    "accepted_conditioned": {
+      "D-C_vs_C": [
+        "-1/15",
+        "0"
+      ],
+      "D-C_vs_A": [
+        "1/6",
+        "1/6"
+      ],
+      "opponent_interaction_A_minus_C": [
+        "1/6",
+        "7/30"
+      ],
+      "interpretation": "FinitepositiveUnitONcontrastagainstA,butno positivecontrastagainstC;strictopponentinteractiononthisacceptedcohort,notuniversalpricewinner."
+    },
+    "planned_completion_sensitivity": {
+      "C": [
+        "-2/9",
+        "1/6"
+      ],
+      "A": [
+        "-7/36",
+        "17/36"
+      ]
+    },
+    "stats": {
+      "executed_games": 105,
+      "history_records": 1984,
+      "PV_plies": 6464,
+      "reused_queries": 60,
+      "new_queries": 1819,
+      "UNKNOWN_games": 1,
+      "natural_terminal_games": 104,
+      "paid_nodes": 15090201,
+      "evaluation_calls": 13075726,
+      "native_calls": 1969848,
+      "native_fallbacks": 0
+    },
+    "paid_completed_depths": {
+      "4": 1261,
+      "3": 484,
+      "2": 74
+    },
+    "terminal_statuses": {
+      "checkmate": 103,
+      "repetition": 1,
+      "ongoing": 1
+    },
+    "batch_seconds": 2701.4633951999713
+  },
+  "tie_disjoint_argmax": {
+    "full_disjoint": 45,
+    "no_promotion_disjoint": 45,
+    "material_only_disjoint": 5,
+    "C_promotion_changes_set": 0,
+    "selected_strict_reversal_without_promotion": 45
+  },
+  "IR_interface": {
+    "cases": 6,
+    "new_queries": 11,
+    "Core_entries": 1512,
+    "matched": 11
+  },
+  "data_limits": {
+    "generation": 3,
+    "input_metadata_AttributeError": 15,
+    "input_recovery_same_frozen_seeds": 15,
+    "all_actual_initial_records_matched": 105,
+    "unretained_requested_R_D1_queries": 1,
+    "retained_R_queries": 35,
+    "planned_R_queries": 36,
+    "unretained_direct_evaluation_timing_calls": 8421,
+    "timing_benchmark_replayed": false,
+    "Core_optional_matched_checks": 4,
+    "Core_optional_incomplete_checks": 52,
+    "coupling_scope_corrected": "Identical observed C/D histories do not identify same futurepolicyvalue;11matchedthird-foegamesareallterminal,soeffectintervalunchanged. C/CsamepolicyframeconstraintandcommonPi state identityremainvalid."
+  },
+  "production_changes": "None;profiles/search/defaults/native/API unchanged. Privatecandidates only.",
+  "next": "CompletepairedIRdeclaration/historyscopeforinstance-referencebaseline;no universalpricewinner/default/learneractivation.",
+  "dictionaries": {
+    "actions": 4007,
+    "GameRecords": 172,
+    "states": 137,
+    "rules": 51
+  },
+  "roundtrip": "Every registeredfullGameRecord,state,rulelosslesslydecodedandmatchedoriginalJSON",
+  "evidence_sha256": "589a8bf0024b61ac054fdaa49c14cec7dcf3e2f0bc536792020565924b5fe73a",
+  "evidence_bytes": 3933277,
+  "producer_source_count": 25
+}
