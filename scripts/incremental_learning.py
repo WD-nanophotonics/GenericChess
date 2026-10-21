@@ -53,11 +53,16 @@ def run(args):
         if perf_counter() >= deadline:
             raise BudgetEnd('GLOBAL_TIME_CAP')
 
-    def root(seed):
+    def train_stop():
+        stop()
+        if perf_counter() >= train_deadline:
+            raise BudgetEnd('TRAIN_TIME_CAP')
+
+    def root(seed, guard=stop):
         env = FixedScaleSessionEnv(GameSession(compiled), unit_type=args.unit)
         randomizer = random.Random(seed)
         for _ in range(randomizer.randrange(2, 9)):
-            stop()
+            guard()
             try:
                 terminal = env.terminal()
             except NonScoringTerminal:
@@ -68,7 +73,10 @@ def run(args):
             if not choices:
                 break
             env.push(randomizer.choice(choices))
-        return env.replay()
+        guard()
+        replayed = env.replay()
+        guard()
+        return replayed
 
     training, evaluation = [], []
     costs = Counter()
@@ -88,7 +96,7 @@ def run(args):
             trace.write(json.dumps(row, allow_nan=False) + '\n')
             trace.flush()
 
-        def episode(env, candidate, *, phase, index, color, profile, remaining, seconds):
+        def episode(env, candidate, *, phase, index, color, profile, remaining, seconds, guard=stop):
             active.update(phase=phase, index=index, color=color, profile=profile, env=env)
             start_record = env.record()
             result = play_episode(env, candidate, opponent=foe,
@@ -96,7 +104,7 @@ def run(args):
                 learner_color=color, horizon=args.horizon, depth=args.depth,
                 query_nodes=args.query_nodes, max_nodes=min(args.game_nodes, remaining),
                 seconds=seconds, seed=args.seed * 1_000_000 + (0 if phase == 'train' else 1_000_000_000) + index * args.horizon,
-                cancel=stop, on_query=on_query)
+                cancel=guard, on_query=on_query)
             env.replay()  # Actual full history/result, not a state-only check.
             row = dict(phase=phase, index=index, color=color, profile=profile,
                        start_record=start_record, final_record=env.record(),
@@ -105,6 +113,7 @@ def run(args):
             episodes.flush()
             return row
 
+        training_phase_seconds = None
         try:
             for index in range(args.train_episodes):
                 stop()
@@ -112,14 +121,23 @@ def run(args):
                 seconds = train_deadline - perf_counter()
                 if remaining <= 0 or seconds <= 0:
                     break
-                env = root(args.seed * 10_000 + index)
+                try:
+                    env = root(args.seed * 10_000 + index, guard=train_stop)
+                except BudgetEnd as error:
+                    if str(error) == 'TRAIN_TIME_CAP':
+                        break
+                    raise
+                seconds = train_deadline - perf_counter()
+                if seconds <= 0:
+                    break
                 row = episode(env, model, phase='train', index=index, color=index % 2,
-                              profile='trained', remaining=remaining, seconds=seconds)
+                              profile='trained', remaining=remaining, seconds=seconds, guard=train_stop)
                 training.append(row)
                 if 'STOPPED_USER' in row['ending']:
                     raise BudgetEnd('STOPPED_USER')
                 if len(training) % 8 == 0:
                     print(json.dumps(dict(phase='train', episodes=len(training), nodes=costs['train_nodes'], seconds=perf_counter() - began)), flush=True)
+            training_phase_seconds = perf_counter() - began
             final = list(model.weights)
             for family in range(args.eval_pairs):
                 for color in (0, 1):
@@ -130,6 +148,9 @@ def run(args):
                         if remaining <= 0 or seconds <= 0:
                             raise BudgetEnd('EVALUATION_CAP')
                         env = root(args.seed * 10_000 + 1_000_000 + family)
+                        seconds = deadline - perf_counter()
+                        if seconds <= 0:
+                            raise BudgetEnd('GLOBAL_TIME_CAP')
                         row = episode(env, unchanged_model(final if profile == 'trained' else initial),
                                       phase='eval', index=2 * family + color, color=color,
                                       profile=profile, remaining=remaining, seconds=seconds)
@@ -140,6 +161,8 @@ def run(args):
                     print(json.dumps(dict(phase='eval', families=family + 1, nodes=costs['eval_nodes'], seconds=perf_counter() - began)), flush=True)
             status = 'PLANNED_EPISODES_COMPLETE'
         except BudgetEnd as error:
+            if training_phase_seconds is None:
+                training_phase_seconds = perf_counter() - began
             status = str(error)
     paired = {(r['index'], r['profile']): r for r in evaluation}
     lower = upper = 0
@@ -153,6 +176,7 @@ def run(args):
         lower += (candidate if candidate is not None else -1) - (baseline if baseline is not None else 1)
         upper += (candidate if candidate is not None else 1) - (baseline if baseline is not None else -1)
     summary = dict(status=status, revision=revision, seconds=perf_counter() - began,
+        training_phase_seconds=training_phase_seconds,
         config=config, final_weights=list(model.weights), costs=dict(costs),
         training_episodes=len(training), training_updates=sum(bool(r['update']['changed']) for r in training),
         evaluation_slots=len(evaluation), expected_evaluation_slots=args.eval_pairs * 4,

@@ -18,7 +18,7 @@ from scripts.generic_proof_fixtures import krk_ruleset
 from rule_semantics_ir_fixtures import weird_rulesets
 
 
-def declaration_session(outcome):
+def declaration_session(outcome, extra_declarations=()):
     board = [None] * 16
     for square, piece in ((1, Piece(0, 'K', 'K')), (3, Piece(1, 'K', 'K')),
                           (8, Piece(0, 'R', 'R'))):
@@ -26,7 +26,7 @@ def declaration_session(outcome):
     rules = replace(krk_ruleset(4),
                     initial_position=tuple(tuple(board[y:y + 4]) for y in range(0, 16, 4)),
                     declarations=(RuleDeclaration('claim', 0, require_not_in_check=False,
-                                                  failure_outcome=outcome),))
+                                                  failure_outcome=outcome),) + extra_declarations)
     return GameSession(compile_ruleset_for_execution(rules))
 
 
@@ -217,3 +217,148 @@ def test_search_non_scoring_terminal_keeps_cost_but_never_creates_a_target():
     result = play_episode(env, model, opponent=Model(model.weights), learner=TDLeafEpisode())
     assert result.outcome is None and result.nodes > 0 and result.queries == 1
     assert result.update['samples'] == 0 and env.record() == before
+
+
+def test_perpetual_loss_trains_actual_player0_return_with_full_history():
+    # This is a played history, not a state-only repetition-count mock. A
+    # dummy fixed P unit leaves R free so the sign of the actual update is visible.
+    from generic_chess.core.movement import LeapAtom
+    from generic_chess.session.result import SessionStatus
+
+    rules = krk_ruleset(4)
+    dummy = replace(rules.piece_types[1], type_id='P', movement_atoms=(LeapAtom((0, 1)),))
+    board = [None] * 16
+    for index, piece in ((0, Piece(0, 'K', 'K')), (15, Piece(1, 'K', 'K')),
+                         (2, Piece(0, 'R', 'R'))):
+        board[index] = piece
+    rules = replace(rules, piece_types=rules.piece_types + (dummy,),
+        drop_allowed={**rules.drop_allowed, 'P': ((False,) * 16,) * 2},
+        repetition_policy='continuous_check_loss',
+        initial_position=tuple(tuple(board[i:i + 4]) for i in range(0, 16, 4)))
+    session = GameSession(compile_ruleset_for_execution(rules))
+    for source, target in (((2, 0), (3, 0)), ((3, 3), (2, 3)),
+                           ((3, 0), (2, 0)), ((2, 3), (3, 3)),
+                           ((2, 0), (3, 0)), ((3, 3), (2, 3))):
+        session.submit(next(a for a in session.legal_actions()
+                            if (a.from_square.file, a.from_square.rank) == source
+                            and (a.to_square.file, a.to_square.rank) == target))
+    env = FixedScaleSessionEnv(session, unit_type='P')
+    before = env.record()
+    model = Model([1., .7, 1., 1.])
+    result = play_episode(env, model, opponent=Model([1.] * 4),
+        learner=TDLeafEpisode(), learner_color=0, horizon=2, depth=1, seed=0)
+    assert result.ending == 'ACTUAL_TERMINAL' and result.outcome == -1
+    assert env.session.result.status is SessionStatus.PERPETUAL_CHECK
+    assert env.session.result.winner == 1 and result.plies == 2
+    assert len(env.record()['actions']) == 8 and len(before['actions']) == 6
+    prediction = tanh(.7 / 10.)
+    expected = .7 + .05 * (-1 - prediction) * (1 - prediction ** 2) / 10.
+    assert model.weights == pytest.approx([1., expected, 1., 1.], abs=1e-15)
+    assert result.update['terminal_credit_l1'] > 0 and not result.update['censored']
+    assert env.replay().record() == env.record()
+    assert FixedScaleSessionEnv(session, unit_type='P').record() == before
+
+
+def test_actual_no_progress_draw_is_distinct_from_external_horizon():
+    from generic_chess.session.result import SessionStatus
+
+    rules = replace(krk_ruleset(4), no_progress_draw=RuleNoProgressDraw(1, True))
+    env = FixedScaleSessionEnv(GameSession(compile_ruleset_for_execution(rules)), unit_type='R')
+    result = play_episode(env, Model([1., 1.]), opponent=Model([1., 1.]),
+                          learner=TDLeafEpisode(), horizon=1, depth=1)
+    assert result.outcome == 0 and result.ending == 'ACTUAL_TERMINAL'
+    assert env.session.result.status is SessionStatus.NO_PROGRESS_DRAW
+    assert not result.update['censored'] and env.replay().record() == env.record()
+
+
+@pytest.mark.parametrize('outcome', ['RESTART', 'NO_CONTEST'])
+def test_neutral_declaration_can_still_hide_a_real_win_without_inventing_utility(outcome):
+    # Explicitly preserve this conservative limitation; it is not a complete
+    # player for a game whose non-scoring actions have no W/L/D utility.
+    session = declaration_session('WIN', (
+        RuleDeclaration('neutral', 0, require_not_in_check=False, failure_outcome=outcome),))
+    env = FixedScaleSessionEnv(session, unit_type='R')
+    before = env.record()
+    win = next(a for a in env.actions() if a.declaration_id == 'claim')
+    env.push(win)
+    assert env.terminal() == 1
+    env.pop()
+    receipt = AlphaBeta(1, 0).search(env, Model([1., 1.]), seed=0)
+    assert not receipt.complete and receipt.action is None and receipt.value is None
+    assert receipt.nodes > 0 and receipt.samples == () and env.record() == before
+
+
+@pytest.mark.parametrize('opening_cost', [.25, .75])
+def test_runner_charges_opening_time_and_uses_training_deadline(monkeypatch, tmp_path, opening_cost):
+    """A slow opening must consume its phase budget before search starts."""
+    import json
+    from pathlib import Path
+    from types import SimpleNamespace
+    from generic_chess.learning.incremental import EpisodeResult
+    from scripts import incremental_learning as runner
+
+    clock = [0.]
+    calls = []
+
+    class OpeningEnv:
+        names = (('board', 'R'), ('hand', 'R'))
+
+        def __init__(self, *args, **kwargs):
+            self.moves = 0
+
+        def terminal(self):
+            return None
+
+        def actions(self):
+            return (0,)
+
+        def push(self, action):
+            self.moves += 1
+            clock[0] += opening_cost
+
+        def replay(self):
+            return self
+
+        def record(self):
+            return dict(moves=self.moves)
+
+    def episode(env, model, **kwargs):
+        training = kwargs['learner'] is not None
+        calls.append((training, clock[0], kwargs['seconds']))
+        if training:
+            # seed0 constructs eight opening plies. The original runner passed
+            # five seconds here after spending two, and its cancel ignored5s.
+            assert clock[0] == 2. and kwargs['seconds'] == 3.
+            clock[0] = 5.
+            with pytest.raises(BudgetEnd, match='TRAIN_TIME_CAP'):
+                kwargs['cancel']()
+        return EpisodeResult(None, 'TRAIN_TIME_CAP' if training else 'HORIZON_UNKNOWN',
+                             0, 0, 0, 0., {'changed': False} if training else None)
+
+    state = tmp_path / '.local_agent'
+    state.mkdir()
+    for name in ('rollout', 'advisor', 'slack'):
+        (state / (name + '.json')).write_text('{}')
+    monkeypatch.setattr(runner, 'ROOT', tmp_path)
+    monkeypatch.setattr(runner, 'perf_counter', lambda: clock[0])
+    monkeypatch.setattr(runner, 'FixedScaleSessionEnv', OpeningEnv)
+    monkeypatch.setattr(runner, 'play_episode', episode)
+    monkeypatch.setattr(runner.subprocess, 'check_output', lambda *a, **k: 'a' * 40 + '\n')
+    rules = Path(__file__).resolve().parents[2] / 'docs/research/data/incremental_semantic_pilot_20261021.json'
+    args = SimpleNamespace(rules=rules, output=tmp_path / 'run', unit='R', seed=0,
+        seconds=10., train_episodes=1, eval_pairs=1, train_nodes=100,
+        eval_nodes=100, horizon=2, depth=1, query_nodes=100, game_nodes=100)
+    result = runner.run(args)
+    if opening_cost == .25:
+        assert calls[0][0] and result['training_episodes'] == 1
+        assert result['training_phase_seconds'] == 5.
+    else:
+        assert not any(training for training, _, _ in calls)
+        assert result['training_episodes'] == 0
+        assert result['training_phase_seconds'] >= 5.
+    # Wall-clock guards can finish an already-running atomic operation late;
+    # they must never start a query using stale pre-opening remaining time.
+    assert all(start < 10. and seconds <= 10. - start for _, start, seconds in calls)
+    saved = json.loads((args.output / 'summary.json').read_text())
+    assert saved['evaluation_UNKNOWN'] == saved['evaluation_slots']
+    assert saved['missing_evaluation_slots'] + saved['evaluation_slots'] == 4
