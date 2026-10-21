@@ -1,7 +1,7 @@
-"""Reproducible public-AlphaBeta cost probe on generated rules in explicit IR.
+"""Reproducible public-AlphaBeta cost probe with complete semantic execution.
 
-Results go to an ignored artifact path. This is not the generator's default
-legacy carrier, a strength test, or a changed product profile. All variants use
+Results go to an ignored artifact path. Generated legacy inputs are lowered to IR; saved semantic DSL inputs use the
+product semantic compiler. This is not the generator's default legacy carrier, a strength test, or a changed product profile. All variants use
 its actual default evaluator/TT/main ordering/root scan; ordered changes q order
 only. Attack-backend overrides reuse the exact default price profile, but may
 change evaluation semantics outside qualified cohorts. Terminal/censored roots
@@ -20,7 +20,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from generic_chess.generation.config import GeneratorConfig
 from generic_chess.generation.generator import generate_game
-from generic_chess.rules.compiler import compile_legacy_ruleset_for_semantic_execution
+from generic_chess.rules.compiler import (
+    compile_legacy_ruleset_for_semantic_execution, compile_ruleset_for_execution,
+)
 from generic_chess.rules.schema import ruleset_to_dict, ruleset_from_dict
 from generic_chess.session.session import GameSession
 from generic_chess.session.serialization import deserialize_game_record
@@ -38,7 +40,7 @@ def main():
     ap.add_argument('--seed-start', type=int, default=2026102121)
     ap.add_argument('--seed-count', type=int, default=8)
     ap.add_argument('--prefixes', type=int, nargs='+', default=[0, 12])
-    ap.add_argument('--variants', choices=['legal', 'availability', 'check', 'all', 'ordered', 'ordered_evasions'],
+    ap.add_argument('--variants', choices=['core', 'legal', 'availability', 'check', 'all', 'ordered', 'ordered_evasions'],
                     nargs='+', default=['all', 'ordered'])
     ap.add_argument('--evaluation-backend', choices=['default', 'semantic_core', 'semantic_native'],
                     default='default', help='Existing attack evaluator with the exact default static profile; may change score semantics')
@@ -96,7 +98,12 @@ def main():
         try:
             rule = (ruleset_from_dict(frozen[index]['rule']) if frozen is not None
                     else generate_game(cfg).ruleset)
-            compiled = compile_legacy_ruleset_for_semantic_execution(rule)
+            if rule.semantic_actions:
+                compiled = compile_ruleset_for_execution(rule)
+                world['compilation_entry'] = 'semantic_dsl'
+            else:
+                compiled = compile_legacy_ruleset_for_semantic_execution(rule)
+                world['compilation_entry'] = 'legacy_to_semantic'
         except Exception as exc:
             world['setup_failure'] = type(exc).__name__ + ':' + str(exc)
             world['rule_setup_seconds'] = time.perf_counter() - setup_started
@@ -138,6 +145,7 @@ def main():
                         evaluator = SemanticAttackEvaluator(compiled, profile, config,
                             backend=args.evaluation_backend.removeprefix('semantic_'))
                     player = AlphaBetaPlayer(compiled, use_disk_cache=False, evaluator_override=evaluator,
+                        use_native_semantic_legality=variant != 'core',
                         use_native_semantic_availability=variant in ('availability', 'all', 'ordered', 'ordered_evasions'),
                         use_native_semantic_check=variant in ('check', 'all', 'ordered', 'ordered_evasions'),
                         tuning=SearchTuning(use_ordered_qsearch=variant in ('ordered', 'ordered_evasions'),

@@ -84,9 +84,50 @@ def test_fresh_winning_certificates_replay_all_defenses_with_real_history(graph)
     assert visited>100
 
 
+def test_history_certificate_replays_real_terminal_and_rejects_draw_or_resource_cutoff(graph):
+    from scripts.leaper_retrograde import winning_history_certificate
+    setup=next(i for i,r in enumerate(graph['roots'])if graph['values'][r]==1)
+    state=initial_state(graph['compiled'],str(setup)if setup else None)
+    proof=winning_history_certificate(graph,state)
+    assert proof['winner']==0 and proof['terminal_branches']>0
+    with pytest.raises(Exhaustion,match='UNKNOWN'):
+        winning_history_certificate(graph,state,max_nodes=0)
+    draw=next(i for i,r in enumerate(graph['roots'])if graph['values'][r]==0)
+    with pytest.raises(ValueError,match='decisive'):
+        winning_history_certificate(graph,initial_state(graph['compiled'],str(draw)if draw else None))
+
+
+def test_already_terminal_certificate_needs_no_new_graph_history_cache(graph):
+    from scripts.leaper_retrograde import winning_history_certificate
+    index=next(i for i,v in graph['terminals'].items()if v)
+    state=fresh_state(graph['positions'][index],graph['compiled'])
+    uncached={k:v for k,v in graph.items()if k not in('key_indices','history_values')}
+    proof=winning_history_certificate(uncached,state)
+    assert proof['winner']==state.terminal_status.winner and proof['leaf_paths']==[[]]
+    assert proof['nodes']==1 and proof['root_rank']==0
+
+
 def test_graph_budget_failure_produces_no_numeric_draw_labels():
     with pytest.raises(Exhaustion,match='UNKNOWN'):
         solve_world(max_states=0)
+
+
+@pytest.mark.parametrize('lineup', [('A','B','A'),('A','B','C')])
+def test_layout_intervention_preserves_occupancy_and_changes_only_declared_AB_squares(lineup):
+    from generic_chess.core.attacks import is_in_check
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from scripts.leaper_microgames import coexistence_rules
+    original=compile_ruleset_for_execution(coexistence_rules(lineup))
+    swapped=compile_ruleset_for_execution(coexistence_rules(lineup,layout='swap_ab'))
+    before=initial_state(original).position.board
+    state=initial_state(swapped);after=state.position.board
+    assert Counter(before)==Counter(after)
+    assert [i for i,p in enumerate(before)if p]==[i for i,p in enumerate(after)if p]
+    for i,p in enumerate(before):assert after[{1:3,3:1,7:5,5:7}.get(i,i)]==p
+    assert not state.terminal_status.is_terminal
+    assert not any(is_in_check(state.position,c,swapped)for c in(0,1))
+    with pytest.raises(ValueError,match='layout'):
+        coexistence_rules(lineup,layout='typo')
 
 
 def test_actual_ongoing_history_can_turn_fresh_win_into_draw(graph):
@@ -127,6 +168,21 @@ def test_blocked_root_action_labels_match_complete_one_move_histories(graph):
             assert label==-history_value(graph,child)
 
 
+def test_one_prefix_attractor_labels_agree_with_each_actual_child_history(graph):
+    from scripts.leaper_retrograde import history_action_labels
+    from scripts.leaper_microgames import session_at
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    compiled=compile_ruleset_for_execution(make_rules())
+    tree=ExactTree(compiled);tree.solve(initial_state(compiled))
+    for short,path in tree.paths.items():
+        if not tree.edges[short]:continue
+        state=session_at(graph['compiled'],None,path).state
+        if state.terminal_status.is_terminal:continue
+        labels=history_action_labels(graph,state)
+        for action,value in labels.items():
+            assert value==-history_value(graph,apply_action(state,action,graph['compiled']))
+
+
 def test_material_surplus_A_against_bare_Anchor_does_not_imply_winning_value():
     from scripts.leaper_microgames import KING
     graph=solve_world(kinds=('A','B'),b_geometry=KING)
@@ -135,6 +191,32 @@ def test_material_surplus_A_against_bare_Anchor_does_not_imply_winning_value():
         ordinary=[piece.current_type_id for piece in p.board if piece and piece.current_type_id!='K']
         if ordinary==['A']:positions.append(i)
     assert positions and all(graph['values'][i]==0 for i in positions)
+
+
+def test_fresh_C_only_control_has_material_ties_but_public_D3_finds_actual_mate():
+    from copy import copy
+    from scripts.leaper_microgames import coexistence_rules
+    from generic_chess.core.pieces import Piece
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.session.session import GameSession
+    from generic_chess.learning.incremental import FixedScaleSessionEnv,Model
+    from generic_chess.learning.mainline_search import search
+    actors={0:Piece(0,'K','K'),3:Piece(0,'B','B'),4:Piece(0,'A','A'),6:Piece(1,'C','C'),8:Piece(1,'K','K')}
+    board=tuple(tuple(actors.get(y*3+x)for x in range(3))for y in range(3))
+    rules=coexistence_rules(('A','B','C'),horizon=2*9**9+1,initial_position=board)
+    compiled=compile_ruleset_for_execution(rules);session=GameSession(compiled)
+    child_features=[]
+    for action in session.legal_actions():
+        child=copy(session);child.submit(action)
+        env=FixedScaleSessionEnv(child,unit_type='A')
+        assert env.terminal()is None
+        child_features.append(env.features())
+    assert len(child_features)==6 and len(set(child_features))==1
+    env=FixedScaleSessionEnv(session,unit_type='A')
+    receipt=search(env,Model([1.]*6),depth=3,nodes=8192,seconds=3)
+    assert receipt.complete and receipt.completed_depth==3 and receipt.pv_terminal
+    for choice in receipt.pv_choices:env.push(choice)
+    assert env.terminal()==1 and env.session.state.terminal_status.status is TerminalStatus.CHECKMATE
 
 
 def test_symmetric_experiential_probe_uses_existing_learner_and_saves_literal_paths(tmp_path):
@@ -146,6 +228,51 @@ def test_symmetric_experiential_probe_uses_existing_learner_and_saves_literal_pa
     assert result['endings']=={'ACTUAL_TERMINAL':2}
     queries=[json.loads(line)for line in(tmp_path/'probe'/'queries.jsonl').read_text().splitlines()]
     assert all(q['complete']and q['pv_choices']for q in queries)
+
+
+def test_sampled_experience_preserves_actual_opening_history_and_color_pairs(tmp_path):
+    import json
+    from scripts.leaper_retrograde import experiential_probe
+    from scripts.leaper_microgames import sampled_openings,coexistence_rules,session_at
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    compiled=compile_ruleset_for_execution(coexistence_rules(('A','B','C')))
+    paths=sampled_openings(compiled,count=8)
+    assert paths==sampled_openings(compiled,count=8)
+    assert all(1<=len(p)<=1+i%6 for i,p in enumerate(paths))
+    for p in paths:
+        state=session_at(compiled,None,p).state
+        assert state.ply_count==len(p)and len(state.history)==len(p)+1
+    result=experiential_probe(tmp_path/'openings',episodes=2,opening_count=8)
+    rows=[json.loads(s)for s in(tmp_path/'openings'/'episodes.jsonl').read_text(encoding='utf-8').splitlines()]
+    queries=[json.loads(s)for s in(tmp_path/'openings'/'queries.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert result['missing']==0
+    assert [r['color']for r in rows]==[0,1]
+    assert rows[0]['initial_record']==rows[1]['initial_record']
+    for r in rows:
+        assert r['record']['actions'][:1]==r['initial_record']['actions']
+    assert all(q['prefix_length']==1 and q['opening_index']==0 for q in queries)
+
+
+def test_random_foe_changes_experience_without_fabricating_searches_or_oracle_labels(tmp_path):
+    import json
+    from scripts.leaper_retrograde import experiential_probe
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    result=experiential_probe(tmp_path/'random',episodes=2,opening_count=8,random_foe_seed=2026102201)
+    assert result['missing']==0 and result['config']['oracle'].startswith('NONE:')
+    moves=[json.loads(s)for s in(tmp_path/'random'/'opponent-moves.jsonl').read_text(encoding='utf-8').splitlines()]
+    queries=[json.loads(s)for s in(tmp_path/'random'/'queries.jsonl').read_text(encoding='utf-8').splitlines()]
+    episodes=[json.loads(s)for s in(tmp_path/'random'/'episodes.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert moves and all(q['actor']==q['color']for q in queries)
+    assert sum(e['queries']for e in episodes)==len(queries)
+    assert sum(e['plies']for e in episodes)==len(moves)+len(queries)
+    compiled=compile_ruleset_for_execution(ruleset_from_dict(json.loads((tmp_path/'random'/'rules.json').read_text(encoding='utf-8'))))
+    for e in episodes:
+        session=GameSession.replay(compiled,deserialize_game_record(json.dumps(e['record'])))
+        assert session.state.ply_count==len(e['initial_record']['actions'])+e['plies']
+        if e['outcome']is not None:assert session.state.terminal_status.is_terminal
 
 
 def test_depth_curve_saves_reference_timeout_without_any_numeric_labels(tmp_path):

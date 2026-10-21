@@ -110,6 +110,40 @@ def test_C_replacement_keeps_force_occupancy_and_legal_start_fixed():
     assert len(occupancy(states[0]))==8
 
 
+def test_extra_C_can_turn_stalemate_draw_into_forced_loss_in_actual_session():
+    from scripts.leaper_microgames import conditional_C_liability
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from generic_chess.core.terminal import TerminalStatus
+    result=conditional_C_liability()
+    for key,status in(('with_C_record',TerminalStatus.CHECKMATE),('without_C_record',TerminalStatus.STALEMATE)):
+        compiled=compile_ruleset_for_execution(ruleset_from_dict(result['rule']))
+        session=GameSession.replay(compiled,deserialize_game_record(__import__('json').dumps(result[key])))
+        assert session.state.terminal_status.status is status
+    assert result['with_C_owner_value']==-1 and result['without_C_owner_value']==0
+
+
+def test_C_axis_intervention_removes_the_actual_horizontal_mate_defense_only():
+    from generic_chess.core.pieces import Piece
+    from generic_chess.core.actions import BoardMove
+    from generic_chess.core.coordinates import Square
+    from generic_chess.core.terminal import TerminalStatus
+    from generic_chess.session.session import GameSession
+    from generic_chess.rules.schema import ruleset_to_dict
+    actors={0:Piece(0,'K','K'),3:Piece(0,'B','B'),4:Piece(0,'A','A'),
+        5:Piece(1,'A','A'),6:Piece(1,'C','C'),8:Piece(1,'K','K')}
+    board=tuple(tuple(actors.get(y*3+x)for x in range(3))for y in range(3))
+    rules=[coexistence_rules(('A','B','C'),initial_position=board,c_axis=a)for a in('horizontal','vertical')]
+    data=[ruleset_to_dict(r)for r in rules]
+    assert {k for k in data[0]if data[0][k]!=data[1][k]}=={'piece_types'}
+    sessions=[GameSession(compile_ruleset_for_execution(r))for r in rules]
+    for session in sessions:session.submit(BoardMove(Square(1,1),Square(1,2)))
+    assert sessions[0].legal_actions()==(BoardMove(Square(0,2),Square(1,2)),)
+    assert sessions[1].state.terminal_status.status is TerminalStatus.CHECKMATE
+    assert sessions[1].state.terminal_status.winner==0
+
+
 def test_transpose_is_full_finite_game_isomorphism_including_repetition_history():
     from generic_chess.core.coordinates import Square
     from generic_chess.core.transition import apply_action

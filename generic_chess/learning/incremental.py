@@ -602,7 +602,7 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                  horizon=128, depth=2, query_nodes=4096, max_nodes=250_000,
                  seconds=60.0, seed=0, cancel=lambda: None, on_query=None,
                  iterative=False, opponent_depth=None, opponent_iterative=None,
-                 search_backend=None):
+                 search_backend=None, opponent_policy=None):
     """One bounded episode; training and evaluation share the same play path.
 
     The caller owns roots, seeds, aggregate budgets, stop flags and output.
@@ -617,6 +617,8 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     Generic sessions default to the public mainline iterative q0 search. The
     randomized search is an explicit historical reference and the Chess path.
     ``iterative`` switches apply to that reference; mainline always iterates.
+    An explicit opponent_policy selects a real legal reply without a search.
+    Such moves pay time/plies but create no fabricated search receipt or nodes.
     """
     if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or seconds <= 0:
         raise ValueError('invalid episode budget or player')
@@ -660,6 +662,14 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                 plies += 1
                 continue
             actor = env.player()
+            if actor != learner_color and opponent_policy is not None:
+                choice = opponent_policy(env)
+                if choice not in env.actions():
+                    raise ValueError('opponent policy returned an illegal action')
+                guard()
+                env.push(choice)
+                plies += 1
+                continue
             current = model if actor == learner_color else opponent
             current_depth = depth if actor == learner_color or opponent_depth is None else opponent_depth
             current_iterative = iterative if actor == learner_color or opponent_iterative is None else opponent_iterative

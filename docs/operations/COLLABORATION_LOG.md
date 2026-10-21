@@ -1,5 +1,42 @@
 # Current collaboration record
 
+## 2026-10-22 — layout, conditional contribution and actual learning limits
+
+DEV_AUX reused committed sandbox07b4b4a2,including the semantic caller/test.
+All238shared package files have matching Git content;only working line endings
+and two AUX-only learner modules differ. No PRIMARY state or ongoing work adopted.
+New relayed Slack1792596001's H6/ordering cautions were accepted with limits:
+clock controls already existed;task2625 attribution cannot be copied to task2620,
+whose222704ordering seeds are endpoint-free. No old game or strength slot rerun.
+The old SEND_UNCERTAIN report remains unconfirmed and was not resent.
+
+One layout swap closes7328complete queries: the previous ABC high-B preference
+vanishes. Fixed legal-opening experience yields12strict local WDL improvements,
+then frozen D2errors21to16and34to25on exposed benchmark prefixes,with one regression.
+Both endpoints nevertheless have a direct7-ply actual all-defense loss witness.
+The costlier full-policy unroll preserves9DRAW proofs,18UNKNOWN and5missing;
+one deadline-race failure and one cancelled case remain. Its unused maintained
+hook was removed,with private executed sources/traces retained. Random-foe32game
+control still draws every game,and larger coefficient drift stays in the same
+leaf-order cell:644public choices AND node counts unchanged. No strength or
+population-generalization claim is made from updates or those draws.
+
+Exact four-state A/C removal controls give[D,L,L,D]for the same owner,so C's
+contribution changes sign with A. Four actual fresh rules/graphs independently
+validate22471vertices/56626edges. Stalemate-loss removes the negative branch;
+rotating C removes the positive branch. Public D1already selects optimal WDL
+at those four roots,so strategic nonadditivity does not itself demand a new
+coefficient or evaluation architecture.142related regressions pass. Both32game
+control records and literal PV/TD/RNG calculations were independently checked.
+
+A61.2-minute effective research segment reaches a safe publication checkpoint.
+The next actual work has begun:85blind matched C-only horizontal/vertical prefixes
+compile/replay,but full-history WDL and frozen-policy comparison remain uncomputed.
+Use the existing exact graph caches and a600-second bounded study;closed experiments
+stay closed. Large generated payloads remain ignored;maintained code,compact data
+and scientific findings are the delivery. Existing ACTIVE90-minute recurrence,
+role stops,budgets and writer boundaries are unchanged.
+
 ## 2026-10-21 — existing ordering and three-seed direct evidence
 
 DEV_AUX adopted Claude1792579793's shared-search,material-independent ordering

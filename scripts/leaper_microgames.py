@@ -60,18 +60,27 @@ def make_rules(*, kinds=('M','M'), horizon=6, layouts=None, b_geometry=DIAGONAL,
         repetition_policy='draw',stalemate_result='draw')
 
 
-def coexistence_rules(lineup=('A','B'), *, horizon=6):
-    """Matched six/eight-actor setup; geometry controls keep count/occupancy."""
-    geometry={'M':KING,'A':ORTHOGONAL,'B':DIAGONAL,'C':((-1,0),(1,0))}
+def coexistence_rules(lineup=('A','B'), *, horizon=6, layout='original', initial_position=None,
+                       c_axis='horizontal'):
+    """Default matched actors, with explicit layout/axis or fresh-setup controls."""
+    if c_axis not in('horizontal','vertical'):raise ValueError('C axis must be horizontal or vertical')
+    geometry={'M':KING,'A':ORTHOGONAL,'B':DIAGONAL,
+        'C':((-1,0),(1,0))if c_axis=='horizontal'else((0,-1),(0,1))}
     if len(lineup)not in(2,3):raise ValueError('declare two or three ordinary actors per side')
     base=make_rules(kinds=('M','M'),horizon=horizon)
     types=(base.piece_types[0],)+tuple(PieceType(n,n,tuple(LeapAtom(d)for d in geometry[n]))for n in sorted(set(lineup)))
     board=[None]*9
     squares=(0,1,3,8,7,5)if len(lineup)==2 else(0,1,3,2,8,7,5,6)
+    if layout=='swap_ab':
+        squares=tuple({1:3,3:1,7:5,5:7}.get(s,s)for s in squares)
+    elif layout!='original':
+        raise ValueError('layout must be original or swap_ab')
     owners=(0,)*(len(lineup)+1)+(1,)*(len(lineup)+1)
     for square,owner,name in zip(squares,owners,('K',*lineup,'K',*lineup)):
         board[square]=Piece(owner,name,name)
-    return replace(base,piece_types=types,initial_position=tuple(tuple(board[y*3:y*3+3])for y in range(3)),
+    default=tuple(tuple(board[y*3:y*3+3])for y in range(3))
+    if initial_position is not None and layout!='original':raise ValueError('declare either layout or explicit initial position')
+    return replace(base,piece_types=types,initial_position=default if initial_position is None else initial_position,
         drop_allowed={n:((False,)*9,)*2 for n in set(lineup)})
 
 
@@ -205,6 +214,63 @@ def session_at(compiled,setup,path):
     session=GameSession(compiled,initial_setup_key=setup)
     for action in path:session.submit(action)
     return session
+
+
+def sampled_openings(compiled, *, count=8, seed=20261022, max_plies=6):
+    """Uniform legal random walks, selected without search or exact labels.
+
+    Targets cycle from one through max_plies; actual terminals truncate walks
+    and remain in the sample. Duplicate paths also remain. This changes only
+    the experience distribution, never a rule or terminal label.
+    """
+    import random
+    if count<1 or max_plies<1:raise ValueError('positive opening count/length required')
+    rng=random.Random(seed);paths=[]
+    for i in range(count):
+        session=GameSession(compiled);path=[]
+        for _ in range(1+i%max_plies):
+            if session.state.terminal_status.is_terminal:break
+            actions=sorted(legal_actions(session.state,compiled),
+                key=lambda a:json.dumps(action_to_dict(a),sort_keys=True))
+            action=rng.choice(actions);session.submit(action);path.append(action)
+        paths.append(tuple(path))
+    return paths
+
+
+def conditional_C_liability():
+    """One extra C prevents stalemate and permits forced mate in two plies.
+
+    Two legal histories in the SAME symmetric rule reach the matched boards.
+    They are explicit different histories; the decisive mechanism is immediate
+    stalemate versus a forced nonrepeating mate, not a generic history erasure.
+    """
+    from generic_chess.core.actions import BoardMove
+    from generic_chess.core.coordinates import Square
+    rule=coexistence_rules(('A','B','C'),horizon=2*9**9+1)
+    compiled=compile_ruleset_for_execution(rule)
+    present_path=(((1,0),(1,1)),((1,2),(1,1)),((0,1),(1,2)),((2,1),(1,2)))
+    absent_path=(((1,0),(1,1)),((1,2),(1,1)),((0,1),(1,0)),((1,1),(1,0)),
+        ((0,0),(0,1)),((1,0),(2,0)),((0,1),(0,0)),((2,0),(1,0)),
+        ((0,0),(0,1)),((1,0),(1,1)),((0,1),(0,0)),((2,1),(1,2)))
+    def replay(path):return session_at(compiled,None,[BoardMove(Square(*a),Square(*b))for a,b in path])
+    present=replay(present_path);absent=replay(absent_path)
+    before=json.loads(serialize_game_record(present.to_record()))
+    board=list(present.state.position.board);board[2]=None
+    assert tuple(board)==absent.state.position.board
+    assert present.state.position.side_to_move==absent.state.position.side_to_move==0
+    forced=BoardMove(Square(2,0),Square(1,0))
+    assert present.legal_actions()==(forced,)
+    assert absent.state.terminal_status.status is TerminalStatus.STALEMATE
+    present.submit(forced)
+    mate=BoardMove(Square(1,1),Square(0,1))
+    assert mate in present.legal_actions();present.submit(mate)
+    assert present.state.terminal_status.status is TerminalStatus.CHECKMATE
+    assert present.state.terminal_status.winner==1
+    return dict(rule=ruleset_to_dict(rule),with_C_owner_value=-1,without_C_owner_value=0,
+        forced=action_to_dict(forced),winning_reply=action_to_dict(mate),
+        with_C_prefix_record=before,with_C_record=json.loads(serialize_game_record(present.to_record())),
+        without_C_record=json.loads(serialize_game_record(absent.to_record())),
+        scope='Same symmetric Core/GameSession rules,matched physical boards,different explicit histories;immediate stalemate versus forced nonrepeating mate. Fresh paired-Position analysis is separate. No negative intrinsic price or evaluator bug follows.')
 
 
 def decision_study(tree, setup=None, *, limit=32, ratios=(1.,), depths=(1,2,3,4,6), states=None):

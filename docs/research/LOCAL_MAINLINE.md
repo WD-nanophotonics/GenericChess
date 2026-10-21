@@ -2,75 +2,74 @@
 
 ## Scope and infrastructure
 
-The direct user [Leaper instruction](LEAPER_DIRECTION.md) supersedes the old
-Chess TDLeaf panels. Study exact small deterministic games, composition and
-history-conditioned value, finite-search parameters and learning mechanisms.
-Oracle answers remain outside experiential training. No intrinsic price,
-additivity, monotonicity or unique parameter is assumed.
+The direct user [Leaper instruction](LEAPER_DIRECTION.md) supersedes old Chess
+TDLeaf expansion. Study exact small deterministic games, conditional strategic
+contribution, useful finite-search parameters and experiential learning. These
+are different objects; no intrinsic price, additivity or identifiability is assumed.
+Oracle answers stay outside experiential training. UNKNOWN remains unknown.
 
-Latest recovery fetched sandbox `3ddbf9988e680d473ebe5d90b2a66ec430993df5`.
-All 238 shared package files match it. Only the two AUX learner adapters differ;
-they now retain literal public PV choices for research logging. Rules, Core,
-GameSession and public search remain the committed mainline implementation.
-No other-role state, uncommitted infrastructure or tasks are adopted.
+Latest recovery fetched sandbox `07b4b4a24167b0643bdd892e7d2914adc3c5e120`.
+All238shared package files match its Git content; working-byte differences are
+Windows line endings. Only the two AUX learner adapters are additional. Imported
+the committed semantic probe caller/test; public Core/GameSession/search unchanged.
+The optional unproductive policy-unroll hook was removed after a direct witness;
+its exact executed sources, partial records/failure and caps remain private.
 
 ## Current result
 
-Full definitions, proofs, controls, failures and reproduction are in
-[clock/composition results](LEAPER_CLOCK_COMPOSITION_20261022.md).
-[First-round foundation](LEAPER_FOUNDATION_20261021.md) preserves earlier work.
+[Latest findings](LEAPER_LAYOUT_LEARNING_INTERACTION_20261022.md) and its compact
+JSON preserve all controls, costs and qualifications. Previous clock/history
+results remain in [the preceding study](LEAPER_CLOCK_COMPOSITION_20261022.md).
 
-* The inactive-clock MM graph agrees with all 288 H6 root labels. Its longest
-  fresh decisive distance is 3; 4x4 reaches 15. The 5x5 120-second failure stays
-  UNKNOWN and is not refilled. No active short clock is required for finite play.
-* Fresh Position labels are not played-history labels. All 91,712 MM history
-  contexts match an independent full-history calculation; 1,328 ongoing longer
-  contexts lose their fresh W/L to repetition history. Use full-prefix labels.
-* Matched ABA/ABC graphs contain 57,437/36,199 Positions, fresh roots both draw.
-  All 7,440 no-active-clock queries finish at 186 exposed common legal prefixes.
-  D1 low/high B errors are ABA 11/14 versus ABC 26/20. D6 ABC is 3/6. This is an
-  aggregate search-parameter relation, not a same-prefix intrinsic ranking flip.
-* A concrete ABC win after taking B has a rank-8 actual all-defense continuation;
-  ABA instead permits a vertical A capture and draws. H6 hid this difference.
-* H6 exact leaf-order cells separate forced material errors from unsafe ties.
-  4x4 depth requests make 14/3/2/1/0 errors at D1/2/3/4/6. D12 yields five
-  nonliteral completed_root_win receipts; keep UNKNOWN, not invented TD targets.
-* Longer-clock A/B learning still changes B without changing 186 actual choices.
-  Deep nonterminal leaves have zero trainable features. Symmetric ABC training
-  has 31 updates and 15 changed choices, all equal WDL; its 32 draws cover only
-  two trajectories. No learning strength or generalization is established.
+* One matched A/B layout swap completes7328queries,0missing/UNKNOWN. ABC D1
+  low/high B ties44/44errors; the old26/20preference is layout/distribution-dependent.
+* Complete material ties at D1 cannot be repaired by price alone. Learning from
+  fixed legal openings improves actual pointwise WDL choices locally; frozenD2
+  errors21to16original and34to25swapped,including one regression,not heldout strength.
+* Both learned endpoints remain exploitable: actual7-ply all-defense witness.
+  The32-case full-policy attempt retains9DRAW proofs/18UNKNOWN/5missing,including
+  one failed harness race and one cancelled case; no cap or slot reset.
+* Random-foe32episode control also draws32times. Larger weight drift stays in the
+  same exact27-feature ordering cell;644public D2actions AND node counts identical.
+* Four independent legal fresh games at fixed squares give owner1[A+C,A,C,none]
+  values[D,L,L,D]: C marginal+1withA,-1withoutA. Complete graphs22471vertices/
+  56626edges match cached transitions/terminals/values/ranks after fingerprint rename.
+  Stalemate-loss changes this to[D,L,L,L]; verticalC changes it to[L,L,L,D].
+  These isolate terminal/geometry mechanisms,not negative intrinsic C prices.
+* Uniform D1/2/3 already acts optimally at those four roots; do not train them
+  as a supposed discriminating strength test or infer a new evaluator default.
+* Task2620 zero-search reuse verifies222704endpoint-free ordering seeds. Its
+  task2625-style seed confound is absent; later shared-budget cost coupling remains.
 
 ## Next executable work
 
-Main: Does the D1 low/high B preference contrast survive ONE initial-layout
-intervention? Swap A/B squares (1,3) and (7,5) in BOTH ABA/ABC, leaving extra
-actor squares and occupancy fixed. Both saved starts already compile (4/3legal
-root actions) and are not D4 copies; exact no-clock values remain uncomputed.
-Use artifacts/leaper-layout-swap-next-20261022, add the explicit layout option
-to the existing constructor, then use the same history graph/public q0 method.
-Record symmetry relation, exact labels, errors and cost; stop after this one
-case, not a geometry grid or a claim of universal prices.
+Main: Does C-axis change useful frozen coefficients at identical actual histories?
+The C-only H/V games already have complete local graph caches. Preparation has
+85common ongoing H6prefixes,all replayed under BOTH inactive-clock rules; actual
+history WDL and policy quality are NOT COMPUTED. Use artifacts/leaper-axis-next-
+prefixes-20261022/summary.json. Score full histories,compare uniform and the CLOSED
+D2-foe final model at D1/2/3,600s total/100knodes/3s per query. Reuse identical
+saved horizontal uniform root queries; no new training or cap extension.
 
-Backup1: Can rule-independent opening variation expose regret to the existing
-ABC learner? Fix an RNG seed and legal-prefix sampler without oracle selection,
-retain full records/PVs, then do one small experiential probe and observer-only
-regret/counterfactual analysis. Do not extend the closed 32-episode study.
+Backup1: Did random-foe experience cover different exact regret opportunities?
+Reuse its32closed records/324PVs/325RNG replies and the old ABC graph; observer-only
+full-history labels and matched initial queries,including reuse of identical
+previous queries. No extra episodes,oracle labels in training or holdout claim.
 
-Backup2: What attribution survives in task2620 saved trajectories? Read
-historical e6368f3c67ad386d5f10dac81355175cc05a4abf and the frozen ordering seed
-source without new games/search. Keep UNKNOWN, missing slots and old caps.
+Backup2: What resource effect remains in task2620's first divergences? Inspect
+its one TDLeaf/initial first-action request-cap mismatch and complete original
+query histories at e6368f3c67ad386d5f10dac81355175cc05a4abf;zero new search.
+Do not post-select a new population or change the six old finite-panel bounds.
 
-## Recovery and retained limits
+## Recovery and limits
 
-Use the own role doctor, stops, memo and session. Preserve active UUID/origin and
-confirmed work; normal segments require 60 effective minutes, advancing toward90.
-The existing ACTIVE 90-minute heartbeat on this chat is unchanged. Read/review
-Chat/Claude before research; the old SEND_UNCERTAIN is not resent. Push reviewed
-own work and verify full origin/sidemission SHA before any Slack message.
+Own DEV_AUX/sidemission only. Doctor,role/stops,memo/session and new Chat/Claude
+read come first. Preserve active UUID/origin/confirmed work; normal segments
+require60effective minutes,proceeding toward90. Existing ACTIVE90-minute heartbeat
+on this chat is unchanged. Old uncertain Slack report is not resent; push and
+verify full origin/sidemission SHA before any future message.
 
-Old stopped opponent-control data, models and 32 missing slots remain intact.
-Old task2636 audit/registration machinery stays retired. The old task2625
-endpoint+1 ordering confound also affects candidate-first splits; a post-hoc
-sign test does not isolate learned weights. No old caps reset, no new worker,
-Goal, timer, other-role writes or uncontrolled runs. Runs expected >=120 minutes
-still require explicit Chat mailbox scope/budget assessment.
+Old stopped jobs,models,missing slots,5x5timeout and nonliteral D12UNKNOWN remain.
+No retired task2636registry/audit machinery,new worker,Agent,Goal,timer,other-role
+state or uncommitted mainline work. >=120-minute runs still require explicit Chat
+mailbox assessment; independently bounded shorter work remains authorized.

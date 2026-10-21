@@ -78,7 +78,8 @@ def attractor(edges, terminals):
 
 
 def solve_world(*, kinds=('M','M'), width=3, layouts=None, b_geometry=DIAGONAL, lineup=None,
-                max_states=200000, seconds=120.):
+                max_states=200000, seconds=120., composition_layout='original', initial_position=None,
+                composition_c_axis='horizontal'):
     """Build and solve one explicitly restricted world; never accepts a RuleSet.
 
     No clock, progress counter, promotion, hands, drops, claims, semantic state,
@@ -92,9 +93,11 @@ def solve_world(*, kinds=('M','M'), width=3, layouts=None, b_geometry=DIAGONAL, 
         # Each square is empty or one of the owner/type pairs. This deliberately
         # overcounts Anchor/piece multiplicities, but bounds all repeat keys.
         alphabet=1+2*(1+len(set(lineup)))
-        rules=coexistence_rules(lineup,horizon=2*alphabet**9+1)
+        rules=coexistence_rules(lineup,horizon=2*alphabet**9+1,layout=composition_layout,
+            initial_position=initial_position,c_axis=composition_c_axis)
         layouts=[tuple(i for i,p in enumerate(sum(rules.initial_position,()))if p)]
     else:
+        if composition_layout!='original'or initial_position is not None or composition_c_axis!='horizontal':raise ValueError('composition setup requires lineup')
         if layouts is None:layouts=quiet_layouts(288)if width==3 else[(0,1,width*width-1,width*width-2)]
         rules=make_rules(kinds=kinds,width=width,layouts=layouts,b_geometry=b_geometry,
                          horizon=inactive_clock(width))
@@ -137,7 +140,8 @@ def solve_world(*, kinds=('M','M'), width=3, layouts=None, b_geometry=DIAGONAL, 
         else:
             assert all(values[c]!=-1 for c in children)and any(values[c]==0 for c in children)
     graph_seconds=time.perf_counter()-began
-    summary=dict(kinds=kinds if lineup is None else None,lineup=lineup,width=width,declared_max_ply=rules.max_ply,
+    summary=dict(kinds=kinds if lineup is None else None,lineup=lineup,width=width,composition_layout=composition_layout,
+        composition_c_axis=composition_c_axis,declared_max_ply=rules.max_ply,
         positions=len(positions),edges=sum(map(len,edges)),terminal_reasons=reasons,
         relative_wdl=Counter(str(v)for v in values.values()),max_decisive_rank=max(ranks.values(),default=0),
         root_player0_wdl=Counter(str(values[i])for i in roots),
@@ -208,6 +212,70 @@ def root_action_labels(graph, root):
     labels={a:-values[c]for a,c in zip(graph['actions'][root],graph['edges'][root])}
     assert max(labels.values())==graph['values'][root]
     return labels
+
+
+def history_action_labels(graph, state):
+    """Score every legal action with one prefix-blocked observer attractor.
+
+    Previously visited positions are draw targets. The new child is fresh in
+    the remaining graph: decisive rank strategies cannot return to it, while
+    residual cycles draw. No exact labels reach the experiential learner.
+    """
+    history_value(graph,state)  # Validate complete history/fingerprint first.
+    if state.terminal_status.is_terminal:return {}
+    keys=graph['key_indices']
+    blocked={keys[h.position_key]for h in state.history}
+    draw=len(graph['edges'])
+    edges=[tuple(draw if c in blocked else c for c in cs)for cs in graph['edges']]+[()]
+    values,_=attractor(edges,dict(graph['terminals'])|{draw:0})
+    current=graph['indices'][state.position]
+    labels={a:0 if c in blocked else -values[c]
+        for a,c in zip(graph['actions'][current],graph['edges'][current])}
+    assert max(labels.values())==history_value(graph,state)
+    return labels
+
+
+def winning_history_certificate(graph, state, *, max_nodes=10000):
+    """Replay a scoped attractor win through actual Core against ALL defenses.
+
+    This certifies a WDL win from the supplied full prefix, not the strength of
+    a heuristic policy. Prefix keys are blocked before ranks are calculated.
+    Every later edge strictly decreases rank, excluding new repetitions.
+    """
+    value=history_value(graph,state)
+    if not value:raise ValueError('a decisive complete-history root is required')
+    if max_nodes<1:raise Exhaustion('UNKNOWN: certificate node allowance exhausted')
+    if state.terminal_status.is_terminal:
+        return dict(winner=state.terminal_status.winner,root_value=value,root_rank=0,nodes=1,
+            terminal_branches=1,leaf_paths=[[]],scope='Already actual Core scoring terminal;no successor or hypothetical play')
+    blocked={graph['key_indices'][h.position_key]for h in state.history}
+    draw=len(graph['edges'])
+    edges=[tuple(draw if c in blocked else c for c in cs)for cs in graph['edges']]+[()]
+    values,ranks=attractor(edges,dict(graph['terminals'])|{draw:0})
+    root=graph['indices'][state.position];assert values[root]==value
+    winner=state.position.side_to_move if value==1 else 1-state.position.side_to_move
+    pending=[(state,())];nodes=0;leaves=[]
+    while pending:
+        if role_stop_requested():raise Exhaustion('STOPPED_USER')
+        actual,path=pending.pop();nodes+=1
+        if nodes>max_nodes:raise Exhaustion('UNKNOWN: certificate node allowance exhausted')
+        if actual.terminal_status.is_terminal:
+            assert actual.terminal_status.status in(TerminalStatus.CHECKMATE,TerminalStatus.STALEMATE)
+            assert actual.terminal_status.winner==winner
+            leaves.append([action_to_dict(a)for a in path]);continue
+        i=graph['indices'][actual.position]
+        choices=list(zip(graph['actions'][i],edges[i]))
+        if actual.position.side_to_move==winner:
+            choices=[next((a,c)for a,c in choices if values[c]==-1 and ranks[c]==ranks[i]-1)]
+        for action,child in choices:
+            assert child!=draw and ranks[child]<ranks[i]
+            actual_child=apply_action(actual,action,graph['compiled'])
+            assert graph['indices'][actual_child.position]==child
+            assert actual_child.terminal_status.status not in(TerminalStatus.REPETITION,TerminalStatus.MAX_PLY)
+            pending.append((actual_child,path+(action,)))
+    return dict(winner=winner,root_value=value,root_rank=ranks[root],nodes=nodes,
+        terminal_branches=len(leaves),leaf_paths=leaves,
+        scope='Actual Core full-prefix replay,one rank strategy and ALL defender replies;not a general history quotient')
 
 
 def fresh_depth_study(output, *, width=4, roots_count=64,
@@ -286,7 +354,7 @@ def fresh_depth_study(output, *, width=4, roots_count=64,
 
 
 def composition_without_clock(output, *, ratios=(.25,.75,1.,1.25,3.),
-                              depths=(1,2,3,6), whole_seconds=600):
+                              depths=(1,2,3,6), whole_seconds=600, layout='original'):
     """New-rule diagnostic at previously exposed common H6 legal prefixes.
 
     Rebuild each complete Core graph once for new history-conditioned labels,
@@ -300,14 +368,14 @@ def composition_without_clock(output, *, ratios=(.25,.75,1.,1.25,3.),
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
     source=Path(__file__).read_bytes()
     (output/'executed-source.py').write_bytes(source)
-    config=dict(ratios=ratios,depths=depths,whole_seconds=whole_seconds,graph_seconds_each=120,
+    config=dict(ratios=ratios,depths=depths,layout=layout,whole_seconds=whole_seconds,graph_seconds_each=120,
         graph_states_each=200000,query_nodes=100000,query_seconds=3,fixed_A=1,fixed_C=1,
-        selection='ALL previously exposed H6 common ongoing prefixes,not all no-clock histories',
+        selection='ALL H6 common ongoing prefixes in declared layout,not all no-clock histories',
         source_sha256=hashlib.sha256(source).hexdigest())
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
     small=[];maps=[]
     for lineup in(('A','B','A'),('A','B','C')):
-        tree=ExactTree(compile_ruleset_for_execution(coexistence_rules(lineup)))
+        tree=ExactTree(compile_ruleset_for_execution(coexistence_rules(lineup,layout=layout)))
         tree.solve(initial_state(tree.compiled));small.append(tree)
         maps.append({p:s for s,p in tree.paths.items()})
     paths=sorted((p for p in set(maps[0])&set(maps[1])if all(t.edges[m[p]]for t,m in zip(small,maps))),
@@ -319,7 +387,8 @@ def composition_without_clock(output, *, ratios=(.25,.75,1.,1.25,3.),
     try:
         with(output/'queries.jsonl').open('x',encoding='utf-8')as stream:
             for world,lineup,old,mapping in zip(('ABA','ABC'),(('A','B','A'),('A','B','C')),small,maps):
-                guard();graph=solve_world(lineup=lineup,seconds=min(120,whole_seconds-time.perf_counter()+began))
+                guard();graph=solve_world(lineup=lineup,composition_layout=layout,
+                    seconds=min(120,whole_seconds-time.perf_counter()+began))
                 # Own generated objects only; never load third-party pickle.
                 cache={k:v for k,v in graph.items()if k!='compiled'}
                 (output/(world+'-graph.pkl.gz')).write_bytes(gzip.compress(pickle.dumps(cache)))
@@ -364,19 +433,23 @@ def composition_without_clock(output, *, ratios=(.25,.75,1.,1.25,3.),
     return summary
 
 
-def experiential_probe(output, *, episodes=32, depth=2):
+def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
+                       random_foe_seed=None):
     """One symmetric ABC experiential check, with NO reference-label interface.
 
-    One deterministic fresh root and alternating learner colors intentionally
-    diagnose available signal, not independent strength or exploration coverage.
+    The default fresh root, or explicit sampled openings and opponent policies,
+    diagnose available signal rather than independent strength or coverage.
     Literal PV paths are now retained for later mechanism analysis.
     """
     from dataclasses import asdict
+    import random
     from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,TDLeafEpisode,play_episode,BudgetEnd
     from generic_chess.session.session import GameSession
+    from scripts.leaper_microgames import sampled_openings,session_at
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
     rules=coexistence_rules(('A','B','C'),horizon=2*9**9+1)
     compiled=compile_ruleset_for_execution(rules)
+    paths=sampled_openings(compiled,count=opening_count,seed=opening_seed)if opening_count else[()]
     env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A')
     model=Model([1.]*len(env.names));foe=Model([1.]*len(env.names))
     config=dict(episodes=episodes,candidate_depth=depth,foe_depth=2,initial=model.weights,
@@ -385,6 +458,12 @@ def experiential_probe(output, *, episodes=32, depth=2):
         game_seconds=10,whole_nodes=2000000,whole_seconds=120,
         oracle='NONE: no reference labels available to the training runner',
         source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    config.update(opening_count=opening_count,opening_seed=opening_seed,
+        opening_selection='Uniform legal random walks;target lengths cycle1..6;terminal/duplicate paths retained;NO oracle or search selection',
+        opening_paths=[[action_to_dict(a)for a in path]for path in paths])
+    config.update(foe_policy='uniform D2'if random_foe_seed is None else'uniform legal RNG,zero search nodes',
+        random_foe_seed=random_foe_seed)
+    if opening_count:config['root']='ABC actual histories after fixed random legal openings;not fresh Position resets'
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
     (output/'rules.json').write_text(json.dumps(ruleset_to_dict(rules),indent=2),encoding='utf-8')
     (output/'executed-source.py').write_bytes(Path(__file__).read_bytes())
@@ -393,22 +472,34 @@ def experiential_probe(output, *, episodes=32, depth=2):
         if role_stop_requested():raise BudgetEnd('STOPPED_USER')
         if time.perf_counter()-began>=120:raise BudgetEnd('WHOLE_TIME_UNKNOWN')
         if paid>=2000000:raise BudgetEnd('WHOLE_NODES_UNKNOWN')
-    with(output/'queries.jsonl').open('x',encoding='utf-8')as qout,(output/'episodes.jsonl').open('x',encoding='utf-8')as eout:
+    with(output/'queries.jsonl').open('x',encoding='utf-8')as qout,(output/'episodes.jsonl').open('x',encoding='utf-8')as eout,(output/'opponent-moves.jsonl').open('x',encoding='utf-8')as fout:
         try:
             for i in range(episodes):
                 guard()
                 if 2000000-paid<524288:raise BudgetEnd('FULL_GAME_RESERVE_CAP')
-                env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A');before=list(model.weights)
+                opening_index=(i//2)%len(paths)
+                env=FixedScaleSessionEnv(session_at(compiled,None,paths[opening_index]),unit_type='A')
+                initial_record=env.record();before=list(model.weights)
+                rng=random.Random(random_foe_seed+i)if random_foe_seed is not None else None
+                def random_foe(current):
+                    choice=rng.choice(current.actions())
+                    assert choice.kind=='ACTION'
+                    fout.write(json.dumps(dict(episode=i,ply=current.session.state.ply_count,
+                        actor=current.player(),action=action_to_dict(choice.action)))+'\n');fout.flush()
+                    return choice
                 def observe(ply,actor,receipt):
                     nonlocal paid
                     paid+=receipt.nodes;assert model.weights==before
                     row=dict(episode=i,color=i%2,ply=ply,actor=actor,candidate_weights=before,
+                        opening_index=opening_index,prefix_length=len(paths[opening_index]),
                         search_weights=list((model if actor==i%2 else foe).weights),**asdict(receipt))
                     queries.append(row);qout.write(json.dumps(row,default=str)+'\n');qout.flush()
                 result=play_episode(env,model,opponent=foe,learner=TDLeafEpisode(),learner_color=i%2,
                     horizon=64,depth=depth,opponent_depth=2,query_nodes=8192,max_nodes=524288,
-                    seconds=10,cancel=guard,on_query=observe,search_backend='mainline')
+                    seconds=10,cancel=guard,on_query=observe,search_backend='mainline',
+                    opponent_policy=None if rng is None else random_foe)
                 row=dict(episode=i,color=i%2,before_weights=before,weights=list(model.weights),
+                    opening_index=opening_index,initial_record=initial_record,
                     record=env.record(),**asdict(result))
                 rows.append(row);eout.write(json.dumps(row)+'\n');eout.flush()
                 if result.ending=='STOPPED_USER':raise BudgetEnd('STOPPED_USER')
@@ -420,7 +511,7 @@ def experiential_probe(output, *, episodes=32, depth=2):
         endings=Counter(e['ending']for e in rows),changed_updates=sum(e['update']['changed']for e in rows),
         candidate_queries=len(own),terminal_pvs=sum(q['pv_terminal']for q in own),
         nonterminal_trainable_features=sum(not q['pv_terminal']and any(q['pv_phi'][1:])for q in own if q['complete']),
-        scope='Single-root deterministic mechanism evidence,not independent games or strength/transfer validation.')
+        scope='Declared opening/policy mechanism evidence,not independent games or strength/transfer validation.')
     (output/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
     return summary
 
