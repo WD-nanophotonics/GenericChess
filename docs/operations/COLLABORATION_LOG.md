@@ -6011,3 +6011,27 @@ Hash, Native-eval default and staged controller proposals lack sufficient cost
 benefit and remain deferred. Recorded3626 effective seconds exclude delivery
 administration. The q-horizon report records test mistakes, one lost diagnostic
 slot and exact evidence limits; no routine contact/receipt gate was introduced.
+
+
+## PRIMARY 2026-10-21 12:40Z segment — allocation and existing schedule change
+
+Read project Chat once: no new roots/replies; exact output privately saved before
+assessment. The first private-capture implementation lacked TextEncoder; retained
+the same response and saved it losslessly, without another channel read. No sends,
+Dot contact, AUX checkout/state writes, extra worker or duplicate learner.
+
+At the user's direct instruction, updated the existing PRIMARY and DEV_AUX
+heartbeat schedules to90minutes, preserving ACTIVE state, identity and threads;
+verified both definitions. No DeepSeek action or AUX research takeover. PRIMARY
+current manuals now agree. This administration adds no research credit.
+
+PRIMARY ran592 bounded games plus finite and proof/cost diagnostics.78/78 any-win
+claims pass independent Core qualification, with scoped same-root work savings;
+whole-game utility remains unknown. Q2 action restoration did not yield utility.
+The report preserves all timing/fallback failures, one unproved q4mate5 claim,
+negative alternatives, inherited mixed-board header errors and causal limits.
+The actual public packet is Core-replayed through16996hybrid actions and202finite
+continuations. This is source/record validation, not independent timing reruns.
+No other role's work is claimed independently reproduced.83 affected regressions
+pass; no static expectation was changed. Next mechanism crosses into explicit
+non-actor/auxiliary semantics using existing fixtures and caller, not AUX solving.

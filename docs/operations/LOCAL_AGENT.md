@@ -13,16 +13,17 @@ publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
 only PRIMARY mainline research and the existing project Chat.
 
-The existing `genericchess` heartbeat is hourly and stays active at its existing
-frequency. A one-time pause applies only to that inspection and never edits the
+The existing `genericchess` heartbeat recurs every90minutes by the explicit
+2026-10-21 user direction, replacing hourly cadence and preserving its identity.
+A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each hourly PRIMARY patrol, read incoming messages/comments in the existing
+At each 90-minute PRIMARY patrol, read incoming messages/comments in the existing
 GenericChess Chat and the relevant complete threads once. At every explicit
 manual work start/resume, check for new incoming messages/comments before Main
-unless this hourly patrol has already completed that read; never reread more than
-once in the same hourly patrol. Preserve the exact project-related read in
+unless this 90-minute patrol has already completed that read; never reread more than
+once in the same 90-minute patrol. Preserve the exact project-related read in
 ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
 unless the user directly confirms a decision. Do not @Dot,
 contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
@@ -151,7 +152,7 @@ context. Follow SLACK_WORKFLOW's raw-response preservation before processing.
 
 Use `docs/operations/SLACK_WORKFLOW.md` for the active read path and raw-read
 handling. Read new project Chat messages/comments and relevant complete threads
-once per hourly patrol; preserve the exact project-only output privately before
+once per 90-minute patrol; preserve the exact project-only output privately before
 reconcile or adoption. A suggestion does not override current user policy or
 become user authorization by itself. No @Dot, live exchange, response polling or
 routine acknowledgment. For a >=120-minute run, do not send a question. Wait for an incoming user Chat

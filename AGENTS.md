@@ -9,7 +9,8 @@ write prohibition. It does not transfer research ownership or permit worker
 creation, active-file interference, merges, history rewriting or Slack deletion.
 The user then directed: do not message/pause either researcher; clean only files
 confirmed static and mark the remainder incomplete. Preserve active work,
-sessions/stops and hourly recurrence. General rules/search/learning remain the
+sessions/stops and the existing recurrence (now90minutes by the later user
+direction). General rules/search/learning remain the
 mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
 Closed experiment payloads may leave the current tree after checking dependencies;
 keep Git history and a verified private copy of removed uncommitted unique data.
@@ -29,15 +30,17 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-20
 
-- User correction2026-10-20: this PRIMARY patrol is hourly. Keep the existing
-  `genericchess` heartbeat and current recurrence unchanged; an hourly interval is
-  intentional. A one-time pause stops only that inspection, not the recurrence.
+- User correction2026-10-21: PRIMARY and existing DEV_AUX patrols recur every
+  90 minutes by direct user request, replacing the previously intentional hourly
+  interval. Keep the existing heartbeat identities; this changes recurrence, not
+  role ownership or the60–90minute effective research requirement. A one-time
+  pause stops only that inspection, not the recurrence.
   Never edit stop flags unless the user explicitly resumes or stops the scoped
   work; do not confuse a patrol pause with a research stop.
 - User correction2026-10-20: Dot is no longer an active contact. Do not @Dot,
   initiate real-time conversations, wait/poll for Dot, or send direct Dot
   consultations. Read the existing project Chat's incoming messages/comments
-  once per hourly heartbeat, privately save exact project-related reads before
+  once per 90-minute heartbeat, privately save exact project-related reads before
   assessment, and evaluate suggestions against current user decisions/evidence.
   For a >=120-minute run requiring the existing necessity review, do not start
   it until the user supplies the assessment in an incoming project Chat message
@@ -251,7 +254,7 @@ conditions; distinguish ordering prices from leaf prices.
 ## Chat messages and delivery
 
 Use docs/operations/SLACK_WORKFLOW.md for the existing project's asynchronous
-Chat-message read path. Once per hourly patrol and at each explicit manual
+Chat-message read path. Once per 90-minute patrol and at each explicit manual
 work start/resume unless that patrol already completed its read, read newly
 available project Chat messages/comments and relevant complete threads. Save the
 exact project-related read in Git-ignored .local_agent before evaluation. Adopt,

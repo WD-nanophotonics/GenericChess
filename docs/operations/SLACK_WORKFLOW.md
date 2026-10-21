@@ -6,12 +6,12 @@ existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
 wait/poll and daily consultation. Read the existing Chat; do not start a separate
 advisor exchange or inspect auxiliary chats from this patrol.
 
-## Hourly inbound read
+## 90-minute inbound read
 
-At most once per existing hourly PRIMARY heartbeat, read newly available project
+At most once per existing 90-minute PRIMARY heartbeat, read newly available project
 Chat messages and the complete relevant threads. Also perform this incoming read
-before Main at each explicit manual work start/resume unless the current hourly
-patrol already completed it; never reread within the same hourly patrol. Use the
+before Main at each explicit manual work start/resume unless the current 90-minute
+patrol already completed it; never reread within the same 90-minute patrol. Use the
 connected read path for the channel and individual threads; do not create a new
 channel, conversation, worker or polling loop. Keep the last completely covered
 boundary and any gaps.
@@ -25,7 +25,7 @@ refused and failed reads as evidence. If the connected read path is unavailable,
 report the visibility limit and do not claim that the Chat is clear or healthy.
 
 Preflight the save/serialization path with synthetic Unicode and quoted text
-before making the hourly read. In functions.exec, immediately `store` the exact
+before making the patrol read. In functions.exec, immediately `store` the exact
 returned object under a project-specific key BEFORE any encoding, shell call or
 assessment, then save its lossless JSON privately. Do not rely on an unavailable
 global such as `btoa`, or interpolate untrusted message text as shell code. If

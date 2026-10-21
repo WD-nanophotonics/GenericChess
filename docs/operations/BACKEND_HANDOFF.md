@@ -700,3 +700,13 @@ Live cancellation/time checks precede the fast exit. Existing TT policy caveats
 remain. No Native C rebuild, default, UI or AUX activation. Full3583 regressions
 plus two later static-mock cases passed; see the q-horizon research report for
 actual role1, full-history, declaration, control and mixed-rule qualifications.
+
+
+### 2026-10-21 selective-q cost probe
+
+The existing `scripts/semantic_probe_cost.py` now accepts
+`--capture-only-qsearch`, forwarding the existing SearchTuning option; default is
+unchanged/false. It omits ordinary quiet checking continuations and can miss wins,
+while retaining actual terminal/material effects. No UI activation, evaluator
+change or Native rebuild. Full generated-drop input/401node qualification and
+limits are in SEARCH_ALLOCATION_AND_ANYWIN_20261021.md and its technical packet.

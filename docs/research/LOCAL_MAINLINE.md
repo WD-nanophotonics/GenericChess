@@ -2,7 +2,7 @@
 
 AGENTS.md owns authority, PUBLIC, roles, stops and research integrity;
 LOCAL_AGENT.md owns operations. PRIMARY_SANDBOX owns sandbox here. DEV_AUX owns
-its separate learning/solver lane. The existing hourly patrol and read-only
+its separate learning/solver lane. The existing 90-minute patrol and read-only
 project Chat remain unchanged. No extra worker or outbound consultation.
 
 This replaces the chronological daily entry, whose complete decisions/reasons
@@ -127,12 +127,25 @@ independent Core mate3 certificates; two separate extra-budget flags never
 refill that cohort. Hash/native-eval/staged-scheduler alternatives are deferred
 on measured cost, not universal prohibitions. Full semantics/history remain.
 
-Next: freeze16 new D3q0 slots on the same4rules/8histories/both colors against
-unchanged D2q0,5000nodes/.2s,48additional observation plies,300s/4Mtotal. Eight
-actual preflight queries already yield four changed actions. Ask whether actual
-outcomes/cost change allocation, not whether depth alone rises. This is a new
-arm, never a refill of old UNKNOWN. Science OPEN.
-Backup1: existing all/ordered q1 on11 exposed hard roots at16384nodes/1.25s,
-45s total, no cap expansion. Backup2: bounded public Core terminal intervals on
-changed candidate actions only if contrary evidence changes selection; no broad
-solver/WDL admission gate. Chat remains read-only and AUX ownership unchanged.
+[SEARCH_ALLOCATION_AND_ANYWIN_20261021.md](SEARCH_ALLOCATION_AND_ANYWIN_20261021.md)
+completes that arm and the bounded allocation follow-up.592 new capped histories
+and202finite policies retain all failures/UNKNOWN. D3q0 has positive observed
+contrasts on5/6boards but8board bounds cross zero; postseal factorial and q2
+negative results reject depth/action-stability shortcuts, not all qsearch.
+All78 any-win positive claims pass independent Core proof. Selected cold proof
+roots save work;96whole-game utility remains unidentified. Keep default OFF.
+Capture-only is exposed in the maintained cost CLI; its known quiet-check misses
+and full-rule scope remain explicit. No evaluator/learner/default/AUX change.
+
+Next: use an existing explicit non-actor/auxiliary semantic fixture and maintained
+caller for a small paired Core/service feasibility. Ask whether actual child
+classification, controls and bounded choice preserve full state/history under
+selective q. This changes the mechanism domain: the48 new generated worlds were
+movement/drop/promotion rules, not a full explicit-DSL/auxiliary campaign. Keep
+all unsupported/fallback evidence, no parallel solver or label-fitted horizon gate.
+Backup1: compare actual complete-state query cost only if that mechanism exposes
+a concrete bottleneck; source/profile alternatives already measured remain closed.
+Backup2: existing Core bounded intervals on a decision-changing contradiction,
+not a complete-WDL admission requirement or a refill of the unproved q4mate5 slot.
+Reconsider a q default only with independent scope and utility/cost evidence;
+retain all candidates and complete rule semantics. Science OPEN.
