@@ -597,7 +597,8 @@ class EpisodeResult:
 def play_episode(env, model, *, opponent, learner=None, learner_color=0,
                  horizon=128, depth=2, query_nodes=4096, max_nodes=250_000,
                  seconds=60.0, seed=0, cancel=lambda: None, on_query=None,
-                 iterative=False, opponent_depth=None, opponent_iterative=None):
+                 iterative=False, opponent_depth=None, opponent_iterative=None,
+                 search_backend=None):
     """One bounded episode; training and evaluation share the same play path.
 
     The caller owns roots, seeds, aggregate budgets, stop flags and output.
@@ -609,9 +610,16 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
     Iterative play retains only the last complete q0 depth and pays all attempts.
     Explicit opponent settings permit a fixed foe while comparing candidate
     search policies; omitted settings use the candidate's search configuration.
+    Generic sessions default to the public mainline iterative q0 search. The
+    randomized search is an explicit historical reference and the Chess path.
+    ``iterative`` switches apply to that reference; mainline always iterates.
     """
     if learner_color not in (0, 1) or horizon < 1 or query_nodes < 1 or max_nodes < 1 or seconds <= 0:
         raise ValueError('invalid episode budget or player')
+    if search_backend is None:
+        search_backend = 'mainline' if isinstance(env, FixedScaleSessionEnv) else 'reference'
+    if search_backend not in ('mainline', 'reference'):
+        raise ValueError('unknown search backend')
     if learner is not None and (learner.rows or learner.snapshot is not None):
         raise ValueError('episode learner must start with no pending observations')
     began = time.perf_counter()
@@ -651,8 +659,12 @@ def play_episode(env, model, *, opponent, learner=None, learner_color=0,
             current = model if actor == learner_color else opponent
             current_depth = depth if actor == learner_color or opponent_depth is None else opponent_depth
             current_iterative = iterative if actor == learner_color or opponent_iterative is None else opponent_iterative
-            search = completed_depth_search if current_iterative else AlphaBeta(current_depth, 0).search
-            search_kwargs = dict(depth=current_depth) if current_iterative else {}
+            if search_backend == 'mainline':
+                from .mainline_search import search
+                search_kwargs = dict(depth=current_depth)
+            else:
+                search = completed_depth_search if current_iterative else AlphaBeta(current_depth, 0).search
+                search_kwargs = dict(depth=current_depth) if current_iterative else {}
             receipt = search(
                 env, current, nodes=min(query_nodes, remaining),
                 seconds=min(5., max(1e-9, deadline - time.perf_counter())),

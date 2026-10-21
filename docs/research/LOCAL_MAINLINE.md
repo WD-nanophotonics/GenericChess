@@ -11,9 +11,11 @@ material approximation is intentionally limited.
 User2026-10-21 requires committed sandbox infrastructure as the current baseline.
 All238 shared package source files now match latest published sandbox
 `d2da9705bb7993e41d7920aad4439e5156059ede` (its changes after6a4f886 are research
-records only). `generic_chess/learning/incremental.py` is the sole AUX-only package
-file. The learner's hypothetical children use the shared SearchPathRuntime;
-actual played moves and records use GameSession. No parallel Core, no uncommitted
+records only). AUX-only package files are `learning/incremental.py` and the thin
+`learning/mainline_search.py` receipt adapter. Future Generic episodes default
+to public mainline AlphaBetaPlayer with literal q0 PV features; the randomized
+search remains an explicit historical/Chess reference. Actual moves and records
+use GameSession. No parallel Core, no uncommitted
 PRIMARY imports, no other-role state writes. Each hourly recovery checks and
 reuses newer committed infrastructure and relevant results.
 
@@ -59,14 +61,20 @@ finite gain[0,1]. D3pays675191nodes/129.716s versus55864nodes/20.724s atD2;
 39D3/20D2candidate queries and290919partialD3nodes are retained. No strict
 gain,per-node speedup,equal-compute or population claim; no topup.
 
-Next implement ONE thin coupledlambda.95/lambda1 comparison using a common fresh
-initialization/new starts and ONE shared initial control. The costed candidate
-design is2Mnodes/900s per training arm and1Mnodes/400s per frozen eval profile,
-16families/both colors/96eval slots,total7Mnodes/3000s. Expected roughly30process
-minutes plus15engineering/audit; not yet executed. Compare own-initial gains and
-the lambda contrast separately. Reuse the existing library; no grid,positive-result
-chasing,separate framework or old cap reset. Expected>=120min first needs explicit
-Chat mailbox scope/budget assessment; shorter independent work may proceed.
+The coupled comparison is now closed atsourcee4c8c193,seed27192:129train episodes,
+4Mtrain nodes,96eval slots/79mates/17UNKNOWN/0missing. Lambda.95=10W14L8U,
+lambda1=24W5L3U,ONE initial=11W15L6U. Own-initial bounds[-7/16,7/16]and[7/16,1];
+lambda1-.95=[3/8,17/16],shared initial cancelled exactly. A strict finite-condition
+advantage,not a population or initialization-robust method winner.225histories/
+7657queries/129updates checked within2.22e-16;6492852nodes/1715.759s,exit0.
+
+Next is the already preselected public-mainline-search pilot:lambda1,fresh27193,
+rule2,2Mnodes/900s train and2Mnodes eval/1800s total,16families/64slots,H128,
+8192/query,60000/game. It measures actual common learner/play execution through
+public search,not a cross-study speed or strength ranking.98focused tests pass;
+q1 remains unconnected because no q continuation is exported for TDLeaf features.
+No new framework,weight adoption,old cap reset or favorable-checkpoint selection.
+Expected>=120min needs explicit Chat mailbox scope/budget assessment.
 
 ## Mainline findings to reuse
 

@@ -6,6 +6,14 @@ adapters, and one shared training/evaluation episode loop. It has no runtime
 imports from experiments or proof scripts and changes no product defaults.
 The existing `learning.tdleaf` batch implementation remains separate.
 
+Current Generic episodes default to `learning.mainline_search`,a thin receipt
+adapter over sandbox's public iterative q0 AlphaBetaPlayer. The randomized
+AlphaBeta below is retained for Chess and explicit `search_backend='reference'`
+historical controls. It is not another evolving Generic rules/search baseline.
+Historical commands below refer to their fixed source revisions; on the current
+runner select `--search-backend reference` when inspecting those old policies.
+Never overwrite/restart their closed output directories.
+
 Fixed coordinate 0 stays 1, scale 10, eta .05, lambda .95. Search weights are frozen
 within each episode. Targets use player-0 perspective, including when the
 candidate plays player 1. UNKNOWN retains observed interior search transitions
@@ -758,3 +766,72 @@ profile budgets and fixed missing-slot denominators. No engine/rules fork added.
 ```powershell
 .venv\Scripts\python.exe -m scripts.incremental_learning --rules artifacts/natural-rule-2026102102.json --unit P --seed 27192 --td-lambda .95 --compare-lambda 1 --train-episodes 128 --eval-pairs 16 --train-nodes 2000000 --eval-nodes 1000000 --train-seconds 900 --eval-seconds 400 --seconds 3000 --horizon 128 --depth 2 --iterative --opponent-depth 2 --opponent-iterative --query-nodes 8192 --game-nodes 60000 --output artifacts/coupled-lambda-20261021
 ```
+
+### Public mainline search reuse,prospective follow-up
+
+The three natural q0 caller checks preserve fractional scores and match their
+literal GameSession PV material and the old full-depth reference value. Their
+work differs with lexical versus randomized traversal; no speed/strength gain is
+claimed. Configuredq1hard1 only retainedD1/q0 in this probe. Mainline qsearch
+returns scalar values without its continuation in the public PV,so no q1 TDLeaf
+feature is inferred or separate qsearch written.
+
+A thin `learning.mainline_search` adapter calls the existing public
+`AlphaBetaPlayer`,disabling TT,price ordering,root tactical scans and optional
+pruning. Mainline rules/history,search,default legality-provider policy and
+terminal distance preferences remain; this does not claim optional Native
+availability/check probes ran. Full GameSession PV replay supplies player0features. It
+rejects incomplete/fallback,nonliteral,neutral-declaration and non-scoring
+targets rather than manufacturing a draw. The old randomized learner search
+will remain an explicit historical reference,not the default Generic caller.
+14real boundary regressions pass,including float values,partial-node payment,
+stop-after-search,actual no-progress draw,full-history repetition,winning
+declarations for both players,and rejection of neutral/altered-score targets.
+
+PV extraction copies the already authoritative full session before submitting
+the line; it does not replay the played prefix on every query. On one saved
+95ply ongoing history,five copies took0.000659s versus0.540640s for five full
+prefix replays,state/record/search-witnesses equal. This measures that operation
+only,not end-to-end search acceleration. Episode-end and independent full-record
+replay remain. No played history is discarded by the optimization.
+
+After the coupled producer closes,wire this existing public q0 caller into
+future Generic episodes and obtain ONE bounded actual learning/play pilot.
+This question is infrastructure/learner execution,not a favorable lambda rerun
+or public-versus-reference strength ranking. Fix lambda1 and fresh seed27193
+now,before coupled fitness:rule2,128train ceiling,2Mnodes/900s train;
+16families/both colors/trained versus initial,2Mnodes eval,1800s total.
+Both players use public iterativeD2,q0,H128,8192/query,60000/game. Preserve all
+UNKNOWN/missing. Reuse the same model/update/episode loop; no new engine or
+generated tracked output. Neither this pilot nor the coupled comparison selects
+deployed weights or claims robustness across initialization or rule families.
+
+### Coupled result,closed
+
+Sourcee4c8c193821fa7d7223abd2d42c6c3adb0df1df5 exits0 in1715.759183s,
+6492852nodes. Each training arm consumes exactly2Mnodes:lambda.95 has65episodes/
+63updates/45actual terminals/20UNKNOWN,lambda1 has64/63/47/17. Training phase
+times512.397796/541.425312s; the64common opening histories and the first
+11query/complete-game trajectory match before their first different update.
+
+All96evaluation slots finish,79actual mates/17UNKNOWN/0missing. Lambda.95 gives
+10W14L8UNKNOWN,lambda1 gives24W5L3UNKNOWN,shared initial gives11W15L6UNKNOWN.
+Own-initial bounds are[-7/16,7/16]and[7/16,1]; the direct method contrast is
+**[3/8,17/16]**,with the one shared baseline cancelled exactly. This is a
+strict finite-condition lambda1 advantage,not a population CI or robustness
+claim. Each profile stays below1Mnodes/400s; realized eval costs are972926/
+542630/977296nodes and247.608/156.970/257.276s. Equal maxima are not equal work.
+
+All225full histories,7657queries and129TD updates independently check:
+max backward-sum error2.22e-16,independent forward-target error1.39e-16.
+For actual terminal returnz,the frozen-gradient target for observationi is
+`-v_i +(1-lambda)*sum_{k=i+1}^{T-1} lambda^(k-i-1)*v_k +lambda^(T-i-1)*z`.
+Atlambda1 this telescopes toz-v_i. Censored sequences end with the last
+observed search prediction and no final reward. These are arithmetic checks,
+not claims that coefficient changes identify intrinsic piece prices.
+
+Future Generic entry wiring has98focused boundary/episode/history regressions
+passing. Four historical seed/path/node assertions explicitly select their
+original reference backend; their old results are not rewritten as mainline
+runs. A real public-caller smoke retains missing/node-cap slots at its small
+budget. The preselected seed27193pilot still uses the unchanged TD update.

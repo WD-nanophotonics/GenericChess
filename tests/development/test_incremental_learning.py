@@ -363,7 +363,10 @@ def test_search_non_scoring_terminal_keeps_cost_but_never_creates_a_target():
     env = FixedScaleSessionEnv(declaration_session('NO_CONTEST'), unit_type='R')
     model = Model([1.] * len(env.names))
     before = env.record()
-    result = play_episode(env, model, opponent=Model(model.weights), learner=TDLeafEpisode())
+    # Historical randomized search aborts on encountering any non-scoring
+    # branch; the mainline can instead select a separately proven actual win.
+    result = play_episode(env, model, opponent=Model(model.weights), learner=TDLeafEpisode(),
+                          search_backend='reference')
     assert result.outcome is None and result.nodes > 0 and result.queries == 1
     assert result.update['samples'] == 0 and env.record() == before
 
@@ -402,7 +405,8 @@ def test_perpetual_loss_trains_actual_player0_return_with_full_history(candidate
 
     learner = ObservedTDLeaf()
     result = play_episode(env, model, opponent=Model([1.] * 4),
-        learner=learner, learner_color=candidate_color, horizon=2, depth=1, seed=0)
+        learner=learner, learner_color=candidate_color, horizon=2, depth=1, seed=0,
+        search_backend='reference')  # This exact two-ply path uses random seed0.
     assert result.ending == 'ACTUAL_TERMINAL' and result.outcome == -1
     assert env.session.result.status is SessionStatus.PERPETUAL_CHECK
     assert env.session.result.winner == 1 and result.plies == 2
@@ -563,7 +567,8 @@ def test_known_win_does_not_resume_an_exhausted_episode_node_budget():
     probe = AlphaBeta(1, 0).search(env, model, seed=0)
     assert probe.complete
     result = play_episode(env, model, opponent=Model([1., 1.]),
-                          horizon=2, depth=1, max_nodes=probe.nodes, seed=0)
+                          horizon=2, depth=1, max_nodes=probe.nodes, seed=0,
+                          search_backend='reference')  # Budget was measured above in that reference.
     assert result.nodes == probe.nodes and result.queries == result.plies == 1
     assert result.outcome is None and result.ending == 'NODE_CAP_UNKNOWN'
     assert env.winning_declaration().declaration_id == 'win1'

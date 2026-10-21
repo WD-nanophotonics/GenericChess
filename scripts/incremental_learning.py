@@ -124,7 +124,8 @@ def run(args):
                 cancel=guard, on_query=on_query,
                 iterative=getattr(args, 'iterative', False),
                 opponent_depth=getattr(args, 'opponent_depth', None),
-                opponent_iterative=getattr(args, 'opponent_iterative', None))
+                opponent_iterative=getattr(args, 'opponent_iterative', None),
+                search_backend=getattr(args, 'search_backend', 'mainline'))
             env.replay()  # Actual full history/result, not a state-only check.
             row = dict(phase=phase, index=index, color=color, profile=profile,
                        start_record=start_record, final_record=env.record(),
@@ -273,7 +274,9 @@ def main():
     parser.add_argument('--eval-seconds', type=float,
                         help='per-evaluation-profile active allowance; required for coupled comparison')
     parser.add_argument('--iterative', action='store_true',
-                        help='pay D1 through depth under one shared query budget')
+                        help='reference backend: pay D1 through depth under one shared query budget')
+    parser.add_argument('--search-backend', choices=('mainline', 'reference'), default='mainline',
+                        help='public mainline iterative q0(default), or frozen randomized reference')
     parser.add_argument('--opponent-depth', type=int)
     parser.add_argument('--opponent-iterative', action=argparse.BooleanOptionalAction,
                         default=None)
