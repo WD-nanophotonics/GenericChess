@@ -1,0 +1,48 @@
+{
+  "Core_tree_entries": 12071,
+  "Core_verified_price_queries": 144,
+  "D2_argmax_sets": {
+    "disjoint": 1,
+    "identical": 5,
+    "static_subset_unit": 12
+  },
+  "actual_public_default_vs_optional_D2": [
+    48,
+    50
+  ],
+  "default_legality_available_fixtures": "5/6",
+  "default_legality_available_generated": "9/9",
+  "evidence_format": "Named tables with constant columns,action dictionary,and explicit selected diagnostic projection;private full originals preserved.",
+  "fresh_caller_D2": [
+    56,
+    60
+  ],
+  "frozen_completion_gates_passed": false,
+  "integer_rounding_checks": 12,
+  "new_common_continuation_queries": 422,
+  "new_root_queries": 1452,
+  "new_total_queries": 1874,
+  "next_queries_executed": 0,
+  "no_default_or_aux_change": true,
+  "price_common_continuation": {
+    "UNKNOWN": 12,
+    "natural_terminals": 9,
+    "new_queries": 338,
+    "new_states": 20,
+    "old_censored_reused": 1
+  },
+  "public_default_vs_optional_changed_actions": 3,
+  "real_boundary": {
+    "not_a_piece_price_ratio": true,
+    "prefix": 8,
+    "seed": 202610211648,
+    "x": "85/161"
+  },
+  "report": "DECISION_EQUIVALENCE_PRICE_ORDER_20261022.md",
+  "retained_D2": [
+    221,
+    240
+  ],
+  "reused_old_queries_not_new": 24,
+  "source_sha": "07b4b4a24167b0643bdd892e7d2914adc3c5e120"
+}

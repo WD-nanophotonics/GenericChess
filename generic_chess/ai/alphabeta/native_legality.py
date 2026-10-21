@@ -167,8 +167,10 @@ class NativeSemanticLegalityProvider:
         engine = semantic_engine_for(compiled)
         if engine is None:
             return None
-        # Installed kernels bind these filters to the affected piece instead
-        # of the action actor. Preserve Core legality for these rules.
+        # Keep the separate conservative automatic-admission boundary.
+        # Corrected kernels advertise actor-relative binding and can compile
+        # these rules directly; widening this provider policy is not selected.
+        # This exclusion does not diagnose the currently installed kernel.
         if any(
             effect.kind in ("move", "shift", "remove")
             and effect.piece_type_ref is not None

@@ -1,3 +1,13 @@
+## 2026-10-22 decision-equivalence qualification
+
+No runtime/API/default/learner/UI change. Native provider code only corrects a
+stale kernel comment;the conservative automatic admission guard is unchanged.
+Actual default legality is active on all9generated test rules,while optional
+availability/check remain opt-in. Core-off comparisons are authority controls.
+Published finite price/tie/rounding and complete-history evidence is scoped;
+it is not a new production price table or generic strength result.
+Details: ../research/DECISION_EQUIVALENCE_PRICE_ORDER_20261022.md.
+
 ## 2026-10-21 explicit auxiliary consumer qualification
 
 Only scripts/semantic_probe_cost.py changes execution routing: explicit semantic

@@ -1,3 +1,26 @@
+## Decision-equivalence and real baseline follow-up —2026-10-22
+
+PRIMARY read the one new forwarded project Chat root and its complete empty
+thread once, saving exact originals before assessment. Its sandbox reference
+predated07b4b4a; the suggested auxiliary-state qualification was already done.
+Keep the ordering-confound warning;do not duplicate AUX Leaper/learning work.
+No outbound contact,worker,role-state write or AUX experiment was performed.
+
+PRIMARY completed the equal-clock question, then checked the missing actual
+public-default comparator rather than calling pureCore-off its baseline. Frozen
+completion gates fail; all uncertainty remains. Complete Core price trees and
+full-child utility bounds distinguish leaf coefficients,ordering ties,partial
+proofs and common-policy outcomes. A supposed new continuation start matched one
+old capped UNKNOWN;preflight caught it and the receipt was reused unchanged.
+Twenty new trajectories,not21,were executed. No metadata/expected-value weakening.
+
+Current technical evidence is a1.31MB named projection with all root outcomes,
+complete inputs,conditional records,source/hash provenance and a small summary;
+private raw statistics remain. Potential144to21 outcome-query reduction is not
+claimed as measured total speedup. No price/default winner or training gate.
+Next existing-dynamic-term question is prepared;its queries have not run.
+See ../research/DECISION_EQUIVALENCE_PRICE_ORDER_20261022.md.
+
 ## Explicit-state/caller follow-up —2026-10-21
 
 PRIMARY read the two new project Chat roots and complete empty-reply threads

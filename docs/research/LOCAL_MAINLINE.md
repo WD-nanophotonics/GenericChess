@@ -149,15 +149,29 @@ GameSession. No default, history compression, replay cache or AUX learner change
 The closed6.8MB allocation packet is a small index into its verified fixed PUBLIC
 Git version; exact originals remain, no history rewrite or withdrawn evidence.
 
-Next: freeze a small equal-deadline explicit-service/Core completion study on
-separately declared mixed states, including retained-session setup and actual
-execution/fallback/control reasons. Changed premise is the existing corrected
-actor-binding capability and observed full-history cost, not an unchanged q or
-price rerun. Existing source/consumer feasibility is examined; no deadline query
-has run. Keep exposed mechanisms labelled exposed, all censored/missing results,
-full promotion/drop/aux/history and independent AUX ownership.
-Backup1: use existing Core bounded evidence only if a concrete contrary outcome
-would change that route selection; never refill old q4mate5 or require fullWDL
-as an admission gate. Backup2: investigate an actual unsupported default-evaluator
-input through its existing override contract if encountered; do not invent a new
-API/learner or widen the generic task definition. Science OPEN.
+[DECISION_EQUIVALENCE_PRICE_ORDER_20261022.md](DECISION_EQUIVALENCE_PRICE_ORDER_20261022.md)
+closes that continuation:1,452root queries plus422new common-continuation calls
+retain every failure/UNKNOWN. Frozen D2completion gates fail; actual default
+already uses Native legality on9of9generated rules, so pureCore gains are not
+incremental default gains. One partial-iteration3ply win has independent full
+Core reply witnesses; paired Core action stays unknown. No provider/default change.
+
+A144query leaf/ordering factorial is independently verified by36complete Core
+trees. Static/Unit D2argmax sets overlap17of18;one exact85/161interpolation
+boundary survives integer lifting,while rounding changes its tied set. Overlap
+is not policy equality. Signed full-child masses include leaf,ordering and
+interaction effects;20new fixed-continuation trajectories plus1verbatim old
+censored receipt retain9terminals/12UNKNOWN. No price winner or training gate.
+
+Next: freeze the prepared all18root Static/Unit xexisting dynamicOFF/ON diagnostic
+from `.local_agent/price-dynamic-next.json`,using existing evaluator/override and
+common Static ordering. Actual source/consumer feasibility is examined;no queries
+have run. Default price tables match the purematerial control,but dynamic terms
+were disabled. X itself has promotion gain2118 on the disjoint rule; candidate-
+dependent gain/integer division means the old affine boundary cannot be reused
+unchanged. Compare actual full cost,argmax/realized actions and allUNKNOWN before
+considering another state-interaction evaluator. No new model/learner/AUX work.
+Backup1: inspect a concrete contradictory Core outcome only if it changes the
+selection;no old capped-game refill or fullWDL admission gate. Backup2: use the
+existing override contract only for an actually encountered unsupported input.
+Scope is complete rules/history;Science OPEN.
