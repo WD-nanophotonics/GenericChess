@@ -16,6 +16,35 @@ from scripts.leaper_microgames import role_stop_requested,Exhaustion
 from scripts.leaper_retrograde import root_action_labels
 
 
+def draw_only_closure(edges, terminals):
+    """Vertices from which no decisive terminal is reachable by ANY policy.
+
+    This is a complete-graph observer, not a rules/history quotient. In the
+    scoped Leaper worlds, its forward-closed complement of terminal ancestors
+    can only end in an actual draw or repeat-two draw, under any played prefix.
+    A minimax DRAW alone is insufficient: a player might still blunder to mate.
+    Resource-incomplete graphs must not be passed as if they were complete.
+    """
+    from collections import deque
+    parents=[[]for _ in edges]
+    for i,children in enumerate(edges):
+        if not children and i not in terminals:
+            raise ValueError('complete graph needs a label for every sink')
+        for child in children:
+            if not 0<=child<len(edges):raise ValueError('unexpanded graph child')
+            parents[child].append(i)
+    if any(i<0 or i>=len(edges)or v not in(-1,0,1)or edges[i]
+           for i,v in terminals.items()):
+        raise ValueError('invalid terminal vertex')
+    decisive={i for i,v in terminals.items()if v}
+    pending=deque(decisive)
+    while pending:
+        for parent in parents[pending.popleft()]:
+            if parent not in decisive:
+                decisive.add(parent);pending.append(parent)
+    return frozenset(set(range(len(edges)))-decisive)
+
+
 def material_vector(position):
     return tuple(sum((1 if p.owner==0 else -1)for p in position.board
                      if p and p.current_type_id==name)for name in('A','B','C'))

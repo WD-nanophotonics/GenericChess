@@ -9,6 +9,37 @@ from scripts.leaper_parameter_regions import action_scores,material_vector,super
 from scripts.leaper_retrograde import solve_world,fresh_state
 
 
+def test_draw_only_closure_does_not_confuse_minimax_draw_with_no_possible_mate():
+    from scripts.leaper_parameter_regions import draw_only_closure
+    from scripts.leaper_retrograde import attractor
+    # Vertex0 can choose a draw or blunder to an opponent's terminal win.
+    # The separate 3<->4 cycle and terminal draw1 can never reach a decisive end.
+    edges=((1,2),(),(),(4,),(3,))
+    terminals={1:0,2:1}
+    values,_=attractor(edges,terminals)
+    assert values[0]==0
+    assert draw_only_closure(edges,terminals)==frozenset((1,3,4))
+    with pytest.raises(ValueError):draw_only_closure(((1,),),{})
+    with pytest.raises(ValueError):draw_only_closure(((),),{})
+
+
+def test_actual_Core_graph_draw_only_region_is_closed_under_every_action(graph):
+    from scripts.leaper_parameter_regions import draw_only_closure
+    g=graph;closed=draw_only_closure(g['edges'],g['terminals'])
+    assert closed
+    for i in closed:
+        assert g['values'][i]==0
+        assert set(g['edges'][i])<=closed
+    # Independently execute actual Core children rather than only checking
+    # graph fixed-point arithmetic; capture-removal reaches these draw regions.
+    selected=sorted(closed)[::31]
+    for i in selected:
+        s=fresh_state(g['positions'][i],g['compiled'])
+        for a in legal_actions(s,g['compiled']):
+            child=apply_action(s,a,g['compiled'])
+            assert g['indices'][child.position]in closed
+
+
 def test_uniform_tie_error_is_an_expectation_not_a_forced_error():
     from fractions import Fraction
     from scripts.leaper_parameter_regions import tie_error_counts

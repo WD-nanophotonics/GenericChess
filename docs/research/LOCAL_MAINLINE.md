@@ -1,75 +1,77 @@
 # DEV_AUX current research
 
-## Scope and infrastructure
+## Scope and committed infrastructure
 
-The direct user Leaper instruction remains authoritative. Conditional
-contribution, useful search parameters and exact strategic value are distinct.
-UNKNOWN stays unknown; oracle labels never enter experiential training. No
-unique prices, additivity or universal adaptation are assumed.
+The direct Leaper instruction governs. Conditional contribution, useful search
+parameters and exact strategic value are distinct. No intrinsic/unique prices,
+additivity, universal adaptation or UNKNOWN imputation is assumed. Oracle
+labels remain outside experiential training.
 
-Pinned sandbox: d1017250c8720113000105b7519f6beffa774d0a. All 238 shared package
-files match, including 199 Python files. Only the two existing AUX learner
-modules are additional. Its committed profile-cache fix and tests were imported
-unchanged. The actual learner uses GameSession/Core/public q0 with a material
-evaluator override and zero ordering prices. No acceleration claim or PRIMARY
-state adoption. Current report: LEAPER_WORLD_ADAPTATION_20261022.md.
+Latest fetched sandbox:559aa80dc224250dc30135b3cb4696e389f0d134. Its changes
+since d1017250 are documents;all238 shared package files match after normal
+CRLF/LF normalization. Only the two existing AUX learner modules are additional.
+GameSession/Core/public q0 remain authoritative;no second engine/default change.
+Current report:LEAPER_INFORMATION_AND_GEOMETRY_20261022.md. WORLD_ADAPTATION
+retains closed training/D6 budgets, failures and results.
 
-## Current results
+## Current scientific results
 
-* Rotating only C in the fresh four-actor control keeps root DRAW but rescues
-  the shared King action from LOSS to DRAW: Cc0-c1 leaves b0 as an escape.
-  Core completes 1,072 vertices / 2,424 edges in 1.065s. No old history transplant.
-* Six new 32-episode ABA/vertical-C arms complete 192 actual terminal games.
-  Independent replay verifies 3,844 played edges and 1,930 PVs. Their short
-  training does not reach known stronger regions. TV bounds preserve all
-  2,347 missing vertical labels and show all three new vertical finals worse
-  than known sector8; old horizontal TD sector9 also beats them.
-* The earlier nine-run census covers 288 updates: 223 parameter updates,
-  26 leaf-order cell changes and 20 nonzero quality changes; loss/quality
-  signs disagree on eight. Actual vertical histories have 17 wins without
-  learner regret in this sample; 16 draws contain 20 learner regrets.
-  The exact payoff identity is 17 = 37 foe gaps - 20 learner gaps.
-* One changed ABA opening-pool arm retains 32 episodes and matches the old
-  first 16 episodes exactly. It adds coverage but no ideal D2 quality gain;
-  final B=.9634718. Its one 64-ply HORIZON_UNKNOWN remains unknown.
-* Frozen same-D6 material controls complete 172,630 slots, 256 exactly reused,
-  zero missing/UNKNOWN, in 3,667.96s under 4,500s. TD errors: ABA120 versus
-  uniform136; ABC258 versus403, with +.8273% / +.7003% nodes. Supervised gives
-  ABA112 / ABC392: fitting-versus-decision ranking reverses by world.
-  All action labels match, and 11,192 C-absent TD controls agree on action,
-  nodes and WDL. No missed root win has rank<=6. This is finite fresh-position
-  decision evidence, not whole-game strength or universal convergence.
-* 173 related tests pass. All producers exited. Raw graphs/trajectories and
-  one-off drivers stay ignored; only reusable code and compact results publish.
+* All1333 retained ABA queries have complete actual-prefix D2 alternatives.
+  Only2/2/2/1 occurrences distinguish B=1/4 from3/4;all repeat one history,and
+  both actions are DRAW. Frozen TD credit reconstructs128 updates. This is
+  absent sampled quality discrimination,not unlearnability.
+* Full histories expose winning games containing learner mistakes. Uniform/
+  minus22 are the same trajectory;coverage25 is distinct. Coverage24 remains
+  HORIZON_UNKNOWN despite a separately proved draw endpoint.127 actual terminals
+  remain distinct from the censored potential. Selected all-defense wins replay
+  on actual rules. Same-inventory/same-turn leaves can be WIN versus DRAW at
+  identical material features;not a policy-insufficiency proof at every depth.
+* A no-mate-reachable closure has8088 vertices. Closed-region queries are
+  239/285/239/165;their numerical credit need not change strategic outcomes.
+* Axis comparison:8554 constructed fresh-history contexts yield429 rootchanges;
+  public initialization admits2835,with143 root/348 shared-action WDL changes.
+  Eight-world deletion controls admit238 starts;92 interactions change with
+  axis,zero strict marginal signflips. Three constructed-context flips do not
+  survive actual fresh initialization. Rejected witness evidence is retained.
+* Thirteen admitted starts retain ownA/B. WithoutC all tested Bcells have zero
+  D2/D4error;C constrains useful regions. Horizontal B=.5 error rises0 to5/3
+  atD4 through unsafe ties. One actual initial WINrank11 has D2uniqueWIN/D4
+  WIN-DRAWtie;22-node full-Core strategy verified. No public-policy/Elo claim.
+* New4x4 H/V controls complete16558/17364 vertices in41.35s. Bothroots andall
+  sharedKingactions DRAW;added d0 permits the literal escape line.
+* Ideal-policy first8ply information-event probability is exactly0 under the
+  declared mixture. Pruned64 closes at1Mnodes/63.892s,[0,.816215745],not rarity.
+  Originalnaive64closedTIME_CAP at2700.002s/2636510visits;breadthfirst100k
+  closes7.741s with tighter[0,.072736842]. No rarity claim foractualpublicties.
+  No extension.175 related tests pass;one-off drivers/raw graphs stay
+  ignored. Only reusable graph algebra/tests and compact science publish.
 
-## Current bounded continuation
+## Current executable continuation
 
-Main: Which actual ABA queries distinguish the B=1/2 decision boundary? |
-use closed four-run records/PVs; information inventory has begun at
-artifacts/leaper-ABA-information-inventory-20261022/summary.json; construct
-literal shared-Core D2 alternatives with full actual prefixes, 300s/50,000
-Core-node cap | branch-disagreement coverage or UNKNOWN | observer only:
-no oracle-guided training, public-query reruns, extra episodes or old cap reset.
-Chosen-PV B support is 36/67/36/32; it does not describe unchosen branches or
-eligibility carried from earlier observations.
+Main: Do equal optimal-WDL boundary actions have different random-foe returns? |
+read leaper-boundary-return-inventory-20261022.json and retained fullprefix;
+two forced actions have5/2 replies,one-replyproxyboundary5/7 versusminimax1/2;
+predeclare aggregate120s/100kCore fullpolicyreturnobserver before launch |
+conservative actualterminal-return intervals orUNKNOWN | NOT_LAUNCHED;no new
+training,oracle-selected experience,oldrollout extension or UNKNOWNimputation.
+FixedB=.75,uniformD2ties/legalrandomfoe,H64;unexpandedpayoff stays[-1,+1].
 
-Backup1: How prevalent is the C-axis effect within the small inventory? |
-first inspect matching existing complete graph caches and rule/fresh-history
-scope | a bounded matched-domain contrast or explicit unsupported scope |
-no parallel engine, unchanged graph rerun or fill of old missing labels.
+Backup1: Does a longer label-blind opening distribution expose useful boundaries? |
+predeclare one small paired legal-walk inventory/seed/lengths andretain all
+duplicate/terminal endpoints beforelabels | fullprefix boundary/qualitycounts
+orUNKNOWN |120s/100kCoreobserver,no training/oraclefilter/topup/heldoutclaim.
 
-Backup2: Does extra board space remove the four-actor axis effect? | assess
-existing make_rules/solve_world width4, kinds B/A with horizontal/vertical B,
-fixed c1/c0/a2/b2 actors | new finite feasibility result or UNKNOWN |
-new-instance caps 120,000 states/180s each, 420s whole; do not revive old5x5 caps.
+Backup2: Can any bounded constant B/C pair eliminate admittedD4errors? |
+inspect existing leaf-order algebra and13-root completeCoreinputs before exact
+[0,4]^2feasibilitycells inclboundaries | feasible region or scoped insufficiency |
+oracleevaluationonly,no featureengineering/depthexpansion prerequisite.
 
-## Recovery and limits
+## Recovery and delivery
 
-Own DEV_AUX/sidemission only. Read memo, role/stops, doctor and new Chat/Claude
-first. Preserve active UUID/origin/confirmed work; normal 60 effective minutes,
-proceeding toward90. Existing ACTIVE90-minute same-chat recurrence is unchanged.
-Push and verify full origin/sidemission SHA before every Slack message. The old
-SEND_UNCERTAIN report is never resent. Preserve failures/models/caps/UNKNOWN.
-No new Agent/worker/Goal/timer, retired registration framework, other-role state
-or uncommitted mainline. Expected >=120-minute runs first receive explicit Chat
-scope/budget assessment; bounded shorter independent work remains authorized.
+OwnDEV_AUX/sidemission. Read memo,role/stops,doctor,newChat/Claude andlatest
+committedmainline first. Preserve activeUUID/origin/confirmedwork;normal60
+minutes,toward90. ACTIVE90minsamechat unchanged. Push/verify complete remote
+origin/sidemissionSHA before Slack. OldSEND_UNCERTAIN never resent. Preserve
+caps/models/failures/UNKNOWN. No Agent/worker/Goal/timer or retired audits.
+Expected>=120minruns need explicitChat scope/budget assessment;shorter bounded
+independent work authorized. No other-role state writes.

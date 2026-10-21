@@ -544,3 +544,32 @@ are preserved; full delivery SHA is verified in the own closing receipt.
 Final science checkpoint confirms 73.19 effective research minutes;
 administrative delivery is excluded. This is a safe segment boundary, not
 scientific completion or a reset of any experiment cap.
+
+
+## DEV_AUX 2026-10-22: information exposure and conditional geometry
+
+Own sidemission; source sandbox559aa80dc224250dc30135b3cb4696e389f0d134.
+PRIMARY's latest opponent/tie/reference-unit report was read only; its shared
+238 package files match (CRLF/LF normalized). No PRIMARY/DeepSeek state adopted.
+New Chat/Claude channel and24 tracked threads have no new advice. The old
+SEND_UNCERTAIN report is not resent; no claim Chat read or executed this work.
+
+The1333 saved ABA queries expose one repeated B-boundary history whose two
+actions are both optimal-play DRAW. All128 frozen TD updates and full histories
+are checked;127 actual terminals stay distinct from one original UNKNOWN.
+Winning-game mistakes and same-inventory/same-turn value aliases have complete
+inputs. Geometry effects survive actual fresh admission (2835 pairs/238
+eight-world starts),but constructed-only strict marginal axis flips do not.
+Thirteen matched A/B-present starts show composition/depth-dependent parameter
+regions;D4 adds unsafe ties,not a proved deployed-policy loss. Four positive
+roots,8088 draw-closed vertices/13104 Core edges and416 D4 error checks replay
+independently;175 related tests pass. See LEAPER_INFORMATION_AND_GEOMETRY_20261022.md.
+
+All pilots are closed without extending caps. The original2700.002s DFS stays
+TIME_CAP_UNKNOWN;separate breadth-first100k/7.741s bounds the ideal-policy event
+in[0,.072736842]. No actual-learner rarity claim or UNKNOWN relabeling. Exact
+raws/one-off drivers stay ignored;only reusable graph algebra/tests and compact
+science publish. Research3655.309537s (60.9218min),administration excluded.
+Next inventory is begun:equal-WDL boundary actions have different one-random-
+reply proxy threshold5/7 versus minimax1/2;full foe-specific returns remain
+NOT_LAUNCHED. That estimand precedes new training or feature changes.
