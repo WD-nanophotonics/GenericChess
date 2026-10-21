@@ -652,3 +652,85 @@ This arithmetic attributes updates on the observed trajectory, not the cause of
 direct-play losses or a counterfactual training effect. Changing targets would
 also change later weights/actions, so an offline sum cannot stand in for a new
 training/strength test. No labels, weights or completed-run results were changed.
+
+## Rule2 lambda1 check and fresh depth-cost control
+
+Source288c8dc88f35c06ba2bc9b0956d21e016655afa9. The one prospective lambda1
+check ends PLANNED_EPISODES_COMPLETE in931.656892s. Training stops at the
+original2Mnode limit:75episodes/74nonzero updates,542.755616phase seconds.
+There are64actual-terminal training episodes and11censored episodes; no missing
+final reward is fabricated. Evaluation completes64slots/0missing,55actual mates
+and9node-capUNKNOWN,1335023nodes. Frozen trained gives **20W10L2UNKNOWN**;
+initial gives **9W16L7UNKNOWN**. Known reward difference17 plus/minus9unknowns
+over32pairs gives **[1/4,13/16]**. This is finite own-initial gain in this
+condition,not a CI,population claim or lambda-method winner. The prior.95run's
+different initialization/openings prevent causal attribution to lambda.
+
+All139full histories/4425query records and75TD updates independently check
+within2.22e-16. A separate lambda1 telescoping calculation uses
+`eta * sum(gradient_i * (return - prediction_i))`: actual return for completed
+episodes,last observed search prediction for censored interior transitions,
+with no final UNKNOWN label. It agrees to2.22e-16 over1298observed candidate
+roots. No learned vector is selected as a default.
+
+The shared entry reproduces this declared recipe (closed outputs must not be
+overwritten or continued):
+
+```powershell
+.venv\Scripts\python.exe -m scripts.incremental_learning --rules artifacts/natural-rule-2026102102.json --unit P --seed 27190 --td-lambda 1 --train-episodes 128 --eval-pairs 16 --train-nodes 2000000 --eval-nodes 2000000 --seconds 1800 --horizon 128 --depth 2 --iterative --opponent-depth 2 --opponent-iterative --query-nodes 8192 --game-nodes 60000 --output artifacts/natural-second-lambda1-learning-20261021
+```
+
+Both saved natural rules still regenerate identically using the current shared
+generator atseeds2026102101/2026102102 withmax_generation_attempts32 and other
+defaults. Latest published sandboxd2da9705bb7993e41d7920aad4439e5156059ede has
+research-only changes since6a4f886; all238shared package files still match.
+Its existing custody/ordering and finite-goal results were read at that fixed
+revision. Reuse their distinctions; no duplicate price-region,PV-rank or
+history-alias audit was launched. Actual learner ordering is material-independent.
+
+### New resource condition,not a refill
+
+One separate predeclared control uses rule2,seed27191,two fresh opening families,
+both candidate colors,unit1weights everywhere and a fixed uniform iterativeD2foe.
+Candidate ceilings are iterativeD2 anditerativeD3. Both have16384/query,
+240000nodes/90s pergame,H128; overall maxima1.92Mnodes/900s,eight slots.
+Mode order alternates by family; starts/search seeds are paired. There is no
+training. These are new histories and a new allowance,not continuations or
+relabels of the old rule1/60000node maxD3 calibration games.
+
+All8slots complete in150.920461s,731055nodes,0missing. D2 gives2W2L;
+maxD3 gives2W2node-capUNKNOWN. The finite maxD3-minus-D2 bound is **[0,1]**;
+this does not identify strict benefit. D2's two color games in each family have
+identical full paths and opposite payoffs,as expected for identical players.
+All8histories/251query records independently replay/check. D2 uses55864nodes/
+20.724episode seconds; maxD3 uses675191nodes/129.716seconds. Different paths
+and realized work prevent a per-node speedup or equal-compute interpretation.
+
+MaxD3 candidate queries complete39D3 and20D2fallbacks,spending311553nodes on
+completedD3 and290919on partialD3. The foe has57D2/1D1query in those games.
+Both capped games retain240000nodeUNKNOWN. No additional budget or sample is
+added. Neither this control nor the earlier[3/8,1]depth result can rank search
+versus learning effects across different rules/roots/opponents.
+
+### Next useful comparison
+
+The two rule2 runs show opposite gains under different initializations. Before
+choosing lambda,cost one coupled comparison with a common new seed/initial vector
+and common new evaluation starts. A useful design has two equal training arms
+(2Mnodes/900s each),then three frozen profiles including ONE shared initial
+control over16families/both colors. Give each profile1Mnodes/400s rather than
+letting a late profile consume only leftovers:7Mnodes/3000s maximum overall,
+96planned evaluation slots. Observed costs suggest roughly30process minutes,
+plus about15minutes of engineering/audit; below the120minute assessment threshold.
+This is a prospective cost/design step,not a registered or executed study.
+
+Compare each trained profile against the common initial,and compare the two
+trained profiles' paired fixed-foe payoffs. This is not a head-to-head matchup.
+In the lambda contrast `(R1-Rinitial)-(R95-Rinitial)=R1-R95`,the shared initial
+outcome cancels,including its UNKNOWN uncertainty; do not count it twice by
+subtracting independently widened gain intervals. Each own-initial contrast
+still retains every unknown/missing payoff. Per-profile time allowances must
+charge that profile's opening/play/replay work,not wall waiting during another
+profile. Preserve resource differences. One coupled seed can distinguish this condition,not prove
+initialization robustness or population superiority. No hyperparameter grid,
+favorable-checkpoint selection,new framework or repeated old fitness follows.

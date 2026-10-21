@@ -42,6 +42,8 @@ Review new/edited Chat comments with adopt/defer/reject reasons; advice does not
 replace explicit user direction. The completed cleanup was read-only;
 normal research follows the periodic mailbox protocol.
 No Dot realtime wait, daily gate, resend or reply requirement.
+Quote Slack timestamps in PowerShell native-command arguments; unquoted decimal
+tokens can be rounded before the CLI receives them and fail exact-revision review.
 
 Open a research interval using:
 `dev-aux-local.cmd session work-start --question "decision-changing question"`.

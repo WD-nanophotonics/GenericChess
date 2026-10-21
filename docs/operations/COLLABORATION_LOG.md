@@ -199,6 +199,35 @@ mixes, paid partial work and all24full-replayed outcomes. The next second-rule
 run uses fresh initialization and D2 opposition; rule and opponent both change,
 so no isolated opponent-treatment claim follows.
 
+## This DEV_AUX research segment — 2026-10-21
+
+The user's committed-mainline requirement was implemented before subsequent
+learning work. Latest remote sandboxd2da9705 was fetched during this segment;
+it changes research records only,so all238shared package files remain identical.
+No repeated Core implementation,uncommitted PRIMARY import,new worker or
+recurrence change was introduced. PRIMARY's published custody/ordering and
+finite-goal results were read and adopted for interpretation rather than rerun.
+
+DEV_AUX retained all finite losses and cost limits:the first-rule direct check
+is4W9L3U,while rule2lambda.95is8W19L5U versus23W6L3U. A single prospective
+paper-motivatedlambda1check on a different fresh initialization gives20W10L2U
+versus9W16L7U,bound[1/4,13/16]. All64slots complete and139histories/4425queries
+check. This does not establish a lambda-method winner. No learned weights or
+product default is adopted; UNKNOWN never becomes a draw.
+
+The subsequent8fresh depth/work slots giveD2=2W2L andmaxD3=2W2U,bound[0,1].
+ActualD3work is675191nodes versus55864atD2,on different paths. No strict
+strength or per-node speed gain follows;no old cap was extended. Every producer
+has an exit0 receipt and no active computation remains at this checkpoint.
+
+Next useful work has begun as a costed coupled-initializationlambda comparison,
+using one shared initial control and preserving its uncertainty cancellation in
+the method contrast. Candidate budget7Mnodes/3000s;roughly30process minutes
+plus15engineering/audit. It is a concrete exploratory next action,not an
+executed experiment or a registration/audit queue. Current results and compact
+next actions are in LOCAL_MAINLINE; raw evidence stays ignored. Publication
+is own sidemission only; Slack's old uncertain delivery is not resent.
+
 ## Historical coordination
 
 The former3434-line collaboration diary is retained in Git at
