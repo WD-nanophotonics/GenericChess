@@ -1,9 +1,0 @@
-{
-  "tests": 16,
-  "passed": 11,
-  "failed": 5,
-  "cause": "Copiedmodule redefined StopObservationFailure instead of preserving original exceptionidentity; invalidfiles stillfailedclosed but callers wouldcatchdifferenttype",
-  "correction": "Inheritoriginal EvidenceStopReader/failedhandler/exception; overrideONLYfreshreadcall withio.FileIO",
-  "no_research_query": true,
-  "exact_private_log": ".local_agent/tests83reader.xml"
-}

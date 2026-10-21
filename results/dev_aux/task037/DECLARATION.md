@@ -1,4 +1,0 @@
-# Task037 declaration
-Changed public premise, not a builtin rerun: six separate A capture programs with a persistent bool guard, first replaces legacy capture and five augment; first3require0, last3require1. Two anchored actors/targets on4x4.
-Compat/pure x slot0/1 x both owners/all16targets =128original/frozen-merge query pairs, exact guard/checkpoint trace and parents. The8fixed actor-target cases test every callback prefix; expected6selected rows/onegroup, one or four guards consumed.
-Question: can supported public rules actually produce multirow groups while retaining semantics, unlike Task036singleton shape? Done at finite structure/contract witness. No caller cost, deployment, generated-population or universal streaming benefit. Internal120sec guard only; runs must finish before06:30source-only window.

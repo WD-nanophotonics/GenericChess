@@ -1,9 +1,0 @@
-{
-  "status": "FROZEN_BEFORE_RANK_STRATEGY_FEASIBILITY",
-  "question": "Can audited positive ranks cheaply supply executable all-defense strategies wherePN failed, under an explicitly safe real-history subset?",
-  "sampling": "First8unique fullrecords fromclosed2063 completedgames withMATERIAL_SEARCH andpositionalWIN; currentrepetitioncounts<=1 andrank<=96-currentply. EXPOSEDfailureexamples, not independentpopulationWDL.",
-  "scope": "Feasibilityonly: targetturn usesstoredwinningaction, defendertakesALLCoregraphmoves, strictfiniteDAGrank; historycounts<=1 preventsfuturethirdrepeat, rankfitsremainingmaxply. No arbitraryhistorypositiveWDLclaim and no existingSessioncertificateAPI equivalence. Actuallongest-defensetraces verifyexecution, graphaudit suppliesall-defense evidence.",
-  "seconds_cap": 120,
-  "expected_seconds": 10,
-  "max_cases": 8
-}

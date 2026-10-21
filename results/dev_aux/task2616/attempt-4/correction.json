@@ -1,6 +1,0 @@
-{
-  "status": "PRE_RUN_PLAN_CORRECTION",
-  "reason": "Initial feasibility script divided task2568 evaluation seconds by the combined task2568+2570 slot count while omitting task2570's evaluation seconds. The projection understated per-slot cost.",
-  "impact": "No training or evaluation started. Roots, endpoints, conditions and slot count unchanged. Prior plan, eval plan and registration are preserved under attempt-4/.",
-  "correction": "Recompute mean evaluation cost from both exact prior result seconds and divide by their combined completed slots. Re-register with exact source pins before any run."
-}

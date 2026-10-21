@@ -1,4 +1,0 @@
-{
-  "initial": "7PASS1FAIL; first rank2root has onlyonelegaldefense, so missing-second-defense fixture assumption wrong.",
-  "correction": "Keeprank2fixture for genericprover. Missing-defense test takeslowest-rank existingfrozenLOSS root with>=2actualpubliclegalactions; checksactualmate<=rank ratherthanforcingtwo plies. No graphimplementation change or benchmarkselection change."
-}

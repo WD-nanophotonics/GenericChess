@@ -1,6 +1,0 @@
-{
-  "first_result": "3PASS2FAIL",
-  "cause": "Test fixture incorrectly expected qsearch to find a quiet checking mate after the D1 horizon; all-capture/evasion qsearch does not search quiet checks.",
-  "repair": "Use actual white-to-move mate fixture with checking branches; preserve declared qsearch domain and engine, no quiet-check extension added.",
-  "scope": "Test expectation correction, not evidence of software defect or stronger search."
-}

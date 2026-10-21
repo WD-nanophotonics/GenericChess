@@ -1,7 +1,0 @@
-{
-  "status": "PRE_SEAL_FAILED",
-  "error": "Requiredclosedconsumer missing:task2290/result.json",
-  "cause": "Bundler expected result.json but actual successful consumer writes audit.json",
-  "correction": "Require existing audit.json; do not rerun consumer or manufacture duplicate scientific result",
-  "archive_created": false
-}

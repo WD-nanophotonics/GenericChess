@@ -1,5 +1,39 @@
 # GenericChess local research policy
 
+## User scope correction — 2026-10-21
+
+The user explicitly asked DEV_AUX to reassess its project against Slack, return
+to its main task and delete overengineered leftovers. Retire the unregistered
+task2636 audit/receipt framework after verifying a private copy of unique work;
+keep its frozen design inputs as history, not a continuation queue. Do not
+recreate retired audits or add registration/crosswalk gates to exploratory work.
+The selected route remains the same fixed-scale TDLeaf/search-bootstrap learner,
+Chess first and then complete Generic rules. Next reuse the learner in one
+library path and obtain bounded actual learning/play evidence. This correction
+does not authorize UNKNOWN imputation, MCTS/Elo scope changes, old cap resets,
+new workers, or writes to another role. Current decisions and next actions are
+in the compact LOCAL_MAINLINE.md. Exact previous documentation remains in Git.
+This bounded cleanup is administrative, not a qualifying research segment;
+preserve the active session UUID/origin/confirmed work, stops and recurrence.
+
+## User-authorized two-checkout cleanup — 2026-10-21
+
+The user explicitly approved cleaning both this PRIMARY checkout and the existing
+DEV_AUX checkout, including removal of unrelated current-tree project content.
+For this bounded cleanup only, that approval supersedes the usual cross-checkout
+write prohibition. It does not transfer research ownership or permit worker
+creation, active-file interference, merges, history rewriting or Slack deletion.
+The user then directed: do not message/pause either researcher; clean only files
+confirmed static and mark the remainder incomplete. Preserve active work,
+sessions/stops and hourly recurrence. General rules/search/learning remain the
+mainline; MCTS/Elo recommendations do not become new scope through this cleanup.
+Closed experiment payloads may leave the current tree after checking dependencies;
+keep Git history and a verified private copy of removed uncommitted unique data.
+This supersedes instructions to retain all closed archives in the current tree.
+Do not recreate retired audits without a current caller or new scientific use.
+Details and unresolved delivery: docs/operations/CLEANUP_20261021.md.
+
+
 ## User-authorized DEV_AUX chat handoff — 2026-10-20
 
 The user transferred the existing gc辅助 DEV_AUX work and hourly checks to

@@ -1,8 +1,0 @@
-{
-  "question": "Does unit-count cutoff distinguish immediately available mating resources?",
-  "frozen_fixtures": [
-    "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
-    "7k/8/5KP1/8/8/8/8/8 w - - 0 1"
-  ],
-  "protocol": "Independent PythonChess legality/terminal check at root and all one-ply successors. Use Task104 unit-count and mate reward. No search engine, human values or learning; finite diagnostic only."
-}

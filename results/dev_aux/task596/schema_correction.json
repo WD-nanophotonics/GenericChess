@@ -1,9 +1,0 @@
-{
-  "scope": "Observedmetadatafield defect, NOTwrongtrainingobjective/physicalexecution",
-  "field": "597candidate physical_goals",
-  "actual": "terminal objective score; same as goals",
-  "correct_literal_raw_source": "597games.jsonl g.goal is actualmixedphysical score andfullterminal/raw_quantity retained",
-  "cause": "Generatorstr.replace matched goals=[...] inside physical_goals=[...] too",
-  "fix": "Do notrewrite oldfailed/producer/endpoints results; audit600checks actualfieldmeaning,601analysis usesactualdevrawgames bothmetrics. Futureproducer mustuse explicitnamedgoalexpression no broadreplacement.",
-  "new_training_go": 0
-}

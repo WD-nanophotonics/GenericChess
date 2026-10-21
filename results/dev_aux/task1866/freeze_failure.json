@@ -1,8 +1,0 @@
-{
-  "error": "KeyError: results/dev_aux/task1824/variant.ini",
-  "cause": "Existing nativeplan manifest uses Windows separators; guessedslashkey absent.",
-  "before": "freeze_before_path_fix.py",
-  "phase": "Before plan/Native/go; only original unusedvariant.ini written",
-  "correction": "Use exact prior native.variant_ini key, create new variant-qualified.ini and preserve original unused file/source.",
-  "native_go": 0
-}

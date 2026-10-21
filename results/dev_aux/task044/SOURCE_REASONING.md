@@ -1,9 +1,0 @@
-# Callback source audit before execution
-
-The public iterator passes the caller checkpoint into _trial_child_if_s3_legal. That method wraps the callback in trial_checkpoint, records any BaseException raised by the caller and propagates RuntimeError from that source; a transition-origin RuntimeError with no callback failure is instead an S3 rejection. This local flag resets for every candidate. Later invariant callbacks are outside the transition catch, and propagate directly.
-
-For the new public-frontier witness, the transition wrapper only labels phase/count and forwards the provided trial_checkpoint. The original caller checkpoint raises the declared exact object at the labeled local count, inside trial_checkpoint's try. Raising in the instrumentation wrapper after a successful callback would simulate a transition-origin fault and answer a different question; the drafted code was corrected on source inspection before execution. It is not evidence of a product bug or a successful callback test.
-
-After an interruption Python's generator cannot be resumed to reconstruct a complete frontier; the declared recovery is a fresh iterator call on the same engine/immutable parent. A yielded prefix is retained in the fault ledger. The public code clears postcondition context in finally after each S4 evaluation. This fixture has no S4 predicates; it only verifies fields remain clear and does not establish interruption safety inside a no-legal-reply postcondition.
-
-Missing source_token resolves to None even though aux expiry has already reset physical slots in the trial's private state: deferred aux references deliberately consume the pre-action binding position. The missing-token failure and a checkpoint RuntimeError have identical text, so text-based exception classification would fail this public witness. The runner records full transitions, complete ordered actions and exact callback order; counts are not a search gain.

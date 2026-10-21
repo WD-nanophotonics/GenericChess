@@ -1,1 +1,0 @@
-Initial record auditor rejected aborted-refresh rows because it guessed result_source=first_iteration_reserve. Actual source/records use main_iteration plus result_ordinary_qdepth=0. The source label was corrected; exact reserve action/score/PV and completed_depth checks remain. This is an auditor assumption error, not a producer failure. No search was repeated.

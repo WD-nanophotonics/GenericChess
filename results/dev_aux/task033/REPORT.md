@@ -1,5 +1,0 @@
-# Task033: finite ordered-merge contract
-Private function changes selected-row materialization/sort into eager selection of group tuples followed by heapq.merge; all source polls and original row guards remain. Product source is unchanged.
-580query pairs on two builtin initial/first legal child states agree in result and exact binding/checkpoint trace.16fixed target cases supply930exact InterruptedError fault arms, every normal callback prefix. Duplicate geometry rows retain distinct per-query-key ranks/multiplicity. No timing or caller cost rerun.
-This supports finite normal/callback-count semantics, not real deadline equality, all allocation failures or generated-domain acceptance. Explicit rank-key comparison is preferable if a future variant drops unique-rank assumptions; frozen candidate has no key and current per-key ranks are verified.
-Dot read fixed c87source and supplied an eager-scan boundary check; its review did not execute this candidate. Task035 runs that tiny control. Task036 separately defers singleton caller-cost expansion.

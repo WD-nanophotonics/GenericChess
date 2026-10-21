@@ -1,3 +1,0 @@
-# Task086 - reviewed scope
-
-CanonicalWesternsemanticrules,syntheticone-pawn/2anchor states:Pythonmovement-atom attackmaps omitpawn squares;Native semanticattackmaps include two owner-relative squares. Frozen geometryEvaluator scores7/-7 become rawNative11/-11. This is a concrete sameleaf substitution counterexample,not aNative scalarattackbug or humanprice/game-strength conclusion. Do not patch manualPawnweights or generalize generatedalignedsubset; mechanical complete attackauthority requires an explicit common evaluator contract. Original generatedrecords/oldcaps retained. Producer import failure retained;no terminaladapter assertion bypass.

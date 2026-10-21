@@ -1,4 +1,0 @@
-from pathlib import Path
-import itertools,collections,time,json
-R=Path.cwd();O=R/'results/dev_aux/task1494';O.mkdir(exist_ok=False)
-plan={'question':'Can a complete tiny royal rook/knight game provide cheap exact WDL labels without material rewards?','board':[3,3],'pieces':['K','R','N','k','r','n'],'absent_allowed':['R','N','r','n'],'rules':'King royal; ordinary R/N movement and capture; no castling/pawns/promotion/drops; checkmate loss, stalemate draw; infinite nonterminal play draw. No eight-board insufficient-material shortcut, no history draw.','max_seconds':600,'state_cap':200000,'decision':'Only use exact graph when closure+retrograde validation PASS; then mature-search choice labels can be actual proven WDL, not numeric material or shallow mate score. Tiny-domain values conditional, not human Chess recovery.'};(O/'plan.json').write_text(json.dumps(plan,indent=2))

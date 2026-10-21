@@ -1,5 +1,0 @@
-{
-  "cause": "Predicted PV terminal was stored as previous=None, suppressing later actual-outcome residual against surviving eligibility. Preserve terminal forecast with zero gradient; only actual finish or censor resets.",
-  "impact": "Original smoke execution retained with exact v1 source snapshots. Tests prove correction; original curves NOT relabeled as corrected training.",
-  "old_run_reason": "Original result reason NODE_BUDGET despite MAX_GAMES for8173; audit retains correction without rewriting original result."
-}

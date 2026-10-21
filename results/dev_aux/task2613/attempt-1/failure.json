@@ -1,9 +1,0 @@
-{
-  "attempt": 1,
-  "status": "TEST_DESIGN_FAILURE",
-  "command": ".venv/Scripts/python.exe -m pytest -q results/dev_aux/task2613/test_unknown_contract.py",
-  "observed": "1 passed, 1 failed; test_incomplete_search_resets_episode_without_terminal_target expected finish(None) after finish(1.0) to produce zero samples, but the complete prior row correctly receives the known terminal target and produces one residual.",
-  "cause": "The test incorrectly asserted that an incomplete receipt resets the episode and combined it with a known terminal outcome. The implementation ignores the incomplete receipt; the test's reset claim was not supported by source semantics.",
-  "impact": "No training or game outcome was used. No learner source changed. The test plan is amended before rerun.",
-  "preserved": "attempt-1/test_unknown_contract.py"
-}

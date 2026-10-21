@@ -1,7 +1,0 @@
-# task2636 partial evaluation slot-universe audit
-
-The outcome-blind auditor derived planned slots from the frozen evaluation roots and plan only. It passed with 16 candidates × 16 families × 2 learner colors × 2 endpoints = 1024 unique slots and 512 endpoint-paired strata. Every candidate seed has eight families assigned the 20,000 combined two-side cap and eight assigned 40,000; cap identity is shared across both endpoint models and learner colors.
-
-Each pair key is `(candidate_index, root_family, learner_color)` and contains exactly the `initial` and `TDLeaf` endpoint slots. The candidate index disambiguates family IDs shared across rules. A future result auditor should derive the expected slot universe from the same pinned root pool, require completed slot keys to be a unique subset, and compute the missing set as the exact complement. A completed unscored slot must be represented as `UNKNOWN`; an unstarted slot is `MISSING`. Neither can carry a W/L/D reward. Bounds must retain all 512 pair keys.
-
-Pins: plan `a3af462f9db4018118619aea9d79374e7e876f83735559d8269a80b506c73c40`, root pool `8854a09a406fd2b0c19b50729c22a03b55bc566ab0b4bb9e5e5325a2e1d98718`, root audit `091d73c760d81f563e4d2c7f829c71bc8b9eb8bf526544302d540eb13b0eb8d7`, auditor `9d944fff7860a959f1a61abb0f000201e2674f1f10335c074c4519c07ae9a645`. No outcomes, search values, or run outputs were read; no registration or evaluation was started. This verifies the denominator/key contract, not any future episode or slot result auditor.

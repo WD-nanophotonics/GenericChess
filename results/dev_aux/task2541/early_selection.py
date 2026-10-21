@@ -1,4 +1,0 @@
-from pathlib import Path
-import json,collections
-D=Path('results/dev_aux/task2539');O=Path('results/dev_aux/task2541');ups=[json.loads(x)for x in(D/'updates.jsonl').read_text().splitlines()];uu=[u for u in ups if u['generator_seed']==271001 and u['method']=='WDL'];c=collections.Counter('positive'if u['bounds'][0]>0 else'negative'if u['bounds'][1]<0 else'exact_tie'if u['bounds']==[0,0]else'unresolved_with_unknown'for u in uu)
-out=dict(status='ACTUAL_FIRST_RULE_WDL_ACCEPTANCE_BREAKDOWN',rule=271001,complete_arms=8,proposals=len(uu),counts=dict(c),missing_tail_games=sum(u['missing']for u in uu),scope='DescriptiveTRAIN-onlyclassificationofALLfirst-ruleproposals; notheldoutgain orcomparableinformationbits. StrictfiniteboundsnotstatisticalCI; no candidate/step/order change. First-ruleglobalindexclosedbeforethisread.');(O/'early-selection.json').write_text(json.dumps(out,indent=2));print(json.dumps(out))

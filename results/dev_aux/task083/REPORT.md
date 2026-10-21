@@ -1,9 +1,0 @@
-# Task083 - residual rawboundary profile
-
-One instrumented seed1008-ply8 D2/q4/hard8 caller completes -343,48.108s including setup; action/score/work/trace and Native/root restoration equal Task080 eager reference. Profile overhead is substantial; this is not an ordinary speed sample and ran during Task082 time curve, as permitted concurrency. Native semantic_terminal self6.471s/267793calls; transient_legal_actions4.108s/25665;make_checked2.940s/267792. C primitive names identify executed runtime, not source-build attestation or internal copy-vs-rule decomposition.
-
-Important diagnostic charge: public_action cumulative8.097s/927322calls, dataclass repr wrapper cumulative5.494s with recursive4870201calls; inclusive times overlap and cannot be added. Snapshot wrapper cumulative6.363s includes C payload and normalization/history; raw inventory2.386s. Entire lexical/trace diagnostic is not product Native search, which does not emit these Python trace objects. Next single-root traceON/OFF mechanism check separates diagnostic trace cost while preserving lexical repr sorting and all semantic work. No change to primary terminal-policy repair, Native DLL, q/UI defaults or historical controls.
-
-Runtime stdlib host prefix redacted structurally from exported function records; no scientific counters changed. Excludes raw pstats binary/private inputs.
-
-Producer review: executing Task082 prefix initially rewrote its already-created compiled_driver.json with identical bytes while Task082 ran. Search code was already loaded; generated source matches captured candidate exactly, so no computation state changed. This was unnecessary shared-output writing within auxiliary jobs. Revised analysis producer strips that artifact-write line; no scientific rerun and primary always untouched. Executed probe hash retained in result.

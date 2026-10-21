@@ -1,9 +1,0 @@
-{
-  "status": "FROZEN_BEFORE_TRAIN_SELECTION_OR_DEV_RESULTS",
-  "training": "results/dev_aux/task1939",
-  "selector": "Use globalTRAINactualW-L maximum/smallestprice tie, as frozen1939. No DEV price choice. Ifselected==1skipselfcomparison; keepallCONFIRMinputs.",
-  "cases": "ALL32freshCONFIRMfamilies/BOTHroles/lockedpricevs1/fixedopponents512and4096. CandidateproofOFFnormal4096, opponentUNIT720/proof16 anditsnormalbudgetfixed. H24withsamecertifiedtail. All256 cases if nonbaseline, orderbalanced. No price/horizon/cap adaptation.",
-  "expected_seconds": 240,
-  "hard_seconds": 1200,
-  "scope": "Independent confirmation of chosenprice from newgeometry study; no rerunning oldfailures, no humanreference, no defaultchanges. Ordinaryconcurrency noted. Ifpartialretainmissingcases/stopnoextension. NotfullGenericChess oruniqueparameterproof."
-}

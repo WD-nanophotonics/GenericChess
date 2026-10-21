@@ -1,7 +1,0 @@
-{
-  "attempt": 2,
-  "status": "FAILED_BEFORE_REGISTRATION",
-  "error": "KeyError: 'budget' while populating the final plan",
-  "diagnosis": "Outcome-blind roots and an eval-plan draft were written, but the cost metadata object had not been initialized before final plan serialization. No registration, training or evaluation was launched.",
-  "preserved_drafts": ["attempt-2/root-manifest.json", "attempt-2/eval-plan.json"]
-}

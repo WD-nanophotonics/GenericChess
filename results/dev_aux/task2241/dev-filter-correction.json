@@ -1,4 +1,0 @@
-{
-  "defect": "SummaryloopincludedunplannedTRAINroots oncontexts2220/2224, whileexpectedslotcoveragecorrectlyusedDEVonly. This falselyintroduced128missingpairs/context; actualreplayandquietcontextwerecorrect.",
-  "correction": "Restrictpairedsummaries tosameDEVplannedrootset; preservepriorresult/source. No game/protocol/resultchanged; validateagainstclosed2230originalconsumer."
-}

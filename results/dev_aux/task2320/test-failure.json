@@ -1,6 +1,0 @@
-{
-  "status": "INITIAL7PASS_1HARNESS_FAILURE",
-  "error": "GameSession.compiled property hasno setter",
-  "cause": "Test attemptedassignread-onlypublicproperty; failedbeforechecker",
-  "correction": "Construct actual GameSession with deliberately unsupported compiledpolicy through publicconstructor; bindactualroot. No private state injection/productionpolicychange."
-}

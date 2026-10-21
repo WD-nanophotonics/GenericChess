@@ -1,7 +1,0 @@
-{
-  "status": "NOT_EXECUTED",
-  "plan": "plan.json",
-  "reason": "Pre-execution API inspection found nonexistent rt.to_state(); use actual assert_balanced/searchkey/fullhistory/position checks. No search invoked, no cap reset or outcomes observed.",
-  "replacement": "reference_plan.json",
-  "source_before": "before_preexecution_api_fix.py"
-}

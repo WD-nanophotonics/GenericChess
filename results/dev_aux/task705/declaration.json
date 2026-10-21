@@ -1,8 +1,0 @@
-{
-  "question": "At ALLactuallyvisited coordinate grids, howoften does one opponent draw select a move that loses on the other draw?",
-  "declared_at": 1791890359.8524475,
-  "inputs": "ALL24A686 andALL24B695 native-coordinate proposalgrids; onlyactualevaluated pricevectors/64cells; no counterfactualfuturefit replay",
-  "methods": "A meanq12/24; B q12only, same2draw64cells. Eachdraw scoreall7gridpoints; baselinefirstbeststrictpositive. Evaluate selectedone-draw candidate onOTHERdraw withoriginal32cell denominator.",
-  "cost": "Zero newgames/go; readalreadyclosedaudited candidate metadata. Deriveactualper-draw physical node/go work from rawonly if informative, originalcached gamesnotnew.",
-  "scope": "Post-A/exploratory/pre-Bfinish cost-sensitivity diagnostic. Allgrids and bothdraworders retained, no selectfavorable axis/model/draw prefix. Crossdrawcostsigns conditionalvisitedweights, NOTunexposed holdout, newlearned endpoint, 1drawvs2drawend-to-end success orglobalIIDconfidence. Nothingchangesfitness/schedule/defaults/humanprices."
-}

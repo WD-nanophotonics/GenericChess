@@ -1,6 +1,0 @@
-{
-  "initial_tests": "12pass2fail",
-  "cause": "compile_semantic_ruleset rejects empty semantic_actions; failed before solver call.",
-  "change": "Add explicit S0-S3 aux-step action, retaining known KRK mate layout and complete semantic engine.",
-  "implementation_changed": false
-}

@@ -1,5 +1,0 @@
-# Task040 declaration: deferred square operands versus expiry
-
-Question: does shared code retain action-owned square operands and read pre-action auxiliary state even when that slot expires before the write? Two same-kind (move,set_token) public actions: write source square versus write a square read from source_token. Both source_token and output_token expire_next_turn. Cross global/per_owner scopes and compat/pure carriers:8normal pairs plus4direct negative pairs for the second action with missing source_token. Full parent, exact callbacks, actual shared-function identity and compiled entry hits required.
-
-Fixed4x4anchors0/15 and owner0 actor5→9. Pre-action source_token owner0=(2,2), output_token=(3,1); per_owner other values remain distinct before expiry. Expected source_token reset to None, output_token action-specific (1,1)/(2,2); per_owner foreign output also resets. Direct negative reuses the bound action deliberately; it is not a public legal-membership assertion. No search/C/timing/default or caller rerun. Internal120sec case guard. Retain any failed premise before correction; completion is finite semantic evidence only.

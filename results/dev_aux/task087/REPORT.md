@@ -1,3 +1,0 @@
-# Task087 - distinct pseudoattack and transition contracts
-
-Ten Coresemantic/Native owner maps and490scalar target queries match on the exactfiveoldTask057serializedfixtures. Actor-relative removefilter variants still reject currentNative legalityprovider; no oldlegalityfrontier/search rerun. Semanticpseudoattack considers S0/S1 capture pattern geometry/guards, omits S3/S4 and transitioneffects bydesign; therefore the earlier removeeffect failure doesnot refute this finiteattackinterface. Match cannotgrant arbitraryNative legal execution or allDSLattack acceptance. Roots unchanged,installedbinary unchanged,no provider guard bypass or productedit.

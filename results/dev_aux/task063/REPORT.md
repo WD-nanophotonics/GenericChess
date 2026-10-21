@@ -1,9 +1,0 @@
-# Task063: owner/type mapping rows need their own shape
-
-The persistent Native constructor accepts malformed spatial mappings whose rows have compensating lengths18/0 or8/10. The prior Task059 one-shot total-length AST candidate accepts them too. Complete owner/type keys, total108values and flat nine-cell zero sums do not establish that each input mapping row has nine cells.
-
-Six declared actual entry probes accepted one valid mapping and two malformed mappings on both routes. The18/0 mapping flattens to the same vector as a valid mapping while losing the declared row boundary; the8/10 case also passes flat validation. These invalid mappings have no meaningful specified spatial function, so no incorrect score/strength is inferred. Existing checkpoint validation already requires each row's nine-cell shape; this is a direct raw-API validation gap. The unchanged production one-shot still has Task059's earlier total-length defect, so the one-shot calls here are explicitly private length-only candidates.
-
-Six private row-repair controls accept valid rows and reject both malformed forms before Native entry. Candidate helpers convert each mapping row once to an integer tuple, check len9 and only then flatten; valid iterable rows and the flat-sequence API keep their existing scope. These changes are auxiliary artifacts. Original product functions/root snapshots remain unchanged, with no binary rebuild/default/UI patch.
-
-An AST loop initially overwrote the Native rule variable. The shell wrongly recorded success after that failure; the original checkpoint is preserved and superseded by an explicit correction. No candidate success existed then. After restoring the rule variable the actual six controls pass; repair_result.json is the evidence. HARNESS_NOTES preserves this workflow error. Task066's combined private candidate adds relevant existing regression coverage, not universal API acceptance.

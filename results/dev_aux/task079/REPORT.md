@@ -1,5 +1,0 @@
-# Task079 - hand, promotion flag, anchor and side terms
-
-All144synthetic states /432evaluations match for all six Native types, both owners/sides, promoted flags, three declared squares and three exact weight configurations. Nonzero ownhand2/enemyhand1; two same-owner anchors exercise first-anchor choice. C has positive promotion gain845 and both end-rank zones; odd promotion weights exercise floor-halving. Explicit promotion to same type is representation-valid. These states are not legal-reachability or terminal/history evidence. The declaration word signed refers to side/owner scoring; all three weight vectors are nonnegative, with no negative-weight claim. Different base/current type promotion remains bounded by executed frozen search, not this synthetic set.
-
-Next source-derived qualification: original rt.state eagerly reads terminal before material q filters; raw helper reads it only after material tests. Task078 therefore combines field projection with lazy terminal query. Separate eagerness ablation is needed before attributing all savings to representation.

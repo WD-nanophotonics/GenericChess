@@ -1,9 +1,0 @@
-{
-  "question": "Can a bounded generic position graph reduce repeated proof-tree work without dropping actual-history obligations?",
-  "cause": "2177fixed4x4WINcapability58trueWINcontexts: only17proven at6s, unchanged1024vs8192nodes; treehistoryprefix cost remains.2141/2143storedranktree duplicatepositions observed.",
-  "scope": "OPT-IN scoped baseline executor only; no declarations/semanticIR/automatic/no-progress/consecutive/cycle-target/perpetual adjudication. Position-only legality and boardterminal; only drawrepetition+maxply history. Promotions/drops/pass/fullbase-current/hand/aux preserved where baseline supports. Unsupported returns UNKNOWN; fullgenerateddomainOPEN.",
-  "soundness": "Independently reconstruct complete fullPosition graph from actualroot and publicactions. Everytargetnode onelegalwinningedge, everydefendernode ALLlegaledges, strictpositive ranks toactualWINterminal. Repetitionidentity injective acrossreachablegraph prevents within-strategyrepeats; rootprehistory count <=limit-2 for every futuregraphidentity and remainingply>=rootrank. Exactrootrecord/state binding mandatory. No arbitraryhistory merge.",
-  "prover": "Bounded BFS partialgraph with OR/AND win propagation; unexpanded/partialAND UNKNOWN. No table/evaluator/gamepiece-specific logic. Maxpositions and maxedges bound memory. Workunits positions/frontiers/transitions separate fromPNtreevisits.",
-  "verification": "Public canonicalSession reconstruction per distinctposition, notproverownedsessions ortrustedlabels. Actualcursor publicexecute checks fullrecord/rootcontext everyturn. No fixedplayer/bank/default/PRIMARY integration.",
-  "next": "Focused actual/adversarialtests then newbounded same62context query at6s/8192positions, no oldcap extension/learningfit."
-}

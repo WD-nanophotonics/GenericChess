@@ -1,9 +1,0 @@
-{
-  "status": "BEFORE_NEW_PV_LEAF_AUDIT",
-  "declared_at": 1791899938.0831187,
-  "question": "Can existingmature materialsearch score/PV snapshots supply exactleaf features for TDLeaf withoutnewgo?",
-  "inputs": "ALLoriginal2initial prices F/G traincases, fixedtwoopponents16families2colors/BOTHbudgets; dedup128games perbudget byfullroot/price/opponent/color andqualifiedphysicalsource. Allqueries inthese256cases, no cherry-picking scorelines.",
-  "check": "Finalreportedline andlastunboundednumeric-cp line separately. ReplaylegalPV fromexactqueryhistory, board+hand/nativeprice dotfeatures, convert rootSTM rawmaterial viaactual C++to_cp trunc100*raw/90. Count bound/mate/nonPV/mismatch; preserveallcounterexamples. Materialleaf matches donotproveexactsearchvalue/gradient/generality.",
-  "cost": "Zeroadditionalenginego, independentcshogi replay/querymaterials usingalreadyqualified source hashes, expectedseconds. No coefficienttraining/referencefitness.",
-  "scope": "PrimaryTDLeaf literature usesprincipal scoreleaf derivative; mature selective/search bound/PV truncation maynotprovide it. Thischecks explicitchanged256/1024 currentdatasets, not oldunqualifiedexactPV assumption."
-}

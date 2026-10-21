@@ -1,9 +1,0 @@
-# task2636 route reassessment
-
-Question: does continuing the current Generic panel conflict with the user's standard-Chess-first TD/search route, or should work switch to the separate TreeStrap-vs-TDLeaf comparison?
-
-The current direct route is to validate TD/TDLeaf/search bootstrapping on standard Chess, then carry the same learner to complete Generic rules. The local mainline records task2594 as the completed finite standard-Chess TD validation and task2606 as the subsequent transfer comparison. Task2636 uses the same fixed-scale TDLeaf/search-bootstrapping learner on the frozen generated-rule panel; it is therefore the Generic transfer/coverage stage, not a replacement for the initial Chess validation.
-
-The Chess TreeStrap-vs-TDLeaf matched-cost comparison remains a separate unresolved learner-method question. It is useful but not a gate required to apply the already Chess-validated learner to Generic rules. Its current source/root/cost design requires its own revalidation, and the recent Chat mailbox comments do not request switching to that route. The task2636 panel already has frozen roots and a <120-minute projected run, while no registration or execution exists; the actual projection is not a runtime guarantee and adaptation cost remains unmeasured.
-
-Decision: keep task2636 as this segment's Main and continue pre-registration hardening. This preserves the standard-Chess-first sequence and current finite Generic transfer question. Do not register or launch until the candidate-index runner, source-bound partial query/history auditor, stop/deadline closure paths, targeted tests and revised end-to-end cost are ready. Revisit the TreeStrap comparison at the next explicit route checkpoint; do not infer that task2636 resolves it or any population/seed-stability question.

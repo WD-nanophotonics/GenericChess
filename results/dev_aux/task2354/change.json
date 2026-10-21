@@ -1,7 +1,0 @@
-{
-  "observed_defect": "2340freshstopobservationexceptionescapedwithoutclosure",
-  "change": "Own atomic completion/failure plus committed-record journal; catches and propagates BaseException after private exact traceback. No retry, polling or proof/search policy change.",
-  "old_source": "results/dev_aux/task2340/pilot.py",
-  "new_source": "results/dev_aux/task2354/pilot.py",
-  "scope": "Does not repair a writer owned by PRIMARY; owner notified81, no reply yet. Old2340unchanged."
-}

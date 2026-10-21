@@ -1,7 +1,0 @@
-# Exact94 scientific reproduction
-
-Run `python -m results.dev_aux.task2554.fresh` with the independent Windows clone's existing Python. The consumer extracts a new ignored UUID directory, verifies every manifest byte hash, asserts imported source locations, and runs Python-B/-S with empty PYTHONPATH and existing pytest/chess dependencies. It parks ALL13 original derived outputs BEFORE regenerating43 existing learner/search tests and the new complete-rule numerical audits. The actual stop-owner files are passed explicitly, never fake flag trees. The Win32 stop adapter is platform-scoped; this is not an untested Linux portability claim. Plotting separately uses existing matplotlib.
-
-All new TRAIN/outcome data and source93 raw TRAIN fixtures needed for signal reconstruction are in the exact capsule. No new training/fitness/oldpartialcap continuation occurs. Same Core rule authority and sampled unpruned minimax are not an external rule engine or proof of every query. First-rule replay is counted again as logical work, not distinct games.
-
-The human report, fresh receipt, publication projection and final delivery verification are separate directGit metadata to avoid circular self-reference. Exact source/raw data/original audits are capsule authority; LF/EOF-only Git projections are disclosed. Failed original source/diagnostic-label/serialization/entry corrections remain history, not active algorithms. The old2505 testfixture is alreadytracked publicly; four large journals use the capsule route.

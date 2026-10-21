@@ -1,8 +1,0 @@
-{
-  "status": "FROZEN_SOURCE_SEMANTICS_CLARIFICATION_NO_ALGORITHM_CHANGE",
-  "source": "results/dev_aux/task2504/search.py",
-  "source_sha": "5017c69be2b57327cc01e3955386d42cd142b7d5b095648fbac2d362e659431d",
-  "actual": "qply counts ALL extension plies, including forced check evasions. At qply>=2, a NONCHECK node may become a counted static target even with captures. In check, ALL legal evasions continue regardless of qply; abort on resource/qstack meansnoquerytarget.",
-  "correction": "Earlier inline request/source prose called this two OPTIONAL tactical plies. That is imprecise: after forced evasions fewer than two optional captures may occur. Frozen code/data/plans/caps are unchanged. Adopt actual source-defined horizon, preserve earlier text as history.",
-  "evidence": "walk increments qply+1 at every depth0 edge; cutoff tests notchecked and qply>=q_limit; existing actualTRAINfixture exercises evasionspast2 and no incheckstatic. No new queries or selectedfitness."
-}
