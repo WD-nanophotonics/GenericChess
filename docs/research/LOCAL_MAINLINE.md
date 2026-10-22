@@ -1,76 +1,72 @@
 # DEV_AUX current research
 
 Direction: LEAPER_INVERSE_DESIGN_DIRECTION.md. PRIMARY owns rules/openings,
-forward screening and inverse proposals. DEV_AUX owns history truth, useful
-natural decision exposure, learner parameters/depth/ties and justified learning.
-No duplicate generator, product defaults, other-role state or extra writer.
+forward screening and inverse proposals. AUX consumes frozen rules/history for
+truth, useful decisions, prices/depth/ties and justified learning. No duplicate
+generator, production defaults, other-role writes, Agent/Goal/worker/timer.
 
-Current report: LEAPER_ARGMAX_EXPOSURE_20261023.md.
-Selected capsule: data/leaper_argmax_exposure_20261023/.
-Earlier canonical/natural reports and all closed caps remain historical.
+Current report: LEAPER_LEARNING_AND_MATING_SUPPORT_20261023.md.
+Evidence: data/leaper_learning_support_20261023/ (2.20MB main capsule +4KB supplement).
+Earlier reports and all closed caps remain history, not continuation queues.
 
-## Committed infrastructure
+## Infrastructure and inputs
 
-Actual new diagnostic source: sandboxe3f7659864651d4e26c45472a876611bbe984103.
-Frozen new packet:44d346484b8927309bf3437b99d4816a36fd3cf0.
-Closing reuse:06c7eb414b0ec8993f5d3d90606e8fcba36ff9d7,including actual
-initial_record continuation/played-suffix qualification. The3publicLeaper
-helpers and2tests match that commit;Core/rules/session/ai have no branchdelta.
-78closing tests pass. Actual measurements are not relabelled onto later code.
-Learner remains the shared public q0 caller;no measured acceleration claim.
+Latest published sandbox checked at recovery and closing:
+06c7eb414b0ec8993f5d3d90606e8fcba36ff9d7. Shared Core/rules/session/AI have
+no delta; AUX keeps its maintained learning adapter. Leaper public helpers/tests
+remain byte-identical to committed mainline. No uncommitted PRIMARY work adopted.
+Actual learner source: b0c48c5cc388528171a40fd90d6d92d201ec653e.
+Frozen inputs:44d346484b8927309bf3437b99d4816a36fd3cf0 and latest06c7 opening packet.
+No measured infrastructure acceleration or default change is claimed.
 
-## Current findings and limits
+## Findings and boundaries
 
-- Old379fiveactorhistories:priorsD4 351allsafe/22mixed/6strict supports;
- 17servedfailures are11mixed/6strict. Signed15cells atfixedA1 leave4strict
- residuals;onebecomes safe atnegativeB. No per-rule constant-price ideal-tie
- error envelope improves withnonpositiveB. Not intrinsicprices/fulllearnerproof.
-- New3024references=1765records/86058fullroots. Low CLOSED1201.777s:
- 51complete/1partial/6unattempted rules,57872labels/6556missing.
- Four CLOSED1200.434s:73complete/1partial/222unattempted components,
- 2169/14139labels,925forks/346inferior. ActualLEXordering supersedes mistaken
- roundrobin prose;partialfourgraph wasnotpersisted,labels/costs preserved.
-- 531/626maxplyreferences (351/420records) enterproven structuraldeadzones.
- 147refs/101records contain unconvertedWIN;overlap possible. Paid5.6MABnodes
- afterprovenentry are cost,not measuredsavings. Root/actioncoverage has26017
- omissions;separatepositivecertificates do not supply allmissingactionlabels.
-- All19542type-reduced price/depthcalls complete. B1D2/D4errors65/13;
- D4adds53WDLimprovements,0regressions at8.56xnodes. Mixed1267roots have
- 40D2/11D4price-WDL effects. AtD4 fivecan improveB1,sixcanworsen.
-- Bothmetadata priors complete4338neweach/516282nodes andagree action/PV/
- node/feature/WDL throughout. D2errors41,D4errors8. D4improve5/worsen1,
- sumWDL4;all-sourcebounds cross0. Purematerial,notPRIMARYdynamicStatic.
-- D6 CLOSED600s:1281recorded/1238full/888unattempted,2unknown calls,
- 1884386nodes. Commonfull1238errors D2=35,D4=4,D6=2;D6cost6.86xD4nodes.
- WINrankstalls104to83 on365preservedWIN roots. Not equalactualcost/strength.
-- All66frozeninitialroots:13mate1/12mate3/41notforcedWINwithin3;lastisnotDRAW.
- 35literalWINcertificates1578nodes,6producernegatives,48clockroots4940nodes;
- sealedreader adds missingdefendernegative and validates fullbindings/PVs.
-- ONElabel-blind metadata-hash zero-update episode[5,30]:realDRAW20plies,
- 20calls5548nodes/1.849s,weightsunchanged,ownB-PVgradientszero here.
- Actualplay_episode uses<=5s/query/reserve0,not1.5s/reserve.1diagnostic.
- No TDtraining,oracle-selectedtrainingstarts,holdout or product claim.
+- Label-blind original-corner50 next8 worlds, excluding ONE preflight, both
+ roles:16 exposure episodes/551 fullD4 calls/113943 nodes. Eight candidate
+ nonzero TD terms; current zero gradients sometimes retain eligibility.
+- Fresh 16-episode/world/init pilot:304 new slots complete;256 TRAIN and48
+ EVAL plus16 reused unit controls. Unit TD gains1/16 by turning one loss into
+ draw, but matches free mobility on all16 endpoints. Prior TD gains0. Only14
+ distinct TRAIN records;34 actual updates, all bootstrap, terminal credit0.
+ No independent-sample, heldout, intrinsic-price or prior-superiority claim.
+- All four actual endpoint divergences narrow D4 ties (6827 literal visits).
+ Changed parameters/argmax or critic loss are not strength on their own.
+- All31 4x4 and five frozen5x5 KX kernels close. Eleven4x4 masks cannot mate
+ even cooperatively. Global constructed fresh positions, not opening reachability
+ or arbitrary-history labels. Support and composition are not additive prices.
+- All75 orbit additions:505928 common-position comparisons;4896 WIN-to-DRAW
+ reversals, mostly new stalemate,120 both roots ongoing. Capability is not a
+ monotone WDL score. Shared-Core Bellman checker validates428568 vertices/
+ 2181248 edges; no independent rules engine.
+- Latest32 PRIMARY5x5 games:12 natural4actor components;9 complete/3 statecapped.
+ 1793/1799 histories labelled DRAW:600 structural,1193 unblocked minimax draws
+ with possible cooperative mates. Five of six missing are1/3; censoring is not
+ evidence of whole-corpus saturation. All partial graphs retained; never refill.
+- Separate bounded Session proofs verify four winner roots, keeping closed-grid
+ six missing unchanged. Literal shortest <=4 gives4/3/2/1 on their common game.
+ A legal OR-edge lift proves ply39 WIN1. Ply38 five-actor:both targets UNKNOWN
+ after a separate60knode probe. Do not attribute a causal error without alternatives.
+- K+A+B against K can mate in saved1/2 and4/8 rules although neither type alone
+ can ever mate. Their selected natural DRAW roots have cooperative, not forced,
+ 8/10-ply mate paths. The single-type table is a descriptor, not a rejection rule.
 
 ## Next executable work
 
-Main: Does actualnaturalplay expose TDLeaf signals beyondcheappriors? |
-Use maintainedplay_episode,on_query and frozen44d originalcorner50worlds;
-exclude theONEpreflight,select next8SHA(AUX-episode-cost-v1:fp) entries,
-freeze BOTHroles (16episodes),unitD4versusfrozenmobilityD4,learner=None |
-fullrecords/receiptvalue+PV+features/gradient andterminal/UNKNOWN/cost |
-900swhole,180s/128knodesperepisode,8192perquery;allmissingretained,norerun.
-This is a NEWlabel-blind exposure/cost cohort,notcompletion ofanyoldcap.
+Main: Do material and depth alter the certified capture route? | Freeze NEW
+ query-only unit/actual5x5-mobility/Static-material byD2/4/6 at supplement ply38
+ and39 full records;shared public search8192nodes/5s/reserve0,freshTT,whole120s |
+ all18 PV/action/cost receipts and known certificate-route joins | no training;
+ no safe/WDL-gain claim without proof;close on cap,never extend closed PN/graphs.
+Inherited4x4 geometry metadata is not an actual5x5 prior: derive from committed
+compiled5x5 targets/profile. Selected roots are exposed diagnostic cases only.
 
-Backup1: Can its actual receipts support a minimal TD-versus-prior pilot? |
-Aftercohortcloses,distinguish search transitions,eligibility and terminalterms |
-explicit pairedbaseline/opponent/cost hypothesis | no oracle-root filter,
-no loss-only or gradient-only claim;>=120minute experiments needChatassessment.
-Backup2: Does newcommittedPRIMARYevidence change own exposure question? |
-ReadlatestfixedSHA/fullrecords/schema,joinonly exactcompletehistory matches |
-coverage/UNKNOWN andcost decision | no PRIMARYprepare/run/screen takeover,
-no oldlow/four/D6queryfill or fresh-Position substitution.
+Backup1: Does a new PRIMARY packet change useful exposure? | Read latest fixed
+ SHA/schema/full histories and new Chat/Claude comments | bounded own truth/
+ learner question and UNKNOWN/cost | no PRIMARY prepare/run/screen or task takeover.
+Backup2: Can verified short Session bounds cut cost on a NEW corpus? | Freeze a
+ small metadata-hash preflight only after current Main closes | positive bounds,
+ all unknowns and actual cost | no DRAW imputation, training-root filter or cap refill.
 
-Chat1792687570 andClaude1792687833 wereexact-revision read/adopted withinrole;
-shallowmate annotation executed. ExistingSEND_UNCERTAIN unresent. Completed
-publication must verify origin/sidemission fullSHA; finish only via session.
-Cadence60minutes unchanged. Session.json owns UUID/origin/confirmed work.
+Chat/Claude coverage1792694928.310479 read; own mating-support advice adopted
+with these qualifications. Existing SEND_UNCERTAIN is not resent. Cadence60min
+unchanged. Session.json owns UUID/origin/confirmed intervals; admin/offline excluded.

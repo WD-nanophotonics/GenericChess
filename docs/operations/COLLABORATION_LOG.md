@@ -927,3 +927,37 @@ with5090.55473confirmedseconds (84.843minutes);unconfirmed intervals/admin
 are excluded. Next is a NEWlabel-blind16episode cost/exposurecohort through
 maintainedplay_episode,not an oldcap extension or oracle-selectedtraining.
 Report:[Argmax/exposure](../research/LEAPER_ARGMAX_EXPOSURE_20261023.md).
+
+## DEV_AUX learning and mating support — 2026-10-23
+
+PRIMARY supplied committed06c7 infrastructure and its frozen224-game opening
+packet; AUX changed no shared engine, opening, sampler, default or other-role
+state. Recovery/closing fetches still show06c7; only AUX learning modules differ.
+Claude1792694928 advice is adopted for own truth/support work, not PRIMARY's
+forward screening. No message is resent from the old uncertain probe.
+
+The frozen8world actual TD pilot closes304new slots,256 TRAIN plus48 EVAL and
+16 reused controls. Unit gains1/16 but only reaches free mobility; prior TD gains0.
+Repeated TRAIN has14 distinct records, not256 independent samples. Four literal
+argmax reductions diagnose ties. All320 episode histories/PVs/updates replay.
+
+AUX's31+5 complete constructed KX support kernels expose11 no-mate4x4 masks
+and4896 common-position WIN-to-DRAW reversals under added movement. The table
+is not intrinsic price or game quality. New5x5 natural closure labels1793of1799;
+six remain in closed statecapped components. Four separate verified Session
+bounds and cooperative two-piece mate paths prevent confusing costly coverage,
+draw strategy and structural impossibility. No old cap is resumed or filled.
+
+Sealed public reader:428568vertices/2181248Coreedges,320episodes/17263PVs,
+1793root/action bindings and4positive certificates; natural4actor WDL labels
+are producer results, not all independently reproved. A sparse-zero reader
+error was repaired with unchanged experiment bytes. Large caches remain ignored.
+Ply39 has a lifted WIN1 certificate; ply38 remains UNKNOWN under its separate
+bounded probe. Next is a query-only price/depth diagnostic, never training from
+these oracle-selected histories. PRIMARY continues its own proposals independently.
+Report:[Learning/support](../research/LEAPER_LEARNING_AND_MATING_SUPPORT_20261023.md).
+
+Session fd9b347c-b662-4860-bb04-d144fb556ffb has 4133.3501 confirmed research
+seconds (68.889 minutes), preserving its 2026-10-22T19:57:38Z origin. Administrative
+publication is excluded. Closing compatibility is78 passed; the serialized
+lift independently verifies16nodes. No other-role computation or cadence changes.
