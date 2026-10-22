@@ -524,13 +524,15 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
                        random_foe_seed=None, initial_weights=None,
-                       lineup=('A','B','C'), c_axis='horizontal'):
+                       lineup=('A','B','C'), c_axis='horizontal', initial_positions=None):
     """One declared coexistence experiential check, with NO label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
     diagnose available signal rather than independent strength or coverage.
     Literal PV paths are retained for later mechanism analysis. Optional initial
     weights change only the learner's starting point; the foe stays uniform.
+    Explicit fresh initial boards use ordinary validated setup options. They
+    cannot be combined with played random openings or imported old histories.
     """
     from dataclasses import asdict
     import random
@@ -539,6 +541,16 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     from scripts.leaper_microgames import sampled_openings,session_at
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
     rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis)
+    setups=[None]
+    if initial_positions is not None:
+        from dataclasses import replace
+        from generic_chess.rules.schema import RuleInitialSetupOption
+        if opening_count or not initial_positions:
+            raise ValueError('fresh initial boards require nonempty positions and no played openings')
+        boards=tuple(initial_positions)
+        rules=replace(rules,initial_position=boards[0],initial_setup_options=tuple(
+            RuleInitialSetupOption(str(i),board)for i,board in enumerate(boards)if i))
+        setups += [str(i)for i in range(1,len(boards))]
     compiled=compile_ruleset_for_execution(rules)
     paths=sampled_openings(compiled,count=opening_count,seed=opening_seed)if opening_count else[()]
     env=FixedScaleSessionEnv(GameSession(compiled),unit_type='A')
@@ -559,6 +571,9 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     config.update(foe_policy='uniform D2'if random_foe_seed is None else'uniform legal RNG,zero search nodes',
         random_foe_seed=random_foe_seed)
     if opening_count:config['root']='Declared world actual histories after fixed random legal openings;not fresh Position resets'
+    if initial_positions is not None:
+        config.update(root='Declared validated fresh initial boards;two colors per board;no previous history',
+            initial_setup_count=len(setups),initial_setup_order=setups)
     (output/'config.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
     (output/'rules.json').write_text(json.dumps(ruleset_to_dict(rules),indent=2),encoding='utf-8')
     (output/'executed-source.py').write_bytes(Path(__file__).read_bytes())
@@ -573,7 +588,8 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
                 guard()
                 if 2000000-paid<524288:raise BudgetEnd('FULL_GAME_RESERVE_CAP')
                 opening_index=(i//2)%len(paths)
-                env=FixedScaleSessionEnv(session_at(compiled,None,paths[opening_index]),unit_type='A')
+                setup_index=(i//2)%len(setups)
+                env=FixedScaleSessionEnv(session_at(compiled,setups[setup_index],paths[opening_index]),unit_type='A')
                 initial_record=env.record();before=list(model.weights)
                 rng=random.Random(random_foe_seed+i)if random_foe_seed is not None else None
                 def random_foe(current):
@@ -587,6 +603,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
                     paid+=receipt.nodes;assert model.weights==before
                     row=dict(episode=i,color=i%2,ply=ply,actor=actor,candidate_weights=before,
                         opening_index=opening_index,prefix_length=len(paths[opening_index]),
+                        initial_setup_index=setup_index,
                         search_weights=list((model if actor==i%2 else foe).weights),**asdict(receipt))
                     queries.append(row);qout.write(json.dumps(row,default=str)+'\n');qout.flush()
                 result=play_episode(env,model,opponent=foe,learner=TDLeafEpisode(),learner_color=i%2,
@@ -595,6 +612,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
                     opponent_policy=None if rng is None else random_foe)
                 row=dict(episode=i,color=i%2,before_weights=before,weights=list(model.weights),
                     opening_index=opening_index,initial_record=initial_record,
+                    initial_setup_index=setup_index,
                     record=env.record(),**asdict(result))
                 rows.append(row);eout.write(json.dumps(row)+'\n');eout.flush()
                 if result.ending=='STOPPED_USER':raise BudgetEnd('STOPPED_USER')

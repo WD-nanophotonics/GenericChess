@@ -333,3 +333,31 @@ def test_experience_world_control_replays_its_own_rules(tmp_path,lineup,axis,nam
         replay=GameSession.replay(compiled,deserialize_game_record(json.dumps(row['record'])))
         assert replay.state.ply_count==len(row['initial_record']['actions'])+row['plies']
         assert replay.state.terminal_status.is_terminal==(row['outcome']is not None)
+
+
+def test_fresh_setup_experience_uses_public_setup_identity_and_empty_history(tmp_path):
+    import json
+    from scripts.leaper_retrograde import experiential_probe
+    from scripts.leaper_microgames import coexistence_rules
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    boards=[coexistence_rules(('A','B'),layout=layout).initial_position
+            for layout in ('original','swap_ab')]
+    folder=tmp_path/'fresh'
+    result=experiential_probe(folder,episodes=4,lineup=('A','B'),
+        initial_positions=boards,random_foe_seed=2026102203)
+    assert result['missing']==0 and result['config']['initial_setup_count']==2
+    compiled=compile_ruleset_for_execution(ruleset_from_dict(json.loads(
+        (folder/'rules.json').read_text(encoding='utf-8'))))
+    rows=[json.loads(x)for x in(folder/'episodes.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert [e['initial_setup_index']for e in rows]==[0,0,1,1]
+    for i,e in enumerate(rows):
+        initial=GameSession.replay(compiled,deserialize_game_record(json.dumps(e['initial_record'])))
+        assert initial.state.ply_count==0 and len(initial.state.history)==1
+        assert initial.state.position.board==sum(boards[i//2],())
+        replay=GameSession.replay(compiled,deserialize_game_record(json.dumps(e['record'])))
+        assert replay.state.ply_count==e['plies']
+    with pytest.raises(ValueError,match='no played openings'):
+        experiential_probe(tmp_path/'mixed',opening_count=1,initial_positions=boards)

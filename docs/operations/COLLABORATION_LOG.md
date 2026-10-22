@@ -573,3 +573,53 @@ science publish. Research3655.309537s (60.9218min),administration excluded.
 Next inventory is begun:equal-WDL boundary actions have different one-random-
 reply proxy threshold5/7 versus minimax1/2;full foe-specific returns remain
 NOT_LAUNCHED. That estimand precedes new training or feature changes.
+
+
+## DEV_AUX 2026-10-22 opponent returns and signed-price controls
+
+DEV_AUX session f7cc213e-c506-46bc-9f21-f80b54375792 completed 3903.230520s
+(65.054 effective minutes); administrative recovery/publication is excluded.
+PRIMARY's committed f92d739dec3b7454c58fc2d7709e7233156633e6 supplies the
+shared infrastructure:238/238 package files match after CRLF/LF normalization.
+Its delta since559aa80d is documents only. The shared atomic-state regression
+was restored unchanged (2tests pass);481/485 mainline tests match, with the
+remaining own-role workflow/fixture differences explicitly qualified in data.
+No PRIMARY/DeepSeek state, default, schedule or research queue was changed.
+
+Claude1792622912.342119 was read with all25 tracked threads and exact revisions
+saved privately. Adopt longer independent learning and opponent-objective
+controls, with limits: frozen-path drift is not on-policy convergence;320games
+cannot force a diagnosis;fixeduniformD2 is not selfplay. New6x320 arms allstay
+aboveB=.5;the conditional periodic map and32fixed-resetshadowgames point down
+near the boundary, without executing additional learned-model continuation.
+No oracle labels enter the learner. OldSEND_UNCERTAIN was not resent.
+
+Science: two drawing actions have different exact bounded RNG returns under an
+explicit ideal tie policy. ActualpublicB.25/.75 completes9408pairs/18816games,
+428UNKNOWN,0missing;predeclared95percenthigh-low[-.100969,.102032] doesnot
+select a winner or show equivalence.1287 firstactiondivergences at36histories
+have equal WDL;110 lowWIN/highDRAW versus109reverse. Fullrecords andRNGstreams
+replay. All2116newtrainingrecords/38697PVs/TDupdates replay;19trainingUNKNOWNs
+remain.49of64label-blindfreshABboards pass publicinitialvalidation,no topup.
+
+The nonnegative D4price obstruction is real on13admittedstarts,but removing
+that assumption reverses a possible representation conclusion:oracle-selected
+B=-1/4,C=0 gives52/52correct publicD4choices. Broader exposed ABA/ABC factorial
+controls prefer B=+1/4 when C is held0or1,atD2/D4. The local signed fix is not
+learned, intrinsic negative value, heldout transfer or a new default. Positive
+WINstrategies and symbolic price expressions in the publication copy replay.
+
+Efficiency correction:the sparse4/5ABno-mate result was already proved in
+LEAPER_FOUNDATION. Spending365.636producerseconds on reachable graphs without
+recovering that prior theorem was redundant, not new science or separately
+addedAgentcredit. Stop this route. Snapshot-read and decimal-rounding mistakes
+also remain with their bounded repairs, not rewritten into clean first runs.
+176research tests plus2reusedatomic tests pass. One small existing-runner fresh-
+setup entry replaces no shared engine;raw graphs/logs/one-offdrivers stay ignored.
+
+Next Main is already begun:an admitted ABCroot318 has positive-Bsafe/negative-B
+forced-error D4choices at fixedC=0;extract literal publicPVs/all-defense evidence
+to explain the gap. Its inventory is not yet a completed mechanism explanation.
+Report:LEAPER_OPPONENT_RETURNS_AND_PRICE_OBSTRUCTIONS_20261022.md and compact
+leaper_opponent_returns_20261022.json. ExistingACTIVE90minute recurrence and
+same-chat binding were preserved without a scheduler mutation.
