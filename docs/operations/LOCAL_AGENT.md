@@ -396,3 +396,31 @@ posthoc result. Missing planned roles have intervals/undefined means, not0.
 Separate an empirical whole-game cost estimate from a worst-call coverage bound;
 retain both methods/results and the already frozen hard cap, never widen a cap
 or use a renamed run to hide failures. Current route/evidence stays in Mainline.
+
+For the actual resource-response probe, registration.search_variants explicitly
+maps a controller label to its base evaluator and counted-node budget. The
+preflight_policies list must cover those actual search variants on complete
+histories; returns record base_policy and node_budget. Do not infer both actors'
+budgets from the registration.nodes fallback or equate nodes with wall cost.
+The sampled-call forecast must count both search actors for AB/AB, not apply the
+old half-game search count from AB/Random. Even the corrected sampled maximum is
+not a future per-call bound or total recording/controller-cost guarantee. Keep
+the original forecast and actual returns when correcting a diagnosed calculation;
+do not silently rewrite an executing registration or extend its cap.
+Node-only deterministic AB/AB games do not consume the actor RNG streams.
+Changing seeds therefore supplies no designed independent replication. Count
+physical executions and unique complete records separately. Do not silently
+reset/refill an executing plan. An observed-redundancy early stop must retain
+every unexecuted planned slot as UNKNOWN and record its actual cause; never
+clone an outcome into a paid execution. Remove redundant repeats from a future
+zero-fitness plan with its original registration and reason retained. A reflected rule has a
+new identity fingerprint; compare actual profile coefficients separately from
+that identity, and verify the explicit physical mapping before claiming symmetry.
+
+For representation cohorts, an explicit input seed_world retains the original
+code index when worlds are flattened. Omitting it preserves the existing formula.
+Do not accidentally change actor streams by renumbering representations, or
+claim identical paths after legal-order/history divergence. Geometric D4 averaging
+does not also average type-label encodings. Profile coefficient equality and
+reached canonical-Evaluator covariance are separate from full Native leaf or
+bounded-policy equivalence; keep the actual scope of each check.

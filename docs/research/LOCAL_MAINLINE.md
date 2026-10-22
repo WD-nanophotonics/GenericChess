@@ -428,23 +428,47 @@ cheap forward control; no default/learner change. Alternate-layout failures stay
 UNKNOWN, conditional8and aggregate-completion sensitivity are explicitly limited.
 All40breadth rules finish under the3600cap; no replacement, refit or missing fill.
 
-Main: `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-guided-proposal-20261022-1411` AFTER matching saved current
-source/input hash and the source-equivalence receipt. This NEXT test is actually
-prepared at0fitnessgames: exclude60played/registered codes, enumerate436remaining
-representatives, retain326canonical/no-initial-win candidates and110rejections;
-8uniformcontrols versus8upperquartile-guided codes, mobility threshold14.25.
-BOTH groups use the same initial condition; this deliberately changes sampling,
-not a production filter or full-domain claim. Fourpairedseeds/bothroles/fourpairs
-AB_RNG,FLOOR_RNG,RNG_RNG,AB_FLOOR give512plannedgames,expected1200/cap1800seconds.
-The primary is DIRECT AB/FLOOR separation, not a common-Random proxy.16real cold
-returns remain labelled old-source; before0fitness, only caller counts were
-repaired, other helperASTs and all512slots agree. No optimizer/TD/AUX takeover.
+[LEAPER_PROPOSAL_AND_BUDGET_20261022.md](LEAPER_PROPOSAL_AND_BUDGET_20261022.md)
+closes that registered proposal and its representation/resource controls:
+1072 NEW physical games,30582controller turns/10779search returns. All planned
+executions finish; no refill. Original guided-minus-uniform DIRECT AB/FLOOR
+is-9/64. Winning plies5versus7.927hide more draws and2.07x total policy cost.
+Eight-representation equalweight contrast is-33/256; all8orientation contrasts
+are negative. Retire this upper-degree conditional proposal here, not mobility
+as a feature or a universal ban. No coefficients/quality scalar are fitted.
 
-Backup1: diagnose an actual Main refusal against frozen inputs/source/slot/caller
-contract, preserving partial returns before necessary repair; no reset/refill or
-expected-value patch. Backup2: if the proposal is negative, inspect its full direct
-opponent, capture/clock/cost and rule strata before selecting another small
-proposal. Do not fit a single observed win statistic or revive old normalizers/
-solver routes as filler. PRIMARY owns generation/forward evaluation; DEV_AUX owns
-its independent truth/learning lane. Science OPEN.
+Physical reflection changes16outcomes/112of128trajectories; the remaining384D4
+games pass9048full-frontier/history mappings and8664canonicalEvaluator checks
+with0value differences. Coefficients alone did not prove covariance; actual
+reached values/history/legals were checked. No all-state/Native-leaf/WDL claim.
+The original4-seed primary stays separate from new all8/FIRST2-seed assessment.
+
+On four exposed lowdegree controls, direct8192/512 gives1/8 versus2048/512=1/4,
+with actual2349versus460s physical cost. These32paid deterministic executions
+have16unique records; seeds did not randomize AB/AB. Largerbudget is not thereby
+universally weaker, nor is this a best-strategy depth/Elo ladder. New5x5cheap
+2048/512 eight games all draw, finite board-envelope contrast-1/4; geometry AND
+default profile change. Directsame-interfaceStatic/M0eightgames all draw; keep
+its cohort/opponent scope and olderRandom evidence, no price/learner default.
+
+A causal preflight error counted only one searchactor for AB/AB. Fix that and
+preserve original forecasts/caps/actual bytes; sampled maxima still do not bound
+later calls (8192late max41.35s versus cold2.48). The unrun5x5N8192candidate is
+DEFERRED/0fitness; the cheaper8-game2048rung closed under900s. Source rebinding
+was before0fitness with unchangedrunAST. D4 metadata now preserves seed_world
+(code index) across flat representation worlds; original streams are not changed.
+
+Main: Does cheapStaticAB512 directly beatFLOOR on ALLfourlowdegreecontrols,
+beforejoining theirbudget/materialportraitwiththehighdegreecodes? | run
+`.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
+.local_agent/leaper-lowdegree-floor-20261022-1542` |32planned/bothroles/4FLOOR
+streams/fullCore/costs/UNKNOWN | closeall32or900cap;no refill. Prepared0fitness;
+expected600s;8exactoldfull-rootcostreturns,0newcalls. Cold projection258.6s,
+observedlate-max3316.2s and empiricalmean estimate are separately retained.
+This fills a missing forward axis; it is not an optimizer or WDL gate.
+
+Backup1: Diagnose an actual Main source/input/caller refusal preserving its
+actual partial returns before any repair; no reset/refill/expectation patch.
+Backup2: Assess ALLfourcode/role captures, rule clocks, opponent interactions
+and cost/completion bounds; do not replace missing axes by0 or a single quality
+score. Do not duplicate AUX truth/learning/runtime work. Science OPEN.

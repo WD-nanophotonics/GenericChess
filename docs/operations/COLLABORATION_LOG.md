@@ -6430,3 +6430,46 @@ worker or timer change. AUX truth/learning work is neither repeated nor claimed
 independently checked. The compact public packet is for its optional posthoc
 consumption. Cost timing, record uniqueness, source repair and shared-Core
 qualification are separately scoped; no independent WDL or learning gain claim.
+
+
+## 2026-10-22 UTC Leaper proposal, representation and resource response
+
+PRIMARY completed1072NEWphysicalgames/30582turns and retained exact source,
+profile, role/stream, complete history, actual costs and before-fitness corrections.
+The degree-guided proposal fails its original direct target(-9/64) and all8D4
+representation contrasts(average-33/256). Faster wins hide more long draws/cost;
+no single quality objective or generator/default is promoted. The actual mapped
+histories/counters and8664canonicalEvaluator comparisons narrow, but do not
+universally explain, the execution-representation effect.
+
+The one new Claude23:49JST comment and3complete relevant threads were privately
+saved before assessment. Its win-time/representation/resource suggestions are
+useful diagnostics; its pilot-only one-dimensional generalization is not adopted.
+The Lantz primary paper distinguishes a best-strategy resource envelope from our
+fixed-AB node response. No extra scientific gate, outbound consultation or @mention.
+AUX truth/learning/source/status is not independently checked or duplicated.
+
+Actual8192/512gain1/8 is smaller than2048/512gain1/4 onfour exposedcontrols and
+costs more; no direct8192/2048 or universal ordering is inferred. New5x5cheap
+rung and directStatic/M0bothdraw all8games. Keep cohort/opponent/profile changes
+explicit, along with older contrary conditional material evidence.
+
+Efficiency loss: the32frozen deterministic AB/ABgames have16unique full records;
+changing seeds provided no independent replication. The paid repeats/actual costs
+remain visible, subsequent zero-fitness plans use one execution per code/role.
+A diagnosed preflight error undercounted two-search turns; actuallate calls also
+outgrew sampled maxima. Fix the count, retain all forecasts/caps/source bytes and
+avoid claiming coverage. One private export wrapper import failure was repaired
+before publication without scientific rerun or altered expected product values.
+
+The exported-copy reader checks1072games/30582plies/44740literalPV/10906RNG/
+8897FLOORchoices. Source/privacy review compares1072exact originals,2144actor
+seeds and30582policy bindings. This remains shared-Core validation, not WDL.
+The next32-game lowdegreeAB/FLOORaxis is actually prepared at0fitness with8exact
+cost references/0newcalls. Existing60minute recurrence, role stop flags, PUBLIC,
+product defaults and AUX checkout stay unchanged. No additional worker/Goal.
+Recorded effective work is4742.968623seconds/9intervals; unverified gaps, pure
+documentation and publication are excluded. Final session acceptance is separate
+and is required before any completion claim.
+
+[Report and technical evidence](../research/LEAPER_PROPOSAL_AND_BUDGET_20261022.md).
