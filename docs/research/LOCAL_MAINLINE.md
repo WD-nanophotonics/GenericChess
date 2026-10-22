@@ -265,17 +265,42 @@ attempt meets an explicit existing canonical-first no-scan contract. Keep that
 contract and old assertion unchanged;exact parent product source is restored.
 The positive scoped prototype doesnot create a caller migration or new flag.
 
-Main: inspect fallback-evaluator-next-20261022/registration.json and preserved
-full inputs/profiles. C/D default-evaluator lexical/partial candidates must face
-SAME fixed Unit lexical A;B Unit partial is already fixed.12 complete modelpairs
-are prepared;96 new games are NOT RUN. If useful, execute only the declared new
-600second cap and reportD-C,(D-C)-(B-A),family pairs,ordinary and policy-task
-masks and actual costs. No holdout/training/default/AUX claim,old rerun or refill.
+## Current executable choice — 2026-10-22 incoming Chat
 
-Backup1: actual published AUXd485c487 deeper unsafe ties inform interpretation,
-not a prerequisite or permission to duplicate its solver/learning lane. Backup2:
-a new primary source or concrete caller requirement may change priority;no
-unmotivated descriptor/evaluator/table rewrite or closed algorithm sweep.
-All current producers have exited;recorded62m30s research excludes delivery.
-Only the maintained cost CLI adds an explicit existing countermove switch.
-Science OPEN.
+[RULE_QUALITY_CAPTURE_AND_COMPETENCE_20261022.md](RULE_QUALITY_CAPTURE_AND_COMPETENCE_20261022.md)
+adopts the independently useful rule-quality question from the new saved Chat
+comments. The prepared fallback/evaluator96 games remain NOT RUN/deferred;
+no AUX learner/graph work or generator/search default change is implied.
+
+A new24-slot production-generator grid has22 successes/2 bounded refusals;
+all missing slots remain. Finite planned-completion sensitivities support
+D1/random[3/4,1] andD2/D1[1/6,1/2],not a population or learning theorem.
+Nine flag pairs accept the same complete rules,two replace them;opening-preference
+D2-step difference[-1/3,1/3] identifies no extra benefit. Keep it optional.
+Same-rule/prefix commonq4 hasD2/D1=5/8 yetD3/D2[-1/2,-1/4];nominaldepth and
+branching cannot be a calibrated quality verdict. Existing bounded probes remain
+incomplete even on a separately known one-ply win; no WDL training gate.
+
+Changing only capture disposition preserves all other fullrule fields,starting
+physical state/legalactions andboardprices. It increases uniform-policy censoring
+116to140of176views pervariant;each176view set is104actualgames/72exactreuses.
+Eighteen views/9unique late twoKing emptyhand states meet a restricted source-
+assisted no-mate closure argument. Raw UNKNOWN stays. Legally replaying the same
+histories under pocket capture preserves the board but reconstructs actualstock;
+one checking drop has all-defense mate3,twoCorelegal replies,verified separately.
+This is a rule/resource counterfactual,not a same-RuleSet board-value impossibility.
+DeclarationWIN/NO_CONTEST controls bound the claim to its checked preconditions.
+
+Actual defaultq4 recognition retainsD1 on the pocketWIN;onecommonbudgetq0D3
+control certifies mate3. The different q4 action is not a provenWDL error;no
+q/default/positionpatch follows. Quality aggregation defects were reproduced and
+fixed causally,oldassertions preserved,andall3655 active checks pass.
+
+Main: inspect rule-quality-prefix-next-20261022 registration/catalog and24actual
+canonical preflight inputs. Estimate total cost before a single fixed-prefix
+pass over existing full histories: immediatewin opportunities,restrictedclosed
+class and remainingUNKNOWN. Prefixes0/4/16/64,all unavailable slots and all
+promotion/drop/aux/history retained;no oracle-selected experience ornewlearner.
+No follow-up queries have run. Backup: compare rule/policy dependence using the
+saved complete traces;do not turn one exposed certificate into a quality gate or
+another unchanged search-cost sweep. All current producers CLOSED. Science OPEN.

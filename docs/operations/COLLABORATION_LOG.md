@@ -6240,3 +6240,24 @@ ZIP with unique sources,not repeated embedded scripts. Exact private originals
 remain;only personal local paths sanitized in publication copies. Current
 product source/defaults and schedule stay. Required publisher checks/fullremote
 SHA and session quality/finish/final-check must be verified separately.
+
+
+## 2026-10-22 PRIMARY: rule quality and capture/competence
+
+- Read and privately preserve the two new09:48/09:58JST Chat roots and complete
+  threads before assessing them;no outbound contact. Adopt independent rule-
+  quality research,keep advice distinct from authorization,and defer fallback96.
+- Reuse72 saved histories rather than refill them;new fixed cohorts retain
+  refusal/censoring masks and exact reuse counts. Finite policy steps coexist
+  with a nonmonotone depth ladder and no identified opening-filter benefit.
+- One-field capture intervention increases random censoring. A restricted
+  twoKing closure and legal pocket-stock counterfactual give a separate all-
+  defense mate3 witness;scope and negative goal controls stay explicit.
+- Read fixed PUBLIC AUXd485c487 Leaper direction only for conceptual boundaries;
+  no AUX execution,checkout/state write,training,graph duplication or message.
+- Repair observed quality-metric defects after8 captured red cases;all original
+  assertions remain,3655 full checks pass. Preserve representation/input-reader
+  failures and repair only readers;no scientific producer rerun or cap extension.
+- Deliver one exact compact technical capsule with public-copy privacy/member
+  checks instead of embedded vendor trees. Current prefix follow-up has24full
+  inputs prepared and0queries;no generic-quality/learning/default claim.

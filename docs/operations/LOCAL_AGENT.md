@@ -189,6 +189,10 @@ cost absent from inner search time; use the declared qualification clock, retain
 both originals, never relax its threshold or rerun a frozen panel to hide failure.
 Repository text is UTF-8; specify encoding explicitly when reading/editing it
 on Windows rather than using the platform Python default.
+A matching RuleSet fingerprint does not make legacy and semantic action records
+interchangeable. Replay with the recorded compilation route; explicit semantic
+records use compile_legacy_ruleset_for_semantic_execution, not the default legacy
+selector. Diagnose a route mismatch before changing actions or expectations.
 
 ## Publication
 

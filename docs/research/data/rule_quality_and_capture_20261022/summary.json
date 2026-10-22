@@ -1,0 +1,98 @@
+{
+  "scope": "Finite exposed and prospective generated-rule studies;no populationCI,learning/defaultchange or originalUNKNOWNrewrite.",
+  "generated_calls": 32,
+  "generation_successes": 30,
+  "generation_refusals": 2,
+  "new_player_returns": 10425,
+  "bounded_terminal_probe_calls": 36,
+  "random_actual_games": 208,
+  "random_views": 352,
+  "random_exact_reuse_views": 144,
+  "existing_selfplay_receipts_reused": 8,
+  "new_continuation_evaluations": 312,
+  "zero_query_terminal_prefix_evaluations": 7,
+  "unavailable_continuation_slots": 20,
+  "full_regression": {
+    "tests": "3655",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "326.103"
+  },
+  "ordinary_benchmark_masks_preserved": true,
+  "finite_intervals": {
+    "new_grid_D1_vs_uniform_planned_sensitivity": [
+      "3/4",
+      "1"
+    ],
+    "new_grid_D2_vs_D1_planned_sensitivity": [
+      "1/6",
+      "1/2"
+    ],
+    "new_grid_D2_vs_D1_accepted_conditional": [
+      "3/11",
+      "5/11"
+    ],
+    "same_prefix_q4_D2_vs_D1": [
+      "5/8",
+      "5/8"
+    ],
+    "same_prefix_q4_D3_vs_D2": [
+      "-1/2",
+      "-1/4"
+    ],
+    "filter_difference_planned_sensitivity": [
+      "-1/3",
+      "1/3"
+    ],
+    "filter_difference_both_generated": [
+      "-2/11",
+      "2/11"
+    ],
+    "remove_minus_pocket_D2_step_planned_sensitivity": [
+      "-1/3",
+      "5/8"
+    ]
+  },
+  "random_terminal_views": {
+    "pocket": {
+      "checkmate": 48,
+      "stalemate": 12,
+      "ongoing_censored": 116
+    },
+    "remove": {
+      "checkmate": 14,
+      "stalemate": 20,
+      "repetition": 2,
+      "ongoing_censored": 140
+    }
+  },
+  "closure": {
+    "views": 18,
+    "unique": 9,
+    "actual_one_step_checks": 82,
+    "scope": "Source-assisted induction under explicitrestrictedpreconditions,not fullgamegraph/oraclelookup."
+  },
+  "pocket_counterfactual": {
+    "views": 18,
+    "unique": 9,
+    "actual_stock_drop_views": 588,
+    "one_ply_winning_children": 0
+  },
+  "mate3": {
+    "candidate_checking_drops": 53,
+    "probes_executed": 6,
+    "unattempted": 47,
+    "all_legal_opponent_replies": 2,
+    "independent_Core_certificate_pass": true,
+    "boundary_controls": [
+      "legal_declaration_WIN",
+      "automatic_NO_CONTEST"
+    ],
+    "q4_chosen_action_WDL": "UNKNOWN;not a provenerror",
+    "q0_D3_selected_action": "independentlymate3certified"
+  },
+  "science": "OPEN",
+  "next_prefix_preflight_inputs_prepared": 24,
+  "next_prefix_queries_executed": 0
+}
