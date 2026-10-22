@@ -352,3 +352,10 @@ as batch syntax even after the Python CLI accepted a work interval. For such
 prose use the existing .venv Python -m tools.local_agent.cli directly. After a
 wrapper error inspect session status before retrying; do not double-credit an
 already committed interval. No recorded times were rewritten for this incident.
+
+An inactive feature does not require its default coefficient to be zero. Before
+asserting that, inspect the actual consumer/profile constructor and distinguish
+an explicit proved-zero override from the default complete table. The observed
+capture-removal preflight kept finite default hand prices while stock stayed
+unreachable; the source contract resolved the assertion before any Player call.
+Never rewrite a product expectation solely to match a returned table.

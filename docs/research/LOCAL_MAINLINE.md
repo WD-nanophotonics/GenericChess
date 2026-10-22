@@ -360,15 +360,39 @@ The65536panelcostforecastfails:1826.3seconds,one61plycensoredprefix,
 47unattempted,utility[-1,1]. DROPunchanged/no refill. Use actualfull-node/history
 costbeforelargepanels;no universalbudgetban oruser-consentqueue.
 
-Main: execute `.local_agent/small_family_leaf_price_next.py run` using
-`.local_agent/small-family-20261022/repaired-inputs/resource-utility/leaf-price-next/registration.json`.
-Allfullinputs/profilesreadyandAST24slotsverified;0Playerqueries,NOTRUN.
-8NEWStaticselfsourcesrole0+16NEWUnit-vsStaticgamesform32roleframesonlyafter
-eligibleexactoppositeselfreuse. ExistingN-vsD1gamesarenotselfsources.
-CommonStaticthree-methodorderingAdapterforBOTHactors;onlyUnitleafchanges,
-fullCURRENTboard/BASEhand/futuretypes/history preserved,provedinerthandzeroskept.
-Node2048/pureq0,maxdepth64,caller96/rule128;expected600s/cap1200s.
-Use separate executionannotations instead of frozenNOTRUN/zeropreparationflags.
-No oldcohortrefill,default/filter/AUXlearnerchangeor5x5graph. Backup:reuse
-naturalresourcevisitation foroneconcreteprice question,not anothergeneric audit.
-Science OPEN.
+[RESOURCE_GENERATION_AND_MATERIAL_20261022.md](RESOURCE_GENERATION_AND_MATERIAL_20261022.md)
+closes that control and the new generator continuation: 190 NEW physical games,
+7,448 Player returns and 20,468 PV edges. Fourteen exact reuses and twelve invalid
+initial slots remain explicit; 24 cold returns/99 PV edges are separate.
+Toy Unit [-7/16,1/16] establishes no advantage.
+
+Twelve NEW production parents retain promotions, drops, future types and history.
+Resource N2048/D1 [2/3,3/4] versus removal [7/24,7/8] gives [-5/24,11/24];
+there is no universal quality claim. Canonical thinning fails three parents after
+removing blockers. A 38,661-layout census finds other legal placements, with
+fractions1/8,1/8,1/32 on those parents. Bounded rejection changes parent weights.
+
+A disjoint twelve-seed legal-thinning cohort improves N2048/D1 by [1/4,7/12],
+but five full roots win in one ply; the other seven give [-1/7,2/7]. Existing
+opening preference changes five rules, reuses fourteen frames and runs ten NEW
+games, giving5/6. Thinning minus preference [-1/6,1/6] does not justify a new
+sampler API or default activation. Earlier optional-filter negative evidence is
+not erased by this exposed follow-up. Every failure/UNKNOWN remains.
+
+M0 removes board/hand material ONLY, retaining Static ordering and promotion/
+dynamic terms. At NN2048, Static wins22/24; M0=-5/6. World1 reverses both seats.
+This is finite marginal leaf utility, not learning, optimal prices or generic
+strength. Offline256 old games/13,805 roots show temperature-ranking reversal and
+59 full-state groups with policy-conditioned labels. No fit, learner, AUX or
+evaluation-default change is made.
+
+Main: run `.local_agent/material_unit_order_next_1020.py run` with the frozen
+`material-leaf-next/common-unit-order-next` inputs under ignored opening-preference.
+All twelve preferred rules; 24 NEW M0-versus-Static NN2048 games; common Unit
+ordering; unchanged leaf/promotion terms; full Core/PV/UNKNOWN qualification.
+Expected900s/cap1800s. Inputs, ordering methods and actual AST24 slots are checked;
+zero Player queries, fitness NOT RUN. Do not rerun the completed contests.
+Changing common ordering also changes the opponent, so this tests conditional
+head-to-head robustness, not the same fixed-opponent absolute effect.
+Backup: use the measured proposal/legality costs for one concrete generator
+question; no expanded graph, blind budget panel or training gate. Science OPEN.

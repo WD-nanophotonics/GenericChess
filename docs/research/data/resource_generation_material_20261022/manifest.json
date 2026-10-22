@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "file": "observations.json.gz",
+  "sha256": "6ad501cdfe22b4b59e1a33fef44519eff66e4566fecff1efa674cec9310a3cbf",
+  "compressed_bytes": 2052359,
+  "decoded_bytes": 26889915,
+  "decoded_sha256": "469d6385910ec74a691c0286f21608935112d52a866a0491dbdf1d2df73bb0e9",
+  "counts": {
+    "new_physical_games": 190,
+    "new_Player_queries": 7448,
+    "new_literal_PV_edges": 20468,
+    "exact_reuse_frames": 14,
+    "setup_failures": 12,
+    "additional_cold_queries": 24,
+    "additional_cold_PV_edges": 99,
+    "same_Core_limitation": true
+  },
+  "privacy_actual_content_scan_passed": true,
+  "excludes": [
+    "rawChat/accountheaders",
+    "personalpaths/emails/credentials",
+    "privatefulltracebacks",
+    "session/processlogs"
+  ],
+  "source_snapshots": 22,
+  "prior_packet": {
+    "path": "docs/research/data/small_rule_family_20261022/observations.json.gz",
+    "sha256": "1a48f7eaf038cc7745d6dd82ebc784d7a666286a59c7d159c4c1ba3c5338d087",
+    "fixed_commit": "291f2c3b169992d451743f4babf314ca3a26776f"
+  },
+  "future_files": {
+    "next_protocol.json": "c88938b48f19699634372c42dcce435026536339ed70e575022564bc288b3a24",
+    "next_preflight.json": "c4f0176212d4a5fad454d2803433a1b14675a62d4ca5027915b684f2f824e3c2",
+    "next_inputs.json.gz": "7ebc9eeb36cad8f3ac372f7c5c9c6d88cbe59140b81c51a85a902f0eb9c02540",
+    "next_runner.py": "e50cd10d2495c0334f9ee8999b051874d1f68cbc80d22ccc2448e4933d28579f"
+  },
+  "future_execution": "NOTRUN;0Playerqueries;staticAST/profilechecksONLY"
+}

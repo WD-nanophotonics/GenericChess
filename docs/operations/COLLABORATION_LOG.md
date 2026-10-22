@@ -6358,3 +6358,23 @@ Nextleaf-only24-physical/32-framecontrol is preparedNOTRUN; both actors share
 Staticordering adapters and completeprofiles. Two preparation assertions were
 caught beforequeries; no frozen fitness rerun. Scientific route remains OPEN;
 AUX contributions in the incoming memo were not independently rerun or owned.
+
+## 2026-10-22 PRIMARY: resource generation and material closure
+
+- Incoming Claude17:50JST root1792659091.173909 and complete thread were saved
+  privately before assessment. Its cited0689413 predates the small-family291f2c3b
+  delivery. Adopt interpretable generator/actual utility/cost advice; do not revive
+  closedcheck-onlypanels,turn offlinefit into causal playutility,or take overAUX.
+- 190NEW trajectories/7448Playerreturns/20468PV;14exactreuseframes and12invalid
+  initialslots retained. Additionalcold24/99PV;no unchangedfitness reruns.
+- ToyUnit remains unidentified. Fullgeneratedresource effect[-5/24,11/24].
+  Legal-thinninggain[1/4,7/12] lacks confirmed increment over existingpreference
+  [-1/6,1/6];no newAPI/default. Complete source/inputs/costs retain all negatives.
+- M0material-only ablation loses22of24 undercommonStaticordering;world1opposes
+  bothseats. No claim of learning,optimalprices,universalstrengthorall-domainWDL.
+- Finite38661layoutcensus distinguishes canonical-placement refusal from quantity
+  infeasibility. Default hand-zero precondition was diagnosed from actual source,
+  not a changed product assertion. Exact raw/private evidence is preserved.
+- No outboundChat,Dotcontact,AUXcheckout/state/workeror frozen experiment touched.
+  Public-copy reader uses the same fullCore,not an independentengine. Current
+  evidence/limits and next NOTRUNcommonUnitordering control are in the report.
