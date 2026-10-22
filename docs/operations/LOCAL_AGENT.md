@@ -359,3 +359,22 @@ an explicit proved-zero override from the default complete table. The observed
 capture-removal preflight kept finite default hand prices while stock stayed
 unreachable; the source contract resolved the assertion before any Player call.
 Never rewrite a product expectation solely to match a returned table.
+
+
+## Pure-Leaper forward probe and actual interval ends —2026-10-22
+
+Use scripts.leaper_design prepare/preflight/run on NEW ignored outputs. Existing
+results/source hashes are frozen; do not refill completed/censored games. Material
+mode requires complete frozen preflight-inputs.json histories and measures both
+same-interface policies; defaultAB cost alone is not that gate. Current Main,
+forecasts, actual source/data and further scope live in LOCAL_MAINLINE/report.
+Use scripts.leaper_portrait --packet for exported action/PV/RNG/FLOOR replay;
+shared Core validation is not an independent WDL engine. Do not rerun unchanged
+fitness to repair recording or publication qualification.
+
+For session work end timestamps use an observed actual UTC or generate
+`datetime.now(timezone.utc).isoformat()` immediately before invoking the CLI.
+Never guess a later minute from perceived elapsed time. A future-time refusal
+adds no work; inspect status before correcting it, never assume it was credited.
+Pure administration remains excluded. Scientific computation must have actual
+bounded producer/output evidence, not just an ACTIVE flag or open UTC clock.

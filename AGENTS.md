@@ -30,6 +30,15 @@ workers may be created.
 
 ## Current decisions and their reasons —2026-10-22
 
+- User confirmation2026-10-22: the latest ChatGPT project comment is the new
+  research direction after registered bounded work closes: canonical small pure-
+  Leaper rules, cheap Static-AlphaBeta/Random/FLOOR forward portraits, then gradual
+  inverse design. PRIMARY owns rule generation/forward evaluation; existing
+  DEV_AUX owns truth/learning diagnostics. Detailed selections live in
+  LOCAL_MAINLINE.md. This supersedes older optional backup priorities, not the
+  full-domain long-term target, frozen caps, role boundaries or current schedule.
+  Claude comments remain auxiliary advice; do not turn them into new gates.
+
 - User correction2026-10-22: PRIMARY recurs every60minutes, superseding its
   2026-10-21 90-minute interval. Preserve the existing scheduler and heartbeat
   identity; this does not change DEV_AUX cadence, role ownership or the

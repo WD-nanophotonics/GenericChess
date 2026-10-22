@@ -6378,3 +6378,32 @@ AUX contributions in the incoming memo were not independently rerun or owned.
 - No outboundChat,Dotcontact,AUXcheckout/state/workeror frozen experiment touched.
   Public-copy reader uses the same fullCore,not an independentengine. Current
   evidence/limits and next NOTRUNcommonUnitordering control are in the report.
+
+
+## 2026-10-22 PRIMARY: user-confirmed Leaper forward/inverse route
+
+The user confirms ChatGPT's latest project comment as the new direction after
+registered work closes. Exact channel/thread originals are private; four initial
+threads and two explicit follow-up threads are complete, no outgoing message.
+ChatGPT21:11defines canonical pure-Leaper forward evaluation and gradual inverse
+design, with PRIMARY generation/evaluation and existing DEV_AUX truth/learning.
+Claude21:49remains auxiliary. Its55abf3d snapshot did not include this live work;
+no restart or duplicate old experiment follows from that observation.
+
+PRIMARY reuses Core/GameSession/Static profiles/AlphaBeta, delivering ten fixed
+geometries and480seed/role/controller executions, then20matched-budget and40
+same-interface material games. AB/FLOOR differences, 331unique original histories,
+negative worlds, a budget regression, 123initial-trivial classes and four changed
+symmetry-policy choices remain explicit. The M0 suggestion is adopted only after
+real wrapper-path costs/decomposition; it is a marginal leaf contrast, not TD.
+All540executions and complete technical evidence are in one compressed packet,
+with two maintained scientific commands rather than another public audit suite.
+
+AUX source/results/runtime are not independently rerun or edited. No exact-solving
+promise, learning admission gate or cross-checkout delivery is imposed. Incoming
+connectivity predictions are not retrofitted to measured outcomes; a separately
+sampled gameplay-new cohort now has forecasts frozen before cold queries and0
+fitness games. Fixed-temperature unfitted proxy observations do not refute a
+calibrated learner; fitting remains deferred. No production default, worker,
+visibility or recurrence changes. Publication and reader receipts are recorded
+in the linked [report](../research/LEAPER_FORWARD_DESIGN_20261022.md).

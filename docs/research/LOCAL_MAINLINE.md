@@ -11,11 +11,16 @@ Old dated next actions are evidence, not a backlog or a competing live policy.
 
 ## Current selection and reason — 2026-10-22
 
-Continue rule-only generic prices/cross-game ratios and stable unfamiliar-rule
-search. Static, Unit and learned candidates remain. New incoming theory advice
-and actual mechanism evidence favor decision-equivalence/learnable-signal
-questions over further caller audits or unchanged price panels. This does not
-claim knowledge transfer, select MCTS/Elo or take over DEV_AUX's learner.
+The user now explicitly confirms ChatGPT's latest project comment as the new
+research direction, after registered bounded work closes: build a canonical
+small pure-Leaper rule interface and a cheap rule-to-performance portrait using
+existing Static AlphaBeta, Random and FLOOR; develop inverse design gradually.
+PRIMARY owns generation/forward evaluation, while existing DEV_AUX owns bounded
+truth/learning diagnostics. No new worker, oracle training gate or default.
+Keep the complete generated-domain long-term target. First-stage exclusions are
+explicit prototype scope, not a redefinition of generic chess. Claude's later
+comments are auxiliary advice. The older common-Unit-order ablation remains
+NOT RUN/deferred rather than a revived priority.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -386,13 +391,41 @@ strength. Offline256 old games/13,805 roots show temperature-ranking reversal an
 59 full-state groups with policy-conditioned labels. No fit, learner, AUX or
 evaluation-default change is made.
 
-Main: run `.local_agent/material_unit_order_next_1020.py run` with the frozen
-`material-leaf-next/common-unit-order-next` inputs under ignored opening-preference.
-All twelve preferred rules; 24 NEW M0-versus-Static NN2048 games; common Unit
-ordering; unchanged leaf/promotion terms; full Core/PV/UNKNOWN qualification.
-Expected900s/cap1800s. Inputs, ordering methods and actual AST24 slots are checked;
-zero Player queries, fitness NOT RUN. Do not rerun the completed contests.
-Changing common ordering also changes the opponent, so this tests conditional
-head-to-head robustness, not the same fixed-opponent absolute effect.
-Backup: use the measured proposal/legality costs for one concrete generator
-question; no expanded graph, blind budget panel or training gate. Science OPEN.
+[LEAPER_FORWARD_DESIGN_20261022.md](LEAPER_FORWARD_DESIGN_20261022.md)
+records the new first-stage work. Fixed4x4/KAB pureLeaper inputs reuse existing
+Core/GameSession/profile/AlphaBeta; full fingerprints, orbit masks, histories,
+roles, seeds and actual costs remain the exchange contract. Ten metadata-selected
+rules and eight paired seed repetitions give480executions but331unique full
+histories: StaticAB64W96D versus FLOOR14W2L144D; no callerUNKNOWN. A separately
+registered20game node2048 contrast gives9W11D and+1/10 versus matched512streams.
+These are finite exposed results, not population rankings or a learning claim.
+
+The declared496representative structural quotient does not preserve bounded
+policy choices on4of20transformed roots. Keep execution representation separate.
+A complete one-ply codebook has123/496initial-win classes and240/961ordered pairs;
+fastest-win optimization would reward trivial tasks. The frozen10have no initial
+win. No optimizer/sampler activation or AUX work is implied.
+
+The same-interface material follow-up is now CLOSED:40new games at512nodes,
+commonStaticordering, Static7W13D versusM0 4W16D, Static marginal leaf effect3/20.
+All20default/adapter full trajectories agree here; M0 retains dynamics/order and
+is not price-free search. The40cost returns/151component checks and actual509.648s
+preserve causal scope; no fitness replay, learner or default change follows.
+
+Main: `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
+.local_agent/leaper-prospective-20261022-1209` after checking frozen source/input
+hashes and the saved cost gate. Ten gameplay-new codes were sampled uniformly
+without replacement from486remaining sorted pairs, not by outcomes. Motion-only
+ordinal forecasts were frozen BEFORE10coldqueries; forecast529.168s,cap1800,
+60plannedgames,0fitnessgames so far. Initial one-ply metadata is already exposed:
+this is not an independent unseen-rule/initial-label holdout. Retain all results,
+negative cases, actual score/depth/source/cost and missing/UNKNOWN; no coefficient
+refit, initial-win rejection or posthoc prediction rewrite. No new optimizer.
+
+Backup1: diagnose an actual Main launch refusal against its immutable source,
+canonical input and caller contract, saving partial/failed returns before repair;
+no reset/refill or expected-value patch. Backup2: only for a real decision need,
+predeclare a same-KAB layout control and its separate canonicalization/sampling
+law; the current496quotient is specific to the current corner layout. Do not build
+an all-domain isomorphism or solving framework. PRIMARY owns forward design,
+DEV_AUX owns its independent truth/learning lane. Science OPEN.
