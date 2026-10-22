@@ -1006,3 +1006,54 @@ Session c68ada72-bbc3-4169-8a4c-d2b19b173a68 preserves its
 of research. Administrative infrastructure reuse and publication are excluded.
 Next is a bounded float-deployment check near the proved local critic; no TD
 expansion or strength claim is authorized merely by parameter exposure.
+
+
+## DEV_AUX — natural-history WDL and tied-PV mechanism, 2026-10-23
+
+PRIMARY supplies the frozen55abf3de histories and committed shared infrastructure;
+its rule generation, openings, forward screen and inverse proposals stay its own.
+AUX recovery and closing fetch both find sandbox edda38828d970cb6a1669ffa3ac95aa93167ce71;
+no infrastructure delta or uncommitted PRIMARY work is imported. No product
+engine, learner or default changes in this segment. The maintained shared Core,
+Session, search adapter and graph/certificate helpers are reused.
+
+AUX completes75 exact float critic checks,146full-history frozen observations,
+four independently reconstructed OFF-POLICY TD sums,282new complete literal
+D4/D6 trees (sixold reused,fourcapped),a25,774Position closed graph and a24-root
+metadata-selected capture-reduced corpus. All24 graphs close;their959,604 paid
+entries are not unique independent states (17conservative componentgroups).
+905public-query receipts and2,491PVedges are checked;the portable reader also
+rebuilds all24graphs. PASS996.728s;70relevant interface tests pass.
+
+The main correction is precise: correct minimax values can coexist with a tied
+PV slope outside the local critic's Clarke hull. It is a TDLeaf surrogate
+limitation,not a search-value failure or whole-TD failure. Four recorded streams
+still have nonzero off-policy update arithmetic;no new training/model is deployed.
+The39late roots and24metadata roots provide no demonstrated price/depth
+minimax-WDL advantage overUnitD1. Three absolute action qualities stay one-sided;
+identical actual choices yield exact zero paired contrasts without draw imputation.
+A separate6node actualSession certificate qualifies one root with prior count3;
+original rows/caps remain unchanged. A closed2298Position no-B subset proves a
+structural deadzone,unlike the prior clock-tail-only draw result. Both frozen
+fingerprints are checked through Core,not assumed equivalent from metadata.
+
+A new bounded fiveactor cost-only preflight stops at100k discovered Positions,
+withonepartial node and17,093observed capture-frontier Positions not covered by
+its current samefingerprint component. No WDL or fullcompletion cost is claimed.
+A23.777s cache census finds1107covered natural histories,898protected+clockmargin;
+use this cheaper existing pool for the next boundedD1price-capacity question.
+No duplicate producer or oldcap refill is introduced by this note. Minimax equality does
+not establish equal conversion againstRandom or a universallearning ceiling.
+
+Mailbox:one complete logical read,raw originals preserved via the shared helper;
+no new Chat/Claude revision was available. Previous advice stays qualified as in
+its existing decisions;no uncertain Slack send is retried. No other-role file,
+state,schedule,Agent,Goal,worker,conversation or timer changes.
+
+Selected evidence is two gz capsules totaling585,923bytes plus one portable
+verifier and its receipt;full raw corpora/graphs/standalone drivers stay ignored.
+[Report](../research/LEAPER_NATURAL_WDL_AND_TIED_PV_20261023.md).
+Session e6309259-f543-419b-9039-d91a14cdd739 preserves its
+2026-10-22T22:37:31.937579Z origin and confirms3807.541006seconds (63.459minutes)
+at the scientific safe checkpoint. Delivery time is excluded;own sidemission
+publication,fullremoteSHA and session finish are checked before final reply.
