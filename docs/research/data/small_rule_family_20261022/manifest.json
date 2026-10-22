@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "artifact": "observations.json.gz",
+  "sha256": "1a48f7eaf038cc7745d6dd82ebc784d7a666286a59c7d159c4c1ba3c5338d087",
+  "bytes": 2135784,
+  "uncompressed_bytes": 40720086,
+  "technical_rules": 60,
+  "retained_games_by_batch": {
+    "baseline_A": 12,
+    "check_only": 24,
+    "small_ladder": 192,
+    "attractor": 132,
+    "budget_direct": 1,
+    "resource_utility": 48,
+    "resource_direct": 16
+  },
+  "source_base": "06894138b79e5a02d485d5170ea6b51c677c6c70",
+  "source_files": {
+    "rule_quality_checkonly_utility_next.py": "81a2c21f9b16d2af2bee35dca5091a3fb83c978965a1ca528f282a9b4dbf7f92",
+    "small_family_0832.py": "78bbe9b781d7e976ef08f3b2d2a6b111777db102ad0b046855429a4945d04fd2",
+    "small_family_attractor_0832.py": "4edc5cfe0980ca2f08f46493b67ff0d6e298e96a64d49e8e9954091a2f4b347f",
+    "small_family_price_exposure_0832.py": "0a2f4e935312366d92808abe36a76d179d2be7b2c23c288a75af17af5bfb84e4",
+    "small_family_natural_density_0832.py": "cc0434c3d576931b1bd5e7614f18d7cbafc1fe32dc6771c9977dd3a090efa8ec",
+    "small_family_budget_0832.py": "1a00b9202b696613ddfd95ec6a0fd92bc5dfb7aaad7c1c4cf7f522630119fc81",
+    "small_family_resource_preflight_0832.py": "221b5dfc82bb5135113d481d712634afa857a29fd99845e60dcea9c36795e094",
+    "small_family_resource_utility_0832.py": "a62c651bc9e68b94617a80b423a8bd37ddc717c02c410aeb081fcebc35688075",
+    "small_family_resource_direct_0832.py": "364e711986cb87ede9f3eb812d34916024c16162e5b9e099db76f18b3232fc87"
+  },
+  "privacy": "Exacttechnicalallowlist;noChat/account/session/rawtracebackorcredentials. Actualpublicationcopyreviewrequired."
+}

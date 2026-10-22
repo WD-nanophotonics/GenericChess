@@ -13,17 +13,18 @@ publication. DEV_AUX owns its existing sidemission checkout and outputs; do not
 write its files, state, session, memo or unpublished work. This patrol covers
 only PRIMARY mainline research and the existing project Chat.
 
-The existing `genericchess` heartbeat recurs every90minutes by the explicit
-2026-10-21 user direction, replacing hourly cadence and preserving its identity.
+The existing `genericchess` heartbeat recurs every60minutes by the explicit
+2026-10-22 user direction, superseding its90minute cadence while preserving
+its identity. DEV_AUX recurrence is outside this PRIMARY-only update.
 A one-time pause applies only to that inspection and never edits the
 recurrence. Keep all user stop flags intact; a scoped stop is not cleared by a
 heartbeat or role resume.
 
-At each 90-minute PRIMARY patrol, read incoming messages/comments in the existing
+At each 60-minute PRIMARY patrol, read incoming messages/comments in the existing
 GenericChess Chat and the relevant complete threads once. At every explicit
 manual work start/resume, check for new incoming messages/comments before Main
-unless this 90-minute patrol has already completed that read; never reread more than
-once in the same 90-minute patrol. Preserve the exact project-related read in
+unless this 60-minute patrol has already completed that read; never reread more than
+once in the same 60-minute patrol. Preserve the exact project-related read in
 ignored `.local_agent` before evaluating it. Treat Chat comments as suggestions
 unless the user directly confirms a decision. Do not @Dot,
 contact Dot in real time, wait/poll for Dot, or use a Dot-specific control path.
@@ -160,7 +161,7 @@ context. Follow SLACK_WORKFLOW's raw-response preservation before processing.
 
 Use `docs/operations/SLACK_WORKFLOW.md` for the active read path and raw-read
 handling. Read new project Chat messages/comments and relevant complete threads
-once per 90-minute patrol; preserve the exact project-only output privately before
+once per 60-minute patrol; preserve the exact project-only output privately before
 reconcile or adoption. A suggestion does not override current user policy or
 become user authorization by itself. No @Dot, live exchange, response polling or
 routine acknowledgment. For a >=120-minute run, do not send a question. Wait for an incoming user Chat
@@ -334,3 +335,20 @@ credentials, Goals or retired queues. Current hardware load is normal concurrenc
 not permission to alter other projects or demand exclusive timing windows.
 
 For archived source inspect hard-coded personal directory literals as well as generated JSON/logs, including doubled Windows backslashes. A passed narrow filename exclusion does not establish all-member privacy. Preserve originals privately and qualify sanitized source copies separately; never claim old Git history was purged by a normal deletion commit.
+
+## Observed2026-10-22 preparation and forecast corrections
+
+A RuleSet boundary uses ruleset_to_dict/serialize_ruleset, not a generic dataclass
+projection. Round-trip the exact saved canonical input before marking it ready;
+null optional dimensions in a generic dump caused a zero-query setup failure.
+For substantially larger full-node search panels, forecast from real full-node
+calls on representative full histories, including reserves and recording cost;
+cheap completed D1/D2 timings do not forecast a maxdepth64/node65536 call. A
+cooperative whole cap preserves a bound, not planned coverage. Keep missing slots.
+
+Use simple evidence file paths through generic-chess-local.cmd. Its IF block
+forwards arguments to cmd; unquoted parentheses in no-space prose can be parsed
+as batch syntax even after the Python CLI accepted a work interval. For such
+prose use the existing .venv Python -m tools.local_agent.cli directly. After a
+wrapper error inspect session status before retrying; do not double-credit an
+already committed interval. No recorded times were rewritten for this incident.

@@ -6333,3 +6333,28 @@ original failures preserved privately,andindependentlychecked; no producttest
 expectation was changed. Researchintervals exclude administrative delivery.
 Reviewed technical evidence uses the required tested publisher and full remote
 SHA verification; private originals and existing PUBLIC visibility remain.
+
+
+### 2026-10-22 PRIMARY: small-family exposure and resource controls
+
+Saved three new Chat roots and complete threads through1792656600.700349 before
+assessment. Adopted interpretable-family/natural-exposure and real policy-ladder
+questions; no outbound contact, AUX checkout/state/learning work or extra worker.
+Corrected the qualifier rule-clock/caller collision causally with three red
+controls, retaining old expectations and old512/96data. Offline loss/utility
+causality, marginal interval ranking, universal SPRT/default thresholds and a
+large solver/architecture port remain unsupported/deferred, not completed.
+
+The fixed check-only continuation gives[1/6,1/4]on12exposed rules. New4x4family
+and full-history forks separate policy recurrence from proven closure. Actual
+resource-package controls and16directgames establish a finite competence step,
+not learning/generalization. The65536panelforecastfailed:1censoredprefix and
+47unattempted after1826.3s; droppedwithoutrefill. Expectedfull-nodecostmustcome
+fromactualfull-node/historycalls. Exacttechnicalobservations/sourcearecompactly
+published; rawChat/account/errors/session remain private. The reader replays
+sharedCore, not an independent engine/WDL oracle. No larger audit gate follows.
+
+Nextleaf-only24-physical/32-framecontrol is preparedNOTRUN; both actors share
+Staticordering adapters and completeprofiles. Two preparation assertions were
+caught beforequeries; no frozen fitness rerun. Scientific route remains OPEN;
+AUX contributions in the incoming memo were not independently rerun or owned.

@@ -6,12 +6,12 @@ existing GenericChess project Chat, carried through NanoMelon `#generic-chess`
 wait/poll and daily consultation. Read the existing Chat; do not start a separate
 advisor exchange or inspect auxiliary chats from this patrol.
 
-## 90-minute inbound read
+## 60-minute inbound read
 
-At most once per existing 90-minute PRIMARY heartbeat, read newly available project
+At most once per existing 60-minute PRIMARY heartbeat, read newly available project
 Chat messages and the complete relevant threads. Also perform this incoming read
-before Main at each explicit manual work start/resume unless the current 90-minute
-patrol already completed it; never reread within the same 90-minute patrol. Use the
+before Main at each explicit manual work start/resume unless the current 60-minute
+patrol already completed it; never reread within the same 60-minute patrol. Use the
 connected read path for the channel and individual threads; do not create a new
 channel, conversation, worker or polling loop. Keep the last completely covered
 boundary and any gaps.

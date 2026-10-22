@@ -1,0 +1,226 @@
+{
+  "question": "Does completeUnit leafpricing improve actualnode2048policyagainstfixedStaticinthisresourcecurriculum,wherea realN2048>D1>FLOORstepwasobserved?",
+  "changed_premise": "NewresourcepackageD1gain9/16versusoriginalbalancedmean0;original16sourcesare14repetitiondraws/onewin/oneloss,notallindividualdraws. N2048beatsD1in16directgames. Cheapresourcecurriculumjustifiesaspecificleafcontrol,notlearnability. EarlierunfilteredUnitq0effectcrossedzero;fullresourcecontexthaschanged.",
+  "configs": [
+    {
+      "world": 0,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "AB",
+      "layout": 0
+    },
+    {
+      "world": 1,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "AB",
+      "layout": 1
+    },
+    {
+      "world": 2,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "AAB",
+      "layout": 0
+    },
+    {
+      "world": 3,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "AAB",
+      "layout": 1
+    },
+    {
+      "world": 4,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "ABC",
+      "layout": 0
+    },
+    {
+      "world": 5,
+      "family": "complementary",
+      "family_index": 0,
+      "roster": "ABC",
+      "layout": 1
+    },
+    {
+      "world": 6,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "AB",
+      "layout": 0
+    },
+    {
+      "world": 7,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "AB",
+      "layout": 1
+    },
+    {
+      "world": 8,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "AAB",
+      "layout": 0
+    },
+    {
+      "world": 9,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "AAB",
+      "layout": 1
+    },
+    {
+      "world": 10,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "ABC",
+      "layout": 0
+    },
+    {
+      "world": 11,
+      "family": "orth_nested",
+      "family_index": 1,
+      "roster": "ABC",
+      "layout": 1
+    },
+    {
+      "world": 12,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "AB",
+      "layout": 0
+    },
+    {
+      "world": 13,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "AB",
+      "layout": 1
+    },
+    {
+      "world": 14,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "AAB",
+      "layout": 0
+    },
+    {
+      "world": 15,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "AAB",
+      "layout": 1
+    },
+    {
+      "world": 16,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "ABC",
+      "layout": 0
+    },
+    {
+      "world": 17,
+      "family": "diag_nested",
+      "family_index": 2,
+      "roster": "ABC",
+      "layout": 1
+    },
+    {
+      "world": 18,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "AB",
+      "layout": 0
+    },
+    {
+      "world": 19,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "AB",
+      "layout": 1
+    },
+    {
+      "world": 20,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "AAB",
+      "layout": 0
+    },
+    {
+      "world": 21,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "AAB",
+      "layout": 1
+    },
+    {
+      "world": 22,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "ABC",
+      "layout": 0
+    },
+    {
+      "world": 23,
+      "family": "leap_mix",
+      "family_index": 3,
+      "roster": "ABC",
+      "layout": 1
+    }
+  ],
+  "scope": "Same8alreadyexposedmetadataworlds;fullfuturetypes/hands/history/dropsemantics,defaultdynamics2/5/3;leaf-onlyinterventionUnitCURRENTboard1000/BASEhand900,anchor0,retainprovedinertStatic handzero,promgain0;commonStaticmaterialordering3-methodadapter. Nohumanlabels,training,AUXwork,defaultchange,orindependentholdoutclaim.",
+  "pairs": {
+    "Static_self": [
+      "N2048",
+      "N2048"
+    ],
+    "Unit_vs_Static": [
+      "N2048",
+      "N2048"
+    ]
+  },
+  "candidate_roles": [
+    0,
+    1
+  ],
+  "planned_games": 24,
+  "caller_plies": 96,
+  "rule_max_ply": 128,
+  "repetition_limit": 4,
+  "limits": {
+    "max_nodes": 2048,
+    "max_time_seconds": null,
+    "quiescence_max_depth": 0,
+    "quiescence_hard_max_depth": 8
+  },
+  "whole_cap_seconds": 1200,
+  "expected_seconds": 600,
+  "repair_of": "../results.json:192setupfailureattempts,0queries; no fitness returns exist; canonicalRuleSetserialization replaces genericdataclassprojection; two seconds charged to original1800cap",
+  "shuffle_seed": 202610220953,
+  "decision": "Finiteutility/prefixcostandper-worldnegativeschoosewhichcheapcontroltokeepforthisprototype. AllUNKNOWN/failures/plannedmissingretained;no caprefilloruniversalmaterialconclusion. No automatictraininggate.",
+  "no_AUX_work": true,
+  "worlds": [
+    0,
+    2,
+    6,
+    8,
+    12,
+    14,
+    18,
+    20
+  ],
+  "pair_modes": {
+    "Static_self": "resource",
+    "Unit_vs_Static": "resource"
+  },
+  "reuse": "8NEWStaticselfphysicalsourcesrole0define16exactoppositeroleframesonlyifeligible;16NEWUnit-vsStaticgamesbothroles. ExistingN-vsD1gamesareNOTselfsourcesandNOTreusedasStaticself. AllsourcegamesNOTRUN.",
+  "planned_role_frames": 32,
+  "preparation_only": true,
+  "fitness_games": "NOTRUN",
+  "Player_queries": 0,
+  "input_sha256": "74ccf415444fa9c090278acaf1f700ece9e290836df019b824a258772743f2ad",
+  "actor_adapter_control": "AllStaticandUnitactorsuse thesame3-methodAdapter;save/retainbaseprofilebeforeoverridebecauseAlphaBetaPlayer.evaluation_profileisNoneforcustom evaluators. OnlyUnitcandidateleafdiffers;ordering remainsStatic. Actualbackend/coststillrecorded,noequivalenceclaim."
+}

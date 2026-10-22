@@ -1,0 +1,227 @@
+{
+  "scope": "Compactindexonly;completeper-game/finite/naturalrootrecordsandsourcesremaininunchangedobservations.json.gz. No rawoutcomesdiscarded.",
+  "observations_sha256": "1a48f7eaf038cc7745d6dd82ebc784d7a666286a59c7d159c4c1ba3c5338d087",
+  "new_trajectories": {
+    "initial_starts": 281,
+    "conditional_continuations": 132,
+    "total": 413,
+    "planned_unattempted": 47
+  },
+  "exact_old_self_sources": 12,
+  "discard_D1_reuses_already_inside192": 16,
+  "new_in_game": {
+    "Player_returns": 8310,
+    "RNG_choices": 5507,
+    "FLOOR_choices": 6094,
+    "submitted_plies": 19911,
+    "literal_PV_edges": 17353
+  },
+  "additional_cold": {
+    "Player_returns": 46,
+    "missing_query_slots": 2,
+    "PV_edges": 210
+  },
+  "check_only_effects": {
+    "checkonly-pureq0": [
+      "1/6",
+      "1/4"
+    ],
+    "checkonly-Unitq0": [
+      "1/12",
+      "5/12"
+    ]
+  },
+  "small_ladder_bounds": {
+    "random_self": [
+      "-11/16",
+      "29/48"
+    ],
+    "floor_random": [
+      "-7/12",
+      "2/3"
+    ],
+    "d1_floor": [
+      "1/48",
+      "1/48"
+    ],
+    "d2_d1": [
+      "-1/4",
+      "3/4"
+    ]
+  },
+  "conditional_bounds": {
+    "freshD1": [
+      "0",
+      "0"
+    ],
+    "freshD2": [
+      "-1/4",
+      "15/44"
+    ],
+    "freshD4": [
+      "-3/11",
+      "9/22"
+    ]
+  },
+  "actual_conditional_wins": [
+    {
+      "world": 0,
+      "role": 0,
+      "arm": "freshD2"
+    },
+    {
+      "world": 3,
+      "role": 0,
+      "arm": "freshD2"
+    },
+    {
+      "world": 3,
+      "role": 0,
+      "arm": "freshD4"
+    },
+    {
+      "world": 14,
+      "role": 1,
+      "arm": "freshD4"
+    },
+    {
+      "world": 22,
+      "role": 0,
+      "arm": "freshD4"
+    }
+  ],
+  "natural_exposure": {
+    "all_views": 12391,
+    "potential_feature_contrast": 2699,
+    "argmax_support_changes": 300,
+    "canonical_first_changes": 300,
+    "fractions": {
+      "potential_feature_contrast": "2699/12391",
+      "argmax_support_changes": "300/12391",
+      "canonical_first_changes": "300/12391"
+    }
+  },
+  "convex_D1": {
+    "invariant_views": 12091,
+    "sensitive_views": 300,
+    "all_actions_tied_views": 1256,
+    "by_pair": {
+      "random_self": 3739,
+      "floor_random": 3197,
+      "d1_floor": 2269,
+      "d2_d1": 2886
+    }
+  },
+  "finite_reference": {
+    "planned": 144,
+    "complete": 141,
+    "missing": 3,
+    "Core_edges": 86930,
+    "per_depth": {
+      "1": {
+        "complete": 47,
+        "supports_change": 3,
+        "canonical_first_changes": 3,
+        "atply16_nonanchor_distribution": {
+          "2": 6,
+          "1": 13,
+          "0": 4
+        }
+      },
+      "2": {
+        "complete": 47,
+        "supports_change": 10,
+        "canonical_first_changes": 9,
+        "atply16_nonanchor_distribution": {
+          "2": 6,
+          "1": 13,
+          "0": 4
+        }
+      },
+      "4": {
+        "complete": 47,
+        "supports_change": 13,
+        "canonical_first_changes": 11,
+        "atply16_nonanchor_distribution": {
+          "2": 6,
+          "1": 13,
+          "0": 4
+        }
+      }
+    }
+  },
+  "resource_package_effects": {
+    "resource_package_at_D1": [
+      "9/16",
+      "9/16"
+    ],
+    "resource_package_at_N2048": [
+      "0",
+      "1/2"
+    ],
+    "search_at_discard": [
+      "1/2",
+      "1"
+    ],
+    "search_at_resource": [
+      "7/16",
+      "7/16"
+    ],
+    "package_search_interaction": [
+      "-9/16",
+      "-1/16"
+    ]
+  },
+  "actual_resource_direct": {
+    "N2048_versus_D1": [
+      "1",
+      "1"
+    ]
+  },
+  "failed_budget": {
+    "planned": 48,
+    "physical_attempts": 1,
+    "whole_cap_seconds": 1800,
+    "actual_seconds": 1826.3393634000095,
+    "retained_plies": 61,
+    "eligible_terminal_games": 0,
+    "cost_by_policy": {
+      "N65536": {
+        "queries": 31,
+        "seconds": 1790.0005632000975,
+        "mean_seconds": 57.74195365161605,
+        "nodes": 2031616,
+        "pushes": 2031269,
+        "completed_depths": [
+          9,
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "N2048": {
+        "queries": 30,
+        "seconds": 34.59693239966873,
+        "mean_seconds": 1.1532310799889578,
+        "nodes": 61440,
+        "pushes": 61223,
+        "completed_depths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    "decision": "DROPthis65536nodeutilitypanelunchanged;cannotderiveutilityfrom1censoredprefix/47unattempted. No capextension/refill. Futurefull-nodeexperimentsmustforecastfromrealfull-node/historycalls,notD1/D2completiontimings. Hypotheticaluncapped48gamesexpectedabove120minnotauthorizedwithoutincominguserassessment;nooutboundsent."
+  },
+  "next_status": "NOTRUN;24physical/32roleframes;0queries;seenext_protocol/inputs/runner/preflightfiles",
+  "limitations": [
+    "FinitecensoringboundsnotpopulationCIs;relatedworldsnotindependentholdout",
+    "Resourcepackagechangescaptureanddroptogether",
+    "SharedCorereadernotindependentengine/WDLoracle",
+    "D1convexinvariancedoesnotextendD2/D4,allpricesoractualwarmTTpolicy",
+    "No defaults,trainingorAUXchanges"
+  ]
+}

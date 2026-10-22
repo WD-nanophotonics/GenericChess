@@ -1,0 +1,50 @@
+{
+  "all_passed": true,
+  "scope": "SharedCore full-history/PV, actualEvaluator density, independent scalar finite references; not a second engine or WDL oracle. No fitness/training executed.",
+  "counters": {
+    "prefix_plies_replayed": 3189,
+    "PV_edges": 18473,
+    "Player_returns": 8762,
+    "history_plies": 20363,
+    "new_PV_edges": 17353,
+    "new_Player_returns": 8310,
+    "new_history_plies": 19911,
+    "density_children": 63304,
+    "density_roots": 12391,
+    "FLOOR_children": 18579,
+    "finite_scalar_edges": 347720,
+    "finite_completed_rows": 141,
+    "cold_PV_edges": 210,
+    "cold_Player_returns": 46
+  },
+  "retained_games": {
+    "baseline_A": 12,
+    "check_only": 24,
+    "small_ladder": 192,
+    "attractor": 132,
+    "budget_direct": 1,
+    "resource_utility": 48,
+    "resource_direct": 16
+  },
+  "choices_by_batch_policy": {
+    "('baseline_A', 'Player')": 452,
+    "('check_only', 'Player')": 749,
+    "('small_ladder', 'RNG')": 5507,
+    "('small_ladder', 'FLOOR')": 2812,
+    "('small_ladder', 'D1')": 2607,
+    "('small_ladder', 'D2')": 1465,
+    "('attractor', 'FLOOR')": 2669,
+    "('attractor', 'freshD1')": 594,
+    "('attractor', 'freshD2')": 1006,
+    "('attractor', 'freshD4')": 1027,
+    "('budget_direct', 'N65536')": 31,
+    "('budget_direct', 'N2048')": 30,
+    "('resource_utility', 'D1')": 165,
+    "('resource_utility', 'FLOOR')": 613,
+    "('resource_utility', 'N2048')": 466,
+    "('resource_direct', 'N2048')": 89,
+    "('resource_direct', 'D1')": 81
+  },
+  "seconds": 61.567582400050014,
+  "observation_sha256": "1a48f7eaf038cc7745d6dd82ebc784d7a666286a59c7d159c4c1ba3c5338d087"
+}

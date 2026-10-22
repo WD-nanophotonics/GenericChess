@@ -2,7 +2,7 @@
 
 AGENTS.md owns authority, PUBLIC, roles, stops and research integrity;
 LOCAL_AGENT.md owns operations. PRIMARY_SANDBOX owns sandbox here. DEV_AUX owns
-its separate learning/solver lane. The existing 90-minute patrol and read-only
+its separate learning/solver lane. The existing 60-minute patrol and read-only
 project Chat remain unchanged. No extra worker or outbound consultation.
 
 This replaces the chronological daily entry, whose complete decisions/reasons
@@ -343,15 +343,32 @@ No refill. All6146Corehistoryplies/17262literalPVedges pass public-copy reading;
 sharedCoreisnotanindependentengine/WDLoracle. SixfiniteD2referencesalsoexplain
 whyproxygaps/nominaldeptharenotactualutility. No default/filter/API/learner/AUXchange.
 
-Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-checkonly-utility-next/registration.json`
-with `.local_agent/rule_quality_checkonly_utility_next.py`:24NEWwholegames/all12
-existingfullinputs/roles;Staticleaf/order,node2048,maxdepth64,ordinaryq0;
-candidatecheck-onlyON/hard8againstpureq0OFF;caller96/expected600s/cap1200s.
-FreshPlayer/ownTTwithin-game,diskOFF;reuseeligibleAselfsourceonly,independent
-cross-policyUNKNOWNtails. Source/inputs/profilesready,0newwholegamequeries.
-Thecompleted12rootpilotuses19706vs20447pushes/twochangedactions;notstrengthproof.
-Capture-onlyq1's12rootpilotuses43360vs40163pusheswithunchangedactions/scores/depth;
-itsdeclaredlocalcostcheckpointfails:doNOTlaunchits24gamefollow-up. Theseare
-localROIchoices,notnewglobalgates. Backup: reuseclosedmode/price/censoring evidence
-foroneconcretequestion;old34casejoin10matchesallUNKNOWNisCLOSED,noexpandedscan.
-No frozenpanelrefill,oldcostcampaignorAUXsolver/learner takeover. Science OPEN.
+[SMALL_RULE_FAMILY_EXPOSURE_AND_RESOURCE_20261022.md](SMALL_RULE_FAMILY_EXPOSURE_AND_RESOURCE_20261022.md)
+closes that24-gamecheck-only continuation: finiteK-A[1/6,1/4],world3negative,
+no default. The new interpretable24-world4x4 prototype records192games;
+D1/FLOOR has44repetitions but132conditionalbranchesfind2D2/3D4actualwins.
+They prove legal exits for selectedfullhistories,notforcedWDL orclosedclasses.
+Natural12391views have2699material-coefficientcontrasts butonly300four-priceD1
+supportchanges;12091areinvariantoverthatpriceconvexhullunderfixedD1only.
+Do not portthisaffinecertificate toD2/D4;141finitechecksretain3missing slots.
+
+The explicitcapture-to-hand+legal-dropPACKAGE on8metadataworlds givesD1gain9/16;
+16actualnode2048vsD1directgamesallwin. Thisis anobservedcompetencestaircase,
+notmateriallearning,independentholdoutorpopulationstrength.48newpackage/search
+controlskeep4UNKNOWN;16oldD1sourcesare14D/1W/1L,notallindividualdraws.
+The65536panelcostforecastfails:1826.3seconds,one61plycensoredprefix,
+47unattempted,utility[-1,1]. DROPunchanged/no refill. Use actualfull-node/history
+costbeforelargepanels;no universalbudgetban oruser-consentqueue.
+
+Main: execute `.local_agent/small_family_leaf_price_next.py run` using
+`.local_agent/small-family-20261022/repaired-inputs/resource-utility/leaf-price-next/registration.json`.
+Allfullinputs/profilesreadyandAST24slotsverified;0Playerqueries,NOTRUN.
+8NEWStaticselfsourcesrole0+16NEWUnit-vsStaticgamesform32roleframesonlyafter
+eligibleexactoppositeselfreuse. ExistingN-vsD1gamesarenotselfsources.
+CommonStaticthree-methodorderingAdapterforBOTHactors;onlyUnitleafchanges,
+fullCURRENTboard/BASEhand/futuretypes/history preserved,provedinerthandzeroskept.
+Node2048/pureq0,maxdepth64,caller96/rule128;expected600s/cap1200s.
+Use separate executionannotations instead of frozenNOTRUN/zeropreparationflags.
+No oldcohortrefill,default/filter/AUXlearnerchangeor5x5graph. Backup:reuse
+naturalresourcevisitation foroneconcreteprice question,not anothergeneric audit.
+Science OPEN.

@@ -1,0 +1,89 @@
+{
+  "ready": true,
+  "planned_physical_games": 24,
+  "role_frames": 32,
+  "query_count": 0,
+  "not_run": true,
+  "all_input_hashes_match": true,
+  "source_sha256": "6e84d5d9ef72255fcb64c42bc8b07529dd0a174f102fbc880f2f28b0d8fd509d",
+  "checks": [
+    {
+      "world": 0,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 8,
+      "Static_leaf": 1459,
+      "Unit_leaf": 1923,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 2,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 8,
+      "Static_leaf": 1869,
+      "Unit_leaf": 1869,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 6,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 6,
+      "Static_leaf": 3270,
+      "Unit_leaf": 1927,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 8,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 4,
+      "Static_leaf": -21,
+      "Unit_leaf": -21,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 12,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 0,
+      "Static_leaf": 0,
+      "Unit_leaf": 0,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 14,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 4,
+      "Static_leaf": 0,
+      "Unit_leaf": 0,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 18,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 5,
+      "Static_leaf": 1913,
+      "Unit_leaf": 1913,
+      "profile_none_contract_checked": true
+    },
+    {
+      "world": 20,
+      "full_types": 4,
+      "ordering_pairs": 16,
+      "root_ply": 2,
+      "Static_leaf": -5,
+      "Unit_leaf": -5,
+      "profile_none_contract_checked": true
+    }
+  ],
+  "caught_prelaunch": [
+    "Slot-text whitespace mismatch fixed byAST24slotassertion",
+    "Bothactors now sameAdapter;storedbaseprofile before evaluator_override,whoseprofilepropertyisNone"
+  ],
+  "no_fitness_replayed": true,
+  "execution_annotations": "Futureactualrun creates separateexecution-registration withNOTRUN/0preparationflags replaced;frozenprotocolpreserved. Noexecutionrecordorresults exists now."
+}
