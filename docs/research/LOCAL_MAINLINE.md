@@ -328,12 +328,30 @@ doesnotremovepocketq4work;capture-to-removelegallyreplayssamehistoryandchanges
 resource/legal/payoffcontext. Fullqualifiedcoldcontrolsneednotbecomelearninggates.
 No product/default/filter/API/learner/AUXchanges. No oldcohortrefill.
 
-Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-price-q0-next/registration.json`
-usingits12NEWpreparedunfiltered-generatorfullinputs/profiles:Static/Unitleaf,
-commonStaticorder,node2048/q0/maxdepth64, fixedStatic2048/q0;48roleframes,
-36physicalgamesifallaccepted,caller96/shared1800s,expected900s. Inputsareallready,
-0Playerqueries. Keepallfuturetypes/promotion/drop/aux/history,inert handzeros,
-allfailures/UNKNOWN. Thischangedsearch-and-generatorenvelopeisnotanisolated
-opening-filtereffectorhumanlabel/learningexperiment. Backup: reuseowncompleted
-price/opponent/resource/censoring evidencefora concretechoice;no unchanged
-panels,runtime/AUXtakeoverorblanketquality/WDLadmissiongate. Science OPEN.
+[PRICE_RULE_CONTEXT_Q_AND_ORDER_20261022.md](PRICE_RULE_CONTEXT_Q_AND_ORDER_20261022.md)
+closes the NEW unfiltered node2048 continuation:184actual/192planned games,
+5783Player+363FLOOR returns,48additional cold queries. Unitq0[-1/6,1/12]does
+notextendtheearlierfiniteedge;Staticq1-q0[-5/12,-1/6]isnegativehere. Fullq1,
+ordering andopponent interactions do notselectgenericprices/defaults. Nineteen
+pairedtrajectorieschangeandsixresolvedreversalscancelbyseat;no-learning-signal
+oruniversalUnitrefutationdoesnotfollow.
+
+Capturemode alonechangesfourpre-capturechoicesatequalcurrentphysical/leafroots,
+whilefuturehands/rulesdiffer. Remove's1800scooperativecapleaves28/36physical,
+8unattempted,one65plycensorand14rawongoing;price/interactionboundsareunidentified.
+No refill. All6146Corehistoryplies/17262literalPVedges pass public-copy reading;
+sharedCoreisnotanindependentengine/WDLoracle. SixfiniteD2referencesalsoexplain
+whyproxygaps/nominaldeptharenotactualutility. No default/filter/API/learner/AUXchange.
+
+Main: execute `.local_agent/rule-quality-prefix-next-20261022/prospective-checkonly-utility-next/registration.json`
+with `.local_agent/rule_quality_checkonly_utility_next.py`:24NEWwholegames/all12
+existingfullinputs/roles;Staticleaf/order,node2048,maxdepth64,ordinaryq0;
+candidatecheck-onlyON/hard8againstpureq0OFF;caller96/expected600s/cap1200s.
+FreshPlayer/ownTTwithin-game,diskOFF;reuseeligibleAselfsourceonly,independent
+cross-policyUNKNOWNtails. Source/inputs/profilesready,0newwholegamequeries.
+Thecompleted12rootpilotuses19706vs20447pushes/twochangedactions;notstrengthproof.
+Capture-onlyq1's12rootpilotuses43360vs40163pusheswithunchangedactions/scores/depth;
+itsdeclaredlocalcostcheckpointfails:doNOTlaunchits24gamefollow-up. Theseare
+localROIchoices,notnewglobalgates. Backup: reuseclosedmode/price/censoring evidence
+foroneconcretequestion;old34casejoin10matchesallUNKNOWNisCLOSED,noexpandedscan.
+No frozenpanelrefill,oldcostcampaignorAUXsolver/learner takeover. Science OPEN.

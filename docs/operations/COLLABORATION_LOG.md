@@ -6306,3 +6306,30 @@ transport. One contradictory automatic experiment refusal was resolved after
 read-only authorization/unit/cap checks through the same supported review path;
 no bypass or newuserconsent was needed. Reviewed technical delivery uses the
 mandatory tested publisher; fixed fullSHA receipt is kept in owned local state.
+
+
+## 2026-10-22 PRIMARY: new rule envelope, q and ordering
+
+Incoming Chat root1792648583.465719and its complete thread were saved before
+assessment. Its older-SHA review is advice. Adopt separation of actual utility,
+proxy sensitivity and total cost; a cheap exact34case tactical join matches10,
+allbothUNKNOWN,so stop without another broad scan. AUX proposals remain its own
+lane; no AUX files/execution, outgoing Chat, workers or scheduling changes.
+
+PRIMARY closes184actual/192planned new games plus48separate cold returns.
+Public-copy sharedCore qualifies6146historyplies/17262PVedges,295member hashes,
+10analyses andtheoldjoin;nofitnessrerunsorindependent-engineclaim. Newq0Unit
+benefit is unidentified;Staticq1 isnegative inthis envelope. Seat cancellation,
+nontrivial UNKNOWN stock/boards andcapture-context changes limit broad claims.
+Remove reachesitsoriginal1800scap:8unattempted/one65plycensor retained,no refill.
+Recording/setup residuals,querytime,nodevisits/pushesandcensoredfuturecost are
+separate. Wholepolicy/default/learneradoption isnotjustified by more files or depth.
+
+A smallcapture-onlyq1pilot increasespushes withidenticalrootoutputs,so its
+whole-game follow-up is dropped. Check-onlyq0 ischeap enough for the next frozen
+24game question,which isNOTRUN. Preparation'sfingerprint/physicalcomparison
+mistake andtwointerpretationoverclaims were diagnosed against concrete fields,
+original failures preserved privately,andindependentlychecked; no producttest
+expectation was changed. Researchintervals exclude administrative delivery.
+Reviewed technical evidence uses the required tested publisher and full remote
+SHA verification; private originals and existing PUBLIC visibility remain.

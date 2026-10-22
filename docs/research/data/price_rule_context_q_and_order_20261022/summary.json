@@ -1,0 +1,176 @@
+{
+  "question": "Whatisactuallyclosed,andwhatcanthenewprice/context/resourceevidencejustify?",
+  "batches": {
+    "prospective-price-q0-next": {
+      "physical_games": 36,
+      "planned_physical_games": 36,
+      "Player_returns": 1212,
+      "FLOOR_returns": 0,
+      "history_plies": 1212,
+      "pv_edges": 3125,
+      "whole_producer_seconds": 636.4530198000139,
+      "sum_query_seconds": 617.518170898431,
+      "residual_setup_recording_other_seconds": 18.934848901582882,
+      "unattempted": [],
+      "retained_ongoing": 4,
+      "censor_causes": {
+        "None": 36
+      },
+      "eligible_games": 36,
+      "fallback_games": 0,
+      "operational_failure_games": 0,
+      "setup_or_runtime_failures": 0
+    },
+    "prospective-price-q-interaction": {
+      "physical_games": 48,
+      "planned_physical_games": 48,
+      "Player_returns": 1741,
+      "FLOOR_returns": 0,
+      "history_plies": 1741,
+      "pv_edges": 3963,
+      "whole_producer_seconds": 1054.8046293000225,
+      "sum_query_seconds": 1028.2707839015638,
+      "residual_setup_recording_other_seconds": 26.533845398458652,
+      "unattempted": [],
+      "retained_ongoing": 6,
+      "censor_causes": {
+        "None": 48
+      },
+      "eligible_games": 48,
+      "fallback_games": 0,
+      "operational_failure_games": 0,
+      "setup_or_runtime_failures": 0
+    },
+    "prospective-price-q0-floor": {
+      "physical_games": 48,
+      "planned_physical_games": 48,
+      "Player_returns": 382,
+      "FLOOR_returns": 363,
+      "history_plies": 745,
+      "pv_edges": 1044,
+      "whole_producer_seconds": 197.37978339998517,
+      "sum_query_seconds": 190.9398231995292,
+      "residual_setup_recording_other_seconds": 6.439960200455971,
+      "unattempted": [],
+      "retained_ongoing": 0,
+      "censor_causes": {
+        "None": 48
+      },
+      "eligible_games": 48,
+      "fallback_games": 0,
+      "operational_failure_games": 0,
+      "setup_or_runtime_failures": 0
+    },
+    "prospective-price-q0-order": {
+      "physical_games": 24,
+      "planned_physical_games": 24,
+      "Player_returns": 787,
+      "FLOOR_returns": 0,
+      "history_plies": 787,
+      "pv_edges": 2063,
+      "whole_producer_seconds": 411.7007242999971,
+      "sum_query_seconds": 399.5419207982486,
+      "residual_setup_recording_other_seconds": 12.15880350174848,
+      "unattempted": [],
+      "retained_ongoing": 3,
+      "censor_causes": {
+        "None": 24
+      },
+      "eligible_games": 24,
+      "fallback_games": 0,
+      "operational_failure_games": 0,
+      "setup_or_runtime_failures": 0
+    },
+    "prospective-price-q0-remove": {
+      "physical_games": 28,
+      "planned_physical_games": 36,
+      "Player_returns": 1661,
+      "FLOOR_returns": 0,
+      "history_plies": 1661,
+      "pv_edges": 7067,
+      "whole_producer_seconds": 1800.3618070000084,
+      "sum_query_seconds": 1763.24921100121,
+      "residual_setup_recording_other_seconds": 37.1125959987985,
+      "unattempted": [
+        7,
+        11,
+        16,
+        18,
+        21,
+        23,
+        27,
+        34
+      ],
+      "retained_ongoing": 14,
+      "censor_causes": {
+        "None": 27,
+        "whole_cap": 1
+      },
+      "eligible_games": 27,
+      "fallback_games": 0,
+      "operational_failure_games": 0,
+      "setup_or_runtime_failures": 0
+    }
+  },
+  "total_physical_games": 184,
+  "planned_physical_games": 192,
+  "Player_returns": 5783,
+  "FLOOR_returns": 363,
+  "history_plies": 6146,
+  "pv_edges": 17262,
+  "cold_new_Player_returns": 48,
+  "cold_exact_reuse_views": 24,
+  "cold_pv_edges": 141,
+  "precapture_equalroots": [
+    {
+      "world": 3,
+      "arm": "B",
+      "role": 0,
+      "first_divergence": 0,
+      "full_root_leaf_scores": [
+        0,
+        0
+      ],
+      "actor": 0
+    },
+    {
+      "world": 7,
+      "arm": "B",
+      "role": 0,
+      "first_divergence": 0,
+      "full_root_leaf_scores": [
+        0,
+        0
+      ],
+      "actor": 0
+    },
+    {
+      "world": 11,
+      "arm": "A",
+      "role": 0,
+      "first_divergence": 4,
+      "full_root_leaf_scores": [
+        -12,
+        -12
+      ],
+      "actor": 0
+    },
+    {
+      "world": 11,
+      "arm": "B",
+      "role": 1,
+      "first_divergence": 1,
+      "full_root_leaf_scores": [
+        -17,
+        -17
+      ],
+      "actor": 1
+    }
+  ],
+  "decisions": [
+    "No generalUnit/default/q/search/filter/learnerchange. PocketUnitq0[-1/6,1/12];fullq1Static[-5/12,-1/6];nobroaderdomainclaim.",
+    "Differentsearchactionsat4equalphysical/currentleafrootsbeforecapturearecontextmechanism,notutilityimprovementorwithinsameRuleSetalias.",
+    "Remove1800sreached:28/36physicalattempted,8unattempted,onewholecapat65plies,14rawongoing. No refill/replacementorclaimsignofmodeinteraction.",
+    "Capture-onlyq1pilotfailslocalROI;donotlaunch24fitness. Existingcheck-onlyq0pilotpassesworkforecastonly;next24utilityrunFROZEN_NOTRUN."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "physical_games": 184,
+  "queries": 6146,
+  "history_plies": 6146,
+  "pv_plies": 17262,
+  "floor_returns": 363,
+  "Player_returns": 5783,
+  "batches": {
+    "prospective-price-q0-next": {
+      "physical_games": 36,
+      "planned_physical": 36,
+      "unattempted": [],
+      "source_failures": 0
+    },
+    "prospective-price-q-interaction": {
+      "physical_games": 48,
+      "planned_physical": 48,
+      "unattempted": [],
+      "source_failures": 0
+    },
+    "prospective-price-q0-floor": {
+      "physical_games": 48,
+      "planned_physical": 48,
+      "unattempted": [],
+      "source_failures": 0
+    },
+    "prospective-price-q0-order": {
+      "physical_games": 24,
+      "planned_physical": 24,
+      "unattempted": [],
+      "source_failures": 0
+    },
+    "prospective-price-q0-remove": {
+      "physical_games": 28,
+      "planned_physical": 36,
+      "unattempted": [
+        7,
+        11,
+        16,
+        18,
+        21,
+        23,
+        27,
+        34
+      ],
+      "source_failures": 0
+    }
+  },
+  "scope": "SharedCorefull-history/literalPV/policy/configqualification,not independentengine orscalarq/WDLproof. RawUNKNOWN neverreplaced.",
+  "seconds": 47.46447809995152,
+  "all_retained_games_passed": true,
+  "archive_members_checked": 295,
+  "analysis": {
+    "analysis_replays": 10,
+    "old_join_cases": 34,
+    "old_exact_matches": 10,
+    "no_old_scans_or_fitness_rerun": true
+  }
+}
