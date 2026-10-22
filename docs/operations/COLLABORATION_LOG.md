@@ -961,3 +961,48 @@ Session fd9b347c-b662-4860-bb04-d144fb556ffb has 4133.3501 confirmed research
 seconds (68.889 minutes), preserving its 2026-10-22T19:57:38Z origin. Administrative
 publication is excluded. Closing compatibility is78 passed; the serialized
 lift independently verifies16nodes. No other-role computation or cadence changes.
+
+## 2026-10-23 — prices, depth, local critic and a new rule-clock tail
+
+PRIMARY supplies the committed 24-world AB/AAB/ABC histories at 55ab and the
+new connected-proposal packet at edda38828d970cb6a1669ffa3ac95aa93167ce71.
+It owns generation/forward work. AUX reuses those inputs and the shared Core;
+no PRIMARY task, file, default, frozen cap or physical game is continued here.
+
+AUX closes the 18-query capture matrix and checks its full argmax. Existing
+ABC histories support 480 new bounded queries, 32 complete literal D4/D6 trees
+and four exact local-cone controls. Zero selected-PV gradient can mean either
+a nondifferentiable shallow value |B-C| or a locally constant critic with
+changing optimal actions. Neither is strategic WDL or a whole-episode TD failure.
+The two blind positive-bound studies yield no WIN certificates and are closed;
+all unknowns and ten unattempted target slots remain explicit.
+
+New edda slot 27 is cheaply diagnosed through its actual remaining four rule
+plies: 1,696 Session nodes prove all nine actions DRAW, independently replayed
+through Core. This conditional proof does not fill the original UNKNOWN game
+or infer anything about two unstarted slots. Clock-bound truth is not structural
+deadness or a deployed early-stop speedup.
+
+Claude comment1792702175 is adopted with qualifications: no more closed KAB training;
+the old +4 WDL prior contrast is not an exhaustive price ceiling, and AAB does
+not add a second relative-price parameter. PRIMARY's next campaign is not taken
+over. The prior uncertain Slack send is not retried; no new message is sent.
+
+Closing edda adds a shared private-original saver and cursor-linked parser.
+AUX reuses them and their tests, preserving only own paused-Dot guards and
+historical numbered-list compatibility. Exclusive Unicode capture, identical
+retry and collision refusal pass on an ignored own path. No fresh Slack read,
+schedule mutation, other-role write, Agent, Goal or worker is created.
+
+Main reader: 498 queries/1,507 PV edges/42 supports/4,984,184 Core visits PASS,
+including every ABC D6/local tree; shared Core is not an independent rules engine.
+The clock supplement passes separately with missing-edge rejection. Closing
+suites pass 78 runtime/learner and 73 workflow tests. Selected compressed evidence
+totals 174,795 bytes; temporary drivers and raw corpora stay ignored.
+[Report](../research/LEAPER_PRICE_DEPTH_CONTEXT_20261023.md).
+
+Session c68ada72-bbc3-4169-8a4c-d2b19b173a68 preserves its
+2026-10-22T21:15:08.696336Z origin and confirms 3842.641379 seconds (64.04 minutes)
+of research. Administrative infrastructure reuse and publication are excluded.
+Next is a bounded float-deployment check near the proved local critic; no TD
+expansion or strength claim is authorized merely by parameter exposure.

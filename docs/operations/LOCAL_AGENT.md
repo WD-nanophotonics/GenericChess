@@ -45,6 +45,9 @@ Review new/edited Chat comments with adopt/defer/reject reasons; advice does not
 replace explicit user direction. The completed cleanup was read-only;
 normal research follows the periodic mailbox protocol.
 No Dot realtime wait, daily gate, resend or reply requirement.
+Raw originals use the committed `save_plugin_original` helper, active session
+UUID and a fresh read UUID per logical capture; see SLACK_WORKFLOW.md. Identical
+retries preserve bytes, while a different existing original cannot be replaced.
 Quote Slack timestamps in PowerShell native-command arguments; unquoted decimal
 tokens can be rounded before the CLI receives them and fail exact-revision review.
 

@@ -7,6 +7,8 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
+from pathlib import Path
 import re
 import secrets
 import sqlite3
@@ -23,6 +25,39 @@ def stamp():
 
 def digest(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+
+def save_plugin_original(path: Path, payload: bytes) -> dict:
+    """Create an ignored original once; a retry may only confirm identical bytes.
+
+    This is opaque private evidence, not mutable configuration or a send action.
+    A failed write is retained; the caller keeps its tool return and uses a new
+    capture path rather than overwriting a partial or earlier original.
+    """
+    if not isinstance(payload, bytes):
+        raise LocalFlowError('plugin original must be bytes')
+    root = ROOT.resolve()
+    state = STATE.resolve()
+    target = (root / Path(path)).resolve()
+    if (not state.is_relative_to(root) or not target.is_relative_to(state)
+            or target == state):
+        raise LocalFlowError('plugin original must stay inside this checkout .local_agent')
+    relative = target.relative_to(root).as_posix()
+    # A PUBLIC checkout is not an excuse to expose raw account/credential data.
+    git('check-ignore', '--quiet', '--', relative, cwd=root)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    status = 'SAVED'
+    try:
+        with target.open('xb') as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+    except FileExistsError:
+        if not target.is_file() or target.read_bytes() != payload:
+            raise LocalFlowError('refusing to overwrite private original: ' + relative)
+        status = 'ALREADY_SAVED'
+    return {'status': status, 'path': relative, 'bytes': len(payload),
+            'sha256': hashlib.sha256(payload).hexdigest()}
 
 
 def config():
@@ -174,7 +209,7 @@ def _canonical(text):
     return '\n'.join(lines)
 
 
-def parse_plugin_thread(result):
+def parse_plugin_thread(result, *, _allow_more=False):
     """Parse the plugin's complete rendered thread; ambiguous delimiters fail closed.
 
     Server-provided pagination is outside message bodies. Preserve the raw
@@ -185,7 +220,7 @@ def parse_plugin_thread(result):
     blocks = [json.loads(b['text']) for b in result.get('content', [])
               if b.get('type') == 'text' and b.get('text', '').startswith('{')]
     data = next((b for b in blocks if 'messages' in b), None)
-    if not data or 'There are no more messages in this thread.' not in data.get('pagination_info', ''):
+    if not data or (not _allow_more and 'There are no more messages in this thread.' not in data.get('pagination_info', '')):
         raise LocalFlowError('complete paginated Slack thread evidence is required')
     text = data['messages']
     header = r'From: [^\n]*\((U[A-Z0-9]+)\)\nTime: [^\n]*\nMessage TS: (\d+\.\d+)\n'
@@ -210,6 +245,50 @@ def parse_plugin_thread(result):
         end = replies[i + 1].start() if i + 1 < len(replies) else len(body)
         messages.append(dict(user=m[3], ts=m[4], thread_ts=parent[2], text=body[m.end():end].rstrip()))
     return messages
+
+
+
+def parse_plugin_pages(pages):
+    """Read an exact cursor-linked bundle without rewriting raw page bodies."""
+    if not isinstance(pages, list) or not pages:
+        raise LocalFlowError('Slack pages must be a nonempty cursor-linked list')
+    expected_cursor = None
+    seen_cursors = set()
+    parent = None
+    replies = {}
+    for index, page in enumerate(pages):
+        if not isinstance(page, dict) or page.get('cursor') != expected_cursor:
+            raise LocalFlowError('Slack page cursor gap or wrong first page')
+        result = page.get('tool_result', {})
+        messages = parse_plugin_thread(result, _allow_more=True)
+        data = next(json.loads(b['text']) for b in result['content']
+                    if b.get('type') == 'text' and b.get('text', '').startswith('{')
+                    and 'messages' in json.loads(b['text']))
+        pagination = data.get('pagination_info', '')
+        complete = 'There are no more messages in this thread.' in pagination
+        # Server metadata outside message bodies, never inferred from reply text.
+        cursors = re.findall(r'To view the next page, use cursor: `([^`]+)`', pagination)
+        if complete:
+            if cursors or index != len(pages) - 1:
+                raise LocalFlowError('Slack pages continue after a final page')
+        else:
+            if len(cursors) != 1 or index == len(pages) - 1:
+                raise LocalFlowError('Slack page chain is incomplete')
+            if cursors[0] in seen_cursors:
+                raise LocalFlowError('Slack pagination cursor repeats')
+            expected_cursor = cursors[0]
+            seen_cursors.add(expected_cursor)
+        if parent is None:
+            parent = messages[0]
+        elif messages[0] != parent:
+            raise LocalFlowError('Slack page parent changed')
+        for message in messages[1:]:
+            previous = replies.get(message['ts'])
+            if previous is not None and previous != message:
+                raise LocalFlowError('Slack overlapping reply changed')
+            replies[message['ts']] = message
+    from decimal import Decimal
+    return [parent] + sorted(replies.values(), key=lambda message: Decimal(message['ts']))
 
 
 def _rendered_emphasis(text):
@@ -269,21 +348,6 @@ def _rendered_bullets(text):
     return '\n'.join(lines)
 
 
-def _rendered_numbered_lists(text):
-    """Observed Slack prose '1) ' -> '1. '; preserve every body/code character."""
-    result = []; fenced = False; local_code = False
-    for line in text.splitlines():
-        if line.startswith('LOCAL_CODE_SNAPSHOT='): local_code = True
-        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'): local_code = False
-        if line.startswith('```'):
-            fenced = not fenced
-            result.append(line); continue
-        if not local_code and not fenced:
-            line = re.sub(r'^(\d{1,3})\) ', r'\1. ', line)
-        result.append(line)
-    return '\n'.join(result)
-
-
 def _known_receipt_readback(r, root, receipt_path):
     """Associate a known successful root; NEVER certify rendered payload bytes."""
     if r.get('state') not in {'PENDING', 'COMPLETED'} or not r.get('thread_ts'):
@@ -321,7 +385,10 @@ def import_snapshot(rid, path, sent_receipt_path=None, supplement=False):
         raise LocalFlowError('snapshot must preserve the actual Slack plugin tool result')
     if any(snapshot.get(k) != r[k] for k in ('team_id', 'channel_id')):
         raise LocalFlowError('snapshot belongs to another Slack target')
-    messages = parse_plugin_thread(snapshot['tool_result'])
+    if 'pages' in snapshot and 'tool_result' in snapshot:
+        raise LocalFlowError('choose single Slack result or exact page bundle')
+    messages = (parse_plugin_pages(snapshot['pages']) if 'pages' in snapshot
+                else parse_plugin_thread(snapshot['tool_result']))
     root = messages[0]
     if supplement:
         if not r.get('thread_ts') or sent_receipt_path is not None:
@@ -487,3 +554,18 @@ def stop():
     rollout = read_json(STATE / 'rollout.json'); rollout['user_paused'] = True
     write_json(STATE / 'rollout.json', rollout)
     return {'stopped': True, 'required_agent_actions': ['pause native heartbeat', 'cancel dot channel monitoring']}
+
+
+def _rendered_numbered_lists(text):
+    """Observed Slack prose '1) ' -> '1. '; preserve every body/code character."""
+    result = []; fenced = False; local_code = False
+    for line in text.splitlines():
+        if line.startswith('LOCAL_CODE_SNAPSHOT='): local_code = True
+        if line.startswith('Reply in this thread with TYPE=DOT_REPLY'): local_code = False
+        if line.startswith('```'):
+            fenced = not fenced
+            result.append(line); continue
+        if not local_code and not fenced:
+            line = re.sub(r'^(\d{1,3})\) ', r'\1. ', line)
+        result.append(line)
+    return '\n'.join(result)

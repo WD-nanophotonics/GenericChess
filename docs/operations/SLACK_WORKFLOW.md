@@ -72,6 +72,22 @@ record the uncertainty and continue independent work; the one-write rule is a
 maximum, not permission to duplicate a possibly delivered report.
 No new daemon, worker, realtime monitor or replacement scheduler is introduced.
 
+## Committed raw-capture preservation reused — 2026-10-23
+
+DEV_AUX reuses `save_plugin_original` and the strict cursor-linked page parser
+from sandbox `edda38828d970cb6a1669ffa3ac95aa93167ce71`, with its tests. For each
+logical read, use the active session UUID plus a fresh read UUID and separate
+page names. Retain the tool result before serialization; save final opaque bytes
+through that helper in ignored `.local_agent`. It creates exclusively, accepts
+only an identical retry and refuses replacement by different bytes. Preflight
+Unicode/quoted bytes on a separate synthetic path. A failed save retries the
+same retained return under a fresh name, without another Slack read.
+
+This imports the shared preservation/parser implementation, not PRIMARY's
+research task or communication policy. DEV_AUX retains its paused-Dot guards
+and historical numbered-list receipt compatibility. No schedule, stop flag,
+other-role state, new send or uncertain-send retry is changed.
+
 ## Long experiments
 
 A single experiment expected below 120 minutes needs no prior external review.
