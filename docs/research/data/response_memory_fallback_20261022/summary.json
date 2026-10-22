@@ -1,0 +1,855 @@
+{
+  "session_id": "e2250de6-b736-475c-8a97-462b49b56933",
+  "effective_seconds": 3750,
+  "research_intervals": 11,
+  "product_base": "60e1b23c87002f81f19994bd68f9ffa20437a57b",
+  "scientific_queries": 5345,
+  "instrumented_trace_attempts": 40,
+  "counter": {
+    "queries": 420,
+    "failures": [],
+    "pv_plies": 1425,
+    "root_history_plies": 2448,
+    "curve_seconds": 296.2324840000365,
+    "validation_seconds": 4.807659000041895,
+    "comparisons": [
+      {
+        "depth": 3,
+        "base": "base",
+        "candidate": "counter",
+        "complete_pairs": 34,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 0.9947047733131473,
+        "median_saved_seconds": 0.00019005005015060306,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 3,
+        "base": "staged",
+        "candidate": "both",
+        "complete_pairs": 34,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 1.0135253086393559,
+        "median_saved_seconds": -0.0018506500055082142,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 3,
+        "base": "base",
+        "candidate": "staged",
+        "complete_pairs": 34,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 0.9841580379610206,
+        "median_saved_seconds": 0.001805800071451813,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 3,
+        "base": "base",
+        "candidate": "both",
+        "complete_pairs": 34,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 0.9936984383824184,
+        "median_saved_seconds": 0.0003569499822333455,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 4,
+        "base": "base",
+        "candidate": "counter",
+        "complete_pairs": 25,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 1.0124121939185948,
+        "median_saved_seconds": -0.0008359999628737569,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 4,
+        "base": "staged",
+        "candidate": "both",
+        "complete_pairs": 26,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 1.009382967198294,
+        "median_saved_seconds": -0.0014808501000516117,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 4,
+        "base": "base",
+        "candidate": "staged",
+        "complete_pairs": 25,
+        "extra_returned_depths": 1,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 0.9929232828827067,
+        "median_saved_seconds": 0.0006059000734239817,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 4,
+        "base": "base",
+        "candidate": "both",
+        "complete_pairs": 25,
+        "extra_returned_depths": 1,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 1.0021145481737057,
+        "median_saved_seconds": -0.0005718000466004014,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 5,
+        "base": "base",
+        "candidate": "counter",
+        "complete_pairs": 12,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 1,
+        "median_cold_ratio": 0.9935546255989354,
+        "median_saved_seconds": 0.0015082999598234892,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 5,
+        "base": "staged",
+        "candidate": "both",
+        "complete_pairs": 11,
+        "extra_returned_depths": 0,
+        "lost_returned_depths": 0,
+        "median_cold_ratio": 0.9904803728143651,
+        "median_saved_seconds": 0.0008472000481560826,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 5,
+        "base": "base",
+        "candidate": "staged",
+        "complete_pairs": 11,
+        "extra_returned_depths": 1,
+        "lost_returned_depths": 1,
+        "median_cold_ratio": 1.003518479587099,
+        "median_saved_seconds": -0.0010467000538483262,
+        "score_mismatches": 0,
+        "action_changes": 0
+      },
+      {
+        "depth": 5,
+        "base": "base",
+        "candidate": "both",
+        "complete_pairs": 11,
+        "extra_returned_depths": 1,
+        "lost_returned_depths": 1,
+        "median_cold_ratio": 0.994002633130961,
+        "median_saved_seconds": 0.0010098001221194863,
+        "score_mismatches": 0,
+        "action_changes": 0
+      }
+    ],
+    "missing_processes": 0,
+    "rule_setups": 18,
+    "generation_failures": []
+  },
+  "counter_mechanism": {
+    "rows": 35,
+    "queries_executed_original": 35,
+    "repaired_diagnostic_queries": 5,
+    "original_failed_queries": 5,
+    "totals": {
+      "writes": 23578,
+      "overwrites": 19175,
+      "response_changes": 9922,
+      "cross_side_overwrites": 117,
+      "ordered_nodes": 26164,
+      "lookups_present": 20150,
+      "counter_legal": 12015,
+      "cross_side_legal": 0,
+      "changed_orders": 94,
+      "cross_side_changed": 0
+    },
+    "rows_with_effect": 5,
+    "partial_failures_retained": true,
+    "scope": "Corrected mechanism-only trace;5 interrupted original diagnostic queries remain, no fitness/cost refill. Additional sorting changes instrumentation cost; no speed or WDL claim. Cross-side writer mismatch is not semantic cache corruption: only existing legal actions may be reprioritized."
+  },
+  "mtd": {
+    "queries": 140,
+    "missing": 0,
+    "failures": [],
+    "complete_literal_PVs": 136,
+    "Core_PV_plies": 442,
+    "comparisons": [
+      {
+        "depth": 3,
+        "n": 34,
+        "median_ratio": 2.2229427945128073,
+        "median_saved_seconds": -0.1575981499045156,
+        "score_mismatches": 0,
+        "action_changes": 0,
+        "extra_depths": 0,
+        "lost_depths": 0
+      },
+      {
+        "depth": 4,
+        "n": 19,
+        "median_ratio": 2.568653279698552,
+        "median_saved_seconds": -0.3091433000518009,
+        "score_mismatches": 0,
+        "action_changes": 2,
+        "extra_depths": 0,
+        "lost_depths": 9
+      }
+    ],
+    "median_passes_per_iteration": 3,
+    "max_passes": 33,
+    "wall_seconds": 104.50610150001012,
+    "validation_seconds": 2.009169999975711,
+    "scope": "Full-PV vs full-PV cost only; raw converged bounds not substituted for executable action/PV. Same-Core literal qualification is not independently solved all-domain WDL."
+  },
+  "mtd_scale": {
+    "queries": 140,
+    "missing": 0,
+    "failures": [],
+    "unclipped_pairs": 70,
+    "clipped_pairs": 0,
+    "node_changes": 0,
+    "score_mapping_failures": 0,
+    "action_changes": 0,
+    "pass_structure_changes": 0,
+    "wall_seconds": 58.98673970007803,
+    "scope": "Actual cost topology counterfactual with fixed order/evaluator semantics except exact leaf scale; no normalization recommendation or strength inference. Clipped/censored rows not asserted to satisfy strict monotone mapping."
+  },
+  "root_original": {
+    "executed_games": 36,
+    "planned_games": 36,
+    "paid_queries": 1436,
+    "wall_seconds": 1070.8512103999965,
+    "outcomes": {
+      "candidate_loss": 15,
+      "candidate_win": 15,
+      "UNKNOWN": 6
+    },
+    "finite_interval": [
+      "-1/6",
+      "1/6"
+    ],
+    "paired": [
+      {
+        "seed": 202610228001,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          4,
+          4
+        ]
+      },
+      {
+        "seed": 202610228002,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": false,
+        "lengths": [
+          71,
+          67
+        ]
+      },
+      {
+        "seed": 202610228003,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          39,
+          39
+        ]
+      },
+      {
+        "seed": 202610228004,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          64,
+          64
+        ]
+      },
+      {
+        "seed": 202610228005,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          23,
+          23
+        ]
+      },
+      {
+        "seed": 202610228006,
+        "both_qualified_resolved": false,
+        "contrast_interval": [
+          "-1",
+          "1"
+        ],
+        "same_observed_full_trajectory": false,
+        "lengths": [
+          96,
+          96
+        ]
+      },
+      {
+        "seed": 202610228007,
+        "both_qualified_resolved": false,
+        "contrast_interval": [
+          "-1",
+          "1"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          96,
+          96
+        ]
+      },
+      {
+        "seed": 202610228008,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          63,
+          63
+        ]
+      },
+      {
+        "seed": 202610228009,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          24,
+          24
+        ]
+      },
+      {
+        "seed": 202610228010,
+        "both_qualified_resolved": false,
+        "contrast_interval": [
+          "-1",
+          "1"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          96,
+          96
+        ]
+      },
+      {
+        "seed": 202610228011,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          7,
+          7
+        ]
+      },
+      {
+        "seed": 202610228012,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          6,
+          6
+        ]
+      },
+      {
+        "seed": 202610228013,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          50,
+          50
+        ]
+      },
+      {
+        "seed": 202610228014,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          56,
+          56
+        ]
+      },
+      {
+        "seed": 202610228015,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          6,
+          6
+        ]
+      },
+      {
+        "seed": 202610228016,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          2,
+          2
+        ]
+      },
+      {
+        "seed": 202610228017,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          3,
+          3
+        ]
+      },
+      {
+        "seed": 202610228018,
+        "both_qualified_resolved": true,
+        "contrast_interval": [
+          "0",
+          "0"
+        ],
+        "same_observed_full_trajectory": true,
+        "lengths": [
+          14,
+          14
+        ]
+      }
+    ],
+    "same_observed_role_paths": 16,
+    "sources": {
+      "('root_scan_off', 'main_iteration')": 716,
+      "('baseline', 'main_iteration')": 701,
+      "('baseline', 'root_immediate_win')": 15,
+      "('baseline', 'completed_root_win')": 2,
+      "('root_scan_off', 'completed_root_win')": 2
+    },
+    "policy_strata": {
+      "('root_scan_off', 1, 0)": 287,
+      "('baseline', 2, 4)": 120,
+      "('root_scan_off', 3, 4)": 307,
+      "('baseline', 0, None)": 15,
+      "('baseline', 1, 0)": 279,
+      "('root_scan_off', 2, 4)": 122,
+      "('baseline', 3, 4)": 302,
+      "('baseline', 1, 4)": 2,
+      "('root_scan_off', 1, 4)": 2
+    },
+    "inner_query_seconds": 1043.364198597381,
+    "scope": "Finite both-role utility vs analytical SAME B/B aggregate0; identical censored role paths do not link unknown future outcomes. Original512ply rules,96caller cap. No generic/default/Elo inference.",
+    "root_scan_seconds": null,
+    "root_scan_seconds_status": "Not exposed by saved PlayerDecision; unknown, never inferred as zero."
+  },
+  "root_clock": {
+    "clock_groups": [
+      {
+        "clock": 24,
+        "planned": 18,
+        "executed": 18,
+        "queries": 342,
+        "finite_interval": [
+          "0",
+          "0"
+        ],
+        "outcomes": {
+          "rule_draw": 12,
+          "candidate_loss": 3,
+          "candidate_win": 3
+        },
+        "true_terminal_status": {
+          "max_ply": 12,
+          "checkmate": 6
+        }
+      },
+      {
+        "clock": 48,
+        "planned": 18,
+        "executed": 18,
+        "queries": 466,
+        "finite_interval": [
+          "0",
+          "0"
+        ],
+        "outcomes": {
+          "candidate_win": 9,
+          "candidate_loss": 9
+        },
+        "true_terminal_status": {
+          "checkmate": 18
+        }
+      }
+    ],
+    "clock48_minus24_interval": [
+      "0",
+      "0"
+    ],
+    "paid_queries": 808,
+    "games": 36,
+    "wall_seconds": 630.9459779000608,
+    "scope": "Only prospectively changed24/48rule-clock games. These complete rule outcomes do not adjudicate any original512ply-rule UNKNOWN. No generic/no-scan default or Elo inference."
+  },
+  "semantic_budget": {
+    "queries": 348,
+    "missing": 0,
+    "failures": [],
+    "roots": 58,
+    "Core_PV_plies": 447,
+    "actual_Native_requests": 216,
+    "wall_seconds": 32.54673489998095,
+    "by_budget": [
+      {
+        "budget": 16,
+        "additional_depth_off": 14,
+        "lost_depth_off": 0,
+        "on_fallback": 47,
+        "off_fallback": 33,
+        "score_mismatches": 0,
+        "same_policy_pairs": 10,
+        "known_win1_roots": 1,
+        "additional_depth_off_nonproof": 14,
+        "depth_interpretation": "Keep proof source separate: root_immediate_win has0completed depth but is not inferior to an extra iteration."
+      },
+      {
+        "budget": 64,
+        "additional_depth_off": 13,
+        "lost_depth_off": 0,
+        "on_fallback": 9,
+        "off_fallback": 2,
+        "score_mismatches": 0,
+        "same_policy_pairs": 42,
+        "known_win1_roots": 1,
+        "additional_depth_off_nonproof": 12,
+        "depth_interpretation": "Keep proof source separate: root_immediate_win has0completed depth but is not inferior to an extra iteration."
+      },
+      {
+        "budget": 256,
+        "additional_depth_off": 2,
+        "lost_depth_off": 0,
+        "on_fallback": 0,
+        "off_fallback": 0,
+        "score_mismatches": 0,
+        "same_policy_pairs": 56,
+        "known_win1_roots": 1,
+        "additional_depth_off_nonproof": 1,
+        "depth_interpretation": "Keep proof source separate: root_immediate_win has0completed depth but is not inferior to an extra iteration."
+      }
+    ],
+    "scope": "Explicit full-type Unit evaluator and complete semantic fixture roots; budget/source/depth controls are not utility or all-domain default evidence."
+  },
+  "aux_frontier": {
+    "queries": 152,
+    "missing": 0,
+    "failures": [],
+    "Core_PV_plies": 282,
+    "quiet_aux_root_count": 9,
+    "groups": [
+      {
+        "negative_control": false,
+        "pairs": 58,
+        "full_D2q4_pairs": 56,
+        "score_changes": 0,
+        "action_changes": 0,
+        "median_cold_ratio": 0.9975102522867765,
+        "additional_depth": 0,
+        "lost_depth": 0
+      },
+      {
+        "negative_control": true,
+        "pairs": 18,
+        "full_D2q4_pairs": 10,
+        "score_changes": 0,
+        "action_changes": 0,
+        "median_cold_ratio": 1.0161123289972789,
+        "additional_depth": 0,
+        "lost_depth": 0
+      }
+    ],
+    "scope": "D2q4compatibility/cost only. Aux inclusion changes selective horizon; score/depth doesnotestablish utility. Candidate material_change_qactions includes aux marker; no product/default change."
+  },
+  "aux_activation": {
+    "active_full_policy_changes": [
+      {
+        "seed": 202610224101,
+        "prefix": 1,
+        "qnodes": [
+          18,
+          23
+        ],
+        "combined_marker_counts": [
+          0,
+          5
+        ],
+        "same_score": true,
+        "same_action": true
+      },
+      {
+        "seed": 202610224103,
+        "prefix": 2,
+        "qnodes": [
+          20,
+          24
+        ],
+        "combined_marker_counts": [
+          0,
+          4
+        ],
+        "same_score": true,
+        "same_action": true
+      },
+      {
+        "seed": 202610224102,
+        "prefix": 2,
+        "qnodes": [
+          22,
+          27
+        ],
+        "combined_marker_counts": [
+          0,
+          5
+        ],
+        "same_score": true,
+        "same_action": true
+      },
+      {
+        "seed": 202610224100,
+        "prefix": 0,
+        "qnodes": [
+          22,
+          28
+        ],
+        "combined_marker_counts": [
+          0,
+          6
+        ],
+        "same_score": true,
+        "same_action": true
+      }
+    ],
+    "scope": "Candidate is exercised on four actual token states,adds4-6qnodes but no returned score/action change. Incomplete empty-aux query counter differences are clock/load censoring,not auxiliary activation. Combined marker count is not physical material.",
+    "decision": "Do not expand q or add a product toggle/default from this panel; retain broader auxiliary/tactical limitation and choose another concrete generic-search question."
+  },
+  "partial_diagnostic": {
+    "queries": 608,
+    "missing": 0,
+    "failures": [],
+    "by_budget": [
+      {
+        "nodes": 8,
+        "pairs": 76,
+        "same_paid_work": 76,
+        "qualified_fallback_pairs": 49,
+        "fallback_actions_changed": 22,
+        "D1value_better": 18,
+        "D1value_worse": 0,
+        "D1value_equal": 31
+      },
+      {
+        "nodes": 16,
+        "pairs": 76,
+        "same_paid_work": 76,
+        "qualified_fallback_pairs": 24,
+        "fallback_actions_changed": 16,
+        "D1value_better": 15,
+        "D1value_worse": 0,
+        "D1value_equal": 9
+      },
+      {
+        "nodes": 32,
+        "pairs": 76,
+        "same_paid_work": 76,
+        "qualified_fallback_pairs": 7,
+        "fallback_actions_changed": 5,
+        "D1value_better": 5,
+        "D1value_worse": 0,
+        "D1value_equal": 2
+      },
+      {
+        "nodes": 64,
+        "pairs": 76,
+        "same_paid_work": 76,
+        "qualified_fallback_pairs": 0,
+        "fallback_actions_changed": 0,
+        "D1value_better": 0,
+        "D1value_worse": 0,
+        "D1value_equal": 0
+      }
+    ],
+    "wall_seconds": 118.63409429998137,
+    "scope": "True complete Core D1leaf-regret only,not WDL or a completed-search claim. Fallback source/depth0/score0 remains. No product/default change."
+  },
+  "partial_policy": {
+    "by_budget": [
+      {
+        "nodes": 16,
+        "planned_games": 24,
+        "executed_games": 24,
+        "policy_task_outcomes": {
+          "rule_draw": 9,
+          "candidate_loss": 7,
+          "candidate_win": 8
+        },
+        "policy_task_finite_interval": [
+          "1/24",
+          "1/24"
+        ],
+        "ordinary_benchmark_interval": [
+          "-11/12",
+          "11/12"
+        ],
+        "ordinary_eligible_games": 2,
+        "policy_task_eligible_games": 24,
+        "substituted_actions": 124,
+        "games_with_substitution": 22,
+        "queries": 626
+      },
+      {
+        "nodes": 64,
+        "planned_games": 24,
+        "executed_games": 24,
+        "policy_task_outcomes": {
+          "candidate_loss": 6,
+          "candidate_win": 8,
+          "rule_draw": 10
+        },
+        "policy_task_finite_interval": [
+          "1/12",
+          "1/12"
+        ],
+        "ordinary_benchmark_interval": [
+          "-5/12",
+          "5/12"
+        ],
+        "ordinary_eligible_games": 14,
+        "policy_task_eligible_games": 24,
+        "substituted_actions": 49,
+        "games_with_substitution": 9,
+        "queries": 667
+      }
+    ],
+    "distinct_rule_fingerprints": 12,
+    "generation_calls": 24,
+    "games": 48,
+    "queries": 1293,
+    "wall_seconds": 29.807067099958658,
+    "scope": "NEW prospective intentional-fallback policy task only. Ordinary benchmark masks remain unchanged;task utility cannot be called completed-search strength or generic default evidence. Actual Core-terminal WDL,not D1regret; no human/learner/other-role inputs."
+  },
+  "partial_acceptance": {
+    "failures": [],
+    "query_count": 1293,
+    "observed_leaf_values": 1077,
+    "substitutions": 173,
+    "wall_seconds": 7.9300602999283,
+    "scope": "Existing complete Core verifies every actually retained first-child value;no extra solver,unseen-child/win probability or completed-iteration claim."
+  },
+  "deployment": {
+    "decision": "Keep private candidate; restore exact parent product source and existing tests.",
+    "parent": "60e1b23c87002f81f19994bd68f9ffa20437a57b",
+    "contract": "Existing test_root_scan_off_falls_back_to_canonical_first explicitly requires canonical first even after partial work. Current opt-out behavior is an existing caller contract,not an accidentally stale numeric assertion.",
+    "reason": "Positive finite12-rule intentional-fallback task uses Unit/q0 and remains ordinary-benchmark-ineligible in many games. No actual consumer migration justifies overwriting this contract or adding another public flag. Preserve candidate and data for a future concrete caller.",
+    "failed_new_fixture_diagnosis": "Legacy carrier really loses paid capture. Semantic carrier lossless pattern IDs already sort that capture first; overbroad initial test precondition was corrected before actual product regression. Original failure retained; no existing static/test expectation changed.",
+    "candidate_patch": "attempted-product.patch",
+    "research_state": "OPEN",
+    "product_defaults_changed": false,
+    "existing_assertions_changed": false
+  },
+  "next": {
+    "question": "Does partial-fallback advantage survive an actual default-evaluator candidate against the SAME fixed Unit lexical opponent, or is it specific to the Unit leaf/task?",
+    "reason": "Current12-rule tiny fallback task has positive finite point gains, but ordinary benchmark masks remain uncertain and public no-scan contract is canonical. Do not deploy or add flag. A fixed-opponent evaluator/fallback interaction is a concrete next discriminator, not another normalization panel.",
+    "four_cells": {
+      "A": "Unit lexical vsfixedUnit lexical,balanced aggregate0 analytically",
+      "B": "Unit partial vsfixedA,existing48games remain fixed",
+      "C": "Default evaluator lexical vsfixedA,NEW prospective games NOT RUN",
+      "D": "Default evaluator partial vsfixedA,NEW prospective games NOT RUN"
+    },
+    "source_input_sha256": "6cb3429420d309fc6913e5d849781dc4a64bbd503d90cbc2fa5300f269542da4",
+    "planned_new_games": 96,
+    "nodes": [
+      16,
+      64
+    ],
+    "qdepth": 0,
+    "hard_qdepth": 0,
+    "depth": 3,
+    "seconds": 1,
+    "actual_rule_clock": 48,
+    "whole_seconds": 600,
+    "estimate_seconds": 180,
+    "frozen_prior_source": "partial-policy-20261022 results and source; no old reruns/refill",
+    "sources": "Existing parent Core and private PartialPlayer observer only; current product canonical contract unchanged. Keep exact ordinary runner flags beside prospective fallback-policy task masks.",
+    "scope": "Same12exposed rules,paired model/task interaction,not holdout/generic optimum or default promotion. No learner,oracle-drivenexperience or AUXwork.",
+    "report": "D-C,(D-C)-(B-A),family-paired actual finite intervals and all cost/failure/UNKNOWN. Preserve fields,full future types,history,promotion/drop/aux.",
+    "launch_status": "NOT LAUNCHED. Full inputs and12complete default/Unit profiles actually constructed/saved before readiness."
+  },
+  "limitations": [
+    "Finite exposed cohorts,not all-domain equivalence/population/Elo.",
+    "Same-Core replay reader,not a second rules engine. LiteralPVs do not certify unseenq tails.",
+    "Two exploratory fixture queries retained only compact console observations,not full decisions;excluded from scientific counts/claims. Initial attacked-anchor fixture failedbeforequery.",
+    "Five original instrumentation failures retained;five repaired diagnostic reruns separate.",
+    "Ordinary benchmark fallback masks unchanged;intentional fallback-policy task was separately preregistered before games.",
+    "Private product attempt conflicted with existing canonical contract and was exactly reverted;no old assertion/default changed."
+  ]
+}

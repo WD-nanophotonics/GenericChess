@@ -238,45 +238,44 @@ reachability/guard framework or manufacture new fitness for18 identical E profil
 
 ## Current next choice — 2026-10-22
 
-[SEARCH_WINDOWS_COMPLETE_STATE_AND_POLICY_20261022.md](SEARCH_WINDOWS_COMPLETE_STATE_AND_POLICY_20261022.md)
-closes the normalization followup selection and tests existing search controls.
-The prepared two-negative-example decomposition is NOT executed and no longer
-Main: regardless of its result it would not change present priority. Preserve
-the actual negative examples and scope, not an assertion of no effects. The
-latest incoming Claude advice supports this stop; no new approval or AUX task.
+[SEARCH_RESPONSE_MEMORY_AND_FALLBACK_20261022.md](SEARCH_RESPONSE_MEMORY_AND_FALLBACK_20261022.md)
+closes the response-memory/root-allocation continuation. The earlier normalization
+negative-case decomposition remains CLOSED/unexecuted; full evidence and its
+limitations stay at the preceding reports, never revived as Main.
 
-PVS/aspiration/staged median cost gates fail on the exposed curve. A NEW18-rule,
-36-role staged-vs-fixed-B panel executes32games/1317queries at its900second cap.
-After actual whole-runner eligibility correction,13W11L2D10UNKNOWN gives finite
-[-2/9,1/3]; all11 resolved rule-pair contrasts0. Four unexecuted slots, five
-ongoing games and one timing-invalid outcome remain UNKNOWN. No cap refill,
-Elo/population inference, default order/evaluator/learner or AUX change.
+420 new countermove/staged calls fail the20% cost gates; matching full-depth
+values agree. A primary-literature MTD feasibility pays140 full-PV queries and
+is2.223/2.569times the baseline atD3/D4. Even free PV reconstruction fails the
+gate. Another140 exact leaf-scale controls preserve observed search topology;
+integer grain is not the explanation. No new table, normalizer/default or API.
 
-Two real defects are corrected: post-proof cancellation/deadline reporting keeps
-the complete winning payload AND the established last-node success contract;
-the maintained cost caller now saves prepared full input and errors before
-propagation. Explicit Unit control covers complete metadata types without legacy
-price metadata; defaults and all rule/history/aux/promotion/drop semantics remain.
-Full3616 regressions and24 later consumer controls pass; old expected values stay.
+36 original512-ply-rule games pay1436queries,retain6UNKNOWN and finite[-1/6,1/6].
+348 complete-semantic budget controls show source/proof/iteration tradeoffs,
+not utility. A separate36-game actual24/48rule-clock experiment pays808queries
+and both finite effects are0. Never use those new clocks to fill old UNKNOWN.
+152 aux-frontier calls actually activate four token-state q differences but
+change no returned choices/scores;no product toggle follows.
 
-A new18-root evaluation-repeat trace fails actual-cost feasibility (predicted
-0.66%/0.182ms), so do not engineer that cache. This is not a universal ban.
-Ninety-six late-history service queries add one D2q4 completion, but grouped
-process first-call bias and terminal-predecessor sampling prevent a generic
-latency/default claim. All actual q-policy strata and original timings remain.
+608 partial-fallback diagnostics keep paid work equal and improve some trueD1
+values.48 NEW intentional-fallback-policy games pay1293queries and give1/24and
+1/12 at16/64nodes. Ordinary benchmark masks remain separately uncertain;
+these are not completed-search strength or generic-priority claims. All1077
+retained child values/173substitutions pass full Core qualification. A product
+attempt meets an explicit existing canonical-first no-scan contract. Keep that
+contract and old assertion unchanged;exact parent product source is restored.
+The positive scoped prototype doesnot create a caller migration or new flag.
 
-Main: use the already-prepared readable `balanced-service-next.json` controls
-only if they decide an actual next existing-service consumer choice. Separate
-short/95ply full-history roots, rotated process-first modes, within-process later
-calls and matching q policy/value; queries are NOT executed. A20%/1ms scoped
-result may guide that explicit caller, never default or game utility from two
-exposed states. Otherwise choose a new discriminating question, not more timing
-receipts or a gate before research.
+Main: inspect fallback-evaluator-next-20261022/registration.json and preserved
+full inputs/profiles. C/D default-evaluator lexical/partial candidates must face
+SAME fixed Unit lexical A;B Unit partial is already fixed.12 complete modelpairs
+are prepared;96 new games are NOT RUN. If useful, execute only the declared new
+600second cap and reportD-C,(D-C)-(B-A),family pairs,ordinary and policy-task
+masks and actual costs. No holdout/training/default/AUX claim,old rerun or refill.
 
-Backup1: one unread primary source that yields a falsifiable cheap test for
-rule-general search/prices; no old-Clune reread credit or AUX solver/learning
-replication. Backup2: use the NEW actual family costs to predeclare allocation
-for a genuinely new question, not to refill this closed panel. The15minute
-forecast missed4slots; analytical B/B cancellation saved18redundant games.
-Closed large evidence packets are fixed PUBLIC indexes with verified private
-copies. No historical result, source or failure was withdrawn. Science OPEN.
+Backup1: actual published AUXd485c487 deeper unsafe ties inform interpretation,
+not a prerequisite or permission to duplicate its solver/learning lane. Backup2:
+a new primary source or concrete caller requirement may change priority;no
+unmotivated descriptor/evaluator/table rewrite or closed algorithm sweep.
+All current producers have exited;recorded62m30s research excludes delivery.
+Only the maintained cost CLI adds an explicit existing countermove switch.
+Science OPEN.

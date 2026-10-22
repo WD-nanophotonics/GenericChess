@@ -176,7 +176,7 @@ independently executing the work. Keep the repository PUBLIC for Chat readers.
 ## Existing complete-state cost caller
 
 Use scripts/semantic_probe_cost.py with full canonical --input records and a NEW
-output path. Existing optional --pvs, --aspiration-delta <positive N> and
+output path. Existing optional --pvs, --countermove, --aspiration-delta <positive N> and
 --staged-move-picker expose current switches; omission preserves defaults.
 --evaluation-backend unit explicitly supplies1000CURRENT-board/900BASE-hand,
 metadata-anchor0 prices for ALL declared/future types with bonuses OFF. It does

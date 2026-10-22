@@ -6204,3 +6204,39 @@ and byte-verified ignored private copies; no history rewrite or evidence loss.
 Research3902.500798seconds/7effective intervals. Documentation/cleanup/delivery
 are excluded. Balanced short/95ply service controls are prepared, not executed;
 use only for a concrete next caller-choice question. Science OPEN.
+
+
+## 2026-10-22 — response memory and fallback policies (PRIMARY)
+
+Session e2250de6-b736-475c-8a97-462b49b56933:3750 recorded effective seconds,
+11 intervals;delivery excluded. Incoming Chat0023/new-root read and full latest
+thread saved before assessment;no new roots/replies,no send. Claude's previous
+normalization stop remains adopted with negative effects/UNKNOWN preserved.
+Read only published AUXd485c487 current report:deeper unsafe ties reinforce
+that depth isnot utility;no independent AUX execution,checkout/state changes,
+solver/learner duplication or extra worker.
+
+Counter420calls and MTD140+scale140 fail incremental cost priority. Original
+root scan36games/1436calls retain6UNKNOWN,[-1/6,1/6]. New genuine-clock36games/
+808calls both finite effects0;old UNKNOWN untouched.348 complete-semantic budget
+calls and152aux-q calls retain fulltypes/promotion/drop/aux/history and actual
+source/q policy;no defaults selected. A cheap free-evaluator envelope also fails
+median20% atD3-D5,so avoid a speculative evaluator rewrite.
+
+Partial fallback608diagnostics have identical paired paid work. A separately
+preregistered intentional-fallback task (48newgames/1293calls) gives1/24at16nodes
+and1/12at64;ordinary runner masks remain independently uncertain. All1077retained
+child values/173substitutions and fullgame histories pass Core. Product attempt
+conflicts with an existing canonical-first contract:restore exact parent search/
+assertions,keep private candidate,add no public flag. A new fixture's semantic
+lexical-order assumption was diagnosed before changing its precondition;no old
+expected value changed. Five instrumentation failures are preserved and only
+five affected diagnostics repaired;no scientific cap/fitness refill. Two
+exploratory calls lack full decisions and are excluded from scientific claims.
+
+Next fixed-foe evaluator/fallback four-cell inputs and12complete modelpairs are
+actually prepared;C/D96newgames NOT RUN. Evidence is a compact hashed technical
+ZIP with unique sources,not repeated embedded scripts. Exact private originals
+remain;only personal local paths sanitized in publication copies. Current
+product source/defaults and schedule stay. Required publisher checks/fullremote
+SHA and session quality/finish/final-check must be verified separately.
