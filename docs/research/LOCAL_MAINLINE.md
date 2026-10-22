@@ -9,18 +9,18 @@ This replaces the chronological daily entry, whose complete decisions/reasons
 remain at [897a110d](https://github.com/WD-nanophotonics/GenericChess/blob/897a110db22483c8fa99b8156a6d4547a655ca0d/docs/research/LOCAL_MAINLINE.md).
 Old dated next actions are evidence, not a backlog or a competing live policy.
 
-## Current selection and reason — 2026-10-22
+## Current selection and reason — 2026-10-23
 
-The user now explicitly confirms ChatGPT's latest project comment as the new
-research direction, after registered bounded work closes: build a canonical
-small pure-Leaper rule interface and a cheap rule-to-performance portrait using
-existing Static AlphaBeta, Random and FLOOR; develop inverse design gradually.
-PRIMARY owns generation/forward evaluation, while existing DEV_AUX owns bounded
-truth/learning diagnostics. No new worker, oracle training gate or default.
-Keep the complete generated-domain long-term target. First-stage exclusions are
-explicit prototype scope, not a redefinition of generic chess. Claude's later
-comments are auxiliary advice. The older common-Unit-order ablation remains
-NOT RUN/deferred rather than a revived priority.
+The user-confirmed pure-Leaper direction now has separate quantity, ABC-layout,
+resource and material axes. Keep the cheap generated-Static forward control and
+full RuleSet/history identity. The connected KAB prior is fragile on new codes;
+do not retune serial8+8 batches. A small exposed ABC `(10,19,8)` case retains
+three directed-policy effects on fresh layouts and a separate5x5 envelope, while
+its `(9,9,8)` control loses resource/material effects. This is a finite benchmark
+candidate, not generic quality, learned-price utility or a default. PRIMARY owns
+rule generation/forward evaluation; DEV_AUX independently owns truth/learning.
+The complete generated-domain target, PUBLIC access, read-only Chat and60-minute
+patrol remain unchanged. The former optional Unit-order backup is deferred.
 
 [PRICE_DECISION_REGIONS_20261021.md](PRICE_DECISION_REGIONS_20261021.md) records:
 
@@ -499,16 +499,28 @@ isexplicitlydistinguishedfromactualcontinuationroot;oneactualoneplywiniskept.
 OriginalupperdegreefailurestaysDROP;connectedrecipeKEEPcandidateforreplication,
 notgenericwinner/sampleractivation. Cheap512forwardbaselineandAUXownershipstay.
 
-Main: DoesSAMEconnectedpriorreplicateonNEWdisjointcodes?
+[LEAPER_ABC_STAIRCASE_20261023.md](LEAPER_ABC_STAIRCASE_20261023.md) closes640
+physical games/22,778 turns, with553 distinct complete records. New KAB proposal
+contrast1/32 reverses on FIRST2streams(-5/32) and one role; preserve it without
+retuning. Conditional ABC layouts raise AB/FLOOR to101/128, but resource64 gives
+only3/64; Static/M064 gives15/64. All losses, draws and code weights remain.
+
+The frozen three-axis test selects `(9,9,8)` and `(10,19,8)`. Fresh outcomes are
+respectively `(3/4,0,0)` and `(7/8,1/4,1/2)`;5x5 gives `(1,0,0)` and `(1,1/2,3/4)`.
+Tiny exposed-code pairs are not independent-rule holdouts, WDL or TD evidence.
+The public-copy reader checks640 records/72,066 PV/6,301 FLOOR choices. Full input
+and policy-route guards prevent cross-code/history joins;61 related checks pass.
+No product/default/AUX/sampler change is selected.
+
+Main: Does the same finite ABC staircase survive a complete fixed type-label cycle?
 | run `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-connected-replication-20261023-1935` |128planned/8uniformFIRST+
-8guided/BOTHroles/4FLOORstreams/fullbounds/history/cost | close128or1800cap;
-1200expected;0fitness;31actualcostreturns;294remaining/47eligiblebeforecontrols,
-44after;exactRNG/source/inputverified. Unchangedfeaturelaw,nocoefficientfit.
-Backup1: Isleafmaterialusefulonthesame16currentcodes? | executeprepared
-leaper-connected-material-20261023-1935 |32sameadapterStatic/M0/Staticordering/
-bothroles/64costcalls274components |0fitness;1200expected/1800cap. Cold11/32
-actionchangesarenotutility/traininggate;dynamics/promotion/medianretained.
-Backup2: Diagnoseanyactualcaller/source/inputrefusalretainingoriginals/partial
-returns;no expectedpatch/reset/refill/oldcallsasnew. Roleboundaries/read-onlyChat/
-current60minuteheartbeat remain. Science OPEN.
+.local_agent/leaper-label-cycle-20261023-460268df/cheap`, then resource, then material
+|32 planned slots, full bounds/roles/history/cost |0fitness; expected600s and
+sum cooperative caps1200s. Forty actual cost returns already exist; preserve them.
+Backup1: Separate representation correctness from policy utility | inspect
+`type-cycle-qualification.json` and `cold-label-response.json` in that directory
+|157 mapped frontiers/8,615 history entries/153 old actions/0 canonical value
+differences; one of20 cold mapped actions differs |no all-state/Native/WDL/tie claim.
+Backup2: Diagnose actual source/input/record refusals against the frozen contract;
+keep originals and partial returns, no expected-value patch/reset/refill or old
+calls labelled new. Do not duplicate AUX truth/learning. Science OPEN.

@@ -1,0 +1,78 @@
+{
+  "status": "CLOSED",
+  "dependency_revision": "edda38828d970cb6a1669ffa3ac95aa93167ce71",
+  "files": {
+    "observations.json.gz": {
+      "sha256": "9ac5158cd293498b6afb5a65e5ceef95c3ca5a8afdd3ebd4b3422e7f75123db2",
+      "bytes": 6470893,
+      "decoded_sha256": "b03c4092e7253a683739e9fd6c393a8e5caca947181f5ce9b76f05a72832da96"
+    }
+  },
+  "executed_panels": [
+    "replication",
+    "material_original",
+    "aab",
+    "abc",
+    "abc_resource",
+    "layout",
+    "layout_resource",
+    "layout_material",
+    "validation_cheap",
+    "validation_resource",
+    "validation_material",
+    "board5_cheap",
+    "board5_resource",
+    "board5_material"
+  ],
+  "prepared_0fitness": [
+    "next_label_cheap",
+    "next_label_resource",
+    "next_label_material"
+  ],
+  "planned_executed_panel_slots": 640,
+  "retained_run_receipts": 640,
+  "new_played_slots": 640,
+  "terminal_start_zero_turn_slots": 0,
+  "unknown_outcome_planned_slots": 0,
+  "unattempted_slots": 0,
+  "controller_turns": 22778,
+  "AB_returns": 16477,
+  "new_preflight_calls": 553,
+  "old_frozen_preflight_reference_calls": 95,
+  "old_replication_calls": 31,
+  "old_material_calls": 64,
+  "old_cost_refs_are_not_new": true,
+  "prior_baseline_views_are_not_new_executions": true,
+  "source_hashes": {
+    "leaper_design.py": "4e58e33bc144f836b55b23976de7663a07f0873c6cb898b0605f7c501a2d5175",
+    "leaper_forecast.py": "8d0e573f716117001d6edcd12bcf448d77c659b880c0adb794544e319111ef1d",
+    "leaper_portrait.py": "4ecbbf1c982973f1ee618301c3d41e96d60de8db1254b173728794bce6093653",
+    "test_leaper_staircase.py": "9a7a767c15abcc0fbcebcae0092b1fbda8e4f06b6323ee0282bb94cc8260a12a",
+    "leaper_forecast-original-edda-460268df.py": "4588c8bad071d40123c1aaab012db1da5948c98205d333762a9a8786a6c6a204",
+    "leaper_forecast-before-code-layout-guard-460268df.py": "d06f285a8a70d1c7b12b830ae6c46450b6dc9a582ab7d0247259497631ad3f8f",
+    "leaper_connected_material_freeze_1935.py": "642b831fcf69ac9adafa92385b2f16c4328bac1e394988275cc0624a2b28096d",
+    "leaper_connected_replication_freeze_1935.py": "587a4f4b296e4cfe3aff2d8c72f2d156df3f4c5df59ffd54324c9277353d95de",
+    "leaper_roster_prepare_460268df.py": "6ae5a62086b1074f2b3a25c9b2384a568ea74daf6690ebc4f310ad5b68840b90",
+    "leaper_abc_resource_prepare_460268df.py": "1b561c06cf6ec33797bce0dc19be2b92b411a0de14df172050985f82e7ed7df8",
+    "leaper_abc_layout_prepare_460268df.py": "6b7fd9eba1a02c1a7aa831277a512744e68a139344f6d1c1ede81db3596ab912",
+    "leaper_abc_layout_prepare_460268df.initial-failure.py": "08462d41be4a323976cb8d6a388c4cb8915ed58935909b50e7d3df21bf0fc455",
+    "leaper_abc_layout_axes_prepare_460268df.py": "6151a0ef6b173d27d9784978f17614ba96f001aa6c29f35652af8c8ee965718c",
+    "leaper_inverse_validation_prepare_460268df.py": "327772a85dd108e375d69d53bf24ea52e6a7e61b2fc7c6344d657f6b34888747",
+    "leaper_board5_abc_prepare_460268df.py": "b40ee236628ada8c19b5095f00fe186499b3a4eb64f6079ee8f39d7a09b6e617",
+    "leaper_label_cycle_prepare_460268df.py": "771e1efa263dd5fd1c933cc7424283722557433f89993009e06591dd7ba48e60"
+  },
+  "privacy_review": {
+    "strings_scanned": 4508167,
+    "pattern_hits": 0
+  },
+  "all_exported_preflight_returns": 648,
+  "new_current_preflight_calls": 513,
+  "new_next_preflight_calls": 40,
+  "next_planned_fitness_slots": 32,
+  "policy_routing_checks": 22778,
+  "game_actor_seed_bindings": 640,
+  "native_legality_calls": 4374530,
+  "native_legality_fallbacks": 0,
+  "native_legality_operational_failures": 0,
+  "unique_full_GameRecords": 553
+}

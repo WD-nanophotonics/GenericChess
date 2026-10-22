@@ -6542,3 +6542,41 @@ identical-retry-only transport guard and five regressions prevent silent
 replacement; all59transport tests pass. Scientific packet/inputs/results are
 unchanged. This correction is administrative, not extra research credit; the
 private provenance amendment records the remaining historical limitation.
+
+
+## 2026-10-23 — PRIMARY ABC layout and prospective staircase
+
+PRIMARY independently closes640 physical games,22,778 controller turns and
+72,066 literal PV edges. There are553 distinct full records; reused baseline
+views and95 frozen old cost returns are not new executions. Newly paid cost
+returns total553, including40 for the next zero-fitness label-cycle plan.
+Generated rules, shared AlphaBeta/GameSession and the4e58 producer are reused;
+no Core, evaluator default, extra worker, schedule or AUX state changes.
+
+One new Claude05:50JST comment is privately preserved before assessment; the six
+relevant prior full-thread returns are byte-identical and have no reply pages.
+Its power/short-mate/capacity cautions are retained. Fixed public AUXb0c48c5 is
+read, not independently rerun: its pure-material price-cell envelope and covered
+old roots do not become the current complete-Player TD ceiling. No outbound
+acknowledgment, consultation, @mention or cross-checkout operation occurs.
+
+The connected-prior replication1/32 is fragile across streams/roles. Separately
+registered ABC conditional layouts and three finite policy axes identify two
+codes before fresh-layout outcomes. `(10,19,8)` retains positive axes in fresh
+4x4 and separate5x5 envelopes; `(9,9,8)` loses resource/material effects. Keep both
+and their actual costs, generated profiles, role results and tiny-sample limits;
+no single game-quality scalar, fitted prices, population or learner claim.
+
+The existing forward analyzer gains a full-rule/history/slot-bound three-axis
+summary. A real red same-code/different-movement counterexample is fixed without
+changing its expected refusal;9 new plus52 relevant regressions pass. An initial
+layout-census caller also correctly classifies compiler-refused attacked-Anchor
+starts after its first zero-query failure; originals and diagnosis remain.
+
+Next label-cycle metadata already verifies153 transported OLD actions,
+157 frontiers and8,615 history entries with0 canonical value differences, but
+one of20 cold mapped actions differs. Three arms32planned remain0fitness, with
+40 real cost returns and frozen caps. This remains PRIMARY representation/forward
+work; no AUX observer support for eight actors or actual learned-price gain is
+assumed. Exact source/full-rule/controller/history interfaces are published for
+readers to assess within their own role. See LEAPER_ABC_STAIRCASE_20261023.md.
