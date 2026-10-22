@@ -1,80 +1,75 @@
 # DEV_AUX current research
 
-Direct Leaper instruction governs. Reuse committed sandbox Core/GameSession,
-search,terminal/history infrastructure. Closing baseline:
-69a3c84ab0be9875611e751e78d3225f0fa8973c. All238shared modules match in text;
-237working files are byte-identical,learning/__init__.py differs only in EOL.
-Own runtime/learner source remains840d322587b80cc7d1a58acd613c7406f628100b.
-No product default or PRIMARY state/task changes.
+The direct Leaper instruction governs. Reuse sandbox Core/GameSession/search;
+current committed source is69a3c84ab0be9875611e751e78d3225f0fa8973c.
+Only DEV_AUX/sidemission writes. PRIMARY owns production-generator quality,
+Static/Unit opponent/resource studies and integration/defaults;its current Main
+was read only after the user's duplication reminder. Do not run a parallel
+quality campaign or rebuild its infrastructure. The own twelve-world pilot is closed.
 
-Current report: LEAPER_ORDER_REGIONS_AND_D_20261022.md.
-Selected evidence: data/leaper_C_order_regions_D_feasibility_20261022.json.
-Prior reports,graphs,models,trajectories,failed/capped runs remain retained.
+Current report: LEAPER_CONDITIONAL_VALUE_AND_SIGNAL_20261022.md.
+Selected inputs and portable proofs: data/leaper_conditional_value_signal_20261022.json.
+Prior reports,models,graphs,trajectories and capped/failed outputs remain retained.
 
-## Current conclusions
+## Current findings
 
-* Reversing128opening groups with canonical per-slot RNG completes2x512arms,
-  0missing/12UNKNOWN. Endpoints differ numerically but each matches its natural
-  endpoint in117rootactions and256fullgamerecords. All1024TDupdates reconstruct
-  exactly;1536records/8114queries/7654randomchoices replay. Not every permutation.
-* Exact27leaf-form ordering yields114open B/C regions in B[0,4],C[0,2],A1.
-  Natural/reverse endpoints share regions18/34. Different foe streams may lie
-  in different regions despite finite-panel equivalence. No unique price claim.
-* All341544 sampled ideal queries and14592publicD2/D4checks complete with
-  0mismatch/fallback. All373faces across60367H/54038Vfreshpositions yield
-  85346130idealrootcomputations. Rank-unprotected actions retain W/Dintervals.
-  Paired shared-label contrasts show learned-over-owninitial gains in both
-  depths/worlds;uniform-trained remains worse thanmobility,transfer-trained
-  better. These are finite ideal uniform-tie errors,not actual game strength.
-* Selected D8root needs a C sacrifice. Every admitted positive leaf-order region
-  prefers a certified loss;C0allowsdraw.28nodeall-defense proof independently
-  replayed. Old12deepPVtimeouts remainUNKNOWN. ExistingPVreserve with5scontrol
-  returns completed16/17/16/16safequeries;D18requests are fallbacks,notD18.
-* H/V rules rotate but original initial layout does not:59851cachedpositions/
-  152027edges and64actual rotated-history games checked. Not independent
-  movement families. Lexical tie choices need not respect rotation.
-* Symmetric10actorD needs more than3x3. Committed4x3execution is unsupported;
-  executable4x4ABCA/ABCD pilots preserve2UNKNOWNexactprobes/6UNKNOWNgames.
-  No Dtraining. Smaller asymmetricABvsCD/dual graphs have10254states each,
-  but default roots are trivialmate1/loss2.32hash-frozen quiet contexts contain
-  13genuineWDLchoices;unitD2has2errors,mobility/Htransfer0,D4all0.
-* All32Dcontexts now run through actual public initial setups.18turn1contexts
-  use verified color/180rotation;twoinventoryprofiles required.29strategies/
-  259Core nodes cover all defenses.192root-score controls complete;34action
-  rotation mismatches retain lexical-tie limits. Initial inventory rejection
-  preserved/repaired within original120sclock.146relevant existing tests pass.
+* Frozen32 D-to-A layouts:12 initial Anchor-attack rejections,20 admitted.
+  Nineteen root WDL unchanged,one LOSS-to-DRAW. Both new graphs complete.
+  Root9615 has a13-node old WIN and two new nonlosing strategies covering
+  405 vertices/682 Core edges. This is a same-layout composition effect,not
+  an intrinsic D/A price. Actual D1 price and D2 depth change deployed behavior.
+* H root127 has positive ideal uniform-tie error across all373 declared B/C
+  faces atD4. Uniform publicD4 is safe;mobilityD4 loses;mobilityD2/D6/D8 are safe.
+  Forty-four actual Core proof nodes verify two bad continuations.
+* The completed192-game4x4 learner-information screen retains103 actual repeat
+  draws,33 mates,56 caller96 UNKNOWNs. Its72 fixed history checkpoints contain
+  47 actual terminals and13 unique nonterminal reference calls;all1.3M paid
+  expansions leave action labels unknown. Price changes no action in the25
+  nonterminal checkpoint slots. Do not expand general quality panels.
+* Three exact4x4 four-actor controls total148736 states. All material gradients
+  are zero;relative ordinary prices cannot be trained. King has strategic depth
+  (rank15),orthogonal/Knight saturate atD2 (maxrank1). Knight deeper querying was
+  scientifically stopped with249 receipts/619 missing;exit1 retained. King has
+  four unusable D12-request receipts. No missing or UNKNOWN is filled.
+* New3x3 Knight AB/ABA/ABC graphs complete281169 states. All1152 fixed-model
+  receipts and1092 nonterminal public/ideal checks complete. Terminal depth0
+  receipts were initially miscounted as fallbacks;derived tables are corrected,
+  originals retained,and there are0 action fallbacks.
+* Same-coordinate ABC-to-ABA replay keeps all64 paths:13 DRAW-to-WIN,5 DRAW-to-
+  LOSS,42 unchanged,4 rejected. Two new-rule all-defense proofs replay55 nodes.
+  Both armies change;this is not one owner's isolated marginal contribution.
+* Exact history-aware B/C cells use9/13/373 faces. ABA D4 best global B has3
+  ideal expected errors versus5/2 for per-history oracle B. Histories0/19 have
+  disjoint minimizing sets:respectively B<=1 and B>1 in[0,4]. Oracle envelopes
+  do not supply experiential targets or establish an attainable learner gain.
 
-No oracle labels enter experiential training. UNKNOWN is never a draw. Existing
-3848missing Cdirect slots/43UNKNOWN,32-history fork cap,and prior80/88/65UNKNOWN
-plus394missing observer queries remain unchanged. Raw journals stay ignored;
-no regenerated receipt framework,newAgent,worker,Goal,timer or cross-role write.
+No new training. Earlier3848 C-direct missing slots/43 UNKNOWN,32-history fork
+cap,and other closed failures remain unchanged. Selected outgoing JSON alone
+replays112 WIN nodes plus the two-player safety proof;all146 related tests pass.
+Research sessiond61b4103-9d90-42e1-aa2a-44d76a902305 confirms3865.252329 effective
+seconds (64.42 minutes);configuration,transport and publication are excluded.
 
 ## Next executable research
 
-Main: Does D-to-A replacement change exact strategic action quality? |
-  read artifacts/leaper-D-replacement-protocol-20261022.json and the two
-  portable rules-turn0/1.json;retain all32frozen canonical layouts,replaceDbyA
-  at same square/owner and validate actual Core initial legality before solving |
-  exact root/action WDL changes and selected actual-history witnesses |
-  NOT_LAUNCHED;2x180s/200k-position graphs,total600s;no old cap refill/training.
-
-Backup1: Can a whole-material parameter region force an unsafe D4 tie? |
-  inspect fullH/Vno-zero-lower-error root lists,select one fixed counterexample |
-  all373face maxsets versus actual all-defense witness |
- 120s,posthoc mechanism only;do not impute other root labels.
-
-Backup2: Which quiet D contexts distinguish D price from A/B/C transfer? |
-  query the already validated32initial setups with a fixed D0/1contrast first |
-  actual choices and exact WDL;retain both army profiles and ties |
- 120s,no training/oracle selection or retrospective heldout claim.
+Main: Why do ABA histories0/19 need opposite B regions? | Read their13-face
+  tables and literal publicD4 PVs atB=.75/1.25 without changing histories |
+  exact leaf inequalities and a scoped actual-history witness |120s posthoc;
+  no new graph,training or broader rule-quality/depth panel.
+Backup1: Does a fresh experience stream expose useful ABC price decisions? |
+  Freeze64 Core-only walks atseed2026102206 before labels,retain terminals and
+  duplicates;compare fixed unit/mobility/H transfer D2/D4 | actual-history WDL,
+  price-choice/gradient overlap and cost |180s,no oracle-selected starts or fit.
+Backup2: Can the same TD learner cross a useful observed price boundary? |
+  Before any run,freeze one uniform-initialized bounded ABC experience protocol
+  and actual fixed-foe comparison from Backup1's coverage findings | no-oracle
+  TD transitions,full planned WDL/UNKNOWN and cost |NOT_LAUNCHED;under120min
+  standing authorization,at/above120min explicit Chat budget assessment first.
 
 ## Recovery and delivery
 
-Only DEV_AUX/sidemission. Read own memo/role/stops,doctor,latest committed
-sandbox and new Chat/Claude before research. Preserve active UUID/origin/work.
-The latest explicit user changed existing DEV_AUX and PRIMARY patrols to ACTIVE
-60minutes on their original chats. Historical90minute records do not override
-that. Normal research still accumulates60effective minutes toward90;admin,
-offline and waiting excluded. Runs>=120minutes need explicit Chat scope/budget
-assessment. Before Slack,push and verify complete origin/sidemission SHA.
-Historical SEND_UNCERTAIN remains uncertain and is not resent.
+Read own memo/role/stops,doctor,latest committed sandbox and new Chat/Claude.
+Preserve active UUID/origin/confirmed work;no second writer. Only own branch
+publishes. Before Slack,push and verify complete origin/sidemission SHA.
+Historical SEND_UNCERTAIN is not resent. Existing patrols are ACTIVE60minutes
+on their original chats;this research makes no scheduler mutation. Normal
+segments accumulate60 effective minutes toward90 and finish at a safe milestone.
