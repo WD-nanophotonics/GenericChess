@@ -97,6 +97,26 @@ def graph(mask):
 def limits(nodes):return SearchLimits(max_depth=64,max_nodes=nodes,max_time_seconds=None,
     quiescence_max_depth=0,quiescence_hard_max_depth=8)
 
+def search_spec(reg, policy):
+    """Explicit controller label to base evaluator and counted-node budget."""
+    spec=reg.get('search_variants',{}).get(policy)
+    base=policy if spec is None else spec['base']
+    nodes=reg['nodes'] if spec is None else spec['nodes']
+    if base not in ('AB','STATIC_ADAPTER','M0'):raise ValueError('unknown search base')
+    if isinstance(nodes,bool) or not isinstance(nodes,int) or nodes<=0:raise ValueError('positive integer node budget required')
+    return base,nodes
+
+def forecast_search_turns(reg):
+    """Conservative maximum search turns/game, including BOTH search actors."""
+    actors=max(sum(p not in ('RNG','FLOOR') for p in pair) for pair in reg['pairs'].values())
+    return reg['caller_plies'] if actors==2 else actors*((reg['caller_plies']+1)//2)
+
+def actor_seeds(reg, world, slot):
+    """An explicit code index may share streams across its representations."""
+    index=world.get('seed_world',world['world'])
+    if isinstance(index,bool) or not isinstance(index,int) or index<0:raise ValueError('nonnegative integer seed_world required')
+    return {a:reg['seed']+10000*index+100*slot['repeat']+10*slot['role']+a for a in (0,1)}
+
 def prepare(d, repetitions=1, first_repeat=0, nodes=512, material_ablation=False):
     assert not (d/'inputs.json').exists();d.mkdir(parents=True,exist_ok=True);tick=time.perf_counter()
     rows=[]
@@ -159,8 +179,11 @@ def preflight(d):
                    for w in inputs['worlds'] if w['status']=='ready'), 'include a natural nonempty history for each ready world'
         policies=['STATIC_ADAPTER','M0']
     else:
-        roots=[{'world':w['world'],'phase':'initial','rule':w['rule'],'record':w['initial_record']}
-               for w in inputs['worlds'] if w['status']=='ready'];policies=['AB']
+        roots=load(d/'preflight-inputs.json')['roots'] if (d/'preflight-inputs.json').exists() else [
+            {'world':w['world'],'phase':'initial','rule':w['rule'],'record':w['initial_record']}
+            for w in inputs['worlds'] if w['status']=='ready']
+        policies=reg.get('preflight_policies',['AB'])
+    if not roots or not policies:raise ValueError('preflight requires actual roots and search policies')
     from generic_chess.session.serialization import deserialize_game_record
     out={'status':'RUNNING','rows':[],'cap_seconds':120};tick=time.perf_counter();write_record(d/'preflight.json',out);decomp=0
     for ix,root in enumerate(roots):
@@ -176,15 +199,17 @@ def preflight(d):
                 assert es.evaluate(st)-ez.evaluate(st)==raw;decomp+=1
         for policy in (policies if ix%2==0 else list(reversed(policies))):
             if time.perf_counter()-tick>=120:break
-            player=make_player(c,policy,w);t=time.perf_counter();dec=player.choose_action(s,limits(reg['nodes']))
-            row={'input':ix,'world':root['world'],'phase':root.get('phase','recorded'),'policy':policy,'record':root['record'],'decision':record_value(dec),'seconds':time.perf_counter()-t}
+            base,nodes=search_spec(reg,policy)
+            player=make_player(c,base,w);t=time.perf_counter();dec=player.choose_action(s,limits(nodes))
+            row={'input':ix,'world':root['world'],'phase':root.get('phase','recorded'),'policy':policy,'base_policy':base,'node_budget':nodes,'record':root['record'],'decision':record_value(dec),'seconds':time.perf_counter()-t}
             out['rows'].append(row);write_record(d/'preflight.json',out)
             assert dec.action in s.legal_actions();pv=GameSession.replay(c,s.to_record())
             for raw in row['decision']['principal_variation']:pv.submit(match_action(pv,raw))
             row['PV_legal']=True;write_record(d/'preflight.json',out)
     maxcall=max((r['seconds'] for r in out['rows']),default=None)
-    missing=len(roots)*len(policies)-len(out['rows']);forecast=None if maxcall is None else maxcall*(reg['caller_plies']//2)*reg['planned_games']*1.25+reg['preparation_seconds']
-    out.update(status='CLOSED',seconds=time.perf_counter()-tick,missing=missing if material else ([] if not missing else ['planned cost calls incomplete']),decomposition_checks=decomp,forecast_seconds=forecast,cost_gate_passed=not missing and forecast is not None and forecast<reg['whole_cap_seconds'])
+    missing=len(roots)*len(policies)-len(out['rows']);turns=forecast_search_turns(reg)
+    forecast=None if maxcall is None else maxcall*turns*reg['planned_games']*1.25+reg['preparation_seconds']
+    out.update(status='CLOSED',seconds=time.perf_counter()-tick,missing=missing if material else ([] if not missing else ['planned cost calls incomplete']),decomposition_checks=decomp,forecast_seconds=forecast,forecast_search_turns_per_game=turns,forecast_scope='Maximum sampled search-call cost times maximum search turns, plus25percent/preparation. Sampled maximum is not a future per-call bound; other-controller/recording costs are not fully measured. No coverage guarantee.',cost_gate_passed=not missing and forecast is not None and forecast<reg['whole_cap_seconds'])
     write_record(d/'preflight.json',out);print('PREFLIGHT',len(out['rows']),out['seconds'],flush=True)
 
 def run(d):
@@ -206,17 +231,19 @@ def run(d):
         if w['status']!='ready':slot['status']='setup_failed';continue
         try:
             if w['world'] not in contexts:contexts[w['world']]=compile_rule(ruleset_from_dict(w['rule']))
-            c=contexts[w['world']];s=GameSession(c);role=slot['role'];pols={role:reg['pairs'][slot['pair']][0],1-role:reg['pairs'][slot['pair']][1]}
+            c=contexts[w['world']];s=GameSession.replay(c,deserialize_game_record(json.dumps(w['initial_record'])));role=slot['role'];pols={role:reg['pairs'][slot['pair']][0],1-role:reg['pairs'][slot['pair']][1]}
             # Same role/rep streams across controller pairs; prefix divergence changes their use.
-            seeds={a:reg['seed']+10000*w['world']+100*slot['repeat']+10*role+a for a in (0,1)};rng={a:random.Random(seeds[a]) for a in (0,1)}
-            players={a:make_player(c,pols[a],w) for a in (0,1) if pols[a] in ('AB','STATIC_ADAPTER','M0')}
+            seeds=actor_seeds(reg,w,slot);rng={a:random.Random(seeds[a]) for a in (0,1)}
+            players={a:make_player(c,search_spec(reg,pols[a])[0],w) for a in (0,1) if pols[a] not in ('RNG','FLOOR')}
             row.update(initial_record=record_value(s.to_record()),policy_by_actor=pols,rng_seeds=seeds);write_record(path,row)
             while not s.state.terminal_status.is_terminal and s.state.ply_count<reg['caller_plies']:
                 if time.perf_counter()-tick>=cap:row['censor']='whole_cap';break
                 a=s.state.position.side_to_move;policy=pols[a];qt=time.perf_counter();legal=s.legal_actions();q={'actor':a,'policy':policy,'root_ply':s.state.ply_count,'legal_count':len(legal),'state_sha256':state_sha(s.state)}
                 if policy=='RNG':action=legal[rng[a].randrange(len(legal))]
                 elif policy=='FLOOR':action,detail=floor(s,rng[a]);q['floor']=detail
-                else:dec=players[a].choose_action(s,limits(reg['nodes']));action=dec.action;q['decision']=record_value(dec)
+                else:
+                    base,nodes=search_spec(reg,policy)
+                    dec=players[a].choose_action(s,limits(nodes));action=dec.action;q.update(decision=record_value(dec),base_policy=base,node_budget=nodes)
                 q.update(action=record_value(action),seconds=time.perf_counter()-qt);row['queries'].append(q);out['queries']+=1;row['current_record']=record_value(s.to_record());write_record(path,row)
                 if action is None:row['censor']='no_action';break
                 s.submit(action)
@@ -235,7 +262,9 @@ def qualify(d):
     for slot in results['slots']:
         if slot['status']!='finished':continue
         row=load(d/slot['receipt']);c=compile_rule(ruleset_from_dict(inputs['worlds'][slot['world']]['rule']));s=GameSession.replay(c,deserialize_game_record(json.dumps(row['initial_record'])))
-        final_record=deserialize_game_record(json.dumps(row['final_record']));actions=final_record.actions
+        final_record=deserialize_game_record(json.dumps(row['final_record']));prefix=s.to_record().actions
+        assert final_record.actions[:len(prefix)]==prefix, 'final record lost initial history'
+        actions=final_record.actions[len(prefix):]
         for q,a in zip(row['queries'],actions,strict=True):
             assert q['state_sha256']==state_sha(s.state);assert q['action']==record_value(a);assert a in s.legal_actions();checks+=1
             dec=q.get('decision')

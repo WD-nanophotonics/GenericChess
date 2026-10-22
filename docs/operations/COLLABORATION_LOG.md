@@ -886,3 +886,44 @@ confirms4420.47006 seconds (73.67 minutes) of effective research, excluding fina
 administrative delivery. Next consume PRIMARY's committed canonical trajectories;
 backups use existing PV gradients/ranks without new queries or old-cap refill.
 Report: [Natural decision mechanisms](../research/LEAPER_NATURAL_DECISION_MECHANISMS_20261022.md).
+
+
+## 2026-10-23 JST — DEV_AUX argmax/exposure and actual consumer
+
+PRIMARY supplied frozen44d complete trajectories and later committed e3/06c
+public controls. DEV_AUX reused the3Leaper helpers/2tests byte-for-byte;
+Core/rules/session/ai remain identical. No PRIMARY producer, task, default or
+forward campaign was adopted. Closing78tests pass.
+
+AUX separately diagnoses old379signed price cells and new1765fullrecords,
+closing low/four graph batches at their1200s caps. The four-driver ordering
+prose was wrong: actualLEXexecution and every missing slot are retained;
+no restart/refill occurs. The metadata bootstrap failed before0Playercalls;
+repair used the sameoriginal deadline,not a fresh900s grant.
+
+All29499newdiagnosticcalls/5474248nodes bind to their queried histories.
+UniformD4 beatsD2 on53choices at8.56xnodes;D6 adds2WDL improvements on its
+1238complete common cohort at6.86xD4nodes,plus qualifiedrank progress.
+Metadata-only priors agree on4338paired choices andreduceD4errors13to8,
+but improve5/worsen1. These are exposedone-step effects,notgamewinrate,
+intrinsicprices,independentholdout or evidence for a default/model expansion.
+
+Chat1792687570/Claude1792687833 adoption stays within AUX:66initialroots
+now have literal short-win annotations,including the7+4suspectedthree-ply
+wins. PRIMARY's inverse proposal and future opening/randomization policies
+remain theirs. Historical next_NOTRUN denotes44d input status,not current
+PRIMARY activity. No advisory reading/adoption of this delivery is assumed;
+oldSEND_UNCERTAIN is not resent and recurrence is unchanged.
+
+The selected2.08MB packet independently checks fullrootbindings,selected
+argmax/PVs,35WINcertificates,48clock controls and a missingdefendernegative;
+rawcapped graph caches staylocal. SharedCore isnotan independentrulesengine.
+Oneactualzero-updateepisode begins nextconsumer work:metadata-hash[5,30],
+20plies/5548nodes/1.849s,trueDRAW,unchangedweights. Actualepisode uses5s/reserve0,
+so root-query timing isnot silently recycled as a training forecast.
+
+Session7d72b113-c008-4370-84ac-a261994472a6 preserves its17:14:15UTC origin,
+with5090.55473confirmedseconds (84.843minutes);unconfirmed intervals/admin
+are excluded. Next is a NEWlabel-blind16episode cost/exposurecohort through
+maintainedplay_episode,not an oldcap extension or oracle-selectedtraining.
+Report:[Argmax/exposure](../research/LEAPER_ARGMAX_EXPOSURE_20261023.md).

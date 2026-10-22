@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "old_five_full_bindings": 379,
+  "exact_signed_literal_visits": 15162,
+  "new_argmax_literal_visits": 24333,
+  "shallow_roots": 66,
+  "positive_mate_certificate_nodes": 76,
+  "missing_defender_rejected": 1,
+  "other_saved_proof_nodes": 1578,
+  "clock_roots": 48,
+  "new_query_full_bindings": 2169,
+  "new_query_nodes": 5474248,
+  "dataset_costs": {
+    "grid": {
+      "attributed_nodes": 2557298,
+      "new_nodes": 2557298,
+      "reused_queries": 0,
+      "recorded": 19542,
+      "missing": 0
+    },
+    "depth6": {
+      "attributed_nodes": 1884386,
+      "new_nodes": 1884386,
+      "reused_queries": 0,
+      "recorded": 1281,
+      "missing": 888
+    },
+    "mobility": {
+      "attributed_nodes": 516282,
+      "new_nodes": 516282,
+      "reused_queries": 0,
+      "recorded": 4338,
+      "missing": 0
+    },
+    "static": {
+      "attributed_nodes": 516282,
+      "new_nodes": 516282,
+      "reused_queries": 0,
+      "recorded": 4338,
+      "missing": 0
+    }
+  },
+  "selected_literal_PV_edges": 279,
+  "zero_update_episode_nodes": 5548,
+  "zero_update_episode_plies": 20,
+  "seconds": 24.28369680000469,
+  "scope": "Core/selectedliteral/certificate/arithmetic verification;not independent engine or full cappedgraph-census regeneration."
+}

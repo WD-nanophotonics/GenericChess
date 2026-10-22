@@ -56,6 +56,55 @@ def test_diagnostic_action_must_match_a_real_legal_action():
     assert match_action(s,record_value(action))==action
     with pytest.raises(ValueError):match_action(s,{'not':'a move'})
 
+def test_explicit_search_variant_keeps_evaluator_and_distinguishes_budget():
+    from scripts.leaper_design import search_spec
+    reg={'nodes':512,'search_variants':{'AB8192':{'base':'AB','nodes':8192}}}
+    assert search_spec(reg,'AB')==('AB',512)
+    assert search_spec(reg,'AB8192')==('AB',8192)
+    for invalid in (True,0,-1,1.5):
+        reg['search_variants']['AB8192']['nodes']=invalid
+        with pytest.raises(ValueError,match='positive integer'):search_spec(reg,'AB8192')
+    with pytest.raises(ValueError,match='unknown search base'):search_spec({'nodes':512},'TYPO')
+
+@pytest.mark.parametrize('pair,plies,expected',[
+    (['AB','RNG'],128,64),(['AB8192','AB'],128,128),
+    (['STATIC_ADAPTER','M0'],3,3),(['AB','FLOOR'],3,2),(['RNG','FLOOR'],128,0),
+])
+def test_call_forecast_counts_both_actual_search_actors(pair,plies,expected):
+    from scripts.leaper_design import forecast_search_turns
+    assert forecast_search_turns({'pairs':{'actual':pair},'caller_plies':plies})==expected
+
+def test_code_indexed_seed_bank_survives_representation_world_number():
+    from scripts.leaper_design import actor_seeds
+    reg={'seed':100};slot={'repeat':2,'role':1}
+    expected={0:70310,1:70311}
+    assert actor_seeds(reg,{'world':7},slot)==expected
+    assert actor_seeds(reg,{'world':95,'seed_world':7},slot)==expected
+    assert actor_seeds(reg,{'world':95},slot)!=expected
+    for value in (True,-1,'7'):
+        with pytest.raises(ValueError,match='seed_world'):actor_seeds(reg,{'world':95,'seed_world':value},slot)
+
+def test_run_delivers_registered_budget_to_each_actual_actor(tmp_path,monkeypatch):
+    import scripts.leaper_design as L
+    monkeypatch.setattr(L,'PAIRS',((1,2),))
+    d=tmp_path/'budgets';L.prepare(d)
+    reg=L.load(d/'registration.json');reg.update(pairs={'HI_LO':['HI','AB']},planned_games=2,caller_plies=2,
+        nodes=8,search_variants={'HI':{'base':'AB','nodes':16}})
+    L.write_record(d/'registration.json',reg)
+    L.write_record(d/'preflight.json',{'status':'CLOSED','missing':[],'seconds':0,'rows':[{'seconds':.001}],'cost_gate_passed':True})
+    actual=[];original=L.make_player
+    class Wrapped:
+        def __init__(self,player):self.player=player
+        def choose_action(self,s,lim):
+            actual.append(lim.max_nodes)
+            return self.player.choose_action(s,lim)
+    monkeypatch.setattr(L,'make_player',lambda c,p,w:Wrapped(original(c,p,w)))
+    L.run(d);r=L.load(d/'results.json')
+    assert sorted(actual)==[8,8,16,16]
+    for slot in r['slots']:
+        row=L.load(d/slot['receipt']);assert row['utility']==[-1,1]
+        for q in row['queries']:assert q['node_budget']==(16 if q['actor']==slot['role'] else 8)
+
 def test_material_zero_preserves_other_fields_and_exact_component():
     from scripts.leaper_design import material_profiles,Evaluator,EvaluationConfig,legal_successors
     c=compile_rule(definition(8,16));s=GameSession(c);base,zero=material_profiles(c)
@@ -108,3 +157,30 @@ def test_run_uses_frozen_input_count_not_process_default_pairs(tmp_path,monkeypa
     assert len(result['slots'])==12
     assert all(s['status']=='setup_failed' for s in result['slots'])
     assert result['queries']==0
+
+
+def test_run_preserves_frozen_nonempty_opening_history(tmp_path,monkeypatch):
+    import scripts.leaper_design as L
+    monkeypatch.setattr(L,'PAIRS',((1,2),))
+    d=tmp_path/'prefix';L.prepare(d)
+    inp=L.load(d/'inputs.json');w=inp['worlds'][0]
+    session=L.GameSession(L.compile_rule(L.ruleset_from_dict(w['rule'])))
+    for _ in range(2):session.submit(session.legal_actions()[0])
+    assert not session.state.terminal_status.is_terminal
+    w['initial_record']=L.record_value(session.to_record());w['initial_state']=L.record_value(session.state)
+    L.write_record(d/'inputs.json',inp)
+    reg=L.load(d/'registration.json');reg.update(pairs={'RNG_RNG':['RNG','RNG']},planned_games=2,caller_plies=3,input_sha256=L.sha(d/'inputs.json'))
+    L.write_record(d/'registration.json',reg)
+    L.write_record(d/'preflight.json',{'status':'CLOSED','missing':[],'seconds':0,'rows':[{'seconds':.001}],'cost_gate_passed':True})
+    L.run(d)
+    for slot in L.load(d/'results.json')['slots']:
+        row=L.load(d/slot['receipt'])
+        assert row['initial_record']==w['initial_record'], 'caller discarded frozen prefix'
+        assert row['queries'][0]['root_ply']==2
+        assert row['final_record']['actions'][:2]==w['initial_record']['actions']
+        assert len(row['queries'])==1
+    L.qualify(d)
+    assert L.load(d/'qualification.json')['history_plies']==2
+    from scripts.leaper_portrait import analyze
+    analyze(d)
+    assert all(r['plies']==3 and r['queries']==1 for r in L.load(d/'portrait.json')['rows'])

@@ -1,65 +1,76 @@
 # DEV_AUX current research
 
-Direction: LEAPER_INVERSE_DESIGN_DIRECTION.md. PRIMARY owns canonical rule
-interfaces, openings, forward screening and inverse-design proposals. DEV_AUX
-consumes committed frozen rules/histories for truth, useful decision exposure,
-price/depth/tie mechanisms, then justified learning/prior/transfer controls.
-No duplicate generator, PRIMARY state/default change, new worker or scheduler.
+Direction: LEAPER_INVERSE_DESIGN_DIRECTION.md. PRIMARY owns rules/openings,
+forward screening and inverse proposals. DEV_AUX owns history truth, useful
+natural decision exposure, learner parameters/depth/ties and justified learning.
+No duplicate generator, product defaults, other-role state or extra writer.
 
-Current report: LEAPER_CANONICAL_HISTORY_TRIAGE_20261022.md.
-Public capsule: data/leaper_canonical_triage_20261022/{manifest.json,evidence.json.gz,verify.py}.
-Previous natural-decision report and every old cap/failure remain historical.
+Current report: LEAPER_ARGMAX_EXPOSURE_20261023.md.
+Selected capsule: data/leaper_argmax_exposure_20261023/.
+Earlier canonical/natural reports and all closed caps remain historical.
 
-## Committed infrastructure and actual source
+## Committed infrastructure
 
-Experimental input/Core source: sandboxe8f4abf94bde7b6de1ab1a9acc3abfd24533c002.
-Closing source: sandbox44d346484b8927309bf3437b99d4816a36fd3cf0. Core/rules/
-search/history/session have no delta. Reuse its maintained leaper_design,
-leaper_portrait,leaper_forecast and both development tests byte-for-byte.
-67closing compatibility tests pass after99earlier focused tests; these overlap.
-No PRIMARY campaign or pending source is adopted. Actual measurements are not
-relabelled onto the closing revision. Learner still calls shared public q0.
+Actual new diagnostic source: sandboxe3f7659864651d4e26c45472a876611bbe984103.
+Frozen new packet:44d346484b8927309bf3437b99d4816a36fd3cf0.
+Closing reuse:06c7eb414b0ec8993f5d3d90606e8fcba36ff9d7,including actual
+initial_record continuation/played-suffix qualification. The3publicLeaper
+helpers and2tests match that commit;Core/rules/session/ai have no branchdelta.
+78closing tests pass. Actual measurements are not relabelled onto later code.
+Learner remains the shared public q0 caller;no measured acceleration claim.
 
-## Current findings and costs
+## Current findings and limits
 
-- 540source references are369complete records,34037full roots,17520Positions.
-  All369records/35648actions are replayed; no independent-sample claim.
-- Lowmaterial:10closures/373.484s/21438labels. Fouractor:56closures/783.297s/
-  9573labels. Fiveactor CLOSED901.772s:8complete,5partial,27unattempted of40;
-  379/1834labels,1455unresolved. Partial graphs retained and never refilled.
-- Combined31390labels/2647unresolved five/sixactor roots. 263/288maxplyrefs
-  (173/195distinctrecords) enter proven structural deadzones.73refs/47records
-  contain mover-relativeWIN before drawing; missing wins/deadzones can overlap.
-- Fouractor queries CLOSED900s:28538recorded/57438planned,28536full requested,
-  2cancelled,28900unattempted.4756complete six-condition histories. D4repairs
-  19-20D2choices at~8.6xnodes. Three price effects all[3,8];ties matter.
-- Fiveactor5306/5306calls/572943nodes/116.997s;uniform D2/D4errors24/19.
-  Frozenmobility/static priors both22/17;758paired actions/PVs/nodes identical.
-  1234newcalls/134054nodes plus282exactreuses. Both match observed positive-grid
-  served envelope. Exposed/cost-conditioned,notlearning/holdout/population proof.
-- Actual price intervention independently proves LOSSvsDRAW:2664nodeWINtree
-  foropponent and4264state/18720edge safedrawclosure,wrongbinding rejected.
-  29otherproofs2518nodes,3oldproofcaps preserved,4corruption controls,
-  48clockchecks6313nodes,3argmaxcontrols4473nodes,100savedPVchecks pass.
-  Actual-record action attribution fixes one intermediate shared-history join.
-- Allwhole-source contrast bounds cross0. No training,oracle-selected starts,
-  product/default,measured acceleration or general representation claim.
+- Old379fiveactorhistories:priorsD4 351allsafe/22mixed/6strict supports;
+ 17servedfailures are11mixed/6strict. Signed15cells atfixedA1 leave4strict
+ residuals;onebecomes safe atnegativeB. No per-rule constant-price ideal-tie
+ error envelope improves withnonpositiveB. Not intrinsicprices/fulllearnerproof.
+- New3024references=1765records/86058fullroots. Low CLOSED1201.777s:
+ 51complete/1partial/6unattempted rules,57872labels/6556missing.
+ Four CLOSED1200.434s:73complete/1partial/222unattempted components,
+ 2169/14139labels,925forks/346inferior. ActualLEXordering supersedes mistaken
+ roundrobin prose;partialfourgraph wasnotpersisted,labels/costs preserved.
+- 531/626maxplyreferences (351/420records) enterproven structuraldeadzones.
+ 147refs/101records contain unconvertedWIN;overlap possible. Paid5.6MABnodes
+ afterprovenentry are cost,not measuredsavings. Root/actioncoverage has26017
+ omissions;separatepositivecertificates do not supply allmissingactionlabels.
+- All19542type-reduced price/depthcalls complete. B1D2/D4errors65/13;
+ D4adds53WDLimprovements,0regressions at8.56xnodes. Mixed1267roots have
+ 40D2/11D4price-WDL effects. AtD4 fivecan improveB1,sixcanworsen.
+- Bothmetadata priors complete4338neweach/516282nodes andagree action/PV/
+ node/feature/WDL throughout. D2errors41,D4errors8. D4improve5/worsen1,
+ sumWDL4;all-sourcebounds cross0. Purematerial,notPRIMARYdynamicStatic.
+- D6 CLOSED600s:1281recorded/1238full/888unattempted,2unknown calls,
+ 1884386nodes. Commonfull1238errors D2=35,D4=4,D6=2;D6cost6.86xD4nodes.
+ WINrankstalls104to83 on365preservedWIN roots. Not equalactualcost/strength.
+- All66frozeninitialroots:13mate1/12mate3/41notforcedWINwithin3;lastisnotDRAW.
+ 35literalWINcertificates1578nodes,6producernegatives,48clockroots4940nodes;
+ sealedreader adds missingdefendernegative and validates fullbindings/PVs.
+- ONElabel-blind metadata-hash zero-update episode[5,30]:realDRAW20plies,
+ 20calls5548nodes/1.849s,weightsunchanged,ownB-PVgradientszero here.
+ Actualplay_episode uses<=5s/query/reserve0,not1.5s/reserve.1diagnostic.
+ No TDtraining,oracle-selectedtrainingstarts,holdout or product claim.
 
 ## Next executable work
 
-Main: What causes the17D4failures shared by priors/alltestedpositivecells? |
-Read saved fiveactor query/label records;bound literal full-argmax observer
-using shared Core on those17histories | strictly badsupports versus mixed-WDL
-canonicalties/clock/rank | initial600s/1Mnodes,no newWDLgraph or closedcapfill.
-Backup1: Do the remaining fouractor errors have the same mechanism? | Reuse
-saved4756querysubset and54D2/34D4shared-cell failures | finite argmax/regret
-and actual depth/cost limits |600s observer,no missingquery refill or NN claim.
-Backup2: Is a new experiential test decision-changing beyond cheap priors? |
-After mechanism diagnosis,inspect existing play_episode/TDLeaf and frozen
-label-blind initial rules | explicit useful-exposure/cheap-prior/terminal-cost
-hypothesis | no oracle-root filter;>=120minute run first needs Chat assessment.
+Main: Does actualnaturalplay expose TDLeaf signals beyondcheappriors? |
+Use maintainedplay_episode,on_query and frozen44d originalcorner50worlds;
+exclude theONEpreflight,select next8SHA(AUX-episode-cost-v1:fp) entries,
+freeze BOTHroles (16episodes),unitD4versusfrozenmobilityD4,learner=None |
+fullrecords/receiptvalue+PV+features/gradient andterminal/UNKNOWN/cost |
+900swhole,180s/128knodesperepisode,8192perquery;allmissingretained,norerun.
+This is a NEWlabel-blind exposure/cost cohort,notcompletion ofanyoldcap.
 
-LatestClaude1792680580: adopt own post-hoc deadzone/WIN triage; forward forecast/
-sampling/default work stays PRIMARY. Raw mailbox saved; SEND_UNCERTAIN unresent.
-Session.json owns UUID/origin/work. ACTIVE60minute cadence, all stops and old
-untracked unique records remain. End only via successful session finish.
+Backup1: Can its actual receipts support a minimal TD-versus-prior pilot? |
+Aftercohortcloses,distinguish search transitions,eligibility and terminalterms |
+explicit pairedbaseline/opponent/cost hypothesis | no oracle-root filter,
+no loss-only or gradient-only claim;>=120minute experiments needChatassessment.
+Backup2: Does newcommittedPRIMARYevidence change own exposure question? |
+ReadlatestfixedSHA/fullrecords/schema,joinonly exactcompletehistory matches |
+coverage/UNKNOWN andcost decision | no PRIMARYprepare/run/screen takeover,
+no oldlow/four/D6queryfill or fresh-Position substitution.
+
+Chat1792687570 andClaude1792687833 wereexact-revision read/adopted withinrole;
+shallowmate annotation executed. ExistingSEND_UNCERTAIN unresent. Completed
+publication must verify origin/sidemission fullSHA; finish only via session.
+Cadence60minutes unchanged. Session.json owns UUID/origin/confirmed work.
