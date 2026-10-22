@@ -105,3 +105,13 @@ Keep a concise collaboration summary at meaningful research completion.
 REPOSITORY_LAYOUT.md and CLEANUP_20261021.md explain dependency-preserving
 cleanup and recovery. Default pytest covers product/development/workflow/
 specification. Historical receipt tests are not active research requirements.
+
+## Committed mainline clarification reused — 2026-10-22
+
+From sandbox55abf3de22f20ac03eb07b5260284466173a3264:an inactive feature does
+not require its default coefficient to be zero. Inspect the actual consumer
+and profile constructor;distinguish an explicit proved-zero override from
+the default complete table. Finite default hand prices can remain while stock
+is unreachable. Do not rewrite a product expectation merely to match a table.
+DEV_AUX keeps its own scope/state;this adoption imports no PRIMARY task or
+default change. The shared package and tests have no delta from291f2c3.
