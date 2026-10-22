@@ -6491,3 +6491,43 @@ and annotated, not retroactively preregistered. Openings sharestreams within-cod
 Next16-ruleconnectedproposal is fullyprepared/31costcalls/ZERO fitness,128planned
 games/2700cap. Priorupperdegreefailure/negativecontrols stay. Purpose report and
 compact public packet retain every actual outcome/failure/missing contract.
+
+
+## 2026-10-23 PRIMARY connected-proposal and resource segment
+
+PRIMARY read the new Claude1792694928.310479 comment and six complete relevant
+threads once, saving exact originals before assessment. Adopt actual short-mate,
+opening-history and tie-observability checks; the existing user-confirmed ChatGPT
+forward/inverse framework remains. The fixed PUBLIC AUX52141178 report was read
+for scope, not independently re-solved. Its oldten-code truth does not directly
+label current16rules; observed deadzone entry and prior missed wins can overlap.
+No AUX checkout/state/unpublished result or solver/learning assignment was taken.
+
+896planned slots yield894records:870newplayedcontinuations,24terminal-start
+zero-turnrecords,29of32known8192outcomes and3UNKNOWN. Connectedrecipe contrasts
+are7/64original,15/256allD4,1/32prefix. These support only a scoped candidate;
+resource2048groupcontrast-1/8 and8192minus2048[-3/32,3/32] do not define a scalar
+quality/price/default winner. Old upper-degree negative findings remain.
+
+Correction to the suggested tie interpretation: first-action changes areAB2/224
+andFLOOR181/224 underD4. A uniform canonical-index draw need not be a mapped
+physical-action coupling. Old12016returns lack sibling root scores, so a tie rate
+cannot be reconstructed. Exact currenttuple/rule/profile/history scopes remain.
+The 8192 late50.114s call exceeds cold4.865s; the unchanged3600cooperativecap
+leaves1censored/2unattempted slots and26.88s in-flight overshoot. No refill.
+
+Efficiency/verification:361NEWcostreturns include two prepared follow-ups;31
+original cost references and32reused512rows are not new calls. The PUBLIC copy
+passes894record/25810action/59926PV/11748FLOOR checks and85scientific-file value/
+256full-input/1802cost-PV/274material-component checks. This is sharedCore, not
+independent WDL. No frozen fitness or unchanged broad product suite is rerun.
+Actual effective science/necessaryvalidation5025.021296s excludes administration,
+transport, post-verifier waiting and overlapping-computation double counting.
+
+Next128new-code replication is actually frozen with31costcalls/RNG proof/zero
+fitness, same feature law. The32Static/M0 panel stays zero fitness;11coldaction
+changes do not establish utility or a learner gate. No outbound consultation,
+worker/timer/default change. Reviewed source/data and the purpose report are the
+handoff; session finish and final-check remain required for final acceptance.
+
+[Report and technical evidence](../research/LEAPER_CONNECTED_PROPOSAL_20261023.md).

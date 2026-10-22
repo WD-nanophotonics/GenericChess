@@ -474,20 +474,41 @@ suffixqualification andportraitstartnowpreservefullhistory/clocks;52related
 regressions pass. SharedCoreexport validates224games/53876PVs/6523FLOORchecks.
 Sourcecapsules/costreuse/oldoriginals are retained;no fitnessrerun orcapextension.
 
-Main: Can a NEWconnected/balancedmiddegreeproposal improveDIRECTcheapAB/FLOOR?
-| run `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-connected-proposal-20261023-1752` |128planned/8uniformFIRST+
-8guided/BOTHroles/4FLOORstreams/allbounds/costs | close128or2700cap;2100expected;
-0fitness. Featurelaw[6,12]degree/bothgraphsconnected/minmax>=1/2 leaves58of310;
-allmetadataalreadyexposed. Fullinputs/priorselection/31actualrootcostcalls frozen;
-oneearlyterminalcostprefix retained. Onepositive-matescoreroot/group;no WDL or
-powerclaim. Exactprimary: guidedmeanDIRECTsignedutility minuscontrolmean over
-ALL64plannedcells/group. Reportcost/clock/role andprefitnessmate-scorestrata,
-notfastest-winoptimization. Hypothesis unproven;no sampler/learner activation.
+[LEAPER_CONNECTED_PROPOSAL_20261023.md](LEAPER_CONNECTED_PROPOSAL_20261023.md)
+closes896plannedslots/894records/25810newcontrollerturns:870playedcontinuations
+and24terminal-startzero-turnrecords,with3UNKNOWNretained. Theconnected/balanced
+recipe gives7/64originalfourstreams,15/256all8D4/FIRST2streams,and1/32uniform8ply
+prefix. OriginalFIRST2gapalso1/32,butbothprefixgroupmeansfall43/128and15/16code
+valuesdecline;rankrho.45465FIRST2/.33899ALL4. No singlequalityscalar/default.
+OneD4orientationisnegative;leaveonecodeoutmin3/1792. Firstactiondifferencesare
+AB2/224versusFLOOR181/224:legal-indexRNGcouplingcannotallbeABties. 12016OLDreturns
+lackrootargmaxfields;tie-rateUNKNOWN. ActualD4mapping12000frontiers421907history/
+11552canonicalvalues0diffisnotallNativeleaf/policyequivalence.
 
-Backup1: Diagnoseactualsource/input/controllerrefusal retainingpartialreturns,
-originalregistration/source/costprovenance beforeanyrepair;noreset/refill/expectedpatch.
-Backup2: Assessproposal allplannedbounds/role/cost/capture/terminalportrait and
-compareavailableforwardaxes;do notfillmissingdimensionsorfitonequalityscalar.
-DEV_AUXtruth/learning remainsindependent;read-onlyChat/current60minpatrol unchanged.
-Science OPEN.
+Direct2048/512gives1/8,butguided-control-1/8.8192/512retains29known/3UNKNOWN;
+utility[1/32,7/32],minus2048[-3/32,3/32]. Oneimproves/oneregresses;no identified
+extragainoruniversalbudgetordering.3600cooperativecapnotchanged;timed3626.88s
+includes26.88sinflightovershoot,lastmax50.114s. Closed/no refill. Game[19,24]
+retains2ordinarypiecesat126/128roots,notbareKingsorprovennewdeadzone. FixedAUX
+52141178publishedoldten-codeevidenceisreadonly/nomatchingnew16truthlabels.
+
+All894exportedrecords/59926PV/11748FLOORand256fullinputsqualify;361NEWcostreturns
+include64materialand31next-replicationcalls,31originalcostreferencesareOLD.
+Sourcecaller4e58e33b/fullhistory/currentrulesretained. Prefixoriginoneplymetadata
+isexplicitlydistinguishedfromactualcontinuationroot;oneactualoneplywiniskept.
+OriginalupperdegreefailurestaysDROP;connectedrecipeKEEPcandidateforreplication,
+notgenericwinner/sampleractivation. Cheap512forwardbaselineandAUXownershipstay.
+
+Main: DoesSAMEconnectedpriorreplicateonNEWdisjointcodes?
+| run `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
+.local_agent/leaper-connected-replication-20261023-1935` |128planned/8uniformFIRST+
+8guided/BOTHroles/4FLOORstreams/fullbounds/history/cost | close128or1800cap;
+1200expected;0fitness;31actualcostreturns;294remaining/47eligiblebeforecontrols,
+44after;exactRNG/source/inputverified. Unchangedfeaturelaw,nocoefficientfit.
+Backup1: Isleafmaterialusefulonthesame16currentcodes? | executeprepared
+leaper-connected-material-20261023-1935 |32sameadapterStatic/M0/Staticordering/
+bothroles/64costcalls274components |0fitness;1200expected/1800cap. Cold11/32
+actionchangesarenotutility/traininggate;dynamics/promotion/medianretained.
+Backup2: Diagnoseanyactualcaller/source/inputrefusalretainingoriginals/partial
+returns;no expectedpatch/reset/refill/oldcallsasnew. Roleboundaries/read-onlyChat/
+current60minuteheartbeat remain. Science OPEN.

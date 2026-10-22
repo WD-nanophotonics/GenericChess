@@ -1,0 +1,53 @@
+{
+  "status": "CLOSED",
+  "dependency_revision": "06c7eb414b0ec8993f5d3d90606e8fcba36ff9d7",
+  "files": {
+    "observations.json.gz": {
+      "sha256": "4098a0d0ef445b9665f76c39e77a8a58121f7cefdfe0403725864b4e9d060f87",
+      "bytes": 6400342,
+      "decoded_sha256": "9125a399a52936658febff94355127ae85d9c83b0a3945e386507a61192f05df"
+    }
+  },
+  "executed_panels": [
+    "original",
+    "d4",
+    "resource2048",
+    "resource8192",
+    "prefix"
+  ],
+  "prepared_0fitness": [
+    "material_next",
+    "replication_next"
+  ],
+  "planned_executed_panel_slots": 896,
+  "retained_run_receipts": 894,
+  "new_played_slots": 870,
+  "terminal_start_zero_turn_slots": 24,
+  "unknown_outcome_planned_slots": 3,
+  "unattempted_slots": 2,
+  "controller_turns": 25810,
+  "AB_returns": 14062,
+  "new_preflight_calls": 361,
+  "old_original_preflight_reference_calls": 31,
+  "old8192_512reference_rows": 32,
+  "old_cost_refs_are_not_new": true,
+  "D4_exact_reused_identity_views": 64,
+  "D4_reuse_already_in_original_games": true,
+  "source_hashes": {
+    "leaper_design.py": "4e58e33bc144f836b55b23976de7663a07f0873c6cb898b0605f7c501a2d5175",
+    "leaper_forecast.py": "4588c8bad071d40123c1aaab012db1da5948c98205d333762a9a8786a6c6a204",
+    "leaper_portrait.py": "4ecbbf1c982973f1ee618301c3d41e96d60de8db1254b173728794bce6093653",
+    "leaper_connected_freeze_1752.py": "f1692fde9fbba1bd8301229274e8a26f15bcf9b9c9327939e5ee4afa1b30a06d",
+    "leaper_connected_d4_freeze_1935.py": "a863bad1484ec1e2cc7145e090e0632ecceb54dd4a13d2f194a7519e15a80318",
+    "leaper_connected_resource_freeze_1935.py": "c08de711382aec938e073cad47405865f3c3620e5949bd1ebaa20f5d0f417d2a",
+    "leaper_connected_resource8192_freeze_1935.py": "d4ee6eb7922fe1c3f6215672b04b7596e3d164a79cc0ce118fafbfb77df5241f",
+    "leaper_connected_prefix_freeze_1935.py": "a45f7660221faa015fb7697324a46de4a3e9c3a8f98e890f1749625fc17da789",
+    "leaper_connected_material_freeze_1935.py": "642b831fcf69ac9adafa92385b2f16c4328bac1e394988275cc0624a2b28096d",
+    "leaper_connected_replication_freeze_1935.py": "587a4f4b296e4cfe3aff2d8c72f2d156df3f4c5df59ffd54324c9277353d95de",
+    "leaper_connected_d4_qualify_1935.py": "f162ac6fdd33a743fbe829ff859dca471c7dae7247d059ea5ba533c7544052fe"
+  },
+  "privacy_review": {
+    "strings_scanned": 3783646,
+    "pattern_hits": 0
+  }
+}
