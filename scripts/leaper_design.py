@@ -2,7 +2,8 @@
 
 Use prepare, preflight, run, qualify with a NEW --output directory. The preparation
 freezes orbit masks, source, complete rules, paired controller seeds and clocks.
-No caller-censored game is a draw. This is an exposed metadata-selected pilot.
+No caller-censored game is a draw. Default preparation uses ten metadata-selected
+controls; separately registered batches retain their actual sampling law.
 """
 from __future__ import annotations
 import argparse, hashlib, json, random, time, traceback
@@ -122,7 +123,7 @@ def prepare(d, repetitions=1, first_repeat=0, nodes=512, material_ablation=False
         'pairs':{'AB_RNG':['AB','RNG'],'FLOOR_RNG':['FLOOR','RNG'],'RNG_RNG':['RNG','RNG']},'roles':[0,1],
         'repetitions':repetitions,'first_repeat':first_repeat,'nodes':nodes,'rule_max_ply':128,'caller_plies':128,'repetition_limit':4,
         'q':0,'forced_check_depth':8,'disk_cache':False,'TT':'fresh per actor per game, retained inside game',
-        'seed':202610221209,'planned_games':60*repetitions,'expected_seconds':600 if repetitions==1 else 2100,'whole_cap_seconds':1200 if repetitions==1 else 2400,
+        'seed':202610221209,'planned_games':len(PAIRS)*6*repetitions,'expected_seconds':600 if repetitions==1 else 2100,'whole_cap_seconds':1200 if repetitions==1 else 2400,
         'preparation_seconds':time.perf_counter()-tick,'input_sha256':sha(d/'inputs.json'),'source_sha256':sha(Path(__file__)),
         'interpretation':'AB is the existing Static default evaluator including dynamics, not a material-only policy. No win-time-only scalar, learning gate, solver, default change or AUX task.',
         'stop':'Preserve all failed/unattempted/UNKNOWN slots at cooperative cap. No refill. Preflight measures cost before starting.'})
@@ -131,7 +132,7 @@ def prepare(d, repetitions=1, first_repeat=0, nodes=512, material_ablation=False
             question='Does board/hand leaf material add finite utility against Random on all10pureLeaper rules under commonStaticordering?',
             changed_premise='AB512 improves over FLOOR but may use geometry-derived dynamics/order. A same-interface leaf-only counterfactual is needed; default-path games are not the adapter control.',
             pairs={'StaticAdapter_RNG':['STATIC_ADAPTER','RNG'],'M0_RNG':['M0','RNG']},
-            planned_games=40*repetitions,material_ablation=True,expected_seconds=900,whole_cap_seconds=1500,
+            planned_games=len(PAIRS)*4*repetitions,material_ablation=True,expected_seconds=900,whole_cap_seconds=1500,
             controls='SAME3methodAdapter on both search arms; Staticordering retained; zeroCURRENTboard/BASEhand material inM0; all other completeprofile fields/dynamics retained. Fresh actorTT/game; diskOFF.',
             cost_gate='Opening+natural-prefix wrapper-path preflight before fitness; defer if forecast not bounded/affordable; no budget extension.')
         write_record(d/'registration.json',reg)
@@ -193,10 +194,12 @@ def run(d):
     if reg.get('material_ablation'):assert pf.get('decomposition_checks',0)>0
     # Cost screen is a bound/forecast only, never a guarantee of full coverage.
     assert max(r['seconds'] for r in pf['rows'])<5
+    worlds=load(d/'inputs.json')['worlds']
     slots=[{'slot':i,'world':w,'pair':pair,'role':role,'repeat':rep,'status':'not_started','utility':[-1,1]}
-           for i,(w,pair,role,rep) in enumerate((w,pair,role,rep) for w in range(len(PAIRS)) for pair in reg['pairs'] for role in reg['roles'] for rep in range(reg.get('first_repeat',0),reg.get('first_repeat',0)+reg['repetitions']))]
+           for i,(w,pair,role,rep) in enumerate((w,pair,role,rep) for w in range(len(worlds)) for pair in reg['pairs'] for role in reg['roles'] for rep in range(reg.get('first_repeat',0),reg.get('first_repeat',0)+reg['repetitions']))]
+    assert len(slots)==reg['planned_games'], 'frozen planned game count does not match inputs/controllers/roles/repeats'
     order=list(range(len(slots)));random.Random(reg['seed']).shuffle(order);out={'status':'RUNNING','slots':slots,'execution_order':order,'queries':0,'failures':[]};write_record(d/'results.json',out)
-    tick=time.perf_counter();cap=reg['whole_cap_seconds']-reg['preparation_seconds']-pf['seconds'];worlds=load(d/'inputs.json')['worlds'];contexts={}
+    tick=time.perf_counter();cap=reg['whole_cap_seconds']-reg['preparation_seconds']-pf['seconds'];contexts={}
     for ix in order:
         if time.perf_counter()-tick>=cap:break
         slot=slots[ix];w=worlds[slot['world']];t=time.perf_counter();path=d/f'game-{ix:03d}.json';row={**slot,'queries':[],'censor':None}

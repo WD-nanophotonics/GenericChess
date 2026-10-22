@@ -378,3 +378,21 @@ Never guess a later minute from perceived elapsed time. A future-time refusal
 adds no work; inspect status before correcting it, never assume it was credited.
 Pure administration remains excluded. Scientific computation must have actual
 bounded producer/output evidence, not just an ACTIVE flag or open UTC clock.
+
+## Registered code counts and forecast arithmetic —2026-10-22
+
+A batch's planned count is actual frozen input worlds times controller pairs,
+roles and repetitions. Run uses that input count, never the fresh process's
+fixed default PAIRS list; verify the plan before first execution. The observed
+two-code counterexample reproduced60/40miscounts and IndexError at zeroqueries.
+Do not change expectations to match those outputs. Preserve actual old producer
+bytes. A necessary before-fitness caller repair must retain original registration/
+cost provenance and demonstrate unchanged scientific inputs/slot sequence; old
+cost returns are old returns, never extra calls or silently current-source ones.
+
+Write exact forecast arithmetic before queries. If a frozen prose target is
+ambiguous, preserve it and report plausible versions without selecting the best
+posthoc result. Missing planned roles have intervals/undefined means, not0.
+Separate an empirical whole-game cost estimate from a worst-call coverage bound;
+retain both methods/results and the already frozen hard cap, never widen a cap
+or use a renamed run to hide failures. Current route/evidence stays in Mainline.

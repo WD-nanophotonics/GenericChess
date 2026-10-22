@@ -1,0 +1,35 @@
+{
+  "game_semantic_replay": {
+    "status": "PASS",
+    "games": 3024,
+    "history_plies": 137712,
+    "controller_turn_receipts": 137712,
+    "AB_returns": 17530,
+    "literal_PV_edges": 72620,
+    "RNG_stream_checks": 96976,
+    "FLOOR_policy_checks": 23206,
+    "compressed_sha256": "1f6889efe7a0a1914eab482f7dca1d7f76105819ee4de488ce92c0999b2a1a16",
+    "seconds": 317.89720839995425,
+    "scope": "Shared production Core and strict serialization. Not independent engine/game-WDL oracle; scientific inference and source/privacy review remain separate."
+  },
+  "archive_binding_checks": {
+    "status": "PASS",
+    "compressed_sha256": "1f6889efe7a0a1914eab482f7dca1d7f76105819ee4de488ce92c0999b2a1a16",
+    "decoded_sha256": "68763b7e2b54853514c914b62f76a57641b7f751fb800c0f35050750d343c549",
+    "new_finished_games": 3024,
+    "exact_private_original_game_comparisons": 3024,
+    "registered_seed_checks": 6048,
+    "policy_binding_checks": 137712,
+    "actual_returned_action_and_PVfirst_checks": 17530,
+    "complete_finished_slot_census": true,
+    "producer_sources_bound": true,
+    "next_fitness_games": 0
+  },
+  "privacy_review": {
+    "scanned_strings": 9127445,
+    "private_content_patterns": 0,
+    "rawChat_account_headers_included": false
+  },
+  "probe_contract_tests_passed": 41,
+  "scope": "Actual exported games and their source/slot/seed/decision bindings. Cold-call PV checks are retained from their original preflight, not counted in game-PV replay. Shared Core, not independent gameWDL. Publication tests/fullremoteSHA verified by delivery workflow separately."
+}

@@ -6407,3 +6407,26 @@ fitness games. Fixed-temperature unfitted proxy observations do not refute a
 calibrated learner; fitting remains deferred. No production default, worker,
 visibility or recurrence changes. Publication and reader receipts are recorded
 in the linked [report](../research/LEAPER_FORWARD_DESIGN_20261022.md).
+
+
+## 2026-10-22 UTC prospective Leaper transfer (2026-10-23 JST close)
+
+PRIMARY completed3024NEWgames and kept96planned canonical layout failures, with
+full source/fingerprint/history/seed/role/cost records. The10-to40code forecast
+transfer weakens advantage ranks while decisive-rate ranks persist. H1 prose
+arithmetic ambiguity is disclosed through both definitions; no favorable version
+is retroactively selected. DirectAB/FLOOR and matched node-budget controls prevent
+opponent/transitivity and depth-as-utility claims. No budget/default activation.
+
+The one incoming channel read and both relevant ChatGPT/Claude complete threads
+were privately captured before assessment; no new roots/replies or missing pages.
+The already user-confirmed ChatGPT direction remains current. Claude's structural
+idea is tested prospectively; its ceiling is diagnostic and untriggered14/40,
+not a new gate. The next small inverse proposal is frozen/preflighted,0fitness,
+with equal no-initial-win admission conditions for guided/uniform groups.
+
+No outbound exchange, AUX checkout/state/unpublished-work reads/writes, extra
+worker or timer change. AUX truth/learning work is neither repeated nor claimed
+independently checked. The compact public packet is for its optional posthoc
+consumption. Cost timing, record uniqueness, source repair and shared-Core
+qualification are separately scoped; no independent WDL or learning gain claim.

@@ -5,6 +5,13 @@ from collections import Counter,defaultdict
 from pathlib import Path
 from scripts.leaper_design import load,write_record,record_value,compile_rule,ruleset_from_dict,GameSession,state_sha,match_action,legal_successors
 
+def role_summary(planned, role):
+    cells=[x for x in planned if x['role']==role]
+    if not cells:return {'planned':0,'utility_bounds':None,'mean':None}
+    bounds=[sum(x['utility'][i] for x in cells)/len(cells) for i in (0,1)]
+    return {'planned':len(cells),'utility_bounds':bounds,
+            'mean':bounds[0] if bounds[0]==bounds[1] else None}
+
 def analyze(d):
     tick=time.perf_counter();r=load(d/('recovered-results.json' if (d/'recovered-results.json').exists() else 'results.json'));assert r['status']=='CLOSED'
     inputs=load(d/'inputs.json');rows=[];summ=[]
@@ -48,7 +55,7 @@ def analyze(d):
             members=[x for x in rows if x['world']==w and x['pair']==pair];planned=[x for x in r['slots'] if x['world']==w and x['pair']==pair]
             terms=Counter(x['terminal']['status'] for x in members);known=Counter(x['utility'][0] for x in members if x['utility'][0]==x['utility'][1]);n=len(planned)
             low=sum(x['utility'][0] for x in planned)/n;high=sum(x['utility'][1] for x in planned)/n
-            summ.append({'world':w,'masks':inputs['worlds'][w]['masks'],'pair':pair,'planned':n,'retained':len(members),'signed_utility_bounds':[low,high],'known_outcomes':dict(known),'terminals':dict(terms),'role_means':{str(a):sum(x['utility'][0] for x in members if x['role']==a)/max(1,sum(x['role']==a for x in members)) for a in (0,1)}})
+            summ.append({'world':w,'masks':inputs['worlds'][w]['masks'],'pair':pair,'planned':n,'retained':len(members),'signed_utility_bounds':[low,high],'known_outcomes':dict(known),'terminals':dict(terms),'role_means':{str(a):role_summary(planned,a)['mean'] for a in (0,1)},'role_utility':{str(a):role_summary(planned,a) for a in (0,1)}})
     out={'status':'CLOSED','rows':rows,'summary':summ,'seconds':time.perf_counter()-tick,
          'scope':'Metadata-selected fixed-opening pilot. Full state/physical-position counts distinguish repetition, not independent sample sizes. Exact immediate-win and immediate-reply witnesses use shared Core, not full WDL. No population CI, game-quality scalar, training gate or default.'}
     write_record(d/'portrait.json',out);print('PORTRAIT',len(rows),out['seconds'],flush=True)

@@ -412,20 +412,39 @@ All20default/adapter full trajectories agree here; M0 retains dynamics/order and
 is not price-free search. The40cost returns/151component checks and actual509.648s
 preserve causal scope; no fitness replay, learner or default change follows.
 
-Main: `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-prospective-20261022-1209` after checking frozen source/input
-hashes and the saved cost gate. Ten gameplay-new codes were sampled uniformly
-without replacement from486remaining sorted pairs, not by outcomes. Motion-only
-ordinal forecasts were frozen BEFORE10coldqueries; forecast529.168s,cap1800,
-60plannedgames,0fitnessgames so far. Initial one-ply metadata is already exposed:
-this is not an independent unseen-rule/initial-label holdout. Retain all results,
-negative cases, actual score/depth/source/cost and missing/UNKNOWN; no coefficient
-refit, initial-win rejection or posthoc prediction rewrite. No new optimizer.
+[LEAPER_FORECAST_TRANSFER_20261022.md](LEAPER_FORECAST_TRANSFER_20261022.md)
+closes that prospective continuation. All3024NEWphysical games/3120planned slots
+retain96canonical layout failures. Frozen H1 wording was arithmetic-ambiguous:
+both raw AB_RNG and RNG-baseline-subtracted ranks are reported without changing
+predictions. On10codes/eightseeds raw/subtracted/H2rho=.82976/.69972/.68904;
+on40furthercodes/eightseeds they are.40810/.28502/.71202. The latter AB-FLOOR
+common-Random gap correlation is only.06921. Mobility is a scoped prior, not a
+complete inverse quality objective or universal game property.
 
-Backup1: diagnose an actual Main launch refusal against its immutable source,
-canonical input and caller contract, saving partial/failed returns before repair;
-no reset/refill or expected-value patch. Backup2: only for a real decision need,
-predeclare a same-KAB layout control and its separate canonicalization/sampling
-law; the current496quotient is specific to the current corner layout. Do not build
-an all-domain isomorphism or solving framework. PRIMARY owns forward design,
-DEV_AUX owns its independent truth/learning lane. Science OPEN.
+Direct160AB/FLOORgames give105W39D16L, signed89/160; direct and common-opponent
+contrasts differ. Matched80NEW2048node games give-1/80 against80exact512frames,
+with3improvements/4regressions and actual2667940versus744029ABnodes. Keep512as
+cheap forward control; no default/learner change. Alternate-layout failures stay
+UNKNOWN, conditional8and aggregate-completion sensitivity are explicitly limited.
+All40breadth rules finish under the3600cap; no replacement, refit or missing fill.
+
+Main: `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
+.local_agent/leaper-guided-proposal-20261022-1411` AFTER matching saved current
+source/input hash and the source-equivalence receipt. This NEXT test is actually
+prepared at0fitnessgames: exclude60played/registered codes, enumerate436remaining
+representatives, retain326canonical/no-initial-win candidates and110rejections;
+8uniformcontrols versus8upperquartile-guided codes, mobility threshold14.25.
+BOTH groups use the same initial condition; this deliberately changes sampling,
+not a production filter or full-domain claim. Fourpairedseeds/bothroles/fourpairs
+AB_RNG,FLOOR_RNG,RNG_RNG,AB_FLOOR give512plannedgames,expected1200/cap1800seconds.
+The primary is DIRECT AB/FLOOR separation, not a common-Random proxy.16real cold
+returns remain labelled old-source; before0fitness, only caller counts were
+repaired, other helperASTs and all512slots agree. No optimizer/TD/AUX takeover.
+
+Backup1: diagnose an actual Main refusal against frozen inputs/source/slot/caller
+contract, preserving partial returns before necessary repair; no reset/refill or
+expected-value patch. Backup2: if the proposal is negative, inspect its full direct
+opponent, capture/clock/cost and rule strata before selecting another small
+proposal. Do not fit a single observed win statistic or revive old normalizers/
+solver routes as filler. PRIMARY owns generation/forward evaluation; DEV_AUX owns
+its independent truth/learning lane. Science OPEN.
