@@ -9,7 +9,7 @@ This is a mechanism in a saved trajectory, not a new training result or a
 claim that terminal rewards are intrinsically uninformative.
 
 [Selected rules,records,Core trees and witnesses](data/leaper_transfer_terminal_feedback_20261022.json)
-are approximately631KiB. Full raw trajectories,graph caches and one-off
+are approximately606KiB in the published Git blob. Full raw trajectories,graph caches and one-off
 drivers remain local rather than adding generated archives or scripts to Git.
 
 ![Exact boundaries and logged feedback](figures/leaper_transfer_feedback_20261022.svg)
