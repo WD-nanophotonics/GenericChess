@@ -525,13 +525,14 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
                        random_foe_seed=None, initial_weights=None,
                        lineup=('A','B','C'), c_axis='horizontal', initial_positions=None,
-                       selfplay=False, b_geometry=DIAGONAL):
+                       selfplay=False, b_geometry=DIAGONAL, initial_position=None):
     """One declared coexistence experiential check, with NO label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
     diagnose available signal rather than independent strength or coverage.
     Literal PV paths are retained for later mechanism analysis. Optional initial
     weights change only the learner's starting point; the foe stays uniform.
+    A single explicit initial position can also use label-blind played openings.
     Explicit fresh initial boards use ordinary validated setup options. They
     cannot be combined with played random openings or imported old histories.
     Optional selfplay shares the current model on both sides, frozen during
@@ -545,7 +546,10 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     if not isinstance(selfplay,bool) or (selfplay and random_foe_seed is not None):
         raise ValueError('selfplay is boolean and cannot use a random foe')
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
-    rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis,b_geometry=b_geometry)
+    if initial_position is not None and initial_positions is not None:
+        raise ValueError('declare one initial position or multiple setup boards')
+    rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis,b_geometry=b_geometry,
+                            initial_position=initial_position)
     setups=[None]
     if initial_positions is not None:
         from dataclasses import replace

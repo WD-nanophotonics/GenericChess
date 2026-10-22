@@ -363,6 +363,45 @@ def test_fresh_setup_experience_uses_public_setup_identity_and_empty_history(tmp
         experiential_probe(tmp_path/'mixed',opening_count=1,initial_positions=boards)
 
 
+def test_single_explicit_knight_start_keeps_real_random_opening_history(tmp_path):
+    import json
+    from generic_chess.core.pieces import Piece
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules.schema import ruleset_from_dict
+    from generic_chess.session.session import GameSession
+    from generic_chess.session.serialization import deserialize_game_record
+    from scripts.leaper_microgames import coexistence_rules, sampled_openings
+    from scripts.leaper_retrograde import experiential_probe
+    knight=tuple((x,y)for x in(-2,-1,1,2)for y in(-2,-1,1,2)
+                 if abs(x)+abs(y)==3)
+    # The ordinary default layout is invalid for this geometry. Reuse the
+    # matched eight-actor layout without relabelling a fresh root as a prefix.
+    cells=[None]*9
+    for square,owner,name in((0,0,'K'),(1,0,'A'),(2,0,'B'),(3,0,'C'),
+                            (8,1,'K'),(7,1,'A'),(6,1,'B'),(5,1,'C')):
+        cells[square]=Piece(owner,name,name)
+    board=tuple(tuple(cells[y*3:y*3+3])for y in range(3))
+    folder=tmp_path/'explicit'
+    result=experiential_probe(folder,episodes=2,opening_count=2,
+        opening_seed=2026102206,random_foe_seed=2026102207,
+        b_geometry=knight,initial_position=board)
+    assert result['missing']==0
+    compiled=compile_ruleset_for_execution(ruleset_from_dict(json.loads(
+        (folder/'rules.json').read_text(encoding='utf-8'))))
+    assert GameSession(compiled).state.position.board==tuple(cells)
+    paths=sampled_openings(compiled,count=2,seed=2026102206)
+    rows=[json.loads(x)for x in(folder/'episodes.jsonl').read_text().splitlines()]
+    for e in rows:
+        initial=GameSession.replay(compiled,deserialize_game_record(json.dumps(e['initial_record'])))
+        assert initial.state.ply_count==len(paths[0])==1
+        assert len(initial.state.history)==2
+        replay=GameSession.replay(compiled,deserialize_game_record(json.dumps(e['record'])))
+        assert replay.state.terminal_status.is_terminal
+    with pytest.raises(ValueError,match='one initial position'):
+        experiential_probe(tmp_path/'ambiguous',initial_position=board,
+                           initial_positions=[board])
+
+
 @pytest.mark.parametrize('depth',[1,2])
 @pytest.mark.parametrize('b_geometry',[DIAGONAL,KING])
 def test_selfplay_uses_same_episode_frozen_model_on_both_sides(tmp_path,depth,b_geometry):

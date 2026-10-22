@@ -792,7 +792,8 @@ def semantic_tape_games(
                 if engine.in_check(state.position, state.position.side_to_move):
                     checks += 1
             status = state.terminal_status.status.value
-            censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+            # Core terminals, including the rule clock, precede caller censorship.
+            censored = status == "ongoing" and state.ply_count >= max_ply
             terminal = "CENSORED" if censored else status
             winner = None if censored else state.terminal_status.winner
             first_score = None if censored else (0.5 if winner is None else (1.0 if winner == 0 else 0.0))
@@ -1006,7 +1007,8 @@ def semantic_search_games(
                 identities.append(identity)
                 recurrence_counts[identity] += 1
             status = state.terminal_status.status.value
-            censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+            # Core terminals, including the rule clock, precede caller censorship.
+            censored = status == "ongoing" and state.ply_count >= max_ply
             terminal = "CENSORED" if censored else status
             winner = None if censored else state.terminal_status.winner
             terminal_utility = None if censored else (1.0 if winner == 0 else (-1.0 if winner == 1 else 0.0))
@@ -1222,7 +1224,8 @@ def semantic_termination_control_games(
                     identities.append(identity)
                     recurrence_counts[identity] += 1
                 status = state.terminal_status.status.value
-                censored = status in {"ongoing", "max_ply"} and state.ply_count >= max_ply
+                # Core terminals, including the rule clock, precede caller censorship.
+                censored = status == "ongoing" and state.ply_count >= max_ply
                 terminal = "SEARCH_BUDGET_CENSORED" if budget_censored else ("CENSORED" if censored else status)
                 winner = None if terminal in {"SEARCH_BUDGET_CENSORED", "CENSORED"} else state.terminal_status.winner
                 move_sequence_sha256, execution_trace_sha256 = _semantic_sequence_digests(execution_trace)

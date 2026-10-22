@@ -1,5 +1,48 @@
 # Current collaboration record
 
+## 2026-10-22 — prior-plus-TD, signed coefficients and horizon obstruction
+
+DEV_AUX saved and reviewed the latest Claude comment1792659091.173909. Adopted
+the missing mobility-initialized TD control and whole-region comparison; rejected
+the inference that a negative finite control would establish universal product
+sufficiency. Earlier D replacement/geometry pilots stay closed. PRIMARY's
+production-generator quality, opponent/resource and default/integration lane was
+read only; no second quality campaign or engine was built. Shared infrastructure
+is sandbox06894138b79e5a02d485d5170ea6b51c677c6c70, unchanged in package/tests
+from the preceding pinned69a3 baseline.
+
+Closing readback found sandbox291f2c3b169992d451743f4babf314ca3a26776f newly
+committed. DEV_AUX reused its qualification terminal/caller-boundary fix and
+ten product regressions, all passing, without adopting PRIMARY's research tasks.
+The frozen Leaper experiments remain bound to their actual earlier source;
+their shared Core/search is unchanged and no result is rerun or relabelled.
+
+Three new512episode arms complete with0missing, and actual2688evaluation games
+retain9UNKNOWN. King mobility-plus-TD improves whole-domain ideal error and has
+finite fixed-D2 gain1/128; Knight prefix improvement does not imply a general
+prior advantage. A duplicate two-slot learned-loss example yields an independent
+17-node Core D2 all-price obstruction, a169-node D4 interval escape and a6-node
+forced-win witness. Negative B changes opponent replies and only creates a tie;
+the initially considered strict-reversal hypothesis is explicitly corrected.
+
+A new separately frozen8192episode trajectory completes;119UNKNOWN remain.
+Final B=.0020008676,C=-.2370495014. Reference error worsens after512 while the
+small prefix error count stays flat. The frozen B/C intervention completes1152
+frames=896new physical games+256exact reuses. Its negative interaction and
+opponent dependence do not establish intrinsic piece prices or a default change.
+Both1200s parameter scans keep missing boundaries and partial final rows.
+All147related tests and independent full record/PV/RNG/update replays pass;
+the selected remote JSON alone verifies52WINnodes, local horizon algebra and two
+actual same-Position history pairs. Full raw runs stay ignored, not claimed as
+independently remotely replayed. Report: LEAPER_PRIORS_HORIZONS_AND_SIGNED_LEARNING_20261022.md.
+
+The research session preserves its UUID and confirms3669.170242 effective seconds
+(61.15minutes); administrative publication is excluded. No worker, Goal, new
+chat, scheduler mutation, old-cap refill or other-role write occurred. The old
+mailbox SEND_UNCERTAIN was re-read and remains unconfirmed; no duplicate report
+was sent. Next is bounded matched ABC/ABA transfer of already frozen parameters,
+not another learning run. Both existing patrols retain ACTIVE60minute cadence.
+
 ## 2026-10-22 — actual-history learning controls and depth costs
 
 DEV_AUX read/saved Claude1792608525.770219 and adopted uniform-tie evaluation
