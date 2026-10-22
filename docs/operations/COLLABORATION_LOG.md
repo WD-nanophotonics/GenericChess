@@ -807,3 +807,49 @@ The frozen bare2Mnode batch closes179/208rows,29missing,manypartial and4013charg
 The small public capsule verifies83proofs/1847nodes,2496twoKpositions/9216edges and2corrupted-proof controls;full local graph/census aggregates retain remote-replay qualifications.140distinct targeted tests pass across an18-setup temporary-directory repair;192literalCore checks validate freshminimax values/sets. Source/current-rule/theorem boundaries andfailures remain explicit. Both roles publish only their own branch;Chat reading/adoption is not inferred from Git delivery. Old SEND_UNCERTAIN is not resent.
 
 Session34cdcc12-8679-46ed-a454-cc1cbcf09651 confirms3929.356835s (65.49min) research before final publication. Next consume PRIMARY's committed canonical batch;independent backups use existingPV/gradient/work andpartial-WDL records,without oracle-selected training or duplicate generation. Existing ACTIVE60min cadence andallstops/caps remain. Report: [PRIMARY-native truth and exposure](../research/LEAPER_PRIMARY_TRUTH_AND_PRICE_EXPOSURE_20261022.md).
+
+## 2026-10-22 UTC: natural decision mechanisms and canonical interface reuse
+
+PRIMARY supplied the fixed291f2c3 rules/64 AB games, then published the maintained
+canonical interface and paired evidence at e8f4abf94bde7b6de1ab1a9acc3abfd24533c002.
+DEV_AUX copied its two scripts and test byte-for-byte, without adopting PRIMARY
+state, its pending forward campaign or generation duties. Core/search/history
+have no new delta. Ten first-per-fingerprint full records and ten actual learner
+H1 calls/103 nodes pass with dynamic four-channel inputs; 32 new interface tests
+and 57 existing focused tests pass. The large PRIMARY capsule stays ignored.
+
+AUX extends actual-history truth to all609 four-actor visits:105 WDL-fork visits
+and19 inferior recorded actions, versus the earlier two neutral price examples.
+All5364 learner D2/D4/D6 calls complete. Positive-price magnitude is useful at
+one history, with canonical ties separating B/A=1 from strictly safe B/A=2.
+D4 repairs three D2 mistakes; D6 adds rank progress but no WDL quality here and
+pays more nodes. These are finite conditional action results, not actual game
+win rates, independent samples or learned-price gains.
+
+The new five-actor observer stops at its original1800-second allowance:145/260
+visits have labels,115 stay unresolved. All1904 public D2/D4 price-cell calls
+on136/244 histories complete; B/A=1.5 improves5/2 histories over1 with no worse
+choices in that subset. Whole-source bounds crosszero because108 histories are
+unmeasured. Old opening1M/52-history/positive-receipt caps and caller-UNKNOWN
+outcomes stay unchanged. No training or new physical game is run.
+
+The compact capsule ships all7268 query receipts,20 actual all-defense win trees,
+source text and closed work intervals. Default verification replays9168 proof
+nodes, two corrupted-proof controls,1165 literal price nodes, a2298-state/9510-edge
+safe-draw closure, six public witness calls and ten canonical consumer calls.
+Full graph/history-WDL census claims retain their local-recomputation limits.
+An initial verifier correctly rejects a historical-FLOOR/intervention-action
+binding error; a separate154-node proof binds the actual price intervention.
+No original proof or experiment is rewritten, and the failure log is retained.
+
+Chat direction1792671096 remains direct user authority. Claude1792673373 is read
+and adopted for scoped post-hoc truth/cost separation; forward generation,
+predictions, M0 screening and scale calibration remain PRIMARY's work. No Chat
+reading/adoption of this delivery is assumed. Old SEND_UNCERTAIN is not resent.
+The existing ACTIVE60-minute cadence and writer/stop boundaries are unchanged.
+
+Session867cb627-1cba-46ba-ba5e-ed5c00ce3e6b, UTC origin2026-10-22T14:03:46.554722,
+confirms4420.47006 seconds (73.67 minutes) of effective research, excluding final
+administrative delivery. Next consume PRIMARY's committed canonical trajectories;
+backups use existing PV gradients/ranks without new queries or old-cap refill.
+Report: [Natural decision mechanisms](../research/LEAPER_NATURAL_DECISION_MECHANISMS_20261022.md).
