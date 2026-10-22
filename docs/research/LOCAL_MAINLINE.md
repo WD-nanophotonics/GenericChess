@@ -1,70 +1,62 @@
 # DEV_AUX current research
 
-The direct Leaper instruction governs. Only DEV_AUX/sidemission writes.
-PRIMARY owns production-generator quality,opponent/resource campaigns,integration
-and defaults. No parallel engine,new worker or schedule change.
+Latest direct user authority: LEAPER_INVERSE_DESIGN_DIRECTION.md,comment
+1792671096.377209 endorsed in this chat. PRIMARY owns orbit encoding/generation,
+openings andcheap Static-ABP/Random/FLOOR screens. DEV_AUX consumes committed
+frozen rules/records for exact/bounded truth,material/depth/tie andlearning
+mechanisms. No duplicate generator,defaults,workers or schedule changes.
 
-Earlier execution uses shared sandbox291f2c3b169992d451743f4babf314ca3a26776f.
-Latest published baseline55abf3de22f20ac03eb07b5260284466173a3264 has identical
-shared package/tests;its inactive-feature/default-coefficient clarification is
-reused in own LOCAL_AGENT.md. No PRIMARY research task/state is imported.
-
-Current report: LEAPER_TRANSFER_AND_TERMINAL_FEEDBACK_20261022.md.
-Selected evidence: data/leaper_transfer_terminal_feedback_20261022.json.
-Prior reports,models,trajectories,caps,failures and UNKNOWNs remain retained.
+Current report: LEAPER_PRIMARY_TRUTH_AND_PRICE_EXPOSURE_20261022.md.
+Evidence: data/leaper_primary_AB_truth_20261022/{manifest.json,evidence.json.gz,verify.py}.
+Shared infrastructure remains sandbox55abf3de22f20ac03eb07b5260284466173a3264;
+PRIMARY source291f2c3b169992d451743f4babf314ca3a26776f package/tests unchanged.
+Own learner/observer differences stay scoped. Old reports/data/caps/failures
+remain historical;nativeABA closed before this direction transition.
 
 ## Findings and decisions
 
-- In211exact matching training histories,the WIN action has zero B/C gradient.
-  The139 DRAW choices include87actualwins against RNG;those victories contribute
-  -.7625390644 to B+C through this root origin,all actual-return component and
-  zero bootstrap correction. This is fixed-trajectory update algebra,not a new
-  MC learner or proof of full on-policy dynamics. Four UNKNOWN episodes remain.
-- Literal151-node Core trees yield D2 WIN=1,DRAW=1-C-max(B,0);D4 WIN=max(1,B),
-  DRAW=-B+max(0,1-C). Two strict controls show D4 can repair OR introduce a WDL
-  error. Both individual B/C resets win;the actual combined endpoint draws.
-  Five boundary crossings start at episode2660;no convergence claim.
-- The180s short transfer closes858/992admissible slots,134missing,plusfour
-  counterfactual replay rejections. Target51ongoing/36unique paths have no
-  price effects. No refill. Four unsaved intervention searches remain unavailable.
-- Natural reuse closes at2700.001s:3698/4096prefixes,398missing;25628durable
-  receipts andthree unavailable partial calls. Target860valid includes852
-  ongoing;2291illegal/547earlier-terminal histories have no full-prefix target
-  quantity. Completed target changes0D2/1D4 actions,zero WDL effects. Missing
-  source completion bounds crosszero;no whole-panel or population gain claim.
-- Source-compatible target histories omit real target opportunities:ABA80 needs
-  a vertical A move illegal for ABC's C. Actual transferredB D4 improves LOSS
-  to DRAW there. First8policy-selected mechanisms retain7WDL-neutral changes.
-- Complete94902fresh ABA roots have1542D2/1326D4interior support changes.
-  LowB improves64roots at each depth but worsens244/104;whole-domain ideal
-  mean error rises250/142353 D2 and8/142353 D4. These are two frozen chambers,
-  not intrinsic prices,optima,natural frequencies or public win rates.
-- The SAME600s block finishes1476/2424actual BFS histories,948missing;63root
-  labels differ from fresh history. Completed D4 difference iszero but bounds
-  remain +/-79/202. This block is CLOSED;do not resume or refill it.
-- Two King samePosition aliases change WDL but retain common optimal actions;
-  they do not prove incompatible policies. Legal C-to-A replacement of the old
-  D2 obstruction changes DRAW/3moves to LOSS/one move,not a price rescue.
-
-69focused tests pass. Selected packet alone verifies6WINproofs/71Core nodes,
-151horizon-tree nodes and episode2929's literal game/PVs/update. Fullrawrun
-aggregates are locally checked;unshipped raw data is not remotely replayed.
+- NativeABA256queries/47.919s:twoD4changes,oneLOSS->DRAW alreadyknownABA80;
+  no independent replication. D2nochange. Old64prefixes/labels reused.
+- PRIMARY64ABgames replay finaldigests:3968visits/3855histories/2811positions;
+  28D1price-sensitivevisits/26histories. No independence claim.
+- 1444twoAnchorvisits structurallyDRAW underallpolicies/history. Eight <=3actor
+  closures77710states give2697structuraldraw/2784visits;historylabels2701DRAW,
+  44WIN/39LOSS.34true-WDLforks;9actualerrors,allRNG.
+- Repeat4/count3/128clock lemma isrestricted tothese plainremovalrules.
+  96newclock fullCorecontrols/614463nodes match. OriginalUNKNOWN unchanged.
+  83actual winningstrategies/1847Core nodes replay.
+- OneordinaryB gives pure-material leaves -B/0/+B:positive magnitudes preserve
+  complete-minimax order. PositiveB probes noerrors/choicechanges;zeroB gives
+  6D2/4D4errors.271/272receipts;firstpaidqueryunavailable,notrefilled.
+- Bare2Mnode/1665.342s assessment CLOSED:179/208rows,29absent,manypartial,
+  no certifiedfork. Separate exact-endgame assessor493.053s provesforks at
+  2sensitive+1invariant histories;not a playerpatch or measuredspeedup.
+- Twooriginal4actorforks allDRAWactions. Freshclosures8109/53668roots have
+  D4priceforks1/10440,but0four-profile WDL-qualitydifferences. StaticD1ideal
+  uniformtieerrorsum4/53668,D2/D4zero;WINrank1. Conditionalfresh scope only.
+- Publicunder60KiBpacket replays83proofs/1847nodes+2496twoKpositions/9216edges;
+  2negativeproofcontrols reject.140focusedtests pass across setuprepair;
+  192literalCorechecks verifyfreshDP. Completeaggregate reruns remain local.
 
 ## Next executable research
 
-Main: Does B transfer on target-native ABA experience? | Reuse existing ABA64
-prefixes/labels and frozen prior/final B at D2/D4 | native action/WDL contrasts,
-all duplicates/terminals retained |180s,no graph/training or oldslotfill.
-Backup1: Which actor inventories carry genuine price opportunities? | Stratify
-closed fresh changed-root rows by existing graph inventory | sensitivity versus
-exact WDL-quality improvement/harm counts |120s,no newlabel/grid/graph.
-Backup2: Do native material-sensitive roots expose a useful B gradient? | Join
-old ABA query PV features to frozen native labels | gradient/support/WDL joint
-counts with historical source scope |120s,no training or oracle-selected starts.
+Main: Which canonical rules expose useful natural material decisions? |
+Read latest PRIMARY committed frozenmanifest/records/costs;replay a bounded own
+truth subset withdeclared repetition/clock guards;otherwise beginBackup1 |
+per-rule/fullhistory exposure,truthbounds/sourceSHA |600s initialobserver,
+no generator/screening duplication or oracle-selected training starts.
 
-## Recovery
+Backup1: Can B drift without policy benefit yet change paid search work? |
+Join existing271positive-price PV/gradient/node receipts byhistory/depth |
+nonzero-gradient,choice/value/work contrasts andmissing-slotqualification |
+120s posthoc,no newqueries/training or missingreceipt refill.
 
-Read memo,role/stops,doctor,latest committed infrastructure and new Chat/Claude.
-Preserve active UUID/origin/confirmed work;no second writer. Only sidemission
-publishes. Before Slack,push and verify full remote SHA;old SEND_UNCERTAIN is
-not resent. Patrol remains ACTIVE every60minutes;no scheduler mutation.
+Backup2: What do incomplete price-sensitive labels actually bound? |
+Join frozen52manifest,bare/assisted intervals andoldD1profile supports |
+pairwise quality/completionbounds,separatingforkfrompricegain |
+120s posthoc,no newlabel/graph/grid or cappedbatch continuation.
+
+Recovery: readmemo,role/stops,doctor,latestcommitted infrastructure/newChat.
+Session.json owns UUID/origin/confirmedwork;no secondwriter. Only sidemission
+publishes;fullremoteSHA beforeSlack. SEND_UNCERTAIN notresent. Patrol remains
+ACTIVE60minutes;no schedule change without directuserrequest.

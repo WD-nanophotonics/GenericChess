@@ -1,5 +1,21 @@
 # GenericChess local research policy
 
+## Direct user direction — 2026-10-22, latest ChatGPT comment
+
+The user explicitly endorses the latest project ChatGPT comment as the new
+direction after current bounded work closes. Its full project-only text is in
+docs/research/LEAPER_INVERSE_DESIGN_DIRECTION.md (comment1792671096.377209).
+PRIMARY owns the five-orbit rule encoding/canonicalization,legal openings and
+cheap Static-ABP/Random/FLOOR performance screen. DEV_AUX consumes PRIMARY's
+committed frozen rules/full trajectories for reachable/closed-deadzone and
+history-WDL truth,actual useful-decision exposure,parameter/depth/tie mechanisms,
+then learning/prior/transfer only where useful signals exist. Do not duplicate
+the generator,screening campaign or production defaults. Rules/terminal/cost
+and UNKNOWN remain explicit;oracle labels never select experiential training
+starts. Existing old caps,role/writer,publication,session and cadence rules stay.
+The native ABA256-query task closed before this transition;old optional backups
+are historical rather than the new work queue. No new worker or automation.
+
 ## Direct user cadence update — 2026-10-22
 
 The user explicitly changed both existing DEV_AUX and PRIMARY patrols to every
