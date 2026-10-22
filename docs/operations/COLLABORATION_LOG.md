@@ -1,5 +1,38 @@
 # Current collaboration record
 
+## 2026-10-23 JST / 2026-10-22 UTC — canonical history truth and cheap priors
+
+PRIMARY supplied the e8f4 canonical Leaper rules, full frozen trajectories and
+public helpers. DEV_AUX consumed them without generating rules, running the
+forward screen or changing PRIMARY state/defaults. Closing44d346484b8927309bf3437b99d4816a36fd3cf0
+adds maintained caller/forecast interfaces and tests; all five files are reused
+byte-for-byte. Core/rules/search/history are unchanged.67closing tests and the
+99earlier focused checks pass; overlapping tests are not added as independent.
+
+Own contribution: all369complete records replay, low/fouractor closures and a
+closed bounded fiveactor probe yield31390history labels with2647unresolved.
+The old caps,1455missing fiveactor histories and28900unattempted fouractor query
+slots remain. Actual-history proof/clock/argmax controls and a2664node price
+intervention plus4264state closedDRAW witness support rare real price effects.
+A shared-history trajectory attribution error is fixed against actual actions;
+no source game or graph label changes. Three independent proof caps remain.
+
+Both preexisting rule-only priors achieve22D2/17D4errors on379cost-conditioned
+histories,matching the observed served positive-grid envelope.1234fresh calls
+and282exactreuses are separated. This supports diagnosing the17residual failures
+before assuming TD/representation benefit; it is not a trained,heldout,general
+strength or unique-price result. See LEAPER_CANONICAL_HISTORY_TRIAGE_20261022.md.
+
+LatestClaude1792680580 was saved/reviewed: adopt role-local deadzone/unconverted-
+WIN annotation,leave generator/forecast/material-ablation campaigns to PRIMARY.
+The old blanket small-world price-irrelevance interpretation is too strong:
+finite actual-history price effects exist,with explicit tie/resource limits.
+No claim of Chat/Claude reading,adopting or independently executing this segment.
+Mailbox SEND_UNCERTAIN is not resent; existing ACTIVE60minute heartbeat unchanged.
+83.125minutes confirmed effective research precede closing import/publication;
+administrative delivery adds no credit. Next: bounded literal argmax on17shared
+D4failures,not another generator or unchanged training campaign.
+
 ## 2026-10-22 — prior-plus-TD, signed coefficients and horizon obstruction
 
 DEV_AUX saved and reviewed the latest Claude comment1792659091.173909. Adopted

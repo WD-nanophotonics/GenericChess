@@ -84,3 +84,27 @@ def test_material_preflight_requires_frozen_full_history_inputs(tmp_path):
     with pytest.raises(ValueError,match='complete-history'):
         preflight(d)
     assert not(d/'preflight.json').exists(),'failure must precede any cost query or misleading successful receipt'
+
+@pytest.mark.parametrize('material,expected',[(False,12),(True,8)])
+def test_prepared_plan_counts_actual_codes_not_fixed_ten(tmp_path,monkeypatch,material,expected):
+    import scripts.leaper_design as L
+    monkeypatch.setattr(L,'PAIRS',((1,2),(1,3)))
+    d=tmp_path/'two_codes';L.prepare(d,material_ablation=material)
+    assert L.load(d/'registration.json')['planned_games']==expected
+
+def test_run_uses_frozen_input_count_not_process_default_pairs(tmp_path,monkeypatch):
+    import scripts.leaper_design as L
+    original=L.PAIRS
+    monkeypatch.setattr(L,'PAIRS',((1,2),(1,3)))
+    d=tmp_path/'two_codes';L.prepare(d)
+    inp=L.load(d/'inputs.json')
+    for w in inp['worlds']:w['status']='setup_failed'
+    L.write_record(d/'inputs.json',inp)
+    reg=L.load(d/'registration.json');reg['input_sha256']=L.sha(d/'inputs.json');L.write_record(d/'registration.json',reg)
+    L.write_record(d/'preflight.json',{'status':'CLOSED','missing':[],'seconds':0,'rows':[{'seconds':.001}],'cost_gate_passed':True})
+    monkeypatch.setattr(L,'PAIRS',original)
+    L.run(d)
+    result=L.load(d/'results.json')
+    assert len(result['slots'])==12
+    assert all(s['status']=='setup_failed' for s in result['slots'])
+    assert result['queries']==0
