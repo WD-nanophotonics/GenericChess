@@ -361,3 +361,24 @@ def test_fresh_setup_experience_uses_public_setup_identity_and_empty_history(tmp
         assert replay.state.ply_count==e['plies']
     with pytest.raises(ValueError,match='no played openings'):
         experiential_probe(tmp_path/'mixed',opening_count=1,initial_positions=boards)
+
+
+@pytest.mark.parametrize('depth',[1,2])
+def test_selfplay_uses_same_episode_frozen_model_on_both_sides(tmp_path,depth):
+    import json
+    from scripts.leaper_retrograde import experiential_probe
+    folder=tmp_path/'selfplay'
+    result=experiential_probe(folder,episodes=4,lineup=('A','B'),depth=depth,
+        initial_weights=[1.,.8,1.,1.],selfplay=True)
+    assert result['missing']==0
+    assert result['config']['foe_policy']==f'episode-frozen adaptive D{depth} selfplay'
+    assert result['config']['foe_depth']==depth
+    queries=[json.loads(x)for x in(folder/'queries.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert queries and {q['actor']for q in queries}=={0,1}
+    assert all(q['search_weights']==q['candidate_weights']for q in queries)
+    assert all(q['completed_depth']==depth for q in queries)
+    assert any(q['actor']!=q['color']and q['search_weights'][1]!=1. for q in queries)
+    rows=[json.loads(x)for x in(folder/'episodes.jsonl').read_text(encoding='utf-8').splitlines()]
+    assert all(rows[i]['before_weights']==rows[i-1]['weights']for i in range(1,len(rows)))
+    with pytest.raises(ValueError,match='cannot use a random foe'):
+        experiential_probe(tmp_path/'invalid-selfplay',selfplay=True,random_foe_seed=1)

@@ -524,7 +524,8 @@ def paired_history_study(output, *, caches, prefixes, models, depths=(1,2,3),
 
 def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening_seed=20261022,
                        random_foe_seed=None, initial_weights=None,
-                       lineup=('A','B','C'), c_axis='horizontal', initial_positions=None):
+                       lineup=('A','B','C'), c_axis='horizontal', initial_positions=None,
+                       selfplay=False):
     """One declared coexistence experiential check, with NO label interface.
 
     The default fresh root, or explicit sampled openings and opponent policies,
@@ -533,12 +534,16 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     weights change only the learner's starting point; the foe stays uniform.
     Explicit fresh initial boards use ordinary validated setup options. They
     cannot be combined with played random openings or imported old histories.
+    Optional selfplay shares the current model on both sides, frozen during
+    each episode and updated once afterwards; the default foe stays uniform.
     """
     from dataclasses import asdict
     import random
     from generic_chess.learning.incremental import FixedScaleSessionEnv,Model,TDLeafEpisode,play_episode,BudgetEnd
     from generic_chess.session.session import GameSession
     from scripts.leaper_microgames import sampled_openings,session_at
+    if not isinstance(selfplay,bool) or (selfplay and random_foe_seed is not None):
+        raise ValueError('selfplay is boolean and cannot use a random foe')
     output=Path(output);output.mkdir(parents=True,exist_ok=False);began=time.perf_counter()
     rules=coexistence_rules(lineup,horizon=2*9**9+1,c_axis=c_axis)
     setups=[None]
@@ -557,8 +562,8 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     weights=[1.]*len(env.names)if initial_weights is None else list(initial_weights)
     if len(weights)!=len(env.names)or weights[0]!=1.:
         raise ValueError('initial weights must match environment names and fixed A=1')
-    model=Model(weights);foe=Model([1.]*len(env.names))
-    config=dict(episodes=episodes,candidate_depth=depth,foe_depth=2,initial=model.weights,
+    model=Model(weights);foe=model if selfplay else Model([1.]*len(env.names))
+    config=dict(episodes=episodes,candidate_depth=depth,foe_depth=depth if selfplay else 2,initial=model.weights,
         names=env.names,eta=.05,lam=.95,scale=10,root='one symmetric fresh coexistence start',
         lineup=lineup,c_axis=c_axis,
         colors='episode%2',query_nodes=8192,game_nodes=524288,game_horizon=64,
@@ -568,7 +573,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
     config.update(opening_count=opening_count,opening_seed=opening_seed,
         opening_selection='Uniform legal random walks;target lengths cycle1..6;terminal/duplicate paths retained;NO oracle or search selection',
         opening_paths=[[action_to_dict(a)for a in path]for path in paths])
-    config.update(foe_policy='uniform D2'if random_foe_seed is None else'uniform legal RNG,zero search nodes',
+    config.update(foe_policy=f'episode-frozen adaptive D{depth} selfplay'if selfplay else'uniform D2'if random_foe_seed is None else'uniform legal RNG,zero search nodes',
         random_foe_seed=random_foe_seed)
     if opening_count:config['root']='Declared world actual histories after fixed random legal openings;not fresh Position resets'
     if initial_positions is not None:
@@ -607,7 +612,7 @@ def experiential_probe(output, *, episodes=32, depth=2, opening_count=0, opening
                         search_weights=list((model if actor==i%2 else foe).weights),**asdict(receipt))
                     queries.append(row);qout.write(json.dumps(row,default=str)+'\n');qout.flush()
                 result=play_episode(env,model,opponent=foe,learner=TDLeafEpisode(),learner_color=i%2,
-                    horizon=64,depth=depth,opponent_depth=2,query_nodes=8192,max_nodes=524288,
+                    horizon=64,depth=depth,opponent_depth=depth if selfplay else 2,query_nodes=8192,max_nodes=524288,
                     seconds=10,cancel=guard,on_query=observe,search_backend='mainline',
                     opponent_policy=None if rng is None else random_foe)
                 row=dict(episode=i,color=i%2,before_weights=before,weights=list(model.weights),

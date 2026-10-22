@@ -1,76 +1,95 @@
 # DEV_AUX current research
 
-## Scope and committed infrastructure
+## Authority and infrastructure
 
-Direct Leaper research governs: conditional contribution, useful search
-parameters and exact strategic value differ. No intrinsic/unique/nonnegative
-prices, additivity, convergence or UNKNOWN imputation is assumed. Oracle
-labels stay outside experiential training.
+The direct Leaper instruction governs. Conditional contribution, useful search
+parameters, predictive value and exact strategic value are separate objects.
+No intrinsic price, additivity, unique optimum or convergence is assumed.
+Oracle labels stay outside experiential training.
 
-Pinned sandbox:f92d739dec3b7454c58fc2d7709e7233156633e6. Delta from559aa80d
-is research/operations documents only;shared infrastructure/tests unchanged.
-Reuse GameSession/Core/publicq0;only the two existing AUX learner modules are
-additional. New report:LEAPER_OPPONENT_RETURNS_AND_PRICE_OBSTRUCTIONS_20261022.md;
-compactdata leaper_opponent_returns_20261022.json. Old frozen runs stay closed.
+Pinned sandbox: 60e1b23c87002f81f19994bd68f9ffa20437a57b.
+Its completed post-proof controls and semantic cost-probe changes are reused.
+All 238 shared package files match. Four documented test exceptions preserve
+own-role session/Slack controls and historical fixtures; no other role is adopted.
+Rules, GameSession/Core and public q0 remain shared. The two existing learner
+modules are the only package additions.
 
-## Current scientific results
+Current report:
+LEAPER_EXPERIENCE_AND_VALUE_INTERFERENCE_20261022.md.
+Compact evidence: data/leaper_experience_value_20261022.json.
+Prior reports, old caps, trajectories, failures and UNKNOWN remain intact.
 
-* Equal optimal-WDL actions need not have equal opponent returns. At retained
-  ABA prefix B0a1-b2,forcedlow/highB actions are bothDRAW;fixedB.75D2uniformties
-  againstlegalRNG gives eventualhigh-minus-low bound[.057132,.157237].Original
-  120s/100kCore observerclosedat100k. Complete draw-only closure is a theorem
-  input,not observedH64DRAW;terminal-censored comparison remainsunresolved.
-* Six fresh320episodearms allendB>.5.1920episodes/12UNKNOWN/0missing;22359
-  queries expose120repeats ofoneBboundary,zerooptimalWDLexpectationcontrasts.
-  FixeduniformD2 is notselfplay. Nearfinals,conditionalreal16episodepathmap
-  driftsstrictlynegative;no executedfuturecrossing/convergenceclaim. New
-  fixed-resetshadowB.49/.51 also bothdriftnegative;32actualterminals,not续训.
-* On13admittedroots/fourcontrols,nonnegativeB,C cannot removeD4errors.
-  Three actualWINroots rank11/7/7 have alwayscompetitiveDRAW alternatives.
-  BUT signedB=-1/4,C=0 removes all52errors and all52publicD4calls verify.
-  Thisoracle-selectedlocalcontrol is notlearned/intrinsicnegativevalue.
-* BroadercompletefreshABA/ABC controls reject generalnegative-Badoption:
-  B=+.25 beats-.25 withC held0or1,atD2andD4 inbothworlds. Thelocal13-root
-  fix doesnotestablishgeneral representation sufficiencyortransfer. No default
-  changes. NegativeC was not required for the local fix.
-* Label-blind64candidateABsixactorfreshlayouts yield49valid/15rejects,notopped
-  up. Two98episodearms endinsamepricecell;49-rooterror rises1/3to1/2.
-  Their1587queries have12distinctboundaries butzeroWDLexpectationcontrasts.
-* ActualpublicB.25/.75,RNGfoe,49roots*2colors*96trials completes9408pairs/
-  18816games:428UNKNOWN,0missing. Conservative high-low samplebound
-  [-.044962,.046025],predeclared95percent[-.100969,.102032];noeffectwinner
-  or equivalence.1287actiondivergences at36histories allhaveequalfirstWDL;
-  110lowWIN/highDRAW vs109reverse. Fullrecords/RNGstreams replay.
-* Efficiency correction: sparse4/5ABno-mate already proved inFOUNDATION.
-  Newreachablegraphs were redundant365.636s producerwork,notnewscience or
-  separatelyaddedAgentcredit. No further oneordinaryABscaling.
-*176research+2reusedatomic tests;2116trainingrecords/38697PVs/TDupdates and18816evaluationrecords
-  replay.19trainingUNKNOWNs and428evaluationUNKNOWNs preserved. Rawlarge
-  payloads/one-offdrivers ignored. Snapshot/decimal repairs retain originals.
+## Results and their limits
 
-## Executable continuation
+* ABC318 explains the signed local repair's failure at C=0: negative B selects
+  an exact LOSS, positive B selects DRAW. Ten retained public queries and an
+  actual all-defense rank-11 opponent WIN certificate verify the mechanism.
+  It is not unrestricted material impossibility: B=-1/4 and 1/4<C<1 solve the
+  old52 plus this root at D4. All53 public queries at C=1/2 are optimal.
+  One initial action/label-order mistake is retained and repaired within cap.
+* Three frozen sampling protocols complete 2352 games, zero missing. Their
+  1200-second history observer covers18563/18957 queries;394 remain unprocessed.
+  No observed B=.25/.75 uniform-tie WDL contrast is found in that prefix.
+  An independent both-random behavior control has one such history/3955 queries;
+  actual public low/high choices there are both DRAW. Boundaries are not gains.
+* There are16 strategic fresh AB-six-actor cases among4880 ongoing positions
+  in the existing component, or8 after color normalization. Actual initial
+  admission accepts1888/2480 candidates;8 accepted starts are strategic.
+  The old49 pool contains none. A new frozen512-candidate set has388 accepted,
+  124 rejected and3 strategic starts, without replacement or label selection.
+* Two new776-episode runs on all388 starts complete within their own120s/2M
+  caps. RNG ends B=.861857003; actual episode-frozen adaptiveD2 selfplay ends
+  B=.979726220. Ten UNKNOWN and all original budgets survive. Complete
+  information analysis covers11760 learner queries, with4/3 strategic histories.
+* At the three selfplay strategic queries, the chosen PV has zero B gradient.
+  Frozen-gradient credit from draw-only states is negative and dominates each
+  net update. An explicitly oracle-supervised diagnostic fit to these DRAW
+  features has its proved optimum in(0,.5), which costs8 more ideal D2 errors
+  on the intact benchmark than(.5,1). This is not a TD fixed-point or ablation.
+* Both trained models, and the already frozen untrainedB=.75 control, match
+  every action/PV/node count on388 public starts. Relative to unitB=1,78 moves
+  change but only one WDL decision improves DRAW to WIN. Its actual all-defense
+  certificate verifies the move; no benefit over the untrained control is shown.
+  The nine material leaf forms prove ideal action-set equivalence throughout
+  (.5,1) under stated AB/capture-removal/terminal-dominance assumptions.
+* Complete ideal B curves on4880 intact roots prefer different cells by depth:
+  D1 (0,1),D2 (.5,1),D4 (1,2), with minimum expected errors168,152/3,8.
+  These are exposed ideal tie errors, not actual game win rates.
+* All4688 new records/47710 PVs/25376 RNG choices and1552 actual TD updates replay.
+  All384 original UNKNOWN remain. This does not fill the394 missing WDL checks.
+  154 relevant tests and30 actual mainline search tests pass; Qt-free fixture
+  extraction avoids optional UI import without mocking product search.
 
-Main: Why do signed local fixes fail broader decision quality? | inspect the
-closed signedfactorial rows and the already admittedABCroot318 inventory
-(artifacts/leaper-signed-failure-inventory-20261022/summary.json),holdingCprice/depth/history fixed | one all-defense/material-leaf mechanism
-orUNKNOWN | boundedposthocobserver first,no newtraining/default/oldcapreset;
-separate Bsign from simultaneous Cchanges and exposedworlddistributions.
+## Next executable research
 
-Backup1: Does a same-inventory geometry control change useful signed regions? |
-reuse admittedH/V13rootinputs and closed[−4,4]^2cells for a matched root-level
-counterfactual,including boundaries | scoped region/witness or negative result |
-newboundedalgebra only,not expandedgames or claiming independentheldout.
+Main: Can a label-blind inventory-conditioned representation reduce the measured
+DRAW-fit/decision tradeoff? | read saved dead-feature histograms and the new
+inventory-conditioning feasibility result; specify a minimal shadow comparison
+before any code/training | falsifiable loss-versus-action criterion and bounded
+cost | no oracle filter, phase patch or automatic feature adoption.
 
-Backup2: Can the conditional drift explanation extend belowB=.5? | inspect
-32fixed-resetshadowPVs and four frozen-path TD contrasts before anynewrun |
-a changed-premise piecewisefield hypothesis | no continuation/topup ofclosed
-320arms,no genericTD convergence or uniquepriceclaim.
+Backup1: Which matched C-geometry restrictions genuinely differ? | reuse closed
+H/V trees for a second inventory-matched root after H137's safe-set inclusion |
+a finite parameter-region witness or negative result | no new games, universal
+price claim or old arrangement budget reset.
+
+Backup2: How much does the old forward component restrict quantity conclusions? |
+inspect the retained admitted A+B-versus-bare-K mate-in-one control outside it |
+one explicit scope correction or actual-history bridge | do not expand old
+graphs/caps or use constructed diagnostic roots as experiential training starts.
+
+The first Main feasibility step is already begun: six of16 ordinary-inventory
+classes mix ongoing draw-only and non-draw-only positions. Inventory alone is
+not an exact dead detector. An admitted fresh mate-in-one root outside the old
+component also prevents treating component counts as universal layout facts.
+No new representation is implemented.
 
 ## Recovery and delivery
 
-OwnDEV_AUX/sidemission. Readmemo/role/stops,doctor,newChat/Claude,latestcommitted
-mainline first. Preserve activeUUID/origin/confirmedwork;normal60minutes,toward90.
-ACTIVE90minsamechat unchanged. Push andverify fullorigin/sidemissionSHA before
-Slack. OldSEND_UNCERTAINneverresent. Preserveallcaps/models/failures/UNKNOWN.
-No Agent/worker/Goal/timer orretired audits.>=120minruns need explicitChat
-scope/budgetassessment;shorterboundedworkauthorized. No other-role writes.
+Own DEV_AUX/sidemission only. Read memo, role/stops, doctor, new Chat/Claude and
+latest committed sandbox before research. Preserve active UUID/origin/confirmed
+work. Normal segments require60 effective minutes, proceeding toward90.
+Existing ACTIVE90-minute recurrence is unchanged. No new Agent, worker, Goal or
+timer; >=120-minute runs need explicit Chat scope/budget assessment.
+Push and verify full origin/sidemission SHA before Slack. Historical
+SEND_UNCERTAIN is not resent. Raw journals/graphs/one-off drivers stay ignored.

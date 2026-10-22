@@ -623,3 +623,47 @@ to explain the gap. Its inventory is not yet a completed mechanism explanation.
 Report:LEAPER_OPPONENT_RETURNS_AND_PRICE_OBSTRUCTIONS_20261022.md and compact
 leaper_opponent_returns_20261022.json. ExistingACTIVE90minute recurrence and
 same-chat binding were preserved without a scheduler mutation.
+
+
+## DEV_AUX — 2026-10-22: experience and value interference
+
+PRIMARY contribution reused: sandbox 60e1b23c87002f81f19994bd68f9ffa20437a57b
+adds post-proof cancellation/deadline reporting and tested semantic cost-probe
+controls. DEV_AUX imports the completed code/tests; all238 shared package files
+match. PRIMARY/DeepSeek state and work are not adopted.
+
+Chat1792630735.504529 and Claude1792630135.050469 support label-blind experience
+information diagnosis before more training. Adopt the comparison and complete
+history/UNKNOWN distinctions. Their reviewed d485 revision predates the already
+published c30 work: the closed320 arms are not repeated or extended. Equal
+optimal WDL does not imply equal RNG returns. Larger pools, reset heuristics and
+selfplay are tested hypotheses, not guaranteed information gains.
+
+DEV_AUX closes3136 prospective fixed-policy games, then1552 new bounded training
+games on388 starts from512 frozen candidates. All4688 records/47710 PVs/25376 RNG
+choices and1552 actual TD updates replay. All384 UNKNOWN survive. The first
+1200-second WDL observer stops with394 queries unprocessed; this failure remains
+and is not filled by semantic replay. Its redundant closure attractors are a
+cost error, corrected only in subsequent independently bounded observers.
+
+RNG and adaptive episode-frozen selfplay end with B=.861857003/.979726220. Both
+match untrainedB=.75 at all388 public starts, including PVs/nodes. Their sole
+WDL repair over exact unitB=1 has an actual all-defense certificate; no training
+advantage over the cheap control or terminal-strength gain is established.
+Frozen gradient-origin analysis locates most downward update in draw-only
+states, while three selfplay strategic queries have zero B gradient. An explicit
+oracle-supervised control proves a DRAW-value-fit optimum below.5 can conflict
+with the better shallow action cell; no oracle filtering enters training.
+
+The prior signed-price mechanism is explained by actual PVs/all-defense WIN.
+C-price freedom repairs all53 selected roots; a failed initial action/label
+ordering result is retained and repaired within the original allowance. Six
+ordinary-inventory classes mix ongoing dead/outside states; a newly admitted
+mate-in-one root outside the old component prevents universal inventory claims.
+No new evaluator or default is selected.184 relevant tests pass. Compact report:
+[Experience and value interference](../research/LEAPER_EXPERIENCE_AND_VALUE_INTERFERENCE_20261022.md).
+Raw journals/one-off drivers stay ignored; the compact JSON is about200KB.
+
+The old uncertain Slack report is not resent. No Chat reading/execution of this
+new work is claimed. Own sidemission publication and full remote-SHA verification
+follow review; existing90-minute recurrence and role stops/caps remain unchanged.
