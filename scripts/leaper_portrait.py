@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse,json,random,time
 from collections import Counter,defaultdict
 from pathlib import Path
+from generic_chess.session.serialization import deserialize_game_record
 from scripts.leaper_design import load,write_record,record_value,compile_rule,ruleset_from_dict,GameSession,state_sha,match_action,legal_successors
 
 def role_summary(planned, role):
@@ -17,7 +18,7 @@ def analyze(d):
     inputs=load(d/'inputs.json');rows=[];summ=[]
     for slot in r['slots']:
         if slot['status']!='finished':continue
-        row=load(d/slot['receipt']);c=compile_rule(ruleset_from_dict(inputs['worlds'][slot['world']]['rule']));s=GameSession(c)
+        row=load(d/slot['receipt']);c=compile_rule(ruleset_from_dict(inputs['worlds'][slot['world']]['rule']));s=GameSession.replay(c,deserialize_game_record(json.dumps(row['initial_record'])))
         captures={0:[],1:[]};counts=[];positions=set();states=set();depths=Counter();reasons=Counter();sources=Counter();nodes=qnodes=0;win_available=win_chosen=0;danger_chosen=safe_available=0;ab_roots=0;diag_seconds=0.0
         for q in row['queries']:
             assert q['state_sha256']==state_sha(s.state);states.add(q['state_sha256'])
@@ -57,7 +58,7 @@ def analyze(d):
             low=sum(x['utility'][0] for x in planned)/n;high=sum(x['utility'][1] for x in planned)/n
             summ.append({'world':w,'masks':inputs['worlds'][w]['masks'],'pair':pair,'planned':n,'retained':len(members),'signed_utility_bounds':[low,high],'known_outcomes':dict(known),'terminals':dict(terms),'role_means':{str(a):role_summary(planned,a)['mean'] for a in (0,1)},'role_utility':{str(a):role_summary(planned,a) for a in (0,1)}})
     out={'status':'CLOSED','rows':rows,'summary':summ,'seconds':time.perf_counter()-tick,
-         'scope':'Metadata-selected fixed-opening pilot. Full state/physical-position counts distinguish repetition, not independent sample sizes. Exact immediate-win and immediate-reply witnesses use shared Core, not full WDL. No population CI, game-quality scalar, training gate or default.'}
+         'scope':'Frozen registration governs sampling. Continuation begins at retained initial_record; plies are absolute rule plies, queries/captures describe the played suffix; prefix history and rule clocks are not reset. Full state/physical-position counts distinguish repetition, not independent sample sizes. Exact immediate-win and immediate-reply witnesses use shared Core, not full WDL. No population CI, game-quality scalar, training gate or default.'}
     write_record(d/'portrait.json',out);print('PORTRAIT',len(rows),out['seconds'],flush=True)
 def verify_packet(packet):
     """Replay a published technical packet without writing/unpacking source paths."""

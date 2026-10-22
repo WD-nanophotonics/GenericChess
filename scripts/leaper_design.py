@@ -231,7 +231,7 @@ def run(d):
         if w['status']!='ready':slot['status']='setup_failed';continue
         try:
             if w['world'] not in contexts:contexts[w['world']]=compile_rule(ruleset_from_dict(w['rule']))
-            c=contexts[w['world']];s=GameSession(c);role=slot['role'];pols={role:reg['pairs'][slot['pair']][0],1-role:reg['pairs'][slot['pair']][1]}
+            c=contexts[w['world']];s=GameSession.replay(c,deserialize_game_record(json.dumps(w['initial_record'])));role=slot['role'];pols={role:reg['pairs'][slot['pair']][0],1-role:reg['pairs'][slot['pair']][1]}
             # Same role/rep streams across controller pairs; prefix divergence changes their use.
             seeds=actor_seeds(reg,w,slot);rng={a:random.Random(seeds[a]) for a in (0,1)}
             players={a:make_player(c,search_spec(reg,pols[a])[0],w) for a in (0,1) if pols[a] not in ('RNG','FLOOR')}
@@ -262,7 +262,9 @@ def qualify(d):
     for slot in results['slots']:
         if slot['status']!='finished':continue
         row=load(d/slot['receipt']);c=compile_rule(ruleset_from_dict(inputs['worlds'][slot['world']]['rule']));s=GameSession.replay(c,deserialize_game_record(json.dumps(row['initial_record'])))
-        final_record=deserialize_game_record(json.dumps(row['final_record']));actions=final_record.actions
+        final_record=deserialize_game_record(json.dumps(row['final_record']));prefix=s.to_record().actions
+        assert final_record.actions[:len(prefix)]==prefix, 'final record lost initial history'
+        actions=final_record.actions[len(prefix):]
         for q,a in zip(row['queries'],actions,strict=True):
             assert q['state_sha256']==state_sha(s.state);assert q['action']==record_value(a);assert a in s.legal_actions();checks+=1
             dec=q.get('decision')

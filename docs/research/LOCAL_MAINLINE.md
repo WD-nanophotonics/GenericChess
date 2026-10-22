@@ -458,17 +458,36 @@ DEFERRED/0fitness; the cheaper8-game2048rung closed under900s. Source rebinding
 was before0fitness with unchangedrunAST. D4 metadata now preserves seed_world
 (code index) across flat representation worlds; original streams are not changed.
 
-Main: Does cheapStaticAB512 directly beatFLOOR on ALLfourlowdegreecontrols,
-beforejoining theirbudget/materialportraitwiththehighdegreecodes? | run
-`.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
-.local_agent/leaper-lowdegree-floor-20261022-1542` |32planned/bothroles/4FLOOR
-streams/fullCore/costs/UNKNOWN | closeall32or900cap;no refill. Prepared0fitness;
-expected600s;8exactoldfull-rootcostreturns,0newcalls. Cold projection258.6s,
-observedlate-max3316.2s and empiricalmean estimate are separately retained.
-This fills a missing forward axis; it is not an optimizer or WDL gate.
+[LEAPER_OPENING_RESPONSE_20261023.md](LEAPER_OPENING_RESPONSE_20261023.md)
+closes all224NEWplannedgames,18539turns and127NEWcostcalls. Original4x4cheap
+AB/FLOOR=11/32;shared2plyprefix=15/64;prefix2048/512=1/16;5x5cheapaxis=7/32;
+first4prefixStatic/M0=1/16. Allfourcode/role/costaxes remain separate;no quality
+scalar/pricefit/default. The1/3code contributes every net material gain;2/4draws
+throughout. Differentopening/profile/geometry/streamlaws are not one-factor
+causal contrasts. AllmissingUNKNOWNrules andoldernegativefindings remain.
 
-Backup1: Diagnose an actual Main source/input/caller refusal preserving its
-actual partial returns before any repair; no reset/refill/expectation patch.
-Backup2: Assess ALLfourcode/role captures, rule clocks, opponent interactions
-and cost/completion bounds; do not replace missing axes by0 or a single quality
-score. Do not duplicate AUX truth/learning/runtime work. Science OPEN.
+All128OLDroot-scoreviews identify the samefourmate-bandcodes acrossD4;
+posthocnonmateproposal contrast stays-7/48original/-11/96all8. This doesnot
+rescueold-9/64/-33/256 orproveabsenceofshortforcedwins. No oracle/AUX work.
+A realcaller discardednonemptyinitial_record;the newtest firstfails. Replay,
+suffixqualification andportraitstartnowpreservefullhistory/clocks;52related
+regressions pass. SharedCoreexport validates224games/53876PVs/6523FLOORchecks.
+Sourcecapsules/costreuse/oldoriginals are retained;no fitnessrerun orcapextension.
+
+Main: Can a NEWconnected/balancedmiddegreeproposal improveDIRECTcheapAB/FLOOR?
+| run `.venv/Scripts/python.exe -X utf8 -m scripts.leaper_design run --output
+.local_agent/leaper-connected-proposal-20261023-1752` |128planned/8uniformFIRST+
+8guided/BOTHroles/4FLOORstreams/allbounds/costs | close128or2700cap;2100expected;
+0fitness. Featurelaw[6,12]degree/bothgraphsconnected/minmax>=1/2 leaves58of310;
+allmetadataalreadyexposed. Fullinputs/priorselection/31actualrootcostcalls frozen;
+oneearlyterminalcostprefix retained. Onepositive-matescoreroot/group;no WDL or
+powerclaim. Exactprimary: guidedmeanDIRECTsignedutility minuscontrolmean over
+ALL64plannedcells/group. Reportcost/clock/role andprefitnessmate-scorestrata,
+notfastest-winoptimization. Hypothesis unproven;no sampler/learner activation.
+
+Backup1: Diagnoseactualsource/input/controllerrefusal retainingpartialreturns,
+originalregistration/source/costprovenance beforeanyrepair;noreset/refill/expectedpatch.
+Backup2: Assessproposal allplannedbounds/role/cost/capture/terminalportrait and
+compareavailableforwardaxes;do notfillmissingdimensionsorfitonequalityscalar.
+DEV_AUXtruth/learning remainsindependent;read-onlyChat/current60minpatrol unchanged.
+Science OPEN.

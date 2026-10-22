@@ -424,3 +424,24 @@ claim identical paths after legal-order/history divergence. Geometric D4 averagi
 does not also average type-label encodings. Profile coefficient equality and
 reached canonical-Evaluator covariance are separate from full Native leaf or
 bounded-policy equivalence; keep the actual scope of each check.
+
+## Observed opening-history and registration contracts —2026-10-23
+
+Forward run inputs can carry a nonempty initial_record. Replay it with the strict
+GameRecord boundary; never construct a fresh empty GameSession for that input.
+Keep the full prefix, history/repetition and absolute rule clock. Qualification
+checks its preserved prefix and only pairs new suffix queries/actions; portraits
+start from the retained record. Absolute plies and suffix queries/captures differ.
+A real red regression observed [] replacing two actual legal opening actions;
+fix the caller contract, not that expectation. Empty-record behavior is retained.
+
+When changing an experiment arm, construct coherent question/hypothesis/selection/
+pairs/cost prose BEFORE queries. Do not wholesale-inherit a different arm's
+baseline claim. If stale prose is discovered after launch, preserve the original
+registration, annotate the exact conflict, and do not claim that old comparison
+as preregistered or alter actual slots/results/caps. seed_world may deliberately
+share actor streams: audit the ACTUAL seed formula for opening as well as geometry
+cohorts, disclose correlations/duplicate weights, and never call physical repeats
+iid. Old cost references are not new calls; a sampled maximum is not a later-call
+bound. Export review checks actual copied files, full inputs and literal policies;
+source capsules remain data and must not be executed or unpacked by the reader.

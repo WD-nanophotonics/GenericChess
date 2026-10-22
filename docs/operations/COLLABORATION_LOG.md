@@ -6473,3 +6473,21 @@ documentation and publication are excluded. Final session acceptance is separate
 and is required before any completion claim.
 
 [Report and technical evidence](../research/LEAPER_PROPOSAL_AND_BUDGET_20261022.md).
+
+## 2026-10-23 PRIMARY opening-response segment
+
+Read and privately saved new ChatGPT1792687570.233769/Claude1792687833.371399
+comments plus five complete relevant threads before assessment. Adopted the
+user-confirmed multi-axis forward/inverse framework and short-mate/seed cautions;
+no outbound contact, Dot, AUX checkout/solver/learning work or new worker. Exact
+oldrootstrata remain negative; all8mate flags agree here, without WDL proof.
+PRIMARY produced224newgames/127newcostcalls andfull18539action/53876PV/6523FLOOR
+export checks. Source/input/cost/role/stream scopes are explicit. Material1/16
+andprefixresource1/16 are finite exposed results, no universal price/depth claim.
+Caller-history realred is fixed under52relatedtests; old product expectations and
+Core/defaults are unchanged. Stale inheritedFLOORcomparison prose is preserved
+and annotated, not retroactively preregistered. Openings sharestreams within-code;
+64physicalFloorrecords have56uniquehistories. No claim of independent AUX rerun.
+Next16-ruleconnectedproposal is fullyprepared/31costcalls/ZERO fitness,128planned
+games/2700cap. Priorupperdegreefailure/negativecontrols stay. Purpose report and
+compact public packet retain every actual outcome/failure/missing contract.

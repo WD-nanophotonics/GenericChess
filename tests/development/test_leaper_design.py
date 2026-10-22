@@ -157,3 +157,30 @@ def test_run_uses_frozen_input_count_not_process_default_pairs(tmp_path,monkeypa
     assert len(result['slots'])==12
     assert all(s['status']=='setup_failed' for s in result['slots'])
     assert result['queries']==0
+
+
+def test_run_preserves_frozen_nonempty_opening_history(tmp_path,monkeypatch):
+    import scripts.leaper_design as L
+    monkeypatch.setattr(L,'PAIRS',((1,2),))
+    d=tmp_path/'prefix';L.prepare(d)
+    inp=L.load(d/'inputs.json');w=inp['worlds'][0]
+    session=L.GameSession(L.compile_rule(L.ruleset_from_dict(w['rule'])))
+    for _ in range(2):session.submit(session.legal_actions()[0])
+    assert not session.state.terminal_status.is_terminal
+    w['initial_record']=L.record_value(session.to_record());w['initial_state']=L.record_value(session.state)
+    L.write_record(d/'inputs.json',inp)
+    reg=L.load(d/'registration.json');reg.update(pairs={'RNG_RNG':['RNG','RNG']},planned_games=2,caller_plies=3,input_sha256=L.sha(d/'inputs.json'))
+    L.write_record(d/'registration.json',reg)
+    L.write_record(d/'preflight.json',{'status':'CLOSED','missing':[],'seconds':0,'rows':[{'seconds':.001}],'cost_gate_passed':True})
+    L.run(d)
+    for slot in L.load(d/'results.json')['slots']:
+        row=L.load(d/slot['receipt'])
+        assert row['initial_record']==w['initial_record'], 'caller discarded frozen prefix'
+        assert row['queries'][0]['root_ply']==2
+        assert row['final_record']['actions'][:2]==w['initial_record']['actions']
+        assert len(row['queries'])==1
+    L.qualify(d)
+    assert L.load(d/'qualification.json')['history_plies']==2
+    from scripts.leaper_portrait import analyze
+    analyze(d)
+    assert all(r['plies']==3 and r['queries']==1 for r in L.load(d/'portrait.json')['rows'])

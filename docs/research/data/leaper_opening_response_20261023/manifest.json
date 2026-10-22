@@ -1,0 +1,40 @@
+{
+  "status": "CLOSED",
+  "dependency_revision": "e3f7659864651d4e26c45472a876611bbe984103",
+  "files": {
+    "observations.json.gz": {
+      "sha256": "d5d4df3b3c88246caf16c87c82993e5c136a83a6ac0ea864d8d8fa5c132a93b3",
+      "bytes": 4393171,
+      "decoded_sha256": "28c77de61e873bb84e82bdff57a97ae23778780c3c30d4b4488d2910fcc40928"
+    }
+  },
+  "executed_panels": [
+    "original_floor",
+    "prefix_resource",
+    "prefix_floor",
+    "board5_floor",
+    "prefix_material"
+  ],
+  "prepared_0fitness": [
+    "connected_proposal"
+  ],
+  "new_finished_games": 224,
+  "planned_executed_panels": 224,
+  "controller_turns": 18539,
+  "new_preflight_calls": 127,
+  "old_cost_references_are_not_new": true,
+  "source_hashes": {
+    "leaper_connected_freeze_1752.py": "f1692fde9fbba1bd8301229274e8a26f15bcf9b9c9327939e5ee4afa1b30a06d",
+    "leaper-design-floor-1752.py": "0b6dba93f88072a017197ba9933ff98e99086b1fe609f724024134fc5b905a31",
+    "leaper-design-prefix-1752.py": "4e58e33bc144f836b55b23976de7663a07f0873c6cb898b0605f7c501a2d5175",
+    "leaper_portrait.py": "4ecbbf1c982973f1ee618301c3d41e96d60de8db1254b173728794bce6093653",
+    "leaper_prefix_freeze_1752.py": "c8029c8d27396d0ced4990730f87b9519b255aa156c0253558982f4ed2b00348",
+    "leaper_prefix_material_freeze_1752.py": "e71cd87df05b500f468d611ff013884a9f863c0b208cda8d57f10bd9a230a145",
+    "leaper_prefix_verify_live_1752.py": "87a6b448393631d566fd30c1b94bde2e4c138861a0149200a522d226a0aa9593"
+  },
+  "privacy_review": {
+    "strings_scanned": 2733520,
+    "pattern_hits": 0,
+    "exact_originals": "Privateignoredoriginals preserved;publicationcopycontains project-only content."
+  }
+}
